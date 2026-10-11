@@ -25,14 +25,19 @@ import java.util.concurrent.TimeoutException
 
 private const val TAG = "ScriptWait"
 
-fun <T> Handler.await(waitMs: Long, what: String, task: () -> T): T? {
+fun <T> Handler.await(
+  waitMs: Long,
+  what: String,
+  atFrontOfQueue: Boolean = false,
+  task: () -> T,
+): T? {
   if (looper.isCurrentThread) return null
   val future = FutureTask<T> { task() }
-  post(future)
+  val posted = if (atFrontOfQueue) postAtFrontOfQueue(future) else post(future)
+  if (!posted) return null
   return try {
     future.get(waitMs, TimeUnit.MILLISECONDS)
   } catch (e: TimeoutException) {
-    future.cancel(false)
     LogUtils.w(TAG, "Scripts took longer than %d ms for %s", waitMs, what)
     null
   } catch (e: ExecutionException) {
@@ -41,5 +46,9 @@ fun <T> Handler.await(waitMs: Long, what: String, task: () -> T): T? {
   } catch (e: InterruptedException) {
     Thread.currentThread().interrupt()
     null
+  } finally {
+    // A request whose caller stopped waiting must not remain ahead of later speech hooks.
+    future.cancel(false)
+    removeCallbacks(future)
   }
 }

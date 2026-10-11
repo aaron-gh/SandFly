@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Voice profiles. -->
+    <string name="title_selector_voice_profile">Hlasový profil</string>
+    <string name="title_pref_voice_profiles">Hlasové profily</string>
+    <string name="voice_profile_default">Výchozí nastavení Backtalku</string>
+    <string name="voice_profile_in_use">Používá se: <xliff:g id="name" example="Čtení">%1$s</xliff:g></string>
+    <string name="spoken_language_unavailable_with_profile">Při používání hlasového profilu není mluvený jazyk k dispozici</string>
+    <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Čtení">%1$s</xliff:g>, používá se</string>
+    <string name="no_voice_profiles">Žádné hlasové profily</string>
+    <string name="shortcut_voice_profiles">Vybrat hlasový profil</string>
+    <string name="shortcut_previous_voice_profile">Předchozí hlasový profil</string>
+    <string name="shortcut_next_voice_profile">Další hlasový profil</string>
+    <string name="title_pref_voice_profile_in_use">Používaný hlasový profil</string>
+    <string name="title_pref_add_voice_profile">Přidat hlasový profil</string>
+    <string name="voice_profile_new_name">Hlasový profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">Hlasový profil s názvem <xliff:g id="name" example="Čtení">%1$s</xliff:g> již existuje</string>
+    <string name="title_pref_voice_profile_name">Název</string>
+    <string name="title_pref_voice_profile_language">Jazyk</string>
+    <string name="title_pref_voice_profile_voice">Hlas</string>
+    <string name="voice_profile_engine_default">Výchozí</string>
+    <string name="voice_profile_loading">Načítání</string>
+    <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, není nainstalováno</string>
+    <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="čeština (Česko)">%2$s</xliff:g></string>
+    <string name="voice_profile_move_up">Přesunout nahoru</string>
+    <string name="voice_profile_move_down">Přesunout dolů</string>
+    <string name="voice_profile_rename">Přejmenovat</string>
+    <string name="voice_profile_moved_above">Přesunuto nad <xliff:g id="name" example="Čtení">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">Přesunuto pod <xliff:g id="name" example="Čtení">%1$s</xliff:g></string>
+    <string name="voice_profile_deleted"><xliff:g id="name" example="Čtení">%1$s</xliff:g> odstraněn</string>
+    <string name="title_pref_delete_voice_profile">Odstranit hlasový profil</string>
+    <string name="voice_profile_delete_confirm">Odstranit <xliff:g id="name" example="Čtení">%1$s</xliff:g>?</string>
+    <string name="voice_profile_delete">Odstranit</string>
+
+    <!-- Table reading. -->
+    <string name="pref_table_headers_category_title">Čtení tabulek</string>
+    <string name="pref_table_column_headers_title">Číst záhlaví sloupců</string>
+    <string name="pref_table_column_headers_entry_after">Po obsahu buňky</string>
+    <string name="pref_table_column_headers_entry_before">Před obsahem buňky</string>
+    <string name="pref_table_column_headers_entry_off">Nečíst</string>
+    <string name="pref_table_speak_row_column_numbers_title">Oznamovat čísla řádků a sloupců</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Oznamovat čísla řádků a sloupců u buněk tabulky</string>
+
+    <!-- Gemini API consent text whose upstream meaning changed. -->
+    <string name="dialog_message_detailed_ai_description">Vybrané obrázky jsou odesílány do rozhraní Gemini API společnosti Google, aby byly popsány. Když je zapnutá AI v zařízení, obrázky se místo toho popisují v tomto telefonu a nikam se neodesílají.\n\nPři použití bezplatného klíče API může Google přijatá data uchovávat, používat je ke zlepšování svých produktů a nechat je kontrolovat lidmi. Generativní AI je experimentální, takže bude dělat chyby. Platí <xliff:g id="Gemini API terms" example="Další smluvní podmínky Gemini API">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">Podrobné popisy obrázků využívají generativní AI. Vybrané obrázky jsou odesílány do rozhraní Gemini API společnosti Google, aby byly popsány. Když je zapnutá AI v zařízení, obrázky se místo toho popisují v tomto telefonu a nikam se neodesílají.\n\nPři použití bezplatného klíče API může Google přijatá data uchovávat, používat je ke zlepšování svých produktů a nechat je kontrolovat lidmi. Generativní AI je experimentální, takže bude dělat chyby. Podrobné popisy obrázků můžete kdykoli vypnout v nastavení Backtalku.\n\nPlatí <xliff:g id="Gemini API terms" example="Další smluvní podmínky Gemini API">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">Snímek obrazovky je odeslán do rozhraní Gemini API společnosti Google, aby byl popsán, což trvá několik sekund. Když je zapnutá AI v zařízení, snímek se místo toho popíše v tomto telefonu a nikam se neodesílá.\n\nPři použití bezplatného klíče API může Google přijatá data uchovávat, používat je ke zlepšování svých produktů a nechat je kontrolovat lidmi. Generativní AI je experimentální, takže bude dělat chyby. Platí <xliff:g id="Gemini API terms" example="Další smluvní podmínky Gemini API">%1$s</xliff:g>.</string>
+    <string name="gemini_api_terms_link">Další smluvní podmínky Gemini API</string>
+</resources>

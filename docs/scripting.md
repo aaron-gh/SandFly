@@ -215,7 +215,7 @@ The first four can change what's said. Return:
 *   `false` or `{ silent: true }` to say nothing.
 *   Nothing, to leave it alone.
 
-Changing speech needs the `speech` permission. Backtalk waits 30 milliseconds for these hooks, then speaks without them, so keep them fast and don't `await` in them. If the script is in the middle of something that takes longer, such as a command, Backtalk doesn't wait at all.
+Changing speech needs the `speech` permission. Backtalk waits 30 milliseconds for these hooks, then speaks without them, so keep them fast and don't `await` in them. Speech hooks take priority over queued background work, and all listeners share that deadline, including queue time. A hook cannot interrupt JavaScript already running. If the script is in the middle of something that takes longer, such as a command, Backtalk doesn't wait at all.
 
 ### Commands
 

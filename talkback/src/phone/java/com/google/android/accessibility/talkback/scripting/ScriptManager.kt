@@ -42,7 +42,9 @@ class ScriptManager(
   private val mainHandler = Handler(Looper.getMainLooper())
   private val scriptHandler = startScriptThread()
   private val loaded = LinkedHashMap<String, ScriptRuntime>()
-  private val speechHooks = ScriptSpeechHooks(scriptHandler)
+  private val speechHooks = ScriptSpeechHooks(scriptHandler) {
+    !closed && speechStateVersion == appliedSpeechStateVersion
+  }
   private val events = ScriptEventDelivery(scriptHandler) { loaded.values }
   private val actions = ScriptItemActions(scriptHandler, feedback)
   private val navigator = ScriptNavigator(this)
@@ -58,6 +60,9 @@ class ScriptManager(
   private var rulesSource: List<Pair<InstalledScript, List<ScriptRule>>> = emptyList()
 
   @Volatile private var closed = false
+  // A priority hook must not jump ahead of an app change or pending script/permission update.
+  @Volatile private var speechStateVersion = 0L
+  @Volatile private var appliedSpeechStateVersion = 0L
   @Volatile private var rules = ScriptRules.EMPTY
   @Volatile private var bindings = ScriptBindings.EMPTY
 
@@ -312,7 +317,11 @@ class ScriptManager(
     rules.clearCache()
     val info = activation.appInfo
     val wanted = store.all().filter(activation::wants)
-    onScriptThread { apply(wanted, info) }
+    val version = ++speechStateVersion
+    onScriptThread {
+      apply(wanted, info)
+      appliedSpeechStateVersion = version
+    }
   }
 
   private fun apply(wanted: List<InstalledScript>, info: JSONObject) {

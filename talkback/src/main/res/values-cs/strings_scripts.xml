@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Skripty</string>
+    <string name="summary_pref_scripts">Změna fungování Backtalku v aplikacích</string>
+    <string name="script_import">Importovat skript</string>
+    <string name="script_import_summary">Soubor .js nebo .zip s main.js</string>
+    <string name="scripts_category_app">Skripty aplikací</string>
+    <string name="scripts_category_global">Globální pluginy</string>
+    <string name="scripts_none">Nejsou nainstalovány žádné skripty</string>
+    <string name="scripts_all_off">Vypnout všechny skripty</string>
+    <string name="scripts_all_off_summary">Skripty zůstanou nainstalované a zachovají si vlastní přepínače. Totéž provede gesto Zapnout nebo vypnout všechny skripty.</string>
+    <string name="shortcut_toggle_scripts">Zapnout nebo vypnout všechny skripty</string>
+    <string name="scripts_now_off">Skripty vypnuty</string>
+    <string name="scripts_now_on">Skripty zapnuty</string>
+    <string name="scripts_unavailable">Skripty nejsou na tomto zařízení dostupné</string>
+    <string name="script_add_example">Přidat ukázkový skript</string>
+    <string name="script_add_example_summary">Oznamuje název každé aplikace, do které přepnete. Skript, od kterého můžete začít.</string>
+    <string name="script_state_on">Zapnuto</string>
+    <string name="script_state_off">Vypnuto</string>
+    <string name="script_runs_in">Spouští se v <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Spouští se ve všech aplikacích</string>
+    <string name="script_version">Verze <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Autor: <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Nainstalovat <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Může:</string>
+    <string name="script_install_no_permissions">Nejsou potřeba žádná oprávnění.</string>
+    <string name="script_install_button">Nainstalovat</string>
+    <string name="script_update_title">Aktualizovat <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Nová oprávnění:</string>
+    <string name="script_update_button">Aktualizovat</string>
+    <string name="script_update_replaces">Nahradí se verze <xliff:g id="version">%1$s</xliff:g> od autora <xliff:g id="author">%2$s</xliff:g> a zachovají se její data a nastavení.</string>
+    <string name="script_update_other_author">Novou verzi vytvořil jiný autor, <xliff:g id="author">%1$s</xliff:g>. Aktualizujte ji jen tehdy, pokud mu důvěřujete.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> nainstalován</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> aktualizován na <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Import se nezdařil. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Povolte pouze důvěryhodným skriptům.</string>
+    <string name="script_permission_screen">Číst obsah obrazovky</string>
+    <string name="script_permission_actions">Klikat, posouvat, psát a přesouvat fokus</string>
+    <string name="script_permission_speech">Poslouchat a měnit řeč Backtalku</string>
+    <string name="script_permission_passwords">Číst pole s hesly</string>
+    <string name="script_permission_input">Přidávat gesta, klávesy, položky nabídky a ovládací prvky čtení</string>
+    <string name="script_permission_network">Používat internet</string>
+    <string name="script_permission_clipboard">Číst a měnit schránku</string>
+    <string name="script_permission_system">Přejít zpět nebo domů, otevírat oznámení a aplikace</string>
+    <string name="script_permission_notifications">Číst a měnit vyslovovaná oznámení</string>
+    <string name="script_permission_events">Sledovat veškerou aktivitu ve všech aplikacích včetně psaní</string>
+    <string name="script_permission_dialogs">Zobrazovat dialogy nad libovolnou aplikací</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Zapnout</string>
+    <string name="script_permissions_title">Oprávnění</string>
+    <string name="script_permissions_none">Žádná</string>
+    <string name="script_settings_category">Nastavení</string>
+    <string name="script_list_filter">Filtrovat</string>
+    <string name="script_button_off">Nejprve skript zapněte</string>
+    <string name="script_permissions_summary">Vypnutím oprávnění přestanou fungovat části, které ho potřebují.</string>
+    <string name="script_install_permissions_note">Tato oprávnění můžete později vypnout.</string>
+    <string name="script_manage_category">Správa</string>
+    <string name="script_move_up">Spouštět dříve</string>
+    <string name="script_move_down">Spouštět později</string>
+    <string name="script_order_summary">Pořadí skriptů, které mění stejnou řeč. Skripty aplikací se spouštějí jako první.</string>
+    <string name="script_log">Protokol</string>
+    <string name="script_log_summary">Výstup a chyby od spuštění Backtalku</string>
+    <string name="script_clear_storage">Vymazat uložená data</string>
+    <string name="script_storage_cleared">Uložená data vymazána</string>
+    <string name="script_remove">Odstranit</string>
+    <string name="script_remove_title">Odstranit <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Smaže jeho kód, data a nastavení.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> odstraněn</string>
+    <string name="script_log_empty">Protokol je prázdný</string>
+    <string name="script_log_clear">Vymazat protokol</string>
+    <string name="script_log_copy">Kopírovat protokol</string>
+    <string name="script_log_copied">Protokol zkopírován</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Vyžaduje skriptovací API <xliff:g id="needed">%1$d</xliff:g> nebo novější. Tento Backtalk má <xliff:g id="current">%2$d</xliff:g>, takže některé části nemusí fungovat.</string>
+    <string name="script_api_untested">Testováno do skriptovacího API <xliff:g id="tested">%1$d</xliff:g>. Tento Backtalk má <xliff:g id="current">%2$d</xliff:g>, takže skript nemusí fungovat podle očekávání.</string>
+    <string name="script_state_incompatible">S tímto Backtalkem nemusí fungovat</string>
+    <string name="script_api_range">Skriptovací API <xliff:g id="min">%1$d</xliff:g> až <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Kompatibilita</string>
+    <string name="script_install_anyway">Přesto nainstalovat</string>
+    <string name="script_update_anyway">Přesto aktualizovat</string>
+    <string name="script_homepage">Otevřít domovskou stránku</string>
+    <string name="script_homepage_confirm_title">Otevřít tuto adresu?</string>
+    <string name="script_homepage_open">Otevřít</string>
+    <string name="script_homepage_failed">Žádná aplikace nemůže otevřít <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> byl po opakovaných chybách vypnut. Podrobnosti najdete v jeho protokolu v části Skripty.</string>
+    <string name="shortcut_inspect_item">Prozkoumat položku s fokusem</string>
+    <string name="script_inspect_no_item">Žádná položka nemá fokus</string>
+    <string name="script_inspect_copied">Zkopírováno. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Položka nemá ID, takže ji pravidla nemohou pojmenovat. Zkopírováno. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopírovat strom obrazovky</string>
+    <string name="script_tree_copied">Zkopírováno položek: <xliff:g id="count">%1$d</xliff:g></string>
+    <string name="script_tree_none">Není žádné okno ke zkopírování</string>
+    <string name="script_tree_clip_label">Strom obrazovky</string>
+    <string name="summary_copy_screen_tree_menu">Kopírovat všechny položky na obrazovce jako JSON pro tvorbu skriptů</string>
+    <string name="script_inspect_clip_label">Podrobnosti položky</string>
+    <string name="summary_inspect_item_menu">Vyslovit a zkopírovat podrobnosti o položce, na které jste byli, pro tvorbu skriptů</string>
+    <string name="script_keys_backtalk_modifier">Modifikátor Backtalku</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, potom <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Příkazy</string>
+    <string name="script_commands_summary">Gesta a klávesy spuštěného skriptu mají přednost před Backtalkem. Vypnutím příkazu zachováte přiřazení Backtalku.</string>
+    <string name="script_binding_gesture">Gesto: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Klávesy: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Nabídka Backtalku</string>
+    <string name="script_binding_control">Ovládací prvky čtení</string>
+    <string name="script_binding_none">Žádné</string>
+    <string name="script_binding_turn_on">Zapnout</string>
+    <string name="script_binding_turn_off">Vypnout</string>
+    <string name="script_binding_restore">Obnovit výchozí</string>
+    <string name="script_binding_restored">Výchozí nastavení obnoveno</string>
+    <string name="script_binding_perform">Provést gesto nebo stisknout klávesy</string>
+    <string name="script_binding_perform_summary">Přiřadit následující gesto nebo klávesy stisknuté s modifikátorem Backtalku</string>
+    <string name="script_binding_perform_message">Proveďte gesto nebo stiskněte klávesy.</string>
+    <string name="script_binding_assign_title">Přiřadit <xliff:g id="binding">%1$s</xliff:g> k příkazu <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Přiřadit</string>
+    <string name="script_binding_choose_gesture">Vybrat gesto</string>
+    <string name="script_binding_type_keys">Zadat klávesy</string>
+    <string name="script_binding_type_keys_summary">Například backtalk+shift+n nebo backtalk+t, s</string>
+    <string name="script_binding_bad_keys">Tyto klávesy nelze použít. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Přidává:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+</resources>

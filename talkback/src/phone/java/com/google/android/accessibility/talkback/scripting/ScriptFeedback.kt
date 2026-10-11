@@ -41,6 +41,7 @@ import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech.SpeechParam
+import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechControllerImpl
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
@@ -73,6 +74,7 @@ class ScriptFeedback(
     val options =
       SpeakOptions.create()
         .setQueueMode(if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE)
+        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE)
         .setSpeechParams(params)
     give(Feedback.speech(inLanguage(text, voice.language), options))
   }
