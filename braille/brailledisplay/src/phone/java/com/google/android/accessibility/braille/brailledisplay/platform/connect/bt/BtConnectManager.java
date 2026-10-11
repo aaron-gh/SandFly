@@ -60,6 +60,7 @@ public class BtConnectManager extends ConnectManager {
   // minute, scanning should be halted, unless a new notification comes in.
   private static final long KEEP_SCANNING_DURATION_MS = 30_000;
   private static final String HID_UUID = "00001124-0000-1000-8000-00805f9b34fb";
+  private static final String HID_OVER_GATT_UUID = "00001812-0000-1000-8000-00805f9b34fb";
   private final Context context;
   private final ConnectManager.Callback connectManagerCallback;
   // Some runtimes, such as emulators, do not have bluetooth; allow that btAdapter might be null.
@@ -205,11 +206,16 @@ public class BtConnectManager extends ConnectManager {
   @Override
   public boolean isHidDevice(ConnectableDevice device) {
     BluetoothDevice bluetoothDevice = ((ConnectableBluetoothDevice) device).bluetoothDevice();
+    // A Bluetooth Low Energy display has no RFCOMM, so HID is the only way to connect.
+    if (bluetoothDevice.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
+      return true;
+    }
     if (bluetoothDevice.fetchUuidsWithSdp()) {
       ParcelUuid[] uu = bluetoothDevice.getUuids();
       if (uu != null) {
         for (ParcelUuid u : uu) {
-          if (u.getUuid().toString().equals(HID_UUID)) {
+          String uuid = u.getUuid().toString();
+          if (uuid.equals(HID_UUID) || uuid.equals(HID_OVER_GATT_UUID)) {
             return true;
           }
         }
