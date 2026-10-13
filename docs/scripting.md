@@ -8,10 +8,20 @@ Scripts run on phones and tablets. Watches and TVs can't run them.
 
 A script is one of these:
 
-*   A `.js` file.
-*   A `.zip` file with a `main.js` in it, plus anything `main.js` uses: other JavaScript modules, sounds, and translations. The zip can be up to 5 MB unpacked and hold up to 200 files.
+*   A `.js` file, up to 1 MB.
+*   A `.zip` file with a `main.js` in it, plus anything `main.js` uses: other JavaScript modules, sounds, and translations. The zip can be up to 5 MB, up to 5 MB unpacked, and hold up to 200 files.
 
 To install a script, go to **Advanced settings** > **Scripts** in Backtalk settings and choose **Import script**. Backtalk lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; Backtalk always asks first, and says so if the author changed.
+
+To find scripts, choose **Script sources** on the Scripts screen and **Add source**. A source is the address of a repository, or of a branch or folder in one, on GitHub, GitLab, Codeberg, Gitea (gitea.com) or Bitbucket:
+
+*   `github.com/owner/repository` or `github.com/owner/repository/tree/main/scripts`
+*   `gitlab.com/group/repository` or `gitlab.com/group/subgroup/repository/-/tree/main/scripts`
+*   `codeberg.org/owner/repository` or `codeberg.org/owner/repository/src/branch/main/scripts`
+*   `gitea.com/owner/repository`, written as for Codeberg
+*   `bitbucket.org/workspace/repository` or `bitbucket.org/workspace/repository/src/main/scripts`
+
+Only public repositories on these services work. The source's `.js` and `.zip` files are listed. Choosing one downloads it and shows the same install dialog as **Import script**. **Remove source** on a source's screen removes it from the list; scripts already installed from it stay installed.
 
 Scripts run in [QuickJS](https://github.com/quickjs-ng/quickjs), so you can use modern JavaScript, including modules, classes, `async` and `await`. A script can't reach Android directly. It has no file system, no `require`, and no Java classes; everything goes through the `backtalk` object described below.
 

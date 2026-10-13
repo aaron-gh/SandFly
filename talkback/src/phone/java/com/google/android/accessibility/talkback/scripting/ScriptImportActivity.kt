@@ -60,7 +60,8 @@ class ScriptImportActivity : Activity() {
                 } ?: throw IOException(getString(R.string.script_import_cannot_open))
               file.writeBytes(bytes)
             }
-            is Source.FromLink -> ThemeLinks.fetch(source.url, file)
+            is Source.FromLink ->
+              ThemeLinks.fetch(source.url, file, ScriptPackage.MAX_BYTES.toLong())
           }
           null
         } catch (e: IOException) {
@@ -68,6 +69,8 @@ class ScriptImportActivity : Activity() {
         } catch (e: SecurityException) {
           e.message.orEmpty()
         }
+      // Not what a download that stopped at the limit left behind.
+      if (error != null) file.delete()
       runOnUiThread {
         if (error != null) {
           failed(getString(R.string.script_import_failed, error))

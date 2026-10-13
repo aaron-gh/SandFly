@@ -26,15 +26,26 @@ class ScriptPackage(val files: Map<String, ByteArray>, val manifest: ScriptManif
 
   companion object {
     const val MAIN = "main.js"
+    /** The most a .zip file can be, and the most its files can be together once unpacked. */
     const val MAX_BYTES = 5 * 1024 * 1024
+
+    /** The most a .js file can be. */
+    const val MAX_JS_BYTES = 1024 * 1024
     private const val MAX_FILES = 200
 
     fun read(bytes: ByteArray): ScriptPackage {
-      manifestCheck(bytes.size <= MAX_BYTES) { "The file is larger than 5 MB" }
-      val files = if (isZip(bytes)) unzip(bytes) else mapOf(MAIN to bytes)
+      val zip = isZip(bytes)
+      manifestCheck(bytes.size <= if (zip) MAX_BYTES else MAX_JS_BYTES) {
+        if (zip) "The zip is larger than 5 MB" else "The script is larger than 1 MB"
+      }
+      val files = if (zip) unzip(bytes) else mapOf(MAIN to bytes)
       val main = files[MAIN] ?: manifestError("The zip has no main.js")
       return ScriptPackage(files, ScriptManifest.parse(ManifestReader.read(main.decodeToString())))
     }
+
+    /** The most a file can be, by its name: a .zip, or otherwise a .js. */
+    fun maxBytesOf(fileName: String): Int =
+      if (fileName.endsWith(".zip", ignoreCase = true)) MAX_BYTES else MAX_JS_BYTES
 
     private fun isZip(bytes: ByteArray): Boolean =
       bytes.size >= 4 && bytes[0] == 'P'.code.toByte() && bytes[1] == 'K'.code.toByte()
