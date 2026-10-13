@@ -95,6 +95,12 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.MIGRATE" />
 
+    <permission
+        android:name="fyi.quin.backtalk.permission.SPEAK"
+        android:label="@string/permission_speak_label"
+        android:description="@string/permission_speak_description"
+        android:protectionLevel="normal" />
+
     <!-- Granted by the user with adb, to move the accessibility shortcut and the braille keyboard
          from the old app ID and turn the old screen reader off. -->
     <uses-permission
@@ -404,6 +410,28 @@
                 <action android:name="fyi.quin.backtalk.action.HAND_OVER" />
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlReceiver"
+            android:exported="true"
+            android:permission="fyi.quin.backtalk.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEAK" />
+                <action android:name="fyi.quin.backtalk.action.STOP_SPEECH" />
+            </intent-filter>
+        </receiver>
+        <!-- Saves the user's answer from the notification that asks whether an app may speak. -->
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlApproval$AnswerReceiver"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlService"
+            android:exported="true"
+            android:permission="fyi.quin.backtalk.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
+            </intent-filter>
+        </service>
 
         <receiver
             android:name="com.google.android.libraries.appdoctor.AppDoctorReceiver"

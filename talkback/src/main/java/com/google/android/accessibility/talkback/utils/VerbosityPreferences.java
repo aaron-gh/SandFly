@@ -26,6 +26,7 @@ import androidx.annotation.NonNull;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -142,6 +143,8 @@ public class VerbosityPreferences {
       return (capitalLetterValues == null || capitalLetterValues.length == 0)
           ? null
           : capitalLetterValues[1]; // Say "cap"
+    } else if (key.equals(resources.getString(R.string.pref_phonetic_letters_mode_key))) {
+      return PhoneticLetterMode.AFTER_LETTER_DELAY;
     } else {
       LogUtils.e(TAG, "Unhandled key \"%s\"", key);
       return null;
@@ -160,6 +163,8 @@ public class VerbosityPreferences {
       return (capitalLetterValues == null || capitalLetterValues.length == 0)
           ? null
           : capitalLetterValues[0]; // Do nothing
+    } else if (key.equals(resources.getString(R.string.pref_phonetic_letters_mode_key))) {
+      return PhoneticLetterMode.OFF;
     } else {
       LogUtils.e(TAG, "Unhandled key \"%s\"", key);
       return null;

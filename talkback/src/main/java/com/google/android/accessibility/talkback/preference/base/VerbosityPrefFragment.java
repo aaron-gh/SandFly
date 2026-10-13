@@ -143,9 +143,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 getString(R.string.pref_intonation_key),
                 getResources().getBoolean(R.bool.pref_intonation_default))
             .put(
-                getString(R.string.pref_phonetic_letters_key),
-                getResources().getBoolean(R.bool.pref_phonetic_letters_default))
-            .put(
                 getString(R.string.pref_speak_roles_key),
                 getResources().getBoolean(R.bool.pref_speak_roles_default))
             .put(
@@ -192,6 +189,9 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 R.string.pref_keyboard_echo_default)
             .put(
                 getString(R.string.pref_capital_letters_key), R.string.pref_capital_letters_default)
+            .put(
+                getString(R.string.pref_phonetic_letters_mode_key),
+                R.string.pref_phonetic_letters_mode_default)
             .put(
                 getString(R.string.pref_punctuation_verbosity),
                 R.string.pref_punctuation_verbosity_default)

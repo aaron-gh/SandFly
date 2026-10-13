@@ -22,7 +22,6 @@ import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioTrack
 import android.media.MediaPlayer
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.VibrationEffect
@@ -35,14 +34,11 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
+import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
-import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
-import com.google.android.accessibility.utils.output.FailoverTextToSpeech.SpeechParam
-import com.google.android.accessibility.utils.output.FeedbackItem
-import com.google.android.accessibility.utils.output.SpeechControllerImpl
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
@@ -65,17 +61,11 @@ class ScriptFeedback(
   class Voice(val rate: Float = 1f, val pitch: Float = 1f, val language: String? = null)
 
   fun speak(text: String, interrupt: Boolean, voice: Voice = Voice()) {
-    val params =
-      Bundle().apply {
-        putBoolean(SpeechControllerImpl.SPEECH_PARAM_FROM_SCRIPT, true)
-        putFloat(SpeechParam.RATE, voice.rate)
-        putFloat(SpeechParam.PITCH, voice.pitch)
-      }
     val options =
-      SpeakOptions.create()
-        .setQueueMode(if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE)
-        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE)
-        .setSpeechParams(params)
+      ExternalSpeech.options(
+        if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE,
+        ExternalSpeech.params(voice.rate, voice.pitch),
+      )
     give(Feedback.speech(inLanguage(text, voice.language), options))
   }
 

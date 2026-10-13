@@ -124,7 +124,7 @@ TalkBack always plays speech at the accessibility volume. In Backtalk, you can t
 
 When text is marked as another language, TalkBack switches the voice to that language. Backtalk lets you turn this off. In **Text-to-speech**, **Switch language automatically** controls changes to another language, and **Switch dialect automatically** controls changes to another country's form of the voice's language, such as US English text with a British English voice. Both are on by default.
 
-When you turn a change off, Backtalk no longer splits the text or pauses around it. Backtalk compares languages by their codes only, so Serbian in Latin and in Cyrillic script counts as two dialects, and Norwegian marked as `no` and as `nb` counts as two languages.
+When you turn a change off, Backtalk no longer splits the text or pauses around it. Text marked as the voice's own language and country, such as US English for a US English voice, isn't split either, whatever the settings, since the voice doesn't change. Backtalk compares languages by their codes only, so Serbian in Latin and in Cyrillic script counts as two dialects, and Norwegian marked as `no` and as `nb` counts as two languages.
 
 ### How emoji are spoken
 
@@ -173,6 +173,19 @@ In **Verbosity**, you can choose whether Backtalk reads table column headers bef
 Under preset settings in **Verbosity**, you can also turn off **Speak row and column numbers** to hear only named headers without row and column coordinates. The setting is on by default.
 
 Both settings only apply while **Speak container info** is on, because rows and columns aren't spoken at all when it's off.
+
+### Speak letters phonetically
+
+TalkBack's **Speak letters with examples** switch is called **Speak letters phonetically** in Backtalk, in **Verbosity** under preset settings, and in on-screen keyboard settings. It has four choices:
+
+*   **Off** says only the letter.
+*   **After the letter, delayed**, the default, is what the switch did when it was on. Keyboard keys say the letter, then its phonetic word, as in "h, hotel". Moving by character, the word comes a quarter of a second after the letter, and moving on before then skips it.
+*   **After the letter, no delay** says the letter and its word together, as in "h hotel".
+*   **Instead of the letter** says only the word, as in "hotel".
+
+With **After the letter, no delay** and **Instead of the letter**, Backtalk says it in all of these places. **After the letter, delayed** still ignores **Spell last spoken phrase**, deleting a letter, and inserting a letter with a touch keyboard like Gboard, just as TalkBack did when **Speak letters with examples** was turned on.
+
+The **High** preset uses **After the letter, delayed** and the **Low** preset uses **Off**. Your choice from the switch carries over.
 
 ## Notifications
 
@@ -407,6 +420,10 @@ Touch returns to Backtalk when a dialog appears, another app opens on top of the
 
 By default, the keyboard area keeps working with Backtalk. For a game that draws its own keyboard, open the actions menu on the game in the **Apps** list and choose **Turn on direct typing**.
 
+### Self-voicing keyboards
+
+A keyboard that speaks for itself, such as Advanced Braille Keyboard, needs your touches in every app, not only in games. Turn it on in the **Apps** list, and while it shows, touches on it go straight to it in any app, and the rest of the screen stays with Backtalk.
+
 ### Quick settings tile
 
 To pause and resume direct touch without leaving your game, add the **Direct touch** tile to quick settings.
@@ -503,7 +520,7 @@ Like NVDA's app modules and global plugins, scripts change how Backtalk works in
 *   Change everything Backtalk says, and react to notifications, typing and screen changes.
 *   Use the internet and the clipboard, show dialogs, and keep its own data and settings.
 
-To install a script, go to **Advanced settings** > **Scripts** and choose **Import script**. Backtalk lists what the script asks to do before it installs or updates it. **Add the example script** adds a small script to start from.
+To install a script, go to **Advanced settings** > **Scripts** and choose **Import script**. You can also share a script file, or a link to one such as a script's page on GitHub, to Backtalk, or open a script file with it, and choose **Install Backtalk script**. Backtalk lists what the script asks to do before it installs or updates it. **Add the example script** adds a small script to start from.
 
 Each script has a page with an on and off switch, a switch for each permission and for each gesture, key, menu item and reading control it adds, its settings on their own screen, its log, and **Remove**. While a script runs, its gestures and keys come before Backtalk's.
 
@@ -514,6 +531,12 @@ Speech requested with `backtalk.speak` can be heard while media is playing, incl
 Hooks that change or suppress speech take priority over queued script work and share a 30-millisecond deadline. If the deadline expires or a long task is already running, Backtalk uses its normal speech, so scripts should keep these hooks fast.
 
 Scripts run on phones and tablets only. [Writing Backtalk scripts](docs/scripting.md) describes the whole API, and [docs/scripting/examples](docs/scripting/examples) has a script to start from.
+
+### Speech from other apps
+
+Apps can ask Backtalk to say text in your own Backtalk voice, for example a game, an automation app such as Tasker, or a remote-access tool. To allow this, turn on **Advanced settings** > **Let other apps speak**. It's off by default.
+
+The first time an app asks, Backtalk posts a notification that asks whether to allow it, and nothing the app sends is said until you choose **Allow**. You can allow or block each app later in **Let other apps speak**. To hear a short sound before each thing another app says, so that you can tell it apart from Backtalk, turn on **Play a sound before other apps speak**. Nothing is said while the device is locked, an app can speak only a few times in a row, and apps can never stop or cut off Backtalk's own speech. [Speaking through Backtalk from another app](docs/speech-api.md) describes the API for app developers.
 
 ### Inspect focused item and Copy screen tree
 

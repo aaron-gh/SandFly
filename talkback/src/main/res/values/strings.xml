@@ -164,6 +164,10 @@
       Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_speak_in_phrases">For speech engines that are slow to stop, such as Gryphon, so swiping away stops long text at once. Many engines pause longer between sentences sent separately, so leave this off if yours stops quickly.</string>
+    <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_speech_while_recording">Quiet while recording</string>
+    <!-- Summary of the setting that keeps speech the user did not ask for quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_mute_speech_while_recording">While an app records without headphones connected, Backtalk only speaks in answer to your gestures, keys and typing, and stays quiet for things such as notifications, so that they are not recorded.</string>
     <!--
       Source: Title for the "switch languages" toggle.
       Description: When on, text that an app marks as another language is spoken in that language. [CHAR LIMIT=NONE]
@@ -381,6 +385,28 @@
     <string name="summary_pref_speakerphone_away_from_ear">During a call, switches to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again.</string>
     <!-- Summary of that setting when Backtalk does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_needs_permission">Needs a permission that Android does not give to screen readers. To grant it, run this command with adb or Shizuku, then come back to this screen: %1$s</string>
+    <!-- Title of the setting that lets other apps speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control">Let other apps speak</string>
+    <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speech_control">Apps that you allow can say text in your Backtalk voice. Nothing is said while the device is locked.</string>
+    <!-- Title of the setting that plays a sound before each thing another app says through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
+    <!-- Heading of the list of apps that asked to speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_apps_category">Apps</string>
+    <!-- Shown in that list before any app has asked to speak. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
+    <!-- Title of the notification that asks whether an app may speak through Backtalk. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through Backtalk?</string>
+    <!-- Text of that notification. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_text">It can say text in your Backtalk voice. You can change this in Advanced settings.</string>
+    <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
+    <string name="speech_control_allow">Allow</string>
+    <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
+    <string name="speech_control_deny">Don\'t allow</string>
+    <!-- Name of the permission that apps ask for to speak through Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_label">speak through Backtalk</string>
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_description">Lets the app ask to say text in your Backtalk voice. Backtalk asks you before the app can speak.</string>
 
     <!--
       Source: Preference for speaking phonetic letter for letters.
@@ -392,6 +418,16 @@
       Description: Explains when phonetic letters will be spoken. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_phonetic_letters">When you select keyboard keys or navigate by character, you\'ll hear an example along with each letter, like \"h, hotel\"</string>
+    <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
+    <string name="title_pref_phonetic_letters_mode">Speak letters phonetically</string>
+    <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_off">Off</string>
+    <!-- Choice for Speak letters phonetically: the letter, then its word after a pause, as TalkBack does. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_delay">After the letter, delayed, like \"h, hotel\"</string>
+    <!-- Choice for Speak letters phonetically: the letter and its word together, with no pause between them. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_no_delay">After the letter, no delay, like \"h hotel\"</string>
+    <!-- Choice for Speak letters phonetically: the word is said in place of the letter. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_instead_of_letter">Instead of the letter, like \"hotel\"</string>
     <!--
       Source: Preference for reading punctuations. [CHAR LIMIT=45]
       Description: The user can check or not check this.

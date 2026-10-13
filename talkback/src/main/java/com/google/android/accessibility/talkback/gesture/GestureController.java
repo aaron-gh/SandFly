@@ -118,6 +118,7 @@ import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -253,6 +254,7 @@ public class GestureController {
   }
 
   public void performAction(String action, EventId eventId) {
+    RecentUserInput.mark();
     Performance.getInstance().onPerformAction(eventId, action);
     TalkbackAction actionEvent = gestureShortcutMapping.getActionEvent(action);
     if (actionEvent != null) {
@@ -750,6 +752,7 @@ public class GestureController {
 
   @SuppressWarnings("NewApi")
   public void onGesture(int gestureId, EventId eventId) {
+    RecentUserInput.mark();
     if (gestureId == GESTURE_FAKED_SPLIT_TYPING_AND_HOLD) {
       // The intended behavior is simulating the non-customizable gesture "double-tap-and-hold".
       gestureId = GESTURE_DOUBLE_TAP_AND_HOLD;

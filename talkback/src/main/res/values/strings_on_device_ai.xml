@@ -60,6 +60,8 @@
     <string name="on_device_ai_notification_done">Model downloaded. Turn on on-device AI in settings.</string>
     <!-- Notification text when the download failed. [CHAR LIMIT=NONE] -->
     <string name="on_device_ai_notification_failed">The download failed. Open settings to try again.</string>
+    <!-- Notification text when Android paused the download after several hours in the background. The downloaded part is kept. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_notification_paused">Android paused the download. Open settings to carry on.</string>
     <!-- Entry shown while a picked file is being copied in. [CHAR LIMIT=60] -->
     <string name="pref_on_device_ai_importing">Checking the model file</string>
     <!-- Summary when a model is installed. [CHAR LIMIT=NONE] -->
@@ -130,6 +132,8 @@
     <string name="on_device_ai_error_storage">Could not save the file.</string>
     <!-- Download failed: not enough free storage. [CHAR LIMIT=NONE] -->
     <string name="on_device_ai_error_low_space">There is not enough free storage for this model.</string>
+    <!-- Download paused: Android stopped it after several hours in the background. The downloaded part is kept. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_time_limit">Android paused the download after several hours in the background. Tap to carry on where it stopped.</string>
 
     <!-- Title of the dialog that asks before downloading on mobile data. [CHAR LIMIT=60] -->
     <string name="on_device_ai_metered_title">Download on mobile data?</string>

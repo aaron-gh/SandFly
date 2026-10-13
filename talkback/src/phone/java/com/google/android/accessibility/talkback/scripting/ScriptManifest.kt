@@ -93,13 +93,15 @@ data class ScriptRule(
   val readBefore: NodeQuery? = null,
   val readAfter: NodeQuery? = null,
   val actions: List<RuleItemAction> = emptyList(),
+  /** What a double-tap presses, searched inside the item. */
+  val activate: NodeQuery? = null,
 ) {
   val target: String
     get() = id ?: match.toString()
 
   val changesItem: Boolean
     get() =
-      listOf(label, speak, role, state, hint, heading, readBefore, readAfter)
+      listOf(label, speak, role, state, hint, heading, readBefore, readAfter, activate)
         .any { it != null } ||
         hide != Hide.NONE ||
         group
@@ -252,7 +254,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 1
+    const val API_VERSION = 3
 
     fun parse(json: String, strict: Boolean = true): ScriptManifest =
       ManifestParser(strict).parse(json)

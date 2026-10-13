@@ -32,6 +32,7 @@ data class NodeQuery(
   val clickable: Boolean? = null,
   val parentId: String? = null,
   val inside: NodeQuery? = null,
+  val has: NodeQuery? = null,
 ) {
   fun matches(node: AccessibilityNodeInfoCompat, textOf: TextOf = PLAIN_TEXT): Boolean =
     (id == null || idMatches(id, node.viewIdResourceName)) &&
@@ -43,7 +44,9 @@ data class NodeQuery(
       (role == null || ScriptRoles.appRole(node) == role) &&
       (parentId == null || idMatches(parentId, node.parent?.viewIdResourceName)) &&
       // Last, because every ancestor is a call to the app.
-      (inside == null || node.ancestors().any { inside.matches(it, textOf) })
+      (inside == null || node.ancestors().any { inside.matches(it, textOf) }) &&
+      // After that, because it can look at many more items.
+      (has == null || hasInside(node, has, textOf))
 
   /**
    * Finds items under [root], and stops early at [deadline], a [SystemClock.uptimeMillis] time.
@@ -71,6 +74,26 @@ data class NodeQuery(
     deadline: Long = Long.MAX_VALUE,
   ): AccessibilityNodeInfoCompat? = findIn(root, deadline = deadline).firstOrNull()
 
+  /**
+   * Whether an item inside [node], up to [MAX_HAS_DEPTH] levels down, matches [query]. It looks at
+   * no more than [MAX_HAS_VISITED] items, nearest first, since each is a call to the app.
+   */
+  private fun hasInside(node: AccessibilityNodeInfoCompat, query: NodeQuery, textOf: TextOf): Boolean {
+    var level = node.children()
+    var visited = 0
+    repeat(MAX_HAS_DEPTH) {
+      val next = mutableListOf<AccessibilityNodeInfoCompat>()
+      for (child in level) {
+        if (++visited > MAX_HAS_VISITED) return false
+        if (query.matches(child, textOf)) return true
+        next += child.children()
+      }
+      if (next.isEmpty()) return false
+      level = next
+    }
+    return false
+  }
+
   private fun contains(node: AccessibilityNodeInfoCompat, textOf: TextOf, part: String): Boolean =
     listOf(textOf(node), node.contentDescription?.toString()).any {
       it?.contains(part, ignoreCase = true) == true
@@ -78,6 +101,8 @@ data class NodeQuery(
 
   companion object {
     private const val MAX_VISITED = 3000
+    private const val MAX_HAS_DEPTH = 6
+    private const val MAX_HAS_VISITED = 60
     private val PLAIN_TEXT: TextOf = { it.text?.toString() }
 
     val KEYS =
@@ -91,6 +116,7 @@ data class NodeQuery(
         "clickable",
         "parentId",
         "inside",
+        "has",
       )
 
     fun of(json: JSONObject, nested: Boolean = false): NodeQuery {
@@ -106,6 +132,8 @@ data class NodeQuery(
         parentId = text("parentId"),
         // One level: each further level would walk every ancestor again for every ancestor.
         inside = if (nested) null else json.optJSONObject("inside")?.let { of(it, nested = true) },
+        // One level too: a nested one would search everything inside every item it looks at.
+        has = if (nested) null else json.optJSONObject("has")?.let { of(it, nested = true) },
       )
     }
 

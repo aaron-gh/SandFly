@@ -416,14 +416,21 @@ public final class GranularityTraversal {
     CharSequence traversedText =
         TextEventInterpreter.getSubsequenceWithSpans(
             text, Math.min(fromIndex, toIndex), Math.max(fromIndex, toIndex));
-    if (pipelineReceiver.isPresent()) {
-      LogUtils.d(TAG, "sendViewTextTraversedAtGranularityEvent: " + traversedText);
-      pipelineReceiver.get().input(SyntheticEvent.Type.TEXT_TRAVERSAL, traversedText);
-    }
-
     // No current case where isTalkbackPackage would be true, but just kept it for safety.
     boolean isTalkbackPackage = PackageManagerUtils.isTalkBackPackage(node.getPackageName());
     boolean isCharacterGranularity = (granularity == CursorGranularity.CHARACTER.value);
+    if (pipelineReceiver.isPresent()) {
+      // The user can choose to hear the phonetic word with or in place of the letter.
+      CharSequence spokenText =
+          isCharacterGranularity
+              ? processorPhoneticLetters
+                  .getPhoneticInPlaceOfLetter(isTalkbackPackage, traversedText)
+                  .orElse(traversedText)
+              : traversedText;
+      LogUtils.d(TAG, "sendViewTextTraversedAtGranularityEvent: " + spokenText);
+      pipelineReceiver.get().input(SyntheticEvent.Type.TEXT_TRAVERSAL, spokenText);
+    }
+
     if (isCharacterGranularity) {
       processorPhoneticLetters.speakPhoneticLetterForTraversedText(
           isTalkbackPackage, traversedText.toString(), eventId);

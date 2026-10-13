@@ -39,6 +39,10 @@
         android:summary="@string/summary_pref_wrap_around"
         android:title="@string/title_pref_wrap_around" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
+        android:key="pref_speech_control_screen"
+        android:title="@string/title_pref_speech_control" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_manage_labels_key"
         android:title="@string/title_pref_manage_labels" >
       <intent

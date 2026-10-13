@@ -31,8 +31,12 @@ public final class GeminiConfiguration {
     return BuildConfig.GEMINI_MODEL;
   }
 
+  /**
+   * The languages that Describe screen and image questions work in. Gemini answers in any language,
+   * and Describe screen asks for the user's.
+   */
   public static String getQnaSupportLocales(Context context) {
-    return "";
+    return "*";
   }
 
   static String getPrefixPrompt(Context context) {

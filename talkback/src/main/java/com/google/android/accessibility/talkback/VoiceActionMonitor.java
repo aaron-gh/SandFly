@@ -29,11 +29,13 @@ import android.telephony.TelephonyManager;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.monitor.CallStateMonitor;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.AudioPlaybackMonitor;
 import com.google.android.accessibility.utils.monitor.HeadphoneStateMonitor;
 import com.google.android.accessibility.utils.monitor.MediaRecorderMonitor;
 import com.google.android.accessibility.utils.monitor.MediaRecorderMonitor.MicrophoneStateChangedListener;
 import com.google.android.accessibility.utils.monitor.SpeechStateMonitor;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
@@ -78,7 +80,12 @@ public class VoiceActionMonitor implements VoiceActionDelegate {
       new MicrophoneStateChangedListener() {
         @Override
         public void onMicrophoneActivated() {
-          if (!isHeadphoneOn()) {
+          if (isHeadphoneOn()) {
+            return;
+          }
+          // A recording usually starts because the user pressed record, so what Backtalk says about
+          // that is left to finish.
+          if (isListeningForVoice()) {
             interruptTalkBackAudio(MEDIA_RECORDER);
           }
         }
@@ -154,9 +161,35 @@ public class VoiceActionMonitor implements VoiceActionDelegate {
     return audioPlaybackMonitor.isAudioPlaybackActive() || speechStateMonitor.isSpeaking();
   }
 
-  /** Returns {@code true} if microphone is active and the user is not using a headset. */
+  /**
+   * Returns {@code true} if speech that doesn't answer the user would be picked up by the
+   * microphone without a headset: during voice input, such as dictation or voice commands, and
+   * during a recording if the user chose to keep it quiet. Speech within a moment of something the
+   * user did still counts as answering them, such as the home screen after the gesture that goes
+   * home, or a deletion on the braille keyboard, which the app reports rather than Backtalk.
+   */
   public boolean isMicrophoneActiveAndHeadphoneOff() {
-    return isMicrophoneActive() && !isHeadphoneOn();
+    if (isHeadphoneOn()) {
+      return false;
+    }
+    if (isListeningForVoice()) {
+      return true;
+    }
+    return mediaRecorderMonitor.isMicrophoneActive()
+        && quietsSpeechWhileRecording()
+        && !RecentUserInput.isRecent();
+  }
+
+  private boolean isListeningForVoice() {
+    return mediaRecorderMonitor.isVoiceRecognitionActive() || speechStateMonitor.isListening();
+  }
+
+  private boolean quietsSpeechWhileRecording() {
+    return SharedPreferencesUtils.getBooleanPref(
+        SharedPreferencesUtils.getSharedPreferences(service),
+        service.getResources(),
+        R.string.pref_mute_speech_while_recording_key,
+        R.bool.pref_mute_speech_while_recording_default);
   }
 
   /**

@@ -6,6 +6,14 @@
     <string name="summary_pref_scripts">Change how Backtalk works in apps</string>
     <!-- Action that imports a script file. [CHAR LIMIT=40] -->
     <string name="script_import">Import script</string>
+    <!-- Name of the action in other apps' share and open menus that installs a script in Backtalk. [CHAR LIMIT=40] -->
+    <string name="script_install_label">Install Backtalk script</string>
+    <!-- Shown when something was shared to Backtalk to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
+    <string name="script_import_nothing">There\'s no script file to install.</string>
+    <!-- The reason a shared script couldn't be installed, when its file couldn't be opened. [CHAR LIMIT=NONE] -->
+    <string name="script_import_cannot_open">The file could not be opened.</string>
+    <!-- Shown when a link to a whole GitHub repository was shared to Backtalk to install as a script. [CHAR LIMIT=NONE] -->
+    <string name="script_import_repository">This link is to a whole repository. Open the script you want, then share its link.</string>
     <!-- Summary of the import action. [CHAR LIMIT=NONE] -->
     <string name="script_import_summary">.js file, or .zip with main.js</string>
     <!-- Heading of the list of scripts that run in particular apps. [CHAR LIMIT=40] -->

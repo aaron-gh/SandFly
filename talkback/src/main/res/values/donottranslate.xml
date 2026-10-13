@@ -17,6 +17,8 @@
     <string name="pref_reserve_vibration_watch_gestures_key">pref_reserve_vibration_watch_gestures</string>
     <string name="pref_status_readout_key" translatable="false">pref_status_readout</string>
     <string name="pref_direct_touch_key" translatable="false">pref_direct_touch</string>
+    <!-- Must match SpeechControl.PREF_ENABLED. -->
+    <string name="pref_speech_control_key" translatable="false">pref_speech_control</string>
     <string name="pref_check_for_updates_key" translatable="false">pref_check_for_updates</string>
     <string name="pref_auto_update_check_key" translatable="false">pref_auto_update_check</string>
     <string name="pref_show_exit_watermark_key">pref_show_exit_watermark</string>
@@ -40,6 +42,7 @@
     <string name="pref_system_tts_settings_key">pref_system_tts_settings</string>
     <string name="pref_tts_engine_key">pref_tts_engine</string>
     <string name="pref_use_accessibility_stream_key">pref_use_accessibility_stream</string>
+    <string name="pref_mute_speech_while_recording_key">pref_mute_speech_while_recording</string>
     <string name="pref_speak_in_phrases_key">pref_speak_in_phrases</string>
     <string name="pref_switch_languages_key">pref_switch_languages</string>
     <string name="pref_switch_dialects_key">pref_switch_dialects</string>
@@ -90,6 +93,7 @@
     <string name="pref_category_typing_focus_delay_key" translatable="false">pref_category_typing_focus_delay_key</string>
 
     <string name="pref_phonetic_letters_key">pref_phonetic_letters</string>
+    <string name="pref_phonetic_letters_mode_key" translatable="false">pref_phonetic_letters_mode</string>
     <string name="pref_punctuation_key" translatable="false">pref_punctuation</string>
     <string name="pref_punctuation_verbosity" translatable="false">pref_punctuation_verbosity</string>
     <string name="pref_count_repeated_symbols_key" >pref_collapse_repeated_symbols</string>
@@ -1300,6 +1304,23 @@
       <item>3</item>
     </string-array>
 
+    <string-array name="pref_phonetic_letters_mode_entries">
+      <item>@string/phonetic_letters_mode_off</item>
+      <item>@string/phonetic_letters_mode_after_letter_delay</item>
+      <item>@string/phonetic_letters_mode_after_letter_no_delay</item>
+      <item>@string/phonetic_letters_mode_instead_of_letter</item>
+    </string-array>
+
+    <!-- The values of PhoneticLetterMode's constants. -->
+    <string-array name="pref_phonetic_letters_mode_values" translatable="false">
+      <item>off</item>
+      <item>after_letter_delay</item>
+      <item>after_letter_no_delay</item>
+      <item>instead_of_letter</item>
+    </string-array>
+
+    <string name="pref_phonetic_letters_mode_default" translatable="false">after_letter_delay</string>
+
     <string-array name="pref_punctuation_entries">
       <item>@string/punctuation_all</item>
       <item>@string/punctuation_most</item>
@@ -1424,6 +1445,7 @@
     <integer name="pref_speech_rate_default_int">100</integer>
     <string name="pref_speech_pitch_default">1.0</string>
     <bool name="pref_use_accessibility_stream_default">true</bool>
+    <bool name="pref_mute_speech_while_recording_default">false</bool>
     <bool name="pref_speak_in_phrases_default">false</bool>
     <bool name="pref_switch_languages_default">true</bool>
     <bool name="pref_switch_dialects_default">true</bool>

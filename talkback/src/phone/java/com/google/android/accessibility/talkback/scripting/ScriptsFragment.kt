@@ -17,9 +17,12 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.net.Uri
+import android.os.Bundle
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.talkback.R
+import java.io.File
 import java.io.IOException
 import java.util.concurrent.Executors
 
@@ -30,6 +33,24 @@ class ScriptsFragment : ScriptScreenFragment() {
     }
 
   public override fun getTitle(): CharSequence = getText(R.string.title_pref_scripts)
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    val path = arguments?.getString(ARG_IMPORT_FILE) ?: return
+    // Asked about once, not again when the screen is recreated.
+    arguments?.remove(ARG_IMPORT_FILE)
+    if (savedInstanceState != null) return
+    // Only ScriptImportActivity's copy, whatever path the arguments name.
+    val file = File(requireContext().cacheDir, ScriptImportActivity.SHARED_FILE)
+    if (File(path) != file) return
+    read {
+      try {
+        file.readBytes()
+      } finally {
+        file.delete()
+      }
+    }
+  }
 
   override fun state(): Any = store.all() to store.allOff
 
@@ -170,7 +191,10 @@ class ScriptsFragment : ScriptScreenFragment() {
   private fun importFailed(reason: String?) =
     toast(getString(R.string.script_import_failed, reason.orEmpty()))
 
-  private companion object {
-    val executor = Executors.newSingleThreadExecutor()
+  companion object {
+    /** A script to ask about installing as the screen opens, from [ScriptImportActivity]. */
+    const val ARG_IMPORT_FILE = "import_file"
+
+    private val executor = Executors.newSingleThreadExecutor()
   }
 }

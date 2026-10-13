@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAc
 import com.google.android.accessibility.talkback.compositor.rule.InputTextFeedbackRules;
 import com.google.android.accessibility.talkback.compositor.rule.MagnificationStateChangedFeedbackRule;
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TypingMethod;
@@ -58,6 +59,7 @@ import com.google.android.accessibility.utils.TimedFlags;
 import com.google.android.accessibility.utils.input.WindowsDelegate;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
+import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.apps.common.proguard.UsedByReflection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -174,8 +176,10 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean usageHintEnabled = true;
   // It's enabled when [Say capital] is configured.
   private boolean sayCapital = false;
+  // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
+  private int capitalLetterFeedback = SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SPEAK_CAP;
 
-  private boolean speakPhoneticLetters = true;
+  private String phoneticLetterMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
 
   // Verbosity settings
   private boolean speakRoles = true;
@@ -476,14 +480,28 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     usageHintEnabled = enabled;
   }
 
-  /** Returns if TalkBack speak phonetic letters is enabled. */
+  /** Returns if TalkBack speaks phonetic letters, with or instead of the letter. */
   public boolean getSpeakPhoneticLettersEnabled() {
-    return speakPhoneticLetters;
+    return !PhoneticLetterMode.OFF.equals(phoneticLetterMode);
   }
 
-  /** Sets if TalkBack speak phonetic letters is enabled. */
-  public void setSpeakPhoneticLettersEnabled(boolean enabled) {
-    speakPhoneticLetters = enabled;
+  /**
+   * Returns if what is said takes the place of the letter: the letter and its word together, or the
+   * word alone. Otherwise the word, if any, follows the letter after a pause.
+   */
+  public boolean getPhoneticLetterTakesPlaceOfLetter() {
+    return PhoneticLetterMode.AFTER_LETTER_NO_DELAY.equals(phoneticLetterMode)
+        || PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Returns if the phonetic word is said in place of the letter, without the letter. */
+  public boolean getSpeakPhoneticLetterInsteadOfLetter() {
+    return PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Sets how phonetic letters are spoken, one of the {@link PhoneticLetterMode} values. */
+  public void setPhoneticLetterMode(String mode) {
+    phoneticLetterMode = mode;
   }
 
   /** Returns if TalkBack speaks capital letter. */
@@ -494,6 +512,15 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   /** Sets if TalkBack speaks capital letter. */
   public void setGlobalSayCapital(boolean enabled) {
     sayCapital = enabled;
+  }
+
+  /** Returns how capital letters are told apart, one of the CAPITAL_LETTERS_TYPE values. */
+  public int getCapitalLetterFeedback() {
+    return capitalLetterFeedback;
+  }
+
+  public void setCapitalLetterFeedback(int feedback) {
+    capitalLetterFeedback = feedback;
   }
 
   /** Returns if TalkBack uses single-tap gesture. */

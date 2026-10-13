@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.NotificationActivity;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.FullScreenReadDialog;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.preference.GestureChangeNotificationActivity;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -104,6 +105,7 @@ public class TalkBackUpdateHelper {
 
     showPendingNotifications();
     moveToFasterDefaults();
+    PhoneticLetterMode.migrate(sharedPreferences, service.getResources());
 
     final int previousVersion = sharedPreferences.getInt(PREF_APP_VERSION, VERSION_CODE_UNKNOWN);
     String previousVersionName =

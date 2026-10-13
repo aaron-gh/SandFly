@@ -925,27 +925,18 @@
         <item>50</item><!-- delayMs -->
     </integer-array>
 
-    <!-- Screen off: two falls, the second weaker, like powering down. -->
+    <!-- Screen off: one soft fall, like powering down, too quiet to pass for a notification. -->
     <integer-array name="screen_off_pattern">
         <item>0</item>
-        <item>40</item>
-        <item>40</item>
-        <item>20</item>
+        <item>25</item>
         <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
-        <item>20</item>
-        <item>140</item>
-        <item>20</item>
-        <item>113</item>
-        <item>40</item>
-        <item>0</item>
-        <item>8</item>
+        <item>12</item>
         <item>90</item>
+        <item>12</item>
+        <item>50</item>
         <item>-9999</item><!-- SENTINEL SEPARATOR -->
         <item>6</item><!-- QUICK_FALL -->
-        <item>200</item><!-- scale -->
+        <item>120</item><!-- scale -->
         <item>0</item><!-- delayMs -->
-        <item>6</item><!-- QUICK_FALL -->
-        <item>110</item><!-- scale -->
-        <item>40</item><!-- delayMs -->
     </integer-array>
 </resources>

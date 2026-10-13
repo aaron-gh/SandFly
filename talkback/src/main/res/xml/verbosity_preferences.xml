@@ -72,11 +72,14 @@
         android:title="@string/title_pref_intonation" />
 
     <!-- Phonetic spelling -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_phonetic_letters_default"
-        android:key="@string/pref_phonetic_letters_key"
-        android:summary="@string/summary_pref_phonetic_letters"
-        android:title="@string/title_pref_phonetic_letters" />
+    <ListPreference
+        android:defaultValue="@string/pref_phonetic_letters_mode_default"
+        android:dialogTitle="@string/title_pref_phonetic_letters_mode"
+        android:entries="@array/pref_phonetic_letters_mode_entries"
+        android:entryValues="@array/pref_phonetic_letters_mode_values"
+        android:key="@string/pref_phonetic_letters_mode_key"
+        android:summary="%s"
+        android:title="@string/title_pref_phonetic_letters_mode" />
 
     <!-- On-screen Keyboard echo -->
     <ListPreference

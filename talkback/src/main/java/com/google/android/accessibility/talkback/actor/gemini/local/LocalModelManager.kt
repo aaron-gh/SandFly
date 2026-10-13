@@ -29,7 +29,7 @@ import java.io.File
 import java.io.IOException
 import java.util.concurrent.CopyOnWriteArraySet
 import java.util.concurrent.Executors
-import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicReference
 
 /**
  * Owns the on-device model: its files, the download and import, and the running model. One
@@ -55,7 +55,9 @@ class LocalModelManager private constructor(context: Context) {
   private val worker =
     Executors.newSingleThreadExecutor { Thread(it, "on-device-ai-model").apply { isDaemon = true } }
   private val listeners = CopyOnWriteArraySet<() -> Unit>()
-  private val cancelDownload = AtomicBoolean(false)
+  // How the download ends once the worker sees it: Idle when the user stopped it, Failed when
+  // Android did. Null while it carries on.
+  private val stopDownload = AtomicReference<State?>(null)
   // Closing a model waits for any answer in progress, so it happens on its own thread. Nothing that
   // runs on the main thread may take llmLock or wait for a model.
   private val closer =
@@ -148,7 +150,7 @@ class LocalModelManager private constructor(context: Context) {
       setState(State.Failed(ModelFiles.Failure.LOW_SPACE))
       return
     }
-    cancelDownload.set(false)
+    stopDownload.set(null)
     val resumedFrom = store.partialBytes(model)
     setState(State.Downloading(model, resumedFrom))
     ModelDownloadService.start(appContext)
@@ -177,12 +179,12 @@ class LocalModelManager private constructor(context: Context) {
                 setState(State.Downloading(model, bytes, speed))
               }
             },
-            isCancelled = { cancelDownload.get() },
+            isCancelled = { stopDownload.get() != null },
           )
       setState(
         when (result) {
           ModelDownloader.Result.Done -> State.Idle
-          ModelDownloader.Result.Cancelled -> State.Idle
+          ModelDownloader.Result.Cancelled -> stopDownload.get() ?: State.Idle
           is ModelDownloader.Result.Failed -> State.Failed(result.failure)
         }
       )
@@ -190,7 +192,15 @@ class LocalModelManager private constructor(context: Context) {
   }
 
   fun cancelDownload() {
-    cancelDownload.set(true)
+    stopDownload.set(State.Idle)
+  }
+
+  /**
+   * Stops the download because Android ended its time, unless the user already stopped it. The
+   * part on the phone stays, so the next start carries on from there.
+   */
+  fun pauseDownload() {
+    stopDownload.compareAndSet(null, State.Failed(ModelFiles.Failure.TIME_LIMIT))
   }
 
   fun delete(model: LocalModel) {

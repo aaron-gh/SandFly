@@ -81,6 +81,7 @@ import java.util.ListIterator;
 import java.util.Locale;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.function.Function;
 import org.checkerframework.checker.initialization.qual.UnknownInitialization;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -107,6 +108,10 @@ public class SpeechControllerImpl implements SpeechController {
     @Nullable CharSequence filter(CharSequence text);
   }
 
+  /**
+   * Backtalk: marks speech from a script or another app, which sets its own rate and pitch and is
+   * said as given, without Backtalk's speech filter.
+   */
   public static final String SPEECH_PARAM_FROM_SCRIPT = "backtalk.fromScript";
 
   private static volatile @Nullable SpeechFilter speechFilter;
@@ -252,6 +257,9 @@ public class SpeechControllerImpl implements SpeechController {
 
   /** The feedback of capital letter (default is "Cap") */
   @CapitalLetterHandlingMethod private int capLetterFeedback = CAPITAL_LETTERS_TYPE_SPEAK_CAP;
+
+  // What to say for a letter when spelling, if not the letter. See setLetterSpeller.
+  private @Nullable Function<CharSequence, @Nullable CharSequence> letterSpeller;
 
   /** The speech pitch adjustment for capital letters. */
   private static final float CAPITAL_LETTER_PITCH_RATE = 1.8f;
@@ -848,6 +856,14 @@ public class SpeechControllerImpl implements SpeechController {
     return true;
   }
 
+  /**
+   * Sets what to say for a letter when spelling, such as its phonetic word, or {@code null} to say
+   * the letter. The function returns {@code null} for a character to say it as usual.
+   */
+  public void setLetterSpeller(@Nullable Function<CharSequence, @Nullable CharSequence> speller) {
+    letterSpeller = speller;
+  }
+
   /** Spells the last spoken utterance. */
   public boolean spellLastUtterance() {
     FeedbackItem last = getLastUtterance();
@@ -891,8 +907,11 @@ public class SpeechControllerImpl implements SpeechController {
         continue;
       }
       final String cleanedChar = SpeechCleanupUtils.getCleanValueFor(mContext, text.charAt(i));
+      @Nullable CharSequence spelledLetter =
+          (letterSpeller == null) ? null : letterSpeller.apply(String.valueOf(text.charAt(i)));
 
-      StringBuilderUtils.appendWithSeparator(builder, cleanedChar);
+      StringBuilderUtils.appendWithSeparator(
+          builder, (spelledLetter == null) ? cleanedChar : spelledLetter);
     }
     SpeakOptions options = SpeakOptions.create();
     options.mQueueMode = QUEUE_MODE_BIT_INTERRUPT | QUEUE_MODE_BIT_UNINTERRUPTIBLE_BY_NEW_SPEECH;
@@ -1733,6 +1752,41 @@ public class SpeechControllerImpl implements SpeechController {
     }
   }
 
+  /**
+   * Backtalk: stops the speech in {@code utteranceGroup}, whether queued or speaking, and leaves
+   * all other speech as it is, so that speech another app asked for can be stopped without
+   * stopping Backtalk's own.
+   */
+  public void stopUtteranceGroup(@UtteranceGroup int utteranceGroup) {
+    if (!mHandler.getLooper().isCurrentThread()) {
+      mHandler.post(() -> stopUtteranceGroup(utteranceGroup));
+      return;
+    }
+    ListIterator<FeedbackItem> iterator = feedbackQueue.listIterator(0);
+    while (iterator.hasNext()) {
+      FeedbackItem item = iterator.next();
+      if (item.getUtteranceGroup() == utteranceGroup) {
+        iterator.remove();
+        notifyItemInterrupted(item);
+      }
+    }
+    if (currentFeedbackItem == null || currentFeedbackItem.getUtteranceGroup() != utteranceGroup) {
+      return;
+    }
+    notifyItemInterrupted(currentFeedbackItem);
+    currentFragmentIterator = null;
+    // Stopped before the next item starts, which would otherwise queue behind it.
+    failoverTts.stopFromTalkBack();
+    if (!feedbackQueue.isEmpty()) {
+      speakNextItem();
+    } else {
+      final String utteranceId = currentFeedbackItem.getUtteranceId();
+      onFragmentCompleted(
+          utteranceId, /* success= */ false, /* advance= */ true, /* notifyObserver= */ true);
+      currentFeedbackItem = null;
+    }
+  }
+
   @NonNull
   public String getTtsSubAppId() {
     return ttsSubAppId;
@@ -2036,11 +2090,13 @@ public class SpeechControllerImpl implements SpeechController {
           params.get("com.google.android.tts:SubapplicationIdentifierId"));
     }
 
+    final float volume = speechVolume * parseFloatParam(params, SpeechParam.VOLUME, 1);
+
     // Utterance ID, stream, and volume override item params.
     final int stream = FailoverTextToSpeech.getSpeechAudioStream(mContext);
     params.put(Engine.KEY_PARAM_UTTERANCE_ID, feedbackItem.getUtteranceId());
     params.put(Engine.KEY_PARAM_STREAM, String.valueOf(stream));
-    params.put(Engine.KEY_PARAM_VOLUME, String.valueOf(speechVolume));
+    params.put(Engine.KEY_PARAM_VOLUME, String.valueOf(volume));
     HashMap<String, Integer> customFlags = new HashMap<>();
 
     if (feedbackItem.hasFlag(FeedbackItem.FLAG_CHUNKING_APPLIED)) {
@@ -2067,8 +2123,10 @@ public class SpeechControllerImpl implements SpeechController {
 
     final boolean preventDeviceSleep = feedbackItem.hasFlag(FeedbackItem.FLAG_NO_DEVICE_SLEEP);
 
-    // for capital letter
-    if (text != null && text.length() == 1 && Character.isUpperCase(text.charAt(0))) {
+    // for capital letter, or a phonetic word said in place of one
+    if (text != null
+        && ((text.length() == 1 && Character.isUpperCase(text.charAt(0)))
+            || CapitalLetterSpan.covers(text))) {
       switch (capLetterFeedback) {
         case CAPITAL_LETTERS_TYPE_SPEAK_CAP -> {
           // To resolve the limitation of [length == 1]. "Say capital" is handled by compositor
@@ -2113,7 +2171,7 @@ public class SpeechControllerImpl implements SpeechController {
         params,
         customFlags,
         stream,
-        speechVolume,
+        volume,
         preventDeviceSleep,
         feedbackItem.shouldFlushGlobalTtsQueue(),
         eventId);

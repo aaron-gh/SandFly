@@ -128,6 +128,10 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
       }
     }
 
+    // The user can choose to hear the phonetic word with or in place of the key.
+    Optional<CharSequence> phoneticInPlaceOfKey =
+        processorPhoneticLetters.getPhoneticInPlaceOfKeyboardKey(event);
+
     // Prepare Unlabelled description or Node tree description or Event description for feedback.
     CharSequence nodeUnlabelledState =
         AccessibilityNodeFeedbackUtils.getUnlabelledNodeDescription(
@@ -135,7 +139,10 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
     CharSequence eventDescription =
         AccessibilityEventFeedbackUtils.getEventContentDescriptionOrEventAggregateText(
             event, preferredLocale);
-    if (!TextUtils.isEmpty(nodeUnlabelledState)) {
+    if (phoneticInPlaceOfKey.isPresent()) {
+      outputJoinList.add(phoneticInPlaceOfKey.get());
+      logString.append(String.format("\n    phoneticInPlaceOfKey={%s}", phoneticInPlaceOfKey));
+    } else if (!TextUtils.isEmpty(nodeUnlabelledState)) {
       CharSequence unlabelledDescription =
           TextUtils.isEmpty(eventDescription) ? nodeUnlabelledState : eventDescription;
       outputJoinList.add(unlabelledDescription);
@@ -155,10 +162,12 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
     }
 
     // Add phonetic spelling if necessary.
-    Optional<CharSequence> phoneticExample =
-        processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
-    phoneticExample.ifPresent(outputJoinList::add);
-    logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
+    if (!phoneticInPlaceOfKey.isPresent()) {
+      Optional<CharSequence> phoneticExample =
+          processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
+      phoneticExample.ifPresent(outputJoinList::add);
+      logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
+    }
 
     LogUtils.v(TAG, "viewAccessibilityFocusedDescription: %s", logString.toString());
 

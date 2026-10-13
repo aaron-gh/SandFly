@@ -76,6 +76,7 @@ enum class RuleAspect {
   HEADING,
   GROUP,
   ORDER,
+  ACTIVATE,
 }
 
 class NodeRule(
@@ -90,6 +91,8 @@ class NodeRule(
   val group: Boolean,
   val order: NodeOverrides.Order?,
   val sources: List<String>,
+  /** The item inside this one that a double-tap presses, if a rule chose one. */
+  val activate: ((AccessibilityNodeInfoCompat) -> AccessibilityNodeInfoCompat?)? = null,
 ) {
   val hidesDescendants: Boolean
     get() = hideInside || group
@@ -164,8 +167,14 @@ object Scripts {
   fun actionTarget(
     node: AccessibilityNodeInfoCompat,
     longClick: Boolean,
-  ): AccessibilityNodeInfoCompat =
-    if (group(node) != null) ScriptGroups.actionTarget(node, longClick) else node
+  ): AccessibilityNodeInfoCompat {
+    if (!longClick) {
+      rule(node, RuleAspect.ACTIVATE)?.activate?.invoke(node)?.let {
+        return it
+      }
+    }
+    return if (group(node) != null) ScriptGroups.actionTarget(node, longClick) else node
+  }
 
   @JvmStatic
   fun onGesture(gestureId: Int, fallback: Runnable): Boolean =

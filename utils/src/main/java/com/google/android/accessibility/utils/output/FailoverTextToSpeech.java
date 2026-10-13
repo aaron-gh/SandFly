@@ -233,6 +233,12 @@ public class FailoverTextToSpeech {
 
   public static final String PREF_TTS_ENGINE_KEY = "pref_tts_engine";
   public static final String PREF_USE_ACCESSIBILITY_STREAM_KEY = "pref_use_accessibility_stream";
+
+  /**
+   * Set while Backtalk routes its audio to a chosen device, which only accessibility audio follows.
+   * Not a user setting.
+   */
+  public static final String PREF_ROUTE_FORCED_KEY = "pref_audio_route_forced";
   private static final boolean USE_ACCESSIBILITY_STREAM_DEFAULT = true;
   public static final String PREF_SPEAK_IN_PHRASES_KEY = "pref_speak_in_phrases";
   private static final boolean SPEAK_IN_PHRASES_DEFAULT = false;
@@ -352,7 +358,8 @@ public class FailoverTextToSpeech {
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
-        } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)) {
+        } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
+            || PREF_ROUTE_FORCED_KEY.equals(key)) {
           applyAudioAttributes();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
           speakInPhrases = sharedPrefs.getBoolean(key, SPEAK_IN_PHRASES_DEFAULT);
@@ -530,14 +537,13 @@ public class FailoverTextToSpeech {
   }
 
   public static boolean shouldUseAccessibilityStream(Context context) {
-    String audioTarget =
-        SharedPreferencesUtils.getSharedPreferences(context)
-            .getString("pref_audio_output_device", "default");
-    if (!TextUtils.isEmpty(audioTarget) && !"default".equals(audioTarget)) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    // Only accessibility audio follows a device that Backtalk routes to. While it routes nowhere,
+    // as with the phone speaker chosen and nothing else connected, the user's choice stands.
+    if (prefs.getBoolean(PREF_ROUTE_FORCED_KEY, false)) {
       return true;
     }
-    return SharedPreferencesUtils.getSharedPreferences(context)
-        .getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT);
+    return prefs.getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT);
   }
 
   public static int getSpeechAudioStream(Context context) {

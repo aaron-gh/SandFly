@@ -13,8 +13,12 @@ def gitOutput = { List<String> args ->
 }
 def commitCount = gitOutput(['rev-list', '--count', 'HEAD'])
 def commitHash = gitOutput(['rev-parse', 'HEAD'])
+// Added to the commit count to give the build number. Build numbers only ever go up, so this can
+// grow but never shrink. It was raised past local builds that had been numbered ahead of master.
+// The publish job in .github/workflows/build.yml reads it from here.
+def buildNumberOffset = 20
 ext {
-    gitCommitCount = commitCount.isInteger() ? commitCount.toInteger() : 1
+    gitCommitCount = (commitCount.isInteger() ? commitCount.toInteger() : 1) + buildNumberOffset
     // Version codes start above TalkBack's, so that its upgrade steps for old versions never run.
     backtalkVersionCodeBase = 70000000
     gitCommitHash = commitHash ==~ /[0-9a-f]{40}/ ? commitHash : ''

@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
+import android.content.pm.PackageManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityWindowInfo
 import org.json.JSONObject
@@ -26,6 +27,8 @@ class ScriptActivation(private val service: AccessibilityService) {
   private var activePackage: String? = null
   private var focusedPackage: String? = null
   private val activityByPackage = HashMap<String, String>()
+  private var metaDataPackage: String? = null
+  private var metaData = JSONObject()
 
   var windowTitle: String? = null
     private set
@@ -51,7 +54,44 @@ class ScriptActivation(private val service: AccessibilityService) {
   fun refresh() {
     readActiveWindow()
     appInfo =
-      jsonObject("package" to activePackage, "activity" to activity, "window" to windowTitle)
+      jsonObject(
+        "package" to activePackage,
+        "activity" to activity,
+        "window" to windowTitle,
+        "meta" to frontAppMetaData(),
+      )
+  }
+
+  /** The front app's manifest meta-data, read again only when another app comes to the front. */
+  private fun frontAppMetaData(): JSONObject {
+    val pkg = activePackage
+    if (pkg != metaDataPackage) {
+      metaDataPackage = pkg
+      metaData = pkg?.let(::readMetaData) ?: JSONObject()
+    }
+    return metaData
+  }
+
+  private fun readMetaData(pkg: String): JSONObject {
+    val meta = JSONObject()
+    val bundle =
+      try {
+        service.packageManager.getApplicationInfo(pkg, PackageManager.GET_META_DATA).metaData
+      } catch (e: PackageManager.NameNotFoundException) {
+        null
+      } ?: return meta
+    for (key in bundle.keySet()) {
+      @Suppress("DEPRECATION")
+      when (val value = bundle.get(key)) {
+        is Boolean,
+        is Int,
+        is Long,
+        is Float,
+        is Double,
+        is String -> meta.put(key, value)
+      }
+    }
+    return meta
   }
 
   /**

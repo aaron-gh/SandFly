@@ -154,6 +154,7 @@ private constructor(
         group = rules.any { it.group },
         order = first(::orderOf),
         sources = sources,
+        activate = first { it.activate }?.let { query -> { node -> query.firstIn(node) } },
       )
     }
 
@@ -194,6 +195,7 @@ private constructor(
         RuleAspect.HEADING.takeIf { rule.heading != null },
         RuleAspect.GROUP.takeIf { rule.group },
         RuleAspect.ORDER.takeIf { rule.readBefore != null || rule.readAfter != null },
+        RuleAspect.ACTIVATE.takeIf { rule.activate != null },
       )
   }
 

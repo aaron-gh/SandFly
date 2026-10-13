@@ -82,6 +82,7 @@ class ManifestParser(private val strict: Boolean) {
         readBefore = targetOf(json.opt("readBefore")),
         readAfter = targetOf(json.opt("readAfter")),
         actions = itemActions(json.optJSONArray("actions")),
+        activate = json.optJSONObject("activate")?.let { query(it) },
       )
     with(rule) {
       manifestCheck(id != null || match != null) { "A rule needs id or match" }
@@ -91,7 +92,7 @@ class ManifestParser(private val strict: Boolean) {
       }
       manifestCheck(changesItem || actions.isNotEmpty()) {
         "The rule for $target needs label, speak, hide, role, state, hint, heading, group, " +
-          "readBefore, readAfter or actions"
+          "readBefore, readAfter, activate or actions"
       }
     }
     return rule
@@ -178,6 +179,12 @@ class ManifestParser(private val strict: Boolean) {
     }
     manifestCheck(!nested || !json.has("inside")) { "inside can't hold another inside" }
     json.optJSONObject("inside")?.let { query(it, nested = true) }
+    manifestCheck(!json.has("has") || json.opt("has") is JSONObject) { "has is an object, like match" }
+    manifestCheck(!nested || !json.has("has")) { "has can't hold another has, and inside can't hold has" }
+    json.optJSONObject("has")?.let {
+      manifestCheck(!it.has("inside")) { "has can't hold inside" }
+      query(it, nested = true)
+    }
     val query = NodeQuery.of(json)
     manifestCheck(query != NodeQuery()) { "A match needs at least one field" }
     checkRole(query.role)
@@ -347,6 +354,7 @@ class ManifestParser(private val strict: Boolean) {
         "readBefore",
         "readAfter",
         "actions",
+        "activate",
       )
   }
 }

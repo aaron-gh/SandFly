@@ -299,15 +299,21 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
           String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
     }
 
-    if (!TextUtils.isEmpty(contentDescription)) {
-      outputJoinList.add(contentDescription);
+    // Add phonetic spelling if necessary, or say it in place of the key if the user chose that.
+    Optional<CharSequence> phoneticInPlaceOfKey =
+        processorPhoneticLetters.getPhoneticInPlaceOfKeyboardKey(event);
+    if (phoneticInPlaceOfKey.isPresent()) {
+      outputJoinList.add(phoneticInPlaceOfKey.get());
+      logString.append(String.format("\n    phoneticInPlaceOfKey={%s}", phoneticInPlaceOfKey));
+    } else {
+      if (!TextUtils.isEmpty(contentDescription)) {
+        outputJoinList.add(contentDescription);
+      }
+      Optional<CharSequence> phoneticExample =
+          processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
+      phoneticExample.ifPresent(outputJoinList::add);
+      logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
     }
-
-    // Add phonetic spelling if necessary.
-    Optional<CharSequence> phoneticExample =
-        processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
-    phoneticExample.ifPresent(outputJoinList::add);
-    logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
 
     // Prepare Collection item transition state or Node role/heading description for feedback.
     if (!transitionBeforeContent) {
