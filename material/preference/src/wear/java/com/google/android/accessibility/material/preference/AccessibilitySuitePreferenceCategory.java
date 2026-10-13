@@ -29,4 +29,7 @@ public class AccessibilitySuitePreferenceCategory extends ComposePreferenceCateg
   public AccessibilitySuitePreferenceCategory(Context context, @Nullable AttributeSet attrs) {
     super(context, attrs);
   }
+
+  /** Categories are not collapsible on the wear platform. */
+  public void setCollapsible(CharSequence collapsedSummary, CharSequence expandedSummary) {}
 }

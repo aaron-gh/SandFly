@@ -124,6 +124,8 @@ public class ContextMenuFragment extends TalkbackBaseFragment {
       keyboardShortcutsPreference.setVisible(
           FeatureFlagReader.enableShowKeyboardShortcutsDialog(context));
     }
+
+    collapseCategories();
   }
 
   @Override
