@@ -94,8 +94,11 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="fyi.quin.backtalk.permission.MIGRATE" />
 
+    <!-- Named after the app ID, because Android refuses to install an app that declares a
+         permission another app, signed with a different key, already declares. Under
+         fyi.quin.backtalk the name is fyi.quin.backtalk.permission.SPEAK. -->
     <permission
-        android:name="fyi.quin.backtalk.permission.SPEAK"
+        android:name="${applicationId}.permission.SPEAK"
         android:label="@string/permission_speak_label"
         android:description="@string/permission_speak_description"
         android:protectionLevel="normal" />
@@ -413,7 +416,7 @@
         <receiver
             android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlReceiver"
             android:exported="true"
-            android:permission="fyi.quin.backtalk.permission.SPEAK">
+            android:permission="${applicationId}.permission.SPEAK">
             <intent-filter>
                 <action android:name="fyi.quin.backtalk.action.SPEAK" />
                 <action android:name="fyi.quin.backtalk.action.STOP_SPEECH" />
@@ -426,7 +429,7 @@
         <service
             android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlService"
             android:exported="true"
-            android:permission="fyi.quin.backtalk.permission.SPEAK">
+            android:permission="${applicationId}.permission.SPEAK">
             <intent-filter>
                 <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
             </intent-filter>
