@@ -58,7 +58,7 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
   }
 
   public void setCollapsed(boolean collapsed) {
-    if (!collapsible) {
+    if (!collapsible || collapsed == this.collapsed) {
       return;
     }
     this.collapsed = collapsed;
