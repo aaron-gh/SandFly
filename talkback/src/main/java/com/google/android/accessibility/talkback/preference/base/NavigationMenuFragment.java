@@ -15,6 +15,7 @@
  */
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.os.Bundle;
 import com.google.android.accessibility.talkback.R;
 
 /** Panel holding a set of navigation menu preferences. */
@@ -24,6 +25,12 @@ public class NavigationMenuFragment extends TalkbackBaseFragment {
   // no-argument constructor is not available.
   public NavigationMenuFragment() {
     super(R.xml.navigation_menu_preferences);
+  }
+
+  @Override
+  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    super.onCreatePreferences(savedInstanceState, rootKey);
+    collapseCategories();
   }
 
   @Override

@@ -19,6 +19,9 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.StringRes;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
+import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
 import com.google.android.accessibility.utils.preference.BasePreferencesFragment;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -66,6 +69,27 @@ public abstract class TalkbackBaseFragment extends BasePreferencesFragment {
       }
       TalkBackPreferenceFilter talkBackPreferenceFilter = new TalkBackPreferenceFilter(context);
       talkBackPreferenceFilter.filterPreferences(getPreferenceScreen());
+    }
+  }
+
+  /**
+   * Collapses every category of the screen. Call after the preferences have their final
+   * visibility.
+   */
+  protected void collapseCategories() {
+    PreferenceScreen screen = getPreferenceScreen();
+    Context context = getContext();
+    if (screen == null || context == null) {
+      return;
+    }
+    for (int i = 0; i < screen.getPreferenceCount(); i++) {
+      Preference preference = screen.getPreference(i);
+      if (preference instanceof AccessibilitySuitePreferenceCategory) {
+        ((AccessibilitySuitePreferenceCategory) preference)
+            .setCollapsible(
+                context.getString(R.string.category_collapsed),
+                context.getString(R.string.category_expanded));
+      }
     }
   }
 
