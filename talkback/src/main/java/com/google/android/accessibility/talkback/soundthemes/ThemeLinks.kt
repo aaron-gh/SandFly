@@ -81,12 +81,13 @@ object ThemeLinks {
   }
 
   /**
-   * Copies [input] into [file], up to 60 MB, the most a theme can be. Throws if there is more, so
-   * that a stream that never ends cannot fill the storage.
+   * Copies [input] into [file], up to [maxBytes], which is 60 MB, the most a theme can be, unless
+   * given. Throws if there is more, so that a stream that never ends cannot fill the storage.
    */
   @JvmStatic
+  @JvmOverloads
   @Throws(IOException::class)
-  fun copyLimited(input: InputStream, file: File) {
+  fun copyLimited(input: InputStream, file: File, maxBytes: Long = MAX_BYTES) {
     file.outputStream().use { output ->
       val buffer = ByteArray(64 * 1024)
       var total = 0L
@@ -94,16 +95,22 @@ object ThemeLinks {
         val count = input.read(buffer)
         if (count < 0) break
         total += count
-        if (total > MAX_BYTES) throw IOException("larger than 60 MB")
+        if (total > maxBytes) throw IOException(tooLarge(maxBytes))
         output.write(buffer, 0, count)
       }
     }
   }
 
-  /** Downloads [url] into [file], following redirects as long as they stay on https. */
+  private fun tooLarge(maxBytes: Long) = "larger than ${maxBytes / (1024 * 1024)} MB"
+
+  /**
+   * Downloads [url] into [file], following redirects as long as they stay on https, up to
+   * [maxBytes].
+   */
   @JvmStatic
+  @JvmOverloads
   @Throws(IOException::class)
-  fun fetch(url: String, file: File) {
+  fun fetch(url: String, file: File, maxBytes: Long = MAX_BYTES) {
     var current = URL(url)
     repeat(MAX_REDIRECTS) {
       if (current.protocol != "https") throw IOException("only https links can be used")
@@ -119,8 +126,8 @@ object ThemeLinks {
           return@repeat
         }
         if (code != HttpURLConnection.HTTP_OK) throw IOException("HTTP $code")
-        if (connection.contentLengthLong > MAX_BYTES) throw IOException("larger than 60 MB")
-        connection.inputStream.use { copyLimited(it, file) }
+        if (connection.contentLengthLong > maxBytes) throw IOException(tooLarge(maxBytes))
+        connection.inputStream.use { copyLimited(it, file, maxBytes) }
         return
       } finally {
         connection.disconnect()

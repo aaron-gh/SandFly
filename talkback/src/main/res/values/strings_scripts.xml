@@ -251,4 +251,35 @@
     <string name="script_install_adds">It adds:</string>
     <!-- One command a script adds, and how it is run, in the install dialog. [CHAR LIMIT=NONE] -->
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+
+    <!-- Title of the screen, and the entry on the Scripts screen, for the places to find scripts. [CHAR LIMIT=40] -->
+    <string name="script_sources">Script sources</string>
+    <!-- Shown when no script sources have been added. [CHAR LIMIT=NONE] -->
+    <string name="script_sources_none">No sources added</string>
+    <!-- Action and title of the dialog that adds a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_add">Add source</string>
+    <!-- Button of the dialog that adds a script source. [CHAR LIMIT=20] -->
+    <string name="script_source_add_button">Add</string>
+    <!-- Hint of the field for the address of a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <!-- Shown when the address entered for a script source is not a repository or folder on a supported service. [CHAR LIMIT=NONE] -->
+    <string name="script_source_invalid">Not the address of a repository on GitHub, GitLab, Codeberg, Gitea or Bitbucket.</string>
+    <!-- Shown when the script source being added is already in the list. [CHAR LIMIT=NONE] -->
+    <string name="script_source_exists">This source is already added.</string>
+    <!-- Shown while the scripts of a source are loading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_loading">Loading</string>
+    <!-- Shown when a source has no scripts. [CHAR LIMIT=NONE] -->
+    <string name="script_source_empty">No scripts in this source</string>
+    <!-- Shown when the scripts of a source could not be loaded. [CHAR LIMIT=NONE] -->
+    <string name="script_source_failed">Could not load scripts. <xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- Action that loads the scripts of a source again. [CHAR LIMIT=40] -->
+    <string name="script_source_retry">Try again</string>
+    <!-- Shown while a script from a source is downloading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_downloading">Downloading <xliff:g id="name">%1$s</xliff:g></string>
+    <!-- Action and button that remove a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_remove">Remove source</string>
+    <!-- Title of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_title">Remove <xliff:g id="name">%1$s</xliff:g>?</string>
+    <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_message">Scripts installed from it stay installed.</string>
 </resources>
