@@ -205,6 +205,9 @@ public class LibLouis implements TranslatorFactory {
       case "MARATHI_IN" -> {
         return new LibLouisTranslator(context, "mr.tbl");
       }
+      case "MONGOLIAN" -> {
+        return getBrailleTranslator(context, contractedMode, "mn-MN-g1.utb", "mn-MN-g2.ctb");
+      }
       case "NEPALI" -> {
         return new LibLouisTranslator(context, "ne.ctb");
       }
