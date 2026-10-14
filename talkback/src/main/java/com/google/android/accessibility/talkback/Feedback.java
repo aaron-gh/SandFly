@@ -1489,6 +1489,7 @@ public abstract class Feedback {
       START_SELECT,
       END_SELECT,
       COPY,
+      CLEAR_SELECTION,
       CUT,
       PASTE,
       DELETE,
@@ -1500,7 +1501,8 @@ public abstract class Feedback {
       TOGGLE_VOICE_DICTATION;
     }
 
-    public abstract AccessibilityNodeInfoCompat node();
+    /** The node edited. Null for actions that work without one, such as copying kept text. */
+    public abstract @Nullable AccessibilityNodeInfoCompat node();
 
     public abstract Action action();
 
