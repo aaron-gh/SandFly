@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!--
+      These BackTalk-specific strings are intentionally translated incrementally by the community.
+      Czech now provides them, while many of the inherited TalkBack locales do not yet do so.
+      Keep MissingTranslation enabled globally and suppress it only for these exact resources.
+    -->
+    <issue id="MissingTranslation">
+        <ignore regexp="title_pref_mute_speech_while_recording" />
+        <ignore regexp="summary_pref_mute_speech_while_recording" />
+        <ignore regexp="title_pref_category_feedback" />
+        <ignore regexp="title_pref_category_typing_and_braille" />
+        <ignore regexp="title_pref_category_more" />
+        <ignore regexp="title_pref_emoji_speech" />
+        <ignore regexp="emoji_speech_engine" />
+        <ignore regexp="emoji_speech_names" />
+        <ignore regexp="emoji_speech_none" />
+        <ignore regexp="summary_selector_menu_emoji" />
+        <ignore regexp="title_pref_emoji_repeat_count" />
+        <ignore regexp="emoji_repeat_count_off" />
+        <ignore regexp="emoji_repeat_count_2" />
+        <ignore regexp="emoji_repeat_count_3" />
+        <ignore regexp="emoji_repeat_count_4" />
+        <ignore regexp="emoji_repeat_count_5" />
+        <ignore regexp="emoji_repeat_count_6" />
+        <ignore regexp="title_pref_brightness" />
+        <ignore regexp="summary_support_change_brightness" />
+        <ignore regexp="title_pref_shortcut_3finger_4tap" />
+        <ignore regexp="title_pref_multi_tap_timeout" />
+        <ignore regexp="value_multi_tap_timeout_100ms" />
+        <ignore regexp="value_multi_tap_timeout_150ms" />
+        <ignore regexp="value_multi_tap_timeout_200ms" />
+        <ignore regexp="value_multi_tap_timeout_250ms" />
+        <ignore regexp="item_detail_name" />
+        <ignore regexp="item_detail_type" />
+        <ignore regexp="item_detail_state" />
+        <ignore regexp="action_move_up" />
+        <ignore regexp="action_move_down" />
+        <ignore regexp="template_list_position" />
+        <ignore regexp="template_item_details_order_picked_up" />
+        <ignore regexp="template_item_details_order_dropped" />
+        <ignore regexp="item_details_order_footer" />
+        <ignore regexp="title_pref_speak_items_before_scroll" />
+        <ignore regexp="title_pref_phonetic_letters_mode" />
+        <ignore regexp="phonetic_letters_mode_off" />
+        <ignore regexp="phonetic_letters_mode_after_letter_delay" />
+        <ignore regexp="phonetic_letters_mode_after_letter_no_delay" />
+        <ignore regexp="phonetic_letters_mode_instead_of_letter" />
+    </issue>
+</lint>

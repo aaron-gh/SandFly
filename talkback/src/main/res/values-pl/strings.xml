@@ -8,8 +8,8 @@
   <string name="tts_preferences_title">Zamiana tekstu na mowę</string>
   <string name="language_options">Języki</string>
   <string name="spoken_language">Język wypowiedzi</string>
-  <string name="actions">Działania</string>
-  <string name="system_actions">Działania systemowe</string>
+  <string name="actions">Czynności</string>
+  <string name="system_actions">Czynności systemowe</string>
   <string name="talkback_preferences_subtitle">Wersja %1$s</string>
   <string name="label_manager_summary_title">Zarządzaj etykietami niestandardowymi</string>
   <string name="label_manager_package_title">Zarządzaj etykietami dla: %1$s</string>
@@ -41,7 +41,7 @@
   <string name="summary_pref_verbose_scroll_announcement">Odczytuj liczbę elementów niezależnie od metody przewijania</string>
   <string name="title_pref_cover_proximity_sensor">Zakryj czujnik zbliżeniowy, by zatrzymać wypowiedź</string>
   <string name="title_pref_phonetic_letters">Odczytuj litery z przykładami</string>
-  <string name="summary_pref_phonetic_letters">Podczas wybierania klawiszy na klawiaturze lub przechodzenia po poszczególnych znakach usłyszysz każdą literę wraz z przykładem, np. „h – hotel”.</string>
+  <string name="summary_pref_phonetic_letters">Podczas wybierania przycisków klawiatury ekranowej lub przechodzenia po poszczególnych znakach usłyszysz każdą literę wraz z przykładem, np. „h – hotel”.</string>
   <string name="title_pref_punctuation">Odczytuj znaki interpunkcyjne i symbole</string>
   <string name="punctuation_all">Wszystkie</string>
   <string name="punctuation_most">Większość</string>
@@ -63,7 +63,7 @@
   <string name="confirm_focus_delay_reading_control_added_dialog_title">Dodano opóźnienie zaznaczenia do sterowania czytaniem</string>
   <string name="confirm_focus_delay_reading_control_added_dialog_message">Przesuń 3 palcami, aby włączyć sterowanie czytaniem i móc w dowolnym momencie zmienić opóźnienie zaznaczenia</string>
   <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Przełączyć się na wpisywanie po puszczeniu?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Jeśli opóźnienie zaznaczenia podczas pisania zostanie ustawione na mniej niż 0,3 sekundy, dwukrotne kliknięcie w celu wpisania tekstu będzie bardzo trudne. Wybierz „Przełącz”, aby automatycznie przełączyć się na wpisywanie po puszczeniu.\n\nGdy używasz tej funkcji, przytrzymaj palec na ekranie w celu wybrania klawisza, a następnie puść, aby wpisać znak.\n\nMożesz dostosować działanie w ustawieniach TalkBack.</string>
+  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Jeśli opóźnienie zaznaczenia podczas pisania zostanie ustawione na mniej niż 0,3 sekundy, dwukrotne kliknięcie w celu wpisania tekstu będzie bardzo trudne. Wybierz „Przełącz”, aby automatycznie przełączyć się na wpisywanie po puszczeniu.\n\nGdy używasz tej funkcji, przytrzymaj palec na ekranie w celu wybrania przycisku klawiatury, a następnie puść, aby wpisać znak.\n\nMożesz dostosować działanie w ustawieniach TalkBack.</string>
   <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Dodano opóźnienie zaznaczenia przy wpisywaniu do sterowania czytaniem</string>
   <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Jeśli masz problemy z dwukrotnym kliknięciem podczas pisania, przesuń 3 palcami, aby włączyć sterowanie czytaniem i zwiększyć opóźnienie zaznaczenia podczas pisania</string>
   <string name="gestures_announce_typing_focus_wont_change">Opóźnienie zaznaczenia podczas pisania nie działa bez funkcji wpisywania po puszczeniu.</string>
@@ -236,7 +236,7 @@
   <string name="keycombo_menu_other_show_control_list">Pokaż listę elementów sterujących</string>
   <string name="keycombo_menu_other_show_table_list">Pokaż listę tabel</string>
   <string name="keycombo_menu_other_talkback_context_menu">Pokaż menu TalkBack</string>
-  <string name="keycombo_menu_other_custom_actions">Pokaż działania</string>
+  <string name="keycombo_menu_other_custom_actions">Pokaż czynności</string>
   <string name="keycombo_menu_other_language_options">Pokaż zainstalowane języki</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Skopiuj ostatnią wypowiedź</string>
   <string name="keycombo_menu_other_open_tts_settings">Otwórz ustawienia zamiany tekstu na mowę</string>
@@ -346,7 +346,7 @@
   <string name="title_pref_brailledisplay">Monitor brajlowski</string>
   <string name="title_pref_brailleime">Klawiatura brajlowska</string>
   <string name="summary_pref_brailleime_disabled">Klawiatura brajlowska nieobsługiwana</string>
-  <string name="title_pref_speech_footer">Możesz szybko dostosować niektóre ustawienia dźwięku TalkBack na dowolnym ekranie.\n\nGłośność ułatwień dostępu: przytrzymaj 1 palec na ekranie i naciśnij przycisk zwiększania lub zmniejszania głośności.\nSzybkość mowy TalkBack: przesuń 3 palcami w górę lub w dół. Gdy usłyszysz „szybkość mowy”, przesuń 1 palcem w górę lub w dół.</string>
+  <string name="title_pref_speech_footer">Możesz szybko dostosować niektóre ustawienia dźwięku TalkBack na dowolnym ekranie.\n\nGłośność dostępności: przytrzymaj 1 palec na ekranie i naciśnij przycisk zwiększania lub zmniejszania głośności.\nSzybkość mowy TalkBack: przesuń 3 palcami w górę lub w dół. Gdy usłyszysz „szybkość mowy”, przesuń 1 palcem w górę lub w dół.</string>
   <string name="title_pref_vibration">Sygnał wibracyjny</string>
   <string name="title_pref_soundback">Sygnał dźwiękowy</string>
   <string name="title_pref_use_audio_focus">Wyciszanie tła</string>
@@ -426,7 +426,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="screen_dimming_exit_instruction_line1">Usługa ułatwień dostępu TalkBack ukryła ekran</string>
   <string name="screen_dimming_exit_instruction_line2">Jeśli chcesz to zmienić, %1$s, aby otworzyć menu TalkBack, wybierz „%2$s”, a następnie kliknij dwukrotnie.</string>
   <string name="shortcut_title_basic_navigation">Nawigacja podstawowa</string>
-  <string name="shortcut_title_system_actions">Działania systemowe</string>
+  <string name="shortcut_title_system_actions">Czynności systemowe</string>
   <string name="shortcut_title_reading_control">Czytanie</string>
   <string name="shortcut_title_menu_control">Menu i elementy sterujące</string>
   <string name="shortcut_title_text_editing">Edytowanie tekstu</string>
@@ -451,7 +451,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="shortcut_overview">Przegląd</string>
   <string name="shortcut_notifications">Powiadomienia</string>
   <string name="shortcut_quick_settings">Szybkie ustawienia</string>
-  <string name="shortcut_show_custom_actions">Pokaż działania niestandardowe</string>
+  <string name="shortcut_show_custom_actions">Pokaż czynności niestandardowe</string>
   <string name="shortcut_talkback_breakout">Otwórz menu TalkBack</string>
   <string name="shortcut_pause_or_resume_feedback">Wstrzymaj lub wznów komunikaty głosowe</string>
   <string name="shortcut_toggle_voice_feedback">Włącz lub wyłącz komunikaty głosowe</string>
@@ -544,7 +544,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="title_copy_last_spoken_phrase">Skopiuj ostatnią wypowiedź</string>
   <string name="title_spell_last_spoken_phrase">Przeliteruj ostatnią wypowiedź</string>
   <string name="title_repeat_last_spoken_phrase">Powtórz ostatnią wypowiedź</string>
-  <string name="title_custom_action">Działania</string>
+  <string name="title_custom_action">Czynności</string>
   <string name="title_show_hide_screen">Ukryj lub pokaż ekran</string>
   <string name="title_control_speak_time">Wypowiadaj godzinę</string>
   <string name="title_show_screen_search">Wyszukiwanie zawartości ekranu</string>
@@ -557,13 +557,13 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="title_action_expand">Rozwiń</string>
   <string name="title_action_collapse">Zwiń</string>
   <string name="title_action_copy">Kopiuj</string>
-  <string name="context_menu_category_contextual_actions">Działania dla bieżącego elementu</string>
+  <string name="context_menu_category_contextual_actions">Czynności dla bieżącego elementu</string>
   <string name="menu_category_reading_controls">Czytanie</string>
   <string name="menu_category_special_features">Funkcje specjalne</string>
   <string name="context_menu_category_others">Inne</string>
   <string name="menu_category_web_navigation">Nawigacja w internecie</string>
   <string name="menu_category_basic_navigation">Nawigacja podstawowa</string>
-  <string name="summary_custom_action">Pokazuje, że dla danego elementu wykonywane są działania, w tym linkowanie, kopiowanie, wklejanie, wybieranie i inne</string>
+  <string name="summary_custom_action">Pokazuje, że dla danego elementu wykonywane są czynności, w tym linkowanie, kopiowanie, wklejanie, wybieranie i inne</string>
   <string name="summary_context_menu_links">Otwieranie linków w zaznaczonym elemencie</string>
   <string name="summary_viewpager_controls">Przechodzenie do poprzedniej lub następnej strony. Widoczne tylko wtedy, gdy czytasz treści obejmujące wiele stron.</string>
   <string name="summary_labeling_controls">Widoczne, gdy zaznaczysz element bez etykiety</string>
@@ -584,7 +584,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="summary_tts_settings">Otwórz ustawienia zamiany tekstu na mowę</string>
   <string name="not_editable">Nie można edytować</string>
   <string name="not_selectable">Niedostępne</string>
-  <string name="summary_actions">Wykonywanie działań</string>
+  <string name="summary_actions">Wykonywanie czynności</string>
   <string name="summary_spell_check">Przeskakiwanie między podpowiedziami dotyczącymi pisowni i gramatyki</string>
   <string name="summary_characters">Czytanie po jednym znaku.</string>
   <string name="summary_words">Czytanie po jednym słowie.</string>
@@ -628,7 +628,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="summary_hide_screen">Ukryj ekran, aby inni go nie widzieli</string>
   <string name="summary_audio_ducking">Zmniejszanie głośności innych dźwięków odtwarzanych w trakcie wypowiadania treści przez TalkBack</string>
   <string name="summary_support_scroll_seq">Przewiń do przodu lub do tyłu</string>
-  <string name="summary_support_change_a11y_volume">Zwiększanie lub zmniejszanie głośności przy ułatwieniach dostępu</string>
+  <string name="summary_support_change_a11y_volume">Zwiększanie lub zmniejszanie głośności dostępności</string>
   <string name="summary_support_change_touch_explore_latency">Zwiększ lub zmniejsz opóźnienie zaznaczenia podczas pisania</string>
   <string name="summary_support_change_touch_focus_latency">Zwiększ lub zmniejsz opóźnienie zaznaczenia</string>
   <string name="summary_screen_overview">Podsumuj widok ekranu za pomocą przycisków poleceń</string>
@@ -711,9 +711,9 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string formatted="false" name="value_volume_75_percent">75% głośności mowy</string>
   <string formatted="false" name="value_volume_50_percent">50% głośności mowy</string>
   <string formatted="false" name="value_volume_25_percent">25% głośności mowy</string>
-  <string name="value_type_confirmation_double_tap">Przytrzymaj palec, by wybrać klawisz, po czym kliknij dwukrotnie</string>
-  <string name="value_type_confirmation_lift_to_type">Przytrzymaj palec, aby wybrać klawisz, a następnie podnieś. Kliknij dwukrotnie, aby wybrać inne klawisze.</string>
-  <string name="value_type_confirmation_lift_to_type_for_any_key">Przytrzymaj palec, aby wybrać klawisz, a następnie podnieś</string>
+  <string name="value_type_confirmation_double_tap">Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie</string>
+  <string name="value_type_confirmation_lift_to_type">Przytrzymaj palec, aby wybrać przycisk z literą, a następnie podnieś palec. Pozostałe przyciski wymagają dwukrotnego kliknięcia.</string>
+  <string name="value_type_confirmation_lift_to_type_for_any_key">Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec</string>
   <string name="value_typing_long_press_500ms">0,5 sekundy</string>
   <string name="value_typing_long_press_1000ms">1 sekunda</string>
   <string name="value_typing_long_press_2000ms">2 sekundy</string>
@@ -845,12 +845,12 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="title_pref_selector_punctuation">Interpunkcja</string>
   <string name="title_pref_selector_audio_focus">Wyciszanie tła</string>
   <string name="title_pref_support_scroll_seq">Przewijanie</string>
-  <string name="title_pref_a11y_volume">Głośność przy ułatwieniach dostępu</string>
+  <string name="title_pref_a11y_volume">Głośność dostępności</string>
   <string name="title_pref_touch_explore_latency">Opóźnienie zaznaczenia podczas pisania</string>
   <string name="title_pref_touch_focus_latency">Opóźnienie zaznaczenia</string>
   <string name="message_pref_touch_focus_latency">Przy mniejszym opóźnieniu zaznaczenia podczas pisania TalkBack szybciej odtwarza komunikaty po dotknięciu klawiatury</string>
-  <string name="message_pref_typing_method_prefix">Aby uzyskać najmniejsze opóźnienie podczas pisania, wybierz opcję „Przytrzymaj palec, aby wybrać klawisz, a następnie podnieś”</string>
-  <string name="message_pref_typing_method_postfix">W każdej chwili możesz też wpisać tekst przy użyciu funkcji podzielonego kliknięcia. Aby to zrobić, przytrzymaj palcem klawisz, który chcesz wybrać, a następnie kliknij ekran innym palcem.</string>
+  <string name="message_pref_typing_method_prefix">Aby uzyskać najmniejsze opóźnienie podczas pisania, wybierz opcję „Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec”</string>
+  <string name="message_pref_typing_method_postfix">W każdej chwili możesz też wpisać tekst przy użyciu funkcji podzielonego kliknięcia. Aby to zrobić, przytrzymaj palcem wybrany przycisk klawiatury i kliknij ekran innym palcem.</string>
   <string name="title_pref_talkback_speech_rate">Tempo mowy w TalkBack</string>
   <string name="title_pref_selector_adjustable_widget_slider">Dostosuj suwak</string>
   <string name="title_pref_selector_typo_granularity">Korekta</string>
@@ -860,8 +860,8 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="hint_no_spelling_suggestion">Brak dostępnych sugestii pisowni.</string>
   <string name="hint_no_grammar_suggestion">Brak dostępnych podpowiedzi gramatycznych.</string>
   <string name="title_pref_selector_adjustable_widget_number_picker">Dostosuj wartość</string>
-  <string name="title_pref_selector_actions">Działania</string>
-  <string name="title_pref_cache_keyboard_keys">Szybciej czytaj klawisze na klawiaturze</string>
+  <string name="title_pref_selector_actions">Czynności</string>
+  <string name="title_pref_cache_keyboard_keys">Szybciej odczytuj przyciski klawiatury ekranowej</string>
   <string name="title_pref_sound_and_vibration">Dźwięk i wibracje</string>
   <string name="title_pref_sound">Dźwięk</string>
   <string name="template_text_copied">tekst skopiowany, %1$s</string>
@@ -915,7 +915,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="adjust_setting_hint">%1$s, aby zmienić ustawienie.</string>
   <string name="adjust_granularity_hint">%1$s, aby czytać zawartość ekranu na następującym poziomie: %2$s</string>
   <string name="adjust_typo_hint">%1$s, aby wyświetlić podpowiedzi.</string>
-  <string name="use_action_hint">Kliknij dwukrotnie, aby wykonać działanie</string>
+  <string name="use_action_hint">Kliknij dwukrotnie, aby wykonać czynność</string>
   <string name="no_adjust_setting_gesture">Aby z tego korzystać, otwórz Ustawienia Talkback i dadaj gest „%1$s”.</string>
   <string name="no_navigate_typo_gesture">Aby z tego korzystać, otwórz Ustawienia Talkback i dadaj gest sprawdzania pisowni</string>
   <string name="use_spelling_suggestion_hint">Kliknij dwukrotnie, aby zastąpić tekst</string>
@@ -1060,10 +1060,10 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="system_gestures_open_notifications_text_for_3_button_navigation">Aby otworzyć powiadomienia, przesuń 2 palcami w dół od góry ekranu. Potem możesz zamknąć powiadomienia, przesuwając w górę 2 palcami.\n\nSpróbuj to zrobić teraz.</string>
   <string name="system_gestures_accessibility_shortcut_text">Aby otworzyć skrót ułatwień dostępu, przesuń 3 palcami w górę od dołu ekranu.</string>
   <string name="adjusting_volume_title">Dostosowywanie głośności</string>
-  <string name="adjusting_volume_head">Głośność mowy w TalkBack nazywana jest głośnością przy ułatwieniach dostępu. Reguluje się ją niezależnie od głośności multimediów.\n\nAby dostosować głośność przy ułatwieniach dostępu:</string>
+  <string name="adjusting_volume_head">Głośność mowy w TalkBack nazywana jest głośnością dostępności. Reguluje się ją niezależnie od głośności multimediów.\n\nAby dostosować głośność dostępności:</string>
   <string name="adjusting_volume_first_instruction">Przytrzymaj 1 palec na ekranie.</string>
   <string name="adjusting_volume_second_instruction">Przytrzymując, naciśnij przycisk zwiększania lub zmniejszania głośności z boku urządzenia.</string>
-  <string name="adjusting_volume_tail">Po kilku sekundach usłyszysz nową głośność przy ułatwieniach dostępu.\n\nSpróbuj teraz ustawić głośność przy ułatwieniach dostępu.</string>
+  <string name="adjusting_volume_tail">Po kilku sekundach usłyszysz nową głośność dostępności.\n\nSpróbuj teraz ustawić głośność dostępności.</string>
   <string name="menus_title">Korzystanie z menu i elementów sterujących</string>
   <string name="menus_talkback_menu_text">Menu TalkBack zawiera ustawienia i elementy sterujące, których możesz często potrzebować.\n\nOtwórz teraz menu TalkBack, klikając ekran 3 palcami.</string>
   <string name="menus_talkback_menu_text_pre_r">Menu TalkBack zawiera ustawienia i elementy sterujące, których możesz często potrzebować.\n\nOtwórz teraz menu TalkBack, przesuwając palcem w dół, a potem w prawo.</string>
@@ -1077,7 +1077,7 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="text_editing_link_text">Edytowanie tekstu</string>
   <string name="text_editing_link_subtext">Pisanie, zaznaczanie, edytowanie, kopiowanie i inne działania</string>
   <string name="reading_navigation_link_text">Nawigacja odczytywania</string>
-  <string name="reading_navigation_link_subtext">Czytanie po słowie lub znaku i przechodzenie między linkami, elementami sterującymi oraz nagłówkami</string>
+  <string name="reading_navigation_link_subtext">Czytanie po słowie lub znaku i przechodzenie między linkami, kontrolkami oraz nagłówkami</string>
   <string name="image_description_link_text">Opisy obrazów</string>
   <string name="image_description_link_subtext">Spróbuj uzyskać opisy obrazów</string>
   <string name="voice_commands_link_text">Polecenia głosowe</string>
@@ -1110,12 +1110,12 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="edit_box_text">Witamy w TalkBack</string>
   <string name="selecting_text_title">Zaznaczanie tekstu</string>
   <string name="selecting_text_text">W polu tekstowym przesuń kursor na początek tekstu, który chcesz zaznaczyć.\n\nKliknij dwukrotnie i przytrzymaj 2 palcami, aby uruchomić tryb zaznaczania. Następnie przenieś kursor na koniec tekstu. Ponownie kliknij dwukrotnie i przytrzymaj 2 palcami, by zamknąć tryb zaznaczania.\n\nW polu tekstowym poniżej spróbuj zaznaczyć słowo „Witamy”.</string>
-  <string name="selecting_text_text_pre_r">W polu tekstowym przenieś kursor na początek tekstu, który chcesz zaznaczyć.\n\nPrzesuń palcem w dół, a następnie w prawo, aby otworzyć menu TalkBack. Kliknij dwukrotnie działanie, a następnie uruchom tryb zaznaczania. Przesuń kursor na koniec tekstu.\n\nPonownie otwórz menu TalkBack i kliknij dwukrotnie działanie, aby zakończyć tryb zaznaczania.\n\nW polu tekstowym poniżej spróbuj zaznaczyć słowo „Witamy”.</string>
+  <string name="selecting_text_text_pre_r">W polu tekstowym przenieś kursor na początek tekstu, który chcesz zaznaczyć.\n\nPrzesuń palcem w dół, a następnie w prawo, aby otworzyć menu TalkBack. Kliknij dwukrotnie „Czynności”, a następnie uruchom tryb zaznaczania. Przesuń kursor na koniec tekstu.\n\nPonownie otwórz menu TalkBack i kliknij dwukrotnie „Czynności”, aby zakończyć tryb zaznaczania.\n\nW polu tekstowym poniżej spróbuj zaznaczyć słowo „Witamy”.</string>
   <string name="copy_cut_paste_title">Kopiowanie, wycinanie i wklejanie</string>
   <string name="copy_text">Zaznaczony tekst możesz skopiować, klikając go dwukrotnie 3 palcami.\n\nSpróbuj skopiować słowo z pola tekstowego poniżej.</string>
   <string name="cut_paste_text">Aby wyciąć tekst, kliknij dwukrotnie i przytrzymaj 3 palcami.\n\nAby wkleić tekst, kliknij trzykrotnie 3 palcami.\n\nSpróbuj wkleić słowo w polu tekstowym poniżej.</string>
-  <string name="copy_text_pre_r">Zaznaczony tekst możesz skopiować, korzystając z menu TalkBack. Aby je otworzyć, przesuń palcem w dół, a potem w prawo. Kliknij dwukrotnie działania i wybierz kopiowanie.\n\nSpróbuj skopiować słowo z pola tekstowego poniżej.</string>
-  <string name="cut_paste_text_pre_r">Aby wyciąć lub wkleić tekst, otwórz menu TalkBack i kliknij dwukrotnie działania.\n\nSpróbuj wkleić słowo w polu tekstowym poniżej.</string>
+  <string name="copy_text_pre_r">Zaznaczony tekst możesz skopiować, korzystając z menu TalkBack. Aby je otworzyć, przesuń palcem w dół, a potem w prawo. Kliknij dwukrotnie czynności i wybierz kopiowanie.\n\nSpróbuj skopiować słowo z pola tekstowego poniżej.</string>
+  <string name="cut_paste_text_pre_r">Aby wyciąć lub wkleić tekst, otwórz menu TalkBack i kliknij dwukrotnie czynności.\n\nSpróbuj wkleić słowo w polu tekstowym poniżej.</string>
   <string name="edit_box_hint_paste_text">Tutaj wklej tekst</string>
   <string name="typo_correction_title">Korekta</string>
   <string name="typo_correction_text">Korzystaj z korekty, aby sprawdzać pisownię lub gramatykę w polu tekstowym.\n\nAby wypróbować tę funkcję, zaznacz pole tekstowe poniżej, które zawiera błędy pisowni. Następnie przesuwaj 3 palcami w prawo, aż trafisz na funkcję „Korekta”.</string>
@@ -1126,9 +1126,9 @@ Wybranie opóźnienia poniżej 0,3 sekundy spowoduje zmianę sposobu aktywowani
   <string name="read_by_character_title">Czytanie po znaku, słowie lub akapicie</string>
   <string name="read_by_character_text">Tekst może być odczytywany znak po znaku.\n\nAby posłuchać tekstu odczytywanego w ten sposób, przesuwaj 3 palcami w prawo, aż usłyszysz „%1$s”. Następnie przesuwaj palcem w górę, by przenosić zaznaczenie wstecz po znaku. Przesuwaj palcem w dół, by przenosić zaznaczenie do przodu po znaku.\n\nSpróbuj to zrobić teraz. Gdy przesuniesz 3 palcami w prawo, możesz też wybrać odczytywanie po słowie lub po akapicie.</string>
   <string name="read_by_character_text_pre_r">Tekst może być odczytywany znak po znaku.\n\nAby posłuchać tekstu odczytywanego w ten sposób, przesuwaj palcem w dół i w górę, aż usłyszysz „%1$s”. Następnie przesuwaj palcem w górę, by przenosić zaznaczenie wstecz po znaku. Przesuwaj palcem w dół, by przenosić zaznaczenie do przodu po znaku.\n\nSpróbuj to zrobić teraz. Gdy przesuniesz palcem w dół, a następnie w górę, możesz też wybrać odczytywanie po słowie lub po akapicie.</string>
-  <string name="jump_between_controls_title">Przechodzenie między elementami sterującymi</string>
-  <string name="jump_between_controls_text">Elementy sterujące to elementy, z którymi możesz wchodzić w interakcję, na przykład przyciski, pola wyboru i pola tekstowe.\n\nNa niektórych stronach możesz przechodzić między nimi, by szybko znaleźć odpowiednie działanie, na przykład przycisk Dalej.\n\nW tym celu przesuwaj 3 palcami w prawo, aż usłyszysz „%1$s”. Następnie przesuń palcem w górę, by przejść do poprzedniego elementu sterującego na stronie. Przesuń palcem w dół, by przejść do następnego elementu sterującego na stronie.\n\nSpróbuj to zrobić teraz. Przełącz się na elementy sterujące i znajdź przycisk Dalej.</string>
-  <string name="jump_between_controls_text_pre_r">Elementy sterujące to elementy, z którymi możesz wchodzić w interakcję, na przykład przyciski, pola wyboru i pola tekstowe.\n\nNa niektórych stronach możesz przechodzić między nimi, by szybko znaleźć odpowiednie działanie, na przykład przycisk Dalej.\n\nW tym celu przesuwaj palcem w górę i w dół, aż usłyszysz „%1$s”. Następnie przesuń palcem w górę, by przejść do poprzedniego elementu sterującego na stronie. Przesuń palcem w górę, a potem w dół, by przejść do następnego elementu sterującego na stronie.\n\nSpróbuj to zrobić teraz Przełącz się na elementy sterujące i znajdź przycisk Dalej.</string>
+  <string name="jump_between_controls_title">Przechodzenie między kontrolkami</string>
+  <string name="jump_between_controls_text">Kontrolki to elementy, z którymi możesz wchodzić w interakcję, na przykład przyciski, pola wyboru i pola tekstowe.\n\nNa niektórych stronach możesz przechodzić między nimi, by szybko znaleźć odpowiednie działanie, na przykład przycisk Dalej.\n\nW tym celu przesuwaj 3 palcami w prawo, aż usłyszysz „%1$s”. Następnie przesuń palcem w górę, by przejść do poprzedniej kontrolki na stronie. Przesuń palcem w dół, by przejść do następnej kontrolki na stronie.\n\nSpróbuj to zrobić teraz. Przełącz się na kontrolki i znajdź przycisk Dalej.</string>
+  <string name="jump_between_controls_text_pre_r">Kontrolki to elementy, z którymi możesz wchodzić w interakcję, na przykład przyciski, pola wyboru i pola tekstowe.\n\nNa niektórych stronach możesz przechodzić między nimi, by szybko znaleźć odpowiednie działanie, na przykład przycisk Dalej.\n\nW tym celu przesuwaj palcem w górę i w dół, aż usłyszysz „%1$s”. Następnie przesuń palcem w górę, by przejść do poprzedniej kontrolki na stronie. Przesuń palcem w górę, a potem w dół, by przejść do następnej kontrolki na stronie.\n\nSpróbuj to zrobić teraz Przełącz się na kontrolki i znajdź przycisk Dalej.</string>
   <string name="jump_between_links_title">Przechodzenie między linkami</string>
   <string name="jump_between_links_text">Możesz też przechodzić między linkami na stronie.\n\nSpróbuj to zrobić teraz. Przesuwaj 3 palcami w prawo, aż usłyszysz „%1$s”. Następnie przesuwaj palcem w dół, aby znaleźć link o nazwie „Link 5”. W samouczku dwukrotne kliknięcie tego linku nie spowoduje żadnego działania.\n\nPrzesuwaj palcem w prawo, aby znaleźć przycisk Dalej i przejść na kolejną stronę.</string>
   <string name="jump_between_links_text_pre_r">Możesz też przechodzić między linkami na stronie.\n\nSpróbuj to zrobić teraz. Przesuwaj palcem w dół i w górę, aż usłyszysz „%1$s”. Następnie przesuwaj palcem w dół, aby znaleźć link o nazwie „Link 5”. W samouczku dwukrotne kliknięcie tego linku nie spowoduje żadnego działania.\n\nPrzesuwaj palcem w prawo, aby znaleźć przycisk Dalej i przejść na kolejną stronę.</string>
@@ -1330,10 +1330,10 @@ Nie używaj w odpowiedzi formatowania Markdown.</string>
   <string name="action_text_dislike_button">Oznacz jako złą odpowiedź</string>
   <string name="action_text_clear_like_button">Wyczyść dobrą odpowiedź</string>
   <string name="action_text_clear_dislike_button">Wyczyść złą odpowiedź</string>
-  <string name="action_not_supported">Działanie nie jest obsługiwane.</string>
-  <string name="hint_select_action">Wybierz obsługiwane działanie.</string>
-  <string name="no_action_available">Brak działań.</string>
-  <string name="actions_setting_not_enabled">Ustawienie działań nie jest włączone.</string>
+  <string name="action_not_supported">Czynność nie jest obsługiwana.</string>
+  <string name="hint_select_action">Wybierz obsługiwaną czynność.</string>
+  <string name="no_action_available">Brak czynności.</string>
+  <string name="actions_setting_not_enabled">Opcja „Czynności” nie jest włączona.</string>
   <string name="confirm_download_icon_detection_title">Automatyczne opisy ikon wymagają pobrania</string>
   <string name="confirm_download_subtitle_via_wifi">%1$d MB</string>
   <string name="confirm_download_subtitle_via_mobile_data">%1$d MB z wykorzystaniem mobilnej transmisji danych. Za transfer może zostać pobrana opłata.</string>

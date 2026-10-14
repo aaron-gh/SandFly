@@ -34,6 +34,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.BuildCompat;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog;
+import com.google.android.accessibility.braille.brailledisplay.FeatureFlagReader;
 import com.google.android.accessibility.braille.brailledisplay.platform.ConnectStage;
 import com.google.android.accessibility.braille.brailledisplay.platform.connect.ConnectManager;
 import com.google.android.accessibility.braille.brailledisplay.platform.connect.Connector;
@@ -222,6 +223,34 @@ public class BtConnectManager extends ConnectManager {
       }
     }
     BrailleDisplayLog.w(TAG, "HID UUID not found.");
+    return false;
+  }
+
+  /**
+   * A device that offers HID, where Android can connect braille displays through HID. Any braille
+   * display that follows the HID braille standard works this way, so it doesn't need a name that
+   * Backtalk knows. Only the services that Bluetooth already knows about are checked, so this
+   * doesn't query each device, and connecting confirms that it's a braille display.
+   */
+  @Override
+  public boolean mayBeHidBrailleDisplay(ConnectableDevice device) {
+    if (!BuildVersionUtils.isAtLeastV()
+        || !FeatureFlagReader.isBdHidSupported(context)
+        || !(device instanceof ConnectableBluetoothDevice)
+        || ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+            != PackageManager.PERMISSION_GRANTED) {
+      return false;
+    }
+    ParcelUuid[] uuids = ((ConnectableBluetoothDevice) device).bluetoothDevice().getUuids();
+    if (uuids == null) {
+      return false;
+    }
+    for (ParcelUuid uuid : uuids) {
+      String value = uuid.getUuid().toString();
+      if (value.equals(HID_UUID) || value.equals(HID_OVER_GATT_UUID)) {
+        return true;
+      }
+    }
     return false;
   }
 

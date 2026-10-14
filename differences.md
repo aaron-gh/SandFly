@@ -494,6 +494,12 @@ If you hold or stand your tablet facing you instead, turn off **Tablet held up f
 
 A phone that's opened flat, and that hasn't been held up since the screen came on, follows the screen rotation, and with auto-rotate off expects the port on the left; turning it around on the table, or locking the orientation, corrects this. A phone held up screen away and laid flat without typing, or typed on screen away without ever being held within 40 degrees of upright, is taken to have faced you, so it expects the port on the wrong side; locking the orientation corrects this. Turns on the table require the game rotation vector sensor; devices without it still follow how they're held up. A tablet says where the port is only if it's a portrait tablet with the port at the bottom. Remembering how the device is held keeps the accelerometer running while the screen is on, as auto-rotate does.
 
+## Braille displays
+
+### Any braille display that uses HID
+
+On Android 15 and later, TalkBack connects to braille displays that use the HID braille standard over Bluetooth, but only lists displays whose names it knows, so newer displays and braille terminals were left out. Backtalk lists any Bluetooth device that offers HID, whatever its name, and connecting checks that it's a braille display, so other HID devices, such as keyboards, can appear in the list too. TalkBack also refused displays that send their keys and receive their cells in separate HID reports, as the standard allows; Backtalk connects to those.
+
 ## Image and screen descriptions
 
 ### Gemini API key

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
     <!-- Label for the shortcut that speaks the time, battery, and network state. [CHAR LIMIT=40] -->
-    <string name="shortcut_announce_status">Speak status</string>
+    <string name="shortcut_announce_status" tools:ignore="MissingTranslation">Speak status</string>
 
     <!-- Status readout: signal strength of a network. [CHAR LIMIT=NONE] -->
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> of <xliff:g id="max_level" example="4">%2$d</xliff:g> bars</string>
+    <string name="template_status_bars" tools:ignore="MissingTranslation"><xliff:g id="level" example="3">%1$d</xliff:g> of <xliff:g id="max_level" example="4">%2$d</xliff:g> bars</string>
     <!-- Status readout: Wi-Fi is turned off. [CHAR LIMIT=NONE] -->
-    <string name="status_wifi_off">Wi-Fi off</string>
+    <string name="status_wifi_off" tools:ignore="MissingTranslation">Wi-Fi off</string>
     <!-- Status readout: Wi-Fi is on but not connected to a network. [CHAR LIMIT=NONE] -->
-    <string name="status_wifi_not_connected">Wi-Fi not connected</string>
+    <string name="status_wifi_not_connected" tools:ignore="MissingTranslation">Wi-Fi not connected</string>
     <!-- Status readout: connected to Wi-Fi when the network name is not available. [CHAR LIMIT=NONE] -->
-    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi" tools:ignore="MissingTranslation">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <!-- Status readout: connected to a named Wi-Fi network. [CHAR LIMIT=NONE] -->
-    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_wifi_named" tools:ignore="MissingTranslation">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <!-- Status readout: mobile network, with the carrier and network type. [CHAR LIMIT=NONE] -->
-    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile" tools:ignore="MissingTranslation"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <!-- Status readout: name for the mobile network when the carrier is unknown. [CHAR LIMIT=NONE] -->
-    <string name="status_mobile">Mobile</string>
+    <string name="status_mobile" tools:ignore="MissingTranslation">Mobile</string>
     <!-- Status readout: there is no mobile service. [CHAR LIMIT=NONE] -->
-    <string name="status_mobile_no_service">No mobile service</string>
+    <string name="status_mobile_no_service" tools:ignore="MissingTranslation">No mobile service</string>
     <!-- Status readout: Do Not Disturb is on. [CHAR LIMIT=NONE] -->
-    <string name="status_do_not_disturb">Do Not Disturb</string>
+    <string name="status_do_not_disturb" tools:ignore="MissingTranslation">Do Not Disturb</string>
     <!-- Status readout: the ringer is set to vibrate. [CHAR LIMIT=NONE] -->
-    <string name="status_ringer_vibrate">Vibrate</string>
+    <string name="status_ringer_vibrate" tools:ignore="MissingTranslation">Vibrate</string>
     <!-- Status readout: the ringer is silent. [CHAR LIMIT=NONE] -->
-    <string name="status_ringer_silent">Silent</string>
+    <string name="status_ringer_silent" tools:ignore="MissingTranslation">Silent</string>
     <!-- Status readout: airplane mode is on. [CHAR LIMIT=NONE] -->
-    <string name="status_airplane_mode">Airplane mode</string>
+    <string name="status_airplane_mode" tools:ignore="MissingTranslation">Airplane mode</string>
 
     <!-- Title of the settings screen that chooses what the status gesture speaks. [CHAR LIMIT=40] -->
-    <string name="title_pref_status_readout">Status readout</string>
+    <string name="title_pref_status_readout" tools:ignore="MissingTranslation">Status readout</string>
 
     <!-- Status readout settings: title of the time item. [CHAR LIMIT=40] -->
-    <string name="status_item_time">Time</string>
+    <string name="status_item_time" tools:ignore="MissingTranslation">Time</string>
     <!-- Status readout settings: summary of the time item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_time_summary">The current time</string>
+    <string name="status_item_time_summary" tools:ignore="MissingTranslation">The current time</string>
     <!-- Status readout settings: title of the battery item. [CHAR LIMIT=40] -->
-    <string name="status_item_battery">Battery</string>
+    <string name="status_item_battery" tools:ignore="MissingTranslation">Battery</string>
     <!-- Status readout settings: summary of the battery item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_battery_summary">Battery level, charging, and battery saver</string>
+    <string name="status_item_battery_summary" tools:ignore="MissingTranslation">Battery level, charging, and battery saver</string>
     <!-- Status readout settings: title of the Wi-Fi item. [CHAR LIMIT=40] -->
-    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi" tools:ignore="MissingTranslation">Wi-Fi</string>
     <!-- Status readout settings: summary of the Wi-Fi item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_wifi_summary">Network name and signal strength</string>
+    <string name="status_item_wifi_summary" tools:ignore="MissingTranslation">Network name and signal strength</string>
     <!-- Status readout settings: title of the mobile network item. [CHAR LIMIT=40] -->
-    <string name="status_item_mobile">Mobile network</string>
+    <string name="status_item_mobile" tools:ignore="MissingTranslation">Mobile network</string>
     <!-- Status readout settings: summary of the mobile network item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_mobile_summary">Carrier, network type, and signal strength</string>
+    <string name="status_item_mobile_summary" tools:ignore="MissingTranslation">Carrier, network type, and signal strength</string>
     <!-- Status readout settings: title of the ringer item. [CHAR LIMIT=40] -->
-    <string name="status_item_ringer">Ringer and Do Not Disturb</string>
+    <string name="status_item_ringer" tools:ignore="MissingTranslation">Ringer and Do Not Disturb</string>
     <!-- Status readout settings: summary of the ringer item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_ringer_summary">Only when the ringer is not set to ring, or Do Not Disturb is on</string>
+    <string name="status_item_ringer_summary" tools:ignore="MissingTranslation">Only when the ringer is not set to ring, or Do Not Disturb is on</string>
     <!-- Status readout settings: title of the airplane mode item. [CHAR LIMIT=40] -->
-    <string name="status_item_airplane_mode">Airplane mode</string>
+    <string name="status_item_airplane_mode" tools:ignore="MissingTranslation">Airplane mode</string>
     <!-- Status readout settings: summary of the airplane mode item. [CHAR LIMIT=NONE] -->
-    <string name="status_item_airplane_mode_summary">Only when airplane mode is on</string>
+    <string name="status_item_airplane_mode_summary" tools:ignore="MissingTranslation">Only when airplane mode is on</string>
 </resources>

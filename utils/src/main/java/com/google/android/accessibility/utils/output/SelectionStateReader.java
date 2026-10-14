@@ -16,9 +16,16 @@
 
 package com.google.android.accessibility.utils.output;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
+
 /** Interface to provide the state of text-selection. */
 public interface SelectionStateReader {
   default boolean isSelectionModeActive() {
     return false;
+  }
+
+  /** The selection kept for copying text that the app does not let a selection be set in. */
+  default @Nullable CopySelection copySelection() {
+    return null;
   }
 }

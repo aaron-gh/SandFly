@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Remaining Czech translations for user-visible settings strings. -->
+
+    <!-- Reorderable item-details settings. -->
+    <string name="item_detail_name">Název</string>
+    <string name="item_detail_type">Typ</string>
+    <string name="item_detail_state">Stav</string>
+    <string name="action_move_up">Přesunout nahoru</string>
+    <string name="action_move_down">Přesunout dolů</string>
+    <string name="template_list_position">Pozice <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_item_details_order_picked_up">Uchopeno <xliff:g id="detail" example="Název">%1$s</xliff:g>. <xliff:g id="position" example="Pozice 1 z 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Přesunuto <xliff:g id="detail" example="Název">%1$s</xliff:g>. <xliff:g id="position" example="Pozice 2 z 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">Backtalk oznamuje údaje o položce v tomto pořadí. Chcete-li ho změnit, dotkněte se údaje, podržte ho a přetáhněte nahoru nebo dolů. Se zapnutým Backtalkem dvakrát klepněte a podržte, potom přetáhněte. Můžete také použít akce Přesunout nahoru a Přesunout dolů.</string>
+
+    <!-- Emoji verbosity settings. -->
+    <string name="title_pref_emoji_speech">Emoji</string>
+    <string name="summary_selector_menu_emoji">Změnit způsob čtení emoji</string>
+    <string name="emoji_speech_engine">Číst hlasovým syntetizérem</string>
+    <string name="emoji_speech_names">Číst pomocí Backtalku</string>
+    <string name="emoji_speech_none">Nečíst</string>
+    <string name="title_pref_emoji_repeat_count">Počítat opakující se emoji</string>
+    <string name="emoji_repeat_count_off">Vypnuto</string>
+    <string name="emoji_repeat_count_2">2 a více</string>
+    <string name="emoji_repeat_count_3">3 a více</string>
+    <string name="emoji_repeat_count_4">4 a více</string>
+    <string name="emoji_repeat_count_5">5 a více</string>
+    <string name="emoji_repeat_count_6">6 a více</string>
+
+    <!-- Main settings categories and controls. -->
+    <string name="title_pref_category_feedback">Zpětná vazba</string>
+    <string name="title_pref_category_more">Další</string>
+    <string name="title_pref_category_typing_and_braille">Psaní a Braillovo písmo</string>
+    <string name="title_pref_brightness">Jas</string>
+    <string name="summary_support_change_brightness">Zvýšit nebo snížit jas obrazovky, i když je obrazovka skrytá</string>
+
+    <!-- Latency reduction settings. -->
+    <string name="title_pref_multi_tap_timeout">Čas mezi klepnutími jedním prstem</string>
+    <string name="value_multi_tap_timeout_100ms">0,1 sekundy</string>
+    <string name="value_multi_tap_timeout_150ms">0,15 sekundy</string>
+    <string name="value_multi_tap_timeout_200ms">0,2 sekundy</string>
+    <string name="value_multi_tap_timeout_250ms">0,25 sekundy (výchozí)</string>
+    <string name="title_pref_speak_items_before_scroll">Vyslovovat položky předtím, než se posunou do zobrazení</string>
+
+    <!-- Text-to-speech settings. -->
+    <string name="title_pref_mute_speech_while_recording">Ztišit při nahrávání</string>
+    <string name="summary_pref_mute_speech_while_recording">Když aplikace nahrává bez připojených sluchátek, Backtalk mluví jen v reakci na vaše gesta, klávesy a psaní a zůstává zticha u věcí, jako jsou oznámení, aby se nezaznamenala do nahrávky.</string>
+
+    <!-- Phonetic letter settings. -->
+    <string name="title_pref_phonetic_letters_mode">Číst písmena foneticky</string>
+    <string name="phonetic_letters_mode_off">Vypnuto</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po písmenu, se zpožděním, například „h, hotel“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po písmenu, bez zpoždění, například „h hotel“</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Místo písmene, například „hotel“</string>
+
+    <!-- Gesture settings. -->
+    <string name="title_pref_shortcut_3finger_4tap">Čtyřikrát klepnout třemi prsty</string>
+</resources>

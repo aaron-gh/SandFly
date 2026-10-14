@@ -26,6 +26,7 @@ import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.
 import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.Action.START_AT_TOP;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.BRIGHTEN;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.DIM;
+import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CLEAR_SELECTION;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.COPY;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CURSOR_TO_BEGINNING;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CURSOR_TO_END;
@@ -502,16 +503,15 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_pause_or_resume_feedback))) {
       pipeline.returnFeedback(eventId, Feedback.speech(Feedback.Speech.Action.PAUSE_OR_RESUME));
     } else if (action.equals(service.getString(R.string.shortcut_value_start_selection_mode))) {
-      AccessibilityNodeInfoCompat node = getSelectTextFocus();
-      if (node == null) {
-        result = false;
+      if (actorState.getDirectionNavigation().isSelectionModeActive()) {
+        // Copying mode can be ended with nothing focused, as it goes from window to window.
+        result =
+            pipeline.returnFeedback(
+                eventId, Feedback.edit(getSelectTextFocus(/* speakIfNone= */ false), END_SELECT));
       } else {
+        AccessibilityNodeInfoCompat node = getSelectTextFocus(/* speakIfNone= */ true);
         // Editable or non-editable selectable text found.
-        if (actorState.getDirectionNavigation().isSelectionModeActive()) {
-          result = pipeline.returnFeedback(eventId, Feedback.edit(node, END_SELECT));
-        } else {
-          result = pipeline.returnFeedback(eventId, Feedback.edit(node, START_SELECT));
-        }
+        result = node != null && pipeline.returnFeedback(eventId, Feedback.edit(node, START_SELECT));
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_move_cursor_to_beginning))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();
@@ -528,12 +528,16 @@ public class GestureController {
         pipeline.returnFeedback(eventId, Feedback.edit(node, CURSOR_TO_END));
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_select_all))) {
-      AccessibilityNodeInfoCompat node = getSelectTextFocus();
+      AccessibilityNodeInfoCompat node = getSelectTextFocus(/* speakIfNone= */ true);
       if (node == null) {
         result = false;
       } else {
         pipeline.returnFeedback(eventId, Feedback.edit(node, SELECT_ALL));
       }
+    } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
+      AccessibilityNodeInfoCompat node =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      result = pipeline.returnFeedback(eventId, Feedback.edit(node, CLEAR_SELECTION));
     } else if (action.equals(service.getString(R.string.shortcut_value_copy))) {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
@@ -934,19 +938,25 @@ public class GestureController {
     return false;
   }
 
-  private @Nullable AccessibilityNodeInfoCompat getSelectTextFocus() {
+  private @Nullable AccessibilityNodeInfoCompat getSelectTextFocus(boolean speakIfNone) {
     @Nullable AccessibilityNodeInfoCompat node =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
     if (AccessibilityNodeInfoUtils.isTextSelectable(node)) {
       return node;
     }
-    node = accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
+    @Nullable AccessibilityNodeInfoCompat editingNode =
+        accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
+    if (editingNode != null) {
+      return editingNode;
+    }
+    // Other text is selected for copying by Backtalk; it speaks if there is none.
     if (node != null) {
       return node;
-    } else {
-      speak(service.getString(R.string.not_selectable));
-      return null;
     }
+    if (speakIfNone) {
+      speak(service.getString(R.string.not_selectable));
+    }
+    return null;
   }
 
   private @Nullable AccessibilityNodeInfoCompat getEditTextFocus() {
