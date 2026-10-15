@@ -104,6 +104,19 @@
         android:description="@string/permission_speak_description"
         android:protectionLevel="normal" />
 
+    <!-- Held by an app that can provide a braille display, so that it can ask to be one. Backtalk
+         uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. -->
+    <permission
+        android:name="fyi.quin.backtalk.permission.BRAILLE_DISPLAY"
+        android:label="@string/permission_braille_display_label"
+        android:description="@string/permission_braille_display_description"
+        android:protectionLevel="normal" />
+    <!-- Required by a braille display app's service, so that only Backtalk can bind it. -->
+    <permission
+        android:name="fyi.quin.backtalk.permission.BIND_BRAILLE_DISPLAY"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="fyi.quin.backtalk.permission.BIND_BRAILLE_DISPLAY" />
+
     <!-- Granted by the user with adb, to move the accessibility shortcut and the braille keyboard
          from the old app ID and turn the old screen reader off. -->
     <uses-permission

@@ -2569,7 +2569,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       windowEventInterpreter.addListener(uiChangeEventInterpreter);
       windowEventInterpreter.addListener(imageCaptioner);
       directTouchController =
-          new DirectTouchController(this, prefs, pipeline.getFeedbackReturner());
+          new DirectTouchController(
+              this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
       windowEventInterpreter.addListener(directTouchController);
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);

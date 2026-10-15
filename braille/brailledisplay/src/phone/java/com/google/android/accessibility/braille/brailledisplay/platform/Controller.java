@@ -26,7 +26,7 @@ import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
 public interface Controller {
 
   /** Informs that the displayer is ready to be used. */
-  void onStart(Displayer displayer);
+  void onStart(DisplayerInterface displayer);
 
   /** Informs that the displayer is no longer ready to be used. */
   void onStop();

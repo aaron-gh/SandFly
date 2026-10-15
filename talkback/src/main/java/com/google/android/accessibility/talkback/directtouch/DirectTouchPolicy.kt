@@ -16,18 +16,22 @@
 
 package com.google.android.accessibility.talkback.directtouch
 
-/** What is on screen and how the user set things up, as far as direct touch cares. */
+/**
+ * What is on screen and how the user set things up, as far as direct touch cares. The two checks
+ * that ask apps for their windows' roots are functions, so that they run only when the rest leave
+ * the answer open.
+ */
 data class DirectTouchInput(
   val masterEnabled: Boolean,
   /** The app in front is turned on in the direct touch list. */
   val appEnabled: Boolean,
   val screenInteractive: Boolean,
-  /** Another app's window is on top of the game. */
-  val foreignAppWindow: Boolean,
-  /** The notification shade or quick settings cover at least half the screen. */
-  val systemUiCoversHalf: Boolean,
   val dialogShowing: Boolean,
   val textFieldFocused: Boolean,
+  /** Another app's window is on top of the game. */
+  val foreignAppWindow: () -> Boolean,
+  /** The notification shade or quick settings cover at least half the screen. */
+  val systemUiCoversHalf: () -> Boolean,
 )
 
 object DirectTouchPolicy {
@@ -45,8 +49,8 @@ object DirectTouchPolicy {
     input.masterEnabled &&
       input.appEnabled &&
       input.screenInteractive &&
-      !input.foreignAppWindow &&
-      !input.systemUiCoversHalf &&
       !input.dialogShowing &&
-      !input.textFieldFocused
+      !input.textFieldFocused &&
+      !input.foreignAppWindow() &&
+      !input.systemUiCoversHalf()
 }

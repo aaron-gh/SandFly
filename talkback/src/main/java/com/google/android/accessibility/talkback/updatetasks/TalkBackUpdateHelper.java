@@ -106,6 +106,7 @@ public class TalkBackUpdateHelper {
     showPendingNotifications();
     moveToFasterDefaults();
     turnOffAddedReadingControls();
+    BatteryOptimizationCheck.check(service, sharedPreferences);
     PhoneticLetterMode.migrate(sharedPreferences, service.getResources());
 
     final int previousVersion = sharedPreferences.getInt(PREF_APP_VERSION, VERSION_CODE_UNKNOWN);

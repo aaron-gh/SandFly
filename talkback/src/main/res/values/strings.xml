@@ -173,6 +173,10 @@
       Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_speak_in_phrases">For speech engines that are slow to stop, such as Gryphon, so swiping away stops long text at once. Many engines pause longer between sentences sent separately, so leave this off if yours stops quickly.</string>
+    <!-- Title of the notification shown once on phones whose battery saver can stop Backtalk, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_title">Battery optimization can stop Backtalk</string>
+    <!-- Text of the notification shown once on phones whose battery saver can stop Backtalk. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_text">On this phone, the battery saver can stop Backtalk after the screen turns off, so it falls silent until it is restarted. Tap to open battery optimization, choose All apps, find Backtalk and choose Don\'t optimize.</string>
     <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
     <string name="title_pref_mute_speech_while_recording">Quiet while recording</string>
     <!-- Summary of the setting that keeps speech the user did not ask for quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
@@ -418,6 +422,10 @@
     <string name="permission_speak_label">speak through Backtalk</string>
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->
     <string name="permission_speak_description">Lets the app ask to say text in your Backtalk voice. Backtalk asks you before the app can speak.</string>
+    <!-- Name of the permission that an app needs to ask to be a braille display for Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_label">ask to be a braille display for Backtalk</string>
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_description">Lets the app ask to be a braille display for Backtalk. If you allow it in Backtalk, it can read everything on the screen and control your device. Backtalk asks you first.</string>
 
     <!--
       Source: Preference for speaking phonetic letter for letters.

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="title_pref_scripts">Скрипты</string>
+  <string name="summary_pref_scripts">Изменить поведение Backtalk в приложениях</string>
+  <string name="script_import">Импортировать скрипт</string>
+  <string name="script_install_label">Установить скрипт Backtalk</string>
+  <string name="script_import_nothing">Нет файла скрипта для установки.</string>
+  <string name="script_import_cannot_open">Не удалось открыть файл.</string>
+  <string name="script_import_repository">Эта ссылка ведёт на весь репозиторий. Откройте нужный скрипт и поделитесь ссылкой на него.</string>
+  <string name="script_import_summary">Файл .js или архив .zip с файлом main.js</string>
+  <string name="scripts_category_app">Скрипты для приложений</string>
+  <string name="scripts_category_global">Глобальные плагины</string>
+  <string name="scripts_none">Нет установленных скриптов</string>
+  <string name="scripts_all_off">Отключить все скрипты</string>
+  <string name="scripts_all_off_summary">Скрипты остаются установленными и сохраняют состояния собственных переключателей. Жест «Включить или отключить все скрипты» выполняет то же действие.</string>
+  <string name="shortcut_toggle_scripts">Включить или отключить все скрипты</string>
+  <string name="scripts_now_off">Скрипты отключены</string>
+  <string name="scripts_now_on">Скрипты включены</string>
+  <string name="scripts_unavailable">Скрипты недоступны на этом устройстве</string>
+  <string name="script_add_example">Добавить пример скрипта</string>
+  <string name="script_add_example_summary">Озвучивает название каждого приложения, на которое вы переключаетесь. Можно использовать как основу своего скрипта.</string>
+  <string name="script_state_on">Включён</string>
+  <string name="script_state_off">Отключён</string>
+  <string name="script_runs_in">Работает в <xliff:g id="apps">%1$s</xliff:g></string>
+  <string name="script_runs_everywhere">Работает во всех приложениях</string>
+  <string name="script_version">Версия <xliff:g id="version">%1$s</xliff:g></string>
+  <string name="script_author">Автор: <xliff:g id="author">%1$s</xliff:g></string>
+  <string name="script_install_title">Установить <xliff:g id="name">%1$s</xliff:g>?</string>
+  <string name="script_install_can">Возможности скрипта:</string>
+  <string name="script_install_no_permissions">Разрешения не требуются.</string>
+  <string name="script_install_button">Установить</string>
+  <string name="script_update_title">Обновить <xliff:g id="name">%1$s</xliff:g> до <xliff:g id="version">%2$s</xliff:g>?</string>
+  <string name="script_update_new_permissions">Новые разрешения:</string>
+  <string name="script_update_button">Обновить</string>
+  <string name="script_update_replaces">Будет заменена версия <xliff:g id="version">%1$s</xliff:g> от автора <xliff:g id="author">%2$s</xliff:g>. Данные и настройки сохранятся.</string>
+  <string name="script_update_other_author">У новой версии другой автор: <xliff:g id="author">%1$s</xliff:g>. Обновляйте скрипт, только если доверяете ему.</string>
+  <string name="script_installed">Скрипт <xliff:g id="name">%1$s</xliff:g> установлен</string>
+  <string name="script_updated">Скрипт <xliff:g id="name">%1$s</xliff:g> обновлён до <xliff:g id="version">%2$s</xliff:g></string>
+  <string name="script_import_failed">Не удалось импортировать. <xliff:g id="reason">%1$s</xliff:g></string>
+  <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Разрешайте только доверенным скриптам.</string>
+  <string name="script_permission_screen">Читать содержимое экрана</string>
+  <string name="script_permission_actions">Нажимать, прокручивать, вводить текст и перемещать фокус</string>
+  <string name="script_permission_speech">Получать, изменять и озвучивать текст через Backtalk</string>
+  <string name="script_permission_passwords">Читать поля паролей</string>
+  <string name="script_permission_input">Добавлять жесты, сочетания клавиш, пункты меню и элементы управления чтением</string>
+  <string name="script_permission_network">Использовать интернет</string>
+  <string name="script_permission_clipboard">Читать и изменять содержимое буфера обмена</string>
+  <string name="script_permission_system">Возвращаться назад и на главный экран, открывать уведомления и приложения</string>
+  <string name="script_permission_notifications">Читать уведомления и изменять их озвучивание</string>
+  <string name="script_permission_events">Получать сведения обо всех действиях во всех приложениях, включая ввод текста</string>
+  <string name="script_permission_dialogs">Показывать диалоговые окна поверх любого приложения</string>
+  <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+  <string name="script_enabled">Включить</string>
+  <string name="script_permissions_title">Разрешения</string>
+  <string name="script_permissions_none">Нет</string>
+  <string name="script_settings_category">Настройки</string>
+  <string name="script_list_filter">Фильтр</string>
+  <string name="script_button_off">Сначала включите скрипт</string>
+  <string name="script_permissions_summary">При отключении разрешения перестают работать части скрипта, которым оно требуется.</string>
+  <string name="script_install_permissions_note">Позже эти разрешения можно отключить.</string>
+  <string name="script_manage_category">Управление</string>
+  <string name="script_move_up">Выполнять раньше</string>
+  <string name="script_move_down">Выполнять позже</string>
+  <string name="script_order_summary">Порядок выполнения скриптов, изменяющих один и тот же озвучиваемый текст. Сначала выполняются скрипты для приложений.</string>
+  <string name="script_log">Журнал</string>
+  <string name="script_log_summary">Вывод и ошибки с момента запуска Backtalk</string>
+  <string name="script_clear_storage">Удалить сохранённые данные</string>
+  <string name="script_storage_cleared">Сохранённые данные удалены</string>
+  <string name="script_remove">Удалить</string>
+  <string name="script_remove_title">Удалить <xliff:g id="name">%1$s</xliff:g>?</string>
+  <string name="script_remove_message">Будут удалены код, данные и настройки скрипта.</string>
+  <string name="script_removed">Скрипт <xliff:g id="name">%1$s</xliff:g> удалён</string>
+  <string name="script_log_empty">Журнал пуст</string>
+  <string name="script_log_clear">Очистить журнал</string>
+  <string name="script_log_copy">Скопировать журнал</string>
+  <string name="script_log_copied">Журнал скопирован</string>
+  <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+  <string name="script_api_too_old">Требуется API скриптов версии <xliff:g id="needed">%1$d</xliff:g> или выше. В этой версии Backtalk используется API версии <xliff:g id="current">%2$d</xliff:g>, поэтому некоторые части скрипта могут не работать.</string>
+  <string name="script_api_untested">Скрипт проверен с API скриптов до версии <xliff:g id="tested">%1$d</xliff:g>. В этой версии Backtalk используется API версии <xliff:g id="current">%2$d</xliff:g>, поэтому скрипт может работать не так, как ожидается.</string>
+  <string name="script_state_incompatible">Может не работать с этой версией Backtalk</string>
+  <string name="script_api_range">API скриптов: от <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
+  <string name="script_compatibility_title">Совместимость</string>
+  <string name="script_install_anyway">Всё равно установить</string>
+  <string name="script_update_anyway">Всё равно обновить</string>
+  <string name="script_homepage">Открыть домашнюю страницу</string>
+  <string name="script_homepage_confirm_title">Открыть этот адрес?</string>
+  <string name="script_homepage_open">Открыть</string>
+  <string name="script_homepage_failed">Нет приложения для открытия <xliff:g id="address">%1$s</xliff:g></string>
+  <string name="script_turned_off">Скрипт <xliff:g id="name">%1$s</xliff:g> отключён после повторяющихся ошибок. Посмотрите его журнал в разделе «Скрипты».</string>
+  <string name="shortcut_inspect_item">Исследовать элемент в фокусе</string>
+  <string name="script_inspect_no_item">Нет элемента в фокусе</string>
+  <string name="script_inspect_copied">Скопировано. <xliff:g id="details">%1$s</xliff:g></string>
+  <string name="script_inspect_no_id">У элемента нет идентификатора, поэтому на него нельзя сослаться в правилах. Скопировано. <xliff:g id="details">%1$s</xliff:g></string>
+  <string name="shortcut_copy_screen_tree">Скопировать дерево экрана</string>
+  <string name="script_tree_copied">Скопировано элементов: <xliff:g id="count">%1$d</xliff:g></string>
+  <string name="script_tree_none">Нет окна для копирования</string>
+  <string name="script_tree_clip_label">Дерево экрана</string>
+  <string name="summary_copy_screen_tree_menu">Скопировать все элементы экрана в формате JSON для написания скриптов</string>
+  <string name="script_inspect_clip_label">Сведения об элементе</string>
+  <string name="summary_inspect_item_menu">Озвучить и скопировать сведения об элементе, на котором находился фокус, для написания скриптов</string>
+  <string name="script_keys_backtalk_modifier">Клавиша-модификатор Backtalk</string>
+  <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, затем <xliff:g id="second">%2$s</xliff:g></string>
+  <string name="script_commands_category">Команды</string>
+  <string name="script_commands_summary">Жесты и сочетания клавиш работающего скрипта имеют приоритет перед назначениями Backtalk. Отключите назначение скрипта, чтобы использовать назначение Backtalk.</string>
+  <string name="script_binding_gesture">Жест: <xliff:g id="gesture">%1$s</xliff:g></string>
+  <string name="script_binding_keys">Сочетание клавиш: <xliff:g id="keys">%1$s</xliff:g></string>
+  <string name="script_binding_menu">Меню Backtalk</string>
+  <string name="script_binding_control">Управление чтением</string>
+  <string name="script_binding_none">Нет</string>
+  <string name="script_binding_turn_on">Включить</string>
+  <string name="script_binding_turn_off">Отключить</string>
+  <string name="script_binding_restore">Восстановить значения по умолчанию</string>
+  <string name="script_binding_restored">Значения по умолчанию восстановлены</string>
+  <string name="script_binding_perform">Выполнить жест или нажать сочетание клавиш</string>
+  <string name="script_binding_perform_summary">Назначить следующий выполненный жест или сочетание, нажатое с клавишей-модификатором Backtalk</string>
+  <string name="script_binding_perform_message">Выполните жест или нажмите сочетание клавиш.</string>
+  <string name="script_binding_assign_title">Назначить <xliff:g id="binding">%1$s</xliff:g> для <xliff:g id="command">%2$s</xliff:g>?</string>
+  <string name="script_binding_assign">Назначить</string>
+  <string name="script_binding_choose_gesture">Выбрать жест</string>
+  <string name="script_binding_type_keys">Ввести сочетание клавиш</string>
+  <string name="script_binding_type_keys_summary">Например, backtalk+shift+n или backtalk+t, s</string>
+  <string name="script_binding_bad_keys">Невозможно использовать это сочетание клавиш. <xliff:g id="reason">%1$s</xliff:g></string>
+  <string name="script_install_adds">Добавляемые возможности:</string>
+  <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+  <string name="script_sources">Источники скриптов</string>
+  <string name="script_sources_none">Источники не добавлены</string>
+  <string name="script_source_add">Добавить источник</string>
+  <string name="script_source_add_button">Добавить</string>
+  <string name="script_source_hint">github.com/owner/repository</string>
+  <string name="script_source_invalid">Это не адрес репозитория на GitHub, GitLab, Codeberg, Gitea или Bitbucket.</string>
+  <string name="script_source_exists">Этот источник уже добавлен.</string>
+  <string name="script_source_loading">Загрузка</string>
+  <string name="script_source_empty">В этом источнике нет скриптов</string>
+  <string name="script_source_failed">Не удалось загрузить скрипты. <xliff:g id="reason">%1$s</xliff:g></string>
+  <string name="script_source_retry">Повторить попытку</string>
+  <string name="script_source_downloading">Скачивание <xliff:g id="name">%1$s</xliff:g></string>
+  <string name="script_source_remove">Удалить источник</string>
+  <string name="script_source_remove_title">Удалить <xliff:g id="name">%1$s</xliff:g>?</string>
+  <string name="script_source_remove_message">Установленные из него скрипты останутся установленными.</string>
+</resources>

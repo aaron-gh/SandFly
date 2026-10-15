@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="title_pause_backtalk">Приостановить Backtalk</string>
+  <string name="summary_pause_backtalk">Отключить речь, жесты и изучение касанием до возобновления работы Backtalk</string>
+  <string name="keycombo_menu_global_pause_backtalk">Приостановить или возобновить Backtalk</string>
+  <string name="backtalk_paused">Работа Backtalk приостановлена</string>
+  <string name="backtalk_resumed">Работа Backtalk возобновлена</string>
+  <string name="notification_title_backtalk_paused">Работа Backtalk приостановлена</string>
+  <string name="notification_message_backtalk_paused">Нажмите, чтобы возобновить</string>
+  <string name="notification_channel_backtalk_paused">Приостановка Backtalk</string>
+  <string name="dialog_title_pause_backtalk">Приостановить Backtalk?</string>
+  <string name="dialog_button_pause_backtalk">Приостановить</string>
+  <string name="dialog_message_pause_backtalk">Пока работа Backtalk приостановлена, он не озвучивает текст и не реагирует на жесты. Экран работает так, как будто программа чтения с экрана отключена.</string>
+  <string name="message_resume_keyguard">Чтобы возобновить работу, нажмите на уведомление «Работа Backtalk приостановлена», быстро нажмите кнопку уменьшения громкости три раза или заблокируйте телефон и включите экран, чтобы появился экран блокировки.</string>
+  <string name="message_resume_screen_on">Чтобы возобновить работу, нажмите на уведомление «Работа Backtalk приостановлена», быстро нажмите кнопку уменьшения громкости три раза или выключите и снова включите экран.</string>
+  <string name="message_resume_manual">Чтобы возобновить работу, нажмите на уведомление «Работа Backtalk приостановлена» или быстро нажмите кнопку уменьшения громкости три раза.</string>
+  <string name="message_resume_key_combo">Также можно нажать <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+  <string name="title_pref_resume_backtalk">Возобновление работы Backtalk</string>
+  <string name="value_resume_keyguard">При появлении экрана блокировки</string>
+  <string name="value_resume_screen_on">При включении экрана</string>
+  <string name="value_resume_manual">Только через уведомление или команду быстрого доступа</string>
+</resources>

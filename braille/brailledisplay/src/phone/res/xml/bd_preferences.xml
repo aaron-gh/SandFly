@@ -84,6 +84,10 @@
         android:summary="@string/bd_preference_caption_summary"/>
 
     <Preference
+        app:key="@string/pref_key_bd_external_displays"
+        app:title="@string/external_displays_title"/>
+
+    <Preference
         app:key="@string/pref_key_bd_advanced"
         app:title="@string/bd_preference_key_advanced_settings_title"/>
 
