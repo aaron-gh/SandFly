@@ -37,7 +37,7 @@
         android:key="@string/pref_wrap_around_key"
         android:summary="@string/summary_pref_wrap_around"
         android:title="@string/title_pref_wrap_around" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+    <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
         android:defaultValue="@bool/pref_fix_stuck_touch_exploration_default"
         android:key="@string/pref_fix_stuck_touch_exploration_key"
         android:title="@string/title_pref_fix_stuck_touch_exploration" />

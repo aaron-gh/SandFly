@@ -75,7 +75,7 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
 
   /**
    * Without the DUMP permission, fixing stuck touch exploration can only warn, so the setting says
-   * how to grant it.
+   * how to grant it and has an action that copies the command.
    */
   private void updateStuckTouchPreference() {
     Preference preference =
@@ -91,6 +91,13 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
             : getString(
                 R.string.summary_pref_fix_stuck_touch_exploration_no_dump,
                 context.getPackageName()));
+    if (preference instanceof CommandSwitchPreference) {
+      ((CommandSwitchPreference) preference)
+          .setCommand(
+              canFix
+                  ? null
+                  : "adb shell pm grant " + context.getPackageName() + " android.permission.DUMP");
+    }
   }
 
   private void updateTypingMethodPreference() {
