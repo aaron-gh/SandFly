@@ -160,7 +160,6 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
     if (summaryView != null) {
       summaryView.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
     }
-    ViewCompat.setStateDescription(view, collapsed ? collapsedSummary : expandedSummary);
     // The list installs its own delegate after binding, so wrap that one once it is in place.
     view.post(
         () -> {
