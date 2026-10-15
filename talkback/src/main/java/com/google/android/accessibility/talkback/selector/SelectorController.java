@@ -117,6 +117,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.monitor.CollectionState;
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
@@ -378,6 +379,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_text_formatting_inline_key,
         R.string.title_switch_text_formatting,
         R.bool.pref_selector_text_formatting_inline_default),
+    SWITCH_TTS_ENGINE(
+        R.string.pref_selector_switch_tts_engine_key,
+        R.string.selector_switch_tts_engine,
+        R.bool.pref_selector_switch_tts_engine_default),
     SWITCH_VOICE_PROFILE(
         R.string.pref_selector_voice_profile_key,
         R.string.selector_voice_profile,
@@ -642,6 +647,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.TABLET_HELD_UP_FACES_AWAY,
           Setting.ADJUSTABLE_WIDGET,
           Setting.CONTROL_TELLING_TIME,
+          Setting.SWITCH_TTS_ENGINE,
           Setting.SWITCH_VOICE_PROFILE);
 
   /** Lists all {@link Setting} that should be hidden for users. */
@@ -970,6 +976,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case CONTROL_TELLING_TIME -> {
         actionDescription = context.getString(R.string.title_control_speak_time);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case SWITCH_TTS_ENGINE -> {
+        actionDescription = context.getString(R.string.title_selector_switch_tts_engine);
         hint = getAdjustSelectedSettingGestures();
       }
       case SWITCH_VOICE_PROFILE -> {
@@ -1784,6 +1794,10 @@ public class SelectorController implements UserInputEventListener {
         switchTellingTimeOnOrOff(eventId);
         return;
       }
+      case SWITCH_TTS_ENGINE -> {
+        changeTtsEngine(eventId, isNext);
+        return;
+      }
       case SWITCH_VOICE_PROFILE -> {
         changeVoiceProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
@@ -2004,6 +2018,38 @@ public class SelectorController implements UserInputEventListener {
             R.string.template_speech_rate_change,
             actorState.getSpeechRateState().getSpeechRatePercentage());
     announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  private void changeTtsEngine(EventId eventId, boolean isNext) {
+    // The engine of a voice profile in use is set in the profile, so changing Backtalk default's
+    // engine would do nothing.
+    if (VoiceProfiles.isProfileActive()) {
+      String displayText = context.getString(R.string.speech_engine_unavailable_with_profile);
+      announceSetting(eventId, displayText, getSelectSettingGestures());
+      showQuickMenuActionOverlay(eventId, displayText);
+      return;
+    }
+    List<String> engines =
+        FailoverTextToSpeech.getInstalledTtsEngines(context.getPackageManager());
+    if (engines.size() <= 1) {
+      announceSetting(
+          eventId,
+          context.getString(R.string.title_selector_switch_tts_engine),
+          getSelectSettingGestures());
+      return;
+    }
+
+    int currentIndex = engines.indexOf(FailoverTextToSpeech.getSelectedEngine(context));
+    int nextIndex =
+        (currentIndex < 0)
+            ? (isNext ? 0 : engines.size() - 1)
+            : Math.floorMod(currentIndex + (isNext ? 1 : -1), engines.size());
+    String nextEngine = engines.get(nextIndex);
+    prefs.edit().putString(context.getString(R.string.pref_tts_engine_key), nextEngine).apply();
+
+    String displayText = FailoverTextToSpeech.getEngineDisplayName(context, nextEngine);
+    announceSetting(eventId, displayText, getSelectSettingGestures());
     showQuickMenuActionOverlay(eventId, displayText);
   }
 
