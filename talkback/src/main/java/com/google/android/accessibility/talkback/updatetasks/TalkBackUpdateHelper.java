@@ -105,6 +105,7 @@ public class TalkBackUpdateHelper {
 
     showPendingNotifications();
     moveToFasterDefaults();
+    turnOffAddedReadingControls();
     PhoneticLetterMode.migrate(sharedPreferences, service.getResources());
 
     final int previousVersion = sharedPreferences.getInt(PREF_APP_VERSION, VERSION_CODE_UNKNOWN);
@@ -487,6 +488,33 @@ public class TalkBackUpdateHelper {
    * faster defaults, once. The settings screen saved those defaults, so changing them in resources
    * alone wouldn't reach these users. Other choices are left alone.
    */
+  /** Whether {@link #turnOffAddedReadingControls} has run. */
+  private static final String PREF_READING_CONTROLS_OFF_DONE = "reading_controls_off_done";
+
+  /**
+   * Turns off, once, the reading controls that Backtalk turned on by itself: wrap around and lift to
+   * activate, which used to be on by default, and the focus delay controls, which TalkBack added the
+   * first time the user changed a delay. They're off by default now, and the settings screen saved
+   * the old defaults, so changing them in resources alone wouldn't reach these users.
+   */
+  private void turnOffAddedReadingControls() {
+    if (sharedPreferences.getBoolean(PREF_READING_CONTROLS_OFF_DONE, false)) {
+      return;
+    }
+    Editor editor = sharedPreferences.edit();
+    editor.remove(service.getString(R.string.pref_selector_wrap_around_key));
+    editor.remove(service.getString(R.string.pref_selector_change_lift_to_activate_key));
+    if (sharedPreferences.getBoolean(
+        service.getString(R.string.pref_touch_focus_time_out_first_update_key), false)) {
+      editor.remove(service.getString(R.string.pref_selector_change_touch_focus_latency_key));
+    }
+    if (sharedPreferences.getBoolean(
+        service.getString(R.string.pref_typing_focus_time_out_first_update_key), false)) {
+      editor.remove(service.getString(R.string.pref_selector_change_typing_focus_latency_key));
+    }
+    editor.putBoolean(PREF_READING_CONTROLS_OFF_DONE, true).apply();
+  }
+
   private void moveToFasterDefaults() {
     if (sharedPreferences.getBoolean(PREF_FASTER_DEFAULTS_DONE, false)) {
       return;

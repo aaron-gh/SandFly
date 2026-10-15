@@ -27,13 +27,9 @@ import com.google.android.accessibility.material.preference.AccessibilitySuiteRa
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
-import com.google.android.libraries.accessibility.utils.log.LogUtils;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Fragment to customize focus latency. */
 public class FocusDelayPrefFragment extends TalkbackBaseFragment {
-  private static final String TAG = "FocusDelayPrefFragment";
   private AccessibilitySuitePreferenceCategory focusDelayPrefCategory;
   private Context context;
   private SharedPreferences prefs;
@@ -105,44 +101,11 @@ public class FocusDelayPrefFragment extends TalkbackBaseFragment {
       }
 
       if (itemChanged) {
-        // Inform user a reading control item is added to adjust the latency
-        // dynamically.
-        A11yAlertDialogWrapper dialog = dialogToInformAddingToReadingControl();
-        if (dialog != null) {
-          dialog.show();
-        }
         setFocusDelay(prefTitle);
       }
     }
 
     return super.onPreferenceTreeClick(preference);
-  }
-
-  private @Nullable A11yAlertDialogWrapper dialogToInformAddingToReadingControl() {
-    if (SharedPreferencesUtils.getBooleanPref(
-        prefs,
-        context.getResources(),
-        R.string.pref_touch_focus_time_out_first_update_key,
-        false)) {
-      return null;
-    }
-    LogUtils.d(TAG, "User updates focus delay 1st time.");
-    prefs
-        .edit()
-        .putBoolean(getString(R.string.pref_selector_change_touch_focus_latency_key), true)
-        .putBoolean(getString(R.string.pref_touch_focus_time_out_first_update_key), true)
-        .apply();
-
-    return A11yAlertDialogWrapper.materialDialogBuilder(
-            context, getActivity().getSupportFragmentManager())
-        .setTitle(getString(R.string.confirm_focus_delay_reading_control_added_dialog_title))
-        .setMessage(getString(R.string.confirm_focus_delay_reading_control_added_dialog_message))
-        .setPositiveButton(
-            R.string.confirm_latency_reduction_reading_control_added_dialog_positive_button,
-            (dialogInterface, i) -> {
-              LogUtils.d(TAG, "User positively acknowledge it.");
-            })
-        .create();
   }
 
   private void setFocusDelay(CharSequence value) {

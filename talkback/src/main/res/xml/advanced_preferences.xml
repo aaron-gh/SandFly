@@ -2,8 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-      android:key="@string/pref_category_controls_key"
-      android:title="@string/title_pref_category_controls" >
+      android:key="@string/pref_category_controls_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_category_latency_reduction_shortcut_key"
         android:title="@string/title_pref_latency_reduction"
