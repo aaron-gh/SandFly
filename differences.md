@@ -314,6 +314,20 @@ When you swipe past the last item on the screen, TalkBack stops once and then go
 
 **Wrap around** is also a reading control, so you can turn it on or off with a swipe up or down. It's on by default.
 
+### Stuck touch exploration
+
+On some phones, after a touch with several fingers, Android can stop touch exploration for every screen reader until the phone restarts. Swipes and taps still work, but dragging a finger says nothing. The bug is in Android, not in the screen reader.
+
+Backtalk notices exploring touches that hover over nothing. To let it fix the problem, grant it the DUMP permission once with adb:
+
+```
+adb shell pm grant fyi.quin.backtalk android.permission.DUMP
+```
+
+With the permission, Backtalk reads which touches Android left down, says "Fixing touch exploration", turns explore by touch off while it ends those touches with a gesture outside the screen, usually for less than half a second, and turns explore by touch back on. It then says "Touch exploration fixed". A touch during the fix goes straight to the app, and Backtalk tries again after your next exploring touch. Without the permission, after three such touches in a row Backtalk says that touch exploration may be stuck, and you need to restart the phone.
+
+This needs a phone whose `dumpsys input` lists the touches that Android holds for accessibility, which Samsung phones do. On other phones, Backtalk can only say that touch exploration may be stuck. Exploring something that has nothing for Backtalk to read, such as blank space or a game, also hovers over nothing, so without the permission the warning can be wrong, at most once every 10 minutes. To turn this off, turn off **Advanced settings** > **Fix stuck touch exploration**.
+
 ### Gestures recognized by Backtalk
 
 By default, Backtalk recognizes gestures itself instead of leaving this to Android, which makes the rotor and the quadruple-tap with three fingers possible. TalkBack leaves this off.

@@ -109,6 +109,12 @@
         android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
+    <!-- Granted by the user with adb, to read the pointers Android holds down when touch
+         exploration is stuck, so that Backtalk can lift them. -->
+    <uses-permission
+        android:name="android.permission.DUMP"
+        tools:ignore="ProtectedPermissions" />
+
     <!-- Used to offer to uninstall Backtalk under its old app ID. -->
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
 
