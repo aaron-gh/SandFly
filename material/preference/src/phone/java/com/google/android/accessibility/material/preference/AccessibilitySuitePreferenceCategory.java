@@ -160,10 +160,6 @@ public class AccessibilitySuitePreferenceCategory extends PreferenceCategory {
     if (summaryView != null) {
       summaryView.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
     }
-    // Android 16 and later expose the expanded state itself, which services speak.
-    ViewCompat.setStateDescription(
-        view,
-        Build.VERSION.SDK_INT >= 36 ? null : collapsed ? collapsedSummary : expandedSummary);
     // The list installs its own delegate after binding, so wrap that one once it is in place.
     view.post(
         () -> {
