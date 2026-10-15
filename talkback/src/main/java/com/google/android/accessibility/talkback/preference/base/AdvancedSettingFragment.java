@@ -17,11 +17,13 @@ package com.google.android.accessibility.talkback.preference.base;
 
 import static com.google.android.accessibility.utils.SettingsUtils.isTouchExplorationEnabled;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -68,6 +70,27 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
     super.onResume();
     updateTouchExplorationState();
     updateTypingMethodPreference();
+    updateStuckTouchPreference();
+  }
+
+  /**
+   * Without the DUMP permission, fixing stuck touch exploration can only warn, so the setting says
+   * how to grant it.
+   */
+  private void updateStuckTouchPreference() {
+    Preference preference =
+        findPreference(getString(R.string.pref_fix_stuck_touch_exploration_key));
+    if (preference == null) {
+      return;
+    }
+    boolean canFix =
+        context.checkSelfPermission(Manifest.permission.DUMP) == PackageManager.PERMISSION_GRANTED;
+    preference.setSummary(
+        canFix
+            ? null
+            : getString(
+                R.string.summary_pref_fix_stuck_touch_exploration_no_dump,
+                context.getPackageName()));
   }
 
   private void updateTypingMethodPreference() {
