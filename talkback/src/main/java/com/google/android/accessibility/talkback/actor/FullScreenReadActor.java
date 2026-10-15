@@ -382,7 +382,7 @@ public class FullScreenReadActor {
     // Copying mode can be ended with nothing focused, as it goes from window to window.
     AccessibilityNodeInfoCompat node = getSelectTextFocus(eventId, /* speakIfNone= */ false);
 
-    if (!pipeline.returnFeedback(eventId, Feedback.edit(node, END_SELECT))) {
+    if (!pipeline.returnFeedback(eventId, Feedback.edit(node, END_SELECT)) && node != null) {
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
       interrupt(/* internal= */ true);
     }

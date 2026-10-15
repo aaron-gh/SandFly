@@ -242,11 +242,13 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Executes and announces start selecting text in edit-text. */
   public boolean startSelect(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (node == null) {
+    // Text the app keeps no selection in is selected for copying, but not passwords.
+    if (node == null
+        || (!AccessibilityNodeInfoUtils.isTextSelectable(node) && node.isPassword())) {
       return false;
     }
 
-    // Start selecting. Text that the app keeps no selection in is selected for copying.
+    // Start selecting.
     pipeline.returnFeedback(eventId, Feedback.selectionModeOn(node));
 
     // Announce selecting started.
