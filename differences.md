@@ -410,7 +410,7 @@ Android lets only certain apps, such as smartwatch companions, change where call
 adb shell appops set fyi.quin.backtalk MANAGE_ONGOING_CALLS allow
 ```
 
-Then turn on **Sound and vibration** > **Speaker when away from your ear**. Until you grant the permission, the setting is unavailable and shows the command. This feature requires Android 12 or later.
+Then turn on **Sound and vibration** > **Speaker when away from your ear**. Until you grant the permission, the setting is unavailable and shows the command, and its **Copy command** action copies the command to the clipboard. This feature requires Android 12 or later.
 
 ## Direct touch
 
