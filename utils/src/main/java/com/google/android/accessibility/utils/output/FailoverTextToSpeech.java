@@ -1366,11 +1366,11 @@ public class FailoverTextToSpeech {
    */
   private int ttsSpeak(
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
-    watchForEngineHang(queueMode, utteranceId);
     @Nullable LowLatencyAudio player = lowLatencyPlayer();
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
+    watchForEngineHang(queueMode, utteranceId);
     if (queueMode != QUEUE_ADD) {
       // The engine flushes its own queue for this queue mode. Every player, since the player for
       // speech changes with the speech volume setting.
@@ -1399,10 +1399,21 @@ public class FailoverTextToSpeech {
     return result;
   }
 
+  /** Whether a phone or voice call has the audio mode. */
+  private boolean inCall() {
+    AudioManager audioManager = context.getSystemService(AudioManager.class);
+    if (audioManager == null) {
+      return false;
+    }
+    int mode = audioManager.getMode();
+    return mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION;
+  }
+
   /** The player for speech, or null if speech should play the usual way. */
   private @Nullable LowLatencyAudio lowLatencyPlayer() {
     if (!lowLatencyAudio
         || LowLatencyAudio.isMicrophoneInUse()
+        || inCall()
         || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R
         || (ttsEngine != null && enginesWithoutFileAudio.contains(ttsEngine))) {
       return null;
