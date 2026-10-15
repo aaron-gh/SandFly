@@ -93,7 +93,8 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
 
   /**
    * The speakerphone setting needs a permission that the user grants with adb, and Android only has
-   * it from Android 12. Until it is granted, the setting is off and says how to grant it.
+   * it from Android 12. Until it is granted, the setting is off, says how to grant it and has an
+   * action that copies the command.
    */
   private void updateSpeakerphonePreference() {
     Preference pref = findPreference(getString(R.string.pref_speakerphone_away_from_ear_key));
@@ -106,13 +107,15 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
       return;
     }
     boolean granted = SpeakerphoneSettings.INSTANCE.canControlCalls(getContext());
+    String command = SpeakerphoneSettings.INSTANCE.grantCommand(getContext());
     pref.setEnabled(granted);
     pref.setSummary(
         granted
             ? getString(R.string.summary_pref_speakerphone_away_from_ear)
-            : getString(
-                R.string.summary_pref_speakerphone_needs_permission,
-                SpeakerphoneSettings.INSTANCE.grantCommand(getContext())));
+            : getString(R.string.summary_pref_speakerphone_needs_permission, command));
+    if (pref instanceof CommandSwitchPreference) {
+      ((CommandSwitchPreference) pref).setCommand(granted ? null : command);
+    }
   }
 
   private void updateAudioOutputPreference() {

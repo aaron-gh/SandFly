@@ -31,7 +31,7 @@
       android:defaultValue="@bool/pref_proximity_default"
       android:key="@string/pref_proximity_key"
       android:title="@string/title_pref_cover_proximity_sensor" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+  <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
       android:defaultValue="false"
       android:key="@string/pref_speakerphone_away_from_ear_key"
       android:title="@string/title_pref_speakerphone_away_from_ear"

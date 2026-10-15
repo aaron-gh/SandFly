@@ -400,6 +400,10 @@
     <string name="summary_pref_speakerphone_away_from_ear">During a call, switches to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again.</string>
     <!-- Summary of that setting when Backtalk does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_needs_permission">Needs a permission that Android does not give to screen readers. To grant it, run this command with adb or Shizuku, then come back to this screen: %1$s</string>
+    <!-- Action on a setting that needs a permission granted with adb. Copies the adb command to the clipboard. [CHAR LIMIT=NONE] -->
+    <string name="action_copy_command">Copy command</string>
+    <!-- Shown after the adb command was copied to the clipboard. [CHAR LIMIT=NONE] -->
+    <string name="command_copied">Command copied</string>
     <!-- Title of the setting that lets other apps speak through Backtalk. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speech_control">Let other apps speak</string>
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
