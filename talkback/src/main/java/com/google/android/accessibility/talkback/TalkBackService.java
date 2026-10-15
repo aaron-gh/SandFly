@@ -234,6 +234,7 @@ import com.google.android.accessibility.talkback.speechbubble.DisableTalkBackDia
 import com.google.android.accessibility.talkback.migration.AppIdHandOver;
 import com.google.android.accessibility.talkback.speechcontrol.SpeechControl;
 import com.google.android.accessibility.talkback.status.StatusReader;
+import com.google.android.accessibility.talkback.stucktouch.StuckTouchController;
 import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
@@ -779,6 +780,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private ScrollPositionInterpreter scrollPositionInterpreter;
   private ScreenStateMonitor screenStateMonitor;
   private DirectTouchController directTouchController;
+  private StuckTouchController stuckTouchController;
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
   private @Nullable ScriptHost scriptHost;
@@ -961,6 +963,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       directTouchController = null;
     }
 
+    if (stuckTouchController != null) {
+      stuckTouchController.shutdown();
+      stuckTouchController = null;
+    }
+
     if (scriptHost != null) {
       Scripts.setHost(null);
       scriptHost.shutdown();
@@ -1106,6 +1113,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     PreparedFocusSpeech.onAccessibilityEvent(event);
     if (directTouchController != null) {
       directTouchController.onAccessibilityEvent(event);
+    }
+    if (stuckTouchController != null) {
+      stuckTouchController.onAccessibilityEvent(event);
     }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
         || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
@@ -2564,6 +2574,28 @@ public class TalkBackService extends AccessibilityServiceCompat
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);
     }
+
+    stuckTouchController =
+        new StuckTouchController(
+            this,
+            prefs,
+            pipeline.getFeedbackReturner(),
+            new StuckTouchController.TouchExploration() {
+              @Override
+              public boolean isOn() {
+                return Boolean.TRUE.equals(isTouchExplorationEnabled());
+              }
+
+              @Override
+              public void turnOff() {
+                requestTouchExploration(false);
+              }
+
+              @Override
+              public void restore() {
+                applyTouchExplorationPreference();
+              }
+            });
 
     addEventListener(new ProcessorGestureVibrator(pipeline.getFeedbackReturner()));
 
