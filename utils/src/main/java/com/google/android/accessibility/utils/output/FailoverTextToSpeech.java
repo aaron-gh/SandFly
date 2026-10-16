@@ -323,6 +323,19 @@ public class FailoverTextToSpeech {
   /** How long an engine that says it is speaking, perhaps for another app, may say nothing. */
   private static final long ENGINE_BUSY_HANG_MS = 20_000;
 
+  /**
+   * How long speech plays the usual way after the audio mode changes, such as when a call starts or
+   * ends. Engines can say nothing about the first speech after the mode changes for longer than
+   * {@link #ENGINE_HANG_MS}.
+   */
+  private static final long AUDIO_MODE_SETTLE_MS = 10_000;
+
+  /** The audio mode last seen. */
+  private volatile int lastAudioMode;
+
+  /** When the audio mode was last seen to change, or 0 if it hasn't changed. */
+  private volatile long audioModeChangedAt;
+
   /** When speech went to an engine with nothing else to do, or 0 once the engine responded. */
   private volatile long engineQuietSince;
 
@@ -474,6 +487,7 @@ public class FailoverTextToSpeech {
     // connect to system services
     initWakeLock(context);
     audioManager = (AudioManager) this.context.getSystemService(Context.AUDIO_SERVICE);
+    lastAudioMode = audioManager.getMode();
     telephonyManager = (TelephonyManager) this.context.getSystemService(Context.TELEPHONY_SERVICE);
   }
 
@@ -1401,12 +1415,27 @@ public class FailoverTextToSpeech {
 
   /** Whether a phone or voice call has the audio mode. */
   private boolean inCall() {
-    AudioManager audioManager = context.getSystemService(AudioManager.class);
-    if (audioManager == null) {
-      return false;
-    }
     int mode = audioManager.getMode();
     return mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION;
+  }
+
+  /**
+   * Notes the time if the audio mode changed since it was last seen. A change that happened while
+   * Backtalk wasn't looking counts from now.
+   */
+  private void checkAudioMode() {
+    int mode = audioManager.getMode();
+    if (mode != lastAudioMode) {
+      lastAudioMode = mode;
+      audioModeChangedAt = SystemClock.uptimeMillis();
+    }
+  }
+
+  /** Whether the audio mode changed less than {@link #AUDIO_MODE_SETTLE_MS} ago. */
+  private boolean audioModeSettling() {
+    checkAudioMode();
+    long changedAt = audioModeChangedAt;
+    return changedAt != 0 && SystemClock.uptimeMillis() - changedAt < AUDIO_MODE_SETTLE_MS;
   }
 
   /** The player for speech, or null if speech should play the usual way. */
@@ -1414,6 +1443,7 @@ public class FailoverTextToSpeech {
     if (!lowLatencyAudio
         || LowLatencyAudio.isMicrophoneInUse()
         || inCall()
+        || audioModeSettling()
         || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R
         || (ttsEngine != null && enginesWithoutFileAudio.contains(ttsEngine))) {
       return null;
@@ -1757,6 +1787,12 @@ public class FailoverTextToSpeech {
     }
     if (quiet < ENGINE_BUSY_HANG_MS && isEngineSpeaking()) {
       // Another app's speech with the same engine comes first.
+      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      return;
+    }
+    checkAudioMode();
+    if (quiet < ENGINE_BUSY_HANG_MS && audioModeChangedAt >= since) {
+      // The audio mode changed while the engine had the speech, such as when a call started.
       mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
       return;
     }
