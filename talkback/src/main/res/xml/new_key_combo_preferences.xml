@@ -10,13 +10,7 @@
             android:defaultValue="@string/default_keymap_entry_value"
             android:entries="@array/pref_select_keymap_entries"
             android:entryValues="@array/pref_select_keymap_values" />
-        <ListPreference
-            android:key="@string/pref_new_keymap_trigger_modifier_key"
-            android:title="@string/keycombo_menu_choose_trigger_modifier"
-            android:summary="%s"
-            android:defaultValue="@string/trigger_modifier_meta_entry_value"
-            android:entries="@array/pref_new_keymap_choose_trigger_modifier_entries"
-            android:entryValues="@array/pref_new_keymap_choose_trigger_modifier_values" />
+        <!-- The new keymap only works with the Action key, so there's nothing to choose. -->
         <PreferenceScreen
             android:key="@string/pref_reset_keymap_key"
             android:title="@string/keycombo_menu_reset_keymap" />
@@ -208,6 +202,15 @@
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
             android:key="@string/keycombo_shortcut_other_language_options"
             android:title="@string/keycombo_menu_other_language_options" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_other_voice_profiles"
+            android:title="@string/shortcut_voice_profiles" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_global_previous_voice_profile"
+            android:title="@string/shortcut_previous_voice_profile" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_global_next_voice_profile"
+            android:title="@string/shortcut_next_voice_profile" />
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
             android:key="@string/keycombo_shortcut_other_toggle_search"
             android:title="@string/keycombo_menu_other_toggle_search" />

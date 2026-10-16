@@ -109,6 +109,12 @@ public class EventTypeHoverEnterFeedbackRule {
         && AccessibilityEventFeedbackUtils.isEventRelatedToKeyboardKey(event)) {
       // If the event is related to keyboard key, the TTS output will replaced with key's
       // description and its phonetic.
+      // The user can choose to hear the phonetic word with or in place of the key.
+      Optional<CharSequence> phoneticInPlaceOfKey =
+          processorPhoneticLetters.getPhoneticInPlaceOfKeyboardKey(event);
+      if (phoneticInPlaceOfKey.isPresent()) {
+        return phoneticInPlaceOfKey.get();
+      }
       List<CharSequence> outputJoinList = new ArrayList<>();
       AccessibilityNodeInfoCompat node = eventOptions.sourceNode;
       CharSequence nodeTreeDescription =

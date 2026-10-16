@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService.SpeechLanguage;
 import com.google.android.accessibility.utils.StringUtils;
 import com.google.android.accessibility.utils.monitor.ScreenMonitor;
+import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +87,11 @@ public class LanguageActor {
   public boolean allowSelectLanguage() {
     // We do not want to show languages menu if the user is on the lock screen.
     if (ScreenMonitor.isDeviceLocked(context)) {
+      return false;
+    }
+
+    // While a voice profile is in use, all speech uses its voice's language.
+    if (VoiceProfiles.isProfileActive()) {
       return false;
     }
 

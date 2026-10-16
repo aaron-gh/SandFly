@@ -46,14 +46,13 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
   private static final String TAG = "GeminiEndpoint";
   private static final String GEMINI_URL =
       "https://generativelanguage.googleapis.com/v1beta/models/";
-  private static final String GEMINI_URL_PARAM = ":generateContent?key=";
   private static final String GEMINI_URL_NO_PARAM = ":generateContent";
 
   private final Context context;
   private final SharedPreferences prefs;
   private final String model;
   private final String url;
-  private final String urlWithApiKey;
+  private final String builtInApiKey;
   private final GeminiRestRequestPerformer requestPerformer;
   private final String safetyThresholdHarassment;
   private final String safetyThresholdHateSpeech;
@@ -62,16 +61,16 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
   private final String prefixPrompt;
   private final ScreenOverviewRequester screenOverviewRequester;
 
+  /**
+   * @param builtInApiKey the key built into the app, used only while the user has not entered one
+   *     in settings
+   */
   public GeminiRestEndpoint(
-      Context context, String apiKey, GeminiRestRequestPerformer requestPerformer) {
+      Context context, String builtInApiKey, GeminiRestRequestPerformer requestPerformer) {
     this.context = context;
     model = GeminiConfiguration.getGeminiModel(context);
     url = GEMINI_URL + model + GEMINI_URL_NO_PARAM;
-    if (!TextUtils.isEmpty(apiKey)) {
-      urlWithApiKey = GEMINI_URL + model + GEMINI_URL_PARAM + apiKey;
-    } else {
-      urlWithApiKey = "";
-    }
+    this.builtInApiKey = builtInApiKey;
     this.requestPerformer = requestPerformer;
     safetyThresholdHarassment = GeminiConfiguration.getSafetyThresholdHarassment(context);
     safetyThresholdHateSpeech = GeminiConfiguration.getSafetyThresholdHateSpeech(context);
@@ -92,15 +91,23 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
                   : PromptStyle.ON_DEVICE;
             },
             (postData, callback) -> {
-              requestPerformer.performRequest(
-                  TextUtils.isEmpty(urlWithApiKey) ? url : urlWithApiKey, postData, callback);
+              requestPerformer.performRequest(url, apiKey(), postData, callback);
               return kotlin.Unit.INSTANCE;
-            });
+            },
+            failure -> failure.userMessage(context));
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
   }
 
+  /**
+   * Returns the API key, or an empty string when there is none. The key is read each time, so that
+   * a key entered in settings works at once.
+   */
+  private String apiKey() {
+    return GeminiApiKey.effectiveKey(prefs, builtInApiKey);
+  }
+
   private boolean isSupported() {
-    return !TextUtils.isEmpty(urlWithApiKey) || requestPerformer.isKeylessInitialized();
+    return !TextUtils.isEmpty(apiKey()) || requestPerformer.isKeylessInitialized();
   }
 
   @Override
@@ -160,9 +167,9 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
       JSONObject postData =
           DataFieldUtils.createPostDataJson(prefixPrompt + text, encodedImage, safetySettings);
 
-      String urlTarget = TextUtils.isEmpty(urlWithApiKey) ? url : urlWithApiKey;
       requestPerformer.performRequest(
-          urlTarget,
+          url,
+          apiKey(),
           postData,
           new GeminiRestResponseCallback() {
             @Override
@@ -173,9 +180,9 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
                 LogUtils.v(TAG, "Gemini succeeds");
               } else { // Redefine the hint of these kinds when the use cases are understood.
                 geminiResponseListener.onResponse(FinishReason.ERROR_BLOCKED, /* response= */ null);
-                LogUtils.v(
+                LogUtils.e(
                     TAG,
-                    "Gemini finishes by some reason:%s",
+                    "Gemini gave no answer, finish or block reason: %s",
                     (response.blockReason() != null)
                         ? response.blockReason()
                         : response.finishReason());
@@ -183,9 +190,10 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
             }
 
             @Override
-            public void onFailure(String reason) {
-              LogUtils.w(TAG, "ErrorResponse processing Gemini request:%s", reason);
-              geminiResponseListener.onResponse(FinishReason.ERROR_RESPONSE, /* response= */ null);
+            public void onFailure(GeminiFailure failure) {
+              // The request performer has logged the failure. The listener speaks the text.
+              geminiResponseListener.onResponse(
+                  FinishReason.ERROR_RESPONSE, failure.userMessage(context));
             }
 
             @Override

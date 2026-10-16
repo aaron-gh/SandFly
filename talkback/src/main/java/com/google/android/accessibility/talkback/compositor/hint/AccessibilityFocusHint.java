@@ -23,6 +23,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Role;
@@ -78,6 +79,10 @@ public class AccessibilityFocusHint {
         .append(String.format(", isEnabled=%s", isEnabled))
         .append(String.format(", isAccessibilityFocused=%s", isAccessibilityFocused));
     if (enableUsageHint && isEnabled && isAccessibilityFocused) {
+      CharSequence scriptHint = Scripts.ruleHint(node);
+      if (scriptHint != null) {
+        return scriptHint;
+      }
       // Prepare hint for adjustable child.
       CharSequence hintForAdjustableChild = getHintForAdjustableChild(node, globalVariables);
       logString.append(String.format("\n    hintForAdjustableChild={%s}", hintForAdjustableChild));

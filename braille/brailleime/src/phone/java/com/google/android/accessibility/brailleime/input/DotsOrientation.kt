@@ -38,12 +38,12 @@ enum class PortPosition {
  * Rotations are [Surface] rotations, from 0 to 3 quarter turns.
  *
  * A phone only turns the dots by half turns, as its charging port can only be on the user's left
- * or right. A tablet turns them by quarter turns, as if auto-rotate had turned the screen to face
- * the user.
+ * or right, but it follows quarter turns on the table to tell which side the port ends up on. A
+ * tablet turns them by quarter turns, as if auto-rotate had turned the screen to face the user.
  *
  * Gravity cannot tell whether a device held up faces the user or faces away. Laid flat after being
- * held up, a phone takes it that it was held screen away, as when moving from screen-away typing to
- * the table. A tablet takes it that it was held facing the user, as auto-rotate does.
+ * held up, a device takes it that it was held facing the user, as auto-rotate does, unless the user
+ * typed on a phone in screen-away mode.
  */
 object DotsOrientation {
   /** The orientation lock when unlocked. */
@@ -78,8 +78,19 @@ object DotsOrientation {
   @JvmStatic
   fun turnRotation(rotation: Int, quarters: Int): Int = Math.floorMod(rotation - quarters, 4)
 
-  /** Whether a phone turned this many quarter turns lying flat has its port on the other side. */
-  @JvmStatic fun swapsSides(quarters: Int): Boolean = Math.floorMod(quarters, 4) == 2
+  /** Where the charging port is, from the user, as it goes round a device turned clockwise. */
+  private val CLOCKWISE =
+    listOf(PortPosition.NEAR, PortPosition.LEFT, PortPosition.FAR, PortPosition.RIGHT)
+
+  /**
+   * Where a phone's charging port is after the phone, lying flat, turns this many quarter turns
+   * clockwise, seen from above.
+   */
+  @JvmStatic
+  fun turnPortPosition(position: PortPosition, quarters: Int): PortPosition {
+    val index = CLOCKWISE.indexOf(position)
+    return if (index < 0) position else CLOCKWISE[Math.floorMod(index + quarters, 4)]
+  }
 
   /**
    * Maps the layout of the dots onto a screen of this size, turned this many quarter turns
@@ -127,22 +138,56 @@ object DotsOrientation {
     }
 
   /**
-   * Decides which side a phone's charging port is on when it is laid flat. A phone lying flat gives
-   * no sign of which way round it is, but tipping it flat keeps the port on the same side of the
-   * user. So the side is the one the user last typed with in screen-away mode, or else the one the
-   * phone was last held up with in landscape. Otherwise, as when it was last held in portrait, the
-   * screen rotation gives it, as it always has.
+   * Where a phone's charging port is once it is laid flat after being held up like this, taking it
+   * that the screen faced the user, as auto-rotate does, or null if it has not been held up.
    */
   @JvmStatic
-  fun decideTabletopPortOnRight(
+  fun laidFlatPortPosition(held: Orientation): PortPosition? =
+    when (held) {
+      Orientation.LANDSCAPE -> PortPosition.LEFT
+      Orientation.REVERSE_LANDSCAPE -> PortPosition.RIGHT
+      Orientation.PORTRAIT -> PortPosition.NEAR
+      Orientation.REVERSE_PORTRAIT -> PortPosition.FAR
+      else -> null
+    }
+
+  /**
+   * Decides where a phone's charging port is when it is laid flat. A phone lying flat gives no sign
+   * of which way round it is, but tipping it flat keeps the port on the same side of the user. So
+   * the side is the one the user last typed with in screen-away mode. Otherwise it is where the
+   * port was when the phone was last held up, taking it that the screen faced the user, as when
+   * picking the phone up to read it. Held in portrait, the port is toward or away from the user
+   * until the phone is turned on the table, unless the screen has turned to landscape since.
+   * Otherwise the screen rotation gives it, as auto-rotate turns the screen to face the user.
+   */
+  @JvmStatic
+  fun decidePhoneTabletopPort(
     typedScreenAwayPortOnRight: Boolean?,
     lastHeld: Orientation,
     portrait: Boolean,
     rotation: Int,
-  ): Boolean =
-    typedScreenAwayPortOnRight
-      ?: heldPortOnRight(lastHeld)
-      ?: (!portrait && rotation == Surface.ROTATION_270)
+  ): PortPosition {
+    if (typedScreenAwayPortOnRight != null) {
+      return phonePortPosition(typedScreenAwayPortOnRight)
+    }
+    val held = laidFlatPortPosition(lastHeld)
+    if (held == PortPosition.LEFT || held == PortPosition.RIGHT || (held != null && portrait)) {
+      return held
+    }
+    return phonePortPosition(tabletopLayoutExpectsPortOnRight(portrait, rotation))
+  }
+
+  /**
+   * Which side a phone's layout puts the charging port on: the side the port is on, or else, with
+   * the port toward or away from the user, [previous], until a turn puts it on a side.
+   */
+  @JvmStatic
+  fun phonePortOnRight(position: PortPosition, previous: Boolean): Boolean =
+    when (position) {
+      PortPosition.RIGHT -> true
+      PortPosition.LEFT -> false
+      else -> previous
+    }
 
   /**
    * Whether to decide the tabletop side again, which is only when something new shows it: typing
@@ -184,6 +229,53 @@ object DotsOrientation {
       Orientation.PORTRAIT -> if (phone) null else PortPosition.DOWN
       Orientation.REVERSE_PORTRAIT -> if (phone) null else PortPosition.UP
       else -> null
+    }
+
+  /**
+   * The screen rotation that faces the user once a tablet is laid flat, from [heldRotation], the
+   * rotation auto-rotate gave for how it was last held up. Someone facing the screen ends up at the
+   * edge that was at the bottom, as auto-rotate assumes. But a tablet held up in screen-away mode
+   * with the charging port to the left or right was held from behind, and tipping it flat keeps the
+   * port on the same side of the user, so the user is at the opposite edge. Held with the port down
+   * or up, the user most likely opened the keyboard facing the screen in portrait. When
+   * [heldUpFacesAway] is off, a tablet held up is always taken to face the user, as when it stood
+   * on a stand. Only call it for a tablet whose port is at the bottom of the screen in its natural
+   * orientation.
+   */
+  @JvmStatic
+  fun tabletTabletopRotation(
+    heldRotation: Int,
+    held: Orientation,
+    fromScreenAway: Boolean,
+    heldUpFacesAway: Boolean,
+  ): Int {
+    val port = heldPortPosition(held, phone = false)
+    val heldFromBehind =
+      heldUpFacesAway &&
+        fromScreenAway &&
+        (port == PortPosition.LEFT || port == PortPosition.RIGHT)
+    return if (heldFromBehind) turnRotation(heldRotation, 2) else heldRotation
+  }
+
+  /**
+   * Whether a device held up like this is taken to face the user rather than face away: a tablet
+   * held up any way round when [heldUpFacesAway] is off. Then it uses the tabletop layout, as the
+   * user types on the front of the screen with the thumbs holding the edge nearest the floor.
+   */
+  @JvmStatic
+  fun heldFacingUser(held: Orientation, phone: Boolean, heldUpFacesAway: Boolean): Boolean =
+    !phone && !heldUpFacesAway && held != Orientation.UNKNOWN
+
+  /**
+   * Where the charging port is on a tablet standing up facing the user, from where it would be with
+   * the tablet lying flat at the same rotation: the edge toward the user is the one pointing down.
+   */
+  @JvmStatic
+  fun uprightPortPosition(tabletop: PortPosition): PortPosition =
+    when (tabletop) {
+      PortPosition.NEAR -> PortPosition.DOWN
+      PortPosition.FAR -> PortPosition.UP
+      else -> tabletop
     }
 
   /** A phone's orientation lock for the charging port on this side. */

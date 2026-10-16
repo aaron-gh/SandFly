@@ -29,10 +29,12 @@ import static com.google.android.accessibility.talkback.TalkBackServiceDumpHelpe
 import static com.google.android.accessibility.talkback.TalkBackServiceDumpHelperKt.getConditionGivenArgs;
 import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.GESTURE_SPLIT_TAP;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_NAME_ROLE_STATE_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_NAME_STATE_ROLE_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_ROLE_STATE_NAME_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_STATE_ROLE_NAME_POSITION;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_ROLE_NAME_STATE_POSITION;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_STATE_NAME_ROLE_POSITION;
 import static com.google.android.accessibility.talkback.dynamicfeature.ModuleDownloadPrompter.Requester.ONBOARDING;
-import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.FORCE_LIFT_TO_TYPE_ON_IME;
 import static com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType.ICON_LABEL;
 import static com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType.IMAGE_DESCRIPTION;
 import static com.google.android.accessibility.talkback.ipc.IpcService.EXTRA_IS_ANY_GESTURE_CHANGED;
@@ -86,11 +88,13 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.Display;
 import android.view.InputDevice;
+import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
+import androidx.core.os.UserManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplay;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
@@ -138,6 +142,7 @@ import com.google.android.accessibility.talkback.actor.search.UniversalSearchMan
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandActor;
 import com.google.android.accessibility.talkback.actor.voicecommands.VoiceCommandProcessor;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.PeriodicDataProvider;
+import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.braille.BrailleHelper;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleCommonImpl;
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleDisplayImpl;
@@ -145,14 +150,19 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeIm
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
+import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.EventFilter;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DescriptionOrder;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
+import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.TalkBackListener;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
+import com.google.android.accessibility.talkback.eventprocessor.ProcessorEmojiTraversal;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorEventQueue;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorGestureVibrator;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorMagnification;
@@ -163,6 +173,7 @@ import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackMa
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.flags.Flags;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
@@ -170,10 +181,13 @@ import com.google.android.accessibility.talkback.focusmanagement.record.Accessib
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
+import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionStorage;
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackSettings;
+import com.google.android.accessibility.talkback.individualfeedback.SoundVibrations;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityEventIdleInterpreter;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
 import com.google.android.accessibility.talkback.interpreters.AutoScrollInterpreter;
@@ -207,16 +221,24 @@ import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMoni
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
+import com.google.android.accessibility.talkback.scripting.ScriptHost;
+import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
+import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
+import com.google.android.accessibility.talkback.soundthemes.ThemeFeedback;
 import com.google.android.accessibility.talkback.speech.SpeechCacheController;
+import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.speechbubble.DisableTalkBackDialog;
 import com.google.android.accessibility.talkback.migration.AppIdHandOver;
+import com.google.android.accessibility.talkback.speechcontrol.SpeechControl;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
+import com.google.android.accessibility.talkback.trainingcommon.TutorialShortcuts;
 import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
 import com.google.android.accessibility.talkback.utils.DiagnosticOverlayControllerImpl;
@@ -227,6 +249,7 @@ import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
+import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
@@ -270,6 +293,7 @@ import com.google.android.accessibility.utils.monitor.SpeechStateMonitor;
 import com.google.android.accessibility.utils.monitor.TouchMonitor;
 import com.google.android.accessibility.utils.output.ActorStateProvider;
 import com.google.android.accessibility.utils.output.EditTextActionHistory;
+import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.output.FeedbackProcessingUtils;
@@ -280,6 +304,10 @@ import com.google.android.accessibility.utils.output.SpeechController.UtteranceC
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl.CapitalLetterHandlingMethod;
 import com.google.android.accessibility.utils.output.TextFormattingUtils;
+import com.google.android.accessibility.utils.output.ThemeSounds;
+import com.google.android.accessibility.utils.output.ThemeVibrations;
+import com.google.android.accessibility.utils.output.VoiceProfiles;
+import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.android.libraries.accessibility.utils.servicecompat.AccessibilityServiceCompat;
 import com.google.common.collect.ImmutableList;
@@ -294,11 +322,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalInt;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.stream.Stream;
 import kotlin.Unit;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -389,7 +417,10 @@ public class TalkBackService extends AccessibilityServiceCompat
 
       Bundle data = new Bundle();
       actionKeyToGestureText.forEach(data::putString);
+      TutorialShortcuts.put(data, mapping, talkBackService.keyComboManager);
       data.putBoolean(EXTRA_IS_ANY_GESTURE_CHANGED, GestureController.isAnyGestureChanged(context));
+      // The mapping listens to preference changes until unbound.
+      mapping.onUnbind();
       return data;
     }
 
@@ -600,6 +631,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Controller for audio and haptic feedback. */
   private FeedbackController feedbackController;
+  private ScrollTicks scrollTicks;
 
   /** Watches the proximity sensor, and silences feedback when triggered. */
   private ProximitySensorMonitor proximitySensorMonitor;
@@ -607,6 +639,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private PassThroughModeActor passThroughModeActor;
   private SpeechRateAndPitchActor speechRateAndPitchActor;
   private CollectionState collectionState;
+  private EarlyFocusSpeech earlyFocusSpeech;
   private GlobalVariables globalVariables;
   private EventFilter eventFilter;
   private TextEventInterpreter textEventInterpreter;
@@ -717,6 +750,22 @@ public class TalkBackService extends AccessibilityServiceCompat
   private final InputModeTracker inputModeTracker = new InputModeTracker();
   private WindowEventInterpreter windowEventInterpreter;
   private ScreenFeedbackManager processorScreen;
+
+  // Values of the "Interrupt speech when typing" setting.
+  private static final int INTERRUPT_TYPING_ALWAYS = 0;
+  private static final int INTERRUPT_TYPING_EDIT_FIELDS = 1;
+  private static final int INTERRUPT_TYPING_KEYBOARD_ECHO = 2;
+
+  /** "Interrupt speech when typing" setting. */
+  private int typingInterruptsSpeech = INTERRUPT_TYPING_ALWAYS;
+
+  /** "Interrupt speech on Enter" setting. */
+  private boolean enterInterruptsSpeech = true;
+
+  /** "Physical keyboard echo" setting. */
+  @TextEventFilter.KeyboardEchoType
+  private int physicalKeyboardEcho = TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS;
+
   private @Nullable ProcessorMagnification processorMagnification;
   private final DisableTalkBackCompleteAction disableTalkBackCompleteAction =
       new DisableTalkBackCompleteAction();
@@ -731,6 +780,8 @@ public class TalkBackService extends AccessibilityServiceCompat
   private ScreenStateMonitor screenStateMonitor;
   private DirectTouchController directTouchController;
   private PauseController pauseController;
+  private AudioDeviceRouter audioDeviceRouter;
+  private @Nullable ScriptHost scriptHost;
   private InputMethodMonitor inputMethodMonitor;
   private DisplayMonitor displayMonitor;
   private ProcessorEventQueue processorEventQueue;
@@ -829,15 +880,18 @@ public class TalkBackService extends AccessibilityServiceCompat
         (volumeMonitor == null) ? -1 : volumeMonitor.getCachedAccessibilityMaxVolume());
   }
 
-  /** The user's speech volume, from 0 to 1. */
+  /** The user's speech volume, from 0 to 1, from the voice profile in use if any. */
   private float userSpeechVolume() {
+    @Nullable VoiceProfile voiceProfile = VoiceProfiles.readActive(prefs);
     int speechVolume =
         Math.max(
-            SharedPreferencesUtils.getIntFromStringPref(
-                prefs,
-                getResources(),
-                R.string.pref_speech_volume_key,
-                R.string.pref_speech_volume_default),
+            (voiceProfile != null)
+                ? voiceProfile.volume()
+                : SharedPreferencesUtils.getIntFromStringPref(
+                    prefs,
+                    getResources(),
+                    R.string.pref_speech_volume_key,
+                    R.string.pref_speech_volume_default),
             getResources().getInteger(R.integer.pref_speech_volume_min));
     return speechVolume / 100.0f;
   }
@@ -905,6 +959,18 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (directTouchController != null) {
       directTouchController.shutdown();
       directTouchController = null;
+    }
+
+    if (scriptHost != null) {
+      Scripts.setHost(null);
+      scriptHost.shutdown();
+      scriptHost = null;
+    }
+    SpeechControl.detach();
+
+    if (audioDeviceRouter != null) {
+      audioDeviceRouter.shutdown();
+      audioDeviceRouter = null;
     }
 
     if (passThroughModeActor != null) {
@@ -1027,12 +1093,23 @@ public class TalkBackService extends AccessibilityServiceCompat
         && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       return;
     }
+    if (scriptHost != null) {
+      scriptHost.onAccessibilityEvent(event);
+    }
+    if (audioDeviceRouter != null) {
+      audioDeviceRouter.ensureRouting();
+    }
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onEventReceived(event);
     int eventType = event.getEventType();
     TraversalTreeCache.onAccessibilityEvent(event);
+    PreparedFocusSpeech.onAccessibilityEvent(event);
     if (directTouchController != null) {
       directTouchController.onAccessibilityEvent(event);
+    }
+    if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
+        || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
+      RecentUserInput.mark();
     }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       // TODO: Could move the logic of TOUCH_INTERACTION related event handling out of
@@ -1110,6 +1187,10 @@ public class TalkBackService extends AccessibilityServiceCompat
   public void clearQueues() {
     interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
     processorEventQueue.clearQueue();
+    if (earlyFocusSpeech != null) {
+      // A focus spoken early whose event is thrown away must not hide a later focus of its node.
+      earlyFocusSpeech.clear();
+    }
     if (windowEventInterpreter != null) {
       windowEventInterpreter.clearQueue();
     }
@@ -1118,6 +1199,118 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   private boolean shouldInterruptByAnyKeyEvent() {
     return !fullScreenReadActor.isActive();
+  }
+
+  // What a key press on a physical keyboard does to speech. A typed character stops speech without
+  // dropping the announcement of a window change, such as a dialog that appears while typing.
+  private static final int KEY_KEEPS_SPEECH = 0;
+  private static final int KEY_STOPS_SPEECH = 1;
+  private static final int TYPED_KEY_STOPS_SPEECH = 2;
+
+  /** Whether Ctrl is held on a physical keyboard with no other key pressed since it went down. */
+  private boolean ctrlTapPending = false;
+
+  /**
+   * Pauses or resumes speech when Ctrl on a physical keyboard is pressed and released with no other
+   * key, as a two-finger tap does. A shortcut with Ctrl doesn't.
+   */
+  private void handleCtrlTap(KeyEvent keyEvent, EventId eventId) {
+    int keyCode = keyEvent.getKeyCode();
+    boolean isCtrl =
+        keyCode == KeyEvent.KEYCODE_CTRL_LEFT || keyCode == KeyEvent.KEYCODE_CTRL_RIGHT;
+    if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+      if (!isCtrl) {
+        ctrlTapPending = false;
+      } else if (keyEvent.getRepeatCount() == 0) {
+        ctrlTapPending = isFromPhysicalKeyboard(keyEvent);
+      }
+      return;
+    }
+    if (!isCtrl || !ctrlTapPending) {
+      return;
+    }
+    ctrlTapPending = false;
+    if (!pipeline.getActorState().getContinuousRead().isActive()
+        && speechController.readyToPause()) {
+      // As the gesture does, clear the pause that read from top keeps for itself.
+      interruptFullScreenReadActor();
+    }
+    pipeline
+        .getFeedbackReturner()
+        .returnFeedback(eventId, Feedback.speech(Feedback.Speech.Action.PAUSE_OR_RESUME));
+  }
+
+  /**
+   * Returns what a key press on a physical keyboard does to speech. Every key that isn't a
+   * modifier, lock or volume key stops it, except typed characters and Enter, which follow their
+   * settings. Ctrl alone pauses speech instead, see {@link #handleCtrlTap}.
+   */
+  private int keyEffectOnSpeech(KeyEvent keyEvent) {
+    int keyCode = keyEvent.getKeyCode();
+    if (KeyEvent.isModifierKey(keyCode)
+        || keyCode == KeyEvent.KEYCODE_CAPS_LOCK
+        || keyCode == KeyEvent.KEYCODE_NUM_LOCK
+        || keyCode == KeyEvent.KEYCODE_SCROLL_LOCK
+        || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN
+        || keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+      return KEY_KEEPS_SPEECH;
+    }
+    // Shortcuts. Right Alt is AltGr on many layouts, which types characters.
+    if (keyEvent.isCtrlPressed()
+        || keyEvent.isMetaPressed()
+        || (keyEvent.getMetaState() & KeyEvent.META_ALT_LEFT_ON) != 0) {
+      return KEY_STOPS_SPEECH;
+    }
+    if (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER) {
+      return enterInterruptsSpeech ? KEY_STOPS_SPEECH : KEY_KEEPS_SPEECH;
+    }
+    int character = keyEvent.getUnicodeChar();
+    if ((character & KeyCharacterMap.COMBINING_ACCENT) != 0) {
+      // A dead key types nothing until the next key.
+      return KEY_KEEPS_SPEECH;
+    }
+    if (character == 0 || Character.isISOControl(character)) {
+      return KEY_STOPS_SPEECH;
+    }
+    boolean inEditField = inputFocusInterpreter.isInputFocusEditable();
+    if (character == ' ' && !inEditField) {
+      // Space activates controls and scrolls pages outside edit fields.
+      return KEY_STOPS_SPEECH;
+    }
+    return typedCharacterInterruptsSpeech(character, inEditField)
+        ? TYPED_KEY_STOPS_SPEECH
+        : KEY_KEEPS_SPEECH;
+  }
+
+  /**
+   * Returns whether the key comes from a physical keyboard, not a virtual device, headset or watch
+   * buttons, or a game controller.
+   */
+  private static boolean isFromPhysicalKeyboard(KeyEvent keyEvent) {
+    InputDevice inputDevice = InputDevice.getDevice(keyEvent.getDeviceId());
+    return inputDevice != null
+        && !inputDevice.isVirtual()
+        && inputDevice.getKeyboardType() == InputDevice.KEYBOARD_TYPE_ALPHABETIC;
+  }
+
+  /** Returns whether typing {@code character} stops speech. */
+  private boolean typedCharacterInterruptsSpeech(int character, boolean inEditField) {
+    return switch (typingInterruptsSpeech) {
+      case INTERRUPT_TYPING_ALWAYS -> true;
+      case INTERRUPT_TYPING_EDIT_FIELDS -> inEditField;
+      // On keyboard echo: only when it speaks the character, or the word it ends.
+      default ->
+          inEditField
+              && switch (physicalKeyboardEcho) {
+                case TextEventFilter.PREF_ECHO_CHARACTERS,
+                    TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS ->
+                    true;
+                case TextEventFilter.PREF_ECHO_WORDS ->
+                    Character.isBmpCodePoint(character)
+                        && TextEventInterpreter.endsWordForEcho((char) character);
+                default -> false;
+              };
+    };
   }
 
   /**
@@ -1141,6 +1334,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Handles a key event and returns whether it should be considered consumed. */
   protected boolean onKeyEventInternal(KeyEvent keyEvent) {
+    if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+      RecentUserInput.mark();
+    }
     if (pauseController != null) {
       // While paused, keys pass to apps except the ones that resume Backtalk.
       Boolean handled = pauseController.onKeyEvent(keyEvent);
@@ -1215,21 +1411,17 @@ public class TalkBackService extends AccessibilityServiceCompat
     EventId eventId = perf.onEventReceived(keyEvent);
 
     if (isServiceActive()) {
-      // Stop speech only when CTRL key is pressed on physical keyboard if
-      // `FeatureFlagReader.enableOnlyCtrlToStopSpeech()` is enabled. Otherwise, stop speech when
-      // any key (except for volume up/down key) is pressed on physical keyboard.
-      boolean keyShouldInterruptSpeech =
-          FeatureFlagReader.enableOnlyCtrlToStopSpeech(this)
-              ? (keyCode == KeyEvent.KEYCODE_CTRL_LEFT || keyCode == KeyEvent.KEYCODE_CTRL_RIGHT)
-              : (keyCode != KeyEvent.KEYCODE_VOLUME_DOWN && keyCode != KeyEvent.KEYCODE_VOLUME_UP);
-      // Do not interrupt speech when the key event is from a virtual device.
-      InputDevice inputDevice = InputDevice.getDevice(keyEvent.getDeviceId());
-      boolean isKeyFromVirtualDevice = inputDevice != null && inputDevice.isVirtual();
-      if (shouldInterruptByAnyKeyEvent()
-          && !isKeyFromVirtualDevice
-          && keyAction == KeyEvent.ACTION_DOWN
-          && keyShouldInterruptSpeech) {
-        interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+      handleCtrlTap(keyEvent, eventId);
+      if (keyAction == KeyEvent.ACTION_DOWN
+          && shouldInterruptByAnyKeyEvent()
+          && isFromPhysicalKeyboard(keyEvent)) {
+        int effect = keyEffectOnSpeech(keyEvent);
+        if (effect != KEY_KEEPS_SPEECH) {
+          interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
+        }
+        if (effect == KEY_STOPS_SPEECH && processorScreen != null) {
+          processorScreen.onSpeechStoppedByKey(keyEvent);
+        }
       }
     }
 
@@ -1324,6 +1516,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (!isServiceActive() || PauseController.isPaused()) {
       return false;
     }
+    // Return before feedback, training, menus and gesture recording. Both callback overloads
+    // use this entry point; ignoring an action in GestureController still reports it as handled.
+    if (VibrationWatchGestureSettings.shouldReserve(
+        prefs, FormFactorUtils.isAndroidWear(), gestureId)) {
+      return false;
+    }
     Performance perf = Performance.getInstance();
     EventId eventId = perf.onGestureEventReceived(gestureId);
     primesController.startTimer(TimerAction.GESTURE_EVENT);
@@ -1352,6 +1550,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     perf.onHandlerDone(eventId);
     primesController.stopTimer(TimerAction.GESTURE_EVENT);
     return true;
+  }
+
+  /** The gesture settings, or null before the service has connected. */
+  public @Nullable GestureShortcutMapping getGestureShortcutMapping() {
+    return gestureShortcutMapping;
   }
 
   public SpeechControllerImpl getSpeechController() {
@@ -1784,6 +1987,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     displayMonitor = new DisplayMonitor(this);
     accessibilityEventProcessor = new AccessibilityEventProcessor(this, displayMonitor);
     feedbackController = new FeedbackController(this);
+    feedbackController.setSoundHaptics(SoundVibrations.patternIds(this));
+    audioDeviceRouter = new AudioDeviceRouter(this);
+    audioDeviceRouter.startMonitoring();
     speechController =
         new SpeechControllerImpl(
             this,
@@ -1803,6 +2009,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     gestureShortcutMapping = new GestureShortcutMapping(this);
 
     collectionState = new CollectionState();
+    earlyFocusSpeech = new EarlyFocusSpeech();
     globalVariables =
         new GlobalVariables(this, inputModeTracker, collectionState, gestureShortcutMapping);
 
@@ -1819,6 +2026,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             : new ImageContents(labelManager, /* imageCaptionStorage= */ null);
 
     processorPhoneticLetters = new ProcessorPhoneticLetters(this, globalVariables);
+    speechController.setLetterSpeller(processorPhoneticLetters::getPhoneticForSpelling);
 
     compositor =
         new Compositor(
@@ -1868,6 +2076,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     ScrollEventInterpreter scrollEventInterpreter =
         new ScrollEventInterpreter(
             audioPlaybackMonitor, touchMonitor, TalkbackFeatureSupport.supportMultipleAutoScroll());
+    scrollTicks = new ScrollTicks(feedbackController, getResources().getDisplayMetrics().density);
+    scrollEventInterpreter.addListener(scrollTicks);
     ManualScrollInterpreter manualScrollInterpreter = new ManualScrollInterpreter();
 
     // Constructor output-actor-state.
@@ -2006,7 +2216,8 @@ public class TalkBackService extends AccessibilityServiceCompat
                 callStateMonitor,
                 touchMonitor,
                 speechStateMonitor,
-                collectionState),
+                collectionState,
+                earlyFocusSpeech),
             new Interpreters(
                 inputFocusInterpreter,
                 scrollEventInterpreter,
@@ -2192,7 +2403,12 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     ringerModeAndScreenMonitor =
         new RingerModeAndScreenMonitor(
-            menuManager, pipeline.getFeedbackReturner(), callStateMonitor, displayMonitor, this);
+            menuManager,
+            pipeline.getFeedbackReturner(),
+            callStateMonitor,
+            displayMonitor,
+            statusReader,
+            this);
     if (speechCacheController != null) {
       ringerModeAndScreenMonitor.addScreenChangedListener(speechCacheController);
     }
@@ -2247,11 +2463,29 @@ public class TalkBackService extends AccessibilityServiceCompat
               }
             });
 
+    startScripts();
+
     audioPlaybackMonitor = new AudioPlaybackMonitor(this);
 
     // Add event processors. These will process incoming AccessibilityEvents
     // in the order they are added.
-    eventFilter = new EventFilter(this, compositor, touchMonitor, globalVariables);
+    eventFilter =
+        new EventFilter(this, compositor, touchMonitor, globalVariables, earlyFocusSpeech);
+    focuser.setFocusSetListener(
+        (node, info, eventId, actionTime) ->
+            eventFilter.onAccessibilityFocusSet(
+                node,
+                info,
+                eventId,
+                actionTime,
+                /* continuousReading= */ fullScreenReadActor != null
+                    && fullScreenReadActor.isActive()));
+    eventFilter.setTargetPredictor(directionNavigationActor::predictTarget);
+    eventFilter.setFingerDownSupplier(
+        () ->
+            FeatureSupport.supportGestureDetection()
+                ? TouchInteractionMonitor.isFingerDown()
+                : touchMonitor.isUserTouchingScreen());
     eventFilter.setVoiceActionDelegate(voiceActionMonitor);
     eventFilter.setAccessibilityFocusEventInterpreter(accessibilityFocusInterpreter);
     ActorStateProvider actorStateProvider =
@@ -2279,6 +2513,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     final TextEventHistory textEventHistory = new TextEventHistory();
     final TextEventFilter textEventFilter =
         new TextEventFilter(this, textCursorTracker, textEventHistory);
+    textEventFilter.setBrailleKeyboardEchoReader(
+        () -> {
+          BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
+          return brailleIme == null ? OptionalInt.empty() : brailleIme.getOnScreenKeyboardEcho();
+        });
     textEventInterpreter =
         new TextEventInterpreter(
             this,
@@ -2297,6 +2536,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     addEventListener(processorEventQueue);
     addEventListener(processorPhoneticLetters);
+    addEventListener(new ProcessorEmojiTraversal(this, pipeline.getFeedbackReturner()));
 
     // Create window event interpreter and announcer.
     windowEventInterpreter = new WindowEventInterpreter(this, displayMonitor);
@@ -2319,7 +2559,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       windowEventInterpreter.addListener(uiChangeEventInterpreter);
       windowEventInterpreter.addListener(imageCaptioner);
       directTouchController =
-          new DirectTouchController(this, prefs, pipeline.getFeedbackReturner());
+          new DirectTouchController(
+              this, prefs, pipeline.getFeedbackReturner(), windowEventInterpreter);
       windowEventInterpreter.addListener(directTouchController);
       ringerModeAndScreenMonitor.addScreenChangedListener(directTouchController);
       displayMonitor.addDisplayStateChangedListener(directTouchController);
@@ -2407,13 +2648,18 @@ public class TalkBackService extends AccessibilityServiceCompat
             new TalkBackPrivateMethodProvider() {
               @Override
               public void requestTouchExploration(boolean enabled) {
-                TouchInteractionMonitor touchInteractionMonitor =
-                    displayIdToTouchInteractionMonitors.get(Display.DEFAULT_DISPLAY);
-                if (FeatureSupport.supportGestureDetection() && touchInteractionMonitor != null) {
-                  touchInteractionMonitor.requestA11yTouchExploreState(enabled);
-                } else {
-                  getInstance().requestTouchExploration(enabled);
+                // TouchInteractionMonitor implements a callback from Android 13, so it cannot even
+                // be loaded before then. Getting it before the check crashed the braille keyboard
+                // on older Android, as it turns off touch exploration when it opens.
+                if (FeatureSupport.supportGestureDetection()) {
+                  TouchInteractionMonitor touchInteractionMonitor =
+                      displayIdToTouchInteractionMonitors.get(Display.DEFAULT_DISPLAY);
+                  if (touchInteractionMonitor != null) {
+                    touchInteractionMonitor.requestA11yTouchExploreState(enabled);
+                    return;
+                  }
                 }
+                getInstance().requestTouchExploration(enabled);
               }
 
               @Override
@@ -2703,6 +2949,17 @@ public class TalkBackService extends AccessibilityServiceCompat
           .registerFingerprintGestureCallback(fingerprintGestureCallback, null);
     }
 
+    // Gives a name of its own to any voice profile that a damaged setting left without one, before
+    // anything says it.
+    VoiceProfileNames.saveNames(this, prefs);
+    VoiceProfiles.moveReadingControl(
+        prefs,
+        getString(R.string.pref_selector_voice_profile_moved_key),
+        getString(R.string.pref_selector_switch_tts_engine_key),
+        getString(R.string.pref_selector_voice_profile_key),
+        getString(R.string.pref_current_selector_setting_key),
+        getString(R.string.selector_switch_tts_engine),
+        getString(R.string.selector_voice_profile));
     reloadPreferences();
 
     inputFocusInterpreter.initLastEditableFocusForGlobalVariables();
@@ -2861,6 +3118,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       dimScreenController.shutdown();
     }
 
+    // The saved reading order holds nodes, which would outlive the service and could be reused,
+    // stale, when Backtalk is turned on again.
+    TraversalTreeCache.clear("shutdown");
+
     if (fullScreenReadActor != null) {
       fullScreenReadActor.shutdown();
     }
@@ -2879,6 +3140,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (feedbackController != null) {
       feedbackController.shutdown();
     }
+    EmojiSpeech.release();
+    if (audioDeviceRouter != null) {
+      audioDeviceRouter.shutdown();
+      audioDeviceRouter = null;
+    }
     if (keyComboManager != null) {
       keyComboManager.shutdown();
     }
@@ -2895,6 +3161,13 @@ public class TalkBackService extends AccessibilityServiceCompat
       analytics.onTalkBackServiceStopped();
     }
     BrailleIme.shutdown();
+  }
+
+  /** Called on any thread when a two-finger drag is passed to the app. */
+  public void onDragStarted() {
+    if (scrollTicks != null) {
+      scrollTicks.onDragStarted();
+    }
   }
 
   /**
@@ -2995,6 +3268,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
 
+    FocusProcessorForLogicalNavigation.setWrapAround(
+        getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
+    EventFilter.setSpeakItemsBeforeScroll(
+        getBooleanPref(
+            R.string.pref_speak_items_before_scroll_key,
+            R.bool.pref_speak_items_before_scroll_default));
+
     // If performance statistics changing enabled setting... clear collected stats.
     boolean performanceEnabled =
         getBooleanPref(R.string.pref_performance_stats_key, R.bool.pref_performance_stats_default);
@@ -3044,8 +3324,13 @@ public class TalkBackService extends AccessibilityServiceCompat
             res,
             R.string.pref_typing_long_press_duration_key,
             R.string.pref_typing_long_press_duration_default));
-    globalVariables.setInterpretAsEntryKey(
-        accessibilityFocusInterpreter.getTypingMethod() == FORCE_LIFT_TO_TYPE_ON_IME);
+    TwoFingerRotationTracker.setStepDegrees(
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            res,
+            R.string.pref_rotor_step_degrees_key,
+            R.string.pref_rotor_step_degrees_default));
+    globalVariables.setTypingMethod(accessibilityFocusInterpreter.getTypingMethod());
 
     applyTouchExplorationPreference();
 
@@ -3083,6 +3368,17 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res,
                 R.string.pref_punctuation_verbosity,
                 R.string.pref_punctuation_verbosity_default)));
+    EmojiSpeech.setMode(
+        this,
+        SharedPreferencesUtils.getStringPref(
+            prefs, res, R.string.pref_emoji_speech_key, R.string.pref_emoji_speech_default));
+    EmojiSpeech.setRepeatCount(
+        Integer.parseInt(
+            SharedPreferencesUtils.getStringPref(
+                prefs,
+                res,
+                R.string.pref_emoji_repeat_count_key,
+                R.string.pref_emoji_repeat_count_default)));
 
     int formattingOptions = TextFormattingUtils.OPTION_NONE;
     int formattingFeedbackMode = TextFormattingUtils.FEEDBACK_MODE_NONE;
@@ -3160,18 +3456,37 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res.getString(R.string.pref_capital_letters_default)));
     speechController.setCapLetterFeedback(capLetterFeedback);
     globalVariables.setGlobalSayCapital(capLetterFeedback == CAPITAL_LETTERS_TYPE_SPEAK_CAP);
+    globalVariables.setCapitalLetterFeedback(capLetterFeedback);
+    @Nullable VoiceProfile voiceProfile = VoiceProfiles.readActive(prefs);
     pipeline.setSpeechPitch(
-        SharedPreferencesUtils.getFloatFromStringPref(
-            prefs, res, R.string.pref_speech_pitch_key, R.string.pref_speech_pitch_default));
+        (voiceProfile != null)
+            ? voiceProfile.pitch()
+            : SharedPreferencesUtils.getFloatFromStringPref(
+                prefs, res, R.string.pref_speech_pitch_key, R.string.pref_speech_pitch_default));
     float speechRate =
-        SharedPreferencesUtils.getFloatFromStringPref(
-            prefs, res, R.string.pref_speech_rate_key, R.string.pref_speech_rate_default);
+        (voiceProfile != null)
+            ? voiceProfile.rate()
+            : SharedPreferencesUtils.getFloatFromStringPref(
+                prefs, res, R.string.pref_speech_rate_key, R.string.pref_speech_rate_default);
     pipeline.setSpeechRate(speechRate);
     int onScreenKeyboardPref = VerbosityPreferences.readOnScreenKeyboardEcho(prefs, getResources());
     textEventInterpreter.setOnScreenKeyboardEcho(onScreenKeyboardPref);
 
     int physicalKeyboardPref = VerbosityPreferences.readPhysicalKeyboardEcho(prefs, getResources());
     textEventInterpreter.setPhysicalKeyboardEcho(physicalKeyboardPref);
+    physicalKeyboardEcho = physicalKeyboardPref;
+    String typingValue =
+        SharedPreferencesUtils.getStringPref(
+            prefs, res, R.string.pref_interrupt_typing_key, R.string.pref_interrupt_typing_default);
+    if (typingValue.equals(res.getString(R.string.value_interrupt_typing_edit_fields))) {
+      typingInterruptsSpeech = INTERRUPT_TYPING_EDIT_FIELDS;
+    } else if (typingValue.equals(res.getString(R.string.value_interrupt_typing_keyboard_echo))) {
+      typingInterruptsSpeech = INTERRUPT_TYPING_KEYBOARD_ECHO;
+    } else {
+      typingInterruptsSpeech = INTERRUPT_TYPING_ALWAYS;
+    }
+    enterInterruptsSpeech =
+        getBooleanPref(R.string.pref_interrupt_enter_key, R.bool.pref_interrupt_enter_default);
 
     boolean useAudioFocus =
         getBooleanPref(R.string.pref_use_audio_focus_key, R.bool.pref_use_audio_focus_default);
@@ -3193,10 +3508,52 @@ public class TalkBackService extends AccessibilityServiceCompat
     boolean auditoryEnabled =
         getBooleanPref(R.string.pref_soundback_key, R.bool.pref_soundback_default);
     feedbackController.setAuditoryEnabled(auditoryEnabled);
-    feedbackController.setMutedAuditory(
-        IndividualFeedbackSettings.INSTANCE.mutedSoundResources(prefs));
-    feedbackController.setMutedHaptic(
-        IndividualFeedbackSettings.INSTANCE.mutedVibrationResources(prefs));
+    // Before the theme's sounds are loaded below, so that they load with the new volume.
+    feedbackController.setUseAccessibilityStream(
+        FailoverTextToSpeech.shouldUseAccessibilityStream(this));
+    feedbackController.setLowLatencyAudio(
+        prefs.getBoolean(
+            FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,
+            FailoverTextToSpeech.lowLatencyAudioDefault(this)));
+    IndividualFeedbackSettings.INSTANCE.migrate(prefs);
+    Set<String> mutedSounds = IndividualFeedbackSettings.INSTANCE.mutedSoundResources(prefs);
+    feedbackController.setMutedAuditory(mutedSounds);
+    Set<String> mutedVibrations =
+        IndividualFeedbackSettings.INSTANCE.mutedVibrationResources(prefs);
+    feedbackController.setMutedHaptic(mutedVibrations);
+    ThemeFeedback soundTheme = SoundThemes.feedback(this, prefs);
+    Map<String, String> customSounds = soundTheme.getSoundPaths();
+    feedbackController.setCustomSounds(customSounds);
+    Map<String, int[]> themeVibrations = soundTheme.vibrationsPlaying(mutedVibrations);
+    feedbackController.setThemeVibrations(themeVibrations);
+    // For the braille keyboard and direct touch, which play their own sounds and vibrations.
+    ThemeVibrations.set(themeVibrations);
+    ThemeSounds.set(SoundThemes.brailleTypingSounds(customSounds));
+    feedbackController.setSpatialMode(ControlSoundsSettings.spatialMode(prefs));
+    // A control's sound is asked for if it can be heard or felt, so with sound feedback off its
+    // vibration still tells what kind of control it is.
+    Set<Integer> heardControls =
+        ControlSoundsSettings.playingSounds(
+            prefs, auditoryEnabled, mutedSounds, customSounds.keySet());
+    Set<Integer> controlFeedback = new HashSet<>(heardControls);
+    controlFeedback.addAll(
+        ControlSoundsSettings.vibratingSounds(
+            prefs, hapticEnabled, mutedVibrations, soundTheme.felt()));
+    globalVariables.setControlSounds(
+        auditoryEnabled && ControlSoundsSettings.isOn(prefs),
+        controlFeedback,
+        heardControls,
+        ControlSoundsSettings.speakRoles(prefs));
+
+    if (audioDeviceRouter != null) {
+      String audioOutputPref =
+          SharedPreferencesUtils.getStringPref(
+              prefs,
+              res,
+              R.string.pref_audio_output_device_key,
+              R.string.pref_audio_output_device_default);
+      audioDeviceRouter.setPreferredDevice(audioOutputPref);
+    }
 
     // Update preference: time feedback format.
     String timeFeedbackFormat =
@@ -3240,6 +3597,24 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_speak_container_element_positions_key),
               res.getBoolean(R.bool.pref_speak_container_element_positions_default));
       globalVariables.setSpeakCollectionInfo(speakCollectionInfo);
+
+      // Update preference: table column headers order/visibility.
+      String tableColumnHeaders =
+          SharedPreferencesUtils.getStringPref(
+              prefs,
+              res,
+              R.string.pref_table_column_headers_key,
+              R.string.pref_table_column_headers_default);
+      globalVariables.setTableColumnHeaders(tableColumnHeaders);
+
+      // Update preference: speak table row and column numbers.
+      boolean speakTableRowColNumbers =
+          VerbosityPreferences.getPreferenceValueBool(
+              prefs,
+              res,
+              res.getString(R.string.pref_table_speak_row_column_numbers_key),
+              res.getBoolean(R.bool.pref_table_speak_row_column_numbers_default));
+      globalVariables.setSpeakTableRowColumnNumbers(speakTableRowColNumbers);
 
       // Update preference: speak roles.
       boolean speakRoles =
@@ -3290,13 +3665,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       globalVariables.setUsageHintEnabled(speakUsageHints);
 
       // Update preference: speak phonetic letters.
-      boolean speakPhoneticLetters =
-          VerbosityPreferences.getPreferenceValueBool(
-              prefs,
-              res,
-              res.getString(R.string.pref_phonetic_letters_key),
-              res.getBoolean(R.bool.pref_phonetic_letters_default));
-      globalVariables.setSpeakPhoneticLettersEnabled(speakPhoneticLetters);
+      globalVariables.setPhoneticLetterMode(PhoneticLetterMode.read(prefs, res));
 
       // Update preference: count repeated symbols.
       boolean countrepeatedSymbols =
@@ -3386,6 +3755,15 @@ public class TalkBackService extends AccessibilityServiceCompat
     } else if (TextUtils.equals(
         value, resources.getString(R.string.pref_node_desc_order_value_name_role_state_pos))) {
       return DESC_ORDER_NAME_ROLE_STATE_POSITION;
+    } else if (TextUtils.equals(
+        value, resources.getString(R.string.pref_node_desc_order_value_name_state_role_pos))) {
+      return DESC_ORDER_NAME_STATE_ROLE_POSITION;
+    } else if (TextUtils.equals(
+        value, resources.getString(R.string.pref_node_desc_order_value_role_state_name_pos))) {
+      return DESC_ORDER_ROLE_STATE_NAME_POSITION;
+    } else if (TextUtils.equals(
+        value, resources.getString(R.string.pref_node_desc_order_value_state_role_name_pos))) {
+      return DESC_ORDER_STATE_ROLE_NAME_POSITION;
     } else {
       LogUtils.e(TAG, "Unhandled description order preference value \"%s\"", value);
       return DESC_ORDER_STATE_NAME_ROLE_POSITION;
@@ -3453,6 +3831,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (directTouchController != null) {
       directTouchController.setPaused(paused);
+    }
+    if (scriptHost != null) {
+      scriptHost.onPausedChanged(paused);
     }
     BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
     if (brailleIme != null) {
@@ -3651,6 +4032,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
         LogUtils.d(TAG, "A shared preference changed: %s", key);
+        // The prepared announcements may have been worked out with the setting as it was, such as
+        // a verbosity setting changed from the reading controls.
+        PreparedFocusSpeech.clear();
         // Skip reloadPreferences to avoid the additional of Talkback re-configuration for some
         // settings changes.
         if (getString(R.string.pref_previous_global_window_animation_scale_key).equals(key)
@@ -3699,6 +4083,30 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (imageCaptioner != null) {
       imageCaptioner.onUnlockedBoot();
+    }
+
+    startScripts();
+  }
+
+  private void startScripts() {
+    if (pipeline != null && speechController != null) {
+      SpeechControl.attach(this, pipeline.getFeedbackReturner(), speechController);
+    }
+    if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
+      return;
+    }
+    scriptHost =
+        ScriptHostFactory.create(
+            this,
+            pipeline.getFeedbackReturner(),
+            () -> {
+              if (pauseController != null) {
+                pauseController.resume();
+              }
+            });
+    Scripts.setHost(scriptHost);
+    if (scriptHost != null) {
+      scriptHost.onPausedChanged(PauseController.isPaused());
     }
   }
 
@@ -3860,7 +4268,6 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     List<Display> displays = WindowUtils.getAllDisplays(getApplicationContext());
-    Executor gestureExecutor = Executors.newSingleThreadExecutor();
     for (Display display : displays) {
       @Nullable TouchInteractionController touchInteractionController =
           getTouchInteractionController(display.getDisplayId());
@@ -3872,7 +4279,6 @@ public class TalkBackService extends AccessibilityServiceCompat
               display,
               prefs,
               touchInteractionController,
-              gestureExecutor,
               this,
               primesController,
               new TouchExplorationModeFailureReporter(analytics),
@@ -3881,7 +4287,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       touchInteractionMonitor.setMultiFingerGesturesEnabled(true);
       touchInteractionMonitor.setTwoFingerPassthroughEnabled(true);
       touchInteractionMonitor.setServiceHandlesDoubleTap(true);
-      touchInteractionController.registerCallback(gestureExecutor, touchInteractionMonitor);
+      // No executor: the controller calls the monitor on the main thread as each event comes in, in
+      // order with the timeouts that gesture detection counts there.
+      touchInteractionController.registerCallback(/* executor= */ null, touchInteractionMonitor);
       displayIdToTouchInteractionMonitors.put(display.getDisplayId(), touchInteractionMonitor);
       userInterface.registerListener(touchInteractionMonitor);
       LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());

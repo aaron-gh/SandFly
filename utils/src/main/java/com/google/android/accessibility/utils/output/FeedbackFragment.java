@@ -23,6 +23,7 @@ import com.google.android.accessibility.utils.output.FailoverTextToSpeech.Speech
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -99,7 +100,8 @@ public class FeedbackFragment {
       @Nullable Bundle nonSpeechParams) {
     mText = new SpannableString(text);
 
-    mEarcons = new HashSet<>();
+    // In order, so that of sounds played together, the last one's vibration is the one felt.
+    mEarcons = new LinkedHashSet<>();
     if (earcons != null) {
       mEarcons.addAll(earcons);
     }

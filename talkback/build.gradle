@@ -8,6 +8,7 @@ dependencies {
     implementation project(':proguard')
     implementation project(':utils')
     implementation project(':brailleime')
+    phoneImplementation project(':braillecommon')
     implementation project(':brailleinterfaces')
     implementation project(':brailledisplay')
     implementation project(':materialflags')
@@ -15,9 +16,11 @@ dependencies {
     // TODO: Define different dependencies for different product flavors
     wearImplementation project(':materialpreferencecompose')
     wearImplementation project(':materialtheme')
+    phoneImplementation project(':quickjs')
     implementation libs.litertlm
     testImplementation libs.junit
     testImplementation libs.json
+    testImplementation libs.robolectric
 }
 
 // Gemini settings come from local.properties, which is not committed, so each builder uses their own key.
@@ -38,5 +41,10 @@ android {
         // Used by the updater to compare this build with the latest development build.
         buildConfigField("String", "COMMIT_HASH", '"' + rootProject.gitCommitHash + '"')
         buildConfigField("int", "COMMIT_COUNT", String.valueOf(rootProject.gitCommitCount))
+    }
+    // Robolectric tests read the module's strings.
+    testOptions.unitTests.includeAndroidResources = true
+    buildFeatures {
+        aidl = true
     }
 }

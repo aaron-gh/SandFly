@@ -29,6 +29,7 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
+import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
@@ -40,6 +41,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.eventprocessor.EventState;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorAccessibilityHints;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -108,6 +110,9 @@ public class ScreenFeedbackManager
 
   private final Pipeline.FeedbackReturner pipeline;
 
+  /** Event time of the last key press that stopped speech, in uptime milliseconds. */
+  private long speechStoppedByKeyTime = 0;
+
   public ScreenFeedbackManager(
       AccessibilityService service,
       @NonNull WindowEventInterpreter windowEventInterpreter,
@@ -132,6 +137,21 @@ public class ScreenFeedbackManager
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
     // Skip the delayed interpret if doesn't allow the announcement.
     getInterpreter().interpret(event, eventId, allowAnnounce(event));
+  }
+
+  /**
+   * Records a key press that stopped speech. A window change that started before it isn't
+   * announced, so that its title isn't spoken after the speech the key caused.
+   */
+  public void onSpeechStoppedByKey(KeyEvent keyEvent) {
+    speechStoppedByKeyTime = keyEvent.getEventTime();
+  }
+
+  /** Returns whether a key stopped speech after this window change started. */
+  private boolean speechStoppedByKeySince(
+      WindowEventInterpreter.EventInterpretation interpretation) {
+    long windowChangeTime = interpretation.getEventStartTime();
+    return windowChangeTime != 0 && speechStoppedByKeyTime >= windowChangeTime;
   }
 
   public WindowEventInterpreter getInterpreter() {
@@ -261,7 +281,8 @@ public class ScreenFeedbackManager
     // Dialog opened events should be read regardless of whether the windows are stable.
     if (FeatureFlagReader.enableSpeakDialogContent(service)
         && interpretation.isWebDialogOpenedEvent()) {
-      return interpretation.isAllowAnnounce();
+      return interpretation.isAllowAnnounce()
+          && !speechStoppedByKeySince(interpretation);
     }
 
     // For original event, perform some state & UI actions, even if windows are unstable.
@@ -272,7 +293,9 @@ public class ScreenFeedbackManager
     }
 
     // Only speak if windows are stable and the event allows announcement.
-    return interpretation.areWindowsStable() && interpretation.isAllowAnnounce();
+    return interpretation.areWindowsStable()
+        && interpretation.isAllowAnnounce()
+        && !speechStoppedByKeySince(interpretation);
   }
 
   private static Resources getLocalizedResources(Context context, Locale desiredLocale) {
@@ -532,7 +555,9 @@ public class ScreenFeedbackManager
         }
         String utterance =
             (FeatureSupport.isMultiFingerGestureSupported() && gesture != null)
-                ? context.getString(R.string.suggestions_window_available_with_gesture, gesture)
+                ? context.getString(
+                    R.string.suggestions_window_available_with_gesture,
+                    GestureHints.lowerCaseFirst(context, gesture))
                 : context.getString(R.string.suggestions_window_available);
         feedback.addPart(
             new FeedbackPart(utterance)

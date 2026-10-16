@@ -393,7 +393,12 @@ public abstract class GestureMatcher {
 
   /** Cancels this matcher after the double tap timeout. Any pending cancelations are removed. */
   protected final void cancelAfterDoubleTapTimeout(MotionEvent event) {
-    cancelAfter(GestureConfiguration.getMultiTapCompletionTimeoutMs(), event);
+    cancelAfter(getDoubleTapCompletionTimeoutMs(), event);
+  }
+
+  /** Returns how long this matcher waits for another tap before it completes or cancels. */
+  protected int getDoubleTapCompletionTimeoutMs() {
+    return GestureConfiguration.getMultiTapCompletionTimeoutMs();
   }
 
   /**
@@ -443,7 +448,7 @@ public abstract class GestureMatcher {
    * hold.
    */
   protected final void completeAfterDoubleTapTimeout(EventId eventId, MotionEvent event) {
-    completeAfter(GestureConfiguration.getMultiTapCompletionTimeoutMs(), eventId, event);
+    completeAfter(getDoubleTapCompletionTimeoutMs(), eventId, event);
   }
 
   void gestureMotionEventLog(int logLevel, String format, @Nullable Object... args) {

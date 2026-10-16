@@ -42,7 +42,7 @@
     <!-- Sound played for bold, italic or other formatted text. [CHAR LIMIT=60] -->
     <string name="individual_sound_formatting">Formatted text</string>
     <!-- Sound played when the volume changes. [CHAR LIMIT=60] -->
-    <string name="individual_sound_volume_beep">Volume change</string>
+    <string name="individual_sound_screen_off">Screen off</string>
     <!-- Sound played while waiting for a result to load. [CHAR LIMIT=60] -->
     <string name="individual_sound_loading">Loading</string>
     <!-- Sound played when keyboard browse mode turns on. [CHAR LIMIT=60] -->
@@ -68,8 +68,6 @@
     <string name="individual_vibration_focus">Focus on an item</string>
     <!-- Vibration when focus moves to an item that can be activated. [CHAR LIMIT=60] -->
     <string name="individual_vibration_focus_actionable">Focus on an actionable item</string>
-    <!-- Vibration when an item is selected or takes input focus. [CHAR LIMIT=60] -->
-    <string name="individual_vibration_selected">Selection</string>
     <!-- Vibration when an item is activated. [CHAR LIMIT=60] -->
     <string name="individual_vibration_clicked">Click</string>
     <!-- Vibration when an item is long pressed. [CHAR LIMIT=60] -->
@@ -82,4 +80,16 @@
     <string name="individual_vibration_typo">Spelling error</string>
     <!-- Vibration when an app makes an announcement. [CHAR LIMIT=60] -->
     <string name="individual_vibration_notification">Announcement</string>
+    <!-- Vibration when a character is typed on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_character">Braille keyboard: typing a character</string>
+    <!-- Vibration for space, delete, moving the cursor or changing the reading unit on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_space">Braille keyboard: space or delete</string>
+    <!-- Vibration for a new line or deleting a word on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_new_line">Braille keyboard: new line or deleting a word</string>
+    <!-- Vibration when fingers are held down on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_hold">Braille keyboard: holding fingers down</string>
+    <!-- Vibration for other gestures on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_gesture">Braille keyboard: other gestures</string>
+    <!-- Vibration when deleting on the braille keyboard with nothing left to delete. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_nothing_to_delete">Braille keyboard: nothing to delete</string>
 </resources>

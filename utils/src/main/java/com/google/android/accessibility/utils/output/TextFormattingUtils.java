@@ -21,6 +21,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.BackgroundColorSpan;
@@ -101,6 +102,14 @@ public final class TextFormattingUtils {
       spanClasses.add(TextAppearanceSpan.class);
     }
     return spanClasses;
+  }
+
+  /**
+   * Whether {@code span} marks the text the keyboard is composing, such as the underlined word
+   * Gboard is typing or has put the cursor in. It isn't formatting of the text itself.
+   */
+  public static boolean isComposingSpan(Spanned spanned, Object span) {
+    return (spanned.getSpanFlags(span) & Spanned.SPAN_COMPOSING) != 0;
   }
 
   /** Checks if the span is enabled by the options. */

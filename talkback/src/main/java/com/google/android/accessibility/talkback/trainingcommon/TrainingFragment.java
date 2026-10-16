@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.trainingcommon.content.PageNumb
 import com.google.android.accessibility.talkback.trainingcommon.content.Title;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialContentInterfaceInjector;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialContentInterfaceInjector.TutorialContentManager;
+import com.google.android.accessibility.talkback.trainingcommon.content.TutorialGestureUses;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.VerifyException;
@@ -139,7 +140,9 @@ public class TrainingFragment extends Fragment {
       repeatedAnnouncingHandler =
           new RepeatedAnnouncingHandler(
               getContext(),
-              getContext().getString(config.announcement()),
+              data == null
+                  ? getContext().getString(config.announcement())
+                  : TutorialGestureUses.getText(getContext(), config.announcement(), data),
               config.initialDelay(),
               config.repeatedDelay());
       LogUtils.v(TAG, "Idle announcement prepared.");

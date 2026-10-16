@@ -39,16 +39,20 @@
         android:key="@string/pref_category_manage_gestures_key"
         android:title="@string/title_pref_category_manage_gestures" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:fragment="com.google.android.accessibility.talkback.preference.base.CustomizeMenusFragment"
-        android:key="@string/pref_manage_customize_menus_key"
-        android:title="@string/title_pref_manage_customize_menus" />
+        android:fragment="com.google.android.accessibility.talkback.preference.base.ContextMenuFragment"
+        android:key="@string/pref_category_manage_context_menu_key"
+        android:title="@string/title_pref_category_context_menu" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.SelectorMenuFragment"
+        android:key="@string/pref_category_manage_selector_menu_key"
+        android:title="@string/title_pref_category_selector_menu" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.status.StatusReadoutFragment"
-        android:key="pref_status_readout"
+        android:key="@string/pref_status_readout_key"
         android:title="@string/title_pref_status_readout" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
-        android:key="pref_direct_touch"
+        android:key="@string/pref_direct_touch_key"
         android:title="@string/title_pref_direct_touch" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_category_manage_keyboard_shortcut_key"
@@ -95,9 +99,6 @@
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_tutorial_and_help_key"
         android:title="@string/title_pref_category_tutorial" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_help_and_feedback_key"
-        android:title="@string/title_pref_help_and_feedback" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_check_for_updates_key"
         android:title="@string/title_pref_check_for_updates" />

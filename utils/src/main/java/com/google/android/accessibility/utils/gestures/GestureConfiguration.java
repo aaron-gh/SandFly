@@ -45,6 +45,20 @@ public final class GestureConfiguration {
     return multiTapTimeoutMs + MULTI_TAP_COMPLETION_MARGIN_MS;
   }
 
+  /**
+   * Returns the maximum number of milliseconds between two taps of a multi-finger multi-tap gesture:
+   * the user-set time, but never shorter than the default, as lifting and placing several fingers
+   * takes longer than one.
+   */
+  public static int getMultiFingerTapTimeoutMs() {
+    return Math.max(multiTapTimeoutMs, DOUBLE_TAP_TIMEOUT_MS);
+  }
+
+  /** Returns how long a multi-finger tap gesture waits for another tap before it completes. */
+  public static int getMultiFingerTapCompletionTimeoutMs() {
+    return getMultiFingerTapTimeoutMs() + MULTI_TAP_COMPLETION_MARGIN_MS;
+  }
+
   public static void setMultiTapTimeoutMs(int timeoutMs) {
     multiTapTimeoutMs = timeoutMs;
   }

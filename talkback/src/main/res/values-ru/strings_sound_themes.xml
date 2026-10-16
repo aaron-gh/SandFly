@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="title_pref_sound_themes">Звуковые темы</string>
+  <string name="summary_pref_sound_themes">Устанавливайте и выбирайте наборы звуков и вибраций, заменяйте отдельные звуки своими, включайте звуки и вибрации элементов управления и объёмный звук.</string>
+  <string name="sound_themes_installed_category">Установленные темы</string>
+  <string name="sound_theme_backtalk">Backtalk</string>
+  <string name="sound_theme_backtalk_description">Собственные звуки и вибрации Backtalk, а также добавленные вами звуки.</string>
+  <string name="sound_theme_in_use">Используется</string>
+  <string name="sound_theme_by">Автор: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+  <string name="sound_theme_license">Лицензия: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+  <plurals name="sound_theme_sounds">
+    <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> звук.</item>
+    <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> звука.</item>
+    <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> звуков.</item>
+    <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> звука.</item>
+  </plurals>
+  <plurals name="sound_theme_vibrations">
+    <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> вибрация.</item>
+    <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> вибрации.</item>
+    <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> вибраций.</item>
+    <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> вибрации.</item>
+  </plurals>
+  <string name="sound_theme_control_sounds_on">Включает звуки и вибрации элементов управления.</string>
+  <string name="sound_theme_control_sounds_off">Отключает звуки и вибрации элементов управления.</string>
+  <string name="sound_theme_use">Использовать эту тему</string>
+  <string name="sound_theme_about">Об этой теме</string>
+  <string name="sound_theme_export">Сохранить в файл темы</string>
+  <string name="sound_theme_remove">Удалить</string>
+  <string name="sound_theme_remove_confirm">Удалить тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+  <string name="sound_theme_remove_button">Удалить</string>
+  <plurals name="sound_theme_exported">
+    <item quantity="one">Тема сохранена. В ней <xliff:g id="count" example="1">%d</xliff:g> звук.</item>
+    <item quantity="few">Тема сохранена. В ней <xliff:g id="count" example="13">%d</xliff:g> звука.</item>
+    <item quantity="many">Тема сохранена. В ней <xliff:g id="count" example="13">%d</xliff:g> звуков.</item>
+    <item quantity="other">Тема сохранена. В ней <xliff:g id="count" example="13">%d</xliff:g> звука.</item>
+  </plurals>
+  <string name="sound_theme_export_failed">Backtalk не удалось сохранить файл темы.</string>
+  <string name="sound_theme_no_picker">На устройстве нет приложения для выбора файлов.</string>
+  <string name="sound_theme_settings_category">Настройки темы <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+  <string name="title_pref_theme_sounds">Звуки</string>
+  <string name="summary_pref_theme_sounds">Заменить любой звук этой темы собственным звуковым файлом.</string>
+  <string name="sound_themes_install_category">Установить тему</string>
+  <string name="title_pref_sound_theme_install_file">Из файла</string>
+  <string name="summary_pref_sound_theme_install_file">Файл темы — это ZIP-архив. Его также можно открыть с помощью Backtalk или передать в Backtalk из другого приложения.</string>
+  <string name="title_pref_sound_theme_install_link">По ссылке</string>
+  <string name="summary_pref_sound_theme_install_link">Ссылка на файл темы или репозиторий GitHub, содержащий тему. Также можно поделиться ссылкой с Backtalk из браузера.</string>
+  <string name="sound_theme_link_message">Введите или вставьте ссылку на файл темы или репозиторий GitHub, содержащий тему.</string>
+  <string name="sound_theme_link_hint">https://</string>
+  <string name="sound_theme_install_label">Установить звуковую тему</string>
+  <string name="sound_theme_install_reading">Чтение звуковой темы</string>
+  <string name="sound_theme_install_title">Установить <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+  <string name="sound_theme_install_and_use">Установить и использовать</string>
+  <string name="sound_theme_install">Установить</string>
+  <string name="sound_theme_install_replaces">Установленная тема с таким же названием будет заменена.</string>
+  <string name="sound_theme_install_skipped">Пропущено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+  <string name="sound_theme_installed">Тема <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> установлена.</string>
+  <string name="sound_theme_installed_in_use">Тема <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> установлена и используется.</string>
+  <string name="sound_theme_install_nothing">Нет звуковой темы для установки.</string>
+  <string name="sound_theme_install_not_a_theme">Backtalk не может использовать этот файл как звуковую тему: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+  <string name="sound_theme_install_failed">Backtalk не удалось установить звуковую тему. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+  <string name="sound_theme_install_https_only">Ссылки на звуковые темы должны начинаться с https.</string>
+  <string name="title_pref_theme_sounds_of">Звуки темы <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+  <string name="title_pref_theme_sounds_reset">Использовать звуки Backtalk для всех событий</string>
+  <string name="theme_sounds_reset_confirm">Удалить все звуки этой темы и использовать собственные звуки Backtalk?</string>
+  <string name="theme_sounds_reset_button">Удалить</string>
+  <string name="theme_sounds_category">Звуки</string>
+  <string name="theme_sound_summary_default">Звук Backtalk</string>
+  <string name="theme_sound_summary_custom">Звук темы</string>
+  <string name="theme_sound_summary_none">Звук не задан. Воспроизводится звук фокуса.</string>
+  <string name="theme_sound_summary_android_keyboard">Звук клавиатуры Android</string>
+  <string name="theme_sound_use_android_keyboard">Использовать звук клавиатуры Android</string>
+  <string name="theme_sound_braille_character">Клавиатура Брайля: ввод символа</string>
+  <string name="theme_sound_braille_space">Клавиатура Брайля: пробел</string>
+  <string name="theme_sound_braille_delete">Клавиатура Брайля: удаление</string>
+  <string name="theme_sound_braille_new_line">Клавиатура Брайля: новая строка</string>
+  <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+  <string name="theme_sound_choose">Выбрать звуковой файл</string>
+  <string name="theme_sound_preview">Предпросмотр</string>
+  <string name="theme_sound_use_default">Использовать звук Backtalk</string>
+  <string name="theme_sound_remove">Удалить звук</string>
+  <string name="theme_sound_too_large">Файл слишком большой. Размер звукового файла не должен превышать 5 МБ.</string>
+  <string name="theme_sound_not_audio">Backtalk не может воспроизвести этот файл. Выберите звук в формате WAV, OGG, MP3 или FLAC.</string>
+  <string name="theme_sound_failed">Backtalk не удалось прочитать этот файл.</string>
+</resources>

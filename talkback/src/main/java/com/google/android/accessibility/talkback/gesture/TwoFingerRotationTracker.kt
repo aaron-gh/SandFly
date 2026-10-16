@@ -23,10 +23,11 @@ import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.hypot
 import kotlin.math.max
+import kotlin.math.min
 
 /**
  * Recognizes two fingers turning around each other, like turning a dial, and reports one step for
- * each [STEP_DEGREES] of rotation.
+ * each [setStepDegrees] of rotation.
  *
  * The angle of the line between the two fingers is followed from the moment the second finger
  * lands. The rotation is accepted once that angle has changed by [COMMIT_DEGREES] while the
@@ -66,6 +67,15 @@ class TwoFingerRotationTracker(
   private var state = State.IDLE
   private var firstId = INVALID_ID
   private var secondId = INVALID_ID
+  private var startX0 = 0f
+  private var startY0 = 0f
+  private var startX1 = 0f
+  private var startY1 = 0f
+  // How far each finger has moved since tracking started, for the debug log.
+  private var moved0X = 0f
+  private var moved0Y = 0f
+  private var moved1X = 0f
+  private var moved1Y = 0f
   private var startMidX = 0f
   private var startMidY = 0f
   private var startDistance = 0f
@@ -78,6 +88,8 @@ class TwoFingerRotationTracker(
   private var peak = 0f
   // 1 if the last step was clockwise, -1 if counterclockwise.
   private var direction = 0
+  // When the rotation was accepted, in event time.
+  private var acceptedTime = 0L
   // False when one of the two rotating fingers was lifted. The rotation then waits for the rest.
   private var rotatingFingersDown = false
 
@@ -89,9 +101,14 @@ class TwoFingerRotationTracker(
   val isPossibleRotation: Boolean
     get() = state == State.TRACKING
 
+  /** Whether both fingers moved the same way, so the touch is a two-finger scroll. */
+  var isScroll = false
+    private set
+
   /** Forgets the current touch. */
   fun clear() {
     state = State.IDLE
+    isScroll = false
     firstId = INVALID_ID
     secondId = INVALID_ID
     rotatingFingersDown = false
@@ -144,6 +161,10 @@ class TwoFingerRotationTracker(
     val y0 = event.getY(0)
     val x1 = event.getX(1)
     val y1 = event.getY(1)
+    startX0 = x0
+    startY0 = y0
+    startX1 = x1
+    startY1 = y1
     startMidX = (x0 + x1) / 2
     startMidY = (y0 + y1) / 2
     startDistance = hypot(x1 - x0, y1 - y0)
@@ -176,18 +197,46 @@ class TwoFingerRotationTracker(
     val looksLikeRotation =
       translation <= arc * MAX_TRANSLATION_RATIO && radial <= arc * MAX_RADIAL_RATIO
 
-    if (looksLikeRotation && abs(accumulated) >= COMMIT_DEGREES && arc >= minArcPx) {
+    moved0X = x0 - startX0
+    moved0Y = y0 - startY0
+    moved1X = x1 - startX1
+    moved1Y = y1 - startY1
+    val moved0 = hypot(moved0X, moved0Y)
+    val moved1 = hypot(moved1X, moved1Y)
+    if (
+      moved0 >= minArcPx &&
+        moved1 >= minArcPx &&
+        (moved0X * moved1X + moved0Y * moved1Y) / (moved0 * moved1) > SAME_DIRECTION_COSINE
+    ) {
+      // In a rotation the fingers move in opposite directions. Both moving the same way is a
+      // scroll, even when one finger started first and the line between them turned.
+      debugLog("rejected as scroll, fingers moving the same way", arc, translation, radial)
+      state = State.REJECTED
+      isScroll = true
+      return
+    }
+    // With one finger nearly still, a turn looks the same as the start of a scroll whose other
+    // finger has not moved yet, so it must turn further before it counts.
+    val pivot = min(moved0, moved1) < max(moved0, moved1) * PIVOT_STILL_RATIO
+    val commitDegrees = if (pivot) PIVOT_COMMIT_DEGREES else COMMIT_DEGREES
+
+    if (looksLikeRotation && abs(accumulated) >= commitDegrees && arc >= minArcPx) {
       debugLog("accepted", arc, translation, radial)
       state = State.ROTATING
       rotatingFingersDown = true
       direction = if (accumulated > 0) 1 else -1
-      anchor = accumulated
+      // The first step covers a whole step of rotation, even when the turn was accepted sooner, so
+      // the second step always comes at the same angle. Otherwise a quick turn with both fingers,
+      // accepted at a smaller angle than a pivot, gives two steps where a pivot gives one.
+      anchor = direction * max(stepDegrees, abs(accumulated))
+      acceptedTime = event.eventTime
       peak = accumulated
       listener.onRotationStep(direction > 0)
     } else if (translation > decisionDistancePx && abs(accumulated) < SCROLL_MAX_DEGREES) {
       // Both fingers moved the same way without turning: a scroll.
       debugLog("rejected as scroll", arc, translation, radial)
       state = State.REJECTED
+      isScroll = true
     } else if (radial > decisionDistancePx && radial > arc) {
       // The fingers moved apart or together more than they turned: a pinch.
       debugLog("rejected as pinch", arc, translation, radial)
@@ -205,8 +254,19 @@ class TwoFingerRotationTracker(
     if (BuildConfig.DEBUG) {
       Log.d(
         DEBUG_TAG,
-        "Rotation $result: angle=%.1f arc=%.0f translation=%.0f radial=%.0f slop=%.0f"
-          .format(accumulated, arc, translation, radial, decisionDistancePx),
+        ("Rotation $result: angle=%.1f arc=%.0f translation=%.0f radial=%.0f slop=%.0f " +
+            "finger1=(%.0f,%.0f) finger2=(%.0f,%.0f)")
+          .format(
+            accumulated,
+            arc,
+            translation,
+            radial,
+            decisionDistancePx,
+            moved0X,
+            moved0Y,
+            moved1X,
+            moved1Y,
+          ),
       )
     }
   }
@@ -228,17 +288,24 @@ class TwoFingerRotationTracker(
     if ((accumulated - peak) * direction > 0) {
       peak = accumulated
     }
+    if (event.eventTime - acceptedTime < FLICK_MILLIS) {
+      // A quick flick turns far in a moment. It is one step, so the next step is counted from
+      // where the fingers are when the flick is over.
+      if ((accumulated - anchor) * direction > 0) anchor = accumulated
+      return
+    }
     while (true) {
-      if ((accumulated - anchor) * direction >= STEP_DEGREES) {
+      val step = stepDegrees
+      if ((accumulated - anchor) * direction >= step) {
         // Further in the same direction: steps are counted from the last step.
-        anchor += direction * STEP_DEGREES
+        anchor += direction * step
         peak = anchor
         if ((accumulated - peak) * direction > 0) peak = accumulated
         listener.onRotationStep(direction > 0)
-      } else if ((peak - accumulated) * direction >= STEP_DEGREES) {
+      } else if ((peak - accumulated) * direction >= step) {
         // Turned back: the step is counted from where the fingers turned.
         direction = -direction
-        anchor = peak + direction * STEP_DEGREES
+        anchor = peak + direction * step
         peak = accumulated
         listener.onRotationStep(direction > 0)
       } else {
@@ -256,37 +323,61 @@ class TwoFingerRotationTracker(
     lastAngle = angle
   }
 
-  private companion object {
-    const val INVALID_ID = -1
+  companion object {
+    private const val INVALID_ID = -1
 
-    /** Rotation for each step after the first, in degrees. */
-    const val STEP_DEGREES = 30f
+    /** Rotation for each step after the first, in degrees, unless the setting chooses another. */
+    private const val DEFAULT_STEP_DEGREES = 30f
+
+    /** Set from the "Rotor turn per step" setting. */
+    @Volatile private var stepDegrees = DEFAULT_STEP_DEGREES
+
+    /** Sets the rotation for each step after the first, in degrees. */
+    @JvmStatic
+    fun setStepDegrees(degrees: Float) {
+      stepDegrees = degrees
+    }
 
     /** Rotation that starts the rotation and reports the first step, in degrees. */
-    const val COMMIT_DEGREES = 15f
+    private const val COMMIT_DEGREES = 15f
+
+    /** Time after the first step, in milliseconds, during which the rotation reports no steps. */
+    private const val FLICK_MILLIS = 200L
+
+    /** Rotation that starts a rotation where one finger stays nearly still, in degrees. */
+    private const val PIVOT_COMMIT_DEGREES = 30f
+
+    /** A finger that moved less than this share of the other's movement counts as still. */
+    private const val PIVOT_STILL_RATIO = 0.35f
+
+    /**
+     * Fingers whose movements point within about 60 degrees of each other move the same way, which
+     * is a scroll, not a rotation.
+     */
+    private const val SAME_DIRECTION_COSINE = 0.5f
 
     /** A two-finger movement that turns less than this, in degrees, is a scroll. */
-    const val SCROLL_MAX_DEGREES = 8f
+    private const val SCROLL_MAX_DEGREES = 8f
 
     /**
      * How far past the decision distance to keep waiting for a movement that is neither clearly a
      * scroll nor a pinch, since the start of a turn often drifts a little.
      */
-    const val GIVE_UP_DISTANCE_FACTOR = 3f
+    private const val GIVE_UP_DISTANCE_FACTOR = 3f
 
     /**
      * Largest movement of the midpoint, relative to the movement along the circle. Turning one
      * finger around the other, which stays still, moves the midpoint almost as far as the circle.
      */
-    const val MAX_TRANSLATION_RATIO = 2f
+    private const val MAX_TRANSLATION_RATIO = 2f
 
     /** Largest change of the distance from the midpoint, relative to the movement along the circle. */
-    const val MAX_RADIAL_RATIO = 0.75f
+    private const val MAX_RADIAL_RATIO = 0.75f
 
-    const val DEBUG_TAG = "BacktalkGesture"
+    private const val DEBUG_TAG = "BacktalkGesture"
 
     /** The angle of the line from the first finger to the second. Y grows down the screen. */
-    fun angleDegrees(x0: Float, y0: Float, x1: Float, y1: Float): Float =
+    private fun angleDegrees(x0: Float, y0: Float, x1: Float, y1: Float): Float =
       Math.toDegrees(atan2((y1 - y0).toDouble(), (x1 - x0).toDouble())).toFloat()
   }
 }

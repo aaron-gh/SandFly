@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.update
 
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -65,5 +66,35 @@ class UpdateCheckerTest {
   fun channels() {
     assertEquals("latest", UpdateChecker.OLD_CHANNEL)
     assertEquals("dev", UpdateChecker.NEW_CHANNEL)
+  }
+
+  private fun releaseWithBothBuilds(build: Int): String {
+    val release = JSONObject(release(build))
+    release
+      .getJSONArray("assets")
+      .put(
+        JSONObject()
+          .put("name", "backtalk-wear.apk")
+          .put("browser_download_url", "https://example.com/backtalk-wear.apk")
+      )
+    return release.toString()
+  }
+
+  @Test
+  fun eachDeviceGetsItsOwnBuild() {
+    val json = releaseWithBothBuilds(11)
+    assertEquals(
+      "https://example.com/backtalk.apk",
+      UpdateChecker.parseRelease(json, 10, "", UpdateChecker.PHONE_APK_NAME)!!.downloadUrl,
+    )
+    assertEquals(
+      "https://example.com/backtalk-wear.apk",
+      UpdateChecker.parseRelease(json, 10, "", UpdateChecker.WATCH_APK_NAME)!!.downloadUrl,
+    )
+  }
+
+  @Test(expected = JSONException::class)
+  fun aWatchNeverTakesThePhoneBuild() {
+    UpdateChecker.parseRelease(release(11), 10, "", UpdateChecker.WATCH_APK_NAME)
   }
 }

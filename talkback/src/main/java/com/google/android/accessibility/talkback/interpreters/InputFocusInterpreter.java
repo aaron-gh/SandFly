@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
@@ -83,6 +84,9 @@ public class InputFocusInterpreter
    * without writing to actor-state.
    */
   private long lastFocusActionHandleUptimeMs = 0;
+
+  /** Whether the node with input focus, as last seen, is an edit field. */
+  private boolean inputFocusIsEditable = false;
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Methods for construction
@@ -151,7 +155,18 @@ public class InputFocusInterpreter
         TAG,
         "initLastEditableFocusForGlobalVariables() : currentInputFocus: %s",
         currentInputFocus);
+    inputFocusIsEditable = isEditField(currentInputFocus);
     updateInputFocusedNodeInGlobalVariables(currentInputFocus);
+  }
+
+  /** Returns whether the node with input focus, as last seen, is an edit field. */
+  public boolean isInputFocusEditable() {
+    return inputFocusIsEditable;
+  }
+
+  private static boolean isEditField(@Nullable AccessibilityNodeInfoCompat node) {
+    return (node != null)
+        && (node.isEditable() || (Role.getRole(node) == Role.ROLE_EDIT_TEXT));
   }
 
   private void handleViewInputFocusedEvent(AccessibilityEvent event, EventId eventId) {
@@ -161,6 +176,12 @@ public class InputFocusInterpreter
       return;
     }
 
+    // Some on-screen keyboard keys take input focus when tapped, while text still goes to the edit
+    // field.
+    if (!AccessibilityWindowInfoUtils.isImeWindow(
+        AccessibilityNodeInfoUtils.getWindow(sourceNode))) {
+      inputFocusIsEditable = isEditField(sourceNode);
+    }
     updateInputFocusedNodeInGlobalVariables(sourceNode);
 
     if (isFromSavedFocusAction(event)) {
@@ -289,9 +310,7 @@ public class InputFocusInterpreter
    */
   private void updateInputFocusedNodeInGlobalVariables(
       @Nullable AccessibilityNodeInfoCompat inputFocusedNode) {
-    if ((inputFocusedNode != null)
-        && (inputFocusedNode.isEditable()
-            || (Role.getRole(inputFocusedNode) == Role.ROLE_EDIT_TEXT))) {
+    if (isEditField(inputFocusedNode)) {
       globalVariables.setLastTextEditIsPassword(inputFocusedNode.isPassword());
     }
     // Don't update the field if non-edittext node is grabbing the input focus.

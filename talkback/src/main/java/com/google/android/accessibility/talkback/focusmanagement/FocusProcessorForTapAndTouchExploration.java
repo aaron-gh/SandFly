@@ -60,10 +60,47 @@ public class FocusProcessorForTapAndTouchExploration {
   // When set to this mode, all keys(including the function keys) from the input type window are
   // interpreted as text entry keys.
   public static final int FORCE_LIFT_TO_TYPE_ON_IME = 2;
+  // Like FORCE_LIFT_TO_TYPE_ON_IME, but the key that sends or submits, such as Enter, Done, or
+  // Send, still needs a double-tap.
+  public static final int LIFT_TO_TYPE_EXCEPT_ACTION_KEY = 3;
 
-  /** Typing method options: can be DOUBLE_TAP, LIFT_TO_TYPE or FORCE_LIFT_TO_TYPE_ON_IME. */
-  @IntDef({DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME})
+  /**
+   * Typing method options: can be DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME, or
+   * LIFT_TO_TYPE_EXCEPT_ACTION_KEY.
+   */
+  @IntDef({DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME, LIFT_TO_TYPE_EXCEPT_ACTION_KEY})
   public @interface TypingMethod {}
+
+  /**
+   * The end of the view ID of Gboard's action key, which is Enter, Done, Send, Search, or Go,
+   * depending on the text field.
+   */
+  private static final String GBOARD_ACTION_KEY_ID_SUFFIX = ":id/key_pos_ime_action";
+
+  /** Returns whether {@code typingMethod} lifts to type every key in the keyboard. */
+  public static boolean liftsToTypeAnyKey(@TypingMethod int typingMethod) {
+    return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
+        || typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY;
+  }
+
+  /**
+   * Returns whether lifting the finger on {@code key} in the keyboard types it with {@code
+   * typingMethod}. The keyboard's action key needs a double-tap with {@link
+   * #LIFT_TO_TYPE_EXCEPT_ACTION_KEY}. Returns false if there's no key, such as when the finger
+   * lifts where nothing can take focus.
+   */
+  public static boolean liftsToType(
+      @TypingMethod int typingMethod, @Nullable AccessibilityNodeInfoCompat key) {
+    if (key == null) {
+      return false;
+    }
+    if (typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY) {
+      String id = key.getViewIdResourceName();
+      return id == null || !id.endsWith(GBOARD_ACTION_KEY_ID_SUFFIX);
+    }
+    return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
+        || (typingMethod == LIFT_TO_TYPE && Role.getRole(key) == Role.ROLE_TEXT_ENTRY_KEY);
+  }
 
   /** The timeout after which an event is no longer considered a tap. */
   private static final long TAP_TIMEOUT_MS = ViewConfiguration.getJumpTapTimeout();
@@ -323,9 +360,13 @@ public class FocusProcessorForTapAndTouchExploration {
 
   /** @return {@code true} if the role of node support lift-to-type functionality. */
   private boolean supportsLiftToType(AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
+    if (typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY
+        && !liftsToType(typingMethod, accessibilityNodeInfoCompat)) {
+      return false;
+    }
     if (Role.getRole(accessibilityNodeInfoCompat) == Role.ROLE_TEXT_ENTRY_KEY) {
       return true;
-    } else if (typingMethod != FORCE_LIFT_TO_TYPE_ON_IME) {
+    } else if (!liftsToTypeAnyKey(typingMethod)) {
       return false;
     }
 

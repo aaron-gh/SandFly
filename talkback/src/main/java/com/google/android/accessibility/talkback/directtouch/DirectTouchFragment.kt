@@ -22,6 +22,7 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.ViewCompat
@@ -97,15 +98,6 @@ class DirectTouchFragment : TalkbackBaseFragment() {
       )
     )
     screen.addPreference(
-      switchPreference(
-        context,
-        DirectTouchSettings.PREF_NAV_BAR,
-        R.string.pref_direct_touch_nav_bar,
-        R.string.pref_direct_touch_nav_bar_summary,
-        DirectTouchSettings.isNavBarDirect(prefs),
-      )
-    )
-    screen.addPreference(
       actionPreference(context, R.string.pref_direct_touch_backup) {
         createBackup.launch(BACKUP_FILE_NAME)
       }
@@ -163,10 +155,13 @@ class DirectTouchFragment : TalkbackBaseFragment() {
     executor.execute {
       val pm = appContext.packageManager
       val launcher = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
+      // Keyboards too, which often have no launcher icon, for those that speak for themselves.
+      val keyboards =
+        appContext.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList.orEmpty()
       val entries =
-        pm
-          .queryIntentActivities(launcher, 0)
-          .map { it.activityInfo.packageName to it.loadLabel(pm).toString() }
+        (pm.queryIntentActivities(launcher, 0).map {
+            it.activityInfo.packageName to it.loadLabel(pm).toString()
+          } + keyboards.map { it.packageName to it.loadLabel(pm).toString() })
           .distinctBy { it.first }
           .filter { (pkg, _) -> pkg != appContext.packageName }
           .map { (pkg, label) -> AppEntry(pkg, label, DirectTouchSettings.isAppEnabled(prefs, pkg)) }

@@ -56,7 +56,7 @@ public final class EarconFeedbackUtils {
     CharSequence eventDescription =
         AccessibilityEventFeedbackUtils.getEventContentDescriptionOrEventAggregateText(
             event, preferredLocale);
-    if ((event.getSource() == null
+    if ((AccessibilityEventUtils.getSource(event) == null
         || srcNode.isFocused()
         || srcNode.isAccessibilityFocused()
         || srcNode.getLiveRegion() != ACCESSIBILITY_LIVE_REGION_NONE)) {

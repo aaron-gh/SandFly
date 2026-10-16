@@ -38,6 +38,9 @@ project(':brailledisplayanalytics').projectDir = new File('braille/brailledispla
 include 'braillebrltty'
 project(':braillebrltty').projectDir = new File('braille/brltty')
 
+include ':quickjs'
+project(':quickjs').projectDir = new File('scripting/quickjs')
+
 include ':materialflags'
 project(':materialflags').projectDir = new File('material/flags')
 include ':materialtheme'

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Pozastavit Backtalk</string>
+    <string name="summary_pause_backtalk">Vypne řeč, gesta a průzkum dotykem, dokud Backtalk znovu neobnovíte</string>
+    <string name="keycombo_menu_global_pause_backtalk">Pozastavit nebo obnovit Backtalk</string>
+    <string name="backtalk_paused">Backtalk pozastaven</string>
+    <string name="backtalk_resumed">Backtalk obnoven</string>
+    <string name="notification_title_backtalk_paused">Backtalk je pozastaven</string>
+    <string name="notification_message_backtalk_paused">Klepnutím obnovíte</string>
+    <string name="dialog_title_pause_backtalk">Pozastavit Backtalk?</string>
+    <string name="dialog_button_pause_backtalk">Pozastavit</string>
+    <string name="dialog_message_pause_backtalk">Když je Backtalk pozastaven, nemluví ani nereaguje na gesta a obrazovka funguje, jako by nebyl zapnutý žádný odečítač obrazovky.</string>
+    <string name="message_resume_keyguard">Pro obnovení klepněte na oznámení Backtalk je pozastaven, třikrát rychle stiskněte tlačítko snížení hlasitosti nebo telefon zamkněte a probuďte, aby se zobrazila zamykací obrazovka.</string>
+    <string name="message_resume_screen_on">Pro obnovení klepněte na oznámení Backtalk je pozastaven, třikrát rychle stiskněte tlačítko snížení hlasitosti nebo obrazovku vypněte a znovu zapněte.</string>
+    <string name="message_resume_manual">Pro obnovení klepněte na oznámení Backtalk je pozastaven nebo třikrát rychle stiskněte tlačítko snížení hlasitosti.</string>
+    <string name="message_resume_key_combo">Můžete také stisknout <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">Obnovení Backtalku</string>
+    <string name="value_resume_keyguard">Když se zobrazí zamykací obrazovka</string>
+    <string name="value_resume_screen_on">Když se zapne obrazovka</string>
+    <string name="value_resume_manual">Pouze z oznámení nebo zkratkou</string>
+</resources>

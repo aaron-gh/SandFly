@@ -84,6 +84,22 @@ public class SpeechProgressEstimatorTest {
   }
 
   @Test
+  public void aPauseIsNotLearnedAsSpeakingTime() {
+    SpeechProgressEstimator estimator = new SpeechProgressEstimator();
+    // 100 characters in 2.5 seconds of speech, with a 7.5 second pause in the middle.
+    String hundred = "x".repeat(100);
+    estimator.onQueued("a", hundred, 1f, ENGINE);
+    estimator.onStarted("a", 0);
+    estimator.onPaused("a", 7500);
+    estimator.onFinished("a", 10_000, /* completed= */ true);
+
+    estimator.onQueued("b", TEXT, 1f, ENGINE);
+    estimator.onStarted("b", 20_000);
+    // Learned as 40 characters a second, as without the pause.
+    assertEquals(TEXT.indexOf("with"), estimator.estimateResumeOffset(21_700));
+  }
+
+  @Test
   public void speedScalesWithTheSpeechRate() {
     SpeechProgressEstimator slow = new SpeechProgressEstimator();
     SpeechProgressEstimator fast = new SpeechProgressEstimator();

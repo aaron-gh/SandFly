@@ -141,30 +141,33 @@ public class TalkBackPreferenceFilter {
   enum TalkBackPreference {
     // Sound and vibration.
     A11Y_VOLUME(R.string.pref_a11y_volume_key, HIDE_NO_ACCESSIBILITY_AUDIO_STREAM),
-    AUDIO_DUCKING(R.string.pref_use_audio_focus_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
+    AUDIO_DUCKING(R.string.pref_use_audio_focus_key, HIDDEN_ON_TV),
     VIBRATION_FEEDBACK(R.string.pref_vibration_key, HIDDEN_NO_VIBRATION),
     SPEECH_FOOTER(
         R.string.pref_speech_footer_key, HIDE_NO_ACCESSIBILITY_AUDIO_STREAM | HIDDEN_ON_XR),
     // Advanced settings.
     CUSTOM_LABELS(
         R.string.pref_manage_labels_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_SETUP | HIDDEN_ON_XR),
+        HIDDEN_ON_TV | HIDDEN_SETUP | HIDDEN_ON_XR),
+    // Scripts run on phones only; the watch build has no Scripts screen to open.
+    SCRIPTS(R.string.pref_scripts_key, HIDDEN_ON_WATCH),
     SINGLE_TAP_ACTIVATION(
-        R.string.pref_single_tap_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+        R.string.pref_single_tap_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     REDUCE_WINDOW_DELAY(
         R.string.pref_reduce_window_delay_key, HIDE_IF_NO_USER_DISABLING_OF_GLOBAL_ANIMATIONS),
     KEYBOARD_SHORTCUTS(
         R.string.pref_category_manage_keyboard_shortcut_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
     PLAY_PAUSE_MEDIA(R.string.keycombo_shortcut_global_play_pause_media, HIDDEN_NO_MEDIA_CONTROL),
-    TYPING_CONFIRMATION(R.string.pref_typing_confirmation_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
-    TYPING_LONG_PRESS_DURATION(
-        R.string.pref_typing_long_press_duration_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH),
+    // The delay settings work on watches as on phones, so watches show them too.
+    TYPING_CONFIRMATION(R.string.pref_typing_confirmation_key, HIDDEN_ON_TV),
+    TYPING_LONG_PRESS_DURATION(R.string.pref_typing_long_press_duration_key, HIDDEN_ON_TV),
     TYPING_LATENCY_SETTINGS(
-        R.string.pref_typing_focus_time_out_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_TYPING_LATENCY_SETTING),
+        R.string.pref_typing_focus_time_out_key, HIDDEN_ON_TV | HIDDEN_TYPING_LATENCY_SETTING),
     TOUCH_LATENCY_SETTINGS(
-        R.string.pref_touch_focus_time_out_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_TOUCH_LATENCY_SETTING),
+        R.string.pref_touch_focus_time_out_key, HIDDEN_ON_TV | HIDDEN_TOUCH_LATENCY_SETTING),
+    // Taps are timed by Backtalk's own gesture detection, so without it this does nothing.
+    MULTI_TAP_TIMEOUT(
+        R.string.pref_multi_tap_timeout_key, HIDDEN_ON_TV | SHOW_IF_SERVICE_GESTURE_DETECTION),
     PRIVACY_POLICY(R.string.pref_policy_key, HIDDEN_SETUP),
     TERMS_OF_SERVICE(R.string.pref_show_tos_key, HIDDEN_SETUP),
     // Help & Tutorial.
@@ -177,7 +180,18 @@ public class TalkBackPreferenceFilter {
     // Basic settings.
     NEW_FEATURE(R.string.pref_new_feature_in_talkback_entry_point_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     PROXIMITY(R.string.pref_proximity_key, HIDDEN_ON_TV | HIDE_NO_PROXIMITY_SENSOR | HIDDEN_ON_XR),
-    TTS_SETTINGS(R.string.pref_tts_settings_key, HIDDEN_ON_WATCH),
+    // A watch is not held to the ear for calls.
+    SPEAKERPHONE_AWAY_FROM_EAR(
+        R.string.pref_speakerphone_away_from_ear_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    // Pausing is turned off on watches, so there is nothing to resume.
+    RESUME_BACKTALK(R.string.pref_resume_backtalk_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    // Pausing is turned off on TVs too: the volume keys often go to the TV or a soundbar, and there
+    // is no notification shade to resume from.
+    PAUSE_BACKTALK_MENU_ITEM(
+        R.string.pref_show_context_menu_pause_backtalk_setting_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    // A TV has no touchscreen for direct touch, and no gesture for the status readout.
+    DIRECT_TOUCH(R.string.pref_direct_touch_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    STATUS_READOUT(R.string.pref_status_readout_key, HIDDEN_ON_TV),
     SPEECH_VOLUME(R.string.pref_speech_volume_key, HIDE_HAS_VOLUME_KEY),
     BRAILLE_KEYBOARD(
         R.string.pref_brailleime_key,
@@ -185,18 +199,11 @@ public class TalkBackPreferenceFilter {
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
-    CUSTOMIZE_MENU(R.string.pref_manage_customize_menus_key, HIDDEN_ON_TV),
+    CUSTOMIZE_CONTEXT_MENU(R.string.pref_category_manage_context_menu_key, HIDDEN_ON_TV),
+    CUSTOMIZE_SELECTOR_MENU(R.string.pref_category_manage_selector_menu_key, HIDDEN_ON_TV),
     // TalkBack/Reading Menu
     CUSTOMIZE_TALKBACK_MENU_VOICE_COMMAND_CONTROLS(
         R.string.pref_show_context_menu_voice_commands_setting_key, HIDDEN_ON_WATCH | HIDDEN_ON_XR),
-    CUSTOMIZE_TALKBACK_MENU_EDIT_NAVIGATION_CONTROLS(
-        R.string.pref_show_navigation_menu_controls_setting_key, HIDDEN_ON_WATCH),
-    CUSTOMIZE_TALKBACK_MENU_EDIT_NAVIGATION_LINKS(
-        R.string.pref_show_navigation_menu_links_setting_key, HIDDEN_ON_WATCH),
-    CUSTOMIZE_TALKBACK_MENU_EDIT_NAVIGATION_LANDMARKS(
-        R.string.pref_show_navigation_menu_landmarks_setting_key, HIDDEN_ON_WATCH),
-    CUSTOMIZE_TALKBACK_MENU_EDIT_NAVIGATION_WINDOWS(
-        R.string.pref_show_navigation_menu_window_setting_key, HIDDEN_ON_WATCH),
     CUSTOMIZE_TALKBACK_MENU_SCREEN_SEARCH(
         R.string.pref_show_context_menu_find_on_screen_setting_key, HIDDEN_ON_WATCH),
     SUPPORT_SYSTEM_ACTION(
@@ -205,9 +212,9 @@ public class TalkBackPreferenceFilter {
         R.string.pref_show_context_menu_vibration_feedback_setting_key, HIDDEN_NO_VIBRATION),
     CUSTOMIZE_TALKBACK_MENU_SCREEN_OVERVIEW(
         R.string.pref_show_context_menu_summarize_view_setting_key,
-        HIDE_SCREEN_OVERVIEW | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+        HIDE_SCREEN_OVERVIEW | HIDDEN_ON_XR),
     CUSTOMIZE_TALKBACK_MENU_IMAGE_CAPTION(
-        R.string.pref_show_context_menu_image_caption_setting_key, HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+        R.string.pref_show_context_menu_image_caption_setting_key, HIDDEN_ON_XR),
     CUSTOMIZE_TALKBACK_MENU_DIM_OR_BRIGHTEN(
         R.string.pref_show_context_menu_dim_or_brighten_setting_key, HIDDEN_ON_XR),
     CUSTOMIZE_TALKBACK_MENU_BRAILLE_DISPLAY(
@@ -215,45 +222,31 @@ public class TalkBackPreferenceFilter {
 
     CUSTOMIZE_TALKBACK_SERVER_SIDE_GEMINI(
         R.string.pref_detailed_image_description_key,
-        HIDDEN_ON_WATCH | HIDDEN_ON_TV | HIDE_SERVER_SIDE_GEMINI | HIDDEN_ON_XR),
+        HIDDEN_ON_TV | HIDE_SERVER_SIDE_GEMINI | HIDDEN_ON_XR),
 
-    CUSTOMIZE_READING_MENU_NAVIGATION_LINKS(
-        R.string.pref_selector_granularity_links_key, HIDDEN_ON_WATCH),
-    CUSTOMIZE_READING_MENU_NAVIGATION_LANDMARKS(
-        R.string.pref_selector_granularity_landmarks_key, HIDDEN_ON_WATCH),
-    CUSTOMIZE_READING_MENU_NAVIGATION_WINDOWS(
-        R.string.pref_selector_granularity_windows_key, HIDDEN_ON_WATCH),
     CUSTOMIZE_READING_MENU_ADJUST_VOLUME(
         R.string.pref_selector_change_a11y_volume_key, HIDE_NO_ACCESSIBILITY_AUDIO_STREAM),
-    CUSTOMIZE_READING_MENU_SPELL_CHECK(
-        R.string.pref_selector_granularity_typo_key, HIDDEN_ON_WATCH),
     CUSTOMIZE_READING_MENU_DIM_OR_BRIGHTEN(R.string.pref_selector_hide_screen_key, HIDDEN_ON_XR),
     CUSTOMIZE_READING_MENU_FOCUS_LATENCY(
         R.string.pref_selector_change_touch_focus_latency_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_TOUCH_LATENCY_SETTING | HIDDEN_ON_XR),
+        HIDDEN_ON_TV | HIDDEN_TOUCH_LATENCY_SETTING | HIDDEN_ON_XR),
     CUSTOMIZE_READING_MENU_TYPING_FOCUS_LATENCY(
         R.string.pref_selector_change_typing_focus_latency_key,
-        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_TYPING_LATENCY_SETTING | HIDDEN_ON_XR),
+        HIDDEN_ON_TV | HIDDEN_TYPING_LATENCY_SETTING | HIDDEN_ON_XR),
     // Developer settings
     GESTURE_HANDLING(R.string.pref_talkback_gesture_detection_key, HIDDEN_ON_TV),
     EXPLORE_BY_TOUCH(R.string.pref_explore_by_touch_reflect_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     // Gesture/Verbosity Settings.
-    CONFIG_ON_SCREEN_KEYBOARD_ECHO(R.string.pref_keyboard_echo_on_screen_key, HIDDEN_ON_WATCH),
     CONFIG_PHYSICAL_KEYBOARD_ECHO(R.string.pref_keyboard_echo_physical_key, HIDDEN_ON_WATCH),
-    SPEAK_NUMBER_OF_LIST_(R.string.pref_verbose_scroll_announcement_key, HIDDEN_ON_WATCH),
-    SPEAK_ELEMENT_TYPE(R.string.pref_speak_roles_key, HIDDEN_ON_WATCH),
-    SPEAK_WINDOW_TITLES(R.string.pref_speak_system_window_titles_key, HIDDEN_ON_WATCH),
+    INTERRUPT_TYPING(R.string.pref_interrupt_typing_key, HIDDEN_ON_WATCH),
+    INTERRUPT_ENTER(R.string.pref_interrupt_enter_key, HIDDEN_ON_WATCH),
     LIMIT_FREQUENT_CONTENT_CHANGE_ANNOUNCEMENT(
         R.string.pref_allow_frequent_content_change_announcement_key, HIDE_FREQUENT_UPDATE_UI_FLAG),
-    USE_PITCH_CHANGE(R.string.pref_intonation_key, HIDDEN_ON_WATCH),
-    SPEAK_WHEN_SCREEN_OFF(R.string.pref_screenoff_key, HIDDEN_ON_WATCH | HIDDEN_ON_XR),
-    SPEAK_CAPITAL_LETTERS(R.string.pref_capital_letters_key, HIDDEN_ON_WATCH),
-    SPEAK_ELEMENT_ID(R.string.pref_speak_element_ids_key, HIDDEN_ON_WATCH),
+    SPEAK_WHEN_SCREEN_OFF(R.string.pref_screenoff_key, HIDDEN_ON_XR),
     SPEAK_PUNCTUATION_LEGACY(R.string.pref_punctuation_key, HIDDEN), // Temporarily hide the legacy
-    SPEAK_PUNCTUATION(R.string.pref_punctuation_verbosity, HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE(R.string.pref_category_manage_gestures_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     MULTIPLE_GESTURE_SET(
-        R.string.pref_gesture_set_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_MULTIPLE_GESTURE_SET),
+        R.string.pref_gesture_set_key, HIDDEN_ON_TV | HIDE_MULTIPLE_GESTURE_SET),
     CUSTOMIZE_GESTURE_GROUP_2FINGER(
         R.string.pref_category_2finger_shortcuts_key, SHOW_IF_MULTI_FINGER),
     CUSTOMIZE_GESTURE_GROUP_3FINGER(
@@ -268,18 +261,24 @@ public class TalkBackPreferenceFilter {
         R.string.pref_shortcut_3finger_1tap_hold_key, SHOW_IF_MULTI_FINGER_TAP_AND_HOLD),
     CUSTOMIZE_GESTURE_3FINGER_3TAP_HOLD(
         R.string.pref_shortcut_3finger_3tap_hold_key, SHOW_IF_MULTI_FINGER_TAP_AND_HOLD),
+    CUSTOMIZE_GESTURE_3FINGER_QUADRUPLE_TAP(
+        R.string.pref_shortcut_3finger_4tap_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE_2FINGER_ROTATE_CLOCKWISE(
         R.string.pref_shortcut_2finger_rotate_clockwise_key,
-        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+        SHOW_IF_SERVICE_GESTURE_DETECTION),
     CUSTOMIZE_GESTURE_2FINGER_ROTATE_COUNTERCLOCKWISE(
         R.string.pref_shortcut_2finger_rotate_counterclockwise_key,
-        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+        SHOW_IF_SERVICE_GESTURE_DETECTION),
+    ROTOR_STEP_DEGREES(R.string.pref_rotor_step_degrees_key, SHOW_IF_SERVICE_GESTURE_DETECTION),
     CUSTOMIZE_FOCUS_INDICATOR(
         R.string.pref_category_manage_focus_indicator_key, SHOW_FOCUS_INDICATOR),
     AUTOMATIC_DESCRIPTIONS(R.string.pref_auto_image_captioning_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     GEMINI_SUPPORT(
         R.string.pref_gemini_settings_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV | HIDE_GEMINI_SETTINGS),
     ICON_DETECTION(R.string.pref_icon_detection_key, HIDDEN_ON_WATCH | HIDE_ICON_DETECTION),
+    // A watch cannot hold an on-device model, so descriptions there use the Gemini API.
+    ON_DEVICE_AI(R.string.pref_on_device_ai_key, HIDDEN_ON_WATCH),
     ROW_COLUMN_SELECTOR(
         R.string.pref_selector_granularity_row_column_key,
         HIDE_FEATURE_TABLE_NAVIGATION_ROW_AND_COLUMN),

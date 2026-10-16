@@ -24,6 +24,8 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 /** Helper class for KeyComboManager. */
 public class KeyComboManagerHelper {
@@ -41,6 +43,20 @@ public class KeyComboManagerHelper {
    * https://source.chromium.org/chromium/chromium/src/+/main:ui/accessibility/ax_enum_util.cc?q=%22ToString(ax::mojom::Role%20role)%22%20f:ui%2Faccessibility%2Fax_enum_util.cc
    */
   private static final String CHROME_ROLE_MENU_BAR = "menuBar";
+
+  /**
+   * Chrome roles of web controls that take arrow keys themselves: a select element or combo box,
+   * and a spin button. Role strings as for {@link #CHROME_ROLE_LIST_BOX}.
+   */
+  private static final ImmutableSet<String> CHROME_ROLES_USING_ARROW_KEYS =
+      ImmutableSet.of("comboBoxSelect", "comboBoxMenuButton", "comboBoxGrouping", "spinButton");
+
+  /**
+   * Chrome roles of web containers whose items arrow keys move between: tree views, interactive
+   * grids and menus. Role strings as for {@link #CHROME_ROLE_LIST_BOX}.
+   */
+  private static final ImmutableList<String> CHROME_CONTAINER_ROLES_USING_ARROW_KEYS =
+      ImmutableList.of("tree", "treeGrid", "grid", "menu");
 
   /** Returns true if smart browse mode is enabled. */
   public static boolean isSmartBrowseModeEnabled(Context context) {
@@ -96,6 +112,17 @@ public class KeyComboManagerHelper {
         || AccessibilityNodeInfoUtils.isSelfOrAncestorWithChromeRole(
             sourceNode, CHROME_ROLE_MENU_BAR)) {
       return true;
+    }
+
+    // Other web controls that move or change with arrow keys, such as tree views and combo boxes.
+    CharSequence chromeRole = AccessibilityNodeInfoUtils.getChromeRole(sourceNode);
+    if (chromeRole != null && CHROME_ROLES_USING_ARROW_KEYS.contains(chromeRole.toString())) {
+      return true;
+    }
+    for (String role : CHROME_CONTAINER_ROLES_USING_ARROW_KEYS) {
+      if (AccessibilityNodeInfoUtils.isSelfOrAncestorWithChromeRole(sourceNode, role)) {
+        return true;
+      }
     }
 
     return false;

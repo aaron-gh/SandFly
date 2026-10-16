@@ -39,7 +39,7 @@ import com.google.android.accessibility.braille.brailledisplay.analytics.Braille
 import com.google.android.accessibility.braille.brailledisplay.controller.CellsContentManager.Cursor;
 import com.google.android.accessibility.braille.brailledisplay.controller.CellsContentManager.OnDisplayContentChangeListener;
 import com.google.android.accessibility.braille.brailledisplay.platform.Controller;
-import com.google.android.accessibility.braille.brailledisplay.platform.Displayer;
+import com.google.android.accessibility.braille.brailledisplay.platform.DisplayerInterface;
 import com.google.android.accessibility.braille.brailledisplay.platform.PersistentStorage;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
 import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
@@ -83,7 +83,7 @@ public class BdController implements Controller {
   private BehaviorDisplayer behaviorDisplayer = new BehaviorDisplayer();
   private TranslatorManager translatorManager;
   private CellsContentManager cellsContentManager;
-  private Displayer displayer;
+  private DisplayerInterface displayer;
   private BehaviorIme behaviorIme;
   private AlertDialog someBrailleCommandUnavailableDialog;
   private boolean destroyed;
@@ -123,7 +123,7 @@ public class BdController implements Controller {
   }
 
   @Override
-  public void onStart(Displayer displayer) {
+  public void onStart(DisplayerInterface displayer) {
     BrailleDisplayLog.v(TAG, "onStart");
     if (destroyed) {
       BrailleDisplayLog.v(TAG, "Don't call after destroy");

@@ -172,6 +172,8 @@ public class FocusProcessorForLogicalNavigation {
   // successfully finding the focus.
   private boolean reachEdge = false;
 
+  private static boolean wrapAround = true;
+
   /** The last node that was scrolled while navigating with native macro granularity. */
   private @Nullable AccessibilityNodeInfoCompat lastScrolledNodeForNativeMacroGranularity;
 
@@ -227,6 +229,10 @@ public class FocusProcessorForLogicalNavigation {
 
   public void setActorState(ActorState actorState) {
     this.actorState = actorState;
+  }
+
+  public static void setWrapAround(boolean wrap) {
+    wrapAround = wrap;
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -366,15 +372,39 @@ public class FocusProcessorForLogicalNavigation {
    */
   private AccessibilityNodeInfoCompat getPivotNodeForNavigationAction(
       NavigationAction navigationAction) {
+    // While the saved reading order holds the focused node, Android's cached copy of the node is
+    // current: nothing that could change the window has happened since the order was read from the
+    // app. So the focus monitor need not ask the app for the node again then.
     AccessibilityNodeInfoCompat pivot =
         accessibilityFocusMonitor.getAccessibilityFocus(
-            navigationAction.useInputFocusAsPivotIfEmpty, /* requireEditable= */ false);
+            navigationAction.useInputFocusAsPivotIfEmpty,
+            /* requireEditable= */ false,
+            /* isCurrent= */ Filter.node(TraversalTreeCache::holds));
 
-    // If we cannot find a pivot, or the pivot is not accessible, choose the root node if the
-    // active window.
-    if (pivot == null || !pivot.refresh()) {
+    // The focus monitor can return Android's cached copy of a node that was just removed, so check
+    // with the app that the pivot is still there. Skip that round trip when the saved reading order
+    // holds the pivot: nothing that could remove a node has happened since it was saved.
+    if (pivot != null && !TraversalTreeCache.holds(pivot) && !pivot.refresh()) {
+      pivot = null;
+    }
+
+    // If we cannot find a pivot, or the pivot is not accessible, choose the root node of the active
+    // window.
+    if (pivot == null) {
       // TODO: We might need to define our own "active window" in TalkBack side.
-      pivot = AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+      AccessibilityNodeInfoCompat root =
+          AccessibilityServiceCompatUtils.getRootInActiveWindow(service);
+      // The focused node was removed from the window — an app re-laying-out its content, such as a
+      // blocked ad slot collapsing, does this. Starting from the window root would send the user
+      // back to the top of the page, so carry on from the node nearest where the last navigation
+      // started instead.
+      AccessibilityNodeInfoCompat nearest =
+          (root == null) ? null : TraversalTreeCache.pivotAfterRemoval(root);
+      if (nearest != null && nearest.refresh()) {
+        pivot = nearest;
+      } else {
+        pivot = root;
+      }
     }
     return pivot;
   }
@@ -1017,11 +1047,7 @@ public class FocusProcessorForLogicalNavigation {
     CharSequence keyword = searchState.getLastKeyword();
     if (TextUtils.isEmpty(keyword)) {
       LogUtils.d(TAG, "navigateToScreenSearchTarget  keyword empty");
-      announce(
-          FeatureSupport.isMultiFingerGestureSupported()
-              ? service.getString(R.string.screen_search_no_keyword_hint)
-              : service.getString(R.string.screen_search_no_keyword_hint_pre_r),
-          eventId);
+      announce(globalVariables.getScreenSearchNoKeywordHint(), eventId);
       return false;
     }
 
@@ -1122,6 +1148,48 @@ public class FocusProcessorForLogicalNavigation {
    *
    * @return {@code true} if any accessibility action is successfully performed.
    */
+  /**
+   * Returns the node that a plain swipe in {@code searchDirection} from {@code pivot} would most
+   * likely focus, without scrolling, focusing or changing anything, or null if there is none on
+   * screen in the same window, or if there is no saved traversal order to search. It finds the
+   * nodes through the same saved order and node checks as a swipe, so that a swipe that follows
+   * finds them already fetched from the app.
+   */
+  public @Nullable AccessibilityNodeInfoCompat predictTarget(
+      @NonNull AccessibilityNodeInfoCompat pivot, @SearchDirection int searchDirection) {
+    if (!TraversalStrategyUtils.isLogicalDirection(searchDirection)
+        || WebInterfaceUtils.supportsWebActions(pivot)) {
+      return null;
+    }
+    // Only with the saved reading order: building one takes from about 10 ms to, in a big app, a
+    // few hundred, on the main thread, where a swipe that starts meanwhile would wait for it. A
+    // swipe saves the order it builds, so the next prediction has one. The root comes from the
+    // saved order too, as asking the window for it would wait for the app.
+    AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
+    if (rootNode == null) {
+      // Remember where the next swipe starts all the same, as a search of the saved order does, so
+      // that a swipe after the focused node is removed carries on from here.
+      TraversalTreeCache.rememberPivot(pivot);
+      return null;
+    }
+    TraversalStrategy traversalStrategy = TraversalTreeCache.get(rootNode, pivot);
+    if (traversalStrategy == null) {
+      return null;
+    }
+    Filter<AccessibilityNodeInfoCompat> nodeFilter =
+        NavigationTarget.createNodeFilter(
+            NavigationTarget.TARGET_DEFAULT, traversalStrategy.getSpeakingNodesCache());
+    AccessibilityNodeInfoCompat target =
+        TraversalStrategyUtils.searchFocus(traversalStrategy, pivot, searchDirection, nodeFilter);
+    if (target == null
+        || target.getWindowId() != pivot.getWindowId()
+        || !target.isVisibleToUser()
+        || WebInterfaceUtils.supportsWebActions(target)) {
+      return null;
+    }
+    return target;
+  }
+
   private boolean navigateToDefaultOrMacroGranularityTarget(
       @NonNull AccessibilityNodeInfoCompat pivot,
       boolean ignoreDescendantsOfPivot,
@@ -1132,7 +1200,12 @@ public class FocusProcessorForLogicalNavigation {
         TraversalStrategyUtils.getLogicalDirection(
             searchDirection, WindowUtils.isScreenLayoutRTL(service));
 
-    AccessibilityNodeInfoCompat rootNode = AccessibilityNodeInfoUtils.getRoot(pivot);
+    // Asking the window for its root waits for the app on every swipe, so take the root of the
+    // saved reading order when that holds the pivot.
+    AccessibilityNodeInfoCompat rootNode = TraversalTreeCache.rootFor(pivot);
+    if (rootNode == null) {
+      rootNode = AccessibilityNodeInfoUtils.getRoot(pivot);
+    }
     if (rootNode == null) {
       LogUtils.w(TAG, "Cannot perform navigation action: unable to find root node.");
       return false;
@@ -1278,7 +1351,7 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     // Try to wrap around inside current window if reaching the edge.
-    if (reachEdge && navigationAction.shouldWrap && navigationResult.isEmpty()) {
+    if (reachEdge && navigationAction.shouldWrap && wrapAround && navigationResult.isEmpty()) {
       navigationResult =
           findTargetForWrapAround(rootNode, navigationAction, traversalStrategy, eventId);
       if (navigationResult.shouldSkipNavigation()) {
@@ -1737,8 +1810,8 @@ public class FocusProcessorForLogicalNavigation {
       return NavigationResult.create(NavigationResult.Type.EXCEPTION);
     }
 
-    // Skip one swipe if it's the last element in the last window.
-    if (!reachEdge
+    // Skip one swipe if it's the last element in the last window. Without wrapping, stop there on every swipe, rather than going on to the first window.
+    if ((!reachEdge || !wrapAround)
         && (!windowFilter.accept(currentWindow)
             || needPauseWhenTraverseAcrossWindow(
                 windowTraversal, isScreenRtl, currentWindow, searchDirection, windowFilter))) {
@@ -2033,8 +2106,8 @@ public class FocusProcessorForLogicalNavigation {
     while (true) {
       // Although we already check last window before searching, but sometimes we may find out the
       // window is empty so it searches next window repeatly, in this case we should check last
-      // window again to prevent traversing in loops.
-      if (!reachEdge
+      // window again to prevent traversing in loops. Without wrapping, always stop at the last window.
+      if ((!reachEdge || !wrapAround)
           && needPauseWhenTraverseAcrossWindow(
               windowTraversal, isScreenRtl, targetWindow, direction, windowFilter)) {
         LogUtils.v(TAG, "Reach edge while searchTargetInNextOrPreviousWindow in:" + targetWindow);
@@ -2620,7 +2693,9 @@ public class FocusProcessorForLogicalNavigation {
             ScrollTimeout.SCROLL_TIMEOUT_LONG,
             autoScrollChecker,
             eventId);
-    if (scrolled && scrollCallback != null) {
+    if (scrolled
+        && scrollCallback != null
+        && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
       AutoScrollCallback callback = scrollCallback;
       AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
       earlyScrollCheckHandler.post(

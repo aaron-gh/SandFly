@@ -24,6 +24,9 @@ import static com.google.android.accessibility.talkback.compositor.Compositor.FL
 import static com.google.android.accessibility.talkback.compositor.Compositor.FLAVOR_TV;
 import static com.google.android.accessibility.talkback.compositor.Compositor.QUEUE_MODE_INTERRUPTIBLE_IF_LONG;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_NAME_ROLE_STATE_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_NAME_STATE_ROLE_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_ROLE_STATE_NAME_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_STATE_ROLE_NAME_POSITION;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_ROLE_NAME_STATE_POSITION;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_STATE_NAME_ROLE_POSITION;
 import static com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_TYPE_NONE;
@@ -197,6 +200,9 @@ public class ParseTreeCreator {
     verbosityDescOrderValues.put(DESC_ORDER_ROLE_NAME_STATE_POSITION, "RoleNameStatePosition");
     verbosityDescOrderValues.put(DESC_ORDER_STATE_NAME_ROLE_POSITION, "StateNameRolePosition");
     verbosityDescOrderValues.put(DESC_ORDER_NAME_ROLE_STATE_POSITION, "NameRoleStatePosition");
+    verbosityDescOrderValues.put(DESC_ORDER_NAME_STATE_ROLE_POSITION, "NameStateRolePosition");
+    verbosityDescOrderValues.put(DESC_ORDER_ROLE_STATE_NAME_POSITION, "RoleStateNamePosition");
+    verbosityDescOrderValues.put(DESC_ORDER_STATE_ROLE_NAME_POSITION, "StateRoleNamePosition");
     parseTree.addEnum(ENUM_VERBOSITY_DESCRIPTION_ORDER, verbosityDescOrderValues);
 
     Map<Integer, String> rangeInfoTypes = new HashMap<>();

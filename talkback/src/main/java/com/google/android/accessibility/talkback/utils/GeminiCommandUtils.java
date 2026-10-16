@@ -36,9 +36,7 @@ public final class GeminiCommandUtils {
       SpeakOptions.create()
           .setFlags(
               FeedbackItem.FLAG_NO_HISTORY
-                  | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                  | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                  | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE);
+                  | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
 
   public static Feedback.Part.Builder feedbackForDescribeImage(
       Context context, AccessibilityNodeInfoCompat node, ActorState actorState) {

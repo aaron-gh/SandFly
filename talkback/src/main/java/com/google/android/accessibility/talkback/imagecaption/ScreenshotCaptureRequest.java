@@ -34,8 +34,14 @@ public class ScreenshotCaptureRequest extends Request {
 
   /** A listener to be invoked when taking screenshot is finished. */
   public interface OnFinishListener {
-    /** Called when taking screenshot is finished. */
+    /**
+     * Called when taking screenshot is finished.
+     *
+     * @param request the request, which stays first in its {@link RequestList} until it is passed
+     *     to {@link RequestList#performNextRequest(Request)}
+     */
     void onFinish(
+        ScreenshotCaptureRequest request,
         AccessibilityNodeInfoCompat node,
         Bitmap bitmap,
         boolean isUserRequested,
@@ -105,7 +111,13 @@ public class ScreenshotCaptureRequest extends Request {
   }
 
   private void onFinished(@Nullable Bitmap screenCapture, boolean capturedByWindow) {
-    stopTimeoutRunnable();
+    if (!finish()) {
+      // It timed out or was cancelled, and the next request may have started.
+      if (screenCapture != null) {
+        screenCapture.recycle();
+      }
+      return;
+    }
     setEndTimestamp();
     LogUtils.v(
         TAG,
@@ -116,6 +128,6 @@ public class ScreenshotCaptureRequest extends Request {
                 StringBuilderUtils.optionalSubObj("screenCapture", screenCapture),
                 StringBuilderUtils.optionalTag("capturedByWindow", capturedByWindow),
                 StringBuilderUtils.optionalSubObj("node", node)));
-    onFinishListener.onFinish(node, screenCapture, isUserRequested, capturedByWindow);
+    onFinishListener.onFinish(this, node, screenCapture, isUserRequested, capturedByWindow);
   }
 }

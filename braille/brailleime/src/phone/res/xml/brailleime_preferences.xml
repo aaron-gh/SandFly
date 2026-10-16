@@ -47,6 +47,24 @@
         android:summary="@string/summary_pref_flip_dots_vertically"
         android:title="@string/title_pref_flip_dots_vertically" />
 
+    <SwitchPreferenceCompat
+        android:key="@string/pref_brailleime_tablet_held_up_faces_away"
+        android:summary="@string/summary_pref_tablet_held_up_faces_away"
+        android:title="@string/title_pref_tablet_held_up_faces_away" />
+
+    <SwitchPreferenceCompat
+        android:key="@string/pref_brailleime_typing_sounds"
+        android:summary="@string/summary_pref_typing_sounds"
+        android:title="@string/title_pref_typing_sounds" />
+
+    <ListPreference
+        android:defaultValue="@string/pref_brailleime_keyboard_echo_default"
+        android:entries="@array/pref_brailleime_keyboard_echo_entries"
+        android:entryValues="@array/pref_brailleime_keyboard_echo_values"
+        android:key="@string/pref_brailleime_keyboard_echo"
+        android:summary="%s"
+        android:title="@string/title_pref_braille_keyboard_echo" />
+
   </PreferenceCategory>
 
 </PreferenceScreen>

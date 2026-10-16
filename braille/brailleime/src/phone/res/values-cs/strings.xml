@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Braillská klávesnice TalkBack</string>
+  <string name="braille_ime_service_name">Braillská klávesnice Backtalk</string>
   <string name="braille_ime_bd_mode_name">Vstup hmatového displeje</string>
   <string name="switch_to_tabletop_announcement">Režim s obrazovkou k sobě. Položte zařízení tak, aby byl nabíjecí port nalevo.</string>
   <string name="calibration_tip_announcement">Pozici bodů změníte podržením %d prstů na obrazovce.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Přepnuto na plnopis</string>
   <string name="braille_ime_displayed_name">braillská klávesnice</string>
   <string name="multiple_languages_braille_ime_displayed_name">braillská klávesnice, %s</string>
-  <string name="input_view_caption">Braillská klávesnice TalkBack – nápovědu najdete na stránce g.co/help/braille</string>
+  <string name="input_view_caption">Braillská klávesnice Backtalk – nápovědu najdete na stránce g.co/help/braille</string>
   <string name="perform_action_next">Další</string>
   <string name="perform_action_submitting">Odesílání textu</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Změna pozice bodů. Nejprve zaznamenáme body %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Pokud při psaní na braillské klávesnici chcete změnit jazyk, přejeďte třemi prsty nahoru. Poté vyberte Přepnout na další jazyk.</string>
   <string name="title_pref_accumulate_presses">Zahrnout všechny stisknuté body</string>
   <string name="summary_pref_accumulate_presses">Každý stisknutý bod je součástí vstupu i v případě, že byl před stisknutím dalších bodů uvolněn</string>
-  <string name="title_pref_reverse_dots">Otočit body</string>
-  <string name="summary_pref_reverse_dots">Zaměnit pozice bodů (tj. např. body 1 a 4 si vymění místa)</string>
+  <string name="title_pref_reverse_dots">Prohodit levé a pravé body</string>
+  <string name="summary_pref_reverse_dots">Body 1, 2 a 3 si vymění místa s body 4, 5 a 6</string>
   <string name="bd_preference_braille_contracted">Zkratkopis</string>
   <string name="bd_preference_braille_uncontracted">Plnopis</string>
   <string name="context_menu_title">Možnost braillské klávesnice</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klávesnice</string>
   <string name="not_enough_touch_points_dialog_title">Zařízení braillskou klávesnici nepodporuje</string>
   <string name="not_enough_touch_points_dialog_message">Zařízení nepodporuje dostatek dotykových bodů. Další informace vám poskytne výrobce zařízení.</string>
-  <string name="talkback_off_dialog_title">Chcete-li používat braillskou klávesnici, zapněte funkci TalkBack</string>
+  <string name="talkback_off_dialog_title">Chcete-li používat braillskou klávesnici, zapněte funkci Backtalk</string>
   <string name="talkback_off_dialog_positive_button">Zapnete v nastavení přístupnosti</string>
-  <string name="talkback_suspend_dialog_title">Chcete-li používat braillskou klávesnici, znovu zapněte funkci TalkBack</string>
-  <string name="talkback_off_or_suspend_dialog_message">Když je zapnutá funkce TalkBack, můžete klepáním na displej zadávat symboly Braillova písma.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Ke změně gesta zapněte funkci TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Funkce TalkBack je vypnutá. Pokud chcete změnit gesta braillské klávesnice, zapněte ji.</string>
+  <string name="talkback_suspend_dialog_title">Chcete-li používat braillskou klávesnici, znovu zapněte funkci Backtalk</string>
+  <string name="talkback_off_or_suspend_dialog_message">Když je zapnutá funkce Backtalk, můžete klepáním na displej zadávat symboly Braillova písma.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Ke změně gesta zapněte funkci Backtalk</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Funkce Backtalk je vypnutá. Pokud chcete změnit gesta braillské klávesnice, zapněte ji.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Přejít do Nastavení</string>
   <string name="reset_gestures_dialog_title">Resetovat všechna gesta?</string>
   <string name="reset_gestures_dialog_message">Všechna gesta braillské klávesnice se resetují do výchozího nastavení.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Resetovat do výchozího nastavení</string>
   <string name="custom_gestures_dialog_remove_button">Odebrat gesto</string>
   <string name="change_gestures_dialog_message_title">Jak změnit gesto</string>
-  <string name="change_gestures_dialog_message">Na další obrazovce se otevře braillská klávesnice a nebudete moct používat gesta aplikace TalkBack.\n\nAž se otevře braillská klávesnice, proveďte gesto, které chcete používat, nebo přejetím dvěma prsty dolů braillskou klávesnici zavřete a změnu gesta zrušte.\n\nZobrazit dostupná gesta\n</string>
+  <string name="change_gestures_dialog_message">Na další obrazovce se otevře braillská klávesnice a nebudete moct používat gesta aplikace Backtalk.\n\nAž se otevře braillská klávesnice, proveďte gesto, které chcete používat, nebo přejetím dvěma prsty dolů braillskou klávesnici zavřete a změnu gesta zrušte.\n\nZobrazit dostupná gesta\n</string>
   <string name="change_gestures_dialog_message_link">Zobrazit dostupná gesta</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Tuto zprávu už nezobrazovat</string>
   <string name="change_gestures_dialog_positive_button">Pokračovat</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nepoužívat</string>
   <string name="next_keyboard">Další klávesnice</string>
   <string name="braille_tutorial_title">Výukový program braillské klávesnice</string>
-  <string name="tutorial_intro_description">Pomocí braillské klávesnice můžete klepáním na displej zadávat šestibodové Braillovo písmo.\n\nPoužíváte standard Unified English Braille. Na jazyk psaní můžete přepnout v nastavení aplikace TalkBack.\n\nPři psaní Braillovým písmem je potřeba telefon držet a používat jinak.</string>
+  <string name="tutorial_intro_description">Pomocí braillské klávesnice můžete klepáním na displej zadávat šestibodové Braillovo písmo.\n\nPoužíváte standard Unified English Braille. Na jazyk psaní můžete přepnout v nastavení aplikace Backtalk.\n\nPři psaní Braillovým písmem je potřeba telefon držet a používat jinak.</string>
   <string name="next_step">Další</string>
   <string name="leave_keyboard">Opustit braillskou klávesnici</string>
-  <string name="hold_six_fingers_description">Na braillské klávesnici nelze používat běžná gesta TalkBack.\n\nPokud chcete začít, nastavíme pozici šesti braillských bodů pro psaní.</string>
-  <string name="rotate_orientation_description_1">Od teď již nebudete moci používat běžná gesta funkce TalkBack. Při používání braillské klávesnice není funkce TalkBack k dispozici.</string>
+  <string name="hold_six_fingers_description">Na braillské klávesnici nelze používat běžná gesta Backtalk.\n\nPokud chcete začít, nastavíme pozici šesti braillských bodů pro psaní.</string>
+  <string name="rotate_orientation_description_1">Od teď již nebudete moci používat běžná gesta funkce Backtalk. Při používání braillské klávesnice není funkce Backtalk k dispozici.</string>
   <string name="rotate_orientation_description_2">Chcete-li začít, podržte telefon takto, displejem od sebe.</string>
   <string name="tap_to_continue">Chcete-li pokračovat, dvakrát kamkoliv klepněte</string>
   <string name="instruction_type_letter_a">Klepnutím na bod 1 levým ukazováčkem zadejte písmeno A</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURZOR BYL POSUNUT DOPŘEDU</string>
   <string name="result_swipe_down_2_fingers">SKRÝT KLÁVESNICI</string>
   <string name="result_swipe_down_3_fingers">DALŠÍ KLÁVESNICE</string>
-  <string name="rotate_orientation_announcement">Od teď už nebudete moci používat běžná gesta funkce TalkBack. Při používání braillské klávesnice není funkce TalkBack k dispozici.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Od teď už nebudete moci používat běžná gesta funkce Backtalk. Při používání braillské klávesnice není funkce Backtalk k dispozici.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Nejdříve telefon otočte displejem od sebe.\n\nPoté telefon otočte na šířku. Rukama byste měli držet kratší strany telefonu. V pravé ruce byste měli držet konec s portem USB. Držte telefon palcem a malíčkem a tři prostřední prsty umístěte na displej.\n\nAž budete připraveni pokračovat, dvakrát klepněte na displej.\n\nBraillskou klávesnici zavřete přejetím třemi prsty dolů směrem k zemi. Vrátíte se tak ke své původní klávesnici.</string>
   <string name="rotate_orientation_continue_announcement">Telefon je otočený na výšku. Chcete-li pokračovat, otočte jej na šířku (tak, aby jeho dlouhá strana byla dole). Poté ho otočte displejem od sebe. Až budete připraveni pokračovat, dvakrát klepněte na displej.</string>
   <string name="type_letter_a_announcement">Mějte displej směrem od sebe. Držte telefon v obou rukách za kratší hrany tak, abyste se prostředními třemi prsty obou rukou mohli dotýkat displeje.\n\nLevý ukazováček byste měli mít na bodu 1. Nyní klepnutím na bod 1 zadejte písmeno A.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Přejetím třemi prsty dolů přepnete na svou další klávesnici. Zkuste to.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Další klávesnice. Tímto obvykle přepnete na další klávesnici. Protože jste však stále ve výukovém programu, tentokrát zůstane aktivní braillská klávesnice.</string>
   <string name="swipe_up_3_fingers_announcement">Psát můžete také v režimu s obrazovkou k sobě, když telefon položíte na stůl. Pokud chcete výukový program ukončit, přejeďte třemi prsty nahoru a najděte možnost Dokončit výukový program</string>
-  <string name="open_context_menu_announcement">Nabídka možností je otevřená. Otočte telefon zpět, aby obrazovka směřovala nahoru, a držte ho jako obvykle. Nyní můžete navigovat běžnými gesty TalkBack. Přejetím vpravo zobrazíte další možnosti.</string>
+  <string name="open_context_menu_announcement">Nabídka možností je otevřená. Otočte telefon zpět, aby obrazovka směřovala nahoru, a držte ho jako obvykle. Nyní můžete navigovat běžnými gesty Backtalk. Přejetím vpravo zobrazíte další možnosti.</string>
   <string name="hold_six_fingers_announcement">%s\nPoložte zařízení na stůl. Potom podržte obrazovku třemi prostředními prsty každé ruky v pozici, ve které se vám pohodlně píše.</string>
   <string name="hold_six_fingers_inactive_announcement">Položte zařízení na stůl. Potom podržte obrazovku třemi prostředními prsty každé ruky v pozici, ve které se vám pohodlně píše.</string>
   <string name="finish_tutorial_announcement">Je zobrazena braillská klávesnice. Otočte telefon tak, aby obrazovka směřovala od vás. Poté telefon otočte na šířku. Začněte psát.</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Toto gesto se používá pro akci %1$s, což nelze změnit. Zkuste jiné gesto. %2$s</string>
   <string name="custom_gesture_cannot_used">Toto gesto nelze použít</string>
   <string name="custom_gesture_no_gesture">Žádné gesto nebylo provedeno</string>
-  <string name="custom_gesture_try_another">Zkuste jiné gesto. Seznam všech dostupných gest naleznete v centru nápovědy k braillské klávesnici TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Zkuste jiné gesto. Seznam všech dostupných gest naleznete v centru nápovědy k braillské klávesnici Backtalk. %s</string>
   <string name="custom_gesture_no_match">Gesta se neshodovala</string>
   <string name="custom_gesture_perform_again">Znovu proveďte gesto, které chcete použít. %s</string>
 </resources>

@@ -68,6 +68,7 @@ public class BrailleImeGestureController {
     String result = brailleImeActor.performTyping(brailleChar);
     brailleImeAnalytics.logTotalBrailleCharCount(1);
     BrailleImeVibrator.getInstance(context).vibrate(VibrationType.BRAILLE_COMMISSION);
+    BrailleImeTypingSounds.play(context, BrailleImeTypingSounds.Key.CHARACTER);
     return result;
   }
 
@@ -94,6 +95,7 @@ public class BrailleImeGestureController {
   }
 
   private void performFeedback(BrailleImeAction action, boolean nothingToDelete) {
+    playTypingSound(action, nothingToDelete);
     if (nothingToDelete) {
       BrailleImeVibrator.getInstance(context).vibrate(VibrationType.NOTHING_TO_DELETE);
       return;
@@ -117,6 +119,22 @@ public class BrailleImeGestureController {
           BrailleImeVibrator.getInstance(context).vibrate(VibrationType.NEWLINE_OR_DELETE_WORD);
       default -> {
         // do nothing.
+      }
+    }
+  }
+
+  private void playTypingSound(BrailleImeAction action, boolean nothingToDelete) {
+    if (nothingToDelete) {
+      return;
+    }
+    switch (action) {
+      case ADD_SPACE_OR_NEXT_ITEM ->
+          BrailleImeTypingSounds.play(context, BrailleImeTypingSounds.Key.SPACE);
+      case DELETE_CHARACTER_OR_PREVIOUS_ITEM, DELETE_WORD ->
+          BrailleImeTypingSounds.play(context, BrailleImeTypingSounds.Key.DELETE);
+      case ADD_NEWLINE -> BrailleImeTypingSounds.play(context, BrailleImeTypingSounds.Key.NEW_LINE);
+      default -> {
+        // Other actions have no typing sound.
       }
     }
   }

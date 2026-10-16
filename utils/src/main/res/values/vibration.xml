@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <!-- Vibration pattern for haptic feedback when window state changes. -->
+  <!-- Window change: three soft taps, the middle one a little stronger. -->
   <integer-array name="window_state_pattern">
     <item>0</item>
     <item>10</item>
-    <item>20</item>
-    <item>20</item>
+    <item>60</item>
+    <item>15</item>
+    <item>60</item>
     <item>10</item>
-    <item>40</item>
+    <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+    <item>8</item>
+    <item>90</item>
+    <item>60</item>
+    <item>0</item>
+    <item>8</item>
+    <item>116</item>
+    <item>60</item>
+    <item>0</item>
+    <item>8</item>
+    <item>90</item>
     <item>-9999</item><!-- SENTINEL SEPARATOR -->
     <item>7</item><!-- TICK -->
-    <item>150</item><!-- scale -->
+    <item>90</item><!-- scale -->
     <item>0</item><!-- delayMs -->
     <item>7</item><!-- TICK -->
-    <item>255</item><!-- scale -->
-    <item>50</item><!-- delayMs -->
-    <item>3</item><!-- SPIN -->
-    <item>255</item><!-- scale -->
-    <item>50</item><!-- delayMs -->
+    <item>130</item><!-- scale -->
+    <item>60</item><!-- delayMs -->
+    <item>7</item><!-- TICK -->
+    <item>90</item><!-- scale -->
+    <item>60</item><!-- delayMs -->
   </integer-array>
 </resources>
 

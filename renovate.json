@@ -6,6 +6,17 @@
     "schedule:weekly"
   ],
   "labels": ["dependencies"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "QuickJS-NG, which CMake downloads. URL_HASH has to be updated by hand.",
+      "managerFilePatterns": ["/(^|/)scripting/quickjs/src/main/cpp/CMakeLists\\.txt$/"],
+      "matchStrings": [
+        "github\\.com/(?<depName>quickjs-ng/quickjs)/archive/refs/tags/(?<currentValue>v[0-9.]+)\\.tar\\.gz"
+      ],
+      "datasourceTemplate": "github-tags"
+    }
+  ],
   "packageRules": [
     {
       "description": "AGP, Kotlin and the Compose compiler plugin must move together",

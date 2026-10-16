@@ -20,8 +20,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.VoiceProfiles;
 
-/** This class supports changing speech rate and pitch. */
+/**
+ * This class supports changing speech rate and pitch. They change the voice profile in use, or the
+ * text-to-speech settings when Backtalk's default is in use.
+ */
 public class SpeechRateAndPitchActor {
 
   /** Read-only interface for actor-state data. */
@@ -61,6 +65,10 @@ public class SpeechRateAndPitchActor {
    * @param isCurrent whether the current speech rate is requested.
    */
   private float getCurrentOrDefaultSpeechRate(boolean isCurrent) {
+    String profileId = VoiceProfiles.activeId(prefs);
+    if (isCurrent && !profileId.isEmpty()) {
+      return VoiceProfiles.read(prefs, profileId).rate();
+    }
     return SharedPreferencesUtils.getFloatFromStringPref(
         prefs,
         context.getResources(),
@@ -75,6 +83,10 @@ public class SpeechRateAndPitchActor {
    * @param isCurrent whether the current speech pitch is requested.
    */
   private float getCurrentOrDefaultSpeechPitch(boolean isCurrent) {
+    String profileId = VoiceProfiles.activeId(prefs);
+    if (isCurrent && !profileId.isEmpty()) {
+      return VoiceProfiles.read(prefs, profileId).pitch();
+    }
     return SharedPreferencesUtils.getFloatFromStringPref(
         prefs,
         context.getResources(),
@@ -118,6 +130,14 @@ public class SpeechRateAndPitchActor {
    * @param speechRatePercent the speech rate percent to be applied.
    */
   private void applySpeechRateToPrefs(float speechRate, int speechRatePercent) {
+    String profileId = VoiceProfiles.activeId(prefs);
+    if (!profileId.isEmpty()) {
+      prefs
+          .edit()
+          .putString(VoiceProfiles.key(profileId, VoiceProfiles.RATE), Float.toString(speechRate))
+          .apply();
+      return;
+    }
     prefs
         .edit()
         .putString(context.getString(R.string.pref_speech_rate_key), Float.toString(speechRate))
@@ -168,6 +188,14 @@ public class SpeechRateAndPitchActor {
    * @param speechPitch the speech pitch to be applied.
    */
   private void applySpeechPitchToPrefs(float speechPitch) {
+    String profileId = VoiceProfiles.activeId(prefs);
+    if (!profileId.isEmpty()) {
+      prefs
+          .edit()
+          .putString(VoiceProfiles.key(profileId, VoiceProfiles.PITCH), Float.toString(speechPitch))
+          .apply();
+      return;
+    }
     prefs
         .edit()
         .putString(context.getString(R.string.pref_speech_pitch_key), Float.toString(speechPitch))

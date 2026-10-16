@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backtalk-specific Czech translations for on-device AI. -->
+    <string name="title_pref_on_device_ai">AI v zařízení</string>
+    <string name="summary_pref_on_device_ai">Popisujte obrázky a obrazovku modelem v tomto telefonu bez klíče API</string>
+    <string name="pref_on_device_ai_enable">Používat AI v zařízení</string>
+    <string name="pref_on_device_ai_enable_summary">Obrázky a snímky obrazovky se popisují v tomto telefonu a nikdy se neodesílají Googlu. Je to pomalejší než cloud a spotřebovává více baterie.</string>
+    <string name="pref_on_device_ai_enable_needs_model">Nejprve stáhněte nebo importujte model.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Není k dispozici. Tento telefon nemá 64bitový procesor ARM.</string>
+    <string name="pref_on_device_ai_not_enough_ram">Pro tento model není k dispozici. Telefon nemá dostatek paměti.</string>
+    <string name="pref_on_device_ai_model">Model</string>
+    <string name="on_device_ai_model_summary">%1$s, %2$s</string>
+    <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
+    <string name="on_device_ai_tag_downloaded">staženo</string>
+    <string name="on_device_ai_tag_experimental">experimentální</string>
+    <string name="on_device_ai_tag_needs_memory">Vyžaduje přibližně %1$d GB paměti.</string>
+    <string name="on_device_ai_tag_not_enough_memory">V tomto telefonu není dostatek paměti.</string>
+    <string name="on_device_ai_choose_model">Vyberte model</string>
+    <string name="on_device_ai_model_too_big">Telefon nemá pro tento model dostatek paměti.</string>
+    <string name="pref_on_device_ai_download">Stáhnout model (%1$s)</string>
+    <string name="pref_on_device_ai_download_summary">Stáhne se jednou z Hugging Face. Poté se už nic neposílá přes síť.</string>
+    <string name="pref_on_device_ai_downloading">Stahování, %1$d%%</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s. Klepnutím stahování zastavíte. Při dalším spuštění bude pokračovat od tohoto místa.</string>
+    <string name="on_device_ai_progress_sizes">%1$s z %2$s</string>
+    <string name="on_device_ai_progress_with_time">%1$s, zbývá %2$s</string>
+    <string name="on_device_ai_announce_progress">Stahování, %1$d procent</string>
+    <string name="on_device_ai_announce_done">Model stažen</string>
+    <string name="on_device_ai_notification_channel">Stahování AI v zařízení</string>
+    <string name="on_device_ai_notification_downloading">Stahování modelu, %1$d%%</string>
+    <string name="on_device_ai_notification_done">Model stažen. V nastavení zapněte AI v zařízení.</string>
+    <string name="on_device_ai_notification_failed">Stahování selhalo. Otevřete nastavení a zkuste to znovu.</string>
+    <string name="pref_on_device_ai_importing">Kontrola souboru modelu</string>
+    <string name="pref_on_device_ai_manage">Spravovat modely</string>
+    <string name="pref_on_device_ai_manage_none">Nejsou staženy žádné modely</string>
+    <plurals name="on_device_ai_models_downloaded">
+        <item quantity="one">Stažen %1$d model</item>
+        <item quantity="few">Staženy %1$d modely</item>
+        <item quantity="other">Staženo %1$d modelů</item>
+    </plurals>
+    <string name="title_pref_manage_models">Spravovat modely</string>
+    <string name="manage_models_storage_used">Modely využívají %1$s úložiště.</string>
+    <string name="manage_models_empty">Nejsou staženy žádné modely.</string>
+    <string name="manage_models_unfinished">%1$s, nedokončené stahování</string>
+    <string name="manage_models_delete_title">Smazat %1$s?</string>
+    <string name="manage_models_delete_message">Uvolní se %1$s. Model můžete později stáhnout znovu.</string>
+    <string name="manage_models_delete">Smazat</string>
+    <string name="manage_models_deleted">%1$s smazán</string>
+    <string name="pref_on_device_ai_import">Použít soubor modelu z úložiště</string>
+    <string name="pref_on_device_ai_import_summary">Vyberte soubor Gemma 4 litertlm, který jste již stáhli.</string>
+    <string name="on_device_ai_import_done">Model nainstalován</string>
+    <string name="on_device_ai_import_failed">Tento soubor není podporovaným souborem modelu Gemma 4.</string>
+    <string name="pref_on_device_ai_timeout">Časový limit odpovědí</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po uplynutí této doby Backtalk přestane čekat. Popis obrazovky trvá déle než popis obrázku.</string>
+    <string name="on_device_ai_choose_timeout">Časový limit odpovědí</string>
+    <plurals name="on_device_ai_timeout_minutes">
+        <item quantity="one">%1$d minuta</item>
+        <item quantity="few">%1$d minuty</item>
+        <item quantity="other">%1$d minut</item>
+    </plurals>
+    <string name="pref_on_device_ai_short_prompts">Kratší popisy obrazovky</string>
+    <string name="pref_on_device_ai_short_prompts_summary">Popis obrazovky žádá méně podrobností, takže odpoví dříve. Pro podrobnější popisy tuto možnost vypněte.</string>
+    <string name="pref_on_device_ai_gpu">Používat GPU</string>
+    <string name="pref_on_device_ai_gpu_summary">Může být rychlejší a využívat méně paměti. Pokud odpovědi selhávají, tuto možnost vypněte.</string>
+    <string name="on_device_ai_error_network">Stahování se zastavilo. Zkontrolujte připojení a zkuste to znovu. Bude pokračovat od místa, kde skončilo.</string>
+    <string name="on_device_ai_error_http">Server pro stahování požadavek nepřijal. Zkuste to později nebo místo toho importujte soubor.</string>
+    <string name="on_device_ai_error_corrupt">Soubor neodpovídal očekávanému modelu a byl smazán. Zkuste to znovu.</string>
+    <string name="on_device_ai_error_storage">Soubor se nepodařilo uložit.</string>
+    <string name="on_device_ai_error_low_space">Pro tento model není v úložišti dostatek volného místa.</string>
+    <string name="on_device_ai_metered_title">Stáhnout přes mobilní data?</string>
+    <string name="on_device_ai_metered_message">Model má několik gigabajtů. Vhodnější je Wi-Fi.</string>
+    <string name="on_device_ai_metered_download">Stáhnout</string>
+    <string name="on_device_ai_cancel">Zrušit</string>
+
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorovat paměťové limity AI v zařízení</string>
+    <string name="summary_pref_on_device_ai_ignore_memory_limits">Umožní zvolit model, který vyžaduje více paměti, než telefon má, a načíst jej bez kontroly volné paměti, abyste mohli otestovat, co se stane, když jej Android ukončí.</string>
+    <string name="on_device_ai_not_enough_memory">Pro %1$s není dostatek volné paměti. Zavřete některé aplikace nebo v nastavení AI v zařízení zvolte menší model.</string>
+    <string name="on_device_ai_stopped">%1$s se zastavil, pravděpodobně proto, že telefonu došla paměť. V nastavení AI v zařízení zvolte menší model.</string>
+</resources>

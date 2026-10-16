@@ -14,12 +14,15 @@ import androidx.preference.SeekBarPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
+import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.ServiceStateListener;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.VoiceProfiles;
+import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
 import java.util.List;
 import java.util.function.IntFunction;
 
@@ -38,6 +41,9 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
         if (TextUtils.equals(key, getString(R.string.pref_speech_rate_key))
             || TextUtils.equals(key, getString(R.string.pref_speech_pitch_key))) {
           updateSeekBarValues();
+        } else if (TextUtils.equals(key, VoiceProfiles.PREF_ACTIVE)) {
+          // Switched by a gesture, keyboard shortcut or the Backtalk menu.
+          updateVoiceProfileSummary();
         }
       };
 
@@ -83,6 +89,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     super.onResume();
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
     updateSeekBarValues();
+    updateVoiceProfileSummary();
 
     boolean serviceActive =
         TalkBackService.getServiceState() == ServiceStateListener.SERVICE_STATE_ACTIVE;
@@ -120,6 +127,24 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
           CharSequence entry = ((ListPreference) preference).getEntry();
           return (entry == null) ? entries[0] : entry;
         });
+  }
+
+  /**
+   * Names the voice profile in use, if any, since the settings on this screen are Backtalk
+   * default's and don't change how a profile sounds.
+   */
+  private void updateVoiceProfileSummary() {
+    Preference preference = findPreferenceByResId(R.string.pref_voice_profiles_screen_key);
+    if (preference == null) {
+      return;
+    }
+    VoiceProfile profile = VoiceProfiles.readActive(prefs);
+    preference.setSummary(
+        (profile == null)
+            ? null
+            : getString(
+                R.string.voice_profile_in_use,
+                VoiceProfileNames.nameOf(requireContext(), prefs, profile.id())));
   }
 
   private void setUpSystemTtsSettingsPreference() {
@@ -183,11 +208,11 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     }
   }
 
-  private static int toPercent(float multiplier) {
+  static int toPercent(float multiplier) {
     return Math.round(multiplier * 100);
   }
 
-  private static String fromPercent(int percent) {
+  static String fromPercent(int percent) {
     return Float.toString(percent / 100f);
   }
 }

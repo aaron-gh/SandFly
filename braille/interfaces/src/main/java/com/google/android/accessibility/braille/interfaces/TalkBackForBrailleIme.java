@@ -90,8 +90,11 @@ public interface TalkBackForBrailleIme {
   /** Checks whether usage hints, which explain how to do things, are spoken. */
   boolean isUsageHintEnabled();
 
-  /** Checks should braille keyboard announce character when on-screen mode. */
-  boolean shouldAnnounceCharacterForOnScreenKeyboard();
+  /**
+   * Returns the on-screen keyboard's echo setting, a {@code TextEventFilter.KeyboardEchoType}, as
+   * the verbosity preset applies it.
+   */
+  int getOnScreenKeyboardEcho();
 
   /** Checks should braille keyboard announce character when physical mode. */
   boolean shouldAnnounceCharacterForPhysicalKeyboard();

@@ -338,6 +338,13 @@ public class SpeechCacheManager {
     return speechCachePlayer.isPlaying();
   }
 
+  /** Stops the speech cache player, if it is playing speech. */
+  public void stopSpeaking() {
+    if (speechCachePlayer.isPlaying()) {
+      speechCachePlayer.stopSpeech();
+    }
+  }
+
   /**
    * A callback invoked by the TTS engine when a synthesis error occurs.
    *

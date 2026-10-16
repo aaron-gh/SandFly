@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Control sounds have no sound of their own, only the custom sound the user chooses for each. These
+  IDs stand for them where the other sounds use their raw resource IDs, and their names are the
+  names of the custom sounds.
+-->
+<resources>
+    <item name="control_button" type="id" />
+    <item name="control_checkbox" type="id" />
+    <item name="control_radio_button" type="id" />
+    <item name="control_edit_text" type="id" />
+    <item name="control_combo_box" type="id" />
+    <item name="control_slider" type="id" />
+    <item name="control_link" type="id" />
+    <item name="control_image" type="id" />
+    <item name="control_clock" type="id" />
+    <item name="control_tab" type="id" />
+    <item name="control_menu_item" type="id" />
+    <item name="control_list_item" type="id" />
+    <item name="control_tree_item" type="id" />
+</resources>

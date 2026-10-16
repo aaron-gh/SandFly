@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Zkontrolovat aktualizace</string>
+    <string name="summary_pref_check_for_updates">Sestavení <xliff:g id="build" example="96">%1$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Automaticky kontrolovat aktualizace</string>
+    <string name="summary_pref_auto_update_check">Kontrolovat jednou denně a při dostupnosti nového sestavení zobrazit oznámení</string>
+    <string name="update_notification_title">Je k dispozici aktualizace Backtalku</string>
+    <string name="update_notification_text">Sestavení <xliff:g id="build" example="97">%1$d</xliff:g>. Klepnutím nainstalujete.</string>
+    <string name="update_dialog_title">Je k dispozici sestavení Backtalku <xliff:g id="build" example="97">%1$d</xliff:g></string>
+    <string name="update_dialog_install">Nainstalovat</string>
+    <string name="update_checking">Kontrola aktualizací</string>
+    <string name="update_up_to_date">Backtalk je aktuální</string>
+    <string name="update_check_failed">Aktualizace se nepodařilo zkontrolovat</string>
+    <string name="update_downloading">Stahování aktualizace</string>
+    <string name="update_install_failed">Aktualizaci se nepodařilo nainstalovat</string>
+    <string name="update_install_canceled">Aktualizace zrušena</string>
+    <string name="update_allow_install">Povolte Backtalku instalovat aplikace a potom aktualizaci zkuste znovu</string>
+</resources>

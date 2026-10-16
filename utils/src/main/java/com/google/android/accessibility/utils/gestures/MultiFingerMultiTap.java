@@ -102,7 +102,7 @@ class MultiFingerMultiTap extends GestureMatcher {
       return;
     }
     long timeDelta = event.getEventTime() - lastUpTime;
-    if (timeDelta > GestureConfiguration.getMultiTapTimeoutMs()) {
+    if (timeDelta > GestureConfiguration.getMultiFingerTapTimeoutMs()) {
       cancelGesture(event);
       return;
     }
@@ -122,6 +122,11 @@ class MultiFingerMultiTap extends GestureMatcher {
     } else {
       cancelGesture(event);
     }
+  }
+
+  @Override
+  protected int getDoubleTapCompletionTimeoutMs() {
+    return GestureConfiguration.getMultiFingerTapCompletionTimeoutMs();
   }
 
   @Override

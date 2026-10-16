@@ -34,6 +34,7 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.IntentCompat
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -154,6 +155,12 @@ object Updater {
         }
       prefs.edit().putLong(PREF_LAST_CHECK_TIME, System.currentTimeMillis()).apply()
       if (update != null && update.build > prefs.getInt(PREF_LAST_NOTIFIED_BUILD, 0)) {
+        // A notification that Android won't show doesn't count, so the build is still announced
+        // once notifications are allowed.
+        if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) {
+          LogUtils.w(TAG, "Build %d is available, but notifications are off", update.build)
+          return@execute
+        }
         prefs.edit().putInt(PREF_LAST_NOTIFIED_BUILD, update.build).apply()
         showNotification(context, update)
       }

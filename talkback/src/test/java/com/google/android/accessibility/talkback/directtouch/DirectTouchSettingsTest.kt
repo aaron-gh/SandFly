@@ -16,7 +16,9 @@
 
 package com.google.android.accessibility.talkback.directtouch
 
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -28,7 +30,6 @@ class DirectTouchSettingsTest {
     assertTrue(DirectTouchSettings.isMasterEnabled(prefs))
     assertTrue(DirectTouchSettings.isSpeechEnabled(prefs))
     assertFalse(DirectTouchSettings.isHapticsEnabled(prefs))
-    assertFalse(DirectTouchSettings.isNavBarDirect(prefs))
     assertFalse(DirectTouchSettings.isAppEnabled(prefs, "a.b"))
     assertFalse(DirectTouchSettings.isDirectTyping(prefs, "a.b"))
   }
@@ -40,6 +41,14 @@ class DirectTouchSettingsTest {
     DirectTouchSettings.setAppEnabled(prefs, "a.b", false)
     DirectTouchSettings.onFirstSight(prefs, "a.b", declaresCapability = true)
     assertFalse(DirectTouchSettings.isAppEnabled(prefs, "a.b"))
+  }
+
+  @Test
+  fun appIsSeenOnceFirstSightRecordsIt() {
+    assertFalse(DirectTouchSettings.isSeen(prefs, "a.b"))
+    DirectTouchSettings.onFirstSight(prefs, "a.b", declaresCapability = false)
+    assertTrue(DirectTouchSettings.isSeen(prefs, "a.b"))
+    assertFalse(DirectTouchSettings.isSeen(prefs, "c.d"))
   }
 
   @Test
@@ -62,24 +71,6 @@ class DirectTouchSettingsTest {
   }
 
   @Test
-  fun backupRoundTripKeepsTheNavigationBarSetting() {
-    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR, true).apply()
-    val other = FakeSharedPreferences()
-    assertTrue(DirectTouchSettings.importJson(other, DirectTouchSettings.exportJson(prefs)))
-    assertTrue(DirectTouchSettings.isNavBarDirect(other))
-  }
-
-  @Test
-  fun backupFromBeforeTheNavigationBarSettingTurnsItOff() {
-    val old =
-      "{\"version\":1,\"master\":true,\"speech\":true,\"haptics\":false," +
-        "\"apps\":[],\"seen\":[],\"typing\":[]}"
-    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR, true).apply()
-    assertTrue(DirectTouchSettings.importJson(prefs, old))
-    assertFalse(DirectTouchSettings.isNavBarDirect(prefs))
-  }
-
-  @Test
   fun importReplacesExistingTyping() {
     DirectTouchSettings.setDirectTyping(prefs, "old.app", true)
     val json = DirectTouchSettings.exportJson(FakeSharedPreferences())
@@ -92,5 +83,35 @@ class DirectTouchSettingsTest {
     assertFalse(DirectTouchSettings.importJson(prefs, "not json"))
     assertFalse(DirectTouchSettings.importJson(prefs, "{\"version\":2}"))
     assertTrue(DirectTouchSettings.isMasterEnabled(prefs))
+  }
+
+  @Test
+  fun oldNavBarSettingTurnsOnLiftToActivateForTheNavigationBar() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean("pref_direct_touch_nav_bar", true).apply()
+    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
+    assertEquals("1", prefs.getString(LIFT_KEY, null))
+    assertFalse(prefs.contains("pref_direct_touch_nav_bar"))
+  }
+
+  @Test
+  fun oldNavBarSettingKeepsAChosenLiftToActivateMode() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean("pref_direct_touch_nav_bar", true).putString(LIFT_KEY, "2").apply()
+    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
+    assertEquals("2", prefs.getString(LIFT_KEY, null))
+  }
+
+  @Test
+  fun oldNavBarSettingOffChangesNothing() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean("pref_direct_touch_nav_bar", false).apply()
+    DirectTouchSettings.migrateNavBarSetting(prefs, LIFT_KEY)
+    assertNull(prefs.getString(LIFT_KEY, null))
+    assertFalse(prefs.contains("pref_direct_touch_nav_bar"))
+  }
+
+  private companion object {
+    const val LIFT_KEY = "pref_lift_to_activate_key"
   }
 }

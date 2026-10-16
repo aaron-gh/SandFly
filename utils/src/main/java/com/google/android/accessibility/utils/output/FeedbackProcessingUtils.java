@@ -432,7 +432,11 @@ public class FeedbackProcessingUtils {
       if (TextUtils.isEmpty(fragmentText) || !(fragmentText instanceof Spannable)) {
         continue;
       }
-      Spannable spannable = (Spannable) fragmentText;
+      Spannable spannable = LanguageSwitch.markSpokenLanguages((Spannable) fragmentText);
+      if (spannable != fragmentText) {
+        fragmentText = spannable;
+        fragment.setText(spannable);
+      }
 
       int len = spannable.length();
       int next;
@@ -581,7 +585,8 @@ public class FeedbackProcessingUtils {
     }
     Object[] spans = spannable.getSpans(index, index, type);
     for (Object span : spans) {
-      if (!TextFormattingUtils.isSpanMatchingOptions(span, options)) {
+      if (!TextFormattingUtils.isSpanMatchingOptions(span, options)
+          || TextFormattingUtils.isComposingSpan(spannable, span)) {
         continue;
       }
       int spanStart = spannable.getSpanStart(span);

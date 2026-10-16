@@ -20,8 +20,11 @@
       android:key="@string/pref_text_recognition_key"
       android:title="@string/title_pref_text_recognition" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_gemini_api_key"
+      android:title="@string/title_pref_gemini_api_key" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiFragment"
-      android:key="pref_on_device_ai"
+      android:key="@string/pref_on_device_ai_key"
       android:summary="@string/summary_pref_on_device_ai"
       android:title="@string/title_pref_on_device_ai" />
 

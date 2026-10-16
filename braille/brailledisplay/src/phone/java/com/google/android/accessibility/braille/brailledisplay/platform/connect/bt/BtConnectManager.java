@@ -34,6 +34,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.BuildCompat;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog;
+import com.google.android.accessibility.braille.brailledisplay.FeatureFlagReader;
 import com.google.android.accessibility.braille.brailledisplay.platform.ConnectStage;
 import com.google.android.accessibility.braille.brailledisplay.platform.connect.ConnectManager;
 import com.google.android.accessibility.braille.brailledisplay.platform.connect.Connector;
@@ -60,6 +61,7 @@ public class BtConnectManager extends ConnectManager {
   // minute, scanning should be halted, unless a new notification comes in.
   private static final long KEEP_SCANNING_DURATION_MS = 30_000;
   private static final String HID_UUID = "00001124-0000-1000-8000-00805f9b34fb";
+  private static final String HID_OVER_GATT_UUID = "00001812-0000-1000-8000-00805f9b34fb";
   private final Context context;
   private final ConnectManager.Callback connectManagerCallback;
   // Some runtimes, such as emulators, do not have bluetooth; allow that btAdapter might be null.
@@ -205,17 +207,50 @@ public class BtConnectManager extends ConnectManager {
   @Override
   public boolean isHidDevice(ConnectableDevice device) {
     BluetoothDevice bluetoothDevice = ((ConnectableBluetoothDevice) device).bluetoothDevice();
+    // A Bluetooth Low Energy display has no RFCOMM, so HID is the only way to connect.
+    if (bluetoothDevice.getType() == BluetoothDevice.DEVICE_TYPE_LE) {
+      return true;
+    }
     if (bluetoothDevice.fetchUuidsWithSdp()) {
       ParcelUuid[] uu = bluetoothDevice.getUuids();
       if (uu != null) {
         for (ParcelUuid u : uu) {
-          if (u.getUuid().toString().equals(HID_UUID)) {
+          String uuid = u.getUuid().toString();
+          if (uuid.equals(HID_UUID) || uuid.equals(HID_OVER_GATT_UUID)) {
             return true;
           }
         }
       }
     }
     BrailleDisplayLog.w(TAG, "HID UUID not found.");
+    return false;
+  }
+
+  /**
+   * A device that offers HID, where Android can connect braille displays through HID. Any braille
+   * display that follows the HID braille standard works this way, so it doesn't need a name that
+   * Backtalk knows. Only the services that Bluetooth already knows about are checked, so this
+   * doesn't query each device, and connecting confirms that it's a braille display.
+   */
+  @Override
+  public boolean mayBeHidBrailleDisplay(ConnectableDevice device) {
+    if (!BuildVersionUtils.isAtLeastV()
+        || !FeatureFlagReader.isBdHidSupported(context)
+        || !(device instanceof ConnectableBluetoothDevice)
+        || ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT)
+            != PackageManager.PERMISSION_GRANTED) {
+      return false;
+    }
+    ParcelUuid[] uuids = ((ConnectableBluetoothDevice) device).bluetoothDevice().getUuids();
+    if (uuids == null) {
+      return false;
+    }
+    for (ParcelUuid uuid : uuids) {
+      String value = uuid.getUuid().toString();
+      if (value.equals(HID_UUID) || value.equals(HID_OVER_GATT_UUID)) {
+        return true;
+      }
+    }
     return false;
   }
 

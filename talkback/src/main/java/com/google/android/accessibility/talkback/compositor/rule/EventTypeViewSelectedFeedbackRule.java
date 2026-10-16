@@ -98,6 +98,8 @@ public final class EventTypeViewSelectedFeedbackRule {
         .setEarcon(earcon(role, event, node, preferredLocale))
         .setEarconRate(EarconFeedbackUtils.getProgressBarChangeEarconRate(event, node))
         .setEarconVolume(EarconFeedbackUtils.getProgressBarChangeEarconVolume(event, node))
+        // Progress bars get a quiet tone and, as in TalkBack, no vibration.
+        .setEarconVibrates(role != Role.ROLE_PROGRESS_BAR)
         .build();
   }
 

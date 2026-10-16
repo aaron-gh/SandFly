@@ -113,6 +113,19 @@ public enum TalkBackPhysicalKeyboardShortcut {
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_SHOW_LANGUAGES_AVAILABLE */ 24,
       R.string.keycombo_shortcut_other_language_options,
       R.string.keycombo_menu_other_language_options),
+  // Backtalk: ordinals well past Google's, which only analytics and performance logs use.
+  SHOW_VOICE_PROFILES(
+      /* KEYBOARD_SHORTCUT_SHOW_VOICE_PROFILES */ 1002,
+      R.string.keycombo_shortcut_other_voice_profiles,
+      R.string.shortcut_voice_profiles),
+  PREVIOUS_VOICE_PROFILE(
+      /* KEYBOARD_SHORTCUT_PREVIOUS_VOICE_PROFILE */ 1003,
+      R.string.keycombo_shortcut_global_previous_voice_profile,
+      R.string.shortcut_previous_voice_profile),
+  NEXT_VOICE_PROFILE(
+      /* KEYBOARD_SHORTCUT_NEXT_VOICE_PROFILE */ 1004,
+      R.string.keycombo_shortcut_global_next_voice_profile,
+      R.string.shortcut_next_voice_profile),
   SEARCH_SCREEN_FOR_ITEM(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_SEARCH_SCREEN_FOR_ITEM */ 25,
       R.string.keycombo_shortcut_other_toggle_search,

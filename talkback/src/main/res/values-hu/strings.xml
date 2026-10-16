@@ -386,7 +386,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="dialog_message_turn_on_image_description">Próbálja újra az automatikus vagy részletes képleírások bekapcsolását követően</string>
   <string name="title_pref_detailed_image_description">Részletes képleírások</string>
   <string name="summary_pref_ai_description">Hosszabb leírások meghallgatása a TalkBack-menü „%1$s” lehetőségének kiválasztásakor</string>
-  <string name="dialog_message_detailed_ai_description">Amikor ezt a funkciót használja, a rendszer elküldi a kiválasztott képeket a Google-nak feldolgozás céljából, majd a képek törlődnek.\n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A folytatással elfogadja a következőt: %1$s.</string>
   <string name="dialog_message_on_device_ai_description">Rövid leírást hallhat, amikor a támogatott alkalmazásokban valamelyik képre fókuszál.\n\nA képeket az eszközön dolgozza fel a rendszer, és soha nem küldi el őket a Google-nak. \n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A továbblépéssel elfogadja a <a href="https://policies.google.com/terms/generative-ai">Google Általános Szerződési Feltételeit</a>.</string>
   <string name="enable_gemini">Bekapcsolás</string>
   <string name="powered_by_gemini">A generatív AI támogatásával</string>
@@ -417,8 +416,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="title_pref_enable_auto_icon_detection">Minden ikon</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Csak címke nélküli ikonok</string>
   <string name="title_pref_disable_auto_icon_detection">Ne legyen ikonleírás</string>
-  <string name="dialog_message_detailed_ai_promotion">A részletes képleírásokat a generatív AI biztosítja. Amikor ezt a funkciót használja, a rendszer elküldi a kiválasztott képeket a Google-nak feldolgozás céljából, majd a képek törlődnek.\n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. Bármikor kikapcsolhatja a részletes képleírásokat a TalkBack beállításaiban.\n\nA folytatással elfogadja a következőt: %1$s.</string>
-  <string name="dialog_message_screen_overview_promotion">Amikor ezt a funkciót használja, a rendszer elküldi a képernyő képernyőképét a Google-nak feldolgozás céljából, majd a képernyőkép törlődik. A feldolgozás több másodpercet is igénybe vehet.\n\nA generatív AI kísérleti funkció, ezért hibázni fog. A folytatással elfogadja a következőt: %1$s.</string>
   <string name="dialog_message_on_device_ai_model_download">Rövid leírást hallhat, amikor egy képre fókuszál egy támogatott alkalmazásban.\n\nA képeket az eszközön dolgozza fel a rendszer, nem küldi el őket a Google-nak.\n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A folytatással elfogadja a következőt: %1$s.</string>
   <string name="title_pref_enable_gemini_support">Be</string>
   <string name="title_pref_disable_gemini_support">Ki</string>

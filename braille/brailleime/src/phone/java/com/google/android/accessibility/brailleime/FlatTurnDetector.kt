@@ -57,22 +57,13 @@ class FlatTurnDetector(context: Context, private val onTurned: OnTurnedListener)
       override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
     }
 
-  /**
-   * Starts watching, taking where the device points now as the starting direction. A tablet counts
-   * quarter turns, and a phone half turns.
-   */
-  fun start(quarterTurns: Boolean) {
-    counter.setQuarterTurns(quarterTurns)
+  /** Starts watching, taking where the device points now as the starting direction. */
+  fun start() {
     counter.reset()
     val sensor = sensor ?: return
     if (listening) return
     listening = true
     sensorManager?.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_UI)
-  }
-
-  /** Switches between counting quarter turns and half turns, as when a foldable is unfolded. */
-  fun setQuarterTurns(quarterTurns: Boolean) {
-    counter.setQuarterTurns(quarterTurns)
   }
 
   /** Takes where the device points now as the starting direction for the next turn. */
@@ -89,12 +80,10 @@ class FlatTurnDetector(context: Context, private val onTurned: OnTurnedListener)
 }
 
 /**
- * Counts turns of a device lying flat from its compass heading. A phone only lies one of two ways
- * round, so it counts half turns, while a tablet counts quarter turns. A turn counts once the device
- * has turned two thirds of the way to the next step, so small nudges do not.
+ * Counts quarter turns of a device lying flat from its compass heading. A turn counts once the
+ * device has turned two thirds of the way to the next quarter, so small nudges do not.
  */
 class FlatTurnCounter {
-  private var stepDegrees = HALF_TURN
   private var reference: Float? = null
 
   /**
@@ -108,23 +97,14 @@ class FlatTurnCounter {
       return 0
     }
     val turned = angleBetween(heading, from)
-    if (abs(turned) < stepDegrees * 2 / 3) {
+    if (abs(turned) < QUARTER_TURN * 2 / 3) {
       return 0
     }
-    val step = if (turned > 0) stepDegrees else -stepDegrees
-    // Measure the next turn from a whole step on, not from where this turn was noticed, so turning
-    // back counts as soon as this one did.
-    reference = angleBetween(from + step, 0f)
-    return (step / QUARTER_TURN).toInt()
-  }
-
-  /** Counts quarter turns, for a tablet, or half turns, for a phone. */
-  fun setQuarterTurns(quarterTurns: Boolean) {
-    val step = if (quarterTurns) QUARTER_TURN else HALF_TURN
-    if (step != stepDegrees) {
-      stepDegrees = step
-      reference = null
-    }
+    val step = if (turned > 0) 1 else -1
+    // Measure the next turn from a whole quarter on, not from where this turn was noticed, so
+    // turning back counts as soon as this one did.
+    reference = angleBetween(from + step * QUARTER_TURN, 0f)
+    return step
   }
 
   /** Takes the next heading as the starting direction. */
@@ -134,7 +114,6 @@ class FlatTurnCounter {
 
   companion object {
     const val QUARTER_TURN = 90f
-    const val HALF_TURN = 180f
 
     /** The signed difference from [from] to [to], in degrees, between -180 and 180. */
     fun angleBetween(to: Float, from: Float): Float = ((to - from) % 360f + 540f) % 360f - 180f

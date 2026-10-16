@@ -78,6 +78,10 @@
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="false" />
+    <!-- Android TV is supported, but not needed. -->
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
 
     <!-- Granted by the user with adb, for the speakerphone setting. -->
     <uses-permission android:name="android.permission.MANAGE_ONGOING_CALLS" />
@@ -90,6 +94,28 @@
         android:name="${applicationId}.permission.MIGRATE"
         android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.MIGRATE" />
+
+    <!-- Named after the app ID, because Android refuses to install an app that declares a
+         permission another app, signed with a different key, already declares. Under
+         fyi.quin.backtalk the name is fyi.quin.backtalk.permission.SPEAK. -->
+    <permission
+        android:name="${applicationId}.permission.SPEAK"
+        android:label="@string/permission_speak_label"
+        android:description="@string/permission_speak_description"
+        android:protectionLevel="normal" />
+
+    <!-- Held by an app that can provide a braille display, so that it can ask to be one. Backtalk
+         uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. -->
+    <permission
+        android:name="fyi.quin.backtalk.permission.BRAILLE_DISPLAY"
+        android:label="@string/permission_braille_display_label"
+        android:description="@string/permission_braille_display_description"
+        android:protectionLevel="normal" />
+    <!-- Required by a braille display app's service, so that only Backtalk can bind it. -->
+    <permission
+        android:name="fyi.quin.backtalk.permission.BIND_BRAILLE_DISPLAY"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="fyi.quin.backtalk.permission.BIND_BRAILLE_DISPLAY" />
 
     <!-- Granted by the user with adb, to move the accessibility shortcut and the braille keyboard
          from the old app ID and turn the old screen reader off. -->
@@ -192,6 +218,21 @@
             </intent-filter>
         </activity>
 
+        <!-- Puts Backtalk settings on the Android TV home screen, where an accessibility service has
+             no other way in. Phones and watches ignore it. -->
+        <activity-alias
+            android:name="com.google.android.accessibility.talkback.preference.TvSettingsLauncher"
+            android:targetActivity="com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity"
+            android:banner="@drawable/tv_banner"
+            android:exported="true"
+            android:icon="@drawable/icon"
+            android:label="@string/talkback_preferences_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <!-- TalkBack subsettings Preferences -->
         <activity
             android:name="com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity$TalkBackSubSettings"
@@ -255,6 +296,36 @@
             android:launchMode="singleInstance"
             android:exported="true" >
         </activity>
+
+        <!-- Installs sound themes that are opened with or shared to Backtalk. -->
+        <activity android:name="com.google.android.accessibility.talkback.soundthemes.SoundThemeInstallActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/sound_theme_install_label"
+            android:theme="@style/Theme.SoundThemeInstall"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:exported="true" >
+            <intent-filter android:label="@string/sound_theme_install_label">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+            </intent-filter>
+            <intent-filter android:label="@string/sound_theme_install_label">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- Downloads a sound theme from a link typed into Backtalk. Not exported, so that only
+             Backtalk can start a download this way. -->
+        <activity-alias
+            android:name="com.google.android.accessibility.talkback.soundthemes.SoundThemeLinkInstall"
+            android:targetActivity="com.google.android.accessibility.talkback.soundthemes.SoundThemeInstallActivity"
+            android:exported="false" />
 
         <!-- Custom Label Manager - Summary Activity -->
         <activity
@@ -355,6 +426,28 @@
                 <action android:name="fyi.quin.backtalk.action.HAND_OVER" />
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlReceiver"
+            android:exported="true"
+            android:permission="${applicationId}.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEAK" />
+                <action android:name="fyi.quin.backtalk.action.STOP_SPEECH" />
+            </intent-filter>
+        </receiver>
+        <!-- Saves the user's answer from the notification that asks whether an app may speak. -->
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlApproval$AnswerReceiver"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlService"
+            android:exported="true"
+            android:permission="${applicationId}.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
+            </intent-filter>
+        </service>
 
         <receiver
             android:name="com.google.android.libraries.appdoctor.AppDoctorReceiver"

@@ -63,7 +63,23 @@ public class AccessibilityEventUtils {
   /** Returns the source node. */
   public static @Nullable AccessibilityNodeInfoCompat sourceCompat(
       @Nullable AccessibilityEvent event) {
-    return (event == null) ? null : AccessibilityNodeInfoUtils.toCompat(event.getSource());
+    return AccessibilityNodeInfoUtils.toCompat(getSource(event));
+  }
+
+  /**
+   * Returns the event's source node, or null if it has none. An event that Backtalk made itself,
+   * such as a focus event spoken before the app's, cannot hold a source, and asking it for one
+   * throws.
+   */
+  public static @Nullable AccessibilityNodeInfo getSource(@Nullable AccessibilityEvent event) {
+    if (event == null) {
+      return null;
+    }
+    try {
+      return event.getSource();
+    } catch (IllegalStateException e) {
+      return null;
+    }
   }
 
   /** Returns window id from event, or WINDOW_ID_NONE. */

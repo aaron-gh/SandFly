@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Label for the shortcut that speaks the time, battery, and network state. [CHAR LIMIT=40] -->
+    <string name="shortcut_announce_status">Oznámit stav</string>
+
+    <!-- Status readout: signal strength of a network. [CHAR LIMIT=NONE] -->
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> z <xliff:g id="max_level" example="4">%2$d</xliff:g> dílků</string>
+    <!-- Status readout: Wi-Fi is turned off. [CHAR LIMIT=NONE] -->
+    <string name="status_wifi_off">Wi-Fi vypnuto</string>
+    <!-- Status readout: Wi-Fi is on but not connected to a network. [CHAR LIMIT=NONE] -->
+    <string name="status_wifi_not_connected">Wi-Fi nepřipojeno</string>
+    <!-- Status readout: connected to Wi-Fi when the network name is not available. [CHAR LIMIT=NONE] -->
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 ze 4 dílků">%1$s</xliff:g></string>
+    <!-- Status readout: connected to a named Wi-Fi network. [CHAR LIMIT=NONE] -->
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Domov">%1$s</xliff:g>, <xliff:g id="bars" example="3 ze 4 dílků">%2$s</xliff:g></string>
+    <!-- Status readout: mobile network, with the carrier and network type. [CHAR LIMIT=NONE] -->
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 ze 4 dílků">%2$s</xliff:g></string>
+    <!-- Status readout: name for the mobile network when the carrier is unknown. [CHAR LIMIT=NONE] -->
+    <string name="status_mobile">Mobilní síť</string>
+    <!-- Status readout: there is no mobile service. [CHAR LIMIT=NONE] -->
+    <string name="status_mobile_no_service">Žádný mobilní signál</string>
+    <!-- Status readout: Do Not Disturb is on. [CHAR LIMIT=NONE] -->
+    <string name="status_do_not_disturb">Nerušit</string>
+    <!-- Status readout: the ringer is set to vibrate. [CHAR LIMIT=NONE] -->
+    <string name="status_ringer_vibrate">Vibrace</string>
+    <!-- Status readout: the ringer is silent. [CHAR LIMIT=NONE] -->
+    <string name="status_ringer_silent">Tichý režim</string>
+    <!-- Status readout: airplane mode is on. [CHAR LIMIT=NONE] -->
+    <string name="status_airplane_mode">Režim Letadlo</string>
+
+    <!-- Title of the settings screen that chooses what the status gesture speaks. [CHAR LIMIT=40] -->
+    <string name="title_pref_status_readout">Oznamování stavu</string>
+
+    <!-- Status readout settings: title of the time item. [CHAR LIMIT=40] -->
+    <string name="status_item_time">Čas</string>
+    <!-- Status readout settings: summary of the time item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_time_summary">Aktuální čas</string>
+    <!-- Status readout settings: title of the battery item. [CHAR LIMIT=40] -->
+    <string name="status_item_battery">Baterie</string>
+    <!-- Status readout settings: summary of the battery item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_battery_summary">Úroveň nabití, nabíjení a spořič baterie</string>
+    <!-- Status readout settings: title of the Wi-Fi item. [CHAR LIMIT=40] -->
+    <string name="status_item_wifi">Wi-Fi</string>
+    <!-- Status readout settings: summary of the Wi-Fi item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_wifi_summary">Název sítě a síla signálu</string>
+    <!-- Status readout settings: title of the mobile network item. [CHAR LIMIT=40] -->
+    <string name="status_item_mobile">Mobilní síť</string>
+    <!-- Status readout settings: summary of the mobile network item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_mobile_summary">Operátor, typ sítě a síla signálu</string>
+    <!-- Status readout settings: title of the ringer item. [CHAR LIMIT=40] -->
+    <string name="status_item_ringer">Vyzvánění a režim Nerušit</string>
+    <!-- Status readout settings: summary of the ringer item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_ringer_summary">Pouze když vyzvánění není nastaveno na zvonění nebo je zapnutý režim Nerušit</string>
+    <!-- Status readout settings: title of the airplane mode item. [CHAR LIMIT=40] -->
+    <string name="status_item_airplane_mode">Režim Letadlo</string>
+    <!-- Status readout settings: summary of the airplane mode item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_airplane_mode_summary">Pouze když je zapnutý režim Letadlo</string>
+</resources>

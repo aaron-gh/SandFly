@@ -37,6 +37,8 @@ import com.google.android.accessibility.talkback.contextmenu.AbstractOnContextMe
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
+import com.google.android.accessibility.talkback.scripting.ScriptItemAction;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -49,6 +51,7 @@ import java.util.Set;
 /** Adds custom actions to the talkback context menu. */
 public class CustomActionMenu implements NodeMenu {
   public static final int CUSTOM_ACTION_GROUP_ID = 1;
+  private static final int SCRIPT_ACTION_ID = 0x5c000000;
   private static final String TAG = "CustomActionMenu";
   private final Pipeline.FeedbackReturner pipeline;
   TalkBackAnalytics analytics;
@@ -60,7 +63,7 @@ public class CustomActionMenu implements NodeMenu {
 
   @Override
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
-    return acceptCustomActionMenu(node);
+    return acceptCustomActionMenu(node) || !Scripts.itemActions(node).isEmpty();
   }
 
   private static boolean acceptCustomActionMenu(AccessibilityNodeInfoCompat node) {
@@ -76,7 +79,28 @@ public class CustomActionMenu implements NodeMenu {
     if (acceptCustomActionMenu(node)) {
       populateCustomMenuItemsForNode(context, node, customItems, includeAncestors, visitedNodes);
     }
+    addScriptItems(context, node, customItems);
     return customItems;
+  }
+
+  private static void addScriptItems(
+      Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
+    List<ScriptItemAction> actions = Scripts.itemActions(node);
+    for (int i = 0; i < actions.size(); i++) {
+      ScriptItemAction action = actions.get(i);
+      ContextMenuItem item =
+          ContextMenu.createMenuItem(
+              context, CUSTOM_ACTION_GROUP_ID, SCRIPT_ACTION_ID + i, Menu.NONE, action.getTitle());
+      item.setOnMenuItemClickListener(
+          clicked -> {
+            action.run();
+            return true;
+          });
+      item.setDeferredType(DeferredType.WINDOWS_STABLE);
+      item.setSkipRefocusEvents(true);
+      item.setCheckable(false);
+      menu.add(item);
+    }
   }
 
   /**

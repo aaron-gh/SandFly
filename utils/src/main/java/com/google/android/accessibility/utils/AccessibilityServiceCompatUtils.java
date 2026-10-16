@@ -323,6 +323,7 @@ public class AccessibilityServiceCompatUtils {
       case GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE -> "GESTURE_2_FINGER_ROTATE_CLOCKWISE";
       case GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE ->
           "GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE";
+      case GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP -> "GESTURE_3_FINGER_QUADRUPLE_TAP";
       default -> "(unhandled " + gestureId + ")";
     };
   }

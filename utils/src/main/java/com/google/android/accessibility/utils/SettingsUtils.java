@@ -98,7 +98,12 @@ public class SettingsUtils {
 
   /** Works only when the caller is a system app. */
   public static boolean isVibrationWatchEnabled(Context context) {
-    return Settings.Global.getInt(context.getContentResolver(), VIBRATION_WATCH_ENABLED, 0) != 0;
+    try {
+      return Settings.Global.getInt(context.getContentResolver(), VIBRATION_WATCH_ENABLED, 0) != 0;
+    } catch (SecurityException e) {
+      // The setting is hidden, so only system apps can read it. Without it, assume it is off.
+      return false;
+    }
   }
 
   /** Returns whether the device is in standalone or restricted connectivity mode */

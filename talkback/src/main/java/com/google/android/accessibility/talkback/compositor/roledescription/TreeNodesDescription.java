@@ -19,11 +19,10 @@ import static android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_CONTENT_
 import static android.view.accessibility.AccessibilityNodeInfo.CollectionInfo.SELECTION_MODE_NONE;
 import static androidx.core.view.ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.PRUNE_EMPTY;
-import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_NAME_ROLE_STATE_POSITION;
-import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_ROLE_NAME_STATE_POSITION;
-import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DESC_ORDER_STATE_NAME_ROLE_POSITION;
+import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.isStateBeforeName;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -32,6 +31,8 @@ import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFee
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
+import com.google.android.accessibility.talkback.scripting.Scripts;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
@@ -122,15 +123,11 @@ public class TreeNodesDescription {
             + String.format(", descriptionOrder=%s", descriptionOrder));
 
     // Disabled and read only state announcement should always be a postfix.
-    return switch (descriptionOrder) {
-      case DESC_ORDER_NAME_ROLE_STATE_POSITION, DESC_ORDER_ROLE_NAME_STATE_POSITION ->
-          CompositorUtils.joinCharSequences(
-              treeDescription, selectedState, disabledStateOrReadOnlyState);
-      case DESC_ORDER_STATE_NAME_ROLE_POSITION ->
-          CompositorUtils.joinCharSequences(
-              selectedState, treeDescription, disabledStateOrReadOnlyState);
-      default -> "";
-    };
+    return isStateBeforeName(descriptionOrder)
+        ? CompositorUtils.joinCharSequences(
+            selectedState, treeDescription, disabledStateOrReadOnlyState)
+        : CompositorUtils.joinCharSequences(
+            treeDescription, selectedState, disabledStateOrReadOnlyState);
   }
 
   /**
@@ -174,13 +171,11 @@ public class TreeNodesDescription {
    */
   private static boolean shouldAppendChildNode(
       Context context, AccessibilityEvent event, boolean shouldIterateChildren) {
-    if (!shouldIterateChildren) {
+    if (!shouldIterateChildren || event.getEventType() != TYPE_WINDOW_CONTENT_CHANGED) {
       return false;
     }
-    AccessibilityNodeInfoCompat srcNode = AccessibilityNodeInfoUtils.toCompat(event.getSource());
-    boolean sourceIsLiveRegion =
-        (srcNode != null) && (srcNode.getLiveRegion() != ACCESSIBILITY_LIVE_REGION_NONE);
-    return (event.getEventType() == TYPE_WINDOW_CONTENT_CHANGED && sourceIsLiveRegion);
+    AccessibilityNodeInfoCompat srcNode = AccessibilityEventUtils.sourceCompat(event);
+    return (srcNode != null) && (srcNode.getLiveRegion() != ACCESSIBILITY_LIVE_REGION_NONE);
   }
 
   /**
@@ -196,19 +191,15 @@ public class TreeNodesDescription {
       boolean shouldAppendChildNode) {
     int descriptionOrder = globalVariables.getDescriptionOrder();
     CharSequence treeDescription =
-        switch (descriptionOrder) {
-          case DESC_ORDER_NAME_ROLE_STATE_POSITION, DESC_ORDER_ROLE_NAME_STATE_POSITION ->
-              CompositorUtils.conditionalAppend(
-                  treeNodesDescription(node, event, shouldIterateChildren, shouldAppendChildNode),
-                  nodeStatusDescription(node),
-                  CompositorUtils.getSeparator());
-          case DESC_ORDER_STATE_NAME_ROLE_POSITION ->
-              CompositorUtils.conditionalPrepend(
-                  nodeStatusDescription(node),
-                  treeNodesDescription(node, event, shouldIterateChildren, shouldAppendChildNode),
-                  CompositorUtils.getSeparator());
-          default -> "";
-        };
+        isStateBeforeName(descriptionOrder)
+            ? CompositorUtils.conditionalPrepend(
+                nodeStatusDescription(node),
+                treeNodesDescription(node, event, shouldIterateChildren, shouldAppendChildNode),
+                CompositorUtils.getSeparator())
+            : CompositorUtils.conditionalAppend(
+                treeNodesDescription(node, event, shouldIterateChildren, shouldAppendChildNode),
+                nodeStatusDescription(node),
+                CompositorUtils.getSeparator());
 
     CharSequence accessibilityNodeError =
         AccessibilityNodeFeedbackUtils.getAccessibilityNodeErrorText(node, context);
@@ -287,6 +278,10 @@ public class TreeNodesDescription {
       AccessibilityEvent event,
       boolean shouldIterateChildren,
       boolean shouldAppendChildNode) {
+    List<AccessibilityNodeInfoCompat> groupItems = Scripts.groupItems(node);
+    if (groupItems != null) {
+      return groupDescription(node, event, groupItems);
+    }
     int role = Role.getRole(node);
     List<CharSequence> joinList = new ArrayList<>();
     // Join the role description text.
@@ -296,6 +291,17 @@ public class TreeNodesDescription {
         TextUtils.isEmpty(
             AccessibilityNodeFeedbackUtils.getNodeContentDescription(
                 node, context, globalVariables));
+    // Samsung labels the notification card with its title but leaves the message in a child.
+    // Read the body before the time; general child aggregation would repeat title/time.
+    if (!isContentDescriptionEmpty) {
+      List<CharSequence> notificationDescription =
+          SamsungNotificationDescription.describeCard(
+              node, joinList.get(0), shouldIterateChildren, context, globalVariables);
+      if (notificationDescription != null) {
+        joinList.clear();
+        joinList.addAll(notificationDescription);
+      }
+    }
     StringBuilder logString = new StringBuilder();
     logString
         .append(String.format(" (%s)", node.hashCode()))
@@ -303,6 +309,10 @@ public class TreeNodesDescription {
         .append(String.format(", isContentDescriptionEmpty=%b", isContentDescriptionEmpty))
         .append(String.format(", shouldAppendChildNode=%b", shouldAppendChildNode));
 
+    // A control with no text of its own, such as the checkbox in a settings row, takes its name
+    // from the rest of the row. It's left out of the list here, and its type and state are put
+    // around the row's text in the description order below.
+    AccessibilityNodeInfoCompat namelessControl = null;
     if (shouldIterateChildren
         && role != Role.ROLE_WEB_VIEW
         && (role == Role.ROLE_GRID
@@ -322,15 +332,30 @@ public class TreeNodesDescription {
           logString.append(
               String.format("error: sourceNode (%s) has a null child.", node.hashCode()));
         } else {
-          boolean isVisible = AccessibilityNodeInfoUtils.isVisible(childNode);
+          boolean isVisible =
+              AccessibilityNodeInfoUtils.isVisible(childNode)
+                  || (globalVariables.isDescribingSwipeTarget() && isOffScreen(childNode));
           boolean isAccessibilityFocusable =
               AccessibilityNodeInfoUtils.isAccessibilityFocusable(childNode);
           logString
               .append(String.format("\n        childNode:(%s)", childNode.hashCode()))
               .append(String.format(", isVisible=%b", isVisible))
+              .append(
+                  globalVariables.isDescribingSwipeTarget()
+                      ? String.format(", bounds=%s", boundsOf(childNode))
+                      : "")
               .append(String.format(", isAccessibilityFocusable=%b", isAccessibilityFocusable));
 
           if (isVisible && (!isAccessibilityFocusable || shouldAppendChildNode)) {
+            if (namelessControl == null
+                && isContentDescriptionEmpty
+                && role != Role.ROLE_GRID
+                && role != Role.ROLE_LIST
+                && role != Role.ROLE_PAGER
+                && isNamelessControl(childNode, event)) {
+              namelessControl = childNode;
+              continue;
+            }
             // Join the tree description of child node.
             CharSequence description =
                 getAppendedTreeDescription(
@@ -345,6 +370,83 @@ public class TreeNodesDescription {
 
     LogUtils.v(TAG, "      treeNodesDescription:  %s", logString.toString());
 
+    CharSequence description =
+        CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
+    return namelessControl == null
+        ? description
+        : describeWithNamelessControl(description, namelessControl, event);
+  }
+
+  /**
+   * Returns whether {@code node} is a checkbox, switch, or radio button with no text, hint, or error
+   * of its own, so that it only adds its type and state to the description of its parent.
+   */
+  private boolean isNamelessControl(AccessibilityNodeInfoCompat node, AccessibilityEvent event) {
+    int role = Role.getRole(node);
+    if (role != Role.ROLE_CHECK_BOX
+        && role != Role.ROLE_SWITCH
+        && role != Role.ROLE_TOGGLE_BUTTON
+        && role != Role.ROLE_RADIO_BUTTON) {
+      return false;
+    }
+    RoleDescription roleDescription = roleDescriptionExtractor.getRoleDescription(node);
+    return node.getChildCount() == 0
+        && TextUtils.isEmpty(
+            AccessibilityNodeFeedbackUtils.getUnlabelledNodeDescription(
+                role, node, context, imageContents, globalVariables))
+        && TextUtils.isEmpty(roleDescription.nodeName(node, context, globalVariables))
+        && TextUtils.isEmpty(AccessibilityNodeFeedbackUtils.getHintDescription(node))
+        && TextUtils.isEmpty(
+            AccessibilityNodeFeedbackUtils.getAccessibilityNodeErrorText(node, context))
+        && !TextUtils.isEmpty(roleDescription.nodeRole(node, context, globalVariables));
+  }
+
+  /**
+   * Puts the type and state of {@code control}, a {@link #isNamelessControl nameless control}, around
+   * {@code text}, the rest of its parent's description, in the description order.
+   */
+  private CharSequence describeWithNamelessControl(
+      CharSequence text, AccessibilityNodeInfoCompat control, AccessibilityEvent event) {
+    RoleDescription roleDescription = roleDescriptionExtractor.getRoleDescription(control);
+    CharSequence role = roleDescription.nodeRole(control, context, globalVariables);
+    CharSequence state =
+        CompositorUtils.joinCharSequences(
+            roleDescription.nodeState(event, control, context, globalVariables),
+            nodeStatusDescription(control));
+    return RoleDescriptionExtractor.joinInOrder(
+        globalVariables.getDescriptionOrder(), text, role, state);
+  }
+
+  /**
+   * Whether {@code node} is off screen only because of where it is. Its bounds on screen are clamped
+   * to each parent's, so when it is wholly past the edge of a list they come out inside out, with
+   * the top below the bottom or the left right of the right. A node that is on screen but hidden,
+   * even one shrunk to nothing, keeps bounds that are the right way round.
+   */
+  private static boolean isOffScreen(AccessibilityNodeInfoCompat node) {
+    Rect bounds = boundsOf(node);
+    return bounds.top > bounds.bottom || bounds.left > bounds.right;
+  }
+
+  private static Rect boundsOf(AccessibilityNodeInfoCompat node) {
+    Rect bounds = new Rect();
+    node.getBoundsInScreen(bounds);
+    return bounds;
+  }
+
+  private CharSequence groupDescription(
+      AccessibilityNodeInfoCompat node,
+      AccessibilityEvent event,
+      List<AccessibilityNodeInfoCompat> items) {
+    List<CharSequence> joinList = new ArrayList<>();
+    for (AccessibilityNodeInfoCompat item : items) {
+      joinList.add(
+          AccessibilityNodeFeedbackUtils.getNodeTextDescription(item, context, globalVariables));
+      joinList.add(
+          AccessibilityNodeFeedbackUtils.getNodeStateDescription(item, context, globalVariables));
+      joinList.add(nodeStatusDescription(item));
+    }
+    joinList.add(roleDescriptionExtractor.nodeRoleDescriptionText(node, event));
     return CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
   }
 }

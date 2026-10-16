@@ -57,4 +57,7 @@ public interface GestureShortcutProvider {
    */
   @Nullable
   CharSequence mediaControlShortcut();
+
+  /** Returns the hint for screen search with no keyword yet, naming the user's gesture. */
+  CharSequence screenSearchNoKeywordHint();
 }

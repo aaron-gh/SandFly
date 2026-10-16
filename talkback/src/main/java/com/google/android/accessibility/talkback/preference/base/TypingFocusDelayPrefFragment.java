@@ -92,7 +92,7 @@ public class TypingFocusDelayPrefFragment extends TalkbackBaseFragment {
               prefs,
               context.getResources(),
               R.string.pref_typing_focus_time_out_key,
-              R.string.pref_touch_focus_time_out_default);
+              R.string.pref_touch_explore_time_out_default);
       boolean itemChanged = false;
       for (TypingFocusDelayPrefFragment.TypingFocusDelayPref source :
           TypingFocusDelayPrefFragment.TypingFocusDelayPref.values()) {
@@ -141,7 +141,7 @@ public class TypingFocusDelayPrefFragment extends TalkbackBaseFragment {
             prefs,
             context.getResources(),
             R.string.pref_typing_focus_time_out_key,
-            R.string.pref_touch_focus_time_out_default);
+            R.string.pref_touch_explore_time_out_default);
     for (TypingFocusDelayPrefFragment.TypingFocusDelayPref source :
         TypingFocusDelayPrefFragment.TypingFocusDelayPref.values()) {
       if (focusDelay == source.getDelay()) {

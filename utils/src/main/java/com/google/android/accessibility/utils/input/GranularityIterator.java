@@ -22,6 +22,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.output.EmojiSpeech;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
@@ -276,13 +277,15 @@ public final class GranularityIterator {
       if (start < 0) {
         start = 0;
       }
-      while (!isLetterOrDigit(start)) {
+      while (!isLetterOrDigit(start) && emojiEnd(start) < 0) {
         start = breakIterator.following(start);
         if (start == BreakIterator.DONE) {
           return null;
         }
       }
-      final int end = breakIterator.following(start);
+      int end = breakIterator.following(start);
+      // An emoji is one word, even where the break rules split it.
+      end = Math.max(end, emojiEnd(start));
       if (end == BreakIterator.DONE) {
         return null;
       }
@@ -303,7 +306,7 @@ public final class GranularityIterator {
       if (end > textLegth) {
         end = textLegth;
       }
-      while (end > 0 && !isLetterOrDigit(end - 1)) {
+      while (end > 0 && !isLetterOrDigit(end - 1) && !emojiEndsAt(end)) {
         end = breakIterator.preceding(end);
         if (end == BreakIterator.DONE) {
           return null;
@@ -313,7 +316,34 @@ public final class GranularityIterator {
       if (start == BreakIterator.DONE) {
         return null;
       }
+      // An emoji is one word, even where the break rules split it: start at its first part.
+      int earlier = start;
+      for (int i = 0; i < MAX_EMOJI_PARTS; i++) {
+        earlier = breakIterator.preceding(earlier);
+        if (earlier == BreakIterator.DONE) {
+          break;
+        }
+        if (emojiEnd(earlier) == end) {
+          start = earlier;
+        }
+      }
       return getRange(start, end);
+    }
+
+    /** Most parts the break rules may split one emoji into, such as a family of four. */
+    private static final int MAX_EMOJI_PARTS = 10;
+
+    /** Returns the end of an emoji that starts at {@code index} and counts as a word, or -1. */
+    private int emojiEnd(int index) {
+      return index >= 0 && index < getIteratorText().length()
+          ? EmojiSpeech.emojiWordEnd(getIteratorText(), index)
+          : -1;
+    }
+
+    /** Returns whether an emoji that counts as a word ends at {@code end}. */
+    private boolean emojiEndsAt(int end) {
+      int start = breakIterator.preceding(end);
+      return start != BreakIterator.DONE && emojiEnd(start) == end;
     }
 
     private boolean isLetterOrDigit(int index) {

@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.actor;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,7 +25,10 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.dialog.BaseDialog;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 
 /** Dialog to show when voice input is not supported in the current Gboard version. */
@@ -70,7 +74,20 @@ public class VoiceInputDownloadDialog extends BaseDialog {
 
   @Override
   public String getMessageString() {
-    return context.getString(R.string.dialog_message_voice_input_download);
+    // The message names the 2-finger double tap. If that gesture doesn't start voice input, the
+    // message names the gesture that does, and the title and button say to update Gboard.
+    GestureShortcutMapping mapping =
+        (context instanceof TalkBackService service) ? service.getGestureShortcutMapping() : null;
+    if (mapping == null
+        || GestureHints.isAssigned(
+            context,
+            mapping,
+            AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP,
+            context.getString(R.string.shortcut_value_media_control_or_voice_input))) {
+      return context.getString(R.string.dialog_message_voice_input_download);
+    }
+    return GestureHints.actionLine(
+        context, mapping, R.string.shortcut_value_media_control_or_voice_input);
   }
 
   @Override

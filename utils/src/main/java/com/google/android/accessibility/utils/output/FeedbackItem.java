@@ -49,7 +49,15 @@ public class FeedbackItem {
   /** Flag to force feedback from this item even if a phone call is active. */
   public static final int FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE = 0x20;
 
-  // TODO: make a flag that combines all the forced feedback flags
+  /**
+   * All the flags to force feedback from this item, for feedback the user asked for, so that it is
+   * said even while audio plays, the microphone or dictation is active, or a call is in progress.
+   */
+  public static final int FLAG_FORCE_FEEDBACK_ALL =
+      FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
+          | FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
+          | FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE
+          | FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE;
 
   /**
    * Flag to inform the processor that completion of this item should advance continuous reading, if

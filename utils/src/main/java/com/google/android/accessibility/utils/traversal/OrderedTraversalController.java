@@ -19,10 +19,12 @@ package com.google.android.accessibility.utils.traversal;
 import androidx.annotation.NonNull;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.NodeOverrides;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -124,6 +126,7 @@ public class OrderedTraversalController {
    * nodes
    */
   private void reorderTree(AccessibilityNodeInfoCompat compatRoot) {
+    Map<WorkingTree, ScriptedMove> scriptedMoves = findScriptedMoves();
     for (WorkingTree subtree : nodeTreeMap.values()) {
       AccessibilityNodeInfoCompat node = subtree.getNode();
       if (makeFabFirst && isFab(node)) {
@@ -133,6 +136,15 @@ public class OrderedTraversalController {
       if (AccessibilityNodeInfoUtils.hasRequestInitialAccessibilityFocus(node)) {
         // TODO: Add test case after Roboletric in Google3 supports API 34.
         initialFocusNode = node;
+      }
+      ScriptedMove scriptedMove = scriptedMoves.get(subtree);
+      if (scriptedMove != null) {
+        if (scriptedMove.before) {
+          moveNodeBefore(subtree, scriptedMove.target);
+        } else {
+          moveNodeAfter(subtree, scriptedMove.target);
+        }
+        continue;
       }
       AccessibilityNodeInfoCompat beforeNode = node.getTraversalBefore();
       if (beforeNode != null) {
@@ -145,6 +157,36 @@ public class OrderedTraversalController {
           moveNodeAfter(subtree, targetTree);
         }
       }
+    }
+  }
+
+  private Map<WorkingTree, ScriptedMove> findScriptedMoves() {
+    Map<WorkingTree, ScriptedMove> moves = new HashMap<>();
+    for (WorkingTree subtree : nodeTreeMap.values()) {
+      NodeOverrides.Order order = NodeOverrides.order(subtree.getNode());
+      if (order == null) {
+        continue;
+      }
+      WorkingTree searched = subtree;
+      for (WorkingTree scope = subtree.getParent(); scope != null; scope = scope.getParent()) {
+        WorkingTree target = scope.findDescendant(order, searched);
+        if (target != null) {
+          moves.put(subtree, new ScriptedMove(target, order.isBefore()));
+          break;
+        }
+        searched = scope;
+      }
+    }
+    return moves;
+  }
+
+  private static final class ScriptedMove {
+    final WorkingTree target;
+    final boolean before;
+
+    ScriptedMove(WorkingTree target, boolean before) {
+      this.target = target;
+      this.before = before;
     }
   }
 

@@ -82,6 +82,7 @@ import com.google.android.accessibility.talkback.trainingcommon.PageController.O
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivityInterfaceInjector.TrainingSectionLogger;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingIpcClient.IpcServerStateListener;
+import com.google.android.accessibility.talkback.trainingcommon.content.TutorialGestureUses;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
@@ -639,10 +640,26 @@ public class TrainingActivity extends FragmentActivity
                 requestAvailableFeatures();
                 unregisterTalkBackEnabledReceiver();
               });
+      ipcClient.setGesturesListener(this::redrawPageForChangedShortcuts);
     }
     ipcClient.bindService();
 
     setupTrainingView(training);
+  }
+
+  /**
+   * The page shown before the service sent its gestures and keyboard shortcuts names the default
+   * ones. Draws it again if the user changed any that the tutorial names.
+   */
+  private void redrawPageForChangedShortcuts() {
+    // A fragment can't be replaced after the activity state is saved.
+    if (pageController == null
+        || getSupportFragmentManager().isStateSaved()
+        || pageController.getCurrentPageNumber() == PageController.UNKNOWN_PAGE_NUMBER
+        || !TutorialGestureUses.anyEarlyTextReplaced(this, ipcClient.getServiceData())) {
+      return;
+    }
+    pageController.switchPage(pageController.getCurrentPageNumber());
   }
 
   @Override

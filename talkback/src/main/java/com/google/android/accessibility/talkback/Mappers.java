@@ -62,8 +62,10 @@ import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.LogDepth;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.accessibility.utils.output.SpeechCacheManager.LoadSpeechResultNotifier;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
@@ -279,6 +281,13 @@ public final class Mappers {
         LogDepth.log(LOG_TAG, depth, "Return, target is null or fails to refresh");
         return null;
       }
+      // Chrome moves accessibility focus along with input focus on its own, and speaks it with its
+      // own event. Focusing the node again makes Chrome send a second event, so it is spoken twice.
+      if (WebInterfaceUtils.supportsWebActions(targetedNode)
+          && targetedNode.isAccessibilityFocused()) {
+        LogDepth.log(LOG_TAG, depth, "Return, target already has accessibility focus");
+        return null;
+      }
       FocusActionInfo focusActionInfo =
           FocusActionInfo.builder().setSourceAction(FocusActionInfo.FOCUS_SYNCHRONIZATION).build();
       return Feedback.create(
@@ -316,7 +325,10 @@ public final class Mappers {
                 .build());
       }
     } else if (interpretation instanceof Interpretation.Scroll) {
-      if (variables.isMediaPlayerAutoScroll(depth) || !variables.isFromScrollable(depth)) {
+      if (variables.isMediaPlayerAutoScroll(depth)
+          || !variables.isFromScrollable(depth)
+          || variables.isManualScroll(depth)) {
+        // ScrollTicks sounds the user's own scrolls, once for each item.
         return null;
       }
       float rate = (float) Math.pow(2.0f, (variables.scrollPercent(depth) / 50.0f) - 1);
@@ -618,6 +630,15 @@ public final class Mappers {
           (interpretation instanceof Interpretation.Scroll)
               && ((Interpretation.Scroll) interpretation).scroll.isFromScrollable;
       LogDepth.logVar(LOG_TAG, ++depth, "isFromScrollable", result);
+      return result;
+    }
+
+    public boolean isManualScroll(int depth) {
+      boolean result =
+          (interpretation instanceof Interpretation.Scroll)
+              && ((Interpretation.Scroll) interpretation).scroll.userAction
+                  == ScrollActionRecord.ACTION_MANUAL_SCROLL;
+      LogDepth.logVar(LOG_TAG, ++depth, "isManualScroll", result);
       return result;
     }
 

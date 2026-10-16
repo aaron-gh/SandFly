@@ -274,7 +274,8 @@ public class TextFormattingInfo {
       return ImmutableList.of();
     }
     for (CharacterStyle span : spans) {
-      if (!TextFormattingUtils.isSpanMatchingOptions(span, options)) {
+      if (!TextFormattingUtils.isSpanMatchingOptions(span, options)
+          || TextFormattingUtils.isComposingSpan(spannable, span)) {
         continue;
       }
       int spanStart = spannable.getSpanStart(span);

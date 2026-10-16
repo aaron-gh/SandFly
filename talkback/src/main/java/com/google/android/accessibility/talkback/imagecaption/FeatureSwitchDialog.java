@@ -84,14 +84,17 @@ public class FeatureSwitchDialog extends BaseDialog {
           inflater.inflate(R.layout.detailed_image_description_dialog, /* root= */ null);
       TextView textView = root.findViewById(R.id.ai_descriptiog_switch_dialog_message);
       if (textView != null) {
-        String tos = context.getString(R.string.dialog_message_gen_ai_tos_link);
+        String tos = GeminiFunctionUtils.termsLinkText(context, resources.messageRes);
         String rawText = context.getString(resources.messageRes, tos);
         SpannableString text = new SpannableString(rawText);
         int spanIndexStart = rawText.indexOf(tos);
         if (spanIndexStart >= 0) {
           text.setSpan(
-              GeminiFunctionUtils.createClickableSpanForGeminiTOS(
-                  context, this, DimScreenActor.isDimScreenEnabled(context, prefs)),
+              GeminiFunctionUtils.createClickableSpanForTerms(
+                  context,
+                  this,
+                  DimScreenActor.isDimScreenEnabled(context, prefs),
+                  resources.messageRes),
               spanIndexStart,
               spanIndexStart + tos.length(),
               0);

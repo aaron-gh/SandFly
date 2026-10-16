@@ -22,6 +22,8 @@ import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.graphics.Region;
 import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import androidx.annotation.Nullable;
@@ -30,16 +32,14 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * This class support the enable/disable Touch Explore Pass Through mode. Once the system enters the
- * pass-through mode {@link #setTouchExplorePassThrough(boolean)}, a background timer is set {@link
- * #startPassThroughGuardTimer()}. If no user touch activity before the timer expires, system
- * automatically exits the pass-through mode. On the other hand, when touch activity detected, it
- * needs to abort the timer {@link #cancelPassThroughGuardTimer()} to prevent the early exit from
- * the pass-through mode as well as the Earcon.
+ * pass-through mode {@link #setTouchExplorePassThrough(boolean)}, a guard timer is set on the main
+ * thread {@link #startPassThroughGuardTimer()}. If no user touch activity before the timer expires,
+ * system automatically exits the pass-through mode. On the other hand, when touch activity
+ * detected, it needs to abort the timer {@link #cancelPassThroughGuardTimer()} to prevent the early
+ * exit from the pass-through mode as well as the Earcon.
  */
 public class PassThroughModeActor {
   private static final String TAG = "PassThroughModeActor";
@@ -49,12 +49,20 @@ public class PassThroughModeActor {
   private static final long PASS_THROUGH_IDLE_MS = 4000; // 4 seconds
   private boolean touchExplorePassThroughActive;
   private Pipeline.FeedbackReturner pipeline;
-  private Timer passThroughGuardTimer;
   private AccessibilityService service;
   private boolean locked;
   // The region direct touch wants. Used whenever neither the gesture nor the braille lock holds it.
   private Region directTouchRegion = new Region();
   private PassThroughModeDialog passThroughDialog;
+  // The exit runs on the main thread, like everything else here, not on a thread of its own.
+  private final Handler handler = new Handler(Looper.getMainLooper());
+  private final Runnable passThroughExit =
+      () -> {
+        // While in locked mode, we can ignore the time out event
+        if (!locked) {
+          setTouchExplorePassThrough(false);
+        }
+      };
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Inner class for actor-state reader
@@ -99,6 +107,9 @@ public class PassThroughModeActor {
         LogUtils.v(TAG, "Enter touch explore pass-through mode.");
         pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up));
       } else {
+        // An exit left pending would set the region again later, over whichever holds it by then,
+        // such as the circle menu's.
+        cancelPassThroughGuardTimer();
         service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
         if (touchExplorePassThroughActive) {
           LogUtils.v(TAG, "Leave touch explore pass-through mode.");
@@ -158,24 +169,13 @@ public class PassThroughModeActor {
    * activity detected, the timer should be killed.
    */
   public void cancelPassThroughGuardTimer() {
-    if (touchExplorePassThroughActive && !locked) {
-      passThroughGuardTimer.cancel();
-    }
+    handler.removeCallbacks(passThroughExit);
   }
 
   private void startPassThroughGuardTimer() {
-    passThroughGuardTimer = new Timer();
-    passThroughGuardTimer.schedule(new PassThroughExitTask(), PASS_THROUGH_IDLE_MS);
-  }
-
-  private class PassThroughExitTask extends TimerTask {
-    @Override
-    public void run() {
-      // While in locked mode, we can ignore the time out event
-      if (!locked) {
-        setTouchExplorePassThrough(false);
-      }
-    }
+    // Entering the mode again starts the time over.
+    handler.removeCallbacks(passThroughExit);
+    handler.postDelayed(passThroughExit, PASS_THROUGH_IDLE_MS);
   }
 
   private Region getRegionOfFullScreen(Context context) {

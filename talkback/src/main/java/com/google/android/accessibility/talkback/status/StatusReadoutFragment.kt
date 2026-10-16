@@ -21,13 +21,13 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.view.accessibility.AccessibilityNodeInfo
-import androidx.core.view.ViewCompat
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
-import androidx.core.view.accessibility.AccessibilityViewCommand
 import androidx.preference.CheckBoxPreference
 import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
+import com.google.android.accessibility.talkback.preference.base.announce
+import com.google.android.accessibility.talkback.preference.base.positionText
+import com.google.android.accessibility.talkback.preference.base.setMoveActions
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
@@ -84,10 +84,7 @@ class StatusReadoutFragment : TalkbackBaseFragment() {
             list.scrollToPosition(index)
             val row = list.findViewHolderForAdapterPosition(index)?.itemView ?: return
             row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
-            @Suppress("DEPRECATION") // There is no replacement for a one-off message.
-            row.announceForAccessibility(
-              getString(R.string.template_status_item_position, index + 1, count)
-            )
+            announce(row, positionText(row, index, count))
           }
         }
       )
@@ -113,29 +110,7 @@ class StatusReadoutFragment : TalkbackBaseFragment() {
       super.onBindViewHolder(holder)
       // Rows are reused for other items, so every bind replaces both actions.
       val index = StatusSettings.order(prefs).indexOf(item)
-      setMoveAction(holder.itemView, MOVE_UP, R.string.status_action_move_up, index > 0, -1)
-      setMoveAction(
-        holder.itemView,
-        MOVE_DOWN,
-        R.string.status_action_move_down,
-        index < StatusItem.entries.size - 1,
-        1,
-      )
+      setMoveActions(holder.itemView, index, StatusItem.entries.size) { move(item, it) }
     }
-
-    private fun setMoveAction(view: View, id: Int, label: Int, canMove: Boolean, offset: Int) {
-      val text = context.getString(label)
-      ViewCompat.replaceAccessibilityAction(
-        view,
-        AccessibilityActionCompat(id, text),
-        text,
-        if (canMove) AccessibilityViewCommand { _, _ -> move(item, offset) } else null,
-      )
-    }
-  }
-
-  private companion object {
-    val MOVE_UP = R.id.accessibility_custom_action_0
-    val MOVE_DOWN = R.id.accessibility_custom_action_1
   }
 }

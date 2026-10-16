@@ -115,6 +115,18 @@ class RadialMenuController(
     }
   }
 
+  /** Moves the focus with fingers that were already down when the menu opened. */
+  fun followHeldTouch(x: Float, y: Float, lifted: Boolean) {
+    view?.followHeldTouch(x, y, lifted)
+  }
+
+  /**
+   * Whether a window titled [title] is the menu's own. The menu appearing changes the windows too,
+   * and that should not close it.
+   */
+  fun isOwnWindow(title: CharSequence?): Boolean =
+    title?.toString() == service.getString(R.string.title_pref_radial_menu)
+
   /** Closes the menu as if the user had lifted in the middle of it. */
   fun cancel() {
     if (!isShowing) {
@@ -242,9 +254,7 @@ class RadialMenuController(
       .setQueueMode(queueMode)
       .setFlags(
         FeedbackItem.FLAG_NO_HISTORY or
-          FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE or
-          FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE or
-          FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE
+          FeedbackItem.FLAG_FORCE_FEEDBACK_ALL
       )
 
   companion object {
@@ -275,7 +285,8 @@ class RadialMenuController(
     /** Whether the user chose to show the Backtalk menu as a circle. */
     @JvmStatic
     fun isEnabled(context: Context): Boolean {
-      if (FormFactorUtils.isAndroidTv() || FormFactorUtils.isAndroidWear()) {
+      // A watch's round screen suits a circle; it is scaled to fit.
+      if (FormFactorUtils.isAndroidTv()) {
         return false
       }
       return SharedPreferencesUtils.getBooleanPref(

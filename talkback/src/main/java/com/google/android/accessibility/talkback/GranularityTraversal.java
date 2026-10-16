@@ -18,6 +18,8 @@ package com.google.android.accessibility.talkback;
 
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.MOVE_CURSOR;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.annotation.Nullable;
@@ -34,6 +36,11 @@ import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.GranularityIterator;
 import com.google.android.accessibility.utils.input.GranularityIterator.TextSegmentIterator;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
+import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.compositor.CompositorUtils;
+import com.google.android.accessibility.utils.SpannableUtils;
+import com.google.android.accessibility.utils.output.CopySelection;
+import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Map;
 import java.util.Optional;
@@ -68,8 +75,16 @@ public final class GranularityTraversal {
    */
   private final Map<AccessibilityNodeInfoCompat, Integer> cache = new ConcurrentHashMap<>();
 
-  GranularityTraversal(ProcessorPhoneticLetters processorPhoneticLetters) {
+  private final CopySelection copySelection;
+  private final Context context;
+
+  GranularityTraversal(
+      ProcessorPhoneticLetters processorPhoneticLetters,
+      CopySelection copySelection,
+      Context context) {
     this.processorPhoneticLetters = processorPhoneticLetters;
+    this.copySelection = copySelection;
+    this.context = context;
   }
 
   public void setPipelineFeedbackReturner(Pipeline.FeedbackReturner pipeline) {
@@ -177,7 +192,7 @@ public final class GranularityTraversal {
     setAccessibilityCursor(node, segmentEnd, segmentStart, text.length(), forward);
 
     sendViewTextTraversedAtGranularityEvent(
-        segmentStart, segmentEnd, text, granularity, node, eventId);
+        segmentStart, segmentEnd, forward, text, granularity, node, eventId);
     return true;
   }
 
@@ -267,7 +282,72 @@ public final class GranularityTraversal {
                                 .build())
                         .build())));
     sendViewTextTraversedAtGranularityEvent(
-        segmentStart, segmentEnd, text, CursorGranularity.LINE.value, node, eventId);
+        segmentStart, segmentEnd, forward, text, CursorGranularity.LINE.value, node, eventId);
+    return true;
+  }
+
+  /**
+   * Moves the cursor of text the framework moves through, a focused edit text or selectable text,
+   * over the next or previous word when that word is an emoji, and Backtalk names emoji. The
+   * framework's words skip emoji, which left them unheard; in an edit text, the next delete would
+   * remove one. Other words, and other granularities, are left to the framework, so its cursor
+   * stays the only one.
+   *
+   * @return {@code true} if the cursor moved over an emoji.
+   */
+  public boolean traverseEmojiWordInFrameworkText(
+      AccessibilityNodeInfoCompat node, boolean forward, EventId eventId) {
+    // Checked first, so that moving by word costs nothing more unless Backtalk names emoji.
+    if (!EmojiSpeech.stopsOnEmojiWords()) {
+      return false;
+    }
+    boolean editing = Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isFocused();
+    if (!(editing || AccessibilityNodeInfoUtils.isNonEditableSelectableText(node))
+        || !node.refresh()) {
+      return false;
+    }
+    CharSequence text = getIterableTextForAccessibility(node);
+    if (!EmojiSpeech.hasEmojiWords(text)) {
+      return false;
+    }
+    int current = forward ? node.getTextSelectionEnd() : node.getTextSelectionStart();
+    if (current < 0) {
+      // No cursor yet: the framework starts from the end the move goes away from.
+      current = forward ? 0 : text.length();
+    }
+    if (current > text.length()) {
+      return false;
+    }
+    TextSegmentIterator iterator =
+        GranularityIterator.getIteratorForGranularity(text, CursorGranularity.WORD.value);
+    int[] range = forward ? iterator.following(current) : iterator.preceding(current);
+    if (range == null || EmojiSpeech.emojiWordEnd(text, range[0]) != range[1]) {
+      return false;
+    }
+    int cursor = forward ? range[1] : range[0];
+    if (editing) {
+      pipelineReturner.ifPresent(
+          feedbackReturner ->
+              feedbackReturner.returnFeedback(
+                  Feedback.create(
+                      eventId,
+                      Feedback.part()
+                          .setEdit(Feedback.edit(node, MOVE_CURSOR).setCursorIndex(cursor).build())
+                          .build())));
+    } else {
+      // Selectable text keeps its traversal cursor as its selection, as the framework does.
+      Bundle args = new Bundle();
+      args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, cursor);
+      args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, cursor);
+      pipelineReturner.ifPresent(
+          feedbackReturner ->
+              feedbackReturner.returnFeedback(
+                  eventId,
+                  Feedback.nodeAction(
+                      node, AccessibilityNodeInfoCompat.ACTION_SET_SELECTION, args)));
+    }
+    sendViewTextTraversedAtGranularityEvent(
+        range[0], range[1], forward, text, CursorGranularity.WORD.value, node, eventId);
     return true;
   }
 
@@ -337,10 +417,39 @@ public final class GranularityTraversal {
     }
   }
 
+  private CharSequence describeChange(CopySelection.Change change) {
+    CharSequence deselected =
+        TextUtils.isEmpty(change.deselected)
+            ? ""
+            : SpannableUtils.getSpannedFormattedString(
+                context.getString(R.string.template_text_unselected),
+                CompositorUtils.refineInputText(context, change.deselected));
+    CharSequence selected =
+        TextUtils.isEmpty(change.selected)
+            ? ""
+            : SpannableUtils.getSpannedFormattedString(
+                context.getString(R.string.template_text_selected),
+                CompositorUtils.refineInputText(context, change.selected));
+    return CompositorUtils.joinCharSequences(deselected, selected);
+  }
+
+  /**
+   * Gets the text that moving through {@code node} by character, word and paragraph moves through:
+   * what {@link #traverseAtGranularity} moves over, or else what the framework moves over.
+   */
+  static CharSequence getTraversedText(AccessibilityNodeInfoCompat node) {
+    if (shouldHandleGranularityTraversalInTalkback(node)) {
+      return getIterableTextForAccessibility(node);
+    }
+    CharSequence text = AccessibilityNodeInfoUtils.getText(node);
+    return TextUtils.isEmpty(text) ? node.getContentDescription() : text;
+  }
+
   /** Creates and sends the traversal event to the compositor */
   private void sendViewTextTraversedAtGranularityEvent(
       int fromIndex,
       int toIndex,
+      boolean forward,
       CharSequence text,
       int granularity,
       AccessibilityNodeInfoCompat node,
@@ -349,14 +458,28 @@ public final class GranularityTraversal {
     CharSequence traversedText =
         TextEventInterpreter.getSubsequenceWithSpans(
             text, Math.min(fromIndex, toIndex), Math.max(fromIndex, toIndex));
-    if (pipelineReceiver.isPresent()) {
-      LogUtils.d(TAG, "sendViewTextTraversedAtGranularityEvent: " + traversedText);
-      pipelineReceiver.get().input(SyntheticEvent.Type.TEXT_TRAVERSAL, traversedText);
-    }
-
     // No current case where isTalkbackPackage would be true, but just kept it for safety.
     boolean isTalkbackPackage = PackageManagerUtils.isTalkBackPackage(node.getPackageName());
     boolean isCharacterGranularity = (granularity == CursorGranularity.CHARACTER.value);
+    if (pipelineReceiver.isPresent()) {
+      // The user can choose to hear the phonetic word with or in place of the letter.
+      CharSequence spokenText =
+          isCharacterGranularity
+              ? processorPhoneticLetters
+                  .getPhoneticInPlaceOfLetter(isTalkbackPackage, traversedText)
+                  .orElse(traversedText)
+              : traversedText;
+      CopySelection.Change change =
+          copySelection.move(
+              node, text, Math.min(fromIndex, toIndex), Math.max(fromIndex, toIndex), forward);
+      if (change != null) {
+        // Copying mode: say what the move selected and deselected, not what it moved over.
+        spokenText = describeChange(change);
+      }
+      LogUtils.d(TAG, "sendViewTextTraversedAtGranularityEvent: " + spokenText);
+      pipelineReceiver.get().input(SyntheticEvent.Type.TEXT_TRAVERSAL, spokenText);
+    }
+
     if (isCharacterGranularity) {
       processorPhoneticLetters.speakPhoneticLetterForTraversedText(
           isTalkbackPackage, traversedText.toString(), eventId);

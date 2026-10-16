@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="title_pref_control_sounds">Звуки и вибрации элементов управления</string>
+  <string name="summary_pref_control_sounds">Назначить каждому типу элементов управления, например кнопкам, флажкам, полям редактирования и элементам списка, собственный звук и вибрацию из темы вместо обычного звука и вибрации фокуса, как в дополнении Unspoken для NVDA. Звук исходит из того места, где элемент находится на экране. Backtalk при этом не произносит тип элемента.</string>
+  <string name="title_pref_control_sounds_speak_roles">Озвучивать тип элемента даже при наличии звука</string>
+  <string name="summary_pref_control_sounds_speak_roles">При воспроизведении звука элемента управления также произносить его тип, например «кнопка». Применяется ко всем звуковым темам.</string>
+  <string name="title_pref_control_sounds_3d">Объёмный звук</string>
+  <string name="pref_control_sounds_3d_headphones">В наушниках</string>
+  <string name="pref_control_sounds_3d_always">Всегда</string>
+  <string name="pref_control_sounds_3d_never">Никогда, только слева и справа</string>
+  <string name="individual_sound_control_button">Звук элемента управления: кнопка</string>
+  <string name="individual_sound_control_checkbox">Звук элемента управления: флажок</string>
+  <string name="individual_sound_control_radio_button">Звук элемента управления: переключатель</string>
+  <string name="individual_sound_control_edit_text">Звук элемента управления: поле редактирования</string>
+  <string name="individual_sound_control_combo_box">Звук элемента управления: раскрывающийся список</string>
+  <string name="individual_sound_control_slider">Звук элемента управления: ползунок</string>
+  <string name="individual_sound_control_link">Звук элемента управления: ссылка</string>
+  <string name="individual_sound_control_image">Звук элемента управления: изображение</string>
+  <string name="individual_sound_control_clock">Звук элемента управления: часы</string>
+  <string name="individual_sound_control_tab">Звук элемента управления: вкладка</string>
+  <string name="individual_sound_control_menu_item">Звук элемента управления: пункт меню</string>
+  <string name="individual_sound_control_list_item">Звук элемента управления: элемент списка</string>
+  <string name="individual_sound_control_tree_item">Звук элемента управления: элемент дерева</string>
+</resources>

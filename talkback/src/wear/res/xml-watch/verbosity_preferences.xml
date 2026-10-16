@@ -31,6 +31,12 @@
         android:key="@string/pref_speak_container_element_positions_key"
         android:title="@string/pref_speak_container_element_positions_title" />
 
+    <!-- Table row and column numbers -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_table_speak_row_column_numbers_default"
+        android:key="@string/pref_table_speak_row_column_numbers_key"
+        android:title="@string/pref_table_speak_row_column_numbers_title" />
+
     <!-- Scroll announcement verbosity -->
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_verbose_scroll_announcement_default"
@@ -108,6 +114,51 @@
 
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
+  <!-- Order of item details -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_node_desc_order_default"
+      android:dialogTitle="@string/pref_node_desc_order_title"
+      android:entries="@array/pref_node_desc_order_entries"
+      android:entryValues="@array/pref_node_desc_order_values"
+      android:key="@string/pref_node_desc_order_key"
+      android:summary="%s"
+      android:title="@string/pref_node_desc_order_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_time_feedback_format_default"
+      android:dialogTitle="@string/pref_time_feedback_format_title"
+      android:entries="@array/pref_time_feedback_format_entries"
+      android:entryValues="@array/pref_time_feedback_format_values"
+      android:key="@string/pref_time_feedback_format_key"
+      android:summary="%s"
+      android:title="@string/pref_time_feedback_format_title"/>
+
+  <!-- Formatting -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_formatting_inline_default"
+      android:key="@string/pref_formatting_inline_key"
+      android:summary="@string/summary_text_formatting_verbosity"
+      android:title="@string/title_text_formatting_inline" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_formatting_inline_detail_key"
+      android:dependency="@string/pref_formatting_inline_key"
+      android:title="@string/title_text_formatting_verbosity_options"
+      android:fragment="com.google.android.accessibility.talkback.preference.base.TextFormattingDetailFragment" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_screen_announcements"
+      android:summary="@string/summary_pref_screen_announcements"
+      android:title="@string/title_pref_screen_announcements"
+      android:fragment="com.google.android.accessibility.talkback.preference.base.ScreenAnnouncementsFragment" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_speak_notifications_default"
+      android:key="@string/pref_speak_notifications_key"
+      android:summary="@string/summary_pref_speak_notifications"
+      android:title="@string/title_pref_speak_notifications" />
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_speak_volume_changes_default"
+      android:key="@string/pref_speak_volume_changes_key"
+      android:summary="@string/summary_pref_speak_volume_changes"
+      android:title="@string/title_pref_speak_volume_changes" />
   <!-- Limit frequent content change -->
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_allow_frequent_content_change_announcement_default"
@@ -127,8 +178,35 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_punctuation_default"
       android:key="@string/pref_punctuation_key"
+      android:visibility="invisible"
       android:title="@string/title_pref_punctuation"
       app:splitSummary="true" />
+  <com.google.android.accessibility.talkback.preference.base.PunctuationListPreference
+      android:defaultValue="@string/pref_punctuation_verbosity_default"
+      android:entries="@array/pref_punctuation_entries"
+      android:entryValues="@array/pref_punctuation_values"
+      android:key="@string/pref_punctuation_verbosity"
+      android:summary="%s"
+      android:title="@string/title_pref_punctuation" />
+  <ListPreference
+      android:defaultValue="@string/pref_emoji_speech_default"
+      android:entries="@array/pref_emoji_speech_entries"
+      android:entryValues="@array/pref_emoji_speech_values"
+      android:key="@string/pref_emoji_speech_key"
+      android:summary="%s"
+      android:title="@string/title_pref_emoji_speech" />
+  <ListPreference
+      android:defaultValue="@string/pref_emoji_repeat_count_default"
+      android:entries="@array/pref_emoji_repeat_count_entries"
+      android:entryValues="@array/pref_emoji_repeat_count_values"
+      android:key="@string/pref_emoji_repeat_count_key"
+      android:summary="%s"
+      android:title="@string/title_pref_emoji_repeat_count" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_count_repeated_symbols_default"
+      android:key="@string/pref_count_repeated_symbols_key"
+      android:summary="@string/summary_pref_count_repeated_symbols"
+      android:title="@string/title_pref_count_repeated_symbols" />
 
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_tell_time_default"
@@ -136,5 +214,19 @@
       android:title="@string/pref_speak_time_title"
       android:summary="@string/pref_speak_time_summary"
       app:splitSummary="true" />
+
+  <!-- Table settings -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_table_headers_category_key"
+      android:title="@string/pref_table_headers_category_title">
+
+    <ListPreference
+        android:defaultValue="@string/pref_table_column_headers_default"
+        android:entries="@array/pref_table_column_headers_entries"
+        android:entryValues="@array/pref_table_column_headers_values"
+        android:key="@string/pref_table_column_headers_key"
+        android:summary="%s"
+        android:title="@string/pref_table_column_headers_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
 </PreferenceScreen>

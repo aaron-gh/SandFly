@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-java@v6
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
 
       # Caches Gradle and validates the wrapper jar checksum.
       - uses: gradle/actions/setup-gradle@v6
@@ -45,6 +45,25 @@ jobs:
       # AGP downloads the SDK platform and NDK it needs if the runner lacks them.
       - name: Build debug APKs
         run: ./gradlew assembleDebug --console=plain
+
+      # Only the phone flavor: the watch's braille keyboard is a stub, so the braille keyboard's
+      # tests don't compile for it, and the rest of the code is shared.
+      - name: Run unit tests
+        run: ./gradlew testPhoneDebugUnitTest --console=plain
+
+      # The app's lint also checks the library modules. Issues already in lint-baseline.xml are
+      # allowed, so this fails only on new errors, such as a call that needs a newer Android than
+      # minSdk without a version check.
+      - name: Run lint
+        run: ./gradlew :lintPhoneDebug --console=plain
+
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: test-reports
+          path: |
+            **/build/reports/tests/
+            build/reports/lint-results-phoneDebug.html
 
       - uses: actions/upload-artifact@v7
         with:
@@ -77,7 +96,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          count=$(git rev-list --count HEAD)
+          offset=$(awk '/^def buildNumberOffset = /{print $4}' version.gradle)
+          count=$(( $(git rev-list --count HEAD) + offset ))
           hash=$(git rev-parse HEAD)
           short=${hash:0:7}
           {
@@ -88,12 +108,16 @@ jobs:
               echo "- ${line:0:7} ${line:41}"
             done
           } > release-notes.md
-          apk=$(find apks -name backtalk-phone-debug.apk | head -n 1)
-          if [ -z "$apk" ]; then
-            echo "Phone APK not found." >&2
-            exit 1
-          fi
-          cp "$apk" backtalk.apk
+          # The phone build is backtalk.apk, which the updater on phones looks for, and the watch
+          # build is backtalk-wear.apk, which the updater on watches looks for.
+          for build in phone:backtalk.apk wear:backtalk-wear.apk; do
+            apk=$(find apks -name "backtalk-${build%%:*}-debug.apk" | head -n 1)
+            if [ -z "$apk" ]; then
+              echo "The ${build%%:*} APK was not found." >&2
+              exit 1
+            fi
+            cp "$apk" "${build#*:}"
+          done
           title="Development build $count ($short)"
           tag=dev
           if gh release view "$tag" > /dev/null 2>&1; then
@@ -101,8 +125,8 @@ jobs:
             # which notifies everyone watching the repository.
             git tag -f "$tag" "$GITHUB_SHA"
             git push -f origin "refs/tags/$tag"
-            gh release upload "$tag" backtalk.apk --clobber
+            gh release upload "$tag" backtalk.apk backtalk-wear.apk --clobber
             gh release edit "$tag" --title "$title" --notes-file release-notes.md --prerelease
           else
-            gh release create "$tag" backtalk.apk --prerelease --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
+            gh release create "$tag" backtalk.apk backtalk-wear.apk --prerelease --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
           fi

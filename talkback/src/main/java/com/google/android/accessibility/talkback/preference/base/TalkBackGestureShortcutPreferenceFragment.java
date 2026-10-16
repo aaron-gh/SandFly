@@ -36,6 +36,7 @@ import com.google.android.accessibility.talkback.preference.TalkBackPreferencesA
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.utils.Consumer;
@@ -55,8 +56,6 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
 
   /** Preferences managed by this activity. */
   private SharedPreferences prefs;
-
-  private boolean isVibrationWatchEnabled = false;
 
   private boolean shouldUpdatePreferenceOnResume = false;
 
@@ -251,14 +250,28 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
       return;
     }
 
-    boolean isVibrationWatchEnabled = SettingsUtils.isVibrationWatchEnabled(requireContext());
-    if (isVibrationWatchEnabled != this.isVibrationWatchEnabled) {
-      this.isVibrationWatchEnabled = isVibrationWatchEnabled;
-      List<Integer> keys = new ArrayList<>();
-      keys.add(R.string.pref_shortcut_2finger_1tap_key);
-      keys.add(R.string.pref_shortcut_2finger_2tap_key);
-      runPreferencesCustomization(
-          keys, preference -> preference.setEnabled(!isVibrationWatchEnabled));
+    boolean manuallyReserved = VibrationWatchGestureSettings.isEnabled(prefs);
+    boolean unavailable =
+        manuallyReserved || SettingsUtils.isVibrationWatchEnabled(requireContext());
+    int gestureSet =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            getResources(),
+            R.string.pref_gesture_set_key,
+            R.string.pref_gesture_set_value_default);
+    for (int keyId :
+        new int[] {R.string.pref_shortcut_2finger_1tap_key, R.string.pref_shortcut_2finger_2tap_key}) {
+      GestureListPreference preference =
+          findPreference(
+              GestureShortcutMapping.getPrefKeyWithGestureSet(getString(keyId), gestureSet));
+      if (preference != null) {
+        preference.setSummaryWhenDisabled(
+            getString(
+                manuallyReserved
+                    ? R.string.shortcut_reserved_for_vibration_watch
+                    : R.string.shortcut_disabled_due_to_vibration_watch));
+        preference.setEnabled(!unavailable);
+      }
     }
   }
 
@@ -289,6 +302,9 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
           }
 
           updatePreferenceKey(Integer.parseInt(newValueString));
+          updatePreferencesForVibrationWatchIfNeeded();
+        } else if (TextUtils.equals(key, VibrationWatchGestureSettings.PREF_RESERVED)) {
+          updatePreferencesForVibrationWatchIfNeeded();
         }
       };
 

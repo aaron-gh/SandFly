@@ -27,16 +27,22 @@ public final class TvNavigation {
 
   private TvNavigation() {}
 
+  // When the focused item can't be clicked, select goes to the app instead of doing nothing. YouTube
+  // on Android TV shows only placeholder views and moves its own input focus among them, so
+  // accessibility focus and input focus rarely match there.
   public static boolean letSystemHandleDpadCenterWhenFocusNotInSync(Context context) {
-    return false;
+    return true;
   }
 
   public static Set<String> packagesDpadAllowlist(Context context) {
     return new HashSet<>();
   }
 
+  // The handler thread that would call TelevisionNavigationController.shouldHandleEvent() isn't in
+  // the open-source code, so with it on, the select key was always consumed and never reached apps
+  // such as YouTube.
   public static boolean useHandlerThread(Context context) {
-    return true;
+    return false;
   }
 
   public static int handlerThreadPriority(Context context) {

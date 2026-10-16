@@ -18,7 +18,10 @@ package com.google.android.accessibility.talkback.focusmanagement.interpreter;
 
 import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_TOUCH;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
+import android.os.SystemClock;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -71,6 +74,30 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
   private AccessibilityNodeInfoCompat lastTouchedNode;
 
+  /**
+   * How late a hover must be to be set aside rather than handled. Normal exploring keeps up, so it
+   * is unchanged.
+   */
+  private static final long LATE_HOVER_MS = 100;
+
+  /**
+   * The newest hover that came too late to handle, or null. While dragging fast, hovers can come
+   * faster than focusing each node takes, since each one waits on the app, so they queue up and
+   * Backtalk falls behind. A late hover's node would only be focused and then cut off by the
+   * hovers after it, so late hovers are set aside, each replacing the last, and only the newest
+   * is handled once the hovers waiting before it have been seen.
+   */
+  private @Nullable AccessibilityEvent pendingHover;
+
+  private @Nullable EventId pendingHoverEventId;
+  private final Handler mainHandler = new Handler(Looper.getMainLooper());
+  private boolean pendingHoverPosted;
+  private final Runnable handlePendingHoverLater =
+      () -> {
+        pendingHoverPosted = false;
+        handlePendingHover();
+      };
+
   private final List<TouchExplorationActionListener> listeners = new ArrayList<>();
 
   public TouchExplorationInterpreter(InputModeTracker inputModeTracker) {
@@ -106,15 +133,48 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
           result = handleTouchInteractionEndEvent(eventId);
         }
       }
-      default -> result = handleHoverEnterEvent(event, eventId);
+      default -> {
+        if (SystemClock.uptimeMillis() - event.getEventTime() > LATE_HOVER_MS) {
+          setHoverAside(event, eventId);
+          result = false;
+        } else {
+          pendingHover = null;
+          result = handleHoverEnterEvent(event, eventId);
+        }
+      }
     }
     if (result) {
       setInputTouchMode();
     }
   }
 
+  /** Sets a late hover aside, and makes sure the newest one is handled after those waiting. */
+  @SuppressWarnings("deprecation") // AccessibilityEvent(AccessibilityEvent) needs Android 11.
+  private void setHoverAside(AccessibilityEvent event, EventId eventId) {
+    // The event is recycled after this call, so keep a copy.
+    pendingHover = AccessibilityEvent.obtain(event);
+    pendingHoverEventId = eventId;
+    if (!pendingHoverPosted) {
+      pendingHoverPosted = true;
+      mainHandler.post(handlePendingHoverLater);
+    }
+  }
+
+  /** Handles the hover set aside, if there is one. */
+  private void handlePendingHover() {
+    @Nullable AccessibilityEvent event = pendingHover;
+    if (event == null) {
+      return;
+    }
+    pendingHover = null;
+    if (handleHoverEnterEvent(event, pendingHoverEventId)) {
+      setInputTouchMode();
+    }
+  }
+
   /** @return {@code true} if any accessibility action is successfully performed. */
   private boolean handleTouchInteractionStartEvent(EventId eventId) {
+    pendingHover = null;
     postDelayHandler.executePendingTouchEndAction();
     setLastTouchedNode(/*touchedNode= */ null);
     postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ false);
@@ -130,6 +190,8 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
   /** @return {@code true} if any accessibility action is successfully performed. */
   private boolean handleTouchInteractionEndEvent(EventId eventId) {
+    // The node under the finger as it lifted is handled before the touch ends.
+    handlePendingHover();
     setLastTouchedNode(/*touchedNode= */ null);
     // Dispatch pending empty touch action immediately.
     postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ true);
@@ -207,7 +269,10 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
    */
   private static final class PostDelayHandler
       extends WeakReferenceHandler<TouchExplorationInterpreter> {
-    private static final int EMPTY_TOUCH_AREA_DELAY_MS = 100;
+    // Long enough for the hover event of a focusable item under the finger, which came 3 to 10 ms
+    // after its containers' on a fast phone, with room for slower phones, and short enough that
+    // empty space answers almost as fast as an item.
+    private static final int EMPTY_TOUCH_AREA_DELAY_MS = 40;
     private static final int TOUCH_END_DELAY_MS = 70;
 
     private static final int MSG_EMPTY_TOUCH_ACTION = 0;

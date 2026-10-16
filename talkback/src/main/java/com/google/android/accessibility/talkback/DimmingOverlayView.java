@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.utils.FormFactorUtils;
-import com.google.common.base.Ascii;
 
 public class DimmingOverlayView extends LinearLayout {
 
@@ -54,9 +52,6 @@ public class DimmingOverlayView extends LinearLayout {
     timerView = (TextView) findViewById(R.id.timer);
     progress = (ProgressBar) findViewById(R.id.progress);
 
-    // Default instruction without checking GestureShortcutMapping.
-    setInstruction(context.getString(R.string.value_direction_down_and_right));
-
     setAccessibilityDelegate(
         new View.AccessibilityDelegate() {
           @Override
@@ -71,16 +66,8 @@ public class DimmingOverlayView extends LinearLayout {
         });
   }
 
-  public void setInstruction(String gesture) {
-    // Set dim-screen instructions to use context-menu to exit, because some users do not have
-    // dim-screen volume-key shortcut.
-    Context context = getContext();
-    // TODO: Shows different instruction if there is no gesture to open TalkBack menu.
-    CharSequence instructionText =
-        context.getString(
-            R.string.screen_dimming_exit_instruction_line2,
-            TextUtils.isEmpty(gesture) ? "" : Ascii.toLowerCase(gesture),
-            context.getString(R.string.shortcut_disable_dimming));
+  /** Shows how to show the screen again, which DimScreenActor builds from the user's gestures. */
+  public void setInstruction(CharSequence instructionText) {
     TextView instruction2 = (TextView) findViewById(R.id.message_line_1);
     if (!FormFactorUtils.isAndroidWear()) {
       // Wear display cannot hold large information. The DIM overlay view does not take input but

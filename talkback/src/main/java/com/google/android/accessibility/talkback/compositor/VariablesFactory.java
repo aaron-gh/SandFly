@@ -23,6 +23,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree.VariableDelegate;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
 
 /** Provides an interface for creating VariableDelegates for the Compositor. */
 class VariablesFactory {
@@ -44,7 +45,13 @@ class VariablesFactory {
       @Nullable EventInterpretation interpretation) {
     VariableDelegate delegate = globalVariables;
     if (event != null) {
-      delegate = new EventVariables(mContext, delegate, event, event.getSource(), globalVariables);
+      delegate =
+          new EventVariables(
+              mContext,
+              delegate,
+              event,
+              AccessibilityEventUtils.getSource(event),
+              globalVariables);
     }
 
     if (interpretation != null) {

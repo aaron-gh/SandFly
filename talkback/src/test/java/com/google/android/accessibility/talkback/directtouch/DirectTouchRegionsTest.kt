@@ -30,6 +30,13 @@ class DirectTouchRegionsTest {
   }
 
   @Test
+  fun otherEventsDoNot() {
+    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_VIEW_FOCUSED))
+    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED))
+    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_TOUCH_INTERACTION_START))
+  }
+
+  @Test
   fun aThinStripAlongTheBottomIsANavigationBar() {
     assertTrue(DirectTouchRegions.isNavigationBar(0, 2300, 1080, 2400, 1080, 2400))
   }
@@ -65,12 +72,5 @@ class DirectTouchRegionsTest {
   @Test
   fun anEmptyWindowIsNotANavigationBar() {
     assertFalse(DirectTouchRegions.isNavigationBar(0, 2400, 1080, 2400, 1080, 2400))
-  }
-
-  @Test
-  fun otherEventsDoNot() {
-    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_VIEW_FOCUSED))
-    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED))
-    assertFalse(DirectTouchRegions.reassertsRegion(AccessibilityEvent.TYPE_TOUCH_INTERACTION_START))
   }
 }

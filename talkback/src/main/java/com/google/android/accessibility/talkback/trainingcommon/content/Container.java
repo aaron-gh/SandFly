@@ -79,49 +79,61 @@ public class Container extends PageContentConfig {
         R.id.training_container_title1,
         context.getString(R.string.container_tem_title) + " " + 1,
         R.id.training_container_subtext1,
-        containerItemSubText);
+        containerItemSubText,
+        data);
     addContainerItem(
         view,
         R.id.training_container_title2,
         context.getString(R.string.container_tem_title) + " " + 2,
         R.id.training_container_subtext2,
-        containerItemSubText);
+        containerItemSubText,
+        data);
     addContainerItem(
         view,
         R.id.training_container_title3,
         context.getString(R.string.container_tem_title) + " " + 3,
         R.id.training_container_subtext3,
-        containerItemSubText);
+        containerItemSubText,
+        data);
     addContainerItem(
         view,
         R.id.training_container_title4,
         context.getString(R.string.container_tem_title) + " " + 4,
         R.id.training_container_subtext4,
-        containerItemSubText);
+        containerItemSubText,
+        data);
     addContainerItem(
         view,
         R.id.training_container_title5,
         context.getString(R.string.container_tem_title) + " " + 5,
         R.id.training_container_subtext5,
-        containerItemSubText);
+        containerItemSubText,
+        data);
     addContainerItem(
         view,
         R.id.training_container_title6,
         context.getString(R.string.container_tem_title) + " " + 6,
         R.id.training_container_subtext6,
-        containerItemExitSubText);
+        containerItemExitSubText,
+        data);
     return view;
   }
 
   private void addContainerItem(
-      View view, int titleResId, String titleString, int subTextResId, int subTextStringRes) {
+      View view,
+      int titleResId,
+      String titleString,
+      int subTextResId,
+      int subTextStringRes,
+      ServiceData data) {
     TextView title = view.findViewById(titleResId);
     if (title != null) {
       title.setText(titleString);
     }
     TextView subText = view.findViewById(subTextResId);
     if (subText != null) {
-      subText.setText(subTextStringRes);
+      // The text names gestures or keys, which are the user's own if they were changed.
+      subText.setText(TutorialGestureUses.getText(view.getContext(), subTextStringRes, data));
     }
   }
 }

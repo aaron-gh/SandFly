@@ -28,6 +28,7 @@ import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.os.ConfigurationCompat;
 import androidx.core.os.LocaleListCompat;
@@ -62,6 +63,8 @@ public class GeminiFunctionUtils {
   public static final int GEMINI_REPEAT_OPT_IN_POP_COUNT = 2;
   private static final String TAG = "GeminiFunctionUtils";
   private static final String GEMINI_TOS_URL = "https://policies.google.com/terms";
+  // Requests to the Gemini API, with the user's key or the built-in one, are under these terms.
+  private static final String GEMINI_API_TERMS_URL = "https://ai.google.dev/gemini-api/terms";
 
   /** The whole decision tree considering the 6 configuration parameters. */
   static class DescribeImageDecision {
@@ -692,21 +695,41 @@ public class GeminiFunctionUtils {
   }
 
   /**
-   * Creates a clickable span for the Gemini TOS.
-   *
-   * @param context The context.
-   * @param dialog The dialog.
-   * @param isDimming Whether the screen is dimming, which will change the color of the span to
-   *     black if true.
-   * @return The clickable span.
+   * Whether the dialog message {@code messageRes} is about sending images or screenshots to the
+   * Gemini API, so that its link is to the Gemini API terms rather than Google's terms.
    */
-  public static ClickableSpan createClickableSpanForGeminiTOS(
-      Context context, BaseDialog dialog, boolean isDimming) {
+  public static boolean isGeminiApiConsentMessage(@StringRes int messageRes) {
+    return messageRes == R.string.dialog_message_detailed_ai_description
+        || messageRes == R.string.dialog_message_detailed_ai_promotion
+        || messageRes == R.string.dialog_message_screen_overview_promotion;
+  }
+
+  /** The link text for the terms in the dialog message {@code messageRes}. */
+  public static String termsLinkText(Context context, @StringRes int messageRes) {
+    return context.getString(
+        isGeminiApiConsentMessage(messageRes)
+            ? R.string.gemini_api_terms_link
+            : R.string.dialog_message_gen_ai_tos_link);
+  }
+
+  /**
+   * Creates a clickable span for the terms in the dialog message {@code messageRes}: the Gemini
+   * API terms or Google's terms. {@code isDimming} makes the span black, for when the screen is
+   * hidden.
+   */
+  public static ClickableSpan createClickableSpanForTerms(
+      Context context, BaseDialog dialog, boolean isDimming, @StringRes int messageRes) {
+    return createClickableSpanForTerms(
+        context, dialog, isDimming, isGeminiApiConsentMessage(messageRes));
+  }
+
+  private static ClickableSpan createClickableSpanForTerms(
+      Context context, BaseDialog dialog, boolean isDimming, boolean geminiApi) {
     return new ClickableSpan() {
       @Override
       public void onClick(View widget) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(GEMINI_TOS_URL));
+        intent.setData(Uri.parse(geminiApi ? GEMINI_API_TERMS_URL : GEMINI_TOS_URL));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
         dialog.dismissDialog();

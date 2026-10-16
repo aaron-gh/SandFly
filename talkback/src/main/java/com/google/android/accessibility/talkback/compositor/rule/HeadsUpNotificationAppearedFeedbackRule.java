@@ -23,6 +23,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.Compositor.HandleEventOptions;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import java.util.Map;
@@ -56,7 +57,9 @@ public final class HeadsUpNotificationAppearedFeedbackRule {
           final CharSequence gesture = globalVariables.getGestureForNextWindowShortcut();
           CharSequence ttsOutput =
               (FeatureSupport.isMultiFingerGestureSupported() && gesture != null)
-                  ? context.getString(R.string.heads_up_window_available_with_gesture, gesture)
+                  ? context.getString(
+                      R.string.heads_up_window_available_with_gesture,
+                      GestureHints.lowerCaseFirst(context, gesture.toString()))
                   : context.getString(R.string.heads_up_window_available);
 
           final CharSequence notificationCategory =

@@ -120,6 +120,11 @@ public class Text extends PageContentConfig {
   }
 
   private SpannableString getText(Context context, Paragraph paragraph, ServiceData data) {
+    @Nullable String gestureLines =
+        TutorialGestureUses.gestureLinesIfChanged(context, paragraph.textResId(), data);
+    if (gestureLines != null) {
+      return new SpannableString(gestureLines);
+    }
     String text;
     // The clickable texts {@link Paragraph#clickableTextResIds()} which are arguments of the string
     // {@link Paragraph#textResId()} are wrapped by a ClickableSpan and a TTtsSpan.

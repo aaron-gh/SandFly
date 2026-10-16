@@ -56,6 +56,7 @@ import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import com.google.android.accessibility.utils.monitor.InputModeTracker.InputMode;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.CopySelection;
 import com.google.android.accessibility.utils.output.SelectionStateReader;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy;
@@ -82,6 +83,15 @@ public class DirectionNavigationActor implements UserInputEventListener {
     @Override
     public boolean isSelectionModeActive() {
       return DirectionNavigationActor.this.isSelectionModeActive();
+    }
+
+    @Override
+    public CopySelection copySelection() {
+      return cursorGranularityManager.getCopySelection();
+    }
+
+    public CharSequence selectAllForCopy(AccessibilityNodeInfoCompat node) {
+      return cursorGranularityManager.selectAllForCopy(node);
     }
 
     public CursorGranularity getGranularityAt(AccessibilityNodeInfoCompat node) {
@@ -135,7 +145,7 @@ public class DirectionNavigationActor implements UserInputEventListener {
 
     this.cursorGranularityManager =
         new CursorGranularityManager(
-            globalVariables, accessibilityFocusMonitor, processorPhoneticLetters);
+            globalVariables, accessibilityFocusMonitor, processorPhoneticLetters, service);
 
     focusProcessorForLogicalNavigation =
         new FocusProcessorForLogicalNavigation(
@@ -146,6 +156,16 @@ public class DirectionNavigationActor implements UserInputEventListener {
             searchState,
             compositor,
             globalVariables);
+  }
+
+  /**
+   * Returns the node that a plain swipe in {@code searchDirection} from {@code pivot} would most
+   * likely focus, without changing anything. See {@link
+   * FocusProcessorForLogicalNavigation#predictTarget}.
+   */
+  public @Nullable AccessibilityNodeInfoCompat predictTarget(
+      AccessibilityNodeInfoCompat pivot, @SearchDirection int searchDirection) {
+    return focusProcessorForLogicalNavigation.predictTarget(pivot, searchDirection);
   }
 
   public void setPipeline(Pipeline.FeedbackReturner pipeline) {
@@ -698,10 +718,7 @@ public class DirectionNavigationActor implements UserInputEventListener {
               SpeakOptions.create()
                   .setQueueMode(QUEUE_MODE_INTERRUPT)
                   .setFlags(
-                      FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE)));
+                      FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
     }
   }
 
@@ -759,7 +776,14 @@ public class DirectionNavigationActor implements UserInputEventListener {
     }
 
     cursorGranularityManager.setSelectionModeActive(/* active= */ true);
+    if (node != null
+        && !AccessibilityNodeInfoUtils.isTextSelectable(node)
+        && !node.isPassword()) {
+      // The app keeps no selection in this text, so Backtalk keeps it.
+      cursorGranularityManager.getCopySelection().start();
+    }
   }
+
 
   public void setSelectionModeInactive() {
     cursorGranularityManager.setSelectionModeActive(/* active= */ false);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title of the setting, and of its dialog, for the Gemini API key. [CHAR LIMIT=40] -->
+    <string name="title_pref_gemini_api_key">Gemini API key</string>
+    <!-- Summary of the Gemini API key setting when the user has entered a key. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_set">Set. Describe image and describe screen use Gemini</string>
+    <!-- Summary of the Gemini API key setting when the user has not entered a key, but the app was built with one. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_built_in">Using the key built into this app</string>
+    <!-- Summary of the Gemini API key setting when there is no key. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_not_set">Not set. Without a key, describe image only reads text, and describe screen needs on-device AI</string>
+    <!-- Message in the dialog where the user enters a Gemini API key. [CHAR LIMIT=NONE] -->
+    <string name="gemini_api_key_dialog_message">Get a free API key from Google AI Studio, at aistudio.google.com/apikey, and paste it here. To remove your key, clear the field and save.\n\nImages and screens that you describe are sent to Google. On the free tier, Google can use them to improve its products.</string>
+    <!-- Hint in the empty field for the Gemini API key. [CHAR LIMIT=30] -->
+    <string name="gemini_api_key_hint">API key</string>
+    <!-- Button that saves the Gemini API key. [CHAR LIMIT=20] -->
+    <string name="gemini_api_key_save">Save</string>
+    <!-- Button that opens Google AI Studio in the browser to get a Gemini API key. [CHAR LIMIT=20] -->
+    <string name="gemini_api_key_get">Get a key</string>
+    <!-- Link text in the AI consent dialogs, to the terms that cover requests to the Gemini API. -->
+    <string name="gemini_api_terms_link">Gemini API Additional Terms of Service</string>
+</resources>

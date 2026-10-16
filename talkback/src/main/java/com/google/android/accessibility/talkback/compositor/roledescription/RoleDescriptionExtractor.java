@@ -36,7 +36,10 @@ public class RoleDescriptionExtractor {
   @IntDef({
     DESC_ORDER_ROLE_NAME_STATE_POSITION,
     DESC_ORDER_STATE_NAME_ROLE_POSITION,
-    DESC_ORDER_NAME_ROLE_STATE_POSITION
+    DESC_ORDER_NAME_ROLE_STATE_POSITION,
+    DESC_ORDER_NAME_STATE_ROLE_POSITION,
+    DESC_ORDER_ROLE_STATE_NAME_POSITION,
+    DESC_ORDER_STATE_ROLE_NAME_POSITION
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface DescriptionOrder {}
@@ -44,6 +47,36 @@ public class RoleDescriptionExtractor {
   public static final int DESC_ORDER_ROLE_NAME_STATE_POSITION = 0;
   public static final int DESC_ORDER_STATE_NAME_ROLE_POSITION = 1;
   public static final int DESC_ORDER_NAME_ROLE_STATE_POSITION = 2;
+  public static final int DESC_ORDER_NAME_STATE_ROLE_POSITION = 3;
+  public static final int DESC_ORDER_ROLE_STATE_NAME_POSITION = 4;
+  public static final int DESC_ORDER_STATE_ROLE_NAME_POSITION = 5;
+
+  /** Returns whether {@code descriptionOrder} speaks the state before the name. */
+  public static boolean isStateBeforeName(@DescriptionOrder int descriptionOrder) {
+    return descriptionOrder == DESC_ORDER_STATE_NAME_ROLE_POSITION
+        || descriptionOrder == DESC_ORDER_ROLE_STATE_NAME_POSITION
+        || descriptionOrder == DESC_ORDER_STATE_ROLE_NAME_POSITION;
+  }
+
+  /**
+   * Joins the name, role, and state of a node in {@code descriptionOrder}, leaving out repeated
+   * parts.
+   */
+  public static CharSequence joinInOrder(
+      @DescriptionOrder int descriptionOrder,
+      CharSequence name,
+      CharSequence role,
+      CharSequence state) {
+    return switch (descriptionOrder) {
+      case DESC_ORDER_NAME_ROLE_STATE_POSITION -> CompositorUtils.dedupJoin(name, role, state);
+      case DESC_ORDER_ROLE_NAME_STATE_POSITION -> CompositorUtils.dedupJoin(role, name, state);
+      case DESC_ORDER_STATE_NAME_ROLE_POSITION -> CompositorUtils.dedupJoin(state, name, role);
+      case DESC_ORDER_NAME_STATE_ROLE_POSITION -> CompositorUtils.dedupJoin(name, state, role);
+      case DESC_ORDER_ROLE_STATE_NAME_POSITION -> CompositorUtils.dedupJoin(role, state, name);
+      case DESC_ORDER_STATE_ROLE_NAME_POSITION -> CompositorUtils.dedupJoin(state, role, name);
+      default -> "";
+    };
+  }
 
   private final Context context;
   private final ImageContents imageContents;
@@ -104,24 +137,11 @@ public class RoleDescriptionExtractor {
     if (roleDescription.shouldIgnoreDescription(node)) {
       return "";
     }
-    return switch (descriptionOrder) {
-      case DESC_ORDER_NAME_ROLE_STATE_POSITION ->
-          CompositorUtils.dedupJoin(
-              roleDescription.nodeName(node, context, globalVariables),
-              roleDescription.nodeRole(node, context, globalVariables),
-              roleDescription.nodeState(event, node, context, globalVariables));
-      case DESC_ORDER_ROLE_NAME_STATE_POSITION ->
-          CompositorUtils.dedupJoin(
-              roleDescription.nodeRole(node, context, globalVariables),
-              roleDescription.nodeName(node, context, globalVariables),
-              roleDescription.nodeState(event, node, context, globalVariables));
-      case DESC_ORDER_STATE_NAME_ROLE_POSITION ->
-          CompositorUtils.dedupJoin(
-              roleDescription.nodeState(event, node, context, globalVariables),
-              roleDescription.nodeName(node, context, globalVariables),
-              roleDescription.nodeRole(node, context, globalVariables));
-      default -> "";
-    };
+    return joinInOrder(
+        descriptionOrder,
+        roleDescription.nodeName(node, context, globalVariables),
+        roleDescription.nodeRole(node, context, globalVariables),
+        roleDescription.nodeState(event, node, context, globalVariables));
   }
 
   /** Returns seek bar state description text. */

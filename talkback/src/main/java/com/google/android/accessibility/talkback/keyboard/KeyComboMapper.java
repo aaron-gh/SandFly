@@ -39,6 +39,7 @@ import static com.google.android.accessibility.talkback.actor.TalkBackUIActor.Ty
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.selector.SelectorController.Setting.ACTIONS;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_KEYBOARD;
 import static com.google.android.accessibility.utils.input.CursorGranularity.CHARACTER;
@@ -612,6 +613,11 @@ public class KeyComboMapper {
       case SHOW_GLOBAL_CONTEXT_MENU -> result = menuManager.showMenu(CONTEXT, eventId);
       case SHOW_ACTIONS -> result = menuManager.showMenu(CUSTOM_ACTION, eventId);
       case SHOW_LANGUAGES_AVAILABLE -> result = menuManager.showMenu(LANGUAGE, eventId);
+      case SHOW_VOICE_PROFILES ->
+          result = menuManager.showMenu(VOICE_PROFILE, eventId, R.string.no_voice_profiles);
+      case PREVIOUS_VOICE_PROFILE ->
+          selectorController.changeVoiceProfile(eventId, /* isNext= */ false);
+      case NEXT_VOICE_PROFILE -> selectorController.changeVoiceProfile(eventId, /* isNext= */ true);
       case OPEN_MANAGE_KEYBOARD_SHORTCUTS -> {
         if (SettingsUtils.allowLinksOutOfSettings(accessibilityService.getApplicationContext())) {
           openManageKeyboardShortcuts();
@@ -960,10 +966,7 @@ public class KeyComboMapper {
                 .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
                 .setFlags(
                     FeedbackItem.FLAG_NO_HISTORY
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE)));
+                        | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
 
     if (actorState.getDimScreen().isDimmingEnabled()) {
       // No need to show the UI when the screen is dimming.

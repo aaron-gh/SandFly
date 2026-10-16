@@ -16,6 +16,8 @@
     <string name="notification_title_backtalk_paused">Backtalk is paused</string>
     <!-- Text of the notification shown while Backtalk is paused. Tapping it resumes Backtalk. [CHAR LIMIT=NONE] -->
     <string name="notification_message_backtalk_paused">Tap to resume</string>
+    <!-- Name of the notification channel for the notification shown while Backtalk is paused, in the app's notification settings. [CHAR LIMIT=40] -->
+    <string name="notification_channel_backtalk_paused">Backtalk paused</string>
 
     <!-- Title of the dialog that asks before pausing Backtalk. [CHAR LIMIT=NONE] -->
     <string name="dialog_title_pause_backtalk">Pause Backtalk?</string>

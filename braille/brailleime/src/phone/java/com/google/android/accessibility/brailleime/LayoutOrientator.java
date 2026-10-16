@@ -32,12 +32,23 @@ public class LayoutOrientator {
   private final SensorManager sensorManager;
   private final LayoutOrientatorCallback callback;
   private Optional<TouchDots> autoModeLayout;
+  private boolean uprightFacingUser;
+  private boolean heldUprightInScreenAway;
 
   /** Callback for clients of this class. */
   public interface LayoutOrientatorCallback {
     boolean useSensorsToDetectLayout();
 
     void onDetectionChanged(boolean isTabletop, boolean firstChangedEvent);
+
+    /**
+     * Whether the device, held up as it is now, faces the user rather than facing away. Then it
+     * uses the tabletop layout, as the user types on the front of the screen. Called for every
+     * sensor reading while the device is upright, so it must be quick.
+     */
+    default boolean uprightFacesUser() {
+      return false;
+    }
   }
 
   public LayoutOrientator(Context context, LayoutOrientatorCallback layoutOrientatorCallback) {
@@ -60,6 +71,21 @@ public class LayoutOrientator {
   public void stop() {
     sensorManager.unregisterListener(sensorEventListener);
     autoModeLayout = Optional.empty();
+    uprightFacingUser = false;
+    heldUprightInScreenAway = false;
+  }
+
+  /** Whether the tabletop layout detected is for a device held up facing the user, not flat. */
+  public boolean isUprightFacingUser() {
+    return uprightFacingUser;
+  }
+
+  /**
+   * Whether the device has been held upright since the layout last switched to screen-away, so
+   * that typing in screen-away mode is not typing on a device held nearly flat and tilted.
+   */
+  public boolean wasHeldUprightInScreenAway() {
+    return heldUprightInScreenAway;
   }
 
   /** Returns detected layout. Empty before sensor receives events. */
@@ -75,12 +101,23 @@ public class LayoutOrientator {
               Utils.adjustAccelOrientation(
                   Utils.getDisplayRotationDegrees(context), sensorEvent.values);
           boolean isFlat = Utils.isFlat(sensorEventValues);
+          boolean facing = !isFlat && callback.uprightFacesUser();
+          boolean isTabletop = isFlat || facing;
           boolean firstChangedEvent = autoModeLayout.isEmpty();
-          TouchDots newLayout = isFlat ? TouchDots.TABLETOP : TouchDots.SCREEN_AWAY;
-          boolean shouldChange = firstChangedEvent || (autoModeLayout.get() != newLayout);
+          TouchDots newLayout = isTabletop ? TouchDots.TABLETOP : TouchDots.SCREEN_AWAY;
+          boolean shouldChange =
+              firstChangedEvent
+                  || autoModeLayout.get() != newLayout
+                  || facing != uprightFacingUser;
+          if (isTabletop) {
+            heldUprightInScreenAway = false;
+          } else if (Utils.isUpright(sensorEventValues)) {
+            heldUprightInScreenAway = true;
+          }
           autoModeLayout = Optional.of(newLayout);
+          uprightFacingUser = facing;
           if (shouldChange) {
-            callback.onDetectionChanged(isFlat, firstChangedEvent);
+            callback.onDetectionChanged(isTabletop, firstChangedEvent);
           }
         }
 

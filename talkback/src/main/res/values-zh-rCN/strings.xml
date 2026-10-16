@@ -386,7 +386,6 @@
   <string name="dialog_message_turn_on_image_description">您可以开启自动或详细图片描述功能，然后再试一次</string>
   <string name="title_pref_detailed_image_description">详细图片描述</string>
   <string name="summary_pref_ai_description">选择 TalkBack 菜单中的“%1$s”后，可听到更详细的描述</string>
-  <string name="dialog_message_detailed_ai_description">如果您使用此功能，所选图片将发送给 Google 进行处理，然后会被删除。\n\n由于生成式 AI 尚处于实验阶段，因此难免会犯错。继续操作即表示您同意《%1$s》。</string>
   <string name="dialog_message_on_device_ai_description">在支持的应用中，当焦点位于图片上时，您会听到简短的描述。\n\n图片会在您的设备上进行处理，绝不会发送给 Google。\n\n由于生成式 AI 尚处于实验阶段，因此难免会犯错。继续操作即表示您同意<a href="https://policies.google.com/terms/generative-ai">《Google 服务条款》</a>。</string>
   <string name="enable_gemini">开启</string>
   <string name="powered_by_gemini">由生成式 AI 提供支持</string>
@@ -417,8 +416,6 @@
   <string name="title_pref_enable_auto_icon_detection">所有图标</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">仅限无标签的图标</string>
   <string name="title_pref_disable_auto_icon_detection">不描述图标</string>
-  <string name="dialog_message_detailed_ai_promotion">“详细的图片描述”由生成式 AI 提供支持。如果您使用此功能，所选图片将发送给 Google 进行处理，然后会被删除。\n\n由于生成式 AI 尚处于实验阶段，因此难免会犯错。您可以随时在 TalkBack 设置中关闭“详细的图片描述”。\n\n继续操作即表示您同意《%1$s》。</string>
-  <string name="dialog_message_screen_overview_promotion">使用此功能时，系统会将屏幕截图发送给 Google；Google 处理完毕后会将其删除。处理只需几秒钟时间。\n\n生成式 AI 尚处于实验阶段，难免会出错。继续操作即表示您同意《%1$s》。</string>
   <string name="dialog_message_on_device_ai_model_download">在支持的应用中，当焦点位于图片上时，您会听到简短的描述。\n\n图片会在您的设备上进行处理，绝不会发送给 Google。\n\n由于生成式 AI 尚处于实验阶段，因此难免会犯错。继续操作即表示您同意《%1$s》。</string>
   <string name="title_pref_enable_gemini_support">开启</string>
   <string name="title_pref_disable_gemini_support">关闭</string>

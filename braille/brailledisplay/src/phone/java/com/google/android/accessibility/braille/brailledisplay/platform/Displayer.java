@@ -45,7 +45,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * operations onto a non-main-thread, and a main thread for bringing results and signals back to
  * main, so that Android components such as Services can make use of them.
  */
-public class Displayer {
+public class Displayer implements DisplayerInterface {
   private static final String TAG = "Displayer";
   private static final int COMMAND_CODE_MASK = 0xffff;
   private static final int COMMAND_ARGUMENT_MASK = 0x7fff0000;

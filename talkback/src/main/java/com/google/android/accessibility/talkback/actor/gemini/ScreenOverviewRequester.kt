@@ -58,6 +58,8 @@ internal enum class PromptStyle {
 internal class ScreenOverviewRequester(
   private val style: () -> PromptStyle = { PromptStyle.CLOUD },
   private val performRequest: (JSONObject, GeminiRestResponseCallback) -> Unit,
+  /** What to tell the user about a failed request, or null for the general error message. */
+  private val describeFailure: (GeminiFailure) -> String? = { null },
 ) {
   private val parser = Parser()
 
@@ -156,6 +158,11 @@ internal class ScreenOverviewRequester(
         override fun onResponse(response: GeminiResponse) {
           val text = response.text()
           if (response.finishReason() != DataFieldUtils.FINISH_REASON_STOP || text == null) {
+            Log.e(
+              TAG,
+              "Gemini gave no answer, finish reason ${response.finishReason()}, " +
+                "block reason ${response.blockReason()}",
+            )
             listener.onResponse(FinishReason.ERROR_BLOCKED, error(FinishReason.ERROR_BLOCKED))
             return
           }
@@ -179,9 +186,16 @@ internal class ScreenOverviewRequester(
           }
         }
 
-        override fun onFailure(reason: String) {
-          Log.w(TAG, "Screen request failed: $reason")
-          listener.onResponse(FinishReason.ERROR_RESPONSE, error(FinishReason.ERROR_RESPONSE))
+        override fun onFailure(failure: GeminiFailure) {
+          // The request performer has logged the failure.
+          listener.onResponse(
+            FinishReason.ERROR_RESPONSE,
+            OverviewResponse.Error(
+              errorReason = null,
+              finishReason = FinishReason.ERROR_RESPONSE,
+              message = describeFailure(failure),
+            ),
+          )
         }
 
         override fun onCancelled() {

@@ -25,28 +25,21 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import androidx.annotation.VisibleForTesting;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
-import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.preference.base.PreferenceActionHelper.WebPage;
-import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings;
-import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -74,40 +67,10 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
   public void onResume() {
     super.onResume();
     updateTouchExplorationState();
-    updateTimeFeedbackFormatPreference();
-    updateSpeakerphonePreference();
+    updateTypingMethodPreference();
   }
 
-  /**
-   * The speakerphone setting needs a permission that the user grants with adb, and Android only has
-   * it from Android 12. Until it is granted, the setting is off and says how to grant it.
-   */
-  private void updateSpeakerphonePreference() {
-    Preference pref = findPreferenceByResId(R.string.pref_speakerphone_away_from_ear_key);
-    if (pref == null) {
-      return;
-    }
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-      PreferenceSettingsUtils.hidePreference(
-          context, getPreferenceScreen(), R.string.pref_speakerphone_away_from_ear_key);
-      return;
-    }
-    boolean granted = SpeakerphoneSettings.INSTANCE.canControlCalls(context);
-    pref.setEnabled(granted);
-    pref.setSummary(
-        granted
-            ? getString(R.string.summary_pref_speakerphone_away_from_ear)
-            : getString(
-                R.string.summary_pref_speakerphone_needs_permission,
-                SpeakerphoneSettings.INSTANCE.grantCommand(context)));
-  }
-
-  private void updateTimeFeedbackFormatPreference() {
-    final ListPreference timeFeedbackFormatPref =
-        findPreference(getString(R.string.pref_time_feedback_format_key));
-    if (timeFeedbackFormatPref != null) {
-      timeFeedbackFormatPref.setSummaryProvider(preference -> getSummaryForTimeFeedbackFormat());
-    }
+  private void updateTypingMethodPreference() {
     AccessibilitySuitePreference typingMethodPreference =
         (AccessibilitySuitePreference)
             findPreference(getString(R.string.pref_typing_confirmation_key));
@@ -134,33 +97,6 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
                 .getStringArray(R.array.pref_typing_types_talkback_entries)[position];
           });
     }
-  }
-
-  private String getSummaryForTimeFeedbackFormat() {
-    final Resources resources = getResources();
-    final String timeFeedbackFormat =
-        SharedPreferencesUtils.getStringPref(
-            prefs,
-            resources,
-            R.string.pref_time_feedback_format_key,
-            R.string.pref_time_feedback_format_default);
-    int timeFeedbackFormatType =
-        RingerModeAndScreenMonitor.prefValueToTimeFeedbackFormat(resources, timeFeedbackFormat);
-
-    return switch (timeFeedbackFormatType) {
-      case DateTimeUtils.TIME_FEEDBACK_FORMAT_12_HOURS ->
-          getString(R.string.pref_time_feedback_format_entries_12_hour);
-      case DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS ->
-          getString(R.string.pref_time_feedback_format_entries_24_hour);
-      case DateTimeUtils.TIME_FEEDBACK_FORMAT_UNDEFINED ->
-          getString(R.string.pref_time_feedback_format_entries_default);
-      default -> {
-        LogUtils.w(TAG, "Unexpected time format: %d", timeFeedbackFormat);
-        yield DateFormat.is24HourFormat(getContext())
-            ? getString(R.string.pref_time_feedback_format_entries_24_hour)
-            : getString(R.string.pref_time_feedback_format_entries_12_hour);
-      }
-    };
   }
 
   /**
@@ -200,6 +136,10 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
 
     context = getContext();
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    if (!FormFactorUtils.isAndroidWear()) {
+      PreferenceSettingsUtils.hidePreference(
+          context, getPreferenceScreen(), R.string.pref_reserve_vibration_watch_gestures_key);
+    }
 
     // During setup, do not allow user access below settings.
     if (!SettingsUtils.allowLinksOutOfSettings(context)) {

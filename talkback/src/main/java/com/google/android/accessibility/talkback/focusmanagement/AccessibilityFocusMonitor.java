@@ -99,8 +99,23 @@ public class AccessibilityFocusMonitor {
    */
   public @Nullable AccessibilityNodeInfoCompat getAccessibilityFocus(
       boolean useInputFocusIfEmpty, boolean requireEditable) {
+    return getAccessibilityFocus(useInputFocusIfEmpty, requireEditable, /* isCurrent= */ null);
+  }
+
+  /**
+   * Same as {@link #getAccessibilityFocus(boolean, boolean)}, except that Android's cached copy of
+   * the accessibility-focused node is taken as it is, without asking the app whether the node is
+   * still there, when {@code isCurrent} accepts the copy.
+   */
+  public @Nullable AccessibilityNodeInfoCompat getAccessibilityFocus(
+      boolean useInputFocusIfEmpty,
+      boolean requireEditable,
+      @Nullable Filter<AccessibilityNodeInfoCompat> isCurrent) {
     // First, see if we've already placed accessibility focus.
-    AccessibilityNodeInfoCompat a11yFocusedNode = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);
+    AccessibilityNodeInfoCompat a11yFocusedNode =
+        (isCurrent == null)
+            ? focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY)
+            : focusFinder.findAccessibilityFocus(isCurrent);
 
     if ((a11yFocusedNode != null) && AccessibilityNodeInfoUtils.isVisible(a11yFocusedNode)) {
       return a11yFocusedNode;

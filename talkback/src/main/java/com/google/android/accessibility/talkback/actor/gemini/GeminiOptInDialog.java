@@ -71,17 +71,18 @@ public abstract class GeminiOptInDialog extends BaseDialog {
 
     TextView textView = root.findViewById(R.id.ai_descriptiog_promotion_dialog_message);
     if (dialogMessageResId != -1 && textView != null) {
-      String tos = context.getString(R.string.dialog_message_gen_ai_tos_link);
+      String tos = GeminiFunctionUtils.termsLinkText(context, dialogMessageResId);
       String rawText = context.getString(dialogMessageResId, tos);
       SpannableString text = new SpannableString(rawText);
       int spanIndexStart = rawText.indexOf(tos);
       if (spanIndexStart >= 0) {
         text.setSpan(
-            GeminiFunctionUtils.createClickableSpanForGeminiTOS(
+            GeminiFunctionUtils.createClickableSpanForTerms(
                 context,
                 this,
                 DimScreenActor.isDimScreenEnabled(
-                    context, SharedPreferencesUtils.getSharedPreferences(context))),
+                    context, SharedPreferencesUtils.getSharedPreferences(context)),
+                dialogMessageResId),
             spanIndexStart,
             spanIndexStart + tos.length(),
             0);

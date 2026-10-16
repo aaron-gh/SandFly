@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the screen of sound themes: sets of sounds, vibrations and settings that replace Backtalk's own. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_themes">Sound themes</string>
+    <!-- Summary of the entry that opens the sound themes screen. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_themes">Install and choose sets of sounds and vibrations, replace single sounds with your own, and turn on control sounds and vibrations and 3D audio.</string>
+    <!-- Sound themes: heading above the installed themes. [CHAR LIMIT=50] -->
+    <string name="sound_themes_installed_category">Installed themes</string>
+    <!-- Sound themes: name of the theme of Backtalk's own sounds and vibrations. [CHAR LIMIT=50] -->
+    <string name="sound_theme_backtalk">Backtalk</string>
+    <!-- Sound themes: description of the theme of Backtalk's own sounds and vibrations. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_backtalk_description">Backtalk\'s own sounds and vibrations, and any sounds of your own.</string>
+    <!-- Sound themes: said of the theme that is in use. [CHAR LIMIT=50] -->
+    <string name="sound_theme_in_use">In use</string>
+    <!-- Sound themes: who made a theme, such as "By Bryan Smart". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_by">By <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <!-- Sound themes: the license of a theme's sounds, such as "License: GPL-2.0". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_license">License: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <!-- Sound themes: how many sounds a theme has. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sound.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> sounds.</item>
+    </plurals>
+    <!-- Sound themes: how many vibrations a theme has, after how many sounds. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibration.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibrations.</item>
+    </plurals>
+    <!-- Sound themes: said of a theme that turns control sounds and vibrations on. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_control_sounds_on">Turns control sounds and vibrations on.</string>
+    <!-- Sound themes: said of a theme that turns control sounds and vibrations off. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_control_sounds_off">Turns control sounds and vibrations off.</string>
+
+    <!-- Sound themes: choice that puts a theme in use. [CHAR LIMIT=50] -->
+    <string name="sound_theme_use">Use this theme</string>
+    <!-- Sound themes: choice that tells who made a theme and what it has. [CHAR LIMIT=50] -->
+    <string name="sound_theme_about">About this theme</string>
+    <!-- Sound themes: choice that saves a theme as a theme file. [CHAR LIMIT=50] -->
+    <string name="sound_theme_export">Save as a theme file</string>
+    <!-- Sound themes: choice that removes an installed theme. [CHAR LIMIT=50] -->
+    <string name="sound_theme_remove">Remove</string>
+    <!-- Sound themes: question before removing a theme. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_remove_confirm">Remove the theme <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <!-- Sound themes: button that removes a theme. [CHAR LIMIT=30] -->
+    <string name="sound_theme_remove_button">Remove</string>
+    <!-- Sound themes: message after saving a theme file. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Saved the theme, with <xliff:g id="count" example="1">%d</xliff:g> sound.</item>
+        <item quantity="other">Saved the theme, with <xliff:g id="count" example="13">%d</xliff:g> sounds.</item>
+    </plurals>
+    <!-- Sound themes: message when a theme file could not be saved. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_export_failed">Backtalk couldn\'t save the theme file.</string>
+    <!-- Sound themes: message when there is no app to choose or save files with. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_no_picker">There is no app on this device to choose files with.</string>
+
+    <!-- Sound themes: heading above the settings that each theme has its own of, such as "Settings of Unspoken". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_settings_category">Settings of <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <!-- Sound themes: entry that opens the sounds of the theme in use. [CHAR LIMIT=50] -->
+    <string name="title_pref_theme_sounds">Sounds</string>
+    <!-- Sound themes: summary of the entry that opens the sounds of the theme in use. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_theme_sounds">Replace any sound of this theme with a sound file of your own.</string>
+
+    <!-- Sound themes: heading above the ways to install a theme. [CHAR LIMIT=50] -->
+    <string name="sound_themes_install_category">Install a theme</string>
+    <!-- Sound themes: entry that installs a theme from a file. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_theme_install_file">From a file</string>
+    <!-- Sound themes: summary of the entry that installs a theme from a file. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_theme_install_file">A theme file is a ZIP file. You can also open one, or share it, with Backtalk from another app.</string>
+    <!-- Sound themes: entry that installs a theme from a link. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_theme_install_link">From a link</string>
+    <!-- Sound themes: summary of the entry that installs a theme from a link. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_theme_install_link">A link to a theme file, or to a GitHub repository with a theme in it. You can also share a link with Backtalk from your browser.</string>
+    <!-- Sound themes: explanation in the dialog for installing a theme from a link. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_link_message">Enter or paste a link to a theme file, or to a GitHub repository with a theme in it.</string>
+    <!-- Sound themes: hint in the field for the link to a theme. [CHAR LIMIT=50] -->
+    <string name="sound_theme_link_hint">https://</string>
+
+    <!-- Sound themes: name of the screen that installs themes, shown when opening or sharing a file with Backtalk. [CHAR LIMIT=40] -->
+    <string name="sound_theme_install_label">Install sound theme</string>
+    <!-- Sound themes: said while a theme file is read or downloaded. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_reading">Reading the sound theme</string>
+    <!-- Sound themes: title of the question before installing a theme, such as "Install Unspoken?". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_title">Install <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <!-- Sound themes: button that installs a theme and puts it in use. [CHAR LIMIT=30] -->
+    <string name="sound_theme_install_and_use">Install and use</string>
+    <!-- Sound themes: button that installs a theme without putting it in use. [CHAR LIMIT=30] -->
+    <string name="sound_theme_install">Install</string>
+    <!-- Sound themes: said before installing a theme that replaces one of the same name. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_replaces">This replaces the installed theme of the same name.</string>
+    <!-- Sound themes: list of the files of a theme that are left out, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_skipped">Left out:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <!-- Sound themes: message after installing a theme. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_installed">Installed <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <!-- Sound themes: message after installing a theme and putting it in use. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_installed_in_use">Installed <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. It is in use now.</string>
+    <!-- Sound themes: message when the installer was opened without a file or link. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_nothing">There is no sound theme to install.</string>
+    <!-- Sound themes: message when a file is not a sound theme, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_not_a_theme">This is not a sound theme Backtalk can use: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <!-- Sound themes: message when a theme cannot be read, downloaded or installed, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_failed">Backtalk couldn\'t install the sound theme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <!-- Sound themes: why a link cannot be used. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_https_only">Links to sound themes must start with https.</string>
+
+    <!-- Theme sounds: title of the screen of the sounds of the theme in use, such as "Sounds of Unspoken". [CHAR LIMIT=NONE] -->
+    <string name="title_pref_theme_sounds_of">Sounds of <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <!-- Theme sounds: entry that goes back to Backtalk's own sounds in the theme in use. [CHAR LIMIT=50] -->
+    <string name="title_pref_theme_sounds_reset">Use Backtalk\'s sounds for all</string>
+    <!-- Theme sounds: question before removing every sound of the theme in use. [CHAR LIMIT=NONE] -->
+    <string name="theme_sounds_reset_confirm">Remove all the sounds of this theme and use Backtalk\'s own?</string>
+    <!-- Theme sounds: button that removes every sound of the theme in use. [CHAR LIMIT=30] -->
+    <string name="theme_sounds_reset_button">Remove</string>
+    <!-- Theme sounds: heading above the list of sounds. [CHAR LIMIT=40] -->
+    <string name="theme_sounds_category">Sounds</string>
+    <!-- Theme sounds: summary of a sound that plays Backtalk's own sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_default">Backtalk\'s sound</string>
+    <!-- Theme sounds: summary of a sound the theme replaces. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_custom">Theme sound</string>
+    <!-- Theme sounds: summary of a control sound, which Backtalk has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_summary_none">No sound. The focus sound plays.</string>
+    <!-- Theme sounds: summary of a braille keyboard typing sound that plays Android's keyboard sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_android_keyboard">Android\'s keyboard sound</string>
+    <!-- Theme sounds: choice that goes back to Android's keyboard sound for a braille keyboard typing sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_use_android_keyboard">Use Android\'s keyboard sound</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a character is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_character">Braille keyboard: typing a character</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a space is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_space">Braille keyboard: space</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when deleting. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_delete">Braille keyboard: delete</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a new line is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_new_line">Braille keyboard: new line</string>
+    <!-- Theme sounds: title of the choices for one sound, with the name its file has in a theme, such as "Click (tick)". [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <!-- Theme sounds: choice that opens the file picker to choose a sound file. [CHAR LIMIT=50] -->
+    <string name="theme_sound_choose">Choose a sound file</string>
+    <!-- Theme sounds: choice that plays the sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_preview">Preview</string>
+    <!-- Theme sounds: choice that goes back to Backtalk's own sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_use_default">Use Backtalk\'s sound</string>
+    <!-- Theme sounds: choice that removes the file of a control sound, which Backtalk has no sound for. [CHAR LIMIT=50] -->
+    <string name="theme_sound_remove">Remove the sound</string>
+    <!-- Theme sounds: message when the chosen file is too large. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_too_large">That file is too large. A sound can be up to 5 MB.</string>
+    <!-- Theme sounds: message when the chosen file cannot be played. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_not_audio">Backtalk can\'t play that file. Choose a WAV, OGG, MP3 or FLAC sound.</string>
+    <!-- Theme sounds: message when the chosen file cannot be read. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_failed">Backtalk couldn\'t read that file.</string>
+</resources>

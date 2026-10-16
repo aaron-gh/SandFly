@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the settings screen that lists installed scripts. [CHAR LIMIT=40] -->
+    <string name="title_pref_scripts">Scripts</string>
+    <!-- Summary of the Scripts settings entry. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_scripts">Change how Backtalk works in apps</string>
+    <!-- Action that imports a script file. [CHAR LIMIT=40] -->
+    <string name="script_import">Import script</string>
+    <!-- Name of the action in other apps' share and open menus that installs a script in Backtalk. [CHAR LIMIT=40] -->
+    <string name="script_install_label">Install Backtalk script</string>
+    <!-- Shown when something was shared to Backtalk to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
+    <string name="script_import_nothing">There\'s no script file to install.</string>
+    <!-- The reason a shared script couldn't be installed, when its file couldn't be opened. [CHAR LIMIT=NONE] -->
+    <string name="script_import_cannot_open">The file could not be opened.</string>
+    <!-- Shown when a link to a whole GitHub repository was shared to Backtalk to install as a script. [CHAR LIMIT=NONE] -->
+    <string name="script_import_repository">This link is to a whole repository. Open the script you want, then share its link.</string>
+    <!-- Summary of the import action. [CHAR LIMIT=NONE] -->
+    <string name="script_import_summary">.js file, or .zip with main.js</string>
+    <!-- Heading of the list of scripts that run in particular apps. [CHAR LIMIT=40] -->
+    <string name="scripts_category_app">App scripts</string>
+    <!-- Heading of the list of scripts that run in every app. [CHAR LIMIT=40] -->
+    <string name="scripts_category_global">Global plugins</string>
+    <!-- Shown when no scripts are installed. [CHAR LIMIT=NONE] -->
+    <string name="scripts_none">No scripts installed</string>
+    <!-- Switch that turns every script off at once without changing which ones are on. [CHAR LIMIT=40] -->
+    <string name="scripts_all_off">Turn off all scripts</string>
+    <!-- Summary of the switch that turns every script off. [CHAR LIMIT=NONE] -->
+    <string name="scripts_all_off_summary">Scripts stay installed and keep their own switches. The Turn all scripts on or off gesture does the same.</string>
+    <!-- Gesture and keyboard action that turns every script off, or back on. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_toggle_scripts">Turn all scripts on or off</string>
+    <!-- Spoken when every script was turned off. [CHAR LIMIT=NONE] -->
+    <string name="scripts_now_off">Scripts off</string>
+    <!-- Spoken when scripts were turned back on. [CHAR LIMIT=NONE] -->
+    <string name="scripts_now_on">Scripts on</string>
+    <!-- Spoken when this device cannot run scripts. [CHAR LIMIT=NONE] -->
+    <string name="scripts_unavailable">Scripts are not available on this device</string>
+    <!-- Button that adds the example script that comes with Backtalk. [CHAR LIMIT=40] -->
+    <string name="script_add_example">Add the example script</string>
+    <!-- Summary of the button that adds the example script. [CHAR LIMIT=NONE] -->
+    <string name="script_add_example_summary">Says the name of each app you switch to. A script to start from.</string>
+    <!-- A script is turned on. [CHAR LIMIT=20] -->
+    <string name="script_state_on">On</string>
+    <!-- A script is turned off. [CHAR LIMIT=20] -->
+    <string name="script_state_off">Off</string>
+    <!-- Which apps a script runs in. [CHAR LIMIT=NONE] -->
+    <string name="script_runs_in">Runs in <xliff:g id="apps">%1$s</xliff:g></string>
+    <!-- A global plugin runs in every app. [CHAR LIMIT=NONE] -->
+    <string name="script_runs_everywhere">Runs in all apps</string>
+    <!-- A script's version. [CHAR LIMIT=NONE] -->
+    <string name="script_version">Version <xliff:g id="version">%1$s</xliff:g></string>
+    <!-- Who wrote a script. [CHAR LIMIT=NONE] -->
+    <string name="script_author">By <xliff:g id="author">%1$s</xliff:g></string>
+
+    <!-- Title of the dialog that asks to install a script. [CHAR LIMIT=NONE] -->
+    <string name="script_install_title">Install <xliff:g id="name">%1$s</xliff:g>?</string>
+    <!-- In the install dialog, before the list of what the script may do. [CHAR LIMIT=NONE] -->
+    <string name="script_install_can">It can:</string>
+    <!-- In the install dialog, for a script that asks for no permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_install_no_permissions">No permissions needed.</string>
+    <!-- Button that installs a script. [CHAR LIMIT=20] -->
+    <string name="script_install_button">Install</string>
+    <!-- Title of the dialog that asks to update a script that asks for more permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_update_title">Update <xliff:g id="name">%1$s</xliff:g> to <xliff:g id="version">%2$s</xliff:g>?</string>
+    <!-- In the update dialog, before the new permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_update_new_permissions">New permissions:</string>
+    <!-- Button that updates a script. [CHAR LIMIT=20] -->
+    <string name="script_update_button">Update</string>
+    <!-- Says which installed script an import replaces. [CHAR LIMIT=NONE] -->
+    <string name="script_update_replaces">This replaces version <xliff:g id="version">%1$s</xliff:g> by <xliff:g id="author">%2$s</xliff:g>, and keeps its data and settings.</string>
+    <!-- Warns that an import replaces a script by someone else. [CHAR LIMIT=NONE] -->
+    <string name="script_update_other_author">The new one is by <xliff:g id="author">%1$s</xliff:g>, a different author. Update only if you trust it.</string>
+    <!-- Shown after a script is installed. [CHAR LIMIT=NONE] -->
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installed</string>
+    <!-- Shown after a script is updated. [CHAR LIMIT=NONE] -->
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> updated to <xliff:g id="version">%2$s</xliff:g></string>
+    <!-- Shown when a script file cannot be imported. [CHAR LIMIT=NONE] -->
+    <string name="script_import_failed">Import failed. <xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- Marks a permission that gives a script a lot of access. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Allow only for trusted scripts.</string>
+
+    <!-- What the screen permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_screen">Read the screen</string>
+    <!-- What the actions permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_actions">Click, scroll, type and move focus</string>
+    <!-- What the speech permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_speech">Hear and change Backtalk\'s speech</string>
+    <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_passwords">Read password fields</string>
+    <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_input">Add gestures, keys, menu items and reading controls</string>
+    <!-- What the network permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_network">Use the internet</string>
+    <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_clipboard">Read and change the clipboard</string>
+    <!-- What the system permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_system">Go back or home, open notifications and apps</string>
+    <!-- What the notifications permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_notifications">Read and change spoken notifications</string>
+    <!-- What the events permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_events">See all activity in every app, including typing</string>
+    <!-- What the dialogs permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_dialogs">Show dialogs over any app</string>
+    <!-- Title of a dialog a script shows, so that it is clear the dialog is the script's and not the app's or the system's. [CHAR LIMIT=NONE] -->
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+
+    <!-- Switch that turns a script on. [CHAR LIMIT=40] -->
+    <string name="script_enabled">Turn on</string>
+    <!-- Heading of a script's permissions. [CHAR LIMIT=40] -->
+    <string name="script_permissions_title">Permissions</string>
+    <!-- A script has no permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_permissions_none">None</string>
+    <!-- Heading of the settings a script declares, and the entry that opens them. [CHAR LIMIT=40] -->
+    <string name="script_settings_category">Settings</string>
+    <!-- Hint of the field that filters the options of a list setting. [CHAR LIMIT=40] -->
+    <string name="script_list_filter">Filter</string>
+    <!-- Shown when a button in a script's settings is pressed while the script is turned off. [CHAR LIMIT=NONE] -->
+    <string name="script_button_off">Turn the script on first</string>
+    <!-- Explains the permission switches on a script's page. [CHAR LIMIT=NONE] -->
+    <string name="script_permissions_summary">Turning one off stops the parts that need it.</string>
+    <!-- In the install dialog, after the permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_install_permissions_note">You can turn these off later.</string>
+    <!-- Heading of a script's management actions. [CHAR LIMIT=40] -->
+    <string name="script_manage_category">Manage</string>
+    <!-- Moves a script earlier in the running order. [CHAR LIMIT=40] -->
+    <string name="script_move_up">Run earlier</string>
+    <!-- Moves a script later in the running order. [CHAR LIMIT=40] -->
+    <string name="script_move_down">Run later</string>
+    <!-- Explains the running order. [CHAR LIMIT=NONE] -->
+    <string name="script_order_summary">Order for scripts that change the same speech. App scripts run first.</string>
+    <!-- Opens a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log">Log</string>
+    <!-- Summary of the log entry. [CHAR LIMIT=NONE] -->
+    <string name="script_log_summary">Output and errors since Backtalk started</string>
+    <!-- Deletes the data a script stored. [CHAR LIMIT=40] -->
+    <string name="script_clear_storage">Clear stored data</string>
+    <!-- Shown after a script's data is deleted. [CHAR LIMIT=NONE] -->
+    <string name="script_storage_cleared">Stored data cleared</string>
+    <!-- Removes a script. [CHAR LIMIT=40] -->
+    <string name="script_remove">Remove</string>
+    <!-- Title of the dialog that asks to remove a script. [CHAR LIMIT=NONE] -->
+    <string name="script_remove_title">Remove <xliff:g id="name">%1$s</xliff:g>?</string>
+    <!-- Message of the dialog that asks to remove a script. [CHAR LIMIT=NONE] -->
+    <string name="script_remove_message">Deletes its code, data and settings.</string>
+    <!-- Shown after a script is removed. [CHAR LIMIT=NONE] -->
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> removed</string>
+    <!-- Shown when a script's log is empty. [CHAR LIMIT=NONE] -->
+    <string name="script_log_empty">Log is empty</string>
+    <!-- Deletes a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log_clear">Clear log</string>
+    <!-- Copies a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log_copy">Copy log</string>
+    <!-- Shown after a script's log is copied. [CHAR LIMIT=NONE] -->
+    <string name="script_log_copied">Log copied</string>
+    <!-- One log entry: its time, level, and message. [CHAR LIMIT=NONE] -->
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+
+    <!-- Warning for a script that needs a newer Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="script_api_too_old">Needs script API <xliff:g id="needed">%1$d</xliff:g> or later. This Backtalk has <xliff:g id="current">%2$d</xliff:g>, so parts may not work.</string>
+    <!-- Warning for a script that was not tested with this Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="script_api_untested">Tested up to script API <xliff:g id="tested">%1$d</xliff:g>. This Backtalk has <xliff:g id="current">%2$d</xliff:g>, so it may not work as expected.</string>
+    <!-- In the list of scripts, for a script that may not work with this Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="script_state_incompatible">May not work with this Backtalk</string>
+    <!-- The script API versions a script was tested with. [CHAR LIMIT=NONE] -->
+    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> to <xliff:g id="tested">%2$d</xliff:g></string>
+    <!-- Heading of the warning on a script's page that it may not work. [CHAR LIMIT=40] -->
+    <string name="script_compatibility_title">Compatibility</string>
+    <!-- Button that installs a script that may not work with this Backtalk. [CHAR LIMIT=20] -->
+    <string name="script_install_anyway">Install anyway</string>
+    <!-- Button that updates a script that may not work with this Backtalk. [CHAR LIMIT=20] -->
+    <string name="script_update_anyway">Update anyway</string>
+    <!-- Opens a script's homepage. [CHAR LIMIT=40] -->
+    <string name="script_homepage">Open homepage</string>
+    <!-- Title of the dialog that asks before opening a script's homepage, whose address is the message. [CHAR LIMIT=NONE] -->
+    <string name="script_homepage_confirm_title">Open this address?</string>
+    <!-- Button that opens a script's homepage. [CHAR LIMIT=20] -->
+    <string name="script_homepage_open">Open</string>
+    <!-- Shown when no app can open a script's homepage. [CHAR LIMIT=NONE] -->
+    <string name="script_homepage_failed">No app can open <xliff:g id="address">%1$s</xliff:g></string>
+
+    <!-- Spoken when a script is turned off because it kept failing. [CHAR LIMIT=NONE] -->
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> turned off after repeated errors. See its log in Scripts.</string>
+
+    <!-- Gesture action that describes the focused item for writing scripts. [CHAR LIMIT=40] -->
+    <string name="shortcut_inspect_item">Inspect focused item</string>
+    <!-- Spoken when no item has focus to inspect. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_no_item">No item has focus</string>
+    <!-- Spoken with the details of the focused item, after they are copied. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_copied">Copied. <xliff:g id="details">%1$s</xliff:g></string>
+    <!-- Spoken with the details of a focused item that has no id. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_no_id">No id, so rules can\'t name it. Copied. <xliff:g id="details">%1$s</xliff:g></string>
+    <!-- Gesture action and menu item that copies the items on screen as JSON, for writing scripts. [CHAR LIMIT=40] -->
+    <string name="shortcut_copy_screen_tree">Copy screen tree</string>
+    <!-- Spoken after the items on screen are copied. [CHAR LIMIT=NONE] -->
+    <string name="script_tree_copied">Copied <xliff:g id="count">%1$d</xliff:g> items</string>
+    <!-- Spoken when there is no window to copy. [CHAR LIMIT=NONE] -->
+    <string name="script_tree_none">No window to copy</string>
+    <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
+    <string name="script_tree_clip_label">Screen tree</string>
+    <!-- Summary of the option that shows Copy screen tree in the Backtalk menu. [CHAR LIMIT=NONE] -->
+    <string name="summary_copy_screen_tree_menu">Copy all items on screen as JSON, for writing scripts</string>
+    <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
+    <string name="script_inspect_clip_label">Item details</string>
+    <!-- Summary of the option that shows Inspect focused item in the Backtalk menu. [CHAR LIMIT=NONE] -->
+    <string name="summary_inspect_item_menu">Say and copy details of the item you were on, for writing scripts</string>
+
+    <!-- In a script's keyboard shortcut, the key Backtalk's shortcuts are pressed with. [CHAR LIMIT=40] -->
+    <string name="script_keys_backtalk_modifier">Backtalk modifier</string>
+    <!-- Keys pressed one after the other, such as "Backtalk modifier+T, then S". [CHAR LIMIT=NONE] -->
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, then <xliff:g id="second">%2$s</xliff:g></string>
+    <!-- Heading of the gestures, keys, menu items and reading controls a script adds. [CHAR LIMIT=40] -->
+    <string name="script_commands_category">Commands</string>
+    <!-- Explains the switches under Commands on a script's page. [CHAR LIMIT=NONE] -->
+    <string name="script_commands_summary">Gestures and keys of a running script come before Backtalk\'s. Turn one off to keep Backtalk\'s.</string>
+    <!-- A gesture that runs a script's command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_gesture">Gesture: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <!-- Keys that run a script's command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_keys">Keys: <xliff:g id="keys">%1$s</xliff:g></string>
+    <!-- A script's command is an item in the Backtalk menu. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_menu">Backtalk menu</string>
+    <!-- A script's command is a reading control. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_control">Reading controls</string>
+    <!-- Summary of a command that has no way to run it. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_none">None</string>
+    <!-- Turns on a gesture, keys, menu item or reading control of a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_turn_on">Turn on</string>
+    <!-- Turns off a gesture, keys, menu item or reading control of a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_turn_off">Turn off</string>
+    <!-- Brings back the gestures and keys a command came with, removed or turned off. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_restore">Restore defaults</string>
+    <!-- Shown after a command's default gestures and keys are restored. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_restored">Defaults restored</string>
+    <!-- Action that assigns the next gesture or keys the user performs to a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_perform">Perform gesture or keys</string>
+    <!-- Summary of the action that assigns the next gesture or keys. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_perform_summary">Assign the next gesture, or keys pressed with the Backtalk modifier</string>
+    <!-- Message while waiting for the gesture or keys to assign. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_perform_message">Make the gesture or press the keys.</string>
+    <!-- Title of the dialog that asks to assign a gesture or keys to a command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_assign_title">Assign <xliff:g id="binding">%1$s</xliff:g> to <xliff:g id="command">%2$s</xliff:g>?</string>
+    <!-- Button that assigns a gesture or keys to a command. [CHAR LIMIT=20] -->
+    <string name="script_binding_assign">Assign</string>
+    <!-- Action that chooses a gesture for a command from a list. [CHAR LIMIT=40] -->
+    <string name="script_binding_choose_gesture">Choose gesture</string>
+    <!-- Action that types keys for a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_type_keys">Type keys</string>
+    <!-- How to type keys for a command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_type_keys_summary">Like backtalk+shift+n, or backtalk+t, s</string>
+    <!-- Shown when typed keys cannot be used. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_bad_keys">Can\'t use these keys. <xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- In the install dialog, before the commands a script adds. [CHAR LIMIT=NONE] -->
+    <string name="script_install_adds">It adds:</string>
+    <!-- One command a script adds, and how it is run, in the install dialog. [CHAR LIMIT=NONE] -->
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+
+    <!-- Title of the screen, and the entry on the Scripts screen, for the places to find scripts. [CHAR LIMIT=40] -->
+    <string name="script_sources">Script sources</string>
+    <!-- Shown when no script sources have been added. [CHAR LIMIT=NONE] -->
+    <string name="script_sources_none">No sources added</string>
+    <!-- Action and title of the dialog that adds a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_add">Add source</string>
+    <!-- Button of the dialog that adds a script source. [CHAR LIMIT=20] -->
+    <string name="script_source_add_button">Add</string>
+    <!-- Hint of the field for the address of a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <!-- Shown when the address entered for a script source is not a repository or folder on a supported service. [CHAR LIMIT=NONE] -->
+    <string name="script_source_invalid">Not the address of a repository on GitHub, GitLab, Codeberg, Gitea or Bitbucket.</string>
+    <!-- Shown when the script source being added is already in the list. [CHAR LIMIT=NONE] -->
+    <string name="script_source_exists">This source is already added.</string>
+    <!-- Shown while the scripts of a source are loading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_loading">Loading</string>
+    <!-- Shown when a source has no scripts. [CHAR LIMIT=NONE] -->
+    <string name="script_source_empty">No scripts in this source</string>
+    <!-- Shown when the scripts of a source could not be loaded. [CHAR LIMIT=NONE] -->
+    <string name="script_source_failed">Could not load scripts. <xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- Action that loads the scripts of a source again. [CHAR LIMIT=40] -->
+    <string name="script_source_retry">Try again</string>
+    <!-- Shown while a script from a source is downloading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_downloading">Downloading <xliff:g id="name">%1$s</xliff:g></string>
+    <!-- Action and button that remove a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_remove">Remove source</string>
+    <!-- Title of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_title">Remove <xliff:g id="name">%1$s</xliff:g>?</string>
+    <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_message">Scripts installed from it stay installed.</string>
+</resources>

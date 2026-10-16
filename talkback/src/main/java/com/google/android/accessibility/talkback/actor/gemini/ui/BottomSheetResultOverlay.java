@@ -16,13 +16,10 @@
 
 package com.google.android.accessibility.talkback.actor.gemini.ui;
 
-import static android.widget.Toast.LENGTH_SHORT;
-import static com.google.android.accessibility.talkback.actor.gemini.ui.screenqa.ErrorMessagesKt.getErrorMessage;
 import static com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType.IMAGE_DESCRIPTION;
 
 import android.content.Context;
 import android.view.WindowManager.LayoutParams;
-import android.widget.Toast;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.Feedback.ScreenOverviewResult;
 import com.google.android.accessibility.talkback.Pipeline;
@@ -131,8 +128,6 @@ public class BottomSheetResultOverlay {
             /* iconLabelResult= */ null,
             /* ocrTextResult= */ null,
             /* screenDescription= */ true);
-      } else if (screenOverviewResult.response() instanceof OverviewResponse.Error error) {
-        Toast.makeText(context, getErrorMessage(error), LENGTH_SHORT).show();
       }
     }
   }
@@ -157,8 +152,6 @@ public class BottomSheetResultOverlay {
         return;
       }
       screenQAChatController.onScreenQueryAnswer(answer);
-    } else if (screenOverviewResult.response() instanceof OverviewResponse.Error error) {
-      Toast.makeText(context, getErrorMessage(error), LENGTH_SHORT).show();
     }
   }
 }

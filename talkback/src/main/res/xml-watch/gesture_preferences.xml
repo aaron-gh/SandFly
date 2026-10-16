@@ -9,6 +9,13 @@
       android:title="@string/reset_gesture_settings_title"
       android:key="@string/pref_reset_gesture_settings_key"
       app:allowDividerBelow="true"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:key="@string/pref_gesture_set_key"
+      android:title="@string/pref_gesture_set_key_title"
+      android:summary="%s"
+      android:defaultValue="@string/pref_gesture_set_value_default"
+      android:entries="@array/pref_gesture_set_entries"
+      android:entryValues="@array/pref_gesture_set_values" />
   <!-- One finger gestures -->
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_1finger_shortcuts_key"
@@ -133,6 +140,49 @@
         android:key="@string/pref_shortcut_2finger_3tap_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_2finger_3tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_3tap_hold_default"
+        android:key="@string/pref_shortcut_2finger_3tap_hold_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_3tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_swipe_up_default"
+        android:key="@string/pref_shortcut_2finger_swipe_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_swipe_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_swipe_down_default"
+        android:key="@string/pref_shortcut_2finger_swipe_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_swipe_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_swipe_left_default"
+        android:key="@string/pref_shortcut_2finger_swipe_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_swipe_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_swipe_right_default"
+        android:key="@string/pref_shortcut_2finger_swipe_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_swipe_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_rotate_clockwise_default"
+        android:key="@string/pref_shortcut_2finger_rotate_clockwise_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_rotate_clockwise"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_rotate_counterclockwise_default"
+        android:key="@string/pref_shortcut_2finger_rotate_counterclockwise_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_rotate_counterclockwise"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_rotor_step_degrees_default"
+        android:dialogTitle="@string/title_pref_rotor_step_degrees"
+        android:entries="@array/pref_rotor_step_degrees_entries"
+        android:entryValues="@array/pref_rotor_step_degrees_values"
+        android:key="@string/pref_rotor_step_degrees_key"
+        android:summary="%s"
+        android:title="@string/title_pref_rotor_step_degrees" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
 </PreferenceScreen>

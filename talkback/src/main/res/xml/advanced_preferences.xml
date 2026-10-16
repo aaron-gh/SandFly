@@ -2,14 +2,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-      android:key="@string/pref_category_controls_key"
-      android:title="@string/title_pref_category_controls" >
+      android:key="@string/pref_category_controls_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_category_latency_reduction_shortcut_key"
         android:title="@string/title_pref_latency_reduction"
         android:summary="@string/talkback_latency_reduction_summary"
         android:fragment="com.google.android.accessibility.talkback.preference.base.TalkBackLatencyReductionPreferenceFragment" >
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="@string/pref_reserve_vibration_watch_gestures_key"
+        android:title="@string/title_pref_reserve_vibration_watch_gestures"
+        android:summary="@string/summary_pref_reserve_vibration_watch_gestures" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_lift_to_activate_default"
         android:dialogTitle="@string/title_pref_lift_to_activate"
@@ -18,15 +22,25 @@
         android:key="@string/pref_lift_to_activate_key"
         android:summary="%s"
         android:title="@string/title_pref_lift_to_activate" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_scripts_key"
+        android:title="@string/title_pref_scripts"
+        android:summary="@string/summary_pref_scripts"
+        android:fragment="com.google.android.accessibility.talkback.scripting.ScriptsFragment" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_proximity_default"
-        android:key="@string/pref_proximity_key"
-        android:title="@string/title_pref_cover_proximity_sensor" />
+        android:defaultValue="true"
+        android:key="pref_speak_nav_bar_buttons"
+        android:summary="@string/summary_pref_speak_nav_bar_buttons"
+        android:title="@string/title_pref_speak_nav_bar_buttons" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="false"
-        android:key="@string/pref_speakerphone_away_from_ear_key"
-        android:title="@string/title_pref_speakerphone_away_from_ear"
-        android:summary="@string/summary_pref_speakerphone_away_from_ear" />
+        android:defaultValue="@bool/pref_wrap_around_default"
+        android:key="@string/pref_wrap_around_key"
+        android:summary="@string/summary_pref_wrap_around"
+        android:title="@string/title_pref_wrap_around" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
+        android:key="pref_speech_control_screen"
+        android:title="@string/title_pref_speech_control" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_manage_labels_key"
         android:title="@string/title_pref_manage_labels" >
@@ -39,23 +53,6 @@
         android:key="@string/pref_single_tap_key"
         android:summary="@string/summary_pref_single_tap"
         android:title="@string/title_pref_single_tap" />
-    <!-- Description order -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_node_desc_order_default"
-        android:dialogTitle="@string/pref_node_desc_order_title"
-        android:entries="@array/pref_node_desc_order_entries"
-        android:entryValues="@array/pref_node_desc_order_values"
-        android:key="@string/pref_node_desc_order_key"
-        android:summary="%s"
-        android:title="@string/pref_node_desc_order_title" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_time_feedback_format_default"
-        android:dialogTitle="@string/pref_time_feedback_format_title"
-        android:entries="@array/pref_time_feedback_format_entries"
-        android:entryValues="@array/pref_time_feedback_format_values"
-        android:key="@string/pref_time_feedback_format_key"
-        android:summary="%s"
-        android:title="@string/pref_time_feedback_format_title"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_resume_backtalk_default"
         android:dialogTitle="@string/title_pref_resume_backtalk"
@@ -64,11 +61,6 @@
         android:key="@string/pref_resume_backtalk_key"
         android:summary="%s"
         android:title="@string/title_pref_resume_backtalk"/>
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_reduce_window_delay_default"
-        android:key="@string/pref_reduce_window_delay_key"
-        android:summary="@string/pref_reduce_window_delay_summary"
-        android:title="@string/pref_reduce_window_delay_title"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_auto_enter_table_navigation_default"
         android:key="@string/pref_auto_enter_table_navigation_key"

@@ -47,6 +47,7 @@ import com.google.android.accessibility.brailleime.BrailleImeGestureAction;
 import com.google.android.accessibility.brailleime.BrailleImeGestureController;
 import com.google.android.accessibility.brailleime.BrailleImeLog;
 import com.google.android.accessibility.brailleime.BrailleImeVibrator;
+import com.google.android.accessibility.brailleime.CustomGestureView;
 import com.google.android.accessibility.brailleime.CustomGestureView.CustomGestureCallback;
 import com.google.android.accessibility.brailleime.FeatureFlagReader;
 import com.google.android.accessibility.brailleime.R;
@@ -416,10 +417,11 @@ public class BrailleImeGestureCommandActivity extends PreferencesActivity {
     }
 
     private String getLayoutMode() {
+      CustomGestureView view = keyboardView.getCustomGestureView();
       return getString(
-          keyboardView.getCustomGestureView().isCurrentTableTopMode()
-              ? R.string.tabletop
-              : R.string.screen_away);
+          view.isUprightFacingUser()
+              ? R.string.screen_toward_announcement
+              : view.isCurrentTableTopMode() ? R.string.tabletop : R.string.screen_away);
     }
 
     private final CustomGestureCallback customGestureCallback =

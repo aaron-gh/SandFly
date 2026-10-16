@@ -27,8 +27,10 @@ import static com.google.android.accessibility.talkback.Feedback.Speech.Action.S
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.eventprocessor.EventState.EVENT_SKIP_FOCUS_SYNC_FROM_VIEW_FOCUSED;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
@@ -63,6 +65,8 @@ import com.google.android.accessibility.talkback.contextmenu.radial.RadialMenuCo
 import com.google.android.accessibility.talkback.eventprocessor.EventState;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -78,7 +82,6 @@ import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.widget.DialogUtils;
-import com.google.android.accessibility.utils.widget.NonScrollableListView;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -129,6 +132,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     CONTEXT,
     CUSTOM_ACTION,
     LANGUAGE,
+    VOICE_PROFILE,
   }
 
   public ListMenuManager(
@@ -243,9 +247,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
                   .setQueueMode(SpeechController.QUEUE_MODE_FLUSH_ALL)
                   .setFlags(
                       FeedbackItem.FLAG_NO_HISTORY
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                          | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE)));
+                          | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
       return false;
     }
     if (menuId == CONTEXT) {
@@ -255,8 +257,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     if (menuId == CONTEXT
         && currentDialog != null
         && !SettingsUtils.allowLinksOutOfSettings(service)) {
-      String titleContentDescription =
-          service.getString(R.string.talkback_menu_title_content_description);
+      String titleContentDescription = menuTitleContentDescription();
       if (FormFactorUtils.isAndroidTv()) {
         new Handler(Looper.getMainLooper())
             .post(() -> attachContentDescriptionOnTitle(currentDialog, titleContentDescription));
@@ -265,6 +266,25 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
       }
     }
     return true;
+  }
+
+  /**
+   * The menu title as read in setup, which says to swipe right to explore the menu. If swiping right
+   * no longer moves to the next item, it names the user's gesture for that instead.
+   */
+  private String menuTitleContentDescription() {
+    GestureShortcutMapping mapping = service.getGestureShortcutMapping();
+    if (mapping == null
+        || GestureHints.isAssigned(
+            service,
+            mapping,
+            AccessibilityService.GESTURE_SWIPE_RIGHT,
+            service.getString(R.string.shortcut_value_next))) {
+      return service.getString(R.string.talkback_menu_title_content_description);
+    }
+    return service.getString(R.string.talkback_menu_title)
+        + "\n\n"
+        + GestureHints.actionLine(service, mapping, R.string.shortcut_value_next);
   }
 
   private void prepareMenu(ContextMenu menu, MenuId menuId) {
@@ -287,6 +307,9 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
       // Menu for language switcher
       LanguageMenuProcessor.prepareLanguageMenu(service, pipeline, actorState, menu);
       menu.setTitle(service.getString(R.string.language_options));
+    } else if (menuId == VOICE_PROFILE) {
+      VoiceProfileMenuProcessor.prepareVoiceProfileMenu(service, pipeline, menu);
+      menu.setTitle(service.getString(R.string.title_selector_voice_profile));
     }
   }
 
@@ -516,9 +539,9 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
   }
 
   private View createListView() {
-    if (FormFactorUtils.isAndroidWear()) {
-      return new NonScrollableListView(service);
-    }
+    // Watches also get a list that scrolls. A list that never scrolls relies on the dialog to
+    // scroll, but the dialog gives its custom view a fixed height, so on a Galaxy Watch only the
+    // first two of five items could be reached.
     if (FormFactorUtils.isAndroidTv()) {
       return new RecyclerView(service);
     }
@@ -595,6 +618,16 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
 
   public boolean isMenuShowing() {
     return (currentDialog != null && currentDialog.isShowing()) || radialMenu.isShowing();
+  }
+
+  /**
+   * Moves the circle menu's focus with fingers that were still down when it opened, as after a
+   * double tap and hold. Does nothing if the menu is not open.
+   */
+  public void followHeldTouch(float x, float y, boolean lifted) {
+    if (radialMenu.isShowing()) {
+      radialMenu.followHeldTouch(x, y, lifted);
+    }
   }
 
   /**
@@ -687,8 +720,11 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
 
   @Override
   public void handle(EventInterpretation interpretation, @Nullable EventId eventId) {
-    // Close the circle menu when the screen under it changes.
-    if (radialMenu.isShowing() && interpretation.getMainWindowsChanged()) {
+    // Close the circle menu when the screen under it changes, but not when the menu itself appears,
+    // which comes a moment after it opens and would close it under the user's finger.
+    if (radialMenu.isShowing()
+        && interpretation.getMainWindowsChanged()
+        && !radialMenu.isOwnWindow(interpretation.getEventSourceWindow().getTitle())) {
       dismissAll();
     }
     if (deferredAction != null) {

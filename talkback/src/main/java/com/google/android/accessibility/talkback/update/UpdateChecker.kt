@@ -21,6 +21,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.migration.AppIdMove
+import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.IOException
 import java.net.HttpURLConnection
@@ -62,7 +63,10 @@ object UpdateChecker {
   /** The pre-release for the app ID fyi.quin.backtalk. */
   const val NEW_CHANNEL = "dev"
 
-  private const val APK_NAME = "backtalk.apk"
+  /** The phone build, which is also what builds before the watch build was published look for. */
+  @VisibleForTesting const val PHONE_APK_NAME = "backtalk.apk"
+  /** The watch build, so that a watch never installs the phone app. */
+  @VisibleForTesting const val WATCH_APK_NAME = "backtalk-wear.apk"
   private const val SHORT_HASH_LENGTH = 7
   private const val MAX_CHANGES = 50
   private const val TIMEOUT_MS = 30_000
@@ -87,7 +91,7 @@ object UpdateChecker {
         NEW_CHANNEL
       }
     val json = fetchRelease(context, channel) ?: throw IOException("GitHub has no $channel release")
-    return parseRelease(json, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH)
+    return parseRelease(json, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
   }
 
   /**
@@ -98,7 +102,7 @@ object UpdateChecker {
   @WorkerThread
   private fun checkMove(context: Context): UpdateInfo? =
     try {
-      fetchRelease(context, NEW_CHANNEL)?.let { parseMove(it, BuildConfig.COMMIT_HASH) }
+      fetchRelease(context, NEW_CHANNEL)?.let { parseMove(it, BuildConfig.COMMIT_HASH, apkName()) }
     } catch (e: Exception) {
       LogUtils.w(TAG, "Cannot check for the new app: %s", e)
       null
@@ -125,8 +129,11 @@ object UpdateChecker {
 
   /** Parses a release under the new app ID as a move, which is offered whatever its build. */
   @VisibleForTesting
-  fun parseMove(json: String, currentHash: String): UpdateInfo? =
-    parseRelease(json, currentBuild = 0, currentHash)?.copy(move = true)
+  fun parseMove(
+    json: String,
+    currentHash: String,
+    apkName: String = PHONE_APK_NAME,
+  ): UpdateInfo? = parseRelease(json, currentBuild = 0, currentHash, apkName)?.copy(move = true)
 
   /** Opens a connection with the timeouts and user agent that GitHub requests should use. */
   fun openConnection(context: Context, url: String): HttpURLConnection {
@@ -137,8 +144,16 @@ object UpdateChecker {
     return connection
   }
 
+  private fun apkName(): String =
+    if (FormFactorUtils.isAndroidWear()) WATCH_APK_NAME else PHONE_APK_NAME
+
   @VisibleForTesting
-  fun parseRelease(json: String, currentBuild: Int, currentHash: String): UpdateInfo? {
+  fun parseRelease(
+    json: String,
+    currentBuild: Int,
+    currentHash: String,
+    apkName: String = PHONE_APK_NAME,
+  ): UpdateInfo? {
     val release = JSONObject(json)
     val lines = release.optString("body").lines().map { it.trim() }
     val build =
@@ -152,9 +167,9 @@ object UpdateChecker {
     val downloadUrl =
       (0 until assets.length())
         .map { assets.getJSONObject(it) }
-        .firstOrNull { it.optString("name") == APK_NAME }
+        .firstOrNull { it.optString("name") == apkName }
         ?.getString("browser_download_url")
-        ?: throw JSONException("The release has no $APK_NAME")
+        ?: throw JSONException("The release has no $apkName")
 
     val commits = lines.filter { it.startsWith("- ") }.map { it.removePrefix("- ") }
     val shortHash = currentHash.take(SHORT_HASH_LENGTH)

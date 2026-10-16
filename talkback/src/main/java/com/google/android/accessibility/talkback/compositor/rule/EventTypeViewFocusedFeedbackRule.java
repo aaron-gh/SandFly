@@ -17,14 +17,19 @@ package com.google.android.accessibility.talkback.compositor.rule;
 
 import static com.google.android.accessibility.talkback.compositor.Compositor.EVENT_TYPE_VIEW_FOCUSED;
 
+import androidx.annotation.Nullable;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.AccessibilityEventFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.Compositor.HandleEventOptions;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.compositor.TalkBackFeedbackProvider;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FormFactorUtils;
+import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
+import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Map;
 import java.util.Optional;
@@ -82,8 +87,33 @@ public final class EventTypeViewFocusedFeedbackRule {
       // We could skip the announcement.
       return "";
     }
+    // Accessibility focus follows input focus onto a node it can focus, and that node is spoken
+    // then. Speaking it here too started it twice, the second cutting off the first.
+    if (willTakeAccessibilityFocus(eventOptions.sourceNode)) {
+      return "";
+    }
     return AccessibilityEventFeedbackUtils.getEventContentDescriptionOrEventAggregateText(
         eventOptions.eventObject, globalVariables.getUserPreferredLocale());
+  }
+
+  /**
+   * Whether accessibility focus follows input focus onto {@code node} and is spoken, as {@link
+   * com.google.android.accessibility.talkback.interpreters.InputFocusInterpreter} moves it: any
+   * node that can take accessibility focus, except a list or grid. A node that already has it isn't
+   * focused again, so nothing would be spoken, except in web content, where Chrome moves
+   * accessibility focus along with input focus and sends its own event.
+   */
+  private static boolean willTakeAccessibilityFocus(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    int role = Role.getRole(node);
+    if (role == Role.ROLE_LIST
+        || role == Role.ROLE_GRID
+        || !AccessibilityNodeInfoUtils.shouldFocusNode(node)) {
+      return false;
+    }
+    return !node.isAccessibilityFocused() || WebInterfaceUtils.supportsWebActions(node);
   }
 
   private EventTypeViewFocusedFeedbackRule() {}

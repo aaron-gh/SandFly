@@ -101,7 +101,6 @@ public class NotificationUtils {
         .setContentText(content)
         .setContentIntent(pendingIntent)
         .setAutoCancel(autoCancel)
-        .setOngoing(true)
         .setWhen(0)
         .build();
   }

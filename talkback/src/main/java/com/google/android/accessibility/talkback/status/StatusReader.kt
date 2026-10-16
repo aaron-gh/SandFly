@@ -86,19 +86,24 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
     overrideNetworkType = TelephonyDisplayInfo.OVERRIDE_NETWORK_TYPE_NONE
   }
 
-  /** Describes the items turned on in the status readout settings, in their order. */
+  /**
+   * Describes the items turned on in the status readout settings, in their order. Without
+   * [askForLocation], it never asks for the location permission that the Wi-Fi name needs, for when
+   * the user did not just ask for the status.
+   */
   @JvmOverloads
   fun describe(
     items: List<StatusItem> =
-      StatusSettings.enabledItems(SharedPreferencesUtils.getSharedPreferences(context))
+      StatusSettings.enabledItems(SharedPreferencesUtils.getSharedPreferences(context)),
+    askForLocation: Boolean = true,
   ): String =
-    items.mapNotNull(::describe).filter { it.isNotBlank() }.joinToString(", ")
+    items.mapNotNull { describe(it, askForLocation) }.filter { it.isNotBlank() }.joinToString(", ")
 
-  private fun describe(item: StatusItem): String? =
+  private fun describe(item: StatusItem, askForLocation: Boolean): String? =
     when (item) {
       StatusItem.TIME -> DateTimeUtils.getCurrentTime(context)
       StatusItem.BATTERY -> batteryMonitor.batteryStateDescription.trim()
-      StatusItem.WIFI -> describeWifi()
+      StatusItem.WIFI -> describeWifi(askForLocation)
       StatusItem.MOBILE -> describeMobile()
       StatusItem.RINGER -> describeRinger()
       StatusItem.AIRPLANE_MODE ->
@@ -106,7 +111,7 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
     }
 
   @Suppress("DEPRECATION") // connectionInfo is the only way to get the name without a callback.
-  private fun describeWifi(): String? {
+  private fun describeWifi(askForLocation: Boolean): String? {
     val wifiManager = wifiManager ?: return null
     if (!wifiManager.isWifiEnabled) {
       return context.getString(R.string.status_wifi_off)
@@ -119,7 +124,9 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
     val bars = describeBars(wifiSignalLevel(wifiManager, info.rssi), wifiMaxSignalLevel(wifiManager))
     val name = info.ssid?.removeSurrounding("\"")?.takeUnless { it == WifiManager.UNKNOWN_SSID }
     if (name == null) {
-      requestLocationPermissionOnce()
+      if (askForLocation) {
+        requestLocationPermissionOnce()
+      }
       return context.getString(R.string.template_status_wifi, bars)
     }
     return context.getString(R.string.template_status_wifi_named, name, bars)

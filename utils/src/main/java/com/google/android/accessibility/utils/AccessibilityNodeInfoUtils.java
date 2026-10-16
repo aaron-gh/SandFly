@@ -530,7 +530,8 @@ public class AccessibilityNodeInfoUtils {
       return null;
     }
 
-    final CharSequence state = node.getStateDescription();
+    @Nullable CharSequence overridden = NodeOverrides.state(node);
+    final CharSequence state = overridden != null ? overridden : node.getStateDescription();
     if (!TextUtils.isEmpty(state) && (TextUtils.getTrimmedLength(state) > 0)) {
       return state;
     }
@@ -842,6 +843,13 @@ public class AccessibilityNodeInfoUtils {
     if (node == null) {
       LogUtils.v(TAG, "Don't focus, node=null");
       return false;
+    }
+    if (NodeOverrides.hidden(node)) {
+      LogUtils.v(TAG, "Don't focus, a script hides it");
+      return false;
+    }
+    if (NodeOverrides.grouped(node)) {
+      return isVisible(node);
     }
     // Inside views that support web navigation, we delegate focus to the view itself and
     // assume that it navigates to and focuses the correct elements.
@@ -1225,7 +1233,8 @@ public class AccessibilityNodeInfoUtils {
     return node != null && TextUtils.equals(getChromeRole(node), CHROME_ROLE_LINK);
   }
 
-  private static CharSequence getChromeRole(@Nullable AccessibilityNodeInfoCompat node) {
+  /** Returns the role Chrome gives a web element, such as "button" or "listItem", or empty. */
+  public static CharSequence getChromeRole(@Nullable AccessibilityNodeInfoCompat node) {
     if (node == null) {
       return "";
     }
@@ -1909,6 +1918,7 @@ public class AccessibilityNodeInfoUtils {
     return (node != null)
         && isVisible(node)
         && (node.isScreenReaderFocusable()
+            || NodeOverrides.grouped(node)
             || isActionableForAccessibility(node)
             || isAdjustableSlider(node));
   }
@@ -2915,6 +2925,10 @@ public class AccessibilityNodeInfoUtils {
   // TODO On pre-N devices, the framework ListView/GridView will mark non-headers
   // as headers. The workaround should be removed when TalkBack doesn't support android M.
   public static boolean isHeading(AccessibilityNodeInfoCompat node) {
+    @Nullable Boolean overridden = NodeOverrides.heading(node);
+    if (overridden != null) {
+      return overridden;
+    }
     if (!FeatureSupport.isHeadingWorks()) {
       AccessibilityNodeInfoCompat collectionRoot = getCollectionRoot(node);
       if (nodeIsListOrGrid(collectionRoot) && !WebInterfaceUtils.isWebContainer(collectionRoot)) {

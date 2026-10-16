@@ -43,6 +43,7 @@ public class TrainingIpcClient extends IpcClient {
   private final Runnable connectionStateListener;
   private final ServiceData serviceData;
   private final IpcServerStateListener ipcServerStateListener;
+  private @Nullable Runnable gesturesListener;
 
   /** A listener invoked to notify the ipc server state has been changed. */
   public interface IpcServerStateListener {
@@ -76,6 +77,11 @@ public class TrainingIpcClient extends IpcClient {
     return serviceData;
   }
 
+  /** Sets what to run when the service has sent its gestures and keyboard shortcuts. */
+  public void setGesturesListener(@Nullable Runnable gesturesListener) {
+    this.gesturesListener = gesturesListener;
+  }
+
   @Override
   public void handleMessageFromService(@NonNull Message msg) {
     LogUtils.v(TAG, "handleMessageFromService(): %s", msg.what);
@@ -83,6 +89,7 @@ public class TrainingIpcClient extends IpcClient {
     switch (msg.what) {
       case MSG_REQUEST_GESTURES -> {
         serviceData.actionKeyToGestureText.clear();
+        serviceData.shortcuts.clear();
         Bundle data = msg.getData();
         data.keySet()
             .forEach(
@@ -93,12 +100,18 @@ public class TrainingIpcClient extends IpcClient {
                         data.getBoolean(EXTRA_IS_ANY_GESTURE_CHANGED, /* defaultValue= */ true);
                     return;
                   }
+                  if (serviceData.shortcuts.read(data, key)) {
+                    return;
+                  }
                   @Nullable String gesture = data.getString(key);
                   if (gesture == null) {
                     return;
                   }
                   serviceData.actionKeyToGestureText.put(key, gesture);
                 });
+        if (gesturesListener != null) {
+          gesturesListener.run();
+        }
       }
       case MSG_SERVER_DESTROYED -> {
         if (ipcServerStateListener != null) {
@@ -129,6 +142,7 @@ public class TrainingIpcClient extends IpcClient {
     private final Context context;
     private boolean isAnyGestureChanged = true;
     private final HashMap<String, String> actionKeyToGestureText = new HashMap<>();
+    private final TutorialShortcuts shortcuts = new TutorialShortcuts();
     private final boolean showExitBanner;
     private boolean isIconDetectionUnavailable = false;
     private boolean isImageDescriptionUnavailable = false;
@@ -152,6 +166,11 @@ public class TrainingIpcClient extends IpcClient {
     /** Returns a gesture text for the given action. */
     public @Nullable String getGestureFromActionKey(int actionKey) {
       return actionKeyToGestureText.get(context.getString(actionKey));
+    }
+
+    /** The user's gestures and keyboard shortcuts, to check the tutorial's texts against. */
+    public TutorialShortcuts getShortcuts() {
+      return shortcuts;
     }
 
     /**

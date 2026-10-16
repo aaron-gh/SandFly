@@ -18,8 +18,6 @@ package com.google.android.accessibility.talkback.individualfeedback
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.media.AudioAttributes
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Vibrator
 import androidx.core.view.ViewCompat
@@ -30,6 +28,7 @@ import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
+import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.HapticPatternParser
@@ -41,7 +40,7 @@ import com.google.android.accessibility.utils.output.HapticPatternParser
  */
 class IndividualFeedbackFragment : TalkbackBaseFragment() {
   private lateinit var prefs: SharedPreferences
-  private var player: MediaPlayer? = null
+  private val soundPreview = SoundPreview()
   // The vibrator playing a preview, so that leaving the screen stops it like a sound preview.
   private var previewVibrator: Vibrator? = null
 
@@ -63,7 +62,7 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
           item,
           IndividualFeedbackSettings.isSoundOn(prefs, item),
           onChange = { on -> IndividualFeedbackSettings.setSoundOn(prefs, item, on) },
-          preview = { playSound(context, item) },
+          preview = { soundPreview.play(context, prefs, item) },
         )
       )
     }
@@ -72,6 +71,12 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
       val vibrations = category(context, R.string.individual_feedback_vibrations_category)
       screen.addPreference(vibrations)
       for (item in IndividualFeedbackSettings.VIBRATIONS) {
+        if (
+          !BrailleKeyboardVibrations.isAvailable() &&
+            item in IndividualFeedbackSettings.BRAILLE_KEYBOARD_VIBRATIONS
+        ) {
+          continue
+        }
         vibrations.addPreference(
           FeedbackSwitch(
             context,
@@ -88,7 +93,7 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
 
   override fun onPause() {
     super.onPause()
-    stopSound()
+    soundPreview.stop()
     previewVibrator?.cancel()
     previewVibrator = null
   }
@@ -136,41 +141,30 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
     }
   }
 
-  private fun playSound(context: Context, item: FeedbackItem) {
-    stopSound()
-    val resId = resourceId(context, item.resourceNames.first(), "raw")
-    if (resId == 0) {
-      return
-    }
-    val attributes =
-      AudioAttributes.Builder()
-        .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
-        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-        .build()
-    player =
-      MediaPlayer.create(context, resId, attributes, 0)?.apply {
-        setOnCompletionListener {
-          if (player === it) {
-            player = null
-          }
-          it.release()
-        }
-        start()
-      }
-  }
-
-  private fun stopSound() {
-    player?.release()
-    player = null
-  }
-
   private fun playVibration(context: Context, item: FeedbackItem) {
-    val resId = resourceId(context, item.resourceNames.first(), "array")
-    val vibrator = context.getSystemService(Vibrator::class.java)
-    if (resId == 0 || vibrator == null) {
+    val vibrator = context.getSystemService(Vibrator::class.java) ?: return
+    // The theme in use may replace the vibration, as it can give control sounds theirs.
+    val switch = item.resourceNames.first()
+    val themeVibrations = SoundThemes.feedback(context, prefs).vibrations
+    val themePattern =
+      themeVibrations[switch]
+        ?: themeVibrations.entries.firstOrNull { SoundVibrations.switchOf(it.key) == switch }?.value
+    if (themePattern == null && switch in SoundVibrations.BRAILLE_KEYBOARD) {
+      // The braille keyboard plays its own vibrations, which aren't pattern resources.
+      if (BrailleKeyboardVibrations.preview(context, switch)) {
+        previewVibrator = vibrator
+      }
       return
     }
-    vibrator.vibrate(HapticPatternParser(vibrator).parse(context.resources.getIntArray(resId)))
+    val pattern =
+      themePattern
+        ?: resourceId(context, switch, "array").takeIf { it != 0 }?.let {
+          context.resources.getIntArray(it)
+        }
+    if (pattern == null || pattern.isEmpty()) {
+      return
+    }
+    vibrator.vibrate(HapticPatternParser(vibrator).parse(pattern))
     previewVibrator = vibrator
   }
 

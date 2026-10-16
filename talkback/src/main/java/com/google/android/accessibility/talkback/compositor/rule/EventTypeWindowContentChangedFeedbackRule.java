@@ -219,6 +219,8 @@ public final class EventTypeWindowContentChangedFeedbackRule {
                 event, node, globalVariables.getPreferredLocaleByNode(node)))
         .setEarconRate(EarconFeedbackUtils.getProgressBarChangeEarconRate(event, node))
         .setEarconVolume(EarconFeedbackUtils.getProgressBarChangeEarconVolume(event, node))
+        // The only sound here is the progress bar tone, which, as in TalkBack, does not vibrate.
+        .setEarconVibrates(false)
         .build();
   }
 

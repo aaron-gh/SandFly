@@ -26,25 +26,44 @@ import android.os.VibrationEffect.Composition.PRIMITIVE_QUICK_RISE
 import android.os.VibrationEffect.Composition.PRIMITIVE_TICK
 import android.os.Vibrator
 import androidx.annotation.RequiresApi
+import com.google.android.accessibility.utils.output.ThemeVibrations
 
 /** Singleton class which presents vibrations in braille keyboard. */
 class BrailleImeVibrator private constructor(context: Context) {
 
   /**
    * Vibration type in braille keyboard. Types play their steps as a composition when the device
-   * supports all of the primitives, and fall back to a one-shot vibration otherwise.
+   * supports all of the primitives, and fall back to a one-shot vibration otherwise. A sound theme
+   * can replace each by its [themeName].
    */
   enum class VibrationType(
+    internal val themeName: String,
     internal val duration: Long,
     internal val amplitude: Int,
     internal vararg val steps: Step,
   ) {
-    BRAILLE_COMMISSION(25, 120, Step(PRIMITIVE_TICK)),
-    SPACE_DELETE_OR_MOVE_CURSOR_OR_GRANULARITY(70, 150, Step(PRIMITIVE_CLICK)),
-    NEWLINE_OR_DELETE_WORD(120, 180, Step(PRIMITIVE_CLICK), Step(PRIMITIVE_CLICK, delayMs = 60)),
-    HOLD(25, 200, Step(PRIMITIVE_LOW_TICK)),
-    OTHER_GESTURES(190, 210, Step(PRIMITIVE_QUICK_RISE)),
-    NOTHING_TO_DELETE(150, 110, Step(PRIMITIVE_QUICK_FALL, scale = 0.6f)),
+    BRAILLE_COMMISSION("braille_keyboard_character", 25, 120, Step(PRIMITIVE_TICK)),
+    SPACE_DELETE_OR_MOVE_CURSOR_OR_GRANULARITY(
+      "braille_keyboard_space",
+      70,
+      150,
+      Step(PRIMITIVE_CLICK),
+    ),
+    NEWLINE_OR_DELETE_WORD(
+      "braille_keyboard_new_line",
+      120,
+      180,
+      Step(PRIMITIVE_CLICK),
+      Step(PRIMITIVE_CLICK, delayMs = 60),
+    ),
+    HOLD("braille_keyboard_hold", 25, 200, Step(PRIMITIVE_LOW_TICK)),
+    OTHER_GESTURES("braille_keyboard_gesture", 190, 210, Step(PRIMITIVE_QUICK_RISE)),
+    NOTHING_TO_DELETE(
+      "braille_keyboard_nothing_to_delete",
+      150,
+      110,
+      Step(PRIMITIVE_QUICK_FALL, scale = 0.6f),
+    ),
   }
 
   /** One primitive in a composition, with its scale and the delay before it plays. */
@@ -63,9 +82,27 @@ class BrailleImeVibrator private constructor(context: Context) {
 
   /** Vibrates with [Vibrator]. */
   fun vibrate(vibrationType: VibrationType) {
-    if (!enabled) {
+    if (!enabled || ThemeVibrations.play(vibrator, vibrationType.themeName)) {
       return
     }
+    playOwn(vibrationType)
+  }
+
+  /**
+   * Plays Backtalk's own vibration named [themeName], as sound themes name it, even while the
+   * keyboard is closed, so that Individual sounds and vibrations can preview it. Returns false if
+   * there is no such vibration.
+   */
+  fun preview(themeName: String): Boolean {
+    val vibrationType = VibrationType.entries.firstOrNull { it.themeName == themeName }
+    if (vibrationType == null || vibrator == null || !vibrator.hasVibrator()) {
+      return false
+    }
+    playOwn(vibrationType)
+    return true
+  }
+
+  private fun playOwn(vibrationType: VibrationType) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && isCompositionSupported(vibrationType)) {
       val composition = VibrationEffect.startComposition()
       vibrationType.steps.forEach { composition.addPrimitive(it.primitive, it.scale, it.delayMs) }

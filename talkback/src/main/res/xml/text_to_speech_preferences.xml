@@ -6,6 +6,11 @@
       android:key="@string/pref_tts_engine_key"
       android:title="@string/title_pref_tts_engine" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.VoiceProfilesFragment"
+      android:key="@string/pref_voice_profiles_screen_key"
+      android:persistent="false"
+      android:title="@string/title_pref_voice_profiles" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="@string/pref_system_tts_settings_key"
       android:title="@string/title_pref_system_tts_settings"
       android:summary="@string/summary_tts_settings" />
@@ -19,6 +24,19 @@
       android:key="@string/pref_speak_in_phrases_key"
       android:title="@string/title_pref_speak_in_phrases"
       android:summary="@string/summary_pref_speak_in_phrases" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_mute_speech_while_recording_default"
+      android:key="@string/pref_mute_speech_while_recording_key"
+      android:title="@string/title_pref_mute_speech_while_recording"
+      android:summary="@string/summary_pref_mute_speech_while_recording" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_switch_languages_default"
+      android:key="@string/pref_switch_languages_key"
+      android:title="@string/title_pref_switch_languages" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_switch_dialects_default"
+      android:key="@string/pref_switch_dialects_key"
+      android:title="@string/title_pref_switch_dialects" />
   <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
       android:key="@string/pref_speech_volume_seekbar_key_int"
       android:persistent="false"

@@ -58,6 +58,90 @@
     <string name="title_selector_switch_tts_engine">Speech engine</string>
     <!-- Summary for the "switch TTS engine" reading control selector item. [CHAR LIMIT=NONE] -->
     <string name="summary_selector_switch_tts_engine">Switch between installed speech engines</string>
+    <!-- Title for the reading control that switches between voice profiles. [CHAR LIMIT=NONE] -->
+    <string name="title_selector_voice_profile">Voice profile</string>
+    <!--
+      Title for the screen of voice profiles: sets of speech settings, each with its own speech
+      engine, language, voice, volume, rate and pitch, that the user can switch between. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_voice_profiles">Voice profiles</string>
+    <!-- Name of the voice profile that uses the text-to-speech settings. It can't be removed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_default">Backtalk default</string>
+    <!--
+      Summary under Voice profiles in the text-to-speech settings, naming the voice profile in use.
+      Shown only while one is, as the other text-to-speech settings then don't change how it sounds.
+      [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_in_use">In use: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!--
+      Said when the user tries to change the spoken language from the reading controls while a
+      voice profile is in use, as all speech then uses the profile's voice. [CHAR LIMIT=NONE]
+    -->
+    <string name="spoken_language_unavailable_with_profile">Spoken language unavailable while using a voice profile</string>
+    <!--
+      Said when the user tries to change the speech engine from the reading controls while a voice
+      profile is in use, as the profile has its own speech engine. [CHAR LIMIT=NONE]
+    -->
+    <string name="speech_engine_unavailable_with_profile">Speech engine unavailable while using a voice profile</string>
+    <!--
+      Item in the menu of voice profiles for the profile in use, opened from the Backtalk menu, a
+      gesture or a keyboard shortcut. [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, in use</string>
+    <!-- Said when a shortcut that changes voice profile is used before any profile is added. [CHAR LIMIT=NONE] -->
+    <string name="no_voice_profiles">No voice profiles</string>
+    <!-- Gesture and keyboard shortcut action that opens a menu to choose the voice profile in use. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_voice_profiles">Choose voice profile</string>
+    <!-- Gesture and keyboard shortcut action that changes to the previous voice profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_previous_voice_profile">Previous voice profile</string>
+    <!-- Gesture and keyboard shortcut action that changes to the next voice profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_next_voice_profile">Next voice profile</string>
+    <!-- Title for the setting that chooses the voice profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_in_use">Voice profile in use</string>
+    <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_add_voice_profile">Add voice profile</string>
+    <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_new_name">Voice profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <!--
+      Error on the name field when the name entered is already another voice profile's, or Backtalk
+      default's. [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_name_taken">A voice profile is already called <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!-- Title for the setting with a voice profile's name. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_name">Name</string>
+    <!-- Title for the setting with a voice profile's language. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_language">Language</string>
+    <!-- Title for the setting with a voice profile's voice. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_voice">Voice</string>
+    <!--
+      Choice of language or voice for a voice profile that uses the speech engine's own default.
+      [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_engine_default">Default</string>
+    <!-- Shown for a voice profile's language or voice while the speech engine lists its voices. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_loading">Loading</string>
+    <!-- A voice profile's engine or voice that is no longer installed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, not installed</string>
+    <!-- A voice, with its language, when the list shows voices in every language. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
+    <!-- Action that moves a voice profile up the list, so it comes sooner in the reading control. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_move_up">Move up</string>
+    <!-- Action that moves a voice profile down the list. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_move_down">Move down</string>
+    <!-- Action that renames a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_rename">Rename</string>
+    <!-- Said after a voice profile moves up the list, with the profile it is now above. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_moved_above">Moved above <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!-- Said after a voice profile moves down the list, with the profile it is now below. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_moved_below">Moved below <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!-- Said after a voice profile is removed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> deleted</string>
+    <!-- Title for the button that removes a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_delete_voice_profile">Delete voice profile</string>
+    <!-- Asks whether to remove a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_delete_confirm">Delete <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
+    <!-- Button that removes a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_delete">Delete</string>
     <!--
       Source: Summary shown under the TTS engine preference when no engine is selected (use system default).
       Description: Indicates TalkBack is using the system default TTS engine. [CHAR LIMIT=NONE]
@@ -78,7 +162,7 @@
       Description: Explains that enabling this routes TalkBack speech through the accessibility stream,
       allowing independent volume control. [CHAR LIMIT=NONE]
     -->
-    <string name="summary_pref_use_accessibility_stream">Speech uses the accessibility volume, so you can set it apart from media. When off, speech uses the media volume.</string>
+    <string name="summary_pref_use_accessibility_stream">Speech and sounds use the accessibility volume, so you can set them apart from media. When off, they use the media volume.</string>
     <!--
       Source: Title for the "speak long text in phrases" toggle.
       Description: When on, Backtalk sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]
@@ -89,6 +173,24 @@
       Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_speak_in_phrases">For speech engines that are slow to stop, such as Gryphon, so swiping away stops long text at once. Many engines pause longer between sentences sent separately, so leave this off if yours stops quickly.</string>
+    <!-- Title of the notification shown once on phones whose battery saver can stop Backtalk, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_title">Battery optimization can stop Backtalk</string>
+    <!-- Text of the notification shown once on phones whose battery saver can stop Backtalk. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_text">On this phone, the battery saver can stop Backtalk after the screen turns off, so it falls silent until it is restarted. Tap to open battery optimization, choose All apps, find Backtalk and choose Don\'t optimize.</string>
+    <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_speech_while_recording">Quiet while recording</string>
+    <!-- Summary of the setting that keeps speech the user did not ask for quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_mute_speech_while_recording">While an app records without headphones connected, Backtalk only speaks in answer to your gestures, keys and typing, and stays quiet for things such as notifications, so that they are not recorded.</string>
+    <!--
+      Source: Title for the "switch languages" toggle.
+      Description: When on, text that an app marks as another language is spoken in that language. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_switch_languages">Switch language automatically</string>
+    <!--
+      Source: Title for the "switch dialects" toggle.
+      Description: When on, text marked as another country's form of the voice's language is spoken with that country's voice. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_switch_dialects">Switch dialect automatically</string>
     <!--
       Source: Title for the menu item that opens the dialog with TTS  languages installed by the user.
       Description: This is presented to the user. [CHAR LIMIT=NONE]
@@ -181,6 +283,18 @@
       Source: An utterance template for announcing battery/power state.
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
     -->
+    <!-- Spoken for the battery level, such as when the screen turns on or in the status readout. [CHAR LIMIT=NONE] -->
+    <!-- Spoken when a reading control is already at its lowest or highest value: "Minimum" or "Maximum", then the value, such as "Minimum, 0.15 seconds". [CHAR LIMIT=NONE] -->
+    <!-- Title of the setting that says Back, Home, or Overview when a single tap presses it, with lift to activate on the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speak_nav_bar_buttons">Speak navigation bar buttons</string>
+    <!-- Summary of the setting that says the navigation bar button a tap pressed. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speak_nav_bar_buttons">With lift to activate on the navigation bar, say the button that a tap presses, such as Back or Home.</string>
+    <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
+    <string name="template_battery_level">Battery <xliff:g id="battery_level" example="73">%1$s</xliff:g> percent</string>
+    <!-- Spoken instead of template_battery_level when the battery level isn't known. [CHAR LIMIT=NONE] -->
+    <string name="template_battery_level_unknown">Battery level unknown</string>
+    <!-- Spoken before the battery level while the device is plugged in to charge. [CHAR LIMIT=NONE] -->
+    <string name="value_charger_connected">Charger connected</string>
     <string name="template_battery_state">Power <xliff:g id="charging_status" example="connected">%1$s</xliff:g> <xliff:g id="battery_level" example="73">%2$s</xliff:g> percent <xliff:g id="battery_saver_mode_status" example="Battery saver on">%3$s</xliff:g></string>
 
   <!-- Template for language options menu item-->
@@ -213,6 +327,27 @@
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
     -->
     <string name="value_device_unlocked">Device unlocked.</string>
+
+    <!-- Settings for what Backtalk says when the screen turns off or on and when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_screen_announcements">Screen on and off</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_screen_announcements">Choose what Backtalk says when the screen turns off or on, and when the phone is unlocked</string>
+    <!-- Heading for the settings used when the screen turns off. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_screen_off">When the screen turns off</string>
+    <!-- Heading for the settings used when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_screen_on">When the screen turns on</string>
+    <!-- Heading for the settings used when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_unlock">When the phone is unlocked</string>
+    <!-- Switch to say "Screen off" when the screen turns off. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_say_screen_off">Say \"Screen off\"</string>
+    <!-- Switch to say "Device unlocked" when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_say_device_unlocked">Say \"Device unlocked\"</string>
+    <!-- Switch to say the time when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_announce_time">Time</string>
+    <!-- Switch to say the ringer mode. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_announce_ringer_mode">Ringer mode</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_announce_ringer_mode">Say when the ringer is set to vibrate or silent</string>
     <!-- PREFERENCES -->
     <!--
       Source: Preference category for audio.
@@ -251,12 +386,44 @@
       Description: The user can check or not check this. [CHAR LIMIT=120]
     -->
     <string name="title_pref_cover_proximity_sensor">Cover proximity sensor to stop speech</string>
+    <!-- Title of a switch in Advanced Settings on Wear OS watches. Reserves two-finger single and double taps for Samsung's Vibration Watch feature, which tells the time through vibrations. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestures for Vibration Watch</string>
+    <!-- Summary of the Vibration Watch gesture switch. Backtalk stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_reserve_vibration_watch_gestures">Stops Backtalk handling two-finger single and double taps so Samsung Vibration Watch can use them. Enable Vibration Watch in your watch’s accessibility settings.</string>
+    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch in Advanced Settings</string>
     <!-- Title of the setting that moves calls to the speaker when the phone is away from the ear. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speakerphone_away_from_ear">Speaker when away from your ear</string>
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_away_from_ear">During a call, switches to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again.</string>
     <!-- Summary of that setting when Backtalk does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_needs_permission">Needs a permission that Android does not give to screen readers. To grant it, run this command with adb or Shizuku, then come back to this screen: %1$s</string>
+    <!-- Title of the setting that lets other apps speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control">Let other apps speak</string>
+    <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speech_control">Apps that you allow can say text in your Backtalk voice. Nothing is said while the device is locked.</string>
+    <!-- Title of the setting that plays a sound before each thing another app says through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
+    <!-- Heading of the list of apps that asked to speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_apps_category">Apps</string>
+    <!-- Shown in that list before any app has asked to speak. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
+    <!-- Title of the notification that asks whether an app may speak through Backtalk. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through Backtalk?</string>
+    <!-- Text of that notification. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_text">It can say text in your Backtalk voice. You can change this in Advanced settings.</string>
+    <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
+    <string name="speech_control_allow">Allow</string>
+    <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
+    <string name="speech_control_deny">Don\'t allow</string>
+    <!-- Name of the permission that apps ask for to speak through Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_label">speak through Backtalk</string>
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_description">Lets the app ask to say text in your Backtalk voice. Backtalk asks you before the app can speak.</string>
+    <!-- Name of the permission that an app needs to ask to be a braille display for Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_label">ask to be a braille display for Backtalk</string>
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_description">Lets the app ask to be a braille display for Backtalk. If you allow it in Backtalk, it can read everything on the screen and control your device. Backtalk asks you first.</string>
 
     <!--
       Source: Preference for speaking phonetic letter for letters.
@@ -268,6 +435,16 @@
       Description: Explains when phonetic letters will be spoken. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_phonetic_letters">When you select keyboard keys or navigate by character, you\'ll hear an example along with each letter, like \"h, hotel\"</string>
+    <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
+    <string name="title_pref_phonetic_letters_mode">Speak letters phonetically</string>
+    <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_off">Off</string>
+    <!-- Choice for Speak letters phonetically: the letter, then its word after a pause, as TalkBack does. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_delay">After the letter, delayed, like \"h, hotel\"</string>
+    <!-- Choice for Speak letters phonetically: the letter and its word together, with no pause between them. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_no_delay">After the letter, no delay, like \"h hotel\"</string>
+    <!-- Choice for Speak letters phonetically: the word is said in place of the letter. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_instead_of_letter">Instead of the letter, like \"hotel\"</string>
     <!--
       Source: Preference for reading punctuations. [CHAR LIMIT=45]
       Description: The user can check or not check this.
@@ -285,6 +462,58 @@
       Source: Preference providing feedback for speak punctuation some. [CHAR LIMIT=45]
     -->
     <string name="punctuation_some">Some</string>
+    <!--
+      Source: Preference for how emoji are spoken. [CHAR LIMIT=45]
+    -->
+    <string name="title_pref_emoji_speech">Emoji</string>
+    <!--
+      Source: Emoji preference choice: the speech engine reads emoji itself. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_engine">Read by speech engine</string>
+    <!--
+      Source: Emoji preference choice: Backtalk sends the speech engine each emoji's name. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_names">Read by Backtalk</string>
+    <!--
+      Source: Emoji preference choice: emoji are left out of speech. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_none">None</string>
+    <!--
+      Source: Summary of the Emoji reading control, and of the Emoji item in the list of Backtalk menu items. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_selector_menu_emoji">Change how emoji are read</string>
+    <!--
+      Source: Spoken when the Emoji reading control or menu changes how emoji are read, like "Emoji: Read by Backtalk". [CHAR LIMIT=NONE]
+    -->
+    <string name="emoji_speech_state">Emoji: <xliff:g example="Read by Backtalk" id="state">%1$s</xliff:g></string>
+    <!--
+      Source: Preference for saying how many times an emoji repeats, like "3 grinning face", instead of naming it each time. [CHAR LIMIT=45]
+    -->
+    <string name="title_pref_emoji_repeat_count">Count repeated emoji</string>
+    <!--
+      Source: Count repeated emoji choice: each emoji is named every time. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_off">Off</string>
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 2 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_2">2 or more</string>
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 3 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_3">3 or more</string>
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 4 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_4">4 or more</string>
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 5 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_5">5 or more</string>
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 6 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_6">6 or more</string>
     <!--
       Source: Preference for count repeated symbols. [CHAR LIMIT=45]
     -->
@@ -332,6 +561,15 @@
     -->
     <string name="pref_speak_container_element_positions_title">Speak container info</string>
 
+    <!-- Table reading preferences in Verbosity settings -->
+    <string name="pref_table_headers_category_title" tools:ignore="MissingTranslation">Table reading</string>
+    <string name="pref_table_column_headers_title" tools:ignore="MissingTranslation">Read column headers</string>
+    <string name="pref_table_column_headers_entry_after" tools:ignore="MissingTranslation">After cell data</string>
+    <string name="pref_table_column_headers_entry_before" tools:ignore="MissingTranslation">Before cell data</string>
+    <string name="pref_table_column_headers_entry_off" tools:ignore="MissingTranslation">Do not read</string>
+    <string name="pref_table_speak_row_column_numbers_title" tools:ignore="MissingTranslation">Speak row and column numbers</string>
+    <string name="pref_table_speak_row_column_numbers_summary" tools:ignore="MissingTranslation">Announce row and column numbers for table cells</string>
+
     <!--
       Source: Preference for speaking time.
       Description: The user can check or not check this. [CHAR LIMIT=40]
@@ -352,7 +590,7 @@
     <!-- Title of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
     <string name="confirm_focus_delay_reading_control_added_dialog_title">Focus delay added to reading control</string>
     <!-- Message of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_focus_delay_reading_control_added_dialog_message">Swipe with 3 fingers to use reading control and change the focus delay at any time</string>
+    <string name="confirm_focus_delay_reading_control_added_dialog_message">You can now change the focus delay at any time with the reading controls.</string>
 
     <!-- Title of dialog to confirm the typing focus delay reduction which enables the Lift-to-type to do the CLICK. [CHAR LIMIT=NONE] -->
     <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Switch to lift-to-type?</string>
@@ -361,7 +599,7 @@
     <!-- Title of dialog to confirm the typing focus delay reading control items being added. [CHAR LIMIT=NONE] -->
     <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Typing focus delay added to reading control</string>
     <!-- Message of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If you have issues with double-tap while typing, swipe with 3 fingers to use reading control and change to a longer typing focus delay</string>
+    <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If double-tap is unreliable while you type, you can change to a longer typing focus delay at any time with the reading controls.</string>
     <!-- A warning message to tell the situation user cannot change typing focus delay. [CHAR LIMIT=NONE] -->
     <string name="gestures_announce_typing_focus_wont_change">Typing focus delay is not functioning without Lift-to-type.</string>
 
@@ -413,6 +651,10 @@
       Description: Explains that element IDs will be spoken for unlabeled buttons. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_speak_element_ids">Say the ID of buttons that have no label</string>
+    <!-- Verbosity: switch for speaking the new volume after the user changes it with the volume keys. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speak_volume_changes">Speak volume changes</string>
+    <!-- Verbosity: summary of the switch for speaking volume changes. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speak_volume_changes">Say the new volume after you press the volume keys</string>
     <!--
       Source: Preference for speaking notifications as they arrive.
       Description: The user can turn this off to stop new notifications from being read aloud. [CHAR LIMIT=NONE]
@@ -485,12 +727,10 @@
     <string name="title_pref_category_manage_gestures">Gestures</string>
     <!-- Label for the button to launch an activity for managing TalkBack's custom view labels. [CHAR LIMIT=70] -->
     <string name="title_pref_manage_labels">Custom labels</string>
-    <!-- Label for the button to launch an activity for managing custom menus. [CHAR LIMIT=70] -->
-    <string name="title_pref_manage_customize_menus">Edit menus</string>
     <!-- Label for the button to launch an activity for managing TalkBack's custom menus. [CHAR LIMIT=100] -->
-    <string name="title_pref_category_context_menu">Customize Backtalk menu</string>
+    <string name="title_pref_category_context_menu">Backtalk menu</string>
     <!-- Label for the button to launch an activity for managing TalkBack's custom menus. [CHAR LIMIT=100] -->
-    <string name="title_pref_category_selector_menu">Customize reading controls</string>
+    <string name="title_pref_category_selector_menu">Reading controls</string>
     <!-- Label for the button to launch an activity for managing TalkBack's navigation options menus. [CHAR LIMIT=100] -->
     <string name="title_pref_category_navigation_menu">Edit navigation options</string>
     <!-- Label for the button to launch an activity for managing TalkBack's keyboard shortcuts. [CHAR LIMIT=40] -->
@@ -498,7 +738,7 @@
       Source: Summary subtext for TalkBack context menu setting.
       Description: Explains how TalkBack context menu is opened. [CHAR LIMIT=NONE]
     -->
-    <string name="pref_category_context_menu_summary">To use the Backtalk menu, tap the screen with 3 fingers. You can also swipe up then right, or swipe down then right.</string>
+    <string name="pref_category_context_menu_summary">Tap with 3 fingers, or swipe up or down then right.</string>
     <!--
     Source: Summary subtext for TalkBack context menu setting in XR.
     Description: Explains how TalkBack context menu is opened on XR devices. [CHAR LIMIT=NONE]
@@ -508,12 +748,12 @@
     Source: Summary subtext for TalkBack context menu setting.
     Description: Explains how TalkBack context menu is opened without multifinger support. [CHAR LIMIT=NONE]
     -->
-    <string name="pref_category_context_menu_summary_single_finger">To use the Backtalk menu, swipe down then right.</string>
+    <string name="pref_category_context_menu_summary_single_finger">Swipe down then right.</string>
     <!--
     Source: Summary subtext for quick menu setting.
     Description: Explains how quick menu is opened. [CHAR LIMIT=NONE]
     -->
-    <string name="pref_category_selector_menu_summary">To use the reading controls, swipe left or right with 3 fingers. You can also swipe up or down with 3 fingers.</string>
+    <string name="pref_category_selector_menu_summary">Turn 2 fingers like a dial, or swipe left or right with 3 fingers, to choose a reading control. Then swipe up or down to change it.</string>
     <!--
     Source: Summary subtext for quick menu setting in XR.
     Description: Explains how quick menu is opened without multifinger support. [CHAR LIMIT=NONE]
@@ -523,7 +763,7 @@
     Source: Summary subtext for quick menu setting.
     Description: Explains how quick menu is opened without multifinger support. [CHAR LIMIT=NONE]
     -->
-    <string name="pref_category_selector_menu_summary_single_finger">To use the reading controls, swipe up then down.</string>
+    <string name="pref_category_selector_menu_summary_single_finger">Swipe up then down, or down then up, to choose a reading control. Then swipe up or down to change it.</string>
     <string name="title_pref_manage_keyboard_shortcuts">Keyboard shortcuts</string>
     <!-- Label for the button to export custom labels data as a file. [CHAR LIMIT=40] -->
     <string name="title_pref_export_custom_labels">Export custom labels</string>
@@ -571,6 +811,8 @@
     <string name="talkback_exit_watermark_text">Backtalk on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, tap with 3 fingers to open the Backtalk menu.</string>
     <!-- The hint text of TalkBack mis-trigger-prevention watermark. [CHAR_LIMIT=NONE]-->
     <string name="talkback_exit_watermark_hint_text">Showing banner indicating Backtalk is on. To turn off Backtalk, hold 2 fingers on the screen for 5 seconds. To remove this banner, go to Backtalk Settings.</string>
+    <!-- The text of the Backtalk-on banner when no 3-finger tap opens the Backtalk menu. [CHAR_LIMIT=NONE]-->
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Backtalk on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off Backtalk settings &gt; Advanced settings &gt; Show instructions for turning off Backtalk.</string>
 
     <!-- Label for the reset gesture settings. [CHAR_LIMIT=66] -->
     <string name="reset_gesture_settings_title">Reset gesture settings</string>
@@ -1090,6 +1332,61 @@
       Description: Contains a list of volume settings. [CHAR LIMIT=25]
     -->
     <string name="title_pref_soundback_volume">Sound feedback volume</string>
+    <!--
+      Source: Preference for choosing the audio output device for TalkBack.
+      Description: Title of the audio output device setting. [CHAR LIMIT=35]
+    -->
+    <string name="title_pref_audio_output_device">Audio output device</string>
+    <!--
+      Source: Dialog title when choosing the audio output device.
+      Description: Dialog title for selecting audio output target. [CHAR LIMIT=45]
+    -->
+    <string name="dialog_title_audio_output_device">Choose where to play Backtalk sound</string>
+    <!--
+      Source: Entry in the audio output device list for using system default.
+      Description: Follows Android system default audio routing. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_default">System default</string>
+    <!--
+      Source: Entry in the audio output device list for forcing playback to the phone speaker.
+      Description: Plays TalkBack audio through the built-in speaker. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_speaker">Phone speaker</string>
+    <!--
+      Source: Entry in the audio output device list for routing to connected Bluetooth or wired device.
+      Description: Plays TalkBack audio through connected Bluetooth or wired devices. [CHAR LIMIT=45]
+    -->
+    <string name="value_audio_output_device_bluetooth_or_wired">Connected Bluetooth device or wired</string>
+    <!--
+      Source: Status suffix in the audio output device summary when the chosen device is not currently connected.
+      Description: Status for disconnected device. [CHAR LIMIT=20]
+    -->
+    <string name="value_audio_output_device_disconnected">disconnected</string>
+    <!--
+      Source: Fallback label for Bluetooth audio device without a name.
+      Description: Fallback name for Bluetooth device. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth audio device</string>
+    <!--
+      Source: Fallback label for wired headset without a name.
+      Description: Fallback name for wired headset. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_wired_headset">Wired headset</string>
+    <!--
+      Source: Fallback label for wired headphones without a name.
+      Description: Fallback name for wired headphones. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_wired_headphones">Wired headphones</string>
+    <!--
+      Source: Fallback label for USB headset without a name.
+      Description: Fallback name for USB headset. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_usb_headset">USB headset</string>
+    <!--
+      Source: Fallback label for USB audio device without a name.
+      Description: Fallback name for USB audio device. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_usb_device">USB audio device</string>
 
     <!--
       Source: Preference category title.
@@ -1271,7 +1568,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="summary_pref_ai_description">Hear longer descriptions when you select \"<xliff:g id="Backtalk menu item" example="Describe image">%1$s</xliff:g>\" from the Backtalk menu</string>
 
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
-  <string name="dialog_message_detailed_ai_description">When using this feature, selected images will be sent to Google for processing and then deleted.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_detailed_ai_description">Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
 
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_on_device_ai_description">You’ll hear a brief description when you focus on an image in supported apps.\n\nImages are processed on your device and never sent to Google. \n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <a href="https://policies.google.com/terms/generative-ai">Google\'s Terms of Service</a>.</string>
@@ -1413,10 +1710,10 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   -->
   <string name="title_pref_disable_auto_icon_detection">Don\'t describe icons</string>
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
-  <string name="dialog_message_detailed_ai_promotion">Detailed image descriptions are powered by generative AI. When using this feature, selected images will be sent to Google for processing and then deleted.\n\nGenerative AI is experimental, so it will make mistakes. You can turn off detailed image descriptions anytime in Backtalk settings.\n\nBy continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_detailed_ai_promotion">Detailed image descriptions are powered by generative AI. Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. You can turn off detailed image descriptions anytime in Backtalk settings.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
 
   <!-- Message for dialog shown when a user wants to enable screen description. [CHAR LIMIT=NONE]  -->
-  <string name="dialog_message_screen_overview_promotion">When using this feature, a screenshot of your screen will be sent to Google for processing and then deleted. Processing takes several seconds.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_screen_overview_promotion">A screenshot of the screen is sent to Google\'s Gemini API to be described, which takes several seconds. With On-device AI turned on, it\'s described on this phone instead and isn\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
 
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_on_device_ai_model_download">You’ll hear a brief description when you focus on an image in supported apps.\n\nImages are processed on your device and never sent to Google.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
@@ -1695,6 +1992,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_edittext_breakout_start_selection_mode">Start or end selection mode</string>
     <!-- Label for the menu item to end text selection mode. [CHAR_LIMIT=40] -->
     <string name="title_edittext_breakout_end_selection_mode">End selection mode</string>
+    <!-- Label for the gesture action that drops the text selected for copying. [CHAR_LIMIT=40] -->
+    <string name="title_clear_selection">Clear selection</string>
     <!-- Label for the menu item to show spelling suggestions for misspelling words. [CHAR_LIMIT=60] -->
     <string name="title_edittext_typo_suggestions">Spelling / grammar suggestions</string>
     <!-- Label for the menu item to show the spelling suggestion for a misspelling word. [CHAR_LIMIT=60] -->
@@ -2015,6 +2314,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_pref_shortcut_3finger_2tap">Double-tap with 3 fingers</string>
     <!-- Label for the preference that assigns an action to the "three-finger triple-tap" gesture. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_3finger_3tap">Triple-tap with 3 fingers</string>
+    <!-- Label for the preference that assigns an action to the "three-finger quadruple-tap" gesture. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_3finger_4tap">Quadruple-tap with 3 fingers</string>
     <!-- Label for the preference that assigns an action to the "four-finger tap" gesture. [CHAR_LIMIT=63] -->
     <string name="title_pref_shortcut_4finger_1tap">Tap with 4 fingers</string>
     <!-- Label for the preference that assigns an action to the "four-finger double-tap" gesture. [CHAR_LIMIT=75] -->
@@ -2123,11 +2424,13 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="value_type_confirmation_lift_to_type">Hold finger to select letter key, then lift. Double-tap for other keys.</string>
     <!-- Label for typing mode user preference in which lift-to-type applies to any and all keys, including letter keys, such as A, B, C, and non-letter keys, such as ENTER or NEXT_KEYBOARD. [CHAR LIMIT=NONE]-->
     <string name="value_type_confirmation_lift_to_type_for_any_key">Hold finger to select any key, then lift</string>
+    <!-- Typing method where lifting the finger types every key except the key that sends or submits, such as Enter, Done, or Send, which needs a double-tap. [CHAR LIMIT=NONE] -->
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.</string>
 
     <!-- Label for type and hold duration. [CHAR LIMIT=NONE]-->
     <string name="value_typing_long_press_500ms">0.5 seconds</string>
-    <!-- Title for the maximum time between taps of a multi-tap gesture. [CHAR LIMIT=NONE]-->
-    <string name="title_pref_multi_tap_timeout">Time between taps</string>
+    <!-- Title for the maximum time between taps of a one-finger multi-tap gesture. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_multi_tap_timeout">Time between one-finger taps</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
     <string name="value_multi_tap_timeout_100ms">0.1 seconds</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
@@ -2136,6 +2439,18 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="value_multi_tap_timeout_200ms">0.2 seconds</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
     <string name="value_multi_tap_timeout_250ms">0.25 seconds (default)</string>
+    <!-- Title for how far 2 fingers must turn on the screen to move the rotor by one reading control. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_rotor_step_degrees">Rotor turn per step</string>
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_15">15 degrees</string>
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_20">20 degrees</string>
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_30">30 degrees (default)</string>
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_45">45 degrees</string>
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_60">60 degrees</string>
     <!-- Label for type and hold duration. [CHAR LIMIT=NONE]-->
     <string name="value_typing_long_press_1000ms">1 second</string>
     <!-- Label for type and hold duration. [CHAR LIMIT=NONE]-->
@@ -2145,6 +2460,11 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Label for type and hold duration. [CHAR LIMIT=NONE]-->
     <string name="value_typing_long_press_5000ms">5 seconds</string>
 
+    <!-- Reduce delays: switch that plays sounds and speech through the fastest audio path. [CHAR LIMIT=50] -->
+    <string name="title_pref_low_latency_audio">Low-latency audio</string>
+    <!-- Reduce delays: summary of the low-latency audio switch. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_low_latency_audio">Play Backtalk\'s sounds and speech through the phone\'s fastest audio path, so you hear them sooner. Turn it off if speech or sounds break up or sound wrong.</string>
+
     <!-- Label for touch explore time out. [CHAR LIMIT=NONE]-->
     <string name="value_touch_explore_time_out_150ms">0.15 seconds</string>
     <!-- Label for touch explore time out. [CHAR LIMIT=NONE]-->
@@ -2153,6 +2473,10 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="value_touch_explore_time_out_250ms">0.25 seconds</string>
     <!-- Label for touch explore time out. [CHAR LIMIT=NONE]-->
     <string name="value_touch_explore_time_out_300ms">0.3 seconds (default)</string>
+    <!-- Label for the default focus delay, 0.2 seconds. [CHAR LIMIT=NONE]-->
+    <string name="value_focus_delay_200ms_default">0.2 seconds (default)</string>
+    <!-- Label for a focus delay of 0.3 seconds, which isn't the default. [CHAR LIMIT=NONE]-->
+    <string name="value_focus_delay_300ms">0.3 seconds</string>
 
     <!-- Title of the setting that activates the item under the finger when the finger is lifted. [CHAR LIMIT=NONE]-->
     <string name="title_pref_lift_to_activate">Lift to activate</string>
@@ -2166,6 +2490,26 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="value_lift_to_activate_entire_screen">Entire screen</string>
     <!-- Spoken when the lift to activate setting changes. [CHAR LIMIT=NONE]-->
     <string name="template_lift_to_activate_changed">Lift to activate: <xliff:g id="mode">%1$s</xliff:g></string>
+
+    <!-- Title of the setting that makes moving past the last item on the screen go to the first item, and past the first go to the last. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_wrap_around">Wrap around</string>
+    <!-- Summary of the wrap around setting. [CHAR LIMIT=NONE]-->
+    <string name="summary_pref_wrap_around">Swiping past the last item goes to the first, and past the first goes to the last. When off, a sound plays at the end instead.</string>
+    <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
+    <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
+    <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
+    <string name="wrap_around_on">Wrap around on</string>
+    <!-- Spoken when wrap around is turned off. [CHAR LIMIT=NONE]-->
+    <string name="wrap_around_off">Wrap around off</string>
+
+    <!-- Title of the reading control for the braille keyboard setting that takes a tablet or unfolded phone held up to be held with the screen facing away from the user. When off, it is taken to face the user and uses the tabletop layout. [CHAR LIMIT=NONE]-->
+    <string name="title_selector_tablet_held_up_faces_away">Tablet held up faces away</string>
+    <!-- Summary of the tablet held up faces away setting in the reading controls list. [CHAR LIMIT=NONE]-->
+    <string name="summary_support_tablet_held_up_faces_away">For the braille keyboard on a tablet or unfolded phone</string>
+    <!-- Spoken when the tablet held up faces away setting is turned on. [CHAR LIMIT=NONE]-->
+    <string name="tablet_held_up_faces_away_on">Tablet held up faces away on</string>
+    <!-- Spoken when the tablet held up faces away setting is turned off. [CHAR LIMIT=NONE]-->
+    <string name="tablet_held_up_faces_away_off">Tablet held up faces away off</string>
 
     <!-- Label for the preference specifying that the shake to read feature is disabled. -->
     <string name="value_shake_to_read_disabled">Disabled</string>
@@ -2188,6 +2532,16 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_pref_keyboard_echo_on_screen">Keyboard echo: On-screen keyboard</string>
     <!-- Label for preference specifying that TalkBack should only speak keys that the user types with a physical keyboard. [CHAR_LIMIT=75] -->
     <string name="title_pref_keyboard_echo_physical">Keyboard echo: Physical keyboard</string>
+    <!-- Title of the setting for whether typing a character on a physical keyboard stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_interrupt_typing">Interrupt speech when typing</string>
+    <!-- Option of "Interrupt speech when typing": every typed character stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_always">Always</string>
+    <!-- Option of "Interrupt speech when typing": only characters typed in an edit field stop speech. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_edit_fields">In edit fields</string>
+    <!-- Option of "Interrupt speech when typing": typed characters stop speech only when keyboard echo speaks them. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_keyboard_echo">On keyboard echo</string>
+    <!-- Title of the setting for whether Enter on a physical keyboard stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_interrupt_enter">Interrupt speech on Enter</string>
     <!-- Label for preference specifying that TalkBack should not echo of keyboard input. [CHAR_LIMIT=15] -->
     <string name="value_keyboard_echo_none">None</string>
     <!-- Label for preference specifying that TalkBack should echo of typed characters. [CHAR_LIMIT=30] -->
@@ -2203,6 +2557,30 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="pref_node_desc_order_entry_role_name_state_pos">Type, name, state</string>
     <!-- Label for preference specifying that TalkBack should describe elements in order: name, type, state. -->
     <string name="pref_node_desc_order_entry_name_role_state_pos">Name, type, state</string>
+    <!-- Label for preference specifying that Backtalk should describe elements in order: name, state, type. -->
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Name, state, type</string>
+    <!-- Label for preference specifying that Backtalk should describe elements in order: type, state, name. -->
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Type, state, name</string>
+    <!-- Label for preference specifying that Backtalk should describe elements in order: state, type, name. -->
+    <string name="pref_node_desc_order_entry_state_role_name_pos">State, type, name</string>
+    <!-- Order of item details settings: the item's name, such as the text of a button. [CHAR LIMIT=30] -->
+    <string name="item_detail_name">Name</string>
+    <!-- Order of item details settings: the item's type, such as "button" or "checkbox". [CHAR LIMIT=30] -->
+    <string name="item_detail_type">Type</string>
+    <!-- Order of item details settings: the item's state, such as "checked". [CHAR LIMIT=30] -->
+    <string name="item_detail_state">State</string>
+    <!-- Settings lists that can be reordered: accessibility action that moves an item earlier. [CHAR LIMIT=30] -->
+    <string name="action_move_up">Move up</string>
+    <!-- Settings lists that can be reordered: accessibility action that moves an item later. [CHAR LIMIT=30] -->
+    <string name="action_move_down">Move down</string>
+    <!-- Settings lists that can be reordered: spoken after an item moves. [CHAR LIMIT=NONE] -->
+    <string name="template_list_position">Position <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <!-- Order of item details settings: spoken when the user starts dragging a detail. The position is template_list_position. [CHAR LIMIT=NONE] -->
+    <string name="template_item_details_order_picked_up">Picked up <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <!-- Order of item details settings: spoken when the user lets go of a dragged detail. The position is template_list_position. [CHAR LIMIT=NONE] -->
+    <string name="template_item_details_order_dropped">Dropped <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <!-- Order of item details settings: text below the list that explains how to reorder it. [CHAR LIMIT=NONE] -->
+    <string name="item_details_order_footer">Backtalk says an item\'s details in this order. To change it, touch and hold a detail, then drag it up or down. With Backtalk on, double-tap and hold, then drag. You can also use the Move up and Move down actions.</string>
 
     <!-- Label for preference specifying that TalkBack should announce time in the format used by the paired device. [CHAR LIMIT=120] -->
     <string name="pref_time_feedback_format_entries_default">Use device time format</string>
@@ -2587,6 +2965,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   Description: The user can switch it. [CHAR+LIMIT="NONE"]
   -->
   <string name="title_pref_cache_keyboard_keys">Announce keyboard keys faster</string>
+  <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]
@@ -3139,9 +3519,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The description of other ways to type in typing text page. [CHAR_LIMIT=NONE]-->
   <string name="other_ways_to_type_text">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter.</string>
   <!-- The description of other ways to type in typing text page. [CHAR_LIMIT=NONE]-->
-  <string name="basic_other_ways_to_type_text">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings > On-screen keyboard > Typing preference.</string>
+  <string name="basic_other_ways_to_type_text">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings > On-screen keyboard > Typing method.</string>
   <!-- Source: The text of introducing TalkBack for TTS span. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 380750154623317254]-->
-  <string name="basic_other_ways_to_type_text_tts">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings then On-screen keyboard then Typing preference.</string>
+  <string name="basic_other_ways_to_type_text_tts">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings then On-screen keyboard then Typing method.</string>
   <!-- The text of change typing preference button in typing text page. [CHAR_LIMIT=NONE]-->
   <string name="change_typing_preference_text">Change typing preference</string>
   <!-- The title of moving cursor page. [CHAR_LIMIT=NONE]-->
@@ -3351,9 +3731,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- General image description tutorial playground page content one. [CHAR_LIMIT=NONE] -->
   <string name="image_description_playground_content_one">When you’re focused on an image, open the Backtalk menu and select “Describe image”.\n\nThere’s one photo below. Try getting a description for it.</string>
   <!-- General image description tutorial playground page content two. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_playground_content_two">You can change image description settings anytime in Backtalk settings > Image &#38; icon descriptions.</string>
+  <string name="image_description_playground_content_two">You can change image description settings anytime in Backtalk settings > Automatic descriptions.</string>
   <!-- General image description tutorial playground page content two for TTS. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_playground_content_two_tts">You can change image description settings anytime in Backtalk settings then Image &#38; icon descriptions.</string>
+  <string name="image_description_playground_content_two_tts">You can change image description settings anytime in Backtalk settings then Automatic descriptions.</string>
   <!-- Image description tutorial playground image content description. [CHAR_LIMIT=NONE] -->
   <string name="image_description_sample_image_content_description">Sample image; tap with 3 fingers to open the Backtalk menu and select \"Describe image\" to hear a description.</string>
 
@@ -3795,12 +4175,26 @@ Do not use any markdown in your response."</string>
   <string name="gemini_screenshot_unavailable">Screen capture unavailable</string>
   <!-- Gemini response parsing error. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_parsing_result">Gemini response parsing error</string>
+  <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in Automatic descriptions settings.</string>
+  <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_quota">The usage limit for your Gemini API key has been reached. Try again later.</string>
+  <!-- Gemini's servers are overloaded or had an internal error. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_busy">Gemini is busy right now. Try again in a moment.</string>
+  <!-- Gemini did not answer in time. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_timeout">Gemini took too long to answer. Try again.</string>
+  <!-- Gemini answered a request with an HTTP error that has no explanation. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_with_code">Gemini couldn\'t answer, error <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+  <!-- Gemini answered a request with an HTTP error and Google's explanation, which is in English. [CHAR_LIMIT=NONE]-->
+  <string name="gemini_error_with_details">Gemini couldn\'t answer, error <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
   <!-- Detailed image description result for icon detection. [CHAR_LIMIT=NONE]-->
   <string name="detailed_image_description_icon_result">Icon: <xliff:g id="detailed_icon_result" example="BACK">%1$s</xliff:g></string>
   <!-- Detailed image description result for OCR. [CHAR_LIMIT=NONE]-->
   <string name="detailed_image_description_ocr_result">Text in image: <xliff:g id="detailed_ocr_result" example="That's a wonderful world.">%1$s</xliff:g></string>
   <!-- Detailed image description fallback result with a common error. [CHAR_LIMIT=NONE]-->
   <string name="detailed_image_description_fallback_result"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Can\'t get a more detailed image description.</string>
+  <!-- The result of the detailed image description when Gemini failed, with the reason it failed. [CHAR_LIMIT=NONE]-->
+  <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Can\'t get a more detailed image description: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
   <!-- Detailed image description fallback result with a network error. [CHAR_LIMIT=NONE]-->
   <string name="detailed_image_description_fallback_result_network_error"><xliff:g id="fallback_result_network_error" example="Text in image: Hello world!!">%1$s</xliff:g>. Connect to the internet for a more detailed image description.</string>
 

@@ -80,8 +80,8 @@ class LocalGemmaRunnerTest {
       done.countDown()
     }
 
-    override fun onFailure(reason: String) {
-      failure = reason
+    override fun onFailure(failure: GeminiFailure) {
+      this.failure = failure.message
       done.countDown()
     }
 

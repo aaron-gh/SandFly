@@ -27,7 +27,6 @@ import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_MOVE;
 import static android.view.MotionEvent.ACTION_POINTER_DOWN;
 import static android.view.MotionEvent.INVALID_POINTER_ID;
-import static com.google.android.accessibility.talkback.PrimesController.TimerAction.TOUCH_CONTROLLER_STATE_CHANGE_LATENCY;
 import static com.google.android.accessibility.talkback.PrimesController.TimerAction.TOUCH_EXPLORE_DELAY_100;
 import static com.google.android.accessibility.talkback.PrimesController.TimerAction.TOUCH_EXPLORE_DELAY_150;
 import static com.google.android.accessibility.talkback.PrimesController.TimerAction.TOUCH_EXPLORE_DELAY_200;
@@ -61,12 +60,13 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
+import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
-import androidx.annotation.WorkerThread;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.PrimesController.TimerAction;
+import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
@@ -75,7 +75,6 @@ import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
-import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.accessibility.utils.gestures.GestureManifold;
@@ -92,7 +91,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
-import java.util.concurrent.Executor;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -100,6 +98,12 @@ import org.checkerframework.checker.nullness.qual.Nullable;
  * interaction is a gesture, touch exploration, or passthrough . If the gesture detector clasifies
  * an interaction as a gesture this class will relay that back to the service. If an interaction
  * qualifies as touch exploration or a passthrough this class will relay that to the framework.
+ *
+ * <p>All of this runs on the service's main thread: the controller calls this class there as each
+ * motion event and state change comes in, and the gesture matchers and the touch exploration delay
+ * count their timeouts there too. Android passes motion events to the service through its main
+ * thread anyway, so another thread would not get them sooner, and a timeout counted there could run
+ * out before an event that came in earlier but was still waiting for the busy main thread.
  */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 public class TouchInteractionMonitor
@@ -148,12 +152,23 @@ public class TouchInteractionMonitor
   private int draggingPointerId = INVALID_POINTER_ID;
   private final TalkBackService service;
   private final Handler mainHandler;
-  private final Executor executor;
-  // Cache the executor thread for ensuring the request of touch controller's state is running with
-  // the same executor thread.
-  private Thread executorThread;
   private final GestureManifold gestureDetector;
   private boolean gestureStarted = false;
+  // Whether a gesture was performed while fingers were still down, such as a double tap and hold,
+  // so that the rest of the touch follows the circle menu instead of being a gesture. The offset
+  // keeps the followed point from jumping when one of the fingers lifts.
+  private boolean followingHeldTouch = false;
+  private float heldTouchOffsetX;
+  private float heldTouchOffsetY;
+
+  // Whether a finger is on the screen, from the raw touch, for any thread. Unlike the touch
+  // interaction, it ends as soon as the last finger lifts, not after gesture detection gives up.
+  private static volatile boolean fingerDown = false;
+
+  /** Returns whether a finger is on the screen, as far as gesture detection has seen. */
+  public static boolean isFingerDown() {
+    return fingerDown;
+  }
   // A gesture was dispatched before the controller cleared the interaction. The rest of that
   // gesture's events cancel the gesture matchers, so a new first finger down in the same
   // interaction must clear them again.
@@ -200,7 +215,6 @@ public class TouchInteractionMonitor
   private boolean waitFirstMotionEvent;
   private EventId eventId;
   private final int displayId;
-  private final boolean requestStateChangeInSameThread;
   private final PrimesController primesController;
   private final Queue<CallerInfo> callerInfos;
   private int latestDensityDpi;
@@ -272,9 +286,8 @@ public class TouchInteractionMonitor
       return false;
     }
 
-    return typingMethod == FocusProcessorForTapAndTouchExploration.FORCE_LIFT_TO_TYPE_ON_IME
-        || (typingMethod == FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE
-            && Role.getRole(accessibilityNodeInfoCompat) == Role.ROLE_TEXT_ENTRY_KEY);
+    return FocusProcessorForTapAndTouchExploration.liftsToType(
+        typingMethod, accessibilityNodeInfoCompat);
   }
   private static class CallerInfo {
     final int state;
@@ -297,7 +310,6 @@ public class TouchInteractionMonitor
       Display display,
       SharedPreferences prefs,
       TouchInteractionController controller,
-      Executor executor,
       TalkBackService service,
       PrimesController primesController,
       TouchExplorationModeFailureReporter touchExplorationModeFailureReporter,
@@ -308,14 +320,11 @@ public class TouchInteractionMonitor
     this.display = display;
     context.registerComponentCallbacks(this);
     this.controller = controller;
-    this.executor = executor;
-    executor.execute(() -> executorThread = Thread.currentThread());
     receivedPointerTracker = new ReceivedPointerTracker();
     this.service = service;
     this.primesController = primesController;
     this.idlePerformer = idlePerformer;
     this.logger = logger;
-    requestStateChangeInSameThread = FeatureFlagReader.requestStateChangeInSameThread(context);
     displayId = context.getDisplay().getDisplayId();
     mainHandler = new Handler(context.getMainLooper());
     this.touchExplorationModeFailureReporter = touchExplorationModeFailureReporter;
@@ -470,16 +479,28 @@ public class TouchInteractionMonitor
         }
       };
 
-  @WorkerThread
+  @MainThread
   @SuppressWarnings("Override")
   @Override
   public void onMotionEvent(MotionEvent event) {
+    if (event != null) {
+      int action = event.getActionMasked();
+      if (action == ACTION_DOWN) {
+        fingerDown = true;
+      } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+        fingerDown = false;
+      }
+    }
     if (event != null) {
       if (logMotionEvent) {
         LogUtils.v(LOG_TAG, "Received motion event : %s", event.toString());
       }
     } else {
       LogUtils.e(LOG_TAG, "Event is null.");
+      return;
+    }
+    if (followingHeldTouch) {
+      followHeldTouch(event);
       return;
     }
     if (event.getActionMasked() == ACTION_POINTER_DOWN) {
@@ -542,6 +563,20 @@ public class TouchInteractionMonitor
             break;
           case 2:
             if (gestureDetector.isTwoFingerPassthroughEnabled()) {
+              // Each finger must move passthroughTotalSlop (3x touchSlop) before the touch goes
+              // to the app. MultiFingerSwipe lets the first fingers of a 3-finger swipe move up to
+              // fingerCount x touchSlop (the same touchSlop) before the last finger lands, and
+              // only cancels itself once a finger moves that far with too few fingers down; a
+              // 3-finger tap (MultiFingerMultiTap) likewise allows 3x touchSlop. Dragging stops
+              // gesture detection, so passing the touch on any sooner would turn those gestures
+              // into scrolls.
+              // A scroll's slower finger can lag well behind, though. So once both fingers have
+              // moved the same way (rotationTracker.isScroll()) and the faster one has moved
+              // passthroughTotalSlop, by which point the 3-finger swipe has already cancelled
+              // itself (the gesture detector saw this event first), the touch is a scroll: pass
+              // it on without waiting for the slower finger.
+              double maxMoveDelta = 0;
+              double minMoveDelta = Double.MAX_VALUE;
               for (int index = 0; index < event.getPointerCount(); ++index) {
                 int id = event.getPointerId(index);
                 if (!receivedPointerTracker.isReceivedPointerDown(id)) {
@@ -554,13 +589,13 @@ public class TouchInteractionMonitor
                 final float deltaY =
                     receivedPointerTracker.getReceivedPointerDownY(id) - event.getY(index);
                 final double moveDelta = Math.hypot(deltaX, deltaY);
-                if (moveDelta < passthroughTotalSlop) {
-                  // For 3 finger swipe gestures which bear the 3 times of touchSlop during the
-                  // detection. If the monitor issues state change to drag/delegate before the 3rd
-                  // finger down due to the touch-slop over, the 3-finger swipe gesture detector
-                  // fails. So we align the moveDelta to 3-times of touch-slop.
-                  return;
-                }
+                maxMoveDelta = Math.max(maxMoveDelta, moveDelta);
+                minMoveDelta = Math.min(minMoveDelta, moveDelta);
+              }
+              boolean scrollPastSwipeSlop =
+                  rotationTracker.isScroll() && maxMoveDelta >= passthroughTotalSlop;
+              if (minMoveDelta < passthroughTotalSlop && !scrollPastSwipeSlop) {
+                return;
               }
             }
             if (rotationTracker.isPossibleRotation()) {
@@ -618,7 +653,7 @@ public class TouchInteractionMonitor
     }
   }
 
-  @WorkerThread
+  @MainThread
   @SuppressWarnings("Override")
   @Override
   public void onStateChanged(int state) {
@@ -641,6 +676,8 @@ public class TouchInteractionMonitor
     }
     if (state == STATE_TOUCH_INTERACTING) {
       waitFirstMotionEvent = true;
+    } else if (state == STATE_DRAGGING) {
+      service.onDragStarted();
     } else if (state == STATE_TOUCH_EXPLORING) {
       // Log isDefaultDisplay/gestureId/onGestureDetectedTime. The targetGestureTimeout is the
       // current time minus lastMotionEventTransmissionLatency
@@ -1019,6 +1056,57 @@ public class TouchInteractionMonitor
         });
     clear();
     clearGestureDetectorOnNextDown = true;
+    if (fingerDown) {
+      followingHeldTouch = true;
+      heldTouchOffsetX = 0;
+      heldTouchOffsetY = 0;
+    }
+  }
+
+  /**
+   * Passes the rest of a touch that performed a gesture before lifting to the circle menu, which
+   * the gesture may have opened, so that the user can slide straight to an item. The menu follows
+   * the middle of the fingers that are down.
+   */
+  private void followHeldTouch(MotionEvent event) {
+    int action = event.getActionMasked();
+    if (action == MotionEvent.ACTION_CANCEL) {
+      followingHeldTouch = false;
+      return;
+    }
+    boolean lifted = action == MotionEvent.ACTION_UP;
+    if (lifted) {
+      followingHeldTouch = false;
+    }
+    if (action == MotionEvent.ACTION_POINTER_UP) {
+      // Carry on from where the middle was, rather than jumping to the fingers still down.
+      int liftingIndex = event.getActionIndex();
+      heldTouchOffsetX += middle(event, -1, true) - middle(event, liftingIndex, true);
+      heldTouchOffsetY += middle(event, -1, false) - middle(event, liftingIndex, false);
+    }
+    int skipIndex = action == MotionEvent.ACTION_POINTER_UP ? event.getActionIndex() : -1;
+    float x = middle(event, skipIndex, true) + heldTouchOffsetX;
+    float y = middle(event, skipIndex, false) + heldTouchOffsetY;
+    mainHandler.post(
+        () -> {
+          ListMenuManager menuManager = service.getMenuManager();
+          if (menuManager != null) {
+            menuManager.followHeldTouch(x, y, lifted);
+          }
+        });
+  }
+
+  /** Returns the middle of the pointers of {@code event} on one axis, without {@code skipIndex}. */
+  private static float middle(MotionEvent event, int skipIndex, boolean alongX) {
+    float sum = 0;
+    int count = 0;
+    for (int index = 0; index < event.getPointerCount(); index++) {
+      if (index != skipIndex) {
+        sum += alongX ? event.getX(index) : event.getY(index);
+        count++;
+      }
+    }
+    return count == 0 ? 0 : sum / count;
   }
 
   /**
@@ -1153,18 +1241,7 @@ public class TouchInteractionMonitor
     return new IllegalStateException(stringBuilder.toString(), e);
   }
 
-  private IllegalStateException genNewException(Exception e) {
-    return packExceptionWithCallerInfo(e);
-  }
-
-  private IllegalStateException genException(Exception e) {
-    return packExceptionWithCallerInfo(e);
-  }
-
-  protected void requestTouchExplorationInternal(String caller, long requestStartTime) {
-    if (requestStartTime != 0L) {
-      reportStateChangeLatency(requestStartTime);
-    }
+  void requestTouchExploration(String caller) {
     try {
       if (isStateTransitionAllowed()) {
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
@@ -1172,38 +1249,13 @@ public class TouchInteractionMonitor
         controller.requestTouchExploration();
       }
     } catch (IllegalStateException e) {
-      // The P/H flag determines which exception packer will be shown in the exception stack.
-      // TODO: When the solution is verified OK, only one packer left for monitor.
-      throw requestStateChangeInSameThread ? genNewException(e) : genException(e);
+      throw packExceptionWithCallerInfo(e);
     }
     stateChangeRequested = true;
   }
 
-  void requestTouchExploration(String caller) {
-    long requestStartTime = SystemClock.uptimeMillis();
-    if (requestStateChangeInSameThread
-        && executorThread != null
-        && !executorThread.equals(Thread.currentThread())) {
-      executor.execute(() -> requestTouchExplorationInternal(caller, requestStartTime));
-    } else {
-      requestTouchExplorationInternal(caller, 0L);
-    }
-  }
-
-  protected void reportStateChangeLatency(long requestStartTime) {
-    if (requestStateChangeInSameThread) {
-      long currentTime = SystemClock.uptimeMillis();
-      if (currentTime >= requestStartTime) {
-        primesController.recordDuration(
-            TOUCH_CONTROLLER_STATE_CHANGE_LATENCY, requestStartTime, currentTime);
-      }
-    }
-  }
-
-  protected void requestDraggingInternal(int pointerId, String caller, long requestStartTime) {
-    if (requestStartTime != 0L) {
-      reportStateChangeLatency(requestStartTime);
-    }
+  protected void requestDragging(int pointerId, String caller) {
+    LogUtils.v(LOG_TAG, "requestDragging");
     try {
       if (isStateTransitionAllowed()) {
         trackStateChangeRequest(STATE_DRAGGING, caller);
@@ -1212,27 +1264,13 @@ public class TouchInteractionMonitor
       gestureDetector.clear();
 
     } catch (IllegalStateException e) {
-      throw requestStateChangeInSameThread ? genNewException(e) : genException(e);
+      throw packExceptionWithCallerInfo(e);
     }
     stateChangeRequested = true;
   }
 
-  protected void requestDragging(int pointerId, String caller) {
-    LogUtils.v(LOG_TAG, "requestDragging");
-    long requestStartTime = SystemClock.uptimeMillis();
-    if (requestStateChangeInSameThread
-        && executorThread != null
-        && !executorThread.equals(Thread.currentThread())) {
-      executor.execute(() -> requestDraggingInternal(pointerId, caller, requestStartTime));
-    } else {
-      requestDraggingInternal(pointerId, caller, 0L);
-    }
-  }
-
-  protected void requestDelegatingInternal(String caller, long requestStartTime) {
-    if (requestStartTime != 0L) {
-      reportStateChangeLatency(requestStartTime);
-    }
+  protected void requestDelegating(String caller) {
+    LogUtils.v(LOG_TAG, "requestDelegating");
     try {
       if (isStateTransitionAllowed()) {
         trackStateChangeRequest(STATE_DELEGATING, caller);
@@ -1240,21 +1278,9 @@ public class TouchInteractionMonitor
       }
       gestureDetector.clear();
     } catch (IllegalStateException e) {
-      throw requestStateChangeInSameThread ? genNewException(e) : genException(e);
+      throw packExceptionWithCallerInfo(e);
     }
     stateChangeRequested = true;
-  }
-
-  protected void requestDelegating(String caller) {
-    LogUtils.v(LOG_TAG, "requestDelegating");
-    long requestStartTime = SystemClock.uptimeMillis();
-    if (requestStateChangeInSameThread
-        && executorThread != null
-        && !executorThread.equals(Thread.currentThread())) {
-      executor.execute(() -> requestDelegatingInternal(caller, requestStartTime));
-    } else {
-      requestDelegatingInternal(caller, 0L);
-    }
   }
 
   private boolean shouldPerformGestureDetection() {
@@ -1368,14 +1394,7 @@ public class TouchInteractionMonitor
       if (timerAction != null) {
         primesController.recordDuration(timerAction, startTime, SystemClock.uptimeMillis());
       }
-      if (requestStateChangeInSameThread
-          && executorThread != null
-          && !executorThread.equals(Thread.currentThread())) {
-        executor.execute(
-            () -> requestTouchExplorationInternal("RequestTouchExplorationDelayed", 0L));
-      } else {
-        requestTouchExplorationInternal("RequestTouchExplorationDelayed", 0L);
-      }
+      requestTouchExploration("RequestTouchExplorationDelayed");
       int savedTimeMs = (int) (SystemClock.uptimeMillis() - postTime);
       if (savedTimeMs > 0) {
         logger.logAnalyticsEvent(

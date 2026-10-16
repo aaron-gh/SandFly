@@ -23,6 +23,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.AudioManager.AudioRecordingCallback;
 import android.media.AudioRecordingConfiguration;
+import com.google.android.accessibility.utils.output.LowLatencyAudio;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -53,6 +54,7 @@ public class MediaRecorderMonitor {
             super.onRecordingConfigChanged(configs);
             isVoiceRecognitionActive = containsAudioSourceVoiceRecognition(configs);
             final boolean isRecording = containsAudioSources(configs);
+            LowLatencyAudio.setMicrophoneInUse(isRecording);
             if (!MediaRecorderMonitor.this.isRecording && isRecording && (listener != null)) {
               listener.onMicrophoneActivated();
             } else if (MediaRecorderMonitor.this.isRecording && !isRecording && listener != null) {
@@ -77,6 +79,7 @@ public class MediaRecorderMonitor {
           audioManager.getActiveRecordingConfigurations();
       isVoiceRecognitionActive = containsAudioSourceVoiceRecognition(audioRecordingConfigurations);
       isRecording = containsAudioSources(audioRecordingConfigurations);
+      LowLatencyAudio.setMicrophoneInUse(isRecording);
       audioManager.registerAudioRecordingCallback(audioRecordingCallback, null);
     }
   }
@@ -85,6 +88,7 @@ public class MediaRecorderMonitor {
     if (audioManager != null) {
       audioManager.unregisterAudioRecordingCallback(audioRecordingCallback);
     }
+    LowLatencyAudio.setMicrophoneInUse(false);
   }
 
   public void setMicrophoneStateChangedListener(MicrophoneStateChangedListener listener) {

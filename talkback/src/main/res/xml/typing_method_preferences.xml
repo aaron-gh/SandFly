@@ -18,6 +18,9 @@
     <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
         android:title="@string/value_type_confirmation_lift_to_type_for_any_key"
         app:singleLineTitle="false"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference
+        android:title="@string/value_type_confirmation_lift_to_type_except_action_key"
+        app:singleLineTitle="false"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference

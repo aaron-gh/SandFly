@@ -139,6 +139,15 @@
             android:key="@string/keycombo_shortcut_other_language_options"
             android:title="@string/keycombo_menu_other_language_options" />
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_other_voice_profiles"
+            android:title="@string/shortcut_voice_profiles" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_global_previous_voice_profile"
+            android:title="@string/shortcut_previous_voice_profile" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_global_next_voice_profile"
+            android:title="@string/shortcut_next_voice_profile" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
             android:key="@string/keycombo_shortcut_other_toggle_search"
             android:title="@string/keycombo_menu_other_toggle_search" />
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference

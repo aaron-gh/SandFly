@@ -171,7 +171,8 @@ public final class EventTypeNotificationStateChangedFeedbackRule {
 
       if (!TextUtils.isEmpty(notificationText)) {
         notificationDetails.add(notificationText);
-      } else {
+      } else if (!isSameText(notificationTickerText, notificationTitle)) {
+        // Many notifications repeat their title as the ticker.
         notificationDetails.add(notificationTickerText);
       }
     }
@@ -181,5 +182,12 @@ public final class EventTypeNotificationStateChangedFeedbackRule {
             ? null
             : StringBuilderUtils.getAggregateText(notificationDetails);
     return text == null ? "" : text;
+  }
+
+  private static boolean isSameText(@Nullable CharSequence a, @Nullable CharSequence b) {
+    if (a == null || b == null) {
+      return false;
+    }
+    return a.toString().trim().equals(b.toString().trim());
   }
 }

@@ -32,6 +32,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -78,7 +79,23 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     super.onCreatePreferences(savedInstanceState, rootKey);
     buildMap();
     setupTellTimePreference();
+    setupEmojiRepeatCountPreference();
     updatePreferences();
+  }
+
+  /** Counting repeated emoji only applies while Backtalk names emoji. */
+  private void setupEmojiRepeatCountPreference() {
+    Preference emoji = findPreference(R.string.pref_emoji_speech_key);
+    Preference repeatCount = findPreference(R.string.pref_emoji_repeat_count_key);
+    if (!(emoji instanceof ListPreference emojiList) || repeatCount == null) {
+      return;
+    }
+    repeatCount.setEnabled(EmojiSpeech.MODE_NAMES.equals(emojiList.getValue()));
+    emoji.setOnPreferenceChangeListener(
+        (preference, newValue) -> {
+          repeatCount.setEnabled(EmojiSpeech.MODE_NAMES.equals(newValue));
+          return true;
+        });
   }
 
   private void setupTellTimePreference() {
@@ -126,14 +143,14 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 getString(R.string.pref_intonation_key),
                 getResources().getBoolean(R.bool.pref_intonation_default))
             .put(
-                getString(R.string.pref_phonetic_letters_key),
-                getResources().getBoolean(R.bool.pref_phonetic_letters_default))
-            .put(
                 getString(R.string.pref_speak_roles_key),
                 getResources().getBoolean(R.bool.pref_speak_roles_default))
             .put(
                 getString(R.string.pref_speak_container_element_positions_key),
                 getResources().getBoolean(R.bool.pref_speak_container_element_positions_default))
+            .put(
+                getString(R.string.pref_table_speak_row_column_numbers_key),
+                getResources().getBoolean(R.bool.pref_table_speak_row_column_numbers_default))
             .put(
                 getString(R.string.pref_verbose_scroll_announcement_key),
                 getResources().getBoolean(R.bool.pref_verbose_scroll_announcement_default))
@@ -172,6 +189,9 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 R.string.pref_keyboard_echo_default)
             .put(
                 getString(R.string.pref_capital_letters_key), R.string.pref_capital_letters_default)
+            .put(
+                getString(R.string.pref_phonetic_letters_mode_key),
+                R.string.pref_phonetic_letters_mode_default)
             .put(
                 getString(R.string.pref_punctuation_verbosity),
                 R.string.pref_punctuation_verbosity_default)
@@ -290,6 +310,11 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
             getString(R.string.pref_verbosity_preset_key),
             getString(R.string.pref_verbosity_preset_value_default));
     updateFragment(verbosityValueString);
+
+    Preference itemDetailsOrder = findPreference(R.string.pref_node_desc_order_key);
+    if (itemDetailsOrder != null) {
+      itemDetailsOrder.setSummary(ItemDetailsOrderFragment.getSummary(getContext()));
+    }
 
     // Attach listeners after verbosity values are copied to active, so that copying verbosity does
     // not invoke preference-change listener.

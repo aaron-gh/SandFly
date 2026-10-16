@@ -3,6 +3,7 @@ package com.google.android.accessibility.talkback.actor;
 import android.os.SystemClock;
 import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.accessibility.talkback.Feedback.NodeAction;
+import com.google.android.accessibility.talkback.compositor.PreparedFocusSpeech;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.Performance;
@@ -58,6 +59,7 @@ public class NodeActionPerformer {
     boolean success = true;
     if (nodeActionTarget != null) {
       TraversalTreeCache.onNodeAction(nodeAction.actionId());
+      PreparedFocusSpeech.onNodeAction(nodeAction.actionId());
       long time = SystemClock.uptimeMillis();
       success = nodeActionTarget.performAction(nodeAction.actionId(), nodeAction.args(), eventId);
       Performance.getInstance()

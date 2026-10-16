@@ -386,7 +386,6 @@ Los retrasos inferiores a 0.3 segundos cambiarán la acción de presionar dos ve
   <string name="dialog_message_turn_on_image_description">Puedes volver a intentarlo luego de activar las descripciones automáticas o detalladas de imágenes</string>
   <string name="title_pref_detailed_image_description">Descripciones de imágenes detalladas</string>
   <string name="summary_pref_ai_description">Escucha descripciones más largas cuando seleccionas \"%1$s\" del menú de TalkBack</string>
-  <string name="dialog_message_detailed_ai_description">Cuando uses esta función, las imágenes seleccionadas se enviarán a Google para que las procese y, luego, se borrarán.\n\nLa IA generativa es experimental, por lo que puede cometer errores. Si continúas, significa que aceptas las %1$s.</string>
   <string name="dialog_message_on_device_ai_description">Escucharás una descripción breve cuando te enfoques en una imagen en apps compatibles.\n\nLas imágenes se procesan en tu dispositivo y nunca se envían a Google. \n\nLa IA generativa es experimental, por lo que puede cometer errores. Si continúas, significa que aceptas las <a href="https://policies.google.com/terms/generative-ai">Condiciones del Servicio</a> de Google.</string>
   <string name="enable_gemini">Activar</string>
   <string name="powered_by_gemini">Con la tecnología de la IA generativa</string>
@@ -417,8 +416,6 @@ Los retrasos inferiores a 0.3 segundos cambiarán la acción de presionar dos ve
   <string name="title_pref_enable_auto_icon_detection">Todos los íconos</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Solo íconos sin etiqueta</string>
   <string name="title_pref_disable_auto_icon_detection">No describir íconos</string>
-  <string name="dialog_message_detailed_ai_promotion">La IA generativa proporciona descripciones detalladas de imágenes. Cuando uses esta función, las imágenes seleccionadas se enviarán a Google para que las procese y, luego, se borrarán.\n\nLa IA generativa es experimental, por lo que puede cometer errores. Puedes desactivar las descripciones detalladas de imágenes en cualquier momento desde la configuración de TalkBack.\n\nSi continúas, significa que aceptas las %1$s.</string>
-  <string name="dialog_message_screen_overview_promotion">Cuando uses esta función, se enviará una captura de tu pantalla a Google para que la procese y, luego, se borrará. El procesamiento demora varios segundos.\n\nLa IA generativa es experimental, por lo que cometerá errores. Si continúas, aceptas las %1$s.</string>
   <string name="dialog_message_on_device_ai_model_download">Escucharás una descripción breve cuando te enfoques en una imagen en apps compatibles.\n\nLas imágenes se procesan en tu dispositivo y no se envían en ningún momento a Google.\n\nLa IA generativa es experimental, por lo que puede cometer errores. Si continúas, significa que aceptas las %1$s.</string>
   <string name="title_pref_enable_gemini_support">Activar</string>
   <string name="title_pref_disable_gemini_support">Desactivar</string>

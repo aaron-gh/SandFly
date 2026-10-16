@@ -655,6 +655,49 @@ public class CollectionState {
     return AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED;
   }
 
+  /** Everything that {@link #updateCollectionInformation} changes, from {@link #save()}. */
+  public static final class SavedState {
+    @CollectionTransition private final int collectionTransition;
+    @RowColumnTransition private final int rowColumnTransition;
+    private final @Nullable AccessibilityNodeInfoCompat collectionRoot;
+    private final @Nullable AccessibilityNodeInfoCompat lastAnnouncedNode;
+    private final @Nullable ItemState itemState;
+    private final SparseArray<CharSequence> rowHeaders;
+    private final SparseArray<CharSequence> columnHeaders;
+    private final int collectionLevel;
+
+    private SavedState(CollectionState state) {
+      collectionTransition = state.mCollectionTransition;
+      rowColumnTransition = state.mRowColumnTransition;
+      collectionRoot = state.mCollectionRoot;
+      lastAnnouncedNode = state.mLastAnnouncedNode;
+      itemState = state.mItemState;
+      rowHeaders = state.mRowHeaders.clone();
+      columnHeaders = state.mColumnHeaders.clone();
+      collectionLevel = state.mCollectionLevel;
+    }
+  }
+
+  /**
+   * Returns the state, so that {@link #restore} can put it back after working out what focusing
+   * another node would announce.
+   */
+  public SavedState save() {
+    return new SavedState(this);
+  }
+
+  /** Puts back the state from {@link #save()}. */
+  public void restore(SavedState saved) {
+    mCollectionTransition = saved.collectionTransition;
+    mRowColumnTransition = saved.rowColumnTransition;
+    mCollectionRoot = saved.collectionRoot;
+    mLastAnnouncedNode = saved.lastAnnouncedNode;
+    mItemState = saved.itemState;
+    mRowHeaders = saved.rowHeaders.clone();
+    mColumnHeaders = saved.columnHeaders.clone();
+    mCollectionLevel = saved.collectionLevel;
+  }
+
   /** Upon a TYPE_VIEW_FOCUSED event, collection information will be updated. */
   public void onAccessibilityEvent(AccessibilityEvent event) {
     if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {

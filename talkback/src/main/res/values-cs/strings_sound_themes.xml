@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Backtalk-specific Czech translations for sound themes. -->
+    <string name="title_pref_sound_themes">Zvukové motivy</string>
+    <string name="summary_pref_sound_themes">Instalujte a vybírejte sady zvuků a vibrací, nahrazujte jednotlivé zvuky vlastními a zapněte zvuky a vibrace ovládacích prvků a 3D zvuk.</string>
+    <string name="sound_themes_installed_category">Nainstalované motivy</string>
+    <string name="sound_theme_backtalk">Backtalk</string>
+    <string name="sound_theme_backtalk_description">Vlastní zvuky a vibrace Backtalku a případné vaše vlastní zvuky.</string>
+    <string name="sound_theme_in_use">Používá se</string>
+    <string name="sound_theme_by">Autor: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licence: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> zvuk.</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> zvuky.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> zvuků.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibrace.</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> vibrace.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibrací.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Zapíná zvuky a vibrace ovládacích prvků.</string>
+    <string name="sound_theme_control_sounds_off">Vypíná zvuky a vibrace ovládacích prvků.</string>
+
+    <string name="sound_theme_use">Použít tento motiv</string>
+    <string name="sound_theme_about">O tomto motivu</string>
+    <string name="sound_theme_export">Uložit jako soubor motivu</string>
+    <string name="sound_theme_remove">Odebrat</string>
+    <string name="sound_theme_remove_confirm">Odebrat motiv <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Odebrat</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Motiv byl uložen s <xliff:g id="count" example="1">%d</xliff:g> zvukem.</item>
+        <item quantity="few">Motiv byl uložen s <xliff:g id="count" example="3">%d</xliff:g> zvuky.</item>
+        <item quantity="other">Motiv byl uložen s <xliff:g id="count" example="13">%d</xliff:g> zvuky.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">Backtalk nemohl uložit soubor motivu.</string>
+    <string name="sound_theme_no_picker">V tomto zařízení není aplikace, pomocí které by bylo možné vybírat soubory.</string>
+
+    <string name="sound_theme_settings_category">Nastavení motivu <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Zvuky</string>
+    <string name="summary_pref_theme_sounds">Nahraďte libovolný zvuk tohoto motivu vlastním zvukovým souborem.</string>
+
+    <string name="sound_themes_install_category">Instalovat motiv</string>
+    <string name="title_pref_sound_theme_install_file">Ze souboru</string>
+    <string name="summary_pref_sound_theme_install_file">Soubor motivu je soubor ZIP. Motiv můžete také otevřít nebo sdílet s Backtalkem z jiné aplikace.</string>
+    <string name="title_pref_sound_theme_install_link">Z odkazu</string>
+    <string name="summary_pref_sound_theme_install_link">Odkaz na soubor motivu nebo na repozitář GitHub obsahující motiv. Odkaz můžete s Backtalkem sdílet také z prohlížeče.</string>
+    <string name="sound_theme_link_message">Zadejte nebo vložte odkaz na soubor motivu nebo na repozitář GitHub obsahující motiv.</string>
+    <string name="sound_theme_link_hint">https://</string>
+
+    <string name="sound_theme_install_label">Instalace zvukového motivu</string>
+    <string name="sound_theme_install_reading">Načítání zvukového motivu</string>
+    <string name="sound_theme_install_title">Nainstalovat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Nainstalovat a použít</string>
+    <string name="sound_theme_install">Nainstalovat</string>
+    <string name="sound_theme_install_replaces">Tímto se nahradí nainstalovaný motiv se stejným názvem.</string>
+    <string name="sound_theme_install_skipped">Vynecháno:\
+<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Nainstalován motiv <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Nainstalován motiv <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Nyní se používá.</string>
+    <string name="sound_theme_install_nothing">Není k dispozici žádný zvukový motiv k instalaci.</string>
+    <string name="sound_theme_install_not_a_theme">Toto není zvukový motiv, který může Backtalk použít: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">Backtalk nemohl zvukový motiv nainstalovat. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Odkazy na zvukové motivy musí začínat řetězcem https.</string>
+
+    <string name="title_pref_theme_sounds_of">Zvuky motivu <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Použít pro vše zvuky Backtalku</string>
+    <string name="theme_sounds_reset_confirm">Odebrat všechny zvuky tohoto motivu a použít vlastní zvuky Backtalku?</string>
+    <string name="theme_sounds_reset_button">Odebrat</string>
+    <string name="theme_sounds_category">Zvuky</string>
+    <string name="theme_sound_summary_default">Zvuk Backtalku</string>
+    <string name="theme_sound_summary_custom">Zvuk motivu</string>
+    <string name="theme_sound_summary_none">Žádný zvuk. Přehraje se zvuk zaměření.</string>
+    <string name="theme_sound_summary_android_keyboard">Zvuk klávesnice Androidu</string>
+    <string name="theme_sound_use_android_keyboard">Použít zvuk klávesnice Androidu</string>
+    <string name="theme_sound_braille_character">Braillská klávesnice: zadání znaku</string>
+    <string name="theme_sound_braille_space">Braillská klávesnice: mezera</string>
+    <string name="theme_sound_braille_delete">Braillská klávesnice: mazání</string>
+    <string name="theme_sound_braille_new_line">Braillská klávesnice: nový řádek</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Vybrat zvukový soubor</string>
+    <string name="theme_sound_preview">Náhled</string>
+    <string name="theme_sound_use_default">Použít zvuk Backtalku</string>
+    <string name="theme_sound_remove">Odebrat zvuk</string>
+    <string name="theme_sound_too_large">Tento soubor je příliš velký. Zvuk může mít nejvýše 5 MB.</string>
+    <string name="theme_sound_not_audio">Backtalk tento soubor nemůže přehrát. Vyberte zvuk ve formátu WAV, OGG, MP3 nebo FLAC.</string>
+    <string name="theme_sound_failed">Backtalk tento soubor nemohl načíst.</string>
+</resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
   <!--The text for the instructions for the keyboard tutorial. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_keyboard_tutorial_text">This tutorial is for the enhanced keymap, which includes many new commands. To select the keymap, go to Backtalk settings > Advanced settings > Keyboard shortcuts.\n\nPress Action + Right arrow to select a topic. For the best experience, turn on Backtalk before getting started.</string>
+  <string name="talkback_keyboard_tutorial_text">This tutorial is for the enhanced keymap, which includes many new commands. To select the keymap, go to Backtalk settings > Keyboard shortcuts.\n\nPress Action + Right arrow to select a topic. For the best experience, turn on Backtalk before getting started.</string>
   <!-- The text of basic interaction on the index page. [CHAR_LIMIT=NONE]-->
   <string name="basic_interaction_link_text">Basic interaction</string>
   <!-- The subtext of basic interaction on the index page. [CHAR_LIMIT=NONE]-->
@@ -100,11 +100,11 @@
   <!-- The description of how to exit out of a container using the keyboard. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_exit_container">To exit this container, press Action + Alt + Ctrl + Right arrow</string>
   <!-- The description of how to add containers to reading controls. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_add_container_reading_controls">You\'ve exited the container. You can also add containers to your reading controls and then press Action + Shift + Right or Left arrow to select containers and Action + Down or Up arrow to jump between containers. To update reading controls, go to Backtalk > Settings > Customize menus > Customize reading controls.\n\nPress Action + Right arrow to find the next button.</string>
+  <string name="keyboard_tutorial_add_container_reading_controls">You\'ve exited the container. You can also add containers to your reading controls and then press Action + Shift + Right or Left arrow to select containers and Action + Down or Up arrow to jump between containers. To update reading controls, go to Backtalk settings > Reading controls.\n\nPress Action + Right arrow to find the next button.</string>
   <!-- The title of the keyboard tutorial customize reading controls page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_customize_reading_controls_page_title">Customize reading controls</string>
   <!-- The description of how to use customize reading controls. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_customize_reading_controls_page_text">You can also adjust speech settings using reading controls and customize what you can do with reading controls in Backtalk > Settings > Customize menus > Customize reading controls.</string>
+  <string name="keyboard_tutorial_customize_reading_controls_page_text">You can also adjust speech settings using reading controls and customize what you can do with reading controls in Backtalk settings > Reading controls.</string>
 
 
   <!-- Image description pages in keyboard tutorial. -->
@@ -113,9 +113,9 @@
   <!-- The description of how to use image description. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_image_description_page_text">When you\'re focused on an image, press Action + R, then I. There\'s one photo below. Try getting a description for it.</string>
   <!-- Keyboard tutorial image description settings description. [CHAR_LIMIT=NONE] -->
-  <string name="keyboard_tutorial_image_description_settings_description">You can change image description settings anytime in Backtalk settings > Image &#38; icon descriptions.</string>
+  <string name="keyboard_tutorial_image_description_settings_description">You can change image description settings anytime in Backtalk settings > Automatic descriptions.</string>
   <!-- Keyboard tutorial image description settings description for TTS. [CHAR_LIMIT=NONE] -->
-  <string name="keyboard_tutorial_image_description_settings_description_tts">You can change image description settings anytime in Backtalk settings then Image &#38; icon descriptions.</string>
+  <string name="keyboard_tutorial_image_description_settings_description_tts">You can change image description settings anytime in Backtalk settings then Automatic descriptions.</string>
   <!-- Keyboard tutorial image description sample image content description. [CHAR_LIMIT=NONE] -->
   <string name="keyboard_tutorial_image_description_sample_image_content_description">Sample image. Press Action + R, then I to hear a description.</string>
 
@@ -128,7 +128,7 @@
 
   <!-- Screen search pages in keyboard tutorial. -->
   <!-- The title of the keyboard tutorial screen search page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_screen_search_page_title">Using screen search search</string>
+  <string name="keyboard_tutorial_screen_search_page_title">Using screen search</string>
   <!-- The description of how to use screen search. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_screen_search_page_text">The screen search feature allows you to look for specific content on the screen.\n\nTo try it, press Action + CTRL + /. Type in a keyword, like \"next,\" to find items with the text on the screen.\n\nTry searching for \"next\" now to find the next button.</string>
   <!-- The title of the keyboard tutorial navigate to screen search page. [CHAR_LIMIT=NONE]-->

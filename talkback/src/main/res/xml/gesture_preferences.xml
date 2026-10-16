@@ -175,6 +175,14 @@
         android:key="@string/pref_shortcut_2finger_rotate_counterclockwise_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_2finger_rotate_counterclockwise"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_rotor_step_degrees_default"
+        android:dialogTitle="@string/title_pref_rotor_step_degrees"
+        android:entries="@array/pref_rotor_step_degrees_entries"
+        android:entryValues="@array/pref_rotor_step_degrees_values"
+        android:key="@string/pref_rotor_step_degrees_key"
+        android:summary="%s"
+        android:title="@string/title_pref_rotor_step_degrees" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Three finger gestures -->
@@ -211,6 +219,11 @@
         android:key="@string/pref_shortcut_3finger_3tap_hold_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_3finger_3tap_hold"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_3finger_4tap_default"
+        android:key="@string/pref_shortcut_3finger_4tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_3finger_4tap"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/pref_shortcut_3finger_swipe_up_default"
         android:key="@string/pref_shortcut_3finger_swipe_up_key"

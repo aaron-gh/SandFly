@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_pref_gemini_api_key">Klíč API Gemini</string>
+    <string name="summary_pref_gemini_api_key_set">Nastaven. Popis obrázku a popis obrazovky používají Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Používá se klíč zabudovaný v této aplikaci</string>
+    <string name="summary_pref_gemini_api_key_not_set">Nenastaven. Bez klíče popis obrázku pouze čte text a popis obrazovky vyžaduje AI v zařízení</string>
+    <string name="gemini_api_key_dialog_message">Získejte bezplatný klíč API v Google AI Studio na adrese aistudio.google.com/apikey a vložte jej sem. Chcete-li klíč odebrat, pole vymažte a uložte.\n\nObrázky a obrazovky, které necháte popsat, se odesílají Googlu. V bezplatné úrovni je Google může použít ke zlepšování svých produktů.</string>
+    <string name="gemini_api_key_hint">Klíč API</string>
+    <string name="gemini_api_key_save">Uložit</string>
+    <string name="gemini_api_key_get">Získat klíč</string>
+</resources>

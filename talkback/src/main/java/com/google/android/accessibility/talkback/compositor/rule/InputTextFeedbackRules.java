@@ -41,8 +41,10 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
@@ -90,20 +92,25 @@ public final class InputTextFeedbackRules {
    * @param eventFeedbackRules the event feedback rules
    * @param context the parent context
    * @param globalVariables the global compositor variables
+   * @param processorPhoneticLetters gives the phonetic word to say with or in place of a typed or
+   *     deleted letter
    */
   public static void addFeedbackRules(
       Map<Integer, Function<HandleEventOptions, EventFeedback>> eventFeedbackRules,
       Context context,
-      GlobalVariables globalVariables) {
+      GlobalVariables globalVariables,
+      ProcessorPhoneticLetters processorPhoneticLetters) {
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_TEXT_CLEAR,
         (eventOptions) -> inputTextClear(eventOptions, context, globalVariables));
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_TEXT_REMOVE,
-        (eventOptions) -> inputTextRemove(eventOptions, context, globalVariables));
+        (eventOptions) ->
+            inputTextRemove(eventOptions, context, globalVariables, processorPhoneticLetters));
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_TEXT_ADD,
-        (eventOptions) -> inputTextAdd(eventOptions, context, globalVariables));
+        (eventOptions) ->
+            inputTextAdd(eventOptions, context, globalVariables, processorPhoneticLetters));
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_TEXT_REPLACE,
         (eventOptions) -> inputTextReplace(eventOptions, context, globalVariables));
@@ -153,7 +160,10 @@ public final class InputTextFeedbackRules {
   }
 
   private static EventFeedback inputTextRemove(
-      HandleEventOptions eventOptions, Context context, GlobalVariables globalVariables) {
+      HandleEventOptions eventOptions,
+      Context context,
+      GlobalVariables globalVariables,
+      ProcessorPhoneticLetters processorPhoneticLetters) {
     TextEventInterpretation textEventInterpretation =
         AccessibilityInterpretationFeedbackUtils.safeTextInterpretation(
             eventOptions.eventInterpretation);
@@ -163,6 +173,14 @@ public final class InputTextFeedbackRules {
             context,
             textEventInterpretation.getRemovedText(),
             globalVariables.getCountRepeatedSymbols());
+    // The user can choose to hear the phonetic word with or in place of a letter they delete.
+    AccessibilityEvent event = eventOptions.eventObject;
+    Optional<CharSequence> phoneticInPlaceOfLetter =
+        isCutAction
+            ? Optional.empty()
+            : processorPhoneticLetters.getPhoneticInPlaceOfLetter(
+                event != null && PackageManagerUtils.isTalkBackPackage(event.getPackageName()),
+                textEventInterpretation.getRemovedText());
     CharSequence changedText =
         isCutAction
             ? FeatureFlagReader.reduceDuplicateTextCutFeedback(context)
@@ -170,7 +188,8 @@ public final class InputTextFeedbackRules {
                 : SpannableUtils.getSpannedFormattedString(
                     context.getString(R.string.template_text_cut), removedText)
             : SpannableUtils.getSpannedFormattedString(
-                context.getString(R.string.template_text_removed), removedText);
+                context.getString(R.string.template_text_removed),
+                phoneticInPlaceOfLetter.orElse(removedText));
     CharSequence notifyErrorState =
         updateAndGetErrorStateText(eventOptions, context, lastAnnouncedErrorInfo);
     CharSequence ttsOutput = joinCharSequences(changedText, notifyErrorState);
@@ -206,7 +225,10 @@ public final class InputTextFeedbackRules {
   }
 
   private static EventFeedback inputTextAdd(
-      HandleEventOptions eventOptions, Context context, GlobalVariables globalVariables) {
+      HandleEventOptions eventOptions,
+      Context context,
+      GlobalVariables globalVariables,
+      ProcessorPhoneticLetters processorPhoneticLetters) {
     StringBuilder logString = new StringBuilder();
     TextEventInterpretation textEventInterpretation =
         AccessibilityInterpretationFeedbackUtils.safeTextInterpretation(
@@ -254,10 +276,20 @@ public final class InputTextFeedbackRules {
     } else if (!isInitialWordEmpty) {
       changedText = initialWord;
     } else {
-      changedText =
-          globalVariables.getGlobalSayCapital()
-              ? CompositorUtils.prependCapital(interpretationAddedText, context)
-              : interpretationAddedText;
+      // The user can choose to hear the phonetic word with or in place of a letter they type.
+      AccessibilityEvent event = eventOptions.eventObject;
+      Optional<CharSequence> phoneticInPlaceOfLetter =
+          processorPhoneticLetters.getPhoneticInPlaceOfLetter(
+              event != null && PackageManagerUtils.isTalkBackPackage(event.getPackageName()),
+              textEventInterpretation.getAddedText());
+      if (phoneticInPlaceOfLetter.isPresent()) {
+        changedText = phoneticInPlaceOfLetter.get();
+      } else {
+        changedText =
+            globalVariables.getGlobalSayCapital()
+                ? CompositorUtils.prependCapital(interpretationAddedText, context)
+                : interpretationAddedText;
+      }
     }
     CharSequence notifyMaxLengthReachedState =
         AccessibilityNodeFeedbackUtils.notifyMaxLengthReachedStateText(

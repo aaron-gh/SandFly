@@ -25,8 +25,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.media.AudioManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
@@ -38,17 +41,21 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
+import com.google.android.accessibility.talkback.status.StatusReader;
+import com.google.android.accessibility.talkback.status.StatusItem;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils.TimeFeedbackFormat;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.broadcast.SameThreadBroadcastReceiver;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor.DisplayStateChangedListener;
-import com.google.android.accessibility.utils.output.FeedbackController;
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
@@ -60,6 +67,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 // TODO: Refactor this class into two separate receivers
 // with listener interfaces. This will remove the need to hold dependencies
@@ -88,6 +96,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final CallStateMonitor callStateMonitor;
   private final Set<DialogInterface> openDialogs = new HashSet<>();
   private final boolean isWatch;
+  @Nullable private final StatusReader statusReader;
 
   /** The current ringer mode. */
   private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
@@ -112,6 +121,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private boolean monitoring = false;
 
   private final ExecutorService executor;
+  private final Handler mainHandler = new Handler(Looper.getMainLooper());
 
   @Override
   public void onDisplayStateChanged(boolean displayOn) {
@@ -130,6 +140,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       FeedbackReturner pipeline,
       CallStateMonitor callStateMonitor,
       DisplayMonitor displayMonitor,
+      @Nullable StatusReader statusReader,
       TalkBackService service) {
     if (menuManager == null) {
       throw new IllegalStateException();
@@ -146,6 +157,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     televisionNavigationController = service.getTelevisionNavigationController();
 
     audioManager = (AudioManager) service.getSystemService(Service.AUDIO_SERVICE);
+    // Otherwise the ringer mode stays normal until it changes after Backtalk starts.
+    ringerMode = audioManager.getRingerMode();
+    this.statusReader = statusReader;
     // noinspection deprecation
     isInteractive =
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
@@ -194,13 +208,30 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               intent.getIntExtra(AudioManager.EXTRA_RINGER_MODE, AudioManager.RINGER_MODE_NORMAL));
       case Intent.ACTION_SCREEN_ON -> {
         isInteractive = true;
+        AudioDeviceRouter router = AudioDeviceRouter.getInstance();
+        if (router != null) {
+          router.ensureRouting();
+          router.scheduleReassertion();
+        }
         handleScreenOn(eventId);
       }
       case Intent.ACTION_SCREEN_OFF -> {
         isInteractive = false;
+        AudioDeviceRouter router = AudioDeviceRouter.getInstance();
+        if (router != null) {
+          router.ensureRouting();
+          router.scheduleReassertion();
+        }
         handleScreenOff(eventId);
       }
-      case Intent.ACTION_USER_PRESENT -> handleDeviceUnlocked(eventId);
+      case Intent.ACTION_USER_PRESENT -> {
+        AudioDeviceRouter router = AudioDeviceRouter.getInstance();
+        if (router != null) {
+          router.ensureRouting();
+          router.scheduleReassertion();
+        }
+        handleDeviceUnlocked(eventId);
+      }
     }
   }
 
@@ -239,13 +270,19 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
         // screen wake whether or not the screen lock is enabled.
         pipeline.returnFeedback(eventId, Feedback.sound(R.raw.volume_beep));
       } else {
-        final String ttsText = service.getString(R.string.value_device_unlocked);
+        SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+        final SpannableStringBuilder ttsText = new SpannableStringBuilder();
+        if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_UNLOCKED)) {
+          ttsText.append(service.getString(R.string.value_device_unlocked));
+        }
         SpeakOptions speakOptions =
             SpeakOptions.create()
                 .setQueueMode(
                     SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
                 .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE);
-        pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
+        if (ttsText.length() > 0) {
+          pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
+        }
       }
     }
     for (DeviceUnlockedListener deviceUnlockedListener : deviceUnlockedListeners) {
@@ -254,32 +291,32 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   private void handleScreenOffInBackgroundThread(EventId eventId) {
-    final SpannableStringBuilder ttsText =
-        new SpannableStringBuilder(service.getString(R.string.value_screen_off));
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    final SpannableStringBuilder ttsText = new SpannableStringBuilder();
+    if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_SCREEN_OFF)) {
+      ttsText.append(service.getString(R.string.value_screen_off));
+    }
     // Only announce ringer state if we're not in a call.
-    if (isIdle()) {
+    if (isIdle()
+        && ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SCREEN_OFF_RINGER)) {
       appendRingerStateAnnouncement(ttsText);
     }
 
-    // Always reset the television remote mode to the standard (navigate) mode on screen off.
-    if (televisionNavigationController != null) {
-      televisionNavigationController.resetToNavigateMode();
-    }
-
-    // Stop queued speech and events. AccessibilityEventProcessor will block new events.
-    service.clearQueues();
-
     // Speak "screen off".
     // REFERTO: Do not have any screen off message and any chime for Android Wear.
+    Feedback.Part.@Nullable Builder feedback = null;
     if (!isWatch) {
+      // Uninterruptible, so that the lock screen or always-on display appearing right after the
+      // screen turns off does not cut the announcement off.
       SpeakOptions speakOptions =
           SpeakOptions.create()
-              .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+              .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
               .setFlags(FeedbackItem.FLAG_NO_HISTORY);
       final float volume;
       if (ringerMode == AudioManager.RINGER_MODE_NORMAL) {
-        // Gets TalkBack's default earcon volume from FeedbackController.
-        final float talkbackVolume = getStreamVolume(FeedbackController.DEFAULT_STREAM);
+        // Gets the volume of Backtalk's sounds, which use the speech volume.
+        final float talkbackVolume =
+            getStreamVolume(FailoverTextToSpeech.getSpeechAudioStream(service));
         if ((talkbackVolume > 0)
             && (audioManager.isWiredHeadsetOn() || audioManager.isBluetoothA2dpOn())) {
           // TODO: refactor the following lines.
@@ -293,15 +330,35 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
           volume = 1.0f;
         }
         // Normally we'll play the volume beep on the ring stream.
-        pipeline.returnFeedback(
-            eventId,
-            Feedback.part()
-                .setSound(Feedback.Sound.create(R.raw.volume_beep, 1.0f, volume))
-                .speech(ttsText, speakOptions));
-      } else {
-        pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
+        feedback = Feedback.part().setSound(Feedback.Sound.create(R.raw.screen_off, 1.0f, volume));
+        if (ttsText.length() > 0) {
+          feedback.speech(ttsText, speakOptions);
+        }
+      } else if (ttsText.length() > 0) {
+        feedback = Feedback.speech(ttsText, speakOptions);
       }
     }
+
+    // The rest uses the speech queue and the event queues, which only the main thread may use.
+    final Feedback.Part.@Nullable Builder screenOffFeedback = feedback;
+    mainHandler.post(
+        () -> {
+          if (isInteractive) {
+            // The screen came back on meanwhile, so it is too late to say it went off.
+            return;
+          }
+          // Always reset the television remote mode to the standard (navigate) mode on screen off.
+          if (televisionNavigationController != null) {
+            televisionNavigationController.resetToNavigateMode();
+          }
+
+          // Stop queued speech and events. AccessibilityEventProcessor will block new events.
+          service.clearQueues();
+
+          if (screenOffFeedback != null) {
+            pipeline.returnFeedback(eventId, screenOffFeedback);
+          }
+        });
   }
 
   /** Handles when the screen is turned off. Announces "screen off". */
@@ -349,6 +406,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               service.getContentResolver(), Settings.Secure.DEVICE_PROVISIONED, 0)
           != 0) {
         appendCurrentTimeAnnouncementIfNeeded(ttsText);
+        appendStatusAnnouncement(ttsText);
       } else {
         // Device is not ready, just speak screen on
         ttsText.append(service.getString(R.string.value_screen_on));
@@ -364,6 +422,31 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE);
 
     pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
+  }
+
+  /**
+   * Appends the status items the user chose for when the screen turns on. They are spoken with the
+   * time, in one announcement that the lock screen taking focus cannot interrupt.
+   */
+  private void appendStatusAnnouncement(SpannableStringBuilder builder) {
+    if (statusReader == null) {
+      return;
+    }
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    List<StatusItem> items = ScreenAnnouncementSettings.screenOnStatusItems(prefs);
+    if (items.isEmpty()) {
+      return;
+    }
+    // The screen turning on is not a request, so do not ask for permission over the lock screen.
+    String status = statusReader.describe(items, /* askForLocation= */ false);
+    if (status.isEmpty()) {
+      return;
+    }
+    // A full stop after the time, and after the status, so that they do not run together.
+    if (builder.length() > 0 && builder.charAt(builder.length() - 1) != '.') {
+      builder.append('.');
+    }
+    StringBuilderUtils.appendWithSeparator(builder, status.endsWith(".") ? status : status + ".");
   }
 
   /**

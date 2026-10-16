@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.interfaces;
 
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import java.util.OptionalInt;
 
 /** Allows TalkBack to signal to BrailleIme. */
 public interface BrailleImeForTalkBack {
@@ -43,4 +44,11 @@ public interface BrailleImeForTalkBack {
 
   /** Returns whether braille keyboard is activated. */
   boolean isBrailleKeyboardActivated();
+
+  /**
+   * Returns the braille keyboard's echo setting, a {@code TextEventFilter.KeyboardEchoType}, while
+   * the user types on the on-screen braille keyboard rather than a braille display; otherwise
+   * empty.
+   */
+  OptionalInt getOnScreenKeyboardEcho();
 }

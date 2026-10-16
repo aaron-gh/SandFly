@@ -229,7 +229,7 @@ public class Connectioneer {
 
   private ImmutableSet<ConnectableDevice> getBondedDeviceSet() {
     return connectManagerProxy.getBondedDevices().stream()
-        .filter(device -> allowDevice(device.name()))
+        .filter(this::allowDevice)
         .collect(toImmutableSet());
   }
 
@@ -285,9 +285,14 @@ public class Connectioneer {
   }
 
   private boolean acceptAutoConnect(ConnectableDevice device) {
-    return allowDevice(device.name())
+    return allowDevice(device)
         && !userDisconnectedDevices.contains(device.address())
         && !userDeniedDevices.contains(device.address());
+  }
+
+  /** A display whose name Backtalk knows, or one that may connect through HID braille. */
+  private boolean allowDevice(ConnectableDevice device) {
+    return allowDevice(device.name()) || connectManagerProxy.mayBeHidBrailleDisplay(device);
   }
 
   private boolean allowDevice(String name) {
@@ -491,7 +496,7 @@ public class Connectioneer {
     /** Gets a copy list of currently visible devices. */
     public List<ConnectableDevice> getScannedDevicesCopy() {
       return connectioneer.connectManagerProxy.getConnectableDevices().stream()
-          .filter(device -> connectioneer.allowDevice(device.name()))
+          .filter(connectioneer::allowDevice)
           .collect(toCollection(ArrayList::new));
     }
 
@@ -715,7 +720,7 @@ public class Connectioneer {
 
     @Override
     public void onDeviceSeenOrUpdated(ConnectableDevice device) {
-      if (allowDevice(device.name())) {
+      if (allowDevice(device)) {
         autoConnectIfPossible(ImmutableSet.of(device), ConnectReason.AUTO_CONNECT_DEVICE_SEEN);
         aspectConnection.notifyConnectableDeviceSeenOrUpdated(device);
       }

@@ -122,6 +122,7 @@ class NodeVariables implements ParseTree.VariableDelegate {
   private static final int NODE_TEXT_OR_LABEL_OR_ID = 7070;
   private static final int NODE_UNLABELLED_DESCRIPTION = 7071;
   private static final int NODE_ENABLED_STATE = 7072;
+  private static final int NODE_LIFTS_TO_TYPE = 7073;
 
   private final Context mContext;
   private final @Nullable ImageContents imageContents;
@@ -236,6 +237,7 @@ class NodeVariables implements ParseTree.VariableDelegate {
       case NODE_IS_WITHIN_ACCESSIBILITY_FOCUS ->
           AccessibilityNodeInfoUtils.isSelfOrAncestorFocused(mNode);
       case NODE_WINDOW_IS_IME -> AccessibilityNodeInfoUtils.isKeyboard(mNode);
+      case NODE_LIFTS_TO_TYPE -> globalVariables != null && globalVariables.liftsToType(mNode);
       case NODE_HAS_SPELLING_SUGGESTIONS ->
           !AccessibilityNodeInfoUtils.getSpellingSuggestions(mContext, mNode).isEmpty();
       default -> mParentVariables.getBoolean(variableId);
@@ -534,6 +536,7 @@ class NodeVariables implements ParseTree.VariableDelegate {
     parseTree.addBooleanVariable("node.isVisible", NODE_IS_VISIBLE);
     parseTree.addBooleanVariable("node.isAccessibilityFocusable", NODE_IS_ACCESSIBILITY_FOCUSABLE);
     parseTree.addBooleanVariable("node.isImeWindow", NODE_WINDOW_IS_IME);
+    parseTree.addBooleanVariable("node.liftsToType", NODE_LIFTS_TO_TYPE);
     parseTree.addBooleanVariable("node.isFocused", NODE_IS_FOCUSED);
     parseTree.addBooleanVariable("node.isAccessibilityFocused", NODE_IS_ACCESSIBILITY_FOCUSED);
     parseTree.addBooleanVariable("node.isShowingHint", NODE_IS_SHOWING_HINT);

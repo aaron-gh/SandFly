@@ -32,6 +32,11 @@ public class TimedFlags {
     mFlags.remove(flag);
   }
 
+  /** Returns whether {@code flag} was set recently, without clearing it. */
+  public boolean checkRecentFlag(int flag) {
+    return hasFlag(flag, FLAG_TIMEOUT);
+  }
+
   public boolean checkAndClearRecentFlag(int flag) {
     if (hasFlag(flag, FLAG_TIMEOUT)) {
       mFlags.remove(flag);

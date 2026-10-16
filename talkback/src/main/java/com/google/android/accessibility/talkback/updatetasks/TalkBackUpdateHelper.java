@@ -41,16 +41,15 @@ import android.content.res.Resources;
 import android.os.Handler;
 import android.text.TextUtils;
 import androidx.annotation.Nullable;
-import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.NotificationActivity;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.FullScreenReadDialog;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.preference.GestureChangeNotificationActivity;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.selector.SelectorController;
-import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.utils.NotificationUtils;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -59,6 +58,7 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +73,9 @@ public class TalkBackUpdateHelper {
   private static final int BACKTALK_VERSION_CODE_MIN = 1_000_000;
   public static final String PREF_APP_PREV_VERSION_NAME = "app_prev_version_name";
 
+  /** Whether {@link #moveToFasterDefaults} has run. */
+  private static final String PREF_FASTER_DEFAULTS_DONE = "faster_defaults_done";
+
   /** The undefined previous version indicating that a user haven't upgraded TalkBack yet. */
   public static final int VERSION_CODE_UNKNOWN = -1;
 
@@ -83,7 +86,6 @@ public class TalkBackUpdateHelper {
   private static final int BUILT_IN_GESTURE_CHANGE_NOTIFICATION_ID = 3;
 
   private static final int SIDE_TAP_REMOVED_CHANGE_NOTIFICATION_ID = 4;
-  @VisibleForTesting static final int TALKBACK_UPDATED_NOTIFICATION_ID = 5;
 
   private final Handler handler = new Handler();
   private final List<Runnable> notificationRunnablePendingList = new ArrayList<>();
@@ -102,6 +104,10 @@ public class TalkBackUpdateHelper {
   public void checkUpdate() {
 
     showPendingNotifications();
+    moveToFasterDefaults();
+    turnOffAddedReadingControls();
+    BatteryOptimizationCheck.check(service, sharedPreferences);
+    PhoneticLetterMode.migrate(sharedPreferences, service.getResources());
 
     final int previousVersion = sharedPreferences.getInt(PREF_APP_VERSION, VERSION_CODE_UNKNOWN);
     String previousVersionName =
@@ -327,8 +333,6 @@ public class TalkBackUpdateHelper {
       }
     }
 
-    notifyTalkBackUpdatedIfNeeded(previousVersion);
-
     // Update key combo model.
     KeyComboManager keyComboManager = service.getKeyComboManager();
     if (keyComboManager != null) {
@@ -478,6 +482,53 @@ public class TalkBackUpdateHelper {
 
     notifyGestureChange(
         R.string.side_tap_shortcuts_removed_details, SIDE_TAP_REMOVED_CHANGE_NOTIFICATION_ID);
+  }
+
+  /**
+   * Moves users who kept the old 300 ms touch focus delay or left low-latency audio off to the
+   * faster defaults, once. The settings screen saved those defaults, so changing them in resources
+   * alone wouldn't reach these users. Other choices are left alone.
+   */
+  /** Whether {@link #turnOffAddedReadingControls} has run. */
+  private static final String PREF_READING_CONTROLS_OFF_DONE = "reading_controls_off_done";
+
+  /**
+   * Turns off, once, the reading controls that Backtalk turned on by itself: wrap around and lift to
+   * activate, which used to be on by default, and the focus delay controls, which TalkBack added the
+   * first time the user changed a delay. They're off by default now, and the settings screen saved
+   * the old defaults, so changing them in resources alone wouldn't reach these users.
+   */
+  private void turnOffAddedReadingControls() {
+    if (sharedPreferences.getBoolean(PREF_READING_CONTROLS_OFF_DONE, false)) {
+      return;
+    }
+    Editor editor = sharedPreferences.edit();
+    editor.remove(service.getString(R.string.pref_selector_wrap_around_key));
+    editor.remove(service.getString(R.string.pref_selector_change_lift_to_activate_key));
+    if (sharedPreferences.getBoolean(
+        service.getString(R.string.pref_touch_focus_time_out_first_update_key), false)) {
+      editor.remove(service.getString(R.string.pref_selector_change_touch_focus_latency_key));
+    }
+    if (sharedPreferences.getBoolean(
+        service.getString(R.string.pref_typing_focus_time_out_first_update_key), false)) {
+      editor.remove(service.getString(R.string.pref_selector_change_typing_focus_latency_key));
+    }
+    editor.putBoolean(PREF_READING_CONTROLS_OFF_DONE, true).apply();
+  }
+
+  private void moveToFasterDefaults() {
+    if (sharedPreferences.getBoolean(PREF_FASTER_DEFAULTS_DONE, false)) {
+      return;
+    }
+    Editor editor = sharedPreferences.edit();
+    String touchFocusKey = service.getString(R.string.pref_touch_focus_time_out_key);
+    if ("300".equals(sharedPreferences.getString(touchFocusKey, null))) {
+      editor.remove(touchFocusKey);
+    }
+    if (!sharedPreferences.getBoolean(FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY, true)) {
+      editor.remove(FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY);
+    }
+    editor.putBoolean(PREF_FASTER_DEFAULTS_DONE, true).apply();
   }
 
   private void showPendingNotifications() {
@@ -764,78 +815,6 @@ public class TalkBackUpdateHelper {
         }
       }
     }
-  }
-
-  /**
-   * Posts a notification to notify TalkBack has been updated, and redirects to the onboarding page.
-   */
-  private void notifyTalkBackUpdatedIfNeeded(int previousVersion) {
-    if (FormFactorUtils.isAndroidTv()) {
-      return;
-    }
-
-    if (FormFactorUtils.isAndroidWear()) {
-      notifyTalkBackUpdatedOnWearIfNeeded(previousVersion);
-      return;
-    }
-
-    notifyTalkBackUpdatedDefaultIfNeeded(previousVersion);
-  }
-
-  private void notifyTalkBackUpdatedDefaultIfNeeded(int previousVersion) {
-    if (previousVersion == VERSION_CODE_UNKNOWN
-        // Don't post the update notification if there is onboarding for the update and hasn't been
-        // shown.
-        || !OnboardingInitiator.hasOnboardingForNewFeaturesBeenShown(
-            SharedPreferencesUtils.getSharedPreferences(service), service)) {
-      return;
-    }
-
-    addNotificationToPendingList(
-        NotificationUtils.createNotification(
-            service,
-            service.getString(R.string.talkback_updated_notification_title),
-            service.getString(R.string.talkback_updated_notification_title),
-            /* content= */ null,
-            /* pendingIntent= */ null,
-            /* autoCancel= */ true),
-        TALKBACK_UPDATED_NOTIFICATION_ID);
-  }
-
-  // TODO: Replace versionCode with versionName in TalkBackUpdateHelper.
-  // the version code for talkback_wear_14.1_RC06
-  private static final int VERSION_CODE_WEAR_14_1 = 622776723;
-
-  private void notifyTalkBackUpdatedOnWearIfNeeded(int previousVersion) {
-    if (previousVersion == VERSION_CODE_UNKNOWN || previousVersion >= VERSION_CODE_WEAR_14_1) {
-      return;
-    }
-
-    Intent intent =
-        NotificationActivity.createStartIntent(
-            service,
-            R.string.wear_new_feature_page_title,
-            R.string.wear_new_feature_page_content,
-            Integer.MIN_VALUE,
-            R.string.wear_new_feature_page_button_content_description,
-            /* url= */ null);
-
-    PendingIntent pendingIntent =
-        PendingIntent.getActivity(
-            service,
-            /* requestCode= */ 0,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-    addNotificationToPendingList(
-        NotificationUtils.createNotification(
-            service,
-            service.getString(R.string.talkback_updated_notification_title),
-            service.getString(R.string.talkback_updated_notification_title),
-            service.getString(R.string.talkback_updated_notification_content),
-            pendingIntent,
-            /* autoCancel= */ true),
-        TALKBACK_UPDATED_NOTIFICATION_ID);
   }
 
   /**

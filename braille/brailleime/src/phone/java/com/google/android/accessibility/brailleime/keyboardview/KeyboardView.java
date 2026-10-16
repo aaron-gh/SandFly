@@ -314,6 +314,14 @@ public abstract class KeyboardView {
   }
 
   /**
+   * Turns a tablet's tabletop dots to the rotation it is held up with, for one standing up facing
+   * the user. Returns whether they turned.
+   */
+  public boolean faceHeldRotation() {
+    return brailleInputView != null && brailleInputView.faceHeldRotation();
+  }
+
+  /**
    * The device was turned by this many quarter turns clockwise while lying flat. Returns where the
    * charging port is now in tabletop mode, or null if that is not known.
    */

@@ -112,6 +112,25 @@ public class FocusManagerInternal {
     this.pipeline = pipeline;
   }
 
+  /** Told when accessibility focus has been set, before the app's focus event for it arrives. */
+  public interface FocusSetListener {
+    /**
+     * @param actionTime when the focus action started, in {@link SystemClock#uptimeMillis()} time,
+     *     before the app could send its focus event for it
+     */
+    void onAccessibilityFocusSet(
+        AccessibilityNodeInfoCompat node,
+        FocusActionInfo info,
+        @Nullable EventId eventId,
+        long actionTime);
+  }
+
+  private @Nullable FocusSetListener focusSetListener;
+
+  public void setFocusSetListener(@Nullable FocusSetListener listener) {
+    focusSetListener = listener;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Methods
 
@@ -449,6 +468,11 @@ public class FocusManagerInternal {
             Feedback.nodeAction(node, AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS));
     if (result) {
       focusActionInfo = updateFocusActionInfoIfNecessary(focusActionInfo, node);
+      // Told first, so that speech can start before the history walks the node's ancestors. The
+      // history only has to be ready by the time the app's focus event arrives.
+      if (focusSetListener != null) {
+        focusSetListener.onAccessibilityFocusSet(node, focusActionInfo, eventId, currentTime);
+      }
       // AccessibilityFocusActionHistory makes copy of the node, no need to obtain() here.
       history.onAccessibilityFocusAction(
           node, focusActionInfo, currentTime, screenState.getStableScreenState());

@@ -57,16 +57,20 @@ public class FeedbackManager {
     feedbackController = controller;
   }
 
-  /** Emits feedback with {@code Type}. */
+  /**
+   * Emits feedback with {@code Type}. Only the sound plays: braille vibrations are left to the
+   * braille keyboard, which plays its own.
+   */
   public void emitFeedback(Type type) {
-    feedbackController.playAuditory(type.resId, EVENT_ID_UNTRACKED);
+    feedbackController.playAuditoryWithoutHaptic(type.resId, EVENT_ID_UNTRACKED);
   }
 
-  /** Emits feedback with delay. */
+  /** Emits feedback with delay, as a sound only, like {@link #emitFeedback(Type)}. */
   public void emitFeedback(Type type, int delayMs) {
     new Handler()
         .postDelayed(
-            () -> feedbackController.playAuditory(type.resId, EVENT_ID_UNTRACKED), delayMs);
+            () -> feedbackController.playAuditoryWithoutHaptic(type.resId, EVENT_ID_UNTRACKED),
+            delayMs);
   }
 
   /**

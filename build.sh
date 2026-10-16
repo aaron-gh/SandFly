@@ -1,4 +1,4 @@
-### Bash script for building Talkback-for-Partners Android apk
+### Bash script for building the Backtalk APKs, for phones and watches
 ###
 ### The following environment variables must be set before executing this script
 ###   ANDROID_SDK           # path to local copy of Android SDK
@@ -27,9 +27,11 @@ else
 fi
 echo
 
-echo "#### Write local.properties file"
-echo "sdk.dir=${ANDROID_SDK}" > local.properties
-echo "#### Content of local.properties"; cat local.properties
+# Keep anything else in local.properties, such as gemini.api.key, and only add the SDK path.
+if ! grep -q '^sdk\.dir=' local.properties 2>/dev/null; then
+  echo "#### Add sdk.dir to local.properties"
+  echo "sdk.dir=${ANDROID_SDK}" >> local.properties
+fi
 echo
 
 if ! java -version; then

@@ -350,7 +350,7 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
     LogUtils.v(TAG, "Released control of stream %d", currentStream);
 
-    if (!shouldAnnounceStream(streamType)) {
+    if (!shouldAnnounceStream(streamType) || !speakVolumeChanges()) {
       handler.post(this::releaseControl);
       return;
     }
@@ -374,6 +374,15 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
    * @param streamType The stream type.
    * @return True if the stream should be announced.
    */
+  /** Whether the user wants the new volume said after they change it. */
+  private boolean speakVolumeChanges() {
+    return SharedPreferencesUtils.getBooleanPref(
+        SharedPreferencesUtils.getSharedPreferences(context),
+        context.getResources(),
+        R.string.pref_speak_volume_changes_key,
+        R.bool.pref_speak_volume_changes_default);
+  }
+
   private boolean shouldAnnounceStream(int streamType) {
     return switch (streamType) {
       case AudioManager.STREAM_MUSIC ->

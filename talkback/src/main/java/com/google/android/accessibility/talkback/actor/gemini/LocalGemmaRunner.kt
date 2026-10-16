@@ -66,7 +66,9 @@ internal class LocalGemmaRunner(
       try {
         parse(postData)
       } catch (e: JSONException) {
-        callbackExecutor.execute { callback.onFailure("Bad request: ${e.message}") }
+        callbackExecutor.execute {
+          callback.onFailure(GeminiFailure.other("Bad request: ${e.message}"))
+        }
         return
       }
     cancel()
@@ -84,40 +86,54 @@ internal class LocalGemmaRunner(
   private fun execute(job: Job, callback: GeminiRestResponseCallback) {
     try {
       if (job.cancelled.get()) {
-        callbackExecutor.execute { callback.onCancelled() }
+        report(job) { callback.onCancelled() }
         return
       }
       val model = llm()
       if (model == null) {
-        callbackExecutor.execute { callback.onFailure("No on-device model is installed") }
+        report(job) {
+          callback.onFailure(GeminiFailure.other("No on-device model is installed"))
+        }
         return
       }
       val raw = model.generate(job.prompt, job.jpeg)
       val text = if (job.json) extractJson(raw) else raw.trim()
       if (job.cancelled.get()) {
-        callbackExecutor.execute { callback.onCancelled() }
+        report(job) { callback.onCancelled() }
       } else if (text.isEmpty()) {
-        callbackExecutor.execute { callback.onFailure("The model gave an empty answer") }
+        report(job) {
+          callback.onFailure(GeminiFailure.other("The model gave an empty answer"))
+        }
       } else {
         val response =
           DataFieldUtils.GeminiResponse.builder()
             .setText(text)
             .setFinishReason(DataFieldUtils.FINISH_REASON_STOP)
             .build()
-        callbackExecutor.execute { callback.onResponse(response) }
+        report(job) { callback.onResponse(response) }
       }
     } catch (_: LocalLlmCancelledException) {
-      callbackExecutor.execute { callback.onCancelled() }
+      report(job) { callback.onCancelled() }
     } catch (e: LocalLlmMemoryException) {
-      callbackExecutor.execute {
+      report(job) {
         announce.accept(e.spokenMessage)
         callback.onCancelled()
       }
     } catch (e: Exception) {
-      callbackExecutor.execute { callback.onFailure(e.toString()) }
+      report(job) { callback.onFailure(GeminiFailure.other(e.toString())) }
     } finally {
+      // Already cleared when a result was reported, unless something unexpected was thrown.
       pending.compareAndSet(job, null)
     }
+  }
+
+  /**
+   * Reports how [job] ended. It stops being pending first, so that the callback, and anything
+   * waiting for it, sees nothing pending.
+   */
+  private fun report(job: Job, result: Runnable) {
+    pending.compareAndSet(job, null)
+    callbackExecutor.execute(result)
   }
 
   private fun parse(postData: JSONObject): Job {

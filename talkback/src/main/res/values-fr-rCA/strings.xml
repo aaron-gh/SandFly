@@ -386,7 +386,6 @@ Les délais inférieurs à 0,3 seconde changeront l\'activation en touchant deu
   <string name="dialog_message_turn_on_image_description">Vous pouvez réessayer après avoir activé les description d\'images automatiques ou détaillées</string>
   <string name="title_pref_detailed_image_description">Descriptions d\'images détaillées</string>
   <string name="summary_pref_ai_description">Écoutez des descriptions plus longues lorsque vous sélectionnez « %1$s » dans le menu TalkBack</string>
-  <string name="dialog_message_detailed_ai_description">Lorsque vous utilisez cette fonctionnalité, les images sélectionnées seront envoyées à Google pour être traitées, puis supprimées.\n\nL\'IA générative est expérimentale, elle est donc susceptible de se tromper. En continuant, vous acceptez les %1$s.</string>
   <string name="dialog_message_on_device_ai_description">Vous entendrez une brève description lorsque vous mettez en évidence une image dans les applis prises en charge.\n\nLes images sont traitées sur votre appareil et ne sont jamais envoyées à Google. \n\nL\'IA générative est expérimentale, elle est donc susceptible de se tromper. En continuant, vous acceptez les <a href="https://policies.google.com/terms/generative-ai">conditions d\'utilisation de Google</a>.</string>
   <string name="enable_gemini">Activer</string>
   <string name="powered_by_gemini">Fonctionnalité propulsée par l\'IA générative</string>
@@ -417,8 +416,6 @@ Les délais inférieurs à 0,3 seconde changeront l\'activation en touchant deu
   <string name="title_pref_enable_auto_icon_detection">Toutes les icônes</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Icônes non étiquetées uniquement</string>
   <string name="title_pref_disable_auto_icon_detection">Ne pas décrire les icônes</string>
-  <string name="dialog_message_detailed_ai_promotion">Les descriptions détaillées d\'images sont propulsées par l\'IA générative. Lorsque vous utilisez cette fonctionnalité, les images sélectionnées seront envoyées à Google pour être traitées, puis supprimées.\n\nL\'IA générative est expérimentale, elle est donc susceptible de se tromper. Vous pouvez désactiver les descriptions détaillées d\'images à tout moment dans les paramètres de TalkBack.\n\nEn continuant, vous acceptez les %1$s.</string>
-  <string name="dialog_message_screen_overview_promotion">Lorsque vous utilisez cette fonctionnalité, une capture d\'écran sera envoyée à Google aux fins de traitement, puis sera supprimée. Le traitement prend plusieurs secondes.\n\nL\'IA générative est expérimentale, elle commettra donc des erreurs. En continuant, vous acceptez les %1$s.</string>
   <string name="dialog_message_on_device_ai_model_download">Vous entendrez une brève description lorsque vous mettrez en évidence une image dans les applis prises en charge.\n\nLes images sont traitées sur votre appareil et ne sont jamais envoyées à Google.\n\nL\'IA générative est expérimentale, elle est donc susceptible de se tromper. En continuant, vous acceptez les %1$s.</string>
   <string name="title_pref_enable_gemini_support">Activée</string>
   <string name="title_pref_disable_gemini_support">Désactivée</string>

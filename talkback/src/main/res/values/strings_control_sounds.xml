@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sound themes: switch that gives each kind of control its own sound, from where it is on the screen, and its own vibration, from the sound theme. [CHAR LIMIT=40] -->
+    <string name="title_pref_control_sounds">Control sounds and vibrations</string>
+    <!-- Sound and vibration settings: summary of the control sounds switch. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_control_sounds">Give each kind of control, such as buttons, checkboxes, edit fields and list items, its own sound and its own vibration from the theme, in place of the focus sound and vibration, as Unspoken does for NVDA. The sound comes from where the control is on the screen, and Backtalk leaves out saying what kind of control it is.</string>
+    <!-- Sound and vibration settings: switch that keeps saying the kind of control, like "button", when its control sound plays. [CHAR LIMIT=60] -->
+    <string name="title_pref_control_sounds_speak_roles">Still say the kind of control</string>
+    <!-- Sound and vibration settings: summary of the switch that keeps saying the kind of control when its control sound plays. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_control_sounds_speak_roles">When a control sound plays, still say what kind of control it is, such as button. This is for every sound theme.</string>
+    <!-- Sound and vibration settings: title of the choice of when control sounds play in 3D. [CHAR LIMIT=40] -->
+    <string name="title_pref_control_sounds_3d">3D audio</string>
+    <!-- Sound and vibration settings: control sounds play in 3D with headphones, and move between the left and right speakers otherwise. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_headphones">With headphones</string>
+    <!-- Sound and vibration settings: control sounds always play in 3D. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_always">Always</string>
+    <!-- Sound and vibration settings: control sounds only move between the left and right speakers. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_never">Never, only left and right</string>
+
+    <string-array name="pref_control_sounds_3d_entries" translatable="false">
+        <item>@string/pref_control_sounds_3d_headphones</item>
+        <item>@string/pref_control_sounds_3d_always</item>
+        <item>@string/pref_control_sounds_3d_never</item>
+    </string-array>
+    <string-array name="pref_control_sounds_3d_values" translatable="false">
+        <item>headphones</item>
+        <item>always</item>
+        <item>never</item>
+    </string-array>
+
+    <!-- Individual sounds and vibrations: control sound for buttons. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_button">Control sound: button</string>
+    <!-- Individual sounds and vibrations: control sound for checkboxes, switches and toggle buttons. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_checkbox">Control sound: checkbox</string>
+    <!-- Individual sounds and vibrations: control sound for radio buttons. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_radio_button">Control sound: radio button</string>
+    <!-- Individual sounds and vibrations: control sound for edit fields. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_edit_text">Control sound: edit field</string>
+    <!-- Individual sounds and vibrations: control sound for drop-down lists. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_combo_box">Control sound: drop-down list</string>
+    <!-- Individual sounds and vibrations: control sound for sliders and number pickers. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_slider">Control sound: slider</string>
+    <!-- Individual sounds and vibrations: control sound for links on web pages. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_link">Control sound: link</string>
+    <!-- Individual sounds and vibrations: control sound for images. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_image">Control sound: image</string>
+    <!-- Individual sounds and vibrations: control sound for clocks. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_clock">Control sound: clock</string>
+    <!-- Individual sounds and vibrations: control sound for tabs. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_tab">Control sound: tab</string>
+    <!-- Individual sounds and vibrations: control sound for menu items. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_menu_item">Control sound: menu item</string>
+    <!-- Individual sounds and vibrations: control sound for items in lists. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_list_item">Control sound: list item</string>
+    <!-- Individual sounds and vibrations: control sound for items in trees on web pages. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_tree_item">Control sound: tree item</string>
+</resources>

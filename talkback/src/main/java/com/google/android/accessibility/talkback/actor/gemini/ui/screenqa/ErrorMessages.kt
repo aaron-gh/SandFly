@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.actor.gemini.ui.screenqa
 
+import android.content.Context
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.gemini.GeminiActor
@@ -24,8 +25,11 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.Finish
 import com.google.android.accessibility.talkback.actor.gemini.screenqa.OverviewResponse
 
 /** Returns a nice user-facing message for the given error */
+fun getErrorMessage(context: Context, error: OverviewResponse.Error): String =
+  error.message ?: context.getString(getErrorMessageId(error))
+
 @StringRes
-fun getErrorMessage(error: OverviewResponse.Error): Int {
+private fun getErrorMessageId(error: OverviewResponse.Error): Int {
   if (error.finishReason != null) {
     return when (error.finishReason) {
       FinishReason.ERROR_BLOCKED -> R.string.gemini_block_message

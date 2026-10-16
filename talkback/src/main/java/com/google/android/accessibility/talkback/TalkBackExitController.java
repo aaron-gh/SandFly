@@ -21,6 +21,7 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS;
 
+import android.accessibilityservice.AccessibilityService;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -34,7 +35,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.TextView;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor.ScreenChangedListener;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
@@ -201,6 +205,18 @@ public class TalkBackExitController implements AccessibilityEventListener, Scree
 
     LayoutInflater inflater = LayoutInflater.from(service);
     talkbackExitWatermark = inflater.inflate(R.layout.talkback_exit_watermark, /* root= */ null);
+    // The banner says to tap with 3 fingers for the Backtalk menu. If that gesture does something
+    // else, it names the setting that hides the banner instead.
+    GestureShortcutMapping mapping = service.getGestureShortcutMapping();
+    if (mapping != null
+        && !GestureHints.isAssigned(
+            service,
+            mapping,
+            AccessibilityService.GESTURE_3_FINGER_SINGLE_TAP,
+            service.getString(R.string.shortcut_value_talkback_breakout))) {
+      TextView text = talkbackExitWatermark.findViewById(R.id.talkback_exit_watermark_text);
+      text.setText(R.string.talkback_exit_watermark_text_no_menu_gesture);
+    }
 
     WindowManager wm = (WindowManager) service.getSystemService(Context.WINDOW_SERVICE);
     final WindowManager.LayoutParams parameters = new WindowManager.LayoutParams();
@@ -234,10 +250,7 @@ public class TalkBackExitController implements AccessibilityEventListener, Scree
                 .setQueueMode(QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS)
                 .setFlags(
                     FeedbackItem.FLAG_NO_HISTORY
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE
-                        | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE)));
+                        | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
   }
 
   /** Hides TalkBack-exit watermark. */

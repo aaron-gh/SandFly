@@ -70,6 +70,15 @@ public class FocusFinder {
   }
 
   /**
+   * Returns the view that has accessibility focus. Android's cached copy of the view is checked
+   * with the app, as it may be stale, unless {@code isCurrent} accepts the copy as it is.
+   */
+  public @Nullable AccessibilityNodeInfoCompat findAccessibilityFocus(
+      Filter<AccessibilityNodeInfoCompat> isCurrent) {
+    return getAccessibilityFocusNode(service, /* fallbackOnRoot= */ false, isCurrent);
+  }
+
+  /**
    * Returns the accessibility focus by calling {@link AccessibilityService#findFocus(int)}. If no
    * focus is found, it allows to return the root node of the active window.
    *
@@ -77,6 +86,13 @@ public class FocusFinder {
    */
   public static @Nullable AccessibilityNodeInfoCompat getAccessibilityFocusNode(
       AccessibilityService service, boolean fallbackOnRoot) {
+    return getAccessibilityFocusNode(service, fallbackOnRoot, /* isCurrent= */ null);
+  }
+
+  private static @Nullable AccessibilityNodeInfoCompat getAccessibilityFocusNode(
+      AccessibilityService service,
+      boolean fallbackOnRoot,
+      @Nullable Filter<AccessibilityNodeInfoCompat> isCurrent) {
     AccessibilityNodeInfo ret = null;
     AccessibilityNodeInfo focused = service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY);
     if (focused == null) {
@@ -106,12 +122,12 @@ public class FocusFinder {
     }
 
     if (ret != null) {
+      AccessibilityNodeInfoCompat node = AccessibilityNodeInfoUtils.toCompat(ret);
       // When AccessibilityNodeProvider is used, the returned node may be stale.
-      boolean exist = ret.refresh();
-      if (!exist) {
+      if ((isCurrent == null || !isCurrent.accept(node)) && !ret.refresh()) {
         return null;
       }
-      return AccessibilityNodeInfoUtils.toCompat(ret);
+      return node;
     }
 
     return null;

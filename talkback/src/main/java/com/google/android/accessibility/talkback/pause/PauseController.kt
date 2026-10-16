@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.pause
 
 import android.accessibilityservice.AccessibilityService
 import android.app.KeyguardManager
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -38,7 +39,6 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
-import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
@@ -341,8 +341,19 @@ class PauseController(
         intent,
         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
       )
+    // A channel of its own, of low importance, puts it in the Silent section, apart from Backtalk's
+    // other notifications. Android groups notifications from one app in a section, and a tap on
+    // this one in a collapsed group does nothing, while paused Backtalk can't help find the group.
+    notificationManager?.createNotificationChannel(
+      NotificationChannel(
+        NOTIFICATION_CHANNEL,
+        service.getString(R.string.notification_channel_backtalk_paused),
+        NotificationManager.IMPORTANCE_LOW,
+      )
+    )
     val notification =
-      NotificationUtils.createDefaultNotificationBuilder(service)
+      NotificationCompat.Builder(service, NOTIFICATION_CHANNEL)
+        .setSmallIcon(R.drawable.quantum_gm_ic_accessibility_new_vd_theme_24)
         .setContentTitle(service.getString(R.string.notification_title_backtalk_paused))
         .setContentText(service.getString(R.string.notification_message_backtalk_paused))
         .setContentIntent(pendingIntent)
@@ -363,6 +374,7 @@ class PauseController(
   companion object {
     private const val TAG = "PauseController"
     private const val ACTION_RESUME = "com.google.android.accessibility.talkback.RESUME_BACKTALK"
+    private const val NOTIFICATION_CHANNEL = "backtalk_paused"
 
     @Volatile private var pausedNow = false
 

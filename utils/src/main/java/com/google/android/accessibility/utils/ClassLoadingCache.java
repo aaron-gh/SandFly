@@ -19,6 +19,8 @@ package com.google.android.accessibility.utils;
 import android.text.TextUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** This class manages efficient loading of classes. */
@@ -93,11 +95,21 @@ public class ClassLoadingCache {
     if ((targetClassName == null) || (referenceClassName == null)) return false;
     if (TextUtils.equals(targetClassName, referenceClassName)) return true;
 
-    final Class<?> referenceClass = loadOrGetCachedClass(referenceClassName.toString());
-    final Class<?> targetClass = loadOrGetCachedClass(targetClassName.toString());
-    return referenceClass != null
-        && targetClass != null
-        && referenceClass.isAssignableFrom(targetClass);
+    String reference = referenceClassName.toString();
+    synchronized (ClassLoadingCache.class) {
+      HashMap<Object, Boolean> results = instanceOfResultsFor(targetClassName.toString());
+      @Nullable Boolean result = results.get(reference);
+      if (result == null) {
+        final Class<?> referenceClass = loadOrGetCachedClass(reference);
+        final Class<?> targetClass = loadOrGetCachedClass(targetClassName.toString());
+        result =
+            referenceClass != null
+                && targetClass != null
+                && referenceClass.isAssignableFrom(targetClass);
+        results.put(reference, result);
+      }
+      return result;
+    }
   }
 
   /** Returns whether a target class is an instance of a reference class. */
@@ -105,7 +117,48 @@ public class ClassLoadingCache {
     if ((targetClassName == null) || (referenceClass == null)) return false;
     if (TextUtils.equals(targetClassName, referenceClass.getName())) return true;
 
-    final Class<?> targetClass = loadOrGetCachedClass(targetClassName.toString());
-    return targetClass != null && referenceClass.isAssignableFrom(targetClass);
+    synchronized (ClassLoadingCache.class) {
+      HashMap<Object, Boolean> results = instanceOfResultsFor(targetClassName.toString());
+      @Nullable Boolean result = results.get(referenceClass);
+      if (result == null) {
+        final Class<?> targetClass = loadOrGetCachedClass(targetClassName.toString());
+        result = targetClass != null && referenceClass.isAssignableFrom(targetClass);
+        results.put(referenceClass, result);
+      }
+      return result;
+    }
+  }
+
+  // Results of checkInstanceOf, by target class name and then by reference class or class name.
+  // Role checks a node's class against dozens of classes, many times for each focus change, so
+  // looking each pair up again was a large part of the time to answer a swipe. The answers never
+  // change, but apps have many class names, so only the most recently used are kept.
+  private static final int MAX_TARGET_CLASSES = 512;
+
+  private static final LinkedHashMap<String, HashMap<Object, Boolean>> instanceOfResults =
+      new LinkedHashMap<String, HashMap<Object, Boolean>>(64, 0.75f, /* accessOrder= */ true) {
+        @Override
+        protected boolean removeEldestEntry(Map.Entry<String, HashMap<Object, Boolean>> eldest) {
+          return size() > MAX_TARGET_CLASSES;
+        }
+      };
+  // The target of the last check, since most checks come in runs for the same node's class name.
+  private static @Nullable String lastTargetClassName;
+  private static HashMap<Object, Boolean> lastTargetResults = new HashMap<>();
+
+  @SuppressWarnings({"StringEquality", "ReferenceEquality"})
+  private static HashMap<Object, Boolean> instanceOfResultsFor(String targetClassName) {
+    // The same string object as last time needs no lookup, nor comparing its characters.
+    if (targetClassName == lastTargetClassName) {
+      return lastTargetResults;
+    }
+    HashMap<Object, Boolean> results = instanceOfResults.get(targetClassName);
+    if (results == null) {
+      results = new HashMap<>();
+      instanceOfResults.put(targetClassName, results);
+    }
+    lastTargetClassName = targetClassName;
+    lastTargetResults = results;
+    return results;
   }
 }

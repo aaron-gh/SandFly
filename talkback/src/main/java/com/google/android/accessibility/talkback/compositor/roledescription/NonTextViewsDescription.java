@@ -50,6 +50,9 @@ public final class NonTextViewsDescription implements RoleDescription {
     if (!globalVariables.getSpeakRoles() || node == null) {
       return "";
     }
+    if (globalVariables.isRoleSaidBySound(node)) {
+      return "";
+    }
 
     CharSequence nodeRoleDescription =
         AccessibilityNodeFeedbackUtils.getNodeRoleDescription(node, context, globalVariables);

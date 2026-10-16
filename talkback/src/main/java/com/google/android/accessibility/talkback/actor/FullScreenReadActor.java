@@ -268,9 +268,14 @@ public class FullScreenReadActor {
 
   /** Ignore the pause speech and reset the continuous reading pause node. */
   public void ignore() {
+    @Nullable AccessibilityNodeInfoCompat paused = pausedNode;
+    if (paused == null) {
+      // Nothing to compare, so don't ask the app for the focused node on every event.
+      return;
+    }
     @Nullable AccessibilityNodeInfoCompat currentFocused =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
-    if (pausedNode != null && !pausedNode.equals(currentFocused)) {
+    if (!paused.equals(currentFocused)) {
       previousState = currentState;
       speechController.ignorePause();
       pausedNode = null;
@@ -362,7 +367,7 @@ public class FullScreenReadActor {
   }
 
   public void setSelectionModeEnabled(EventId eventId) {
-    AccessibilityNodeInfoCompat node = getSelectTextFocus(eventId);
+    AccessibilityNodeInfoCompat node = getSelectTextFocus(eventId, /* speakIfNone= */ true);
     if (node == null) {
       return;
     }
@@ -374,30 +379,35 @@ public class FullScreenReadActor {
   }
 
   public void setSelectionModeDisabled(EventId eventId) {
-    AccessibilityNodeInfoCompat node = getSelectTextFocus(eventId);
-    if (node == null) {
-      return;
-    }
+    // Copying mode can be ended with nothing focused, as it goes from window to window.
+    AccessibilityNodeInfoCompat node = getSelectTextFocus(eventId, /* speakIfNone= */ false);
 
-    if (!pipeline.returnFeedback(eventId, Feedback.edit(node, END_SELECT))) {
+    if (!pipeline.returnFeedback(eventId, Feedback.edit(node, END_SELECT)) && node != null) {
       pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
       interrupt(/* internal= */ true);
     }
   }
 
-  private @Nullable AccessibilityNodeInfoCompat getSelectTextFocus(EventId eventId) {
+  private @Nullable AccessibilityNodeInfoCompat getSelectTextFocus(
+      EventId eventId, boolean speakIfNone) {
     @Nullable AccessibilityNodeInfoCompat node =
         accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
     if (AccessibilityNodeInfoUtils.isTextSelectable(node)) {
       return node;
     }
-    node = accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
+    @Nullable AccessibilityNodeInfoCompat editingNode =
+        accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(node);
+    if (editingNode != null) {
+      return editingNode;
+    }
+    // Other text is selected for copying by Backtalk; it speaks if there is none.
     if (node != null) {
       return node;
-    } else {
-      pipeline.returnFeedback(eventId, Feedback.speech(service.getString(R.string.not_selectable)));
-      return null;
     }
+    if (speakIfNone) {
+      pipeline.returnFeedback(eventId, Feedback.speech(service.getString(R.string.not_selectable)));
+    }
+    return null;
   }
 
   /** Runnable executed when a node has finished being spoken */

@@ -29,6 +29,7 @@ import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.Feedback.InterruptLevel;
+import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEventProcessor.AccessibilityEventIdleListener;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
@@ -350,6 +351,11 @@ public class Pipeline implements AccessibilityEventListener, AccessibilityEventI
     if (PauseController.isPaused()) {
       // Paused Backtalk gives no feedback and takes no actions.
       return false;
+    }
+
+    AudioDeviceRouter router = AudioDeviceRouter.getInstance();
+    if (router != null) {
+      router.ensureRouting();
     }
 
     LogUtils.d(LOG, "execute() feedback=%s", feedback);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Keyboard echo choices, the same as the on-screen keyboard's. -->
+  <string-array name="pref_brailleime_keyboard_echo_entries">
+    <item>@string/value_braille_keyboard_echo_none</item>
+    <item>@string/value_braille_keyboard_echo_characters</item>
+    <item>@string/value_braille_keyboard_echo_words</item>
+    <item>@string/value_braille_keyboard_echo_characters_and_words</item>
+  </string-array>
+
+  <!-- Keyboard echo values. Must match TextEventFilter.KeyboardEchoType. -->
+  <string-array name="pref_brailleime_keyboard_echo_values" translatable="false">
+    <item>2</item>
+    <item>1</item>
+    <item>3</item>
+    <item>0</item>
+  </string-array>
+
+  <!-- Characters and words, as BrailleUserPreferences.readKeyboardEcho defaults to. -->
+  <string name="pref_brailleime_keyboard_echo_default" translatable="false">0</string>
+</resources>

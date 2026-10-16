@@ -2,6 +2,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:key="@string/pref_category_manage_context_menu_key">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_radial_menu_default"
+        android:key="@string/pref_radial_menu_key"
+        android:summary="@string/summary_pref_radial_menu"
+        android:title="@string/title_pref_radial_menu" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_context_menu_contextual_actions_category_key"
         android:title="@string/context_menu_category_contextual_actions">
@@ -139,6 +144,20 @@
             android:summary="@string/summary_language"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_emoji_default"
+            android:key="@string/pref_show_context_menu_emoji_setting_key"
+            android:order="15"
+            android:title="@string/title_pref_emoji_speech"
+            android:summary="@string/summary_selector_menu_emoji"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_voice_profile_default"
+            android:key="@string/pref_show_context_menu_voice_profile_setting_key"
+            android:order="15"
+            android:title="@string/title_selector_voice_profile"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_audio_ducking_default"
             android:key="@string/pref_show_context_menu_audio_ducking_setting_key"
             android:order="16"
@@ -186,6 +205,22 @@
             android:title="@string/title_pause_backtalk"
             app:singleLineTitle="false"
             android:summary="@string/summary_pause_backtalk"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_inspect_item_default"
+            android:key="@string/pref_show_context_menu_inspect_item_setting_key"
+            android:order="26"
+            android:title="@string/shortcut_inspect_item"
+            app:singleLineTitle="false"
+            android:summary="@string/summary_inspect_item_menu"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_copy_screen_tree_default"
+            android:key="@string/pref_show_context_menu_copy_screen_tree_setting_key"
+            android:order="27"
+            android:title="@string/shortcut_copy_screen_tree"
+            app:singleLineTitle="false"
+            android:summary="@string/summary_copy_screen_tree_menu"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_voice_commands_default"

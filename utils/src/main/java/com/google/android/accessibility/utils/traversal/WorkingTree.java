@@ -17,6 +17,7 @@
 package com.google.android.accessibility.utils.traversal;
 
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.utils.NodeOverrides;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.Iterables;
 import java.util.ArrayList;
@@ -187,6 +188,23 @@ public class WorkingTree {
     }
 
     return node;
+  }
+
+  public @Nullable WorkingTree findDescendant(
+      NodeOverrides.Order order, @Nullable WorkingTree excluded) {
+    for (WorkingTree child : children) {
+      if (child == excluded) {
+        continue;
+      }
+      if (order.isTarget(child.node)) {
+        return child;
+      }
+      WorkingTree found = child.findDescendant(order, excluded);
+      if (found != null) {
+        return found;
+      }
+    }
+    return null;
   }
 
   public WorkingTree getRoot() {

@@ -46,7 +46,8 @@ public class Image extends PageContentConfig {
     final ImageView image = view.findViewById(R.id.image);
     image.setImageResource(imageDrawableId);
     if (contentDescriptionResId != ID_NULL) {
-      image.setContentDescription(context.getString(contentDescriptionResId));
+      image.setContentDescription(
+          TutorialGestureUses.getText(context, contentDescriptionResId, data));
     }
     return view;
   }

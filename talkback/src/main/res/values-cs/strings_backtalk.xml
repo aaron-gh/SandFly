@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Backtalk-specific Czech translations. -->
+
+    <!-- Reduce delays. -->
+    <string name="title_pref_low_latency_audio">Zvuk s nízkou latencí</string>
+    <string name="summary_pref_low_latency_audio">Přehrávat zvuky a řeč Backtalku nejrychlejší zvukovou cestou telefonu, abyste je slyšeli dříve. Pokud se řeč nebo zvuky trhají či znějí nesprávně, tuto možnost vypněte.</string>
+    <string name="pref_reduce_window_delay_summary">Když jsou animace vypnuté, Backtalk čte nové obrazovky rychleji. Tato možnost vypne animace v celém telefonu.</string>
+
+    <!-- Text-to-speech. -->
+    <string name="title_pref_switch_languages">Automaticky přepínat jazyk</string>
+    <string name="title_pref_switch_dialects">Automaticky přepínat dialekt</string>
+    <string name="title_pref_tts_engine">Modul převodu textu na řeč</string>
+    <string name="title_pref_system_tts_settings">Systémová nastavení převodu textu na řeč</string>
+    <string name="title_selector_switch_tts_engine">Hlasový modul</string>
+    <string name="summary_selector_switch_tts_engine">Přepínat mezi nainstalovanými hlasovými moduly</string>
+    <string name="summary_pref_tts_engine_default">Výchozí systémový modul</string>
+    <string name="title_pref_speech_pitch">Výška hlasu</string>
+    <string name="title_pref_use_accessibility_stream">Používat hlasitost přístupnosti</string>
+    <string name="summary_pref_use_accessibility_stream">Řeč a zvuky používají hlasitost přístupnosti, takže je můžete nastavit nezávisle na médiích. Je-li tato možnost vypnutá, používají hlasitost médií.</string>
+    <string name="title_pref_speak_in_phrases">Odesílat dlouhý text po větách</string>
+    <string name="summary_pref_speak_in_phrases">Pro hlasové moduly, které se zastavují pomalu, například Gryphon, aby se dlouhý text po přejetí zastavil ihned. Mnoho modulů při samostatně odesílaných větách dělá delší pauzy, proto tuto možnost ponechte vypnutou, pokud se váš modul zastavuje rychle.</string>
+
+    <!-- Incoming notifications. -->
+    <string name="title_pref_speak_notifications">Oznamovat příchozí oznámení</string>
+    <string name="summary_pref_speak_notifications">Číst nová oznámení nahlas, když přijdou</string>
+
+    <!-- Volume changes. -->
+    <string name="title_pref_speak_volume_changes">Oznamovat změny hlasitosti</string>
+    <string name="summary_pref_speak_volume_changes">Po stisknutí tlačítek hlasitosti říkat novou úroveň hlasitosti</string>
+
+    <!-- Screen announcements. -->
+    <string name="title_pref_screen_announcements">Zapnutí a vypnutí obrazovky</string>
+    <string name="summary_pref_screen_announcements">Zvolte, co Backtalk oznamuje při vypnutí nebo zapnutí obrazovky a při odemknutí telefonu</string>
+    <string name="title_screen_announcements_screen_off">Při vypnutí obrazovky</string>
+    <string name="title_screen_announcements_screen_on">Při zapnutí obrazovky</string>
+    <string name="title_screen_announcements_unlock">Při odemknutí telefonu</string>
+    <string name="title_pref_say_screen_off">Říkat „Obrazovka vypnuta“</string>
+    <string name="title_pref_say_device_unlocked">Říkat „Zařízení odemknuto“</string>
+    <string name="title_pref_announce_time">Čas</string>
+    <string name="title_pref_announce_ringer_mode">Režim vyzvánění</string>
+    <string name="summary_pref_announce_ringer_mode">Oznamovat, když je vyzvánění nastaveno na vibrace nebo tichý režim</string>
+
+    <!-- Lift to activate. -->
+    <string name="title_pref_lift_to_activate">Aktivovat zvednutím prstu</string>
+    <string name="summary_support_change_lift_to_activate">Změnit, kde zvednutí prstu aktivuje položku</string>
+    <string name="value_lift_to_activate_disabled">Vypnuto</string>
+    <string name="value_lift_to_activate_navigation_bar">Pouze na navigačním panelu</string>
+    <string name="value_lift_to_activate_entire_screen">Celá obrazovka</string>
+    <string name="template_lift_to_activate_changed">Aktivovat zvednutím prstu: <xliff:g id="mode">%1$s</xliff:g></string>
+
+    <!-- Wrap around. -->
+    <string name="title_pref_wrap_around">Přecházet přes okraj</string>
+    <string name="summary_pref_wrap_around">Po přejetí za poslední položku se přejde na první a před první položkou na poslední. Je-li vypnuto, na konci se místo toho přehraje zvuk.</string>
+    <string name="summary_support_wrap_around">Zapnout nebo vypnout přechod z poslední položky na první</string>
+    <string name="wrap_around_on">Přecházení přes okraj zapnuto</string>
+    <string name="wrap_around_off">Přecházení přes okraj vypnuto</string>
+
+    <!-- Braille keyboard tablet orientation. -->
+    <string name="title_selector_tablet_held_up_faces_away">Tablet držený svisle je otočen obrazovkou od vás</string>
+    <string name="summary_support_tablet_held_up_faces_away">Pro braillskou klávesnici na tabletu nebo rozloženém telefonu</string>
+    <string name="tablet_held_up_faces_away_on">Tablet držený svisle je otočen obrazovkou od vás: zapnuto</string>
+    <string name="tablet_held_up_faces_away_off">Tablet držený svisle je otočen obrazovkou od vás: vypnuto</string>
+
+    <!-- Rotor gestures and step size. -->
+    <string name="title_pref_shortcut_2finger_rotate_clockwise">Otočit 2 prsty po směru hodinových ručiček</string>
+    <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Otočit 2 prsty proti směru hodinových ručiček</string>
+    <string name="title_pref_rotor_step_degrees">Otočení rotoru na jeden krok</string>
+    <string name="value_rotor_step_15">15 stupňů</string>
+    <string name="value_rotor_step_20">20 stupňů</string>
+    <string name="value_rotor_step_30">30 stupňů (výchozí)</string>
+    <string name="value_rotor_step_45">45 stupňů</string>
+    <string name="value_rotor_step_60">60 stupňů</string>
+
+    <!-- Vibration Watch gestures on Wear OS. -->
+    <string name="title_pref_reserve_vibration_watch_gestures">Vyhradit gesta pro Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">Backtalk přestane zpracovávat jednoduché a dvojité klepnutí dvěma prsty, aby je mohla používat funkce Samsung Vibration Watch. Vibration Watch zapněte také v nastavení přístupnosti hodinek.</string>
+    <string name="shortcut_reserved_for_vibration_watch">Vyhrazeno pro Vibration Watch v Rozšířených nastaveních</string>
+
+    <!-- Call speaker routing based on proximity. -->
+    <string name="title_pref_speakerphone_away_from_ear">Reproduktor při oddálení od ucha</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Během hovoru přepne zvuk do reproduktoru, když telefon oddálíte od ucha, a zpět do sluchátka, když jej znovu přiložíte k uchu.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Vyžaduje oprávnění, které Android odečítačům obrazovky běžně neuděluje. Chcete-li je udělit, spusťte pomocí adb nebo Shizuku tento příkaz a potom se vraťte na tuto obrazovku: %1$s</string>
+
+    <!-- Audio output device routing. -->
+    <string name="title_pref_audio_output_device">Výstupní zvukové zařízení</string>
+    <string name="dialog_title_audio_output_device">Zvolte, kde se má přehrávat zvuk Backtalku</string>
+    <string name="value_audio_output_device_default">Výchozí nastavení systému</string>
+    <string name="value_audio_output_device_speaker">Reproduktor telefonu</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Připojené Bluetooth nebo kabelové zařízení</string>
+    <string name="value_audio_output_device_disconnected">odpojeno</string>
+    <string name="value_audio_output_device_bluetooth_default">Zvukové zařízení Bluetooth</string>
+    <string name="value_audio_output_device_wired_headset">Kabelová náhlavní souprava</string>
+    <string name="value_audio_output_device_wired_headphones">Kabelová sluchátka</string>
+    <string name="value_audio_output_device_usb_headset">USB náhlavní souprava</string>
+    <string name="value_audio_output_device_usb_device">USB zvukové zařízení</string>
+
+    <!-- Individual braille keyboard vibrations. -->
+    <string name="individual_vibration_braille_character">Braillská klávesnice: napsání znaku</string>
+    <string name="individual_vibration_braille_space">Braillská klávesnice: mezera nebo mazání</string>
+    <string name="individual_vibration_braille_new_line">Braillská klávesnice: nový řádek nebo smazání slova</string>
+    <string name="individual_vibration_braille_hold">Braillská klávesnice: podržení prstů</string>
+    <string name="individual_vibration_braille_gesture">Braillská klávesnice: ostatní gesta</string>
+    <string name="individual_vibration_braille_nothing_to_delete">Braillská klávesnice: není co smazat</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Název, stav, typ</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, stav, název</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Stav, typ, název</string>
+    <string name="value_focus_delay_200ms_default">0,2 sekundy (výchozí)</string>
+    <string name="value_focus_delay_300ms">0,3 sekundy</string>
+
+    <!-- Physical keyboard speech interruption. -->
+    <string name="title_pref_interrupt_typing">Přerušovat řeč při psaní</string>
+    <string name="pref_interrupt_typing_entry_always">Vždy</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">V editačních polích</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Při odezvě klávesnice</string>
+    <string name="title_pref_interrupt_enter">Přerušovat řeč klávesou Enter</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Podržením prstu vyberte libovolnou klávesu, pak prst zvedněte. Pro Enter, Hotovo nebo Odeslat klepněte dvakrát.</string>
+    <string name="template_battery_level">Baterie %1$s procent</string>
+    <string name="template_battery_level_unknown">Úroveň baterie neznámá</string>
+    <string name="value_charger_connected">Nabíječka připojena</string>
+    <string name="template_setting_limit">%1$s, %2$s</string>
+    <string name="title_pref_speak_nav_bar_buttons">Oznamovat tlačítka navigační lišty</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Když je aktivace zvednutím zapnutá na navigační liště, oznámit tlačítko, které klepnutí stiskne, například Zpět nebo Plocha.</string>
+</resources>

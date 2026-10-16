@@ -166,6 +166,14 @@ public abstract class ConnectManager {
   /** Returns true if the device is a HID device. */
   public abstract boolean isHidDevice(ConnectableDevice device);
 
+  /**
+   * Returns true if the device could be a braille display that connects through HID, whatever its
+   * name. Connecting checks whether it really is one.
+   */
+  public boolean mayBeHidBrailleDisplay(ConnectableDevice device) {
+    return false;
+  }
+
   /** Set accessibility service context provider. */
   public void setAccessibilityServiceContextProvider(
       AccessibilityServiceContextProvider accessibilityServiceContextProvider) {

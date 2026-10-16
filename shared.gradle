@@ -18,7 +18,9 @@ android {
         multiDexEnabled = true
         minSdk = 26
         ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a"
+            // x86_64 for emulators on Intel and AMD computers, such as Windows PCs,
+            // whose plain Android images can't run ARM code.
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
         }
         // We generate a build config field holding the application ID so that
         // Java code can reference it.

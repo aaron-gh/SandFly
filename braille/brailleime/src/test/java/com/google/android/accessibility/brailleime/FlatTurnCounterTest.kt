@@ -20,79 +20,55 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class FlatTurnCounterTest {
-  private fun phone() = FlatTurnCounter()
-
-  private fun tablet() = FlatTurnCounter().apply { setQuarterTurns(true) }
-
   /** Feeds headings in order, and returns the quarter turns each one reported. */
   private fun FlatTurnCounter.feed(vararg headings: Float) = headings.map { onHeading(it) }
 
   @Test
   fun firstHeadingIsTheStart() {
-    assertEquals(listOf(0), phone().feed(170f))
+    assertEquals(listOf(0), FlatTurnCounter().feed(170f))
   }
 
   @Test
-  fun phone_nudgesDoNotCount() {
-    assertEquals(listOf(0, 0, 0, 0), phone().feed(0f, 40f, 119f, -100f))
+  fun nudgesDoNotCount() {
+    assertEquals(listOf(0, 0, 0, 0), FlatTurnCounter().feed(0f, 40f, 59f, -50f))
   }
 
   @Test
-  fun phone_aHalfTurnCountsTwoThirdsOfTheWay() {
-    assertEquals(listOf(0, 0, 2), phone().feed(0f, 100f, 121f))
-    assertEquals(listOf(0, -2), phone().feed(0f, -125f))
+  fun aQuarterTurnCountsTwoThirdsOfTheWay() {
+    assertEquals(listOf(0, 0, 1), FlatTurnCounter().feed(0f, 50f, 61f))
+    assertEquals(listOf(0, -1), FlatTurnCounter().feed(0f, -65f))
   }
 
   @Test
-  fun phone_turnedOnlyOncePerHalfTurn() {
-    assertEquals(listOf(0, 2, 0, 0), phone().feed(0f, 125f, 170f, 185f))
+  fun turnedOnlyOncePerQuarterTurn() {
+    assertEquals(listOf(0, 1, 0, 0), FlatTurnCounter().feed(0f, 65f, 90f, 140f))
   }
 
   @Test
-  fun phone_turningBackCountsFromTheTurnedDirection() {
-    // Turned around, then back to roughly where it started: both count, though the first was only
-    // noticed at 130 degrees.
-    assertEquals(listOf(0, 2, -2), phone().feed(0f, 130f, 10f))
+  fun aFullTurnIsFourQuarters() {
+    assertEquals(listOf(0, 1, 1, 1, 1), FlatTurnCounter().feed(0f, 90f, 180f, -90f, 0f))
   }
 
   @Test
-  fun phone_acrossTheSouthernWrap() {
-    // From 170 to -60 degrees is 130 degrees clockwise, through south.
-    assertEquals(listOf(0, 2), phone().feed(170f, -60f))
-    assertEquals(listOf(0, -2), phone().feed(-170f, 60f))
+  fun turningBackCountsFromTheTurnedDirection() {
+    // Turned a quarter, then back to roughly where it started: both count, though the first was
+    // only noticed at 65 degrees.
+    assertEquals(listOf(0, 1, -1), FlatTurnCounter().feed(0f, 65f, 25f))
   }
 
   @Test
-  fun tablet_countsQuarterTurns() {
-    assertEquals(listOf(0, 0, 1), tablet().feed(0f, 50f, 61f))
-    assertEquals(listOf(0, -1), tablet().feed(0f, -65f))
-  }
-
-  @Test
-  fun tablet_aFullTurnIsFourQuarters() {
-    val turns = tablet().feed(0f, 90f, 180f, -90f, 0f)
-    assertEquals(listOf(0, 1, 1, 1, 1), turns)
-  }
-
-  @Test
-  fun tablet_turningBackCounts() {
-    assertEquals(listOf(0, 1, -1), tablet().feed(0f, 65f, 25f))
+  fun acrossTheSouthernWrap() {
+    // From 170 to -120 degrees is 70 degrees clockwise, through south.
+    assertEquals(listOf(0, 1), FlatTurnCounter().feed(170f, -120f))
+    assertEquals(listOf(0, -1), FlatTurnCounter().feed(-170f, 120f))
   }
 
   @Test
   fun reset_takesTheNextHeadingAsTheStart() {
-    val counter = phone()
-    counter.feed(0f, 100f)
+    val counter = FlatTurnCounter()
+    counter.feed(0f, 50f)
     counter.reset()
-    assertEquals(listOf(0, 0), counter.feed(100f, 200f))
-  }
-
-  @Test
-  fun switchingStepStartsAgain() {
-    val counter = phone()
-    counter.feed(0f)
-    counter.setQuarterTurns(true)
-    assertEquals(listOf(0, 1), counter.feed(80f, 150f))
+    assertEquals(listOf(0, 0), counter.feed(50f, 100f))
   }
 
   @Test

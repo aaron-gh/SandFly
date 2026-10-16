@@ -50,6 +50,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.utils.LinkUtils;
 import com.google.android.accessibility.talkback.utils.LinkUtils.LinkSpan;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -119,6 +120,10 @@ public class FocusActor implements UserInputEventListener {
     webActor.setPipeline(pipeline);
   }
 
+  public void setFocusSetListener(FocusManagerInternal.@Nullable FocusSetListener listener) {
+    focusManagerInternal.setFocusSetListener(listener);
+  }
+
   public void setMenuManager(ListMenuManager menuManager) {
     this.menuManager = menuManager;
   }
@@ -140,6 +145,7 @@ public class FocusActor implements UserInputEventListener {
     if (node == null || pipeline == null) {
       return false;
     }
+    node = Scripts.actionTarget(node, false);
 
     if (globalVariables.supportClickableLinks() && tryClickLinks(node, eventId)) {
       return true;
@@ -183,7 +189,9 @@ public class FocusActor implements UserInputEventListener {
     if (node == null || pipeline == null) {
       return false;
     }
-    return pipeline.returnFeedback(eventId, Feedback.nodeAction(node, ACTION_LONG_CLICK.getId()));
+    return pipeline.returnFeedback(
+        eventId,
+        Feedback.nodeAction(Scripts.actionTarget(node, true), ACTION_LONG_CLICK.getId()));
   }
 
   public boolean clickCurrentHierarchical(@Nullable EventId eventId) {

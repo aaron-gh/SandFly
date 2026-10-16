@@ -36,9 +36,15 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree.VariableDelegate;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DescriptionOrder;
+import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
 import com.google.android.accessibility.talkback.compositor.rule.InputTextFeedbackRules;
 import com.google.android.accessibility.talkback.compositor.rule.MagnificationStateChangedFeedbackRule;
+import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TypingMethod;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
 import com.google.android.accessibility.talkback.selector.SelectorController;
@@ -53,11 +59,13 @@ import com.google.android.accessibility.utils.TimedFlags;
 import com.google.android.accessibility.utils.input.WindowsDelegate;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
+import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.apps.common.proguard.UsedByReflection;
-import com.google.common.base.Ascii;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Tracks the current global state for the parse tree. */
@@ -157,7 +165,8 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean isCurrentFocusInScrollableNode = false;
   private boolean isLastFocusInScrollableNode = false;
   private boolean isFocusPage = false;
-  private boolean isInterpretAsEntryKey = false;
+  @TypingMethod private int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+  private boolean isDescribingSwipeTarget = false;
 
   private final @Nullable GestureShortcutProvider gestureShortcutProvider;
 
@@ -167,12 +176,29 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean usageHintEnabled = true;
   // It's enabled when [Say capital] is configured.
   private boolean sayCapital = false;
+  // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
+  private int capitalLetterFeedback = SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SPEAK_CAP;
 
-  private boolean speakPhoneticLetters = true;
+  private String phoneticLetterMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
 
   // Verbosity settings
   private boolean speakRoles = true;
   private boolean speakCollectionInfo = true;
+
+  public static final String TABLE_HEADERS_BEFORE = "before";
+  public static final String TABLE_HEADERS_AFTER = "after";
+  public static final String TABLE_HEADERS_OFF = "off";
+
+  private String tableColumnHeaders = TABLE_HEADERS_AFTER;
+  private boolean speakTableRowColumnNumbers = true;
+
+  // Control sounds: whether they are heard, and the ones heard or felt for focused controls.
+  private boolean controlSoundsOn = false;
+  private Set<Integer> controlSounds = Collections.emptySet();
+  private Set<Integer> heardControlSounds = Collections.emptySet();
+  private boolean speakControlSoundRoles = false;
+  // The control sound playing for the focus being described, or 0.
+  private int roleSoundOfFocus = 0;
   @DescriptionOrder private int descriptionOrder = DESC_ORDER_ROLE_NAME_STATE_POSITION;
   private boolean speakElementIds = false;
   private boolean countRepeatedSymbols = false;
@@ -344,20 +370,76 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     int eventType = event.getEventType();
     if (eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       final AccessibilityNodeInfoCompat sourceNode =
-          AccessibilityNodeInfoUtils.toCompat(event.getSource());
+          AccessibilityEventUtils.sourceCompat(event);
       if (sourceNode != null) {
-        final AccessibilityNodeInfoCompat scrollableNode =
-            AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(
-                sourceNode, AccessibilityNodeInfoUtils.FILTER_SCROLLABLE);
-        isLastFocusInScrollableNode = isCurrentFocusInScrollableNode;
-        isCurrentFocusInScrollableNode = (scrollableNode != null);
-        isFocusPage = AccessibilityNodeInfoUtils.isPage(sourceNode);
-
-        mLastWindowId = mCurrentWindowId;
-        mCurrentWindowId = sourceNode.getWindowId();
+        updateStateFromFocusedNode(sourceNode);
         currentDisplayId = AccessibilityEventUtils.getDisplayId(event);
       }
     }
+  }
+
+  /** Updates the state that follows accessibility focus, for focus that moved to {@code node}. */
+  public void updateStateFromFocusedNode(AccessibilityNodeInfoCompat node) {
+    final AccessibilityNodeInfoCompat scrollableNode =
+        AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(
+            node, AccessibilityNodeInfoUtils.FILTER_SCROLLABLE);
+    isLastFocusInScrollableNode = isCurrentFocusInScrollableNode;
+    isCurrentFocusInScrollableNode = (scrollableNode != null);
+    isFocusPage = AccessibilityNodeInfoUtils.isPage(node);
+
+    mLastWindowId = mCurrentWindowId;
+    mCurrentWindowId = node.getWindowId();
+  }
+
+  /** The state that follows accessibility focus, from {@link #saveFocusState()}. */
+  public static final class SavedFocusState {
+    private final boolean isLastFocusInScrollableNode;
+    private final boolean isCurrentFocusInScrollableNode;
+    private final boolean isFocusPage;
+    private final int lastWindowId;
+    private final int currentWindowId;
+    private final CollectionState.SavedState collection;
+    // The title of the container that focus is in, which the focus announcement both reads, to say
+    // when focus moves into or out of a container, and changes.
+    private final CharSequence containerTitle;
+
+    private SavedFocusState(GlobalVariables variables) {
+      isLastFocusInScrollableNode = variables.isLastFocusInScrollableNode;
+      isCurrentFocusInScrollableNode = variables.isCurrentFocusInScrollableNode;
+      isFocusPage = variables.isFocusPage;
+      lastWindowId = variables.mLastWindowId;
+      currentWindowId = variables.mCurrentWindowId;
+      collection = variables.collectionState.save();
+      containerTitle = EventTypeViewAccessibilityFocusedFeedbackRule.currentContainerTitle;
+    }
+  }
+
+  /**
+   * Returns the state that follows accessibility focus, including the collection state, so that
+   * {@link #restoreFocusState} can put it back after working out what focusing a node would say.
+   */
+  public SavedFocusState saveFocusState() {
+    return new SavedFocusState(this);
+  }
+
+  /** Puts back the state from {@link #saveFocusState()}. */
+  public void restoreFocusState(SavedFocusState saved) {
+    isLastFocusInScrollableNode = saved.isLastFocusInScrollableNode;
+    isCurrentFocusInScrollableNode = saved.isCurrentFocusInScrollableNode;
+    isFocusPage = saved.isFocusPage;
+    mLastWindowId = saved.lastWindowId;
+    mCurrentWindowId = saved.currentWindowId;
+    collectionState.restore(saved.collection);
+    EventTypeViewAccessibilityFocusedFeedbackRule.currentContainerTitle = saved.containerTitle;
+  }
+
+  /**
+   * Updates the collection state for focus that moved to {@code node}, as the focus event for it
+   * would.
+   */
+  public void updateCollectionStateFromFocusedNode(
+      AccessibilityNodeInfoCompat node, AccessibilityEvent event) {
+    collectionState.updateCollectionInformation(node, event);
   }
 
   /** Returns whether TalkBack should announce the media control hint to answer a call. */
@@ -398,14 +480,28 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     usageHintEnabled = enabled;
   }
 
-  /** Returns if TalkBack speak phonetic letters is enabled. */
+  /** Returns if TalkBack speaks phonetic letters, with or instead of the letter. */
   public boolean getSpeakPhoneticLettersEnabled() {
-    return speakPhoneticLetters;
+    return !PhoneticLetterMode.OFF.equals(phoneticLetterMode);
   }
 
-  /** Sets if TalkBack speak phonetic letters is enabled. */
-  public void setSpeakPhoneticLettersEnabled(boolean enabled) {
-    speakPhoneticLetters = enabled;
+  /**
+   * Returns if what is said takes the place of the letter: the letter and its word together, or the
+   * word alone. Otherwise the word, if any, follows the letter after a pause.
+   */
+  public boolean getPhoneticLetterTakesPlaceOfLetter() {
+    return PhoneticLetterMode.AFTER_LETTER_NO_DELAY.equals(phoneticLetterMode)
+        || PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Returns if the phonetic word is said in place of the letter, without the letter. */
+  public boolean getSpeakPhoneticLetterInsteadOfLetter() {
+    return PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Sets how phonetic letters are spoken, one of the {@link PhoneticLetterMode} values. */
+  public void setPhoneticLetterMode(String mode) {
+    phoneticLetterMode = mode;
   }
 
   /** Returns if TalkBack speaks capital letter. */
@@ -416,6 +512,15 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   /** Sets if TalkBack speaks capital letter. */
   public void setGlobalSayCapital(boolean enabled) {
     sayCapital = enabled;
+  }
+
+  /** Returns how capital letters are told apart, one of the CAPITAL_LETTERS_TYPE values. */
+  public int getCapitalLetterFeedback() {
+    return capitalLetterFeedback;
+  }
+
+  public void setCapitalLetterFeedback(int feedback) {
+    capitalLetterFeedback = feedback;
   }
 
   /** Returns if TalkBack uses single-tap gesture. */
@@ -490,6 +595,13 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
         || checkAndClearRecentFlag(EVENT_SKIP_SELECTION_CHANGED_AFTER_CURSOR_RESET);
   }
 
+  /** Returns whether a skip focus state flag is set, without clearing it. */
+  public boolean hasSkipFocusProcessing() {
+    return checkRecentFlag(EVENT_SKIP_FOCUS_PROCESSING_AFTER_GRANULARITY_MOVE)
+        || checkRecentFlag(EVENT_SKIP_FOCUS_PROCESSING_AFTER_CURSOR_CONTROL)
+        || checkRecentFlag(EVENT_SKIP_FOCUS_PROCESSING_AFTER_IME_CLOSED);
+  }
+
   /** Returns and clears the state of skip focus state flags. */
   public boolean resettingSkipFocusProcessing() {
     return checkAndClearRecentFlag(EVENT_SKIP_FOCUS_PROCESSING_AFTER_GRANULARITY_MOVE)
@@ -497,17 +609,44 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
         || checkAndClearRecentFlag(EVENT_SKIP_FOCUS_PROCESSING_AFTER_IME_CLOSED);
   }
 
-  /** Used by the hint decision. */
-  public void setInterpretAsEntryKey(boolean interpretAsEntryKey) {
-    isInterpretAsEntryKey = interpretAsEntryKey;
+  /** Sets the typing method, which the hint decision uses. */
+  public void setTypingMethod(@TypingMethod int typingMethod) {
+    this.typingMethod = typingMethod;
   }
 
   /**
    * Returns if it interprets all keys as entry keys. It is {@code true} when the typing method is
-   * {@link FocusProcessorForTapAndTouchExploration#FORCE_LIFT_TO_TYPE_ON_IME}
+   * {@link FocusProcessorForTapAndTouchExploration#FORCE_LIFT_TO_TYPE_ON_IME} or {@link
+   * FocusProcessorForTapAndTouchExploration#LIFT_TO_TYPE_EXCEPT_ACTION_KEY}.
    */
   public boolean isInterpretAsEntryKey() {
-    return isInterpretAsEntryKey;
+    return FocusProcessorForTapAndTouchExploration.liftsToTypeAnyKey(typingMethod);
+  }
+
+  /**
+   * Returns whether {@code node} is a keyboard key that types on lift with a typing method that
+   * interprets keyboard keys as entry keys, so it needs no hint to double-tap. The keyboard's
+   * action key needs a double-tap with {@link
+   * FocusProcessorForTapAndTouchExploration#LIFT_TO_TYPE_EXCEPT_ACTION_KEY}, so it isn't one.
+   */
+  public boolean liftsToType(@Nullable AccessibilityNodeInfoCompat node) {
+    return isInterpretAsEntryKey()
+        && AccessibilityNodeInfoUtils.isKeyboard(node)
+        && FocusProcessorForTapAndTouchExploration.liftsToType(typingMethod, node);
+  }
+
+  /**
+   * Sets whether the node being described is where a swipe moves focus, described before the swipe
+   * has scrolled it into view. Its children that are off screen only because of where they are,
+   * below or above the edge of the list, will then be on screen when it is spoken.
+   */
+  public void setDescribingSwipeTarget(boolean describingSwipeTarget) {
+    isDescribingSwipeTarget = describingSwipeTarget;
+  }
+
+  /** Returns whether the node being described is a swipe's target; see setDescribingSwipeTarget. */
+  public boolean isDescribingSwipeTarget() {
+    return isDescribingSwipeTarget;
   }
 
   /** Returns if TalkBack speaks collection info. */
@@ -520,12 +659,72 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     speakCollectionInfo = value;
   }
 
+  public String getTableColumnHeaders() {
+    return tableColumnHeaders;
+  }
+
+  public void setTableColumnHeaders(String value) {
+    tableColumnHeaders = value;
+  }
+
+  public void setSpeakTableRowColumnNumbers(boolean value) {
+    speakTableRowColumnNumbers = value;
+  }
+
   public boolean getSpeakRoles() {
     return speakRoles;
   }
 
   public void setSpeakRoles(boolean value) {
     speakRoles = value;
+  }
+
+  /**
+   * Sets whether control sounds are heard, the ones that are heard or felt as vibrations, the ones
+   * of those that are heard, and whether the kind of control is still spoken when its sound
+   * plays.
+   */
+  public void setControlSounds(
+      boolean on, Set<Integer> sounds, Set<Integer> heard, boolean speakRoles) {
+    controlSoundsOn = on;
+    controlSounds = sounds;
+    heardControlSounds = heard;
+    speakControlSoundRoles = speakRoles;
+  }
+
+  /**
+   * Returns whether a control sound is heard. One that is only felt leaves the focus sound in
+   * place, and plays its vibration in place of the focus vibration.
+   */
+  public boolean isControlSoundHeard(int sound) {
+    return heardControlSounds.contains(sound);
+  }
+
+  /** Returns whether control sounds are on, so focus sounds come from where the focus is. */
+  public boolean areControlSoundsOn() {
+    return controlSoundsOn;
+  }
+
+  /** Returns the control sound to play for focusing {@code node}, or 0 if none plays. */
+  public int getControlSoundForFocus(AccessibilityNodeInfoCompat node) {
+    if (controlSounds.isEmpty()) {
+      return 0;
+    }
+    int sound = ControlSounds.soundForFocus(node);
+    return controlSounds.contains(sound) ? sound : 0;
+  }
+
+  /**
+   * Sets the control sound playing for the focus whose speech is being composed, or 0 after it.
+   * Controls of that kind do not have their kind spoken, unless the user asked for it.
+   */
+  public void setRoleSoundOfFocus(int sound) {
+    roleSoundOfFocus = speakControlSoundRoles ? 0 : sound;
+  }
+
+  /** Returns whether the sound playing for the focus already tells what kind of control it is. */
+  public boolean isRoleSaidBySound(AccessibilityNodeInfoCompat node) {
+    return roleSoundOfFocus != 0 && ControlSounds.soundForRole(node) == roleSoundOfFocus;
   }
 
   /** Returns if TalkBack speaks system window titles. */
@@ -618,6 +817,13 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return deviceScreenNoTouch;
   }
 
+  /** Returns the hint for screen search with no keyword yet, naming the user's gesture. */
+  public CharSequence getScreenSearchNoKeywordHint() {
+    return gestureShortcutProvider != null
+        ? gestureShortcutProvider.screenSearchNoKeywordHint()
+        : mContext.getString(R.string.screen_search_no_keyword_hint_pre_r);
+  }
+
   /** Returns the gesture string for the node actions in TalkBack menu. */
   public CharSequence getGestureStringForNodeActions() {
     if (inputModeTracker.getInputMode() == INPUT_MODE_KEYBOARD) {
@@ -627,7 +833,8 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
         return keyCombo;
       }
     }
-    return gestureShortcutProvider != null ? gestureShortcutProvider.nodeMenuShortcut() : "";
+    return gestureInSentence(
+        gestureShortcutProvider != null ? gestureShortcutProvider.nodeMenuShortcut() : null);
   }
 
   /** Returns the gesture string for the node actions in reading control. */
@@ -650,13 +857,13 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return TextUtils.isEmpty(readingMenuUpShortcut)
         ? (TextUtils.isEmpty(readingMenuDownShortcut)
             ? ""
-            : Ascii.toLowerCase(readingMenuDownShortcut))
+            : lowerCaseFirst(readingMenuDownShortcut))
         : (TextUtils.isEmpty(readingMenuDownShortcut)
-            ? Ascii.toLowerCase(readingMenuUpShortcut)
+            ? lowerCaseFirst(readingMenuUpShortcut)
             : mContext.getString(
                 R.string.gesture_1_or_2,
-                Ascii.toLowerCase(readingMenuUpShortcut),
-                Ascii.toLowerCase(readingMenuDownShortcut)));
+                lowerCaseFirst(readingMenuUpShortcut),
+                lowerCaseFirst(readingMenuDownShortcut)));
   }
 
   /** Returns the global input mode. */
@@ -678,8 +885,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
           ? ""
           : mContext.getString(
               R.string.no_adjust_setting_gesture,
-              Ascii.toLowerCase(
-                  mContext.getString(R.string.shortcut_selected_setting_next_action)));
+              lowerCaseFirst(mContext.getString(R.string.shortcut_selected_setting_next_action)));
     } else {
       return mContext.getString(
           R.string.template_hint_adjustable_1gesture,
@@ -725,7 +931,18 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
 
   /** Returns the gesture string to perform the next action of selected setting in reading menu. */
   public CharSequence getGestureStringForActionShortcut() {
-    return gestureShortcutProvider != null ? gestureShortcutProvider.actionsShortcut() : "";
+    return gestureInSentence(
+        gestureShortcutProvider != null ? gestureShortcutProvider.actionsShortcut() : null);
+  }
+
+  /** Returns {@code gesture} starting in lower case to go inside a sentence, or "" if it's null. */
+  private CharSequence gestureInSentence(@Nullable CharSequence gesture) {
+    return TextUtils.isEmpty(gesture) ? "" : lowerCaseFirst(gesture);
+  }
+
+  /** Lower-cases the first letter of a gesture or action name, to go inside a sentence. */
+  private String lowerCaseFirst(CharSequence text) {
+    return GestureHints.lowerCaseFirst(mContext, text.toString());
   }
 
   /** Returns the gesture string to get to the next window. */
@@ -763,7 +980,11 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   public CharSequence getCollectionItemTransitionDescription(
       @Nullable AccessibilityNodeInfoCompat focusedNode) {
     return CollectionStateFeedbackUtils.getCollectionItemTransitionDescription(
-        focusedNode, collectionState, mContext);
+        focusedNode, collectionState, mContext, tableColumnHeaders, speakTableRowColumnNumbers);
+  }
+
+  public int getCollectionRole() {
+    return collectionState.getCollectionRole();
   }
 
   /** Returns if the reading menu has actions settings. */

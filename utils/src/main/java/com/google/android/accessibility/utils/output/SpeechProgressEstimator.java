@@ -73,6 +73,17 @@ public final class SpeechProgressEstimator {
     }
   }
 
+  /**
+   * The utterance was paused for {@code pausedMs} and carried on from where it stopped, so that
+   * time is not counted as speaking.
+   */
+  public synchronized void onPaused(String utteranceId, long pausedMs) {
+    Utterance utterance = utterances.get(utteranceId);
+    if (utterance != null && utterance.startMs >= 0 && pausedMs > 0) {
+      utterance.startMs += pausedMs;
+    }
+  }
+
   /** The engine reported a word position, so no estimate is needed for this utterance. */
   public synchronized void onRange(String utteranceId) {
     Utterance utterance = utterances.get(utteranceId);

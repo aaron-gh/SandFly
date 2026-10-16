@@ -111,8 +111,7 @@ public class ClickableHint {
           context.getString(R.string.value_press_select),
           actionLabel);
     } else if (Role.getRole(node) != ROLE_TEXT_ENTRY_KEY
-        && (!globalVariables.isInterpretAsEntryKey()
-            || !AccessibilityNodeInfoUtils.isKeyboard(node))) {
+        && !globalVariables.liftsToType(node)) {
       return context.getString(
           R.string.template_custom_hint_for_actions, getTapGestureHint(), actionLabel);
     }
@@ -210,8 +209,7 @@ public class ClickableHint {
       return context.getString(hintString, context.getString(R.string.value_press_select));
     } else if (AccessibilityNodeInfoUtils.isClickable(node)
         && Role.getRole(node) != ROLE_TEXT_ENTRY_KEY
-        && (!globalVariables.isInterpretAsEntryKey()
-            || !AccessibilityNodeInfoUtils.isKeyboard(node))) {
+        && !globalVariables.liftsToType(node)) {
       return context.getString(hintString, getTapGestureHint());
     }
     return "";

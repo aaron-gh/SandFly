@@ -25,13 +25,20 @@ import android.os.AsyncTask;
 public class EarconsPlayTask extends AsyncTask<Void, Integer, Boolean> {
   private SoundPool mSoundPool;
   private int soundId;
-  private float volume;
+  private float leftVolume;
+  private float rightVolume;
   private float rate;
 
   public EarconsPlayTask(SoundPool soundPool, int soundId, float volume, float rate) {
+    this(soundPool, soundId, volume, volume, rate);
+  }
+
+  public EarconsPlayTask(
+      SoundPool soundPool, int soundId, float leftVolume, float rightVolume, float rate) {
     this.mSoundPool = soundPool;
     this.soundId = soundId;
-    this.volume = min(1.0f, volume);
+    this.leftVolume = min(1.0f, leftVolume);
+    this.rightVolume = min(1.0f, rightVolume);
     this.rate = rate;
   }
 
@@ -43,6 +50,6 @@ public class EarconsPlayTask extends AsyncTask<Void, Integer, Boolean> {
    */
   @Override
   protected Boolean doInBackground(Void... voids) {
-    return mSoundPool.play(soundId, volume, volume, 0, 0, rate) != 0;
+    return mSoundPool.play(soundId, leftVolume, rightVolume, 0, 0, rate) != 0;
   }
 }

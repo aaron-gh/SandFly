@@ -29,12 +29,14 @@ import static com.google.android.accessibility.talkback.analytics.TalkBackAnalyt
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
 import android.content.Context;
+import android.text.TextUtils;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.ShowToast;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.training.VoiceCommandHelpInitiator;
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer;
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer.SpeechRecognizerRequester;
@@ -165,7 +167,12 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
 
   public void startListeningIfScreenNotLocked(boolean checkDialog, String nodeMenuShortcut) {
     if (ScreenMonitor.isDeviceLocked(talkbackContext)) {
-      speak(talkbackContext.getString(R.string.voice_command_screen_locked_hint, nodeMenuShortcut));
+      // Names where to assign a gesture when none opens the Backtalk menu.
+      String menuGesture =
+          TextUtils.isEmpty(nodeMenuShortcut)
+              ? GestureHints.gestureSettingsPath(talkbackContext)
+              : GestureHints.lowerCaseFirst(talkbackContext, nodeMenuShortcut);
+      speak(talkbackContext.getString(R.string.voice_command_screen_locked_hint, menuGesture));
     } else {
       pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SAVE_LAST));
       getSpeechPermissionAndListen(checkDialog);
@@ -200,9 +207,7 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
         SpeakOptions.create()
             .setFlags(
                 FeedbackItem.FLAG_NO_HISTORY
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE);
+                    | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
     pipeline.returnFeedback(
         // TODO: Add performance EventId support for speech commands.
         EVENT_ID_UNTRACKED,
@@ -214,9 +219,7 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
         SpeakOptions.create()
             .setFlags(
                 FeedbackItem.FLAG_NO_HISTORY
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE);
+                    | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, speakOptions));
   }
 }

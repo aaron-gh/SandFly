@@ -42,6 +42,17 @@ public class Utterance {
   /** Key for obtaining the earcon volume meta-data property. */
   public static final String KEY_METADATA_EARCON_VOLUME = "earcon_volume";
 
+  /**
+   * Keys for the place on the screen an earcon comes from, as fractions of the screen from its left
+   * and top edges. Earcons without them are not positioned.
+   */
+  public static final String KEY_METADATA_EARCON_X = "earcon_x";
+
+  public static final String KEY_METADATA_EARCON_Y = "earcon_y";
+
+  /** Key for whether earcons play their vibrations, true if missing. */
+  public static final String KEY_METADATA_EARCON_VIBRATES = "earcon_vibrates";
+
   /** Key for obtaining the speech parameters meta-data property. Must contain a {@link Bundle}. */
   public static final String KEY_METADATA_SPEECH_PARAMS = "speech_params";
 

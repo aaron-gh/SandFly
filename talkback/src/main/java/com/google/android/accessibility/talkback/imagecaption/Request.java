@@ -17,14 +17,18 @@ package com.google.android.accessibility.talkback.imagecaption;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.time.Duration;
-import java.time.Instant;
 
-/** An action of image captioning. */
+/**
+ * An action of image captioning. It ends once: with a result, an error, its timeout or a cancel.
+ * Whatever comes after that is ignored, so that a late result cannot end it again. Use it on the
+ * looper that created it.
+ */
 public abstract class Request {
 
   /** A listener to be invoked when the request has been suspended. */
@@ -43,6 +47,9 @@ public abstract class Request {
 
   /** Represents the duration is invalid. */
   public static final int INVALID_DURATION = -1;
+
+  /** Represents the time is not set. */
+  public static final long INVALID_TIME = -1;
 
   /** The reasons of image captions. */
   @IntDef({
@@ -74,8 +81,10 @@ public abstract class Request {
   private final Runnable timeoutRunnable;
   @Nullable private final OnPendingListener onPendingListener;
   @Nullable private final Duration timeout;
-  @Nullable private Instant startTimestamp;
-  @Nullable private Instant endTimestamp;
+  // In SystemClock.uptimeMillis(), which does not jump when the wall clock is set.
+  private long startTimeMs = INVALID_TIME;
+  private long endTimeMs = INVALID_TIME;
+  private boolean finished;
 
   @VisibleForTesting
   Request() {
@@ -94,15 +103,18 @@ public abstract class Request {
   }
 
   public long getDurationMillis() {
-    if (startTimestamp == null || endTimestamp == null) {
+    if (startTimeMs == INVALID_TIME || endTimeMs == INVALID_TIME) {
       return INVALID_DURATION;
     }
-    return Duration.between(startTimestamp, endTimestamp).toMillis();
+    return endTimeMs - startTimeMs;
   }
 
-  @Nullable
-  public Instant getEndTimestamp() {
-    return endTimestamp;
+  /**
+   * Returns the time at which the request is done, in {@link SystemClock#uptimeMillis()}, or {@link
+   * #INVALID_TIME} if it is not done.
+   */
+  public long getEndTimeMillis() {
+    return endTimeMs;
   }
 
   /** Starts the action. */
@@ -120,15 +132,39 @@ public abstract class Request {
 
   /** Sets the time at which the caption request started to perform. */
   protected void setStartTimestamp() {
-    startTimestamp = Instant.now();
+    startTimeMs = SystemClock.uptimeMillis();
   }
 
   /** Sets the time at which the caption request is done. */
   protected void setEndTimestamp() {
-    endTimestamp = Instant.now();
+    endTimeMs = SystemClock.uptimeMillis();
+  }
+
+  /**
+   * Ends the request and stops its timeout. Returns false if it has already ended, such as when its
+   * result comes after its timeout or after it was cancelled. The caller then ignores the result.
+   */
+  protected boolean finish() {
+    stopTimeoutRunnable();
+    if (finished) {
+      LogUtils.w(TAG, "Ignore the end of a request that has already ended. " + this);
+      return false;
+    }
+    finished = true;
+    return true;
+  }
+
+  /** Ends the request without a result, so that its result is ignored if it comes later. */
+  void cancel() {
+    stopTimeoutRunnable();
+    finished = true;
   }
 
   protected void runTimeoutRunnable() {
+    if (finished) {
+      // It ended before its timeout was set, such as when it failed at once.
+      return;
+    }
     if (timeout == null) {
       LogUtils.w(TAG, "runTimeoutRunnable() with invalid timeout.");
       return;

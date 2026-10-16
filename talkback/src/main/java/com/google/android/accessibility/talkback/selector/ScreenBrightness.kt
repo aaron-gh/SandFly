@@ -68,25 +68,32 @@ internal object ScreenBrightness {
    */
   @JvmStatic
   fun adjust(context: Context, increase: Boolean): Boolean {
-    val oldSetting = getSetting(context)
-    if (oldSetting == (if (increase) MAX_SETTING else MIN_SETTING)) {
-      return false
-    }
-    val direction = if (increase) 1 else -1
-    val targetPercent =
-      (settingToPercent(oldSetting).toFloat() / PERCENT_STEP).roundToInt() * PERCENT_STEP +
-        direction * PERCENT_STEP
-    val candidates =
-      if (increase) (oldSetting + 1)..MAX_SETTING else (oldSetting - 1) downTo MIN_SETTING
-    // Ties go to the farthest setting, so a step always moves past values that round the same.
-    val newSetting = candidates.minWith(
-      compareBy<Int> { abs(settingToPercent(it) - targetPercent) }
-        .thenByDescending { abs(it - oldSetting) }
-    )
+    val newSetting = nextSetting(getSetting(context), increase) ?: return false
     return Settings.System.putInt(
       context.contentResolver,
       Settings.System.SCREEN_BRIGHTNESS,
       newSetting,
+    )
+  }
+
+  /**
+   * The setting one step brighter or dimmer than [oldSetting], or null if it is already at the
+   * limit. Other apps can store any value, such as 0, so [oldSetting] is first brought into range.
+   */
+  internal fun nextSetting(oldSetting: Int, increase: Boolean): Int? {
+    val current = oldSetting.coerceIn(MIN_SETTING, MAX_SETTING)
+    if (current == (if (increase) MAX_SETTING else MIN_SETTING)) {
+      return null
+    }
+    val direction = if (increase) 1 else -1
+    val targetPercent =
+      (settingToPercent(current).toFloat() / PERCENT_STEP).roundToInt() * PERCENT_STEP +
+        direction * PERCENT_STEP
+    val candidates = if (increase) (current + 1)..MAX_SETTING else (current - 1) downTo MIN_SETTING
+    // Ties go to the farthest setting, so a step always moves past values that round the same.
+    return candidates.minWith(
+      compareBy<Int> { abs(settingToPercent(it) - targetPercent) }
+        .thenByDescending { abs(it - current) }
     )
   }
 
@@ -97,8 +104,10 @@ internal object ScreenBrightness {
       MAX_SETTING,
     )
 
-  private fun settingToPercent(setting: Int): Int {
-    val scaled = HLG_SCALE * (setting - MIN_SETTING) / (MAX_SETTING - MIN_SETTING)
+  internal fun settingToPercent(setting: Int): Int {
+    val scaled =
+      HLG_SCALE * (setting.coerceIn(MIN_SETTING, MAX_SETTING) - MIN_SETTING) /
+        (MAX_SETTING - MIN_SETTING)
     val gamma = if (scaled <= 1) sqrt(scaled) * HLG_R else HLG_A * ln(scaled - HLG_B) + HLG_C
     return (gamma * MAX_PERCENT).roundToInt()
   }

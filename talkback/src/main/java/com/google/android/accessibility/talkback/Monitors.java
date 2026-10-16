@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback;
 
 import android.view.accessibility.AccessibilityEvent;
 import com.google.android.accessibility.talkback.Pipeline.InterpretationReceiver;
+import com.google.android.accessibility.talkback.compositor.EarlyFocusSpeech;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.monitor.CallStateMonitor;
 import com.google.android.accessibility.utils.monitor.CollectionState;
@@ -55,6 +56,7 @@ public class Monitors {
   private final @NonNull TouchMonitor touchMonitor;
   private final SpeechStateMonitor speechStateMonitor;
   private final CollectionState collectionState;
+  private final EarlyFocusSpeech earlyFocusSpeech;
 
   private final int eventTypeMask; // Union of all monitor masks
 
@@ -66,12 +68,14 @@ public class Monitors {
       CallStateMonitor callMonitor,
       @NonNull TouchMonitor touchMonitor,
       SpeechStateMonitor speechStateMonitor,
-      CollectionState collectionState) {
+      CollectionState collectionState,
+      EarlyFocusSpeech earlyFocusSpeech) {
     this.batteryMonitor = batteryMonitor;
     this.callMonitor = callMonitor;
     this.touchMonitor = touchMonitor;
     this.speechStateMonitor = speechStateMonitor;
     this.collectionState = collectionState;
+    this.earlyFocusSpeech = earlyFocusSpeech;
 
     eventTypeMask =
         touchMonitor.getEventTypes()
@@ -90,7 +94,11 @@ public class Monitors {
   }
 
   public void onAccessibilityEvent(@NonNull AccessibilityEvent event) {
-    collectionState.onAccessibilityEvent(event);
+    // Focus spoken before its event arrived already moved the collection state to its node, and a
+    // focus event older than that focus must not move it back.
+    if (!earlyFocusSpeech.isHandled(event)) {
+      collectionState.onAccessibilityEvent(event);
+    }
     touchMonitor.onAccessibilityEvent(event);
     speechStateMonitor.onAccessibilityEvent(event);
   }

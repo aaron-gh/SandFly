@@ -37,6 +37,10 @@ class FeedbackFragmentsIterator {
   /** It's available when speaking its content and null between speaking each fragment. */
   private final AtomicReference<FeedbackFragment> currentFeedbackFragment = new AtomicReference<>();
 
+  // Whether the last next() returned the rest of a fragment that had started, such as after speech
+  // was paused and resumed, rather than a new one.
+  private boolean nextIsContinuation = false;
+
   public FeedbackFragmentsIterator(
       @NonNull Iterator<FeedbackFragment> currentFragmentIterator, String feedBackItemUtteranceId) {
     this.currentFragmentIterator = currentFragmentIterator;
@@ -49,6 +53,7 @@ class FeedbackFragmentsIterator {
   @Nullable
   FeedbackFragment next() {
     FeedbackFragment feedbackFragment = currentFeedbackFragment.get();
+    nextIsContinuation = feedbackFragment != null;
     if (feedbackFragment != null) {
       // Has pending Fragment.
       feedbackFragment.updateContentByFragmentStartIndex();
@@ -60,6 +65,14 @@ class FeedbackFragmentsIterator {
       LogUtils.v(TAG, "next --currentFeedbackFragment text = %s.", feedbackFragment.getText());
     }
     return feedbackFragment;
+  }
+
+  /**
+   * Returns whether the last {@link #next()} returned the rest of a fragment that had already
+   * started, whose earcons and haptics were played when it started.
+   */
+  boolean nextIsContinuation() {
+    return nextIsContinuation;
   }
 
   private void recordUtteranceStartIndex(int utteranceStartIndex) {

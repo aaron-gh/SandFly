@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backtalk-specific Czech translations for control sounds and 3D audio. -->
+    <string name="title_pref_control_sounds">Zvuky a vibrace ovládacích prvků</string>
+    <string name="summary_pref_control_sounds">Přiřadí jednotlivým druhům ovládacích prvků, například tlačítkům, zaškrtávacím políčkům, editačním polím a položkám seznamů, vlastní zvuk a vibraci z motivu místo zvuku a vibrace zaměření, podobně jako Unspoken pro NVDA. Zvuk přichází z místa, kde je prvek na obrazovce, a Backtalk neoznamuje jeho typ.</string>
+    <string name="title_pref_control_sounds_speak_roles">Stále oznamovat typ ovládacího prvku</string>
+    <string name="summary_pref_control_sounds_speak_roles">Když se přehraje zvuk ovládacího prvku, stále oznamovat jeho typ, například tlačítko. Toto nastavení platí pro všechny zvukové motivy.</string>
+    <string name="title_pref_control_sounds_3d">3D zvuk</string>
+    <string name="pref_control_sounds_3d_headphones">Se sluchátky</string>
+    <string name="pref_control_sounds_3d_always">Vždy</string>
+    <string name="pref_control_sounds_3d_never">Nikdy, pouze vlevo a vpravo</string>
+
+    <string name="individual_sound_control_button">Zvuk ovládacího prvku: tlačítko</string>
+    <string name="individual_sound_control_checkbox">Zvuk ovládacího prvku: zaškrtávací políčko</string>
+    <string name="individual_sound_control_radio_button">Zvuk ovládacího prvku: přepínač</string>
+    <string name="individual_sound_control_edit_text">Zvuk ovládacího prvku: editační pole</string>
+    <string name="individual_sound_control_combo_box">Zvuk ovládacího prvku: rozbalovací seznam</string>
+    <string name="individual_sound_control_slider">Zvuk ovládacího prvku: posuvník</string>
+    <string name="individual_sound_control_link">Zvuk ovládacího prvku: odkaz</string>
+    <string name="individual_sound_control_image">Zvuk ovládacího prvku: obrázek</string>
+    <string name="individual_sound_control_clock">Zvuk ovládacího prvku: hodiny</string>
+    <string name="individual_sound_control_tab">Zvuk ovládacího prvku: karta</string>
+    <string name="individual_sound_control_menu_item">Zvuk ovládacího prvku: položka nabídky</string>
+    <string name="individual_sound_control_list_item">Zvuk ovládacího prvku: položka seznamu</string>
+    <string name="individual_sound_control_tree_item">Zvuk ovládacího prvku: položka stromu</string>
+</resources>

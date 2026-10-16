@@ -105,14 +105,24 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
     return (scale > 0 ? Math.round((level / (float) scale) * 100) : UNKNOWN_LEVEL);
   }
 
+  /**
+   * Returns what to say about the battery, such as "Battery 58 percent", with "Charger connected"
+   * first while the device is plugged in, and "Battery saver on" last while it's on.
+   */
   public String getBatteryStateDescription() {
-    return context.getString(
-        R.string.template_battery_state,
-        powerConnected ? context.getString(R.string.notification_type_status_connected) : "",
+    String level =
         batteryLevel != UNKNOWN_LEVEL
-            ? String.valueOf(batteryLevel)
-            : context.getString(R.string.notification_battery_level_unknown),
-        powerSaveMode ? context.getString(R.string.notification_battery_saver_mode) : "");
+            ? context.getString(R.string.template_battery_level, String.valueOf(batteryLevel))
+            : context.getString(R.string.template_battery_level_unknown);
+    StringBuilder description = new StringBuilder();
+    if (powerConnected) {
+      description.append(context.getString(R.string.value_charger_connected)).append(", ");
+    }
+    description.append(level);
+    if (powerSaveMode) {
+      description.append(", ").append(context.getString(R.string.notification_battery_saver_mode));
+    }
+    return description.toString();
   }
 
   private boolean getPowerSaveModeState() {

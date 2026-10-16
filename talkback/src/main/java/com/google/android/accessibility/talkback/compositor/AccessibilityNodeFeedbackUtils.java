@@ -32,6 +32,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.imagecaption.Result;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -93,6 +94,10 @@ public class AccessibilityNodeFeedbackUtils {
    */
   public static CharSequence getNodeTextDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
+    CharSequence scriptLabel = Scripts.ruleLabel(node);
+    if (scriptLabel != null) {
+      return scriptLabel;
+    }
     CharSequence contentAndSupplementalDescription =
         getNodeContentAndSupplementalDescription(node, context, globalVariables);
     if (!TextUtils.isEmpty(contentAndSupplementalDescription)) {
@@ -234,10 +239,14 @@ public class AccessibilityNodeFeedbackUtils {
    * <p>Note:
    * <li>The content should be non-copyable text for "copy last spoken phrase".
    * <li>Returns EditText role description even if TalkBack doesn't speak roles.
+   * <li>Returns nothing when the node's control sound plays for the focus instead.
    */
   public static CharSequence defaultRoleDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
     if (!globalVariables.getSpeakRoles() && Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+      return "";
+    }
+    if (globalVariables.isRoleSaidBySound(node)) {
       return "";
     }
     CharSequence nodeRoleDescription = getNodeRoleDescription(node, context, globalVariables);
@@ -627,13 +636,14 @@ public class AccessibilityNodeFeedbackUtils {
         }
       }
 
-      // Gets a hint for node actions in the TalkBack menu.
-      if (!menuTypeList.isEmpty()) {
+      // Gets a hint for node actions in the TalkBack menu, if a gesture or key opens it.
+      CharSequence menuShortcut = globalVariables.getGestureStringForNodeActions();
+      if (!menuTypeList.isEmpty() && !TextUtils.isEmpty(menuShortcut)) {
         hint.append(
             context.getString(
                 R.string.template_hint_menu_type_high_verbosity,
                 Joiner.on(CompositorUtils.getSeparator()).join(menuTypeList),
-                globalVariables.getGestureStringForNodeActions()));
+                menuShortcut));
       }
       return hint;
     }

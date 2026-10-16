@@ -386,7 +386,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="dialog_message_turn_on_image_description">Voit yrittää uudelleen, kun olet laittanut päälle joko automaattiset tai yksityiskohtaiset kuvien kuvaukset</string>
   <string name="title_pref_detailed_image_description">Yksityiskohtaiset kuvien kuvaukset</string>
   <string name="summary_pref_ai_description">Kuule pidempiä kuvauksia, kun valitset TalkBack-valikossa \"%1$s\"</string>
-  <string name="dialog_message_detailed_ai_description">Kun käytät tätä ominaisuutta, valitut kuvat lähetetään Googlelle käsiteltäväksi ja sitten poistetaan.\n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt seuraavat ehdot: %1$s.</string>
   <string name="dialog_message_on_device_ai_description">Kuulet lyhyen kuvauksen, kun kohdistat kuvaan tuetuissa sovelluksissa.\n\nKuvat käsitellään laitteella, eikä niitä koskaan lähetetä Googlelle. \n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt <a href="https://policies.google.com/terms/generative-ai">Googlen käyttöehdot</a>.</string>
   <string name="enable_gemini">Laita päälle</string>
   <string name="powered_by_gemini">Ominaisuuden tarjoaa generatiivinen AI</string>
@@ -417,8 +416,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="title_pref_enable_auto_icon_detection">Kaikki kuvakkeet</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Vain nimettömät kuvakkeet</string>
   <string name="title_pref_disable_auto_icon_detection">Älä kuvaile kuvakkeita</string>
-  <string name="dialog_message_detailed_ai_promotion">Kuvien yksityiskohtaiset kuvaukset luodaan generatiivisella tekoälyllä. Kun käytät tätä ominaisuutta, valitut kuvat lähetetään Googlelle käsiteltäväksi ja sitten poistetaan.\n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Voit milloin tahansa laittaa kuvien yksityiskohtaiset kuvaukset pois päältä TalkBackin asetuksista.\n\nJatkamalla hyväksyt nämä: %1$s.</string>
-  <string name="dialog_message_screen_overview_promotion">Kun käytät tätä ominaisuutta, näytön kuvakaappaus lähetetään Googlelle käsiteltäväksi, jonka jälkeen kuvakaappaus poistetaan. Käsittelyssä menee useita sekunteja.\n\nGeneratiivinen tekoäly on kokeellinen, ja se tekee virheitä. Jatkamalla hyväksyt seuraavat ehdot: %1$s.</string>
   <string name="dialog_message_on_device_ai_model_download">Kuulet lyhyen kuvauksen, kun kohdistat kuvaan tuetuissa sovelluksissa.\n\nKuvat käsitellään laitteella, eikä niitä koskaan lähetetä Googlelle.\n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt seuraavat ehdot: %1$s.</string>
   <string name="title_pref_enable_gemini_support">Päällä</string>
   <string name="title_pref_disable_gemini_support">Pois päältä</string>

@@ -23,18 +23,36 @@ android {
         versionCode = backtalkVersionCodeBase + gitCommitCount
         versionName = talkbackVersionName + "-" + BUILD_TIMESTAMP
         minSdk = 26
-        targetSdk = 30
+        targetSdk = 36
         testInstrumentationRunner = 'android.test.InstrumentationTestRunner'
         multiDexEnabled = true
+    }
+    buildTypes {
+        // The published builds are debug builds, signed with the debug key. Android runs a
+        // debuggable app without compiling it, which makes navigation several times slower on
+        // a watch, so they are not debuggable. Debug logging in the libraries stays on.
+        debug {
+            debuggable = false
+        }
     }
     packaging {
         resources {
             excludes += ['LICENSE', 'README']
         }
+        jniLibs {
+            // On-device AI only runs on arm64-v8a (see OnDeviceAiSettings), so its 26 MB library
+            // would never load on x86_64.
+            excludes += ['lib/x86_64/liblitertlm_jni.so']
+        }
     }
     lint {
         checkReleaseBuilds = false
-        abortOnError = false
+        // Lint the library modules too, where most of the code is, in one report.
+        checkDependencies = true
+        // The issues that were already there when lint was added to CI. Only new ones fail the
+        // build. To accept new ones on purpose, run ./gradlew updateLintBaselinePhoneDebug.
+        baseline = file("lint-baseline.xml")
+        abortOnError = true
     }
     productFlavors {
         phone {

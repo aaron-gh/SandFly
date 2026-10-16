@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.gesture;
 
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_HOLD_AND_2ND_FINGER_BACKWARD_DOUBLE_TAP;
@@ -245,6 +246,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         MULTI_FINGER,
         R.string.pref_shortcut_3finger_3tap_key,
         R.string.pref_shortcut_3finger_3tap_default),
+    // Only recognized when Backtalk detects gestures itself.
+    THREE_FINGER_QUADRUPLE_TAP(
+        GESTURE_3_FINGER_QUADRUPLE_TAP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_3finger_4tap_key,
+        R.string.pref_shortcut_3finger_4tap_default),
     THREE_FINGER_TRIPLE_TAP_AND_HOLD(
         AccessibilityService.GESTURE_3_FINGER_TRIPLE_TAP_AND_HOLD,
         MULTI_FINGER,
@@ -470,6 +477,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_toggle_voice_feedback, R.string.shortcut_toggle_voice_feedback),
     SHOW_LANGUAGE_OPTIONS(
         R.string.shortcut_value_show_language_options, R.string.shortcut_show_language_options),
+    VOICE_PROFILES(R.string.shortcut_value_voice_profiles, R.string.shortcut_voice_profiles),
+    PREVIOUS_VOICE_PROFILE(
+        R.string.shortcut_value_previous_voice_profile, R.string.shortcut_previous_voice_profile),
+    NEXT_VOICE_PROFILE(
+        R.string.shortcut_value_next_voice_profile, R.string.shortcut_next_voice_profile),
 
     // Menu control.
     TALKBACK_BREAKOUT(
@@ -495,6 +507,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     MOVE_CURSOR_TO_END(
         R.string.shortcut_value_move_cursor_to_end, R.string.title_edittext_breakout_move_to_end),
     SELECT_ALL(R.string.shortcut_value_select_all, android.R.string.selectAll),
+    CLEAR_SELECTION(
+        R.string.shortcut_value_clear_selection, R.string.title_clear_selection),
     COPY(R.string.shortcut_value_copy, android.R.string.copy),
     CUT(R.string.shortcut_value_cut, android.R.string.cut),
     PASTE(R.string.shortcut_value_paste, android.R.string.paste),
@@ -542,6 +556,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     ANNOUNCE_BATTERY_STATE(
         R.string.shortcut_value_announce_battery_state, R.string.shortcut_announce_battery_state),
     ANNOUNCE_STATUS(R.string.shortcut_value_announce_status, R.string.shortcut_announce_status),
+    INSPECT_ITEM(R.string.shortcut_value_inspect_item, R.string.shortcut_inspect_item),
+    COPY_SCREEN_TREE(R.string.shortcut_value_copy_screen_tree, R.string.shortcut_copy_screen_tree),
+    TOGGLE_SCRIPTS(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts),
     ANNOUNCE_PHONETIC_PRONUNCIATION(
         R.string.shortcut_value_announce_phonetic_pronunciation,
         R.string.shortcut_announce_phonetic_pronunciation),
@@ -754,6 +771,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         : shortcut;
   }
 
+  @Override
+  public CharSequence screenSearchNoKeywordHint() {
+    return GestureHints.screenSearchNoKeywordHint(context, this);
+  }
+
   /**
    * Gets corresponding action from gesture-action mappings.
    *
@@ -846,6 +868,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     return matchedGestures;
   }
 
+  /** Returns the action of each gesture in the current gesture set, by gesture ID. */
+  public Map<Integer, String> getGestureActions() {
+    return new HashMap<>(gestureIdToActionKey.get(currentGestureSet));
+  }
+
   /**
    * Returns an action-gesture mapping including all actions. The map key is an action key. The map
    * value is the text of the gesture which is assigned to the action.
@@ -910,6 +937,16 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
 
         // Skip multi-finger gestures when isMultiFingerOn = false.
         if (!isMultiFingerOn && gesture.gestureType == MULTI_FINGER) {
+          // Android 11 still sends the one-finger double tap gestures while the Actions reading
+          // control asks for them, so they need an action, but no gesture name or setting.
+          if (FeatureSupport.doesServiceHandleDoubleTap()
+              && (gesture == TalkBackGesture.ONE_FINGER_DOUBLE_TAP
+                  || gesture == TalkBackGesture.ONE_FINGER_DOUBLE_TAP_AND_HOLD)) {
+            String keyId = getPrefKeyWithGestureSet(context.getString(gesture.keyId), index);
+            gestureIdToActionKeyMap.put(
+                gesture.gestureId,
+                prefs.getString(keyId, context.getString(gesture.defaultActionId)));
+          }
           continue;
         }
 
@@ -1127,6 +1164,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_3finger_2tap);
       case AccessibilityService.GESTURE_3_FINGER_TRIPLE_TAP ->
           context.getString(R.string.title_pref_shortcut_3finger_3tap);
+      case GESTURE_3_FINGER_QUADRUPLE_TAP ->
+          context.getString(R.string.title_pref_shortcut_3finger_4tap);
       case AccessibilityService.GESTURE_4_FINGER_SWIPE_UP ->
           context.getString(R.string.title_pref_shortcut_4finger_swipe_up);
       case AccessibilityService.GESTURE_4_FINGER_SWIPE_DOWN ->

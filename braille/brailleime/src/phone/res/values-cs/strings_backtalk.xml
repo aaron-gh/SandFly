@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <!-- Backtalk-specific Czech translations for the braille keyboard. -->
+
+    <!-- Device orientation and charging-port announcements. -->
+    <string name="tabletop_port_left_announcement">Stolní režim, nabíjecí port vlevo</string>
+    <string name="tabletop_port_right_announcement">Stolní režim, nabíjecí port vpravo</string>
+    <string name="screen_away_port_right_announcement">Režim s obrazovkou od vás, nabíjecí port vpravo</string>
+    <string name="screen_away_port_left_announcement">Režim s obrazovkou od vás, nabíjecí port vlevo</string>
+    <string name="port_right_announcement">Nabíjecí port vpravo</string>
+    <string name="port_left_announcement">Nabíjecí port vlevo</string>
+    <string name="tabletop_port_near_announcement">Stolní režim, nabíjecí port směrem k vám</string>
+    <string name="tabletop_port_far_announcement">Stolní režim, nabíjecí port směrem od vás</string>
+    <string name="screen_away_port_down_announcement">Režim s obrazovkou od vás, nabíjecí port směřuje dolů</string>
+    <string name="screen_away_port_up_announcement">Režim s obrazovkou od vás, nabíjecí port směřuje nahoru</string>
+    <string name="port_near_announcement">Nabíjecí port směrem k vám</string>
+    <string name="port_far_announcement">Nabíjecí port směrem od vás</string>
+    <string name="port_down_announcement">Nabíjecí port směřuje dolů</string>
+    <string name="port_up_announcement">Nabíjecí port směřuje nahoru</string>
+    <string name="orientation_locked_announcement">Orientace uzamčena</string>
+    <string name="orientation_locked_port_announcement">Orientace uzamčena. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientace odemčena</string>
+
+    <string name="screen_toward_announcement">Obrazovka směrem k vám</string>
+    <string name="screen_toward_port_left_announcement">Obrazovka směrem k vám, nabíjecí port vlevo</string>
+    <string name="screen_toward_port_right_announcement">Obrazovka směrem k vám, nabíjecí port vpravo</string>
+    <string name="screen_toward_port_down_announcement">Obrazovka směrem k vám, nabíjecí port směřuje dolů</string>
+    <string name="screen_toward_port_up_announcement">Obrazovka směrem k vám, nabíjecí port směřuje nahoru</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet ve vzpřímené poloze směřuje od vás</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Je-li vypnuto, tablet nebo rozložený telefon ve vzpřímené poloze používá stolní režim s obrazovkou směrem k vám.</string>
+
+    <!-- Braille keyboard typing sounds. -->
+    <string name="title_pref_typing_sounds">Zvuky při psaní</string>
+    <string name="summary_pref_typing_sounds">Přehrávat zvuky klávesnice při zadání znaku, mezery, nového řádku nebo při mazání</string>
+
+    <!-- Braille keyboard echo. -->
+    <string name="title_pref_braille_keyboard_echo">Odezva klávesnice</string>
+    <string name="value_braille_keyboard_echo_none">Nic</string>
+    <string name="value_braille_keyboard_echo_characters">Znaky</string>
+    <string name="value_braille_keyboard_echo_words">Slova</string>
+    <string name="value_braille_keyboard_echo_characters_and_words">Znaky a slova</string>
+
+    <!-- Dot layout. -->
+    <string name="title_pref_flip_dots_vertically">Prohodit horní a dolní body</string>
+    <string name="summary_pref_flip_dots_vertically">Bod 1 si vymění místo s bodem 3 a bod 4 s bodem 6</string>
+
+    <!-- Tutorial. -->
+    <string name="skip_tutorial">Přeskočit výukový program</string>
+</resources>

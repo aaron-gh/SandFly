@@ -16,6 +16,8 @@
 package com.google.android.accessibility.utils.preference;
 
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -48,6 +50,31 @@ public abstract class BasePreferencesActivity extends AppCompatActivity {
     } else {
       super.onBackPressed();
     }
+  }
+
+  @Override
+  protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+    readActionBarFirst();
+  }
+
+  /**
+   * Keeps the action bar, with Navigate up and the screen's title, first in the reading order.
+   * Android 15 and later draw the screen edge to edge, so the content starts at the top of the
+   * screen, under the action bar, rather than below it. Both then start at the same place, and
+   * Android puts the taller content first, so the action bar came last. Android only passes on the
+   * order between views it gives to accessibility services, so both containers are given, though
+   * they have nothing to focus themselves.
+   */
+  private void readActionBarFirst() {
+    View actionBar = findViewById(androidx.appcompat.R.id.action_bar_container);
+    View content = findViewById(android.R.id.content);
+    if (actionBar == null || content == null) {
+      return;
+    }
+    actionBar.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+    content.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+    actionBar.setAccessibilityTraversalBefore(android.R.id.content);
   }
 
   /**

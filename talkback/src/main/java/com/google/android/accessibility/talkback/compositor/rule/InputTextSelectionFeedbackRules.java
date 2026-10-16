@@ -28,12 +28,16 @@ import static com.google.android.accessibility.utils.output.SpeechController.QUE
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.view.accessibility.AccessibilityEvent;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.AccessibilityInterpretationFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.Compositor.HandleEventOptions;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
+import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
@@ -79,11 +83,13 @@ public final class InputTextSelectionFeedbackRules {
    * @param eventFeedbackRules the event feedback rules
    * @param context the parent context
    * @param globalVariables the global compositor variables
+   * @param processorPhoneticLetters gives the phonetic word to say with or in place of a letter
    */
   public static void addFeedbackRules(
       Map<Integer, Function<HandleEventOptions, EventFeedback>> eventFeedbackRules,
       Context context,
-      GlobalVariables globalVariables) {
+      GlobalVariables globalVariables,
+      ProcessorPhoneticLetters processorPhoneticLetters) {
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_NO_SELECTION,
         eventOptions ->
@@ -97,7 +103,9 @@ public final class InputTextSelectionFeedbackRules {
         eventOptions -> inputSelectionMoveCursorSelectionCleared(eventOptions, context));
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_SELECTION_TEXT_TRAVERSAL,
-        (eventOptions) -> inputSelectionTextTraversal(eventOptions, context, globalVariables));
+        (eventOptions) ->
+            inputSelectionTextTraversal(
+                eventOptions, context, globalVariables, processorPhoneticLetters));
     eventFeedbackRules.put(
         EVENT_TYPE_INPUT_SELECTION_SELECT_ALL_WITH_KEYBOARD,
         eventOptions ->
@@ -231,17 +239,32 @@ public final class InputTextSelectionFeedbackRules {
   }
 
   private static EventFeedback inputSelectionTextTraversal(
-      HandleEventOptions eventOptions, Context context, GlobalVariables globalVariables) {
+      HandleEventOptions eventOptions,
+      Context context,
+      GlobalVariables globalVariables,
+      ProcessorPhoneticLetters processorPhoneticLetters) {
+    CharSequence traversedText =
+        AccessibilityInterpretationFeedbackUtils.getEventTraversedText(
+            eventOptions.eventInterpretation, globalVariables.getUserPreferredLocale());
     CharSequence eventTraversedText =
-        refineInputText(
-            context,
-            AccessibilityInterpretationFeedbackUtils.getEventTraversedText(
-                eventOptions.eventInterpretation, globalVariables.getUserPreferredLocale()),
-            globalVariables.getCountRepeatedSymbols());
-    CharSequence ttsOutput =
-        globalVariables.getGlobalSayCapital()
-            ? CompositorUtils.prependCapital(eventTraversedText, context)
-            : eventTraversedText;
+        refineInputText(context, traversedText, globalVariables.getCountRepeatedSymbols());
+    // The user can choose to hear the phonetic word with or in place of a letter they move over.
+    // Traversal that Backtalk does itself has no event, and GranularityTraversal puts it in for that.
+    AccessibilityEvent event = eventOptions.eventObject;
+    Optional<CharSequence> phoneticInPlaceOfLetter =
+        (event != null && AccessibilityEventUtils.isCharacterTraversalEvent(event))
+            ? processorPhoneticLetters.getPhoneticInPlaceOfLetter(
+                PackageManagerUtils.isTalkBackPackage(event.getPackageName()), traversedText)
+            : Optional.empty();
+    CharSequence ttsOutput;
+    if (phoneticInPlaceOfLetter.isPresent()) {
+      ttsOutput = phoneticInPlaceOfLetter.get();
+    } else {
+      ttsOutput =
+          globalVariables.getGlobalSayCapital()
+              ? CompositorUtils.prependCapital(eventTraversedText, context)
+              : eventTraversedText;
+    }
 
     // According to TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY: Represents the event of
     // traversing the text of a view at a given movement granularity. At the same time, we set the

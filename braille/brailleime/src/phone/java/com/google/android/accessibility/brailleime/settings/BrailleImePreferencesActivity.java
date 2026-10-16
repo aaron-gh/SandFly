@@ -234,6 +234,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        // Typing sounds preference.
+        SwitchPreferenceCompat typingSoundsPref =
+            findPreference(getString(R.string.pref_brailleime_typing_sounds));
+        typingSoundsPref.setChecked(BrailleUserPreferences.readTypingSounds(getContext()));
+        typingSoundsPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeTypingSounds(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Swap top and bottom dots preference.
         SwitchPreferenceCompat flipDotsVerticallyPref =
             findPreference(getString(R.string.pref_brailleime_flip_dots_vertically));
@@ -242,6 +255,20 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
         flipDotsVerticallyPref.setOnPreferenceClickListener(
             preference -> {
               BrailleUserPreferences.writeFlipDotsVertically(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
+        // Tablet held up faces away preference.
+        SwitchPreferenceCompat tabletHeldUpFacesAwayPref =
+            findPreference(getString(R.string.pref_brailleime_tablet_held_up_faces_away));
+        tabletHeldUpFacesAwayPref.setChecked(
+            BrailleUserPreferences.readTabletHeldUpFacesAway(getContext()));
+        tabletHeldUpFacesAwayPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeTabletHeldUpFacesAway(
                   getContext(), ((SwitchPreferenceCompat) preference).isChecked());
               return true;
             });

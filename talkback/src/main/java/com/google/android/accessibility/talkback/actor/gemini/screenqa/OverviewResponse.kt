@@ -38,7 +38,12 @@ sealed interface OverviewResponse {
     val imageBytes: ByteArray,
   ) : OverviewResponse
 
-  /** An error occurred. */
-  data class Error(val errorReason: ErrorReason?, val finishReason: FinishReason?) :
-    OverviewResponse
+  /** An error occurred. [message], when set, tells the user what went wrong. */
+  data class Error
+  @JvmOverloads
+  constructor(
+    val errorReason: ErrorReason?,
+    val finishReason: FinishReason?,
+    val message: String? = null,
+  ) : OverviewResponse
 }

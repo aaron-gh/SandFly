@@ -75,6 +75,9 @@ public class Utils {
   // frameworks/base/core/java/android/view/WindowManagerPolicyConstants.java
   private static final int NAV_BAR_MODE_GESTURAL = 2;
 
+  /** How far from vertical a device still counts as upright, in degrees. */
+  private static final int UPRIGHT_DEGREES = 40;
+
   private Utils() {}
 
   /**
@@ -262,12 +265,25 @@ public class Utils {
 
   /** Returns {@code true} if sensor event values indicate the device is in a flat orientation. */
   public static boolean isFlat(float[] sensorEventValues) {
+    int inclination = inclinationDegrees(sensorEventValues);
+    return inclination < 25 || inclination > 155;
+  }
+
+  /**
+   * Whether the device is held upright: within {@link #UPRIGHT_DEGREES} of vertical, as when
+   * typing in screen-away mode, and unlike a device held nearly flat in the hands and tilted.
+   */
+  public static boolean isUpright(float[] sensorEventValues) {
+    return Math.abs(inclinationDegrees(sensorEventValues) - 90) <= UPRIGHT_DEGREES;
+  }
+
+  /** The angle of the screen from lying face up, in degrees, from 0 to 180. */
+  private static int inclinationDegrees(float[] sensorEventValues) {
     float x = sensorEventValues[0];
     float y = sensorEventValues[1];
     float z = sensorEventValues[2];
     float normOfGravity = (float) Math.sqrt(x * x + y * y + z * z);
-    int inclination = (int) Math.round(Math.toDegrees(Math.acos(z / normOfGravity)));
-    return inclination < 25 || inclination > 155;
+    return (int) Math.round(Math.toDegrees(Math.acos(z / normOfGravity)));
   }
 
   /**

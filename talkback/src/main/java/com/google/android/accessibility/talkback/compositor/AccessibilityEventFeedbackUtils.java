@@ -110,7 +110,7 @@ public final class AccessibilityEventFeedbackUtils {
       // Omit title if page is focused, because page-title will be announced for focus-event.
       CharSequence pageTitle =
           AccessibilityNodeInfoUtils.getSelectedPageTitle(
-              AccessibilityNodeInfoUtils.toCompat(event.getSource()));
+              AccessibilityEventUtils.sourceCompat(event));
       if (!TextUtils.isEmpty(pageTitle) && !globalVariables.focusIsPage()) {
         return CompositorUtils.joinCharSequences(
             pageTitle,
@@ -128,7 +128,7 @@ public final class AccessibilityEventFeedbackUtils {
     if (event == null) {
       return false;
     }
-    AccessibilityNodeInfo node = event.getSource();
+    AccessibilityNodeInfo node = AccessibilityEventUtils.getSource(event);
     return node != null
         && node.getWindow() != null
         && node.getWindow().getType() == AccessibilityWindowInfoCompat.TYPE_INPUT_METHOD

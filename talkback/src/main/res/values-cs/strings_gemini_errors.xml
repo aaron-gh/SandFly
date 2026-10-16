@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gemini_error_api_key">Gemini nepřijal klíč API. Zkontrolujte klíč v nastavení Automatické popisy.</string>
+    <string name="gemini_error_quota">Limit použití vašeho klíče API Gemini byl vyčerpán. Zkuste to později.</string>
+    <string name="gemini_error_busy">Gemini je právě zaneprázdněn. Zkuste to za chvíli znovu.</string>
+    <string name="gemini_error_timeout">Gemini neodpověděl včas. Zkuste to znovu.</string>
+    <string name="gemini_error_with_code">Gemini nemohl odpovědět, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini nemohl odpovědět, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Podrobnější popis obrázku se nepodařilo získat: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+</resources>

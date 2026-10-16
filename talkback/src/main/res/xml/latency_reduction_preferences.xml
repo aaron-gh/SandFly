@@ -16,7 +16,22 @@
         android:key="@string/pref_touch_focus_time_out_key"
         app:summary="%s"
         android:title="@string/title_pref_touch_focus_timeout" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_reduce_window_delay_default"
+        android:key="@string/pref_reduce_window_delay_key"
+        android:summary="@string/pref_reduce_window_delay_summary"
+        android:title="@string/pref_reduce_window_delay_title"/>
 
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="true"
+        android:title="@string/title_pref_low_latency_audio"
+        android:summary="@string/summary_pref_low_latency_audio"
+        android:key="pref_low_latency_audio" />
+
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_speak_items_before_scroll_default"
+        android:title="@string/title_pref_speak_items_before_scroll"
+        android:key="@string/pref_speak_items_before_scroll_key" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_cache_keyboard_keys_default"
         android:title="@string/title_pref_cache_keyboard_keys"

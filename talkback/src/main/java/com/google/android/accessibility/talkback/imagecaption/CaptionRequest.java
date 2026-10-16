@@ -116,6 +116,9 @@ public abstract class CaptionRequest extends Request {
   }
 
   protected void onCaptionFinish(Result result) {
+    if (!finish()) {
+      return;
+    }
     setEndTimestamp();
     LogUtils.v(
         TAG,
@@ -131,8 +134,10 @@ public abstract class CaptionRequest extends Request {
 
   @Override
   protected void onError(@ErrorCode int errorCode) {
+    if (!finish()) {
+      return;
+    }
     setEndTimestamp();
-    stopTimeoutRunnable();
     LogUtils.e(
         TAG,
         "onError() "

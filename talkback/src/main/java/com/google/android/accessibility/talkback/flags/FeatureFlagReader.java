@@ -117,10 +117,6 @@ public final class FeatureFlagReader {
     return false;
   }
 
-  public static boolean enableOnlyCtrlToStopSpeech(Context context) {
-    return true;
-  }
-
   public static boolean enableOpenTalkbackSettingsKeyboard(Context context) {
     return true;
   }
@@ -255,10 +251,6 @@ public final class FeatureFlagReader {
 
   public static boolean enableSplitTapAndHold(Context context) {
     return false;
-  }
-
-  public static boolean requestStateChangeInSameThread(Context context) {
-    return true;
   }
 
   public static boolean logEventBasedLatency(Context context) {

@@ -43,7 +43,9 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.EventInterpretation;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.compositor.roledescription.SamsungNotificationDescription;
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
+import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -121,20 +123,59 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         accessibilityFocusEventInterpretation.getIsInitialFocusAfterScreenStateChange();
     boolean isEventNavigateByUser = accessibilityFocusEventInterpretation.getIsNavigateByUser();
     boolean isDeviceScreenNoTouch = globalVariables.isDeviceScreenNoTouch();
+
+    // With control sounds on, the focus and list sounds come from where the focus lands, and a
+    // control sound takes the place of the focus sound. Moving into or out of a list plays the list
+    // sound and the control sound together, with the control's vibration. A control sound that the
+    // theme only gives a vibration leaves the focus or list sound in place, and its vibration takes
+    // the place of theirs. Only while a control sound is heard or felt is the kind of control left
+    // out of the speech.
+    int earcon = earcon(srcNode, globalVariables);
+    int haptic = haptic(srcNode);
+    boolean earconVibrates = true;
+    float[] earconPosition = null;
+    int secondEarcon = -1;
+    boolean isFocusSound = earcon == R.raw.focus || earcon == R.raw.focus_actionable;
+    boolean isListSound = earcon == R.raw.chime_up || earcon == R.raw.chime_down;
+    if (globalVariables.areControlSoundsOn() && (isFocusSound || isListSound)) {
+      earconPosition = ControlSounds.screenPosition(srcNode, context);
+    }
+    if (isFocusSound || isListSound) {
+      int controlSound = globalVariables.getControlSoundForFocus(srcNode);
+      if (controlSound != 0) {
+        if (globalVariables.isControlSoundHeard(controlSound)) {
+          if (isFocusSound) {
+            earcon = controlSound;
+          } else {
+            secondEarcon = controlSound;
+          }
+        } else {
+          haptic = controlSound;
+          earconVibrates = false;
+        }
+        globalVariables.setRoleSoundOfFocus(controlSound);
+      }
+    }
+
     // TYPE_VIEW_HOVER_ENTER handled the feedback in this case.
-    CharSequence ttsOutput =
-        shouldEarlyAnnounceForLiftToType(context)
-                && isEqualsToLastHoverEnterKeyboardEventNode(eventOptions.eventInterpretation)
-            ? ""
-            : viewAccessibilityFocusedDescription(
-                eventOptions.eventObject,
-                srcNode,
-                isEventNavigateByUser,
-                context,
-                imageContents,
-                globalVariables,
-                processorPhoneticLetters,
-                treeNodesDescription);
+    CharSequence ttsOutput;
+    try {
+      ttsOutput =
+          shouldEarlyAnnounceForLiftToType(context)
+                  && isEqualsToLastHoverEnterKeyboardEventNode(eventOptions.eventInterpretation)
+              ? ""
+              : viewAccessibilityFocusedDescription(
+                  eventOptions.eventObject,
+                  srcNode,
+                  isEventNavigateByUser,
+                  context,
+                  imageContents,
+                  globalVariables,
+                  processorPhoneticLetters,
+                  treeNodesDescription);
+    } finally {
+      globalVariables.setRoleSoundOfFocus(0);
+    }
 
     LogUtils.v(
         TAG,
@@ -160,8 +201,12 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         .setForceFeedbackEvenIfSsbActive(
             forceFeedbackEvenIfSsbActive(accessibilityFocusEventInterpretation, isInitialFocus))
         .setPreventDeviceSleep(true)
-        .setEarcon(earcon(srcNode, globalVariables))
-        .setHaptic(haptic(srcNode))
+        .setEarcon(earcon)
+        .setSecondEarcon(secondEarcon)
+        .setEarconX(earconPosition == null ? -1 : earconPosition[0])
+        .setEarconY(earconPosition == null ? -1 : earconPosition[1])
+        .setEarconVibrates(earconVibrates)
+        .setHaptic(haptic)
         .setInlineFormatting(
             supportInlineFormatting(srcNode, accessibilityFocusEventInterpretation))
         .build();
@@ -214,10 +259,11 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
     CharSequence eventDescription =
         AccessibilityEventFeedbackUtils.getEventContentDescriptionOrEventAggregateText(
             event, preferredLocale);
+    CharSequence contentDescription;
     if (!TextUtils.isEmpty(nodeUnlabelledState)) {
       CharSequence unlabelledDescription =
           TextUtils.isEmpty(eventDescription) ? nodeUnlabelledState : eventDescription;
-      outputJoinList.add(unlabelledDescription);
+      contentDescription = unlabelledDescription;
       logString
           .append(String.format("\n    unlabelledDescription={%s}", unlabelledDescription))
           .append(String.format(", eventDescription={%s}", eventDescription));
@@ -225,21 +271,14 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
       CharSequence nodeTreeDescription =
           treeNodesDescription.aggregateNodeTreeDescription(node, event);
       if (!TextUtils.isEmpty(nodeTreeDescription)) {
-        outputJoinList.add(nodeTreeDescription);
+        contentDescription = nodeTreeDescription;
         logString.append(String.format("\n    nodeTreeDescription={%s}", nodeTreeDescription));
       } else {
-        outputJoinList.add(eventDescription);
+        contentDescription = eventDescription;
         logString.append(String.format("\n    eventDescription={%s}", eventDescription));
       }
     }
 
-    // Add phonetic spelling if necessary.
-    Optional<CharSequence> phoneticExample =
-        processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
-    phoneticExample.ifPresent(outputJoinList::add);
-    logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
-
-    // Prepare Collection item transition state or Node role/heading description for feedback.
     boolean speakCollectionInfo = globalVariables.getSpeakCollectionInfo();
     boolean speakRoles = globalVariables.getSpeakRoles();
     logString
@@ -247,24 +286,56 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         .append(String.format(", speakRoles=%s", speakRoles));
     CharSequence collectionItemTransition =
         speakCollectionInfo ? globalVariables.getCollectionItemTransitionDescription(node) : "";
-    if (!TextUtils.isEmpty(collectionItemTransition)) {
+
+    // In a table, the row and column can be spoken before the cell's contents.
+    boolean transitionBeforeContent =
+        !TextUtils.isEmpty(collectionItemTransition)
+            && globalVariables.getCollectionRole() == Role.ROLE_GRID
+            && GlobalVariables.TABLE_HEADERS_BEFORE.equals(globalVariables.getTableColumnHeaders());
+
+    if (transitionBeforeContent) {
       outputJoinList.add(collectionItemTransition);
       logString.append(
           String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
-    } else if (speakRoles
-        && !WebInterfaceUtils.isWebContainer(node)
-        && AccessibilityNodeInfoUtils.isHeading(node)) {
-      // If the source node has collection item transition, collectionItemTransition text would
-      // not be empty. And TalkBack should announce the collection item transition information or it
-      // should fallback to announce the role/heading description.
-      CharSequence nodeRoleDescription =
-          AccessibilityNodeFeedbackUtils.getNodeRoleDescription(node, context, globalVariables);
-      if (!TextUtils.isEmpty(nodeRoleDescription)) {
-        outputJoinList.add(nodeRoleDescription);
-        logString.append(String.format("\n    nodeRoleDescription={%s}", nodeRoleDescription));
-      } else {
-        outputJoinList.add(context.getString(R.string.heading_template));
-        logString.append("\n    heading");
+    }
+
+    // Add phonetic spelling if necessary, or say it in place of the key if the user chose that.
+    Optional<CharSequence> phoneticInPlaceOfKey =
+        processorPhoneticLetters.getPhoneticInPlaceOfKeyboardKey(event);
+    if (phoneticInPlaceOfKey.isPresent()) {
+      outputJoinList.add(phoneticInPlaceOfKey.get());
+      logString.append(String.format("\n    phoneticInPlaceOfKey={%s}", phoneticInPlaceOfKey));
+    } else {
+      if (!TextUtils.isEmpty(contentDescription)) {
+        outputJoinList.add(contentDescription);
+      }
+      Optional<CharSequence> phoneticExample =
+          processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
+      phoneticExample.ifPresent(outputJoinList::add);
+      logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
+    }
+
+    // Prepare Collection item transition state or Node role/heading description for feedback.
+    if (!transitionBeforeContent) {
+      if (!TextUtils.isEmpty(collectionItemTransition)) {
+        outputJoinList.add(collectionItemTransition);
+        logString.append(
+            String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
+      } else if (speakRoles
+          && !WebInterfaceUtils.isWebContainer(node)
+          && AccessibilityNodeInfoUtils.isHeading(node)) {
+        // If the source node has collection item transition, collectionItemTransition text would
+        // not be empty. And TalkBack should announce the collection item transition information or it
+        // should fallback to announce the role/heading description.
+        CharSequence nodeRoleDescription =
+            AccessibilityNodeFeedbackUtils.getNodeRoleDescription(node, context, globalVariables);
+        if (!TextUtils.isEmpty(nodeRoleDescription)) {
+          outputJoinList.add(nodeRoleDescription);
+          logString.append(String.format("\n    nodeRoleDescription={%s}", nodeRoleDescription));
+        } else {
+          outputJoinList.add(context.getString(R.string.heading_template));
+          logString.append("\n    heading");
+        }
       }
     }
 
@@ -436,6 +507,8 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
             || (accessibilityFocusEventInterpretation.getEvent() == Compositor.EVENT_UNKNOWN
                 && WebInterfaceUtils.isWebContainer(node));
     return assumeIsNavigateByUser
+        // Samsung's notification rendering styles are not message formatting to announce.
+        && !SamsungNotificationDescription.isNotificationCard(node)
         && (!WebInterfaceUtils.isWebContainer(node)
             || SpannableUtils.hasTargetSpan(node.getText(), AbsoluteSizeSpan.class, false));
   }

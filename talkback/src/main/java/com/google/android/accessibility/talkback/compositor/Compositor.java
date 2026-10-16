@@ -31,11 +31,13 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech.SpeechParam;
 import com.google.android.accessibility.utils.output.FeedbackItem;
+import com.google.android.accessibility.utils.output.LanguageSwitch;
 import com.google.android.accessibility.utils.output.SpeechCacheManager.LoadSpeechResultNotifier;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.accessibility.utils.output.SpeechController;
@@ -47,6 +49,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Locale;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -375,6 +378,9 @@ public class Compositor {
   /** Sets the user preferred locale changed using language switcher. */
   public void setUserPreferredLanguage(Locale locale) {
     globalVariables.setUserPreferredLocale(locale);
+    LanguageSwitch.setChosenLanguage(locale);
+    // The prepared announcements were worked out in the language used before.
+    PreparedFocusSpeech.clear();
   }
 
   /////////////////////////////////////////////////////////////////////////////////
@@ -456,6 +462,36 @@ public class Compositor {
     handleEvent(eventType, eventId, options);
   }
 
+  /**
+   * Handles an event made inside Backtalk for {@code sourceNode}, which the event cannot hold. If
+   * {@code preparedFeedback} is not null, it is the feedback that {@link #getFeedback} returned for
+   * the same event earlier, and is used instead of working it out again.
+   */
+  public void handleEvent(
+      AccessibilityEvent event,
+      AccessibilityNodeInfoCompat sourceNode,
+      @Nullable EventId eventId,
+      EventInterpretation eventInterpreted,
+      @Nullable EventFeedback preparedFeedback) {
+    HandleEventOptions options =
+        new HandleEventOptions().object(event).interpretation(eventInterpreted).source(sourceNode);
+    options.preparedFeedback = preparedFeedback;
+    handleEvent(eventInterpreted.getEvent(), eventId, options);
+  }
+
+  /**
+   * Returns the feedback for an event made inside Backtalk for {@code sourceNode}, without giving
+   * it, so that it can be given later by {@link #handleEvent}.
+   */
+  public EventFeedback getFeedback(
+      AccessibilityEvent event,
+      AccessibilityNodeInfoCompat sourceNode,
+      EventInterpretation eventInterpreted) {
+    HandleEventOptions options =
+        new HandleEventOptions().object(event).interpretation(eventInterpreted).source(sourceNode);
+    return getEventFeedback(eventInterpreted.getEvent(), options);
+  }
+
   private void handleEvent(int event, @Nullable EventId eventId, HandleEventOptions options) {
     handleEvent(event, eventId, options, null);
   }
@@ -472,7 +508,10 @@ public class Compositor {
     }
     @Nullable UtteranceCompleteRunnable runnable = options.onCompleteRunnable;
 
-    EventFeedback eventFeedback = getEventFeedback(event, options);
+    EventFeedback eventFeedback =
+        (options.preparedFeedback != null)
+            ? options.preparedFeedback
+            : getEventFeedback(event, options);
 
     // Compose earcons.
     SpeakOptions speakOptions = null;
@@ -481,8 +520,12 @@ public class Compositor {
       if (speakOptions == null) {
         speakOptions = SpeakOptions.create();
       }
-      Set<Integer> earcons = new HashSet<>();
+      // In order: the second earcon's vibration is the one felt.
+      Set<Integer> earcons = new LinkedHashSet<>();
       earcons.add(earcon);
+      if (eventFeedback.secondEarcon() != -1) {
+        earcons.add(eventFeedback.secondEarcon());
+      }
       speakOptions.setEarcons(earcons);
 
       Bundle nonSpeechParams = new Bundle();
@@ -493,6 +536,13 @@ public class Compositor {
       double volume = eventFeedback.earconVolume();
       if (volume != 1.0) {
         nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_VOLUME, (float) volume);
+      }
+      if (eventFeedback.earconX() >= 0 && eventFeedback.earconY() >= 0) {
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_X, (float) eventFeedback.earconX());
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_Y, (float) eventFeedback.earconY());
+      }
+      if (!eventFeedback.earconVibrates()) {
+        nonSpeechParams.putBoolean(Utterance.KEY_METADATA_EARCON_VIBRATES, false);
       }
       speakOptions.setNonSpeechParams(nonSpeechParams);
     }
@@ -521,6 +571,11 @@ public class Compositor {
     // Compose speech, and speech parameters.
     CharSequence ttsOutput =
         eventFeedback.ttsOutput().isPresent() ? eventFeedback.ttsOutput().get() : "";
+    CharSequence scripted =
+        Scripts.rewriteSpeech(event, options.eventObject, options.sourceNode, ttsOutput);
+    if (scripted != null) {
+      ttsOutput = scripted;
+    }
     if (!TextUtils.isEmpty(ttsOutput)) {
       // Cleans up the TTS output if it is just 1 character long. This will announce single
       // symbols correctly.
@@ -621,6 +676,7 @@ public class Compositor {
     public @Nullable EventInterpretation eventInterpretation;
     public @Nullable AccessibilityNodeInfoCompat sourceNode;
     public @Nullable UtteranceCompleteRunnable onCompleteRunnable;
+    public @Nullable EventFeedback preparedFeedback;
 
     @CanIgnoreReturnValue
     public HandleEventOptions object(AccessibilityEvent eventObjArg) {

@@ -1181,6 +1181,8 @@ public abstract class PageConfig {
       this.captureGestureIdToAnnouncements.put(
           AccessibilityService.GESTURE_2_FINGER_TRIPLE_TAP_AND_HOLD, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE, ANNOUNCE_REAL_ACTION);

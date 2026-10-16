@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.preference.base;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.DOUBLE_TAP;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.FORCE_LIFT_TO_TYPE_ON_IME;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE_EXCEPT_ACTION_KEY;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -45,7 +46,10 @@ public class TypingMethodPrefFragment extends TalkbackBaseFragment {
     METHOD_DOUBLE_TAP(R.string.value_type_confirmation_double_tap, DOUBLE_TAP),
     METHOD_LIFT_TO_TYPE_MOST(R.string.value_type_confirmation_lift_to_type, LIFT_TO_TYPE),
     METHOD_LIFT_TO_TYPE_ALL(
-        R.string.value_type_confirmation_lift_to_type_for_any_key, FORCE_LIFT_TO_TYPE_ON_IME);
+        R.string.value_type_confirmation_lift_to_type_for_any_key, FORCE_LIFT_TO_TYPE_ON_IME),
+    METHOD_LIFT_TO_TYPE_EXCEPT_ACTION_KEY(
+        R.string.value_type_confirmation_lift_to_type_except_action_key,
+        LIFT_TO_TYPE_EXCEPT_ACTION_KEY);
 
     @StringRes private final int titleId;
     private final int method;
@@ -109,7 +113,7 @@ public class TypingMethodPrefFragment extends TalkbackBaseFragment {
       }
 
       if (itemChanged) {
-        if (method == FORCE_LIFT_TO_TYPE_ON_IME) {
+        if (method == FORCE_LIFT_TO_TYPE_ON_IME || method == LIFT_TO_TYPE_EXCEPT_ACTION_KEY) {
           // Inform user a reading control item is added to adjust the latency
           // dynamically.
           A11yAlertDialogWrapper dialog =

@@ -19,6 +19,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
+import com.google.android.accessibility.braille.common.BrailleUtils;
 import com.google.android.accessibility.braille.common.Constants.BrailleType;
 import com.google.android.accessibility.braille.common.TouchDots;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
@@ -26,6 +27,7 @@ import com.google.android.accessibility.brailleime.BrailleIme.OrientationSensiti
 import com.google.android.accessibility.brailleime.LayoutOrientator.LayoutOrientatorCallback;
 import com.google.android.accessibility.brailleime.input.BrailleInputView;
 import com.google.android.accessibility.brailleime.input.DotHoldSwipe;
+import com.google.android.accessibility.brailleime.input.DotsOrientation;
 import com.google.android.accessibility.brailleime.input.Swipe;
 import com.google.android.accessibility.brailleime.tutorial.VerticalTextView;
 import com.google.android.material.color.MaterialColors;
@@ -45,6 +47,9 @@ public class CustomGestureView extends FrameLayout
   private final VerticalTextView verticalTextView;
   private Size screenSize;
   private boolean tableTopMode;
+
+  /** The "Tablet held up faces away" setting, which can't change while gestures are recorded. */
+  private final boolean tabletHeldUpFacesAway;
 
   /** A callback for custom gesture event. */
   public interface CustomGestureCallback {
@@ -69,6 +74,7 @@ public class CustomGestureView extends FrameLayout
     super(context);
     this.screenSize = screenSize;
     this.customGestureCallback = customGestureCallback;
+    tabletHeldUpFacesAway = BrailleUserPreferences.readTabletHeldUpFacesAway(context);
     layoutOrientator = new LayoutOrientator(getContext(), layoutOrientatorCallback);
     layoutOrientator.startIfNeeded();
     BrailleInputOptions options =
@@ -119,6 +125,11 @@ public class CustomGestureView extends FrameLayout
     verticalTextView.setText(sb);
     verticalTextView.setVisibility(VISIBLE);
     verticalTextView.startAnimation(hintToastAnimation);
+  }
+
+  /** Whether the tabletop layout is for a tablet held up facing the user, not lying flat. */
+  public boolean isUprightFacingUser() {
+    return layoutOrientator.isUprightFacingUser();
   }
 
   /** Returns true if the current layout is tabletop. */
@@ -247,8 +258,21 @@ public class CustomGestureView extends FrameLayout
         }
 
         @Override
+        public boolean uprightFacesUser() {
+          // Checked first, so that with the setting on nothing more is done for each reading.
+          return !tabletHeldUpFacesAway
+              && DotsOrientation.heldFacingUser(
+                  HeldOrientationTracker.getLastHeld(),
+                  BrailleUtils.isPhoneSizedDevice(getResources()),
+                  tabletHeldUpFacesAway);
+        }
+
+        @Override
         public void onDetectionChanged(boolean isTabletop, boolean firstChangedEvent) {
           customGestureCallback.onDetectionChanged(isTabletop);
+          if (layoutOrientator.isUprightFacingUser()) {
+            inputView.faceHeldRotation();
+          }
         }
       };
 }

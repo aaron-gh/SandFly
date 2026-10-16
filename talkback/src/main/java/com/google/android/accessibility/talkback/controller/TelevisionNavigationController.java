@@ -529,9 +529,7 @@ public class TelevisionNavigationController implements ServiceKeyEventListener {
         SpeechController.SpeakOptions.create()
             .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
             .setFlags(
-                FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE
-                    | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_SSB_ACTIVE);
+                FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
     pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
 
     mode = newMode;
