@@ -2515,6 +2515,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="stuck_touch_exploration_restart">Touch exploration may be stuck. Restart the phone to fix it.</string>
     <!-- Spoken when touch exploration seems to have stopped and Backtalk needs the DUMP permission, granted with ADB, to fix it. Leave "DUMP" and "ADB" untranslated. [CHAR LIMIT=NONE]-->
     <string name="stuck_touch_exploration_grant_dump">Touch exploration may be stuck. Restart the phone to fix it, or grant Backtalk the DUMP permission with ADB so that it can fix it.</string>
+    <!-- Title of the switch that moves accessibility focus into a window when it opens or comes back, such as when an app opens or you go back. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_focus_new_windows">Move focus to new windows</string>
     <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
     <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
@@ -2987,6 +2989,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="title_pref_cache_keyboard_keys">Announce keyboard keys faster</string>
   <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
   <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
+  <!-- Title of the switch that lets the first item focused in a new window interrupt the window name, instead of waiting for it to finish. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_first_item_interrupts_window_name">Speak first item without waiting for window name</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]

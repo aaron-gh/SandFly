@@ -174,6 +174,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.flags.Flags;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForLogicalNavigation;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
@@ -1415,6 +1416,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     if (keyAction == KeyEvent.ACTION_DOWN) {
       textEventInterpreter.setLastKeyEventTime(keyEvent.getEventTime());
+      InputFocusInterpreter.setLastKeyDownTime(keyEvent.getEventTime());
       textEventInterpreter.resetLastKeyDown();
     }
     Performance perf = Performance.getInstance();
@@ -3299,9 +3301,18 @@ public class TalkBackService extends AccessibilityServiceCompat
       enableAnimation(!reduceDelayPref);
     }
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
+    ScreenFeedbackManager.setFirstItemInterruptsWindowName(
+        getBooleanPref(
+            R.string.pref_first_item_interrupts_window_name_key,
+            R.bool.pref_first_item_interrupts_window_name_default));
 
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
+    // TV navigation relies on focus following input focus, so the switch is hidden there.
+    FocusProcessorForScreenStateChange.setFocusNewWindows(
+        FormFactorUtils.isAndroidTv()
+            || getBooleanPref(
+                R.string.pref_focus_new_windows_key, R.bool.pref_focus_new_windows_default));
     EventFilter.setSpeakItemsBeforeScroll(
         getBooleanPref(
             R.string.pref_speak_items_before_scroll_key,

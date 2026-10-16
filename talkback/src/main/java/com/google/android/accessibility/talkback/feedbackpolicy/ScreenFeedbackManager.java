@@ -113,6 +113,22 @@ public class ScreenFeedbackManager
   /** Event time of the last key press that stopped speech, in uptime milliseconds. */
   private long speechStoppedByKeyTime = 0;
 
+  /**
+   * Set from the "Speak first item without waiting for window name" setting. When on, the
+   * window name interrupts speech that started before the window changed, and the first item
+   * focused in the new window interrupts the window name. Other window speech, such as volume
+   * and keyboard announcements, is not affected.
+   */
+  private static volatile boolean firstItemInterruptsWindowName;
+
+  public static void setFirstItemInterruptsWindowName(boolean interrupts) {
+    firstItemInterruptsWindowName = interrupts;
+  }
+
+  public static boolean firstItemInterruptsWindowName() {
+    return firstItemInterruptsWindowName;
+  }
+
   public ScreenFeedbackManager(
       AccessibilityService service,
       @NonNull WindowEventInterpreter windowEventInterpreter,
@@ -176,7 +192,8 @@ public class ScreenFeedbackManager
       boolean forceFeedbackEvenIfAudioPlaybackActive,
       boolean forceFeedbackEvenIfMicrophoneActive,
       boolean forceFeedbackEvenIfSsbActive,
-      boolean sourceIsVolumeControl) {
+      boolean sourceIsVolumeControl,
+      int queueMode) {
     if ((hint != null)) {
       pipeline.returnFeedback(
           eventId, ProcessorAccessibilityHints.screenEventToHint(hint, service, compositor));
@@ -198,7 +215,7 @@ public class ScreenFeedbackManager
 
     SpeechController.SpeakOptions speakOptions =
         SpeechController.SpeakOptions.create()
-            .setQueueMode(SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+            .setQueueMode(queueMode)
             .setFlags(flags);
 
     pipeline.returnFeedback(
@@ -237,7 +254,14 @@ public class ScreenFeedbackManager
     @Nullable Announcement announcement = interpretation.getAnnouncement();
     boolean sourceIsVolumeControl =
         (announcement != null) && announcement.isFromVolumeControlPanel();
+    boolean firstPart = true;
     for (FeedbackPart feedbackPart : feedback.getParts()) {
+      int queueMode =
+          !(firstItemInterruptsWindowName && feedbackPart.isWindowName())
+              ? SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH
+              : firstPart
+                  ? SpeechController.QUEUE_MODE_INTERRUPT
+                  : SpeechController.QUEUE_MODE_QUEUE;
       speak(
           feedbackPart.getSpeech(),
           feedbackPart.getHint(),
@@ -245,7 +269,9 @@ public class ScreenFeedbackManager
           feedbackPart.getForceFeedbackEvenIfAudioPlaybackActive(),
           feedbackPart.getForceFeedbackEvenIfMicrophoneActive(),
           feedbackPart.getForceFeedbackEvenIfSsbActive(),
-          sourceIsVolumeControl);
+          sourceIsVolumeControl,
+          queueMode);
+      firstPart = false;
     }
   }
 
@@ -473,6 +499,7 @@ public class ScreenFeedbackManager
       if (!TextUtils.isEmpty(utterance)) {
         feedback.addPart(
             new FeedbackPart(utterance)
+                .windowName(true)
                 .hint(hint)
                 .forceFeedbackEvenIfAudioPlaybackActive(true)
                 .forceFeedbackEvenIfMicrophoneActive(true));
@@ -684,9 +711,21 @@ public class ScreenFeedbackManager
     private boolean forceFeedbackEvenIfAudioPlaybackActive = false;
     private boolean forceFeedbackEvenIfMicrophoneActive = false;
     private boolean forceFeedbackEvenIfSsbActive = false;
+    private boolean windowName = false;
 
     public FeedbackPart(CharSequence speech) {
       this.speech = speech;
+    }
+
+    /** Marks the part that names the window, as opposed to an announcement. */
+    @CanIgnoreReturnValue
+    public FeedbackPart windowName(boolean windowName) {
+      this.windowName = windowName;
+      return this;
+    }
+
+    public boolean isWindowName() {
+      return windowName;
     }
 
     @CanIgnoreReturnValue

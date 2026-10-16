@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.focusmanagement;
 
+import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLEAR;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_NODE;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.FOCUS_FOR_TOUCH;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.INITIAL_FOCUS_FIRST_CONTENT;
@@ -68,6 +69,12 @@ public class FocusFeedbackMapper {
     // On TV, we only try to follow input focus.
     if (FormFactorUtils.isAndroidTv()) {
       return Feedback.create(eventId, toFeedbackPart(INITIAL_FOCUS_FOLLOW_INPUT, screenState));
+    }
+
+    // The active window has no valid focus. Clear focus left in another window, so that the next
+    // swipe starts in the active window.
+    if (!FocusProcessorForScreenStateChange.focusesNewWindows()) {
+      return Feedback.create(eventId, toFeedbackPart(CLEAR, screenState));
     }
 
     ArrayList<Part> feedbackFailovers = new ArrayList<>();
