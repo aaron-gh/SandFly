@@ -330,6 +330,10 @@ To let Android recognize gestures again, turn off **Advanced settings** > **Deve
 
 When an app removed the item that had focus, such as an ad that collapses, TalkBack jumped back to the top of the page. Backtalk carries on from where you were.
 
+### Moving by character and word in drawn text
+
+Some apps draw their text themselves and give it to screen readers without letting them move through it, as Telegram does for messages. In such text, TalkBack could move by character, word, or paragraph only through a content description, so it couldn't move through these messages, only through reply previews. Backtalk moves through the text itself when the app doesn't.
+
 ### Double tap with the actions reading control on Android 11
 
 On Android 11, when you picked an action with the **Actions** reading control, a double tap only played a sound. In Backtalk, a double tap performs the action, and a double-tap and hold performs a long press.

@@ -115,6 +115,7 @@ public final class GranularityTraversal {
    *
    * <ul>
    *   <li>Views with content description.
+   *   <li>Views with text that have no content description and no movement granularities.
    *   <li>Edit texts with no input focus.
    *   <li>Edit texts with input focus and a non-active keyboard.
    * </ul>
@@ -122,7 +123,7 @@ public final class GranularityTraversal {
    * <p>Cases not handled by Talkback and rely on framework:
    *
    * <ul>
-   *   <li>Views with no content description.
+   *   <li>Views with no content description whose text has movement granularities.
    *   <li>Edit texts which have input focus with an active keyboard.
    *   <li>Webviews.
    *   <li>View with selectable text that aren't edit texts.
@@ -382,7 +383,9 @@ public final class GranularityTraversal {
    *
    * @param node on which granularity traversal has to be performed.
    * @return the content description or the text/hint text in case of edit fields, since navigation
-   *     on these is not handled by the framework.
+   *     on these is not handled by the framework. Also the text of a node that has no content
+   *     description and no movement granularities, such as a Telegram message, whose text the app
+   *     doesn't let the screen reader move through.
    */
   public static CharSequence getIterableTextForAccessibility(AccessibilityNodeInfoCompat node) {
     @Nullable CharSequence nodeText = AccessibilityNodeInfoUtils.getText(node);
@@ -390,7 +393,13 @@ public final class GranularityTraversal {
       return nodeText;
     }
 
-    return node.getContentDescription();
+    CharSequence contentDescription = node.getContentDescription();
+    if (TextUtils.isEmpty(contentDescription)
+        && !TextUtils.isEmpty(nodeText)
+        && node.getMovementGranularities() == 0) {
+      return nodeText;
+    }
+    return contentDescription;
   }
 
   private int getCursorPosition(AccessibilityNodeInfoCompat node) {
