@@ -147,6 +147,10 @@ public class FocusActor implements UserInputEventListener {
     }
     node = Scripts.actionTarget(node, false);
 
+    // Drop the focused item's usage hint, which would otherwise be spoken after the item is
+    // activated, ahead of the next window's name.
+    pipeline.returnFeedback(eventId, Feedback.interrupt(Feedback.HINT, /* level= */ 2));
+
     if (globalVariables.supportClickableLinks() && tryClickLinks(node, eventId)) {
       return true;
     }

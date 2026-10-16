@@ -74,6 +74,8 @@ After a window changes, TalkBack waits for the window to settle before it says t
 
 The **Turn off animations** setting in **Advanced settings** > **Reduce delay** turns off animations for the whole phone, so screens change immediately and the wait is only 200 ms. TalkBack called this setting **Reduce window announcement delay**, and had disabled the code that turns animations off, so the setting did nothing. Backtalk makes the setting work, and turns animations back on when you turn Backtalk off. On Android 12 and earlier, which don't let Backtalk turn animations off, the setting only shortens the wait. The setting is on by default.
 
+When you activated an item, or pressed a key, while the item was being spoken or just after, TalkBack still spoke its usage hint, such as "Double-tap to activate", and the name of the new window waited for the hint. Backtalk drops the hint.
+
 ### Swiping into the next part of a list
 
 When the next item was only partly on screen, TalkBack scrolled it into view, waited for the scroll before it spoke, and then waited another 110 ms in case more scroll events arrived. Backtalk speaks the item immediately and lets the scroll finish while it speaks.
