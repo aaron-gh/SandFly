@@ -623,7 +623,7 @@ public class CursorGranularityManager {
       lockedNode = node;
 
       // Copying mode goes on from item to item, but not into text the app keeps the selection in.
-      if (copySelection.isActive() && AccessibilityNodeInfoUtils.isTextSelectable(node)) {
+      if (copySelection.isActive() && AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
         copySelection.end();
         setSelectionModeActive(false);
       }

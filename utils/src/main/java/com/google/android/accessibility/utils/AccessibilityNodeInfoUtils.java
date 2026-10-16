@@ -2509,6 +2509,21 @@ public class AccessibilityNodeInfoUtils {
   }
 
   /**
+   * Checks if the app keeps a selection in {@code node} that can be read from it: editable text,
+   * or selectable text that is not web content. Chrome marks text on web pages selectable, but the
+   * item does not show a selection made by moving through it, so Backtalk keeps that selection.
+   */
+  public static boolean keepsAppSelection(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT || node.isEditable()) {
+      return true;
+    }
+    return isNonEditableSelectableText(node) && !WebInterfaceUtils.isWebContainer(node);
+  }
+
+  /**
    * Gets a list of URLs contained within an {@link AccessibilityNodeInfoCompat}.
    *
    * @param node The node that will be searched for links

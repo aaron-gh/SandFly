@@ -244,7 +244,7 @@ public class TextEditActor implements VoiceDictationDelegate {
   public boolean startSelect(AccessibilityNodeInfoCompat node, EventId eventId) {
     // Text the app keeps no selection in is selected for copying, but not passwords.
     if (node == null
-        || (!AccessibilityNodeInfoUtils.isTextSelectable(node) && node.isPassword())) {
+        || (!AccessibilityNodeInfoUtils.keepsAppSelection(node) && node.isPassword())) {
       return false;
     }
 
@@ -352,7 +352,7 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Executes and announces select-all text in selectable. Modifies edit history. */
   public boolean selectAll(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (!AccessibilityNodeInfoUtils.isTextSelectable(node)) {
+    if (!AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
       return selectAllCopying(node, eventId);
     }
 
@@ -421,7 +421,7 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Whether the app has text selected in {@code node}, which Copy copies. */
   private static boolean hasAppSelection(AccessibilityNodeInfoCompat node) {
-    return AccessibilityNodeInfoUtils.isTextSelectable(node)
+    return AccessibilityNodeInfoUtils.keepsAppSelection(node)
         && !TextUtils.isEmpty(AccessibilityNodeInfoUtils.getSelectedNodeText(node));
   }
 
