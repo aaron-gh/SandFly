@@ -507,7 +507,7 @@
   <string name="shortcut_speech_pitch_decrease">Понизить тон голоса</string>
   <string name="shortcut_speech_rate_increase">Увеличить скорость речи</string>
   <string name="shortcut_speech_rate_decrease">Снизить скорость речи</string>
-  <string name="shortcut_toggle_selection">Включить или отключить режим выбора</string>
+  <string name="shortcut_toggle_selection">Включить или отключить режим выделения</string>
   <string name="shortcut_show_tutorial">Открыть руководство</string>
   <string name="shortcut_toggle_braille_contracted_mode">Переход между полной и сокращённой версией</string>
   <string name="shortcut_toggle_braille_on_screen_overlay">Клавиатура Брайля для подключённых дисплеев Брайля</string>
@@ -1643,4 +1643,13 @@
   <string name="gemini_error_with_code">Gemini не смог ответить. Ошибка <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
   <string name="gemini_error_with_details">Gemini не смог ответить. Ошибка <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
   <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Не удалось получить более подробное описание изображения: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+
+  <string name="title_selector_switch_tts_engine">Синтезатор речи</string>
+  <string name="summary_selector_switch_tts_engine">Переключение между установленными синтезаторами речи</string>
+  <string name="speech_engine_unavailable_with_profile">При использовании голосового профиля переключение синтезатора речи недоступно</string>
+  <string name="battery_optimization_notification_title">Оптимизация расхода заряда батареи может остановить Backtalk</string>
+  <string name="battery_optimization_notification_text">На этом телефоне режим энергосбережения может остановить Backtalk после выключения экрана. Озвучивание возобновится только после перезапуска Backtalk. Нажмите, чтобы открыть настройки оптимизации расхода заряда батареи. Выберите «Все приложения», найдите Backtalk и выберите «Не экономить».</string>
+  <string name="permission_braille_display_label">запрашивать разрешение на работу в качестве дисплея Брайля для Backtalk</string>
+  <string name="permission_braille_display_description">Позволяет приложению запрашивать разрешение на работу в качестве дисплея Брайля для Backtalk. Если вы предоставите разрешение в Backtalk, приложение сможет читать всё содержимое экрана и управлять устройством. Backtalk сначала запросит ваше согласие.</string>
+  <string name="title_clear_selection">Снять выделение</string>
 </resources>

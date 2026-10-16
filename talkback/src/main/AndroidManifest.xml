@@ -88,8 +88,8 @@
 
     <!-- Guards the settings that Backtalk shares when it moves from the app ID
          com.android.talkback to fyi.quin.backtalk. Both apps declare and hold it, and are signed
-         with the same key. It is named after the app ID, because Android refuses to install an app
-         that declares a permission another app, signed with a different key, already declares. -->
+         with the same key. Named after the app ID, like the permissions below, so that a build
+         under another app ID installs beside Backtalk. -->
     <permission
         android:name="${applicationId}.permission.MIGRATE"
         android:protectionLevel="signature" />
@@ -105,7 +105,8 @@
         android:protectionLevel="normal" />
 
     <!-- Held by an app that can provide a braille display, so that it can ask to be one. Backtalk
-         uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. -->
+         uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. Named
+         after the app ID, as SPEAK is. -->
     <permission
         android:name="${applicationId}.permission.BRAILLE_DISPLAY"
         android:label="@string/permission_braille_display_label"
@@ -121,12 +122,6 @@
          from the old app ID and turn the old screen reader off. -->
     <uses-permission
         android:name="android.permission.WRITE_SECURE_SETTINGS"
-        tools:ignore="ProtectedPermissions" />
-
-    <!-- Granted by the user with adb, to read the pointers Android holds down when touch
-         exploration is stuck, so that Backtalk can lift them. -->
-    <uses-permission
-        android:name="android.permission.DUMP"
         tools:ignore="ProtectedPermissions" />
 
     <!-- Used to offer to uninstall Backtalk under its old app ID. -->

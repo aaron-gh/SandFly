@@ -82,7 +82,7 @@
   <string name="pref_speak_roles_title">Elementtyp vorlesen</string>
   <string name="pref_speak_roles_summary">Für Elemente im Fokus</string>
   <string name="title_pref_speak_element_ids">Element-IDs vorlesen</string>
-  <string name="summary_pref_speak_element_ids">Für Schaltflächen ohne Beschriftung</string>
+  <string name="summary_pref_speak_element_ids">Für Tasten ohne Beschriftung</string>
   <string name="pref_speak_system_window_titles_title">Fensternamen vorlesen</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Alle Fortschrittsansagen vorlesen</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Es werden beispielsweise Fortschritte beim Herunterladen und beim Folgen von Wegbeschreibungen angesagt. Wenn diese Option deaktiviert wird, gibt es weiterhin entsprechende Ansagen, allerdings seltener.</string>
@@ -250,8 +250,8 @@
   <string name="keycombo_menu_other_open_voice_commands">Sprachbefehle öffnen</string>
   <string name="keycombo_menu_other_toggle_browse_mode">Suchmodus aktivieren oder deaktivieren</string>
   <string name="keycombo_summary_other_toggle_browse_mode">Aktionen + Aktion</string>
-  <string name="keycombo_menu_web_navigate_to_next_button">Zur nächsten Schaltfläche gehen</string>
-  <string name="keycombo_menu_web_navigate_to_previous_button">Zur vorherigen Schaltfläche gehen</string>
+  <string name="keycombo_menu_web_navigate_to_next_button">Zur nächsten Taste gehen</string>
+  <string name="keycombo_menu_web_navigate_to_previous_button">Zur vorherigen Taste gehen</string>
   <string name="keycombo_menu_web_navigate_to_next_control">Zum nächsten Steuerelement gehen</string>
   <string name="keycombo_menu_web_navigate_to_previous_control">Zum vorherigen Steuerelement gehen</string>
   <string name="keycombo_menu_web_navigate_to_next_checkbox">Zum nächsten Kästchen gehen</string>
@@ -593,10 +593,10 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="summary_windows">Zu anderen Fenstern wie der Lautstärkeregelung oder der Navigationsleiste wechseln</string>
   <string name="summary_containers">Container, z. B. eine Liste oder ein Raster, schließen</string>
   <string name="summary_headings">Zwischen Überschrif­ten wechseln</string>
-  <string name="summary_controls">Zwischen interaktiven Elementen (Schaltflächen, Textfelder) wechseln</string>
+  <string name="summary_controls">Zwischen interaktiven Elementen (Tasten, Textfelder) wechseln</string>
   <string name="summary_links">Zwischen Links wechseln</string>
   <string name="summary_landmarks">Zwischen Markierungen auf Webseiten wie „main“ oder „navigation“ wechseln</string>
-  <string name="summary_buttons">Zwischen Schaltflächen auf Webseiten wechseln</string>
+  <string name="summary_buttons">Zwischen Tasten auf Webseiten wechseln</string>
   <string name="summary_checkboxes">Zwischen Kästchen auf Webseiten wechseln</string>
   <string name="summary_editfields">Zwischen bearbeitbaren Feldern auf Webseiten wechseln</string>
   <string name="summary_focusables">Zwischen fokussierbaren Elementen auf Webseiten wechseln</string>
@@ -804,7 +804,7 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="display_name_window">Fenster</string>
   <string name="display_name_search">Suchen</string>
   <string name="display_name_heading">Überschrift</string>
-  <string name="display_name_button">Schaltfläche</string>
+  <string name="display_name_button">Taste</string>
   <string name="display_name_combobox">Kombinationsfeld</string>
   <string name="display_name_aria_landmark">ARIA-Markierung</string>
   <string name="display_name_edit_field">Bearbeitungsfeld</string>
@@ -941,7 +941,7 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="tv_training_remote_step_title">Fernbedienung verwenden</string>
   <string name="tv_training_remote_step_summary">Mit der kreisförmigen Richtungstaste oben auf der Fernbedienung kannst du auf dem Bildschirm die verschiedenen Optionen auswählen. Wenn du etwas auswählen möchtest, drücke die Mitte der Richtungstaste.\n\nIn der zweiten Zeile findest du links den Button „Zurück“. Rechts befindet sich die Taste für den Sprachassistenten.\n\nIn der dritten Zeile findest du links die Startbildschirmtaste. Rechts befindet sich die Taste „Stummschalten“.\n\nIn der vierten Zeile findest du links die YouTube-Verknüpfung. Rechts befindet sich die Netflix-Verknüpfung.\n\nIn der untersten Zeile findest du zwei kleine Tasten. Die linke ist die Ein-/Aus-Taste. Mit der rechten lässt sich das Eingabemenü des Fernsehers öffnen.\n\nDie Lautstärketasten befinden sich an der rechten Seite der Fernbedienung.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="tv_training_shortcut_step_title">TalkBack-Verknüpfung</string>
-  <string name="tv_training_shortcut_step_summary">Wenn du auf den TalkBack-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Schaltflächen „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird TalkBack aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
+  <string name="tv_training_shortcut_step_summary">Wenn du auf den TalkBack-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Tasten „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird TalkBack aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="new_feature_in_talkback_title">Neue Funktionen in TalkBack</string>
   <string name="exit_tutorial_title">Du bist fertig?</string>
   <string name="exit_tutorial_content">Du kannst jederzeit zum Tutorial zurückkehren – du findest es in den TalkBack-Einstellungen.</string>
@@ -1127,8 +1127,8 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="read_by_character_text">Manchmal möchtest du dir einen Text vielleicht Zeichen für Zeichen vorlesen lassen.\n\nWische dazu mit drei Fingern nach rechts, bis du „%1$s“ hörst. Falls du den Fokus Zeichen für Zeichen zurückbewegen möchtest, wische nach oben. Möchtest du ihn Zeichen für Zeichen vorwärtsbewegen, wische nach unten.\n\nProbiere es jetzt aus: Soll der Text Wort für Wort oder Absatz für Absatz vorgelesen werden, wische mit drei Fingern nach rechts.</string>
   <string name="read_by_character_text_pre_r">Manchmal möchtest du dir einen Text vielleicht Zeichen für Zeichen vorlesen lassen.\n\nWische dazu nach unten und dann nach oben, bis du „%1$s“ hörst. Falls du den Fokus Zeichen für Zeichen zurückbewegen möchtest, wische nach oben. Möchtest du ihn Zeichen für Zeichen vorwärtsbewegen, wische nach unten.\n\nProbiere es jetzt aus: Soll der Text Wort für Wort oder Absatz für Absatz vorgelesen werden, wische nach unten und dann nach oben.</string>
   <string name="jump_between_controls_title">Zwischen Steuerelementen wechseln</string>
-  <string name="jump_between_controls_text">Steuerelemente sind interaktive Elemente wie Schaltflächen, Kästchen und Textfelder.\n\nAuf einigen Seiten möchtest du vielleicht zwischen Steuerelementen wechseln, um schnell eine bestimmte Aktion zu finden, beispielsweise die Schaltfläche „Weiter“.\n\nWische dazu mit drei Fingern nach rechts, bis du „%1$s“ hörst. Falls du zum vorigen Steuerelement einer Seite wechseln möchtest, wische nach oben. Möchtest du zum nächsten Steuerelement wechseln, wische nach unten.\n\nProbiere es jetzt aus. Wechsle zu den Steuerelementen und suche die Schaltfläche „Weiter“.</string>
-  <string name="jump_between_controls_text_pre_r">Steuerelemente sind interaktive Elemente wie Schaltflächen, Kästchen und Textfelder.\n\nAuf einigen Seiten möchtest du vielleicht zwischen Steuerelementen wechseln, um schnell eine bestimmte Aktion zu finden, beispielsweise die Schaltfläche „Weiter“.\n\nWische dazu nach unten und dann nach oben, bis du „%1$s“ hörst. Falls du zum vorigen Steuerelement einer Seite wechseln möchtest, wische nach oben. Möchtest du zum nächsten Steuerelement wechseln, wische nach unten.\n\nProbiere es jetzt aus: Wechsle zu den Steuerelementen und suche die Schaltfläche „Weiter“.</string>
+  <string name="jump_between_controls_text">Steuerelemente sind interaktive Elemente wie Tasten, Kästchen und Textfelder.\n\nAuf einigen Seiten möchtest du vielleicht zwischen Steuerelementen wechseln, um schnell eine bestimmte Aktion zu finden, beispielsweise die Taste „Weiter“.\n\nWische dazu mit drei Fingern nach rechts, bis du „%1$s“ hörst. Falls du zum vorigen Steuerelement einer Seite wechseln möchtest, wische nach oben. Möchtest du zum nächsten Steuerelement wechseln, wische nach unten.\n\nProbiere es jetzt aus. Wechsle zu den Steuerelementen und suche die Taste „Weiter“.</string>
+  <string name="jump_between_controls_text_pre_r">Steuerelemente sind interaktive Elemente wie Tasten, Kästchen und Textfelder.\n\nAuf einigen Seiten möchtest du vielleicht zwischen Steuerelementen wechseln, um schnell eine bestimmte Aktion zu finden, beispielsweise die Taste „Weiter“.\n\nWische dazu nach unten und dann nach oben, bis du „%1$s“ hörst. Falls du zum vorigen Steuerelement einer Seite wechseln möchtest, wische nach oben. Möchtest du zum nächsten Steuerelement wechseln, wische nach unten.\n\nProbiere es jetzt aus: Wechsle zu den Steuerelementen und suche die Taste „Weiter“.</string>
   <string name="jump_between_links_title">Zwischen Links wechseln</string>
   <string name="jump_between_links_text">Du kannst auch zwischen Links auf einer Seite wechseln.\n\nProbiere es gleich aus: Wische mit drei Fingern nach rechts, bis du „%1$s“ hörst. Wische dann nach unten, um zum Link mit der Bezeichnung „Link 5“ zu gelangen. Im Tutorial löst das Doppeltippen auf diesen Link noch keine Aktion aus.\n\nWische nach rechts und tippe auf den Button „Weiter“, um zur nächsten Seite zu gelangen.</string>
   <string name="jump_between_links_text_pre_r">Du kannst auch zwischen Links auf einer Seite wechseln.\n\nProbiere es gleich aus: Wische nach unten und dann nach oben, bis du „%1$s“ hörst. Wische dann nach unten, um zum Link mit der Bezeichnung „Link 5“ zu gelangen. Im Tutorial löst das Doppeltippen auf diesen Link noch keine Aktion aus.\n\nWische nach rechts und tippe auf den Button „Weiter“, um zur nächsten Seite zu gelangen.</string>
@@ -1162,7 +1162,7 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="using_screen_search_title">Bildschirmsuche verwenden</string>
   <string name="using_screen_search_text">Mit der Bildschirmsuche kannst du gezielt nach Inhalten auf dem Bildschirm suchen.\n\nTippe einfach mit drei Fingern, um das TalkBack-Menü zu öffnen, und suche die Option „Bildschirmsuche“. Jetzt kannst du einen Suchbegriff eingeben, um auf dem Bildschirm alle Elemente mit diesem Text zu finden.\n\nProbiere es gleich aus: Gib „weiter“ ein, um den „Weiter“-Button zu finden.</string>
   <string name="screen_search_navigation_title">Mit der Bildschirmsuche auf dem Bildschirm bewegen</string>
-  <string name="screen_search_navigation_text">Nachdem du ein Ergebnis der Bildschirmsuche ausgewählt hast, kannst du schnell zwischen allen Ergebnissen wechseln.\n\nDas funktioniert über die Vorleseoptionen: Wische mit drei Fingern nach links oder rechts und suche die Option „Bildschirmsuche“.\n\nProbiere es gleich aus. Unten siehst du drei Schaltflächen, die alle den Text „Aktion“ enthalten. Suche mit der Bildschirmsuche nach „Aktion“ und wechsle dann wie beschrieben mit der Funktion zwischen den Schaltflächen.</string>
+  <string name="screen_search_navigation_text">Nachdem du ein Ergebnis der Bildschirmsuche ausgewählt hast, kannst du schnell zwischen allen Ergebnissen wechseln.\n\nDas funktioniert über die Vorleseoptionen: Wische mit drei Fingern nach links oder rechts und suche die Option „Bildschirmsuche“.\n\nProbiere es gleich aus. Unten siehst du drei Tasten, die alle den Text „Aktion“ enthalten. Suche mit der Bildschirmsuche nach „Aktion“ und wechsle dann wie beschrieben mit der Funktion zwischen den Tasten.</string>
   <string name="screen_search_action_button_1_text">Aktion 1</string>
   <string name="screen_search_action_button_2_text">Aktion 2</string>
   <string name="screen_search_action_button_3_text">Aktion 3</string>
@@ -1198,10 +1198,10 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="practice_gestures_text">Du kannst auf diesem Bildschirm eine beliebige TalkBack-Geste ausprobieren, um zu hören, welche Aktion mit ihr ausgeführt wird.\n\nTippe mit zwei Fingern auf den Bildschirm. Tippe zum Üben mit einem, zwei, drei oder vier Fingern ein-, zwei- oder dreimal.\n\nDu kannst auch mit zwei, drei oder vier Fingern doppeltippen und halten.</string>
   <string name="practice_gestures_text_pre_r">Du kannst auf diesem Bildschirm eine beliebige TalkBack-Geste ausprobieren, um zu hören, welche Aktion mit ihr ausgeführt wird.\n\nProbiere eine Geste aus, bei der du zweimal wischst und damit einen rechten Winkel bildest. Wische beispielsweise nach unten und dann nach rechts, ohne zwischendurch den Finger zu heben.</string>
   <string name="practice_keyboard_gestures_text">Drücke auf einer physischen Tastatur eine Taste oder Tastenkombination, um zu hören, wozu sie dient. Drücke zum Beenden Strg + W oder die Esc-Taste.\n\nDu kannst hier auch TalkBack-Gesten üben.</string>
-  <string name="button_1">Schaltfläche 1</string>
-  <string name="button_2">Schaltfläche 2</string>
-  <string name="button_3">Schaltfläche 3</string>
-  <string name="button_4">Schaltfläche 4</string>
+  <string name="button_1">Taste 1</string>
+  <string name="button_2">Taste 2</string>
+  <string name="button_3">Taste 3</string>
+  <string name="button_4">Taste 4</string>
   <string name="activated_view">%1$s aktiviert</string>
   <string name="talkback_inactive_title">TalkBack ist aus</string>
   <string name="talkback_inactive_warning_message">Diese Anleitung funktioniert am besten, wenn TalkBack aktiviert ist. Du kannst diese Änderung in den Einstellungen vornehmen.\n\nWenn du TalkBack deaktiviert lässt, funktionieren Teile der Anleitung möglicherweise nicht wie vorgesehen.</string>
