@@ -76,6 +76,8 @@ The **Turn off animations** setting in **Advanced settings** > **Reduce delay** 
 
 When you activated an item, or pressed a key, while the item was being spoken or just after, TalkBack still spoke its usage hint, such as "Double-tap to activate", and the name of the new window waited for the hint. Backtalk drops the hint.
 
+TalkBack speaks the window name only after the speech before it, and the first item in the new window only after the window name. To hear the first item sooner, turn on **Speak first item without waiting for window name** in **Advanced settings** > **Reduce delay**. The window name then interrupts the speech before it, and the first item interrupts the window name as soon as it is focused, so usually only the window sound is heard before the first item.
+
 ### Swiping into the next part of a list
 
 When the next item was only partly on screen, TalkBack scrolled it into view, waited for the scroll before it spoke, and then waited another 110 ms in case more scroll events arrived. Backtalk speaks the item immediately and lets the scroll finish while it speaks.

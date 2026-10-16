@@ -2971,6 +2971,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="title_pref_cache_keyboard_keys">Announce keyboard keys faster</string>
   <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
   <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
+  <!-- Title of the switch that lets the first item focused in a new window interrupt the window name, instead of waiting for it to finish. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_first_item_interrupts_window_name">Speak first item without waiting for window name</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]

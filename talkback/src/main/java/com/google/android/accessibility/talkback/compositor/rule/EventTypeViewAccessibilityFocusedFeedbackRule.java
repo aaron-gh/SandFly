@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Sams
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -447,7 +448,11 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
   }
 
   private static int queueMode(boolean isInitialFocus, boolean isDeviceScreenNoTouch) {
-    return (isInitialFocus && !isDeviceScreenNoTouch) ? QUEUE_MODE_QUEUE : QUEUE_MODE_FLUSH_ALL;
+    return (isInitialFocus
+            && !isDeviceScreenNoTouch
+            && !ScreenFeedbackManager.firstItemInterruptsWindowName())
+        ? QUEUE_MODE_QUEUE
+        : QUEUE_MODE_FLUSH_ALL;
   }
 
   private static boolean forceFeedbackEvenIfMicrophoneActive(

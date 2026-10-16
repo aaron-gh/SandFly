@@ -21,6 +21,10 @@
         android:key="@string/pref_reduce_window_delay_key"
         android:summary="@string/pref_reduce_window_delay_summary"
         android:title="@string/pref_reduce_window_delay_title"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_first_item_interrupts_window_name_default"
+        android:title="@string/title_pref_first_item_interrupts_window_name"
+        android:key="@string/pref_first_item_interrupts_window_name_key" />
 
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="true"

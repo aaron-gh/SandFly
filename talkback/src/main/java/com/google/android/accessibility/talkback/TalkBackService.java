@@ -3267,6 +3267,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       enableAnimation(!reduceDelayPref);
     }
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
+    ScreenFeedbackManager.setFirstItemInterruptsWindowName(
+        getBooleanPref(
+            R.string.pref_first_item_interrupts_window_name_key,
+            R.bool.pref_first_item_interrupts_window_name_default));
 
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));

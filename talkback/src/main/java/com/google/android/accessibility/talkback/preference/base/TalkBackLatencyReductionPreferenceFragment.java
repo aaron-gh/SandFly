@@ -211,7 +211,8 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
             context.getString(R.string.pref_typing_focus_time_out_first_update_key),
             context.getString(R.string.pref_touch_focus_time_out_key),
             context.getString(R.string.pref_cache_keyboard_keys),
-            context.getString(R.string.pref_speak_items_before_scroll_key));
+            context.getString(R.string.pref_speak_items_before_scroll_key),
+            context.getString(R.string.pref_first_item_interrupts_window_name_key));
         dialogInterface.dismiss();
         updatePreference(true);
         updateCacheKeyBoardKeyPreference();
@@ -273,6 +274,15 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
       if (speakItemsBeforeScrollPreference != null) {
         speakItemsBeforeScrollPreference.setChecked(
             context.getResources().getBoolean(R.bool.pref_speak_items_before_scroll_default));
+      }
+
+      TwoStatePreference firstItemInterruptsWindowNamePreference =
+          findPreference(getString(R.string.pref_first_item_interrupts_window_name_key));
+      if (firstItemInterruptsWindowNamePreference != null) {
+        firstItemInterruptsWindowNamePreference.setChecked(
+            context
+                .getResources()
+                .getBoolean(R.bool.pref_first_item_interrupts_window_name_default));
       }
     }
 
