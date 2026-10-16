@@ -187,7 +187,7 @@ public final class ExternalBrailleDisplays {
         context,
         displaysChanged,
         new IntentFilter(ACTION_BRAILLE_DISPLAYS_CHANGED),
-        ExternalDisplayApps.PERMISSION_BRAILLE_DISPLAY,
+        ExternalDisplayApps.permissionBrailleDisplay(context),
         /* scheduler= */ null,
         ContextCompat.RECEIVER_EXPORTED);
     refresh();

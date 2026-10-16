@@ -37,13 +37,19 @@ public final class ExternalDisplayApps {
   /** The action of a display app's service. */
   public static final String ACTION_BRAILLE_DISPLAY = "fyi.quin.backtalk.action.BRAILLE_DISPLAY";
 
-  /** The permission a display app holds to ask to be one. */
-  public static final String PERMISSION_BRAILLE_DISPLAY =
-      "fyi.quin.backtalk.permission.BRAILLE_DISPLAY";
+  /**
+   * The permission a display app holds to ask to be one. Named after the app ID, as the manifest
+   * declares it: Android refuses to install an app that declares a permission already declared by
+   * an app with a different signing key.
+   */
+  public static String permissionBrailleDisplay(Context context) {
+    return context.getPackageName() + ".permission.BRAILLE_DISPLAY";
+  }
 
   /** The permission a display app's service requires, which only Backtalk holds. */
-  public static final String PERMISSION_BIND_BRAILLE_DISPLAY =
-      "fyi.quin.backtalk.permission.BIND_BRAILLE_DISPLAY";
+  private static String permissionBindBrailleDisplay(Context context) {
+    return context.getPackageName() + ".permission.BIND_BRAILLE_DISPLAY";
+  }
 
   /** What the user said about an app. */
   public enum State {
@@ -95,7 +101,7 @@ public final class ExternalDisplayApps {
     for (ResolveInfo resolveInfo :
         packageManager.queryIntentServices(new Intent(ACTION_BRAILLE_DISPLAY), flags)) {
       ServiceInfo service = resolveInfo.serviceInfo;
-      if (PERMISSION_BIND_BRAILLE_DISPLAY.equals(service.permission)
+      if (permissionBindBrailleDisplay(context).equals(service.permission)
           && holdsPermission(context, service.packageName)) {
         services.put(service.packageName, new ComponentName(service.packageName, service.name));
       }
@@ -104,7 +110,7 @@ public final class ExternalDisplayApps {
   }
 
   static boolean holdsPermission(Context context, String app) {
-    return context.getPackageManager().checkPermission(PERMISSION_BRAILLE_DISPLAY, app)
+    return context.getPackageManager().checkPermission(permissionBrailleDisplay(context), app)
         == PackageManager.PERMISSION_GRANTED;
   }
 
