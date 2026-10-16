@@ -322,6 +322,10 @@ When you swipe past the last item on the screen, TalkBack stops once and then go
 
 **Wrap around** is also a reading control, so you can turn it on or off with a swipe up or down. It's on by default.
 
+### Focus in new windows
+
+When a window opens, or you go back, TalkBack moves focus into it: back to the item you were on, to the text field with the cursor, or to the first item. To leave focus alone, turn off **Advanced settings** > **Move focus to new windows**. Backtalk then speaks only the window name, and the next swipe moves to the first item. This applies to Backtalk's own menus and dialogs too, when they open and when they close. Focus follows input focus only when you move it with a key, such as an arrow key or Tab, not when an app moves it by itself. When the item you focused disappears and the windows haven't changed, focus is placed again. The switch isn't on TVs, which need focus to follow input focus.
+
 ### Gestures recognized by Backtalk
 
 By default, Backtalk recognizes gestures itself instead of leaving this to Android, which makes the rotor and the quadruple-tap with three fingers possible. TalkBack leaves this off.

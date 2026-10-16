@@ -140,6 +140,10 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
       PreferenceSettingsUtils.hidePreference(
           context, getPreferenceScreen(), R.string.pref_reserve_vibration_watch_gestures_key);
     }
+    if (FormFactorUtils.isAndroidTv()) {
+      PreferenceSettingsUtils.hidePreference(
+          context, getPreferenceScreen(), R.string.pref_focus_new_windows_key);
+    }
 
     // During setup, do not allow user access below settings.
     if (!SettingsUtils.allowLinksOutOfSettings(context)) {

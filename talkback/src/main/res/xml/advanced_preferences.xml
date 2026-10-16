@@ -37,6 +37,10 @@
         android:key="@string/pref_wrap_around_key"
         android:summary="@string/summary_pref_wrap_around"
         android:title="@string/title_pref_wrap_around" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_focus_new_windows_default"
+        android:key="@string/pref_focus_new_windows_key"
+        android:title="@string/title_pref_focus_new_windows" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
         android:key="pref_speech_control_screen"

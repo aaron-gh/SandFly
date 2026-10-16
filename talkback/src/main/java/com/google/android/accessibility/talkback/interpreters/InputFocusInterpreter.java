@@ -22,6 +22,7 @@ import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
@@ -60,6 +61,13 @@ public class InputFocusInterpreter
    * action.
    */
   private static final int INPUT_FOCUS_ACTION_TIMEOUT = 1000;
+
+  /** Event time of the last key press, in uptime milliseconds. */
+  private static volatile long lastKeyDownTime = 0;
+
+  public static void setLastKeyDownTime(long eventTime) {
+    lastKeyDownTime = eventTime;
+  }
 
   /** Listens to target view changes. */
   public interface TargetViewChangeListener {
@@ -197,10 +205,20 @@ public class InputFocusInterpreter
 
       AccessibilityNodeInfoCompat a11yFocusableNode =
           getA11yFocusableNodeFromInputFocusedNode(sourceNode);
-      if (a11yFocusableNode != null) {
+      if (a11yFocusableNode != null && followsInputFocus(event)) {
         targetViewChangeListener.onViewTargeted(eventId, event, a11yFocusableNode);
       }
     }
+  }
+
+  /**
+   * Returns whether accessibility focus should follow this input focus change. With "Move focus
+   * to new windows" off, it follows only input focus moved by a key, such as with a D-pad or Tab,
+   * and not input focus that an app moves by itself.
+   */
+  private static boolean followsInputFocus(AccessibilityEvent event) {
+    return FocusProcessorForScreenStateChange.focusesNewWindows()
+        || (event.getEventTime() - lastKeyDownTime < INPUT_FOCUS_ACTION_TIMEOUT);
   }
 
   /**
@@ -255,7 +273,9 @@ public class InputFocusInterpreter
    */
   private void handleViewSelectedEvent(AccessibilityEvent event, EventId eventId) {
     AccessibilityNodeInfoCompat selectedNode = getSelectedItemFromAdapterView(event);
-    if (selectedNode != null && AccessibilityNodeInfoUtils.shouldFocusNode(selectedNode)) {
+    if (selectedNode != null
+        && AccessibilityNodeInfoUtils.shouldFocusNode(selectedNode)
+        && followsInputFocus(event)) {
       targetViewChangeListener.onViewTargeted(eventId, event, selectedNode);
     }
   }
