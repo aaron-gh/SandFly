@@ -1,6 +1,6 @@
 # Writing Backtalk scripts
 
-A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 3.
+A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 4.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -53,7 +53,7 @@ backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 3. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), and version 3 added `meta` to [`backtalk.app`](#screen). |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 4. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), version 3 added `meta` to [`backtalk.app`](#screen), and version 4 added `silence` to rules. |
 | `testedApiVersion` | Required. The highest script API version you tested with. Backtalk warns before installing a script tested only with an older version. |
 | `version` | The script's own version, as text. The default is `'1'`. |
 | `description` | Shown on the script's page and before it's installed. |
@@ -134,6 +134,7 @@ A rule can set any of these:
 | `label` | The item's name, used where the app gave none or a poor one. |
 | `speak` | Everything Backtalk says for the item, in place of its name, role and state. |
 | `hide` | `true` hides the item: swiping skips it. `'all'` hides what's inside it too. A hidden item is still there, so a script can click it. |
+| `silence` | `true` stops Backtalk speaking the item's changes, selections and announcements, such as a progress bar's updates. `'all'` silences what's inside it too, such as the seek bar in a grouped row. Focusing the item still speaks it. Needs script API version 4. |
 | `role` | The item's role, such as `'button'`. An unknown role is an error that lists the roles. |
 | `state` | The item's state, such as `'Selected'`. |
 | `hint` | The usage hint. |

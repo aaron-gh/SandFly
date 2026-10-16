@@ -165,6 +165,15 @@ class ManifestParserTest {
   }
 
   @Test
+  fun silenceIsTrueFalseOrAll() {
+    assertEquals(Hide.SELF, rule("""{"id":"a","silence":true}""").silence)
+    assertEquals(Hide.ALL, rule("""{"id":"a","silence":"all"}""").silence)
+    assertEquals(Hide.NONE, rule("""{"id":"a","silence":false,"label":"A"}""").silence)
+    assertTrue("needs label" in rejectsRule("""{"id":"a","silence":false}"""))
+    assertTrue("silence is" in rejectsRule("""{"id":"a","silence":"some"}"""))
+  }
+
+  @Test
   fun unknownRuleFieldsAreRejected() {
     assertTrue("colour" in rejectsRule("""{"id":"a","label":"A","colour":"red"}"""))
   }

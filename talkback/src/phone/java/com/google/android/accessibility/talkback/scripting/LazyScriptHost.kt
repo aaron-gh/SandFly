@@ -142,6 +142,9 @@ class LazyScriptHost(
   override fun isHidden(node: AccessibilityNodeInfoCompat): Boolean =
     manager?.isHidden(node) == true
 
+  override fun isSilenced(node: AccessibilityNodeInfoCompat): Boolean =
+    manager?.isSilenced(node) == true
+
   override fun currentActivity(): String? = manager?.currentActivity()
 
   override fun currentWindowTitle(): String? = manager?.currentWindowTitle()

@@ -86,6 +86,25 @@ class ScriptRulesMergeTest {
   }
 
   @Test
+  fun silencingAnItemLeavesWhatIsInsideIt() {
+    val merged = merge(ScriptRule(id = "a", silence = Hide.SELF))!!
+
+    assertTrue(merged.silence)
+    assertFalse(merged.silenceInside)
+    assertFalse(merged.hide)
+  }
+
+  @Test
+  fun silencingAllSilencesWhatIsInsideToo() {
+    val merged =
+      merge(ScriptRule(id = "a", label = "A"), ScriptRule(id = "a", silence = Hide.ALL))!!
+
+    assertTrue(merged.silence)
+    assertTrue(merged.silenceInside)
+    assertFalse(merged.hidesDescendants)
+  }
+
+  @Test
   fun anyRuleCanGroupTheItem() {
     val merged = merge(ScriptRule(id = "a", label = "Row"), ScriptRule(id = "a", group = true))!!
 
