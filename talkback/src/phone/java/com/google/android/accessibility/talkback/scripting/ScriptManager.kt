@@ -153,6 +153,8 @@ class ScriptManager(
 
   override fun isHidden(node: AccessibilityNodeInfoCompat): Boolean = rules.isHidden(node)
 
+  override fun isSilenced(node: AccessibilityNodeInfoCompat): Boolean = rules.isSilenced(node)
+
   override fun currentActivity(): String? = activation.activity
 
   override fun currentWindowTitle(): String? = activation.windowTitle

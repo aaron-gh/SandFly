@@ -73,7 +73,8 @@ class ManifestParser(private val strict: Boolean) {
         activity = json.optionalString("activity"),
         label = json.optionalString("label"),
         speak = json.optionalString("speak"),
-        hide = hideOf(json.opt("hide")),
+        hide = hideOf(json.opt("hide"), "hide"),
+        silence = hideOf(json.opt("silence"), "silence"),
         role = json.optionalString("role"),
         state = json.optionalString("state"),
         hint = json.optionalString("hint"),
@@ -91,8 +92,8 @@ class ManifestParser(private val strict: Boolean) {
         "The rule for $target has both readBefore and readAfter"
       }
       manifestCheck(changesItem || actions.isNotEmpty()) {
-        "The rule for $target needs label, speak, hide, role, state, hint, heading, group, " +
-          "readBefore, readAfter, activate or actions"
+        "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
+          "group, readBefore, readAfter, activate or actions"
       }
     }
     return rule
@@ -229,14 +230,14 @@ class ManifestParser(private val strict: Boolean) {
       else -> manifestError("An item is named by an id or a match")
     }
 
-  private fun hideOf(value: Any?): Hide =
+  private fun hideOf(value: Any?, key: String): Hide =
     when (value) {
       null,
       JSONObject.NULL,
       false -> Hide.NONE
       true -> Hide.SELF
       "all" -> Hide.ALL
-      else -> manifestError("hide is true, false or 'all'")
+      else -> manifestError("$key is true, false or 'all'")
     }
 
   private fun commands(array: JSONArray?, permissions: Set<ScriptPermission>): List<ScriptCommand> {
@@ -346,6 +347,7 @@ class ManifestParser(private val strict: Boolean) {
         "label",
         "speak",
         "hide",
+        "silence",
         "role",
         "state",
         "hint",
