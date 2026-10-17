@@ -77,7 +77,7 @@ apps: [
 ],
 ```
 
-*   `activity` limits the script to one screen. It's the activity's full class name, or the end of it.
+*   `activity` limits the script to one screen. It's the activity's full class name, or the end of it. Backtalk learns the activity when the app changes window, so when Backtalk starts with the app already open, the script runs in all of the app's screens until then.
 *   `window` limits it to windows whose title contains the text.
 
 A script with `apps` is loaded when one of its apps comes to the front and unloaded when it leaves, so anything it keeps in variables is lost then. Use [`backtalk.storage`](#storage) for what should last.
@@ -125,7 +125,7 @@ A rule names its item with `id`, with `match`, or with both:
 *   `id` is the item's view id, either the short form (`send_button`) or the full one (`com.example:id/send_button`).
 *   `match` is a [query](#queries).
 
-`window` and `activity` limit a rule to windows whose title contains the text, or to an activity whose class name ends with it.
+`window` and `activity` limit a rule to windows whose title contains the text, or to an activity whose class name ends with it. A rule with `activity` applies while the activity isn't known yet, as described for `apps`.
 
 A rule can set any of these:
 
