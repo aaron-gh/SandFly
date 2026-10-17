@@ -47,10 +47,16 @@ data class AppMatcher(val packageName: String, val activity: String?, val window
   fun matchesOther(packageName: String?): Boolean =
     packageName == this.packageName && activity == null && window == null
 
+  /**
+   * Whether the front activity is the one this names. An activity is only known from the app's
+   * window changes, so after Backtalk starts with the app already open it is unknown until the app
+   * changes window, and is taken to match.
+   */
   private fun activityMatches(className: String?): Boolean {
     val wanted = activity ?: return true
-    return className == wanted ||
-      className?.endsWith(if (wanted.startsWith(".")) wanted else ".$wanted") == true
+    return className == null ||
+      className == wanted ||
+      className.endsWith(if (wanted.startsWith(".")) wanted else ".$wanted")
   }
 }
 

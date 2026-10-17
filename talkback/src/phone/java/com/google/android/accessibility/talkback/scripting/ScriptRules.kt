@@ -119,7 +119,8 @@ private constructor(
         .filter { entry ->
           val rule = entry.rule
           (entry.packages == null || packageName in entry.packages) &&
-            (rule.activity == null || activity?.endsWith(rule.activity) == true) &&
+            // An activity not known yet is taken to match, as in AppMatcher.
+            (rule.activity == null || activity?.endsWith(rule.activity) != false) &&
             (rule.window == null || window?.contains(rule.window, ignoreCase = true) == true) &&
             (rule.match == null || rule.match.matches(node))
         }
