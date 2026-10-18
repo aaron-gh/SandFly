@@ -116,6 +116,32 @@
         android:title="@string/title_pref_shortcut_right_and_down"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
+  <!-- Edge gestures -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_edge_shortcuts_key"
+      android:title="@string/edge_gestures_title">
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_bottom_up_default"
+        android:key="@string/pref_shortcut_edge_bottom_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_bottom_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_bottom_long_up_default"
+        android:key="@string/pref_shortcut_edge_bottom_long_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_bottom_long_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_top_left_down_default"
+        android:key="@string/pref_shortcut_edge_top_left_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_top_left_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_top_right_down_default"
+        android:key="@string/pref_shortcut_edge_top_right_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_top_right_down"/>
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
   <!-- Two finger gestures -->
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_2finger_shortcuts_key"
@@ -175,6 +201,11 @@
         android:key="@string/pref_shortcut_2finger_rotate_counterclockwise_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_2finger_rotate_counterclockwise"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_scrub_default"
+        android:key="@string/pref_shortcut_2finger_scrub_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_scrub"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_rotor_step_degrees_default"
         android:dialogTitle="@string/title_pref_rotor_step_degrees"

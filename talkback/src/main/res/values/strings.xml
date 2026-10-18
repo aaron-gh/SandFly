@@ -832,6 +832,8 @@
     <string name="one_finger_back_forth_gestures_title">1 finger back-and-forth</string>
     <!-- Label for the group of one finger angle gestures. [CHAR_LIMIT=75] -->
     <string name="one_finger_angle_gestures_title">1 finger angle</string>
+    <!-- Title of the group of gestures that slide one finger in from an edge of the screen. [CHAR_LIMIT=40] -->
+    <string name="edge_gestures_title">Edges</string>
     <!-- Label for the group of two finger gestures. [CHAR_LIMIT=60] -->
     <string name="two_finger_gestures_title">2 fingers</string>
     <!-- Label for the group of three finger gestures. [CHAR_LIMIT=63] -->
@@ -2380,6 +2382,16 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Rotate clockwise with 2 fingers</string>
     <!-- Label for the preference that assigns an action to turning two fingers counterclockwise on the screen, like turning a dial. [CHAR_LIMIT=90] -->
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Rotate counterclockwise with 2 fingers</string>
+    <!-- Label for the preference that assigns an action to the two-finger scrub: two fingers moved quickly back and forth three times, like drawing a Z. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_scrub">Scrub with 2 fingers</string>
+    <!-- Label for the preference that assigns an action to sliding one finger up from the bottom edge of the screen until the first vibration. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_edge_bottom_up">Swipe up from the bottom edge</string>
+    <!-- Label for the preference that assigns an action to sliding one finger up from the bottom edge of the screen, past the first vibration to the second. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_edge_bottom_long_up">Long swipe up from the bottom edge</string>
+    <!-- Label for the preference that assigns an action to sliding one finger down from the left half of the top edge of the screen. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_edge_top_left_down">Swipe down from the top left</string>
+    <!-- Label for the preference that assigns an action to sliding one finger down from the right half of the top edge of the screen. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_edge_top_right_down">Swipe down from the top right</string>
 
     <!-- Label for the preference that assigns an action to the "three-finger triple-tap and hold" gesture. [CHAR_LIMIT=90] -->
     <string name="title_pref_shortcut_3finger_3tap_hold">Triple-tap and hold with 3 fingers</string>

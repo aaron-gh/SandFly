@@ -38,6 +38,11 @@ import static com.google.android.accessibility.talkback.PrimesController.TimerAc
 import static com.google.android.accessibility.utils.gestures.GestureAnalyticsEvent.EVENT_TAP_TO_TOUCH_EXPLORE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_UP_TOUCH_EXPLORE;
@@ -51,9 +56,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -69,7 +76,11 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
+import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -117,6 +128,14 @@ public class TouchInteractionMonitor
   // The height of the top and bottom edges for  edge-swipes.
   // For now this is only used to allow three-finger edge-swipes from the bottom.
   private static final float EDGE_SWIPE_HEIGHT_CM = 0.25f;
+  // How close to the top or bottom edge a one-finger edge gesture must start, about the height of
+  // the gesture navigation bar.
+  private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
+  // How far an edge gesture slides in to reach its first and second stage.
+  private static final float EDGE_GESTURE_FIRST_STAGE_CM = 1f;
+  private static final float EDGE_GESTURE_SECOND_STAGE_CM = 3f;
+  // The length of each stroke of a two-finger scrub.
+  private static final float SCRUB_STROKE_CM = 1f;
 
   // Queue size to hold the most recent change requests of controller state.
   private static final int MAX_CHANGE_REQUEST_SIZE = 5;
@@ -175,6 +194,13 @@ public class TouchInteractionMonitor
   private boolean clearGestureDetectorOnNextDown = false;
   // Recognizes two fingers turning around each other. A recognized rotation owns the whole touch.
   private final TwoFingerRotationTracker rotationTracker;
+  // Recognizes one finger sliding in from the top or bottom edge. A recognized slide owns the
+  // whole touch.
+  private final EdgeSwipeTracker edgeSwipeTracker;
+  // The screen size when the current touch started, for the edge gestures.
+  private final Point screenSize = new Point();
+  // Recognizes the two-finger scrub. A recognized scrub owns the rest of the touch.
+  private final TwoFingerScrubTracker scrubTracker;
   // Whether double tap and double tap and hold will be dispatched to the service or handled in
   // the framework.
   private boolean serviceHandlesDoubleTap = false;
@@ -370,6 +396,18 @@ public class TouchInteractionMonitor
     passthroughTotalSlop = passthroughSlopMultiplier * touchSlop;
     rotationTracker =
         new TwoFingerRotationTracker(passthroughTotalSlop, touchSlop, this::onRotationStep);
+    DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+    float pixelsPerCm = displayMetrics.ydpi / GestureUtils.CM_PER_INCH;
+    edgeSwipeTracker =
+        new EdgeSwipeTracker(
+            pixelsPerCm * EDGE_GESTURE_ZONE_CM,
+            new float[] {
+              pixelsPerCm * EDGE_GESTURE_FIRST_STAGE_CM, pixelsPerCm * EDGE_GESTURE_SECOND_STAGE_CM
+            },
+            touchSlop,
+            this::isEdgeInUse,
+            edgeSwipeListener);
+    scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     sharedPreferences = prefs;
     typingFocusTimeout = FeatureFlagReader.typingFocusTimeout(service);
     touchFocusTimeout = FeatureFlagReader.touchFocusTimeout(service);
@@ -511,6 +549,12 @@ public class TouchInteractionMonitor
       return;
     }
     receivedPointerTracker.onMotionEvent(event);
+    if (handleEdgeSwipe(event)) {
+      return;
+    }
+    if (handleScrub(event)) {
+      return;
+    }
     if (handleRotation(event)) {
       return;
     }
@@ -601,6 +645,11 @@ public class TouchInteractionMonitor
             if (rotationTracker.isPossibleRotation()) {
               // The fingers are turning around each other. Wait until it is clear whether this is
               // a rotation before scrolling or passing the touch to the app.
+              return;
+            }
+            if (scrubTracker.isPossibleScrub()) {
+              // The fingers are moving sideways and may turn back into a scrub. Wait until it is
+              // clear whether this is a scrub, which takes at most one stroke.
               return;
             }
             if (isDraggingGesture(event)) {
@@ -716,6 +765,8 @@ public class TouchInteractionMonitor
     gestureStarted = false;
     clearGestureDetectorOnNextDown = false;
     rotationTracker.clear();
+    edgeSwipeTracker.clear();
+    scrubTracker.clear();
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1147,6 +1198,131 @@ public class TouchInteractionMonitor
       service.onGestureDetectionStarted();
     }
     return true;
+  }
+
+  /**
+   * Passes the event to the edge swipe tracker. Returns true if the event belongs to an edge
+   * swipe, so nothing else may handle it.
+   */
+  private boolean handleEdgeSwipe(MotionEvent event) {
+    if (!edgeSwipeTracker.isActive() && state != STATE_TOUCH_INTERACTING) {
+      edgeSwipeTracker.clear();
+      return false;
+    }
+    if (event.getActionMasked() == ACTION_DOWN) {
+      display.getRealSize(screenSize);
+    }
+    return edgeSwipeTracker.onMotionEvent(event, screenSize.x, screenSize.y);
+  }
+
+  /** Returns whether a gesture from {@code edge} has an action. */
+  private boolean isEdgeInUse(Edge edge) {
+    return switch (edge) {
+      case BOTTOM ->
+          isGestureAssigned(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM)
+              || isGestureAssigned(GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM);
+      case TOP_LEFT -> isGestureAssigned(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT);
+      case TOP_RIGHT -> isGestureAssigned(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT);
+    };
+  }
+
+  private boolean isGestureAssigned(int gestureId) {
+    GestureShortcutMapping mapping = service.getGestureShortcutMapping();
+    return mapping != null
+        && !TextUtils.equals(
+            mapping.getActionKeyFromGestureId(gestureId),
+            context.getString(R.string.shortcut_value_unassigned));
+  }
+
+  private final EdgeSwipeTracker.Listener edgeSwipeListener =
+      new EdgeSwipeTracker.Listener() {
+        @Override
+        public void onEdgeSwipeStarted(Edge edge) {
+          // No other gesture, touch exploration or passthrough for this touch.
+          takeOverTouch();
+        }
+
+        @Override
+        public void onEdgeSwipeStage(Edge edge, int stage) {
+          try {
+            service
+                .getFeedbackController()
+                .playHaptic(
+                    stage == 1
+                        ? R.array.edge_swipe_stage_1_pattern
+                        : R.array.edge_swipe_stage_2_pattern,
+                    /* eventId= */ null);
+          } catch (IllegalStateException e) {
+            // Feedback isn't set up yet.
+          }
+        }
+
+        @Override
+        public void onEdgeSwipeEnded(Edge edge, int stage) {
+          if (stage == 0) {
+            // Slid back to the edge, or a second finger landed: no gesture.
+            return;
+          }
+          int gestureId =
+              switch (edge) {
+                case BOTTOM ->
+                    stage == 1
+                        ? GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
+                        : GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
+                case TOP_LEFT -> GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
+                case TOP_RIGHT -> GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
+              };
+          if (BuildConfig.DEBUG) {
+            Log.d(
+                DEBUG_GESTURE_TAG,
+                "Gesture " + AccessibilityServiceCompatUtils.gestureIdToString(gestureId));
+          }
+          dispatchGestureToMainThread(
+              new AccessibilityGestureEvent(gestureId, displayId, new ArrayList<MotionEvent>()));
+        }
+      };
+
+  /**
+   * Passes the event to the two-finger scrub tracker. Returns true if the event belongs to a scrub,
+   * so nothing else may handle it.
+   */
+  private boolean handleScrub(MotionEvent event) {
+    if (!scrubTracker.isScrubbed()
+        && (state != STATE_TOUCH_INTERACTING
+            || !gestureDetector.isMultiFingerGesturesEnabled()
+            || (event.getActionMasked() == ACTION_POINTER_DOWN
+                && !isGestureAssigned(GESTURE_2_FINGER_SCRUB)))) {
+      scrubTracker.clear();
+      return false;
+    }
+    return scrubTracker.onMotionEvent(event);
+  }
+
+  private void onScrub() {
+    takeOverTouch();
+    rotationTracker.clear();
+    if (BuildConfig.DEBUG) {
+      Log.d(
+          DEBUG_GESTURE_TAG,
+          "Gesture " + AccessibilityServiceCompatUtils.gestureIdToString(GESTURE_2_FINGER_SCRUB));
+    }
+    dispatchGestureToMainThread(
+        new AccessibilityGestureEvent(
+            GESTURE_2_FINGER_SCRUB, displayId, new ArrayList<MotionEvent>()));
+  }
+
+  /**
+   * Makes the rest of the touch belong to a gesture that Backtalk recognizes while the fingers are
+   * down, so that no gesture matcher, touch exploration or passthrough uses it.
+   */
+  private void takeOverTouch() {
+    keepMonitorTouchExplore = false;
+    requestTouchExplorationDelayed.cancel();
+    gestureDetector.clear();
+    // The matchers miss the rest of this touch, so a new touch in this interaction starts them
+    // over.
+    clearGestureDetectorOnNextDown = true;
+    service.onGestureDetectionStarted();
   }
 
   private void onRotationStep(boolean clockwise) {

@@ -18,7 +18,12 @@ package com.google.android.accessibility.talkback.gesture;
 
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TAP_HOLD_AND_2ND_FINGER_BACKWARD_DOUBLE_TAP;
@@ -368,6 +373,32 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         MULTI_FINGER,
         R.string.pref_shortcut_2finger_rotate_counterclockwise_key,
         R.string.pref_shortcut_2finger_rotate_counterclockwise_default),
+    TWO_FINGER_SCRUB(
+        GESTURE_2_FINGER_SCRUB,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_scrub_key,
+        R.string.pref_shortcut_2finger_scrub_default),
+    // Edge gestures. Only recognized when Backtalk detects gestures itself.
+    EDGE_SWIPE_UP_FROM_BOTTOM(
+        GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_bottom_up_key,
+        R.string.pref_shortcut_edge_bottom_up_default),
+    EDGE_LONG_SWIPE_UP_FROM_BOTTOM(
+        GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_bottom_long_up_key,
+        R.string.pref_shortcut_edge_bottom_long_up_default),
+    EDGE_SWIPE_DOWN_FROM_TOP_LEFT(
+        GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_top_left_down_key,
+        R.string.pref_shortcut_edge_top_left_down_default),
+    EDGE_SWIPE_DOWN_FROM_TOP_RIGHT(
+        GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_edge_top_right_down_key,
+        R.string.pref_shortcut_edge_top_right_down_default),
 
     // Fingerprint.
     FINGERPRINT_SWIPE_UP(
@@ -1190,6 +1221,15 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_2finger_rotate_clockwise);
       case GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE ->
           context.getString(R.string.title_pref_shortcut_2finger_rotate_counterclockwise);
+      case GESTURE_2_FINGER_SCRUB -> context.getString(R.string.title_pref_shortcut_2finger_scrub);
+      case GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM ->
+          context.getString(R.string.title_pref_shortcut_edge_bottom_up);
+      case GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM ->
+          context.getString(R.string.title_pref_shortcut_edge_bottom_long_up);
+      case GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT ->
+          context.getString(R.string.title_pref_shortcut_edge_top_left_down);
+      case GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_edge_top_right_down);
       case GESTURE_TOUCH_EXPLORATION ->
           FeatureSupport.supportGestureMotionEvents()
               ? context.getString(R.string.gesture_name_touch_explore)

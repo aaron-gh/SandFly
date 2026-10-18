@@ -1,0 +1,305 @@
+/*
+ * Copyright 2026 Backtalk contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.android.accessibility.talkback
+
+import android.accessibilityservice.AccessibilityGestureEvent
+import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
+import android.accessibilityservice.TouchInteractionController
+import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
+import android.hardware.display.DisplayManager
+import android.os.Handler
+import android.os.Looper
+import android.os.SystemClock
+import android.view.Display
+import android.view.MotionEvent
+import android.view.MotionEvent.ACTION_DOWN
+import android.view.MotionEvent.ACTION_MOVE
+import android.view.MotionEvent.ACTION_POINTER_DOWN
+import android.view.MotionEvent.ACTION_POINTER_UP
+import android.view.MotionEvent.ACTION_UP
+import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
+import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
+import java.time.Duration
+import org.junit.After
+import org.junit.Assert.assertEquals
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.Robolectric
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.Shadows.shadowOf
+import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowLooper
+
+/**
+ * Runs the edge gestures and the two-finger scrub through the monitor, with Android's own
+ * TouchInteractionController passing it the touch, as TouchInteractionMonitorTest does. The screen
+ * is 320 by 470 pixels at 160 dpi, so a centimeter is 63 pixels: edge gestures start within 31
+ * pixels of the edge, and reach their stages 63 and 189 pixels in.
+ */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [34], qualifiers = "w320dp-h470dp-mdpi")
+class EdgeAndScrubGestureTest {
+  /** Records the gestures that reach the service. */
+  class RecordingService : TalkBackService() {
+    val gestures = mutableListOf<Int>()
+    var mapping: GestureShortcutMapping? = null
+
+    override fun onGesture(accessibilityGestureEvent: AccessibilityGestureEvent): Boolean {
+      gestures.add(accessibilityGestureEvent.gestureId)
+      return true
+    }
+
+    override fun onGestureDetectionStarted() {}
+
+    override fun getGestureShortcutMapping(): GestureShortcutMapping? = mapping
+  }
+
+  private val main = Handler(Looper.getMainLooper())
+  private val mainLooper: ShadowLooper = shadowOf(Looper.getMainLooper())
+  private lateinit var service: RecordingService
+  private lateinit var controller: TouchInteractionController
+  private lateinit var monitor: TouchInteractionMonitor
+  private var start = 0L
+  private var downTime = 0L
+
+  @Before
+  fun setUp() {
+    service = Robolectric.buildService(RecordingService::class.java).get()
+    service.mapping = GestureShortcutMapping(service)
+    controller =
+      TouchInteractionController::class
+        .java
+        .getDeclaredConstructor(
+          AccessibilityService::class.java,
+          Any::class.java,
+          Int::class.javaPrimitiveType,
+        )
+        .apply { isAccessible = true }
+        .newInstance(service, Any(), Display.DEFAULT_DISPLAY)
+    val display =
+      service.getSystemService(DisplayManager::class.java).getDisplay(Display.DEFAULT_DISPLAY)
+    monitor =
+      TouchInteractionMonitor(
+        display,
+        SharedPreferencesUtils.getSharedPreferences(service),
+        controller,
+        service,
+        PrimesController(),
+        TouchExplorationModeFailureReporter(object : TalkBackAnalytics {}),
+        {},
+        {},
+      )
+    monitor.setMultiFingerGesturesEnabled(true)
+    monitor.setTwoFingerPassthroughEnabled(true)
+    monitor.setServiceHandlesDoubleTap(true)
+    controller.registerCallback(/* executor= */ null, monitor)
+    TouchInteractionController::class.java.getDeclaredField("mServiceDetectsGestures").apply {
+      isAccessible = true
+      setBoolean(controller, true)
+    }
+    start = SystemClock.uptimeMillis()
+  }
+
+  @After
+  fun tearDown() {
+    monitor.stop()
+    controller.unregisterCallback(monitor)
+  }
+
+  private fun callController(name: String, type: Class<*>, argument: Any) {
+    TouchInteractionController::class
+      .java
+      .getDeclaredMethod(name, type)
+      .apply { isAccessible = true }
+      .invoke(controller, argument)
+  }
+
+  private fun stateChangeAt(state: Int, timeMs: Long) {
+    main.postAtTime(
+      { callController("onStateChanged", Int::class.javaPrimitiveType!!, state) },
+      start + timeMs,
+    )
+  }
+
+  /** The fingers are at [points], as x and y pairs, [timeMs] after the start. */
+  private fun touchAt(action: Int, timeMs: Long, vararg points: Float, actionIndex: Int = 0) {
+    val eventTime = start + timeMs
+    if (action == ACTION_DOWN) {
+      downTime = eventTime
+    }
+    val count = points.size / 2
+    val properties =
+      Array(count) { i ->
+        MotionEvent.PointerProperties().apply {
+          id = i
+          toolType = MotionEvent.TOOL_TYPE_FINGER
+        }
+      }
+    val coords =
+      Array(count) { i ->
+        MotionEvent.PointerCoords().apply {
+          x = points[i * 2]
+          y = points[i * 2 + 1]
+          pressure = 1f
+          size = 1f
+        }
+      }
+    val fullAction =
+      if (action == ACTION_POINTER_DOWN || action == ACTION_POINTER_UP) {
+        action or (actionIndex shl MotionEvent.ACTION_POINTER_INDEX_SHIFT)
+      } else {
+        action
+      }
+    val event =
+      MotionEvent.obtain(
+        downTime,
+        eventTime,
+        fullAction,
+        count,
+        properties,
+        coords,
+        0,
+        0,
+        1f,
+        1f,
+        0,
+        0,
+        0,
+        0,
+      )
+    main.postAtTime({ callController("onMotionEvent", MotionEvent::class.java, event) }, eventTime)
+  }
+
+  private fun runUntil(timeMs: Long) {
+    mainLooper.idleFor(Duration.ofMillis(start + timeMs - SystemClock.uptimeMillis()))
+  }
+
+  /** One finger slides from ([x], [fromY]) to [toY] and lifts, in steps of 10 ms. */
+  private fun slide(x: Float, fromY: Float, vararg toY: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, x, fromY)
+    var time = 0L
+    var y = fromY
+    for (target in toY) {
+      val steps = 8
+      val stepY = (target - y) / steps
+      repeat(steps) {
+        time += 10
+        y += stepY
+        touchAt(ACTION_MOVE, time, x, y)
+      }
+    }
+    time += 10
+    touchAt(ACTION_UP, time, x, y)
+    runUntil(time + 500)
+  }
+
+  @Test
+  fun swipeUpFromTheBottomEdgeIsTheFirstStage() {
+    slide(160f, 465f, 380f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun longSwipeUpFromTheBottomEdgeIsTheSecondStage() {
+    slide(160f, 465f, 250f)
+    assertEquals(listOf(GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun slidingBackToTheSecondStageAndLiftingIsTheFirstStage() {
+    slide(160f, 465f, 250f, 380f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun slidingBackToTheEdgeCancels() {
+    slide(160f, 465f, 380f, 462f)
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun swipeDownFromTheTopIsBySide() {
+    slide(60f, 5f, 90f)
+    slide(260f, 5f, 90f)
+    assertEquals(
+      listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT, GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT),
+      service.gestures,
+    )
+  }
+
+  @Test
+  fun swipeUpAwayFromTheEdgeIsAnOrdinarySwipe() {
+    slide(160f, 400f, 300f)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun unassignedEdgeLeavesAnOrdinarySwipe() {
+    val unassigned = service.getString(R.string.shortcut_value_unassigned)
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_shortcut_edge_bottom_up_key), unassigned)
+      .putString(service.getString(R.string.pref_shortcut_edge_bottom_long_up_key), unassigned)
+      .commit()
+    service.mapping = GestureShortcutMapping(service)
+    slide(160f, 465f, 380f)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  /** Two fingers 60 pixels apart move to each x in [xs] in turn, 8 steps of 10 ms each. */
+  private fun twoFingerMove(vararg xs: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    var x = xs[0]
+    val y = 200f
+    touchAt(ACTION_DOWN, 0, x, y)
+    touchAt(ACTION_POINTER_DOWN, 5, x, y, x, y + 60f, actionIndex = 1)
+    var time = 5L
+    for (target in xs.drop(1)) {
+      val stepX = (target - x) / 8
+      repeat(8) {
+        time += 10
+        x += stepX
+        touchAt(ACTION_MOVE, time, x, y, x, y + 60f)
+      }
+    }
+    time += 10
+    touchAt(ACTION_POINTER_UP, time, x, y, x, y + 60f, actionIndex = 1)
+    touchAt(ACTION_UP, time + 5, x, y)
+    runUntil(time + 500)
+  }
+
+  @Test
+  fun backAndForthThreeTimesIsAScrub() {
+    twoFingerMove(100f, 200f, 100f, 200f)
+    assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
+  }
+
+  @Test
+  fun backAndForthOnceIsNotAScrub() {
+    twoFingerMove(100f, 200f, 100f)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
+  }
+}
