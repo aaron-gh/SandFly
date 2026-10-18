@@ -33,7 +33,9 @@ import kotlin.math.abs
  *
  * A slide that takes too long to reach the first stage, or goes sideways or outward, is left to
  * the other gestures and touch exploration, and so is a slide from an edge that [isEdgeInUse]
- * turns down, such as one whose gestures do nothing.
+ * turns down, such as one whose gestures do nothing. So is a touch that has not started sliding
+ * inward by [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]),
+ * and [rejectIfStalled] ends that wait when no further motion event comes.
  */
 class EdgeSwipeTracker(
   private val edgeZonePx: Float,
@@ -81,6 +83,7 @@ class EdgeSwipeTracker(
   private var startX = 0f
   private var startY = 0f
   private var startTime = 0L
+  private var inward = 0f
   private var stage = 0
   private var highestStage = 0
 
@@ -88,10 +91,15 @@ class EdgeSwipeTracker(
   val isActive: Boolean
     get() = state == State.ACTIVE || state == State.CANCELLED
 
+  /** Whether the touch started at an edge and may still become a slide. */
+  val isPossible: Boolean
+    get() = state == State.POSSIBLE
+
   /** Forgets the current touch. */
   fun clear() {
     state = State.IDLE
     pointerId = INVALID_ID
+    inward = 0f
     stage = 0
     highestStage = 0
   }
@@ -171,6 +179,31 @@ class EdgeSwipeTracker(
     startY = y
     startTime = event.eventTime
     state = State.POSSIBLE
+    debugLog("possible: start=(${x.toInt()},${y.toInt()}) screen=${screenWidth}x$screenHeight")
+  }
+
+  /**
+   * The time, in [MotionEvent.getEventTime] terms, at which [rejectIfStalled] rejects the touch if
+   * it is still possible and has not moved on.
+   */
+  fun stallTime(): Long =
+    startTime + if (inward < slopPx) STILL_MILLIS else MAX_START_MILLIS
+
+  /**
+   * Rejects a possible slide that has not started sliding inward by [STILL_MILLIS], or not reached
+   * the first stage by [MAX_START_MILLIS], at [now].
+   */
+  fun rejectIfStalled(now: Long) {
+    if (state != State.POSSIBLE) {
+      return
+    }
+    if (now - startTime > MAX_START_MILLIS) {
+      debugLog("rejected, too slow")
+      state = State.REJECTED
+    } else if (now - startTime >= STILL_MILLIS && inward < slopPx) {
+      debugLog("rejected, not moving inward after ${now - startTime} ms, inward=${inward.toInt()}")
+      state = State.REJECTED
+    }
   }
 
   /** How far the finger has moved from the edge, along the slide. Negative is outward. */
@@ -182,15 +215,21 @@ class EdgeSwipeTracker(
       state = State.REJECTED
       return
     }
-    val inward = inward(event.getY(index))
+    inward = inward(event.getY(index))
     val sideways = abs(event.getX(index) - startX)
-    if (event.eventTime - startTime > MAX_START_MILLIS) {
-      debugLog("rejected, too slow")
+    if (inward < -slopPx || (sideways > slopPx && sideways > inward * MAX_SIDEWAYS_RATIO)) {
+      debugLog(
+        "rejected, not sliding inward: start=(${startX.toInt()},${startY.toInt()})" +
+          " inward=${inward.toInt()} sideways=${sideways.toInt()} slop=${slopPx.toInt()}"
+      )
       state = State.REJECTED
-    } else if (inward < -slopPx || (sideways > slopPx && sideways > inward * MAX_SIDEWAYS_RATIO)) {
-      debugLog("rejected, not sliding inward")
-      state = State.REJECTED
-    } else if (inward >= stageDistancesPx[0]) {
+      return
+    }
+    rejectIfStalled(event.eventTime)
+    if (state != State.POSSIBLE) {
+      return
+    }
+    if (inward >= stageDistancesPx[0]) {
       debugLog("started")
       state = State.ACTIVE
       listener.onEdgeSwipeStarted(edge)
@@ -232,9 +271,15 @@ class EdgeSwipeTracker(
 
     /**
      * Time from the touch to the first stage, in milliseconds. A slower slide is left to touch
-     * exploration, which starts about this soon.
+     * exploration.
      */
     private const val MAX_START_MILLIS = 300L
+
+    /**
+     * Time, in milliseconds, by which a touch at an edge must have started sliding inward. A touch
+     * that stays put longer is touch exploration.
+     */
+    private const val STILL_MILLIS = 100L
 
     /** How far a slide may move sideways for each pixel inward before the first stage. */
     private const val MAX_SIDEWAYS_RATIO = 1f

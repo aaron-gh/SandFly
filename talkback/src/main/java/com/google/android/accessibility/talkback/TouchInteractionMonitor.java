@@ -208,6 +208,11 @@ public class TouchInteractionMonitor
   private final EdgeSwipeTracker edgeSwipeTracker;
   // The screen size when the current touch started, for the edge gestures.
   private final Point screenSize = new Point();
+  // Whether touch exploration was requested while an edge swipe could still start, and waits for
+  // the edge swipe to be rejected.
+  private boolean touchExplorationHeldForEdgeSwipe;
+  // Ends the wait for an edge swipe when the finger stops moving.
+  private final Runnable edgeSwipeStallCheck = this::checkEdgeSwipeStall;
   // Recognizes the two-finger scrub. A recognized scrub owns the rest of the touch.
   private final TwoFingerScrubTracker scrubTracker;
   // Recognizes pinches and spreads with two to four fingers. A recognized one owns the rest of the
@@ -788,6 +793,7 @@ public class TouchInteractionMonitor
     clearGestureDetectorOnNextDown = false;
     rotationTracker.clear();
     edgeSwipeTracker.clear();
+    stopHoldingTouchExplorationForEdgeSwipe();
     scrubTracker.clear();
     pinchTracker.clear();
     stateChangeRequested = false;
@@ -1230,12 +1236,62 @@ public class TouchInteractionMonitor
   private boolean handleEdgeSwipe(MotionEvent event) {
     if (!edgeSwipeTracker.isActive() && state != STATE_TOUCH_INTERACTING) {
       edgeSwipeTracker.clear();
+      stopHoldingTouchExplorationForEdgeSwipe();
       return false;
     }
     if (event.getActionMasked() == ACTION_DOWN) {
       display.getRealSize(screenSize);
     }
-    return edgeSwipeTracker.onMotionEvent(event, screenSize.x, screenSize.y);
+    boolean owned = edgeSwipeTracker.onMotionEvent(event, screenSize.x, screenSize.y);
+    int action = event.getActionMasked();
+    if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+      stopHoldingTouchExplorationForEdgeSwipe();
+    } else {
+      releaseTouchExplorationIfEdgeSwipeRejected();
+    }
+    return owned;
+  }
+
+  /**
+   * Returns whether touch exploration must wait because the touch may still become an edge swipe.
+   * Touch exploration starts once the edge swipe is rejected.
+   */
+  private boolean holdTouchExplorationForEdgeSwipe() {
+    if (!edgeSwipeTracker.isPossible()) {
+      return false;
+    }
+    touchExplorationHeldForEdgeSwipe = true;
+    scheduleEdgeSwipeStallCheck();
+    return true;
+  }
+
+  private void scheduleEdgeSwipeStallCheck() {
+    mainHandler.removeCallbacks(edgeSwipeStallCheck);
+    mainHandler.postAtTime(edgeSwipeStallCheck, edgeSwipeTracker.stallTime() + 1);
+  }
+
+  private void checkEdgeSwipeStall() {
+    edgeSwipeTracker.rejectIfStalled(SystemClock.uptimeMillis());
+    if (edgeSwipeTracker.isPossible()) {
+      scheduleEdgeSwipeStallCheck();
+    } else {
+      releaseTouchExplorationIfEdgeSwipeRejected();
+    }
+  }
+
+  private void releaseTouchExplorationIfEdgeSwipeRejected() {
+    if (!touchExplorationHeldForEdgeSwipe || edgeSwipeTracker.isPossible()) {
+      return;
+    }
+    stopHoldingTouchExplorationForEdgeSwipe();
+    if (!edgeSwipeTracker.isActive() && state == STATE_TOUCH_INTERACTING && !gestureStarted) {
+      requestTouchExploration("edgeSwipeRejected");
+    }
+  }
+
+  private void stopHoldingTouchExplorationForEdgeSwipe() {
+    touchExplorationHeldForEdgeSwipe = false;
+    mainHandler.removeCallbacks(edgeSwipeStallCheck);
   }
 
   /** Returns whether a gesture from {@code edge} has an action. */
@@ -1380,6 +1436,7 @@ public class TouchInteractionMonitor
    * down, so that no gesture matcher, touch exploration or passthrough uses it.
    */
   private void takeOverTouch() {
+    stopHoldingTouchExplorationForEdgeSwipe();
     keepMonitorTouchExplore = false;
     requestTouchExplorationDelayed.cancel();
     gestureDetector.clear();
@@ -1482,6 +1539,9 @@ public class TouchInteractionMonitor
   }
 
   void requestTouchExploration(String caller) {
+    if (holdTouchExplorationForEdgeSwipe()) {
+      return;
+    }
     try {
       if (isStateTransitionAllowed()) {
         trackStateChangeRequest(STATE_TOUCH_EXPLORING, caller);
