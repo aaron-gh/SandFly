@@ -65,6 +65,24 @@ class IndividualFeedbackSettingsTest {
   }
 
   @Test
+  fun edgeGesturesSwitchMutesEveryEdgeGestureVibration() {
+    IndividualFeedbackSettings.setVibrationOn(
+      prefs,
+      IndividualFeedbackSettings.EDGE_GESTURE_VIBRATIONS,
+      false,
+    )
+    assertEquals(
+      setOf(
+        "edge_swipe_stage_1_pattern",
+        "edge_swipe_stage_2_pattern",
+        "edge_swipe_back_pattern",
+        "edge_swipe_cancel_pattern",
+      ),
+      IndividualFeedbackSettings.mutedVibrationResources(prefs),
+    )
+  }
+
+  @Test
   fun groupedItemMutesEveryResource() {
     IndividualFeedbackSettings.setSoundOn(prefs, radialMenu, false)
     assertEquals(

@@ -320,7 +320,7 @@ As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge 
 - Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about four more centimeters to feel a second click, and lift there for Overview (recent apps).
 - Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click.
 
-Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
+Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn these vibrations off, turn off **Edge gestures** under vibrations in **Individual sounds and vibrations**. A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
 To scrub, move two fingers quickly back and forth three times, as if drawing a Z, each stroke about a centimeter long. By default, this goes back.
 
