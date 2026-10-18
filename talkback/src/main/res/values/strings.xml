@@ -671,11 +671,6 @@
     <string name="summary_pref_speak_notifications">Read new notifications aloud when they arrive. Incoming calls are always read.</string>
 
     <!--
-      Source: Preference for speaking window title when the focus changes due to window transition.
-      Description: The user can check or not check this. [CHAR LIMIT=40]
-    -->
-    <string name="pref_speak_system_window_titles_title">Speak window names</string>
-    <!--
       Source: Preference for limiting the text change rate.
       Description: The user can check or not check this. [CHAR LIMIT=40]
     -->
@@ -685,11 +680,6 @@
       Description: Explains that decision of content change announcement frequency. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_allow_frequent_content_change_announcement">Includes updates while downloading, following driving directions, and more. When turned off, you’ll still get less frequent updates.</string>
-    <!--
-      Source: Summary subtext for preference to speak window titles.
-      Description: Explains that TalkBack will speak the window title of a focused item. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_speak_system_window_titles_summary">Speak system and input windows, like when you switch to the status bar, notifications, or another keyboard</string>
 
     <!--
       Source: Preference for Explore by touch setting. This setting allows users to touch on-screen content to hear it spoken aloud.
@@ -2499,6 +2489,16 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_pref_wrap_around">Wrap around</string>
     <!-- Summary of the wrap around setting. [CHAR LIMIT=NONE]-->
     <string name="summary_pref_wrap_around">Swiping past the last item goes to the first, and past the first goes to the last. When off, a sound plays at the end instead.</string>
+    <!-- Title of the setting for whether and how window names, such as an app's or a dialog's name, are spoken when a window opens or focus moves into one. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_window_names">Window names</string>
+    <!-- Window names choice: speak a window's name when the window opens and when focus moves into it from another window, before the first item in the window. [CHAR LIMIT=NONE] -->
+    <string name="window_names_always">Always</string>
+    <!-- Window names choice: as "Always", but stop speaking the name as soon as the first item in the new window is focused. [CHAR LIMIT=NONE] -->
+    <string name="window_names_until_first_item">Always, cut off by the first item</string>
+    <!-- Window names choice: speak a window's name when the window opens, but not when focus moves into it from another window, such as from an app into the keyboard or the status bar. [CHAR LIMIT=NONE] -->
+    <string name="window_names_window_opens">Only when a window opens</string>
+    <!-- Window names choice: speak no window names. [CHAR LIMIT=NONE] -->
+    <string name="window_names_never">Never</string>
     <!-- Title of the switch that moves accessibility focus into a window when it opens or comes back, such as when an app opens or you go back. [CHAR LIMIT=NONE] -->
     <string name="title_pref_focus_new_windows">Move focus to new windows</string>
     <!-- Title of the switch that makes the volume keys adjust the focused slider instead of the volume. [CHAR LIMIT=NONE] -->
@@ -2977,8 +2977,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="title_pref_cache_keyboard_keys">Announce keyboard keys faster</string>
   <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
   <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
-  <!-- Title of the switch that lets the first item focused in a new window interrupt the window name, instead of waiting for it to finish. [CHAR LIMIT=NONE] -->
-  <string name="title_pref_first_item_interrupts_window_name">Speak first item without waiting for window name</string>
   <!--
   Source: Title for the sound and vibration.
   Description: The user can set sound and vibration. [CHAR_LIMIT=NONE]

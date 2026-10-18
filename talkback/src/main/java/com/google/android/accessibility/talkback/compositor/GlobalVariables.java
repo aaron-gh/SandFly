@@ -137,7 +137,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private static final int VERBOSITY_SPEAK_COLLECTION_INFO = 10002;
   private static final int VERBOSITY_DESCRIPTION_ORDER = 10003;
   private static final int VERBOSITY_SPEAK_ELEMENT_IDS = 10004;
-  private static final int VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES = 10005;
+  private static final int VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE = 10005;
 
   private final Context mContext;
   private final AccessibilityService mService;
@@ -202,7 +202,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   @DescriptionOrder private int descriptionOrder = DESC_ORDER_ROLE_NAME_STATE_POSITION;
   private boolean speakElementIds = false;
   private boolean countRepeatedSymbols = false;
-  private boolean speakSystemWindowTitles = true;
+  private boolean speakWindowNamesOnFocusMove = true;
   private boolean textChangeRateUnlimited = false;
   private final boolean enableMediaControlHintForCall;
   private final boolean enableShortAndLongDurationsForSpecificApps;
@@ -346,7 +346,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     parseTree.addBooleanVariable("verbosity.speakRole", VERBOSITY_SPEAK_ROLES);
     parseTree.addBooleanVariable("verbosity.speakCollectionInfo", VERBOSITY_SPEAK_COLLECTION_INFO);
     parseTree.addBooleanVariable(
-        "verbosity.speakSystemWindowTitles", VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES);
+        "verbosity.speakWindowNamesOnFocusMove", VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE);
     parseTree.addEnumVariable(
         "verbosity.descriptionOrder",
         VERBOSITY_DESCRIPTION_ORDER,
@@ -727,14 +727,14 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return roleSoundOfFocus != 0 && ControlSounds.soundForRole(node) == roleSoundOfFocus;
   }
 
-  /** Returns if TalkBack speaks system window titles. */
-  public boolean getSpeakSystemWindowTitles() {
-    return speakSystemWindowTitles;
+  /** Returns whether the window's name is spoken when focus moves into another window. */
+  public boolean getSpeakWindowNamesOnFocusMove() {
+    return speakWindowNamesOnFocusMove;
   }
 
-  /** Sets if TalkBack speaks system window titles. */
-  public void setSpeakSystemWindowTitles(boolean value) {
-    speakSystemWindowTitles = value;
+  /** Sets whether the window's name is spoken when focus moves into another window. */
+  public void setSpeakWindowNamesOnFocusMove(boolean value) {
+    speakWindowNamesOnFocusMove = value;
   }
 
   /** Returns if TalkBack limits text change rate. */
@@ -1054,7 +1054,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
       case VERBOSITY_SPEAK_ROLES -> getSpeakRoles();
       case VERBOSITY_SPEAK_COLLECTION_INFO -> getSpeakCollectionInfo();
       case VERBOSITY_SPEAK_ELEMENT_IDS -> getSpeakElementIds();
-      case VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES -> getSpeakSystemWindowTitles();
+      case VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE -> getSpeakWindowNamesOnFocusMove();
       default -> false;
     };
   }
@@ -1147,7 +1147,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
             .append(String.format("speakCollectionInfo=%s, ", getSpeakCollectionInfo()))
             .append(String.format("speakElementIds=%s, ", getSpeakElementIds()))
             .append(String.format("speakRoles=%s, ", getSpeakRoles()))
-            .append(String.format("speakSysWindowTitles=%s, ", getSpeakSystemWindowTitles()))
+            .append(String.format("speakWindowNamesOnFocusMove=%s, ", getSpeakWindowNamesOnFocusMove()))
             .append(String.format("textChangeRateUnlimited=%s, ", getTextChangeRateUnlimited()))
             .append(String.format("dndEnabled=%s, ", isDndEnabled()))
             .append(String.format("speakNotifications=%s, ", getSpeakNotifications()))

@@ -15,8 +15,6 @@
  */
 package com.google.android.accessibility.talkback.compositor.rule;
 
-import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_INPUT_METHOD;
-import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_SYSTEM;
 import static com.google.android.accessibility.talkback.compositor.Compositor.EVENT_TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 import static com.google.android.accessibility.talkback.compositor.CompositorConfigs.shouldEarlyAnnounceForLiftToType;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.PRUNE_EMPTY;
@@ -396,28 +394,26 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
     // Provide window transition state feedback if the event is triggered by user interaction or it
     // is in split screen mode.
     CharSequence windowTransitionState;
-    if (isWindowIdChanged && (isEventNavigateByUser || isSplitScreenMode)) {
+    if (!globalVariables.getSpeakWindowNamesOnFocusMove()) {
+      // Turned off by the Window names setting.
+      logString.append(", window names on focus move off");
+      windowTransitionState = "";
+    } else if (isWindowIdChanged && (isEventNavigateByUser || isSplitScreenMode)) {
       int windowType = AccessibilityNodeInfoUtils.getWindowType(node);
       CharSequence currentWindowTitle =
           globalVariables.getWindowTitle(globalVariables.getCurrentWindowId());
-      boolean speakSystemWindowTitles = globalVariables.getSpeakSystemWindowTitles();
 
       logString
           .append(String.format(", windowType=%s", windowType))
-          .append(String.format(", currentWindowTitle=%s", currentWindowTitle))
-          .append(String.format(", speakSystemWindowTitles=%s", speakSystemWindowTitles));
+          .append(String.format(", currentWindowTitle=%s", currentWindowTitle));
 
       if (windowType == WINDOW_TYPE_PICTURE_IN_PICTURE) {
         logString.append(", hasWindowTransition for PIP window");
         windowTransitionState =
             context.getString(R.string.template_overlay_window, currentWindowTitle);
-      } else if (speakSystemWindowTitles
-          || (windowType != TYPE_SYSTEM && windowType != TYPE_INPUT_METHOD)) {
-        logString.append(", hasWindowTransition for speakWindowTitles");
-        windowTransitionState = context.getString(R.string.in_window_with_name, currentWindowTitle);
       } else {
-        logString.append(String.format(", feedback not granted"));
-        windowTransitionState = "";
+        logString.append(", hasWindowTransition");
+        windowTransitionState = context.getString(R.string.in_window_with_name, currentWindowTitle);
       }
     } else {
       windowTransitionState = "";

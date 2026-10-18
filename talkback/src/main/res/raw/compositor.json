@@ -333,14 +333,12 @@
       // by changing to split screen mode, the window title is not read.
       // So user can not know the window which the accessibility focus is located.
       // Even, if it is not navigation by user, the title should be read in split screen mode.
-      "if": "($event.isNavigateByUser || $windows.isSplitScreenMode) && $node.windowId != $windows.lastWindowId",
+      // The Window names setting can turn these off.
+      "if": "$verbosity.speakWindowNamesOnFocusMove && ($event.isNavigateByUser || $windows.isSplitScreenMode) && $node.windowId != $windows.lastWindowId",
       "then": {
         "if": "$node.windowType == 'picture_in_picture'",
         "then": "@string/template_overlay_window($windows.currentWindowTitle)",
-        "else": {
-          "if": "($node.windowType != 'system' && $node.windowType != 'input_method') || $verbosity.speakSystemWindowTitles",
-          "then": "@string/in_window_with_name($windows.currentWindowTitle)"
-        }
+        "else": "@string/in_window_with_name($windows.currentWindowTitle)"
       }
     },
     // Nodes

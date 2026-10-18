@@ -155,9 +155,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 getString(R.string.pref_verbose_scroll_announcement_key),
                 getResources().getBoolean(R.bool.pref_verbose_scroll_announcement_default))
             .put(
-                getString(R.string.pref_speak_system_window_titles_key),
-                getResources().getBoolean(R.bool.pref_speak_system_window_titles_default))
-            .put(
                 getString(R.string.pref_allow_frequent_content_change_announcement_key),
                 getResources()
                     .getBoolean(R.bool.pref_allow_frequent_content_change_announcement_default))
