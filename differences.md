@@ -364,6 +364,10 @@ On Android 11, when you picked an action with the **Actions** reading control, a
 
 realme UI reports some volume sliders as not focusable and unlabeled, so TalkBack skipped them. Backtalk can focus them.
 
+### Volume keys that adjust sliders
+
+When you turn on **Advanced settings** > **Volume keys adjust sliders**, the volume keys change the value of the slider that has focus, and Backtalk speaks the new value, as it does when you adjust the slider with the **Adjustable** reading control. Hold a key to keep changing the value. When focus is on anything else, or the screen is off, the volume keys change the volume as usual. They also still change speech volume while a finger is on the screen, during continuous reading, and with the keyboard shortcut modifier. The setting is off by default.
+
 ## Backtalk menu
 
 ### Shorter menu by default

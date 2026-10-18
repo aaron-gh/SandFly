@@ -45,6 +45,11 @@
         android:defaultValue="@bool/pref_focus_new_windows_default"
         android:key="@string/pref_focus_new_windows_key"
         android:title="@string/title_pref_focus_new_windows" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_volume_keys_adjust_sliders_default"
+        android:key="@string/pref_volume_keys_adjust_sliders_key"
+        android:summary="@string/summary_pref_volume_keys_adjust_sliders"
+        android:title="@string/title_pref_volume_keys_adjust_sliders" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
         android:key="pref_speech_control_screen"
