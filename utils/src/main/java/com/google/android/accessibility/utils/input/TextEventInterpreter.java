@@ -993,10 +993,10 @@ public class TextEventInterpreter {
    * the space or punctuation mark that ends it, or null if the change ends no word.
    *
    * <p>The word runs back to the space before it, so punctuation inside it, as in "non-normal" or
-   * "don't", is part of it; opening brackets and quotes before it are left out. It is taken from
-   * the text after the change, not from the added text, so the whole word is read when a keyboard
-   * adds it all at once, or corrects it as the space is typed by replacing only the letters that
-   * changed.
+   * "don't", is part of it; opening brackets and double quotes before it are left out. It is taken
+   * from the text after the change, not from the added text, so the whole word is read when a
+   * keyboard adds it all at once, or corrects it as the space is typed by replacing only the
+   * letters that changed.
    *
    * <p>No word is read for a space that follows punctuation typed earlier, since the word was read
    * when the punctuation was typed, or when the change adds more than one word. A hyphen or
@@ -1061,8 +1061,12 @@ public class TextEventInterpreter {
       return null;
     }
     // Prevent one-character-word-echo feedback verbosity.
-    // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'.
-    if (wordLength == 1 && wordEnd == text.length() - 1 && !isCommonEndingSymbols(lastChar)) {
+    // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'. A word in brackets or
+    // quotes, such as "(a)", is still read.
+    if (wordLength == 1
+        && wordStart == firstChar
+        && wordEnd == text.length() - 1
+        && !isCommonEndingSymbols(lastChar)) {
       return null;
     }
     return new int[] {wordStart, wordEnd};
@@ -1086,10 +1090,10 @@ public class TextEventInterpreter {
 
   private static boolean isOpeningPunctuation(char ch) {
     int type = Character.getType(ch);
+    // Not an apostrophe, which can start a word, as in "'tis".
     return type == Character.START_PUNCTUATION
         || type == Character.INITIAL_QUOTE_PUNCTUATION
-        || ch == '"'
-        || ch == '\'';
+        || ch == '"';
   }
 
   /**

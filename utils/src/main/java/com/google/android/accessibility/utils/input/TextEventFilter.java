@@ -107,6 +107,7 @@ public class TextEventFilter {
 
   private final TextEventHistory textEventHistory;
   private long lastKeyEventTime = -1;
+  private boolean lastTextChangeEndedWord;
 
   @Nullable TextCursorTracker textCursorTracker;
 
@@ -210,13 +211,21 @@ public class TextEventFilter {
               && voiceRecognitionActive) {
             voiceDictationDelegate.onTextEventAndInterpretation(event, textEventInterpreted);
           }
-          // A change that ends a word is kept, so that the word is read even when a keyboard
-          // makes it straight after another change, as when correcting a word as a space is typed.
-          if (dropTextChangeEvent(event) && !endsWordToEcho(textEventInterpreted)) {
+          // A change that ends a word is kept even straight after another change, so that the
+          // word is read when a keyboard corrects it and then adds the space. It is dropped when
+          // the change before it ended a word too, as when an app sets the text again after it
+          // changes, so that the word isn't read twice.
+          boolean endsWord = endsWordToEcho(textEventInterpreted);
+          boolean tooSoon = dropTextChangeEvent(event);
+          if (tooSoon && (!endsWord || lastTextChangeEndedWord)) {
             return;
           }
-          // Update text change history.
-          textEventHistory.setTextChangesAwaitingSelection(1);
+          lastTextChangeEndedWord = endsWord;
+          // Update text change history. A change kept although it came too soon is already
+          // counted among the changes awaiting their selection events.
+          if (!tooSoon) {
+            textEventHistory.setTextChangesAwaitingSelection(1);
+          }
           textEventHistory.setLastTextChangeTime(event.getEventTime());
           textEventHistory.setLastTextChangePackageName(event.getPackageName());
           if (voiceRecognitionActive) {

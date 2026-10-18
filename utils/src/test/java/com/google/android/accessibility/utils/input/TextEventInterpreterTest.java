@@ -90,10 +90,11 @@ public class TextEventInterpreterTest {
   }
 
   @Test
-  public void openingBracketsAndQuotesAreLeftOut() {
+  public void openingBracketsAndDoubleQuotesAreLeftOut() {
     assertEquals("non-normal)", echoWord("(non-normal)", 11, ")"));
     assertEquals("hi ", echoWord("\"hi ", 3, " "));
-    assertEquals("n ", echoWord("rock 'n ", 7, " "));
+    assertEquals("'n ", echoWord("rock 'n ", 7, " "));
+    assertEquals("a)", echoWord("(a)", 2, ")"));
   }
 
   @Test
