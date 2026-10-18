@@ -20,6 +20,7 @@ import android.util.Log
 import android.view.MotionEvent
 import com.google.android.accessibility.talkback.BuildConfig
 import kotlin.math.abs
+import kotlin.math.hypot
 
 /**
  * Recognizes one finger sliding in from the top or bottom edge of the screen, as on iOS: up from
@@ -27,15 +28,18 @@ import kotlin.math.abs
  *
  * The touch must start within [edgeZonePx] of the edge and slide inward. Once it has slid
  * [stageDistancesPx]`[0]` inward, mostly straight, the slide takes over the touch and reaches its
- * first stage. The bottom edge has a second stage at [stageDistancesPx]`[1]`. Each stage reached
- * is reported to the listener as it happens, and the stage the finger is at when it lifts is the
- * gesture. Sliding back to the edge before lifting cancels it.
+ * first stage. The bottom edge has a second stage at [stageDistancesPx]`[1]`. Each change of stage,
+ * forward or back, is reported to the listener as it happens, and the stage the finger is at when
+ * it lifts is the gesture. Sliding back to the edge before lifting cancels it.
  *
  * A slide that takes too long to reach the first stage, or goes sideways or outward, is left to
  * the other gestures and touch exploration, and so is a slide from an edge that [isEdgeInUse]
- * turns down, such as one whose gestures do nothing. So is a touch that has not started sliding
- * inward by [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]),
- * and [rejectIfStalled] ends that wait when no further motion event comes.
+ * turns down, such as one whose gestures do nothing. So is a touch that has not moved at all by
+ * [STILL_MILLIS]. Touch exploration waits while a slide may still start ([isPossible]), and
+ * [rejectIfStalled] ends that wait when no further motion event comes.
+ *
+ * A finger that lands partly off the screen is reported at the screen's edge until enough of it is
+ * on the screen, so a slide can stay at the edge, drifting sideways, for its first 100 ms or so.
  */
 class EdgeSwipeTracker(
   private val edgeZonePx: Float,
@@ -58,8 +62,11 @@ class EdgeSwipeTracker(
     /** The slide took over the touch. No other gesture or touch exploration may use it. */
     fun onEdgeSwipeStarted(edge: Edge)
 
-    /** The slide reached a further stage, starting at 1. */
-    fun onEdgeSwipeStage(edge: Edge, stage: Int)
+    /**
+     * The slide moved from [previousStage] to [stage]. Stage 0 is back at the edge, where lifting
+     * cancels the slide.
+     */
+    fun onEdgeSwipeStage(edge: Edge, stage: Int, previousStage: Int)
 
     /** The finger lifted at [stage], or at 0 when it was slid back to the edge. */
     fun onEdgeSwipeEnded(edge: Edge, stage: Int)
@@ -84,8 +91,9 @@ class EdgeSwipeTracker(
   private var startY = 0f
   private var startTime = 0L
   private var inward = 0f
+  // Whether the finger has moved since it landed.
+  private var moved = false
   private var stage = 0
-  private var highestStage = 0
 
   /** Whether a slide owns the current touch. */
   val isActive: Boolean
@@ -100,8 +108,8 @@ class EdgeSwipeTracker(
     state = State.IDLE
     pointerId = INVALID_ID
     inward = 0f
+    moved = false
     stage = 0
-    highestStage = 0
   }
 
   /**
@@ -186,12 +194,11 @@ class EdgeSwipeTracker(
    * The time, in [MotionEvent.getEventTime] terms, at which [rejectIfStalled] rejects the touch if
    * it is still possible and has not moved on.
    */
-  fun stallTime(): Long =
-    startTime + if (inward < slopPx) STILL_MILLIS else MAX_START_MILLIS
+  fun stallTime(): Long = startTime + if (moved) MAX_START_MILLIS else STILL_MILLIS
 
   /**
-   * Rejects a possible slide that has not started sliding inward by [STILL_MILLIS], or not reached
-   * the first stage by [MAX_START_MILLIS], at [now].
+   * Rejects a possible slide that has not moved by [STILL_MILLIS], or not reached the first stage
+   * by [MAX_START_MILLIS], at [now].
    */
   fun rejectIfStalled(now: Long) {
     if (state != State.POSSIBLE) {
@@ -200,8 +207,8 @@ class EdgeSwipeTracker(
     if (now - startTime > MAX_START_MILLIS) {
       debugLog("rejected, too slow")
       state = State.REJECTED
-    } else if (now - startTime >= STILL_MILLIS && inward < slopPx) {
-      debugLog("rejected, not moving inward after ${now - startTime} ms, inward=${inward.toInt()}")
+    } else if (now - startTime >= STILL_MILLIS && !moved) {
+      debugLog("rejected, not moving after ${now - startTime} ms")
       state = State.REJECTED
     }
   }
@@ -217,7 +224,13 @@ class EdgeSwipeTracker(
     }
     inward = inward(event.getY(index))
     val sideways = abs(event.getX(index) - startX)
-    if (inward < -slopPx || (sideways > slopPx && sideways > inward * MAX_SIDEWAYS_RATIO)) {
+    if (hypot(inward, sideways) >= slopPx / STILL_SLOP_DIVISOR) {
+      moved = true
+    }
+    if (
+      inward < -slopPx ||
+        (sideways > slopPx * SIDEWAYS_SLOP_FACTOR && sideways > inward * MAX_SIDEWAYS_RATIO)
+    ) {
       debugLog(
         "rejected, not sliding inward: start=(${startX.toInt()},${startY.toInt()})" +
           " inward=${inward.toInt()} sideways=${sideways.toInt()} slop=${slopPx.toInt()}"
@@ -252,12 +265,9 @@ class EdgeSwipeTracker(
     if (reached == stage) {
       return
     }
+    val previous = stage
     stage = reached
-    // Each stage is felt once on the way in; coming back to a stage already felt is quiet.
-    if (stage > highestStage) {
-      highestStage = stage
-      listener.onEdgeSwipeStage(edge, stage)
-    }
+    listener.onEdgeSwipeStage(edge, stage, previous)
   }
 
   private fun debugLog(message: String) {
@@ -273,13 +283,22 @@ class EdgeSwipeTracker(
      * Time from the touch to the first stage, in milliseconds. A slower slide is left to touch
      * exploration.
      */
-    private const val MAX_START_MILLIS = 300L
+    private const val MAX_START_MILLIS = 500L
 
     /**
-     * Time, in milliseconds, by which a touch at an edge must have started sliding inward. A touch
-     * that stays put longer is touch exploration.
+     * Time, in milliseconds, by which a touch at an edge must have moved. A touch that stays put
+     * longer is touch exploration.
      */
-    private const val STILL_MILLIS = 100L
+    private const val STILL_MILLIS = 200L
+
+    /** A finger has moved once it is a third of the slop from where it landed. */
+    private const val STILL_SLOP_DIVISOR = 3f
+
+    /**
+     * How far a slide may move sideways, in slops, before its direction counts. While the finger is
+     * still reported at the edge, it can only move sideways.
+     */
+    private const val SIDEWAYS_SLOP_FACTOR = 3f
 
     /** How far a slide may move sideways for each pixel inward before the first stage. */
     private const val MAX_SIDEWAYS_RATIO = 1f

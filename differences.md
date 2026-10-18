@@ -315,12 +315,12 @@ The rotor requires Android 13 or later and **Handle gestures in Backtalk** turne
 
 ### Edge gestures and scrub
 
-As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge of the screen. Start at the very edge, on the gesture navigation bar or the status bar, and slide in quickly:
+As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge of the screen. Start at the very edge, on the gesture navigation bar or the status bar, and slide in:
 
-- Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about two more centimeters to feel a second click, and lift there for Overview (recent apps).
+- Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about four more centimeters to feel a second click, and lift there for Overview (recent apps).
 - Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click.
 
-Sliding back to the edge before you lift cancels the gesture. A slide that starts away from the edge, or that takes longer than about 0.3 seconds to reach the first click, is an ordinary swipe or touch exploration.
+Sliding back from the second click to the first vibrates once; sliding back to the edge vibrates twice, and lifting there cancels the gesture. A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
 To scrub, move two fingers quickly back and forth three times, as if drawing a Z, each stroke about a centimeter long. By default, this goes back.
 

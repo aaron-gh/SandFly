@@ -140,7 +140,7 @@ public class TouchInteractionMonitor
   private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
   // How far an edge gesture slides in to reach its first and second stage.
   private static final float EDGE_GESTURE_FIRST_STAGE_CM = 1f;
-  private static final float EDGE_GESTURE_SECOND_STAGE_CM = 3f;
+  private static final float EDGE_GESTURE_SECOND_STAGE_CM = 5f;
   // The length of each stroke of a two-finger scrub.
   private static final float SCRUB_STROKE_CM = 1f;
   // How far the fingers of a pinch or spread move toward or away from their middle, on average.
@@ -1322,15 +1322,19 @@ public class TouchInteractionMonitor
         }
 
         @Override
-        public void onEdgeSwipeStage(Edge edge, int stage) {
+        public void onEdgeSwipeStage(Edge edge, int stage, int previousStage) {
+          int pattern;
+          if (stage == 0) {
+            pattern = R.array.edge_swipe_cancel_pattern;
+          } else if (stage < previousStage) {
+            pattern = R.array.edge_swipe_back_pattern;
+          } else if (stage == 1) {
+            pattern = R.array.edge_swipe_stage_1_pattern;
+          } else {
+            pattern = R.array.edge_swipe_stage_2_pattern;
+          }
           try {
-            service
-                .getFeedbackController()
-                .playHaptic(
-                    stage == 1
-                        ? R.array.edge_swipe_stage_1_pattern
-                        : R.array.edge_swipe_stage_2_pattern,
-                    /* eventId= */ null);
+            service.getFeedbackController().playHaptic(pattern, /* eventId= */ null);
           } catch (IllegalStateException e) {
             // Feedback isn't set up yet.
           }
