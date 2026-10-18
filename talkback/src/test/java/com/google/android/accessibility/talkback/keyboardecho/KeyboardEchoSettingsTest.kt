@@ -128,4 +128,35 @@ class KeyboardEchoSettingsTest {
     assertEquals(PREF_ECHO_WORDS, read(TypingInput.PHYSICAL_KEYBOARD))
     assertEquals(PREF_ECHO_NONE, read(TypingInput.ON_SCREEN_KEYBOARD))
   }
+
+  @Test
+  fun cycleWrapsAroundTheChoicesInSettingsOrder() {
+    // The choices are None, Characters, Words, Characters and words.
+    assertEquals(
+      PREF_ECHO_NONE,
+      KeyboardEchoSettings.cycle(prefs, res, TypingInput.BRAILLE_DISPLAY, /* next= */ true),
+    )
+    assertEquals(
+      PREF_ECHO_CHARACTERS,
+      KeyboardEchoSettings.cycle(prefs, res, TypingInput.BRAILLE_DISPLAY, /* next= */ true),
+    )
+    assertEquals(
+      PREF_ECHO_NONE,
+      KeyboardEchoSettings.cycle(prefs, res, TypingInput.BRAILLE_DISPLAY, /* next= */ false),
+    )
+    assertEquals(
+      PREF_ECHO_CHARACTERS_AND_WORDS,
+      KeyboardEchoSettings.cycle(prefs, res, TypingInput.BRAILLE_DISPLAY, /* next= */ false),
+    )
+    assertEquals(PREF_ECHO_CHARACTERS_AND_WORDS, read(TypingInput.BRAILLE_DISPLAY))
+    assertEquals(PREF_ECHO_CHARACTERS_AND_WORDS, read(TypingInput.ON_SCREEN_KEYBOARD))
+  }
+
+  @Test
+  fun stateNamesTheSettingAndItsValue() {
+    assertEquals(
+      "Physical keyboard echo: Words",
+      KeyboardEchoSettings.state(res, TypingInput.PHYSICAL_KEYBOARD, PREF_ECHO_WORDS),
+    )
+  }
 }

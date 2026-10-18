@@ -53,6 +53,64 @@ object KeyboardEchoSettings {
     prefs.getString(key(res, input), null)?.toIntOrNull()
       ?: res.getString(R.string.pref_keyboard_echo_default).toInt()
 
+  /** Returns the name of the echo setting for [input], such as "Physical keyboard echo". */
+  @JvmStatic
+  fun title(res: Resources, input: TypingInput): String =
+    res.getString(
+      when (input) {
+        TypingInput.ON_SCREEN_KEYBOARD -> R.string.title_keyboard_echo_on_screen
+        TypingInput.PHYSICAL_KEYBOARD -> R.string.title_keyboard_echo_physical
+        TypingInput.BRAILLE_KEYBOARD -> R.string.title_keyboard_echo_braille_keyboard
+        TypingInput.BRAILLE_DISPLAY -> R.string.title_keyboard_echo_braille_display
+      }
+    )
+
+  /** Returns the echo choices, as [TextEventFilter.KeyboardEchoType] values, in settings order. */
+  @JvmStatic
+  fun choices(res: Resources): IntArray =
+    res.getStringArray(R.array.pref_keyboard_echo_values).map { it.toInt() }.toIntArray()
+
+  /** Returns the name of [echo], a [TextEventFilter.KeyboardEchoType], such as "Words". */
+  @JvmStatic
+  fun choiceName(res: Resources, @TextEventFilter.KeyboardEchoType echo: Int): String {
+    val index = choices(res).indexOf(echo).coerceAtLeast(0)
+    return res.getStringArray(R.array.pref_keyboard_echo_entries)[index]
+  }
+
+  /** Returns the setting's name and [echo]'s name, such as "Physical keyboard echo: Words". */
+  @JvmStatic
+  fun state(
+    res: Resources,
+    input: TypingInput,
+    @TextEventFilter.KeyboardEchoType echo: Int,
+  ): String =
+    res.getString(R.string.template_keyboard_echo_state, title(res, input), choiceName(res, echo))
+
+  /** Sets the echo for [input] to [echo], a [TextEventFilter.KeyboardEchoType]. */
+  @JvmStatic
+  fun write(
+    prefs: SharedPreferences,
+    res: Resources,
+    input: TypingInput,
+    @TextEventFilter.KeyboardEchoType echo: Int,
+  ) {
+    prefs.edit().putString(key(res, input), echo.toString()).apply()
+  }
+
+  /**
+   * Moves the echo for [input] to the next or previous choice, wrapping around, and returns the
+   * new echo.
+   */
+  @JvmStatic
+  @TextEventFilter.KeyboardEchoType
+  fun cycle(prefs: SharedPreferences, res: Resources, input: TypingInput, next: Boolean): Int {
+    val choices = choices(res)
+    val index = choices.indexOf(read(prefs, res, input)).coerceAtLeast(0)
+    val echo = choices[(index + if (next) 1 else choices.size - 1) % choices.size]
+    write(prefs, res, input, echo)
+    return echo
+  }
+
   /** Returns whether [echo], a [TextEventFilter.KeyboardEchoType], speaks each character typed. */
   @JvmStatic
   fun echoesCharacters(@TextEventFilter.KeyboardEchoType echo: Int): Boolean =

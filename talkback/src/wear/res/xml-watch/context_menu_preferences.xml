@@ -142,6 +142,11 @@
             android:summary="@string/summary_selector_menu_emoji"
             app:splitSummary="true" />
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_on_screen_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_on_screen" />
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_show_context_menu_voice_profile_default"
             android:key="@string/pref_show_context_menu_voice_profile_setting_key"
             android:order="15"
