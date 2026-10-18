@@ -264,6 +264,23 @@
     <string name="pref_volume_keys_adjust_sliders_key" translatable="false">pref_volume_keys_adjust_sliders_key</string>
     <string name="pref_speak_items_before_scroll_key" translatable="false">pref_speak_items_before_scroll_key</string>
     <string name="pref_first_item_interrupts_window_name_key" translatable="false">pref_first_item_interrupts_window_name_key</string>
+    <!-- Window names. Replaces the speak system window titles and first item interrupts window name
+         switches, which only the migration in WindowNamesSetting reads now. -->
+    <string name="pref_window_names_key" translatable="false">pref_window_names</string>
+    <string name="pref_window_names_default" translatable="false">always</string>
+    <string-array name="pref_window_names_entries">
+        <item>@string/window_names_always</item>
+        <item>@string/window_names_until_first_item</item>
+        <item>@string/window_names_window_opens</item>
+        <item>@string/window_names_never</item>
+    </string-array>
+    <!-- The values of WindowNamesSetting's constants. -->
+    <string-array name="pref_window_names_values" translatable="false">
+        <item>always</item>
+        <item>until_first_item</item>
+        <item>window_opens</item>
+        <item>never</item>
+    </string-array>
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
     <string-array name="pref_lift_to_activate_entries">

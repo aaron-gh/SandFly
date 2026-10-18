@@ -170,6 +170,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneti
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream.TouchInteractingIndicator;
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
+import com.google.android.accessibility.talkback.feedbackpolicy.WindowNamesSetting;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.flags.Flags;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
@@ -3061,6 +3062,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     VoiceProfileNames.saveNames(this, prefs);
     // Moves the keyboard echo out of the verbosity presets and the braille keyboard's settings.
     KeyboardEchoSettings.migrate(this, prefs);
+    // Combines the two window name switches into the Window names setting.
+    WindowNamesSetting.migrate(prefs, getResources());
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
@@ -3376,10 +3379,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       enableAnimation(!reduceDelayPref);
     }
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
-    ScreenFeedbackManager.setFirstItemInterruptsWindowName(
-        getBooleanPref(
-            R.string.pref_first_item_interrupts_window_name_key,
-            R.bool.pref_first_item_interrupts_window_name_default));
+    String windowNames = WindowNamesSetting.read(prefs, res);
+    ScreenFeedbackManager.setWindowNames(windowNames);
 
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
@@ -3745,14 +3746,10 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getBoolean(R.bool.pref_speak_roles_default));
       globalVariables.setSpeakRoles(speakRoles);
 
-      // Update preference: speak system window titles.
-      boolean speakWindowTitle =
-          VerbosityPreferences.getPreferenceValueBool(
-              prefs,
-              res,
-              res.getString(R.string.pref_speak_system_window_titles_key),
-              res.getBoolean(R.bool.pref_speak_system_window_titles_default));
-      globalVariables.setSpeakSystemWindowTitles(speakWindowTitle);
+      // Update preference: speak the window's name when focus moves into another window.
+      globalVariables.setSpeakWindowNamesOnFocusMove(
+          windowNames.equals(WindowNamesSetting.ALWAYS)
+              || windowNames.equals(WindowNamesSetting.UNTIL_FIRST_ITEM));
 
       // Update preference: limit frequent content change announcement.
       boolean rateLimitTextChange =

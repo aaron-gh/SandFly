@@ -114,19 +114,31 @@ public class ScreenFeedbackManager
   private long speechStoppedByKeyTime = 0;
 
   /**
-   * Set from the "Speak first item without waiting for window name" setting. When on, the
-   * window name interrupts speech that started before the window changed, and the first item
-   * focused in the new window interrupts the window name. Other window speech, such as volume
-   * and keyboard announcements, is not affected.
+   * Set from the Window names setting's "cut off by the first item" choice. When on, the window
+   * name interrupts speech that started before the window changed, and the first item focused in
+   * the new window interrupts the window name. Other window speech, such as volume and keyboard
+   * announcements, is not affected.
    */
   private static volatile boolean firstItemInterruptsWindowName;
 
-  public static void setFirstItemInterruptsWindowName(boolean interrupts) {
-    firstItemInterruptsWindowName = interrupts;
+  /**
+   * Cleared by the Window names setting's "Never" choice, which drops window names. The window
+   * sound and vibration still play.
+   */
+  private static volatile boolean windowNamesSpoken = true;
+
+  /** Sets the Window names setting, one of {@link WindowNamesSetting}'s constants. */
+  public static void setWindowNames(String windowNames) {
+    firstItemInterruptsWindowName = windowNames.equals(WindowNamesSetting.UNTIL_FIRST_ITEM);
+    windowNamesSpoken = !windowNames.equals(WindowNamesSetting.NEVER);
   }
 
   public static boolean firstItemInterruptsWindowName() {
     return firstItemInterruptsWindowName;
+  }
+
+  public static boolean windowNamesSpoken() {
+    return windowNamesSpoken;
   }
 
   public ScreenFeedbackManager(
@@ -255,7 +267,12 @@ public class ScreenFeedbackManager
     boolean sourceIsVolumeControl =
         (announcement != null) && announcement.isFromVolumeControlPanel();
     boolean firstPart = true;
+    boolean droppedWindowName = false;
     for (FeedbackPart feedbackPart : feedback.getParts()) {
+      if (!windowNamesSpoken && feedbackPart.isWindowName()) {
+        droppedWindowName = true;
+        continue;
+      }
       int queueMode =
           !(firstItemInterruptsWindowName && feedbackPart.isWindowName())
               ? SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH
@@ -272,6 +289,14 @@ public class ScreenFeedbackManager
           sourceIsVolumeControl,
           queueMode);
       firstPart = false;
+    }
+    // The window name was the only speech: still play the window sound and vibration.
+    if (droppedWindowName && firstPart) {
+      pipeline.returnFeedback(
+          eventId,
+          com.google.android.accessibility.talkback.Feedback.sound(
+                  com.google.android.accessibility.utils.R.raw.window_state)
+              .vibration(com.google.android.accessibility.utils.R.array.window_state_pattern));
     }
   }
 
