@@ -165,17 +165,6 @@
   <!-- Summary of the option that plays keyboard sounds while typing braille. [CHAR_LIMIT=150]-->
   <string name="summary_pref_typing_sounds">Play keyboard clicks when you type a character, a space, a new line, or delete</string>
 
-  <!-- Title of the option for what is spoken as the user types on the braille keyboard. [CHAR_LIMIT=60]-->
-  <string name="title_pref_braille_keyboard_echo">Keyboard echo</string>
-  <!-- Keyboard echo choice: speak nothing as the user types. [CHAR_LIMIT=40]-->
-  <string name="value_braille_keyboard_echo_none">None</string>
-  <!-- Keyboard echo choice: speak each character as it is typed. [CHAR_LIMIT=40]-->
-  <string name="value_braille_keyboard_echo_characters">Characters</string>
-  <!-- Keyboard echo choice: speak each word when it is finished. [CHAR_LIMIT=40]-->
-  <string name="value_braille_keyboard_echo_words">Words</string>
-  <!-- Keyboard echo choice: speak each character, and each word when it is finished. [CHAR_LIMIT=40]-->
-  <string name="value_braille_keyboard_echo_characters_and_words">Characters and words</string>
-
   <!-- Preferred braille grade summary while the contracted braille. [CHAR_LIMIT=45] -->
   <string name="bd_preference_braille_contracted">Contracted braille</string>
   <!-- Preferred braille grade summary while the Uncontracted braille. [CHAR_LIMIT=45] -->

@@ -126,6 +126,26 @@
             android:summary="@string/summary_selector_menu_emoji"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_on_screen_key"
+            android:title="@string/title_keyboard_echo_on_screen"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_physical_key"
+            android:title="@string/title_keyboard_echo_physical"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_braille_keyboard_key"
+            android:title="@string/title_keyboard_echo_braille_keyboard"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_braille_display_key"
+            android:title="@string/title_keyboard_echo_braille_display"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_text_formatting_inline_default"
             android:key="@string/pref_selector_text_formatting_inline_key"
             android:title="@string/title_switch_text_formatting"

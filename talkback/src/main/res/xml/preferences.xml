@@ -68,6 +68,10 @@
       android:title="@string/title_pref_category_typing_and_braille"
       app:allowDividerAbove="true" >
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
+        android:key="@string/pref_keyboard_echo_screen_key"
+        android:title="@string/title_pref_keyboard_echo" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.OnScreenKeyboardFragment"
         android:key="@string/pref_on_screen_keyboard_key"
         android:title="@string/title_pref_on_screen_keyboard" />

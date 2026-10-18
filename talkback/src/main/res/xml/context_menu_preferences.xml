@@ -151,6 +151,34 @@
             android:summary="@string/summary_selector_menu_emoji"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_on_screen_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_on_screen"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_physical_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_physical"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_braille_keyboard"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_braille_display_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_braille_display"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_voice_profile_default"
             android:key="@string/pref_show_context_menu_voice_profile_setting_key"
             android:order="15"

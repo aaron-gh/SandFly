@@ -99,6 +99,7 @@ import com.google.android.accessibility.talkback.focusmanagement.action.Navigati
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.gesture.GestureHints;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
@@ -116,6 +117,7 @@ import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
@@ -183,6 +185,22 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_emoji_key,
         R.string.selector_emoji,
         R.bool.pref_selector_emoji_default),
+    KEYBOARD_ECHO_ON_SCREEN(
+        R.string.pref_selector_keyboard_echo_on_screen_key,
+        R.string.selector_keyboard_echo_on_screen,
+        R.bool.pref_selector_keyboard_echo_default),
+    KEYBOARD_ECHO_PHYSICAL(
+        R.string.pref_selector_keyboard_echo_physical_key,
+        R.string.selector_keyboard_echo_physical,
+        R.bool.pref_selector_keyboard_echo_default),
+    KEYBOARD_ECHO_BRAILLE_KEYBOARD(
+        R.string.pref_selector_keyboard_echo_braille_keyboard_key,
+        R.string.selector_keyboard_echo_braille_keyboard,
+        R.bool.pref_selector_keyboard_echo_default),
+    KEYBOARD_ECHO_BRAILLE_DISPLAY(
+        R.string.pref_selector_keyboard_echo_braille_display_key,
+        R.string.selector_keyboard_echo_braille_display,
+        R.bool.pref_selector_keyboard_echo_default),
     GRANULARITY(
         R.string.pref_selector_granularity_key,
         R.string.selector_granularity,
@@ -632,6 +650,10 @@ public class SelectorController implements UserInputEventListener {
           Setting.VERBOSITY,
           Setting.PUNCTUATION,
           Setting.EMOJI,
+          Setting.KEYBOARD_ECHO_ON_SCREEN,
+          Setting.KEYBOARD_ECHO_PHYSICAL,
+          Setting.KEYBOARD_ECHO_BRAILLE_KEYBOARD,
+          Setting.KEYBOARD_ECHO_BRAILLE_DISPLAY,
           Setting.FORMATTING,
           Setting.LANGUAGE,
           // TODO Supports sound feedback and vibration feedback.
@@ -729,6 +751,9 @@ public class SelectorController implements UserInputEventListener {
     if (FormFactorUtils.isAndroidWear()) {
       hiddenSettingsBuilder.add(GRANULARITY_TYPO);
       hiddenSettingsBuilder.add(TABLET_HELD_UP_FACES_AWAY);
+      hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_PHYSICAL);
+      hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_KEYBOARD);
+      hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_DISPLAY);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
     }
@@ -928,6 +953,14 @@ public class SelectorController implements UserInputEventListener {
       }
       case EMOJI -> {
         actionDescription = context.getString(R.string.title_pref_emoji_speech);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case KEYBOARD_ECHO_ON_SCREEN,
+          KEYBOARD_ECHO_PHYSICAL,
+          KEYBOARD_ECHO_BRAILLE_KEYBOARD,
+          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
+        actionDescription =
+            KeyboardEchoSettings.title(context.getResources(), keyboardEchoInput(setting));
         hint = getAdjustSelectedSettingGestures();
       }
       case FORMATTING -> {
@@ -1451,7 +1484,11 @@ public class SelectorController implements UserInputEventListener {
       case SCROLLING_SEQUENTIAL -> {
         return true;
       }
-      case EMOJI -> {
+      case EMOJI,
+          KEYBOARD_ECHO_ON_SCREEN,
+          KEYBOARD_ECHO_PHYSICAL,
+          KEYBOARD_ECHO_BRAILLE_KEYBOARD,
+          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
         return true;
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
@@ -1744,6 +1781,13 @@ public class SelectorController implements UserInputEventListener {
       }
       case EMOJI -> {
         cycleEmojiSpeech(eventId, isNext);
+        return;
+      }
+      case KEYBOARD_ECHO_ON_SCREEN,
+          KEYBOARD_ECHO_PHYSICAL,
+          KEYBOARD_ECHO_BRAILLE_KEYBOARD,
+          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
+        cycleKeyboardEcho(eventId, keyboardEchoInput(currentSetting), isNext);
         return;
       }
       case FORMATTING -> {
@@ -2162,6 +2206,25 @@ public class SelectorController implements UserInputEventListener {
         context.getString(R.string.emoji_speech_state, entries[index]),
         getAdjustSelectedSettingGestures());
     showQuickMenuActionOverlay(eventId, entries[index]);
+  }
+
+  /** Returns the way of typing whose keyboard echo a keyboard echo reading control changes. */
+  private static TypingInput keyboardEchoInput(Setting setting) {
+    return switch (setting) {
+      case KEYBOARD_ECHO_PHYSICAL -> TypingInput.PHYSICAL_KEYBOARD;
+      case KEYBOARD_ECHO_BRAILLE_KEYBOARD -> TypingInput.BRAILLE_KEYBOARD;
+      case KEYBOARD_ECHO_BRAILLE_DISPLAY -> TypingInput.BRAILLE_DISPLAY;
+      default -> TypingInput.ON_SCREEN_KEYBOARD;
+    };
+  }
+
+  /** Moves the keyboard echo for {@code input} to the next or previous choice. */
+  private void cycleKeyboardEcho(EventId eventId, TypingInput input, boolean isNext) {
+    Resources res = context.getResources();
+    int echo = KeyboardEchoSettings.cycle(prefs, res, input, isNext);
+    announceSetting(
+        eventId, KeyboardEchoSettings.state(res, input, echo), getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, KeyboardEchoSettings.choiceName(res, echo));
   }
 
   /** Cycle the punctuation verbosity to the next value */

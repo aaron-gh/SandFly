@@ -21,6 +21,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.IntDef;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityEventCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
@@ -34,7 +35,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.OptionalInt;
+import java.util.EnumMap;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -76,21 +77,21 @@ public class TextEventFilter {
   @Retention(RetentionPolicy.SOURCE)
   public @interface KeyboardEchoType {}
 
-  @KeyboardEchoType private int onScreenKeyboardEcho = PREF_ECHO_CHARACTERS_AND_WORDS;
-  @KeyboardEchoType private int physicalKeyboardEcho = PREF_ECHO_CHARACTERS_AND_WORDS;
-
-  /** Reads the braille keyboard's own echo setting, which replaces the on-screen keyboard's. */
-  public interface BrailleKeyboardEchoReader {
-    /**
-     * Returns the braille keyboard's {@link KeyboardEchoType} while the user types on it, or empty
-     * when it is not the keyboard in use.
-     */
-    OptionalInt readBrailleKeyboardEcho();
+  /** The ways of typing that each have their own keyboard echo. */
+  public enum TypingInput {
+    ON_SCREEN_KEYBOARD,
+    PHYSICAL_KEYBOARD,
+    BRAILLE_KEYBOARD,
+    BRAILLE_DISPLAY
   }
 
-  private enum KeyboardType {
-    ON_SCREEN,
-    PHYSICAL
+  /** Tells whether the user is typing in braille. */
+  public interface BrailleInputReader {
+    /**
+     * Returns {@link TypingInput#BRAILLE_KEYBOARD} or {@link TypingInput#BRAILLE_DISPLAY} while the
+     * user types with it, or null.
+     */
+    @Nullable TypingInput readBrailleInput();
   }
 
   private static final int PHYSICAL_KEY_TIMEOUT = 100;
@@ -101,10 +102,12 @@ public class TextEventFilter {
   private final Context context;
   private @Nullable VoiceActionDelegate voiceActionDelegate;
   private @Nullable VoiceDictationDelegate voiceDictationDelegate;
-  private @Nullable BrailleKeyboardEchoReader brailleKeyboardEchoReader;
+  private @Nullable BrailleInputReader brailleInputReader;
+  private final EnumMap<TypingInput, Integer> keyboardEcho = new EnumMap<>(TypingInput.class);
 
   private final TextEventHistory textEventHistory;
   private long lastKeyEventTime = -1;
+  private boolean lastTextChangeEndedWord;
 
   @Nullable TextCursorTracker textCursorTracker;
 
@@ -133,16 +136,12 @@ public class TextEventFilter {
     voiceDictationDelegate = delegate;
   }
 
-  public void setOnScreenKeyboardEcho(@KeyboardEchoType int value) {
-    onScreenKeyboardEcho = value;
+  public void setKeyboardEcho(TypingInput input, @KeyboardEchoType int value) {
+    keyboardEcho.put(input, value);
   }
 
-  public void setPhysicalKeyboardEcho(@KeyboardEchoType int value) {
-    physicalKeyboardEcho = value;
-  }
-
-  public void setBrailleKeyboardEchoReader(@Nullable BrailleKeyboardEchoReader reader) {
-    brailleKeyboardEchoReader = reader;
+  public void setBrailleInputReader(@Nullable BrailleInputReader reader) {
+    brailleInputReader = reader;
   }
 
   public void setLastKeyEventTime(long time) {
@@ -212,11 +211,21 @@ public class TextEventFilter {
               && voiceRecognitionActive) {
             voiceDictationDelegate.onTextEventAndInterpretation(event, textEventInterpreted);
           }
-          if (dropTextChangeEvent(event)) {
+          // A change that ends a word is kept even straight after another change, so that the
+          // word is read when a keyboard corrects it and then adds the space. It is dropped when
+          // the change before it ended a word too, as when an app sets the text again after it
+          // changes, so that the word isn't read twice.
+          boolean endsWord = endsWordToEcho(textEventInterpreted);
+          boolean tooSoon = dropTextChangeEvent(event);
+          if (tooSoon && (!endsWord || lastTextChangeEndedWord)) {
             return;
           }
-          // Update text change history.
-          textEventHistory.setTextChangesAwaitingSelection(1);
+          lastTextChangeEndedWord = endsWord;
+          // Update text change history. A change kept although it came too soon is already
+          // counted among the changes awaiting their selection events.
+          if (!tooSoon) {
+            textEventHistory.setTextChangesAwaitingSelection(1);
+          }
           textEventHistory.setLastTextChangeTime(event.getEventTime());
           textEventHistory.setLastTextChangePackageName(event.getPackageName());
           if (voiceRecognitionActive) {
@@ -304,54 +313,38 @@ public class TextEventFilter {
     return false;
   }
 
-  private KeyboardType getKeyboardType(long textEventTime) {
+  private static boolean endsWordToEcho(@Nullable TextEventInterpretation interpretation) {
+    return interpretation != null && !TextUtils.isEmpty(interpretation.getInitialWord());
+  }
+
+  @VisibleForTesting
+  TypingInput getTypingInput(long textEventTime) {
     if (textEventTime - lastKeyEventTime < PHYSICAL_KEY_TIMEOUT) {
-      return KeyboardType.PHYSICAL;
-    } else {
-      return KeyboardType.ON_SCREEN;
+      return TypingInput.PHYSICAL_KEYBOARD;
     }
+    if (brailleInputReader != null) {
+      @Nullable TypingInput brailleInput = brailleInputReader.readBrailleInput();
+      if (brailleInput != null) {
+        return brailleInput;
+      }
+    }
+    return TypingInput.ON_SCREEN_KEYBOARD;
+  }
+
+  @KeyboardEchoType
+  private int readKeyboardEcho(long textEventTime) {
+    Integer echo = keyboardEcho.get(getTypingInput(textEventTime));
+    return echo == null ? PREF_ECHO_CHARACTERS_AND_WORDS : echo;
   }
 
   public boolean shouldEchoAddedText(long eventTime) {
-    return shouldEchoAddedText(getKeyboardType(eventTime));
-  }
-
-  private boolean shouldEchoAddedText(/* int changeType, */ KeyboardType keyboardType) {
-    if (keyboardType == KeyboardType.PHYSICAL) {
-      return physicalKeyboardEcho == PREF_ECHO_CHARACTERS
-          || physicalKeyboardEcho == PREF_ECHO_CHARACTERS_AND_WORDS;
-    } else if (keyboardType == KeyboardType.ON_SCREEN) {
-      int echo = readOnScreenEcho();
-      return echo == PREF_ECHO_CHARACTERS || echo == PREF_ECHO_CHARACTERS_AND_WORDS;
-    }
-    return false;
+    int echo = readKeyboardEcho(eventTime);
+    return echo == PREF_ECHO_CHARACTERS || echo == PREF_ECHO_CHARACTERS_AND_WORDS;
   }
 
   public boolean shouldEchoInitialWords(long eventTime) {
-    return shouldEchoInitialWords(getKeyboardType(eventTime));
-  }
-
-  private boolean shouldEchoInitialWords(/* int changeType, */ KeyboardType keyboardType) {
-    if (keyboardType == KeyboardType.PHYSICAL) {
-      return physicalKeyboardEcho == PREF_ECHO_WORDS
-          || physicalKeyboardEcho == PREF_ECHO_CHARACTERS_AND_WORDS;
-    } else if (keyboardType == KeyboardType.ON_SCREEN) {
-      int echo = readOnScreenEcho();
-      return echo == PREF_ECHO_WORDS || echo == PREF_ECHO_CHARACTERS_AND_WORDS;
-    }
-    return false;
-  }
-
-  /** Returns the braille keyboard's echo while it is in use, or else the on-screen keyboard's. */
-  @KeyboardEchoType
-  private int readOnScreenEcho() {
-    if (brailleKeyboardEchoReader != null) {
-      OptionalInt brailleEcho = brailleKeyboardEchoReader.readBrailleKeyboardEcho();
-      if (brailleEcho.isPresent()) {
-        return brailleEcho.getAsInt();
-      }
-    }
-    return onScreenKeyboardEcho;
+    int echo = readKeyboardEcho(eventTime);
+    return echo == PREF_ECHO_WORDS || echo == PREF_ECHO_CHARACTERS_AND_WORDS;
   }
 
   private boolean shouldSkipCursorMovementEvent(AccessibilityEvent event) {

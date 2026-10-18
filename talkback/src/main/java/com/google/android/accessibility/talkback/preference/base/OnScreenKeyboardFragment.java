@@ -48,7 +48,6 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
                   R.string.pref_verbosity_preset_key,
                   R.string.pref_verbosity_preset_value_default);
           updateSpeakPhoneticLetters(verbosityValue);
-          updateOnScreenKeyboardEchoPref(verbosityValue);
         }
       };
 
@@ -112,7 +111,6 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
             R.string.pref_verbosity_preset_key,
             R.string.pref_verbosity_preset_value_default);
     updateSpeakPhoneticLetters(verbosityValue);
-    updateOnScreenKeyboardEchoPref(verbosityValue);
     prefs.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
   }
 
@@ -137,26 +135,6 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
     }
 
     preference.setValue(PhoneticLetterMode.read(prefs, getResources()));
-    // Disable default verbosity preference details if it is high or low.
-    preference.setEnabled(!VerbosityPreferences.isVerbosityValueHighOrLow(verbosityValue, context));
-  }
-
-  private void updateOnScreenKeyboardEchoPref(String verbosityValue) {
-    // Use verbosity prefix to keep settings consistent with Verbosity settings.
-    String verbosityPrefKey =
-        VerbosityPreferences.toVerbosityPrefKey(
-            verbosityValue, getString(R.string.pref_keyboard_echo_on_screen_key));
-    ListPreference preference = findPreference(verbosityPrefKey);
-    if (preference == null) {
-      preference = findPreference(getString(R.string.pref_keyboard_echo_on_screen_key));
-      if (preference == null) {
-        return;
-      }
-      preference.setKey(verbosityPrefKey);
-    }
-
-    int onScreenKeyboardPref = VerbosityPreferences.readOnScreenKeyboardEcho(prefs, getResources());
-    preference.setValue(String.valueOf(onScreenKeyboardPref));
     // Disable default verbosity preference details if it is high or low.
     preference.setEnabled(!VerbosityPreferences.isVerbosityValueHighOrLow(verbosityValue, context));
   }

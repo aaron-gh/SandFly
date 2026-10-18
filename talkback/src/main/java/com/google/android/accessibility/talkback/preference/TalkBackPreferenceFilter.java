@@ -237,7 +237,29 @@ public class TalkBackPreferenceFilter {
     GESTURE_HANDLING(R.string.pref_talkback_gesture_detection_key, HIDDEN_ON_TV),
     EXPLORE_BY_TOUCH(R.string.pref_explore_by_touch_reflect_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     // Gesture/Verbosity Settings.
-    CONFIG_PHYSICAL_KEYBOARD_ECHO(R.string.pref_keyboard_echo_physical_key, HIDDEN_ON_WATCH),
+    CONFIG_PHYSICAL_KEYBOARD_ECHO(R.string.pref_echo_physical_keyboard_key, HIDDEN_ON_WATCH),
+    BRAILLE_KEYBOARD_ECHO(
+        R.string.pref_echo_braille_keyboard_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_KEYBOARD | HIDDEN_ON_XR),
+    BRAILLE_DISPLAY_ECHO(
+        R.string.pref_echo_braille_display_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
+    SELECTOR_PHYSICAL_KEYBOARD_ECHO(
+        R.string.pref_selector_keyboard_echo_physical_key, HIDDEN_ON_WATCH),
+    SELECTOR_BRAILLE_KEYBOARD_ECHO(
+        R.string.pref_selector_keyboard_echo_braille_keyboard_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_KEYBOARD | HIDDEN_ON_XR),
+    SELECTOR_BRAILLE_DISPLAY_ECHO(
+        R.string.pref_selector_keyboard_echo_braille_display_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
+    MENU_PHYSICAL_KEYBOARD_ECHO(
+        R.string.pref_show_context_menu_keyboard_echo_physical_setting_key, HIDDEN_ON_WATCH),
+    MENU_BRAILLE_KEYBOARD_ECHO(
+        R.string.pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_KEYBOARD | HIDDEN_ON_XR),
+    MENU_BRAILLE_DISPLAY_ECHO(
+        R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
     INTERRUPT_TYPING(R.string.pref_interrupt_typing_key, HIDDEN_ON_WATCH),
     INTERRUPT_ENTER(R.string.pref_interrupt_enter_key, HIDDEN_ON_WATCH),
     LIMIT_FREQUENT_CONTENT_CHANGE_ANNOUNCEMENT(
