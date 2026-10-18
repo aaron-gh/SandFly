@@ -63,7 +63,7 @@ import org.robolectric.shadows.ShadowLooper
  * two-finger scrub and pinches and spreads, through the monitor, with Android's own
  * TouchInteractionController passing it the touch, as TouchInteractionMonitorTest does. The screen
  * is 320 by 470 pixels at 160 dpi, so a centimeter is 63 pixels: edge gestures start within 31
- * pixels of the edge, and reach their stages 63 and 189 pixels in.
+ * pixels of the edge, and reach their stages 63 and 315 pixels in.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34], qualifiers = "w320dp-h470dp-mdpi")
@@ -204,8 +204,8 @@ class TrackedGestureTest {
   }
 
   /**
-   * One finger rests at ([x], [fromY]) for [restMs], then slides to each y in [toY] in turn, in 8
-   * steps of [stepMs] each, and lifts.
+   * One finger rests at ([x], [fromY]) for [restMs], moving [driftX] pixels sideways meanwhile,
+   * then slides to each y in [toY] in turn, in 8 steps of [stepMs] each, and lifts.
    */
   private fun slide(
     x: Float,
@@ -213,14 +213,18 @@ class TrackedGestureTest {
     vararg toY: Float,
     stepMs: Long = 10,
     restMs: Long = 0,
+    driftX: Float = 0f,
   ) {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     touchAt(ACTION_DOWN, 0, x, fromY)
     var time = 0L
     var y = fromY
+    var currentX = x
+    val restSteps = restMs / 10
     while (time + 10 <= restMs) {
       time += 10
-      touchAt(ACTION_MOVE, time, x, y)
+      currentX += driftX / restSteps
+      touchAt(ACTION_MOVE, time, currentX, y)
     }
     for (target in toY) {
       val steps = 8
@@ -228,11 +232,11 @@ class TrackedGestureTest {
       repeat(steps) {
         time += stepMs
         y += stepY
-        touchAt(ACTION_MOVE, time, x, y)
+        touchAt(ACTION_MOVE, time, currentX, y)
       }
     }
     time += 10
-    touchAt(ACTION_UP, time, x, y)
+    touchAt(ACTION_UP, time, currentX, y)
     runUntil(time + 500)
   }
 
@@ -250,20 +254,27 @@ class TrackedGestureTest {
   }
 
   @Test
+  fun driftingSidewaysAtTheEdgeBeforeSlidingIsAnEdgeGesture() {
+    // A finger that lands partly off the screen is reported at the edge until enough of it is on.
+    slide(160f, 465f, 380f, restMs = 120, driftX = -15f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
   fun restingAtTheEdgeBeforeSlidingIsNotAnEdgeGesture() {
-    slide(160f, 465f, 380f, restMs = 150)
+    slide(160f, 465f, 380f, restMs = 250)
     assertEquals(false, service.gestures.contains(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM))
   }
 
   @Test
   fun longSwipeUpFromTheBottomEdgeIsTheSecondStage() {
-    slide(160f, 465f, 250f)
+    slide(160f, 465f, 130f)
     assertEquals(listOf(GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM), service.gestures)
   }
 
   @Test
   fun slidingBackToTheSecondStageAndLiftingIsTheFirstStage() {
-    slide(160f, 465f, 250f, 380f)
+    slide(160f, 465f, 130f, 380f)
     assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
   }
 

@@ -994,4 +994,52 @@
         <item>25</item><!-- delayMs -->
     </integer-array>
 
+    <!-- A swipe up from the bottom edge slides back from its second stage to its first: one falling
+         swell. -->
+    <integer-array name="edge_swipe_back_pattern">
+        <item>0</item>
+        <item>45</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>150</item>
+        <item>8</item>
+        <item>110</item>
+        <item>8</item>
+        <item>70</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>6</item><!-- QUICK_FALL -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- An edge swipe slides back to the edge, where lifting does nothing: two falling swells. -->
+    <integer-array name="edge_swipe_cancel_pattern">
+        <item>0</item>
+        <item>45</item>
+        <item>50</item>
+        <item>45</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>150</item>
+        <item>8</item>
+        <item>110</item>
+        <item>8</item>
+        <item>70</item>
+        <item>50</item>
+        <item>0</item>
+        <item>8</item>
+        <item>150</item>
+        <item>8</item>
+        <item>110</item>
+        <item>8</item>
+        <item>70</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>6</item><!-- QUICK_FALL -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>6</item><!-- QUICK_FALL -->
+        <item>255</item><!-- scale -->
+        <item>50</item><!-- delayMs -->
+    </integer-array>
+
 </resources>
