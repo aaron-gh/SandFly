@@ -125,7 +125,6 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.OptionalInt;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -281,9 +280,6 @@ public class BrailleIme extends InputMethodService {
     if (talkBackForBrailleIme != null) {
       talkBackForBrailleIme.setBrailleImeForTalkBack(
           instance == null ? null : instance.brailleImeForTalkBack);
-      // Start the braille keyboard's echo from what the user chose for the on-screen keyboard.
-      BrailleUserPreferences.writeKeyboardEchoIfUnset(
-          context, talkBackForBrailleIme.getOnScreenKeyboardEcho());
     }
     if (instance != null && talkBackForBrailleCommon != null) {
       instance.feedbackManager =
@@ -1135,10 +1131,13 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
-        public OptionalInt getOnScreenKeyboardEcho() {
-          return isInputViewShown() && !brailleDisplayConnectedAndNotSuspended
-              ? OptionalInt.of(BrailleUserPreferences.readKeyboardEcho(BrailleIme.this))
-              : OptionalInt.empty();
+        public BrailleTyping getBrailleTyping() {
+          if (!isInputViewShown()) {
+            return BrailleTyping.NONE;
+          }
+          return brailleDisplayConnectedAndNotSuspended
+              ? BrailleTyping.BRAILLE_DISPLAY
+              : BrailleTyping.ON_SCREEN;
         }
       };
 
@@ -1759,11 +1758,9 @@ public class BrailleIme extends InputMethodService {
 
   private ImeConnection getImeConnection() {
     AnnounceType announceType = SILENCE;
-    boolean shouldAnnounceCharacter =
-        brailleDisplayForBrailleIme.isBrailleDisplayConnectedAndNotSuspended()
-            ? talkBackForBrailleIme.shouldAnnounceCharacterForPhysicalKeyboard()
-            : BrailleUserPreferences.readKeyboardEchoCharacters(this);
-    if (talkBackForBrailleIme != null && shouldAnnounceCharacter) {
+    if (talkBackForBrailleIme != null
+        && talkBackForBrailleIme.shouldEchoBrailleCharacters(
+            brailleDisplayForBrailleIme.isBrailleDisplayConnectedAndNotSuspended())) {
       announceType = NORMAL;
     }
     return new ImeConnection(

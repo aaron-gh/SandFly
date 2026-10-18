@@ -17,8 +17,6 @@
 package com.google.android.accessibility.braille.common;
 
 import static com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code.KOREAN_2006;
-import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_CHARACTERS;
-import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS;
 import static java.lang.Math.min;
 
 import android.content.Context;
@@ -37,7 +35,6 @@ import com.google.android.accessibility.braille.translate.TranslationResultCusto
 import com.google.android.accessibility.braille.translate.TranslatorFactory;
 import com.google.android.accessibility.braille.translate.liblouis.LibLouis;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.accessibility.utils.input.TextEventFilter.KeyboardEchoType;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.primitives.Ints;
@@ -75,7 +72,6 @@ public class BrailleUserPreferences {
   private static final boolean FLIP_DOTS_VERTICALLY_DEFAULT = false;
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
-  private static final int KEYBOARD_ECHO_DEFAULT = PREF_ECHO_CHARACTERS_AND_WORDS;
   private static final boolean LAUNCH_TUTORIAL_DEFAULT = true;
   private static final int EXIT_KEYBOARD_DEFAULT = 0;
   private static final int SHOW_OPTION_DIALOG_DEFAULT = 0;
@@ -359,37 +355,6 @@ public class BrailleUserPreferences {
         .putBoolean(
             context.getString(R.string.pref_brailleime_tablet_held_up_faces_away), facesAway)
         .apply();
-  }
-
-  /** Reads what the on-screen braille keyboard speaks as the user types. */
-  @KeyboardEchoType
-  public static int readKeyboardEcho(Context context) {
-    String echo =
-        getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
-            .getString(context.getString(R.string.pref_brailleime_keyboard_echo), null);
-    if (echo == null) {
-      return KEYBOARD_ECHO_DEFAULT;
-    }
-    try {
-      return Integer.parseInt(echo);
-    } catch (NumberFormatException e) {
-      return KEYBOARD_ECHO_DEFAULT;
-    }
-  }
-
-  /** Writes the keyboard echo if the user has not had one yet, keeping any they have. */
-  public static void writeKeyboardEchoIfUnset(Context context, @KeyboardEchoType int echo) {
-    SharedPreferences prefs = getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME);
-    String key = context.getString(R.string.pref_brailleime_keyboard_echo);
-    if (!prefs.contains(key)) {
-      prefs.edit().putString(key, String.valueOf(echo)).apply();
-    }
-  }
-
-  /** Returns whether the on-screen braille keyboard speaks each character typed. */
-  public static boolean readKeyboardEchoCharacters(Context context) {
-    int echo = readKeyboardEcho(context);
-    return echo == PREF_ECHO_CHARACTERS || echo == PREF_ECHO_CHARACTERS_AND_WORDS;
   }
 
   /** Reads layout mode. */

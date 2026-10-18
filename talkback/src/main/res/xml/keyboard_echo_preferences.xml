@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_keyboard_echo_default"
+      android:entries="@array/pref_keyboard_echo_entries"
+      android:entryValues="@array/pref_keyboard_echo_values"
+      android:key="@string/pref_echo_on_screen_keyboard_key"
+      android:summary="%s"
+      android:title="@string/title_pref_on_screen_keyboard" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_keyboard_echo_default"
+      android:entries="@array/pref_keyboard_echo_entries"
+      android:entryValues="@array/pref_keyboard_echo_values"
+      android:key="@string/pref_echo_physical_keyboard_key"
+      android:summary="%s"
+      android:title="@string/title_pref_physical_keyboard" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_keyboard_echo_default"
+      android:entries="@array/pref_keyboard_echo_entries"
+      android:entryValues="@array/pref_keyboard_echo_values"
+      android:key="@string/pref_echo_braille_keyboard_key"
+      android:summary="%s"
+      android:title="@string/title_pref_brailleime" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_keyboard_echo_default"
+      android:entries="@array/pref_keyboard_echo_entries"
+      android:entryValues="@array/pref_keyboard_echo_values"
+      android:key="@string/pref_echo_braille_display_key"
+      android:summary="%s"
+      android:title="@string/title_pref_brailledisplay" />
+</PreferenceScreen>

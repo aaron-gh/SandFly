@@ -206,6 +206,7 @@ import com.google.android.accessibility.talkback.ipc.IpcService;
 import com.google.android.accessibility.talkback.ipc.IpcService.IpcClientCallback;
 import com.google.android.accessibility.talkback.ipc.IpcService.ServerOnDestroyListener;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
 import com.google.android.accessibility.talkback.labeling.StoragelessLabelManager;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
@@ -281,6 +282,7 @@ import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import com.google.android.accessibility.utils.input.SelectionEventInterpreter;
 import com.google.android.accessibility.utils.input.TextCursorTracker;
 import com.google.android.accessibility.utils.input.TextEventFilter;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.input.TextEventHistory;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.accessibility.utils.input.WindowEventInterpreter;
@@ -326,7 +328,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
-import java.util.OptionalInt;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
@@ -2580,10 +2581,17 @@ public class TalkBackService extends AccessibilityServiceCompat
     final TextEventHistory textEventHistory = new TextEventHistory();
     final TextEventFilter textEventFilter =
         new TextEventFilter(this, textCursorTracker, textEventHistory);
-    textEventFilter.setBrailleKeyboardEchoReader(
+    textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
-          return brailleIme == null ? OptionalInt.empty() : brailleIme.getOnScreenKeyboardEcho();
+          if (brailleIme == null) {
+            return null;
+          }
+          return switch (brailleIme.getBrailleTyping()) {
+            case ON_SCREEN -> TypingInput.BRAILLE_KEYBOARD;
+            case BRAILLE_DISPLAY -> TypingInput.BRAILLE_DISPLAY;
+            case NONE -> null;
+          };
         });
     textEventInterpreter =
         new TextEventInterpreter(
@@ -3019,6 +3027,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Gives a name of its own to any voice profile that a damaged setting left without one, before
     // anything says it.
     VoiceProfileNames.saveNames(this, prefs);
+    // Moves the keyboard echo out of the verbosity presets and the braille keyboard's settings.
+    KeyboardEchoSettings.migrate(this, prefs);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
@@ -3545,12 +3555,10 @@ public class TalkBackService extends AccessibilityServiceCompat
             : SharedPreferencesUtils.getFloatFromStringPref(
                 prefs, res, R.string.pref_speech_rate_key, R.string.pref_speech_rate_default);
     pipeline.setSpeechRate(speechRate);
-    int onScreenKeyboardPref = VerbosityPreferences.readOnScreenKeyboardEcho(prefs, getResources());
-    textEventInterpreter.setOnScreenKeyboardEcho(onScreenKeyboardPref);
-
-    int physicalKeyboardPref = VerbosityPreferences.readPhysicalKeyboardEcho(prefs, getResources());
-    textEventInterpreter.setPhysicalKeyboardEcho(physicalKeyboardPref);
-    physicalKeyboardEcho = physicalKeyboardPref;
+    for (TypingInput input : TypingInput.values()) {
+      textEventInterpreter.setKeyboardEcho(input, KeyboardEchoSettings.read(prefs, res, input));
+    }
+    physicalKeyboardEcho = KeyboardEchoSettings.read(prefs, res, TypingInput.PHYSICAL_KEYBOARD);
     String typingValue =
         SharedPreferencesUtils.getStringPref(
             prefs, res, R.string.pref_interrupt_typing_key, R.string.pref_interrupt_typing_default);

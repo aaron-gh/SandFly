@@ -83,26 +83,6 @@
         android:title="@string/title_pref_phonetic_letters"
         app:splitSummary="true" />
 
-    <!-- On-screen Keyboard echo -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_keyboard_echo_default"
-        android:dialogTitle="@string/title_pref_keyboard_echo_on_screen"
-        android:entries="@array/pref_keyboard_echo_entries"
-        android:entryValues="@array/pref_keyboard_echo_values"
-        android:key="@string/pref_keyboard_echo_on_screen_key"
-        android:summary="%s"
-        android:title="@string/title_pref_keyboard_echo_on_screen" />
-
-    <!-- Physical Keyboard echo -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_keyboard_echo_default"
-        android:dialogTitle="@string/title_pref_keyboard_echo_physical"
-        android:entries="@array/pref_keyboard_echo_entries"
-        android:entryValues="@array/pref_keyboard_echo_values"
-        android:key="@string/pref_keyboard_echo_physical_key"
-        android:summary="%s"
-        android:title="@string/title_pref_keyboard_echo_physical" />
-
     <!-- Capital letter -->
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_capital_letters_default"

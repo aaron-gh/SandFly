@@ -40,6 +40,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.input.GranularityIterator.TextSegmentIterator;
 import com.google.android.accessibility.utils.input.TextEventFilter.KeyboardEchoType;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
 import com.google.android.accessibility.utils.output.ActorStateProvider;
@@ -174,12 +175,8 @@ public class TextEventInterpreter {
     filter.addListener(listener);
   }
 
-  public void setOnScreenKeyboardEcho(@KeyboardEchoType int value) {
-    filter.setOnScreenKeyboardEcho(value);
-  }
-
-  public void setPhysicalKeyboardEcho(@KeyboardEchoType int value) {
-    filter.setPhysicalKeyboardEcho(value);
+  public void setKeyboardEcho(TypingInput input, @KeyboardEchoType int value) {
+    filter.setKeyboardEcho(input, value);
   }
 
   public void setLastKeyEventTime(long time) {
@@ -939,9 +936,16 @@ public class TextEventInterpreter {
     return PUNCTUATION_PATTERN.matcher(Character.toString(ch)).matches();
   }
 
-  /** Returns whether typing {@code ch} can make keyboard echo speak the word before it. */
+  /**
+   * Returns whether typing {@code ch} can make keyboard echo speak the word before it. A hyphen or
+   * apostrophe does not, since it is often inside a word, as in "non-normal" or "don't".
+   */
   public static boolean endsWordForEcho(char ch) {
-    return isWhiteSpace(ch) || isPunctuation(ch);
+    return isWhiteSpace(ch) || (isPunctuation(ch) && !isWordJoiner(ch));
+  }
+
+  private static boolean isWordJoiner(char ch) {
+    return ch == '-' || ch == '\'';
   }
 
   private boolean appendLastWordIfNeeded(
@@ -952,54 +956,95 @@ public class TextEventInterpreter {
     }
     final CharSequence text = getEventText(event);
     final CharSequence addedText = getAddedText(event);
-    int fromIndex = event.getFromIndex();
-    if (addedText == null || addedText.length() == 0) {
+    if (addedText == null) {
       return false;
     }
-    final int wordEnd = getWordEchoEnd(addedText);
-    char lastChar = addedText.charAt(wordEnd);
-    // Echo word only occurs when the added character is either a space or a punctuation symbol.
-    if (!endsWordForEcho(lastChar)) {
+    int[] range = getEchoWordRange(text, event.getFromIndex(), addedText);
+    if (range == null) {
       return false;
     }
-
-    final int newToIndex = fromIndex + wordEnd;
-    final int newFromIndex = getPrecedingWhitespaceOrPunctuation(text, newToIndex);
-    // Echo the last char even if it is a punctuation symbol.
-    final CharSequence word = text.subSequence(newFromIndex, newToIndex + 1);
-
-    // Did the user just type a word?
-    if (TextUtils.getTrimmedLength(word) == 0) {
-      return false;
-    }
-
-    if (newFromIndex >= fromIndex) {
-      // Only when newFromIndex greater than fromIndex has possible contains more than 1 word.
-      CharSequence addedTextWithoutLastWord = text.subSequence(fromIndex, newFromIndex);
-      if (getPrecedingWhitespaceOrPunctuation(addedTextWithoutLastWord, newFromIndex) != 0) {
-        // Added text contains more than 1 word.
-        return false;
-      }
-    }
-    if (word.length() == 2) {
-      // Prevent one-character-word-echo feedback verbosity.
-      // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'.
-      CharSequence charSequence = text.subSequence(text.length() - 2, text.length());
-      if (TextUtils.equals(charSequence, word)
-          && !isCommonEndingSymbols(word.charAt(word.length() - 1))) {
-        return false;
-      }
-    }
-
+    int wordStart = range[0];
+    int wordEnd = range[1];
+    char lastChar = text.charAt(wordEnd);
     String charName = SpeechCleanupUtils.characterToName(mContext, lastChar);
     if (charName == null) {
-      interpretation.setInitialWord(word);
+      interpretation.setInitialWord(text.subSequence(wordStart, wordEnd + 1));
     } else {
       // Announce character name(punctuation and symbol) for the last character.
-      String echoWord = text.subSequence(newFromIndex, newToIndex) + " " + charName;
+      String echoWord = text.subSequence(wordStart, wordEnd) + " " + charName;
       interpretation.setInitialWord(echoWord);
     }
     return true;
+  }
+
+  /**
+   * Returns the word that a text change ends, as the index of its first character and the index of
+   * the space or punctuation mark that ends it, or null if the change ends no word.
+   *
+   * <p>The word runs back to the space before it, so punctuation inside it, as in "non-normal" or
+   * "don't", is part of it; opening brackets and quotes before it are left out. It is taken from
+   * the text after the change, not from the added text, so the whole word is read when a keyboard
+   * adds it all at once, or corrects it as the space is typed by replacing only the letters that
+   * changed.
+   *
+   * <p>No word is read for a space that follows punctuation typed earlier, since the word was read
+   * when the punctuation was typed, or when the change adds more than one word. A hyphen or
+   * apostrophe ends no word, so the whole word is read when the space after it is typed.
+   */
+  @VisibleForTesting
+  static int @Nullable [] getEchoWordRange(
+      CharSequence text, int fromIndex, CharSequence addedText) {
+    if (addedText.length() == 0 || fromIndex < 0) {
+      return null;
+    }
+    final int wordEnd = fromIndex + getWordEchoEnd(addedText);
+    if (wordEnd >= text.length()) {
+      return null;
+    }
+    char lastChar = text.charAt(wordEnd);
+    // Echo word only occurs when the added character is either a space or a punctuation symbol.
+    if (!endsWordForEcho(lastChar)) {
+      return null;
+    }
+    if (isWhiteSpace(lastChar)
+        && wordEnd > 0
+        && wordEnd - 1 < fromIndex
+        && endsWordForEcho(text.charAt(wordEnd - 1))) {
+      return null;
+    }
+
+    int wordStart = wordEnd;
+    while (wordStart > 0 && !isWhiteSpace(text.charAt(wordStart - 1))) {
+      wordStart--;
+    }
+    for (int i = fromIndex; i < wordStart; i++) {
+      if (!isWhiteSpace(text.charAt(i))) {
+        // Added text contains more than 1 word.
+        return null;
+      }
+    }
+    while (wordStart < wordEnd && isOpeningPunctuation(text.charAt(wordStart))) {
+      wordStart++;
+    }
+
+    int wordLength = wordEnd - wordStart;
+    if (wordLength == 0 && isWhiteSpace(lastChar)) {
+      return null;
+    }
+    // Prevent one-character-word-echo feedback verbosity.
+    // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'.
+    if (wordLength == 1 && wordEnd == text.length() - 1 && !isCommonEndingSymbols(lastChar)) {
+      return null;
+    }
+    return new int[] {wordStart, wordEnd};
+  }
+
+  private static boolean isOpeningPunctuation(char ch) {
+    int type = Character.getType(ch);
+    return type == Character.START_PUNCTUATION
+        || type == Character.INITIAL_QUOTE_PUNCTUATION
+        || ch == '"'
+        || ch == '\'';
   }
 
   /**
@@ -1013,7 +1058,8 @@ public class TextEventInterpreter {
     int last = addedText.length() - 1;
     if (last > 0
         && isWhiteSpace(addedText.charAt(last))
-        && isPunctuation(addedText.charAt(last - 1))) {
+        && isPunctuation(addedText.charAt(last - 1))
+        && !isWordJoiner(addedText.charAt(last - 1))) {
       return last - 1;
     }
     return last;
@@ -1030,35 +1076,6 @@ public class TextEventInterpreter {
     }
 
     return eventText.get(0);
-  }
-
-  /**
-   * Returns index of first whitespace or punctuation preceding fromIndex. An apostrophe inside a
-   * word, as in "don't", is part of the word.
-   */
-  @VisibleForTesting
-  static int getPrecedingWhitespaceOrPunctuation(CharSequence text, int toIndex) {
-    if (toIndex > text.length()) {
-      toIndex = text.length();
-    }
-    for (int i = (toIndex - 1); i > 0; i--) {
-      if (isWhiteSpace(text.charAt(i))) {
-        return i + 1;
-      }
-      if (isPunctuation(text.charAt(i)) && !isApostropheInWord(text, i)) {
-        // The preceding punctuation is not preserved.
-        return i + 1;
-      }
-    }
-
-    return 0;
-  }
-
-  private static boolean isApostropheInWord(CharSequence text, int index) {
-    return text.charAt(index) == '\''
-        && index + 1 < text.length()
-        && Character.isLetterOrDigit(text.charAt(index - 1))
-        && Character.isLetterOrDigit(text.charAt(index + 1));
   }
 
   // Visible for testing only.

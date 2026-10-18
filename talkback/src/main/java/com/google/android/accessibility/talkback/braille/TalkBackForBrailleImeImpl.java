@@ -10,8 +10,6 @@ import static com.google.android.accessibility.talkback.selector.SelectorControl
 import static com.google.android.accessibility.talkback.selector.SelectorController.Setting.GRANULARITY_WORDS;
 import static com.google.android.accessibility.talkback.selector.SelectorController.Setting.TABLET_HELD_UP_FACES_AWAY;
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
-import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_CHARACTERS;
-import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS;
 import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_BRAILLE_KEYBOARD;
 import static com.google.common.collect.ImmutableSet.toImmutableSet;
 
@@ -32,19 +30,19 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting;
-import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.ArrayUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.accessibility.utils.input.TextEventFilter.KeyboardEchoType;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import java.util.Arrays;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -256,16 +254,12 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   }
 
   @Override
-  @KeyboardEchoType
-  public int getOnScreenKeyboardEcho() {
-    return VerbosityPreferences.readOnScreenKeyboardEcho(prefs, service.getResources());
-  }
-
-  @Override
-  public boolean shouldAnnounceCharacterForPhysicalKeyboard() {
-    @KeyboardEchoType
-    int echoType = VerbosityPreferences.readPhysicalKeyboardEcho(prefs, service.getResources());
-    return echoType == PREF_ECHO_CHARACTERS || echoType == PREF_ECHO_CHARACTERS_AND_WORDS;
+  public boolean shouldEchoBrailleCharacters(boolean fromBrailleDisplay) {
+    return KeyboardEchoSettings.echoesCharacters(
+        KeyboardEchoSettings.read(
+            prefs,
+            service.getResources(),
+            fromBrailleDisplay ? TypingInput.BRAILLE_DISPLAY : TypingInput.BRAILLE_KEYBOARD));
   }
 
   @Override

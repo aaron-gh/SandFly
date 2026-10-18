@@ -55,6 +55,13 @@
     <string name="pref_keyboard_echo_key">pref_keyboard_echo</string>
     <string name="pref_keyboard_echo_on_screen_key" translatable="false">pref_keyboard_echo_on_screen</string>
     <string name="pref_keyboard_echo_physical_key" translatable="false">pref_keyboard_echo_physical</string>
+    <!-- Keyboard echo, one setting for each way of typing. Before these, the on-screen and physical
+         keyboard echo were verbosity preset settings, under the two keys above. -->
+    <string name="pref_keyboard_echo_screen_key" translatable="false">pref_keyboard_echo_screen</string>
+    <string name="pref_echo_on_screen_keyboard_key" translatable="false">pref_echo_on_screen_keyboard</string>
+    <string name="pref_echo_physical_keyboard_key" translatable="false">pref_echo_physical_keyboard</string>
+    <string name="pref_echo_braille_keyboard_key" translatable="false">pref_echo_braille_keyboard</string>
+    <string name="pref_echo_braille_display_key" translatable="false">pref_echo_braille_display</string>
     <string name="pref_interrupt_typing_key" translatable="false">pref_interrupt_typing</string>
     <string name="pref_interrupt_enter_key" translatable="false">pref_interrupt_enter</string>
     <string name="pref_node_desc_order_key">pref_node_desc_order_key</string>
