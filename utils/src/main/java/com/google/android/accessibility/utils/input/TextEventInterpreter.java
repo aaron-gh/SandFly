@@ -52,6 +52,7 @@ import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.time.Duration;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -68,6 +69,16 @@ public class TextEventInterpreter {
   // TalkBack treats the ' ' as the general space character. In some situation, when the content is
   // hyper formatted such as Gmail composer, the Non-Break Space (NBSP) '\u00A0' is used instead.
   private static final char NBSP = '\u00A0';
+
+  // A web address's scheme as it is typed, before anything follows it, such as "https:/".
+  private static final Pattern ADDRESS_SCHEME_PATTERN =
+      Pattern.compile("(https?|ftps?|sftp|file|wss?):/{0,2}");
+  // A domain followed by a path, such as "github.com/author".
+  private static final Pattern DOMAIN_WITH_PATH_PATTERN =
+      Pattern.compile("[\\p{L}\\p{N}-]+(\\.[\\p{L}\\p{N}-]+)+/.*");
+  // An email address as it is typed, from the "@" on, such as "me@example.".
+  private static final Pattern EMAIL_PATTERN =
+      Pattern.compile("[^@\\s]+@[\\p{L}\\p{N}-]*(\\.[\\p{L}\\p{N}-]*)*");
 
   private static final char[] COMMON_ENDING_SYMBOLS = new char[] {',', '.', '!', '?', ';', ':'};
 
@@ -997,7 +1008,7 @@ public class TextEventInterpreter {
     if (addedText.length() == 0 || fromIndex < 0) {
       return null;
     }
-    final int wordEnd = fromIndex + getWordEchoEnd(addedText);
+    int wordEnd = fromIndex + getWordEchoEnd(addedText);
     if (wordEnd >= text.length()) {
       return null;
     }
@@ -1006,25 +1017,43 @@ public class TextEventInterpreter {
     if (!endsWordForEcho(lastChar)) {
       return null;
     }
-    if (isWhiteSpace(lastChar)
-        && wordEnd > 0
-        && wordEnd - 1 < fromIndex
-        && endsWordForEcho(text.charAt(wordEnd - 1))) {
-      return null;
-    }
 
-    int wordStart = wordEnd;
-    while (wordStart > 0 && !isWhiteSpace(text.charAt(wordStart - 1))) {
-      wordStart--;
+    int firstChar = wordEnd;
+    while (firstChar > 0 && !isWhiteSpace(text.charAt(firstChar - 1))) {
+      firstChar--;
     }
-    for (int i = fromIndex; i < wordStart; i++) {
+    for (int i = fromIndex; i < firstChar; i++) {
       if (!isWhiteSpace(text.charAt(i))) {
         // Added text contains more than 1 word.
         return null;
       }
     }
+    int wordStart = firstChar;
     while (wordStart < wordEnd && isOpeningPunctuation(text.charAt(wordStart))) {
       wordStart++;
+    }
+
+    // Punctuation inside a web or email address doesn't end it. When the address was added
+    // together with the space after it, the space ends it.
+    if (!isWhiteSpace(lastChar) && isAddress(text.subSequence(wordStart, wordEnd + 1))) {
+      int next = wordEnd + 1;
+      if (next < fromIndex + addedText.length()
+          && next < text.length()
+          && isWhiteSpace(text.charAt(next))) {
+        wordEnd = next;
+        lastChar = text.charAt(next);
+      } else {
+        return null;
+      }
+    }
+    // A space after punctuation typed earlier: the word was read when the punctuation was typed,
+    // unless it was inside an address.
+    if (isWhiteSpace(lastChar)
+        && wordEnd > 0
+        && wordEnd - 1 < fromIndex
+        && endsWordForEcho(text.charAt(wordEnd - 1))
+        && !isAddress(text.subSequence(wordStart, wordEnd))) {
+      return null;
     }
 
     int wordLength = wordEnd - wordStart;
@@ -1037,6 +1066,22 @@ public class TextEventInterpreter {
       return null;
     }
     return new int[] {wordStart, wordEnd};
+  }
+
+  /**
+   * Returns whether {@code word}, as typed so far, is a web or email address, whose punctuation is
+   * part of it: one with a scheme such as "https://", the scheme alone as it is typed, one that
+   * starts with "www.", a domain followed by a path, such as "github.com/", or an email address.
+   */
+  @VisibleForTesting
+  static boolean isAddress(CharSequence word) {
+    String lower = word.toString().toLowerCase(Locale.ROOT);
+    return lower.contains("://")
+        || lower.startsWith("www.")
+        || lower.startsWith("mailto:")
+        || ADDRESS_SCHEME_PATTERN.matcher(lower).matches()
+        || DOMAIN_WITH_PATH_PATTERN.matcher(lower).matches()
+        || EMAIL_PATTERN.matcher(lower).matches();
   }
 
   private static boolean isOpeningPunctuation(char ch) {

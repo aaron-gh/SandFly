@@ -117,6 +117,57 @@ public class TextEventInterpreterTest {
     assertNull(echoWord("non-norm", 7, "m"));
   }
 
+  @Test
+  public void webAddressTypedCharacterByCharacterIsOneWord() {
+    assertNull(echoWord("https:", 5, ":"));
+    assertNull(echoWord("https:/", 6, "/"));
+    assertNull(echoWord("https://", 7, "/"));
+    assertNull(echoWord("https://github.", 14, "."));
+    assertNull(echoWord("https://github.com/", 18, "/"));
+    assertNull(echoWord("https://github.com/author/", 25, "/"));
+    assertEquals(
+        "https://github.com/author/repo ",
+        echoWord("see https://github.com/author/repo ", 34, " "));
+  }
+
+  @Test
+  public void webAddressWithoutAScheme() {
+    assertNull(echoWord("www.", 3, "."));
+    assertNull(echoWord("www.example.", 11, "."));
+    assertNull(echoWord("github.com/", 10, "/"));
+    assertEquals("github.com/author ", echoWord("github.com/author ", 17, " "));
+    // A domain alone isn't known to be an address until a path follows it.
+    assertEquals("github.", echoWord("github.", 6, "."));
+  }
+
+  @Test
+  public void punctuationAfterAWebAddressIsReadWithItAtTheSpace() {
+    assertNull(echoWord("https://x.com.", 13, "."));
+    assertEquals("https://x.com. ", echoWord("https://x.com. ", 14, " "));
+    assertNull(echoWord("(https://x.com)", 14, ")"));
+    assertEquals("https://x.com) ", echoWord("(https://x.com) ", 15, " "));
+  }
+
+  @Test
+  public void webAddressAddedWithPunctuationAndSpaceAtOnceIsReadWhole() {
+    assertEquals("https://x.com. ", echoWord("https://x.com. ", 0, "https://x.com. "));
+    assertEquals("github.com/a ", echoWord("github.com/a ", 0, "github.com/a "));
+  }
+
+  @Test
+  public void emailAddressIsOneWord() {
+    assertNull(echoWord("me@", 2, "@"));
+    assertNull(echoWord("me@example.", 10, "."));
+    assertEquals("me@example.com ", echoWord("me@example.com ", 14, " "));
+  }
+
+  @Test
+  public void ordinaryPunctuationStillEndsTheWord() {
+    assertEquals("Hello.", echoWord("Hello.", 5, "."));
+    assertEquals("e.g.", echoWord("e.g.", 3, "."));
+    assertEquals("time:", echoWord("time:", 4, ":"));
+  }
+
   /** Returns the word and the character that ends it, or null if the change ends no word. */
   private static String echoWord(String text, int fromIndex, String addedText) {
     int[] range = TextEventInterpreter.getEchoWordRange(text, fromIndex, addedText);
