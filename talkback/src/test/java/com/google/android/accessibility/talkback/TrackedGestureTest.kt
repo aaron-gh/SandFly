@@ -35,12 +35,18 @@ import android.view.MotionEvent.ACTION_UP
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SPREAD
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import java.time.Duration
+import kotlin.math.cos
+import kotlin.math.sin
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -53,14 +59,15 @@ import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowLooper
 
 /**
- * Runs the edge gestures and the two-finger scrub through the monitor, with Android's own
+ * Runs the gestures that Backtalk recognizes while the fingers are down, the edge gestures, the
+ * two-finger scrub and pinches and spreads, through the monitor, with Android's own
  * TouchInteractionController passing it the touch, as TouchInteractionMonitorTest does. The screen
  * is 320 by 470 pixels at 160 dpi, so a centimeter is 63 pixels: edge gestures start within 31
  * pixels of the edge, and reach their stages 63 and 189 pixels in.
  */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34], qualifiers = "w320dp-h470dp-mdpi")
-class EdgeAndScrubGestureTest {
+class TrackedGestureTest {
   /** Records the gestures that reach the service. */
   class RecordingService : TalkBackService() {
     val gestures = mutableListOf<Int>()
@@ -301,5 +308,109 @@ class EdgeAndScrubGestureTest {
   fun backAndForthOnceIsNotAScrub() {
     twoFingerMove(100f, 200f, 100f)
     assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
+  }
+
+  /** Assigns [action] to the gestures with the setting keys [keyIds]. */
+  private fun assign(action: Int, vararg keyIds: Int) {
+    val editor = SharedPreferencesUtils.getSharedPreferences(service).edit()
+    for (keyId in keyIds) {
+      editor.putString(service.getString(keyId), service.getString(action))
+    }
+    editor.commit()
+    service.mapping = GestureShortcutMapping(service)
+  }
+
+  /**
+   * [count] fingers land one by one around the middle of the screen, [fromRadius] pixels from it,
+   * move to [toRadius] in 8 steps of 10 ms, turning by [turnDegrees] and all moving [shiftX]
+   * pixels, and lift.
+   */
+  private fun fingersMove(
+    count: Int,
+    fromRadius: Float,
+    toRadius: Float,
+    shiftX: Float = 0f,
+    turnDegrees: Float = 0f,
+  ) {
+    fun points(radius: Float, shift: Float, turn: Float, fingers: Int): FloatArray {
+      val result = FloatArray(fingers * 2)
+      for (i in 0 until fingers) {
+        val angle = Math.toRadians((360.0 * i / count) + 45.0 + turn)
+        result[i * 2] = 160f + shift + radius * cos(angle).toFloat()
+        result[i * 2 + 1] = 235f + radius * sin(angle).toFloat()
+      }
+      return result
+    }
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    var time = 0L
+    touchAt(ACTION_DOWN, time, *points(fromRadius, 0f, 0f, 1))
+    for (fingers in 2..count) {
+      time += 5
+      touchAt(ACTION_POINTER_DOWN, time, *points(fromRadius, 0f, 0f, fingers), actionIndex = fingers - 1)
+    }
+    var last = points(fromRadius, 0f, 0f, count)
+    for (step in 1..8) {
+      time += 10
+      last =
+        points(
+          fromRadius + (toRadius - fromRadius) * step / 8,
+          shiftX * step / 8,
+          turnDegrees * step / 8,
+          count,
+        )
+      touchAt(ACTION_MOVE, time, *last)
+    }
+    for (fingers in count downTo 2) {
+      time += 5
+      touchAt(ACTION_POINTER_UP, time, *last.copyOf(fingers * 2), actionIndex = fingers - 1)
+    }
+    touchAt(ACTION_UP, time + 5, *last.copyOf(2))
+    runUntil(time + 500)
+  }
+
+  @Test
+  fun unassignedPinchIsNotAGesture() {
+    fingersMove(2, 100f, 50f)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_PINCH))
+  }
+
+  @Test
+  fun twoFingerPinchAndSpread() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_2finger_pinch_key,
+      R.string.pref_shortcut_2finger_spread_key,
+    )
+    fingersMove(2, 100f, 50f)
+    fingersMove(2, 60f, 110f)
+    assertEquals(listOf(GESTURE_2_FINGER_PINCH, GESTURE_2_FINGER_SPREAD), service.gestures)
+  }
+
+  @Test
+  fun threeFingerSpread() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_3finger_spread_key)
+    fingersMove(3, 60f, 110f)
+    assertEquals(listOf(GESTURE_3_FINGER_SPREAD), service.gestures)
+  }
+
+  @Test
+  fun fourFingerPinch() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_4finger_pinch_key)
+    fingersMove(4, 110f, 55f)
+    assertEquals(listOf(GESTURE_4_FINGER_PINCH), service.gestures)
+  }
+
+  @Test
+  fun twoFingersMovingTogetherAreNotAPinch() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_2finger_pinch_key)
+    fingersMove(2, 80f, 80f, shiftX = 120f)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_PINCH))
+  }
+
+  @Test
+  fun twoFingersTurningAreNotAPinch() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_2finger_spread_key)
+    fingersMove(2, 70f, 75f, turnDegrees = 90f)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SPREAD))
   }
 }

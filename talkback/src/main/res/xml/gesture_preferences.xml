@@ -206,6 +206,16 @@
         android:key="@string/pref_shortcut_2finger_scrub_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_2finger_scrub"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_pinch_default"
+        android:key="@string/pref_shortcut_2finger_pinch_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_pinch"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_spread_default"
+        android:key="@string/pref_shortcut_2finger_spread_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_spread"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_rotor_step_degrees_default"
         android:dialogTitle="@string/title_pref_rotor_step_degrees"
@@ -255,6 +265,16 @@
         android:key="@string/pref_shortcut_3finger_4tap_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_3finger_4tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_3finger_pinch_default"
+        android:key="@string/pref_shortcut_3finger_pinch_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_3finger_pinch"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_3finger_spread_default"
+        android:key="@string/pref_shortcut_3finger_spread_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_3finger_spread"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/pref_shortcut_3finger_swipe_up_default"
         android:key="@string/pref_shortcut_3finger_swipe_up_key"
@@ -321,6 +341,16 @@
         android:key="@string/pref_shortcut_4finger_swipe_right_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_4finger_swipe_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_4finger_pinch_default"
+        android:key="@string/pref_shortcut_4finger_pinch_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_4finger_pinch"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_4finger_spread_default"
+        android:key="@string/pref_shortcut_4finger_spread_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_4finger_spread"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Fingerprint sensor swipe gestures -->

@@ -62,6 +62,14 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT = -14;
   public static final int GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT = -15;
   public static final int GESTURE_2_FINGER_SCRUB = -16;
+  // Fingers moving toward their middle or away from it. Reported by TalkBack's
+  // TouchInteractionMonitor rather than by a gesture matcher.
+  public static final int GESTURE_2_FINGER_PINCH = -17;
+  public static final int GESTURE_2_FINGER_SPREAD = -18;
+  public static final int GESTURE_3_FINGER_PINCH = -19;
+  public static final int GESTURE_3_FINGER_SPREAD = -20;
+  public static final int GESTURE_4_FINGER_PINCH = -21;
+  public static final int GESTURE_4_FINGER_SPREAD = -22;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;

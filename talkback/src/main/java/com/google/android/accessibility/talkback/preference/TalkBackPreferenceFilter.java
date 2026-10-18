@@ -274,6 +274,25 @@ public class TalkBackPreferenceFilter {
     CUSTOMIZE_GESTURE_2FINGER_SCRUB(
         R.string.pref_shortcut_2finger_scrub_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    // Pinches and spreads, which need room for the fingers to move apart.
+    CUSTOMIZE_GESTURE_2FINGER_PINCH(
+        R.string.pref_shortcut_2finger_pinch_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_2FINGER_SPREAD(
+        R.string.pref_shortcut_2finger_spread_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_3FINGER_PINCH(
+        R.string.pref_shortcut_3finger_pinch_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_3FINGER_SPREAD(
+        R.string.pref_shortcut_3finger_spread_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_4FINGER_PINCH(
+        R.string.pref_shortcut_4finger_pinch_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_4FINGER_SPREAD(
+        R.string.pref_shortcut_4finger_spread_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     // Watches have their own edge swipes.
     CUSTOMIZE_GESTURE_GROUP_EDGES(
         R.string.pref_category_edge_shortcuts_key,

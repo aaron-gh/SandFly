@@ -429,6 +429,12 @@
     <string name="pref_shortcut_3finger_3tap_hold_key" translatable="false">pref_shortcut_three_finger_triple_tap_and_hold</string>
     <string name="pref_shortcut_2finger_rotate_clockwise_key" translatable="false">pref_shortcut_two_finger_rotate_clockwise</string>
     <string name="pref_shortcut_2finger_scrub_key" translatable="false">pref_shortcut_two_finger_scrub</string>
+    <string name="pref_shortcut_2finger_pinch_key" translatable="false">pref_shortcut_two_finger_pinch</string>
+    <string name="pref_shortcut_2finger_spread_key" translatable="false">pref_shortcut_two_finger_spread</string>
+    <string name="pref_shortcut_3finger_pinch_key" translatable="false">pref_shortcut_three_finger_pinch</string>
+    <string name="pref_shortcut_3finger_spread_key" translatable="false">pref_shortcut_three_finger_spread</string>
+    <string name="pref_shortcut_4finger_pinch_key" translatable="false">pref_shortcut_four_finger_pinch</string>
+    <string name="pref_shortcut_4finger_spread_key" translatable="false">pref_shortcut_four_finger_spread</string>
     <string name="pref_shortcut_edge_bottom_up_key" translatable="false">pref_shortcut_edge_bottom_up</string>
     <string name="pref_shortcut_edge_bottom_long_up_key" translatable="false">pref_shortcut_edge_bottom_long_up</string>
     <string name="pref_shortcut_edge_top_left_down_key" translatable="false">pref_shortcut_edge_top_left_down</string>
@@ -662,6 +668,12 @@
       <item>@string/pref_shortcut_2finger_rotate_clockwise_key</item>
       <item>@string/pref_shortcut_2finger_rotate_counterclockwise_key</item>
       <item>@string/pref_shortcut_2finger_scrub_key</item>
+      <item>@string/pref_shortcut_2finger_pinch_key</item>
+      <item>@string/pref_shortcut_2finger_spread_key</item>
+      <item>@string/pref_shortcut_3finger_pinch_key</item>
+      <item>@string/pref_shortcut_3finger_spread_key</item>
+      <item>@string/pref_shortcut_4finger_pinch_key</item>
+      <item>@string/pref_shortcut_4finger_spread_key</item>
 
       <item>@string/pref_shortcut_edge_bottom_up_key</item>
       <item>@string/pref_shortcut_edge_bottom_long_up_key</item>
@@ -1731,6 +1743,12 @@
     <string name="pref_shortcut_3finger_3tap_hold_default">@string/shortcut_value_paste</string>
     <string name="pref_shortcut_2finger_rotate_clockwise_default">@string/shortcut_value_select_next_setting</string>
     <string name="pref_shortcut_2finger_scrub_default">@string/shortcut_value_back</string>
+    <string name="pref_shortcut_2finger_pinch_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_spread_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_3finger_pinch_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_3finger_spread_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_4finger_pinch_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_4finger_spread_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_edge_bottom_up_default">@string/shortcut_value_home</string>
     <string name="pref_shortcut_edge_bottom_long_up_default">@string/shortcut_value_overview</string>
     <string name="pref_shortcut_edge_top_left_down_default">@string/shortcut_value_notifications</string>

@@ -324,7 +324,11 @@ Sliding back to the edge before you lift cancels the gesture. A slide that start
 
 To scrub, move two fingers quickly back and forth three times, as if drawing a Z, each stroke about a centimeter long. By default, this goes back.
 
-You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**. An edge whose gestures are set to nothing is left to ordinary swipes, and so is a scrub set to nothing. While a scrub is still possible, a sideways scroll with two fingers waits for up to about half a second before it starts. These gestures require Android 13 or later and **Handle gestures in Backtalk** turned on, and aren't on watches.
+You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**.
+
+### Pinch and spread
+
+You can assign actions to pinching and spreading with two, three or four fingers in gesture settings. They do nothing by default. A pinch or spread counts once the fingers have moved about half a centimeter toward or away from their middle, and by a third of the distance, without moving together or turning much. While a two-finger pinch or spread has an action, a two-finger movement that pinches more than it moves waits before it reaches the app, so apps that zoom with two fingers may not zoom until you set both to nothing. Pinches and spreads require Android 13 or later and **Handle gestures in Backtalk** turned on, and aren't on watches. An edge whose gestures are set to nothing is left to ordinary swipes, and so is a scrub set to nothing. While a scrub is still possible, a sideways scroll with two fingers waits for up to about half a second before it starts. These gestures require Android 13 or later and **Handle gestures in Backtalk** turned on, and aren't on watches.
 
 ### Lift to activate
 

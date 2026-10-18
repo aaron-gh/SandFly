@@ -38,7 +38,13 @@ import static com.google.android.accessibility.talkback.PrimesController.TimerAc
 import static com.google.android.accessibility.utils.gestures.GestureAnalyticsEvent.EVENT_TAP_TO_TOUCH_EXPLORE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SPREAD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_PINCH;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SPREAD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
@@ -79,6 +85,7 @@ import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorF
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -136,6 +143,8 @@ public class TouchInteractionMonitor
   private static final float EDGE_GESTURE_SECOND_STAGE_CM = 3f;
   // The length of each stroke of a two-finger scrub.
   private static final float SCRUB_STROKE_CM = 1f;
+  // How far the fingers of a pinch or spread move toward or away from their middle, on average.
+  private static final float PINCH_CHANGE_CM = 0.5f;
 
   // Queue size to hold the most recent change requests of controller state.
   private static final int MAX_CHANGE_REQUEST_SIZE = 5;
@@ -201,6 +210,9 @@ public class TouchInteractionMonitor
   private final Point screenSize = new Point();
   // Recognizes the two-finger scrub. A recognized scrub owns the rest of the touch.
   private final TwoFingerScrubTracker scrubTracker;
+  // Recognizes pinches and spreads with two to four fingers. A recognized one owns the rest of the
+  // touch.
+  private final PinchTracker pinchTracker;
   // Whether double tap and double tap and hold will be dispatched to the service or handled in
   // the framework.
   private boolean serviceHandlesDoubleTap = false;
@@ -408,6 +420,8 @@ public class TouchInteractionMonitor
             this::isEdgeInUse,
             edgeSwipeListener);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
+    pinchTracker =
+        new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
     sharedPreferences = prefs;
     typingFocusTimeout = FeatureFlagReader.typingFocusTimeout(service);
     touchFocusTimeout = FeatureFlagReader.touchFocusTimeout(service);
@@ -555,6 +569,9 @@ public class TouchInteractionMonitor
     if (handleScrub(event)) {
       return;
     }
+    if (handlePinch(event)) {
+      return;
+    }
     if (handleRotation(event)) {
       return;
     }
@@ -645,6 +662,11 @@ public class TouchInteractionMonitor
             if (rotationTracker.isPossibleRotation()) {
               // The fingers are turning around each other. Wait until it is clear whether this is
               // a rotation before scrolling or passing the touch to the app.
+              return;
+            }
+            if (pinchTracker.isPossiblePinch()) {
+              // The fingers are moving toward or away from each other. Wait until it is clear
+              // whether this is a pinch or spread.
               return;
             }
             if (scrubTracker.isPossibleScrub()) {
@@ -767,6 +789,7 @@ public class TouchInteractionMonitor
     rotationTracker.clear();
     edgeSwipeTracker.clear();
     scrubTracker.clear();
+    pinchTracker.clear();
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1309,6 +1332,47 @@ public class TouchInteractionMonitor
     dispatchGestureToMainThread(
         new AccessibilityGestureEvent(
             GESTURE_2_FINGER_SCRUB, displayId, new ArrayList<MotionEvent>()));
+  }
+
+  /**
+   * Passes the event to the pinch tracker. Returns true if the event belongs to a pinch or spread,
+   * so nothing else may handle it.
+   */
+  private boolean handlePinch(MotionEvent event) {
+    if (!pinchTracker.isRecognized()
+        && (state != STATE_TOUCH_INTERACTING || !gestureDetector.isMultiFingerGesturesEnabled())) {
+      pinchTracker.clear();
+      return false;
+    }
+    return pinchTracker.onMotionEvent(event);
+  }
+
+  /** Returns whether a pinch or spread with {@code fingerCount} fingers has an action. */
+  private boolean isPinchCountInUse(int fingerCount) {
+    return isGestureAssigned(pinchGestureId(fingerCount, /* spread= */ false))
+        || isGestureAssigned(pinchGestureId(fingerCount, /* spread= */ true));
+  }
+
+  private static int pinchGestureId(int fingerCount, boolean spread) {
+    return switch (fingerCount) {
+      case 2 -> spread ? GESTURE_2_FINGER_SPREAD : GESTURE_2_FINGER_PINCH;
+      case 3 -> spread ? GESTURE_3_FINGER_SPREAD : GESTURE_3_FINGER_PINCH;
+      default -> spread ? GESTURE_4_FINGER_SPREAD : GESTURE_4_FINGER_PINCH;
+    };
+  }
+
+  private void onPinch(int fingerCount, boolean spread) {
+    takeOverTouch();
+    rotationTracker.clear();
+    scrubTracker.clear();
+    int gestureId = pinchGestureId(fingerCount, spread);
+    if (BuildConfig.DEBUG) {
+      Log.d(
+          DEBUG_GESTURE_TAG,
+          "Gesture " + AccessibilityServiceCompatUtils.gestureIdToString(gestureId));
+    }
+    dispatchGestureToMainThread(
+        new AccessibilityGestureEvent(gestureId, displayId, new ArrayList<MotionEvent>()));
   }
 
   /**
