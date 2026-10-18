@@ -203,17 +203,30 @@ class TrackedGestureTest {
     mainLooper.idleFor(Duration.ofMillis(start + timeMs - SystemClock.uptimeMillis()))
   }
 
-  /** One finger slides from ([x], [fromY]) to [toY] and lifts, in steps of 10 ms. */
-  private fun slide(x: Float, fromY: Float, vararg toY: Float) {
+  /**
+   * One finger rests at ([x], [fromY]) for [restMs], then slides to each y in [toY] in turn, in 8
+   * steps of [stepMs] each, and lifts.
+   */
+  private fun slide(
+    x: Float,
+    fromY: Float,
+    vararg toY: Float,
+    stepMs: Long = 10,
+    restMs: Long = 0,
+  ) {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     touchAt(ACTION_DOWN, 0, x, fromY)
     var time = 0L
     var y = fromY
+    while (time + 10 <= restMs) {
+      time += 10
+      touchAt(ACTION_MOVE, time, x, y)
+    }
     for (target in toY) {
       val steps = 8
       val stepY = (target - y) / steps
       repeat(steps) {
-        time += 10
+        time += stepMs
         y += stepY
         touchAt(ACTION_MOVE, time, x, y)
       }
@@ -227,6 +240,19 @@ class TrackedGestureTest {
   fun swipeUpFromTheBottomEdgeIsTheFirstStage() {
     slide(160f, 465f, 380f)
     assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun slowSwipeUpFromTheBottomEdgeKeepsTouchExplorationWaiting() {
+    // Reaches the first stage 180 ms after the touch, after touch exploration would start.
+    slide(160f, 465f, 380f, stepMs = 30)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM), service.gestures)
+  }
+
+  @Test
+  fun restingAtTheEdgeBeforeSlidingIsNotAnEdgeGesture() {
+    slide(160f, 465f, 380f, restMs = 150)
+    assertEquals(false, service.gestures.contains(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM))
   }
 
   @Test
