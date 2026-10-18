@@ -6,9 +6,9 @@ An app can ask Backtalk to say text in the user's own Backtalk voice, with their
 
 Nothing your app sends is said until the user allows it:
 
-1.  The user turns on **Advanced settings** > **Let other apps speak** in Backtalk. It's off by default.
+1.  The user turns on **Apps** > **Let other apps speak** in Backtalk. It's off by default.
 2.  The first time your app asks to speak, Backtalk posts a notification that asks the user whether to allow it. Until they choose **Allow**, nothing your app sends is said, and requests aren't saved for later.
-3.  The user can allow or block your app at any time in **Advanced settings** > **Let other apps speak**.
+3.  The user can allow or block your app at any time in **Apps** > **Let other apps speak**.
 
 Even for an allowed app:
 

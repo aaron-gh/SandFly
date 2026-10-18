@@ -11,7 +11,7 @@ A script is one of these:
 *   A `.js` file, up to 1 MB.
 *   A `.zip` file with a `main.js` in it, plus anything `main.js` uses: other JavaScript modules, sounds, and translations. The zip can be up to 5 MB, up to 5 MB unpacked, and hold up to 200 files.
 
-To install a script, go to **Advanced settings** > **Scripts** in Backtalk settings and choose **Import script**. Backtalk lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; Backtalk always asks first, and says so if the author changed.
+To install a script, go to **Apps** > **Scripts** in Backtalk settings and choose **Import script**. Backtalk lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; Backtalk always asks first, and says so if the author changed.
 
 To find scripts, choose **Script sources** on the Scripts screen and **Add source**. A source is the address of a repository, or of a branch or folder in one, on GitHub, GitLab, Codeberg, Gitea (gitea.com) or Bitbucket:
 
@@ -84,7 +84,7 @@ A script with `apps` is loaded when one of its apps comes to the front and unloa
 
 A script without `apps` runs in every app and is loaded as long as it's turned on.
 
-Scripts never change Backtalk's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name Backtalk in `apps`. While a Backtalk screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission throw an error, `backtalk.speak` doesn't interrupt, and scripts get no events from Backtalk itself. This is so that **Advanced settings** > **Scripts** always works, whatever a script does.
+Scripts never change Backtalk's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name Backtalk in `apps`. While a Backtalk screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission throw an error, `backtalk.speak` doesn't interrupt, and scripts get no events from Backtalk itself. This is so that **Apps** > **Scripts** always works, whatever a script does.
 
 Scripts are also unloaded while the screen is off, while Backtalk is paused, and while **Turn off all scripts** is on. Timers and requests end when a script is unloaded.
 
