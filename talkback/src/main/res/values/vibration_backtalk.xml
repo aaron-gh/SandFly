@@ -939,4 +939,59 @@
         <item>120</item><!-- scale -->
         <item>0</item><!-- delayMs -->
     </integer-array>
+    <!-- An edge swipe reaches its first stage: two firm clicks close together, like pressing and
+         releasing a home button. -->
+    <integer-array name="edge_swipe_stage_1_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>25</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>150</item>
+        <item>25</item>
+        <item>0</item>
+        <item>8</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>200</item><!-- scale -->
+        <item>25</item><!-- delayMs -->
+    </integer-array>
+
+    <!-- A swipe up from the bottom edge reaches its second stage: the first stage's clicks and a
+         third. -->
+    <integer-array name="edge_swipe_stage_2_pattern">
+        <item>0</item>
+        <item>20</item>
+        <item>25</item>
+        <item>20</item>
+        <item>25</item>
+        <item>20</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>150</item>
+        <item>25</item>
+        <item>0</item>
+        <item>8</item>
+        <item>150</item>
+        <item>25</item>
+        <item>0</item>
+        <item>8</item>
+        <item>150</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>1</item><!-- CLICK -->
+        <item>255</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>200</item><!-- scale -->
+        <item>25</item><!-- delayMs -->
+        <item>1</item><!-- CLICK -->
+        <item>200</item><!-- scale -->
+        <item>25</item><!-- delayMs -->
+    </integer-array>
+
 </resources>

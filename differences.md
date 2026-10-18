@@ -285,8 +285,13 @@ Backtalk changes these default gestures:
 | Triple-tap and hold with two fingers | None | Turn speech on or off |
 | Rotate clockwise with two fingers | Next reading control | None |
 | Rotate counterclockwise with two fingers | Previous reading control | None |
+| Scrub with two fingers | Back | None |
+| Swipe up from the bottom edge | Home | None |
+| Long swipe up from the bottom edge | Overview (recent apps) | None |
+| Swipe down from the top left | Notifications | None |
+| Swipe down from the top right | Quick settings | None |
 
-Backtalk recognizes the quadruple-tap with three fingers and the rotation gestures itself, so they require Android 13 or later and **Handle gestures in Backtalk** turned on. You can assign any of these gestures to another action in gesture settings. Wear OS watches have defaults of their own; see [Wear OS watches](#wear-os-watches).
+Backtalk recognizes the quadruple-tap with three fingers, the rotation gestures, the scrub and the edge gestures itself, so they require Android 13 or later and **Handle gestures in Backtalk** turned on. You can assign any of these gestures to another action in gesture settings. Wear OS watches have defaults of their own; see [Wear OS watches](#wear-os-watches).
 
 ### Navigation gestures
 
@@ -307,6 +312,23 @@ Turn two fingers on the screen like a dial to choose a reading control: clockwis
 Each step of 30 degrees, a twelfth of a turn, moves one reading control, so you can keep turning to move further. A quick flick moves exactly one step. If you often move past the reading control that you want, choose a larger step, from 15 to 60 degrees, in **Rotor turn per step** in gesture settings. Scrolling with two fingers doesn't turn the rotor.
 
 The rotor requires Android 13 or later and **Handle gestures in Backtalk** turned on. You can assign other actions to **Rotate clockwise with 2 fingers** and **Rotate counterclockwise with 2 fingers** in gesture settings.
+
+### Edge gestures and scrub
+
+As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge of the screen. Start at the very edge, on the gesture navigation bar or the status bar, and slide in quickly:
+
+- Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about two more centimeters to feel a second click, and lift there for Overview (recent apps).
+- Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click.
+
+Sliding back to the edge before you lift cancels the gesture. A slide that starts away from the edge, or that takes longer than about 0.3 seconds to reach the first click, is an ordinary swipe or touch exploration.
+
+To scrub, move two fingers quickly back and forth three times, as if drawing a Z, each stroke about a centimeter long. By default, this goes back.
+
+You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**.
+
+### Pinch and spread
+
+You can assign actions to pinching and spreading with two, three or four fingers in gesture settings. They do nothing by default. A pinch or spread counts once the fingers have moved about half a centimeter toward or away from their middle, and by a third of the distance, without moving together or turning much. While a two-finger pinch or spread has an action, a two-finger movement that pinches more than it moves waits before it reaches the app, so apps that zoom with two fingers may not zoom until you set both to nothing. Pinches and spreads require Android 13 or later and **Handle gestures in Backtalk** turned on, and aren't on watches. An edge whose gestures are set to nothing is left to ordinary swipes, and so is a scrub set to nothing. While a scrub is still possible, a sideways scroll with two fingers waits for up to about half a second before it starts. These gestures require Android 13 or later and **Handle gestures in Backtalk** turned on, and aren't on watches.
 
 ### Lift to activate
 
@@ -342,9 +364,9 @@ When a window opens, or you go back, TalkBack moves focus into it: back to the i
 
 ### Gestures recognized by Backtalk
 
-By default, Backtalk recognizes gestures itself instead of leaving this to Android, which makes the rotor and the quadruple-tap with three fingers possible. TalkBack leaves this off.
+By default, Backtalk recognizes gestures itself instead of leaving this to Android, which makes the rotor, the edge gestures, the scrub and the quadruple-tap with three fingers possible. TalkBack leaves this off.
 
-To let Android recognize gestures again, turn off **Advanced settings** > **Developer settings** > **Handle gestures in Backtalk**, and then turn Backtalk off and on again. When this setting is off, the rotor and the quadruple-tap with three fingers don't work, and **Time between one-finger taps** is hidden.
+To let Android recognize gestures again, turn off **Advanced settings** > **Developer settings** > **Handle gestures in Backtalk**, and then turn Backtalk off and on again. When this setting is off, the rotor, the edge gestures, the scrub and the quadruple-tap with three fingers don't work, and **Time between one-finger taps** is hidden.
 
 ## Navigation
 

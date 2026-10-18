@@ -324,6 +324,20 @@ public class AccessibilityServiceCompatUtils {
       case GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE ->
           "GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE";
       case GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP -> "GESTURE_3_FINGER_QUADRUPLE_TAP";
+      case GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM -> "GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM";
+      case GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM ->
+          "GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM";
+      case GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT ->
+          "GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT";
+      case GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT ->
+          "GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT";
+      case GestureManifold.GESTURE_2_FINGER_SCRUB -> "GESTURE_2_FINGER_SCRUB";
+      case GestureManifold.GESTURE_2_FINGER_PINCH -> "GESTURE_2_FINGER_PINCH";
+      case GestureManifold.GESTURE_2_FINGER_SPREAD -> "GESTURE_2_FINGER_SPREAD";
+      case GestureManifold.GESTURE_3_FINGER_PINCH -> "GESTURE_3_FINGER_PINCH";
+      case GestureManifold.GESTURE_3_FINGER_SPREAD -> "GESTURE_3_FINGER_SPREAD";
+      case GestureManifold.GESTURE_4_FINGER_PINCH -> "GESTURE_4_FINGER_PINCH";
+      case GestureManifold.GESTURE_4_FINGER_SPREAD -> "GESTURE_4_FINGER_SPREAD";
       default -> "(unhandled " + gestureId + ")";
     };
   }

@@ -55,6 +55,21 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE = -10;
   // Android has no gestures beyond triple taps, so Backtalk's own detection adds this one.
   public static final int GESTURE_3_FINGER_QUADRUPLE_TAP = -11;
+  // One finger sliding in from an edge of the screen, as on iOS, and the two-finger scrub. Reported
+  // by TalkBack's TouchInteractionMonitor rather than by a gesture matcher.
+  public static final int GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM = -12;
+  public static final int GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM = -13;
+  public static final int GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT = -14;
+  public static final int GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT = -15;
+  public static final int GESTURE_2_FINGER_SCRUB = -16;
+  // Fingers moving toward their middle or away from it. Reported by TalkBack's
+  // TouchInteractionMonitor rather than by a gesture matcher.
+  public static final int GESTURE_2_FINGER_PINCH = -17;
+  public static final int GESTURE_2_FINGER_SPREAD = -18;
+  public static final int GESTURE_3_FINGER_PINCH = -19;
+  public static final int GESTURE_3_FINGER_SPREAD = -20;
+  public static final int GESTURE_4_FINGER_PINCH = -21;
+  public static final int GESTURE_4_FINGER_SPREAD = -22;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
