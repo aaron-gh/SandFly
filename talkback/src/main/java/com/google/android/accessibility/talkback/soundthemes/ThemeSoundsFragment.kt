@@ -100,7 +100,36 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
     screen.addPreference(sounds)
     rows.clear()
     for (item in SoundThemes.SOUNDS) {
-      val row = SoundRow(context, item, preview = { soundPreview.play(context, prefs, item) })
+      val row =
+        SoundRow(
+          context,
+          item,
+          preview = { soundPreview.play(context, prefs, item) },
+          setNone = {
+            SoundThemes.setNone(context, prefs, item)
+            refresh()
+          },
+          resetDefault = {
+            SoundThemes.removeSound(context, prefs, item)
+            refresh()
+          },
+          chooseFile = { launchChooser(item) },
+          canPreview = {
+            val active = SoundThemes.active(context, prefs)
+            !SoundThemes.isNone(active, item) &&
+              (SoundThemes.soundFiles(active)[item.key] != null ||
+                (!isControlSound(item) && item.key != SoundThemes.SCREEN_ON))
+          },
+          isNone = {
+            val active = SoundThemes.active(context, prefs)
+            SoundThemes.isNone(active, item)
+          },
+          canReset = {
+            val active = SoundThemes.active(context, prefs)
+            val hasCustom = SoundThemes.soundFiles(active)[item.key] != null
+            hasCustom || (SoundThemes.isNone(active, item) && item.key != SoundThemes.SCREEN_ON)
+          },
+        )
       row.setOnPreferenceClickListener {
         showChoices(item)
         true
@@ -129,41 +158,48 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
   /** Shows which sounds the theme replaces, and offers resetting only when it replaces some. */
   private fun refresh() {
     val context = context ?: return
-    val custom = SoundThemes.soundFiles(SoundThemes.active(context, prefs))
+    val active = SoundThemes.active(context, prefs)
+    val custom = SoundThemes.soundFiles(active)
     for (row in rows) {
       row.summary =
         context.getString(
           when {
+            SoundThemes.isNone(active, row.item) -> R.string.theme_sound_summary_no_sound
             row.item.key in custom -> R.string.theme_sound_summary_custom
             isControlSound(row.item) -> R.string.theme_sound_summary_none
+            row.item.key == SoundThemes.SCREEN_ON -> R.string.theme_sound_summary_no_sound
             isBrailleTypingSound(row.item) -> R.string.theme_sound_summary_android_keyboard
             else -> R.string.theme_sound_summary_default
           }
         )
     }
-    resetPreference?.isEnabled = custom.isNotEmpty()
+    val hasCustomModifications = custom.isNotEmpty() || active.manifest.sounds.isNotEmpty()
+    resetPreference?.isEnabled = hasCustomModifications
   }
 
   private fun showChoices(item: FeedbackItem) {
     val context = requireContext()
-    val hasCustom = SoundThemes.soundFile(context, prefs, item) != null
+    val active = SoundThemes.active(context, prefs)
+    val isNone = SoundThemes.isNone(active, item)
+    val hasCustom = SoundThemes.soundFiles(active)[item.key] != null
     val choices = ArrayList<Pair<Int, () -> Unit>>()
     choices +=
       R.string.theme_sound_choose to
         {
-          choosingFor = item.key
-          try {
-            chooseSound.launch(SOUND_TYPES)
-          } catch (e: ActivityNotFoundException) {
-            // Watches have no document picker.
-            choosingFor = null
-            showMessage(getString(R.string.sound_theme_no_picker))
-          }
+          launchChooser(item)
         }
-    if (hasCustom || !isControlSound(item)) {
+    if (!isNone && (hasCustom || (!isControlSound(item) && item.key != SoundThemes.SCREEN_ON))) {
       choices += R.string.theme_sound_preview to { soundPreview.play(context, prefs, item) }
     }
-    if (hasCustom) {
+    if (!isNone) {
+      choices +=
+        R.string.theme_sound_none to
+          {
+            SoundThemes.setNone(context, prefs, item)
+            refresh()
+          }
+    }
+    if (hasCustom || (isNone && item.key != SoundThemes.SCREEN_ON)) {
       val label =
         when {
           isControlSound(item) -> R.string.theme_sound_remove
@@ -184,6 +220,17 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
       }
       .setNegativeButton(android.R.string.cancel, null)
       .show()
+  }
+
+  private fun launchChooser(item: FeedbackItem) {
+    choosingFor = item.key
+    try {
+      chooseSound.launch(SOUND_TYPES)
+    } catch (e: ActivityNotFoundException) {
+      // Watches have no document picker.
+      choosingFor = null
+      showMessage(getString(R.string.sound_theme_no_picker))
+    }
   }
 
   private fun confirmReset() {
@@ -251,9 +298,18 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
     return SoundThemes.extensionOf("sound.$fromType") ?: DEFAULT_EXTENSION
   }
 
-  /** A row for one sound, with a Preview action that plays it. */
-  private class SoundRow(context: Context, val item: FeedbackItem, private val preview: () -> Unit) :
-    AccessibilitySuitePreference(context) {
+  /** A row for one sound, with accessibility actions. */
+  private class SoundRow(
+    context: Context,
+    val item: FeedbackItem,
+    private val preview: () -> Unit,
+    private val setNone: () -> Unit,
+    private val resetDefault: () -> Unit,
+    private val chooseFile: () -> Unit,
+    private val canPreview: () -> Boolean,
+    private val isNone: () -> Boolean,
+    private val canReset: () -> Boolean,
+  ) : AccessibilitySuitePreference(context) {
     init {
       key = "pref_theme_sound_${item.key}"
       isPersistent = false
@@ -264,13 +320,65 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
       super.onBindViewHolder(holder)
       // Rows are reused for other sounds, so every bind replaces the action.
-      val label = context.getString(R.string.theme_sound_preview)
+      if (canPreview()) {
+        val previewLabel = context.getString(R.string.theme_sound_preview)
+        ViewCompat.replaceAccessibilityAction(
+          holder.itemView,
+          AccessibilityActionCompat(ACTION_PREVIEW, previewLabel),
+          previewLabel,
+          AccessibilityViewCommand { _, _ ->
+            preview()
+            true
+          },
+        )
+      } else {
+        ViewCompat.removeAccessibilityAction(holder.itemView, ACTION_PREVIEW)
+      }
+
+      if (!isNone()) {
+        val noneLabel = context.getString(R.string.theme_sound_action_set_none)
+        ViewCompat.replaceAccessibilityAction(
+          holder.itemView,
+          AccessibilityActionCompat(ACTION_NONE, noneLabel),
+          noneLabel,
+          AccessibilityViewCommand { _, _ ->
+            setNone()
+            true
+          },
+        )
+      } else {
+        ViewCompat.removeAccessibilityAction(holder.itemView, ACTION_NONE)
+      }
+
+      if (canReset()) {
+        val resetLabel =
+          context.getString(
+            when {
+              isControlSound(item) -> R.string.theme_sound_remove
+              isBrailleTypingSound(item) -> R.string.theme_sound_use_android_keyboard
+              else -> R.string.theme_sound_use_default
+            }
+          )
+        ViewCompat.replaceAccessibilityAction(
+          holder.itemView,
+          AccessibilityActionCompat(ACTION_RESET, resetLabel),
+          resetLabel,
+          AccessibilityViewCommand { _, _ ->
+            resetDefault()
+            true
+          },
+        )
+      } else {
+        ViewCompat.removeAccessibilityAction(holder.itemView, ACTION_RESET)
+      }
+
+      val chooseLabel = context.getString(R.string.theme_sound_choose)
       ViewCompat.replaceAccessibilityAction(
         holder.itemView,
-        AccessibilityActionCompat(ACTION_PREVIEW, label),
-        label,
+        AccessibilityActionCompat(ACTION_CHOOSE, chooseLabel),
+        chooseLabel,
         AccessibilityViewCommand { _, _ ->
-          preview()
+          chooseFile()
           true
         },
       )
@@ -279,6 +387,9 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
 
   private companion object {
     val ACTION_PREVIEW = R.id.accessibility_custom_action_0
+    val ACTION_NONE = R.id.accessibility_custom_action_1
+    val ACTION_RESET = R.id.accessibility_custom_action_2
+    val ACTION_CHOOSE = R.id.accessibility_custom_action_3
     const val STATE_CHOOSING_FOR = "choosing_for"
     const val DEFAULT_EXTENSION = "wav"
     val SOUND_TYPES = arrayOf("audio/*", "application/ogg")

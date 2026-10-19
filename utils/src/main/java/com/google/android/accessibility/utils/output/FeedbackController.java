@@ -508,7 +508,11 @@ public class FeedbackController {
    * control sound with only a vibration in the theme has neither.
    */
   private boolean hasSound(int resId) {
-    if (customSoundPath(resId) != null) {
+    @Nullable String custom = customSoundPath(resId);
+    if (ThemeSounds.NONE.equals(custom)) {
+      return false;
+    }
+    if (custom != null) {
       return true;
     }
     int index = mHasOwnSound.indexOfKey(resId);

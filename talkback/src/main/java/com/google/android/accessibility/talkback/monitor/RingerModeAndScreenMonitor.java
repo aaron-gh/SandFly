@@ -385,6 +385,21 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   /** Handles when the screen is interactive. */
   private void handleScreenOn(EventId eventId) {
+    if (!isWatch && ringerMode == AudioManager.RINGER_MODE_NORMAL) {
+      final float volume;
+      final float talkbackVolume =
+          getStreamVolume(FailoverTextToSpeech.getSpeechAudioStream(service));
+      if ((talkbackVolume > 0)
+          && (audioManager.isWiredHeadsetOn() || audioManager.isBluetoothA2dpOn())) {
+        final float ringVolume = getStreamVolume(AudioManager.STREAM_RING);
+        volume = Math.min(1.0f, (ringVolume / talkbackVolume));
+      } else {
+        volume = 1.0f;
+      }
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.part().setSound(Feedback.Sound.create(R.id.screen_on, 1.0f, volume)));
+    }
     for (ScreenChangedListener screenChangedListener : screenChangedListeners) {
       if (screenChangedListener != null) {
         screenChangedListener.onScreenChanged(isInteractive, eventId);

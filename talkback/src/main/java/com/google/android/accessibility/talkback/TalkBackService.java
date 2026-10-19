@@ -3678,7 +3678,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     // vibration still tells what kind of control it is.
     Set<Integer> heardControls =
         ControlSoundsSettings.playingSounds(
-            prefs, auditoryEnabled, mutedSounds, customSounds.keySet());
+            prefs, auditoryEnabled, mutedSounds, soundTheme.audibleSoundNames());
     Set<Integer> controlFeedback = new HashSet<>(heardControls);
     controlFeedback.addAll(
         ControlSoundsSettings.vibratingSounds(

@@ -88,6 +88,10 @@ A ZIP file of sounds alone, without a `theme.json`, also installs, named after t
     "control_sounds": true,
     "3d_audio": "headphones"
   },
+  "sounds": {
+    "gesture_begin": "none",
+    "gesture_end": "none"
+  },
   "vibrations": {
     "focus": { "pattern": [0, 12], "strength": [[12, 90]], "effects": [["tick", 100, 0]] },
     "control_button": { "pattern": [0, 20, 30, 20] },
@@ -108,6 +112,7 @@ Every field is optional.
 | `website` | Where to find out more, or get updates. |
 | `settings.control_sounds` | `true` or `false`: whether control sounds and vibrations are on with this theme. Without it, they are on when the theme has a control sound or a control vibration. |
 | `settings.3d_audio` | `"headphones"`, `"always"` or `"never"`: when control sounds play in 3D. Without it, `"headphones"`. |
+| `sounds` | Settings for sounds by event name, such as `"gesture_begin": "none"` to play no sound for an event. |
 | `vibrations` | The theme's own vibrations, by the name of the sound they play with. See below. |
 
 ### Sounds
@@ -134,6 +139,7 @@ play is left out when the theme is installed, and Backtalk says so.
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
 | `screen_off` | Screen off |
+| `screen_on` | Screen on (plays no sound by default in the Backtalk theme) |
 | `loading` | Loading |
 | `browse_mode_on_v4_2` | Browse mode on |
 | `browse_mode_off_v4_2` | Browse mode off |
@@ -161,6 +167,17 @@ play is left out when the theme is installed, and Backtalk says so.
 | `braille_keyboard_space` | Braille keyboard: space |
 | `braille_keyboard_delete` | Braille keyboard: deleting a character or a word |
 | `braille_keyboard_new_line` | Braille keyboard: new line |
+
+A theme can also set any sound to `"none"` in `theme.json` to silence it:
+
+```json
+"sounds": {
+  "gesture_begin": "none",
+  "gesture_end": "none"
+}
+```
+
+This is useful for themes modeled after other screen readers, such as iOS VoiceOver, which do not play sounds for gestures. In Backtalk under **Sounds**, you can also select **No sound** (or use the accessibility action **Set to no sound**) for any sound event.
 
 The braille keyboard sounds replace Android's keyboard sounds, and play only with **Typing sounds**
 on in the braille keyboard's settings.

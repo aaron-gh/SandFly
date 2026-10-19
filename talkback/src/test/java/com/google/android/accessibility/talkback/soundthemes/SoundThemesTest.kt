@@ -42,6 +42,12 @@ class SoundThemesTest {
   }
 
   @Test
+  fun screenOnIsAnEventSound() {
+    assertTrue(SoundThemes.SOUND_KEYS.contains("screen_on"))
+    assertTrue(IndividualFeedbackSettings.SOUNDS.any { it.key == "screen_on" })
+  }
+
+  @Test
   fun theBrailleKeyboardTypingSoundsCanBeReplaced() {
     val typing =
       listOf(

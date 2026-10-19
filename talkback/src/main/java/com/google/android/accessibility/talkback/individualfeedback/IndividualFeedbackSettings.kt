@@ -54,6 +54,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("hyperlink", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting", R.string.individual_sound_formatting),
       FeedbackItem("screen_off", R.string.individual_sound_screen_off),
+      FeedbackItem("screen_on", R.string.individual_sound_screen_on),
       FeedbackItem("loading", R.string.individual_sound_loading),
       FeedbackItem("browse_mode_on_v4_2", R.string.individual_sound_browse_mode_on),
       FeedbackItem("browse_mode_off_v4_2", R.string.individual_sound_browse_mode_off),

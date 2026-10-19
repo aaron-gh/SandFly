@@ -136,6 +136,12 @@
     <string name="theme_sound_choose">Choose a sound file</string>
     <!-- Theme sounds: choice that plays the sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_preview">Preview</string>
+    <!-- Theme sounds: choice that sets an event to play no sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_none">No sound</string>
+    <!-- Theme sounds: summary of an event set to play no sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_no_sound">No sound</string>
+    <!-- Theme sounds: accessibility action that sets an event to play no sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_action_set_none">Set to no sound</string>
     <!-- Theme sounds: choice that goes back to Backtalk's own sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_use_default">Use Backtalk\'s sound</string>
     <!-- Theme sounds: choice that removes the file of a control sound, which Backtalk has no sound for. [CHAR LIMIT=50] -->

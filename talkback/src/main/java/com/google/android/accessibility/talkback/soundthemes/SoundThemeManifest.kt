@@ -35,6 +35,8 @@ data class SoundThemeManifest(
   val controlSounds: Boolean? = null,
   /** When control sounds play in 3D: one of [AUDIO_3D_VALUES]. */
   val audio3d: String? = null,
+  /** Sounds set to "none", so that they do not play. */
+  val sounds: Map<String, String> = emptyMap(),
   /**
    * The theme's vibrations, by the name of the sound they play with, as JSON objects or "none", as
    * written in theme.json, so that they are saved again as the author wrote them.
@@ -61,6 +63,11 @@ data class SoundThemeManifest(
       audio3d?.let { settings.put(AUDIO_3D, it) }
       json.put(SETTINGS, settings)
     }
+    if (sounds.isNotEmpty()) {
+      val all = JSONObject()
+      for ((key, value) in sounds) all.put(key, value)
+      json.put(SOUNDS, all)
+    }
     if (vibrations.isNotEmpty()) {
       val all = JSONObject()
       for ((key, value) in vibrations) all.put(key, value)
@@ -85,6 +92,7 @@ data class SoundThemeManifest(
     private const val SETTINGS = "settings"
     private const val CONTROL_SOUNDS = "control_sounds"
     private const val AUDIO_3D = "3d_audio"
+    private const val SOUNDS = "sounds"
     private const val VIBRATIONS = "vibrations"
     private const val PATTERN = "pattern"
     private const val STRENGTH = "strength"
@@ -120,8 +128,14 @@ data class SoundThemeManifest(
      * @param fallbackName the name to use if the file has none, such as the name of the ZIP file
      */
     @JvmStatic
+    @JvmOverloads
     @Throws(JSONException::class)
-    fun parse(text: String, vibrationNames: Set<String>, fallbackName: String): SoundThemeManifest {
+    fun parse(
+      text: String,
+      vibrationNames: Set<String>,
+      fallbackName: String,
+      soundKeys: Set<String> = emptySet(),
+    ): SoundThemeManifest {
       val json = JSONObject(text)
       val warnings = ArrayList<String>()
       if (json.optInt(FORMAT, FORMAT_VERSION) > FORMAT_VERSION) {
@@ -140,6 +154,21 @@ data class SoundThemeManifest(
               warnings += "settings.$AUDIO_3D must be one of ${AUDIO_3D_VALUES.joinToString()}"
             }
         }
+      val sounds = LinkedHashMap<String, String>()
+      json.optJSONObject(SOUNDS)?.let { all ->
+        for (key in all.keys()) {
+          val value = all.optString(key, "")
+          if (soundKeys.isNotEmpty() && key !in soundKeys) {
+            warnings += "sounds.$key: there is no sound called $key"
+            continue
+          }
+          if (value == NONE) {
+            sounds[key] = NONE
+          } else {
+            warnings += "sounds.$key: must be \"none\""
+          }
+        }
+      }
       val vibrations = LinkedHashMap<String, Any>()
       json.optJSONObject(VIBRATIONS)?.let { all ->
         for (key in all.keys()) {
@@ -166,6 +195,7 @@ data class SoundThemeManifest(
         website = text(json, WEBSITE, MAX_TEXT_LENGTH),
         controlSounds = controlSounds,
         audio3d = audio3d,
+        sounds = sounds,
         vibrations = vibrations,
         warnings = warnings,
       )

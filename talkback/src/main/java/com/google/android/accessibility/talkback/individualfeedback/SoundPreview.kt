@@ -31,6 +31,9 @@ class SoundPreview {
 
   fun play(context: Context, prefs: SharedPreferences, item: FeedbackItem) {
     stop()
+    if (SoundThemes.isNone(context, prefs, item)) {
+      return
+    }
     val attributes =
       AudioAttributes.Builder()
         .setUsage(

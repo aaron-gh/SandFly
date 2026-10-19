@@ -25,6 +25,9 @@ import android.media.SoundPool
  * the theme is set, so that the first key typed plays at once.
  */
 object ThemeSounds {
+  /** The path of a sound that plays nothing, as in a theme's "none". */
+  const val NONE = "none"
+
   private const val MAX_STREAMS = 4
 
   private val lock = Any()
@@ -50,7 +53,9 @@ object ThemeSounds {
       val newPool =
         SoundPool.Builder().setMaxStreams(MAX_STREAMS).setAudioAttributes(attributes).build()
       for (path in paths.values.toSet()) {
-        soundIds[path] = newPool.load(path, 1)
+        if (path != NONE) {
+          soundIds[path] = newPool.load(path, 1)
+        }
       }
       pool = newPool
     }
@@ -64,6 +69,7 @@ object ThemeSounds {
   fun play(name: String, volume: Float): Boolean {
     synchronized(lock) {
       val path = paths[name] ?: return false
+      if (path == NONE) return true
       val soundId = soundIds[path] ?: return false
       // A sound still loading is skipped rather than played late.
       pool?.play(soundId, volume, volume, 1, 0, 1f)

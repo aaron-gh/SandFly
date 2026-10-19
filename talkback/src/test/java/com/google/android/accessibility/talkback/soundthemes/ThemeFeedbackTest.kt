@@ -84,4 +84,19 @@ class ThemeFeedbackTest {
   fun onlyVibrationsThatCanBeFeltCount() {
     assertEquals(setOf("focus", "control_button", "control_link"), feedback.felt())
   }
+
+  @Test
+  fun audibleSoundNamesExcludesNoneSounds() {
+    val fb =
+      ThemeFeedback(
+        soundPaths =
+          mapOf(
+            "focus" to "/path/to/focus.wav",
+            "gesture_begin" to SoundThemeManifest.NONE,
+          ),
+        vibrations = emptyMap(),
+      )
+    val audible = fb.audibleSoundNames()
+    assertEquals(setOf("focus"), audible)
+  }
 }

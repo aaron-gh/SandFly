@@ -30,7 +30,7 @@ class SoundThemeManifestTest {
   private val keys =
     SoundVibrations.themeNames(IndividualFeedbackSettings.SOUNDS.map { it.key })
 
-  private fun parse(json: String) = SoundThemeManifest.parse(json, keys, "fallback")
+  private fun parse(json: String) = SoundThemeManifest.parse(json, keys, "fallback", keys)
 
   @Test
   fun readsWhoMadeItAndItsSettings() {
@@ -170,6 +170,30 @@ class SoundThemeManifestTest {
       manifest.vibrations.keys,
     )
     assertEquals(1, manifest.warnings.size)
+  }
+
+  @Test
+  fun readsSoundsAndHandlesNone() {
+    val manifest =
+      parse(
+        """
+        {"name": "VoiceOver", "sounds": {"gesture_begin": "none", "gesture_end": "none", "unknown_sound": "none", "focus": "invalid"}}
+        """
+      )
+    assertEquals(mapOf("gesture_begin" to "none", "gesture_end" to "none"), manifest.sounds)
+    assertEquals(2, manifest.warnings.size)
+  }
+
+  @Test
+  fun savingAndReadingAgainKeepsSounds() {
+    val manifest =
+      parse(
+        """
+        {"name": "VoiceOver", "sounds": {"gesture_begin": "none"}}
+        """
+      )
+    val again = parse(manifest.toJson())
+    assertEquals(mapOf("gesture_begin" to "none"), again.sounds)
   }
 
   @Test
