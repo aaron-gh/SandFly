@@ -61,6 +61,7 @@ import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.apps.common.proguard.UsedByReflection;
+import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
@@ -167,6 +168,16 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean isFocusPage = false;
   @TypingMethod private int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
   private boolean tapToType;
+
+  /** How long a keyboard can take to report the click on a key typed with a tap. */
+  private static final long TAP_TO_TYPE_CLICK_WAIT_MS = 2000;
+
+  /** At most this many taps wait for the keyboard to report their clicks. */
+  private static final int MAX_TAPS_TO_TYPE = 10;
+
+  // When keys were typed with a tap and the keyboard hasn't reported their clicks yet. A keyboard
+  // reports a click after the text changes, often after the next tap has started.
+  private final ArrayDeque<Long> tapsToType = new ArrayDeque<>();
   private boolean isDescribingSwipeTarget = false;
 
   private final @Nullable GestureShortcutProvider gestureShortcutProvider;
@@ -540,6 +551,25 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   /** Returns whether the touch interaction in progress is a tap that types a key. */
   public boolean isTapToType() {
     return tapToType;
+  }
+
+  /** Notes that a tap at {@code uptimeMs} types a key, whose click the keyboard reports later. */
+  public void noteTapToType(long uptimeMs) {
+    tapsToType.addLast(uptimeMs);
+    while (tapsToType.size() > MAX_TAPS_TO_TYPE) {
+      tapsToType.removeFirst();
+    }
+  }
+
+  /**
+   * Returns whether a click the keyboard reports at {@code uptimeMs} is on a key typed with a tap,
+   * and counts it as reported.
+   */
+  public boolean takeTapToTypeClick(long uptimeMs) {
+    while (!tapsToType.isEmpty() && uptimeMs - tapsToType.peekFirst() > TAP_TO_TYPE_CLICK_WAIT_MS) {
+      tapsToType.removeFirst();
+    }
+    return tapsToType.pollFirst() != null;
   }
 
   /** Sets if TalkBack uses single-tap gesture. */
