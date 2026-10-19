@@ -25,6 +25,12 @@ public final class SystemActionPerformer {
   public static final int GLOBAL_ACTION_ACCESSIBILITY_SHORTCUT = 13;
   private static final int GLOBAL_ACTION_ACCESSIBILITY_ALL_APPS_LEGACY = 100;
 
+  /**
+   * Opens the system's notification shade even when Backtalk's notification list takes the place
+   * of {@link AccessibilityService#GLOBAL_ACTION_NOTIFICATIONS}. Not an Android action.
+   */
+  public static final int GLOBAL_ACTION_SYSTEM_NOTIFICATIONS = -4;
+
   public static final ImmutableList<Integer> EXCLUDED_ACTIONS =
       ImmutableList.copyOf(
           Arrays.asList(
@@ -59,6 +65,9 @@ public final class SystemActionPerformer {
   public boolean performAction(int id) {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
+    }
+    if (id == GLOBAL_ACTION_SYSTEM_NOTIFICATIONS) {
+      return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS);
     }
     if (id == AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
         && NotificationListActivity.openInsteadOfShade(service)) {
