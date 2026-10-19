@@ -1709,8 +1709,15 @@ public class TalkBackService extends AccessibilityServiceCompat
     return globalVariables;
   }
 
-  public TalkBackExitController getTalkBackExitController() {
+  /**
+   * Returns the controller of the exit watermark, or null before the service is connected. Settings
+   * screens can resume in that time, such as when they are opened as Backtalk restarts.
+   */
+  public @Nullable TalkBackExitController getTalkBackExitController() {
     if (talkBackExitController == null) {
+      if (pipeline == null) {
+        return null;
+      }
       talkBackExitController = new TalkBackExitController(this, pipeline.getFeedbackReturner());
     }
     return talkBackExitController;
@@ -3759,7 +3766,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_show_exit_watermark_key, R.bool.pref_show_exit_watermark_default);
     TalkBackExitController talkBackExitController = getTalkBackExitController();
-    if (showExitWatermark && TalkbackFeatureSupport.supportTalkBackExitBanner(this)) {
+    if (talkBackExitController == null) {
+      // Not connected yet.
+    } else if (showExitWatermark && TalkbackFeatureSupport.supportTalkBackExitBanner(this)) {
       if (!talkBackExitController.isTalkBackExitWatermarkShown()
           && TextUtils.equals(key, getString(R.string.pref_show_exit_watermark_key))) {
         // Show watermark that respects user settings.
