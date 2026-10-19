@@ -147,6 +147,18 @@ public class AccessibilityNodeInfoUtils {
    */
   private static final String CHROME_ROLE_LINK = "link";
 
+  /** The roles Chrome gives the landmarks of a web page. */
+  private static final ImmutableSet<String> CHROME_LANDMARK_ROLES =
+      ImmutableSet.of(
+          "banner",
+          "complementary",
+          "contentInfo",
+          "form",
+          "main",
+          "navigation",
+          "region",
+          "search");
+
   /**
    * A wrapper over AccessibilityNodeInfoCompat constructor, so that we can add any desired error
    * checking and memory management.
@@ -1231,6 +1243,12 @@ public class AccessibilityNodeInfoUtils {
   /** Returns whether {@code node} has the chrome role "link". */
   public static boolean isChromeRoleLink(@Nullable AccessibilityNodeInfoCompat node) {
     return node != null && TextUtils.equals(getChromeRole(node), CHROME_ROLE_LINK);
+  }
+
+  /** Returns whether {@code node} is a landmark of a web page, such as its navigation or main. */
+  public static boolean isWebLandmark(@Nullable AccessibilityNodeInfoCompat node) {
+    CharSequence role = getChromeRole(node);
+    return role != null && CHROME_LANDMARK_ROLES.contains(role.toString());
   }
 
   /** Returns the role Chrome gives a web element, such as "button" or "listItem", or empty. */
