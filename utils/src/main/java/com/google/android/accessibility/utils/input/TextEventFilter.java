@@ -224,7 +224,12 @@ public class TextEventFilter {
           // Update text change history. A change kept although it came too soon is already
           // counted among the changes awaiting their selection events.
           if (!tooSoon) {
-            textEventHistory.setTextChangesAwaitingSelection(1);
+            // Compose text fields send the selection event before the text change event, and it
+            // is already dropped.
+            textEventHistory.setTextChangesAwaitingSelection(
+                textEventHistory.takeSelectionBeforeTextChange(event, TEXT_SELECTION_DELAY)
+                    ? 0
+                    : 1);
           }
           textEventHistory.setLastTextChangeTime(event.getEventTime());
           textEventHistory.setLastTextChangePackageName(event.getPackageName());
