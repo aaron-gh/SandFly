@@ -104,17 +104,35 @@ data class ScriptRule(
   val actions: List<RuleItemAction> = emptyList(),
   /** What a double-tap presses, searched inside the item. */
   val activate: NodeQuery? = null,
+  /** Whether lifting the finger from the item activates it. */
+  val liftToActivate: Boolean = false,
+  /**
+   * How many milliseconds a finger held on an item that lifts to activate takes to long-press it.
+   */
+  val longPressAfter: Int? = null,
 ) {
   val target: String
     get() = id ?: match.toString()
 
   val changesItem: Boolean
     get() =
-      listOf(label, speak, role, state, hint, heading, readBefore, readAfter, activate)
+      listOf(
+          label,
+          speak,
+          role,
+          state,
+          hint,
+          heading,
+          readBefore,
+          readAfter,
+          activate,
+          longPressAfter,
+        )
         .any { it != null } ||
         hide != Hide.NONE ||
         silence != Hide.NONE ||
-        group
+        group ||
+        liftToActivate
 }
 
 data class ScriptNavigation(val title: String, val query: NodeQuery)
@@ -264,7 +282,7 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 4
+    const val API_VERSION = 5
 
     fun parse(json: String, strict: Boolean = true): ScriptManifest =
       ManifestParser(strict).parse(json)

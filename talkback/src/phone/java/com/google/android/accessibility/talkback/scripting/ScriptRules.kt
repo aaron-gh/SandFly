@@ -184,6 +184,8 @@ private constructor(
         activate = first { it.activate }?.let { query -> { node -> query.firstIn(node) } },
         silence = silence != null,
         silenceInside = silence == Hide.ALL,
+        liftToActivate = rules.any { it.liftToActivate },
+        longPressAfter = first { it.longPressAfter },
       )
     }
 
@@ -226,6 +228,7 @@ private constructor(
         RuleAspect.ORDER.takeIf { rule.readBefore != null || rule.readAfter != null },
         RuleAspect.ACTIVATE.takeIf { rule.activate != null },
         RuleAspect.SILENCE.takeIf { rule.silence != Hide.NONE },
+        RuleAspect.LIFT.takeIf { rule.liftToActivate || rule.longPressAfter != null },
       )
   }
 

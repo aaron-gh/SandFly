@@ -105,6 +105,18 @@ class ScriptRulesMergeTest {
   }
 
   @Test
+  fun anyRuleCanLiftToActivateAndTheFirstLongPressTimeWins() {
+    val merged =
+      merge(
+        ScriptRule(id = "a", longPressAfter = 600),
+        ScriptRule(id = "a", liftToActivate = true, longPressAfter = 900),
+      )!!
+
+    assertTrue(merged.liftToActivate)
+    assertEquals(600, merged.longPressAfter)
+  }
+
+  @Test
   fun anyRuleCanGroupTheItem() {
     val merged = merge(ScriptRule(id = "a", label = "Row"), ScriptRule(id = "a", group = true))!!
 

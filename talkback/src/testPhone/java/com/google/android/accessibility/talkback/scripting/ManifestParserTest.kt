@@ -174,6 +174,18 @@ class ManifestParserTest {
   }
 
   @Test
+  fun liftToActivateTakesALongPressTime() {
+    val parsed = rule("""{"id":"a","liftToActivate":true,"longPressAfter":800}""")
+    assertTrue(parsed.liftToActivate)
+    assertEquals(800, parsed.longPressAfter)
+    assertEquals(null, rule("""{"id":"a","liftToActivate":true}""").longPressAfter)
+    assertTrue("needs label" in rejectsRule("""{"id":"a","liftToActivate":false}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":50}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":20000}"""))
+    assertTrue("longPressAfter is" in rejectsRule("""{"id":"a","longPressAfter":"1s"}"""))
+  }
+
+  @Test
   fun unknownRuleFieldsAreRejected() {
     assertTrue("colour" in rejectsRule("""{"id":"a","label":"A","colour":"red"}"""))
   }
