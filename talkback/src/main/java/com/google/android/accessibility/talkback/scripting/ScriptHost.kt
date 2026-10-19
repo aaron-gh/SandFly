@@ -80,6 +80,7 @@ enum class RuleAspect {
   ORDER,
   ACTIVATE,
   SILENCE,
+  LIFT,
 }
 
 class NodeRule(
@@ -98,6 +99,10 @@ class NodeRule(
   val activate: ((AccessibilityNodeInfoCompat) -> AccessibilityNodeInfoCompat?)? = null,
   val silence: Boolean = false,
   val silenceInside: Boolean = false,
+  /** Whether lifting the finger from the item activates it. */
+  val liftToActivate: Boolean = false,
+  /** How many milliseconds a finger held on the item takes to long-press it, if a rule says. */
+  val longPressAfter: Int? = null,
 ) {
   val hidesDescendants: Boolean
     get() = hideInside || group
@@ -157,6 +162,19 @@ object Scripts {
   @JvmStatic
   fun isSilenced(node: AccessibilityNodeInfoCompat?): Boolean =
     node != null && host?.isSilenced(node) == true
+
+  /** Whether a script rule has lifting the finger from {@code node} activate it. */
+  @JvmStatic
+  fun liftsToActivate(node: AccessibilityNodeInfoCompat?): Boolean =
+    node != null && rule(node, RuleAspect.LIFT)?.liftToActivate == true
+
+  /**
+   * How many milliseconds a finger held on {@code node} takes to long-press it, or 0 if no script
+   * rule has the node lift to activate and long-press.
+   */
+  @JvmStatic
+  fun longPressAfterMs(node: AccessibilityNodeInfoCompat?): Int =
+    node?.let { rule(it, RuleAspect.LIFT) }?.takeIf { it.liftToActivate }?.longPressAfter ?: 0
 
   @JvmStatic fun currentActivity(): String? = host?.currentActivity()
 

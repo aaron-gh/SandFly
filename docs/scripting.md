@@ -1,6 +1,6 @@
 # Writing Backtalk scripts
 
-A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 4.
+A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 5.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -53,7 +53,7 @@ backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 4. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), version 3 added `meta` to [`backtalk.app`](#screen), and version 4 added `silence` to rules. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 5. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), version 3 added `meta` to [`backtalk.app`](#screen), version 4 added `silence` to rules, and version 5 added `liftToActivate` and `longPressAfter` to rules. |
 | `testedApiVersion` | Required. The highest script API version you tested with. Backtalk warns before installing a script tested only with an older version. |
 | `version` | The script's own version, as text. The default is `'1'`. |
 | `description` | Shown on the script's page and before it's installed. |
@@ -143,6 +143,8 @@ A rule can set any of these:
 | `readBefore`, `readAfter` | Moves the item in the reading order to just before or after another item, named by id or query. Use one, not both. |
 | `actions` | Items to add to the item's Actions menu. See below. |
 | `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. Needs script API version 2. |
+| `liftToActivate` | `true` activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. Needs script API version 5. |
+| `longPressAfter` | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. Needs script API version 5. |
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `backtalk.rules.add` comes before the manifest.
 

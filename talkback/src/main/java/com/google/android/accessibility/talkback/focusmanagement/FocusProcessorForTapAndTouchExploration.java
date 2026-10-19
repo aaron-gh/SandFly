@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -291,6 +292,11 @@ public class FocusProcessorForTapAndTouchExploration {
     // Reset it when last touched node is changed.
     mayBeLiftToType = true;
     lastFocusableNodeBeingTouched = touchedFocusableNode;
+
+    int scriptLongPressMs = Scripts.longPressAfterMs(touchedFocusableNode);
+    if (scriptLongPressMs > 0 && AccessibilityNodeInfoUtils.isLongClickable(touchedFocusableNode)) {
+      postDelayHandler.longPressAfterTimeout(scriptLongPressMs);
+    }
     return result;
   }
 
@@ -346,6 +352,9 @@ public class FocusProcessorForTapAndTouchExploration {
   private boolean shouldLiftToActivate(@Nullable AccessibilityNodeInfoCompat node) {
     if (node == null) {
       return false;
+    }
+    if (Scripts.liftsToActivate(node)) {
+      return true;
     }
     LiftToActivateMode mode =
         LiftToActivateMode.fromPrefValue(
@@ -504,7 +513,8 @@ public class FocusProcessorForTapAndTouchExploration {
         case MSG_REFOCUS ->
             parent.touchFocusedNode(parent.lastFocusableNodeBeingTouched, /* eventId= */ null);
         case MSG_LONG_CLICK_LAST_NODE -> {
-          if (parent.supportsLiftToType(parent.lastFocusableNodeBeingTouched)) {
+          if (parent.supportsLiftToType(parent.lastFocusableNodeBeingTouched)
+              || Scripts.longPressAfterMs(parent.lastFocusableNodeBeingTouched) > 0) {
             parent.interpretationReceiver.input(
                 /* eventId= */ null,
                 /* event= */ null,
@@ -517,8 +527,12 @@ public class FocusProcessorForTapAndTouchExploration {
     }
 
     private void longPressAfterTimeout() {
+      longPressAfterTimeout(longPressDelayMs);
+    }
+
+    private void longPressAfterTimeout(long delayMs) {
       removeMessages(MSG_LONG_CLICK_LAST_NODE);
-      sendEmptyMessageDelayed(MSG_LONG_CLICK_LAST_NODE, longPressDelayMs);
+      sendEmptyMessageDelayed(MSG_LONG_CLICK_LAST_NODE, delayMs);
     }
 
     private void cancelLongPress() {
