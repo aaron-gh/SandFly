@@ -331,6 +331,38 @@ class TouchInteractionMonitorTest {
   }
 
   @Test
+  fun fingerHeldOnTheKeyboardWaitsForTheTypingFocusDelay() {
+    showKeyboardAndTapToType()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_touch_focus_time_out_key), "200")
+      .putString(service.getString(R.string.pref_typing_focus_time_out_key), "400")
+      .commit()
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 1200f, 0)
+
+    runUntil(300)
+    assertEquals(listOf<Thread>(), reporter.requests)
+    runUntil(400)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
+  fun fingerHeldAboveTheKeyboardWaitsForTheFocusDelay() {
+    showKeyboardAndTapToType()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_touch_focus_time_out_key), "200")
+      .putString(service.getString(R.string.pref_typing_focus_time_out_key), "400")
+      .commit()
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+
+    runUntil(200)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
   fun quickTapOnTheKeyboardWithAnotherTypingMethodIsNotTyped() {
     showKeyboardAndTapToType()
     SharedPreferencesUtils.getSharedPreferences(service)
