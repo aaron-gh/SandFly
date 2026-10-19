@@ -3301,6 +3301,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (globalVariables != null) {
       globalVariables.setTapToType(true);
+      globalVariables.noteTapToType(SystemClock.uptimeMillis());
     }
   }
 

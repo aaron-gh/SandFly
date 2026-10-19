@@ -19,6 +19,7 @@ import static com.google.android.accessibility.talkback.compositor.Compositor.EV
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE;
 
 import android.content.Context;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
@@ -62,8 +63,8 @@ public final class EventTypeViewClickedFeedbackRule {
         (eventOptions) -> {
           // A key typed with a tap is only echoed, as typing works without a screen reader.
           boolean tappedKey =
-              globalVariables.isTapToType()
-                  && AccessibilityNodeInfoUtils.isKeyboard(eventOptions.sourceNode);
+              AccessibilityNodeInfoUtils.isKeyboard(eventOptions.sourceNode)
+                  && globalVariables.takeTapToTypeClick(SystemClock.uptimeMillis());
           return EventFeedback.builder()
               .setTtsOutput(computeTtsOutput(eventOptions.sourceNode, context, globalVariables))
               .setQueueMode(QUEUE_MODE_QUEUE)
