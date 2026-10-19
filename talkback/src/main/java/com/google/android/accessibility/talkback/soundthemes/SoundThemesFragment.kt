@@ -17,13 +17,20 @@
 package com.google.android.accessibility.talkback.soundthemes
 
 import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.LinearLayout
+import android.widget.ScrollView
+import android.widget.TextView
+import android.text.InputFilter
+import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -116,6 +123,8 @@ class SoundThemesFragment : TalkbackBaseFragment() {
     screen.removeAll()
     val active = SoundThemes.active(context, prefs)
 
+    screen.addPreference(action(context, getString(R.string.theme_create), null) { createTheme() })
+
     val installed = category(context, getString(R.string.sound_themes_installed_category))
     screen.addPreference(installed)
     for (theme in SoundThemes.installed(context)) {
@@ -148,6 +157,76 @@ class SoundThemesFragment : TalkbackBaseFragment() {
         askForLink()
       }
     )
+  }
+
+  private fun createTheme() {
+    val context = requireContext()
+    val form = ThemeForm(context)
+    val name = form.field(R.string.theme_create_name, SoundThemeManifest.MAX_NAME_LENGTH)
+    val description =
+      form.field(R.string.theme_create_description, SoundThemeManifest.MAX_TEXT_LENGTH, true)
+    val author = form.field(R.string.theme_create_author, SoundThemeManifest.MAX_NAME_LENGTH)
+    val website = form.field(R.string.theme_create_website, SoundThemeManifest.MAX_TEXT_LENGTH).apply {
+      inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI
+    }
+    val dialog = AlertDialog.Builder(context)
+      .setTitle(R.string.theme_create)
+      .setView(ScrollView(context).apply { addView(form.view) })
+      .setNegativeButton(android.R.string.cancel, null)
+      .setPositiveButton(android.R.string.ok, null)
+      .create()
+    var creating = false
+    dialog.setOnShowListener {
+      dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+        if (creating) return@setOnClickListener
+        val title = name.text.toString().trim()
+        if (title.isEmpty()) {
+          name.error = getString(R.string.theme_create_name_required)
+          name.requestFocus()
+          return@setOnClickListener
+        }
+        val manifest = SoundThemeManifest(
+          name = title,
+          description = description.text.toString().trim().ifEmpty { null },
+          author = author.text.toString().trim().ifEmpty { null },
+          website = website.text.toString().trim().ifEmpty { null },
+        )
+        val app = context.applicationContext
+        val activity = requireActivity()
+        creating = true
+        executor.execute {
+          val duplicate = SoundThemes.theme(app, SoundThemes.idFor(title)) != null
+          val draft =
+            try {
+              if (duplicate) null else SoundThemes.createDraft(app, manifest)
+            } catch (e: IOException) {
+              null
+            }
+          activity.runOnUiThread {
+            if (!isAdded || !dialog.isShowing) {
+              draft?.let { executor.execute { SoundThemes.discardDraft(app, it.id) } }
+              return@runOnUiThread
+            }
+            creating = false
+            if (draft == null) {
+              name.error = getString(
+                if (duplicate) R.string.theme_create_duplicate else R.string.theme_create_save_failed
+              )
+              name.requestFocus()
+              return@runOnUiThread
+            }
+            startActivity(Intent(context, ThemeDraftActivity::class.java)
+              .putExtra(BasePreferencesActivity.FRAGMENT_NAME, ThemeSoundsFragment::class.java.name)
+              .putExtra(BasePreferencesActivity.FRAGMENT_ARGS, Bundle().apply {
+                putString(ThemeSoundsFragment.ARG_DRAFT, draft.id)
+              }))
+            dialog.dismiss()
+          }
+        }
+      }
+    }
+    dialog.show()
+    name.requestFocus()
   }
 
   /** The settings each theme has its own of, for the theme in use. */
@@ -272,23 +351,8 @@ class SoundThemesFragment : TalkbackBaseFragment() {
     val context = requireContext().applicationContext
     val activity = requireActivity()
     executor.execute {
-      val count =
-        try {
-          context.contentResolver.openOutputStream(uri)?.use {
-            SoundThemes.export(context, prefs, id, it)
-          }
-        } catch (e: IOException) {
-          null
-        } catch (e: SecurityException) {
-          null
-        }
-      activity.runOnUiThread {
-        if (!isAdded) return@runOnUiThread
-        showMessage(
-          if (count == null) getString(R.string.sound_theme_export_failed)
-          else resources.getQuantityString(R.plurals.sound_theme_exported, count, count)
-        )
-      }
+      val message = SoundThemeExport.message(context, prefs, id, uri)
+      activity.runOnUiThread { if (isAdded) showMessage(message) }
     }
   }
 
@@ -379,5 +443,31 @@ class SoundThemesFragment : TalkbackBaseFragment() {
       manifest.website?.let { lines += it }
       return lines.joinToString("\n\n")
     }
+  }
+}
+
+/** Text fields with a label above each, lined up with a dialog's message. */
+internal class ThemeForm(private val context: Context) {
+  val view =
+    LinearLayout(context).apply {
+      orientation = LinearLayout.VERTICAL
+      val padding = (24 * context.resources.displayMetrics.density).toInt()
+      setPadding(padding, 0, padding, 0)
+    }
+
+  fun field(label: Int, limit: Int, multiline: Boolean = false): EditText {
+    val input =
+      KeyboardSafeEditText(context).apply {
+        id = View.generateViewId()
+        inputType =
+          InputType.TYPE_CLASS_TEXT or
+            if (multiline) InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            else InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
+        isSingleLine = !multiline
+        filters = arrayOf(InputFilter.LengthFilter(limit))
+      }
+    view.addView(TextView(context).apply { setText(label); labelFor = input.id })
+    view.addView(input)
+    return input
   }
 }

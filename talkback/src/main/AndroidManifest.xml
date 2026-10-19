@@ -240,6 +240,13 @@
             </intent-filter>
         </activity-alias>
 
+        <activity
+            android:name="com.google.android.accessibility.talkback.soundthemes.ThemeDraftActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+            android:label="@string/talkback_preferences_title"
+            android:exported="false"
+            android:theme="@style/TalkBackSettings" />
+
         <!-- TalkBack subsettings Preferences -->
         <activity
             android:name="com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity$TalkBackSubSettings"

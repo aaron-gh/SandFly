@@ -98,8 +98,8 @@ data class SoundThemeManifest(
     private const val STRENGTH = "strength"
     private const val EFFECTS = "effects"
 
-    private const val MAX_NAME_LENGTH = 100
-    private const val MAX_TEXT_LENGTH = 2000
+    internal const val MAX_NAME_LENGTH = 100
+    internal const val MAX_TEXT_LENGTH = 2000
     private const val MAX_STEPS = 64
     private const val MAX_MS = 5000
     private const val MAX_LEVEL = 255
