@@ -19,8 +19,10 @@ package com.google.android.accessibility.talkback.notificationlist
 import android.app.NotificationManager
 import android.content.ComponentName
 import android.content.Context
+import android.os.Build
 import android.service.notification.NotificationListenerService.RankingMap
 import android.service.notification.StatusBarNotification
+import androidx.core.app.NotificationManagerCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
@@ -37,7 +39,7 @@ object NotificationList {
   private val listeners = LinkedHashSet<Listener>()
   private val notifications = LinkedHashMap<String, StatusBarNotification>()
   private var ranking: RankingMap? = null
-  private var cached: List<NotificationEntry>? = null
+  private var cached: List<NotificationItem>? = null
   private val appNames = HashMap<String, CharSequence>()
 
   /** Whether the listener is connected, so that the list is current. */
@@ -56,11 +58,15 @@ object NotificationList {
   /** Whether the user has given Backtalk notification access. */
   @JvmStatic
   fun isAccessGranted(context: Context): Boolean =
-    context
-      .getSystemService(NotificationManager::class.java)
-      .isNotificationListenerAccessGranted(
-        ComponentName(context, NotificationListService::class.java)
-      )
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+      context
+        .getSystemService(NotificationManager::class.java)
+        .isNotificationListenerAccessGranted(
+          ComponentName(context, NotificationListService::class.java)
+        )
+    } else {
+      NotificationManagerCompat.getEnabledListenerPackages(context).contains(context.packageName)
+    }
 
   fun addListener(listener: Listener) {
     listeners.add(listener)
@@ -71,7 +77,7 @@ object NotificationList {
   }
 
   /** The notifications to show, in order. */
-  fun entries(context: Context): List<NotificationEntry> =
+  fun items(context: Context): List<NotificationItem> =
     cached ?: build(context).also { cached = it }
 
   internal fun onConnected(active: Array<StatusBarNotification>?, ranking: RankingMap?) {
@@ -101,7 +107,11 @@ object NotificationList {
     changed()
   }
 
-  internal fun onRankingUpdate(ranking: RankingMap?) {
+  internal fun onRankingUpdate(active: Array<StatusBarNotification>?, ranking: RankingMap?) {
+    if (active != null) {
+      notifications.clear()
+      active.forEach { notifications[it.key] = it }
+    }
     this.ranking = ranking
     changed()
   }
@@ -113,28 +123,43 @@ object NotificationList {
 
   /**
    * Orders the notifications as the system ranks them. A group is shown where its first member
-   * ranks, members together, and its summary only when it has no other members, as the summary
-   * repeats them.
+   * ranks, as one item when it has two or more members, and its summary only when it has no other
+   * members, as the summary repeats them.
    */
-  private fun build(context: Context): List<NotificationEntry> {
+  private fun build(context: Context): List<NotificationItem> {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
-    val ranked = order.mapNotNull { notifications[it] } + notifications.values.filter { it.key !in order }
+    val orderSet = order.toSet()
+    val ranked =
+      order.mapNotNull { notifications[it] } + notifications.values.filter { it.key !in orderSet }
     val groups = ranked.groupBy { it.groupKey }
     val shownGroups = HashSet<String>()
-    val result = ArrayList<NotificationEntry>()
+    val result = ArrayList<NotificationItem>()
     for (notification in ranked) {
       val groupKey = notification.groupKey
       if (!shownGroups.add(groupKey)) {
         continue
       }
       val members = groups[groupKey].orEmpty()
-      val children = members.filter { !it.notification.isGroupSummary() }
-      for (member in children.ifEmpty { members }) {
-        result.add(NotificationEntry.from(member, appName(context, member.packageName)))
-      }
+      val (summaries, children) = members.partition { it.notification.isGroupSummary() }
+      val entries = children.ifEmpty { members }.map { entry(context, it) }
+      result.add(
+        if (entries.size >= 2) {
+          NotificationItem.Group(
+            groupKey,
+            entries.first().appName,
+            summaries.firstOrNull()?.let { entry(context, it) },
+            entries,
+          )
+        } else {
+          NotificationItem.Single(entries.first())
+        }
+      )
     }
     return result
   }
+
+  private fun entry(context: Context, notification: StatusBarNotification): NotificationEntry =
+    NotificationEntry.from(notification, appName(context, notification.packageName))
 
   private fun appName(context: Context, packageName: String): CharSequence =
     appNames.getOrPut(packageName) {
@@ -147,4 +172,21 @@ object NotificationList {
 
   private fun android.app.Notification.isGroupSummary(): Boolean =
     flags and android.app.Notification.FLAG_GROUP_SUMMARY != 0
+}
+
+/** A notification, or a group of two or more, as the list shows it. */
+sealed class NotificationItem {
+  abstract val entries: List<NotificationEntry>
+
+  class Single(val entry: NotificationEntry) : NotificationItem() {
+    override val entries: List<NotificationEntry>
+      get() = listOf(entry)
+  }
+
+  class Group(
+    val key: String,
+    val appName: CharSequence,
+    val summary: NotificationEntry?,
+    override val entries: List<NotificationEntry>,
+  ) : NotificationItem()
 }

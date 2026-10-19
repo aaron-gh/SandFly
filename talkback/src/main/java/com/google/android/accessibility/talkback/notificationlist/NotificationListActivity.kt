@@ -25,6 +25,9 @@ import android.app.RemoteInput
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.media.session.MediaController
+import android.media.session.MediaSession
+import android.media.session.PlaybackState
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -63,11 +66,20 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   private lateinit var clearAll: Button
   private lateinit var quickSettings: Button
 
-  /** A row per notification key, kept so that a focused row stays focused when the list changes. */
+  /**
+   * A row per notification or group key, kept so that a focused row stays focused when the list
+   * changes.
+   */
   private val rows = HashMap<String, TextView>()
+
+  /** The groups the user has expanded while the list is open. */
+  private val expandedGroups = HashSet<String>()
 
   /** The view in the list that has accessibility focus, if one has. */
   private var focusedView: View? = null
+
+  /** Whether the list has just opened, so focus goes to its first item. */
+  private var opening = false
 
   /** Whether the list opened before the listener had reported the notifications. */
   private var waitingForList = false
@@ -87,7 +99,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     grantAccess = button(R.string.notification_list_grant_access) { openAccessSettings() }
     clearAll =
       button(R.string.notification_list_clear_all) {
-        val remaining = NotificationList.entries(this).filter { !it.notification.isClearable }
+        val remaining =
+          NotificationList.items(this).flatMap { it.entries }.filter { !it.notification.isClearable }
         NotificationListService.instance?.cancelAllNotifications()
         // Like the system's shade, the list closes when nothing is left in it.
         if (remaining.isEmpty()) {
@@ -117,6 +130,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   override fun onStart() {
     super.onStart()
     NotificationList.addListener(this)
+    opening = true
     waitingForList = !NotificationList.isConnected
     if (NotificationList.isAccessGranted(this) && !NotificationList.isConnected) {
       NotificationListenerService.requestRebind(
@@ -147,19 +161,34 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       views.add(message)
       views.add(grantAccess)
     } else {
-      val entries = NotificationList.entries(this)
-      val keys = entries.map { it.key }.toSet()
-      if (entries.isEmpty()) {
+      val items = NotificationList.items(this)
+      val keys = HashSet<String>()
+      if (items.isEmpty()) {
         message.setText(R.string.notification_list_empty)
         views.add(message)
       }
-      for (entry in entries) {
-        val row = rows.getOrPut(entry.key) { notificationRow() }
-        bind(row, entry)
-        views.add(row)
+      for (item in items) {
+        when (item) {
+          is NotificationItem.Single -> {
+            keys.add(item.entry.key)
+            views.add(row(item.entry.key).also { bind(it, item.entry, indented = false) })
+          }
+          is NotificationItem.Group -> {
+            val groupKey = GROUP_PREFIX + item.key
+            keys.add(groupKey)
+            views.add(row(groupKey).also { bindGroup(it, item) })
+            if (item.key in expandedGroups) {
+              for (entry in item.entries) {
+                keys.add(entry.key)
+                views.add(row(entry.key).also { bind(it, entry, indented = true) })
+              }
+            }
+          }
+        }
       }
       rows.keys.retainAll(keys)
-      if (entries.any { it.notification.isClearable }) {
+      expandedGroups.retainAll(items.filterIsInstance<NotificationItem.Group>().map { it.key }.toSet())
+      if (items.any { item -> item.entries.any { it.notification.isClearable } }) {
         views.add(clearAll)
       }
       if (waitingForList && NotificationList.isConnected) {
@@ -169,6 +198,11 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       }
     }
     views.add(quickSettings)
+    if (opening) {
+      // Otherwise focus can start on whatever the screen reader focused last in this window.
+      opening = false
+      focusAfter = views.first()
+    }
     if (focusFirstAfterClear && views.first() !== clearAll) {
       focusFirstAfterClear = false
       focusedView = null
@@ -189,12 +223,60 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     }
   }
 
-  private fun bind(row: TextView, entry: NotificationEntry) {
+  private fun row(key: String): TextView = rows.getOrPut(key) { notificationRow() }
+
+  private fun bind(row: TextView, entry: NotificationEntry, indented: Boolean) {
+    val state = playbackState(entry)
     row.text =
-      listOfNotNull(entry.title, entry.text, "${entry.appName} · ${entry.time}").joinToString("\n")
-    row.contentDescription = entry.description
+      listOfNotNull(entry.title, entry.text, state, "${entry.appName} · ${entry.time}")
+        .joinToString("\n")
+    row.contentDescription = listOfNotNull(entry.description, state).joinToString(", ")
+    row.setPaddingRelative(dp(if (indented) 40 else 16), row.paddingTop, row.paddingEnd, row.paddingBottom)
     row.setOnClickListener { open(entry) }
-    (row.accessibilityDelegate as RowDelegate).entry = entry
+    (row.getTag(R.id.notification_list_row_delegate) as RowDelegate).set(entry, null)
+  }
+
+  /** A group's row names the app, the number of notifications and the newest one. */
+  private fun bindGroup(row: TextView, group: NotificationItem.Group) {
+    val newest = group.entries.first()
+    val count =
+      resources.getQuantityString(
+        R.plurals.notification_list_group_count,
+        group.entries.size,
+        group.entries.size,
+      )
+    row.text = listOfNotNull(group.appName, count, newest.title).joinToString("\n")
+    row.contentDescription =
+      listOfNotNull(group.appName, count, newest.title, newest.text)
+        .map { it.toString().trim() }
+        .filter { it.isNotEmpty() }
+        .joinToString(", ")
+    row.setPaddingRelative(dp(16), row.paddingTop, row.paddingEnd, row.paddingBottom)
+    row.setOnClickListener { toggle(group) }
+    (row.getTag(R.id.notification_list_row_delegate) as RowDelegate).set(null, group)
+  }
+
+  private fun toggle(group: NotificationItem.Group) {
+    if (!expandedGroups.add(group.key)) {
+      expandedGroups.remove(group.key)
+    }
+    show()
+  }
+
+  /** "Playing" or "Paused" for a media notification whose session reports either. */
+  @Suppress("DEPRECATION") // getParcelable(String, Class) needs Android 13.
+  private fun playbackState(entry: NotificationEntry): String? {
+    val token =
+      entry.notification.notification.extras?.getParcelable<MediaSession.Token>(
+        Notification.EXTRA_MEDIA_SESSION
+      ) ?: return null
+    val state = runCatching { MediaController(this, token).playbackState?.state }.getOrNull()
+    return when (state) {
+      PlaybackState.STATE_PLAYING -> getString(R.string.notification_list_playing)
+      PlaybackState.STATE_PAUSED,
+      PlaybackState.STATE_STOPPED -> getString(R.string.notification_list_paused)
+      else -> null
+    }
   }
 
   /** Notes which view in the list has accessibility focus. */
@@ -215,12 +297,27 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     }
   }
 
-  /** Gives a row its notification's own actions, such as Reply, and Dismiss. */
+  /**
+   * Gives a notification's row its own actions, such as Reply, and Dismiss, and a group's row
+   * Dismiss for all of the group. A group shows or hides its notifications on a double tap only: an
+   * Expand action would make the screen reader say "Collapsed" on every group.
+   */
   private inner class RowDelegate : View.AccessibilityDelegate() {
-    var entry: NotificationEntry? = null
+    private var entry: NotificationEntry? = null
+    private var group: NotificationItem.Group? = null
+
+    fun set(entry: NotificationEntry?, group: NotificationItem.Group?) {
+      this.entry = entry
+      this.group = group
+    }
 
     override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(host, info)
+      group?.let { group ->
+        if (group.entries.any { it.notification.isClearable }) {
+          info.addAction(dismissAction())
+        }
+      }
       val entry = entry ?: return
       entry.notification.notification.actions?.take(ACTION_IDS.size)?.forEachIndexed { index, action
         ->
@@ -229,16 +326,22 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         }
       }
       if (entry.notification.isClearable) {
-        info.addAction(
-          AccessibilityNodeInfo.AccessibilityAction(
-            R.id.notification_list_dismiss_action,
-            getString(R.string.notification_list_dismiss),
-          )
-        )
+        info.addAction(dismissAction())
       }
     }
 
     override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
+      group?.let { group ->
+        when (action) {
+          R.id.notification_list_dismiss_action -> {
+            val listener = NotificationListService.instance
+            (group.entries + listOfNotNull(group.summary))
+              .filter { it.notification.isClearable }
+              .forEach { listener?.cancelNotification(it.key) }
+            return true
+          }
+        }
+      }
       val entry = entry ?: return super.performAccessibilityAction(host, action, args)
       if (action == R.id.notification_list_dismiss_action) {
         NotificationListService.instance?.cancelNotification(entry.key)
@@ -252,6 +355,12 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       }
       return super.performAccessibilityAction(host, action, args)
     }
+
+    private fun dismissAction() =
+      AccessibilityNodeInfo.AccessibilityAction(
+        R.id.notification_list_dismiss_action,
+        getString(R.string.notification_list_dismiss),
+      )
   }
 
   /** Performs one of a notification's own actions, asking for the text of a reply first. */
@@ -268,6 +377,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         .setItems(choices) { _, which -> reply(action, input, choices[which]) }
         .setNegativeButton(android.R.string.cancel, null)
         .show()
+        .keepButtonCase()
       return
     }
     val field =
@@ -286,7 +396,14 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       }
       .setNegativeButton(android.R.string.cancel, null)
       .show()
+      .keepButtonCase()
     field.requestFocus()
+  }
+
+  private fun AlertDialog.keepButtonCase() {
+    listOf(AlertDialog.BUTTON_POSITIVE, AlertDialog.BUTTON_NEGATIVE).forEach {
+      getButton(it)?.isAllCaps = false
+    }
   }
 
   /** Sends [text] as the answer to [input], as the system's shade does. */
@@ -294,10 +411,13 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     val results = Bundle().apply { putCharSequence(input.resultKey, text) }
     val intent = Intent().addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
     RemoteInput.addResultsToIntent(action.remoteInputs, intent, results)
-    RemoteInput.setResultsSource(
-      intent,
-      if (input.allowFreeFormInput) RemoteInput.SOURCE_FREE_FORM_INPUT else RemoteInput.SOURCE_CHOICE,
-    )
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+      RemoteInput.setResultsSource(
+        intent,
+        if (input.allowFreeFormInput) RemoteInput.SOURCE_FREE_FORM_INPUT
+        else RemoteInput.SOURCE_CHOICE,
+      )
+    }
     send(action.actionIntent, intent)
   }
 
@@ -358,7 +478,12 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   }
 
   private fun notificationRow(): TextView =
-    textRow().apply { accessibilityDelegate = RowDelegate() }
+    textRow().apply {
+      val delegate = RowDelegate()
+      accessibilityDelegate = delegate
+      // Reading the delegate back from the view needs Android 10.
+      setTag(R.id.notification_list_row_delegate, delegate)
+    }
 
   private fun textRow(): TextView =
     TextView(this).apply {
@@ -407,6 +532,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   companion object {
     private const val TAG = "NotificationList"
+
+    /** Keeps group keys apart from notification keys in the row map. */
+    private const val GROUP_PREFIX = "group:"
 
     /** The accessibility actions that stand for a notification's own actions, in order. */
     private val ACTION_IDS =

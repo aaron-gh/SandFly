@@ -45,8 +45,13 @@ class NotificationListService : NotificationListenerService() {
     NotificationList.onRemoved(notification, ranking)
   }
 
+  /**
+   * Android groups an app's notifications itself once it has several, and reports that only as a
+   * new ranking, so the notifications are read again with their new groups.
+   */
   override fun onNotificationRankingUpdate(ranking: RankingMap?) {
-    NotificationList.onRankingUpdate(ranking)
+    val active = runCatching { activeNotifications }.onFailure { Log.w(TAG, "No notifications", it) }
+    NotificationList.onRankingUpdate(active.getOrNull(), ranking)
   }
 
   override fun onDestroy() {
