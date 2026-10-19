@@ -28,6 +28,7 @@ import java.util.concurrent.ExecutionException
 import java.util.concurrent.FutureTask
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Answers a keyboard's calls to one of the screen reader's own text fields on a thread of its own.
@@ -35,13 +36,30 @@ import java.util.concurrent.TimeoutException
  * The keyboard waits for each answer, and the screen reader's main thread waits for the keyboard
  * when it asks about its keys. With the text field answering on that main thread, each waited for
  * the other until the keyboard gave up, two seconds later, so typing stalled and keys were lost.
- * Each call still runs on the main thread, in order, but the keyboard waits for it at most
- * [MAX_WAIT_MS]. A call that takes longer still runs: a change to the text is made, and a question
- * about the text goes unanswered.
+ * Each call still runs on the main thread, in order. A change to the text is made without waiting,
+ * as the keyboard doesn't wait for it either. For a question about the text, the keyboard waits at
+ * most [MAX_WAIT_MS]; while the main thread hasn't run a question that took longer, later questions
+ * go unanswered at once, so the keyboard isn't held up by each of them in turn.
  */
 object KeyboardCalls {
   private const val TAG = "KeyboardCalls"
   private const val MAX_WAIT_MS = 150L
+
+  /** The calls whose answers the keyboard waits for. Android drops the answers of the others. */
+  private val QUESTIONS =
+    setOf(
+      "getTextBeforeCursor",
+      "getTextAfterCursor",
+      "getSelectedText",
+      "getSurroundingText",
+      "getCursorCapsMode",
+      "getExtractedText",
+      "requestCursorUpdates",
+      "commitContent",
+    )
+
+  /** Whether a question is waiting for the main thread, which is then busy. */
+  @Volatile private var mainBusy = false
 
   private val handler: Handler by lazy {
     Handler(HandlerThread("BacktalkKeyboardCalls").apply { start() }.looper)
@@ -70,12 +88,35 @@ object KeyboardCalls {
     if (Looper.myLooper() == Looper.getMainLooper() || method.declaringClass == Any::class.java) {
       return invoke(connection, method, args)
     }
-    val task = FutureTask { invoke(connection, method, args) }
+    if (method.name !in QUESTIONS) {
+      main.post {
+        try {
+          invoke(connection, method, args)
+        } catch (e: Exception) {
+          Log.w(TAG, "${method.name} failed", e)
+        }
+      }
+      return unanswered(method)
+    }
+    if (mainBusy) {
+      return unanswered(method)
+    }
+    val started = AtomicBoolean(false)
+    val task = FutureTask {
+      started.set(true)
+      mainBusy = false
+      invoke(connection, method, args)
+    }
     main.post(task)
     return try {
       task.get(MAX_WAIT_MS, TimeUnit.MILLISECONDS)
     } catch (e: TimeoutException) {
-      Log.w(TAG, "${method.name} waits for the main thread; answering without it")
+      Log.w(TAG, "${method.name} waits for the main thread; answering without it until it is free")
+      mainBusy = true
+      // It may have started meanwhile, and then nothing else would clear it.
+      if (started.get()) {
+        mainBusy = false
+      }
       unanswered(method)
     } catch (e: ExecutionException) {
       Log.w(TAG, "${method.name} failed", e.cause)
