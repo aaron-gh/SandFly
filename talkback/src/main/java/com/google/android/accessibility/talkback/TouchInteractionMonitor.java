@@ -267,6 +267,9 @@ public class TouchInteractionMonitor
   private int latestDensityDpi;
   private final AnalyticsEventLogger logger;
   private boolean isLiftToType;
+  // Whether the touch went down on the keyboard with the Tap to type typing method, which types
+  // without focusing keys, so the typing focus delay applies whatever has focus.
+  private boolean downOnKeyboard;
   private final SharedPreferences sharedPreferences;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
@@ -573,6 +576,11 @@ public class TouchInteractionMonitor
       return;
     }
     receivedPointerTracker.onMotionEvent(event);
+    if (event.getActionMasked() == ACTION_DOWN) {
+      downOnKeyboard =
+          typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
+              && isOnKeyboard(event.getX(), event.getY());
+    }
     if (handleEdgeSwipe(event)) {
       return;
     }
@@ -800,6 +808,7 @@ public class TouchInteractionMonitor
     scrubTracker.clear();
     pinchTracker.clear();
     tapToTypeTracker.clear();
+    downOnKeyboard = false;
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1203,7 +1212,7 @@ public class TouchInteractionMonitor
       tapToTypeTracker.clear();
       return false;
     }
-    if (!tapToTypeTracker.onMotionEvent(event, this::isOnKeyboard)
+    if (!tapToTypeTracker.onMotionEvent(event, (x, y) -> downOnKeyboard)
         || state != STATE_TOUCH_INTERACTING
         || gestureStarted) {
       return false;
@@ -1542,7 +1551,7 @@ public class TouchInteractionMonitor
     }
     // When the touch exploration timer is pending, extend the timer to the original value to
     // accommodate the double-tap gesture detection; excluding the keyboard keys with lift-to-type.
-    if (requestTouchExplorationDelayed.isPending() && !isLiftToType) {
+    if (requestTouchExplorationDelayed.isPending() && !isLiftToType && !downOnKeyboard) {
       int remaining = requestTouchExplorationDelayed.remainingTime();
       requestTouchExplorationDelayed.cancel();
       requestTouchExplorationDelayed.post(remaining);
@@ -1690,7 +1699,7 @@ public class TouchInteractionMonitor
     public void post(int remaining) {
       postTime = SystemClock.uptimeMillis();
       if (typingFocusTimeout || touchFocusTimeout) {
-        if (isLiftToType) {
+        if (isLiftToType || downOnKeyboard) {
           postTimerClass = typingFocusTimeout ? PostTimerClass.IME : PostTimerClass.LEGACY;
         } else {
           postTimerClass = touchFocusTimeout ? PostTimerClass.NON_IME : PostTimerClass.LEGACY;
