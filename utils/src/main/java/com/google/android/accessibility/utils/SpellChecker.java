@@ -23,6 +23,7 @@ import static android.view.textservice.SuggestionsInfo.RESULT_ATTR_IN_THE_DICTIO
 import static android.view.textservice.SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO;
 
 import android.content.Context;
+import android.os.Handler;
 import android.os.Looper;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -48,6 +49,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 /**
@@ -69,6 +71,7 @@ public class SpellChecker {
   private static final String TAG = "SpellChecker";
   private static final int FLAG_UNKNOWN_RESULT = 0;
   private static final long SPELL_CHECKING_MAX_WAITING_TIME_MS = 500;
+  private static final long BACKGROUND_CHECK_MAX_WAITING_TIME_MS = 2000;
   private static final int MISSPELLED_WORD_SUGGESTIONS_MAX_NUM = 5;
   private static final int RESULT_ATTR_LOOKS_LIKE_GRAMMAR_ERROR =
       FeatureSupport.supportGrammarError()
@@ -84,8 +87,16 @@ public class SpellChecker {
   private final CharSequence text;
   private final TextServicesManager textServicesManager;
   private final SpellCheckingListener listener;
+  private @Nullable SpellCheckerSession session;
 
   private static final Cache resultCache = new Cache();
+  private static final Handler mainHandler = new Handler(Looper.getMainLooper());
+  private static @Nullable SpellChecker backgroundCheck;
+  private static final Runnable backgroundCheckTimeout =
+      () -> {
+        LogUtils.e(TAG, "Spell checking timeout.");
+        cancelBackgroundCheck();
+      };
 
   /**
    * Creates a spell checker to check spelling and grammar in the given text with a {@link
@@ -162,16 +173,22 @@ public class SpellChecker {
     }
 
     final SpellChecker spellChecker = new SpellChecker(context, text, listener);
+    final AtomicReference<Looper> threadLooper = new AtomicReference<>();
     final Thread thread =
         new Thread(
             () -> {
               // Creates a looper to perform spell checker and wait for the result.
               Looper.prepare();
-              if (!spellChecker.perform()) {
-                LogUtils.e(TAG, "Fail to perform spell checker.");
-                return;
+              threadLooper.set(Looper.myLooper());
+              try {
+                if (!spellChecker.perform()) {
+                  LogUtils.e(TAG, "Fail to perform spell checker.");
+                  return;
+                }
+                Looper.loop();
+              } finally {
+                spellChecker.close();
               }
-              Looper.loop();
             });
     thread.start();
     try {
@@ -183,6 +200,11 @@ public class SpellChecker {
 
     if (!spellChecker.listener.isFinished()) {
       LogUtils.e(TAG, "Spell checking timeout.");
+      // Ends the thread, which closes the session.
+      Looper looper = threadLooper.get();
+      if (looper != null) {
+        looper.quitSafely();
+      }
       return text;
     }
 
@@ -190,6 +212,54 @@ public class SpellChecker {
         wrapSuggestionSpansForAllMisspelledWords(context, text, spellChecker.listener.getResult());
     updateCachedResult(result);
     return result;
+  }
+
+  /**
+   * Spell checks the text without waiting for the result. Runs {@code onChecked} on the main thread
+   * once the result is in the cache, where {@link #getTextWithSuggestionSpans} finds it. A new check
+   * cancels one still running. {@code onChecked} doesn't run if the spell checker doesn't answer.
+   * Call on the main thread.
+   */
+  public static void checkInBackground(Context context, CharSequence text, Runnable onChecked) {
+    if (!enabled || TextUtils.isEmpty(text) || hasCachedResult(text)) {
+      onChecked.run();
+      return;
+    }
+    cancelBackgroundCheck();
+    SpellCheckingListener listener = new SpellCheckingListener();
+    SpellChecker check = new SpellChecker(context, text, listener);
+    listener.onFinishedCallback =
+        () -> {
+          if (backgroundCheck != check) {
+            return;
+          }
+          cancelBackgroundCheck();
+          updateCachedResult(
+              wrapSuggestionSpansForAllMisspelledWords(context, text, listener.getResult()));
+          onChecked.run();
+        };
+    // The session answers on the looper of the thread that creates it, here the main thread.
+    if (!check.perform()) {
+      check.close();
+      return;
+    }
+    backgroundCheck = check;
+    mainHandler.postDelayed(backgroundCheckTimeout, BACKGROUND_CHECK_MAX_WAITING_TIME_MS);
+  }
+
+  private static void cancelBackgroundCheck() {
+    mainHandler.removeCallbacks(backgroundCheckTimeout);
+    if (backgroundCheck != null) {
+      backgroundCheck.close();
+      backgroundCheck = null;
+    }
+  }
+
+  private void close() {
+    if (session != null) {
+      session.close();
+      session = null;
+    }
   }
 
   /**
@@ -209,7 +279,7 @@ public class SpellChecker {
       return false;
     }
 
-    SpellCheckerSession session =
+    session =
         textServicesManager.newSpellCheckerSession(
             /* bundle= */ null,
             /* locale= */ null, // Refers to the spell checker language settings page.
@@ -422,6 +492,7 @@ public class SpellChecker {
     // Do not set the text directly. Sets text text via setText() to ensure it's spannable.
     private ImmutableList<SentenceSuggestionsInfo> results = ImmutableList.of();
     private boolean isFinished;
+    private @Nullable Runnable onFinishedCallback;
 
     public SpellCheckingListener() {}
 
@@ -438,6 +509,9 @@ public class SpellChecker {
       // Quits the looper to finish waiting for the result.
       if (looper != null && looper != Looper.getMainLooper()) {
         looper.quitSafely();
+      }
+      if (onFinishedCallback != null) {
+        onFinishedCallback.run();
       }
     }
 
