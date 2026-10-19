@@ -322,7 +322,7 @@ As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge 
 
 Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn these vibrations off, turn off **Edge gestures** under vibrations in **Individual sounds and vibrations**. A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
-To scrub, move two fingers quickly back and forth three times, as if drawing a Z, each stroke about a centimeter long. By default, this goes back.
+To scrub, move two fingers quickly one way across the screen and back, each stroke about a centimeter long. By default, this goes back. Two fingers moved one way only still scroll.
 
 You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**.
 

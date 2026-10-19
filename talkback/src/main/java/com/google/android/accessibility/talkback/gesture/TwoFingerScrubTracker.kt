@@ -24,13 +24,12 @@ import kotlin.math.hypot
 import kotlin.math.sign
 
 /**
- * Recognizes the two-finger scrub of iOS: two fingers moving quickly back and forth three times,
- * as if drawing a Z.
+ * Recognizes a two-finger scrub: two fingers moving quickly one way across the screen and back.
  *
  * The middle of the two fingers is followed from the moment the second finger lands. Each stroke
  * is a movement of [strokePx] across the screen, and the next stroke goes back the other way.
- * The third stroke completes the scrub, which is reported at once, while the fingers are still
- * down; the rest of the touch then belongs to the scrub. Movement up or down, a pinch, a third
+ * The second stroke completes the scrub, which is reported at once, while the fingers are still
+ * down. Movement up or down, a pinch, a third
  * finger, a stroke that doesn't turn back within [MAX_STROKE_MILLIS], or a scrub that takes longer
  * than [MAX_MILLIS] is not a scrub.
  */
@@ -182,7 +181,7 @@ class TwoFingerScrubTracker(
     private const val INVALID_ID = -1
 
     /** Strokes in a scrub. */
-    private const val STROKES = 3
+    private const val STROKES = 2
 
     /** Longest time for the whole scrub, in milliseconds. */
     private const val MAX_MILLIS = 1200L
