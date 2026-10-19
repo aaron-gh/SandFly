@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.compositor.TalkBackFeedbackProvider;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -85,6 +86,9 @@ public final class EventTypeViewSelectedFeedbackRule {
 
     Locale preferredLocale = globalVariables.getPreferredLocaleByNode(node);
     int role = Role.getRole(node);
+    // Keyboards such as Pixelboard select a key to announce a new word suggestion, which isn't a
+    // move of focus.
+    boolean keyboard = AccessibilityNodeInfoUtils.isKeyboard(node);
     return EventFeedback.builder()
         .setTtsOutput(computeTtsOutput(node, event, preferredLocale, roleDescriptionExtractor))
         .setQueueMode(queueMode(node, role))
@@ -94,8 +98,8 @@ public final class EventTypeViewSelectedFeedbackRule {
         .setForceFeedbackEvenIfSsbActive(false)
         .setTtsClearQueueGroup(ttsClearQueueGroup(role))
         .setTtsSkipDuplicate((role == Role.ROLE_PROGRESS_BAR || role == Role.ROLE_SEEK_CONTROL))
-        .setHaptic(haptic(role, event, preferredLocale))
-        .setEarcon(earcon(role, event, node, preferredLocale))
+        .setHaptic(keyboard ? -1 : haptic(role, event, preferredLocale))
+        .setEarcon(keyboard ? -1 : earcon(role, event, node, preferredLocale))
         .setEarconRate(EarconFeedbackUtils.getProgressBarChangeEarconRate(event, node))
         .setEarconVolume(EarconFeedbackUtils.getProgressBarChangeEarconVolume(event, node))
         // Progress bars get a quiet tone and, as in TalkBack, no vibration.
