@@ -1169,15 +1169,36 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * When the selection mode of edit text is changed, the default setting would change to
-   * GRANULARITY_CHARACTERS. Users still can change setting by themselves. If users did not change
-   * the setting during the selection mode life time, system will change the setting back to its
-   * original value when the selection mode stops.
+   * The text granularity of a reading control that selection mode can keep: characters, words,
+   * paragraphs, and lines where text selection by lines works. Null for any other reading control.
+   */
+  public static @Nullable CursorGranularity selectionGranularityOf(Setting setting) {
+    return switch (setting) {
+      case GRANULARITY_CHARACTERS -> CursorGranularity.CHARACTER;
+      case GRANULARITY_WORDS -> CursorGranularity.WORD;
+      case GRANULARITY_PARAGRAPHS -> CursorGranularity.PARAGRAPH;
+      case GRANULARITY_LINES ->
+          FeatureSupport.supportInputConnectionByA11yService() ? CursorGranularity.LINE : null;
+      default -> null;
+    };
+  }
+
+  /**
+   * When selection mode starts, a reading control that moves through text stays, so selection goes
+   * by the characters, words, lines or paragraphs the user was reading by. Any other reading control
+   * changes to GRANULARITY_CHARACTERS. Users still can change setting by themselves. If users did
+   * not change the setting during the selection mode life time, system will change the setting back
+   * to its original value when the selection mode stops.
    */
   @Override
   public void editTextOrSelectableTextSelected(boolean isSelected) {
     if (isSelected) {
-      settingToRestore = getCurrentSetting(context, prefs);
+      Setting current = getCurrentSetting(context, prefs);
+      if (selectionGranularityOf(current) != null) {
+        settingToRestore = null;
+        return;
+      }
+      settingToRestore = current;
       setCurrentSetting(
           EVENT_ID_UNTRACKED,
           Setting.GRANULARITY_CHARACTERS,

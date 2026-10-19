@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.focusmanagement.NavigationTarge
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction.ActionType;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
+import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -768,11 +769,17 @@ public class DirectionNavigationActor implements UserInputEventListener {
   // Usage: TextEditActor
   public void setSelectionModeActive(AccessibilityNodeInfoCompat node, EventId eventId) {
     if (!cursorGranularityManager.isLockedToNodeOrEditingNode(node)) {
-      // If we're not navigating with micro granularity at node, force set granularity to CHARACTER.
-      // And pass in the node to clear the lockedNode, if it is not null. This means the next action
-      // of iterating over text won't turn off selection mode.
-      setGranularity(
-          CursorGranularity.CHARACTER, /* node= */ node, /* isFromUser= */ false, eventId);
+      // If we're not navigating with micro granularity at node, use the granularity of the reading
+      // control when it moves through text, and CHARACTER otherwise. And pass in the node to clear
+      // the lockedNode, if it is not null. This means the next action of iterating over text won't
+      // turn off selection mode.
+      @Nullable CursorGranularity granularity =
+          SelectorController.selectionGranularityOf(SelectorController.getCurrentSetting(service));
+      if (granularity == null
+          || !setGranularity(granularity, /* node= */ node, /* isFromUser= */ false, eventId)) {
+        setGranularity(
+            CursorGranularity.CHARACTER, /* node= */ node, /* isFromUser= */ false, eventId);
+      }
     }
 
     cursorGranularityManager.setSelectionModeActive(/* active= */ true);
