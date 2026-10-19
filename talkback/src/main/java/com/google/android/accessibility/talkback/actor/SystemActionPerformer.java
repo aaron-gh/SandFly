@@ -5,6 +5,7 @@ import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_AC
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
+import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
@@ -58,6 +59,10 @@ public final class SystemActionPerformer {
   public boolean performAction(int id) {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
+        && NotificationListActivity.openInsteadOfShade(service)) {
+      return true;
     }
 
     // AccessibilityService.GLOBAL_ACTION_KEYCODE_HEADSETHOOK won't be displayed in the list until S

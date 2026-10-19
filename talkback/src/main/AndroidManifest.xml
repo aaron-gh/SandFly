@@ -328,6 +328,28 @@
             android:targetActivity="com.google.android.accessibility.talkback.soundthemes.SoundThemeInstallActivity"
             android:exported="false" />
 
+        <!-- Backtalk's own list of notifications, opened instead of the system's shade. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/notification_list_title"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
+            android:theme="@style/NotificationListTheme" />
+
+        <!-- Receives notifications for that list while the user has given notification access. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListService"
+            android:exported="true"
+            android:label="@string/talkback_title"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
         <!-- Custom Label Manager - Summary Activity -->
         <activity
             android:name="com.google.android.accessibility.talkback.labeling.LabelManagerSummaryActivity"
