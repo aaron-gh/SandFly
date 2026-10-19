@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 5.
+A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 1.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -34,7 +34,7 @@ local manifest = {
   version = '1.0',
   author = 'You',
   minApiVersion = 1,
-  testedApiVersion = 5,
+  testedApiVersion = 1,
   apps = { 'com.android.settings' },
   permissions = { 'speech' },
 }
@@ -57,7 +57,7 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 5. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), version 3 added `meta` to [`sf.app()`](#screen), version 4 added `silence` to rules, and version 5 added `liftToActivate` and `longPressAfter` to rules. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 1. |
 | `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with an older version. |
 | `version` | The script's own version, as text. The default is `'1'`. |
 | `description` | Shown on the script's page and before it's installed. |
@@ -150,7 +150,7 @@ A rule can set any of these:
 | `label` | The item's name, used where the app gave none or a poor one. |
 | `speak` | Everything SandFly says for the item, in place of its name, role and state. |
 | `hide` | `true` hides the item: swiping skips it. `'all'` hides what's inside it too. A hidden item is still there, so a script can click it. |
-| `silence` | `true` stops SandFly speaking the item's changes, selections and announcements, such as a progress bar's updates. `'all'` silences what's inside it too, such as the seek bar in a grouped row. Focusing the item still speaks it. Needs script API version 4. |
+| `silence` | `true` stops SandFly speaking the item's changes, selections and announcements, such as a progress bar's updates. `'all'` silences what's inside it too, such as the seek bar in a grouped row. Focusing the item still speaks it. |
 | `role` | The item's role, such as `'button'`. An unknown role is an error that lists the roles. |
 | `state` | The item's state, such as `'Selected'`. |
 | `hint` | The usage hint. |
@@ -158,9 +158,9 @@ A rule can set any of these:
 | `group` | `true` reads the item and everything in it as one item. |
 | `readBefore`, `readAfter` | Moves the item in the reading order to just before or after another item, named by id or query. Use one, not both. |
 | `actions` | Items to add to the item's Actions menu. See below. |
-| `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. Needs script API version 2. |
-| `liftToActivate` | `true` activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. Needs script API version 5. |
-| `longPressAfter` | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. Needs script API version 5. |
+| `activate` | A [query](#queries) for the item inside it that a double-tap presses, such as the part of a grouped post that opens it. |
+| `liftToActivate` | `true` activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. |
+| `longPressAfter` | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. |
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `sf.rules.add` comes before the manifest.
 
@@ -197,7 +197,7 @@ A query finds items. It's an id as text, or a record with any of these; an item 
 | `clickable` | `true` or `false`. |
 | `parentId` | The view id of the item's parent. |
 | `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className = 'Button', inside = { textContains = 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. |
-| `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. Needs script API version 2. |
+| `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. |
 
 ## Items
 
@@ -317,7 +317,7 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 *   `sf.screen.focused()` is the item with SandFly's focus.
 *   `sf.screen.root()` is the top item of the active window.
 *   `sf.screen.find(query)` and `sf.screen.findAll(query, limit)` search the active window. A search looks at up to 3,000 items, returns up to 200, and stops when the script runs out of [time](#limits).
-*   `sf.app()` is `{ package, activity, window, meta }` for the app in front. `activity` is `nil` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `sf.app().meta['com.example.flag']`. Needs script API version 3.
+*   `sf.app()` is `{ package, activity, window, meta }` for the app in front. `activity` is `nil` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `sf.app().meta['com.example.flag']`.
 
 ### Rules from code
 

@@ -46,7 +46,7 @@ class LuaEngineTest {
       calls += method to args
       answers[method]?.let { return it(args) }
       return when (method) {
-        "apiVersion" -> "5"
+        "apiVersion" -> "1"
         "manifest" -> """{"commands":[]}"""
         else -> null
       }

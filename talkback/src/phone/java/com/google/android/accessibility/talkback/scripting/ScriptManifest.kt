@@ -211,7 +211,7 @@ data class ScriptCommand(
 
 enum class ApiCompatibility {
   COMPATIBLE,
-  BACKTALK_TOO_OLD,
+  SANDFLY_TOO_OLD,
   UNTESTED,
 }
 
@@ -238,7 +238,7 @@ data class ScriptManifest(
   val compatibility: ApiCompatibility
     get() =
       when {
-        API_VERSION < minApiVersion -> ApiCompatibility.BACKTALK_TOO_OLD
+        API_VERSION < minApiVersion -> ApiCompatibility.SANDFLY_TOO_OLD
         API_VERSION > testedApiVersion -> ApiCompatibility.UNTESTED
         else -> ApiCompatibility.COMPATIBLE
       }
@@ -277,14 +277,14 @@ data class ScriptManifest(
   fun compatibilityWarning(context: Context): String? =
     when (compatibility) {
       ApiCompatibility.COMPATIBLE -> null
-      ApiCompatibility.BACKTALK_TOO_OLD ->
+      ApiCompatibility.SANDFLY_TOO_OLD ->
         context.getString(R.string.script_api_too_old, minApiVersion, API_VERSION)
       ApiCompatibility.UNTESTED ->
         context.getString(R.string.script_api_untested, testedApiVersion, API_VERSION)
     }
 
   companion object {
-    const val API_VERSION = 5
+    const val API_VERSION = 1
 
     fun parse(json: String, strict: Boolean = true): ScriptManifest =
       ManifestParser(strict).parse(json)

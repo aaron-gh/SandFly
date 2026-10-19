@@ -33,7 +33,7 @@ class ManifestReaderTest {
         local manifest = {
           id = 'hello',
           name = "Hello \"there\"\n",
-          minApiVersion = 5,
+          minApiVersion = 1,
           ratio = 0.5,
           offset = -3,
           apps = { 'com.example.a', { package = 'com.example.b', activity = '.Main' } },
@@ -50,7 +50,7 @@ class ManifestReaderTest {
       )
     assertEquals("hello", manifest.getString("id"))
     assertEquals("Hello \"there\"\n", manifest.getString("name"))
-    assertEquals(5, manifest.getInt("minApiVersion"))
+    assertEquals(1, manifest.getInt("minApiVersion"))
     assertEquals(0.5, manifest.getDouble("ratio"), 0.0)
     assertEquals(-3, manifest.getInt("offset"))
     assertEquals("com.example.a", manifest.getJSONArray("apps").getString(0))
