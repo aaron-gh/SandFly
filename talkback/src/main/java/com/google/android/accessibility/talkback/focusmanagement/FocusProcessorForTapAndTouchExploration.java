@@ -188,6 +188,10 @@ public class FocusProcessorForTapAndTouchExploration {
   // under the finger is typed without being focused.
   private boolean isTapToType = false;
 
+  // The key a tap to type went down on, which it types even if the finger moved onto another key
+  // before it lifted.
+  @Nullable private AccessibilityNodeInfoCompat tapToTypeKey;
+
   private long touchInteractionStartTime;
   private final Context context;
   private final TalkBackAnalytics analytics;
@@ -277,6 +281,7 @@ public class FocusProcessorForTapAndTouchExploration {
     lastFocusableNodeBeingTouched = null;
 
     hasHoveredEnterNode = false;
+    tapToTypeKey = null;
 
     // Everything is possible at the beginning.
     mayBeRefocusAction = true;
@@ -292,6 +297,9 @@ public class FocusProcessorForTapAndTouchExploration {
    */
   private boolean handleHoverEnterNode(
       @Nullable AccessibilityNodeInfoCompat touchedFocusableNode, EventId eventId) {
+    if (isTapToType && tapToTypeKey != null) {
+      return false;
+    }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
@@ -309,6 +317,7 @@ public class FocusProcessorForTapAndTouchExploration {
         && supportsLiftToType(touchedFocusableNode)) {
       // The key is typed when the touch ends, which follows at once.
       hasHoveredEnterNode = true;
+      tapToTypeKey = touchedFocusableNode;
       result = false;
     } else if (!hasHoveredEnterNode) {
       hasHoveredEnterNode = true;
