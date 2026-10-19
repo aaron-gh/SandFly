@@ -5,6 +5,7 @@ import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_AC
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
+import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
@@ -23,6 +24,12 @@ public final class SystemActionPerformer {
   public static final int GLOBAL_ACTION_ACCESSIBILITY_BUTTON_CHOOSER = 12;
   public static final int GLOBAL_ACTION_ACCESSIBILITY_SHORTCUT = 13;
   private static final int GLOBAL_ACTION_ACCESSIBILITY_ALL_APPS_LEGACY = 100;
+
+  /**
+   * Opens the system's notification shade even when Backtalk's notification list takes the place
+   * of {@link AccessibilityService#GLOBAL_ACTION_NOTIFICATIONS}. Not an Android action.
+   */
+  public static final int GLOBAL_ACTION_SYSTEM_NOTIFICATIONS = -4;
 
   public static final ImmutableList<Integer> EXCLUDED_ACTIONS =
       ImmutableList.copyOf(
@@ -58,6 +65,13 @@ public final class SystemActionPerformer {
   public boolean performAction(int id) {
     if (actorState != null) {
       actorState.setLastSystemAction(id);
+    }
+    if (id == GLOBAL_ACTION_SYSTEM_NOTIFICATIONS) {
+      return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
+        && NotificationListActivity.openInsteadOfShade(service)) {
+      return true;
     }
 
     // AccessibilityService.GLOBAL_ACTION_KEYCODE_HEADSETHOOK won't be displayed in the list until S

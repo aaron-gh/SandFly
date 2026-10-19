@@ -16,6 +16,14 @@
         android:key="@string/pref_show_exit_watermark_key"
         android:summary="@string/summary_pref_show_exit_watermark"
         android:title="@string/title_pref_show_exit_watermark"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_notification_list_default"
+        android:key="@string/pref_notification_list_key"
+        android:title="@string/title_pref_notification_list"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.notificationlist.NotificationPartsFragment"
+        android:key="@string/pref_notification_parts_key"
+        android:title="@string/title_pref_notification_parts"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_others_key">

@@ -93,6 +93,7 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
+import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
@@ -385,6 +386,11 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS));
+    } else if (action.equals(service.getString(R.string.shortcut_value_system_notifications))) {
+      result =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_NOTIFICATIONS));
     } else if (action.equals(service.getString(R.string.shortcut_value_quick_settings))) {
       result =
           pipeline.returnFeedback(
