@@ -71,10 +71,16 @@ jobs:
         run: |
           apksigner=$(ls -d "$ANDROID_HOME"/build-tools/*/apksigner | sort -V | tail -n 1)
           for apk in build/outputs/apk/*/debug/*.apk; do
-            "$apksigner" verify --print-certs "$apk" | grep -qx "Signer #1 certificate SHA-256 digest: $SANDFLY_CERT_SHA256" || {
-              echo "$apk is not signed with SandFly's key." >&2
+            certs=$("$apksigner" verify --print-certs "$apk" 2>&1) || {
+              echo "$certs" >&2
+              echo "apksigner could not check $apk." >&2
               exit 1
             }
+            if ! grep -q "certificate SHA-256 digest: $SANDFLY_CERT_SHA256" <<< "$certs"; then
+              echo "$certs" >&2
+              echo "$apk is not signed with SandFly's key." >&2
+              exit 1
+            fi
           done
 
       # Only the phone flavor: the watch's braille keyboard is a stub, so the braille keyboard's
