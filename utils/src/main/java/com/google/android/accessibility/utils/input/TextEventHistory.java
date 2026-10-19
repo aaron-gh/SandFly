@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.utils.input;
 
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -51,6 +52,14 @@ public class TextEventHistory {
   private int mLastFromIndex = NO_INDEX;
   private int mLastToIndex = NO_INDEX;
   private @Nullable AccessibilityNodeInfo mLastNode;
+
+  // Text from the last text change or selection event, and the field it came from
+  private @Nullable CharSequence mLastText;
+  private @Nullable AccessibilityNodeInfo mLastTextNode;
+
+  // A selection event that came before the text change event of the same edit
+  private long mSelectionBeforeTextChangeTime = -1;
+  private @Nullable CharSequence mSelectionBeforeTextChangePackageName;
 
   // //////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -127,6 +136,36 @@ public class TextEventHistory {
 
   public @Nullable AccessibilityNodeInfo getLastNode() {
     return mLastNode;
+  }
+
+  public void setLastText(@Nullable AccessibilityNodeInfo node, @Nullable CharSequence text) {
+    mLastTextNode = node;
+    mLastText = text == null ? null : text.toString();
+  }
+
+  /** Returns the last text seen from the given field, or null if the last text was from another. */
+  public @Nullable CharSequence getLastText(@Nullable AccessibilityNodeInfo node) {
+    return (node != null && node.equals(mLastTextNode)) ? mLastText : null;
+  }
+
+  public void setSelectionBeforeTextChange(AccessibilityEvent event) {
+    mSelectionBeforeTextChangeTime = event.getEventTime();
+    mSelectionBeforeTextChangePackageName = event.getPackageName();
+  }
+
+  /**
+   * Returns whether the selection event of this text change came before it, within {@code
+   * maxDelayMs}, and clears that state.
+   */
+  public boolean takeSelectionBeforeTextChange(AccessibilityEvent textChange, long maxDelayMs) {
+    boolean matches =
+        mSelectionBeforeTextChangeTime >= 0
+            && textChange.getEventTime() - mSelectionBeforeTextChangeTime < maxDelayMs
+            && TextUtils.equals(
+                textChange.getPackageName(), mSelectionBeforeTextChangePackageName);
+    mSelectionBeforeTextChangeTime = -1;
+    mSelectionBeforeTextChangePackageName = null;
+    return matches;
   }
 
   // incompatible types in assignment.
