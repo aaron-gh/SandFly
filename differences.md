@@ -578,15 +578,16 @@ When Gemini can't describe something, TalkBack says "Something went wrong". Sand
 
 ## Scripts
 
-### JavaScript scripts and plugins
+### Lua scripts and plugins
 
-Like NVDA's app modules and global plugins, scripts change how SandFly works in one app or in every app. A script can:
+Like NVDA's app modules and global plugins, scripts change how SandFly works in one app or in every app. Scripts are written in Lua 5.4. A script can:
 
 *   Give unlabeled buttons names, hide clutter, group items, and change or silence what SandFly says for an item.
 *   Read the screen, press buttons, speak, play sounds and vibrate.
 *   Add gestures, keyboard shortcuts, SandFly menu items, reading controls, and items in an item's Actions menu.
 *   Change everything SandFly says, and react to notifications, typing and screen changes.
 *   Use the internet and the clipboard, show dialogs, and keep its own data and settings.
+*   With the `java` permission, call any Java code through LuaJava.
 
 To install a script, go to **Apps** > **Scripts** and choose **Import script**. You can also share a script file, or a link to one such as a script's page on GitHub, to SandFly, or open a script file with it, and choose **Install SandFly script**. SandFly lists what the script asks to do before it installs or updates it. **Add the example script** adds a small script to start from.
 
@@ -594,9 +595,11 @@ Each script has a page with an on and off switch, a switch for each permission a
 
 Scripts never change SandFly's own screens, so the Scripts screen always works. **Turn off all scripts** on that screen stops every script at once, and so does the **Turn all scripts on or off** action, which you can assign to a gesture that scripts can't take over. Scripts don't run while the screen is off or SandFly is paused, and SandFly only starts the script engine once a script is turned on.
 
-Speech requested with `backtalk.speak` can be heard while media is playing, including queued and interrupting requests. The script still needs the Speech permission, and muting speech, recording, voice recognition and phone calls retain their existing speech policy.
+Speech requested with `sf.speak` can be heard while media is playing, including queued and interrupting requests. The script still needs the Speech permission, and muting speech, recording, voice recognition and phone calls retain their existing speech policy.
 
 Hooks that change or suppress speech take priority over queued script work and share a 30-millisecond deadline. If the deadline expires or a long task is already running, SandFly uses its normal speech, so scripts should keep these hooks fast.
+
+To write scripts, see [Writing SandFly scripts](docs/scripting.md).
 
 Scripts run on phones and tablets only. [Writing SandFly scripts](docs/scripting.md) describes the whole API, and [docs/scripting/examples](docs/scripting/examples) has a script to start from.
 

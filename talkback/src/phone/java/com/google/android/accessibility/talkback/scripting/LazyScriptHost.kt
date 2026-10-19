@@ -109,9 +109,9 @@ class LazyScriptHost(
 
   private fun start() {
     try {
-      System.loadLibrary("backtalkquickjs")
+      LuaEngine.checkAvailable()
       manager = ScriptManager(service, ScriptFeedback(service, feedback, resume), activation)
-    } catch (e: UnsatisfiedLinkError) {
+    } catch (e: LinkageError) {
       LogUtils.e(TAG, "Scripts are unavailable: %s", e)
       unavailable = true
     }

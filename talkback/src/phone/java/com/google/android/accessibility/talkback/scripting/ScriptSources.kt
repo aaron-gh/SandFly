@@ -42,7 +42,7 @@ object ScriptSources {
   private const val MAX_LISTING_BYTES = 8 * 1024 * 1024
   private const val MAX_PAGES = 5
   private const val MAX_SCRIPTS = 200
-  private val EXTENSIONS = listOf(".js", ".zip")
+  private val EXTENSIONS = listOf(".lua", ".zip")
 
   @Synchronized
   fun all(context: Context): List<ScriptSource> {

@@ -183,8 +183,8 @@ object ScriptInput {
   fun parseKeys(text: String): Keys {
     val steps = text.split(',').map { it.trim() }
     require(steps.size <= 2) { "Keys are one combination, or two after each other: $text" }
-    val first = parseStep(steps.first(), text, needsBacktalk = true)
-    return if (steps.size == 2) first.copy(next = parseStep(steps[1], text, needsBacktalk = false))
+    val first = parseStep(steps.first(), text, needsModifier = true)
+    return if (steps.size == 2) first.copy(next = parseStep(steps[1], text, needsModifier = false))
     else first
   }
 
@@ -196,19 +196,19 @@ object ScriptInput {
     return context.getString(R.string.script_keys_then, first, stepTitle(next).joinToString("+"))
   }
 
-  private fun parseStep(step: String, text: String, needsBacktalk: Boolean): Keys {
+  private fun parseStep(step: String, text: String, needsModifier: Boolean): Keys {
     val parts = step.split('+').map { it.trim() }
     require(parts.none { it.isEmpty() }) {
-      "Keys look like backtalk+shift+n or backtalk+t, s: $text"
+      "Keys look like sf+shift+n or sf+t, s: $text"
     }
     val modifiers = parts.dropLast(1).map { it.lowercase() }
-    require(("backtalk" in modifiers) == needsBacktalk) {
-      if (needsBacktalk) "Keys must start with backtalk, the screen reader's modifier key: $text"
-      else "Only the first keys include backtalk: $text"
+    require(("sf" in modifiers) == needsModifier) {
+      if (needsModifier) "Keys must start with sf, SandFly's modifier key: $text"
+      else "Only the first keys include sf: $text"
     }
     val flags =
       modifiers
-        .filter { it != "backtalk" }
+        .filter { it != "sf" }
         .fold(0) { flags, name ->
           val flag = modifierFlags[name]
           require(flag != null) { "Unknown modifier $name in $text" }

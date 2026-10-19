@@ -24,7 +24,7 @@ SandFly speaks sooner after each swipe and screen change, and can play its sound
 
 The emoji names are from the [Unicode CLDR](https://cldr.unicode.org/) and the Unicode emoji data, copyright Unicode, Inc., used under the Unicode License v3, which is in `utils/src/main/assets/emoji_names/LICENSE`.
 
-Scripts run in [QuickJS-NG](https://github.com/quickjs-ng/quickjs), copyright Fabrice Bellard, Charlie Gordon, Ben Noordhuis and Saúl Ibarra Corretgé, used under the MIT License, which is in `scripting/quickjs/src/main/assets/quickjs/LICENSE`. The build downloads its source, pinned by version and checksum in `scripting/quickjs/src/main/cpp/CMakeLists.txt`.
+Scripts run in [Lua 5.4](https://www.lua.org/), copyright Lua.org, PUC-Rio, through [LuaJava](https://github.com/gudzpoz/luajava), copyright gudzpoz, both used under the MIT License. The license texts are in `talkback/src/phone/assets/scripting/LICENSE-luajava`, which is in the APK.
 
 ## Build
 

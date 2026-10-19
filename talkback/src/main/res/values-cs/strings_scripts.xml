@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Není žádný soubor skriptu k instalaci.</string>
     <string name="script_import_cannot_open">Soubor nelze otevřít.</string>
     <string name="script_import_repository">Tento odkaz vede na celý repozitář. Otevřete skript, který chcete, a sdílejte jeho odkaz.</string>
-    <string name="script_import_summary">Soubor .js nebo .zip s main.js</string>
+    <string name="script_import_summary">Soubor .lua nebo .zip s main.lua</string>
     <string name="scripts_category_app">Skripty aplikací</string>
     <string name="scripts_category_global">Globální pluginy</string>
     <string name="scripts_none">Nejsou nainstalovány žádné skripty</string>
@@ -118,7 +118,7 @@
     <string name="script_binding_assign">Přiřadit</string>
     <string name="script_binding_choose_gesture">Vybrat gesto</string>
     <string name="script_binding_type_keys">Zadat klávesy</string>
-    <string name="script_binding_type_keys_summary">Například backtalk+shift+n nebo backtalk+t, s</string>
+    <string name="script_binding_type_keys_summary">Například sf+shift+n nebo sf+t, s</string>
     <string name="script_binding_bad_keys">Tyto klávesy nelze použít. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Přidává:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

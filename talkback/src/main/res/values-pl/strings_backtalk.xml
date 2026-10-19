@@ -343,7 +343,7 @@
   <string name="script_import_nothing">Brak pliku skryptu do zainstalowania.</string>
   <string name="script_import_cannot_open">Nie udało się otworzyć pliku.</string>
   <string name="script_import_repository">Ten link prowadzi do całego repozytorium. Otwórz wybrany skrypt, a następnie udostępnij link do niego.</string>
-  <string name="script_import_summary">Plik .js lub archiwum .zip zawierające main.js</string>
+  <string name="script_import_summary">Plik .lua lub archiwum .zip zawierające main.lua</string>
   <string name="scripts_category_app">Skrypty aplikacji</string>
   <string name="scripts_category_global">Wtyczki globalne</string>
   <string name="scripts_none">Brak zainstalowanych skryptów</string>
@@ -460,7 +460,7 @@
   <string name="script_binding_assign">Przypisz</string>
   <string name="script_binding_choose_gesture">Wybierz gest</string>
   <string name="script_binding_type_keys">Wpisz skrót klawiszowy</string>
-  <string name="script_binding_type_keys_summary">Np. backtalk+shift+n lub backtalk+t, s</string>
+  <string name="script_binding_type_keys_summary">Np. sf+shift+n lub sf+t, s</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_bad_keys">Nie można użyć tej kombinacji klawiszy. <xliff:g id="reason">%1$s</xliff:g></string>
   <string name="script_install_adds">Dodawane polecenia:</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

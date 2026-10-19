@@ -58,7 +58,7 @@ enum class SourceHost(val domain: String, val label: String, val api: SourceApi)
 
 /**
  * A repository, or a folder in one, that holds script files, on one of the [SourceHost]s. The list
- * of a source is the `.js` and `.zip` files directly in it. [owner] is the user or organization, or
+ * of a source is the `.lua` and `.zip` files directly in it. [owner] is the user or organization, or
  * for GitLab the group, which can hold subgroups: `group/subgroup`.
  */
 data class ScriptSource(

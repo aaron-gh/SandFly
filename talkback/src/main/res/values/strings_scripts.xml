@@ -15,7 +15,7 @@
     <!-- Shown when a link to a whole GitHub repository was shared to SandFly to install as a script. [CHAR LIMIT=NONE] -->
     <string name="script_import_repository">This link is to a whole repository. Open the script you want, then share its link.</string>
     <!-- Summary of the import action. [CHAR LIMIT=NONE] -->
-    <string name="script_import_summary">.js file, or .zip with main.js</string>
+    <string name="script_import_summary">.lua file, or .zip with main.lua</string>
     <!-- Heading of the list of scripts that run in particular apps. [CHAR LIMIT=40] -->
     <string name="scripts_category_app">App scripts</string>
     <!-- Heading of the list of scripts that run in every app. [CHAR LIMIT=40] -->
@@ -100,6 +100,8 @@
     <string name="script_permission_events">See all activity in every app, including typing</string>
     <!-- What the dialogs permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_dialogs">Show dialogs over any app</string>
+    <!-- What the java permission lets a script do: call any Java code in SandFly, which no other permission limits. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_java">Run Java code with all of SandFly\'s access, in every app</string>
     <!-- Title of a dialog a script shows, so that it is clear the dialog is the script's and not the app's or the system's. [CHAR LIMIT=NONE] -->
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
 
@@ -244,7 +246,7 @@
     <!-- Action that types keys for a command. [CHAR LIMIT=40] -->
     <string name="script_binding_type_keys">Type keys</string>
     <!-- How to type keys for a command. [CHAR LIMIT=NONE] -->
-    <string name="script_binding_type_keys_summary">Like backtalk+shift+n, or backtalk+t, s</string>
+    <string name="script_binding_type_keys_summary">Like sf+shift+n, or sf+t, s</string>
     <!-- Shown when typed keys cannot be used. [CHAR LIMIT=NONE] -->
     <string name="script_binding_bad_keys">Can\'t use these keys. <xliff:g id="reason">%1$s</xliff:g></string>
     <!-- In the install dialog, before the commands a script adds. [CHAR LIMIT=NONE] -->

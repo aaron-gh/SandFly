@@ -24,7 +24,6 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import com.google.android.accessibility.scripting.quickjs.QuickJsException
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
 import java.util.concurrent.CountDownLatch
@@ -356,9 +355,11 @@ class ScriptManager(
     val runtime = ScriptRuntime(script, this, scriptHandler)
     try {
       runtime.load(prelude)
-    } catch (e: QuickJsException) {
-      return failLoading(runtime, e.describe(), e.interrupted)
+    } catch (e: LuaEngine.ScriptError) {
+      return failLoading(runtime, e.message.orEmpty(), e.interrupted)
     } catch (e: RuntimeException) {
+      return failLoading(runtime, e.toString(), interrupted = false)
+    } catch (e: LinkageError) {
       return failLoading(runtime, e.toString(), interrupted = false)
     }
     loaded[script.id] = runtime
@@ -456,7 +457,7 @@ class ScriptManager(
   }
 
   private companion object {
-    const val PRELUDE_ASSET = "scripting/prelude.js"
+    const val PRELUDE_ASSET = "scripting/prelude.lua"
     const val UNLOAD_LIMIT_MS = 250L
     const val WINDOWS_DEBOUNCE_MS = 100L
     const val LAYER_TIMEOUT_MS = 3000L

@@ -31,7 +31,9 @@ enum class ScriptPermission(val key: String, val sensitive: Boolean, @StringRes 
   SYSTEM("system", true, R.string.script_permission_system),
   NOTIFICATIONS("notifications", true, R.string.script_permission_notifications),
   EVENTS("events", true, R.string.script_permission_events),
-  DIALOGS("dialogs", true, R.string.script_permission_dialogs);
+  DIALOGS("dialogs", true, R.string.script_permission_dialogs),
+  // LuaJava's java module: the script can do anything SandFly can, and no other permission limits it.
+  JAVA("java", true, R.string.script_permission_java);
 
   companion object {
     fun fromKey(key: String): ScriptPermission? = entries.firstOrNull { it.key == key }

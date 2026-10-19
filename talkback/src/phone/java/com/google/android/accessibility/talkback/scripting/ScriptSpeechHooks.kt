@@ -53,7 +53,7 @@ class ScriptSpeechHooks(
     if (ScriptThread.heldUpFor(WAIT_MS)) return null
     val deadline = SystemClock.uptimeMillis() + WAIT_MS
     // Speech cannot wait behind a backlog of content events and timers. It still cannot
-    // preempt JavaScript already running, and the main-thread wait remains bounded.
+    // preempt Lua already running, and the main-thread wait remains bounded.
     return handler.await(WAIT_MS, hook, atFrontOfQueue = true) {
       if (ready()) runChain(chain, hook, input, deadline, arg) else null
     }

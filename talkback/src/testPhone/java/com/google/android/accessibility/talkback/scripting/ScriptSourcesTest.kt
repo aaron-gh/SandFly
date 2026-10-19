@@ -112,14 +112,14 @@ class ScriptSourcesTest {
     assertNull(ScriptSource.parse("github.com/a"))
     assertNull(ScriptSource.parse("http://github.com/a/b"))
     assertNull(ScriptSource.parse("https://example.com/a/b"))
-    assertNull(ScriptSource.parse("https://github.com/a/b/blob/main/x.js"))
+    assertNull(ScriptSource.parse("https://github.com/a/b/blob/main/x.lua"))
     assertNull(ScriptSource.parse("https://github.com/a/b/tree"))
     assertNull(ScriptSource.parse("https://github.com/a/b/tree/main/../x"))
     assertNull(ScriptSource.parse("https://github.com/a%2Fb/c"))
     assertNull(ScriptSource.parse("github.com/../b"))
     assertNull(ScriptSource.parse("github.com/./b"))
     assertNull(ScriptSource.parse("gitlab.com/group"))
-    assertNull(ScriptSource.parse("gitlab.com/group/repo/-/blob/main/x.js"))
+    assertNull(ScriptSource.parse("gitlab.com/group/repo/-/blob/main/x.lua"))
     assertNull(ScriptSource.parse("gitlab.com/group/repo/-/tree"))
     assertNull(ScriptSource.parse("https://codeberg.org/a/b/src/main"))
     assertNull(ScriptSource.parse("https://codeberg.org/a/b/issues"))
@@ -135,17 +135,17 @@ class ScriptSourcesTest {
       ScriptSources.parsePage(
         source("github.com/a/b"),
         """[
-          {"name":"b.JS","type":"file","size":10,"download_url":"$raw/b.JS"},
+          {"name":"b.LUA","type":"file","size":10,"download_url":"$raw/b.LUA"},
           {"name":"a.zip","type":"file","size":10,"download_url":"$raw/a.zip"},
           {"name":"readme.md","type":"file","size":10,"download_url":"$raw/readme.md"},
-          {"name":"folder.js","type":"dir","size":0,"download_url":null},
-          {"name":"big.js","type":"file","size":99999999,"download_url":"$raw/big.js"},
-          {"name":"x.js","type":"file","size":10,"download_url":"https://example.com/x.js"}
+          {"name":"folder.lua","type":"dir","size":0,"download_url":null},
+          {"name":"big.lua","type":"file","size":99999999,"download_url":"$raw/big.lua"},
+          {"name":"x.lua","type":"file","size":10,"download_url":"https://example.com/x.lua"}
         ]""",
       )
 
     assertEquals(
-      listOf(SourceScript("a.zip", "$raw/a.zip"), SourceScript("b.JS", "$raw/b.JS")),
+      listOf(SourceScript("a.zip", "$raw/a.zip"), SourceScript("b.LUA", "$raw/b.LUA")),
       ScriptSources.named(page.scripts).map { it.copy(name = it.file) },
     )
     assertEquals(6, page.count)
@@ -154,18 +154,18 @@ class ScriptSourcesTest {
 
   @Test
   fun aGiteaListingHoldsScriptFilesOnItsHost() {
-    val url = "https://codeberg.org/a/b/raw/branch/main/x.js"
+    val url = "https://codeberg.org/a/b/raw/branch/main/x.lua"
     val page =
       ScriptSources.parsePage(
         source("codeberg.org/a/b"),
         """[
-          {"name":"x.js","type":"file","size":10,"download_url":"$url"},
-          {"name":"y.js","type":"file","size":10,"download_url":"$raw/y.js"},
+          {"name":"x.lua","type":"file","size":10,"download_url":"$url"},
+          {"name":"y.lua","type":"file","size":10,"download_url":"$raw/y.lua"},
           {"name":"d","type":"dir","size":0,"download_url":null}
         ]""",
       )
 
-    assertEquals(listOf(SourceScript("x.js", url)), page.scripts)
+    assertEquals(listOf(SourceScript("x.lua", url)), page.scripts)
   }
 
   @Test
@@ -174,7 +174,7 @@ class ScriptSourcesTest {
       ScriptSources.parsePage(
         source("gitlab.com/g/r/-/tree/dev/scripts"),
         """[
-          {"name":"x.js","type":"blob","path":"scripts/x.js"},
+          {"name":"x.lua","type":"blob","path":"scripts/x.lua"},
           {"name":"sub","type":"tree","path":"scripts/sub"},
           {"name":"note.txt","type":"blob","path":"scripts/note.txt"}
         ]""",
@@ -183,8 +183,8 @@ class ScriptSourcesTest {
     assertEquals(
       listOf(
         SourceScript(
-          "x.js",
-          "https://gitlab.com/api/v4/projects/g%2Fr/repository/files/scripts%2Fx.js/raw?ref=dev",
+          "x.lua",
+          "https://gitlab.com/api/v4/projects/g%2Fr/repository/files/scripts%2Fx.lua/raw?ref=dev",
         )
       ),
       page.scripts,
@@ -199,13 +199,13 @@ class ScriptSourcesTest {
       ScriptSources.parsePage(
         source("bitbucket.org/ws/repo"),
         """{"values":[
-          {"path":"s/x.js","type":"commit_file","size":10,"links":{"self":{"href":"$base/abc/s/x.js"}}},
-          {"path":"s/big.js","type":"commit_file","size":99999999,"links":{"self":{"href":"$base/abc/s/big.js"}}},
+          {"path":"s/x.lua","type":"commit_file","size":10,"links":{"self":{"href":"$base/abc/s/x.lua"}}},
+          {"path":"s/big.lua","type":"commit_file","size":99999999,"links":{"self":{"href":"$base/abc/s/big.lua"}}},
           {"path":"s/d","type":"commit_directory","links":{"self":{"href":"$base/abc/s/d/"}}}
         ],"next":"$base/HEAD/?page=2"}""",
       )
 
-    assertEquals(listOf(SourceScript("x.js", "$base/abc/s/x.js")), page.scripts)
+    assertEquals(listOf(SourceScript("x.lua", "$base/abc/s/x.lua")), page.scripts)
     assertEquals("$base/HEAD/?page=2", page.next)
 
     val elsewhere =
@@ -220,33 +220,33 @@ class ScriptSourcesTest {
   fun aNameIsTheFileNameWhenTheShortNameIsEmptyOrNamesTwoFiles() {
     val scripts =
       ScriptSources.named(
-        listOf("x.js", "x.zip", ".js", "y.js").map { SourceScript(it, "$raw/$it") }
+        listOf("x.lua", "x.zip", ".lua", "y.lua").map { SourceScript(it, "$raw/$it") }
       )
 
-    assertEquals(listOf(".js", "x.js", "x.zip", "y"), names(scripts))
+    assertEquals(listOf(".lua", "x.lua", "x.zip", "y"), names(scripts))
   }
 
   @Test
-  fun aJsFileIsAtMostOneMegabyteAndAZipFiveInAListing() {
-    val js = ScriptPackage.MAX_JS_BYTES
+  fun aLuaFileIsAtMostOneMegabyteAndAZipFiveInAListing() {
+    val lua = ScriptPackage.MAX_LUA_BYTES
     val zip = ScriptPackage.MAX_BYTES
     val page =
       ScriptSources.parsePage(
         source("github.com/a/b"),
         """[
-          {"name":"ok.js","type":"file","size":$js,"download_url":"$raw/ok.js"},
-          {"name":"big.js","type":"file","size":${js + 1},"download_url":"$raw/big.js"},
+          {"name":"ok.lua","type":"file","size":$lua,"download_url":"$raw/ok.lua"},
+          {"name":"big.lua","type":"file","size":${lua + 1},"download_url":"$raw/big.lua"},
           {"name":"ok.zip","type":"file","size":$zip,"download_url":"$raw/ok.zip"},
           {"name":"big.zip","type":"file","size":${zip + 1},"download_url":"$raw/big.zip"}
         ]""",
       )
 
-    assertEquals(listOf("ok.js", "ok.zip"), page.scripts.map { it.file })
+    assertEquals(listOf("ok.lua", "ok.zip"), page.scripts.map { it.file })
   }
 
   @Test(expected = ManifestException::class)
-  fun aJsFileOverOneMegabyteIsRefusedBeforeItIsRead() {
-    ScriptPackage.read(ByteArray(ScriptPackage.MAX_JS_BYTES + 1) { 'a'.code.toByte() })
+  fun aLuaFileOverOneMegabyteIsRefusedBeforeItIsRead() {
+    ScriptPackage.read(ByteArray(ScriptPackage.MAX_LUA_BYTES + 1) { 'a'.code.toByte() })
   }
 
   @Test(expected = ManifestException::class)
@@ -256,6 +256,6 @@ class ScriptSourcesTest {
 
   @Test(expected = org.json.JSONException::class)
   fun aFileInPlaceOfAFolderIsNotAListing() {
-    ScriptSources.parsePage(source("github.com/a/b"), """{"name":"x.js","type":"file"}""")
+    ScriptSources.parsePage(source("github.com/a/b"), """{"name":"x.lua","type":"file"}""")
   }
 }

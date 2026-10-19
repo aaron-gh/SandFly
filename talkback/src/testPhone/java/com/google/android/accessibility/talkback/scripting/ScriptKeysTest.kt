@@ -33,25 +33,25 @@ class ScriptKeysTest {
   }
 
   @Test
-  fun keysAreTheBacktalkModifierOtherModifiersAndAKey() {
-    assertEquals(ScriptInput.Keys(0, KeyEvent.KEYCODE_N), ScriptInput.parseKeys("backtalk+n"))
+  fun keysAreTheSandFlyModifierOtherModifiersAndAKey() {
+    assertEquals(ScriptInput.Keys(0, KeyEvent.KEYCODE_N), ScriptInput.parseKeys("sf+n"))
     assertEquals(
       ScriptInput.Keys(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_N),
-      ScriptInput.parseKeys("Backtalk + Shift + N"),
+      ScriptInput.parseKeys("SF + Shift + N"),
     )
   }
 
   @Test
   fun keysHaveNamesForArrowsAndPunctuation() {
-    assertEquals(KeyEvent.KEYCODE_DPAD_UP, ScriptInput.parseKeys("backtalk+up").keyCode)
-    assertEquals(KeyEvent.KEYCODE_DEL, ScriptInput.parseKeys("backtalk+backspace").keyCode)
-    assertEquals(KeyEvent.KEYCODE_SLASH, ScriptInput.parseKeys("backtalk+/").keyCode)
-    assertEquals(KeyEvent.KEYCODE_F5, ScriptInput.parseKeys("backtalk+f5").keyCode)
+    assertEquals(KeyEvent.KEYCODE_DPAD_UP, ScriptInput.parseKeys("sf+up").keyCode)
+    assertEquals(KeyEvent.KEYCODE_DEL, ScriptInput.parseKeys("sf+backspace").keyCode)
+    assertEquals(KeyEvent.KEYCODE_SLASH, ScriptInput.parseKeys("sf+/").keyCode)
+    assertEquals(KeyEvent.KEYCODE_F5, ScriptInput.parseKeys("sf+f5").keyCode)
   }
 
   @Test
   fun aSecondKeyFollowsAComma() {
-    val keys = ScriptInput.parseKeys("backtalk+t, s")
+    val keys = ScriptInput.parseKeys("sf+t, s")
 
     assertEquals(KeyEvent.KEYCODE_T, keys.keyCode)
     assertEquals(ScriptInput.Keys(0, KeyEvent.KEYCODE_S), keys.next)
@@ -59,23 +59,23 @@ class ScriptKeysTest {
   }
 
   @Test
-  fun onlyTheFirstKeysIncludeTheBacktalkModifier() {
+  fun onlyTheFirstKeysIncludeTheSandFlyModifier() {
     rejects("shift+n")
-    rejects("backtalk+t, backtalk+s")
+    rejects("sf+t, sf+s")
   }
 
   @Test
   fun badKeysAreRejected() {
-    rejects("backtalk+")
-    rejects("backtalk+hyper+n")
-    rejects("backtalk+notakey")
-    rejects("backtalk+shift")
-    rejects("backtalk+a, b, c")
+    rejects("sf+")
+    rejects("sf+hyper+n")
+    rejects("sf+notakey")
+    rejects("sf+shift")
+    rejects("sf+a, b, c")
   }
 
   @Test
   fun keysSurviveBeingStoredByTheirId() {
-    for (text in listOf("backtalk+n", "backtalk+shift+n", "backtalk+t, shift+s")) {
+    for (text in listOf("sf+n", "sf+shift+n", "sf+t, shift+s")) {
       val keys = ScriptInput.parseKeys(text)
 
       assertEquals(keys, ScriptInput.keysFromId(keys.id))

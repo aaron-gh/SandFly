@@ -7,7 +7,7 @@
   <string name="script_import_nothing">Нет файла скрипта для установки.</string>
   <string name="script_import_cannot_open">Не удалось открыть файл.</string>
   <string name="script_import_repository">Эта ссылка ведёт на весь репозиторий. Откройте нужный скрипт и поделитесь ссылкой на него.</string>
-  <string name="script_import_summary">Файл .js или архив .zip с файлом main.js</string>
+  <string name="script_import_summary">Файл .lua или архив .zip с файлом main.lua</string>
   <string name="scripts_category_app">Скрипты для приложений</string>
   <string name="scripts_category_global">Глобальные плагины</string>
   <string name="scripts_none">Нет установленных скриптов</string>
@@ -118,7 +118,7 @@
   <string name="script_binding_assign">Назначить</string>
   <string name="script_binding_choose_gesture">Выбрать жест</string>
   <string name="script_binding_type_keys">Ввести сочетание клавиш</string>
-  <string name="script_binding_type_keys_summary">Например, backtalk+shift+n или backtalk+t, s</string>
+  <string name="script_binding_type_keys_summary">Например, sf+shift+n или sf+t, s</string>
   <string name="script_binding_bad_keys">Невозможно использовать это сочетание клавиш. <xliff:g id="reason">%1$s</xliff:g></string>
   <string name="script_install_adds">Добавляемые возможности:</string>
   <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

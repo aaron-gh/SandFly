@@ -1,4 +1,5 @@
 [versions]
+luajava = "4.1.0"
 agp = "9.4.1"
 kotlin = "2.4.21"
 autoValue = "1.11.1"
@@ -13,6 +14,8 @@ material = "com.google.android.material:material:1.14.0"
 
 # Testing
 junit = "junit:junit:4.13.2"
+luajava = { module = "party.iroiro.luajava:luajava", version.ref = "luajava" }
+luajava-lua54 = { module = "party.iroiro.luajava:lua54", version.ref = "luajava" }
 robolectric = "org.robolectric:robolectric:4.17"
 json = "org.json:json:20250517"
 

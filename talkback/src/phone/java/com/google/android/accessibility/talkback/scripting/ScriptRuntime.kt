@@ -24,13 +24,12 @@ import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.os.bundleOf
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import com.google.android.accessibility.scripting.quickjs.QuickJs
-import com.google.android.accessibility.scripting.quickjs.QuickJsException
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.ACTIONS
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.CLIPBOARD
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.DIALOGS
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.INPUT
+import com.google.android.accessibility.talkback.scripting.ScriptPermission.JAVA
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.NETWORK
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.PASSWORDS
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.SCREEN
@@ -44,7 +43,7 @@ class ScriptRuntime(
   val script: InstalledScript,
   private val manager: ScriptManager,
   private val handler: Handler,
-) : QuickJs.Host {
+) : LuaEngine.Host {
 
   private class HostCall(val permission: ScriptPermission?, val handle: (JSONObject) -> Any?)
 
@@ -64,9 +63,9 @@ class ScriptRuntime(
     get() = addedRules.values.toList() + script.manifest.rules
 
   val isLoaded: Boolean
-    get() = js?.isClosed == false
+    get() = lua?.isClosed == false
 
-  private var js: QuickJs? = null
+  private var lua: LuaEngine? = null
   private val store = manager.store
   private val dialogs = manager.dialogs
   private val nodes = NodeBridge(script.has(PASSWORDS))
@@ -74,31 +73,30 @@ class ScriptRuntime(
   private val fetches = HashSet<Future<*>>()
   private val warned = HashSet<String>()
   private var nextPromise = 1
-  // When the script's current call runs out of time. QuickJS only stops JavaScript, so host calls
-  // that walk the screen stop at this themselves.
+  // When the script's current call runs out of time. The prelude's hook only stops Lua, so host
+  // calls that walk the screen stop at this themselves.
   private var deadline = Long.MAX_VALUE
   private val calls: Map<String, HostCall> = hostCalls()
 
-  @Throws(QuickJsException::class)
+  @Throws(LuaEngine.ScriptError::class)
   fun load(prelude: String) {
-    val runtime = QuickJs(this, MEMORY_LIMIT, STACK_LIMIT).also { js = it }
+    val engine = LuaEngine(this, script.has(JAVA)).also { lua = it }
     val main =
-      store.readFile(id, ScriptPackage.MAIN) ?: throw QuickJsException("main.js is missing")
+      store.readFile(id, ScriptPackage.MAIN)
+        ?: throw LuaEngine.ScriptError("${ScriptPackage.MAIN} is missing")
     ScriptThread.busy {
-      timed(LOAD_LIMIT_MS) { runtime.evalScript(prelude, "prelude.js", LOAD_LIMIT_MS) }
-      timed(LOAD_LIMIT_MS) {
-        runtime.evalModule(main.decodeToString(), ScriptPackage.MAIN, LOAD_LIMIT_MS)
-      }
+      timed(LOAD_LIMIT_MS) { engine.start(prelude, MEMORY_LIMIT) }
+      timed(LOAD_LIMIT_MS) { engine.runMain(main.decodeToString(), ScriptPackage.MAIN) }
     }
   }
 
   fun dispatch(type: String, data: Any?, timeLimitMs: Long = CALL_LIMIT_MS): String? {
-    val runtime = js?.takeUnless { it.isClosed || manager.isClosed } ?: return null
+    val runtime = lua?.takeUnless { it.isClosed || manager.isClosed } ?: return null
     return try {
       val event = jsonObject("type" to type, "data" to data).toString()
-      ScriptThread.busy { timed(timeLimitMs) { runtime.call("__bt_dispatch", event, timeLimitMs) } }
-    } catch (e: QuickJsException) {
-      manager.onScriptError(this, "$type: ${e.describe()}", e.interrupted)
+      ScriptThread.busy { timed(timeLimitMs) { runtime.dispatch(event) } }
+    } catch (e: LuaEngine.ScriptError) {
+      manager.onScriptError(this, "$type: ${e.message}", e.interrupted)
       null
     }
   }
@@ -132,8 +130,8 @@ class ScriptRuntime(
     timers.clear()
     fetches.forEach { it.cancel(true) }
     fetches.clear()
-    js?.close()
-    js = null
+    lua?.close()
+    lua = null
   }
 
   fun appliesTo(packageName: String?): Boolean = script.manifest.runsIn(packageName)
@@ -158,9 +156,7 @@ class ScriptRuntime(
 
   override fun loadModule(name: String): ByteArray? = store.readFile(id, name)
 
-  override fun onUnhandledError(error: QuickJsException) {
-    manager.onScriptError(this, error.describe(), interrupted = false)
-  }
+  override fun isOvertime(): Boolean = SystemClock.uptimeMillis() > deadline
 
   override fun call(method: String, json: String?): String? {
     val call = calls[method] ?: apiError("SandFly has no $method")
@@ -509,7 +505,6 @@ class ScriptRuntime(
     const val LOAD_LIMIT_MS = 2000L
     const val CALL_LIMIT_MS = 2000L
     private const val MEMORY_LIMIT = 32L * 1024 * 1024
-    private const val STACK_LIMIT = 512L * 1024
     private const val MAX_FIND = 200
     private const val MAX_KEY_LENGTH = 200
     private const val MAX_PATTERN = 20

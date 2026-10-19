@@ -16,7 +16,12 @@ dependencies {
     // TODO: Define different dependencies for different product flavors
     wearImplementation project(':materialpreferencecompose')
     wearImplementation project(':materialtheme')
-    phoneImplementation project(':quickjs')
+    // Scripts run in Lua 5.4 through LuaJava.
+    phoneImplementation libs.luajava
+    phoneImplementation libs.luajava.lua54
+    // The Lua 5.4 library for each Android ABI, and for the computer that runs the unit tests.
+    phoneRuntimeOnly "party.iroiro.luajava:android:${libs.versions.luajava.get()}:lua54@aar"
+    testPhoneRuntimeOnly "party.iroiro.luajava:lua54-platform:${libs.versions.luajava.get()}:natives-desktop"
     implementation libs.litertlm
     testImplementation libs.junit
     testImplementation libs.json

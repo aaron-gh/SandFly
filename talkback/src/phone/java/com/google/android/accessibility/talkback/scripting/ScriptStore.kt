@@ -329,7 +329,7 @@ class ScriptStore private constructor(private val context: Context) {
     private const val KEY_INDEX = "index"
     private const val KEY_ALL_OFF = "all_off"
     const val EXAMPLE_ID = "example-plugin"
-    private const val EXAMPLE_ASSET = "scripting/example-plugin.js"
+    private const val EXAMPLE_ASSET = "scripting/example-plugin.lua"
     private const val STORAGE = "storage/"
     private const val SETTING = "setting/"
     private const val BINDING_OFF = "off/"
