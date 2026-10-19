@@ -130,7 +130,9 @@ object NotificationList {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
     val orderSet = order.toSet()
     val ranked =
-      order.mapNotNull { notifications[it] } + notifications.values.filter { it.key !in orderSet }
+      (order.mapNotNull { notifications[it] } +
+          notifications.values.filter { it.key !in orderSet })
+        .filter { !isPlaceholder(it) }
     val groups = ranked.groupBy { it.groupKey }
     val shownGroups = HashSet<String>()
     val result = ArrayList<NotificationItem>()
@@ -157,6 +159,13 @@ object NotificationList {
     }
     return result
   }
+
+  /**
+   * One UI's "N more notifications", which stands in the shade for silent notifications that the
+   * list shows one by one.
+   */
+  private fun isPlaceholder(notification: StatusBarNotification): Boolean =
+    notification.packageName == "com.android.systemui" && notification.tag == "INSIGNIFICANT"
 
   private fun entry(context: Context, notification: StatusBarNotification): NotificationEntry =
     NotificationEntry.from(notification, appName(context, notification.packageName))

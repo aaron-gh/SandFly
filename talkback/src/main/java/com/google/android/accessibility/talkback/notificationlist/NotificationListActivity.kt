@@ -72,6 +72,17 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
    */
   private val rows = HashMap<String, TextView>()
 
+  /** Controllers of the media sessions of media notifications, by session. */
+  private val mediaControllers = HashMap<MediaSession.Token, MediaController>()
+
+  /** Says Playing or Paused as soon as a session changes, before its app updates the notification. */
+  private val playbackListener =
+    object : MediaController.Callback() {
+      override fun onPlaybackStateChanged(state: PlaybackState?) {
+        show()
+      }
+    }
+
   /** The groups the user has expanded while the list is open. */
   private val expandedGroups = HashSet<String>()
 
@@ -142,6 +153,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   override fun onStop() {
     NotificationList.removeListener(this)
+    mediaControllers.values.forEach { it.unregisterCallback(playbackListener) }
+    mediaControllers.clear()
     super.onStop()
     // Like the system's shade, the list closes when the user leaves it.
     if (!isChangingConfigurations) {
@@ -264,13 +277,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   }
 
   /** "Playing" or "Paused" for a media notification whose session reports either. */
-  @Suppress("DEPRECATION") // getParcelable(String, Class) needs Android 13.
   private fun playbackState(entry: NotificationEntry): String? {
-    val token =
-      entry.notification.notification.extras?.getParcelable<MediaSession.Token>(
-        Notification.EXTRA_MEDIA_SESSION
-      ) ?: return null
-    val state = runCatching { MediaController(this, token).playbackState?.state }.getOrNull()
+    val controller = mediaController(entry) ?: return null
+    val state = runCatching { controller.playbackState?.state }.getOrNull()
     return when (state) {
       PlaybackState.STATE_PLAYING -> getString(R.string.notification_list_playing)
       PlaybackState.STATE_PAUSED,
@@ -319,11 +328,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         }
       }
       val entry = entry ?: return
-      entry.notification.notification.actions?.take(ACTION_IDS.size)?.forEachIndexed { index, action
-        ->
-        if (!action.title.isNullOrBlank()) {
-          info.addAction(AccessibilityNodeInfo.AccessibilityAction(ACTION_IDS[index], action.title))
-        }
+      actions(entry).take(ACTION_IDS.size).forEachIndexed { index, action ->
+        info.addAction(AccessibilityNodeInfo.AccessibilityAction(ACTION_IDS[index], action.label))
       }
       if (entry.notification.isClearable) {
         info.addAction(dismissAction())
@@ -348,9 +354,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         return true
       }
       val index = ACTION_IDS.indexOf(action)
-      val notificationAction = entry.notification.notification.actions?.getOrNull(index)
-      if (index >= 0 && notificationAction != null) {
-        perform(notificationAction)
+      val rowAction = if (index >= 0) actions(entry).getOrNull(index) else null
+      if (rowAction != null) {
+        rowAction.run()
         return true
       }
       return super.performAccessibilityAction(host, action, args)
@@ -361,6 +367,62 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         R.id.notification_list_dismiss_action,
         getString(R.string.notification_list_dismiss),
       )
+  }
+
+  /** An action on a notification's row. */
+  private class RowAction(val label: CharSequence, val run: () -> Unit)
+
+  /**
+   * A media notification's actions control its media session, as the system's media player does.
+   * Its own buttons are left out: they ask the app to start a service or send a broadcast, which
+   * Android allows only when the system's shade sends them.
+   */
+  private fun actions(entry: NotificationEntry): List<RowAction> {
+    val controller = mediaController(entry)
+    if (controller != null) {
+      return mediaActions(controller)
+    }
+    return entry.notification.notification.actions
+      .orEmpty()
+      .filter { !it.title.isNullOrBlank() }
+      .map { action -> RowAction(action.title) { perform(action) } }
+  }
+
+  private fun mediaActions(controller: MediaController): List<RowAction> {
+    val state = controller.playbackState
+    val supported = state?.actions ?: 0L
+    val controls = controller.transportControls
+    val result = ArrayList<RowAction>()
+    fun supports(action: Long) = supported and action != 0L
+    if (supports(PlaybackState.ACTION_SKIP_TO_PREVIOUS)) {
+      result.add(RowAction(getString(R.string.notification_list_previous)) { controls.skipToPrevious() })
+    }
+    if (state?.state == PlaybackState.STATE_PLAYING) {
+      if (supports(PlaybackState.ACTION_PAUSE or PlaybackState.ACTION_PLAY_PAUSE)) {
+        result.add(RowAction(getString(R.string.notification_list_pause)) { controls.pause() })
+      }
+    } else if (supports(PlaybackState.ACTION_PLAY or PlaybackState.ACTION_PLAY_PAUSE)) {
+      result.add(RowAction(getString(R.string.notification_list_play)) { controls.play() })
+    }
+    if (supports(PlaybackState.ACTION_SKIP_TO_NEXT)) {
+      result.add(RowAction(getString(R.string.notification_list_next)) { controls.skipToNext() })
+    }
+    state?.customActions?.forEach { custom ->
+      result.add(RowAction(custom.name) { controls.sendCustomAction(custom, custom.extras) })
+    }
+    return result
+  }
+
+  /** The controller of a media notification's session, kept while the list is open. */
+  @Suppress("DEPRECATION") // getParcelable(String, Class) needs Android 13.
+  private fun mediaController(entry: NotificationEntry): MediaController? {
+    val token =
+      entry.notification.notification.extras?.getParcelable<MediaSession.Token>(
+        Notification.EXTRA_MEDIA_SESSION
+      ) ?: return null
+    return mediaControllers.getOrPut(token) {
+      MediaController(this, token).apply { registerCallback(playbackListener) }
+    }
   }
 
   /** Performs one of a notification's own actions, asking for the text of a reply first. */
@@ -544,6 +606,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         R.id.notification_list_action_3,
         R.id.notification_list_action_4,
         R.id.notification_list_action_5,
+        R.id.notification_list_action_6,
+        R.id.notification_list_action_7,
+        R.id.notification_list_action_8,
       )
 
     /**

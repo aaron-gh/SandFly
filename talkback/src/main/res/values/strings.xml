@@ -839,6 +839,14 @@
     <string name="notification_list_playing">Playing</string>
     <!-- State of a media notification in Backtalk's notification list whose media is paused. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_paused">Paused</string>
+    <!-- Action on a media notification in Backtalk's notification list that starts playback. [CHAR_LIMIT=NONE] -->
+    <string name="notification_list_play">Play</string>
+    <!-- Action on a media notification in Backtalk's notification list that pauses playback. [CHAR_LIMIT=NONE] -->
+    <string name="notification_list_pause">Pause</string>
+    <!-- Action on a media notification in Backtalk's notification list that skips to the previous item. [CHAR_LIMIT=NONE] -->
+    <string name="notification_list_previous">Previous</string>
+    <!-- Action on a media notification in Backtalk's notification list that skips to the next item. [CHAR_LIMIT=NONE] -->
+    <string name="notification_list_next">Next</string>
     <!-- Number of notifications in a group in Backtalk's notification list. [CHAR_LIMIT=NONE] -->
     <plurals name="notification_list_group_count">
         <item quantity="one">%d notification</item>
