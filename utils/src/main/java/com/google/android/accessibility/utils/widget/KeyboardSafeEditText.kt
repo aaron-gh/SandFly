@@ -16,16 +16,26 @@
 
 package com.google.android.accessibility.utils.widget
 
+import android.content.ComponentName
 import android.content.Context
+import android.os.Build
+import android.provider.Settings
 import android.util.AttributeSet
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
+import android.view.inputmethod.InputMethodManager
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.widget.AppCompatEditText
 import com.google.android.accessibility.utils.input.KeyboardCalls
 
 /**
- * A text field in one of the screen reader's own windows. The keyboard's calls to it are answered
- * as [KeyboardCalls] describes, so typing in it doesn't stall the screen reader or the keyboard.
+ * A text field in one of the screen reader's own windows. A keyboard in another app has its calls
+ * answered as [KeyboardCalls] describes, so typing doesn't stall the screen reader or the keyboard.
+ *
+ * The screen reader's own braille keyboard runs on this app's main thread, where Android answers
+ * its calls at once, so it gets the field's own connection. Through [KeyboardCalls], each of its
+ * questions would wait for the main thread it runs on, and get no answer: typing was slow, and
+ * deleting a word did nothing.
  */
 open class KeyboardSafeEditText
 @JvmOverloads
@@ -35,6 +45,28 @@ constructor(
   defStyleAttr: Int = androidx.appcompat.R.attr.editTextStyle,
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
-  override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? =
-    KeyboardCalls.wrap(super.onCreateInputConnection(outAttrs))
+  override fun onCreateInputConnection(outAttrs: EditorInfo): InputConnection? {
+    val connection = super.onCreateInputConnection(outAttrs)
+    return if (isOwnKeyboard(context)) connection else KeyboardCalls.wrap(connection)
+  }
+
+  companion object {
+    /** Whether the keyboard in use belongs to this app, and so runs in its process. */
+    @VisibleForTesting
+    fun isOwnKeyboard(context: Context): Boolean = keyboardPackage(context) == context.packageName
+
+    private fun keyboardPackage(context: Context): String? {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+        context.getSystemService(InputMethodManager::class.java)?.currentInputMethodInfo?.let {
+          return it.packageName
+        }
+      }
+      return try {
+        Settings.Secure.getString(context.contentResolver, Settings.Secure.DEFAULT_INPUT_METHOD)
+          ?.let { ComponentName.unflattenFromString(it)?.packageName }
+      } catch (e: SecurityException) {
+        null
+      }
+    }
+  }
 }
