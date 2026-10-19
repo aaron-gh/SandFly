@@ -21,7 +21,7 @@ def gitOutput = { List<String> args ->
 // SandFly's build number is the number of commits since the last commit before SandFly numbered
 // its own builds, so the first one is build 1. The publish job in .github/workflows/build.yml
 // counts the same way.
-def buildNumberBase = "bc79987c138301c55d5a79aa80460d63d8ecf6da"
+def buildNumberBase = "699e30f8e359e5e047e15149ddc407ea9ca13107"
 def commitCount = gitOutput(['rev-list', '--count', "${buildNumberBase}..HEAD"])
 def commitHash = gitOutput(['rev-parse', 'HEAD'])
 ext {
