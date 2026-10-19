@@ -348,7 +348,7 @@ When you swipe past the last item on the screen, TalkBack stops once and then go
 
 On some phones, after a touch with several fingers, Android can stop touch exploration for every screen reader until the phone restarts. Swipes and taps still work, but dragging a finger says nothing. The bug is in Android, not in the screen reader.
 
-SandFly notices exploring touches that hover over nothing. To let it fix the problem, grant it the DUMP permission once with adb:
+SandFly notices exploring touches that hover over nothing. To let it fix the problem, it needs the DUMP permission. With [Shizuku](https://shizuku.rikka.app) running, SandFly grants it when it starts: Shizuku asks once whether to allow SandFly. Without Shizuku, grant it once with adb:
 
 ```
 adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
@@ -446,13 +446,13 @@ The volume keys still change the volume while SandFly is paused. If SandFly rest
 
 Like VoiceOver on iPhone, SandFly can move a call to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again. A call that starts with the phone away from your ear goes straight to the speaker. SandFly leaves Bluetooth and wired headsets alone, and if you turn the speaker on or off in the Phone app, your choice stays until you move the phone again.
 
-Android lets only certain apps, such as smartwatch companions, change where call audio goes, so you need to grant SandFly permission once, with adb or [Shizuku](https://shizuku.rikka.app):
+Android lets only certain apps, such as smartwatch companions, change where call audio goes, so SandFly needs a permission for it. With [Shizuku](https://shizuku.rikka.app) running, turn on **Sound and vibration** > **Speaker when away from your ear**, and SandFly grants the permission itself; the first time, Shizuku asks whether to allow SandFly. If the permission can't be granted, the setting turns back off. Without Shizuku, grant the permission once with adb, then turn on the setting:
 
 ```
 adb shell appops set io.github.aaron_gh.sandfly MANAGE_ONGOING_CALLS allow
 ```
 
-Then turn on **Sound and vibration** > **Speaker when away from your ear**. Until you grant the permission, the setting is unavailable and shows the command, and its **Copy command** action copies the command to the clipboard. This feature requires Android 12 or later.
+Without Shizuku, until you grant the permission, the setting is unavailable and shows the command, and its **Copy command** action copies the command to the clipboard. This feature requires Android 12 or later.
 
 ## Direct touch
 

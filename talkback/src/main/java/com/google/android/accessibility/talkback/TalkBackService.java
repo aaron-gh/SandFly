@@ -231,6 +231,7 @@ import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
 import com.google.android.accessibility.talkback.soundthemes.ThemeFeedback;
 import com.google.android.accessibility.talkback.speech.SpeechCacheController;
@@ -1009,6 +1010,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     Updater.stopAutomaticChecks();
+    ShizukuGrants.onServiceDestroyed();
     instance = null;
     // Shutdown and unregister all components.
     shutdownInfrastructure();
@@ -1908,6 +1910,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Handle any update actions.
     new TalkBackUpdateHelper(this).checkUpdate();
     Updater.startAutomaticChecks(this);
+    ShizukuGrants.onServiceConnected(this);
     // Turns Backtalk under its old app ID off, before this one says it is on.
     AppIdHandOver.onServiceConnected(this, this::refreshGestureDetection);
 

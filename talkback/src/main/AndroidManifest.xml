@@ -437,6 +437,16 @@
             android:name="com.google.android.accessibility.talkback.update.UpdateReceiver"
             android:exported="false" />
 
+        <!-- Receives Shizuku's binder, for granting the permissions that settings need. Only the
+             system can use it, through INTERACT_ACROSS_USERS_FULL. -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:multiprocess="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
         <!-- Shares Backtalk Aaron's settings and custom labels, read-only, with SandFly. SandFly is
              signed with another key, so the provider checks the caller's certificate itself. -->
         <provider

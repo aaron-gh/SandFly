@@ -26,11 +26,13 @@ import androidx.core.view.accessibility.AccessibilityViewCommand
 import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
 import com.google.android.accessibility.talkback.utils.ClipboardUtils
 
 /**
  * A switch for a setting that needs a permission granted with adb. While [command] is set, the
- * switch has a "Copy command" action that copies it to the clipboard.
+ * switch has a "Copy command" action that copies it to the clipboard. With [grant] set, turning the
+ * switch on grants the permission through Shizuku when it is running.
  */
 class CommandSwitchPreference
 @JvmOverloads
@@ -45,6 +47,27 @@ constructor(context: Context, attrs: AttributeSet? = null) :
         notifyChanged()
       }
     }
+
+  /** The permission that Shizuku can grant for this setting, or null. */
+  var grant: ShizukuGrants.Grant? = null
+
+  /** Whether the switch turns back off when the permission can't be granted. */
+  var needsGrant = false
+
+  /** Runs after a grant through Shizuku, whether or not it worked, to update the setting. */
+  var onGrantFinished: Runnable? = null
+
+  override fun onClick() {
+    super.onClick()
+    val grant = grant ?: return
+    if (!isChecked || command == null) return
+    ShizukuGrants.request(context, grant) { granted ->
+      if (!granted && needsGrant) {
+        isChecked = false
+      }
+      onGrantFinished?.run()
+    }
+  }
 
   override fun onBindViewHolder(holder: PreferenceViewHolder) {
     super.onBindViewHolder(holder)

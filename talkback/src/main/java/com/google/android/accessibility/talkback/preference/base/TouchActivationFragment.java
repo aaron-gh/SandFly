@@ -25,6 +25,7 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -77,11 +78,16 @@ public class TouchActivationFragment extends TalkbackBaseFragment {
                 R.string.summary_pref_fix_stuck_touch_exploration_no_dump,
                 context.getPackageName()));
     if (preference instanceof CommandSwitchPreference) {
-      ((CommandSwitchPreference) preference)
-          .setCommand(
-              canFix
-                  ? null
-                  : "adb shell pm grant " + context.getPackageName() + " android.permission.DUMP");
+      CommandSwitchPreference commandPreference = (CommandSwitchPreference) preference;
+      commandPreference.setCommand(
+          canFix ? null : "adb shell pm grant " + context.getPackageName() + " android.permission.DUMP");
+      commandPreference.setGrant(ShizukuGrants.Grant.DUMP);
+      commandPreference.setOnGrantFinished(
+          () -> {
+            if (isAdded()) {
+              updateStuckTouchPreference();
+            }
+          });
     }
   }
 

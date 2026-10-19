@@ -16,8 +16,8 @@
 package com.google.android.accessibility.talkback.preference.base;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.SharedPreferences;
 import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
@@ -25,8 +25,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import androidx.fragment.app.FragmentActivity;
 import android.text.TextUtils;
+import androidx.fragment.app.FragmentActivity;
 import androidx.preference.ListPreference;
 import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
@@ -34,6 +34,7 @@ import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.audio.SpeakerDevices;
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
@@ -118,13 +119,23 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     }
     boolean granted = SpeakerphoneSettings.INSTANCE.canControlCalls(getContext());
     String command = SpeakerphoneSettings.INSTANCE.grantCommand(getContext());
-    pref.setEnabled(granted);
+    // With Shizuku running, turning the setting on grants the permission.
+    pref.setEnabled(granted || ShizukuGrants.INSTANCE.isReady());
     pref.setSummary(
         granted
             ? getString(R.string.summary_pref_speakerphone_away_from_ear)
             : getString(R.string.summary_pref_speakerphone_needs_permission, command));
     if (pref instanceof CommandSwitchPreference) {
-      ((CommandSwitchPreference) pref).setCommand(granted ? null : command);
+      CommandSwitchPreference commandPreference = (CommandSwitchPreference) pref;
+      commandPreference.setCommand(granted ? null : command);
+      commandPreference.setGrant(ShizukuGrants.Grant.MANAGE_ONGOING_CALLS);
+      commandPreference.setNeedsGrant(true);
+      commandPreference.setOnGrantFinished(
+          () -> {
+            if (isAdded()) {
+              updateSpeakerphonePreference();
+            }
+          });
     }
   }
 
