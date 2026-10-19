@@ -4,7 +4,7 @@
   <string name="title_pref_system_tts_settings">Systemowe ustawienia zamiany tekstu na mowę</string>
   <string name="title_selector_voice_profile">Profil głosowy</string>
   <string name="title_pref_voice_profiles">Profile głosowe</string>
-  <string name="voice_profile_default">Domyślny profil głosowy Backtalka</string>
+  <string name="voice_profile_default">Domyślny profil głosowy SandFly</string>
   <string name="voice_profile_in_use">Używany profil głosowy: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
   <string name="spoken_language_unavailable_with_profile">Zmiana języka wypowiedzi jest niedostępna podczas korzystania z profilu głosowego</string>
   <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, używany</string>
@@ -47,7 +47,7 @@
   <string name="template_battery_level_unknown">Poziom baterii nieznany</string>
   <string name="value_charger_connected">Ładowarka podłączona</string>
   <string name="title_pref_screen_announcements">Włączanie i wyłączanie ekranu</string>
-  <string name="summary_pref_screen_announcements">Wybierz, co Backtalk odczytuje przy wyłączaniu i włączaniu ekranu oraz odblokowywaniu telefonu</string>
+  <string name="summary_pref_screen_announcements">Wybierz, co SandFly odczytuje przy wyłączaniu i włączaniu ekranu oraz odblokowywaniu telefonu</string>
   <string name="title_screen_announcements_screen_off">Przy wyłączaniu ekranu</string>
   <string name="title_screen_announcements_screen_on">Przy włączaniu ekranu</string>
   <string name="title_screen_announcements_unlock">Przy odblokowywaniu telefonu</string>
@@ -60,28 +60,28 @@
   <string name="title_pref_category_typing_and_braille">Pisanie i brajl</string>
   <string name="title_pref_category_more">Więcej</string>
   <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla zegara wibracyjnego</string>
-  <string name="summary_pref_reserve_vibration_watch_gestures">Backtalk nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
+  <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
   <string name="shortcut_reserved_for_vibration_watch">Zarezerwowany dla zegara wibracyjnego w ustawieniach zaawansowanych</string>
   <string name="title_pref_speakerphone_away_from_ear">Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha</string>
   <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
   <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
-  <string name="title_pref_speech_control">Zezwalaj innym aplikacjom na odczytywanie tekstu przez Backtalk</string>
-  <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w Backtalku. Gdy urządzenie jest zablokowane, ich tekst nie jest odczytywany.</string>
+  <string name="title_pref_speech_control">Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly</string>
+  <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w SandFly. Gdy urządzenie jest zablokowane, ich tekst nie jest odczytywany.</string>
   <string name="title_pref_speech_control_sound">Odtwarzaj dźwięk przed odczytaniem tekstu przekazanego przez inną aplikację</string>
   <string name="speech_control_apps_category">Aplikacje</string>
-  <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez Backtalk.</string>
-  <string name="speech_control_ask_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez Backtalk?</string>
-  <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w Backtalku. Możesz zmienić to uprawnienie w ustawieniach zaawansowanych.</string>
+  <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez SandFly.</string>
+  <string name="speech_control_ask_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez SandFly?</string>
+  <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w SandFly. Możesz zmienić to uprawnienie w ustawieniach zaawansowanych.</string>
   <string name="speech_control_allow">Zezwól</string>
   <string name="speech_control_deny">Nie zezwalaj</string>
-  <string name="permission_speak_label">odczytywanie tekstu przez Backtalk</string>
-  <string name="permission_speak_description">Umożliwia aplikacji zgłoszenie prośby o odczytywanie tekstu głosem używanym w Backtalku. Backtalk poprosi Cię o zgodę, zanim aplikacja będzie mogła z niego korzystać.</string>
+  <string name="permission_speak_label">odczytywanie tekstu przez SandFly</string>
+  <string name="permission_speak_description">Umożliwia aplikacji zgłoszenie prośby o odczytywanie tekstu głosem używanym w SandFly. SandFly poprosi Cię o zgodę, zanim aplikacja będzie mogła z niego korzystać.</string>
   <string name="title_pref_emoji_speech">Emoji</string>
   <string name="emoji_speech_engine">Odczytywane przez syntezator mowy</string>
-  <string name="emoji_speech_names">Odczytywane przez Backtalk</string>
+  <string name="emoji_speech_names">Odczytywane przez SandFly</string>
   <string name="emoji_speech_none">Nie odczytuj</string>
   <string name="summary_selector_menu_emoji">Zmień sposób odczytywania emoji</string>
-  <string name="emoji_speech_state">Emoji: <xliff:g example="Read by Backtalk" id="state">%1$s</xliff:g></string>
+  <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
   <string name="title_pref_emoji_repeat_count">Podawaj liczbę powtórzonych emoji</string>
   <string name="emoji_repeat_count_off">Wyłączone</string>
   <string name="emoji_repeat_count_2">2 lub więcej</string>
@@ -100,9 +100,9 @@
   <string name="summary_pref_speak_volume_changes">Podawaj nowy poziom po naciśnięciu przycisków głośności</string>
   <string name="title_pref_speak_notifications">Odczytuj powiadomienia</string>
   <string name="summary_pref_speak_notifications">Odczytuj nowe powiadomienia, gdy się pojawią. Informacje o połączeniach przychodzących są zawsze odczytywane.</string>
-  <string name="talkback_exit_watermark_text_no_menu_gesture">Backtalk jest włączony. Aby go wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby ukryć ten komunikat, w ustawieniach zaawansowanych Backtalka wyłącz opcję pokazywania instrukcji jego wyłączania.</string>
+  <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly jest włączony. Aby go wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby ukryć ten komunikat, w ustawieniach zaawansowanych SandFly wyłącz opcję pokazywania instrukcji jego wyłączania.</string>
   <string name="title_pref_audio_output_device">Urządzenie odtwarzające</string>
-  <string name="dialog_title_audio_output_device">Wybierz, gdzie odtwarzać dźwięk Backtalka</string>
+  <string name="dialog_title_audio_output_device">Wybierz, gdzie odtwarzać dźwięk SandFly</string>
   <string name="value_audio_output_device_default">Domyślne urządzenie systemowe</string>
   <string name="value_audio_output_device_speaker">Głośnik telefonu</string>
   <string name="value_audio_output_device_bluetooth_or_wired">Podłączone urządzenie Bluetooth lub przewodowe</string>
@@ -112,9 +112,9 @@
   <string name="value_audio_output_device_wired_headphones">Słuchawki przewodowe</string>
   <string name="value_audio_output_device_usb_headset">Zestaw słuchawkowy USB</string>
   <string name="value_audio_output_device_usb_device">Urządzenie audio USB</string>
-  <string name="pref_reduce_window_delay_summary">Backtalk szybciej odczytuje nowe ekrany, gdy animacje są wyłączone. Ta opcja wyłącza animacje w całym telefonie.</string>
+  <string name="pref_reduce_window_delay_summary">SandFly szybciej odczytuje nowe ekrany, gdy animacje są wyłączone. Ta opcja wyłącza animacje w całym telefonie.</string>
   <string name="dialog_message_detailed_ai_description">Wybrane obrazy są wysyłane do interfejsu API Gemini firmy Google w celu uzyskania opisu. Po włączeniu AI na urządzeniu są opisywane na tym telefonie i nie są wysyłane.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Obowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-  <string name="dialog_message_detailed_ai_promotion">Szczegółowe opisy obrazów są tworzone przez generatywną AI. Wybrane obrazy są wysyłane do interfejsu API Gemini firmy Google w celu uzyskania opisu. Po włączeniu AI na urządzeniu są opisywane na tym telefonie i nie są wysyłane.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Szczegółowe opisy obrazów możesz w każdej chwili wyłączyć w ustawieniach Backtalka.\n\nObowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_detailed_ai_promotion">Szczegółowe opisy obrazów są tworzone przez generatywną AI. Wybrane obrazy są wysyłane do interfejsu API Gemini firmy Google w celu uzyskania opisu. Po włączeniu AI na urządzeniu są opisywane na tym telefonie i nie są wysyłane.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Szczegółowe opisy obrazów możesz w każdej chwili wyłączyć w ustawieniach SandFly.\n\nObowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
   <string name="dialog_message_screen_overview_promotion">Zrzut ekranu jest wysyłany do interfejsu API Gemini firmy Google w celu uzyskania opisu, co trwa kilka sekund. Po włączeniu AI na urządzeniu jest opisywany na tym telefonie i nie jest wysyłany.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Obowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
   <string name="title_pref_brightness">Jasność</string>
   <string name="summary_support_change_brightness">Zwiększanie lub zmniejszanie jasności ekranu, także gdy ekran jest ukryty</string>
@@ -134,7 +134,7 @@
   <string name="value_rotor_step_45">45 stopni</string>
   <string name="value_rotor_step_60">60 stopni</string>
   <string name="title_pref_low_latency_audio">Dźwięk o niskim opóźnieniu</string>
-  <string name="summary_pref_low_latency_audio">Odtwarzaj mowę i dźwięki Backtalka z najmniejszym opóźnieniem dostępnym w telefonie. Wyłącz tę opcję, jeśli mowa lub dźwięki przerywają albo brzmią nieprawidłowo.</string>
+  <string name="summary_pref_low_latency_audio">Odtwarzaj mowę i dźwięki SandFly z najmniejszym opóźnieniem dostępnym w telefonie. Wyłącz tę opcję, jeśli mowa lub dźwięki przerywają albo brzmią nieprawidłowo.</string>
   <string name="value_focus_delay_200ms_default">0,2 sekundy (domyślnie)</string>
   <string name="value_focus_delay_300ms">0,3 sekundy</string>
   <string name="title_pref_lift_to_activate">Aktywowanie po puszczeniu</string>
@@ -168,7 +168,7 @@
   <string name="template_list_position">Pozycja <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
   <string name="template_item_details_order_picked_up">Rozpoczęto przeciąganie: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
   <string name="template_item_details_order_dropped">Zakończono przeciąganie: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-  <string name="item_details_order_footer">Backtalk odczytuje informacje o elemencie w tej kolejności. Aby ją zmienić, dotknij wybranej pozycji i przytrzymaj, a następnie przeciągnij ją w górę lub w dół. Gdy Backtalk jest włączony, kliknij dwukrotnie, przytrzymaj i przeciągnij. Możesz też użyć czynności „Przenieś w górę” i „Przenieś w dół”.</string>
+  <string name="item_details_order_footer">SandFly odczytuje informacje o elemencie w tej kolejności. Aby ją zmienić, dotknij wybranej pozycji i przytrzymaj, a następnie przeciągnij ją w górę lub w dół. Gdy SandFly jest włączony, kliknij dwukrotnie, przytrzymaj i przeciągnij. Możesz też użyć czynności „Przenieś w górę” i „Przenieś w dół”.</string>
   <string name="title_pref_speak_items_before_scroll">Odczytuj elementy, zanim przewinięcie pokaże je na ekranie</string>
   <string name="gemini_error_api_key">Usługa Gemini nie zaakceptowała klucza API. Sprawdź go w ustawieniach automatycznych opisów.</string>
   <string name="gemini_error_quota">Osiągnięto limit użycia Twojego klucza API Gemini. Spróbuj ponownie później.</string>
@@ -181,7 +181,7 @@
   <string name="brightness_needs_permission">Zezwól na zmianę ustawień systemowych, aby regulować jasność.</string>
   <string name="brightness_adaptive_on">Wyłącz jasność adaptacyjną, aby ustawić ją ręcznie.</string>
   <string name="title_pref_control_sounds">Dźwięki i wibracje kontrolek</string>
-  <string name="summary_pref_control_sounds">Każdy typ kontrolki, np. przycisk, pole wyboru, pole edycji lub element listy, ma własny dźwięk i wzór wibracji z tematu. Zastępują one dźwięk i wibrację zaznaczenia, podobnie jak w dodatku Unspoken do NVDA. Dźwięk dochodzi z miejsca odpowiadającego położeniu kontrolki na ekranie, a Backtalk pomija odczytywanie jej typu.</string>
+  <string name="summary_pref_control_sounds">Każdy typ kontrolki, np. przycisk, pole wyboru, pole edycji lub element listy, ma własny dźwięk i wzór wibracji z tematu. Zastępują one dźwięk i wibrację zaznaczenia, podobnie jak w dodatku Unspoken do NVDA. Dźwięk dochodzi z miejsca odpowiadającego położeniu kontrolki na ekranie, a SandFly pomija odczytywanie jej typu.</string>
   <string name="title_pref_control_sounds_speak_roles">Nadal odczytuj typ kontrolki</string>
   <string name="summary_pref_control_sounds_speak_roles">Odczytuj typ kontrolki, np. „przycisk”, także gdy odtwarzany jest jej dźwięk. To ustawienie dotyczy wszystkich tematów dźwiękowych.</string>
   <string name="title_pref_control_sounds_3d">Dźwięk przestrzenny 3D</string>
@@ -206,7 +206,7 @@
   <string name="direct_touch_tile_label">Dotyk bezpośredni</string>
   <string name="title_pref_direct_touch">Dotyk bezpośredni</string>
   <string name="pref_direct_touch_master">Dotyk bezpośredni</string>
-  <string name="pref_direct_touch_master_summary">Przekazuj dotyk bezpośrednio do wybranych poniżej aplikacji. Backtalk ponownie przejmuje jego obsługę w oknach dialogowych, polach tekstowych, na klawiaturze i ekranach systemowych.</string>
+  <string name="pref_direct_touch_master_summary">Przekazuj dotyk bezpośrednio do wybranych poniżej aplikacji. SandFly ponownie przejmuje jego obsługę w oknach dialogowych, polach tekstowych, na klawiaturze i ekranach systemowych.</string>
   <string name="pref_direct_touch_speech">Odczytuj zmiany stanu dotyku bezpośredniego</string>
   <string name="pref_direct_touch_haptics">Wibruj przy zmianie stanu dotyku bezpośredniego</string>
   <string name="pref_direct_touch_backup">Utwórz kopię zapasową ustawień</string>
@@ -277,7 +277,7 @@
   <string name="on_device_ai_import_done">Model zainstalowany</string>
   <string name="on_device_ai_import_failed">Wybrany plik nie jest obsługiwanym plikiem modelu.</string>
   <string name="pref_on_device_ai_timeout">Limit czasu oczekiwania na odpowiedź</string>
-  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu Backtalk przestaje czekać. Opisywanie ekranu trwa dłużej niż opisywanie obrazu.</string>
+  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu SandFly przestaje czekać. Opisywanie ekranu trwa dłużej niż opisywanie obrazu.</string>
   <string name="on_device_ai_choose_timeout">Limit czasu oczekiwania na odpowiedź</string>
   <string name="pref_on_device_ai_short_prompts">Krótsze opisy ekranu</string>
   <string name="pref_on_device_ai_short_prompts_summary">Funkcja „Opisz ekran” prosi o mniej szczegółów, dzięki czemu szybciej odpowiada. Wyłącz tę opcję, aby uzyskać pełniejsze opisy.</string>
@@ -317,29 +317,29 @@
   <string name="summary_pref_on_device_ai_ignore_memory_limits">Pozwala wybrać model wymagający więcej pamięci RAM, niż ma telefon, i wczytać go bez sprawdzania ilości wolnej pamięci. Służy do testowania, co się stanie, gdy Android zatrzyma model.</string>
   <string name="on_device_ai_not_enough_memory">Za mało wolnej pamięci RAM dla modelu %1$s. Zamknij niektóre aplikacje lub wybierz mniejszy model w ustawieniach AI na urządzeniu.</string>
   <string name="on_device_ai_stopped">Model %1$s został zatrzymany, prawdopodobnie z powodu braku pamięci RAM. W ustawieniach AI na urządzeniu wybierz mniejszy model.</string>
-  <string name="title_pause_backtalk">Wstrzymaj Backtalka</string>
-  <string name="summary_pause_backtalk">Wyłącz mowę, gesty i czytanie dotykiem do czasu wznowienia Backtalka</string>
-  <string name="keycombo_menu_global_pause_backtalk">Wstrzymaj lub wznów Backtalka</string>
-  <string name="backtalk_paused">Wstrzymano działanie Backtalka</string>
-  <string name="backtalk_resumed">Wznowiono działanie Backtalka</string>
-  <string name="notification_title_backtalk_paused">Backtalk jest wstrzymany</string>
+  <string name="title_pause_backtalk">Wstrzymaj SandFly</string>
+  <string name="summary_pause_backtalk">Wyłącz mowę, gesty i czytanie dotykiem do czasu wznowienia SandFly</string>
+  <string name="keycombo_menu_global_pause_backtalk">Wstrzymaj lub wznów SandFly</string>
+  <string name="backtalk_paused">Wstrzymano działanie SandFly</string>
+  <string name="backtalk_resumed">Wznowiono działanie SandFly</string>
+  <string name="notification_title_backtalk_paused">SandFly jest wstrzymany</string>
   <string name="notification_message_backtalk_paused">Kliknij, aby wznowić</string>
-  <string name="notification_channel_backtalk_paused">Wstrzymanie Backtalka</string>
-  <string name="dialog_title_pause_backtalk">Wstrzymać Backtalka?</string>
+  <string name="notification_channel_backtalk_paused">Wstrzymanie SandFly</string>
+  <string name="dialog_title_pause_backtalk">Wstrzymać SandFly?</string>
   <string name="dialog_button_pause_backtalk">Wstrzymaj</string>
-  <string name="dialog_message_pause_backtalk">Po wstrzymaniu Backtalk nie odczytuje treści ani nie reaguje na gesty. Ekran obsługuje się tak, jak przy wyłączonym czytniku ekranu.</string>
-  <string name="message_resume_keyguard">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub zablokuj i wybudź telefon, aby pojawił się ekran blokady.</string>
-  <string name="message_resume_screen_on">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub wyłącz i ponownie włącz ekran.</string>
-  <string name="message_resume_manual">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany” lub szybko naciśnij 3 razy przycisk zmniejszania głośności.</string>
+  <string name="dialog_message_pause_backtalk">Po wstrzymaniu SandFly nie odczytuje treści ani nie reaguje na gesty. Ekran obsługuje się tak, jak przy wyłączonym czytniku ekranu.</string>
+  <string name="message_resume_keyguard">Aby wznowić SandFly, kliknij powiadomienie „SandFly jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub zablokuj i wybudź telefon, aby pojawił się ekran blokady.</string>
+  <string name="message_resume_screen_on">Aby wznowić SandFly, kliknij powiadomienie „SandFly jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub wyłącz i ponownie włącz ekran.</string>
+  <string name="message_resume_manual">Aby wznowić SandFly, kliknij powiadomienie „SandFly jest wstrzymany” lub szybko naciśnij 3 razy przycisk zmniejszania głośności.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="message_resume_key_combo">Możesz też nacisnąć <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
-  <string name="title_pref_resume_backtalk">Wznawianie Backtalka</string>
+  <string name="title_pref_resume_backtalk">Wznawianie SandFly</string>
   <string name="value_resume_keyguard">Po wyświetleniu ekranu blokady</string>
   <string name="value_resume_screen_on">Po włączeniu ekranu</string>
   <string name="value_resume_manual">Tylko przez powiadomienie lub skrót</string>
   <string name="title_pref_scripts">Skrypty</string>
-  <string name="summary_pref_scripts">Zmieniaj sposób działania Backtalka w aplikacjach</string>
+  <string name="summary_pref_scripts">Zmieniaj sposób działania SandFly w aplikacjach</string>
   <string name="script_import">Importuj skrypt</string>
-  <string name="script_install_label">Zainstaluj skrypt Backtalka</string>
+  <string name="script_install_label">Zainstaluj skrypt SandFly</string>
   <string name="script_import_nothing">Brak pliku skryptu do zainstalowania.</string>
   <string name="script_import_cannot_open">Nie udało się otworzyć pliku.</string>
   <string name="script_import_repository">Ten link prowadzi do całego repozytorium. Otwórz wybrany skrypt, a następnie udostępnij link do niego.</string>
@@ -376,7 +376,7 @@
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Przyznawaj to uprawnienie tylko zaufanym skryptom.</string>
   <string name="script_permission_screen">Odczytywanie ekranu</string>
   <string name="script_permission_actions">Klikanie, przewijanie, wpisywanie tekstu i przenoszenie fokusu</string>
-  <string name="script_permission_speech">Dostęp do wypowiedzi Backtalka i ich zmienianie</string>
+  <string name="script_permission_speech">Dostęp do wypowiedzi SandFly i ich zmienianie</string>
   <string name="script_permission_passwords">Odczytywanie pól haseł</string>
   <string name="script_permission_input">Dodawanie gestów, skrótów klawiszowych, pozycji menu i opcji sterowania czytaniem</string>
   <string name="script_permission_network">Korzystanie z internetu</string>
@@ -399,13 +399,13 @@
   <string name="script_move_down">Uruchamiaj później</string>
   <string name="script_order_summary">Kolejność skryptów zmieniających tę samą wypowiedź. Skrypty aplikacji są uruchamiane jako pierwsze.</string>
   <string name="script_log">Dziennik</string>
-  <string name="script_log_summary">Komunikaty i błędy od uruchomienia Backtalka</string>
+  <string name="script_log_summary">Komunikaty i błędy od uruchomienia SandFly</string>
   <string name="script_clear_storage">Wyczyść zapisane dane</string>
   <string name="script_storage_cleared">Zapisane dane wyczyszczone</string>
   <string name="script_remove">Usuń</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_remove_title">Usunąć skrypt <xliff:g id="name">%1$s</xliff:g>?</string>
   <string name="title_pref_radial_menu">Menu kołowe</string>
-  <string name="summary_pref_radial_menu">Wyświetlaj menu Backtalka w formie koła na środku ekranu. Przesuń palec do wybranej pozycji i unieś go, aby ją wybrać.</string>
+  <string name="summary_pref_radial_menu">Wyświetlaj menu SandFly w formie koła na środku ekranu. Przesuń palec do wybranej pozycji i unieś go, aby ją wybrać.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_radial_menu_submenu">Menu: <xliff:g id="title" example="Navigation">%1$s</xliff:g></string>
   <string name="radial_menu_cancel">Anuluj</string>
   <string name="radial_menu_closed">Menu zamknięte</string>
@@ -417,9 +417,9 @@
   <string name="script_log_copy">Kopiuj dziennik</string>
   <string name="script_log_copied">Dziennik skopiowany</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_too_old">Wymaga API skryptów w wersji <xliff:g id="needed">%1$d</xliff:g> lub nowszej. Ta wersja Backtalka udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc niektóre funkcje mogą nie działać.</string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_untested">Przetestowano z API skryptów do wersji <xliff:g id="tested">%1$d</xliff:g>. Ta wersja Backtalka udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc skrypt może nie działać zgodnie z oczekiwaniami.</string>
-  <string name="script_state_incompatible">Może nie działać z tą wersją Backtalka</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_too_old">Wymaga API skryptów w wersji <xliff:g id="needed">%1$d</xliff:g> lub nowszej. Ta wersja SandFly udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc niektóre funkcje mogą nie działać.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_untested">Przetestowano z API skryptów do wersji <xliff:g id="tested">%1$d</xliff:g>. Ta wersja SandFly udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc skrypt może nie działać zgodnie z oczekiwaniami.</string>
+  <string name="script_state_incompatible">Może nie działać z tą wersją SandFly</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_range">API skryptów: wersje od <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
   <string name="script_compatibility_title">Zgodność</string>
   <string name="script_install_anyway">Zainstaluj mimo to</string>
@@ -440,13 +440,13 @@
   <string name="summary_copy_screen_tree_menu">Kopiuj wszystkie elementy ekranu w formacie JSON na potrzeby tworzenia skryptów</string>
   <string name="script_inspect_clip_label">Szczegóły elementu</string>
   <string name="summary_inspect_item_menu">Odczytuj i kopiuj szczegóły elementu z fokusem na potrzeby tworzenia skryptów</string>
-  <string name="script_keys_backtalk_modifier">Klawisz modyfikujący Backtalka</string>
+  <string name="script_keys_backtalk_modifier">Klawisz modyfikujący SandFly</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, a następnie <xliff:g id="second">%2$s</xliff:g></string>
   <string name="script_commands_category">Polecenia</string>
-  <string name="script_commands_summary">Gesty i skróty klawiszowe działającego skryptu mają pierwszeństwo przed przypisaniami Backtalka. Wyłącz wybrane przypisanie skryptu, aby używać polecenia Backtalka.</string>
+  <string name="script_commands_summary">Gesty i skróty klawiszowe działającego skryptu mają pierwszeństwo przed przypisaniami SandFly. Wyłącz wybrane przypisanie skryptu, aby używać polecenia SandFly.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_keys">Klawisze: <xliff:g id="keys">%1$s</xliff:g></string>
-  <string name="script_binding_menu">Menu Backtalka</string>
+  <string name="script_binding_menu">Menu SandFly</string>
   <string name="script_binding_control">Sterowanie czytaniem</string>
   <string name="script_binding_none">Brak</string>
   <string name="script_binding_turn_on">Włącz</string>
@@ -454,7 +454,7 @@
   <string name="script_binding_restore">Przywróć domyślne przypisania</string>
   <string name="script_binding_restored">Domyślne przypisania przywrócone</string>
   <string name="script_binding_perform">Wykonaj gest lub naciśnij skrót</string>
-  <string name="script_binding_perform_summary">Przypisz następny gest lub skrót z klawiszem modyfikującym Backtalka</string>
+  <string name="script_binding_perform_summary">Przypisz następny gest lub skrót z klawiszem modyfikującym SandFly</string>
   <string name="script_binding_perform_message">Wykonaj gest lub naciśnij kombinację klawiszy.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_assign_title">Przypisać <xliff:g id="binding">%1$s</xliff:g> do polecenia <xliff:g id="command">%2$s</xliff:g>?</string>
   <string name="script_binding_assign">Przypisz</string>
@@ -467,8 +467,8 @@
   <string name="title_pref_sound_themes">Tematy dźwiękowe</string>
   <string name="summary_pref_sound_themes">Instaluj i wybieraj zestawy dźwięków i wibracji, zastępuj pojedyncze dźwięki własnymi oraz włączaj dźwięki i wibracje kontrolek i dźwięk 3D.</string>
   <string name="sound_themes_installed_category">Zainstalowane tematy</string>
-  <string name="sound_theme_backtalk">Backtalk</string>
-  <string name="sound_theme_backtalk_description">Dźwięki i wibracje Backtalka oraz dodane przez Ciebie dźwięki.</string>
+  <string name="sound_theme_backtalk">SandFly</string>
+  <string name="sound_theme_backtalk_description">Dźwięki i wibracje SandFly oraz dodane przez Ciebie dźwięki.</string>
   <string name="sound_theme_in_use">W użyciu</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_by">Autor: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_license">Licencja: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
@@ -505,9 +505,9 @@
   <string name="summary_pref_theme_sounds">Zastąp dowolny dźwięk tego tematu własnym plikiem dźwiękowym.</string>
   <string name="sound_themes_install_category">Zainstaluj temat</string>
   <string name="title_pref_sound_theme_install_file">Z pliku</string>
-  <string name="summary_pref_sound_theme_install_file">Plik tematu jest archiwum ZIP. Możesz go też otworzyć za pomocą Backtalka lub udostępnić mu z innej aplikacji.</string>
+  <string name="summary_pref_sound_theme_install_file">Plik tematu jest archiwum ZIP. Możesz go też otworzyć za pomocą SandFly lub udostępnić mu z innej aplikacji.</string>
   <string name="title_pref_sound_theme_install_link">Z linku</string>
-  <string name="summary_pref_sound_theme_install_link">Link do pliku tematu lub repozytorium GitHub, które go zawiera. Możesz też udostępnić link Backtalkowi z przeglądarki.</string>
+  <string name="summary_pref_sound_theme_install_link">Link do pliku tematu lub repozytorium GitHub, które go zawiera. Możesz też udostępnić link SandFly z przeglądarki.</string>
   <string name="sound_theme_link_message">Wpisz lub wklej link do pliku tematu albo repozytorium GitHub, które go zawiera.</string>
   <string name="sound_theme_link_hint">https://</string>
   <string name="sound_theme_install_label">Zainstaluj temat dźwiękowy</string>
@@ -520,15 +520,15 @@
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_installed">Zainstalowano temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_installed_in_use">Zainstalowano temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Jest teraz używany.</string>
   <string name="sound_theme_install_nothing">Brak tematu dźwiękowego do zainstalowania.</string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_not_a_theme">Backtalk nie może używać tego pliku jako tematu dźwiękowego: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_not_a_theme">SandFly nie może używać tego pliku jako tematu dźwiękowego: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_failed">Nie udało się zainstalować tematu dźwiękowego. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
   <string name="sound_theme_install_https_only">Linki do tematów dźwiękowych muszą zaczynać się od https.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="title_pref_theme_sounds_of">Dźwięki tematu: <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
-  <string name="title_pref_theme_sounds_reset">Przywróć wszystkie dźwięki Backtalka</string>
-  <string name="theme_sounds_reset_confirm">Usunąć wszystkie dźwięki tego tematu i używać standardowych dźwięków Backtalka?</string>
+  <string name="title_pref_theme_sounds_reset">Przywróć wszystkie dźwięki SandFly</string>
+  <string name="theme_sounds_reset_confirm">Usunąć wszystkie dźwięki tego tematu i używać standardowych dźwięków SandFly?</string>
   <string name="theme_sounds_reset_button">Usuń</string>
   <string name="theme_sounds_category">Dźwięki</string>
-  <string name="theme_sound_summary_default">Dźwięk Backtalka</string>
+  <string name="theme_sound_summary_default">Dźwięk SandFly</string>
   <string name="theme_sound_summary_custom">Dźwięk tematu</string>
   <string name="theme_sound_summary_none">Brak dźwięku. Odtwarzany jest dźwięk zaznaczenia.</string>
   <string name="theme_sound_summary_android_keyboard">Dźwięk klawiatury Androida</string>
@@ -540,10 +540,10 @@
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
   <string name="theme_sound_choose">Wybierz plik dźwiękowy</string>
   <string name="theme_sound_preview">Odsłuchaj</string>
-  <string name="theme_sound_use_default">Użyj dźwięku Backtalka</string>
+  <string name="theme_sound_use_default">Użyj dźwięku SandFly</string>
   <string name="theme_sound_remove">Usuń dźwięk</string>
   <string name="theme_sound_too_large">Ten plik jest za duży. Plik dźwiękowy może mieć maksymalnie 5 MB.</string>
-  <string name="theme_sound_not_audio">Backtalk nie może odtworzyć tego pliku. Wybierz plik dźwiękowy w formacie WAV, OGG, MP3 lub FLAC.</string>
+  <string name="theme_sound_not_audio">SandFly nie może odtworzyć tego pliku. Wybierz plik dźwiękowy w formacie WAV, OGG, MP3 lub FLAC.</string>
   <string name="theme_sound_failed">Nie udało się odczytać tego pliku.</string>
   <string name="shortcut_announce_status">Odczytaj stan urządzenia</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_status_bars">Siła sygnału: <xliff:g id="level" example="3">%1$d</xliff:g> z <xliff:g id="max_level" example="4">%2$d</xliff:g></string>
@@ -572,20 +572,19 @@
   <string name="status_item_airplane_mode">Tryb samolotowy</string>
   <string name="status_item_airplane_mode_summary">Tylko gdy tryb samolotowy jest włączony</string>
   <string name="title_pref_check_for_updates">Sprawdź aktualizacje</string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="summary_pref_check_for_updates">Kompilacja <xliff:g id="build" example="96">%1$d</xliff:g></string>
   <string name="title_pref_auto_update_check">Automatycznie sprawdzaj aktualizacje</string>
   <string name="summary_pref_auto_update_check">Sprawdzaj raz dziennie i wyświetlaj powiadomienie, gdy dostępna jest nowa kompilacja</string>
-  <string name="update_notification_title">Dostępna aktualizacja Backtalka</string>
+  <string name="update_notification_title">Dostępna aktualizacja SandFly</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_notification_text">Kompilacja <xliff:g id="build" example="97">%1$d</xliff:g>. Kliknij, aby zainstalować.</string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_dialog_title">Dostępna jest kompilacja <xliff:g id="build" example="97">%1$d</xliff:g> Backtalka</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_dialog_title">Dostępna jest kompilacja <xliff:g id="build" example="97">%1$d</xliff:g> SandFly</string>
   <string name="update_dialog_install">Zainstaluj</string>
   <string name="update_checking">Sprawdzanie aktualizacji</string>
-  <string name="update_up_to_date">Backtalk jest aktualny</string>
+  <string name="update_up_to_date">SandFly jest aktualny</string>
   <string name="update_check_failed">Nie udało się sprawdzić aktualizacji</string>
   <string name="update_downloading">Pobieranie aktualizacji</string>
   <string name="update_install_failed">Nie udało się zainstalować aktualizacji</string>
   <string name="update_install_canceled">Aktualizacja anulowana</string>
-  <string name="update_allow_install">Zezwól Backtalkowi na instalowanie aplikacji, a następnie ponów aktualizację</string>
+  <string name="update_allow_install">Zezwól SandFly na instalowanie aplikacji, a następnie ponów aktualizację</string>
   <string name="scan_the_qr_code">Zeskanuj kod QR</string>
   <string name="qr_code_content_description">Kod QR do zeskanowania</string>
   <string name="alternate_privacy_policy">Możesz też otworzyć stronę https://policies.google.com/privacy?hl=pl</string>

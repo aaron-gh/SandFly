@@ -10,29 +10,56 @@ apply from: 'shared.gradle'
 
 apply from: 'version.gradle'
 
-final BUILD_TIMESTAMP = new Date().format('yyyy_MM_dd_HHmm')
-
 dependencies {
     implementation project(':talkback')
 }
 
+// SandFly's signing key: SANDFLY_KEYSTORE, or ~/.android/sandfly-release.jks, with its password in
+// SANDFLY_KEY_PASSWORD, or on a Mac in the Keychain item "SandFly Android signing key". Without
+// them, builds are signed with the debug key, and cannot update or be updated by SandFly's builds.
+def sandflyKeystore = file(System.getenv("SANDFLY_KEYSTORE") ?: "${System.getProperty("user.home")}/.android/sandfly-release.jks")
+def sandflyKeyPassword = System.getenv("SANDFLY_KEY_PASSWORD") ?: ""
+if (sandflyKeyPassword.isEmpty() && sandflyKeystore.isFile() && new File("/usr/bin/security").canExecute()) {
+    try {
+        sandflyKeyPassword = providers.exec {
+            commandLine("/usr/bin/security", "find-generic-password", "-a", "sandfly", "-s", "SandFly Android signing key", "-w")
+            ignoreExitValue = true
+        }.standardOutput.asText.get().trim()
+    } catch (Exception ignored) {
+    }
+}
+def signWithSandflyKey = sandflyKeystore.isFile() && !sandflyKeyPassword.isEmpty()
+
 android {
     namespace = "com.android.talkback"
+    if (signWithSandflyKey) {
+        signingConfigs {
+            sandfly {
+                storeFile = sandflyKeystore
+                storePassword = sandflyKeyPassword
+                keyAlias = "sandfly"
+                keyPassword = sandflyKeyPassword
+            }
+        }
+    }
     defaultConfig {
         applicationId = talkbackApplicationId
         versionCode = backtalkVersionCodeBase + gitCommitCount
-        versionName = talkbackVersionName + "-" + BUILD_TIMESTAMP
+        versionName = sandflyVersionName
         minSdk = 26
         targetSdk = 36
         testInstrumentationRunner = 'android.test.InstrumentationTestRunner'
         multiDexEnabled = true
     }
     buildTypes {
-        // The published builds are debug builds, signed with the debug key. Android runs a
+        // The published builds are debug builds, signed with SandFly's key. Android runs a
         // debuggable app without compiling it, which makes navigation several times slower on
         // a watch, so they are not debuggable. Debug logging in the libraries stays on.
         debug {
             debuggable = false
+            if (signWithSandflyKey) {
+                signingConfig = signingConfigs.sandfly
+            }
         }
     }
     packaging {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title of the setting that shows the Backtalk menu as a circle instead of a list. [CHAR LIMIT=40] -->
+    <!-- Title of the setting that shows the SandFly menu as a circle instead of a list. [CHAR LIMIT=40] -->
     <string name="title_pref_radial_menu">Circle menu</string>
-    <!-- Summary of the setting that shows the Backtalk menu as a circle instead of a list. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_radial_menu">Show the Backtalk menu as a circle in the middle of the screen. Slide to an item and lift to select it.</string>
+    <!-- Summary of the setting that shows the SandFly menu as a circle instead of a list. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_radial_menu">Show the SandFly menu as a circle in the middle of the screen. Slide to an item and lift to select it.</string>
 
     <!-- Circle menu: spoken when the finger reaches an item that opens more items. [CHAR LIMIT=NONE] -->
     <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g> menu</string>

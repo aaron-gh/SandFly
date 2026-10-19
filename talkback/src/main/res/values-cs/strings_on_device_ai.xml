@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Backtalk-specific Czech translations for on-device AI. -->
+    <!-- SandFly-specific Czech translations for on-device AI. -->
     <string name="title_pref_on_device_ai">AI v zařízení</string>
     <string name="summary_pref_on_device_ai">Popisujte obrázky a obrazovku modelem v tomto telefonu bez klíče API</string>
     <string name="pref_on_device_ai_enable">Používat AI v zařízení</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">Model nainstalován</string>
     <string name="on_device_ai_import_failed">Tento soubor není podporovaným souborem modelu Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Časový limit odpovědí</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Po uplynutí této doby Backtalk přestane čekat. Popis obrazovky trvá déle než popis obrázku.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po uplynutí této doby SandFly přestane čekat. Popis obrazovky trvá déle než popis obrázku.</string>
     <string name="on_device_ai_choose_timeout">Časový limit odpovědí</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuta</item>

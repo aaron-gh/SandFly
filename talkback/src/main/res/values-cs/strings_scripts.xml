@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skripty</string>
-    <string name="summary_pref_scripts">Změna fungování Backtalku v aplikacích</string>
+    <string name="summary_pref_scripts">Změna fungování SandFly v aplikacích</string>
     <string name="script_import">Importovat skript</string>
-    <string name="script_install_label">Nainstalovat skript Backtalku</string>
+    <string name="script_install_label">Nainstalovat skript SandFly</string>
     <string name="script_import_nothing">Není žádný soubor skriptu k instalaci.</string>
     <string name="script_import_cannot_open">Soubor nelze otevřít.</string>
     <string name="script_import_repository">Tento odkaz vede na celý repozitář. Otevřete skript, který chcete, a sdílejte jeho odkaz.</string>
@@ -40,7 +40,7 @@
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Povolte pouze důvěryhodným skriptům.</string>
     <string name="script_permission_screen">Číst obsah obrazovky</string>
     <string name="script_permission_actions">Klikat, posouvat, psát a přesouvat fokus</string>
-    <string name="script_permission_speech">Poslouchat a měnit řeč Backtalku</string>
+    <string name="script_permission_speech">Poslouchat a měnit řeč SandFly</string>
     <string name="script_permission_passwords">Číst pole s hesly</string>
     <string name="script_permission_input">Přidávat gesta, klávesy, položky nabídky a ovládací prvky čtení</string>
     <string name="script_permission_network">Používat internet</string>
@@ -63,7 +63,7 @@
     <string name="script_move_down">Spouštět později</string>
     <string name="script_order_summary">Pořadí skriptů, které mění stejnou řeč. Skripty aplikací se spouštějí jako první.</string>
     <string name="script_log">Protokol</string>
-    <string name="script_log_summary">Výstup a chyby od spuštění Backtalku</string>
+    <string name="script_log_summary">Výstup a chyby od spuštění SandFly</string>
     <string name="script_clear_storage">Vymazat uložená data</string>
     <string name="script_storage_cleared">Uložená data vymazána</string>
     <string name="script_remove">Odstranit</string>
@@ -75,9 +75,9 @@
     <string name="script_log_copy">Kopírovat protokol</string>
     <string name="script_log_copied">Protokol zkopírován</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Vyžaduje skriptovací API <xliff:g id="needed">%1$d</xliff:g> nebo novější. Tento Backtalk má <xliff:g id="current">%2$d</xliff:g>, takže některé části nemusí fungovat.</string>
-    <string name="script_api_untested">Testováno do skriptovacího API <xliff:g id="tested">%1$d</xliff:g>. Tento Backtalk má <xliff:g id="current">%2$d</xliff:g>, takže skript nemusí fungovat podle očekávání.</string>
-    <string name="script_state_incompatible">S tímto Backtalkem nemusí fungovat</string>
+    <string name="script_api_too_old">Vyžaduje skriptovací API <xliff:g id="needed">%1$d</xliff:g> nebo novější. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže některé části nemusí fungovat.</string>
+    <string name="script_api_untested">Testováno do skriptovacího API <xliff:g id="tested">%1$d</xliff:g>. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže skript nemusí fungovat podle očekávání.</string>
+    <string name="script_state_incompatible">S tímto SandFly nemusí fungovat</string>
     <string name="script_api_range">Skriptovací API <xliff:g id="min">%1$d</xliff:g> až <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilita</string>
     <string name="script_install_anyway">Přesto nainstalovat</string>
@@ -98,13 +98,13 @@
     <string name="summary_copy_screen_tree_menu">Kopírovat všechny položky na obrazovce jako JSON pro tvorbu skriptů</string>
     <string name="script_inspect_clip_label">Podrobnosti položky</string>
     <string name="summary_inspect_item_menu">Vyslovit a zkopírovat podrobnosti o položce, na které jste byli, pro tvorbu skriptů</string>
-    <string name="script_keys_backtalk_modifier">Modifikátor Backtalku</string>
+    <string name="script_keys_backtalk_modifier">Modifikátor SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, potom <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Příkazy</string>
-    <string name="script_commands_summary">Gesta a klávesy spuštěného skriptu mají přednost před Backtalkem. Vypnutím příkazu zachováte přiřazení Backtalku.</string>
+    <string name="script_commands_summary">Gesta a klávesy spuštěného skriptu mají přednost před SandFly. Vypnutím příkazu zachováte přiřazení SandFly.</string>
     <string name="script_binding_gesture">Gesto: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Klávesy: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">Nabídka Backtalku</string>
+    <string name="script_binding_menu">Nabídka SandFly</string>
     <string name="script_binding_control">Ovládací prvky čtení</string>
     <string name="script_binding_none">Žádné</string>
     <string name="script_binding_turn_on">Zapnout</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_restore">Obnovit výchozí</string>
     <string name="script_binding_restored">Výchozí nastavení obnoveno</string>
     <string name="script_binding_perform">Provést gesto nebo stisknout klávesy</string>
-    <string name="script_binding_perform_summary">Přiřadit následující gesto nebo klávesy stisknuté s modifikátorem Backtalku</string>
+    <string name="script_binding_perform_summary">Přiřadit následující gesto nebo klávesy stisknuté s modifikátorem SandFly</string>
     <string name="script_binding_perform_message">Proveďte gesto nebo stiskněte klávesy.</string>
     <string name="script_binding_assign_title">Přiřadit <xliff:g id="binding">%1$s</xliff:g> k příkazu <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Přiřadit</string>

@@ -155,7 +155,7 @@ object ManifestReader {
 
   private object NoHost : QuickJs.Host {
     override fun call(method: String, json: String?): String? =
-      error("The manifest cannot call Backtalk")
+      error("The manifest cannot call SandFly")
 
     override fun loadModule(name: String): ByteArray? = null
 

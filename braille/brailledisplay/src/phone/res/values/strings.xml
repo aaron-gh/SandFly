@@ -7,9 +7,9 @@
   <string name="bd_application_name">Android Accessibility Suite</string>
 
   <!-- Title for the wizard that guides the user through the process of setting up TalkBack braille keyboard. [CHAR_LIMIT=80] -->
-  <string name="bd_ime_unavailable_activity_name">Backtalk braille keyboard unavailable</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly braille keyboard unavailable</string>
   <!-- Dialog title that lets the user know to enable TalkBack braille keyboard. [CHAR_LIMIT=80] -->
-  <string name="bd_ime_disabled_dialog_title">Turn on Backtalk braille keyboard</string>
+  <string name="bd_ime_disabled_dialog_title">Turn on SandFly braille keyboard</string>
   <!-- Dialog message that lets the user know to enable TalkBack braille keyboard. [CHAR_LIMIT=200]-->
   <string name="bd_ime_disabled_dialog_message">To use your braille display for typing, go to input settings to turn it on</string>
   <!-- Dialog positive button that lets the user know to enable TalkBack braille keyboard. [CHAR_LIMIT=40] -->
@@ -17,7 +17,7 @@
   <!-- Dialog title that lets the user know to switch to TalkBack braille keyboard. [CHAR_LIMIT=80] -->
   <string name="bd_ime_not_default_dialog_title">Switch your input method</string>
   <!-- Dialog message that lets the user know to switch to TalkBack braille keyboard. [CHAR_LIMIT=100] -->
-  <string name="bd_ime_not_default_dialog_message">To continue typing, set the Backtalk braille keyboard as your input method</string>
+  <string name="bd_ime_not_default_dialog_message">To continue typing, set the SandFly braille keyboard as your input method</string>
   <!-- Dialog positive button that lets the user know to switch to TalkBack braille keyboard. [CHAR_LIMIT=40] -->
   <string name="bd_ime_not_default_dialog_positive">Switch input</string>
 
@@ -69,9 +69,9 @@
   <!-- Title for the BrailleDisplay Preferences activity. [CHAR_LIMIT=40]  -->
   <string name="bd_preferences_title">Braille display</string>
   <!-- Banner message: Guide user to turn on TalkBack. [CHAR_LIMIT=100] -->
-  <string name="bd_preferences_banner_talkback_off_subtitle">To use braille display, first turn on Backtalk</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">To use braille display, first turn on SandFly</string>
   <!-- Banner button text: Go to TalkBack. [CHAR_LIMIT=50] -->
-  <string name="bd_preferences_banner_talkback_off_button">Go to Backtalk</string>
+  <string name="bd_preferences_banner_talkback_off_button">Go to SandFly</string>
   <!-- Banner message: Guide user to turn on Bluetooth. [CHAR_LIMIT=100] -->
   <string name="bd_preferences_banner_bluetooth_off_subtitle">To use braille display, first turn on Bluetooth</string>
   <!-- Banner button text: Settings. [CHAR_LIMIT=50] -->
@@ -143,7 +143,7 @@
   <!-- Dialog title for commands changed. [CHAR_LIMIT=200] -->
   <string name="bd_command_change_dialog_title">Some commands have been updated</string>
   <!-- Dialog message for commands changed. [CHAR_LIMIT=200] -->
-  <string name="bd_command_change_dialog_message">These braille display commands were updated in this version of Backtalk:\n\n• Previous item: Press dots 1, 7\n\n• Next item: Press dots 4, 8\n\n• Previous reading control: Press dots 2, 3, 7, 8\n\n• Next reading control: Press dots 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">These braille display commands were updated in this version of SandFly:\n\n• Previous item: Press dots 1, 7\n\n• Next item: Press dots 4, 8\n\n• Previous reading control: Press dots 2, 3, 7, 8\n\n• Next reading control: Press dots 5, 6, 7, 8</string>
 
   <!-- Preferred braille grade page -->
   <!-- Radio button for the contracted braille preference. [CHAR_LIMIT=45] -->
@@ -173,9 +173,9 @@
   <!-- Braille display command preference: Summary of system actions. [CHAR LIMIT=60] -->
   <string name="bd_commands_bindings_category_system_actions_summary">Back, home, notifications and more</string>
   <!-- Braille display command preference: Title of talkBack features. [CHAR LIMIT=30] -->
-  <string name="bd_commands_bindings_category_talkback_features_title">Backtalk features</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly features</string>
   <!-- Braille display command preference: Summary of talkBack features. [CHAR LIMIT=40] -->
-  <string name="bd_commands_bindings_category_talkback_features_summary">Backtalk menus and settings</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menus and settings</string>
   <!-- Braille display command preference: Title of braille settings. [CHAR LIMIT=30] -->
   <string name="bd_commands_bindings_category_braille_settings_title">Braille settings</string>
   <!-- Braille display command preference: Summary of braille settings. [CHAR LIMIT=60] -->
@@ -554,13 +554,13 @@
   <!-- Braille input command: Edit custom label. [CHAR_LIMIT=100]-->
   <string name="bd_cmd_edit_custom_label">Edit custom label</string>
   <!-- Braille input command: Open TalkBack menu. [CHAR_LIMIT=100]-->
-  <string name="bd_cmd_open_talkback_menu">Open Backtalk menu</string>
+  <string name="bd_cmd_open_talkback_menu">Open SandFly menu</string>
   <!-- Braille input command: To turn voice feedback on/off(mute/unmute). [CHAR_LIMIT=100] -->
-  <string name="bd_cmd_toggle_voice_feedback">Turn Backtalk speech on or off</string>
+  <string name="bd_cmd_toggle_voice_feedback">Turn SandFly speech on or off</string>
   <!-- Braille input command: Stop reading. [CHAR_LIMIT=100] -->
   <string name="bd_cmd_read_stop">Stop reading</string>
   <!-- Braille input command: Open TalkBack settings. [CHAR_LIMIT=100]-->
-  <string name="bd_cmd_talkback_settings">Open Backtalk settings</string>
+  <string name="bd_cmd_talkback_settings">Open SandFly settings</string>
   <!-- Braille settings -->
   <!-- Braille input command: Switch to next input language. [CHAR_LIMIT=100]-->
   <string name="bd_cmd_switch_to_next_input_language">Switch to the next typing language</string>
@@ -798,7 +798,7 @@
   <!-- Title of the dialog that asks the user to confirm that they wish to turn off the braille display feature dialog. [CHAR_LIMIT=100] -->
   <string name="bd_turn_off_bd_confirm_dialog_title">Turn off braille display setting?</string>
   <!-- Message of the dialog that asks the user to confirm that they wish to turn off the braille display feature dialog. [CHAR_LIMIT=100] -->
-  <string name="bd_turn_off_bd_confirm_dialog_message">You can turn it on again anytime in Backtalk settings</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">You can turn it on again anytime in SandFly settings</string>
   <!-- Positive button of the dialog that asks the user to confirm that they wish to turn off the braille display feature dialog. [CHAR_LIMIT=100] -->
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Turn off</string>
 
@@ -806,7 +806,7 @@
   <!-- Title of the dialog that notifies the user some commands are unavailable while editing. [CHAR_LIMIT=100] -->
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Some commands aren’t available</string>
   <!-- Message of the dialog that notifies the user some commands are unavailable while editing. [CHAR_LIMIT=100] -->
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Commands for navigation, braille settings, and some Backtalk features aren’t available while typing or editing.\n\nTo use these commands, first close the keyboard.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Commands for navigation, braille settings, and some SandFly features aren’t available while typing or editing.\n\nTo use these commands, first close the keyboard.</string>
 
   <!-- Caption tutorial dialog -->
   <!-- Title of the dialog that notifies the user captions will show on their braille display. [CHAR_LIMIT=100] -->
@@ -820,7 +820,7 @@
   <!-- Title of the dialog that notifies the user navigation commands are unavailable while editing. [CHAR_LIMIT=100] -->
   <string name="bd_usb_connect_dialog_title">Braille display connected to USB</string>
   <!-- Message of the dialog that asks the user to confirm that they wish to turn off the braille display feature dialog. [CHAR_LIMIT=300] -->
-  <string name="bd_usb_connect_dialog_message">Your %s\'s battery is charging your braille display.\n\nIf you need to switch to Bluetooth, disconnect your USB or USB hub and go to Backtalk settings > Braille display.</string>
+  <string name="bd_usb_connect_dialog_message">Your %s\'s battery is charging your braille display.\n\nIf you need to switch to Bluetooth, disconnect your USB or USB hub and go to SandFly settings > Braille display.</string>
 
   <!-- Battery low dialog -->
   <!-- "phone" refer to an unknown model of phones and is not a brand name. [CHAR_LIMIT=50] -->
@@ -859,7 +859,7 @@
   <!-- Device messages history consent dialog title.  [CHAR_LIMIT=100] -->
   <string name="popup_message_history_consent_dialog_title">Turn on device message history?</string>
   <!-- Device messages history dialog message.  [CHAR_LIMIT=200] -->
-  <string name="popup_message_history_consent_dialog_msg">This will store some messages, like notifications and alarms, in Backtalk. You can change this setting anytime.</string>
+  <string name="popup_message_history_consent_dialog_msg">This will store some messages, like notifications and alarms, in SandFly. You can change this setting anytime.</string>
   <!-- Device messages history dialog positive button.  [CHAR_LIMIT=20] -->
   <string name="popup_message_history_consent_dialog_positive_btn">Turn on</string>
   <!-- Device messages history dialog message: there are no records, the page is empty.  [CHAR_LIMIT=40] -->
@@ -868,24 +868,24 @@
   <!-- Braille displays from other apps -->
   <!-- Name of the notification channel for braille displays that other apps provide.  [CHAR_LIMIT=50] -->
   <string name="external_display_channel">Braille displays from other apps</string>
-  <!-- Asks whether an app may be a braille display for Backtalk.  [CHAR_LIMIT=100] -->
-  <string name="external_display_ask_title">Allow <xliff:g id="app" example="Notetaker">%1$s</xliff:g> to be a braille display for Backtalk?</string>
+  <!-- Asks whether an app may be a braille display for SandFly.  [CHAR_LIMIT=100] -->
+  <string name="external_display_ask_title">Allow <xliff:g id="app" example="Notetaker">%1$s</xliff:g> to be a braille display for SandFly?</string>
   <!-- Text of the notification that asks whether an app may be a braille display.  [CHAR_LIMIT=100] -->
-  <string name="external_display_ask_text">Backtalk won\'t use it until you allow it.</string>
+  <string name="external_display_ask_text">SandFly won\'t use it until you allow it.</string>
   <!-- Warns what an app can do as a braille display, before the user allows it.  [CHAR_LIMIT=NONE] -->
-  <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> will be able to read everything Backtalk shows in braille, which can be anything on the screen, including messages and what you type. It will also be able to control your device as you can with a braille display: type, open apps and run any Backtalk command. Only allow apps you trust.</string>
+  <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> will be able to read everything SandFly shows in braille, which can be anything on the screen, including messages and what you type. It will also be able to control your device as you can with a braille display: type, open apps and run any SandFly command. Only allow apps you trust.</string>
   <!-- Button that lets an app be a braille display.  [CHAR_LIMIT=20] -->
   <string name="external_display_allow">Allow</string>
   <!-- Button that doesn't let an app be a braille display.  [CHAR_LIMIT=20] -->
   <string name="external_display_deny">Don\'t allow</string>
-  <!-- Notification shown while an app is Backtalk's braille display.  [CHAR_LIMIT=60] -->
+  <!-- Notification shown while an app is SandFly's braille display.  [CHAR_LIMIT=60] -->
   <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is your braille display</string>
-  <!-- Notification text shown while an app is Backtalk's braille display.  [CHAR_LIMIT=100] -->
-  <string name="external_display_in_use_text">While Backtalk uses it, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> can read the screen and control the device.</string>
+  <!-- Notification text shown while an app is SandFly's braille display.  [CHAR_LIMIT=100] -->
+  <string name="external_display_in_use_text">While SandFly uses it, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> can read the screen and control the device.</string>
   <!-- Title of the setting that lists the apps that can be braille displays.  [CHAR_LIMIT=50] -->
   <string name="external_displays_title">Displays from other apps</string>
   <!-- Explains the list of apps that can be braille displays.  [CHAR_LIMIT=NONE] -->
-  <string name="external_displays_summary">Apps that you allow can be braille displays for Backtalk. An app that is a braille display can read the screen and control the device.</string>
+  <string name="external_displays_summary">Apps that you allow can be braille displays for SandFly. An app that is a braille display can read the screen and control the device.</string>
   <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
   <string name="external_displays_none">No apps can be braille displays.</string>
 </resources>

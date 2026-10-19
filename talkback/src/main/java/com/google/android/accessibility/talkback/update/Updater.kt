@@ -53,10 +53,11 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
 /**
- * Checks for new development builds, shows a notification when one is available, and installs it.
+ * Checks for new stable releases, and optionally development builds, shows a notification when one
+ * is available, and installs it.
  *
- * Automatic checks run when the service starts, and then about once an hour while it runs, since
- * this fork's builds are tried as soon as they are pushed.
+ * Automatic checks run when the service starts, and then about once a day while it runs, or once an
+ * hour with development builds, which are tried as soon as they are pushed.
  *
  * Backtalk Aaron installs SandFly next to itself. The accessibility settings for SandFly then
  * open, so the user can turn it on.
@@ -66,8 +67,9 @@ object Updater {
   private const val NOTIFICATION_ID = 0x0BAC7A1C
   internal const val PREF_LAST_CHECK_TIME = "update_last_check_time"
   internal const val PREF_LAST_NOTIFIED_BUILD = "update_last_notified_build"
-  private const val APK_FILE_NAME = "backtalk.apk"
-  private val CHECK_INTERVAL_MS = TimeUnit.HOURS.toMillis(1)
+  private const val APK_FILE_NAME = "sandfly.apk"
+  private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
+  private val DEV_CHECK_INTERVAL_MS = TimeUnit.HOURS.toMillis(1)
   private val POLL_INTERVAL_MS = TimeUnit.MINUTES.toMillis(15)
   // Gives the network time to come up when the service starts at boot.
   private val STARTUP_DELAY_MS = TimeUnit.SECONDS.toMillis(30)
@@ -119,7 +121,11 @@ object Updater {
       fragment.findPreference<Preference>(fragment.getString(R.string.pref_check_for_updates_key))
         ?: return
     preference.summary =
-      fragment.getString(R.string.summary_pref_check_for_updates, BuildConfig.COMMIT_COUNT)
+      fragment.getString(
+        R.string.summary_pref_check_for_updates_version,
+        BuildConfig.SANDFLY_VERSION,
+        BuildConfig.COMMIT_COUNT,
+      )
     preference.setOnPreferenceClickListener {
       fragment.activity?.let { checkManually(it) }
       true
@@ -134,6 +140,16 @@ object Updater {
       R.bool.pref_auto_update_check_default,
     )
 
+  /** Returns true if development builds are offered as well as stable releases. */
+  @JvmStatic
+  fun isDevBuildsEnabled(context: Context): Boolean =
+    SharedPreferencesUtils.getBooleanPref(
+      SharedPreferencesUtils.getSharedPreferences(context),
+      context.resources,
+      R.string.pref_dev_builds_key,
+      R.bool.pref_dev_builds_default,
+    )
+
   private fun checkAutomatically(context: Context, ignoreInterval: Boolean) {
     if (!isAutomaticCheckEnabled(context)) {
       return
@@ -142,7 +158,8 @@ object Updater {
     val now = System.currentTimeMillis()
     val lastCheck = prefs.getLong(PREF_LAST_CHECK_TIME, 0)
     // A clock that moved back also makes a check due.
-    if (!ignoreInterval && now >= lastCheck && now - lastCheck < CHECK_INTERVAL_MS) {
+    val interval = if (isDevBuildsEnabled(context)) DEV_CHECK_INTERVAL_MS else CHECK_INTERVAL_MS
+    if (!ignoreInterval && now >= lastCheck && now - lastCheck < interval) {
       return
     }
     executor.execute {

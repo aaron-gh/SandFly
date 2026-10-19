@@ -1,6 +1,6 @@
-# Writing Backtalk scripts
+# Writing SandFly scripts
 
-A script is a JavaScript file that changes how Backtalk works in one app, or in every app. This document describes the whole script API, version 5.
+A script is a JavaScript file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 5.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -11,7 +11,7 @@ A script is one of these:
 *   A `.js` file, up to 1 MB.
 *   A `.zip` file with a `main.js` in it, plus anything `main.js` uses: other JavaScript modules, sounds, and translations. The zip can be up to 5 MB, up to 5 MB unpacked, and hold up to 200 files.
 
-To install a script, go to **Apps** > **Scripts** in Backtalk settings and choose **Import script**. Backtalk lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; Backtalk always asks first, and says so if the author changed.
+To install a script, go to **Apps** > **Scripts** in SandFly settings and choose **Import script**. SandFly lists what the script asks to do before it installs it. Importing a file with the id of a script that's already installed updates that script and keeps its data and settings; SandFly always asks first, and says so if the author changed.
 
 To find scripts, choose **Script sources** on the Scripts screen and **Add source**. A source is the address of a repository, or of a branch or folder in one, on GitHub, GitLab, Codeberg, Gitea (gitea.com) or Bitbucket:
 
@@ -42,11 +42,11 @@ export const manifest = {
 backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 ```
 
-[examples/example-plugin.js](scripting/examples/example-plugin.js) is a longer one. It also comes with Backtalk: choose **Add the example script** on the Scripts screen.
+[examples/example-plugin.js](scripting/examples/example-plugin.js) is a longer one. It also comes with SandFly: choose **Add the example script** on the Scripts screen.
 
 ## The manifest
 
-`main.js` must contain `export const manifest = { ... }`. Backtalk reads it without running the rest of the script, so it can only hold plain values: no variables, function calls or template strings with expressions.
+`main.js` must contain `export const manifest = { ... }`. SandFly reads it without running the rest of the script, so it can only hold plain values: no variables, function calls or template strings with expressions.
 
 | Field | Meaning |
 |---|---|
@@ -54,7 +54,7 @@ backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
 | `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 5. Version 2 added `has` to [queries](#queries) and `activate` to [rules](#rules), version 3 added `meta` to [`backtalk.app`](#screen), version 4 added `silence` to rules, and version 5 added `liftToActivate` and `longPressAfter` to rules. |
-| `testedApiVersion` | Required. The highest script API version you tested with. Backtalk warns before installing a script tested only with an older version. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with an older version. |
 | `version` | The script's own version, as text. The default is `'1'`. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
@@ -62,7 +62,7 @@ backtalk.onAppEnter(() => backtalk.speak('Hello from a script'));
 | `permissions` | A list of the [permissions](#permissions) the script needs. |
 | `settings` | [Settings](#settings) the user can change on the script's page. |
 | `rules` | [Rules](#rules) that change items without running any code. |
-| `commands` | [Commands](#commands) the user can run with a gesture, keys, the Backtalk menu or reading controls. |
+| `commands` | [Commands](#commands) the user can run with a gesture, keys, the SandFly menu or reading controls. |
 | `navigation` | [Reading controls](#navigation) that move between items of a kind. |
 
 ### Where a script runs
@@ -77,16 +77,16 @@ apps: [
 ],
 ```
 
-*   `activity` limits the script to one screen. It's the activity's full class name, or the end of it. Backtalk learns the activity from the app's window changes. Until it has seen one, such as just after Backtalk is updated or the phone restarts with the app open, the script runs in all of the app's screens.
+*   `activity` limits the script to one screen. It's the activity's full class name, or the end of it. SandFly learns the activity from the app's window changes. Until it has seen one, such as just after SandFly is updated or the phone restarts with the app open, the script runs in all of the app's screens.
 *   `window` limits it to windows whose title contains the text.
 
 A script with `apps` is loaded when one of its apps comes to the front and unloaded when it leaves, so anything it keeps in variables is lost then. Use [`backtalk.storage`](#storage) for what should last.
 
 A script without `apps` runs in every app and is loaded as long as it's turned on.
 
-Scripts never change Backtalk's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name Backtalk in `apps`. While a Backtalk screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission throw an error, `backtalk.speak` doesn't interrupt, and scripts get no events from Backtalk itself. This is so that **Apps** > **Scripts** always works, whatever a script does.
+Scripts never change SandFly's own screens. Rules, speech changes, gestures, keys, menu items and reading controls from scripts don't apply there, and a script can't name SandFly in `apps`. While a SandFly screen is in front, calls that need the `screen`, `actions`, `system` or `dialogs` permission throw an error, `backtalk.speak` doesn't interrupt, and scripts get no events from SandFly itself. This is so that **Apps** > **Scripts** always works, whatever a script does.
 
-Scripts are also unloaded while the screen is off, while Backtalk is paused, and while **Turn off all scripts** is on. Timers and requests end when a script is unloaded.
+Scripts are also unloaded while the screen is off, while SandFly is paused, and while **Turn off all scripts** is on. Timers and requests end when a script is unloaded.
 
 ### Permissions
 
@@ -106,7 +106,7 @@ A script can only use what its manifest asks for. The user sees the list before 
 | `events` | The `onEvent` hook, which sees every accessibility event in every app. |
 | `dialogs` | `backtalk.ui`. |
 
-Backtalk marks `passwords`, `network`, `clipboard`, `system`, `notifications`, `events` and `dialogs` as ones to allow only for trusted scripts.
+SandFly marks `passwords`, `network`, `clipboard`, `system`, `notifications`, `events` and `dialogs` as ones to allow only for trusted scripts.
 
 ## Rules
 
@@ -132,9 +132,9 @@ A rule can set any of these:
 | Field | Effect |
 |---|---|
 | `label` | The item's name, used where the app gave none or a poor one. |
-| `speak` | Everything Backtalk says for the item, in place of its name, role and state. |
+| `speak` | Everything SandFly says for the item, in place of its name, role and state. |
 | `hide` | `true` hides the item: swiping skips it. `'all'` hides what's inside it too. A hidden item is still there, so a script can click it. |
-| `silence` | `true` stops Backtalk speaking the item's changes, selections and announcements, such as a progress bar's updates. `'all'` silences what's inside it too, such as the seek bar in a grouped row. Focusing the item still speaks it. Needs script API version 4. |
+| `silence` | `true` stops SandFly speaking the item's changes, selections and announcements, such as a progress bar's updates. `'all'` silences what's inside it too, such as the seek bar in a grouped row. Focusing the item still speaks it. Needs script API version 4. |
 | `role` | The item's role, such as `'button'`. An unknown role is an error that lists the roles. |
 | `state` | The item's state, such as `'Selected'`. |
 | `hint` | The usage hint. |
@@ -148,7 +148,7 @@ A rule can set any of these:
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `backtalk.rules.add` comes before the manifest.
 
-To find an item's id, class and role, assign **Inspect focused item** to a gesture, or add it to the Backtalk menu in **Customize menus**. **Copy screen tree** copies every item on screen as JSON.
+To find an item's id, class and role, assign **Inspect focused item** to a gesture, or add it to the SandFly menu in **Customize menus**. **Copy screen tree** copies every item on screen as JSON.
 
 ### Actions in rules
 
@@ -164,7 +164,7 @@ To find an item's id, class and role, assign **Inspect focused item** to a gestu
 
 Each action has a `title` and one of `click`, `longClick`, `focus`, `scrollForward`, `scrollBackward` or `speak`. All but `speak` take the item to act on, as an id or a query, and need the `actions` permission. `speak` takes text, or `{ textOf: item }`, which needs `screen`. Actions in rules need the `input` permission.
 
-Backtalk looks for the item inside the focused item first, and then on the whole screen. In a list where every row has the same button, the second search finds the first row's button, so use the [`onActions` hook](#hooks) there and search from the row yourself.
+SandFly looks for the item inside the focused item first, and then on the whole screen. In a list where every row has the same button, the second search finds the first row's button, so use the [`onActions` hook](#hooks) there and search from the row yourself.
 
 ## Queries
 
@@ -198,9 +198,9 @@ Fields: `text`, `contentDescription`, `hint`, `stateDescription`, `id`, `classNa
 | `click()`, `longClick()`, `scrollForward()`, `scrollBackward()` | Performs the action. Returns a promise of whether it worked. |
 | `perform(action, args)` | Performs `click`, `longClick`, `scrollForward`, `scrollBackward`, `expand`, `collapse`, `dismiss`, `copy`, `cut`, `paste`, `select`, a custom action by its label, or any action by its number. |
 | `setText(text)` | Replaces the text of an edit field. |
-| `focus()` | Moves Backtalk's focus to the item. |
+| `focus()` | Moves SandFly's focus to the item. |
 
-Backtalk keeps the last 500 items a script was given. Using an older one throws "That item is no longer available".
+SandFly keeps the last 500 items a script was given. Using an older one throws "That item is no longer available".
 
 ## The backtalk object
 
@@ -210,10 +210,10 @@ Each of these takes a function and returns a function that removes it again.
 
 | Hook | Called | Arguments |
 |---|---|---|
-| `onFocus` | Before Backtalk speaks a focused item. | The item, and the text Backtalk will say. |
-| `onSpeech` | Before Backtalk says anything. | The text. |
-| `onNotification` | Before Backtalk speaks a notification or toast. | `{ package, toast, title, text, category }`, and the text. |
-| `onAnnouncement` | Before Backtalk speaks an app's announcement. | `{ package, text }`, and the text. |
+| `onFocus` | Before SandFly speaks a focused item. | The item, and the text SandFly will say. |
+| `onSpeech` | Before SandFly says anything. | The text. |
+| `onNotification` | Before SandFly speaks a notification or toast. | `{ package, toast, title, text, category }`, and the text. |
+| `onAnnouncement` | Before SandFly speaks an app's announcement. | `{ package, text }`, and the text. |
 | `onAppEnter`, `onAppLeave` | When the app in front changes, or the script loads or unloads. | `{ package, activity, window }`. |
 | `onWindowChange` | When a window opens or changes. | `{ package, activity, window }`. |
 | `onTextChange` | When text in an edit field changes. | `{ package, node, text, before, from, added, removed, password }`. |
@@ -221,7 +221,7 @@ Each of these takes a function and returns a function that removes it again.
 | `onEvent` | For every accessibility event. | `{ type, package, className, text, contentDescription, beforeText, password, windowId, time }`. |
 | `onSettingChange` | When the user changes one of the script's settings. | The key and the new value. |
 | `onButton` | When the user presses a button setting. | The key. |
-| `onActions` | When Backtalk builds the Actions menu for an item. | The item. Return a list of `{ title, run }`; `run` is called with the item. |
+| `onActions` | When SandFly builds the Actions menu for an item. | The item. Return a list of `{ title, run }`; `run` is called with the item. |
 
 The first four can change what's said. Return:
 
@@ -230,7 +230,7 @@ The first four can change what's said. Return:
 *   `false` or `{ silent: true }` to say nothing.
 *   Nothing, to leave it alone.
 
-Changing speech needs the `speech` permission. Backtalk waits 30 milliseconds for these hooks, then speaks without them, so keep them fast and don't `await` in them. Speech hooks take priority over queued background work, and all listeners share that deadline, including queue time. A hook cannot interrupt JavaScript already running. If the script is in the middle of something that takes longer, such as a command, Backtalk doesn't wait at all.
+Changing speech needs the `speech` permission. SandFly waits 30 milliseconds for these hooks, then speaks without them, so keep them fast and don't `await` in them. Speech hooks take priority over queued background work, and all listeners share that deadline, including queue time. A hook cannot interrupt JavaScript already running. If the script is in the middle of something that takes longer, such as a command, SandFly doesn't wait at all.
 
 ### Commands
 
@@ -245,11 +245,11 @@ commands: [
 ```
 
 *   `gesture` is a gesture name or a list of them. The names are in [Gestures](#gestures).
-*   `keys` is keys or a list. Keys start with `backtalk`, Backtalk's modifier key, then any of `shift`, `ctrl`, `alt` and `meta`, then a key: `'backtalk+shift+n'`. A second key can follow a comma: `'backtalk+t, s'`.
-*   `menu: true` adds the command to the Backtalk menu.
+*   `keys` is keys or a list. Keys start with `backtalk`, SandFly's modifier key, then any of `shift`, `ctrl`, `alt` and `meta`, then a key: `'backtalk+shift+n'`. A second key can follow a comma: `'backtalk+t, s'`.
+*   `menu: true` adds the command to the SandFly menu.
 *   `control: true` adds it to the reading controls. Swiping up or down with the control selected runs the command with `direction` set to `'previous'` or `'next'`.
 
-Commands need the `input` permission. The user can turn each gesture and key off on the script's page, or assign others. While a script runs, its gestures and keys come before Backtalk's own, except for the gesture assigned to **Turn all scripts on or off**.
+Commands need the `input` permission. The user can turn each gesture and key off on the script's page, or assign others. While a script runs, its gestures and keys come before SandFly's own, except for the gesture assigned to **Turn all scripts on or off**.
 
 ```js
 backtalk.onCommand('unread', (event) => {
@@ -257,7 +257,7 @@ backtalk.onCommand('unread', (event) => {
 });
 ```
 
-`event.node` is the focused item. Return `false` to have Backtalk do what the gesture or keys normally do.
+`event.node` is the focused item. Return `false` to have SandFly do what the gesture or keys normally do.
 
 `backtalk.bind(command, { gesture })` or `backtalk.bind(command, { keys })` adds a gesture or keys to a declared command, and `backtalk.unbind` removes one.
 
@@ -272,7 +272,7 @@ Each entry becomes a reading control that moves to the next or previous item mat
 ### Speech, sound and vibration
 
 *   `backtalk.speak(text, { interrupt, rate, pitch, language })`. `rate` and `pitch` are from 0.25 to 4, where 1 is the user's own setting. `language` is a tag such as `'de'`.
-*   `backtalk.playSound(name)` plays one of Backtalk's sounds (`focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo`, `beep`) or a sound file in the script's zip, such as `'sounds/chime.wav'`.
+*   `backtalk.playSound(name)` plays one of SandFly's sounds (`focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo`, `beep`) or a sound file in the script's zip, such as `'sounds/chime.wav'`.
 *   `backtalk.playTone(frequency, ms = 100, { volume })` plays a tone.
 *   `backtalk.playAudio(samples, { sampleRate, volume })` plays samples from -1 to 1, up to 10 seconds.
 *   `backtalk.vibrate(pattern)` vibrates for a number of milliseconds, or a list of up to 20 that alternates vibration and pause, up to 5 seconds.
@@ -281,10 +281,10 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 
 ### Screen
 
-*   `backtalk.screen.focused()` is the item with Backtalk's focus.
+*   `backtalk.screen.focused()` is the item with SandFly's focus.
 *   `backtalk.screen.root()` is the top item of the active window.
 *   `backtalk.screen.find(query)` and `backtalk.screen.findAll(query, limit = 50)` search the active window. A search looks at up to 3,000 items, returns up to 200, and stops when the script runs out of [time](#limits).
-*   `backtalk.app` is `{ package, activity, window, meta }` for the app in front. `activity` is `null` until Backtalk has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `backtalk.app.meta['com.example.flag']`. Needs script API version 3.
+*   `backtalk.app` is `{ package, activity, window, meta }` for the app in front. `activity` is `null` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `backtalk.app.meta['com.example.flag']`. Needs script API version 3.
 
 ### Rules from code
 
@@ -335,7 +335,7 @@ Each form item has a `type`, an `id`, and usually a `label`:
 *   `backtalk.clipboard.get()` and `backtalk.clipboard.set(text)`.
 *   `backtalk.system.back()`, `home()`, `recents()`, `notifications()`, `quickSettings()`, `powerDialog()`, `lockScreen()`, `takeScreenshot()` and `allApps()`.
 *   `backtalk.system.openApp(packageName)`.
-*   `backtalk.resume()` resumes a paused Backtalk. It needs the `system` permission.
+*   `backtalk.resume()` resumes a paused SandFly. It needs the `system` permission.
 *   `fetch(url, { method, headers, body, timeout })` works like the web's, for `https` addresses only. `method` is `GET`, `POST`, `PUT`, `DELETE`, `HEAD` or `OPTIONS`. A `body` that isn't text is sent as JSON. The response has `status`, `statusText`, `ok`, `url`, `headers`, `text()` and `json()`. A request body can be 1 MB and a response 5 MB, the timeout is at most 60 seconds, and a script can have 8 requests going at once.
 
 ### Translations
@@ -349,7 +349,7 @@ Put a file for each language in the zip's `locales` folder, named by language ta
 }
 ```
 
-Backtalk translates the manifest's names, titles, labels and hints with it. In code:
+SandFly translates the manifest's names, titles, labels and hints with it. In code:
 
 *   `backtalk._(text, params)` translates text and fills in `{name}` placeholders.
 *   `backtalk.ngettext(singular, plural, count, params)` picks the plural form for the language.
@@ -357,9 +357,9 @@ Backtalk translates the manifest's names, titles, labels and hints with it. In c
 
 ### Everything else
 
-*   `backtalk.apiVersion` is the script API version of this Backtalk.
+*   `backtalk.apiVersion` is the script API version of this SandFly.
 *   `backtalk.manifest` is the script's manifest.
-*   `console.log`, `info`, `debug`, `warn` and `error` write to the script's **Log**. They reach Android's log only at the level set in Backtalk's developer settings.
+*   `console.log`, `info`, `debug`, `warn` and `error` write to the script's **Log**. They reach Android's log only at the level set in SandFly's developer settings.
 *   `setTimeout`, `setInterval`, `clearTimeout` and `clearInterval` work as on the web. A script can have 100 timers at once.
 
 ## Gestures
@@ -370,11 +370,11 @@ Backtalk translates the manifest's names, titles, labels and hints with it. In c
 
 *   A script has 2 seconds to load, and 2 seconds for each call into it. Hooks that change speech have 250 milliseconds. Searching the screen counts toward that time.
 *   A script can use 32 MB of memory.
-*   Backtalk turns a script off after 5 errors in a minute, or after it runs out of time 3 times in 5 minutes, and says so.
+*   SandFly turns a script off after 5 errors in a minute, or after it runs out of time 3 times in 5 minutes, and says so.
 
 ## If a script goes wrong
 
 *   The script's page has its **Log**, with what it wrote and every error.
 *   **Turn off all scripts** on the Scripts screen stops every script without changing which ones are on.
 *   **Turn all scripts on or off** does the same from a gesture. Assign it in gesture settings before trying a script you don't trust yet. Scripts can't take over the gesture it's assigned to.
-*   Scripts change nothing in Backtalk's own settings, so you can always get to the Scripts screen.
+*   Scripts change nothing in SandFly's own settings, so you can always get to the Scripts screen.

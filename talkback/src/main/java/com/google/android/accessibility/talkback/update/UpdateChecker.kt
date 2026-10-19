@@ -29,7 +29,7 @@ import java.net.URL
 import org.json.JSONException
 import org.json.JSONObject
 
-/** A development build that is newer than the running one. */
+/** A stable release or development build that is newer than the running one. */
 data class UpdateInfo(
   /** The build number, which is the number of commits in the build. */
   val build: Int,
@@ -42,10 +42,13 @@ data class UpdateInfo(
 )
 
 /**
- * Checks a rolling pre-release on GitHub for a newer development build.
+ * Checks GitHub for a newer stable release, and with [Updater.isDevBuildsEnabled] also for a newer
+ * development build.
  *
- * Builds are on the "dev" pre-release. Backtalk Aaron first checks SandFly's latest release, and
- * offers it as a move whenever there is one.
+ * Stable releases are the latest release, and development builds the rolling "dev" pre-release.
+ * Whichever has the higher build number is offered, so a development build is offered the next
+ * stable release. Backtalk Aaron first checks SandFly's latest release, and offers it as a move
+ * whenever there is one.
  *
  * CI writes the release notes as a line "build: <commit count>", then one line per commit as "-
  * <7-character hash> <subject>", newest first. A release is newer only when its commit count is
@@ -53,21 +56,24 @@ data class UpdateInfo(
  */
 object UpdateChecker {
   private const val TAG = "UpdateChecker"
-  private const val RELEASES_URL = "https://api.github.com/repos/aaron-gh/backtalk/releases/tags/"
+  private const val RELEASES_URL = "https://api.github.com/repos/aaron-gh/SandFly/releases/"
 
-  /** SandFly's latest stable release, which Backtalk Aaron moves to. */
-  private const val MOVE_RELEASE_URL = "https://api.github.com/repos/aaron-gh/SandFly/releases/latest"
+  /** The latest stable release. */
+  private const val STABLE_RELEASE_URL = RELEASES_URL + "latest"
 
   /** The rolling pre-release of development builds. */
-  const val DEV_CHANNEL = "dev"
+  private const val DEV_RELEASE_URL = RELEASES_URL + "tags/dev"
 
-  /** The phone build, which is also what builds before the watch build was published look for. */
-  @VisibleForTesting const val PHONE_APK_NAME = "backtalk.apk"
+  /** SandFly's latest stable release, which Backtalk Aaron moves to. */
+  private const val MOVE_RELEASE_URL = STABLE_RELEASE_URL
+
+  /** The phone build. */
+  @VisibleForTesting const val PHONE_APK_NAME = "sandfly.apk"
   /** The watch build, so that a watch never installs the phone app. */
-  @VisibleForTesting const val WATCH_APK_NAME = "backtalk-wear.apk"
-  /** SandFly's phone and watch builds. */
-  @VisibleForTesting const val MOVE_PHONE_APK_NAME = "sandfly.apk"
-  @VisibleForTesting const val MOVE_WATCH_APK_NAME = "sandfly-wear.apk"
+  @VisibleForTesting const val WATCH_APK_NAME = "sandfly-wear.apk"
+  /** SandFly's phone and watch builds, for the move from Backtalk Aaron. */
+  @VisibleForTesting const val MOVE_PHONE_APK_NAME = PHONE_APK_NAME
+  @VisibleForTesting const val MOVE_WATCH_APK_NAME = WATCH_APK_NAME
   private const val SHORT_HASH_LENGTH = 7
   private const val MAX_CHANGES = 50
   private const val TIMEOUT_MS = 30_000
@@ -87,11 +93,25 @@ object UpdateChecker {
         return it
       }
     }
-    val json =
-      fetchRelease(context, RELEASES_URL + DEV_CHANNEL)
-        ?: throw IOException("GitHub has no $DEV_CHANNEL release")
-    return parseRelease(json, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
+    val urls = listOfNotNull(STABLE_RELEASE_URL, DEV_RELEASE_URL.takeIf { Updater.isDevBuildsEnabled(context) })
+    val releases = urls.mapNotNull { fetchRelease(context, it) }
+    if (releases.isEmpty()) {
+      throw IOException("GitHub has no SandFly release")
+    }
+    return newest(releases, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
   }
+
+  /** Returns the newest of the [releases] that is newer than the running build, or null. */
+  @VisibleForTesting
+  fun newest(
+    releases: List<String>,
+    currentBuild: Int,
+    currentHash: String,
+    apkName: String = PHONE_APK_NAME,
+  ): UpdateInfo? =
+    releases.mapNotNull { parseRelease(it, currentBuild, currentHash, apkName) }.maxByOrNull {
+      it.build
+    }
 
   /**
    * Returns SandFly's latest release, whatever its build number, since SandFly is always the way
@@ -141,7 +161,7 @@ object UpdateChecker {
     val connection = URL(url).openConnection() as HttpURLConnection
     connection.connectTimeout = TIMEOUT_MS
     connection.readTimeout = TIMEOUT_MS
-    connection.setRequestProperty("User-Agent", "Backtalk/${versionName(context)}")
+    connection.setRequestProperty("User-Agent", "SandFly/${versionName(context)}")
     return connection
   }
 

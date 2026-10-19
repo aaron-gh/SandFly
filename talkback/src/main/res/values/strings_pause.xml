@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Name of the action that pauses Backtalk, in the Backtalk menu, the gesture action list and the menu settings. [CHAR LIMIT=40] -->
-    <string name="title_pause_backtalk">Pause Backtalk</string>
-    <!-- Summary of the Backtalk menu setting that shows the Pause Backtalk item. [CHAR LIMIT=NONE] -->
-    <string name="summary_pause_backtalk">Turn off speech, gestures and explore by touch until you resume Backtalk</string>
-    <!-- Keyboard shortcut that pauses Backtalk, or resumes it when it is paused. [CHAR LIMIT=40] -->
-    <string name="keycombo_menu_global_pause_backtalk">Pause or resume Backtalk</string>
+    <!-- Name of the action that pauses SandFly, in the SandFly menu, the gesture action list and the menu settings. [CHAR LIMIT=40] -->
+    <string name="title_pause_backtalk">Pause SandFly</string>
+    <!-- Summary of the SandFly menu setting that shows the Pause SandFly item. [CHAR LIMIT=NONE] -->
+    <string name="summary_pause_backtalk">Turn off speech, gestures and explore by touch until you resume SandFly</string>
+    <!-- Keyboard shortcut that pauses SandFly, or resumes it when it is paused. [CHAR LIMIT=40] -->
+    <string name="keycombo_menu_global_pause_backtalk">Pause or resume SandFly</string>
 
-    <!-- Spoken when Backtalk pauses. [CHAR LIMIT=NONE] -->
-    <string name="backtalk_paused">Backtalk paused</string>
-    <!-- Spoken when Backtalk resumes after a pause. [CHAR LIMIT=NONE] -->
-    <string name="backtalk_resumed">Backtalk resumed</string>
+    <!-- Spoken when SandFly pauses. [CHAR LIMIT=NONE] -->
+    <string name="backtalk_paused">SandFly paused</string>
+    <!-- Spoken when SandFly resumes after a pause. [CHAR LIMIT=NONE] -->
+    <string name="backtalk_resumed">SandFly resumed</string>
 
-    <!-- Title of the notification shown while Backtalk is paused. [CHAR LIMIT=NONE] -->
-    <string name="notification_title_backtalk_paused">Backtalk is paused</string>
-    <!-- Text of the notification shown while Backtalk is paused. Tapping it resumes Backtalk. [CHAR LIMIT=NONE] -->
+    <!-- Title of the notification shown while SandFly is paused. [CHAR LIMIT=NONE] -->
+    <string name="notification_title_backtalk_paused">SandFly is paused</string>
+    <!-- Text of the notification shown while SandFly is paused. Tapping it resumes SandFly. [CHAR LIMIT=NONE] -->
     <string name="notification_message_backtalk_paused">Tap to resume</string>
-    <!-- Name of the notification channel for the notification shown while Backtalk is paused, in the app's notification settings. [CHAR LIMIT=40] -->
-    <string name="notification_channel_backtalk_paused">Backtalk paused</string>
+    <!-- Name of the notification channel for the notification shown while SandFly is paused, in the app's notification settings. [CHAR LIMIT=40] -->
+    <string name="notification_channel_backtalk_paused">SandFly paused</string>
 
-    <!-- Title of the dialog that asks before pausing Backtalk. [CHAR LIMIT=NONE] -->
-    <string name="dialog_title_pause_backtalk">Pause Backtalk?</string>
-    <!-- Button in the dialog that pauses Backtalk. [CHAR LIMIT=20] -->
+    <!-- Title of the dialog that asks before pausing SandFly. [CHAR LIMIT=NONE] -->
+    <string name="dialog_title_pause_backtalk">Pause SandFly?</string>
+    <!-- Button in the dialog that pauses SandFly. [CHAR LIMIT=20] -->
     <string name="dialog_button_pause_backtalk">Pause</string>
-    <!-- Message of the dialog that asks before pausing Backtalk. [CHAR LIMIT=NONE] -->
-    <string name="dialog_message_pause_backtalk">While Backtalk is paused, it does not speak or respond to gestures, and the screen works as if no screen reader is on.</string>
-    <!-- How to resume Backtalk when it resumes at the lock screen. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_keyguard">To resume, tap the Backtalk is paused notification, press volume down 3 times quickly, or lock and wake the phone so the lock screen shows.</string>
-    <!-- How to resume Backtalk when it resumes when the screen turns on. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_screen_on">To resume, tap the Backtalk is paused notification, press volume down 3 times quickly, or turn the screen off and on again.</string>
-    <!-- How to resume Backtalk when it only resumes from the notification or a shortcut. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_manual">To resume, tap the Backtalk is paused notification or press volume down 3 times quickly.</string>
-    <!-- Added to the pause dialog when a keyboard shortcut is set for pausing and resuming Backtalk. [CHAR LIMIT=NONE] -->
+    <!-- Message of the dialog that asks before pausing SandFly. [CHAR LIMIT=NONE] -->
+    <string name="dialog_message_pause_backtalk">While SandFly is paused, it does not speak or respond to gestures, and the screen works as if no screen reader is on.</string>
+    <!-- How to resume SandFly when it resumes at the lock screen. [CHAR LIMIT=NONE] -->
+    <string name="message_resume_keyguard">To resume, tap the SandFly is paused notification, press volume down 3 times quickly, or lock and wake the phone so the lock screen shows.</string>
+    <!-- How to resume SandFly when it resumes when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="message_resume_screen_on">To resume, tap the SandFly is paused notification, press volume down 3 times quickly, or turn the screen off and on again.</string>
+    <!-- How to resume SandFly when it only resumes from the notification or a shortcut. [CHAR LIMIT=NONE] -->
+    <string name="message_resume_manual">To resume, tap the SandFly is paused notification or press volume down 3 times quickly.</string>
+    <!-- Added to the pause dialog when a keyboard shortcut is set for pausing and resuming SandFly. [CHAR LIMIT=NONE] -->
     <string name="message_resume_key_combo">You can also press <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
 
-    <!-- Title of the setting for when Backtalk resumes after a pause. [CHAR LIMIT=NONE] -->
-    <string name="title_pref_resume_backtalk">Resume Backtalk</string>
-    <!-- Setting value: Backtalk resumes when the lock screen shows. [CHAR LIMIT=NONE] -->
+    <!-- Title of the setting for when SandFly resumes after a pause. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_resume_backtalk">Resume SandFly</string>
+    <!-- Setting value: SandFly resumes when the lock screen shows. [CHAR LIMIT=NONE] -->
     <string name="value_resume_keyguard">When the lock screen shows</string>
-    <!-- Setting value: Backtalk resumes when the screen turns on. [CHAR LIMIT=NONE] -->
+    <!-- Setting value: SandFly resumes when the screen turns on. [CHAR LIMIT=NONE] -->
     <string name="value_resume_screen_on">When the screen turns on</string>
-    <!-- Setting value: Backtalk resumes only from the notification or a shortcut. [CHAR LIMIT=NONE] -->
+    <!-- Setting value: SandFly resumes only from the notification or a shortcut. [CHAR LIMIT=NONE] -->
     <string name="value_resume_manual">Only from the notification or a shortcut</string>
 </resources>

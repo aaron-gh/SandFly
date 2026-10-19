@@ -103,7 +103,7 @@
     <!-- Entry that sets how long to wait for an answer. [CHAR LIMIT=40] -->
     <string name="pref_on_device_ai_timeout">Time limit for answers</string>
     <!-- Summary of the time limit entry. %1$s is the current limit, like "3 minutes". [CHAR LIMIT=NONE] -->
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Backtalk stops waiting after this long. Describe screen takes longer than describe image.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly stops waiting after this long. Describe screen takes longer than describe image.</string>
     <!-- Title of the time limit dialog. [CHAR LIMIT=40] -->
     <string name="on_device_ai_choose_timeout">Time limit for answers</string>
     <!-- A time limit in minutes. [CHAR LIMIT=20] -->

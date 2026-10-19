@@ -203,7 +203,7 @@ object ScriptInput {
     }
     val modifiers = parts.dropLast(1).map { it.lowercase() }
     require(("backtalk" in modifiers) == needsBacktalk) {
-      if (needsBacktalk) "Keys must start with backtalk, Backtalk's modifier key: $text"
+      if (needsBacktalk) "Keys must start with backtalk, the screen reader's modifier key: $text"
       else "Only the first keys include backtalk: $text"
     }
     val flags =

@@ -3,14 +3,14 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
 
     <!--The human-readable name of this service. Do not translate. -->
-    <string name="talkback_title" translatable="false">Backtalk Aaron</string>
+    <string name="talkback_title" translatable="false">SandFly</string>
 
     <!--
       Source: A brief description of TalkBack.
       Description: This is presented to the user on the accessibility settings view. [CHAR LIMIT=NONE]
     -->
     <string name="talkback_service_description">
-      When Backtalk is on, it provides spoken feedback so that you can use your device without looking at the screen. This can be helpful for people who are blind or have low vision.\n\nTo navigate using Backtalk:\n•  Swipe right or left to move between items\n•  Double-tap to activate an item\n•  Drag two fingers to scroll\n\nTo turn off Backtalk:\n•  Tap the switch. You’ll see an outline. Double-tap the switch.\n•  On the confirmation message, tap OK. Then double-tap OK.
+      When SandFly is on, it provides spoken feedback so that you can use your device without looking at the screen. This can be helpful for people who are blind or have low vision.\n\nTo navigate using SandFly:\n•  Swipe right or left to move between items\n•  Double-tap to activate an item\n•  Drag two fingers to scroll\n\nTo turn off SandFly:\n•  Tap the switch. You’ll see an outline. Double-tap the switch.\n•  On the confirmation message, tap OK. Then double-tap OK.
     </string>
 
     <!-- TODO: Try to remove nbsp following li. -->
@@ -19,7 +19,7 @@
       Description: This is presented in html to the user on the accessibility settings view. [CHAR_LIMIT=NONE]
     -->
     <string name="talkback_service_html_description">
-      <![CDATA[When Backtalk is on, it provides spoken feedback so that you can use your device without looking at the screen. Backtalk is intended for situations or people who have difficulty seeing the screen.<br><br><b>How to use Backtalk</b><br>• Swipe right or left to move between items<br>• Double-tap to activate an item<br>• Drag 2 fingers to scroll<br><b>How to turn off Backtalk</b><br>1. In Settings, tap <b>Use Backtalk</b>. There will be an outline. Double-tap it.<br>2. On the confirmation message, tap <b>Stop</b>. There will be an outline. Double-tap it.]]>
+      <![CDATA[When SandFly is on, it provides spoken feedback so that you can use your device without looking at the screen. SandFly is intended for situations or people who have difficulty seeing the screen.<br><br><b>How to use SandFly</b><br>• Swipe right or left to move between items<br>• Double-tap to activate an item<br>• Drag 2 fingers to scroll<br><b>How to turn off SandFly</b><br>1. In Settings, tap <b>Use SandFly</b>. There will be an outline. Double-tap it.<br>2. On the confirmation message, tap <b>Stop</b>. There will be an outline. Double-tap it.]]>
     </string>
 
     <!--
@@ -32,7 +32,7 @@
       Source: Title for the activity that manages TalkBack settings.
       Description: This is presented to the user when managing TalkBack settings. [CHAR_LIMIT=NONE]
     -->
-    <string name="talkback_preferences_title">Backtalk settings</string>
+    <string name="talkback_preferences_title">SandFly settings</string>
 
     <!--
       Source: Screen title of TalkBack settings shown as a breadcrumb like TalkBack > Settings
@@ -66,7 +66,7 @@
     -->
     <string name="title_pref_voice_profiles">Voice profiles</string>
     <!-- Name of the voice profile that uses the text-to-speech settings. It can't be removed. [CHAR LIMIT=NONE] -->
-    <string name="voice_profile_default">Backtalk default</string>
+    <string name="voice_profile_default">SandFly default</string>
     <!--
       Summary under Voice profiles in the text-to-speech settings, naming the voice profile in use.
       Shown only while one is, as the other text-to-speech settings then don't change how it sounds.
@@ -84,7 +84,7 @@
     -->
     <string name="speech_engine_unavailable_with_profile">Speech engine unavailable while using a voice profile</string>
     <!--
-      Item in the menu of voice profiles for the profile in use, opened from the Backtalk menu, a
+      Item in the menu of voice profiles for the profile in use, opened from the SandFly menu, a
       gesture or a keyboard shortcut. [CHAR LIMIT=NONE]
     -->
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, in use</string>
@@ -103,7 +103,7 @@
     <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
     <string name="voice_profile_new_name">Voice profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <!--
-      Error on the name field when the name entered is already another voice profile's, or Backtalk
+      Error on the name field when the name entered is already another voice profile's, or SandFly
       default's. [CHAR LIMIT=NONE]
     -->
     <string name="voice_profile_name_taken">A voice profile is already called <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -165,7 +165,7 @@
     <string name="summary_pref_use_accessibility_stream">Speech and sounds use the accessibility volume, so you can set them apart from media. When off, they use the media volume.</string>
     <!--
       Source: Title for the "speak long text in phrases" toggle.
-      Description: When on, Backtalk sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]
+      Description: When on, SandFly sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_speak_in_phrases">Send long text a sentence at a time</string>
     <!--
@@ -173,14 +173,14 @@
       Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]
     -->
     <string name="summary_pref_speak_in_phrases">For speech engines that are slow to stop, such as Gryphon, so swiping away stops long text at once. Many engines pause longer between sentences sent separately, so leave this off if yours stops quickly.</string>
-    <!-- Title of the notification shown once on phones whose battery saver can stop Backtalk, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
-    <string name="battery_optimization_notification_title">Battery optimization can stop Backtalk</string>
-    <!-- Text of the notification shown once on phones whose battery saver can stop Backtalk. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
-    <string name="battery_optimization_notification_text">On this phone, the battery saver can stop Backtalk after the screen turns off, so it falls silent until it is restarted. Tap to open battery optimization, choose All apps, find Backtalk and choose Don\'t optimize.</string>
+    <!-- Title of the notification shown once on phones whose battery saver can stop SandFly, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_title">Battery optimization can stop SandFly</string>
+    <!-- Text of the notification shown once on phones whose battery saver can stop SandFly. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_text">On this phone, the battery saver can stop SandFly after the screen turns off, so it falls silent until it is restarted. Tap to open battery optimization, choose All apps, find SandFly and choose Don\'t optimize.</string>
     <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
     <string name="title_pref_mute_speech_while_recording">Quiet while recording</string>
     <!-- Summary of the setting that keeps speech the user did not ask for quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_mute_speech_while_recording">While an app records without headphones connected, Backtalk only speaks in answer to your gestures, keys and typing, and stays quiet for things such as notifications, so that they are not recorded.</string>
+    <string name="summary_pref_mute_speech_while_recording">While an app records without headphones connected, SandFly only speaks in answer to your gestures, keys and typing, and stays quiet for things such as notifications, so that they are not recorded.</string>
     <!--
       Source: Title for the "switch languages" toggle.
       Description: When on, text that an app marks as another language is spoken in that language. [CHAR LIMIT=NONE]
@@ -232,7 +232,7 @@
     <string name="manage_label">Manage label</string>
 
     <!-- A message on the label manager package summary screen when there are no packages with labels. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 305927220428084385]-->
-    <string name="label_manager_no_packages_message">There are currently no custom labels\n\n<b>How to create a custom label</b>\nNavigate to an unlabeled image and add a label from the Backtalk menu</string>
+    <string name="label_manager_no_packages_message">There are currently no custom labels\n\n<b>How to create a custom label</b>\nNavigate to an unlabeled image and add a label from the SandFly menu</string>
     <!-- A label for the timestamp of when a custom label was stored or last modified. -->
     <string name="label_manager_timestamp_text">Last modified <xliff:g id="timestamp" example="1/1/11 11:11 AM">%1$s</xliff:g></string>
     <!-- Spoken when the search is canceled. -->
@@ -330,10 +330,10 @@
     -->
     <string name="value_device_unlocked">Device unlocked.</string>
 
-    <!-- Settings for what Backtalk says when the screen turns off or on and when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <!-- Settings for what SandFly says when the screen turns off or on and when the phone is unlocked. [CHAR LIMIT=NONE] -->
     <string name="title_pref_screen_announcements">Screen on and off</string>
     <!-- [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_screen_announcements">Choose what Backtalk says when the screen turns off or on, and when the phone is unlocked</string>
+    <string name="summary_pref_screen_announcements">Choose what SandFly says when the screen turns off or on, and when the phone is unlocked</string>
     <!-- Heading for the settings used when the screen turns off. [CHAR LIMIT=NONE] -->
     <string name="title_screen_announcements_screen_off">When the screen turns off</string>
     <!-- Heading for the settings used when the screen turns on. [CHAR LIMIT=NONE] -->
@@ -360,7 +360,7 @@
     <string name="title_pref_category_feedback">Feedback</string>
     <!-- Settings category for keyboards and braille. [CHAR LIMIT=40] -->
     <string name="title_pref_category_typing_and_braille">Typing and braille</string>
-    <!-- Settings category for scripts, custom labels and other apps that speak through Backtalk, which change how other apps work with Backtalk. [CHAR LIMIT=40] -->
+    <!-- Settings category for scripts, custom labels and other apps that speak through SandFly, which change how other apps work with SandFly. [CHAR LIMIT=40] -->
     <string name="title_pref_category_apps">Apps</string>
     <!-- Title of the settings screen for how touches focus and activate items: focus delay, lift to activate, single tap and the like. [CHAR LIMIT=40] -->
     <string name="title_pref_touch_activation">Touch and activation</string>
@@ -396,46 +396,46 @@
     <string name="title_pref_cover_proximity_sensor">Cover proximity sensor to stop speech</string>
     <!-- Title of a switch in Advanced Settings on Wear OS watches. Reserves two-finger single and double taps for Samsung's Vibration Watch feature, which tells the time through vibrations. [CHAR LIMIT=NONE] -->
     <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestures for Vibration Watch</string>
-    <!-- Summary of the Vibration Watch gesture switch. Backtalk stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_reserve_vibration_watch_gestures">Stops Backtalk handling two-finger single and double taps so Samsung Vibration Watch can use them. Enable Vibration Watch in your watch’s accessibility settings.</string>
-    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to Backtalk. [CHAR LIMIT=NONE] -->
+    <!-- Summary of the Vibration Watch gesture switch. SandFly stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_reserve_vibration_watch_gestures">Stops SandFly handling two-finger single and double taps so Samsung Vibration Watch can use them. Enable Vibration Watch in your watch’s accessibility settings.</string>
+    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to SandFly. [CHAR LIMIT=NONE] -->
     <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch in Advanced Settings</string>
     <!-- Title of the setting that moves calls to the speaker when the phone is away from the ear. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speakerphone_away_from_ear">Speaker when away from your ear</string>
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_away_from_ear">During a call, switches to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again.</string>
-    <!-- Summary of that setting when Backtalk does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
+    <!-- Summary of that setting when SandFly does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speakerphone_needs_permission">Needs a permission that Android does not give to screen readers. To grant it, run this command with adb or Shizuku, then come back to this screen: %1$s</string>
     <!-- Action on a setting that needs a permission granted with adb. Copies the adb command to the clipboard. [CHAR LIMIT=NONE] -->
     <string name="action_copy_command">Copy command</string>
     <!-- Shown after the adb command was copied to the clipboard. [CHAR LIMIT=NONE] -->
     <string name="command_copied">Command copied</string>
-    <!-- Title of the setting that lets other apps speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <!-- Title of the setting that lets other apps speak through SandFly. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speech_control">Let other apps speak</string>
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_speech_control">Apps that you allow can say text in your Backtalk voice. Nothing is said while the device is locked.</string>
-    <!-- Title of the setting that plays a sound before each thing another app says through Backtalk. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speech_control">Apps that you allow can say text in your SandFly voice. Nothing is said while the device is locked.</string>
+    <!-- Title of the setting that plays a sound before each thing another app says through SandFly. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
-    <!-- Heading of the list of apps that asked to speak through Backtalk. [CHAR LIMIT=NONE] -->
+    <!-- Heading of the list of apps that asked to speak through SandFly. [CHAR LIMIT=NONE] -->
     <string name="speech_control_apps_category">Apps</string>
     <!-- Shown in that list before any app has asked to speak. [CHAR LIMIT=NONE] -->
     <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
-    <!-- Title of the notification that asks whether an app may speak through Backtalk. The app's name is filled in. [CHAR LIMIT=NONE] -->
-    <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through Backtalk?</string>
+    <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly?</string>
     <!-- Text of that notification. [CHAR LIMIT=NONE] -->
-    <string name="speech_control_ask_text">It can say text in your Backtalk voice. You can change this in Advanced settings.</string>
+    <string name="speech_control_ask_text">It can say text in your SandFly voice. You can change this in Advanced settings.</string>
     <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
     <string name="speech_control_allow">Allow</string>
     <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
     <string name="speech_control_deny">Don\'t allow</string>
-    <!-- Name of the permission that apps ask for to speak through Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
-    <string name="permission_speak_label">speak through Backtalk</string>
+    <!-- Name of the permission that apps ask for to speak through SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_label">speak through SandFly</string>
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->
-    <string name="permission_speak_description">Lets the app ask to say text in your Backtalk voice. Backtalk asks you before the app can speak.</string>
-    <!-- Name of the permission that an app needs to ask to be a braille display for Backtalk, shown in the app's permission list. [CHAR LIMIT=NONE] -->
-    <string name="permission_braille_display_label">ask to be a braille display for Backtalk</string>
+    <string name="permission_speak_description">Lets the app ask to say text in your SandFly voice. SandFly asks you before the app can speak.</string>
+    <!-- Name of the permission that an app needs to ask to be a braille display for SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_label">ask to be a braille display for SandFly</string>
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->
-    <string name="permission_braille_display_description">Lets the app ask to be a braille display for Backtalk. If you allow it in Backtalk, it can read everything on the screen and control your device. Backtalk asks you first.</string>
+    <string name="permission_braille_display_description">Lets the app ask to be a braille display for SandFly. If you allow it in SandFly, it can read everything on the screen and control your device. SandFly asks you first.</string>
 
     <!--
       Source: Preference for speaking phonetic letter for letters.
@@ -483,21 +483,21 @@
     -->
     <string name="emoji_speech_engine">Read by speech engine</string>
     <!--
-      Source: Emoji preference choice: Backtalk sends the speech engine each emoji's name. [CHAR LIMIT=45]
+      Source: Emoji preference choice: SandFly sends the speech engine each emoji's name. [CHAR LIMIT=45]
     -->
-    <string name="emoji_speech_names">Read by Backtalk</string>
+    <string name="emoji_speech_names">Read by SandFly</string>
     <!--
       Source: Emoji preference choice: emoji are left out of speech. [CHAR LIMIT=45]
     -->
     <string name="emoji_speech_none">None</string>
     <!--
-      Source: Summary of the Emoji reading control, and of the Emoji item in the list of Backtalk menu items. [CHAR LIMIT=NONE]
+      Source: Summary of the Emoji reading control, and of the Emoji item in the list of SandFly menu items. [CHAR LIMIT=NONE]
     -->
     <string name="summary_selector_menu_emoji">Change how emoji are read</string>
     <!--
-      Source: Spoken when the Emoji reading control or menu changes how emoji are read, like "Emoji: Read by Backtalk". [CHAR LIMIT=NONE]
+      Source: Spoken when the Emoji reading control or menu changes how emoji are read, like "Emoji: Read by SandFly". [CHAR LIMIT=NONE]
     -->
-    <string name="emoji_speech_state">Emoji: <xliff:g example="Read by Backtalk" id="state">%1$s</xliff:g></string>
+    <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <!--
       Source: Preference for saying how many times an emoji repeats, like "3 grinning face", instead of naming it each time. [CHAR LIMIT=45]
     -->
@@ -607,7 +607,7 @@
     <!-- Title of dialog to confirm the typing focus delay reduction which enables the Lift-to-type to do the CLICK. [CHAR LIMIT=NONE] -->
     <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Switch to lift-to-type?</string>
     <!-- Description what the side effect would be when focus delay decreased, and TalkBack would enable the Lift-to-type. [CHAR LIMIT=NONE] -->
-    <string name="message_of_typing_focus_delay_reduction_confirm_dialog">When typing focus delay is set below 0.3 seconds, double-tap to type will be very difficult to perform. Choose \"Switch\" to automatically switch to lift to type.\n\nTo use lift-to-type, hold your finger to select any key, then lift for typing.\n\nYou can customize this in Backtalk settings.</string>
+    <string name="message_of_typing_focus_delay_reduction_confirm_dialog">When typing focus delay is set below 0.3 seconds, double-tap to type will be very difficult to perform. Choose \"Switch\" to automatically switch to lift to type.\n\nTo use lift-to-type, hold your finger to select any key, then lift for typing.\n\nYou can customize this in SandFly settings.</string>
     <!-- Title of dialog to confirm the typing focus delay reading control items being added. [CHAR LIMIT=NONE] -->
     <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Typing focus delay added to reading control</string>
     <!-- Message of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
@@ -709,7 +709,7 @@
     <!-- Category for tutorial & help. [CHAR LIMIT=40] -->
     <string name="title_pref_category_tutorial_and_help">Tutorial &#38; help</string>
     <!-- Category summary for reduce latency. [CHAR LIMIT=NONE] -->
-    <string name="title_pref_category_reduce_latency_summary">These settings make Backtalk respond faster after you touch the screen</string>
+    <string name="title_pref_category_reduce_latency_summary">These settings make SandFly respond faster after you touch the screen</string>
     <!-- Label for the reset latency settings. [CHAR LIMIT=NONE]-->
     <string name="reset_latency_settings_title">Reset all delay settings</string>
     <!-- Preference for single-tap activation. When enabled, the user can place accessibility focus on an item and activate it using a single tap, rather than the default double-tap. [CHAR LIMIT=NONE]-->
@@ -730,7 +730,7 @@
     <!-- Label for the button to launch an activity for managing TalkBack's custom view labels. [CHAR LIMIT=70] -->
     <string name="title_pref_manage_labels">Custom labels</string>
     <!-- Label for the button to launch an activity for managing TalkBack's custom menus. [CHAR LIMIT=100] -->
-    <string name="title_pref_category_context_menu">Backtalk menu</string>
+    <string name="title_pref_category_context_menu">SandFly menu</string>
     <!-- Label for the button to launch an activity for managing TalkBack's custom menus. [CHAR LIMIT=100] -->
     <string name="title_pref_category_selector_menu">Reading controls</string>
     <!-- Label for the button to launch an activity for managing TalkBack's navigation options menus. [CHAR LIMIT=100] -->
@@ -745,7 +745,7 @@
     Source: Summary subtext for TalkBack context menu setting in XR.
     Description: Explains how TalkBack context menu is opened on XR devices. [CHAR LIMIT=NONE]
     -->
-    <string name="pref_category_context_menu_summary_xr">To use the Backtalk menu, turn your secondary palm in and pinch.</string>
+    <string name="pref_category_context_menu_summary_xr">To use the SandFly menu, turn your secondary palm in and pinch.</string>
     <!--
     Source: Summary subtext for TalkBack context menu setting.
     Description: Explains how TalkBack context menu is opened without multifinger support. [CHAR LIMIT=NONE]
@@ -770,15 +770,15 @@
     <!-- Label for the button to export custom labels data as a file. [CHAR LIMIT=40] -->
     <string name="title_pref_export_custom_labels">Export custom labels</string>
     <!-- Label for the button to open the Play Store page. -->
-    <string name="title_pref_play_store">Open Backtalk at the Play Store</string>
+    <string name="title_pref_play_store">Open SandFly at the Play Store</string>
     <!-- Summary sub-text for the button to open the Play Store page. Argument is version number. -->
-    <string name="summary_pref_play_store">Current Backtalk Version: <xliff:g id="version_number">%1$s</xliff:g></string>
+    <string name="summary_pref_play_store">Current SandFly Version: <xliff:g id="version_number">%1$s</xliff:g></string>
     <!-- The preference title of Help & feedback [CHAR_LIMIT=NONE]-->
     <string name="title_pref_help_and_feedback">Help &#38; feedback</string>
     <!-- The preference title of GUP support [CHAR_LIMIT=NONE]-->
     <string name="title_pref_gup">Contact Google Disability support</string>
     <!-- The preference subtitle of GUP support [CHAR_LIMIT=NONE]-->
-    <string name="subtitle_pref_gup">Get help using Backtalk or report issues</string>
+    <string name="subtitle_pref_gup">Get help using SandFly or report issues</string>
     <!-- The label of a settings item that displays legal information about the licenses used in this app. [CHAR LIMIT=NONE] -->
     <string name="pref_item_licenses">Open Source Licenses</string>
     <!-- Label for the button to show tutorial [CHAR LIMIT=40] -->
@@ -792,7 +792,7 @@
     <!-- Category for assigning shortcuts to fingerprint sensor gestures. [CHAR LIMIT=40] -->
     <string name="title_pref_category_fingerprint_touch_shortcuts">Fingerprint gestures</string>
     <!-- Category for tutorial, the tutorial page contains help and feedback. [CHAR LIMIT=60] -->
-    <string name="title_pref_category_tutorial">Backtalk tutorial</string>
+    <string name="title_pref_category_tutorial">SandFly tutorial</string>
     <!-- Category for helping page or feedback. [CHAR LIMIT=60] -->
     <string name="title_pref_category_help_no_tutorial">Help</string>
     <!-- Category for typing settings. [CHAR LIMIT=60] -->
@@ -803,65 +803,65 @@
       Source: Preference for showing mis-trigger prevention watermark on screen.
       Description: The user can check or not check this. [CHAR LIMIT=120]
     -->
-    <string name="title_pref_show_exit_watermark">Show instructions for turning off Backtalk</string>
+    <string name="title_pref_show_exit_watermark">Show instructions for turning off SandFly</string>
     <!--
       Source: Summary subtext for showing mis-trigger prevention watermark on screen.
       Description: Explains whether to show the banner. [CHAR LIMIT=NONE]
     -->
-    <string name="summary_pref_show_exit_watermark">When Backtalk turns on, show how to turn it off</string>
-    <!-- Title of the switch that makes the Notifications action open Backtalk's own list of notifications instead of the system's notification shade. [CHAR_LIMIT=NONE] -->
-    <string name="title_pref_notification_list">Use Backtalk\'s notification list</string>
-    <!-- Title of the screen that chooses which parts of a notification Backtalk's notification list speaks, and their order. [CHAR_LIMIT=NONE] -->
+    <string name="summary_pref_show_exit_watermark">When SandFly turns on, show how to turn it off</string>
+    <!-- Title of the switch that makes the Notifications action open SandFly's own list of notifications instead of the system's notification shade. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_notification_list">Use SandFly\'s notification list</string>
+    <!-- Title of the screen that chooses which parts of a notification SandFly's notification list speaks, and their order. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_notification_parts">Notification details</string>
-    <!-- A part of a notification that Backtalk's notification list can speak: its title. [CHAR_LIMIT=NONE] -->
+    <!-- A part of a notification that SandFly's notification list can speak: its title. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_title">Title</string>
-    <!-- A part of a notification that Backtalk's notification list can speak: its text. [CHAR_LIMIT=NONE] -->
+    <!-- A part of a notification that SandFly's notification list can speak: its text. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_text">Text</string>
-    <!-- A part of a notification that Backtalk's notification list can speak: the name of the app that posted it. [CHAR_LIMIT=NONE] -->
+    <!-- A part of a notification that SandFly's notification list can speak: the name of the app that posted it. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_app">App name</string>
-    <!-- A part of a notification that Backtalk's notification list can speak: when it was posted. [CHAR_LIMIT=NONE] -->
+    <!-- A part of a notification that SandFly's notification list can speak: when it was posted. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_time">Time</string>
-    <!-- A part of a media notification that Backtalk's notification list can speak: whether its media is playing or paused. [CHAR_LIMIT=NONE] -->
+    <!-- A part of a media notification that SandFly's notification list can speak: whether its media is playing or paused. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_playback">Playing or paused</string>
-    <!-- Title of Backtalk's own list of notifications. [CHAR_LIMIT=NONE] -->
+    <!-- Title of SandFly's own list of notifications. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_title">Notifications</string>
-    <!-- Shown in Backtalk's notification list when there are no notifications. [CHAR_LIMIT=NONE] -->
+    <!-- Shown in SandFly's notification list when there are no notifications. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_empty">No notifications</string>
-    <!-- Shown in Backtalk's notification list when Backtalk does not have notification access. [CHAR_LIMIT=NONE] -->
+    <!-- Shown in SandFly's notification list when SandFly does not have notification access. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_no_access">Notification access is off</string>
-    <!-- Button that opens the system setting for Backtalk's notification access. [CHAR_LIMIT=NONE] -->
+    <!-- Button that opens the system setting for SandFly's notification access. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_grant_access">Turn on notification access</string>
-    <!-- Button in Backtalk's notification list that opens the system's quick settings. [CHAR_LIMIT=NONE] -->
+    <!-- Button in SandFly's notification list that opens the system's quick settings. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_quick_settings">Quick settings</string>
-    <!-- Accessibility action that removes a notification from Backtalk's notification list. [CHAR_LIMIT=NONE] -->
+    <!-- Accessibility action that removes a notification from SandFly's notification list. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_dismiss">Dismiss</string>
-    <!-- Button in Backtalk's notification list that removes every notification that can be removed. [CHAR_LIMIT=NONE] -->
+    <!-- Button in SandFly's notification list that removes every notification that can be removed. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_clear_all">Clear all</string>
-    <!-- Button that sends a reply typed in Backtalk's notification list. [CHAR_LIMIT=NONE] -->
+    <!-- Button that sends a reply typed in SandFly's notification list. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_send">Send</string>
-    <!-- State of a media notification in Backtalk's notification list whose media is playing. [CHAR_LIMIT=NONE] -->
+    <!-- State of a media notification in SandFly's notification list whose media is playing. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_playing">Playing</string>
-    <!-- State of a media notification in Backtalk's notification list whose media is paused. [CHAR_LIMIT=NONE] -->
+    <!-- State of a media notification in SandFly's notification list whose media is paused. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_paused">Paused</string>
-    <!-- Action on a media notification in Backtalk's notification list that starts playback. [CHAR_LIMIT=NONE] -->
+    <!-- Action on a media notification in SandFly's notification list that starts playback. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_play">Play</string>
-    <!-- Action on a media notification in Backtalk's notification list that pauses playback. [CHAR_LIMIT=NONE] -->
+    <!-- Action on a media notification in SandFly's notification list that pauses playback. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_pause">Pause</string>
-    <!-- Action on a media notification in Backtalk's notification list that skips to the previous item. [CHAR_LIMIT=NONE] -->
+    <!-- Action on a media notification in SandFly's notification list that skips to the previous item. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_previous">Previous</string>
-    <!-- Action on a media notification in Backtalk's notification list that skips to the next item. [CHAR_LIMIT=NONE] -->
+    <!-- Action on a media notification in SandFly's notification list that skips to the next item. [CHAR_LIMIT=NONE] -->
     <string name="notification_list_next">Next</string>
-    <!-- Number of notifications in a group in Backtalk's notification list. [CHAR_LIMIT=NONE] -->
+    <!-- Number of notifications in a group in SandFly's notification list. [CHAR_LIMIT=NONE] -->
     <plurals name="notification_list_group_count">
         <item quantity="one">%d notification</item>
         <item quantity="other">%d notifications</item>
     </plurals>
     <!-- The text of TalkBack mis-trigger-prevention watermark. [CHAR_LIMIT=NONE]-->
-    <string name="talkback_exit_watermark_text">Backtalk on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, tap with 3 fingers to open the Backtalk menu.</string>
+    <string name="talkback_exit_watermark_text">SandFly on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, tap with 3 fingers to open the SandFly menu.</string>
     <!-- The hint text of TalkBack mis-trigger-prevention watermark. [CHAR_LIMIT=NONE]-->
-    <string name="talkback_exit_watermark_hint_text">Showing banner indicating Backtalk is on. To turn off Backtalk, hold 2 fingers on the screen for 5 seconds. To remove this banner, go to Backtalk Settings.</string>
-    <!-- The text of the Backtalk-on banner when no 3-finger tap opens the Backtalk menu. [CHAR_LIMIT=NONE]-->
-    <string name="talkback_exit_watermark_text_no_menu_gesture">Backtalk on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off Backtalk settings &gt; Advanced settings &gt; Show instructions for turning off Backtalk.</string>
+    <string name="talkback_exit_watermark_hint_text">Showing banner indicating SandFly is on. To turn off SandFly, hold 2 fingers on the screen for 5 seconds. To remove this banner, go to SandFly Settings.</string>
+    <!-- The text of the SandFly-on banner when no 3-finger tap opens the SandFly menu. [CHAR_LIMIT=NONE]-->
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off SandFly settings &gt; Advanced settings &gt; Show instructions for turning off SandFly.</string>
 
     <!-- Label for the reset gesture settings. [CHAR_LIMIT=66] -->
     <string name="reset_gesture_settings_title">Reset gesture settings</string>
@@ -900,7 +900,7 @@
 
     <!-- Keyboard key map changes items. -->
     <!-- TalkBack keyboard shortcut keymap changes. The title for Activity and Notification to notify user there is another keymap support more shortcut actions worth to try. [CHAR LIMIT=60] -->
-    <string name="keycombo_keymap_changes_instruction_title">Update your Backtalk keymap</string>
+    <string name="keycombo_keymap_changes_instruction_title">Update your SandFly keymap</string>
     <!-- TalkBack keyboard shortcut keymap changes. The content for Activity and Notification to notify user there is another keymap support more shortcut actions worth to try. [CHAR LIMIT=200] -->
     <string name="keycombo_keymap_changes_activity_content"><![CDATA[To keep using keyboard shortcuts, go to Settings and switch from the classic keymap to the default keymap.
       <br><br><b>What\'s different about the default keymap?</b>
@@ -911,7 +911,7 @@
     <!-- TalkBack keyboard go to settings button. Click the button will open the TalkBack keyboard settings. [CHAR LIMIT=40] -->
     <string name="keycombo_go_to_settings">Go to Settings</string>
     <!-- TalkBack keyboard shortcut keymap changes notification content. [CHAR LIMIT=300] -->
-    <string name="keycombo_keymap_changes_notifications_content">Backtalk is getting ready to remove the classic keymap. To keep using keyboard shortcuts, switch to the default keymap.</string>
+    <string name="keycombo_keymap_changes_notifications_content">SandFly is getting ready to remove the classic keymap. To keep using keyboard shortcuts, switch to the default keymap.</string>
     <!-- TalkBack keyboard shortcut keymap changes notification action button. Click the button will open the instruction activity. [CHAR LIMIT=40] -->
     <string name="keycombo_keymap_changes_notifications_action">Learn more</string>
     <!-- Keyboard new key map notification dialog. -->
@@ -925,15 +925,15 @@
     <!-- Title of the dialog to notify classic keymap users. [CHAR LIMIT=60] -->
     <string name="keycombo_new_keymap_notification_dialog_title_for_classic_keymap">Classic keymap is no longer supported</string>
     <!-- Message of the dialog to notify classic keymap users. [CHAR LIMIT=200] -->
-    <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">You\'re now using the Backtalk default keymap. There is also a new enhanced keymap that has many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
+    <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">You\'re now using the SandFly default keymap. There is also a new enhanced keymap that has many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
     <!-- Keyboard new key map notification dialog for default keymap users. -->
     <!-- Title of the dialog to notify default keymap users. [CHAR LIMIT=60] -->
     <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">New keymap available</string>
     <!-- Message of the dialog to notify default keymap users. [CHAR LIMIT=200] -->
-    <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new Backtalk enhanced keymap adds many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
+    <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new SandFly enhanced keymap adds many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
     <!-- Keyboard update modifier keys. -->
     <!-- TalkBack keyboard shortcut keymap update modifier keys. The title for dialog and notification to notify user had better to update the modifier keys. [CHAR LIMIT=60] -->
-    <string name="keycombo_update_modifier_key_warning_title">Update your Backtalk modifier key</string>
+    <string name="keycombo_update_modifier_key_warning_title">Update your SandFly modifier key</string>
     <!-- TalkBack keyboard shortcut keymap update modifier keys. The title for dialog and notification to notify user had better to update the modifier keys. [CHAR LIMIT=60] -->
     <string name="keycombo_update_modifier_keys_warning_negative_button">Not now</string>
     <!-- TalkBack keyboard update modifier key dialog. -->
@@ -942,7 +942,7 @@
     <!-- Title of TalkBack keyboard update modifier key dialog. [CHAR LIMIT=40] -->
     <string name="keycombo_warning_dialog_title">Update your modifier key</string>
     <!-- Message of TalkBack keyboard update modifier key dialog. [CHAR LIMIT=400] -->
-    <string name="keycombo_warning_dialog_message">For Backtalk\'s keyboard shortcuts to work correctly, update your modifier key from Action to Alt.\n\nIf you keep using the Action modifier key, some shortcuts will take different actions for this version of Android.</string>
+    <string name="keycombo_warning_dialog_message">For SandFly\'s keyboard shortcuts to work correctly, update your modifier key from Action to Alt.\n\nIf you keep using the Action modifier key, some shortcuts will take different actions for this version of Android.</string>
     <!-- Button on TalkBack keyboard update modifier key dialog. [CHAR LIMIT=30] -->
     <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
 
@@ -960,7 +960,7 @@
     <!-- Title of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=60] -->
     <string name="keycombo_menu_alert_title_trigger_modifier">Use <xliff:g id="new_trigger_modifier" example="Action">%1$s</xliff:g> as your modifier key?</string>
     <!-- Message of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=200] -->
-    <string name="keycombo_menu_alert_message_trigger_modifier">Backtalk currently uses <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> as the modifier key.</string>
+    <string name="keycombo_menu_alert_message_trigger_modifier">SandFly currently uses <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> as the modifier key.</string>
     <!-- Button of alert dialog to reset keymap for changing trigger modifier [CHAR LIMIT=40] -->
     <string name="keycombo_menu_alert_button_trigger_modifier">Use <xliff:g id="new_trigger_modifier" example="Action">%1$s</xliff:g></string>
     <!-- Announce that modifier key is changed -->
@@ -1105,7 +1105,7 @@
     <string name="keycombo_menu_other_show_table_list">Show tables list</string>
     <!-- Keyboard key combination assignment for Show TalkBack Menu action
     TalkBack menu actions are related to whole application [CHAR LIMIT=130] [BACKUP_MESSAGE_ID: 8053375494161376217] -->
-    <string name="keycombo_menu_other_talkback_context_menu">Show Backtalk menu</string>
+    <string name="keycombo_menu_other_talkback_context_menu">Show SandFly menu</string>
     <!-- Keyboard key combination assignment for opening the list of custom actions [CHAR LIMIT=60] -->
     <string name="keycombo_menu_other_custom_actions">Show actions</string>
     <!-- Keyboard key combination assignment for opening the list of TTS languages installed by the user. [CHAR LIMIT=60] -->
@@ -1117,7 +1117,7 @@
     <!-- Keyboard key combination assignment for opening the TTS settings. [CHAR LIMIT=60] -->
     <string name="keycombo_menu_other_open_tts_settings">Open text-to-speech settings</string>
     <!-- Keyboard key combination assignment for opening TalkBack settings. [CHAR LIMIT=60] -->
-    <string name="keycombo_menu_other_open_talkback_settings">Open Backtalk settings</string>
+    <string name="keycombo_menu_other_open_talkback_settings">Open SandFly settings</string>
     <!-- Keyboard key combination assignment for opening the Tutorial page. [CHAR LIMIT=60] -->
     <string name="keycombo_menu_other_show_tutorial" translatable="false">@string/shortcut_show_tutorial</string>
     <!-- Keyboard key combination assignment for toggle braille contracted mode. [CHAR LIMIT=60] -->
@@ -1337,7 +1337,7 @@
       Source: Summary subtext for the "Reduce latency" setting.
       Description: go to a sub-page which contains settings for TalkBack latency. [CHAR LIMIT=NONE]
     -->
-    <string name="talkback_latency_reduction_summary">Make Backtalk respond faster after you touch the screen</string>
+    <string name="talkback_latency_reduction_summary">Make SandFly respond faster after you touch the screen</string>
     <!--
       Source: Summary subtext for the "Use pitch changes" setting.
       Description: Explains that feedback from the keyboard, e.g. when a user deletes an "A" and the phone speaks "A deleted", will be spoken in a higer pitched voice. [CHAR LIMIT=NONE]
@@ -1392,7 +1392,7 @@
       Source: Dialog title when choosing the audio output device.
       Description: Dialog title for selecting audio output target. [CHAR LIMIT=45]
     -->
-    <string name="dialog_title_audio_output_device">Choose where to play Backtalk sound</string>
+    <string name="dialog_title_audio_output_device">Choose where to play SandFly sound</string>
     <!--
       Source: Entry in the audio output device list for using system default.
       Description: Follows Android system default audio routing. [CHAR LIMIT=30]
@@ -1438,7 +1438,7 @@
       Description: Fallback name for USB audio device. [CHAR LIMIT=30]
     -->
     <string name="value_audio_output_device_usb_device">USB audio device</string>
-    <!-- Title of the setting that lists the Bluetooth, wired and USB outputs, such as a Bluetooth speaker, that move Backtalk's audio to the phone speaker while they are connected. [CHAR LIMIT=NONE] -->
+    <!-- Title of the setting that lists the Bluetooth, wired and USB outputs, such as a Bluetooth speaker, that move SandFly's audio to the phone speaker while they are connected. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speaker_devices">Phone speaker with these devices</string>
     <!-- Summary of the phone speaker devices setting when no output is chosen. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speaker_devices_none">None</string>
@@ -1465,8 +1465,8 @@
       Description: This preference reduces window title announcement delay.
     -->
     <string name="pref_reduce_window_delay_title">Turn off animations</string>
-    <!-- Summary of the setting that turns off animations so that Backtalk reads new screens faster. [CHAR LIMIT=NONE] -->
-    <string name="pref_reduce_window_delay_summary">Backtalk reads new screens faster when animations are off. This turns off animations for the whole phone.</string>
+    <!-- Summary of the setting that turns off animations so that SandFly reads new screens faster. [CHAR LIMIT=NONE] -->
+    <string name="pref_reduce_window_delay_summary">SandFly reads new screens faster when animations are off. This turns off animations for the whole phone.</string>
 
     <!--
       Source: Preference title.
@@ -1532,7 +1532,7 @@
       Source: Message for the preference that allows user to type focus latency.
       Description: The user can check or not check this. In another seekbar preference, the user can adjust the slider to change latency value. [CHAR LIMIT=NONE]
      -->
-    <string name="message_pref_touch_explore_latency">A shorter delay makes Backtalk speak sooner after you touch the keyboard.
+    <string name="message_pref_touch_explore_latency">A shorter delay makes SandFly speak sooner after you touch the keyboard.
 
 Choose a delay</string>
     <!--
@@ -1545,19 +1545,19 @@ Choose a delay</string>
       Description: This preference that shows summary of touch focus time. [CHAR_LIMIT=NONE]
     -->
     <string name="summary_pref_touch_focus_time">"
-Controls how quickly Backtalk speaks after focus moves. A shorter delay makes Backtalk feel faster, but can make double- and triple-taps harder to perform.\n\n
+Controls how quickly SandFly speaks after focus moves. A shorter delay makes SandFly feel faster, but can make double- and triple-taps harder to perform.\n\n
 Delays below 0.3 seconds will change double-tap to activate to two-finger tap to activate.
       "</string>
     <!--
       Source: Preference title.
       Description: This preference turns on TalkBack gesture detection. [CHAR_LIMIT=96]
       -->
-    <string name="title_pref_talkback_gesture_detection">Handle gestures in Backtalk</string>
+    <string name="title_pref_talkback_gesture_detection">Handle gestures in SandFly</string>
     <!--
       Source: Toast.
       Description: Hint text when turning on TalkBack gesture detection. [CHAR LIMIT=80]
        -->
-    <string name="toast_pref_talkback_gesture_detection">Turn Backtalk off then on again to activate the setting.</string>
+    <string name="toast_pref_talkback_gesture_detection">Turn SandFly off then on again to activate the setting.</string>
 
     <!--
       Source: Preference title.
@@ -1581,7 +1581,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   Source: Preference title.
   Description: This preference to download icon detection module and enable/disable the feature. [CHAR_LIMIT=NONE]
 -->
-  <string name="title_pref_category_automatic_description_summary">Get detailed AI image descriptions when you select \“Describe image\” from the Backtalk menu.\n\nYou can also get automatic descriptions when you focus on an image or icon. Automatic descriptions work without an internet connection.
+  <string name="title_pref_category_automatic_description_summary">Get detailed AI image descriptions when you select \“Describe image\” from the SandFly menu.\n\nYou can also get automatic descriptions when you focus on an image or icon. Automatic descriptions work without an internet connection.
 </string>
 
   <!--
@@ -1622,7 +1622,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
     Source: Preference title.
     Description: This preference to enable/disable the recognize text in images. [CHAR_LIMIT=NONE]
   -->
-  <string name="summary_pref_ai_description">Hear longer descriptions when you select \"<xliff:g id="Backtalk menu item" example="Describe image">%1$s</xliff:g>\" from the Backtalk menu</string>
+  <string name="summary_pref_ai_description">Hear longer descriptions when you select \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" from the SandFly menu</string>
 
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_detailed_ai_description">Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
@@ -1652,7 +1652,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <!-- Message for AI feature downloading with the download progress. [CHAR LIMIT=NONE]  -->
   <string name="message_aifeature_downloading_with_progress">Downloading still in progress. <xliff:g id="Download progress" example="50">%1$d</xliff:g> of <xliff:g id="Feature size" example="4096">%2$d</xliff:g>MB downloaded.</string>
   <!-- Message for AI feature download completed. [CHAR LIMIT=NONE]  -->
-  <string name="message_aifeature_download_complete">AI model downloaded. Backtalk can now generate image descriptions.</string>
+  <string name="message_aifeature_download_complete">AI model downloaded. SandFly can now generate image descriptions.</string>
 
   <!--
     Source: Summary subtext for the "Automatic descriptions" setting.
@@ -1767,7 +1767,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   -->
   <string name="title_pref_disable_auto_icon_detection">Don\'t describe icons</string>
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
-  <string name="dialog_message_detailed_ai_promotion">Detailed image descriptions are powered by generative AI. Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. You can turn off detailed image descriptions anytime in Backtalk settings.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
+  <string name="dialog_message_detailed_ai_promotion">Detailed image descriptions are powered by generative AI. Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. You can turn off detailed image descriptions anytime in SandFly settings.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
 
   <!-- Message for dialog shown when a user wants to enable screen description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_screen_overview_promotion">A screenshot of the screen is sent to Google\'s Gemini API to be described, which takes several seconds. With On-device AI turned on, it\'s described on this phone instead and isn\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
@@ -1813,11 +1813,11 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!--
       Text that is temporary displayed on the screen when user chose screen dimming option. [CHAR_LIMIT=NONE]
     -->
-    <string name="screen_dimming_exit_instruction_line1">Backtalk accessibility service has hidden the screen</string>
+    <string name="screen_dimming_exit_instruction_line1">SandFly accessibility service has hidden the screen</string>
     <!--
       Text that is temporary displayed on the screen for showing the screen from hidden mode. [CHAR_LIMIT=NONE]
     -->
-    <string name="screen_dimming_exit_instruction_line2">To change this, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> to open the Backtalk menu, select \"<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\", then double-tap.</string>
+    <string name="screen_dimming_exit_instruction_line2">To change this, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> to open the SandFly menu, select \"<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\", then double-tap.</string>
 
     <!-- Category for shortcuts related to basic navigation. [CHAR_LIMIT=40] -->
     <string name="shortcut_title_basic_navigation">Basic Navigation</string>
@@ -1878,14 +1878,14 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="shortcut_overview">Overview</string>
     <!-- Label for the shortcut that opens the notifications shade. [CHAR_LIMIT=40] -->
     <string name="shortcut_notifications">Notifications</string>
-    <!-- Label for the shortcut that opens the system's notification shade, even when the Notifications shortcut opens Backtalk's own notification list. [CHAR_LIMIT=40] -->
+    <!-- Label for the shortcut that opens the system's notification shade, even when the Notifications shortcut opens SandFly's own notification list. [CHAR_LIMIT=40] -->
     <string name="shortcut_system_notifications">System notification shade</string>
     <!-- Label for the shortcut that opens the quick settings. [CHAR_LIMIT=50] -->
     <string name="shortcut_quick_settings">Quick Settings</string>
     <!-- Label for the shortcut that opens the custom action menu. [CHAR_LIMIT=40] -->
     <string name="shortcut_show_custom_actions">Show custom actions</string>
     <!-- Label for the shortcut that opens the TalkBack context breakout menu [CHAR_LIMIT=100] -->
-    <string name="shortcut_talkback_breakout">Open Backtalk menu</string>
+    <string name="shortcut_talkback_breakout">Open SandFly menu</string>
     <!-- Label for the shortcut that pauses all feedback from TalkBack. [CHAR_LIMIT=69] -->
     <string name="shortcut_pause_or_resume_feedback">Pause or resume speech</string>
     <!-- Label for the shortcut that toggle voice feedback from TalkBack. [CHAR_LIMIT=72] -->
@@ -1933,13 +1933,13 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Label for the shortcut that performs long click on focused item action. [CHAR_LIMIT=60] -->
     <string name="shortcut_perform_long_click_action">Touch and hold</string>
     <!-- Title for dialog with general TalkBack actions and focused node actions [CHAR_LIMIT=40] -->
-    <string name="talkback_menu_title">Backtalk menu</string>
+    <string name="talkback_menu_title">SandFly menu</string>
     <!-- Text of TalkBack menu Close button. [CHAR_LIMIT=40] -->
     <string name="talkback_menu_close_button_text">@string/close_string</string>
     <!-- Text of TalkBack menu more options. [CHAR_LIMIT=NONE] -->
     <string name="talkback_menu_more_options_text">More menu options are available after you finish setup or unlock your device</string>
   <!-- Title content description for dialog with general TalkBack actions and focused node actions [CHAR_LIMIT=200] -->
-  <string name="talkback_menu_title_content_description">Backtalk menu. Swipe right to explore options in the Backtalk menu.\n\nTo go back to the tutorial, use 2 fingers to swipe left or right from the edge of your screen.</string>
+  <string name="talkback_menu_title_content_description">SandFly menu. Swipe right to explore options in the SandFly menu.\n\nTo go back to the tutorial, use 2 fingers to swipe left or right from the edge of your screen.</string>
   <!-- Label for the shortcut that opens the language option menu. [CHAR_LIMIT=40] -->
   <string name="shortcut_show_language_options">Change spoken language</string>
   <!--Label for the shortcut that selects the next setting [CHAR_LIMIT=100]-->
@@ -2110,7 +2110,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Label for the context menu containing keyboard shortcuts. [CHAR_LIMIT=100] -->
     <string name="title_show_keyboard_shortcuts">Keyboard shortcuts</string>
     <!-- Label for the context menu containing TalkBack settings. [CHAR_LIMIT=70] -->
-    <string name="talkback_show_talkback_settings">Backtalk settings</string>
+    <string name="talkback_show_talkback_settings">SandFly settings</string>
     <!-- Label for the context menu containing braille display settings. [CHAR_LIMIT=70] -->
     <string name="title_show_braille_display_settings">Braille display settings</string>
 
@@ -2163,15 +2163,15 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Summary for the menu item that lets the user change the read from cursor position. [CHAR_LIMIT=NONE] -->
     <string name="summary_read_from_current">Starting from the focused item, read all items on the screen</string>
     <!-- Summary for the menu item that lets the user copies the last spoken phrase. [CHAR_LIMIT=NONE] -->
-    <string name="summary_copy_last_spoken_phrase">Copy the last phrase Backtalk said to the clipboard so you can paste the text</string>
+    <string name="summary_copy_last_spoken_phrase">Copy the last phrase SandFly said to the clipboard so you can paste the text</string>
     <!-- Summary for the menu item that lets the user spells the last spoken phrase. [CHAR_LIMIT=NONE] -->
-    <string name="summary_spell_last_spoken_phrase">Spell each letter of the last phrase that Backtalk said</string>
+    <string name="summary_spell_last_spoken_phrase">Spell each letter of the last phrase that SandFly said</string>
     <!-- Summary for the menu item that lets the user repeats the last spoken phrase. [CHAR_LIMIT=NONE] -->
-    <string name="summary_repeat_last_spoken_phrase">Hear the last phrase that Backtalk said again</string>
+    <string name="summary_repeat_last_spoken_phrase">Hear the last phrase that SandFly said again</string>
     <!-- Summary for user to performs screen search keyword. [CHAR_LIMIT=NONE] -->
     <string name="summary_perform_screen_search">Enter a search term to find that text on the screen</string>
     <!-- Summary for user to control TalkBack by voice. [CHAR_LIMIT=NONE] -->
-    <string name="summary_voice_commands">Control Backtalk with your voice</string>
+    <string name="summary_voice_commands">Control SandFly with your voice</string>
     <!-- Summary for the context menu containing show or hide screen. [CHAR_LIMIT=NONE] -->
     <string name="summary_show_hide_screen">Hide the display so your screen is not visible to others in public places. After hiding your screen, return it to a normal state.</string>
     <!-- Summary for user to control speaking time while waking up the device. [CHAR_LIMIT=NONE] -->
@@ -2179,7 +2179,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Summary for the menu item that open TalkBack keyboard shortcuts dialog. [CHAR_LIMIT=NONE] -->
     <string name="summary_show_keyboard_shortcuts_preferences">Open list of keyboard shortcuts</string>
     <!-- Summary for the activity that manages TalkBack settings. [CHAR_LIMIT=NONE] -->
-    <string name="summary_talkback_preferences">Open Backtalk settings</string>
+    <string name="summary_talkback_preferences">Open SandFly settings</string>
   <!-- Summary for the activity that manages braille display settings. [CHAR_LIMIT=NONE] -->
   <string name="summary_braile_display_preferences">Open braille display settings</string>
     <!-- Summary for the menu item that opens the dialog with system actions available on device from R. [CHAR_LIMIT=NONE] -->
@@ -2261,7 +2261,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Summary for the navigation options menu containing default granularity. [CHAR_LIMIT=NONE] -->
     <string name="summary_granularity_default">Read one item at a time</string>
     <!-- Summary for the quick menu containing speech rate. [CHAR_LIMIT=70] -->
-    <string name="summary_speech_rate">Change how quickly Backtalk speaks</string>
+    <string name="summary_speech_rate">Change how quickly SandFly speaks</string>
     <!-- Summary for the quick menu containing verbosity. [CHAR_LIMIT=70] -->
     <string name="summary_selector_menu_verbosity">Change whether keys, usage hints, and more are read aloud</string>
     <!-- Summary for the quick menu containing punctuation. [CHAR_LIMIT=70] -->
@@ -2275,7 +2275,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Summary for the quick menu containing hide screen. [CHAR_LIMIT=70] -->
     <string name="summary_hide_screen">Hide the display so your screen isn\'t visible to others</string>
     <!-- Summary for the quick menu containing audio ducking. [CHAR_LIMIT=70] -->
-    <string name="summary_audio_ducking">Lower volume of other audio playing when Backtalk speaks</string>
+    <string name="summary_audio_ducking">Lower volume of other audio playing when SandFly speaks</string>
     <!-- Summary for the quick menu containing scrolling. [CHAR_LIMIT=NONE] -->
     <string name="summary_support_scroll_seq">Scroll forward or backward</string>
     <!-- Summary for the quick menu containing Accessibility volume change. [CHAR_LIMIT=70] -->
@@ -2299,7 +2299,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Summary for the menu item to provide spelling suggestion for the misspelled word. [CHAR_LIMIT=70] -->
     <string name="summary_typo_suggestions">Shows when the cursor is on a typo</string>
 
-    <string name="summary_cache_keyboard_keys">Backtalk pre-loads announcements to reduce delay when you type</string>
+    <string name="summary_cache_keyboard_keys">SandFly pre-loads announcements to reduce delay when you type</string>
     <string name="summary_cache_keyboard_keys_disabled">Use Google Text-to-Speech to use this feature</string>
 
     <!-- Label for the direction of the "swipe down" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
@@ -2550,7 +2550,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Reduce delays: switch that plays sounds and speech through the fastest audio path. [CHAR LIMIT=50] -->
     <string name="title_pref_low_latency_audio">Low-latency audio</string>
     <!-- Reduce delays: summary of the low-latency audio switch. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_low_latency_audio">Play Backtalk\'s sounds and speech through the phone\'s fastest audio path, so you hear them sooner. Turn it off if speech or sounds break up or sound wrong.</string>
+    <string name="summary_pref_low_latency_audio">Play SandFly\'s sounds and speech through the phone\'s fastest audio path, so you hear them sooner. Turn it off if speech or sounds break up or sound wrong.</string>
 
     <!-- Label for touch explore time out. [CHAR LIMIT=NONE]-->
     <string name="value_touch_explore_time_out_150ms">0.15 seconds</string>
@@ -2584,18 +2584,18 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="summary_pref_wrap_around">Swiping past the last item goes to the first, and past the first goes to the last. When off, a sound plays at the end instead.</string>
     <!-- Title of the setting that notices when touch exploration stops responding because of an Android bug, and fixes it. [CHAR LIMIT=NONE]-->
     <string name="title_pref_fix_stuck_touch_exploration">Fix stuck touch exploration</string>
-    <!-- Summary of the fix stuck touch exploration setting while Backtalk doesn't have the DUMP permission. Leave "DUMP" and the command untranslated. [CHAR LIMIT=NONE]-->
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Without the DUMP permission, Backtalk can only say that touch exploration may be stuck. To let it fix it, run: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <!-- Spoken before Backtalk briefly turns explore by touch off to fix stuck touch exploration. [CHAR LIMIT=NONE]-->
+    <!-- Summary of the fix stuck touch exploration setting while SandFly doesn't have the DUMP permission. Leave "DUMP" and the command untranslated. [CHAR LIMIT=NONE]-->
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Without the DUMP permission, SandFly can only say that touch exploration may be stuck. To let it fix it, run: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <!-- Spoken before SandFly briefly turns explore by touch off to fix stuck touch exploration. [CHAR LIMIT=NONE]-->
     <string name="stuck_touch_exploration_fixing">Fixing touch exploration</string>
-    <!-- Spoken when Backtalk has fixed stuck touch exploration. [CHAR LIMIT=NONE]-->
+    <!-- Spoken when SandFly has fixed stuck touch exploration. [CHAR LIMIT=NONE]-->
     <string name="stuck_touch_exploration_fixed">Touch exploration fixed</string>
-    <!-- Spoken when Backtalk tried to fix stuck touch exploration and it is still stuck. [CHAR LIMIT=NONE]-->
+    <!-- Spoken when SandFly tried to fix stuck touch exploration and it is still stuck. [CHAR LIMIT=NONE]-->
     <string name="stuck_touch_exploration_not_fixed">Touch exploration is still stuck. Restart the phone to fix it.</string>
-    <!-- Spoken when touch exploration seems to have stopped and Backtalk can't fix it on this phone. [CHAR LIMIT=NONE]-->
+    <!-- Spoken when touch exploration seems to have stopped and SandFly can't fix it on this phone. [CHAR LIMIT=NONE]-->
     <string name="stuck_touch_exploration_restart">Touch exploration may be stuck. Restart the phone to fix it.</string>
-    <!-- Spoken when touch exploration seems to have stopped and Backtalk needs the DUMP permission, granted with ADB, to fix it. Leave "DUMP" and "ADB" untranslated. [CHAR LIMIT=NONE]-->
-    <string name="stuck_touch_exploration_grant_dump">Touch exploration may be stuck. Restart the phone to fix it, or grant Backtalk the DUMP permission with ADB so that it can fix it.</string>
+    <!-- Spoken when touch exploration seems to have stopped and SandFly needs the DUMP permission, granted with ADB, to fix it. Leave "DUMP" and "ADB" untranslated. [CHAR LIMIT=NONE]-->
+    <string name="stuck_touch_exploration_grant_dump">Touch exploration may be stuck. Restart the phone to fix it, or grant SandFly the DUMP permission with ADB so that it can fix it.</string>
     <!-- Title of the setting for whether and how window names, such as an app's or a dialog's name, are spoken when a window opens or focus moves into one. [CHAR LIMIT=NONE] -->
     <string name="title_pref_window_names">Window names</string>
     <!-- Window names choice: speak a window's name when the window opens and when focus moves into it from another window, before the first item in the window. [CHAR LIMIT=NONE] -->
@@ -2645,15 +2645,15 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="title_pref_on_screen_keyboard">On-screen keyboard</string>
     <!-- Label for preference specifying that TalkBack physical keyboard settings. [CHAR_LIMIT=75] -->
     <string name="title_pref_physical_keyboard">Physical keyboard</string>
-    <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the Backtalk menu. [CHAR_LIMIT=NONE] -->
+    <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->
     <string name="title_keyboard_echo_on_screen">On-screen keyboard echo</string>
-    <!-- Name of the physical keyboard's keyboard echo setting, in the reading controls and the Backtalk menu. [CHAR_LIMIT=NONE] -->
+    <!-- Name of the physical keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->
     <string name="title_keyboard_echo_physical">Physical keyboard echo</string>
-    <!-- Name of the braille keyboard's keyboard echo setting, in the reading controls and the Backtalk menu. [CHAR_LIMIT=NONE] -->
+    <!-- Name of the braille keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->
     <string name="title_keyboard_echo_braille_keyboard">Braille keyboard echo</string>
-    <!-- Name of the braille display's keyboard echo setting, in the reading controls and the Backtalk menu. [CHAR_LIMIT=NONE] -->
+    <!-- Name of the braille display's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->
     <string name="title_keyboard_echo_braille_display">Braille display echo</string>
-    <!-- A keyboard echo setting and its value, spoken when it changes and shown in the Backtalk menu, such as "Physical keyboard echo: Words". [CHAR_LIMIT=NONE] -->
+    <!-- A keyboard echo setting and its value, spoken when it changes and shown in the SandFly menu, such as "Physical keyboard echo: Words". [CHAR_LIMIT=NONE] -->
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <!-- Title of the setting for whether typing a character on a physical keyboard stops speech. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_interrupt_typing">Interrupt speech when typing</string>
@@ -2680,11 +2680,11 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="pref_node_desc_order_entry_role_name_state_pos">Type, name, state</string>
     <!-- Label for preference specifying that TalkBack should describe elements in order: name, type, state. -->
     <string name="pref_node_desc_order_entry_name_role_state_pos">Name, type, state</string>
-    <!-- Label for preference specifying that Backtalk should describe elements in order: name, state, type. -->
+    <!-- Label for preference specifying that SandFly should describe elements in order: name, state, type. -->
     <string name="pref_node_desc_order_entry_name_state_role_pos">Name, state, type</string>
-    <!-- Label for preference specifying that Backtalk should describe elements in order: type, state, name. -->
+    <!-- Label for preference specifying that SandFly should describe elements in order: type, state, name. -->
     <string name="pref_node_desc_order_entry_role_state_name_pos">Type, state, name</string>
-    <!-- Label for preference specifying that Backtalk should describe elements in order: state, type, name. -->
+    <!-- Label for preference specifying that SandFly should describe elements in order: state, type, name. -->
     <string name="pref_node_desc_order_entry_state_role_name_pos">State, type, name</string>
     <!-- Order of item details settings: the item's name, such as the text of a button. [CHAR LIMIT=30] -->
     <string name="item_detail_name">Name</string>
@@ -2703,7 +2703,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Order of item details settings: spoken when the user lets go of a dragged detail. The position is template_list_position. [CHAR LIMIT=NONE] -->
     <string name="template_item_details_order_dropped">Dropped <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <!-- Order of item details settings: text below the list that explains how to reorder it. [CHAR LIMIT=NONE] -->
-    <string name="item_details_order_footer">Backtalk says an item\'s details in this order. To change it, touch and hold a detail, then drag it up or down. With Backtalk on, double-tap and hold, then drag. You can also use the Move up and Move down actions.</string>
+    <string name="item_details_order_footer">SandFly says an item\'s details in this order. To change it, touch and hold a detail, then drag it up or down. With SandFly on, double-tap and hold, then drag. You can also use the Move up and Move down actions.</string>
 
     <!-- Label for preference specifying that TalkBack should announce time in the format used by the paired device. [CHAR LIMIT=120] -->
     <string name="pref_time_feedback_format_entries_default">Use device time format</string>
@@ -2716,7 +2716,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
       Source: Title of a notification that TalkBack's gestures have been changed.
       Description: Displays a more detailed notification with information about gesture changes [CHAR_LIMIT=30]
     -->
-    <string name="notification_title_talkback_gestures_changed">Backtalk gestures changed</string>
+    <string name="notification_title_talkback_gestures_changed">SandFly gestures changed</string>
 
     <!--
       Source: Description of a notification that TalkBack's gestures have been changed.
@@ -2742,7 +2742,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="label_dialog_edit_hint">Label text</string>
     <!-- Text that appears in the label management menu item, that allow user to import custom labels to TalkBack -->
     <string name="label_import">Import custom labels</string>
-    <string name="label_import_dialog_title">Import custom labels to Backtalk</string>
+    <string name="label_import_dialog_title">Import custom labels to SandFly</string>
     <string name="label_import_dialog_message">Choose whether you want to override or skip existing labels in the case of conflict</string>
     <string name="label_import_dialog_skip">Skip</string>
     <string name="label_import_dialog_override">Override</string>
@@ -2762,18 +2762,18 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
       Source: Description of a notification that TalkBack's gestures have been changed.
       Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
      -->
-    <string name="talkback_gesture_change_details">This version of Backtalk includes changes to the default accessibility gestures.  The actions associated with these gestures can be customized within Backtalk settings.  When Explore by touch is enabled, you can use the following gestures to perform certain actions.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
+    <string name="talkback_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures.  The actions associated with these gestures can be customized within SandFly settings.  When Explore by touch is enabled, you can use the following gestures to perform certain actions.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
 
     <!-- Title for the alert shown when a user attempts to set option that turns the phone screen dark to provide provide privacy. [CHAR_LIMIT=50] -->
     <string name="dialog_title_dim_screen">Hide screen?</string>
     <!-- Message for the alert shown when a user attempts to set option that turns the phone screen dark to provide provide privacy. [CHAR_LIMIT=NONE] -->
-    <string name="dialog_message_dim_screen">This turns off the display to improve privacy. Some content may still be shown, like messages for turning the display back on, or menus for accessibility features like Backtalk.</string>
+    <string name="dialog_message_dim_screen">This turns off the display to improve privacy. Some content may still be shown, like messages for turning the display back on, or menus for accessibility features like SandFly.</string>
 
     <!--
       Source: Description of a notification that some of TalkBack's built-in gestures have been changed.
       Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
      -->
-    <string name="talkback_built_in_gesture_change_details">This version of Backtalk includes changes to the default accessibility gestures.\n\nThe up-then-down gesture will allow you to move to the first item on the screen, and the down-then-up gesture will move to the last item.\n\nThe reading granularity can now be changed by focusing an item, then selecting a granularity from the talkback context menu.\n\nYou can change the actions performed by these gestures in Backtalk Settings.</string>
+    <string name="talkback_built_in_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures.\n\nThe up-then-down gesture will allow you to move to the first item on the screen, and the down-then-up gesture will move to the last item.\n\nThe reading granularity can now be changed by focusing an item, then selecting a granularity from the talkback context menu.\n\nYou can change the actions performed by these gestures in SandFly Settings.</string>
 
     <!--
       Source: Description of a notification that some of TalkBack's built-in gestures have been removed.
@@ -2791,12 +2791,12 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
       Source: Description of a notification that TalkBack's built-in swipe-up and swipe-down gestures have been changed in TalkBack 4.5.
       Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
      -->
-    <string name="talkback_built_in_gesture_change_details_45">This version of Backtalk includes changes to the default accessibility gestures.\n\nThe up gesture now moves to the previous navigation setting, and the down gesture now moves to the next navigation setting.</string>
+    <string name="talkback_built_in_gesture_change_details_45">This version of SandFly includes changes to the default accessibility gestures.\n\nThe up gesture now moves to the previous navigation setting, and the down gesture now moves to the next navigation setting.</string>
 
     <!--
       Notification that TalkBack's side-tap and shake shortcuts have been removed. [CHAR_LIMIT=1300]
      -->
-    <string name="side_tap_shortcuts_removed_details">These settings are removed from Backtalk, due to reliability issues:\n• Tap on side of device gestures\n• Shake to start continuous reading</string>
+    <string name="side_tap_shortcuts_removed_details">These settings are removed from SandFly, due to reliability issues:\n• Tap on side of device gestures\n• Shake to start continuous reading</string>
 
     <!-- Label for the gesture change notificaiton dialog button to accept the suggested gesture mapping -->
     <string name="button_accept_changed_gesture_mappings">Accept gestures</string>
@@ -2844,7 +2844,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Title for requesting phone permission in TalkBack. [CHAR LIMIT=NONE] -->
     <string name="title_request_phone_permission">Allow phone access?</string>
     <!-- Message for requesting phone permission in TalkBack. It tells the reason for the users. [CHAR LIMIT=NONE] -->
-    <string name="message_request_phone_permission">This helps Backtalk reduce announcements when you\'re on a call</string>
+    <string name="message_request_phone_permission">This helps SandFly reduce announcements when you\'re on a call</string>
     <!-- Label for continue button. [CHAR_LIMIT=30] -->
     <string name="continue_button">Continue</string>
 
@@ -3017,7 +3017,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     Source: Message for the preference that allows user to focus latency.
     Description: The user can check or not check this. In another seekbar preference, the user can adjust the slider to change latency value. [CHAR LIMIT=NONE]
    -->
-  <string name="message_pref_touch_focus_latency">A shorter delay makes Backtalk speak sooner after you touch the screen</string>
+  <string name="message_pref_touch_focus_latency">A shorter delay makes SandFly speak sooner after you touch the screen</string>
   <!--
     Source: Message for the preference that allows user to focus latency.
     Description: The user can check or not check this. In another seekbar preference, the user can adjust the slider to change latency value. [CHAR LIMIT=NONE]
@@ -3137,21 +3137,21 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Title for continuous reading mode tutorial read from top/next -->
   <string name="dialog_title_continuous_reading_mode">How continuous reading works</string>
   <!-- Message for continuous reading mode tutorial, lists available gestures. -->
-  <string name="dialog_message_continuous_reading_mode">After selecting \"Read from top\" or \"Read from focused item\", you can still navigate to the previous or next item while the text is being read. This lets you go back or skip ahead with ease.\n\nTo adjust the volume while Backtalk speaks, press the volume up or volume down key.</string>
+  <string name="dialog_message_continuous_reading_mode">After selecting \"Read from top\" or \"Read from focused item\", you can still navigate to the previous or next item while the text is being read. This lets you go back or skip ahead with ease.\n\nTo adjust the volume while SandFly speaks, press the volume up or volume down key.</string>
   <!-- Checkbox text for always displaying the dialog -->
   <string name="always_show_this_message_label">Always show this message</string>
 
   <!-- Title for voice commands, first-time use dialog [CHAR_LIMIT=80] -->
-  <string name="dialog_title_voice_commands">Use voice commands to control Backtalk</string>
+  <string name="dialog_title_voice_commands">Use voice commands to control SandFly</string>
   <!-- Message for voice commands, first-time use dialog [CHAR_LIMIT=NONE] -->
-  <string name="dialog_message_voice_commands">Here are some things you can say:\n\n• Copy\n• Read from focused item\n• Find [save]\n• Speak [faster]\n• Backtalk settings\n\nSay \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" for a list of all voice commands</string>
+  <string name="dialog_message_voice_commands">Here are some things you can say:\n\n• Copy\n• Read from focused item\n• Find [save]\n• Speak [faster]\n• SandFly settings\n\nSay \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" for a list of all voice commands</string>
   <!-- Label for use voice commands, first-time use dialog [CHAR_LIMIT=40] -->
   <string name="start_voice_command">Use voice commands</string>
 
   <!-- Title for pass through mode, first-time use dialog. [CHAR_LIMIT=NONE] -->
-  <string name="dialog_title_pass_through_mode">Skip Backtalk gestures to use system gestures</string>
+  <string name="dialog_title_pass_through_mode">Skip SandFly gestures to use system gestures</string>
   <!-- Message for pass-through mode tutorial. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 2757739143933456348]-->
-  <string name="dialog_message_pass_through_mode">When you hear a chime, you can use a system gesture that isn\'t supported by Backtalk. This is known as a pass-through gesture.</string>
+  <string name="dialog_message_pass_through_mode">When you hear a chime, you can use a system gesture that isn\'t supported by SandFly. This is known as a pass-through gesture.</string>
 
   <!-- Title for voice input download dialog. [CHAR_LIMIT=NONE] -->
   <string name="dialog_title_voice_input_download">Update Gboard to use voice input</string>
@@ -3181,7 +3181,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Notification channel name of TalkBack. [CHAR_LIMIT=40] -->
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <!-- Notification channel description of TalkBack. [CHAR_LIMIT=42] -->
-  <string name="talkback_notification_channel_description">The Notification Channel of Backtalk</string>
+  <string name="talkback_notification_channel_description">The Notification Channel of SandFly</string>
 
   <!-- For selector summary. -->
   <!--
@@ -3231,20 +3231,20 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Usage hint for how to use the selected action. This is spoken to the user. [CHAR_LIMIT=150] -->
   <string name="use_action_hint">Double-tap to perform the action</string>
   <!-- Usage hint for how to assign gesture for the quick menu. This is spoken to the user. [CHAR_LIMIT=280] -->
-  <string name="no_adjust_setting_gesture">To use this, go to Backtalk settings and add a gesture for \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_adjust_setting_gesture">To use this, go to SandFly settings and add a gesture for \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
   <!-- Usage hint for how to assign gesture for the navigate typo. This is spoken to the user. [CHAR_LIMIT=280] -->
-  <string name="no_navigate_typo_gesture">To use this, go to Backtalk settings and add a gesture for spell check</string>
+  <string name="no_navigate_typo_gesture">To use this, go to SandFly settings and add a gesture for spell check</string>
   <!-- Usage hint for how to use the selected spelling suggestions. This is spoken to the user. [CHAR_LIMIT=NONE] -->
   <string name="use_spelling_suggestion_hint">Double-tap to replace text</string>
   <!-- Usage hint for screen-search keyword. [CHAR_LIMIT=NONE] -->
   <string name="screen_search_keyword_hint">keyword is <xliff:g example="keyword">%1$s</xliff:g></string>
   <!-- Usage hint for no screen-search keyword. [CHAR_LIMIT=NONE] -->
-  <string name="screen_search_no_keyword_hint">No keyword yet. To start a new search, tap and hold with 3 fingers or open screen search from the Backtalk menu.</string>
+  <string name="screen_search_no_keyword_hint">No keyword yet. To start a new search, tap and hold with 3 fingers or open screen search from the SandFly menu.</string>
   <!-- Usage hint for no screen-search keyword. [CHAR_LIMIT=NONE] -->
-  <string name="screen_search_no_keyword_hint_pre_r">No keyword yet. To start a new search, swipe left then down or open screen search from the Backtalk menu.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">No keyword yet. To start a new search, swipe left then down or open screen search from the SandFly menu.</string>
 
   <!-- Announced when can't switching to braille keyboard . [CHAR_LIMIT=150] -->
-  <string name="switch_to_braille_keyboard_failure_msg">Braille keyboard isn\'t turned on. Go to Backtalk settings, set up Braille keyboard, and try again.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Braille keyboard isn\'t turned on. Go to SandFly settings, set up Braille keyboard, and try again.</string>
   <!-- Announced when the popup window is shown. [CHAR_LIMIT=50]-->
   <string name="suggestions_window_available">Suggestions available</string>
   <!-- Announced when the popup window is shown. The user can performs a quick gesture to navigate to the suggestions window. [CHAR_LIMIT=150]-->
@@ -3275,27 +3275,27 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="training_tip">Tip</string>
 
   <!-- For training on TV -->
-  <string name="tv_training_overview_step_title">How Backtalk works</string>
-  <string name="tv_training_overview_step_summary">Backtalk is a screen reader based on Google\'s TalkBack. It reads aloud the text on the screen and gives you spoken feedback, so that you can use your device without looking at the screen.\n\nWith Backtalk on, a selected item on the screen is spoken aloud, sometimes with additional information or context added.\n\nPress Select to continue. The Select button is located at the center of the directional pad, which is the large, circular button at the top of your remote.</string>
+  <string name="tv_training_overview_step_title">How SandFly works</string>
+  <string name="tv_training_overview_step_summary">SandFly is a screen reader based on Google\'s TalkBack. It reads aloud the text on the screen and gives you spoken feedback, so that you can use your device without looking at the screen.\n\nWith SandFly on, a selected item on the screen is spoken aloud, sometimes with additional information or context added.\n\nPress Select to continue. The Select button is located at the center of the directional pad, which is the large, circular button at the top of your remote.</string>
   <string name="tv_training_remote_step_title">Using your remote</string>
   <string name="tv_training_remote_step_summary">Move around the screen using the circle-shaped directional button at the top of your remote. To select, press the center of the directional button at the top of your remote.\n\nIn the second row on the left, you have the back button. On the right you have the voice Assistant button.\n\nIn the third row on the left, you have the home button. On the right is the mute button.\n\nIn the fourth row on the left, you have the YouTube shortcut. On the right is the Netflix shortcut.\n\nIn the bottom row there are two small buttons. The left button is the power button. The right will open your TV’s input menu.\n\nThe volume buttons are located at the right side of the remote.\n\nPress Select to continue.</string>
-  <string name="tv_training_shortcut_step_title">Backtalk shortcut</string>
-  <string name="tv_training_shortcut_step_summary">To access the Backtalk shortcut, press the down and back buttons at the same time and hold them down for 3 seconds. This will either turn on or turn off Backtalk.\n\nYou can also access this shortcut within your TV settings.\n\nPress Select to continue.</string>
+  <string name="tv_training_shortcut_step_title">SandFly shortcut</string>
+  <string name="tv_training_shortcut_step_summary">To access the SandFly shortcut, press the down and back buttons at the same time and hold them down for 3 seconds. This will either turn on or turn off SandFly.\n\nYou can also access this shortcut within your TV settings.\n\nPress Select to continue.</string>
 
   <!-- For on-boarding. -->
   <!-- A item in settings page to introduce TalkBack new features. [CHAR_LIMIT=NONE]-->
-  <string name="new_feature_in_talkback_title">New features in Backtalk</string>
+  <string name="new_feature_in_talkback_title">New features in SandFly</string>
   <!-- The title of a dialog that is shown when exiting the tutorial. [CHAR_LIMIT=45]-->
   <string name="exit_tutorial_title">Finished reviewing?</string>
   <!-- The content of the exit tutorial page dialog. [CHAR_LIMIT=NONE]-->
-  <string name="exit_tutorial_content">You can come back to the tutorial anytime in Backtalk settings.</string>
+  <string name="exit_tutorial_content">You can come back to the tutorial anytime in SandFly settings.</string>
   <!-- The content of the exit the onboarding page dialog. [CHAR_LIMIT=NONE]-->
-  <string name="exit_onboarding_content">You can come back to review new features anytime in Backtalk settings.</string>
+  <string name="exit_onboarding_content">You can come back to review new features anytime in SandFly settings.</string>
   <!-- The text of the button that is for keep reviewing the tutorial. [CHAR_LIMIT=50]-->
   <string name="keep_reviewing_tutorial_button">Keep reviewing</string>
   <!-- For welcome to the update TalkBack page in on-boarding. -->
   <!-- The page title of welcome to updated TalkBack. [CHAR_LIMIT=NONE]-->
-  <string name="welcome_to_updated_talkback_title">Welcome to the updated Backtalk</string>
+  <string name="welcome_to_updated_talkback_title">Welcome to the updated SandFly</string>
   <!-- For navigation and setting selector page in on-boarding. -->
   <!-- Navigation subtitle. The translation should be the same as "navigation" in jump_between_headings_text and jump_between_headings_text_pre_r.[CHAR_LIMIT=NONE]-->
   <string name="navigation_heading">Navigation</string>
@@ -3306,7 +3306,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The text to introduce how to pause or play media. [CHAR_LIMIT=NONE]-->
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Other apps may use this gesture for things like answering or ending a phone call. This gesture may not be supported by all apps.</string>
   <!-- The button text bring user to the tutorial page. [CHAR_LIMIT=NONE]-->
-  <string name="onboarding_link_to_talkback_tutorials">View all Backtalk tutorials</string>
+  <string name="onboarding_link_to_talkback_tutorials">View all SandFly tutorials</string>
 
   <!--
   Source: Announces when media paused or playing.
@@ -3314,12 +3314,12 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   -->
   <string name="new_shortcut_gesture_pause_media_announcement">Media paused or playing. Usually, this will pause or play the current video or music. Swipe right to continue.</string>
   <!-- The text to introduce how to stop TalkBack speech. [CHAR_LIMIT=NONE]-->
-  <string name="new_shortcut_gesture_stop_speech_text">To stop Backtalk from talking temporarily, tap with 2 fingers.</string>
+  <string name="new_shortcut_gesture_stop_speech_text">To stop SandFly from talking temporarily, tap with 2 fingers.</string>
   <!--
   Source: Announces when TalkBack speech stopped.
   Description: This is spoken to the user. In RTL language, "right" and "left" should be translated reverse. [CHAR_LIMIT=NONE]
   -->
-  <string name="new_shortcut_gesture_stop_speech_announcement">Backtalk speech stopped. Usually, this will stop the current phrase that Backtalk is saying. Swipe right to continue.</string>
+  <string name="new_shortcut_gesture_stop_speech_announcement">SandFly speech stopped. Usually, this will stop the current phrase that SandFly is saying. Swipe right to continue.</string>
   <!-- The text to introduce how to copy text. This is spoken to the user. [CHAR_LIMIT=NONE]-->
   <string name="new_shortcut_gesture_copy_text_text">To copy text, double-tap with 3 fingers.</string>
   <!--
@@ -3351,32 +3351,32 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The text to introduce how to use reading controls. [CHAR_LIMIT=NONE]-->
   <string name="new_shortcut_gesture_reading_menu_text">To use the reading controls, swipe left or right with 3 fingers. You can also swipe up or down with 3 fingers.</string>
   <!-- A text to notify that gestures might not be correct because some gestures are customized. [CHAR_LIMIT=NONE]-->
-  <string name="new_shortcut_gesture_note">Note: You have customized some of your gestures, so this information may not be accurate. To review your gestures, go to Backtalk settings.</string>
+  <string name="new_shortcut_gesture_note">Note: You have customized some of your gestures, so this information may not be accurate. To review your gestures, go to SandFly settings.</string>
   <!-- For welcome page when user updates to R. -->
   <!-- The title of welcome to TalkBack on Android 11 page. [CHAR_LIMIT=NONE]-->
-  <string name="welcome_to_android11">Welcome to Backtalk on Android 11</string>
+  <string name="welcome_to_android11">Welcome to SandFly on Android 11</string>
   <!-- The text about what's new in TalkBack on Android 11. [CHAR_LIMIT=NONE]-->
-  <string name="welcome_to_android11_text">New gestures have been added to make Backtalk faster and easier to use.\n\nOn this screen, you can try the new gestures. You can review this information in Backtalk settings at any time.</string>
+  <string name="welcome_to_android11_text">New gestures have been added to make SandFly faster and easier to use.\n\nOn this screen, you can try the new gestures. You can review this information in SandFly settings at any time.</string>
   <!-- The title of notification that to notify TalkBack supports new gestures. [CHAR_LIMIT=NONE]-->
-  <string name="new_gesture_notification_title">New gestures in Backtalk</string>
+  <string name="new_gesture_notification_title">New gestures in SandFly</string>
   <!-- The content text of notification that to notify TalkBack supports new gestures. [CHAR_LIMIT=NONE]-->
-  <string name="new_gesture_notification_content">Tap to learn how to use Backtalk faster with new gestures.</string>
+  <string name="new_gesture_notification_content">Tap to learn how to use SandFly faster with new gestures.</string>
   <!-- Announces when user dump the node tree log. This is spoken to the user. [CHAR_LIMIT=NONE]-->
   <string name="dump_node_tree_description">Node tree has been printed to logs.</string>
   <!-- The hint description provided to users to report gesture issues. [CHAR_LIMIT=NONE]-->
   <string name="report_gesture_description">Here are gestures performed recently, please report which gesture is wrong and what is expected.</string>
   <!-- For TalkBack 16.0 onboarding. -->
   <!-- The first item of the welcome to the updated TalkBack page. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to Backtalk settings > Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
+  <string name="update_welcome_text_content">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings > Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
   <!-- The first item of the welcome to the updated TalkBack page for TTS. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content_tts">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to Backtalk settings then Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
+  <string name="update_welcome_text_content_tts">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings then Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
   <!-- The first item of the welcome to the updated TalkBack page. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content_with_link">Learn how to use your braille display with Backtalk.</string>
+  <string name="update_welcome_text_content_with_link">Learn how to use your braille display with SandFly.</string>
 
   <!-- The text about what's new in TalkBack 16.1. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_talkback_16.1">This Backtalk update introduces support for Describe screen in more languages and other quality improvements that make Backtalk easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in Backtalk settings > New features in Backtalk.</string>
+  <string name="update_welcome_talkback_16.1">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings > New features in SandFly.</string>
   <!-- The speech of the text about what's new in TalkBack 16.1. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_talkback_16.1_tts">This Backtalk update introduces support for Describe screen in more languages and other quality improvements that make Backtalk easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in Backtalk settings then New features in Backtalk.</string>
+  <string name="update_welcome_talkback_16.1_tts">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings then New features in SandFly.</string>
   <!-- The title of the Shortcut for describe screen page. [CHAR_LIMIT=NONE]-->
   <string name="describe_screen_and_qna_title">New languages for Describe screen and Ask Gemini</string>
   <!-- The content of the Shortcut for describe screen page. [CHAR_LIMIT=NONE]-->
@@ -3392,37 +3392,37 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of the Keyboard page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_title">Keyboard</string>
   <!-- The content of the Keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_content">Backtalk now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for Backtalk users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in Backtalk settings > Advanced settings > Keyboard shortcuts.</string>
+  <string name="keyboard_content">SandFly now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in SandFly settings > Advanced settings > Keyboard shortcuts.</string>
   <!-- The speech of the text about the Keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_content_tts">Backtalk now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for Backtalk users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in Backtalk settings then Advanced settings then Keyboard shortcuts.</string>
+  <string name="keyboard_content_tts">SandFly now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in SandFly settings then Advanced settings then Keyboard shortcuts.</string>
   <!-- The title of the Reduce delay page. [CHAR_LIMIT=NONE]-->
   <string name="reduce_delay_title">Reduce delay</string>
   <!-- The content of the Reduce delay page. [CHAR_LIMIT=NONE]-->
-  <string name="reduce_delay_content">You can now reduce Backtalk announcement delays for touch exploration and typing. To view these settings, go to Backtalk settings > Advanced settings > Reduce delay.</string>
+  <string name="reduce_delay_content">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings > Advanced settings > Reduce delay.</string>
   <!-- The speech of the text about the Reduce delay page. [CHAR_LIMIT=NONE]-->
-  <string name="reduce_delay_content_tts">You can now reduce Backtalk announcement delays for touch exploration and typing. To view these settings, go to Backtalk settings then Advanced settings then Reduce delay.</string>
+  <string name="reduce_delay_content_tts">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings then Advanced settings then Reduce delay.</string>
   <!-- The title of the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
   <string name="customize_braille_keyboard_improvements_title">Customize braille keyboard gestures</string>
   <!-- The content of the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
-  <string name="customize_braille_keyboard_improvements_content">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to Backtalk settings > Braille keyboard > Gestures.</string>
+  <string name="customize_braille_keyboard_improvements_content">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to SandFly settings > Braille keyboard > Gestures.</string>
   <!-- The speech of the text about the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
-  <string name="customize_braille_keyboard_improvements_content_tts">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to Backtalk settings then Braille keyboard then Gestures.</string>
+  <string name="customize_braille_keyboard_improvements_content_tts">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to SandFly settings then Braille keyboard then Gestures.</string>
   <!-- Click link to get more information about braille keyboard. [CHAR_LIMIT=NONE]-->
   <string name="learn_more_about_braille_keyboard">Learn more about braille keyboard</string>
   <!-- The title of the Other changes page. [CHAR_LIMIT=NONE]-->
   <string name="other_changes_title">Other changes</string>
   <!-- The content of the Other changes page. [CHAR_LIMIT=NONE]-->
-  <string name="other_changes_content">An on-screen message now helps you quickly turn off Backtalk if it\'s accidentally turned on. You can turn this off in Backtalk settings > Show instructions for turning off Backtalk.</string>
+  <string name="other_changes_content">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings > Show instructions for turning off SandFly.</string>
   <!-- The speech of the text of the Other changes page. [CHAR_LIMIT=NONE]-->
-  <string name="other_changes_content_tts">An on-screen message now helps you quickly turn off Backtalk if it\'s accidentally turned on. You can turn this off in Backtalk settings then Show instructions for turning off Backtalk.</string>
+  <string name="other_changes_content_tts">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings then Show instructions for turning off SandFly.</string>
   <!-- The speech of the text of the keymap page. [CHAR_LIMIT=NONE]-->
   <string name="keymap_changes_content">Classic keymap has been switched to default keymap, which includes more shortcuts.</string>
   <!-- The title of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
   <string name="announcing_text_formatting_title">Announcing text formatting</string>
   <!-- The header content of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
-  <string name="announcing_text_formatting_header">Backtalk can now announce changes in text formatting, like bold, italics, and text color. To get started:</string>
+  <string name="announcing_text_formatting_header">SandFly can now announce changes in text formatting, like bold, italics, and text color. To get started:</string>
   <!-- The first instruction of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
-  <string name="announcing_text_formatting_option1">Focus on the item with formatting, open the Backtalk menu, and select \"Describe text formatting\", or</string>
+  <string name="announcing_text_formatting_option1">Focus on the item with formatting, open the SandFly menu, and select \"Describe text formatting\", or</string>
   <!-- The second instruction of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
   <string name="announcing_text_formatting_option2">Add a reading control for text formatting that will turn on or off the announcement of formatting changes.</string>
   <!-- The middle content of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
@@ -3430,9 +3430,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The tail content of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
   <string name="announcing_text_formatting_tail">If you want to change how formatted text is announced, you can go to <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <!-- The path of the text formatting options in TalkBack Settings.  [CHAR_LIMIT=NONE]-->
-  <string name="text_formatting_options_settings_path">Backtalk settings > Verbosity > Text formatting options</string>
+  <string name="text_formatting_options_settings_path">SandFly settings > Verbosity > Text formatting options</string>
   <!-- The speech of the path of the text formatting options in TalkBack Settings.  [CHAR_LIMIT=NONE]-->
-  <string name="text_formatting_options_settings_path_tts">Backtalk settings then Verbosity then Text formatting options</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly settings then Verbosity then Text formatting options</string>
   <!-- An example to test announcing text formatting feature. [CHAR_LIMIT=NONE]-->
   <string name="announcing_text_formatiing_sample"><![CDATA[This text is in <b>bold</b>, a confident shout,
 <br>While this is <u>underlined</u>, a whisper, no doubt.<br>
@@ -3445,9 +3445,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
 <br>Colors can splash, a vibrant display,
 <br>From <font color="#db372d">fiery red</font> to <font color="#128937">verdant green\'s</font> gentle sway.]]></string>
   <!-- The text about what's new in TalkBack 16.2. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_talkback_16.2">This Backtalk update introduces a new \"Enhanced keymap\" for physical keyboards, support for text formatting announcements, and a redesigned settings layout, along with other improvements to make Backtalk easier to use.\n\nYou will learn more about these changes in the next few screens.\n\nYou can review this information later in Backtalk settings > New features in Backtalk.</string>
+  <string name="update_welcome_talkback_16.2">This SandFly update introduces a new \"Enhanced keymap\" for physical keyboards, support for text formatting announcements, and a redesigned settings layout, along with other improvements to make SandFly easier to use.\n\nYou will learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings > New features in SandFly.</string>
   <!-- The sppech about what's new in TalkBack 16.2. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_talkback_16.2_tts">This Backtalk update introduces a new \"Enhanced keymap\" for physical keyboards, support for text formatting announcements, and a redesigned settings layout, along with other improvements to make Backtalk easier to use.\n\nYou will learn more about these changes in the next few screens.\n\nYou can review this information later in Backtalk settings then New features in Backtalk.</string>
+  <string name="update_welcome_talkback_16.2_tts">This SandFly update introduces a new \"Enhanced keymap\" for physical keyboards, support for text formatting announcements, and a redesigned settings layout, along with other improvements to make SandFly easier to use.\n\nYou will learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings then New features in SandFly.</string>
   <!-- The title about new settings layout page. [CHAR_LIMIT=NONE]-->
   <string name="new_settings_layout_title">New settings layout</string>
   <!-- The text about new settings layout page. [CHAR_LIMIT=NONE]-->
@@ -3459,54 +3459,54 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title about enhanced keymap for keyboard page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_enhanced_keymap_title">Keyboard: Enhanced keymap</string>
   <!-- The text about enhanced keymap for keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_enhanced_keymap_text">Backtalk now has an "Enhanced keymap" for physical keyboards, featuring a variety of new commands and shortcuts. This enhancement includes a \"browse mode\" for more efficient web navigation, streamlining navigation and interaction for Backtalk users who rely on physical keyboards. You can switch to the \"Enhanced keymap\" in <xliff:g id="settings_path">%1$s</xliff:g>.\n\nIf you use a Braille display, you can also use new browse mode shortcuts to traverse through content directly from your Braille display. Some Braille display shortcuts were changed to accommodate this change. You can see a list of all Braille display shortcuts in <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly now has an "Enhanced keymap" for physical keyboards, featuring a variety of new commands and shortcuts. This enhancement includes a \"browse mode\" for more efficient web navigation, streamlining navigation and interaction for SandFly users who rely on physical keyboards. You can switch to the \"Enhanced keymap\" in <xliff:g id="settings_path">%1$s</xliff:g>.\n\nIf you use a Braille display, you can also use new browse mode shortcuts to traverse through content directly from your Braille display. Some Braille display shortcuts were changed to accommodate this change. You can see a list of all Braille display shortcuts in <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <!-- The path of keyboard shortcuts in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_shortcuts_link">Backtalk settings > Keyboard shortcuts</string>
+  <string name="keyboard_shortcuts_link">SandFly settings > Keyboard shortcuts</string>
   <!-- The speech of the path of keyboard shortcuts in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_shortcuts_link_tts">Backtalk settings then Keyboard shortcuts</string>
+  <string name="keyboard_shortcuts_link_tts">SandFly settings then Keyboard shortcuts</string>
   <!-- The text of braille display settings. [CHAR_LIMIT=NONE]-->
   <string name="braille_display_settings_link">Braille display settings</string>
   <!-- The title about smart browse mode for keyboard page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_smart_browse_mode_title">Keyboard: Smart browse mode</string>
   <!-- The text about smart browse mode for keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_smart_browse_mode_text">Backtalk smart browse mode turns off browse mode on an edit field to help you type with a physical keyboard when you browse the web. It then turns it back on when you jump to a non-edit field on the web so that you can continue browsing efficiently. You can turn \"Smart browse mode\" on or off in <xliff:g id="settings_path">%1$s</xliff:g>.</string>
+  <string name="keyboard_smart_browse_mode_text">SandFly smart browse mode turns off browse mode on an edit field to help you type with a physical keyboard when you browse the web. It then turns it back on when you jump to a non-edit field on the web so that you can continue browsing efficiently. You can turn \"Smart browse mode\" on or off in <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <!-- The path of advanced settings in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="advanced_settings_link">Backtalk settings > Advanced settings</string>
+  <string name="advanced_settings_link">SandFly settings > Advanced settings</string>
   <!-- The speech of the path of advanced settings  in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="advanced_settings_link_tts">Backtalk settings then Advanced settings</string>
+  <string name="advanced_settings_link_tts">SandFly settings then Advanced settings</string>
   <!-- The title about keyboard tutorial page. [CHAR_LIMIT=NONE]-->
   <string name="keyboard_tutorial_title">Keyboard tutorial</string>
   <!-- The text about keyboard tutorial page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_tutorial_text">Backtalk now includes a Keyboard Tutorial designed to help you learn the keyboard shortcuts and commands for the Enhanced keymap when using a physical keyboard. To access the tutorial, navigate to: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
+  <string name="keyboard_tutorial_text">SandFly now includes a Keyboard Tutorial designed to help you learn the keyboard shortcuts and commands for the Enhanced keymap when using a physical keyboard. To access the tutorial, navigate to: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <!-- The path of TalkBack tutorial in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="tutorial_link">Backtalk settings > Backtalk tutorial</string>
+  <string name="tutorial_link">SandFly settings > SandFly tutorial</string>
   <!-- The speech of the path of TalkBack tutorial in TalkBack Settings. [CHAR_LIMIT=NONE]-->
-  <string name="tutorial_link_tts">Backtalk settings then Backtalk tutorial</string>
+  <string name="tutorial_link_tts">SandFly settings then SandFly tutorial</string>
 
   <!-- For tutorial. -->
   <!-- An item in settings page to explain how to use TalkBack. [CHAR_LIMIT=25]-->
   <string name="tutorial_entry_point_title">Tutorial</string>
   <!-- For welcome page in tutorial. -->
   <!-- The title of welcoming to use TalkBack. [CHAR_LIMIT=NONE]-->
-  <string name="welcome_to_talkback_title">Welcome to Backtalk</string>
+  <string name="welcome_to_talkback_title">Welcome to SandFly</string>
   <!-- The title of TalkBack is on. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_is_on">Backtalk is on</string>
+  <string name="talkback_is_on">SandFly is on</string>
   <!-- The description of TalkBack is on. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_turn_off_description">Backtalk reads content on your screen aloud and changes how navigation works on your device. To turn it off, tap “Turn off Backtalk” 2 times.</string>
+  <string name="talkback_turn_off_description">SandFly reads content on your screen aloud and changes how navigation works on your device. To turn it off, tap “Turn off SandFly” 2 times.</string>
   <!-- The text of TalkBack exit button. [CHAR_LIMIT=NONE]-->
-  <string name="turn_off_talkback">Turn off Backtalk</string>
+  <string name="turn_off_talkback">Turn off SandFly</string>
   <!-- The text of TalkBack exit button that taps again to turn off TalkBack. [CHAR_LIMIT=NONE]-->
   <string name="tap_again_to_turn_off">Tap again to turn off</string>
   <!-- The description of TalkBack is on with both touch screen and pointer. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_turn_off_description_pointer_and_touch">Backtalk reads content on your screen aloud and changes how navigation works on your device. To turn it off, select \"Turn off Backtalk\" or tap it 2 times.</string>
+  <string name="talkback_turn_off_description_pointer_and_touch">SandFly reads content on your screen aloud and changes how navigation works on your device. To turn it off, select \"Turn off SandFly\" or tap it 2 times.</string>
 
   <!--
   Source: The text of introducing TalkBack.
   Description: In RTL language, "right" and "left" should be translated reverse. [CHAR_LIMIT=NONE]
   -->
-  <string name="welcome_to_talkback_text">Backtalk provides spoken feedback so that you can use your device without looking at the screen. Backtalk can be helpful for people who have difficulty seeing the screen. \n\nIf you want to quickly turn Backtalk on or off using your volume keys, you can set up a shortcut in Backtalk settings > Backtalk shortcut.\n\nWhen Backtalk is on, the focused item on the screen is spoken out loud.\n\nSwiping right will move to the next item, and swiping left will move to the previous item.\n\nSwipe right now to find the next button.</string>
+  <string name="welcome_to_talkback_text">SandFly provides spoken feedback so that you can use your device without looking at the screen. SandFly can be helpful for people who have difficulty seeing the screen. \n\nIf you want to quickly turn SandFly on or off using your volume keys, you can set up a shortcut in SandFly settings > SandFly shortcut.\n\nWhen SandFly is on, the focused item on the screen is spoken out loud.\n\nSwiping right will move to the next item, and swiping left will move to the previous item.\n\nSwipe right now to find the next button.</string>
   <!-- Source: The text of introducing TalkBack for TTS span. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 943803475813273517]-->
-  <string name="welcome_to_talkback_text_tts">Backtalk provides spoken feedback so that you can use your device without looking at the screen. Backtalk can be helpful for people who have difficulty seeing the screen. \n\nIf you want to quickly turn Backtalk on or off using your volume keys, you can set up a shortcut in Backtalk settings then Backtalk shortcut.\n\nWhen Backtalk is on, the focused item on the screen is spoken out loud.\n\nSwiping right will move to the next item, and swiping left will move to the previous item.\n\nSwipe right now to find the next button.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly provides spoken feedback so that you can use your device without looking at the screen. SandFly can be helpful for people who have difficulty seeing the screen. \n\nIf you want to quickly turn SandFly on or off using your volume keys, you can set up a shortcut in SandFly settings then SandFly shortcut.\n\nWhen SandFly is on, the focused item on the screen is spoken out loud.\n\nSwiping right will move to the next item, and swiping left will move to the previous item.\n\nSwipe right now to find the next button.</string>
   <!-- The idle announcement talkback tutorial welcome page. [CHAR_LIMIT=NONE] -->
   <string name="welcome_to_talkback_page_idle_announcement">Swipe right now to find the next button</string>
   <!-- For touch explore page in tutorial. -->
@@ -3527,7 +3527,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of system gestures page. [CHAR_LIMIT=NONE]-->
   <string name="system_gestures_title">Add 1 finger to system gestures</string>
   <!-- The text to introduce some useful gestures in TalkBack. [CHAR_LIMIT=NONE]-->
-  <string name="system_gestures_text">This means when using Backtalk, you can go to the home screen by swiping up from the bottom with 2 fingers instead of 1.\n\nTrying these gestures now will close the tutorial. You may want to wait until you have completed the tutorial.</string>
+  <string name="system_gestures_text">This means when using SandFly, you can go to the home screen by swiping up from the bottom with 2 fingers instead of 1.\n\nTrying these gestures now will close the tutorial. You may want to wait until you have completed the tutorial.</string>
   <!-- The text to explain how to go Home via gesture. [CHAR_LIMIT=NONE]-->
   <string name="system_gestures_home_text">To go to your home screen, swipe up from the bottom of your screen with 2 fingers.</string>
   <!-- The text to explain how to go to the recent apps via gesture. [CHAR_LIMIT=NONE]-->
@@ -3544,7 +3544,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of adjusting volume page. [CHAR_LIMIT=NONE]-->
   <string name="adjusting_volume_title">Adjust the volume</string>
   <!-- The head text introduce TalkBack how to adjust volume. [CHAR_LIMIT=NONE]-->
-  <string name="adjusting_volume_head">The volume for Backtalk speech is called the accessibility volume. It\'s adjusted separately from the media volume.\n\nTo adjust the accessibility volume:</string>
+  <string name="adjusting_volume_head">The volume for SandFly speech is called the accessibility volume. It\'s adjusted separately from the media volume.\n\nTo adjust the accessibility volume:</string>
   <!-- The first instruction text introduce TalkBack how to adjust volume append after the head text. [CHAR_LIMIT=NONE]-->
   <string name="adjusting_volume_first_instruction">Hold 1 finger on the screen</string>
   <!-- The second instruction text introduce TalkBack how to adjust volume append after the first instruction. [CHAR_LIMIT=NONE]-->
@@ -3556,17 +3556,17 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of menus page. [CHAR_LIMIT=NONE]-->
   <string name="menus_title">Use menus and controls</string>
   <!-- The text to introduce TalkBack menu and how to open it via multi-fingers gestures. [CHAR_LIMIT=NONE]-->
-  <string name="menus_talkback_menu_text">The Backtalk menu includes settings and controls that you may need often.\n\nOpen the Backtalk menu now by tapping the screen with 3 fingers.</string>
+  <string name="menus_talkback_menu_text">The SandFly menu includes settings and controls that you may need often.\n\nOpen the SandFly menu now by tapping the screen with 3 fingers.</string>
   <!-- The text to introduce TalkBack menu and how to open it via single finger gestures. [CHAR_LIMIT=NONE]-->
-  <string name="menus_talkback_menu_text_pre_r">The Backtalk menu includes settings and controls that you may need often.\n\nOpen the Backtalk menu now by swiping down then right.</string>
+  <string name="menus_talkback_menu_text_pre_r">The SandFly menu includes settings and controls that you may need often.\n\nOpen the SandFly menu now by swiping down then right.</string>
   <!-- The text to introduce how to adjust reading settings quickly via multi-fingers gestures. [CHAR_LIMIT=NONE]-->
-  <string name="menus_selector_text">These shortcuts can help you quickly change settings, like switching your navigation from characters to words or changing Backtalk\'s speech rate.\n\nTo quickly change your reading controls, swipe left with 3 fingers or swipe right with 3 fingers.\n\nYou can customize the Backtalk menu and your reading controls later in Backtalk settings.</string>
+  <string name="menus_selector_text">These shortcuts can help you quickly change settings, like switching your navigation from characters to words or changing SandFly\'s speech rate.\n\nTo quickly change your reading controls, swipe left with 3 fingers or swipe right with 3 fingers.\n\nYou can customize the SandFly menu and your reading controls later in SandFly settings.</string>
   <!-- The text to introduce how to adjust reading settings quickly via single finger gestures. [CHAR_LIMIT=NONE]-->
-  <string name="menus_selector_text_pre_r">These shortcuts can help you quickly change settings, like switching your navigation from characters to words or changing Backtalk\'s speech rate.\n\nTo quickly change your reading controls, swipe down and then back up.\n\nYou can customize the Backtalk menu and your reading controls later in Backtalk settings.</string>
+  <string name="menus_selector_text_pre_r">These shortcuts can help you quickly change settings, like switching your navigation from characters to words or changing SandFly\'s speech rate.\n\nTo quickly change your reading controls, swipe down and then back up.\n\nYou can customize the SandFly menu and your reading controls later in SandFly settings.</string>
   <!-- The title of all set page. [CHAR_LIMIT=NONE]-->
   <string name="all_set_title">All set!</string>
   <!-- The text to notify user tutorial is finished. [CHAR_LIMIT=NONE]-->
-  <string name="all_set_text">You are ready to use Backtalk.\n\nKeep learning about other topics now, or review this info anytime in Backtalk settings.</string>
+  <string name="all_set_text">You are ready to use SandFly.\n\nKeep learning about other topics now, or review this info anytime in SandFly settings.</string>
   <!-- For tutorial index page. -->
   <!-- The title of talkback tutorial. [CHAR_LIMIT=NONE] -->
   <string name="talkback_tutorial_title" translatable="false">@string/title_pref_category_tutorial</string>
@@ -3574,7 +3574,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   Source: The description on the tutorial index page.
   Description: In RTL language, "right" and "left" should be translated reverse. [CHAR_LIMIT=NONE]
   -->
-  <string name="talkback_tutorial_text">Swipe right to select a topic. For the best experience, turn on Backtalk before getting started.</string>
+  <string name="talkback_tutorial_text">Swipe right to select a topic. For the best experience, turn on SandFly before getting started.</string>
   <!-- The text of basic navigation on the index page. [CHAR_LIMIT=NONE]-->
   <string name="basic_navigation_link_text">Basic navigation</string>
   <!-- The subtext of basic navigation on the index page. [CHAR_LIMIT=NONE]-->
@@ -3596,7 +3596,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The text of voice commands on the index page. [CHAR_LIMIT=NONE]-->
   <string name="voice_commands_link_text">Voice commands</string>
   <!-- The subtext of voice commands on the index page. [CHAR_LIMIT=NONE]-->
-  <string name="voice_commands_link_subtext">Control Backtalk with your voice</string>
+  <string name="voice_commands_link_subtext">Control SandFly with your voice</string>
   <!-- The text of "Find on screen" on the index page. [CHAR_LIMIT=NONE]-->
   <string name="screen_search_link_text">Find on screen</string>
   <!-- The subtext of "Find on screen" search on the index page. [CHAR_LIMIT=NONE]-->
@@ -3610,10 +3610,10 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The subtext of practice gestures on the index page. [CHAR_LIMIT=NONE]-->
   <string name="practice_gestures_link_subtext">Try different gestures to learn what they do</string>
   <!-- The subtext of help and feedback on the index page. [CHAR_LIMIT=NONE]-->
-  <string name="help_and_feedback_link_subtext">Learn more about Backtalk and send feedback</string>
+  <string name="help_and_feedback_link_subtext">Learn more about SandFly and send feedback</string>
 
   <!-- The title of the keyboard tutorial choose tutorial page. [CHAR_LIMIT=NONE]-->
-  <string name="choose_tutorial_title">Choose how you would like to interact with Backtalk</string>
+  <string name="choose_tutorial_title">Choose how you would like to interact with SandFly</string>
   <!-- The button of the touch tutorial. [CHAR_LIMIT=NONE]-->
   <string name="touch_tutorial_button">Touch tutorial</string>
   <!-- The button of the keyboard tutorial. [CHAR_LIMIT=NONE]-->
@@ -3636,15 +3636,15 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The description about how to type text. [CHAR_LIMIT=NONE]-->
   <string name="typing_text_text">Move your finger across the keyboard. When you hear the letter you want to type, lift your finger.\n\nTry activating the text box below and type your name.</string>
   <!-- The description about how to type with braille keyboard. [CHAR_LIMIT=NONE]-->
-  <string name="typing_text_with_braille_keyboard_text">You can also type with the braille keyboard. Find it in Backtalk settings.</string>
+  <string name="typing_text_with_braille_keyboard_text">You can also type with the braille keyboard. Find it in SandFly settings.</string>
   <!-- The sub title of other ways to type in typing text page. [CHAR_LIMIT=NONE]-->
   <string name="other_ways_to_type_title">Other ways to type</string>
   <!-- The description of other ways to type in typing text page. [CHAR_LIMIT=NONE]-->
-  <string name="other_ways_to_type_text">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter.</string>
+  <string name="other_ways_to_type_text">There are other ways to type in SandFly. For example, you can use double tap to enter a letter.</string>
   <!-- The description of other ways to type in typing text page. [CHAR_LIMIT=NONE]-->
-  <string name="basic_other_ways_to_type_text">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings > On-screen keyboard > Typing method.</string>
+  <string name="basic_other_ways_to_type_text">There are other ways to type in SandFly. For example, you can use double tap to enter a letter. You can change this later in SandFly settings > On-screen keyboard > Typing method.</string>
   <!-- Source: The text of introducing TalkBack for TTS span. [CHAR_LIMIT=NONE] [BACKUP_MESSAGE_ID: 380750154623317254]-->
-  <string name="basic_other_ways_to_type_text_tts">There are other ways to type in Backtalk. For example, you can use double tap to enter a letter. You can change this later in Backtalk settings then On-screen keyboard then Typing method.</string>
+  <string name="basic_other_ways_to_type_text_tts">There are other ways to type in SandFly. For example, you can use double tap to enter a letter. You can change this later in SandFly settings then On-screen keyboard then Typing method.</string>
   <!-- The text of change typing preference button in typing text page. [CHAR_LIMIT=NONE]-->
   <string name="change_typing_preference_text">Change typing preference</string>
   <!-- The title of moving cursor page. [CHAR_LIMIT=NONE]-->
@@ -3652,13 +3652,13 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The description about how to move cursor. [CHAR_LIMIT=NONE]-->
   <string name="moving_cursor_text">When you have activated a text box, you can move the cursor between letters by swiping up or down.\n\nTry it in the text box below.</string>
   <!-- The text in edit box to try some editing actions, like copy and paste. [CHAR_LIMIT=NONE]-->
-  <string name="edit_box_text">Welcome to Backtalk</string>
+  <string name="edit_box_text">Welcome to SandFly</string>
   <!-- The title of selecting text from edit box. [CHAR_LIMIT=NONE]-->
   <string name="selecting_text_title">Selecting text</string>
   <!-- The description about how to select the text via gesture. [CHAR_LIMIT=NONE]-->
   <string name="selecting_text_text">In a text box, move the cursor to the beginning of the text you want to select.\n\nDouble-tap and hold with 2 fingers to start selection mode. Then move the cursor to the end of the text. Double-tap and hold with 2 fingers again to end selection mode.\n\nTry to select the word \"Welcome\" in the text box below.</string>
   <!-- The description about how to select the text via gesture. [CHAR_LIMIT=NONE]-->
-  <string name="selecting_text_text_pre_r">In a text box, move the cursor to the beginning of the text you want to select.\n\nSwipe down and then right to open the Backtalk menu. Double-tap actions and then start selection mode. Move the cursor to the end of the text.\n\nOpen the Backtalk menu again, then double-tap actions to end selection mode.\n\nTry to select the word \"Welcome\" in the text box below.</string>
+  <string name="selecting_text_text_pre_r">In a text box, move the cursor to the beginning of the text you want to select.\n\nSwipe down and then right to open the SandFly menu. Double-tap actions and then start selection mode. Move the cursor to the end of the text.\n\nOpen the SandFly menu again, then double-tap actions to end selection mode.\n\nTry to select the word \"Welcome\" in the text box below.</string>
   <!-- The title of coping, cutting and pasting text. [CHAR_LIMIT=NONE]-->
   <string name="copy_cut_paste_title">Copy, cut, and paste</string>
   <!-- The description about how to copy text. [CHAR_LIMIT=NONE]-->
@@ -3666,9 +3666,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The description about how to cut or paste text. [CHAR_LIMIT=NONE]-->
   <string name="cut_paste_text">To cut text, double-tap and hold with 3 fingers.\n\nTo paste text, triple-tap with 3 fingers.\n\nTry to paste a word in the text box below.</string>
   <!-- The description about how to copy text. [CHAR_LIMIT=NONE]-->
-  <string name="copy_text_pre_r">After selecting text, you can copy it in the Backtalk menu. Swipe down and then right to open the Backtalk menu. Double-tap actions and then copy.\n\nTry to copy a word in the text box below.</string>
+  <string name="copy_text_pre_r">After selecting text, you can copy it in the SandFly menu. Swipe down and then right to open the SandFly menu. Double-tap actions and then copy.\n\nTry to copy a word in the text box below.</string>
   <!-- The description about how to cut or paste text. [CHAR_LIMIT=NONE]-->
-  <string name="cut_paste_text_pre_r">To cut or paste text, open the Backtalk menu and double-tap actions.\n\nTry to paste a word in the text box below.</string>
+  <string name="cut_paste_text_pre_r">To cut or paste text, open the SandFly menu and double-tap actions.\n\nTry to paste a word in the text box below.</string>
   <!-- The text in edit box to give a hint to the user. [CHAR_LIMIT=140]-->
   <string name="edit_box_hint_paste_text">Paste text here</string>
   <!-- The title of typo correction tutorial text. [CHAR_LIMIT=NONE]-->
@@ -3682,7 +3682,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The content of typo correction tutorial text for supported locale but none English for pre R. [CHAR_LIMIT=NONE]-->
   <string name="typo_correction_text_supported_but_not_english_pre_r">You can use proofreading to check the spelling or grammar within a text box.\n\nTo try it, focus on the text box below and type a misspelled word. After focusing, swipe down and then up until you find \"Proofread\".</string>
   <!-- The content of typo correction edit box typos example. [CHAR_LIMIT=NONE]-->
-  <string name="typo_correction_typo_example" translatable="false">Wellcome too Backtalk.</string>
+  <string name="typo_correction_typo_example" translatable="false">Wellcome too SandFly.</string>
   <!-- The content of typo correction edit box hint. [CHAR_LIMIT=NONE]-->
   <string name="typo_correction_editbox_hint">Type here</string>
 
@@ -3786,13 +3786,13 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of voice commands page. [CHAR_LIMIT=NONE] -->
   <string name="voice_commands_title">Voice commands</string>
   <!-- The description about how to use voice command. [CHAR_LIMIT=NONE]-->
-  <string name="voice_commands_text">You can use your voice to control Backtalk quickly.\n\nFor example, say a command to change navigation, jump to the next heading, copy text, and more.\n\nTo try it now, swipe right and then up.</string>
+  <string name="voice_commands_text">You can use your voice to control SandFly quickly.\n\nFor example, say a command to change navigation, jump to the next heading, copy text, and more.\n\nTo try it now, swipe right and then up.</string>
 
   <!-- For screen search pages in tutorial. -->
   <!-- The title of using screen search page. [CHAR_LIMIT=NONE] -->
   <string name="using_screen_search_title">Using screen search</string>
   <!-- The description about how to use screen search. [CHAR_LIMIT=NONE]-->
-  <string name="using_screen_search_text">The screen search feature allows you to look for specific content on the screen.\n\nTo try it, open the Backtalk menu by tapping with 3 fingers, and find “screen search” in the menu. Type in a keyword, like “next”, to find items with that text on the screen.\n\nTry searching for “next” now to find the next button.</string>
+  <string name="using_screen_search_text">The screen search feature allows you to look for specific content on the screen.\n\nTo try it, open the SandFly menu by tapping with 3 fingers, and find “screen search” in the menu. Type in a keyword, like “next”, to find items with that text on the screen.\n\nTry searching for “next” now to find the next button.</string>
   <!-- The title of navigate by screen search page. [CHAR_LIMIT=NONE] -->
   <string name="screen_search_navigation_title">Navigate by screen search</string>
   <!-- The description about how to use screen search navigation. [CHAR_LIMIT=NONE]-->
@@ -3836,7 +3836,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of the "Checking notifications" page. [CHAR_LIMIT=NONE] -->
   <string name="checking_notifications_title">Checking notifications</string>
   <!-- The head description of the "Checking notifications" page. [CHAR_LIMIT=NONE] -->
-  <string name="checking_notifications_text_head">Backtalk will announce when you get a new notification.</string>
+  <string name="checking_notifications_text_head">SandFly will announce when you get a new notification.</string>
   <!-- The first bullet point description of the "Checking notifications" page. [CHAR_LIMIT=NONE] -->
   <string name="checking_notifications_step_one">First, swipe down with 4 fingers to access the notification.</string>
   <!-- The Second bullet point description of the "Checking notifications" page. [CHAR_LIMIT=NONE] -->
@@ -3852,13 +3852,13 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- General image description tutorial playground page title. [CHAR_LIMIT=NONE] -->
   <string name="image_description_playground_title">Try getting image descriptions</string>
   <!-- General image description tutorial playground page content one. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_playground_content_one">When you’re focused on an image, open the Backtalk menu and select “Describe image”.\n\nThere’s one photo below. Try getting a description for it.</string>
+  <string name="image_description_playground_content_one">When you’re focused on an image, open the SandFly menu and select “Describe image”.\n\nThere’s one photo below. Try getting a description for it.</string>
   <!-- General image description tutorial playground page content two. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_playground_content_two">You can change image description settings anytime in Backtalk settings > Automatic descriptions.</string>
+  <string name="image_description_playground_content_two">You can change image description settings anytime in SandFly settings > Automatic descriptions.</string>
   <!-- General image description tutorial playground page content two for TTS. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_playground_content_two_tts">You can change image description settings anytime in Backtalk settings then Automatic descriptions.</string>
+  <string name="image_description_playground_content_two_tts">You can change image description settings anytime in SandFly settings then Automatic descriptions.</string>
   <!-- Image description tutorial playground image content description. [CHAR_LIMIT=NONE] -->
-  <string name="image_description_sample_image_content_description">Sample image; tap with 3 fingers to open the Backtalk menu and select \"Describe image\" to hear a description.</string>
+  <string name="image_description_sample_image_content_description">Sample image; tap with 3 fingers to open the SandFly menu and select \"Describe image\" to hear a description.</string>
 
   <!-- For practice gestures pages in tutorial. -->
   <!-- The title of practicing gesture page. [CHAR_LIMIT=NONE]-->
@@ -3868,11 +3868,11 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of practicing gesture page. [CHAR_LIMIT=NONE]-->
   <string name="pref_gesture_set_key_title">Gesture set</string>
   <!-- The description about how to try gestures. [CHAR_LIMIT=NONE]-->
-  <string name="practice_gestures_text">Try any Backtalk gesture on this screen to hear what that gesture does.\n\nTap the screen with 2 fingers. Keep practicing by tapping once, twice, or three times with 2, 3, or 4 fingers.\n\nYou can also double-tap and hold with 2, 3, or 4 fingers.</string>
+  <string name="practice_gestures_text">Try any SandFly gesture on this screen to hear what that gesture does.\n\nTap the screen with 2 fingers. Keep practicing by tapping once, twice, or three times with 2, 3, or 4 fingers.\n\nYou can also double-tap and hold with 2, 3, or 4 fingers.</string>
   <!-- The description about how to try gestures. [CHAR_LIMIT=NONE]-->
-  <string name="practice_gestures_text_pre_r">Try any Backtalk gesture on this screen to hear what that gesture does.\n\nTry any gesture where two swipes form a right angle. For example, swipe down and then right, without lifting your finger in between.</string>
+  <string name="practice_gestures_text_pre_r">Try any SandFly gesture on this screen to hear what that gesture does.\n\nTry any gesture where two swipes form a right angle. For example, swipe down and then right, without lifting your finger in between.</string>
   <!-- The description about how to try keyboard shortcuts and gestures. [CHAR_LIMIT=NONE]-->
-  <string name="practice_keyboard_gestures_text">Press a physical keyboard key or key combination to hear what it does. Press Ctrl + W, or Escape to exit.\n\nYou can also practice Backtalk gestures here.</string>
+  <string name="practice_keyboard_gestures_text">Press a physical keyboard key or key combination to hear what it does. Press Ctrl + W, or Escape to exit.\n\nYou can also practice SandFly gestures here.</string>
   <!-- The text of the first button which lets users try jumping between controls in tutorial. [CHAR_LIMIT=NONE]-->
   <string name="button_1">Button 1</string>
   <!-- The text of the second button which lets users try jumping between controls in tutorial. [CHAR_LIMIT=NONE]-->
@@ -3884,9 +3884,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The text is shown on the Toast when the view, like button or link, is clicked. The toast is to notify users that they activate a button or a link. [CHAR_LIMIT=NONE]-->
   <string name="activated_view">Activated <xliff:g example="button">%1$s</xliff:g></string>
   <!-- Alert dialog title when the user starts the TalkBack tutorial but TalkBack is inactive. [CHAR_LIMIT=60] -->
-  <string name="talkback_inactive_title">Backtalk is off</string>
+  <string name="talkback_inactive_title">SandFly is off</string>
   <!-- Alert dialog warning message when the user starts the TalkBack tutorial but TalkBack is inactive. [CHAR_LIMIT=NONE] -->
-  <string name="talkback_inactive_warning_message">This tutorial works best with Backtalk on. You can make this change in Settings.\n\nIf you continue with Backtalk off, some of the tutorial may not work as intended.</string>
+  <string name="talkback_inactive_warning_message">This tutorial works best with SandFly on. You can make this change in Settings.\n\nIf you continue with SandFly off, some of the tutorial may not work as intended.</string>
   <!-- The checkbox text of the dialog to reject showing the dialog again. [CHAR_LIMIT=60]-->
   <string name="do_not_show_again_check_box">Do not show this again</string>
   <!-- The button when the user starts the TalkBack tutorial but TalkBack is inactive, tap it can keep reviewing talkback tutorial. [CHAR_LIMIT=30] -->
@@ -3900,15 +3900,15 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The button when the user starts the TalkBack tutorial but TalkBack is inactive, tap it cancel the dialog. [CHAR_LIMIT=30] -->
   <string name="talkback_inactive_not_now_button">Not now</string>
   <!-- Alert dialog message when the user starts the TalkBack practice gestures tutorial but TalkBack is inactive, user has to turn on talkback in advance. [CHAR_LIMIT=NONE] -->
-  <string name="talkback_inactive_message_practice_gestures">To practice gestures, first turn on Backtalk</string>
+  <string name="talkback_inactive_message_practice_gestures">To practice gestures, first turn on SandFly</string>
   <!-- Alert dialog message when the user starts the TalkBack image description tutorial but TalkBack is inactive, user has to turn on talkback in advance. [CHAR_LIMIT=NONE] -->
-  <string name="talkback_inactive_message_image_description">To try getting image descriptions, first turn on Backtalk</string>
+  <string name="talkback_inactive_message_image_description">To try getting image descriptions, first turn on SandFly</string>
 
   <!-- The button when the user starts the TalkBack tutorial but TalkBack is inactive, tap it to close tutorial. [CHAR_LIMIT=30] -->
   <string name="talkback_inactive_close_tutorial_button">Close tutorial</string>
 
   <!-- Welcome page items for Wear. [CHAR_LIMIT=NONE] -->
-  <string name="wear_training_welcome_paragraph">When Backtalk is on, the focused item on the screen is spoken out loud.\n\nSwiping right moves to the next item. Swiping left moves to the previous item.\n\nSwipe right now until you find the next button.</string>
+  <string name="wear_training_welcome_paragraph">When SandFly is on, the focused item on the screen is spoken out loud.\n\nSwiping right moves to the next item. Swiping left moves to the previous item.\n\nSwipe right now until you find the next button.</string>
 
   <!-- Training page for wear-->
   <!-- The content of Scroll page for Wear. [CHAR_LIMIT=NONE] -->
@@ -3930,7 +3930,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The content of Volume down page for Wear. [CHAR_LIMIT=150] -->
   <string name="wear_training_volume_down_text">Swipe right and then down</string>
     <!-- The title of End of tutorial page for Wear. [CHAR_LIMIT=90] -->
-  <string name="wear_training_open_talkback_menu_title">Open Backtalk menu</string>
+  <string name="wear_training_open_talkback_menu_title">Open SandFly menu</string>
   <!-- The content of End of tutorial page for Wear. [CHAR_LIMIT=150] -->
   <string name="wear_training_open_talkback_menu_text">To open settings and controls you may need often, swipe down and then right</string>
   <!-- The title of teaching how to use IME when TalkBack is on for Wear. [CHAR_LIMIT=90] -->
@@ -3948,15 +3948,15 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The content description of the button to practice typing for Wear. [CHAR_LIMIT=60] -->
   <string name="wear_training_typing_practice_button_content_description">Typing with keyboard</string>
   <!-- The title of End of tutorial page for Wear. [CHAR_LIMIT=180] -->
-  <string name="wear_training_end_tutorial_title">You\'re ready to start using Backtalk</string>
+  <string name="wear_training_end_tutorial_title">You\'re ready to start using SandFly</string>
 
   <!-- TalkBack updated notification -->
   <!-- The title of notification to notify users TalkBack has been updated. [CHAR_LIMIT=120]-->
-  <string name="talkback_updated_notification_title">Backtalk has been updated</string>
+  <string name="talkback_updated_notification_title">SandFly has been updated</string>
   <!-- The context of notification to notify users that TalkBack has been updated. [CHAR_LIMIT=150]-->
   <string name="talkback_updated_notification_content">Tap to find out more</string>
   <!-- The title for the What's new page. [CHAR_LIMIT=150] -->
-  <string name="wear_new_feature_page_title">Welcome to the updated Backtalk</string>
+  <string name="wear_new_feature_page_title">Welcome to the updated SandFly</string>
   <!-- The content for the What's new page. [CHAR_LIMIT=NONE] -->
   <string name="wear_new_feature_page_content">You\'ll notice some bug fixes and changes to how the focus moves</string>
   <!-- The content description for the action button in the What's new page. [CHAR_LIMIT=NONE] -->
@@ -4203,7 +4203,7 @@ Do not use any markdown in your response."</string>
   <!-- The button text of the dialog to confirm downloading of a module. [CHAR_LIMIT=NONE]-->
   <string name="confirm_download_positive_button_text">Download</string>
   <!-- The hint of rejecting the download of the module. [CHAR_LIMIT=NONE]-->
-  <string name="confirm_download_negative_button_hint">Backtalk can still describe text in images</string>
+  <string name="confirm_download_negative_button_hint">SandFly can still describe text in images</string>
   <!-- The hint to notify the icon-detection is downloading. [CHAR_LIMIT=NONE]-->
   <string name="downloading_icon_detection_hint">Downloading automatic icon descriptions</string>
   <!-- The hint to notify the icon-detection has been downloaded successfully. [CHAR_LIMIT=NONE]-->
@@ -4225,7 +4225,7 @@ Do not use any markdown in your response."</string>
   <!-- The title of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
   <string name="download_complete_notification_title">Download complete</string>
   <!-- The content text of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
-  <string name="download_complete_notification_content">You\'ll now hear automatic image and icon descriptions with Backtalk </string>
+  <string name="download_complete_notification_content">You\'ll now hear automatic image and icon descriptions with SandFly </string>
   <!-- The action of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
   <string name="download_complete_notification_action">Settings</string>
   <!-- The hint to notify the failure of downloading the module because storage error. [CHAR_LIMIT=NONE]-->
@@ -4245,7 +4245,7 @@ Do not use any markdown in your response."</string>
   <!-- The subtitle of the dialog to disable/enable of the icon-detection module. [CHAR_LIMIT=NONE]-->
   <string name="switch_auto_image_caption_dialog_subtitle">Downloaded</string>
   <!-- The subtext of the dialog to disable/enable of a module. [CHAR_LIMIT=NONE]-->
-  <string name="disable_auto_image_caption_dialog_subtext">You can still get descriptions for a selected image from the Backtalk menu</string>
+  <string name="disable_auto_image_caption_dialog_subtext">You can still get descriptions for a selected image from the SandFly menu</string>
   <!-- The button text of the dialog to accept to enable/disable of a module. [CHAR_LIMIT=NONE]-->
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <!-- The button text of the dialog to delete of a module. [CHAR_LIMIT=NONE]-->
@@ -4257,9 +4257,9 @@ Do not use any markdown in your response."</string>
   <!-- The title of the dialog to confirm the deletion of all image-captioning modules. [CHAR_LIMIT=NONE]-->
   <string name="delete_all_image_captioning_dialog_title">Delete automatic image &amp; icon descriptions?</string>
   <!-- The message of the dialog to confirm the deletion of a module. [CHAR_LIMIT=NONE]-->
-  <string name="delete_dialog_message">To get descriptions again later, you can download this feature from Backtalk settings</string>
+  <string name="delete_dialog_message">To get descriptions again later, you can download this feature from SandFly settings</string>
   <!-- The message of the dialog to confirm the deletion of all modules. [CHAR_LIMIT=NONE]-->
-  <string name="delete_all_dialog_message">This deletes automatic descriptions for both icons and images.\n\nTo get descriptions again later, you can download these features from Backtalk settings.</string>
+  <string name="delete_all_dialog_message">This deletes automatic descriptions for both icons and images.\n\nTo get descriptions again later, you can download these features from SandFly settings.</string>
   <!-- The button text of the dialog to accept a module deletion. [CHAR_LIMIT=NONE]-->
   <string name="delete_dialog_positive_button_text">Delete</string>
   <!-- The button text of the dialog to reject a module deletion. [CHAR_LIMIT=NONE]-->
@@ -4271,7 +4271,7 @@ Do not use any markdown in your response."</string>
   <!-- The hint of the image-description module has been deleted. [CHAR_LIMIT=NONE]-->
   <string name="delete_all_image_captioning_hint">Automatic image &amp; icon descriptions deleted</string>
   <!-- The title of the dialog to disable/enable of the Gemini support. [CHAR_LIMIT=NONE]-->
-  <string name="gemini_enable_dialog_title">Use Gemini in Backtalk</string>
+  <string name="gemini_enable_dialog_title">Use Gemini in SandFly</string>
   <!-- The message of the dialog to disable/enable of the Gemini support. [CHAR_LIMIT=NONE]-->
   <string name="gemini_disable_dialog_message">Screen understanding with Gemini</string>
   <!-- The subtext of the dialog to disable Gemini feature. [CHAR_LIMIT=NONE]-->
@@ -4280,7 +4280,7 @@ Do not use any markdown in your response."</string>
   <!-- The title of the dialog for updating AI services. [CHAR_LIMIT=NONE]-->
   <string name="ai_services_update_dialog_title">Update <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> app to describe images</string>
   <!-- The message of the dialog for updating AI services. [CHAR_LIMIT=NONE]-->
-  <string name="ai_services_update_dialog_message">To hear image descriptions, get the latest version of <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g>  from Google Play.\n\nOnce downloading is complete, come back to Backtalk settings and turn on automatic image descriptions again. </string>
+  <string name="ai_services_update_dialog_message">To hear image descriptions, get the latest version of <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g>  from Google Play.\n\nOnce downloading is complete, come back to SandFly settings and turn on automatic image descriptions again. </string>
   <!-- The confirm button for updating AI services. [CHAR_LIMIT=NONE]-->
   <string name="ai_services_update_dialog_button_text">Go to Google Play</string>
   <!-- The app name of AiCore. [CHAR_LIMIT=NONE]-->
@@ -4458,7 +4458,7 @@ Do not use any markdown in your response."</string>
   <!-- Smart Browse Mode toggle's title in the settings. [CHAR_LIMIT=60] -->
   <string name="title_smart_browse_mode">Smart browse mode</string>
   <!-- Smart Browse Mode toggle's summary in the settings. [CHAR_LIMIT=NONE] -->
-  <string name="summary_smart_browse_mode">Automatically turns browse mode on or off based on the item you\'re on. This syncs input focus with Backtalk focus.</string>
+  <string name="summary_smart_browse_mode">Automatically turns browse mode on or off based on the item you\'re on. This syncs input focus with SandFly focus.</string>
 
   <!-- Visual feedback for a new typing echo setting. Only displayed after the keyboard shortcut is pressed. [CHAR_LIMIT=100] -->
   <string name="typing_echo_change_visual_feedback">Physical keyboard echo: <xliff:g example="Characters" id="echoValue">%1$s</xliff:g></string>
@@ -4466,7 +4466,7 @@ Do not use any markdown in your response."</string>
 
   <!-- Speech bubble dialog strings. -->
   <!-- The title of the dialog to turn off TalkBack. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_turn_off_title">Turn off Backtalk?</string>
+  <string name="talkback_turn_off_title">Turn off SandFly?</string>
   <!-- The button text of the dialog to turn off TalkBack. [CHAR_LIMIT=NONE]-->
   <string name="talkback_turn_off_button">Turn off</string>
   <!-- The button text of the dialog to keep TalkBack on. [CHAR_LIMIT=NONE]-->
@@ -4477,9 +4477,9 @@ Do not use any markdown in your response."</string>
   <!-- Label for close. [CHAR_LIMIT=NONE] -->
   <string name="close_string">Close</string>
   <!-- TalkBack label. [CHAR_LIMIT=NONE]-->
-  <string name="talkback_label">Backtalk</string>
+  <string name="talkback_label">SandFly</string>
 
   <!-- Tip notification content for lock screen notifications. [CHAR_LIMIT=NONE] -->
-  <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \"Speak notifications when screen is off\" in Backtalk verbosity settings</string>
+  <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \"Speak notifications when screen is off\" in SandFly verbosity settings</string>
 
 </resources>

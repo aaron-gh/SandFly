@@ -212,7 +212,7 @@ object ScriptSources {
         connection.readTimeout = READ_TIMEOUT_MS
         connection.instanceFollowRedirects = false
         connection.setRequestProperty("Accept", accept)
-        connection.setRequestProperty("User-Agent", "Backtalk")
+        connection.setRequestProperty("User-Agent", "SandFly")
         val code = connection.responseCode
         if (code in 300..399) {
           val location = connection.getHeaderField("Location") ?: throw IOException("HTTP $code")

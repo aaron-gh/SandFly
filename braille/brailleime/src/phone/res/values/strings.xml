@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- User-facing name of the Soft Braille IME. [CHAR_LIMIT=50] -->
-  <string name="braille_ime_service_name">Backtalk Aaron braille keyboard</string>
+  <string name="braille_ime_service_name">SandFly braille keyboard</string>
   <!-- User-facing name of the Soft Braille IME when connecting to a braille display. [CHAR_LIMIT=60] -->
   <string name="braille_ime_bd_mode_name">Braille display input</string>
   <!-- Audial announcement that plays when switching to tabletop mode. [CHAR_LIMIT=200] -->
@@ -65,7 +65,7 @@
   <!-- The braille ime display name for multiple languages selected. %s is the currently using braille language name. [CHAR_LIMIT=130] -->
   <string name="multiple_languages_braille_ime_displayed_name">braille keyboard, %s</string>
   <!-- Caption to help confused people to know what the app is. [CHAR LIMIT=100] -->
-  <string name="input_view_caption">Backtalk braille keyboard - for help, visit g.co/help/braille</string>
+  <string name="input_view_caption">SandFly braille keyboard - for help, visit g.co/help/braille</string>
   <!-- Perform enter action: move to next field. [CHAR_LIMIT=50] -->
   <string name="perform_action_next">Next</string>
   <!-- Perform enter action: submitting. [CHAR_LIMIT=50] -->
@@ -291,21 +291,21 @@
 
   <!-- Use braille keyboard when TalkBack is off dialog. -->
   <!-- Title of use braille keyboard when TalkBack is off dialog. [CHAR_LIMIT=100] -->
-  <string name="talkback_off_dialog_title">Turn on Backtalk to use braille keyboard</string>
+  <string name="talkback_off_dialog_title">Turn on SandFly to use braille keyboard</string>
   <!-- Positive button of use braille keyboard when TalkBack is off dialog. [CHAR_LIMIT=100] -->
   <string name="talkback_off_dialog_positive_button">Turn on in accessibility settings</string>
 
   <!-- Use braille keyboard when TalkBack is suspended dialog. -->
   <!-- Title of use braille keyboard when TalkBack is suspended dialog. [CHAR_LIMIT=100] -->
-  <string name="talkback_suspend_dialog_title">Resume Backtalk to use braille keyboard</string>
+  <string name="talkback_suspend_dialog_title">Resume SandFly to use braille keyboard</string>
   <!-- Message of use braille keyboard when TalkBack is off/suspended dialog. [CHAR_LIMIT=200] -->
-  <string name="talkback_off_or_suspend_dialog_message">When Backtalk is on, you can tap your screen to enter braille symbols.</string>
+  <string name="talkback_off_or_suspend_dialog_message">When SandFly is on, you can tap your screen to enter braille symbols.</string>
 
   <!-- Custom braille keyboard when TalkBack is off dialog. -->
   <!-- Title of custom braille keyboard when TalkBack is off dialog. [CHAR_LIMIT=100] -->
-  <string name="talkback_off_custom_gestures_dialog_title">Turn on Backtalk to change gesture</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Turn on SandFly to change gesture</string>
   <!-- Message of custom braille keyboard when TalkBack is off dialog. [CHAR_LIMIT=200] -->
-  <string name="talkback_off_custom_gestures_dialog_message">Backtalk is off. Turn it on to change braille keyboard gestures.</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly is off. Turn it on to change braille keyboard gestures.</string>
   <!-- Positive button of custom braille keyboard when TalkBack is off dialog. [CHAR_LIMIT=100] -->
   <string name="talkback_off_custom_gestures_dialog_positive_button">Go to Settings</string>
 
@@ -343,7 +343,7 @@
   <!-- Title of change gestures dialog. [CHAR_LIMIT=100] -->
   <string name="change_gestures_dialog_message_title">How to change a gesture</string>
   <!-- Message of change gestures dialog. [CHAR_LIMIT=500] -->
-  <string name="change_gestures_dialog_message">On the next screen, braille keyboard will open, and you won\'t be able to use Backtalk gestures.\n\nWhen the braille keyboard opens, perform the gesture you want to use, or, to close braille keyboard and cancel the gesture change, swipe down with 2 fingers.\n\nSee available gestures\n</string>
+  <string name="change_gestures_dialog_message">On the next screen, braille keyboard will open, and you won\'t be able to use SandFly gestures.\n\nWhen the braille keyboard opens, perform the gesture you want to use, or, to close braille keyboard and cancel the gesture change, swipe down with 2 fingers.\n\nSee available gestures\n</string>
   <!-- Message of change gestures dialog with link. [CHAR_LIMIT=100] -->
   <string name="change_gestures_dialog_message_link">See available gestures</string>
   <!-- Checkbox of change gestures dialog. [CHAR_LIMIT=100] -->
@@ -372,7 +372,7 @@
   <!-- Tutorial title. [CHAR_LIMIT=100] -->
   <string name="braille_tutorial_title">Braille keyboard tutorial</string>
   <!-- Tutorial intro description. [CHAR_LIMIT=500] -->
-  <string name="tutorial_intro_description">With the braille keyboard, you can tap your screen to enter 6-dot braille.\n\nYou’re using Unified English Braille. To switch your typing language, go to Backtalk settings.\n\nTo type braille, you need to hold and use your phone differently.</string>
+  <string name="tutorial_intro_description">With the braille keyboard, you can tap your screen to enter 6-dot braille.\n\nYou’re using Unified English Braille. To switch your typing language, go to SandFly settings.\n\nTo type braille, you need to hold and use your phone differently.</string>
   <!-- Title of a tutorial button that goes forward to next step. [CHAR_LIMIT=50] -->
   <string name="next_step">Next</string>
   <!-- Title of a tutorial button. [CHAR_LIMIT=100] -->
@@ -380,9 +380,9 @@
   <!-- Title of a tutorial button that skips the tutorial and opens the braille keyboard. [CHAR_LIMIT=50] -->
   <string name="skip_tutorial">Skip tutorial</string>
   <!-- Step of hold six fingers. [CHAR_LIMIT=400] -->
-  <string name="hold_six_fingers_description">You won’t be able to use regular Backtalk gestures in the braille keyboard.\n\nTo get started, let’s set up the position of the 6 braille dots when you type.</string>
+  <string name="hold_six_fingers_description">You won’t be able to use regular SandFly gestures in the braille keyboard.\n\nTo get started, let’s set up the position of the 6 braille dots when you type.</string>
   <!-- Step of rotating to orientation landscape. [CHAR_LIMIT=400] -->
-  <string name="rotate_orientation_description_1">Starting now, you won’t be able to use regular Backtalk gestures. Backtalk isn’t available while using the braille keyboard.</string>
+  <string name="rotate_orientation_description_1">Starting now, you won’t be able to use regular SandFly gestures. SandFly isn’t available while using the braille keyboard.</string>
   <!-- Step of rotating to orientation landscape. [CHAR_LIMIT=400] -->
   <string name="rotate_orientation_description_2">To start, hold your phone like this, with the screen facing away from you.</string>
   <!-- Double tap to continue tutorial. [CHAR_LIMIT=100] -->
@@ -418,7 +418,7 @@
   <!-- Action of switching to next keyboard. [CHAR_LIMIT=40] -->
   <string name="result_swipe_down_3_fingers">NEXT KEYBOARD</string>
   <!-- Audial announcement that plays when in the rotate orientation state of tutorial. %1$s is a placeholder of another long announcement (See rotate_orientation_inactive_announcement). [CHAR LIMIT=2000] -->
-  <string name="rotate_orientation_announcement">Starting now, you won’t be able to use regular Backtalk gestures. Backtalk isn’t available while using the braille keyboard.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Starting now, you won’t be able to use regular SandFly gestures. SandFly isn’t available while using the braille keyboard.\n\n%1$s</string>
   <!-- Audial announcement that plays when user is inactive in the rotate orientation state of tutorial. [CHAR LIMIT=1000] -->
   <string name="rotate_orientation_inactive_announcement">First, turn your phone so the screen is facing away from you.\n\nNext, rotate the phone horizontally to landscape position. Your hands should grip the short ends of the phone. Your right hand should hold the end with the USB port. Rest your 3 middle fingers on the screen, and use your pinky and thumb to support the phone.\n\nWhen you’re ready, double tap the screen to continue.\n\nTo exit braille keyboard, swipe down toward the ground with 3 fingers. This switches back to your original keyboard.</string>
   <!-- Audial announcement that plays when in the rotate orientation continue state of tutorial. [CHAR LIMIT=1000] -->
@@ -450,7 +450,7 @@
   <!-- Audial announcement that plays when in the swipe up 3 fingers state of tutorial. [CHAR LIMIT=500] -->
   <string name="swipe_up_3_fingers_announcement">You can also type in tabletop mode by placing your phone flat on a table. To finish the tutorial, swipe up with 3 fingers, and find the finish tutorial option</string>
   <!-- Audial announcement that plays when users open the context menu. [CHAR LIMIT=1000] -->
-  <string name="open_context_menu_announcement">The options menu is open. Flip your phone back so it’s facing you and hold it normally. You can now use regular Backtalk gestures to navigate. Swipe right to see more options.</string>
+  <string name="open_context_menu_announcement">The options menu is open. Flip your phone back so it’s facing you and hold it normally. You can now use regular SandFly gestures to navigate. Swipe right to see more options.</string>
   <!-- Audial announcement that plays when in the hold six fingers state of tutorial. [CHAR LIMIT=500] -->
   <string name="hold_six_fingers_announcement">%s\nPlace your device flat on a table. Then, touch and hold the screen with the middle 3 fingers of each hand in a position that’s comfortable for you to type.</string>
   <!-- Audial announcement that plays when user is inactive in the hold six fingers state of tutorial. [CHAR LIMIT=500] -->
@@ -519,7 +519,7 @@
   <!-- Announced when no gesture is performed. [CHAR_LIMIT=100] -->
   <string name="custom_gesture_no_gesture">No gesture performed</string>
   <!-- Announced to try another gesture. [CHAR_LIMIT=200] -->
-  <string name="custom_gesture_try_another">Try another gesture. To see list of all available gestures, go to the Backtalk braille keyboard help center. <xliff:g id="cancel">%s</xliff:g></string>
+  <string name="custom_gesture_try_another">Try another gesture. To see list of all available gestures, go to the SandFly braille keyboard help center. <xliff:g id="cancel">%s</xliff:g></string>
   <!-- Announced when gestures didn't match. [CHAR_LIMIT=100] -->
   <string name="custom_gesture_no_match">Gestures didn\'t match</string>
   <!-- Announced to perform the gesture again. [CHAR_LIMIT=100] -->

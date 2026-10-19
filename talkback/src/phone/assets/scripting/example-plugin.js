@@ -3,7 +3,7 @@ export const manifest = {
   name: 'Example plugin',
   version: '1.0',
   author: 'Backtalk',
-  homepage: 'https://github.com/trypsynth/backtalk/blob/master/docs/scripting/examples/example-plugin.js',
+  homepage: 'https://github.com/aaron-gh/SandFly/blob/master/docs/scripting/examples/example-plugin.js',
   minApiVersion: 1,
   testedApiVersion: 1,
   description: 'Says the name of each app you switch to, and counts how often you open each one.',

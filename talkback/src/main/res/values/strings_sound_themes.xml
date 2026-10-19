@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title of the screen of sound themes: sets of sounds, vibrations and settings that replace Backtalk's own. [CHAR LIMIT=50] -->
+    <!-- Title of the screen of sound themes: sets of sounds, vibrations and settings that replace SandFly's own. [CHAR LIMIT=50] -->
     <string name="title_pref_sound_themes">Sound themes</string>
     <!-- Summary of the entry that opens the sound themes screen. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_sound_themes">Install and choose sets of sounds and vibrations, replace single sounds with your own, and turn on control sounds and vibrations and 3D audio.</string>
     <!-- Sound themes: heading above the installed themes. [CHAR LIMIT=50] -->
     <string name="sound_themes_installed_category">Installed themes</string>
-    <!-- Sound themes: name of the theme of Backtalk's own sounds and vibrations. [CHAR LIMIT=50] -->
-    <string name="sound_theme_backtalk">Backtalk</string>
-    <!-- Sound themes: description of the theme of Backtalk's own sounds and vibrations. [CHAR LIMIT=NONE] -->
-    <string name="sound_theme_backtalk_description">Backtalk\'s own sounds and vibrations, and any sounds of your own.</string>
+    <!-- Sound themes: name of the theme of SandFly's own sounds and vibrations. [CHAR LIMIT=50] -->
+    <string name="sound_theme_backtalk">SandFly</string>
+    <!-- Sound themes: description of the theme of SandFly's own sounds and vibrations. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_backtalk_description">SandFly\'s own sounds and vibrations, and any sounds of your own.</string>
     <!-- Sound themes: said of the theme that is in use. [CHAR LIMIT=50] -->
     <string name="sound_theme_in_use">In use</string>
     <!-- Sound themes: who made a theme, such as "By Bryan Smart". [CHAR LIMIT=NONE] -->
@@ -49,7 +49,7 @@
         <item quantity="other">Saved the theme, with <xliff:g id="count" example="13">%d</xliff:g> sounds.</item>
     </plurals>
     <!-- Sound themes: message when a theme file could not be saved. [CHAR LIMIT=NONE] -->
-    <string name="sound_theme_export_failed">Backtalk couldn\'t save the theme file.</string>
+    <string name="sound_theme_export_failed">SandFly couldn\'t save the theme file.</string>
     <!-- Sound themes: message when there is no app to choose or save files with. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_no_picker">There is no app on this device to choose files with.</string>
 
@@ -65,17 +65,17 @@
     <!-- Sound themes: entry that installs a theme from a file. [CHAR LIMIT=50] -->
     <string name="title_pref_sound_theme_install_file">From a file</string>
     <!-- Sound themes: summary of the entry that installs a theme from a file. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_sound_theme_install_file">A theme file is a ZIP file. You can also open one, or share it, with Backtalk from another app.</string>
+    <string name="summary_pref_sound_theme_install_file">A theme file is a ZIP file. You can also open one, or share it, with SandFly from another app.</string>
     <!-- Sound themes: entry that installs a theme from a link. [CHAR LIMIT=50] -->
     <string name="title_pref_sound_theme_install_link">From a link</string>
     <!-- Sound themes: summary of the entry that installs a theme from a link. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_sound_theme_install_link">A link to a theme file, or to a GitHub repository with a theme in it. You can also share a link with Backtalk from your browser.</string>
+    <string name="summary_pref_sound_theme_install_link">A link to a theme file, or to a GitHub repository with a theme in it. You can also share a link with SandFly from your browser.</string>
     <!-- Sound themes: explanation in the dialog for installing a theme from a link. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_link_message">Enter or paste a link to a theme file, or to a GitHub repository with a theme in it.</string>
     <!-- Sound themes: hint in the field for the link to a theme. [CHAR LIMIT=50] -->
     <string name="sound_theme_link_hint">https://</string>
 
-    <!-- Sound themes: name of the screen that installs themes, shown when opening or sharing a file with Backtalk. [CHAR LIMIT=40] -->
+    <!-- Sound themes: name of the screen that installs themes, shown when opening or sharing a file with SandFly. [CHAR LIMIT=40] -->
     <string name="sound_theme_install_label">Install sound theme</string>
     <!-- Sound themes: said while a theme file is read or downloaded. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_install_reading">Reading the sound theme</string>
@@ -96,27 +96,27 @@
     <!-- Sound themes: message when the installer was opened without a file or link. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_install_nothing">There is no sound theme to install.</string>
     <!-- Sound themes: message when a file is not a sound theme, with why. [CHAR LIMIT=NONE] -->
-    <string name="sound_theme_install_not_a_theme">This is not a sound theme Backtalk can use: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_not_a_theme">This is not a sound theme SandFly can use: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <!-- Sound themes: message when a theme cannot be read, downloaded or installed, with why. [CHAR LIMIT=NONE] -->
-    <string name="sound_theme_install_failed">Backtalk couldn\'t install the sound theme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly couldn\'t install the sound theme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <!-- Sound themes: why a link cannot be used. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_install_https_only">Links to sound themes must start with https.</string>
 
     <!-- Theme sounds: title of the screen of the sounds of the theme in use, such as "Sounds of Unspoken". [CHAR LIMIT=NONE] -->
     <string name="title_pref_theme_sounds_of">Sounds of <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
-    <!-- Theme sounds: entry that goes back to Backtalk's own sounds in the theme in use. [CHAR LIMIT=50] -->
-    <string name="title_pref_theme_sounds_reset">Use Backtalk\'s sounds for all</string>
+    <!-- Theme sounds: entry that goes back to SandFly's own sounds in the theme in use. [CHAR LIMIT=50] -->
+    <string name="title_pref_theme_sounds_reset">Use SandFly\'s sounds for all</string>
     <!-- Theme sounds: question before removing every sound of the theme in use. [CHAR LIMIT=NONE] -->
-    <string name="theme_sounds_reset_confirm">Remove all the sounds of this theme and use Backtalk\'s own?</string>
+    <string name="theme_sounds_reset_confirm">Remove all the sounds of this theme and use SandFly\'s own?</string>
     <!-- Theme sounds: button that removes every sound of the theme in use. [CHAR LIMIT=30] -->
     <string name="theme_sounds_reset_button">Remove</string>
     <!-- Theme sounds: heading above the list of sounds. [CHAR LIMIT=40] -->
     <string name="theme_sounds_category">Sounds</string>
-    <!-- Theme sounds: summary of a sound that plays Backtalk's own sound. [CHAR LIMIT=60] -->
-    <string name="theme_sound_summary_default">Backtalk\'s sound</string>
+    <!-- Theme sounds: summary of a sound that plays SandFly's own sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_default">SandFly\'s sound</string>
     <!-- Theme sounds: summary of a sound the theme replaces. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_custom">Theme sound</string>
-    <!-- Theme sounds: summary of a control sound, which Backtalk has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
+    <!-- Theme sounds: summary of a control sound, which SandFly has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_summary_none">No sound. The focus sound plays.</string>
     <!-- Theme sounds: summary of a braille keyboard typing sound that plays Android's keyboard sound. [CHAR LIMIT=60] -->
     <string name="theme_sound_summary_android_keyboard">Android\'s keyboard sound</string>
@@ -142,14 +142,14 @@
     <string name="theme_sound_summary_no_sound">No sound</string>
     <!-- Theme sounds: accessibility action that sets an event to play no sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_action_set_none">Set to no sound</string>
-    <!-- Theme sounds: choice that goes back to Backtalk's own sound. [CHAR LIMIT=50] -->
-    <string name="theme_sound_use_default">Use Backtalk\'s sound</string>
-    <!-- Theme sounds: choice that removes the file of a control sound, which Backtalk has no sound for. [CHAR LIMIT=50] -->
+    <!-- Theme sounds: choice that goes back to SandFly's own sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_use_default">Use SandFly\'s sound</string>
+    <!-- Theme sounds: choice that removes the file of a control sound, which SandFly has no sound for. [CHAR LIMIT=50] -->
     <string name="theme_sound_remove">Remove the sound</string>
     <!-- Theme sounds: message when the chosen file is too large. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_too_large">That file is too large. A sound can be up to 5 MB.</string>
     <!-- Theme sounds: message when the chosen file cannot be played. [CHAR LIMIT=NONE] -->
-    <string name="theme_sound_not_audio">Backtalk can\'t play that file. Choose a WAV, OGG, MP3 or FLAC sound.</string>
+    <string name="theme_sound_not_audio">SandFly can\'t play that file. Choose a WAV, OGG, MP3 or FLAC sound.</string>
     <!-- Theme sounds: message when the chosen file cannot be read. [CHAR LIMIT=NONE] -->
-    <string name="theme_sound_failed">Backtalk couldn\'t read that file.</string>
+    <string name="theme_sound_failed">SandFly couldn\'t read that file.</string>
 </resources>

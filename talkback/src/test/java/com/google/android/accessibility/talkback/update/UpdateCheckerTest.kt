@@ -26,7 +26,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class UpdateCheckerTest {
-  private fun release(build: Int, vararg commits: String, apk: String = "backtalk.apk"): String =
+  private fun release(build: Int, vararg commits: String, apk: String = "sandfly.apk"): String =
     JSONObject()
       .put("body", (listOf("build: $build", "") + commits.map { "- $it" }).joinToString("\n"))
       .put(
@@ -64,7 +64,21 @@ class UpdateCheckerTest {
 
   @Test(expected = JSONException::class)
   fun moveNeverTakesABacktalkBuild() {
-    UpdateChecker.parseMove(release(5), "aaaaaaa0")
+    UpdateChecker.parseMove(release(5, apk = "backtalk.apk"), "aaaaaaa0")
+  }
+
+  @Test
+  fun theNewestReleaseIsOffered() {
+    val stable = release(12, "ccccccc Stable")
+    val dev = release(15, "ddddddd Dev", "ccccccc Stable")
+    assertEquals(15, UpdateChecker.newest(listOf(stable, dev), 10, "")!!.build)
+    assertEquals(12, UpdateChecker.newest(listOf(stable, release(11)), 10, "")!!.build)
+  }
+
+  @Test
+  fun aDevelopmentBuildIsOfferedTheNextStableRelease() {
+    assertEquals(12, UpdateChecker.newest(listOf(release(12)), 11, "")!!.build)
+    assertNull(UpdateChecker.newest(listOf(release(12), release(11)), 12, ""))
   }
 
   private fun releaseWithBothBuilds(build: Int): String {
@@ -73,8 +87,8 @@ class UpdateCheckerTest {
       .getJSONArray("assets")
       .put(
         JSONObject()
-          .put("name", "backtalk-wear.apk")
-          .put("browser_download_url", "https://example.com/backtalk-wear.apk")
+          .put("name", "sandfly-wear.apk")
+          .put("browser_download_url", "https://example.com/sandfly-wear.apk")
       )
     return release.toString()
   }
@@ -83,11 +97,11 @@ class UpdateCheckerTest {
   fun eachDeviceGetsItsOwnBuild() {
     val json = releaseWithBothBuilds(11)
     assertEquals(
-      "https://example.com/backtalk.apk",
+      "https://example.com/sandfly.apk",
       UpdateChecker.parseRelease(json, 10, "", UpdateChecker.PHONE_APK_NAME)!!.downloadUrl,
     )
     assertEquals(
-      "https://example.com/backtalk-wear.apk",
+      "https://example.com/sandfly-wear.apk",
       UpdateChecker.parseRelease(json, 10, "", UpdateChecker.WATCH_APK_NAME)!!.downloadUrl,
     )
   }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Backtalk-specific Czech translations. -->
+    <!-- SandFly-specific Czech translations. -->
 
     <!-- Reduce delays. -->
     <string name="title_pref_low_latency_audio">Zvuk s nízkou latencí</string>
-    <string name="summary_pref_low_latency_audio">Přehrávat zvuky a řeč Backtalku nejrychlejší zvukovou cestou telefonu, abyste je slyšeli dříve. Pokud se řeč nebo zvuky trhají či znějí nesprávně, tuto možnost vypněte.</string>
-    <string name="pref_reduce_window_delay_summary">Když jsou animace vypnuté, Backtalk čte nové obrazovky rychleji. Tato možnost vypne animace v celém telefonu.</string>
+    <string name="summary_pref_low_latency_audio">Přehrávat zvuky a řeč SandFly nejrychlejší zvukovou cestou telefonu, abyste je slyšeli dříve. Pokud se řeč nebo zvuky trhají či znějí nesprávně, tuto možnost vypněte.</string>
+    <string name="pref_reduce_window_delay_summary">Když jsou animace vypnuté, SandFly čte nové obrazovky rychleji. Tato možnost vypne animace v celém telefonu.</string>
 
     <!-- Text-to-speech. -->
     <string name="title_pref_switch_languages">Automaticky přepínat jazyk</string>
@@ -31,7 +31,7 @@
 
     <!-- Screen announcements. -->
     <string name="title_pref_screen_announcements">Zapnutí a vypnutí obrazovky</string>
-    <string name="summary_pref_screen_announcements">Zvolte, co Backtalk oznamuje při vypnutí nebo zapnutí obrazovky a při odemknutí telefonu</string>
+    <string name="summary_pref_screen_announcements">Zvolte, co SandFly oznamuje při vypnutí nebo zapnutí obrazovky a při odemknutí telefonu</string>
     <string name="title_screen_announcements_screen_off">Při vypnutí obrazovky</string>
     <string name="title_screen_announcements_screen_on">Při zapnutí obrazovky</string>
     <string name="title_screen_announcements_unlock">Při odemknutí telefonu</string>
@@ -74,7 +74,7 @@
 
     <!-- Vibration Watch gestures on Wear OS. -->
     <string name="title_pref_reserve_vibration_watch_gestures">Vyhradit gesta pro Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Backtalk přestane zpracovávat jednoduché a dvojité klepnutí dvěma prsty, aby je mohla používat funkce Samsung Vibration Watch. Vibration Watch zapněte také v nastavení přístupnosti hodinek.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly přestane zpracovávat jednoduché a dvojité klepnutí dvěma prsty, aby je mohla používat funkce Samsung Vibration Watch. Vibration Watch zapněte také v nastavení přístupnosti hodinek.</string>
     <string name="shortcut_reserved_for_vibration_watch">Vyhrazeno pro Vibration Watch v Rozšířených nastaveních</string>
 
     <!-- Call speaker routing based on proximity. -->
@@ -84,7 +84,7 @@
 
     <!-- Audio output device routing. -->
     <string name="title_pref_audio_output_device">Výstupní zvukové zařízení</string>
-    <string name="dialog_title_audio_output_device">Zvolte, kde se má přehrávat zvuk Backtalku</string>
+    <string name="dialog_title_audio_output_device">Zvolte, kde se má přehrávat zvuk SandFly</string>
     <string name="value_audio_output_device_default">Výchozí nastavení systému</string>
     <string name="value_audio_output_device_speaker">Reproduktor telefonu</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Připojené Bluetooth nebo kabelové zařízení</string>

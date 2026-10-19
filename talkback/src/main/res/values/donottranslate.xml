@@ -21,6 +21,7 @@
     <string name="pref_speech_control_key" translatable="false">pref_speech_control</string>
     <string name="pref_check_for_updates_key" translatable="false">pref_check_for_updates</string>
     <string name="pref_auto_update_check_key" translatable="false">pref_auto_update_check</string>
+    <string name="pref_dev_builds_key" translatable="false">pref_dev_builds</string>
     <string name="pref_show_exit_watermark_key">pref_show_exit_watermark</string>
     <string name="pref_notification_list_key">pref_notification_list</string>
     <string name="pref_notification_parts_key">pref_notification_parts</string>
@@ -66,7 +67,7 @@
     <string name="pref_echo_physical_keyboard_key" translatable="false">pref_echo_physical_keyboard</string>
     <string name="pref_echo_braille_keyboard_key" translatable="false">pref_echo_braille_keyboard</string>
     <string name="pref_echo_braille_display_key" translatable="false">pref_echo_braille_display</string>
-    <!-- Reading controls and Backtalk menu items for each keyboard echo setting, off by default. -->
+    <!-- Reading controls and SandFly menu items for each keyboard echo setting, off by default. -->
     <string name="pref_selector_keyboard_echo_on_screen_key" translatable="false">pref_selector_keyboard_echo_on_screen_key</string>
     <string name="pref_selector_keyboard_echo_physical_key" translatable="false">pref_selector_keyboard_echo_physical_key</string>
     <string name="pref_selector_keyboard_echo_braille_keyboard_key" translatable="false">pref_selector_keyboard_echo_braille_keyboard_key</string>
@@ -1544,6 +1545,7 @@
     <bool name="pref_verbose_scroll_announcement_default">false</bool>
     <bool name="pref_proximity_default">false</bool>
     <bool name="pref_auto_update_check_default">true</bool>
+    <bool name="pref_dev_builds_default">false</bool>
     <bool name="pref_show_exit_watermark_default">true</bool>
     <bool name="pref_notification_list_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
@@ -2087,7 +2089,7 @@
     <item>@string/shortcut_value_column_right</item>
   </string-array>
 
-  <!-- Pause Backtalk. -->
+  <!-- Pause SandFly. -->
   <string name="keycombo_shortcut_global_pause_backtalk">keycombo_shortcut_global_pause_backtalk</string>
   <string name="shortcut_value_pause_backtalk" translatable="false">PAUSE_BACKTALK</string>
   <string name="pref_show_pause_confirmation_dialog">pref_show_pause_confirmation_dialog</string>

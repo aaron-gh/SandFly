@@ -163,12 +163,12 @@ class ScriptRuntime(
   }
 
   override fun call(method: String, json: String?): String? {
-    val call = calls[method] ?: apiError("Backtalk has no $method")
+    val call = calls[method] ?: apiError("SandFly has no $method")
     call.permission?.let(::requirePermission)
     // Otherwise a script could keep Backtalk's settings from being used, or turn its own
     // permissions back on there.
     apiCheck(call.permission !in REFUSED_IN_BACKTALK || !manager.inBacktalk) {
-      "Scripts can't use ${call.permission?.key} on Backtalk's own screens"
+      "Scripts can't use ${call.permission?.key} on SandFly's own screens"
     }
     val result = call.handle(json?.let { JSONObject(it) } ?: JSONObject())
     return result.takeUnless { it == Unit }?.let(::jsonOf)
@@ -441,7 +441,7 @@ class ScriptRuntime(
     start { ok, value ->
       handler.post {
         val outcome =
-          if (ok) "value" to value else "error" to (value as? String ?: "Backtalk could not do it")
+          if (ok) "value" to value else "error" to (value as? String ?: "SandFly could not do it")
         dispatch("settle", jsonObject("id" to promiseId, "ok" to ok, outcome))
       }
     }

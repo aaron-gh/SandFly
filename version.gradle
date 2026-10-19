@@ -1,5 +1,12 @@
 ext { talkbackVersionName = "TfPu_release_16_2" }
 
+// SandFly's version. A stable release is built with -Psandfly.release=true and tagged
+// v<version>; other builds are <version>-dev. Raise it after each stable release.
+ext {
+    sandflyVersion = "0.1.0"
+    sandflyVersionName = sandflyVersion + (providers.gradleProperty("sandfly.release").getOrElse("false") == "true" ? "" : "-dev")
+}
+
 // Git details for the in-app updater. Builds outside a git checkout fall back to build 1 and no hash.
 def gitOutput = { List<String> args ->
     try {

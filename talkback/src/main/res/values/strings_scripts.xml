@@ -3,16 +3,16 @@
     <!-- Title of the settings screen that lists installed scripts. [CHAR LIMIT=40] -->
     <string name="title_pref_scripts">Scripts</string>
     <!-- Summary of the Scripts settings entry. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_scripts">Change how Backtalk works in apps</string>
+    <string name="summary_pref_scripts">Change how SandFly works in apps</string>
     <!-- Action that imports a script file. [CHAR LIMIT=40] -->
     <string name="script_import">Import script</string>
-    <!-- Name of the action in other apps' share and open menus that installs a script in Backtalk. [CHAR LIMIT=40] -->
-    <string name="script_install_label">Install Backtalk script</string>
-    <!-- Shown when something was shared to Backtalk to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
+    <!-- Name of the action in other apps' share and open menus that installs a script in SandFly. [CHAR LIMIT=40] -->
+    <string name="script_install_label">Install SandFly script</string>
+    <!-- Shown when something was shared to SandFly to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
     <string name="script_import_nothing">There\'s no script file to install.</string>
     <!-- The reason a shared script couldn't be installed, when its file couldn't be opened. [CHAR LIMIT=NONE] -->
     <string name="script_import_cannot_open">The file could not be opened.</string>
-    <!-- Shown when a link to a whole GitHub repository was shared to Backtalk to install as a script. [CHAR LIMIT=NONE] -->
+    <!-- Shown when a link to a whole GitHub repository was shared to SandFly to install as a script. [CHAR LIMIT=NONE] -->
     <string name="script_import_repository">This link is to a whole repository. Open the script you want, then share its link.</string>
     <!-- Summary of the import action. [CHAR LIMIT=NONE] -->
     <string name="script_import_summary">.js file, or .zip with main.js</string>
@@ -34,7 +34,7 @@
     <string name="scripts_now_on">Scripts on</string>
     <!-- Spoken when this device cannot run scripts. [CHAR LIMIT=NONE] -->
     <string name="scripts_unavailable">Scripts are not available on this device</string>
-    <!-- Button that adds the example script that comes with Backtalk. [CHAR LIMIT=40] -->
+    <!-- Button that adds the example script that comes with SandFly. [CHAR LIMIT=40] -->
     <string name="script_add_example">Add the example script</string>
     <!-- Summary of the button that adds the example script. [CHAR LIMIT=NONE] -->
     <string name="script_add_example_summary">Says the name of each app you switch to. A script to start from.</string>
@@ -83,7 +83,7 @@
     <!-- What the actions permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_actions">Click, scroll, type and move focus</string>
     <!-- What the speech permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_speech">Hear and change Backtalk\'s speech</string>
+    <string name="script_permission_speech">Hear and change SandFly\'s speech</string>
     <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_passwords">Read password fields</string>
     <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
@@ -130,7 +130,7 @@
     <!-- Opens a script's log. [CHAR LIMIT=40] -->
     <string name="script_log">Log</string>
     <!-- Summary of the log entry. [CHAR LIMIT=NONE] -->
-    <string name="script_log_summary">Output and errors since Backtalk started</string>
+    <string name="script_log_summary">Output and errors since SandFly started</string>
     <!-- Deletes the data a script stored. [CHAR LIMIT=40] -->
     <string name="script_clear_storage">Clear stored data</string>
     <!-- Shown after a script's data is deleted. [CHAR LIMIT=NONE] -->
@@ -154,19 +154,19 @@
     <!-- One log entry: its time, level, and message. [CHAR LIMIT=NONE] -->
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
 
-    <!-- Warning for a script that needs a newer Backtalk. [CHAR LIMIT=NONE] -->
-    <string name="script_api_too_old">Needs script API <xliff:g id="needed">%1$d</xliff:g> or later. This Backtalk has <xliff:g id="current">%2$d</xliff:g>, so parts may not work.</string>
-    <!-- Warning for a script that was not tested with this Backtalk. [CHAR LIMIT=NONE] -->
-    <string name="script_api_untested">Tested up to script API <xliff:g id="tested">%1$d</xliff:g>. This Backtalk has <xliff:g id="current">%2$d</xliff:g>, so it may not work as expected.</string>
-    <!-- In the list of scripts, for a script that may not work with this Backtalk. [CHAR LIMIT=NONE] -->
-    <string name="script_state_incompatible">May not work with this Backtalk</string>
+    <!-- Warning for a script that needs a newer SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_api_too_old">Needs script API <xliff:g id="needed">%1$d</xliff:g> or later. This SandFly has <xliff:g id="current">%2$d</xliff:g>, so parts may not work.</string>
+    <!-- Warning for a script that was not tested with this SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_api_untested">Tested up to script API <xliff:g id="tested">%1$d</xliff:g>. This SandFly has <xliff:g id="current">%2$d</xliff:g>, so it may not work as expected.</string>
+    <!-- In the list of scripts, for a script that may not work with this SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_state_incompatible">May not work with this SandFly</string>
     <!-- The script API versions a script was tested with. [CHAR LIMIT=NONE] -->
     <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> to <xliff:g id="tested">%2$d</xliff:g></string>
     <!-- Heading of the warning on a script's page that it may not work. [CHAR LIMIT=40] -->
     <string name="script_compatibility_title">Compatibility</string>
-    <!-- Button that installs a script that may not work with this Backtalk. [CHAR LIMIT=20] -->
+    <!-- Button that installs a script that may not work with this SandFly. [CHAR LIMIT=20] -->
     <string name="script_install_anyway">Install anyway</string>
-    <!-- Button that updates a script that may not work with this Backtalk. [CHAR LIMIT=20] -->
+    <!-- Button that updates a script that may not work with this SandFly. [CHAR LIMIT=20] -->
     <string name="script_update_anyway">Update anyway</string>
     <!-- Opens a script's homepage. [CHAR LIMIT=40] -->
     <string name="script_homepage">Open homepage</string>
@@ -196,27 +196,27 @@
     <string name="script_tree_none">No window to copy</string>
     <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
     <string name="script_tree_clip_label">Screen tree</string>
-    <!-- Summary of the option that shows Copy screen tree in the Backtalk menu. [CHAR LIMIT=NONE] -->
+    <!-- Summary of the option that shows Copy screen tree in the SandFly menu. [CHAR LIMIT=NONE] -->
     <string name="summary_copy_screen_tree_menu">Copy all items on screen as JSON, for writing scripts</string>
     <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
     <string name="script_inspect_clip_label">Item details</string>
-    <!-- Summary of the option that shows Inspect focused item in the Backtalk menu. [CHAR LIMIT=NONE] -->
+    <!-- Summary of the option that shows Inspect focused item in the SandFly menu. [CHAR LIMIT=NONE] -->
     <string name="summary_inspect_item_menu">Say and copy details of the item you were on, for writing scripts</string>
 
-    <!-- In a script's keyboard shortcut, the key Backtalk's shortcuts are pressed with. [CHAR LIMIT=40] -->
-    <string name="script_keys_backtalk_modifier">Backtalk modifier</string>
-    <!-- Keys pressed one after the other, such as "Backtalk modifier+T, then S". [CHAR LIMIT=NONE] -->
+    <!-- In a script's keyboard shortcut, the key SandFly's shortcuts are pressed with. [CHAR LIMIT=40] -->
+    <string name="script_keys_backtalk_modifier">SandFly modifier</string>
+    <!-- Keys pressed one after the other, such as "SandFly modifier+T, then S". [CHAR LIMIT=NONE] -->
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, then <xliff:g id="second">%2$s</xliff:g></string>
     <!-- Heading of the gestures, keys, menu items and reading controls a script adds. [CHAR LIMIT=40] -->
     <string name="script_commands_category">Commands</string>
     <!-- Explains the switches under Commands on a script's page. [CHAR LIMIT=NONE] -->
-    <string name="script_commands_summary">Gestures and keys of a running script come before Backtalk\'s. Turn one off to keep Backtalk\'s.</string>
+    <string name="script_commands_summary">Gestures and keys of a running script come before SandFly\'s. Turn one off to keep SandFly\'s.</string>
     <!-- A gesture that runs a script's command. [CHAR LIMIT=NONE] -->
     <string name="script_binding_gesture">Gesture: <xliff:g id="gesture">%1$s</xliff:g></string>
     <!-- Keys that run a script's command. [CHAR LIMIT=NONE] -->
     <string name="script_binding_keys">Keys: <xliff:g id="keys">%1$s</xliff:g></string>
-    <!-- A script's command is an item in the Backtalk menu. [CHAR LIMIT=NONE] -->
-    <string name="script_binding_menu">Backtalk menu</string>
+    <!-- A script's command is an item in the SandFly menu. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_menu">SandFly menu</string>
     <!-- A script's command is a reading control. [CHAR LIMIT=NONE] -->
     <string name="script_binding_control">Reading controls</string>
     <!-- Summary of a command that has no way to run it. [CHAR LIMIT=NONE] -->
@@ -232,7 +232,7 @@
     <!-- Action that assigns the next gesture or keys the user performs to a command. [CHAR LIMIT=40] -->
     <string name="script_binding_perform">Perform gesture or keys</string>
     <!-- Summary of the action that assigns the next gesture or keys. [CHAR LIMIT=NONE] -->
-    <string name="script_binding_perform_summary">Assign the next gesture, or keys pressed with the Backtalk modifier</string>
+    <string name="script_binding_perform_summary">Assign the next gesture, or keys pressed with the SandFly modifier</string>
     <!-- Message while waiting for the gesture or keys to assign. [CHAR LIMIT=NONE] -->
     <string name="script_binding_perform_message">Make the gesture or press the keys.</string>
     <!-- Title of the dialog that asks to assign a gesture or keys to a command. [CHAR LIMIT=NONE] -->

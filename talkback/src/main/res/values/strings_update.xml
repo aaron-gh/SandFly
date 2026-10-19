@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title of the setting that checks GitHub for a newer development build of Backtalk. [CHAR LIMIT=40] -->
+    <!-- Title of the setting that checks GitHub for a newer build of SandFly. [CHAR LIMIT=40] -->
     <string name="title_pref_check_for_updates">Check for updates</string>
-    <!-- Summary of the check for updates setting, with the build number of the running app. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_check_for_updates">Build <xliff:g id="build" example="96">%1$d</xliff:g></string>
-    <!-- Title of the switch that turns daily update checks on or off. [CHAR LIMIT=40] -->
+    <!-- Summary of the check for updates setting, with the version and build number of the running app. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_check_for_updates_version">Version <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <!-- Title of the switch that turns automatic update checks on or off. [CHAR LIMIT=40] -->
     <string name="title_pref_auto_update_check">Automatically check for updates</string>
     <!-- Summary of the automatic update check switch. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_auto_update_check">Check once a day and show a notification when a new build is available</string>
+    <!-- Title of the switch that offers development builds as well as stable releases. [CHAR LIMIT=40] -->
+    <string name="title_pref_dev_builds">Development builds</string>
 
     <!-- Title of the notification that says a new build is available. [CHAR LIMIT=NONE] -->
-    <string name="update_notification_title">Backtalk update available</string>
+    <string name="update_notification_title">SandFly update available</string>
     <!-- Text of the update notification when it has no list of changes. [CHAR LIMIT=NONE] -->
     <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Tap to install.</string>
     <!-- Title of the dialog that offers to install a new build. [CHAR LIMIT=NONE] -->
-    <string name="update_dialog_title">Backtalk build <xliff:g id="build" example="97">%1$d</xliff:g> is available</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> is available</string>
     <!-- Button in the update dialog that downloads and installs the new build. [CHAR LIMIT=20] -->
     <string name="update_dialog_install">Install</string>
 
     <!-- Toast shown when a manual update check starts. [CHAR LIMIT=NONE] -->
     <string name="update_checking">Checking for updates</string>
     <!-- Toast shown when a manual update check finds no newer build. [CHAR LIMIT=NONE] -->
-    <string name="update_up_to_date">Backtalk is up to date</string>
+    <string name="update_up_to_date">SandFly is up to date</string>
     <!-- Toast shown when an update check fails. [CHAR LIMIT=NONE] -->
     <string name="update_check_failed">Could not check for updates</string>
     <!-- Toast shown when the update download starts. [CHAR LIMIT=NONE] -->
@@ -30,6 +32,6 @@
     <string name="update_install_failed">Could not install the update</string>
     <!-- Toast shown when the user cancels the install. [CHAR LIMIT=NONE] -->
     <string name="update_install_canceled">Update canceled</string>
-    <!-- Toast shown with the settings screen where the user allows Backtalk to install apps. [CHAR LIMIT=NONE] -->
-    <string name="update_allow_install">Allow Backtalk to install apps, then try the update again</string>
+    <!-- Toast shown with the settings screen where the user allows SandFly to install apps. [CHAR LIMIT=NONE] -->
+    <string name="update_allow_install">Allow SandFly to install apps, then try the update again</string>
 </resources>

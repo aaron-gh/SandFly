@@ -139,5 +139,9 @@
         android:key="@string/pref_auto_update_check_key"
         android:summary="@string/summary_pref_auto_update_check"
         android:title="@string/title_pref_auto_update_check" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_dev_builds_default"
+        android:key="@string/pref_dev_builds_key"
+        android:title="@string/title_pref_dev_builds" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>

@@ -139,7 +139,7 @@ data class SoundThemeManifest(
       val json = JSONObject(text)
       val warnings = ArrayList<String>()
       if (json.optInt(FORMAT, FORMAT_VERSION) > FORMAT_VERSION) {
-        warnings += "made for a newer Backtalk, so some of it may be left out"
+        warnings += "made for a newer SandFly, so some of it may be left out"
       }
       val name = text(json, NAME, MAX_NAME_LENGTH) ?: fallbackName
       val settings = json.optJSONObject(SETTINGS)

@@ -577,7 +577,7 @@ object SoundThemes {
         }
         if (layout.manifest == null && sounds.isEmpty()) {
           throw NotAThemeException(
-            "it has no theme.json and no sounds named after Backtalk's, such as focus.wav"
+            "it has no theme.json and no sounds named after SandFly's, such as focus.wav"
           )
         }
         File(staging, SoundThemeManifest.FILE_NAME).writeText(manifest.toJson())

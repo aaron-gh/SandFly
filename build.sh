@@ -1,4 +1,4 @@
-### Bash script for building the Backtalk APKs, for phones and watches
+### Bash script for building the SandFly APKs, for phones and watches
 ###
 ### The following environment variables must be set before executing this script
 ###   ANDROID_SDK           # path to local copy of Android SDK

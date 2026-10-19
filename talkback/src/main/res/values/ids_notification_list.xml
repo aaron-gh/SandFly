@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The Dismiss accessibility action of a notification in Backtalk's notification list. -->
+    <!-- The Dismiss accessibility action of a notification in SandFly's notification list. -->
     <item name="notification_list_dismiss_action" type="id" />
     <!-- Accessibility actions that stand for a notification's own actions, such as Reply. -->
     <item name="notification_list_action_1" type="id" />
@@ -11,6 +11,6 @@
     <item name="notification_list_action_6" type="id" />
     <item name="notification_list_action_7" type="id" />
     <item name="notification_list_action_8" type="id" />
-    <!-- Tag on a row of Backtalk's notification list holding its accessibility delegate. -->
+    <!-- Tag on a row of SandFly's notification list holding its accessibility delegate. -->
     <item name="notification_list_row_delegate" type="id" />
 </resources>
