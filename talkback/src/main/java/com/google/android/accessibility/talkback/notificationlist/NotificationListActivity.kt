@@ -21,12 +21,14 @@ import android.app.ActivityOptions
 import android.app.KeyguardManager
 import android.app.Notification
 import android.app.PendingIntent
+import android.app.RemoteInput
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.text.InputType
 import android.service.notification.NotificationListenerService
 import android.util.Log
 import android.util.TypedValue
@@ -35,10 +37,12 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -211,13 +215,20 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     }
   }
 
-  /** Gives a row its notification's actions. */
+  /** Gives a row its notification's own actions, such as Reply, and Dismiss. */
   private inner class RowDelegate : View.AccessibilityDelegate() {
     var entry: NotificationEntry? = null
 
     override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(host, info)
-      if (entry?.notification?.isClearable == true) {
+      val entry = entry ?: return
+      entry.notification.notification.actions?.take(ACTION_IDS.size)?.forEachIndexed { index, action
+        ->
+        if (!action.title.isNullOrBlank()) {
+          info.addAction(AccessibilityNodeInfo.AccessibilityAction(ACTION_IDS[index], action.title))
+        }
+      }
+      if (entry.notification.isClearable) {
         info.addAction(
           AccessibilityNodeInfo.AccessibilityAction(
             R.id.notification_list_dismiss_action,
@@ -228,12 +239,73 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     }
 
     override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
-      val entry = entry
-      if (entry != null && action == R.id.notification_list_dismiss_action) {
+      val entry = entry ?: return super.performAccessibilityAction(host, action, args)
+      if (action == R.id.notification_list_dismiss_action) {
         NotificationListService.instance?.cancelNotification(entry.key)
         return true
       }
+      val index = ACTION_IDS.indexOf(action)
+      val notificationAction = entry.notification.notification.actions?.getOrNull(index)
+      if (index >= 0 && notificationAction != null) {
+        perform(notificationAction)
+        return true
+      }
       return super.performAccessibilityAction(host, action, args)
+    }
+  }
+
+  /** Performs one of a notification's own actions, asking for the text of a reply first. */
+  private fun perform(action: Notification.Action) {
+    val input = action.remoteInputs?.firstOrNull { it.allowFreeFormInput || !it.choices.isNullOrEmpty() }
+    if (input == null) {
+      send(action.actionIntent, null)
+      return
+    }
+    if (!input.allowFreeFormInput) {
+      val choices = input.choices
+      AlertDialog.Builder(this)
+        .setTitle(input.label ?: action.title)
+        .setItems(choices) { _, which -> reply(action, input, choices[which]) }
+        .setNegativeButton(android.R.string.cancel, null)
+        .show()
+      return
+    }
+    val field =
+      EditText(this).apply {
+        hint = input.label ?: action.title
+        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or
+          InputType.TYPE_TEXT_FLAG_MULTI_LINE
+      }
+    AlertDialog.Builder(this)
+      .setTitle(action.title)
+      .setView(field)
+      .setPositiveButton(R.string.notification_list_send) { _, _ ->
+        if (field.text.isNotBlank()) {
+          reply(action, input, field.text.toString())
+        }
+      }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+    field.requestFocus()
+  }
+
+  /** Sends [text] as the answer to [input], as the system's shade does. */
+  private fun reply(action: Notification.Action, input: RemoteInput, text: CharSequence) {
+    val results = Bundle().apply { putCharSequence(input.resultKey, text) }
+    val intent = Intent().addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
+    RemoteInput.addResultsToIntent(action.remoteInputs, intent, results)
+    RemoteInput.setResultsSource(
+      intent,
+      if (input.allowFreeFormInput) RemoteInput.SOURCE_FREE_FORM_INPUT else RemoteInput.SOURCE_CHOICE,
+    )
+    send(action.actionIntent, intent)
+  }
+
+  private fun send(pendingIntent: PendingIntent?, fillIn: Intent?) {
+    try {
+      pendingIntent?.send(this, 0, fillIn, null, null, null, startOptions())
+    } catch (e: PendingIntent.CanceledException) {
+      Log.w(TAG, "Notification action can't be performed", e)
     }
   }
 
@@ -335,6 +407,16 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   companion object {
     private const val TAG = "NotificationList"
+
+    /** The accessibility actions that stand for a notification's own actions, in order. */
+    private val ACTION_IDS =
+      intArrayOf(
+        R.id.notification_list_action_1,
+        R.id.notification_list_action_2,
+        R.id.notification_list_action_3,
+        R.id.notification_list_action_4,
+        R.id.notification_list_action_5,
+      )
 
     /**
      * Opens the list in place of the system's shade, if the user has chosen it. The system's shade
