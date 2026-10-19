@@ -32,7 +32,7 @@ There are stable releases and development builds:
 The last build of Backtalk Aaron offers SandFly as an update. To move:
 
 1.  Install SandFly from the notification, or from **Check for updates** in Backtalk Aaron. It installs next to Backtalk Aaron, and the accessibility settings open.
-2.  Turn on SandFly. The settings and custom labels of Backtalk Aaron are copied to it, and **Development builds** is on.
+2.  Turn on SandFly. The settings and custom labels of Backtalk Aaron are copied to it. SandFly gets stable releases; turn on **Development builds** to get development builds too.
 3.  Backtalk Aaron turns itself off, and a notification offers to uninstall it.
 
 On-device AI models are not copied, so download them again in SandFly. Turn on the braille keyboard again for SandFly if you used it.

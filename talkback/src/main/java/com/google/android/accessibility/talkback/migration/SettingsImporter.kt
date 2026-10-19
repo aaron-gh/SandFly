@@ -21,7 +21,6 @@ import android.content.Context
 import android.net.Uri
 import android.os.Build
 import androidx.core.os.UserManagerCompat
-import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
@@ -129,8 +128,6 @@ object SettingsImporter {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val editor = prefs.edit()
     MigrationFiles.SKIPPED_PREF_KEYS.forEach { editor.remove(it) }
-    // Backtalk Aaron only had development builds, so SandFly keeps offering them.
-    editor.putBoolean(context.getString(R.string.pref_dev_builds_key), true)
     editor.commit()
 
     LogUtils.i(
