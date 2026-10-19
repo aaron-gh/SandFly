@@ -33,9 +33,6 @@ import kotlin.math.sign
  * down; the rest of the touch then belongs to the scrub. Movement up or down, a pinch, a third
  * finger, a stroke that doesn't turn back within [MAX_STROKE_MILLIS], or a scrub that takes longer
  * than [MAX_MILLIS] is not a scrub.
- *
- * While [isPossibleScrub] is true, the caller should hold back passing a sideways two-finger
- * movement to the app as a scroll.
  */
 class TwoFingerScrubTracker(
   private val strokePx: Float,
@@ -61,8 +58,6 @@ class TwoFingerScrubTracker(
   private var startX = 0f
   private var startY = 0f
   private var startDistance = 0f
-  private var lastX = 0f
-  private var lastY = 0f
   // 1 while moving right, -1 while moving left, 0 before the first stroke.
   private var direction = 0
   // The furthest point of the current stroke.
@@ -73,10 +68,6 @@ class TwoFingerScrubTracker(
   /** Whether a scrub was recognized and owns the current touch. */
   val isScrubbed: Boolean
     get() = state == State.SCRUBBED
-
-  /** Whether two fingers are moving sideways in a way that may still become a scrub. */
-  val isPossibleScrub: Boolean
-    get() = state == State.TRACKING && abs(lastX - startX) >= abs(lastY - startY)
 
   /** Forgets the current touch. */
   fun clear() {
@@ -119,8 +110,6 @@ class TwoFingerScrubTracker(
     startTime = event.eventTime
     startX = (event.getX(0) + event.getX(1)) / 2
     startY = (event.getY(0) + event.getY(1)) / 2
-    lastX = startX
-    lastY = startY
     startDistance = hypot(event.getX(1) - event.getX(0), event.getY(1) - event.getY(0))
     direction = 0
     strokes = 0
@@ -140,8 +129,6 @@ class TwoFingerScrubTracker(
     val y1 = event.getY(secondIndex)
     val x = (x0 + x1) / 2
     val y = (y0 + y1) / 2
-    lastX = x
-    lastY = y
     val time = event.eventTime
     if (time - startTime > MAX_MILLIS) {
       reject("too slow")

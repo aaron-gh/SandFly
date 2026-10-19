@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityGestureEvent
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import android.accessibilityservice.TouchInteractionController
+import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
 import android.hardware.display.DisplayManager
 import android.os.Handler
@@ -313,9 +314,14 @@ class TrackedGestureTest {
     assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
   }
 
-  /** Two fingers 60 pixels apart move to each x in [xs] in turn, 8 steps of 10 ms each. */
-  private fun twoFingerMove(vararg xs: Float) {
+  /**
+   * Two fingers 60 pixels apart move to each x in [xs] in turn, 8 steps of 10 ms each. If
+   * [draggingAtMs] is set, the system passes the touch to the app as a drag then, as it does soon
+   * after Backtalk asks it to.
+   */
+  private fun twoFingerMove(vararg xs: Float, draggingAtMs: Long? = null) {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    draggingAtMs?.let { stateChangeAt(STATE_DRAGGING, it) }
     var x = xs[0]
     val y = 200f
     touchAt(ACTION_DOWN, 0, x, y)
@@ -337,8 +343,29 @@ class TrackedGestureTest {
 
   @Test
   fun backAndForthThreeTimesIsAScrub() {
-    twoFingerMove(100f, 200f, 100f, 200f)
+    twoFingerMove(100f, 200f, 100f, 200f, draggingAtMs = 40)
     assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
+  }
+
+  @Test
+  fun sidewaysTwoFingerSwipeScrollsTheApp() {
+    twoFingerMove(100f, 220f)
+    assertEquals(true, requestedDragging())
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
+  }
+
+  /** Whether Backtalk asked the system to pass the touch to the app as a drag. */
+  private fun requestedDragging(): Boolean {
+    val requests =
+      TouchInteractionMonitor::class
+        .java
+        .getDeclaredField("callerInfos")
+        .apply { isAccessible = true }
+        .get(monitor) as Collection<*>
+    return requests.any { request ->
+      request!!.javaClass.getDeclaredField("state").apply { isAccessible = true }.getInt(request) ==
+        STATE_DRAGGING
+    }
   }
 
   @Test
