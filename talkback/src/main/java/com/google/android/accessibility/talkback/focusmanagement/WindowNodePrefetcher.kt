@@ -20,6 +20,7 @@ import android.os.Build
 import android.os.SystemClock
 import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
+import androidx.annotation.RequiresApi
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.utils.WebInterfaceUtils
@@ -88,6 +89,7 @@ object WindowNodePrefetcher {
     }
   }
 
+  @RequiresApi(Build.VERSION_CODES.TIRAMISU)
   private class Walk(private val deadline: Long) {
     private val lock = ReentrantLock()
     private val finished = lock.newCondition()
