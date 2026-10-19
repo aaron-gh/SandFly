@@ -674,11 +674,6 @@ public class TouchInteractionMonitor
               // whether this is a pinch or spread.
               return;
             }
-            if (scrubTracker.isPossibleScrub()) {
-              // The fingers are moving sideways and may turn back into a scrub. Wait until it is
-              // clear whether this is a scrub, which takes at most one stroke.
-              return;
-            }
             if (isDraggingGesture(event)) {
               computeDraggingPointerIdIfNeeded(event);
               requestDragging(draggingPointerId, "handleMotionEventStateTouchInteracting");
@@ -1368,17 +1363,23 @@ public class TouchInteractionMonitor
   /**
    * Passes the event to the two-finger scrub tracker. Returns true if the event belongs to a scrub,
    * so nothing else may handle it.
+   *
+   * <p>A scrub starts as a sideways two-finger movement, which is also how a horizontal scroll
+   * starts, and the two can't be told apart until the fingers turn back. So the movement goes to the
+   * app as a scroll as usual, and the scrub is still followed while the app scrolls. A scrub that
+   * completes then performs its action, and the app keeps the rest of the drag.
    */
   private boolean handleScrub(MotionEvent event) {
     if (!scrubTracker.isScrubbed()
-        && (state != STATE_TOUCH_INTERACTING
+        && ((state != STATE_TOUCH_INTERACTING && state != STATE_DRAGGING)
             || !gestureDetector.isMultiFingerGesturesEnabled()
             || (event.getActionMasked() == ACTION_POINTER_DOWN
                 && !isGestureAssigned(GESTURE_2_FINGER_SCRUB)))) {
       scrubTracker.clear();
       return false;
     }
-    return scrubTracker.onMotionEvent(event);
+    boolean scrubbed = scrubTracker.onMotionEvent(event);
+    return scrubbed && state != STATE_DRAGGING;
   }
 
   private void onScrub() {
