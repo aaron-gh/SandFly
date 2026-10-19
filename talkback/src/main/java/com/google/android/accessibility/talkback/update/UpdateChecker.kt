@@ -31,7 +31,7 @@ import org.json.JSONObject
 
 /** A stable release or development build that is newer than the running one. */
 data class UpdateInfo(
-  /** The build number, which is the number of commits in the build. */
+  /** The build number, which counts the commits since SandFly began numbering its builds. */
   val build: Int,
   /** Where to download the APK. */
   val downloadUrl: String,
@@ -50,8 +50,8 @@ data class UpdateInfo(
  * stable release. Backtalk Aaron first checks SandFly's latest release, and offers it as a move
  * whenever there is one.
  *
- * CI writes the release notes as a line "build: <commit count>", then one line per commit as "-
- * <7-character hash> <subject>", newest first. A release is newer only when its commit count is
+ * CI writes the release notes as a line "build: <build number>", then one line per commit as "-
+ * <7-character hash> <subject>", newest first. A release is newer only when its build number is
  * higher, so a local build of a newer commit is never offered an older build.
  */
 object UpdateChecker {
