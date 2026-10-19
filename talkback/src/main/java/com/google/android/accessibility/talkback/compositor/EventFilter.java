@@ -200,6 +200,11 @@ public class EventFilter {
         }
       }
     } else if (eventType == AccessibilityEvent.TYPE_VIEW_HOVER_ENTER) {
+      if (globalVariables.isTapToType()
+          && AccessibilityEventFeedbackUtils.isEventRelatedToKeyboardKey(event)) {
+        // The key is typed without being spoken.
+        return;
+      }
       AccessibilityNodeInfoCompat node = AccessibilityEventUtils.sourceCompat(event);
       if (shouldEarlyAnnounceForLiftToType(context)
           && AccessibilityEventFeedbackUtils.isEventRelatedToKeyboardKey(event)

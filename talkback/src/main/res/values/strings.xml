@@ -2501,6 +2501,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="value_type_confirmation_lift_to_type_for_any_key">Hold finger to select any key, then lift</string>
     <!-- Typing method where lifting the finger types every key except the key that sends or submits, such as Enter, Done, or Send, which needs a double-tap. [CHAR LIMIT=NONE] -->
     <string name="value_type_confirmation_lift_to_type_except_action_key">Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.</string>
+    <!-- Typing method where a tap on the keyboard types the key under the finger without speaking it first, and holding or dragging a finger explores the keys, which type when the finger lifts. [CHAR LIMIT=NONE] -->
+    <string name="value_type_confirmation_tap_to_type">Tap any key to type it, or hold finger to select any key, then lift</string>
 
     <!-- Label for type and hold duration. [CHAR LIMIT=NONE]-->
     <string name="value_typing_long_press_500ms">0.5 seconds</string>
