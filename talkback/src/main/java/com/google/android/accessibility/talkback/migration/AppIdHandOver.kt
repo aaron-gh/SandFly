@@ -150,7 +150,14 @@ object AppIdHandOver {
   }
 
   private fun swap(context: Context, key: String, oldComponent: String, newComponent: String) {
-    val value = Settings.Secure.getString(context.contentResolver, key)
+    val value =
+      try {
+        Settings.Secure.getString(context.contentResolver, key)
+      } catch (e: SecurityException) {
+        // Some of the shortcut settings are hidden from apps on Android 12 and later.
+        LogUtils.w(TAG, "Cannot read %s: %s", key, e)
+        return
+      }
     ComponentLists.replace(value, oldComponent, newComponent)?.let { putSecure(context, key, it) }
   }
 
