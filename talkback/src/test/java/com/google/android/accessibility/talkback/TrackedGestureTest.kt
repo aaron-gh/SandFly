@@ -342,8 +342,8 @@ class TrackedGestureTest {
   }
 
   @Test
-  fun backAndForthThreeTimesIsAScrub() {
-    twoFingerMove(100f, 200f, 100f, 200f, draggingAtMs = 40)
+  fun oneWayAndBackIsAScrub() {
+    twoFingerMove(100f, 200f, 100f, draggingAtMs = 40)
     assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
   }
 
@@ -369,9 +369,9 @@ class TrackedGestureTest {
   }
 
   @Test
-  fun backAndForthOnceIsNotAScrub() {
-    twoFingerMove(100f, 200f, 100f)
-    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SCRUB))
+  fun moreStrokesAreStillOneScrub() {
+    twoFingerMove(100f, 200f, 100f, 200f, draggingAtMs = 40)
+    assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
   }
 
   /** Assigns [action] to the gestures with the setting keys [keyIds]. */
