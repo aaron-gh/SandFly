@@ -61,6 +61,8 @@ class KeyboardCallsTest {
   @After
   fun tearDown() {
     keyboard.shutdownNow()
+    // Runs what is left, so that the next test starts with the main thread free.
+    shadowOf(Looper.getMainLooper()).idle()
   }
 
   /** The keyboard calls [call] on its own thread, as Android does through the handler. */
@@ -105,6 +107,51 @@ class KeyboardCallsTest {
     shadowOf(Looper.getMainLooper()).idle()
 
     assertEquals(listOf("commitText(a)", "commitText(b)"), calls)
+  }
+
+  @Test
+  fun changesDontWaitForTheMainThread() {
+    val start = System.nanoTime()
+    repeat(5) { fromKeyboard { connection.commitText("a", 1) } }
+    val waitedMs = (System.nanoTime() - start) / 1_000_000
+
+    assertTrue("waited $waitedMs ms", waitedMs < 100)
+  }
+
+  @Test
+  fun whileTheMainThreadIsBusyLaterQuestionsAreUnansweredAtOnce() {
+    assertNull(fromKeyboard { connection.getTextBeforeCursor(5, 0) })
+
+    val start = System.nanoTime()
+    repeat(5) { assertNull(fromKeyboard { connection.getTextBeforeCursor(5, 0) }) }
+    val waitedMs = (System.nanoTime() - start) / 1_000_000
+
+    assertTrue("waited $waitedMs ms", waitedMs < 100)
+    // Only the first question was passed on.
+    shadowOf(Looper.getMainLooper()).idle()
+    assertEquals(listOf("getTextBeforeCursor(5)"), calls)
+  }
+
+  @Test
+  fun questionsAreAnsweredAgainOnceTheMainThreadIsFree() {
+    assertNull(fromKeyboard { connection.getTextBeforeCursor(5, 0) })
+    shadowOf(Looper.getMainLooper()).idle()
+
+    questionAnsweredByTheMainThreadWhenItIsFree()
+  }
+
+  @Test
+  fun aQuestionAfterAChangeSeesTheChange() {
+    fromKeyboard { connection.commitText("a", 1) }
+    val answer = keyboard.submit(Callable { connection.getTextBeforeCursor(5, 0) })
+    val deadline = SystemClock.uptimeMillis() + 5000
+    while (!answer.isDone && SystemClock.uptimeMillis() < deadline) {
+      shadowOf(Looper.getMainLooper()).idle()
+      Thread.sleep(5)
+    }
+
+    assertEquals("Hello", answer.get(1, TimeUnit.SECONDS))
+    assertEquals(listOf("commitText(a)", "getTextBeforeCursor(5)"), calls)
   }
 
   @Test
