@@ -35,6 +35,7 @@ import com.google.android.accessibility.utils.material.MaterialComponentUtils
 import com.google.android.accessibility.utils.widget.DialogUtils
 import org.json.JSONArray
 import org.json.JSONObject
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 class ChoiceList(
   context: Context,
@@ -54,7 +55,7 @@ class ChoiceList(
       orientation = LinearLayout.VERTICAL
       if (options.size > FILTER_FROM) {
         val filter =
-          EditText(context).apply {
+          KeyboardSafeEditText(context).apply {
             hint = context.getString(R.string.script_list_filter)
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
             isSingleLine = true
@@ -112,7 +113,7 @@ class ScriptDialogs(private val context: Context) {
   fun prompt(owner: String, title: String, text: String, hint: String, done: (String?) -> Unit) =
     show(owner, null, title, null, cancel(), done) { finish ->
       val field =
-        EditText(context).apply {
+        KeyboardSafeEditText(context).apply {
           setText(text)
           this.hint = hint
           inputType = InputType.TYPE_CLASS_TEXT

@@ -20,6 +20,7 @@ import android.text.InputType
 import android.widget.EditText
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 class ScriptCommandFragment : ScriptScreenFragment() {
   private val commandId: String by lazy { requireArguments().getString(ARG_COMMAND).orEmpty() }
@@ -100,7 +101,7 @@ class ScriptCommandFragment : ScriptScreenFragment() {
 
   private fun typeKeys() {
     val field =
-      EditText(requireContext()).apply {
+      KeyboardSafeEditText(requireContext()).apply {
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
         hint = getString(R.string.script_binding_type_keys_summary)
       }

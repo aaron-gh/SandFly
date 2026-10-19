@@ -40,6 +40,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.io.IOException
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /**
  * The installed sound themes, with the one in use, the settings of the theme in use, and ways to
@@ -240,7 +241,7 @@ class SoundThemesFragment : TalkbackBaseFragment() {
   private fun askForLink() {
     val context = requireContext()
     val field =
-      EditText(context).apply {
+      KeyboardSafeEditText(context).apply {
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI
         setHint(R.string.sound_theme_link_hint)
         isSingleLine = true
