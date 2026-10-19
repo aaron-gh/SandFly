@@ -1250,6 +1250,9 @@ public class FocusProcessorForLogicalNavigation {
               reusableOrderedStrategy(traversalStrategy, rootNode, pivot),
               eventId);
       if (reveal == REVEAL_SHOWN) {
+        // The saved order was read before the scroll, so it still has the next item off screen,
+        // and the search would stop at the edge.
+        TraversalTreeCache.clear("revealed next item");
         revealingOffscreen = true;
         try {
           return navigateToDefaultOrMacroGranularityTarget(
