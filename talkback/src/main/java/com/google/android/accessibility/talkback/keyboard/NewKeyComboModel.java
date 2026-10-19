@@ -1243,11 +1243,6 @@ public class NewKeyComboModel implements KeyComboModel {
         R.string.keycombo_assign_dialog_default_keymap_instruction, getTriggerModifierName());
   }
 
-  @Override
-  public void updateVersion(int previousVersion) {
-    // No action needed for the new keymap as it's added after version 50200001.
-  }
-
   private String getTriggerModifierName() {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     String triggerModifier =

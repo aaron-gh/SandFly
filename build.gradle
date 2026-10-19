@@ -44,7 +44,8 @@ android {
     }
     defaultConfig {
         applicationId = talkbackApplicationId
-        versionCode = backtalkVersionCodeBase + gitCommitCount
+        // The version code is the build number.
+        versionCode = gitCommitCount
         versionName = sandflyVersionName
         minSdk = 26
         targetSdk = 36

@@ -386,18 +386,6 @@
             android:theme="@style/TalkBackSettings"
             android:taskAffinity="com.google.android.accessibility.talkback.SettingsAffinity" />
 
-        <!-- Gesture Change Notification Activity -->
-        <activity
-            android:name="com.google.android.accessibility.talkback.preference.GestureChangeNotificationActivity"
-            android:exported="true"
-            android:theme="@style/DialogStyle"
-            android:directBootAware="true"
-            tools:ignore="ExportedActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
         <!-- Notification Activity used periodically to inform the user of changes -->
         <activity
             android:name="com.google.android.accessibility.talkback.NotificationActivity"

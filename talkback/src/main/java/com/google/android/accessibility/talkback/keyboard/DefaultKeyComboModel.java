@@ -728,21 +728,6 @@ public class DefaultKeyComboModel implements KeyComboModel {
         R.string.keycombo_assign_dialog_default_keymap_instruction, getTriggerModifierName());
   }
 
-  @Override
-  public void updateVersion(int previousVersion) {
-    if (previousVersion < 50200001) {
-      // From version 50200001, we've renamed keycombo_shortcut_navigate_next and
-      // keycombo_shortcut_navigate_previous to keycombo_shortcut_navigate_next_default and
-      // keycombo_shortcut_navigate_previous_default respectively.
-      moveKeyComboPreferenceValue(
-          context.getString(R.string.keycombo_shortcut_navigate_next),
-          context.getString(R.string.keycombo_shortcut_navigate_next_default));
-      moveKeyComboPreferenceValue(
-          context.getString(R.string.keycombo_shortcut_navigate_previous),
-          context.getString(R.string.keycombo_shortcut_navigate_previous_default));
-    }
-  }
-
   private String getTriggerModifierName() {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     String triggerModifier =
@@ -868,18 +853,5 @@ public class DefaultKeyComboModel implements KeyComboModel {
 
     KeyCombo keyCombo = persister.getKeyCombo(key);
     keyComboMap.put(key, keyCombo);
-  }
-
-  /**
-   * Move key combo preference value from fromKey to toKey. Original value in fromKey is deleted.
-   */
-  private void moveKeyComboPreferenceValue(String fromKey, String toKey) {
-    if (!persister.contains(fromKey)) {
-      return;
-    }
-
-    KeyCombo keyCombo = persister.getKeyCombo(fromKey);
-    saveKeyCombo(toKey, keyCombo);
-    persister.remove(fromKey);
   }
 }

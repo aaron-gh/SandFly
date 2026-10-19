@@ -474,9 +474,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       setCaptureTrainingCombos(false);
 
       // Request permissions after TalkBack tutorial is finished.
-      if (NotificationUtils.hasPostNotificationPermission(talkBackService)) {
-        talkBackService.helper.flushPendingNotification();
-      } else {
+      if (!NotificationUtils.hasPostNotificationPermission(talkBackService)) {
         // Post notification permission.
         NotificationUtils.requestPostNotificationPermissionIfNeeded(
             talkBackService,
@@ -489,9 +487,6 @@ public class TalkBackService extends AccessibilityServiceCompat
                         .anyMatch(p -> TextUtils.equals(p, permission.POST_NOTIFICATIONS));
                 if (requestPostNotificationPermission) {
                   context.unregisterReceiver(this);
-                  // Even if a user declines the notification permission and we still need to make
-                  // notification for some change in talkback upgrade, we will ask permission again.
-                  talkBackService.helper.flushPendingNotification();
                 }
               }
             });
@@ -831,8 +826,6 @@ public class TalkBackService extends AccessibilityServiceCompat
   private IpcClientCallbackImpl ipcClientCallback;
   private BootReceiver bootReceiver;
 
-  /** A helper to smoothly migrate from old version to the latest version for TalkBack. */
-  private TalkBackUpdateHelper helper;
 
   private EventLatencyLogger eventLatencyLogger;
 
@@ -1913,8 +1906,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     resumeInfrastructure();
 
     // Handle any update actions.
-    helper = new TalkBackUpdateHelper(this);
-    helper.checkUpdate();
+    new TalkBackUpdateHelper(this).checkUpdate();
     Updater.startAutomaticChecks(this);
     // Turns Backtalk under its old app ID off, before this one says it is on.
     AppIdHandOver.onServiceConnected(this, this::refreshGestureDetection);
@@ -1951,11 +1943,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     } else {
       if (Settings.Secure.getInt(getContentResolver(), Settings.Global.DEVICE_PROVISIONED, 1)
           != 0) {
-        // We don't need to show the tutorial so we can directly notify the changes.
         // When the Tutorial is blocked, during the OOBE for instance, we should delay the
         // on-boarding to next TalkBack cycle.
-        helper.flushPendingNotification();
-
         // Show watermark again if onboarding is not confirmed finished by user.
         if (!OnboardingInitiator.showOnboardingIfNecessary(this)
             && OnboardingInitiator.hasOnboardingForNewFeaturesBeenShown(prefs, this)

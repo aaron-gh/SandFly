@@ -21,12 +21,10 @@ def gitOutput = { List<String> args ->
 // SandFly's build number is the number of commits since the last commit before SandFly numbered
 // its own builds, so the first one is build 1. The publish job in .github/workflows/build.yml
 // counts the same way.
-def buildNumberBase = "37ec0ee400c0710c990b2511f735c955c8cabcac"
+def buildNumberBase = "bc79987c138301c55d5a79aa80460d63d8ecf6da"
 def commitCount = gitOutput(['rev-list', '--count', "${buildNumberBase}..HEAD"])
 def commitHash = gitOutput(['rev-parse', 'HEAD'])
 ext {
     gitCommitCount = commitCount.isInteger() ? Math.max(commitCount.toInteger(), 1) : 1
-    // Version codes start above TalkBack's, so that its upgrade steps for old versions never run.
-    backtalkVersionCodeBase = 70000000
     gitCommitHash = commitHash ==~ /[0-9a-f]{40}/ ? commitHash : ''
 }

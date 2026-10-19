@@ -58,12 +58,6 @@ public class PreferencesActivityUtils {
   }
 
   /**
-   * Notification ID for the Gesture Change notification. This is also used in the
-   * GestureChangeNotificationActivity to dismiss the notification.
-   */
-  public static final int GESTURE_CHANGE_NOTIFICATION_ID = 2;
-
-  /**
    * Utility method for announcing text via accessibility event.
    *
    * @param text The text to announce.

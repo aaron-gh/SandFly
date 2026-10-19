@@ -97,7 +97,4 @@ public interface KeyComboModel {
 
   /** Returns description of eligible key combination. This will be shown in the UI. */
   String getDescriptionOfEligibleKeyCombo();
-
-  /** Updates key combo model. This method will be called when TalkBack is updated. */
-  void updateVersion(int previousVersion);
 }
