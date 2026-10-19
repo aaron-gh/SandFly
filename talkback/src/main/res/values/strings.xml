@@ -1784,6 +1784,10 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="shortcut_title_text_editing">Text editing</string>
     <!-- Category for shortcuts related to special features. [CHAR_LIMIT=40] -->
     <string name="shortcut_title_special_features">Other</string>
+    <!-- Category for shortcuts that open an app, listing the apps by name. [CHAR_LIMIT=40] -->
+    <string name="shortcut_title_open_app">Open app</string>
+    <!-- Name of a shortcut that opens an app, such as "Open Gmail". [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
 
     <!-- Label for a shortcut that is not assigned and does nothing. [CHAR_LIMIT=40] -->
     <string name="shortcut_unassigned">Tap to assign</string>

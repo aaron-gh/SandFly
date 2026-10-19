@@ -297,6 +297,8 @@ public class GestureController {
                   .setDefaultToInputFocus(true)
                   .setScroll(true)
                   .setWrap(true));
+    } else if (OpenAppActions.isAction(action)) {
+      result = OpenAppActions.open(service, action);
     } else if (NavigationGestureActions.isAction(action)) {
       result =
           NavigationGestureActions.perform(
