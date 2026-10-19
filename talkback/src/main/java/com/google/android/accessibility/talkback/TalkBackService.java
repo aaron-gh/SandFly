@@ -92,6 +92,8 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityWindowInfo;
+import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
 import androidx.core.os.UserManagerCompat;
@@ -1123,6 +1125,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       // TODO: Could move the logic of TOUCH_INTERACTION related event handling out of
       // TalkBackService, and concentrated in a dedicated module such as ?
       isTouchInteracting = true;
+      if (globalVariables != null) {
+        globalVariables.setTapToType(false);
+      }
       pipeline
           .getFeedbackReturner()
           .returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(RENEW_ENSURE_FOCUS));
@@ -3234,6 +3239,23 @@ public class TalkBackService extends AccessibilityServiceCompat
   public void onDragStarted() {
     if (scrollTicks != null) {
       scrollTicks.onDragStarted();
+    }
+  }
+
+  /** Returns the windows on the display, from top to bottom. */
+  @RequiresApi(Build.VERSION_CODES.R)
+  public List<AccessibilityWindowInfo> getWindowsOnDisplay(int displayId) {
+    List<AccessibilityWindowInfo> windows = getWindowsOnAllDisplays().get(displayId);
+    return windows == null ? ImmutableList.of() : windows;
+  }
+
+  /** Called when a one-finger tap on the keyboard types the key under it. */
+  public void onTapToType() {
+    if (accessibilityFocusInterpreter != null) {
+      accessibilityFocusInterpreter.onTapToType();
+    }
+    if (globalVariables != null) {
+      globalVariables.setTapToType(true);
     }
   }
 

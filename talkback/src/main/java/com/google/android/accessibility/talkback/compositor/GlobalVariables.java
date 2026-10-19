@@ -166,6 +166,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean isLastFocusInScrollableNode = false;
   private boolean isFocusPage = false;
   @TypingMethod private int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+  private boolean tapToType;
   private boolean isDescribingSwipeTarget = false;
 
   private final @Nullable GestureShortcutProvider gestureShortcutProvider;
@@ -526,6 +527,19 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   /** Returns if TalkBack uses single-tap gesture. */
   public boolean useSingleTap() {
     return mUseSingleTap;
+  }
+
+  /**
+   * Sets whether the touch interaction in progress is a tap on the keyboard that types the key under
+   * it, which isn't spoken.
+   */
+  public void setTapToType(boolean value) {
+    tapToType = value;
+  }
+
+  /** Returns whether the touch interaction in progress is a tap that types a key. */
+  public boolean isTapToType() {
+    return tapToType;
   }
 
   /** Sets if TalkBack uses single-tap gesture. */

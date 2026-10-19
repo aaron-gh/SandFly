@@ -20,6 +20,7 @@ import static com.google.android.accessibility.talkback.focusmanagement.FocusPro
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.FORCE_LIFT_TO_TYPE_ON_IME;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
 import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE_EXCEPT_ACTION_KEY;
+import static com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -49,7 +50,8 @@ public class TypingMethodPrefFragment extends TalkbackBaseFragment {
         R.string.value_type_confirmation_lift_to_type_for_any_key, FORCE_LIFT_TO_TYPE_ON_IME),
     METHOD_LIFT_TO_TYPE_EXCEPT_ACTION_KEY(
         R.string.value_type_confirmation_lift_to_type_except_action_key,
-        LIFT_TO_TYPE_EXCEPT_ACTION_KEY);
+        LIFT_TO_TYPE_EXCEPT_ACTION_KEY),
+    METHOD_TAP_TO_TYPE(R.string.value_type_confirmation_tap_to_type, TAP_TO_TYPE);
 
     @StringRes private final int titleId;
     private final int method;
@@ -113,7 +115,9 @@ public class TypingMethodPrefFragment extends TalkbackBaseFragment {
       }
 
       if (itemChanged) {
-        if (method == FORCE_LIFT_TO_TYPE_ON_IME || method == LIFT_TO_TYPE_EXCEPT_ACTION_KEY) {
+        if (method == FORCE_LIFT_TO_TYPE_ON_IME
+            || method == LIFT_TO_TYPE_EXCEPT_ACTION_KEY
+            || method == TAP_TO_TYPE) {
           // Inform user a reading control item is added to adjust the latency
           // dynamically.
           A11yAlertDialogWrapper dialog =

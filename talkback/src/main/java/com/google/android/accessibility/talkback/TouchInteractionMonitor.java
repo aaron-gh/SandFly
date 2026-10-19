@@ -51,6 +51,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
+import android.graphics.Region;
 import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -60,6 +61,7 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -69,6 +71,7 @@ import com.google.android.accessibility.talkback.PrimesController.TimerAction;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
+import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -175,6 +178,7 @@ public class TouchInteractionMonitor
   private boolean clearGestureDetectorOnNextDown = false;
   // Recognizes two fingers turning around each other. A recognized rotation owns the whole touch.
   private final TwoFingerRotationTracker rotationTracker;
+  private final TapToTypeTracker tapToTypeTracker;
   // Whether double tap and double tap and hold will be dispatched to the service or handled in
   // the framework.
   private boolean serviceHandlesDoubleTap = false;
@@ -370,6 +374,7 @@ public class TouchInteractionMonitor
     passthroughTotalSlop = passthroughSlopMultiplier * touchSlop;
     rotationTracker =
         new TwoFingerRotationTracker(passthroughTotalSlop, touchSlop, this::onRotationStep);
+    tapToTypeTracker = new TapToTypeTracker(touchSlop);
     sharedPreferences = prefs;
     typingFocusTimeout = FeatureFlagReader.typingFocusTimeout(service);
     touchFocusTimeout = FeatureFlagReader.touchFocusTimeout(service);
@@ -512,6 +517,9 @@ public class TouchInteractionMonitor
     }
     receivedPointerTracker.onMotionEvent(event);
     if (handleRotation(event)) {
+      return;
+    }
+    if (handleTapToType(event)) {
       return;
     }
     if (shouldPerformGestureDetection()) {
@@ -716,6 +724,7 @@ public class TouchInteractionMonitor
     gestureStarted = false;
     clearGestureDetectorOnNextDown = false;
     rotationTracker.clear();
+    tapToTypeTracker.clear();
     stateChangeRequested = false;
     gestureDetector.clear();
     receivedPointerTracker.clear();
@@ -1107,6 +1116,48 @@ public class TouchInteractionMonitor
       }
     }
     return count == 0 ? 0 : sum / count;
+  }
+
+  /**
+   * Types the key under a one-finger tap on the keyboard with the Tap to type typing method. Returns
+   * true for the event that lifts the finger, which no gesture matcher may see, so that a tap right
+   * after it types another key instead of making a double-tap.
+   */
+  private boolean handleTapToType(MotionEvent event) {
+    if (typingMethod != FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE) {
+      tapToTypeTracker.clear();
+      return false;
+    }
+    if (!tapToTypeTracker.onMotionEvent(event, this::isOnKeyboard)
+        || state != STATE_TOUCH_INTERACTING
+        || gestureStarted) {
+      return false;
+    }
+    if (BuildConfig.DEBUG) {
+      Log.d(DEBUG_GESTURE_TAG, "Tap to type");
+    }
+    keepMonitorTouchExplore = false;
+    requestTouchExplorationDelayed.cancel();
+    gestureDetector.clear();
+    // Touch exploration of where the finger lifted finds the key.
+    service.onTapToType();
+    requestTouchExploration("handleTapToType");
+    return true;
+  }
+
+  /** Returns whether the keyboard is the topmost window at this point of the display. */
+  private boolean isOnKeyboard(float x, float y) {
+    Region region = new Region();
+    for (AccessibilityWindowInfo window : service.getWindowsOnDisplay(displayId)) {
+      if (window.getType() == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) {
+        continue;
+      }
+      window.getRegionInScreen(region);
+      if (region.contains((int) x, (int) y)) {
+        return window.getType() == AccessibilityWindowInfo.TYPE_INPUT_METHOD;
+      }
+    }
+    return false;
   }
 
   /**
