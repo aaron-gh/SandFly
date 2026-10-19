@@ -329,10 +329,17 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
 
-    // Search forward for node satisfying filter.
+    // Search forward for node satisfying filter. Swipes move through web content with its own
+    // navigation actions, so the traversal order leaves out its children unless asked; a search
+    // has to look inside web pages and WebViews too.
     @SearchDirection int direction = TraversalStrategy.SEARCH_FOCUS_FORWARD;
     TraversalStrategy traversalStrategy =
-        TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, direction);
+        TraversalStrategyUtils.getTraversalStrategy(
+            rootNode,
+            focusFinder,
+            direction,
+            /* includeChildrenOfNodesWithWebActions= */ true,
+            /* makeFabFirst= */ false);
     AccessibilityNodeInfoCompat target =
         TraversalStrategyUtils.searchFocus(traversalStrategy, start, direction, filter);
     if (target == null) {
