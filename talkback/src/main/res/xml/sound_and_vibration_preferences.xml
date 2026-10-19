@@ -22,6 +22,10 @@
       android:key="@string/pref_audio_output_device_key"
       android:summary="%s"
       android:title="@string/title_pref_audio_output_device" />
+  <MultiSelectListPreference
+      android:dialogTitle="@string/title_pref_speaker_devices"
+      android:key="@string/pref_speaker_devices_key"
+      android:title="@string/title_pref_speaker_devices" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_use_audio_focus_default"
       android:key="@string/pref_use_audio_focus_key"

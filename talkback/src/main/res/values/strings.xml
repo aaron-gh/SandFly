@@ -1438,6 +1438,12 @@
       Description: Fallback name for USB audio device. [CHAR LIMIT=30]
     -->
     <string name="value_audio_output_device_usb_device">USB audio device</string>
+    <!-- Title of the setting that lists the Bluetooth, wired and USB outputs, such as a Bluetooth speaker, that move Backtalk's audio to the phone speaker while they are connected. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speaker_devices">Phone speaker with these devices</string>
+    <!-- Summary of the phone speaker devices setting when no output is chosen. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speaker_devices_none">None</string>
+    <!-- Summary of the phone speaker devices setting before any Bluetooth, wired or USB output has been connected, so there is nothing to choose. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speaker_devices_no_devices">No Bluetooth or wired devices connected yet</string>
 
     <!--
       Source: Preference category title.

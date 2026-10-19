@@ -89,7 +89,12 @@ class AudioDeviceRouter @JvmOverloads constructor(
     }
   }
 
-  private var currentTarget: AudioTarget = AudioTarget.SystemDefault
+  // The target the user chose as Audio output device.
+  private var chosenTarget: AudioTarget = AudioTarget.SystemDefault
+  // The target routing follows: the phone speaker while an output chosen for it is connected, such
+  // as a Bluetooth speaker, otherwise the chosen target.
+  private val currentTarget: AudioTarget
+    get() = if (speakerDeviceConnected) AudioTarget.PhoneSpeaker else chosenTarget
   private var isMonitoring: Boolean = false
   private var audioDeviceCallback: AudioDeviceCallback? = null
   private var communicationDeviceListener: Any? = null
@@ -106,6 +111,9 @@ class AudioDeviceRouter @JvmOverloads constructor(
   private var keepAliveTrack: AudioTrack? = null
 
   private var speakerphoneSetByUs = false
+  // Outputs that move Backtalk's audio to the phone speaker while connected, and whether one is.
+  @Volatile private var speakerDevices: Set<String> = emptySet()
+  @Volatile private var speakerDeviceConnected = false
   private var otherPlaybackCount = 0
   private val playbackCallback =
     object : AudioManager.AudioPlaybackCallback() {
@@ -161,6 +169,12 @@ class AudioDeviceRouter @JvmOverloads constructor(
           )
         Log.i(TAG, "SharedPreference changed for audio output device: $newPref")
         setPreferredDevice(newPref)
+      } else if (key == context.getString(R.string.pref_speaker_devices_key)) {
+        speakerDevices = SpeakerDevices.chosen(prefs, context)
+        if (updateSpeakerDeviceConnected()) {
+          applyRouting()
+          scheduleReassertion()
+        }
       }
     }
 
@@ -175,7 +189,9 @@ class AudioDeviceRouter @JvmOverloads constructor(
           R.string.pref_audio_output_device_key,
           R.string.pref_audio_output_device_default,
         )
-      currentTarget = AudioTarget.parse(savedPref)
+      chosenTarget = AudioTarget.parse(savedPref)
+      speakerDevices = SpeakerDevices.chosen(prefs, context)
+      updateSpeakerDeviceConnected()
       // Nothing is routed yet, whatever a previous run left behind.
       setRouteForced(false)
       Log.i(TAG, "AudioDeviceRouter initialized with target: $currentTarget (raw pref: '$savedPref')")
@@ -188,10 +204,10 @@ class AudioDeviceRouter @JvmOverloads constructor(
   /** Sets the preferred audio output target from the preference string value. */
   fun setPreferredDevice(prefValue: String?) {
     val target = AudioTarget.parse(prefValue)
-    if (target != currentTarget) {
-      Log.i(TAG, "Audio output target changed from $currentTarget to $target")
-      LogUtils.d(TAG, "Audio output target changed from %s to %s", currentTarget, target)
-      currentTarget = target
+    if (target != chosenTarget) {
+      Log.i(TAG, "Audio output target changed from $chosenTarget to $target")
+      LogUtils.d(TAG, "Audio output target changed from %s to %s", chosenTarget, target)
+      chosenTarget = target
       applyRouting()
       scheduleReassertion()
     }
@@ -205,6 +221,8 @@ class AudioDeviceRouter @JvmOverloads constructor(
     val callback =
       object : AudioDeviceCallback() {
         override fun onAudioDevicesAdded(addedDevices: Array<out AudioDeviceInfo>?) {
+          rememberOutputs(addedDevices?.toList().orEmpty())
+          updateSpeakerDeviceConnected()
           Log.i(TAG, "Audio devices added, updating routing for target: $currentTarget")
           LogUtils.d(TAG, "Audio devices added, updating routing for target: %s", currentTarget)
           applyRouting()
@@ -212,6 +230,7 @@ class AudioDeviceRouter @JvmOverloads constructor(
         }
 
         override fun onAudioDevicesRemoved(removedDevices: Array<out AudioDeviceInfo>?) {
+          updateSpeakerDeviceConnected()
           Log.i(TAG, "Audio devices removed, updating routing for target: $currentTarget")
           LogUtils.d(TAG, "Audio devices removed, updating routing for target: %s", currentTarget)
           applyRouting()
@@ -228,6 +247,8 @@ class AudioDeviceRouter @JvmOverloads constructor(
     am.registerAudioRecordingCallback(recordingCallback, mainHandler)
 
     isMonitoring = true
+    rememberOutputs(am.getDevices(AudioManager.GET_DEVICES_OUTPUTS).toList())
+    updateSpeakerDeviceConnected()
     applyRouting()
     scheduleReassertion()
   }
@@ -695,6 +716,37 @@ class AudioDeviceRouter @JvmOverloads constructor(
    */
   private fun speakerToForce(am: AudioManager): AudioDeviceInfo? =
     if (findExternalDevice(am) != null) findSpeakerDevice(am) else null
+
+  /**
+   * Notes whether an output chosen to move Backtalk's audio to the phone speaker is connected.
+   * Returns true when that changed.
+   */
+  private fun updateSpeakerDeviceConnected(): Boolean {
+    val am = audioManager ?: return false
+    val connected =
+      speakerDevices.isNotEmpty() &&
+        SpeakerDevices.anyChosen(
+          am.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+            .filter { isExternalDevice(it) }
+            .map { getDeviceDisplayName(it, context) },
+          speakerDevices,
+        )
+    if (connected == speakerDeviceConnected) return false
+    speakerDeviceConnected = connected
+    Log.i(TAG, "Output chosen for the phone speaker ${if (connected) "connected" else "gone"}")
+    return true
+  }
+
+  /** Remembers the external outputs among [devices], to offer them for the phone speaker. */
+  private fun rememberOutputs(devices: List<AudioDeviceInfo>) {
+    val names = devices.filter { isExternalDevice(it) }.map { getDeviceDisplayName(it, context) }
+    if (names.isEmpty()) return
+    try {
+      SpeakerDevices.remember(SharedPreferencesUtils.getSharedPreferences(context), context, names)
+    } catch (e: RuntimeException) {
+      Log.w(TAG, "Could not remember audio outputs", e)
+    }
+  }
 
   @VisibleForTesting
   fun findExternalDevice(am: AudioManager): AudioDeviceInfo? {
