@@ -38,6 +38,7 @@ import androidx.core.view.setPadding
 import androidx.core.widget.doAfterTextChanged
 import org.json.JSONArray
 import org.json.JSONObject
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 class ScriptForm(
   private val context: Context,
@@ -131,7 +132,7 @@ class ScriptForm(
   private inner class Edit(id: String, spec: JSONObject) : Control(id) {
     private val label = TextView(context)
     private val field =
-      EditText(context).apply {
+      KeyboardSafeEditText(context).apply {
         this.id = View.generateViewId()
         inputType = inputTypeOf(spec)
         if (spec.optBoolean("notify")) doAfterTextChanged { changed(it?.toString().orEmpty()) }

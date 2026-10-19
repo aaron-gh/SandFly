@@ -57,7 +57,7 @@
           app:icon="@drawable/ic_mic"
           app:iconTint="@null" />
 
-      <EditText
+      <com.google.android.accessibility.utils.widget.KeyboardSafeEditText
           android:id="@+id/question_edit_filed"
           android:layout_width="wrap_content"
           android:layout_height="match_parent"

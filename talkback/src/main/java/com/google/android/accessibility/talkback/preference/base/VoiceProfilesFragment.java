@@ -56,6 +56,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.checkerframework.checker.nullness.qual.Nullable;
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText;
 
 /**
  * The voice profiles: the one in use, then Backtalk default and each profile in the order the
@@ -283,7 +284,7 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
       String name,
       NameListener listener) {
     String defaultName = context.getString(R.string.voice_profile_default);
-    EditText field = new EditText(context);
+    EditText field = new KeyboardSafeEditText(context);
     field.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
     field.setSingleLine(true);
     field.setFilters(

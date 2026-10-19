@@ -24,6 +24,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /** The places to find scripts that the user has added, and a way to add another. */
 class ScriptSourcesFragment : ScriptScreenFragment() {
@@ -45,7 +46,7 @@ class ScriptSourcesFragment : ScriptScreenFragment() {
     val context = requireContext()
     lateinit var shown: AlertDialog
     val field =
-      EditText(context).apply {
+      KeyboardSafeEditText(context).apply {
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI
         setHint(R.string.script_source_hint)
         isSingleLine = true
