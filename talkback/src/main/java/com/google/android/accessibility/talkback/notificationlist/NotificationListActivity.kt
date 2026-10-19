@@ -51,6 +51,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Backtalk's own list of notifications, opened by the Notifications action instead of the
@@ -82,6 +83,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         show()
       }
     }
+
+  /** The parts of a notification to speak, read when the list opens. */
+  private var parts: List<NotificationPart> = NotificationPart.entries
 
   /** The groups the user has expanded while the list is open. */
   private val expandedGroups = HashSet<String>()
@@ -142,6 +146,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     super.onStart()
     NotificationList.addListener(this)
     opening = true
+    parts = NotificationParts.enabledParts(SharedPreferencesUtils.getSharedPreferences(this))
     waitingForList = !NotificationList.isConnected
     if (NotificationList.isAccessGranted(this) && !NotificationList.isConnected) {
       NotificationListenerService.requestRebind(
@@ -239,14 +244,35 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   private fun row(key: String): TextView = rows.getOrPut(key) { notificationRow() }
 
   private fun bind(row: TextView, entry: NotificationEntry, indented: Boolean) {
-    val state = playbackState(entry)
-    row.text =
-      listOfNotNull(entry.title, entry.text, state, "${entry.appName} · ${entry.time}")
-        .joinToString("\n")
-    row.contentDescription = listOfNotNull(entry.description, state).joinToString(", ")
+    val details = details(entry, playbackState(entry))
+    row.text = details.joinToString("\n")
+    row.contentDescription = details.joinToString(", ")
     row.setPaddingRelative(dp(if (indented) 40 else 16), row.paddingTop, row.paddingEnd, row.paddingBottom)
     row.setOnClickListener { open(entry) }
     (row.getTag(R.id.notification_list_row_delegate) as RowDelegate).set(entry, null)
+  }
+
+  /**
+   * The details of the notification that the user chose, in their order, both spoken and shown.
+   * The title, or the app if there is none, when every detail is turned off, so that the row still
+   * says something.
+   */
+  private fun details(entry: NotificationEntry, playbackState: String?): List<String> {
+    val details =
+      parts
+        .mapNotNull { part ->
+          when (part) {
+            NotificationPart.TITLE -> entry.title
+            NotificationPart.TEXT -> entry.text
+            NotificationPart.APP -> entry.appName
+            NotificationPart.TIME -> entry.time
+            NotificationPart.PLAYBACK -> playbackState
+          }
+        }
+        .map { it.toString().trim() }
+        .filter { it.isNotEmpty() }
+        .distinct()
+    return details.ifEmpty { listOf((entry.title ?: entry.appName).toString()) }
   }
 
   /** A group's row names the app, the number of notifications and the newest one. */
@@ -258,12 +284,12 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         group.entries.size,
         group.entries.size,
       )
-    row.text = listOfNotNull(group.appName, count, newest.title).joinToString("\n")
-    row.contentDescription =
+    val details =
       listOfNotNull(group.appName, count, newest.title, newest.text)
         .map { it.toString().trim() }
         .filter { it.isNotEmpty() }
-        .joinToString(", ")
+    row.text = details.joinToString("\n")
+    row.contentDescription = details.joinToString(", ")
     row.setPaddingRelative(dp(16), row.paddingTop, row.paddingEnd, row.paddingBottom)
     row.setOnClickListener { toggle(group) }
     (row.getTag(R.id.notification_list_row_delegate) as RowDelegate).set(null, group)

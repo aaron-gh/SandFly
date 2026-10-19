@@ -34,15 +34,6 @@ class NotificationEntry(
   val key: String
     get() = notification.key
 
-  /** The text spoken for the notification: title, text, app and time. */
-  val description: CharSequence
-    get() =
-      listOfNotNull(title, text, appName, time)
-        .map { it.toString().trim() }
-        .filter { it.isNotEmpty() }
-        .distinct()
-        .joinToString(", ")
-
   companion object {
     fun from(notification: StatusBarNotification, appName: CharSequence): NotificationEntry {
       val extras = notification.notification.extras ?: Bundle.EMPTY
