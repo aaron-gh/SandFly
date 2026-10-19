@@ -114,8 +114,9 @@ class ThemeCreationTest {
     val prefs = context.getSharedPreferences("missing-draft", Context.MODE_PRIVATE)
     prefs.edit().putString(SoundThemes.PREF_ACTIVE, draft.id).commit()
     draft.directory.deleteRecursively()
-    assertThrows(IOException::class.java) { SoundThemes.active(context, prefs) }
+    assertEquals(SoundThemes.BACKTALK, SoundThemes.active(context, prefs).id)
     assertThrows(IOException::class.java) { SoundThemes.removeAllSounds(context, prefs) }
+    assertThrows(IOException::class.java) { SoundThemes.saveSettings(context, prefs) }
   }
 
   @Test fun duplicateDraftCanBeRenamedWithoutLosingSounds() {
@@ -139,4 +140,32 @@ class ThemeCreationTest {
     assertFalse(java.io.File(storage.dataDir, "shared_prefs/$name.xml").exists())
   }
 
+  @Test fun draftsBeingEditedOutliveInstallLeftovers() {
+    val storage = context.createDeviceProtectedStorageContext()
+    val twoHoursAgo = System.currentTimeMillis() - 2 * 60 * 60 * 1000
+    val draft = SoundThemes.createDraft(context, SoundThemeManifest("Editing"))
+    storage.getSharedPreferences(SoundThemes.draftPreferencesName(draft.id), Context.MODE_PRIVATE)
+      .edit().putString(SoundThemes.PREF_ACTIVE, draft.id).commit()
+    draft.directory.setLastModified(twoHoursAgo)
+    val leftover = SoundThemes.createDraft(context, SoundThemeManifest("Leftover"))
+    leftover.directory.setLastModified(twoHoursAgo)
+    SoundThemes.installed(context)
+    assertTrue(draft.directory.isDirectory)
+    assertFalse(leftover.directory.exists())
+    val leftoverPrefs = SoundThemes.draftPreferencesName(leftover.id)
+    assertFalse(java.io.File(storage.dataDir, "shared_prefs/$leftoverPrefs.xml").exists())
+
+    draft.directory.setLastModified(System.currentTimeMillis() - 8L * 24 * 60 * 60 * 1000)
+    SoundThemes.installed(context)
+    assertFalse(draft.directory.exists())
+  }
+
+  @Test fun touchingADraftKeepsIt() {
+    val draft = SoundThemes.createDraft(context, SoundThemeManifest("Touched"))
+    draft.directory.setLastModified(0)
+    assertTrue(SoundThemes.touchDraft(context, draft.id))
+    assertTrue(draft.directory.lastModified() > 0)
+    draft.directory.deleteRecursively()
+    assertFalse(SoundThemes.touchDraft(context, draft.id))
+  }
 }

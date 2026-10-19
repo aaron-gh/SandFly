@@ -120,6 +120,7 @@ object SoundThemes {
   private const val DIRECTORY = "sound_themes"
   private const val STAGING_PREFIX = ".staging-"
   private const val STAGING_MAX_AGE_MS = 60L * 60 * 1000
+  private const val DRAFT_MAX_AGE_MS = 7L * 24 * 60 * 60 * 1000
   private const val TAG = "SoundThemes"
 
   /** The formats Android can play, as file extensions. */
@@ -191,9 +192,12 @@ object SoundThemes {
         .filter { it.isDirectory && it.name != BACKTALK }
         .mapNotNull { directory ->
           if (directory.name.startsWith(STAGING_PREFIX)) {
-            // Left over from an install that never finished, unless one is still going on.
-            if (System.currentTimeMillis() - directory.lastModified() > STAGING_MAX_AGE_MS) {
-              discardDraft(context, directory.name)
+            // Left over from an install that never finished, or a draft no longer edited, unless one
+            // is still going on. The editor updates a draft's time whenever it is used.
+            val isDraft = draftPreferencesFile(context, directory.name).isFile
+            val maxAge = if (isDraft) DRAFT_MAX_AGE_MS else STAGING_MAX_AGE_MS
+            if (System.currentTimeMillis() - directory.lastModified() > maxAge) {
+              if (isDraft) discardDraft(context, directory.name) else directory.deleteRecursively()
             }
             null
           } else {
@@ -208,10 +212,28 @@ object SoundThemes {
 
   /** The theme in use, or Backtalk's if the one in use is gone. */
   @JvmStatic
-  fun active(context: Context, prefs: SharedPreferences): SoundTheme {
+  fun active(context: Context, prefs: SharedPreferences): SoundTheme =
+    theme(context, activeId(prefs)) ?: backtalk(context)
+
+  /**
+   * The theme whose sounds and settings [prefs] change: the theme in use, or a draft. A draft that
+   * is gone is never replaced by Backtalk's theme, so that its changes cannot go there.
+   */
+  @Throws(IOException::class)
+  private fun edited(context: Context, prefs: SharedPreferences): SoundTheme {
     val id = activeId(prefs)
-    return theme(context, id) ?: if (id.startsWith(STAGING_PREFIX))
-      throw IOException("Theme draft is missing") else backtalk(context)
+    return theme(context, id)
+      ?: if (isDraft(id)) throw IOException("Theme draft is missing") else backtalk(context)
+  }
+
+  @JvmStatic fun isDraft(id: String): Boolean = id.startsWith(STAGING_PREFIX)
+
+  /** Whether the draft [id] still exists, and marks it as in use so that it is kept. */
+  fun touchDraft(context: Context, id: String): Boolean {
+    val directory = File(themesDirectory(context), id)
+    if (!File(directory, SoundThemeManifest.FILE_NAME).isFile) return false
+    directory.setLastModified(System.currentTimeMillis())
+    return true
   }
 
   @JvmStatic
@@ -232,7 +254,7 @@ object SoundThemes {
   /** The custom sound of [item] in the theme in use, or null if it plays Backtalk's sound. */
   @JvmStatic
   fun soundFile(context: Context, prefs: SharedPreferences, item: FeedbackItem): File? =
-    soundFiles(active(context, prefs))[item.key]
+    soundFiles(edited(context, prefs))[item.key]
 
   /**
    * The sounds and vibrations of the theme in use. An item with several sounds, like the circle
@@ -288,13 +310,13 @@ object SoundThemes {
   /** Saves the control sounds and 3D audio settings to the theme in use. */
   @JvmStatic
   fun saveSettings(context: Context, prefs: SharedPreferences) {
-    val theme = active(context, prefs)
+    val theme = edited(context, prefs)
     val manifest =
       theme.manifest.copy(
-        controlSounds = if (theme.id.startsWith(STAGING_PREFIX) && !prefs.contains(ControlSoundsSettings.PREF_ON))
+        controlSounds = if (isDraft(theme.id) && !prefs.contains(ControlSoundsSettings.PREF_ON))
           theme.manifest.controlSounds else ControlSoundsSettings.isOn(prefs),
         audio3d =
-          if (theme.id.startsWith(STAGING_PREFIX) && !prefs.contains(ControlSoundsSettings.PREF_3D))
+          if (isDraft(theme.id) && !prefs.contains(ControlSoundsSettings.PREF_3D))
             theme.manifest.audio3d else prefs.getString(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.VALUE_3D_WITH_HEADPHONES),
       )
     if (manifest != theme.manifest) write(theme.copy(manifest = manifest))
@@ -339,6 +361,12 @@ object SoundThemes {
       }
   }
 
+  private fun draftPreferencesFile(context: Context, id: String): File =
+    File(
+      context.createDeviceProtectedStorageContext().dataDir,
+      "shared_prefs/${draftPreferencesName(id)}.xml",
+    )
+
   fun renameDraft(context: Context, id: String, name: String) {
     require(id.startsWith(STAGING_PREFIX))
     val draft = theme(context, id) ?: throw IOException("Theme draft is missing")
@@ -374,7 +402,7 @@ object SoundThemes {
     input: InputStream,
     extension: String,
   ): Result {
-    val theme = active(context, prefs)
+    val theme = edited(context, prefs)
     theme.directory.mkdirs()
     val old = soundFiles(theme)[item.key]
     val file = File(theme.directory, fileName(item.key, extension, System.currentTimeMillis()))
@@ -387,13 +415,13 @@ object SoundThemes {
 
   /** Makes [item] play Backtalk's sound again in the theme in use. */
   fun removeSound(context: Context, prefs: SharedPreferences, item: FeedbackItem) {
-    soundFiles(active(context, prefs))[item.key]?.delete()
+    soundFiles(edited(context, prefs))[item.key]?.delete()
     changed(prefs)
   }
 
   /** Makes every item play Backtalk's sound again in the theme in use. */
   fun removeAllSounds(context: Context, prefs: SharedPreferences) {
-    soundFiles(active(context, prefs)).values.forEach { it.delete() }
+    soundFiles(edited(context, prefs)).values.forEach { it.delete() }
     changed(prefs)
   }
 
