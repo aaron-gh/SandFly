@@ -19,9 +19,11 @@ package com.google.android.accessibility.talkback.contextmenu;
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.view.Menu;
 import android.view.MenuInflater;
 import androidx.annotation.BoolRes;
+import androidx.annotation.IdRes;
 import androidx.annotation.StringRes;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
@@ -33,6 +35,7 @@ import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.DeferredType;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptMenuItem;
@@ -41,6 +44,7 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
@@ -88,6 +92,8 @@ public class TalkbackMenuProcessor {
   // ORDER_IMAGE_CAPTION share theirs. The menu keeps items with the same order in the order they're
   // added, and the menu settings sort them by title, so Emoji is added first to match.
   private static final int ORDER_VOICE_PROFILES = 15;
+  // Shares Verbosity's order.
+  private static final int ORDER_KEYBOARD_ECHO = 13;
   private static final int ORDER_SHOW_HIDE_SCREEN = 20;
   private static final int ORDER_PAUSE_BACKTALK = 21;
   private static final int ORDER_SYSTEM_ACTIONS = 24;
@@ -159,6 +165,28 @@ public class TalkbackMenuProcessor {
     addItemOrSubMenuForCurrentNode(
         menu, R.id.text_formatting, R.string.title_text_formatting_menu, ORDER_TEXT_FORMATTING);
 
+    // Keyboard echo, added before context_menu.xml so that it comes before Verbosity, as it does
+    // in the menu settings, which sort items with the same order by title.
+    addKeyboardEchoMenuIfValid(
+        menu,
+        TypingInput.ON_SCREEN_KEYBOARD,
+        R.id.keyboard_echo_on_screen_menu,
+        R.string.pref_show_context_menu_keyboard_echo_on_screen_setting_key);
+    addKeyboardEchoMenuIfValid(
+        menu,
+        TypingInput.PHYSICAL_KEYBOARD,
+        R.id.keyboard_echo_physical_menu,
+        R.string.pref_show_context_menu_keyboard_echo_physical_setting_key);
+    addKeyboardEchoMenuIfValid(
+        menu,
+        TypingInput.BRAILLE_KEYBOARD,
+        R.id.keyboard_echo_braille_keyboard_menu,
+        R.string.pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key);
+    addKeyboardEchoMenuIfValid(
+        menu,
+        TypingInput.BRAILLE_DISPLAY,
+        R.id.keyboard_echo_braille_display_menu,
+        R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key);
     // Read From & Last Phrase Spoken & screen search at context_menu.xml
     addContextMenuXmlMenu(menu);
 
@@ -527,6 +555,51 @@ public class TalkbackMenuProcessor {
                     EVENT_ID_UNTRACKED,
                     Feedback.speech(
                         service.getString(R.string.emoji_speech_state, entry),
+                        SpeakOptions.create()
+                            .setFlags(
+                                FeedbackItem.FLAG_NO_HISTORY
+                                    | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)));
+                return true;
+              });
+      subMenu.add(item);
+    }
+  }
+
+  /**
+   * Adds a sub menu to choose the keyboard echo for {@code input}, titled with the current choice.
+   * Watches have only the on-screen keyboard's.
+   */
+  private void addKeyboardEchoMenuIfValid(
+      ContextMenu menu, TypingInput input, @IdRes int menuId, @StringRes int prefKeyId) {
+    menu.removeItem(menuId);
+    if (!showMenuItem(prefKeyId, R.bool.pref_show_context_menu_keyboard_echo_default)
+        || (FormFactorUtils.isAndroidWear() && input != TypingInput.ON_SCREEN_KEYBOARD)) {
+      return;
+    }
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    Resources res = service.getResources();
+    ListSubMenu subMenu =
+        menu.addSubMenu(
+            /* groupId= */ 0,
+            menuId,
+            ORDER_KEYBOARD_ECHO,
+            KeyboardEchoSettings.state(res, input, KeyboardEchoSettings.read(prefs, res, input)));
+    for (int echo : KeyboardEchoSettings.choices(res)) {
+      ContextMenuItem item =
+          ContextMenu.createMenuItem(
+              service,
+              R.id.group_keyboard_echo,
+              Menu.NONE,
+              Menu.NONE,
+              KeyboardEchoSettings.choiceName(res, echo));
+      item.setOnMenuItemClickListener(
+          (OnContextMenuItemClickListener)
+              clicked -> {
+                KeyboardEchoSettings.write(prefs, res, input, echo);
+                pipeline.returnFeedback(
+                    EVENT_ID_UNTRACKED,
+                    Feedback.speech(
+                        KeyboardEchoSettings.state(res, input, echo),
                         SpeakOptions.create()
                             .setFlags(
                                 FeedbackItem.FLAG_NO_HISTORY

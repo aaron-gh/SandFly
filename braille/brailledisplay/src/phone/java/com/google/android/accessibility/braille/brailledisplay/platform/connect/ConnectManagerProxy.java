@@ -146,6 +146,11 @@ public class ConnectManagerProxy extends ConnectManager {
     return connectManager.isHidDevice(device);
   }
 
+  @Override
+  public boolean mayBeHidBrailleDisplay(ConnectableDevice device) {
+    return connectManager.mayBeHidBrailleDisplay(device);
+  }
+
   @VisibleForTesting
   public void testing_setConnectManager(ConnectManager connectManager) {
     this.connectManager = connectManager;

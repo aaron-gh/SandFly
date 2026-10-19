@@ -64,6 +64,27 @@
         android:theme="@style/BrailleSettingsTheme" />
 
     <activity
+        android:name="com.google.android.accessibility.braille.brailledisplay.settings.ExternalDisplaysActivity"
+        android:label="@string/external_displays_title"
+        android:configChanges="keyboard|keyboardHidden"
+        android:exported="false"
+        android:theme="@style/BrailleSettingsTheme" />
+
+    <!-- Asks the user whether an app may be a braille display. Display apps can open it to ask. -->
+    <activity
+        android:name="com.google.android.accessibility.braille.brailledisplay.platform.external.ExternalDisplayApprovalActivity"
+        android:configChanges="keyboard|keyboardHidden"
+        android:exported="true"
+        android:excludeFromRecents="true"
+        android:noHistory="true"
+        android:theme="@style/Theme.Transparent">
+      <intent-filter>
+        <action android:name="fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity
         android:name="com.google.android.accessibility.braille.brailledisplay.settings.BrailleLearningModeActivity"
         android:label="@string/bd_preference_key_learning_mode_title"
         android:exported="false"

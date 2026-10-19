@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.Feedback.Focus;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -254,6 +255,11 @@ public class FocusManagerInternal {
       return true;
     }
 
+    if (!FocusProcessorForScreenStateChange.focusesNewWindows()) {
+      // Only replace focus that was lost on this screen, such as when the focused item is removed.
+      return focusedSinceScreenChange(state) && requestA11yFocusFromLastFocusRecord(eventId);
+    }
+
     // On TV, we only try to follow input focus.
     if (FormFactorUtils.isAndroidTv()) {
       return pipeline.returnFeedback(
@@ -280,6 +286,12 @@ public class FocusManagerInternal {
         toFeedbackPart(INITIAL_FOCUS_FIRST_CONTENT, screenState.getStableScreenState()));
 
     return pipeline.returnFeedback(Feedback.create(eventId, feedbackFailovers));
+  }
+
+  /** Returns whether focus was last placed after the windows changed. */
+  private boolean focusedSinceScreenChange(ScreenState state) {
+    @Nullable FocusActionRecord record = history.getLastFocusActionRecord();
+    return record != null && record.getActionTime() > state.getScreenTransitionStartTime();
   }
 
   /**

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_speech_control">Povolit ostatním aplikacím mluvit</string>
+    <string name="summary_pref_speech_control">Aplikace, kterým to povolíte, mohou vyslovovat text hlasem Backtalku. Při zamknutém zařízení se nic nevysloví.</string>
+    <string name="title_pref_speech_control_sound">Přehrát zvuk, než promluví jiná aplikace</string>
+    <string name="speech_control_apps_category">Aplikace</string>
+    <string name="speech_control_no_apps">Žádná aplikace zatím nepožádala o možnost mluvit.</string>
+    <string name="speech_control_ask_title">Povolit aplikaci <xliff:g id="app" example="Tasker">%1$s</xliff:g> mluvit prostřednictvím Backtalku?</string>
+    <string name="speech_control_ask_text">Může vyslovovat text hlasem Backtalku. Toto nastavení můžete změnit v Pokročilých nastaveních.</string>
+    <string name="speech_control_allow">Povolit</string>
+    <string name="speech_control_deny">Nepovolit</string>
+    <string name="permission_speak_label">mluvit prostřednictvím Backtalku</string>
+    <string name="permission_speak_description">Umožňuje aplikaci požádat o vyslovení textu hlasem Backtalku. Než bude aplikace moci mluvit, Backtalk vás požádá o svolení.</string>
+</resources>

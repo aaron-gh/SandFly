@@ -73,7 +73,8 @@ class ManifestParser(private val strict: Boolean) {
         activity = json.optionalString("activity"),
         label = json.optionalString("label"),
         speak = json.optionalString("speak"),
-        hide = hideOf(json.opt("hide")),
+        hide = hideOf(json.opt("hide"), "hide"),
+        silence = hideOf(json.opt("silence"), "silence"),
         role = json.optionalString("role"),
         state = json.optionalString("state"),
         hint = json.optionalString("hint"),
@@ -82,6 +83,9 @@ class ManifestParser(private val strict: Boolean) {
         readBefore = targetOf(json.opt("readBefore")),
         readAfter = targetOf(json.opt("readAfter")),
         actions = itemActions(json.optJSONArray("actions")),
+        activate = json.optJSONObject("activate")?.let { query(it) },
+        liftToActivate = json.optBoolean("liftToActivate", false),
+        longPressAfter = longPressAfterOf(json.opt("longPressAfter")),
       )
     with(rule) {
       manifestCheck(id != null || match != null) { "A rule needs id or match" }
@@ -90,8 +94,8 @@ class ManifestParser(private val strict: Boolean) {
         "The rule for $target has both readBefore and readAfter"
       }
       manifestCheck(changesItem || actions.isNotEmpty()) {
-        "The rule for $target needs label, speak, hide, role, state, hint, heading, group, " +
-          "readBefore, readAfter or actions"
+        "The rule for $target needs label, speak, hide, silence, role, state, hint, heading, " +
+          "group, readBefore, readAfter, activate, liftToActivate, longPressAfter or actions"
       }
     }
     return rule
@@ -178,6 +182,12 @@ class ManifestParser(private val strict: Boolean) {
     }
     manifestCheck(!nested || !json.has("inside")) { "inside can't hold another inside" }
     json.optJSONObject("inside")?.let { query(it, nested = true) }
+    manifestCheck(!json.has("has") || json.opt("has") is JSONObject) { "has is an object, like match" }
+    manifestCheck(!nested || !json.has("has")) { "has can't hold another has, and inside can't hold has" }
+    json.optJSONObject("has")?.let {
+      manifestCheck(!it.has("inside")) { "has can't hold inside" }
+      query(it, nested = true)
+    }
     val query = NodeQuery.of(json)
     manifestCheck(query != NodeQuery()) { "A match needs at least one field" }
     checkRole(query.role)
@@ -222,14 +232,29 @@ class ManifestParser(private val strict: Boolean) {
       else -> manifestError("An item is named by an id or a match")
     }
 
-  private fun hideOf(value: Any?): Hide =
+  private fun longPressAfterOf(value: Any?): Int? =
+    when (value) {
+      null,
+      JSONObject.NULL -> null
+      else ->
+        (value as? Number)
+          ?.takeIf { it.toDouble() == it.toInt().toDouble() }
+          ?.toInt()
+          ?.takeIf { it in MIN_LONG_PRESS_AFTER..MAX_LONG_PRESS_AFTER }
+          ?: manifestError(
+            "longPressAfter is a number of milliseconds from $MIN_LONG_PRESS_AFTER to " +
+              "$MAX_LONG_PRESS_AFTER"
+          )
+    }
+
+  private fun hideOf(value: Any?, key: String): Hide =
     when (value) {
       null,
       JSONObject.NULL,
       false -> Hide.NONE
       true -> Hide.SELF
       "all" -> Hide.ALL
-      else -> manifestError("hide is true, false or 'all'")
+      else -> manifestError("$key is true, false or 'all'")
     }
 
   private fun commands(array: JSONArray?, permissions: Set<ScriptPermission>): List<ScriptCommand> {
@@ -329,6 +354,8 @@ class ManifestParser(private val strict: Boolean) {
     const val MAX_RULE_ACTIONS = 10
     const val MAX_COMMANDS = 50
     const val MAX_NAVIGATION = 20
+    const val MIN_LONG_PRESS_AFTER = 100
+    const val MAX_LONG_PRESS_AFTER = 10_000
     val NAVIGATION_KEYS = setOf("title", "id", "match")
     val RULE_KEYS =
       setOf(
@@ -339,6 +366,7 @@ class ManifestParser(private val strict: Boolean) {
         "label",
         "speak",
         "hide",
+        "silence",
         "role",
         "state",
         "hint",
@@ -347,6 +375,9 @@ class ManifestParser(private val strict: Boolean) {
         "readBefore",
         "readAfter",
         "actions",
+        "activate",
+        "liftToActivate",
+        "longPressAfter",
       )
   }
 }

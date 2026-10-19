@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="title_pref_tts_engine">Syntezator mowy</string>
+  <string name="title_pref_system_tts_settings">Systemowe ustawienia zamiany tekstu na mowę</string>
+  <string name="title_selector_voice_profile">Profil głosowy</string>
+  <string name="title_pref_voice_profiles">Profile głosowe</string>
+  <string name="voice_profile_default">Domyślny profil głosowy Backtalka</string>
+  <string name="voice_profile_in_use">Używany profil głosowy: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+  <string name="spoken_language_unavailable_with_profile">Zmiana języka wypowiedzi jest niedostępna podczas korzystania z profilu głosowego</string>
+  <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, używany</string>
+  <string name="no_voice_profiles">Brak profili głosowych</string>
+  <string name="shortcut_voice_profiles">Wybierz profil głosowy</string>
+  <string name="shortcut_previous_voice_profile">Poprzedni profil głosowy</string>
+  <string name="shortcut_next_voice_profile">Następny profil głosowy</string>
+  <string name="title_pref_voice_profile_in_use">Używany profil głosowy</string>
+  <string name="title_pref_add_voice_profile">Dodaj profil głosowy</string>
+  <string name="voice_profile_new_name">Profil głosowy <xliff:g id="number" example="2">%1$d</xliff:g></string>
+  <string name="voice_profile_name_taken">Profil głosowy o nazwie <xliff:g id="name" example="Reading">%1$s</xliff:g> już istnieje</string>
+  <string name="title_pref_voice_profile_name">Nazwa</string>
+  <string name="title_pref_voice_profile_language">Język</string>
+  <string name="title_pref_voice_profile_voice">Głos</string>
+  <string name="voice_profile_engine_default">Domyślny</string>
+  <string name="voice_profile_loading">Ładowanie</string>
+  <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, niezainstalowany</string>
+  <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
+  <string name="voice_profile_move_up">Przenieś w górę</string>
+  <string name="voice_profile_move_down">Przenieś w dół</string>
+  <string name="voice_profile_rename">Zmień nazwę</string>
+  <string name="voice_profile_moved_above">Przeniesiono nad profil <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+  <string name="voice_profile_moved_below">Przeniesiono pod profil <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+  <string name="voice_profile_deleted">Usunięto profil <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+  <string name="title_pref_delete_voice_profile">Usuń profil głosowy</string>
+  <string name="voice_profile_delete_confirm">Usunąć profil <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
+  <string name="voice_profile_delete">Usuń</string>
+  <string name="summary_pref_tts_engine_default">Domyślny syntezator systemowy</string>
+  <string name="title_pref_speech_pitch">Wysokość głosu</string>
+  <string name="title_pref_use_accessibility_stream">Używaj głośności dostępności</string>
+  <string name="summary_pref_use_accessibility_stream">Mowa i dźwięki korzystają z głośności dostępności, dzięki czemu możesz regulować ją niezależnie od głośności multimediów. Po wyłączeniu tej opcji korzystają z głośności multimediów.</string>
+  <string name="title_pref_speak_in_phrases">Przekazuj długi tekst do syntezatora zdanie po zdaniu</string>
+  <string name="summary_pref_speak_in_phrases">Dla syntezatorów, które reagują z opóźnieniem na zatrzymanie mowy, np. Gryphon. Dzięki tej opcji przejście gestem do innego elementu natychmiast przerywa odczytywanie długiego tekstu. Wiele syntezatorów robi dłuższe przerwy między zdaniami przekazywanymi osobno, więc pozostaw tę opcję wyłączoną, jeśli Twój syntezator szybko zatrzymuje mowę.</string>
+  <string name="title_pref_switch_languages">Automatycznie przełączaj język</string>
+  <string name="title_pref_switch_dialects">Automatycznie przełączaj dialekt</string>
+  <string name="title_pref_speak_nav_bar_buttons">Odczytuj nazwy przycisków paska nawigacji</string>
+  <string name="summary_pref_speak_nav_bar_buttons">Gdy na pasku nawigacji jest włączone aktywowanie po puszczeniu, odczytuj nazwę przycisku naciskanego pojedynczym kliknięciem, np. „Wstecz” lub „Ekran główny”.</string>
+  <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
+  <string name="template_battery_level">Poziom baterii <xliff:g id="battery_level" example="73">%1$s</xliff:g> procent</string>
+  <string name="template_battery_level_unknown">Poziom baterii nieznany</string>
+  <string name="value_charger_connected">Ładowarka podłączona</string>
+  <string name="title_pref_screen_announcements">Włączanie i wyłączanie ekranu</string>
+  <string name="summary_pref_screen_announcements">Wybierz, co Backtalk odczytuje przy wyłączaniu i włączaniu ekranu oraz odblokowywaniu telefonu</string>
+  <string name="title_screen_announcements_screen_off">Przy wyłączaniu ekranu</string>
+  <string name="title_screen_announcements_screen_on">Przy włączaniu ekranu</string>
+  <string name="title_screen_announcements_unlock">Przy odblokowywaniu telefonu</string>
+  <string name="title_pref_say_screen_off">Odczytuj „Ekran wyłączony”</string>
+  <string name="title_pref_say_device_unlocked">Odczytuj „Urządzenie zostało odblokowane”</string>
+  <string name="title_pref_announce_time">Godzina</string>
+  <string name="title_pref_announce_ringer_mode">Tryb dzwonka</string>
+  <string name="summary_pref_announce_ringer_mode">Informuj, gdy dzwonek jest ustawiony na wibracje lub wyciszony</string>
+  <string name="title_pref_category_feedback">Informacje zwrotne</string>
+  <string name="title_pref_category_typing_and_braille">Pisanie i brajl</string>
+  <string name="title_pref_category_more">Więcej</string>
+  <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla zegara wibracyjnego</string>
+  <string name="summary_pref_reserve_vibration_watch_gestures">Backtalk nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
+  <string name="shortcut_reserved_for_vibration_watch">Zarezerwowany dla zegara wibracyjnego w ustawieniach zaawansowanych</string>
+  <string name="title_pref_speakerphone_away_from_ear">Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha</string>
+  <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
+  <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
+  <string name="title_pref_speech_control">Zezwalaj innym aplikacjom na odczytywanie tekstu przez Backtalk</string>
+  <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w Backtalku. Gdy urządzenie jest zablokowane, ich tekst nie jest odczytywany.</string>
+  <string name="title_pref_speech_control_sound">Odtwarzaj dźwięk przed odczytaniem tekstu przekazanego przez inną aplikację</string>
+  <string name="speech_control_apps_category">Aplikacje</string>
+  <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez Backtalk.</string>
+  <string name="speech_control_ask_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez Backtalk?</string>
+  <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w Backtalku. Możesz zmienić to uprawnienie w ustawieniach zaawansowanych.</string>
+  <string name="speech_control_allow">Zezwól</string>
+  <string name="speech_control_deny">Nie zezwalaj</string>
+  <string name="permission_speak_label">odczytywanie tekstu przez Backtalk</string>
+  <string name="permission_speak_description">Umożliwia aplikacji zgłoszenie prośby o odczytywanie tekstu głosem używanym w Backtalku. Backtalk poprosi Cię o zgodę, zanim aplikacja będzie mogła z niego korzystać.</string>
+  <string name="title_pref_emoji_speech">Emoji</string>
+  <string name="emoji_speech_engine">Odczytywane przez syntezator mowy</string>
+  <string name="emoji_speech_names">Odczytywane przez Backtalk</string>
+  <string name="emoji_speech_none">Nie odczytuj</string>
+  <string name="summary_selector_menu_emoji">Zmień sposób odczytywania emoji</string>
+  <string name="emoji_speech_state">Emoji: <xliff:g example="Read by Backtalk" id="state">%1$s</xliff:g></string>
+  <string name="title_pref_emoji_repeat_count">Podawaj liczbę powtórzonych emoji</string>
+  <string name="emoji_repeat_count_off">Wyłączone</string>
+  <string name="emoji_repeat_count_2">2 lub więcej</string>
+  <string name="emoji_repeat_count_3">3 lub więcej</string>
+  <string name="emoji_repeat_count_4">4 lub więcej</string>
+  <string name="emoji_repeat_count_5">5 lub więcej</string>
+  <string name="emoji_repeat_count_6">6 lub więcej</string>
+  <string name="pref_table_headers_category_title" ns1:ignore="MissingTranslation">Odczytywanie tabel</string>
+  <string name="pref_table_column_headers_title" ns1:ignore="MissingTranslation">Odczytuj nagłówki kolumn</string>
+  <string name="pref_table_column_headers_entry_after" ns1:ignore="MissingTranslation">Po zawartości komórki</string>
+  <string name="pref_table_column_headers_entry_before" ns1:ignore="MissingTranslation">Przed zawartością komórki</string>
+  <string name="pref_table_column_headers_entry_off" ns1:ignore="MissingTranslation">Nie odczytuj</string>
+  <string name="pref_table_speak_row_column_numbers_title" ns1:ignore="MissingTranslation">Odczytuj numery wierszy i kolumn</string>
+  <string name="pref_table_speak_row_column_numbers_summary" ns1:ignore="MissingTranslation">Podawaj numery wierszy i kolumn komórek tabeli</string>
+  <string name="title_pref_speak_volume_changes">Odczytuj zmiany głośności</string>
+  <string name="summary_pref_speak_volume_changes">Podawaj nowy poziom po naciśnięciu przycisków głośności</string>
+  <string name="title_pref_speak_notifications">Odczytuj powiadomienia</string>
+  <string name="summary_pref_speak_notifications">Odczytuj nowe powiadomienia, gdy się pojawią. Informacje o połączeniach przychodzących są zawsze odczytywane.</string>
+  <string name="talkback_exit_watermark_text_no_menu_gesture">Backtalk jest włączony. Aby go wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby ukryć ten komunikat, w ustawieniach zaawansowanych Backtalka wyłącz opcję pokazywania instrukcji jego wyłączania.</string>
+  <string name="title_pref_audio_output_device">Urządzenie odtwarzające</string>
+  <string name="dialog_title_audio_output_device">Wybierz, gdzie odtwarzać dźwięk Backtalka</string>
+  <string name="value_audio_output_device_default">Domyślne urządzenie systemowe</string>
+  <string name="value_audio_output_device_speaker">Głośnik telefonu</string>
+  <string name="value_audio_output_device_bluetooth_or_wired">Podłączone urządzenie Bluetooth lub przewodowe</string>
+  <string name="value_audio_output_device_disconnected">brak połączenia</string>
+  <string name="value_audio_output_device_bluetooth_default">Urządzenie audio Bluetooth</string>
+  <string name="value_audio_output_device_wired_headset">Przewodowy zestaw słuchawkowy</string>
+  <string name="value_audio_output_device_wired_headphones">Słuchawki przewodowe</string>
+  <string name="value_audio_output_device_usb_headset">Zestaw słuchawkowy USB</string>
+  <string name="value_audio_output_device_usb_device">Urządzenie audio USB</string>
+  <string name="pref_reduce_window_delay_summary">Backtalk szybciej odczytuje nowe ekrany, gdy animacje są wyłączone. Ta opcja wyłącza animacje w całym telefonie.</string>
+  <string name="dialog_message_detailed_ai_description">Wybrane obrazy są wysyłane do interfejsu API Gemini firmy Google w celu uzyskania opisu. Po włączeniu AI na urządzeniu są opisywane na tym telefonie i nie są wysyłane.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Obowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_detailed_ai_promotion">Szczegółowe opisy obrazów są tworzone przez generatywną AI. Wybrane obrazy są wysyłane do interfejsu API Gemini firmy Google w celu uzyskania opisu. Po włączeniu AI na urządzeniu są opisywane na tym telefonie i nie są wysyłane.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Szczegółowe opisy obrazów możesz w każdej chwili wyłączyć w ustawieniach Backtalka.\n\nObowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+  <string name="dialog_message_screen_overview_promotion">Zrzut ekranu jest wysyłany do interfejsu API Gemini firmy Google w celu uzyskania opisu, co trwa kilka sekund. Po włączeniu AI na urządzeniu jest opisywany na tym telefonie i nie jest wysyłany.\n\nJeśli korzystasz z bezpłatnego klucza API, Google może przechowywać otrzymane dane, używać ich do ulepszania swoich produktów i przekazywać je do oceny ludziom. Generatywna AI ma charakter eksperymentalny, więc będzie popełniać błędy. Obowiązują <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+  <string name="title_pref_brightness">Jasność</string>
+  <string name="summary_support_change_brightness">Zwiększanie lub zmniejszanie jasności ekranu, także gdy ekran jest ukryty</string>
+  <string name="title_pref_shortcut_3finger_4tap">Kliknij czterokrotnie 3 palcami</string>
+  <string name="title_pref_shortcut_2finger_rotate_clockwise">Obróć 2 palce zgodnie z ruchem wskazówek zegara</string>
+  <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Obróć 2 palce przeciwnie do ruchu wskazówek zegara</string>
+  <string name="value_type_confirmation_lift_to_type_except_action_key">Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec. Przyciski Enter, Gotowe lub Wyślij wymagają dwukrotnego kliknięcia.</string>
+  <string name="title_pref_multi_tap_timeout">Maksymalny odstęp między kliknięciami jednym palcem</string>
+  <string name="value_multi_tap_timeout_100ms">0,1 sekundy</string>
+  <string name="value_multi_tap_timeout_150ms">0,15 sekundy</string>
+  <string name="value_multi_tap_timeout_200ms">0,2 sekundy</string>
+  <string name="value_multi_tap_timeout_250ms">0,25 sekundy (domyślnie)</string>
+  <string name="title_pref_rotor_step_degrees">Kąt obrotu na jeden krok pokrętła</string>
+  <string name="value_rotor_step_15">15 stopni</string>
+  <string name="value_rotor_step_20">20 stopni</string>
+  <string name="value_rotor_step_30">30 stopni (domyślnie)</string>
+  <string name="value_rotor_step_45">45 stopni</string>
+  <string name="value_rotor_step_60">60 stopni</string>
+  <string name="title_pref_low_latency_audio">Dźwięk o niskim opóźnieniu</string>
+  <string name="summary_pref_low_latency_audio">Odtwarzaj mowę i dźwięki Backtalka z najmniejszym opóźnieniem dostępnym w telefonie. Wyłącz tę opcję, jeśli mowa lub dźwięki przerywają albo brzmią nieprawidłowo.</string>
+  <string name="value_focus_delay_200ms_default">0,2 sekundy (domyślnie)</string>
+  <string name="value_focus_delay_300ms">0,3 sekundy</string>
+  <string name="title_pref_lift_to_activate">Aktywowanie po puszczeniu</string>
+  <string name="summary_support_change_lift_to_activate">Wybierz, gdzie puszczenie palca aktywuje element</string>
+  <string name="value_lift_to_activate_disabled">Wyłączone</string>
+  <string name="value_lift_to_activate_navigation_bar">Tylko na pasku nawigacji</string>
+  <string name="value_lift_to_activate_entire_screen">Na całym ekranie</string>
+  <string name="template_lift_to_activate_changed">Aktywowanie po puszczeniu: <xliff:g id="mode">%1$s</xliff:g></string>
+  <string name="title_pref_wrap_around">Zawijanie</string>
+  <string name="summary_pref_wrap_around">Przesunięcie palcem za ostatni element przenosi do pierwszego, a przed pierwszy — do ostatniego. Gdy ta opcja jest wyłączona, na końcu odtwarzany jest dźwięk.</string>
+  <string name="summary_support_wrap_around">Włącz lub wyłącz przechodzenie z ostatniego elementu do pierwszego</string>
+  <string name="wrap_around_on">Zawijanie włączone</string>
+  <string name="wrap_around_off">Zawijanie wyłączone</string>
+  <string name="title_selector_tablet_held_up_faces_away">Uniesiony tablet ekranem od siebie</string>
+  <string name="summary_support_tablet_held_up_faces_away">Dla klawiatury brajlowskiej na tablecie lub rozłożonym telefonie</string>
+  <string name="tablet_held_up_faces_away_on">Uniesiony tablet ekranem od siebie: włączone</string>
+  <string name="tablet_held_up_faces_away_off">Uniesiony tablet ekranem od siebie: wyłączone</string>
+  <string name="title_pref_interrupt_typing">Przerywaj mowę podczas pisania</string>
+  <string name="pref_interrupt_typing_entry_always">Zawsze</string>
+  <string name="pref_interrupt_typing_entry_edit_fields">W polach edycji</string>
+  <string name="pref_interrupt_typing_entry_keyboard_echo">Gdy echo klawiatury odczytuje wpisany znak lub słowo</string>
+  <string name="title_pref_interrupt_enter">Przerywaj mowę po naciśnięciu klawisza Enter</string>
+  <string name="pref_node_desc_order_entry_name_state_role_pos">Nazwa, stan, typ</string>
+  <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, stan, nazwa</string>
+  <string name="pref_node_desc_order_entry_state_role_name_pos">Stan, typ, nazwa</string>
+  <string name="item_detail_name">Nazwa</string>
+  <string name="item_detail_type">Typ</string>
+  <string name="item_detail_state">Stan</string>
+  <string name="action_move_up">Przenieś w górę</string>
+  <string name="action_move_down">Przenieś w dół</string>
+  <string name="template_list_position">Pozycja <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
+  <string name="template_item_details_order_picked_up">Rozpoczęto przeciąganie: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+  <string name="template_item_details_order_dropped">Zakończono przeciąganie: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+  <string name="item_details_order_footer">Backtalk odczytuje informacje o elemencie w tej kolejności. Aby ją zmienić, dotknij wybranej pozycji i przytrzymaj, a następnie przeciągnij ją w górę lub w dół. Gdy Backtalk jest włączony, kliknij dwukrotnie, przytrzymaj i przeciągnij. Możesz też użyć czynności „Przenieś w górę” i „Przenieś w dół”.</string>
+  <string name="title_pref_speak_items_before_scroll">Odczytuj elementy, zanim przewinięcie pokaże je na ekranie</string>
+  <string name="gemini_error_api_key">Usługa Gemini nie zaakceptowała klucza API. Sprawdź go w ustawieniach automatycznych opisów.</string>
+  <string name="gemini_error_quota">Osiągnięto limit użycia Twojego klucza API Gemini. Spróbuj ponownie później.</string>
+  <string name="gemini_error_busy">Usługa Gemini jest teraz zajęta. Spróbuj ponownie za chwilę.</string>
+  <string name="gemini_error_timeout">Usługa Gemini nie odpowiedziała w wyznaczonym czasie. Spróbuj ponownie.</string>
+  <string name="gemini_error_with_code">Nie udało się uzyskać odpowiedzi z Gemini. Błąd <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+  <string name="gemini_error_with_details">Nie udało się uzyskać odpowiedzi z Gemini. Błąd <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+  <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nie można uzyskać bardziej szczegółowego opisu obrazu: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+  <string name="template_brightness_changed">Jasność <xliff:g id="percent">%1$d</xliff:g> procent.</string>
+  <string name="brightness_needs_permission">Zezwól na zmianę ustawień systemowych, aby regulować jasność.</string>
+  <string name="brightness_adaptive_on">Wyłącz jasność adaptacyjną, aby ustawić ją ręcznie.</string>
+  <string name="title_pref_control_sounds">Dźwięki i wibracje kontrolek</string>
+  <string name="summary_pref_control_sounds">Każdy typ kontrolki, np. przycisk, pole wyboru, pole edycji lub element listy, ma własny dźwięk i wzór wibracji z tematu. Zastępują one dźwięk i wibrację zaznaczenia, podobnie jak w dodatku Unspoken do NVDA. Dźwięk dochodzi z miejsca odpowiadającego położeniu kontrolki na ekranie, a Backtalk pomija odczytywanie jej typu.</string>
+  <string name="title_pref_control_sounds_speak_roles">Nadal odczytuj typ kontrolki</string>
+  <string name="summary_pref_control_sounds_speak_roles">Odczytuj typ kontrolki, np. „przycisk”, także gdy odtwarzany jest jej dźwięk. To ustawienie dotyczy wszystkich tematów dźwiękowych.</string>
+  <string name="title_pref_control_sounds_3d">Dźwięk przestrzenny 3D</string>
+  <string name="pref_control_sounds_3d_headphones">Podczas używania słuchawek</string>
+  <string name="pref_control_sounds_3d_always">Zawsze</string>
+  <string name="pref_control_sounds_3d_never">Nigdy, tylko lewy i prawy kanał</string>
+  <string name="individual_sound_control_button">Dźwięk kontrolki: przycisk</string>
+  <string name="individual_sound_control_checkbox">Dźwięk kontrolki: pole wyboru</string>
+  <string name="individual_sound_control_radio_button">Dźwięk kontrolki: przycisk opcji</string>
+  <string name="individual_sound_control_edit_text">Dźwięk kontrolki: pole edycji</string>
+  <string name="individual_sound_control_combo_box">Dźwięk kontrolki: lista rozwijana</string>
+  <string name="individual_sound_control_slider">Dźwięk kontrolki: suwak</string>
+  <string name="individual_sound_control_link">Dźwięk kontrolki: link</string>
+  <string name="individual_sound_control_image">Dźwięk kontrolki: obraz</string>
+  <string name="individual_sound_control_clock">Dźwięk kontrolki: zegar</string>
+  <string name="individual_sound_control_tab">Dźwięk kontrolki: karta</string>
+  <string name="individual_sound_control_menu_item">Dźwięk kontrolki: pozycja menu</string>
+  <string name="individual_sound_control_list_item">Dźwięk kontrolki: element listy</string>
+  <string name="individual_sound_control_tree_item">Dźwięk kontrolki: element drzewa</string>
+  <string name="direct_touch_on">Dotyk bezpośredni włączony</string>
+  <string name="direct_touch_off">Dotyk bezpośredni wyłączony</string>
+  <string name="direct_touch_tile_label">Dotyk bezpośredni</string>
+  <string name="title_pref_direct_touch">Dotyk bezpośredni</string>
+  <string name="pref_direct_touch_master">Dotyk bezpośredni</string>
+  <string name="pref_direct_touch_master_summary">Przekazuj dotyk bezpośrednio do wybranych poniżej aplikacji. Backtalk ponownie przejmuje jego obsługę w oknach dialogowych, polach tekstowych, na klawiaturze i ekranach systemowych.</string>
+  <string name="pref_direct_touch_speech">Odczytuj zmiany stanu dotyku bezpośredniego</string>
+  <string name="pref_direct_touch_haptics">Wibruj przy zmianie stanu dotyku bezpośredniego</string>
+  <string name="pref_direct_touch_backup">Utwórz kopię zapasową ustawień</string>
+  <string name="pref_direct_touch_restore">Przywróć ustawienia</string>
+  <string name="direct_touch_apps_category">Aplikacje</string>
+  <string name="direct_touch_action_typing_on">Włącz pisanie bezpośrednie</string>
+  <string name="direct_touch_action_typing_off">Wyłącz pisanie bezpośrednie</string>
+  <string name="direct_touch_typing_summary_on">Pisanie bezpośrednie włączone</string>
+  <string name="direct_touch_backup_done">Ustawienia zapisane</string>
+  <string name="direct_touch_backup_failed">Nie udało się zapisać ustawień</string>
+  <string name="direct_touch_restore_done">Ustawienia przywrócone</string>
+  <string name="direct_touch_restore_failed">Nie udało się odczytać tego pliku</string>
+  <string name="title_pref_gemini_api_key">Klucz API Gemini</string>
+  <string name="summary_pref_gemini_api_key_set">Ustawiony. Funkcje „Opisz obraz” i „Opisz ekran” korzystają z Gemini</string>
+  <string name="summary_pref_gemini_api_key_built_in">Korzystanie z klucza wbudowanego w aplikację</string>
+  <string name="summary_pref_gemini_api_key_not_set">Nie ustawiono. Bez klucza funkcja „Opisz obraz” tylko odczytuje tekst, a funkcja „Opisz ekran” wymaga AI na urządzeniu</string>
+  <string name="gemini_api_key_hint">Klucz API</string>
+  <string name="gemini_api_key_save">Zapisz</string>
+  <string name="gemini_api_key_get">Uzyskaj klucz</string>
+  <string name="gemini_api_terms_link">Dodatkowe warunki korzystania z interfejsu API Gemini</string>
+  <string name="individual_vibration_braille_character">Klawiatura brajlowska: wpisywanie znaku</string>
+  <string name="individual_vibration_braille_space">Klawiatura brajlowska: spacja lub usuwanie</string>
+  <string name="individual_vibration_braille_new_line">Klawiatura brajlowska: nowy wiersz lub usuwanie słowa</string>
+  <string name="individual_vibration_braille_hold">Klawiatura brajlowska: przytrzymywanie palców na ekranie</string>
+  <string name="individual_vibration_braille_gesture">Klawiatura brajlowska: inne gesty</string>
+  <string name="individual_vibration_braille_nothing_to_delete">Klawiatura brajlowska: brak tekstu do usunięcia</string>
+  <string name="title_pref_on_device_ai">AI na urządzeniu</string>
+  <string name="summary_pref_on_device_ai">Opisy obrazów i ekranu za pomocą modelu działającego na telefonie, bez klucza API</string>
+  <string name="pref_on_device_ai_enable">Używaj AI na urządzeniu</string>
+  <string name="pref_on_device_ai_enable_summary">Obrazy i zrzuty ekranu są opisywane na tym telefonie i nigdy nie są wysyłane do Google. Opisywanie na urządzeniu jest wolniejsze niż w chmurze i zużywa więcej energii.</string>
+  <string name="pref_on_device_ai_enable_needs_model">Najpierw pobierz lub zaimportuj model.</string>
+  <string name="pref_on_device_ai_unsupported_cpu">Niedostępne. Ten telefon nie ma 64-bitowego procesora ARM.</string>
+  <string name="pref_on_device_ai_not_enough_ram">Niedostępne dla tego modelu. Telefon ma za mało pamięci RAM.</string>
+  <string name="pref_on_device_ai_model">Model</string>
+  <string name="on_device_ai_model_summary">%1$s, %2$s</string>
+  <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
+  <string name="on_device_ai_tag_downloaded">pobrany</string>
+  <string name="on_device_ai_tag_experimental">eksperymentalny</string>
+  <string name="on_device_ai_tag_needs_memory">Wymaga około %1$d GB pamięci RAM.</string>
+  <string name="on_device_ai_tag_not_enough_memory">Telefon ma za mało pamięci RAM.</string>
+  <string name="on_device_ai_choose_model">Wybierz model</string>
+  <string name="on_device_ai_model_too_big">Telefon ma za mało pamięci RAM dla tego modelu.</string>
+  <string name="pref_on_device_ai_download">Pobierz model (%1$s)</string>
+  <string name="pref_on_device_ai_download_summary">Model jest pobierany jednorazowo z Hugging Face. Później żadne dane nie są przesyłane przez sieć.</string>
+  <string name="pref_on_device_ai_downloading">Pobieranie, %1$d%%</string>
+  <string name="pref_on_device_ai_downloading_summary">%1$s. Kliknij, aby zatrzymać pobieranie. Po ponownym rozpoczęciu będzie kontynuowane od tego miejsca.</string>
+  <string name="on_device_ai_progress_sizes">%1$s z %2$s</string>
+  <string name="on_device_ai_progress_with_time">%1$s, pozostało %2$s</string>
+  <string name="on_device_ai_announce_progress">Pobieranie, %1$d procent</string>
+  <string name="on_device_ai_announce_done">Model pobrany</string>
+  <string name="on_device_ai_notification_channel">Pobieranie modelu AI na urządzenie</string>
+  <string name="on_device_ai_notification_downloading">Pobieranie modelu, %1$d%%</string>
+  <string name="on_device_ai_notification_done">Model pobrany. Włącz w ustawieniach opcję „Używaj AI na urządzeniu”.</string>
+  <string name="on_device_ai_notification_failed">Pobieranie nie powiodło się. Otwórz ustawienia, aby spróbować ponownie.</string>
+  <string name="pref_on_device_ai_importing">Sprawdzanie pliku modelu</string>
+  <string name="pref_on_device_ai_manage">Zarządzaj modelami</string>
+  <string name="pref_on_device_ai_manage_none">Brak pobranych modeli</string>
+  <string name="title_pref_manage_models">Zarządzaj modelami</string>
+  <string name="manage_models_storage_used">Modele zajmują %1$s miejsca na urządzeniu.</string>
+  <string name="manage_models_empty">Nie pobrano żadnych modeli.</string>
+  <string name="manage_models_unfinished">%1$s, nieukończone pobieranie</string>
+  <string name="manage_models_delete_title">Usunąć model %1$s?</string>
+  <string name="manage_models_delete_message">Zwolni to %1$s miejsca. Model możesz pobrać ponownie później.</string>
+  <string name="manage_models_delete">Usuń</string>
+  <string name="manage_models_deleted">Usunięto model %1$s</string>
+  <string name="pref_on_device_ai_import">Użyj pliku modelu z pamięci urządzenia</string>
+  <string name="pref_on_device_ai_import_summary">Wybierz wcześniej pobrany plik modelu w formacie litertlm.</string>
+  <string name="on_device_ai_import_done">Model zainstalowany</string>
+  <string name="on_device_ai_import_failed">Wybrany plik nie jest obsługiwanym plikiem modelu.</string>
+  <string name="pref_on_device_ai_timeout">Limit czasu oczekiwania na odpowiedź</string>
+  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu Backtalk przestaje czekać. Opisywanie ekranu trwa dłużej niż opisywanie obrazu.</string>
+  <string name="on_device_ai_choose_timeout">Limit czasu oczekiwania na odpowiedź</string>
+  <string name="pref_on_device_ai_short_prompts">Krótsze opisy ekranu</string>
+  <string name="pref_on_device_ai_short_prompts_summary">Funkcja „Opisz ekran” prosi o mniej szczegółów, dzięki czemu szybciej odpowiada. Wyłącz tę opcję, aby uzyskać pełniejsze opisy.</string>
+  <string name="pref_on_device_ai_gpu">Używaj procesora graficznego (GPU)</string>
+  <string name="pref_on_device_ai_gpu_summary">Może przyspieszyć działanie i zmniejszyć zużycie pamięci RAM. Jeśli nie udaje się uzyskać odpowiedzi, wyłącz tę opcję.</string>
+  <string name="on_device_ai_error_network">Pobieranie zostało zatrzymane. Sprawdź połączenie i spróbuj ponownie. Zostanie wznowione od miejsca, w którym je przerwano.</string>
+  <string name="on_device_ai_error_http">Serwer pobierania odrzucił żądanie. Spróbuj ponownie później lub zaimportuj plik.</string>
+  <string name="on_device_ai_error_corrupt">Pobrany plik nie odpowiadał oczekiwanemu modelowi i został usunięty. Spróbuj ponownie.</string>
+  <string name="on_device_ai_error_storage">Nie udało się zapisać pliku.</string>
+  <string name="on_device_ai_error_low_space">Brak wystarczającej ilości wolnego miejsca na ten model.</string>
+  <string name="on_device_ai_metered_title">Pobrać przez sieć z limitem danych?</string>
+  <string name="gemini_api_key_dialog_message">Uzyskaj bezpłatny klucz API w Google AI Studio na stronie aistudio.google.com/apikey i wklej go tutaj. Aby usunąć klucz, wyczyść pole i zapisz zmiany.\n\nObrazy i ekrany, które opisujesz, są wysyłane do Google. Jeśli korzystasz z bezpłatnej wersji usługi, Google może używać ich do ulepszania swoich produktów.</string>
+  <string name="update_move_title">Backtalk będzie instalowany jako nowa aplikacja</string>
+  <string name="update_move_notification_text">Kliknij, aby zainstalować nową aplikację Backtalk. Twoje ustawienia zostaną przeniesione.</string>
+  <string name="update_move_dialog_message">Backtalk zmienia identyfikator aplikacji, aby można go było instalować na większej liczbie telefonów. Zainstaluj nową aplikację Backtalk. Twoje ustawienia zostaną przeniesione. Następnie ją włącz, a dotychczasowa wyłączy się automatycznie.</string>
+  <string name="update_move_installing">Backtalk zmienia identyfikator aplikacji. Zainstaluj nową aplikację Backtalk. Twoje ustawienia zostaną przeniesione.</string>
+  <string name="update_move_turn_on">Włącz nową aplikację Backtalk. Dotychczasowa wyłączy się automatycznie.</string>
+  <string name="update_wrong_package">Pobrany plik nie jest aktualizacją Backtalka, więc nie został zainstalowany</string>
+  <string name="migration_moved_title">Backtalk został przeniesiony do nowej aplikacji</string>
+  <string name="migration_moved_text">Kliknij, aby odinstalować poprzednią aplikację.</string>
+  <plurals name="on_device_ai_models_downloaded">
+    <item quantity="one">Pobrano %1$d model</item>
+    <item quantity="few">Pobrano %1$d modele</item>
+    <item quantity="many">Pobrano %1$d modeli</item>
+    <item quantity="other">Pobrano %1$d modeli</item>
+  </plurals>
+  <plurals name="on_device_ai_timeout_minutes">
+    <item quantity="one">%1$d minuta</item>
+    <item quantity="few">%1$d minuty</item>
+    <item quantity="many">%1$d minut</item>
+    <item quantity="other">%1$d minut</item>
+  </plurals>
+  <string name="on_device_ai_metered_message">Model ma rozmiar kilku gigabajtów. Najlepiej pobrać go przez Wi-Fi.</string>
+  <string name="on_device_ai_metered_download">Pobierz</string>
+  <string name="on_device_ai_cancel">Anuluj</string>
+  <string name="title_pref_on_device_ai_ignore_memory_limits">Ignoruj limity pamięci RAM dla AI na urządzeniu</string>
+  <string name="summary_pref_on_device_ai_ignore_memory_limits">Pozwala wybrać model wymagający więcej pamięci RAM, niż ma telefon, i wczytać go bez sprawdzania ilości wolnej pamięci. Służy do testowania, co się stanie, gdy Android zatrzyma model.</string>
+  <string name="on_device_ai_not_enough_memory">Za mało wolnej pamięci RAM dla modelu %1$s. Zamknij niektóre aplikacje lub wybierz mniejszy model w ustawieniach AI na urządzeniu.</string>
+  <string name="on_device_ai_stopped">Model %1$s został zatrzymany, prawdopodobnie z powodu braku pamięci RAM. W ustawieniach AI na urządzeniu wybierz mniejszy model.</string>
+  <string name="title_pause_backtalk">Wstrzymaj Backtalka</string>
+  <string name="summary_pause_backtalk">Wyłącz mowę, gesty i czytanie dotykiem do czasu wznowienia Backtalka</string>
+  <string name="keycombo_menu_global_pause_backtalk">Wstrzymaj lub wznów Backtalka</string>
+  <string name="backtalk_paused">Wstrzymano działanie Backtalka</string>
+  <string name="backtalk_resumed">Wznowiono działanie Backtalka</string>
+  <string name="notification_title_backtalk_paused">Backtalk jest wstrzymany</string>
+  <string name="notification_message_backtalk_paused">Kliknij, aby wznowić</string>
+  <string name="notification_channel_backtalk_paused">Wstrzymanie Backtalka</string>
+  <string name="dialog_title_pause_backtalk">Wstrzymać Backtalka?</string>
+  <string name="dialog_button_pause_backtalk">Wstrzymaj</string>
+  <string name="dialog_message_pause_backtalk">Po wstrzymaniu Backtalk nie odczytuje treści ani nie reaguje na gesty. Ekran obsługuje się tak, jak przy wyłączonym czytniku ekranu.</string>
+  <string name="message_resume_keyguard">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub zablokuj i wybudź telefon, aby pojawił się ekran blokady.</string>
+  <string name="message_resume_screen_on">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany”, szybko naciśnij 3 razy przycisk zmniejszania głośności lub wyłącz i ponownie włącz ekran.</string>
+  <string name="message_resume_manual">Aby wznowić Backtalka, kliknij powiadomienie „Backtalk jest wstrzymany” lub szybko naciśnij 3 razy przycisk zmniejszania głośności.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="message_resume_key_combo">Możesz też nacisnąć <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+  <string name="title_pref_resume_backtalk">Wznawianie Backtalka</string>
+  <string name="value_resume_keyguard">Po wyświetleniu ekranu blokady</string>
+  <string name="value_resume_screen_on">Po włączeniu ekranu</string>
+  <string name="value_resume_manual">Tylko przez powiadomienie lub skrót</string>
+  <string name="title_pref_scripts">Skrypty</string>
+  <string name="summary_pref_scripts">Zmieniaj sposób działania Backtalka w aplikacjach</string>
+  <string name="script_import">Importuj skrypt</string>
+  <string name="script_install_label">Zainstaluj skrypt Backtalka</string>
+  <string name="script_import_nothing">Brak pliku skryptu do zainstalowania.</string>
+  <string name="script_import_cannot_open">Nie udało się otworzyć pliku.</string>
+  <string name="script_import_repository">Ten link prowadzi do całego repozytorium. Otwórz wybrany skrypt, a następnie udostępnij link do niego.</string>
+  <string name="script_import_summary">Plik .js lub archiwum .zip zawierające main.js</string>
+  <string name="scripts_category_app">Skrypty aplikacji</string>
+  <string name="scripts_category_global">Wtyczki globalne</string>
+  <string name="scripts_none">Brak zainstalowanych skryptów</string>
+  <string name="scripts_all_off">Wyłącz wszystkie skrypty</string>
+  <string name="scripts_all_off_summary">Skrypty pozostają zainstalowane, a ich indywidualne ustawienia włączenia są zachowane. To samo robi polecenie „Włącz lub wyłącz wszystkie skrypty”.</string>
+  <string name="shortcut_toggle_scripts">Włącz lub wyłącz wszystkie skrypty</string>
+  <string name="scripts_now_off">Skrypty wyłączone</string>
+  <string name="scripts_now_on">Skrypty włączone</string>
+  <string name="scripts_unavailable">Skrypty nie są dostępne na tym urządzeniu</string>
+  <string name="script_add_example">Dodaj przykładowy skrypt</string>
+  <string name="script_add_example_summary">Odczytuje nazwę aplikacji, do której przechodzisz. Możesz go wykorzystać jako podstawę własnego skryptu.</string>
+  <string name="script_state_on">Włączony</string>
+  <string name="script_state_off">Wyłączony</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_runs_in">Działa w: <xliff:g id="apps">%1$s</xliff:g></string>
+  <string name="script_runs_everywhere">Działa we wszystkich aplikacjach</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_version">Wersja <xliff:g id="version">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_author">Autor: <xliff:g id="author">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_install_title">Zainstalować skrypt <xliff:g id="name">%1$s</xliff:g>?</string>
+  <string name="script_install_can">Możliwości skryptu:</string>
+  <string name="script_install_no_permissions">Nie wymaga uprawnień.</string>
+  <string name="script_install_button">Zainstaluj</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_update_title">Zaktualizować skrypt <xliff:g id="name">%1$s</xliff:g> do wersji <xliff:g id="version">%2$s</xliff:g>?</string>
+  <string name="script_update_new_permissions">Nowe uprawnienia:</string>
+  <string name="script_update_button">Zaktualizuj</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_update_replaces">Zastąpi to wersję <xliff:g id="version">%1$s</xliff:g> autorstwa <xliff:g id="author">%2$s</xliff:g>. Dane i ustawienia skryptu zostaną zachowane.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_update_other_author">Nowa wersja ma innego autora: <xliff:g id="author">%1$s</xliff:g>. Zaktualizuj tylko wtedy, gdy jej ufasz.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_installed">Zainstalowano skrypt <xliff:g id="name">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_updated">Zaktualizowano skrypt <xliff:g id="name">%1$s</xliff:g> do wersji <xliff:g id="version">%2$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_import_failed">Import nie powiódł się. <xliff:g id="reason">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Przyznawaj to uprawnienie tylko zaufanym skryptom.</string>
+  <string name="script_permission_screen">Odczytywanie ekranu</string>
+  <string name="script_permission_actions">Klikanie, przewijanie, wpisywanie tekstu i przenoszenie fokusu</string>
+  <string name="script_permission_speech">Dostęp do wypowiedzi Backtalka i ich zmienianie</string>
+  <string name="script_permission_passwords">Odczytywanie pól haseł</string>
+  <string name="script_permission_input">Dodawanie gestów, skrótów klawiszowych, pozycji menu i opcji sterowania czytaniem</string>
+  <string name="script_permission_network">Korzystanie z internetu</string>
+  <string name="script_permission_clipboard">Odczytywanie i zmienianie zawartości schowka</string>
+  <string name="script_permission_system">Cofanie, przechodzenie do ekranu głównego oraz otwieranie powiadomień i aplikacji</string>
+  <string name="script_permission_notifications">Odczytywanie i zmienianie treści odczytywanych powiadomień</string>
+  <string name="script_permission_events">Śledzenie wszystkich zdarzeń w każdej aplikacji, w tym wpisywania tekstu</string>
+  <string name="script_permission_dialogs">Wyświetlanie okien dialogowych nad dowolną aplikacją</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+  <string name="script_enabled">Włącz</string>
+  <string name="script_permissions_title">Uprawnienia</string>
+  <string name="script_permissions_none">Brak</string>
+  <string name="script_settings_category">Ustawienia</string>
+  <string name="script_list_filter">Filtruj</string>
+  <string name="script_button_off">Najpierw włącz skrypt</string>
+  <string name="script_permissions_summary">Odebranie uprawnienia wyłącza funkcje skryptu, które go wymagają.</string>
+  <string name="script_install_permissions_note">Możesz później odebrać te uprawnienia.</string>
+  <string name="script_manage_category">Zarządzanie</string>
+  <string name="script_move_up">Uruchamiaj wcześniej</string>
+  <string name="script_move_down">Uruchamiaj później</string>
+  <string name="script_order_summary">Kolejność skryptów zmieniających tę samą wypowiedź. Skrypty aplikacji są uruchamiane jako pierwsze.</string>
+  <string name="script_log">Dziennik</string>
+  <string name="script_log_summary">Komunikaty i błędy od uruchomienia Backtalka</string>
+  <string name="script_clear_storage">Wyczyść zapisane dane</string>
+  <string name="script_storage_cleared">Zapisane dane wyczyszczone</string>
+  <string name="script_remove">Usuń</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_remove_title">Usunąć skrypt <xliff:g id="name">%1$s</xliff:g>?</string>
+  <string name="title_pref_radial_menu">Menu kołowe</string>
+  <string name="summary_pref_radial_menu">Wyświetlaj menu Backtalka w formie koła na środku ekranu. Przesuń palec do wybranej pozycji i unieś go, aby ją wybrać.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_radial_menu_submenu">Menu: <xliff:g id="title" example="Navigation">%1$s</xliff:g></string>
+  <string name="radial_menu_cancel">Anuluj</string>
+  <string name="radial_menu_closed">Menu zamknięte</string>
+  <string name="hint_radial_menu">Dotknij środka ekranu i przesuń palec w stronę wybranej pozycji. Unieś go, aby ją wybrać. Aby zamknąć menu, unieś palec na środku.</string>
+  <string name="script_remove_message">Zostaną usunięte kod, dane i ustawienia skryptu.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_removed">Usunięto skrypt <xliff:g id="name">%1$s</xliff:g></string>
+  <string name="script_log_empty">Dziennik jest pusty</string>
+  <string name="script_log_clear">Wyczyść dziennik</string>
+  <string name="script_log_copy">Kopiuj dziennik</string>
+  <string name="script_log_copied">Dziennik skopiowany</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_too_old">Wymaga API skryptów w wersji <xliff:g id="needed">%1$d</xliff:g> lub nowszej. Ta wersja Backtalka udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc niektóre funkcje mogą nie działać.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_untested">Przetestowano z API skryptów do wersji <xliff:g id="tested">%1$d</xliff:g>. Ta wersja Backtalka udostępnia API <xliff:g id="current">%2$d</xliff:g>, więc skrypt może nie działać zgodnie z oczekiwaniami.</string>
+  <string name="script_state_incompatible">Może nie działać z tą wersją Backtalka</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_api_range">API skryptów: wersje od <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
+  <string name="script_compatibility_title">Zgodność</string>
+  <string name="script_install_anyway">Zainstaluj mimo to</string>
+  <string name="script_update_anyway">Zaktualizuj mimo to</string>
+  <string name="script_homepage">Otwórz stronę domową</string>
+  <string name="script_homepage_confirm_title">Otworzyć ten adres?</string>
+  <string name="script_homepage_open">Otwórz</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_homepage_failed">Żadna aplikacja nie może otworzyć adresu <xliff:g id="address">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_turned_off">Skrypt <xliff:g id="name">%1$s</xliff:g> został wyłączony po wielokrotnych błędach. Sprawdź jego dziennik w ustawieniach skryptów.</string>
+  <string name="shortcut_inspect_item">Sprawdź element z fokusem</string>
+  <string name="script_inspect_no_item">Żaden element nie ma fokusu</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_inspect_copied">Skopiowano. <xliff:g id="details">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_inspect_no_id">Brak identyfikatora. Reguły nie mogą wskazać elementu po jego ID. Skopiowano. <xliff:g id="details">%1$s</xliff:g></string>
+  <string name="shortcut_copy_screen_tree">Kopiuj drzewo ekranu</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_tree_copied">Skopiowane elementy: <xliff:g id="count">%1$d</xliff:g></string>
+  <string name="script_tree_none">Brak okna do skopiowania</string>
+  <string name="script_tree_clip_label">Drzewo ekranu</string>
+  <string name="summary_copy_screen_tree_menu">Kopiuj wszystkie elementy ekranu w formacie JSON na potrzeby tworzenia skryptów</string>
+  <string name="script_inspect_clip_label">Szczegóły elementu</string>
+  <string name="summary_inspect_item_menu">Odczytuj i kopiuj szczegóły elementu z fokusem na potrzeby tworzenia skryptów</string>
+  <string name="script_keys_backtalk_modifier">Klawisz modyfikujący Backtalka</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, a następnie <xliff:g id="second">%2$s</xliff:g></string>
+  <string name="script_commands_category">Polecenia</string>
+  <string name="script_commands_summary">Gesty i skróty klawiszowe działającego skryptu mają pierwszeństwo przed przypisaniami Backtalka. Wyłącz wybrane przypisanie skryptu, aby używać polecenia Backtalka.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_keys">Klawisze: <xliff:g id="keys">%1$s</xliff:g></string>
+  <string name="script_binding_menu">Menu Backtalka</string>
+  <string name="script_binding_control">Sterowanie czytaniem</string>
+  <string name="script_binding_none">Brak</string>
+  <string name="script_binding_turn_on">Włącz</string>
+  <string name="script_binding_turn_off">Wyłącz</string>
+  <string name="script_binding_restore">Przywróć domyślne przypisania</string>
+  <string name="script_binding_restored">Domyślne przypisania przywrócone</string>
+  <string name="script_binding_perform">Wykonaj gest lub naciśnij skrót</string>
+  <string name="script_binding_perform_summary">Przypisz następny gest lub skrót z klawiszem modyfikującym Backtalka</string>
+  <string name="script_binding_perform_message">Wykonaj gest lub naciśnij kombinację klawiszy.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_assign_title">Przypisać <xliff:g id="binding">%1$s</xliff:g> do polecenia <xliff:g id="command">%2$s</xliff:g>?</string>
+  <string name="script_binding_assign">Przypisz</string>
+  <string name="script_binding_choose_gesture">Wybierz gest</string>
+  <string name="script_binding_type_keys">Wpisz skrót klawiszowy</string>
+  <string name="script_binding_type_keys_summary">Np. backtalk+shift+n lub backtalk+t, s</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_binding_bad_keys">Nie można użyć tej kombinacji klawiszy. <xliff:g id="reason">%1$s</xliff:g></string>
+  <string name="script_install_adds">Dodawane polecenia:</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+  <string name="title_pref_sound_themes">Tematy dźwiękowe</string>
+  <string name="summary_pref_sound_themes">Instaluj i wybieraj zestawy dźwięków i wibracji, zastępuj pojedyncze dźwięki własnymi oraz włączaj dźwięki i wibracje kontrolek i dźwięk 3D.</string>
+  <string name="sound_themes_installed_category">Zainstalowane tematy</string>
+  <string name="sound_theme_backtalk">Backtalk</string>
+  <string name="sound_theme_backtalk_description">Dźwięki i wibracje Backtalka oraz dodane przez Ciebie dźwięki.</string>
+  <string name="sound_theme_in_use">W użyciu</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_by">Autor: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_license">Licencja: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+  <plurals xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_sounds">
+    <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dźwięk.</item>
+    <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> dźwięki.</item>
+    <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> dźwięków.</item>
+    <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> dźwięków.</item>
+  </plurals>
+  <plurals xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_vibrations">
+    <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> wzór wibracji.</item>
+    <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> wzory wibracji.</item>
+    <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> wzorów wibracji.</item>
+    <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> wzorów wibracji.</item>
+  </plurals>
+  <string name="sound_theme_control_sounds_on">Włącza dźwięki i wibracje kontrolek.</string>
+  <string name="sound_theme_control_sounds_off">Wyłącza dźwięki i wibracje kontrolek.</string>
+  <string name="sound_theme_use">Użyj tego tematu</string>
+  <string name="sound_theme_about">Informacje o temacie</string>
+  <string name="sound_theme_export">Zapisz jako plik tematu</string>
+  <string name="sound_theme_remove">Usuń</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_remove_confirm">Usunąć temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+  <string name="sound_theme_remove_button">Usuń</string>
+  <plurals xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_exported">
+    <item quantity="one">Zapisano temat z <xliff:g id="count" example="1">%d</xliff:g> dźwiękiem.</item>
+    <item quantity="few">Zapisano temat z <xliff:g id="count" example="13">%d</xliff:g> dźwiękami.</item>
+    <item quantity="many">Zapisano temat z <xliff:g id="count" example="13">%d</xliff:g> dźwiękami.</item>
+    <item quantity="other">Zapisano temat z <xliff:g id="count" example="13">%d</xliff:g> dźwiękami.</item>
+  </plurals>
+  <string name="sound_theme_export_failed">Nie udało się zapisać pliku tematu.</string>
+  <string name="sound_theme_no_picker">Na tym urządzeniu nie ma aplikacji do wybierania plików.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_settings_category">Ustawienia tematu: <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+  <string name="title_pref_theme_sounds">Dźwięki</string>
+  <string name="summary_pref_theme_sounds">Zastąp dowolny dźwięk tego tematu własnym plikiem dźwiękowym.</string>
+  <string name="sound_themes_install_category">Zainstaluj temat</string>
+  <string name="title_pref_sound_theme_install_file">Z pliku</string>
+  <string name="summary_pref_sound_theme_install_file">Plik tematu jest archiwum ZIP. Możesz go też otworzyć za pomocą Backtalka lub udostępnić mu z innej aplikacji.</string>
+  <string name="title_pref_sound_theme_install_link">Z linku</string>
+  <string name="summary_pref_sound_theme_install_link">Link do pliku tematu lub repozytorium GitHub, które go zawiera. Możesz też udostępnić link Backtalkowi z przeglądarki.</string>
+  <string name="sound_theme_link_message">Wpisz lub wklej link do pliku tematu albo repozytorium GitHub, które go zawiera.</string>
+  <string name="sound_theme_link_hint">https://</string>
+  <string name="sound_theme_install_label">Zainstaluj temat dźwiękowy</string>
+  <string name="sound_theme_install_reading">Wczytywanie tematu dźwiękowego</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_title">Zainstalować temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+  <string name="sound_theme_install_and_use">Zainstaluj i użyj</string>
+  <string name="sound_theme_install">Zainstaluj</string>
+  <string name="sound_theme_install_replaces">Zastąpi to zainstalowany temat o tej samej nazwie.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_skipped">Pominięto:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_installed">Zainstalowano temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_installed_in_use">Zainstalowano temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Jest teraz używany.</string>
+  <string name="sound_theme_install_nothing">Brak tematu dźwiękowego do zainstalowania.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_not_a_theme">Backtalk nie może używać tego pliku jako tematu dźwiękowego: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="sound_theme_install_failed">Nie udało się zainstalować tematu dźwiękowego. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+  <string name="sound_theme_install_https_only">Linki do tematów dźwiękowych muszą zaczynać się od https.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="title_pref_theme_sounds_of">Dźwięki tematu: <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+  <string name="title_pref_theme_sounds_reset">Przywróć wszystkie dźwięki Backtalka</string>
+  <string name="theme_sounds_reset_confirm">Usunąć wszystkie dźwięki tego tematu i używać standardowych dźwięków Backtalka?</string>
+  <string name="theme_sounds_reset_button">Usuń</string>
+  <string name="theme_sounds_category">Dźwięki</string>
+  <string name="theme_sound_summary_default">Dźwięk Backtalka</string>
+  <string name="theme_sound_summary_custom">Dźwięk tematu</string>
+  <string name="theme_sound_summary_none">Brak dźwięku. Odtwarzany jest dźwięk zaznaczenia.</string>
+  <string name="theme_sound_summary_android_keyboard">Dźwięk klawiatury Androida</string>
+  <string name="theme_sound_use_android_keyboard">Użyj dźwięku klawiatury Androida</string>
+  <string name="theme_sound_braille_character">Klawiatura brajlowska: wpisywanie znaku</string>
+  <string name="theme_sound_braille_space">Klawiatura brajlowska: spacja</string>
+  <string name="theme_sound_braille_delete">Klawiatura brajlowska: usuwanie</string>
+  <string name="theme_sound_braille_new_line">Klawiatura brajlowska: nowy wiersz</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+  <string name="theme_sound_choose">Wybierz plik dźwiękowy</string>
+  <string name="theme_sound_preview">Odsłuchaj</string>
+  <string name="theme_sound_use_default">Użyj dźwięku Backtalka</string>
+  <string name="theme_sound_remove">Usuń dźwięk</string>
+  <string name="theme_sound_too_large">Ten plik jest za duży. Plik dźwiękowy może mieć maksymalnie 5 MB.</string>
+  <string name="theme_sound_not_audio">Backtalk nie może odtworzyć tego pliku. Wybierz plik dźwiękowy w formacie WAV, OGG, MP3 lub FLAC.</string>
+  <string name="theme_sound_failed">Nie udało się odczytać tego pliku.</string>
+  <string name="shortcut_announce_status">Odczytaj stan urządzenia</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_status_bars">Siła sygnału: <xliff:g id="level" example="3">%1$d</xliff:g> z <xliff:g id="max_level" example="4">%2$d</xliff:g></string>
+  <string name="status_wifi_off">Wi-Fi wyłączone</string>
+  <string name="status_wifi_not_connected">Wi-Fi: brak połączenia</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+  <string name="status_mobile">Sieć komórkowa</string>
+  <string name="status_mobile_no_service">Brak sieci komórkowej</string>
+  <string name="status_do_not_disturb">Nie przeszkadzać</string>
+  <string name="status_ringer_vibrate">Tylko wibracje</string>
+  <string name="status_ringer_silent">Tryb cichy</string>
+  <string name="status_airplane_mode">Tryb samolotowy</string>
+  <string name="title_pref_status_readout">Odczytywanie stanu urządzenia</string>
+  <string name="status_item_time">Godzina</string>
+  <string name="status_item_time_summary">Bieżąca godzina</string>
+  <string name="status_item_battery">Bateria</string>
+  <string name="status_item_battery_summary">Poziom baterii, ładowanie i oszczędzanie baterii</string>
+  <string name="status_item_wifi">Wi-Fi</string>
+  <string name="status_item_wifi_summary">Nazwa sieci i siła sygnału</string>
+  <string name="status_item_mobile">Sieć komórkowa</string>
+  <string name="status_item_mobile_summary">Operator, typ sieci i siła sygnału</string>
+  <string name="status_item_ringer">Dzwonek i tryb Nie przeszkadzać</string>
+  <string name="status_item_ringer_summary">Tylko gdy dzwonek jest wyłączony lub działa tryb Nie przeszkadzać</string>
+  <string name="status_item_airplane_mode">Tryb samolotowy</string>
+  <string name="status_item_airplane_mode_summary">Tylko gdy tryb samolotowy jest włączony</string>
+  <string name="title_pref_check_for_updates">Sprawdź aktualizacje</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="summary_pref_check_for_updates">Kompilacja <xliff:g id="build" example="96">%1$d</xliff:g></string>
+  <string name="title_pref_auto_update_check">Automatycznie sprawdzaj aktualizacje</string>
+  <string name="summary_pref_auto_update_check">Sprawdzaj raz dziennie i wyświetlaj powiadomienie, gdy dostępna jest nowa kompilacja</string>
+  <string name="update_notification_title">Dostępna aktualizacja Backtalka</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_notification_text">Kompilacja <xliff:g id="build" example="97">%1$d</xliff:g>. Kliknij, aby zainstalować.</string>
+  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_dialog_title">Dostępna jest kompilacja <xliff:g id="build" example="97">%1$d</xliff:g> Backtalka</string>
+  <string name="update_dialog_install">Zainstaluj</string>
+  <string name="update_checking">Sprawdzanie aktualizacji</string>
+  <string name="update_up_to_date">Backtalk jest aktualny</string>
+  <string name="update_check_failed">Nie udało się sprawdzić aktualizacji</string>
+  <string name="update_downloading">Pobieranie aktualizacji</string>
+  <string name="update_install_failed">Nie udało się zainstalować aktualizacji</string>
+  <string name="update_install_canceled">Aktualizacja anulowana</string>
+  <string name="update_allow_install">Zezwól Backtalkowi na instalowanie aplikacji, a następnie ponów aktualizację</string>
+  <string name="scan_the_qr_code">Zeskanuj kod QR</string>
+  <string name="qr_code_content_description">Kod QR do zeskanowania</string>
+  <string name="alternate_privacy_policy">Możesz też otworzyć stronę https://policies.google.com/privacy?hl=pl</string>
+  <string name="alternate_tos">Możesz też otworzyć stronę https://www.google.pl/mobile/tospage/index.html?dc=gorganic&amp;gl=PL</string>
+  <string xmlns:tools="http://schemas.android.com/tools" name="alternate_help" tools:ignore="HardCodedNumber">Możesz też otworzyć stronę https://support.google.com/accessibility/android/answer/6283677?hl=pl</string>
+  <string name="title_pref_mute_speech_while_recording">Wyłączaj mowę podczas nagrywania</string>
+  <string name="summary_pref_mute_speech_while_recording">Gdy aplikacja rozpocznie nagrywanie bez podłączonych słuchawek, mowa zostanie wyłączona, aby nie trafiła do nagrania. Włączy się ponownie po jego zakończeniu. Możesz przywrócić ją wcześniej gestem włączania lub wyłączania mowy.</string>
+</resources>

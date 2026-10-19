@@ -67,6 +67,7 @@ public class BrailleLanguages {
   public static final Locale LOCALE_LT = Locale.forLanguageTag("lt");
   public static final Locale LOCALE_LV = Locale.forLanguageTag("lv");
   public static final Locale LOCALE_ML_IN = Locale.forLanguageTag("ml-IN");
+  public static final Locale LOCALE_MN = Locale.forLanguageTag("mn");
   public static final Locale LOCALE_MR_IN = Locale.forLanguageTag("mr-IN");
   public static final Locale LOCALE_NE = Locale.forLanguageTag("ne");
   public static final Locale LOCALE_NE_IN = Locale.forLanguageTag("ne-IN");
@@ -642,6 +643,11 @@ public class BrailleLanguages {
         LOCALE_MR_IN,
         R.string.code_user_facing_name_marathi_indian,
         /* supportedContracted= */ false,
+        /* eightDot= */ false),
+    MONGOLIAN(
+        LOCALE_MN,
+        R.string.code_user_facing_name_mongolian,
+        /* supportedContracted= */ true,
         /* eightDot= */ false),
     NEPALI(
         LOCALE_NE,

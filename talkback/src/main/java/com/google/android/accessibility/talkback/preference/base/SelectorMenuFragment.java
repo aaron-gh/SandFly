@@ -15,6 +15,7 @@
  */
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.os.Bundle;
 import com.google.android.accessibility.talkback.R;
 
 /** Panel holding a set of selector menu preferences. */
@@ -24,6 +25,12 @@ public class SelectorMenuFragment extends TalkbackBaseFragment {
   // no-argument constructor is not available.
   public SelectorMenuFragment() {
     super(R.xml.selector_menu_preferences);
+  }
+
+  @Override
+  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    super.onCreatePreferences(savedInstanceState, rootKey);
+    collapseCategories();
   }
 
   @Override

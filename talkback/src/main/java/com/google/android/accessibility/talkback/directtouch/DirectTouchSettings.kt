@@ -78,6 +78,10 @@ object DirectTouchSettings {
 
   fun isAppEnabled(prefs: SharedPreferences, pkg: String): Boolean = pkg in stringSet(prefs, PREF_APPS)
 
+  /** Whether direct touch is on and turned on for any app, so that it can turn on at all. */
+  fun hasEnabledApps(prefs: SharedPreferences): Boolean =
+    isMasterEnabled(prefs) && stringSet(prefs, PREF_APPS).isNotEmpty()
+
   fun setAppEnabled(prefs: SharedPreferences, pkg: String, enabled: Boolean) {
     val apps = stringSet(prefs, PREF_APPS)
     prefs.edit().putStringSet(PREF_APPS, if (enabled) apps + pkg else apps - pkg).apply()
@@ -89,6 +93,9 @@ object DirectTouchSettings {
   fun setDirectTyping(prefs: SharedPreferences, pkg: String, enabled: Boolean) {
     prefs.edit().putBoolean(PREF_TYPING_PREFIX + pkg, enabled).apply()
   }
+
+  /** Whether [pkg] has been seen, after which [onFirstSight] changes nothing for it. */
+  fun isSeen(prefs: SharedPreferences, pkg: String): Boolean = pkg in stringSet(prefs, PREF_SEEN)
 
   /**
    * Records that [pkg] has been seen. The first time, an app that [declaresCapability] is turned

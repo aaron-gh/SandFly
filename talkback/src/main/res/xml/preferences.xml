@@ -47,6 +47,14 @@
         android:key="@string/pref_category_manage_selector_menu_key"
         android:title="@string/title_pref_category_selector_menu" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.TouchActivationFragment"
+        android:key="@string/pref_touch_activation_key"
+        android:title="@string/title_pref_touch_activation" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.NavigationPrefFragment"
+        android:key="@string/pref_navigation_settings_key"
+        android:title="@string/title_pref_navigation" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.status.StatusReadoutFragment"
         android:key="@string/pref_status_readout_key"
         android:title="@string/title_pref_status_readout" />
@@ -68,6 +76,10 @@
       android:title="@string/title_pref_category_typing_and_braille"
       app:allowDividerAbove="true" >
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
+        android:key="@string/pref_keyboard_echo_screen_key"
+        android:title="@string/title_pref_keyboard_echo" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.OnScreenKeyboardFragment"
         android:key="@string/pref_on_screen_keyboard_key"
         android:title="@string/title_pref_on_screen_keyboard" />
@@ -88,6 +100,26 @@
           android:targetPackage="@string/app_id"
           android:targetClass="com.google.android.accessibility.braille.brailledisplay.settings.BrailleDisplaySettingsActivity" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_apps_key"
+      android:title="@string/title_pref_category_apps">
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_scripts_key"
+        android:title="@string/title_pref_scripts"
+        android:summary="@string/summary_pref_scripts"
+        android:fragment="com.google.android.accessibility.talkback.scripting.ScriptsFragment" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_manage_labels_key"
+        android:title="@string/title_pref_manage_labels" >
+      <intent
+          android:targetPackage="@string/app_id"
+          android:targetClass="com.google.android.accessibility.talkback.labeling.LabelManagerSummaryActivity" />
+    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
+        android:key="pref_speech_control_screen"
+        android:title="@string/title_pref_speech_control" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_advanced_key"

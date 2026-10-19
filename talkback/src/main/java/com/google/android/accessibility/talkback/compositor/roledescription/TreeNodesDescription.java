@@ -313,8 +313,11 @@ public class TreeNodesDescription {
     // from the rest of the row. It's left out of the list here, and its type and state are put
     // around the row's text in the description order below.
     AccessibilityNodeInfoCompat namelessControl = null;
+    // A landmark of a web page is described by its type and name, as in TalkBack. Its contents are
+    // read by moving through them, unless it is a live region that changed.
     if (shouldIterateChildren
         && role != Role.ROLE_WEB_VIEW
+        && (shouldAppendChildNode || !AccessibilityNodeInfoUtils.isWebLandmark(node))
         && (role == Role.ROLE_GRID
             || role == Role.ROLE_LIST
             || role == Role.ROLE_PAGER

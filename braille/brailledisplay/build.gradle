@@ -6,6 +6,9 @@ apply from: "../../shared.gradle"
 
 android {
     namespace = "com.google.android.accessibility.braille.brailledisplay"
+    buildFeatures {
+        aidl = true
+    }
 }
 
 dependencies {

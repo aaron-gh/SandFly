@@ -864,4 +864,28 @@
   <string name="popup_message_history_consent_dialog_positive_btn">Turn on</string>
   <!-- Device messages history dialog message: there are no records, the page is empty.  [CHAR_LIMIT=40] -->
   <string name="popup_message_history_consent_dialog_negative_btn">No thanks</string>
+
+  <!-- Braille displays from other apps -->
+  <!-- Name of the notification channel for braille displays that other apps provide.  [CHAR_LIMIT=50] -->
+  <string name="external_display_channel">Braille displays from other apps</string>
+  <!-- Asks whether an app may be a braille display for Backtalk.  [CHAR_LIMIT=100] -->
+  <string name="external_display_ask_title">Allow <xliff:g id="app" example="Notetaker">%1$s</xliff:g> to be a braille display for Backtalk?</string>
+  <!-- Text of the notification that asks whether an app may be a braille display.  [CHAR_LIMIT=100] -->
+  <string name="external_display_ask_text">Backtalk won\'t use it until you allow it.</string>
+  <!-- Warns what an app can do as a braille display, before the user allows it.  [CHAR_LIMIT=NONE] -->
+  <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> will be able to read everything Backtalk shows in braille, which can be anything on the screen, including messages and what you type. It will also be able to control your device as you can with a braille display: type, open apps and run any Backtalk command. Only allow apps you trust.</string>
+  <!-- Button that lets an app be a braille display.  [CHAR_LIMIT=20] -->
+  <string name="external_display_allow">Allow</string>
+  <!-- Button that doesn't let an app be a braille display.  [CHAR_LIMIT=20] -->
+  <string name="external_display_deny">Don\'t allow</string>
+  <!-- Notification shown while an app is Backtalk's braille display.  [CHAR_LIMIT=60] -->
+  <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is your braille display</string>
+  <!-- Notification text shown while an app is Backtalk's braille display.  [CHAR_LIMIT=100] -->
+  <string name="external_display_in_use_text">While Backtalk uses it, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> can read the screen and control the device.</string>
+  <!-- Title of the setting that lists the apps that can be braille displays.  [CHAR_LIMIT=50] -->
+  <string name="external_displays_title">Displays from other apps</string>
+  <!-- Explains the list of apps that can be braille displays.  [CHAR_LIMIT=NONE] -->
+  <string name="external_displays_summary">Apps that you allow can be braille displays for Backtalk. An app that is a braille display can read the screen and control the device.</string>
+  <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
+  <string name="external_displays_none">No apps can be braille displays.</string>
 </resources>

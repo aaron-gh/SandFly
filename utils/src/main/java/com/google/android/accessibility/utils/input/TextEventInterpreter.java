@@ -40,16 +40,19 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.input.GranularityIterator.TextSegmentIterator;
 import com.google.android.accessibility.utils.input.TextEventFilter.KeyboardEchoType;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
 import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
 import com.google.android.accessibility.utils.output.ActorStateProvider;
 import com.google.android.accessibility.utils.output.EditTextActionHistory;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
+import com.google.android.accessibility.utils.output.CopySelection;
 import com.google.android.accessibility.utils.output.SelectionStateReader;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.time.Duration;
 import java.util.List;
+import java.util.Locale;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -66,6 +69,16 @@ public class TextEventInterpreter {
   // TalkBack treats the ' ' as the general space character. In some situation, when the content is
   // hyper formatted such as Gmail composer, the Non-Break Space (NBSP) '\u00A0' is used instead.
   private static final char NBSP = '\u00A0';
+
+  // A web address's scheme as it is typed, before anything follows it, such as "https:/".
+  private static final Pattern ADDRESS_SCHEME_PATTERN =
+      Pattern.compile("(https?|ftps?|sftp|file|wss?):/{0,2}");
+  // A domain followed by a path, such as "github.com/author".
+  private static final Pattern DOMAIN_WITH_PATH_PATTERN =
+      Pattern.compile("[\\p{L}\\p{N}-]+(\\.[\\p{L}\\p{N}-]+)+/.*");
+  // An email address as it is typed, from the "@" on, such as "me@example.".
+  private static final Pattern EMAIL_PATTERN =
+      Pattern.compile("[^@\\s]+@[\\p{L}\\p{N}-]*(\\.[\\p{L}\\p{N}-]*)*");
 
   private static final char[] COMMON_ENDING_SYMBOLS = new char[] {',', '.', '!', '?', ';', ':'};
 
@@ -173,12 +186,8 @@ public class TextEventInterpreter {
     filter.addListener(listener);
   }
 
-  public void setOnScreenKeyboardEcho(@KeyboardEchoType int value) {
-    filter.setOnScreenKeyboardEcho(value);
-  }
-
-  public void setPhysicalKeyboardEcho(@KeyboardEchoType int value) {
-    filter.setPhysicalKeyboardEcho(value);
+  public void setKeyboardEcho(TypingInput input, @KeyboardEchoType int value) {
+    filter.setKeyboardEcho(input, value);
   }
 
   public void setLastKeyEventTime(long time) {
@@ -627,6 +636,28 @@ public class TextEventInterpreter {
     } else if (eventTypeInt
         == AccessibilityEvent.TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY) {
 
+      // Copying mode: the selection is kept by Backtalk, so the move is described by what it
+      // selected and deselected.
+      @Nullable CopySelection copySelection =
+          isSelectionModeActive ? selectionStateReader.copySelection() : null;
+      if (copySelection != null && copySelection.isActive()) {
+        @Nullable AccessibilityNodeInfoCompat copySource =
+            AccessibilityEventUtils.sourceCompat(event);
+        if (interpretCopyingModeMove(
+            interpretation,
+            copySelection,
+            copySource,
+            AccessibilityNodeInfoUtils.getText(copySource),
+            text,
+            fromIndex,
+            toIndex,
+            event.getAction()
+                != AccessibilityNodeInfoCompat.ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY,
+            isPassword)) {
+          return interpretation;
+        }
+      }
+
       if (fromIndex >= 0 && fromIndex <= textLength && toIndex >= 0 && toIndex <= textLength) {
         interpretation.setEvent(TextEventInterpretation.SELECTION_TEXT_TRAVERSAL);
         interpretation.setReason("fromIndex and toIndex both within text range");
@@ -663,6 +694,42 @@ public class TextEventInterpreter {
     mHistory.setLastToIndex(event.getToIndex());
 
     return interpretation.setInvalid("Unhandled selection event.");
+  }
+
+  /**
+   * Describes a move of the text cursor in copying mode by the text it selected and deselected, and
+   * keeps the selection.
+   *
+   * @param viewText the text of the view, which the framework moves through, before its
+   *     description
+   * @param eventText the text to use if the view has none
+   * @return whether the move was in copying mode, and so is described.
+   */
+  @VisibleForTesting
+  static boolean interpretCopyingModeMove(
+      TextEventInterpretation interpretation,
+      @Nullable CopySelection copySelection,
+      @Nullable AccessibilityNodeInfoCompat source,
+      @Nullable CharSequence viewText,
+      @Nullable CharSequence eventText,
+      int fromIndex,
+      int toIndex,
+      boolean forward,
+      boolean isPassword) {
+    if (copySelection == null || !copySelection.isActive() || isPassword) {
+      return false;
+    }
+    CopySelection.@Nullable Change change =
+        copySelection.move(
+            source, TextUtils.isEmpty(viewText) ? eventText : viewText, fromIndex, toIndex, forward);
+    if (change == null) {
+      return false;
+    }
+    interpretation.setEvent(TextEventInterpretation.SELECTION_MOVE_CURSOR_WITH_SELECTION);
+    interpretation.setReason("Copying mode move");
+    interpretation.setSelectedText(change.selected);
+    interpretation.setDeselectedText(change.deselected);
+    return true;
   }
 
   /**
@@ -880,9 +947,16 @@ public class TextEventInterpreter {
     return PUNCTUATION_PATTERN.matcher(Character.toString(ch)).matches();
   }
 
-  /** Returns whether typing {@code ch} can make keyboard echo speak the word before it. */
+  /**
+   * Returns whether typing {@code ch} can make keyboard echo speak the word before it. A hyphen or
+   * apostrophe does not, since it is often inside a word, as in "non-normal" or "don't".
+   */
   public static boolean endsWordForEcho(char ch) {
-    return isWhiteSpace(ch) || isPunctuation(ch);
+    return isWhiteSpace(ch) || (isPunctuation(ch) && !isWordJoiner(ch));
+  }
+
+  private static boolean isWordJoiner(char ch) {
+    return ch == '-' || ch == '\'';
   }
 
   private boolean appendLastWordIfNeeded(
@@ -893,54 +967,133 @@ public class TextEventInterpreter {
     }
     final CharSequence text = getEventText(event);
     final CharSequence addedText = getAddedText(event);
-    int fromIndex = event.getFromIndex();
-    if (addedText == null || addedText.length() == 0) {
+    if (addedText == null) {
       return false;
     }
-    final int wordEnd = getWordEchoEnd(addedText);
-    char lastChar = addedText.charAt(wordEnd);
-    // Echo word only occurs when the added character is either a space or a punctuation symbol.
-    if (!endsWordForEcho(lastChar)) {
+    int[] range = getEchoWordRange(text, event.getFromIndex(), addedText);
+    if (range == null) {
       return false;
     }
-
-    final int newToIndex = fromIndex + wordEnd;
-    final int newFromIndex = getPrecedingWhitespaceOrPunctuation(text, newToIndex);
-    // Echo the last char even if it is a punctuation symbol.
-    final CharSequence word = text.subSequence(newFromIndex, newToIndex + 1);
-
-    // Did the user just type a word?
-    if (TextUtils.getTrimmedLength(word) == 0) {
-      return false;
-    }
-
-    if (newFromIndex >= fromIndex) {
-      // Only when newFromIndex greater than fromIndex has possible contains more than 1 word.
-      CharSequence addedTextWithoutLastWord = text.subSequence(fromIndex, newFromIndex);
-      if (getPrecedingWhitespaceOrPunctuation(addedTextWithoutLastWord, newFromIndex) != 0) {
-        // Added text contains more than 1 word.
-        return false;
-      }
-    }
-    if (word.length() == 2) {
-      // Prevent one-character-word-echo feedback verbosity.
-      // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'.
-      CharSequence charSequence = text.subSequence(text.length() - 2, text.length());
-      if (TextUtils.equals(charSequence, word)
-          && !isCommonEndingSymbols(word.charAt(word.length() - 1))) {
-        return false;
-      }
-    }
-
+    int wordStart = range[0];
+    int wordEnd = range[1];
+    char lastChar = text.charAt(wordEnd);
     String charName = SpeechCleanupUtils.characterToName(mContext, lastChar);
     if (charName == null) {
-      interpretation.setInitialWord(word);
+      interpretation.setInitialWord(text.subSequence(wordStart, wordEnd + 1));
     } else {
       // Announce character name(punctuation and symbol) for the last character.
-      String echoWord = text.subSequence(newFromIndex, newToIndex) + " " + charName;
+      String echoWord = text.subSequence(wordStart, wordEnd) + " " + charName;
       interpretation.setInitialWord(echoWord);
     }
     return true;
+  }
+
+  /**
+   * Returns the word that a text change ends, as the index of its first character and the index of
+   * the space or punctuation mark that ends it, or null if the change ends no word.
+   *
+   * <p>The word runs back to the space before it, so punctuation inside it, as in "non-normal" or
+   * "don't", is part of it; opening brackets and double quotes before it are left out. It is taken
+   * from the text after the change, not from the added text, so the whole word is read when a
+   * keyboard adds it all at once, or corrects it as the space is typed by replacing only the
+   * letters that changed.
+   *
+   * <p>No word is read for a space that follows punctuation typed earlier, since the word was read
+   * when the punctuation was typed, or when the change adds more than one word. A hyphen or
+   * apostrophe ends no word, so the whole word is read when the space after it is typed.
+   */
+  @VisibleForTesting
+  static int @Nullable [] getEchoWordRange(
+      CharSequence text, int fromIndex, CharSequence addedText) {
+    if (addedText.length() == 0 || fromIndex < 0) {
+      return null;
+    }
+    int wordEnd = fromIndex + getWordEchoEnd(addedText);
+    if (wordEnd >= text.length()) {
+      return null;
+    }
+    char lastChar = text.charAt(wordEnd);
+    // Echo word only occurs when the added character is either a space or a punctuation symbol.
+    if (!endsWordForEcho(lastChar)) {
+      return null;
+    }
+
+    int firstChar = wordEnd;
+    while (firstChar > 0 && !isWhiteSpace(text.charAt(firstChar - 1))) {
+      firstChar--;
+    }
+    for (int i = fromIndex; i < firstChar; i++) {
+      if (!isWhiteSpace(text.charAt(i))) {
+        // Added text contains more than 1 word.
+        return null;
+      }
+    }
+    int wordStart = firstChar;
+    while (wordStart < wordEnd && isOpeningPunctuation(text.charAt(wordStart))) {
+      wordStart++;
+    }
+
+    // Punctuation inside a web or email address doesn't end it. When the address was added
+    // together with the space after it, the space ends it.
+    if (!isWhiteSpace(lastChar) && isAddress(text.subSequence(wordStart, wordEnd + 1))) {
+      int next = wordEnd + 1;
+      if (next < fromIndex + addedText.length()
+          && next < text.length()
+          && isWhiteSpace(text.charAt(next))) {
+        wordEnd = next;
+        lastChar = text.charAt(next);
+      } else {
+        return null;
+      }
+    }
+    // A space after punctuation typed earlier: the word was read when the punctuation was typed,
+    // unless it was inside an address.
+    if (isWhiteSpace(lastChar)
+        && wordEnd > 0
+        && wordEnd - 1 < fromIndex
+        && endsWordForEcho(text.charAt(wordEnd - 1))
+        && !isAddress(text.subSequence(wordStart, wordEnd))) {
+      return null;
+    }
+
+    int wordLength = wordEnd - wordStart;
+    if (wordLength == 0 && isWhiteSpace(lastChar)) {
+      return null;
+    }
+    // Prevent one-character-word-echo feedback verbosity.
+    // For example, input ' ', 'a', '@', it doesn't need any echo like 'a@'. A word in brackets or
+    // quotes, such as "(a)", is still read.
+    if (wordLength == 1
+        && wordStart == firstChar
+        && wordEnd == text.length() - 1
+        && !isCommonEndingSymbols(lastChar)) {
+      return null;
+    }
+    return new int[] {wordStart, wordEnd};
+  }
+
+  /**
+   * Returns whether {@code word}, as typed so far, is a web or email address, whose punctuation is
+   * part of it: one with a scheme such as "https://", the scheme alone as it is typed, one that
+   * starts with "www.", a domain followed by a path, such as "github.com/", or an email address.
+   */
+  @VisibleForTesting
+  static boolean isAddress(CharSequence word) {
+    String lower = word.toString().toLowerCase(Locale.ROOT);
+    return lower.contains("://")
+        || lower.startsWith("www.")
+        || lower.startsWith("mailto:")
+        || ADDRESS_SCHEME_PATTERN.matcher(lower).matches()
+        || DOMAIN_WITH_PATH_PATTERN.matcher(lower).matches()
+        || EMAIL_PATTERN.matcher(lower).matches();
+  }
+
+  private static boolean isOpeningPunctuation(char ch) {
+    int type = Character.getType(ch);
+    // Not an apostrophe, which can start a word, as in "'tis".
+    return type == Character.START_PUNCTUATION
+        || type == Character.INITIAL_QUOTE_PUNCTUATION
+        || ch == '"';
   }
 
   /**
@@ -954,7 +1107,8 @@ public class TextEventInterpreter {
     int last = addedText.length() - 1;
     if (last > 0
         && isWhiteSpace(addedText.charAt(last))
-        && isPunctuation(addedText.charAt(last - 1))) {
+        && isPunctuation(addedText.charAt(last - 1))
+        && !isWordJoiner(addedText.charAt(last - 1))) {
       return last - 1;
     }
     return last;
@@ -971,35 +1125,6 @@ public class TextEventInterpreter {
     }
 
     return eventText.get(0);
-  }
-
-  /**
-   * Returns index of first whitespace or punctuation preceding fromIndex. An apostrophe inside a
-   * word, as in "don't", is part of the word.
-   */
-  @VisibleForTesting
-  static int getPrecedingWhitespaceOrPunctuation(CharSequence text, int toIndex) {
-    if (toIndex > text.length()) {
-      toIndex = text.length();
-    }
-    for (int i = (toIndex - 1); i > 0; i--) {
-      if (isWhiteSpace(text.charAt(i))) {
-        return i + 1;
-      }
-      if (isPunctuation(text.charAt(i)) && !isApostropheInWord(text, i)) {
-        // The preceding punctuation is not preserved.
-        return i + 1;
-      }
-    }
-
-    return 0;
-  }
-
-  private static boolean isApostropheInWord(CharSequence text, int index) {
-    return text.charAt(index) == '\''
-        && index + 1 < text.length()
-        && Character.isLetterOrDigit(text.charAt(index - 1))
-        && Character.isLetterOrDigit(text.charAt(index + 1));
   }
 
   // Visible for testing only.

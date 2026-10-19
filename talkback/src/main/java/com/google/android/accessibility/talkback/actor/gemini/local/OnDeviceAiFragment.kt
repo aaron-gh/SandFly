@@ -343,6 +343,7 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
       ModelFiles.Failure.HASH_MISMATCH -> R.string.on_device_ai_error_corrupt
       ModelFiles.Failure.STORAGE -> R.string.on_device_ai_error_storage
       ModelFiles.Failure.LOW_SPACE -> R.string.on_device_ai_error_low_space
+      ModelFiles.Failure.TIME_LIMIT -> R.string.on_device_ai_error_time_limit
     }
 
   private fun checkBox(

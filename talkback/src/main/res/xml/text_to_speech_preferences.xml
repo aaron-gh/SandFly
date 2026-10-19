@@ -25,6 +25,11 @@
       android:title="@string/title_pref_speak_in_phrases"
       android:summary="@string/summary_pref_speak_in_phrases" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_mute_speech_while_recording_default"
+      android:key="@string/pref_mute_speech_while_recording_key"
+      android:title="@string/title_pref_mute_speech_while_recording"
+      android:summary="@string/summary_pref_mute_speech_while_recording" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_switch_languages_default"
       android:key="@string/pref_switch_languages_key"
       android:title="@string/title_pref_switch_languages" />

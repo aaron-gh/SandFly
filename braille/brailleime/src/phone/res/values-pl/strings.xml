@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Klawiatura brajlowska TalkBack</string>
+  <string name="braille_ime_service_name">Klawiatura brajlowska Backtalka</string>
   <string name="braille_ime_bd_mode_name">Dane wejściowe monitora brajlowskiego</string>
   <string name="switch_to_tabletop_announcement">Tryb Na stole. Połóż urządzenie tak, aby gniazdo ładowania było po lewej stronie.</string>
   <string name="calibration_tip_announcement">Aby zmienić pozycję punktu, przytrzymaj ekran %d palcami.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Przełączono na brajla integralnego</string>
   <string name="braille_ime_displayed_name">klawiatura brajlowska</string>
   <string name="multiple_languages_braille_ime_displayed_name">klawiatura brajlowska, %s</string>
-  <string name="input_view_caption">Klawiatura brajlowska TalkBack – aby uzyskać pomoc, kliknij g.co/help/braille</string>
+  <string name="input_view_caption">Klawiatura brajlowska Backtalka – aby uzyskać pomoc, kliknij g.co/help/braille</string>
   <string name="perform_action_next">Dalej</string>
   <string name="perform_action_submitting">Przesyłanie tekstu</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Zmieniam pozycję punktu. Zacznijmy od %s i zarejestrowania punktów.</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klawiatura</string>
   <string name="not_enough_touch_points_dialog_title">Urządzenie nie obsługuje klawiatury brajlowskiej</string>
   <string name="not_enough_touch_points_dialog_message">Urządzenie nie obsługuje dostatecznie wielu punktów kontaktu. Aby uzyskać więcej informacji, skontaktuj się z producentem urządzenia.</string>
-  <string name="talkback_off_dialog_title">Włącz TalkBack, by używać klawiatury brajlowskiej</string>
+  <string name="talkback_off_dialog_title">Włącz Backtalka, by używać klawiatury brajlowskiej</string>
   <string name="talkback_off_dialog_positive_button">Włącz w ustawieniach ułatwień dostępu</string>
-  <string name="talkback_suspend_dialog_title">Wznów TalkBack, by używać klawiatury brajlowskiej</string>
-  <string name="talkback_off_or_suspend_dialog_message">Po włączeniu TalkBack możesz wstawiać symbole brajlowskie, klikając ekran.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Aby zmienić gest, włącz TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Funkcja TalkBack jest wyłączona. Włącz ją, aby zmienić gesty obsługi klawiatury brajlowskiej.</string>
+  <string name="talkback_suspend_dialog_title">Wznów Backtalka, by używać klawiatury brajlowskiej</string>
+  <string name="talkback_off_or_suspend_dialog_message">Po włączeniu Backtalka możesz wstawiać symbole brajlowskie, klikając ekran.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Aby zmienić gest, włącz Backtalka</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Funkcja Backtalk jest wyłączona. Włącz ją, aby zmienić gesty obsługi klawiatury brajlowskiej.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Otwórz Ustawienia</string>
   <string name="reset_gestures_dialog_title">Zresetować wszystkie gesty?</string>
   <string name="reset_gestures_dialog_message">Wszystkie gesty klawiatury brajlowskiej zostaną zresetowane do wartości domyślnych</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Przywróć domyślne</string>
   <string name="custom_gestures_dialog_remove_button">Usuń gest</string>
   <string name="change_gestures_dialog_message_title">Jak zmienić gest</string>
-  <string name="change_gestures_dialog_message">Na następnym ekranie otworzy się klawiatura brajlowska i nie będzie można używać gestów TalkBack.\n\nPo jej otwarciu wykonaj gest, którego chcesz używać. Aby zamknąć klawiaturę brajlowską i anulować zmianę gestu, przesuń 2 palcami w dół.\n\nZobacz dostępne gesty\n</string>
+  <string name="change_gestures_dialog_message">Na następnym ekranie otworzy się klawiatura brajlowska i nie będzie można używać gestów Backtalka.\n\nPo jej otwarciu wykonaj gest, którego chcesz używać. Aby zamknąć klawiaturę brajlowską i anulować zmianę gestu, przesuń 2 palcami w dół.\n\nZobacz dostępne gesty\n</string>
   <string name="change_gestures_dialog_message_link">Zobacz dostępne gesty</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Nie pokazuj więcej tego komunikatu</string>
   <string name="change_gestures_dialog_positive_button">Dalej</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nie używaj</string>
   <string name="next_keyboard">Następna klawiatura</string>
   <string name="braille_tutorial_title">Samouczek klawiatury brajlowskiej</string>
-  <string name="tutorial_intro_description">Korzystając z klawiatury brajlowskiej, możesz pisać 6-punktowym brajlem, klikając ekran.\n\nUżywasz kodu Unified English Braille. Aby przełączyć język pisania, otwórz ustawienia TalkBack.\n\nAby pisać brajlem, musisz inaczej trzymać telefon.</string>
+  <string name="tutorial_intro_description">Korzystając z klawiatury brajlowskiej, możesz pisać 6-punktowym brajlem, klikając ekran.\n\nUżywasz kodu Unified English Braille. Aby przełączyć język pisania, otwórz ustawienia Backtalka.\n\nAby pisać brajlem, musisz inaczej trzymać telefon.</string>
   <string name="next_step">Dalej</string>
   <string name="leave_keyboard">Zamknij klawiaturę brajlowską</string>
-  <string name="hold_six_fingers_description">Nie będzie można używać standardowych gestów TalkBack na klawiaturze brajlowskiej.\n\nAby rozpocząć, skonfiguruj pozycję 6 kropek brajlowskich używanych podczas pisania.</string>
-  <string name="rotate_orientation_description_1">Od teraz nie możesz korzystać ze standardowych gestów TalkBack. Gdy używasz klawiatury brajlowskiej, usługa TalkBack jest niedostępna.</string>
+  <string name="hold_six_fingers_description">Nie będzie można używać standardowych gestów Backtalka na klawiaturze brajlowskiej.\n\nAby rozpocząć, skonfiguruj pozycję 6 kropek brajlowskich używanych podczas pisania.</string>
+  <string name="rotate_orientation_description_1">Od teraz nie możesz korzystać ze standardowych gestów Backtalka. Gdy używasz klawiatury brajlowskiej, usługa Backtalk jest niedostępna.</string>
   <string name="rotate_orientation_description_2">Najpierw chwyć telefon w prezentowany sposób, odwracając ekran od siebie.</string>
   <string name="tap_to_continue">Kliknij dwukrotnie w dowolnym miejscu, by kontynuować</string>
   <string name="instruction_type_letter_a">Kliknij punkt 1 lewym palcem wskazującym, by napisać literę „A”</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">PRZENIESIONO KURSOR DALEJ</string>
   <string name="result_swipe_down_2_fingers">UKRYJ KLAWIATURĘ</string>
   <string name="result_swipe_down_3_fingers">NASTĘPNA KLAWIATURA</string>
-  <string name="rotate_orientation_announcement">Od teraz nie możesz korzystać ze standardowych gestów TalkBack. Gdy używasz klawiatury brajlowskiej, usługa TalkBack jest niedostępna.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Od teraz nie możesz korzystać ze standardowych gestów Backtalka. Gdy używasz klawiatury brajlowskiej, usługa Backtalk jest niedostępna.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Najpierw odwróć telefon ekranem od siebie.\n\nNastępnie obróć telefon i ustaw go poziomo. Trzymaj telefon za krótsze krawędzie. Prawą ręką trzymaj część, w której znajduje się port USB. Połóż 3 środkowe palce na ekranie, a kciukiem i małym placem podpieraj telefon.\n\nGdy wszystko będzie gotowe, kliknij ekran dwukrotnie, by przejść dalej.\n\nAby zamknąć klawiaturę brajlowską, przesuń 3 palcami w dół. Spowoduje to przełączenie na pierwotną klawiaturę.</string>
   <string name="rotate_orientation_continue_announcement">Telefon jest ustawiony pionowo. Aby przejść dalej, obróć go w poziomie, tak by długa krawędź znalazła się na dole. Następnie odwróć ekran od siebie. Gdy wszystko będzie gotowe, kliknij ekran dwukrotnie, by przejść dalej.</string>
   <string name="type_letter_a_announcement">Trzymaj telefon tak, by ekran był od Ciebie odwrócony. Przytrzymuj telefon obiema rękami za krótsze krawędzie, pilnując, by 3 środkowe palce każdej dłoni mogły dotknąć ekranu.\n\nLewy palec wskazujący powinien znajdować się na punkcie 1. Kliknij punkt 1, by napisać literę „A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Aby przełączyć się na inną klawiaturę, przesuń 3 palcami w dół. Spróbuj to zrobić teraz.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Następna klawiatura. Zwykle powoduje to przełączenie na następną klawiaturę. Tym razem klawiatura brajlowska pozostaje otwarta, ponieważ wciąż masz uruchomiony samouczek.</string>
   <string name="swipe_up_3_fingers_announcement">Możesz też pisać w trybie na płasko, gdy umieścisz telefon płasko na stole. Aby zakończyć samouczek, przesuń 3 palcami i znajdź odpowiednią opcję.</string>
-  <string name="open_context_menu_announcement">Menu opcji jest otwarte. Odwróć telefon do pozycji wyjściowej, by był skierowany w Twoją stronę. Trzymaj go normalnie. Możesz teraz korzystać przy nawigacji ze standardowych gestów TalkBack. Przesuń palcem w prawo, by wyświetlić więcej opcji.</string>
+  <string name="open_context_menu_announcement">Menu opcji jest otwarte. Odwróć telefon do pozycji wyjściowej, by był skierowany w Twoją stronę. Trzymaj go normalnie. Możesz teraz korzystać przy nawigacji ze standardowych gestów Backtalka. Przesuń palcem w prawo, by wyświetlić więcej opcji.</string>
   <string name="hold_six_fingers_announcement">%s\nPołóż urządzenie płasko na stole. Następnie naciśnij i przytrzymaj ekran 3 środkowymi palcami każdej dłoni w pozycji, która będzie dla Ciebie wygodna do pisania.</string>
   <string name="hold_six_fingers_inactive_announcement">Umieść urządzenie płasko na stole. Następnie naciśnij i przytrzymaj ekran 3 środkowymi palcami każdej dłoni w pozycji, która będzie dla Ciebie wygodna do pisania.</string>
   <string name="finish_tutorial_announcement">Pokazuję klawiaturę brajlowską. Odwróć telefon ekranem od siebie. Następnie obróć telefon i ustaw go poziomo. Zacznij pisać.</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Ten gest jest przypisany do działania „%1$s” i nie można go zmienić. Spróbuj wykonać inny gest. %2$s</string>
   <string name="custom_gesture_cannot_used">Nie można używać tego gestu</string>
   <string name="custom_gesture_no_gesture">Nie wykonano żadnego gestu</string>
-  <string name="custom_gesture_try_another">Spróbuj wykonać inny gest. Aby zobaczyć listę wszystkich dostępnych gestów, otwórz Centrum pomocy klawiatury brajlowskiej TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Spróbuj wykonać inny gest. Aby zobaczyć listę wszystkich dostępnych gestów, otwórz Centrum pomocy klawiatury brajlowskiej Backtalka. %s</string>
   <string name="custom_gesture_no_match">Gesty są niezgodne</string>
   <string name="custom_gesture_perform_again">Wykonaj ponownie gest, którego chcesz używać. %s</string>
 </resources>

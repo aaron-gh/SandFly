@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguratio
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.NavigationGestureActions;
+import com.google.android.accessibility.talkback.gesture.OpenAppActions;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -112,9 +113,16 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     return GesturePreferenceFragmentCompat.create(this);
   }
 
-  /** Returns all supported actions. */
+  /**
+   * Returns all supported actions, ending with one to open each app on the home screen. The apps
+   * are looked up each time, since only one gesture's list is shown at a time.
+   */
   public ActionItem[] getActionItems() {
-    return items.toArray(new ActionItem[items.size()]);
+    ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
+    builder.addAll(items);
+    addActionItemsToList(builder, createOpenApp());
+    ImmutableList<ActionItem> allItems = builder.build();
+    return allItems.toArray(new ActionItem[allItems.size()]);
   }
 
   /** The setter of the preference value. */
@@ -159,6 +167,10 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
       return summaryWhenDisabled;
     }
     String value = getCurrentValue();
+    @Nullable String openAppLabel = OpenAppActions.label(getContext(), value);
+    if (openAppLabel != null) {
+      return openAppLabel;
+    }
     Optional<ActionItem> item =
         items.stream().filter((s) -> TextUtils.equals(s.value, value)).findFirst();
     if (item.isPresent()) {
@@ -609,6 +621,15 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
       }
     }
 
+    return builder.build();
+  }
+
+  private ImmutableList<ActionItem> createOpenApp() {
+    ImmutableList.Builder<ActionItem> builder =
+        createActionListBuilder(R.string.shortcut_title_open_app, 0, 0);
+    for (OpenAppActions.App app : OpenAppActions.apps(getContext())) {
+      builder.add(new ActionItem(app.getLabel(), app.getValue(), TYPE_ACTION_ITEM));
+    }
     return builder.build();
   }
 

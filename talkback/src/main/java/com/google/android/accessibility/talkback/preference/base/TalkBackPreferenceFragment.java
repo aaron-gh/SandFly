@@ -49,6 +49,7 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.NetworkUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
+import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 import java.util.Optional;
@@ -137,6 +138,11 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       }
     } else {
       updateTutorialAndHelpPreferencesForPhoneOrTablet();
+    }
+
+    // During setup, do not allow user access below settings.
+    if (!SettingsUtils.allowLinksOutOfSettings(context)) {
+      removePreference(R.string.pref_category_apps_key, R.string.pref_manage_labels_key);
     }
 
     if (!ImageCaptioner.supportsImageCaption(context)) {

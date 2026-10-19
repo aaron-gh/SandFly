@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -63,12 +64,21 @@ public class FocusProcessorForTapAndTouchExploration {
   // Like FORCE_LIFT_TO_TYPE_ON_IME, but the key that sends or submits, such as Enter, Done, or
   // Send, still needs a double-tap.
   public static final int LIFT_TO_TYPE_EXCEPT_ACTION_KEY = 3;
+  // Like FORCE_LIFT_TO_TYPE_ON_IME, and a tap on the keyboard types the key under it without
+  // focusing or speaking it first.
+  public static final int TAP_TO_TYPE = 4;
 
   /**
-   * Typing method options: can be DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME, or
-   * LIFT_TO_TYPE_EXCEPT_ACTION_KEY.
+   * Typing method options: can be DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME,
+   * LIFT_TO_TYPE_EXCEPT_ACTION_KEY, or TAP_TO_TYPE.
    */
-  @IntDef({DOUBLE_TAP, LIFT_TO_TYPE, FORCE_LIFT_TO_TYPE_ON_IME, LIFT_TO_TYPE_EXCEPT_ACTION_KEY})
+  @IntDef({
+    DOUBLE_TAP,
+    LIFT_TO_TYPE,
+    FORCE_LIFT_TO_TYPE_ON_IME,
+    LIFT_TO_TYPE_EXCEPT_ACTION_KEY,
+    TAP_TO_TYPE
+  })
   public @interface TypingMethod {}
 
   /**
@@ -80,7 +90,8 @@ public class FocusProcessorForTapAndTouchExploration {
   /** Returns whether {@code typingMethod} lifts to type every key in the keyboard. */
   public static boolean liftsToTypeAnyKey(@TypingMethod int typingMethod) {
     return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
-        || typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY;
+        || typingMethod == LIFT_TO_TYPE_EXCEPT_ACTION_KEY
+        || typingMethod == TAP_TO_TYPE;
   }
 
   /**
@@ -99,6 +110,7 @@ public class FocusProcessorForTapAndTouchExploration {
       return id == null || !id.endsWith(GBOARD_ACTION_KEY_ID_SUFFIX);
     }
     return typingMethod == FORCE_LIFT_TO_TYPE_ON_IME
+        || typingMethod == TAP_TO_TYPE
         || (typingMethod == LIFT_TO_TYPE && Role.getRole(key) == Role.ROLE_TEXT_ENTRY_KEY);
   }
 
@@ -173,6 +185,14 @@ public class FocusProcessorForTapAndTouchExploration {
   // input phenomenon, until the touch interaction end.
   private boolean isSplitTap = false;
 
+  // Whether the touch interaction ends with a tap on the keyboard with TAP_TO_TYPE, so the key
+  // under the finger is typed without being focused.
+  private boolean isTapToType = false;
+
+  // The key a tap to type went down on, which it types even if the finger moved onto another key
+  // before it lifted.
+  @Nullable private AccessibilityNodeInfoCompat tapToTypeKey;
+
   private long touchInteractionStartTime;
   private final Context context;
   private final TalkBackAnalytics analytics;
@@ -187,6 +207,14 @@ public class FocusProcessorForTapAndTouchExploration {
     this.splitTapEverywhere =
         FeatureSupport.supportSplitTapEverywhere() && FeatureFlagReader.splitTapEverywhere(context);
     postDelayHandler = new PostDelayHandler(this, longPressDuration);
+  }
+
+  /**
+   * Called when the touch interaction in progress is a tap on the keyboard with {@link
+   * #TAP_TO_TYPE}, before touch exploration of where the finger lifted starts.
+   */
+  public void onTapToType() {
+    isTapToType = true;
   }
 
   public boolean isEnableLiftToType() {
@@ -254,6 +282,7 @@ public class FocusProcessorForTapAndTouchExploration {
     lastFocusableNodeBeingTouched = null;
 
     hasHoveredEnterNode = false;
+    tapToTypeKey = null;
 
     // Everything is possible at the beginning.
     mayBeRefocusAction = true;
@@ -269,6 +298,9 @@ public class FocusProcessorForTapAndTouchExploration {
    */
   private boolean handleHoverEnterNode(
       @Nullable AccessibilityNodeInfoCompat touchedFocusableNode, EventId eventId) {
+    if (isTapToType && tapToTypeKey != null) {
+      return false;
+    }
     postDelayHandler.cancelLongPress();
     postDelayHandler.cancelRefocusTimeout();
     if (touchedFocusableNode != null && !touchedFocusableNode.isAccessibilityFocused()) {
@@ -280,7 +312,15 @@ public class FocusProcessorForTapAndTouchExploration {
           eventId, /* event= */ null, Interpretation.Touch.create(TOUCH_ENTERED_UNFOCUSED_NODE));
     }
     boolean result;
-    if (!hasHoveredEnterNode) {
+    if (isTapToType
+        && !hasHoveredEnterNode
+        && touchedFocusableNode != null
+        && supportsLiftToType(touchedFocusableNode)) {
+      // The key is typed when the touch ends, which follows at once.
+      hasHoveredEnterNode = true;
+      tapToTypeKey = touchedFocusableNode;
+      result = false;
+    } else if (!hasHoveredEnterNode) {
       hasHoveredEnterNode = true;
       // Handle the first node being touched.
       result = onHoverEnterFirstNode(touchedFocusableNode, eventId);
@@ -291,6 +331,11 @@ public class FocusProcessorForTapAndTouchExploration {
     // Reset it when last touched node is changed.
     mayBeLiftToType = true;
     lastFocusableNodeBeingTouched = touchedFocusableNode;
+
+    int scriptLongPressMs = Scripts.longPressAfterMs(touchedFocusableNode);
+    if (scriptLongPressMs > 0 && AccessibilityNodeInfoUtils.isLongClickable(touchedFocusableNode)) {
+      postDelayHandler.longPressAfterTimeout(scriptLongPressMs);
+    }
     return result;
   }
 
@@ -346,6 +391,9 @@ public class FocusProcessorForTapAndTouchExploration {
   private boolean shouldLiftToActivate(@Nullable AccessibilityNodeInfoCompat node) {
     if (node == null) {
       return false;
+    }
+    if (Scripts.liftsToActivate(node)) {
+      return true;
     }
     LiftToActivateMode mode =
         LiftToActivateMode.fromPrefValue(
@@ -430,6 +478,7 @@ public class FocusProcessorForTapAndTouchExploration {
     interpretationReceiver.input(eventId, null, Interpretation.TouchInteraction.create(false));
 
     reset();
+    isTapToType = false;
     return result;
   }
 
@@ -504,7 +553,8 @@ public class FocusProcessorForTapAndTouchExploration {
         case MSG_REFOCUS ->
             parent.touchFocusedNode(parent.lastFocusableNodeBeingTouched, /* eventId= */ null);
         case MSG_LONG_CLICK_LAST_NODE -> {
-          if (parent.supportsLiftToType(parent.lastFocusableNodeBeingTouched)) {
+          if (parent.supportsLiftToType(parent.lastFocusableNodeBeingTouched)
+              || Scripts.longPressAfterMs(parent.lastFocusableNodeBeingTouched) > 0) {
             parent.interpretationReceiver.input(
                 /* eventId= */ null,
                 /* event= */ null,
@@ -517,8 +567,12 @@ public class FocusProcessorForTapAndTouchExploration {
     }
 
     private void longPressAfterTimeout() {
+      longPressAfterTimeout(longPressDelayMs);
+    }
+
+    private void longPressAfterTimeout(long delayMs) {
       removeMessages(MSG_LONG_CLICK_LAST_NODE);
-      sendEmptyMessageDelayed(MSG_LONG_CLICK_LAST_NODE, longPressDelayMs);
+      sendEmptyMessageDelayed(MSG_LONG_CLICK_LAST_NODE, delayMs);
     }
 
     private void cancelLongPress() {

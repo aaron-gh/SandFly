@@ -73,6 +73,23 @@ public class LanguageSwitchTest {
   }
 
   @Test
+  public void markInTheVoicesOwnLanguageIsNotNeeded() {
+    // Unmarked text is spoken in the voice's language, so a mark for it would only split the text.
+    assertNull(LanguageSwitch.unlessVoiceLanguage(Locale.US, Locale.US));
+    assertNull(
+        LanguageSwitch.unlessVoiceLanguage(Locale.forLanguageTag("en-US-u-mu-celsius"), Locale.US));
+    assertNull(LanguageSwitch.unlessVoiceLanguage(null, Locale.US));
+  }
+
+  @Test
+  public void markInAnotherDialectOrLanguageIsKept() {
+    // These still switch the voice, or not, by the switches.
+    assertEquals(Locale.UK, LanguageSwitch.unlessVoiceLanguage(Locale.UK, Locale.US));
+    assertEquals(Locale.ENGLISH, LanguageSwitch.unlessVoiceLanguage(Locale.ENGLISH, Locale.US));
+    assertEquals(GERMAN, LanguageSwitch.unlessVoiceLanguage(GERMAN, Locale.US));
+  }
+
+  @Test
   public void runsSpokenInTheVoicesOwnLanguageLeaveNoMarks() {
     // British text, unmarked text and US text, with dialects off: all are spoken in the voice's
     // own language, so no marks are left to split the text at.

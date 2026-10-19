@@ -20,10 +20,11 @@ import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_
 import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS;
 import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_NONE;
 import static com.google.android.accessibility.utils.input.TextEventFilter.PREF_ECHO_WORDS;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.OptionalInt;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import org.junit.Test;
 
 public class TextEventFilterTest {
@@ -33,39 +34,38 @@ public class TextEventFilterTest {
       new TextEventFilter(/* context= */ null, /* textCursorTracker= */ null, new TextEventHistory());
 
   @Test
-  public void onScreenKeyboardEchoAppliesWithoutABrailleKeyboard() {
-    filter.setOnScreenKeyboardEcho(PREF_ECHO_WORDS);
+  public void onScreenKeyboardEchoAppliesWithoutBrailleInput() {
+    filter.setKeyboardEcho(TypingInput.ON_SCREEN_KEYBOARD, PREF_ECHO_WORDS);
 
+    assertEquals(TypingInput.ON_SCREEN_KEYBOARD, filter.getTypingInput(EVENT_TIME));
     assertFalse(filter.shouldEchoAddedText(EVENT_TIME));
     assertTrue(filter.shouldEchoInitialWords(EVENT_TIME));
   }
 
   @Test
-  public void onScreenKeyboardEchoAppliesWhenTheBrailleKeyboardIsNotTyping() {
-    filter.setOnScreenKeyboardEcho(PREF_ECHO_CHARACTERS);
-    filter.setBrailleKeyboardEchoReader(OptionalInt::empty);
+  public void onScreenKeyboardEchoAppliesWhenNoBrailleInputIsTyping() {
+    filter.setKeyboardEcho(TypingInput.ON_SCREEN_KEYBOARD, PREF_ECHO_CHARACTERS);
+    filter.setBrailleInputReader(() -> null);
 
     assertTrue(filter.shouldEchoAddedText(EVENT_TIME));
     assertFalse(filter.shouldEchoInitialWords(EVENT_TIME));
   }
 
   @Test
-  public void brailleKeyboardEchoReplacesOnScreenKeyboardEcho() {
-    filter.setOnScreenKeyboardEcho(PREF_ECHO_CHARACTERS_AND_WORDS);
+  public void brailleKeyboardHasItsOwnEcho() {
+    filter.setKeyboardEcho(TypingInput.ON_SCREEN_KEYBOARD, PREF_ECHO_NONE);
+    filter.setKeyboardEcho(TypingInput.BRAILLE_KEYBOARD, PREF_ECHO_WORDS);
+    filter.setBrailleInputReader(() -> TypingInput.BRAILLE_KEYBOARD);
 
-    filter.setBrailleKeyboardEchoReader(() -> OptionalInt.of(PREF_ECHO_NONE));
-    assertFalse(filter.shouldEchoAddedText(EVENT_TIME));
-    assertFalse(filter.shouldEchoInitialWords(EVENT_TIME));
-
-    filter.setBrailleKeyboardEchoReader(() -> OptionalInt.of(PREF_ECHO_WORDS));
     assertFalse(filter.shouldEchoAddedText(EVENT_TIME));
     assertTrue(filter.shouldEchoInitialWords(EVENT_TIME));
   }
 
   @Test
-  public void brailleKeyboardEchoCanSpeakWhenOnScreenKeyboardEchoIsOff() {
-    filter.setOnScreenKeyboardEcho(PREF_ECHO_NONE);
-    filter.setBrailleKeyboardEchoReader(() -> OptionalInt.of(PREF_ECHO_CHARACTERS_AND_WORDS));
+  public void brailleDisplayHasItsOwnEcho() {
+    filter.setKeyboardEcho(TypingInput.BRAILLE_KEYBOARD, PREF_ECHO_NONE);
+    filter.setKeyboardEcho(TypingInput.BRAILLE_DISPLAY, PREF_ECHO_CHARACTERS_AND_WORDS);
+    filter.setBrailleInputReader(() -> TypingInput.BRAILLE_DISPLAY);
 
     assertTrue(filter.shouldEchoAddedText(EVENT_TIME));
     assertTrue(filter.shouldEchoInitialWords(EVENT_TIME));
@@ -73,10 +73,12 @@ public class TextEventFilterTest {
 
   @Test
   public void physicalKeyboardEchoAppliesToKeyPresses() {
-    filter.setPhysicalKeyboardEcho(PREF_ECHO_NONE);
-    filter.setBrailleKeyboardEchoReader(() -> OptionalInt.of(PREF_ECHO_CHARACTERS_AND_WORDS));
+    filter.setKeyboardEcho(TypingInput.PHYSICAL_KEYBOARD, PREF_ECHO_NONE);
+    filter.setKeyboardEcho(TypingInput.BRAILLE_KEYBOARD, PREF_ECHO_CHARACTERS_AND_WORDS);
+    filter.setBrailleInputReader(() -> TypingInput.BRAILLE_KEYBOARD);
     filter.setLastKeyEventTime(EVENT_TIME - 10);
 
+    assertEquals(TypingInput.PHYSICAL_KEYBOARD, filter.getTypingInput(EVENT_TIME));
     assertFalse(filter.shouldEchoAddedText(EVENT_TIME));
     assertFalse(filter.shouldEchoInitialWords(EVENT_TIME));
   }

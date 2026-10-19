@@ -26,10 +26,12 @@ import androidx.annotation.NonNull;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
-import com.google.android.accessibility.utils.input.TextEventFilter.KeyboardEchoType;
+import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.Arrays;
 import java.util.List;
@@ -88,28 +90,6 @@ public class VerbosityPreferences {
     }
   }
 
-  /** Reads echo type of physical keyboard. */
-  @KeyboardEchoType
-  public static int readPhysicalKeyboardEcho(SharedPreferences prefs, Resources resources) {
-    return Integer.parseInt(
-        VerbosityPreferences.getPreferenceValueString(
-            prefs,
-            resources,
-            resources.getString(R.string.pref_keyboard_echo_physical_key),
-            resources.getString(R.string.pref_keyboard_echo_default)));
-  }
-
-  /** Reads echo type of on-screen keyboard. */
-  @KeyboardEchoType
-  public static int readOnScreenKeyboardEcho(SharedPreferences prefs, Resources resources) {
-    return Integer.parseInt(
-        VerbosityPreferences.getPreferenceValueString(
-            prefs,
-            resources,
-            resources.getString(R.string.pref_keyboard_echo_on_screen_key),
-            resources.getString(R.string.pref_keyboard_echo_default)));
-  }
-
   public static String getPreferenceVerbosityString(
       SharedPreferences preferences,
       Resources resources,
@@ -142,6 +122,8 @@ public class VerbosityPreferences {
       return (capitalLetterValues == null || capitalLetterValues.length == 0)
           ? null
           : capitalLetterValues[1]; // Say "cap"
+    } else if (key.equals(resources.getString(R.string.pref_phonetic_letters_mode_key))) {
+      return PhoneticLetterMode.AFTER_LETTER_DELAY;
     } else {
       LogUtils.e(TAG, "Unhandled key \"%s\"", key);
       return null;
@@ -160,6 +142,8 @@ public class VerbosityPreferences {
       return (capitalLetterValues == null || capitalLetterValues.length == 0)
           ? null
           : capitalLetterValues[0]; // Do nothing
+    } else if (key.equals(resources.getString(R.string.pref_phonetic_letters_mode_key))) {
+      return PhoneticLetterMode.OFF;
     } else {
       LogUtils.e(TAG, "Unhandled key \"%s\"", key);
       return null;
@@ -268,11 +252,8 @@ public class VerbosityPreferences {
   }
 
   /**
-   * Changes the physical keyboard typing echo setting to the next value, wrapping around to the
-   * first value if the last value is currently selected. Note by design, the physical keyboard
-   * typing echo setting is only modifiable when the preset verbosity level is set to custom. Per
-   * UX, if the preset verbosity level is not custom (high or low), the preset verbosity level
-   * should automatically change to custom, in addition to cycling the typing echo.
+   * Changes the physical keyboard echo to the next value, wrapping around to the first value if the
+   * last value is currently selected.
    *
    * @param context Context used to evaluate strings.
    * @param pipeline Used to play announcement.
@@ -286,35 +267,22 @@ public class VerbosityPreferences {
       return false;
     }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
-    SharedPreferences.Editor prefsEditor = prefs.edit();
-
-    String currentVerbosityValue =
-        SharedPreferencesUtils.getStringPref(
-            prefs,
-            context.getResources(),
-            R.string.pref_verbosity_preset_key,
-            R.string.pref_verbosity_preset_value_default);
-    String customVerbosityValue = context.getString(R.string.pref_verbosity_preset_value_custom);
-    boolean changeVerbosityLevel = !currentVerbosityValue.equals(customVerbosityValue);
-    if (changeVerbosityLevel) {
-      prefsEditor.putString(
-          context.getString(R.string.pref_verbosity_preset_key), customVerbosityValue);
-    }
 
     List<String> keyboardEchoValues =
         Arrays.asList(context.getResources().getStringArray(R.array.pref_keyboard_echo_values));
     List<String> keyboardEchoEntries =
         Arrays.asList(context.getResources().getStringArray(R.array.pref_keyboard_echo_entries));
     String keyboardEchoKey =
-        VerbosityPreferences.toVerbosityPrefKey(
-            customVerbosityValue, context.getString(R.string.pref_keyboard_echo_physical_key));
+        KeyboardEchoSettings.key(context.getResources(), TypingInput.PHYSICAL_KEYBOARD);
     if (keyboardEchoEntries.size() != keyboardEchoValues.size()) {
       LogUtils.e(TAG, "Keyboard echo values and entries have different sizes");
       return false;
     }
 
     String currentKeyboardEcho =
-        prefs.getString(keyboardEchoKey, context.getString(R.string.pref_keyboard_echo_default));
+        String.valueOf(
+            KeyboardEchoSettings.read(
+                prefs, context.getResources(), TypingInput.PHYSICAL_KEYBOARD));
     int currentIndex = keyboardEchoValues.indexOf(currentKeyboardEcho);
     if (currentIndex == -1) {
       LogUtils.e(TAG, " Current keyboard echo setting not present in possible values");
@@ -323,20 +291,11 @@ public class VerbosityPreferences {
 
     int newIndex = (currentIndex + 1) % keyboardEchoValues.size();
     String newKeyboardEcho = keyboardEchoValues.get(newIndex);
-    prefsEditor.putString(keyboardEchoKey, newKeyboardEcho).apply();
+    prefs.edit().putString(keyboardEchoKey, newKeyboardEcho).apply();
     pipeline.returnFeedback(
         eventId,
         Feedback.speech(
             context.getString(R.string.typing_echo_change, keyboardEchoEntries.get(newIndex))));
-    if (changeVerbosityLevel) {
-      // If the VerbosityPrefFragment is visible while the user takes this shortcut, the
-      // VerbosityPrefFragment will detect this method's change to custom verbosity and try to make
-      // the exact same announcement that's being made here. In this specific case though, the
-      // speech pipeline is able to deduplicate the announcement, ultimately only announcing this
-      // text once.
-      pipeline.returnFeedback(
-          eventId, Feedback.speech(getVerbosityChangeAnnouncement(customVerbosityValue, context)));
-    }
     pipeline.returnFeedback(
         eventId,
         Feedback.talkBackUI(

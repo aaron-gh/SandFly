@@ -404,6 +404,42 @@ public final class VoiceProfiles {
     }
   }
 
+  /**
+   * Gives the Voice profile reading control a setting of its own, once. It shared a setting with
+   * the Speech engine reading control, which a user may have turned on before voice profiles
+   * existed. The setting can't say which control a user meant, so anyone with a voice profile who
+   * has it on gets Voice profile on as well and keeps Speech engine on, and has Voice profile
+   * still selected if the shared control was. Anyone with no profile keeps Speech engine only.
+   *
+   * @param doneKey the setting that says this has run
+   * @param oldKey the setting that Voice profile and Speech engine shared
+   * @param newKey the new setting of Voice profile
+   * @param selectedKey the setting of the selected reading control
+   * @param oldValue the selected reading control's value that meant Voice profile under {@code
+   *     oldKey}
+   * @param newValue the selected reading control's value of Voice profile now
+   */
+  public static void moveReadingControl(
+      SharedPreferences prefs,
+      String doneKey,
+      String oldKey,
+      String newKey,
+      String selectedKey,
+      String oldValue,
+      String newValue) {
+    if (prefs.contains(doneKey)) {
+      return;
+    }
+    SharedPreferences.Editor editor = prefs.edit().putBoolean(doneKey, true);
+    if (!ids(prefs).isEmpty() && getBoolean(prefs, oldKey, false)) {
+      editor.putBoolean(newKey, true);
+      if (oldValue.equals(getString(prefs, selectedKey, ""))) {
+        editor.putString(selectedKey, newValue);
+      }
+    }
+    editor.apply();
+  }
+
   private static boolean getBoolean(SharedPreferences prefs, String key, boolean fallback) {
     try {
       return prefs.getBoolean(key, fallback);

@@ -35,6 +35,8 @@ object ModelFiles {
     HASH_MISMATCH,
     STORAGE,
     LOW_SPACE,
+    /** Android ended the download's time in the background. The part stays, to carry on later. */
+    TIME_LIMIT,
   }
 
   fun sha256(input: InputStream): String {

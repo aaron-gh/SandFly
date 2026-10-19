@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="title_pref_gemini_api_key">Ключ API Gemini</string>
+  <string name="summary_pref_gemini_api_key_set">Задан. Функции описания изображения и экрана используют Gemini</string>
+  <string name="summary_pref_gemini_api_key_built_in">Используется ключ, встроенный в приложение</string>
+  <string name="summary_pref_gemini_api_key_not_set">Не задан. Описание изображения озвучивает только текст, а для описания экрана требуется ИИ на устройстве</string>
+  <string name="gemini_api_key_dialog_message">Получите бесплатный ключ API в Google AI Studio на странице aistudio.google.com/apikey и вставьте его сюда. Чтобы удалить ключ, очистите поле и сохраните изменения.\n\nИзображения и снимки экрана, для которых вы запрашиваете описание, отправляются в Google. На бесплатном тарифе Google может использовать их для улучшения своих продуктов.</string>
+  <string name="gemini_api_key_hint">Ключ API</string>
+  <string name="gemini_api_key_save">Сохранить</string>
+  <string name="gemini_api_key_get">Получить ключ</string>
+  <string name="gemini_api_terms_link">Дополнительные условия использования API Gemini</string>
+</resources>

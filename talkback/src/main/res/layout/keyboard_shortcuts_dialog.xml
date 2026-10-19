@@ -46,7 +46,7 @@
         android:tint="?attr/colorOnSurface"
         android:focusable="false"
         android:background="@null" />
-    <EditText
+    <com.google.android.accessibility.utils.widget.KeyboardSafeEditText
         android:id="@+id/keyword_edit"
         android:layout_width="0dp"
         android:layout_height="match_parent"

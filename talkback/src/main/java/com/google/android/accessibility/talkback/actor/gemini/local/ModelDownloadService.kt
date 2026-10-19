@@ -32,6 +32,8 @@ import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager.State
+import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
+import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 
 /**
  * Keeps the process in the foreground while a model downloads, and shows the progress in a
@@ -40,6 +42,9 @@ import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelMa
 class ModelDownloadService : Service() {
   private lateinit var manager: LocalModelManager
   private var model: LocalModel? = null
+  // Set when Android ended the time in the foreground. The service then waits for the download to
+  // stop without a progress notification, and says how it ended.
+  private var timedOut = false
   private val listener: () -> Unit = { onStateChanged() }
 
   override fun onCreate() {
@@ -70,11 +75,23 @@ class ModelDownloadService : Service() {
 
   override fun onBind(intent: Intent?): IBinder? = null
 
+  /**
+   * Android 15 and later give a dataSync service 6 hours from when the user last had Backtalk open,
+   * then call this. The service must leave the foreground within seconds, or Android crashes the
+   * whole process, screen reader included. The download can take longer to stop, at its next read
+   * or after checking the file, so the service does not wait for it.
+   */
+  override fun onTimeout(startId: Int, fgsType: Int) {
+    timedOut = true
+    manager.pauseDownload()
+    ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
+  }
+
   private fun onStateChanged() {
     val state = manager.state
     if (state is State.Downloading) {
       model = state.model
-      notificationManager().notify(NOTIFICATION_ID, progressNotification(state))
+      if (!timedOut) notificationManager().notify(NOTIFICATION_ID, progressNotification(state))
       return
     }
     ServiceCompat.stopForeground(this, ServiceCompat.STOP_FOREGROUND_REMOVE)
@@ -114,11 +131,16 @@ class ModelDownloadService : Service() {
       .build()
   }
 
-  /** Says whether the download worked or failed. Nothing is shown when the user stopped it. */
+  /**
+   * Says whether the download worked, failed or was paused by Android, and opens the on-device AI
+   * settings when tapped. Nothing is shown when the user stopped it.
+   */
   private fun finalNotification(state: State): Notification? {
     val done = model?.let { manager.store.isInstalled(it) } == true
     val text =
       when {
+        state == State.Failed(ModelFiles.Failure.TIME_LIMIT) ->
+          getString(R.string.on_device_ai_notification_paused)
         state is State.Failed -> getString(R.string.on_device_ai_notification_failed)
         done -> getString(R.string.on_device_ai_notification_done)
         else -> return null
@@ -127,9 +149,21 @@ class ModelDownloadService : Service() {
       .setSmallIcon(R.drawable.icon)
       .setContentTitle(getString(R.string.title_pref_on_device_ai))
       .setContentText(text)
+      .setContentIntent(settingsIntent())
       .setAutoCancel(true)
       .build()
   }
+
+  // Opening the settings also gives a paused download a new 6 hours.
+  private fun settingsIntent(): PendingIntent =
+    PendingIntent.getActivity(
+      this,
+      0,
+      Intent(this, TalkBackPreferencesActivity::class.java)
+        .putExtra(BasePreferencesActivity.FRAGMENT_NAME, OnDeviceAiFragment::class.java.name)
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK),
+      PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+    )
 
   private fun createChannel() {
     notificationManager()
@@ -150,6 +184,9 @@ class ModelDownloadService : Service() {
     private const val RESULT_NOTIFICATION_ID = 0x0DA2
     private const val ACTION_CANCEL = "com.google.android.accessibility.talkback.CANCEL_MODEL_DOWNLOAD"
 
+    // Call this only from Backtalk's own screens. Once Android has ended the download's time, it
+    // lets the service into the foreground again only after the user has had Backtalk open. Started
+    // from anywhere else, like a button in a notification, startForeground crashes the process.
     fun start(context: Context) {
       ContextCompat.startForegroundService(context, Intent(context, ModelDownloadService::class.java))
     }

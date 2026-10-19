@@ -2,54 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
-      android:key="@string/pref_category_controls_key"
-      android:title="@string/title_pref_category_controls" >
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_category_latency_reduction_shortcut_key"
-        android:title="@string/title_pref_latency_reduction"
-        android:summary="@string/talkback_latency_reduction_summary"
-        android:fragment="com.google.android.accessibility.talkback.preference.base.TalkBackLatencyReductionPreferenceFragment" >
-    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="false"
-        android:key="@string/pref_reserve_vibration_watch_gestures_key"
-        android:title="@string/title_pref_reserve_vibration_watch_gestures"
-        android:summary="@string/summary_pref_reserve_vibration_watch_gestures" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_lift_to_activate_default"
-        android:dialogTitle="@string/title_pref_lift_to_activate"
-        android:entries="@array/pref_lift_to_activate_entries"
-        android:entryValues="@array/pref_lift_to_activate_values"
-        android:key="@string/pref_lift_to_activate_key"
-        android:summary="%s"
-        android:title="@string/title_pref_lift_to_activate" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_scripts_key"
-        android:title="@string/title_pref_scripts"
-        android:summary="@string/summary_pref_scripts"
-        android:fragment="com.google.android.accessibility.talkback.scripting.ScriptsFragment" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="true"
-        android:key="pref_speak_nav_bar_buttons"
-        android:summary="@string/summary_pref_speak_nav_bar_buttons"
-        android:title="@string/title_pref_speak_nav_bar_buttons" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_wrap_around_default"
-        android:key="@string/pref_wrap_around_key"
-        android:summary="@string/summary_pref_wrap_around"
-        android:title="@string/title_pref_wrap_around" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_manage_labels_key"
-        android:title="@string/title_pref_manage_labels" >
-      <intent
-          android:targetPackage="@string/app_id"
-          android:targetClass="com.google.android.accessibility.talkback.labeling.LabelManagerSummaryActivity" />
-    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_single_tap_default"
-        android:key="@string/pref_single_tap_key"
-        android:summary="@string/summary_pref_single_tap"
-        android:title="@string/title_pref_single_tap" />
+      android:key="@string/pref_category_controls_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_resume_backtalk_default"
         android:dialogTitle="@string/title_pref_resume_backtalk"
@@ -59,25 +12,21 @@
         android:summary="%s"
         android:title="@string/title_pref_resume_backtalk"/>
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_auto_enter_table_navigation_default"
-        android:key="@string/pref_auto_enter_table_navigation_key"
-        android:title="@string/pref_auto_enter_table_navigation_title"/>
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_smart_browse_mode_default"
-        android:key="@string/pref_smart_browse_mode_key"
-        android:title="@string/title_smart_browse_mode"
-        android:summary="@string/summary_smart_browse_mode"/>
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_show_exit_watermark_default"
         android:key="@string/pref_show_exit_watermark_key"
         android:summary="@string/summary_pref_show_exit_watermark"
         android:title="@string/title_pref_show_exit_watermark"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_notification_list_default"
+        android:key="@string/pref_notification_list_key"
+        android:title="@string/title_pref_notification_list"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.notificationlist.NotificationPartsFragment"
+        android:key="@string/pref_notification_parts_key"
+        android:title="@string/title_pref_notification_parts"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_others_key">
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_play_store_key"
-        android:title="@string/title_pref_play_store" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.DeveloperPrefFragment"
         android:key="@string/pref_category_developer_key"

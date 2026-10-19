@@ -21,6 +21,7 @@ import static com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_BACKWARD;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -33,6 +34,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.output.CopySelection;
 import com.google.android.accessibility.utils.traversal.ReorderedChildrenIterator;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -103,6 +105,9 @@ public class CursorGranularityManager {
   /** Used on API 18+ to track when text selection mode is active. */
   private boolean selectionModeActive;
 
+  /** Selection in text that the app keeps no selection in, while selection mode is active. */
+  private final CopySelection copySelection = new CopySelection();
+
   private final GlobalVariables globalVariables;
   private final AccessibilityFocusMonitor accessibilityFocusMonitor;
 
@@ -116,10 +121,12 @@ public class CursorGranularityManager {
   public CursorGranularityManager(
       GlobalVariables globalVariables,
       AccessibilityFocusMonitor accessibilityFocusMonitor,
-      ProcessorPhoneticLetters processorPhoneticLetters) {
+      ProcessorPhoneticLetters processorPhoneticLetters,
+      Context context) {
     this.globalVariables = globalVariables;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
-    granularityTraversal = new GranularityTraversal(processorPhoneticLetters);
+    granularityTraversal =
+        new GranularityTraversal(processorPhoneticLetters, copySelection, context);
   }
 
   public void setPipelineFeedbackReturner(Pipeline.FeedbackReturner pipeline) {
@@ -137,6 +144,7 @@ public class CursorGranularityManager {
 
   /** Releases resources associated with this object. */
   public void shutdown() {
+    copySelection.clear();
     clear();
   }
 
@@ -267,11 +275,39 @@ public class CursorGranularityManager {
    * @param active {@code true} to activate selection mode, {@code false} to deactivate.
    */
   public void setSelectionModeActive(boolean active) {
+    if (!active) {
+      // Selection mode ended other than by the user ending the part, so it is not kept.
+      copySelection.abandon();
+    }
     if (isSelectionModeActive() != active) {
       selectionModeActive = active;
       globalVariables.setSelectionModeActive(active);
       userInterface.setSelectionMode(active);
     }
+  }
+
+  public CopySelection getCopySelection() {
+    return copySelection;
+  }
+
+  private List<CharSequence> navigableTexts() {
+    List<CharSequence> texts = new ArrayList<>();
+    for (AccessibilityNodeInfoCompat navigable : navigableNodes) {
+      texts.add(GranularityTraversal.getTraversedText(navigable));
+    }
+    return texts;
+  }
+
+  /**
+   * Selects all the text of the locked node and the nodes in it, in copying mode.
+   *
+   * @return the text selected, which is empty if the node is not locked or has no text.
+   */
+  public CharSequence selectAllForCopy(AccessibilityNodeInfoCompat node) {
+    if (lockedNode == null || !lockedNode.equals(node)) {
+      return "";
+    }
+    return copySelection.selectAll(navigableNodes, navigableTexts());
   }
 
   /**
@@ -330,7 +366,10 @@ public class CursorGranularityManager {
     granularityTraversal.clearAllCursors();
     lockedNode = null;
 
-    setSelectionModeActive(false);
+    // Copying mode goes on from item to item.
+    if (!copySelection.isActive()) {
+      setSelectionModeActive(false);
+    }
   }
 
   /** Restarts intra-node-navigation on a new node. */
@@ -582,6 +621,12 @@ public class CursorGranularityManager {
 
     if (lockedNode == null && node != null) {
       lockedNode = node;
+
+      // Copying mode goes on from item to item, but not into text the app keeps the selection in.
+      if (copySelection.isActive() && AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
+        copySelection.end();
+        setSelectionModeActive(false);
+      }
 
       if (shouldClearSelection(lockedNode, isMicroGranularity)) {
         // Always reset selection for the locked node, and reset selection for its non-focusable

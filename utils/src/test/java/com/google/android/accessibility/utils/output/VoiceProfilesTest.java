@@ -43,6 +43,85 @@ public class VoiceProfilesTest {
     VoiceProfiles.setActive(null);
   }
 
+  private void moveReadingControl() {
+    VoiceProfiles.moveReadingControl(
+        prefs, "done", "shared", "voice", "selected", "OLD_VALUE", "NEW_VALUE");
+  }
+
+  @Test
+  public void readingControlKeepsBothForAnyoneWithAProfile() {
+    create("Reading", "com.example.eloquence");
+    prefs.values.put("shared", true);
+    prefs.values.put("selected", "OLD_VALUE");
+
+    moveReadingControl();
+
+    assertEquals(true, prefs.values.get("voice"));
+    assertEquals(true, prefs.values.get("shared"));
+    assertEquals("NEW_VALUE", prefs.values.get("selected"));
+    assertEquals(true, prefs.values.get("done"));
+  }
+
+  @Test
+  public void readingControlKeepsAnotherSelectedControl() {
+    create("Reading", "com.example.eloquence");
+    prefs.values.put("shared", true);
+    prefs.values.put("selected", "SPEECH_RATE");
+
+    moveReadingControl();
+
+    assertEquals(true, prefs.values.get("voice"));
+    assertEquals("SPEECH_RATE", prefs.values.get("selected"));
+  }
+
+  @Test
+  public void readingControlStaysSpeechEngineWithNoProfile() {
+    prefs.values.put("shared", true);
+    prefs.values.put("selected", "OLD_VALUE");
+
+    moveReadingControl();
+
+    assertEquals(true, prefs.values.get("shared"));
+    assertNull(prefs.values.get("voice"));
+    assertEquals("OLD_VALUE", prefs.values.get("selected"));
+    assertEquals(true, prefs.values.get("done"));
+  }
+
+  @Test
+  public void readingControlOffStaysOff() {
+    create("Reading", "com.example.eloquence");
+    prefs.values.put("shared", false);
+
+    moveReadingControl();
+
+    assertNull(prefs.values.get("voice"));
+    assertEquals(false, prefs.values.get("shared"));
+  }
+
+  @Test
+  public void readingControlMovesOnlyOnce() {
+    prefs.values.put("shared", true);
+    moveReadingControl();
+    create("Reading", "com.example.eloquence");
+
+    moveReadingControl();
+
+    assertEquals(true, prefs.values.get("shared"));
+    assertNull(prefs.values.get("voice"));
+  }
+
+  @Test
+  public void readingControlSurvivesDamagedSettings() {
+    create("Reading", "com.example.eloquence");
+    prefs.values.put("shared", "yes");
+
+    moveReadingControl();
+
+    assertEquals("yes", prefs.values.get("shared"));
+    assertNull(prefs.values.get("voice"));
+    assertEquals(true, prefs.values.get("done"));
+  }
+
   @Test
   public void defaultIsInUseWithNoProfiles() {
     assertTrue(VoiceProfiles.ids(prefs).isEmpty());

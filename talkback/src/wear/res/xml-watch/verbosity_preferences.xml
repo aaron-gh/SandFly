@@ -53,14 +53,6 @@
         android:title="@string/pref_speak_roles_title"
         app:splitSummary="true" />
 
-    <!-- Window title -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_speak_system_window_titles_default"
-        android:key="@string/pref_speak_system_window_titles_key"
-        android:summary="@string/pref_speak_system_window_titles_summary"
-        android:title="@string/pref_speak_system_window_titles_title"
-        app:splitSummary="true" />
-
     <!-- Notifications when screen is off -->
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_screenoff_default"
@@ -82,26 +74,6 @@
         android:summary="@string/summary_pref_phonetic_letters"
         android:title="@string/title_pref_phonetic_letters"
         app:splitSummary="true" />
-
-    <!-- On-screen Keyboard echo -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_keyboard_echo_default"
-        android:dialogTitle="@string/title_pref_keyboard_echo_on_screen"
-        android:entries="@array/pref_keyboard_echo_entries"
-        android:entryValues="@array/pref_keyboard_echo_values"
-        android:key="@string/pref_keyboard_echo_on_screen_key"
-        android:summary="%s"
-        android:title="@string/title_pref_keyboard_echo_on_screen" />
-
-    <!-- Physical Keyboard echo -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-        android:defaultValue="@string/pref_keyboard_echo_default"
-        android:dialogTitle="@string/title_pref_keyboard_echo_physical"
-        android:entries="@array/pref_keyboard_echo_entries"
-        android:entryValues="@array/pref_keyboard_echo_values"
-        android:key="@string/pref_keyboard_echo_physical_key"
-        android:summary="%s"
-        android:title="@string/title_pref_keyboard_echo_physical" />
 
     <!-- Capital letter -->
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
@@ -143,6 +115,14 @@
       android:dependency="@string/pref_formatting_inline_key"
       android:title="@string/title_text_formatting_verbosity_options"
       android:fragment="com.google.android.accessibility.talkback.preference.base.TextFormattingDetailFragment" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_window_names_default"
+      android:entries="@array/pref_window_names_entries"
+      android:entryValues="@array/pref_window_names_values"
+      android:key="@string/pref_window_names_key"
+      android:summary="%s"
+      android:title="@string/title_pref_window_names" />
+
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_screen_announcements"
       android:summary="@string/summary_pref_screen_announcements"

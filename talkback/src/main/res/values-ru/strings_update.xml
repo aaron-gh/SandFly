@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="title_pref_check_for_updates">Проверить обновления</string>
+  <string name="summary_pref_check_for_updates">Сборка <xliff:g id="build" example="96">%1$d</xliff:g></string>
+  <string name="title_pref_auto_update_check">Автоматически проверять обновления</string>
+  <string name="summary_pref_auto_update_check">Проверять раз в день и показывать уведомление, если доступна новая сборка</string>
+  <string name="update_notification_title">Доступно обновление Backtalk</string>
+  <string name="update_notification_text">Сборка <xliff:g id="build" example="97">%1$d</xliff:g>. Нажмите, чтобы установить.</string>
+  <string name="update_dialog_title">Доступна сборка Backtalk <xliff:g id="build" example="97">%1$d</xliff:g></string>
+  <string name="update_dialog_install">Установить</string>
+  <string name="update_checking">Проверка обновлений</string>
+  <string name="update_up_to_date">Установлена последняя версия Backtalk</string>
+  <string name="update_check_failed">Не удалось проверить обновления</string>
+  <string name="update_downloading">Скачивание обновления</string>
+  <string name="update_install_failed">Не удалось установить обновление</string>
+  <string name="update_install_canceled">Обновление отменено</string>
+  <string name="update_allow_install">Разрешите Backtalk устанавливать приложения, затем повторите обновление</string>
+</resources>

@@ -24,12 +24,10 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.base.TypingFocusDelayPrefFragment;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
-import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Utility class for TalkBack fragments to get common functionalities. */
 public class TalkBackSettingDialogUtils {
-  private static final String TAG = "FragmenTalkBackSettingDialogUtilstUtils";
 
   private TalkBackSettingDialogUtils() {}
 
@@ -52,31 +50,7 @@ public class TalkBackSettingDialogUtils {
         context.getResources(),
         R.string.pref_typing_focus_time_out_key,
         String.valueOf(TypingFocusDelayPrefFragment.TypingFocusDelayPref.DELAY_150_MS.getDelay()));
-    if (SharedPreferencesUtils.getBooleanPref(
-        prefs,
-        context.getResources(),
-        R.string.pref_typing_focus_time_out_first_update_key,
-        false)) {
-      return null;
-    }
-    prefs
-        .edit()
-        .putBoolean(context.getString(R.string.pref_selector_change_typing_focus_latency_key), true)
-        .putBoolean(context.getString(R.string.pref_typing_focus_time_out_first_update_key), true)
-        .apply();
-    return A11yAlertDialogWrapper.materialDialogBuilder(
-            context, fragment.getActivity().getSupportFragmentManager())
-        .setTitle(
-            context.getString(
-                R.string.confirm_typing_focus_delay_reading_control_added_dialog_title))
-        .setMessage(
-            context.getString(
-                R.string.confirm_typing_focus_delay_reading_control_added_dialog_message))
-        .setPositiveButton(
-            R.string.confirm_latency_reduction_reading_control_added_dialog_positive_button,
-            (dialogInterface, i) -> {
-              LogUtils.d(TAG, "User positively acknowledge it.");
-            })
-        .create();
+    // Changing a delay doesn't add its reading control; the user adds the ones they want.
+    return null;
   }
 }

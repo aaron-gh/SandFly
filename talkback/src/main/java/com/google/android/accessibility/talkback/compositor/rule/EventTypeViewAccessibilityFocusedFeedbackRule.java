@@ -15,8 +15,6 @@
  */
 package com.google.android.accessibility.talkback.compositor.rule;
 
-import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_INPUT_METHOD;
-import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_SYSTEM;
 import static com.google.android.accessibility.talkback.compositor.Compositor.EVENT_TYPE_VIEW_ACCESSIBILITY_FOCUSED;
 import static com.google.android.accessibility.talkback.compositor.CompositorConfigs.shouldEarlyAnnounceForLiftToType;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.PRUNE_EMPTY;
@@ -47,6 +45,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Sams
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -299,15 +298,21 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
           String.format("\n    collectionItemTransition={%s}", collectionItemTransition));
     }
 
-    if (!TextUtils.isEmpty(contentDescription)) {
-      outputJoinList.add(contentDescription);
+    // Add phonetic spelling if necessary, or say it in place of the key if the user chose that.
+    Optional<CharSequence> phoneticInPlaceOfKey =
+        processorPhoneticLetters.getPhoneticInPlaceOfKeyboardKey(event);
+    if (phoneticInPlaceOfKey.isPresent()) {
+      outputJoinList.add(phoneticInPlaceOfKey.get());
+      logString.append(String.format("\n    phoneticInPlaceOfKey={%s}", phoneticInPlaceOfKey));
+    } else {
+      if (!TextUtils.isEmpty(contentDescription)) {
+        outputJoinList.add(contentDescription);
+      }
+      Optional<CharSequence> phoneticExample =
+          processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
+      phoneticExample.ifPresent(outputJoinList::add);
+      logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
     }
-
-    // Add phonetic spelling if necessary.
-    Optional<CharSequence> phoneticExample =
-        processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
-    phoneticExample.ifPresent(outputJoinList::add);
-    logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
 
     // Prepare Collection item transition state or Node role/heading description for feedback.
     if (!transitionBeforeContent) {
@@ -389,28 +394,26 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
     // Provide window transition state feedback if the event is triggered by user interaction or it
     // is in split screen mode.
     CharSequence windowTransitionState;
-    if (isWindowIdChanged && (isEventNavigateByUser || isSplitScreenMode)) {
+    if (!globalVariables.getSpeakWindowNamesOnFocusMove()) {
+      // Turned off by the Window names setting.
+      logString.append(", window names on focus move off");
+      windowTransitionState = "";
+    } else if (isWindowIdChanged && (isEventNavigateByUser || isSplitScreenMode)) {
       int windowType = AccessibilityNodeInfoUtils.getWindowType(node);
       CharSequence currentWindowTitle =
           globalVariables.getWindowTitle(globalVariables.getCurrentWindowId());
-      boolean speakSystemWindowTitles = globalVariables.getSpeakSystemWindowTitles();
 
       logString
           .append(String.format(", windowType=%s", windowType))
-          .append(String.format(", currentWindowTitle=%s", currentWindowTitle))
-          .append(String.format(", speakSystemWindowTitles=%s", speakSystemWindowTitles));
+          .append(String.format(", currentWindowTitle=%s", currentWindowTitle));
 
       if (windowType == WINDOW_TYPE_PICTURE_IN_PICTURE) {
         logString.append(", hasWindowTransition for PIP window");
         windowTransitionState =
             context.getString(R.string.template_overlay_window, currentWindowTitle);
-      } else if (speakSystemWindowTitles
-          || (windowType != TYPE_SYSTEM && windowType != TYPE_INPUT_METHOD)) {
-        logString.append(", hasWindowTransition for speakWindowTitles");
-        windowTransitionState = context.getString(R.string.in_window_with_name, currentWindowTitle);
       } else {
-        logString.append(String.format(", feedback not granted"));
-        windowTransitionState = "";
+        logString.append(", hasWindowTransition");
+        windowTransitionState = context.getString(R.string.in_window_with_name, currentWindowTitle);
       }
     } else {
       windowTransitionState = "";
@@ -441,7 +444,11 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
   }
 
   private static int queueMode(boolean isInitialFocus, boolean isDeviceScreenNoTouch) {
-    return (isInitialFocus && !isDeviceScreenNoTouch) ? QUEUE_MODE_QUEUE : QUEUE_MODE_FLUSH_ALL;
+    return (isInitialFocus
+            && !isDeviceScreenNoTouch
+            && !ScreenFeedbackManager.firstItemInterruptsWindowName())
+        ? QUEUE_MODE_QUEUE
+        : QUEUE_MODE_FLUSH_ALL;
   }
 
   private static boolean forceFeedbackEvenIfMicrophoneActive(

@@ -54,15 +54,27 @@ private constructor(
         eldest: MutableMap.MutableEntry<AccessibilityNodeInfoCompat, Boolean>
       ) = size > CACHE_SIZE
     }
+  // Whether an ancestor silences the item. Content changes come often, and finding out asks the
+  // app for each ancestor in turn.
+  private val silencedInsideCache =
+    object : LinkedHashMap<AccessibilityNodeInfoCompat, Boolean>(CACHE_SIZE, 0.75f, true) {
+      override fun removeEldestEntry(
+        eldest: MutableMap.MutableEntry<AccessibilityNodeInfoCompat, Boolean>
+      ) = size > CACHE_SIZE
+    }
   private val aspects: Set<RuleAspect> =
     entries.flatMapTo(mutableSetOf(RuleAspect.ANY)) { aspectsOf(it.rule) }
 
   val hidesAny = entries.any { it.rule.hide != Hide.NONE || it.rule.group }
   private val hidesInside = entries.any { it.rule.hide == Hide.ALL || it.rule.group }
+  private val silencesAny = entries.any { it.rule.silence != Hide.NONE }
+  private val silencesInside = entries.any { it.rule.silence == Hide.ALL }
 
   /** Whether an answer for an item can change when the items around it do. */
   val dependsOnAncestors =
-    hidesInside || (entries + actionEntries).any { it.rule.match?.inside != null }
+    hidesInside ||
+      silencesInside ||
+      (entries + actionEntries).any { it.rule.match?.inside != null }
 
   fun resolve(node: AccessibilityNodeInfoCompat, aspect: RuleAspect = RuleAspect.ANY): NodeRule? {
     if (changes.isEmpty || aspect !in aspects) {
@@ -93,9 +105,22 @@ private constructor(
     return hidden
   }
 
+  fun isSilenced(node: AccessibilityNodeInfoCompat): Boolean =
+    silencesAny &&
+      (resolve(node, RuleAspect.SILENCE)?.silence == true ||
+        silencesInside && isSilencedInside(node))
+
+  private fun isSilencedInside(node: AccessibilityNodeInfoCompat): Boolean {
+    synchronized(silencedInsideCache) { silencedInsideCache[node]?.let { return it } }
+    val silenced = node.ancestors().any { resolve(it, RuleAspect.SILENCE)?.silenceInside == true }
+    synchronized(silencedInsideCache) { silencedInsideCache[node] = silenced }
+    return silenced
+  }
+
   fun clearCache() {
     synchronized(cache) { cache.clear() }
     synchronized(hiddenInsideCache) { hiddenInsideCache.clear() }
+    synchronized(silencedInsideCache) { silencedInsideCache.clear() }
   }
 
   private inner class Index(entries: List<Entry>) {
@@ -119,7 +144,8 @@ private constructor(
         .filter { entry ->
           val rule = entry.rule
           (entry.packages == null || packageName in entry.packages) &&
-            (rule.activity == null || activity?.endsWith(rule.activity) == true) &&
+            // An activity not known yet is taken to match, as in AppMatcher.
+            (rule.activity == null || activity?.endsWith(rule.activity) != false) &&
             (rule.window == null || window?.contains(rule.window, ignoreCase = true) == true) &&
             (rule.match == null || rule.match.matches(node))
         }
@@ -142,6 +168,7 @@ private constructor(
       }
       fun <T> first(pick: (ScriptRule) -> T?): T? = rules.firstNotNullOfOrNull(pick)
       val hide = first { it.hide.takeIf { hide -> hide != Hide.NONE } }
+      val silence = first { it.silence.takeIf { silence -> silence != Hide.NONE } }
       return NodeRule(
         label = first { it.label },
         speak = first { it.speak },
@@ -154,6 +181,11 @@ private constructor(
         group = rules.any { it.group },
         order = first(::orderOf),
         sources = sources,
+        activate = first { it.activate }?.let { query -> { node -> query.firstIn(node) } },
+        silence = silence != null,
+        silenceInside = silence == Hide.ALL,
+        liftToActivate = rules.any { it.liftToActivate },
+        longPressAfter = first { it.longPressAfter },
       )
     }
 
@@ -194,6 +226,9 @@ private constructor(
         RuleAspect.HEADING.takeIf { rule.heading != null },
         RuleAspect.GROUP.takeIf { rule.group },
         RuleAspect.ORDER.takeIf { rule.readBefore != null || rule.readAfter != null },
+        RuleAspect.ACTIVATE.takeIf { rule.activate != null },
+        RuleAspect.SILENCE.takeIf { rule.silence != Hide.NONE },
+        RuleAspect.LIFT.takeIf { rule.liftToActivate || rule.longPressAfter != null },
       )
   }
 

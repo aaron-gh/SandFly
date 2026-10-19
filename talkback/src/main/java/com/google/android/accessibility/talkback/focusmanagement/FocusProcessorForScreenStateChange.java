@@ -62,6 +62,21 @@ public class FocusProcessorForScreenStateChange {
 
   @VisibleForTesting long handledOverrideFocusRestoreUptimeMs = 0;
 
+  /**
+   * Set from the "Move focus to new windows" setting. When off, a window change places no focus,
+   * including when a Backtalk menu or dialog opens or closes. Focus left in a window that is no
+   * longer active is cleared, so that the next swipe starts in the new window.
+   */
+  private static volatile boolean focusNewWindows = true;
+
+  public static void setFocusNewWindows(boolean focus) {
+    focusNewWindows = focus;
+  }
+
+  public static boolean focusesNewWindows() {
+    return focusNewWindows;
+  }
+
   public FocusProcessorForScreenStateChange(AccessibilityFocusMonitor accessibilityFocusMonitor) {
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
     screenStateDelayer = new Handler(Looper.getMainLooper());

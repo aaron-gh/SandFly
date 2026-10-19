@@ -28,14 +28,20 @@ import android.os.Looper;
 import androidx.fragment.app.FragmentActivity;
 import android.text.TextUtils;
 import androidx.preference.ListPreference;
+import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
+import com.google.android.accessibility.talkback.audio.SpeakerDevices;
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Fragment to display sound and vibration settings. */
@@ -75,6 +81,8 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
           }
         } else if (TextUtils.equals(key, getString(R.string.pref_audio_output_device_key))) {
           updateAudioOutputPreference();
+        } else if (TextUtils.equals(key, getString(R.string.pref_speaker_devices_key))) {
+          updateSpeakerDevicesPreference();
         }
       };
 
@@ -83,17 +91,20 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
         @Override
         public void onAudioDevicesAdded(AudioDeviceInfo[] addedDevices) {
           updateAudioOutputPreference();
+          updateSpeakerDevicesPreference();
         }
 
         @Override
         public void onAudioDevicesRemoved(AudioDeviceInfo[] removedDevices) {
           updateAudioOutputPreference();
+          updateSpeakerDevicesPreference();
         }
       };
 
   /**
    * The speakerphone setting needs a permission that the user grants with adb, and Android only has
-   * it from Android 12. Until it is granted, the setting is off and says how to grant it.
+   * it from Android 12. Until it is granted, the setting is off, says how to grant it and has an
+   * action that copies the command.
    */
   private void updateSpeakerphonePreference() {
     Preference pref = findPreference(getString(R.string.pref_speakerphone_away_from_ear_key));
@@ -106,13 +117,15 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
       return;
     }
     boolean granted = SpeakerphoneSettings.INSTANCE.canControlCalls(getContext());
+    String command = SpeakerphoneSettings.INSTANCE.grantCommand(getContext());
     pref.setEnabled(granted);
     pref.setSummary(
         granted
             ? getString(R.string.summary_pref_speakerphone_away_from_ear)
-            : getString(
-                R.string.summary_pref_speakerphone_needs_permission,
-                SpeakerphoneSettings.INSTANCE.grantCommand(getContext())));
+            : getString(R.string.summary_pref_speakerphone_needs_permission, command));
+    if (pref instanceof CommandSwitchPreference) {
+      ((CommandSwitchPreference) pref).setCommand(granted ? null : command);
+    }
   }
 
   private void updateAudioOutputPreference() {
@@ -125,6 +138,42 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     if (preference instanceof ListPreference) {
       ListPreference listPref = (ListPreference) preference;
       AudioDeviceRouter.updatePreference(listPref, activity);
+    }
+  }
+
+  /** Fills the phone speaker devices with the outputs connected now and those seen before. */
+  private void updateSpeakerDevicesPreference() {
+    FragmentActivity activity = getActivity();
+    if (activity == null) {
+      return;
+    }
+    Preference preference = findPreference(getString(R.string.pref_speaker_devices_key));
+    if (!(preference instanceof MultiSelectListPreference)) {
+      return;
+    }
+    MultiSelectListPreference devicesPref = (MultiSelectListPreference) preference;
+    List<String> connected = new ArrayList<>();
+    AudioManager audioManager = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
+    if (audioManager != null) {
+      for (AudioDeviceInfo device : audioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)) {
+        if (AudioDeviceRouter.Companion.isExternalDevice(device)) {
+          connected.add(AudioDeviceRouter.Companion.getDeviceDisplayName(device, activity));
+        }
+      }
+    }
+    Set<String> chosen = SpeakerDevices.chosen(prefs, activity);
+    List<String> choices =
+        SpeakerDevices.choices(connected, SpeakerDevices.seen(prefs, activity), chosen);
+    CharSequence[] names = choices.toArray(new CharSequence[0]);
+    devicesPref.setEntries(names);
+    devicesPref.setEntryValues(names);
+    devicesPref.setEnabled(!choices.isEmpty());
+    if (choices.isEmpty()) {
+      devicesPref.setSummary(R.string.summary_pref_speaker_devices_no_devices);
+    } else if (chosen.isEmpty()) {
+      devicesPref.setSummary(R.string.summary_pref_speaker_devices_none);
+    } else {
+      devicesPref.setSummary(TextUtils.join(", ", new TreeSet<>(chosen)));
     }
   }
 
@@ -150,6 +199,7 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     }
 
     updateAudioOutputPreference();
+    updateSpeakerDevicesPreference();
     updateSpeakerphonePreference();
     Preference audioPref =
         PreferenceSettingsUtils.findPreference(activity, getString(R.string.pref_audio_output_device_key));

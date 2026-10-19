@@ -21,7 +21,9 @@ import static android.view.accessibility.AccessibilityNodeInfo.FOCUS_INPUT;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
+import com.google.android.accessibility.talkback.actor.AutoScrollActor;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor.ScreenStateChangeListener;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
@@ -31,6 +33,7 @@ import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.Role.RoleName;
+import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -60,6 +63,13 @@ public class InputFocusInterpreter
    * action.
    */
   private static final int INPUT_FOCUS_ACTION_TIMEOUT = 1000;
+
+  /** Event time of the last key press, in uptime milliseconds. */
+  private static volatile long lastKeyDownTime = 0;
+
+  public static void setLastKeyDownTime(long eventTime) {
+    lastKeyDownTime = eventTime;
+  }
 
   /** Listens to target view changes. */
   public interface TargetViewChangeListener {
@@ -186,6 +196,11 @@ public class InputFocusInterpreter
 
     if (isFromSavedFocusAction(event)) {
       clearFocusActionRecord();
+    } else if (isInSwipeScrolledList(event, sourceNode)) {
+      // Backtalk focuses the next item before a swipe's scroll ends. Some lists move input focus
+      // when their scroll ends, such as Recents, which focuses the centered task. Following it
+      // would undo the swipe.
+      LogUtils.d(TAG, "Ignore TYPE_VIEW_FOCUSED event from a list a swipe has just scrolled.");
     } else if (!conflictWithFocusActionRecord(event)) {
       // In case when the user navigate very fast on android TV devices for multiple times, the
       // result TYPE_VIEW_FOCUSED events might come delayed. At the meantime,
@@ -197,10 +212,20 @@ public class InputFocusInterpreter
 
       AccessibilityNodeInfoCompat a11yFocusableNode =
           getA11yFocusableNodeFromInputFocusedNode(sourceNode);
-      if (a11yFocusableNode != null) {
+      if (a11yFocusableNode != null && followsInputFocus(event)) {
         targetViewChangeListener.onViewTargeted(eventId, event, a11yFocusableNode);
       }
     }
+  }
+
+  /**
+   * Returns whether accessibility focus should follow this input focus change. With "Move focus
+   * to new windows" off, it follows only input focus moved by a key, such as with a D-pad or Tab,
+   * and not input focus that an app moves by itself.
+   */
+  private static boolean followsInputFocus(AccessibilityEvent event) {
+    return FocusProcessorForScreenStateChange.focusesNewWindows()
+        || (event.getEventTime() - lastKeyDownTime < INPUT_FOCUS_ACTION_TIMEOUT);
   }
 
   /**
@@ -211,6 +236,30 @@ public class InputFocusInterpreter
     return !isLastFocusActionHandled()
         && (event.getEventTime() - actorState.getInputFocusActionRecord().actionTime
             < INPUT_FOCUS_ACTION_TIMEOUT);
+  }
+
+  /**
+   * Returns {@code true} if {@code sourceNode} is inside a list that a swipe is scrolling, or
+   * scrolled less than {@link #INPUT_FOCUS_ACTION_TIMEOUT} ms before the event.
+   */
+  private boolean isInSwipeScrolledList(
+      AccessibilityEvent event, AccessibilityNodeInfoCompat sourceNode) {
+    AutoScrollActor.StateReader scrollerState = actorState.getScrollerState();
+    return isInSwipeScrolledList(event, sourceNode, scrollerState.get())
+        || isInSwipeScrolledList(event, sourceNode, scrollerState.getFinishedScrollActionRecord());
+  }
+
+  private static boolean isInSwipeScrolledList(
+      AccessibilityEvent event,
+      AccessibilityNodeInfoCompat sourceNode,
+      @Nullable ScrollActionRecord record) {
+    if (record == null || record.userAction != ScrollActionRecord.ACTION_AUTO_SCROLL) {
+      return false;
+    }
+    long timeDiff = event.getEventTime() - record.autoScrolledTime;
+    return (timeDiff >= 0L)
+        && (timeDiff < INPUT_FOCUS_ACTION_TIMEOUT)
+        && AccessibilityNodeInfoUtils.hasAncestor(sourceNode, record.getScrolledNode());
   }
 
   // TODO: This method is majorly from ProcessorFocusAndSingleTap.setFocusOnView().
@@ -255,7 +304,9 @@ public class InputFocusInterpreter
    */
   private void handleViewSelectedEvent(AccessibilityEvent event, EventId eventId) {
     AccessibilityNodeInfoCompat selectedNode = getSelectedItemFromAdapterView(event);
-    if (selectedNode != null && AccessibilityNodeInfoUtils.shouldFocusNode(selectedNode)) {
+    if (selectedNode != null
+        && AccessibilityNodeInfoUtils.shouldFocusNode(selectedNode)
+        && followsInputFocus(event)) {
       targetViewChangeListener.onViewTargeted(eventId, event, selectedNode);
     }
   }

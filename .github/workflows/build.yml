@@ -96,7 +96,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          count=$(git rev-list --count HEAD)
+          offset=$(awk '/^def buildNumberOffset = /{print $4}' version.gradle)
+          count=$(( $(git rev-list --count HEAD) + offset ))
           hash=$(git rev-parse HEAD)
           short=${hash:0:7}
           {

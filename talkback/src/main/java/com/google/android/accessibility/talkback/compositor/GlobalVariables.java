@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAc
 import com.google.android.accessibility.talkback.compositor.rule.InputTextFeedbackRules;
 import com.google.android.accessibility.talkback.compositor.rule.MagnificationStateChangedFeedbackRule;
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TypingMethod;
@@ -58,7 +59,9 @@ import com.google.android.accessibility.utils.TimedFlags;
 import com.google.android.accessibility.utils.input.WindowsDelegate;
 import com.google.android.accessibility.utils.monitor.CollectionState;
 import com.google.android.accessibility.utils.monitor.InputModeTracker;
+import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.apps.common.proguard.UsedByReflection;
+import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Locale;
@@ -135,7 +138,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private static final int VERBOSITY_SPEAK_COLLECTION_INFO = 10002;
   private static final int VERBOSITY_DESCRIPTION_ORDER = 10003;
   private static final int VERBOSITY_SPEAK_ELEMENT_IDS = 10004;
-  private static final int VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES = 10005;
+  private static final int VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE = 10005;
 
   private final Context mContext;
   private final AccessibilityService mService;
@@ -164,6 +167,17 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean isLastFocusInScrollableNode = false;
   private boolean isFocusPage = false;
   @TypingMethod private int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+  private boolean tapToType;
+
+  /** How long a keyboard can take to report the click on a key typed with a tap. */
+  private static final long TAP_TO_TYPE_CLICK_WAIT_MS = 2000;
+
+  /** At most this many taps wait for the keyboard to report their clicks. */
+  private static final int MAX_TAPS_TO_TYPE = 10;
+
+  // When keys were typed with a tap and the keyboard hasn't reported their clicks yet. A keyboard
+  // reports a click after the text changes, often after the next tap has started.
+  private final ArrayDeque<Long> tapsToType = new ArrayDeque<>();
   private boolean isDescribingSwipeTarget = false;
 
   private final @Nullable GestureShortcutProvider gestureShortcutProvider;
@@ -174,8 +188,10 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean usageHintEnabled = true;
   // It's enabled when [Say capital] is configured.
   private boolean sayCapital = false;
+  // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
+  private int capitalLetterFeedback = SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SPEAK_CAP;
 
-  private boolean speakPhoneticLetters = true;
+  private String phoneticLetterMode = PhoneticLetterMode.AFTER_LETTER_DELAY;
 
   // Verbosity settings
   private boolean speakRoles = true;
@@ -198,7 +214,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   @DescriptionOrder private int descriptionOrder = DESC_ORDER_ROLE_NAME_STATE_POSITION;
   private boolean speakElementIds = false;
   private boolean countRepeatedSymbols = false;
-  private boolean speakSystemWindowTitles = true;
+  private boolean speakWindowNamesOnFocusMove = true;
   private boolean textChangeRateUnlimited = false;
   private final boolean enableMediaControlHintForCall;
   private final boolean enableShortAndLongDurationsForSpecificApps;
@@ -342,7 +358,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     parseTree.addBooleanVariable("verbosity.speakRole", VERBOSITY_SPEAK_ROLES);
     parseTree.addBooleanVariable("verbosity.speakCollectionInfo", VERBOSITY_SPEAK_COLLECTION_INFO);
     parseTree.addBooleanVariable(
-        "verbosity.speakSystemWindowTitles", VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES);
+        "verbosity.speakWindowNamesOnFocusMove", VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE);
     parseTree.addEnumVariable(
         "verbosity.descriptionOrder",
         VERBOSITY_DESCRIPTION_ORDER,
@@ -476,14 +492,28 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     usageHintEnabled = enabled;
   }
 
-  /** Returns if TalkBack speak phonetic letters is enabled. */
+  /** Returns if TalkBack speaks phonetic letters, with or instead of the letter. */
   public boolean getSpeakPhoneticLettersEnabled() {
-    return speakPhoneticLetters;
+    return !PhoneticLetterMode.OFF.equals(phoneticLetterMode);
   }
 
-  /** Sets if TalkBack speak phonetic letters is enabled. */
-  public void setSpeakPhoneticLettersEnabled(boolean enabled) {
-    speakPhoneticLetters = enabled;
+  /**
+   * Returns if what is said takes the place of the letter: the letter and its word together, or the
+   * word alone. Otherwise the word, if any, follows the letter after a pause.
+   */
+  public boolean getPhoneticLetterTakesPlaceOfLetter() {
+    return PhoneticLetterMode.AFTER_LETTER_NO_DELAY.equals(phoneticLetterMode)
+        || PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Returns if the phonetic word is said in place of the letter, without the letter. */
+  public boolean getSpeakPhoneticLetterInsteadOfLetter() {
+    return PhoneticLetterMode.INSTEAD_OF_LETTER.equals(phoneticLetterMode);
+  }
+
+  /** Sets how phonetic letters are spoken, one of the {@link PhoneticLetterMode} values. */
+  public void setPhoneticLetterMode(String mode) {
+    phoneticLetterMode = mode;
   }
 
   /** Returns if TalkBack speaks capital letter. */
@@ -496,9 +526,50 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     sayCapital = enabled;
   }
 
+  /** Returns how capital letters are told apart, one of the CAPITAL_LETTERS_TYPE values. */
+  public int getCapitalLetterFeedback() {
+    return capitalLetterFeedback;
+  }
+
+  public void setCapitalLetterFeedback(int feedback) {
+    capitalLetterFeedback = feedback;
+  }
+
   /** Returns if TalkBack uses single-tap gesture. */
   public boolean useSingleTap() {
     return mUseSingleTap;
+  }
+
+  /**
+   * Sets whether the touch interaction in progress is a tap on the keyboard that types the key under
+   * it, which isn't spoken.
+   */
+  public void setTapToType(boolean value) {
+    tapToType = value;
+  }
+
+  /** Returns whether the touch interaction in progress is a tap that types a key. */
+  public boolean isTapToType() {
+    return tapToType;
+  }
+
+  /** Notes that a tap at {@code uptimeMs} types a key, whose click the keyboard reports later. */
+  public void noteTapToType(long uptimeMs) {
+    tapsToType.addLast(uptimeMs);
+    while (tapsToType.size() > MAX_TAPS_TO_TYPE) {
+      tapsToType.removeFirst();
+    }
+  }
+
+  /**
+   * Returns whether a click the keyboard reports at {@code uptimeMs} is on a key typed with a tap,
+   * and counts it as reported.
+   */
+  public boolean takeTapToTypeClick(long uptimeMs) {
+    while (!tapsToType.isEmpty() && uptimeMs - tapsToType.peekFirst() > TAP_TO_TYPE_CLICK_WAIT_MS) {
+      tapsToType.removeFirst();
+    }
+    return tapsToType.pollFirst() != null;
   }
 
   /** Sets if TalkBack uses single-tap gesture. */
@@ -700,14 +771,14 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return roleSoundOfFocus != 0 && ControlSounds.soundForRole(node) == roleSoundOfFocus;
   }
 
-  /** Returns if TalkBack speaks system window titles. */
-  public boolean getSpeakSystemWindowTitles() {
-    return speakSystemWindowTitles;
+  /** Returns whether the window's name is spoken when focus moves into another window. */
+  public boolean getSpeakWindowNamesOnFocusMove() {
+    return speakWindowNamesOnFocusMove;
   }
 
-  /** Sets if TalkBack speaks system window titles. */
-  public void setSpeakSystemWindowTitles(boolean value) {
-    speakSystemWindowTitles = value;
+  /** Sets whether the window's name is spoken when focus moves into another window. */
+  public void setSpeakWindowNamesOnFocusMove(boolean value) {
+    speakWindowNamesOnFocusMove = value;
   }
 
   /** Returns if TalkBack limits text change rate. */
@@ -1027,7 +1098,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
       case VERBOSITY_SPEAK_ROLES -> getSpeakRoles();
       case VERBOSITY_SPEAK_COLLECTION_INFO -> getSpeakCollectionInfo();
       case VERBOSITY_SPEAK_ELEMENT_IDS -> getSpeakElementIds();
-      case VERBOSITY_SPEAK_SYSTEM_WINDOW_TITLES -> getSpeakSystemWindowTitles();
+      case VERBOSITY_SPEAK_WINDOW_NAMES_ON_FOCUS_MOVE -> getSpeakWindowNamesOnFocusMove();
       default -> false;
     };
   }
@@ -1120,7 +1191,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
             .append(String.format("speakCollectionInfo=%s, ", getSpeakCollectionInfo()))
             .append(String.format("speakElementIds=%s, ", getSpeakElementIds()))
             .append(String.format("speakRoles=%s, ", getSpeakRoles()))
-            .append(String.format("speakSysWindowTitles=%s, ", getSpeakSystemWindowTitles()))
+            .append(String.format("speakWindowNamesOnFocusMove=%s, ", getSpeakWindowNamesOnFocusMove()))
             .append(String.format("textChangeRateUnlimited=%s, ", getTextChangeRateUnlimited()))
             .append(String.format("dndEnabled=%s, ", isDndEnabled()))
             .append(String.format("speakNotifications=%s, ", getSpeakNotifications()))

@@ -59,6 +59,7 @@ import com.google.android.accessibility.utils.input.TextCursorTracker;
 import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.input.VoiceDictationDelegate;
 import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
+import com.google.android.accessibility.utils.output.CopySelection;
 import com.google.android.accessibility.utils.output.EditTextActionHistory;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
@@ -241,7 +242,9 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Executes and announces start selecting text in edit-text. */
   public boolean startSelect(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (!AccessibilityNodeInfoUtils.isTextSelectable(node)) {
+    // Text the app keeps no selection in is selected for copying, but not passwords.
+    if (node == null
+        || (!AccessibilityNodeInfoUtils.keepsAppSelection(node) && node.isPassword())) {
       return false;
     }
 
@@ -261,9 +264,14 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Executes and announces end select text in selectable text. Modifies edit history. */
   public boolean endSelect(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (!AccessibilityNodeInfoUtils.isTextSelectable(node)) {
+    @Nullable CopySelection copySelection = stateReader.copySelection();
+    boolean copying = copySelection != null && copySelection.isActive();
+    if (!copying && !AccessibilityNodeInfoUtils.isTextSelectable(node)) {
       return false;
     }
+
+    // The range is a part to copy, which is taken before selection mode is turned off.
+    @Nullable CharSequence copied = copying ? copySelection.end() : null;
 
     // Stop selecting.
     pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
@@ -279,10 +287,12 @@ public class TextEditActor implements VoiceDictationDelegate {
     @Nullable CharSequence textSelected =
         CompositorUtils.refineInputText(
             service,
-            AccessibilityNodeInfoUtils.subsequenceSafe(
-                AccessibilityNodeInfoUtils.getText(node),
-                node.getTextSelectionStart(),
-                node.getTextSelectionEnd()));
+            copying
+                ? copied
+                : AccessibilityNodeInfoUtils.subsequenceSafe(
+                    AccessibilityNodeInfoUtils.getText(node),
+                    node.getTextSelectionStart(),
+                    node.getTextSelectionEnd()));
     CharSequence textToSpeak =
         TextUtils.isEmpty(textSelected)
             ? service.getString(R.string.template_no_text_selected)
@@ -342,8 +352,8 @@ public class TextEditActor implements VoiceDictationDelegate {
 
   /** Executes and announces select-all text in selectable. Modifies edit history. */
   public boolean selectAll(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (!AccessibilityNodeInfoUtils.isTextSelectable(node)) {
-      return false;
+    if (!AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
+      return selectAllCopying(node, eventId);
     }
 
     @Nullable CharSequence nodeText = AccessibilityNodeInfoUtils.getText(node);
@@ -384,11 +394,87 @@ public class TextEditActor implements VoiceDictationDelegate {
     return true;
   }
 
+  /** Selects all the text of an item that the app keeps no selection in, to copy it. */
+  private boolean selectAllCopying(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
+    if (node == null) {
+      return false;
+    }
+    // Locks the node, which may not be the one that copying mode started on.
+    pipeline.returnFeedback(eventId, Feedback.selectionModeOn(node));
+    CharSequence selected = stateReader.selectAllForCopy(node);
+    if (TextUtils.isEmpty(selected)) {
+      pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+      pipeline.returnFeedback(
+          eventId, Feedback.speech(service.getString(R.string.not_selectable), SPEAK_OPTIONS));
+      return false;
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_announce_selected_text),
+                SpeechCleanupUtils.shortenLongTextFeedback(
+                    service, CompositorUtils.refineInputText(service, selected))),
+            SPEAK_OPTIONS));
+    return true;
+  }
+
+  /** Whether the app has text selected in {@code node}, which Copy copies. */
+  private static boolean hasAppSelection(AccessibilityNodeInfoCompat node) {
+    return AccessibilityNodeInfoUtils.keepsAppSelection(node)
+        && !TextUtils.isEmpty(AccessibilityNodeInfoUtils.getSelectedNodeText(node));
+  }
+
+  /** Copies the text selected in copying mode: all the parts, and the range that is open. */
+  private boolean copySelected(EventId eventId) {
+    CopySelection copySelection = stateReader.copySelection();
+    CharSequence selected = copySelection.allText();
+    if (!copyToClipboard(clipboard, selected)) {
+      return false;
+    }
+    copySelection.clear();
+    pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_text_copied),
+                SpeechCleanupUtils.shortenLongTextFeedback(
+                    service, CompositorUtils.refineInputText(service, selected))),
+            SPEAK_OPTIONS));
+    return true;
+  }
+
+  /** Drops the text selected in copying mode, and ends copying mode. */
+  public boolean clearSelected(EventId eventId) {
+    @Nullable CopySelection copySelection = stateReader.copySelection();
+    if (copySelection == null || (!copySelection.hasContent() && !copySelection.isActive())) {
+      return false;
+    }
+    copySelection.clear();
+    pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            service.getString(R.string.notification_type_selection_cleared), SPEAK_OPTIONS));
+    return true;
+  }
+
   /**
    * Executes and announces copy text. If the node is edit-text or has selectable text, it would
    * copy the selected text or it would copy the first non-empty node text within the root node.
    */
   public boolean copy(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
+    @Nullable CopySelection copySelection = stateReader.copySelection();
+    // Text kept from copying mode is copied, unless the user is copying the app's own selection.
+    // It is copied when nothing has focus, as it may have been kept in another window or app.
+    if (copySelection != null
+        && copySelection.hasContent()
+        && (node == null
+            || copySelection.isActive()
+            || !hasAppSelection(node))) {
+      return copySelected(eventId);
+    }
     if (node == null) {
       return false;
     }

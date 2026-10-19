@@ -106,6 +106,10 @@
             android:title="@string/title_pref_emoji_speech"
             android:summary="@string/summary_selector_menu_emoji"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_on_screen_key"
+            android:title="@string/title_keyboard_echo_on_screen"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_text_formatting_inline_default"
             android:key="@string/pref_selector_text_formatting_inline_key"
             android:title="@string/title_switch_text_formatting"
@@ -115,6 +119,11 @@
             android:key="@string/pref_selector_language_key"
             android:title="@string/spoken_language"
             android:summary="@string/summary_language"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_switch_tts_engine_default"
+            android:key="@string/pref_selector_switch_tts_engine_key"
+            android:title="@string/title_selector_switch_tts_engine"
+            android:summary="@string/summary_selector_switch_tts_engine"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_voice_profile_default"
             android:key="@string/pref_selector_voice_profile_key"

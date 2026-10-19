@@ -16,12 +16,14 @@
 
 package com.google.android.accessibility.talkback.eventprocessor;
 
+import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
 import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_INPUT_METHOD;
 import static com.google.android.accessibility.talkback.Feedback.HINT;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
 import android.view.accessibility.AccessibilityEvent;
@@ -41,9 +43,12 @@ import com.google.android.accessibility.utils.LocaleUtils;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.SpannableUtils;
+import com.google.android.accessibility.utils.output.CapitalLetterSpan;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
+import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -133,7 +138,9 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
       cancelPhoneticLetter(eventId);
     }
 
-    if (!globalVariables.getSpeakPhoneticLettersEnabled()) {
+    // In place of the letter, the compositor says what getPhoneticInPlaceOfLetter returns.
+    if (!globalVariables.getSpeakPhoneticLettersEnabled()
+        || globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
       return;
     }
 
@@ -228,19 +235,98 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
 
   public void speakPhoneticLetterForTraversedText(
       boolean isTalkbackPackage, String letter, EventId eventId) {
-    String localeString;
-    // Change the locale to the user preferred locale
-    // changed using language switcher, with an exception while reading talkback text.
-    // As Talkback text is always in the system language.
-    if (isTalkbackPackage || service.getUserPreferredLocale() == null) {
-      localeString = Locale.getDefault().toLanguageTag();
-    } else {
-      localeString = service.getUserPreferredLocale().toLanguageTag();
+    // In place of the letter, GranularityTraversal says what getPhoneticInPlaceOfLetter returns.
+    if (!globalVariables.getSpeakPhoneticLettersEnabled()
+        || globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
+      return;
     }
-    CharSequence phoneticLetter = getPhoneticLetter(localeString, letter);
+    CharSequence phoneticLetter = getPhoneticLetter(traversalLocale(isTalkbackPackage), letter);
     if (phoneticLetter != null) {
       postPhoneticLetterRunnable(phoneticLetter, eventId);
     }
+  }
+
+  /**
+   * Returns what to say in place of a letter that the user moved over by character, typed, or
+   * deleted, when they chose to hear the letter and its phonetic word together, or the word alone.
+   * For a capital letter, it has the capital letter feedback that the user chose.
+   */
+  public Optional<CharSequence> getPhoneticInPlaceOfLetter(
+      boolean isTalkbackPackage, @Nullable CharSequence letter) {
+    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter() || TextUtils.isEmpty(letter)) {
+      return Optional.empty();
+    }
+    return inPlaceOf(
+        letter, getPhoneticLetter(traversalLocale(isTalkbackPackage), letter.toString()));
+  }
+
+  /**
+   * Returns what to say for {@code letter} when spelling the last spoken phrase, or {@code null} to
+   * say the letter.
+   */
+  public @Nullable CharSequence getPhoneticForSpelling(CharSequence letter) {
+    return getPhoneticInPlaceOfLetter(/* isTalkbackPackage= */ false, letter).orElse(null);
+  }
+
+  /**
+   * Returns what to say in place of the on-screen keyboard key that {@code event} focuses, like
+   * {@link #getPhoneticInPlaceOfLetter}.
+   */
+  public Optional<CharSequence> getPhoneticInPlaceOfKeyboardKey(AccessibilityEvent event) {
+    if (!globalVariables.getPhoneticLetterTakesPlaceOfLetter()) {
+      return Optional.empty();
+    }
+    Optional<CharSequence> word = getPhoneticLetterForKeyboardFocusEvent(event);
+    if (!word.isPresent()) {
+      return Optional.empty();
+    }
+    return inPlaceOf(AccessibilityEventUtils.getEventTextOrDescription(event), word.get());
+  }
+
+  /**
+   * Returns {@code letter} and {@code word} together, as in "h hotel", or {@code word} alone, as
+   * the user chose, with the feedback that {@code letter} would have if it is a capital letter:
+   * "capital" before the letter or word, or the pitch or sound for all of it.
+   */
+  private Optional<CharSequence> inPlaceOf(
+      @Nullable CharSequence letter, @Nullable CharSequence word) {
+    if (TextUtils.isEmpty(word)) {
+      return Optional.empty();
+    }
+    boolean withLetter = !globalVariables.getSpeakPhoneticLetterInsteadOfLetter() && letter != null;
+    boolean isCapital =
+        letter != null
+            && TextUtils.getTrimmedLength(letter) == 1
+            && Character.isUpperCase(letter.toString().trim().charAt(0));
+    int capitalFeedback = isCapital ? globalVariables.getCapitalLetterFeedback() : -1;
+
+    // "capital" goes before the letter, or before the word if the letter isn't said.
+    CharSequence first = withLetter ? letter : word;
+    if (capitalFeedback == SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SPEAK_CAP) {
+      first =
+          SpannableUtils.getSpannedFormattedString(
+              service.getString(R.string.template_capital_letter), first);
+    }
+    SpannableStringBuilder spoken = new SpannableStringBuilder(first);
+    if (withLetter) {
+      spoken.append(' ').append(word);
+    }
+    if (capitalFeedback == SpeechControllerImpl.CAPITAL_LETTERS_TYPE_PITCH
+        || capitalFeedback == SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SOUND_FEEDBACK) {
+      spoken.setSpan(new CapitalLetterSpan(), 0, spoken.length(), SPAN_EXCLUSIVE_EXCLUSIVE);
+    }
+    return Optional.of(spoken);
+  }
+
+  /**
+   * Returns the locale of text that the user moves through: the one the user picked with the
+   * language switcher, except for Backtalk's own text, which is always in the system language.
+   */
+  private String traversalLocale(boolean isTalkbackPackage) {
+    if (isTalkbackPackage || service.getUserPreferredLocale() == null) {
+      return Locale.getDefault().toLanguageTag();
+    }
+    return service.getUserPreferredLocale().toLanguageTag();
   }
 
   public String getPhoneticText(CharSequence text) {

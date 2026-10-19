@@ -19,6 +19,7 @@ import static com.google.android.accessibility.talkback.compositor.Compositor.EV
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE;
 
 import android.content.Context;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
@@ -27,6 +28,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.compositor.TalkBackFeedbackProvider;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -58,18 +60,23 @@ public final class EventTypeViewClickedFeedbackRule {
       GlobalVariables globalVariables) {
     eventFeedbackRules.put(
         EVENT_TYPE_VIEW_CLICKED,
-        (eventOptions) ->
-            EventFeedback.builder()
-                .setTtsOutput(computeTtsOutput(eventOptions.sourceNode, context, globalVariables))
-                .setQueueMode(QUEUE_MODE_QUEUE)
-                .setTtsAddToHistory(true)
-                .setForceFeedbackEvenIfAudioPlaybackActive(true)
-                .setForceFeedbackEvenIfMicrophoneActive(true)
-                .setForceFeedbackEvenIfSsbActive(true)
-                .setTtsSkipDuplicate(true)
-                .setEarcon(R.raw.tick)
-                .setHaptic(R.array.view_clicked_pattern)
-                .build());
+        (eventOptions) -> {
+          // A key typed with a tap is only echoed, as typing works without a screen reader.
+          boolean tappedKey =
+              AccessibilityNodeInfoUtils.isKeyboard(eventOptions.sourceNode)
+                  && globalVariables.takeTapToTypeClick(SystemClock.uptimeMillis());
+          return EventFeedback.builder()
+              .setTtsOutput(computeTtsOutput(eventOptions.sourceNode, context, globalVariables))
+              .setQueueMode(QUEUE_MODE_QUEUE)
+              .setTtsAddToHistory(true)
+              .setForceFeedbackEvenIfAudioPlaybackActive(true)
+              .setForceFeedbackEvenIfMicrophoneActive(true)
+              .setForceFeedbackEvenIfSsbActive(true)
+              .setTtsSkipDuplicate(true)
+              .setEarcon(tappedKey ? -1 : R.raw.tick)
+              .setHaptic(tappedKey ? -1 : R.array.view_clicked_pattern)
+              .build();
+        });
   }
 
   private static Optional<CharSequence> computeTtsOutput(

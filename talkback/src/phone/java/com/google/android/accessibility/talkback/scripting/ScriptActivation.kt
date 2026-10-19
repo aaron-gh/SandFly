@@ -17,15 +17,18 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.accessibilityservice.AccessibilityService
+import android.content.pm.PackageManager
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityWindowInfo
+import java.util.concurrent.ConcurrentHashMap
 import org.json.JSONObject
 
 class ScriptActivation(private val service: AccessibilityService) {
   private val ownPackage = service.packageName
   private var activePackage: String? = null
   private var focusedPackage: String? = null
-  private val activityByPackage = HashMap<String, String>()
+  private var metaDataPackage: String? = null
+  private var metaData = JSONObject()
 
   var windowTitle: String? = null
     private set
@@ -51,7 +54,44 @@ class ScriptActivation(private val service: AccessibilityService) {
   fun refresh() {
     readActiveWindow()
     appInfo =
-      jsonObject("package" to activePackage, "activity" to activity, "window" to windowTitle)
+      jsonObject(
+        "package" to activePackage,
+        "activity" to activity,
+        "window" to windowTitle,
+        "meta" to frontAppMetaData(),
+      )
+  }
+
+  /** The front app's manifest meta-data, read again only when another app comes to the front. */
+  private fun frontAppMetaData(): JSONObject {
+    val pkg = activePackage
+    if (pkg != metaDataPackage) {
+      metaDataPackage = pkg
+      metaData = pkg?.let(::readMetaData) ?: JSONObject()
+    }
+    return metaData
+  }
+
+  private fun readMetaData(pkg: String): JSONObject {
+    val meta = JSONObject()
+    val bundle =
+      try {
+        service.packageManager.getApplicationInfo(pkg, PackageManager.GET_META_DATA).metaData
+      } catch (e: PackageManager.NameNotFoundException) {
+        null
+      } ?: return meta
+    for (key in bundle.keySet()) {
+      @Suppress("DEPRECATION")
+      when (val value = bundle.get(key)) {
+        is Boolean,
+        is Int,
+        is Long,
+        is Float,
+        is Double,
+        is String -> meta.put(key, value)
+      }
+    }
+    return meta
   }
 
   /**
@@ -82,5 +122,13 @@ class ScriptActivation(private val service: AccessibilityService) {
     activePackage = active.root?.packageName?.toString() ?: return
     inBacktalk = activePackage == ownPackage
     windowTitle = active.title?.toString()
+  }
+
+  private companion object {
+    // An activity is only known from the app's window changes. Turning Backtalk off and on starts a
+    // new service in the same process, with the app often still open and sending no window change,
+    // so what is known outlives the service. It can be out of date if the app changed activity while
+    // Backtalk was off, until the app's next window change.
+    val activityByPackage = ConcurrentHashMap<String, String>()
   }
 }

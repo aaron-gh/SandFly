@@ -91,13 +91,10 @@ public interface TalkBackForBrailleIme {
   boolean isUsageHintEnabled();
 
   /**
-   * Returns the on-screen keyboard's echo setting, a {@code TextEventFilter.KeyboardEchoType}, as
-   * the verbosity preset applies it.
+   * Returns whether keyboard echo speaks each character typed on the on-screen braille keyboard, or
+   * on a braille display.
    */
-  int getOnScreenKeyboardEcho();
-
-  /** Checks should braille keyboard announce character when physical mode. */
-  boolean shouldAnnounceCharacterForPhysicalKeyboard();
+  boolean shouldEchoBrailleCharacters(boolean fromBrailleDisplay);
 
   /** Whether use character granularity to be the moving granularity. */
   boolean shouldUseCharacterGranularity();

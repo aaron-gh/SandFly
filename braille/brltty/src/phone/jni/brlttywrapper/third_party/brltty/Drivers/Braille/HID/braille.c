@@ -31,9 +31,10 @@ struct BrailleDataStruct {
   } text;
 
   struct {
-    // The HID report ID used by both input and output. Currently expects both
-    // to be the same.
-    uint32_t reportId;
+    // The HID report IDs of the Braille input (keys) and output (cells). They
+    // can be the same report or different ones.
+    uint32_t inputReportId;
+    uint32_t outputReportId;
     // The size of the HID input report.
     uint32_t inputSizeBytes;
     // Map each input report bit to the HID usage it represents.
@@ -74,9 +75,10 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
   //   provided by the descriptor.
   uint32_t reportId = 0;
 
-  //   The current bit of the INPUT report, used for writing to the
-  //   inputReportUsages map.
-  uint32_t inputReportBit = 0;
+  //   The next bit of each INPUT report, by report ID, so that the Braille
+  //   input report's usages are placed at the right bits whichever other
+  //   reports come before and between its items.
+  uint32_t inputReportBits[256] = {0};
 
   // These variables will be "learned" while parsing the report descriptor;
   // set them to "unset" defaults so that parsing can detect if an inconsistency
@@ -87,8 +89,9 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
   //   Stores the number of text rows so that brltty knows how to prepare
   //   output cells.
   brl->textRows = 1;
-  //   The report ID that will be providing Braille Display input and output.
-  brl->data->reportInfo.reportId = -1;
+  //   The report IDs that will be providing Braille Display input and output.
+  brl->data->reportInfo.inputReportId = -1;
+  brl->data->reportInfo.outputReportId = -1;
 
   const unsigned char *nextByte = items->bytes;
   size_t bytesLeft = items->count;
@@ -136,29 +139,43 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
         item.tag == HID_ITM_Feature) {
       // Reset the usage index now that we're going to process the usages array.
       usageIndex = 0;
-      // Set the BD report ID to the current reportId.
-      if (usagePage == HID_UPG_Braille) {
-        if (brl->data->reportInfo.reportId != -1 &&
-            brl->data->reportInfo.reportId != reportId) {
-          logMessage(LOG_ERR,
-                     "Found multiple report IDs that include Braille usages");
-          parsingError = 1;
-          break;
-        }
-        brl->data->reportInfo.reportId = reportId;
+    }
+    // Set the BD input and output report IDs to the current reportId. Input
+    // and output may use different reports, but each must use only one.
+    if (item.tag == HID_ITM_Input && usagePage == HID_UPG_Braille) {
+      if (brl->data->reportInfo.inputReportId != -1 &&
+          brl->data->reportInfo.inputReportId != reportId) {
+        logMessage(LOG_ERR, "Found multiple input report IDs that include "
+                            "Braille usages");
+        parsingError = 1;
+        break;
       }
+      brl->data->reportInfo.inputReportId = reportId;
+    }
+    if (item.tag == HID_ITM_Output && usagePage == HID_UPG_Braille) {
+      if (brl->data->reportInfo.outputReportId != -1 &&
+          brl->data->reportInfo.outputReportId != reportId) {
+        logMessage(LOG_ERR, "Found multiple output report IDs that include "
+                            "Braille usages");
+        parsingError = 1;
+        break;
+      }
+      brl->data->reportInfo.outputReportId = reportId;
     }
 
     if (item.tag == HID_ITM_Input) {
-      if (reportId == brl->data->reportInfo.reportId) {
+      uint32_t *inputReportBit = &inputReportBits[reportId & 0XFF];
+      if (reportId != brl->data->reportInfo.inputReportId) {
+        *inputReportBit += reportSize * reportCount;
+      } else {
         // Skip past constant bits
         if ((item.value.u & HID_USG_FLG_CONSTANT) == HID_USG_FLG_CONSTANT) {
-          inputReportBit += reportSize * reportCount;
+          *inputReportBit += reportSize * reportCount;
           continue;
         }
         // Skip past usages from unexpected pages.
         if (usagePage != HID_UPG_Braille && usagePage != HID_UPG_Button) {
-          inputReportBit += reportSize * reportCount;
+          *inputReportBit += reportSize * reportCount;
           continue;
         }
         // Ignore INPUT for the "Number of Braille Cells" usage.
@@ -168,7 +185,7 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
         // cells indicated by the OUTPUT report.
         if (usagePage == HID_UPG_Braille &&
           usages[0] == HID_USG_BRL_CellCount) {
-          inputReportBit += reportSize * reportCount;
+          *inputReportBit += reportSize * reportCount;
           continue;
         }
         if ((item.value.u & HID_USG_FLG_VARIABLE) != HID_USG_FLG_VARIABLE) {
@@ -183,7 +200,7 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
           parsingError = 1;
           break;
         }
-        if (inputReportBit > MAX_INPUT_SIZE) {
+        if (*inputReportBit + reportCount > MAX_INPUT_SIZE) {
           logMessage(LOG_ERR, "Unexpected input report with more than %u bits",
                      MAX_INPUT_SIZE);
           parsingError = 1;
@@ -191,10 +208,10 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
         }
         for (int i = 0; i < reportCount; i++) {
           if (usageMin != -1) {
-            brl->data->reportInfo.inputReportUsages[inputReportBit++] =
+            brl->data->reportInfo.inputReportUsages[(*inputReportBit)++] =
                 usageMin++;
           } else {
-            brl->data->reportInfo.inputReportUsages[inputReportBit++] =
+            brl->data->reportInfo.inputReportUsages[(*inputReportBit)++] =
                 usages[i];
           }
         }
@@ -202,12 +219,6 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
     }
     if (item.tag == HID_ITM_Output) {
       if (usagePage == HID_UPG_Braille) {
-        if (reportId != brl->data->reportInfo.reportId) {
-          logMessage(LOG_ERR,
-                     "Unexpected differing output and input report IDs");
-          parsingError = 1;
-          break;
-        }
         if (reportSize != 8) {
           logMessage(LOG_ERR, "Invalid output bit size %u", reportSize);
           parsingError = 1;
@@ -234,7 +245,8 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
     logMessage(LOG_ERR, "There were parsing errors.");
     return 0;
   }
-  if (brl->data->reportInfo.reportId == -1) {
+  if (brl->data->reportInfo.inputReportId == -1 &&
+      brl->data->reportInfo.outputReportId == -1) {
     logMessage(LOG_ERR, "Could not find a Braille Display report ID");
     return 0;
   }
@@ -267,8 +279,10 @@ static int probeHidDisplay(BrailleDisplay *brl, HidItemsDescriptor *items) {
     }
   }
 
-  int inputSizeBytes = (inputReportBit + 7) / 8;
-  int hasNumberedReport = brl->data->reportInfo.reportId != 0;
+  uint32_t inputReportId = brl->data->reportInfo.inputReportId;
+  int inputSizeBytes =
+      inputReportId == -1 ? 0 : (inputReportBits[inputReportId & 0XFF] + 7) / 8;
+  int hasNumberedReport = inputReportId != 0 && inputReportId != -1;
   if (hasNumberedReport != 0) {
     // The first byte of input should contain the report ID, then all other
     // bytes should be parsed as input.
@@ -325,8 +339,8 @@ static int handleKeyRelease(BrailleDisplay *brl, unsigned char key) {
 static void handlePressedKeysArray(BrailleDisplay *brl, unsigned char *keys) {
   // Per HIDRAW spec if input descriptor report number is not zero then the
   // first byte in the input should be the report number.
-  int hasNumberedReport = brl->data->reportInfo.reportId != 0;
-  if (hasNumberedReport && keys[0] != brl->data->reportInfo.reportId) {
+  int hasNumberedReport = brl->data->reportInfo.inputReportId != 0;
+  if (hasNumberedReport && keys[0] != brl->data->reportInfo.inputReportId) {
     logMessage(LOG_WARNING, "Unexpected input report %u", keys[0]);
     return;
   }
@@ -366,7 +380,7 @@ static int writeHidCells(BrailleDisplay *brl, const unsigned char *cells,
   // output report.
   int bufferSize = cellCount + 1;
   unsigned char buffer[bufferSize];
-  buffer[0] = brl->data->reportInfo.reportId;
+  buffer[0] = brl->data->reportInfo.outputReportId;
   memcpy(buffer + 1, cells, cellCount);
   return brl->gioEndpoint->handleMethods->writeData(
       brl->gioEndpoint->handle, buffer, bufferSize, /*timeout=*/0);

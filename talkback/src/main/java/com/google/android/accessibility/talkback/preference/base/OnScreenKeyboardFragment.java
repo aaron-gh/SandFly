@@ -22,9 +22,9 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.preference.ListPreference;
-import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 
@@ -48,7 +48,6 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
                   R.string.pref_verbosity_preset_key,
                   R.string.pref_verbosity_preset_value_default);
           updateSpeakPhoneticLetters(verbosityValue);
-          updateOnScreenKeyboardEchoPref(verbosityValue);
         }
       };
 
@@ -112,7 +111,6 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
             R.string.pref_verbosity_preset_key,
             R.string.pref_verbosity_preset_value_default);
     updateSpeakPhoneticLetters(verbosityValue);
-    updateOnScreenKeyboardEchoPref(verbosityValue);
     prefs.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
   }
 
@@ -126,44 +124,17 @@ public class OnScreenKeyboardFragment extends TalkbackBaseFragment {
     // Use verbosity prefix to keep settings consistent with Verbosity settings.
     String verbosityPrefKey =
         VerbosityPreferences.toVerbosityPrefKey(
-            verbosityValue, getString(R.string.pref_phonetic_letters_key));
-    TwoStatePreference preference = findPreference(verbosityPrefKey);
-    if (preference == null) {
-      preference = findPreference(getString(R.string.pref_phonetic_letters_key));
-      if (preference == null) {
-        return;
-      }
-      preference.setKey(verbosityPrefKey);
-    }
-
-    boolean speakPhoneticPref =
-        VerbosityPreferences.getPreferenceVerbosityBool(
-            prefs,
-            getResources(),
-            verbosityValue,
-            getResources().getString(R.string.pref_phonetic_letters_key),
-            getResources().getBoolean(R.bool.pref_phonetic_letters_default));
-    preference.setChecked(speakPhoneticPref);
-    // Disable default verbosity preference details if it is high or low.
-    preference.setEnabled(!VerbosityPreferences.isVerbosityValueHighOrLow(verbosityValue, context));
-  }
-
-  private void updateOnScreenKeyboardEchoPref(String verbosityValue) {
-    // Use verbosity prefix to keep settings consistent with Verbosity settings.
-    String verbosityPrefKey =
-        VerbosityPreferences.toVerbosityPrefKey(
-            verbosityValue, getString(R.string.pref_keyboard_echo_on_screen_key));
+            verbosityValue, getString(R.string.pref_phonetic_letters_mode_key));
     ListPreference preference = findPreference(verbosityPrefKey);
     if (preference == null) {
-      preference = findPreference(getString(R.string.pref_keyboard_echo_on_screen_key));
+      preference = findPreference(getString(R.string.pref_phonetic_letters_mode_key));
       if (preference == null) {
         return;
       }
       preference.setKey(verbosityPrefKey);
     }
 
-    int onScreenKeyboardPref = VerbosityPreferences.readOnScreenKeyboardEcho(prefs, getResources());
-    preference.setValue(String.valueOf(onScreenKeyboardPref));
+    preference.setValue(PhoneticLetterMode.read(prefs, getResources()));
     // Disable default verbosity preference details if it is high or low.
     preference.setEnabled(!VerbosityPreferences.isVerbosityValueHighOrLow(verbosityValue, context));
   }

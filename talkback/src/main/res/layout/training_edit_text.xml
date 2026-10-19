@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-  <EditText
+  <com.google.android.accessibility.utils.widget.KeyboardSafeEditText
       android:id="@+id/training_edit_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -19,6 +19,6 @@
       android:textSize="@dimen/training_edit_text_text_size"
       android:imeOptions="flagNoExtractUi"
       android:inputType="text">
-  </EditText>
+  </com.google.android.accessibility.utils.widget.KeyboardSafeEditText>
 
 </LinearLayout>

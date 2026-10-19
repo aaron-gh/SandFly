@@ -53,7 +53,7 @@
         android:layout_toEndOf="@id/previous_screen"
         android:background="@color/divider_color"
         android:focusable="false"/>
-    <EditText
+    <com.google.android.accessibility.utils.widget.KeyboardSafeEditText
         android:id="@+id/keyword_edit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

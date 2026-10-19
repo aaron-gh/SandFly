@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.actor;
 
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.FOCUS_INPUT;
 import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYPE_INPUT_METHOD;
+import static com.google.android.accessibility.utils.AccessibilityWindowInfoUtils.WINDOW_ID_NONE;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
 import android.accessibilityservice.AccessibilityService;
@@ -135,6 +136,17 @@ public class FocusActorForScreenStateChange {
     return (currentActive.getLayer() > lastWindow.getLayer()) && activeRect.intersect(lastRect);
   }
 
+  /**
+   * Whether the node is still in the window, as {@link AccessibilityNodeInfoUtils#isInWindow}
+   * checks, with the window's root fetched already.
+   */
+  private static boolean isInWindow(
+      AccessibilityNodeInfoCompat node, int windowId, AccessibilityNodeInfoCompat windowRoot) {
+    int nodeWindowId = node.getWindowId();
+    return (nodeWindowId == WINDOW_ID_NONE || nodeWindowId == windowId)
+        && AccessibilityNodeInfoUtils.hasDescendant(windowRoot, node);
+  }
+
   /** Restores last focus from {@link AccessibilityFocusActionHistory} to the active window. */
   public boolean restoreLastFocusedNode(ScreenState screenState, EventId eventId) {
 
@@ -175,12 +187,6 @@ public class FocusActorForScreenStateChange {
       return false;
     }
 
-    AccessibilityNodeInfoCompat root =
-        AccessibilityWindowInfoUtils.getRootCompat(currentActiveWindow);
-    if (root == null) {
-      return false;
-    }
-
     int windowId = currentActiveWindow.getId();
     int windowType = AccessibilityWindowInfoUtils.getType(currentActiveWindow);
     WindowIdentifier windowIdentifier = WindowIdentifier.create(windowId, screenState);
@@ -199,6 +205,14 @@ public class FocusActorForScreenStateChange {
         && lastFocusedWindowType != AccessibilityWindowInfo.TYPE_SYSTEM) {
       // Don't restore focus in system window if the last focused window is not system window.
       LogUtils.d(TAG, "Do not restore focus in system ui window.");
+      return false;
+    }
+
+    // Fetching the root waits for the window's app, which is drawing the new screen, so it is
+    // fetched only when there is a focus to restore, and a single time.
+    AccessibilityNodeInfoCompat root =
+        AccessibilityWindowInfoUtils.getRootCompat(currentActiveWindow);
+    if (root == null) {
       return false;
     }
 
@@ -221,7 +235,7 @@ public class FocusActorForScreenStateChange {
         // b/365017291: Only check native nodes because sometimes the WebView is gone in the node
         // tree.
         || (!WebInterfaceUtils.isWebContainer(nodeToRestoreFocus)
-            && !AccessibilityNodeInfoUtils.isInWindow(nodeToRestoreFocus, currentActiveWindow))) {
+            && !isInWindow(nodeToRestoreFocus, windowId, root))) {
       LogUtils.e(TAG, "Do not restore focus from the invalid node " + nodeToRestoreFocus);
       return false;
     }

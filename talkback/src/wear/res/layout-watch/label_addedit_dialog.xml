@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             style="@style/A11yAlertDialogTextLinesGreaterThan3"/>
 
-        <EditText
+        <com.google.android.accessibility.utils.widget.KeyboardSafeEditText
             android:id="@+id/label_dialog_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

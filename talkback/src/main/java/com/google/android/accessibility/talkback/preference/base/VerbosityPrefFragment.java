@@ -143,9 +143,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
                 getString(R.string.pref_intonation_key),
                 getResources().getBoolean(R.bool.pref_intonation_default))
             .put(
-                getString(R.string.pref_phonetic_letters_key),
-                getResources().getBoolean(R.bool.pref_phonetic_letters_default))
-            .put(
                 getString(R.string.pref_speak_roles_key),
                 getResources().getBoolean(R.bool.pref_speak_roles_default))
             .put(
@@ -157,9 +154,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
             .put(
                 getString(R.string.pref_verbose_scroll_announcement_key),
                 getResources().getBoolean(R.bool.pref_verbose_scroll_announcement_default))
-            .put(
-                getString(R.string.pref_speak_system_window_titles_key),
-                getResources().getBoolean(R.bool.pref_speak_system_window_titles_default))
             .put(
                 getString(R.string.pref_allow_frequent_content_change_announcement_key),
                 getResources()
@@ -185,13 +179,10 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     listPreferenceKeyValueMap =
         ImmutableMap.<String, Integer>builder()
             .put(
-                getString(R.string.pref_keyboard_echo_on_screen_key),
-                R.string.pref_keyboard_echo_default)
-            .put(
-                getString(R.string.pref_keyboard_echo_physical_key),
-                R.string.pref_keyboard_echo_default)
-            .put(
                 getString(R.string.pref_capital_letters_key), R.string.pref_capital_letters_default)
+            .put(
+                getString(R.string.pref_phonetic_letters_mode_key),
+                R.string.pref_phonetic_letters_mode_default)
             .put(
                 getString(R.string.pref_punctuation_verbosity),
                 R.string.pref_punctuation_verbosity_default)
@@ -200,9 +191,7 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     externallyModifiedListPreferences =
         ImmutableMap.of(
             getString(R.string.pref_punctuation_verbosity),
-            getString(R.string.pref_punctuation_verbosity_default),
-            getString(R.string.pref_keyboard_echo_physical_key),
-            getString(R.string.pref_keyboard_echo_default));
+            getString(R.string.pref_punctuation_verbosity_default));
   }
 
   /**
@@ -376,9 +365,9 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
             }
           } else if (externallyModifiedListPreferences.containsKey(
               // The incoming key might be prefixed with the current preset verbosity level (ex:
-              // "pref_verbosity_preset_value_custom_pref_keyboard_echo_physical_key"). This
-              // prefix must be stripped since externallyModifiedListPreferences expects
-              // the bare preference key ("pref_keyboard_echo_physical_key" in this example).
+              // "pref_verbosity_preset_value_custom_pref_punctuation_verbosity"). This prefix must
+              // be stripped since externallyModifiedListPreferences expects the bare preference
+              // key ("pref_punctuation_verbosity" in this example).
               VerbosityPreferences.restoreToCustomVerbosityPrefKey(getResources(), key))) {
             ListPreference preference = (ListPreference) findPreference(key);
             String newValueString =

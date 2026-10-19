@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="shortcut_announce_status">Озвучить состояние устройства</string>
+  <string name="template_status_bars">Уровень сигнала: <xliff:g id="level" example="3">%1$d</xliff:g> из <xliff:g id="max_level" example="4">%2$d</xliff:g></string>
+  <string name="status_wifi_off">Wi-Fi отключён</string>
+  <string name="status_wifi_not_connected">Нет подключения к Wi-Fi</string>
+  <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+  <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+  <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+  <string name="status_mobile">Мобильная сеть</string>
+  <string name="status_mobile_no_service">Нет связи с мобильной сетью</string>
+  <string name="status_do_not_disturb">Не беспокоить</string>
+  <string name="status_ringer_vibrate">Вибровызов</string>
+  <string name="status_ringer_silent">Без звука</string>
+  <string name="status_airplane_mode">Режим полёта</string>
+  <string name="title_pref_status_readout">Озвучивание состояния устройства</string>
+  <string name="status_item_time">Время</string>
+  <string name="status_item_time_summary">Текущее время</string>
+  <string name="status_item_battery">Батарея</string>
+  <string name="status_item_battery_summary">Уровень заряда, зарядка и режим энергосбережения</string>
+  <string name="status_item_wifi">Wi-Fi</string>
+  <string name="status_item_wifi_summary">Название сети и уровень сигнала</string>
+  <string name="status_item_mobile">Мобильная сеть</string>
+  <string name="status_item_mobile_summary">Оператор, тип сети и уровень сигнала</string>
+  <string name="status_item_ringer">Режим звонка и «Не беспокоить»</string>
+  <string name="status_item_ringer_summary">Только если звук звонка отключён или включён режим «Не беспокоить»</string>
+  <string name="status_item_airplane_mode">Режим полёта</string>
+  <string name="status_item_airplane_mode_summary">Только при включённом режиме полёта</string>
+</resources>

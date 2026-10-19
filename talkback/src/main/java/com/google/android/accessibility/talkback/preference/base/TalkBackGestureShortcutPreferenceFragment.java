@@ -193,6 +193,7 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
       }
     }
     getCustomizationMap().forEach(this::runPreferencesCustomization);
+    collapseCategories();
   }
 
   private HashMap<List<Integer>, Consumer<Preference>> getCustomizationMap() {

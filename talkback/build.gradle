@@ -44,4 +44,7 @@ android {
     }
     // Robolectric tests read the module's strings.
     testOptions.unitTests.includeAndroidResources = true
+    buildFeatures {
+        aidl = true
+    }
 }

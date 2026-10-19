@@ -22,7 +22,10 @@ import android.accessibilityservice.AccessibilityService.GESTURE_DOUBLE_TAP
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.TouchInteractionController
 import android.accessibilityservice.TouchInteractionController.STATE_CLEAR
+import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_EXPLORING
 import android.accessibilityservice.TouchInteractionController.STATE_TOUCH_INTERACTING
+import android.graphics.Rect
+import android.graphics.Region
 import android.hardware.display.DisplayManager
 import android.os.Handler
 import android.os.Looper
@@ -33,7 +36,9 @@ import android.view.MotionEvent.ACTION_DOWN
 import android.view.MotionEvent.ACTION_MOVE
 import android.view.MotionEvent.ACTION_UP
 import android.view.ViewConfiguration
+import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics
+import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
 import org.junit.After
@@ -60,6 +65,14 @@ class TouchInteractionMonitorTest {
   class RecordingService : TalkBackService() {
     val gestures = mutableListOf<Int>()
     val threads = mutableSetOf<Thread>()
+    var tapsToType = 0
+    var displayWindows = listOf<AccessibilityWindowInfo>()
+
+    override fun onTapToType() {
+      tapsToType++
+    }
+
+    override fun getWindowsOnDisplay(displayId: Int): List<AccessibilityWindowInfo> = displayWindows
 
     override fun onGesture(accessibilityGestureEvent: AccessibilityGestureEvent): Boolean {
       threads.add(Thread.currentThread())
@@ -243,5 +256,122 @@ class TouchInteractionMonitorTest {
     runUntil(60)
     assertEquals(listOf(false), provisioned)
     assertEquals(listOf(mainThread), provisionThreads)
+  }
+
+  /** A window of [type] at [bounds], as Android describes it. */
+  private fun window(type: Int, bounds: Rect): AccessibilityWindowInfo {
+    val window = AccessibilityWindowInfo.obtain()
+    AccessibilityWindowInfo::class
+      .java
+      .getDeclaredMethod("setType", Int::class.javaPrimitiveType)
+      .invoke(window, type)
+    AccessibilityWindowInfo::class
+      .java
+      .getDeclaredMethod("setRegionInScreen", Region::class.java)
+      .invoke(window, Region(bounds))
+    return window
+  }
+
+  /** The keyboard covers the bottom of the screen, over the app. */
+  private fun showKeyboardAndTapToType() {
+    service.displayWindows =
+      listOf(
+        window(AccessibilityWindowInfo.TYPE_INPUT_METHOD, Rect(0, 1000, 1080, 1600)),
+        window(AccessibilityWindowInfo.TYPE_APPLICATION, Rect(0, 0, 1080, 2400)),
+      )
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_typing_confirmation_key), TAP_TO_TYPE.toString())
+      .commit()
+  }
+
+  /** A quick tap at ([x], [y]) [timeMs] after the start, explored as touch exploration starts. */
+  private fun tapAt(x: Float, y: Float, timeMs: Long) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, timeMs)
+    touchAt(ACTION_DOWN, x, y, timeMs)
+    touchAt(ACTION_UP, x, y, timeMs + 50)
+  }
+
+  @Test
+  fun quickTapsOnTheKeyboardTypeOneKeyEachRatherThanMakingADoubleTap() {
+    showKeyboardAndTapToType()
+    tapAt(160f, 1200f, 0)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 60)
+    stateChangeAt(STATE_CLEAR, 70)
+    tapAt(160f, 1200f, 120)
+    runUntil(600)
+
+    assertEquals(2, service.tapsToType)
+    assertEquals(listOf(mainThread, mainThread), reporter.requests)
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
+  @Test
+  fun quickTapsAboveTheKeyboardStillMakeADoubleTap() {
+    showKeyboardAndTapToType()
+    tapAt(160f, 200f, 0)
+    tapAt(160f, 200f, 120)
+    runUntil(600)
+
+    assertEquals(0, service.tapsToType)
+    assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun dragOnTheKeyboardExploresRatherThanTyping() {
+    showKeyboardAndTapToType()
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 1200f, 0)
+    touchAt(ACTION_MOVE, 180f, 1200f, 100)
+    touchAt(ACTION_MOVE, 200f, 1200f, 200)
+    runUntil(300)
+
+    assertEquals(0, service.tapsToType)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
+  fun fingerHeldOnTheKeyboardWaitsForTheTypingFocusDelay() {
+    showKeyboardAndTapToType()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_touch_focus_time_out_key), "200")
+      .putString(service.getString(R.string.pref_typing_focus_time_out_key), "400")
+      .commit()
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 1200f, 0)
+
+    runUntil(300)
+    assertEquals(listOf<Thread>(), reporter.requests)
+    runUntil(400)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
+  fun fingerHeldAboveTheKeyboardWaitsForTheFocusDelay() {
+    showKeyboardAndTapToType()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_touch_focus_time_out_key), "200")
+      .putString(service.getString(R.string.pref_typing_focus_time_out_key), "400")
+      .commit()
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+
+    runUntil(200)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
+  fun quickTapOnTheKeyboardWithAnotherTypingMethodIsNotTyped() {
+    showKeyboardAndTapToType()
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_typing_confirmation_key), "2")
+      .commit()
+    tapAt(160f, 1200f, 0)
+    runUntil(600)
+
+    assertEquals(0, service.tapsToType)
   }
 }

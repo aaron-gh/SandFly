@@ -147,6 +147,18 @@ public class AccessibilityNodeInfoUtils {
    */
   private static final String CHROME_ROLE_LINK = "link";
 
+  /** The roles Chrome gives the landmarks of a web page. */
+  private static final ImmutableSet<String> CHROME_LANDMARK_ROLES =
+      ImmutableSet.of(
+          "banner",
+          "complementary",
+          "contentInfo",
+          "form",
+          "main",
+          "navigation",
+          "region",
+          "search");
+
   /**
    * A wrapper over AccessibilityNodeInfoCompat constructor, so that we can add any desired error
    * checking and memory management.
@@ -1231,6 +1243,12 @@ public class AccessibilityNodeInfoUtils {
   /** Returns whether {@code node} has the chrome role "link". */
   public static boolean isChromeRoleLink(@Nullable AccessibilityNodeInfoCompat node) {
     return node != null && TextUtils.equals(getChromeRole(node), CHROME_ROLE_LINK);
+  }
+
+  /** Returns whether {@code node} is a landmark of a web page, such as its navigation or main. */
+  public static boolean isWebLandmark(@Nullable AccessibilityNodeInfoCompat node) {
+    CharSequence role = getChromeRole(node);
+    return role != null && CHROME_LANDMARK_ROLES.contains(role.toString());
   }
 
   /** Returns the role Chrome gives a web element, such as "button" or "listItem", or empty. */
@@ -2506,6 +2524,21 @@ public class AccessibilityNodeInfoUtils {
     boolean isNonEditableSelectableText =
         AccessibilityNodeInfoUtils.isNonEditableSelectableText(node);
     return isEditable || isNonEditableSelectableText;
+  }
+
+  /**
+   * Checks if the app keeps a selection in {@code node} that can be read from it: editable text,
+   * or selectable text that is not web content. Chrome marks text on web pages selectable, but the
+   * item does not show a selection made by moving through it, so Backtalk keeps that selection.
+   */
+  public static boolean keepsAppSelection(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT || node.isEditable()) {
+      return true;
+    }
+    return isNonEditableSelectableText(node) && !WebInterfaceUtils.isWebContainer(node);
   }
 
   /**

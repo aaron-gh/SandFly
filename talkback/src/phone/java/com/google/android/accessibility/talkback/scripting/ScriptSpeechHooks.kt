@@ -20,7 +20,10 @@ import android.os.Handler
 import android.os.SystemClock
 import org.json.JSONObject
 
-class ScriptSpeechHooks(private val handler: Handler) {
+class ScriptSpeechHooks(
+  private val handler: Handler,
+  private val ready: () -> Boolean = { true },
+) {
   @Volatile private var chains: Map<String, List<ScriptRuntime>> = emptyMap()
 
   fun update(runtimes: List<ScriptRuntime>) {
@@ -37,7 +40,7 @@ class ScriptSpeechHooks(private val handler: Handler) {
     chains = emptyMap()
   }
 
-  fun hasListeners(hook: String): Boolean = chains[hook].orEmpty().isNotEmpty()
+  fun hasListeners(hook: String): Boolean = ready() && chains[hook].orEmpty().isNotEmpty()
 
   fun rewrite(
     hook: String,
@@ -45,42 +48,44 @@ class ScriptSpeechHooks(private val handler: Handler) {
     accepts: (ScriptRuntime) -> Boolean = { true },
     arg: (ScriptRuntime) -> Any?,
   ): String? {
+    if (!ready()) return null
     val chain = chains[hook].orEmpty().filter(accepts).ifEmpty { return null }
     if (ScriptThread.heldUpFor(WAIT_MS)) return null
-    return handler.await(WAIT_MS, hook) { runChain(chain, hook, input, arg) }
+    val deadline = SystemClock.uptimeMillis() + WAIT_MS
+    // Speech cannot wait behind a backlog of content events and timers. It still cannot
+    // preempt JavaScript already running, and the main-thread wait remains bounded.
+    return handler.await(WAIT_MS, hook, atFrontOfQueue = true) {
+      if (ready()) runChain(chain, hook, input, deadline, arg) else null
+    }
   }
 
   private fun runChain(
     chain: List<ScriptRuntime>,
     hook: String,
     input: String,
+    deadline: Long,
     arg: (ScriptRuntime) -> Any?,
   ): String? {
     val handlerName = ScriptRuntime.handlerName(hook)
-    val text =
-      chain.filter { it.isLoaded }.fold(input) { text, runtime ->
-        val start = SystemClock.uptimeMillis()
-        val data = jsonObject("arg" to arg(runtime), "text" to text)
-        val result = runtime.dispatch(hook, data, LIMIT_MS)
-        val elapsed = SystemClock.uptimeMillis() - start
-        if (elapsed > WAIT_MS) {
-          runtime.warnOnce(
-            "slow $hook",
-            "$handlerName took $elapsed ms, so Backtalk may have spoken without it",
-          )
-        }
-        when {
-          result == null -> text
-          !runtime.allowed(ScriptPermission.SPEECH, "Changing speech from $handlerName") -> text
-          else -> JSONObject(result).optString("text", text)
-        }
+    return rewriteSpeechChain(input, chain.filter { it.isLoaded }, deadline) { runtime, text, budget ->
+      val data = jsonObject("arg" to arg(runtime), "text" to text)
+      // Building a node snapshot also spends the budget; do not start JS after it expires.
+      val remaining = minOf(budget, deadline - SystemClock.uptimeMillis())
+      if (remaining <= 0) return@rewriteSpeechChain null
+      val result = runtime.dispatch(hook, data, remaining)
+      if (SystemClock.uptimeMillis() >= deadline) {
+        runtime.warnOnce("slow $hook", "$handlerName exceeded the speech-hook deadline")
       }
-    return text.takeIf { it != input }
+      when {
+        result == null -> null
+        !runtime.allowed(ScriptPermission.SPEECH, "Changing speech from $handlerName") -> null
+        else -> JSONObject(result).optString("text", text)
+      }
+    }
   }
 
   private companion object {
     const val WAIT_MS = 30L
-    const val LIMIT_MS = 250L
     val PERMISSIONS: Map<String, ScriptPermission?> =
       mapOf(
         // The focus hook is given the item and what Backtalk will say for it, in every app.

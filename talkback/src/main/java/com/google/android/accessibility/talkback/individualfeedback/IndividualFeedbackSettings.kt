@@ -100,6 +100,19 @@ object IndividualFeedbackSettings {
       ),
     )
 
+  /** The clicks of an edge gesture's stages, and the taps of sliding back. */
+  val EDGE_GESTURE_VIBRATIONS =
+    FeedbackItem(
+      "edge_gesture_pattern",
+      R.string.individual_vibration_edge_gestures,
+      listOf(
+        "edge_swipe_stage_1_pattern",
+        "edge_swipe_stage_2_pattern",
+        "edge_swipe_back_pattern",
+        "edge_swipe_cancel_pattern",
+      ),
+    )
+
   /**
    * One switch for each sound's vibration, in the same order and with the same titles as the
    * sounds, one for announcements and one for each of the braille keyboard's vibrations, which
@@ -136,6 +149,7 @@ object IndividualFeedbackSettings {
         (1..8).map { "radial_menu_${it}_pattern" },
       ),
       FeedbackItem("notification_pattern", R.string.individual_vibration_notification),
+      EDGE_GESTURE_VIBRATIONS,
       *BRAILLE_KEYBOARD_VIBRATIONS.toTypedArray(),
       // Control vibrations come only from sound themes.
       FeedbackItem("control_button_pattern", R.string.individual_sound_control_button),

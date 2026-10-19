@@ -182,6 +182,10 @@ import androidx.preference.PreferenceFragmentCompat;
     Preference advanceSettingsPreference = findPreference(getString(R.string.pref_key_bd_advanced));
     advanceSettingsPreference.setIntent(new Intent(getContext(), AdvancedSettingsActivity.class));
 
+    Preference externalDisplaysPreference =
+        findPreference(getString(R.string.pref_key_bd_external_displays));
+    externalDisplaysPreference.setIntent(new Intent(getContext(), ExternalDisplaysActivity.class));
+
     connectioneer = Connectioneer.getInstance(getContext());
 
     translatorManager = new TranslatorManager(getContext());

@@ -233,6 +233,12 @@ public class FailoverTextToSpeech {
 
   public static final String PREF_TTS_ENGINE_KEY = "pref_tts_engine";
   public static final String PREF_USE_ACCESSIBILITY_STREAM_KEY = "pref_use_accessibility_stream";
+
+  /**
+   * Set while Backtalk routes its audio to a chosen device, which only accessibility audio follows.
+   * Not a user setting.
+   */
+  public static final String PREF_ROUTE_FORCED_KEY = "pref_audio_route_forced";
   private static final boolean USE_ACCESSIBILITY_STREAM_DEFAULT = true;
   public static final String PREF_SPEAK_IN_PHRASES_KEY = "pref_speak_in_phrases";
   private static final boolean SPEAK_IN_PHRASES_DEFAULT = false;
@@ -317,6 +323,19 @@ public class FailoverTextToSpeech {
   /** How long an engine that says it is speaking, perhaps for another app, may say nothing. */
   private static final long ENGINE_BUSY_HANG_MS = 20_000;
 
+  /**
+   * How long speech plays the usual way after the audio mode changes, such as when a call starts or
+   * ends. Engines can say nothing about the first speech after the mode changes for longer than
+   * {@link #ENGINE_HANG_MS}.
+   */
+  private static final long AUDIO_MODE_SETTLE_MS = 10_000;
+
+  /** The audio mode last seen. */
+  private volatile int lastAudioMode;
+
+  /** When the audio mode was last seen to change, or 0 if it hasn't changed. */
+  private volatile long audioModeChangedAt;
+
   /** When speech went to an engine with nothing else to do, or 0 once the engine responded. */
   private volatile long engineQuietSince;
 
@@ -352,7 +371,8 @@ public class FailoverTextToSpeech {
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
-        } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)) {
+        } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
+            || PREF_ROUTE_FORCED_KEY.equals(key)) {
           applyAudioAttributes();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
           speakInPhrases = sharedPrefs.getBoolean(key, SPEAK_IN_PHRASES_DEFAULT);
@@ -467,6 +487,7 @@ public class FailoverTextToSpeech {
     // connect to system services
     initWakeLock(context);
     audioManager = (AudioManager) this.context.getSystemService(Context.AUDIO_SERVICE);
+    lastAudioMode = audioManager.getMode();
     telephonyManager = (TelephonyManager) this.context.getSystemService(Context.TELEPHONY_SERVICE);
   }
 
@@ -530,14 +551,13 @@ public class FailoverTextToSpeech {
   }
 
   public static boolean shouldUseAccessibilityStream(Context context) {
-    String audioTarget =
-        SharedPreferencesUtils.getSharedPreferences(context)
-            .getString("pref_audio_output_device", "default");
-    if (!TextUtils.isEmpty(audioTarget) && !"default".equals(audioTarget)) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    // Only accessibility audio follows a device that Backtalk routes to. While it routes nowhere,
+    // as with the phone speaker chosen and nothing else connected, the user's choice stands.
+    if (prefs.getBoolean(PREF_ROUTE_FORCED_KEY, false)) {
       return true;
     }
-    return SharedPreferencesUtils.getSharedPreferences(context)
-        .getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT);
+    return prefs.getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT);
   }
 
   public static int getSpeechAudioStream(Context context) {
@@ -1360,11 +1380,11 @@ public class FailoverTextToSpeech {
    */
   private int ttsSpeak(
       CharSequence text, int queueMode, Bundle bundle, @Nullable String utteranceId) {
-    watchForEngineHang(queueMode, utteranceId);
     @Nullable LowLatencyAudio player = lowLatencyPlayer();
     if (player == null || utteranceId == null || TextUtils.isEmpty(text)) {
       return tts.speak(text, queueMode, bundle, utteranceId);
     }
+    watchForEngineHang(queueMode, utteranceId);
     if (queueMode != QUEUE_ADD) {
       // The engine flushes its own queue for this queue mode. Every player, since the player for
       // speech changes with the speech volume setting.
@@ -1393,10 +1413,37 @@ public class FailoverTextToSpeech {
     return result;
   }
 
+  /** Whether a phone or voice call has the audio mode. */
+  private boolean inCall() {
+    int mode = audioManager.getMode();
+    return mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION;
+  }
+
+  /**
+   * Notes the time if the audio mode changed since it was last seen. A change that happened while
+   * Backtalk wasn't looking counts from now.
+   */
+  private void checkAudioMode() {
+    int mode = audioManager.getMode();
+    if (mode != lastAudioMode) {
+      lastAudioMode = mode;
+      audioModeChangedAt = SystemClock.uptimeMillis();
+    }
+  }
+
+  /** Whether the audio mode changed less than {@link #AUDIO_MODE_SETTLE_MS} ago. */
+  private boolean audioModeSettling() {
+    checkAudioMode();
+    long changedAt = audioModeChangedAt;
+    return changedAt != 0 && SystemClock.uptimeMillis() - changedAt < AUDIO_MODE_SETTLE_MS;
+  }
+
   /** The player for speech, or null if speech should play the usual way. */
   private @Nullable LowLatencyAudio lowLatencyPlayer() {
     if (!lowLatencyAudio
         || LowLatencyAudio.isMicrophoneInUse()
+        || inCall()
+        || audioModeSettling()
         || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R
         || (ttsEngine != null && enginesWithoutFileAudio.contains(ttsEngine))) {
       return null;
@@ -1740,6 +1787,12 @@ public class FailoverTextToSpeech {
     }
     if (quiet < ENGINE_BUSY_HANG_MS && isEngineSpeaking()) {
       // Another app's speech with the same engine comes first.
+      mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
+      return;
+    }
+    checkAudioMode();
+    if (quiet < ENGINE_BUSY_HANG_MS && audioModeChangedAt >= since) {
+      // The audio mode changed while the engine had the speech, such as when a call started.
       mHandler.postDelayed(checkEngineHang, ENGINE_HANG_MS);
       return;
     }

@@ -44,6 +44,14 @@ class DirectTouchSettingsTest {
   }
 
   @Test
+  fun appIsSeenOnceFirstSightRecordsIt() {
+    assertFalse(DirectTouchSettings.isSeen(prefs, "a.b"))
+    DirectTouchSettings.onFirstSight(prefs, "a.b", declaresCapability = false)
+    assertTrue(DirectTouchSettings.isSeen(prefs, "a.b"))
+    assertFalse(DirectTouchSettings.isSeen(prefs, "c.d"))
+  }
+
+  @Test
   fun firstSightIgnoresIncapableApp() {
     DirectTouchSettings.onFirstSight(prefs, "a.b", declaresCapability = false)
     assertFalse(DirectTouchSettings.isAppEnabled(prefs, "a.b"))

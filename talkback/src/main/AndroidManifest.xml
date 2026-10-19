@@ -88,17 +88,46 @@
 
     <!-- Guards the settings that Backtalk shares when it moves from the app ID
          com.android.talkback to fyi.quin.backtalk. Both apps declare and hold it, and are signed
-         with the same key. It is named after the app ID, because Android refuses to install an app
-         that declares a permission another app, signed with a different key, already declares. -->
+         with the same key. Named after the app ID, like the permissions below, so that a build
+         under another app ID installs beside Backtalk. -->
     <permission
         android:name="${applicationId}.permission.MIGRATE"
         android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.MIGRATE" />
 
+    <!-- Named after the app ID, because Android refuses to install an app that declares a
+         permission another app, signed with a different key, already declares. Under
+         fyi.quin.backtalk the name is fyi.quin.backtalk.permission.SPEAK. -->
+    <permission
+        android:name="${applicationId}.permission.SPEAK"
+        android:label="@string/permission_speak_label"
+        android:description="@string/permission_speak_description"
+        android:protectionLevel="normal" />
+
+    <!-- Held by an app that can provide a braille display, so that it can ask to be one. Backtalk
+         uses it only once the user allows it in Backtalk. See docs/braille-display-api.md. Named
+         after the app ID, as SPEAK is. -->
+    <permission
+        android:name="${applicationId}.permission.BRAILLE_DISPLAY"
+        android:label="@string/permission_braille_display_label"
+        android:description="@string/permission_braille_display_description"
+        android:protectionLevel="normal" />
+    <!-- Required by a braille display app's service, so that only Backtalk can bind it. -->
+    <permission
+        android:name="${applicationId}.permission.BIND_BRAILLE_DISPLAY"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.BIND_BRAILLE_DISPLAY" />
+
     <!-- Granted by the user with adb, to move the accessibility shortcut and the braille keyboard
          from the old app ID and turn the old screen reader off. -->
     <uses-permission
         android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Granted by the user with adb, to read the pointers Android holds down when touch
+         exploration is stuck, so that Backtalk can lift them. -->
+    <uses-permission
+        android:name="android.permission.DUMP"
         tools:ignore="ProtectedPermissions" />
 
     <!-- Used to offer to uninstall Backtalk under its old app ID. -->
@@ -312,6 +341,41 @@
             android:targetActivity="com.google.android.accessibility.talkback.soundthemes.SoundThemeInstallActivity"
             android:exported="false" />
 
+        <!-- Backtalk's own list of notifications, opened instead of the system's shade. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/notification_list_title"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
+            android:theme="@style/NotificationListTheme" />
+
+        <!-- Asks for the text of a reply to a notification, in a process of its own so that the
+             keyboard and Backtalk's main thread don't wait for each other. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/notification_list_title"
+            android:process=":reply"
+            android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
+            android:theme="@style/NotificationReplyTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <!-- Receives notifications for that list while the user has given notification access. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListService"
+            android:exported="true"
+            android:label="@string/talkback_title"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
         <!-- Custom Label Manager - Summary Activity -->
         <activity
             android:name="com.google.android.accessibility.talkback.labeling.LabelManagerSummaryActivity"
@@ -411,6 +475,28 @@
                 <action android:name="fyi.quin.backtalk.action.HAND_OVER" />
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlReceiver"
+            android:exported="true"
+            android:permission="${applicationId}.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEAK" />
+                <action android:name="fyi.quin.backtalk.action.STOP_SPEECH" />
+            </intent-filter>
+        </receiver>
+        <!-- Saves the user's answer from the notification that asks whether an app may speak. -->
+        <receiver
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlApproval$AnswerReceiver"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlService"
+            android:exported="true"
+            android:permission="${applicationId}.permission.SPEAK">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
+            </intent-filter>
+        </service>
 
         <receiver
             android:name="com.google.android.libraries.appdoctor.AppDoctorReceiver"

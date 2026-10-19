@@ -36,6 +36,8 @@ interface ScriptHost {
 
   fun isHidden(node: AccessibilityNodeInfoCompat): Boolean
 
+  fun isSilenced(node: AccessibilityNodeInfoCompat): Boolean
+
   fun currentActivity(): String?
 
   fun currentWindowTitle(): String?
@@ -76,6 +78,9 @@ enum class RuleAspect {
   HEADING,
   GROUP,
   ORDER,
+  ACTIVATE,
+  SILENCE,
+  LIFT,
 }
 
 class NodeRule(
@@ -90,6 +95,14 @@ class NodeRule(
   val group: Boolean,
   val order: NodeOverrides.Order?,
   val sources: List<String>,
+  /** The item inside this one that a double-tap presses, if a rule chose one. */
+  val activate: ((AccessibilityNodeInfoCompat) -> AccessibilityNodeInfoCompat?)? = null,
+  val silence: Boolean = false,
+  val silenceInside: Boolean = false,
+  /** Whether lifting the finger from the item activates it. */
+  val liftToActivate: Boolean = false,
+  /** How many milliseconds a finger held on the item takes to long-press it, if a rule says. */
+  val longPressAfter: Int? = null,
 ) {
   val hidesDescendants: Boolean
     get() = hideInside || group
@@ -142,6 +155,27 @@ object Scripts {
     }
   }
 
+  /**
+   * Whether a script rule silences {@code node}, so that its changes, selections and announcements
+   * are not spoken.
+   */
+  @JvmStatic
+  fun isSilenced(node: AccessibilityNodeInfoCompat?): Boolean =
+    node != null && host?.isSilenced(node) == true
+
+  /** Whether a script rule has lifting the finger from {@code node} activate it. */
+  @JvmStatic
+  fun liftsToActivate(node: AccessibilityNodeInfoCompat?): Boolean =
+    node != null && rule(node, RuleAspect.LIFT)?.liftToActivate == true
+
+  /**
+   * How many milliseconds a finger held on {@code node} takes to long-press it, or 0 if no script
+   * rule has the node lift to activate and long-press.
+   */
+  @JvmStatic
+  fun longPressAfterMs(node: AccessibilityNodeInfoCompat?): Int =
+    node?.let { rule(it, RuleAspect.LIFT) }?.takeIf { it.liftToActivate }?.longPressAfter ?: 0
+
   @JvmStatic fun currentActivity(): String? = host?.currentActivity()
 
   @JvmStatic fun currentWindowTitle(): String? = host?.currentWindowTitle()
@@ -164,8 +198,14 @@ object Scripts {
   fun actionTarget(
     node: AccessibilityNodeInfoCompat,
     longClick: Boolean,
-  ): AccessibilityNodeInfoCompat =
-    if (group(node) != null) ScriptGroups.actionTarget(node, longClick) else node
+  ): AccessibilityNodeInfoCompat {
+    if (!longClick) {
+      rule(node, RuleAspect.ACTIVATE)?.activate?.invoke(node)?.let {
+        return it
+      }
+    }
+    return if (group(node) != null) ScriptGroups.actionTarget(node, longClick) else node
+  }
 
   @JvmStatic
   fun onGesture(gestureId: Int, fallback: Runnable): Boolean =
