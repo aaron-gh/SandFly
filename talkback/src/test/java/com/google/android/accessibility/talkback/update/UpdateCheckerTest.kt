@@ -26,16 +26,14 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class UpdateCheckerTest {
-  private fun release(build: Int, vararg commits: String): String =
+  private fun release(build: Int, vararg commits: String, apk: String = "backtalk.apk"): String =
     JSONObject()
       .put("body", (listOf("build: $build", "") + commits.map { "- $it" }).joinToString("\n"))
       .put(
         "assets",
         JSONArray()
           .put(
-            JSONObject()
-              .put("name", "backtalk.apk")
-              .put("browser_download_url", "https://example.com/backtalk.apk")
+            JSONObject().put("name", apk).put("browser_download_url", "https://example.com/$apk")
           ),
       )
       .toString()
@@ -56,16 +54,17 @@ class UpdateCheckerTest {
 
   @Test
   fun moveIsOfferedWhateverTheBuild() {
-    val move = UpdateChecker.parseMove(release(5, "bbbbbbb New ID", "aaaaaaa Old"), "aaaaaaa0")
+    val json = release(5, "bbbbbbb SandFly", "aaaaaaa Old", apk = "sandfly.apk")
+    val move = UpdateChecker.parseMove(json, "aaaaaaa0")
     assertTrue(move!!.move)
     assertEquals(5, move.build)
-    assertEquals(listOf("New ID"), move.changes)
+    assertEquals("https://example.com/sandfly.apk", move.downloadUrl)
+    assertEquals(listOf("SandFly"), move.changes)
   }
 
-  @Test
-  fun channels() {
-    assertEquals("latest", UpdateChecker.OLD_CHANNEL)
-    assertEquals("dev", UpdateChecker.NEW_CHANNEL)
+  @Test(expected = JSONException::class)
+  fun moveNeverTakesABacktalkBuild() {
+    UpdateChecker.parseMove(release(5), "aaaaaaa0")
   }
 
   private fun releaseWithBothBuilds(build: Int): String {

@@ -86,15 +86,6 @@
     <!-- Granted by the user with adb, for the speakerphone setting. -->
     <uses-permission android:name="android.permission.MANAGE_ONGOING_CALLS" />
 
-    <!-- Guards the settings that Backtalk shares when it moves from the app ID
-         com.android.talkback to fyi.quin.backtalk. Both apps declare and hold it, and are signed
-         with the same key. Named after the app ID, like the permissions below, so that a build
-         under another app ID installs beside Backtalk. -->
-    <permission
-        android:name="${applicationId}.permission.MIGRATE"
-        android:protectionLevel="signature" />
-    <uses-permission android:name="${applicationId}.permission.MIGRATE" />
-
     <!-- Named after the app ID, because Android refuses to install an app that declares a
          permission another app, signed with a different key, already declares. Under
          fyi.quin.backtalk the name is fyi.quin.backtalk.permission.SPEAK. -->
@@ -458,21 +449,20 @@
             android:name="com.google.android.accessibility.talkback.update.UpdateReceiver"
             android:exported="false" />
 
-        <!-- Shares settings and custom labels, read-only, with Backtalk under its new app ID. -->
+        <!-- Shares Backtalk Aaron's settings and custom labels, read-only, with SandFly. SandFly is
+             signed with another key, so the provider checks the caller's certificate itself. -->
         <provider
             android:name="com.google.android.accessibility.talkback.migration.SettingsExportProvider"
             android:authorities="${applicationId}.migration"
             android:exported="true"
-            android:permission="${applicationId}.permission.MIGRATE"
             android:directBootAware="true" />
 
-        <!-- Turns this screen reader off when Backtalk under its new app ID is on. -->
+        <!-- Turns Backtalk Aaron off when SandFly is on. The receiver checks that SandFly is on. -->
         <receiver
             android:name="com.google.android.accessibility.talkback.migration.HandOverReceiver"
-            android:exported="true"
-            android:permission="${applicationId}.permission.MIGRATE">
+            android:exported="true">
             <intent-filter>
-                <action android:name="fyi.quin.backtalk.action.HAND_OVER" />
+                <action android:name="io.github.aaron_gh.sandfly.action.HAND_OVER" />
             </intent-filter>
         </receiver>
 

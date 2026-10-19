@@ -24,35 +24,44 @@ class AppIdMoveTest {
   private val old = AppIdMove.OLD_PACKAGE
   private val new = AppIdMove.NEW_PACKAGE
 
+  private fun kind(apk: String?, own: String, same: Boolean = true, sandFly: Boolean = true) =
+    AppIdMove.installKind(apk, own, sameSigner = same, newSigner = sandFly)
+
   @Test
   fun samePackageUpdates() {
-    assertEquals(InstallKind.UPDATE, AppIdMove.installKind(old, old, sameSigner = true))
-    assertEquals(InstallKind.UPDATE, AppIdMove.installKind(new, new, sameSigner = true))
+    assertEquals(InstallKind.UPDATE, kind(old, old))
+    assertEquals(InstallKind.UPDATE, kind(new, new))
   }
 
   @Test
-  fun newAppIdMoves() {
-    assertEquals(InstallKind.MOVE, AppIdMove.installKind(new, old, sameSigner = true))
+  fun samePackageWithAnotherKeyIsRefused() {
+    assertEquals(InstallKind.REFUSE, kind(old, old, same = false))
   }
 
   @Test
-  fun newAppIdWithAnotherKeyIsRefused() {
-    assertEquals(InstallKind.REFUSE, AppIdMove.installKind(new, old, sameSigner = false))
+  fun sandFlyMoves() {
+    assertEquals(InstallKind.MOVE, kind(new, old, same = false))
+  }
+
+  @Test
+  fun sandFlyWithoutItsKeyIsRefused() {
+    assertEquals(InstallKind.REFUSE, kind(new, old, sandFly = false))
   }
 
   @Test
   fun otherPackagesAreRefused() {
-    assertEquals(InstallKind.REFUSE, AppIdMove.installKind("com.example.app", old, true))
-    assertEquals(InstallKind.REFUSE, AppIdMove.installKind(old, new, true))
-    assertEquals(InstallKind.REFUSE, AppIdMove.installKind(null, old, true))
-    assertEquals(InstallKind.REFUSE, AppIdMove.installKind("", old, true))
+    assertEquals(InstallKind.REFUSE, kind("com.example.app", old))
+    assertEquals(InstallKind.REFUSE, kind(old, new))
+    assertEquals(InstallKind.REFUSE, kind("com.example.app", "com.example.other"))
+    assertEquals(InstallKind.REFUSE, kind(null, old))
+    assertEquals(InstallKind.REFUSE, kind("", old))
   }
 
   @Test
   fun authorityAndServiceFollowThePackage() {
-    assertEquals("com.android.talkback.migration", AppIdMove.authority(old))
+    assertEquals("io.github.aaron_gh.backtalk.migration", AppIdMove.authority(old))
     assertEquals(
-      "fyi.quin.backtalk/com.google.android.marvin.talkback.TalkBackService",
+      "io.github.aaron_gh.sandfly/com.google.android.marvin.talkback.TalkBackService",
       AppIdMove.serviceName(new),
     )
   }

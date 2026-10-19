@@ -34,7 +34,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Takes over from Backtalk under its old app ID when this screen reader turns on.
+ * Takes over from Backtalk Aaron when SandFly turns on.
  *
  * The old app is told to turn itself off. If the user granted WRITE_SECURE_SETTINGS with adb, the
  * old screen reader also leaves the enabled services, and the accessibility shortcuts and the

@@ -16,27 +16,35 @@
 
 package com.google.android.accessibility.talkback.migration
 
+import android.content.pm.PackageManager
+import android.content.pm.Signature
+import android.os.Build
+import java.security.MessageDigest
+
 /**
- * The move from the app ID com.android.talkback to fyi.quin.backtalk.
+ * The move from Backtalk Aaron, app ID io.github.aaron_gh.backtalk, to SandFly, app ID
+ * io.github.aaron_gh.sandfly.
  *
- * Some phones ship TalkBack as a system app named com.android.talkback, so Backtalk could not
- * install there. The old app installs the new one, shares its settings with it through
- * [SettingsExportProvider], and turns itself off when the new one tells it through
- * [HandOverReceiver]. Both apps are signed with the same key, so a signature permission guards
- * both.
+ * The old app installs the new one, shares its settings with it through [SettingsExportProvider],
+ * and turns itself off when the new one tells it through [HandOverReceiver]. The two apps are
+ * signed with different keys, so each checks that the other is signed with the certificate named
+ * here.
  */
 object AppIdMove {
-  /** The app ID that Backtalk used first. */
-  const val OLD_PACKAGE = "com.android.talkback"
+  /** The app ID of Backtalk Aaron. */
+  const val OLD_PACKAGE = "io.github.aaron_gh.backtalk"
 
-  /** The app ID that Backtalk uses now. */
-  const val NEW_PACKAGE = "fyi.quin.backtalk"
+  /** The app ID of SandFly. */
+  const val NEW_PACKAGE = "io.github.aaron_gh.sandfly"
 
-  /** Guards the settings export and the hand-over. Both apps declare and hold it. */
-  const val PERMISSION = "fyi.quin.backtalk.permission.MIGRATE"
+  /** SHA-256 of the certificate that Backtalk Aaron is signed with. */
+  const val OLD_CERT_SHA256 = "dab34c182d6f17df819cebf20854dcf38189b3414d363465dd6ce0fefc43616c"
+
+  /** SHA-256 of the certificate that SandFly is signed with. */
+  const val NEW_CERT_SHA256 = "bd5fd3c56cabfb69fdbc851aae7ba1e955c9e971caab1a8115c61243d46f576a"
 
   /** Sent by the new app to the old one when the new screen reader is on. */
-  const val ACTION_HAND_OVER = "fyi.quin.backtalk.action.HAND_OVER"
+  const val ACTION_HAND_OVER = "io.github.aaron_gh.sandfly.action.HAND_OVER"
 
   /** The class of the screen reader service, the same in both apps. */
   const val SERVICE_CLASS = "com.google.android.marvin.talkback.TalkBackService"
@@ -60,7 +68,7 @@ object AppIdMove {
   enum class InstallKind {
     /** The APK is a newer build of this app. */
     UPDATE,
-    /** The APK is Backtalk under the new app ID, which installs next to this app. */
+    /** The APK is SandFly, which installs next to this app. */
     MOVE,
     /** The APK is something else. */
     REFUSE,
@@ -68,13 +76,47 @@ object AppIdMove {
 
   /**
    * Decides how to install an APK whose app ID is [apkPackage] while this app is [ownPackage].
-   * [sameSigner] is false only when the APK is known to be signed with a different key.
+   * [sameSigner] is false only when the APK is known to be signed with a different key than this
+   * app, and [newSigner] only when it is known not to be signed with SandFly's key.
    */
-  fun installKind(apkPackage: String?, ownPackage: String, sameSigner: Boolean): InstallKind =
+  fun installKind(
+    apkPackage: String?,
+    ownPackage: String,
+    sameSigner: Boolean,
+    newSigner: Boolean,
+  ): InstallKind =
     when {
       apkPackage.isNullOrEmpty() -> InstallKind.REFUSE
-      apkPackage == ownPackage -> InstallKind.UPDATE
-      apkPackage == NEW_PACKAGE && sameSigner -> InstallKind.MOVE
+      apkPackage == ownPackage && sameSigner -> InstallKind.UPDATE
+      ownPackage == OLD_PACKAGE && apkPackage == NEW_PACKAGE && newSigner -> InstallKind.MOVE
       else -> InstallKind.REFUSE
     }
+
+  /** Returns true if the installed app [packageName] is signed with the certificate [sha256]. */
+  fun isSignedBy(packageManager: PackageManager, packageName: String, sha256: String): Boolean =
+    try {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        packageManager.hasSigningCertificate(
+          packageName,
+          hexToBytes(sha256),
+          PackageManager.CERT_INPUT_SHA256,
+        )
+      } else {
+        @Suppress("DEPRECATION")
+        val signatures =
+          packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES).signatures
+        !signatures.isNullOrEmpty() && signatures.all { sha256Of(it) == sha256 }
+      }
+    } catch (e: PackageManager.NameNotFoundException) {
+      false
+    }
+
+  /** Returns the lowercase hex SHA-256 of a certificate. */
+  fun sha256Of(signature: Signature): String =
+    MessageDigest.getInstance("SHA-256").digest(signature.toByteArray()).joinToString("") {
+      "%02x".format(it)
+    }
+
+  private fun hexToBytes(hex: String): ByteArray =
+    ByteArray(hex.length / 2) { hex.substring(it * 2, it * 2 + 2).toInt(16).toByte() }
 }

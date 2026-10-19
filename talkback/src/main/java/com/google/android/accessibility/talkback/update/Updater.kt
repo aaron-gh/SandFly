@@ -58,8 +58,8 @@ import java.util.concurrent.TimeUnit
  * Automatic checks run when the service starts, and then about once an hour while it runs, since
  * this fork's builds are tried as soon as they are pushed.
  *
- * While this app has the old app ID, a build under the app ID fyi.quin.backtalk installs next to
- * it. The accessibility settings for the new app then open, so the user can turn it on.
+ * Backtalk Aaron installs SandFly next to itself. The accessibility settings for SandFly then
+ * open, so the user can turn it on.
  */
 object Updater {
   private const val TAG = "Updater"
@@ -261,7 +261,7 @@ object Updater {
 
   /**
    * Downloads the APK and opens the system install prompt. A build of this app updates it, and
-   * Backtalk under its new app ID installs as a new app. Anything else is refused.
+   * SandFly installs as a new app. Anything else is refused.
    */
   @JvmStatic
   fun install(context: Context, downloadUrl: String) {
@@ -325,12 +325,18 @@ object Updater {
   private fun installApk(context: Context, apk: File) {
     val info = readArchive(context, apk)
     val apkPackage = info?.packageName
-    val kind = AppIdMove.installKind(apkPackage, context.packageName, isSameSigner(context, info))
+    val kind =
+      AppIdMove.installKind(
+        apkPackage,
+        context.packageName,
+        isSameSigner(context, info),
+        isSignedBySandFly(info),
+      )
     when (kind) {
       AppIdMove.InstallKind.REFUSE ->
         throw WrongPackageException("The APK is $apkPackage, and this app is ${context.packageName}")
       AppIdMove.InstallKind.MOVE -> {
-        LogUtils.i(TAG, "Installing Backtalk under its new app ID %s", apkPackage)
+        LogUtils.i(TAG, "Installing SandFly")
         mainHandler.post { toast(context, R.string.update_move_installing, Toast.LENGTH_LONG) }
       }
       AppIdMove.InstallKind.UPDATE -> {}
@@ -399,6 +405,21 @@ object Updater {
     }
   }
 
+  /**
+   * Returns false only if the APK is known not to be signed with SandFly's key. When Android cannot
+   * read the APK's certificates, each app checks the other's key before any settings are shared.
+   */
+  private fun isSignedBySandFly(info: PackageInfo?): Boolean {
+    if (info == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+      return true
+    }
+    val signers = info.signingInfo?.apkContentsSigners
+    if (signers.isNullOrEmpty()) {
+      return true
+    }
+    return signers.all { AppIdMove.sha256Of(it) == AppIdMove.NEW_CERT_SHA256 }
+  }
+
   /** Handles a status update from the install session. */
   fun onInstallStatus(context: Context, intent: Intent) {
     val appContext = context.applicationContext
@@ -439,9 +460,9 @@ object Updater {
     }
   }
 
-  /** Opens the accessibility settings for the newly installed Backtalk, so the user turns it on. */
+  /** Opens the accessibility settings for the newly installed SandFly, so the user turns it on. */
   private fun onMoved(context: Context, packageName: String) {
-    LogUtils.i(TAG, "Installed Backtalk under its new app ID %s", packageName)
+    LogUtils.i(TAG, "Installed SandFly, %s", packageName)
     val component = ComponentName(packageName, AppIdMove.SERVICE_CLASS)
     val intents = buildList {
       // The screen for a single service is on Android 12 and later, but Android lets only the

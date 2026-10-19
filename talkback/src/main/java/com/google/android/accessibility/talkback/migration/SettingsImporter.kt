@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.migration
 
 import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import androidx.core.os.UserManagerCompat
@@ -28,12 +27,11 @@ import java.io.File
 import java.io.IOException
 
 /**
- * Copies the settings and custom labels of Backtalk under its old app ID on the first start under
- * the new one.
+ * Copies the settings and custom labels of Backtalk Aaron on SandFly's first start.
  *
  * It runs from the Application, before anything loads the preferences or the labels database, so
- * no stale copy of them is cached. The files come from [SettingsExportProvider] in the old app,
- * which must be signed with the same key.
+ * no stale copy of them is cached. The files come from [SettingsExportProvider] in Backtalk
+ * Aaron, which must be signed with Backtalk Aaron's key.
  */
 object SettingsImporter {
   private const val TAG = "SettingsImporter"
@@ -71,23 +69,14 @@ object SettingsImporter {
     state.edit().putInt(KEY_ATTEMPTS, attempts).putBoolean(KEY_DONE, done).commit()
   }
 
-  /** Returns true if [context] has the old app installed, signed with the same key. */
+  /** Returns true if Backtalk Aaron is installed, signed with its own key. */
   @JvmStatic
-  fun isOldAppInstalled(context: Context): Boolean {
-    val packageManager = context.packageManager
-    try {
-      packageManager.getPackageInfo(AppIdMove.OLD_PACKAGE, 0)
-    } catch (e: PackageManager.NameNotFoundException) {
-      return false
-    }
-    // Some phones have TalkBack itself as com.android.talkback, which is not ours.
-    return packageManager.checkSignatures(AppIdMove.OLD_PACKAGE, context.packageName) ==
-      PackageManager.SIGNATURE_MATCH
-  }
+  fun isOldAppInstalled(context: Context): Boolean =
+    AppIdMove.isSignedBy(context.packageManager, AppIdMove.OLD_PACKAGE, AppIdMove.OLD_CERT_SHA256)
 
   private fun importFromOldApp(context: Context) {
     if (!isOldAppInstalled(context)) {
-      LogUtils.i(TAG, "No Backtalk under the old app ID, so there are no settings to import")
+      LogUtils.i(TAG, "Backtalk Aaron is not installed, so there are no settings to import")
       return
     }
     val authority = AppIdMove.authority(AppIdMove.OLD_PACKAGE)

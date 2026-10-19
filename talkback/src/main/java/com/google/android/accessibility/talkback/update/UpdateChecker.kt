@@ -37,17 +37,15 @@ data class UpdateInfo(
   val downloadUrl: String,
   /** The subjects of the commits that are newer than the running build, newest first. */
   val changes: List<String>,
-  /** True if the build is Backtalk under its new app ID, which installs as a new app. */
+  /** True if the build is SandFly, which installs as a new app. */
   val move: Boolean = false,
 )
 
 /**
  * Checks a rolling pre-release on GitHub for a newer development build.
  *
- * Builds with the app ID fyi.quin.backtalk are on the "dev" pre-release. The "latest" pre-release
- * holds builds with the old app ID com.android.talkback, and stays on the build that moves to the
- * new app ID, so old builds always pass through it. That build offers the move whenever "dev"
- * exists.
+ * Builds are on the "dev" pre-release. Backtalk Aaron first checks SandFly's latest release, and
+ * offers it as a move whenever there is one.
  *
  * CI writes the release notes as a line "build: <commit count>", then one line per commit as "-
  * <7-character hash> <subject>", newest first. A release is newer only when its commit count is
@@ -57,16 +55,19 @@ object UpdateChecker {
   private const val TAG = "UpdateChecker"
   private const val RELEASES_URL = "https://api.github.com/repos/aaron-gh/backtalk/releases/tags/"
 
-  /** The pre-release for the old app ID com.android.talkback. */
-  const val OLD_CHANNEL = "latest"
+  /** SandFly's latest stable release, which Backtalk Aaron moves to. */
+  private const val MOVE_RELEASE_URL = "https://api.github.com/repos/aaron-gh/SandFly/releases/latest"
 
-  /** The pre-release for the app ID fyi.quin.backtalk. */
-  const val NEW_CHANNEL = "dev"
+  /** The rolling pre-release of development builds. */
+  const val DEV_CHANNEL = "dev"
 
   /** The phone build, which is also what builds before the watch build was published look for. */
   @VisibleForTesting const val PHONE_APK_NAME = "backtalk.apk"
   /** The watch build, so that a watch never installs the phone app. */
   @VisibleForTesting const val WATCH_APK_NAME = "backtalk-wear.apk"
+  /** SandFly's phone and watch builds. */
+  @VisibleForTesting const val MOVE_PHONE_APK_NAME = "sandfly.apk"
+  @VisibleForTesting const val MOVE_WATCH_APK_NAME = "sandfly-wear.apk"
   private const val SHORT_HASH_LENGTH = 7
   private const val MAX_CHANGES = 50
   private const val TIMEOUT_MS = 30_000
@@ -81,37 +82,37 @@ object UpdateChecker {
    */
   @WorkerThread
   fun check(context: Context): UpdateInfo? {
-    val channel =
-      if (context.packageName == AppIdMove.OLD_PACKAGE) {
-        checkMove(context)?.let {
-          return it
-        }
-        OLD_CHANNEL
-      } else {
-        NEW_CHANNEL
+    if (context.packageName == AppIdMove.OLD_PACKAGE) {
+      checkMove(context)?.let {
+        return it
       }
-    val json = fetchRelease(context, channel) ?: throw IOException("GitHub has no $channel release")
+    }
+    val json =
+      fetchRelease(context, RELEASES_URL + DEV_CHANNEL)
+        ?: throw IOException("GitHub has no $DEV_CHANNEL release")
     return parseRelease(json, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
   }
 
   /**
-   * Returns the newest build under the new app ID, whatever its build number, since the new app
-   * is always the way forward. Returns null if there is none yet or it cannot be read, so the old
-   * app still gets updates of its own.
+   * Returns SandFly's latest release, whatever its build number, since SandFly is always the way
+   * forward. Returns null if there is none yet or it cannot be read, so Backtalk Aaron still gets
+   * updates of its own.
    */
   @WorkerThread
   private fun checkMove(context: Context): UpdateInfo? =
     try {
-      fetchRelease(context, NEW_CHANNEL)?.let { parseMove(it, BuildConfig.COMMIT_HASH, apkName()) }
+      fetchRelease(context, MOVE_RELEASE_URL)?.let {
+        parseMove(it, BuildConfig.COMMIT_HASH, moveApkName())
+      }
     } catch (e: Exception) {
-      LogUtils.w(TAG, "Cannot check for the new app: %s", e)
+      LogUtils.w(TAG, "Cannot check for SandFly: %s", e)
       null
     }
 
-  /** Returns the release with the [tag] as JSON, or null if GitHub has no such release. */
+  /** Returns the release at [url] as JSON, or null if GitHub has no such release. */
   @WorkerThread
-  private fun fetchRelease(context: Context, tag: String): String? {
-    val connection = openConnection(context, RELEASES_URL + tag)
+  private fun fetchRelease(context: Context, url: String): String? {
+    val connection = openConnection(context, url)
     try {
       connection.setRequestProperty("Accept", "application/vnd.github+json")
       val code = connection.responseCode
@@ -127,12 +128,12 @@ object UpdateChecker {
     }
   }
 
-  /** Parses a release under the new app ID as a move, which is offered whatever its build. */
+  /** Parses a SandFly release as a move, which is offered whatever its build. */
   @VisibleForTesting
   fun parseMove(
     json: String,
     currentHash: String,
-    apkName: String = PHONE_APK_NAME,
+    apkName: String = MOVE_PHONE_APK_NAME,
   ): UpdateInfo? = parseRelease(json, currentBuild = 0, currentHash, apkName)?.copy(move = true)
 
   /** Opens a connection with the timeouts and user agent that GitHub requests should use. */
@@ -146,6 +147,9 @@ object UpdateChecker {
 
   private fun apkName(): String =
     if (FormFactorUtils.isAndroidWear()) WATCH_APK_NAME else PHONE_APK_NAME
+
+  private fun moveApkName(): String =
+    if (FormFactorUtils.isAndroidWear()) MOVE_WATCH_APK_NAME else MOVE_PHONE_APK_NAME
 
   @VisibleForTesting
   fun parseRelease(

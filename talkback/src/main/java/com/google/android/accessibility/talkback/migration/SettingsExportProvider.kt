@@ -30,9 +30,9 @@ import java.io.File
 import java.io.FileNotFoundException
 
 /**
- * Shares this app's settings and custom labels, read-only, with Backtalk under its new app ID.
+ * Shares Backtalk Aaron's settings and custom labels, read-only, with SandFly.
  *
- * Only apps signed with the same key can use it, since it requires [AppIdMove.PERMISSION]. It
+ * Only SandFly, signed with its own key, can use it, and only from Backtalk Aaron. It
  * lists the files at content://<authority>/files and opens one at
  * content://<authority>/file/<directory>/<name>. Only the files that [MigrationFiles] allows are
  * served, and only from their own directories.
@@ -51,6 +51,7 @@ class SettingsExportProvider : ContentProvider() {
       return null
     }
     val context = context ?: return null
+    checkCaller(context)
     val cursor = MatrixCursor(arrayOf(AppIdMove.COLUMN_PATH, AppIdMove.COLUMN_SIZE))
     for ((path, file) in exportedFiles(context)) {
       cursor.addRow(arrayOf<Any>(path, file.length()))
@@ -68,9 +69,22 @@ class SettingsExportProvider : ContentProvider() {
     }
     val path = MigrationFiles.path(segments[1], segments[2])
     val context = context ?: throw FileNotFoundException(path)
+    checkCaller(context)
     val file =
       exportedFiles(context, checkpoint = false)[path] ?: throw FileNotFoundException(path)
     return ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
+  }
+
+  /** Refuses every app but SandFly, and refuses everyone when this app is not Backtalk Aaron. */
+  private fun checkCaller(context: Context) {
+    val caller = callingPackage
+    if (
+      context.packageName != AppIdMove.OLD_PACKAGE ||
+        caller != AppIdMove.NEW_PACKAGE ||
+        !AppIdMove.isSignedBy(context.packageManager, caller, AppIdMove.NEW_CERT_SHA256)
+    ) {
+      throw SecurityException("Settings are shared only with SandFly, not with $caller")
+    }
   }
 
   override fun getType(uri: Uri): String? = null
