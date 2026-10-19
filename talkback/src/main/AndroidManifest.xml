@@ -339,6 +339,19 @@
             android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
             android:theme="@style/NotificationListTheme" />
 
+        <!-- Asks for the text of a reply to a notification, in a process of its own so that the
+             keyboard and Backtalk's main thread don't wait for each other. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/notification_list_title"
+            android:process=":reply"
+            android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
+            android:theme="@style/NotificationReplyTheme"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
         <!-- Receives notifications for that list while the user has given notification access. -->
         <service
             android:name="com.google.android.accessibility.talkback.notificationlist.NotificationListService"

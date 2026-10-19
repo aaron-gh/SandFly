@@ -50,6 +50,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity.Companion.keepButtonCase
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
@@ -455,66 +456,24 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   private fun perform(action: Notification.Action) {
     val input = action.remoteInputs?.firstOrNull { it.allowFreeFormInput || !it.choices.isNullOrEmpty() }
     if (input == null) {
-      send(action.actionIntent, null)
+      NotificationReplyActivity.send(this, action.actionIntent, null)
       return
     }
     if (!input.allowFreeFormInput) {
       val choices = input.choices
       AlertDialog.Builder(this)
         .setTitle(input.label ?: action.title)
-        .setItems(choices) { _, which -> reply(action, input, choices[which]) }
+        .setItems(choices) { _, which ->
+          NotificationReplyActivity.reply(this, action, input, choices[which])
+        }
         .setNegativeButton(android.R.string.cancel, null)
         .show()
         .keepButtonCase()
       return
     }
-    val field =
-      EditText(this).apply {
-        hint = input.label ?: action.title
-        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES or
-          InputType.TYPE_TEXT_FLAG_MULTI_LINE
-      }
-    AlertDialog.Builder(this)
-      .setTitle(action.title)
-      .setView(field)
-      .setPositiveButton(R.string.notification_list_send) { _, _ ->
-        if (field.text.isNotBlank()) {
-          reply(action, input, field.text.toString())
-        }
-      }
-      .setNegativeButton(android.R.string.cancel, null)
-      .show()
-      .keepButtonCase()
-    field.requestFocus()
-  }
-
-  private fun AlertDialog.keepButtonCase() {
-    listOf(AlertDialog.BUTTON_POSITIVE, AlertDialog.BUTTON_NEGATIVE).forEach {
-      getButton(it)?.isAllCaps = false
-    }
-  }
-
-  /** Sends [text] as the answer to [input], as the system's shade does. */
-  private fun reply(action: Notification.Action, input: RemoteInput, text: CharSequence) {
-    val results = Bundle().apply { putCharSequence(input.resultKey, text) }
-    val intent = Intent().addFlags(Intent.FLAG_RECEIVER_FOREGROUND)
-    RemoteInput.addResultsToIntent(action.remoteInputs, intent, results)
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-      RemoteInput.setResultsSource(
-        intent,
-        if (input.allowFreeFormInput) RemoteInput.SOURCE_FREE_FORM_INPUT
-        else RemoteInput.SOURCE_CHOICE,
-      )
-    }
-    send(action.actionIntent, intent)
-  }
-
-  private fun send(pendingIntent: PendingIntent?, fillIn: Intent?) {
-    try {
-      pendingIntent?.send(this, 0, fillIn, null, null, null, startOptions())
-    } catch (e: PendingIntent.CanceledException) {
-      Log.w(TAG, "Notification action can't be performed", e)
-    }
+    // The text field is in its own process, so that the keyboard and Backtalk don't wait for
+    // each other.
+    startActivity(NotificationReplyActivity.intent(this, action))
   }
 
   /** Opens what the notification leads to, and removes it if it asks to be removed when opened. */
@@ -522,7 +481,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     val notification = entry.notification.notification
     val intent = notification.contentIntent ?: return
     try {
-      intent.send(this, 0, null, null, null, null, startOptions())
+      intent.send(this, 0, null, null, null, null, NotificationReplyActivity.startOptions())
     } catch (e: PendingIntent.CanceledException) {
       Log.w(TAG, "Notification can't be opened", e)
       return
@@ -535,17 +494,6 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   /** Lets the notification start its app from this list, as it could from the system's shade. */
   @Suppress("DEPRECATION") // MODE_BACKGROUND_ACTIVITY_START_ALLOW_ALWAYS needs Android 16.
-  private fun startOptions(): Bundle? {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
-      return null
-    }
-    return ActivityOptions.makeBasic()
-      .setPendingIntentBackgroundActivityStartMode(
-        ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED
-      )
-      .toBundle()
-  }
-
   /**
    * Puts [views] in the column in order, moving only the views that are out of place. A view taken
    * out of the window loses accessibility focus, so the others stay where they are.
