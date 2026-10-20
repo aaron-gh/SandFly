@@ -31,8 +31,8 @@ import android.media.session.PlaybackState
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.text.InputType
 import android.service.notification.NotificationListenerService
+import android.text.InputType
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
@@ -49,6 +49,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.Lifecycle
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity.Companion.keepButtonCase
 import com.google.android.accessibility.talkback.TalkBackService
@@ -278,7 +279,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   /** A group's row names the app, the number of notifications and the newest one. */
   private fun bindGroup(row: TextView, group: NotificationItem.Group) {
-    val newest = group.entries.first()
+    val newest = group.entries.maxBy { it.notification.postTime }
     val count =
       resources.getQuantityString(
         R.plurals.notification_list_group_count,
@@ -447,9 +448,20 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       entry.notification.notification.extras?.getParcelable<MediaSession.Token>(
         Notification.EXTRA_MEDIA_SESSION
       ) ?: return null
-    return mediaControllers.getOrPut(token) {
-      MediaController(this, token).apply { registerCallback(playbackListener) }
+    mediaControllers[token]?.let {
+      return it
     }
+    // Android asks rows for their actions until the window is gone, after the list has stopped.
+    if (!lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+      return null
+    }
+    val controller =
+      runCatching { MediaController(this, token) }
+        .onFailure { Log.w(TAG, "No media session", it) }
+        .getOrNull() ?: return null
+    controller.registerCallback(playbackListener)
+    mediaControllers[token] = controller
+    return controller
   }
 
   /** Performs one of a notification's own actions, asking for the text of a reply first. */
@@ -563,7 +575,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
       }
     runCatching { startActivity(intent) }
-      .onFailure { startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) }
+      .recoverCatching { startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) }
+      .onFailure { Log.w(TAG, "No notification access settings", it) }
   }
 
   companion object {

@@ -16,24 +16,54 @@
 
 package com.google.android.accessibility.talkback.notificationlist
 
+import android.content.SharedPreferences
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Receives the notifications for [NotificationList]. Android binds it while the user has given
- * Backtalk notification access.
+ * Backtalk notification access. It unbinds itself while the list is turned off, and the list binds
+ * it again when it opens.
  */
 class NotificationListService : NotificationListenerService() {
 
+  private val switchListener =
+    SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+      if (key == getString(R.string.pref_notification_list_key) && !NotificationList.isEnabled(this)) {
+        unbind()
+      }
+    }
+
   override fun onListenerConnected() {
+    if (!NotificationList.isEnabled(this)) {
+      unbind()
+      return
+    }
     instance = this
+    SharedPreferencesUtils.getSharedPreferences(this)
+      .registerOnSharedPreferenceChangeListener(switchListener)
     val active = runCatching { activeNotifications }.onFailure { Log.w(TAG, "No notifications", it) }
     NotificationList.onConnected(active.getOrNull(), currentRanking)
   }
 
   override fun onListenerDisconnected() {
-    instance = null
+    disconnected()
+  }
+
+  private fun unbind() {
+    runCatching { requestUnbind() }.onFailure { Log.w(TAG, "Can't unbind", it) }
+    disconnected()
+  }
+
+  private fun disconnected() {
+    SharedPreferencesUtils.getSharedPreferences(this)
+      .unregisterOnSharedPreferenceChangeListener(switchListener)
+    if (instance === this) {
+      instance = null
+    }
     NotificationList.onDisconnected()
   }
 
@@ -45,16 +75,13 @@ class NotificationListService : NotificationListenerService() {
     NotificationList.onRemoved(notification, ranking)
   }
 
-  /**
-   * Android groups an app's notifications itself once it has several, and reports that only as a
-   * new ranking, so the notifications are read again with their new groups.
-   */
   override fun onNotificationRankingUpdate(ranking: RankingMap?) {
-    val active = runCatching { activeNotifications }.onFailure { Log.w(TAG, "No notifications", it) }
-    NotificationList.onRankingUpdate(active.getOrNull(), ranking)
+    NotificationList.onRankingUpdate(ranking)
   }
 
   override fun onDestroy() {
+    SharedPreferencesUtils.getSharedPreferences(this)
+      .unregisterOnSharedPreferenceChangeListener(switchListener)
     if (instance === this) {
       instance = null
     }
@@ -65,7 +92,6 @@ class NotificationListService : NotificationListenerService() {
     private const val TAG = "NotificationListService"
 
     /** The connected listener, through which notifications are dismissed. */
-    @JvmStatic
     var instance: NotificationListService? = null
       private set
   }

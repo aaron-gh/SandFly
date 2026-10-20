@@ -46,8 +46,20 @@ class NotificationEntry(
           ?: lastMessage(extras)
           ?: extras.getCharSequenceArray(Notification.EXTRA_TEXT_LINES)?.joinToString("\n")
           ?: notification.notification.tickerText
-      return NotificationEntry(notification, appName, title, text, time(notification))
+      return NotificationEntry(
+        notification,
+        appName,
+        title?.limited(),
+        text?.limited(),
+        time(notification),
+      )
     }
+
+    /** Android's own limit for a notification's texts, which apps can get around. */
+    private const val MAX_LENGTH = 5 * 1024
+
+    private fun CharSequence.limited(): CharSequence =
+      if (length > MAX_LENGTH) subSequence(0, MAX_LENGTH) else this
 
     /** The newest message of a messaging notification, as "sender: text". */
     @Suppress("DEPRECATION") // getParcelableArray(String, Class) needs Android 13.
