@@ -102,6 +102,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold;
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider;
 import com.google.android.accessibility.utils.gestures.GestureMatcher.AnalyticsEventLogger;
 import com.google.android.accessibility.utils.gestures.GestureUtils;
+import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.EvictingQueue;
 import com.google.common.collect.ImmutableList;
@@ -1378,20 +1379,24 @@ public class TouchInteractionMonitor
 
         @Override
         public void onEdgeSwipeStage(Edge edge, int stage, int previousStage) {
-          int pattern;
-          if (stage == 0) {
-            pattern = R.array.edge_swipe_cancel_pattern;
-          } else if (stage < previousStage) {
-            pattern = R.array.edge_swipe_back_pattern;
-          } else if (stage == 1) {
-            pattern = R.array.edge_swipe_stage_1_pattern;
-          } else {
-            pattern = R.array.edge_swipe_stage_2_pattern;
-          }
+          FeedbackController feedbackController;
           try {
-            service.getFeedbackController().playHaptic(pattern, /* eventId= */ null);
+            feedbackController = service.getFeedbackController();
           } catch (IllegalStateException e) {
             // Feedback isn't set up yet.
+            return;
+          }
+          if (stage == 0) {
+            feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
+          } else if (stage < previousStage) {
+            // Back at the first stage: its sound, with the slide back's vibration.
+            feedbackController.playAuditoryWithoutHaptic(
+                R.id.edge_gesture_start, /* eventId= */ null);
+            feedbackController.playHaptic(R.array.edge_swipe_back_pattern, /* eventId= */ null);
+          } else if (stage == 1) {
+            feedbackController.playAuditory(R.id.edge_gesture_start, /* eventId= */ null);
+          } else {
+            feedbackController.playAuditory(R.id.edge_gesture_middle, /* eventId= */ null);
           }
         }
 
@@ -1400,6 +1405,13 @@ public class TouchInteractionMonitor
           if (stage == 0) {
             // Slid back to the edge, or a second finger landed: no gesture.
             return;
+          }
+          try {
+            service
+                .getFeedbackController()
+                .playAuditory(R.id.edge_gesture_end, /* eventId= */ null);
+          } catch (IllegalStateException e) {
+            // Feedback isn't set up yet.
           }
           int gestureId =
               switch (edge) {

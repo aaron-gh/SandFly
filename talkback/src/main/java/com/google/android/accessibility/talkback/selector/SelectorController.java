@@ -1370,6 +1370,9 @@ public class SelectorController implements UserInputEventListener {
         index = settingsSize - 1;
       }
     }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.sound(isNext ? R.id.next_reading_control : R.id.previous_reading_control));
     if (index < settings.size()) {
       setCurrentSetting(eventId, settings.get(index), announceType, showOverlay);
     } else {

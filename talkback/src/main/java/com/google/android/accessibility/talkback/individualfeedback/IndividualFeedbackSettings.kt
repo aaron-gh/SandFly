@@ -48,8 +48,17 @@ object IndividualFeedbackSettings {
       FeedbackItem("chime_down", R.string.individual_sound_chime_down),
       FeedbackItem("complete", R.string.individual_sound_complete),
       FeedbackItem("window_state", R.string.individual_sound_window_state),
-      FeedbackItem("gesture_begin", R.string.individual_sound_gesture_begin),
-      FeedbackItem("gesture_end", R.string.individual_sound_gesture_end),
+      FeedbackItem("next_reading_control", R.string.individual_sound_next_reading_control),
+      FeedbackItem(
+        "previous_reading_control",
+        R.string.individual_sound_previous_reading_control,
+      ),
+      FeedbackItem("edge_gesture_start", R.string.individual_sound_edge_gesture_start),
+      FeedbackItem("edge_gesture_middle", R.string.individual_sound_edge_gesture_middle),
+      FeedbackItem("edge_gesture_end", R.string.individual_sound_edge_gesture_end),
+      FeedbackItem("insertion_point_moved", R.string.individual_sound_insertion_point_moved),
+      FeedbackItem("column_wrap", R.string.individual_sound_column_wrap),
+      FeedbackItem("column_wrap_back", R.string.individual_sound_column_wrap_back),
       FeedbackItem("typo", R.string.individual_sound_typo),
       FeedbackItem("hyperlink", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting", R.string.individual_sound_formatting),
@@ -101,17 +110,23 @@ object IndividualFeedbackSettings {
       ),
     )
 
-  /** The clicks of an edge gesture's stages, and the taps of sliding back. */
+  /**
+   * The taps of an edge gesture sliding back. The switch once also turned off the clicks of the
+   * stages, which now have switches of their own.
+   */
   val EDGE_GESTURE_VIBRATIONS =
     FeedbackItem(
       "edge_gesture_pattern",
-      R.string.individual_vibration_edge_gestures,
-      listOf(
-        "edge_swipe_stage_1_pattern",
-        "edge_swipe_stage_2_pattern",
-        "edge_swipe_back_pattern",
-        "edge_swipe_cancel_pattern",
-      ),
+      R.string.individual_vibration_edge_gesture_back,
+      listOf("edge_swipe_back_pattern", "edge_swipe_cancel_pattern"),
+    )
+
+  /** The vibrations of the edge gesture sounds, which watches leave out. */
+  val EDGE_GESTURE_SOUND_VIBRATIONS =
+    listOf(
+      FeedbackItem("edge_gesture_start_pattern", R.string.individual_sound_edge_gesture_start),
+      FeedbackItem("edge_gesture_middle_pattern", R.string.individual_sound_edge_gesture_middle),
+      FeedbackItem("edge_gesture_end_pattern", R.string.individual_sound_edge_gesture_end),
     )
 
   /**
@@ -135,8 +150,23 @@ object IndividualFeedbackSettings {
       FeedbackItem("list_exited_pattern", R.string.individual_sound_chime_down),
       FeedbackItem("complete_pattern", R.string.individual_sound_complete),
       FeedbackItem("window_state_pattern", R.string.individual_vibration_window_state),
-      FeedbackItem("gesture_detection_repeated_pattern", R.string.individual_vibration_gesture),
-      FeedbackItem("gesture_end_pattern", R.string.individual_sound_gesture_end),
+      // Of the navigation sounds, only the edge gesture start and middle have SandFly
+      // vibrations. The others vibrate only with a sound theme's vibration.
+      FeedbackItem(
+        "next_reading_control_pattern",
+        R.string.individual_sound_next_reading_control,
+      ),
+      FeedbackItem(
+        "previous_reading_control_pattern",
+        R.string.individual_sound_previous_reading_control,
+      ),
+      *EDGE_GESTURE_SOUND_VIBRATIONS.toTypedArray(),
+      FeedbackItem(
+        "insertion_point_moved_pattern",
+        R.string.individual_sound_insertion_point_moved,
+      ),
+      FeedbackItem("column_wrap_pattern", R.string.individual_sound_column_wrap),
+      FeedbackItem("column_wrap_back_pattern", R.string.individual_sound_column_wrap_back),
       FeedbackItem("typo_pattern", R.string.individual_vibration_typo),
       FeedbackItem("hyperlink_pattern", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting_pattern", R.string.individual_sound_formatting),
@@ -183,9 +213,16 @@ object IndividualFeedbackSettings {
   private const val PREF_SCREEN_OFF_SPLIT = "pref_individual_screen_off_split"
 
   /**
+   * The Edge gestures vibration switch turned off every edge gesture vibration. Set once the
+   * stages' own switches have been given its state.
+   */
+  private const val PREF_EDGE_GESTURE_SPLIT = "pref_individual_edge_gesture_split"
+
+  /**
    * Carries over switches that no longer exist, once: if Selection was turned off, the vibration
-   * selection now plays is turned off instead. And if Volume change was turned off, which only
-   * silenced screen off, Screen off is turned off instead.
+   * selection now plays is turned off instead. If Volume change was turned off, which only
+   * silenced screen off, Screen off is turned off instead. And if Edge gestures was turned off,
+   * the vibrations of the edge gesture sounds are turned off too.
    */
   fun migrate(prefs: SharedPreferences) {
     val muted = stringSet(prefs, PREF_MUTED_VIBRATIONS)
@@ -214,6 +251,21 @@ object IndividualFeedbackSettings {
           },
         )
         .putBoolean(PREF_SCREEN_OFF_SPLIT, true)
+        .apply()
+    }
+    if (!prefs.getBoolean(PREF_EDGE_GESTURE_SPLIT, false)) {
+      val mutedVibrations = stringSet(prefs, PREF_MUTED_VIBRATIONS)
+      prefs
+        .edit()
+        .putStringSet(
+          PREF_MUTED_VIBRATIONS,
+          if (EDGE_GESTURE_VIBRATIONS.key in mutedVibrations) {
+            mutedVibrations + EDGE_GESTURE_SOUND_VIBRATIONS.map { it.key }
+          } else {
+            mutedVibrations
+          },
+        )
+        .putBoolean(PREF_EDGE_GESTURE_SPLIT, true)
         .apply()
     }
   }

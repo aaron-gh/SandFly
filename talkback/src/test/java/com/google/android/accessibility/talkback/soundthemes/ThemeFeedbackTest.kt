@@ -92,7 +92,7 @@ class ThemeFeedbackTest {
         soundPaths =
           mapOf(
             "focus" to "/path/to/focus.wav",
-            "gesture_begin" to SoundThemeManifest.NONE,
+            "window_state" to SoundThemeManifest.NONE,
           ),
         vibrations = emptyMap(),
       )

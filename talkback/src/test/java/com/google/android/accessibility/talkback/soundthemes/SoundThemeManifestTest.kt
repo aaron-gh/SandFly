@@ -177,10 +177,10 @@ class SoundThemeManifestTest {
     val manifest =
       parse(
         """
-        {"name": "VoiceOver", "sounds": {"gesture_begin": "none", "gesture_end": "none", "unknown_sound": "none", "focus": "invalid"}}
+        {"name": "VoiceOver", "sounds": {"window_state": "none", "column_wrap": "none", "unknown_sound": "none", "focus": "invalid"}}
         """
       )
-    assertEquals(mapOf("gesture_begin" to "none", "gesture_end" to "none"), manifest.sounds)
+    assertEquals(mapOf("window_state" to "none", "column_wrap" to "none"), manifest.sounds)
     assertEquals(2, manifest.warnings.size)
   }
 
@@ -189,11 +189,11 @@ class SoundThemeManifestTest {
     val manifest =
       parse(
         """
-        {"name": "VoiceOver", "sounds": {"gesture_begin": "none"}}
+        {"name": "VoiceOver", "sounds": {"window_state": "none"}}
         """
       )
     val again = parse(manifest.toJson())
-    assertEquals(mapOf("gesture_begin" to "none"), again.sounds)
+    assertEquals(mapOf("window_state" to "none"), again.sounds)
   }
 
   @Test

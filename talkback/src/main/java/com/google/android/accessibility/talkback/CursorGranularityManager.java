@@ -427,7 +427,14 @@ public class CursorGranularityManager {
         (lockedNode != null)
             && (lockedNode.isEditable() || (Role.getRole(lockedNode) == Role.ROLE_EDIT_TEXT))
             && lockedNode.isFocused();
-    return navigateInternal(action, eventId, isEditing);
+    int result = navigateInternal(action, eventId, isEditing);
+    if (result == SUCCESS
+        && isEditing
+        && currentGranularity != null
+        && !currentGranularity.supportsWebGranularity()) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.id.insertion_point_moved));
+    }
+    return result;
   }
 
   private int navigateInternal(int action, EventId eventId, boolean isEditing) {

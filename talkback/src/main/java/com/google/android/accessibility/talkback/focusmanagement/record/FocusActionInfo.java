@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.focusmanagement.record;
 
 import androidx.annotation.IntDef;
+import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -102,6 +103,9 @@ public class FocusActionInfo {
   @InitialFocusType public final int initialFocusType;
   public final boolean forceMuteFeedback;
 
+  /** Whether the focus moved to another row of a grid, one of the {@code ColumnWrap} values. */
+  public final int columnWrap;
+
   /** The index of the focused link in the focused node in LINK granularity. */
   public int focusedLinkIndex = LINK_INDEX_NOT_SET;
 
@@ -178,6 +182,7 @@ public class FocusActionInfo {
     @InitialFocusType private int initialFocusType = UNDEFINED;
     private boolean forceMuteFeedback = false;
     private int focusedLinkIndex = -1;
+    private int columnWrap = ColumnWrap.NONE;
 
     public Builder() {}
 
@@ -188,6 +193,7 @@ public class FocusActionInfo {
       initialFocusType = focusActionInfo.initialFocusType;
       forceMuteFeedback = focusActionInfo.forceMuteFeedback;
       focusedLinkIndex = focusActionInfo.focusedLinkIndex;
+      columnWrap = focusActionInfo.columnWrap;
     }
 
     public FocusActionInfo build() {
@@ -229,6 +235,12 @@ public class FocusActionInfo {
       this.focusedLinkIndex = focusedLinkIndex;
       return this;
     }
+
+    @CanIgnoreReturnValue
+    public Builder setColumnWrap(int columnWrap) {
+      this.columnWrap = columnWrap;
+      return this;
+    }
   }
 
   @Override
@@ -248,6 +260,7 @@ public class FocusActionInfo {
         StringBuilderUtils.optionalTag(
             "forceFeedbackEvenIfSsbActive", forceFeedbackEvenIfSsbActive()),
         StringBuilderUtils.optionalField("focusedLinkIndex", focusedLinkIndex),
+        StringBuilderUtils.optionalInt("columnWrap", columnWrap, ColumnWrap.NONE),
         "}");
   }
 
@@ -277,6 +290,7 @@ public class FocusActionInfo {
     initialFocusType = builder.initialFocusType;
     forceMuteFeedback = builder.forceMuteFeedback;
     focusedLinkIndex = builder.focusedLinkIndex;
+    columnWrap = builder.columnWrap;
   }
 
   /** Modifies accepted {@link FocusActionInfo}. */

@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Tree
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
+import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -153,6 +154,17 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
           earconVibrates = false;
         }
         globalVariables.setRoleSoundOfFocus(controlSound);
+      }
+    }
+
+    // Moving to another row of a grid plays its sound with the focus sound, and its vibration in
+    // place of the focus vibration.
+    int columnWrapSound = ColumnWrap.sound(accessibilityFocusEventInterpretation.getColumnWrap());
+    if (columnWrapSound != 0) {
+      if (earcon == -1) {
+        earcon = columnWrapSound;
+      } else if (secondEarcon == -1) {
+        secondEarcon = columnWrapSound;
       }
     }
 

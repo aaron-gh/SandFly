@@ -55,7 +55,12 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
 
     val sounds = category(context, R.string.individual_feedback_sounds_category)
     screen.addPreference(sounds)
+    val isWatch = FormFactorUtils.isAndroidWear()
     for (item in IndividualFeedbackSettings.SOUNDS) {
+      if (isWatch && item.key in NavigationSounds.EDGE_GESTURES) {
+        // Watches have no edge gestures.
+        continue
+      }
       sounds.addPreference(
         FeedbackSwitch(
           context,
@@ -79,8 +84,9 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
           continue
         }
         if (
-          FormFactorUtils.isAndroidWear() &&
-            item == IndividualFeedbackSettings.EDGE_GESTURE_VIBRATIONS
+          isWatch &&
+            (item == IndividualFeedbackSettings.EDGE_GESTURE_VIBRATIONS ||
+              item in IndividualFeedbackSettings.EDGE_GESTURE_SOUND_VIBRATIONS)
         ) {
           // Watches have no edge gestures.
           continue

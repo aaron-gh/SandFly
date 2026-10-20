@@ -37,6 +37,7 @@ import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEv
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForScreenStateChange;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration;
 import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorForTapAndTouchExploration.TypingMethod;
@@ -315,12 +316,27 @@ public class AccessibilityFocusInterpreter
           node);
     }
 
+    // Focus that a web page moved, when asked to go to the next or previous item, is compared
+    // with where it was here.
+    int webColumnWrap =
+        event.getEventType() == TYPE_VIEW_ACCESSIBILITY_FOCUSED
+            ? ColumnWrap.takeWebFocus(event)
+            : ColumnWrap.NONE;
+
     if (info == null) {
-      return null;
+      if (webColumnWrap == ColumnWrap.NONE) {
+        return null;
+      }
+      AccessibilityFocusEventInterpretation interpretation =
+          new AccessibilityFocusEventInterpretation(Compositor.toCompositorEvent(event));
+      interpretation.setColumnWrap(webColumnWrap);
+      return interpretation;
     }
 
     AccessibilityFocusEventInterpretation interpretation =
         new AccessibilityFocusEventInterpretation(Compositor.toCompositorEvent(event));
+    interpretation.setColumnWrap(
+        info.columnWrap != ColumnWrap.NONE ? info.columnWrap : webColumnWrap);
     interpretation.setForceFeedbackEvenIfAudioPlaybackActive(
         info.forceFeedbackEvenIfAudioPlaybackActive());
     interpretation.setForceFeedbackEvenIfMicrophoneActive(

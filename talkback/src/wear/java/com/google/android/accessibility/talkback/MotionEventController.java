@@ -65,7 +65,6 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.Role.RoleName;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
-import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.time.Duration;
 
@@ -96,7 +95,6 @@ public class MotionEventController implements AccessibilityEventListener {
 
   private final AccessibilityService service;
   private final FeedbackReturner feedbackReturner;
-  private final FeedbackController feedbackController;
 
   private final MotionEventHandler backgroundHandler;
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -126,13 +124,9 @@ public class MotionEventController implements AccessibilityEventListener {
   private boolean useForLogIsFocusedNodeOutOfScrollableContainer;
   private AccessibilityNodeInfoCompat inputFocusedNode;
 
-  public MotionEventController(
-      AccessibilityService service,
-      FeedbackReturner feedbackReturner,
-      FeedbackController feedbackController) {
+  public MotionEventController(AccessibilityService service, FeedbackReturner feedbackReturner) {
     this.service = service;
     this.feedbackReturner = feedbackReturner;
-    this.feedbackController = feedbackController;
 
     scaledVerticalScrollFactor =
         ViewConfigurationCompat.getScaledVerticalScrollFactor(
@@ -230,7 +224,6 @@ public class MotionEventController implements AccessibilityEventListener {
 
     mainHandler.post(
         () -> {
-          feedbackController.playAuditory(R.raw.gesture_end, eventId);
           boolean success = feedbackReturner.returnFeedback(eventId, currentFeedback);
           if (!success) {
             // If we reach an edge, we don't need to intercept motion events and we can just

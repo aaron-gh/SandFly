@@ -65,21 +65,41 @@ class IndividualFeedbackSettingsTest {
   }
 
   @Test
-  fun edgeGesturesSwitchMutesEveryEdgeGestureVibration() {
+  fun edgeGestureSlideBackSwitchMutesBothSlideBackVibrations() {
     IndividualFeedbackSettings.setVibrationOn(
       prefs,
       IndividualFeedbackSettings.EDGE_GESTURE_VIBRATIONS,
       false,
     )
     assertEquals(
+      setOf("edge_swipe_back_pattern", "edge_swipe_cancel_pattern"),
+      IndividualFeedbackSettings.mutedVibrationResources(prefs),
+    )
+  }
+
+  @Test
+  fun edgeGesturesSwitchTurnedOffCarriesOverToTheStages() {
+    prefs
+      .edit()
+      .putStringSet(IndividualFeedbackSettings.PREF_MUTED_VIBRATIONS, setOf("edge_gesture_pattern"))
+      .apply()
+    IndividualFeedbackSettings.migrate(prefs)
+    assertEquals(
       setOf(
-        "edge_swipe_stage_1_pattern",
-        "edge_swipe_stage_2_pattern",
         "edge_swipe_back_pattern",
         "edge_swipe_cancel_pattern",
+        "edge_gesture_start_pattern",
+        "edge_gesture_middle_pattern",
+        "edge_gesture_end_pattern",
       ),
       IndividualFeedbackSettings.mutedVibrationResources(prefs),
     )
+  }
+
+  @Test
+  fun edgeGesturesSwitchOnLeavesTheStagesOn() {
+    IndividualFeedbackSettings.migrate(prefs)
+    assertTrue(IndividualFeedbackSettings.mutedVibrationResources(prefs).isEmpty())
   }
 
   @Test

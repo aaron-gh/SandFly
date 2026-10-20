@@ -29,6 +29,7 @@ import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -305,7 +306,7 @@ public class EventFilter {
     AccessibilityNodeInfoCompat node;
     @Nullable EventFeedback preparedFeedback;
     @Nullable CharSequence preparedContainerTitle = null;
-    if (prepared != null) {
+    if (prepared != null && info.columnWrap == ColumnWrap.NONE) {
       // Prepared from the node read again from the app, and thrown away had anything in its
       // window changed since, even its text or state. So it needs no second read, which would
       // wait for the app to finish drawing the focus it was just given.
@@ -404,6 +405,7 @@ public class EventFilter {
         info.forceFeedbackEvenIfMicrophoneActive());
     focusInterpretation.setForceFeedbackEvenIfSsbActive(info.forceFeedbackEvenIfSsbActive());
     focusInterpretation.setIsNavigateByUser(true);
+    focusInterpretation.setColumnWrap(info.columnWrap);
     EventInterpretation eventInterpreted =
         new EventInterpretation(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);
     eventInterpreted.setAccessibilityFocusInterpretation(focusInterpretation);

@@ -225,59 +225,6 @@
         <item>100</item><!-- delayMs -->
     </integer-array>
 
-    <!-- Gesture start: a slow purr while the finger moves. -->
-    <integer-array name="gesture_detection_repeated_pattern">
-        <item>0</item>
-        <item>10</item>
-        <item>70</item>
-        <item>10</item>
-        <item>70</item>
-        <item>10</item>
-        <item>70</item>
-        <item>10</item>
-        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
-        <item>8</item>
-        <item>90</item>
-        <item>70</item>
-        <item>0</item>
-        <item>8</item>
-        <item>90</item>
-        <item>70</item>
-        <item>0</item>
-        <item>8</item>
-        <item>90</item>
-        <item>70</item>
-        <item>0</item>
-        <item>8</item>
-        <item>90</item>
-        <item>-9999</item><!-- SENTINEL SEPARATOR -->
-        <item>7</item><!-- TICK -->
-        <item>90</item><!-- scale -->
-        <item>0</item><!-- delayMs -->
-        <item>7</item><!-- TICK -->
-        <item>90</item><!-- scale -->
-        <item>70</item><!-- delayMs -->
-        <item>7</item><!-- TICK -->
-        <item>90</item><!-- scale -->
-        <item>70</item><!-- delayMs -->
-        <item>7</item><!-- TICK -->
-        <item>90</item><!-- scale -->
-        <item>70</item><!-- delayMs -->
-    </integer-array>
-
-    <!-- Gesture end: one tiny tick. -->
-    <integer-array name="gesture_end_pattern">
-        <item>0</item>
-        <item>8</item>
-        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
-        <item>6</item>
-        <item>70</item>
-        <item>-9999</item><!-- SENTINEL SEPARATOR -->
-        <item>7</item><!-- TICK -->
-        <item>70</item><!-- scale -->
-        <item>0</item><!-- delayMs -->
-    </integer-array>
-
     <!-- Spelling error: a click, then a buzz that rises and falls. -->
     <integer-array name="typo_pattern">
         <item>0</item>
@@ -939,9 +886,9 @@
         <item>120</item><!-- scale -->
         <item>0</item><!-- delayMs -->
     </integer-array>
-    <!-- An edge swipe reaches its first stage: two firm clicks close together, like pressing and
-         releasing a home button. -->
-    <integer-array name="edge_swipe_stage_1_pattern">
+    <!-- Edge gesture start: an edge swipe reaches its first stage. Two firm clicks close together,
+         like pressing and releasing a home button. -->
+    <integer-array name="edge_gesture_start_pattern">
         <item>0</item>
         <item>20</item>
         <item>25</item>
@@ -962,9 +909,9 @@
         <item>25</item><!-- delayMs -->
     </integer-array>
 
-    <!-- A swipe up from the bottom edge reaches its second stage: the first stage's clicks and a
-         third. -->
-    <integer-array name="edge_swipe_stage_2_pattern">
+    <!-- Edge gesture middle: a swipe up from the bottom edge reaches its second stage. The first
+         stage's clicks and a third. -->
+    <integer-array name="edge_gesture_middle_pattern">
         <item>0</item>
         <item>20</item>
         <item>25</item>

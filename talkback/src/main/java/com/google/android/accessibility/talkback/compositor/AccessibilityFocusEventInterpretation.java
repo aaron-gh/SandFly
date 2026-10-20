@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.compositor;
 
+import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.utils.ReadOnly;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 
@@ -34,6 +35,7 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
   private boolean shouldMuteFeedback = false;
   private boolean isNavigateByUser = false;
   private boolean isEqualsToLastHoverEnterKeyboardEventNode = false;
+  private int columnWrap = ColumnWrap.NONE;
 
   public AccessibilityFocusEventInterpretation(@Compositor.Event int eventArg) {
     this.event = eventArg;
@@ -104,6 +106,16 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
     return isNavigateByUser;
   }
 
+  /** Sets whether the focus moved to another row of a grid, one of the {@link ColumnWrap} values. */
+  public void setColumnWrap(int columnWrap) {
+    checkIsWritable();
+    this.columnWrap = columnWrap;
+  }
+
+  public int getColumnWrap() {
+    return columnWrap;
+  }
+
   public void setIsEqualsToLastHoverEnterKeyboardEventNode(
       boolean isEqualsToLastHoverEnterKeyboardEventNode) {
     this.isEqualsToLastHoverEnterKeyboardEventNode = isEqualsToLastHoverEnterKeyboardEventNode;
@@ -130,6 +142,7 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
         StringBuilderUtils.optionalTag("isNavigateByUser", isNavigateByUser),
         StringBuilderUtils.optionalTag(
             "isEqualsToLastHoverEnterKeyboardEventNode", isEqualsToLastHoverEnterKeyboardEventNode),
+        StringBuilderUtils.optionalInt("columnWrap", columnWrap, ColumnWrap.NONE),
         "}");
   }
 }

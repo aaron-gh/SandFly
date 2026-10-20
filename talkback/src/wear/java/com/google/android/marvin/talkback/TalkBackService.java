@@ -58,8 +58,7 @@ public class TalkBackService extends com.google.android.accessibility.talkback.T
     if (FeatureFlagReader.supportRsbScrolling(this)
         && FeatureSupport.supportMotionEventSources()
         && FeatureSupport.supportsRotaryEncoder()) {
-      motionEventController =
-          new MotionEventController(this, pipeline.getFeedbackReturner(), getFeedbackController());
+      motionEventController = new MotionEventController(this, pipeline.getFeedbackReturner());
       addEventListener(motionEventController);
     }
     if (isSystemApp(getApplicationInfo())) {

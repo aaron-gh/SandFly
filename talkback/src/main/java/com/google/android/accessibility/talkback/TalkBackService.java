@@ -166,7 +166,6 @@ import com.google.android.accessibility.talkback.eventprocessor.AccessibilityEve
 import com.google.android.accessibility.talkback.eventprocessor.PhoneticLetterMode;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorEmojiTraversal;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorEventQueue;
-import com.google.android.accessibility.talkback.eventprocessor.ProcessorGestureVibrator;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorMagnification;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream;
@@ -1610,10 +1609,6 @@ public class TalkBackService extends AccessibilityServiceCompat
       default -> analytics.onGesture(gestureId);
     }
 
-    if (gestureShortcutMapping.isSupportedGesture(gestureId)) {
-      getFeedbackController().playAuditory(R.raw.gesture_end, eventId);
-    }
-
     gestureController.onGesture(gestureId, eventId);
     if (FeatureSupport.supportGestureDetection()) {
       TouchInteractionMonitor touchInteractionMonitor =
@@ -2037,8 +2032,6 @@ public class TalkBackService extends AccessibilityServiceCompat
 
               // TODO: Update analytics data.
               // TODO: Check if we should dismiss radial menu.
-              feedbackController.playAuditory(R.raw.gesture_end, eventId);
-
               gestureController.onFingerprintGesture(gesture, eventId);
 
               // Measure latency.
@@ -2677,8 +2670,6 @@ public class TalkBackService extends AccessibilityServiceCompat
                 applyTouchExplorationPreference();
               }
             });
-
-    addEventListener(new ProcessorGestureVibrator(pipeline.getFeedbackReturner()));
 
     universalSearchManager =
         new UniversalSearchManager(

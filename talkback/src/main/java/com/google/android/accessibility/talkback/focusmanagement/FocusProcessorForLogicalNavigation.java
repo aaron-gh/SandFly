@@ -1437,7 +1437,13 @@ public class FocusProcessorForLogicalNavigation {
         announceSingleLinkFocused(LinkUtils.getLinkText(target, linkIndexToFocus), eventId);
         return setAccessibilityFocusInternal(target, navigationAction, linkIndexToFocus, eventId);
       } else {
-        boolean focused = setAccessibilityFocusInternal(target, navigationAction, eventId);
+        boolean focused =
+            setAccessibilityFocusInternal(
+                target,
+                navigationAction,
+                /* linkIndex= */ -1,
+                columnWrap(pivot, target, navigationAction, logicalDirection),
+                eventId);
         if (!focused && usedSavedTree) {
           // The app might have removed the target before its change event reached us, so try
           // again with a new tree.
@@ -1732,6 +1738,15 @@ public class FocusProcessorForLogicalNavigation {
       TraversalStrategy traversalStrategy,
       EventId eventId) {
     if (navigateToHtmlTarget(webPivot, navigationAction, eventId)) {
+      if (isMoveToNextOrPreviousItem(navigationAction)) {
+        // The page moves the focus, so its focus event shows where it went.
+        boolean rtl = WindowUtils.isScreenLayoutRTL(service);
+        ColumnWrap.expectWebFocus(
+            webPivot,
+            TraversalStrategyUtils.getLogicalDirection(navigationAction.searchDirection, rtl)
+                == TraversalStrategy.SEARCH_FOCUS_FORWARD,
+            rtl);
+      }
       return NavigationResult.create(NavigationResult.Type.WEB_ELEMENT);
     }
     // Navigate out of WebView with normal navigation
@@ -2350,6 +2365,16 @@ public class FocusProcessorForLogicalNavigation {
       NavigationAction navigationAction,
       int linkIndex,
       EventId eventId) {
+    return setAccessibilityFocusInternal(
+        target, navigationAction, linkIndex, ColumnWrap.NONE, eventId);
+  }
+
+  private boolean setAccessibilityFocusInternal(
+      AccessibilityNodeInfoCompat target,
+      NavigationAction navigationAction,
+      int linkIndex,
+      int columnWrap,
+      EventId eventId) {
     // Clear the "reachEdge" flag.
     reachEdge = false;
     resetLastScrolledNodeForNativeMacroGranularity();
@@ -2368,8 +2393,35 @@ public class FocusProcessorForLogicalNavigation {
                     .setFocusedLinkIndex(linkIndex)
                     // Mute the a11y focused feedback if we are focusing a link.
                     .setForceMuteFeedback(linkIndex >= 0)
+                    .setColumnWrap(columnWrap)
                     .build())
             .setForceRefocus(true));
+  }
+
+  /**
+   * Whether moving to the next or previous item from {@code pivot} to {@code target} goes to
+   * another row of a grid, one of the {@link ColumnWrap} values.
+   */
+  private int columnWrap(
+      AccessibilityNodeInfoCompat pivot,
+      AccessibilityNodeInfoCompat target,
+      NavigationAction navigationAction,
+      @SearchDirectionOrUnknown int logicalDirection) {
+    if (!isMoveToNextOrPreviousItem(navigationAction)) {
+      return ColumnWrap.NONE;
+    }
+    return ColumnWrap.detect(
+        pivot,
+        target,
+        logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD,
+        WindowUtils.isScreenLayoutRTL(service));
+  }
+
+  /** Whether {@code navigationAction} moves to the next or previous item, as a swipe does. */
+  private static boolean isMoveToNextOrPreviousItem(NavigationAction navigationAction) {
+    return navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+        && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+        && TraversalStrategyUtils.isLogicalDirection(navigationAction.searchDirection);
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////////////

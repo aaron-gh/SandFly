@@ -40,12 +40,16 @@ object SoundVibrations {
   /**
    * The switches of vibrations that only sound themes give, by sound resource name: each kind of
    * control can have its own vibration in a theme. Without one, a control plays the focus
-   * vibration. A link shares the switch of the link vibration.
+   * vibration. A link shares the switch of the link vibration. Navigation sounds without a SandFly
+   * vibration have them too.
    */
   val THEME_ONLY_SWITCHES: Map<String, String> =
     ControlSounds.SOUNDS.keys.associateWith {
       if (it == "control_link") "hyperlink_pattern" else "${it}_pattern"
-    }
+    } +
+      NavigationSounds.SOUNDS.keys
+        .filter { it !in NavigationSounds.PATTERNS }
+        .associateWith { "${it}_pattern" }
 
   /** The name of the switch that turns off the vibration of a sound, by its resource name. */
   @JvmStatic
@@ -144,8 +148,6 @@ object SoundVibrations {
       "chime_down" to "list_exited_pattern",
       "complete" to "complete_pattern",
       "window_state" to "window_state_pattern",
-      "gesture_begin" to "gesture_detection_repeated_pattern",
-      "gesture_end" to "gesture_end_pattern",
       "typo" to "typo_pattern",
       "hyperlink" to "hyperlink_pattern",
       "formatting" to "formatting_pattern",
@@ -155,7 +157,9 @@ object SoundVibrations {
       "loading" to "loading_pattern",
       "browse_mode_on_v4_2" to "browse_mode_on_pattern",
       "browse_mode_off_v4_2" to "browse_mode_off_pattern",
-    ) + (1..8).associate { "radial_menu_$it" to "radial_menu_${it}_pattern" }
+    ) +
+      (1..8).associate { "radial_menu_$it" to "radial_menu_${it}_pattern" } +
+      NavigationSounds.PATTERNS
 
   /**
    * Vibration pattern resource IDs, by sound resource names, for the feedback controller. By name,

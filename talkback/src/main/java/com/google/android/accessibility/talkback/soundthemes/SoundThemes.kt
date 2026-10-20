@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.controlsounds.ControlSounds
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings
 import com.google.android.accessibility.talkback.individualfeedback.FeedbackItem
 import com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackSettings
+import com.google.android.accessibility.talkback.individualfeedback.NavigationSounds
 import com.google.android.accessibility.talkback.individualfeedback.SoundVibrations
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
@@ -247,6 +248,13 @@ object SoundThemes {
   /** The key of the screen on sound, which plays only if the theme gives it a sound. */
   const val SCREEN_ON = "screen_on"
 
+  /**
+   * Whether the sound [key] has no sound of SandFly's own, so that it plays only a theme's: screen
+   * on and the navigation sounds.
+   */
+  @JvmStatic
+  fun hasNoOwnSound(key: String): Boolean = key == SCREEN_ON || key in NavigationSounds.SOUNDS
+
   /** The sound files of [theme], by item key. */
   @JvmStatic
   fun soundFiles(theme: SoundTheme): Map<String, File> {
@@ -269,13 +277,13 @@ object SoundThemes {
     isNone(active(context, prefs), item)
 
   /**
-   * Whether [item] plays no sound in [theme]: it is set to "none", or it is the screen on sound,
-   * which has no sound of Backtalk's own and so plays nothing without a file.
+   * Whether [item] plays no sound in [theme]: it is set to "none", or it has no sound of SandFly's
+   * own and so plays nothing without a file.
    */
   @JvmStatic
   fun isNone(theme: SoundTheme, item: FeedbackItem): Boolean =
     theme.manifest.sounds[item.key] == SoundThemeManifest.NONE ||
-      (item.key == SCREEN_ON && soundFiles(theme)[item.key] == null)
+      (hasNoOwnSound(item.key) && soundFiles(theme)[item.key] == null)
 
   /**
    * The sounds and vibrations of the theme in use. An item with several sounds, like the circle
