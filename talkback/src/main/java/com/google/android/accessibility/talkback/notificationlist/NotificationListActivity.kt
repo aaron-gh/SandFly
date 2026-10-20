@@ -279,7 +279,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   /** A group's row names the app, the number of notifications and the newest one. */
   private fun bindGroup(row: TextView, group: NotificationItem.Group) {
-    val newest = group.entries.maxBy { it.notification.postTime }
+    val newest = group.entries.maxBy { it.timeMillis }
     val count =
       resources.getQuantityString(
         R.plurals.notification_list_group_count,
