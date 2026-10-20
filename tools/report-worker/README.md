@@ -22,7 +22,7 @@ error.
 2. Create a fine-grained personal access token at GitHub > Settings > Developer settings:
    - Repository access: only `aaron-gh/SandFly-reports`
    - Permissions: Issues, read and write
-3. With Node.js installed, in this directory:
+3. With Node.js installed (`brew install node`), in this directory:
 
    ```sh
    npx wrangler login
@@ -41,5 +41,9 @@ When the token expires, create a new one and run `npx wrangler secret put GITHUB
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc -m test/report_test.mjs
 ```
 
-The test covers validation and the issue text in `src/report.js`. `src/index.js` runs only on
-Cloudflare; check it after deploying with a report from SandFly.
+The test covers validation and the issue text in `src/report.js`. To run the whole Worker
+locally against a stand-in for GitHub's API listening on port 8799:
+
+```sh
+npx wrangler dev --var GITHUB_API:http://127.0.0.1:8799 --var GITHUB_TOKEN:test
+```

@@ -130,7 +130,8 @@ object ProblemReportSender {
     return try {
       val log = process.inputStream.bufferedReader().use { it.readText() }
       process.waitFor(LOG_TIMEOUT_SECONDS, TimeUnit.SECONDS)
-      log.takeLast(ProblemReport.MAX_LOG)
+      if (log.length <= ProblemReport.MAX_LOG) log
+      else log.takeLast(ProblemReport.MAX_LOG).substringAfter('\n')
     } catch (e: IOException) {
       LogUtils.w(TAG, "Cannot read the log: %s", e)
       null

@@ -109,7 +109,7 @@ async function sha256(value) {
 }
 
 function github(env, path, body) {
-  return fetch(`https://api.github.com${path}`, {
+  return fetch(`${env.GITHUB_API || 'https://api.github.com'}${path}`, {
     method: 'POST',
     headers: {
       accept: 'application/vnd.github+json',
