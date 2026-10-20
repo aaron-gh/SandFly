@@ -53,9 +53,9 @@ object IndividualFeedbackSettings {
         "previous_reading_control",
         R.string.individual_sound_previous_reading_control,
       ),
-      FeedbackItem("edge_gesture_start", R.string.individual_sound_edge_gesture_start),
+      FeedbackItem("edge_gesture_bottom", R.string.individual_sound_edge_gesture_bottom),
       FeedbackItem("edge_gesture_middle", R.string.individual_sound_edge_gesture_middle),
-      FeedbackItem("edge_gesture_end", R.string.individual_sound_edge_gesture_end),
+      FeedbackItem("edge_gesture_top", R.string.individual_sound_edge_gesture_top),
       FeedbackItem("insertion_point_moved", R.string.individual_sound_insertion_point_moved),
       FeedbackItem("column_wrap", R.string.individual_sound_column_wrap),
       FeedbackItem("column_wrap_back", R.string.individual_sound_column_wrap_back),
@@ -124,9 +124,9 @@ object IndividualFeedbackSettings {
   /** The vibrations of the edge gesture sounds, which watches leave out. */
   val EDGE_GESTURE_SOUND_VIBRATIONS =
     listOf(
-      FeedbackItem("edge_gesture_start_pattern", R.string.individual_sound_edge_gesture_start),
+      FeedbackItem("edge_gesture_bottom_pattern", R.string.individual_sound_edge_gesture_bottom),
       FeedbackItem("edge_gesture_middle_pattern", R.string.individual_sound_edge_gesture_middle),
-      FeedbackItem("edge_gesture_end_pattern", R.string.individual_sound_edge_gesture_end),
+      FeedbackItem("edge_gesture_top_pattern", R.string.individual_sound_edge_gesture_top),
     )
 
   /**
@@ -150,7 +150,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("list_exited_pattern", R.string.individual_sound_chime_down),
       FeedbackItem("complete_pattern", R.string.individual_sound_complete),
       FeedbackItem("window_state_pattern", R.string.individual_vibration_window_state),
-      // Of the navigation sounds, only the edge gesture start and middle have SandFly
+      // Of the navigation sounds, only the edge gesture middle and top have SandFly
       // vibrations. The others vibrate only with a sound theme's vibration.
       FeedbackItem(
         "next_reading_control_pattern",
@@ -219,10 +219,24 @@ object IndividualFeedbackSettings {
   private const val PREF_EDGE_GESTURE_SPLIT = "pref_individual_edge_gesture_split"
 
   /**
+   * The edge gesture sounds were first named start, middle and end, for the first stage, the second
+   * stage and lifting. Their switches, sound and vibration, by their new names: the first stage is
+   * now the middle and the second the top, and lifting plays nothing. Set once they are renamed.
+   */
+  private val OLD_EDGE_GESTURE_SWITCHES =
+    mapOf(
+      "edge_gesture_start" to "edge_gesture_middle",
+      "edge_gesture_middle" to "edge_gesture_top",
+      "edge_gesture_end" to null,
+    )
+  private const val PREF_EDGE_GESTURE_POSITIONS = "pref_individual_edge_gesture_positions"
+
+  /**
    * Carries over switches that no longer exist, once: if Selection was turned off, the vibration
    * selection now plays is turned off instead. If Volume change was turned off, which only
-   * silenced screen off, Screen off is turned off instead. And if Edge gestures was turned off,
-   * the vibrations of the edge gesture sounds are turned off too.
+   * silenced screen off, Screen off is turned off instead. If Edge gestures was turned off, the
+   * vibrations of the edge gesture sounds are turned off too. And the edge gesture switches of their
+   * first names are renamed.
    */
   fun migrate(prefs: SharedPreferences) {
     val muted = stringSet(prefs, PREF_MUTED_VIBRATIONS)
@@ -253,6 +267,23 @@ object IndividualFeedbackSettings {
         .putBoolean(PREF_SCREEN_OFF_SPLIT, true)
         .apply()
     }
+    if (!prefs.getBoolean(PREF_EDGE_GESTURE_POSITIONS, false)) {
+      // Only switches set while they had the old names are renamed. Before that, the split below
+      // gives the new names.
+      val renamed = prefs.getBoolean(PREF_EDGE_GESTURE_SPLIT, false)
+      prefs
+        .edit()
+        .putStringSet(
+          PREF_MUTED_SOUNDS,
+          renameEdgeGestureSwitches(stringSet(prefs, PREF_MUTED_SOUNDS), renamed, ""),
+        )
+        .putStringSet(
+          PREF_MUTED_VIBRATIONS,
+          renameEdgeGestureSwitches(stringSet(prefs, PREF_MUTED_VIBRATIONS), renamed, "_pattern"),
+        )
+        .putBoolean(PREF_EDGE_GESTURE_POSITIONS, true)
+        .apply()
+    }
     if (!prefs.getBoolean(PREF_EDGE_GESTURE_SPLIT, false)) {
       val mutedVibrations = stringSet(prefs, PREF_MUTED_VIBRATIONS)
       prefs
@@ -268,6 +299,19 @@ object IndividualFeedbackSettings {
         .putBoolean(PREF_EDGE_GESTURE_SPLIT, true)
         .apply()
     }
+  }
+
+  private fun renameEdgeGestureSwitches(
+    muted: Set<String>,
+    rename: Boolean,
+    suffix: String,
+  ): Set<String> {
+    if (!rename) {
+      return muted
+    }
+    val old = OLD_EDGE_GESTURE_SWITCHES.mapKeys { it.key + suffix }
+    return muted.filter { it !in old }.toSet() +
+      muted.mapNotNull { name -> old[name]?.let { it + suffix } }
   }
 
   fun isSoundOn(prefs: SharedPreferences, item: FeedbackItem): Boolean =

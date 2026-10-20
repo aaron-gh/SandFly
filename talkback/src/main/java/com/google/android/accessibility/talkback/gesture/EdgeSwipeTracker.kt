@@ -59,6 +59,9 @@ class EdgeSwipeTracker(
 
   /** Receives the stages and the end of a slide. */
   interface Listener {
+    /** A finger landed at [edge], where a slide may start. */
+    fun onEdgeTouched(edge: Edge)
+
     /** The slide took over the touch. No other gesture or touch exploration may use it. */
     fun onEdgeSwipeStarted(edge: Edge)
 
@@ -188,6 +191,7 @@ class EdgeSwipeTracker(
     startTime = event.eventTime
     state = State.POSSIBLE
     debugLog("possible: start=(${x.toInt()},${y.toInt()}) screen=${screenWidth}x$screenHeight")
+    listener.onEdgeTouched(edge)
   }
 
   /**

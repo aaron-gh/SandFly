@@ -147,9 +147,9 @@ play is left out when the theme is installed, and Backtalk says so.
 | `window_state` | Window change |
 | `next_reading_control` | Next reading control (plays no sound in the Backtalk theme) |
 | `previous_reading_control` | Previous reading control (plays no sound in the Backtalk theme) |
-| `edge_gesture_start` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the Backtalk theme) |
-| `edge_gesture_middle` | A swipe up from the bottom edge reaching its second stage (plays no sound in the Backtalk theme) |
-| `edge_gesture_end` | Lifting to perform an edge gesture (plays no sound in the Backtalk theme) |
+| `edge_gesture_bottom` | A finger touching an edge where an edge gesture starts, or sliding back to it (plays no sound in the Backtalk theme) |
+| `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the Backtalk theme) |
+| `edge_gesture_top` | A swipe up from the bottom edge reaching its second stage (plays no sound in the Backtalk theme) |
 | `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the Backtalk theme) |
 | `column_wrap` | Swiping forward from the end of a row of a grid or table to the start of the next row (plays no sound in the Backtalk theme) |
 | `column_wrap_back` | Swiping back from the start of a row of a grid or table to the end of the row before (plays no sound in the Backtalk theme) |
@@ -227,7 +227,7 @@ sounds (`display_connected`, `display_disconnected`, `double_beep`, `turn_on`, `
 `calibration_done`) have no vibration, so they can't have one in a theme either.
 
 Backtalk has no vibrations of its own for `next_reading_control`, `previous_reading_control`,
-`edge_gesture_end`, `insertion_point_moved`, `column_wrap` and `column_wrap_back`, so they vibrate
+`edge_gesture_bottom`, `insertion_point_moved`, `column_wrap` and `column_wrap_back`, so they vibrate
 only with the theme's. `column_wrap` and `column_wrap_back` play with the focus sound, and their
 vibrations play in place of the focus vibration.
 

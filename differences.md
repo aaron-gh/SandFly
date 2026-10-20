@@ -262,11 +262,11 @@ To keep hearing the kind of control as well, turn on **Still say the kind of con
 TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, a sound theme can give a sound and a vibration to each of these:
 
 - **Next reading control** and **Previous reading control**: selecting another reading control, with a gesture, the rotor, a keyboard shortcut or the braille keyboard.
-- **Edge gesture start**, **Edge gesture middle** and **Edge gesture end**: an edge gesture reaching its first click, reaching its second click, and lifting to perform its action. Sliding back to the first click plays the start sound again.
+- **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and a swipe up from the bottom edge reaching its second click. Top edge gestures have one click, so they use only the bottom and middle sounds. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
 - **Insertion point moved**: moving by character, word, line or paragraph moves the cursor in a text field you are editing.
 - **Column wrap** and **Column wrap back**: swiping forward from the end of a row of a grid or table to the start of the next row, and back from the start of a row to the end of the row before, such as between rows of icons on a home screen. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
 
-SandFly has no sounds of its own for these. The edge gesture start and middle have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
+SandFly has no sounds of its own for these. The edge gesture middle and top have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
 
 Tables and grids that report their rows and columns, such as web tables and grid lists, wrap by row number. Grids that don't, such as home screens and keypads, wrap when focus moves to an item of the same size, in the same container, on the next row and back towards the start of the row. Column wrap doesn't play for grids whose items differ in size, or for swipes that move from one window to another.
 
@@ -333,7 +333,7 @@ As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge 
 - Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about four more centimeters to feel a second click, and lift there for Overview (recent apps).
 - Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click.
 
-Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn off the clicks, turn off **Edge gesture start** and **Edge gesture middle** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. A sound theme can give each stage a sound; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
+Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. A sound theme can give each stage a sound; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
 To scrub, move two fingers quickly one way across the screen and back, each stroke about a centimeter long. By default, this goes back. Two fingers moved one way only still scroll.
 

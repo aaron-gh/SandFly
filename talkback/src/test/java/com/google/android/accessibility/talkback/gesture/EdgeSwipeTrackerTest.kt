@@ -41,6 +41,8 @@ class EdgeSwipeTrackerTest {
             events.add("start")
           }
 
+          override fun onEdgeTouched(edge: Edge) {}
+
           override fun onEdgeSwipeStage(edge: Edge, stage: Int, previousStage: Int) {
             events.add("$previousStage>$stage")
           }

@@ -886,9 +886,9 @@
         <item>120</item><!-- scale -->
         <item>0</item><!-- delayMs -->
     </integer-array>
-    <!-- Edge gesture start: an edge swipe reaches its first stage. Two firm clicks close together,
-         like pressing and releasing a home button. -->
-    <integer-array name="edge_gesture_start_pattern">
+    <!-- Edge gesture middle: an edge swipe reaches its first stage. Two firm clicks close
+         together, like pressing and releasing a home button. -->
+    <integer-array name="edge_gesture_middle_pattern">
         <item>0</item>
         <item>20</item>
         <item>25</item>
@@ -909,9 +909,9 @@
         <item>25</item><!-- delayMs -->
     </integer-array>
 
-    <!-- Edge gesture middle: a swipe up from the bottom edge reaches its second stage. The first
+    <!-- Edge gesture top: a swipe up from the bottom edge reaches its second stage. The first
          stage's clicks and a third. -->
-    <integer-array name="edge_gesture_middle_pattern">
+    <integer-array name="edge_gesture_top_pattern">
         <item>0</item>
         <item>20</item>
         <item>25</item>

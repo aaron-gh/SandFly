@@ -88,10 +88,51 @@ class IndividualFeedbackSettingsTest {
       setOf(
         "edge_swipe_back_pattern",
         "edge_swipe_cancel_pattern",
-        "edge_gesture_start_pattern",
+        "edge_gesture_bottom_pattern",
         "edge_gesture_middle_pattern",
-        "edge_gesture_end_pattern",
+        "edge_gesture_top_pattern",
       ),
+      IndividualFeedbackSettings.mutedVibrationResources(prefs),
+    )
+  }
+
+  @Test
+  fun edgeGestureSwitchesOfTheFirstNamesAreRenamed() {
+    prefs
+      .edit()
+      .putBoolean("pref_individual_edge_gesture_split", true)
+      .putStringSet(
+        IndividualFeedbackSettings.PREF_MUTED_SOUNDS,
+        setOf("edge_gesture_start", "edge_gesture_end", "tick"),
+      )
+      .putStringSet(
+        IndividualFeedbackSettings.PREF_MUTED_VIBRATIONS,
+        setOf("edge_gesture_middle_pattern"),
+      )
+      .apply()
+    IndividualFeedbackSettings.migrate(prefs)
+    assertEquals(
+      setOf("edge_gesture_middle", "tick"),
+      IndividualFeedbackSettings.mutedSoundResources(prefs),
+    )
+    assertEquals(
+      setOf("edge_gesture_top_pattern"),
+      IndividualFeedbackSettings.mutedVibrationResources(prefs),
+    )
+  }
+
+  @Test
+  fun edgeGestureSwitchesSetUnderTheNewNamesStay() {
+    prefs
+      .edit()
+      .putStringSet(
+        IndividualFeedbackSettings.PREF_MUTED_VIBRATIONS,
+        setOf("edge_gesture_middle_pattern"),
+      )
+      .apply()
+    IndividualFeedbackSettings.migrate(prefs)
+    assertEquals(
+      setOf("edge_gesture_middle_pattern"),
       IndividualFeedbackSettings.mutedVibrationResources(prefs),
     )
   }

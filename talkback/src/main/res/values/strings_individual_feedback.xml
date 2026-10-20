@@ -35,12 +35,12 @@
     <string name="individual_sound_next_reading_control">Next reading control</string>
     <!-- Sound played when the previous reading control is selected. [CHAR LIMIT=60] -->
     <string name="individual_sound_previous_reading_control">Previous reading control</string>
+    <!-- Sound played when a finger touches the edge of the screen where an edge gesture starts. [CHAR LIMIT=60] -->
+    <string name="individual_sound_edge_gesture_bottom">Edge gesture bottom</string>
     <!-- Sound played when an edge gesture reaches its first stage. [CHAR LIMIT=60] -->
-    <string name="individual_sound_edge_gesture_start">Edge gesture start</string>
-    <!-- Sound played when a swipe up from the bottom edge reaches its second stage. [CHAR LIMIT=60] -->
     <string name="individual_sound_edge_gesture_middle">Edge gesture middle</string>
-    <!-- Sound played when the finger lifts and an edge gesture performs its action. [CHAR LIMIT=60] -->
-    <string name="individual_sound_edge_gesture_end">Edge gesture end</string>
+    <!-- Sound played when a swipe up from the bottom edge reaches its second stage. [CHAR LIMIT=60] -->
+    <string name="individual_sound_edge_gesture_top">Edge gesture top</string>
     <!-- Sound played when moving by character, word, line or paragraph moves the cursor in a text field being edited. [CHAR LIMIT=60] -->
     <string name="individual_sound_insertion_point_moved">Insertion point moved</string>
     <!-- Sound played when moving forward from the end of a row of a grid or table to the start of the next row. [CHAR LIMIT=60] -->

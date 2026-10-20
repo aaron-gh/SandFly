@@ -1372,6 +1372,14 @@ public class TouchInteractionMonitor
   private final EdgeSwipeTracker.Listener edgeSwipeListener =
       new EdgeSwipeTracker.Listener() {
         @Override
+        public void onEdgeTouched(Edge edge) {
+          @Nullable FeedbackController feedbackController = feedbackController();
+          if (feedbackController != null) {
+            feedbackController.playAuditory(R.id.edge_gesture_bottom, /* eventId= */ null);
+          }
+        }
+
+        @Override
         public void onEdgeSwipeStarted(Edge edge) {
           // No other gesture, touch exploration or passthrough for this touch.
           takeOverTouch();
@@ -1379,24 +1387,24 @@ public class TouchInteractionMonitor
 
         @Override
         public void onEdgeSwipeStage(Edge edge, int stage, int previousStage) {
-          FeedbackController feedbackController;
-          try {
-            feedbackController = service.getFeedbackController();
-          } catch (IllegalStateException e) {
-            // Feedback isn't set up yet.
+          @Nullable FeedbackController feedbackController = feedbackController();
+          if (feedbackController == null) {
             return;
           }
+          // Sliding back plays the sound of the place it is back at, with the slide back's
+          // vibration.
           if (stage == 0) {
+            feedbackController.playAuditoryWithoutHaptic(
+                R.id.edge_gesture_bottom, /* eventId= */ null);
             feedbackController.playHaptic(R.array.edge_swipe_cancel_pattern, /* eventId= */ null);
           } else if (stage < previousStage) {
-            // Back at the first stage: its sound, with the slide back's vibration.
             feedbackController.playAuditoryWithoutHaptic(
-                R.id.edge_gesture_start, /* eventId= */ null);
+                R.id.edge_gesture_middle, /* eventId= */ null);
             feedbackController.playHaptic(R.array.edge_swipe_back_pattern, /* eventId= */ null);
           } else if (stage == 1) {
-            feedbackController.playAuditory(R.id.edge_gesture_start, /* eventId= */ null);
-          } else {
             feedbackController.playAuditory(R.id.edge_gesture_middle, /* eventId= */ null);
+          } else {
+            feedbackController.playAuditory(R.id.edge_gesture_top, /* eventId= */ null);
           }
         }
 
@@ -1405,13 +1413,6 @@ public class TouchInteractionMonitor
           if (stage == 0) {
             // Slid back to the edge, or a second finger landed: no gesture.
             return;
-          }
-          try {
-            service
-                .getFeedbackController()
-                .playAuditory(R.id.edge_gesture_end, /* eventId= */ null);
-          } catch (IllegalStateException e) {
-            // Feedback isn't set up yet.
           }
           int gestureId =
               switch (edge) {
@@ -1431,6 +1432,15 @@ public class TouchInteractionMonitor
               new AccessibilityGestureEvent(gestureId, displayId, new ArrayList<MotionEvent>()));
         }
       };
+
+  /** The service's feedback controller, or null before it is set up. */
+  private @Nullable FeedbackController feedbackController() {
+    try {
+      return service.getFeedbackController();
+    } catch (IllegalStateException e) {
+      return null;
+    }
+  }
 
   /**
    * Passes the event to the two-finger scrub tracker. Returns true if the event belongs to a scrub,
