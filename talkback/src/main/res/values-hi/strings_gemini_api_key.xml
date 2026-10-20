@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API कुंजी</string>
+    <string name="summary_pref_gemini_api_key_set">सेट है. \'इमेज के बारे में जानकारी सुनें\' और \'स्क्रीन के बारे में जानकारी सुनें\' Gemini इस्तेमाल करते हैं</string>
+    <string name="summary_pref_gemini_api_key_built_in">इस ऐप्लिकेशन में मौजूद कुंजी इस्तेमाल हो रही है</string>
+    <string name="summary_pref_gemini_api_key_not_set">सेट नहीं है. कुंजी के बिना, \'इमेज के बारे में जानकारी सुनें\' सिर्फ़ टेक्स्ट पढ़ता है, और \'स्क्रीन के बारे में जानकारी सुनें\' के लिए डिवाइस पर मौजूद एआई ज़रूरी है</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio से, aistudio.google.com/apikey पर, मुफ़्त API कुंजी पाएं और उसे यहां चिपकाएं. अपनी कुंजी हटाने के लिए, फ़ील्ड खाली करें और सेव करें.\n\nजिन इमेज और स्क्रीन के बारे में आप जानकारी लेते हैं वे Google को भेजी जाती हैं. मुफ़्त टियर पर, Google उनका इस्तेमाल अपने प्रॉडक्ट बेहतर बनाने के लिए कर सकता है.</string>
+    <string name="gemini_api_key_hint">API कुंजी</string>
+    <string name="gemini_api_key_save">सेव करें</string>
+    <string name="gemini_api_key_get">कुंजी पाएं</string>
+    <string name="gemini_api_terms_link">Gemini API की सेवा की अतिरिक्त शर्तें</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Check for updates</string>
+    <string name="summary_pref_check_for_updates_version">Version <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Automatically check for updates</string>
+    <string name="summary_pref_auto_update_check">Check once a day and show a notification when a new build is available</string>
+    <string name="title_pref_dev_builds">Development builds</string>
+    <string name="update_notification_title">SandFly update available</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Tap to install.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> is available</string>
+    <string name="update_dialog_install">Install</string>
+    <string name="update_checking">Checking for updates</string>
+    <string name="update_up_to_date">SandFly is up to date</string>
+    <string name="update_check_failed">Could not check for updates</string>
+    <string name="update_downloading">Downloading update</string>
+    <string name="update_install_failed">Could not install the update</string>
+    <string name="update_install_canceled">Update cancelled</string>
+    <string name="update_allow_install">Allow SandFly to install apps, then try the update again</string>
+</resources>

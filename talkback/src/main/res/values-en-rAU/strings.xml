@@ -38,7 +38,7 @@
   <string name="summary_pref_speech_rate">Speed at which the text is spoken</string>
   <string name="title_pref_speak_screenoff">Speak notifications when screen is off</string>
   <string name="title_pref_verbose_scroll_announcement">Always speak number of list items</string>
-  <string name="summary_pref_verbose_scroll_announcement">Speak count for all scrolling methods</string>
+  <string name="summary_pref_verbose_scroll_announcement">Say which items are showing after every scroll</string>
   <string name="title_pref_cover_proximity_sensor">Cover proximity sensor to stop speech</string>
   <string name="title_pref_phonetic_letters">Speak letters with examples</string>
   <string name="summary_pref_phonetic_letters">When you select keyboard keys or navigate by character, you\'ll hear an example along with each letter, like \'h, hotel\'</string>
@@ -47,7 +47,7 @@
   <string name="punctuation_most">Most</string>
   <string name="punctuation_some">Some</string>
   <string name="title_pref_count_repeated_symbols">Count repeated symbols</string>
-  <string name="summary_pref_count_repeated_symbols">Announces the count of repeated symbols when there are 4 or more</string>
+  <string name="summary_pref_count_repeated_symbols">Say how many times a symbol repeats when it repeats 4 or more times</string>
   <string name="learn_more">Learn more</string>
   <string name="title_pref_capital_letters">Capital letters</string>
   <string name="capital_letters_nothing">Do nothing</string>
@@ -55,17 +55,17 @@
   <string name="capital_letters_change_pitch">Change pitch</string>
   <string name="capital_letters_sound_feedback">Play sound</string>
   <string name="title_pref_a11y_hints">Speak usage hints</string>
-  <string name="summary_pref_a11y_hints">After describing content, suggest how to use</string>
+  <string name="summary_pref_a11y_hints">After an item is described, say how to use it</string>
   <string name="pref_speak_container_element_positions_title">Speak container info</string>
   <string name="pref_speak_time_title">Speak time</string>
   <string name="pref_speak_time_summary">When you turn on the screen</string>
-  <string name="summary_speak_container_element_positions">Includes info while entering and exiting lists, grids and other containers</string>
+  <string name="summary_speak_container_element_positions">Say when you enter or leave lists, grids and other containers</string>
   <string name="confirm_focus_delay_reading_control_added_dialog_title">Focus delay added to reading control</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Swipe with 3 fingers to use reading control and change the focus delay at any time</string>
+  <string name="confirm_focus_delay_reading_control_added_dialog_message">You can now change the focus delay at any time with the reading controls.</string>
   <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Switch to lift to type?</string>
   <string name="message_of_typing_focus_delay_reduction_confirm_dialog">When typing focus delay is set below 0.3 seconds, double-tap to type will be very difficult to perform. Choose \'Switch\' to automatically switch to lift to type.\n\nTo use lift to type, hold your finger to select any key, then lift for typing.\n\nYou can customise this in SandFly settings.</string>
   <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Typing focus delay added to reading control</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If you have issues with double-tap while typing, swipe with 3 fingers to use reading control and change to a longer typing focus delay</string>
+  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If double-tap is unreliable while you type, you can change to a longer typing focus delay at any time with the reading controls.</string>
   <string name="gestures_announce_typing_focus_wont_change">Typing focus delay is not functioning without lift to type.</string>
   <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Got it</string>
   <string name="reset_letency_reduction_settings_dialog_title">Reset delay settings?</string>
@@ -79,10 +79,10 @@
   <string name="message_reset_gesture_settings_confirm_dialog">This will reset all gestures to their default actions.\n\nYou will lose any changes that you have made.</string>
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Reset</string>
   <string name="gestures_announce_reset_gesture_settings">The gesture settings have been reset.</string>
-  <string name="pref_speak_roles_title">Speak element type</string>
-  <string name="pref_speak_roles_summary">For focused items</string>
+  <string name="pref_speak_roles_title">Speak item type</string>
+  <string name="pref_speak_roles_summary">Like button or tick box</string>
   <string name="title_pref_speak_element_ids">Speak element IDs</string>
-  <string name="summary_pref_speak_element_ids">For unlabelled buttons</string>
+  <string name="summary_pref_speak_element_ids">Say the ID of buttons that have no label</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Speak all progress updates</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Includes updates while downloading, following driving directions and more. When turned off, you\'ll still receive less frequent updates.</string>
   <string name="title_pref_explore_by_touch">Explore by Touch</string>
@@ -99,19 +99,19 @@
   <string name="summary_pref_single_tap">Tap once on a focused item to activate. Faster navigation than double-tapping.</string>
   <string name="pref_verbosity_title">Verbosity</string>
   <string name="pref_punctuation_title">Speak punctuation and symbols</string>
-  <string name="title_pref_category_manage_focus_indicator">Change focus indicator</string>
+  <string name="title_pref_category_manage_focus_indicator">Focus indicator</string>
   <string name="title_pref_category_manage_gestures">Gestures</string>
   <string name="title_pref_manage_labels">Custom labels</string>
   <string name="title_pref_manage_customize_menus">Edit menus</string>
   <string name="title_pref_category_context_menu">Customise SandFly menu</string>
-  <string name="title_pref_category_selector_menu">Customise reading controls</string>
+  <string name="title_pref_category_selector_menu">Reading controls</string>
   <string name="title_pref_category_navigation_menu">Edit navigation options</string>
   <string name="pref_category_context_menu_summary">To use the SandFly menu, tap the screen with three fingers. You can also swipe up then right, or swipe down then right.</string>
   <string name="pref_category_context_menu_summary_xr">To use the SandFly menu, turn your secondary palm in and pinch.</string>
   <string name="pref_category_context_menu_summary_single_finger">To use the SandFly menu, swipe down then right.</string>
-  <string name="pref_category_selector_menu_summary">To use the reading controls, swipe left or right with three fingers. You can also swipe up or down with three fingers.</string>
+  <string name="pref_category_selector_menu_summary">Turn 2 fingers like a dial, or swipe left or right with 3 fingers, to choose a reading control. Then swipe up or down to change it.</string>
   <string name="pref_category_selector_menu_summary_xr">To cycle between reading controls, turn your secondary palm in, hold your pinch, move right or left and release.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">To use the reading controls, swipe up then down.</string>
+  <string name="pref_category_selector_menu_summary_single_finger">Swipe up then down, or down then up, to choose a reading control. Then swipe up or down to change it.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Keyboard shortcuts</string>
   <string name="title_pref_export_custom_labels">Export custom labels</string>
   <string name="title_pref_play_store">Open SandFly at the Play Store</string>
@@ -336,7 +336,7 @@
   <string name="override_keycombo_message_two_params">This key combination is used for \'%1$s\' action. Do you want to clear it and assign this shortcut to \'%2$s\'?</string>
   <string name="title_pref_intonation">Use pitch changes</string>
   <string name="title_pref_keyboard_echo">Keyboard echo</string>
-  <string name="pref_node_desc_order_title">Element description order</string>
+  <string name="pref_node_desc_order_title">Order of item details</string>
   <string name="pref_time_feedback_format_title">Time format</string>
   <string name="title_pref_latency_reduction">Reduce delay</string>
   <string name="talkback_latency_reduction_summary">Settings to reduce the delay before SandFly announcements</string>
@@ -352,7 +352,7 @@
   <string name="title_pref_category_developer_settings">Developer settings</string>
   <string name="title_activity_dump_a11y_event">Select events to log</string>
   <string name="title_pref_dump_a11y_event">Filter accessibility event logging</string>
-  <string name="pref_reduce_window_delay_title">Reduce window announcement delay</string>
+  <string name="pref_reduce_window_delay_title">Turn off animations</string>
   <string name="title_pref_log_level">Log output level</string>
   <string name="title_pref_diagnosis_mode">Diagnosis mode</string>
   <string name="title_pref_tts_overlay">Display speech output</string>
@@ -362,7 +362,7 @@
   <string name="summary_pref_tree_debug_tv">Use voice search key to print node tree instead of searching</string>
   <string name="title_pref_performance_stats">Enable performance statistics</string>
   <string name="title_pref_log_overlay">Enable debug log overlay</string>
-  <string name="title_pref_typing_confirmation">Typing preference</string>
+  <string name="title_pref_typing_confirmation">Typing method</string>
   <string name="title_pref_typing_long_tap_duration">Touch and hold delay when typing</string>
   <string name="title_pref_touch_explore_timeout">Typing focus delay</string>
   <string name="message_pref_touch_explore_latency">Shorter typing focus delay means that SandFly announcements are made faster after touching the keyboard.\n\nSelect a delay</string>
@@ -375,7 +375,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="toast_pref_talkback_gesture_detection">Turn SandFly off then on again to activate the setting.</string>
   <string name="title_pref_auto_image_captioning">Automatic descriptions</string>
   <string name="title_pref_gemini_settings">Gemini settings</string>
-  <string name="title_pref_gemini_enabled">Gemini voice command</string>
+  <string name="title_pref_gemini_enabled">Gemini voice commands</string>
   <string name="title_pref_category_automatic_description_summary">Get detailed AI image descriptions when you select \'Describe image\' from the SandFly menu.\n\nYou can also get automatic descriptions when you focus on an image or icon. Automatic descriptions work without an Internet connection.</string>
   <string name="title_pref_icon_detection">Automatic icon descriptions</string>
   <string name="title_pref_image_description">Automatic image descriptions</string>
@@ -1412,13 +1412,13 @@ Do not use any markdown in your response.</string>
   <string name="shortcut_column_left">Previous column</string>
   <string name="shortcut_column_right">Next column</string>
   <string name="table_navigation_not_supported">Table navigation not supported</string>
-  <string name="pref_auto_enter_table_navigation_title">Automatically switch to table navigation reading control when entering a table</string>
+  <string name="pref_auto_enter_table_navigation_title">Switch to table navigation in tables</string>
   <string name="title_text_formatting_menu">Describe text formatting</string>
   <string name="summary_text_formatting_menu">For changes like bold, italic, underline and more</string>
   <string name="title_text_formatting_inline">Speak text formatting</string>
-  <string name="title_switch_text_formatting">Turn speak text formatting on or off</string>
+  <string name="title_switch_text_formatting">Speak text formatting</string>
   <string name="summary_text_formatting_verbosity">For changes like bold and italic</string>
-  <string name="summary_text_formatting_selector">Change whether formatting, like bold and italic, are read aloud</string>
+  <string name="summary_text_formatting_selector">Change whether formatting, like bold and italic, is read aloud</string>
   <string name="title_text_formatting_verbosity_options">Text formatting options</string>
   <string name="title_text_formatting_options">Formatting options</string>
   <string name="header_text_formatting_options">Text formatting announcements</string>
@@ -1455,4 +1455,267 @@ Do not use any markdown in your response.</string>
   <string name="close_string">Close</string>
   <string name="talkback_label">SandFly</string>
   <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \'Speak notifications when screen is off\' in SandFly verbosity settings</string>
+    <string name="title_pref_tts_engine">Text-to-speech engine</string>
+    <string name="title_pref_system_tts_settings">System text-to-speech settings</string>
+    <string name="title_selector_switch_tts_engine">Speech engine</string>
+    <string name="summary_selector_switch_tts_engine">Switch between installed speech engines</string>
+    <string name="title_selector_voice_profile">Voice profile</string>
+    <string name="title_pref_voice_profiles">Voice profiles</string>
+    <string name="voice_profile_default">SandFly default</string>
+    <string name="voice_profile_in_use">In use: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="spoken_language_unavailable_with_profile">Spoken language unavailable while using a voice profile</string>
+    <string name="speech_engine_unavailable_with_profile">Speech engine unavailable while using a voice profile</string>
+    <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, in use</string>
+    <string name="no_voice_profiles">No voice profiles</string>
+    <string name="shortcut_voice_profiles">Choose voice profile</string>
+    <string name="shortcut_previous_voice_profile">Previous voice profile</string>
+    <string name="shortcut_next_voice_profile">Next voice profile</string>
+    <string name="title_pref_voice_profile_in_use">Voice profile in use</string>
+    <string name="title_pref_add_voice_profile">Add voice profile</string>
+    <string name="voice_profile_new_name">Voice profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">A voice profile is already called <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_voice_profile_name">Name</string>
+    <string name="title_pref_voice_profile_language">Language</string>
+    <string name="title_pref_voice_profile_voice">Voice</string>
+    <string name="voice_profile_engine_default">Default</string>
+    <string name="voice_profile_loading">Loading</string>
+    <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, not installed</string>
+    <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
+    <string name="voice_profile_move_up">Move up</string>
+    <string name="voice_profile_move_down">Move down</string>
+    <string name="voice_profile_rename">Rename</string>
+    <string name="voice_profile_moved_above">Moved above <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">Moved below <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> deleted</string>
+    <string name="title_pref_delete_voice_profile">Delete voice profile</string>
+    <string name="voice_profile_delete_confirm">Delete <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
+    <string name="voice_profile_delete">Delete</string>
+    <string name="summary_pref_tts_engine_default">System default</string>
+    <string name="title_pref_speech_pitch">Speech pitch</string>
+    <string name="title_pref_use_accessibility_stream">Use accessibility volume</string>
+    <string name="summary_pref_use_accessibility_stream">Speech and sounds use the accessibility volume, so you can set them apart from media. When off, they use the media volume.</string>
+    <string name="title_pref_speak_in_phrases">Send long text a sentence at a time</string>
+    <string name="summary_pref_speak_in_phrases">For speech engines that are slow to stop, such as Gryphon, so swiping away stops long text at once. Many engines pause longer between sentences sent separately, so leave this off if yours stops quickly.</string>
+    <string name="battery_optimization_notification_title">Battery optimisation can stop SandFly</string>
+    <string name="battery_optimization_notification_text">On this phone, the battery saver can stop SandFly after the screen turns off, so it falls silent until it is restarted. Tap to open battery optimisation, choose All apps, find SandFly and choose Don\'t optimise.</string>
+    <string name="title_pref_mute_speech_while_recording">Quiet while recording</string>
+    <string name="summary_pref_mute_speech_while_recording">While an app records without headphones connected, SandFly only speaks in answer to your gestures, keys and typing, and stays quiet for things such as notifications, so that they are not recorded.</string>
+    <string name="title_pref_switch_languages">Switch language automatically</string>
+    <string name="title_pref_switch_dialects">Switch dialect automatically</string>
+    <string name="category_collapsed">Collapsed</string>
+    <string name="category_expanded">Expanded</string>
+    <string name="title_pref_speak_nav_bar_buttons">Speak navigation bar buttons</string>
+    <string name="summary_pref_speak_nav_bar_buttons">With lift to activate on the navigation bar, say the button that a tap presses, such as Back or Home.</string>
+    <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
+    <string name="template_battery_level">Battery <xliff:g id="battery_level" example="73">%1$s</xliff:g> per cent</string>
+    <string name="template_battery_level_unknown">Battery level unknown</string>
+    <string name="value_charger_connected">Charger connected</string>
+    <string name="title_pref_screen_announcements">Screen on and off</string>
+    <string name="summary_pref_screen_announcements">Choose what SandFly says when the screen turns off or on, and when the phone is unlocked</string>
+    <string name="title_screen_announcements_screen_off">When the screen turns off</string>
+    <string name="title_screen_announcements_screen_on">When the screen turns on</string>
+    <string name="title_screen_announcements_unlock">When the phone is unlocked</string>
+    <string name="title_pref_say_screen_off">Say \'Screen off\'</string>
+    <string name="title_pref_say_device_unlocked">Say \'Device unlocked\'</string>
+    <string name="title_pref_announce_time">Time</string>
+    <string name="title_pref_announce_ringer_mode">Ringer mode</string>
+    <string name="summary_pref_announce_ringer_mode">Say when the ringer is set to vibrate or silent</string>
+    <string name="title_pref_category_feedback">Feedback</string>
+    <string name="title_pref_category_typing_and_braille">Typing and braille</string>
+    <string name="title_pref_category_apps">Apps</string>
+    <string name="title_pref_touch_activation">Touch and activation</string>
+    <string name="title_pref_navigation">Navigation</string>
+    <string name="title_pref_category_more">More</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestures for Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">Stops SandFly handling two-finger single and double taps so Samsung Vibration Watch can use them. Enable Vibration Watch in your watch’s accessibility settings.</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reserved for Vibration Watch in Advanced Settings</string>
+    <string name="title_pref_speakerphone_away_from_ear">Speaker when away from your ear</string>
+    <string name="summary_pref_speakerphone_away_from_ear">During a call, switches to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up again.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Needs a permission that Android does not give to screen readers. To grant it, run this command with adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="action_copy_command">Copy command</string>
+    <string name="command_copied">Command copied</string>
+    <string name="title_pref_speech_control">Let other apps speak</string>
+    <string name="summary_pref_speech_control">Apps that you allow can say text in your SandFly voice. Nothing is said while the device is locked.</string>
+    <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
+    <string name="speech_control_apps_category">Apps</string>
+    <string name="speech_control_no_apps">No apps have asked to speak yet.</string>
+    <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly?</string>
+    <string name="speech_control_ask_text">It can say text in your SandFly voice. You can change this in Advanced settings.</string>
+    <string name="speech_control_allow">Allow</string>
+    <string name="speech_control_deny">Don\'t allow</string>
+    <string name="permission_speak_label">speak through SandFly</string>
+    <string name="permission_speak_description">Lets the app ask to say text in your SandFly voice. SandFly asks you before the app can speak.</string>
+    <string name="permission_braille_display_label">ask to be a braille display for SandFly</string>
+    <string name="permission_braille_display_description">Lets the app ask to be a braille display for SandFly. If you allow it in SandFly, it can read everything on the screen and control your device. SandFly asks you first.</string>
+    <string name="title_pref_phonetic_letters_mode">Speak letters phonetically</string>
+    <string name="phonetic_letters_mode_off">Off</string>
+    <string name="phonetic_letters_mode_after_letter_delay">After the letter, delayed, like \'h, hotel\'</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">After the letter, no delay, like \'h hotel\'</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Instead of the letter, like \'hotel\'</string>
+    <string name="title_pref_emoji_speech">Emoji</string>
+    <string name="emoji_speech_engine">Read by speech engine</string>
+    <string name="emoji_speech_names">Read by SandFly</string>
+    <string name="emoji_speech_none">None</string>
+    <string name="summary_selector_menu_emoji">Change how emoji are read</string>
+    <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
+    <string name="title_pref_emoji_repeat_count">Count repeated emoji</string>
+    <string name="emoji_repeat_count_off">Off</string>
+    <string name="emoji_repeat_count_2">2 or more</string>
+    <string name="emoji_repeat_count_3">3 or more</string>
+    <string name="emoji_repeat_count_4">4 or more</string>
+    <string name="emoji_repeat_count_5">5 or more</string>
+    <string name="emoji_repeat_count_6">6 or more</string>
+    <string name="pref_table_headers_category_title">Table reading</string>
+    <string name="pref_table_column_headers_title">Read column headers</string>
+    <string name="pref_table_column_headers_entry_after">After cell data</string>
+    <string name="pref_table_column_headers_entry_before">Before cell data</string>
+    <string name="pref_table_column_headers_entry_off">Do not read</string>
+    <string name="pref_table_speak_row_column_numbers_title">Speak row and column numbers</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Announce row and column numbers for table cells</string>
+    <string name="title_pref_speak_volume_changes">Speak volume changes</string>
+    <string name="summary_pref_speak_volume_changes">Say the new volume after you press the volume keys</string>
+    <string name="title_pref_speak_notifications">Speak notifications</string>
+    <string name="summary_pref_speak_notifications">Read new notifications aloud when they arrive. Incoming calls are always read.</string>
+    <string name="title_pref_notification_list">Use SandFly\'s notification list</string>
+    <string name="title_pref_notification_parts">Notification details</string>
+    <string name="notification_part_title">Title</string>
+    <string name="notification_part_text">Text</string>
+    <string name="notification_part_app">App name</string>
+    <string name="notification_part_time">Time</string>
+    <string name="notification_part_playback">Playing or paused</string>
+    <string name="notification_list_title">Notifications</string>
+    <string name="notification_list_empty">No notifications</string>
+    <string name="notification_list_no_access">Notification access is off</string>
+    <string name="notification_list_grant_access">Turn on notification access</string>
+    <string name="notification_list_quick_settings">Quick settings</string>
+    <string name="notification_list_dismiss">Dismiss</string>
+    <string name="notification_list_clear_all">Clear all</string>
+    <string name="notification_list_send">Send</string>
+    <string name="notification_list_playing">Playing</string>
+    <string name="notification_list_paused">Paused</string>
+    <string name="notification_list_play">Play</string>
+    <string name="notification_list_pause">Pause</string>
+    <string name="notification_list_previous">Previous</string>
+    <string name="notification_list_next">Next</string>
+    <plurals name="notification_list_group_count">
+        <item quantity="one">%d notification</item>
+        <item quantity="other">%d notifications</item>
+    </plurals>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on. Hold 2 fingers on screen for 5 seconds to turn off. To stop showing this message, turn off SandFly settings &gt; Advanced settings &gt; Show instructions for turning off SandFly.</string>
+    <string name="edge_gestures_title">Edges</string>
+    <string name="title_pref_audio_output_device">Audio output device</string>
+    <string name="dialog_title_audio_output_device">Choose where to play SandFly sound</string>
+    <string name="value_audio_output_device_default">System default</string>
+    <string name="value_audio_output_device_speaker">Phone speaker</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Connected Bluetooth device or wired</string>
+    <string name="value_audio_output_device_disconnected">disconnected</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth audio device</string>
+    <string name="value_audio_output_device_wired_headset">Wired headset</string>
+    <string name="value_audio_output_device_wired_headphones">Wired headphones</string>
+    <string name="value_audio_output_device_usb_headset">USB headset</string>
+    <string name="value_audio_output_device_usb_device">USB audio device</string>
+    <string name="title_pref_speaker_devices">Phone speaker with these devices</string>
+    <string name="summary_pref_speaker_devices_none">None</string>
+    <string name="summary_pref_speaker_devices_no_devices">No Bluetooth or wired devices connected yet</string>
+    <string name="pref_reduce_window_delay_summary">SandFly reads new screens faster when animations are off. This turns off animations for the whole phone.</string>
+    <string name="dialog_message_detailed_ai_description">Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
+    <string name="dialog_message_detailed_ai_promotion">Detailed image descriptions are powered by generative AI. Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. You can turn off detailed image descriptions anytime in SandFly settings.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
+    <string name="dialog_message_screen_overview_promotion">A screenshot of the screen is sent to Google\'s Gemini API to be described, which takes several seconds. With On-device AI turned on, it\'s described on this phone instead and isn\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
+    <string name="shortcut_title_open_app">Open app</string>
+    <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_system_notifications">System notification shade</string>
+    <string name="title_clear_selection">Clear selection</string>
+    <string name="title_pref_brightness">Brightness</string>
+    <string name="summary_support_change_brightness">Increase or decrease screen brightness, even when the screen is hidden</string>
+    <string name="title_pref_shortcut_3finger_4tap">Quadruple-tap with 3 fingers</string>
+    <string name="title_pref_shortcut_2finger_rotate_clockwise">Rotate clockwise with 2 fingers</string>
+    <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Rotate anticlockwise with 2 fingers</string>
+    <string name="title_pref_shortcut_2finger_scrub">Scrub with 2 fingers</string>
+    <string name="title_pref_shortcut_2finger_pinch">Pinch with 2 fingers</string>
+    <string name="title_pref_shortcut_2finger_spread">Spread with 2 fingers</string>
+    <string name="title_pref_shortcut_3finger_pinch">Pinch with 3 fingers</string>
+    <string name="title_pref_shortcut_3finger_spread">Spread with 3 fingers</string>
+    <string name="title_pref_shortcut_4finger_pinch">Pinch with 4 fingers</string>
+    <string name="title_pref_shortcut_4finger_spread">Spread with 4 fingers</string>
+    <string name="title_pref_shortcut_edge_bottom_up">Swipe up from the bottom edge</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Long swipe up from the bottom edge</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Swipe down from the top left</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Swipe down from the top right</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Hold finger to select any key, then lift. Double-tap for Enter, Done, or Send.</string>
+    <string name="value_type_confirmation_tap_to_type">Tap any key to type it, or hold finger to select any key, then lift</string>
+    <string name="title_pref_multi_tap_timeout">Time between one-finger taps</string>
+    <string name="value_multi_tap_timeout_100ms">0.1 seconds</string>
+    <string name="value_multi_tap_timeout_150ms">0.15 seconds</string>
+    <string name="value_multi_tap_timeout_200ms">0.2 seconds</string>
+    <string name="value_multi_tap_timeout_250ms">0.25 seconds (default)</string>
+    <string name="title_pref_rotor_step_degrees">Rotor turn per step</string>
+    <string name="value_rotor_step_15">15 degrees</string>
+    <string name="value_rotor_step_20">20 degrees</string>
+    <string name="value_rotor_step_30">30 degrees (default)</string>
+    <string name="value_rotor_step_45">45 degrees</string>
+    <string name="value_rotor_step_60">60 degrees</string>
+    <string name="title_pref_low_latency_audio">Low-latency audio</string>
+    <string name="summary_pref_low_latency_audio">Play SandFly\'s sounds and speech through the phone\'s fastest audio path, so you hear them sooner. Turn it off if speech or sounds break up or sound wrong.</string>
+    <string name="value_focus_delay_200ms_default">0.2 seconds (default)</string>
+    <string name="value_focus_delay_300ms">0.3 seconds</string>
+    <string name="title_pref_lift_to_activate">Lift to activate</string>
+    <string name="summary_support_change_lift_to_activate">Change where lifting your finger activates an item</string>
+    <string name="value_lift_to_activate_disabled">Disabled</string>
+    <string name="value_lift_to_activate_navigation_bar">Only on navigation bar</string>
+    <string name="value_lift_to_activate_entire_screen">Entire screen</string>
+    <string name="template_lift_to_activate_changed">Lift to activate: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="title_pref_wrap_around">Wrap around</string>
+    <string name="summary_pref_wrap_around">Swiping past the last item goes to the first, and past the first goes to the last. When off, a sound plays at the end instead.</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Fix stuck touch exploration</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Without the DUMP permission, SandFly can only say that touch exploration may be stuck. To let it fix it, run: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="stuck_touch_exploration_fixing">Fixing touch exploration</string>
+    <string name="stuck_touch_exploration_fixed">Touch exploration fixed</string>
+    <string name="stuck_touch_exploration_not_fixed">Touch exploration is still stuck. Restart the phone to fix it.</string>
+    <string name="stuck_touch_exploration_restart">Touch exploration may be stuck. Restart the phone to fix it.</string>
+    <string name="stuck_touch_exploration_grant_dump">Touch exploration may be stuck. Restart the phone to fix it, or grant SandFly the DUMP permission with ADB so that it can fix it.</string>
+    <string name="title_pref_window_names">Window names</string>
+    <string name="window_names_always">Always</string>
+    <string name="window_names_until_first_item">Always, cut off by the first item</string>
+    <string name="window_names_window_opens">Only when a window opens</string>
+    <string name="window_names_never">Never</string>
+    <string name="title_pref_focus_new_windows">Move focus to new windows</string>
+    <string name="title_pref_volume_keys_adjust_sliders">Volume keys adjust sliders</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">When a slider has focus, volume up and down change its value instead of the volume</string>
+    <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
+    <string name="wrap_around_on">Wrap around on</string>
+    <string name="wrap_around_off">Wrap around off</string>
+    <string name="title_selector_tablet_held_up_faces_away">Tablet held up faces away</string>
+    <string name="summary_support_tablet_held_up_faces_away">For the braille keyboard on a tablet or unfolded phone</string>
+    <string name="tablet_held_up_faces_away_on">Tablet held up faces away on</string>
+    <string name="tablet_held_up_faces_away_off">Tablet held up faces away off</string>
+    <string name="title_keyboard_echo_on_screen">On-screen keyboard echo</string>
+    <string name="title_keyboard_echo_physical">Physical keyboard echo</string>
+    <string name="title_keyboard_echo_braille_keyboard">Braille keyboard echo</string>
+    <string name="title_keyboard_echo_braille_display">Braille display echo</string>
+    <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
+    <string name="title_pref_interrupt_typing">Interrupt speech when typing</string>
+    <string name="pref_interrupt_typing_entry_always">Always</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">In edit fields</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">On keyboard echo</string>
+    <string name="title_pref_interrupt_enter">Interrupt speech on Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Name, state, type</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Type, state, name</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">State, type, name</string>
+    <string name="item_detail_name">Name</string>
+    <string name="item_detail_type">Type</string>
+    <string name="item_detail_state">State</string>
+    <string name="action_move_up">Move up</string>
+    <string name="action_move_down">Move down</string>
+    <string name="template_list_position">Position <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_item_details_order_picked_up">Picked up <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Dropped <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly says an item\'s details in this order. To change it, touch and hold a detail, then drag it up or down. With SandFly on, double-tap and hold, then drag. You can also use the Move up and Move down actions.</string>
+    <string name="title_pref_speak_items_before_scroll">Speak items before they scroll into view</string>
+    <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in Automatic descriptions settings.</string>
+    <string name="gemini_error_quota">The usage limit for your Gemini API key has been reached. Try again later.</string>
+    <string name="gemini_error_busy">Gemini is busy right now. Try again in a moment.</string>
+    <string name="gemini_error_timeout">Gemini took too long to answer. Try again.</string>
+    <string name="gemini_error_with_code">Gemini couldn\'t answer, error <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini couldn\'t answer, error <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Can\'t get a more detailed image description: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Keskeytä SandFly</string>
+    <string name="summary_pause_backtalk">Poistaa puheen, eleet ja kosketuksella tutkimisen käytöstä, kunnes SandFlyn käyttöä jatketaan</string>
+    <string name="keycombo_menu_global_pause_backtalk">Keskeytä SandFly tai jatka sitä</string>
+    <string name="backtalk_paused">SandFly keskeytetty</string>
+    <string name="backtalk_resumed">SandFly jatkuu</string>
+    <string name="notification_title_backtalk_paused">SandFly on keskeytetty</string>
+    <string name="notification_message_backtalk_paused">Jatka napauttamalla</string>
+    <string name="notification_channel_backtalk_paused">SandFly keskeytetty</string>
+    <string name="dialog_title_pause_backtalk">Keskeytetäänkö SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Keskeytä</string>
+    <string name="dialog_message_pause_backtalk">Kun SandFly on keskeytetty, se ei puhu eikä reagoi eleisiin, ja näyttö toimii kuin näytönlukuohjelma ei olisi päällä.</string>
+    <string name="message_resume_keyguard">Jatka napauttamalla \"SandFly on keskeytetty\" ‑ilmoitusta, painamalla äänenvoimakkuuden vähennyspainiketta 3 kertaa nopeasti tai lukitsemalla puhelimen ja herättämällä sen niin, että lukitusnäyttö tulee näkyviin.</string>
+    <string name="message_resume_screen_on">Jatka napauttamalla \"SandFly on keskeytetty\" ‑ilmoitusta, painamalla äänenvoimakkuuden vähennyspainiketta 3 kertaa nopeasti tai sammuttamalla näytön ja laittamalla sen uudelleen päälle.</string>
+    <string name="message_resume_manual">Jatka napauttamalla \"SandFly on keskeytetty\" ‑ilmoitusta tai painamalla äänenvoimakkuuden vähennyspainiketta 3 kertaa nopeasti.</string>
+    <string name="message_resume_key_combo">Voit myös painaa <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">SandFlyn jatkaminen</string>
+    <string name="value_resume_keyguard">Kun lukitusnäyttö tulee näkyviin</string>
+    <string name="value_resume_screen_on">Kun näyttö menee päälle</string>
+    <string name="value_resume_manual">Vain ilmoituksesta tai pikanäppäimellä</string>
+</resources>

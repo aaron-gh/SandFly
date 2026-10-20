@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Sons i vibracions dels controls</string>
+    <string name="summary_pref_control_sounds">Dona a cada tipus de control, com ara botons, caselles de selecció, camps d\'edició i elements de llista, un so i una vibració propis del tema, en lloc del so i la vibració del focus, com fa Unspoken per a NVDA. El so prové de la posició del control a la pantalla, i SandFly no enuncia el tipus de control.</string>
+    <string name="title_pref_control_sounds_speak_roles">Enuncia igualment el tipus de control</string>
+    <string name="summary_pref_control_sounds_speak_roles">Quan es reprodueix un so de control, enuncia igualment el tipus de control, com ara botó. S\'aplica a tots els temes de so.</string>
+    <string name="title_pref_control_sounds_3d">Àudio 3D</string>
+    <string name="pref_control_sounds_3d_headphones">Amb auriculars</string>
+    <string name="pref_control_sounds_3d_always">Sempre</string>
+    <string name="pref_control_sounds_3d_never">Mai, només esquerra i dreta</string>
+    <string name="individual_sound_control_button">So de control: botó</string>
+    <string name="individual_sound_control_checkbox">So de control: casella de selecció</string>
+    <string name="individual_sound_control_radio_button">So de control: botó d\'opció</string>
+    <string name="individual_sound_control_edit_text">So de control: camp d\'edició</string>
+    <string name="individual_sound_control_combo_box">So de control: llista desplegable</string>
+    <string name="individual_sound_control_slider">So de control: control lliscant</string>
+    <string name="individual_sound_control_link">So de control: enllaç</string>
+    <string name="individual_sound_control_image">So de control: imatge</string>
+    <string name="individual_sound_control_clock">So de control: rellotge</string>
+    <string name="individual_sound_control_tab">So de control: pestanya</string>
+    <string name="individual_sound_control_menu_item">So de control: element de menú</string>
+    <string name="individual_sound_control_list_item">So de control: element de llista</string>
+    <string name="individual_sound_control_tree_item">So de control: element d\'arbre</string>
+</resources>

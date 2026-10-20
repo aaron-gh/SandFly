@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Звуци и вибрации за контроли</string>
+    <string name="summary_pref_control_sounds">Всеки вид контрола, като бутони, квадратчета за отметка, полета за редактиране и елементи от списъци, получава собствен звук и собствена вибрация от темата вместо звука и вибрацията за фокус, както прави Unspoken за NVDA. Звукът идва от мястото на контролата на екрана и SandFly не изговаря вида на контролата.</string>
+    <string name="title_pref_control_sounds_speak_roles">Изговаряне на вида на контролата</string>
+    <string name="summary_pref_control_sounds_speak_roles">Когато се възпроизвежда звук за контрола, видът на контролата, например бутон, пак се изговаря. Важи за всяка звукова тема.</string>
+    <string name="title_pref_control_sounds_3d">3D аудио</string>
+    <string name="pref_control_sounds_3d_headphones">Със слушалки</string>
+    <string name="pref_control_sounds_3d_always">Винаги</string>
+    <string name="pref_control_sounds_3d_never">Никога, само ляво и дясно</string>
+    <string name="individual_sound_control_button">Звук за контрола: бутон</string>
+    <string name="individual_sound_control_checkbox">Звук за контрола: квадратче за отметка</string>
+    <string name="individual_sound_control_radio_button">Звук за контрола: бутон за избор</string>
+    <string name="individual_sound_control_edit_text">Звук за контрола: поле за редактиране</string>
+    <string name="individual_sound_control_combo_box">Звук за контрола: падащ списък</string>
+    <string name="individual_sound_control_slider">Звук за контрола: плъзгач</string>
+    <string name="individual_sound_control_link">Звук за контрола: връзка</string>
+    <string name="individual_sound_control_image">Звук за контрола: изображение</string>
+    <string name="individual_sound_control_clock">Звук за контрола: часовник</string>
+    <string name="individual_sound_control_tab">Звук за контрола: раздел</string>
+    <string name="individual_sound_control_menu_item">Звук за контрола: елемент от меню</string>
+    <string name="individual_sound_control_list_item">Звук за контрола: елемент от списък</string>
+    <string name="individual_sound_control_tree_item">Звук за контрола: елемент от дърво</string>
+</resources>

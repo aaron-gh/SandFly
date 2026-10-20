@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">SandFly रोकें</string>
+    <string name="summary_pause_backtalk">SandFly फिर से शुरू करने तक बोलना, जेस्चर और छूकर सुनने की सुविधा बंद रखें</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly रोकें या फिर से शुरू करें</string>
+    <string name="backtalk_paused">SandFly रोका गया</string>
+    <string name="backtalk_resumed">SandFly फिर से शुरू हुआ</string>
+    <string name="notification_title_backtalk_paused">SandFly रुका हुआ है</string>
+    <string name="notification_message_backtalk_paused">फिर से शुरू करने के लिए टैप करें</string>
+    <string name="notification_channel_backtalk_paused">SandFly रोका गया</string>
+    <string name="dialog_title_pause_backtalk">SandFly रोकें?</string>
+    <string name="dialog_button_pause_backtalk">रोकें</string>
+    <string name="dialog_message_pause_backtalk">SandFly रुका होने पर वह न बोलता है, न जेस्चर पर कार्रवाई करता है, और स्क्रीन ऐसे काम करती है जैसे कोई स्क्रीन रीडर चालू न हो.</string>
+    <string name="message_resume_keyguard">फिर से शुरू करने के लिए, \'SandFly रुका हुआ है\' सूचना पर टैप करें, आवाज़ कम करने वाला बटन तीन बार जल्दी-जल्दी दबाएं, या फ़ोन लॉक करके चालू करें ताकि लॉक स्क्रीन दिखे.</string>
+    <string name="message_resume_screen_on">फिर से शुरू करने के लिए, \'SandFly रुका हुआ है\' सूचना पर टैप करें, आवाज़ कम करने वाला बटन तीन बार जल्दी-जल्दी दबाएं, या स्क्रीन बंद करके फिर से चालू करें.</string>
+    <string name="message_resume_manual">फिर से शुरू करने के लिए, \'SandFly रुका हुआ है\' सूचना पर टैप करें या आवाज़ कम करने वाला बटन तीन बार जल्दी-जल्दी दबाएं.</string>
+    <string name="message_resume_key_combo">आप <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> भी दबा सकते हैं.</string>
+    <string name="title_pref_resume_backtalk">SandFly फिर से शुरू करें</string>
+    <string name="value_resume_keyguard">लॉक स्क्रीन दिखने पर</string>
+    <string name="value_resume_screen_on">स्क्रीन चालू होने पर</string>
+    <string name="value_resume_manual">सिर्फ़ सूचना या शॉर्टकट से</string>
+</resources>

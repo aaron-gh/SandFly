@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API key</string>
+    <string name="summary_pref_gemini_api_key_set">Set. Describe image and describe screen use Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Using the key built into this app</string>
+    <string name="summary_pref_gemini_api_key_not_set">Not set. Without a key, describe image only reads text, and describe screen needs on-device AI</string>
+    <string name="gemini_api_key_dialog_message">Get a free API key from Google AI Studio, at aistudio.google.com/apikey, and paste it here. To remove your key, clear the field and save.\n\nImages and screens that you describe are sent to Google. On the free tier, Google can use them to improve its products.</string>
+    <string name="gemini_api_key_hint">API key</string>
+    <string name="gemini_api_key_save">Save</string>
+    <string name="gemini_api_key_get">Get a key</string>
+    <string name="gemini_api_terms_link">Gemini API Additional Terms of Service</string>
+</resources>

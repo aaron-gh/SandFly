@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack уключаны</string>
-  <string name="talkback_disabled">TalkBack адключаны</string>
+  <string name="talkback_on">SandFly уключаны</string>
+  <string name="talkback_disabled">SandFly адключаны</string>
   <string name="notification_type_beginning_of_field">Пачатак поля</string>
   <string name="notification_type_end_of_field">Канец поля</string>
   <string name="notification_type_selection_mode_on">Рэжым вылучэння ўключаны</string>
@@ -207,4 +207,7 @@
   <string name="drag_started">Пачалося перацягванне</string>
   <string name="drag_dropped">Перацягнуты элемент адпушчаны</string>
   <string name="drag_cancelled">Перацягванне скасавана</string>
+    <string name="template_brightness_changed">Яркасць <xliff:g id="percent">%1$d</xliff:g> працэнтаў.</string>
+    <string name="brightness_needs_permission">Каб змяняць яркасць, дайце дазвол на змяненне сістэмных налад.</string>
+    <string name="brightness_adaptive_on">Каб змяніць яркасць, выключыце адаптыўную яркасць.</string>
 </resources>

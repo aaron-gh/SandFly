@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SandFly-specific Czech translations for on-device AI. -->
     <string name="title_pref_on_device_ai">AI v zařízení</string>
     <string name="summary_pref_on_device_ai">Popisujte obrázky a obrazovku modelem v tomto telefonu bez klíče API</string>
@@ -75,4 +75,6 @@
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Umožní zvolit model, který vyžaduje více paměti, než telefon má, a načíst jej bez kontroly volné paměti, abyste mohli otestovat, co se stane, když jej Android ukončí.</string>
     <string name="on_device_ai_not_enough_memory">Pro %1$s není dostatek volné paměti. Zavřete některé aplikace nebo v nastavení AI v zařízení zvolte menší model.</string>
     <string name="on_device_ai_stopped">%1$s se zastavil, pravděpodobně proto, že telefonu došla paměť. V nastavení AI v zařízení zvolte menší model.</string>
+    <string name="on_device_ai_notification_paused">Android stahování pozastavil. Pro pokračování otevřete nastavení.</string>
+    <string name="on_device_ai_error_time_limit">Android stahování pozastavil po několika hodinách na pozadí. Klepnutím budete pokračovat od místa, kde se zastavilo.</string>
 </resources>

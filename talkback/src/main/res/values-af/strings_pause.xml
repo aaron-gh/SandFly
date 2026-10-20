@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Onderbreek SandFly</string>
+    <string name="summary_pause_backtalk">Skakel spraak, gebare en Verken-met-aanraking af totdat jy SandFly hervat</string>
+    <string name="keycombo_menu_global_pause_backtalk">Onderbreek of hervat SandFly</string>
+    <string name="backtalk_paused">SandFly onderbreek</string>
+    <string name="backtalk_resumed">SandFly hervat</string>
+    <string name="notification_title_backtalk_paused">SandFly is onderbreek</string>
+    <string name="notification_message_backtalk_paused">Tik om te hervat</string>
+    <string name="notification_channel_backtalk_paused">SandFly onderbreek</string>
+    <string name="dialog_title_pause_backtalk">Onderbreek SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Onderbreek</string>
+    <string name="dialog_message_pause_backtalk">Terwyl SandFly onderbreek is, praat dit nie en reageer dit nie op gebare nie, en die skerm werk asof geen skermleser aan is nie.</string>
+    <string name="message_resume_keyguard">Tik op die kennisgewing “SandFly is onderbreek”, druk 3 keer vinnig volume af, of sluit en wek die foon sodat die sluitskerm wys om te hervat.</string>
+    <string name="message_resume_screen_on">Tik op die kennisgewing “SandFly is onderbreek”, druk 3 keer vinnig volume af, of skakel die skerm af en weer aan om te hervat.</string>
+    <string name="message_resume_manual">Tik op die kennisgewing “SandFly is onderbreek” of druk 3 keer vinnig volume af om te hervat.</string>
+    <string name="message_resume_key_combo">Jy kan ook <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> druk.</string>
+    <string name="title_pref_resume_backtalk">Hervat SandFly</string>
+    <string name="value_resume_keyguard">Wanneer die sluitskerm wys</string>
+    <string name="value_resume_screen_on">Wanneer die skerm aanskakel</string>
+    <string name="value_resume_manual">Net vanaf die kennisgewing of ’n kortpad</string>
+</resources>

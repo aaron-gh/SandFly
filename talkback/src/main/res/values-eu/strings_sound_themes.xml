@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Soinu-gaiak</string>
+    <string name="summary_pref_sound_themes">Instalatu eta aukeratu soinu- eta dardara-multzoak, ordeztu soinuak banan-banan zure soinuekin, eta aktibatu kontrolen soinuak eta dardarak eta 3D audioa.</string>
+    <string name="sound_themes_installed_category">Instalatutako gaiak</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly-en soinuak eta dardarak, baita zure soinuak ere.</string>
+    <string name="sound_theme_in_use">Erabiltzen ari da</string>
+    <string name="sound_theme_by">Egilea: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Lizentzia: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> soinu.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> soinu.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dardara.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> dardara.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Kontrolen soinuak eta dardarak aktibatzen ditu.</string>
+    <string name="sound_theme_control_sounds_off">Kontrolen soinuak eta dardarak desaktibatzen ditu.</string>
+    <string name="sound_theme_use">Erabili gai hau</string>
+    <string name="sound_theme_about">Gai honi buruz</string>
+    <string name="sound_theme_export">Gorde gai-fitxategi gisa</string>
+    <string name="sound_theme_remove">Kendu</string>
+    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> gaia kendu nahi duzu?</string>
+    <string name="sound_theme_remove_button">Kendu</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Gorde da gaia (<xliff:g id="count" example="1">%d</xliff:g> soinu).</item>
+        <item quantity="other">Gorde da gaia (<xliff:g id="count" example="13">%d</xliff:g> soinu).</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly-ek ezin izan du gorde gai-fitxategia.</string>
+    <string name="sound_theme_no_picker">Gailu honetan ez dago fitxategiak aukeratzeko aplikaziorik.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> gaiaren ezarpenak</string>
+    <string name="title_pref_theme_sounds">Soinuak</string>
+    <string name="summary_pref_theme_sounds">Ordeztu gai honetako edozein soinu zure soinu-fitxategi batekin.</string>
+    <string name="sound_themes_install_category">Instalatu gai bat</string>
+    <string name="title_pref_sound_theme_install_file">Fitxategi batetik</string>
+    <string name="summary_pref_sound_theme_install_file">Gai-fitxategiak ZIP fitxategiak dira. Beste aplikazio batetik ere ireki edo parteka dezakezu SandFly-ekin.</string>
+    <string name="title_pref_sound_theme_install_link">Esteka batetik</string>
+    <string name="summary_pref_sound_theme_install_link">Gai-fitxategi baterako esteka, edo gai bat duen GitHub biltegi baterako esteka. Arakatzailetik ere parteka dezakezu esteka SandFly-ekin.</string>
+    <string name="sound_theme_link_message">Idatzi edo itsatsi gai-fitxategi baterako esteka, edo gai bat duen GitHub biltegi baterako esteka.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instalatu soinu-gaia</string>
+    <string name="sound_theme_install_reading">Soinu-gaia irakurtzen</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> instalatu nahi duzu?</string>
+    <string name="sound_theme_install_and_use">Instalatu eta erabili</string>
+    <string name="sound_theme_install">Instalatu</string>
+    <string name="sound_theme_install_replaces">Izen bereko gai instalatua ordeztuko du honek.</string>
+    <string name="sound_theme_install_skipped">Kanpoan utzi direnak:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Instalatu da <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Instalatu da <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Erabiltzen ari da orain.</string>
+    <string name="sound_theme_install_nothing">Ez dago instalatzeko soinu-gairik.</string>
+    <string name="sound_theme_install_not_a_theme">Hau ez da SandFly-ek erabil dezakeen soinu-gai bat: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly-ek ezin izan du instalatu soinu-gaia. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Soinu-gaien estekek https-rekin hasi behar dute.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> gaiaren soinuak</string>
+    <string name="title_pref_theme_sounds_reset">Erabili SandFly-en soinuak guztietarako</string>
+    <string name="theme_sounds_reset_confirm">Gai honen soinu guztiak kendu eta SandFly-enak erabili nahi dituzu?</string>
+    <string name="theme_sounds_reset_button">Kendu</string>
+    <string name="theme_sounds_category">Soinuak</string>
+    <string name="theme_sound_summary_default">SandFly-en soinua</string>
+    <string name="theme_sound_summary_custom">Gaiaren soinua</string>
+    <string name="theme_sound_summary_none">Soinurik ez. Fokuaren soinua erreproduzitzen da.</string>
+    <string name="theme_sound_summary_android_keyboard">Android-en teklatuaren soinua</string>
+    <string name="theme_sound_use_android_keyboard">Erabili Android-en teklatuaren soinua</string>
+    <string name="theme_sound_braille_character">Braille-teklatua: karaktere bat idaztea</string>
+    <string name="theme_sound_braille_space">Braille-teklatua: zuriunea</string>
+    <string name="theme_sound_braille_delete">Braille-teklatua: ezabatzea</string>
+    <string name="theme_sound_braille_new_line">Braille-teklatua: lerro berria</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Aukeratu soinu-fitxategi bat</string>
+    <string name="theme_sound_preview">Aurrebista</string>
+    <string name="theme_sound_none">Soinurik ez</string>
+    <string name="theme_sound_summary_no_sound">Soinurik ez</string>
+    <string name="theme_sound_action_set_none">Ezarri soinurik gabe</string>
+    <string name="theme_sound_use_default">Erabili SandFly-en soinua</string>
+    <string name="theme_sound_remove">Kendu soinua</string>
+    <string name="theme_sound_too_large">Fitxategi hori handiegia da. Soinuek 5 MB izan ditzakete gehienez.</string>
+    <string name="theme_sound_not_audio">SandFly-ek ezin du erreproduzitu fitxategi hori. Aukeratu WAV, OGG, MP3 edo FLAC formatuko soinu bat.</string>
+    <string name="theme_sound_failed">SandFly-ek ezin izan du irakurri fitxategi hori.</string>
+</resources>

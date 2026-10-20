@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">Aktibatuta dago TalkBack</string>
-  <string name="talkback_disabled">TalkBack desaktibatuta dago</string>
+  <string name="talkback_on">Aktibatuta dago SandFly</string>
+  <string name="talkback_disabled">SandFly desaktibatuta dago</string>
   <string name="notification_type_beginning_of_field">Eremuaren hasiera</string>
   <string name="notification_type_end_of_field">Eremuaren amaiera</string>
   <string name="notification_type_selection_mode_on">Aktibatuta dago hautapen modua</string>
@@ -195,4 +195,7 @@
   <string name="drag_started">Hasi da arrastatzen</string>
   <string name="drag_dropped">Jaregin da arrastatutako elementua</string>
   <string name="drag_cancelled">Bertan behera utzi da arrastatzea</string>
+    <string name="template_brightness_changed">Distira: ehuneko <xliff:g id="percent">%1$d</xliff:g>.</string>
+    <string name="brightness_needs_permission">Distira aldatzeko, eman sistemaren ezarpenak aldatzeko baimena.</string>
+    <string name="brightness_adaptive_on">Distira aldatzeko, desaktibatu distira egokitua.</string>
 </resources>

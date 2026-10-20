@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Pausatu SandFly</string>
+    <string name="summary_pause_backtalk">Desaktibatu hizketa, keinuak eta \"Arakatu ukituta\" SandFly berrekin arte</string>
+    <string name="keycombo_menu_global_pause_backtalk">Pausatu edo berrekin SandFly</string>
+    <string name="backtalk_paused">Pausatu da SandFly</string>
+    <string name="backtalk_resumed">Berrekin da SandFly</string>
+    <string name="notification_title_backtalk_paused">SandFly pausatuta dago</string>
+    <string name="notification_message_backtalk_paused">Sakatu berrekiteko</string>
+    <string name="notification_channel_backtalk_paused">SandFly pausatuta</string>
+    <string name="dialog_title_pause_backtalk">SandFly pausatu nahi duzu?</string>
+    <string name="dialog_button_pause_backtalk">Pausatu</string>
+    <string name="dialog_message_pause_backtalk">SandFly pausatuta dagoen bitartean, ez du hitz egiten eta ez die keinuei erantzuten, eta pantailak pantaila-irakurgailurik aktibatuta ez balego bezala funtzionatzen du.</string>
+    <string name="message_resume_keyguard">Berrekiteko, sakatu \"SandFly pausatuta dago\" jakinarazpena, sakatu bolumena jaisteko botoia 3 aldiz bizkor, edo blokeatu eta esnarazi telefonoa pantaila blokeatua ager dadin.</string>
+    <string name="message_resume_screen_on">Berrekiteko, sakatu \"SandFly pausatuta dago\" jakinarazpena, sakatu bolumena jaisteko botoia 3 aldiz bizkor, edo itzali eta piztu berriro pantaila.</string>
+    <string name="message_resume_manual">Berrekiteko, sakatu \"SandFly pausatuta dago\" jakinarazpena edo sakatu bolumena jaisteko botoia 3 aldiz bizkor.</string>
+    <string name="message_resume_key_combo"><xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ere saka dezakezu.</string>
+    <string name="title_pref_resume_backtalk">Berrekin SandFly</string>
+    <string name="value_resume_keyguard">Pantaila blokeatua agertzen denean</string>
+    <string name="value_resume_screen_on">Pantaila pizten denean</string>
+    <string name="value_resume_manual">Jakinarazpenetik edo lasterbide batetik soilik</string>
+</resources>

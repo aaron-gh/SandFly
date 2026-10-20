@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Проверка за актуализации</string>
+    <string name="summary_pref_check_for_updates_version">Версия <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, компилация <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Автоматична проверка за актуализации</string>
+    <string name="summary_pref_auto_update_check">Проверка веднъж дневно и показване на известие, когато е налице нова компилация</string>
+    <string name="title_pref_dev_builds">Компилации за разработка</string>
+    <string name="update_notification_title">Налице е актуализация на SandFly</string>
+    <string name="update_notification_text">Компилация <xliff:g id="build" example="97">%1$d</xliff:g>. Докоснете за инсталиране.</string>
+    <string name="update_dialog_title">Налице е компилация <xliff:g id="build" example="97">%1$d</xliff:g> на SandFly</string>
+    <string name="update_dialog_install">Инсталиране</string>
+    <string name="update_checking">Проверява се за актуализации</string>
+    <string name="update_up_to_date">SandFly е актуален</string>
+    <string name="update_check_failed">Проверката за актуализации не бе успешна</string>
+    <string name="update_downloading">Актуализацията се изтегля</string>
+    <string name="update_install_failed">Актуализацията не можа да бъде инсталирана</string>
+    <string name="update_install_canceled">Актуализацията е отменена</string>
+    <string name="update_allow_install">Разрешете на SandFly да инсталира приложения, след което опитайте актуализацията отново</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Tarkista päivitykset</string>
+    <string name="summary_pref_check_for_updates_version">Versio <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, koontiversio <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Tarkista päivitykset automaattisesti</string>
+    <string name="summary_pref_auto_update_check">Tarkista kerran päivässä ja näytä ilmoitus, kun uusi koontiversio on saatavilla</string>
+    <string name="title_pref_dev_builds">Kehitysversiot</string>
+    <string name="update_notification_title">SandFly-päivitys saatavilla</string>
+    <string name="update_notification_text">Koontiversio <xliff:g id="build" example="97">%1$d</xliff:g>. Asenna napauttamalla.</string>
+    <string name="update_dialog_title">SandFlyn koontiversio <xliff:g id="build" example="97">%1$d</xliff:g> on saatavilla</string>
+    <string name="update_dialog_install">Asenna</string>
+    <string name="update_checking">Tarkistetaan päivityksiä</string>
+    <string name="update_up_to_date">SandFly on ajan tasalla</string>
+    <string name="update_check_failed">Päivityksiä ei voitu tarkistaa</string>
+    <string name="update_downloading">Ladataan päivitystä</string>
+    <string name="update_install_failed">Päivitystä ei voitu asentaa</string>
+    <string name="update_install_canceled">Päivitys peruttu</string>
+    <string name="update_allow_install">Salli SandFlyn asentaa sovelluksia ja yritä päivitystä sitten uudelleen</string>
+</resources>

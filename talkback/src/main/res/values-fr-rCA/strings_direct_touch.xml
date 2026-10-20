@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="direct_touch_on">Toucher direct activé</string>
+    <string name="direct_touch_off">Toucher direct désactivé</string>
+    <string name="direct_touch_tile_label">Toucher direct</string>
+    <string name="title_pref_direct_touch">Toucher direct</string>
+    <string name="pref_direct_touch_master">Toucher direct</string>
+    <string name="pref_direct_touch_master_summary">Transmettre les touchers directement aux applications choisies ci-dessous, et les rendre à SandFly pour les boîtes de dialogue, les champs de texte, le clavier et les écrans du système.</string>
+    <string name="pref_direct_touch_speech">Énoncer les changements du toucher direct</string>
+    <string name="pref_direct_touch_haptics">Vibrer lors des changements du toucher direct</string>
+    <string name="pref_direct_touch_backup">Sauvegarder les paramètres</string>
+    <string name="pref_direct_touch_restore">Restaurer les paramètres</string>
+    <string name="direct_touch_apps_category">Applications</string>
+    <string name="direct_touch_action_typing_on">Activer la saisie directe</string>
+    <string name="direct_touch_action_typing_off">Désactiver la saisie directe</string>
+    <string name="direct_touch_typing_summary_on">Saisie directe activée</string>
+    <string name="direct_touch_backup_done">Paramètres enregistrés</string>
+    <string name="direct_touch_backup_failed">Impossible d\'enregistrer les paramètres</string>
+    <string name="direct_touch_restore_done">Paramètres restaurés</string>
+    <string name="direct_touch_restore_failed">Impossible de lire ce fichier</string>
+</resources>

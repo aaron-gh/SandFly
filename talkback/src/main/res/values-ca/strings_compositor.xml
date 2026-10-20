@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack activat</string>
-  <string name="talkback_disabled">TalkBack està desactivat</string>
+  <string name="talkback_on">SandFly activat</string>
+  <string name="talkback_disabled">SandFly està desactivat</string>
   <string name="notification_type_beginning_of_field">Inici del camp</string>
   <string name="notification_type_end_of_field">Fi del camp</string>
   <string name="notification_type_selection_mode_on">S\'ha activat el mode de selecció</string>
@@ -195,4 +195,7 @@
   <string name="drag_started">S\'ha començat a arrossegar</string>
   <string name="drag_dropped">S\'ha deixat l\'element arrossegat</string>
   <string name="drag_cancelled">L\'arrossegament s\'ha cancel·lat</string>
+    <string name="template_brightness_changed">Brillantor: <xliff:g id="percent">%1$d</xliff:g> per cent.</string>
+    <string name="brightness_needs_permission">Concedeix el permís per modificar la configuració del sistema per canviar la brillantor.</string>
+    <string name="brightness_adaptive_on">Desactiva la brillantor adaptativa per canviar la brillantor.</string>
 </resources>

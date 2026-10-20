@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Sê status</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> van <xliff:g id="max_level" example="4">%2$d</xliff:g> stafies</string>
+    <string name="status_wifi_off">Wi-fi af</string>
+    <string name="status_wifi_not_connected">Wi-fi nie gekoppel nie</string>
+    <string name="template_status_wifi">Wi-fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mobiel</string>
+    <string name="status_mobile_no_service">Geen mobiele diens nie</string>
+    <string name="status_do_not_disturb">Moenie Steur Nie</string>
+    <string name="status_ringer_vibrate">Vibreer</string>
+    <string name="status_ringer_silent">Stil</string>
+    <string name="status_airplane_mode">Vliegtuigmodus</string>
+    <string name="title_pref_status_readout">Statusvoorlesing</string>
+    <string name="status_item_time">Tyd</string>
+    <string name="status_item_time_summary">Die huidige tyd</string>
+    <string name="status_item_battery">Battery</string>
+    <string name="status_item_battery_summary">Batteryvlak, laai en Batterybespaarder</string>
+    <string name="status_item_wifi">Wi-fi</string>
+    <string name="status_item_wifi_summary">Netwerknaam en seinsterkte</string>
+    <string name="status_item_mobile">Mobiele netwerk</string>
+    <string name="status_item_mobile_summary">Diensverskaffer, netwerktipe en seinsterkte</string>
+    <string name="status_item_ringer">Luitoestel en Moenie Steur Nie</string>
+    <string name="status_item_ringer_summary">Net wanneer die luitoestel nie op lui gestel is nie, of Moenie Steur Nie aan is</string>
+    <string name="status_item_airplane_mode">Vliegtuigmodus</string>
+    <string name="status_item_airplane_mode_summary">Net wanneer vliegtuigmodus aan is</string>
+</resources>

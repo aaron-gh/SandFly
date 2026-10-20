@@ -104,7 +104,7 @@
   <string name="title_pref_manage_labels">Vlastní štítky</string>
   <string name="title_pref_manage_customize_menus">Upravit nabídky</string>
   <string name="title_pref_category_context_menu">Upravit nabídku čtečky SandFly</string>
-  <string name="title_pref_category_selector_menu">Upravit ovládání čtení</string>
+  <string name="title_pref_category_selector_menu">Ovládání čtení</string>
   <string name="title_pref_category_navigation_menu">Upravit možnosti navigace</string>
   <string name="pref_category_context_menu_summary">Klepněte třemi prsty nebo přejeďte nahoru či dolů a potom doprava.</string>
   <string name="pref_category_context_menu_summary_xr">Pokud chcete použít nabídku SandFly otočte druhou dlaň směrem dovnitř a stáhněte prsty.</string>
@@ -344,7 +344,7 @@
   <string name="title_pref_brailledisplay">Hmatový displej</string>
   <string name="title_pref_brailleime">Braillská klávesnice</string>
   <string name="summary_pref_brailleime_disabled">Zařízení braillskou klávesnici nepodporuje</string>
-  <string name="title_pref_speech_footer">Některá nastavení zvuku funkce TalkBack lze také rychle upravit z kterékoliv obrazovky.\n\nHlasitost zvuků pro usnadnění přístupu: Podržte jeden prst na obrazovce a stiskněte tlačítko pro zvýšení nebo snížení hlasitosti.\nRychlost řeči čtečky TalkBack: Přejeďte třemi prsty nahoru nebo dolů. Až uslyšíte „rychlost řeči“ přejeďte jedním prstem dolů.</string>
+  <string name="title_pref_speech_footer">Pokud chcete hlasitost zvuků pro usnadnění přístupu změnit z kterékoliv obrazovky, podržte jeden prst na obrazovce a stiskněte tlačítko pro zvýšení nebo snížení hlasitosti.</string>
   <string name="title_pref_vibration">Vibrační zpětná vazba</string>
   <string name="title_pref_soundback">Zvuková zpětná vazba</string>
   <string name="title_pref_use_audio_focus">Zeslabení zvuku</string>
@@ -1418,7 +1418,7 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="title_text_formatting_inline">Vyslovovat formátování textu</string>
   <string name="title_switch_text_formatting">Číst formátování textu</string>
   <string name="summary_text_formatting_verbosity">Pro změny, jako je tučné písmo a kurzíva</string>
-  <string name="summary_text_formatting_selector">Určete, jestli se mají číst nahlas informace o formátování, např. tučné písmo nebo kurzíva</string>
+  <string name="summary_text_formatting_selector">Určete, jestli se mají číst nahlas informace o formátování, např. tučné písmo nebo kurzíva</string>
   <string name="title_text_formatting_verbosity_options">Možnosti formátování textu</string>
   <string name="title_text_formatting_options">Možnosti formátování</string>
   <string name="header_text_formatting_options">Oznámení o formátování textu</string>
@@ -1455,4 +1455,77 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="close_string">Zavřít</string>
   <string name="talkback_label">SandFly</string>
   <string name="notifictions_in_lock_screen_notification_content">Chcete-li slyšet oznámení, i když je obrazovka vypnutá, zapněte v nastavení míry popisu funkce SandFly možnost „Číst oznámení, i když je obrazovka vypnutá“.</string>
+    <string name="speech_engine_unavailable_with_profile">Při používání hlasového profilu není hlasový modul k dispozici</string>
+    <string name="category_collapsed">Sbaleno</string>
+    <string name="category_expanded">Rozbaleno</string>
+    <string name="title_pref_category_apps">Aplikace</string>
+    <string name="title_pref_touch_activation">Dotyk a aktivace</string>
+    <string name="title_pref_navigation">Navigace</string>
+    <string name="action_copy_command">Kopírovat příkaz</string>
+    <string name="command_copied">Příkaz zkopírován</string>
+    <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
+    <string name="title_pref_notification_list">Používat seznam oznámení SandFly</string>
+    <string name="title_pref_notification_parts">Podrobnosti oznámení</string>
+    <string name="notification_part_title">Název</string>
+    <string name="notification_part_text">Text</string>
+    <string name="notification_part_app">Název aplikace</string>
+    <string name="notification_part_time">Čas</string>
+    <string name="notification_part_playback">Přehrává se nebo pozastaveno</string>
+    <string name="notification_list_title">Oznámení</string>
+    <string name="notification_list_empty">Žádná oznámení</string>
+    <string name="notification_list_no_access">Přístup k oznámením je vypnutý</string>
+    <string name="notification_list_grant_access">Zapnout přístup k oznámením</string>
+    <string name="notification_list_quick_settings">Rychlé nastavení</string>
+    <string name="notification_list_dismiss">Zavřít</string>
+    <string name="notification_list_clear_all">Vymazat vše</string>
+    <string name="notification_list_send">Odeslat</string>
+    <string name="notification_list_playing">Přehrává se</string>
+    <string name="notification_list_paused">Pozastaveno</string>
+    <string name="notification_list_play">Přehrát</string>
+    <string name="notification_list_pause">Pozastavit</string>
+    <string name="notification_list_previous">Předchozí</string>
+    <string name="notification_list_next">Další</string>
+    <plurals name="notification_list_group_count">
+        <item quantity="one">%d oznámení</item>
+        <item quantity="few">%d oznámení</item>
+        <item quantity="many">%d oznámení</item>
+        <item quantity="other">%d oznámení</item>
+    </plurals>
+    <string name="edge_gestures_title">Okraje</string>
+    <string name="title_pref_speaker_devices">Reproduktor telefonu s těmito zařízeními</string>
+    <string name="summary_pref_speaker_devices_none">Žádná</string>
+    <string name="summary_pref_speaker_devices_no_devices">Zatím nebylo připojeno žádné Bluetooth ani kabelové zařízení</string>
+    <string name="shortcut_title_open_app">Otevřít aplikaci</string>
+    <string name="shortcut_open_app">Otevřít <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_system_notifications">Systémový panel oznámení</string>
+    <string name="title_pref_shortcut_2finger_scrub">Přejetí tam a zpět dvěma prsty</string>
+    <string name="title_pref_shortcut_2finger_pinch">Stažení dvěma prsty</string>
+    <string name="title_pref_shortcut_2finger_spread">Roztažení dvěma prsty</string>
+    <string name="title_pref_shortcut_3finger_pinch">Stažení třemi prsty</string>
+    <string name="title_pref_shortcut_3finger_spread">Roztažení třemi prsty</string>
+    <string name="title_pref_shortcut_4finger_pinch">Stažení čtyřmi prsty</string>
+    <string name="title_pref_shortcut_4finger_spread">Roztažení čtyřmi prsty</string>
+    <string name="title_pref_shortcut_edge_bottom_up">Přejetí nahoru od dolního okraje</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Dlouhé přejetí nahoru od dolního okraje</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Přejetí dolů z levé části horního okraje</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Přejetí dolů z pravé části horního okraje</string>
+    <string name="value_type_confirmation_tap_to_type">Klepnutím na libovolnou klávesu ji napište, nebo podržením prstu vyberte libovolnou klávesu, pak prst zvedněte</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Opravovat zaseknuté prozkoumání dotykem</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez oprávnění DUMP může SandFly pouze oznámit, že se prozkoumání dotykem mohlo zaseknout. Aby ho SandFly mohl opravit, spusťte: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="stuck_touch_exploration_fixing">Opravuje se prozkoumání dotykem</string>
+    <string name="stuck_touch_exploration_fixed">Prozkoumání dotykem opraveno</string>
+    <string name="stuck_touch_exploration_not_fixed">Prozkoumání dotykem je stále zaseknuté. Pro opravu restartujte telefon.</string>
+    <string name="stuck_touch_exploration_restart">Prozkoumání dotykem se možná zaseklo. Pro opravu restartujte telefon.</string>
+    <string name="stuck_touch_exploration_grant_dump">Prozkoumání dotykem se možná zaseklo. Pro opravu restartujte telefon, nebo udělte SandFly oprávnění DUMP pomocí ADB, aby ho SandFly mohl opravit.</string>
+    <string name="title_pref_window_names">Názvy oken</string>
+    <string name="window_names_always">Vždy</string>
+    <string name="window_names_until_first_item">Vždy, přerušit první položkou</string>
+    <string name="window_names_window_opens">Pouze při otevření okna</string>
+    <string name="window_names_never">Nikdy</string>
+    <string name="title_pref_focus_new_windows">Přesouvat zaměření do nových oken</string>
+    <string name="title_keyboard_echo_on_screen">Hlasový doprovod softwarové klávesnice</string>
+    <string name="title_keyboard_echo_physical">Hlasový doprovod fyzické klávesnice</string>
+    <string name="title_keyboard_echo_braille_keyboard">Hlasový doprovod braillské klávesnice</string>
+    <string name="title_keyboard_echo_braille_display">Hlasový doprovod hmatového displeje</string>
+    <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
 </resources>

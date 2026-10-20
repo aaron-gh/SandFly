@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">স্থিতি কওক</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g>ৰ ভিতৰত <xliff:g id="level" example="3">%1$d</xliff:g>টা বাৰ</string>
+    <string name="status_wifi_off">ৱাই-ফাই অফ</string>
+    <string name="status_wifi_not_connected">ৱাই-ফাই সংযোগ হোৱা নাই</string>
+    <string name="template_status_wifi">ৱাই-ফাই, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">ৱাই-ফাই <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">ম’বাইল</string>
+    <string name="status_mobile_no_service">ম’বাইল সেৱা নাই</string>
+    <string name="status_do_not_disturb">অসুবিধা নিদিব</string>
+    <string name="status_ringer_vibrate">কম্পন</string>
+    <string name="status_ringer_silent">নীৰৱ</string>
+    <string name="status_airplane_mode">এয়াৰপ্লেন ম’ড</string>
+    <string name="title_pref_status_readout">স্থিতিৰ পঠন</string>
+    <string name="status_item_time">সময়</string>
+    <string name="status_item_time_summary">বৰ্তমানৰ সময়</string>
+    <string name="status_item_battery">বেটাৰী</string>
+    <string name="status_item_battery_summary">বেটাৰীৰ স্তৰ, চাৰ্জিং আৰু বেটাৰী সঞ্চয়কাৰী</string>
+    <string name="status_item_wifi">ৱাই-ফাই</string>
+    <string name="status_item_wifi_summary">নেটৱৰ্কৰ নাম আৰু ছিগনেলৰ শক্তি</string>
+    <string name="status_item_mobile">ম’বাইল নেটৱৰ্ক</string>
+    <string name="status_item_mobile_summary">বাহক, নেটৱৰ্কৰ প্ৰকাৰ আৰু ছিগনেলৰ শক্তি</string>
+    <string name="status_item_ringer">ৰিংগাৰ আৰু অসুবিধা নিদিব</string>
+    <string name="status_item_ringer_summary">কেৱল যেতিয়া ৰিংগাৰ ৰিং কৰিবলৈ ছেট কৰা নাথাকে, বা অসুবিধা নিদিব অন থাকে</string>
+    <string name="status_item_airplane_mode">এয়াৰপ্লেন ম’ড</string>
+    <string name="status_item_airplane_mode_summary">কেৱল যেতিয়া এয়াৰপ্লেন ম’ড অন থাকে</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Juhtelementide helid ja vibratsioonid</string>
+    <string name="summary_pref_control_sounds">Igat tüüpi juhtelemendile (nt nupud, märkeruudud, muutmisväljad ja loendi üksused) oma heli ja teemast oma vibratsioon fookuse heli ja vibratsiooni asemel, nagu Unspoken NVDA puhul. Heli kõlab juhtelemendi asukohast ekraanil ja SandFly jätab juhtelemendi tüübi ütlemata.</string>
+    <string name="title_pref_control_sounds_speak_roles">Ütle siiski juhtelemendi tüüp</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kui esitatakse juhtelemendi heli, öeldakse siiski juhtelemendi tüüp, nt nupp. Kehtib kõigi heliteemade puhul.</string>
+    <string name="title_pref_control_sounds_3d">3D-heli</string>
+    <string name="pref_control_sounds_3d_headphones">Kõrvaklappidega</string>
+    <string name="pref_control_sounds_3d_always">Alati</string>
+    <string name="pref_control_sounds_3d_never">Mitte kunagi, ainult vasak ja parem</string>
+    <string name="individual_sound_control_button">Juhtelemendi heli: nupp</string>
+    <string name="individual_sound_control_checkbox">Juhtelemendi heli: märkeruut</string>
+    <string name="individual_sound_control_radio_button">Juhtelemendi heli: raadionupp</string>
+    <string name="individual_sound_control_edit_text">Juhtelemendi heli: muutmisväli</string>
+    <string name="individual_sound_control_combo_box">Juhtelemendi heli: ripploend</string>
+    <string name="individual_sound_control_slider">Juhtelemendi heli: liugur</string>
+    <string name="individual_sound_control_link">Juhtelemendi heli: link</string>
+    <string name="individual_sound_control_image">Juhtelemendi heli: pilt</string>
+    <string name="individual_sound_control_clock">Juhtelemendi heli: kell</string>
+    <string name="individual_sound_control_tab">Juhtelemendi heli: vaheleht</string>
+    <string name="individual_sound_control_menu_item">Juhtelemendi heli: menüüüksus</string>
+    <string name="individual_sound_control_list_item">Juhtelemendi heli: loendi üksus</string>
+    <string name="individual_sound_control_tree_item">Juhtelemendi heli: puu üksus</string>
+</resources>

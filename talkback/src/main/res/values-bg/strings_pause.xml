@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Пауза на SandFly</string>
+    <string name="summary_pause_backtalk">Изключване на говора, жестовете и изследването чрез докосване до възобновяване на SandFly</string>
+    <string name="keycombo_menu_global_pause_backtalk">Пауза или възобновяване на SandFly</string>
+    <string name="backtalk_paused">SandFly е на пауза</string>
+    <string name="backtalk_resumed">SandFly е възобновен</string>
+    <string name="notification_title_backtalk_paused">SandFly е на пауза</string>
+    <string name="notification_message_backtalk_paused">Докоснете за възобновяване</string>
+    <string name="notification_channel_backtalk_paused">SandFly е на пауза</string>
+    <string name="dialog_title_pause_backtalk">Да се постави ли SandFly на пауза?</string>
+    <string name="dialog_button_pause_backtalk">Пауза</string>
+    <string name="dialog_message_pause_backtalk">Докато SandFly е на пауза, той не говори и не реагира на жестове, а екранът работи като без включен екранен четец.</string>
+    <string name="message_resume_keyguard">За възобновяване докоснете известието „SandFly е на пауза“, натиснете бързо 3 пъти бутона за намаляване на силата на звука или заключете и събудете телефона, така че да се покаже заключеният екран.</string>
+    <string name="message_resume_screen_on">За възобновяване докоснете известието „SandFly е на пауза“, натиснете бързо 3 пъти бутона за намаляване на силата на звука или изключете и включете отново екрана.</string>
+    <string name="message_resume_manual">За възобновяване докоснете известието „SandFly е на пауза“ или натиснете бързо 3 пъти бутона за намаляване на силата на звука.</string>
+    <string name="message_resume_key_combo">Можете също да натиснете <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">Възобновяване на SandFly</string>
+    <string name="value_resume_keyguard">При показване на заключения екран</string>
+    <string name="value_resume_screen_on">При включване на екрана</string>
+    <string name="value_resume_manual">Само от известието или пряк път</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Søg efter opdateringer</string>
+    <string name="summary_pref_check_for_updates_version">Version <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Søg automatisk efter opdateringer</string>
+    <string name="summary_pref_auto_update_check">Søg én gang om dagen, og vis en notifikation, når en ny build er tilgængelig</string>
+    <string name="title_pref_dev_builds">Udviklerbuilds</string>
+    <string name="update_notification_title">SandFly-opdatering er tilgængelig</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Tryk for at installere.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> er tilgængelig</string>
+    <string name="update_dialog_install">Installer</string>
+    <string name="update_checking">Søger efter opdateringer</string>
+    <string name="update_up_to_date">SandFly er opdateret</string>
+    <string name="update_check_failed">Der kunne ikke søges efter opdateringer</string>
+    <string name="update_downloading">Downloader opdatering</string>
+    <string name="update_install_failed">Opdateringen kunne ikke installeres</string>
+    <string name="update_install_canceled">Opdateringen er annulleret</string>
+    <string name="update_allow_install">Tillad, at SandFly installerer apps, og prøv derefter opdateringen igen</string>
+</resources>

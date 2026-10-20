@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Clave da API de Gemini</string>
+    <string name="summary_pref_gemini_api_key_set">Establecida. Describir imaxe e Describir pantalla usan Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Usando a clave integrada nesta aplicación</string>
+    <string name="summary_pref_gemini_api_key_not_set">Sen establecer. Sen clave, Describir imaxe só le texto e Describir pantalla necesita IA no dispositivo</string>
+    <string name="gemini_api_key_dialog_message">Obtén unha clave da API gratuíta en Google AI Studio, en aistudio.google.com/apikey, e pégaa aquí. Para quitar a clave, borra o campo e garda.\n\nAs imaxes e as pantallas que describes envíanse a Google. No nivel gratuíto, Google pode usalas para mellorar os seus produtos.</string>
+    <string name="gemini_api_key_hint">Clave da API</string>
+    <string name="gemini_api_key_save">Gardar</string>
+    <string name="gemini_api_key_get">Obter unha clave</string>
+    <string name="gemini_api_terms_link">Condicións de servizo adicionais da API de Gemini</string>
+</resources>

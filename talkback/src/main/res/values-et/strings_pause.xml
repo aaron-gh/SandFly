@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">SandFlyi peatamine</string>
+    <string name="summary_pause_backtalk">Kõne, liigutuste ja puudutusega uurimise väljalülitamine, kuni SandFlyi jätkate</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFlyi peatamine või jätkamine</string>
+    <string name="backtalk_paused">SandFly on peatatud</string>
+    <string name="backtalk_resumed">SandFly töö jätkub</string>
+    <string name="notification_title_backtalk_paused">SandFly on peatatud</string>
+    <string name="notification_message_backtalk_paused">Puudutage jätkamiseks</string>
+    <string name="notification_channel_backtalk_paused">SandFly on peatatud</string>
+    <string name="dialog_title_pause_backtalk">Kas peatada SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Peata</string>
+    <string name="dialog_message_pause_backtalk">Kui SandFly on peatatud, ei esita see kõnet ega reageeri liigutustele ning ekraan toimib nii, nagu ekraanilugeja poleks sisse lülitatud.</string>
+    <string name="message_resume_keyguard">Jätkamiseks puudutage märguannet „SandFly on peatatud“, vajutage kiiresti 3 korda helitugevuse vähendamise klahvi või lukustage telefon ja lülitage ekraan uuesti sisse, et kuvataks lukustuskuva.</string>
+    <string name="message_resume_screen_on">Jätkamiseks puudutage märguannet „SandFly on peatatud“, vajutage kiiresti 3 korda helitugevuse vähendamise klahvi või lülitage ekraan välja ja uuesti sisse.</string>
+    <string name="message_resume_manual">Jätkamiseks puudutage märguannet „SandFly on peatatud“ või vajutage kiiresti 3 korda helitugevuse vähendamise klahvi.</string>
+    <string name="message_resume_key_combo">Võite vajutada ka klahve <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">SandFlyi jätkamine</string>
+    <string name="value_resume_keyguard">Kui kuvatakse lukustuskuva</string>
+    <string name="value_resume_screen_on">Kui ekraan lülitatakse sisse</string>
+    <string name="value_resume_manual">Ainult märguande või otsetee kaudu</string>
+</resources>

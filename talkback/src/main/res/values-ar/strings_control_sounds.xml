@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">أصوات عناصر التحكّم واهتزازاتها</string>
+    <string name="summary_pref_control_sounds">إعطاء كل نوع من عناصر التحكّم، مثل الأزرار ومربّعات الاختيار وحقول التعديل وعناصر القوائم، صوتًا خاصًا به واهتزازًا خاصًا به من المظهر، بدلاً من صوت التركيز واهتزازه، كما يفعل Unspoken في NVDA. يصدر الصوت من موضع عنصر التحكّم على الشاشة، ولا ينطق SandFly نوع عنصر التحكّم.</string>
+    <string name="title_pref_control_sounds_speak_roles">مواصلة نطق نوع عنصر التحكّم</string>
+    <string name="summary_pref_control_sounds_speak_roles">عند تشغيل صوت عنصر تحكّم، يستمر نطق نوع عنصر التحكّم، مثل \"زر\". ينطبق هذا الإعداد على كل المظاهر الصوتية.</string>
+    <string name="title_pref_control_sounds_3d">الصوت الثلاثي الأبعاد</string>
+    <string name="pref_control_sounds_3d_headphones">مع سماعات الرأس</string>
+    <string name="pref_control_sounds_3d_always">دائمًا</string>
+    <string name="pref_control_sounds_3d_never">أبدًا، اليسار واليمين فقط</string>
+    <string name="individual_sound_control_button">صوت عنصر التحكّم: زر</string>
+    <string name="individual_sound_control_checkbox">صوت عنصر التحكّم: مربع اختيار</string>
+    <string name="individual_sound_control_radio_button">صوت عنصر التحكّم: زر اختيار</string>
+    <string name="individual_sound_control_edit_text">صوت عنصر التحكّم: حقل تعديل</string>
+    <string name="individual_sound_control_combo_box">صوت عنصر التحكّم: قائمة منسدلة</string>
+    <string name="individual_sound_control_slider">صوت عنصر التحكّم: شريط تمرير</string>
+    <string name="individual_sound_control_link">صوت عنصر التحكّم: رابط</string>
+    <string name="individual_sound_control_image">صوت عنصر التحكّم: صورة</string>
+    <string name="individual_sound_control_clock">صوت عنصر التحكّم: ساعة</string>
+    <string name="individual_sound_control_tab">صوت عنصر التحكّم: علامة تبويب</string>
+    <string name="individual_sound_control_menu_item">صوت عنصر التحكّم: عنصر قائمة خيارات</string>
+    <string name="individual_sound_control_list_item">صوت عنصر التحكّم: عنصر قائمة</string>
+    <string name="individual_sound_control_tree_item">صوت عنصر التحكّم: عنصر شجرة</string>
+</resources>

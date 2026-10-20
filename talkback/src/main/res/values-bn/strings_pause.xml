@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">SandFly পজ করুন</string>
+    <string name="summary_pause_backtalk">SandFly আবার চালু না করা পর্যন্ত স্পিচ, জেসচার ও স্পর্শ করে অন্বেষণ করা বন্ধ রাখে</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly পজ করুন বা আবার চালু করুন</string>
+    <string name="backtalk_paused">SandFly পজ করা হয়েছে</string>
+    <string name="backtalk_resumed">SandFly আবার চালু হয়েছে</string>
+    <string name="notification_title_backtalk_paused">SandFly পজ করা আছে</string>
+    <string name="notification_message_backtalk_paused">আবার চালু করতে ট্যাপ করুন</string>
+    <string name="notification_channel_backtalk_paused">SandFly পজ করা হয়েছে</string>
+    <string name="dialog_title_pause_backtalk">SandFly পজ করবেন?</string>
+    <string name="dialog_button_pause_backtalk">পজ করুন</string>
+    <string name="dialog_message_pause_backtalk">SandFly পজ করা থাকলে কোনও স্পিচ আউটপুট হয় না, জেসচারে কাজ হয় না এবং কোনও স্ক্রিন রিডার চালু না থাকার মতো স্ক্রিন কাজ করে।</string>
+    <string name="message_resume_keyguard">আবার চালু করতে, \"SandFly পজ করা আছে\" বিজ্ঞপ্তিতে ট্যাপ করুন, দ্রুত ৩ বার ভলিউম কমানোর বোতাম টিপুন অথবা ফোন লক করে আবার চালু করুন যাতে লক স্ক্রিন দেখা যায়।</string>
+    <string name="message_resume_screen_on">আবার চালু করতে, \"SandFly পজ করা আছে\" বিজ্ঞপ্তিতে ট্যাপ করুন, দ্রুত ৩ বার ভলিউম কমানোর বোতাম টিপুন অথবা স্ক্রিন বন্ধ করে আবার চালু করুন।</string>
+    <string name="message_resume_manual">আবার চালু করতে, \"SandFly পজ করা আছে\" বিজ্ঞপ্তিতে ট্যাপ করুন অথবা দ্রুত ৩ বার ভলিউম কমানোর বোতাম টিপুন।</string>
+    <string name="message_resume_key_combo">এছাড়াও আপনি <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> টিপতে পারেন।</string>
+    <string name="title_pref_resume_backtalk">SandFly আবার চালু করা</string>
+    <string name="value_resume_keyguard">লক স্ক্রিন দেখানো হলে</string>
+    <string name="value_resume_screen_on">স্ক্রিন চালু হলে</string>
+    <string name="value_resume_manual">শুধুমাত্র বিজ্ঞপ্তি বা শর্টকাট থেকে</string>
+</resources>

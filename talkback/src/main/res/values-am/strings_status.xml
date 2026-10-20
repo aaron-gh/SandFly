@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">ሁኔታን ተናገር</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> ከ<xliff:g id="max_level" example="4">%2$d</xliff:g> አሞሌዎች</string>
+    <string name="status_wifi_off">Wi-Fi ጠፍቷል</string>
+    <string name="status_wifi_not_connected">Wi-Fi አልተገናኘም</string>
+    <string name="template_status_wifi">Wi-Fi፣ <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>፣ <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>፣ <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">የተንቀሳቃሽ ስልክ</string>
+    <string name="status_mobile_no_service">የተንቀሳቃሽ ስልክ አገልግሎት የለም</string>
+    <string name="status_do_not_disturb">አትረብሽ</string>
+    <string name="status_ringer_vibrate">ንዝረት</string>
+    <string name="status_ringer_silent">ፀጥ</string>
+    <string name="status_airplane_mode">የአውሮፕላን ሁነታ</string>
+    <string name="title_pref_status_readout">የሁኔታ ንባብ</string>
+    <string name="status_item_time">ሰዓት</string>
+    <string name="status_item_time_summary">የአሁኑ ሰዓት</string>
+    <string name="status_item_battery">ባትሪ</string>
+    <string name="status_item_battery_summary">የባትሪ ደረጃ፣ ኃይል መሙላት እና የባትሪ ኃይል ቆጣቢ</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">የአውታረ መረብ ስም እና የሲግናል ጥንካሬ</string>
+    <string name="status_item_mobile">የተንቀሳቃሽ ስልክ አውታረ መረብ</string>
+    <string name="status_item_mobile_summary">አገልግሎት አቅራቢ፣ የአውታረ መረብ ዓይነት እና የሲግናል ጥንካሬ</string>
+    <string name="status_item_ringer">መጥሪያ እና አትረብሽ</string>
+    <string name="status_item_ringer_summary">መጥሪያው እንዲጮህ ካልተቀናበረ ወይም አትረብሽ ከበራ ብቻ</string>
+    <string name="status_item_airplane_mode">የአውሮፕላን ሁነታ</string>
+    <string name="status_item_airplane_mode_summary">የአውሮፕላን ሁነታ ሲበራ ብቻ</string>
+</resources>

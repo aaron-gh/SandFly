@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Énoncer l\'état</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> barres sur <xliff:g id="max_level" example="4">%2$d</xliff:g></string>
+    <string name="status_wifi_off">Wi-Fi désactivé</string>
+    <string name="status_wifi_not_connected">Wi-Fi non connecté</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Cellulaire</string>
+    <string name="status_mobile_no_service">Aucun service cellulaire</string>
+    <string name="status_do_not_disturb">Ne pas déranger</string>
+    <string name="status_ringer_vibrate">Vibreur</string>
+    <string name="status_ringer_silent">Silencieux</string>
+    <string name="status_airplane_mode">Mode Avion</string>
+    <string name="title_pref_status_readout">Lecture de l\'état</string>
+    <string name="status_item_time">Heure</string>
+    <string name="status_item_time_summary">L\'heure actuelle</string>
+    <string name="status_item_battery">Pile</string>
+    <string name="status_item_battery_summary">Niveau de charge, recharge et économiseur de pile</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Nom du réseau et puissance du signal</string>
+    <string name="status_item_mobile">Réseau cellulaire</string>
+    <string name="status_item_mobile_summary">Fournisseur de services, type de réseau et puissance du signal</string>
+    <string name="status_item_ringer">Sonnerie et Ne pas déranger</string>
+    <string name="status_item_ringer_summary">Uniquement lorsque la sonnerie n\'est pas réglée pour sonner, ou que le mode Ne pas déranger est activé</string>
+    <string name="status_item_airplane_mode">Mode Avion</string>
+    <string name="status_item_airplane_mode_summary">Uniquement lorsque le mode Avion est activé</string>
+</resources>

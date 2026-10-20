@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Mga script</string>
+    <string name="summary_pref_scripts">Baguhin kung paano gumagana ang SandFly sa mga app</string>
+    <string name="script_import">Mag-import ng script</string>
+    <string name="script_install_label">Mag-install ng SandFly script</string>
+    <string name="script_import_nothing">Walang script file na ii-install.</string>
+    <string name="script_import_cannot_open">Hindi mabuksan ang file.</string>
+    <string name="script_import_repository">Para sa buong repository ang link na ito. Buksan ang script na gusto mo, pagkatapos ay ibahagi ang link nito.</string>
+    <string name="script_import_summary">.lua file, o .zip na may main.lua</string>
+    <string name="scripts_category_app">Mga script ng app</string>
+    <string name="scripts_category_global">Mga global plugin</string>
+    <string name="scripts_none">Walang naka-install na script</string>
+    <string name="scripts_all_off">I-off ang lahat ng script</string>
+    <string name="scripts_all_off_summary">Mananatiling naka-install ang mga script at mapapanatili ang sarili nilang mga switch. Ganito rin ang ginagawa ng galaw na I-on o i-off ang lahat ng script.</string>
+    <string name="shortcut_toggle_scripts">I-on o i-off ang lahat ng script</string>
+    <string name="scripts_now_off">Naka-off ang mga script</string>
+    <string name="scripts_now_on">Naka-on ang mga script</string>
+    <string name="scripts_unavailable">Hindi available ang mga script sa device na ito</string>
+    <string name="script_add_example">Idagdag ang halimbawang script</string>
+    <string name="script_add_example_summary">Sinasabi ang pangalan ng bawat app na nililipatan mo. Isang script na mapagsisimulan.</string>
+    <string name="script_state_on">Naka-on</string>
+    <string name="script_state_off">Naka-off</string>
+    <string name="script_runs_in">Tumatakbo sa <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Tumatakbo sa lahat ng app</string>
+    <string name="script_version">Bersyon <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Gawa ni <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">I-install ang <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Kaya nitong:</string>
+    <string name="script_install_no_permissions">Walang kailangang pahintulot.</string>
+    <string name="script_install_button">I-install</string>
+    <string name="script_update_title">I-update ang <xliff:g id="name">%1$s</xliff:g> sa <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Mga bagong pahintulot:</string>
+    <string name="script_update_button">I-update</string>
+    <string name="script_update_replaces">Papalitan nito ang bersyon <xliff:g id="version">%1$s</xliff:g> na gawa ni <xliff:g id="author">%2$s</xliff:g>, at pananatilihin ang data at mga setting nito.</string>
+    <string name="script_update_other_author">Ang bago ay gawa ni <xliff:g id="author">%1$s</xliff:g>, na ibang may-akda. Mag-update lang kung pinagkakatiwalaan mo ito.</string>
+    <string name="script_installed">Na-install ang <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_updated">Na-update ang <xliff:g id="name">%1$s</xliff:g> sa <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Hindi na-import. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Payagan lang para sa mga pinagkakatiwalaang script.</string>
+    <string name="script_permission_screen">Basahin ang screen</string>
+    <string name="script_permission_actions">Mag-click, mag-scroll, mag-type at ilipat ang focus</string>
+    <string name="script_permission_speech">Kunin at baguhin ang pagsasalita ng SandFly</string>
+    <string name="script_permission_passwords">Basahin ang mga field ng password</string>
+    <string name="script_permission_input">Magdagdag ng mga galaw, key, item sa menu at kontrol sa pagbabasa</string>
+    <string name="script_permission_network">Gamitin ang internet</string>
+    <string name="script_permission_clipboard">Basahin at baguhin ang clipboard</string>
+    <string name="script_permission_system">Bumalik o pumunta sa home, buksan ang mga notification at app</string>
+    <string name="script_permission_notifications">Basahin at baguhin ang mga binibigkas na notification</string>
+    <string name="script_permission_events">Makita ang lahat ng aktibidad sa bawat app, kasama ang pag-type</string>
+    <string name="script_permission_dialogs">Magpakita ng mga dialog sa ibabaw ng anumang app</string>
+    <string name="script_permission_java">Magpatakbo ng Java code na may lahat ng access ng SandFly, sa bawat app</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">I-on</string>
+    <string name="script_permissions_title">Mga Pahintulot</string>
+    <string name="script_permissions_none">Wala</string>
+    <string name="script_settings_category">Mga Setting</string>
+    <string name="script_list_filter">I-filter</string>
+    <string name="script_button_off">I-on muna ang script</string>
+    <string name="script_permissions_summary">Kapag in-off ang isa, hihinto ang mga bahaging nangangailangan nito.</string>
+    <string name="script_install_permissions_note">Puwede mong i-off ang mga ito sa ibang pagkakataon.</string>
+    <string name="script_manage_category">Pamahalaan</string>
+    <string name="script_move_up">Patakbuhin nang mas maaga</string>
+    <string name="script_move_down">Patakbuhin nang mas huli</string>
+    <string name="script_order_summary">Pagkakasunod-sunod para sa mga script na nagbabago ng parehong pagsasalita. Unang tumatakbo ang mga script ng app.</string>
+    <string name="script_log">Log</string>
+    <string name="script_log_summary">Output at mga error mula nang magsimula ang SandFly</string>
+    <string name="script_clear_storage">I-clear ang naka-store na data</string>
+    <string name="script_storage_cleared">Na-clear ang naka-store na data</string>
+    <string name="script_remove">Alisin</string>
+    <string name="script_remove_title">Alisin ang <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Ide-delete ang code, data at mga setting nito.</string>
+    <string name="script_removed">Inalis ang <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_log_empty">Walang laman ang log</string>
+    <string name="script_log_clear">I-clear ang log</string>
+    <string name="script_log_copy">Kopyahin ang log</string>
+    <string name="script_log_copied">Nakopya ang log</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Kailangan ng script API <xliff:g id="needed">%1$d</xliff:g> o mas bago. May <xliff:g id="current">%2$d</xliff:g> ang SandFly na ito, kaya posibleng hindi gumana ang ilang bahagi.</string>
+    <string name="script_api_untested">Nasubukan hanggang script API <xliff:g id="tested">%1$d</xliff:g>. May <xliff:g id="current">%2$d</xliff:g> ang SandFly na ito, kaya posibleng hindi ito gumana gaya ng inaasahan.</string>
+    <string name="script_state_incompatible">Posibleng hindi gumana sa SandFly na ito</string>
+    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> hanggang <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Compatibility</string>
+    <string name="script_install_anyway">I-install pa rin</string>
+    <string name="script_update_anyway">I-update pa rin</string>
+    <string name="script_homepage">Buksan ang homepage</string>
+    <string name="script_homepage_confirm_title">Buksan ang address na ito?</string>
+    <string name="script_homepage_open">Buksan</string>
+    <string name="script_homepage_failed">Walang app na makakapagbukas ng <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off">Na-off ang <xliff:g id="name">%1$s</xliff:g> dahil sa paulit-ulit na error. Tingnan ang log nito sa Mga script.</string>
+    <string name="shortcut_inspect_item">Suriin ang naka-focus na item</string>
+    <string name="script_inspect_no_item">Walang item na naka-focus</string>
+    <string name="script_inspect_copied">Nakopya. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Walang id, kaya hindi ito mapangalanan ng mga panuntunan. Nakopya. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopyahin ang screen tree</string>
+    <string name="script_tree_copied">Nakopya ang <xliff:g id="count">%1$d</xliff:g> item</string>
+    <string name="script_tree_none">Walang window na makokopya</string>
+    <string name="script_tree_clip_label">Screen tree</string>
+    <string name="summary_copy_screen_tree_menu">Kopyahin ang lahat ng item sa screen bilang JSON, para sa pagsulat ng mga script</string>
+    <string name="script_inspect_clip_label">Mga detalye ng item</string>
+    <string name="summary_inspect_item_menu">Sabihin at kopyahin ang mga detalye ng item kung saan ka nakapuwesto, para sa pagsulat ng mga script</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifier</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pagkatapos ay <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Mga command</string>
+    <string name="script_commands_summary">Nauuna ang mga galaw at key ng tumatakbong script kaysa sa SandFly. I-off ang isa para panatilihin ang sa SandFly.</string>
+    <string name="script_binding_gesture">Galaw: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Mga key: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Menu ng SandFly</string>
+    <string name="script_binding_control">Mga kontrol sa pagbabasa</string>
+    <string name="script_binding_none">Wala</string>
+    <string name="script_binding_turn_on">I-on</string>
+    <string name="script_binding_turn_off">I-off</string>
+    <string name="script_binding_restore">I-restore ang mga default</string>
+    <string name="script_binding_restored">Na-restore ang mga default</string>
+    <string name="script_binding_perform">Gawin ang galaw o mga key</string>
+    <string name="script_binding_perform_summary">Italaga ang susunod na galaw, o mga key na pinindot kasama ang SandFly modifier</string>
+    <string name="script_binding_perform_message">Gawin ang galaw o pindutin ang mga key.</string>
+    <string name="script_binding_assign_title">Italaga ang <xliff:g id="binding">%1$s</xliff:g> sa <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Italaga</string>
+    <string name="script_binding_choose_gesture">Pumili ng galaw</string>
+    <string name="script_binding_type_keys">I-type ang mga key</string>
+    <string name="script_binding_type_keys_summary">Gaya ng sf+shift+n, o sf+t, s</string>
+    <string name="script_binding_bad_keys">Hindi magagamit ang mga key na ito. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Idinadagdag nito ang:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Mga source ng script</string>
+    <string name="script_sources_none">Walang idinagdag na source</string>
+    <string name="script_source_add">Magdagdag ng source</string>
+    <string name="script_source_add_button">Idagdag</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Hindi ito address ng repository sa GitHub, GitLab, Codeberg, Gitea o Bitbucket.</string>
+    <string name="script_source_exists">Naidagdag na ang source na ito.</string>
+    <string name="script_source_loading">Naglo-load</string>
+    <string name="script_source_empty">Walang script sa source na ito</string>
+    <string name="script_source_failed">Hindi ma-load ang mga script. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Subukan ulit</string>
+    <string name="script_source_downloading">Dina-download ang <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Alisin ang source</string>
+    <string name="script_source_remove_title">Alisin ang <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Mananatiling naka-install ang mga script na na-install mula rito.</string>
+</resources>

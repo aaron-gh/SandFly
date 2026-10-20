@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Гукі і вібрацыі элементаў кіравання</string>
+    <string name="summary_pref_control_sounds">Кожны тып элемента кіравання, напрыклад кнопкі, палі для птушкі, палі рэдагавання і элементы спіса, атрымлівае свой гук і сваю вібрацыю з тэмы замест гуку і вібрацыі фокуса, як у Unspoken для NVDA. Гук ідзе з месца, дзе элемент знаходзіцца на экране, а SandFly не агучвае тып элемента кіравання.</string>
+    <string name="title_pref_control_sounds_speak_roles">Агучваць тып элемента кіравання</string>
+    <string name="summary_pref_control_sounds_speak_roles">Калі прайграецца гук элемента кіравання, усё роўна агучваецца яго тып, напрыклад \"кнопка\". Дзейнічае для ўсіх гукавых тэм.</string>
+    <string name="title_pref_control_sounds_3d">3D-гук</string>
+    <string name="pref_control_sounds_3d_headphones">З навушнікамі</string>
+    <string name="pref_control_sounds_3d_always">Заўсёды</string>
+    <string name="pref_control_sounds_3d_never">Ніколі, толькі злева і справа</string>
+    <string name="individual_sound_control_button">Гук элемента кіравання: кнопка</string>
+    <string name="individual_sound_control_checkbox">Гук элемента кіравання: поле для птушкі</string>
+    <string name="individual_sound_control_radio_button">Гук элемента кіравання: кнопка-пераключальнік</string>
+    <string name="individual_sound_control_edit_text">Гук элемента кіравання: поле рэдагавання</string>
+    <string name="individual_sound_control_combo_box">Гук элемента кіравання: выпадны спіс</string>
+    <string name="individual_sound_control_slider">Гук элемента кіравання: паўзунок</string>
+    <string name="individual_sound_control_link">Гук элемента кіравання: спасылка</string>
+    <string name="individual_sound_control_image">Гук элемента кіравання: відарыс</string>
+    <string name="individual_sound_control_clock">Гук элемента кіравання: гадзіннік</string>
+    <string name="individual_sound_control_tab">Гук элемента кіравання: укладка</string>
+    <string name="individual_sound_control_menu_item">Гук элемента кіравання: пункт меню</string>
+    <string name="individual_sound_control_list_item">Гук элемента кіравання: элемент спіса</string>
+    <string name="individual_sound_control_tree_item">Гук элемента кіравання: элемент дрэва</string>
+</resources>

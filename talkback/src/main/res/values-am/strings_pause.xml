@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">SandFlyን ለአፍታ አቁም</string>
+    <string name="summary_pause_backtalk">SandFly ከቆመበት እስኪቀጥል ድረስ ንግግርን፣ የእጅ ምልክቶችን እና በመንካት ማሰስን ያጠፋል</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFlyን ለአፍታ አቁም ወይም ቀጥል</string>
+    <string name="backtalk_paused">SandFly ለአፍታ ቆሟል</string>
+    <string name="backtalk_resumed">SandFly ከቆመበት ቀጥሏል</string>
+    <string name="notification_title_backtalk_paused">SandFly ለአፍታ ቆሟል</string>
+    <string name="notification_message_backtalk_paused">ለመቀጠል መታ ያድርጉ</string>
+    <string name="notification_channel_backtalk_paused">SandFly ለአፍታ ቆሟል</string>
+    <string name="dialog_title_pause_backtalk">SandFly ለአፍታ ይቁም?</string>
+    <string name="dialog_button_pause_backtalk">ለአፍታ አቁም</string>
+    <string name="dialog_message_pause_backtalk">SandFly ለአፍታ በቆመበት ጊዜ አይናገርም፣ ለእጅ ምልክቶች ምላሽ አይሰጥም፣ እና ማያ ገፁ ምንም የማያ ገፅ አንባቢ እንዳልበራ ሆኖ ይሠራል።</string>
+    <string name="message_resume_keyguard">ለመቀጠል «SandFly ለአፍታ ቆሟል» የሚለውን ማሳወቂያ መታ ያድርጉ፣ ድምፅ ቀንስ ቁልፍን በፍጥነት 3 ጊዜ ይጫኑ፣ ወይም የማያ ገፅ መቆለፊያው እንዲታይ ስልኩን ቆልፈው ያንቁ።</string>
+    <string name="message_resume_screen_on">ለመቀጠል «SandFly ለአፍታ ቆሟል» የሚለውን ማሳወቂያ መታ ያድርጉ፣ ድምፅ ቀንስ ቁልፍን በፍጥነት 3 ጊዜ ይጫኑ፣ ወይም ማያ ገፁን አጥፍተው እንደገና ያብሩ።</string>
+    <string name="message_resume_manual">ለመቀጠል «SandFly ለአፍታ ቆሟል» የሚለውን ማሳወቂያ መታ ያድርጉ ወይም ድምፅ ቀንስ ቁልፍን በፍጥነት 3 ጊዜ ይጫኑ።</string>
+    <string name="message_resume_key_combo">እንዲሁም <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> መጫን ይችላሉ።</string>
+    <string name="title_pref_resume_backtalk">SandFlyን ቀጥል</string>
+    <string name="value_resume_keyguard">የማያ ገፅ መቆለፊያው ሲታይ</string>
+    <string name="value_resume_screen_on">ማያ ገፁ ሲበራ</string>
+    <string name="value_resume_manual">ከማሳወቂያው ወይም ከአቋራጭ ብቻ</string>
+</resources>

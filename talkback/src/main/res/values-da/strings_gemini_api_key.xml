@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API-nøgle</string>
+    <string name="summary_pref_gemini_api_key_set">Angivet. Beskriv billedet og Beskriv skærmen bruger Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Bruger den nøgle, der er indbygget i denne app</string>
+    <string name="summary_pref_gemini_api_key_not_set">Ikke angivet. Uden en nøgle læser Beskriv billedet kun tekst, og Beskriv skærmen kræver AI på enheden</string>
+    <string name="gemini_api_key_dialog_message">Få en gratis API-nøgle fra Google AI Studio på aistudio.google.com/apikey, og indsæt den her. Hvis du vil fjerne din nøgle, skal du rydde feltet og gemme.\n\nBilleder og skærme, du får beskrevet, sendes til Google. Med det gratis niveau kan Google bruge dem til at forbedre sine produkter.</string>
+    <string name="gemini_api_key_hint">API-nøgle</string>
+    <string name="gemini_api_key_save">Gem</string>
+    <string name="gemini_api_key_get">Hent en nøgle</string>
+    <string name="gemini_api_terms_link">Yderligere servicevilkår for Gemini API</string>
+</resources>

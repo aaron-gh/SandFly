@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Oleku ütlemine</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> pulka <xliff:g id="max_level" example="4">%2$d</xliff:g>-st</string>
+    <string name="status_wifi_off">WiFi on väljas</string>
+    <string name="status_wifi_not_connected">WiFi pole ühendatud</string>
+    <string name="template_status_wifi">WiFi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">WiFi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mobiilsidevõrk</string>
+    <string name="status_mobile_no_service">Mobiilsideteenus puudub</string>
+    <string name="status_do_not_disturb">Mitte segada</string>
+    <string name="status_ringer_vibrate">Vibreerimine</string>
+    <string name="status_ringer_silent">Hääletu</string>
+    <string name="status_airplane_mode">Lennukirežiim</string>
+    <string name="title_pref_status_readout">Oleku ettelugemine</string>
+    <string name="status_item_time">Kellaaeg</string>
+    <string name="status_item_time_summary">Praegune kellaaeg</string>
+    <string name="status_item_battery">Aku</string>
+    <string name="status_item_battery_summary">Aku laetuse tase, laadimine ja akusäästja</string>
+    <string name="status_item_wifi">WiFi</string>
+    <string name="status_item_wifi_summary">Võrgu nimi ja signaali tugevus</string>
+    <string name="status_item_mobile">Mobiilsidevõrk</string>
+    <string name="status_item_mobile_summary">Operaator, võrgu tüüp ja signaali tugevus</string>
+    <string name="status_item_ringer">Helin ja Mitte segada</string>
+    <string name="status_item_ringer_summary">Ainult siis, kui helin pole seatud helisema või režiim Mitte segada on sees</string>
+    <string name="status_item_airplane_mode">Lennukirežiim</string>
+    <string name="status_item_airplane_mode_summary">Ainult siis, kui lennukirežiim on sees</string>
+</resources>

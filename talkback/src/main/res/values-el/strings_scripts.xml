@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Σενάρια</string>
+    <string name="summary_pref_scripts">Αλλαγή του τρόπου λειτουργίας του SandFly σε εφαρμογές</string>
+    <string name="script_import">Εισαγωγή σεναρίου</string>
+    <string name="script_install_label">Εγκατάσταση σεναρίου SandFly</string>
+    <string name="script_import_nothing">Δεν υπάρχει αρχείο σεναρίου για εγκατάσταση.</string>
+    <string name="script_import_cannot_open">Δεν ήταν δυνατό το άνοιγμα του αρχείου.</string>
+    <string name="script_import_repository">Αυτός ο σύνδεσμος οδηγεί σε ολόκληρο αποθετήριο. Ανοίξτε το σενάριο που θέλετε και κοινοποιήστε τον σύνδεσμό του.</string>
+    <string name="script_import_summary">Αρχείο .lua ή .zip με main.lua</string>
+    <string name="scripts_category_app">Σενάρια εφαρμογών</string>
+    <string name="scripts_category_global">Καθολικές προσθήκες</string>
+    <string name="scripts_none">Δεν έχουν εγκατασταθεί σενάρια</string>
+    <string name="scripts_all_off">Απενεργοποίηση όλων των σεναρίων</string>
+    <string name="scripts_all_off_summary">Τα σενάρια παραμένουν εγκατεστημένα και διατηρούν τους διακόπτες τους. Η κίνηση «Ενεργοποίηση ή απενεργοποίηση όλων των σεναρίων» κάνει το ίδιο.</string>
+    <string name="shortcut_toggle_scripts">Ενεργοποίηση ή απενεργοποίηση όλων των σεναρίων</string>
+    <string name="scripts_now_off">Σενάρια ανενεργά</string>
+    <string name="scripts_now_on">Σενάρια ενεργά</string>
+    <string name="scripts_unavailable">Τα σενάρια δεν είναι διαθέσιμα σε αυτή τη συσκευή</string>
+    <string name="script_add_example">Προσθήκη του παραδείγματος σεναρίου</string>
+    <string name="script_add_example_summary">Εκφωνεί το όνομα κάθε εφαρμογής στην οποία μεταβαίνετε. Σενάριο για αφετηρία.</string>
+    <string name="script_state_on">Ενεργό</string>
+    <string name="script_state_off">Ανενεργό</string>
+    <string name="script_runs_in">Εκτελείται σε: <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Εκτελείται σε όλες τις εφαρμογές</string>
+    <string name="script_version">Έκδοση <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Από <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Εγκατάσταση του <xliff:g id="name">%1$s</xliff:g>;</string>
+    <string name="script_install_can">Μπορεί να:</string>
+    <string name="script_install_no_permissions">Δεν απαιτούνται άδειες.</string>
+    <string name="script_install_button">Εγκατάσταση</string>
+    <string name="script_update_title">Ενημέρωση του <xliff:g id="name">%1$s</xliff:g> στην έκδοση <xliff:g id="version">%2$s</xliff:g>;</string>
+    <string name="script_update_new_permissions">Νέες άδειες:</string>
+    <string name="script_update_button">Ενημέρωση</string>
+    <string name="script_update_replaces">Αντικαθιστά την έκδοση <xliff:g id="version">%1$s</xliff:g> από <xliff:g id="author">%2$s</xliff:g> και διατηρεί τα δεδομένα και τις ρυθμίσεις της.</string>
+    <string name="script_update_other_author">Το νέο είναι από <xliff:g id="author">%1$s</xliff:g>, διαφορετικό δημιουργό. Ενημερώστε μόνο αν το εμπιστεύεστε.</string>
+    <string name="script_installed">Το <xliff:g id="name">%1$s</xliff:g> εγκαταστάθηκε</string>
+    <string name="script_updated">Το <xliff:g id="name">%1$s</xliff:g> ενημερώθηκε στην έκδοση <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Η εισαγωγή απέτυχε. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Να επιτρέπεται μόνο σε αξιόπιστα σενάρια.</string>
+    <string name="script_permission_screen">Ανάγνωση της οθόνης</string>
+    <string name="script_permission_actions">Κλικ, κύλιση, πληκτρολόγηση και μετακίνηση εστίασης</string>
+    <string name="script_permission_speech">Ανάγνωση και αλλαγή της ομιλίας του SandFly</string>
+    <string name="script_permission_passwords">Ανάγνωση πεδίων κωδικού πρόσβασης</string>
+    <string name="script_permission_input">Προσθήκη κινήσεων, πλήκτρων, στοιχείων μενού και στοιχείων ελέγχου ανάγνωσης</string>
+    <string name="script_permission_network">Χρήση του διαδικτύου</string>
+    <string name="script_permission_clipboard">Ανάγνωση και αλλαγή του προχείρου</string>
+    <string name="script_permission_system">Μετάβαση πίσω ή στην αρχική οθόνη, άνοιγμα ειδοποιήσεων και εφαρμογών</string>
+    <string name="script_permission_notifications">Ανάγνωση και αλλαγή εκφωνούμενων ειδοποιήσεων</string>
+    <string name="script_permission_events">Προβολή όλης της δραστηριότητας σε κάθε εφαρμογή, συμπεριλαμβανομένης της πληκτρολόγησης</string>
+    <string name="script_permission_dialogs">Εμφάνιση παραθύρων διαλόγου πάνω από οποιαδήποτε εφαρμογή</string>
+    <string name="script_permission_java">Εκτέλεση κώδικα Java με όλη την πρόσβαση του SandFly, σε κάθε εφαρμογή</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Ενεργοποίηση</string>
+    <string name="script_permissions_title">Άδειες</string>
+    <string name="script_permissions_none">Καμία</string>
+    <string name="script_settings_category">Ρυθμίσεις</string>
+    <string name="script_list_filter">Φίλτρο</string>
+    <string name="script_button_off">Ενεργοποιήστε πρώτα το σενάριο</string>
+    <string name="script_permissions_summary">Η απενεργοποίηση μιας άδειας σταματά τα μέρη που τη χρειάζονται.</string>
+    <string name="script_install_permissions_note">Μπορείτε να τις απενεργοποιήσετε αργότερα.</string>
+    <string name="script_manage_category">Διαχείριση</string>
+    <string name="script_move_up">Εκτέλεση νωρίτερα</string>
+    <string name="script_move_down">Εκτέλεση αργότερα</string>
+    <string name="script_order_summary">Σειρά για σενάρια που αλλάζουν την ίδια ομιλία. Τα σενάρια εφαρμογών εκτελούνται πρώτα.</string>
+    <string name="script_log">Αρχείο καταγραφής</string>
+    <string name="script_log_summary">Έξοδος και σφάλματα από την εκκίνηση του SandFly</string>
+    <string name="script_clear_storage">Διαγραφή αποθηκευμένων δεδομένων</string>
+    <string name="script_storage_cleared">Τα αποθηκευμένα δεδομένα διαγράφηκαν</string>
+    <string name="script_remove">Κατάργηση</string>
+    <string name="script_remove_title">Κατάργηση του <xliff:g id="name">%1$s</xliff:g>;</string>
+    <string name="script_remove_message">Διαγράφει τον κώδικα, τα δεδομένα και τις ρυθμίσεις του.</string>
+    <string name="script_removed">Το <xliff:g id="name">%1$s</xliff:g> καταργήθηκε</string>
+    <string name="script_log_empty">Το αρχείο καταγραφής είναι κενό</string>
+    <string name="script_log_clear">Διαγραφή αρχείου καταγραφής</string>
+    <string name="script_log_copy">Αντιγραφή αρχείου καταγραφής</string>
+    <string name="script_log_copied">Το αρχείο καταγραφής αντιγράφηκε</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Απαιτεί API σεναρίων <xliff:g id="needed">%1$d</xliff:g> ή νεότερο. Αυτό το SandFly έχει <xliff:g id="current">%2$d</xliff:g>, οπότε ορισμένα μέρη ίσως δεν λειτουργούν.</string>
+    <string name="script_api_untested">Δοκιμασμένο έως το API σεναρίων <xliff:g id="tested">%1$d</xliff:g>. Αυτό το SandFly έχει <xliff:g id="current">%2$d</xliff:g>, οπότε ίσως δεν λειτουργεί όπως αναμένεται.</string>
+    <string name="script_state_incompatible">Ίσως δεν λειτουργεί με αυτό το SandFly</string>
+    <string name="script_api_range">API σεναρίων <xliff:g id="min">%1$d</xliff:g> έως <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Συμβατότητα</string>
+    <string name="script_install_anyway">Εγκατάσταση ούτως ή άλλως</string>
+    <string name="script_update_anyway">Ενημέρωση ούτως ή άλλως</string>
+    <string name="script_homepage">Άνοιγμα αρχικής σελίδας</string>
+    <string name="script_homepage_confirm_title">Άνοιγμα αυτής της διεύθυνσης;</string>
+    <string name="script_homepage_open">Άνοιγμα</string>
+    <string name="script_homepage_failed">Καμία εφαρμογή δεν μπορεί να ανοίξει τη διεύθυνση <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off">Το <xliff:g id="name">%1$s</xliff:g> απενεργοποιήθηκε μετά από επανειλημμένα σφάλματα. Δείτε το αρχείο καταγραφής του στα Σενάρια.</string>
+    <string name="shortcut_inspect_item">Επιθεώρηση εστιασμένου στοιχείου</string>
+    <string name="script_inspect_no_item">Κανένα στοιχείο δεν έχει εστίαση</string>
+    <string name="script_inspect_copied">Αντιγράφηκε. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Χωρίς αναγνωριστικό, οπότε οι κανόνες δεν μπορούν να το ονομάσουν. Αντιγράφηκε. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Αντιγραφή δέντρου οθόνης</string>
+    <string name="script_tree_copied">Αντιγράφηκαν <xliff:g id="count">%1$d</xliff:g> στοιχεία</string>
+    <string name="script_tree_none">Δεν υπάρχει παράθυρο για αντιγραφή</string>
+    <string name="script_tree_clip_label">Δέντρο οθόνης</string>
+    <string name="summary_copy_screen_tree_menu">Αντιγραφή όλων των στοιχείων της οθόνης ως JSON, για τη σύνταξη σεναρίων</string>
+    <string name="script_inspect_clip_label">Λεπτομέρειες στοιχείου</string>
+    <string name="summary_inspect_item_menu">Εκφώνηση και αντιγραφή λεπτομερειών του τρέχοντος στοιχείου, για τη σύνταξη σεναρίων</string>
+    <string name="script_keys_backtalk_modifier">Πλήκτρο τροποποίησης SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, μετά <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Εντολές</string>
+    <string name="script_commands_summary">Οι κινήσεις και τα πλήκτρα ενός σεναρίου που εκτελείται έχουν προτεραιότητα έναντι αυτών του SandFly. Απενεργοποιήστε ένα για να διατηρήσετε αυτό του SandFly.</string>
+    <string name="script_binding_gesture">Κίνηση: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Πλήκτρα: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Μενού SandFly</string>
+    <string name="script_binding_control">Στοιχεία ελέγχου ανάγνωσης</string>
+    <string name="script_binding_none">Κανένα</string>
+    <string name="script_binding_turn_on">Ενεργοποίηση</string>
+    <string name="script_binding_turn_off">Απενεργοποίηση</string>
+    <string name="script_binding_restore">Επαναφορά προεπιλογών</string>
+    <string name="script_binding_restored">Έγινε επαναφορά των προεπιλογών</string>
+    <string name="script_binding_perform">Εκτέλεση κίνησης ή πλήκτρων</string>
+    <string name="script_binding_perform_summary">Ανάθεση της επόμενης κίνησης ή των πλήκτρων που πατιούνται με το πλήκτρο τροποποίησης SandFly</string>
+    <string name="script_binding_perform_message">Εκτελέστε την κίνηση ή πατήστε τα πλήκτρα.</string>
+    <string name="script_binding_assign_title">Ανάθεση του <xliff:g id="binding">%1$s</xliff:g> στην εντολή <xliff:g id="command">%2$s</xliff:g>;</string>
+    <string name="script_binding_assign">Ανάθεση</string>
+    <string name="script_binding_choose_gesture">Επιλογή κίνησης</string>
+    <string name="script_binding_type_keys">Πληκτρολόγηση πλήκτρων</string>
+    <string name="script_binding_type_keys_summary">Π.χ. sf+shift+n ή sf+t, s</string>
+    <string name="script_binding_bad_keys">Δεν είναι δυνατή η χρήση αυτών των πλήκτρων. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Προσθέτει:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Πηγές σεναρίων</string>
+    <string name="script_sources_none">Δεν έχουν προστεθεί πηγές</string>
+    <string name="script_source_add">Προσθήκη πηγής</string>
+    <string name="script_source_add_button">Προσθήκη</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Δεν είναι διεύθυνση αποθετηρίου στο GitHub, στο GitLab, στο Codeberg, στο Gitea ή στο Bitbucket.</string>
+    <string name="script_source_exists">Αυτή η πηγή έχει ήδη προστεθεί.</string>
+    <string name="script_source_loading">Φόρτωση</string>
+    <string name="script_source_empty">Δεν υπάρχουν σενάρια σε αυτή την πηγή</string>
+    <string name="script_source_failed">Δεν ήταν δυνατή η φόρτωση των σεναρίων. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Επανάληψη</string>
+    <string name="script_source_downloading">Λήψη του <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Κατάργηση πηγής</string>
+    <string name="script_source_remove_title">Κατάργηση του <xliff:g id="name">%1$s</xliff:g>;</string>
+    <string name="script_source_remove_message">Τα σενάρια που εγκαταστάθηκαν από αυτή την πηγή παραμένουν εγκατεστημένα.</string>
+</resources>

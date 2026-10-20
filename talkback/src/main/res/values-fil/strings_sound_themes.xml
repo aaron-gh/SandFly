@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Mga tema ng tunog</string>
+    <string name="summary_pref_sound_themes">Mag-install at pumili ng mga hanay ng tunog at vibration, palitan ang mga indibidwal na tunog ng sarili mong tunog, at i-on ang mga tunog at vibration ng kontrol at 3D audio.</string>
+    <string name="sound_themes_installed_category">Mga naka-install na tema</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Ang sariling mga tunog at vibration ng SandFly, at anumang sarili mong tunog.</string>
+    <string name="sound_theme_in_use">Ginagamit</string>
+    <string name="sound_theme_by">Gawa ni <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Lisensya: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tunog.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> tunog.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibration.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibration.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Ino-on ang mga tunog at vibration ng kontrol.</string>
+    <string name="sound_theme_control_sounds_off">Ino-off ang mga tunog at vibration ng kontrol.</string>
+    <string name="sound_theme_use">Gamitin ang temang ito</string>
+    <string name="sound_theme_about">Tungkol sa temang ito</string>
+    <string name="sound_theme_export">I-save bilang theme file</string>
+    <string name="sound_theme_remove">Alisin</string>
+    <string name="sound_theme_remove_confirm">Alisin ang temang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Alisin</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Na-save ang tema, na may <xliff:g id="count" example="1">%d</xliff:g> tunog.</item>
+        <item quantity="other">Na-save ang tema, na may <xliff:g id="count" example="13">%d</xliff:g> tunog.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">Hindi ma-save ng SandFly ang theme file.</string>
+    <string name="sound_theme_no_picker">Walang app sa device na ito para pumili ng mga file.</string>
+    <string name="sound_theme_settings_category">Mga setting ng <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Mga tunog</string>
+    <string name="summary_pref_theme_sounds">Palitan ang anumang tunog ng temang ito ng sarili mong sound file.</string>
+    <string name="sound_themes_install_category">Mag-install ng tema</string>
+    <string name="title_pref_sound_theme_install_file">Mula sa isang file</string>
+    <string name="summary_pref_sound_theme_install_file">Ang theme file ay isang ZIP file. Puwede mo rin itong buksan, o ibahagi sa SandFly, mula sa ibang app.</string>
+    <string name="title_pref_sound_theme_install_link">Mula sa isang link</string>
+    <string name="summary_pref_sound_theme_install_link">Isang link sa isang theme file, o sa isang GitHub repository na may tema. Puwede ka ring magbahagi ng link sa SandFly mula sa iyong browser.</string>
+    <string name="sound_theme_link_message">Ilagay o i-paste ang link sa isang theme file, o sa isang GitHub repository na may tema.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Mag-install ng tema ng tunog</string>
+    <string name="sound_theme_install_reading">Binabasa ang tema ng tunog</string>
+    <string name="sound_theme_install_title">I-install ang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">I-install at gamitin</string>
+    <string name="sound_theme_install">I-install</string>
+    <string name="sound_theme_install_replaces">Papalitan nito ang naka-install na tema na may parehong pangalan.</string>
+    <string name="sound_theme_install_skipped">Hindi isinama:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Na-install ang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Na-install ang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Ginagamit na ito ngayon.</string>
+    <string name="sound_theme_install_nothing">Walang tema ng tunog na ii-install.</string>
+    <string name="sound_theme_install_not_a_theme">Hindi ito tema ng tunog na magagamit ng SandFly: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">Hindi ma-install ng SandFly ang tema ng tunog. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Dapat magsimula sa https ang mga link sa mga tema ng tunog.</string>
+    <string name="title_pref_theme_sounds_of">Mga tunog ng <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Gamitin ang mga tunog ng SandFly para sa lahat</string>
+    <string name="theme_sounds_reset_confirm">Alisin ang lahat ng tunog ng temang ito at gamitin ang sariling mga tunog ng SandFly?</string>
+    <string name="theme_sounds_reset_button">Alisin</string>
+    <string name="theme_sounds_category">Mga tunog</string>
+    <string name="theme_sound_summary_default">Tunog ng SandFly</string>
+    <string name="theme_sound_summary_custom">Tunog ng tema</string>
+    <string name="theme_sound_summary_none">Walang tunog. Ang tunog ng focus ang pinapatugtog.</string>
+    <string name="theme_sound_summary_android_keyboard">Tunog ng keyboard ng Android</string>
+    <string name="theme_sound_use_android_keyboard">Gamitin ang tunog ng keyboard ng Android</string>
+    <string name="theme_sound_braille_character">Braille keyboard: pag-type ng character</string>
+    <string name="theme_sound_braille_space">Braille keyboard: space</string>
+    <string name="theme_sound_braille_delete">Braille keyboard: pag-delete</string>
+    <string name="theme_sound_braille_new_line">Braille keyboard: bagong linya</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Pumili ng sound file</string>
+    <string name="theme_sound_preview">I-preview</string>
+    <string name="theme_sound_none">Walang tunog</string>
+    <string name="theme_sound_summary_no_sound">Walang tunog</string>
+    <string name="theme_sound_action_set_none">Itakda sa walang tunog</string>
+    <string name="theme_sound_use_default">Gamitin ang tunog ng SandFly</string>
+    <string name="theme_sound_remove">Alisin ang tunog</string>
+    <string name="theme_sound_too_large">Masyadong malaki ang file na iyon. Hanggang 5 MB ang isang tunog.</string>
+    <string name="theme_sound_not_audio">Hindi ma-play ng SandFly ang file na iyon. Pumili ng WAV, OGG, MP3 o FLAC na tunog.</string>
+    <string name="theme_sound_failed">Hindi mabasa ng SandFly ang file na iyon.</string>
+</resources>

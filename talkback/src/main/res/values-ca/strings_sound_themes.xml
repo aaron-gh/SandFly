@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Temes de so</string>
+    <string name="summary_pref_sound_themes">Instal·la i tria conjunts de sons i vibracions, substitueix sons individuals pels teus i activa els sons i les vibracions dels controls i l\'àudio 3D.</string>
+    <string name="sound_themes_installed_category">Temes instal·lats</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Els sons i les vibracions de SandFly, i els sons que hi hagis afegit.</string>
+    <string name="sound_theme_in_use">En ús</string>
+    <string name="sound_theme_by">Per <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Llicència: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> so.</item>
+        <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> sons.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> sons.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibració.</item>
+        <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> vibracions.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibracions.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Activa els sons i les vibracions dels controls.</string>
+    <string name="sound_theme_control_sounds_off">Desactiva els sons i les vibracions dels controls.</string>
+    <string name="sound_theme_use">Utilitza aquest tema</string>
+    <string name="sound_theme_about">Informació sobre aquest tema</string>
+    <string name="sound_theme_export">Desa com a fitxer de tema</string>
+    <string name="sound_theme_remove">Suprimeix</string>
+    <string name="sound_theme_remove_confirm">Vols suprimir el tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Suprimeix</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">S\'ha desat el tema, amb <xliff:g id="count" example="1">%d</xliff:g> so.</item>
+        <item quantity="many">S\'ha desat el tema, amb <xliff:g id="count" example="13">%d</xliff:g> sons.</item>
+        <item quantity="other">S\'ha desat el tema, amb <xliff:g id="count" example="13">%d</xliff:g> sons.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly no ha pogut desar el fitxer de tema.</string>
+    <string name="sound_theme_no_picker">En aquest dispositiu no hi ha cap aplicació per triar fitxers.</string>
+    <string name="sound_theme_settings_category">Configuració de <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Sons</string>
+    <string name="summary_pref_theme_sounds">Substitueix qualsevol so d\'aquest tema per un fitxer de so propi.</string>
+    <string name="sound_themes_install_category">Instal·la un tema</string>
+    <string name="title_pref_sound_theme_install_file">Des d\'un fitxer</string>
+    <string name="summary_pref_sound_theme_install_file">Un fitxer de tema és un fitxer ZIP. També en pots obrir o compartir un amb SandFly des d\'una altra aplicació.</string>
+    <string name="title_pref_sound_theme_install_link">Des d\'un enllaç</string>
+    <string name="summary_pref_sound_theme_install_link">Un enllaç a un fitxer de tema o a un repositori de GitHub que contingui un tema. També pots compartir un enllaç amb SandFly des del navegador.</string>
+    <string name="sound_theme_link_message">Introdueix o enganxa un enllaç a un fitxer de tema o a un repositori de GitHub que contingui un tema.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instal·la un tema de so</string>
+    <string name="sound_theme_install_reading">S\'està llegint el tema de so</string>
+    <string name="sound_theme_install_title">Vols instal·lar <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Instal·la i utilitza</string>
+    <string name="sound_theme_install">Instal·la</string>
+    <string name="sound_theme_install_replaces">Substitueix el tema instal·lat que té el mateix nom.</string>
+    <string name="sound_theme_install_skipped">S\'han omès:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">S\'ha instal·lat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">S\'ha instal·lat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Ara està en ús.</string>
+    <string name="sound_theme_install_nothing">No hi ha cap tema de so per instal·lar.</string>
+    <string name="sound_theme_install_not_a_theme">No és un tema de so que SandFly pugui utilitzar: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly no ha pogut instal·lar el tema de so. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Els enllaços a temes de so han de començar per https.</string>
+    <string name="title_pref_theme_sounds_of">Sons de <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Utilitza els sons de SandFly per a tot</string>
+    <string name="theme_sounds_reset_confirm">Vols suprimir tots els sons d\'aquest tema i utilitzar els de SandFly?</string>
+    <string name="theme_sounds_reset_button">Suprimeix</string>
+    <string name="theme_sounds_category">Sons</string>
+    <string name="theme_sound_summary_default">So de SandFly</string>
+    <string name="theme_sound_summary_custom">So del tema</string>
+    <string name="theme_sound_summary_none">Cap so. Es reprodueix el so del focus.</string>
+    <string name="theme_sound_summary_android_keyboard">So del teclat d\'Android</string>
+    <string name="theme_sound_use_android_keyboard">Utilitza el so del teclat d\'Android</string>
+    <string name="theme_sound_braille_character">Teclat braille: escriure un caràcter</string>
+    <string name="theme_sound_braille_space">Teclat braille: espai</string>
+    <string name="theme_sound_braille_delete">Teclat braille: suprimir</string>
+    <string name="theme_sound_braille_new_line">Teclat braille: línia nova</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Tria un fitxer de so</string>
+    <string name="theme_sound_preview">Previsualitza</string>
+    <string name="theme_sound_none">Cap so</string>
+    <string name="theme_sound_summary_no_sound">Cap so</string>
+    <string name="theme_sound_action_set_none">Estableix sense so</string>
+    <string name="theme_sound_use_default">Utilitza el so de SandFly</string>
+    <string name="theme_sound_remove">Suprimeix el so</string>
+    <string name="theme_sound_too_large">El fitxer és massa gran. Un so pot ocupar 5 MB com a màxim.</string>
+    <string name="theme_sound_not_audio">SandFly no pot reproduir aquest fitxer. Tria un so WAV, OGG, MP3 o FLAC.</string>
+    <string name="theme_sound_failed">SandFly no ha pogut llegir aquest fitxer.</string>
+</resources>

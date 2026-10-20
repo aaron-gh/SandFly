@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">نطق الحالة</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> من <xliff:g id="max_level" example="4">%2$d</xliff:g> أشرطة</string>
+    <string name="status_wifi_off">‏Wi-Fi غير مفعَّل</string>
+    <string name="status_wifi_not_connected">‏Wi-Fi غير متصل</string>
+    <string name="template_status_wifi">‏Wi-Fi، <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">‏Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>، <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>، <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">الجوّال</string>
+    <string name="status_mobile_no_service">لا تتوفّر خدمة جوّال</string>
+    <string name="status_do_not_disturb">عدم الإزعاج</string>
+    <string name="status_ringer_vibrate">اهتزاز</string>
+    <string name="status_ringer_silent">صامت</string>
+    <string name="status_airplane_mode">وضع الطيران</string>
+    <string name="title_pref_status_readout">قراءة الحالة</string>
+    <string name="status_item_time">الوقت</string>
+    <string name="status_item_time_summary">الوقت الحالي</string>
+    <string name="status_item_battery">البطارية</string>
+    <string name="status_item_battery_summary">مستوى البطارية والشحن وميزة \"توفير شحن البطارية\"</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">اسم الشبكة وقوة الإشارة</string>
+    <string name="status_item_mobile">شبكة الجوّال</string>
+    <string name="status_item_mobile_summary">مشغّل شبكة الجوّال ونوع الشبكة وقوة الإشارة</string>
+    <string name="status_item_ringer">الرنين و\"عدم الإزعاج\"</string>
+    <string name="status_item_ringer_summary">فقط عندما لا يكون الرنين مفعَّلاً، أو عندما يكون وضع \"عدم الإزعاج\" مفعَّلاً</string>
+    <string name="status_item_airplane_mode">وضع الطيران</string>
+    <string name="status_item_airplane_mode_summary">فقط عندما يكون وضع الطيران مفعَّلاً</string>
+</resources>

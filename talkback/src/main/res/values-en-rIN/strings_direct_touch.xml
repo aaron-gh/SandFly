@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="direct_touch_on">Direct touch on</string>
+    <string name="direct_touch_off">Direct touch off</string>
+    <string name="direct_touch_tile_label">Direct touch</string>
+    <string name="title_pref_direct_touch">Direct touch</string>
+    <string name="pref_direct_touch_master">Direct touch</string>
+    <string name="pref_direct_touch_master_summary">Pass touches straight to the apps you choose below, and give them back to SandFly for dialogs, text fields, the keyboard and system screens.</string>
+    <string name="pref_direct_touch_speech">Speak when direct touch changes</string>
+    <string name="pref_direct_touch_haptics">Vibrate when direct touch changes</string>
+    <string name="pref_direct_touch_backup">Back up settings</string>
+    <string name="pref_direct_touch_restore">Restore settings</string>
+    <string name="direct_touch_apps_category">Apps</string>
+    <string name="direct_touch_action_typing_on">Turn on direct typing</string>
+    <string name="direct_touch_action_typing_off">Turn off direct typing</string>
+    <string name="direct_touch_typing_summary_on">Direct typing on</string>
+    <string name="direct_touch_backup_done">Settings saved</string>
+    <string name="direct_touch_backup_failed">Could not save the settings</string>
+    <string name="direct_touch_restore_done">Settings restored</string>
+    <string name="direct_touch_restore_failed">Could not read that file</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Otsi värskendusi</string>
+    <string name="summary_pref_check_for_updates_version">Versioon <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, järk <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Otsi värskendusi automaatselt</string>
+    <string name="summary_pref_auto_update_check">Kontrollitakse kord päevas ja uue järgu saadaolekul kuvatakse märguanne</string>
+    <string name="title_pref_dev_builds">Arendusjärgud</string>
+    <string name="update_notification_title">SandFlyi värskendus on saadaval</string>
+    <string name="update_notification_text">Järk <xliff:g id="build" example="97">%1$d</xliff:g>. Puudutage installimiseks.</string>
+    <string name="update_dialog_title">SandFlyi järk <xliff:g id="build" example="97">%1$d</xliff:g> on saadaval</string>
+    <string name="update_dialog_install">Installi</string>
+    <string name="update_checking">Värskenduste otsimine</string>
+    <string name="update_up_to_date">SandFly on ajakohane</string>
+    <string name="update_check_failed">Värskendusi ei saanud otsida</string>
+    <string name="update_downloading">Värskenduse allalaadimine</string>
+    <string name="update_install_failed">Värskendust ei saanud installida</string>
+    <string name="update_install_canceled">Värskendus tühistati</string>
+    <string name="update_allow_install">Lubage SandFlyil rakendusi installida ja proovige värskendamist uuesti</string>
+</resources>

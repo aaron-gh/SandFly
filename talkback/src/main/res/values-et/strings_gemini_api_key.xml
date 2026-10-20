@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API võti</string>
+    <string name="summary_pref_gemini_api_key_set">Määratud. Pildi kirjeldamine ja ekraani kirjeldamine kasutavad Geminit</string>
+    <string name="summary_pref_gemini_api_key_built_in">Kasutatakse sellesse rakendusse sisseehitatud võtit</string>
+    <string name="summary_pref_gemini_api_key_not_set">Määramata. Ilma võtmeta loeb pildi kirjeldamine ainult teksti ja ekraani kirjeldamiseks on vaja seadmesisest AI-d</string>
+    <string name="gemini_api_key_dialog_message">Hankige tasuta API võti Google AI Studiost aadressil aistudio.google.com/apikey ja kleepige see siia. Võtme eemaldamiseks tühjendage väli ja salvestage.\n\nKirjeldatavad pildid ja ekraanikuvad saadetakse Google\'ile. Tasuta paketi puhul võib Google neid oma toodete täiustamiseks kasutada.</string>
+    <string name="gemini_api_key_hint">API võti</string>
+    <string name="gemini_api_key_save">Salvesta</string>
+    <string name="gemini_api_key_get">Hangi võti</string>
+    <string name="gemini_api_terms_link">Gemini API täiendavad teenusetingimused</string>
+</resources>

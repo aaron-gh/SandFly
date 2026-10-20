@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Heliteemad</string>
+    <string name="summary_pref_sound_themes">Helide ja vibratsioonide komplektide installimine ja valimine, üksikute helide asendamine enda omadega ning juhtelementide helide ja vibratsioonide ning 3D-heli sisselülitamine.</string>
+    <string name="sound_themes_installed_category">Installitud teemad</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFlyi enda helid ja vibratsioonid ning kõik teie enda helid.</string>
+    <string name="sound_theme_in_use">Kasutusel</string>
+    <string name="sound_theme_by">Autor: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Litsents: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> heli.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> heli.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibratsioon.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibratsiooni.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Lülitab juhtelementide helid ja vibratsioonid sisse.</string>
+    <string name="sound_theme_control_sounds_off">Lülitab juhtelementide helid ja vibratsioonid välja.</string>
+    <string name="sound_theme_use">Kasuta seda teemat</string>
+    <string name="sound_theme_about">Teave selle teema kohta</string>
+    <string name="sound_theme_export">Salvesta teemafailina</string>
+    <string name="sound_theme_remove">Eemalda</string>
+    <string name="sound_theme_remove_confirm">Kas eemaldada teema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Eemalda</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Teema salvestati, <xliff:g id="count" example="1">%d</xliff:g> heliga.</item>
+        <item quantity="other">Teema salvestati, <xliff:g id="count" example="13">%d</xliff:g> heliga.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly ei saanud teemafaili salvestada.</string>
+    <string name="sound_theme_no_picker">Selles seadmes pole rakendust, millega faile valida.</string>
+    <string name="sound_theme_settings_category">Teema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> seaded</string>
+    <string name="title_pref_theme_sounds">Helid</string>
+    <string name="summary_pref_theme_sounds">Selle teema mis tahes heli asendamine oma helifailiga.</string>
+    <string name="sound_themes_install_category">Teema installimine</string>
+    <string name="title_pref_sound_theme_install_file">Failist</string>
+    <string name="summary_pref_sound_theme_install_file">Teemafail on ZIP-fail. Teemafaili saate SandFlyiga avada või jagada ka mõnest teisest rakendusest.</string>
+    <string name="title_pref_sound_theme_install_link">Lingi kaudu</string>
+    <string name="summary_pref_sound_theme_install_link">Link teemafailile või GitHubi hoidlale, milles on teema. Lingi saate SandFlyiga jagada ka brauserist.</string>
+    <string name="sound_theme_link_message">Sisestage või kleepige link teemafailile või GitHubi hoidlale, milles on teema.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Installi heliteema</string>
+    <string name="sound_theme_install_reading">Heliteema lugemine</string>
+    <string name="sound_theme_install_title">Kas installida <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Installi ja kasuta</string>
+    <string name="sound_theme_install">Installi</string>
+    <string name="sound_theme_install_replaces">See asendab samanimelise installitud teema.</string>
+    <string name="sound_theme_install_skipped">Välja jäetud:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> on installitud.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> on installitud ja nüüd kasutusel.</string>
+    <string name="sound_theme_install_nothing">Pole ühtegi heliteemat, mida installida.</string>
+    <string name="sound_theme_install_not_a_theme">See pole heliteema, mida SandFly saab kasutada: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly ei saanud heliteemat installida. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Heliteemade lingid peavad algama https-iga.</string>
+    <string name="title_pref_theme_sounds_of">Teema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> helid</string>
+    <string name="title_pref_theme_sounds_reset">Kasuta kõigi jaoks SandFlyi helisid</string>
+    <string name="theme_sounds_reset_confirm">Kas eemaldada kõik selle teema helid ja kasutada SandFlyi enda helisid?</string>
+    <string name="theme_sounds_reset_button">Eemalda</string>
+    <string name="theme_sounds_category">Helid</string>
+    <string name="theme_sound_summary_default">SandFlyi heli</string>
+    <string name="theme_sound_summary_custom">Teema heli</string>
+    <string name="theme_sound_summary_none">Heli puudub. Esitatakse fookuse heli.</string>
+    <string name="theme_sound_summary_android_keyboard">Androidi klaviatuuri heli</string>
+    <string name="theme_sound_use_android_keyboard">Kasuta Androidi klaviatuuri heli</string>
+    <string name="theme_sound_braille_character">Braille klaviatuur: tähemärgi sisestamine</string>
+    <string name="theme_sound_braille_space">Braille klaviatuur: tühik</string>
+    <string name="theme_sound_braille_delete">Braille klaviatuur: kustutamine</string>
+    <string name="theme_sound_braille_new_line">Braille klaviatuur: uus rida</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Vali helifail</string>
+    <string name="theme_sound_preview">Eelvaade</string>
+    <string name="theme_sound_none">Heli puudub</string>
+    <string name="theme_sound_summary_no_sound">Heli puudub</string>
+    <string name="theme_sound_action_set_none">Määra helituks</string>
+    <string name="theme_sound_use_default">Kasuta SandFlyi heli</string>
+    <string name="theme_sound_remove">Eemalda heli</string>
+    <string name="theme_sound_too_large">See fail on liiga suur. Heli võib olla kuni 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly ei saa seda faili esitada. Valige WAV-, OGG-, MP3- või FLAC-heli.</string>
+    <string name="theme_sound_failed">SandFly ei saanud seda faili lugeda.</string>
+</resources>

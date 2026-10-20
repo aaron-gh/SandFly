@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Sons e vibracións dos controis</string>
+    <string name="summary_pref_control_sounds">Asigna a cada tipo de control, como botóns, caixas de verificación, campos de edición e elementos de lista, o seu propio son e a súa propia vibración do tema, en lugar do son e a vibración do enfoque, como fai Unspoken para NVDA. O son procede da posición do control na pantalla e SandFly omite o tipo de control.</string>
+    <string name="title_pref_control_sounds_speak_roles">Ler igualmente o tipo de control</string>
+    <string name="summary_pref_control_sounds_speak_roles">Cando se reproduce un son de control, le igualmente o tipo de control, como botón. Aplícase a todos os temas de son.</string>
+    <string name="title_pref_control_sounds_3d">Audio 3D</string>
+    <string name="pref_control_sounds_3d_headphones">Con auriculares</string>
+    <string name="pref_control_sounds_3d_always">Sempre</string>
+    <string name="pref_control_sounds_3d_never">Nunca, só esquerda e dereita</string>
+    <string name="individual_sound_control_button">Son de control: botón</string>
+    <string name="individual_sound_control_checkbox">Son de control: caixa de verificación</string>
+    <string name="individual_sound_control_radio_button">Son de control: botón de opción</string>
+    <string name="individual_sound_control_edit_text">Son de control: campo de edición</string>
+    <string name="individual_sound_control_combo_box">Son de control: lista despregable</string>
+    <string name="individual_sound_control_slider">Son de control: control desprazable</string>
+    <string name="individual_sound_control_link">Son de control: ligazón</string>
+    <string name="individual_sound_control_image">Son de control: imaxe</string>
+    <string name="individual_sound_control_clock">Son de control: reloxo</string>
+    <string name="individual_sound_control_tab">Son de control: pestana</string>
+    <string name="individual_sound_control_menu_item">Son de control: elemento de menú</string>
+    <string name="individual_sound_control_list_item">Son de control: elemento de lista</string>
+    <string name="individual_sound_control_tree_item">Son de control: elemento de árbore</string>
+</resources>

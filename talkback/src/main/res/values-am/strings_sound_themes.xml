@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">የድምፅ ገጽታዎች</string>
+    <string name="summary_pref_sound_themes">የድምፆች እና የንዝረቶች ስብስቦችን ይጫኑ እና ይምረጡ፣ ነጠላ ድምፆችን በራስዎ ድምፆች ይተኩ፣ እና የመቆጣጠሪያ ድምፆችን እና ንዝረቶችን እና 3D ኦዲዮን ያብሩ።</string>
+    <string name="sound_themes_installed_category">የተጫኑ ገጽታዎች</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">የSandFly የራሱ ድምፆች እና ንዝረቶች፣ እና ማንኛቸውም የራስዎ ድምፆች።</string>
+    <string name="sound_theme_in_use">ጥቅም ላይ ነው</string>
+    <string name="sound_theme_by">በ<xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">ፈቃድ፦ <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ድምፅ።</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ድምፆች።</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ንዝረት።</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ንዝረቶች።</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">የመቆጣጠሪያ ድምፆችን እና ንዝረቶችን ያበራል።</string>
+    <string name="sound_theme_control_sounds_off">የመቆጣጠሪያ ድምፆችን እና ንዝረቶችን ያጠፋል።</string>
+    <string name="sound_theme_use">ይህን ገጽታ ተጠቀም</string>
+    <string name="sound_theme_about">ስለዚህ ገጽታ</string>
+    <string name="sound_theme_export">እንደ ገጽታ ፋይል አስቀምጥ</string>
+    <string name="sound_theme_remove">አስወግድ</string>
+    <string name="sound_theme_remove_confirm">ገጽታው <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ይወገድ?</string>
+    <string name="sound_theme_remove_button">አስወግድ</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">ገጽታው ከ<xliff:g id="count" example="1">%d</xliff:g> ድምፅ ጋር ተቀምጧል።</item>
+        <item quantity="other">ገጽታው ከ<xliff:g id="count" example="13">%d</xliff:g> ድምፆች ጋር ተቀምጧል።</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly የገጽታ ፋይሉን ማስቀመጥ አልቻለም።</string>
+    <string name="sound_theme_no_picker">በዚህ መሣሪያ ላይ ፋይሎችን ለመምረጥ የሚያስችል መተግበሪያ የለም።</string>
+    <string name="sound_theme_settings_category">የ<xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ቅንብሮች</string>
+    <string name="title_pref_theme_sounds">ድምፆች</string>
+    <string name="summary_pref_theme_sounds">የዚህን ገጽታ ማንኛውንም ድምፅ በራስዎ የድምፅ ፋይል ይተኩ።</string>
+    <string name="sound_themes_install_category">ገጽታ ጫን</string>
+    <string name="title_pref_sound_theme_install_file">ከፋይል</string>
+    <string name="summary_pref_sound_theme_install_file">የገጽታ ፋይል የZIP ፋይል ነው። እንዲሁም ከሌላ መተግበሪያ አንዱን በSandFly መክፈት ወይም ለSandFly ማጋራት ይችላሉ።</string>
+    <string name="title_pref_sound_theme_install_link">ከአገናኝ</string>
+    <string name="summary_pref_sound_theme_install_link">ወደ ገጽታ ፋይል፣ ወይም ገጽታ ወዳለበት የGitHub ማከማቻ የሚወስድ አገናኝ። እንዲሁም ከአሳሽዎ አገናኝን ለSandFly ማጋራት ይችላሉ።</string>
+    <string name="sound_theme_link_message">ወደ ገጽታ ፋይል፣ ወይም ገጽታ ወዳለበት የGitHub ማከማቻ የሚወስድ አገናኝ ያስገቡ ወይም ይለጥፉ።</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">የድምፅ ገጽታ ጫን</string>
+    <string name="sound_theme_install_reading">የድምፅ ገጽታውን በማንበብ ላይ</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ይጫን?</string>
+    <string name="sound_theme_install_and_use">ጫን እና ተጠቀም</string>
+    <string name="sound_theme_install">ጫን</string>
+    <string name="sound_theme_install_replaces">ይህ ተመሳሳይ ስም ያለውን የተጫነ ገጽታ ይተካል።</string>
+    <string name="sound_theme_install_skipped">የተተዉ፦\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ተጭኗል።</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ተጭኗል። አሁን ጥቅም ላይ ነው።</string>
+    <string name="sound_theme_install_nothing">የሚጫን የድምፅ ገጽታ የለም።</string>
+    <string name="sound_theme_install_not_a_theme">ይህ SandFly ሊጠቀምበት የሚችል የድምፅ ገጽታ አይደለም፦ <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>።</string>
+    <string name="sound_theme_install_failed">SandFly የድምፅ ገጽታውን መጫን አልቻለም። <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ወደ የድምፅ ገጽታዎች የሚወስዱ አገናኞች በhttps መጀመር አለባቸው።</string>
+    <string name="title_pref_theme_sounds_of">የ<xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ድምፆች</string>
+    <string name="title_pref_theme_sounds_reset">ለሁሉም የSandFly ድምፆችን ተጠቀም</string>
+    <string name="theme_sounds_reset_confirm">የዚህ ገጽታ ሁሉም ድምፆች ተወግደው የSandFly የራሱ ድምፆች ጥቅም ላይ ይዋሉ?</string>
+    <string name="theme_sounds_reset_button">አስወግድ</string>
+    <string name="theme_sounds_category">ድምፆች</string>
+    <string name="theme_sound_summary_default">የSandFly ድምፅ</string>
+    <string name="theme_sound_summary_custom">የገጽታ ድምፅ</string>
+    <string name="theme_sound_summary_none">ድምፅ የለም። የትኩረት ድምፁ ይጫወታል።</string>
+    <string name="theme_sound_summary_android_keyboard">የAndroid የቁልፍ ሰሌዳ ድምፅ</string>
+    <string name="theme_sound_use_android_keyboard">የAndroid የቁልፍ ሰሌዳ ድምፅን ተጠቀም</string>
+    <string name="theme_sound_braille_character">የብሬይል ቁልፍ ሰሌዳ፦ ቁምፊ መተየብ</string>
+    <string name="theme_sound_braille_space">የብሬይል ቁልፍ ሰሌዳ፦ ክፍተት</string>
+    <string name="theme_sound_braille_delete">የብሬይል ቁልፍ ሰሌዳ፦ ሰርዝ</string>
+    <string name="theme_sound_braille_new_line">የብሬይል ቁልፍ ሰሌዳ፦ አዲስ መስመር</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">የድምፅ ፋይል ይምረጡ</string>
+    <string name="theme_sound_preview">ቅድመ ዕይታ</string>
+    <string name="theme_sound_none">ድምፅ የለም</string>
+    <string name="theme_sound_summary_no_sound">ድምፅ የለም</string>
+    <string name="theme_sound_action_set_none">ወደ ድምፅ የለም አቀናብር</string>
+    <string name="theme_sound_use_default">የSandFly ድምፅን ተጠቀም</string>
+    <string name="theme_sound_remove">ድምፁን አስወግድ</string>
+    <string name="theme_sound_too_large">ያ ፋይል በጣም ትልቅ ነው። አንድ ድምፅ እስከ 5 ሜባ ሊሆን ይችላል።</string>
+    <string name="theme_sound_not_audio">SandFly ያንን ፋይል ማጫወት አይችልም። WAV፣ OGG፣ MP3 ወይም FLAC ድምፅ ይምረጡ።</string>
+    <string name="theme_sound_failed">SandFly ያንን ፋይል ማንበብ አልቻለም።</string>
+</resources>

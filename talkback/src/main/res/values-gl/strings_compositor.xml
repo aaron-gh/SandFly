@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack activado</string>
-  <string name="talkback_disabled">TalkBack está desactivado</string>
+  <string name="talkback_on">SandFly activado</string>
+  <string name="talkback_disabled">SandFly está desactivado</string>
   <string name="notification_type_beginning_of_field">Comezo do campo</string>
   <string name="notification_type_end_of_field">Fin do campo</string>
   <string name="notification_type_selection_mode_on">Modo de selección activado</string>
@@ -195,4 +195,7 @@
   <string name="drag_started">Acción de arrastrar iniciada</string>
   <string name="drag_dropped">Elemento arrastrado soltado</string>
   <string name="drag_cancelled">Acción de arrastrar cancelada</string>
+    <string name="template_brightness_changed">Brillo ao <xliff:g id="percent">%1$d</xliff:g> por cento.</string>
+    <string name="brightness_needs_permission">Permite modificar a configuración do sistema para cambiar o brillo.</string>
+    <string name="brightness_adaptive_on">Desactiva o brillo adaptable para cambiar o brillo.</string>
 </resources>

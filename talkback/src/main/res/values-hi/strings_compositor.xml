@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack चालू है</string>
-  <string name="talkback_disabled">TalkBack बंद है</string>
+  <string name="talkback_on">SandFly चालू है</string>
+  <string name="talkback_disabled">SandFly बंद है</string>
   <string name="notification_type_beginning_of_field">फ़ील्ड के शुरू में</string>
   <string name="notification_type_end_of_field">फ़ील्ड के अंत में</string>
   <string name="notification_type_selection_mode_on">चुनें जाना मोड चालू है</string>
@@ -195,4 +195,7 @@
   <string name="drag_started">आइटम को खींचने और छोड़ने की कार्रवाई शुरू की गई</string>
   <string name="drag_dropped">खींचे गए आइटम को छोड़ा गया</string>
   <string name="drag_cancelled">आइटम को खींचने और छोड़ने की कार्रवाई रद्द की गई</string>
+    <string name="template_brightness_changed">स्क्रीन की रोशनी <xliff:g id="percent">%1$d</xliff:g> प्रतिशत.</string>
+    <string name="brightness_needs_permission">स्क्रीन की रोशनी बदलने के लिए, सिस्टम सेटिंग में बदलाव करने की अनुमति दें.</string>
+    <string name="brightness_adaptive_on">स्क्रीन की रोशनी बदलने के लिए, अडैप्टिव ब्राइटनेस बंद करें.</string>
 </resources>

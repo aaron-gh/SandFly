@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">مفتاح Gemini API</string>
+    <string name="summary_pref_gemini_api_key_set">تم الضبط. تستخدم ميزتا \"وصف الصورة\" و\"وصف محتوى الشاشة\" Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">يتم استخدام المفتاح المضمَّن في هذا التطبيق</string>
+    <string name="summary_pref_gemini_api_key_not_set">لم يتم الضبط. بدون مفتاح، تقرأ ميزة \"وصف الصورة\" النص فقط، وتتطلّب ميزة \"وصف محتوى الشاشة\" الذكاء الاصطناعي على الجهاز</string>
+    <string name="gemini_api_key_dialog_message">احصل على مفتاح واجهة برمجة تطبيقات مجاني من Google AI Studio على aistudio.google.com/apikey والصِقه هنا. لإزالة المفتاح، امحُ الحقل ثم احفظ.\n\nتُرسَل الصور والشاشات التي تطلب وصفها إلى Google. في المستوى المجاني، يمكن أن تستخدمها Google لتحسين منتجاتها.</string>
+    <string name="gemini_api_key_hint">مفتاح واجهة برمجة التطبيقات</string>
+    <string name="gemini_api_key_save">حفظ</string>
+    <string name="gemini_api_key_get">الحصول على مفتاح</string>
+    <string name="gemini_api_terms_link">بنود الخدمة الإضافية لواجهة Gemini API</string>
+</resources>

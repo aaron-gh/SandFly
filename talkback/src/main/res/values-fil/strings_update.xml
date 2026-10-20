@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Tingnan kung may update</string>
+    <string name="summary_pref_check_for_updates_version">Bersyon <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Awtomatikong tingnan kung may update</string>
+    <string name="summary_pref_auto_update_check">Tumingin isang beses sa isang araw at magpakita ng notification kapag may bagong build</string>
+    <string name="title_pref_dev_builds">Mga development build</string>
+    <string name="update_notification_title">May available na update ng SandFly</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. I-tap para i-install.</string>
+    <string name="update_dialog_title">Available ang SandFly build <xliff:g id="build" example="97">%1$d</xliff:g></string>
+    <string name="update_dialog_install">I-install</string>
+    <string name="update_checking">Tinitingnan kung may update</string>
+    <string name="update_up_to_date">Napapanahon ang SandFly</string>
+    <string name="update_check_failed">Hindi matingnan kung may update</string>
+    <string name="update_downloading">Dina-download ang update</string>
+    <string name="update_install_failed">Hindi ma-install ang update</string>
+    <string name="update_install_canceled">Kinansela ang update</string>
+    <string name="update_allow_install">Payagan ang SandFly na mag-install ng mga app, pagkatapos ay subukan ulit ang update</string>
+</resources>

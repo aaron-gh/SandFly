@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Säädinäänet ja ‑värinät</string>
+    <string name="summary_pref_control_sounds">Antaa jokaiselle säädintyypille, kuten painikkeille, valintaruuduille, muokkauskentille ja luettelokohteille, oman äänen ja oman värinän teemasta valinnan äänen ja värinän sijaan, kuten Unspoken tekee NVDA:lle. Ääni kuuluu siitä kohdasta, jossa säädin on näytöllä, eikä SandFly sano säätimen tyyppiä.</string>
+    <string name="title_pref_control_sounds_speak_roles">Sano silti säätimen tyyppi</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kun säädinääni toistetaan, sano silti säätimen tyyppi, esimerkiksi painike. Koskee kaikkia ääniteemoja.</string>
+    <string name="title_pref_control_sounds_3d">3D-ääni</string>
+    <string name="pref_control_sounds_3d_headphones">Kuulokkeilla</string>
+    <string name="pref_control_sounds_3d_always">Aina</string>
+    <string name="pref_control_sounds_3d_never">Ei koskaan, vain vasen ja oikea</string>
+    <string name="individual_sound_control_button">Säädinääni: painike</string>
+    <string name="individual_sound_control_checkbox">Säädinääni: valintaruutu</string>
+    <string name="individual_sound_control_radio_button">Säädinääni: valintanappi</string>
+    <string name="individual_sound_control_edit_text">Säädinääni: muokkauskenttä</string>
+    <string name="individual_sound_control_combo_box">Säädinääni: avattava luettelo</string>
+    <string name="individual_sound_control_slider">Säädinääni: liukusäädin</string>
+    <string name="individual_sound_control_link">Säädinääni: linkki</string>
+    <string name="individual_sound_control_image">Säädinääni: kuva</string>
+    <string name="individual_sound_control_clock">Säädinääni: kello</string>
+    <string name="individual_sound_control_tab">Säädinääni: välilehti</string>
+    <string name="individual_sound_control_menu_item">Säädinääni: valikon kohde</string>
+    <string name="individual_sound_control_list_item">Säädinääni: luettelokohde</string>
+    <string name="individual_sound_control_tree_item">Säädinääni: puun kohde</string>
+</resources>

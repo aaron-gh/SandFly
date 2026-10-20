@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="direct_touch_on">Suora kosketus päällä</string>
+    <string name="direct_touch_off">Suora kosketus pois päältä</string>
+    <string name="direct_touch_tile_label">Suora kosketus</string>
+    <string name="title_pref_direct_touch">Suora kosketus</string>
+    <string name="pref_direct_touch_master">Suora kosketus</string>
+    <string name="pref_direct_touch_master_summary">Välitä kosketukset suoraan alla valitsemillesi sovelluksille ja palauta ne SandFlylle valintaikkunoissa, tekstikentissä, näppäimistössä ja järjestelmänäytöissä.</string>
+    <string name="pref_direct_touch_speech">Sano, kun suora kosketus muuttuu</string>
+    <string name="pref_direct_touch_haptics">Värise, kun suora kosketus muuttuu</string>
+    <string name="pref_direct_touch_backup">Varmuuskopioi asetukset</string>
+    <string name="pref_direct_touch_restore">Palauta asetukset</string>
+    <string name="direct_touch_apps_category">Sovellukset</string>
+    <string name="direct_touch_action_typing_on">Ota suora kirjoitus käyttöön</string>
+    <string name="direct_touch_action_typing_off">Poista suora kirjoitus käytöstä</string>
+    <string name="direct_touch_typing_summary_on">Suora kirjoitus päällä</string>
+    <string name="direct_touch_backup_done">Asetukset tallennettu</string>
+    <string name="direct_touch_backup_failed">Asetuksia ei voitu tallentaa</string>
+    <string name="direct_touch_restore_done">Asetukset palautettu</string>
+    <string name="direct_touch_restore_failed">Tiedostoa ei voitu lukea</string>
+</resources>

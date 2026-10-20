@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Rechercher des mises à jour</string>
+    <string name="summary_pref_check_for_updates_version">Version <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Rechercher automatiquement des mises à jour</string>
+    <string name="summary_pref_auto_update_check">Rechercher une fois par jour et afficher une notification lorsqu\'un nouveau build est disponible</string>
+    <string name="title_pref_dev_builds">Builds de développement</string>
+    <string name="update_notification_title">Mise à jour de SandFly disponible</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Touchez pour installer.</string>
+    <string name="update_dialog_title">Le build <xliff:g id="build" example="97">%1$d</xliff:g> de SandFly est disponible</string>
+    <string name="update_dialog_install">Installer</string>
+    <string name="update_checking">Recherche de mises à jour</string>
+    <string name="update_up_to_date">SandFly est à jour</string>
+    <string name="update_check_failed">Impossible de rechercher des mises à jour</string>
+    <string name="update_downloading">Téléchargement de la mise à jour</string>
+    <string name="update_install_failed">Impossible d\'installer la mise à jour</string>
+    <string name="update_install_canceled">Mise à jour annulée</string>
+    <string name="update_allow_install">Autorisez SandFly à installer des applications, puis réessayez la mise à jour</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">আপডেট চেক করুন</string>
+    <string name="summary_pref_check_for_updates_version">ভার্সন <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, বিল্ড <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">অটোমেটিক আপডেট চেক করুন</string>
+    <string name="summary_pref_auto_update_check">দিনে একবার চেক করে এবং নতুন বিল্ড উপলভ্য হলে বিজ্ঞপ্তি দেখায়</string>
+    <string name="title_pref_dev_builds">ডেভেলপমেন্ট বিল্ড</string>
+    <string name="update_notification_title">SandFly আপডেট উপলভ্য</string>
+    <string name="update_notification_text">বিল্ড <xliff:g id="build" example="97">%1$d</xliff:g>। ইনস্টল করতে ট্যাপ করুন।</string>
+    <string name="update_dialog_title">SandFly বিল্ড <xliff:g id="build" example="97">%1$d</xliff:g> উপলভ্য</string>
+    <string name="update_dialog_install">ইনস্টল করুন</string>
+    <string name="update_checking">আপডেট চেক করা হচ্ছে</string>
+    <string name="update_up_to_date">SandFly আপ-টু-ডেট আছে</string>
+    <string name="update_check_failed">আপডেট চেক করা যায়নি</string>
+    <string name="update_downloading">আপডেট ডাউনলোড করা হচ্ছে</string>
+    <string name="update_install_failed">আপডেট ইনস্টল করা যায়নি</string>
+    <string name="update_install_canceled">আপডেট বাতিল করা হয়েছে</string>
+    <string name="update_allow_install">SandFly-কে অ্যাপ ইনস্টল করার অনুমতি দিন, তারপর আবার আপডেট করার চেষ্টা করুন</string>
+</resources>

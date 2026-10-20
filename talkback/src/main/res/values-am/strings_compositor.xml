@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack በርቷል</string>
-  <string name="talkback_disabled">TalkBack ጠፍቷል</string>
+  <string name="talkback_on">SandFly በርቷል</string>
+  <string name="talkback_disabled">SandFly ጠፍቷል</string>
   <string name="notification_type_beginning_of_field">የመስክ መጀመሪያ</string>
   <string name="notification_type_end_of_field">የመስክ መጨረሻ</string>
   <string name="notification_type_selection_mode_on">የምርጫ ሁነታ በርቷል</string>
@@ -195,4 +195,7 @@
   <string name="drag_started">መጎተት ተጀምሯል</string>
   <string name="drag_dropped">የተጎተተው ነገር ተጥሏል</string>
   <string name="drag_cancelled">መጎተት ተሰርዟል</string>
+    <string name="template_brightness_changed">ብሩህነት <xliff:g id="percent">%1$d</xliff:g> በመቶ።</string>
+    <string name="brightness_needs_permission">ብሩህነትን ለመቀየር የስርዓት ቅንብሮችን ማሻሻልን ይፍቀዱ።</string>
+    <string name="brightness_adaptive_on">ብሩህነትን ለመቀየር ተለማማጅ ብሩህነትን ያጥፉ።</string>
 </resources>
