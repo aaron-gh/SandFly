@@ -1532,9 +1532,7 @@
       Source: Message for the preference that allows user to type focus latency.
       Description: The user can check or not check this. In another seekbar preference, the user can adjust the slider to change latency value. [CHAR LIMIT=NONE]
      -->
-    <string name="message_pref_touch_explore_latency">A shorter delay makes SandFly speak sooner after you touch the keyboard.
-
-Choose a delay</string>
+    <string name="message_pref_touch_explore_latency">A shorter delay makes SandFly speak sooner after you touch the keyboard.\n\nChoose a delay</string>
     <!--
       Source: Preference title.
       Description: This preference that shows current touch focus time out to exploration. [CHAR_LIMIT=35]
