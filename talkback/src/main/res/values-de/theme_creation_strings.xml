@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="theme_create">Neues Schema erstellen</string>
+    <string name="theme_create_name">Name</string>
+    <string name="theme_create_description">Beschreibung</string>
+    <string name="theme_create_author">Autor</string>
+    <string name="theme_create_website">Website</string>
+    <string name="theme_create_name_required">Gib einen Namen ein.</string>
+    <string name="theme_create_duplicate">Es gibt bereits ein Schema mit diesem Namen. Wähle einen anderen Namen.</string>
+    <string name="theme_create_save">Speichern</string>
+    <string name="theme_create_save_failed">SandFly konnte das Schema nicht speichern.</string>
+    <string name="theme_create_discard_title">Dieses Schema verwerfen?</string>
+    <string name="theme_create_discard">Verwerfen</string>
+    <string name="theme_create_keep_editing">Weiter bearbeiten</string>
+    <string name="theme_create_draft_missing">Der Entwurf ist nicht mehr vorhanden.</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Töne und Vibrationen für Steuerelemente</string>
+    <string name="summary_pref_control_sounds">Jeder Art von Steuerelement, etwa Tasten, Kästchen, Bearbeitungsfeldern und Listeneinträgen, einen eigenen Ton und eine eigene Vibration aus dem Schema zuweisen, anstelle des Fokustons und der Fokusvibration, wie Unspoken es für NVDA tut. Der Ton kommt aus der Richtung, in der sich das Steuerelement auf dem Bildschirm befindet, und SandFly sagt die Art des Steuerelements nicht an.</string>
+    <string name="title_pref_control_sounds_speak_roles">Art des Steuerelements trotzdem ansagen</string>
+    <string name="summary_pref_control_sounds_speak_roles">Wenn ein Steuerelementton wiedergegeben wird, trotzdem die Art des Steuerelements ansagen, zum Beispiel „Taste“. Gilt für alle Soundschemas.</string>
+    <string name="title_pref_control_sounds_3d">3D-Audio</string>
+    <string name="pref_control_sounds_3d_headphones">Mit Kopfhörern</string>
+    <string name="pref_control_sounds_3d_always">Immer</string>
+    <string name="pref_control_sounds_3d_never">Nie, nur links und rechts</string>
+    <string name="individual_sound_control_button">Steuerelementton: Taste</string>
+    <string name="individual_sound_control_checkbox">Steuerelementton: Kästchen</string>
+    <string name="individual_sound_control_radio_button">Steuerelementton: Optionsfeld</string>
+    <string name="individual_sound_control_edit_text">Steuerelementton: Bearbeitungsfeld</string>
+    <string name="individual_sound_control_combo_box">Steuerelementton: Drop-down-Liste</string>
+    <string name="individual_sound_control_slider">Steuerelementton: Schieberegler</string>
+    <string name="individual_sound_control_link">Steuerelementton: Link</string>
+    <string name="individual_sound_control_image">Steuerelementton: Bild</string>
+    <string name="individual_sound_control_clock">Steuerelementton: Uhr</string>
+    <string name="individual_sound_control_tab">Steuerelementton: Tab</string>
+    <string name="individual_sound_control_menu_item">Steuerelementton: Menüpunkt</string>
+    <string name="individual_sound_control_list_item">Steuerelementton: Listeneintrag</string>
+    <string name="individual_sound_control_tree_item">Steuerelementton: Baumelement</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">SandFly pausieren</string>
+    <string name="summary_pause_backtalk">Sprachausgabe, Touch-Gesten und „Bei Berühren vorlesen“ deaktivieren, bis du SandFly fortsetzt</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly pausieren oder fortsetzen</string>
+    <string name="backtalk_paused">SandFly pausiert</string>
+    <string name="backtalk_resumed">SandFly fortgesetzt</string>
+    <string name="notification_title_backtalk_paused">SandFly ist pausiert</string>
+    <string name="notification_message_backtalk_paused">Zum Fortsetzen tippen</string>
+    <string name="notification_channel_backtalk_paused">SandFly pausiert</string>
+    <string name="dialog_title_pause_backtalk">SandFly pausieren?</string>
+    <string name="dialog_button_pause_backtalk">Pausieren</string>
+    <string name="dialog_message_pause_backtalk">Während SandFly pausiert ist, gibt es keine Sprachausgabe und keine Reaktion auf Touch-Gesten. Der Bildschirm funktioniert so, als wäre kein Screenreader aktiviert.</string>
+    <string name="message_resume_keyguard">Zum Fortsetzen tippe auf die Benachrichtigung „SandFly ist pausiert“, drücke dreimal schnell die Leisertaste oder sperre das Smartphone und schalte den Bildschirm wieder ein, sodass der Sperrbildschirm angezeigt wird.</string>
+    <string name="message_resume_screen_on">Zum Fortsetzen tippe auf die Benachrichtigung „SandFly ist pausiert“, drücke dreimal schnell die Leisertaste oder schalte den Bildschirm aus und wieder ein.</string>
+    <string name="message_resume_manual">Zum Fortsetzen tippe auf die Benachrichtigung „SandFly ist pausiert“ oder drücke dreimal schnell die Leisertaste.</string>
+    <string name="message_resume_key_combo">Du kannst auch <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> drücken.</string>
+    <string name="title_pref_resume_backtalk">SandFly fortsetzen</string>
+    <string name="value_resume_keyguard">Wenn der Sperrbildschirm angezeigt wird</string>
+    <string name="value_resume_screen_on">Wenn der Bildschirm eingeschaltet wird</string>
+    <string name="value_resume_manual">Nur über die Benachrichtigung oder eine Verknüpfung</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Status ansagen</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> von <xliff:g id="max_level" example="4">%2$d</xliff:g> Balken</string>
+    <string name="status_wifi_off">WLAN aus</string>
+    <string name="status_wifi_not_connected">WLAN nicht verbunden</string>
+    <string name="template_status_wifi">WLAN, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">WLAN <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mobilfunk</string>
+    <string name="status_mobile_no_service">Kein Mobilfunknetz</string>
+    <string name="status_do_not_disturb">Bitte nicht stören</string>
+    <string name="status_ringer_vibrate">Vibrieren</string>
+    <string name="status_ringer_silent">Lautlos</string>
+    <string name="status_airplane_mode">Flugmodus</string>
+    <string name="title_pref_status_readout">Statusansage</string>
+    <string name="status_item_time">Uhrzeit</string>
+    <string name="status_item_time_summary">Die aktuelle Uhrzeit</string>
+    <string name="status_item_battery">Akku</string>
+    <string name="status_item_battery_summary">Akkustand, Ladevorgang und Energiesparmodus</string>
+    <string name="status_item_wifi">WLAN</string>
+    <string name="status_item_wifi_summary">Netzwerkname und Signalstärke</string>
+    <string name="status_item_mobile">Mobilfunknetz</string>
+    <string name="status_item_mobile_summary">Mobilfunkanbieter, Netzwerktyp und Signalstärke</string>
+    <string name="status_item_ringer">Klingelmodus und „Bitte nicht stören“</string>
+    <string name="status_item_ringer_summary">Nur wenn der Klingelton nicht aktiviert ist oder „Bitte nicht stören“ aktiviert ist</string>
+    <string name="status_item_airplane_mode">Flugmodus</string>
+    <string name="status_item_airplane_mode_summary">Nur wenn der Flugmodus aktiviert ist</string>
+</resources>

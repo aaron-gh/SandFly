@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API-Schlüssel</string>
+    <string name="summary_pref_gemini_api_key_set">Festgelegt. „Bild beschreiben“ und „Bildschirminhalt beschreiben“ verwenden Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Der in diese App integrierte Schlüssel wird verwendet</string>
+    <string name="summary_pref_gemini_api_key_not_set">Nicht festgelegt. Ohne Schlüssel liest „Bild beschreiben“ nur Text vor und „Bildschirminhalt beschreiben“ erfordert KI auf dem Gerät</string>
+    <string name="gemini_api_key_dialog_message">Hol dir unter aistudio.google.com/apikey einen kostenlosen API-Schlüssel von Google AI Studio und füge ihn hier ein. Zum Entfernen deines Schlüssels leere das Feld und speichere.\n\nBilder und Bildschirme, die du beschreiben lässt, werden an Google gesendet. Bei der kostenlosen Stufe kann Google sie zur Verbesserung seiner Produkte verwenden.</string>
+    <string name="gemini_api_key_hint">API-Schlüssel</string>
+    <string name="gemini_api_key_save">Speichern</string>
+    <string name="gemini_api_key_get">Schlüssel abrufen</string>
+    <string name="gemini_api_terms_link">Zusätzliche Nutzungsbedingungen für die Gemini API</string>
+</resources>
