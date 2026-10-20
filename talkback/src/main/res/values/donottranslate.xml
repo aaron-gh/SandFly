@@ -22,6 +22,42 @@
     <string name="pref_check_for_updates_key" translatable="false">pref_check_for_updates</string>
     <string name="pref_auto_update_check_key" translatable="false">pref_auto_update_check</string>
     <string name="pref_dev_builds_key" translatable="false">pref_dev_builds</string>
+    <string name="pref_problem_report_key" translatable="false">pref_problem_report</string>
+    <string name="pref_problem_report_type_key" translatable="false">pref_problem_report_type</string>
+    <string name="pref_problem_report_area_key" translatable="false">pref_problem_report_area</string>
+    <string name="pref_problem_report_title_key" translatable="false">pref_problem_report_title</string>
+    <string name="pref_problem_report_app_key" translatable="false">pref_problem_report_app</string>
+    <string name="pref_problem_report_description_key" translatable="false">pref_problem_report_description</string>
+    <string name="pref_problem_report_steps_key" translatable="false">pref_problem_report_steps</string>
+    <string name="pref_problem_report_email_key" translatable="false">pref_problem_report_email</string>
+    <string name="pref_problem_report_device_key" translatable="false">pref_problem_report_device</string>
+    <string name="pref_problem_report_log_key" translatable="false">pref_problem_report_log</string>
+    <string name="pref_problem_report_send_key" translatable="false">pref_problem_report_send</string>
+    <string name="pref_problem_report_clear_key" translatable="false">pref_problem_report_clear</string>
+    <!-- English names written into the GitHub issue. Must match problem_report_type_entries. -->
+    <string-array name="problem_report_type_values" translatable="false">
+        <item>Incorrect behavior</item>
+        <item>Crash</item>
+        <item>Slow or unresponsive</item>
+        <item>Suggestion</item>
+    </string-array>
+    <!-- English names written into the GitHub issue. Must match problem_report_area_entries. -->
+    <string-array name="problem_report_area_values" translatable="false">
+        <item>Speech</item>
+        <item>Gestures</item>
+        <item>Touch exploration</item>
+        <item>Reading controls and menus</item>
+        <item>Typing and keyboards</item>
+        <item>Braille keyboard</item>
+        <item>Braille display</item>
+        <item>Sounds and vibration</item>
+        <item>Notifications</item>
+        <item>Web content</item>
+        <item>Scripts</item>
+        <item>Settings</item>
+        <item>Updates</item>
+        <item>Other</item>
+    </string-array>
     <string name="pref_show_exit_watermark_key">pref_show_exit_watermark</string>
     <string name="pref_notification_list_key">pref_notification_list</string>
     <string name="pref_notification_parts_key">pref_notification_parts</string>

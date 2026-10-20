@@ -132,6 +132,10 @@
         android:key="@string/pref_tutorial_and_help_key"
         android:title="@string/title_pref_category_tutorial" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.report.ProblemReportFragment"
+        android:key="@string/pref_problem_report_key"
+        android:title="@string/title_pref_problem_report" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_check_for_updates_key"
         android:title="@string/title_pref_check_for_updates" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference

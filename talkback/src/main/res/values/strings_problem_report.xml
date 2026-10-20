@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title of the settings screen with a form that opens a new GitHub issue about SandFly. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report">Report a problem</string>
+    <!-- Title of the list that sets the type of feedback in a problem report. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_type">Type of feedback</string>
+    <!-- Title of the list that sets the part of SandFly a problem report is about. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_area">Area</string>
+    <!-- Title of the text field for the title of a problem report. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_title">Title</string>
+    <!-- Title of the text field for the app where a problem happens. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_app">App where it happens</string>
+    <!-- Title of the text field for the description in a problem report. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_description">Description</string>
+    <!-- Message in the description field's dialog. [CHAR LIMIT=NONE] -->
+    <string name="dialog_message_problem_report_description">What happens and what you expected.</string>
+    <!-- Title of the text field for the steps that make a problem happen. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_steps">Steps to reproduce</string>
+    <!-- Title of the optional text field for the reporter's email address, so the maintainer can reply. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_email">Email for replies</string>
+    <!-- Title of the switch that adds the Android version and device model to a problem report. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_device">Include device information</string>
+    <!-- Title of the switch that adds SandFly's recent log to a problem report. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_log">Include SandFly log</string>
+    <!-- Summary of the log switch. The log can contain spoken text. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_problem_report_log">May contain text from the screen</string>
+    <!-- Title of the action that sends the problem report to the SandFly developers. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_send">Send report</string>
+    <!-- Summary of the send action while the report is being sent. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_problem_report_sending">Sending</string>
+    <!-- Title of the action that empties every field of the problem report form. [CHAR LIMIT=40] -->
+    <string name="title_pref_problem_report_clear">Clear form</string>
+    <!-- Title of the dialog that confirms emptying the problem report form. [CHAR LIMIT=NONE] -->
+    <string name="dialog_title_problem_report_clear">Clear form?</string>
+    <!-- Button in the dialog that empties the problem report form. [CHAR LIMIT=20] -->
+    <string name="button_problem_report_clear">Clear</string>
+    <!-- Toast when the problem report has no title or no description. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_missing_fields">Enter a title and a description.</string>
+    <!-- Toast when the email address for replies is not valid. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_invalid_email">Enter a valid email address.</string>
+    <!-- Toast when the problem report was sent. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_sent">Report sent.</string>
+    <!-- Toast when the report server refuses more reports for now. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_rate_limited">Too many reports. Try again later.</string>
+    <!-- Toast when the report server could not be reached. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_no_connection">Report not sent. Check the internet connection.</string>
+    <!-- Toast when the report server returned an error. [CHAR LIMIT=NONE] -->
+    <string name="problem_report_not_sent">Report not sent. Try again later.</string>
+
+    <!-- Types of feedback in a problem report. Must match problem_report_type_values. -->
+    <string-array name="problem_report_type_entries">
+        <item>Incorrect behavior</item>
+        <item>Crash</item>
+        <item>Slow or unresponsive</item>
+        <item>Suggestion</item>
+    </string-array>
+    <!-- Parts of SandFly a problem report can be about. Must match problem_report_area_values. -->
+    <string-array name="problem_report_area_entries">
+        <item>Speech</item>
+        <item>Gestures</item>
+        <item>Touch exploration</item>
+        <item>Reading controls and menus</item>
+        <item>Typing and keyboards</item>
+        <item>Braille keyboard</item>
+        <item>Braille display</item>
+        <item>Sounds and vibration</item>
+        <item>Notifications</item>
+        <item>Web content</item>
+        <item>Scripts</item>
+        <item>Settings</item>
+        <item>Updates</item>
+        <item>Other</item>
+    </string-array>
+</resources>
