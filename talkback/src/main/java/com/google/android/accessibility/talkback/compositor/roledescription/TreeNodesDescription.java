@@ -291,6 +291,10 @@ public class TreeNodesDescription {
         TextUtils.isEmpty(
             AccessibilityNodeFeedbackUtils.getNodeContentDescription(
                 node, context, globalVariables));
+    // A supplemental description describes the node's contents, so they aren't read again.
+    boolean isDescriptionEmpty =
+        isContentDescriptionEmpty
+            && TextUtils.isEmpty(AccessibilityNodeFeedbackUtils.getSupplementalDescription(node));
     // Samsung labels the notification card with its title but leaves the message in a child.
     // Read the body before the time; general child aggregation would repeat title/time.
     if (!isContentDescriptionEmpty) {
@@ -321,7 +325,7 @@ public class TreeNodesDescription {
         && (role == Role.ROLE_GRID
             || role == Role.ROLE_LIST
             || role == Role.ROLE_PAGER
-            || isContentDescriptionEmpty)) {
+            || isDescriptionEmpty)) {
       // Append the node description if needed. It recurse on all visible & un-focusable children,
       // ascending.
       ReorderedChildrenIterator childIterator =

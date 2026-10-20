@@ -21,6 +21,7 @@ import static com.google.android.accessibility.talkback.imagecaption.ImageCaptio
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
@@ -172,11 +173,23 @@ public class AccessibilityNodeFeedbackUtils {
         globalVariables.getCountRepeatedSymbols());
   }
 
+  /**
+   * Returns the supplemental description that Android 16 added, which apps such as Chrome set on
+   * containers, such as a web page's article named by aria-labelledby. Empty before Android 16.
+   */
+  public static CharSequence getSupplementalDescription(AccessibilityNodeInfoCompat node) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.BAKLAVA) {
+      return "";
+    }
+    CharSequence description = node.unwrap().getSupplementalDescription();
+    return description == null ? "" : description;
+  }
+
   /** Returns the node supplemental description. */
   public static CharSequence getNodeSupplementalDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
     return prepareSpans(
-        /* text= */ "",
+        getSupplementalDescription(node),
         node,
         context,
         globalVariables.getPreferredLocaleByNode(node),
@@ -187,7 +200,7 @@ public class AccessibilityNodeFeedbackUtils {
   public static CharSequence getNodeContentAndSupplementalDescription(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
     CharSequence contentDescription = node.getContentDescription();
-    CharSequence supplementalDescription = "";
+    CharSequence supplementalDescription = getSupplementalDescription(node);
     // De-duplicated content and supplemental description.
     CharSequence text =
         TextUtils.equals(contentDescription, supplementalDescription)
