@@ -111,7 +111,8 @@ jobs:
   # Publishes the build. A push to master replaces the rolling "dev" pre-release, and a tag
   # v<version> creates the stable release, which becomes the latest release. The in-app updater
   # reads both. The first line of the notes is "build: <build number>", and each "- <short hash>
-  # <subject>" line is a change, newest first.
+  # <subject>" line is a change, newest first. A stable release also gets the notes in
+  # release-notes/<version>.md, whose list items must start with "* ", not "- ".
   publish:
     needs: build
     if: github.event_name == 'push'
@@ -158,9 +159,14 @@ jobs:
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             tag=$GITHUB_REF_NAME
             previous=$(git describe --tags --abbrev=0 --match 'v*' "HEAD^" 2>/dev/null || true)
+            notes="release-notes/${tag#v}.md"
             {
               echo "build: $count"
               echo
+              if [ -f "$notes" ]; then
+                cat "$notes"
+                echo
+              fi
               if [ -n "$previous" ]; then
                 echo "Changes since $previous:"
                 echo

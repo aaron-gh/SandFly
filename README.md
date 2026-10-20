@@ -133,7 +133,7 @@ Debug builds include tools to find lag:
 
 ### Making a release
 
-1.  Set `sandflyVersion` in `version.gradle` to the new version, such as `0.2.0`, and push to master.
+1.  Set `sandflyVersion` in `version.gradle` to the new version, such as `0.2.0`, write the release notes in `release-notes/0.2.0.md`, and push to master. List items in the notes start with `* `: the in-app updater reads lines that start with `- ` as commits.
 2.  Tag the commit `v0.2.0` and push the tag. GitHub Actions builds it and creates the release, with the changes since the last release.
 
 The build number is the number of commits since `buildNumberBase` in `version.gradle`. The version code is 100000000 plus the build number: Gboard leaves typing to the screen reader only when its version code is at least 60105832.
