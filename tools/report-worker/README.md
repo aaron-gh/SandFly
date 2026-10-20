@@ -18,7 +18,8 @@ error.
 
 ## Set up
 
-1. Create the private repository `aaron-gh/SandFly-reports`.
+1. Create the private repository `aaron-gh/SandFly-reports`, with the labels `bug`,
+   `enhancement` and `user report`.
 2. Create a fine-grained personal access token at GitHub > Settings > Developer settings:
    - Repository access: only `aaron-gh/SandFly-reports`
    - Permissions: Issues, read and write
@@ -31,7 +32,8 @@ error.
    npx wrangler deploy
    ```
 
-4. Set `REPORT_URL` in `ProblemReportSender.kt` to the deployed address followed by `/report`.
+4. Set `REPORT_URL` in `ProblemReportSender.kt` to the deployed address followed by `/report`
+   (now `https://sandfly-reports.aaron-graham-hewitt.workers.dev/report`).
 
 When the token expires, create a new one and run `npx wrangler secret put GITHUB_TOKEN` again.
 

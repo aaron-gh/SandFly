@@ -40,7 +40,7 @@ object ProblemReportSender {
 
   private const val TAG = "ProblemReportSender"
   // The Worker in tools/report-worker.
-  private const val REPORT_URL = "https://sandfly-reports.aaron-gh.workers.dev/report"
+  private const val REPORT_URL = "https://sandfly-reports.aaron-graham-hewitt.workers.dev/report"
   private const val HTTP_CREATED = 201
   private const val HTTP_TOO_MANY_REQUESTS = 429
   private const val LOG_LINES = 1000
