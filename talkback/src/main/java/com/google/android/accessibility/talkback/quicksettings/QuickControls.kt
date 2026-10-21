@@ -277,14 +277,7 @@ class QuickControls(private val context: Context) {
       camera.registerTorchCallback(torchCallback, handler)
     }
     audio.registerAudioDeviceCallback(audioDevices, handler)
-    if (wifi != null) {
-      ShizukuShell.state(context, ShizukuCommand.HOTSPOT) { on ->
-        if (on != null && this.onChange != null) {
-          hotspotOn = on
-          onChange()
-        }
-      }
-    }
+    readShellState { onChange() }
     try {
       mediaSessions?.addOnActiveSessionsChangedListener(sessionsListener, listenerComponent, handler)
     } catch (e: SecurityException) {
@@ -303,6 +296,22 @@ class QuickControls(private val context: Context) {
     mediaSessions?.removeOnActiveSessionsChangedListener(sessionsListener)
     mediaController?.unregisterCallback(mediaCallback)
     mediaController = null
+  }
+
+  /** Whether SandFly changes a switch through Shizuku. */
+  fun usesShizuku(control: QuickControl): Boolean = control in COMMANDS
+
+  /**
+   * Reads the switches that only the shell can read, which needs Shizuku to allow SandFly
+   * already, then calls [onDone] if the panel is still open.
+   */
+  fun readShellState(onDone: () -> Unit) {
+    if (wifi == null) return
+    ShizukuShell.state(context, ShizukuCommand.HOTSPOT) { on ->
+      if (onChange == null) return@state
+      if (on != null) hotspotOn = on
+      onDone()
+    }
   }
 
   fun isAvailable(control: QuickControl): Boolean {
