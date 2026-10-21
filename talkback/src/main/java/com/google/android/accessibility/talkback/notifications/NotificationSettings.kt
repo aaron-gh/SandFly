@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.notifications
 
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -255,7 +256,7 @@ data class NotificationSettings(
   val prefixMemorySeconds: Int = 60,
   // When to read.
   val whenScreenOn: Boolean = true,
-  val whenScreenOff: Boolean = true,
+  val whenScreenOff: Boolean = false,
   val whenLocked: Boolean = true,
   val headphones: HeadphoneMode = HeadphoneMode.ALWAYS,
   val honourSilent: Boolean = false,
@@ -439,6 +440,19 @@ data class NotificationSettings(
      * An int setting, which list and text preferences save as a string. A value that can't be
      * read gives [default].
      */
+    /**
+     * Whether notifications are read while the screen is off. SandFly drops every other event
+     * then, and these too when this is off.
+     */
+    @JvmStatic
+    fun readsWhenScreenOff(prefs: SharedPreferences): Boolean = prefs.getBoolean(Keys.SCREEN_OFF, false)
+
+    /** Sets Read when screen off from Verbosity's old switch, [old], when it hasn't been set. */
+    @JvmStatic
+    fun migrateScreenOff(prefs: SharedPreferences, old: Boolean) {
+      if (!prefs.contains(Keys.SCREEN_OFF)) prefs.edit { putBoolean(Keys.SCREEN_OFF, old) }
+    }
+
     fun int(prefs: SharedPreferences, key: String, default: Int): Int {
       if (!prefs.contains(key)) return default
       return try {

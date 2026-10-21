@@ -6,7 +6,7 @@
       android:key="pref_notification_screen_on"
       android:title="@string/notification_screen_on_title" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="true"
+      android:defaultValue="false"
       android:key="pref_notification_screen_off"
       android:title="@string/notification_screen_off_title" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference

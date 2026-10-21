@@ -226,6 +226,7 @@ import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
+import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicker;
@@ -3139,6 +3140,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     KeyboardEchoSettings.migrate(this, prefs);
     // Combines the two window name switches into the Window names setting.
     WindowNamesSetting.migrate(prefs, getResources());
+    // Verbosity's switch for notifications with the screen off became the Notifications one.
+    NotificationSettings.migrateScreenOff(
+        prefs,
+        VerbosityPreferences.getPreferenceValueBool(
+            prefs,
+            getResources(),
+            getString(R.string.pref_screenoff_key),
+            getResources().getBoolean(R.bool.pref_screenoff_default)));
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
@@ -3505,12 +3514,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             prefs, res, R.string.pref_log_overlay_key, R.bool.pref_log_overlay_default);
     diagnosticOverlayController.setLogOverlayEnabled(logOverlayEnabled);
 
-    accessibilityEventProcessor.setSpeakWhenScreenOff(
-        VerbosityPreferences.getPreferenceValueBool(
-            prefs,
-            res,
-            res.getString(R.string.pref_screenoff_key),
-            res.getBoolean(R.bool.pref_screenoff_default)));
+    accessibilityEventProcessor.setSpeakWhenScreenOff(NotificationSettings.readsWhenScreenOff(prefs));
 
     accessibilityEventProcessor.setDumpEventMask(
         prefs.getInt(res.getString(R.string.pref_dump_event_mask_key), 0));
