@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications > Reading: what is said for a notification, in which voice, and when. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_said">
+    <EditTextPreference
+        android:dialogMessage="@string/notification_format_message"
+        android:key="pref_notification_format"
+        android:title="@string/notification_format_title" />
+    <EditTextPreference
+        android:dialogMessage="@string/notification_private_format_message"
+        android:key="pref_notification_private_format"
+        android:title="@string/notification_private_format_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_voice">
+    <ListPreference
+        android:defaultValue="100"
+        android:key="pref_notification_rate"
+        android:summary="%s"
+        android:title="@string/notification_rate_title" />
+    <ListPreference
+        android:defaultValue="100"
+        android:key="pref_notification_pitch"
+        android:summary="%s"
+        android:title="@string/notification_pitch_title" />
+    <ListPreference
+        android:defaultValue="100"
+        android:key="pref_notification_volume"
+        android:summary="%s"
+        android:title="@string/notification_volume_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_detect_language"
+        android:summary="@string/notification_detect_language_summary"
+        android:title="@string/notification_detect_language_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_sound_before"
+        android:title="@string/notification_sound_before_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_text">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_remove_emoji"
+        android:title="@string/notification_remove_emoji_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_lowercase"
+        android:summary="@string/notification_lowercase_summary"
+        android:title="@string/notification_lowercase_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_separate_digits"
+        android:summary="@string/notification_separate_digits_summary"
+        android:title="@string/notification_separate_digits_title" />
+    <ListPreference
+        android:defaultValue="5"
+        android:dependency="pref_notification_separate_digits"
+        android:key="pref_notification_min_digits"
+        android:summary="%s"
+        android:title="@string/notification_min_digits_title" />
+    <ListPreference
+        android:defaultValue="FULL"
+        android:entries="@array/notification_url_entries"
+        android:entryValues="@array/notification_url_values"
+        android:key="pref_notification_urls"
+        android:summary="%s"
+        android:title="@string/notification_urls_title" />
+    <EditTextPreference
+        android:key="pref_notification_url_text"
+        android:title="@string/notification_url_text_title"
+        app:useSimpleSummaryProvider="true" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_skip_empty"
+        android:title="@string/notification_skip_empty_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_length">
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_max_words"
+        android:summary="%s"
+        android:title="@string/notification_max_words_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_max_sentences"
+        android:summary="%s"
+        android:title="@string/notification_max_sentences_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_max_characters"
+        android:summary="%s"
+        android:title="@string/notification_max_characters_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_max_seconds"
+        android:summary="%s"
+        android:title="@string/notification_max_seconds_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_timing">
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_delay"
+        android:summary="%s"
+        android:title="@string/notification_delay_title" />
+    <ListPreference
+        android:defaultValue="QUEUE"
+        android:entries="@array/notification_queue_entries"
+        android:entryValues="@array/notification_queue_values"
+        android:key="pref_notification_queue"
+        android:summary="%s"
+        android:title="@string/notification_queue_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_repeat_minutes"
+        android:summary="%s"
+        android:title="@string/notification_repeat_minutes_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+</PreferenceScreen>

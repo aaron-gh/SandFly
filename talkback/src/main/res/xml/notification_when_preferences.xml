@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications > When to read: the device states in which notifications are read. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_notification_screen_on"
+      android:title="@string/notification_screen_on_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_notification_screen_off"
+      android:title="@string/notification_screen_off_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_notification_locked"
+      android:title="@string/notification_locked_title" />
+  <ListPreference
+      android:defaultValue="ALWAYS"
+      android:entries="@array/notification_headphones_entries"
+      android:entryValues="@array/notification_headphones_values"
+      android:key="pref_notification_headphones"
+      android:summary="%s"
+      android:title="@string/notification_headphones_title" />
+  <ListPreference
+      android:defaultValue="READ"
+      android:entries="@array/notification_media_entries"
+      android:entryValues="@array/notification_media_values"
+      android:key="pref_notification_media"
+      android:summary="%s"
+      android:title="@string/notification_media_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_honour_silent"
+      android:title="@string/notification_honour_silent_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_honour_vibrate"
+      android:title="@string/notification_honour_vibrate_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_in_car"
+      android:summary="@string/notification_skip_in_car_summary"
+      android:title="@string/notification_skip_in_car_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_quiet_hours">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_quiet_hours"
+        android:title="@string/notification_quiet_hours_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:dependency="pref_notification_quiet_hours"
+        android:key="pref_notification_quiet_start"
+        android:title="@string/notification_quiet_start_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:dependency="pref_notification_quiet_hours"
+        android:key="pref_notification_quiet_end"
+        android:title="@string/notification_quiet_end_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+</PreferenceScreen>

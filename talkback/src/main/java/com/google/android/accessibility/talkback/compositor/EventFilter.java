@@ -32,6 +32,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -234,6 +235,10 @@ public class EventFilter {
         return;
       }
       if ((notification != null) && touchMonitor.isUserTouchingScreen()) {
+        return;
+      }
+      // Notifications are read as the notification settings say.
+      if ((notification != null) && NotificationReader.handle(event, notification)) {
         return;
       }
       if ((voiceActionDelegate != null)

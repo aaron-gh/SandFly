@@ -30,6 +30,7 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.TwoStatePreference;
+import com.google.android.accessibility.talkback.notifications.NotificationSettingsEntries;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.HatsRequesterViewModel;
 import com.google.android.accessibility.talkback.HatsSurveyRequester;
@@ -152,6 +153,7 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     updateGeminiPreferenceState();
     Updater.setUpPreferences(this);
     SettingsBackup.setUpPreferences(this);
+    NotificationSettingsEntries.setUpPreferences(this);
   }
 
   private void updateGeminiPreferenceState() {

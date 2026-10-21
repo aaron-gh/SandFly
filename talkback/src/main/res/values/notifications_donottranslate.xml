@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_url_values" translatable="false">
+        <item>FULL</item>
+        <item>DOMAIN</item>
+        <item>REPLACE</item>
+        <item>OMIT</item>
+    </string-array>
+    <string-array name="notification_queue_values" translatable="false">
+        <item>QUEUE</item>
+        <item>INTERRUPT</item>
+        <item>SKIP</item>
+    </string-array>
+    <string-array name="notification_headphones_values" translatable="false">
+        <item>ALWAYS</item>
+        <item>ONLY_WITH</item>
+        <item>ONLY_WITHOUT</item>
+    </string-array>
+    <string-array name="notification_media_values" translatable="false">
+        <item>READ</item>
+        <item>PAUSE</item>
+        <item>SKIP</item>
+    </string-array>
+    <string-array name="notification_shake_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

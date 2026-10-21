@@ -600,6 +600,15 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_media_control_or_voice_input),
     INCREASE_VOLUME(R.string.shortcut_value_increase_volume, R.string.shortcut_increase_volume),
     DECREASE_VOLUME(R.string.shortcut_value_decrease_volume, R.string.shortcut_decrease_volume),
+    READ_NOTIFICATIONS(
+        R.string.shortcut_value_read_notifications, R.string.shortcut_read_notifications),
+    TOGGLE_NOTIFICATION_SPEECH(
+        R.string.shortcut_value_toggle_notification_speech,
+        R.string.shortcut_toggle_notification_speech),
+    READ_LAST_NOTIFICATION(
+        R.string.shortcut_value_read_last_notification, R.string.shortcut_read_last_notification),
+    STOP_NOTIFICATION(
+        R.string.shortcut_value_stop_notification, R.string.shortcut_stop_notification),
     INCREASE_MEDIA_VOLUME(
         R.string.shortcut_value_increase_media_volume, R.string.shortcut_increase_media_volume),
     DECREASE_MEDIA_VOLUME(

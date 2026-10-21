@@ -38,6 +38,13 @@
     <!-- Required for sending data to Google Analytics. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Notification rules that check the Bluetooth device or Wi-Fi network connected. Asked
+         for only when the user adds such a rule. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Time announcements on the minute, when the user turns on exact times. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <!-- Lets a watch ask for Wi-Fi to download an update. -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
@@ -207,6 +214,32 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <!-- Notification speech quick settings tile -->
+        <service
+            android:name="com.google.android.accessibility.talkback.notifications.NotificationSpeechTileService"
+            android:exported="true"
+            android:icon="@drawable/icon"
+            android:label="@string/notification_speech_tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!-- Lets automation apps turn notification speech on and off, stop it, or read every
+             notification. -->
+        <receiver
+            android:name="com.google.android.accessibility.talkback.notifications.NotificationAutomationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.action.NOTIFICATION_SPEECH_ON" />
+                <action android:name="${applicationId}.action.NOTIFICATION_SPEECH_OFF" />
+                <action android:name="${applicationId}.action.NOTIFICATION_SPEECH_TOGGLE" />
+                <action android:name="${applicationId}.action.STOP_NOTIFICATION_SPEECH" />
+                <action android:name="${applicationId}.action.READ_NOTIFICATIONS" />
+            </intent-filter>
+        </receiver>
 
         <!-- TalkBack Preferences -->
         <activity
