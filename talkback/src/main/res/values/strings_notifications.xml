@@ -59,6 +59,8 @@
     <string name="notification_test_title">Send a test notification</string>
     <!-- Settings entry that lists the broadcasts that apps such as Tasker can send to SandFly. -->
     <string name="notification_automation_title">Automation</string>
+    <!-- Setting: whether apps such as Tasker may turn notification speech on or off, stop it, or have notifications read. -->
+    <string name="notification_automation_allowed_title">Allow automation apps</string>
     <!-- Heading of the settings for the text said for a notification. -->
     <string name="notification_category_said">What is said</string>
     <!-- Setting: the text said for a notification, with placeholders. -->

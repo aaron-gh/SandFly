@@ -23,6 +23,7 @@ import android.os.Handler
 import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import android.speech.tts.Voice
 import androidx.annotation.MainThread
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -60,6 +61,9 @@ class NotificationVoice(private val context: Context) {
   private val pending = mutableListOf<Request>()
   private val listeners = HashMap<String, Listener>()
   private var nextId = 0
+  /** The engine's voice named in the profile, found once, since listing voices is slow. */
+  private var foundVoice: Voice? = null
+  private var foundVoiceName: String? = null
 
   /** Whether the engine couldn't start, so that notifications go back to SandFly's voice. */
   var failed = false
@@ -144,8 +148,11 @@ class NotificationVoice(private val context: Context) {
       runCatching { tts.setLanguage(Locale.forLanguageTag(profile.language)) }
     }
     if (profile.voice.isNotEmpty()) {
-      val voice = runCatching { tts.voices }.getOrNull()?.firstOrNull { it.name == profile.voice }
-      if (voice != null) runCatching { tts.setVoice(voice) }
+      if (foundVoiceName != profile.voice) {
+        foundVoiceName = profile.voice
+        foundVoice = runCatching { tts.voices }.getOrNull()?.firstOrNull { it.name == profile.voice }
+      }
+      foundVoice?.let { runCatching { tts.setVoice(it) } }
     }
   }
 
@@ -223,6 +230,8 @@ class NotificationVoice(private val context: Context) {
     tts = null
     ready = false
     profile = null
+    foundVoice = null
+    foundVoiceName = null
   }
 
   private companion object {

@@ -61,6 +61,8 @@ data class Decision(
   /** Stop reading it after this many seconds, or 0 to read it to the end. */
   val maxSeconds: Int = 0,
   val rules: List<String> = emptyList(),
+  /** [text] before a start shared with the app's last notification was left out. */
+  val fullText: String = text,
 ) {
   val read: Boolean
     get() = outcome == Outcome.READ
@@ -74,6 +76,21 @@ class RepeatMemory {
   private val lastText = LinkedHashMap<String, Long>(16, 0.75f, true)
   private val lastRead = LinkedHashMap<String, Long>(16, 0.75f, true)
   private val lastSpoken = LinkedHashMap<String, Pair<String, Long>>(16, 0.75f, true)
+  /** When each title and text was last let through, and each text with whether a summary had it. */
+  private val lastPosted = LinkedHashMap<String, Long>(16, 0.75f, true)
+  private val lastBody = LinkedHashMap<String, Pair<Long, Boolean>>(16, 0.75f, true)
+
+  fun postedAt(key: String): Long? = lastPosted[key]
+
+  fun body(key: String): Pair<Long, Boolean>? = lastBody[key]
+
+  fun notePosted(key: String, bodyKey: String, summary: Boolean, now: Long) {
+    lastPosted[key] = now
+    val before = lastBody[bodyKey]
+    lastBody[bodyKey] = now to (summary || (before != null && before.second && now - before.first < DUPLICATE_MS))
+    trim(lastPosted)
+    trim(lastBody)
+  }
 
   fun seenAt(key: String): Long? = lastText[key]
 
@@ -97,6 +114,8 @@ class RepeatMemory {
     lastText.clear()
     lastRead.clear()
     lastSpoken.clear()
+    lastPosted.clear()
+    lastBody.clear()
   }
 
   private fun <V> trim(map: LinkedHashMap<String, V>) {
@@ -105,6 +124,11 @@ class RepeatMemory {
 
   companion object {
     const val MAX = 200
+    /**
+     * How long the same notification posted again counts as one: apps such as Telegram post a
+     * message and a group summary with the same text, or post a message twice.
+     */
+    const val DUPLICATE_MS = 5_000L
   }
 }
 
@@ -114,7 +138,7 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
   /**
    * Decides for [info] with [settings] in [state], at [nowMillis]. [categoryName] is how the
    * notification's category is said, such as "Message", and [time] the time it is said as.
-   * A notification that is read is remembered for the repeat settings.
+   * Call [markSpoken] once it is read, for the cooldown and repeated-start settings.
    */
   fun decide(
     info: NotificationInfo,
@@ -159,6 +183,8 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
       return skip(Outcome.EMPTY)
     }
 
+    if (isDuplicate(info, nowMillis)) return skip(Outcome.REPEAT)
+
     // Repeats: the same text from the same app within the time set.
     val repeatKey =
       info.packageName + "\u0000" + if (settings.numbersAlike) NotificationText.withoutNumbers(text) else text
@@ -183,7 +209,6 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
         }
       }
     }
-    memory.noteRead(info.packageName, text, nowMillis)
     return Decision(
       Outcome.READ,
       text = said,
@@ -191,8 +216,13 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
       priority = effects.priority || mode == AppMode.PRIORITY,
       maxSeconds = if (effects.noLimit) 0 else settings.maxSeconds,
       rules = effects.ruleNames,
+      fullText = text,
     )
   }
+
+  /** Remembers that [decision], for [packageName]'s notification, was read at [nowMillis]. */
+  fun markSpoken(packageName: String, decision: Decision, nowMillis: Long) =
+    memory.noteRead(packageName, decision.fullText, nowMillis)
 
   /**
    * How [info] is said in a summary of the notifications, or null when the settings leave it
@@ -221,6 +251,24 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
     val chosen = if (private) settings.privateFormat else effects.format.ifEmpty { format }
     val text = NotificationText.render(chosen, info, name, categoryName, time)
     return (if (private) text else clean(text, settings, effects)).takeIf { it.isNotBlank() }
+  }
+
+  /**
+   * Whether [info] is the same as one let through moments ago: the same title and text, or the
+   * same text where one of the two is a group summary. Records it when it isn't.
+   */
+  private fun isDuplicate(info: NotificationInfo, nowMillis: Long): Boolean {
+    val body = NotificationText.textOf(info).trim().lowercase()
+    if (body.isEmpty()) return false
+    val bodyKey = info.packageName + "\u0000" + body
+    val key = bodyKey + "\u0000" + info.title.trim().lowercase()
+    fun recent(at: Long?) = at != null && nowMillis - at in 0 until RepeatMemory.DUPLICATE_MS
+    val sameBody = memory.body(bodyKey)
+    val duplicate =
+      recent(memory.postedAt(key)) ||
+        (sameBody != null && recent(sameBody.first) && (info.groupSummary || sameBody.second))
+    if (!duplicate) memory.notePosted(key, bodyKey, info.groupSummary, nowMillis)
+    return duplicate
   }
 
   /** Forgets every notification read, such as when the settings change. */

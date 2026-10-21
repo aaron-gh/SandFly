@@ -133,12 +133,15 @@ data class TextMatch(val text: String, val regex: Boolean = false) {
   }
 
   fun matches(subject: String): Boolean =
-    if (regex) pattern?.containsMatchIn(subject) == true
+    // A long text is cut for expressions, which can take long on it.
+    if (regex) pattern?.containsMatchIn(subject.take(MAX_REGEX_SUBJECT)) == true
     else text.isNotEmpty() && subject.contains(text, ignoreCase = true)
 
   fun toJson(): JSONObject = JSONObject().put("text", text).put("regex", regex)
 
   companion object {
+    private const val MAX_REGEX_SUBJECT = 2000
+
     fun fromJson(json: JSONObject) = TextMatch(json.optString("text"), json.optBoolean("regex"))
 
     /** Whether [text] is a regular expression that can be used. */
@@ -436,13 +439,18 @@ data class NotificationSettings(
      * An int setting, which list and text preferences save as a string. A value that can't be
      * read gives [default].
      */
-    fun int(prefs: SharedPreferences, key: String, default: Int): Int =
-      when (val value = prefs.all[key]) {
-        is Int -> value
-        is Long -> value.toInt()
-        is String -> value.trim().toIntOrNull() ?: default
-        else -> default
+    fun int(prefs: SharedPreferences, key: String, default: Int): Int {
+      if (!prefs.contains(key)) return default
+      return try {
+        prefs.getString(key, null)?.trim()?.toIntOrNull() ?: default
+      } catch (e: ClassCastException) {
+        try {
+          prefs.getInt(key, default)
+        } catch (e: ClassCastException) {
+          runCatching { prefs.getLong(key, default.toLong()).toInt() }.getOrDefault(default)
+        }
       }
+    }
 
     fun apps(json: String?): Map<String, AppSettings> {
       json ?: return emptyMap()

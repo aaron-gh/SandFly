@@ -52,11 +52,14 @@ object NotificationHistory {
   }
 
   /** Marks the newest entry of [info] as stopped while it was read. */
+  @MainThread fun markStopped(info: NotificationInfo) = mark(info, Outcome.STOPPED)
+
+  /** Changes the outcome of the newest entry of [info], such as one left unread after all. */
   @MainThread
-  fun markStopped(info: NotificationInfo) {
+  fun mark(info: NotificationInfo, outcome: Outcome) {
     val index = entries.indexOfLast { it.info === info }
     if (index < 0) return
-    entries[index] = entries[index].copy(outcome = Outcome.STOPPED)
+    entries[index] = entries[index].copy(outcome = outcome)
     notifyListeners()
   }
 

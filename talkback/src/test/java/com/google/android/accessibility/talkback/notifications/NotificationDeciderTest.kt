@@ -37,7 +37,10 @@ class NotificationDeciderTest {
     state: DeviceState = DeviceState(),
     now: Long = 1_000_000,
     decider: NotificationDecider = NotificationDecider(),
-  ) = decider.decide(info, settings, state, now, categoryName = "Message", time = "10:30")
+  ) =
+    decider.decide(info, settings, state, now, categoryName = "Message", time = "10:30").also {
+      if (it.read) decider.markSpoken(info.packageName, it, now)
+    }
 
   @Test
   fun theDefaultReadsTheTypeTitleAndText() {
@@ -146,6 +149,30 @@ class NotificationDeciderTest {
     val cooldown = NotificationSettings(cooldownSeconds = 10)
     assertTrue(decide(cooldown, now = 0, decider = cooling).read)
     assertEquals(Outcome.COOLDOWN, decide(cooldown, message.copy(text = "Other"), now = 5000, decider = cooling).outcome)
+
+    // One that was decided on but never read doesn't start the cooldown.
+    val unread = NotificationDecider()
+    assertTrue(unread.decide(message, cooldown, DeviceState(), 0).read)
+    assertTrue(decide(cooldown, message.copy(text = "Other"), now = 5000, decider = unread).read)
+  }
+
+  @Test
+  fun aNotificationPostedTwiceIsReadOnce() {
+    val decider = NotificationDecider()
+    assertTrue(decide(now = 0, decider = decider).read)
+    assertEquals(Outcome.REPEAT, decide(now = 1000, decider = decider).outcome)
+    // A group summary with the same text, under the app's name.
+    val summary = message.copy(title = "Chat", groupSummary = true)
+    assertEquals(Outcome.REPEAT, decide(info = summary, now = 1500, decider = decider).outcome)
+    // The same words from someone else are read.
+    assertTrue(decide(info = message.copy(title = "Bob"), now = 2000, decider = decider).read)
+    // And the same notification again, later.
+    assertTrue(decide(now = 10_000, decider = decider).read)
+
+    // A summary first, then the message.
+    val other = NotificationDecider()
+    assertTrue(decide(info = summary, now = 0, decider = other).read)
+    assertEquals(Outcome.REPEAT, decide(now = 500, decider = other).outcome)
   }
 
   @Test

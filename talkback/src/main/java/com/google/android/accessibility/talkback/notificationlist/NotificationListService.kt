@@ -20,6 +20,8 @@ import android.app.Notification
 import android.content.ComponentName
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
@@ -52,6 +54,16 @@ class NotificationListService : NotificationListenerService() {
 
   private fun listEnabled() = NotificationList.isEnabled(this)
 
+  private val handler = Handler(Looper.getMainLooper())
+  /** Unbinds once a time it was kept connected for is over and nothing else needs it. */
+  private val unbindWhenUnneeded = Runnable { if (!isNeeded(this)) unbind() else checkLater() }
+
+  private fun checkLater() {
+    handler.removeCallbacks(unbindWhenUnneeded)
+    val left = keepConnectedUntil - SystemClock.uptimeMillis()
+    if (left > 0) handler.postDelayed(unbindWhenUnneeded, left + 1_000L)
+  }
+
   override fun onListenerConnected() {
     if (!isNeeded(this)) {
       unbind()
@@ -61,6 +73,7 @@ class NotificationListService : NotificationListenerService() {
     SharedPreferencesUtils.getSharedPreferences(this)
       .registerOnSharedPreferenceChangeListener(switchListener)
     if (listEnabled()) connectList()
+    checkLater()
   }
 
   private fun connectList() {
@@ -78,6 +91,7 @@ class NotificationListService : NotificationListenerService() {
   }
 
   private fun disconnected() {
+    handler.removeCallbacks(unbindWhenUnneeded)
     SharedPreferencesUtils.getSharedPreferences(this)
       .unregisterOnSharedPreferenceChangeListener(switchListener)
     if (instance === this) {
@@ -115,6 +129,7 @@ class NotificationListService : NotificationListenerService() {
   }
 
   override fun onDestroy() {
+    handler.removeCallbacks(unbindWhenUnneeded)
     SharedPreferencesUtils.getSharedPreferences(this)
       .unregisterOnSharedPreferenceChangeListener(switchListener)
     if (instance === this) {
@@ -143,7 +158,7 @@ class NotificationListService : NotificationListenerService() {
     /** Keeps the listener connected for [millis], such as to read a summary. */
     fun keepConnected(context: Context, millis: Long) {
       keepConnectedUntil = SystemClock.uptimeMillis() + millis
-      rebind(context)
+      instance?.checkLater() ?: rebind(context)
     }
 
     /** Whether the user gave SandFly notification access. */

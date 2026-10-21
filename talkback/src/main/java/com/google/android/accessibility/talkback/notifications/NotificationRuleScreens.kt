@@ -393,7 +393,11 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
       val type = types[index]
       when (type) {
         RuleAction.Type.FORMAT ->
-          askText(getString(R.string.notification_format_title), settings.format) { text, _, _ ->
+          askText(
+            getString(R.string.notification_format_title),
+            settings.format,
+            message = getString(R.string.notification_format_message),
+          ) { text, _, _ ->
             if (text.isEmpty()) return@askText getString(R.string.notification_enter_text)
             update { it.copy(actions = it.actions + RuleAction(type, value = text)) }
             null

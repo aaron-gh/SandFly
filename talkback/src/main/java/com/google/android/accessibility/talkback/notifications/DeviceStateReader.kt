@@ -43,20 +43,42 @@ class DeviceStateReader(private val context: Context) {
   /** The app in front, which the service tells as windows change. */
   @Volatile var foregroundApp: String = ""
 
-  fun read(): DeviceState {
+  /**
+   * Reads the parts of the state that [settings] and their rules use, or every part when
+   * [settings] is null. The rest is left at its default.
+   */
+  fun read(settings: NotificationSettings? = null): DeviceState {
+    val used =
+      settings?.rules?.filter { it.enabled }?.flatMap { rule -> rule.conditions.map { it.type } }?.toSet()
+    fun needs(type: RuleCondition.Type, bySettings: Boolean = false) =
+      used == null || bySettings || type in used
+    val headphones = settings == null || settings.headphones != HeadphoneMode.ALWAYS
     val audio = context.getSystemService(AudioManager::class.java)
     val calendar = Calendar.getInstance()
     val day = (calendar.get(Calendar.DAY_OF_WEEK) + 5) % 7 + 1
-    val battery = context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+    val battery =
+      if (needs(RuleCondition.Type.BATTERY_BELOW) || needs(RuleCondition.Type.CHARGING)) {
+        context.registerReceiver(null, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
+      } else {
+        null
+      }
     val level = battery?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: -1
     val scale = battery?.getIntExtra(BatteryManager.EXTRA_SCALE, 100) ?: 100
     val status = battery?.getIntExtra(BatteryManager.EXTRA_STATUS, -1) ?: -1
-    val ringer = audio?.ringerMode ?: AudioManager.RINGER_MODE_NORMAL
+    val ringer =
+      if (needs(RuleCondition.Type.RINGER_SILENT, settings?.let { it.honourSilent || it.honourVibrate } == true)) {
+        audio?.ringerMode ?: AudioManager.RINGER_MODE_NORMAL
+      } else {
+        AudioManager.RINGER_MODE_NORMAL
+      }
     return DeviceState(
       screenOn = context.getSystemService(PowerManager::class.java)?.isInteractive != false,
-      locked = context.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true,
-      bluetoothDevices = bluetoothDevices(),
-      wiredHeadphones = wiredHeadphones(audio),
+      locked =
+        needs(RuleCondition.Type.LOCKED, settings?.whenLocked == false) &&
+          context.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true,
+      bluetoothDevices =
+        if (needs(RuleCondition.Type.BLUETOOTH_DEVICE, headphones)) bluetoothDevices() else emptySet(),
+      wiredHeadphones = needs(RuleCondition.Type.WIRED_HEADPHONES, headphones) && wiredHeadphones(audio),
       batteryPercent = if (level >= 0 && scale > 0) level * 100 / scale else 100,
       charging =
         status == BatteryManager.BATTERY_STATUS_CHARGING ||
@@ -64,14 +86,17 @@ class DeviceStateReader(private val context: Context) {
       landscape = context.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
       minuteOfDay = calendar.get(Calendar.HOUR_OF_DAY) * 60 + calendar.get(Calendar.MINUTE),
       dayOfWeek = day,
-      wifiName = wifiName(),
+      wifiName = if (needs(RuleCondition.Type.WIFI_NETWORK)) wifiName() else "",
       foregroundApp = foregroundApp,
       ringerSilent = ringer == AudioManager.RINGER_MODE_SILENT,
       ringerVibrate = ringer == AudioManager.RINGER_MODE_VIBRATE,
-      mediaPlaying = audio?.isMusicActive == true,
+      mediaPlaying =
+        needs(RuleCondition.Type.MEDIA_PLAYING, settings?.media == MediaBehavior.SKIP) &&
+          audio?.isMusicActive == true,
       carMode =
-        context.getSystemService(UiModeManager::class.java)?.currentModeType ==
-          Configuration.UI_MODE_TYPE_CAR,
+        (settings == null || settings.skipInCar) &&
+          context.getSystemService(UiModeManager::class.java)?.currentModeType ==
+            Configuration.UI_MODE_TYPE_CAR,
     )
   }
 

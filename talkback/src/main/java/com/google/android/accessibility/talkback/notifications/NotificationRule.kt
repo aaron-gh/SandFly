@@ -87,6 +87,8 @@ data class RuleCondition(
     MEDIA_PLAYING,
   }
 
+  private val textMatch by lazy { TextMatch(value, regex = number == 1) }
+
   fun isMet(state: DeviceState, info: NotificationInfo): Boolean {
     val met =
       when (type) {
@@ -107,7 +109,7 @@ data class RuleCondition(
           else state.wifiName.equals(value, ignoreCase = true)
         Type.FOREGROUND_APP -> state.foregroundApp == value
         Type.FROM_APP -> info.packageName == value
-        Type.CONTAINS -> TextMatch(value, regex = number == 1).matches(info.allText)
+        Type.CONTAINS -> textMatch.matches(info.allText)
         Type.RINGER_SILENT -> state.ringerSilent || state.ringerVibrate
         Type.MEDIA_PLAYING -> state.mediaPlaying
       }

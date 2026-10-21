@@ -126,6 +126,8 @@ class SpokenSchedules(
     private const val RETRY_MS = 1_500L
     private const val CLOCK_PREFIX = "pref_notification_clock"
     private const val SUMMARY_PREFIX = "pref_notification_summary"
+    /** Runs the summary's later lines, so that stopping notification speech drops them. */
+    private val summaryHandler = Handler(Looper.getMainLooper())
     const val KEY_CLOCK_INTERVAL = "pref_notification_clock_interval"
     const val KEY_CLOCK_FORMAT = "pref_notification_clock_format"
     const val KEY_CLOCK_EXACT = "pref_notification_clock_exact"
@@ -184,6 +186,7 @@ class SpokenSchedules(
     @JvmStatic
     @MainThread
     fun readSummary(context: Context, speak: (CharSequence, Boolean) -> Unit) {
+      cancelSummary()
       readSummary(context, speak, retry = true)
     }
 
@@ -195,8 +198,7 @@ class SpokenSchedules(
         // The listener connects only while something needs it; it is needed now for a minute.
         if (retry && NotificationListService.isAccessGranted(context)) {
           NotificationListService.keepConnected(context, KEEP_FOR_SUMMARY_MS)
-          Handler(Looper.getMainLooper())
-            .postDelayed({ readSummary(context, speak, retry = false) }, RETRY_MS)
+          summaryHandler.postDelayed({ readSummary(context, speak, retry = false) }, RETRY_MS)
           return
         }
         say(context.getString(R.string.notification_summary_no_access), interrupt = true)
@@ -210,7 +212,7 @@ class SpokenSchedules(
           .sortedBy { it.postTime }
           .let { if (prefs.getBoolean(KEY_SUMMARY_NEWEST_FIRST, false)) it.reversed() else it }
       val format = context.getString(R.string.notification_summary_item_format)
-      val state = DeviceStateReader(context).read()
+      val state = DeviceStateReader(context).read(settings)
       val lines =
         notifications.mapNotNull { sbn ->
           val info =
@@ -244,10 +246,14 @@ class SpokenSchedules(
         lines.forEach { say(it) }
         return
       }
-      val handler = Handler(Looper.getMainLooper())
       lines.forEachIndexed { index, line ->
-        handler.postDelayed({ say(line) }, (index + 1) * gap * 1000L)
+        summaryHandler.postDelayed({ say(line) }, (index + 1) * gap * 1000L)
       }
     }
+
+    /** Drops the summary's lines that are still to be said. */
+    @JvmStatic
+    @MainThread
+    fun cancelSummary() = summaryHandler.removeCallbacksAndMessages(null)
   }
 }

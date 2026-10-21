@@ -4313,7 +4313,15 @@ public class TalkBackService extends AccessibilityServiceCompat
           this,
           pipeline.getFeedbackReturner(),
           () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS),
-          () -> speechController.isSpeaking());
+          () -> speechController.isSpeaking(),
+          // What silences SandFly's own speech silences the notification voice too.
+          overMedia ->
+              speechController.isMute()
+                  || speechController.getShouldSilentSpeech()
+                  || isPhoneCallActive()
+                  || isMicrophoneActiveAndHeadphoneOff()
+                  || isSsbActive()
+                  || (!overMedia && isAudioPlaybackActive()));
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
       return;
