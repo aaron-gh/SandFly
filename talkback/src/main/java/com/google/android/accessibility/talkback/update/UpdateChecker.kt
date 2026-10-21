@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.update
 
 import android.content.Context
+import android.net.Network
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.BuildConfig
@@ -156,9 +157,13 @@ object UpdateChecker {
     apkName: String = MOVE_PHONE_APK_NAME,
   ): UpdateInfo? = parseRelease(json, currentBuild = 0, currentHash, apkName)?.copy(move = true)
 
-  /** Opens a connection with the timeouts and user agent that GitHub requests should use. */
-  fun openConnection(context: Context, url: String): HttpURLConnection {
-    val connection = URL(url).openConnection() as HttpURLConnection
+  /**
+   * Opens a connection with the timeouts and user agent that GitHub requests should use, over
+   * [network], or the default network if it is null.
+   */
+  fun openConnection(context: Context, url: String, network: Network? = null): HttpURLConnection {
+    val connection =
+      (network?.openConnection(URL(url)) ?: URL(url).openConnection()) as HttpURLConnection
     connection.connectTimeout = TIMEOUT_MS
     connection.readTimeout = TIMEOUT_MS
     connection.setRequestProperty("User-Agent", "SandFly/${versionName(context)}")

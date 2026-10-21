@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.migration.AppIdMove
 import com.google.android.accessibility.talkback.utils.NotificationUtils
+import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.PreferenceSettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper
@@ -69,6 +70,10 @@ import java.util.concurrent.atomic.AtomicBoolean
 object Updater {
   private const val TAG = "Updater"
   private const val NOTIFICATION_ID = 0x0BAC7A1C
+  private const val PROGRESS_NOTIFICATION_ID = 0x0BAC7A1D
+  private const val CONFIRM_NOTIFICATION_ID = 0x0BAC7A1E
+  /** The install prompt's notification goes away after this, in case the update was installed. */
+  private val CONFIRM_NOTIFICATION_TIMEOUT_MS = TimeUnit.MINUTES.toMillis(10)
   internal const val PREF_LAST_CHECK_TIME = "update_last_check_time"
   internal const val PREF_LAST_NOTIFIED_BUILD = "update_last_notified_build"
   private const val APK_FILE_NAME = "sandfly.apk"
@@ -89,6 +94,9 @@ object Updater {
 
   private val mainHandler = Handler(Looper.getMainLooper())
   private val executor = Executors.newSingleThreadExecutor()
+  // Downloads have a thread of their own, so a check made meanwhile is answered.
+  private val downloadExecutor = Executors.newSingleThreadExecutor()
+  private val downloading = AtomicBoolean(false)
   private var serviceContext: Context? = null
 
   private val startupCheck = Runnable { serviceContext?.let { checkAutomatically(it, true) } }
@@ -310,10 +318,20 @@ object Updater {
       )
       return
     }
+    if (!downloading.compareAndSet(false, true)) {
+      toast(appContext, R.string.update_already_downloading)
+      return
+    }
     toast(appContext, R.string.update_downloading)
-    executor.execute {
+    downloadExecutor.execute {
       try {
-        val apk = download(appContext, downloadUrl)
+        val apk =
+          try {
+            download(appContext, downloadUrl)
+          } finally {
+            downloading.set(false)
+            cancelProgress(appContext)
+          }
         try {
           installApk(appContext, apk)
         } finally {
@@ -329,21 +347,93 @@ object Updater {
     }
   }
 
+  /**
+   * Downloads the APK, showing its progress in a notification. A watch downloads over Wi-Fi or
+   * another unmetered network when one comes up, not through the phone.
+   */
   private fun download(context: Context, url: String): File {
     val directory = File(context.cacheDir, "update")
     directory.mkdirs()
     val file = File(directory, APK_FILE_NAME)
-    val connection = UpdateChecker.openConnection(context, url)
+    val fast = if (FormFactorUtils.isAndroidWear()) FastNetwork.request(context) else null
     try {
-      val code = connection.responseCode
-      if (code != HttpURLConnection.HTTP_OK) {
-        throw IOException("Download returned HTTP $code")
+      val connection = UpdateChecker.openConnection(context, url, fast?.network)
+      try {
+        val code = connection.responseCode
+        if (code != HttpURLConnection.HTTP_OK) {
+          throw IOException("Download returned HTTP $code")
+        }
+        val total = connection.contentLengthLong
+        connection.inputStream.use { input ->
+          file.outputStream().use { output ->
+            val buffer = ByteArray(64 * 1024)
+            var done = 0L
+            var shownPercent = -1
+            while (true) {
+              val count = input.read(buffer)
+              if (count < 0) break
+              output.write(buffer, 0, count)
+              done += count
+              val percent = if (total > 0) (done * 100 / total).toInt() else -1
+              if (percent != shownPercent && (percent < 0 || percent % 5 == 0)) {
+                shownPercent = percent
+                showProgress(context, percent)
+              }
+            }
+          }
+        }
+      } finally {
+        connection.disconnect()
       }
-      connection.inputStream.use { input -> file.outputStream().use { input.copyTo(it) } }
     } finally {
-      connection.disconnect()
+      fast?.release()
     }
     return file
+  }
+
+  private fun showProgress(context: Context, percent: Int) {
+    if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) return
+    val notification =
+      NotificationUtils.createDefaultNotificationBuilder(context)
+        .setContentTitle(context.getString(R.string.update_downloading))
+        .setProgress(100, percent.coerceAtLeast(0), percent < 0)
+        .setOngoing(true)
+        .setOnlyAlertOnce(true)
+        .setSilent(true)
+        .build()
+    context.getSystemService(NotificationManager::class.java)
+      ?.notify(PROGRESS_NOTIFICATION_ID, notification)
+  }
+
+  private fun cancelProgress(context: Context) {
+    context.getSystemService(NotificationManager::class.java)?.cancel(PROGRESS_NOTIFICATION_ID)
+  }
+
+  /**
+   * Shows the install prompt in a notification too, since Android doesn't open it from the
+   * background on some devices, such as a watch whose screen went off during the download.
+   */
+  private fun showConfirmNotification(context: Context, confirmIntent: Intent) {
+    if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) return
+    val pendingIntent =
+      PendingIntent.getActivity(
+        context,
+        0,
+        Intent(confirmIntent).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+        PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+      )
+    val title = context.getString(R.string.update_ready_title)
+    val notification =
+      NotificationUtils.createDefaultNotificationBuilder(context)
+        .setTicker(title)
+        .setContentTitle(title)
+        .setContentText(context.getString(R.string.update_ready_text))
+        .setContentIntent(pendingIntent)
+        .setAutoCancel(true)
+        .setTimeoutAfter(CONFIRM_NOTIFICATION_TIMEOUT_MS)
+        .build()
+    context.getSystemService(NotificationManager::class.java)
+      ?.notify(CONFIRM_NOTIFICATION_ID, notification)
   }
 
   private class WrongPackageException(message: String) : Exception(message)
@@ -481,6 +571,7 @@ object Updater {
           toast(appContext, R.string.update_install_failed)
           return
         }
+        showConfirmNotification(appContext, confirmIntent)
         try {
           appContext.startActivity(confirmIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         } catch (e: ActivityNotFoundException) {
