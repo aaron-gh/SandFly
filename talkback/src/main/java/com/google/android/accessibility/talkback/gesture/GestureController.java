@@ -108,6 +108,7 @@ import com.google.android.accessibility.talkback.menurules.RuleTextFormatting;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
@@ -373,6 +374,19 @@ public class GestureController {
       changeAccessibilityVolume(eventId, /* decrease= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_decrease_volume))) {
       changeAccessibilityVolume(eventId, /* decrease= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_read_notifications))) {
+      result = NotificationReader.readSummary();
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_notification_speech))) {
+      NotificationReader.setSpeechOn(service, null, /* announce= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_read_last_notification))) {
+      result = NotificationReader.readLastAgain();
+      if (!result) {
+        pipeline.returnFeedback(
+            eventId,
+            Feedback.requestedSpeech(service.getString(R.string.notification_no_last_notification)));
+      }
+    } else if (action.equals(service.getString(R.string.shortcut_value_stop_notification))) {
+      NotificationReader.stop();
     } else if (action.equals(service.getString(R.string.shortcut_value_increase_media_volume))) {
       changeMediaVolume(eventId, /* decrease= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_decrease_media_volume))) {

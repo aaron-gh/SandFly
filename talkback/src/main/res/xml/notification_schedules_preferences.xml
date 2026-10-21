@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications > Summary and time: notifications read together, and the time said. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_summary">
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_notification_access"
+        android:title="@string/notification_list_grant_access" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_notification_summary_now"
+        android:title="@string/notification_summary_now_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_summary_daily"
+        android:title="@string/notification_summary_daily_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:dependency="pref_notification_summary_daily"
+        android:key="pref_notification_summary_time"
+        android:title="@string/notification_summary_time_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_summary_newest_first"
+        android:title="@string/notification_summary_newest_first_title" />
+    <EditTextPreference
+        android:key="pref_notification_summary_name"
+        android:title="@string/notification_summary_name_title"
+        app:useSimpleSummaryProvider="true" />
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_summary_gap"
+        android:summary="%s"
+        android:title="@string/notification_summary_gap_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory android:title="@string/notification_category_clock">
+    <ListPreference
+        android:defaultValue="0"
+        android:key="pref_notification_clock_interval"
+        android:summary="%s"
+        android:title="@string/notification_clock_interval_title" />
+    <EditTextPreference
+        android:dialogMessage="@string/notification_clock_format_message"
+        android:key="pref_notification_clock_format"
+        android:title="@string/notification_clock_format_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_notification_clock_exact"
+        android:summary="@string/notification_clock_exact_summary"
+        android:title="@string/notification_clock_exact_title" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+</PreferenceScreen>

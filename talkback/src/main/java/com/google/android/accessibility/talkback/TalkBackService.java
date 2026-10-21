@@ -225,6 +225,7 @@ import com.google.android.accessibility.talkback.monitor.KeyboardLockMonitor;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicker;
@@ -994,6 +995,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       scriptHost = null;
     }
     SpeechControl.detach();
+    NotificationReader.detach();
 
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
@@ -1139,6 +1141,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Some launchers, such as Hyperion, don't report that their home screen is shown again after
     // the apps list, so Android's copy of its nodes keeps them hidden, and only the dock can be
     // reached until the copy is cleared.
+    if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        && !"com.android.systemui".contentEquals(String.valueOf(event.getPackageName()))) {
+      NotificationReader.onActiveApp(event.getPackageName());
+    }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         && HomeScreenPages.isHomePackage(this, event.getPackageName())) {
@@ -1418,6 +1424,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         FeatureFlagReader.enableSpeechVolumeKeyboard(this)
             && (keyEvent.getModifiers() & keyComboManager.getKeyComboModel().getTriggerModifier())
                 != 0;
+    if (NotificationReader.onKeyEvent(keyEvent)) {
+      return true;
+    }
     if (adjustSliderWithVolumeKey(keyEvent, triggerModifierPressed)) {
       return true;
     }
@@ -4300,6 +4309,10 @@ public class TalkBackService extends AccessibilityServiceCompat
   private void startScripts() {
     if (pipeline != null && speechController != null) {
       SpeechControl.attach(this, pipeline.getFeedbackReturner(), speechController);
+      NotificationReader.attach(
+          this,
+          pipeline.getFeedbackReturner(),
+          () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS));
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
       return;

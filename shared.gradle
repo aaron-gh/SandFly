@@ -49,6 +49,7 @@ dependencies {
 
     // Google common
     implementation libs.mlkit.text.recognition
+    implementation libs.mlkit.language.id
     implementation libs.material
 
     // Support library

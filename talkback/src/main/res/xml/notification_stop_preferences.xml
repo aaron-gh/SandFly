@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications > Stop reading: what stops a notification being read. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_notification_access"
+      android:title="@string/notification_list_grant_access" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_shake_to_stop"
+      android:title="@string/notification_shake_title" />
+  <ListPreference
+      android:defaultValue="2"
+      android:dependency="pref_notification_shake_to_stop"
+      android:entries="@array/notification_shake_entries"
+      android:entryValues="@array/notification_shake_values"
+      android:key="pref_notification_shake_strength"
+      android:summary="%s"
+      android:title="@string/notification_shake_strength_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_wave_to_stop"
+      android:summary="@string/notification_wave_summary"
+      android:title="@string/notification_wave_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:dependency="pref_notification_wave_to_stop"
+      android:key="pref_notification_pocket_mode"
+      android:summary="@string/notification_pocket_summary"
+      android:title="@string/notification_pocket_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_volume_keys_stop"
+      android:title="@string/notification_volume_keys_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_dismiss_stops"
+      android:title="@string/notification_dismiss_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:dependency="pref_notification_dismiss_stops"
+      android:key="pref_notification_watch_dismiss_stops"
+      android:title="@string/notification_watch_dismiss_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_app_cancel_stops"
+      android:title="@string/notification_app_cancel_title" />
+</PreferenceScreen>

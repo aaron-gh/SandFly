@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notifications > Kinds of notifications: which kinds are not read. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_notification_skip_media"
+      android:title="@string/notification_skip_media_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_ongoing"
+      android:summary="@string/notification_skip_ongoing_summary"
+      android:title="@string/notification_skip_ongoing_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_foreground"
+      android:summary="@string/notification_skip_foreground_summary"
+      android:title="@string/notification_skip_foreground_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_progress"
+      android:title="@string/notification_skip_progress_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_group_summaries"
+      android:summary="@string/notification_skip_group_summaries_summary"
+      android:title="@string/notification_skip_group_summaries_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_low_priority"
+      android:title="@string/notification_skip_low_priority_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="pref_notification_skip_system"
+      android:title="@string/notification_skip_system_title" />
+</PreferenceScreen>

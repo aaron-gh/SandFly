@@ -143,6 +143,8 @@ public interface SpeechController {
   int UTTERANCE_GROUP_CONTENT_HINTS = 6;
   // Backtalk: speech that other apps ask for, so that it can be replaced or stopped on its own.
   int UTTERANCE_GROUP_OTHER_APPS = 7;
+  // SandFly: notifications being read, so that a shake or a newer notification can stop them.
+  int UTTERANCE_GROUP_NOTIFICATIONS = 8;
 
   /** Enumeration of utterance-group values. */
   @IntDef({
@@ -153,7 +155,8 @@ public interface SpeechController {
     UTTERANCE_GROUP_SCREEN_MAGNIFICATION,
     UTTERANCE_GROUP_CONTENT_CHANGE,
     UTTERANCE_GROUP_CONTENT_HINTS,
-    UTTERANCE_GROUP_OTHER_APPS
+    UTTERANCE_GROUP_OTHER_APPS,
+    UTTERANCE_GROUP_NOTIFICATIONS
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface UtteranceGroup {}
@@ -434,6 +437,7 @@ public interface SpeechController {
       case UTTERANCE_GROUP_CONTENT_CHANGE -> "UTTERANCE_GROUP_CONTENT_CHANGE";
       case UTTERANCE_GROUP_CONTENT_HINTS -> "UTTERANCE_GROUP_CONTENT_HINTS";
       case UTTERANCE_GROUP_OTHER_APPS -> "UTTERANCE_GROUP_OTHER_APPS";
+      case UTTERANCE_GROUP_NOTIFICATIONS -> "UTTERANCE_GROUP_NOTIFICATIONS";
       default -> "(unknown utterance group)";
     };
   }

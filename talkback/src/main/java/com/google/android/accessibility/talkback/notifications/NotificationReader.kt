@@ -1,0 +1,541 @@
+/*
+ * Copyright 2026 Backtalk contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.android.accessibility.talkback.notifications
+
+import android.app.Notification
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.media.AudioAttributes
+import android.media.AudioFocusRequest
+import android.media.AudioManager
+import android.os.Handler
+import android.os.Looper
+import android.os.SystemClock
+import android.service.notification.NotificationListenerService
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.format.DateFormat
+import android.text.style.LocaleSpan
+import android.util.LruCache
+import android.view.KeyEvent
+import android.view.accessibility.AccessibilityEvent
+import androidx.annotation.MainThread
+import androidx.core.content.ContextCompat
+import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
+import com.google.android.accessibility.talkback.scripting.Scripts
+import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController
+import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
+import com.google.android.libraries.accessibility.utils.log.LogUtils
+import com.google.mlkit.nl.languageid.LanguageIdentification
+import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
+import com.google.mlkit.nl.languageid.LanguageIdentifier
+import java.util.Date
+import java.util.Locale
+
+/**
+ * Reads notifications as the notification settings say: which ones, how, when, and what stops
+ * them. Every notification that would be spoken passes through [handle], which reads it, sets it
+ * aside for a delay, or leaves it unread, and records it in [NotificationHistory].
+ *
+ * Calls are not handled here, so the caller is always said.
+ */
+object NotificationReader {
+  private const val TAG = "NotificationReader"
+  private const val LANGUAGE_WAIT_MS = 600L
+  private const val MAX_REPEATING = 10
+  private const val VOLUME_KEY_PAIR_MS = 400L
+  /** The most notifications set aside for a delay; older ones are dropped in a burst. */
+  private const val MAX_WAITING = 20
+
+  private val handler = Handler(Looper.getMainLooper())
+  private var context: Context? = null
+  private var feedback: Pipeline.FeedbackReturner? = null
+  private var stopSpeech: Runnable? = null
+  private var stateReader: DeviceStateReader? = null
+  private var sensors: StopSensors? = null
+  private var languageIdentifier: LanguageIdentifier? = null
+  private var schedules: SpokenSchedules? = null
+  private val decider = NotificationDecider()
+  private val appNames = LruCache<String, String>(100)
+
+  /** The notification being read now, and the one after it, set aside. */
+  private var reading: Readout? = null
+  private val waiting = mutableListOf<Readout>()
+  /** Notifications read while the screen was off, said again until it turns on. */
+  private val repeating = mutableListOf<Readout>()
+  private var focusRequest: AudioFocusRequest? = null
+  private var volumeUpDownAt = 0L
+  private var volumeDownDownAt = 0L
+  private var swallowVolumeUps = 0
+
+  private class Readout(
+    val info: NotificationInfo,
+    val decision: Decision,
+    var text: CharSequence,
+    val settings: NotificationSettings,
+  ) {
+    var started = false
+    var cancelled = false
+    val speak = Runnable { NotificationReader.speak(this) }
+  }
+
+  private val stopAfterLimit = Runnable { stop() }
+  private val repeat =
+    object : Runnable {
+      override fun run() {
+        val context = context ?: return
+        if (repeating.isEmpty() || ScreenState.isOn(context)) {
+          repeating.clear()
+          return
+        }
+        repeating.forEach { speak(Readout(it.info, it.decision, it.text, it.settings), repeat = true) }
+        val minutes = repeating.first().settings.repeatMinutes
+        if (minutes > 0) handler.postDelayed(this, minutes * 60_000L)
+      }
+    }
+
+  private val screenOnReceiver =
+    object : BroadcastReceiver() {
+      override fun onReceive(context: Context, intent: Intent) {
+        repeating.clear()
+        handler.removeCallbacks(repeat)
+      }
+    }
+
+  private val settingsListener =
+    SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+      if (key != null && key.startsWith("pref_notification")) decider.forget()
+    }
+
+  /** Called when SandFly starts, with how to speak and how to stop notification speech. */
+  @JvmStatic
+  @MainThread
+  fun attach(context: Context, feedback: Pipeline.FeedbackReturner, stopSpeech: Runnable) {
+    if (this.context != null) detach()
+    val app = context.applicationContext
+    this.context = app
+    this.feedback = feedback
+    this.stopSpeech = stopSpeech
+    stateReader = DeviceStateReader(app)
+    sensors = StopSensors(app) { stop() }
+    ContextCompat.registerReceiver(
+      app,
+      screenOnReceiver,
+      IntentFilter(Intent.ACTION_SCREEN_ON),
+      ContextCompat.RECEIVER_NOT_EXPORTED,
+    )
+    SharedPreferencesUtils.getSharedPreferences(app).registerOnSharedPreferenceChangeListener(settingsListener)
+    schedules = SpokenSchedules(app, feedback).also { it.start() }
+  }
+
+  /** Called when SandFly stops. */
+  @JvmStatic
+  @MainThread
+  fun detach() {
+    val app = context ?: return
+    cancelAll()
+    schedules?.stop()
+    schedules = null
+    runCatching { app.unregisterReceiver(screenOnReceiver) }
+    SharedPreferencesUtils.getSharedPreferences(app).unregisterOnSharedPreferenceChangeListener(settingsListener)
+    languageIdentifier?.close()
+    languageIdentifier = null
+    sensors?.stop()
+    sensors = null
+    stateReader = null
+    feedback = null
+    stopSpeech = null
+    context = null
+  }
+
+  /** Tells which app is in front, for the rules. */
+  @JvmStatic
+  fun onActiveApp(packageName: CharSequence?) {
+    if (packageName.isNullOrEmpty()) return
+    stateReader?.foregroundApp = packageName.toString()
+  }
+
+  /** Whether a notification is being read now. */
+  @JvmStatic val isReading: Boolean
+    get() = reading?.started == true
+
+  /**
+   * Reads [notification], posted by [event]'s app, as the settings say. Returns false when it
+   * is left to the screen reader's usual speech: for calls, and when SandFly isn't running.
+   */
+  @JvmStatic
+  @MainThread
+  fun handle(event: AccessibilityEvent, notification: Notification): Boolean {
+    val context = context ?: return false
+    val stateReader = stateReader ?: return false
+    if (notification.category == Notification.CATEGORY_CALL) return false
+    val packageName = event.packageName?.toString() ?: return false
+    val settings = NotificationSettings.read(SharedPreferencesUtils.getSharedPreferences(context))
+    val info = NotificationInfo.from(packageName, appName(context, packageName), notification)
+    val categoryName =
+      EventTypeNotificationStateChangedFeedbackRule.getNotificationCategoryStateText(context, notification)
+        .toString()
+    val time = DateFormat.getTimeFormat(context).format(Date(info.postedAtMillis.takeIf { it > 0 } ?: System.currentTimeMillis()))
+    val decision =
+      decider.decide(info, settings, stateReader.read(), System.currentTimeMillis(), categoryName, time)
+    var text: CharSequence = decision.text
+    if (decision.read) {
+      // Scripts that change spoken notifications see the text the settings made.
+      Scripts.rewriteSpeech(AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED, event, null, text)
+        ?.let { text = it }
+    }
+    if (settings.history) {
+      NotificationHistory.add(
+        NotificationHistory.Entry(info, System.currentTimeMillis(), decision.outcome, text.toString(), decision.rules)
+      )
+    }
+    if (!decision.read || text.isBlank()) {
+      LogUtils.d(TAG, "Not reading a notification of %s: %s", packageName, decision.outcome)
+      return true
+    }
+    val readout = Readout(info, decision, text, settings)
+    if (settings.detectLanguage && !decision.private) {
+      detectLanguage(context, readout) { schedule(readout) }
+    } else {
+      schedule(readout)
+    }
+    return true
+  }
+
+  /** Reads every notification in the shade. Returns false when SandFly isn't running. */
+  @JvmStatic
+  @MainThread
+  fun readSummary(): Boolean {
+    val context = context ?: return false
+    val feedback = feedback ?: return false
+    SpokenSchedules.readSummary(context, feedback)
+    return true
+  }
+
+  /**
+   * Turns notification speech on or off, or the other way when [on] is null, and says which.
+   * Returns the new state.
+   */
+  @JvmStatic
+  @MainThread
+  fun setSpeechOn(context: Context, on: Boolean?, announce: Boolean): Boolean {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val key = NotificationSettings.Companion.Keys.ENABLED
+    val now = on ?: !prefs.getBoolean(key, true)
+    prefs.edit().putBoolean(key, now).apply()
+    if (!now) stop()
+    if (announce) {
+      feedback?.returnFeedback(
+        EVENT_ID_UNTRACKED,
+        Feedback.speech(
+          context.getString(if (now) R.string.notification_speech_now_on else R.string.notification_speech_now_off),
+          SpeakOptions.create()
+            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+            .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+        ),
+      )
+    }
+    return now
+  }
+
+  /** Says again the last notification that was read. Returns false when there is none. */
+  @JvmStatic
+  @MainThread
+  fun readLastAgain(): Boolean {
+    val entry = NotificationHistory.lastRead() ?: return false
+    val context = context ?: return false
+    val settings = NotificationSettings.read(SharedPreferencesUtils.getSharedPreferences(context))
+    speak(Readout(entry.info, Decision(Outcome.READ, entry.spoken), entry.spoken, settings), repeat = true)
+    return true
+  }
+
+  /** Stops the notification being read, and those waiting to be. */
+  @JvmStatic
+  @MainThread
+  fun stop() {
+    val current = reading
+    LogUtils.d(TAG, "Stopping notification speech")
+    cancelAll()
+    if (current != null) NotificationHistory.markStopped(current.info)
+    stopSpeech?.run()
+  }
+
+  /**
+   * Called when a notification goes away: a notification being read that the user dismissed, or
+   * that its app took back, stops when the settings say so.
+   */
+  @JvmStatic
+  @MainThread
+  fun onNotificationRemoved(packageName: String, postedAtMillis: Long, title: String, reason: Int) {
+    val context = context ?: return
+    val settings = NotificationSettings.read(SharedPreferencesUtils.getSharedPreferences(context))
+    val byUser =
+      reason == NotificationListenerService.REASON_CANCEL ||
+        reason == NotificationListenerService.REASON_CLICK ||
+        reason == NotificationListenerService.REASON_CANCEL_ALL ||
+        (settings.watchDismissStops && reason == NotificationListenerService.REASON_LISTENER_CANCEL)
+    val byApp = reason == NotificationListenerService.REASON_APP_CANCEL
+    val stops = (byUser && settings.dismissStops) || (byApp && settings.appCancelStops)
+    if (!stops) return
+    fun matches(readout: Readout) =
+      readout.info.packageName == packageName &&
+        readout.info.postedAtMillis == postedAtMillis &&
+        (title.isEmpty() || readout.info.title == title)
+    waiting.filter(::matches).forEach { cancel(it) }
+    repeating.removeAll(::matches)
+    if (reading?.let(::matches) == true) stop()
+  }
+
+  /**
+   * Stops reading when both volume keys are pressed together, if the settings say so. Returns
+   * whether [event] was used.
+   */
+  @JvmStatic
+  @MainThread
+  fun onKeyEvent(event: KeyEvent): Boolean {
+    val keyCode = event.keyCode
+    if (keyCode != KeyEvent.KEYCODE_VOLUME_UP && keyCode != KeyEvent.KEYCODE_VOLUME_DOWN) return false
+    if (event.action == KeyEvent.ACTION_UP) {
+      if (swallowVolumeUps > 0) {
+        swallowVolumeUps--
+        return true
+      }
+      return false
+    }
+    if (event.repeatCount > 0 || !isReading) return false
+    val context = context ?: return false
+    if (!SharedPreferencesUtils.getSharedPreferences(context)
+        .getBoolean(NotificationSettings.Companion.Keys.VOLUME_KEYS, false)) {
+      return false
+    }
+    val now = SystemClock.uptimeMillis()
+    val other: Long
+    if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+      volumeUpDownAt = now
+      other = volumeDownDownAt
+    } else {
+      volumeDownDownAt = now
+      other = volumeUpDownAt
+    }
+    if (now - other < VOLUME_KEY_PAIR_MS) {
+      volumeUpDownAt = 0
+      volumeDownDownAt = 0
+      // Both keys' ups follow.
+      swallowVolumeUps = 2
+      stop()
+      return true
+    }
+    return false
+  }
+
+  private fun schedule(readout: Readout) {
+    val delay = readout.settings.delaySeconds * 1000L
+    if (delay <= 0) {
+      speak(readout)
+      return
+    }
+    while (waiting.size >= MAX_WAITING) cancel(waiting.first())
+    waiting += readout
+    handler.postDelayed(readout.speak, delay)
+  }
+
+  private fun speak(readout: Readout, repeat: Boolean = false) {
+    waiting.remove(readout)
+    if (readout.cancelled) return
+    val feedback = feedback ?: return
+    val settings = readout.settings
+    val busy = reading?.started == true
+    var flags = 0
+    if (busy && !repeat) {
+      val interrupt = readout.decision.priority || settings.queueBehavior == QueueBehavior.INTERRUPT
+      if (!interrupt && settings.queueBehavior == QueueBehavior.SKIP) {
+        LogUtils.d(TAG, "Not reading a notification while another is read")
+        return
+      }
+      if (interrupt) {
+        flags =
+          FeedbackItem.FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP or
+            FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP
+      }
+    }
+    val options =
+      if (settings.rate != 100 || settings.pitch != 100 || settings.volume != 100) {
+        ExternalSpeech.options(
+          SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH,
+          ExternalSpeech.params(settings.rate / 100f, settings.pitch / 100f, settings.volume / 100f),
+          flags,
+        )
+      } else {
+        SpeakOptions.create()
+          .setQueueMode(SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+          .setFlags(flags)
+      }
+    options.setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
+    options.setStartingAction { onStarted(readout) }
+    options.setCompletedAction { status -> onDone(readout, status) }
+    reading = readout
+    val speech = Feedback.speech(readout.text, options)
+    if (settings.soundBefore) speech.sound(R.raw.chime_down)
+    feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)
+  }
+
+  private fun onStarted(readout: Readout) {
+    LogUtils.d(TAG, "Reading a notification of %s", readout.info.packageName)
+    if (reading !== readout) reading = readout
+    readout.started = true
+    val settings = readout.settings
+    sensors?.start(settings)
+    handler.removeCallbacks(stopAfterLimit)
+    if (readout.decision.maxSeconds > 0) {
+      handler.postDelayed(stopAfterLimit, readout.decision.maxSeconds * 1000L)
+    }
+    if (settings.media == MediaBehavior.PAUSE) requestFocus()
+  }
+
+  private fun onDone(readout: Readout, status: Int) {
+    if (reading === readout) {
+      reading = null
+      sensors?.stop()
+      handler.removeCallbacks(stopAfterLimit)
+      abandonFocus()
+    }
+    val context = context ?: return
+    val minutes = readout.settings.repeatMinutes
+    if (status == SpeechController.STATUS_SPOKEN && minutes > 0 && !ScreenState.isOn(context) &&
+      repeating.none { it.info === readout.info }) {
+      repeating += readout
+      while (repeating.size > MAX_REPEATING) repeating.removeAt(0)
+      handler.removeCallbacks(repeat)
+      handler.postDelayed(repeat, minutes * 60_000L)
+    }
+  }
+
+  private fun cancel(readout: Readout) {
+    readout.cancelled = true
+    handler.removeCallbacks(readout.speak)
+    waiting.remove(readout)
+  }
+
+  private fun cancelAll() {
+    waiting.toList().forEach { cancel(it) }
+    reading = null
+    sensors?.stop()
+    handler.removeCallbacks(stopAfterLimit)
+    abandonFocus()
+  }
+
+  /** Marks the text with the language it is written in, so it is said in that language. */
+  private fun detectLanguage(context: Context, readout: Readout, then: () -> Unit) {
+    val identifier =
+      languageIdentifier
+        ?: try {
+          LanguageIdentification.getClient(
+              LanguageIdentificationOptions.Builder().setConfidenceThreshold(0.6f).build()
+            )
+            .also { languageIdentifier = it }
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "No language identification: %s", e)
+          null
+        }
+    if (identifier == null) {
+      then()
+      return
+    }
+    var done = false
+    val finish = Runnable {
+      if (!done) {
+        done = true
+        then()
+      }
+    }
+    handler.postDelayed(finish, LANGUAGE_WAIT_MS)
+    identifier
+      .identifyLanguage(readout.text.toString())
+      .addOnSuccessListener { tag ->
+        if (!done && tag != "und") {
+          val locale = Locale.forLanguageTag(tag)
+          val current = context.resources.configuration.locales[0]
+          if (locale.language != current.language) {
+            readout.text =
+              SpannableString(readout.text).apply {
+                setSpan(LocaleSpan(locale), 0, length, Spanned.SPAN_INCLUSIVE_INCLUSIVE)
+              }
+          }
+        }
+        handler.removeCallbacks(finish)
+        finish.run()
+      }
+      .addOnFailureListener {
+        handler.removeCallbacks(finish)
+        finish.run()
+      }
+  }
+
+  private fun requestFocus() {
+    val context = context ?: return
+    val audio = context.getSystemService(AudioManager::class.java) ?: return
+    val request =
+      AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+        .setAudioAttributes(
+          AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+            .build()
+        )
+        .build()
+    if (audio.requestAudioFocus(request) == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+      focusRequest = request
+    }
+  }
+
+  private fun abandonFocus() {
+    val request = focusRequest ?: return
+    focusRequest = null
+    context?.getSystemService(AudioManager::class.java)?.abandonAudioFocusRequest(request)
+  }
+
+  /** The name of [packageName]'s app, or the package name when it has none. */
+  fun appName(context: Context, packageName: String): String {
+    appNames.get(packageName)?.let { return it }
+    val name =
+      try {
+        val pm = context.packageManager
+        pm.getApplicationLabel(pm.getApplicationInfo(packageName, 0)).toString()
+      } catch (e: PackageManager.NameNotFoundException) {
+        packageName
+      }
+    appNames.put(packageName, name)
+    return name
+  }
+
+  /** Whether the screen is on. */
+  private object ScreenState {
+    fun isOn(context: Context): Boolean =
+      context.getSystemService(android.os.PowerManager::class.java)?.isInteractive != false
+  }
+}
