@@ -38,6 +38,8 @@ class GeminiFailure(
   val status: String = "",
   /** Google's explanation, or what failed on the phone. Never contains the API key. */
   val message: String = "",
+  /** Whether the request went to the other AI service the user set up, rather than to Gemini. */
+  val aiService: Boolean = false,
 ) {
   enum class Kind {
     /** The phone could not reach Google. */
@@ -64,14 +66,29 @@ class GeminiFailure(
         if (message.isNotEmpty()) append(": ").append(message)
       }
 
+  /** The same failure, from the other AI service the user set up. */
+  fun fromAiService(): GeminiFailure = GeminiFailure(kind, statusCode, status, message, true)
+
   /** What to tell the user. */
   fun userMessage(context: Context): String =
     when (kind) {
       Kind.NO_CONNECTION -> context.getString(R.string.gemini_network_error)
-      Kind.TIMEOUT -> context.getString(R.string.gemini_error_timeout)
-      Kind.API_KEY -> context.getString(R.string.gemini_error_api_key)
-      Kind.QUOTA -> context.getString(R.string.gemini_error_quota)
-      Kind.BUSY -> context.getString(R.string.gemini_error_busy)
+      Kind.TIMEOUT ->
+        context.getString(
+          if (aiService) R.string.ai_service_error_timeout else R.string.gemini_error_timeout
+        )
+      Kind.API_KEY ->
+        context.getString(
+          if (aiService) R.string.ai_service_error_api_key else R.string.gemini_error_api_key
+        )
+      Kind.QUOTA ->
+        context.getString(
+          if (aiService) R.string.ai_service_error_quota else R.string.gemini_error_quota
+        )
+      Kind.BUSY ->
+        context.getString(
+          if (aiService) R.string.ai_service_error_busy else R.string.gemini_error_busy
+        )
       Kind.OTHER -> {
         val shortMessage = firstSentence(message)
         when {
