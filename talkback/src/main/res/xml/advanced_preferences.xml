@@ -32,6 +32,12 @@
         android:fragment="com.google.android.accessibility.talkback.quicksettings.QuickSettingsItemsFragment"
         android:key="@string/pref_quick_settings_items_key"
         android:title="@string/title_pref_quick_settings_items"/>
+    <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
+        android:defaultValue="false"
+        android:key="@string/pref_play_installer_key"
+        android:persistent="false"
+        android:summary="@string/summary_pref_play_installer"
+        android:title="@string/title_pref_play_installer"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_others_key">

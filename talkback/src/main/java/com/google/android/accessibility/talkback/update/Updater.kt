@@ -45,12 +45,16 @@ import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.accessibility.utils.PreferenceSettingsUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper
+import com.google.android.accessibility.talkback.shizuku.PlayInstaller
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
+import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Checks for new stable releases, and optionally development builds, shows a notification when one
@@ -68,6 +72,8 @@ object Updater {
   internal const val PREF_LAST_CHECK_TIME = "update_last_check_time"
   internal const val PREF_LAST_NOTIFIED_BUILD = "update_last_notified_build"
   private const val APK_FILE_NAME = "sandfly.apk"
+  /** How long to wait for the shell install before falling back; SandFly usually restarts first. */
+  private const val INSTALL_TIMEOUT_SECONDS = 150L
   private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
   private val DEV_CHECK_INTERVAL_MS = TimeUnit.HOURS.toMillis(1)
   private val POLL_INTERVAL_MS = TimeUnit.MINUTES.toMillis(15)
@@ -283,7 +289,10 @@ object Updater {
   @JvmStatic
   fun install(context: Context, downloadUrl: String) {
     val appContext = context.applicationContext
-    if (!appContext.packageManager.canRequestPackageInstalls()) {
+    // With the Play-installer setting on and Shizuku, the shell installs the update, so SandFly
+    // doesn't need permission to install apps itself.
+    val throughShizuku = PlayInstaller.isEnabled(appContext) && ShizukuShell.isAllowed()
+    if (!throughShizuku && !appContext.packageManager.canRequestPackageInstalls()) {
       val intent =
         Intent(
             Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
@@ -357,6 +366,29 @@ object Updater {
         mainHandler.post { toast(context, R.string.update_move_installing, Toast.LENGTH_LONG) }
       }
       AppIdMove.InstallKind.UPDATE -> {}
+    }
+    // An update to this app, with the Play-installer setting on and Shizuku, is installed by the
+    // shell so that it keeps recording Google Play as the installer. If that fails, fall back to
+    // the normal install.
+    if (kind == AppIdMove.InstallKind.UPDATE &&
+      PlayInstaller.isEnabled(context) &&
+      ShizukuShell.isAllowed()) {
+      val installed = CountDownLatch(1)
+      val worked = AtomicBoolean(false)
+      PlayInstaller.installUpdateAsPlay(
+        context,
+        apk,
+        { ok ->
+          worked.set(ok)
+          installed.countDown()
+        },
+      )
+      // On success SandFly restarts before this returns, so the await just times out.
+      installed.await(INSTALL_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+      if (worked.get()) {
+        return
+      }
+      LogUtils.w(TAG, "Installing the update through Shizuku failed; installing normally")
     }
     val installer = context.packageManager.packageInstaller
     // The session names the APK's app ID: this app's for an update, and the new one for a move,

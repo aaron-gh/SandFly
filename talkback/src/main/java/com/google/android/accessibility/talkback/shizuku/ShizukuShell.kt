@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
+import android.os.ParcelFileDescriptor
 import java.util.concurrent.TimeUnit
 import rikka.shizuku.Shizuku
 
@@ -178,6 +179,47 @@ object ShizukuShell {
           error == null
         },
       ) { worked ->
+        onDone(worked == true)
+      }
+    }
+  }
+
+  /**
+   * Installs [apks], of the given [sizes], as an update to [packageName], recording [installer] as
+   * the installer. [onDone] gets whether it worked, and false at once without Shizuku. Closes the
+   * file descriptors afterwards.
+   */
+  fun install(
+    context: Context,
+    apks: List<ParcelFileDescriptor>,
+    sizes: List<Long>,
+    packageName: String,
+    installer: String,
+    onDone: (Boolean) -> Unit,
+  ) {
+    if (!ShizukuGrants.isReady()) {
+      apks.forEach { runCatching { it.close() } }
+      onDone(false)
+      return
+    }
+    val appContext = context.applicationContext
+    ShizukuGrants.withShizukuPermission { allowed ->
+      if (!allowed) {
+        apks.forEach { runCatching { it.close() } }
+        onDone(false)
+        return@withShizukuPermission
+      }
+      call(
+        appContext,
+        { connected ->
+          val error = connected.install(apks.toTypedArray(), sizes.toLongArray(), packageName, installer)
+          if (error != null) {
+            LogUtils.w(TAG, "Install as %s failed: %s", installer, error)
+          }
+          error == null
+        },
+      ) { worked ->
+        apks.forEach { runCatching { it.close() } }
         onDone(worked == true)
       }
     }

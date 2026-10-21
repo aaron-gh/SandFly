@@ -41,4 +41,15 @@ interface IShizukuGrants {
      * on, 0 for off, and -1 if it can't be read.
      */
     int state(int command) = 3;
+
+    /**
+     * Installs the APKs read from [apks], of the given [sizes], as an update to [packageName],
+     * recording [installer] as the package that installed it. The shell can record any installer
+     * at install time, which an app itself can't. Returns null if it worked, or what went wrong.
+     */
+    String install(
+        in ParcelFileDescriptor[] apks,
+        in long[] sizes,
+        String packageName,
+        String installer) = 4;
 }
