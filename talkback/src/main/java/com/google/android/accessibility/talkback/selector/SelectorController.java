@@ -1553,6 +1553,17 @@ public class SelectorController implements UserInputEventListener {
         return FeatureSupport.supportInputConnectionByA11yService()
             || !actorState.getDirectionNavigation().isSelectionModeActive();
       }
+      case GRANULARITY_LINKS, GRANULARITY_CONTROLS -> {
+        if (!prefs.getBoolean(
+            context.getString(R.string.pref_selector_links_controls_web_only_key),
+            context.getResources().getBoolean(R.bool.pref_selector_links_controls_web_only_default))) {
+          return true;
+        }
+        if (node == null) {
+          node = accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+        }
+        return WebInterfaceUtils.hasNavigableWebContent(node);
+      }
       case GRANULARITY_ROW_COLUMN -> {
         return FeatureFlagReader.enableRowAndColumnOneGranularity(context)
             && actorState.getDirectionNavigation().hasNavigableTableContent();
