@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Báo cáo sự cố</string>
+    <string name="title_pref_problem_report_type">Loại ý kiến phản hồi</string>
+    <string name="title_pref_problem_report_area">Khu vực</string>
+    <string name="title_pref_problem_report_title">Tiêu đề</string>
+    <string name="title_pref_problem_report_app">Ứng dụng xảy ra sự cố</string>
+    <string name="title_pref_problem_report_description">Nội dung mô tả</string>
+    <string name="dialog_message_problem_report_description">Điều gì xảy ra và bạn mong đợi điều gì.</string>
+    <string name="title_pref_problem_report_steps">Các bước tái hiện</string>
+    <string name="title_pref_problem_report_email">Email để nhận phản hồi</string>
+    <string name="title_pref_problem_report_device">Bao gồm thông tin thiết bị</string>
+    <string name="title_pref_problem_report_log">Bao gồm nhật ký SandFly</string>
+    <string name="summary_pref_problem_report_log">Có thể chứa văn bản trên màn hình</string>
+    <string name="title_pref_problem_report_send">Gửi báo cáo</string>
+    <string name="summary_pref_problem_report_sending">Đang gửi</string>
+    <string name="title_pref_problem_report_clear">Xoá biểu mẫu</string>
+    <string name="dialog_title_problem_report_clear">Xoá biểu mẫu?</string>
+    <string name="button_problem_report_clear">Xoá</string>
+    <string name="problem_report_missing_fields">Hãy nhập tiêu đề và nội dung mô tả.</string>
+    <string name="problem_report_invalid_email">Hãy nhập địa chỉ email hợp lệ.</string>
+    <string name="problem_report_sent">Đã gửi báo cáo.</string>
+    <string name="problem_report_rate_limited">Quá nhiều báo cáo. Hãy thử lại sau.</string>
+    <string name="problem_report_no_connection">Chưa gửi được báo cáo. Hãy kiểm tra kết nối Internet.</string>
+    <string name="problem_report_not_sent">Chưa gửi được báo cáo. Hãy thử lại sau.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Hoạt động không đúng</item>
+        <item>Gặp sự cố</item>
+        <item>Chậm hoặc không phản hồi</item>
+        <item>Đề xuất</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Lời nói</item>
+        <item>Cử chỉ</item>
+        <item>Khám phá bằng cách chạm</item>
+        <item>Chế độ điều khiển chức năng đọc và trình đơn</item>
+        <item>Nhập và bàn phím</item>
+        <item>Bàn phím chữ nổi</item>
+        <item>Màn hình chữ nổi</item>
+        <item>Âm thanh và rung</item>
+        <item>Thông báo</item>
+        <item>Nội dung web</item>
+        <item>Tập lệnh</item>
+        <item>Cài đặt</item>
+        <item>Bản cập nhật</item>
+        <item>Khác</item>
+    </string-array>
+</resources>

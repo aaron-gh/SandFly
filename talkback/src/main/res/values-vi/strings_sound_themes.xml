@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Chủ đề âm thanh</string>
+    <string name="summary_pref_sound_themes">Cài đặt và chọn các bộ âm thanh và rung, thay từng âm thanh bằng âm thanh của bạn, và bật âm thanh cùng rung cho chế độ điều khiển và âm thanh 3D.</string>
+    <string name="sound_themes_installed_category">Chủ đề đã cài đặt</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Âm thanh và rung của SandFly, cùng mọi âm thanh của riêng bạn.</string>
+    <string name="sound_theme_in_use">Đang dùng</string>
+    <string name="sound_theme_by">Tác giả: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Giấy phép: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> âm thanh.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> kiểu rung.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Bật âm thanh và rung cho chế độ điều khiển.</string>
+    <string name="sound_theme_control_sounds_off">Tắt âm thanh và rung cho chế độ điều khiển.</string>
+    <string name="sound_theme_use">Dùng chủ đề này</string>
+    <string name="sound_theme_about">Giới thiệu về chủ đề này</string>
+    <string name="sound_theme_export">Lưu thành tệp chủ đề</string>
+    <string name="sound_theme_remove">Xoá</string>
+    <string name="sound_theme_remove_confirm">Xoá chủ đề <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Xoá</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="other">Đã lưu chủ đề, gồm <xliff:g id="count" example="13">%d</xliff:g> âm thanh.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly không lưu được tệp chủ đề.</string>
+    <string name="sound_theme_no_picker">Không có ứng dụng nào trên thiết bị này để chọn tệp.</string>
+    <string name="sound_theme_settings_category">Cài đặt của <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Âm thanh</string>
+    <string name="summary_pref_theme_sounds">Thay bất kỳ âm thanh nào của chủ đề này bằng một tệp âm thanh của bạn.</string>
+    <string name="sound_themes_install_category">Cài đặt chủ đề</string>
+    <string name="title_pref_sound_theme_install_file">Từ một tệp</string>
+    <string name="summary_pref_sound_theme_install_file">Tệp chủ đề là một tệp ZIP. Bạn cũng có thể mở hoặc chia sẻ tệp này với SandFly từ một ứng dụng khác.</string>
+    <string name="title_pref_sound_theme_install_link">Từ một đường liên kết</string>
+    <string name="summary_pref_sound_theme_install_link">Đường liên kết đến một tệp chủ đề hoặc đến một kho lưu trữ GitHub có chủ đề. Bạn cũng có thể chia sẻ đường liên kết với SandFly từ trình duyệt.</string>
+    <string name="title_pref_sound_theme_install_source">Từ một nguồn</string>
+    <string name="summary_pref_sound_theme_install_source">Các tệp chủ đề trong một kho lưu trữ trên GitHub, GitLab, Codeberg, Gitea hoặc Bitbucket.</string>
+    <string name="sound_theme_sources">Nguồn chủ đề âm thanh</string>
+    <string name="sound_theme_source_empty">Không có chủ đề âm thanh nào trong nguồn này</string>
+    <string name="sound_theme_source_failed">Không tải được chủ đề âm thanh. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Các chủ đề âm thanh đã cài đặt từ nguồn này vẫn được giữ lại.</string>
+    <string name="sound_theme_link_message">Nhập hoặc dán đường liên kết đến một tệp chủ đề hoặc đến một kho lưu trữ GitHub có chủ đề.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Cài đặt chủ đề âm thanh</string>
+    <string name="sound_theme_install_reading">Đang đọc chủ đề âm thanh</string>
+    <string name="sound_theme_install_title">Cài đặt <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Cài đặt và dùng</string>
+    <string name="sound_theme_install">Cài đặt</string>
+    <string name="sound_theme_install_replaces">Chủ đề này sẽ thay thế chủ đề đã cài đặt có cùng tên.</string>
+    <string name="sound_theme_install_skipped">Bỏ qua:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Đã cài đặt <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Đã cài đặt <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Chủ đề này đang được dùng.</string>
+    <string name="sound_theme_install_nothing">Không có chủ đề âm thanh nào để cài đặt.</string>
+    <string name="sound_theme_install_not_a_theme">Đây không phải là chủ đề âm thanh mà SandFly dùng được: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly không cài đặt được chủ đề âm thanh. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Đường liên kết đến chủ đề âm thanh phải bắt đầu bằng https.</string>
+    <string name="title_pref_theme_sounds_of">Âm thanh của <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Dùng âm thanh của SandFly cho tất cả</string>
+    <string name="theme_sounds_reset_confirm">Xoá tất cả âm thanh của chủ đề này và dùng âm thanh của SandFly?</string>
+    <string name="theme_sounds_reset_button">Xoá</string>
+    <string name="theme_sounds_category">Âm thanh</string>
+    <string name="theme_sound_summary_default">Âm thanh của SandFly</string>
+    <string name="theme_sound_summary_custom">Âm thanh của chủ đề</string>
+    <string name="theme_sound_summary_none">Không có âm thanh. Âm thanh tiêu điểm sẽ phát.</string>
+    <string name="theme_sound_summary_android_keyboard">Âm thanh bàn phím của Android</string>
+    <string name="theme_sound_use_android_keyboard">Dùng âm thanh bàn phím của Android</string>
+    <string name="theme_sound_braille_character">Bàn phím chữ nổi: nhập một ký tự</string>
+    <string name="theme_sound_braille_space">Bàn phím chữ nổi: dấu cách</string>
+    <string name="theme_sound_braille_delete">Bàn phím chữ nổi: xoá</string>
+    <string name="theme_sound_braille_new_line">Bàn phím chữ nổi: dòng mới</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Chọn một tệp âm thanh</string>
+    <string name="theme_sound_preview">Nghe thử</string>
+    <string name="theme_sound_none">Không có âm thanh</string>
+    <string name="theme_sound_summary_no_sound">Không có âm thanh</string>
+    <string name="theme_sound_action_set_none">Đặt thành không có âm thanh</string>
+    <string name="theme_sound_use_default">Dùng âm thanh của SandFly</string>
+    <string name="theme_sound_remove">Xoá âm thanh</string>
+    <string name="theme_sound_too_large">Tệp đó quá lớn. Một âm thanh có thể có kích thước tối đa 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly không phát được tệp đó. Hãy chọn âm thanh WAV, OGG, MP3 hoặc FLAC.</string>
+    <string name="theme_sound_failed">SandFly không đọc được tệp đó.</string>
+</resources>
