@@ -32,6 +32,7 @@ import static com.google.android.accessibility.braille.common.BrailleImeAction.H
 import static com.google.android.accessibility.braille.common.BrailleImeAction.HIDE_KEYBOARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_BACKWARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_FORWARD;
+import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_BRAILLE_TABLE;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_CHARACTER;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_GRANULARITY;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_LINE;
@@ -96,6 +97,7 @@ public class SupportedCommand {
           .add(new SupportedCommand(SUBMIT_TEXT, BASIC, TYPING))
           .add(new SupportedCommand(HELP_AND_OTHER_ACTIONS, BASIC, KEYBOARD, /* editable= */ false))
           .add(new SupportedCommand(TOGGLE_ORIENTATION_LOCK, BASIC, KEYBOARD))
+          .add(new SupportedCommand(NEXT_BRAILLE_TABLE, BASIC, KEYBOARD))
           .add(new SupportedCommand(PREVIOUS_CHARACTER, CURSOR_MOVEMENT, CHARACTER))
           .add(new SupportedCommand(NEXT_CHARACTER, CURSOR_MOVEMENT, CHARACTER))
           .add(new SupportedCommand(PREVIOUS_WORD, CURSOR_MOVEMENT, WORD))
