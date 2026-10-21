@@ -122,6 +122,10 @@ sealed class QuickItem {
 /** What the quick settings panel shows, in order, and whether it opens instead of the system's. */
 object QuickSettingsItems {
   private const val PREF_ITEMS = "pref_quick_settings_items"
+  private const val PREF_COLUMNS = "pref_quick_settings_columns"
+  private const val DEFAULT_COLUMNS = 2
+  /** The numbers of columns the panel's grid can have. */
+  val COLUMN_CHOICES = 1..4
   private const val SEPARATOR = "\n"
 
   private val DEFAULT_CONTROLS =
@@ -198,6 +202,14 @@ object QuickSettingsItems {
       "cameratoggle" to QuickControl.CAMERA_ACCESS,
       "alarm" to QuickControl.NEXT_ALARM,
     )
+
+  /** How many columns the panel's grid has. */
+  fun columns(prefs: SharedPreferences): Int =
+    prefs.getInt(PREF_COLUMNS, DEFAULT_COLUMNS).coerceIn(COLUMN_CHOICES.first, COLUMN_CHOICES.last)
+
+  fun setColumns(prefs: SharedPreferences, columns: Int) {
+    prefs.edit { putInt(PREF_COLUMNS, columns.coerceIn(COLUMN_CHOICES.first, COLUMN_CHOICES.last)) }
+  }
 
   fun save(prefs: SharedPreferences, items: List<QuickItem>) {
     prefs.edit { putString(PREF_ITEMS, items.distinct().joinToString(SEPARATOR) { it.id }) }

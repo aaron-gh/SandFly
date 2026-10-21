@@ -990,6 +990,23 @@
     <string name="quick_settings_add_tile">Add app tile</string>
     <!-- An app's tile in a list. %1$s is the tile's name, %2$s the app's name. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
+    <!-- Setting in the editor of SandFly's quick settings panel: how many columns its grid has. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_columns">Columns</string>
+    <!-- Action that lists the cells of SandFly's quick settings panel to move an item to one of them. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_move">Move</string>
+    <!-- Title of the list of cells to move an item to in SandFly's quick settings panel. %1$s is the item's name. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_move_title">Move %1$s</string>
+    <!-- A cell of the grid of SandFly's quick settings panel. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_cell">Row %1$d, column %2$d</string>
+    <!-- A cell of SandFly's quick settings panel in the list of cells to move an item to. %1$s is the cell, such as "Row 2, column 1", %2$s the item in it. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
+    <!-- An item's cell and how many other items moved to make room, said by an item just moved in SandFly's quick settings panel. %1$s is the cell, such as "Row 2, column 1", %2$s how many moved. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
+    <!-- How many other items moved one cell to make room for an item moved in SandFly's quick settings panel. [CHAR_LIMIT=NONE] -->
+    <plurals name="quick_settings_others_moved">
+        <item quantity="one">%d other item moved</item>
+        <item quantity="other">%d other items moved</item>
+    </plurals>
     <!-- Action that removes an item from SandFly's quick settings panel. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_remove">Remove</string>
     <!-- Spoken after an item is added to SandFly's quick settings panel. %1$s is its name. [CHAR_LIMIT=NONE] -->
