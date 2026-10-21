@@ -291,10 +291,14 @@ public class TreeNodesDescription {
         TextUtils.isEmpty(
             AccessibilityNodeFeedbackUtils.getNodeContentDescription(
                 node, context, globalVariables));
-    // A supplemental description describes the node's contents, so they aren't read again.
+    // A supplemental description describes the node's contents, so they aren't read again. So
+    // does the text Chrome gives a web element named by its page, such as an X post named with
+    // aria-labelledby.
     boolean isDescriptionEmpty =
         isContentDescriptionEmpty
-            && TextUtils.isEmpty(AccessibilityNodeFeedbackUtils.getSupplementalDescription(node));
+            && TextUtils.isEmpty(AccessibilityNodeFeedbackUtils.getSupplementalDescription(node))
+            && (TextUtils.isEmpty(AccessibilityNodeInfoUtils.getChromeRole(node))
+                || TextUtils.isEmpty(node.getText()));
     // Samsung labels the notification card with its title but leaves the message in a child.
     // Read the body before the time; general child aggregation would repeat title/time.
     if (!isContentDescriptionEmpty) {

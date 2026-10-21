@@ -41,6 +41,7 @@ class NotificationPartsFragment : TalkbackBaseFragment() {
   public override fun getTitle(): CharSequence = getText(R.string.title_pref_notification_parts)
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    preferenceManager.setStorageDeviceProtected()
     val context = requireContext()
     prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val screen = preferenceManager.createPreferenceScreen(context)

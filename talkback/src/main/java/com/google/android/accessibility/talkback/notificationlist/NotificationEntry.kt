@@ -30,6 +30,8 @@ class NotificationEntry(
   val title: CharSequence?,
   val text: CharSequence?,
   val time: CharSequence,
+  /** When the notification says it happened, such as when a message arrived. */
+  val timeMillis: Long,
 ) {
   val key: String
     get() = notification.key
@@ -46,8 +48,27 @@ class NotificationEntry(
           ?: lastMessage(extras)
           ?: extras.getCharSequenceArray(Notification.EXTRA_TEXT_LINES)?.joinToString("\n")
           ?: notification.notification.tickerText
-      return NotificationEntry(notification, appName, title, text, time(notification))
+      val timeMillis = timeMillis(notification)
+      return NotificationEntry(
+        notification,
+        appName,
+        title?.limited(),
+        text?.limited(),
+        DateUtils.formatSameDayTime(
+          timeMillis,
+          System.currentTimeMillis(),
+          DateFormat.SHORT,
+          DateFormat.SHORT,
+        ),
+        timeMillis,
+      )
     }
+
+    /** Android's own limit for a notification's texts, which apps can get around. */
+    private const val MAX_LENGTH = 5 * 1024
+
+    private fun CharSequence.limited(): CharSequence =
+      if (length > MAX_LENGTH) subSequence(0, MAX_LENGTH) else this
 
     /** The newest message of a messaging notification, as "sender: text". */
     @Suppress("DEPRECATION") // getParcelableArray(String, Class) needs Android 13.
@@ -59,20 +80,13 @@ class NotificationEntry(
       return if (sender.isNullOrBlank()) text else "$sender: $text"
     }
 
-    private fun time(notification: StatusBarNotification): CharSequence {
+    private fun timeMillis(notification: StatusBarNotification): Long {
       val posted = notification.notification
-      val time =
-        if (posted.extras?.getBoolean(Notification.EXTRA_SHOW_WHEN, true) != false && posted.`when` != 0L) {
-          posted.`when`
-        } else {
-          notification.postTime
-        }
-      return DateUtils.formatSameDayTime(
-        time,
-        System.currentTimeMillis(),
-        DateFormat.SHORT,
-        DateFormat.SHORT,
-      )
+      return if (posted.extras?.getBoolean(Notification.EXTRA_SHOW_WHEN, true) != false && posted.`when` != 0L) {
+        posted.`when`
+      } else {
+        notification.postTime
+      }
     }
   }
 }
