@@ -817,6 +817,8 @@
     <string name="title_pref_play_installer">Appear installed from Google Play</string>
     <!-- Summary of that switch. [CHAR_LIMIT=NONE] -->
     <string name="summary_pref_play_installer">Tell other apps that Google Play installed SandFly. Some apps, such as some banking apps, turn off accessibility services that were installed from anywhere else. Needs Shizuku, and changes only what apps are told about where SandFly came from.</string>
+    <!-- Summary of that switch when it is on but Android doesn't record Google Play yet, because Shizuku isn't available. [CHAR_LIMIT=NONE] -->
+    <string name="summary_pref_play_installer_pending">On, but Google Play isn\'t recorded as the installer yet. SandFly sets it when Shizuku is available.</string>
     <!-- A part of a notification that SandFly's notification list can speak: its title. [CHAR_LIMIT=NONE] -->
     <string name="notification_part_title">Title</string>
     <!-- A part of a notification that SandFly's notification list can speak: its text. [CHAR_LIMIT=NONE] -->

@@ -57,9 +57,10 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
   }
 
   /**
-   * The "Appear installed from Google Play" switch shows whether Android records Google Play as the
-   * installer now, runs the change through Shizuku when toggled, and offers the adb command for
-   * someone without Shizuku.
+   * The "Appear installed from Google Play" switch shows whether the user has turned it on, runs
+   * the change through Shizuku when toggled, and offers the adb command for someone without
+   * Shizuku. When it is on but Android doesn't record Google Play yet, which it can't without
+   * Shizuku, the summary says so.
    */
   private void updatePlayInstaller() {
     Context context = getContext();
@@ -68,8 +69,13 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
       return;
     }
     CommandSwitchPreference commandPreference = (CommandSwitchPreference) preference;
+    boolean wanted = PlayInstaller.INSTANCE.isWanted(context);
     boolean isPlay = PlayInstaller.INSTANCE.isPlay(context);
-    commandPreference.setChecked(isPlay);
+    commandPreference.setChecked(wanted);
+    commandPreference.setSummary(
+        wanted && !isPlay
+            ? getString(R.string.summary_pref_play_installer_pending)
+            : getString(R.string.summary_pref_play_installer));
     commandPreference.setCommand(PlayInstaller.INSTANCE.command(context, !isPlay));
     commandPreference.setOnToggle(
         (checked, done) ->

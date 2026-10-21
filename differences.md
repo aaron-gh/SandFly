@@ -670,6 +670,8 @@ Android only records the installer when an app is installed, and only lets the s
 
 Without Shizuku, the switch can't change the installer; its "Copy command" action gives the adb command to run from a computer. Turning the setting off records the installer SandFly had before. A banking app may still detect a sideloaded install in other ways.
 
+If something records a different installer anyway, such as an update installed while Shizuku isn't running, SandFly puts Google Play back the next time Shizuku is available. While the setting is on but Google Play isn't recorded yet, the setting says so.
+
 ## Android TV
 
 ### Settings on the TV home screen

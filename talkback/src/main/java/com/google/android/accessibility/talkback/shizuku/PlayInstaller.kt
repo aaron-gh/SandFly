@@ -22,6 +22,7 @@ import android.os.ParcelFileDescriptor
 import androidx.core.content.edit
 import androidx.core.util.Consumer
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 
 /**
@@ -44,8 +45,18 @@ object PlayInstaller {
   /** The real installer, kept so that turning the setting off puts it back. */
   private const val PREF_REAL_INSTALLER = "real_installer"
 
+  /** Whether the user wants Google Play recorded, kept so SandFly can restore it after a reset. */
+  private const val PREF_WANTED = "play_installer_wanted"
+
+  /** Whether SandFly has tried to restore the installer this run, so it does so at most once. */
+  @Volatile private var reapplied = false
+
   /** Whether Android records Google Play as SandFly's installer now. */
   fun isPlay(context: Context): Boolean = installer(context) == PLAY
+
+  /** Whether the user has turned the setting on, whatever the installer reads now. */
+  fun isWanted(context: Context): Boolean =
+    SharedPreferencesUtils.getSharedPreferences(context).getBoolean(PREF_WANTED, false)
 
   @Suppress("DEPRECATION") // getInstallerPackageName is the only way before Android 11.
   private fun installer(context: Context): String? =
@@ -73,12 +84,31 @@ object PlayInstaller {
    */
   fun set(context: Context, play: Boolean, onDone: Consumer<Boolean>) {
     val appContext = context.applicationContext
+    val prefs = SharedPreferencesUtils.getSharedPreferences(appContext)
     if (play && !isPlay(appContext)) {
-      SharedPreferencesUtils.getSharedPreferences(appContext).edit {
-        putString(PREF_REAL_INSTALLER, installer(appContext).orEmpty())
-      }
+      prefs.edit { putString(PREF_REAL_INSTALLER, installer(appContext).orEmpty()) }
     }
+    // Kept before the reinstall, which restarts SandFly, so the choice survives and can be
+    // restored after an update or a reset.
+    prefs.edit { putBoolean(PREF_WANTED, play) }
     install(appContext, target(appContext, play)) { worked -> onDone.accept(worked) }
+  }
+
+  /**
+   * Restores Google Play as the installer if the user wants it and it isn't recorded now, which
+   * happens after an update that Shizuku couldn't do. Does nothing, and never prompts, unless
+   * Shizuku already allows SandFly. Runs at most once per process, since the reinstall restarts
+   * SandFly and this runs again then.
+   */
+  fun reapplyIfNeeded(context: Context) {
+    val appContext = context.applicationContext
+    if (reapplied || !isWanted(appContext) || isPlay(appContext) || !ShizukuShell.isAllowed()) {
+      return
+    }
+    reapplied = true
+    install(appContext, PLAY) { worked ->
+      LogUtils.i("PlayInstaller", "Restored Google Play as the installer: %s", worked)
+    }
   }
 
   /**
@@ -104,8 +134,12 @@ object PlayInstaller {
     ) { worked -> onDone.accept(worked) }
   }
 
-  /** Whether the setting is on, so that the in-app updater installs updates through Shizuku. */
-  fun isEnabled(context: Context): Boolean = isPlay(context)
+  /**
+   * Whether the setting is on, so that the in-app updater installs updates through Shizuku. It
+   * follows the user's choice, not the installer now, so an update restores Google Play even if a
+   * reset dropped it.
+   */
+  fun isEnabled(context: Context): Boolean = isWanted(context)
 
   /** Reinstalls SandFly's own APKs through Shizuku, recording [installer]. */
   private fun install(context: Context, installer: String, onDone: (Boolean) -> Unit) {

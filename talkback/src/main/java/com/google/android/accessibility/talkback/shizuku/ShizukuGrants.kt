@@ -201,6 +201,8 @@ object ShizukuGrants {
         requestAll(context, wantedAtStart(context, prefs)) { granted ->
           LogUtils.i(TAG, "Granted at start through Shizuku: %s", granted)
         }
+        // Puts Google Play back as the installer if the user wants it and an update dropped it.
+        PlayInstaller.reapplyIfNeeded(context)
       }
     }
   }
