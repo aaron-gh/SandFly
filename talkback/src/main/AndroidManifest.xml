@@ -38,6 +38,8 @@
     <!-- Required for sending data to Google Analytics. -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Lets a watch ask for Wi-Fi to download an update. -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <!-- Used by the updater to install new development builds. -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />

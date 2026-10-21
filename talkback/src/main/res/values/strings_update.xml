@@ -28,6 +28,12 @@
     <string name="update_check_failed">Could not check for updates</string>
     <!-- Toast shown when the update download starts. [CHAR LIMIT=NONE] -->
     <string name="update_downloading">Downloading update</string>
+    <!-- Toast when the user asks to install an update while it is still downloading. [CHAR_LIMIT=NONE] -->
+    <string name="update_already_downloading">The update is already downloading</string>
+    <!-- Title of the notification that opens the install prompt of a downloaded update. [CHAR_LIMIT=NONE] -->
+    <string name="update_ready_title">SandFly update downloaded</string>
+    <!-- Text of the notification that opens the install prompt of a downloaded update. [CHAR_LIMIT=NONE] -->
+    <string name="update_ready_text">Tap to install.</string>
     <!-- Toast shown when the update cannot be downloaded or installed. [CHAR LIMIT=NONE] -->
     <string name="update_install_failed">Could not install the update</string>
     <!-- Toast shown when the user cancels the install. [CHAR LIMIT=NONE] -->
