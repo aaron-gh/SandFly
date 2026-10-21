@@ -20,6 +20,7 @@ import android.view.accessibility.AccessibilityEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.focusmanagement.record.NodePathDescription;
+import com.google.android.accessibility.talkback.gesture.ListEdgeScroller;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -86,7 +87,8 @@ public class ManualScrollInterpreter implements ScrollEventHandler {
   public void onScrollEvent(
       AccessibilityEvent event, ScrollEventInterpretation interpretation, EventId eventId) {
     if ((interpretation.userAction != ScrollActionRecord.ACTION_MANUAL_SCROLL)
-        || (interpretation.scrollDirection == TraversalStrategy.SEARCH_FOCUS_UNKNOWN)) {
+        || (interpretation.scrollDirection == TraversalStrategy.SEARCH_FOCUS_UNKNOWN)
+        || ListEdgeScroller.isActive()) {
       return;
     }
 

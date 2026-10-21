@@ -964,6 +964,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       pauseController.shutdown();
     }
 
+    if (gestureController != null) {
+      gestureController.shutdown();
+    }
+
     if (directTouchController != null) {
       directTouchController.shutdown();
       directTouchController = null;
@@ -1133,6 +1137,10 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
         || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       RecentUserInput.mark();
+    }
+    if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
+        && gestureController != null) {
+      gestureController.onUserInputStarted();
     }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       // TODO: Could move the logic of TOUCH_INTERACTION related event handling out of
@@ -1362,6 +1370,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   protected boolean onKeyEventInternal(KeyEvent keyEvent) {
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
+      if (gestureController != null) {
+        gestureController.onUserInputStarted();
+      }
     }
     if (pauseController != null) {
       // While paused, keys pass to apps except the ones that resume Backtalk.
