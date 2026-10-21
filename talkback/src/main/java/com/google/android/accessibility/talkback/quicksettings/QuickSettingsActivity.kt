@@ -297,7 +297,8 @@ class QuickSettingsActivity : AppCompatActivity() {
       kept +=
         View(this).apply {
           importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
-          layoutParams = LinearLayout.LayoutParams(0, 0, 1f)
+          // As tall as the cells: a row with a spacer of no height gave its cells no height.
+          layoutParams = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
         }
     }
     return kept.take(count)
