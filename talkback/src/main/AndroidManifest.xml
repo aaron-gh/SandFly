@@ -237,6 +237,20 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- An app icon in the launcher that opens SandFly's settings, so they can be changed while
+             SandFly is off. Android TV uses the banner alias above instead. -->
+        <activity-alias
+            android:name="com.google.android.accessibility.talkback.preference.SettingsLauncher"
+            android:targetActivity="com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity"
+            android:exported="true"
+            android:icon="@drawable/icon"
+            android:label="@string/talkback_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <activity
             android:name="com.google.android.accessibility.talkback.soundthemes.ThemeDraftActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
