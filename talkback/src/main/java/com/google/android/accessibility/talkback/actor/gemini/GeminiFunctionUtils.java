@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.text.SpannableString;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
@@ -38,6 +39,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiFunctionUtils.DescribeImageDecision.Decision;
+import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.talkback.dialog.BaseDialog;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.NetworkUtils;
@@ -702,6 +704,34 @@ public class GeminiFunctionUtils {
     return messageRes == R.string.dialog_message_detailed_ai_description
         || messageRes == R.string.dialog_message_detailed_ai_promotion
         || messageRes == R.string.dialog_message_screen_overview_promotion;
+  }
+
+  /**
+   * The dialog message {@code messageRes}, with its terms as a link. A message about sending images
+   * to the Gemini API names the other AI service instead, when the user set one up and on-device AI
+   * is off, since the images go there.
+   */
+  public static CharSequence consentMessage(
+      Context context, BaseDialog dialog, boolean isDimming, @StringRes int messageRes) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    if (isGeminiApiConsentMessage(messageRes)
+        && !OnDeviceAiSettings.INSTANCE.isOnDevice(prefs)
+        && AiService.isSetUp(prefs)) {
+      return context.getString(
+          R.string.dialog_message_ai_service_consent, AiService.INSTANCE.host(prefs));
+    }
+    String tos = termsLinkText(context, messageRes);
+    String rawText = context.getString(messageRes, tos);
+    SpannableString text = new SpannableString(rawText);
+    int spanIndexStart = rawText.indexOf(tos);
+    if (spanIndexStart >= 0) {
+      text.setSpan(
+          createClickableSpanForTerms(context, dialog, isDimming, messageRes),
+          spanIndexStart,
+          spanIndexStart + tos.length(),
+          0);
+    }
+    return text;
   }
 
   /** The link text for the terms in the dialog message {@code messageRes}. */

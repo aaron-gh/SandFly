@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.actor.gemini;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ScrollView;
@@ -71,23 +70,13 @@ public abstract class GeminiOptInDialog extends BaseDialog {
 
     TextView textView = root.findViewById(R.id.ai_descriptiog_promotion_dialog_message);
     if (dialogMessageResId != -1 && textView != null) {
-      String tos = GeminiFunctionUtils.termsLinkText(context, dialogMessageResId);
-      String rawText = context.getString(dialogMessageResId, tos);
-      SpannableString text = new SpannableString(rawText);
-      int spanIndexStart = rawText.indexOf(tos);
-      if (spanIndexStart >= 0) {
-        text.setSpan(
-            GeminiFunctionUtils.createClickableSpanForTerms(
-                context,
-                this,
-                DimScreenActor.isDimScreenEnabled(
-                    context, SharedPreferencesUtils.getSharedPreferences(context)),
-                dialogMessageResId),
-            spanIndexStart,
-            spanIndexStart + tos.length(),
-            0);
-      }
-      textView.setText(text);
+      textView.setText(
+          GeminiFunctionUtils.consentMessage(
+              context,
+              this,
+              DimScreenActor.isDimScreenEnabled(
+                  context, SharedPreferencesUtils.getSharedPreferences(context)),
+              dialogMessageResId));
     }
     return root;
   }
