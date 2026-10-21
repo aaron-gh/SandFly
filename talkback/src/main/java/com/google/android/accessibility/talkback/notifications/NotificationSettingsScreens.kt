@@ -101,6 +101,7 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
       when (key) {
         NotificationSettings.Companion.Keys.DISMISS,
         NotificationSettings.Companion.Keys.APP_CANCEL,
+        NotificationSettings.Companion.Keys.DND,
         SpokenSchedules.KEY_SUMMARY_DAILY -> {
           NotificationListService.rebind(requireContext())
           updateAccess()

@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -79,6 +80,14 @@ object NotificationReader {
   private const val VOLUME_UP_WAIT_MS = 2_000L
   /** Marks the callbacks of readouts that wait for SandFly to be quiet, to drop them on stop. */
   private val QUIET_TOKEN = Any()
+  /** Marks the callbacks of notifications waiting for the listener's Do Not Disturb ranking. */
+  private val DND_TOKEN = Any()
+  private const val DND_CHECK_MS = 200L
+  private const val DND_CHECKS = 5
+  /** How long after a touch ends the notifications that arrived during it are read. */
+  private const val AFTER_TOUCH_MS = 500L
+  /** The longest a notification waits for a touch to end, in case the end is missed. */
+  private const val TOUCH_WAIT_MS = 10_000L
 
   private val handler = Handler(Looper.getMainLooper())
   private var context: Context? = null
@@ -101,6 +110,9 @@ object NotificationReader {
   private val queued = mutableListOf<Readout>()
   /** Notifications set aside for a delay. */
   private val waiting = mutableListOf<Readout>()
+  /** Notifications that arrived while the screen was touched, read once the touch ends. */
+  private val heldForTouch = mutableListOf<Readout>()
+  private val releaseHeld = Runnable { releaseTouchHeld() }
   /** Notifications read while the screen was off, said again until it turns on. */
   private val repeating = mutableListOf<Readout>()
   private var focusRequest: AudioFocusRequest? = null
@@ -229,16 +241,93 @@ object NotificationReader {
     get() = reading?.started == true
 
   /**
-   * Reads [notification], posted by [event]'s app, as the settings say. Returns false when it
-   * is left to the screen reader's usual speech: for calls, and when SandFly isn't running.
+   * Reads [notification], posted by [event]'s app, as the settings say, after the touch when
+   * the screen is [touching], and as the Do Not Disturb setting says when [dnd] is on. Returns
+   * false when it is left to the screen reader's usual speech: for calls, and when SandFly isn't
+   * running.
    */
   @JvmStatic
   @MainThread
-  fun handle(event: AccessibilityEvent, notification: Notification): Boolean {
+  fun handle(event: AccessibilityEvent, notification: Notification, touching: Boolean, dnd: Boolean): Boolean {
     val context = context ?: return false
-    val stateReader = stateReader ?: return false
+    if (stateReader == null) return false
     if (notification.category == Notification.CATEGORY_CALL) return false
     val packageName = event.packageName?.toString() ?: return false
+    if (dnd) {
+      when (settings(context).dnd) {
+        DndMode.ALL -> {}
+        DndMode.NONE -> {
+          noteUnread(event, notification, Outcome.DO_NOT_DISTURB)
+          return true
+        }
+        DndMode.ALLOWED -> {
+          // The event is used after it is handled.
+          @Suppress("DEPRECATION") val copy = AccessibilityEvent.obtain(event)
+          whenDndDecided(packageName, notification, 1) { allowed ->
+            if (allowed) read(copy, notification, touching)
+            else noteUnread(copy, notification, Outcome.DO_NOT_DISTURB)
+          }
+          return true
+        }
+      }
+    }
+    read(event, notification, touching)
+    return true
+  }
+
+  /** Whether a call is announced while Do Not Disturb is on. */
+  @JvmStatic
+  @MainThread
+  fun callAllowedDuringDnd(event: AccessibilityEvent, notification: Notification): Boolean {
+    val context = context ?: return false
+    val packageName = event.packageName?.toString() ?: return false
+    return when (settings(context).dnd) {
+      DndMode.ALL -> true
+      DndMode.NONE -> false
+      DndMode.ALLOWED ->
+        NotificationListService.instance?.matchesInterruptionFilter(packageName, notification) == true
+    }
+  }
+
+  /**
+   * Tells [then] whether Do Not Disturb lets [notification] through. The listener can have the
+   * notification's ranking a moment after the accessibility event, so it is asked again a few
+   * times. Without notification access, nothing is let through.
+   */
+  private fun whenDndDecided(packageName: String, notification: Notification, attempt: Int, then: (Boolean) -> Unit) {
+    val listener = NotificationListService.instance
+    val allowed = listener?.matchesInterruptionFilter(packageName, notification)
+    if (listener == null || allowed != null || attempt >= DND_CHECKS) {
+      LogUtils.d(TAG, "Do Not Disturb lets a notification of %s through: %s", packageName, allowed)
+      then(allowed == true)
+      return
+    }
+    handler.postAtTime(
+      { whenDndDecided(packageName, notification, attempt + 1, then) },
+      DND_TOKEN,
+      SystemClock.uptimeMillis() + DND_CHECK_MS,
+    )
+  }
+
+  /** Called when a touch of the screen ends, to read the notifications that arrived during it. */
+  @JvmStatic
+  @MainThread
+  fun onTouchEnded() {
+    if (heldForTouch.isEmpty()) return
+    handler.removeCallbacks(releaseHeld)
+    handler.postDelayed(releaseHeld, AFTER_TOUCH_MS)
+  }
+
+  private fun releaseTouchHeld() {
+    val held = heldForTouch.toList()
+    heldForTouch.clear()
+    held.forEach { schedule(it) }
+  }
+
+  private fun read(event: AccessibilityEvent, notification: Notification, touching: Boolean) {
+    val context = context ?: return
+    val stateReader = stateReader ?: return
+    val packageName = event.packageName?.toString() ?: return
     val settings = settings(context)
     val info = NotificationInfo.from(packageName, appName(context, packageName), notification)
     val categoryName =
@@ -260,15 +349,22 @@ object NotificationReader {
     }
     if (!decision.read || text.isBlank()) {
       LogUtils.d(TAG, "Not reading a notification of %s: %s", packageName, decision.outcome)
-      return true
+      return
     }
     val readout = Readout(info, decision, text, settings)
+    val next = { if (touching) holdForTouch(readout) else schedule(readout) }
     if (settings.detectLanguage && !decision.private) {
-      detectLanguage(context, readout) { schedule(readout) }
+      detectLanguage(context, readout) { next() }
     } else {
-      schedule(readout)
+      next()
     }
-    return true
+  }
+
+  private fun holdForTouch(readout: Readout) {
+    while (heldForTouch.size >= MAX_WAITING) heldForTouch.removeAt(0)
+    heldForTouch += readout
+    handler.removeCallbacks(releaseHeld)
+    handler.postDelayed(releaseHeld, TOUCH_WAIT_MS)
   }
 
   /**
@@ -607,6 +703,9 @@ object NotificationReader {
     queued.forEach { it.cancelled = true }
     queued.clear()
     handler.removeCallbacksAndMessages(QUIET_TOKEN)
+    handler.removeCallbacksAndMessages(DND_TOKEN)
+    heldForTouch.clear()
+    handler.removeCallbacks(releaseHeld)
     reading?.cancelled = true
     reading = null
     repeating.clear()
