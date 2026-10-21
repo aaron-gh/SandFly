@@ -64,6 +64,11 @@ object HomeScreenPages {
     return windowArea > 0 && bounds.width().toLong() * bounds.height() * 3 >= windowArea
   }
 
+  /** Whether [packageName] is the home app's. */
+  @JvmStatic
+  fun isHomePackage(context: Context, packageName: CharSequence?): Boolean =
+    packageName != null && packageName.toString() == homePackage(context)
+
   private fun homePackage(context: Context): String? {
     val now = SystemClock.uptimeMillis()
     if (homeCheckedAt == 0L || now - homeCheckedAt > HOME_CHECK_INTERVAL_MS) {
