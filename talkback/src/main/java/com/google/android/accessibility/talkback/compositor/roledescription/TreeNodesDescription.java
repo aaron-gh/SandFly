@@ -381,11 +381,43 @@ public class TreeNodesDescription {
 
     LogUtils.v(TAG, "      treeNodesDescription:  %s", logString.toString());
 
+    // A node with no name of its own, such as a button whose label is a child view, is named by its
+    // children, so their text takes the name's place in the description order. Otherwise the type
+    // would always come first.
+    if (joinList.size() > 1
+        && namelessControl == null
+        && role != Role.ROLE_GRID
+        && role != Role.ROLE_LIST
+        && role != Role.ROLE_PAGER
+        && isNamedByChildren(node)) {
+      RoleDescription roleDescription = roleDescriptionExtractor.getRoleDescription(node);
+      CharSequence childrenText =
+          CompositorUtils.joinCharSequences(
+              joinList.subList(1, joinList.size()), CompositorUtils.getSeparator(), PRUNE_EMPTY);
+      CharSequence description =
+          RoleDescriptionExtractor.joinInOrder(
+              globalVariables.getDescriptionOrder(),
+              childrenText,
+              roleDescription.nodeRole(node, context, globalVariables),
+              roleDescription.nodeState(event, node, context, globalVariables));
+      return description;
+    }
+
     CharSequence description =
         CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
     return namelessControl == null
         ? description
         : describeWithNamelessControl(description, namelessControl, event);
+  }
+
+  /** Whether {@code node} has no name, or "Unlabelled" description, of its own. */
+  private boolean isNamedByChildren(AccessibilityNodeInfoCompat node) {
+    RoleDescription roleDescription = roleDescriptionExtractor.getRoleDescription(node);
+    return !roleDescription.shouldIgnoreDescription(node)
+        && TextUtils.isEmpty(roleDescription.nodeName(node, context, globalVariables))
+        && TextUtils.isEmpty(
+            AccessibilityNodeFeedbackUtils.getUnlabelledNodeDescription(
+                Role.getRole(node), node, context, imageContents, globalVariables));
   }
 
   /**
