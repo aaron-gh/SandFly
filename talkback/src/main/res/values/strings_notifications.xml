@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Strings of SandFly's notification reading settings and speech. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Choices of which notifications are read while Do Not Disturb is on. -->
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
     <!-- Choices of how hard the phone must be shaken. -->
     <string name="notification_shake_3">Hard</string>
     <!-- Choices of how hard the phone must be shaken. -->
@@ -157,6 +163,14 @@
     <string name="notification_headphones_title">Headphones</string>
     <!-- Setting: what happens to notifications while music or a video plays. -->
     <string name="notification_media_title">While media plays</string>
+    <!-- Setting: which notifications are read while Do Not Disturb is on. -->
+    <string name="notification_dnd_title">Do Not Disturb</string>
+    <!-- Choice of the Do Not Disturb setting: no notification is read. -->
+    <string name="notification_dnd_none">Read none</string>
+    <!-- Choice of the Do Not Disturb setting: notifications Do Not Disturb lets through, such as from starred contacts, are read. -->
+    <string name="notification_dnd_allowed">Read what Do Not Disturb allows</string>
+    <!-- Choice of the Do Not Disturb setting: every notification is read. -->
+    <string name="notification_dnd_all">Read all</string>
     <!-- Switch: notifications are not read while the ringer is silent. -->
     <string name="notification_honour_silent_title">Not in silent mode</string>
     <!-- Switch: notifications are not read while the ringer vibrates. -->

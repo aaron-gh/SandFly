@@ -27,6 +27,7 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.notifications.DndMode
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.notifications.NotificationSettings
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -43,7 +44,9 @@ class NotificationListService : NotificationListenerService() {
     SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
       if (key == getString(R.string.pref_notification_list_key) ||
         key == NotificationSettings.Companion.Keys.DISMISS ||
-        key == NotificationSettings.Companion.Keys.APP_CANCEL) {
+        key == NotificationSettings.Companion.Keys.APP_CANCEL ||
+        key == NotificationSettings.Companion.Keys.DND ||
+        key == NotificationSettings.Companion.Keys.ENABLED) {
         if (!isNeeded(this)) {
           unbind()
         } else if (key == getString(R.string.pref_notification_list_key) && listEnabled()) {
@@ -124,6 +127,23 @@ class NotificationListService : NotificationListenerService() {
     )
   }
 
+  /**
+   * Whether Do Not Disturb lets [notification], posted by [packageName], through, or null when it
+   * isn't in the listener's ranking yet.
+   */
+  fun matchesInterruptionFilter(packageName: String, notification: Notification): Boolean? {
+    val posted =
+      runCatching { activeNotifications }.getOrNull()?.lastOrNull {
+        it.packageName == packageName &&
+          it.notification.`when` == notification.`when` &&
+          it.notification.channelId == notification.channelId
+      } ?: return null
+    val ranking = Ranking()
+    val map = currentRanking ?: return null
+    if (!map.getRanking(posted.key, ranking)) return null
+    return ranking.matchesInterruptionFilter()
+  }
+
   override fun onNotificationRankingUpdate(ranking: RankingMap?) {
     if (listEnabled()) NotificationList.onRankingUpdate(ranking)
   }
@@ -149,7 +169,7 @@ class NotificationListService : NotificationListenerService() {
       NotificationList.isEnabled(context) ||
         SystemClock.uptimeMillis() < keepConnectedUntil ||
         SharedPreferencesUtils.getSharedPreferences(context).let {
-          NotificationSettings.read(it).needsListener ||
+          NotificationSettings.read(it).let { s -> s.needsListener || (s.enabled && s.dnd == DndMode.ALLOWED) } ||
             it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false)
         }
 

@@ -39,6 +39,7 @@ import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Role;
+import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.accessibility.utils.monitor.TouchMonitor;
@@ -223,26 +224,30 @@ public class EventFilter {
       // REFERTO. If the user is touching on screen, skip event.
       // For toast events, the notification parcel is null. (Use event text instead.)
       Notification notification = AccessibilityEventUtils.extractNotification(event);
-      // Do not disturb silences notifications, but toasts still answer what the user just did.
-      if ((notification != null) && globalVariables.isDndEnabled()) {
-        LogUtils.d(TAG, "Do not announce notification: DND is enabled");
-        NotificationReader.noteUnread(event, notification, Outcome.DO_NOT_DISTURB);
+      boolean isCall =
+          (notification != null) && Notification.CATEGORY_CALL.equals(notification.category);
+      // Read now: the state kept in GlobalVariables changes only when a setting does.
+      boolean dnd = SettingsUtils.getDoNotDisturbState(context) > 0;
+      boolean touching = touchMonitor.isUserTouchingScreen();
+      // Do Not Disturb silences calls it doesn't let through. Toasts still answer what the user
+      // just did.
+      if (isCall && dnd && !NotificationReader.callAllowedDuringDnd(event, notification)) {
+        LogUtils.d(TAG, "Do not announce call: DND is enabled");
         return;
       }
       // Incoming calls are still announced, so that the user hears who is calling.
-      if ((notification != null)
-          && !globalVariables.getSpeakNotifications()
-          && !Notification.CATEGORY_CALL.equals(notification.category)) {
+      if ((notification != null) && !isCall && !globalVariables.getSpeakNotifications()) {
         LogUtils.d(TAG, "Do not announce notification: disabled in settings");
         NotificationReader.noteUnread(event, notification, Outcome.SPEECH_OFF);
         return;
       }
-      if ((notification != null) && touchMonitor.isUserTouchingScreen()) {
-        NotificationReader.noteUnread(event, notification, Outcome.TOUCHING);
+      // Notifications are read as the notification settings say, Do Not Disturb included, and
+      // those that arrive while the screen is touched are read after the touch.
+      if ((notification != null) && NotificationReader.handle(event, notification, touching, dnd)) {
         return;
       }
-      // Notifications are read as the notification settings say.
-      if ((notification != null) && NotificationReader.handle(event, notification)) {
+      if ((notification != null) && (touching || (dnd && !isCall))) {
+        LogUtils.d(TAG, "Do not announce notification: DND is enabled or the screen is touched");
         return;
       }
       if ((voiceActionDelegate != null)

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Notifications > When to read: the device states in which notifications are read. -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_notification_access"
+      android:title="@string/notification_list_grant_access" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="true"
       android:key="pref_notification_screen_on"
@@ -27,6 +30,13 @@
       android:key="pref_notification_media"
       android:summary="%s"
       android:title="@string/notification_media_title" />
+  <ListPreference
+      android:defaultValue="ALLOWED"
+      android:entries="@array/notification_dnd_entries"
+      android:entryValues="@array/notification_dnd_values"
+      android:key="pref_notification_dnd"
+      android:summary="%s"
+      android:title="@string/notification_dnd_title" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="false"
       android:key="pref_notification_honour_silent"

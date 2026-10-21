@@ -84,6 +84,18 @@ enum class MediaBehavior {
   }
 }
 
+/** Which notifications are read while Do Not Disturb is on. */
+enum class DndMode {
+  NONE,
+  /** Those Do Not Disturb lets through, such as from starred contacts. Needs notification access. */
+  ALLOWED,
+  ALL;
+
+  companion object {
+    fun of(name: String?): DndMode = entries.firstOrNull { it.name == name } ?: ALLOWED
+  }
+}
+
 /** The settings of one app. Null values follow the settings for every app. */
 data class AppSettings(
   val mode: AppMode = AppMode.DEFAULT,
@@ -262,6 +274,7 @@ data class NotificationSettings(
   val honourSilent: Boolean = false,
   val honourVibrate: Boolean = false,
   val media: MediaBehavior = MediaBehavior.READ,
+  val dnd: DndMode = DndMode.ALLOWED,
   val skipInCar: Boolean = false,
   val quietHours: Boolean = false,
   val quietStartMinutes: Int = 22 * 60,
@@ -345,6 +358,7 @@ data class NotificationSettings(
       const val HONOUR_SILENT = "pref_notification_honour_silent"
       const val HONOUR_VIBRATE = "pref_notification_honour_vibrate"
       const val MEDIA = "pref_notification_media"
+      const val DND = "pref_notification_dnd"
       const val SKIP_IN_CAR = "pref_notification_skip_in_car"
       const val QUIET_HOURS = "pref_notification_quiet_hours"
       const val QUIET_START = "pref_notification_quiet_start"
@@ -419,6 +433,7 @@ data class NotificationSettings(
         honourSilent = b(Keys.HONOUR_SILENT, d.honourSilent),
         honourVibrate = b(Keys.HONOUR_VIBRATE, d.honourVibrate),
         media = MediaBehavior.of(prefs.getString(Keys.MEDIA, null)),
+        dnd = DndMode.of(prefs.getString(Keys.DND, null)),
         skipInCar = b(Keys.SKIP_IN_CAR, d.skipInCar),
         quietHours = b(Keys.QUIET_HOURS, d.quietHours),
         quietStartMinutes = i(Keys.QUIET_START, d.quietStartMinutes).coerceIn(0, 24 * 60 - 1),

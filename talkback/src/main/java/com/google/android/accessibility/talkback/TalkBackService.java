@@ -1125,9 +1125,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       return;
     }
     // The quick settings panel is using the system's quick settings for the user, who doesn't need
-    // to hear them open and close.
+    // to hear them open and close. Notifications that arrive meanwhile are still read.
     if (SystemPanelClicker.shouldDrop(event.getPackageName())
-        && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
+        && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END
+        && event.getEventType() != AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED) {
       return;
     }
     if (scriptHost != null) {
@@ -1184,6 +1185,7 @@ public class TalkBackService extends AccessibilityServiceCompat
               Feedback.speech(INVALIDATE_FREQUENT_CONTENT_CHANGE_CACHE));
     } else if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       isTouchInteracting = false;
+      NotificationReader.onTouchEnded();
     } else if (eventType == AccessibilityEvent.TYPE_VIEW_HOVER_ENTER) {
       if (FeatureSupport.supportGestureDetection()) {
         TouchInteractionMonitor touchInteractionMonitor =
