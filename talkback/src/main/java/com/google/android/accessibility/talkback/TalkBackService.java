@@ -282,6 +282,7 @@ import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.gestures.GestureAnalyticsEvent;
 import com.google.android.accessibility.utils.gestures.GestureManifold.TapToTouchExploreAnalyticsEvent;
 import com.google.android.accessibility.utils.gestures.MultiTap.MultiTapAnalyticsEvent;
+import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.input.HeadsUpNotificationEventInterpreter;
 import com.google.android.accessibility.utils.input.NonmodalAlertEventInterpreter;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
@@ -318,6 +319,7 @@ import com.google.android.accessibility.utils.output.ThemeSounds;
 import com.google.android.accessibility.utils.output.ThemeVibrations;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
+import com.google.android.accessibility.utils.traversal.TraversalStrategy;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.android.libraries.accessibility.utils.servicecompat.AccessibilityServiceCompat;
 import com.google.common.collect.ImmutableList;
@@ -815,12 +817,18 @@ public class TalkBackService extends AccessibilityServiceCompat
   private boolean volumeUpKeyPressedInPassThroughWindow = false;
   // Records whether the last keystroke of VolumeDown key occurred in the passthrough window.
   private boolean volumeDownKeyPressedInPassThroughWindow = false;
-  // Records whether the last press of VolumeUp or VolumeDown adjusted the focused slider.
-  private boolean volumeUpKeyAdjustsSlider = false;
-  private boolean volumeDownKeyAdjustsSlider = false;
+  // What the last press of VolumeUp or VolumeDown did instead of changing the volume.
+  private static final int VOLUME_KEY_CHANGES_VOLUME = 0;
+  private static final int VOLUME_KEY_ADJUSTS_SLIDER = 1;
+  private static final int VOLUME_KEY_MOVES_CURSOR = 2;
+  private int volumeUpKeyUse = VOLUME_KEY_CHANGES_VOLUME;
+  private int volumeDownKeyUse = VOLUME_KEY_CHANGES_VOLUME;
 
   /** "Volume keys adjust sliders" setting. */
   private boolean volumeKeysAdjustSliders = false;
+
+  /** "Volume keys move the cursor" setting. */
+  private boolean volumeKeysMoveCursor = false;
 
   private final @NonNull SparseArray<TouchInteractionMonitor> displayIdToTouchInteractionMonitors =
       new SparseArray<>();
@@ -1500,10 +1508,12 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   /**
-   * Adjusts the focused slider with the volume keys, when the setting is on, and returns whether
-   * the key was consumed. Volume keys pressed while touching the screen, with the keyboard
-   * shortcut modifier, or during continuous reading keep adjusting speech volume. The key up that
-   * ends a press which adjusted the slider is consumed too.
+   * Adjusts the focused slider, or moves the cursor a character in the focused text field, with
+   * the volume keys, when the setting is on, and returns whether the key was consumed. Volume up
+   * moves the cursor back and volume down moves it on. Volume keys pressed while touching the
+   * screen, with the keyboard shortcut modifier, or during continuous reading keep adjusting speech
+   * volume. The key up that ends a press which adjusted the slider or moved the cursor is consumed
+   * too.
    */
   private boolean adjustSliderWithVolumeKey(KeyEvent keyEvent, boolean triggerModifierPressed) {
     int keyCode = keyEvent.getKeyCode();
@@ -1512,37 +1522,60 @@ public class TalkBackService extends AccessibilityServiceCompat
       return false;
     }
     if (keyEvent.getAction() != KeyEvent.ACTION_DOWN) {
-      boolean adjusted;
+      int use = isUp ? volumeUpKeyUse : volumeDownKeyUse;
       if (isUp) {
-        adjusted = volumeUpKeyAdjustsSlider;
-        volumeUpKeyAdjustsSlider = false;
+        volumeUpKeyUse = VOLUME_KEY_CHANGES_VOLUME;
       } else {
-        adjusted = volumeDownKeyAdjustsSlider;
-        volumeDownKeyAdjustsSlider = false;
+        volumeDownKeyUse = VOLUME_KEY_CHANGES_VOLUME;
       }
-      return adjusted;
+      return use != VOLUME_KEY_CHANGES_VOLUME;
     }
     // Holding the key repeats the adjustment, even if focus leaves the slider meanwhile.
     if (keyEvent.getRepeatCount() == 0) {
-      boolean adjusts =
-          volumeKeysAdjustSliders
+      int use = VOLUME_KEY_CHANGES_VOLUME;
+      boolean canUse =
+          (volumeKeysAdjustSliders || volumeKeysMoveCursor)
               && isServiceActive()
               && !isTouchInteracting
               && !triggerModifierPressed
               && !isBrailleImeTouchInteracting()
               && !pipeline.getActorState().getContinuousRead().isActive()
               && ringerModeAndScreenMonitor != null
-              && ringerModeAndScreenMonitor.isInteractive()
-              && Role.getRole(accessibilityFocusMonitor.getSupportedAdjustableNode())
-                  == Role.ROLE_SEEK_CONTROL;
+              && ringerModeAndScreenMonitor.isInteractive();
+      if (canUse
+          && volumeKeysAdjustSliders
+          && Role.getRole(accessibilityFocusMonitor.getSupportedAdjustableNode())
+              == Role.ROLE_SEEK_CONTROL) {
+        use = VOLUME_KEY_ADJUSTS_SLIDER;
+      } else if (canUse && volumeKeysMoveCursor) {
+        AccessibilityNodeInfoCompat focus =
+            accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+        if (focus != null && focus.isEditable()) {
+          use = VOLUME_KEY_MOVES_CURSOR;
+        }
+      }
       if (isUp) {
-        volumeUpKeyAdjustsSlider = adjusts;
+        volumeUpKeyUse = use;
       } else {
-        volumeDownKeyAdjustsSlider = adjusts;
+        volumeDownKeyUse = use;
       }
     }
-    if (!(isUp ? volumeUpKeyAdjustsSlider : volumeDownKeyAdjustsSlider)) {
+    int use = isUp ? volumeUpKeyUse : volumeDownKeyUse;
+    if (use == VOLUME_KEY_CHANGES_VOLUME) {
       return false;
+    }
+    if (use == VOLUME_KEY_MOVES_CURSOR) {
+      pipeline
+          .getFeedbackReturner()
+          .returnFeedback(
+              Performance.EVENT_ID_UNTRACKED,
+              Feedback.focusDirection(
+                      isUp
+                          ? TraversalStrategy.SEARCH_FOCUS_BACKWARD
+                          : TraversalStrategy.SEARCH_FOCUS_FORWARD)
+                  .setInputMode(InputModeTracker.INPUT_MODE_KEYBOARD)
+                  .setGranularity(CursorGranularity.CHARACTER));
+      return true;
     }
     pipeline
         .getFeedbackReturner()
@@ -3653,6 +3686,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_volume_keys_adjust_sliders_key,
             R.bool.pref_volume_keys_adjust_sliders_default);
+    volumeKeysMoveCursor =
+        getBooleanPref(
+            R.string.pref_volume_keys_move_cursor_key, R.bool.pref_volume_keys_move_cursor_default);
 
     boolean useAudioFocus =
         getBooleanPref(R.string.pref_use_audio_focus_key, R.bool.pref_use_audio_focus_default);

@@ -38,6 +38,11 @@
       android:summary="@string/summary_pref_volume_keys_adjust_sliders"
       android:title="@string/title_pref_volume_keys_adjust_sliders" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_volume_keys_move_cursor_default"
+      android:key="@string/pref_volume_keys_move_cursor_key"
+      android:summary="@string/summary_pref_volume_keys_move_cursor"
+      android:title="@string/title_pref_volume_keys_move_cursor" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="false"
       android:key="@string/pref_reserve_vibration_watch_gestures_key"
       android:title="@string/title_pref_reserve_vibration_watch_gestures"
