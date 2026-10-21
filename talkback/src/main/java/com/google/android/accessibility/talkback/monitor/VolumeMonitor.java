@@ -26,8 +26,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.os.Message;
+import android.os.SystemClock;
 import android.telephony.TelephonyManager;
 import android.util.SparseIntArray;
+import android.util.SparseLongArray;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.Part;
@@ -84,6 +86,11 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
 
   /** Keep track of adjustments made by this class. */
   private final SparseIntArray selfAdjustments = new SparseIntArray(10);
+
+  /** When SandFly's own volume changes stop being ignored, by stream. */
+  private final SparseLongArray selfAdjustedUntil = new SparseLongArray(10);
+
+  private static final long SELF_ADJUSTMENT_MS = 1000;
 
   private final Context context;
   private final FeedbackReturner pipeline;
@@ -144,6 +151,15 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
     return intentFilter;
   }
 
+  /**
+   * Keeps changes of {@code streamType} for a moment from being announced, because SandFly is
+   * making one and has said the new volume already. Android can report one change more than once,
+   * for the streams that share a volume.
+   */
+  public void ignoreSelfAdjustment(int streamType) {
+    selfAdjustedUntil.put(streamType, SystemClock.uptimeMillis() + SELF_ADJUSTMENT_MS);
+  }
+
   private boolean isSelfAdjusted(int streamType, int volume) {
     if (selfAdjustments.indexOfKey(streamType) < 0) {
       return false;
@@ -164,7 +180,8 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
    * @param prevVolume The previous volume.
    */
   private void internalOnVolumeChanged(int streamType, int volume, int prevVolume) {
-    if (isSelfAdjusted(streamType, volume)) {
+    if (isSelfAdjusted(streamType, volume)
+        || SystemClock.uptimeMillis() < selfAdjustedUntil.get(streamType, 0)) {
       // Ignore self-adjustments.
       return;
     }

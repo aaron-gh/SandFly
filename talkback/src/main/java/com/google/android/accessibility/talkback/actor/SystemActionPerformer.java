@@ -6,6 +6,7 @@ import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction;
 import com.google.android.accessibility.talkback.ActorStateWritable;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListActivity;
+import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
@@ -30,6 +31,12 @@ public final class SystemActionPerformer {
    * of {@link AccessibilityService#GLOBAL_ACTION_NOTIFICATIONS}. Not an Android action.
    */
   public static final int GLOBAL_ACTION_SYSTEM_NOTIFICATIONS = -4;
+
+  /**
+   * Opens the system's quick settings even when SandFly's quick settings panel takes the place of
+   * {@link AccessibilityService#GLOBAL_ACTION_QUICK_SETTINGS}. Not an Android action.
+   */
+  public static final int GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS = -5;
 
   public static final ImmutableList<Integer> EXCLUDED_ACTIONS =
       ImmutableList.copyOf(
@@ -71,6 +78,13 @@ public final class SystemActionPerformer {
     }
     if (id == AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
         && NotificationListActivity.openInsteadOfShade(service)) {
+      return true;
+    }
+    if (id == GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS) {
+      return service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS);
+    }
+    if (id == AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS
+        && QuickSettingsActivity.openInsteadOfSystem(service)) {
       return true;
     }
 

@@ -397,6 +397,11 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS));
+    } else if (action.equals(service.getString(R.string.shortcut_value_system_quick_settings))) {
+      result =
+          pipeline.returnFeedback(
+              eventId,
+              Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS));
     } else if (action.equals(service.getString(R.string.shortcut_value_all_apps))) {
       result =
           pipeline.returnFeedback(

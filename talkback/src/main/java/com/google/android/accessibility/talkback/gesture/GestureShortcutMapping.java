@@ -526,6 +526,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     SYSTEM_NOTIFICATIONS(
         R.string.shortcut_value_system_notifications, R.string.shortcut_system_notifications),
     QUICK_SETTINGS(R.string.shortcut_value_quick_settings, R.string.shortcut_quick_settings),
+    SYSTEM_QUICK_SETTINGS(
+        R.string.shortcut_value_system_quick_settings, R.string.shortcut_system_quick_settings),
     ALL_APPS(R.string.shortcut_value_all_apps, R.string.shortcut_all_apps),
     A11Y_BUTTON(R.string.shortcut_value_a11y_button, R.string.shortcut_a11y_button),
     A11Y_BUTTON_LONG_PRESS(

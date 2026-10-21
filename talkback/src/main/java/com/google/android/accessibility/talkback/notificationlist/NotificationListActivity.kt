@@ -53,6 +53,7 @@ import androidx.lifecycle.Lifecycle
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity.Companion.keepButtonCase
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
@@ -128,8 +129,10 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       }
     quickSettings =
       button(R.string.notification_list_quick_settings) {
-        TalkBackService.getInstance()
-          ?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS)
+        if (!QuickSettingsActivity.openInsteadOfSystem(this)) {
+          TalkBackService.getInstance()
+            ?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS)
+        }
         finish()
       }
     val scroll = ScrollView(this).apply { addView(column) }

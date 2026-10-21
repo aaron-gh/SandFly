@@ -217,6 +217,14 @@ SandFly doesn't say "collapsed" for each notification on the lock screen and in 
 
 TalkBack marked its notices that it was updated, or that gestures changed, as ongoing, so you couldn't swipe them away or dismiss them. In SandFly, you can dismiss these notices, including on the lock screen. The notifications for pausing SandFly and for downloading an on-device model stay ongoing while those continue.
 
+### SandFly's quick settings panel
+
+With **Advanced settings** > **Use SandFly's quick settings** on, the Quick settings action opens a list of SandFly's own instead of the system's quick settings: switches, sliders and buttons in the order you choose. Each control is one item with its name, its state and, where there is one, what it's connected to. Swipe up or down on a volume slider to move it one step. Double tap and hold an item to open its settings. The **System quick settings** gesture action and the panel's button open the system's quick settings.
+
+**Advanced settings** > **Quick settings panel** adds, removes and moves items. **Add control** lists SandFly's controls: Wi-Fi, Bluetooth, mobile data, hotspot, airplane mode, data saver, Do Not Disturb, sound mode, flashlight and its brightness, location, auto-rotate, battery saver, dark theme, Night Light, Extra dim, color inversion, color correction, NFC, microphone and camera access, brightness, adaptive brightness, screen timeout, font size, the volumes, media, media output, next alarm, battery, Settings and the power menu. **Add app tile** lists the tiles that installed apps offer, and **Add system tile** lists the system's own tiles. A system tile that SandFly has a control for, such as Hotspot, is added as that control.
+
+Android only lets the system and the shell change some settings, and only lets the system run tiles. With Shizuku running, SandFly changes the radios, the hotspot, data saver, battery saver, dark theme and the microphone and camera switches with shell commands, runs app tiles with `cmd statusbar click-tile`, and gives itself the permissions it needs for the rest. Without Shizuku, those switches open the system's settings for them. System tiles, and app tiles without Shizuku, are used in the system's quick settings: SandFly opens them, activates the tile and closes them without speaking them, and then says the tile's new state.
+
 ## Sound and vibration
 
 ### Audio output device

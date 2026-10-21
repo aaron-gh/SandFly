@@ -225,6 +225,7 @@ import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMoni
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
+import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicker;
 import com.google.android.accessibility.talkback.scripting.ScriptHost;
 import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -1103,6 +1104,12 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Paused Backtalk drops events, except the end of a touch that started before the pause, so
     // that nothing still thinks a finger is down after resuming. Its feedback is dropped too.
     if (PauseController.isPaused()
+        && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
+      return;
+    }
+    // The quick settings panel is using the system's quick settings for the user, who doesn't need
+    // to hear them open and close.
+    if (SystemPanelClicker.shouldDrop(event.getPackageName())
         && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       return;
     }
@@ -2013,6 +2020,16 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Returns the active TalkBack instance, or {@code null} if not available. */
   public static @Nullable TalkBackService getInstance() {
     return instance;
+  }
+
+  /**
+   * Keeps the volume monitor from announcing a volume change that SandFly made and has spoken
+   * itself, such as in its quick settings panel.
+   */
+  public void ignoreSelfVolumeChange(int streamType) {
+    if (volumeMonitor != null) {
+      volumeMonitor.ignoreSelfAdjustment(streamType);
+    }
   }
 
   /** Initialize {@link FingerprintGestureCallback} for detecting fingerprint gestures. */
