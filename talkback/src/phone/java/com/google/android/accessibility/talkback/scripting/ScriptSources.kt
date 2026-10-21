@@ -51,6 +51,9 @@ enum class SourceKind(val prefs: String, private val extensions: List<String>) {
 
 object ScriptSources {
   private const val KEY_SOURCES = "sources"
+  private const val KEY_OFFICIAL_ADDED = "official_added"
+  /** The scripts that SandFly's developer publishes. */
+  const val OFFICIAL_SCRIPTS = "https://github.com/aaron-gh/sandfly-scripts"
   private const val CONNECT_TIMEOUT_MS = 15_000
   private const val READ_TIMEOUT_MS = 30_000
   private const val MAX_REDIRECTS = 5
@@ -60,16 +63,27 @@ object ScriptSources {
 
   @Synchronized
   fun all(context: Context, kind: SourceKind = SourceKind.SCRIPTS): List<ScriptSource> {
-    val saved =
-      context
-        .getSharedPreferences(kind.prefs, Context.MODE_PRIVATE)
-        .getString(KEY_SOURCES, null) ?: return emptyList()
-    return try {
-      val array = JSONArray(saved)
-      (0 until array.length()).mapNotNull { ScriptSource.parse(array.optString(it)) }
-    } catch (e: JSONException) {
-      emptyList()
+    val prefs = context.getSharedPreferences(kind.prefs, Context.MODE_PRIVATE)
+    val saved = prefs.getString(KEY_SOURCES, null)
+    val sources =
+      try {
+        val array = JSONArray(saved ?: "[]")
+        (0 until array.length()).mapNotNull { ScriptSource.parse(array.optString(it)) }
+      } catch (e: JSONException) {
+        emptyList()
+      }
+    // SandFly's own scripts are listed first once, also for those who added sources before. Once
+    // removed, the source stays removed.
+    if (kind != SourceKind.SCRIPTS || prefs.getBoolean(KEY_OFFICIAL_ADDED, false)) {
+      return sources
     }
+    val official = ScriptSource.parse(OFFICIAL_SCRIPTS) ?: return sources
+    val withOfficial =
+      if (sources.any { it.address.equals(official.address, ignoreCase = true) }) sources
+      else listOf(official) + sources
+    prefs.edit().putBoolean(KEY_OFFICIAL_ADDED, true).apply()
+    save(context, kind, withOfficial)
+    return withOfficial
   }
 
   /** Adds [source] to the end of the list. Returns false if it is already there. */
