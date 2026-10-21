@@ -36,4 +36,23 @@
   <string name="individual_vibration_window_state">窗口变化</string>
   <string name="individual_vibration_typo">拼写错误</string>
   <string name="individual_vibration_notification">通告</string>
+
+
+    <!-- Vibration when a character is typed on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_character">盲文键盘：输入字符</string>
+
+    <!-- Vibration for space, delete, moving the cursor or changing the reading unit on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_space">盲文键盘：空格或删除</string>
+
+    <!-- Vibration for a new line or deleting a word on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_new_line">盲文键盘：换行或删除单词</string>
+
+    <!-- Vibration when fingers are held down on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_hold">盲文键盘：按住手指</string>
+
+    <!-- Vibration for other gestures on the braille keyboard. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_gesture">盲文键盘：其他手势</string>
+
+    <!-- Vibration when deleting on the braille keyboard with nothing left to delete. [CHAR LIMIT=60] -->
+    <string name="individual_vibration_braille_nothing_to_delete">盲文键盘：没有可删除的内容</string>
 </resources>

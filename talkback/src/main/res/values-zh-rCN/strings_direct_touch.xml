@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spoken when direct touch turns on: touches now go straight to the app in front. [CHAR LIMIT=40] -->
+    <string name="direct_touch_on">直接触摸已开启</string>
+    <!-- Spoken when direct touch turns off: touches go back to the screen reader. [CHAR LIMIT=40] -->
+    <string name="direct_touch_off">直接触摸已关闭</string>
+
+    <!-- Label of the quick settings tile that pauses and resumes direct touch. [CHAR LIMIT=20] -->
+    <string name="direct_touch_tile_label">直接触摸</string>
+
+    <!-- Title of the direct touch settings screen. [CHAR LIMIT=40] -->
+    <string name="title_pref_direct_touch">直接触摸</string>
+    <!-- Direct touch settings: master switch title. [CHAR LIMIT=40] -->
+    <string name="pref_direct_touch_master">直接触摸</string>
+    <!-- Direct touch settings: master switch summary. [CHAR LIMIT=NONE] -->
+    <string name="pref_direct_touch_master_summary">把触摸直接传给你在下方选择的应用，并为对话框、文本框、键盘和系统界面收回给 SandFly。</string>
+    <!-- Direct touch settings: switch that makes SandFly speak when direct touch changes. [CHAR LIMIT=60] -->
+    <string name="pref_direct_touch_speech">直接触摸变化时朗读</string>
+    <!-- Direct touch settings: switch that makes the phone vibrate when direct touch changes. [CHAR LIMIT=60] -->
+    <string name="pref_direct_touch_haptics">直接触摸变化时振动</string>
+    <!-- Direct touch settings: saves the settings to a file. [CHAR LIMIT=40] -->
+    <!-- Direct touch settings: loads the settings from a file. [CHAR LIMIT=40] -->
+    <!-- Direct touch settings: heading of the list of apps. [CHAR LIMIT=30] -->
+    <string name="direct_touch_apps_category">应用</string>
+    <!-- Direct touch settings: accessibility action that turns direct typing on for an app. [CHAR LIMIT=40] -->
+    <string name="direct_touch_action_typing_on">打开直接输入</string>
+    <!-- Direct touch settings: accessibility action that turns direct typing off for an app. [CHAR LIMIT=40] -->
+    <string name="direct_touch_action_typing_off">关闭直接输入</string>
+    <!-- Direct touch settings: summary of an app that has direct typing on. [CHAR LIMIT=40] -->
+    <string name="direct_touch_typing_summary_on">直接输入已开启</string>
+    <!-- Direct touch settings: shown after the settings were saved to a file. [CHAR LIMIT=40] -->
+    <!-- Direct touch settings: shown when the settings could not be saved. [CHAR LIMIT=40] -->
+    <!-- Direct touch settings: shown after the settings were loaded from a file. [CHAR LIMIT=40] -->
+    <!-- Direct touch settings: shown when the chosen file is not a direct touch backup. [CHAR LIMIT=40] -->
+</resources>

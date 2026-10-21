@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the screen of sound themes: sets of sounds, vibrations and settings that replace SandFly's own. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_themes">声音主题</string>
+    <!-- Summary of the entry that opens the sound themes screen. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_themes">安装并选择声音和振动套装，用你自己的声音替换单个声音，以及打开控件声音与振动和 3D 音频。</string>
+    <!-- Sound themes: heading above the installed themes. [CHAR LIMIT=50] -->
+    <string name="sound_themes_installed_category">已安装的主题</string>
+    <!-- Sound themes: name of the theme of SandFly's own sounds and vibrations. [CHAR LIMIT=50] -->
+    <string name="sound_theme_backtalk">SandFly</string>
+    <!-- Sound themes: description of the theme of SandFly's own sounds and vibrations. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_backtalk_description">SandFly 自己的声音和振动，以及你自己的任何声音。</string>
+    <!-- Sound themes: said of the theme that is in use. [CHAR LIMIT=50] -->
+    <string name="sound_theme_in_use">正在使用</string>
+    <!-- Sound themes: who made a theme, such as "By Bryan Smart". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_by">作者：<xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <!-- Sound themes: the license of a theme's sounds, such as "License: GPL-2.0". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_license">许可证：<xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <!-- Sound themes: how many sounds a theme has. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_sounds"><item quantity="other">%d 个声音。</item></plurals>
+    <!-- Sound themes: how many vibrations a theme has, after how many sounds. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_vibrations"><item quantity="other">%d 种振动。</item></plurals>
+    <!-- Sound themes: said of a theme that turns control sounds and vibrations on. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_control_sounds_on">会打开控件声音和振动。</string>
+    <!-- Sound themes: said of a theme that turns control sounds and vibrations off. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_control_sounds_off">会关闭控件声音和振动。</string>
+
+    <!-- Sound themes: choice that puts a theme in use. [CHAR LIMIT=50] -->
+    <!-- Sound themes: choice that tells who made a theme and what it has. [CHAR LIMIT=50] -->
+    <string name="sound_theme_about">关于此主题</string>
+    <!-- Sound themes: choice that saves a theme as a theme file. [CHAR LIMIT=50] -->
+    <string name="sound_theme_export">保存为主题文件</string>
+    <!-- Sound themes: choice that removes an installed theme. [CHAR LIMIT=50] -->
+    <string name="sound_theme_remove">移除</string>
+    <!-- Sound themes: question before removing a theme. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_remove_confirm">移除主题 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
+    <!-- Sound themes: button that removes a theme. [CHAR LIMIT=30] -->
+    <string name="sound_theme_remove_button">移除</string>
+    <!-- Sound themes: message after saving a theme file. [CHAR LIMIT=NONE] -->
+    <plurals name="sound_theme_exported"><item quantity="other">已保存主题，含 %d 个声音。</item></plurals>
+    <!-- Sound themes: message when a theme file could not be saved. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_export_failed">SandFly 无法保存主题文件。</string>
+    <!-- Sound themes: message when there is no app to choose or save files with. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_no_picker">此设备上没有可用于选择文件的应用。</string>
+
+    <!-- Sound themes: heading above the settings that each theme has its own of, such as "Settings of Unspoken". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 的设置</string>
+    <!-- Sound themes: entry that opens the sounds of the theme in use. [CHAR LIMIT=50] -->
+    <string name="title_pref_theme_sounds">声音</string>
+    <!-- Sound themes: summary of the entry that opens the sounds of the theme in use. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_theme_sounds">用你自己的声音文件替换此主题中的任意声音。</string>
+
+    <!-- Sound themes: heading above the ways to install a theme. [CHAR LIMIT=50] -->
+    <string name="sound_themes_install_category">安装主题</string>
+    <!-- Sound themes: entry that installs a theme from a file. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_theme_install_file">从文件</string>
+    <!-- Sound themes: summary of the entry that installs a theme from a file. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_theme_install_file">主题文件是 ZIP 文件。你也可以从其他应用用 SandFly 打开或分享它。</string>
+    <!-- Sound themes: entry that installs a theme from a link. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_theme_install_link">从链接</string>
+    <!-- Sound themes: summary of the entry that installs a theme from a link. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_theme_install_link">指向主题文件或含主题的 GitHub 仓库的链接。你也可以从浏览器把链接分享给 SandFly。</string>
+    <!-- Sound themes: explanation in the dialog for installing a theme from a link. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_link_message">输入或粘贴主题文件的链接，或含主题的 GitHub 仓库链接。</string>
+    <!-- Sound themes: hint in the field for the link to a theme. [CHAR LIMIT=50] -->
+    <string name="sound_theme_link_hint">https://</string>
+
+    <!-- Sound themes: name of the screen that installs themes, shown when opening or sharing a file with SandFly. [CHAR LIMIT=40] -->
+    <string name="sound_theme_install_label">安装声音主题</string>
+    <!-- Sound themes: said while a theme file is read or downloaded. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_reading">正在读取声音主题</string>
+    <!-- Sound themes: title of the question before installing a theme, such as "Install Unspoken?". [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_title">安装 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
+    <!-- Sound themes: button that installs a theme and puts it in use. [CHAR LIMIT=30] -->
+    <string name="sound_theme_install_and_use">安装并使用</string>
+    <!-- Sound themes: button that installs a theme without putting it in use. [CHAR LIMIT=30] -->
+    <string name="sound_theme_install">安装</string>
+    <!-- Sound themes: said before installing a theme that replaces one of the same name. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_replaces">这将替换已安装的同名主题。</string>
+    <!-- Sound themes: list of the files of a theme that are left out, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_skipped">已略过：\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <!-- Sound themes: message after installing a theme. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_installed">已安装 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。</string>
+    <!-- Sound themes: message after installing a theme and putting it in use. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_installed_in_use">已安装 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。现正在使用。</string>
+    <!-- Sound themes: message when the installer was opened without a file or link. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_nothing">没有可安装的声音主题。</string>
+    <!-- Sound themes: message when a file is not a sound theme, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_not_a_theme">这不是 SandFly 可用的声音主题：<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>。</string>
+    <!-- Sound themes: message when a theme cannot be read, downloaded or installed, with why. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_failed">SandFly 无法安装该声音主题。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <!-- Sound themes: why a link cannot be used. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_install_https_only">声音主题链接必须以 https 开头。</string>
+
+    <!-- Theme sounds: title of the screen of the sounds of the theme in use, such as "Sounds of Unspoken". [CHAR LIMIT=NONE] -->
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 的声音</string>
+    <!-- Theme sounds: entry that goes back to SandFly's own sounds in the theme in use. [CHAR LIMIT=50] -->
+    <string name="title_pref_theme_sounds_reset">全部使用 SandFly 的声音</string>
+    <!-- Theme sounds: question before removing every sound of the theme in use. [CHAR LIMIT=NONE] -->
+    <string name="theme_sounds_reset_confirm">移除此主题的所有声音并改用 SandFly 自己的？</string>
+    <!-- Theme sounds: button that removes every sound of the theme in use. [CHAR LIMIT=30] -->
+    <string name="theme_sounds_reset_button">移除</string>
+    <!-- Theme sounds: heading above the list of sounds. [CHAR LIMIT=40] -->
+    <string name="theme_sounds_category">声音</string>
+    <!-- Theme sounds: summary of a sound that plays SandFly's own sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_default">SandFly 的声音</string>
+    <!-- Theme sounds: summary of a sound the theme replaces. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_custom">主题声音</string>
+    <!-- Theme sounds: summary of a control sound, which SandFly has no sound for, that the theme has no file for. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_summary_none">无声音。将播放焦点音。</string>
+    <!-- Theme sounds: summary of a braille keyboard typing sound that plays Android's keyboard sound. [CHAR LIMIT=60] -->
+    <string name="theme_sound_summary_android_keyboard">Android 的键盘音</string>
+    <!-- Theme sounds: choice that goes back to Android's keyboard sound for a braille keyboard typing sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_use_android_keyboard">使用 Android 的键盘音</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a character is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_character">盲文键盘：输入字符</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a space is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_space">盲文键盘：空格</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when deleting. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_delete">盲文键盘：删除</string>
+    <!-- Theme sounds: typing sound of the braille keyboard when a new line is typed. [CHAR LIMIT=60] -->
+    <string name="theme_sound_braille_new_line">盲文键盘：换行</string>
+    <!-- Theme sounds: title of the choices for one sound, with the name its file has in a theme, such as "Click (tick)". [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g>（<xliff:g id="name" example="tick">%2$s</xliff:g>）</string>
+    <!-- Theme sounds: choice that opens the file picker to choose a sound file. [CHAR LIMIT=50] -->
+    <string name="theme_sound_choose">选择声音文件</string>
+    <!-- Theme sounds: choice that plays the sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_preview">预览</string>
+    <!-- Theme sounds: choice that goes back to SandFly's own sound. [CHAR LIMIT=50] -->
+    <string name="theme_sound_use_default">使用 SandFly 的声音</string>
+    <!-- Theme sounds: choice that removes the file of a control sound, which SandFly has no sound for. [CHAR LIMIT=50] -->
+    <string name="theme_sound_remove">移除该声音</string>
+    <!-- Theme sounds: message when the chosen file is too large. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_too_large">该文件过大。声音文件最大 5 MB。</string>
+    <!-- Theme sounds: message when the chosen file cannot be played. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_not_audio">SandFly 无法播放该文件。请选择 WAV、OGG、MP3 或 FLAC 声音。</string>
+    <!-- Theme sounds: message when the chosen file cannot be read. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_failed">SandFly 无法读取该文件。</string>
+</resources>

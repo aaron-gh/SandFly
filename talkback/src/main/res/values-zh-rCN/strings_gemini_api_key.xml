@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title of the setting, and of its dialog, for the Gemini API key. [CHAR LIMIT=40] -->
+    <string name="title_pref_gemini_api_key">Gemini API 密钥</string>
+    <!-- Summary of the Gemini API key setting when the user has entered a key. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_set">已设置。描述图像和描述屏幕使用 Gemini</string>
+    <!-- Summary of the Gemini API key setting when the user has not entered a key, but the app was built with one. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_built_in">正在使用本应用内置的密钥</string>
+    <!-- Summary of the Gemini API key setting when there is no key. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_api_key_not_set">未设置。没有密钥时，描述图像只能读取文字，描述屏幕需要端侧 AI</string>
+    <!-- Message in the dialog where the user enters a Gemini API key. [CHAR LIMIT=NONE] -->
+    <string name="gemini_api_key_dialog_message">从 Google AI Studio（aistudio.google.com/apikey）获取免费 API 密钥并粘贴到此处。要移除密钥，请清空该字段并保存。\n\n你描述的图像和屏幕会发送到 Google。在免费套餐下，Google 可将其用于改进其产品。</string>
+    <!-- Hint in the empty field for the Gemini API key. [CHAR LIMIT=30] -->
+    <string name="gemini_api_key_hint">API 密钥</string>
+    <!-- Button that saves the Gemini API key. [CHAR LIMIT=20] -->
+    <string name="gemini_api_key_save">保存</string>
+    <!-- Button that opens Google AI Studio in the browser to get a Gemini API key. [CHAR LIMIT=20] -->
+    <string name="gemini_api_key_get">获取密钥</string>
+    <!-- Link text in the AI consent dialogs, to the terms that cover requests to the Gemini API. -->
+    <string name="gemini_api_terms_link">Gemini API 附加服务条款</string>
+</resources>

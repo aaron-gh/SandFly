@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the settings screen that lists installed scripts. [CHAR LIMIT=40] -->
+    <string name="title_pref_scripts">脚本</string>
+    <!-- Summary of the Scripts settings entry. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_scripts">更改 SandFly 在应用中的工作方式</string>
+    <!-- Action that imports a script file. [CHAR LIMIT=40] -->
+    <string name="script_import">导入脚本</string>
+    <!-- Name of the action in other apps' share and open menus that installs a script in SandFly. [CHAR LIMIT=40] -->
+    <string name="script_install_label">安装 SandFly 脚本</string>
+    <!-- Shown when something was shared to SandFly to install as a script, but it held no file. [CHAR LIMIT=NONE] -->
+    <string name="script_import_nothing">没有可安装的脚本文件。</string>
+    <!-- The reason a shared script couldn't be installed, when its file couldn't be opened. [CHAR LIMIT=NONE] -->
+    <string name="script_import_cannot_open">无法打开该文件。</string>
+    <!-- Shown when a link to a whole GitHub repository was shared to SandFly to install as a script. [CHAR LIMIT=NONE] -->
+    <string name="script_import_repository">此链接指向整个仓库。请打开你需要的脚本，然后分享它的链接。</string>
+    <!-- Summary of the import action. [CHAR LIMIT=NONE] -->
+    <!-- Heading of the list of scripts that run in particular apps. [CHAR LIMIT=40] -->
+    <string name="scripts_category_app">应用脚本</string>
+    <!-- Heading of the list of scripts that run in every app. [CHAR LIMIT=40] -->
+    <string name="scripts_category_global">全局插件</string>
+    <!-- Shown when no scripts are installed. [CHAR LIMIT=NONE] -->
+    <string name="scripts_none">未安装脚本</string>
+    <!-- Switch that turns every script off at once without changing which ones are on. [CHAR LIMIT=40] -->
+    <string name="scripts_all_off">关闭所有脚本</string>
+    <!-- Summary of the switch that turns every script off. [CHAR LIMIT=NONE] -->
+    <string name="scripts_all_off_summary">脚本保持安装并保留各自的开关。“一键开关所有脚本”手势作用相同。</string>
+    <!-- Gesture and keyboard action that turns every script off, or back on. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_toggle_scripts">一键开关所有脚本</string>
+    <!-- Spoken when every script was turned off. [CHAR LIMIT=NONE] -->
+    <string name="scripts_now_off">脚本已关闭</string>
+    <!-- Spoken when scripts were turned back on. [CHAR LIMIT=NONE] -->
+    <string name="scripts_now_on">脚本已开启</string>
+    <!-- Spoken when this device cannot run scripts. [CHAR LIMIT=NONE] -->
+    <string name="scripts_unavailable">此设备不支持脚本</string>
+    <!-- Button that adds the example script that comes with SandFly. [CHAR LIMIT=40] -->
+    <string name="script_add_example">添加示例脚本</string>
+    <!-- Summary of the button that adds the example script. [CHAR LIMIT=NONE] -->
+    <string name="script_add_example_summary">朗读你切换到的每个应用的名称。可作为起步的脚本。</string>
+    <!-- A script is turned on. [CHAR LIMIT=20] -->
+    <string name="script_state_on">开</string>
+    <!-- A script is turned off. [CHAR LIMIT=20] -->
+    <string name="script_state_off">关</string>
+    <!-- Which apps a script runs in. [CHAR LIMIT=NONE] -->
+    <string name="script_runs_in">运行于 <xliff:g id="apps">%1$s</xliff:g></string>
+    <!-- A global plugin runs in every app. [CHAR LIMIT=NONE] -->
+    <string name="script_runs_everywhere">在所有应用中运行</string>
+    <!-- A script's version. [CHAR LIMIT=NONE] -->
+    <string name="script_version">版本 <xliff:g id="version">%1$s</xliff:g></string>
+    <!-- Who wrote a script. [CHAR LIMIT=NONE] -->
+    <string name="script_author">作者：<xliff:g id="author">%1$s</xliff:g></string>
+
+    <!-- Title of the dialog that asks to install a script. [CHAR LIMIT=NONE] -->
+    <string name="script_install_title">安装 <xliff:g id="name">%1$s</xliff:g>？</string>
+    <!-- In the install dialog, before the list of what the script may do. [CHAR LIMIT=NONE] -->
+    <string name="script_install_can">它可以：</string>
+    <!-- In the install dialog, for a script that asks for no permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_install_no_permissions">不需要任何权限。</string>
+    <!-- Button that installs a script. [CHAR LIMIT=20] -->
+    <string name="script_install_button">安装</string>
+    <!-- Title of the dialog that asks to update a script that asks for more permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_update_title">将 <xliff:g id="name">%1$s</xliff:g> 更新到 <xliff:g id="version">%2$s</xliff:g>？</string>
+    <!-- In the update dialog, before the new permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_update_new_permissions">新增权限：</string>
+    <!-- Button that updates a script. [CHAR LIMIT=20] -->
+    <string name="script_update_button">更新</string>
+    <!-- Says which installed script an import replaces. [CHAR LIMIT=NONE] -->
+    <string name="script_update_replaces">这将替换 <xliff:g id="author">%2$s</xliff:g> 的版本 <xliff:g id="version">%1$s</xliff:g>，并保留其数据和设置。</string>
+    <!-- Warns that an import replaces a script by someone else. [CHAR LIMIT=NONE] -->
+    <string name="script_update_other_author">新版本作者为 <xliff:g id="author">%1$s</xliff:g>，与原作者不同。仅在你信任时更新。</string>
+    <!-- Shown after a script is installed. [CHAR LIMIT=NONE] -->
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> 已安装</string>
+    <!-- Shown after a script is updated. [CHAR LIMIT=NONE] -->
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> 已更新到 <xliff:g id="version">%2$s</xliff:g></string>
+    <!-- Shown when a script file cannot be imported. [CHAR LIMIT=NONE] -->
+    <string name="script_import_failed">导入失败。<xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- Marks a permission that gives a script a lot of access. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。仅对可信脚本允许。</string>
+
+    <!-- What the screen permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_screen">读取屏幕</string>
+    <!-- What the actions permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_actions">点击、滚动、输入和移动焦点</string>
+    <!-- What the speech permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_speech">听取并更改 SandFly 的语音</string>
+    <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_passwords">读取密码框</string>
+    <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_input">添加手势、按键、菜单项和阅读控件</string>
+    <!-- What the network permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_network">使用互联网</string>
+    <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_clipboard">读取和更改剪贴板</string>
+    <!-- What the system permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_system">返回、回到主屏幕、打开通知和应用</string>
+    <!-- What the notifications permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_notifications">读取和更改朗读的通知</string>
+    <!-- What the events permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_events">查看每个应用中的所有活动，包括输入内容</string>
+    <!-- What the dialogs permission lets a script do. [CHAR LIMIT=NONE] -->
+    <string name="script_permission_dialogs">在任何应用上层显示对话框</string>
+    <!-- Title of a dialog a script shows, so that it is clear the dialog is the script's and not the app's or the system's. [CHAR LIMIT=NONE] -->
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>：<xliff:g id="title">%2$s</xliff:g></string>
+
+    <!-- Switch that turns a script on. [CHAR LIMIT=40] -->
+    <string name="script_enabled">打开</string>
+    <!-- Heading of a script's permissions. [CHAR LIMIT=40] -->
+    <string name="script_permissions_title">权限</string>
+    <!-- A script has no permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_permissions_none">无</string>
+    <!-- Heading of the settings a script declares, and the entry that opens them. [CHAR LIMIT=40] -->
+    <string name="script_settings_category">设置</string>
+    <!-- Hint of the field that filters the options of a list setting. [CHAR LIMIT=40] -->
+    <string name="script_list_filter">筛选</string>
+    <!-- Shown when a button in a script's settings is pressed while the script is turned off. [CHAR LIMIT=NONE] -->
+    <string name="script_button_off">请先打开脚本</string>
+    <!-- Explains the permission switches on a script's page. [CHAR LIMIT=NONE] -->
+    <string name="script_permissions_summary">关闭某项会停用需要它的部分。</string>
+    <!-- In the install dialog, after the permissions. [CHAR LIMIT=NONE] -->
+    <string name="script_install_permissions_note">你之后可以关闭它们。</string>
+    <!-- Heading of a script's management actions. [CHAR LIMIT=40] -->
+    <string name="script_manage_category">管理</string>
+    <!-- Moves a script earlier in the running order. [CHAR LIMIT=40] -->
+    <string name="script_move_up">更早运行</string>
+    <!-- Moves a script later in the running order. [CHAR LIMIT=40] -->
+    <string name="script_move_down">更晚运行</string>
+    <!-- Explains the running order. [CHAR LIMIT=NONE] -->
+    <string name="script_order_summary">更改同一段语音的脚本的执行顺序。应用脚本先运行。</string>
+    <!-- Opens a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log">日志</string>
+    <!-- Summary of the log entry. [CHAR LIMIT=NONE] -->
+    <string name="script_log_summary">自 SandFly 启动以来的输出和错误</string>
+    <!-- Deletes the data a script stored. [CHAR LIMIT=40] -->
+    <string name="script_clear_storage">清除存储的数据</string>
+    <!-- Shown after a script's data is deleted. [CHAR LIMIT=NONE] -->
+    <string name="script_storage_cleared">已清除存储的数据</string>
+    <!-- Removes a script. [CHAR LIMIT=40] -->
+    <string name="script_remove">移除</string>
+    <!-- Title of the dialog that asks to remove a script. [CHAR LIMIT=NONE] -->
+    <string name="script_remove_title">移除 <xliff:g id="name">%1$s</xliff:g>？</string>
+    <!-- Message of the dialog that asks to remove a script. [CHAR LIMIT=NONE] -->
+    <string name="script_remove_message">将删除其代码、数据和设置。</string>
+    <!-- Shown after a script is removed. [CHAR LIMIT=NONE] -->
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> 已移除</string>
+    <!-- Shown when a script's log is empty. [CHAR LIMIT=NONE] -->
+    <string name="script_log_empty">日志为空</string>
+    <!-- Deletes a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log_clear">清除日志</string>
+    <!-- Copies a script's log. [CHAR LIMIT=40] -->
+    <string name="script_log_copy">复制日志</string>
+    <!-- Shown after a script's log is copied. [CHAR LIMIT=NONE] -->
+    <string name="script_log_copied">日志已复制</string>
+    <!-- One log entry: its time, level, and message. [CHAR LIMIT=NONE] -->
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>，<xliff:g id="level">%2$s</xliff:g></string>
+
+    <!-- Warning for a script that needs a newer SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_api_too_old">需要脚本 API <xliff:g id="needed">%1$d</xliff:g> 或更高版本。此 SandFly 为 <xliff:g id="current">%2$d</xliff:g>，因此部分功能可能无法使用。</string>
+    <!-- Warning for a script that was not tested with this SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_api_untested">仅在脚本 API <xliff:g id="tested">%1$d</xliff:g> 上测试过。此 SandFly 为 <xliff:g id="current">%2$d</xliff:g>，因此可能无法按预期工作。</string>
+    <!-- In the list of scripts, for a script that may not work with this SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_state_incompatible">可能与此 SandFly 不兼容</string>
+    <!-- The script API versions a script was tested with. [CHAR LIMIT=NONE] -->
+    <string name="script_api_range">脚本 API <xliff:g id="min">%1$d</xliff:g> 至 <xliff:g id="tested">%2$d</xliff:g></string>
+    <!-- Heading of the warning on a script's page that it may not work. [CHAR LIMIT=40] -->
+    <string name="script_compatibility_title">兼容性</string>
+    <!-- Button that installs a script that may not work with this SandFly. [CHAR LIMIT=20] -->
+    <string name="script_install_anyway">仍然安装</string>
+    <!-- Button that updates a script that may not work with this SandFly. [CHAR LIMIT=20] -->
+    <string name="script_update_anyway">仍然更新</string>
+    <!-- Opens a script's homepage. [CHAR LIMIT=40] -->
+    <string name="script_homepage">打开主页</string>
+    <!-- Title of the dialog that asks before opening a script's homepage, whose address is the message. [CHAR LIMIT=NONE] -->
+    <string name="script_homepage_confirm_title">打开此地址？</string>
+    <!-- Button that opens a script's homepage. [CHAR LIMIT=20] -->
+    <string name="script_homepage_open">打开</string>
+    <!-- Shown when no app can open a script's homepage. [CHAR LIMIT=NONE] -->
+    <string name="script_homepage_failed">没有应用可以打开 <xliff:g id="address">%1$s</xliff:g></string>
+
+    <!-- Spoken when a script is turned off because it kept failing. [CHAR LIMIT=NONE] -->
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 因反复出错已关闭。请在脚本中查看其日志。</string>
+
+    <!-- Gesture action that describes the focused item for writing scripts. [CHAR LIMIT=40] -->
+    <string name="shortcut_inspect_item">检查焦点项</string>
+    <!-- Spoken when no item has focus to inspect. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_no_item">没有项目获得焦点</string>
+    <!-- Spoken with the details of the focused item, after they are copied. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_copied">已复制。<xliff:g id="details">%1$s</xliff:g></string>
+    <!-- Spoken with the details of a focused item that has no id. [CHAR LIMIT=NONE] -->
+    <string name="script_inspect_no_id">没有 id，因此规则无法为其命名。已复制。<xliff:g id="details">%1$s</xliff:g></string>
+    <!-- Gesture action and menu item that copies the items on screen as JSON, for writing scripts. [CHAR LIMIT=40] -->
+    <string name="shortcut_copy_screen_tree">复制屏幕树</string>
+    <!-- Spoken after the items on screen are copied. [CHAR LIMIT=NONE] -->
+    <string name="script_tree_copied">已复制 <xliff:g id="count">%1$d</xliff:g> 个项目</string>
+    <!-- Spoken when there is no window to copy. [CHAR LIMIT=NONE] -->
+    <string name="script_tree_none">没有可复制的窗口</string>
+    <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
+    <string name="script_tree_clip_label">屏幕树</string>
+    <!-- Summary of the option that shows Copy screen tree in the SandFly menu. [CHAR LIMIT=NONE] -->
+    <string name="summary_copy_screen_tree_menu">把屏幕上的所有项目复制为 JSON，用于编写脚本</string>
+    <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
+    <string name="script_inspect_clip_label">项目详情</string>
+    <!-- Summary of the option that shows Inspect focused item in the SandFly menu. [CHAR LIMIT=NONE] -->
+    <string name="summary_inspect_item_menu">朗读并复制你所在项目的详情，用于编写脚本</string>
+
+    <!-- In a script's keyboard shortcut, the key SandFly's shortcuts are pressed with. [CHAR LIMIT=40] -->
+    <string name="script_keys_backtalk_modifier">SandFly 修饰键</string>
+    <!-- Keys pressed one after the other, such as "SandFly modifier+T, then S". [CHAR LIMIT=NONE] -->
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>，然后 <xliff:g id="second">%2$s</xliff:g></string>
+    <!-- Heading of the gestures, keys, menu items and reading controls a script adds. [CHAR LIMIT=40] -->
+    <string name="script_commands_category">命令</string>
+    <!-- Explains the switches under Commands on a script's page. [CHAR LIMIT=NONE] -->
+    <string name="script_commands_summary">运行中脚本的手势和按键优先于 SandFly 的。关闭某项可保留 SandFly 的。</string>
+    <!-- A gesture that runs a script's command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_gesture">手势：<xliff:g id="gesture">%1$s</xliff:g></string>
+    <!-- Keys that run a script's command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_keys">按键：<xliff:g id="keys">%1$s</xliff:g></string>
+    <!-- A script's command is an item in the SandFly menu. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_menu">SandFly 菜单</string>
+    <!-- A script's command is a reading control. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_control">阅读控件</string>
+    <!-- Summary of a command that has no way to run it. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_none">无</string>
+    <!-- Turns on a gesture, keys, menu item or reading control of a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_turn_on">打开</string>
+    <!-- Turns off a gesture, keys, menu item or reading control of a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_turn_off">关闭</string>
+    <!-- Brings back the gestures and keys a command came with, removed or turned off. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_restore">恢复默认</string>
+    <!-- Shown after a command's default gestures and keys are restored. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_restored">已恢复默认</string>
+    <!-- Action that assigns the next gesture or keys the user performs to a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_perform">执行手势或按键</string>
+    <!-- Summary of the action that assigns the next gesture or keys. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_perform_summary">分配下一个手势，或配合 SandFly 修饰键按下的按键</string>
+    <!-- Message while waiting for the gesture or keys to assign. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_perform_message">请做出手势或按下按键。</string>
+    <!-- Title of the dialog that asks to assign a gesture or keys to a command. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_assign_title">将 <xliff:g id="binding">%1$s</xliff:g> 分配给 <xliff:g id="command">%2$s</xliff:g>？</string>
+    <!-- Button that assigns a gesture or keys to a command. [CHAR LIMIT=20] -->
+    <string name="script_binding_assign">分配</string>
+    <!-- Action that chooses a gesture for a command from a list. [CHAR LIMIT=40] -->
+    <string name="script_binding_choose_gesture">选择手势</string>
+    <!-- Action that types keys for a command. [CHAR LIMIT=40] -->
+    <string name="script_binding_type_keys">输入按键</string>
+    <!-- How to type keys for a command. [CHAR LIMIT=NONE] -->
+    <!-- Shown when typed keys cannot be used. [CHAR LIMIT=NONE] -->
+    <string name="script_binding_bad_keys">无法使用这些按键。<xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- In the install dialog, before the commands a script adds. [CHAR LIMIT=NONE] -->
+    <string name="script_install_adds">它会添加：</string>
+    <!-- One command a script adds, and how it is run, in the install dialog. [CHAR LIMIT=NONE] -->
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>：<xliff:g id="bindings">%2$s</xliff:g></string>
+
+    <!-- Title of the screen, and the entry on the Scripts screen, for the places to find scripts. [CHAR LIMIT=40] -->
+    <string name="script_sources">脚本源</string>
+    <!-- Shown when no script sources have been added. [CHAR LIMIT=NONE] -->
+    <string name="script_sources_none">未添加来源</string>
+    <!-- Action and title of the dialog that adds a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_add">添加来源</string>
+    <!-- Button of the dialog that adds a script source. [CHAR LIMIT=20] -->
+    <string name="script_source_add_button">添加</string>
+    <!-- Hint of the field for the address of a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <!-- Shown when the address entered for a script source is not a repository or folder on a supported service. [CHAR LIMIT=NONE] -->
+    <string name="script_source_invalid">不是 GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上的仓库地址。</string>
+    <!-- Shown when the script source being added is already in the list. [CHAR LIMIT=NONE] -->
+    <string name="script_source_exists">此来源已添加。</string>
+    <!-- Shown while the scripts of a source are loading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_loading">正在加载</string>
+    <!-- Shown when a source has no scripts. [CHAR LIMIT=NONE] -->
+    <string name="script_source_empty">此来源中没有脚本</string>
+    <!-- Shown when the scripts of a source could not be loaded. [CHAR LIMIT=NONE] -->
+    <string name="script_source_failed">无法加载脚本。<xliff:g id="reason">%1$s</xliff:g></string>
+    <!-- Action that loads the scripts of a source again. [CHAR LIMIT=40] -->
+    <string name="script_source_retry">重试</string>
+    <!-- Shown while a script from a source is downloading. [CHAR LIMIT=NONE] -->
+    <string name="script_source_downloading">正在下载 <xliff:g id="name">%1$s</xliff:g></string>
+    <!-- Action and button that remove a script source. [CHAR LIMIT=40] -->
+    <string name="script_source_remove">移除来源</string>
+    <!-- Title of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_title">移除 <xliff:g id="name">%1$s</xliff:g>？</string>
+    <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
+    <string name="script_source_remove_message">从它安装的脚本会保持安装状态。</string>
+</resources>

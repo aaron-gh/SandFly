@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sound themes: switch that gives each kind of control its own sound, from where it is on the screen, and its own vibration, from the sound theme. [CHAR LIMIT=40] -->
+    <string name="title_pref_control_sounds">控件声音与振动</string>
+    <!-- Sound and vibration settings: summary of the control sounds switch. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_control_sounds">为每种控件（如按钮、复选框、编辑框和列表项）赋予主题中各自的专属声音和振动，取代焦点音和振动，就像 Unspoken 为 NVDA 所做的那样。声音来自控件在屏幕上的位置，且 SandFly 不再说出控件的种类。</string>
+    <!-- Sound and vibration settings: switch that keeps saying the kind of control, like "button", when its control sound plays. [CHAR LIMIT=60] -->
+    <string name="title_pref_control_sounds_speak_roles">仍然说出控件种类</string>
+    <!-- Sound and vibration settings: summary of the switch that keeps saying the kind of control when its control sound plays. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_control_sounds_speak_roles">播放控件声音时，仍然说出控件的种类，例如按钮。此项对所有声音主题生效。</string>
+    <!-- Sound and vibration settings: title of the choice of when control sounds play in 3D. [CHAR LIMIT=40] -->
+    <string name="title_pref_control_sounds_3d">3D 音频</string>
+    <!-- Sound and vibration settings: control sounds play in 3D with headphones, and move between the left and right speakers otherwise. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_headphones">戴耳机时</string>
+    <!-- Sound and vibration settings: control sounds always play in 3D. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_always">始终</string>
+    <!-- Sound and vibration settings: control sounds only move between the left and right speakers. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_never">从不，仅左右声道</string>
+
+    <!-- Individual sounds and vibrations: control sound for checkboxes, switches and toggle buttons. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_checkbox">控件声音：复选框</string>
+    <!-- Individual sounds and vibrations: control sound for radio buttons. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_radio_button">控件声音：单选按钮</string>
+    <!-- Individual sounds and vibrations: control sound for edit fields. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_edit_text">控件声音：编辑框</string>
+    <!-- Individual sounds and vibrations: control sound for drop-down lists. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_combo_box">控件声音：下拉列表</string>
+    <!-- Individual sounds and vibrations: control sound for sliders and number pickers. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_slider">控件声音：滑块</string>
+    <!-- Individual sounds and vibrations: control sound for links on web pages. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_link">控件声音：链接</string>
+    <!-- Individual sounds and vibrations: control sound for images. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_image">控件声音：图像</string>
+    <!-- Individual sounds and vibrations: control sound for clocks. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_clock">控件声音：时钟</string>
+    <!-- Individual sounds and vibrations: control sound for tabs. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_tab">控件声音：标签页</string>
+    <!-- Individual sounds and vibrations: control sound for menu items. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_menu_item">控件声音：菜单项</string>
+    <!-- Individual sounds and vibrations: control sound for items in lists. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_list_item">控件声音：列表项</string>
+    <!-- Individual sounds and vibrations: control sound for items in trees on web pages. [CHAR LIMIT=60] -->
+    <string name="individual_sound_control_tree_item">控件声音：树项目</string>
+</resources>

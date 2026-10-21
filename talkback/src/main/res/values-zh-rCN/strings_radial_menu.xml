@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the setting that shows the SandFly menu as a circle instead of a list. [CHAR LIMIT=40] -->
+    <string name="title_pref_radial_menu">圆形菜单</string>
+    <!-- Summary of the setting that shows the SandFly menu as a circle instead of a list. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_radial_menu">在屏幕中央以圆形显示 SandFly 菜单。滑到某项并抬手即可选中。</string>
+
+    <!-- Circle menu: spoken when the finger reaches an item that opens more items. [CHAR LIMIT=NONE] -->
+    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g> 菜单</string>
+    <!-- Circle menu: spoken when the finger is in the middle of the circle or outside it, where lifting closes the menu. [CHAR LIMIT=NONE] -->
+    <string name="radial_menu_cancel">取消</string>
+    <!-- Circle menu: spoken when the menu closes without selecting an item. [CHAR LIMIT=NONE] -->
+    <string name="radial_menu_closed">菜单已关闭</string>
+    <!-- Circle menu: hint spoken when the user has not touched the screen a short time after the menu opens. [CHAR LIMIT=NONE] -->
+    <string name="hint_radial_menu">触摸屏幕中央并朝某项滑动，然后抬手选中。在中央抬手可关闭。</string>
+</resources>

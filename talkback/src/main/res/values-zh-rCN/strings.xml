@@ -102,7 +102,6 @@
   <string name="title_pref_category_manage_focus_indicator">更改焦点指示器</string>
   <string name="title_pref_category_manage_gestures">手势</string>
   <string name="title_pref_manage_labels">自定义标签</string>
-  <string name="title_pref_manage_customize_menus">修改菜单</string>
   <string name="title_pref_category_context_menu">自定义 TalkBack 菜单</string>
   <string name="title_pref_category_selector_menu">自定义朗读控件</string>
   <string name="title_pref_category_navigation_menu">修改导航选项</string>
@@ -365,7 +364,6 @@
   <string name="title_pref_typing_confirmation">偏好的输入方式</string>
   <string name="title_pref_typing_long_tap_duration">输入时“长按”操作的延迟时间</string>
   <string name="title_pref_touch_explore_timeout">输入焦点延迟</string>
-  <string name="message_pref_touch_explore_latency">输入焦点延迟时间越短，TalkBack 在您触摸键盘后进行播报的速度就越快。\n\n选择延迟时间</string>
   <string name="title_pref_touch_focus_timeout">焦点延迟</string>
   <string name="summary_pref_touch_focus_time">
 控制 TalkBack 在焦点移动后多久开始播报。延迟时间越短，TalkBack 的响应速度越快，但可能导致更难执行点按两次和点按三次的操作。\n\n
@@ -1019,7 +1017,6 @@
   <string name="split_tap_everywhere_title">任何位置都能分开点按</string>
   <string name="split_tap_everywhere_text">现在，您可以在任何位置使用分开点按功能来激活项目，即使在键盘之外也没问题。如需使用此功能，请用一根手指探索屏幕，然后在不抬起这根手指的情况下，用另一根手指点按屏幕，即可激活焦点当前所在的内容。</string>
   <string name="keyboard_enhanced_keymap_title">键盘：增强型按键映射</string>
-  <string name="keyboard_enhanced_keymap_text">现在，TalkBack 为实体键盘新增了“增强型按键映射”功能，支持各种新命令和快捷键。此增强功能不仅提供“浏览模式”以便用户更高效地浏览网页，还为依赖实体键盘的 TalkBack 用户简化了导航和互动流程。您可以依次前往%1$s，切换到“增强型按键映射”。\n\n如果您使用盲文显示屏，还可以使用新的浏览模式快捷键直接通过盲文显示屏浏览内容。为了适应此变化，我们更改了一些盲文显示屏快捷键。您可以依次前往%2$s，查看所有盲文显示屏快捷键的列表。</string>
   <string name="keyboard_shortcuts_link">“TalkBack 设置”&gt;“键盘快捷键”</string>
   <string name="keyboard_shortcuts_link_tts">“TalkBack 设置”和“键盘快捷键”</string>
   <string name="braille_display_settings_link">盲文显示屏设置</string>
@@ -1381,7 +1378,7 @@
   <string name="ai_services_update_dialog_message">如需系统朗读图片描述内容，请从 Google Play 下载最新版“%1$s”。\n\n下载完成后，请返回 TalkBack 设置，重新打开“自动图片描述”。</string>
   <string name="ai_services_update_dialog_button_text">前往 Google Play</string>
   <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
+  <string name="astrea_app_name">私有计算服务</string>
   <string name="gemini_error_message">出了点问题。请重试。</string>
   <string name="gemini_block_message">无法处理此图片</string>
   <string name="gemini_network_error">未连接到网络。请检查 Wi-Fi 或移动网络，然后重试。</string>
@@ -1455,4 +1452,769 @@
   <string name="close_string">关闭</string>
   <string name="talkback_label">TalkBack</string>
   <string name="notifictions_in_lock_screen_notification_content">如需在屏幕处于关闭状态时听到通知，请在 TalkBack 详细程度设置中开启“屏幕处于关闭状态时读出通知”</string>
+
+
+    <!--The human-readable name of this service. Do not translate. -->
+
+    <!--
+      Source: Title for the TTS engine selection preference in TalkBack settings.
+      Description: Allows the user to choose which TTS engine TalkBack uses. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_tts_engine">文字转语音引擎</string>
+
+    <!--
+      Source: Title for the preference that opens the Android system text-to-speech settings.
+      Description: Distinguishes the system settings from TalkBack's own speech settings. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_system_tts_settings">系统文字转语音设置</string>
+
+    <!-- Title for the "switch TTS engine" reading control selector item. [CHAR LIMIT=NONE] -->
+    <string name="title_selector_switch_tts_engine">语音引擎</string>
+
+    <!-- Summary for the "switch TTS engine" reading control selector item. [CHAR LIMIT=NONE] -->
+    <string name="summary_selector_switch_tts_engine">在已安装的语音引擎之间切换</string>
+
+    <!-- Title for the reading control that switches between voice profiles. [CHAR LIMIT=NONE] -->
+    <string name="title_selector_voice_profile">语音配置</string>
+
+    <!--
+      Title for the screen of voice profiles: sets of speech settings, each with its own speech
+      engine, language, voice, volume, rate and pitch, that the user can switch between. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_voice_profiles">语音配置</string>
+
+    <!-- Name of the voice profile that uses the text-to-speech settings. It can't be removed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_default">SandFly 默认</string>
+
+    <!--
+      Summary under Voice profiles in the text-to-speech settings, naming the voice profile in use.
+      Shown only while one is, as the other text-to-speech settings then don't change how it sounds.
+      [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_in_use">正在使用：<xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+
+    <!--
+      Said when the user tries to change the spoken language from the reading controls while a
+      voice profile is in use, as all speech then uses the profile's voice. [CHAR LIMIT=NONE]
+    -->
+    <string name="spoken_language_unavailable_with_profile">使用语音配置时口语语言不可用</string>
+
+    <!--
+      Said when the user tries to change the speech engine from the reading controls while a voice
+      profile is in use, as the profile has its own speech engine. [CHAR LIMIT=NONE]
+    -->
+    <string name="speech_engine_unavailable_with_profile">使用语音配置时语音引擎不可用</string>
+
+    <!--
+      Item in the menu of voice profiles for the profile in use, opened from the SandFly menu, a
+      gesture or a keyboard shortcut. [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>，正在使用</string>
+
+    <!-- Said when a shortcut that changes voice profile is used before any profile is added. [CHAR LIMIT=NONE] -->
+    <string name="no_voice_profiles">没有语音配置</string>
+
+    <!-- Gesture and keyboard shortcut action that opens a menu to choose the voice profile in use. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_voice_profiles">选择语音配置</string>
+
+    <!-- Gesture and keyboard shortcut action that changes to the previous voice profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_previous_voice_profile">上一个语音配置</string>
+
+    <!-- Gesture and keyboard shortcut action that changes to the next voice profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_next_voice_profile">下一个语音配置</string>
+
+    <!-- Title for the setting that chooses the voice profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_in_use">正在使用的语音配置</string>
+
+    <!-- Title for the button that adds a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_add_voice_profile">添加语音配置</string>
+
+    <!-- Name given to a new voice profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_new_name">语音配置 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+
+    <!--
+      Error on the name field when the name entered is already another voice profile's, or SandFly
+      default's. [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_name_taken">已有语音配置名为 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+
+    <!-- Title for the setting with a voice profile's name. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_name">名称</string>
+
+    <!-- Title for the setting with a voice profile's language. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_language">语言</string>
+
+    <!-- Title for the setting with a voice profile's voice. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_voice_profile_voice">声音</string>
+
+    <!--
+      Choice of language or voice for a voice profile that uses the speech engine's own default.
+      [CHAR LIMIT=NONE]
+    -->
+    <string name="voice_profile_engine_default">默认</string>
+
+    <!-- Shown for a voice profile's language or voice while the speech engine lists its voices. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_loading">正在加载</string>
+
+    <!-- A voice profile's engine or voice that is no longer installed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>，未安装</string>
+
+    <!-- A voice, with its language, when the list shows voices in every language. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>，<xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
+
+    <!-- Action that moves a voice profile up the list, so it comes sooner in the reading control. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_move_up">上移</string>
+
+    <!-- Action that moves a voice profile down the list. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_move_down">下移</string>
+
+    <!-- Action that renames a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_rename">重命名</string>
+
+    <!-- Said after a voice profile moves up the list, with the profile it is now above. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_moved_above">已移到 <xliff:g id="name" example="Reading">%1$s</xliff:g> 上方</string>
+
+    <!-- Said after a voice profile moves down the list, with the profile it is now below. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_moved_below">已移到 <xliff:g id="name" example="Reading">%1$s</xliff:g> 下方</string>
+
+    <!-- Said after a voice profile is removed. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 已删除</string>
+
+    <!-- Title for the button that removes a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_delete_voice_profile">删除语音配置</string>
+
+    <!-- Asks whether to remove a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_delete_confirm">删除 <xliff:g id="name" example="Reading">%1$s</xliff:g>？</string>
+
+    <!-- Button that removes a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_delete">删除</string>
+
+    <!--
+      Source: Summary shown under the TTS engine preference when no engine is selected (use system default).
+      Description: Indicates TalkBack is using the system default TTS engine. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_pref_tts_engine_default">系统默认</string>
+
+    <!--
+      Source: Title for the speech pitch preference.
+      Description: Controls how high or low TalkBack's voice sounds. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_speech_pitch">语音音调</string>
+
+    <!--
+      Source: Title for the "use accessibility audio stream" toggle.
+      Description: When on, TalkBack speech uses the dedicated accessibility audio stream. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_use_accessibility_stream">使用无障碍音量</string>
+
+    <!--
+      Source: Summary for the "use accessibility audio stream" toggle.
+      Description: Explains that enabling this routes TalkBack speech through the accessibility stream,
+      allowing independent volume control. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_pref_use_accessibility_stream">语音和声音使用无障碍音量，可与媒体音量分开设置。关闭后改用媒体音量。</string>
+
+    <!--
+      Source: Title for the "speak long text in phrases" toggle.
+      Description: When on, SandFly sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_speak_in_phrases">长文本按句子逐句发送</string>
+
+    <!--
+      Source: Summary for the "speak long text in phrases" toggle.
+      Description: Explains what sending long text as phrases does, and why to turn it off. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_pref_speak_in_phrases">适用于停止较慢的语音引擎，例如 Gryphon，这样滑走时能立即停止长文本。许多引擎在分别发送的句子之间停顿更久，如果你的引擎能立即停止，请保持关闭。</string>
+
+    <!-- Title of the notification shown once on phones whose battery saver can stop SandFly, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_title">电池优化可能会停掉 SandFly</string>
+
+    <!-- Text of the notification shown once on phones whose battery saver can stop SandFly. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
+    <string name="battery_optimization_notification_text">在这台手机上，省电模式可能在屏幕关闭后停掉 SandFly，使其保持静默直到重新启动。点按以打开电池优化，选择所有应用，找到 SandFly 并选择不优化。</string>
+
+    <!-- Title of the setting that keeps speech the user did not ask for, such as notifications, quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_speech_while_recording">录音时保持安静</string>
+
+    <!-- Summary of the setting that keeps speech the user did not ask for quiet while another app records with the microphone. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_mute_speech_while_recording">当应用在未连接耳机的情况下录音时，SandFly 只对你的手势、按键和输入作出语音回应，并对通知等内容保持静默，以免被录入。</string>
+
+    <!--
+      Source: Title for the "switch languages" toggle.
+      Description: When on, text that an app marks as another language is spoken in that language. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_switch_languages">自动切换语言</string>
+
+    <!--
+      Source: Title for the "switch dialects" toggle.
+      Description: When on, text marked as another country's form of the voice's language is spoken with that country's voice. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_switch_dialects">自动切换方言</string>
+
+    <!-- Title of the setting that says Back, Home, or Overview when a single tap presses it, with lift to activate on the navigation bar. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speak_nav_bar_buttons">朗读导航栏按钮</string>
+
+    <!-- Summary of the setting that says the navigation bar button a tap pressed. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speak_nav_bar_buttons">在导航栏启用抬起激活时，说出单击所按下的按钮，例如返回或主屏幕。</string>
+
+    <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>，<xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
+
+    <string name="template_battery_level">电量 <xliff:g id="battery_level" example="73">%1$s</xliff:g>%%</string>
+
+    <!-- Spoken instead of template_battery_level when the battery level isn't known. [CHAR LIMIT=NONE] -->
+    <string name="template_battery_level_unknown">电量未知</string>
+
+    <!-- Spoken before the battery level while the device is plugged in to charge. [CHAR LIMIT=NONE] -->
+    <string name="value_charger_connected">充电器已连接</string>
+
+    <!-- Settings for what SandFly says when the screen turns off or on and when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_screen_announcements">屏幕开启和关闭</string>
+
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_screen_announcements">选择屏幕关闭、亮起以及手机解锁时 SandFly 说什么</string>
+
+    <!-- Heading for the settings used when the screen turns off. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_screen_off">屏幕关闭时</string>
+
+    <!-- Heading for the settings used when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_screen_on">屏幕亮起时</string>
+
+    <!-- Heading for the settings used when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_screen_announcements_unlock">手机解锁时</string>
+
+    <!-- Switch to say "Screen off" when the screen turns off. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_say_screen_off">朗读“屏幕关闭”</string>
+
+    <!-- Switch to say "Device unlocked" when the phone is unlocked. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_say_device_unlocked">朗读“设备已解锁”</string>
+
+    <!-- Switch to say the time when the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_announce_time">时间</string>
+
+    <!-- Switch to say the ringer mode. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_announce_ringer_mode">铃声模式</string>
+
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_announce_ringer_mode">铃声设为振动或静音时朗读</string>
+
+    <!-- Settings category for speech, sound, vibration, and the focus indicator. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_feedback">反馈</string>
+
+    <!-- Settings category for keyboards and braille. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_typing_and_braille">输入与盲文</string>
+
+    <!-- Settings category for scripts, custom labels and other apps that speak through SandFly, which change how other apps work with SandFly. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_apps">应用</string>
+
+    <!-- Title of the settings screen for how touches focus and activate items: focus delay, lift to activate, single tap and the like. [CHAR LIMIT=40] -->
+    <string name="title_pref_touch_activation">触摸与激活</string>
+
+    <!-- Title of the settings screen for where focus goes while moving through the screen: wrap around, new windows, tables and browse mode. [CHAR LIMIT=40] -->
+    <string name="title_pref_navigation">导航</string>
+
+    <!-- Settings category for advanced settings, the tutorial, and help. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_more">更多</string>
+
+    <!-- Title of a switch in Advanced Settings on Wear OS watches. Reserves two-finger single and double taps for Samsung's Vibration Watch feature, which tells the time through vibrations. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_reserve_vibration_watch_gestures">为 Vibration Watch 保留手势</string>
+
+    <!-- Summary of the Vibration Watch gesture switch. SandFly stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_reserve_vibration_watch_gestures">停止 SandFly 处理两指单击和双击，以便三星 Vibration Watch 使用它们。请先在手表的无障碍设置中启用 Vibration Watch。</string>
+
+    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to SandFly. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_reserved_for_vibration_watch">已在高级设置中为 Vibration Watch 保留</string>
+
+    <!-- Title of the setting that moves calls to the speaker when the phone is away from the ear. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speakerphone_away_from_ear">离开耳边时用扬声器</string>
+
+    <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speakerphone_away_from_ear">通话期间，当你把手机拿离耳边时切换到扬声器，举回耳边时切回听筒。</string>
+
+    <!-- Summary of that setting when SandFly does not have the permission. %1$s is the adb command that grants it. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speakerphone_needs_permission">需要一项 Android 不授予屏幕阅读器的权限。要授予它，请用 adb 或 Shizuku 运行以下命令，然后返回此屏幕：%1$s</string>
+
+    <!-- Action on a setting that needs a permission granted with adb. Copies the adb command to the clipboard. [CHAR LIMIT=NONE] -->
+    <string name="action_copy_command">复制命令</string>
+
+    <!-- Shown after the adb command was copied to the clipboard. [CHAR LIMIT=NONE] -->
+    <string name="command_copied">命令已复制</string>
+
+    <!-- Title of the setting that lets other apps speak through SandFly. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control">允许其他应用说话</string>
+
+    <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speech_control">你允许的应用可以用你的 SandFly 声音朗读文本。设备锁定时不朗读任何内容。</string>
+
+    <!-- Title of the setting that plays a sound before each thing another app says through SandFly. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speech_control_sound">其他应用说话前播放提示音</string>
+
+    <!-- Heading of the list of apps that asked to speak through SandFly. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_apps_category">应用</string>
+
+    <!-- Shown in that list before any app has asked to speak. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_no_apps">还没有应用请求朗读。</string>
+
+    <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_title">允许 <xliff:g id="app" example="Tasker">%1$s</xliff:g> 通过 SandFly 朗读吗？</string>
+
+    <!-- Text of that notification. [CHAR LIMIT=NONE] -->
+    <string name="speech_control_ask_text">它可以用你的 SandFly 声音朗读文本。你可以在高级设置中更改此项。</string>
+
+    <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
+    <string name="speech_control_allow">允许</string>
+
+    <!-- Button in that notification that stops the app from speaking. [CHAR LIMIT=30] -->
+    <string name="speech_control_deny">不允许</string>
+
+    <!-- Name of the permission that apps ask for to speak through SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_label">通过 SandFly 朗读</string>
+
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_speak_description">允许应用请求用你的 SandFly 声音朗读文本。应用朗读前 SandFly 会先询问你。</string>
+
+    <!-- Name of the permission that an app needs to ask to be a braille display for SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_label">请求成为 SandFly 的盲文显示器</string>
+
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_braille_display_description">允许应用请求成为 SandFly 的盲文显示器。如果你在 SandFly 中允许，它就能读取屏幕上的全部内容并控制你的设备。SandFly 会先询问你。</string>
+
+    <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
+    <string name="title_pref_phonetic_letters_mode">用音标朗读字母</string>
+
+    <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_off">关闭</string>
+
+    <!-- Choice for Speak letters phonetically: the letter, then its word after a pause, as TalkBack does. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_delay">在字母之后，有延迟，如“h，hotel”</string>
+
+    <!-- Choice for Speak letters phonetically: the letter and its word together, with no pause between them. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_after_letter_no_delay">在字母之后，无延迟，如“h hotel”</string>
+
+    <!-- Choice for Speak letters phonetically: the word is said in place of the letter. Translate the example with the word that the phonetic letters for the language use for h. [CHAR LIMIT=NONE] -->
+    <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“hotel”</string>
+
+    <!--
+      Source: Preference for how emoji are spoken. [CHAR LIMIT=45]
+    -->
+    <string name="title_pref_emoji_speech">表情符号</string>
+
+    <!--
+      Source: Emoji preference choice: the speech engine reads emoji itself. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_engine">由语音引擎朗读</string>
+
+    <!--
+      Source: Emoji preference choice: SandFly sends the speech engine each emoji's name. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_names">由 SandFly 朗读</string>
+
+    <!--
+      Source: Emoji preference choice: emoji are left out of speech. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_speech_none">不朗读</string>
+
+    <!--
+      Source: Summary of the Emoji reading control, and of the Emoji item in the list of SandFly menu items. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_selector_menu_emoji">更改表情符号的朗读方式</string>
+
+    <!--
+      Source: Spoken when the Emoji reading control or menu changes how emoji are read, like "Emoji: Read by SandFly". [CHAR LIMIT=NONE]
+    -->
+    <string name="emoji_speech_state">表情符号：<xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
+
+    <!--
+      Source: Preference for saying how many times an emoji repeats, like "3 grinning face", instead of naming it each time. [CHAR LIMIT=45]
+    -->
+    <string name="title_pref_emoji_repeat_count">计数重复的表情符号</string>
+
+    <!--
+      Source: Count repeated emoji choice: each emoji is named every time. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_off">关闭</string>
+
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 2 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_2">2 次及以上</string>
+
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 3 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_3">3 次及以上</string>
+
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 4 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_4">4 次及以上</string>
+
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 5 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_5">5 次及以上</string>
+
+    <!--
+      Source: Count repeated emoji choice: count an emoji that repeats 6 or more times in a row. [CHAR LIMIT=45]
+    -->
+    <string name="emoji_repeat_count_6">6 次及以上</string>
+
+    <!-- Table reading preferences in Verbosity settings -->
+    <string name="pref_table_headers_category_title" tools:ignore="MissingTranslation">表格朗读</string>
+
+    <string name="pref_table_column_headers_title" tools:ignore="MissingTranslation">朗读列标题</string>
+
+    <string name="pref_table_column_headers_entry_after" tools:ignore="MissingTranslation">在单元格数据之后</string>
+
+    <string name="pref_table_column_headers_entry_before" tools:ignore="MissingTranslation">在单元格数据之前</string>
+
+    <string name="pref_table_column_headers_entry_off" tools:ignore="MissingTranslation">不朗读</string>
+
+    <string name="pref_table_speak_row_column_numbers_title" tools:ignore="MissingTranslation">朗读行号和列号</string>
+
+    <string name="pref_table_speak_row_column_numbers_summary" tools:ignore="MissingTranslation">朗读表格单元格的行号和列号</string>
+
+    <!-- Verbosity: switch for speaking the new volume after the user changes it with the volume keys. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speak_volume_changes">朗读音量变化</string>
+
+    <!-- Verbosity: summary of the switch for speaking volume changes. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_speak_volume_changes">按下音量键后朗读新的音量</string>
+
+    <!--
+      Source: Preference for speaking notifications as they arrive.
+      Description: The user can turn this off to stop new notifications from being read aloud. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_pref_speak_notifications">朗读通知</string>
+
+    <!--
+      Source: Summary subtext for the speak notifications setting.
+      Description: Explains that new notifications are read aloud when they arrive. [CHAR LIMIT=NONE]
+    -->
+    <string name="summary_pref_speak_notifications">新通知到达时朗读。来电始终朗读。</string>
+
+    <!-- The text of the SandFly-on banner when no 3-finger tap opens the SandFly menu. [CHAR_LIMIT=NONE]-->
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 已开启。用两根手指按住屏幕 5 秒可关闭。要停止显示此消息，请关闭 SandFly 设置 > 高级设置 > 显示关闭 SandFly 的说明。</string>
+
+    <!-- Announce toggle sound feedback on or off -->
+
+    <!-- Keyboard key combination assignment for increasing speech rate [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for decreasing speech rate [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for increasing speech pitch [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for decreasing speech pitch [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for reset speech settings [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for toggling voice feedback [CHAR LIMIT=80]-->
+
+    <!-- Keyboard key combination assignment for describe image [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for announcing current time and date [CHAR LIMIT=60]-->
+
+    <!-- Keyboard key combination assignment for announcing battery state [CHAR LIMIT=80]-->
+
+    <!-- Keyboard key combination assignment for announcing current title [CHAR LIMIT=80]-->
+
+    <!-- Keyboard key combination assignment for announcing phonetic pronunciation [CHAR LIMIT=80]-->
+
+    <!-- Keyboard key combination assignment for screen overview [CHAR LIMIT=40] -->
+
+    <!-- Keyboard key combination assignment for showing the Learn Mode page [CHAR LIMIT=40] -->
+
+    <!-- Keyboard key combination assignment for cycling the punctuation verbosity [CHAR LIMIT=40]-->
+
+    <!-- Keyboard key combination assignment for toggle selection [CHAR LIMIT=40] -->
+
+    <!-- Keyboard key combination assignment for opening the Tutorial page. [CHAR LIMIT=60] -->
+
+    <!-- Keyboard key combination assignment for toggle braille contracted mode. [CHAR LIMIT=60] -->
+
+    <!-- Keyboard key combination assignment for toggle braille on screen overlay. [CHAR LIMIT=60] -->
+
+    <!--
+      Source: Preference for choosing the audio output device for TalkBack.
+      Description: Title of the audio output device setting. [CHAR LIMIT=35]
+    -->
+    <string name="title_pref_audio_output_device">音频输出设备</string>
+
+    <!--
+      Source: Dialog title when choosing the audio output device.
+      Description: Dialog title for selecting audio output target. [CHAR LIMIT=45]
+    -->
+    <string name="dialog_title_audio_output_device">选择 SandFly 声音的播放位置</string>
+
+    <!--
+      Source: Entry in the audio output device list for using system default.
+      Description: Follows Android system default audio routing. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_default">系统默认</string>
+
+    <!--
+      Source: Entry in the audio output device list for forcing playback to the phone speaker.
+      Description: Plays TalkBack audio through the built-in speaker. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_speaker">手机扬声器</string>
+
+    <!--
+      Source: Entry in the audio output device list for routing to connected Bluetooth or wired device.
+      Description: Plays TalkBack audio through connected Bluetooth or wired devices. [CHAR LIMIT=45]
+    -->
+    <string name="value_audio_output_device_bluetooth_or_wired">已连接的蓝牙设备或有线设备</string>
+
+    <!--
+      Source: Status suffix in the audio output device summary when the chosen device is not currently connected.
+      Description: Status for disconnected device. [CHAR LIMIT=20]
+    -->
+    <string name="value_audio_output_device_disconnected">已断开</string>
+
+    <!--
+      Source: Fallback label for Bluetooth audio device without a name.
+      Description: Fallback name for Bluetooth device. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_bluetooth_default">蓝牙音频设备</string>
+
+    <!--
+      Source: Fallback label for wired headset without a name.
+      Description: Fallback name for wired headset. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_wired_headset">有线耳机</string>
+
+    <!--
+      Source: Fallback label for wired headphones without a name.
+      Description: Fallback name for wired headphones. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_wired_headphones">有线头戴式耳机</string>
+
+    <!--
+      Source: Fallback label for USB headset without a name.
+      Description: Fallback name for USB headset. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_usb_headset">USB 耳机</string>
+
+    <!--
+      Source: Fallback label for USB audio device without a name.
+      Description: Fallback name for USB audio device. [CHAR LIMIT=30]
+    -->
+    <string name="value_audio_output_device_usb_device">USB 音频设备</string>
+
+    <!-- Summary of the setting that turns off animations so that SandFly reads new screens faster. [CHAR LIMIT=NONE] -->
+    <string name="pref_reduce_window_delay_summary">关闭动画后 SandFly 读取新屏幕更快。这会关闭整台手机的动画。</string>
+
+    <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
+    <string name="dialog_message_detailed_ai_description">所选图片会被发送到 Google 的 Gemini API 进行描述。开启端侧 AI 后，改为在本机上描述，不会上传。\n\n使用免费 API 密钥时，Google 可能会保留其收到的内容、用于改进其产品，并安排人员审阅。生成式 AI 属于实验性功能，因此会出错。适用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+
+    <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
+    <string name="dialog_message_detailed_ai_promotion">详细图像描述由生成式 AI 提供支持。所选图片会被发送到 Google 的 Gemini API 进行描述。开启端侧 AI 后，改为在本机上描述，不会上传。\n\n使用免费 API 密钥时，Google 可能会保留其收到的内容、用于改进其产品，并安排人员审阅。生成式 AI 属于实验性功能，因此会出错。你可以随时在 SandFly 设置中关闭详细图像描述。\n\n适用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+
+    <!-- Message for dialog shown when a user wants to enable screen description. [CHAR LIMIT=NONE]  -->
+    <string name="dialog_message_screen_overview_promotion">屏幕截图会被发送到 Google 的 Gemini API 进行描述，这需要几秒钟。开启端侧 AI 后，改为在本机上描述，不会上传。\n\n使用免费 API 密钥时，Google 可能会保留其收到的内容、用于改进其产品，并安排人员审阅。生成式 AI 属于实验性功能，因此会出错。适用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+
+    <!-- Title for the screen search overlay. -->
+
+    <!-- Keyboard key combination assignment for reset speech settings [CHAR LIMIT=40]-->
+
+    <!-- Label for the gesture action that drops the text selected for copying. [CHAR_LIMIT=40] -->
+    <string name="title_clear_selection">清除选择</string>
+
+    <!-- Title for the quick menu containing screen brightness change. [CHAR_LIMIT=40] -->
+    <string name="title_pref_brightness">亮度</string>
+
+    <!-- Summary for the quick menu containing screen brightness change. [CHAR_LIMIT=70] -->
+    <string name="summary_support_change_brightness">提高或降低屏幕亮度，即使屏幕已隐藏</string>
+
+    <!-- Label for the preference that assigns an action to the "three-finger quadruple-tap" gesture. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_3finger_4tap">三指四击</string>
+
+    <!-- Label for the preference that assigns an action to turning two fingers clockwise on the screen, like turning a dial. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_2finger_rotate_clockwise">两指顺时针旋转</string>
+
+    <!-- Label for the preference that assigns an action to turning two fingers counterclockwise on the screen, like turning a dial. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_2finger_rotate_counterclockwise">两指逆时针旋转</string>
+
+    <!-- Typing method where lifting the finger types every key except the key that sends or submits, such as Enter, Done, or Send, which needs a double-tap. [CHAR LIMIT=NONE] -->
+    <string name="value_type_confirmation_lift_to_type_except_action_key">按住手指选择任意键，然后抬起。对 Enter、Done 或 Send 双击。</string>
+
+    <!-- Title for the maximum time between taps of a one-finger multi-tap gesture. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_multi_tap_timeout">单指点击间隔时间</string>
+
+    <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
+    <string name="value_multi_tap_timeout_100ms">0.1 秒</string>
+
+    <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
+    <string name="value_multi_tap_timeout_150ms">0.15 秒</string>
+
+    <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
+    <string name="value_multi_tap_timeout_200ms">0.2 秒</string>
+
+    <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
+    <string name="value_multi_tap_timeout_250ms">0.25 秒（默认）</string>
+
+    <!-- Title for how far 2 fingers must turn on the screen to move the rotor by one reading control. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_rotor_step_degrees">转子每步角度</string>
+
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_15">15 度</string>
+
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_20">20 度</string>
+
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_30">30 度（默认）</string>
+
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_45">45 度</string>
+
+    <!-- Label for rotor turn per step. [CHAR LIMIT=NONE]-->
+    <string name="value_rotor_step_60">60 度</string>
+
+    <!-- Reduce delays: switch that plays sounds and speech through the fastest audio path. [CHAR LIMIT=50] -->
+    <string name="title_pref_low_latency_audio">低延迟音频</string>
+
+    <!-- Reduce delays: summary of the low-latency audio switch. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_low_latency_audio">通过手机最快的音频通路播放 SandFly 的声音和语音，让你更快听到。如果语音或声音出现断裂或异常，请关闭此选项。</string>
+
+    <!-- Label for the default focus delay, 0.2 seconds. [CHAR LIMIT=NONE]-->
+    <string name="value_focus_delay_200ms_default">0.2 秒（默认）</string>
+
+    <!-- Label for a focus delay of 0.3 seconds, which isn't the default. [CHAR LIMIT=NONE]-->
+    <string name="value_focus_delay_300ms">0.3 秒</string>
+
+    <!-- Title of the setting that activates the item under the finger when the finger is lifted. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_lift_to_activate">抬起激活</string>
+
+    <!-- Summary of the lift to activate setting in the reading controls list. [CHAR LIMIT=NONE]-->
+    <string name="summary_support_change_lift_to_activate">更改抬起手指时激活项目的范围</string>
+
+    <!-- Lift to activate is off. [CHAR LIMIT=NONE]-->
+    <string name="value_lift_to_activate_disabled">禁用</string>
+
+    <!-- Lift to activate works only on the system navigation bar buttons. [CHAR LIMIT=NONE]-->
+    <string name="value_lift_to_activate_navigation_bar">仅导航栏</string>
+
+    <!-- Lift to activate works anywhere on the screen. [CHAR LIMIT=NONE]-->
+    <string name="value_lift_to_activate_entire_screen">整个屏幕</string>
+
+    <!-- Spoken when the lift to activate setting changes. [CHAR LIMIT=NONE]-->
+    <string name="template_lift_to_activate_changed">抬起激活：<xliff:g id="mode">%1$s</xliff:g></string>
+
+    <!-- Title of the setting that makes moving past the last item on the screen go to the first item, and past the first go to the last. [CHAR LIMIT=NONE]-->
+    <string name="title_pref_wrap_around">循环</string>
+
+    <!-- Summary of the wrap around setting. [CHAR LIMIT=NONE]-->
+    <string name="summary_pref_wrap_around">滑过最后一项回到第一项，滑过第一项到末项。关闭时改为在末尾播放提示音。</string>
+
+    <!-- Title of the switch that moves accessibility focus into a window when it opens or comes back, such as when an app opens or you go back. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_focus_new_windows">把焦点移到新窗口</string>
+
+    <!-- Title of the switch that makes the volume keys adjust the focused slider instead of the volume. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_volume_keys_adjust_sliders">音量键调节滑块</string>
+
+    <!-- Summary of the switch that makes the volume keys adjust the focused slider instead of the volume. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_volume_keys_adjust_sliders">滑块获得焦点时，音量键改为改变其值而非音量</string>
+
+    <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
+    <string name="summary_support_wrap_around">打开或关闭从末项回到首项的循环</string>
+
+    <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
+    <string name="wrap_around_on">循环已开启</string>
+
+    <!-- Spoken when wrap around is turned off. [CHAR LIMIT=NONE]-->
+    <string name="wrap_around_off">循环已关闭</string>
+
+    <!-- Title of the reading control for the braille keyboard setting that takes a tablet or unfolded phone held up to be held with the screen facing away from the user. When off, it is taken to face the user and uses the tabletop layout. [CHAR LIMIT=NONE]-->
+    <string name="title_selector_tablet_held_up_faces_away">平板举起时背离用户</string>
+
+    <!-- Summary of the tablet held up faces away setting in the reading controls list. [CHAR LIMIT=NONE]-->
+    <string name="summary_support_tablet_held_up_faces_away">适用于平板或展开的折叠屏上的盲文键盘</string>
+
+    <!-- Spoken when the tablet held up faces away setting is turned on. [CHAR LIMIT=NONE]-->
+    <string name="tablet_held_up_faces_away_on">平板举起时背离用户：开</string>
+
+    <!-- Spoken when the tablet held up faces away setting is turned off. [CHAR LIMIT=NONE]-->
+    <string name="tablet_held_up_faces_away_off">平板举起时背离用户：关</string>
+
+    <!-- Title of the setting for whether typing a character on a physical keyboard stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_interrupt_typing">打字时打断语音</string>
+
+    <!-- Option of "Interrupt speech when typing": every typed character stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_always">始终</string>
+
+    <!-- Option of "Interrupt speech when typing": only characters typed in an edit field stop speech. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_edit_fields">在编辑框中</string>
+
+    <!-- Option of "Interrupt speech when typing": typed characters stop speech only when keyboard echo speaks them. [CHAR_LIMIT=NONE] -->
+    <string name="pref_interrupt_typing_entry_keyboard_echo">在键盘回显时</string>
+
+    <!-- Title of the setting for whether Enter on a physical keyboard stops speech. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_interrupt_enter">按 Enter 时打断语音</string>
+
+    <!-- Label for preference specifying that SandFly should describe elements in order: name, state, type. -->
+    <string name="pref_node_desc_order_entry_name_state_role_pos">名称、状态、类型</string>
+
+    <!-- Label for preference specifying that SandFly should describe elements in order: type, state, name. -->
+    <string name="pref_node_desc_order_entry_role_state_name_pos">类型、状态、名称</string>
+
+    <!-- Label for preference specifying that SandFly should describe elements in order: state, type, name. -->
+    <string name="pref_node_desc_order_entry_state_role_name_pos">状态、类型、名称</string>
+
+    <!-- Order of item details settings: the item's name, such as the text of a button. [CHAR LIMIT=30] -->
+    <string name="item_detail_name">名称</string>
+
+    <!-- Order of item details settings: the item's type, such as "button" or "checkbox". [CHAR LIMIT=30] -->
+    <string name="item_detail_type">类型</string>
+
+    <!-- Order of item details settings: the item's state, such as "checked". [CHAR LIMIT=30] -->
+    <string name="item_detail_state">状态</string>
+
+    <!-- Settings lists that can be reordered: accessibility action that moves an item earlier. [CHAR LIMIT=30] -->
+    <string name="action_move_up">上移</string>
+
+    <!-- Settings lists that can be reordered: accessibility action that moves an item later. [CHAR LIMIT=30] -->
+    <string name="action_move_down">下移</string>
+
+    <!-- Settings lists that can be reordered: spoken after an item moves. [CHAR LIMIT=NONE] -->
+    <string name="template_list_position">第 <xliff:g id="position" example="2">%1$d</xliff:g> 项，共 <xliff:g id="count" example="3">%2$d</xliff:g> 项</string>
+
+    <!-- Order of item details settings: spoken when the user starts dragging a detail. The position is template_list_position. [CHAR LIMIT=NONE] -->
+    <string name="template_item_details_order_picked_up">已拿起 <xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+
+    <!-- Order of item details settings: spoken when the user lets go of a dragged detail. The position is template_list_position. [CHAR LIMIT=NONE] -->
+    <string name="template_item_details_order_dropped">已放下 <xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+
+    <!-- Order of item details settings: text below the list that explains how to reorder it. [CHAR LIMIT=NONE] -->
+    <string name="item_details_order_footer">SandFly 按此顺序朗读项目的细节。要更改顺序，请触摸并按住某一项，然后上下拖动。开启 SandFly 时，双击并按住再拖动。也可以使用上移和下移动作。</string>
+
+    <!-- Title of the switch that speaks a list item a swipe moves to before the list has scrolled it into view. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_speak_items_before_scroll">在滚动进视野前就朗读项目</string>
+
+    <!-- Title of the switch that lets the first item focused in a new window interrupt the window name, instead of waiting for it to finish. [CHAR LIMIT=NONE] -->
+
+    <!-- Announces speech pitch increases. This is spoken to the user. [CHAR_LIMIT=100] -->
+
+    <!-- Announces speech pitch decreases. This is spoken to the user. [CHAR_LIMIT=100] -->
+
+    <!-- The title of talkback tutorial. [CHAR_LIMIT=NONE] -->
+
+    <!-- The content of typo correction edit box typos example. [CHAR_LIMIT=NONE]-->
+
+    <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_api_key">Gemini 不接受该 API 密钥。请在自动描述设置中检查密钥。</string>
+
+    <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_quota">你的 Gemini API 密钥用量已达上限。请稍后再试。</string>
+
+    <!-- Gemini's servers are overloaded or had an internal error. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_busy">Gemini 当前正忙。请稍后再试。</string>
+
+    <!-- Gemini did not answer in time. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_timeout">Gemini 回答超时。请重试。</string>
+
+    <!-- Gemini answered a request with an HTTP error that has no explanation. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_with_code">Gemini 无法回答，错误 <xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
+
+    <!-- Gemini answered a request with an HTTP error and Google's explanation, which is in English. [CHAR_LIMIT=NONE]-->
+    <string name="gemini_error_with_details">Gemini 无法回答，错误 <xliff:g id="http_status" example="400">%1$d</xliff:g>：<xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+
+    <!-- The result of the detailed image description when Gemini failed, with the reason it failed. [CHAR_LIMIT=NONE]-->
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>。无法获取更详细的图像描述：<xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
 </resources>

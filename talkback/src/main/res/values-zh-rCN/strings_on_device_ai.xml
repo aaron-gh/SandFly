@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title of the settings screen for running AI on the phone. [CHAR LIMIT=40] -->
+    <string name="title_pref_on_device_ai">端侧 AI</string>
+    <!-- Summary of the on-device AI entry in the main settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_on_device_ai">用本手机上的模型描述图像和屏幕，无需 API 密钥</string>
+
+    <!-- Switch that turns on-device AI on. [CHAR LIMIT=40] -->
+    <string name="pref_on_device_ai_enable">使用端侧 AI</string>
+    <!-- Summary of the switch when it can be turned on. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_enable_summary">图像和截图在本机上描述，绝不会发送到 Google。比云端慢，耗电更多。</string>
+    <!-- Summary of the switch when no model is installed yet. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_enable_needs_model">请先下载或导入模型。</string>
+    <!-- Summary of the switch when the phone has a 32-bit processor. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_unsupported_cpu">不可用。此手机没有 64 位 ARM 处理器。</string>
+    <!-- Summary of the switch when the phone has too little memory. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_not_enough_ram">此模型不可用。此手机内存不足。</string>
+
+    <!-- Entry that opens the model picker. [CHAR LIMIT=40] -->
+    <string name="pref_on_device_ai_model">模型</string>
+    <!-- Summary of the model entry. %1$s is the model name, %2$s its download size. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_model_summary">%1$s，%2$s</string>
+    <!-- One model in the picker. %1$s is the name, %2$s the size, %3$s tags like " (experimental)", %4$s a short note, %5$s the memory it needs. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_model_entry">%1$s，%2$s%3$s。%4$s %5$s</string>
+    <!-- Tag for a model that is already on the phone. [CHAR LIMIT=20] -->
+    <string name="on_device_ai_tag_downloaded">已下载</string>
+    <!-- Tag for a model that has not been tried much. [CHAR LIMIT=20] -->
+    <string name="on_device_ai_tag_experimental">实验性</string>
+    <!-- How much memory a model needs. %1$d is gigabytes. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_tag_needs_memory">需要约 %1$d GB 内存。</string>
+    <!-- Shown for a model this phone cannot run. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_tag_not_enough_memory">此手机内存不足。</string>
+    <!-- Title of the model picker dialog. [CHAR LIMIT=40] -->
+    <string name="on_device_ai_choose_model">选择模型</string>
+    <!-- Shown when the user picks a model that the phone cannot run. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_model_too_big">此手机内存不足以运行该模型。</string>
+
+    <!-- Entry that downloads the model. %1$s is the size, like "2.6 GB". [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_download">下载模型（%1$s）</string>
+    <!-- Summary of the download entry before a download. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_download_summary">从 Hugging Face 下载一次。此后不会通过网络发送任何内容。</string>
+    <!-- Entry shown while downloading. %1$d is the percent. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_downloading">正在下载，%1$d%%</string>
+    <!-- Summary while downloading. %1$s is how much is done, like "880 MB of 2.6 GB". [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_downloading_summary">%1$s。点按可停止。再次开始时会从此处继续。</string>
+    <!-- How much of the download is done. %1$s is the downloaded size, %2$s the full size. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_progress_sizes">%1$s，共 %2$s</string>
+    <!-- Progress with the time left. %1$s is the sizes text, %2$s the time left like "4:32". [CHAR LIMIT=80] -->
+    <string name="on_device_ai_progress_with_time">%1$s，剩余 %2$s</string>
+    <!-- Spoken at each quarter of the download. %1$d is the percent. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_announce_progress">正在下载，%1$d%%</string>
+    <!-- Spoken when the download finishes. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_announce_done">模型已下载</string>
+
+    <!-- Notification channel name for the model download. [CHAR LIMIT=40] -->
+    <string name="on_device_ai_notification_channel">端侧 AI 下载</string>
+    <!-- Notification title while downloading. %1$d is the percent. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_notification_downloading">正在下载模型，%1$d%%</string>
+    <!-- Notification text when the download finished. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_notification_done">模型已下载。请在设置中打开端侧 AI。</string>
+    <!-- Notification text when the download failed. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_notification_failed">下载失败。请打开设置重试。</string>
+    <!-- Notification text when Android paused the download after several hours in the background. The downloaded part is kept. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_notification_paused">Android 已暂停下载。请打开设置继续。</string>
+    <!-- Entry shown while a picked file is being copied in. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_importing">正在检查模型文件</string>
+    <!-- Summary when a model is installed. [CHAR LIMIT=NONE] -->
+    <!-- Entry that opens the screen for deleting downloaded models. [CHAR LIMIT=40] -->
+    <string name="pref_on_device_ai_manage">管理模型</string>
+    <!-- Summary of Manage models when nothing is downloaded. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_manage_none">未下载模型</string>
+    <!-- Number of models downloaded. [CHAR LIMIT=30] -->
+    <plurals name="on_device_ai_models_downloaded"><item quantity="other">已下载 %1$d 个模型</item></plurals>
+    <!-- Title of the Manage models screen. [CHAR LIMIT=40] -->
+    <string name="title_pref_manage_models">管理模型</string>
+    <!-- Line on the Manage models screen with the total storage used. %1$s is like "3.4 GB". [CHAR LIMIT=NONE] -->
+    <string name="manage_models_storage_used">模型已占用 %1$s 存储空间。</string>
+    <!-- Shown on the Manage models screen when nothing is downloaded. [CHAR LIMIT=NONE] -->
+    <string name="manage_models_empty">未下载任何模型。</string>
+    <!-- Title of a download that was started but not finished. %1$s is the model name. [CHAR LIMIT=60] -->
+    <string name="manage_models_unfinished">%1$s，下载未完成</string>
+    <!-- Title of the confirmation to delete a model. %1$s is the model name. [CHAR LIMIT=60] -->
+    <string name="manage_models_delete_title">删除 %1$s？</string>
+    <!-- Message of that confirmation. %1$s is the storage that is freed. [CHAR LIMIT=NONE] -->
+    <string name="manage_models_delete_message">这将释放 %1$s。你之后可以重新下载。</string>
+    <!-- Button that deletes the model. [CHAR LIMIT=20] -->
+    <string name="manage_models_delete">删除</string>
+    <!-- Shown after a model is deleted. %1$s is the model name. [CHAR LIMIT=60] -->
+    <string name="manage_models_deleted">%1$s 已删除</string>
+
+    <!-- Entry that imports a model file from storage. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_import">使用存储中的模型文件</string>
+    <!-- Summary of the import entry. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_import_summary">选择你已下载的 Gemma 4 litertlm 文件。</string>
+    <!-- Confirmation that a model file was installed. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_import_done">模型已安装</string>
+    <!-- Message when the picked file is not a known model. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_import_failed">该文件不是受支持的 Gemma 4 模型文件。</string>
+
+    <!-- Entry that sets how long to wait for an answer. [CHAR LIMIT=40] -->
+    <string name="pref_on_device_ai_timeout">回答时间上限</string>
+    <!-- Summary of the time limit entry. %1$s is the current limit, like "3 minutes". [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_timeout_summary">%1$s。超过此时长后 SandFly 停止等待。描述屏幕比描述图像耗时更久。</string>
+    <!-- Title of the time limit dialog. [CHAR LIMIT=40] -->
+    <string name="on_device_ai_choose_timeout">回答时间上限</string>
+    <!-- A time limit in minutes. [CHAR LIMIT=20] -->
+    <plurals name="on_device_ai_timeout_minutes"><item quantity="other">%1$d 分钟</item></plurals>
+
+    <!-- Switch that makes describe screen ask for less detail so it answers sooner. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_short_prompts">更简短的屏幕描述</string>
+    <!-- Summary of that switch. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_short_prompts_summary">描述屏幕时要求更少的细节，因此回答更快。关闭可获得更完整的描述。</string>
+
+    <!-- Switch that runs the model on the GPU. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_gpu">使用 GPU</string>
+    <!-- Summary of the GPU switch. [CHAR LIMIT=NONE] -->
+    <string name="pref_on_device_ai_gpu_summary">可能更快且占用更少内存。如果回答失败，请关闭此项。</string>
+
+    <!-- Download failed: no network. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_network">下载已停止。请检查网络连接并重试。将从中断处继续。</string>
+    <!-- Download failed: the server refused. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_http">下载服务器不接受该请求。请稍后重试，或改为导入文件。</string>
+    <!-- Download failed: the file was wrong. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_corrupt">该文件与预期模型不符，已删除。请重试。</string>
+    <!-- Download failed: could not write the file. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_storage">无法保存文件。</string>
+    <!-- Download failed: not enough free storage. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_low_space">可用存储空间不足以存放该模型。</string>
+    <!-- Download paused: Android stopped it after several hours in the background. The downloaded part is kept. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_error_time_limit">后台下载数小时后 Android 暂停了下载。点按可从中断处继续。</string>
+
+    <!-- Title of the dialog that asks before downloading on mobile data. [CHAR LIMIT=60] -->
+    <string name="on_device_ai_metered_title">使用移动数据下载？</string>
+    <!-- Message of that dialog. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_metered_message">模型有数 GB 大小。使用 Wi-Fi 更好。</string>
+    <!-- Button to download anyway. [CHAR LIMIT=20] -->
+    <string name="on_device_ai_metered_download">下载</string>
+    <!-- Button to cancel. [CHAR LIMIT=20] -->
+    <string name="on_device_ai_cancel">取消</string>
+    <!-- Developer setting that lifts the memory limits of on-device AI. [CHAR LIMIT=60] -->
+    <string name="title_pref_on_device_ai_ignore_memory_limits">忽略端侧 AI 内存限制</string>
+    <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_on_device_ai_ignore_memory_limits">允许选择内存需求超过此手机容量的模型，并且加载时不检查可用内存，用于测试 Android 终止它时会发生什么。</string>
+    <!-- Spoken when there is not enough free memory to load the model. %1$s is the model name. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_not_enough_memory">可用内存不足以运行 %1$s。请关闭一些应用，或在端侧 AI 设置中选择更小的模型。</string>
+    <!-- Spoken when Android stopped the model while it was working, most likely for lack of memory. %1$s is the model name. [CHAR LIMIT=NONE] -->
+    <string name="on_device_ai_stopped">%1$s 已停止，可能是手机内存耗尽。请在端侧 AI 设置中选择更小的模型。</string>
+</resources>

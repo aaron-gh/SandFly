@@ -150,4 +150,11 @@
   <string name="bk_gesture_next_suggestion">听下一条建议</string>
   <string name="bk_gesture_confirm_spelling_suggestion">确认接受建议</string>
   <string name="bk_gesture_undo_spelling_suggestion">撤消接受建议</string>
+
+
+    <!-- Language list preference item for the Mongolian braille language. [CHAR_LIMIT=40] -->
+    <string name="code_user_facing_name_mongolian">蒙古语</string>
+
+    <!-- Braille keyboard gesture that keeps the dots facing the way they are now, or lets them follow how the device is held again. [CHAR_LIMIT=50] -->
+    <string name="bk_gesture_toggle_orientation_lock">锁定或解锁方向</string>
 </resources>

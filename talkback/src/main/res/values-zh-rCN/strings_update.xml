@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the setting that checks GitHub for a newer development build of SandFly. [CHAR LIMIT=40] -->
+    <string name="title_pref_check_for_updates">检查更新</string>
+    <!-- Summary of the check for updates setting, with the build number of the running app. [CHAR LIMIT=NONE] -->
+    <!-- Title of the switch that turns daily update checks on or off. [CHAR LIMIT=40] -->
+    <string name="title_pref_auto_update_check">自动检查更新</string>
+    <!-- Summary of the automatic update check switch. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_auto_update_check">每天检查一次，有新构建时显示通知</string>
+
+    <!-- Title of the notification that says a new build is available. [CHAR LIMIT=NONE] -->
+    <string name="update_notification_title">有可用的 SandFly 更新</string>
+    <!-- Text of the update notification when it has no list of changes. [CHAR LIMIT=NONE] -->
+    <string name="update_notification_text">构建 <xliff:g id="build" example="97">%1$d</xliff:g>。点按以安装。</string>
+    <!-- Title of the dialog that offers to install a new build. [CHAR LIMIT=NONE] -->
+    <string name="update_dialog_title">SandFly 构建 <xliff:g id="build" example="97">%1$d</xliff:g> 可用</string>
+    <!-- Button in the update dialog that downloads and installs the new build. [CHAR LIMIT=20] -->
+    <string name="update_dialog_install">安装</string>
+
+    <!-- Toast shown when a manual update check starts. [CHAR LIMIT=NONE] -->
+    <string name="update_checking">正在检查更新</string>
+    <!-- Toast shown when a manual update check finds no newer build. [CHAR LIMIT=NONE] -->
+    <string name="update_up_to_date">SandFly 已是最新</string>
+    <!-- Toast shown when an update check fails. [CHAR LIMIT=NONE] -->
+    <string name="update_check_failed">无法检查更新</string>
+    <!-- Toast shown when the update download starts. [CHAR LIMIT=NONE] -->
+    <string name="update_downloading">正在下载更新</string>
+    <!-- Toast shown when the update cannot be downloaded or installed. [CHAR LIMIT=NONE] -->
+    <string name="update_install_failed">无法安装更新</string>
+    <!-- Toast shown when the user cancels the install. [CHAR LIMIT=NONE] -->
+    <string name="update_install_canceled">更新已取消</string>
+    <!-- Toast shown with the settings screen where the user allows SandFly to install apps. [CHAR LIMIT=NONE] -->
+    <string name="update_allow_install">请允许 SandFly 安装应用，然后重试更新</string>
+</resources>

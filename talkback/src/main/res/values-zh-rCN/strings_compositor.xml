@@ -195,4 +195,23 @@
   <string name="drag_started">已开始拖动</string>
   <string name="drag_dropped">已放下拖动的项目</string>
   <string name="drag_cancelled">已取消拖动</string>
+
+
+    <!--
+    Source: String for notifying the user the screen brightness is changed.
+    Description: This is spoken to the user. [CHAR_LIMIT=NONE]
+  -->
+    <string name="template_brightness_changed">亮度 <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+
+    <!--
+    Source: String for notifying the user that TalkBack needs permission to change brightness.
+    Description: This is spoken to the user. [CHAR_LIMIT=NONE]
+  -->
+    <string name="brightness_needs_permission">请允许修改系统设置以更改亮度。</string>
+
+    <!--
+    Source: String for notifying the user that adaptive brightness blocks manual brightness changes.
+    Description: This is spoken to the user. [CHAR_LIMIT=NONE]
+  -->
+    <string name="brightness_adaptive_on">请关闭自适应亮度以更改亮度。</string>
 </resources>
