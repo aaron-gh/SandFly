@@ -685,19 +685,21 @@ public class KeyComboMapper {
           result =
               pipeline.returnFeedback(
                   eventId,
-                  Feedback.speech(DateTimeUtils.getCurrentTimeAndDate(accessibilityService)));
+                  Feedback.requestedSpeech(
+                      DateTimeUtils.getCurrentTimeAndDate(accessibilityService)));
       case ANNOUNCE_BATTERY_STATE ->
           result =
               pipeline.returnFeedback(
-                  eventId, Feedback.speech(batteryMonitor.getBatteryStateDescription()));
+                  eventId, Feedback.requestedSpeech(batteryMonitor.getBatteryStateDescription()));
       case ANNOUNCE_CURRENT_TITLE ->
           result =
-              pipeline.returnFeedback(eventId, Feedback.speech(screenState.getActiveWindowTitle()));
+              pipeline.returnFeedback(
+                  eventId, Feedback.requestedSpeech(screenState.getActiveWindowTitle()));
       case ANNOUNCE_PHONETIC_PRONUNCIATION ->
           result =
               pipeline.returnFeedback(
                   eventId,
-                  Feedback.speech(
+                  Feedback.requestedSpeech(
                       processorPhoneticLetters.getPhoneticText(
                           AccessibilityNodeInfoUtils.getNodeText(
                               accessibilityFocusMonitor.getAccessibilityFocus(

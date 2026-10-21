@@ -715,46 +715,49 @@ public class GestureController {
             service.getString(R.string.shortcut_value_announce_current_time_and_date))) {
       result =
           pipeline.returnFeedback(
-              eventId, Feedback.speech(DateTimeUtils.getCurrentTimeAndDate(service)));
+              eventId, Feedback.requestedSpeech(DateTimeUtils.getCurrentTimeAndDate(service)));
     } else if (FeatureFlagReader.enableAnnounceBatteryState(service)
         && action.equals(service.getString(R.string.shortcut_value_announce_battery_state))) {
       result =
           pipeline.returnFeedback(
-              eventId, Feedback.speech(batteryMonitor.getBatteryStateDescription()));
+              eventId, Feedback.requestedSpeech(batteryMonitor.getBatteryStateDescription()));
     } else if (action.equals(service.getString(R.string.shortcut_value_announce_status))) {
       result =
-          pipeline.returnFeedback(eventId, Feedback.speech(statusReader.describe()));
+          pipeline.returnFeedback(eventId, Feedback.requestedSpeech(statusReader.describe()));
     } else if (action.equals(service.getString(R.string.shortcut_value_inspect_item))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);
       result =
           pipeline.returnFeedback(
-              eventId, Feedback.speech(ItemInspector.inspect(service, focused)));
+              eventId, Feedback.requestedSpeech(ItemInspector.inspect(service, focused)));
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_screen_tree))) {
       AccessibilityNodeInfoCompat focused =
           accessibilityFocusMonitor.getAccessibilityFocus(false);
       ItemInspector.copyScreenTree(
           service,
           focused,
-          message -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(message)));
+          message ->
+              pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(message)));
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_scripts))) {
       @Nullable Boolean scriptsOn = Scripts.toggleAll();
       int message =
           scriptsOn == null
               ? R.string.scripts_unavailable
               : scriptsOn ? R.string.scripts_now_on : R.string.scripts_now_off;
-      result = pipeline.returnFeedback(eventId, Feedback.speech(service.getString(message)));
+      result =
+          pipeline.returnFeedback(eventId, Feedback.requestedSpeech(service.getString(message)));
     } else if (FeatureFlagReader.enableAnnounceCurrentTitle(service)
         && action.equals(service.getString(R.string.shortcut_value_announce_current_title))) {
       result =
-          pipeline.returnFeedback(eventId, Feedback.speech(screenState.getActiveWindowTitle()));
+          pipeline.returnFeedback(
+              eventId, Feedback.requestedSpeech(screenState.getActiveWindowTitle()));
     } else if (FeatureFlagReader.enableAnnouncePhoneticPronunciation(service)
         && action.equals(
             service.getString(R.string.shortcut_value_announce_phonetic_pronunciation))) {
       result =
           pipeline.returnFeedback(
               eventId,
-              Feedback.speech(
+              Feedback.requestedSpeech(
                   processorPhoneticLetters.getPhoneticText(
                       AccessibilityNodeInfoUtils.getNodeText(
                           accessibilityFocusMonitor.getAccessibilityFocus(
