@@ -530,6 +530,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     QUICK_SETTINGS(R.string.shortcut_value_quick_settings, R.string.shortcut_quick_settings),
     SYSTEM_QUICK_SETTINGS(
         R.string.shortcut_value_system_quick_settings, R.string.shortcut_system_quick_settings),
+    LOCK_SCREEN(R.string.shortcut_value_lock_screen, R.string.shortcut_lock_screen),
+    POWER_MENU(R.string.shortcut_value_power_menu, R.string.shortcut_power_menu),
     ALL_APPS(R.string.shortcut_value_all_apps, R.string.shortcut_all_apps),
     A11Y_BUTTON(R.string.shortcut_value_a11y_button, R.string.shortcut_a11y_button),
     A11Y_BUTTON_LONG_PRESS(
@@ -598,6 +600,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_media_control_or_voice_input),
     INCREASE_VOLUME(R.string.shortcut_value_increase_volume, R.string.shortcut_increase_volume),
     DECREASE_VOLUME(R.string.shortcut_value_decrease_volume, R.string.shortcut_decrease_volume),
+    INCREASE_MEDIA_VOLUME(
+        R.string.shortcut_value_increase_media_volume, R.string.shortcut_increase_media_volume),
+    DECREASE_MEDIA_VOLUME(
+        R.string.shortcut_value_decrease_media_volume, R.string.shortcut_decrease_media_volume),
     VOICE_COMMANDS(R.string.shortcut_value_voice_commands, R.string.shortcut_voice_commands),
     SCREEN_SEARCH(R.string.shortcut_value_screen_search, R.string.title_show_screen_search),
     SHOW_HIDE_SCREEN(R.string.shortcut_value_show_hide_screen, R.string.title_show_hide_screen),

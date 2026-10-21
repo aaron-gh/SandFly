@@ -1200,6 +1200,8 @@
         <item>@string/shortcut_system_notifications</item>
         <item>@string/shortcut_quick_settings</item>
         <item>@string/shortcut_system_quick_settings</item>
+        <item>@string/shortcut_lock_screen</item>
+        <item>@string/shortcut_power_menu</item>
     </string-array>
 
     <!-- Shortcut preference value of system actions -->
@@ -1211,6 +1213,8 @@
         <item>@string/shortcut_value_system_notifications</item>
         <item>@string/shortcut_value_quick_settings</item>
         <item>@string/shortcut_value_system_quick_settings</item>
+        <item>@string/shortcut_value_lock_screen</item>
+        <item>@string/shortcut_value_power_menu</item>
     </string-array>
 
     <!-- Shortcut preference of reading control -->
@@ -1316,6 +1320,8 @@
   <string name="shortcut_value_system_notifications">SYSTEM_NOTIFICATIONS</string>
   <string name="shortcut_value_quick_settings">QUICK_SETTINGS</string>
   <string name="shortcut_value_system_quick_settings">SYSTEM_QUICK_SETTINGS</string>
+  <string name="shortcut_value_lock_screen">LOCK_SCREEN</string>
+  <string name="shortcut_value_power_menu">POWER_MENU</string>
   <string name="shortcut_value_show_custom_actions">SHOW_CUSTOM_ACTIONS</string>
   <string name="shortcut_value_editing">EDITING</string>
   <string name="shortcut_value_talkback_breakout">TALKBACK_BREAKOUT</string>
@@ -1340,6 +1346,8 @@
   <string name="shortcut_value_voice_input">VOICE_INPUT</string>
   <string name="shortcut_value_media_control_or_voice_input">MEDIA_CONTROL_OR_VOICE_INPUT</string>
   <string name="shortcut_value_increase_volume">INCREASE_VOLUME</string>
+  <string name="shortcut_value_increase_media_volume">INCREASE_MEDIA_VOLUME</string>
+  <string name="shortcut_value_decrease_media_volume">DECREASE_MEDIA_VOLUME</string>
   <string name="shortcut_value_decrease_volume">DECREASE_VOLUME</string>
   <string name="shortcut_value_pass_through_next_gesture">ENABLE_PASS_THROUGH</string>
   <string name="shortcut_value_a11y_button">ACCESSIBILITY_BUTTON</string>
