@@ -35,4 +35,10 @@ interface IShizukuGrants {
      * if it worked, or what went wrong.
      */
     String run(int command, String argument) = 2;
+
+    /**
+     * Whether the switch of the command with the ordinal [command] in ShizukuCommand is on: 1 for
+     * on, 0 for off, and -1 if it can't be read.
+     */
+    int state(int command) = 3;
 }

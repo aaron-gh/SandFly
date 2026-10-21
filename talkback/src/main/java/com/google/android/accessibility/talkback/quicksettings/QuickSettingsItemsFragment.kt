@@ -181,15 +181,24 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
     }
   }
 
+  /**
+   * Offers the system tiles that aren't in the panel. One that SandFly has a control for is added
+   * as that control, and one that is an app's tile as the app's tile, since both work without the
+   * system's quick settings.
+   */
   private fun chooseSystemTile(found: List<QuickItem.SystemTile>?) {
     val added = items.filterIsInstance<QuickItem.SystemTile>()
     val available =
-      found.orEmpty().filter { tile ->
-        added.none {
-          (it.spec.isNotEmpty() && it.spec == tile.spec) ||
-            SystemPanelClicker.normalize(it.label) == SystemPanelClicker.normalize(tile.label)
+      found
+        .orEmpty()
+        .map { replacement(it) to it }
+        .filter { (item, _) -> item !in items }
+        .filter { (_, tile) ->
+          added.none {
+            (it.spec.isNotEmpty() && it.spec == tile.spec) ||
+              SystemPanelClicker.normalize(it.label) == SystemPanelClicker.normalize(tile.label)
+          }
         }
-      }
     val list = listView ?: return
     if (available.isEmpty()) {
       announce(list, getString(R.string.quick_settings_no_system_tiles))
@@ -197,10 +206,27 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
     }
     AlertDialog.Builder(requireContext())
       .setTitle(R.string.quick_settings_add_system_tile)
-      .setItems(available.map { it.label }.toTypedArray()) { _, which -> add(available[which]) }
+      .setItems(available.map { it.second.label }.toTypedArray()) { _, which ->
+        add(available[which].first)
+      }
       .setNegativeButton(android.R.string.cancel, null)
       .show()
       .keepButtonCase()
+  }
+
+  /** What a system tile is added as: SandFly's control for it, an app's tile, or itself. */
+  private fun replacement(tile: QuickItem.SystemTile): QuickItem {
+    QuickSettingsItems.controlFor(tile.spec)
+      ?.takeIf { controls.isAvailable(it) }
+      ?.let { return QuickItem.Control(it) }
+    if (tile.spec.isEmpty()) {
+      // Looking through the system's panel finds apps' tiles too, by name only.
+      val name = SystemPanelClicker.normalize(tile.label)
+      appTiles.values
+        .firstOrNull { SystemPanelClicker.normalize(it.label) == name }
+        ?.let { return QuickItem.Tile(it.component) }
+    }
+    return tile
   }
 
   private fun add(item: QuickItem) {

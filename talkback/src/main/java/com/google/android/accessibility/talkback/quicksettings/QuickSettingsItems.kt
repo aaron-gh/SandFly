@@ -29,6 +29,7 @@ enum class QuickControl(@StringRes val title: Int, val kind: Kind) {
   WIFI(R.string.quick_settings_wifi, Kind.SWITCH),
   BLUETOOTH(R.string.quick_settings_bluetooth, Kind.SWITCH),
   MOBILE_DATA(R.string.quick_settings_mobile_data, Kind.SWITCH),
+  HOTSPOT(R.string.quick_settings_hotspot, Kind.SWITCH),
   AIRPLANE_MODE(R.string.quick_settings_airplane_mode, Kind.SWITCH),
   DATA_SAVER(R.string.quick_settings_data_saver, Kind.SWITCH),
   DO_NOT_DISTURB(R.string.quick_settings_do_not_disturb, Kind.SWITCH),
@@ -159,6 +160,44 @@ object QuickSettingsItems {
     val value = prefs.getString(PREF_ITEMS, null) ?: return DEFAULT_CONTROLS.map { QuickItem.Control(it) }
     return value.split(SEPARATOR).filter { it.isNotEmpty() }.mapNotNull { QuickItem.parse(it) }.distinct()
   }
+
+  /**
+   * SandFly's control for a tile of the system's own, by the tile's spec on Pixels and Galaxy
+   * phones, so that the system tile is added as the control, which works without the system's
+   * quick settings.
+   */
+  fun controlFor(spec: String): QuickControl? = SYSTEM_TILE_CONTROLS[spec.lowercase()]
+
+  private val SYSTEM_TILE_CONTROLS =
+    mapOf(
+      "wifi" to QuickControl.WIFI,
+      "internet" to QuickControl.WIFI,
+      "bt" to QuickControl.BLUETOOTH,
+      "bluetooth" to QuickControl.BLUETOOTH,
+      "cell" to QuickControl.MOBILE_DATA,
+      "mobiledata" to QuickControl.MOBILE_DATA,
+      "hotspot" to QuickControl.HOTSPOT,
+      "airplane" to QuickControl.AIRPLANE_MODE,
+      "airplanemode" to QuickControl.AIRPLANE_MODE,
+      "saver" to QuickControl.DATA_SAVER,
+      "dnd" to QuickControl.DO_NOT_DISTURB,
+      "soundmode" to QuickControl.SOUND_MODE,
+      "flashlight" to QuickControl.FLASHLIGHT,
+      "location" to QuickControl.LOCATION,
+      "rotation" to QuickControl.AUTO_ROTATE,
+      "rotationlock" to QuickControl.AUTO_ROTATE,
+      "battery" to QuickControl.BATTERY_SAVER,
+      "dark" to QuickControl.DARK_THEME,
+      "uimodenight" to QuickControl.DARK_THEME,
+      "night" to QuickControl.NIGHT_LIGHT,
+      "reduce_brightness" to QuickControl.EXTRA_DIM,
+      "inversion" to QuickControl.COLOR_INVERSION,
+      "color_correction" to QuickControl.COLOR_CORRECTION,
+      "nfc" to QuickControl.NFC,
+      "mictoggle" to QuickControl.MICROPHONE_ACCESS,
+      "cameratoggle" to QuickControl.CAMERA_ACCESS,
+      "alarm" to QuickControl.NEXT_ALARM,
+    )
 
   fun save(prefs: SharedPreferences, items: List<QuickItem>) {
     prefs.edit { putString(PREF_ITEMS, items.distinct().joinToString(SEPARATOR) { it.id }) }

@@ -40,6 +40,11 @@ enum class ShizukuCommand {
   DARK_THEME,
   NFC,
   DATA_SAVER,
+  /**
+   * Turns the Wi-Fi hotspot on or off. There is no shell command for it, so the service calls
+   * Android's TetheringManager as the shell user, which may tether.
+   */
+  HOTSPOT,
   /** Blocks the microphone for a user, as the system's Microphone access switch does. */
   MICROPHONE_BLOCKED,
   CAMERA_BLOCKED,
@@ -69,6 +74,7 @@ enum class ShizukuCommand {
       DARK_THEME -> on?.let { listOf("cmd", "uimode", "night", if (it) "yes" else "no") }
       NFC -> on?.let { listOf("svc", "nfc", if (it) "enable" else "disable") }
       DATA_SAVER -> on?.let { listOf("cmd", "netpolicy", "set", "restrict-background", it.toString()) }
+      HOTSPOT -> null
       MICROPHONE_BLOCKED -> sensorCommand(on, user, "microphone")
       CAMERA_BLOCKED -> sensorCommand(on, user, "camera")
       ADD_TILE -> component?.let { listOf("cmd", "statusbar", "add-tile", it) }
@@ -110,11 +116,8 @@ object ShizukuShell {
   private const val CONNECT_TIMEOUT_MS = 15_000L
   private const val IDLE_SECONDS = 10L
 
-  private class Pending(
-    val command: ShizukuCommand,
-    val argument: String,
-    val onDone: (Boolean) -> Unit,
-  )
+  /** A call to the service, which runs on [executor] and reports back on the main thread itself. */
+  private class Pending(val call: (IShizukuGrants) -> Unit, val onFailed: () -> Unit)
 
   private val mainHandler = Handler(Looper.getMainLooper())
   /** Runs one command at a time, and ends its thread when idle. */
@@ -165,35 +168,78 @@ object ShizukuShell {
         onDone(false)
         return@withShizukuPermission
       }
-      val request = Pending(command, argument, onDone)
-      val connected = service
-      if (connected != null) {
-        execute(connected, request)
-      } else {
-        pending += request
-        bind(appContext)
+      call(
+        appContext,
+        { connected ->
+          val error = connected.run(command.ordinal, argument)
+          if (error != null) {
+            LogUtils.w(TAG, "%s %s failed: %s", command, argument, error)
+          }
+          error == null
+        },
+      ) { worked ->
+        onDone(worked == true)
       }
+    }
+  }
+
+  /**
+   * Reads whether [command]'s switch is on, without asking the user anything: [onResult] gets
+   * null at once unless Shizuku already allows SandFly, and when it can't be read.
+   */
+  fun state(context: Context, command: ShizukuCommand, onResult: (Boolean?) -> Unit) {
+    if (!isAllowed()) {
+      onResult(null)
+      return
+    }
+    call(
+      context.applicationContext,
+      { connected ->
+        when (connected.state(command.ordinal)) {
+          1 -> true
+          0 -> false
+          else -> null
+        }
+      },
+      onResult,
+    )
+  }
+
+  /**
+   * Calls [work] on the service on [executor], connecting first if needed, and gives its result to
+   * [onResult] on the main thread: null if the call failed or the service didn't start.
+   */
+  private fun <T> call(context: Context, work: (IShizukuGrants) -> T?, onResult: (T?) -> Unit) {
+    val request =
+      Pending(
+        call = { connected ->
+          val result =
+            try {
+              work(connected)
+            } catch (e: Throwable) {
+              LogUtils.w(TAG, "Shizuku call failed: %s", e)
+              null
+            }
+          mainHandler.post {
+            running--
+            onResult(result)
+            unbindIfIdle()
+          }
+        },
+        onFailed = { onResult(null) },
+      )
+    val connected = service
+    if (connected != null) {
+      execute(connected, request)
+    } else {
+      pending += request
+      bind(context)
     }
   }
 
   private fun execute(service: IShizukuGrants, request: Pending) {
     running++
-    executor.execute {
-      val error =
-        try {
-          service.run(request.command.ordinal, request.argument)
-        } catch (e: Throwable) {
-          e.toString()
-        }
-      mainHandler.post {
-        running--
-        if (error != null) {
-          LogUtils.w(TAG, "%s %s failed: %s", request.command, request.argument, error)
-        }
-        request.onDone(error == null)
-        unbindIfIdle()
-      }
-    }
+    executor.execute { request.call(service) }
   }
 
   private fun bind(context: Context) {
@@ -271,6 +317,6 @@ object ShizukuShell {
   private fun failPending() {
     val requests = ArrayList(pending)
     pending.clear()
-    requests.forEach { it.onDone(false) }
+    requests.forEach { it.onFailed() }
   }
 }

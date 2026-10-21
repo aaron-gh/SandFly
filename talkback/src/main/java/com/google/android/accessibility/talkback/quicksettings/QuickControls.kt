@@ -173,6 +173,12 @@ class QuickControls(private val context: Context) {
    */
   var sensorPrivacy: Map<Int, Boolean> = emptyMap()
 
+  /**
+   * Whether the hotspot is on, which only system apps and the shell can read: from Shizuku when
+   * the panel opens, and from Android's broadcasts while it is open.
+   */
+  private var hotspotOn: Boolean? = null
+
   private val mediaSessions = context.getSystemService(MediaSessionManager::class.java)
   private val listenerComponent = ComponentName(context, NotificationListService::class.java)
   private var mediaController: MediaController? = null
@@ -182,6 +188,13 @@ class QuickControls(private val context: Context) {
   private val receiver =
     object : BroadcastReceiver() {
       override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == WIFI_AP_STATE_CHANGED) {
+          when (intent.getIntExtra(EXTRA_WIFI_AP_STATE, -1)) {
+            WIFI_AP_STATE_ENABLED -> hotspotOn = true
+            WIFI_AP_STATE_DISABLED,
+            WIFI_AP_STATE_FAILED -> hotspotOn = false
+          }
+        }
         onChange?.invoke()
       }
     }
@@ -253,6 +266,7 @@ class QuickControls(private val context: Context) {
         addAction(NFC_STATE_CHANGED)
         addAction(ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED)
         addAction(AlarmManager.ACTION_NEXT_ALARM_CLOCK_CHANGED)
+        addAction(WIFI_AP_STATE_CHANGED)
       }
     ContextCompat.registerReceiver(context, receiver, filter, ContextCompat.RECEIVER_EXPORTED)
     val resolver = context.contentResolver
@@ -263,6 +277,14 @@ class QuickControls(private val context: Context) {
       camera.registerTorchCallback(torchCallback, handler)
     }
     audio.registerAudioDeviceCallback(audioDevices, handler)
+    if (wifi != null) {
+      ShizukuShell.state(context, ShizukuCommand.HOTSPOT) { on ->
+        if (on != null && this.onChange != null) {
+          hotspotOn = on
+          onChange()
+        }
+      }
+    }
     try {
       mediaSessions?.addOnActiveSessionsChangedListener(sessionsListener, listenerComponent, handler)
     } catch (e: SecurityException) {
@@ -293,7 +315,8 @@ class QuickControls(private val context: Context) {
       QuickControl.FLASHLIGHT -> torchCamera != null
       QuickControl.FLASHLIGHT_BRIGHTNESS -> torchMaxLevel > 1
       QuickControl.NFC -> nfc() != null
-      QuickControl.WIFI -> wifi != null
+      QuickControl.WIFI,
+      QuickControl.HOTSPOT -> wifi != null
       QuickControl.NIGHT_LIGHT -> systemBool("config_nightDisplayAvailable", false)
       QuickControl.EXTRA_DIM ->
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
@@ -345,6 +368,7 @@ class QuickControls(private val context: Context) {
           context.getSystemService(ConnectivityManager::class.java)?.restrictBackgroundStatus?.let {
             it != ConnectivityManager.RESTRICT_BACKGROUND_STATUS_DISABLED
           }
+        QuickControl.HOTSPOT -> hotspotOn
         QuickControl.MICROPHONE_ACCESS -> sensorPrivacy[SensorPrivacy.MICROPHONE]?.not()
         QuickControl.CAMERA_ACCESS -> sensorPrivacy[SensorPrivacy.CAMERA]?.not()
         else -> SECURE_SWITCHES[control]?.let { secure(it)?.let { value -> value != 0 } }
@@ -757,6 +781,7 @@ class QuickControls(private val context: Context) {
       QuickControl.SYSTEM_VOLUME -> Intent(Settings.ACTION_SOUND_SETTINGS)
       QuickControl.ACCESSIBILITY_VOLUME -> Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
       QuickControl.DATA_SAVER -> Intent(Settings.ACTION_DATA_USAGE_SETTINGS)
+      QuickControl.HOTSPOT -> Intent(ACTION_TETHER_SETTINGS)
       QuickControl.NIGHT_LIGHT,
       QuickControl.SCREEN_TIMEOUT,
       QuickControl.FONT_SIZE -> Intent(Settings.ACTION_DISPLAY_SETTINGS)
@@ -954,6 +979,13 @@ class QuickControls(private val context: Context) {
     private const val NFC_STATE_CHANGED = "android.nfc.action.ADAPTER_STATE_CHANGED"
     private const val MOBILE_DATA = "mobile_data"
     private const val ACTION_ZEN_MODE_SETTINGS = "android.settings.ZEN_MODE_SETTINGS"
+    private const val ACTION_TETHER_SETTINGS = "android.settings.TETHER_SETTINGS"
+    /** WifiManager's hotspot broadcast and states, which aren't public. */
+    private const val WIFI_AP_STATE_CHANGED = "android.net.wifi.WIFI_AP_STATE_CHANGED"
+    private const val EXTRA_WIFI_AP_STATE = "wifi_state"
+    private const val WIFI_AP_STATE_DISABLED = 11
+    private const val WIFI_AP_STATE_ENABLED = 13
+    private const val WIFI_AP_STATE_FAILED = 14
 
     private val BLUETOOTH_OUTPUTS =
       setOf(
@@ -987,6 +1019,7 @@ class QuickControls(private val context: Context) {
         QuickControl.DARK_THEME to ShizukuCommand.DARK_THEME,
         QuickControl.NFC to ShizukuCommand.NFC,
         QuickControl.DATA_SAVER to ShizukuCommand.DATA_SAVER,
+        QuickControl.HOTSPOT to ShizukuCommand.HOTSPOT,
         QuickControl.MICROPHONE_ACCESS to ShizukuCommand.MICROPHONE_BLOCKED,
         QuickControl.CAMERA_ACCESS to ShizukuCommand.CAMERA_BLOCKED,
       )
