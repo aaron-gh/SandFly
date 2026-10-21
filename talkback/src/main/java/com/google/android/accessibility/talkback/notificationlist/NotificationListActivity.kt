@@ -92,6 +92,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   /** The groups the user has expanded while the list is open. */
   private val expandedGroups = HashSet<String>()
+  /** Notifications whose long text the user chose to show in full. */
+  private val expandedTexts = HashSet<String>()
 
   /** The view in the list that has accessibility focus, if one has. */
   private var focusedView: View? = null
@@ -211,6 +213,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       }
       rows.keys.retainAll(keys)
       expandedGroups.retainAll(items.filterIsInstance<NotificationItem.Group>().map { it.key }.toSet())
+      expandedTexts.retainAll(keys)
       if (items.any { item -> item.entries.any { it.notification.isClearable } }) {
         views.add(clearAll)
       }
@@ -249,7 +252,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   private fun row(key: String): TextView = rows.getOrPut(key) { notificationRow() }
 
   private fun bind(row: TextView, entry: NotificationEntry, indented: Boolean) {
-    val details = details(entry, playbackState(entry))
+    val details = details(entry, playbackState(entry), full = entry.key in expandedTexts)
     row.text = details.joinToString("\n")
     row.contentDescription = details.joinToString(", ")
     row.setPaddingRelative(dp(if (indented) 40 else 16), row.paddingTop, row.paddingEnd, row.paddingBottom)
@@ -260,15 +263,19 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   /**
    * The details of the notification that the user chose, in their order, both spoken and shown.
    * The title, or the app if there is none, when every detail is turned off, so that the row still
-   * says something.
+   * says something. A long text is shortened unless [full].
    */
-  private fun details(entry: NotificationEntry, playbackState: String?): List<String> {
+  private fun details(
+    entry: NotificationEntry,
+    playbackState: String?,
+    full: Boolean,
+  ): List<String> {
     val details =
       parts
         .mapNotNull { part ->
           when (part) {
             NotificationPart.TITLE -> entry.title
-            NotificationPart.TEXT -> entry.text
+            NotificationPart.TEXT -> entry.text?.let { if (full) it else shortened(it) }
             NotificationPart.APP -> entry.appName
             NotificationPart.TIME -> entry.time
             NotificationPart.PLAYBACK -> playbackState
@@ -280,6 +287,17 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     return details.ifEmpty { listOf((entry.title ?: entry.appName).toString()) }
   }
 
+  /** The start of a long [text], cut at a space where it can be, so that a row stays short. */
+  private fun shortened(text: CharSequence): CharSequence {
+    val trimmed = text.toString().trim()
+    if (trimmed.length <= SHORT_TEXT_LENGTH) return trimmed
+    val cut = trimmed.lastIndexOf(' ', SHORT_TEXT_LENGTH).takeIf { it > SHORT_TEXT_LENGTH / 2 }
+    return trimmed.substring(0, cut ?: SHORT_TEXT_LENGTH).trimEnd() + "…"
+  }
+
+  private fun isLong(entry: NotificationEntry): Boolean =
+    NotificationPart.TEXT in parts && (entry.text?.trim()?.length ?: 0) > SHORT_TEXT_LENGTH
+
   /** A group's row names the app, the number of notifications and the newest one. */
   private fun bindGroup(row: TextView, group: NotificationItem.Group) {
     val newest = group.entries.maxBy { it.timeMillis }
@@ -290,7 +308,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         group.entries.size,
       )
     val details =
-      listOfNotNull(group.appName, count, newest.title, newest.text)
+      listOfNotNull(group.appName, count, newest.title, newest.text?.let { shortened(it) })
         .map { it.toString().trim() }
         .filter { it.isNotEmpty() }
     row.text = details.joinToString("\n")
@@ -365,6 +383,17 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       if (entry.notification.isClearable) {
         info.addAction(dismissAction())
       }
+      if (isLong(entry)) {
+        info.addAction(
+          AccessibilityNodeInfo.AccessibilityAction(
+            R.id.notification_list_full_text_action,
+            getString(
+              if (entry.key in expandedTexts) R.string.notification_list_show_less
+              else R.string.notification_list_show_all
+            ),
+          )
+        )
+      }
     }
 
     override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
@@ -382,6 +411,13 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       val entry = entry ?: return super.performAccessibilityAction(host, action, args)
       if (action == R.id.notification_list_dismiss_action) {
         NotificationListService.instance?.cancelNotification(entry.key)
+        return true
+      }
+      if (action == R.id.notification_list_full_text_action) {
+        if (!expandedTexts.add(entry.key)) {
+          expandedTexts.remove(entry.key)
+        }
+        show()
         return true
       }
       val index = ACTION_IDS.indexOf(action)
@@ -584,6 +620,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   companion object {
     private const val TAG = "NotificationList"
+
+    /** How many characters of a notification's text a row shows until the user shows all. */
+    private const val SHORT_TEXT_LENGTH = 160
 
     /** Keeps group keys apart from notification keys in the row map. */
     private const val GROUP_PREFIX = "group:"

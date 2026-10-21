@@ -2,6 +2,8 @@
 <resources>
     <!-- The Dismiss accessibility action of a notification in SandFly's notification list. -->
     <item name="notification_list_dismiss_action" type="id" />
+    <!-- The Show all or Show less accessibility action of a notification with a long text. -->
+    <item name="notification_list_full_text_action" type="id" />
     <!-- Accessibility actions that stand for a notification's own actions, such as Reply. -->
     <item name="notification_list_action_1" type="id" />
     <item name="notification_list_action_2" type="id" />
