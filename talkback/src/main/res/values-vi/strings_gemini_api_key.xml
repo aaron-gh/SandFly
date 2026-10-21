@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Khoá API Gemini</string>
+    <string name="summary_pref_gemini_api_key_set">Đã đặt. Tính năng mô tả hình ảnh và mô tả màn hình dùng Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Đang dùng khoá được tích hợp trong ứng dụng này</string>
+    <string name="summary_pref_gemini_api_key_not_set">Chưa đặt. Khi không có khoá, tính năng mô tả hình ảnh chỉ đọc văn bản, còn tính năng mô tả màn hình cần AI trên thiết bị</string>
+    <string name="gemini_api_key_dialog_message">Hãy lấy một khoá API miễn phí từ Google AI Studio tại aistudio.google.com/apikey rồi dán vào đây. Để xoá khoá, hãy xoá nội dung trong trường rồi lưu.\n\nHình ảnh và màn hình mà bạn yêu cầu mô tả sẽ được gửi đến Google. Ở gói miễn phí, Google có thể dùng chúng để cải thiện sản phẩm.</string>
+    <string name="gemini_api_key_hint">Khoá API</string>
+    <string name="gemini_api_key_save">Lưu</string>
+    <string name="gemini_api_key_get">Lấy khoá</string>
+    <string name="gemini_api_terms_link">Điều khoản dịch vụ bổ sung của Gemini API</string>
+    <string name="title_pref_ai_service">Dịch vụ AI khác</string>
+    <string name="summary_pref_ai_service_set">Tính năng mô tả hình ảnh và mô tả màn hình dùng <xliff:g id="model" example="google/gemma-3-27b-it">%1$s</xliff:g></string>
+    <string name="summary_pref_ai_service_not_set">Chưa đặt. Đang dùng Gemini</string>
+    <string name="ai_service_dialog_message">Một dịch vụ có API trò chuyện tương thích với OpenAI và nhận hình ảnh, chẳng hạn như OpenRouter (https://openrouter.ai/api/v1), Groq (https://api.groq.com/openai/v1), Mistral (https://api.mistral.ai/v1), Ollama Cloud (https://ollama.com/v1) hoặc Claude (https://api.anthropic.com/v1). Hình ảnh và câu hỏi sẽ được gửi đến dịch vụ đó. Để dùng lại Gemini, hãy xoá địa chỉ.</string>
+    <string name="ai_service_address_hint">Địa chỉ, chẳng hạn như https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Mô hình</string>
+    <string name="ai_service_api_key_hint">Khoá API</string>
+    <string name="ai_service_address_invalid">Địa chỉ phải bắt đầu bằng https://. Chưa lưu nội dung nào.</string>
+    <string name="dialog_message_ai_service_consent">Hình ảnh và ảnh chụp màn hình sẽ được gửi đến <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> để mô tả, việc này mất vài giây. Điều khoản và chính sách quyền riêng tư của dịch vụ đó được áp dụng. AI tạo sinh đang trong giai đoạn thử nghiệm nên sẽ có sai sót.</string>
+    <string name="ai_service_error_api_key">Dịch vụ AI không chấp nhận khoá API. Hãy kiểm tra mục Dịch vụ AI khác trong phần cài đặt Mô tả tự động.</string>
+    <string name="ai_service_error_quota">Đã đạt đến giới hạn sử dụng của dịch vụ AI. Hãy thử lại sau.</string>
+    <string name="ai_service_error_busy">Dịch vụ AI hiện đang bận. Hãy thử lại sau giây lát.</string>
+    <string name="ai_service_error_timeout">Dịch vụ AI phản hồi quá lâu. Hãy thử lại.</string>
+    <string name="summary_pref_gemini_api_key_other_service">Không dùng khi đã đặt Dịch vụ AI khác</string>
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Tập lệnh</string>
+    <string name="summary_pref_scripts">Thay đổi cách SandFly hoạt động trong các ứng dụng</string>
+    <string name="script_import">Nhập tập lệnh</string>
+    <string name="script_install_label">Cài đặt tập lệnh SandFly</string>
+    <string name="script_import_nothing">Không có tệp tập lệnh nào để cài đặt.</string>
+    <string name="script_import_cannot_open">Không mở được tệp.</string>
+    <string name="script_import_repository">Đường liên kết này dẫn đến toàn bộ kho lưu trữ. Hãy mở tập lệnh bạn muốn rồi chia sẻ đường liên kết của tập lệnh đó.</string>
+    <string name="script_import_summary">Tệp .lua hoặc tệp .zip có main.lua</string>
+    <string name="scripts_category_app">Tập lệnh ứng dụng</string>
+    <string name="scripts_category_global">Trình bổ trợ chung</string>
+    <string name="scripts_none">Chưa cài đặt tập lệnh nào</string>
+    <string name="scripts_all_off">Tắt tất cả tập lệnh</string>
+    <string name="scripts_all_off_summary">Các tập lệnh vẫn được cài đặt và giữ nguyên nút bật/tắt riêng. Cử chỉ Bật hoặc tắt tất cả tập lệnh cũng có tác dụng như vậy.</string>
+    <string name="shortcut_toggle_scripts">Bật hoặc tắt tất cả tập lệnh</string>
+    <string name="scripts_now_off">Đã tắt tập lệnh</string>
+    <string name="scripts_now_on">Đã bật tập lệnh</string>
+    <string name="scripts_unavailable">Thiết bị này không hỗ trợ tập lệnh</string>
+    <string name="script_add_example">Thêm tập lệnh mẫu</string>
+    <string name="script_add_example_summary">Đọc tên của từng ứng dụng mà bạn chuyển sang. Một tập lệnh để bắt đầu.</string>
+    <string name="script_state_on">Bật</string>
+    <string name="script_state_off">Tắt</string>
+    <string name="script_runs_in">Chạy trong <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Chạy trong mọi ứng dụng</string>
+    <string name="script_version">Phiên bản <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Tác giả: <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Cài đặt <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Tập lệnh này có thể:</string>
+    <string name="script_install_no_permissions">Không cần quyền nào.</string>
+    <string name="script_install_button">Cài đặt</string>
+    <string name="script_update_title">Cập nhật <xliff:g id="name">%1$s</xliff:g> lên <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Quyền mới:</string>
+    <string name="script_update_button">Cập nhật</string>
+    <string name="script_update_replaces">Tập lệnh này thay thế phiên bản <xliff:g id="version">%1$s</xliff:g> của <xliff:g id="author">%2$s</xliff:g> và giữ lại dữ liệu cùng chế độ cài đặt của phiên bản đó.</string>
+    <string name="script_update_other_author">Tập lệnh mới là của <xliff:g id="author">%1$s</xliff:g>, một tác giả khác. Chỉ cập nhật nếu bạn tin tưởng tập lệnh này.</string>
+    <string name="script_installed">Đã cài đặt <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_updated">Đã cập nhật <xliff:g id="name">%1$s</xliff:g> lên <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Không nhập được. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Chỉ cho phép đối với tập lệnh đáng tin cậy.</string>
+    <string name="script_permission_screen">Đọc màn hình</string>
+    <string name="script_permission_actions">Nhấp, cuộn, nhập và di chuyển tiêu điểm</string>
+    <string name="script_permission_speech">Nghe và thay đổi lời nói của SandFly</string>
+    <string name="script_permission_passwords">Đọc trường mật khẩu</string>
+    <string name="script_permission_input">Thêm cử chỉ, phím, mục trình đơn và chế độ điều khiển chức năng đọc</string>
+    <string name="script_permission_network">Sử dụng Internet</string>
+    <string name="script_permission_clipboard">Đọc và thay đổi bảng nhớ tạm</string>
+    <string name="script_permission_system">Quay lại hoặc về màn hình chính, mở thông báo và ứng dụng</string>
+    <string name="script_permission_notifications">Đọc và thay đổi thông báo được đọc to</string>
+    <string name="script_permission_events">Xem mọi hoạt động trong mọi ứng dụng, kể cả nội dung nhập</string>
+    <string name="script_permission_dialogs">Hiện hộp thoại trên mọi ứng dụng</string>
+    <string name="script_permission_java">Chạy mã Java với toàn bộ quyền truy cập của SandFly, trong mọi ứng dụng</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Bật</string>
+    <string name="script_permissions_title">Quyền</string>
+    <string name="script_permissions_none">Không có</string>
+    <string name="script_settings_category">Cài đặt</string>
+    <string name="script_list_filter">Lọc</string>
+    <string name="script_button_off">Hãy bật tập lệnh trước</string>
+    <string name="script_permissions_summary">Khi tắt một quyền, các phần cần quyền đó sẽ ngừng hoạt động.</string>
+    <string name="script_install_permissions_note">Bạn có thể tắt các quyền này sau.</string>
+    <string name="script_manage_category">Quản lý</string>
+    <string name="script_move_up">Chạy sớm hơn</string>
+    <string name="script_move_down">Chạy muộn hơn</string>
+    <string name="script_order_summary">Thứ tự của các tập lệnh cùng thay đổi một lời nói. Tập lệnh ứng dụng chạy trước.</string>
+    <string name="script_log">Nhật ký</string>
+    <string name="script_log_summary">Kết quả và lỗi kể từ khi SandFly khởi động</string>
+    <string name="script_clear_storage">Xoá dữ liệu đã lưu</string>
+    <string name="script_storage_cleared">Đã xoá dữ liệu đã lưu</string>
+    <string name="script_remove">Xoá</string>
+    <string name="script_remove_title">Xoá <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Thao tác này xoá mã, dữ liệu và chế độ cài đặt của tập lệnh.</string>
+    <string name="script_removed">Đã xoá <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_log_empty">Nhật ký trống</string>
+    <string name="script_log_clear">Xoá nhật ký</string>
+    <string name="script_log_copy">Sao chép nhật ký</string>
+    <string name="script_log_copied">Đã sao chép nhật ký</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Cần API tập lệnh <xliff:g id="needed">%1$d</xliff:g> trở lên. SandFly này có <xliff:g id="current">%2$d</xliff:g>, nên một số phần có thể không hoạt động.</string>
+    <string name="script_api_untested">Đã kiểm tra đến API tập lệnh <xliff:g id="tested">%1$d</xliff:g>. SandFly này có <xliff:g id="current">%2$d</xliff:g>, nên tập lệnh có thể không hoạt động như mong đợi.</string>
+    <string name="script_state_incompatible">Có thể không hoạt động với SandFly này</string>
+    <string name="script_api_range">API tập lệnh <xliff:g id="min">%1$d</xliff:g> đến <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Khả năng tương thích</string>
+    <string name="script_install_anyway">Vẫn cài đặt</string>
+    <string name="script_update_anyway">Vẫn cập nhật</string>
+    <string name="script_homepage">Mở trang chủ</string>
+    <string name="script_homepage_confirm_title">Mở địa chỉ này?</string>
+    <string name="script_homepage_open">Mở</string>
+    <string name="script_homepage_failed">Không có ứng dụng nào mở được <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off">Đã tắt <xliff:g id="name">%1$s</xliff:g> sau nhiều lần gặp lỗi. Hãy xem nhật ký của tập lệnh này trong mục Tập lệnh.</string>
+    <string name="shortcut_inspect_item">Kiểm tra mục đang được làm nổi bật</string>
+    <string name="script_inspect_no_item">Không có mục nào được làm nổi bật</string>
+    <string name="script_inspect_copied">Đã sao chép. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Không có mã nhận dạng nên các quy tắc không thể gọi tên mục này. Đã sao chép. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Sao chép cây màn hình</string>
+    <string name="script_tree_copied">Đã sao chép <xliff:g id="count">%1$d</xliff:g> mục</string>
+    <string name="script_tree_none">Không có cửa sổ nào để sao chép</string>
+    <string name="script_tree_clip_label">Cây màn hình</string>
+    <string name="summary_copy_screen_tree_menu">Sao chép tất cả các mục trên màn hình dưới dạng JSON, để viết tập lệnh</string>
+    <string name="script_inspect_clip_label">Chi tiết mục</string>
+    <string name="summary_inspect_item_menu">Đọc và sao chép chi tiết của mục bạn vừa chọn, để viết tập lệnh</string>
+    <string name="script_keys_backtalk_modifier">Phím bổ trợ SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, rồi <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Lệnh</string>
+    <string name="script_commands_summary">Cử chỉ và phím của tập lệnh đang chạy được ưu tiên hơn của SandFly. Hãy tắt một cử chỉ hoặc phím để giữ cử chỉ hoặc phím của SandFly.</string>
+    <string name="script_binding_gesture">Cử chỉ: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Phím: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Trình đơn SandFly</string>
+    <string name="script_binding_control">Chế độ điều khiển chức năng đọc</string>
+    <string name="script_binding_none">Không có</string>
+    <string name="script_binding_turn_on">Bật</string>
+    <string name="script_binding_turn_off">Tắt</string>
+    <string name="script_binding_restore">Khôi phục mặc định</string>
+    <string name="script_binding_restored">Đã khôi phục mặc định</string>
+    <string name="script_binding_perform">Thực hiện cử chỉ hoặc nhấn phím</string>
+    <string name="script_binding_perform_summary">Gán cử chỉ tiếp theo, hoặc các phím nhấn cùng phím bổ trợ SandFly</string>
+    <string name="script_binding_perform_message">Hãy thực hiện cử chỉ hoặc nhấn các phím.</string>
+    <string name="script_binding_assign_title">Gán <xliff:g id="binding">%1$s</xliff:g> cho <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Gán</string>
+    <string name="script_binding_choose_gesture">Chọn cử chỉ</string>
+    <string name="script_binding_type_keys">Nhập phím</string>
+    <string name="script_binding_type_keys_summary">Chẳng hạn như sf+shift+n, hoặc sf+t, s</string>
+    <string name="script_binding_bad_keys">Không dùng được các phím này. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Tập lệnh này thêm:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Nguồn tập lệnh</string>
+    <string name="script_sources_none">Chưa thêm nguồn nào</string>
+    <string name="script_source_add">Thêm nguồn</string>
+    <string name="script_source_add_button">Thêm</string>
+    <string name="script_source_hint">github.com/chủ-sở-hữu/kho-lưu-trữ</string>
+    <string name="script_source_invalid">Đây không phải là địa chỉ của một kho lưu trữ trên GitHub, GitLab, Codeberg, Gitea hoặc Bitbucket.</string>
+    <string name="script_source_exists">Đã thêm nguồn này.</string>
+    <string name="script_source_loading">Đang tải</string>
+    <string name="script_source_empty">Không có tập lệnh nào trong nguồn này</string>
+    <string name="script_source_failed">Không tải được tập lệnh. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Thử lại</string>
+    <string name="script_source_downloading">Đang tải xuống <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Xoá nguồn</string>
+    <string name="script_source_remove_title">Xoá <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Các tập lệnh đã cài đặt từ nguồn này vẫn được giữ lại.</string>
+</resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">Bật TalkBack</string>
-  <string name="talkback_disabled">TalkBack tắt</string>
+  <string name="talkback_on">Bật SandFly</string>
+  <string name="talkback_disabled">SandFly tắt</string>
   <string name="notification_type_beginning_of_field">Phần đầu của trường</string>
   <string name="notification_type_end_of_field">Phần cuối của trường</string>
   <string name="notification_type_selection_mode_on">Đã bật chế độ chọn</string>
@@ -33,7 +33,6 @@
   <string name="tb_template_percent">%1$s phần trăm</string>
   <string name="template_value">%1$s</string>
   <plurals name="template_containers">
-    <item quantity="one">%1$s cho thấy %2$d mục</item>
     <item quantity="other">%1$s cho thấy %2$d mục</item>
   </plurals>
   <string name="template_node_error_with_error_message">Lỗi: %1$s</string>
@@ -147,23 +146,18 @@
   <string name="out_of_grid_pager">Ngoài chế độ phân trang lưới</string>
   <string name="template_collection_level">Cấp %1$d</string>
   <plurals name="template_list_total_count">
-    <item quantity="one">%1$d mục</item>
     <item quantity="other">%1$d mục</item>
   </plurals>
   <plurals name="template_list_row_count">
-    <item quantity="one">%1$d hàng</item>
     <item quantity="other">%1$d hàng</item>
   </plurals>
   <plurals name="template_list_column_count">
-    <item quantity="one">%1$d cột</item>
     <item quantity="other">%1$d cột</item>
   </plurals>
   <plurals name="template_list_item_count">
-    <item quantity="one">%1$d mục, %2$d mục bị bỏ qua</item>
     <item quantity="other">%1$d mục, %2$d mục bị bỏ qua</item>
   </plurals>
   <plurals name="template_password_character_count">
-    <item quantity="one">%1$d ký tự</item>
     <item quantity="other">%1$d ký tự</item>
   </plurals>
   <string name="template_magnification_on">Phóng to %1$d%%</string>
@@ -195,4 +189,7 @@
   <string name="drag_started">Đã bắt đầu kéo</string>
   <string name="drag_dropped">Đã thả mục được kéo</string>
   <string name="drag_cancelled">Đã huỷ thao tác kéo</string>
+    <string name="template_brightness_changed">Độ sáng <xliff:g id="percent">%1$d</xliff:g> phần trăm.</string>
+    <string name="brightness_needs_permission">Hãy cho phép sửa đổi chế độ cài đặt hệ thống để thay đổi độ sáng.</string>
+    <string name="brightness_adaptive_on">Hãy tắt độ sáng thích ứng để thay đổi độ sáng.</string>
 </resources>

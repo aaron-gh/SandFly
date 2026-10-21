@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Đọc trạng thái</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g>/<xliff:g id="max_level" example="4">%2$d</xliff:g> vạch</string>
+    <string name="status_wifi_off">Wi-Fi tắt</string>
+    <string name="status_wifi_not_connected">Wi-Fi chưa kết nối</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Di động</string>
+    <string name="status_mobile_no_service">Không có dịch vụ di động</string>
+    <string name="status_do_not_disturb">Không làm phiền</string>
+    <string name="status_ringer_vibrate">Rung</string>
+    <string name="status_ringer_silent">Im lặng</string>
+    <string name="status_airplane_mode">Chế độ trên máy bay</string>
+    <string name="title_pref_status_readout">Đọc trạng thái</string>
+    <string name="status_item_time">Thời gian</string>
+    <string name="status_item_time_summary">Thời gian hiện tại</string>
+    <string name="status_item_battery">Pin</string>
+    <string name="status_item_battery_summary">Mức pin, trạng thái sạc và trình tiết kiệm pin</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Tên mạng và cường độ tín hiệu</string>
+    <string name="status_item_mobile">Mạng di động</string>
+    <string name="status_item_mobile_summary">Nhà mạng, loại mạng và cường độ tín hiệu</string>
+    <string name="status_item_ringer">Chuông và Không làm phiền</string>
+    <string name="status_item_ringer_summary">Chỉ khi chuông không ở chế độ đổ chuông, hoặc khi bật Không làm phiền</string>
+    <string name="status_item_airplane_mode">Chế độ trên máy bay</string>
+    <string name="status_item_airplane_mode_summary">Chỉ khi bật chế độ trên máy bay</string>
+</resources>
