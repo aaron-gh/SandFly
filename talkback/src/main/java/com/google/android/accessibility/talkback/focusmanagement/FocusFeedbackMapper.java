@@ -98,6 +98,13 @@ public class FocusFeedbackMapper {
         .build();
   }
 
+  // Whether touching the screen, or touching an item before it is focused, stops speech.
+  private static volatile boolean touchStopsSpeech = true;
+
+  public static void setTouchStopsSpeech(boolean stops) {
+    touchStopsSpeech = stops;
+  }
+
   /** Maps touch-events to focus actions. */
   public static @Nullable Feedback mapTouchToFocusAction(
       EventId eventId, Variables variables, int depth) {
@@ -113,7 +120,10 @@ public class FocusFeedbackMapper {
             Feedback.sound(R.raw.view_entered).vibration(R.array.view_hovered_pattern).build());
       }
       case TOUCH_START, TOUCH_ENTERED_UNFOCUSED_NODE -> {
-        return Feedback.create(eventId, Feedback.part().setInterruptGentle(true).build());
+        // Speech of an item that touch focuses still interrupts what was being said.
+        return touchStopsSpeech
+            ? Feedback.create(eventId, Feedback.part().setInterruptGentle(true).build())
+            : null;
       }
       case TOUCH_FOCUSED_NODE -> {
         return toFeedback(

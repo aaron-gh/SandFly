@@ -24,6 +24,10 @@
       android:key="@string/pref_fix_stuck_touch_exploration_key"
       android:title="@string/title_pref_fix_stuck_touch_exploration" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_touch_stops_speech_default"
+      android:key="@string/pref_touch_stops_speech_key"
+      android:title="@string/title_pref_touch_stops_speech" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="true"
       android:key="pref_speak_nav_bar_buttons"
       android:summary="@string/summary_pref_speak_nav_bar_buttons"
