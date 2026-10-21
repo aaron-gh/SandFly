@@ -86,7 +86,10 @@ object NotificationReader {
   private const val DND_CHECKS = 5
   /** How long after a touch ends the notifications that arrived during it are read. */
   private const val AFTER_TOUCH_MS = 500L
-  /** The longest a notification waits for a touch to end, in case the end is missed. */
+  /**
+   * The longest the first notification held for a touch waits for it to end, in case the end is
+   * missed. Later ones don't extend it, so a touch that seems never to end doesn't gather them.
+   */
   private const val TOUCH_WAIT_MS = 10_000L
 
   private val handler = Handler(Looper.getMainLooper())
@@ -327,8 +330,10 @@ object NotificationReader {
   }
 
   private fun releaseTouchHeld() {
+    handler.removeCallbacks(releaseHeld)
     val held = heldForTouch.toList()
     heldForTouch.clear()
+    LogUtils.d(TAG, "Reading %d notifications held while the screen was touched", held.size)
     held.forEach { schedule(it) }
   }
 
@@ -370,9 +375,9 @@ object NotificationReader {
 
   private fun holdForTouch(readout: Readout) {
     while (heldForTouch.size >= MAX_WAITING) heldForTouch.removeAt(0)
+    if (heldForTouch.isEmpty()) handler.postDelayed(releaseHeld, TOUCH_WAIT_MS)
     heldForTouch += readout
-    handler.removeCallbacks(releaseHeld)
-    handler.postDelayed(releaseHeld, TOUCH_WAIT_MS)
+    LogUtils.d(TAG, "Holding a notification of %s until the touch ends", readout.info.packageName)
   }
 
   /**
