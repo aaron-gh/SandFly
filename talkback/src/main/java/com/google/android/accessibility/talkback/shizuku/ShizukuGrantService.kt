@@ -171,7 +171,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     if (installer == null || !PACKAGE_NAME.matches(installer)) {
       return "Bad installer $installer"
     }
-    val create = shell(listOf("pm", "install-create", "-r", "-i", installer, "-p", packageName), null)
+    // No -p (inherit from the installed package): the caller gives the complete APKs, and
+    // inheriting fails a version upgrade because the inherited files are the old version's.
+    val create = shell(listOf("pm", "install-create", "-r", "-i", installer), null)
     val session =
       SESSION_ID.find(create.second)?.groupValues?.get(1)
         ?: return "No install session: ${create.second}"
