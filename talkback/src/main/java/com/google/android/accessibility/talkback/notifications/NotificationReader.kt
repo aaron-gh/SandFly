@@ -99,7 +99,7 @@ object NotificationReader {
   private var schedules: SpokenSchedules? = null
   private var voice: NotificationVoice? = null
   private var isSandFlySpeaking: () -> Boolean = { false }
-  private var isSilenced: (Boolean) -> Boolean = { false }
+  private var isSilenced: (Boolean, Boolean) -> Boolean = { _, _ -> false }
   private var cachedSettings: NotificationSettings? = null
   private val decider = NotificationDecider()
   private val appNames = LruCache<String, String>(100)
@@ -172,7 +172,8 @@ object NotificationReader {
   /**
    * Called when SandFly starts, with how to speak and how to stop notification speech, whether
    * SandFly is speaking, and whether its speech is silenced now, such as during a call. The
-   * silence check counts audio playback only when given false.
+   * silence check counts audio playback only when its first value is false, and calls only
+   * when its second value is false.
    */
   @JvmStatic
   @MainThread
@@ -181,7 +182,7 @@ object NotificationReader {
     feedback: Pipeline.FeedbackReturner,
     stopSpeech: Runnable,
     isSandFlySpeaking: () -> Boolean,
-    isSilenced: (overMedia: Boolean) -> Boolean,
+    isSilenced: (overMedia: Boolean, duringCalls: Boolean) -> Boolean,
   ) {
     if (this.context != null) detach()
     val app = context.applicationContext
@@ -215,7 +216,7 @@ object NotificationReader {
     voice?.shutdown()
     voice = null
     isSandFlySpeaking = { false }
-    isSilenced = { false }
+    isSilenced = { _, _ -> false }
     cachedSettings = null
     runCatching { app.unregisterReceiver(screenOnReceiver) }
     SharedPreferencesUtils.getSharedPreferences(app).unregisterOnSharedPreferenceChangeListener(settingsListener)
@@ -241,8 +242,8 @@ object NotificationReader {
     get() = reading?.started == true
 
   /**
-   * Reads [notification], posted by [event]'s app, as the settings say, after the touch when
-   * the screen is [touching], and as the Do Not Disturb setting says when [dnd] is on. Returns
+   * Reads [notification], posted by [event]'s app, as the settings say, including what happens
+   * while the screen is [touching] and while Do Not Disturb, [dnd], is on. Returns
    * false when it is left to the screen reader's usual speech: for calls, and when SandFly isn't
    * running.
    */
@@ -253,6 +254,13 @@ object NotificationReader {
     if (stateReader == null) return false
     if (notification.category == Notification.CATEGORY_CALL) return false
     val packageName = event.packageName?.toString() ?: return false
+    val touchBehavior = settings(context).touch
+    if (touching && touchBehavior == TouchBehavior.SKIP) {
+      noteUnread(event, notification, Outcome.TOUCHING)
+      return true
+    }
+    // Read right away, or held until the touch ends.
+    val hold = touching && touchBehavior == TouchBehavior.AFTER_TOUCH
     if (dnd) {
       when (settings(context).dnd) {
         DndMode.ALL -> {}
@@ -264,14 +272,14 @@ object NotificationReader {
           // The event is used after it is handled.
           @Suppress("DEPRECATION") val copy = AccessibilityEvent.obtain(event)
           whenDndDecided(packageName, notification, 1) { allowed ->
-            if (allowed) read(copy, notification, touching)
+            if (allowed) read(copy, notification, hold)
             else noteUnread(copy, notification, Outcome.DO_NOT_DISTURB)
           }
           return true
         }
       }
     }
-    read(event, notification, touching)
+    read(event, notification, hold)
     return true
   }
 
@@ -324,7 +332,7 @@ object NotificationReader {
     held.forEach { schedule(it) }
   }
 
-  private fun read(event: AccessibilityEvent, notification: Notification, touching: Boolean) {
+  private fun read(event: AccessibilityEvent, notification: Notification, holdForTouch: Boolean) {
     val context = context ?: return
     val stateReader = stateReader ?: return
     val packageName = event.packageName?.toString() ?: return
@@ -352,7 +360,7 @@ object NotificationReader {
       return
     }
     val readout = Readout(info, decision, text, settings)
-    val next = { if (touching) holdForTouch(readout) else schedule(readout) }
+    val next = { if (holdForTouch) holdForTouch(readout) else schedule(readout) }
     if (settings.detectLanguage && !decision.private) {
       detectLanguage(context, readout) { next() }
     } else {
@@ -543,14 +551,16 @@ object NotificationReader {
     // SandFly's speech is silenced while audio plays, unless it is told otherwise.
     val overMedia = settings.media != MediaBehavior.SKIP
     if (overMedia) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
+    val duringCalls = settings.duringCalls
+    if (duringCalls) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE
     queued += readout
     val voice = voiceFor(settings)
     // Silenced speech, such as during a call, goes to SandFly's speech, which drops it.
-    if (voice != null && !isSilenced(overMedia)) {
+    if (voice != null && !isSilenced(overMedia, duringCalls)) {
       if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
         if (readout.cancelled) return@whenSandFlyIsQuiet
-        if (isSilenced(overMedia)) {
+        if (isSilenced(overMedia, duringCalls)) {
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
@@ -631,10 +641,11 @@ object NotificationReader {
     val context = context ?: return
     val settings = settings(context)
     val overMedia = settings.media != MediaBehavior.SKIP
+    val duringCalls = settings.duringCalls
     val voice = voiceFor(settings)
-    if (voice != null && !isSilenced(overMedia)) {
+    if (voice != null && !isSilenced(overMedia, duringCalls)) {
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
-        if (isSilenced(overMedia)) return@whenSandFlyIsQuiet
+        if (isSilenced(overMedia, duringCalls)) return@whenSandFlyIsQuiet
         voice.speak(text, interrupt, null, settings.rate / 100f, settings.pitch / 100f, settings.volume / 100f, null)
       }
       return
@@ -643,7 +654,10 @@ object NotificationReader {
       SpeakOptions.create()
         .setQueueMode(if (interrupt) SpeechController.QUEUE_MODE_INTERRUPT else SpeechController.QUEUE_MODE_QUEUE)
         .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
-        .setFlags(if (overMedia) FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE else 0)
+        .setFlags(
+          (if (overMedia) FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE else 0) or
+            (if (duringCalls) FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE else 0)
+        )
     feedback?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
   }
 

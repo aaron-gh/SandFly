@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Strings of SandFly's notification reading settings and speech. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Choices of which notifications are read while Do Not Disturb is on. -->
-    <string-array name="notification_dnd_entries">
-        <item>@string/notification_dnd_none</item>
-        <item>@string/notification_dnd_allowed</item>
-        <item>@string/notification_dnd_all</item>
-    </string-array>
     <!-- Choices of how hard the phone must be shaken. -->
     <string name="notification_shake_3">Hard</string>
     <!-- Choices of how hard the phone must be shaken. -->
@@ -171,6 +165,16 @@
     <string name="notification_dnd_allowed">Read what Do Not Disturb allows</string>
     <!-- Choice of the Do Not Disturb setting: every notification is read. -->
     <string name="notification_dnd_all">Read all</string>
+    <!-- Setting: what happens to a notification that arrives while a finger is on the screen. -->
+    <string name="notification_touch_title">While the screen is touched</string>
+    <!-- Choice of the While the screen is touched setting: the notification is read at once. -->
+    <string name="notification_touch_read">Read right away</string>
+    <!-- Choice of the While the screen is touched setting: the notification is read once the finger lifts. -->
+    <string name="notification_touch_after">Read when the touch ends</string>
+    <!-- Choice of the While the screen is touched setting: the notification is not read. -->
+    <string name="notification_touch_skip">Don\'t read</string>
+    <!-- Switch: notifications are read during phone calls. -->
+    <string name="notification_during_calls_title">During calls</string>
     <!-- Switch: notifications are not read while the ringer is silent. -->
     <string name="notification_honour_silent_title">Not in silent mode</string>
     <!-- Switch: notifications are not read while the ringer vibrates. -->
@@ -693,6 +697,18 @@
         <item>@string/notification_media_read</item>
         <item>@string/notification_media_pause</item>
         <item>@string/notification_media_skip</item>
+    </string-array>
+    <!-- Choices of which notifications are read while Do Not Disturb is on. -->
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <!-- Choices of what happens to a notification that arrives while the screen is touched. -->
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
     </string-array>
     <!-- Choices of how hard the phone must be shaken. -->
     <string-array name="notification_shake_entries">
