@@ -56,6 +56,8 @@ object OpenAppActions {
     val packageManager = context.packageManager
     return packageManager
       .queryIntentActivities(homeScreenIntent(), /* flags= */ 0)
+      // SandFly has a launcher icon of its own, which opens its settings; leave it out of the list.
+      .filterNot { it.activityInfo.packageName == context.packageName }
       .map {
         App(
           it.loadLabel(packageManager).toString(),
