@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.focusmanagement.interpreter;
 
 import static com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_TOUCH;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -25,6 +26,7 @@ import android.os.SystemClock;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -70,6 +72,7 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
           | AccessibilityEvent.TYPE_VIEW_HOVER_ENTER;
 
   private final InputModeTracker inputModeTracker;
+  private final Context context;
   private final PostDelayHandler postDelayHandler;
 
   private AccessibilityNodeInfoCompat lastTouchedNode;
@@ -100,7 +103,8 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
   private final List<TouchExplorationActionListener> listeners = new ArrayList<>();
 
-  public TouchExplorationInterpreter(InputModeTracker inputModeTracker) {
+  public TouchExplorationInterpreter(InputModeTracker inputModeTracker, Context context) {
+    this.context = context;
     this.inputModeTracker = inputModeTracker;
     postDelayHandler = new PostDelayHandler(this);
   }
@@ -228,6 +232,11 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
         touchedNode,
         touchedFocusableNode);
 
+    if (touchedFocusableNode != null && HomeScreenPages.isPage(context, touchedFocusableNode)) {
+      // Between the icons of the home screen, focus stays on the icon touched last.
+      postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ false);
+      return false;
+    }
     if (touchedFocusableNode == null) {
       // REFERTO. If no focusable node is being touched, don't dispatch empty touch
       // event immediately. Instead, we post delay to dispatch it. If we receive hover enter event
