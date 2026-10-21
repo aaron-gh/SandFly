@@ -50,6 +50,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
+import com.google.android.accessibility.utils.output.VoiceProfiles
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
@@ -71,6 +72,9 @@ object NotificationReader {
   private const val VOLUME_KEY_PAIR_MS = 400L
   /** The most notifications set aside for a delay; older ones are dropped in a burst. */
   private const val MAX_WAITING = 20
+  /** How often, and for how long at most, another voice waits for SandFly to stop speaking. */
+  private const val QUIET_CHECK_MS = 200L
+  private const val QUIET_WAIT_MS = 10_000L
 
   private val handler = Handler(Looper.getMainLooper())
   private var context: Context? = null
@@ -80,6 +84,8 @@ object NotificationReader {
   private var sensors: StopSensors? = null
   private var languageIdentifier: LanguageIdentifier? = null
   private var schedules: SpokenSchedules? = null
+  private var voice: NotificationVoice? = null
+  private var isSandFlySpeaking: () -> Boolean = { false }
   private val decider = NotificationDecider()
   private val appNames = LruCache<String, String>(100)
 
@@ -128,19 +134,28 @@ object NotificationReader {
     }
 
   private val settingsListener =
-    SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+    SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
       if (key != null && key.startsWith("pref_notification")) decider.forget()
+      if (key == NotificationSettings.Companion.Keys.VOICE_PROFILE || VoiceProfiles.isProfileKey(key)) {
+        updateVoice(prefs)
+      }
     }
 
   /** Called when SandFly starts, with how to speak and how to stop notification speech. */
   @JvmStatic
   @MainThread
-  fun attach(context: Context, feedback: Pipeline.FeedbackReturner, stopSpeech: Runnable) {
+  fun attach(
+    context: Context,
+    feedback: Pipeline.FeedbackReturner,
+    stopSpeech: Runnable,
+    isSandFlySpeaking: () -> Boolean,
+  ) {
     if (this.context != null) detach()
     val app = context.applicationContext
     this.context = app
     this.feedback = feedback
     this.stopSpeech = stopSpeech
+    this.isSandFlySpeaking = isSandFlySpeaking
     stateReader = DeviceStateReader(app)
     sensors = StopSensors(app) { stop() }
     ContextCompat.registerReceiver(
@@ -150,7 +165,8 @@ object NotificationReader {
       ContextCompat.RECEIVER_NOT_EXPORTED,
     )
     SharedPreferencesUtils.getSharedPreferences(app).registerOnSharedPreferenceChangeListener(settingsListener)
-    schedules = SpokenSchedules(app, feedback).also { it.start() }
+    schedules = SpokenSchedules(app) { text, interrupt -> announce(text, interrupt) }.also { it.start() }
+    updateVoice(SharedPreferencesUtils.getSharedPreferences(app))
   }
 
   /** Called when SandFly stops. */
@@ -161,6 +177,9 @@ object NotificationReader {
     cancelAll()
     schedules?.stop()
     schedules = null
+    voice?.shutdown()
+    voice = null
+    isSandFlySpeaking = { false }
     runCatching { app.unregisterReceiver(screenOnReceiver) }
     SharedPreferencesUtils.getSharedPreferences(app).unregisterOnSharedPreferenceChangeListener(settingsListener)
     languageIdentifier?.close()
@@ -232,8 +251,7 @@ object NotificationReader {
   @MainThread
   fun readSummary(): Boolean {
     val context = context ?: return false
-    val feedback = feedback ?: return false
-    SpokenSchedules.readSummary(context, feedback)
+    SpokenSchedules.readSummary(context) { text, interrupt -> announce(text, interrupt) }
     return true
   }
 
@@ -283,6 +301,7 @@ object NotificationReader {
     cancelAll()
     if (current != null) NotificationHistory.markStopped(current.info)
     stopSpeech?.run()
+    voice?.stop()
   }
 
   /**
@@ -371,8 +390,9 @@ object NotificationReader {
     val settings = readout.settings
     val busy = reading?.started == true
     var flags = 0
+    var interrupt = false
     if (busy && !repeat) {
-      val interrupt = readout.decision.priority || settings.queueBehavior == QueueBehavior.INTERRUPT
+      interrupt = readout.decision.priority || settings.queueBehavior == QueueBehavior.INTERRUPT
       if (!interrupt && settings.queueBehavior == QueueBehavior.SKIP) {
         LogUtils.d(TAG, "Not reading a notification while another is read")
         return
@@ -395,6 +415,31 @@ object NotificationReader {
           .setQueueMode(SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
           .setFlags(flags)
       }
+    val voice = voiceFor(settings)
+    if (voice != null) {
+      reading = readout
+      if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+      whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
+        if (readout.cancelled) return@whenSandFlyIsQuiet
+        reading = readout
+        voice.speak(
+          readout.text,
+          flush = interrupt,
+          locale = localeOf(readout.text),
+          rate = settings.rate / 100f,
+          pitch = settings.pitch / 100f,
+          volume = settings.volume / 100f,
+          listener =
+            object : NotificationVoice.Listener {
+              override fun onStart() = onStarted(readout)
+
+              override fun onDone(spoken: Boolean) =
+                onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
+            },
+        )
+      }
+      return
+    }
     options.setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
     options.setStartingAction { onStarted(readout) }
     options.setCompletedAction { status -> onDone(readout, status) }
@@ -435,6 +480,67 @@ object NotificationReader {
     }
   }
 
+  /**
+   * Says [text] in the notification voice, or SandFly's when there is none: summaries and time
+   * announcements.
+   */
+  private fun announce(text: CharSequence, interrupt: Boolean) {
+    val context = context ?: return
+    val settings = NotificationSettings.read(SharedPreferencesUtils.getSharedPreferences(context))
+    val voice = voiceFor(settings)
+    if (voice != null) {
+      whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
+        voice.speak(text, interrupt, null, settings.rate / 100f, settings.pitch / 100f, settings.volume / 100f, null)
+      }
+      return
+    }
+    val options =
+      SpeakOptions.create()
+        .setQueueMode(if (interrupt) SpeechController.QUEUE_MODE_INTERRUPT else SpeechController.QUEUE_MODE_QUEUE)
+        .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
+    feedback?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
+  }
+
+  /**
+   * The voice notifications are read with, or null for SandFly's: when none is chosen, its profile
+   * is gone, or its engine didn't start.
+   */
+  private fun voiceFor(settings: NotificationSettings): NotificationVoice? {
+    val voice = voice ?: return null
+    if (settings.voiceProfile.isEmpty() || voice.failed || voice.currentProfile == null) return null
+    return voice
+  }
+
+  /** Starts, stops or changes the notification voice as the settings say. */
+  private fun updateVoice(prefs: SharedPreferences) {
+    val context = context ?: return
+    val id = prefs.getString(NotificationSettings.Companion.Keys.VOICE_PROFILE, null).orEmpty()
+    if (id.isEmpty() || id !in VoiceProfiles.ids(prefs)) {
+      voice?.shutdown()
+      voice = null
+      return
+    }
+    val profile = VoiceProfiles.read(prefs, id)
+    val current = voice ?: NotificationVoice(context).also { voice = it }
+    if (current.currentProfile != profile || current.failed) current.use(profile)
+  }
+
+  /**
+   * Runs [then] once SandFly isn't speaking, so another voice doesn't talk over it, or after
+   * [QUIET_WAIT_MS] at most.
+   */
+  private fun whenSandFlyIsQuiet(since: Long, then: () -> Unit) {
+    if (!isSandFlySpeaking() || SystemClock.uptimeMillis() - since >= QUIET_WAIT_MS) {
+      then()
+      return
+    }
+    handler.postDelayed({ whenSandFlyIsQuiet(since, then) }, QUIET_CHECK_MS)
+  }
+
+  /** The language a detected language marked [text] with, or null. */
+  private fun localeOf(text: CharSequence): Locale? =
+    (text as? Spanned)?.getSpans(0, text.length, LocaleSpan::class.java)?.firstOrNull()?.locale
+
   private fun cancel(readout: Readout) {
     readout.cancelled = true
     handler.removeCallbacks(readout.speak)
@@ -443,6 +549,8 @@ object NotificationReader {
 
   private fun cancelAll() {
     waiting.toList().forEach { cancel(it) }
+    // One that waits for SandFly to stop speaking, before another voice reads it.
+    reading?.cancelled = true
     reading = null
     sensors?.stop()
     handler.removeCallbacks(stopAfterLimit)

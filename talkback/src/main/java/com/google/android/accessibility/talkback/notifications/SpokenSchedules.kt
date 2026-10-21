@@ -27,15 +27,10 @@ import android.os.Handler
 import android.os.Looper
 import android.text.format.DateFormat
 import androidx.annotation.MainThread
-import com.google.android.accessibility.talkback.Feedback
-import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
-import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
-import com.google.android.accessibility.utils.output.SpeechController
-import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Calendar
 import java.util.Date
@@ -47,7 +42,8 @@ import java.util.Date
  */
 class SpokenSchedules(
   private val context: Context,
-  private val feedback: Pipeline.FeedbackReturner,
+  /** Says a text, interrupting what notifications are saying when the second value is true. */
+  private val say: (CharSequence, Boolean) -> Unit,
 ) {
   private val handler = Handler(Looper.getMainLooper())
   private val alarms = context.getSystemService(AlarmManager::class.java)
@@ -116,16 +112,11 @@ class SpokenSchedules(
 
   private fun onSummary() {
     schedule()
-    readSummary(context, feedback)
+    readSummary(context, say)
   }
 
   private fun speak(text: CharSequence) {
-    if (text.isBlank()) return
-    val options =
-      SpeakOptions.create()
-        .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
-        .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
-    feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
+    if (text.isNotBlank()) say(text, false)
   }
 
   companion object {
@@ -192,29 +183,23 @@ class SpokenSchedules(
      */
     @JvmStatic
     @MainThread
-    fun readSummary(context: Context, feedback: Pipeline.FeedbackReturner) {
-      readSummary(context, feedback, retry = true)
+    fun readSummary(context: Context, speak: (CharSequence, Boolean) -> Unit) {
+      readSummary(context, speak, retry = true)
     }
 
-    private fun readSummary(context: Context, feedback: Pipeline.FeedbackReturner, retry: Boolean) {
+    private fun readSummary(context: Context, speak: (CharSequence, Boolean) -> Unit, retry: Boolean) {
       val prefs = SharedPreferencesUtils.getSharedPreferences(context)
       val listener = NotificationListService.instance
-      fun say(text: CharSequence, queue: Int = SpeechController.QUEUE_MODE_QUEUE) {
-        val options =
-          SpeakOptions.create()
-            .setQueueMode(queue)
-            .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
-        feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
-      }
+      fun say(text: CharSequence, interrupt: Boolean = false) = speak(text, interrupt)
       if (listener == null) {
         // The listener connects only while something needs it; it is needed now for a minute.
         if (retry && NotificationListService.isAccessGranted(context)) {
           NotificationListService.keepConnected(context, KEEP_FOR_SUMMARY_MS)
           Handler(Looper.getMainLooper())
-            .postDelayed({ readSummary(context, feedback, retry = false) }, RETRY_MS)
+            .postDelayed({ readSummary(context, speak, retry = false) }, RETRY_MS)
           return
         }
-        say(context.getString(R.string.notification_summary_no_access), SpeechController.QUEUE_MODE_INTERRUPT)
+        say(context.getString(R.string.notification_summary_no_access), interrupt = true)
         return
       }
       val settings = NotificationSettings.read(prefs)
@@ -253,7 +238,7 @@ class SpokenSchedules(
           )
           .joinToString(" ")
       LogUtils.d(TAG, "Reading a summary of %d notifications", lines.size)
-      say(intro, SpeechController.QUEUE_MODE_INTERRUPT)
+      say(intro, interrupt = true)
       val gap = NotificationSettings.int(prefs, KEY_SUMMARY_GAP, 0).coerceIn(0, 10)
       if (gap == 0) {
         lines.forEach { say(it) }

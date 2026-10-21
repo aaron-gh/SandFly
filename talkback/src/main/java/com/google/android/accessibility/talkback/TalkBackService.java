@@ -4312,7 +4312,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       NotificationReader.attach(
           this,
           pipeline.getFeedbackReturner(),
-          () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS));
+          () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS),
+          () -> speechController.isSpeaking());
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
       return;
