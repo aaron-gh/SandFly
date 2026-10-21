@@ -33,7 +33,6 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity.Companion.keepButtonCase
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.preference.base.announce
-import com.google.android.accessibility.talkback.preference.base.positionText
 import com.google.android.accessibility.talkback.preference.base.setMoveActions
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
@@ -86,6 +85,11 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
       AddPreference(context, KEY_ADD_SYSTEM_TILE, R.string.quick_settings_add_system_tile, ORDER_ADD + 2) {
         addSystemTile()
       }
+    )
+    screen.addPreference(
+      AddPreference(context, KEY_COLUMNS, R.string.quick_settings_columns, ORDER_ADD + 3) {
+        chooseColumns()
+      }.apply { summary = QuickSettingsItems.columns(prefs).toString() }
     )
     preferenceScreen = screen
   }
@@ -235,7 +239,7 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
     preferenceScreen.addPreference(ItemPreference(requireContext(), item).apply { order = items.size - 1 })
     listView?.let { announce(it, getString(R.string.quick_settings_added, title(item))) }
     // Focus goes to the new item, at the end of the panel, from where the user can move it.
-    focusAfterChange(items.size - 1, announcePosition = false)
+    focusAfterChange(items.size - 1, null)
   }
 
   private fun remove(item: QuickItem) {
@@ -248,31 +252,100 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
     preferenceScreen.findPreference<Preference>(item.id)?.let { preferenceScreen.removePreference(it) }
     reorder()
     listView?.let { announce(it, getString(R.string.quick_settings_removed, title(item))) }
-    focusAfterChange(minOf(index, preferenceScreen.preferenceCount - 1), announcePosition = false)
+    focusAfterChange(minOf(index, preferenceScreen.preferenceCount - 1), null)
   }
 
+  /** Moves an item to the cell before or after it. */
   private fun move(item: QuickItem, offset: Int): Boolean {
     val from = items.indexOf(item)
     val to = from + offset
     if (from < 0 || to !in items.indices) {
       return false
     }
-    items.add(to, items.removeAt(from))
-    save()
-    reorder()
-    focusAfterChange(to, announcePosition = true)
+    moveTo(item, to)
     return true
   }
 
+  /**
+   * Puts an item in the cell at [to]. The items between its old and new cells move one cell to
+   * make room, and SandFly says how many did.
+   */
+  private fun moveTo(item: QuickItem, to: Int) {
+    val from = items.indexOf(item)
+    if (from < 0 || to !in items.indices || to == from) {
+      return
+    }
+    items.add(to, items.removeAt(from))
+    save()
+    reorder()
+    // Focus goes to the item, which says its new cell, and for a moment how many others moved.
+    val others = kotlin.math.abs(to - from)
+    val displaced = resources.getQuantityString(R.plurals.quick_settings_others_moved, others, others)
+    preferenceScreen.findPreference<Preference>(item.id)?.let { moved ->
+      moved.summary = getString(R.string.quick_settings_moved_and_displaced, moved.summary, displaced)
+      listView?.postDelayed({ if (isAdded) reorder() }, MOVED_SUMMARY_MS)
+    }
+    focusAfterChange(to, null)
+  }
+
+  /** Lists every other cell of the grid, with the item in it, to move [item] there. */
+  private fun chooseCell(item: QuickItem) {
+    val from = items.indexOf(item)
+    val cells = items.indices.filter { it != from }
+    AlertDialog.Builder(requireContext())
+      .setTitle(getString(R.string.quick_settings_move_title, title(item)))
+      .setItems(
+        cells.map { getString(R.string.quick_settings_cell_with_item, cellText(it), title(items[it])) }.toTypedArray()
+      ) { _, which ->
+        moveTo(item, cells[which])
+      }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+      .keepButtonCase()
+  }
+
+  /** "Row 2, column 1" for the item at [index], with the columns the user chose. */
+  private fun cellText(index: Int): String {
+    val columns = QuickSettingsItems.columns(prefs)
+    return getString(R.string.quick_settings_cell, index / columns + 1, index % columns + 1)
+  }
+
+  private fun chooseColumns() {
+    val choices = QuickSettingsItems.COLUMN_CHOICES.toList()
+    val current = choices.indexOf(QuickSettingsItems.columns(prefs))
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.quick_settings_columns)
+      .setSingleChoiceItems(choices.map { it.toString() }.toTypedArray(), current) { dialog, which ->
+        QuickSettingsItems.setColumns(prefs, choices[which])
+        preferenceScreen.findPreference<Preference>(KEY_COLUMNS)?.summary = choices[which].toString()
+        reorder()
+        dialog.dismiss()
+      }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+      .keepButtonCase()
+  }
+
+  /** Puts the items in order, each one saying its cell. */
   private fun reorder() {
-    items.forEachIndexed { index, item -> preferenceScreen.findPreference<Preference>(item.id)?.order = index }
+    items.forEachIndexed { index, item ->
+      preferenceScreen.findPreference<Preference>(item.id)?.apply {
+        order = index
+        summary = summary(item, index)
+      }
+    }
+  }
+
+  /** An item's cell, and for an app's tile the app, when the tile's name doesn't say it. */
+  private fun summary(item: QuickItem, index: Int): String {
+    val app =
+      (item as? QuickItem.Tile)?.let { appTiles[it.component] }?.takeIf { it.appName.toString() != it.label.toString() }?.appName
+    return listOfNotNull(cellText(index), app).joinToString(", ")
   }
 
   private fun showActions(item: QuickItem) {
-    val index = items.indexOf(item)
     val actions = ArrayList<Pair<Int, () -> Unit>>()
-    if (index > 0) actions += R.string.action_move_up to { move(item, -1) }
-    if (index in 0 until items.size - 1) actions += R.string.action_move_down to { move(item, 1) }
+    if (items.size > 1) actions += R.string.quick_settings_move to { chooseCell(item) }
     actions += R.string.quick_settings_remove to { remove(item) }
     AlertDialog.Builder(requireContext())
       .setTitle(title(item))
@@ -287,10 +360,9 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
    * rebuilds it after the adapter syncs and the list lays out again, and until then the focused
    * row shows another item.
    */
-  private fun focusAfterChange(index: Int, announcePosition: Boolean) {
+  private fun focusAfterChange(index: Int, announcement: String?) {
     val list = listView ?: return
     if (index < 0) return
-    val count = items.size
     list.post {
       list.addOnLayoutChangeListener(
         object : View.OnLayoutChangeListener {
@@ -309,9 +381,7 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
             list.scrollToPosition(index)
             val row = list.findViewHolderForAdapterPosition(index)?.itemView ?: return
             row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
-            if (announcePosition) {
-              announce(row, positionText(row, index, count))
-            }
+            announcement?.let { announce(row, it) }
           }
         }
       )
@@ -323,11 +393,7 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
       key = item.id
       isPersistent = false
       title = title(item)
-      if (item is QuickItem.Tile) {
-        appTiles[item.component]?.let { tile ->
-          if (tile.appName.toString() != tile.label.toString()) summary = tile.appName
-        }
-      }
+      summary = summary(item, items.indexOf(item))
       setOnPreferenceClickListener {
         showActions(item)
         true
@@ -339,6 +405,19 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
       // Rows are reused for other items, so every bind replaces all the actions.
       val row = holder.itemView
       setMoveActions(row, items.indexOf(item), items.size) { move(item, it) }
+      val moveText = getString(R.string.quick_settings_move)
+      if (items.size > 1) {
+        ViewCompat.replaceAccessibilityAction(
+          row,
+          AccessibilityActionCompat(R.id.accessibility_custom_action_3, moveText),
+          moveText,
+        ) { _, _ ->
+          chooseCell(item)
+          true
+        }
+      } else {
+        ViewCompat.removeAccessibilityAction(row, R.id.accessibility_custom_action_3)
+      }
       val removeText = getString(R.string.quick_settings_remove)
       ViewCompat.replaceAccessibilityAction(
         row,
@@ -378,11 +457,15 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
         R.id.accessibility_custom_action_0,
         R.id.accessibility_custom_action_1,
         R.id.accessibility_custom_action_2,
+        R.id.accessibility_custom_action_3,
       )
 
     const val KEY_ADD_CONTROL = "quick_settings_add_control"
     const val KEY_ADD_TILE = "quick_settings_add_tile"
     const val KEY_ADD_SYSTEM_TILE = "quick_settings_add_system_tile"
+    const val KEY_COLUMNS = "quick_settings_columns"
+    /** How long a moved item says how many others moved. */
+    const val MOVED_SUMMARY_MS = 5_000L
     const val ORDER_ADD = 100_000
   }
 }

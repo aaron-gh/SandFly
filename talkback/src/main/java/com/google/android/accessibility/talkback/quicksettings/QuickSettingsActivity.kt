@@ -23,6 +23,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -55,6 +57,7 @@ import com.google.android.accessibility.talkback.preference.base.announce
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.preference.PreferencesActivity
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ExecutorService
@@ -67,6 +70,14 @@ import java.util.concurrent.Executors
  */
 class QuickSettingsActivity : AppCompatActivity() {
   private lateinit var column: LinearLayout
+  /** The grid of items: rows of cells, which the screen reader reads as a grid. */
+  private lateinit var grid: LinearLayout
+  private val gridRows = ArrayList<LinearLayout>()
+  private val gridDelegate = GridDelegate()
+  private var columns = 2
+
+  /** The cells and buttons in the panel, in order, as shown last. */
+  private var shown: List<View> = emptyList()
   private lateinit var controls: QuickControls
   private lateinit var edit: Button
   private lateinit var systemQuickSettings: Button
@@ -114,6 +125,11 @@ class QuickSettingsActivity : AppCompatActivity() {
         orientation = LinearLayout.VERTICAL
         accessibilityDelegate = FocusTracker()
       }
+    grid =
+      LinearLayout(this).apply {
+        orientation = LinearLayout.VERTICAL
+        accessibilityDelegate = gridDelegate
+      }
     edit =
       button(R.string.quick_settings_edit) {
         startActivity(
@@ -149,6 +165,7 @@ class QuickSettingsActivity : AppCompatActivity() {
     ShizukuShell.hold(this)
     appTiles = SystemTiles.appTiles(this).associateBy { it.component }
     items = QuickSettingsItems.shown(this, controls, appTiles.keys)
+    columns = QuickSettingsItems.columns(SharedPreferencesUtils.getSharedPreferences(this))
     rows.keys.retainAll(items.map { it.id }.toSet())
     if (!SystemTiles.canRead(this) && ShizukuShell.isAllowed()) {
       // Shizuku already allows SandFly, so this doesn't ask the user anything.
@@ -189,18 +206,17 @@ class QuickSettingsActivity : AppCompatActivity() {
     handler.removeCallbacks(refreshRunnable)
     val now = SystemClock.uptimeMillis()
     pending.values.removeAll { it.second <= now }
-    val views = ArrayList<View>()
+    val cells = ArrayList<View>()
     for (item in items) {
-      val row =
+      val cell =
         when (item) {
           is QuickItem.Control -> bindControl(item)
           is QuickItem.Tile -> bindTile(item)
           is QuickItem.SystemTile -> bindSystemTile(item)
         }
-      row?.let { views.add(it) }
+      cell?.let { cells.add(it) }
     }
-    views.add(edit)
-    views.add(systemQuickSettings)
+    val views = cells + listOf(edit, systemQuickSettings)
     var focusAfter: View? = null
     if (opening) {
       // Otherwise focus can start on whatever the screen reader focused last in this window.
@@ -210,17 +226,93 @@ class QuickSettingsActivity : AppCompatActivity() {
     // The view being read was removed: focus moves to the one that takes its place.
     focusedView
       ?.takeIf { it !in views }
-      ?.let { column.indexOfChild(it) }
+      ?.let { shown.indexOf(it) }
       ?.takeIf { it >= 0 }
       ?.let { index ->
         focusedView = null
         focusAfter = views[minOf(index, views.size - 1)]
       }
-    setChildren(views)
+    layOutGrid(cells)
+    setChildren(column, listOf(grid, edit, systemQuickSettings))
+    shown = views
     focusAfter?.let { view ->
       view.post { focusTarget(view).performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) }
     }
     pending.values.minOfOrNull { it.second }?.let { handler.postAtTime(refreshRunnable, it + 1) }
+  }
+
+  /**
+   * Puts [cells] in rows of [columns], in order. Each cell tells the screen reader its row and
+   * column, and a last row that isn't full keeps its cells the width of the others.
+   */
+  private fun layOutGrid(cells: List<View>) {
+    val rowCount = (cells.size + columns - 1) / columns
+    while (gridRows.size < rowCount) {
+      gridRows +=
+        LinearLayout(this).apply {
+          orientation = LinearLayout.HORIZONTAL
+          importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+          accessibilityDelegate = FocusTracker()
+          layoutParams =
+            LinearLayout.LayoutParams(
+              LinearLayout.LayoutParams.MATCH_PARENT,
+              LinearLayout.LayoutParams.WRAP_CONTENT,
+            )
+        }
+    }
+    val rowsShown = gridRows.subList(0, rowCount)
+    rowsShown.forEachIndexed { row, rowView ->
+      val inRow = cells.subList(row * columns, minOf(cells.size, (row + 1) * columns))
+      inRow.forEachIndexed { column, cell ->
+        cell.layoutParams =
+          LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f).apply {
+            setMargins(cellMargin, cellMargin, cellMargin, cellMargin)
+          }
+        if (cell.background == null) cell.background = cellBackground()
+        cell.setTag(R.id.quick_settings_cell, intArrayOf(row, column))
+        focusTarget(cell).setTag(R.id.quick_settings_cell, intArrayOf(row, column))
+      }
+      setChildren(rowView, inRow + spacers(rowView, columns - inRow.size))
+    }
+    gridDelegate.size = rowCount to columns
+    setChildren(grid, rowsShown.toList())
+  }
+
+  private val cellMargin by lazy { dp(4) }
+
+  /** The outline of a cell, so that the grid shows as tiles. */
+  private fun cellBackground(): GradientDrawable =
+    GradientDrawable().apply {
+      cornerRadius = dp(12).toFloat()
+      setStroke(dp(1), CELL_OUTLINE)
+    }
+
+  /** Empty space for the cells a row doesn't have, kept on the row to be reused. */
+  private fun spacers(row: LinearLayout, count: Int): List<View> {
+    @Suppress("UNCHECKED_CAST")
+    val kept =
+      (row.getTag(R.id.quick_settings_spacers) as? MutableList<View>)
+        ?: ArrayList<View>().also { row.setTag(R.id.quick_settings_spacers, it) }
+    while (kept.size < count) {
+      kept +=
+        View(this).apply {
+          importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+          layoutParams = LinearLayout.LayoutParams(0, 0, 1f)
+        }
+    }
+    return kept.take(count)
+  }
+
+  /** Tells the screen reader that the items are a grid, and its size. */
+  private class GridDelegate : View.AccessibilityDelegate() {
+    var size = 0 to 0
+
+    @Suppress("DEPRECATION") // CollectionInfo's constructor needs Android 13.
+    override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
+      super.onInitializeAccessibilityNodeInfo(host, info)
+      info.collectionInfo =
+        AccessibilityNodeInfo.CollectionInfo.obtain(size.first, size.second, false)
+    }
   }
 
   private fun bindControl(item: QuickItem.Control): View? {
@@ -569,11 +661,6 @@ class QuickSettingsActivity : AppCompatActivity() {
               accessibilityDelegate = SliderDelegate()
             }
           )
-          layoutParams =
-            LinearLayout.LayoutParams(
-              LinearLayout.LayoutParams.MATCH_PARENT,
-              LinearLayout.LayoutParams.WRAP_CONTENT,
-            )
         }
       } as LinearLayout
     (container.getChildAt(0) as TextView).text = title
@@ -598,8 +685,16 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   private class SliderBinding(val control: QuickControl, val state: SliderState)
 
-  /** Swipes up and down move a slider by its own step, such as one volume step. */
+  /**
+   * Swipes up and down move a slider by its own step, such as one volume step. The slider also
+   * says its cell in the grid.
+   */
   private inner class SliderDelegate : View.AccessibilityDelegate() {
+    override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
+      super.onInitializeAccessibilityNodeInfo(host, info)
+      setCell(host, info)
+    }
+
     override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
       val seekBar = host as SeekBar
       val binding = seekBar.getTag(R.id.quick_settings_slider) as? SliderBinding
@@ -630,11 +725,6 @@ class QuickSettingsActivity : AppCompatActivity() {
         minHeight = dp(48)
         setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
         isFocusable = true
-        layoutParams =
-          LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT,
-          )
         val delegate = RowDelegate()
         accessibilityDelegate = delegate
         // Reading the delegate back from the view needs Android 10.
@@ -662,6 +752,9 @@ class QuickSettingsActivity : AppCompatActivity() {
     delegate.actions = emptyList()
     ViewCompat.setStateDescription(row, state)
     row.setOnClickListener { onClick() }
+    // A switch that is on is filled, as in the system's quick settings.
+    (row.background as? GradientDrawable ?: cellBackground().also { row.background = it })
+      .setColor(if (checked == true) CELL_ON else Color.TRANSPARENT)
   }
 
   private fun setLongClick(row: TextView, intent: Intent?) {
@@ -697,7 +790,7 @@ class QuickSettingsActivity : AppCompatActivity() {
       view
     }
 
-  /** An action of a row, in the screen reader's actions menu. */
+  /** An action of a cell, in the screen reader's actions menu. */
   private class RowAction(val label: CharSequence, val run: () -> Unit)
 
   /** Gives a row its role, checked state and actions. */
@@ -709,6 +802,7 @@ class QuickSettingsActivity : AppCompatActivity() {
 
     override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(host, info)
+      setCell(host, info)
       info.className = role
       checked?.let {
         info.isCheckable = true
@@ -739,13 +833,19 @@ class QuickSettingsActivity : AppCompatActivity() {
     }
   }
 
-  /** Notes which view in the panel has accessibility focus. */
+  /**
+   * Notes which cell or button in the panel has accessibility focus. It sits on the column and on
+   * each row of the grid, and so sees the rows themselves too, which it leaves out.
+   */
   private inner class FocusTracker : View.AccessibilityDelegate() {
     override fun onRequestSendAccessibilityEvent(
       host: ViewGroup,
       child: View,
       event: AccessibilityEvent,
     ): Boolean {
+      if (child === grid || child in gridRows) {
+        return super.onRequestSendAccessibilityEvent(host, child, event)
+      }
       when (event.eventType) {
         AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED -> focusedView = child
         AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED ->
@@ -758,20 +858,20 @@ class QuickSettingsActivity : AppCompatActivity() {
   }
 
   /**
-   * Puts [views] in the column in order, moving only the views that are out of place. A view taken
+   * Puts [views] in [parent] in order, moving only the views that are out of place. A view taken
    * out of the window loses accessibility focus, so the others stay where they are.
    */
-  private fun setChildren(views: List<View>) {
+  private fun setChildren(parent: ViewGroup, views: List<View>) {
     val wanted = views.toSet()
-    for (i in column.childCount - 1 downTo 0) {
-      if (column.getChildAt(i) !in wanted) {
-        column.removeViewAt(i)
+    for (i in parent.childCount - 1 downTo 0) {
+      if (parent.getChildAt(i) !in wanted) {
+        parent.removeViewAt(i)
       }
     }
     views.forEachIndexed { index, view ->
-      if (column.getChildAt(index) !== view) {
+      if (parent.getChildAt(index) !== view) {
         (view.parent as? ViewGroup)?.removeView(view)
-        column.addView(view, index)
+        parent.addView(view, index)
       }
     }
   }
@@ -789,6 +889,16 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   companion object {
     private const val TAG = "QuickSettings"
+    private const val CELL_OUTLINE = 0x80808080.toInt()
+    private const val CELL_ON = 0x4D2196F3
+
+    /** Tells the screen reader which row and column of the grid [host] is in. */
+    @Suppress("DEPRECATION") // CollectionItemInfo's constructor needs Android 13.
+    private fun setCell(host: View, info: AccessibilityNodeInfo) {
+      val cell = host.getTag(R.id.quick_settings_cell) as? IntArray ?: return
+      info.collectionItemInfo =
+        AccessibilityNodeInfo.CollectionItemInfo.obtain(cell[0], 1, cell[1], 1, false)
+    }
     private const val ROLE_SWITCH = "android.widget.Switch"
     private const val ROLE_BUTTON = "android.widget.Button"
     private const val REFRESH_DELAY_MS = 50L

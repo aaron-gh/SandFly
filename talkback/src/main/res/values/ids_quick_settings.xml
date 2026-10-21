@@ -8,4 +8,8 @@
     <item name="quick_settings_row_delegate" type="id" />
     <!-- Tag on a slider of SandFly's quick settings panel holding what it controls. -->
     <item name="quick_settings_slider" type="id" />
+    <!-- Tag on a cell of SandFly's quick settings panel holding its row and column. -->
+    <item name="quick_settings_cell" type="id" />
+    <!-- Tag on a row of SandFly's quick settings panel holding the empty cells it can show. -->
+    <item name="quick_settings_spacers" type="id" />
 </resources>
