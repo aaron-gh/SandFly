@@ -36,6 +36,7 @@ import com.google.android.accessibility.talkback.HatsSurveyRequester;
 import com.google.android.accessibility.talkback.HelpAndFeedbackUtils;
 import com.google.android.accessibility.talkback.NotificationActivity;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.backup.SettingsBackup;
 import com.google.android.accessibility.talkback.TalkBackExitController;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
@@ -150,6 +151,7 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     }
     updateGeminiPreferenceState();
     Updater.setUpPreferences(this);
+    SettingsBackup.setUpPreferences(this);
   }
 
   private void updateGeminiPreferenceState() {
