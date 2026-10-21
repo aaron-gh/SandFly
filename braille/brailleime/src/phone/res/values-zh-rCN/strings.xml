@@ -206,4 +206,108 @@
   <string name="custom_gesture_try_another">请试试其他手势。如需查看所有可用手势的列表，请前往 TalkBack 盲文键盘帮助中心。%s</string>
   <string name="custom_gesture_no_match">手势不符</string>
   <string name="custom_gesture_perform_again">请再次做出您要使用的手势。%s</string>
+
+
+    <!-- Audial announcement that plays when switching to tabletop mode with the charging port on the user's left. [CHAR_LIMIT=200] -->
+    <string name="tabletop_port_left_announcement">桌面模式，充电口在左侧</string>
+
+    <!-- Audial announcement that plays when switching to tabletop mode with the charging port on the user's right. [CHAR_LIMIT=200] -->
+    <string name="tabletop_port_right_announcement">桌面模式，充电口在右侧</string>
+
+    <!-- Audial announcement that plays when switching to screen-away mode with the phone held so the charging port is on the user's right. [CHAR_LIMIT=200] -->
+    <string name="screen_away_port_right_announcement">屏幕朝外模式，充电口在右侧</string>
+
+    <!-- Audial announcement that plays when switching to screen-away mode with the phone held so the charging port is on the user's left. [CHAR_LIMIT=200] -->
+    <string name="screen_away_port_left_announcement">屏幕朝外模式，充电口在左侧</string>
+
+    <!-- Audial announcement that plays when a tablet or unfolded phone is held up and taken to face the user, so it uses the tabletop layout facing them. [CHAR_LIMIT=200] -->
+    <string name="screen_toward_announcement">屏幕朝向你</string>
+
+    <!-- Audial announcement that plays when a tablet or unfolded phone is held up and taken to face the user, with the charging port on the user's left. [CHAR_LIMIT=200] -->
+    <string name="screen_toward_port_left_announcement">屏幕朝向你，充电口在左侧</string>
+
+    <!-- Audial announcement that plays when a tablet or unfolded phone is held up and taken to face the user, with the charging port on the user's right. [CHAR_LIMIT=200] -->
+    <string name="screen_toward_port_right_announcement">屏幕朝向你，充电口在右侧</string>
+
+    <!-- Audial announcement that plays when a tablet or unfolded phone is held up and taken to face the user, with the charging port pointing down. [CHAR_LIMIT=200] -->
+    <string name="screen_toward_port_down_announcement">屏幕朝向你，充电口朝下</string>
+
+    <!-- Audial announcement that plays when a tablet or unfolded phone is held up and taken to face the user, with the charging port pointing up. [CHAR_LIMIT=200] -->
+    <string name="screen_toward_port_up_announcement">屏幕朝向你，充电口朝上</string>
+
+    <!-- Audial announcement that plays when the user turns the phone around in screen-away mode, so the charging port is now on their right. [CHAR_LIMIT=200] -->
+    <string name="port_right_announcement">充电口在右侧</string>
+
+    <!-- Audial announcement that plays when the user turns the phone around in screen-away mode, so the charging port is now on their left. [CHAR_LIMIT=200] -->
+    <string name="port_left_announcement">充电口在左侧</string>
+
+    <!-- Audial announcement that plays when switching to tabletop mode with a tablet's charging port toward the user. [CHAR_LIMIT=200] -->
+    <string name="tabletop_port_near_announcement">桌面模式，充电口朝向你</string>
+
+    <!-- Audial announcement that plays when switching to tabletop mode with a tablet's charging port away from the user. [CHAR_LIMIT=200] -->
+    <string name="tabletop_port_far_announcement">桌面模式，充电口背离你</string>
+
+    <!-- Audial announcement that plays when switching to screen-away mode with a tablet held so the charging port points down. [CHAR_LIMIT=200] -->
+    <string name="screen_away_port_down_announcement">屏幕朝外模式，充电口朝下</string>
+
+    <!-- Audial announcement that plays when switching to screen-away mode with a tablet held so the charging port points up. [CHAR_LIMIT=200] -->
+    <string name="screen_away_port_up_announcement">屏幕朝外模式，充电口朝上</string>
+
+    <!-- Audial announcement that plays when the user turns a tablet lying flat so the charging port is toward them. [CHAR_LIMIT=200] -->
+    <string name="port_near_announcement">充电口朝向你</string>
+
+    <!-- Audial announcement that plays when the user turns a tablet lying flat so the charging port is away from them. [CHAR_LIMIT=200] -->
+    <string name="port_far_announcement">充电口背离你</string>
+
+    <!-- Audial announcement that plays when the user turns a tablet in screen-away mode so the charging port points down. [CHAR_LIMIT=200] -->
+    <string name="port_down_announcement">充电口朝下</string>
+
+    <!-- Audial announcement that plays when the user turns a tablet in screen-away mode so the charging port points up. [CHAR_LIMIT=200] -->
+    <string name="port_up_announcement">充电口朝上</string>
+
+    <!-- Audial announcement that plays when the user locks the braille dots facing the way they are now. [CHAR_LIMIT=200] -->
+    <string name="orientation_locked_announcement">方向已锁定</string>
+
+    <!-- Audial announcement that plays when the user locks the braille dots facing the way they are now. %1$s says where the charging port is, such as "Charging port on the right". [CHAR_LIMIT=200] -->
+    <string name="orientation_locked_port_announcement">方向已锁定。%1$s</string>
+
+    <!-- Audial announcement that plays when the user unlocks the braille dots, so they follow how the device is held again. [CHAR_LIMIT=200] -->
+    <string name="orientation_unlocked_announcement">方向已解锁</string>
+
+    <!-- Keyboard icon. [CHAR_LIMIT=40]-->
+
+    <!-- Title of the option that swaps the top and bottom dots. [CHAR_LIMIT=60]-->
+    <string name="title_pref_flip_dots_vertically">交换上下点位</string>
+
+    <!-- Summary of the option that swaps the top and bottom dots. [CHAR_LIMIT=100]-->
+    <string name="summary_pref_flip_dots_vertically">1 点与 3 点互换，4 点与 6 点互换</string>
+
+    <!-- Title of the option that takes a tablet or unfolded phone held up to be held with the screen facing away from the user. When off, it is taken to face the user and uses the tabletop layout. [CHAR_LIMIT=60]-->
+    <string name="title_pref_tablet_held_up_faces_away">平板举起时背离用户</string>
+
+    <!-- Summary of the option that takes a tablet held up to be held with the screen facing away. [CHAR_LIMIT=100]-->
+    <string name="summary_pref_tablet_held_up_faces_away">关闭时，举起平板或展开的折叠屏会使用朝向你的桌面布局</string>
+
+    <!-- Title of the option that plays keyboard sounds while typing braille. [CHAR_LIMIT=60]-->
+    <string name="title_pref_typing_sounds">打字声音</string>
+
+    <!-- Summary of the option that plays keyboard sounds while typing braille. [CHAR_LIMIT=150]-->
+    <string name="summary_pref_typing_sounds">输入字符、空格、换行或删除时播放键盘咔哒声</string>
+
+    <!-- Title of the option for what is spoken as the user types on the braille keyboard. [CHAR_LIMIT=60]-->
+
+    <!-- Keyboard echo choice: speak nothing as the user types. [CHAR_LIMIT=40]-->
+
+    <!-- Keyboard echo choice: speak each character as it is typed. [CHAR_LIMIT=40]-->
+
+    <!-- Keyboard echo choice: speak each word when it is finished. [CHAR_LIMIT=40]-->
+
+    <!-- Keyboard echo choice: speak each character, and each word when it is finished. [CHAR_LIMIT=40]-->
+
+    <!-- Basic gestures dialog: close button [CHAR_LIMIT=100] -->
+
+    <!-- Not enough touch points dialog (from custom gestures): button. [CHAR_LIMIT=50] -->
+
+    <!-- Title of a tutorial button that skips the tutorial and opens the braille keyboard. [CHAR_LIMIT=50] -->
+    <string name="skip_tutorial">跳过教程</string>
 </resources>

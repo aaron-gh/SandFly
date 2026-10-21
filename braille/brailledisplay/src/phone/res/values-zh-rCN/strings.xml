@@ -318,4 +318,182 @@
   <string name="popup_message_history_consent_dialog_msg">启用后，系统会将通知和闹钟等信息存储在 TalkBack 中。您可以随时更改此设置。</string>
   <string name="popup_message_history_consent_dialog_positive_btn">开启</string>
   <string name="popup_message_history_consent_dialog_negative_btn">不用了</string>
+
+
+
+
+    <!-- Announcement for user turn on braille on screen overlay. [CHAR_LIMIT=50] -->
+
+    <!-- Announcement for user turn off braille on screen overlay. [CHAR_LIMIT=50] -->
+
+    <!-- TODO: Update the string after approval. -->
+
+    <!-- TODO: Update the string after approval. -->
+
+    <!-- TODO: Update the string after approval. -->
+
+    <!-- TODO: Update the string after approval. -->
+
+    <!-- TODO: Update the string after approval. -->
+
+    <!-- TODO: Update or add string for auto-launch learning mode. -->
+
+    <!-- Labels for the accessibility node. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Role description of heading. -->
+
+    <!-- Role description of visited link. -->
+
+    <!-- Role description of table. -->
+
+    <!-- State description of accessibility node. -->
+
+    <!-- Role description of graphic. -->
+
+    <!-- Keyboard key: Navigate to next ARIA landmark. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous ARIA landmark. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next graphic. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous graphic. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next list. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous list. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next list item. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous list item. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next table. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous table. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 1. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 1. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 2. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 2. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 3. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 3. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 4. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 4. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 5. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 5. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next heading level 6. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous heading level 6. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next control. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous control. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next button. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous button. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next checkbox. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous checkbox. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next radio button. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous radio button. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next combo box. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous combo box. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next edit field. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous edit field. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next link. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous link. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next visited link. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous visited link. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to next unvisited link. [CHAR_LIMIT=100]-->
+
+    <!-- Keyboard key: Navigate to previous unvisited link. [CHAR_LIMIT=100]-->
+
+    <!-- Braille key: Pan down. -->
+
+    <!-- Braille key: Pan up. -->
+
+    <!-- Braille key: routing key. -->
+
+    <!-- Braille key: space. -->
+
+    <!-- Name of the notification channel for braille displays that other apps provide.  [CHAR_LIMIT=50] -->
+    <string name="external_display_channel">来自其他应用的盲文显示器</string>
+
+    <!-- Asks whether an app may be a braille display for SandFly.  [CHAR_LIMIT=100] -->
+    <string name="external_display_ask_title">允许 <xliff:g id="app" example="Notetaker">%1$s</xliff:g> 作为 SandFly 的盲文显示器吗？</string>
+
+    <!-- Text of the notification that asks whether an app may be a braille display.  [CHAR_LIMIT=100] -->
+    <string name="external_display_ask_text">在你允许之前，SandFly 不会使用它。</string>
+
+    <!-- Warns what an app can do as a braille display, before the user allows it.  [CHAR_LIMIT=NONE] -->
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 将能够读取 SandFly 以盲文显示的所有内容，这可能是屏幕上的任何内容，包括消息和你输入的内容。它还能像使用盲文显示器一样控制你的设备：输入、打开应用以及执行任何 SandFly 命令。只允许你信任的应用。</string>
+
+    <!-- Button that lets an app be a braille display.  [CHAR_LIMIT=20] -->
+    <string name="external_display_allow">允许</string>
+
+    <!-- Button that doesn't let an app be a braille display.  [CHAR_LIMIT=20] -->
+    <string name="external_display_deny">不允许</string>
+
+    <!-- Notification shown while an app is SandFly's braille display.  [CHAR_LIMIT=60] -->
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 正在作为你的盲文显示器</string>
+
+    <!-- Notification text shown while an app is SandFly's braille display.  [CHAR_LIMIT=100] -->
+    <string name="external_display_in_use_text">在 SandFly 使用它期间，<xliff:g id="app" example="Notetaker">%1$s</xliff:g> 可以读取屏幕并控制设备。</string>
+
+    <!-- Title of the setting that lists the apps that can be braille displays.  [CHAR_LIMIT=50] -->
+    <string name="external_displays_title">来自其他应用的显示器</string>
+
+    <!-- Explains the list of apps that can be braille displays.  [CHAR_LIMIT=NONE] -->
+    <string name="external_displays_summary">你允许的应用可以作为 SandFly 的盲文显示器。作为盲文显示器的应用可以读取屏幕并控制设备。</string>
+
+    <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
+    <string name="external_displays_none">没有应用可作为盲文显示器。</string>
 </resources>
