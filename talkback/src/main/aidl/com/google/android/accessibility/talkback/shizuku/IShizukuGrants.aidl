@@ -16,7 +16,10 @@
 
 package com.google.android.accessibility.talkback.shizuku;
 
-/** Runs as the shell user through Shizuku, and grants SandFly one of a few fixed permissions. */
+/**
+ * Runs as the shell user through Shizuku. Grants SandFly one of a few fixed permissions, and runs
+ * the fixed commands of SandFly's quick settings.
+ */
 interface IShizukuGrants {
     /** Shizuku calls this when it stops the service. */
     void destroy() = 16777114;
@@ -26,4 +29,10 @@ interface IShizukuGrants {
      * Returns null if it was granted, or what went wrong.
      */
     String grant(int grant, String packageName) = 1;
+
+    /**
+     * Runs the command with the ordinal [command] in ShizukuCommand, with [argument]. Returns null
+     * if it worked, or what went wrong.
+     */
+    String run(int command, String argument) = 2;
 }

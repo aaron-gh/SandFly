@@ -61,6 +61,8 @@
     <string name="pref_show_exit_watermark_key">pref_show_exit_watermark</string>
     <string name="pref_notification_list_key">pref_notification_list</string>
     <string name="pref_notification_parts_key">pref_notification_parts</string>
+    <string name="pref_quick_settings_key">pref_quick_settings</string>
+    <string name="pref_quick_settings_items_key">pref_quick_settings_items_screen</string>
     <string name="pref_speech_rate_key">pref_rate_volume</string>
     <string name="pref_speech_rate_seekbar_key_int">pref_speech_rate_seekbar_key_int</string>
     <string name="pref_speech_pitch_key">pref_pitch_volume</string>
@@ -1190,6 +1192,7 @@
         <item>@string/shortcut_notifications</item>
         <item>@string/shortcut_system_notifications</item>
         <item>@string/shortcut_quick_settings</item>
+        <item>@string/shortcut_system_quick_settings</item>
     </string-array>
 
     <!-- Shortcut preference value of system actions -->
@@ -1200,6 +1203,7 @@
         <item>@string/shortcut_value_notifications</item>
         <item>@string/shortcut_value_system_notifications</item>
         <item>@string/shortcut_value_quick_settings</item>
+        <item>@string/shortcut_value_system_quick_settings</item>
     </string-array>
 
     <!-- Shortcut preference of reading control -->
@@ -1302,6 +1306,7 @@
   <string name="shortcut_value_notifications">NOTIFICATIONS</string>
   <string name="shortcut_value_system_notifications">SYSTEM_NOTIFICATIONS</string>
   <string name="shortcut_value_quick_settings">QUICK_SETTINGS</string>
+  <string name="shortcut_value_system_quick_settings">SYSTEM_QUICK_SETTINGS</string>
   <string name="shortcut_value_show_custom_actions">SHOW_CUSTOM_ACTIONS</string>
   <string name="shortcut_value_editing">EDITING</string>
   <string name="shortcut_value_talkback_breakout">TALKBACK_BREAKOUT</string>
@@ -1583,6 +1588,7 @@
     <bool name="pref_dev_builds_default">false</bool>
     <bool name="pref_show_exit_watermark_default">true</bool>
     <bool name="pref_notification_list_default">false</bool>
+    <bool name="pref_quick_settings_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
     <bool name="pref_vibration_default">true</bool>
     <bool name="pref_soundback_default">true</bool>

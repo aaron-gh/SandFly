@@ -2015,6 +2015,16 @@ public class TalkBackService extends AccessibilityServiceCompat
     return instance;
   }
 
+  /**
+   * Keeps the volume monitor from announcing a volume change that SandFly made and has spoken
+   * itself, such as in its quick settings panel.
+   */
+  public void ignoreSelfVolumeChange(int streamType) {
+    if (volumeMonitor != null) {
+      volumeMonitor.ignoreSelfAdjustment(streamType);
+    }
+  }
+
   /** Initialize {@link FingerprintGestureCallback} for detecting fingerprint gestures. */
   private void initializeFingerprintGestureCallback() {
     if (fingerprintGestureCallback != null || !FeatureSupport.isFingerprintGestureSupported(this)) {

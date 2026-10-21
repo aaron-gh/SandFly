@@ -21,7 +21,8 @@ import kotlin.system.exitProcess
 
 /**
  * Shizuku's user service: it runs in a process of its own as the shell user, as adb would, and
- * runs only the commands in [ShizukuGrants.Grant], for a package name that it checks.
+ * runs only the commands in [ShizukuGrants.Grant], for a package name that it checks, and in
+ * [ShizukuCommand], with an argument that it checks.
  */
 class ShizukuGrantService : IShizukuGrants.Stub() {
 
@@ -34,19 +35,29 @@ class ShizukuGrantService : IShizukuGrants.Stub() {
     if (packageName == null || !PACKAGE_NAME.matches(packageName)) {
       return "Bad package name $packageName"
     }
-    return try {
-      val process =
-        ProcessBuilder(which.shellCommand(packageName)).redirectErrorStream(true).start()
+    return exec(which.name, which.shellCommand(packageName))
+  }
+
+  override fun run(command: Int, argument: String?): String? {
+    val which = ShizukuCommand.entries.getOrNull(command) ?: return "Unknown command $command"
+    val shellCommand =
+      argument?.let { which.shellCommand(it) } ?: return "Bad argument $argument for ${which.name}"
+    return exec(which.name, shellCommand)
+  }
+
+  private fun exec(name: String, command: List<String>): String? =
+    try {
+      val process = ProcessBuilder(command).redirectErrorStream(true).start()
       if (!process.waitFor(TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
         process.destroyForcibly()
-        return "${which.name} timed out"
+        "$name timed out"
+      } else {
+        val output = process.inputStream.bufferedReader().use { it.readText() }.trim()
+        if (process.exitValue() == 0) null else output.ifEmpty { "Exit code ${process.exitValue()}" }
       }
-      val output = process.inputStream.bufferedReader().use { it.readText() }.trim()
-      if (process.exitValue() == 0) null else output.ifEmpty { "Exit code ${process.exitValue()}" }
     } catch (e: Exception) {
       e.toString()
     }
-  }
 
   private companion object {
     val PACKAGE_NAME = Regex("""[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+""")

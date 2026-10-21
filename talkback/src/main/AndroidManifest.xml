@@ -62,6 +62,12 @@
     <!-- Required for Primes. -->
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
 
+    <!-- Lets the quick settings panel read the state of apps' tiles from SystemUI's dump, which
+         Android allows only with both this and DUMP. Granted through Shizuku or adb. -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
     <!-- Used to control Primes collection using Gservices flags -->
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
@@ -355,6 +361,17 @@
             android:taskAffinity="com.google.android.accessibility.talkback.NotificationListAffinity"
             android:theme="@style/NotificationReplyTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <!-- SandFly's own quick settings panel, opened instead of the system's quick settings. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/quick_settings_title"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.google.android.accessibility.talkback.QuickSettingsAffinity"
+            android:theme="@style/NotificationListTheme" />
 
         <!-- Receives notifications for that list while the user has given notification access. -->
         <service

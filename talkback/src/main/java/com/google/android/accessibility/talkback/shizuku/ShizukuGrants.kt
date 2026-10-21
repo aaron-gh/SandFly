@@ -17,14 +17,18 @@
 package com.google.android.accessibility.talkback.shizuku
 
 import android.Manifest
+import android.app.AppOpsManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.ServiceConnection
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.os.Process
+import android.provider.Settings
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings
@@ -52,7 +56,11 @@ object ShizukuGrants {
     /** Lets "Fix stuck touch exploration" find and cancel the stuck touch. */
     DUMP,
     /** Lets "Speakerphone away from ear" move calls to the speaker. */
-    MANAGE_ONGOING_CALLS;
+    MANAGE_ONGOING_CALLS,
+    /** Lets the quick settings panel change brightness and auto-rotate. */
+    WRITE_SETTINGS,
+    /** With DUMP, lets the quick settings panel read the state of apps' tiles. */
+    USAGE_STATS;
 
     /** The command that grants it, as adb would run it after `adb shell`. */
     fun shellCommand(packageName: String): List<String> =
@@ -60,6 +68,8 @@ object ShizukuGrants {
         DUMP -> listOf("pm", "grant", packageName, Manifest.permission.DUMP)
         MANAGE_ONGOING_CALLS ->
           listOf("appops", "set", packageName, "MANAGE_ONGOING_CALLS", "allow")
+        WRITE_SETTINGS -> listOf("appops", "set", packageName, "WRITE_SETTINGS", "allow")
+        USAGE_STATS -> listOf("pm", "grant", packageName, Manifest.permission.PACKAGE_USAGE_STATS)
       }
 
     fun isGranted(context: Context): Boolean =
@@ -68,7 +78,30 @@ object ShizukuGrants {
           context.checkSelfPermission(Manifest.permission.DUMP) ==
             PackageManager.PERMISSION_GRANTED
         MANAGE_ONGOING_CALLS -> SpeakerphoneSettings.canControlCalls(context)
+        WRITE_SETTINGS -> Settings.System.canWrite(context)
+        USAGE_STATS -> hasUsageAccess(context)
       }
+  }
+
+  /**
+   * Whether SandFly may dump system services that show app usage, as `dumpsys activity` does:
+   * Android checks the permission, and then that the user hasn't turned usage access off.
+   */
+  @Suppress("DEPRECATION") // unsafeCheckOpNoThrow needs Android 10.
+  private fun hasUsageAccess(context: Context): Boolean {
+    if (context.checkSelfPermission(Manifest.permission.PACKAGE_USAGE_STATS) !=
+      PackageManager.PERMISSION_GRANTED
+    ) {
+      return false
+    }
+    val appOps = context.getSystemService(AppOpsManager::class.java)
+    val mode =
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        appOps.unsafeCheckOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, Process.myUid(), context.packageName)
+      } else {
+        appOps.checkOpNoThrow(AppOpsManager.OPSTR_GET_USAGE_STATS, Process.myUid(), context.packageName)
+      }
+    return mode == AppOpsManager.MODE_ALLOWED || mode == AppOpsManager.MODE_DEFAULT
   }
 
   private val mainHandler = Handler(Looper.getMainLooper())
@@ -172,14 +205,15 @@ object ShizukuGrants {
     return true
   }
 
-  private fun hasShizukuPermission(): Boolean =
+  fun hasShizukuPermission(): Boolean =
     try {
       Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
     } catch (e: RuntimeException) {
       false
     }
 
-  private fun withShizukuPermission(onResult: (Boolean) -> Unit) {
+  /** Calls [onResult] with whether Shizuku allows SandFly, asking the user first if needed. */
+  fun withShizukuPermission(onResult: (Boolean) -> Unit) {
     try {
       when {
         hasShizukuPermission() -> onResult(true)
