@@ -65,6 +65,7 @@ import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.accessibility.utils.output.ScrollActionRecord.AutoScrollSuccessChecker;
 import com.google.android.accessibility.utils.output.ScrollActionRecord.UserAction;
 import com.google.android.accessibility.utils.output.SpeechCacheManager.LoadSpeechResultNotifier;
+import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirection;
 import com.google.android.accessibility.utils.traversal.TraversalStrategy.SearchDirectionOrUnknown;
@@ -152,6 +153,14 @@ public abstract class Feedback {
 
   public static Part.Builder speech(CharSequence text, SpeakOptions options) {
     return Part.builder().speech(text, options);
+  }
+
+  /**
+   * Speech the user asked for, such as the time, which is heard during calls and while another app
+   * records or plays audio.
+   */
+  public static Part.Builder requestedSpeech(CharSequence text) {
+    return speech(text, SpeakOptions.create().setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL));
   }
 
   public static Part.Builder synthesize(
