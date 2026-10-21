@@ -133,6 +133,7 @@ class QuickControls(private val context: Context) {
   private val wifi = context.applicationContext.getSystemService(WifiManager::class.java)
   private val camera = context.getSystemService(CameraManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
+  private val brightnessCurve by lazy { BrightnessCurve.forDevice() }
 
   /** The camera with the flashlight, found once. */
   private val torchCamera: String? by lazy {
@@ -493,8 +494,8 @@ class QuickControls(private val context: Context) {
     }
     return when (control) {
       QuickControl.BRIGHTNESS -> {
-        val setting = system(Settings.System.SCREEN_BRIGHTNESS) ?: BrightnessCurve.MIN
-        val position = (BrightnessCurve.toSlider(setting) * BRIGHTNESS_POSITIONS).roundToInt()
+        val setting = system(Settings.System.SCREEN_BRIGHTNESS) ?: brightnessCurve.min
+        val position = (brightnessCurve.toSlider(setting) * BRIGHTNESS_POSITIONS).roundToInt()
         SliderState(0, BRIGHTNESS_POSITIONS, position, BRIGHTNESS_STEP)
       }
       QuickControl.FLASHLIGHT_BRIGHTNESS -> {
@@ -526,7 +527,7 @@ class QuickControls(private val context: Context) {
       QuickControl.BRIGHTNESS ->
         writeSystem(
           Settings.System.SCREEN_BRIGHTNESS,
-          BrightnessCurve.toSetting(value.toDouble() / BRIGHTNESS_POSITIONS),
+          brightnessCurve.toSetting(value.toDouble() / BRIGHTNESS_POSITIONS),
           onFailed,
         )
       QuickControl.FLASHLIGHT_BRIGHTNESS -> {
