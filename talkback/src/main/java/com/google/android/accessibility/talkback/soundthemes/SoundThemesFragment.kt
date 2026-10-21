@@ -157,6 +157,17 @@ class SoundThemesFragment : TalkbackBaseFragment() {
         askForLink()
       }
     )
+    SoundThemeSourcesScreen.screen?.let { sources ->
+      install.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          title = getString(R.string.title_pref_sound_theme_install_source)
+          summary = getString(R.string.summary_pref_sound_theme_install_source)
+          fragment = sources.name
+          isPersistent = false
+          isIconSpaceReserved = false
+        }
+      )
+    }
   }
 
   private fun createTheme() {

@@ -153,6 +153,23 @@ class ScriptSourcesTest {
   }
 
   @Test
+  fun aSoundThemeListingHoldsZipFilesUpToSixtyMegabytes() {
+    val page =
+      ScriptSources.parsePage(
+        source("github.com/a/themes"),
+        """[
+          {"name":"a.lua","type":"file","size":10,"download_url":"$raw/a.lua"},
+          {"name":"Unspoken.ZIP","type":"file","size":20000000,"download_url":"$raw/Unspoken.ZIP"},
+          {"name":"huge.zip","type":"file","size":70000000,"download_url":"$raw/huge.zip"},
+          {"name":"x.zip","type":"file","size":10,"download_url":"https://example.com/x.zip"}
+        ]""",
+        SourceKind.SOUND_THEMES,
+      )
+
+    assertEquals(listOf(SourceScript("Unspoken.ZIP", "$raw/Unspoken.ZIP")), page.scripts)
+  }
+
+  @Test
   fun aGiteaListingHoldsScriptFilesOnItsHost() {
     val url = "https://codeberg.org/a/b/raw/branch/main/x.lua"
     val page =

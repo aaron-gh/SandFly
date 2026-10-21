@@ -33,8 +33,23 @@ data class SourceScript(val file: String, val url: String, val name: String = fi
 /** One page of a source's files. [count] is how many entries the page held. */
 data class SourcePage(val scripts: List<SourceScript>, val count: Int, val next: String?)
 
+/** What the files of a source are. Each kind has a list of sources of its own. */
+enum class SourceKind(val prefs: String, private val extensions: List<String>) {
+  SCRIPTS("script_sources", listOf(".lua", ".zip")),
+  SOUND_THEMES("sound_theme_sources", listOf(".zip"));
+
+  fun lists(file: String): Boolean = extensions.any { file.endsWith(it, ignoreCase = true) }
+
+  /** The most a file can be, as for [ScriptPackage], or 60 MB for a sound theme. */
+  fun maxBytesOf(file: String): Int =
+    if (this == SCRIPTS) ScriptPackage.maxBytesOf(file) else MAX_THEME_BYTES
+
+  private companion object {
+    const val MAX_THEME_BYTES = 60 * 1024 * 1024
+  }
+}
+
 object ScriptSources {
-  private const val PREFS = "script_sources"
   private const val KEY_SOURCES = "sources"
   private const val CONNECT_TIMEOUT_MS = 15_000
   private const val READ_TIMEOUT_MS = 30_000
@@ -42,13 +57,12 @@ object ScriptSources {
   private const val MAX_LISTING_BYTES = 8 * 1024 * 1024
   private const val MAX_PAGES = 5
   private const val MAX_SCRIPTS = 200
-  private val EXTENSIONS = listOf(".lua", ".zip")
 
   @Synchronized
-  fun all(context: Context): List<ScriptSource> {
+  fun all(context: Context, kind: SourceKind = SourceKind.SCRIPTS): List<ScriptSource> {
     val saved =
       context
-        .getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        .getSharedPreferences(kind.prefs, Context.MODE_PRIVATE)
         .getString(KEY_SOURCES, null) ?: return emptyList()
     return try {
       val array = JSONArray(saved)
@@ -60,29 +74,31 @@ object ScriptSources {
 
   /** Adds [source] to the end of the list. Returns false if it is already there. */
   @Synchronized
-  fun add(context: Context, source: ScriptSource): Boolean {
-    val sources = all(context)
+  fun add(context: Context, source: ScriptSource, kind: SourceKind = SourceKind.SCRIPTS): Boolean {
+    val sources = all(context, kind)
     if (sources.any { it.address.equals(source.address, ignoreCase = true) }) return false
-    save(context, sources + source)
+    save(context, kind, sources + source)
     return true
   }
 
   @Synchronized
-  fun remove(context: Context, source: ScriptSource) {
-    save(context, all(context).filterNot { it.address == source.address })
+  fun remove(context: Context, source: ScriptSource, kind: SourceKind = SourceKind.SCRIPTS) {
+    save(context, kind, all(context, kind).filterNot { it.address == source.address })
   }
 
-  private fun save(context: Context, sources: List<ScriptSource>) {
+  private fun save(context: Context, kind: SourceKind, sources: List<ScriptSource>) {
     context
-      .getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+      .getSharedPreferences(kind.prefs, Context.MODE_PRIVATE)
       .edit()
       .putString(KEY_SOURCES, JSONArray(sources.map { it.address }).toString())
       .apply()
   }
 
-  /** The scripts in [source], by file name. Throws [IOException] with the reason it failed. */
+  /**
+   * The files of [kind] in [source], by file name. Throws [IOException] with the reason it failed.
+   */
   @Throws(IOException::class)
-  fun list(source: ScriptSource): List<SourceScript> {
+  fun list(source: ScriptSource, kind: SourceKind = SourceKind.SCRIPTS): List<SourceScript> {
     val scripts = mutableListOf<SourceScript>()
     var url: String? = source.listUrl
     var pages = 0
@@ -93,7 +109,7 @@ object ScriptSources {
         }
       val page =
         try {
-          parsePage(source, body.decodeToString())
+          parsePage(source, body.decodeToString(), kind)
         } catch (e: JSONException) {
           throw IOException("The answer of ${source.host.label} could not be read")
         }
@@ -111,18 +127,27 @@ object ScriptSources {
   }
 
   /** Throws [JSONException] if [json] is not a list of files in a folder of [source]. */
-  fun parsePage(source: ScriptSource, json: String): SourcePage {
+  fun parsePage(
+    source: ScriptSource,
+    json: String,
+    kind: SourceKind = SourceKind.SCRIPTS,
+  ): SourcePage {
     val host = source.host
     if (host.api == SourceApi.BITBUCKET) {
       val answer = JSONObject(json)
       val values = answer.getJSONArray("values")
       val next = answer.optString("next").takeIf { it.startsWith(host.filesPrefix) }
-      return SourcePage(scriptsIn(values) { bitbucketScript(host, it) }, values.length(), next)
+      return SourcePage(
+        scriptsIn(values) { bitbucketScript(host, kind, it) },
+        values.length(),
+        next,
+      )
     }
     val entries = JSONArray(json)
     val scripts =
       scriptsIn(entries) {
-        if (host.api == SourceApi.GITLAB) gitlabScript(source, it) else gitScript(host, it)
+        if (host.api == SourceApi.GITLAB) gitlabScript(source, kind, it)
+        else gitScript(host, kind, it)
       }
     return SourcePage(scripts, entries.length(), null)
   }
@@ -131,15 +156,19 @@ object ScriptSources {
     (0 until entries.length()).mapNotNull { entries.optJSONObject(it)?.let(read) }
 
   // GitHub, and Gitea or Forgejo, which answer alike.
-  private fun gitScript(host: SourceHost, entry: JSONObject): SourceScript? {
+  private fun gitScript(host: SourceHost, kind: SourceKind, entry: JSONObject): SourceScript? {
     if (entry.optString("type") != "file") return null
     val file = entry.optString("name")
-    return scriptOf(host, file, entry.optString("download_url"), entry.optLong("size"))
+    return scriptOf(host, kind, file, entry.optString("download_url"), entry.optLong("size"))
   }
 
   // GitLab lists no sizes or addresses of files, so a file's address is made, and its size is
   // limited as it is downloaded.
-  private fun gitlabScript(source: ScriptSource, entry: JSONObject): SourceScript? {
+  private fun gitlabScript(
+    source: ScriptSource,
+    kind: SourceKind,
+    entry: JSONObject,
+  ): SourceScript? {
     if (entry.optString("type") != "blob") return null
     val file = entry.optString("name")
     val path = entry.optString("path")
@@ -149,20 +178,30 @@ object ScriptSources {
         ScriptSource.encode(path) +
         "/raw" +
         ref
-    return scriptOf(source.host, file, url, 0)
+    return scriptOf(source.host, kind, file, url, 0)
   }
 
-  private fun bitbucketScript(host: SourceHost, entry: JSONObject): SourceScript? {
+  private fun bitbucketScript(
+    host: SourceHost,
+    kind: SourceKind,
+    entry: JSONObject,
+  ): SourceScript? {
     if (entry.optString("type") != "commit_file") return null
     val file = entry.optString("path").substringAfterLast('/')
     val url = entry.optJSONObject("links")?.optJSONObject("self")?.optString("href").orEmpty()
-    return scriptOf(host, file, url, entry.optLong("size"))
+    return scriptOf(host, kind, file, url, entry.optLong("size"))
   }
 
-  private fun scriptOf(host: SourceHost, file: String, url: String, size: Long): SourceScript? {
-    if (EXTENSIONS.none { file.endsWith(it, ignoreCase = true) }) return null
-    // Only from where the service serves its files, and no more than a script can be.
-    if (!url.startsWith(host.filesPrefix) || size > ScriptPackage.maxBytesOf(file)) return null
+  private fun scriptOf(
+    host: SourceHost,
+    kind: SourceKind,
+    file: String,
+    url: String,
+    size: Long,
+  ): SourceScript? {
+    if (!kind.lists(file)) return null
+    // Only from where the service serves its files, and no more than a file of its kind can be.
+    if (!url.startsWith(host.filesPrefix) || size > kind.maxBytesOf(file)) return null
     return SourceScript(file, url)
   }
 

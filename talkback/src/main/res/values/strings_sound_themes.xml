@@ -70,6 +70,18 @@
     <string name="title_pref_sound_theme_install_link">From a link</string>
     <!-- Sound themes: summary of the entry that installs a theme from a link. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_sound_theme_install_link">A link to a theme file, or to a GitHub repository with a theme in it. You can also share a link with SandFly from your browser.</string>
+    <!-- Sound themes: entry that opens the list of repositories to install themes from. [CHAR LIMIT=50] -->
+    <string name="title_pref_sound_theme_install_source">From a source</string>
+    <!-- Sound themes: summary of the entry that opens the list of repositories to install themes from. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_sound_theme_install_source">Theme files in a repository on GitHub, GitLab, Codeberg, Gitea or Bitbucket.</string>
+    <!-- Title of the screen of the repositories to install sound themes from. [CHAR LIMIT=40] -->
+    <string name="sound_theme_sources">Sound theme sources</string>
+    <!-- Shown when a sound theme source has no theme files. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_source_empty">No sound themes in this source</string>
+    <!-- Shown when the sound themes of a source could not be loaded. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_source_failed">Could not load sound themes. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <!-- Message of the dialog that asks to remove a sound theme source. [CHAR LIMIT=NONE] -->
+    <string name="sound_theme_source_remove_message">Sound themes installed from it stay installed.</string>
     <!-- Sound themes: explanation in the dialog for installing a theme from a link. [CHAR LIMIT=NONE] -->
     <string name="sound_theme_link_message">Enter or paste a link to a theme file, or to a GitHub repository with a theme in it.</string>
     <!-- Sound themes: hint in the field for the link to a theme. [CHAR LIMIT=50] -->
