@@ -18,8 +18,10 @@ package com.google.android.accessibility.talkback.shizuku
 
 import android.content.Context
 import android.content.ContextWrapper
-import android.os.IBinder
 import android.net.wifi.WifiManager
+import android.os.IBinder
+import android.os.ParcelFileDescriptor
+import java.io.InputStream
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Proxy
 import java.util.concurrent.CountDownLatch
@@ -154,23 +156,74 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       e.toString()
     }
 
-  private fun exec(name: String, command: List<String>): String? =
+  override fun install(
+    apks: Array<ParcelFileDescriptor>?,
+    sizes: LongArray?,
+    packageName: String?,
+    installer: String?,
+  ): String? {
+    if (apks == null || sizes == null || apks.size != sizes.size || apks.isEmpty()) {
+      return "No APKs to install"
+    }
+    if (packageName == null || !PACKAGE_NAME.matches(packageName)) {
+      return "Bad package name $packageName"
+    }
+    if (installer == null || !PACKAGE_NAME.matches(installer)) {
+      return "Bad installer $installer"
+    }
+    val create = shell(listOf("pm", "install-create", "-r", "-i", installer, "-p", packageName), null)
+    val session =
+      SESSION_ID.find(create.second)?.groupValues?.get(1)
+        ?: return "No install session: ${create.second}"
+    try {
+      apks.forEachIndexed { index, apk ->
+        ParcelFileDescriptor.AutoCloseInputStream(apk).use { input ->
+          val write =
+            shell(
+              listOf("pm", "install-write", "-S", sizes[index].toString(), session, "apk$index", "-"),
+              input,
+            )
+          if (write.first != 0) {
+            shell(listOf("pm", "install-abandon", session), null)
+            return "Writing apk$index failed: ${write.second}"
+          }
+        }
+      }
+      val commit = shell(listOf("pm", "install-commit", session), null)
+      return if (commit.first == 0) null else commit.second.ifEmpty { "Install failed" }
+    } catch (e: Exception) {
+      shell(listOf("pm", "install-abandon", session), null)
+      return e.toString()
+    }
+  }
+
+  private fun exec(name: String, command: List<String>): String? {
+    val result = shell(command, null)
+    return if (result.first == 0) null else result.second.ifEmpty { "$name failed" }
+  }
+
+  /** Runs a shell command, feeding [stdin] to it if given, and returns its exit code and output. */
+  private fun shell(command: List<String>, stdin: InputStream?): Pair<Int, String> =
     try {
       val process = ProcessBuilder(command).redirectErrorStream(true).start()
-      if (!process.waitFor(TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
+      stdin?.use { it.copyTo(process.outputStream) }
+      process.outputStream.close()
+      if (!process.waitFor(INSTALL_TIMEOUT_SECONDS, TimeUnit.SECONDS)) {
         process.destroyForcibly()
-        "$name timed out"
+        -1 to "Timed out"
       } else {
-        val output = process.inputStream.bufferedReader().use { it.readText() }.trim()
-        if (process.exitValue() == 0) null else output.ifEmpty { "Exit code ${process.exitValue()}" }
+        process.exitValue() to process.inputStream.bufferedReader().use { it.readText() }.trim()
       }
     } catch (e: Exception) {
-      e.toString()
+      -1 to e.toString()
     }
 
   private companion object {
     val PACKAGE_NAME = Regex("""[A-Za-z][A-Za-z0-9_]*(\.[A-Za-z][A-Za-z0-9_]*)+""")
+    val SESSION_ID = Regex("""\[(\d+)\]""")
     const val TIMEOUT_SECONDS = 10L
+    /** Installing is slower than a setting change, so it gets longer than the other commands. */
+    const val INSTALL_TIMEOUT_SECONDS = 120L
     const val SHELL_PACKAGE = "com.android.shell"
     /** Context.TETHERING_SERVICE, which isn't public. */
     const val TETHERING_SERVICE = "tethering"

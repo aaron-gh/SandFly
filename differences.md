@@ -658,6 +658,14 @@ SandFly installs as `io.github.aaron_gh.sandfly`, so it installs next to Google'
 
 SandFly checks GitHub for new development builds and installs them when you tap its notification. For more information, see [Updates](README.md#updates).
 
+### Appear installed from Google Play
+
+Some apps, such as some banking apps, turn off accessibility services that Android records as installed from anywhere but Google Play. That stops a blind user who installed SandFly from a release from using it with those apps. **Advanced settings** > **Appear installed from Google Play**, off by default, makes Android record Google Play as SandFly's installer, so those apps keep working.
+
+Android only records the installer when an app is installed, and only lets the shell or the system choose it, so SandFly reinstalls its own APK through Shizuku, naming Google Play. It is the same app, with the same settings; only what apps are told about where it came from changes. Reinstalling restarts SandFly, so speech stops for a moment. While the setting is on, the built-in updater installs updates the same way, so an update keeps the recorded installer.
+
+Without Shizuku, the switch can't change the installer; its "Copy command" action gives the adb command to run from a computer. Turning the setting off records the installer SandFly had before. A banking app may still detect a sideloaded install in other ways.
+
 ## Android TV
 
 ### Settings on the TV home screen

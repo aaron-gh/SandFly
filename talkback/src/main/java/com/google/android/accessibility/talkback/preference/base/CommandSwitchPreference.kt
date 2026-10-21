@@ -20,6 +20,7 @@ import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
 import android.widget.Toast
+import androidx.core.util.Consumer
 import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import androidx.core.view.accessibility.AccessibilityViewCommand
@@ -57,8 +58,24 @@ constructor(context: Context, attrs: AttributeSet? = null) :
   /** Runs after a grant through Shizuku, whether or not it worked, to update the setting. */
   var onGrantFinished: Runnable? = null
 
+  /**
+   * Runs the setting's action for the new checked state when the switch is toggled, instead of
+   * granting a permission. It gets the new state and reports back whether it worked, so that the
+   * switch turns back if it didn't.
+   */
+  fun interface Toggle {
+    fun run(checked: Boolean, done: Consumer<Boolean>)
+  }
+
+  var onToggle: Toggle? = null
+
   override fun onClick() {
     super.onClick()
+    onToggle?.let { toggle ->
+      val wanted = isChecked
+      toggle.run(wanted, Consumer { worked -> if (!worked) isChecked = !wanted })
+      return
+    }
     val grant = grant ?: return
     if (!isChecked || command == null) return
     ShizukuGrants.request(context, grant) { granted ->
