@@ -74,15 +74,12 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
   }
 
   private boolean useOnDevice() {
-    return OnDeviceAiSettings.INSTANCE.isOnDevice(prefs);
+    return LocalModelManager.Companion.get(context).answersRequests();
   }
 
   @Override
   public boolean isKeylessInitialized() {
-    if (useOnDevice()) {
-      return LocalModelManager.Companion.get(context).isReady();
-    }
-    return AiService.isSetUp(prefs);
+    return useOnDevice() || AiService.isSetUp(prefs);
   }
 
   @Override
