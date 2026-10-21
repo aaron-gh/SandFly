@@ -17,6 +17,28 @@
 package com.google.android.accessibility.talkback.quicksettings
 
 import android.app.NotificationManager
+import android.accessibilityservice.AccessibilityService
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.ComponentName
+import android.content.res.Resources
+import android.hardware.SensorPrivacyManager
+import android.media.MediaMetadata
+import android.media.MediaRouter2
+import android.media.session.MediaController
+import android.media.session.MediaSessionManager
+import android.media.session.PlaybackState
+import android.net.ConnectivityManager
+import android.os.Process
+import android.provider.AlarmClock
+import android.text.format.DateFormat
+import com.google.android.accessibility.talkback.notificationlist.NotificationList
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService
+import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import kotlin.math.roundToInt
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothManager
 import android.content.BroadcastReceiver
@@ -64,11 +86,31 @@ enum class SoundMode(val ringerMode: Int, @StringRes val title: Int) {
 /** A slider's range and value. A step is what one swipe up or down changes. */
 data class SliderState(val min: Int, val max: Int, val value: Int, val step: Int)
 
+/** One of the values of a choice control, such as Vibrate or 30 seconds. */
+data class Choice(val label: String, val value: Int)
+
+/**
+ * A choice control's value and the values a double tap moves through. [current] can be a value
+ * that isn't one of [options], such as a screen timeout set elsewhere.
+ */
+data class ChoiceState(val current: Choice, val options: List<Choice>)
+
+/** What media plays: its title and app, whether it plays, and the actions it allows. */
+data class MediaState(
+  val title: String?,
+  val app: String?,
+  val playing: Boolean,
+  val actions: List<Pair<String, () -> Unit>>,
+  val playPause: (() -> Unit)?,
+)
+
 /**
  * Reads and changes SandFly's own quick settings controls. Android lets apps change volumes,
- * brightness, the flashlight, the ringer and Do Not Disturb themselves. Wi-Fi, Bluetooth and the
- * other radios, battery saver and dark theme can only be changed by the system and the shell, so
- * SandFly changes them through Shizuku, and without it opens the system's settings for them.
+ * brightness, the flashlight, the ringer and Do Not Disturb themselves, and with permissions that
+ * SandFly gives itself through Shizuku, system and secure settings such as auto-rotate, night
+ * light and color inversion. Wi-Fi, Bluetooth and the other radios, battery saver, dark theme,
+ * data saver and the microphone and camera switches can only be changed by the system and the
+ * shell, so SandFly changes them through Shizuku, and without it opens the system's settings.
  *
  * Everything here runs on the main thread.
  */
@@ -125,6 +167,16 @@ class QuickControls(private val context: Context) {
   /** The flashlight's state, which Android reports only to a torch callback. */
   private var torchOn = false
 
+  /**
+   * Whether the microphone and camera are blocked, by sensor, which only a dump shows, so the
+   * panel reads it in the background and sets it here.
+   */
+  var sensorPrivacy: Map<Int, Boolean> = emptyMap()
+
+  private val mediaSessions = context.getSystemService(MediaSessionManager::class.java)
+  private val listenerComponent = ComponentName(context, NotificationListService::class.java)
+  private var mediaController: MediaController? = null
+
   private var onChange: (() -> Unit)? = null
 
   private val receiver =
@@ -169,6 +221,20 @@ class QuickControls(private val context: Context) {
       }
     }
 
+  private val sessionsListener =
+    MediaSessionManager.OnActiveSessionsChangedListener { onChange?.invoke() }
+
+  private val mediaCallback =
+    object : MediaController.Callback() {
+      override fun onPlaybackStateChanged(state: PlaybackState?) {
+        onChange?.invoke()
+      }
+
+      override fun onMetadataChanged(metadata: MediaMetadata?) {
+        onChange?.invoke()
+      }
+    }
+
   /** Calls [onChange] whenever one of the controls may have changed, until [stop]. */
   fun start(onChange: () -> Unit) {
     this.onChange = onChange
@@ -185,15 +251,23 @@ class QuickControls(private val context: Context) {
         addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED)
         addAction(Intent.ACTION_BATTERY_CHANGED)
         addAction(NFC_STATE_CHANGED)
+        addAction(ConnectivityManager.ACTION_RESTRICT_BACKGROUND_CHANGED)
+        addAction(AlarmManager.ACTION_NEXT_ALARM_CLOCK_CHANGED)
       }
     ContextCompat.registerReceiver(context, receiver, filter, ContextCompat.RECEIVER_EXPORTED)
     val resolver = context.contentResolver
     resolver.registerContentObserver(Settings.System.CONTENT_URI, true, observer)
     resolver.registerContentObserver(Settings.Global.CONTENT_URI, true, observer)
+    resolver.registerContentObserver(Settings.Secure.CONTENT_URI, true, observer)
     if (torchCamera != null) {
       camera.registerTorchCallback(torchCallback, handler)
     }
     audio.registerAudioDeviceCallback(audioDevices, handler)
+    try {
+      mediaSessions?.addOnActiveSessionsChangedListener(sessionsListener, listenerComponent, handler)
+    } catch (e: SecurityException) {
+      // Without notification access, SandFly can't see media sessions.
+    }
   }
 
   fun stop() {
@@ -204,6 +278,9 @@ class QuickControls(private val context: Context) {
       camera.unregisterTorchCallback(torchCallback)
     }
     audio.unregisterAudioDeviceCallback(audioDevices)
+    mediaSessions?.removeOnActiveSessionsChangedListener(sessionsListener)
+    mediaController?.unregisterCallback(mediaCallback)
+    mediaController = null
   }
 
   fun isAvailable(control: QuickControl): Boolean {
@@ -217,6 +294,13 @@ class QuickControls(private val context: Context) {
       QuickControl.FLASHLIGHT_BRIGHTNESS -> torchMaxLevel > 1
       QuickControl.NFC -> nfc() != null
       QuickControl.WIFI -> wifi != null
+      QuickControl.NIGHT_LIGHT -> systemBool("config_nightDisplayAvailable", false)
+      QuickControl.EXTRA_DIM ->
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+          systemBool("config_reduceBrightColorsAvailable", false)
+      QuickControl.MICROPHONE_ACCESS -> supportsSensorToggle(SensorPrivacy.MICROPHONE)
+      QuickControl.CAMERA_ACCESS -> supportsSensorToggle(SensorPrivacy.CAMERA)
+      QuickControl.MEDIA_OUTPUT -> Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE
       else -> true
     }
   }
@@ -257,7 +341,13 @@ class QuickControls(private val context: Context) {
         QuickControl.ADAPTIVE_BRIGHTNESS ->
           system(Settings.System.SCREEN_BRIGHTNESS_MODE) ==
             Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
-        else -> null
+        QuickControl.DATA_SAVER ->
+          context.getSystemService(ConnectivityManager::class.java)?.restrictBackgroundStatus?.let {
+            it != ConnectivityManager.RESTRICT_BACKGROUND_STATUS_DISABLED
+          }
+        QuickControl.MICROPHONE_ACCESS -> sensorPrivacy[SensorPrivacy.MICROPHONE]?.not()
+        QuickControl.CAMERA_ACCESS -> sensorPrivacy[SensorPrivacy.CAMERA]?.not()
+        else -> SECURE_SWITCHES[control]?.let { secure(it)?.let { value -> value != 0 } }
       }
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot read %s: %s", control, e)
@@ -301,11 +391,21 @@ class QuickControls(private val context: Context) {
         )
       else -> {}
     }
+    SECURE_SWITCHES[control]?.let { name ->
+      return writeSecure(name, if (on) 1 else 0, control, onFailed)
+    }
     val command = COMMANDS[control] ?: return Change.FAILED
     if (!ShizukuGrants.isReady()) {
       return openSettings(control)
     }
-    ShizukuShell.run(context, command, ShizukuCommand.argument(on)) { worked ->
+    val argument =
+      if (control == QuickControl.MICROPHONE_ACCESS || control == QuickControl.CAMERA_ACCESS) {
+        // The switch says whether the sensor works, and the command whether it is blocked.
+        ShizukuCommand.argument(!on, Process.myUserHandle().hashCode())
+      } else {
+        ShizukuCommand.argument(on)
+      }
+    ShizukuShell.run(context, command, argument) { worked ->
       if (!worked) {
         openSettings(control)
         onFailed()
@@ -359,8 +459,11 @@ class QuickControls(private val context: Context) {
       return SliderState(min, audio.getStreamMaxVolume(stream), audio.getStreamVolume(stream), 1)
     }
     return when (control) {
-      QuickControl.BRIGHTNESS ->
-        SliderState(0, MAX_BRIGHTNESS, system(Settings.System.SCREEN_BRIGHTNESS) ?: 0, BRIGHTNESS_STEP)
+      QuickControl.BRIGHTNESS -> {
+        val setting = system(Settings.System.SCREEN_BRIGHTNESS) ?: BrightnessCurve.MIN
+        val position = (BrightnessCurve.toSlider(setting) * BRIGHTNESS_POSITIONS).roundToInt()
+        SliderState(0, BRIGHTNESS_POSITIONS, position, BRIGHTNESS_STEP)
+      }
       QuickControl.FLASHLIGHT_BRIGHTNESS -> {
         val id = torchCamera
         if (id == null || Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return null
@@ -388,7 +491,11 @@ class QuickControls(private val context: Context) {
     }
     when (control) {
       QuickControl.BRIGHTNESS ->
-        writeSystem(Settings.System.SCREEN_BRIGHTNESS, value.coerceIn(1, MAX_BRIGHTNESS), onFailed)
+        writeSystem(
+          Settings.System.SCREEN_BRIGHTNESS,
+          BrightnessCurve.toSetting(value.toDouble() / BRIGHTNESS_POSITIONS),
+          onFailed,
+        )
       QuickControl.FLASHLIGHT_BRIGHTNESS -> {
         val id = torchCamera ?: return
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -410,14 +517,50 @@ class QuickControls(private val context: Context) {
     return NumberFormat.getPercentInstance().format((state.value - state.min).toDouble() / range)
   }
 
-  fun soundMode(): SoundMode =
-    SoundMode.entries.firstOrNull { it.ringerMode == audio.ringerMode } ?: SoundMode.SOUND
+  /** A choice control's value and the values a double tap moves through. */
+  fun choice(control: QuickControl): ChoiceState? =
+    when (control) {
+      QuickControl.SOUND_MODE -> {
+        val current =
+          SoundMode.entries.firstOrNull { it.ringerMode == audio.ringerMode } ?: SoundMode.SOUND
+        ChoiceState(soundChoice(current), soundModes().map { soundChoice(it) })
+      }
+      QuickControl.SCREEN_TIMEOUT -> {
+        val current = system(Settings.System.SCREEN_OFF_TIMEOUT) ?: return null
+        ChoiceState(timeoutChoice(current), SCREEN_TIMEOUTS_MS.map { timeoutChoice(it) })
+      }
+      QuickControl.FONT_SIZE -> {
+        val scale =
+          runCatching { Settings.System.getFloat(context.contentResolver, Settings.System.FONT_SCALE) }
+            .getOrDefault(1f)
+        val sizes =
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) FONT_SIZES
+          else FONT_SIZES.filter { it <= MAX_FONT_SIZE_BEFORE_14 }
+        ChoiceState(fontChoice((scale * 100).roundToInt()), sizes.map { fontChoice(it) })
+      }
+      else -> null
+    }
+
+  fun setChoice(control: QuickControl, value: Int, onFailed: () -> Unit): Change =
+    when (control) {
+      QuickControl.SOUND_MODE ->
+        try {
+          audio.ringerMode = value
+          Change.DONE
+        } catch (e: SecurityException) {
+          LogUtils.w(TAG, "Cannot change the sound mode: %s", e)
+          Change.FAILED
+        }
+      QuickControl.SCREEN_TIMEOUT -> writeSystem(Settings.System.SCREEN_OFF_TIMEOUT, value, onFailed)
+      QuickControl.FONT_SIZE -> writeSystem(Settings.System.FONT_SCALE, value / 100f, onFailed)
+      else -> Change.FAILED
+    }
 
   /**
    * The modes SandFly can set: Vibrate needs a vibrator, and Mute needs Do Not Disturb access,
    * which notification access includes.
    */
-  fun soundModes(): List<SoundMode> =
+  private fun soundModes(): List<SoundMode> =
     SoundMode.entries.filter { mode ->
       when (mode) {
         SoundMode.SOUND -> true
@@ -426,15 +569,143 @@ class QuickControls(private val context: Context) {
       }
     }
 
-  fun setSoundMode(mode: SoundMode): Change {
-    return try {
-      audio.ringerMode = mode.ringerMode
-      Change.DONE
-    } catch (e: SecurityException) {
-      LogUtils.w(TAG, "Cannot change the sound mode: %s", e)
-      Change.FAILED
-    }
+  private fun soundChoice(mode: SoundMode) = Choice(context.getString(mode.title), mode.ringerMode)
+
+  private fun timeoutChoice(ms: Int): Choice {
+    val seconds = ms / 1000
+    val label =
+      if (ms >= NEVER_TIMEOUT_MS) {
+        context.getString(R.string.quick_settings_never)
+      } else if (seconds < 60) {
+        context.resources.getQuantityString(R.plurals.quick_settings_seconds, seconds, seconds)
+      } else {
+        val minutes = seconds / 60
+        context.resources.getQuantityString(R.plurals.quick_settings_minutes, minutes, minutes)
+      }
+    return Choice(label, ms)
   }
+
+  private fun fontChoice(percent: Int) =
+    Choice(NumberFormat.getPercentInstance().format(percent / 100.0), percent)
+
+  /** What a button shows under its name. */
+  fun buttonText(control: QuickControl): String? =
+    when (control) {
+      QuickControl.BATTERY -> batteryText()
+      QuickControl.NEXT_ALARM -> {
+        val next = context.getSystemService(AlarmManager::class.java)?.nextAlarmClock
+        if (next == null) {
+          context.getString(R.string.quick_settings_no_alarm)
+        } else {
+          val pattern =
+            DateFormat.getBestDateTimePattern(
+              Locale.getDefault(),
+              if (DateFormat.is24HourFormat(context)) "EHm" else "Ehma",
+            )
+          SimpleDateFormat(pattern, Locale.getDefault()).format(Date(next.triggerTime))
+        }
+      }
+      else -> null
+    }
+
+  /** What a button does: opens something, which closes the panel, or does something. */
+  fun press(control: QuickControl): Change =
+    when (control) {
+      QuickControl.BATTERY -> open(Intent(Intent.ACTION_POWER_USAGE_SUMMARY))
+      QuickControl.SETTINGS -> open(Intent(Settings.ACTION_SETTINGS))
+      QuickControl.POWER_MENU ->
+        if (
+          TalkBackService.getInstance()
+            ?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_POWER_DIALOG) == true
+        ) {
+          Change.DONE
+        } else {
+          Change.FAILED
+        }
+      QuickControl.NEXT_ALARM -> {
+        val show = context.getSystemService(AlarmManager::class.java)?.nextAlarmClock?.showIntent
+        try {
+          if (show != null) {
+            show.send(context, 0, null, null, null, null, NotificationReplyActivity.startOptions())
+            Change.OPENED
+          } else {
+            open(Intent(AlarmClock.ACTION_SHOW_ALARMS))
+          }
+        } catch (e: PendingIntent.CanceledException) {
+          open(Intent(AlarmClock.ACTION_SHOW_ALARMS))
+        }
+      }
+      QuickControl.MEDIA_OUTPUT ->
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE &&
+          MediaRouter2.getInstance(context).showSystemOutputSwitcher()
+        ) {
+          Change.DONE
+        } else {
+          open(Intent(Settings.ACTION_SOUND_SETTINGS))
+        }
+      else -> Change.FAILED
+    }
+
+  /**
+   * The media that plays, or played last: the playing session if there is one, and otherwise the
+   * one Android ranks first. Null when nothing has a session, and when SandFly doesn't have
+   * notification access, without which Android doesn't show sessions.
+   */
+  fun media(): MediaState? {
+    val sessions =
+      try {
+        mediaSessions?.getActiveSessions(listenerComponent).orEmpty()
+      } catch (e: SecurityException) {
+        return null
+      }
+    val controller =
+      sessions.firstOrNull { it.playbackState?.state == PlaybackState.STATE_PLAYING }
+        ?: sessions.firstOrNull()
+    if (controller?.sessionToken != mediaController?.sessionToken) {
+      mediaController?.unregisterCallback(mediaCallback)
+      mediaController = controller
+      controller?.registerCallback(mediaCallback, handler)
+    }
+    controller ?: return null
+    val state = controller.playbackState
+    val supported = state?.actions ?: 0L
+    fun supports(action: Long) = supported and action != 0L
+    val controls = controller.transportControls
+    val playing = state?.state == PlaybackState.STATE_PLAYING
+    val actions = ArrayList<Pair<String, () -> Unit>>()
+    if (supports(PlaybackState.ACTION_SKIP_TO_PREVIOUS)) {
+      actions += context.getString(R.string.notification_list_previous) to { controls.skipToPrevious() }
+    }
+    if (supports(PlaybackState.ACTION_SKIP_TO_NEXT)) {
+      actions += context.getString(R.string.notification_list_next) to { controls.skipToNext() }
+    }
+    state?.customActions?.forEach { custom ->
+      actions += custom.name.toString() to { controls.sendCustomAction(custom, custom.extras) }
+    }
+    val playPause: (() -> Unit)? =
+      when {
+        playing && supports(PlaybackState.ACTION_PAUSE or PlaybackState.ACTION_PLAY_PAUSE) -> {
+          { controls.pause() }
+        }
+        !playing && supports(PlaybackState.ACTION_PLAY or PlaybackState.ACTION_PLAY_PAUSE) -> {
+          { controls.play() }
+        }
+        else -> null
+      }
+    val app =
+      runCatching {
+          context.packageManager.getApplicationLabel(
+            context.packageManager.getApplicationInfo(controller.packageName, 0)
+          )
+        }
+        .getOrNull()
+        ?.toString()
+    val title = controller.metadata?.getString(MediaMetadata.METADATA_KEY_TITLE)?.trim()
+    return MediaState(title?.ifEmpty { null }, app, playing, actions, playPause)
+  }
+
+  /** Whether SandFly has notification access, which media needs. */
+  fun hasNotificationAccess(): Boolean = NotificationList.isAccessGranted(context)
 
   /** The battery level, and whether it is charging. */
   fun batteryText(): String {
@@ -485,15 +756,33 @@ class QuickControls(private val context: Context) {
       QuickControl.ALARM_VOLUME,
       QuickControl.SYSTEM_VOLUME -> Intent(Settings.ACTION_SOUND_SETTINGS)
       QuickControl.ACCESSIBILITY_VOLUME -> Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+      QuickControl.DATA_SAVER -> Intent(Settings.ACTION_DATA_USAGE_SETTINGS)
+      QuickControl.NIGHT_LIGHT,
+      QuickControl.SCREEN_TIMEOUT,
+      QuickControl.FONT_SIZE -> Intent(Settings.ACTION_DISPLAY_SETTINGS)
+      QuickControl.EXTRA_DIM,
+      QuickControl.COLOR_INVERSION,
+      QuickControl.COLOR_CORRECTION -> Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+      QuickControl.MICROPHONE_ACCESS,
+      QuickControl.CAMERA_ACCESS ->
+        Intent(
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) Settings.ACTION_PRIVACY_SETTINGS
+          else Settings.ACTION_SECURITY_SETTINGS
+        )
+      QuickControl.MEDIA,
+      QuickControl.MEDIA_OUTPUT -> Intent(Settings.ACTION_SOUND_SETTINGS)
+      QuickControl.NEXT_ALARM -> Intent(AlarmClock.ACTION_SHOW_ALARMS)
       QuickControl.FLASHLIGHT,
-      QuickControl.FLASHLIGHT_BRIGHTNESS -> null
+      QuickControl.FLASHLIGHT_BRIGHTNESS,
+      QuickControl.SETTINGS,
+      QuickControl.POWER_MENU -> null
     }
 
   /**
    * Opens what changes a switch without Shizuku: the system's settings panel for it where
    * Android has one, which opens over the quick settings panel, and its settings otherwise.
    */
-  private fun openSettings(control: QuickControl): Change {
+  fun openSettings(control: QuickControl): Change {
     val panel =
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         when (control) {
@@ -530,6 +819,23 @@ class QuickControls(private val context: Context) {
     return Change.STARTED
   }
 
+  private fun writeSystem(name: String, value: Float, onFailed: () -> Unit): Change {
+    if (Settings.System.canWrite(context)) {
+      return if (putSystem(name, value)) Change.DONE else Change.FAILED
+    }
+    if (!ShizukuGrants.isReady()) {
+      return open(
+        Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS, Uri.parse("package:" + context.packageName))
+      )
+    }
+    ShizukuGrants.request(context, ShizukuGrants.Grant.WRITE_SETTINGS) { granted ->
+      if (!granted || !putSystem(name, value)) {
+        onFailed()
+      }
+    }
+    return Change.STARTED
+  }
+
   private fun putSystem(name: String, value: Int): Boolean =
     try {
       Settings.System.putInt(context.contentResolver, name, value)
@@ -537,6 +843,63 @@ class QuickControls(private val context: Context) {
       LogUtils.w(TAG, "Cannot write %s: %s", name, e)
       false
     }
+
+  private fun putSystem(name: String, value: Float): Boolean =
+    try {
+      Settings.System.putFloat(context.contentResolver, name, value)
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Cannot write %s: %s", name, e)
+      false
+    }
+
+  /**
+   * Writes a secure setting, which needs WRITE_SECURE_SETTINGS. SandFly grants itself that
+   * through Shizuku when it can, and otherwise opens the system's settings for [control].
+   */
+  private fun writeSecure(name: String, value: Int, control: QuickControl, onFailed: () -> Unit): Change {
+    if (ShizukuGrants.Grant.WRITE_SECURE_SETTINGS.isGranted(context)) {
+      return if (putSecure(name, value)) Change.DONE else Change.FAILED
+    }
+    if (!ShizukuGrants.isReady()) {
+      return openSettings(control)
+    }
+    ShizukuGrants.request(context, ShizukuGrants.Grant.WRITE_SECURE_SETTINGS) { granted ->
+      if (!granted || !putSecure(name, value)) {
+        onFailed()
+      }
+    }
+    return Change.STARTED
+  }
+
+  private fun putSecure(name: String, value: Int): Boolean =
+    try {
+      Settings.Secure.putInt(context.contentResolver, name, value)
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Cannot write %s: %s", name, e)
+      false
+    }
+
+  /** A secure setting, or null if Android doesn't let apps read it. */
+  private fun secure(name: String): Int? =
+    try {
+      Settings.Secure.getInt(context.contentResolver, name, 0)
+    } catch (e: RuntimeException) {
+      null
+    }
+
+  /** A boolean from Android's own configuration, which apps can read but not name directly. */
+  private fun systemBool(name: String, default: Boolean): Boolean {
+    val resources = Resources.getSystem()
+    val id = resources.getIdentifier(name, "bool", "android")
+    return if (id == 0) default else runCatching { resources.getBoolean(id) }.getOrDefault(default)
+  }
+
+  private fun supportsSensorToggle(sensor: Int): Boolean =
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+      runCatching {
+          context.getSystemService(SensorPrivacyManager::class.java)?.supportsSensorToggle(sensor)
+        }
+        .getOrNull() == true
 
   private fun open(intent: Intent): Change =
     try {
@@ -565,9 +928,25 @@ class QuickControls(private val context: Context) {
 
   companion object {
     private const val TAG = "QuickControls"
-    private const val MAX_BRIGHTNESS = 255
-    /** About 5% of the brightness range. */
-    private const val BRIGHTNESS_STEP = 13
+    /** The brightness slider's positions, as percentages of the system's slider. */
+    private const val BRIGHTNESS_POSITIONS = 100
+    private const val BRIGHTNESS_STEP = 5
+
+    private val SCREEN_TIMEOUTS_MS = listOf(15_000, 30_000, 60_000, 120_000, 300_000, 600_000, 1_800_000)
+    /** Font sizes as percentages, as the system's font size slider offers them. */
+    private val FONT_SIZES = listOf(85, 100, 115, 130, 150, 180, 200)
+    private const val MAX_FONT_SIZE_BEFORE_14 = 130
+    /** Some phones offer a screen timeout of Integer.MAX_VALUE, which means never. */
+    private const val NEVER_TIMEOUT_MS = Int.MAX_VALUE / 2
+
+    /** Switches that are secure settings, which only apps with WRITE_SECURE_SETTINGS change. */
+    private val SECURE_SWITCHES =
+      mapOf(
+        QuickControl.NIGHT_LIGHT to "night_display_activated",
+        QuickControl.EXTRA_DIM to "reduce_bright_colors_activated",
+        QuickControl.COLOR_INVERSION to "accessibility_display_inversion_enabled",
+        QuickControl.COLOR_CORRECTION to "accessibility_display_daltonizer_enabled",
+      )
 
     /** Not public in Android, which sends them all the same. */
     private val VOLUME_ACTIONS =
@@ -607,6 +986,9 @@ class QuickControls(private val context: Context) {
         QuickControl.BATTERY_SAVER to ShizukuCommand.BATTERY_SAVER,
         QuickControl.DARK_THEME to ShizukuCommand.DARK_THEME,
         QuickControl.NFC to ShizukuCommand.NFC,
+        QuickControl.DATA_SAVER to ShizukuCommand.DATA_SAVER,
+        QuickControl.MICROPHONE_ACCESS to ShizukuCommand.MICROPHONE_BLOCKED,
+        QuickControl.CAMERA_ACCESS to ShizukuCommand.CAMERA_BLOCKED,
       )
   }
 }

@@ -60,7 +60,9 @@ object ShizukuGrants {
     /** Lets the quick settings panel change brightness and auto-rotate. */
     WRITE_SETTINGS,
     /** With DUMP, lets the quick settings panel read the state of apps' tiles. */
-    USAGE_STATS;
+    USAGE_STATS,
+    /** Lets the quick settings panel change night light, extra dim and the color settings. */
+    WRITE_SECURE_SETTINGS;
 
     /** The command that grants it, as adb would run it after `adb shell`. */
     fun shellCommand(packageName: String): List<String> =
@@ -70,6 +72,8 @@ object ShizukuGrants {
           listOf("appops", "set", packageName, "MANAGE_ONGOING_CALLS", "allow")
         WRITE_SETTINGS -> listOf("appops", "set", packageName, "WRITE_SETTINGS", "allow")
         USAGE_STATS -> listOf("pm", "grant", packageName, Manifest.permission.PACKAGE_USAGE_STATS)
+        WRITE_SECURE_SETTINGS ->
+          listOf("pm", "grant", packageName, Manifest.permission.WRITE_SECURE_SETTINGS)
       }
 
     fun isGranted(context: Context): Boolean =
@@ -80,6 +84,9 @@ object ShizukuGrants {
         MANAGE_ONGOING_CALLS -> SpeakerphoneSettings.canControlCalls(context)
         WRITE_SETTINGS -> Settings.System.canWrite(context)
         USAGE_STATS -> hasUsageAccess(context)
+        WRITE_SECURE_SETTINGS ->
+          context.checkSelfPermission(Manifest.permission.WRITE_SECURE_SETTINGS) ==
+            PackageManager.PERMISSION_GRANTED
       }
   }
 

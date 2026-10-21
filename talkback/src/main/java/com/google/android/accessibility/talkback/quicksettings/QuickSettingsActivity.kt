@@ -23,9 +23,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.Process
 import android.os.SystemClock
 import android.provider.Settings
 import android.service.quicksettings.Tile
@@ -47,6 +49,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.preference.base.announce
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
@@ -87,6 +90,12 @@ class QuickSettingsActivity : AppCompatActivity() {
    * it doesn't say its old state while the radio turns on.
    */
   private val pending = HashMap<String, Pair<Boolean, Long>>()
+
+  /**
+   * What tiles said their state was after SandFly clicked them in the system's quick settings, by
+   * item, kept while the panel is open, since SystemUI's dump isn't always there to say it.
+   */
+  private val clickedStates = HashMap<String, Pair<CharSequence?, Boolean?>>()
 
   /** The view in the panel that has accessibility focus, if one has. */
   private var focusedView: View? = null
@@ -156,6 +165,7 @@ class QuickSettingsActivity : AppCompatActivity() {
     background?.shutdownNow()
     background = null
     readingTiles = false
+    clickedStates.clear()
     super.onStop()
     // Like the system's quick settings, the panel closes when the user leaves it.
     if (!isChangingConfigurations) {
@@ -185,6 +195,7 @@ class QuickSettingsActivity : AppCompatActivity() {
         when (item) {
           is QuickItem.Control -> bindControl(item)
           is QuickItem.Tile -> bindTile(item)
+          is QuickItem.SystemTile -> bindSystemTile(item)
         }
       row?.let { views.add(it) }
     }
@@ -224,30 +235,31 @@ class QuickSettingsActivity : AppCompatActivity() {
         }
         val row = textRow(item.id)
         bindText(row, title, controls.subtitle(control))
-        setState(row, ROLE_SWITCH, on, on?.let { onOffText(it) }) { toggle(item, on) }
+        setState(row, ROLE_SWITCH, on, on?.let { onOffText(it) }) {
+          // A state SandFly can't read, such as the microphone's without DUMP, can't be switched.
+          if (on == null) controls.openSettings(control) else toggle(item, on)
+        }
         setLongClick(row, controls.settingsIntent(control))
         row
       }
       QuickControl.Kind.CHOICE -> {
-        val mode = controls.soundMode()
-        val modes = controls.soundModes()
+        val choice = controls.choice(control) ?: return null
         val row = textRow(item.id)
         bindText(row, title, null)
-        setState(row, ROLE_BUTTON, null, getString(mode.title)) {
-          // The current mode may be one SandFly can't set, such as Mute without access.
-          val next = modes[(modes.indexOf(mode) + 1) % modes.size]
-          controls.setSoundMode(next)
-          refresh()
+        val change = { value: Int ->
+          if (controls.setChoice(control, value) { refresh() } == QuickControls.Change.DONE) {
+            refresh()
+          }
+        }
+        setState(row, ROLE_BUTTON, null, choice.current.label) {
+          // The current value may be one SandFly doesn't offer, such as Mute without access.
+          val index = choice.options.indexOfFirst { it.value == choice.current.value }
+          change(choice.options[(index + 1) % choice.options.size].value)
         }
         delegate(row).actions =
-          modes
-            .filter { it != mode }
-            .map { other ->
-              RowAction(getString(other.title)) {
-                controls.setSoundMode(other)
-                refresh()
-              }
-            }
+          choice.options
+            .filter { it.value != choice.current.value }
+            .map { other -> RowAction(other.label) { change(other.value) } }
         setLongClick(row, controls.settingsIntent(control))
         row
       }
@@ -255,15 +267,57 @@ class QuickSettingsActivity : AppCompatActivity() {
         val state = controls.slider(control) ?: return null
         bindSlider(item, control, title, state)
       }
-      QuickControl.Kind.INFO -> {
+      QuickControl.Kind.BUTTON -> {
         val row = textRow(item.id)
-        bindText(row, title, controls.batteryText())
-        val intent = controls.settingsIntent(control)
-        setState(row, ROLE_BUTTON, null, null) { intent?.let { open(it) } }
+        bindText(row, title, controls.buttonText(control))
+        setState(row, ROLE_BUTTON, null, null) {
+          if (controls.press(control) == QuickControls.Change.OPENED) finish()
+        }
+        setLongClick(row, controls.settingsIntent(control).takeIf { control != QuickControl.BATTERY })
         row
       }
+      QuickControl.Kind.MEDIA -> bindMedia(item, title)
     }
   }
+
+  /**
+   * The media row says what plays and from which app; a double tap plays or pauses it, and its
+   * actions skip. Without notification access, a double tap opens the setting for it.
+   */
+  private fun bindMedia(item: QuickItem.Control, title: String): View {
+    val row = textRow(item.id)
+    if (!controls.hasNotificationAccess()) {
+      bindText(row, title, getString(R.string.notification_list_no_access))
+      setState(row, ROLE_BUTTON, null, null) { open(notificationAccessIntent()) }
+      setLongClick(row, null)
+      return row
+    }
+    val media = controls.media()
+    if (media == null) {
+      bindText(row, title, getString(R.string.quick_settings_no_media))
+      setState(row, ROLE_BUTTON, null, null) {}
+      setLongClick(row, controls.settingsIntent(item.control))
+      return row
+    }
+    bindText(row, title, listOfNotNull(media.title, media.app).joinToString(", ").ifEmpty { null })
+    val state =
+      getString(if (media.playing) R.string.notification_list_playing else R.string.notification_list_paused)
+    setState(row, ROLE_BUTTON, null, state) { media.playPause?.invoke() }
+    delegate(row).actions = media.actions.map { (label, run) -> RowAction(label, run) }
+    setLongClick(row, controls.settingsIntent(item.control))
+    return row
+  }
+
+  private fun notificationAccessIntent(): Intent =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      Intent(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS)
+        .putExtra(
+          Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME,
+          ComponentName(this, NotificationListService::class.java).flattenToString(),
+        )
+    } else {
+      Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+    }
 
   private fun toggle(item: QuickItem.Control, on: Boolean?) {
     val target = !(on ?: return)
@@ -282,32 +336,82 @@ class QuickSettingsActivity : AppCompatActivity() {
   private fun bindTile(item: QuickItem.Tile): View {
     val tile = appTiles[item.component]
     val state = tileStates[SystemTiles.spec(item.component)]
+    val label = state?.label ?: tile?.label?.toString() ?: item.component.packageName
     val row = textRow(item.id)
-    val stateText =
-      when (state?.state) {
-        Tile.STATE_UNAVAILABLE -> getString(R.string.quick_settings_unavailable)
-        Tile.STATE_INACTIVE -> onOffText(false)
-        Tile.STATE_ACTIVE -> onOffText(true)
-        else -> null
-      }
-    // Many tiles show their state under their name as well.
-    val subtitle = state?.secondaryLabel?.takeUnless { it.equals(stateText, ignoreCase = true) }
-    bindText(row, state?.label ?: tile?.label?.toString() ?: item.component.packageName, subtitle)
-    val checked = if (state?.isSwitch == true) state.state == Tile.STATE_ACTIVE else null
-    setState(row, if (checked != null) ROLE_SWITCH else ROLE_BUTTON, checked, stateText) {
-      clickTile(item.component)
-    }
+    bindTileState(row, item.id, label, state) { clickTile(item.component, label) }
     setLongClick(row, tilePreferences(item.component))
     return row
+  }
+
+  /**
+   * A tile of the system's own, such as Hotspot. SandFly can only use it the way the user would,
+   * in the system's quick settings, so a double tap opens them, clicks it and closes them.
+   */
+  private fun bindSystemTile(item: QuickItem.SystemTile): View {
+    val state = item.spec.takeIf { it.isNotEmpty() }?.let { tileStates[it] }
+    val label = state?.label ?: item.label
+    val row = textRow(item.id)
+    bindTileState(row, item.id, label, state) { clickThroughSystem(item.id, label) }
+    setLongClick(row, null)
+    return row
+  }
+
+  /**
+   * Shows a tile's name, what it shows under its name and its state, as SystemUI's dump showed
+   * them, or what the system's quick settings said after SandFly clicked it there.
+   */
+  private fun bindTileState(row: TextView, id: String, label: String, state: TileState?, onClick: () -> Unit) {
+    val clicked = clickedStates[id]
+    val stateText =
+      clicked?.first?.toString()
+        ?: when (state?.state) {
+          Tile.STATE_UNAVAILABLE -> getString(R.string.quick_settings_unavailable)
+          Tile.STATE_INACTIVE -> onOffText(false)
+          Tile.STATE_ACTIVE -> onOffText(true)
+          else -> clicked?.second?.let { onOffText(it) }
+        }
+    // Many tiles show their state under their name as well.
+    val subtitle = state?.secondaryLabel?.takeUnless { it.equals(stateText, ignoreCase = true) }
+    bindText(row, label, subtitle)
+    val checked =
+      clicked?.second ?: if (state?.isSwitch == true) state.state == Tile.STATE_ACTIVE else null
+    setState(row, if (checked != null) ROLE_SWITCH else ROLE_BUTTON, checked, stateText, onClick)
+  }
+
+  /**
+   * Clicks a tile in the system's quick settings through SandFly's accessibility service, then
+   * focuses its row again and says its new state.
+   */
+  private fun clickThroughSystem(id: String, label: String) {
+    SystemPanelClicker.click(label) { result ->
+      if (isFinishing || isDestroyed) return@click
+      when (result) {
+        is SystemPanelClicker.Result.Clicked -> {
+          clickedStates[id] = result.state to result.checked
+          refresh()
+          readTiles()
+        }
+        else -> announce(column, getString(R.string.quick_settings_tile_not_found, label))
+      }
+      // After the row's new state has gone out: a row that kept focus says only the new state,
+      // and one that lost it says everything once focused.
+      rows[id]?.let { row ->
+        row.postDelayed(
+          { row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) },
+          REFOCUS_DELAY_MS,
+        )
+      }
+    }
   }
 
   /**
    * Clicks an app's tile in the system's quick settings, adding it there first if it isn't there,
    * since SystemUI runs only the tiles it shows.
    */
-  private fun clickTile(component: ComponentName) {
+  private fun clickTile(component: ComponentName, label: String) {
     if (!ShizukuGrants.isReady()) {
-      announce(column, getString(R.string.quick_settings_needs_shizuku))
+      // Without Shizuku, the tile can still be used in the system's quick settings, if it's there.
+      clickThroughSystem(QuickItem.Tile(component).id, label)
       return
     }
     val argument = component.flattenToString()
@@ -345,6 +449,8 @@ class QuickSettingsActivity : AppCompatActivity() {
     )
   }
 
+  private fun hasDump(): Boolean = ShizukuGrants.Grant.DUMP.isGranted(this)
+
   /** Grants one permission after another, since each grant starts and stops Shizuku's service. */
   private fun grantDumpAccess(grants: List<ShizukuGrants.Grant>) {
     val grant = grants.firstOrNull()
@@ -364,7 +470,15 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   private fun readTiles() {
     val executor = background ?: return
-    if (!SystemTiles.canRead(this)) return
+    if (!SystemTiles.canRead(this) && !hasDump()) return
+    val readSensors =
+      hasDump() &&
+        items.any {
+          it is QuickItem.Control &&
+            (it.control == QuickControl.MICROPHONE_ACCESS || it.control == QuickControl.CAMERA_ACCESS)
+        }
+    val userId = Process.myUserHandle().hashCode()
+    val readStates = SystemTiles.canRead(this)
     if (readingTiles) {
       readTilesAgain = true
       return
@@ -373,9 +487,16 @@ class QuickSettingsActivity : AppCompatActivity() {
     executor.execute {
       val states =
         try {
-          SystemTiles.read()
+          if (readStates) SystemTiles.read() else null
         } catch (e: Throwable) {
           LogUtils.w(TAG, "Cannot read the system's tiles: %s", e)
+          null
+        }
+      val sensors =
+        try {
+          if (readSensors) SensorPrivacy.read(userId) else null
+        } catch (e: Throwable) {
+          LogUtils.w(TAG, "Cannot read the microphone and camera switches: %s", e)
           null
         }
       handler.post {
@@ -383,6 +504,12 @@ class QuickSettingsActivity : AppCompatActivity() {
         readingTiles = false
         if (states != null && states != tileStates) {
           tileStates = states
+          // The dump says the state now, after SandFly clicked a tile in the system's panel.
+          clickedStates.clear()
+          refresh()
+        }
+        if (sensors != null && sensors != controls.sensorPrivacy) {
+          controls.sensorPrivacy = sensors
           refresh()
         }
         if (readTilesAgain) {
@@ -646,6 +773,8 @@ class QuickSettingsActivity : AppCompatActivity() {
     private const val ROLE_SWITCH = "android.widget.Switch"
     private const val ROLE_BUTTON = "android.widget.Button"
     private const val REFRESH_DELAY_MS = 50L
+    /** Longer than Android waits before it sends a view's state change. */
+    private const val REFOCUS_DELAY_MS = 300L
     /** How long a switch shows what it was set to before it shows its state again. */
     private const val PENDING_MS = 5_000L
     /** How long SystemUI takes to start a tile that was just added. */

@@ -365,7 +365,7 @@
         <!-- SandFly's own quick settings panel, opened instead of the system's quick settings. -->
         <activity
             android:name="com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity"
-            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
             android:excludeFromRecents="true"
             android:exported="false"
             android:label="@string/quick_settings_title"

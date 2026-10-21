@@ -39,6 +39,10 @@ enum class ShizukuCommand {
   BATTERY_SAVER,
   DARK_THEME,
   NFC,
+  DATA_SAVER,
+  /** Blocks the microphone for a user, as the system's Microphone access switch does. */
+  MICROPHONE_BLOCKED,
+  CAMERA_BLOCKED,
   /** Adds an app's tile to the system's quick settings, which SystemUI needs to run it. */
   ADD_TILE,
   /** Clicks an app's tile in the system's quick settings, without opening them. */
@@ -46,15 +50,13 @@ enum class ShizukuCommand {
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
-   * Switches take [ON] or [OFF], and tiles a flattened component name.
+   * Switches take [ON] or [OFF], the sensor switches with `@` and a user ID after it, and tiles a
+   * flattened component name.
    */
   fun shellCommand(argument: String): List<String>? {
-    val on =
-      when (argument) {
-        ON -> true
-        OFF -> false
-        else -> null
-      }
+    val match = SWITCH.matchEntire(argument)
+    val on = match?.let { it.groupValues[1] == ON }
+    val user = match?.groupValues?.get(2)?.ifEmpty { null }
     val component = argument.takeIf { COMPONENT.matches(it) }
     return when (this) {
       WIFI -> on?.let { listOf("cmd", "wifi", "set-wifi-enabled", if (it) "enabled" else "disabled") }
@@ -66,9 +68,17 @@ enum class ShizukuCommand {
       BATTERY_SAVER -> on?.let { listOf("cmd", "power", "set-mode", if (it) "1" else "0") }
       DARK_THEME -> on?.let { listOf("cmd", "uimode", "night", if (it) "yes" else "no") }
       NFC -> on?.let { listOf("svc", "nfc", if (it) "enable" else "disable") }
+      DATA_SAVER -> on?.let { listOf("cmd", "netpolicy", "set", "restrict-background", it.toString()) }
+      MICROPHONE_BLOCKED -> sensorCommand(on, user, "microphone")
+      CAMERA_BLOCKED -> sensorCommand(on, user, "camera")
       ADD_TILE -> component?.let { listOf("cmd", "statusbar", "add-tile", it) }
       CLICK_TILE -> component?.let { listOf("cmd", "statusbar", "click-tile", it) }
     }
+  }
+
+  private fun sensorCommand(on: Boolean?, user: String?, sensor: String): List<String>? {
+    if (on == null || user == null) return null
+    return listOf("cmd", "sensor_privacy", if (on) "enable" else "disable", user, sensor)
   }
 
   companion object {
@@ -76,6 +86,10 @@ enum class ShizukuCommand {
     const val OFF = "off"
 
     fun argument(on: Boolean): String = if (on) ON else OFF
+
+    fun argument(on: Boolean, userId: Int): String = argument(on) + "@" + userId
+
+    private val SWITCH = Regex("""(on|off)(?:@(\d{1,6}))?""")
 
     private val COMPONENT =
       Regex(

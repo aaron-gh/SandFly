@@ -52,11 +52,6 @@ data class TileState(
  */
 object SystemTiles {
   private const val TAG = "SystemTiles"
-  private const val DUMP_TIMEOUT_MS = 3_000L
-  private const val MAX_DUMP_CHARS = 1_000_000
-
-  private val mainHandler by lazy { Handler(Looper.getMainLooper()) }
-
   /** The tiles that installed apps offer, by label. */
   fun appTiles(context: Context): List<AppTile> {
     val packageManager = context.packageManager
@@ -87,48 +82,15 @@ object SystemTiles {
    * thread. Returns null if the dump can't be read.
    */
   fun read(): Map<String, TileState>? {
-    val process =
-      try {
-        ProcessBuilder(
-            "dumpsys",
-            "activity",
-            "service",
-            "com.android.systemui/.SystemUIService",
-            "QSTileHost",
-          )
-          .redirectErrorStream(true)
-          .start()
-      } catch (e: IOException) {
-        LogUtils.w(TAG, "dumpsys failed: %s", e)
-        return null
+    val text =
+      Dumpsys.run("activity", "service", "com.android.systemui/.SystemUIService", "QSTileHost")
+        ?: return null
+    return parse(text).also { tiles ->
+      if (tiles.isEmpty()) {
+        LogUtils.w(TAG, "No tiles in SystemUI's dump: %s", text.take(200))
+      } else {
+        LogUtils.d(TAG, "Read %d tiles from SystemUI's dump", tiles.size)
       }
-    // Reading a pipe can't be interrupted, so a dumpsys that hangs is killed instead, which ends
-    // the read.
-    val kill = Runnable { process.destroyForcibly() }
-    mainHandler.postDelayed(kill, DUMP_TIMEOUT_MS)
-    return try {
-      val text = StringBuilder()
-      process.inputStream.bufferedReader().use { reader ->
-        val buffer = CharArray(8192)
-        while (text.length < MAX_DUMP_CHARS) {
-          val count = reader.read(buffer)
-          if (count < 0) break
-          text.append(buffer, 0, count)
-        }
-      }
-      parse(text.toString()).also { tiles ->
-        if (tiles.isEmpty()) {
-          LogUtils.w(TAG, "No tiles in SystemUI's dump: %s", text.take(200))
-        } else {
-          LogUtils.d(TAG, "Read %d tiles from SystemUI's dump", tiles.size)
-        }
-      }
-    } catch (e: IOException) {
-      LogUtils.w(TAG, "dumpsys failed: %s", e)
-      null
-    } finally {
-      mainHandler.removeCallbacks(kill)
-      process.destroyForcibly()
     }
   }
 
@@ -165,4 +127,90 @@ object SystemTiles {
 
   private fun clean(value: String?): String? =
     value?.takeIf { it != "null" }?.replace(DIRECTION_MARKS, "")?.trim()?.ifEmpty { null }
+}
+
+/** Runs `dumpsys`, which needs the DUMP permission, and reads what it prints, up to a limit. */
+object Dumpsys {
+  private const val TAG = "Dumpsys"
+  private const val TIMEOUT_MS = 3_000L
+  private const val MAX_CHARS = 1_000_000
+
+  private val mainHandler by lazy { Handler(Looper.getMainLooper()) }
+
+  /** Must not run on the main thread. Returns null if `dumpsys` can't run. */
+  fun run(vararg args: String): String? {
+    val process =
+      try {
+        ProcessBuilder(listOf("dumpsys") + args).redirectErrorStream(true).start()
+      } catch (e: IOException) {
+        LogUtils.w(TAG, "dumpsys failed: %s", e)
+        return null
+      }
+    // Reading a pipe can't be interrupted, so a dumpsys that hangs is killed instead, which ends
+    // the read.
+    val kill = Runnable { process.destroyForcibly() }
+    mainHandler.postDelayed(kill, TIMEOUT_MS)
+    return try {
+      val text = StringBuilder()
+      process.inputStream.bufferedReader().use { reader ->
+        val buffer = CharArray(8192)
+        while (text.length < MAX_CHARS) {
+          val count = reader.read(buffer)
+          if (count < 0) break
+          text.append(buffer, 0, count)
+        }
+      }
+      text.toString()
+    } catch (e: IOException) {
+      LogUtils.w(TAG, "dumpsys failed: %s", e)
+      null
+    } finally {
+      mainHandler.removeCallbacks(kill)
+      process.destroyForcibly()
+    }
+  }
+}
+
+/**
+ * Whether the microphone and camera are blocked by their switches in the system's quick settings.
+ * Android tells only system apps, so SandFly reads `dumpsys sensor_privacy`, which needs DUMP.
+ */
+object SensorPrivacy {
+  const val MICROPHONE = 1
+  const val CAMERA = 2
+
+  /** The software switch, rather than a hardware one on some devices. */
+  private const val SOFTWARE_TOGGLE = 1
+  private const val STATE_BLOCKED = 1
+
+  private val USER = Regex("""^\s*user_id=(\d+)""")
+  private val SENSOR = Regex("""^\s*sensor=(\d+)""")
+  private val TOGGLE = Regex("""^\s*toggle_type=(\d+)""")
+  private val STATE = Regex("""^\s*state_type=(\d+)""")
+
+  /** Must not run on the main thread. Returns null if the dump can't be read. */
+  fun read(userId: Int): Map<Int, Boolean>? = Dumpsys.run("sensor_privacy")?.let { parse(it, userId) }
+
+  /**
+   * Whether each sensor that has a switch is blocked for [userId]. A sensor that the dump leaves
+   * out has never been blocked.
+   */
+  fun parse(dump: String, userId: Int): Map<Int, Boolean> {
+    if (!dump.contains("SENSOR PRIVACY")) return emptyMap()
+    val result = mutableMapOf(MICROPHONE to false, CAMERA to false)
+    var user = -1
+    var sensor = -1
+    var toggle = -1
+    for (line in dump.lineSequence()) {
+      USER.find(line)?.let { user = it.groupValues[1].toInt() }
+      SENSOR.find(line)?.let { sensor = it.groupValues[1].toInt() }
+      TOGGLE.find(line)?.let { toggle = it.groupValues[1].toInt() }
+      STATE.find(line)?.let {
+        if (user == userId && toggle == SOFTWARE_TOGGLE && sensor in result) {
+          result[sensor] = it.groupValues[1].toInt() == STATE_BLOCKED
+        }
+      }
+    }
+    return result
+  }
 }

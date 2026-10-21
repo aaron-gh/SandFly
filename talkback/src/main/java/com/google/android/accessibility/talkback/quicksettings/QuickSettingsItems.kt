@@ -30,6 +30,7 @@ enum class QuickControl(@StringRes val title: Int, val kind: Kind) {
   BLUETOOTH(R.string.quick_settings_bluetooth, Kind.SWITCH),
   MOBILE_DATA(R.string.quick_settings_mobile_data, Kind.SWITCH),
   AIRPLANE_MODE(R.string.quick_settings_airplane_mode, Kind.SWITCH),
+  DATA_SAVER(R.string.quick_settings_data_saver, Kind.SWITCH),
   DO_NOT_DISTURB(R.string.quick_settings_do_not_disturb, Kind.SWITCH),
   SOUND_MODE(R.string.quick_settings_sound_mode, Kind.CHOICE),
   FLASHLIGHT(R.string.quick_settings_flashlight, Kind.SWITCH),
@@ -38,9 +39,19 @@ enum class QuickControl(@StringRes val title: Int, val kind: Kind) {
   AUTO_ROTATE(R.string.quick_settings_auto_rotate, Kind.SWITCH),
   BATTERY_SAVER(R.string.quick_settings_battery_saver, Kind.SWITCH),
   DARK_THEME(R.string.quick_settings_dark_theme, Kind.SWITCH),
+  NIGHT_LIGHT(R.string.quick_settings_night_light, Kind.SWITCH),
+  EXTRA_DIM(R.string.quick_settings_extra_dim, Kind.SWITCH),
+  COLOR_INVERSION(R.string.quick_settings_color_inversion, Kind.SWITCH),
+  COLOR_CORRECTION(R.string.quick_settings_color_correction, Kind.SWITCH),
   NFC(R.string.quick_settings_nfc, Kind.SWITCH),
+  MICROPHONE_ACCESS(R.string.quick_settings_microphone_access, Kind.SWITCH),
+  CAMERA_ACCESS(R.string.quick_settings_camera_access, Kind.SWITCH),
   BRIGHTNESS(R.string.quick_settings_brightness, Kind.SLIDER),
   ADAPTIVE_BRIGHTNESS(R.string.quick_settings_adaptive_brightness, Kind.SWITCH),
+  SCREEN_TIMEOUT(R.string.quick_settings_screen_timeout, Kind.CHOICE),
+  FONT_SIZE(R.string.quick_settings_font_size, Kind.CHOICE),
+  MEDIA(R.string.quick_settings_media, Kind.MEDIA),
+  MEDIA_OUTPUT(R.string.quick_settings_media_output, Kind.BUTTON),
   MEDIA_VOLUME(R.string.quick_settings_media_volume, Kind.SLIDER),
   CALL_VOLUME(R.string.quick_settings_call_volume, Kind.SLIDER),
   RING_VOLUME(R.string.quick_settings_ring_volume, Kind.SLIDER),
@@ -48,14 +59,20 @@ enum class QuickControl(@StringRes val title: Int, val kind: Kind) {
   ALARM_VOLUME(R.string.quick_settings_alarm_volume, Kind.SLIDER),
   ACCESSIBILITY_VOLUME(R.string.quick_settings_accessibility_volume, Kind.SLIDER),
   SYSTEM_VOLUME(R.string.quick_settings_system_volume, Kind.SLIDER),
-  BATTERY(R.string.quick_settings_battery, Kind.INFO);
+  NEXT_ALARM(R.string.quick_settings_next_alarm, Kind.BUTTON),
+  BATTERY(R.string.quick_settings_battery, Kind.BUTTON),
+  SETTINGS(R.string.quick_settings_settings, Kind.BUTTON),
+  POWER_MENU(R.string.quick_settings_power_menu, Kind.BUTTON);
 
   enum class Kind {
     SWITCH,
     SLIDER,
     /** A double tap moves to the next of a few values, which are also actions. */
     CHOICE,
-    INFO,
+    /** Shows something, such as the battery level, and opens or does something on a double tap. */
+    BUTTON,
+    /** The media that plays: a double tap plays or pauses it, and actions skip. */
+    MEDIA,
   }
 }
 
@@ -73,12 +90,28 @@ sealed class QuickItem {
       get() = TILE_PREFIX + component.flattenToString()
   }
 
+  /**
+   * A tile of the system's own, such as Hotspot, which only SystemUI can run. [spec] is its name
+   * in SystemUI's tile list, and [label] what it was called when the user added it, which finds
+   * it in the system's quick settings when the spec can't be read.
+   */
+  data class SystemTile(val spec: String, val label: String) : QuickItem() {
+    override val id: String
+      get() = SYSTEM_PREFIX + spec + SYSTEM_SEPARATOR + label
+  }
+
   companion object {
     private const val TILE_PREFIX = "tile:"
+    private const val SYSTEM_PREFIX = "system:"
+    private const val SYSTEM_SEPARATOR = "\t"
 
     fun parse(id: String): QuickItem? {
       if (id.startsWith(TILE_PREFIX)) {
         return ComponentName.unflattenFromString(id.removePrefix(TILE_PREFIX))?.let { Tile(it) }
+      }
+      if (id.startsWith(SYSTEM_PREFIX)) {
+        val parts = id.removePrefix(SYSTEM_PREFIX).split(SYSTEM_SEPARATOR, limit = 2)
+        return parts.takeIf { it.size == 2 && it[1].isNotBlank() }?.let { SystemTile(it[0], it[1]) }
       }
       return QuickControl.entries.firstOrNull { it.name == id }?.let { Control(it) }
     }
@@ -106,6 +139,7 @@ object QuickSettingsItems {
       QuickControl.MEDIA_VOLUME,
       QuickControl.RING_VOLUME,
       QuickControl.ACCESSIBILITY_VOLUME,
+      QuickControl.MEDIA,
       QuickControl.BATTERY,
     )
 
@@ -136,6 +170,7 @@ object QuickSettingsItems {
       when (item) {
         is QuickItem.Control -> controls.isAvailable(item.control)
         is QuickItem.Tile -> item.component in installed
+        is QuickItem.SystemTile -> true
       }
     }
 }

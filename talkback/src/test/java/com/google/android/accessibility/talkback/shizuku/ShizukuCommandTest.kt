@@ -36,6 +36,16 @@ class ShizukuCommandTest {
   }
 
   @Test
+  fun sensorSwitchesTakeAUser() {
+    assertEquals(
+      listOf("cmd", "sensor_privacy", "enable", "10", "microphone"),
+      ShizukuCommand.MICROPHONE_BLOCKED.shellCommand(ShizukuCommand.argument(true, 10)),
+    )
+    assertNull(ShizukuCommand.CAMERA_BLOCKED.shellCommand(ShizukuCommand.OFF))
+    assertNull(ShizukuCommand.CAMERA_BLOCKED.shellCommand("off@0; reboot"))
+  }
+
+  @Test
   fun tilesTakeComponentNames() {
     assertEquals(
       listOf("cmd", "statusbar", "click-tile", "com.google.android.gms/.nearby.sharing.SharingTileService"),

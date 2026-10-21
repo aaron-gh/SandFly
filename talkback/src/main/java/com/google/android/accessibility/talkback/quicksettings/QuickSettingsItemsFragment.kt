@@ -20,6 +20,8 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.appcompat.app.AlertDialog
@@ -39,8 +41,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Chooses what SandFly's quick settings panel shows, and in what order. Each item has Move up, Move
- * down and Remove accessibility actions, which a double tap also offers. Add control and Add app
- * tile list what isn't in the panel yet.
+ * down and Remove accessibility actions, which a double tap also offers. Add control, Add app tile
+ * and Add system tile list what isn't in the panel yet.
  */
 class QuickSettingsItemsFragment : TalkbackBaseFragment() {
   private lateinit var prefs: SharedPreferences
@@ -80,6 +82,11 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
         addTile()
       }
     )
+    screen.addPreference(
+      AddPreference(context, KEY_ADD_SYSTEM_TILE, R.string.quick_settings_add_system_tile, ORDER_ADD + 2) {
+        addSystemTile()
+      }
+    )
     preferenceScreen = screen
   }
 
@@ -87,12 +94,14 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
     when (item) {
       is QuickItem.Control -> controls.isAvailable(item.control)
       is QuickItem.Tile -> item.component in appTiles
+      is QuickItem.SystemTile -> true
     }
 
   private fun title(item: QuickItem): CharSequence =
     when (item) {
       is QuickItem.Control -> getString(item.control.title)
       is QuickItem.Tile -> appTiles[item.component]?.label ?: item.component.packageName
+      is QuickItem.SystemTile -> item.label
     }
 
   private fun save() {
@@ -138,6 +147,57 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
           ShizukuShell.run(requireContext(), ShizukuCommand.ADD_TILE, component.flattenToString()) {}
         }
       }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+      .keepButtonCase()
+  }
+
+  /**
+   * Lists the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
+   * and otherwise by looking through the system's quick settings, which takes a few seconds.
+   */
+  private fun addSystemTile() {
+    val context = requireContext().applicationContext
+    if (SystemTiles.canRead(context)) {
+      val handler = Handler(Looper.getMainLooper())
+      Thread({
+          val tiles =
+            try {
+              SystemTiles.read()
+            } catch (e: Throwable) {
+              null
+            }
+          val found =
+            tiles?.values?.filter { !it.spec.startsWith("custom(") && it.label != null }?.map {
+              QuickItem.SystemTile(it.spec, it.label!!)
+            }
+          handler.post { if (isAdded) chooseSystemTile(found) }
+        }, "QuickSettingsTiles")
+        .start()
+    } else {
+      SystemPanelClicker.scan { labels ->
+        if (isAdded) chooseSystemTile(labels?.map { QuickItem.SystemTile("", it) })
+      }
+    }
+  }
+
+  private fun chooseSystemTile(found: List<QuickItem.SystemTile>?) {
+    val added = items.filterIsInstance<QuickItem.SystemTile>()
+    val available =
+      found.orEmpty().filter { tile ->
+        added.none {
+          (it.spec.isNotEmpty() && it.spec == tile.spec) ||
+            SystemPanelClicker.normalize(it.label) == SystemPanelClicker.normalize(tile.label)
+        }
+      }
+    val list = listView ?: return
+    if (available.isEmpty()) {
+      announce(list, getString(R.string.quick_settings_no_system_tiles))
+      return
+    }
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.quick_settings_add_system_tile)
+      .setItems(available.map { it.label }.toTypedArray()) { _, which -> add(available[which]) }
       .setNegativeButton(android.R.string.cancel, null)
       .show()
       .keepButtonCase()
@@ -296,6 +356,7 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
 
     const val KEY_ADD_CONTROL = "quick_settings_add_control"
     const val KEY_ADD_TILE = "quick_settings_add_tile"
+    const val KEY_ADD_SYSTEM_TILE = "quick_settings_add_system_tile"
     const val ORDER_ADD = 100_000
   }
 }
