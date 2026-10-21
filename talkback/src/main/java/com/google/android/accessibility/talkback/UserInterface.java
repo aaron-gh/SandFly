@@ -62,7 +62,7 @@ public class UserInterface {
       return;
     }
 
-    listeners.stream().forEach(listener -> listener.editTextOrSelectableTextSelected(active));
+    new ArrayList<>(listeners).stream().forEach(listener -> listener.editTextOrSelectableTextSelected(active));
   }
 
   public void registerListener(UserInputEventListener listener) {
@@ -84,11 +84,11 @@ public class UserInterface {
     }
     if (event != null && event.getEventType() == TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       if (eventInterpretation instanceof Interpretation.AccessibilityFocused axFocused) {
-        listeners.stream()
+        new ArrayList<>(listeners).stream()
             .forEach(listener -> listener.newItemFocused(event.getSource(), axFocused));
       }
     } else if (eventInterpretation instanceof Interpretation.TouchInteraction touchInteraction) {
-      listeners.stream()
+      new ArrayList<>(listeners).stream()
           .forEach(
               listener -> listener.touchInteractionState(touchInteraction.interactionActive()));
     }
