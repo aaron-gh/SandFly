@@ -78,6 +78,7 @@ import android.accessibilityservice.FingerprintGestureController;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.SpannableStringBuilder;
@@ -372,6 +373,10 @@ public class GestureController {
       changeAccessibilityVolume(eventId, /* decrease= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_decrease_volume))) {
       changeAccessibilityVolume(eventId, /* decrease= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_increase_media_volume))) {
+      changeMediaVolume(eventId, /* decrease= */ false);
+    } else if (action.equals(service.getString(R.string.shortcut_value_decrease_media_volume))) {
+      changeMediaVolume(eventId, /* decrease= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_back))) {
       result =
           pipeline.returnFeedback(
@@ -418,6 +423,14 @@ public class GestureController {
           pipeline.returnFeedback(
               eventId,
               Feedback.systemAction(SystemActionPerformer.GLOBAL_ACTION_SYSTEM_QUICK_SETTINGS));
+    } else if (action.equals(service.getString(R.string.shortcut_value_lock_screen))) {
+      result =
+          pipeline.returnFeedback(
+              eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_LOCK_SCREEN));
+    } else if (action.equals(service.getString(R.string.shortcut_value_power_menu))) {
+      result =
+          pipeline.returnFeedback(
+              eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_POWER_DIALOG));
     } else if (action.equals(service.getString(R.string.shortcut_value_all_apps))) {
       result =
           pipeline.returnFeedback(
@@ -1065,6 +1078,41 @@ public class GestureController {
               : Item.ITEM_ACCESSIBILITY_VOLUME_MAXIMUM;
       announceChangedAccessibilityVolume(eventId, volumeText, item);
     }
+  }
+
+  /** Changes the media volume a step and says the new volume. */
+  private void changeMediaVolume(EventId eventId, boolean decrease) {
+    AudioManager audioManager = (AudioManager) service.getSystemService(Context.AUDIO_SERVICE);
+    if (audioManager == null) {
+      return;
+    }
+    int stream = AudioManager.STREAM_MUSIC;
+    int min =
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.P ? audioManager.getStreamMinVolume(stream) : 0;
+    int max = audioManager.getStreamMaxVolume(stream);
+    int volume = audioManager.getStreamVolume(stream);
+    String volumeText;
+    if (max <= min || (decrease && volume <= min) || (!decrease && volume >= max)) {
+      volumeText =
+          service.getString(
+              decrease
+                  ? R.string.template_volume_change_minimum
+                  : R.string.template_volume_change_maximum);
+    } else {
+      service.ignoreSelfVolumeChange(stream);
+      audioManager.adjustStreamVolume(
+          stream, decrease ? AudioManager.ADJUST_LOWER : AudioManager.ADJUST_RAISE, 0);
+      volume = audioManager.getStreamVolume(stream);
+      volumeText =
+          service.getString(
+              R.string.template_stream_volume_set,
+              service.getString(R.string.value_stream_music),
+              Math.round(100f * (volume - min) / (max - min)));
+    }
+    announceChangedAccessibilityVolume(
+        eventId,
+        volumeText,
+        decrease ? Item.ITEM_ACCESSIBILITY_VOLUME_DECREASE : Item.ITEM_ACCESSIBILITY_VOLUME_INCREASE);
   }
 
   private void refreshVolumeChangedListener(EventId eventId) {
