@@ -39,7 +39,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiFunctionUtils.DescribeImageDecision.Decision;
-import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
+import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
 import com.google.android.accessibility.talkback.dialog.BaseDialog;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.NetworkUtils;
@@ -715,7 +715,7 @@ public class GeminiFunctionUtils {
       Context context, BaseDialog dialog, boolean isDimming, @StringRes int messageRes) {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     if (isGeminiApiConsentMessage(messageRes)
-        && !OnDeviceAiSettings.INSTANCE.isOnDevice(prefs)
+        && !LocalModelManager.Companion.get(context).answersRequests()
         && AiService.isSetUp(prefs)) {
       return context.getString(
           R.string.dialog_message_ai_service_consent, AiService.INSTANCE.host(prefs));

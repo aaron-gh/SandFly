@@ -45,6 +45,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.annotation.StringRes;
+import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.talkback.Feedback;
@@ -921,7 +922,7 @@ public class GeminiActor {
   /** The cloud gives up after a fixed time. A model on the phone is slower, so the user sets it. */
   private long keepWaitingTimeMs() {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
-    return OnDeviceAiSettings.INSTANCE.isOnDevice(prefs)
+    return LocalModelManager.Companion.get(context).answersRequests()
         ? SECONDS.toMillis(OnDeviceAiSettings.INSTANCE.timeoutSeconds(prefs))
         : KEEP_WAITING_TIME_MS;
   }

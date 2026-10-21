@@ -96,6 +96,13 @@ class LocalModelManager private constructor(context: Context) {
 
   fun isReady(): Boolean = activeModel() != null
 
+  /**
+   * Whether requests go to the model on the phone: on-device AI is chosen and its model is
+   * installed. Otherwise they go to the cloud, also when the model was deleted after on-device AI
+   * was turned on.
+   */
+  fun answersRequests(): Boolean = OnDeviceAiSettings.isOnDevice(prefs) && isReady()
+
   fun support(model: LocalModel): OnDeviceAiSettings.Support =
     OnDeviceAiSettings.support(model, totalRamBytes(), Build.SUPPORTED_ABIS.toList())
 
