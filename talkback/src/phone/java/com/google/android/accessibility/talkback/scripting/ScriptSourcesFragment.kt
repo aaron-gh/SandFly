@@ -27,19 +27,19 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
 /** The places to find scripts that the user has added, and a way to add another. */
-class ScriptSourcesFragment : ScriptScreenFragment() {
+open class ScriptSourcesFragment : ScriptScreenFragment() {
+  protected open val kind = SourceKind.SCRIPTS
+  protected open val sourceScreen: Class<out ScriptSourceFragment> = ScriptSourceFragment::class.java
 
   public override fun getTitle(): CharSequence = getText(R.string.script_sources)
 
-  override fun state(): Any = ScriptSources.all(requireContext())
+  override fun state(): Any = ScriptSources.all(requireContext(), kind)
 
   override fun build(screen: PreferenceScreen) {
     screen.action(getString(R.string.script_source_add)) { askForAddress() }
-    val sources = ScriptSources.all(requireContext())
+    val sources = ScriptSources.all(requireContext(), kind)
     if (sources.isEmpty()) screen.info(getString(R.string.script_sources_none))
-    sources.forEach {
-      screen.link(it.title, it.where, ScriptSourceFragment::class.java, it.address)
-    }
+    sources.forEach { screen.link(it.title, it.where, sourceScreen, it.address) }
   }
 
   private fun askForAddress() {
@@ -80,7 +80,7 @@ class ScriptSourcesFragment : ScriptScreenFragment() {
     val source = ScriptSource.parse(text)
     when {
       source == null -> toast(R.string.script_source_invalid)
-      !ScriptSources.add(requireContext(), source) -> toast(R.string.script_source_exists)
+      !ScriptSources.add(requireContext(), source, kind) -> toast(R.string.script_source_exists)
       else -> rebuild()
     }
   }

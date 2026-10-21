@@ -26,12 +26,17 @@ import java.util.concurrent.Executors
  * The scripts in one source. Choosing a script downloads it and asks before installing, as Import
  * script does, listing the script's description, author, API versions and what it can do.
  */
-class ScriptSourceFragment : ScriptInstallFragment() {
+open class ScriptSourceFragment : ScriptInstallFragment() {
+  protected open val kind = SourceKind.SCRIPTS
   private val source: ScriptSource? by lazy { ScriptSource.parse(scriptId) }
   private var scripts: List<SourceScript>? = null
   private var error: String? = null
 
   public override fun getTitle(): CharSequence = source?.title ?: getText(R.string.script_sources)
+
+  protected open val failedText: Int = R.string.script_source_failed
+  protected open val emptyText: Int = R.string.script_source_empty
+  protected open val removeMessage: Int = R.string.script_source_remove_message
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
@@ -44,11 +49,11 @@ class ScriptSourceFragment : ScriptInstallFragment() {
     val source = orClose(source) ?: return
     when {
       error != null -> {
-        screen.info(getString(R.string.script_source_failed, error))
+        screen.info(getString(failedText, error))
         screen.action(getString(R.string.script_source_retry)) { load() }
       }
       scripts == null -> screen.info(getString(R.string.script_source_loading))
-      scripts.isNullOrEmpty() -> screen.info(getString(R.string.script_source_empty))
+      scripts.isNullOrEmpty() -> screen.info(getString(emptyText))
       else -> scripts?.forEach { script -> screen.action(script.name) { install(script) } }
     }
     screen.category(getString(R.string.script_manage_category)).action(
@@ -56,10 +61,10 @@ class ScriptSourceFragment : ScriptInstallFragment() {
     ) {
       confirm(
         getString(R.string.script_source_remove_title, source.title),
-        getString(R.string.script_source_remove_message),
+        getString(removeMessage),
         R.string.script_source_remove,
       ) {
-        ScriptSources.remove(requireContext(), source)
+        ScriptSources.remove(requireContext(), source, kind)
         parentFragmentManager.popBackStack()
       }
     }
@@ -71,7 +76,7 @@ class ScriptSourceFragment : ScriptInstallFragment() {
     error = null
     rebuild()
     executor.execute {
-      val result = runCatching { ScriptSources.list(source) }
+      val result = runCatching { ScriptSources.list(source, kind) }
       view?.post {
         if (!isAdded) return@post
         result.fold({ scripts = it }, { error = it.message ?: it.javaClass.simpleName })
@@ -80,7 +85,7 @@ class ScriptSourceFragment : ScriptInstallFragment() {
     }
   }
 
-  private fun install(script: SourceScript) {
+  protected open fun install(script: SourceScript) {
     toast(getString(R.string.script_source_downloading, script.name))
     read { ScriptSources.download(script) }
   }
