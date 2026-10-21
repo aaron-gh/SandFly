@@ -267,7 +267,6 @@ public class TalkBackPreferenceFilter {
     INTERRUPT_ENTER(R.string.pref_interrupt_enter_key, HIDDEN_ON_WATCH),
     LIMIT_FREQUENT_CONTENT_CHANGE_ANNOUNCEMENT(
         R.string.pref_allow_frequent_content_change_announcement_key, HIDE_FREQUENT_UPDATE_UI_FLAG),
-    SPEAK_WHEN_SCREEN_OFF(R.string.pref_screenoff_key, HIDDEN_ON_XR),
     SPEAK_PUNCTUATION_LEGACY(R.string.pref_punctuation_key, HIDDEN), // Temporarily hide the legacy
     CUSTOMIZE_GESTURE(R.string.pref_category_manage_gestures_key, HIDDEN_ON_TV | HIDDEN_ON_XR),
     MULTIPLE_GESTURE_SET(

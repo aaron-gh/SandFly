@@ -134,9 +134,6 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     switchPreferenceKeyValueMap =
         ImmutableMap.<String, Boolean>builder()
             .put(
-                getString(R.string.pref_screenoff_key),
-                getResources().getBoolean(R.bool.pref_screenoff_default))
-            .put(
                 getString(R.string.pref_a11y_hints_key),
                 getResources().getBoolean(R.bool.pref_a11y_hints_default))
             .put(

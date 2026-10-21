@@ -51,11 +51,6 @@
         android:summary="@string/pref_speak_roles_summary"
         android:title="@string/pref_speak_roles_title" />
 
-    <!-- Notifications when screen is off -->
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_screenoff_default"
-        android:key="@string/pref_screenoff_key"
-        android:title="@string/title_pref_speak_screenoff" />
 
     <!-- Pitch changes -->
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
