@@ -4321,10 +4321,10 @@ public class TalkBackService extends AccessibilityServiceCompat
           () -> speechController.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS),
           () -> speechController.isSpeaking(),
           // What silences SandFly's own speech silences the notification voice too.
-          overMedia ->
+          (overMedia, duringCalls) ->
               speechController.isMute()
                   || speechController.getShouldSilentSpeech()
-                  || isPhoneCallActive()
+                  || (!duringCalls && isPhoneCallActive())
                   || isMicrophoneActiveAndHeadphoneOff()
                   || isSsbActive()
                   || (!overMedia && isAudioPlaybackActive()));

@@ -96,6 +96,17 @@ enum class DndMode {
   }
 }
 
+/** What happens to a notification that arrives while the screen is touched. */
+enum class TouchBehavior {
+  READ,
+  AFTER_TOUCH,
+  SKIP;
+
+  companion object {
+    fun of(name: String?): TouchBehavior = entries.firstOrNull { it.name == name } ?: AFTER_TOUCH
+  }
+}
+
 /** The settings of one app. Null values follow the settings for every app. */
 data class AppSettings(
   val mode: AppMode = AppMode.DEFAULT,
@@ -275,6 +286,8 @@ data class NotificationSettings(
   val honourVibrate: Boolean = false,
   val media: MediaBehavior = MediaBehavior.READ,
   val dnd: DndMode = DndMode.ALLOWED,
+  val touch: TouchBehavior = TouchBehavior.AFTER_TOUCH,
+  val duringCalls: Boolean = false,
   val skipInCar: Boolean = false,
   val quietHours: Boolean = false,
   val quietStartMinutes: Int = 22 * 60,
@@ -359,6 +372,8 @@ data class NotificationSettings(
       const val HONOUR_VIBRATE = "pref_notification_honour_vibrate"
       const val MEDIA = "pref_notification_media"
       const val DND = "pref_notification_dnd"
+      const val TOUCH = "pref_notification_touch"
+      const val DURING_CALLS = "pref_notification_during_calls"
       const val SKIP_IN_CAR = "pref_notification_skip_in_car"
       const val QUIET_HOURS = "pref_notification_quiet_hours"
       const val QUIET_START = "pref_notification_quiet_start"
@@ -434,6 +449,8 @@ data class NotificationSettings(
         honourVibrate = b(Keys.HONOUR_VIBRATE, d.honourVibrate),
         media = MediaBehavior.of(prefs.getString(Keys.MEDIA, null)),
         dnd = DndMode.of(prefs.getString(Keys.DND, null)),
+        touch = TouchBehavior.of(prefs.getString(Keys.TOUCH, null)),
+        duringCalls = b(Keys.DURING_CALLS, d.duringCalls),
         skipInCar = b(Keys.SKIP_IN_CAR, d.skipInCar),
         quietHours = b(Keys.QUIET_HOURS, d.quietHours),
         quietStartMinutes = i(Keys.QUIET_START, d.quietStartMinutes).coerceIn(0, 24 * 60 - 1),
