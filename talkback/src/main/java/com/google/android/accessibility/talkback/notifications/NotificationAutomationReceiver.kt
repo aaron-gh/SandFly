@@ -19,25 +19,29 @@ package com.google.android.accessibility.talkback.notifications
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Lets automation apps, such as Tasker or MacroDroid, turn notification speech on or off, stop a
  * notification being read, or have the notifications read. Each action is SandFly's app ID
- * followed by [ON], [OFF], [TOGGLE], [STOP] or [READ_ALL], sent as a broadcast to SandFly.
+ * followed by [ON], [OFF], [TOGGLE], [STOP] or [READ_ALL], sent as a broadcast to SandFly. Any
+ * app can send them, so they work only after the user allows automation apps.
  */
 class NotificationAutomationReceiver : BroadcastReceiver() {
   override fun onReceive(context: Context, intent: Intent) {
     val action = intent.action ?: return
+    if (!SharedPreferencesUtils.getSharedPreferences(context).getBoolean(KEY_ALLOWED, false)) return
     when (action.removePrefix(context.packageName)) {
-      ON -> NotificationReader.setSpeechOn(context, true, announce = false)
-      OFF -> NotificationReader.setSpeechOn(context, false, announce = false)
-      TOGGLE -> NotificationReader.setSpeechOn(context, null, announce = false)
+      ON -> NotificationReader.setSpeechOn(context, true, announce = true)
+      OFF -> NotificationReader.setSpeechOn(context, false, announce = true)
+      TOGGLE -> NotificationReader.setSpeechOn(context, null, announce = true)
       STOP -> NotificationReader.stop()
       READ_ALL -> NotificationReader.readSummary()
     }
   }
 
   companion object {
+    const val KEY_ALLOWED = "pref_notification_automation_allowed"
     const val ON = ".action.NOTIFICATION_SPEECH_ON"
     const val OFF = ".action.NOTIFICATION_SPEECH_OFF"
     const val TOGGLE = ".action.NOTIFICATION_SPEECH_TOGGLE"

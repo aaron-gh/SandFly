@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
+import com.google.android.accessibility.talkback.notifications.Outcome;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -225,6 +226,7 @@ public class EventFilter {
       // Do not disturb silences notifications, but toasts still answer what the user just did.
       if ((notification != null) && globalVariables.isDndEnabled()) {
         LogUtils.d(TAG, "Do not announce notification: DND is enabled");
+        NotificationReader.noteUnread(event, notification, Outcome.DO_NOT_DISTURB);
         return;
       }
       // Incoming calls are still announced, so that the user hears who is calling.
@@ -232,9 +234,11 @@ public class EventFilter {
           && !globalVariables.getSpeakNotifications()
           && !Notification.CATEGORY_CALL.equals(notification.category)) {
         LogUtils.d(TAG, "Do not announce notification: disabled in settings");
+        NotificationReader.noteUnread(event, notification, Outcome.SPEECH_OFF);
         return;
       }
       if ((notification != null) && touchMonitor.isUserTouchingScreen()) {
+        NotificationReader.noteUnread(event, notification, Outcome.TOUCHING);
         return;
       }
       // Notifications are read as the notification settings say.

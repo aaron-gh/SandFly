@@ -59,6 +59,8 @@
     <string name="notification_test_title">Send a test notification</string>
     <!-- Settings entry that lists the broadcasts that apps such as Tasker can send to SandFly. -->
     <string name="notification_automation_title">Automation</string>
+    <!-- Setting: whether apps such as Tasker may turn notification speech on or off, stop it, or have notifications read. -->
+    <string name="notification_automation_allowed_title">Allow automation apps</string>
     <!-- Heading of the settings for the text said for a notification. -->
     <string name="notification_category_said">What is said</string>
     <!-- Setting: the text said for a notification, with placeholders. -->
@@ -71,6 +73,10 @@
     <string name="notification_private_format_message">Said in place of a private notification\'s content. Placeholders: {app}, {category} and {time}.</string>
     <!-- Heading of the voice settings for notifications. -->
     <string name="notification_category_voice">Voice</string>
+    <!-- Setting: the speech engine and voice that read notifications, as one of the voice profiles, or SandFly's own voice. -->
+    <string name="notification_voice_title">Voice</string>
+    <!-- Choice of the notification voice: the voice SandFly speaks with. -->
+    <string name="notification_voice_sandfly">SandFly\'s voice</string>
     <!-- Setting: how fast notifications are spoken, as a percentage of SandFly\'s speech rate. -->
     <string name="notification_rate_title">Speech rate</string>
     <!-- Setting: the pitch of notifications, as a percentage of SandFly\'s pitch. -->

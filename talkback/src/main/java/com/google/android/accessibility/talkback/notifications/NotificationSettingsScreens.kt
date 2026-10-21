@@ -38,6 +38,7 @@ import com.google.android.accessibility.talkback.notificationlist.NotificationLi
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.VoiceProfiles
 import java.util.Calendar
 
 /** Number choices of a list setting, and how each is said. */
@@ -136,6 +137,8 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
     val context = requireContext()
     val key = preference.key ?: return
     when {
+      key == NotificationSettings.Companion.Keys.VOICE_PROFILE && preference is ListPreference ->
+        setUpVoices(preference)
       preference is ListPreference && preference.entries == null -> {
         val choices = NotificationChoices.of(context, key) ?: return
         preference.entries = choices.map { it.second }.toTypedArray()
@@ -161,6 +164,24 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         true
       }
     }
+  }
+
+  /** Lists SandFly's voice and the voice profiles, by name, to read notifications with. */
+  private fun setUpVoices(preference: ListPreference) {
+    val names =
+      VoiceProfiles.names(prefs, getString(R.string.voice_profile_default)) {
+        getString(R.string.voice_profile_new_name, it)
+      }
+    preference.entries =
+      (listOf(getString(R.string.notification_voice_sandfly)) + names.values).toTypedArray()
+    preference.entryValues = (listOf("") + names.keys).toTypedArray()
+    if (preference.findIndexOfValue(preference.value.orEmpty()) < 0) preference.value = ""
+  }
+
+  override fun onStart() {
+    super.onStart()
+    // Profiles may have been added or renamed on their own screen.
+    findPreference<ListPreference>(NotificationSettings.Companion.Keys.VOICE_PROFILE)?.let { setUpVoices(it) }
   }
 
   private fun setUpText(preference: EditTextPreference, key: String) {

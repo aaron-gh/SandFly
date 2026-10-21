@@ -158,6 +158,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     title: CharSequence,
     text: String = "",
     hint: CharSequence? = null,
+    message: CharSequence? = null,
     checkLabels: List<CharSequence> = emptyList(),
     checked: List<Boolean> = emptyList(),
     secondHint: CharSequence? = null,
@@ -174,7 +175,8 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     val edit =
       EditText(context).apply {
         setText(text)
-        this.hint = hint
+        // The title labels the field when there is no hint.
+        this.hint = hint ?: title
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
         setSelection(text.length)
       }
@@ -197,6 +199,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     val dialog =
       dialog()
         .setTitle(title)
+        .apply { if (message != null) setMessage(message) }
         .setView(layout)
         .setPositiveButton(android.R.string.ok, null)
         .setNegativeButton(android.R.string.cancel, null)
@@ -385,7 +388,11 @@ class NotificationAppFragment : NotificationCodeFragment(R.string.notification_a
       getString(R.string.notification_format_title),
       app.format.ifEmpty { getString(R.string.notification_app_mode_default) },
     ) {
-      askText(getString(R.string.notification_format_title), app.format.ifEmpty { settings.format }) { text, _, _ ->
+      askText(
+        getString(R.string.notification_format_title),
+        app.format.ifEmpty { settings.format },
+        message = getString(R.string.notification_format_message),
+      ) { text, _, _ ->
         setApp(packageName) { it.copy(format = if (text == settings.format) "" else text) }
         rebuild()
         null

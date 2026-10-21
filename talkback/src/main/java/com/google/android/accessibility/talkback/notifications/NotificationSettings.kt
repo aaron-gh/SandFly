@@ -133,12 +133,15 @@ data class TextMatch(val text: String, val regex: Boolean = false) {
   }
 
   fun matches(subject: String): Boolean =
-    if (regex) pattern?.containsMatchIn(subject) == true
+    // A long text is cut for expressions, which can take long on it.
+    if (regex) pattern?.containsMatchIn(subject.take(MAX_REGEX_SUBJECT)) == true
     else text.isNotEmpty() && subject.contains(text, ignoreCase = true)
 
   fun toJson(): JSONObject = JSONObject().put("text", text).put("regex", regex)
 
   companion object {
+    private const val MAX_REGEX_SUBJECT = 2000
+
     fun fromJson(json: JSONObject) = TextMatch(json.optString("text"), json.optBoolean("regex"))
 
     /** Whether [text] is a regular expression that can be used. */
@@ -209,6 +212,8 @@ data class NotificationSettings(
   val pitch: Int = 100,
   val volume: Int = 100,
   val detectLanguage: Boolean = false,
+  /** The voice profile notifications are read with, or empty for SandFly's own voice. */
+  val voiceProfile: String = "",
   val soundBefore: Boolean = false,
   val delaySeconds: Int = 0,
   val queueBehavior: QueueBehavior = QueueBehavior.QUEUE,
@@ -297,6 +302,7 @@ data class NotificationSettings(
       const val PITCH = "pref_notification_pitch"
       const val VOLUME = "pref_notification_volume"
       const val DETECT_LANGUAGE = "pref_notification_detect_language"
+      const val VOICE_PROFILE = "pref_notification_voice_profile"
       const val SOUND_BEFORE = "pref_notification_sound_before"
       const val DELAY = "pref_notification_delay"
       const val QUEUE = "pref_notification_queue"
@@ -369,6 +375,7 @@ data class NotificationSettings(
         pitch = i(Keys.PITCH, d.pitch).coerceIn(25, 400),
         volume = i(Keys.VOLUME, d.volume).coerceIn(10, 100),
         detectLanguage = b(Keys.DETECT_LANGUAGE, d.detectLanguage),
+        voiceProfile = s(Keys.VOICE_PROFILE, ""),
         soundBefore = b(Keys.SOUND_BEFORE, d.soundBefore),
         delaySeconds = i(Keys.DELAY, d.delaySeconds).coerceIn(0, 60),
         queueBehavior = QueueBehavior.of(prefs.getString(Keys.QUEUE, null)),
@@ -432,13 +439,18 @@ data class NotificationSettings(
      * An int setting, which list and text preferences save as a string. A value that can't be
      * read gives [default].
      */
-    fun int(prefs: SharedPreferences, key: String, default: Int): Int =
-      when (val value = prefs.all[key]) {
-        is Int -> value
-        is Long -> value.toInt()
-        is String -> value.trim().toIntOrNull() ?: default
-        else -> default
+    fun int(prefs: SharedPreferences, key: String, default: Int): Int {
+      if (!prefs.contains(key)) return default
+      return try {
+        prefs.getString(key, null)?.trim()?.toIntOrNull() ?: default
+      } catch (e: ClassCastException) {
+        try {
+          prefs.getInt(key, default)
+        } catch (e: ClassCastException) {
+          runCatching { prefs.getLong(key, default.toLong()).toInt() }.getOrDefault(default)
+        }
       }
+    }
 
     fun apps(json: String?): Map<String, AppSettings> {
       json ?: return emptyMap()
