@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.focusmanagement
 
 import android.os.Build
 import android.os.SystemClock
+import android.text.TextUtils
 import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.RequiresApi
@@ -65,19 +66,28 @@ object WindowNodePrefetcher {
 
   /** Android keeps a request client for every thread that asks for nodes, so the threads stay. */
   private val executor by lazy {
+    val number = AtomicInteger()
     Executors.newFixedThreadPool(THREADS) { runnable ->
-      Thread(runnable, TAG).apply { isDaemon = true }
+      Thread(runnable, "$TAG-${number.incrementAndGet()}").apply { isDaemon = true }
     }
   }
+
+  /** Threads reading nodes now. All of them can still be waiting for an app that stopped answering. */
+  private val running = AtomicInteger()
 
   /**
    * Reads the nodes below [root] into Android's node cache, waiting at most [MAX_WAIT_MS]. Does
    * nothing for a window of [ownPackage]: its requests are answered on the main thread, which is
-   * waiting here.
+   * waiting here. Does nothing either while every thread is still waiting for an earlier window,
+   * since none of them could start on this one.
    */
   @JvmStatic
   fun prefetch(root: AccessibilityNodeInfoCompat, ownPackage: String) {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || root.packageName == ownPackage) {
+    if (
+      Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+        TextUtils.equals(root.packageName, ownPackage) ||
+        running.get() >= THREADS
+    ) {
       return
     }
     val start = SystemClock.uptimeMillis()
@@ -103,11 +113,13 @@ object WindowNodePrefetcher {
       lock.withLock { pending++ }
       try {
         executor.execute {
+          running.incrementAndGet()
           try {
             readChildren(node)
           } catch (e: RuntimeException) {
             Log.w(TAG, "Could not read nodes", e)
           } finally {
+            running.decrementAndGet()
             done()
           }
         }

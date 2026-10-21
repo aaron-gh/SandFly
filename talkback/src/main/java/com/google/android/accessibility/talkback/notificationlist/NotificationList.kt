@@ -20,6 +20,7 @@ import android.app.NotificationManager
 import android.content.ComponentName
 import android.content.Context
 import android.os.Build
+import android.service.notification.NotificationListenerService.Ranking
 import android.service.notification.NotificationListenerService.RankingMap
 import android.service.notification.StatusBarNotification
 import androidx.core.app.NotificationManagerCompat
@@ -47,7 +48,6 @@ object NotificationList {
     private set
 
   /** Whether the Notifications action opens this list instead of the system's shade. */
-  @JvmStatic
   fun isEnabled(context: Context): Boolean =
     SharedPreferencesUtils.getSharedPreferences(context)
       .getBoolean(
@@ -56,7 +56,6 @@ object NotificationList {
       )
 
   /** Whether the user has given Backtalk notification access. */
-  @JvmStatic
   fun isAccessGranted(context: Context): Boolean =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
       context
@@ -107,10 +106,18 @@ object NotificationList {
     changed()
   }
 
-  internal fun onRankingUpdate(active: Array<StatusBarNotification>?, ranking: RankingMap?) {
-    if (active != null) {
-      notifications.clear()
-      active.forEach { notifications[it.key] = it }
+  /**
+   * Android groups an app's notifications itself once it has several, and reports that only as a
+   * new ranking, so each notification takes the group the ranking gives it.
+   */
+  internal fun onRankingUpdate(ranking: RankingMap?) {
+    if (ranking != null) {
+      val notificationRanking = Ranking()
+      notifications.values.forEach {
+        if (ranking.getRanking(it.key, notificationRanking)) {
+          it.overrideGroupKey = notificationRanking.overrideGroupKey
+        }
+      }
     }
     this.ranking = ranking
     changed()
@@ -124,7 +131,8 @@ object NotificationList {
   /**
    * Orders the notifications as the system ranks them. A group is shown where its first member
    * ranks, as one item when it has two or more members, and its summary only when it has no other
-   * members, as the summary repeats them.
+   * members, as the summary repeats them. As in the system's shade, the members of an app's group
+   * without a summary are shown one by one.
    */
   private fun build(context: Context): List<NotificationItem> {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
@@ -143,6 +151,10 @@ object NotificationList {
       }
       val members = groups[groupKey].orEmpty()
       val (summaries, children) = members.partition { it.notification.isGroupSummary() }
+      if (summaries.isEmpty() && members.none { it.overrideGroupKey != null }) {
+        members.forEach { result.add(NotificationItem.Single(entry(context, it))) }
+        continue
+      }
       val entries = children.ifEmpty { members }.map { entry(context, it) }
       result.add(
         if (entries.size >= 2) {
