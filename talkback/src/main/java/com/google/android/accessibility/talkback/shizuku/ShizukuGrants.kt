@@ -31,6 +31,8 @@ import android.os.Process
 import android.provider.Settings
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.quicksettings.QuickSettingsItems
+import com.google.android.accessibility.talkback.quicksettings.SystemTiles
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneSettings
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -169,9 +171,9 @@ object ShizukuGrants {
   }
 
   /**
-   * Called when the service starts. When Shizuku is or becomes ready, and touch exploration fixes
-   * are on without the DUMP permission, SandFly grants it: at once if Shizuku already allows
-   * SandFly, and otherwise by asking the user, once.
+   * Called when the service starts. When Shizuku is or becomes ready, SandFly asks the user to
+   * allow it in Shizuku, once, if Shizuku doesn't already, and then grants itself what the
+   * features that are on need and it doesn't have.
    */
   @JvmStatic
   fun onServiceConnected(context: Context) {
@@ -191,7 +193,23 @@ object ShizukuGrants {
 
   private fun onShizukuReady() {
     val context = serviceContext ?: return
+    if (!isReady()) return
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    if (!hasShizukuPermission() && !askAtStart(prefs)) return
+    withShizukuPermission { allowed ->
+      if (allowed) {
+        requestAll(context, wantedAtStart(context, prefs)) { granted ->
+          LogUtils.i(TAG, "Granted at start through Shizuku: %s", granted)
+        }
+      }
+    }
+  }
+
+  /**
+   * The permissions that the features the user has on need and SandFly doesn't have: DUMP for
+   * touch exploration fixes, and DUMP and usage access for the quick settings panel's tiles.
+   */
+  private fun wantedAtStart(context: Context, prefs: SharedPreferences): List<Grant> {
     val fixStuckTouch =
       SharedPreferencesUtils.getBooleanPref(
         prefs,
@@ -199,11 +217,30 @@ object ShizukuGrants {
         R.string.pref_fix_stuck_touch_exploration_key,
         R.bool.pref_fix_stuck_touch_exploration_default,
       )
-    if (!fixStuckTouch || Grant.DUMP.isGranted(context) || !isReady()) return
-    if (!hasShizukuPermission() && !askAtStart(prefs)) return
-    request(context, Grant.DUMP) { granted ->
-      LogUtils.i(TAG, "DUMP granted at start through Shizuku: %s", granted)
+    val wanted = ArrayList<Grant>()
+    if (fixStuckTouch) wanted += Grant.DUMP
+    if (QuickSettingsItems.isEnabled(context)) wanted += SystemTiles.GRANTS
+    return wanted.distinct().filterNot { it.isGranted(context) }
+  }
+
+  /**
+   * Grants [grants] one after another, since each grant starts and stops Shizuku's service.
+   * [onDone] gets the ones that were granted.
+   */
+  fun requestAll(context: Context, grants: List<Grant>, onDone: (List<Grant>) -> Unit) {
+    val granted = ArrayList<Grant>()
+    fun next(index: Int) {
+      val grant = grants.getOrNull(index)
+      if (grant == null) {
+        onDone(granted)
+        return
+      }
+      request(context, grant) { ok ->
+        if (ok) granted += grant
+        next(index + 1)
+      }
     }
+    next(0)
   }
 
   private fun askAtStart(prefs: SharedPreferences): Boolean {

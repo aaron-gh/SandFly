@@ -237,7 +237,7 @@ class QuickSettingsActivity : AppCompatActivity() {
         bindText(row, title, controls.subtitle(control))
         setState(row, ROLE_SWITCH, on, on?.let { onOffText(it) }) {
           // A state SandFly can't read, such as the microphone's without DUMP, can't be switched.
-          if (on == null) controls.openSettings(control) else toggle(item, on)
+          if (on == null) switchUnknown(item) else toggle(item, on)
         }
         setLongClick(row, controls.settingsIntent(control))
         row
@@ -318,6 +318,33 @@ class QuickSettingsActivity : AppCompatActivity() {
     } else {
       Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
     }
+
+  /**
+   * A switch whose state SandFly can't read. When Shizuku runs but hasn't allowed SandFly yet,
+   * which is why it can't, SandFly asks it to, reads the switch and then switches it. Otherwise it
+   * opens the system's settings for the switch.
+   */
+  private fun switchUnknown(item: QuickItem.Control) {
+    val control = item.control
+    if (!controls.usesShizuku(control) || !ShizukuGrants.isReady() || ShizukuShell.isAllowed()) {
+      controls.openSettings(control)
+      return
+    }
+    ShizukuGrants.withShizukuPermission { allowed ->
+      if (isFinishing || isDestroyed) return@withShizukuPermission
+      if (!allowed) {
+        controls.openSettings(control)
+        return@withShizukuPermission
+      }
+      if (!SystemTiles.canRead(this)) {
+        grantDumpAccess(SystemTiles.GRANTS)
+      }
+      controls.readShellState {
+        val on = controls.isOn(control)
+        if (on != null) toggle(item, on) else refresh()
+      }
+    }
+  }
 
   private fun toggle(item: QuickItem.Control, on: Boolean?) {
     val target = !(on ?: return)
@@ -451,16 +478,8 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   private fun hasDump(): Boolean = ShizukuGrants.Grant.DUMP.isGranted(this)
 
-  /** Grants one permission after another, since each grant starts and stops Shizuku's service. */
   private fun grantDumpAccess(grants: List<ShizukuGrants.Grant>) {
-    val grant = grants.firstOrNull()
-    if (grant == null) {
-      readTiles()
-      return
-    }
-    ShizukuGrants.request(this, grant) { granted ->
-      if (granted) grantDumpAccess(grants.drop(1))
-    }
+    ShizukuGrants.requestAll(this, grants) { if (!isDestroyed) readTiles() }
   }
 
   /** Reads the system's tiles, soon after a change and again a little later. */
