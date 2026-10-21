@@ -4669,4 +4669,16 @@ Do not use any markdown in your response."</string>
   <!-- Tip notification content for lock screen notifications. [CHAR_LIMIT=NONE] -->
   <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \"Speak notifications when screen is off\" in SandFly verbosity settings</string>
 
+    <!-- Settings entry that saves all of SandFly's settings to a file. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_export_settings">Export settings</string>
+    <!-- Settings entry that replaces SandFly's settings with those in a file exported before. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_import_settings">Import settings</string>
+    <!-- Message after SandFly's settings were saved to a file. [CHAR_LIMIT=NONE] -->
+    <string name="settings_export_done">Settings exported. API keys are not included</string>
+    <!-- Message when SandFly's settings could not be saved to a file. [CHAR_LIMIT=NONE] -->
+    <string name="settings_export_failed">Settings could not be exported</string>
+    <!-- Message after SandFly's settings were replaced with those in a file. [CHAR_LIMIT=NONE] -->
+    <string name="settings_import_done">Settings imported</string>
+    <!-- Message when a file could not be read as SandFly settings. [CHAR_LIMIT=NONE] -->
+    <string name="settings_import_failed">This file is not a SandFly settings file, or could not be read</string>
 </resources>
