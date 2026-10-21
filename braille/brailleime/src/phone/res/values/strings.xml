@@ -94,6 +94,10 @@
   <string name="right_hand">right hand</string>
   <!-- Audial announcement that switch to specific braille language. %s is the user facing name of the given language. [CHAR LIMIT=50] -->
   <string name="switch_to_language_announcement">Switched to %s</string>
+  <!-- Audial announcement that the braille keyboard switched to a braille language, with contracted braille. %s is the user facing name of the language. [CHAR LIMIT=80] -->
+  <string name="switch_to_language_contracted_announcement">Switched to %s, contracted</string>
+  <!-- Audial announcement that the braille keyboard switched to a braille language, with uncontracted braille. %s is the user facing name of the language. [CHAR LIMIT=80] -->
+  <string name="switch_to_language_uncontracted_announcement">Switched to %s, uncontracted</string>
   <!-- Braille keyboard settings. -->
   <!-- Braille keyboard. [CHAR LIMIT=35] -->
   <string name="braille_keyboard">Braille keyboard</string>

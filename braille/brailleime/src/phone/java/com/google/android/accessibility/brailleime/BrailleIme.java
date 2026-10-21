@@ -113,16 +113,19 @@ import com.google.android.accessibility.brailleime.settings.BrailleImePreference
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialCallback;
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialState.State;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.input.CursorGranularity;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
+import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.Thread.UncaughtExceptionHandler;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -258,6 +261,8 @@ public class BrailleIme extends InputMethodService {
   private Handler mainHandler;
   private Handler calibrationAnnouncementHandler;
   private boolean brailleDisplayConnectedAndNotSuspended;
+  // Set while the Switch to next braille table gesture changes the language, which it says itself.
+  private boolean switchingBrailleTable;
   private int orientation;
   private boolean isVisible;
   private FeedbackManager feedbackManager;
@@ -1180,6 +1185,11 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
+        public void switchToNextBrailleTable() {
+          BrailleIme.this.switchToNextBrailleTable();
+        }
+
+        @Override
         public void hideBrailleKeyboard() {
           hideSelf();
           escapeReminder.increaseExitKeyboardCounter();
@@ -1367,6 +1377,77 @@ public class BrailleIme extends InputMethodService {
     }
     BrailleCommonTalkBackSpeaker.getInstance()
         .speak(announcement, TalkBackSpeaker.AnnounceType.INTERRUPT);
+  }
+
+  /**
+   * Switches to the next of the user's braille languages, with contracted braille on or off as it
+   * was when that language was last used, and says the language and which braille it is. Speech
+   * changes to the first voice profile in the language of the table, if there is one.
+   */
+  private void switchToNextBrailleTable() {
+    Code current = BrailleUserPreferences.readCurrentActiveInputCodeAndCorrect(this);
+    Code next = BrailleUserPreferences.getNextInputCode(this);
+    boolean contracted = BrailleUserPreferences.readContractedMode(this);
+    BrailleUserPreferences.writeContractedModeForCode(this, current, contracted);
+    boolean nextContracted =
+        BrailleUserPreferences.readContractedModeForCode(this, next, contracted);
+    // The preference listener would say the language and the contracted mode one over the other.
+    switchingBrailleTable = true;
+    try {
+      BrailleUserPreferences.writeContractedMode(this, nextContracted);
+      BrailleUserPreferences.writeCurrentActiveInputCode(this, next);
+    } finally {
+      switchingBrailleTable = false;
+    }
+    useVoiceProfileFor(current, next);
+    String name = next.getUserFacingName(this);
+    String announcement =
+        next.isSupportsContracted(this)
+            ? getString(
+                nextContracted
+                    ? R.string.switch_to_language_contracted_announcement
+                    : R.string.switch_to_language_uncontracted_announcement,
+                name)
+            : getString(R.string.switch_to_language_announcement, name);
+    if (!brailleDisplayConnectedAndNotSuspended) {
+      BrailleCommonTalkBackSpeaker.getInstance()
+          .speak(announcement, TalkBackSpeaker.AnnounceType.INTERRUPT);
+    }
+  }
+
+  /**
+   * Turns on the first voice profile in the language of {@code next}, or, when there is none and
+   * the profile in use is in the language of {@code previous}, SandFly's default voice.
+   */
+  private void useVoiceProfileFor(Code previous, Code next) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(this);
+    String activeId = VoiceProfiles.activeId(prefs);
+    String activeLanguage =
+        activeId.isEmpty() ? "" : VoiceProfiles.read(prefs, activeId).language();
+    if (isLanguageOf(activeLanguage, next)) {
+      return;
+    }
+    String newId = null;
+    for (String id : VoiceProfiles.ids(prefs)) {
+      if (isLanguageOf(VoiceProfiles.read(prefs, id).language(), next)) {
+        newId = id;
+        break;
+      }
+    }
+    if (newId == null && !activeId.isEmpty() && isLanguageOf(activeLanguage, previous)) {
+      newId = "";
+    }
+    if (newId != null) {
+      prefs.edit().putString(VoiceProfiles.PREF_ACTIVE, newId).apply();
+    }
+  }
+
+  /** Whether the language tag {@code tag} is the language of the braille table {@code code}. */
+  private static boolean isLanguageOf(String tag, Code code) {
+    if (tag.isEmpty() || code.getLocale() == null) {
+      return false;
+    }
+    return Locale.forLanguageTag(tag).getLanguage().equals(code.getLocale().getLanguage());
   }
 
   /** Whether the dots are locked facing one way in the current mode. */
@@ -1774,7 +1855,7 @@ public class BrailleIme extends InputMethodService {
           if (key.equals(getString(R.string.pref_brailleime_translator_code))) {
             Code newCode =
                 BrailleUserPreferences.readCurrentActiveInputCodeAndCorrect(BrailleIme.this);
-            if (!brailleDisplayConnectedAndNotSuspended) {
+            if (!brailleDisplayConnectedAndNotSuspended && !switchingBrailleTable) {
               BrailleCommonTalkBackSpeaker.getInstance()
                   .speak(
                       getString(
@@ -1797,7 +1878,7 @@ public class BrailleIme extends InputMethodService {
                 .isSupportsContracted(BrailleIme.this)) {
               BrailleImeAnalytics.getInstance(BrailleIme.this).logContractedToggle(contractedMode);
             }
-            if (!brailleDisplayConnectedAndNotSuspended) {
+            if (!brailleDisplayConnectedAndNotSuspended && !switchingBrailleTable) {
               BrailleCommonTalkBackSpeaker.getInstance()
                   .speak(
                       getString(

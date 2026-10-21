@@ -302,6 +302,8 @@
   <string name="bk_gesture_paste">Paste</string>
   <!-- Braille keyboard gesture that keeps the dots facing the way they are now, or lets them follow how the device is held again. [CHAR_LIMIT=50] -->
   <string name="bk_gesture_toggle_orientation_lock">Lock or unlock orientation</string>
+  <!-- Braille keyboard gesture that switches to the next of the user's braille languages, with the contracted or uncontracted braille last used with it. [CHAR_LIMIT=50] -->
+  <string name="bk_gesture_next_braille_table">Switch to next braille table</string>
   <!-- Spell check -->
   <!-- Spell check gesture of previous misspelled word. [CHAR_LIMIT=NONE] -->
   <string name="bk_gesture_previous_misspelled_word">Move to previous typo</string>

@@ -28,6 +28,7 @@ import static com.google.android.accessibility.braille.common.BrailleImeAction.H
 import static com.google.android.accessibility.braille.common.BrailleImeAction.HIDE_KEYBOARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_BACKWARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_FORWARD;
+import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_BRAILLE_TABLE;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_CHARACTER;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_GRANULARITY;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_LINE;
@@ -174,6 +175,10 @@ public final class BrailleImeGestureAction {
               TOGGLE_ORIENTATION_LOCK,
               new DotHoldSwipe(
                   new Swipe(Direction.UP, /* touchCount= */ 1), new BrailleCharacter(4, 5, 6)))
+          .put(
+              NEXT_BRAILLE_TABLE,
+              new DotHoldSwipe(
+                  new Swipe(Direction.DOWN, /* touchCount= */ 1), new BrailleCharacter(4, 5, 6)))
           .buildOrThrow();
 
   private static final ImmutableMap<BrailleImeAction, ImmutableList<Gesture>>

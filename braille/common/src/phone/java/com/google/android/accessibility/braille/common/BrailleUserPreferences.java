@@ -111,6 +111,8 @@ public class BrailleUserPreferences {
   private static final String DEPRECATED_UEB_2 = "UEB_2";
   private static final String DEPRECATED_SINHALA_IN = "SINHALA_IN";
 
+  private static final String CONTRACTED_MODE_FOR_CODE_PREFIX = "pref_braille_contracted_mode_";
+
   private BrailleUserPreferences() {}
 
   // Prefs that are common to BK and BD
@@ -139,6 +141,25 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_braille_contracted_mode), contractedMode)
+        .apply();
+  }
+
+  /**
+   * Whether contracted braille was last on with {@code code}, or {@code defaultValue} if it has not
+   * been typed with yet.
+   */
+  public static boolean readContractedModeForCode(
+      Context context, Code code, boolean defaultValue) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(CONTRACTED_MODE_FOR_CODE_PREFIX + code.name(), defaultValue);
+  }
+
+  /** Remembers whether contracted braille is on with {@code code}. */
+  public static void writeContractedModeForCode(
+      Context context, Code code, boolean contractedMode) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(CONTRACTED_MODE_FOR_CODE_PREFIX + code.name(), contractedMode)
         .apply();
   }
 
