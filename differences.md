@@ -637,12 +637,17 @@ Write a letter, several letters or a whole word anywhere on the screen. Strokes 
 | Swipe right with two fingers | Space |
 | Swipe left with two fingers | Delete the character before the cursor |
 | Swipe down with two fingers | New line, or the field's action, such as Send, Search or Done |
-| Swipe up with two fingers | Replace the last writing with its next reading, such as "h" for "H", saying which of how many it is |
+| Swipe up with two fingers | Replace the last writing with its next reading of the same length, such as "h" for "H", saying which of how many it is |
 | Tap with two fingers | Read the text before the cursor |
 | Swipe down with three fingers | Hide the keyboard |
 | Swipe right or left with three fingers | Switch to the next or previous keyboard |
+| Tap with three fingers | Open the tutorial |
 
-Handwriting is recognized on the phone by Google's ML Kit, in the phone's language, as in [Write the letter of a reading control](#more-gesture-actions); the first time, its model, about 20 MB, is downloaded from Google. SandFly's keyboard echo doesn't repeat what the keyboard has said. In SandFly's own text fields, the text before the cursor isn't read.
+The first time the keyboard opens, a tutorial goes through writing a letter and a word and each gesture, says each step, and waits for you to do it. Nothing is typed in the field during the tutorial. To end it early, swipe down with three fingers.
+
+**Keyboard echo** > **Handwriting keyboard** sets what the keyboard says as you type: each piece of writing, each word when a space or new line ends it, both, or nothing. It is also a reading control and a SandFly menu item, **Handwriting keyboard echo**. The keyboard says deleted characters and the readings that replace the last writing whatever the echo. The app's field is behind the keyboard, so the keyboard does this itself, as the braille keyboard does.
+
+Handwriting is recognized on the phone by Google's ML Kit, in the phone's language, as in [Write the letter of a reading control](#more-gesture-actions); the first time, its model, about 20 MB, is downloaded from Google. In SandFly's own text fields, the text before the cursor isn't read, and a deletion is said only as "Deleted".
 
 ## Braille keyboard
 

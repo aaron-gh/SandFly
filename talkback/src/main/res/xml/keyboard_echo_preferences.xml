@@ -28,4 +28,11 @@
       android:key="@string/pref_echo_braille_display_key"
       android:summary="%s"
       android:title="@string/title_pref_brailledisplay" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_keyboard_echo_default"
+      android:entries="@array/pref_keyboard_echo_entries"
+      android:entryValues="@array/pref_keyboard_echo_values"
+      android:key="@string/pref_echo_handwriting_keyboard_key"
+      android:summary="%s"
+      android:title="@string/title_pref_handwriting_keyboard" />
 </PreferenceScreen>

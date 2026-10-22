@@ -187,6 +187,11 @@ public class TalkbackMenuProcessor {
         TypingInput.BRAILLE_DISPLAY,
         R.id.keyboard_echo_braille_display_menu,
         R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key);
+    addKeyboardEchoMenuIfValid(
+        menu,
+        TypingInput.HANDWRITING_KEYBOARD,
+        R.id.keyboard_echo_handwriting_keyboard_menu,
+        R.string.pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key);
     // Read From & Last Phrase Spoken & screen search at context_menu.xml
     addContextMenuXmlMenu(menu);
 

@@ -160,6 +160,11 @@
             android:title="@string/title_keyboard_echo_braille_display"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_keyboard_echo_default"
+            android:key="@string/pref_selector_keyboard_echo_handwriting_keyboard_key"
+            android:title="@string/title_keyboard_echo_handwriting_keyboard"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_text_formatting_inline_default"
             android:key="@string/pref_selector_text_formatting_inline_key"
             android:title="@string/title_switch_text_formatting"

@@ -43,6 +43,7 @@ object KeyboardEchoSettings {
         TypingInput.PHYSICAL_KEYBOARD -> R.string.pref_echo_physical_keyboard_key
         TypingInput.BRAILLE_KEYBOARD -> R.string.pref_echo_braille_keyboard_key
         TypingInput.BRAILLE_DISPLAY -> R.string.pref_echo_braille_display_key
+        TypingInput.HANDWRITING_KEYBOARD -> R.string.pref_echo_handwriting_keyboard_key
       }
     )
 
@@ -62,6 +63,7 @@ object KeyboardEchoSettings {
         TypingInput.PHYSICAL_KEYBOARD -> R.string.title_keyboard_echo_physical
         TypingInput.BRAILLE_KEYBOARD -> R.string.title_keyboard_echo_braille_keyboard
         TypingInput.BRAILLE_DISPLAY -> R.string.title_keyboard_echo_braille_display
+        TypingInput.HANDWRITING_KEYBOARD -> R.string.title_keyboard_echo_handwriting_keyboard
       }
     )
 
@@ -148,6 +150,10 @@ object KeyboardEchoSettings {
         .getString(OLD_BRAILLE_KEYBOARD_ECHO_KEY, null) ?: onScreen()
     }
     moveIfUnset(TypingInput.BRAILLE_DISPLAY, physical)
+    // The handwriting keyboard, added later, starts from the on-screen keyboard's echo.
+    moveIfUnset(TypingInput.HANDWRITING_KEYBOARD) {
+      prefs.getString(key(res, TypingInput.ON_SCREEN_KEYBOARD), null) ?: onScreen()
+    }
     if (changed) {
       editor.apply()
     }

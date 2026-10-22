@@ -29,7 +29,10 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.handwriting.HandwritingRecognizer.Result
+import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.input.TextEventFilter
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
@@ -61,12 +64,19 @@ class HandwritingIme : InputMethodService() {
   /** Where the cursor is, from the app's selection updates. */
   private var cursor = -1
 
+  /** The word typed so far, for word echo. */
+  private val word = StringBuilder()
+
   /** The last writing typed, with the other readings of it, while the cursor is still after it. */
   private var lastWriting: Writing? = null
 
   private class Writing(val candidates: List<String>, var index: Int, var cursor: Int)
 
   private val swipeDistance by lazy { resources.displayMetrics.ydpi / CM_PER_INCH }
+  private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
+  private val tutorial by lazy {
+    HandwritingTutorial(resources, ::speak) { prefs.edit().putBoolean(PREF_TUTORIAL_DONE, true).apply() }
+  }
 
   override fun onCreate() {
     super.onCreate()
@@ -76,6 +86,8 @@ class HandwritingIme : InputMethodService() {
   }
 
   override fun onDestroy() {
+    HandwritingKeyboardHost.isTyping = false
+    tutorial.cancel()
     handler.removeCallbacksAndMessages(null)
     recognizer?.close()
     recognizer = null
@@ -114,13 +126,21 @@ class HandwritingIme : InputMethodService() {
     super.onStartInputView(info, restarting)
     strokes.clear()
     lastWriting = null
+    word.setLength(0)
     cursor = if (info.initialSelStart == info.initialSelEnd) info.initialSelEnd else -1
     val metrics = resources.displayMetrics
     HandwritingKeyboardHost.feedback?.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, metrics.widthPixels, metrics.heightPixels)),
     )
-    if (!restarting) speak(getString(R.string.handwriting_keyboard_name))
+    HandwritingKeyboardHost.isTyping = true
+    if (!restarting) {
+      if (!prefs.getBoolean(PREF_TUTORIAL_DONE, false)) {
+        tutorial.start()
+      } else {
+        speak(getString(R.string.handwriting_keyboard_name))
+      }
+    }
     recognizer?.prepare { result ->
       speak(
         getString(
@@ -132,6 +152,8 @@ class HandwritingIme : InputMethodService() {
   }
 
   override fun onFinishInputView(finishingInput: Boolean) {
+    HandwritingKeyboardHost.isTyping = false
+    tutorial.cancel()
     handler.removeCallbacks(recognizeNow)
     strokes.clear()
     lastWriting = null
@@ -218,11 +240,29 @@ class HandwritingIme : InputMethodService() {
       return
     }
     val distance = hypot(dx, dy)
-    if (distance < swipeDistance / 2) {
-      if (fingers == 2 && duration < TAP_MS) readBack()
+    val tap = distance < swipeDistance / 2
+    if (tap && duration >= TAP_MS) return
+    if (tap && fingers == 3) {
+      tutorial.start()
       return
     }
     val horizontal = abs(dx) > abs(dy)
+    if (tutorial.isActive) {
+      when {
+        fingers == 3 && !horizontal && dy > 0 -> tutorial.finish()
+        fingers != 2 -> {}
+        tap -> tutorial.onGesture(HandwritingTutorial.Gesture.READ_BACK)
+        horizontal && dx > 0 -> tutorial.onGesture(HandwritingTutorial.Gesture.SPACE)
+        horizontal -> tutorial.onGesture(HandwritingTutorial.Gesture.DELETE)
+        dy > 0 -> tutorial.onGesture(HandwritingTutorial.Gesture.NEW_LINE)
+        else -> tutorial.onGesture(HandwritingTutorial.Gesture.NEXT_READING)
+      }
+      return
+    }
+    if (tap) {
+      if (fingers == 2) readBack()
+      return
+    }
     when (fingers) {
       2 ->
         when {
@@ -256,13 +296,16 @@ class HandwritingIme : InputMethodService() {
       when (result) {
         is Result.Candidates -> {
           val candidates = result.candidates()
-          if (candidates.isEmpty()) {
-            speak(getString(R.string.handwriting_not_recognized))
-          } else {
-            val before = cursor
-            commit(candidates[0])
-            lastWriting = if (before < 0) null else Writing(candidates, 0, before + candidates[0].length)
-            speak(candidates[0])
+          when {
+            candidates.isEmpty() -> speak(getString(R.string.handwriting_not_recognized))
+            tutorial.isActive -> tutorial.onWriting(candidates)
+            else -> {
+              val before = cursor
+              commit(candidates[0])
+              word.append(candidates[0])
+              lastWriting = if (before < 0) null else Writing(candidates, 0, before + candidates[0].length)
+              if (KeyboardEchoSettings.echoesCharacters(echo())) speak(candidates[0])
+            }
           }
         }
         Result.Downloading -> speak(getString(R.string.handwriting_downloading))
@@ -273,8 +316,15 @@ class HandwritingIme : InputMethodService() {
     }
   }
 
-  private fun Result.Candidates.candidates(): List<String> =
-    texts.map { it.trim() }.filter { it.isNotEmpty() }.distinct().take(MAX_CANDIDATES)
+  /**
+   * The readings to offer, most likely first: those as long as the most likely one, so that a
+   * letter is offered other letters, not words that start with it.
+   */
+  private fun Result.Candidates.candidates(): List<String> {
+    val texts = texts.map { it.trim() }.filter { it.isNotEmpty() }.distinct()
+    val length = texts.firstOrNull()?.let { it.codePointCount(0, it.length) } ?: return emptyList()
+    return texts.filter { it.codePointCount(0, it.length) == length }.take(MAX_CANDIDATES)
+  }
 
   /** Replaces the last writing with its next reading, if the cursor is still after it. */
   private fun nextReading() {
@@ -287,36 +337,69 @@ class HandwritingIme : InputMethodService() {
     val old = writing.candidates[writing.index]
     writing.index = (writing.index + 1) % writing.candidates.size
     val new = writing.candidates[writing.index]
-    HandwritingKeyboardHost.noteTyping()
     connection.beginBatchEdit()
     connection.deleteSurroundingText(old.length, 0)
     connection.commitText(new, 1)
     connection.endBatchEdit()
+    if (word.endsWith(old)) word.setLength(word.length - old.length)
+    word.append(new)
     writing.cursor = writing.cursor - old.length + new.length
     speak(getString(R.string.handwriting_alternative, new, writing.index + 1, writing.candidates.size))
   }
 
   private fun commit(text: String) {
-    HandwritingKeyboardHost.noteTyping()
     currentInputConnection?.commitText(text, 1)
   }
 
   private fun typeSpace() {
     lastWriting = null
     commit(" ")
-    speak(getString(R.string.handwriting_space))
+    endWord(getString(R.string.handwriting_space))
   }
+
+  /**
+   * Echoes the end of a word, as the keyboard echo for this keyboard says: the word, or what ended
+   * it, [separator]. The app's field is hidden behind the keyboard, so SandFly can't echo it.
+   */
+  private fun endWord(separator: String) {
+    val echo = echo()
+    val ended = word.toString()
+    word.setLength(0)
+    val echoesWords =
+      echo == TextEventFilter.PREF_ECHO_WORDS || echo == TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS
+    when {
+      echoesWords && ended.isNotBlank() -> speak(ended)
+      KeyboardEchoSettings.echoesCharacters(echo) -> speak(separator)
+    }
+  }
+
+  private fun echo(): Int =
+    KeyboardEchoSettings.read(prefs, resources, TextEventFilter.TypingInput.HANDWRITING_KEYBOARD)
 
   /** Deletes the character before the cursor. SandFly says what was deleted, as for any keyboard. */
   private fun deleteBack() {
     lastWriting = null
     val connection = currentInputConnection ?: return
     val selected = if (isOwnField()) null else connection.getSelectedText(0)
-    if (!selected.isNullOrEmpty()) {
-      connection.commitText("", 1)
-    } else {
-      connection.deleteSurroundingTextInCodePoints(1, 0)
-    }
+    val deleted =
+      if (!selected.isNullOrEmpty()) {
+        connection.commitText("", 1)
+        selected.toString()
+      } else {
+        val before = textBefore(2)
+        connection.deleteSurroundingTextInCodePoints(1, 0)
+        before.takeLast(if (before.length == 2 && Character.isSurrogatePair(before[0], before[1])) 2 else 1)
+      }
+    if (word.isNotEmpty()) word.setLength(word.length - 1)
+    // The app's field is hidden behind the keyboard, so SandFly can't say what was deleted.
+    speak(
+      when {
+        deleted.isEmpty() -> getString(R.string.handwriting_tutorial_deleted)
+        deleted == " " -> getString(R.string.template_text_removed, getString(R.string.handwriting_space))
+        deleted == "\n" -> getString(R.string.template_text_removed, getString(R.string.handwriting_new_line))
+        else -> getString(R.string.template_text_removed, deleted)
+      }
+    )
   }
 
   /** Types a new line, or performs the field's action, such as Send or Search, if it has one. */
@@ -331,7 +414,7 @@ class HandwritingIme : InputMethodService() {
       return
     }
     commit("\n")
-    speak(getString(R.string.handwriting_new_line))
+    endWord(getString(R.string.handwriting_new_line))
   }
 
   /** Says the text before the cursor, up to a sentence or so. */
@@ -365,6 +448,7 @@ class HandwritingIme : InputMethodService() {
 
   private companion object {
     const val TAG = "HandwritingIme"
+    const val PREF_TUTORIAL_DONE = "pref_handwriting_tutorial_done"
     const val CM_PER_INCH = 2.54f
     /** How long after a stroke ends the writing is recognized, unless another stroke starts. */
     const val STROKE_WAIT_MS = 600L

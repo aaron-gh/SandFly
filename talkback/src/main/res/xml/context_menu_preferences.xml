@@ -179,6 +179,13 @@
             app:singleLineTitle="false"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_keyboard_echo_default"
+            android:key="@string/pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key"
+            android:order="13"
+            android:title="@string/title_keyboard_echo_handwriting_keyboard"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_voice_profile_default"
             android:key="@string/pref_show_context_menu_voice_profile_setting_key"
             android:order="15"
