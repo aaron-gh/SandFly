@@ -860,6 +860,10 @@ public class AccessibilityNodeInfoUtils {
       LogUtils.v(TAG, "Don't focus, a script hides it");
       return false;
     }
+    if (TelegramReplyQuote.isReplyQuote(node)) {
+      LogUtils.v(TAG, "Don't focus, a Telegram reply quote is read with its message");
+      return false;
+    }
     if (NodeOverrides.grouped(node)) {
       return isVisible(node);
     }
