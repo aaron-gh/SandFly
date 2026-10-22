@@ -3735,8 +3735,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(R.string.pref_soundback_key, R.bool.pref_soundback_default);
     feedbackController.setAuditoryEnabled(auditoryEnabled);
     // Before the theme's sounds are loaded below, so that they load with the new volume.
-    feedbackController.setUseAccessibilityStream(
-        FailoverTextToSpeech.shouldUseAccessibilityStream(this));
+    feedbackController.setSpeechUsage(FailoverTextToSpeech.speechUsage(this));
     feedbackController.setLowLatencyAudio(
         prefs.getBoolean(
             FailoverTextToSpeech.PREF_LOW_LATENCY_AUDIO_KEY,

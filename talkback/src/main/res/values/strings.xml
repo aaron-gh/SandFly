@@ -152,17 +152,24 @@
       Description: Controls how high or low TalkBack's voice sounds. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_speech_pitch">Speech pitch</string>
-    <!--
-      Source: Title for the "use accessibility audio stream" toggle.
-      Description: When on, TalkBack speech uses the dedicated accessibility audio stream. [CHAR LIMIT=NONE]
-    -->
-    <string name="title_pref_use_accessibility_stream">Use accessibility volume</string>
-    <!--
-      Source: Summary for the "use accessibility audio stream" toggle.
-      Description: Explains that enabling this routes TalkBack speech through the accessibility stream,
-      allowing independent volume control. [CHAR LIMIT=NONE]
-    -->
-    <string name="summary_pref_use_accessibility_stream">Speech and sounds use the accessibility volume, so you can set them apart from media. When off, they use the media volume.</string>
+    <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_stream">Speech volume</string>
+    <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_selector_speech_stream">Switch between the accessibility, media, ring and call volumes</string>
+    <!-- Choice of Speech volume: speech plays at the accessibility volume. [CHAR LIMIT=40] -->
+    <string name="speech_stream_accessibility">Accessibility volume</string>
+    <!-- Choice of Speech volume: speech plays at the media volume. [CHAR LIMIT=40] -->
+    <string name="speech_stream_media">Media volume</string>
+    <!-- Choice of Speech volume: speech plays at the ring volume, as a ringtone does. [CHAR LIMIT=40] -->
+    <string name="speech_stream_ring">Ring volume</string>
+    <!-- Choice of Speech volume: speech plays at the call volume, on the earpiece when no headset is connected. [CHAR LIMIT=60] -->
+    <string name="speech_stream_call">Call volume, earpiece</string>
+    <string-array name="pref_speech_stream_entries">
+        <item>@string/speech_stream_accessibility</item>
+        <item>@string/speech_stream_media</item>
+        <item>@string/speech_stream_ring</item>
+        <item>@string/speech_stream_call</item>
+    </string-array>
     <!--
       Source: Title for the "speak long text in phrases" toggle.
       Description: When on, SandFly sends long text to the speech engine as separate phrases. [CHAR LIMIT=NONE]

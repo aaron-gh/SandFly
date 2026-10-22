@@ -235,6 +235,22 @@ public class FailoverTextToSpeech {
   public static final String PREF_USE_ACCESSIBILITY_STREAM_KEY = "pref_use_accessibility_stream";
 
   /**
+   * The volume speech and sounds use: one of the STREAM_ values below. Before it, the switch above
+   * chose between the accessibility volume and the media volume, and it is read while this is
+   * unset.
+   */
+  public static final String PREF_SPEECH_STREAM_KEY = "pref_speech_stream";
+
+  public static final String STREAM_VALUE_ACCESSIBILITY = "accessibility";
+  public static final String STREAM_VALUE_MEDIA = "media";
+  public static final String STREAM_VALUE_RING = "ring";
+  public static final String STREAM_VALUE_CALL = "call";
+
+  /** The volumes speech can use, in the order the reading control goes through them. */
+  public static final List<String> STREAM_VALUES =
+      List.of(STREAM_VALUE_ACCESSIBILITY, STREAM_VALUE_MEDIA, STREAM_VALUE_RING, STREAM_VALUE_CALL);
+
+  /**
    * Set while Backtalk routes its audio to a chosen device, which only accessibility audio follows.
    * Not a user setting.
    */
@@ -372,6 +388,7 @@ public class FailoverTextToSpeech {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
         } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
+            || PREF_SPEECH_STREAM_KEY.equals(key)
             || PREF_ROUTE_FORCED_KEY.equals(key)) {
           applyAudioAttributes();
         } else if (PREF_SPEAK_IN_PHRASES_KEY.equals(key)) {
@@ -551,19 +568,51 @@ public class FailoverTextToSpeech {
   }
 
   public static boolean shouldUseAccessibilityStream(Context context) {
+    return STREAM_VALUE_ACCESSIBILITY.equals(speechStream(context));
+  }
+
+  /** The volume the user chose for speech and sounds, one of {@link #STREAM_VALUES}. */
+  public static String chosenSpeechStream(SharedPreferences prefs) {
+    String chosen = prefs.getString(PREF_SPEECH_STREAM_KEY, null);
+    if (chosen != null && STREAM_VALUES.contains(chosen)) {
+      return chosen;
+    }
+    return prefs.getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT)
+        ? STREAM_VALUE_ACCESSIBILITY
+        : STREAM_VALUE_MEDIA;
+  }
+
+  /** The volume speech and sounds use now, one of {@link #STREAM_VALUES}. */
+  public static String speechStream(Context context) {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
     // Only accessibility audio follows a device that Backtalk routes to. While it routes nowhere,
     // as with the phone speaker chosen and nothing else connected, the user's choice stands.
     if (prefs.getBoolean(PREF_ROUTE_FORCED_KEY, false)) {
-      return true;
+      return STREAM_VALUE_ACCESSIBILITY;
     }
-    return prefs.getBoolean(PREF_USE_ACCESSIBILITY_STREAM_KEY, USE_ACCESSIBILITY_STREAM_DEFAULT);
+    return chosenSpeechStream(prefs);
+  }
+
+  /**
+   * The audio usage of speech and sounds. The ring volume plays like a ringtone, and the call
+   * volume like a call, on the earpiece when no headset is connected.
+   */
+  public static int speechUsage(Context context) {
+    return switch (speechStream(context)) {
+      case STREAM_VALUE_MEDIA -> AudioAttributes.USAGE_MEDIA;
+      case STREAM_VALUE_RING -> AudioAttributes.USAGE_NOTIFICATION_RINGTONE;
+      case STREAM_VALUE_CALL -> AudioAttributes.USAGE_VOICE_COMMUNICATION;
+      default -> AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY;
+    };
   }
 
   public static int getSpeechAudioStream(Context context) {
-    return shouldUseAccessibilityStream(context)
-        ? AudioManager.STREAM_ACCESSIBILITY
-        : AudioManager.STREAM_MUSIC;
+    return switch (speechStream(context)) {
+      case STREAM_VALUE_MEDIA -> AudioManager.STREAM_MUSIC;
+      case STREAM_VALUE_RING -> AudioManager.STREAM_RING;
+      case STREAM_VALUE_CALL -> AudioManager.STREAM_VOICE_CALL;
+      default -> AudioManager.STREAM_ACCESSIBILITY;
+    };
   }
 
   public static @Nullable String getSelectedEngine(Context context) {
@@ -1453,10 +1502,7 @@ public class FailoverTextToSpeech {
 
   private AudioAttributes speechAttributes() {
     return new AudioAttributes.Builder()
-        .setUsage(
-            shouldUseAccessibilityStream(context)
-                ? AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
-                : AudioAttributes.USAGE_MEDIA)
+        .setUsage(speechUsage(context))
         .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
         .build();
   }
@@ -2337,10 +2383,7 @@ public class FailoverTextToSpeech {
     if (tts == null) {
       return;
     }
-    int usage =
-        shouldUseAccessibilityStream(context)
-            ? AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
-            : AudioAttributes.USAGE_MEDIA;
+    int usage = speechUsage(context);
     tts.setAudioAttributes(
         new AudioAttributes.Builder()
             .setUsage(usage)

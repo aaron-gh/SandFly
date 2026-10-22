@@ -61,7 +61,9 @@ public class SpeechCacheManager {
 
   public SpeechCacheManager(Context context, Looper workerlooper) {
     workerHandler = new Handler(workerlooper);
-    speechCachePlayer = new AudioTrackSpeechCachePlayer(new HandlerExecutor(workerHandler));
+    speechCachePlayer =
+        new AudioTrackSpeechCachePlayer(
+            new HandlerExecutor(workerHandler), () -> FailoverTextToSpeech.speechUsage(context));
     speechFilesRootDirectory = new File(context.getFilesDir().getPath(), DIRECTORY_CACHE);
     if (speechFilesRootDirectory.exists()) {
       // In case the file is not deleted accidentally,always delete the files.

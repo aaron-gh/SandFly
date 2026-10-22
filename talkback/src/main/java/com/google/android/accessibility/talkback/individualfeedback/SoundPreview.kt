@@ -36,13 +36,7 @@ class SoundPreview {
     }
     val attributes =
       AudioAttributes.Builder()
-        .setUsage(
-          if (FailoverTextToSpeech.shouldUseAccessibilityStream(context)) {
-            AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
-          } else {
-            AudioAttributes.USAGE_MEDIA
-          }
-        )
+        .setUsage(FailoverTextToSpeech.speechUsage(context))
         .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
         .build()
     val custom = SoundThemes.soundFile(context, prefs, item)

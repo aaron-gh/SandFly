@@ -172,6 +172,12 @@
             android:summary="@string/summary_selector_switch_tts_engine"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_selector_speech_stream_default"
+            android:key="@string/pref_selector_speech_stream_key"
+            android:title="@string/title_pref_speech_stream"
+            android:summary="@string/summary_selector_speech_stream"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_voice_profile_default"
             android:key="@string/pref_selector_voice_profile_key"
             android:title="@string/title_selector_voice_profile"/>

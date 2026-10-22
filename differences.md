@@ -124,9 +124,16 @@ The reading control goes through the profiles in the order of the **Voice profil
 
 **SandFly default** is always there, and uses the rest of the text-to-speech settings. While a profile is in use, changing the speech rate or pitch with gestures or the reading controls changes that profile only. All speech uses the profile's engine and voice, so SandFly doesn't switch language or dialect, and the **Spoken language** reading control and menu item are hidden.
 
-### Accessibility volume or media volume
+### Speech volume
 
-TalkBack always plays speech at the accessibility volume. In SandFly, you can turn off **Text-to-speech** > **Use accessibility volume**, so that speech and SandFly's sounds use the media volume instead. The setting is on by default.
+TalkBack always plays speech at the accessibility volume. In SandFly, **Text-to-speech** > **Speech volume** chooses the volume that speech and SandFly's sounds play at:
+
+- **Accessibility volume**, the default.
+- **Media volume**.
+- **Ring volume**: speech plays as a ringtone does, so it stays on the phone when media is cast to another device. Like a ringtone, it can also play on the phone's speaker while headphones are connected, and it is silent when the ringer is.
+- **Call volume, earpiece**: speech plays as a call does, on the earpiece when no headset is connected.
+
+The **Speech volume** reading control, which you can turn on in **Reading controls**, switches between them. While **Audio output device** sends speech to a device other than the system default, speech uses the accessibility volume.
 
 ### Automatic language and dialect changes
 
