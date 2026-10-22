@@ -63,15 +63,12 @@
   <string name="value_not_selected">বেছে নেওয়া হয়নি</string>
   <string name="value_checked">পরীক্ষা করা হয়েছে</string>
   <string name="value_not_checked">টিক চিহ্ন দেওয়া নেই</string>
-  <string name="value_partially_checked">কয়েকটি বেছে নেওয়া হয়েছে</string>
   <string name="value_on">চালু</string>
   <string name="value_off">বন্ধ</string>
   <string name="value_disabled">অক্ষম রয়েছে</string>
   <string name="value_enabled">চালু করা আছে</string>
   <string name="value_read_only">শুধু পড়া যাবে</string>
   <string name="value_expanded">প্রসারিত হয়েছে</string>
-  <string name="value_fully_expanded">সম্পূর্ণ বড় করা হয়েছে</string>
-  <string name="value_partially_expanded">আংশিক বড় করা হয়েছে</string>
   <string name="value_collapsed">সংকুচিত রয়েছে</string>
   <string name="value_double_tap">দুবার আলতো চাপা</string>
   <string name="value_single_tap">আলতো চাপুন</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">পরিবর্তন করতে %1$s প্রেস করুন</string>
   <string name="template_hint_single_selection_item">বেছে নিতে %1$s</string>
   <string name="template_hint_single_selection_item_keyboard">বেছে নিতে %1$s প্রেস করুন</string>
-  <string name="template_hint_pager">একটি পৃষ্ঠা থেকে অন্য পৃষ্ঠায় যেতে দুই আঙুল দিয়ে সোয়াইপ করুন</string>
   <string name="template_hint_pager_single_page">আর কোনও পৃষ্ঠা নেই</string>
   <string name="template_hint_seek_control_tv">পরিবর্তন করতে %1$s</string>
   <string name="template_custom_hint_for_actions">%2$s করতে %1$s</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">ভাষ্যের হার %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">অ্যাক্সেসিবিলিটি ভলিউম বাড়িয়ে %1$d শতাংশ করা হয়েছে।</string>
   <string name="template_accessibility_volume_change_decrease">অ্যাক্সেসিবিলিটি ভলিউম কমিয়ে %1$d শতাংশ করা হয়েছে।</string>
-  <string name="template_touch_explore_latency_changed">টাইপিং ফোকাস ডিলে: %1$d মিলিসেকেন্ড।</string>
   <string name="template_touch_latency_reach_maximum">সর্বাধিক</string>
   <string name="template_touch_latency_reach_minimum">ন্যূনতম</string>
   <string name="template_volume_change_maximum">সর্বোচ্চ</string>

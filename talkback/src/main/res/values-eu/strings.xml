@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[SandFly aktibatuta dagoenean, ahozko argibideak ematen ditu, gailua pantailari begiratu gabe erabili ahal izan dezazun. Pantaila ikusteko zailtasuna duten pertsonentzat da aproposa SandFly, baita pantaila ikusi ezin den egoeretan edonork erabiltzeko ere.<br><br><b>SandFly erabiltzeko argibideak</b><br>• Pasatu hatza eskuinera edo ezkerrera elementu batetik bestera joateko.<br>• Sakatu birritan elementu bat hura aktibatzeko.<br>• Arrastatu 2 hatz gora eta behera egiteko.<br><b>SandFly desaktibatzeko argibideak</b><br>1. Ezarpenetan, sakatu <b>Erabili SandFly</b>. Ingerada bat agertuko da. Saka ezazu birritan.<br>2. Berrespen-mezuan, sakatu <b>Gelditu</b>. Ingerada bat agertuko da. Saka ezazu birritan.]]></string>
   <string name="talkback_service_summary">Erabili pantaila-irakurgailu bat elementuak ozen irakurrita entzuteko</string>
   <string name="talkback_preferences_title">SandFly-en ezarpenak</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Ezarpenak</string>
   <string name="tts_preferences_title">Testua ahots bihurtzea</string>
   <string name="language_options">Hizkuntzak</string>
   <string name="spoken_language">Hitz egiteko hizkuntza</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Bilaketa bertan behera utzi da.</string>
   <string name="notification_type_status_started">Hasi egin da</string>
   <string name="notification_type_status_stopped">Gelditu egin da</string>
-  <string name="notification_type_status_connected">konektatuta</string>
-  <string name="notification_battery_level_unknown">ezezaguna</string>
   <string name="notification_battery_saver_mode">Bateria-aurreztailea aktibatuta</string>
   <string name="template_no_text_selected">Ez da hautatu testurik</string>
   <string name="template_charging">Kargatzen (%1$s). Bateria-maila: ehuneko %2$s.</string>
   <string name="template_charging_lite">Kargatze-egoera: %1$s</string>
-  <string name="template_battery_state">Bateria %1$s ehuneko %2$s %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Tonu-jotzailea dardara moduan.</string>
   <string name="value_ringer_silent">Tonu-jotzailea isilik.</string>
   <string name="value_screen_on">Pantaila aktibatuta dago.</string>
   <string name="value_screen_off">Pantaila itzalita dago.</string>
   <string name="value_device_unlocked">Gailua desblokeatu da.</string>
-  <string name="title_pref_category_audio">Audioa</string>
   <string name="title_pref_speech_volume">Hizketaren bolumena</string>
-  <string name="title_pref_speech_rate">Hizketaren abiadura</string>
-  <string name="summary_pref_speech_rate">Testua ozen irakurtzeko abiadura</string>
   <string name="title_pref_verbose_scroll_announcement">Irakurri beti ozen zerrendako elementu kopurua</string>
   <string name="summary_pref_verbose_scroll_announcement">Esan zer elementu ikusten diren gora edo behera egiten den bakoitzean</string>
   <string name="title_pref_cover_proximity_sensor">Hizketa gelditzeko, estali hurbiltasun-sentsorea</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Irakurri ordua ozen</string>
   <string name="pref_speak_time_summary">Pantaila pizten duzunean</string>
   <string name="summary_speak_container_element_positions">Esan zerrendetan, saretetan eta bestelako edukiontzietan sartzen edo haietatik irteten zarenean</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Gehitu da fokuratze-atzerapena irakurketa kontrolatzeko aukeretan</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Orain, fokuratze-atzerapena edonoiz alda dezakezu irakurketa kontrolatzeko aukeren bidez.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Idazteko altxatzeko aukerara aldatu nahi duzu?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Idazteko fokuratze-atzerapena 0,3 segundo baino beherago ezarrita badago, oso zaila izango da aktibatzeko birritan sakatzea. Aukeratu \"Aldatu\" idazteko altxatzeko aukerara aldatzeko automatikoki.\n\nIdazteko altxatzeko aukera erabiltzeko, eduki hatza sakatuta edozein tekla hautatzeko eta, gero, altxatu hatza idazteko.\n\nSandFly-en ezarpenetan pertsonaliza dezakezu hori.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Gehitu da idazteko fokuratze-atzerapena irakurketa kontrolatzeko aukeretan</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Idaztean birritan sakatzeak behar bezala funtzionatzen ez badu, idazteko fokuratze-atzerapen luzeago bat ezar dezakezu edonoiz irakurketa kontrolatzeko aukeren bidez.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Idazteko fokuratze-atzerapenak ez du funtzionatzen idazteko altxatzeko aukera gabe.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Ados</string>
   <string name="reset_letency_reduction_settings_dialog_title">Atzerapen-ezarpenak berrezarri nahi dituzu?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Atzerapen-ezarpen guztien balio lehenetsiak berrezarriko dira</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Berrezarri</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Berrezarri dira latentzia murrizteko ezarpenak.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Aldatu</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ez aldatu</string>
   <string name="Reset_gesture_settings_dialog_title">Keinuak berrezarri nahi dituzu?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Oraingo multzoaren keinuak berrezarri nahi dituzu?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Keinu guztien ekintza lehenetsiak berrezarriko dira.\n\nEgin dituzun aldaketa guztiak galdu egingo dituzu.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Irakurri ozen garapen guztiak</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Besteak beste, deskargatzen, gidatzeko jarraibideak erabiltzen eta antzeko ekintzetan ari garenean. Ezarpena desaktibatuta egon arren, garapenen berri izaten jarraituko duzu, baina ez horren maiz.</string>
   <string name="title_pref_explore_by_touch">Arakatu sakatuta</string>
-  <string name="title_pref_category_visual">Ikusizkoak</string>
   <string name="title_pref_category_controls">Kontrolatzeko aukerak</string>
-  <string name="title_pref_category_braille">Braillea</string>
-  <string name="title_pref_category_general">Orokorrak</string>
-  <string name="title_pref_category_advanced">Aurreratua</string>
-  <string name="title_pref_category_others">Beste batzuk</string>
-  <string name="title_pref_category_tutorial_and_help">Tutoriala eta laguntza</string>
   <string name="title_pref_category_reduce_latency_summary">Ezarpen hauen bidez, SandFly-ek bizkorrago erantzuten du pantaila ukitu ondoren</string>
   <string name="reset_latency_settings_title">Berrezarri atzerapen-ezarpen guztiak</string>
   <string name="title_pref_single_tap">Aktibatzeko, sakatu behin</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fokuaren adierazlea</string>
   <string name="title_pref_category_manage_gestures">Keinuak</string>
   <string name="title_pref_manage_labels">Etiketa pertsonalizatuak</string>
-  <string name="title_pref_manage_customize_menus">Editatu menuak</string>
   <string name="title_pref_category_context_menu">SandFly-en menua</string>
   <string name="title_pref_category_selector_menu">Irakurketa kontrolatzeko aukerak</string>
   <string name="title_pref_category_navigation_menu">Editatu nabigazio-aukerak</string>
-  <string name="pref_category_context_menu_summary">Sakatu 3 hatzekin, edo pasatu hatza gora edo behera eta, gero, eskuinera.</string>
-  <string name="pref_category_context_menu_summary_xr">SandFly-en menua erabiltzeko, biratu bigarren mailako esku-ahurra zuganantz eta atximurkatu.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Pasatu hatza behera eta, gero, eskuinera.</string>
-  <string name="pref_category_selector_menu_summary">Irakurketa kontrolatzeko aukera bat aukeratzeko, biratu 2 hatz birakari bat bezala, edo pasatu 3 hatz ezkerrera edo eskuinera. Ondoren, aldatzeko, pasatu hatza gora edo behera.</string>
-  <string name="pref_category_selector_menu_summary_xr">Irakurketa kontrolatzeko aukera batetik bestera pasatzeko, biratu bigarren mailako esku-ahurra zuganantz, mantendu atximurkatuta, mugitu eskuinera edo ezkerrera, eta askatu.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Irakurketa kontrolatzeko aukera bat aukeratzeko, pasatu hatza gora eta, gero, behera, edo behera eta, gero, gora. Ondoren, aldatzeko, pasatu hatza gora edo behera.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Lasterbideak</string>
   <string name="title_pref_export_custom_labels">Esportatu etiketa pertsonalizatuak</string>
-  <string name="title_pref_play_store">Ireki SandFly Google Play Store-n</string>
-  <string name="summary_pref_play_store">SandFly-en oraingo bertsioa: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Laguntza eta iritziak</string>
-  <string name="title_pref_gup">Jarri Google-ren desgaitasuna duten pertsonentzako laguntza-taldearekin harremanetan</string>
-  <string name="subtitle_pref_gup">Lortu laguntza SandFly bidez edo eman arazoen berri</string>
-  <string name="pref_item_licenses">Kode irekiko lizentziak</string>
-  <string name="title_pref_tutorial">Tutoriala</string>
   <string name="title_pref_help">Laguntza</string>
   <string name="title_pref_show_tos">Zerbitzu-baldintzak</string>
   <string name="title_pref_show_privacy_policy">Pribatutasun-gidalerroak</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Hatz-marken keinuak</string>
   <string name="title_pref_category_tutorial">SandFly-en tutoriala</string>
   <string name="title_pref_category_help_no_tutorial">Laguntza</string>
-  <string name="title_pref_category_typing">Idaztea</string>
   <string name="title_pref_advanced_settings">Ezarpen aurreratuak</string>
   <string name="title_pref_show_exit_watermark">Erakutsi SandFly desaktibatzeko argibideak</string>
   <string name="summary_pref_show_exit_watermark">SandFly aktibatzen denean, erakutsi nola desaktibatu</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Tekla aldatzaile batzuk desberdinak dira.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Lortu teklen mapei buruzko informazio gehiago</string>
   <string name="keycombo_go_to_settings">Joan Ezarpenak atalera</string>
-  <string name="keycombo_keymap_changes_notifications_content">Teklen mapa klasikoa kendu egingo da SandFly-etik. Lasterbideak erabiltzen jarraitzeko, aldatu teklen mapa lehenetsira.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Lortu informazio gehiago</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ados</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Ezarpenak</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Lortu informazio gehiago</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">SandFly-en teklen mapa lehenetsia darabilzu. Agindu berri asko dituen teklen mapa berri hobetu bat dago ere. Lortu informazio gehiago laguntza-zentroan edo aldatu teklen mapa berrira Ezarpenak atalean.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Teklen mapa berri bat dago</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly-en teklen mapa hobetu berriak agindu berri asko dakartza. Lortu informazio gehiago laguntza-zentroan edo aldatu teklen mapa berrira Ezarpenak atalean.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Eguneratu SandFly-eko tekla aldatzailea</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Orain ez</string>
   <string name="keycombo_warning_content_description">Tekla aldatzaileari buruzko informazio gehiago</string>
-  <string name="keycombo_warning_dialog_title">Eguneratu tekla aldatzailea</string>
-  <string name="keycombo_warning_dialog_message">SandFly-eko lasterbideek behar bezala funtziona dezaten, eguneratu tekla aldatzailea eta, ekintza-teklaren ordez, ezarri Alt.\n\nTekla aldatzaile gisa ekintza-tekla erabiltzen jarraitzen baduzu, lasterbide batzuek ekintza desberdinak gauzatuko dituzte Android-en bertsio honetan.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Teklen mapa</string>
   <string name="keycombo_menu_select_keymap">Aukeratu teklen mapa bat</string>
   <string name="keycombo_menu_reset_keymap">Berrezarri teklen mapa</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Igo hizketaren bolumena</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Jaitsi hizketaren bolumena</string>
   <string name="keycombo_menu_global_refocus_current_node">Esan ozen fokuratuta dagoena</string>
-  <string name="keycombo_menu_category_granularity">Nabigazioa</string>
   <string name="keycombo_menu_granularity_increase">Hurrengo nabigazio-ezarpena</string>
   <string name="keycombo_menu_granularity_decrease">Aurreko nabigazio-ezarpena</string>
   <string name="keycombo_menu_category_other">Beste ekintza batzuk</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Ziur teklen mapa honetako lasterbideen balio lehenetsiak berrezarri nahi dituzula? Kontuan izan ekintza hori ezin dela desegin.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Berrezarri</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s arakatze moduan</string>
-  <string name="keycombo_assign_dialog_instruction">Sakatu teklen konbinazioa beste lasterbide bat sortzeko. Gutxienez ALT edo Kontrol tekla izan behar du.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Beste lasterbide bat ezartzeko, sakatu teklen konbinazioa %1$s tekla aldatzailearekin batera.</string>
   <string name="keycombo_unassigned">Esleitu gabe</string>
   <string name="save_button_in_keycombo_assign_dialog">Gorde</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Idazteko fokuratze-atzerapena</string>
   <string name="message_pref_touch_explore_latency">Atzerapena laburragoa bada, SandFly-ek lehenago hitz egiten du teklatua ukitu ondoren.\n\nAukeratu atzerapen bat</string>
   <string name="title_pref_touch_focus_timeout">Fokuratze-atzerapena</string>
-  <string name="summary_pref_touch_focus_time">
-Fokuratutako elementua aldatu ondoren SandFly-ek zeinen bizkor hitz egiten duen kontrolatzen du. Atzerapen laburragoarekin SandFly-ek bizkorrago funtzionatzen du, baina baliteke birritan nahiz 3 aldiz sakatzea zailagoa izatea.\n\n
-Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibatzeko aukera ezarriko da birritan sakatzeko aukeraren ordez.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Kudeatu SandFly-en keinuak</string>
   <string name="toast_pref_talkback_gesture_detection">Ezarpena aktibatzeko, desaktibatu SandFly eta, gero, aktiba ezazu berriro.</string>
   <string name="title_pref_auto_image_captioning">Azalpen automatikoak</string>
@@ -382,28 +332,16 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="dialog_title_turn_on_image_description">Aktibatu irudien azalpenak ezarpenetan</string>
   <string name="dialog_message_turn_on_image_description">Irudien azalpen automatikoak edo xehatuak aktibatu ondoren saia zaitezke berriro</string>
   <string name="title_pref_detailed_image_description">Irudien azalpen xehatuak</string>
-  <string name="summary_pref_ai_description">Entzun azalpen luzeagoak SandFly-en menuan \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" hautatzean</string>
   <string name="dialog_message_on_device_ai_description">Azalpen labur bat entzungo duzu aplikazio bateragarrietan irudi bat fokuratzean.\n\nIrudiak gailuan prozesatzen dira eta ez dira inoiz bidaltzen Google-ra. \n\nAA generatiboa esperimentala da; beraz, akatsak egingo ditu. Aurrera eginez gero, onartu egingo dituzu <a href="https://policies.google.com/terms/generative-ai">Google-ren Zerbitzu Baldintzak</a>.</string>
   <string name="enable_gemini">Aktibatu</string>
   <string name="powered_by_gemini">AA generatiboaren eskutik</string>
-  <string name="detailed_image_description_ongoing_hint">Azalpena eskuratzen</string>
-  <string name="detailed_image_description_result_prefix">Hauteman da: irudi bat. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Deskarga bat egin behar da irudiak automatikoki azaltzeko</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Argazkiak gailuan prozesatzen dira eta ez dira inoiz bidaltzen Google-ra.\n\nAA generatiboa esperimentala da; beraz, akatsak egingo ditu. Aurrera eginez gero, onartu egingo dituzu %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-ren Zerbitzu-baldintzak</string>
   <string name="message_aifeature_downloading">AAko eredua deskargatzen. Baliteke denbora pixka bat behar izatea. Jakinarazpen bat jasoko duzu deskarga amaitu denean.</string>
   <string name="message_aifeature_downloading_with_progress">Oraindik deskargatzen. %1$d/%2$d MB deskargatu dira.</string>
-  <string name="message_aifeature_download_complete">Deskargatu da AAko eredua. Orain, SandFly-ek irudien azalpenak sor ditzake.</string>
   <string name="summary_pref_auto_image_captioning">Ikonoetarako, irudietarako eta irudietako testuetarako</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Irudietako testuetarako</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Irudietako irudi eta testuetarako</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Irudietako ikono eta testuetarako</string>
   <string name="summary_pref_module_downloading">Deskargatzen…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Irudi guztietarako aktibatuta</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Etiketatu gabeko irudietarako soilik aktibatuta</string>
   <string name="summary_pref_auto_image_captioning_disabled">Desaktibatuta</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Ikono guztietarako aktibatuta</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Etiketatu gabeko ikonoetarako soilik aktibatuta</string>
   <string name="summary_pref_auto_icon_detection_disabled">Desaktibatuta</string>
   <string name="title_pref_enable_auto_image_caption">Irudi guztiak</string>
   <string name="title_pref_enable_auto_image_caption_arg">Irudi guztiak\n%1$s</string>
@@ -413,7 +351,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="title_pref_enable_auto_icon_detection">Ikono guztiak</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Etiketatu gabeko ikonoak soilik</string>
   <string name="title_pref_disable_auto_icon_detection">Ez azaldu ikonoak</string>
-  <string name="dialog_message_on_device_ai_model_download">Azalpen labur bat entzungo duzu aplikazio bateragarrietan irudi bat fokuratzean.\n\nIrudiak gailuan prozesatzen dira eta ez dira inoiz bidaltzen Google-ra.\n\nAA generatiboa esperimentala da; beraz, akatsak egingo ditu. Aurrera eginez gero, onartu egingo dituzu %1$s.</string>
   <string name="title_pref_enable_gemini_support">Aktibatuta</string>
   <string name="title_pref_disable_gemini_support">Desaktibatuta</string>
   <string name="summary_pref_gemini_support_enabled">Gemini gaituta dago</string>
@@ -457,7 +394,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="shortcut_print_node_tree">Inprimatu nodo-zuhaitza</string>
   <string name="shortcut_print_performance_stats">Inprimatu errendimenduaren estatistikak</string>
   <string name="shortcut_first_in_screen">Fokuratu pantailako lehen elementua</string>
-  <string name="shortcut_summary">Pantailaren laburpenaren diseinua</string>
   <string name="shortcut_voice_commands">Hasi ahozko aginduak erabiltzen</string>
   <string name="shortcut_last_in_screen">Fokuratu pantailako azken elementua</string>
   <string name="shortcut_enable_dimming">Ezkutatu pantaila</string>
@@ -561,7 +497,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="menu_category_web_navigation">Web-nabigazioa</string>
   <string name="menu_category_basic_navigation">Oinarrizko nabigazioa</string>
   <string name="summary_custom_action">Elementu honekin erlazionatutako ekintzen berri ematen du (adibidez, elementuak estekak baditu edo kopiatzen, itsasten edo hautatzen bada, etab.)</string>
-  <string name="summary_context_menu_links">Ireki fokuratutako elementu bateko estekak</string>
   <string name="summary_viewpager_controls">Joan aurreko edo hurrengo orrira. Hainbat orri dituen edukia irakurtzen ari zarenean agertzen da.</string>
   <string name="summary_labeling_controls">Etiketarik ez duen elementu bat hautatzen duzunean agertzen da</string>
   <string name="summary_granularity">Irakurri karakterez karaktere, hitzez hitz, lerroz lerro eta beste</string>
@@ -631,12 +566,9 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="summary_screen_overview">Laburbildu pantaila ekintza-botoiekin</string>
   <string name="summary_screen_overview_no_actions">Entzun pantailako edukiaren laburpena</string>
   <string name="summary_image_caption">Irakurri ozen hautatutako irudiko testua eta ikonoak</string>
-  <string name="summary_summarize_view">Irakurri ikuspegiaren laburpena ozen</string>
   <string name="summary_typo_suggestions">Kurtsorea akats ortografiko batean dagoenean agertzen da</string>
   <string name="summary_cache_keyboard_keys">SandFly-ek aurrez kargatzen ditu iragarpenak, idaztean atzerapen gutxiago egon dadin</string>
   <string name="summary_cache_keyboard_keys_disabled">Eginbide hau erabiltzeko, erabili Google-ren Testua ahots bihurtzea</string>
-  <string name="value_direction_down">behera</string>
-  <string name="value_direction_down_and_right">behera eta eskuinera</string>
   <string name="title_pref_shortcut_up">Pasatu hatza gora</string>
   <string name="title_pref_shortcut_up_xr">Biratu bigarren mailako esku-ahurra zuganantz, atximurkatu eta pasatu hatza gora</string>
   <string name="title_pref_shortcut_down">Pasatu hatza behera</string>
@@ -704,10 +636,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="title_pref_shortcut_fingerprint_left">Pasatu hatza ezkerrera hatz-marken sentsorean</string>
   <string name="title_pref_shortcut_fingerprint_right">Pasatu hatza eskuinera hatz-marken sentsorean</string>
   <string name="title_pref_version_code">Bertsioaren kodea</string>
-  <string formatted="false" name="value_volume_100_percent">Bat etorrarazi hizketaren bolumenarekin</string>
-  <string formatted="false" name="value_volume_75_percent">Hizketaren bolumenaren % 75</string>
-  <string formatted="false" name="value_volume_50_percent">Hizketaren bolumenaren % 50</string>
-  <string formatted="false" name="value_volume_25_percent">Hizketaren bolumenaren % 25</string>
   <string name="value_type_confirmation_double_tap">Tekla bat hautatzeko, eduki hatza sakatuta eta, gero, sakatu tekla birritan</string>
   <string name="value_type_confirmation_lift_to_type">Hizkien teklak hautatzeko, eduki itzazu sakatuta eta, gero, jaso hatza. Bestelako teklak hautatzeko, aldiz, saka itzazu birritan.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Tekla bat hautatzeko, eduki sakatuta hatza eta, gero, jaso ezazu</string>
@@ -720,12 +648,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="value_touch_explore_time_out_200ms">0,2 segundo</string>
   <string name="value_touch_explore_time_out_250ms">0,25 segundo</string>
   <string name="value_touch_explore_time_out_300ms">0,3 segundo (balio lehenetsia)</string>
-  <string name="value_shake_to_read_disabled">Desgaituta</string>
-  <string name="value_shake_to_read_threshold_very_light">Oso arina</string>
-  <string name="value_shake_to_read_threshold_light">Arina</string>
-  <string name="value_shake_to_read_threshold_medium">Ertaina</string>
-  <string name="value_shake_to_read_threshold_hard">Gogorra</string>
-  <string name="value_shake_to_read_threshold_very_hard">Oso gogorra</string>
   <string name="title_pref_on_screen_keyboard">Pantailako teklatua</string>
   <string name="title_pref_physical_keyboard">Teklatu fisikoa</string>
   <string name="value_keyboard_echo_none">Bat ere ez</string>
@@ -738,8 +660,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="pref_time_feedback_format_entries_default">Erabili gailuaren ordu-formatua</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ordukoa</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 ordukoa</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly keinuak aldatu egin dira</string>
-  <string name="notification_message_talkback_gestures_changed">Ukitu hau erabilerraztasun-keinuei egindako aldaketak berrikusteko.</string>
   <string name="always_show_warning_checkbox">Erakutsi beti abisu hau</string>
   <string name="label_dialog_title_add">Gehitu etiketa</string>
   <string name="label_dialog_title_edit">Editatu etiketa</string>
@@ -760,16 +680,8 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="no_apps_to_export_labels">Ez da aurkitu aplikaziorik etiketak esportatzeko.</string>
   <string name="label_choose_app_to_import">Aukeratu etiketak inportatzeko erabili nahi duzun aplikazioa:</string>
   <string name="label_choose_app_to_export">Aukeratu etiketak esportatzeko erabili nahi duzun aplikazioa:</string>
-  <string name="talkback_gesture_change_details">SandFly bertsio honetan, erabilerraztasun-keinu lehenetsiei aldaketak egin zaizkie. Keinuekin erlazionatutako ekintzak alda ditzakezu SandFly ezarpenetan. \"Arakatu ukituta\" gaitzen denean, keinuak erabil ditzakezu ekintza jakin batzuk gauzatzeko.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Pantaila ezkutatu nahi duzu?</string>
   <string name="dialog_message_dim_screen">Pantaila itzali egingo da pribatutasuna hobetzeko. Hala ere, baliteke eduki batzuk ikusgai egotea; adibidez, pantaila berriro pizteko mezuak edo SandFly eta beste erabilerraztasun-eginbide batzuk erabiltzeko menuak.</string>
-  <string name="talkback_built_in_gesture_change_details">SandFly-en bertsio honetan, erabilerraztasun-keinu lehenetsiei aldaketak egin zaizkie.\n\nGoitik beherako keinuarekin, pantailako lehen elementura joango zara eta, behetik gorakoarekin, berriz, azken elementura.\n\nIrakurriko beharreko zatien xehetasun-maila elementuak fokuratuta alda dezakezu, eta SandFly-en laster-menutik xehetasun-maila bat hautatuta.\n\nKeinuek egiten dituzten ekintzak SandFly-en ezarpenetan alda ditzakezu.</string>
-  <string name="default_action_changed_details">Orain, multimedia-edukia pausatu eta erreproduzitzeko, sakatu birritan pantaila bi hatzekin eta eduki ezazu sakatuta.\n\nBeste keinu batzuk ere aldatu dira.</string>
-  <string name="talkback_built_in_gesture_open_url">Informazio gehiago lortzeko, ireki telefonoan</string>
-  <string name="talkback_built_in_gesture_change_details_45">SandFly bertsio honetan, aldaketak egin zaizkie erabilerraztasun-keinu lehenetsiei.\n\nGorako keinua eginda, aurreko nabigazio-ezarpenera joaten da orain, eta beherako keinuarekin, berriz, hurrengora.</string>
-  <string name="side_tap_shortcuts_removed_details">Fidagarritasun arazoak direla medio, ezarpen hauek kendu egin dira SandFly eginbidetik:\n• Gailuaren albo bat ukituta egiten ziren keinuak.\n• Gailua astintzea guztia ozen irakurtzeko modua aktibatzeko.</string>
-  <string name="button_accept_changed_gesture_mappings">Onartu keinuak</string>
-  <string name="button_customize_gesture_mappings">Pertsonalizatu keinuak</string>
   <string name="button_disable_all_events">Desgaitu guztiak</string>
   <string name="button_enable_all_events">Gaitu guztiak</string>
   <string name="dialog_title_disable_exploration">\"Arakatu ukituta\" desgaitu?</string>
@@ -893,8 +805,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="screen_search_hint_type_search_tables">Bilatu tauletan</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">SandFly-en jakinarazpenen kanala</string>
-  <string name="pref_selector_summary">%1$s ezarpen bat hautatzeko. Ondoren, %2$s ezarpen hori doitzeko.</string>
-  <string name="speech_rate_change">Hizketaren abiadura: %% %1$d</string>
   <string name="speech_pitch_maximum">Hizkeraren tonu altuena</string>
   <string name="speech_pitch_minimum">Hizkeraren tonu baxuena</string>
   <string name="reset_speech_rate_and_pitch">Berrezarri hizketaren abiadura eta tonua</string>
@@ -904,10 +814,7 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="vibration_feedback_state">Dardara bidezko erantzuna %1$s</string>
   <string name="text_formatting_state">Testuaren formatua ozen irakurtzeko eginbidea %1$s dago</string>
   <string name="typing_echo_change">Teklatu fisikoaren soinuak egiten dira %1$s idaztean</string>
-  <string name="reading_control_toggle_prefix_xr">Biratu bigarren mailako esku-ahurra zuganantz, sakatu luze irakurketa kontrolatzeko aukeren modua aldatzeko.</string>
   <string name="gesture_1_or_2">%1$s ala %2$s</string>
-  <string name="select_setting_hint">%1$s beste ezarpen bat hautatzeko</string>
-  <string name="adjust_setting_hint">%1$s ezarpena doitzeko</string>
   <string name="adjust_granularity_hint">%1$s %2$s banaka irakurtzeko</string>
   <string name="adjust_typo_hint">%1$s iradokizunak ikusteko.</string>
   <string name="use_action_hint">Sakatu birritan ekintza gauzatzeko</string>
@@ -947,7 +854,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="setting_selector_heading">Irakurketa kontrolatzeko aukerak</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Bideo- edo musika-aplikazio batean multimedia-edukia pausatzeko edo erreproduzitzeko, sakatu birritan bi hatzekin. Proba ezazu.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Baliteke beste aplikazio batzuek beste ekintza batzuk gauzatzeko erabiltzea keinu hau, hala nola telefono-dei bati erantzuteko edo hura amaitzeko. Baliteke aplikazio guztiek keinu hau ez onartzea.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Ikusi SandFly-en tutorial guztiak</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Multimedia-edukia pausatu edo erreproduzitu. Normalean, oraingo bideoa edo musika pausatu edo erreproduzituko du horrek. Aurrera egiteko, pasatu hatza eskuinera.</string>
   <string name="new_shortcut_gesture_stop_speech_text">SandFly aldi baterako isilarazteko, sakatu bi hatzekin.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Gelditu da SandFly-en hizketa. Normalean, SandFly esaten ari den esaldia gelditu egingo da. Aurrera egiteko, pasatu hatza eskuinera.</string>
@@ -961,38 +867,18 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Hautapen modua aktibatu edo desaktibatu. Normalean, hautapen modua amaituko du horrek idazketa-eremu batean zaudenean. Aurrera egiteko, pasatu hatza eskuinera.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Irakurketa kontrolatzeko aukerak erabiltzeko, pasatu 3 hatz ezkerretik eskuinera edo eskuinetik ezkerrera. Halaber, gora edo behera pasa ditzakezu 3 hatzak.</string>
   <string name="new_shortcut_gesture_note">Oharra: keinu batzuk pertsonalizatu egin dituzu; ondorioz, baliteke informazio hau guztiz zehatza ez izatea. Zure keinuak berrikusteko, joan SandFly-en ezarpenetara.</string>
-  <string name="welcome_to_android11">Ongi etorri Android 11-ren SandFly eginbidera</string>
   <string name="welcome_to_android11_text">Keinu berriak gehitu dira, SandFly arinagoa eta erabiltzeko errazagoa izan dadin.\n\nPantaila honetan proba ditzakezu keinu berriak. Informazio hori berrikusi nahi baduzu, joan SandFly-en ezarpenetara.</string>
   <string name="new_gesture_notification_title">SandFly eginbidearen keinu berriak</string>
   <string name="new_gesture_notification_content">Sakatu hau SandFly keinu berriekin azkarrago erabiltzeko argibideak lortzeko.</string>
   <string name="dump_node_tree_description">Nodo-zuhaitza erregistrotan antolatuta inprimatu da.</string>
   <string name="report_gesture_description">Hona hemen berriki egindako keinuak. Adierazi zein dagoen oker eta zein izan beharko litzateke zuzena.</string>
-  <string name="update_welcome_text_content">Orain, giza interfazeko gailuen bidez konekta ditzakezu braille-pantailak. Bluetooth bidezko gailuak konektatzeko modu bat da hori. Ziurtatu fabrikatzailearen firmwarearen azken kontrolatzaileak dauzkazula eta aktibatu Bluetootha braille-pantailan. Joan SandFly-en ezarpenak &gt; Braille-pantaila atalera eta aktibatu \"Erabili braille-pantaila\". Bilatu zure gailua gailuen zerrendan eta konekta zaitez harekin.</string>
-  <string name="update_welcome_text_content_tts">Orain, giza interfazeko gailuen bidez konekta ditzakezu braille-pantailak. Bluetooth bidezko gailuak konektatzeko modu bat da hori. Ziurtatu fabrikatzailearen firmwarearen azken kontrolatzaileak dauzkazula eta aktibatu Bluetootha braille-pantailan. Joan SandFly-en ezarpenetako Braille-pantaila atalera eta aktibatu \"Erabili braille-pantaila\". Bilatu zure gailua gailuen zerrendan eta konekta zaitez harekin.</string>
-  <string name="update_welcome_text_content_with_link">Lortu SandFly-ekin braille-pantaila erabiltzeko argibideak.</string>
   <string name="update_welcome_talkback_16.1">SandFly-en eguneratze honekin, pantaila azaltzeko eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenak &gt; SandFly-en eginbide berriak atalera.</string>
   <string name="update_welcome_talkback_16.1_tts">SandFly-en eguneratze honekin, pantaila azaltzeko eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenetako SandFly-en eginbide berriak atalera.</string>
-  <string name="describe_screen_and_qna_title">Pantaila azaltzeko eta Gemini-rekin hitz egiteko eginbideetarako hizkuntza berriak</string>
-  <string name="describe_screen_and_qna_content">Pantaila azaltzeko eta Gemini-rekin hitz egiteko eginbideak hizkuntza gehiagotan daude erabilgarri orain. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Lortu informazio gehiago laguntza-zentroan&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Ahozko idazketarako lasterbidea</string>
   <string name="shortcut_for_dictation_content">Gboard erabiltzen ari zarela, 2 hatzekin birritan sakatuta ahozko idazketa abiarazi edo geldiaraz dezakezu.
 &lt;br&gt;
 &lt;br&gt;Ziurtatu &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard-en Google Play-ko&lt;/a&gt; azken bertsioa daukazula instalatuta.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Gboard pantailan dagoenean, 2 hatzekin birritan sakatuta diktaketa abiaraziko da, eta gauza bera berriro eginda, gelditu egingo da.</string>
-  <string name="keyboard_title">Teklatua</string>
-  <string name="keyboard_content">Orain, SandFly-ek \"teklen mapa hobetu\" bat dauka teklatuan, askotariko agindu eta lasterbide berriekin. Hobekuntza horrek sarean modu efizienteagoan nabigatzeko \"arakatze modua\" dakar eta, horri esker, nabigatzea eta interakzioan jardutea errazagoa da teklatu fisikoak erabili behar dituzten SandFly-en erabiltzaileentzat. Teklen mapa hobetua erabiltzeko, joan SandFly-en ezarpenak &gt; Ezarpen aurreratuak &gt; Lasterbideak atalera.</string>
-  <string name="keyboard_content_tts">Orain, SandFly-ek \"teklen mapa hobetu\" bat dauka teklatuan, askotariko agindu eta lasterbide berriekin. Hobekuntza horrek sarean modu efizienteagoan nabigatzeko \"arakatze modua\" dakar eta, horri esker, nabigatzea eta interakzioan jardutea errazagoa da teklatu fisikoak erabili behar dituzten SandFly-en erabiltzaileentzat. Teklen mapa hobetua erabiltzeko, joan SandFly-en ezarpenetako Ezarpen aurreratuen Lasterbideak atalera.</string>
-  <string name="reduce_delay_title">Murriztu atzerapena</string>
-  <string name="reduce_delay_content">Orain, sakatuta arakatzean eta idaztean SandFly-en iragarpenen atzerapenak murrizteko aukera duzu. Ezarpen horiek ikusteko, joan SandFly-en ezarpenak &gt; Ezarpen aurreratuak &gt; Murriztu atzerapena atalera.</string>
-  <string name="reduce_delay_content_tts">Orain, sakatuta arakatzean eta idaztean SandFly-en iragarpenen atzerapenak murrizteko aukera duzu. Ezarpen horiek ikusteko, joan SandFly-en ezarpenetako ezarpen aurreratuen Murriztu atzerapena atalera.</string>
-  <string name="customize_braille_keyboard_improvements_title">Pertsonalizatu braille-teklatuaren keinuak</string>
-  <string name="customize_braille_keyboard_improvements_content">Orain, pantailako braille-teklatu birtualaren keinuak pertsonalizatzeko aukera duzu. Horretarako, joan SandFly-en ezarpenak &gt; Braille-teklatua &gt; Keinuak atalera.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Orain, pantailako braille-teklatu birtualaren keinuak pertsonalizatzeko aukera duzu. Horretarako, joan SandFly-en ezarpenetako Braille-teklatua ataleko Keinuak atalera.</string>
-  <string name="learn_more_about_braille_keyboard">Lortu braille-teklatuari buruzko informazio gehiago</string>
-  <string name="other_changes_title">Beste aldaketa batzuk</string>
-  <string name="other_changes_content">Orain, pantailako mezu batek SandFly bizkor desaktibatzen laguntzen dizu, nahi gabe aktibatzen bada. Eginbide hori desaktibatzeko, joan SandFly-en ezarpenak &gt; Erakutsi SandFly desaktibatzeko argibideak atalera.</string>
-  <string name="other_changes_content_tts">Orain, pantailako mezu batek SandFly bizkor desaktibatzen laguntzen dizu, nahi gabe aktibatzen bada. Eginbide hori desaktibatzeko, joan SandFly-en ezarpenetako Erakutsi SandFly desaktibatzeko argibideak atalera.</string>
-  <string name="keymap_changes_content">Teklen mapa klasikoa kendu, eta teklen mapa lehenetsia ezarri da, lasterbide gehiago baititu.</string>
   <string name="announcing_text_formatting_title">Testu-formatua iragartzea</string>
   <string name="announcing_text_formatting_header">SandFly-ek testu-formatuan dauden aldaketak iragar ditzake; adibidez, letra lodiak eta etzanak, eta testuaren kolorea. Hasteko:</string>
   <string name="announcing_text_formatting_option1">Fokuratu formatua duen elementua, ireki SandFly-en menua eta hautatu \"Deskribatu testuaren formatua\".</string>
@@ -1083,7 +969,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="additional_tips_link_subtext">Lortu deiak egiteko, mezuak bidaltzeko eta beste gauza batzuk egiteko argibideak</string>
   <string name="practice_gestures_link_text">Praktikatu keinuak</string>
   <string name="practice_gestures_link_subtext">Probatu hainbat keinu eta ikusi haietako bakoitzak zer egiten duen</string>
-  <string name="help_and_feedback_link_subtext">Lortu SandFly-i buruzko informazio gehiago eta bidali oharrak</string>
   <string name="choose_tutorial_title">Aukeratu nola erabili nahi duzun SandFly</string>
   <string name="touch_tutorial_button">Ukipenari buruzko tutoriala</string>
   <string name="keyboard_tutorial_button">Teklatuari buruzko tutoriala</string>
@@ -1229,8 +1114,6 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="wear_training_typing_text5">Probatu behean.</string>
   <string name="wear_training_typing_practice_button_content_description">Teklatuarekin idaztea</string>
   <string name="wear_training_end_tutorial_title">SandFly erabiltzen hasteko prest zaude</string>
-  <string name="talkback_updated_notification_title">Eguneratu egin da SandFly</string>
-  <string name="talkback_updated_notification_content">Sakatu hau informazio gehiago lortzeko</string>
   <string name="wear_new_feature_page_title">Ongi etorri SandFly-en bertsio eguneratura</string>
   <string name="wear_new_feature_page_content">Akats batzuk konpondu ditugu, eta fokua mugitzeko modua aldatu</string>
   <string name="wear_new_feature_page_button_content_description">Amaitu</string>
@@ -1249,10 +1132,7 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="title_pref_blue">Urdina</string>
   <string name="title_pref_grey">Grisa</string>
   <string name="survey_setting_title">Partekatu iritzia</string>
-  <string name="survey_closed">Inkesta itxita dago</string>
   <string name="title_summarize_view">Azaldu pantaila</string>
-  <string name="title_increase_touch_focus_latency">Areagotu fokuratze-atzerapena</string>
-  <string name="title_decrease_touch_focus_latency">Murriztu fokuratze-atzerapena</string>
   <string name="detected_result">%1$s hauteman da</string>
   <string name="title_image_caption">Azaldu irudia</string>
   <string name="image_caption_with_gemini_prefix">Azaldu irudi hau. Ez erabili markatzerik erantzunean.</string>
@@ -1279,33 +1159,15 @@ Atzerapena 0,3 segundokoa baino gutxiagokoa bada, elementuak 2 hatzekin aktibat
   <string name="image_qna_question_prefix">ERABILTZAILEA: %1$s</string>
   <string name="image_qna_answer_prefix">EREDUA: %1$s</string>
   <string name="image_qna_with_history_postfix">… [jarraitu ERABILTZAILEA eta EREDUA txandakatuz] …</string>
-  <string name="screen_overview_with_screenshot">Zure lana telefonoa ikusi ezin duen pertsona bati telefonoaren pantailan zer dagoen ulertzen laguntzea da. Azaldu pantaila-argazki hau esaldi labur batzuetan.
-
-Argibideak:
-Erantzunak honela hasi behar du: \"Pantailan…\".
-Esaldiaren hasieran pantailako eduki garrantzitsu eta nabarmenena azaldu behar da. Hona hemen eduki garrantzitsu eta nabarmenena zein den adierazten duten adibide batzuk:
-* txat-aplikazio batean: azken mezuaren igorlea eta testua
-* sare sozialetako aplikazio batean: lehen argitalpena (argitaratzailea, testua eta irudiaren azalpena barne)
-* albisteen aplikazio batean: artikuluaren izena eta irudi nagusiaren azalpena
-* erosketen aplikazio batean: agertzen den produktuaren azalpena eta prezioa
-* egutegi-aplikazio batean: hurrengo gertaera eta ikusgai dauden hurrengo gertaeren kopurua
-* mezuen zerrenda batean: lehen mezuaren izena eta aurrebista eta, ondoren, zerrendago hurrengo mezu batzuen izena soilik, eta zenbat mezu dauden irakurri gabe
-
-Horren ondoren, nabigazio-barraren eta botoi nagusien kokapena eta helburua azal daitezke erantzunean.
-Ez aipatu goiko egoera-barraren edukia (adibidez, ordua, sarearen egoera edo bateria).
-Ez erabili markatzerik erantzunean.</string>
   <string name="title_gemini_opt_in_dialog">Irudien azalpen xehatuak lortu nahi dituzu?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Irudien deskribapenak lortu nahi dituzu?</string>
   <string name="title_gemini_result_dialog">Irudi bat hauteman da</string>
   <string name="title_gemini_result_bottom_sheet">Irudiaren azalpena</string>
   <string name="title_gemini_screen_overview_result_dialog">Pantailaren azalpena</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Laburpena</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Ekintzak</string>
   <string name="positive_button_gemini_opt_in_dialog">Aktibatu</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ados</string>
   <string name="negative_button_gemini_opt_in_dialog">Ez, eskerrik asko</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Joan Ezarpenak atalera</string>
-  <string name="positive_button_gemini_download_dialog">Deskargatu eta aktibatu</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">\"%1$s\" dioen testua.</string>
   <string name="detected_icon_label">\"%1$s\" adierazten duen ikonoa.</string>
@@ -1319,8 +1181,6 @@ Ez erabili markatzerik erantzunean.</string>
   <string name="screen_overview_no_result">Ezin da laburbildu pantaila</string>
   <string name="image_caption_no_result">Ezin da azaldu irudia</string>
   <string name="image_caption_with_hide_screen">Irudien azalpenak ez daude erabilgarri pantaila ezkutatuta dagoenean. Ezarri pantaila ikusgai eta saiatu berriro.</string>
-  <string name="feedback_button_state_set">hautatuta</string>
-  <string name="feedback_button_state_unset">hautatu gabe</string>
   <string name="action_text_like_button">Markatu erantzun on gisa</string>
   <string name="action_text_dislike_button">Markatu erantzun oker gisa</string>
   <string name="action_text_clear_like_button">Garbitu erantzun ona</string>
@@ -1349,18 +1209,13 @@ Ez erabili markatzerik erantzunean.</string>
   <string name="downloading_all_image_captioning_hint">Irudi eta ikonoen azalpen automatikoak deskargatzen</string>
   <string name="download_all_image_captioning_successful_hint">Deskargatu dira irudi eta ikonoen azalpen automatikoak</string>
   <string name="download_all_image_captioning_failed_hint">Ezin da deskargatu. Saiatu berriro geroago.</string>
-  <string name="download_complete_notification_title">Deskargatu da</string>
-  <string name="download_complete_notification_content">Orain, irudi eta ikonoen azalpen automatikoak entzungo dituzu SandFly-ekin</string>
-  <string name="download_complete_notification_action">Ezarpenak</string>
   <string name="download_storage_error_hint">Memoria beteta dago. Deskargatzeko, egin tokia (%1$d MB) Ezarpenak &gt; Biltegiratzea atalean.</string>
   <string name="download_network_error_hint">Ezin da deskargatu. Egiaztatu konektatuta zaudela eta saiatu berriro.</string>
   <string name="switch_icon_detection_dialog_title">Ikonoen azalpen automatikoak</string>
   <string name="switch_icon_detection_dialog_message">Entzun azalpenak ikono bat fokuratzen duzunean</string>
   <string name="switch_image_description_dialog_message">Entzun azalpenak irudi bat fokuratzean. Agian aplikazio batzuek ez dute onartzen eginbide hau.</string>
-  <string name="switch_text_recognition_dialog_title">Azaldu irudietako testua automatikoki</string>
   <string name="switch_text_recognition_dialog_message">Entzun azalpenak testua duen irudi bat fokuratzen duzunean</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Deskargatuta</string>
-  <string name="disable_auto_image_caption_dialog_subtext">SandFly-en menuko aukera erabilita jarrai dezakezu hautatutako irudien azalpenak lortzen</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Ados</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Ezabatu deskarga</string>
   <string name="delete_icon_detection_dialog_title">Ikonoen azalpen automatikoak ezabatu nahi dituzu?</string>
@@ -1376,11 +1231,6 @@ Ez erabili markatzerik erantzunean.</string>
   <string name="gemini_enable_dialog_title">Erabili Gemini SandFly-en</string>
   <string name="gemini_disable_dialog_message">Gemini bidez pantaila ulertzea</string>
   <string name="disable_gemini_dialog_subtext">Aktiba ezazu Gemini bidez pantaila ulertzeko aukera gaitzeko</string>
-  <string name="ai_services_update_dialog_title">Eguneratu %1$s aplikazioa irudien azalpenak lortzeko</string>
-  <string name="ai_services_update_dialog_message">Irudien azalpenak entzuteko, eskuratu <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> aplikazioaren azken bertsioa Google Play-n.\n\nDeskargatu ondoren, itzuli SandFly-en ezarpenetara eta aktibatu irudien azalpen automatikoak berriro.</string>
-  <string name="ai_services_update_dialog_button_text">Joan Google Play-ra</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Arazoren bat izan da. Saiatu berriro.</string>
   <string name="gemini_block_message">Ezin da prozesatu irudia</string>
   <string name="gemini_network_error">Ez zaude konektatuta Internetera. Egiaztatu wifi-konexioa edo sare mugikorra eta saiatu berriro.</string>
@@ -1396,13 +1246,8 @@ Ez erabili markatzerik erantzunean.</string>
   <string name="image_qna_typing_button_text">Idatzi galdera bat Gemini-rentzat</string>
   <string name="image_qna_send_button_text">Galdetu</string>
   <string name="image_qna_speak_question_description">Esan galdera ozen</string>
-  <string name="overviews_summary_intro">Aplikazio honen pantailaren laburpena: %1$s</string>
   <string name="overviews_node_not_found">Sentitzen dut, ezin dut pantailaren zati hori aurkitu.</string>
-  <string name="overviews_images_in_app">Aurkitutako irudi nagusiak</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Aplikazioko ekintzak</string>
-  <string name="overviews_actions_in_app_description">Hona hemen aplikazioaren pantaila honetatik egin ditzakezun ekintza nagusiak:</string>
-  <string name="overviews_parent_type">Aplikazioko ekintzak</string>
   <string name="text_replaced_feedback">Testua ordeztea</string>
   <string name="switch_gesture_set">Aldatu keinu multzoa</string>
   <string name="switch_gesture_set_to">Aldatu keinu multzo honetara: %1$d</string>
@@ -1453,7 +1298,6 @@ Ez erabili markatzerik erantzunean.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Itxi</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Pantaila itzalita dagoenean jakinarazpenak entzuteko, aktibatu \"Irakurri ozen jakinarazpenak pantaila itzalita badago\" SandFly-en adierazgarritasun-ezarpenetan</string>
     <string name="title_pref_tts_engine">Testua ahots bihurtzeko motorra</string>
     <string name="title_pref_system_tts_settings">Sistemaren testua ahots bihurtzeko ezarpenak</string>
     <string name="title_selector_switch_tts_engine">Hizketa-motorra</string>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Kada je uključen, SandFly daje povratne govorne informacije da možete koristiti uređaj bez gledanja u ekran. SandFly je namijenjen za situacije ili osobe koje imaju poteškoće s gledanjem sadržaja ekrana.<br><br><b>Kako koristiti SandFly</b><br>• Prevucite udesno ili ulijevo da se krećete između stavki<br>• Dodirnite dvaput da aktivirate stavku<br>• Prevucite s 2 prsta da kližete<br><b>Kako isključiti SandFly</b><br>1. U Postavkama dodirnite <b>Koristi SandFly</b>. Pojavit će se kontura. Dodirnite je dvaput.<br>2. Na poruci za potvrdu dodirnite <b>Zaustavi</b>. Pojavit će se kontura. Dodirnite je dvaput.]]></string>
   <string name="talkback_service_summary">Koristite čitač ekrana da čujete naglas izgovorene stavke</string>
   <string name="talkback_preferences_title">Postavke SandFlya</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Postavke</string>
   <string name="tts_preferences_title">Pretvaranje teksta u govor</string>
   <string name="language_options">Jezici</string>
   <string name="spoken_language">Jezik govora</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Pretraživanje je otkazano.</string>
   <string name="notification_type_status_started">Započeto</string>
   <string name="notification_type_status_stopped">Zaustavljeno</string>
-  <string name="notification_type_status_connected">povezano</string>
-  <string name="notification_battery_level_unknown">nepoznato</string>
   <string name="notification_battery_saver_mode">Ušteda baterije je uključena</string>
   <string name="template_no_text_selected">Nije odabran tekst</string>
   <string name="template_charging">Punjenje %1$s Nivo baterije %2$s posto.</string>
   <string name="template_charging_lite">Punjenje %1$s</string>
-  <string name="template_battery_state">Napajanje: %1$s %2$s posto %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Zvuk zvona je na vibraciji.</string>
   <string name="value_ringer_silent">Zvuk zvona je utišan.</string>
   <string name="value_screen_on">Ekran je uključen.</string>
   <string name="value_screen_off">Ekran je isključen.</string>
   <string name="value_device_unlocked">Uređaj je otključan.</string>
-  <string name="title_pref_category_audio">Zvuk</string>
   <string name="title_pref_speech_volume">Jačina govora</string>
-  <string name="title_pref_speech_rate">Brzina govora</string>
-  <string name="summary_pref_speech_rate">Brzina kojom se izgovara tekst</string>
   <string name="title_pref_verbose_scroll_announcement">Izgovaranje broja stavki liste uvijek</string>
   <string name="summary_pref_verbose_scroll_announcement">Izgovara koje se stavke prikazuju nakon svakog klizanja</string>
   <string name="title_pref_cover_proximity_sensor">Prekrivanje senzora za blizinu za zaustavljanje govora</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Govori vrijeme</string>
   <string name="pref_speak_time_summary">Kada uključite ekran</string>
   <string name="summary_speak_container_element_positions">Izgovara kada uđete u liste, mreže i druge spremnike ili izađete iz njih</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Kašnjenje fokusa je dodano u kontrolu za čitanje</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Kašnjenje fokusa sada možete promijeniti u bilo kojem trenutku pomoću kontrola za čitanje.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Želite li se prebaciti na pisanje podizanjem prsta?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Kada je kašnjenje fokusa prilikom pisanja postavljeno ispod 0,3 s, bit će veoma teško pisati dvostrukim dodirom. Odaberite \"Prebaci\" da automatski prebacite na pisanje podizanjem prsta.\n\nDa koristite pisanje podizanjem prsta, zadržite prst da odaberete bilo koju tipku, a zatim ga podignite za pisanje.\n\nOvo možete prilagoditi u postavkama SandFlya.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Kašnjenje fokusa pisanja je dodano u kontrolu za čitanje</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Ako dvostruki dodir tokom pisanja ne radi pouzdano, u bilo kojem trenutku možete produžiti kašnjenje fokusa pisanja pomoću kontrola za čitanje.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Kašnjenje fokusa prilikom pisanja ne funkcionira bez pisanja podizanjem prsta.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Razumijem</string>
   <string name="reset_letency_reduction_settings_dialog_title">Vratiti postavke kašnjenja na zadano?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Ovo će vratiti sve postavke kašnjenja na zadano</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Vrati na zadano</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Uređaj je vraćen na zadane postavke smanjivanja latentnosti</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Prebaci</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Nemoj prebaciti</string>
   <string name="Reset_gesture_settings_dialog_title">Vratiti pokrete na zadano?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Poništiti pokrete trenutnog skupa?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Ovim će se svi pokreti vratiti na zadane radnje.\n\nIzgubit ćete sve promjene koje ste izvršili.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Izgovaranje svih novosti o napretku</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Uključuje novosti tokom preuzimanja, praćenja uputa za vožnju i drugo. Kada je ova postavka isključena, i dalje ćete dobijati novosti, ali rjeđe.</string>
   <string name="title_pref_explore_by_touch">Istraži dodirom</string>
-  <string name="title_pref_category_visual">Vizuelni sadržaj</string>
   <string name="title_pref_category_controls">Kontrole</string>
-  <string name="title_pref_category_braille">Braillevo pismo</string>
-  <string name="title_pref_category_general">Opće</string>
-  <string name="title_pref_category_advanced">Napredno</string>
-  <string name="title_pref_category_others">Drugo</string>
-  <string name="title_pref_category_tutorial_and_help">Vodič i pomoć</string>
   <string name="title_pref_category_reduce_latency_summary">Ove postavke ubrzavaju reakciju SandFlya nakon dodira ekrana</string>
   <string name="reset_latency_settings_title">Vrati sve postavke kašnjenja na zadano</string>
   <string name="title_pref_single_tap">Jednom dodirnite da aktivirate</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Indikator fokusa</string>
   <string name="title_pref_category_manage_gestures">Pokreti</string>
   <string name="title_pref_manage_labels">Prilagođene oznake</string>
-  <string name="title_pref_manage_customize_menus">Uredite menije</string>
   <string name="title_pref_category_context_menu">Meni SandFlya</string>
   <string name="title_pref_category_selector_menu">Kontrole za čitanje</string>
   <string name="title_pref_category_navigation_menu">Uredite opcije navigacije</string>
-  <string name="pref_category_context_menu_summary">Dodirnite s 3 prsta ili prevucite nagore ili nadolje pa udesno.</string>
-  <string name="pref_category_context_menu_summary_xr">Da koristite meni SandFlya, okrenite drugi dlan prema unutra i spojite prste.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Prevucite nadolje pa udesno.</string>
-  <string name="pref_category_selector_menu_summary">Okrenite 2 prsta kao točkić ili prevucite s 3 prsta ulijevo ili udesno da odaberete kontrolu za čitanje. Zatim prevucite nagore ili nadolje da je promijenite.</string>
-  <string name="pref_category_selector_menu_summary_xr">Da se prebacujete između kontrola za čitanje, okrenite drugi dlan prema unutra, držite prste spojene, pomjerajte ih desno ili lijevo i otpustite.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Prevucite nagore pa nadolje ili nadolje pa nagore da odaberete kontrolu za čitanje. Zatim prevucite nagore ili nadolje da je promijenite.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Prečice tastature</string>
   <string name="title_pref_export_custom_labels">Izvezi prilagođene oznake</string>
-  <string name="title_pref_play_store">Otvori SandFly u Play trgovini</string>
-  <string name="summary_pref_play_store">Trenutna verzija aplikacije SandFly: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Pomoć i povratne informacije</string>
-  <string name="title_pref_gup">Kontaktirajte Googleovu podršku za osobe s invaliditetom</string>
-  <string name="subtitle_pref_gup">Zatražite pomoć putem SandFlya ili prijavite probleme</string>
-  <string name="pref_item_licenses">Licence otvorenog koda</string>
-  <string name="title_pref_tutorial">Vodič</string>
   <string name="title_pref_help">Pomoć</string>
   <string name="title_pref_show_tos">Uslovi korištenja usluge</string>
   <string name="title_pref_show_privacy_policy">Pravila privatnosti</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Pokreti otiska prsta</string>
   <string name="title_pref_category_tutorial">Vodič za SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Pomoć</string>
-  <string name="title_pref_category_typing">Pisanje</string>
   <string name="title_pref_advanced_settings">Napredne postavke</string>
   <string name="title_pref_show_exit_watermark">Prikaži uputstva za isključivanje SandFlya</string>
   <string name="summary_pref_show_exit_watermark">Kada se SandFly uključi, prikazuje se kako ga isključiti</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Određene modifikacijske tipke su drugačije.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Saznajte više o rasporedu tipki</string>
   <string name="keycombo_go_to_settings">Idi u Postavke</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly priprema uklanjanje klasičnog rasporeda tipki. Da nastavite koristiti prečice na tastaturi, prebacite na zadani raspored tipki.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Saznajte više</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Razumijem</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Postavke</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Saznajte više</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Sada koristite zadani raspored tipki za SandFly. Postoji i novi poboljšani raspored tipki koji ima mnoge nove komande. Saznajte više u Centru za pomoć ili se prebacite na novi raspored tipki u Postavkama.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Dostupan je novi raspored tipki</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Novi poboljšani raspored tipki za SandFly dodaje mnoge nove komande. Saznajte više u Centru za pomoć ili se prebacite na novi raspored tipki u Postavkama.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Ažurirajte modifikacijsku tipku SandFlya</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ne sada</string>
   <string name="keycombo_warning_content_description">Više informacija o modifikacijskoj tipci</string>
-  <string name="keycombo_warning_dialog_title">Ažurirajte modifikacijsku tipku</string>
-  <string name="keycombo_warning_dialog_message">Za ispravno funkcioniranje SandFlyovih prečica na tastaturi ažurirajte modifikacijsku tipku iz tipke za radnju u Alt.\n\nAko nastavite koristiti tipku za radnju kao modifikacijsku tipku, određene prečice će izvršavati drugačije radnje za ovu verziju Androida.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Mapa tipki</string>
   <string name="keycombo_menu_select_keymap">Izaberite mapu tipki</string>
   <string name="keycombo_menu_reset_keymap">Vrati mapu tipki na početne postavke</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Pojačavanje zvuka govora</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Smanjenje jačine zvuka</string>
   <string name="keycombo_menu_global_refocus_current_node">Izgovaranje trenutnog fokusa</string>
-  <string name="keycombo_menu_category_granularity">Navigacija</string>
   <string name="keycombo_menu_granularity_increase">Sljedeća postavka kretanja</string>
   <string name="keycombo_menu_granularity_decrease">Prethodna postavka kretanja</string>
   <string name="keycombo_menu_category_other">Ostale radnje</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Jeste li sigurni da želite vratiti tipke za prečice na početne vrijednosti? Imajte na umu da se ova radnja ne može opozvati.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Vrati na zadano</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s u načinu rada za pregledanje</string>
-  <string name="keycombo_assign_dialog_instruction">Pritisnite kombinaciju tipki da postavite novu prečicu. Mora sadržavati barem tipku Alt ili Ctrl.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Za postavljanje nove prečice pritisnite kombinaciju tipki s modifikacijskom tipkom %1$s.</string>
   <string name="keycombo_unassigned">Nedodijeljeno</string>
   <string name="save_button_in_keycombo_assign_dialog">Sačuvaj</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Kašnjenje fokusa pisanja</string>
   <string name="message_pref_touch_explore_latency">Uz kraće kašnjenje SandFly brže počinje govoriti nakon dodira tastature.\n\nOdaberite kašnjenje</string>
   <string name="title_pref_touch_focus_timeout">Kašnjenje fokusa</string>
-  <string name="summary_pref_touch_focus_time">
-Upravlja time koliko brzo nakon pomjeranja fokusa će SandFly progovoriti. Kraće kašnjenje čini da SandFly djeluje brže, ali može otežati izvršavanje radnje dvostrukim i trostrukim dodirom.\n\n
-Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktiviranje dodirom s dva prsta.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Upravljajte pokretima u SandFlyu</string>
   <string name="toast_pref_talkback_gesture_detection">Isključite SandFly, a zatim ga uključite da aktivirate postavku.</string>
   <string name="title_pref_auto_image_captioning">Automatski opisi</string>
@@ -382,28 +332,16 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="dialog_title_turn_on_image_description">Uključite opise slika u Postavkama</string>
   <string name="dialog_message_turn_on_image_description">Možete ponovo pokušati nakon što uključite ili automatske ili detaljne opise slika</string>
   <string name="title_pref_detailed_image_description">Detaljni opisi slika</string>
-  <string name="summary_pref_ai_description">Čujte duže opise kada odaberete \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" u meniju SandFlya</string>
   <string name="dialog_message_on_device_ai_description">Čut ćete kratak opis kada fokusirate sliku u podržanim aplikacijama.\n\nSlike se obrađuju na uređaju i nikada ne šalju Googleu. \n\nGenerativni AI je eksperimentalan, pa može pogriješiti. Ako nastavite, prihvatate <a href="https://policies.google.com/terms/generative-ai">Googleove Uslove korištenja usluge</a>.</string>
   <string name="enable_gemini">Uključi</string>
   <string name="powered_by_gemini">Omogućava generativni AI</string>
-  <string name="detailed_image_description_ongoing_hint">Preuzimanje opisa</string>
-  <string name="detailed_image_description_result_prefix">Otkriveno: slika. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Za automatske opise slika potrebno je preuzimanje</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Slike se obrađuju na uređaju i nikada ne šalju Googleu.\n\nGenerativni AI je eksperimentalan, pa može pogriješiti. Ako nastavite, potvrđujete da prihvatate dokument %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Googleove Uslove korištenja usluge</string>
   <string name="message_aifeature_downloading">Preuzimanje AI modela. Ovo može potrajati. Obavijestit ćemo vas kada se završi.</string>
   <string name="message_aifeature_downloading_with_progress">Preuzimanje je i dalje u toku. Preuzeto: %1$d od %2$d MB.</string>
-  <string name="message_aifeature_download_complete">AI model je preuzet. SandFly sada može generirati opise slika.</string>
   <string name="summary_pref_auto_image_captioning">Za ikone, slike i tekst na slikama</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Za tekst na slikama</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Za slike i tekst na slikama</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Za ikone i tekst na slikama</string>
   <string name="summary_pref_module_downloading">Preuzimanje…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Uključeno je za sve slike</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Uključeno je samo za neoznačene slike</string>
   <string name="summary_pref_auto_image_captioning_disabled">Isključeno</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Uključeno je za sve ikone</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Uključeno je samo za neoznačene ikone</string>
   <string name="summary_pref_auto_icon_detection_disabled">Isključeno</string>
   <string name="title_pref_enable_auto_image_caption">Sve slike</string>
   <string name="title_pref_enable_auto_image_caption_arg">Sve slike\n%1$s</string>
@@ -413,7 +351,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="title_pref_enable_auto_icon_detection">Sve ikone</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Samo neoznačene ikone</string>
   <string name="title_pref_disable_auto_icon_detection">Ne opisuj ikone</string>
-  <string name="dialog_message_on_device_ai_model_download">Čut ćete kratak opis kada fokusirate sliku u podržanim aplikacijama.\n\nSlike se obrađuju na uređaju i nikada ne šalju Googleu.\n\nGenerativni AI je eksperimentalan, pa može pogriješiti. Ako nastavite, prihvatate dokument %1$s.</string>
   <string name="title_pref_enable_gemini_support">Uključi</string>
   <string name="title_pref_disable_gemini_support">Isključi</string>
   <string name="summary_pref_gemini_support_enabled">Gemini je omogućen</string>
@@ -457,7 +394,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="shortcut_print_node_tree">Odštampaj čvor stabla</string>
   <string name="shortcut_print_performance_stats">Odštampaj statistiku rada</string>
   <string name="shortcut_first_in_screen">Fokusiranje prve stavke na ekranu</string>
-  <string name="shortcut_summary">Sumiraj raspored ekrana</string>
   <string name="shortcut_voice_commands">Započinjanje glasovne komande</string>
   <string name="shortcut_last_in_screen">Fokusiranje posljednje stavke na ekranu</string>
   <string name="shortcut_enable_dimming">Sakrivanje ekrana</string>
@@ -561,7 +497,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="menu_category_web_navigation">Kretanje webom</string>
   <string name="menu_category_basic_navigation">Osnovno kretanje</string>
   <string name="summary_custom_action">Prikazuje se kada postoje radnje za aktuelnu stavku, uključujući linkove, kopiranje, lijepljenje, odabir i drugo</string>
-  <string name="summary_context_menu_links">Otvaranje linkova unutar fokusirane stavke</string>
   <string name="summary_viewpager_controls">Prelazak na narednu ili prethodnu stranicu. Prikazuje se kada čitate sadržaj s više stranica.</string>
   <string name="summary_labeling_controls">Prikazuje se kada odaberete neoznačenu stavku</string>
   <string name="summary_granularity">Čitanje po znakovima, riječima, redovima i drugo</string>
@@ -631,12 +566,9 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="summary_screen_overview">Sažmite ekran pomoću dugmadi za radnje</string>
   <string name="summary_screen_overview_no_actions">Poslušajte sažetak sadržaja ekrana</string>
   <string name="summary_image_caption">Izgovaranje teksta i ikona unutar odabrane slike</string>
-  <string name="summary_summarize_view">Govorni sažetak prikaza</string>
   <string name="summary_typo_suggestions">Prikazuje se kada je kursor na grešci</string>
   <string name="summary_cache_keyboard_keys">SandFly unaprijed učitava obavještenja da smanji kašnjenje prilikom pisanja</string>
   <string name="summary_cache_keyboard_keys_disabled">Koristite Googleovo pretvaranje teksta u govor da koristite ovu funkciju</string>
-  <string name="value_direction_down">dolje</string>
-  <string name="value_direction_down_and_right">dolje pa desno</string>
   <string name="title_pref_shortcut_up">Prevlačenje nagore</string>
   <string name="title_pref_shortcut_up_xr">Pokret drugim dlanom prema unutra, spajanje prstiju i prevlačenje nagore</string>
   <string name="title_pref_shortcut_down">Prevlačenje nadolje</string>
@@ -704,10 +636,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="title_pref_shortcut_fingerprint_left">Prevlačenje ulijevo na senzoru za otisak prsta</string>
   <string name="title_pref_shortcut_fingerprint_right">Prevlačenje udesno na senzoru za otisak prsta</string>
   <string name="title_pref_version_code">Kôd verzije</string>
-  <string formatted="false" name="value_volume_100_percent">Podudaranje glasnoće govora</string>
-  <string formatted="false" name="value_volume_75_percent">75% od glasnoće govora</string>
-  <string formatted="false" name="value_volume_50_percent">50% jačine zvuka govora</string>
-  <string formatted="false" name="value_volume_25_percent">25% od glasnoće govora</string>
   <string name="value_type_confirmation_double_tap">Držite prstom da odaberete tipku pa dvaput dodirnite</string>
   <string name="value_type_confirmation_lift_to_type">Držite prstom da odaberete slovo pa ga podignite. Dvaput dodirnite za druge tipke.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Držite prstom da odaberete tipku pa ga podignite</string>
@@ -720,12 +648,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="value_touch_explore_time_out_200ms">0,2 s</string>
   <string name="value_touch_explore_time_out_250ms">0,25 s</string>
   <string name="value_touch_explore_time_out_300ms">0,3 s (zadano)</string>
-  <string name="value_shake_to_read_disabled">Onemogućeno</string>
-  <string name="value_shake_to_read_threshold_very_light">Veoma lagano</string>
-  <string name="value_shake_to_read_threshold_light">Lagano</string>
-  <string name="value_shake_to_read_threshold_medium">Srednje</string>
-  <string name="value_shake_to_read_threshold_hard">Snažno</string>
-  <string name="value_shake_to_read_threshold_very_hard">Veoma snažno</string>
   <string name="title_pref_on_screen_keyboard">Tastatura na ekranu</string>
   <string name="title_pref_physical_keyboard">Fizička tastatura</string>
   <string name="value_keyboard_echo_none">Nema</string>
@@ -738,8 +660,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="pref_time_feedback_format_entries_default">Koristi format vremena uređaja</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-satni</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-satni</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly pokreti promijenjeni</string>
-  <string name="notification_message_talkback_gestures_changed">Dodirnite kako biste pregledali promjene pokreta za pristupačnost.</string>
   <string name="always_show_warning_checkbox">Uvijek prikaži ovo upozorenje</string>
   <string name="label_dialog_title_add">Dodaj oznaku</string>
   <string name="label_dialog_title_edit">Uredi oznaku</string>
@@ -760,16 +680,8 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="no_apps_to_export_labels">Nije pronađena aplikacija za izvoz oznaka.</string>
   <string name="label_choose_app_to_import">Odaberite aplikaciju za uvoz oznaka:</string>
   <string name="label_choose_app_to_export">Odaberite aplikaciju za izvoz oznake:</string>
-  <string name="talkback_gesture_change_details">Ova verzija aplikacije SandFly uključuje promjene zadanih pokreta za pristupačnost. Radnje povezane s ovim pokretima mogu se prilagoditi u postavkama SandFlya. Kada je omogućeno Istraživanje dodirom, možete koristiti sljedeće pokrete za obavljanje određenih radnji.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Sakriti ekran?</string>
   <string name="dialog_message_dim_screen">Ovo isključuje ekran radi poboljšanja privatnosti. I dalje se mogu prikazivati određeni sadržaji, npr. poruke za ponovno uključivanje ekrana, ili meniji za funkcije pristupačnosti, npr. SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Ova verzija SandFlya uključuje promjene zadanih pokreta za pristupačnost.\n\nPokret gore-dolje će vam omogućiti da pređete na prvu stavku na ekranu, a pokret dolje-gore pomjera vas na posljednju stavku.\n\nPreciznost čitanja sada se može promijeniti fokusiranjem neke stavke i izborom preciznosti iz lokalnog kontekstnog menija SandFlya.\n\nRadnje koje se izvode tim pokretima mogu se promijeniti u meniju Postavke SandFlya.</string>
-  <string name="default_action_changed_details">Da pauzirate i reproducirate medijski sadržaj, sada možete dvaput dodirnuti i zadržati s dva prsta.\n\nI Drugi pokreti su promijenjeni.</string>
-  <string name="talkback_built_in_gesture_open_url">Otvorite na telefonu da saznate više</string>
-  <string name="talkback_built_in_gesture_change_details_45">Ova verzija aplikacije SandFly uključuje promjene fabrički podešenih pokreta za pristup. \n\nPokretom prema gore sada se ide na prethodnu postavku navigacije, a pokretom prema dolje ide se na sljedeću postavku navigacije.</string>
-  <string name="side_tap_shortcuts_removed_details">Sljedeće postavke su uklonjene iz funkcije SandFly zbog problema s pouzdanošću:\n• Pokreti dodira uređaja sa strane\n• Protresite početak neprekidnog čitanja</string>
-  <string name="button_accept_changed_gesture_mappings">Prihvati pokrete</string>
-  <string name="button_customize_gesture_mappings">Prilagodi pokrete</string>
   <string name="button_disable_all_events">Onemogući sve</string>
   <string name="button_enable_all_events">Omogući sve</string>
   <string name="dialog_title_disable_exploration">Želite li onemogućiti Istraživanje dodirom?</string>
@@ -893,8 +805,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="screen_search_hint_type_search_tables">Pretražite tabele</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Kanal obavještenja za SandFly</string>
-  <string name="pref_selector_summary">%1$s da odaberete postavku. Zatim %2$s da podesite postavku.</string>
-  <string name="speech_rate_change">Brzina govora %1$d%%</string>
   <string name="speech_pitch_maximum">Govor najvišim glasom</string>
   <string name="speech_pitch_minimum">Govor najdubljim glasom</string>
   <string name="reset_speech_rate_and_pitch">Vraćanje brzine govora i visine glasa na zadano</string>
@@ -904,10 +814,7 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="vibration_feedback_state">Obavještenje vibracijom (%1$s)</string>
   <string name="text_formatting_state">Formatiranje teksta za govor je %1$s</string>
   <string name="typing_echo_change">Fizička tastatura s ehom %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Okrenite drugi dlan unutra i dugo pritisnite da uključite/isključite način rada kontrole za čitanje.</string>
   <string name="gesture_1_or_2">%1$s ili %2$s</string>
-  <string name="select_setting_hint">%1$s da odaberete drugačiju postavku</string>
-  <string name="adjust_setting_hint">%1$s da podesite postavku</string>
   <string name="adjust_granularity_hint">%1$s da se čitaju %2$s</string>
   <string name="adjust_typo_hint">%1$s za prijedloge.</string>
   <string name="use_action_hint">Dodirnite dvaput da izvršite radnju</string>
@@ -947,7 +854,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="setting_selector_heading">Kontrole za čitanje</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Da pauzirate ili reproducirate medijske fajlove u aplikaciji za videozapise ili muziku, dodirnite dvaput s 2 prsta. Isprobajte sada.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Druge aplikacije mogu koristiti ovaj pokret za radnje kao što su javljanje na telefonski poziv ili prekidanje veze. Neke aplikacije možda ne podržavaju ovaj pokret.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Prikaži sve vodiče za SandFly</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Medijski fajl je pauziran ili se reproducira. Ovim će se obično pauzirati ili reproducirati trenutni videozapis ili muzika. Prevucite udesno da nastavite.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Da privremeno zaustavite SandFly da priča, dodirnite s 2 prsta.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Govor SandFlya je zaustavljen. Ovo će uglavnom zaustaviti trenutnu frazu koju SandFly izgovara. Prevucite udesno da nastavite.</string>
@@ -961,38 +867,18 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Način rada za odabir je uključen ili isključen. Ovim će se obično pokrenuti ili zaustaviti način rada za odabir kada se nalazite u polju za unos. Prevucite udesno da nastavite.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Da koristite kontrole za čitanje, prevucite s 3 prsta ulijevo ili udesno. Također možete prevući s 3 prsta nagore ili nadolje.</string>
   <string name="new_shortcut_gesture_note">Napomena: Prilagodili ste neke pokrete, tako da ove informacije mogu biti netačne. Da pregledate svoje pokrete, idite u postavke SandFlya.</string>
-  <string name="welcome_to_android11">Dobro došli u SandFly na Androidu 11</string>
   <string name="welcome_to_android11_text">Dodani su novi pokreti kako bi SandFly bio brži i jednostavniji za korištenje.\n\nNa ovom ekranu ih možete isprobati. Ove informacije možete pregledati bilo kada u postavkama SandFlya.</string>
   <string name="new_gesture_notification_title">Novi pokreti u SandFlyu</string>
   <string name="new_gesture_notification_content">Dodirnite da saznate kako brže koristiti SandFly pomoću novih pokreta.</string>
   <string name="dump_node_tree_description">Stablo s čvorovima je odštampano u zapisnike.</string>
   <string name="report_gesture_description">Ovo su nedavno izvršeni pokreti. Prijavite koji je pokret pogrešan i šta se očekuje.</string>
-  <string name="update_welcome_text_content">Sada se možete povezati s Brailleovim ekranima putem uređaja s korisničkim interfejsom, koji je način povezivanja s Bluetooth uređajima. Provjerite imate li najnovije drajvere firmvera proizvođača, a zatim uključite Bluetooth na Brailleovom ekranu. Idite u Postavke SandFlya &gt; Brailleov ekran i uključite \"Koristi Brailleov ekran\". Pronađite uređaj na listi i povežite se s njim.</string>
-  <string name="update_welcome_text_content_tts">Sada se možete povezati s Brailleovim ekranima putem uređaja s korisničkim interfejsom, koji je način povezivanja s Bluetooth uređajima. Provjerite imate li najnovije drajvere firmvera proizvođača, a zatim uključite Bluetooth na Brailleovom ekranu. Idite u Postavke SandFlya, a zatim Brailleov ekran i uključite \"Koristi Brailleov ekran\". Pronađite uređaj na listi i povežite se s njim.</string>
-  <string name="update_welcome_text_content_with_link">Saznajte kako koristiti Brailleov ekran uz SandFly.</string>
   <string name="update_welcome_talkback_16.1">Ovo ažuriranje SandFlya uvodi podršku za Opisivanje ekrana na više jezika i druga poboljšanja kvaliteta koja olakšavaju korištenje SandFlya.\n\nSaznat ćete više o ovim promjenama na nekoliko sljedećih ekrana.\n\nDa kasnije pregledate ove informacije, idite u Postavke SandFlya &gt; Nove funkcije u SandFlyu.</string>
   <string name="update_welcome_talkback_16.1_tts">Ovo ažuriranje SandFlya uvodi podršku za Opisivanje ekrana na više jezika i druga poboljšanja kvaliteta koja olakšavaju korištenje SandFlya.\n\nSaznat ćete više o ovim promjenama na nekoliko sljedećih ekrana.\n\nDa kasnije pregledate ove informacije, idite u Postavke SandFlya, a zatim Nove funkcije u SandFlyu.</string>
-  <string name="describe_screen_and_qna_title">Novi jezici za Opisivanje ekrana i Pitajte Gemini</string>
-  <string name="describe_screen_and_qna_content">Opisivanje ekrana i Pitajte Gemini sada su dostupni na dodatnim jezicima. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Saznajte više u Centru za pomoć&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Prečica za pisanje govorom</string>
   <string name="shortcut_for_dictation_content">Dok koristite Gboard tastaturu, sada možete dvaput dodirnuti s dva prsta da pokrenete ili zaustavite pisanje govorom.
 &lt;br&gt;
 &lt;br&gt;Vodite računa da imate najnoviju verziju &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard tastature s Google Playa&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Kada je Gboard tastatura na ekranu, sada možete dvaput dodirnuti s dva prsta da započnete glasovno diktiranje, a zatim dvaput dodirnuti s dva prsta da ga zaustavite.</string>
-  <string name="keyboard_title">Tastatura</string>
-  <string name="keyboard_content">SandFly sada ima \"Poboljšan raspored tipki\" na tastaturi, uz mnoštvo novih komandi i prečica. Ovo poboljšanje, koje uključuje \"način rada za pregledanje\" za efikasnije kretanje webom, pojednostavljuje kretanje i interakciju korisnicima SandFlya koji se oslanjaju na fizičku tastaturu. Da se prebacite na \"Poboljšani raspored tipki\", idite u Postavke SandFlya &gt; Napredne postavke &gt; Prečice na tastaturi.</string>
-  <string name="keyboard_content_tts">SandFly sada ima \"Poboljšan raspored tipki\" na tastaturi, uz mnoštvo novih komandi i prečica. Ovo poboljšanje, koje uključuje \"način rada za pregledanje\" za efikasnije kretanje webom, pojednostavljuje kretanje i interakciju korisnicima SandFlya koji se oslanjaju na fizičku tastaturu. Da se prebacite na \"Poboljšani raspored tipki\", idite u Postavke SandFlya pa Napredne postavke, a zatim Prečice na tastaturi.</string>
-  <string name="reduce_delay_title">Smanjite kašnjenje</string>
-  <string name="reduce_delay_content">Sada možete smanjiti kašnjenja obavještenja iz SandFlya za istraživanje i pisanje dodirom. Da pregledate ove postavke, idite u Postavke SandFlya &gt; Napredne postavke &gt; Smanji kašnjenje.</string>
-  <string name="reduce_delay_content_tts">Sada možete smanjiti kašnjenja obavještenja iz SandFlya za istraživanje i pisanje dodirom. Da pregledate ove postavke, idite u Postavke SandFlya pa Napredne postavke, a zatim Smanji kašnjenje.</string>
-  <string name="customize_braille_keyboard_improvements_title">Prilagodite pokrete za tastaturu s Braillevim pismom</string>
-  <string name="customize_braille_keyboard_improvements_content">Sada je moguće prilagoditi pokrete za virtuelnu tastaturu s Braillevim pismom na ekranu. Da ih prilagodite, idite u Postavke SandFlya &gt; Tastatura s Braillevim pismom &gt; Pokreti.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Sada je moguće prilagoditi pokrete za virtuelnu tastaturu s Braillevim pismom na ekranu. Da ih prilagodite, idite u Postavke SandFlya pa Tastatura s Braillevim pismom, a zatim Pokreti.</string>
-  <string name="learn_more_about_braille_keyboard">Saznajte više o tastaturi s Braillevim pismom</string>
-  <string name="other_changes_title">Ostale promjene</string>
-  <string name="other_changes_content">Poruka na ekranu vam sada pomaže da brzo isključite SandFly ako ga slučajno uključite. Da isključite ovo, idite u Postavke SandFlya &gt; Prikaži uputstva za isključivanje SandFlya.</string>
-  <string name="other_changes_content_tts">Poruka na ekranu vam sada pomaže da brzo isključite SandFly ako ga slučajno uključite. Da isključite ovo, idite u Postavke SandFlya, a zatim Prikaži uputstva za isključivanje SandFlya.</string>
-  <string name="keymap_changes_content">Klasični raspored tipki je promijenjen u zadani raspored tipki, koji uključuje više prečica.</string>
   <string name="announcing_text_formatting_title">Obavještenje o formatiranju teksta</string>
   <string name="announcing_text_formatting_header">SandFly vas sada može obavijestiti o promjenama formatiranja teksta, kao što su boldirano, kurziv ili boja teksta. Da započnete:</string>
   <string name="announcing_text_formatting_option1">Fokusirajte se na stavku s formatiranjem, otvorite meni SandFlya i odaberite \"Opiši formatiranje teksta\".</string>
@@ -1083,7 +969,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="additional_tips_link_subtext">Saznajte kako upućivati pozive, slati poruke i drugo</string>
   <string name="practice_gestures_link_text">Vježbanje pokreta</string>
   <string name="practice_gestures_link_subtext">Isprobajte različite pokrete da saznate njihovu funkciju</string>
-  <string name="help_and_feedback_link_subtext">Saznajte više o SandFlyu i pošaljite povratne informacije</string>
   <string name="choose_tutorial_title">Odaberite kakvu interakciju želite s SandFlyom</string>
   <string name="touch_tutorial_button">Vodič za upravljanje dodirom</string>
   <string name="keyboard_tutorial_button">Vodič za upravljanje tastaturom</string>
@@ -1229,8 +1114,6 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="wear_training_typing_text5">Isprobajte ispod.</string>
   <string name="wear_training_typing_practice_button_content_description">Pisanje tastaturom</string>
   <string name="wear_training_end_tutorial_title">Spremni ste za korištenje SandFlya</string>
-  <string name="talkback_updated_notification_title">SandFly je ažuriran</string>
-  <string name="talkback_updated_notification_content">Dodirnite da saznate više</string>
   <string name="wear_new_feature_page_title">Dobro došli u ažurirani SandFly</string>
   <string name="wear_new_feature_page_content">Primijetit ćete da smo uklonili neke greške i promijenili način pomicanja fokusa</string>
   <string name="wear_new_feature_page_button_content_description">Završavanje</string>
@@ -1249,10 +1132,7 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="title_pref_blue">Plava</string>
   <string name="title_pref_grey">Siva</string>
   <string name="survey_setting_title">Podijelite povratne informacije</string>
-  <string name="survey_closed">Anketa je zatvorena</string>
   <string name="title_summarize_view">Opisivanje ekrana</string>
-  <string name="title_increase_touch_focus_latency">Povećavanje kašnjenja fokusa</string>
-  <string name="title_decrease_touch_focus_latency">Smanjivanje kašnjenja fokusa</string>
   <string name="detected_result">Otkrivena je stavka: %1$s</string>
   <string name="title_image_caption">Opis slike</string>
   <string name="image_caption_with_gemini_prefix">Opiši sliku. Nemoj koristiti oznake u odgovoru.</string>
@@ -1279,33 +1159,15 @@ Kašnjenja ispod 0,3 s će promijeniti aktiviranje dvostrukim dodirom u aktivir
   <string name="image_qna_question_prefix">KORISNIK: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Nastavi uz smjenjivanje KORISNIKA i MODELA] ...</string>
-  <string name="screen_overview_with_screenshot">Vaš zadatak je da pomognete nekome ko ne vidi svoj telefon da razumije šta se nalazi na ekranu telefona. Opišite ovaj snimak ekrana u nekoliko rečenica.
-
-Uputstva
-Započnite odgovor riječima \"Na ekranu se prikazuje\"
-Početak odgovora treba opisati najvažniji, istaknuti sadržaj na ekranu. Evo nekoliko primjera šta može biti najvažniji, istaknuti sadržaj koji se opisuje
-* u aplikaciji za chat: pošiljalac i tekst najnovije poruke
-* u aplikaciji za društvene medije: prva objava, uključujući osobu koja ju je objavila, tekst i opis slike
-* u aplikaciji za vijesti: naslov članka i opis primarne slike
-* u aplikaciji za kupovinu: opis prikazanog proizvoda i cijena
-* u aplikaciji za kalendar: sljedeći događaj i broj drugih događaja nakon toga
-* na listi poruka: ime i pregled za prvu poruku, a zatim samo imena za sljedećih nekoliko poruka na listi te broj nepročitanih poruka
-
-Nakon toga odgovor može opisati prostornu lokaciju i svrhu traka za navigaciju i istaknutih dugmadi.
-Ne spominjite sadržaj statusne trake na vrhu (npr. vrijeme, status mreže, baterija).
-Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="title_gemini_opt_in_dialog">Preuzeti detaljne opise slika?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Preuzeti opise slika?</string>
   <string name="title_gemini_result_dialog">Otkriveno: slika</string>
   <string name="title_gemini_result_bottom_sheet">Opis slike</string>
   <string name="title_gemini_screen_overview_result_dialog">Opis ekrana</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Sažetak</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Radnje</string>
   <string name="positive_button_gemini_opt_in_dialog">Uključi</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Prihvatam</string>
   <string name="negative_button_gemini_opt_in_dialog">Ne, hvala</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Idi u Postavke</string>
-  <string name="positive_button_gemini_download_dialog">Preuzmi i uključi</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">tekst, \"%1$s\".</string>
   <string name="detected_icon_label">ikona, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="screen_overview_no_result">Nije moguće sažeti ekran</string>
   <string name="image_caption_no_result">Nije moguće opisati sliku</string>
   <string name="image_caption_with_hide_screen">Opisi slika nisu dostupni kada je ekran sakriven. Prikažite ekran i pokušajte ponovo.</string>
-  <string name="feedback_button_state_set">odabrano</string>
-  <string name="feedback_button_state_unset">nije odabrano</string>
   <string name="action_text_like_button">Označi kao dobar odgovor</string>
   <string name="action_text_dislike_button">Označi kao loš odgovor</string>
   <string name="action_text_clear_like_button">Obriši dobar odgovor</string>
@@ -1349,18 +1209,13 @@ Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="downloading_all_image_captioning_hint">Preuzimanje automatskih opisa slika i ikona</string>
   <string name="download_all_image_captioning_successful_hint">Automatski opisi slika i ikona su preuzeti</string>
   <string name="download_all_image_captioning_failed_hint">Nije moguće preuzeti. Pokušajte ponovo kasnije.</string>
-  <string name="download_complete_notification_title">Preuzimanje je završeno</string>
-  <string name="download_complete_notification_content">Sada ćete čuti automatske opise slika i ikona putem SandFlya</string>
-  <string name="download_complete_notification_action">Postavke</string>
   <string name="download_storage_error_hint">Pohrana je puna. Da preuzmete, oslobodite %1$d MB odlaskom u Postavke &gt; Pohrana.</string>
   <string name="download_network_error_hint">Nije moguće preuzeti. Provjerite vezu i pokušajte ponovo.</string>
   <string name="switch_icon_detection_dialog_title">Automatski opisi ikona</string>
   <string name="switch_icon_detection_dialog_message">Čujte opise kada fokusirate ikonu</string>
   <string name="switch_image_description_dialog_message">Čujte opise kada fokusirate sliku. Neke aplikacije možda ne podržavaju ovu funkciju.</string>
-  <string name="switch_text_recognition_dialog_title">Automatski opis teksta na slikama</string>
   <string name="switch_text_recognition_dialog_message">Čujte opise kada fokusirate sliku koja sadržava tekst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Preuzeto</string>
-  <string name="disable_auto_image_caption_dialog_subtext">I dalje možete dobiti opise za odabranu sliku iz menija SandFlya</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Uredu</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Izbriši preuzimanje</string>
   <string name="delete_icon_detection_dialog_title">Izbrisati automatske opise ikona?</string>
@@ -1376,11 +1231,6 @@ Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="gemini_enable_dialog_title">Koristite Gemini u SandFlyu</string>
   <string name="gemini_disable_dialog_message">Razumijevanje sadržaja ekrana uz Gemini</string>
   <string name="disable_gemini_dialog_subtext">Uključite da omogućite razumijevanje sadržaja ekrana uz Gemini</string>
-  <string name="ai_services_update_dialog_title">Ažurirajte aplikaciju %1$s da opisujete slike</string>
-  <string name="ai_services_update_dialog_message">Da slušate opise slika, nabavite najnoviju verziju aplikacije <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> s Google Playa.\n\nNakon što se preuzimanje završi, vratite se u postavke SandFlya i ponovo uključite automatske opise slika.</string>
-  <string name="ai_services_update_dialog_button_text">Idite na Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Privatne računske usluge</string>
   <string name="gemini_error_message">Nešto nije uredu. Pokušajte ponovo.</string>
   <string name="gemini_block_message">Nije moguće obraditi sliku</string>
   <string name="gemini_network_error">Nema internetske veze. Provjerite WiFi ili mobilnu mrežu i pokušajte ponovo.</string>
@@ -1396,13 +1246,8 @@ Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="image_qna_typing_button_text">Upišite pitanje za Gemini</string>
   <string name="image_qna_send_button_text">Pitajte</string>
   <string name="image_qna_speak_question_description">Recite pitanje</string>
-  <string name="overviews_summary_intro">Sažetak ekrana aplikacije: %1$s</string>
   <string name="overviews_node_not_found">Žao mi, ali više ne mogu pronaći taj dio ekrana.</string>
-  <string name="overviews_images_in_app">Pronađene glavne slike</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Radnje u aplikaciji</string>
-  <string name="overviews_actions_in_app_description">Ovo su glavne radnje koje možete poduzeti na ekranu aplikacije:</string>
-  <string name="overviews_parent_type">Radnje u aplikaciji</string>
   <string name="text_replaced_feedback">Tekst zamijenjen</string>
   <string name="switch_gesture_set">Promjena skupa pokreta</string>
   <string name="switch_gesture_set_to">Promijenite na skup pokreta %1$d</string>
@@ -1453,7 +1298,6 @@ Nemojte koristiti formatiranje u odgovoru.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Zatvori</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Da čujete obavještenja dok je ekran isključen, uključite opciju \"Govori obavještenja kada je ekran isključen\" u postavkama opširnosti SandFlya</string>
     <string name="title_pref_tts_engine">Mehanizam za pretvaranje teksta u govor</string>
     <string name="title_pref_system_tts_settings">Sistemske postavke pretvaranja teksta u govor</string>
     <string name="title_selector_switch_tts_engine">Govorni mehanizam</string>

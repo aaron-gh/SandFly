@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Když je zapnutá funkce SandFly, poskytuje hlasovou odezvu, abyste zařízení mohli používat a nemuseli se přitom dívat na displej. Funkce SandFly je určená i pro lidi, kteří na displej dobře nevidí.&lt;br&gt;&lt;br&gt;&lt;b&gt;Jak používat funkci SandFly&lt;/b&gt;&lt;br&gt;• Přejetím prstem vlevo nebo vpravo lze přecházet mezi položkami.&lt;br&gt;• Dvojitým klepnutím položku aktivujete.&lt;br&gt;• Přetažením dvěma prsty můžete obsah posouvat.&lt;br&gt;&lt;br&gt;&lt;b&gt;Jak vypnout funkci SandFly&lt;/b&gt;&lt;br&gt;1. V Nastavení klepněte na &lt;b&gt;Používat SandFly&lt;/b&gt;. Zobrazí se obrys. Dvakrát na něj klepněte.&lt;br&gt;2. V žádosti o potvrzení klepněte na &lt;b&gt;Zastavit&lt;/b&gt;. Zobrazí se obrys. Dvakrát na něj klepněte.</string>
   <string name="talkback_service_summary">Použití čtečky obrazovky ke čtení názvů věcí</string>
   <string name="talkback_preferences_title">Nastavení funkce SandFly</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Nastavení</string>
   <string name="tts_preferences_title">Převod textu na řeč</string>
   <string name="language_options">Jazyky</string>
   <string name="spoken_language">Mluvený jazyk</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Vyhledávání bylo zrušeno.</string>
   <string name="notification_type_status_started">Zahájeno</string>
   <string name="notification_type_status_stopped">Zastaveno</string>
-  <string name="notification_type_status_connected">připojeno</string>
-  <string name="notification_battery_level_unknown">neznámé</string>
   <string name="notification_battery_saver_mode">Je zapnutý Spořič baterie</string>
   <string name="template_no_text_selected">Nebyl vybrán žádný text</string>
   <string name="template_charging">Nabíjení %1$s Nabití baterie: %2$s procent.</string>
   <string name="template_charging_lite">Nabíjení %1$s</string>
-  <string name="template_battery_state">Napájení %1$s %2$s procent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibrační vyzvánění.</string>
   <string name="value_ringer_silent">Tiché vyzvánění.</string>
   <string name="value_screen_on">Obrazovka je zapnutá.</string>
   <string name="value_screen_off">Obrazovka vypnutá.</string>
   <string name="value_device_unlocked">Zařízení bylo odemknuto.</string>
-  <string name="title_pref_category_audio">Zvuk</string>
   <string name="title_pref_speech_volume">Hlasitost řeči</string>
-  <string name="title_pref_speech_rate">Rychlost řeči</string>
-  <string name="summary_pref_speech_rate">Jak rychle je text předčítán</string>
   <string name="title_pref_verbose_scroll_announcement">Vždy vyslovovat počet položek v seznamu</string>
   <string name="summary_pref_verbose_scroll_announcement">Po každém posunutí říkat, které položky jsou zobrazené</string>
   <string name="title_pref_cover_proximity_sensor">Ukončení řeči zakrytím snímače přiblížení</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Říkat čas nahlas</string>
   <string name="pref_speak_time_summary">Když zapnete obrazovku</string>
   <string name="summary_speak_container_element_positions">Říkat, když vstoupíte do seznamu, mřížky nebo jiného kontejneru nebo je opustíte</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Do ovládání čtení byla přidána prodleva po označení</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Prodlevu po označení teď můžete kdykoli změnit pomocí ovládání čtení.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Přepnout na psaní zvednutím prstu?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Pokud je prodleva po označení při psaní nastavená na méně než 0,3 sekundy, bude psaní dvojitým klepnutím velmi obtížné. Pokud chcete automaticky přepnout na psaní zvednutím prstu, vyberte Přepnout.\n\nPři psaní zvednutím prstu vyberte podržením prstu požadovanou klávesu a pak příslušný znak zvednutím prstu napište.\n\nTuto funkci si můžete přizpůsobit v nastavení aplikace SandFly.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Do ovládání čtení byla přidána prodleva po označení při psaní</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Pokud dvojité klepnutí při psaní nefunguje spolehlivě, můžete kdykoli pomocí ovládání čtení nastavit delší prodlevu po označení při psaní.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Bez psaní zvednutím prstu prodleva po označení při psaní nefunguje.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Rozumím</string>
   <string name="reset_letency_reduction_settings_dialog_title">Resetovat nastavení prodlev?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Veškerá nastavení prodlev se resetují na výchozí hodnoty</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetovat</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Nastavení snížení latence bylo resetováno.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Přepnout</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Nepřepínat</string>
   <string name="Reset_gesture_settings_dialog_title">Resetovat gesta?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Resetovat gesta aktuální sady?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Všechna gesta budou resetována na výchozí akce.\n\nVšechny provedené změny budou ztraceny.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Vyslovovat všechny aktualizace stavu</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Zahrnuje aktualizace při stahování, sledování trasy jízdy apod. Pokud tato možnost bude vypnuta, stále budete dostávat méně časté aktualizace.</string>
   <string name="title_pref_explore_by_touch">Prozkoumání dotykem</string>
-  <string name="title_pref_category_visual">Vizuální</string>
   <string name="title_pref_category_controls">Ovládací prvky</string>
-  <string name="title_pref_category_braille">Braillovo písmo</string>
-  <string name="title_pref_category_general">Obecné</string>
-  <string name="title_pref_category_advanced">Pokročilá</string>
-  <string name="title_pref_category_others">Jiné</string>
-  <string name="title_pref_category_tutorial_and_help">Výukový program a nápověda</string>
   <string name="title_pref_category_reduce_latency_summary">Tato nastavení zrychlují reakce SandFly po dotyku obrazovky</string>
   <string name="reset_latency_settings_title">Resetovat všechna nastavení prodlev</string>
   <string name="title_pref_single_tap">Aktivovat jedním klepnutím</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Indikátor výběru</string>
   <string name="title_pref_category_manage_gestures">Gesta</string>
   <string name="title_pref_manage_labels">Vlastní štítky</string>
-  <string name="title_pref_manage_customize_menus">Upravit nabídky</string>
   <string name="title_pref_category_context_menu">Upravit nabídku čtečky SandFly</string>
   <string name="title_pref_category_selector_menu">Ovládání čtení</string>
   <string name="title_pref_category_navigation_menu">Upravit možnosti navigace</string>
-  <string name="pref_category_context_menu_summary">Klepněte třemi prsty nebo přejeďte nahoru či dolů a potom doprava.</string>
-  <string name="pref_category_context_menu_summary_xr">Pokud chcete použít nabídku SandFly otočte druhou dlaň směrem dovnitř a stáhněte prsty.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Přejeďte dolů a potom doprava.</string>
-  <string name="pref_category_selector_menu_summary">Otáčením dvěma prsty jako číselníkem nebo přejetím třemi prsty doleva či doprava zvolte ovládání čtení. Potom ho změňte přejetím nahoru nebo dolů.</string>
-  <string name="pref_category_selector_menu_summary_xr">Pokud chcete procházet ovládání čtení, otočte druhou dlaň směrem dovnitř, držte stažené prsty, pohněte rukou doprava nebo doleva a uvolněte.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Přejetím nahoru a potom dolů nebo dolů a potom nahoru zvolte ovládání čtení. Potom ho změňte přejetím nahoru nebo dolů.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klávesové zkratky</string>
   <string name="title_pref_export_custom_labels">Exportovat vlastní štítky</string>
-  <string name="title_pref_play_store">Otevřít SandFly v Obchodě Play</string>
-  <string name="summary_pref_play_store">Aktuální verze aplikace SandFly: %1$s</string>
   <string name="title_pref_help_and_feedback">Nápověda a zpětná vazba</string>
-  <string name="title_pref_gup">Kontaktovat podporu Google pro osoby s postižením</string>
-  <string name="subtitle_pref_gup">Získat pomoc s používáním funkce SandFly nebo nahlásit problémy</string>
-  <string name="pref_item_licenses">Licence open source</string>
-  <string name="title_pref_tutorial">Výukový program</string>
   <string name="title_pref_help">Nápověda</string>
   <string name="title_pref_show_tos">Smluvní podmínky</string>
   <string name="title_pref_show_privacy_policy">Zásady ochrany soukromí</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gesta otiskem prstu</string>
   <string name="title_pref_category_tutorial">Výukový program SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Nápověda</string>
-  <string name="title_pref_category_typing">Psaní</string>
   <string name="title_pref_advanced_settings">Rozšířená nastavení</string>
   <string name="title_pref_show_exit_watermark">Zobrazit pokyny k vypnutí funkce SandFly</string>
   <string name="summary_pref_show_exit_watermark">Při zapnutí SandFly zobrazit, jak jej vypnout</string>
@@ -154,8 +117,6 @@
 &lt;li&gt;Některé modifikační klávesy se liší.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Další informace o mapách kláves</string>
   <string name="keycombo_go_to_settings">Přejít do Nastavení</string>
-  <string name="keycombo_keymap_changes_notifications_content">Z funkce SandFly bude brzy odstraněna klasická mapa kláves. Pokud chcete nadále používat klávesové zkratky, přepněte na výchozí mapu kláves.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Další informace</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Rozumím</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Nastavení</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Další informace</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Teď používáte výchozí mapu kláves aplikace SandFly. K dispozici je taky nová vylepšená mapa kláves se spoustou nových příkazů. Další informace najdete v centru nápovědy. Na novou mapu kláves můžete přepnout v Nastavení.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Je k dispozici nová mapa kláves</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nová vylepšená mapa kláves aplikace SandFly zahrnuje spoustu nových příkazů. Další informace najdete v centru nápovědy. Na novou mapu kláves můžete přepnout v Nastavení.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Aktualizace modifikační klávesy SandFly</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Teď ne</string>
   <string name="keycombo_warning_content_description">Další informace o vaší modifikační klávese</string>
-  <string name="keycombo_warning_dialog_title">Aktualizujte modifikační klávesu</string>
-  <string name="keycombo_warning_dialog_message">Aby klávesové zkratky aplikace SandFly fungovaly správně, aktualizujte modifikační klávesu z Akce na Alt.\n\nPokud necháte nastavenou modifikační klávesu Akce, některé zkratky budou v této verzi Androidu aktivovat jiné akce.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Mapování kláves</string>
   <string name="keycombo_menu_select_keymap">Vybrat mapování kláves</string>
   <string name="keycombo_menu_reset_keymap">Resetovat mapování kláves</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Zvýšit hlasitost řeči</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Snížit hlasitost řeči</string>
   <string name="keycombo_menu_global_refocus_current_node">Přehrát, co je zaměřeno</string>
-  <string name="keycombo_menu_category_granularity">Navigace</string>
   <string name="keycombo_menu_granularity_increase">Následující nastavení navigace</string>
   <string name="keycombo_menu_granularity_decrease">Předchozí nastavení navigace</string>
   <string name="keycombo_menu_category_other">Další akce</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Opravdu klávesové zkratky v tomto mapování kláves chcete resetovat na výchozí hodnoty? Tuto akci nelze vrátit zpět.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetovat</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s v režimu procházení</string>
-  <string name="keycombo_assign_dialog_instruction">Stisknutím kombinace kláves nastavte novou zkratku. Je nutné zahrnout tlačítko ALT nebo CTRL.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Novou zkratku nastavíte stisknutím požadované kombinace kláves s modifikační klávesou %1$s.</string>
   <string name="keycombo_unassigned">Nepřiřazeno</string>
   <string name="save_button_in_keycombo_assign_dialog">Uložit</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Prodleva po označení při psaní</string>
   <string name="message_pref_touch_explore_latency">Kratší prodleva způsobí, že SandFly začne mluvit dříve po dotyku klávesnice.\n\nZvolte prodlevu</string>
   <string name="title_pref_touch_focus_timeout">Prodleva po označení</string>
-  <string name="summary_pref_touch_focus_time">
-Určuje, s jakou prodlevou mluví SandFly po přesunutí označení. S kratší prodlevou je SandFly pocitově rychlejší, ale je obtížnější provést dvojité a trojité klepnutí.\n\n
-Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnutím změní na aktivaci klepnutím dvěma prsty.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Zpracování gest v aplikaci SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Pokud toto nastavení chcete aktivovat, vypněte a pak zapněte SandFly.</string>
   <string name="title_pref_auto_image_captioning">Automatické popisy</string>
@@ -382,28 +332,16 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="dialog_title_turn_on_image_description">Zapněte popisy obrázků v Nastavení</string>
   <string name="dialog_message_turn_on_image_description">Po zapnutí automatických nebo detailních popisů obrázků to můžete zkusit znovu</string>
   <string name="title_pref_detailed_image_description">Podrobné popisy obrázků</string>
-  <string name="summary_pref_ai_description">Při výběru možnosti %1$s v nabídce SandFly přehrát delší popis</string>
   <string name="dialog_message_on_device_ai_description">Když v podporovaných aplikacích vyberete obrázek, uslyšíte krátký popis.\n\nObrázky se zpracovávají v zařízení a nikdy se neodesílají do Googlu. \n\nGenerativní umělá inteligence je experimentální, takže bude dělat chyby. Pokračováním vyjadřujete souhlas se <a href="https://policies.google.com/terms/generative-ai">smluvními podmínkami společnosti Google</a>.</string>
   <string name="enable_gemini">Zapnout</string>
   <string name="powered_by_gemini">Využívá generativní umělou inteligenci</string>
-  <string name="detailed_image_description_ongoing_hint">Získávání popisu</string>
-  <string name="detailed_image_description_result_prefix">Zjišteno: Obrázek. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Automatické popisy obrázků vyžadují stažení</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Obrázky se zpracovávají v zařízení a nikdy se neodesílají do Googlu.\n\nGenerativní umělá inteligence je experimentální, takže bude dělat chyby. Pokračováním vyjadřujete souhlas s dokumentem %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Smluvní podmínky společnosti Google</string>
   <string name="message_aifeature_downloading">Stahování AI modelu. Může to chvíli trvat. Po dokončení dostanete oznámení.</string>
   <string name="message_aifeature_downloading_with_progress">Stahování stále probíhá. Staženo %1$d z %2$d MB.</string>
-  <string name="message_aifeature_download_complete">AI model byl stažen. SandFly teď dokáže generovat popisky k obrázkům.</string>
   <string name="summary_pref_auto_image_captioning">Ikony, obrázky a text na obrázcích</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Text na obrázcích</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Obrázky a text na nich</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Ikony a text na obrázcích</string>
   <string name="summary_pref_module_downloading">Stahování…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Zapnuto pro všechny obrázky</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Zapnuto pouze pro obrázky bez štítků</string>
   <string name="summary_pref_auto_image_captioning_disabled">Vypnuto</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Zapnuto pro všechny ikony</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Zapnuto pouze pro ikony bez štítků</string>
   <string name="summary_pref_auto_icon_detection_disabled">Vypnuto</string>
   <string name="title_pref_enable_auto_image_caption">Všechny obrázky</string>
   <string name="title_pref_enable_auto_image_caption_arg">Všechny obrázky\n%1$s</string>
@@ -413,7 +351,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="title_pref_enable_auto_icon_detection">Všechny ikony</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Pouze ikony bez štítků</string>
   <string name="title_pref_disable_auto_icon_detection">Ikony nepopisovat</string>
-  <string name="dialog_message_on_device_ai_model_download">Když v podporovaných aplikacích vyberete obrázek, uslyšíte krátký popis.\n\nObrázky se zpracovávají v zařízení a nikdy se neodesílají do Googlu.\n\nGenerativní umělá inteligence je experimentální, takže bude dělat chyby. Pokračováním vyjadřujete souhlas s dokumentem %1$s.</string>
   <string name="title_pref_enable_gemini_support">Zapnuto</string>
   <string name="title_pref_disable_gemini_support">Vypnuto</string>
   <string name="summary_pref_gemini_support_enabled">Gemini je aktivní</string>
@@ -457,7 +394,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="shortcut_print_node_tree">Vytisknout strom uzlů</string>
   <string name="shortcut_print_performance_stats">Vytisknout statistiky výkonu</string>
   <string name="shortcut_first_in_screen">Zaměřit na první položku na obrazovce</string>
-  <string name="shortcut_summary">Shrnout rozvržení obrazovky</string>
   <string name="shortcut_voice_commands">Použít hlasový příkaz</string>
   <string name="shortcut_last_in_screen">Zaměřit na poslední položku na obrazovce</string>
   <string name="shortcut_enable_dimming">Skrýt obrazovku</string>
@@ -561,7 +497,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="menu_category_web_navigation">Webová navigace</string>
   <string name="menu_category_basic_navigation">Základní navigace</string>
   <string name="summary_custom_action">Zobrazuje se, když jsou pro aktuální položku k dispozici akce, včetně odkazů, kopírování, vložení, výběru apod.</string>
-  <string name="summary_context_menu_links">Otevřít odkazy ve vybrané položce</string>
   <string name="summary_viewpager_controls">Přejít na další nebo předchozí stránku. Zobrazuje se při čtení obsahu s několika stránkami.</string>
   <string name="summary_labeling_controls">Zobrazí se, když vyberete neoznačenou položku</string>
   <string name="summary_granularity">Číst po znacích, slovech, řádcích apod.</string>
@@ -631,12 +566,9 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="summary_screen_overview">Shrnout obrazovku s tlačítky akcí</string>
   <string name="summary_screen_overview_no_actions">Poslechněte si souhrn obsahu na obrazovce</string>
   <string name="summary_image_caption">Číst text a ikony ve vybraném obrázku</string>
-  <string name="summary_summarize_view">Hlasově shrnout zobrazení</string>
   <string name="summary_typo_suggestions">Zobrazí se, když se kurzor nachází na překlepu</string>
   <string name="summary_cache_keyboard_keys">Aby se zkrátila prodleva při psaní, načítá SandFly oznámení předem</string>
   <string name="summary_cache_keyboard_keys_disabled">K použití této funkce použijte Převod textu na řeč Google</string>
-  <string name="value_direction_down">dolů</string>
-  <string name="value_direction_down_and_right">dolů a pak doprava</string>
   <string name="title_pref_shortcut_up">Přejetí nahoru</string>
   <string name="title_pref_shortcut_up_xr">Druhá dlaň směrem dovnitř, stáhnout prsty a přejet nahoru</string>
   <string name="title_pref_shortcut_down">Přejetí dolů</string>
@@ -704,10 +636,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="title_pref_shortcut_fingerprint_left">Přejetí doleva po snímači otisků prstů</string>
   <string name="title_pref_shortcut_fingerprint_right">Přejetí doprava po snímači otisků prstů</string>
   <string name="title_pref_version_code">Kód verze</string>
-  <string formatted="false" name="value_volume_100_percent">Podle hlasitosti řeči</string>
-  <string formatted="false" name="value_volume_75_percent">75 % hlasitosti řeči</string>
-  <string formatted="false" name="value_volume_50_percent">50 % hlasitosti řeči</string>
-  <string formatted="false" name="value_volume_25_percent">25 % hlasitosti řeči</string>
   <string name="value_type_confirmation_double_tap">Podržením prstu vyberte libovolnou klávesu a pak dvakrát klepněte</string>
   <string name="value_type_confirmation_lift_to_type">Podržením prstu vyberte klávesu písmene a pak prst zvedněte. Dvakrát klepněte pro další klávesy.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Podržením prstu vyberte libovolnou klávesu, pak prst zvedněte</string>
@@ -720,12 +648,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="value_touch_explore_time_out_200ms">0,2 sekundy</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekundy</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekundy (výchozí)</string>
-  <string name="value_shake_to_read_disabled">Vypnuto</string>
-  <string name="value_shake_to_read_threshold_very_light">Velmi lehké</string>
-  <string name="value_shake_to_read_threshold_light">Lehké</string>
-  <string name="value_shake_to_read_threshold_medium">Střední</string>
-  <string name="value_shake_to_read_threshold_hard">Důrazné</string>
-  <string name="value_shake_to_read_threshold_very_hard">Velmi důrazné</string>
   <string name="title_pref_on_screen_keyboard">Softwarová klávesnice</string>
   <string name="title_pref_physical_keyboard">Fyzická klávesnice</string>
   <string name="value_keyboard_echo_none">Žádná</string>
@@ -738,8 +660,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="pref_time_feedback_format_entries_default">Použít formát času ze zařízení</string>
   <string name="pref_time_feedback_format_entries_12_hour">12hodinový</string>
   <string name="pref_time_feedback_format_entries_24_hour">24hodinový</string>
-  <string name="notification_title_talkback_gestures_changed">Byla změněna gesta SandFly</string>
-  <string name="notification_message_talkback_gestures_changed">Klepnutím zkontrolujete změny gest usnadnění</string>
   <string name="always_show_warning_checkbox">Vždy zobrazovat toto upozornění</string>
   <string name="label_dialog_title_add">Přidat štítek</string>
   <string name="label_dialog_title_edit">Upravit štítek</string>
@@ -760,16 +680,8 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="no_apps_to_export_labels">Nebyly nalezeny žádné aplikace k exportování štítků.</string>
   <string name="label_choose_app_to_import">Vyberte aplikaci k importování štítků:</string>
   <string name="label_choose_app_to_export">Zvolte aplikaci, do které budou exportovány štítky:</string>
-  <string name="talkback_gesture_change_details">V této verzi aplikace SandFly byla změněna výchozí gesta pro usnadnění. Akce přiřazené k těmto gestům lze přizpůsobit v nastavení SandFly. Když je zapnutá funkce Prozkoumání dotykem, můžete použít následující gesta k provádění určitých akcí.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Skrýt obrazovku?</string>
   <string name="dialog_message_dim_screen">Obrazovka se vypne, aby bylo posíleno vaše soukromí. Může se zobrazovat určitý obsah, například tlačítka k opětovnému zapnutí obrazovky nebo nabídky funkcí pro usnadnění přístupu, jako je SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">V této verzi aplikace SandFly byla změněna výchozí gesta pro usnadnění.\n\nGestem „nahoru a potom dolů“ můžete přejít na první položku na obrazovce. Gestem „dolů a potom nahoru“ přejdete na poslední položku.\n\nÚroveň podrobnosti čtení lze nyní změnit tím, že vyberete položku a poté zvolíte úroveň podrobnosti v kontextové nabídce.\n\nAkce odpovídající těmto gestům můžete změnit v nastavení aplikace SandFly.</string>
-  <string name="default_action_changed_details">Média teď můžete pozastavovat a přehrávat dvojitým klepnutím a podržením dvěma prsty.\n\nZměnila se i další gesta.</string>
-  <string name="talkback_built_in_gesture_open_url">Otevřít další informace v telefonu</string>
-  <string name="talkback_built_in_gesture_change_details_45">V této verzi aplikace SandFly byla změněna výchozí gesta pro usnadnění.\n\nGestem nahoru teď přejdete k předchozímu nastavení navigace a gestem dolů přejdete k následujícímu.</string>
-  <string name="side_tap_shortcuts_removed_details">Tato nastavení z aplikace SandFly byla kvůli problémům se spolehlivostí odstraněna:\n• gesta s klepnutím na stranu zařízení,\n• spuštění nepřetržitého čtení zatřesením.</string>
-  <string name="button_accept_changed_gesture_mappings">Přijmout gesta</string>
-  <string name="button_customize_gesture_mappings">Přizpůsobit gesta</string>
   <string name="button_disable_all_events">Deaktivovat vše</string>
   <string name="button_enable_all_events">Aktivovat vše</string>
   <string name="dialog_title_disable_exploration">Vypnout Prozkoumání dotykem?</string>
@@ -893,8 +805,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="screen_search_hint_type_search_tables">Vyhledat v tabulkách</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Oznamovací kanál aplikace SandFly</string>
-  <string name="pref_selector_summary">%1$s vyberte nastavení. Poté %2$s nastavení upravte.</string>
-  <string name="speech_rate_change">Rychlost řeči %1$d %%</string>
   <string name="speech_pitch_maximum">Nejvyšší tón řeči</string>
   <string name="speech_pitch_minimum">Nejnižší tón řeči</string>
   <string name="reset_speech_rate_and_pitch">Resetovat rychlost řeči a výšku hlasu</string>
@@ -904,10 +814,7 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="vibration_feedback_state">Vibrační odezva %1$s</string>
   <string name="text_formatting_state">Vyslovovat formátování textu: %1$s</string>
   <string name="typing_echo_change">Vyslovování zadávaného textu: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Druhá dlaň směrem dovnitř, dlouhým stisknutím přepnete režim ovládání čtení.</string>
   <string name="gesture_1_or_2">%1$s nebo %2$s</string>
-  <string name="select_setting_hint">%1$s vyberete jiné nastavení</string>
-  <string name="adjust_setting_hint">%1$s upravíte nastavení</string>
   <string name="adjust_granularity_hint">%1$s spustíte čtení po %2$s</string>
   <string name="adjust_typo_hint">Gesto pro návrhy: %1$s.</string>
   <string name="use_action_hint">Dvojitým klepnutím provedete akci</string>
@@ -947,7 +854,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="setting_selector_heading">Ovládání čtení</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Pozastavení nebo přehrání médií ve videu nebo hudební aplikaci: dvakrát klepněte dvěma prsty. Zkuste to.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Ostatní aplikace mohou toto gesto používat například k přijetí nebo ukončení telefonního hovoru. Toto gesto nemusí být podporováno ve všech aplikacích.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Zobrazit všechny výukové programy SandFly</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Obsah je pozastaven nebo se přehrává. Tato akce obvykle pozastaví nebo přehraje aktuální video či hudbu. Pokračujte přejetím prstem doprava.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Dočasné přerušení hlasové odezvy aplikace SandFly: Klepněte dvěma prsty.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Hlasová odezva SandFly byla zastavena. Tato akce obvykle zastaví aplikaci SandFly při čtení aktuální věty. Pokračujte přejetím prstem doprava.</string>
@@ -961,38 +867,18 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Režim výběru je zapnutý nebo vypnutý. Tato akce obvykle zahájí nebo ukončí režim výběru, když se nacházíte uvnitř zadávacího pole. Pokračujte přejetím prstem doprava.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Chcete-li použít ovládání čtení, přejeďte třemi prsty doleva a potom doprava. Můžete také přejet třemi prsty nahoru a poté dolů.</string>
   <string name="new_shortcut_gesture_note">Poznámka: Některá gesta už jste si upravili, proto tyto informace mohou být nepřesné. Pokud si chcete prohlédnout svá gesta, přejděte do nastavení aplikace SandFly.</string>
-  <string name="welcome_to_android11">Vítá vás aplikace SandFly v Androidu 11</string>
   <string name="welcome_to_android11_text">Přidali jsme nová gesta, aby byla aplikace SandFly rychlejší a uživatelsky přívětivější.\n\nNa této obrazovce si nová gesta můžete vyzkoušet. Tyto informace si můžete kdykoli přečíst v nastavení aplikace SandFly.</string>
   <string name="new_gesture_notification_title">Nová gesta funkce SandFly</string>
   <string name="new_gesture_notification_content">Klepnutím zobrazíte návod, jak čtečku SandFly používat rychleji pomocí nových gest.</string>
   <string name="dump_node_tree_description">Strom uzlů byl uložen do protokolů.</string>
   <string name="report_gesture_description">Zde jsou naposledy provedená gesta. Nahlaste, které gesto je špatně a co je očekáváno.</string>
-  <string name="update_welcome_text_content">K hmatovým displejům se teď můžete připojit přes HID, což je způsob připojení k zařízením Bluetooth. Zkontrolujte, zda máte nejnovější ovladače firmwaru od výrobce, a pak na hmatovém displeji zapněte Bluetooth. Přejděte na Nastavení funkce SandFly &gt; Hmatový displej a zapněte možnost Používat hmatový displej. Najděte v seznamu své zařízení a připojte se k němu.</string>
-  <string name="update_welcome_text_content_tts">K hmatovým displejům se teď můžete připojit přes HID, což je způsob připojení k zařízením Bluetooth. Zkontrolujte, zda máte nejnovější ovladače firmwaru od výrobce, a pak na hmatovém displeji zapněte Bluetooth. Přejděte na Nastavení funkce SandFly a pak Hmatový displej a zapněte možnost Používat hmatový displej. Najděte v seznamu své zařízení a připojte se k němu.</string>
-  <string name="update_welcome_text_content_with_link">Přečtěte si, jak s funkcí SandFly používat hmatový displej.</string>
   <string name="update_welcome_talkback_16.1">Tato aktualizace aplikace SandFly přináší podporu funkce Popis obrazovky ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli později přečíst v nastavení aplikace SandFly &gt; Nové funkce aplikace SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">Tato aktualizace aplikace SandFly přináší podporu funkce Popis obrazovky ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli přečíst v nastavení aplikace SandFly v sekci Nové funkce aplikace SandFly.</string>
-  <string name="describe_screen_and_qna_title">Podpora funkcí Popis obrazovky a Zeptat se Gemini v dalších jazycích</string>
-  <string name="describe_screen_and_qna_content">Funkce Popis obrazovky a Zeptat se Gemini jsou teď k dispozici v dalších jazycích. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Další informace najdete v centru nápovědy&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Zkratka pro hlasové zadávání</string>
   <string name="shortcut_for_dictation_content">Při používání Gboardu teď můžete dvojitým klepnutím dvěma prsty spustit nebo zastavit hlasové zadávání.
 &lt;br&gt;
 &lt;br&gt;Zkontrolujte si, jestli máte nejnovější verzi aplikace &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard z Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Když se na obrazovce zobrazuje klávesnice Gboard, můžete teď dvojitým klepnutím dvěma prsty spustit diktování a pak ho dvojitým klepnutím dvěma prsty ukončit.</string>
-  <string name="keyboard_title">Klávesnice</string>
-  <string name="keyboard_content">SandFly teď má pro klávesnici vylepšenou mapu kláves s řadou nových příkazů a zkratek. Toto vylepšení, které zahrnuje „režim procházení“ pro efektivnější procházení webu, zjednodušuje procházení a interakce uživatelům aplikace SandFly, kteří používají fyzické klávesnice. Možnost Vylepšená mapa kláves můžete zapnout v nastavení aplikace SandFly &gt; Rozšířená nastavení &gt; Klávesové zkratky.</string>
-  <string name="keyboard_content_tts">SandFly teď má pro klávesnici vylepšenou mapu kláves s řadou nových příkazů a zkratek. Toto vylepšení, které zahrnuje „režim procházení“ pro efektivnější procházení webu, zjednodušuje procházení a interakce uživatelům aplikace SandFly, kteří používají fyzické klávesnice. Možnost Vylepšená mapa kláves můžete zapnout v nastavení aplikace SandFly. Přejděte v něm na Rozšířená nastavení a pak na Klávesové zkratky.</string>
-  <string name="reduce_delay_title">Zkrácení prodlevy</string>
-  <string name="reduce_delay_content">Prodlevu oznámení aplikace SandFly při prohlížení a psaní dotykem teď můžete zkrátit. Příslušná nastavení si můžete zobrazit tak, že přejdete na nastavení aplikace SandFly &gt; Rozšířená nastavení &gt; Zkrátit prodlevu.</string>
-  <string name="reduce_delay_content_tts">Prodlevu oznámení aplikace SandFly při prohlížení a psaní dotykem teď můžete zkrátit. Příslušná nastavení si můžete zobrazit tak, že přejdete na nastavení aplikace SandFly, pak na Rozšířená nastavení a pak na Zkrátit prodlevu.</string>
-  <string name="customize_braille_keyboard_improvements_title">Přizpůsobení gest braillské klávesnice</string>
-  <string name="customize_braille_keyboard_improvements_content">Nově je možné přizpůsobit si gesta pro virtuální braillskou klávesnici na obrazovce. Pokud si je chcete přizpůsobit, přejděte do nastavení aplikace SandFly &gt; Braillská klávesnice &gt; Gesta.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Nově je možné přizpůsobit si gesta pro virtuální braillskou klávesnici na obrazovce. Pokud si je chcete přizpůsobit, přejděte do nastavení aplikace SandFly, pak na Braillská klávesnice a pak na Gesta.</string>
-  <string name="learn_more_about_braille_keyboard">Další informace o braillské klávesnici</string>
-  <string name="other_changes_title">Další změny</string>
-  <string name="other_changes_content">Pokud čtečku SandFly zapnete omylem, můžete ji teď prostřednictvím zprávy na obrazovce rychle vypnout. Tuto funkci můžete vypnout v nastavení aplikace SandFly &gt; Zobrazit pokyny k vypnutí čtečky SandFly.</string>
-  <string name="other_changes_content_tts">Pokud čtečku SandFly zapnete omylem, můžete ji teď prostřednictvím zprávy na obrazovce rychle vypnout. Tuto funkci můžete vypnout v nastavení aplikace SandFly v části Zobrazit pokyny k vypnutí čtečky SandFly.</string>
-  <string name="keymap_changes_content">Klasické mapování kláves bylo přepnuto na výchozí mapování kláves, které obsahuje více zkratek.</string>
   <string name="announcing_text_formatting_title">Oznamování formátování textu</string>
   <string name="announcing_text_formatting_header">SandFly teď může oznamovat změny ve formátování textu, jako jsou tučné písmo, kurzíva a barva textu. Začněte jedním z těchto způsobů:</string>
   <string name="announcing_text_formatting_option1">Vyberte položku s formátováním, otevřete nabídku SandFly a vyberte Popsat formátování textu.</string>
@@ -1083,7 +969,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="additional_tips_link_subtext">Naučte se volat, odesílat zprávy a podobně</string>
   <string name="practice_gestures_link_text">Procvičování gest</string>
   <string name="practice_gestures_link_subtext">Vyzkoušejte různá gesta, abyste zjistili, jak fungují</string>
-  <string name="help_and_feedback_link_subtext">Přečtěte si další informace o funkci SandFly a odešlete zpětnou vazbu</string>
   <string name="choose_tutorial_title">Vyberte, jak chcete se čtečkou SandFly interagovat</string>
   <string name="touch_tutorial_button">Výukový program dotykového ovládání</string>
   <string name="keyboard_tutorial_button">Výukový program ovládání pomocí klávesnice</string>
@@ -1229,8 +1114,6 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="wear_training_typing_text5">Vyzkoušejte si to níže.</string>
   <string name="wear_training_typing_practice_button_content_description">Psaní na klávesnici</string>
   <string name="wear_training_end_tutorial_title">Jste připraveni začít používat SandFly</string>
-  <string name="talkback_updated_notification_title">Aplikace SandFly byla aktualizována</string>
-  <string name="talkback_updated_notification_content">Klepnutím zobrazíte další informace</string>
   <string name="wear_new_feature_page_title">Vítá vás aktualizovaná aplikace SandFly</string>
   <string name="wear_new_feature_page_content">Opravili jsme některé chyby a změnili způsob pohybu zaměření</string>
   <string name="wear_new_feature_page_button_content_description">Dokončit</string>
@@ -1249,10 +1132,7 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="title_pref_blue">Modrá</string>
   <string name="title_pref_grey">Šedá</string>
   <string name="survey_setting_title">Podělte se o svůj názor</string>
-  <string name="survey_closed">Průzkum byl ukončen</string>
   <string name="title_summarize_view">Popsat obrazovku</string>
-  <string name="title_increase_touch_focus_latency">Zvýšit prodlevu po označení</string>
-  <string name="title_decrease_touch_focus_latency">Snížit prodlevu po označení</string>
   <string name="detected_result">Zjištěno: %1$s</string>
   <string name="title_image_caption">Popsat obrázek</string>
   <string name="image_caption_with_gemini_prefix">Popiš tenhle obrázek. V odpovědi nepoužívej žádné značky.</string>
@@ -1279,33 +1159,15 @@ Při nastavení prodlevy kratší než 0,3 sekundy se aktivace dvojitým klepnu
   <string name="image_qna_question_prefix">UŽIVATEL: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Pokračuj ve střídání zpráv od uživatele a modelu] …</string>
-  <string name="screen_overview_with_screenshot">Máš za úkol popsat někomu, kdo nevidí na telefon, co má na obrazovce telefonu. Několika větami popiš tenhle snímek obrazovky.
-
-Pokyny
-Odpověď uveď frází „Na obrazovce je vidět“.
-Začni popisem nejdůležitějšího a nejvýraznějšího obsahu na obrazovce. Tady je několik příkladů, co by takovým nejdůležitějším a nejvýraznějším obsahem mohlo být
-* V chatovací aplikaci: odesílatel a text poslední zprávy
-* V aplikaci sociálních médií: první příspěvek včetně autora, textu a popisu obrázku
-* Ve zpravodajské aplikaci: název článku a popis hlavního obrázku
-* V nákupní aplikaci: popis zobrazeného produktu a cena
-* V kalendářové aplikaci: nejbližší událost a počet dalších zobrazených událostí po ní
-* V seznamu zpráv: název a náhled první zprávy a pak jen názvy dalších zpráv v seznamu a počet nepřečtených zpráv
-
-Pak v odpovědi popiš prostorové umístění a účel navigačních panelů a výrazných tlačítek.
-Obsah stavového řádku u horního okraje (např. čas, stav sítě a baterie) neuváděj.
-V odpovědi nepoužívej žádné formátování, například Markdown.</string>
   <string name="title_gemini_opt_in_dialog">Zobrazovat podrobné popisy obrázků?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Zobrazovat popisy obrázků?</string>
   <string name="title_gemini_result_dialog">Zjišteno: Obrázek</string>
   <string name="title_gemini_result_bottom_sheet">Popis obrázku</string>
   <string name="title_gemini_screen_overview_result_dialog">Popis obrazovky</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Souhrn</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Akce</string>
   <string name="positive_button_gemini_opt_in_dialog">Zapnout</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Souhlasím</string>
   <string name="negative_button_gemini_opt_in_dialog">Ne, díky</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Přejít do Nastavení</string>
-  <string name="positive_button_gemini_download_dialog">Stáhnout a zapnout</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, „%1$s“.</string>
   <string name="detected_icon_label">Ikona, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="screen_overview_no_result">Obrazovku nelze shrnout</string>
   <string name="image_caption_no_result">Obrázek nelze popsat</string>
   <string name="image_caption_with_hide_screen">Když je obrazovka skrytá, nejsou popisy obrázků dispozici. Zobrazte obrazovku a zkuste to znovu.</string>
-  <string name="feedback_button_state_set">vybráno</string>
-  <string name="feedback_button_state_unset">nevybráno</string>
   <string name="action_text_like_button">Označit jako dobrou odpověď</string>
   <string name="action_text_dislike_button">Označit jako špatnou odpověď</string>
   <string name="action_text_clear_like_button">Vymazat dobrou odpověď</string>
@@ -1349,18 +1209,13 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="downloading_all_image_captioning_hint">Stahování automatických popisů obrázků a ikon</string>
   <string name="download_all_image_captioning_successful_hint">Automatické popisy obrázků a ikon byly staženy</string>
   <string name="download_all_image_captioning_failed_hint">Moduly nelze stáhnout. Zkuste to později.</string>
-  <string name="download_complete_notification_title">Stahování bylo dokončeno</string>
-  <string name="download_complete_notification_content">SandFly teď bude automaticky popisovat obrázky a ikony</string>
-  <string name="download_complete_notification_action">Nastavení</string>
   <string name="download_storage_error_hint">Úložiště je plné. Ke stažení přejděte na Nastavení &gt; Úložiště a uvolněte %1$d MB.</string>
   <string name="download_network_error_hint">Moduly nelze stáhnout. Zkontrolujte připojení a zkuste to znovu.</string>
   <string name="switch_icon_detection_dialog_title">Automatické popisy ikon</string>
   <string name="switch_icon_detection_dialog_message">Když vyberete ikonu, uslyšíte popis</string>
   <string name="switch_image_description_dialog_message">Když vyberete obrázek, uslyšíte popis. Tato funkce je podporována jen v některých aplikacích.</string>
-  <string name="switch_text_recognition_dialog_title">Automaticky popisovat text na obrázcích</string>
   <string name="switch_text_recognition_dialog_message">Přehrát popis, když se zaměříte na obrázek obsahující text</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Staženo</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Popisy vybraného obrázku můžete nadále získat z nabídky SandFly</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Smazat stažený obsah</string>
   <string name="delete_icon_detection_dialog_title">Smazat automatické popisy ikon?</string>
@@ -1376,11 +1231,6 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="gemini_enable_dialog_title">Použití Gemini v aplikaci SandFly</string>
   <string name="gemini_disable_dialog_message">Porozumění obrazovce s Gemini</string>
   <string name="disable_gemini_dialog_subtext">Zapnutím aktivujete porozumění obrazovce s Gemini</string>
-  <string name="ai_services_update_dialog_title">Pokud chcete získat popisy obrázků, aktualizujte aplikaci %1$s</string>
-  <string name="ai_services_update_dialog_message">Pokud chcete získat hlasové popisy obrázků, stáhněte si z Google Play nejnovější verzi aplikace %1$s.\n\nPo dokončení stahování se vraťte do nastavení aplikace SandFly a znovu zapněte automatické popisy obrázků.</string>
-  <string name="ai_services_update_dialog_button_text">Přejít na Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Něco se pokazilo. Zkuste to znovu.</string>
   <string name="gemini_block_message">Tento obrázek nelze zpracovat</string>
   <string name="gemini_network_error">Nejste připojeni k internetu. Zkontrolujte připojení k Wi-Fi nebo k mobilní síti a zkuste to znovu</string>
@@ -1396,13 +1246,8 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="image_qna_typing_button_text">Zadejte otázku pro Gemini</string>
   <string name="image_qna_send_button_text">Zeptat se</string>
   <string name="image_qna_speak_question_description">Položit otázku slovy</string>
-  <string name="overviews_summary_intro">Souhrn téhle obrazovky aplikace: %1$s</string>
   <string name="overviews_node_not_found">Pardon, příslušnou část obrazovky už se nepodařilo najít.</string>
-  <string name="overviews_images_in_app">Objevené hlavní obrázky</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Akce v aplikaci</string>
-  <string name="overviews_actions_in_app_description">Tady jsou hlavní akce, které můžete na téhle obrazovce aplikace provést:</string>
-  <string name="overviews_parent_type">Akce v aplikaci</string>
   <string name="text_replaced_feedback">Text byl nahrazen</string>
   <string name="switch_gesture_set">Přepnout sadu gest</string>
   <string name="switch_gesture_set_to">Přepnout na sadu gest %1$d</string>
@@ -1453,7 +1298,6 @@ V odpovědi nepoužívej žádné formátování, například Markdown.</string
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Zavřít</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Chcete-li slyšet oznámení, i když je obrazovka vypnutá, zapněte v nastavení míry popisu funkce SandFly možnost „Číst oznámení, i když je obrazovka vypnutá“.</string>
     <string name="speech_engine_unavailable_with_profile">Při používání hlasového profilu není hlasový modul k dispozici</string>
     <string name="category_collapsed">Sbaleno</string>
     <string name="category_expanded">Rozbaleno</string>

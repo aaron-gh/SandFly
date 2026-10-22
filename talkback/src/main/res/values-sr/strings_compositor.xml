@@ -64,15 +64,12 @@
   <string name="value_not_selected">није изабрано</string>
   <string name="value_checked">обележено је</string>
   <string name="value_not_checked">није означено</string>
-  <string name="value_partially_checked">делимично означено</string>
   <string name="value_on">укључено</string>
   <string name="value_off">искључено</string>
   <string name="value_disabled">онемогућено је</string>
   <string name="value_enabled">омогућено</string>
   <string name="value_read_only">само за читање</string>
   <string name="value_expanded">проширено</string>
-  <string name="value_fully_expanded">потпуно проширено</string>
-  <string name="value_partially_expanded">делимично проширено</string>
   <string name="value_collapsed">скупљено</string>
   <string name="value_double_tap">Додирните двапут</string>
   <string name="value_single_tap">Додирните</string>
@@ -94,7 +91,6 @@
   <string name="template_hint_spinner_keyboard">Притисните %1$s да бисте променили</string>
   <string name="template_hint_single_selection_item">%1$s да бисте изабрали</string>
   <string name="template_hint_single_selection_item_keyboard">Притисните %1$s да бисте изабрали</string>
-  <string name="template_hint_pager">Превуците са два прста да бисте променили страницу</string>
   <string name="template_hint_pager_single_page">Нема више страница</string>
   <string name="template_hint_seek_control_tv">%1$s да бисте променили</string>
   <string name="template_custom_hint_for_actions">%1$s да бисте %2$s</string>
@@ -182,7 +178,6 @@
   <string name="template_speech_rate_change">Брзина говора %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">Повећајте јачину звука за приступачност на %1$d посто.</string>
   <string name="template_accessibility_volume_change_decrease">Смањите јачину звука за приступачност на %1$d посто.</string>
-  <string name="template_touch_explore_latency_changed">Кашњење фокуса куцања: %1$d ms.</string>
   <string name="template_touch_latency_reach_maximum">Максимум</string>
   <string name="template_touch_latency_reach_minimum">Минимум</string>
   <string name="template_volume_change_maximum">Максимум</string>

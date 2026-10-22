@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack ഓണായിരിക്കുമ്പോൾ, അത് സംഭാഷണ ഫീഡ്‌ബാക്ക് നൽകുന്നതിനാൽ നിങ്ങൾക്ക് സ്‌ക്രീനിൽ നോക്കാതെ തന്നെ ഉപകരണം ഉപയോഗിക്കാനാകും. സ്‌ക്രീൻ കാണാൻ കഴിയാത്ത സാഹചര്യങ്ങളിലും സ്ക്രീനിൽ നോക്കാൻ ബുദ്ധിമുട്ട് നേരിടുന്ന ആളുകൾക്കും പ്രയോജനപ്പെടുത്താവുന്ന ഫീച്ചറാണ് TalkBack.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack എങ്ങനെ ഉപയോഗിക്കാം&lt;/b&gt;&lt;br&gt;• ഇനങ്ങളിലൂടെ നീങ്ങാൻ വലത്തോട്ടോ ഇടത്തോട്ടോ സ്വൈപ്പ് ചെയ്യുക&lt;br&gt;• ഒരു ഇനം സജീവമാക്കാൻ ഡബിൾ ടാപ്പ് ചെയ്യുക&lt;br&gt;• സ്ക്രോൾ ചെയ്യാൻ 2 വിരലുകൾ ഉപയോഗിച്ച് വലിച്ചിടുക&lt;br&gt;&lt;b&gt;TalkBack എങ്ങനെ ഓഫാക്കാം&lt;/b&gt;&lt;br&gt;1. ക്രമീകരണത്തിൽ, &lt;b&gt;TalkBack ഉപയോഗിക്കുക&lt;/b&gt; ടാപ്പ് ചെയ്യുക. അവിടെ ഒരു ഔട്ട്‌ലൈൻ ഉണ്ടായിരിക്കും. അത് ഡബിൾ ടാപ്പ് ചെയ്യുക.&lt;br&gt;2. സ്ഥിരീകരണ സന്ദേശത്തിൽ, &lt;b&gt;നിർത്തുക&lt;/b&gt; ടാപ്പ് ചെയ്യുക. അവിടെ ഒരു ഔട്ട്‌ലൈൻ ഉണ്ടായിരിക്കും. അത് ഡബിൾ ടാപ്പ് ചെയ്യുക.</string>
   <string name="talkback_service_summary">ഇനങ്ങൾ ഉറക്കെ വായിച്ചുകേൾക്കാൻ ഒരു സ്‌ക്രീൻ റീഡർ ഉപയോഗിക്കുക</string>
   <string name="talkback_preferences_title">TalkBack ക്രമീകരണം</string>
-  <string name="talkback_settings_screen_title_breadcrumb">ക്രമീകരണം</string>
   <string name="tts_preferences_title">ടെക്സ്റ്റ് ടു സ്പീച്ച്</string>
   <string name="language_options">ഭാഷകൾ</string>
   <string name="spoken_language">സംഭാഷണ ഭാഷ</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">തിരയൽ റദ്ദാക്കി.</string>
   <string name="notification_type_status_started">ആരംഭിച്ചു</string>
   <string name="notification_type_status_stopped">അവസാനിപ്പിച്ചു</string>
-  <string name="notification_type_status_connected">കണക്റ്റ് ചെയ്തു</string>
-  <string name="notification_battery_level_unknown">അജ്ഞാതം</string>
   <string name="notification_battery_saver_mode">ബാറ്ററി സേവർ ഓണാണ്</string>
   <string name="template_no_text_selected">ടെക്‌സ്റ്റൊന്നും തിരഞ്ഞെടുത്തിട്ടില്ല</string>
   <string name="template_charging">ചാർജ് ചെയ്യുന്നു %2$s, ബാറ്ററി നില %1$s ശതമാനം.</string>
   <string name="template_charging_lite">ചാർജ്ജുചെയ്യൽ %1$s</string>
-  <string name="template_battery_state">പവർ %1$s %2$s ശതമാനം %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">റിംഗർ വൈബ്രേറ്റ് ചെയ്യുന്നു.</string>
   <string name="value_ringer_silent">റിംഗർ നിശ്ശബ്‌ദമാണ്.</string>
   <string name="value_screen_on">സ്‌ക്രീൻ ഓണാക്കുക.</string>
   <string name="value_screen_off">സ്ക്രീൻ ഓഫാണ്.</string>
   <string name="value_device_unlocked">ഉപകരണം അൺലോക്കുചെയ്‌തു.</string>
-  <string name="title_pref_category_audio">ഓഡിയോ</string>
   <string name="title_pref_speech_volume">സംഭാഷണ വോളിയം</string>
-  <string name="title_pref_speech_rate">വായനയുടെ വേഗത</string>
-  <string name="summary_pref_speech_rate">ടെക്‌സ്‌റ്റ് പറയുന്നതിന്റെ വേഗത</string>
   <string name="title_pref_verbose_scroll_announcement">ലിസ്‌റ്റ് ഇനങ്ങളുടെ എണ്ണം എല്ലായ്‌പ്പോഴും പറയുക</string>
   <string name="summary_pref_verbose_scroll_announcement">എല്ലാ സ്‍ക്രോള്‍ ചെയ്യൽ രീതികളുടെയും എണ്ണം പറയുക</string>
   <string name="title_pref_cover_proximity_sensor">സ്പീച്ച് ഔട്ട്പുട്ട് നിർത്താൻ പ്രോക്‌സിമിറ്റി സെൻസർ മൂടുക</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">സമയം പറയുക</string>
   <string name="pref_speak_time_summary">നിങ്ങൾ സ്ക്രീൻ ഓണാക്കുമ്പോൾ</string>
   <string name="summary_speak_container_element_positions">ലിസ്റ്റുകൾ, ഗ്രിഡുകൾ, മറ്റ് കണ്ടെയ്‌നറുകൾ എന്നിവയിൽ പ്രവേശിക്കുന്നതും പുറത്തുകടക്കുന്നതും സഹിതമുള്ള വിവരങ്ങൾ ഉൾപ്പെടുന്നു</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">വായനാ നിയന്ത്രണത്തിലേക്ക് ഫോക്കസ് ഡിലേ ചേർത്തു</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">വായനാ നിയന്ത്രണം ഉപയോഗിക്കുന്നതിനും എപ്പോൾ വേണമെങ്കിലും ഫോക്കസ് ഡിലേയിലേക്ക് മാറാനും 3 വിരലുകൾ ഉപയോഗിച്ച് സ്വൈപ്പ് ചെയ്യുക</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">\'ടൈപ്പ് ചെയ്യാൻ ലിഫ്റ്റ് ചെയ്യുക\' എന്നതിലേക്ക് മാറണോ?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേ 0.3 സെക്കൻഡിൽ താഴെയായി സജ്ജീകരിച്ചിരിക്കുമ്പോൾ, ടൈപ്പ് ചെയ്യാൻ ഡബിൾ ടാപ്പ് ചെയ്യുന്നത് വളരെ ബുദ്ധിമുട്ടായിരിക്കും. \'ടൈപ്പ് ചെയ്യാൻ ലിഫ്റ്റ് ചെയ്യുക\' എന്നതിലേക്ക് സ്വയമേവ മാറാൻ, \"മാറുക\" തിരഞ്ഞെടുക്കുക.\n\n\'ടൈപ്പ് ചെയ്യാൻ ലിഫ്റ്റ് ചെയ്യുക\' ഉപയോഗിക്കാൻ, നിങ്ങളുടെ വിരൽ ഹോൾഡ് ചെയ്ത് ഏതെങ്കിലും കീ തിരഞ്ഞെടുക്കുക, തുടർന്ന് ടൈപ്പ് ചെയ്യാൻ ലിഫ്റ്റ് ചെയ്യുക.\n\nനിങ്ങൾക്കിത് TalkBack ക്രമീകരണത്തിൽ ഇഷ്ടാനുസൃതമാക്കാം.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">വായനാ നിയന്ത്രണത്തിലേക്ക് ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേ ചേർത്തു</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">ടൈപ്പ് ചെയ്യുമ്പോൾ നിങ്ങൾക്ക് ഡബിൾ ടാപ്പ് ചെയ്യുന്നതുമായി ബന്ധപ്പെട്ട് പ്രശ്‌നങ്ങളുണ്ടെങ്കിൽ, വായനാ നിയന്ത്രണം ഉപയോഗിക്കുന്നതിന് 3 വിരലുകൾ ഉപയോഗിച്ച് സ്വൈപ്പ് ചെയ്യുകയും ദൈർഘ്യമേറിയ ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേയിലേക്ക് മാറുകയും ചെയ്യുക</string>
-  <string name="gestures_announce_typing_focus_wont_change">\'ടൈപ്പ് ചെയ്യാൻ ലിഫ്റ്റ് ചെയ്യുക\' ഇല്ലാതെ ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേ പ്രവർത്തിക്കുന്നില്ല.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">മനസ്സിലായി</string>
   <string name="reset_letency_reduction_settings_dialog_title">ഡിലേ ക്രമീകരണം റീസെറ്റ് ചെയ്യണോ?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">ഇത് എല്ലാ ഡിലേ ക്രമീകരണവും ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യും</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">റീസെറ്റ് ചെയ്യുക</string>
   <string name="gestures_announce_reset_latency_reduction_settings">ലേറ്റൻസി കുറയ്ക്കൽ ക്രമീകരണം റീസെറ്റ് ചെയ്തു.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">മാറുക</string>
-  <string name="reduce_focus_delay_settings_cancel_button">മാറരുത്</string>
   <string name="Reset_gesture_settings_dialog_title">ജെസ്ച്ചറുകൾ റീസെറ്റ് ചെയ്യണോ?</string>
   <string name="Reset_gesture_settings_set_dialog_title">നിലവിലെ സെറ്റിന്റെ ജെസ്ച്ചറുകൾ റീസെറ്റ് ചെയ്യണോ?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">ഇത് എല്ലാ ജെസ്ച്ചറുകളും അവയുടെ ഡിഫോൾട്ട് പ്രവർത്തനങ്ങളിലേക്ക് റീസെറ്റ് ചെയ്യും.\n\nനിങ്ങൾ വരുത്തിയ എല്ലാ മാറ്റങ്ങളും നഷ്ടപ്പെടും.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">എല്ലാ പുരോഗതി അപ്‌ഡേറ്റുകളും പറയുക</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ഡൗൺലോഡ് ചെയ്യുമ്പോഴും വാഹനമോടിച്ച് പോകാനുള്ള വഴികൾ പിന്തുടരുമ്പോഴും മറ്റുമുള്ള അപ്ഡേറ്റുകൾ ഉൾപ്പെടുന്നു. ഓഫാക്കിയിരിക്കുമ്പോൾ, തുടർന്നും ഇടവിട്ട് അപ്ഡേറ്റുകൾ ലഭിക്കും.</string>
   <string name="title_pref_explore_by_touch">ടച്ച് വഴി അടുത്തറിയൽ</string>
-  <string name="title_pref_category_visual">വിഷ്വൽ</string>
   <string name="title_pref_category_controls">നിയന്ത്രണങ്ങൾ</string>
-  <string name="title_pref_category_braille">ബ്രെയിലി</string>
-  <string name="title_pref_category_general">പൊതുവായത്</string>
-  <string name="title_pref_category_advanced">വിപുലമായത്</string>
-  <string name="title_pref_category_others">മറ്റുള്ളവ</string>
-  <string name="title_pref_category_tutorial_and_help">ട്യൂട്ടോറിയലും സഹായവും</string>
   <string name="title_pref_category_reduce_latency_summary">TalkBack അറിയിപ്പുകൾക്ക് മുമ്പുള്ള ഡിലേ കുറയ്ക്കാൻ ഈ ക്രമീകരണത്തിന് കഴിയും</string>
   <string name="reset_latency_settings_title">എല്ലാ ഡിലേ ക്രമീകരണവും റീസെറ്റ് ചെയ്യുക</string>
   <string name="title_pref_single_tap">സജീവമാക്കാൻ, ഒറ്റത്തവണ ടാപ്പ് ചെയ്യുക</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">ഫോക്കസ് ഇൻഡിക്കേറ്റർ മാറ്റുക</string>
   <string name="title_pref_category_manage_gestures">ജെസ്‌റ്ററുകൾ</string>
   <string name="title_pref_manage_labels">ഇഷ്ടാനുസൃത ലേബലുകൾ</string>
-  <string name="title_pref_manage_customize_menus">എഡിറ്റ് മെനുകൾ</string>
   <string name="title_pref_category_context_menu">TalkBack മെനു ഇഷ്‌ടാനുസൃതമാക്കുക</string>
   <string name="title_pref_category_selector_menu">വായനാ നിയന്ത്രണങ്ങൾ ഇഷ്‌ടാനുസൃതമാക്കുക</string>
   <string name="title_pref_category_navigation_menu">നാവിഗേഷൻ ഓപ്ഷനുകൾ എഡിറ്റ് ചെയ്യുക</string>
-  <string name="pref_category_context_menu_summary">TalkBack മെനു ഉപയോഗിക്കാൻ 3 വിരലുകൾ ഉപയോഗിച്ച് സ്ക്രീനിൽ ടാപ്പ് ചെയ്യുക. മുകളിലേക്കും തുടർന്ന് വലത്തേക്കും അല്ലെങ്കിൽ താഴേക്കും തുടർന്ന് വലത്തേക്കും നിങ്ങൾക്ക് സ്വെെപ്പ് ചെയ്യാം.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack മെനു ഉപയോഗിക്കാൻ, രണ്ടാമത്തെ കൈപ്പത്തി അകത്തേക്ക് തിരിച്ച് പിഞ്ച് ചെയ്യുക.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack മെനു ഉപയോഗിക്കാൻ, താഴേക്കും തുടർന്ന് വലത്തേക്കും സ്വൈപ്പ് ചെയ്യുക.</string>
-  <string name="pref_category_selector_menu_summary">വായനാ നിയന്ത്രണങ്ങൾ ഉപയോഗിക്കാൻ, 3 വിരലുകൾ ഉപയോഗിച്ച് വലത്തേക്കോ ഇടത്തേക്കോ സ്വൈപ്പ് ചെയ്യുക. 3 വിരലുകൾ ഉപയോഗിച്ച് മുകളിലേക്കോ താഴേക്കോ സ്വൈപ്പ് ചെയ്യാനുമാകും.</string>
-  <string name="pref_category_selector_menu_summary_xr">വായനാ നിയന്ത്രണങ്ങൾ പരസ്‌പരം മാറാൻ, നിങ്ങളുടെ രണ്ടാമത്തെ കൈപ്പത്തി അകത്തേക്ക് തിരിക്കുക, പിഞ്ച് ചെയ്ത് പിടിക്കുക, ഇടത്തോട്ടോ വലത്തോട്ടോ നീക്കുക, റിലീസ് ചെയ്യുക.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">വായനാ നിയന്ത്രണങ്ങൾ ഉപയോഗിക്കാൻ, മുകളിലേക്കും തുടർന്ന് താഴേക്കും സ്വൈപ്പ് ചെയ്യുക.</string>
   <string name="title_pref_manage_keyboard_shortcuts">കീബോർഡ് കുറുക്കുവഴികൾ</string>
   <string name="title_pref_export_custom_labels">ഇഷ്ടാനുസൃത ലേബലുകൾ എക്സ്പോർട്ട് ചെയ്യുക</string>
-  <string name="title_pref_play_store">TalkBack, Play Store-ൽ തുറക്കുക</string>
-  <string name="summary_pref_play_store">നിലവിലെ TalkBack പതിപ്പ്: %1$s</string>
   <string name="title_pref_help_and_feedback">സഹായവും പ്രതികരണവും</string>
-  <string name="title_pref_gup">Google വൈകല്യ പിന്തുണയുമായി ബന്ധപ്പെടുക</string>
-  <string name="subtitle_pref_gup">TalkBack അല്ലെങ്കിൽ പ്രശ്നങ്ങൾ റിപ്പോർട്ട് ചെയ്യൽ ഉപയോഗിച്ച് സഹായം നേടുക</string>
-  <string name="pref_item_licenses">ഓപ്പൺ സോഴ്‌സ് ലൈസൻസുകൾ</string>
-  <string name="title_pref_tutorial">ട്യൂട്ടോറിയൽ</string>
   <string name="title_pref_help">സഹായം</string>
   <string name="title_pref_show_tos">സേവന നിബന്ധനകൾ</string>
   <string name="title_pref_show_privacy_policy">സ്വകാര്യതാ നയം</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">ഫിംഗർപ്രിന്റ് ജെസ്‌ച്ചറുകൾ</string>
   <string name="title_pref_category_tutorial">TalkBack ട്യൂട്ടോറിയൽ</string>
   <string name="title_pref_category_help_no_tutorial">സഹായം</string>
-  <string name="title_pref_category_typing">ടൈപ്പ് ചെയ്യുന്നു</string>
   <string name="title_pref_advanced_settings">വിപുലമായ ക്രമീകരണം</string>
   <string name="title_pref_show_exit_watermark">TalkBack ഓഫാക്കുന്നതിനുള്ള നിർദ്ദേശങ്ങൾ കാണിക്കുക</string>
   <string name="summary_pref_show_exit_watermark">TalkBack ഓണായിരിക്കുമ്പോൾ, അത് പെട്ടെന്ന് ഓഫാക്കാൻ നിങ്ങളെ സഹായിക്കുന്നതിന് ഒരു സന്ദേശം കാണിക്കുന്നു</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;ചില മോഡിഫയർ കീകൾ വ്യത്യസ്തം.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">കീമാപ്പുകളെ കുറിച്ച് കൂടുതലറിയുക</string>
   <string name="keycombo_go_to_settings">ക്രമീകരണത്തിലേക്ക് പോകുക</string>
-  <string name="keycombo_keymap_changes_notifications_content">ക്ലാസിക് കീമാപ്പ് നീക്കം ചെയ്യാൻ TalkBack തയ്യാറെടുക്കുന്നു. കീബോർഡ് കുറുക്കുവഴികൾ തുടർന്നും ഉപയോഗിക്കാൻ, ഡിഫോൾട്ട് കീമാപ്പിലേക്ക് മാറുക.</string>
-  <string name="keycombo_keymap_changes_notifications_action">കൂടുതലറിയുക</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">മനസ്സിലായി</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">ക്രമീകരണം</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">കൂടുതലറിയുക</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ഇപ്പോൾ TalkBack ഡിഫോൾട്ട് കീമാപ്പ് ആണ് ഉപയോഗിക്കുന്നത്. പുതിയ നിരവധി കമാൻഡുള്ള, മെച്ചപ്പെട്ട പുതിയ കീമാപ്പും ലഭ്യമാണ്. സഹായകേന്ദ്രത്തിൽ കൂടുതലറിയൂ അല്ലെങ്കിൽ ക്രമീകരണത്തിൽ പുതിയ കീമാപ്പിലേക്ക് മാറൂ.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">പുതിയ കീമാപ്പ് ലഭ്യമാണ്</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">പുതിയ TalkBack മെച്ചപ്പെടുത്തിയ കീമാപ്പ് നിരവധി പുതിയ കമാൻഡുകൾ ചേർത്തിരിക്കുന്നു. സഹായകേന്ദ്രത്തിൽ കൂടുതലറിയൂ അല്ലെങ്കിൽ ക്രമീകരണത്തിൽ പുതിയ കീമാപ്പിലേക്ക് മാറൂ.</string>
-  <string name="keycombo_update_modifier_key_warning_title">നിങ്ങളുടെ TalkBack മോഡിഫയർ കീ അപ്ഡേറ്റ് ചെയ്യുക</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">ഇപ്പോൾ വേണ്ട</string>
   <string name="keycombo_warning_content_description">നിങ്ങളുടെ മോഡിഫയർ കീയെ കുറിച്ചുള്ള കൂടുതൽ വിവരങ്ങൾ</string>
-  <string name="keycombo_warning_dialog_title">നിങ്ങളുടെ മോഡിഫയർ കീ അപ്‌ഡേറ്റ് ചെയ്യുക</string>
-  <string name="keycombo_warning_dialog_message">TalkBack-ന്റെ കീബോർഡ് കുറുക്കുവഴികൾ ശരിയായി പ്രവർത്തിക്കാൻ, നിങ്ങളുടെ മോഡിഫയർ കീ Action എന്നതിൽ നിന്ന് Alt എന്നതിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യുക.\n\nനിങ്ങൾ Action മോഡിഫയർ കീ ഉപയോഗിക്കുന്നത് തുടരുകയാണെങ്കിൽ, Android-ന്റെ ഈ പതിപ്പിൽ ചില കുറുക്കുവഴികൾ മറ്റ് പ്രവർത്തനങ്ങൾ ചെയ്‌തേക്കാം.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">കീമാപ്പ്</string>
   <string name="keycombo_menu_select_keymap">ഒരു കീമാപ്പ് തിരഞ്ഞെടുക്കുക</string>
   <string name="keycombo_menu_reset_keymap">കീമാപ്പ് പുനഃക്രമീകരിക്കുക</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">സംഭാഷണ ശബ്ദം കൂട്ടുക</string>
   <string name="keycombo_menu_global_speech_volume_decrease">സംഭാഷണ ശബ്ദം കുറയ്‌ക്കുക</string>
   <string name="keycombo_menu_global_refocus_current_node">നിലവിലെ ഫോക്കസ് പറയുക</string>
-  <string name="keycombo_menu_category_granularity">നാവിഗേഷന്‍‌</string>
   <string name="keycombo_menu_granularity_increase">അടുത്ത നാവിഗേഷൻ ക്രമീകരണം</string>
   <string name="keycombo_menu_granularity_decrease">മുമ്പത്തെ നാവിഗേഷൻ ക്രമീകരണം</string>
   <string name="keycombo_menu_category_other">മറ്റ് പ്രവർത്തനങ്ങൾ</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">ഈ കീമാപ്പിനായുള്ള കുറുക്കുവഴികൾ, അവയുടെ ഡിഫോൾട്ട് മൂല്യങ്ങളിലേക്ക് പുനഃക്രമീകരിക്കാൻ ആഗ്രഹിക്കുന്നുവെന്ന് തീർച്ചയാണോ? ശ്രദ്ധിക്കുക, ഈ പ്രവൃത്തി പഴയപടിയാക്കാനാകില്ല.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">പുനഃക്രമീകരിക്കുക</string>
   <string name="template_keycombo_menu_browse_mode_command">ബ്രൗസ് മോഡിലുള്ള %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">പുതിയ കുറുക്കുവഴി സജ്ജമാക്കാൻ കീ കോമ്പിനേഷൻ അമർത്തുക. ഇതിൽ ALT അല്ലെങ്കിൽ Control കീയെങ്കിലും ഉണ്ടായിരിക്കണം.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">പുതിയ കുറുക്കുവഴി സജ്ജമാക്കുന്നതിന് %1$s മോഡിഫയർ കീയ്ക്കൊപ്പം കീ കോമ്പിനേഷൻ അമർത്തുക.</string>
   <string name="keycombo_unassigned">നൽകിയിട്ടില്ല</string>
   <string name="save_button_in_keycombo_assign_dialog">സംരക്ഷിക്കുക</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേ</string>
   <string name="message_pref_touch_explore_latency">കുറഞ്ഞ ടൈപ്പിംഗ് ഫോക്കസ് ഡിലേ എന്നതിനർത്ഥം, കീബോർഡ് സ്പർശിച്ചാൽ TalkBack അറിയിപ്പുകൾ കൂടുതൽ വേഗത്തിൽ പ്ലേ ചെയ്യും എന്നാണ്.\n\nഒരു ഡിലേ തിരഞ്ഞെടുക്കുക</string>
   <string name="title_pref_touch_focus_timeout">ഫോക്കസ് ഡിലേ</string>
-  <string name="summary_pref_touch_focus_time">
-ഫോക്കസ് നീക്കിയതിന് ശേഷം TalkBack എത്ര വേഗത്തിൽ സംസാരിക്കുന്നു എന്നത് നിയന്ത്രിക്കുന്നു. കുറഞ്ഞ ഡിലേ, TalkBack വേഗത്തിലാക്കുന്നു, എന്നാൽ ഡബിൾ ടാപ്പുകളും ട്രിപ്പിൾ ടാപ്പുകളും ചെയ്യുന്നത് കൂടുതൽ പ്രയാസകരമാക്കും.\n\n
-0.3 സെക്കൻഡിൽ താഴെയുള്ള ഡിലേകൾ, സജീവമാക്കാൻ ഡബിൾ ടാപ്പ് ചെയ്യുക എന്നതിൽ നിന്ന് സജീവമാക്കാൻ രണ്ട് വിരലുകൾ ഉപയോഗിച്ച് ടാപ്പ് ചെയ്യുക എന്നതിലേക്ക് മാറ്റും.
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack-ൽ ജെസ്‌ച്ചറുകൾ കെെകാര്യം ചെയ്യുക</string>
   <string name="toast_pref_talkback_gesture_detection">ക്രമീകരണം സജീവമാക്കാൻ TalkBack ഓഫാക്കി വീണ്ടും ഓണാക്കുക.</string>
   <string name="title_pref_auto_image_captioning">സ്വയമേവയുള്ള വിവരണങ്ങൾ</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">ക്രമീകരണത്തിൽ ചിത്ര വിവരണങ്ങൾ ഓണാക്കുക</string>
   <string name="dialog_message_turn_on_image_description">സ്വയമേവയുള്ള അല്ലെങ്കിൽ വിശദമായ ചിത്ര വിവരണങ്ങൾ ഓണാക്കിയതിന് ശേഷം നിങ്ങൾക്ക് വീണ്ടും ശ്രമിക്കാം</string>
   <string name="title_pref_detailed_image_description">ചിത്രത്തിന്റെ വിശദമായ വിവരങ്ങൾ</string>
-  <string name="summary_pref_ai_description">TalkBack മെനുവിൽ നിന്ന് \"%1$s\" നിങ്ങൾ തിരഞ്ഞെടുക്കുമ്പോൾ ദൈർഘ്യമേറിയ വിവരണങ്ങൾ കേൾക്കുക</string>
   <string name="dialog_message_on_device_ai_description">പിന്തുണയുള്ള ആപ്പുകളിലെ ചിത്രത്തിൽ ഫോക്കസ് ചെയ്യുമ്പോൾ നിങ്ങളൊരു ഹ്രസ്വ വിവരണം കേൾക്കും.\n\nചിത്രങ്ങൾ നിങ്ങളുടെ ഉപകരണത്തിലാണ് പ്രോസസ് ചെയ്യുന്നത്, അവ ഒരിക്കലും Google-ലേക്ക് അയയ്ക്കില്ല. \n\nജനറേറ്റീവ് AI പരീക്ഷണാത്മകമാണ്, അതിനാൽ ഇത് തെറ്റുകൾ വരുത്തും. തുടരുന്നതിലൂടെ, <a href="https://policies.google.com/terms/generative-ai">Google-ന്റെ സേവന നിബന്ധനകൾ</a> നിങ്ങൾ അംഗീകരിക്കുകയാണ്.</string>
   <string name="enable_gemini">ഓണാക്കുക</string>
   <string name="powered_by_gemini">ജനറേറ്റീവ് AI നൽകുന്നത്</string>
-  <string name="detailed_image_description_ongoing_hint">വിവരണം ലഭ്യമാക്കുന്നു</string>
-  <string name="detailed_image_description_result_prefix">കണ്ടെത്തി: ചിത്രം. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">സ്വയമേവയുള്ള ചിത്ര വിവരണങ്ങൾക്ക് ഡൗൺലോഡ് ആവശ്യമാണ്</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">ചിത്രങ്ങൾ നിങ്ങളുടെ ഉപകരണത്തിലാണ് പ്രോസസ് ചെയ്യുന്നത്, അവ ഒരിക്കലും Google-ലേക്ക് അയയ്‌ക്കില്ല.\n\nജനറേറ്റീവ് AI പരീക്ഷണാത്മകമാണ്, അത് തെറ്റുകൾ വരുത്തും. തുടരുന്നതിലൂടെ, നിങ്ങൾ %1$s അംഗീകരിക്കുന്നു.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-ന്റെ സേവന നിബന്ധനകൾ</string>
   <string name="message_aifeature_downloading">AI മോഡൽ ഡൗൺലോഡ് ചെയ്യുന്നു. ഇതിന് കുറച്ച് സമയമെടുക്കാം. ഇത് പൂർത്തിയാകുമ്പോൾ നിങ്ങൾക്ക് അറിയിപ്പ് ലഭിക്കും.</string>
   <string name="message_aifeature_downloading_with_progress">ഡൗൺലോഡ് ചെയ്യൽ പുരോഗമിക്കുന്നു. %2$dMB-യിൽ %1$d ഡൗൺലോഡ് ചെയ്തു.</string>
-  <string name="message_aifeature_download_complete">AI മോഡൽ ഡൗൺലോഡ് ചെയ്തു. TalkBack-ന് ഇപ്പോൾ ചിത്ര വിവരണങ്ങൾ സൃഷ്ടിക്കാം.</string>
   <string name="summary_pref_auto_image_captioning">ഐക്കണുകൾ, ചിത്രങ്ങൾ, ചിത്രങ്ങളിലെ ടെക്സ്റ്റ് എന്നിവയ്ക്ക്</string>
-  <string name="summary_pref_auto_image_captioning_text_only">ചിത്രങ്ങളിലെ ടെക്സ്റ്റിനായി</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">ചിത്രങ്ങൾക്കും ചിത്രങ്ങളിലെ ടെക്സ്റ്റിനും</string>
-  <string name="summary_pref_auto_image_captioning_no_image">ഐക്കണുകൾക്കും ചിത്രങ്ങളിലെ ടെക്സ്റ്റിനും</string>
   <string name="summary_pref_module_downloading">ഡൗൺലോഡ് ചെയ്യുന്നു…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">എല്ലാ ചിത്രങ്ങൾക്കും ഓണാണ്</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">ലേബൽ ചെയ്യാത്ത ചിത്രങ്ങൾക്ക് മാത്രം ഓണാണ്</string>
   <string name="summary_pref_auto_image_captioning_disabled">ഓഫാണ്</string>
-  <string name="summary_pref_auto_icon_detection_enabled">എല്ലാ ഐക്കണുകൾക്കും ഓണാണ്</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">ലേബൽ ചെയ്യാത്ത ഐക്കണുകൾക്ക് മാത്രം ഓണാണ്</string>
   <string name="summary_pref_auto_icon_detection_disabled">ഓഫാണ്</string>
   <string name="title_pref_enable_auto_image_caption">എല്ലാ ചിത്രങ്ങൾക്കും</string>
   <string name="title_pref_enable_auto_image_caption_arg">എല്ലാ ചിത്രങ്ങളും\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">എല്ലാ ഐക്കണുകളും</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">ലേബൽ ചെയ്യാത്ത ഐക്കണുകൾക്ക് മാത്രം</string>
   <string name="title_pref_disable_auto_icon_detection">ഐക്കണുകൾ വിവരിക്കരുത്</string>
-  <string name="dialog_message_on_device_ai_model_download">പിന്തുണയുള്ള ആപ്പുകളിലെ ചിത്രത്തിൽ ഫോക്കസ് ചെയ്യുമ്പോൾ നിങ്ങളൊരു ഹ്രസ്വ വിവരണം കേൾക്കും.\n\nചിത്രങ്ങൾ നിങ്ങളുടെ ഉപകരണത്തിലാണ് പ്രോസസ് ചെയ്യുന്നത്, അവ ഒരിക്കലും Google-ലേക്ക് അയയ്ക്കില്ല.\n\nജനറേറ്റീവ് AI പരീക്ഷണാത്മകമാണ്, അത് തെറ്റുകൾ വരുത്തും. തുടരുന്നതിലൂടെ, നിങ്ങൾ %1$s അംഗീകരിക്കുന്നു.</string>
   <string name="title_pref_enable_gemini_support">ഓണാണ്</string>
   <string name="title_pref_disable_gemini_support">ഓഫാണ്</string>
   <string name="summary_pref_gemini_support_enabled">Gemini പ്രവർത്തനക്ഷമമാണ്</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">നോഡ് ട്രീ പ്രിന്റുചെയ്യുക</string>
   <string name="shortcut_print_performance_stats">പ്രകടന സ്ഥിതിവിവരക്കണക്കുകൾ അച്ചടിക്കുക</string>
   <string name="shortcut_first_in_screen">സ്‌ക്രീനിലെ ആദ്യ ഇനത്തിൽ ഫോക്കസ് ചെയ്യുക</string>
-  <string name="shortcut_summary">സ്‌ക്രീൻ ലേഔട്ട് സംഗ്രഹിക്കുക</string>
   <string name="shortcut_voice_commands">ശബ്‌ദ കമാൻഡ് ആരംഭിക്കുക</string>
   <string name="shortcut_last_in_screen">സ്‌ക്രീനിലെ അവസാന ഇനത്തിൽ ഫോക്കസ് ചെയ്യുക</string>
   <string name="shortcut_enable_dimming">സ്ക്രീൻ മറയ്ക്കുക</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">വെബ് നാവിഗേഷൻ</string>
   <string name="menu_category_basic_navigation">അടിസ്ഥാന നാവിഗേഷൻ</string>
   <string name="summary_custom_action">ലിങ്കുകൾ, പകർത്തൽ, ഒട്ടിക്കൽ, തിരഞ്ഞെടുക്കൽ എന്നിവയും മറ്റും ഉൾപ്പെടെ നിലവിലുള്ള ഇനവുമായി ബന്ധപ്പെട്ട് പ്രവർത്തനങ്ങൾ ഉള്ളപ്പോൾ കാണിക്കുന്നു</string>
-  <string name="summary_context_menu_links">ഫോക്കസ് ചെയ്‌ത ഇനത്തിലെ ലിങ്കുകൾ തുറക്കുക</string>
   <string name="summary_viewpager_controls">അടുത്ത പേജിലേക്കോ മുമ്പത്തെ പേജിലേക്കോ പോകുക. ഒന്നിലധികം പേജുകളുള്ള ഉള്ളടക്കം വായിക്കുമ്പോൾ കാണിക്കുന്നു.</string>
   <string name="summary_labeling_controls">ലേബൽ ചെയ്യാത്ത ഇനം തിരഞ്ഞെടുക്കുമ്പോൾ കാണിക്കുന്നു</string>
   <string name="summary_granularity">അക്ഷരം, വാക്ക്, വരികൾ എന്നിവയും മറ്റും അനുസരിച്ച് വായിക്കുക</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">പ്രവർത്തന ബട്ടണുകൾ ഉപയോഗിച്ച് സ്ക്രീൻ സംഗ്രഹിക്കുക</string>
   <string name="summary_screen_overview_no_actions">സ്ക്രീനിലെ ഉള്ളടക്കത്തിന്റെ സംഗ്രഹം കേൾക്കുക</string>
   <string name="summary_image_caption">തിരഞ്ഞെടുത്ത ഒരു ചിത്രത്തിനകത്തെ ടെക്സ്റ്റും ഐക്കണുകളും പറയുക</string>
-  <string name="summary_summarize_view">കാഴ്ചയുടെ സംഗ്രഹം പറയുക</string>
   <string name="summary_typo_suggestions">അക്ഷരത്തെറ്റിൽ കഴ്‌സർ എത്തുമ്പോൾ കാണിക്കുന്നു</string>
   <string name="summary_cache_keyboard_keys">നിങ്ങൾ ടൈപ്പ് ചെയ്യുമ്പോൾ കാലതാമസം ഒഴിവാക്കാൻ TalkBack മുൻകൂട്ടി പ്രഖ്യാപനങ്ങൾ ലോഡ് ചെയ്യുന്നു</string>
   <string name="summary_cache_keyboard_keys_disabled">ഈ ഫീച്ചർ ഉപയോഗിക്കാൻ Google ടെക്‌സ്‌റ്റ് ടു സ്‌പീച്ച് ഉപയോഗിക്കുക</string>
-  <string name="value_direction_down">താഴേയ്‌ക്ക്</string>
-  <string name="value_direction_down_and_right">താഴേയ്ക്ക് പിന്നീട് വലത്തേയ്ക്ക്</string>
   <string name="title_pref_shortcut_up">മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_up_xr">രണ്ടാമത്തെ കൈപ്പത്തി അകത്തേക്ക് തിരിച്ച് പിഞ്ച് ചെയ്ത് മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യൂ</string>
   <string name="title_pref_shortcut_down">താഴോട്ട് സ്വൈപ്പുചെയ്യുക</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">ഫിംഗർപ്രിന്റ് സെൻസറിൽ ഇടത്തോട്ട് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_fingerprint_right">ഫിംഗർപ്രിന്റ് സെൻസറിൽ വലത്തോട്ട് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_version_code">പതിപ്പ് കോഡ്</string>
-  <string formatted="false" name="value_volume_100_percent">സംഭാഷണ വോളിയം സമമാക്കുക</string>
-  <string formatted="false" name="value_volume_75_percent">സംഭാഷണ വോളിയത്തിന്റെ 75%</string>
-  <string formatted="false" name="value_volume_50_percent">സംഭാഷണ വോളിയത്തിന്റെ 50%</string>
-  <string formatted="false" name="value_volume_25_percent">സംഭാഷണ വോളിയത്തിന്റെ 25%</string>
   <string name="value_type_confirmation_double_tap">ഏതെങ്കിലും കീ തിരഞ്ഞെടുക്കാൻ, വിരൽ അമർത്തിപ്പിടിച്ച ശേഷം ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
   <string name="value_type_confirmation_lift_to_type">അക്ഷര കീ തിരഞ്ഞെടുക്കാൻ, വിരൽ അമർത്തിപ്പിടിച്ച ശേഷം എടുക്കുക. മറ്റ് കീകൾക്ക് ഡബിൾ ടാപ്പ് ചെയ്യുക.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">ഏതെങ്കിലും കീ തിരഞ്ഞെടുക്കാൻ, വിരൽ അമർത്തിപ്പിടിച്ച ശേഷം എടുക്കുക</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0.2 സെക്കൻഡ്</string>
   <string name="value_touch_explore_time_out_250ms">0.25 സെക്കൻഡ്</string>
   <string name="value_touch_explore_time_out_300ms">0.3 സെക്കൻഡ് (ഡിഫോൾട്ട്)</string>
-  <string name="value_shake_to_read_disabled">പ്രവർത്തനരഹിതമാക്കി</string>
-  <string name="value_shake_to_read_threshold_very_light">വളരെ ലളിതമായത്</string>
-  <string name="value_shake_to_read_threshold_light">ലളിതമായത്</string>
-  <string name="value_shake_to_read_threshold_medium">ഇടത്തരം</string>
-  <string name="value_shake_to_read_threshold_hard">കഠിനമായത്</string>
-  <string name="value_shake_to_read_threshold_very_hard">വളരെ കഠിനമായത്</string>
   <string name="title_pref_on_screen_keyboard">ഓൺ-സ്‌ക്രീൻ കീബോർഡ്</string>
   <string name="title_pref_physical_keyboard">ഫിസിക്കൽ കീബോർഡ്</string>
   <string name="value_keyboard_echo_none">ഒന്നുമില്ല</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">ഉപകരണ സമയ ഫോർമാറ്റ് ഉപയോഗിക്കുക</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 മണിക്കൂർ</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 മണിക്കൂർ</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack സവിശേഷതകൾ മാറ്റി</string>
-  <string name="notification_message_talkback_gestures_changed">ഉപയോഗസഹായി സവിശേഷതകളിലെ മാറ്റങ്ങൾ അവലോകനം ചെയ്യുന്നതിന് ടാപ്പുചെയ്യുക</string>
   <string name="always_show_warning_checkbox">ഈ മുന്നറിയിപ്പ് എപ്പോഴും കാണിക്കുക</string>
   <string name="label_dialog_title_add">ലേബൽ ചേർക്കുക</string>
   <string name="label_dialog_title_edit">ലേബൽ എഡിറ്റ് ചെയ്യുക</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">ആപ്ലിക്കേഷനുകളൊന്നും ലേബലുകൾ എക്സ്പോർട്ടുചെയ്യുന്നതായി കണ്ടെത്തിയില്ല.</string>
   <string name="label_choose_app_to_import">ലേബലുകൾ ഇമ്പോർട്ടുചെയ്യുന്നതിനുള്ള ആപ്ലിക്കേഷൻ തിരഞ്ഞെടുക്കുക:</string>
   <string name="label_choose_app_to_export">ലേബലുകൾ എക്സ്പോർട്ടുചെയ്യുന്നതിനുള്ള അപ്ലിക്കേഷൻ തിരഞ്ഞെടുക്കുക:</string>
-  <string name="talkback_gesture_change_details">TalkBack-ന്റെ ഈ പതിപ്പിൽ, സ്ഥിര ഉപയോഗസഹായി സവിശേഷതകളിലെ മാറ്റങ്ങൾ ഉൾപ്പെടുന്നു. ഈ സവിശേഷതകളുമായി ബന്ധപ്പെടുത്തിയ പ്രവർത്തനങ്ങൾ TalkBack ക്രമീകരണങ്ങളിൽ ഇഷ്‌ടാനുസൃതമാക്കാനാവും. \'ടച്ച് വഴി അടുത്തറിയുക\' പ്രവർത്തനക്ഷമമാക്കുമ്പോൾ, ചില പ്രവർത്തനങ്ങൾ നടത്തുന്നതിന് ഇനിപ്പറയുന്ന സവിശേഷതകൾ നിങ്ങൾക്ക് ഉപയോഗിക്കാനാകും.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">സ്ക്രീൻ മറയ്ക്കണോ?</string>
   <string name="dialog_message_dim_screen">നിങ്ങളുടെ സ്വകാര്യത മെച്ചപ്പെടുത്താൻ ഇത് ഡിസ്പ്ലേ ഓഫാക്കുന്നു. ഡിസ്‌പ്ലേ വീണ്ടും ഓണാക്കാനുള്ള സന്ദേശങ്ങൾ അല്ലെങ്കിൽ TalkBack പോലുള്ള ഉപയോഗസഹായി ഫീച്ചറുകൾക്കുള്ള മെനുകൾ പോലുള്ള ചില ഉള്ളടക്കം തുടർന്നും കാണിച്ചേക്കാം.</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack-ന്റെ ഈ പതിപ്പിൽ, ഡിഫോൾട്ട് ഉപയോഗസഹായി വിരൽചലനങ്ങളിലെ മാറ്റങ്ങൾ ഉൾപ്പെടുന്നു.\n\nസ്ക്രീനിലെ ആദ്യ ഇനത്തിലേക്ക് നീക്കുന്നതിന് \'മുകളിലേയ്ക്ക്-പിന്നീട്-താഴേക്ക്\' വിരൽചലനം നിങ്ങളെ അനുവദിക്കും, \'താഴേക്ക്-പിന്നീട്-മുകളിലേയ്ക്ക്\' വിരൽചലനം അവസാന ഇനത്തിലേക്ക് നീക്കും.\n\nഇനം ഫോക്കസ് ചെയ്‌ത്, TalkBack സന്ദർഭ മെനുവിൽ നിന്നും ഒരു ഗ്രാനുലാരിറ്റി തിരഞ്ഞെടുക്കുന്നതിലൂടെ ഇപ്പോൾ വായനാ ഗ്രാനുലാരിറ്റി മാറ്റാനാകും.\n\nഈ വിരൽചലനങ്ങൾ നടത്തുന്ന പ്രവർത്തനങ്ങൾ TalkBack ക്രമീകരണത്തിൽ നിങ്ങൾക്ക് മാറ്റാനാകും.</string>
-  <string name="default_action_changed_details">മീഡിയ പ്ലേ ചെയ്യാനും താൽക്കാലികമായി നിർത്താനും, നിങ്ങൾക്കിപ്പോൾ രണ്ട് വിരലുകൾ ഉപയോഗിച്ച് ഡബിൾ ടാപ്പ് ചെയ്ത് പിടിക്കാം.\n\nമറ്റ് ജെസ്ച്ചറുകളും മാറിയിട്ടുണ്ട്.</string>
-  <string name="talkback_built_in_gesture_open_url">കൂടുതലറിയാൻ ഫോണിൽ തുറക്കുക</string>
-  <string name="talkback_built_in_gesture_change_details_45">ടോക്ക് ബാക്കിന്‍റെ ഈ പതിപ്പ്, വിരൽചലിത ടൈപ്പിംഗിന്‍റെ ഡിഫോൾട്ട് ആക്സസ്സിബ്ലിറ്റിയിൽ മാറ്റം വരുത്തുന്നു \n\nമുകളിലേക്കുള്ള വിരൽചലനം ഇപ്പോൾ മുമ്പത്തെ നാവിഗേഷൻ ക്രമീകരണത്തിലേക്ക് നീങ്ങുന്നു, താഴേക്കുള്ള വിരൽചലനമാകട്ടെ, അടുത്ത നാവിഗേഷൻ ക്രമീകരണത്തിലേക്ക് നീങ്ങും.</string>
-  <string name="side_tap_shortcuts_removed_details">വിശ്വാസ്യതാ പ്രശ്‌നങ്ങൾ കാരണം ഈ ക്രമീകരണം TalkBack-ൽ നിന്ന് നീക്കം ചെയ്‌തു:\n• ഉപകരണത്തിന്റെ വശത്തുള്ള ജെസ്‌ചറുകളിൽ ടാപ്പ് ചെയ്യുക\n• തുടർച്ചയായ വായന ആരംഭിക്കാൻ കുലുക്കുക</string>
-  <string name="button_accept_changed_gesture_mappings">സവിശേഷതകൾ അംഗീകരിക്കുക</string>
-  <string name="button_customize_gesture_mappings">സവിശേഷതകൾ ഇഷ്‌ടാനുസൃതമാക്കുക</string>
   <string name="button_disable_all_events">എല്ലാം പ്രവർത്തനരഹിതമാക്കുക</string>
   <string name="button_enable_all_events">എല്ലാം പ്രവർത്തനക്ഷമമാക്കുക</string>
   <string name="dialog_title_disable_exploration">\'ടച്ച് വഴി അടുത്തറിയുന്നത്\' പ്രവർത്തനരഹിതമാക്കണോ?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">പട്ടികകൾ തിരയുക</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack-ന്റെ അറിയിപ്പ് ചാനൽ</string>
-  <string name="pref_selector_summary">ക്രമീകരണം തിരഞ്ഞെടുക്കാൻ%1$s. തുടർന്ന് ക്രമീകരണം ക്രമപ്പെടുത്തുന്നതിന് %2$s.</string>
-  <string name="speech_rate_change">വായനയുടെ വേഗത %1$d%%</string>
   <string name="speech_pitch_maximum">സംസാരത്തിന്റെ ഏറ്റവും ഉയർന്ന പിച്ച്</string>
   <string name="speech_pitch_minimum">സംസാരത്തിന്റെ ഏറ്റവും താഴ്ന്ന പിച്ച്</string>
   <string name="reset_speech_rate_and_pitch">വായനയുടെ വേഗതയും പിച്ചും റീസെറ്റ് ചെയ്യുക</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">വൈബ്രേഷൻ ഫീഡ്ബാക്ക് %1$s</string>
   <string name="text_formatting_state">ടെക്സ്റ്റ് ഫോർമാറ്റിംഗ് വായിക്കൽ %1$s</string>
   <string name="typing_echo_change">%1$s എക്കോ ഫിസിക്കൽ കീബോർഡ്</string>
-  <string name="reading_control_toggle_prefix_xr">വായനാ നിയന്ത്രണ മോഡ് ടോഗിൾ ചെയ്യാൻ, രണ്ടാമത്തെ കൈപ്പത്തി അകത്തേക്ക് തിരിക്കുക, ദീർഘനേരം അമർത്തുക.</string>
   <string name="gesture_1_or_2">%1$s അല്ലെങ്കിൽ %2$s</string>
-  <string name="select_setting_hint">മറ്റൊരു ക്രമീകരണം തിരഞ്ഞെടുക്കാൻ%1$s</string>
-  <string name="adjust_setting_hint">ക്രമീകരണം ക്രമപ്പെടുത്തുന്നതിന് %1$s</string>
   <string name="adjust_granularity_hint">%2$s ആയി വായിക്കാൻ %1$s</string>
   <string name="adjust_typo_hint">നിർദ്ദേശങ്ങൾക്ക് %1$s.</string>
   <string name="use_action_hint">പ്രവർത്തനം നടത്താൻ ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">വായനാ നിയന്ത്രണങ്ങൾ</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ഒരു വീഡിയോ അല്ലെങ്കിൽ സംഗീത ആപ്പിൽ മീഡിയ പ്ലേ ചെയ്യാനോ തൽക്കാലം നിർത്താനോ, 2 വിരലുകൾ ഉപയോഗിച്ച് ഡബിൾ ടാപ്പ് ചെയ്യുക. ഇത് ഇപ്പോൾ പരീക്ഷിക്കൂ.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">മറ്റ് ആപ്പുകൾ ഈ ജെസ്ച്ചർ ഫോൺ കോൾ സ്വീകരിക്കുന്നതോ അവസാനിപ്പിക്കുന്നതോ പോലുള്ള കാര്യങ്ങൾക്ക് ഉപയോഗിച്ചേക്കാം. ഈ ജെസ്ച്ചറിനെ എല്ലാ ആപ്പുകളും പിന്തുണച്ചേക്കില്ല.</string>
-  <string name="onboarding_link_to_talkback_tutorials">എല്ലാ TalkBack ട്യൂട്ടോറിയലുകളും കാണുക</string>
   <string name="new_shortcut_gesture_pause_media_announcement">മീഡിയ താൽക്കാലികമായി നിർത്തി അല്ലെങ്കിൽ പ്ലേ ചെയ്യുന്നു. സാധാരണയായി, ഇത് നിലവിലെ വീഡിയോ അല്ലെങ്കിൽ സംഗീതം താൽക്കാലികമായി നിർത്തും അല്ലെങ്കിൽ പ്ലേ ചെയ്യും. തുടരാൻ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack സംസാരിക്കുന്നത് താൽക്കാലികമായി അവസാനിപ്പിക്കാൻ, 2 വിരലുകൾ ഉപയോഗിച്ച് ടാപ്പ് ചെയ്യുക.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack സംസാരിക്കുന്നത് അവസാനിപ്പിച്ചു. സാധാരണയായി, TalkBack നിലവിൽ പറയുന്ന വാചകം ഇത് അവസാനിപ്പിക്കും. തുടരാൻ വലത്തോട്ട് സ്വൈപ്പ് ചെയ്യുക.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">തിരഞ്ഞെടുപ്പ് മോഡ് ഓൺ അല്ലെങ്കിൽ ഓഫ് ആണ്. സാധാരണയായി, നിങ്ങൾ ഇൻപുട്ട് ഫീൽഡിന് അകത്താണെങ്കിൽ ഇത് ടെക്‌സ്‌റ്റ് തിരഞ്ഞെടുക്കൽ മോഡ് ആരംഭിക്കുകയോ നിർത്തുകയോ ചെയ്യും. തുടരാൻ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
   <string name="new_shortcut_gesture_reading_menu_text">വായനാ നിയന്ത്രണങ്ങൾ ഉപയോഗിക്കാൻ, 3 വിരലുകൾ ഉപയോഗിച്ച് വലത്തേക്കോ ഇടത്തേക്കോ സ്വൈപ്പ് ചെയ്യുക. 3 വിരലുകൾ ഉപയോഗിച്ച് മുകളിലേക്കോ താഴേക്കോ സ്വൈപ്പ് ചെയ്യാനുമാകും.</string>
   <string name="new_shortcut_gesture_note">ശ്രദ്ധിക്കുക: ചില ജെസ്ച്ചറുകൾ നിങ്ങൾ ഇഷ്‌ടാനുസൃതമാക്കിയതിനാൽ, ഈ വിവരങ്ങൾ കൃത്യമാകണമെന്നില്ല. നിങ്ങളുടെ ജെസ്ച്ചറുകൾ അവലോകനം ചെയ്യാൻ, TalkBack ക്രമീകരണത്തിലേക്ക് പോകുക.</string>
-  <string name="welcome_to_android11">Android 11-ലെ TalkBack-ലേക്ക് നിങ്ങൾക്ക് സ്വാഗതം</string>
   <string name="welcome_to_android11_text">TalkBack ഉപയോഗിക്കുന്നത് വേഗത്തിലും എളുപ്പത്തിലുമാക്കാൻ പുതിയ ജെസ്ച്ചറുകൾ ചേർത്തു.\n\nപുതിയ ജെസ്ച്ചറുകൾ നിങ്ങൾക്ക് ഈ സ്ക്രീനിൽ പരീക്ഷിച്ച് നോക്കാം. ഏത് സമയത്തും നിങ്ങൾക്ക് ഈ വിവരങ്ങൾ TalkBack ക്രമീകരണത്തിൽ അവലോകനം ചെയ്യാം.</string>
   <string name="new_gesture_notification_title">TalkBack-ൽ പുതിയ വിരൽചലനങ്ങൾ</string>
   <string name="new_gesture_notification_content">പുതിയ വിരൽചലനങ്ങൾ ഉപയോഗിച്ച് TalkBack വേഗത്തിൽ എങ്ങനെ ഉപയോഗിക്കാമെന്ന് മനസ്സിലാക്കാൻ ടാപ്പ് ചെയ്യുക.</string>
   <string name="dump_node_tree_description">നോട് ട്രീ, ലോഗുകളിൽ അച്ചടിച്ചു.</string>
   <string name="report_gesture_description">അടുത്തിടെ നിറവേറ്റിയ ജെസ്‌റ്ററുകൾ ഇത്, ഏത് ജെസ്‌റ്ററാണ് തെറ്റ്, എന്താണ് പ്രതീക്ഷിച്ചത് എന്ന് റിപ്പോർട്ട് ചെയ്യുക.</string>
-  <string name="update_welcome_text_content">ബ്ലൂടൂത്ത് ഉപകരണങ്ങൾ കണക്റ്റ് ചെയ്യാനുള്ള മാർഗ്ഗമായ HID വഴി നിങ്ങൾക്ക് ഇപ്പോൾ ബ്രെയ്‌ലി ഡിസ്പ്ലേകളിലേക്ക് കണക്റ്റ് ചെയ്യാം. നിങ്ങളുടെ നിർമ്മാതാവിൽ നിന്ന് ഏറ്റവും പുതിയ ഫേംവെയർ നേടിയെന്ന് ഉറപ്പാക്കിയ ശേഷം നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്പ്ലേയിൽ ബ്ലൂടൂത്ത് ഓണാക്കുക. TalkBack ക്രമീകരണം &gt; ബ്രെയ്‌ലി ഡിസ്പ്ലേ എന്ന ക്രമത്തിൽ പോയി \"ബ്രെയ്‌ലി ഡിസ്പ്ലേ\" ഓണാക്കുക. ഉപകരണങ്ങളുടെ ലിസ്റ്റിൽ നിങ്ങളുടെ ഉപകരണം കണ്ടെത്തുക, തുടർന്ന് അതിലേക്ക് കണക്റ്റ് ചെയ്യുക.</string>
-  <string name="update_welcome_text_content_tts">ബ്ലൂടൂത്ത് ഉപകരണങ്ങൾ കണക്റ്റ് ചെയ്യാനുള്ള മാർഗ്ഗമായ HID വഴി നിങ്ങൾക്ക് ഇപ്പോൾ ബ്രെയ്‌ലി ഡിസ്പ്ലേകളിലേക്ക് കണക്റ്റ് ചെയ്യാം. നിങ്ങളുടെ നിർമ്മാതാവിൽ നിന്ന് ഏറ്റവും പുതിയ ഫേംവെയർ നേടിയെന്ന് ഉറപ്പാക്കിയ ശേഷം നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്പ്ലേയിൽ ബ്ലൂടൂത്ത് ഓണാക്കുക. TalkBack ക്രമീകരണത്തിൽ ബ്രെയ്‌ലി ഡിസ്പ്ലേ സന്ദർശിക്കുക, തുടർന്ന് \"ബ്രെയ്‌ലി ഡിസ്പ്ലേ ഉപയോഗിക്കുക\" ഓണാക്കുക. ഉപകരണങ്ങളുടെ ലിസ്റ്റിൽ നിങ്ങളുടെ ഉപകരണം കണ്ടെത്തുക, തുടർന്ന് അതിലേക്ക് കണക്റ്റ് ചെയ്യുക.</string>
-  <string name="update_welcome_text_content_with_link">TalkBack-ന്റെ സഹായത്തോടെ, നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്പ്ലേ ഉപയോഗിക്കുന്നത് എങ്ങനെയെന്ന് അറിയുക.</string>
   <string name="update_welcome_talkback_16.1">ഈ TalkBack അപ്‌ഡേറ്റ്, കൂടുതൽ ഭാഷകളിൽ \'സ്‌ക്രീൻ വിവരിക്കുക\' എന്നതിനുള്ള പിന്തുണയും TalkBack ഉപയോഗിക്കാൻ എളുപ്പമാക്കുന്ന മറ്റ് നിലവാര മെച്ചപ്പെടുത്തലുകളും അവതരിപ്പിക്കുന്നു.\n\nഅടുത്ത ഏതാനും സ്‌ക്രീനുകളിൽ നിങ്ങൾക്ക് ഈ മാറ്റങ്ങളെ കുറിച്ച് കൂടുതൽ അറിയാനാകും.\n\nTalkBack ക്രമീകരണം &gt; TalkBack-ലെ പുതിയ ഫീച്ചറുകൾ എന്നതിൽ നിങ്ങൾക്ക് ഈ വിവരങ്ങൾ പിന്നീട് അവലോകനം ചെയ്യാം.</string>
   <string name="update_welcome_talkback_16.1_tts">ഈ TalkBack അപ്‌ഡേറ്റ്, കൂടുതൽ ഭാഷകളിൽ \'സ്‌ക്രീൻ വിവരിക്കുക\' എന്നതിനുള്ള പിന്തുണയും TalkBack ഉപയോഗിക്കാൻ എളുപ്പമാക്കുന്ന മറ്റ് നിലവാര മെച്ചപ്പെടുത്തലുകളും അവതരിപ്പിക്കുന്നു.\n\nഅടുത്ത ഏതാനും സ്‌ക്രീനുകളിൽ നിങ്ങൾക്ക് ഈ മാറ്റങ്ങളെ കുറിച്ച് കൂടുതൽ അറിയാനാകും.\n\nTalkBack ക്രമീകരണം, തുടർന്ന് TalkBack-ലെ പുതിയ ഫീച്ചറുകൾ എന്നതിൽ നിങ്ങൾക്ക് ഈ വിവരങ്ങൾ പിന്നീട് അവലോകനം ചെയ്യാം.</string>
-  <string name="describe_screen_and_qna_title">സ്‌‌ക്രീൻ വിവരിക്കുക, Gemini-യോട് ചോദിക്കുക എന്നിവയ്ക്കുള്ള പുതിയ ഭാഷകൾ</string>
-  <string name="describe_screen_and_qna_content">സ്‌‌ക്രീൻ വിവരിക്കുക, Gemini-യോട് ചോദിക്കുക എന്നിവ ഇപ്പോൾ കൂടുതൽ ഭാഷകളിൽ ലഭ്യമാണ്. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;സഹായകേന്ദ്രത്തിൽ കൂടുതലറിയുക&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">വോയ്‌സ് ടൈപ്പിംഗിനുള്ള കുറുക്കുവഴി</string>
   <string name="shortcut_for_dictation_content">Gboard ഉപയോഗിക്കുമ്പോൾ, വോയ്‌സ് ടൈപ്പിംഗ് ആരംഭിക്കാനോ നിർത്താനോ നിങ്ങൾക്ക് ഇപ്പോൾ രണ്ട് വിരലുകൾ കൊണ്ടുള്ള ഡബിൾ ടാപ്പ് ഉപയോഗിക്കാം.
 &lt;br&gt;
 &lt;br&gt;നിങ്ങളുടെ കൈവശമുള്ളത് &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play-യിൽ നിന്നുള്ള Gboard-ന്റെ&lt;/a&gt; ഏറ്റവും പുതിയ പതിപ്പാണെന്ന് ഉറപ്പാക്കുക.</string>
   <string name="shortcut_for_dictation_content_without_google_play">സ്ക്രീനിൽ Gboard ഉള്ളപ്പോൾ, ശബ്ദം കേട്ടെഴുതൽ ആരംഭിക്കാനായി ഇപ്പോൾ നിങ്ങൾക്ക് രണ്ട് വിരലുകൾ കൊണ്ടുള്ള ഡബിൾ ടാപ്പ് ഉപയോഗിക്കാം, തുടർന്ന് രണ്ട് വിരലുകൾ കൊണ്ട് ഡബിൾ ടാപ്പ് ചെയ്ത് അത് നിർത്തുകയും ചെയ്യാം.</string>
-  <string name="keyboard_title">കീബോർഡ്</string>
-  <string name="keyboard_content">TalkBack-ൽ ഇപ്പോൾ അതിന്റെ കീബോർഡിനായി, വൈവിധ്യമാർന്ന പുതിയ കമാൻഡുകളും കുറുക്കുവഴികളും അടങ്ങിയ \"മെച്ചപ്പെടുത്തിയ കീമാപ്പ്\" ലഭ്യമാണ്. കൂടുതൽ ഫലപ്രദമായ നാവിഗേഷനായുള്ള \"ബ്രൗസ് മോഡ്\" ഉൾപ്പെടുന്ന ഈ മെച്ചപ്പെടുത്തൽ, ഫിസിക്കൽ കീബോർഡിനെ ആശ്രയിക്കുന്ന ഉപയോക്താക്കൾക്കായി നാവിഗേഷനും ഇടപഴകലും ലളിതമാക്കുന്നു. TalkBack ക്രമീകരണം &gt; വിപുലമായ ക്രമീകരണം &gt; കീബോർഡ് കുറുക്കുവഴികൾ എന്നിങ്ങനെ പോയി നിങ്ങൾക്ക് \"മെച്ചപ്പെടുത്തിയ കീമാപ്പിലേക്ക്\" മാറാം.</string>
-  <string name="keyboard_content_tts">TalkBack-ൽ ഇപ്പോൾ അതിന്റെ കീബോർഡിനായി, വൈവിധ്യമാർന്ന പുതിയ കമാൻഡുകളും കുറുക്കുവഴികളും അടങ്ങിയ \"മെച്ചപ്പെടുത്തിയ കീമാപ്പ്\" ലഭ്യമാണ്. കൂടുതൽ ഫലപ്രദമായ നാവിഗേഷനായുള്ള \"ബ്രൗസ് മോഡ്\" ഉൾപ്പെടുന്ന ഈ മെച്ചപ്പെടുത്തൽ, ഫിസിക്കൽ കീബോർഡിനെ ആശ്രയിക്കുന്ന ഉപയോക്താക്കൾക്കായി നാവിഗേഷനും ഇടപഴകലും ലളിതമാക്കുന്നു. TalkBack ക്രമീകരണം, വിപുലമായ ക്രമീകരണം, കീബോർഡ് കുറുക്കുവഴികൾ എന്നിങ്ങനെ പോയി നിങ്ങൾക്ക് \"മെച്ചപ്പെടുത്തിയ കീമാപ്പിലേക്ക്\" മാറാം.</string>
-  <string name="reduce_delay_title">കാലതാമസം കുറയ്ക്കുക</string>
-  <string name="reduce_delay_content">സ്‌പർശനത്തിലൂടെ അടുത്തറിയുന്നതിനും ടൈപ്പിംഗിനുമുള്ള TalkBack അറിയിപ്പുകളിലെ കാലതാമസങ്ങൾ നിങ്ങൾക്കിപ്പോൾ കുറയ്ക്കാം. ഈ ക്രമീകരണം കാണാൻ, TalkBack ക്രമീകരണം &gt; വിപുലമായ ക്രമീകരണം &gt; കാലതാമസം കുറയ്ക്കുക എന്നിങ്ങനെ പോകുക.</string>
-  <string name="reduce_delay_content_tts">സ്‌പർശനത്തിലൂടെ അടുത്തറിയുന്നതിനും ടൈപ്പിംഗിനുമുള്ള TalkBack അറിയിപ്പുകളിലെ കാലതാമസങ്ങൾ നിങ്ങൾക്കിപ്പോൾ കുറയ്ക്കാം. ഈ ക്രമീകരണം കാണാൻ, TalkBack ക്രമീകരണം, വിപുലമായ ക്രമീകരണം, കാലതാമസം കുറയ്ക്കുക എന്നിങ്ങനെ പോകുക.</string>
-  <string name="customize_braille_keyboard_improvements_title">ബ്രെയ്‌ലി കീബോർഡ് ജെസ്ച്ചറുകൾ ഇഷ്ടാനുസൃതമാക്കുക</string>
-  <string name="customize_braille_keyboard_improvements_content">സ്ക്രീനിലുള്ള വെർച്വൽ ബ്രെയ്‌ലി കീബോർഡിനായി ഇപ്പോൾ ജെസ്ച്ചറുകൾ ഇഷ്ടാനുസൃതമാക്കാവുന്നതാണ്. ഇഷ്ടാനുസൃതമാക്കാൻ, TalkBack ക്രമീകരണം &gt; ബ്രെയ്‌ലി കീബോർഡ് &gt; ജെസ്ച്ചറുകൾ എന്നിങ്ങനെ പോകുക.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">സ്ക്രീനിലുള്ള വെർച്വൽ ബ്രെയ്‌ലി കീബോർഡിനായി ഇപ്പോൾ ജെസ്ച്ചറുകൾ ഇഷ്ടാനുസൃതമാക്കാവുന്നതാണ്. ഇഷ്ടാനുസൃതമാക്കാൻ, TalkBack ക്രമീകരണം, ബ്രെയ്‌ലി കീബോർഡ്, ജെസ്ച്ചറുകൾ എന്നിങ്ങനെ പോകുക.</string>
-  <string name="learn_more_about_braille_keyboard">ബ്രെയ്‌ലി കീബോർഡിനെ കുറിച്ച് കൂടുതലറിയുക</string>
-  <string name="other_changes_title">മറ്റ് മാറ്റങ്ങൾ</string>
-  <string name="other_changes_content">ഇപ്പോൾ TalkBack അബദ്ധത്തിൽ ഓണായാൽ അത് വേഗത്തിൽ ഓഫാക്കാൻ, സ്ക്രീനിൽ കാണിക്കുന്ന സന്ദേശം സഹായിക്കുന്നു. TalkBack ക്രമീകരണം &gt; TalkBack ഓഫാക്കുന്നതിനുള്ള നിർദ്ദേശങ്ങൾ കാണിക്കുക എന്നിങ്ങനെ പോയി നിങ്ങൾക്കിത് ഓഫാക്കാം.</string>
-  <string name="other_changes_content_tts">ഇപ്പോൾ TalkBack അബദ്ധത്തിൽ ഓണായാൽ അത് വേഗത്തിൽ ഓഫാക്കാൻ, സ്ക്രീനിൽ കാണിക്കുന്ന സന്ദേശം സഹായിക്കുന്നു. TalkBack ക്രമീകരണം, TalkBack ഓഫാക്കുന്നതിനുള്ള നിർദ്ദേശങ്ങൾ കാണിക്കുക എന്നിങ്ങനെ പോയി നിങ്ങൾക്കിത് ഓഫാക്കാം.</string>
-  <string name="keymap_changes_content">ക്ലാസിക് കീമാപ്പ്, ഡിഫോൾട്ട് കീമാപ്പിലേക്ക് മാറ്റി, അതിൽ കൂടുതൽ കുറുക്കുവഴികൾ ഉൾപ്പെടുന്നു.</string>
   <string name="announcing_text_formatting_title">ടെക്‌സ്‌റ്റ് ഫോർമാറ്റിംഗ് പ്രഖ്യാപിക്കൽ</string>
   <string name="announcing_text_formatting_header">ബോൾഡ്, ഇറ്റാലിക്‌സ്, ടെക്‌സ്റ്റിന്റെ നിറം എന്നിവ പോലെ, ടെക്‌സ്റ്റ് ഫോർമാറ്റിംഗിലെ മാറ്റങ്ങൾ പ്രഖ്യാപിക്കാൻ ഇപ്പോൾ TalkBack-ന് കഴിയും. ആരംഭിക്കുന്നതിന്:</string>
   <string name="announcing_text_formatting_option1">ഫോർമാറ്റ് ചെയ്ത ഇനത്തിൽ ഫോക്കസ് ചെയ്ത് TalkBack മെനു തുറന്ന് \"ടെക്സ്റ്റ് ഫോർമാറ്റിംഗ് വിവരിക്കുക\" തിരഞ്ഞെടുക്കുക, അല്ലെങ്കിൽ</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">കോളുകൾ എങ്ങനെ ചെയ്യാം, സന്ദേശങ്ങൾ എങ്ങനെ അയയ്‌ക്കാം എന്നിവയും മറ്റും മനസ്സിലാക്കൂ</string>
   <string name="practice_gestures_link_text">ജെസ്ച്ചറുകൾ പരിശീലിക്കുക</string>
   <string name="practice_gestures_link_subtext">വ്യത്യസ്ത ജെസ്ച്ചറുകളുടെ ഉപയോഗത്തെ കുറിച്ച് അറിയാൻ അവ പരീക്ഷിച്ച് നോക്കുക</string>
-  <string name="help_and_feedback_link_subtext">TalkBack-നെ കുറിച്ച് കൂടുതലറിയുക, ഫീഡ്ബാക്ക് അയയ്ക്കുക</string>
   <string name="choose_tutorial_title">TalkBack-മായി എങ്ങനെ ഇടപഴകണമെന്ന് തിരഞ്ഞെടുക്കുക</string>
   <string name="touch_tutorial_button">ടച്ച് ട്യൂട്ടോറിയൽ</string>
   <string name="keyboard_tutorial_button">കീബോർഡ് ട്യൂട്ടോറിയൽ</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">ചുവടെ ഇത് പരീക്ഷിക്കുക.</string>
   <string name="wear_training_typing_practice_button_content_description">കീബോർഡ് ഉപയോഗിച്ച് ടൈപ്പ് ചെയ്യുക</string>
   <string name="wear_training_end_tutorial_title">TalkBack ഉപയോഗിച്ച് തുടങ്ങാൻ നിങ്ങൾ തയ്യാറാണ്</string>
-  <string name="talkback_updated_notification_title">TalkBack അപ്‌ഡേറ്റ് ചെയ്‌തു</string>
-  <string name="talkback_updated_notification_content">കൂടുതൽ കണ്ടെത്താൻ ടാപ്പ് ചെയ്യുക</string>
   <string name="wear_new_feature_page_title">അപ്ഡേറ്റ് ചെയ്‌ത TalkBack-ലേക്ക് സ്വാഗതം</string>
   <string name="wear_new_feature_page_content">ചില ബഗ് പരിഹരിക്കലുകളും ഫോക്കസ് നീങ്ങുന്ന രീതിയിലെ മാറ്റങ്ങളും നിങ്ങൾ ശ്രദ്ധിച്ചേക്കാം</string>
   <string name="wear_new_feature_page_button_content_description">പൂർത്തിയാക്കുക</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">നീല</string>
   <string name="title_pref_grey">ചാരനിറം</string>
   <string name="survey_setting_title">നിങ്ങളുടെ ഫീഡ്ബാക്ക് പങ്കിടുക</string>
-  <string name="survey_closed">സർവേ അവസാനിച്ചു</string>
   <string name="title_summarize_view">സ്‌‌ക്രീൻ വിവരിക്കുക</string>
-  <string name="title_increase_touch_focus_latency">ഫോക്കസ് ഡിലേ കൂട്ടുക</string>
-  <string name="title_decrease_touch_focus_latency">ഫോക്കസ് ഡിലേ കുറയ്ക്കുക</string>
   <string name="detected_result">കണ്ടെത്തി: %1$s</string>
   <string name="title_image_caption">ചിത്രം വിവരിക്കുക</string>
   <string name="image_caption_with_gemini_prefix">ഈ ചിത്രം വിവരിക്കൂ. പ്രതികരണത്തിൽ മാർക്കപ്പ് ഉപയോഗിക്കരുത്.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ഉപയോക്താവ്: %1$s</string>
   <string name="image_qna_answer_prefix">മോഡൽ: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Continue alternating USER and MODEL turns] ...</string>
-  <string name="screen_overview_with_screenshot">ഫോണിന്റെ സ്‌ക്രീനിലുള്ളത് എന്താണെന്ന് മനസ്സിലാക്കുന്നതിന് തങ്ങളുടെ ഫോൺ കാണാൻ കഴിയാത്ത ആളുകളെ സഹായിക്കുക എന്നതാണ് നിങ്ങളുടെ ജോലി. ഏതാനും വാചകങ്ങളിൽ ഈ സ്‌ക്രീൻഷോട്ട് വിവരിക്കുക.
-
-നിർദ്ദേശങ്ങൾ
-\"സ്‌ക്രീനിൽ കാണിക്കുന്നത്\" എന്ന് പറഞ്ഞുകൊണ്ട് നിങ്ങളുടെ പ്രതികരണം ആരംഭിക്കുക
-സ്‌ക്രീനിലെ ഏറ്റവും പ്രധാനപ്പെട്ടതും ശ്രദ്ധേയവുമായ ഉള്ളടക്കം വിവരിച്ചുകൊണ്ട് ആയിരിക്കണം പ്രതികരണം ആരംഭിക്കേണ്ടത്. വിവരിക്കേണ്ട ഏറ്റവും പ്രധാനപ്പെട്ടതും ശ്രദ്ധേയവുമായ ഉള്ളടക്കത്തിന്റെ ചില ഉദാഹരണങ്ങൾ ചുവടെ നൽകിയിരിക്കുന്നു
-* ചാറ്റ് ആപ്പിൽ: അയച്ചയാൾ, ഏറ്റവും പുതിയ സന്ദേശത്തിലെ ടെക്‌സ്‌റ്റ്
-* സോഷ്യൽ മീഡിയ ആപ്പിൽ: ആദ്യ പോസ്‌റ്റും അത് പോസ്‌റ്റ് ചെയ്‌തത് ആരാണെന്നതും, കൂടാതെ ചിത്രത്തിലെ ടെക്‌സ്‌റ്റും വിവരണവും
-* വാർത്താ ആപ്പിൽ: ലേഖനത്തിന്റെ പേരും പ്രാഥമിക ചിത്രത്തിന്റെ വിവരണവും
-* ഷോപ്പിംഗ് ആപ്പിൽ: കാണിച്ചിരിക്കുന്ന ഉൽപ്പന്നത്തിന്റെ വിവരണവും വിലയും
-* കലണ്ടർ ആപ്പിൽ: അടുത്ത ഇവന്റും അതിന് ശേഷം കാണിക്കുന്ന മറ്റ് ഇവന്റുകളുടെ എണ്ണവും
-* സന്ദേശങ്ങളുടെ ലിസ്‌റ്റിൽ: ആദ്യ സന്ദേശത്തിന്റെ പേരും പ്രിവ്യൂവും, ഇതിന് ശേഷം മാത്രം അടുത്തതായി ലിസ്‌റ്റിലുള്ള ഏതാനും എണ്ണത്തിന്റെ പേരുകൾ, തുടർന്ന് വായിക്കാത്ത സന്ദേശങ്ങളുടെ എണ്ണം
-
-അതിന് ശേഷം, സ്‌പേഷ്യൽ ലൊക്കേഷനും നാവിഗേഷൻ ബാറുകളുടെ ഉദ്ദേശവും പ്രധാന ബട്ടണുകളും പ്രതികരണത്തിൽ വിവരിക്കണം.
-മുകളിൽ സ്‌റ്റാറ്റസ് ബാറിലുള്ള ഉള്ളടക്കം പരാമർശിക്കരുത് (ഉദാ: സമയം, നെറ്റ്‌വർക്ക് സ്‌റ്റാറ്റസ്, ബാറ്ററി).
-നിങ്ങളുടെ പ്രതികരണത്തിൽ മാർക്ക്‌ഡൗൺ ഉപയോഗിക്കരുത്.</string>
   <string name="title_gemini_opt_in_dialog">വിശദമായ ചിത്ര വിവരണങ്ങൾ നേടണോ?</string>
   <string name="title_on_device_gemini_opt_in_dialog">ചിത്ര വിവരണങ്ങൾ നേടണോ?</string>
   <string name="title_gemini_result_dialog">തിരിച്ചറിഞ്ഞു: ചിത്രം</string>
   <string name="title_gemini_result_bottom_sheet">ചിത്രത്തിന്റെ വിവരണം</string>
   <string name="title_gemini_screen_overview_result_dialog">സ്‌ക്രീൻ വിവരണം</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">സംഗ്രഹം</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">പ്രവർത്തനങ്ങൾ</string>
   <string name="positive_button_gemini_opt_in_dialog">ഓണാക്കുക</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">ഞാൻ അംഗീകരിക്കുന്നു</string>
   <string name="negative_button_gemini_opt_in_dialog">വേണ്ട</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">ക്രമീകരണത്തിലേക്ക് പോകുക</string>
-  <string name="positive_button_gemini_download_dialog">ഡൗൺലോഡ് ചെയ്ത് ഓണാക്കുക</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">ടെക്സ്റ്റ്, \"%1$s\".</string>
   <string name="detected_icon_label">ഐക്കൺ, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">സ്ക്രീൻ സംഗ്രഹിക്കാനാകുന്നില്ല</string>
   <string name="image_caption_no_result">ചിത്രത്തിന് വിവരണം നൽകാനാകില്ല</string>
   <string name="image_caption_with_hide_screen">സ്‌ക്രീൻ മറച്ചിരിക്കുമ്പോൾ ചിത്ര വിവരണങ്ങൾ ലഭ്യമല്ല. സ്‌ക്രീൻ മറച്ചത് മാറ്റിയ ശേഷം വീണ്ടും ശ്രമിക്കുക.</string>
-  <string name="feedback_button_state_set">തിരഞ്ഞെടുത്തു</string>
-  <string name="feedback_button_state_unset">തിരഞ്ഞെടുത്തിട്ടില്ല</string>
   <string name="action_text_like_button">നല്ല പ്രതികരണം എന്ന് അടയാളപ്പെടുത്തുക</string>
   <string name="action_text_dislike_button">മോശം പ്രതികരണം എന്ന് അടയാളപ്പെടുത്തുക</string>
   <string name="action_text_clear_like_button">നല്ല പ്രതികരണം മായ്ക്കുക</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">സ്വയമേവയുള്ള ചിത്ര, ഐക്കൺ വിവരണങ്ങൾ ഡൗൺലോഡ് ചെയ്യുന്നു</string>
   <string name="download_all_image_captioning_successful_hint">സ്വയമേവയുള്ള ചിത്ര, ഐക്കൺ വിവരണങ്ങൾ ഡൗൺലോഡ് ചെയ്തു</string>
   <string name="download_all_image_captioning_failed_hint">ഡൗൺലോഡ് ചെയ്യാനാകുന്നില്ല. പിന്നീട് വീണ്ടും ശ്രമിക്കുക.</string>
-  <string name="download_complete_notification_title">ഡൗൺലോഡ് പൂർത്തിയായി</string>
-  <string name="download_complete_notification_content">നിങ്ങൾക്ക് ഇപ്പോൾ TalkBack ഉപയോഗിച്ച് ചിത്രവും ഐക്കണും സംബന്ധിച്ച സ്വയമേവയുള്ള വിവരണങ്ങൾ കേൾക്കാം</string>
-  <string name="download_complete_notification_action">ക്രമീകരണം</string>
   <string name="download_storage_error_hint">സ്‌റ്റോറേജ് നിറഞ്ഞു. ഡൗൺലോഡ് ചെയ്യാൻ, ക്രമീകരണം &gt; സ്റ്റോറേജ് എന്നതിൽ %1$d MB ഇടം സൃഷ്ടിക്കുക.</string>
   <string name="download_network_error_hint">ഡൗൺലോഡ് ചെയ്യാനാകുന്നില്ല. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.</string>
   <string name="switch_icon_detection_dialog_title">സ്വയമേവയുള്ള ഐക്കൺ വിവരണങ്ങൾ</string>
   <string name="switch_icon_detection_dialog_message">ഐക്കണിൽ ഫോക്കസ് ചെയ്യുമ്പോൾ വിവരണങ്ങൾ കേൾക്കുക</string>
   <string name="switch_image_description_dialog_message">ചിത്രത്തിൽ ഫോക്കസ് ചെയ്യുമ്പോൾ വിവരണങ്ങൾ കേൾക്കുക. ചില ആപ്പുകൾ ഇതിനെ പിന്തുണച്ചേക്കില്ല.</string>
-  <string name="switch_text_recognition_dialog_title">ചിത്രങ്ങളിലെ ടെക്സ്റ്റ് സ്വയമേവ വിവരിക്കുക</string>
   <string name="switch_text_recognition_dialog_message">ടെക്സ്റ്റ് അടങ്ങിയിരിക്കുന്ന ചിത്രത്തിൽ ഫോക്കസ് ചെയ്യുമ്പോൾ വിവരണങ്ങൾ കേൾക്കുക</string>
   <string name="switch_auto_image_caption_dialog_subtitle">ഡൗൺലോഡ് ചെയ്തു</string>
-  <string name="disable_auto_image_caption_dialog_subtext">TalkBack മെനുവിൽ നിന്ന് തുടർന്നും നിങ്ങൾക്ക് തിരഞ്ഞെടുത്ത ചിത്രത്തിന്റെ വിവരണങ്ങൾ നേടാം</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">ശരി</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">ഡൗൺലോഡ് ചെയ്തത് ഇല്ലാതാക്കുക</string>
   <string name="delete_icon_detection_dialog_title">സ്വയമേവയുള്ള ഐക്കൺ വിവരണങ്ങൾ ഇല്ലാതാക്കണോ?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">TalkBack-ൽ Gemini ഉപയോഗിക്കുക</string>
   <string name="gemini_disable_dialog_message">Gemini ഉപയോഗിച്ചുള്ള സ്ക്രീൻ മനസ്സിലാക്കൽ</string>
   <string name="disable_gemini_dialog_subtext">Gemini ഉപയോഗിച്ചുള്ള സ്ക്രീൻ മനസ്സിലാക്കൽ പ്രവർത്തനക്ഷമമാക്കാൻ ഓണാക്കുക</string>
-  <string name="ai_services_update_dialog_title">ചിത്രങ്ങൾ വിവരിക്കുന്നതിന് %1$s ആപ്പ് അപ്‌ഡേറ്റ് ചെയ്യുക</string>
-  <string name="ai_services_update_dialog_message">ചിത്രത്തിന്റെ വിവരണങ്ങൾ കേൾക്കുന്നതിന്, Google Play-യിൽ നിന്ന് %1$s  എന്നതിന്റെ ഏറ്റവും പുതിയ പതിപ്പ് നേടുക.\n\nഡൗൺലോഡ് ചെയ്യുന്നത് പൂർത്തിയായി കഴിഞ്ഞ്, TalkBack ക്രമീകരണത്തിലേക്ക് മടങ്ങിയെത്തി ചിത്രത്തിന്റെ സ്വയമേവയുള്ള വിവരണങ്ങൾ വീണ്ടും ഓണാക്കുക.</string>
-  <string name="ai_services_update_dialog_button_text">Google Play-യിലേക്ക് പോകുക</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">എന്തോ പിശകുണ്ടായി. വീണ്ടും ശ്രമിക്കുക.</string>
   <string name="gemini_block_message">ഈ ചിത്രം പ്രോസസ് ചെയ്യാനാകില്ല</string>
   <string name="gemini_network_error">ഇന്റർനെറ്റ് കണക്ഷനില്ല. നിങ്ങളുടെ വൈഫൈ അല്ലെങ്കിൽ മൊബൈൽ നെറ്റ്‌വർക്ക് പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Gemini-യ്ക്കുള്ള ചോദ്യം ടൈപ്പ് ചെയ്യുക</string>
   <string name="image_qna_send_button_text">ചോദിക്കുക</string>
   <string name="image_qna_speak_question_description">ചോദ്യം ചോദിക്കുക</string>
-  <string name="overviews_summary_intro">ഈ ആപ്പ് സ്‌ക്രീനിന്റെ സംഗ്രഹം: %1$s</string>
   <string name="overviews_node_not_found">ക്ഷമിക്കണം, എനിക്ക് ഇപ്പോൾ സ്ക്രീനിന്റെ ആ ഭാഗം കണ്ടെത്താൻ കഴിയില്ല.</string>
-  <string name="overviews_images_in_app">കണ്ടെത്തിയ പ്രധാനപ്പെട്ട ചിത്രങ്ങൾ</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">ആപ്പിലെ പ്രവർത്തനങ്ങൾ</string>
-  <string name="overviews_actions_in_app_description">ഈ ആപ്പ് സ്‌ക്രീനിൽ നിന്ന് നിങ്ങൾക്ക് ചെയ്യാനാകുന്ന പ്രധാനപ്പെട്ട പ്രവർത്തനങ്ങൾ ഇതാ:</string>
-  <string name="overviews_parent_type">ആപ്പിലെ പ്രവർത്തനങ്ങൾ</string>
   <string name="text_replaced_feedback">ടെക്സ്റ്റ് മാറ്റി പകരം മറ്റൊന്ന് നൽകി</string>
   <string name="switch_gesture_set">ജെസ്‌ച്ചർ സെറ്റ് മാറുക</string>
   <string name="switch_gesture_set_to">%1$d എന്ന ജെസ്‌ച്ചർ സെറ്റിലേക്ക് മാറുക</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">അടയ്ക്കുക</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">നിങ്ങളുടെ സ്‌ക്രീൻ ഓഫായിരിക്കുമ്പോൾ അറിയിപ്പുകൾ കേൾക്കാൻ, TalkBack വെർബോസിറ്റി ക്രമീകരണത്തിൽ \"സ്‌ക്രീൻ ഓഫായിരിക്കുമ്പോൾ അറിയിപ്പുകൾ പറയുക\" എന്നത് ഓണാക്കുക</string>
 </resources>

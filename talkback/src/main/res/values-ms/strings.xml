@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Apabila TalkBack dihidupkan, TalkBack menyediakan maklum balas yang dituturkan supaya anda boleh menggunakan peranti anda tanpa melihat skrin. TalkBack adalah khusus untuk situasi atau orang yang menghadapi kesukaran melihat skrin.&lt;br&gt;&lt;br&gt;&lt;b&gt;Cara menggunakan TalkBack&lt;/b&gt;&lt;br&gt;• Leret ke kanan atau ke kiri untuk beralih antara item&lt;br&gt;• Ketik dua kali untuk mengaktifkan item&lt;br&gt;• Seret 2 jari untuk menatal skrin&lt;br&gt;&lt;b&gt;Cara mematikan TalkBack&lt;/b&gt;&lt;br&gt;1. Dalam Tetapan, ketik &lt;b&gt;Gunakan TalkBack&lt;/b&gt;. Garis bentuk akan dipaparkan. Ketik dua kali pada garis bentuk.&lt;br&gt;2. Pada mesej pengesahan, ketik &lt;b&gt;Berhenti&lt;/b&gt;. Garis bentuk akan dipaparkan. Ketik dua kali pada garis bentuk.</string>
   <string name="talkback_service_summary">Gunakan pembaca skrin untuk mendengar item dituturkan dengan kuat</string>
   <string name="talkback_preferences_title">Tetapan TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Tetapan</string>
   <string name="tts_preferences_title">Teks kepada pertuturan</string>
   <string name="language_options">Bahasa</string>
   <string name="spoken_language">Bahasa pertuturan</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Carian dibatalkan.</string>
   <string name="notification_type_status_started">Dimulakan</string>
   <string name="notification_type_status_stopped">Dihentikan</string>
-  <string name="notification_type_status_connected">disambungkan</string>
-  <string name="notification_battery_level_unknown">tidak diketahui</string>
   <string name="notification_battery_saver_mode">Penjimat bateri dihidupkan</string>
   <string name="template_no_text_selected">Tiada teks yang dipilih</string>
   <string name="template_charging">Mengecas %1$s Aras bateri %2$s peratus.</string>
   <string name="template_charging_lite">Mengecas %1$s</string>
-  <string name="template_battery_state">Kuasa %1$s %2$s peratus %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Pendering bergetar.</string>
   <string name="value_ringer_silent">Pendering senyap.</string>
   <string name="value_screen_on">Skrin dihidupkan.</string>
   <string name="value_screen_off">Skrin dimatikan.</string>
   <string name="value_device_unlocked">Peranti dibuka kunci.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Kelantangan pertuturan</string>
-  <string name="title_pref_speech_rate">Kadar pertuturan</string>
-  <string name="summary_pref_speech_rate">Kelajuan pertuturan teks</string>
   <string name="title_pref_verbose_scroll_announcement">Sentiasa sebut bilangan item senarai</string>
   <string name="summary_pref_verbose_scroll_announcement">Sebut kiraan untuk semua kaedah penatalan</string>
   <string name="title_pref_cover_proximity_sensor">Tutup penderia kehampiran untuk menghentikan pertuturan</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Maklumkan masa</string>
   <string name="pref_speak_time_summary">Apabila anda menghidupkan skrin</string>
   <string name="summary_speak_container_element_positions">Merangkumi maklumat semasa memasuki dan keluar daripada senarai, grid dan bekas lain</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Penangguhan fokus telah ditambah pada kawalan bacaan</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Leret dengan 3 jari untuk menggunakan kawalan bacaan dan tukar penangguhan fokus pada bila-bila masa</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Beralih kepada mod angkat untuk menaip?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Apabila penangguhan fokus penaipan ditetapkan di bawah 0.3 saat, ketik dua kali untuk menaip akan menjadi sangat sukar untuk dilakukan. Pilih \"Tukar\" untuk menukar kepada mod angkat untuk menaip secara automatik.\n\nUntuk menggunakan mod angkat untuk menaip, tahan jari anda untuk memilih sebarang kekunci, kemudian angkat untuk menulis.\n\nAnda boleh menyesuaikan perkara ini dalam tetapan TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Penangguhan fokus menaip telah ditambah pada kawalan bacaan</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Jika anda menghadapi masalah dengan ketik dua kali semasa menaip, leret dengan 3 jari untuk menggunakan kawalan bacaan dan tukar kepada penangguhan fokus menaip yang lebih lama</string>
-  <string name="gestures_announce_typing_focus_wont_change">Penangguhan fokus penaipan tidak berfungsi tanpa mod Angkat untuk menaip.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">OK</string>
   <string name="reset_letency_reduction_settings_dialog_title">Tetapkan semula tetapan penangguhan?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tetapan ini akan menetapkan semula tetapan penangguhan kepada lalai</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Tetapkan semula</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Tetapan pengurangan kependaman telah ditetapkan semula.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Tukar</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Jangan tukar</string>
   <string name="Reset_gesture_settings_dialog_title">Tetapkan semula gerak isyarat?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Tetapkan semula set gerak isyarat semasa?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Ini akan menetapkan semula semua gerak isyarat kepada tindakan lalai.\n\nAnda akan kehilangan apa-apa perubahan yang telah anda buat.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Tuturkan semua kemaskinian kemajuan</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Merangkumi kemaskinian semasa memuat turun, mengikut arah memandu dan pelbagai lagi. Apabila dimatikan, anda masih menerima kemaskinian tetapi kurang kerap.</string>
   <string name="title_pref_explore_by_touch">Teroka melalui sentuhan</string>
-  <string name="title_pref_category_visual">Visual</string>
   <string name="title_pref_category_controls">Kawalan</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Umum</string>
-  <string name="title_pref_category_advanced">Lanjutan</string>
-  <string name="title_pref_category_others">Lain-lain</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial &amp; bantuan</string>
   <string name="title_pref_category_reduce_latency_summary">Tetapan ini boleh mengurangkan penangguhan sebelum pengumuman TalkBack</string>
   <string name="reset_latency_settings_title">Tetapkan semula semua tetapan penangguhan</string>
   <string name="title_pref_single_tap">Satu ketikan untuk mengaktifkan</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Ubah penunjuk fokus</string>
   <string name="title_pref_category_manage_gestures">Gerak isyarat</string>
   <string name="title_pref_manage_labels">Label tersuai</string>
-  <string name="title_pref_manage_customize_menus">Edit menu</string>
   <string name="title_pref_category_context_menu">Sesuaikan menu Talkback</string>
   <string name="title_pref_category_selector_menu">Sesuaikan kawalan bacaan</string>
   <string name="title_pref_category_navigation_menu">Edit pilihan navigasi</string>
-  <string name="pref_category_context_menu_summary">Untuk menggunakan menu TalkBack, ketik skrin menggunakan 3 jari. Anda juga boleh meleret ke atas kemudian ke kanan, atau meleret ke bawah kemudian ke kanan.</string>
-  <string name="pref_category_context_menu_summary_xr">Untuk menggunakan menu TalkBack, pusingkan tapak tangan kedua anda ke hadapan dan cubit.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Untuk menggunakan menu TalkBack, leret ke bawah kemudian ke kanan.</string>
-  <string name="pref_category_selector_menu_summary">Untuk menggunakan kawalan bacaan, leret ke kiri atau ke kanan menggunakan 3 jari. Anda juga boleh meleret ke atas atau ke bawah menggunakan 3 jari.</string>
-  <string name="pref_category_selector_menu_summary_xr">Untuk menerokai antara kawalan bacaan, pusingkan tapak tangan kedua anda ke hadapan, tahan cubitan anda, alihkan ke kanan atau ke kiri dan lepaskan.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Untuk menggunakan kawalan bacaan, leret ke atas kemudian ke bawah.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan papan kekunci</string>
   <string name="title_pref_export_custom_labels">Eksport label tersuai</string>
-  <string name="title_pref_play_store">Buka TalkBack di Play Store</string>
-  <string name="summary_pref_play_store">Versi semasa TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Bantuan &amp; maklum balas</string>
-  <string name="title_pref_gup">Hubungi sokongan Orang Kurang Upaya Google</string>
-  <string name="subtitle_pref_gup">Dapatkan bantuan menggunakan TalkBack atau laporkan masalah</string>
-  <string name="pref_item_licenses">Lesen Sumber Terbuka</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Bantuan</string>
   <string name="title_pref_show_tos">Syarat Perkhidmatan</string>
   <string name="title_pref_show_privacy_policy">Dasar privasi</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gerak isyarat cap jari</string>
   <string name="title_pref_category_tutorial">Tutorial TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Bantuan</string>
-  <string name="title_pref_category_typing">Menaip</string>
   <string name="title_pref_advanced_settings">Tetapan terperinci</string>
   <string name="title_pref_show_exit_watermark">Tunjukkan arahan untuk mematikan TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Mesej akan menunjukkan apabila TalkBack dihidupkan, untuk membantu anda mematikan TalkBack dengan pantas</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Sesetengah kunci pengubah suai adalah berbeza.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Ketahui lebih lanjut tentang peta kekunci</string>
   <string name="keycombo_go_to_settings">Akses Tetapan</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack sedang bersedia untuk mengalih keluar peta kekunci klasik. Untuk terus menggunakan pintasan papan kekunci, beralih kepada peta kekunci lalai.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Ketahui lebih lanjut</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Tetapan</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Ketahui lebih lanjut</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Kini anda menggunakan peta kekunci lalai TalkBack. Peta kekunci dipertingkat baharu dengan banyak perintah baharu juga tersedia. Ketahui lebih lanjut dalam pusat bantuan atau beralih kepada peta kekunci baharu dalam Tetapan.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Peta kekunci baharu tersedia</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Peta kekunci dipertingkat TalkBack baharu menambahkan banyak perintah baharu. Ketahui lebih lanjut dalam pusat bantuan atau beralih kepada peta kekunci baharu dalam Tetapan.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Kemas kinikan kunci pengubah suai TalkBack anda</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Bukan sekarang</string>
   <string name="keycombo_warning_content_description">Maklumat lanjut tentang kunci pengubah suai anda</string>
-  <string name="keycombo_warning_dialog_title">Kemas kinikan kunci pengubah suai anda</string>
-  <string name="keycombo_warning_dialog_message">Untuk membolehkan pintasan papan kekunci TalkBack berfungsi dengan betul, kemas kinikan kunci pengubah suai anda daripada Tindakan kepada Alt.\n\nJika anda terus menggunakan kunci pengubah suai Tindakan, sesetengah pintasan akan melakukan tindakan yang berbeza untuk versi Android ini.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Peta kekunci</string>
   <string name="keycombo_menu_select_keymap">Pilih peta kekunci</string>
   <string name="keycombo_menu_reset_keymap">Tetapkan semula peta kekunci</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Tingkatkan kelantangan pertuturan</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Kurangkan kelantangan pertuturan</string>
   <string name="keycombo_menu_global_refocus_current_node">Sebutkan fokus semasa</string>
-  <string name="keycombo_menu_category_granularity">Navigasi</string>
   <string name="keycombo_menu_granularity_increase">Tetapan navigasi seterusnya</string>
   <string name="keycombo_menu_granularity_decrease">Tetapan navigasi sebelumnya</string>
   <string name="keycombo_menu_category_other">Tindakan lain</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Adakah anda pasti ingin menetapkan semula kekunci pintasan untuk peta kekunci ini kepada nilai asalnya? Sila ambil perhatian bahawa tindakan ini tidak boleh dibuat asal.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Tetapkan semula</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s dalam mod semak imbas</string>
-  <string name="keycombo_assign_dialog_instruction">Tekan gabungan kekunci untuk menetapkan pintasan baharu yang mesti mengandungi sekurang-kurangnya kekunci ALT atau Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Tekan gabungan kekunci dengan kunci pengubah suai %1$s untuk menetapkan pintasan baharu.</string>
   <string name="keycombo_unassigned">Tidak ditentukan</string>
   <string name="save_button_in_keycombo_assign_dialog">Simpan</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Penangguhan fokus menaip</string>
   <string name="message_pref_touch_explore_latency">Penangguhan fokus menaip yang lebih pendek bermakna pengumuman TalkBack dibuat lebih pantas selepas menyentuh papan kekunci.\n\nPilih penangguhan</string>
   <string name="title_pref_touch_focus_timeout">Fokus penangguhan</string>
-  <string name="summary_pref_touch_focus_time">
-Mengawal kepantasan TalkBack bercakap selepas fokus bergerak. Penangguhan yang lebih pendek menjadikan TalkBack terasa lebih pantas tetapi boleh menjadikan ketik dua dan tiga kali lebih sukar untuk dilakukan.\n\n
-Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kepada ketik dua jari untuk mengaktifkan.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Kendalikan gerak isyarat dalam TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Matikan TalkBack kemudian hidupkan sekali lagi untuk mengaktifkan tetapan.</string>
   <string name="title_pref_auto_image_captioning">Perihalan automatik</string>
@@ -382,28 +332,16 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="dialog_title_turn_on_image_description">Hidupkan perihalan imej dalam Tetapan</string>
   <string name="dialog_message_turn_on_image_description">Anda boleh mencuba lagi selepas menghidupkan perihalan imej automatik atau terperinci</string>
   <string name="title_pref_detailed_image_description">Perihalan imej terperinci</string>
-  <string name="summary_pref_ai_description">Dengar perihalan lebih panjang apabila anda memilih \"%1$s\" daripada menu TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Anda akan mendengar perihalan ringkas apabila anda memfokuskan imej pada peranti yang disokong.\n\nImej diproses pada peranti anda dan tidak akan sekali-kali dihantar kepada Google. \n\nAI Generatif merupakan percubaan, maka fungsi ini akan membuat kesilapan. Dengan meneruskan proses, anda bersetuju untuk menerima <a href="https://policies.google.com/terms/generative-ai">Syarat Perkhidmatan</a> Google.</string>
   <string name="enable_gemini">Hidupkan</string>
   <string name="powered_by_gemini">Dikuasakan oleh AI Generatif</string>
-  <string name="detailed_image_description_ongoing_hint">Mendapatkan perihalan</string>
-  <string name="detailed_image_description_result_prefix">Dikesan: Imej. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Muat turun diperlukan untuk perihalan imej automatik</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Imej akan diproses pada peranti anda dan tidak akan sekali-kali dihantar kepada Google.\n\nAI Generatif bersifat percubaan, maka ciri ini akan membuat kesilapan. Dengan meneruskan proses, anda bersetuju untuk menerima %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Syarat Perkhidmatan Google</string>
   <string name="message_aifeature_downloading">Memuat turun model AI. Proses ini mungkin mengambil sedikit masa. Anda akan diberitahu apabila proses ini selesai.</string>
   <string name="message_aifeature_downloading_with_progress">Proses muat turun belum selesai. %1$d daripada %2$dMB dimuat turun.</string>
-  <string name="message_aifeature_download_complete">Model AI dimuat turun. Kini TalkBack boleh menjana perihalan imej.</string>
   <string name="summary_pref_auto_image_captioning">Untuk ikon, imej dan teks dalam imej</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Untuk teks pada imej</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Untuk imej dan teks pada imej</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Untuk ikon dan teks pada imej</string>
   <string name="summary_pref_module_downloading">Memuat turun…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Dihidupkan untuk semua imej</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Dihidupkan untuk imej tidak berlabel sahaja</string>
   <string name="summary_pref_auto_image_captioning_disabled">Mati</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Dihidupkan untuk semua ikon</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Dihidupkan untuk ikon tidak berlabel sahaja</string>
   <string name="summary_pref_auto_icon_detection_disabled">Mati</string>
   <string name="title_pref_enable_auto_image_caption">Semua imej</string>
   <string name="title_pref_enable_auto_image_caption_arg">Semua imej\n%1$s</string>
@@ -413,7 +351,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="title_pref_enable_auto_icon_detection">Semua ikon</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Ikon tidak berlabel sahaja</string>
   <string name="title_pref_disable_auto_icon_detection">Jangan perihalkan ikon</string>
-  <string name="dialog_message_on_device_ai_model_download">Anda akan mendengar perihalan ringkas apabila anda memfokuskan imej pada peranti yang disokong.\n\nImej akan diproses pada peranti anda dan tidak akan sekali-kali dihantar kepada Google.\n\nAI Generatif bersifat percubaan, maka ciri ini akan membuat kesilapan. Dengan meneruskan proses, anda bersetuju untuk menerima %1$s.</string>
   <string name="title_pref_enable_gemini_support">Hidup</string>
   <string name="title_pref_disable_gemini_support">Mati</string>
   <string name="summary_pref_gemini_support_enabled">Gemini didayakan</string>
@@ -457,7 +394,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="shortcut_print_node_tree">Cetak pokok nod</string>
   <string name="shortcut_print_performance_stats">Cetak statistik prestasi</string>
   <string name="shortcut_first_in_screen">Tumpukan item pertama pada skrin</string>
-  <string name="shortcut_summary">Ringkaskan reka letak skrin</string>
   <string name="shortcut_voice_commands">Mulakan perintah suara</string>
   <string name="shortcut_last_in_screen">Tumpukan item terakhir pada skrin</string>
   <string name="shortcut_enable_dimming">Sembunyikan skrin</string>
@@ -561,7 +497,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="menu_category_web_navigation">Navigasi web</string>
   <string name="menu_category_basic_navigation">Navigasi asas</string>
   <string name="summary_custom_action">Dipaparkan apabila wujud tindakan untuk item semasa termasuk pautan, salin, tampal, pilih dan banyak lagi</string>
-  <string name="summary_context_menu_links">Buka pautan dalam item yang difokuskan</string>
   <string name="summary_viewpager_controls">Pergi ke halaman seterusnya atau sebelumnya. Ditunjukkan apabila anda membaca kandungan yang mempunyai berbilang halaman.</string>
   <string name="summary_labeling_controls">Ditunjukkan apabila anda memilih item tidak berlabel</string>
   <string name="summary_granularity">Baca mengikut aksara, perkataan, baris dan banyak lagi</string>
@@ -631,12 +566,9 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="summary_screen_overview">Ringkaskan skrin dengan butang tindakan</string>
   <string name="summary_screen_overview_no_actions">Dengar ringkasan kandungan pada skrin</string>
   <string name="summary_image_caption">Sebut teks dan ikon dalam imej yang dipilih</string>
-  <string name="summary_summarize_view">Sebut ringkasan paparan</string>
   <string name="summary_typo_suggestions">Paparkan apabila kursor berada pada perkataan yang disalah eja</string>
   <string name="summary_cache_keyboard_keys">TalkBack dilengkapi pengumuman untuk mengurangkan penangguhan apabila anda menaip</string>
   <string name="summary_cache_keyboard_keys_disabled">Gunakan Teks kepada pertuturan Google untuk menggunakan ciri ini</string>
-  <string name="value_direction_down">ke bawah</string>
-  <string name="value_direction_down_and_right">bawah kemudian kanan</string>
   <string name="title_pref_shortcut_up">Leret ke atas</string>
   <string name="title_pref_shortcut_up_xr">Tapak tangan kedua ke hadapan, cubit dan leret ke atas</string>
   <string name="title_pref_shortcut_down">Leret ke bawah</string>
@@ -704,10 +636,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="title_pref_shortcut_fingerprint_left">Leret ke kiri pada penderia cap jari</string>
   <string name="title_pref_shortcut_fingerprint_right">Leret ke kanan pada penderia cap jari</string>
   <string name="title_pref_version_code">Kod Versi</string>
-  <string formatted="false" name="value_volume_100_percent">Padankan kelantangan pertuturan</string>
-  <string formatted="false" name="value_volume_75_percent">75% daripada kelantangan pertuturan</string>
-  <string formatted="false" name="value_volume_50_percent">50% daripada kelantangan pertuturan</string>
-  <string formatted="false" name="value_volume_25_percent">25% daripada kelantangan pertuturan</string>
   <string name="value_type_confirmation_double_tap">Tahan jari untuk memilih mana-mana kekunci, kemudian ketik dua kali</string>
   <string name="value_type_confirmation_lift_to_type">Tahan jari untuk memilih kekunci huruf, kemudian angkat jari. Ketik dua kali untuk kekunci lain.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Tahan jari untuk memilih mana-mana kekunci, kemudian angkat jari</string>
@@ -720,12 +648,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="value_touch_explore_time_out_200ms">0.2 saat</string>
   <string name="value_touch_explore_time_out_250ms">0.25 saat</string>
   <string name="value_touch_explore_time_out_300ms">0.3 saat (lalai)</string>
-  <string name="value_shake_to_read_disabled">Dilumpuhkan</string>
-  <string name="value_shake_to_read_threshold_very_light">Sangat perlahan</string>
-  <string name="value_shake_to_read_threshold_light">Perlahan</string>
-  <string name="value_shake_to_read_threshold_medium">Sederhana</string>
-  <string name="value_shake_to_read_threshold_hard">Kuat</string>
-  <string name="value_shake_to_read_threshold_very_hard">Sangat kuat</string>
   <string name="title_pref_on_screen_keyboard">Papan kekunci pada skrin</string>
   <string name="title_pref_physical_keyboard">Papan kekunci fizikal</string>
   <string name="value_keyboard_echo_none">Tiada</string>
@@ -738,8 +660,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="pref_time_feedback_format_entries_default">Gunakan format masa peranti</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 jam</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 jam</string>
-  <string name="notification_title_talkback_gestures_changed">Gerak isyarat TalkBack berubah</string>
-  <string name="notification_message_talkback_gestures_changed">Ketik untuk menyemak perubahan kepada gerak isyarat kebolehaksesan</string>
   <string name="always_show_warning_checkbox">Sentiasa tunjukkan amaran ini</string>
   <string name="label_dialog_title_add">Tambah label</string>
   <string name="label_dialog_title_edit">Edit label</string>
@@ -760,16 +680,8 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="no_apps_to_export_labels">Tidak menemui aplikasi untuk mengeksport label.</string>
   <string name="label_choose_app_to_import">Pilih aplikasi untuk mengimport label:</string>
   <string name="label_choose_app_to_export">Pilih aplikasi untuk mengeksport label:</string>
-  <string name="talkback_gesture_change_details">Versi TalkBack ini termasuk perubahan kepada gerak isyarat kebolehaksesan lalai. Tindakan yang dikaitkan dengan gerak balas ini boleh diperibadikan dalam tetapan TalkBack. Apabila Teroka melalui sentuhan didayakan, anda boleh menggunakan gerak isyarat berikut untuk melakukan tindakan tertentu.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Sembunyikan skrin?</string>
   <string name="dialog_message_dim_screen">Pilihan ini akan mematikan paparan untuk meningkatkan privasi. Sesetengah kandungan mungkin masih dipaparkan, seperti mesej untuk menghidupkan semula paparan atau menu untuk ciri kebolehaksesan seperti TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Versi TalkBack ini mengandungi perubahan pada gerak isyarat kebolehaksesan lalai.\n\nGerak isyarat ke atas kemudian ke bawah akan membolehkan anda beralih ke item pertama pada skrin dan gerak isyarat ke bawah kemudian ke atas akan beralih ke item terakhir.\n\nKini kebutiran bacaan boleh ditukar dengan menumpukan item, kemudian memilih kebutiran daripada menu konteks Talkback.\n\nAnda boleh menukar tindakan yang dilakukan oleh gerak isyarat ini dalam Tetapan TalkBack.</string>
-  <string name="default_action_changed_details">Untuk menjeda dan memainkan media, anda kini boleh dwiketik dan tahan dengan dua jari.\n\nGerak isyarat lain juga sudah berubah.</string>
-  <string name="talkback_built_in_gesture_open_url">Buka pada telefon untuk mengetahui lebih lanjut</string>
-  <string name="talkback_built_in_gesture_change_details_45">Versi TalkBack ini termasuk perubahan kepada gerak isyarat kebolehaksesan lalai.\n\nGerak isyarat ke atas kini beralih ke tetapan navigasi sebelumnya dan gerak isyarat ke bawah kini beralih ke tetapan navigasi seterusnya.</string>
-  <string name="side_tap_shortcuts_removed_details">Tetapan ini akan dialih keluar daripada TalkBack disebabkan isu kebolehpercayaan:\n• Ketik pada sisi gerak isyarat peranti\n• Goyang untuk memulakan pembacaan berterusan</string>
-  <string name="button_accept_changed_gesture_mappings">Terima gerak isyarat</string>
-  <string name="button_customize_gesture_mappings">Sesuaikan gerak isyarat</string>
   <string name="button_disable_all_events">Lumpuhkan semua</string>
   <string name="button_enable_all_events">Dayakan semua</string>
   <string name="dialog_title_disable_exploration">Lumpuhkan Teroka melalui sentuhan?</string>
@@ -893,8 +805,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="screen_search_hint_type_search_tables">Cari jadual</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Saluran Pemberitahuan TalkBack</string>
-  <string name="pref_selector_summary">%1$s untuk memilih tetapan. Kemudian %2$s untuk melaraskan tetapan.</string>
-  <string name="speech_rate_change">Kadar pertuturan %1$d%%</string>
   <string name="speech_pitch_maximum">Nada pertuturan tertinggi</string>
   <string name="speech_pitch_minimum">Nada pertuturan terendah</string>
   <string name="reset_speech_rate_and_pitch">Tetapkan semula kadar dan nada pertuturan</string>
@@ -904,10 +814,7 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="vibration_feedback_state">Maklum balas getaran %1$s</string>
   <string name="text_formatting_state">Tuturkan pemformatan teks %1$s</string>
   <string name="typing_echo_change">Papan kekunci fizikal gema %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Tapak tangan kedua ke hadapan, tekan lama untuk menogol mod kawalan bacaan.</string>
   <string name="gesture_1_or_2">%1$s atau %2$s</string>
-  <string name="select_setting_hint">%1$s untuk memilih tetapan yang berbeza</string>
-  <string name="adjust_setting_hint">%1$s untuk melaraskan tetapan</string>
   <string name="adjust_granularity_hint">%1$s untuk membaca melalui %2$s</string>
   <string name="adjust_typo_hint">%1$s untuk cadangan.</string>
   <string name="use_action_hint">Ketik dua kali untuk melakukan tindakan</string>
@@ -947,7 +854,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="setting_selector_heading">Kawalan bacaan</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Untuk menjeda atau memainkan media dalam apl video atau muzik, ketik dua kali menggunakan 2 jari. Cubalah sekarang.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Apl lain mungkin menggunakan gerak isyarat ini untuk perkara seperti menjawab atau menamatkan panggilan telefon. Gerak isyarat ini mungkin tidak disokong oleh semua apl.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Lihat semua tutorial TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media berhenti atau bermain. Biasanya, ini akan berhenti sebentar atau memainkan video atau muzik semasa. Leret ke kanan untuk meneruskan.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Untuk menghentikan pertuturan TalkBack buat sementara waktu, ketik menggunakan 2 jari.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Pertuturan TalkBack berhenti. Biasanya, tindakan ini akan menghentikan ungkapan semasa yang dituturkan oleh TalkBack. Leret ke kanan untuk meneruskan.</string>
@@ -961,38 +867,18 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Mod pemilihan dihidupkan atau dimatikan. Biasanya, tindakan ini akan memulakan atau menghentikan mod pemilihan teks semasa anda berada dalam medan input. Leret ke kanan untuk meneruskan.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Untuk menggunakan kawalan bacaan, leret ke kiri atau ke kanan menggunakan 3 jari. Anda juga boleh meleret ke atas atau ke bawah menggunakan 3 jari.</string>
   <string name="new_shortcut_gesture_note">Nota: Anda telah menyesuaikan beberapa gerak isyarat anda, jadi maklumat ini mungkin tidak tepat. Untuk menyemak gerak isyarat anda, pergi ke tetapan TalkBack.</string>
-  <string name="welcome_to_android11">Selamat datang ke TalkBack pada Android 11</string>
   <string name="welcome_to_android11_text">Gerak isyarat baharu telah ditambahkan untuk menjadikan TalkBack lebih cepat dan lebih mudah digunakan.\n\nAnda boleh mencuba gerak isyarat baharu pada skrin ini. Anda boleh menyemak maklumat ini dalam tetapan TalkBack pada bila-bila masa.</string>
   <string name="new_gesture_notification_title">Gerak isyarat baharu dalam TalkBack</string>
   <string name="new_gesture_notification_content">Ketik untuk mengetahui cara menggunakan TalkBack dengan lebih pantas dengan gerak isyarat baharu.</string>
   <string name="dump_node_tree_description">Pokok nod telah dicetak pada log.</string>
   <string name="report_gesture_description">Berikut ialah gerak isyarat yang dilakukan baru-baru ini. Sila laporkan gerak isyarat yang salah dan perkara yang dijangkakan.</string>
-  <string name="update_welcome_text_content">Kini anda boleh bersambung kepada paparan braille melalui HID, cara bersambung kepada peranti Bluetooth. Pastikan anda mempunyai pemacu perisian tegar terkini daripada pengeluar anda, kemudian hidupkan Bluetooth pada paparan braille. Akses Tetapan TalkBack &gt; Paparan braille dan hidupkan \"Gunakan paparan braille\". Cari peranti anda dalam senarai peranti dan sambungkan peranti anda kepada paparan braille.</string>
-  <string name="update_welcome_text_content_tts">Kini anda boleh bersambung kepada paparan braille melalui HID, cara bersambung kepada peranti Bluetooth. Pastikan anda mempunyai pemacu perisian tegar terkini daripada pengeluar anda, kemudian hidupkan Bluetooth pada paparan braille. Akses Tetapan TalkBack, kemudian Paparan braille dan hidupkan \"Gunakan paparan braille\". Cari peranti anda dalam senarai peranti dan sambungkan peranti anda kepada paparan braille.</string>
-  <string name="update_welcome_text_content_with_link">Ketahui cara menggunakan paparan braille anda dengan TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Kemaskinian TalkBack ini memperkenalkan sokongan untuk Perihalkan skrin dalam lebih banyak bahasa dan peningkatan kualiti lain yang lebih memudahkan penggunaan TalkBack.\n\nAnda akan mengetahui perubahan ini dengan lebih lanjut dalam beberapa skrin yang seterusnya.\n\nAnda boleh menyemak maklumat ini kemudian dalam tetapan TalkBack &gt; Ciri baharu dalam TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Kemaskinian TalkBack ini memperkenalkan sokongan untuk Perihalkan skrin dalam lebih banyak bahasa dan peningkatan kualiti lain yang lebih memudahkan penggunaan TalkBack.\n\nAnda akan mengetahui perubahan ini dengan lebih lanjut dalam beberapa skrin seterusnya.\n\nAnda boleh menyemak maklumat ini kemudian dalam tetapan TalkBack, kemudian Ciri baharu dalam TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Bahasa baharu untuk skrin Perihalkan dan Minta Gemini</string>
-  <string name="describe_screen_and_qna_content">Kini skrin Perihalkan dan Minta Gemini tersedia dalam bahasa tambahan. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Ketahui lebih lanjut dalam pusat bantuan&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Pintasan untuk penaipan suara</string>
   <string name="shortcut_for_dictation_content">Semasa menggunakan Gboard, kini anda boleh menggunakan ketik dua kali dengan dua jari untuk memulakan atau menghentikan penaipan suara.
 &lt;br&gt;
 &lt;br&gt;Pastikan anda mempunyai versi terkini &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard daripada Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Apabila Gboard dipaparkan pada skrin, kini anda boleh menggunakan dwiketik dua jari untuk memulakan pengimlakan suara, kemudian dwiketik dua jari untuk menghentikan pengimlakan suara.</string>
-  <string name="keyboard_title">Papan kekunci</string>
-  <string name="keyboard_content">Kini TalkBack mengandungi \"Peta kekunci dipertingkatkan\" untuk papan kekunci TalkBack, dengan pelbagai perintah dan pintasan baharu. Peningkatan ini, yang termasuk \"mod semak imbas\" untuk navigasi web yang lebih cekap, memperkemas navigasi dan interaksi untuk pengguna TalkBack yang bergantung pada papan kekunci fizikal. Anda boleh beralih kepada \"Peta kekunci dipertingkatkan\" dalam tetapan TalkBack &gt; Tetapan lanjutan &gt; Pintasan papan kekunci.</string>
-  <string name="keyboard_content_tts">Kini TalkBack mengandungi \"Peta kekunci dipertingkatkan\" untuk papan kekunci TalkBack, dengan pelbagai perintah dan pintasan baharu. Peningkatan ini, yang termasuk \"mod semak imbas\" untuk navigasi web yang lebih cekap, memperkemas navigasi dan interaksi untuk pengguna TalkBack yang bergantung pada papan kekunci fizikal. Anda boleh beralih kepada \"Peta kekunci dipertingkatkan\" dalam tetapan TalkBack kemudian Tetapan lanjutan kemudian Pintasan papan kekunci.</string>
-  <string name="reduce_delay_title">Kurangkan penangguhan</string>
-  <string name="reduce_delay_content">Kini anda boleh mengurangkan penangguhan pengumuman TalkBack untuk penerokaan sentuhan dan penaipan. Untuk melihat tetapan ini, akses tetapan TalkBack &gt; Tetapan lanjutan &gt; Kurangkan penangguhan.</string>
-  <string name="reduce_delay_content_tts">Kini anda boleh mengurangkan penangguhan pengumuman TalkBack untuk penerokaan sentuhan dan penaipan. Untuk melihat tetapan ini, akses tetapan TalkBack kemudian Tetapan lanjutan kemudian Kurangkan penangguhan.</string>
-  <string name="customize_braille_keyboard_improvements_title">Sesuaikan gerak isyarat papan kekunci braille</string>
-  <string name="customize_braille_keyboard_improvements_content">Kini anda boleh menyesuaikan gerak isyarat untuk papan kekunci braille pada skrin maya. Untuk menyesuaikan gerak isyarat, akses tetapan TalkBack &gt; Papan kekunci Braille &gt; Gerak isyarat.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Kini anda boleh menyesuaikan gerak isyarat untuk papan kekunci braille pada skrin maya. Untuk menyesuaikan gerak isyarat, akses tetapan TalkBack, kemudian Papan kekunci Braille, kemudian Gerak isyarat.</string>
-  <string name="learn_more_about_braille_keyboard">Ketahui papan kekunci braille dengan lebih lanjut</string>
-  <string name="other_changes_title">Perubahan lain</string>
-  <string name="other_changes_content">Kini mesej pada skrin boleh membantu anda mematikan TalkBack dengan pantas jika TalkBack dihidupkan secara tidak sengaja. Anda boleh mematikan ciri ini dalam tetapan TalkBack &gt; Tunjukkan arahan untuk mematikan TalkBack.</string>
-  <string name="other_changes_content_tts">Kini mesej pada skrin boleh membantu anda mematikan TalkBack dengan pantas jika TalkBack dihidupkan secara tidak sengaja. Anda boleh mematikan ciri ini dalam tetapan TalkBack, kemudian Tunjukkan arahan untuk mematikan TalkBack.</string>
-  <string name="keymap_changes_content">Peta kekunci klasik telah ditukar kepada peta kekunci lalai, yang mengandungi lebih banyak pintasan.</string>
   <string name="announcing_text_formatting_title">Mengumumkan pemformatan teks</string>
   <string name="announcing_text_formatting_header">Kini TalkBack boleh mengumumkan perubahan dalam pemformatan teks, seperti huruf tebal, huruf condong dan warna teks. Untuk bermula:</string>
   <string name="announcing_text_formatting_option1">Fokus pada item dengan pemformatan, buka menu TalkBack dan pilih \"Perihalkan pemformatan teks\" atau</string>
@@ -1083,7 +969,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="additional_tips_link_subtext">Ketahui cara membuat panggilan, menghantar mesej dan banyak lagi</string>
   <string name="practice_gestures_link_text">Berlatih gerak isyarat</string>
   <string name="practice_gestures_link_subtext">Cuba gerak isyarat yang berbeza untuk mengetahui setiap fungsi</string>
-  <string name="help_and_feedback_link_subtext">Ketahui lebih lanjut tentang TalkBack dan hantar maklum balas</string>
   <string name="choose_tutorial_title">Pilih cara anda mahu berinteraksi dengan TalkBack</string>
   <string name="touch_tutorial_button">Tutorial sentuhan</string>
   <string name="keyboard_tutorial_button">Tutorial papan kekunci</string>
@@ -1229,8 +1114,6 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="wear_training_typing_text5">Cuba di bawah.</string>
   <string name="wear_training_typing_practice_button_content_description">Menaip menggunakan papan kekunci</string>
   <string name="wear_training_end_tutorial_title">Anda sudah bersedia untuk mula menggunakan TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack telah dikemas kini</string>
-  <string name="talkback_updated_notification_content">Ketik untuk ketahui lebih lanjut</string>
   <string name="wear_new_feature_page_title">Selamat datang ke TalkBack yang telah dikemaskinikan</string>
   <string name="wear_new_feature_page_content">Anda akan menemukan beberapa pembetulan pepijat dan perubahan terhadap cara fokus beralih</string>
   <string name="wear_new_feature_page_button_content_description">Selesai</string>
@@ -1249,10 +1132,7 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="title_pref_blue">Biru</string>
   <string name="title_pref_grey">Kelabu</string>
   <string name="survey_setting_title">Kongsi maklum balas anda</string>
-  <string name="survey_closed">Tinjauan ditutup</string>
   <string name="title_summarize_view">Perihalkan skrin</string>
-  <string name="title_increase_touch_focus_latency">Tingkatkan penangguhan fokus</string>
-  <string name="title_decrease_touch_focus_latency">Kurangkan penangguhan fokus</string>
   <string name="detected_result">Dikesan: %1$s</string>
   <string name="title_image_caption">Perihalkan imej</string>
   <string name="image_caption_with_gemini_prefix">Perihalkan imej ini. Jangan gunakan penanda dalam respons.</string>
@@ -1279,33 +1159,15 @@ Penangguhan di bawah 0.3 saat akan menukar ketik dua kali untuk mengaktifkan kep
   <string name="image_qna_question_prefix">PENGGUNA: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Teruskan giliran PENGGUNA dan MODEL berselang-seli] ...</string>
-  <string name="screen_overview_with_screenshot">Tugas anda ialah membantu seseorang yang tidak dapat melihat telefon mereka untuk memahami perkara yang terdapat pada skrin telefon mereka. Perihalkan tangkapan skrin ini dalam beberapa ayat.
-
-Arahan
-Mulakan respons anda dengan \"Skrin memaparkan\"
-Permulaan respons mestilah memerihalkan kandungan yang paling penting dan menonjol pada skrin. Yang berikut ialah beberapa contoh kemungkinan perihalan kandungan yang paling penting dan menonjol
-*Pada apl sembang: penghantar dan teks mesej terbaharu
-* Pada apl media sosial: siaran pertama, termasuk orang yang membuat siaran, teks dan perihalan imej
-* Pada apl berita: tajuk artikel dan perihalan imej utama
-* Pada apl beli-belah: perihalan tentang produk yang dipaparkan dan harga
-* Pada apl kalendar: acara seterusnya dan bilangan acara lain yang dipaparkan selepas itu
-* Dalam senarai mesej: nama dan pratonton untuk mesej pertama, kemudian hanya nama untuk beberapa mesej seterusnya dalam senarai dan bilangan mesej yang belum dibaca
-
-Selepas itu, respons boleh memerihalkan lokasi ruang dan tujuan bar navigasi serta butang menonjol.
-Jangan sebutkan kandungan bar status pada bahagian atas (mis. masa, status rangkaian, bateri).
-Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="title_gemini_opt_in_dialog">Dapatkan perihalan imej terperinci?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Dapatkan perihalan imej?</string>
   <string name="title_gemini_result_dialog">Dikesan: Imej</string>
   <string name="title_gemini_result_bottom_sheet">Perihalan imej</string>
   <string name="title_gemini_screen_overview_result_dialog">Perihalan skrin</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Ringkasan</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Tindakan</string>
   <string name="positive_button_gemini_opt_in_dialog">Hidupkan</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Saya setuju</string>
   <string name="negative_button_gemini_opt_in_dialog">Tidak perlu</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Akses Tetapan</string>
-  <string name="positive_button_gemini_download_dialog">Muat turun &amp; hidupkan</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Teks, \"%1$s\".</string>
   <string name="detected_icon_label">Ikon, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="screen_overview_no_result">Tidak dapat meringkaskan skrin</string>
   <string name="image_caption_no_result">Tidak dapat menerangkan imej</string>
   <string name="image_caption_with_hide_screen">Perihalan imej tidak tersedia apabila skrin disembunyikan. Paparkan skrin anda dan cuba lagi.</string>
-  <string name="feedback_button_state_set">dipilih</string>
-  <string name="feedback_button_state_unset">tidak dipilih</string>
   <string name="action_text_like_button">Tandai sebagai respons baik</string>
   <string name="action_text_dislike_button">Tandai sebagai respons teruk</string>
   <string name="action_text_clear_like_button">Kosongkan respons baik</string>
@@ -1349,18 +1209,13 @@ Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="downloading_all_image_captioning_hint">Memuat turun perihalan imej &amp; ikon automatik</string>
   <string name="download_all_image_captioning_successful_hint">Perihalan imej &amp; ikon automatik dimuat turun</string>
   <string name="download_all_image_captioning_failed_hint">Tidak dapat memuat turun item. Cuba lagi nanti.</string>
-  <string name="download_complete_notification_title">Muat turun selesai</string>
-  <string name="download_complete_notification_content">Kini anda akan mendengar perihalan imej dan ikon automatik dengan TalkBack</string>
-  <string name="download_complete_notification_action">Tetapan</string>
   <string name="download_storage_error_hint">Storan penuh. Untuk memuat turun item, kosongkan %1$d MB dalam Tetapan &gt; Storan.</string>
   <string name="download_network_error_hint">Tidak dapat memuat turun item. Periksa sambungan anda, kemudian cuba lagi.</string>
   <string name="switch_icon_detection_dialog_title">Perihalan ikon automatik</string>
   <string name="switch_icon_detection_dialog_message">Dengar perihalan apabila anda fokus pada ikon</string>
   <string name="switch_image_description_dialog_message">Dengar perihalan apabila anda memfokuskan imej. Sesetengah apl mungkin tidak menyokong ciri ini.</string>
-  <string name="switch_text_recognition_dialog_title">Perihalkan teks dalam imej secara automatik</string>
   <string name="switch_text_recognition_dialog_message">Dengar perihalan apabila anda memfokuskan imej yang mengandungi teks</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Dimuat turun</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Anda masih boleh mendapatkan perihalan untuk imej yang dipilih melalui menu TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Padamkan muat turun</string>
   <string name="delete_icon_detection_dialog_title">Padamkan perihalan ikon automatik?</string>
@@ -1376,11 +1231,6 @@ Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="gemini_enable_dialog_title">Gunakan Gemini pada TalkBack</string>
   <string name="gemini_disable_dialog_message">Pemahaman skrin dengan Gemini</string>
   <string name="disable_gemini_dialog_subtext">Hidupkan untuk mendayakan pemahaman skrin dengan Gemini</string>
-  <string name="ai_services_update_dialog_title">Kemas kinikan apl %1$s untuk memerihalkan imej</string>
-  <string name="ai_services_update_dialog_message">Untuk mendengar perihalan imej, dapatkan versi terkini %1$s daripada Google Play.\n\nSetelah muat turun selesai, kembali kepada tetapan TalkBack dan hidupkan semula perihalan imej automatik.</string>
-  <string name="ai_services_update_dialog_button_text">Akses Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Ada masalah. Cuba lagi.</string>
   <string name="gemini_block_message">Tidak dapat memproses imej ini</string>
   <string name="gemini_network_error">Tiada sambungan Internet. Periksa sambungan Wi-Fi atau rangkaian mudah alih anda dan cuba lagi.</string>
@@ -1396,13 +1246,8 @@ Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="image_qna_typing_button_text">Taip soalan untuk Gemini</string>
   <string name="image_qna_send_button_text">Tanya</string>
   <string name="image_qna_speak_question_description">Tuturkan soalan</string>
-  <string name="overviews_summary_intro">Ringkasan skrin apl ini: %1$s</string>
   <string name="overviews_node_not_found">Harap maaf, saya tidak dapat menemukan bahagian skrin tersebut lagi.</string>
-  <string name="overviews_images_in_app">Imej Utama ditemukan</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Tindakan dalam apl</string>
-  <string name="overviews_actions_in_app_description">Yang berikut adalah tindakan utama yang boleh anda ambil daripada skrin apl ini:</string>
-  <string name="overviews_parent_type">Tindakan dalam apl</string>
   <string name="text_replaced_feedback">Teks digantikan</string>
   <string name="switch_gesture_set">Tukar Set Gerak Isyarat</string>
   <string name="switch_gesture_set_to">Beralih kepada set gerak isyarat %1$d</string>
@@ -1453,5 +1298,4 @@ Jangan gunakan sebarang turunan dalam respons anda.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Tutup</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Untuk mendengar pemberitahuan apabila skrin anda dimatikan, hidupkan \"Tuturkan pemberitahuan apabila skrin dimatikan\" dalam tetapan maklumat berjela TalkBack</string>
 </resources>

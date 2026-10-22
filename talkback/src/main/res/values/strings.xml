@@ -35,11 +35,6 @@
     <string name="talkback_preferences_title">SandFly settings</string>
 
     <!--
-      Source: Screen title of TalkBack settings shown as a breadcrumb like TalkBack > Settings
-      Description: This is presented as the breadscrumb in the search result. [CHAR_LIMIT=NONE]
-    -->
-    <string name="talkback_settings_screen_title_breadcrumb">Settings</string>
-    <!--
       Source: Title for the activity that manages Text to speech settings.
       Description: This is presented to the user when managing Text to speech settings. [CHAR LIMIT=NONE]
     -->
@@ -258,17 +253,7 @@
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
      -->
     <string name="notification_type_status_stopped">Stopped</string>
-    <!--
-      Source: A notification for a something connected such as power.
-      Description: This is spoken to the user. [CHAR LIMIT=NONE]
-     -->
-    <string name="notification_type_status_connected">connected</string>
 
-    <!--
-      Source: A notification for unknown battery level.
-      Description: This is spoken to the user. [CHAR LIMIT=NONE]
-     -->
-    <string name="notification_battery_level_unknown">unknown</string>
     <!--
       Source: A notification for battery saver mode.
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
@@ -308,7 +293,6 @@
     <string name="template_battery_level_unknown">Battery level unknown</string>
     <!-- Spoken before the battery level while the device is plugged in to charge. [CHAR LIMIT=NONE] -->
     <string name="value_charger_connected">Charger connected</string>
-    <string name="template_battery_state">Power <xliff:g id="charging_status" example="connected">%1$s</xliff:g> <xliff:g id="battery_level" example="73">%2$s</xliff:g> percent <xliff:g id="battery_saver_mode_status" example="Battery saver on">%3$s</xliff:g></string>
 
   <!-- Template for language options menu item-->
   <string name="template_language_options_menu_item"><xliff:g id="language">%1$s</xliff:g> (<xliff:g id="country">%2$s</xliff:g>)</string>
@@ -361,12 +345,6 @@
     <string name="title_pref_announce_ringer_mode">Ringer mode</string>
     <!-- [CHAR LIMIT=NONE] -->
     <string name="summary_pref_announce_ringer_mode">Say when the ringer is set to vibrate or silent</string>
-    <!-- PREFERENCES -->
-    <!--
-      Source: Preference category for audio.
-      Description: Contains preferences for customizing audio. [CHAR LIMIT=25]
-    -->
-    <string name="title_pref_category_audio">Audio</string>
     <!-- Settings category for speech, sound, vibration, and the focus indicator. [CHAR LIMIT=40] -->
     <string name="title_pref_category_feedback">Feedback</string>
     <!-- Settings category for keyboards and braille. [CHAR LIMIT=40] -->
@@ -381,10 +359,6 @@
     <string name="title_pref_category_more">More</string>
     <!-- Title for preference that controls the volume of TalkBack's speech output. [CHAR LIMIT=25] -->
     <string name="title_pref_speech_volume">Speech volume</string>
-    <!-- Title for preference that controls the speed of TalkBack's speech output. [CHAR LIMIT=25] -->
-    <string name="title_pref_speech_rate">Speech rate</string>
-    <!-- Summary for Speech Rate preference that controls the speed of TalkBack's speech output. [CHAR LIMIT=100] -->
-    <string name="summary_pref_speech_rate">Speed at which the text is spoken</string>
     <!--
       Source: Preference for announcing the number of list items displayed on the screen.
       Description: The user can toggle this on and off. [CHAR LIMIT=NONE]
@@ -605,24 +579,8 @@
      -->
     <string name="summary_speak_container_element_positions">Say when you enter or leave lists, grids, and other containers</string>
 
-    <!-- Title of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_focus_delay_reading_control_added_dialog_title">Focus delay added to reading control</string>
-    <!-- Message of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_focus_delay_reading_control_added_dialog_message">You can now change the focus delay at any time with the reading controls.</string>
 
-    <!-- Title of dialog to confirm the typing focus delay reduction which enables the Lift-to-type to do the CLICK. [CHAR LIMIT=NONE] -->
-    <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Switch to lift-to-type?</string>
-    <!-- Description what the side effect would be when focus delay decreased, and TalkBack would enable the Lift-to-type. [CHAR LIMIT=NONE] -->
-    <string name="message_of_typing_focus_delay_reduction_confirm_dialog">When typing focus delay is set below 0.3 seconds, double-tap to type will be very difficult to perform. Choose \"Switch\" to automatically switch to lift to type.\n\nTo use lift-to-type, hold your finger to select any key, then lift for typing.\n\nYou can customize this in SandFly settings.</string>
-    <!-- Title of dialog to confirm the typing focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Typing focus delay added to reading control</string>
-    <!-- Message of dialog to confirm the Focus delay reading control items being added. [CHAR LIMIT=NONE] -->
-    <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If double-tap is unreliable while you type, you can change to a longer typing focus delay at any time with the reading controls.</string>
-    <!-- A warning message to tell the situation user cannot change typing focus delay. [CHAR LIMIT=NONE] -->
-    <string name="gestures_announce_typing_focus_wont_change">Typing focus delay is not functioning without Lift-to-type.</string>
 
-    <!-- Latency setting by reading control added positive button. Click the button to acknowledge the action. [CHAR LIMIT=40] -->
-    <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Got it</string>
 
     <!-- Reset latency reduction settings. [CHAR LIMIT=NONE] -->
     <string name="reset_letency_reduction_settings_dialog_title">Reset delay settings?</string>
@@ -631,10 +589,6 @@
     <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Reset</string>
     <!-- Announce reset the latency reduction settings -->
     <string name="gestures_announce_reset_latency_reduction_settings">The latency reduction settings have been reset.</string>
-    <!-- The label of confirm button of focus delay settings dialog. [CHAR_LIMIT=NONE]-->
-    <string name="reduce_focus_delay_settings_confirm_button">Switch</string>
-    <!-- The label of cancel button of focus delay settings dialog. [CHAR_LIMIT=NONE]-->
-    <string name="reduce_focus_delay_settings_cancel_button">Don\'t switch</string>
 
 
   <!-- Reset keymap [CHAR LIMIT=57] -->
@@ -700,20 +654,8 @@
       Description: The user can check or not check this. [CHAR LIMIT=40]
     -->
     <string name="title_pref_explore_by_touch">Explore by touch</string>
-    <!-- Category for TalkBack visuyal settings. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_visual">Visual</string>
     <!-- Category for gestures, menus or other controls. [CHAR LIMIT=40] -->
     <string name="title_pref_category_controls">Controls</string>
-    <!-- Category for braille features. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_braille">Braille</string>
-    <!-- Category for general features. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_general">General</string>
-    <!-- Category for advanced features. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_advanced">Advanced</string>
-    <!-- Category for other features. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_others">Others</string>
-    <!-- Category for tutorial & help. [CHAR LIMIT=40] -->
-    <string name="title_pref_category_tutorial_and_help">Tutorial &#38; help</string>
     <!-- Category summary for reduce latency. [CHAR LIMIT=NONE] -->
     <string name="title_pref_category_reduce_latency_summary">These settings make SandFly respond faster after you touch the screen</string>
     <!-- Label for the reset latency settings. [CHAR LIMIT=NONE]-->
@@ -741,54 +683,11 @@
     <string name="title_pref_category_selector_menu">Reading controls</string>
     <!-- Label for the button to launch an activity for managing TalkBack's navigation options menus. [CHAR LIMIT=100] -->
     <string name="title_pref_category_navigation_menu">Edit navigation options</string>
-    <!-- Label for the button to launch an activity for managing TalkBack's keyboard shortcuts. [CHAR LIMIT=40] -->
-    <!--
-      Source: Summary subtext for TalkBack context menu setting.
-      Description: Explains how TalkBack context menu is opened. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_context_menu_summary">Tap with 3 fingers, or swipe up or down then right.</string>
-    <!--
-    Source: Summary subtext for TalkBack context menu setting in XR.
-    Description: Explains how TalkBack context menu is opened on XR devices. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_context_menu_summary_xr">To use the SandFly menu, turn your secondary palm in and pinch.</string>
-    <!--
-    Source: Summary subtext for TalkBack context menu setting.
-    Description: Explains how TalkBack context menu is opened without multifinger support. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_context_menu_summary_single_finger">Swipe down then right.</string>
-    <!--
-    Source: Summary subtext for quick menu setting.
-    Description: Explains how quick menu is opened. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_selector_menu_summary">Turn 2 fingers like a dial, or swipe left or right with 3 fingers, to choose a reading control. Then swipe up or down to change it.</string>
-    <!--
-    Source: Summary subtext for quick menu setting in XR.
-    Description: Explains how quick menu is opened without multifinger support. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_selector_menu_summary_xr">To cycle between reading controls, turn your secondary palm in, hold your pinch, move right or left, and release.</string>
-    <!--
-    Source: Summary subtext for quick menu setting.
-    Description: Explains how quick menu is opened without multifinger support. [CHAR LIMIT=NONE]
-    -->
-    <string name="pref_category_selector_menu_summary_single_finger">Swipe up then down, or down then up, to choose a reading control. Then swipe up or down to change it.</string>
     <string name="title_pref_manage_keyboard_shortcuts">Keyboard shortcuts</string>
     <!-- Label for the button to export custom labels data as a file. [CHAR LIMIT=40] -->
     <string name="title_pref_export_custom_labels">Export custom labels</string>
-    <!-- Label for the button to open the Play Store page. -->
-    <string name="title_pref_play_store">Open SandFly at the Play Store</string>
-    <!-- Summary sub-text for the button to open the Play Store page. Argument is version number. -->
-    <string name="summary_pref_play_store">Current SandFly Version: <xliff:g id="version_number">%1$s</xliff:g></string>
     <!-- The preference title of Help & feedback [CHAR_LIMIT=NONE]-->
     <string name="title_pref_help_and_feedback">Help &#38; feedback</string>
-    <!-- The preference title of GUP support [CHAR_LIMIT=NONE]-->
-    <string name="title_pref_gup">Contact Google Disability support</string>
-    <!-- The preference subtitle of GUP support [CHAR_LIMIT=NONE]-->
-    <string name="subtitle_pref_gup">Get help using SandFly or report issues</string>
-    <!-- The label of a settings item that displays legal information about the licenses used in this app. [CHAR LIMIT=NONE] -->
-    <string name="pref_item_licenses">Open Source Licenses</string>
-    <!-- Label for the button to show tutorial [CHAR LIMIT=40] -->
-    <string name="title_pref_tutorial">Tutorial</string>
     <!-- Label for the button to show help menu [CHAR LIMIT=40] -->
     <string name="title_pref_help">Help</string>
     <!-- Label for the button to show terms of service [CHAR LIMIT=40] -->
@@ -801,8 +700,6 @@
     <string name="title_pref_category_tutorial">SandFly tutorial</string>
     <!-- Category for helping page or feedback. [CHAR LIMIT=60] -->
     <string name="title_pref_category_help_no_tutorial">Help</string>
-    <!-- Category for typing settings. [CHAR LIMIT=60] -->
-    <string name="title_pref_category_typing">Typing</string>
     <!-- Category for advanced settings. [CHAR LIMIT=60] -->
     <string name="title_pref_advanced_settings">Advanced settings</string>
     <!--
@@ -1083,10 +980,6 @@
     <string name="keycombo_keymap_changes_activity_content_learn_more">Learn more about keymaps</string>
     <!-- TalkBack keyboard go to settings button. Click the button will open the TalkBack keyboard settings. [CHAR LIMIT=40] -->
     <string name="keycombo_go_to_settings">Go to Settings</string>
-    <!-- TalkBack keyboard shortcut keymap changes notification content. [CHAR LIMIT=300] -->
-    <string name="keycombo_keymap_changes_notifications_content">SandFly is getting ready to remove the classic keymap. To keep using keyboard shortcuts, switch to the default keymap.</string>
-    <!-- TalkBack keyboard shortcut keymap changes notification action button. Click the button will open the instruction activity. [CHAR LIMIT=40] -->
-    <string name="keycombo_keymap_changes_notifications_action">Learn more</string>
     <!-- Keyboard new key map notification dialog. -->
     <!-- TalkBack new keymap notification positive button. Click the button will close the dialog. [CHAR LIMIT=40] -->
     <string name="keycombo_new_keymap_notification_dialog_positive_button">Got it</string>
@@ -1104,20 +997,9 @@
     <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">New keymap available</string>
     <!-- Message of the dialog to notify default keymap users. [CHAR LIMIT=200] -->
     <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new SandFly enhanced keymap adds many new commands. Learn more in the help center or switch to the new keymap in Settings.</string>
-    <!-- Keyboard update modifier keys. -->
-    <!-- TalkBack keyboard shortcut keymap update modifier keys. The title for dialog and notification to notify user had better to update the modifier keys. [CHAR LIMIT=60] -->
-    <string name="keycombo_update_modifier_key_warning_title">Update your SandFly modifier key</string>
-    <!-- TalkBack keyboard shortcut keymap update modifier keys. The title for dialog and notification to notify user had better to update the modifier keys. [CHAR LIMIT=60] -->
-    <string name="keycombo_update_modifier_keys_warning_negative_button">Not now</string>
     <!-- TalkBack keyboard update modifier key dialog. -->
     <!-- Content description of an icon to open TalkBack keyboard update modifier key dialog. [CHAR LIMIT=80] -->
     <string name="keycombo_warning_content_description">More information about your modifier key</string>
-    <!-- Title of TalkBack keyboard update modifier key dialog. [CHAR LIMIT=40] -->
-    <string name="keycombo_warning_dialog_title">Update your modifier key</string>
-    <!-- Message of TalkBack keyboard update modifier key dialog. [CHAR LIMIT=400] -->
-    <string name="keycombo_warning_dialog_message">For SandFly\'s keyboard shortcuts to work correctly, update your modifier key from Action to Alt.\n\nIf you keep using the Action modifier key, some shortcuts will take different actions for this version of Android.</string>
-    <!-- Button on TalkBack keyboard update modifier key dialog. [CHAR LIMIT=30] -->
-    <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
 
     <!-- Keyboard key combination assignment dialog items -->
     <!-- Keymap group name title [CHAR LIMIT=40] -->
@@ -1248,8 +1130,6 @@
     <string name="keycombo_menu_global_cycle_punctuation_verbosity" translatable="false">@string/shortcut_cycle_punctuation_verbosity</string>
     <!-- Keyboard key combination assignment for refocus current node [CHAR LIMIT=40] -->
     <string name="keycombo_menu_global_refocus_current_node">Speak current focus</string>
-    <!-- Navigation actions group name title [CHAR LIMIT=40] -->
-    <string name="keycombo_menu_category_granularity">Navigation</string>
     <!-- Keyboard key combination assignment for next navigation action [CHAR LIMIT=40] -->
     <string name="keycombo_menu_granularity_increase">Next navigation setting</string>
     <!-- Keyboard key combination assignment for previous navigation action [CHAR LIMIT=40] -->
@@ -1445,8 +1325,6 @@
     <!-- Templte for displaying keyboard command name for Browse Mode commands [CHAR LIMIT=40] -->
     <string name="template_keycombo_menu_browse_mode_command"><xliff:g id="key_combo_name">%1$s</xliff:g> in browse mode</string>
 
-    <!-- Dialog message that describes how to assign other keyboard shortcut for current action -->
-    <string name="keycombo_assign_dialog_instruction">Press key combination to set new shortcut. It must contain at least ALT or Control key.</string>
     <!-- Dialog message that describes how to assign other keyboard shortcut for current action in default keymap -->
     <string name="keycombo_assign_dialog_default_keymap_instruction">Press key combination with <xliff:g id="trigger_modifier_name" example="alt">%1$s</xliff:g> modifier key to set new shortcut.</string>
     <!-- Message that key combination is not assigned to the action [CHAR LIMIT=40] -->
@@ -1714,14 +1592,6 @@
     -->
     <string name="title_pref_touch_focus_timeout">Focus delay</string>
     <!--
-      Source: Preference summary.
-      Description: This preference that shows summary of touch focus time. [CHAR_LIMIT=NONE]
-    -->
-    <string name="summary_pref_touch_focus_time">"
-Controls how quickly SandFly speaks after focus moves. A shorter delay makes SandFly feel faster, but can make double- and triple-taps harder to perform.\n\n
-Delays below 0.3 seconds will change double-tap to activate to two-finger tap to activate.
-      "</string>
-    <!--
       Source: Preference title.
       Description: This preference turns on TalkBack gesture detection. [CHAR_LIMIT=96]
       -->
@@ -1791,11 +1661,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   -->
   <string name="title_pref_detailed_image_description">Detailed image descriptions</string>
 
-  <!--
-    Source: Preference title.
-    Description: This preference to enable/disable the recognize text in images. [CHAR_LIMIT=NONE]
-  -->
-  <string name="summary_pref_ai_description">Hear longer descriptions when you select \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" from the SandFly menu</string>
 
   <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_detailed_ai_description">Selected images are sent to Google\'s Gemini API to be described. With On-device AI turned on, they\'re described on this phone instead and aren\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
@@ -1808,12 +1673,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
 
   <!-- Click the button will open the instruction activity that educate the users. [CHAR LIMIT=60]-->
   <string name="powered_by_gemini">Powered by generative AI </string>
-  <!-- The hint to user when an image has sent to Gemini for detailed described. [CHAR LIMIT=60]-->
-  <string name="detailed_image_description_ongoing_hint">Getting description</string>
-  <string name="detailed_image_description_result_prefix">Detected: Image. <xliff:g id="Gemini reply" example="That's a wonderful world.">%1$s</xliff:g></string>
 
-  <!-- Dialog title for on-device image captioning model download.  -->
-  <string name="dialog_title_on_device_ai_download_needed">Download needed for automatic image descriptions</string>
   <!-- -->
   <string name="dialog_message_on_device_detailed_ai_promotion">Images are processed on your device and never sent to Google.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
 
@@ -1824,8 +1684,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="message_aifeature_downloading">Downloading AI model. This may take a while. You’ll be notified when it’s complete.</string>
   <!-- Message for AI feature downloading with the download progress. [CHAR LIMIT=NONE]  -->
   <string name="message_aifeature_downloading_with_progress">Downloading still in progress. <xliff:g id="Download progress" example="50">%1$d</xliff:g> of <xliff:g id="Feature size" example="4096">%2$d</xliff:g>MB downloaded.</string>
-  <!-- Message for AI feature download completed. [CHAR LIMIT=NONE]  -->
-  <string name="message_aifeature_download_complete">AI model downloaded. SandFly can now generate image descriptions.</string>
 
   <!--
     Source: Summary subtext for the "Automatic descriptions" setting.
@@ -1833,24 +1691,9 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   -->
     <string name="summary_pref_auto_image_captioning">For icons, images, and text in images</string>
 
-    <!--
-      Source: Summary subtext for the "Automatic descriptions" setting.
-      Description: Explains what kinds of image captioning TackBack provides. [CHAR LIMIT=NONE]
-    -->
-    <string name="summary_pref_auto_image_captioning_text_only">For text in images</string>
 
 
-    <!--
-      Source: Summary subtext for the "Automatic descriptions" setting.
-      Description: Explains what kinds of image captioning TackBack provides. [CHAR LIMIT=NONE]
-    -->
-    <string name="summary_pref_auto_image_captioning_no_icon">For images and text in images</string>
 
-    <!--
-      Source: Summary subtext for the "Automatic descriptions" setting.
-      Description: Explains what kinds of image captioning TackBack provides. [CHAR LIMIT=NONE]
-    -->
-    <string name="summary_pref_auto_image_captioning_no_image">For icons and text in images</string>
 
   <!--
     Source: Summary subtext for "Describe icon" and "Describe images" settings.
@@ -1858,17 +1701,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   -->
   <string name="summary_pref_module_downloading">Downloading…</string>
 
-  <!--
-  Source: Summary subtext for "Describe images" and "Describe text in images" settings.
-  Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NONE]
--->
-  <string name="summary_pref_auto_image_captioning_enabled">On for all images</string>
 
-  <!--
-    Source: Summary subtext for "Describe images" and "Describe text in images" settings.
-    Description: Explain that the feature is enabled for unlabelled views only. [CHAR_LIMIT=NONE]
-  -->
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">On for unlabelled images only</string>
 
   <!--
     Source: Summary subtext for "Describe images" and "Describe text in images" settings.
@@ -1876,17 +1709,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   -->
   <string name="summary_pref_auto_image_captioning_disabled">Off</string>
 
-  <!--
-Source: Summary subtext for "Describe icon" settings.
-Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NONE]
--->
-  <string name="summary_pref_auto_icon_detection_enabled">On for all icons</string>
 
-  <!--
-    Source: Summary subtext for "Describe icon" settings.
-    Description: Explain that the feature is enabled for unlabelled views only. [CHAR_LIMIT=NONE]
-  -->
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">On for unlabelled icons only</string>
 
   <!--
     Source: Summary subtext for "Describe icon" settings.
@@ -1945,8 +1768,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Message for dialog shown when a user wants to enable screen description. [CHAR LIMIT=NONE]  -->
   <string name="dialog_message_screen_overview_promotion">A screenshot of the screen is sent to Google\'s Gemini API to be described, which takes several seconds. With On-device AI turned on, it\'s described on this phone instead and isn\'t sent.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes. The <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> apply.</string>
 
-  <!-- Message for dialog shown when a user wants to enable detailed image description. [CHAR LIMIT=NONE]  -->
-  <string name="dialog_message_on_device_ai_model_download">You’ll hear a brief description when you focus on an image in supported apps.\n\nImages are processed on your device and never sent to Google.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <xliff:g id="Gen AI Terms of Service" example="Google\'s Terms of Service">%1$s</xliff:g>.</string>
 
   <!--
     Source: Option text for the "Gemini support" setting.
@@ -2177,8 +1998,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="shortcut_print_performance_stats">Print performance statistics</string>
     <!-- Label for the shortcut that will move focus to the first item on the screen -->
     <string name="shortcut_first_in_screen">Focus on first item on screen</string>
-    <!-- Label for the shortcut that will make a summary of the screen -->
-    <string name="shortcut_summary">Summarize screen layout</string>
     <!-- Label for the shortcut that will allow voice commands to invoke TalkBack actions. [CHAR_LIMIT=60] -->
     <string name="shortcut_voice_commands">Start voice command</string>
     <!-- Label for the shortcut that will move focus to the last item on the screen -->
@@ -2423,8 +2242,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
 
     <!-- Summary for the Context menu containing custom action. [CHAR_LIMIT=NONE] -->
     <string name="summary_custom_action">Shows when actions exist for the current item, including links, copy, paste, select, and more</string>
-    <!-- Summary for the Context menu containing links. [CHAR_LIMIT=NONE] -->
-    <string name="summary_context_menu_links">Open links within a focused item</string>
     <!-- Summary for the Context menu containing page navigation. [CHAR_LIMIT=NONE] -->
     <string name="summary_viewpager_controls">Go to the next or previous page. Shows when you are reading content with multiple pages.</string>
     <!-- Summary for the Context menu containing label manager. [CHAR_LIMIT=NONE] -->
@@ -2567,18 +2384,12 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="summary_screen_overview_no_actions">Hear a summary of the content on the screen</string>
     <!-- Summary for the menu item to provide captions for an image. [CHAR_LIMIT=150]-->
     <string name="summary_image_caption">Speak text and icons within a selected image</string>
-    <!-- Summary for the menu item to summarize view. [CHAR_LIMIT=150]-->
-    <string name="summary_summarize_view">Speak summary of view</string>
     <!-- Summary for the menu item to provide spelling suggestion for the misspelled word. [CHAR_LIMIT=70] -->
     <string name="summary_typo_suggestions">Shows when the cursor is on a typo</string>
 
     <string name="summary_cache_keyboard_keys">SandFly pre-loads announcements to reduce delay when you type</string>
     <string name="summary_cache_keyboard_keys_disabled">Use Google Text-to-Speech to use this feature</string>
 
-    <!-- Label for the direction of the "swipe down" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
-    <string name="value_direction_down">down</string>
-    <!-- Label for the direction of the "swipe down then right" gesture. For instance, this is used in the tutorial to inform the user of how to perform a specific gesture. [CHAR_LIMIT=40] -->
-    <string name="value_direction_down_and_right">down then right</string>
 
     <!-- Label for the preference that assigns an action to the "swipe up" gesture. [CHAR_LIMIT=40] -->
     <string name="title_pref_shortcut_up">Swipe up</string>
@@ -2787,14 +2598,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Label for the prefernce that displays version code. [CHAR_LIMIT=99] -->
     <string name="title_pref_version_code">Version code</string>
 
-    <!-- Preference label for volume the same as the accessibility-stream volume. [CHAR_LIMIT=NONE] -->
-    <string name="value_volume_100_percent" formatted="false">Match speech volume</string>
-    <!-- Preference label for volume 75% of the accessibility-stream volume. [CHAR_LIMIT=NONE] -->
-    <string name="value_volume_75_percent" formatted="false">75% of speech volume</string>
-    <!-- Preference label for volume 50% of the accessibility-stream volume. [CHAR_LIMIT=NONE] -->
-    <string name="value_volume_50_percent" formatted="false">50% of speech volume</string>
-    <!-- Preference label for volume 25% of the accessibility-stream volume. [CHAR_LIMIT=NONE] -->
-    <string name="value_volume_25_percent" formatted="false">25% of speech volume</string>
 
     <!-- Label for typing mode user preference in which double-tap is needed to input any IME key. [CHAR LIMIT=NONE] -->
     <string name="value_type_confirmation_double_tap">Hold finger to select any key, then double-tap</string>
@@ -2949,18 +2752,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Spoken when the tablet held up faces away setting is turned off. [CHAR LIMIT=NONE]-->
     <string name="tablet_held_up_faces_away_off">Tablet held up faces away off</string>
 
-    <!-- Label for the preference specifying that the shake to read feature is disabled. -->
-    <string name="value_shake_to_read_disabled">Disabled</string>
-    <!-- Label for the preference specifying a very small amount of shake force is required to initiate the shake to read feature. -->
-    <string name="value_shake_to_read_threshold_very_light">Very light</string>
-    <!-- Label for the preference specifying a small amount of shake force is required to initiate the shake to read feature. -->
-    <string name="value_shake_to_read_threshold_light">Light</string>
-    <!-- Label for the preference specifying a medium amount of shake force is required to initiate the shake to read feature. -->
-    <string name="value_shake_to_read_threshold_medium">Medium</string>
-    <!-- Label for the preference specifying a large amount of shake force is required to initiate the shake to read feature. -->
-    <string name="value_shake_to_read_threshold_hard">Hard</string>
-    <!-- Label for the preference specifying a very large amount of shake force is required to initiate the shake to read feature. -->
-    <string name="value_shake_to_read_threshold_very_hard">Very hard</string>
 
     <!-- Label for preference specifying that TalkBack on-screen keyboard settings. [CHAR_LIMIT=75]-->
     <string name="title_pref_on_screen_keyboard">On-screen keyboard</string>
@@ -3035,17 +2826,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <!-- Label for preference specifying that TalkBack should announce time in 24 hour format. [CHAR LIMIT=60] -->
     <string name="pref_time_feedback_format_entries_24_hour">24 hour</string>
 
-    <!--
-      Source: Title of a notification that TalkBack's gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR_LIMIT=30]
-    -->
-    <string name="notification_title_talkback_gestures_changed">SandFly gestures changed</string>
 
-    <!--
-      Source: Description of a notification that TalkBack's gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR_LIMIT=70]
-    -->
-    <string name="notification_message_talkback_gestures_changed">Tap to review changes to accessibility gestures</string>
 
 
     <!-- Checkbox label for the preference in the dialog that keeps the warning shown for future popped up. [CHAR_LIMIT=72] -->
@@ -3081,51 +2862,18 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
     <string name="no_apps_to_export_labels">No applications found to export labels.</string>
     <string name="label_choose_app_to_import">Choose application to import labels:</string>
     <string name="label_choose_app_to_export">Choose application to export labels:</string>
-    <!--
-      Source: Description of a notification that TalkBack's gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
-     -->
-    <string name="talkback_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures.  The actions associated with these gestures can be customized within SandFly settings.  When Explore by touch is enabled, you can use the following gestures to perform certain actions.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
 
     <!-- Title for the alert shown when a user attempts to set option that turns the phone screen dark to provide provide privacy. [CHAR_LIMIT=50] -->
     <string name="dialog_title_dim_screen">Hide screen?</string>
     <!-- Message for the alert shown when a user attempts to set option that turns the phone screen dark to provide provide privacy. [CHAR_LIMIT=NONE] -->
     <string name="dialog_message_dim_screen">This turns off the display to improve privacy. Some content may still be shown, like messages for turning the display back on, or menus for accessibility features like SandFly.</string>
 
-    <!--
-      Source: Description of a notification that some of TalkBack's built-in gestures have been changed.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
-     -->
-    <string name="talkback_built_in_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures.\n\nThe up-then-down gesture will allow you to move to the first item on the screen, and the down-then-up gesture will move to the last item.\n\nThe reading granularity can now be changed by focusing an item, then selecting a granularity from the talkback context menu.\n\nYou can change the actions performed by these gestures in SandFly Settings.</string>
 
-    <!--
-      Source: Description of a notification that some of TalkBack's built-in gestures have been removed.
-      Description: Displays a more detailed notification with information about gesture removes [CHAR LIMIT=NONE]
-     -->
-    <string name="default_action_changed_details">To pause and play media, you can now double tap and hold with two fingers.\n\nOther gestures have also changed.</string>
 
-    <!--
-      Source: The text of button in a notification that open on phone to learn more.
-      Description: Displays a text in the button of notification to inform the user to open the detail on phone. [CHAR LIMIT=NONE]
-     -->
-    <string name="talkback_built_in_gesture_open_url">Open on phone to learn more</string>
 
-    <!--
-      Source: Description of a notification that TalkBack's built-in swipe-up and swipe-down gestures have been changed in TalkBack 4.5.
-      Description: Displays a more detailed notification with information about gesture changes [CHAR LIMIT=NONE]
-     -->
-    <string name="talkback_built_in_gesture_change_details_45">This version of SandFly includes changes to the default accessibility gestures.\n\nThe up gesture now moves to the previous navigation setting, and the down gesture now moves to the next navigation setting.</string>
 
-    <!--
-      Notification that TalkBack's side-tap and shake shortcuts have been removed. [CHAR_LIMIT=1300]
-     -->
-    <string name="side_tap_shortcuts_removed_details">These settings are removed from SandFly, due to reliability issues:\n• Tap on side of device gestures\n• Shake to start continuous reading</string>
 
-    <!-- Label for the gesture change notificaiton dialog button to accept the suggested gesture mapping -->
-    <string name="button_accept_changed_gesture_mappings">Accept gestures</string>
 
-    <!-- Label for the gesture change notificaiton dialog button to customize the gesture mapping -->
-    <string name="button_customize_gesture_mappings">Customize gestures</string>
 
     <!-- Label for the "disable all" button in TalkbackDumpA11yEventActivity. Clicking on the button will toggle all the switches to "off" in DumpA11yEvent preference setting.  -->
     <string name="button_disable_all_events">Disable all</string>
@@ -3506,16 +3254,7 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Notification channel description of TalkBack. [CHAR_LIMIT=42] -->
   <string name="talkback_notification_channel_description">The Notification Channel of SandFly</string>
 
-  <!-- For selector summary. -->
-  <!--
-  Source: Summary subtext for the selector.
-  Description: Explains how to use the selector. [CHAR_LIMIT=500]
-  For example: Swipe up then down to select a setting. Then Swipe up to adjust the setting.
-  -->
-  <string name="pref_selector_summary"><xliff:g id="select_setting_gesture">%1$s</xliff:g> to select a setting. Then <xliff:g id="adjust_setting_gesture">%2$s</xliff:g> to adjust the setting.</string>
 
-  <!-- Announces the new speech rate value. This is spoken to the user. [CHAR_LIMIT=100] -->
-  <string name="speech_rate_change">Speech rate <xliff:g example="50" id="scaleInPercent">%1$d</xliff:g>%%</string>
   <!-- Announces speech pitch increases. This is spoken to the user. [CHAR_LIMIT=100] -->
   <string name="speech_pitch_increase" translatable="false">@string/shortcut_speech_pitch_increase</string>
   <!-- Announces speech pitch decreases. This is spoken to the user. [CHAR_LIMIT=100] -->
@@ -3539,14 +3278,8 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- Announces the new typing echo setting. This is spoken to the user. [CHAR_LIMIT=100] -->
   <string name="typing_echo_change"><xliff:g example="Characters" id="echoValue">%1$s</xliff:g> echo physical keyboard</string>
 
-  <!-- Usage hint for how to toggle reading control mode. This is spoken to the user. [CHAR_LIMIT=100] -->
-  <string name="reading_control_toggle_prefix_xr">Secondary palm in, long press to toggle reading control mode. </string>
   <!-- One or two gesture name. This is spoken to the user. [CHAR_LIMIT=100]-->
   <string name="gesture_1_or_2"><xliff:g example="swipe up">%1$s</xliff:g> or <xliff:g example="swipe down">%2$s</xliff:g></string>
-  <!-- Usage hint for how to select setting. This is spoken to the user. [CHAR_LIMIT=200] -->
-  <string name="select_setting_hint"><xliff:g example="swipe up" id="select_setting_gesture">%1$s</xliff:g> to select a different setting</string>
-  <!-- Usage hint for how to adjust the selected setting. This is spoken to the user. [CHAR_LIMIT=150] -->
-  <string name="adjust_setting_hint"><xliff:g example="swipe up" id="adjust_setting_gesture">%1$s</xliff:g> to adjust the setting</string>
   <!-- Usage hint for how to read the screen (such as reading a single word at a time). This is spoken to the user. [CHAR_LIMIT=180] -->
   <string name="adjust_granularity_hint"><xliff:g example="swipe up" id="adjust_granularity_gesture">%1$s</xliff:g> to read by <xliff:g example="words" id="granularity">%2$s</xliff:g></string>
   <!-- Usage hint for how to navigate to a spelling or grammar error. This is spoken to the user. [CHAR_LIMIT=180] -->
@@ -3628,8 +3361,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="new_shortcut_gesture_pause_or_play_media_text">To pause or play media in a video or music app, double-tap with 2 fingers. Try it now.</string>
   <!-- The text to introduce how to pause or play media. [CHAR_LIMIT=NONE]-->
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Other apps may use this gesture for things like answering or ending a phone call. This gesture may not be supported by all apps.</string>
-  <!-- The button text bring user to the tutorial page. [CHAR_LIMIT=NONE]-->
-  <string name="onboarding_link_to_talkback_tutorials">View all SandFly tutorials</string>
 
   <!--
   Source: Announces when media paused or playing.
@@ -3675,9 +3406,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="new_shortcut_gesture_reading_menu_text">To use the reading controls, swipe left or right with 3 fingers. You can also swipe up or down with 3 fingers.</string>
   <!-- A text to notify that gestures might not be correct because some gestures are customized. [CHAR_LIMIT=NONE]-->
   <string name="new_shortcut_gesture_note">Note: You have customized some of your gestures, so this information may not be accurate. To review your gestures, go to SandFly settings.</string>
-  <!-- For welcome page when user updates to R. -->
-  <!-- The title of welcome to TalkBack on Android 11 page. [CHAR_LIMIT=NONE]-->
-  <string name="welcome_to_android11">Welcome to SandFly on Android 11</string>
   <!-- The text about what's new in TalkBack on Android 11. [CHAR_LIMIT=NONE]-->
   <string name="welcome_to_android11_text">New gestures have been added to make SandFly faster and easier to use.\n\nOn this screen, you can try the new gestures. You can review this information in SandFly settings at any time.</string>
   <!-- The title of notification that to notify TalkBack supports new gestures. [CHAR_LIMIT=NONE]-->
@@ -3688,22 +3416,11 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="dump_node_tree_description">Node tree has been printed to logs.</string>
   <!-- The hint description provided to users to report gesture issues. [CHAR_LIMIT=NONE]-->
   <string name="report_gesture_description">Here are gestures performed recently, please report which gesture is wrong and what is expected.</string>
-  <!-- For TalkBack 16.0 onboarding. -->
-  <!-- The first item of the welcome to the updated TalkBack page. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings > Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
-  <!-- The first item of the welcome to the updated TalkBack page for TTS. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content_tts">You can now connect to braille displays via HID, a way to connect to bluetooth devices. Make sure you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings then Braille display and turn on \"Use braille display\". Find your device in the devices list, and connect to it. </string>
-  <!-- The first item of the welcome to the updated TalkBack page. [CHAR_LIMIT=NONE]-->
-  <string name="update_welcome_text_content_with_link">Learn how to use your braille display with SandFly.</string>
 
   <!-- The text about what's new in TalkBack 16.1. [CHAR_LIMIT=NONE]-->
   <string name="update_welcome_talkback_16.1">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings > New features in SandFly.</string>
   <!-- The speech of the text about what's new in TalkBack 16.1. [CHAR_LIMIT=NONE]-->
   <string name="update_welcome_talkback_16.1_tts">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings then New features in SandFly.</string>
-  <!-- The title of the Shortcut for describe screen page. [CHAR_LIMIT=NONE]-->
-  <string name="describe_screen_and_qna_title">New languages for Describe screen and Ask Gemini</string>
-  <!-- The content of the Shortcut for describe screen page. [CHAR_LIMIT=NONE]-->
-  <string name="describe_screen_and_qna_content"><![CDATA[Describe screen and Ask Gemini are now available in additional languages. <a href="https://support.google.com/accessibility/android?p=talkback_16_1">Learn more in the help center</a>.]]></string>
   <!-- The title of the Shortcut for dictation page. [CHAR_LIMIT=NONE]-->
   <string name="shortcut_for_dictation_title">Shortcut for voice typing</string>
   <!-- The content of the Shortcut for dictation page. [CHAR_LIMIT=NONE]-->
@@ -3712,34 +3429,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
 <br>Make sure you have the latest version of <a href="https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin">Gboard from Google Play</a>.]]></string>
   <!-- The content of the Shortcut for dictation page. [CHAR_LIMIT=NONE]-->
   <string name="shortcut_for_dictation_content_without_google_play">When Gboard is on screen, you can now use a two-finger double-tap to start voice dictation, then a two-finger double-tap to stop.</string>
-  <!-- The title of the Keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_title">Keyboard</string>
-  <!-- The content of the Keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_content">SandFly now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in SandFly settings > Advanced settings > Keyboard shortcuts.</string>
-  <!-- The speech of the text about the Keyboard page. [CHAR_LIMIT=NONE]-->
-  <string name="keyboard_content_tts">SandFly now has an \"Enhanced keymap\" for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \"browse mode\" for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \"Enhanced keymap\" in SandFly settings then Advanced settings then Keyboard shortcuts.</string>
-  <!-- The title of the Reduce delay page. [CHAR_LIMIT=NONE]-->
-  <string name="reduce_delay_title">Reduce delay</string>
-  <!-- The content of the Reduce delay page. [CHAR_LIMIT=NONE]-->
-  <string name="reduce_delay_content">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings > Advanced settings > Reduce delay.</string>
-  <!-- The speech of the text about the Reduce delay page. [CHAR_LIMIT=NONE]-->
-  <string name="reduce_delay_content_tts">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings then Advanced settings then Reduce delay.</string>
-  <!-- The title of the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
-  <string name="customize_braille_keyboard_improvements_title">Customize braille keyboard gestures</string>
-  <!-- The content of the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
-  <string name="customize_braille_keyboard_improvements_content">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to SandFly settings > Braille keyboard > Gestures.</string>
-  <!-- The speech of the text about the Customize braille keyboard improvements page. [CHAR_LIMIT=NONE]-->
-  <string name="customize_braille_keyboard_improvements_content_tts">It\'s now possible to customize gestures for the virtual on-screen braille keyboard. To customize, go to SandFly settings then Braille keyboard then Gestures.</string>
-  <!-- Click link to get more information about braille keyboard. [CHAR_LIMIT=NONE]-->
-  <string name="learn_more_about_braille_keyboard">Learn more about braille keyboard</string>
-  <!-- The title of the Other changes page. [CHAR_LIMIT=NONE]-->
-  <string name="other_changes_title">Other changes</string>
-  <!-- The content of the Other changes page. [CHAR_LIMIT=NONE]-->
-  <string name="other_changes_content">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings > Show instructions for turning off SandFly.</string>
-  <!-- The speech of the text of the Other changes page. [CHAR_LIMIT=NONE]-->
-  <string name="other_changes_content_tts">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings then Show instructions for turning off SandFly.</string>
-  <!-- The speech of the text of the keymap page. [CHAR_LIMIT=NONE]-->
-  <string name="keymap_changes_content">Classic keymap has been switched to default keymap, which includes more shortcuts.</string>
   <!-- The title of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
   <string name="announcing_text_formatting_title">Announcing text formatting</string>
   <!-- The header content of the Announcing text formatting page. [CHAR_LIMIT=NONE]-->
@@ -3932,8 +3621,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="practice_gestures_link_text">Practice gestures</string>
   <!-- The subtext of practice gestures on the index page. [CHAR_LIMIT=NONE]-->
   <string name="practice_gestures_link_subtext">Try different gestures to learn what they do</string>
-  <!-- The subtext of help and feedback on the index page. [CHAR_LIMIT=NONE]-->
-  <string name="help_and_feedback_link_subtext">Learn more about SandFly and send feedback</string>
 
   <!-- The title of the keyboard tutorial choose tutorial page. [CHAR_LIMIT=NONE]-->
   <string name="choose_tutorial_title">Choose how you would like to interact with SandFly</string>
@@ -4273,11 +3960,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- The title of End of tutorial page for Wear. [CHAR_LIMIT=180] -->
   <string name="wear_training_end_tutorial_title">You\'re ready to start using SandFly</string>
 
-  <!-- TalkBack updated notification -->
-  <!-- The title of notification to notify users TalkBack has been updated. [CHAR_LIMIT=120]-->
-  <string name="talkback_updated_notification_title">SandFly has been updated</string>
-  <!-- The context of notification to notify users that TalkBack has been updated. [CHAR_LIMIT=150]-->
-  <string name="talkback_updated_notification_content">Tap to find out more</string>
   <!-- The title for the What's new page. [CHAR_LIMIT=150] -->
   <string name="wear_new_feature_page_title">Welcome to the updated SandFly</string>
   <!-- The content for the What's new page. [CHAR_LIMIT=NONE] -->
@@ -4325,15 +4007,9 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <!-- For HaTS. -->
   <!-- A item in settings page to take a survey. [CHAR_LIMIT=NONE]-->
   <string name="survey_setting_title">Share your feedback</string>
-  <!-- Announce when a survey is closed. [CHAR_LIMIT=NONE]-->
-  <string name="survey_closed">Survey closed</string>
   <!-- For summarize view -->
   <string name="title_summarize_view">Describe screen</string>
 
-  <!-- For increase touch latency [CHAR_LIMIT=60]-->
-  <string name="title_increase_touch_focus_latency">Increase focus delay</string>
-  <!-- For decrease touch latency [CHAR_LIMIT=60]-->
-  <string name="title_decrease_touch_focus_latency">Decrease focus delay</string>
 
   <!-- For image caption. -->
   <!--
@@ -4373,23 +4049,6 @@ Description: Explain that the feature is enabled for all images. [CHAR_LIMIT=NON
   <string name="image_qna_answer_prefix">MODEL: <xliff:g example="There are 3 lollipops in this image.">%1$s</xliff:g></string>
   <!-- The postfix of the answer from the model for the dialog history. [CHAR_LIMIT=NONE]-->
   <string name="image_qna_with_history_postfix">... [Continue alternating USER and MODEL turns] ...</string>
-  <!-- The prompt to request screen overview. [CHAR_LIMIT=NONE] -->
-  <string name="screen_overview_with_screenshot">
-   "Your job is to help someone who cannot see their phone to understand what is on their phone screen. Describe this screenshot in a few sentences.
-
-Instructions
-Start your response with \"The screen shows\"
-The beginning of the response should describe the most important, salient content on the screen. Here are some examples of what the most important, salient content to describe might be
-* In a chat app: the sender and text of the most recent message
-* In a social media app: the first post, including who posted it, the text, and a description of the image
-* In a news app: the article title and a description of the primary image
-* In a shopping app: a description of the product shown and the price
-* In a calendar app: the next event and the number other events are shown afterward
-* In a list of messages: the name and preview for the first message and then only the names for the next few in the list, and how many messages are unread
-
-After that, the response can describe the spatial location and purpose of navigation bars and prominent buttons.
-Do not mention the contents of the status bar at the top (e.g. time, network status, battery).
-Do not use any markdown in your response."</string>
     <!-- The title of Gemini opt-in dialog. [CHAR_LIMIT=NONE] -->
   <string name="title_gemini_opt_in_dialog">Get detailed image descriptions?</string>
   <!-- The title of Gemini Nano opt-in dialog. [CHAR_LIMIT=NONE] -->
@@ -4400,10 +4059,6 @@ Do not use any markdown in your response."</string>
   <string name="title_gemini_result_bottom_sheet">Image description</string>
   <!-- The title of Screen Overview result dialog. [CHAR_LIMIT=NONE] -->
   <string name="title_gemini_screen_overview_result_dialog">Screen description</string>
-  <!-- The text of Summary button in Screen Overview result dialog. [CHAR_LIMIT=NONE] -->
-  <string name="title_gemini_screen_overview_summary_page_button_label">Summary</string>
-  <!-- The text of Actions button in Screen Overview result dialog. [CHAR_LIMIT=NONE] -->
-  <string name="title_gemini_screen_overview_action_page_button_label">Actions</string>
   <!-- The label of positive button in the Gemini opt-in dialog. [CHAR_LIMIT=NONE] -->
   <string name="positive_button_gemini_opt_in_dialog">Turn on</string>
   <!-- The label of positive button in the Gemini Nano opt-in dialog. [CHAR_LIMIT=NONE] -->
@@ -4412,8 +4067,6 @@ Do not use any markdown in your response."</string>
   <string name="negative_button_gemini_opt_in_dialog">No thanks</string>
   <!-- The label of positive button in the Turn-on image descriptions dialog. [CHAR_LIMIT=NONE] -->
   <string name="positive_button_turn_on_image_descriptions_dialog">Go to Settings</string>
-  <!-- The label of positive button in the Gemini download dialog. [CHAR_LIMIT=NONE] -->
-  <string name="positive_button_gemini_download_dialog">Download &amp; turn on</string>
   <!-- The label of positive button in the Gemini result dialog. [CHAR_LIMIT=NONE] -->
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <!--
@@ -4476,16 +4129,6 @@ Do not use any markdown in your response."</string>
   Description: This is spoken to the user. [CHAR_LIMIT=NONE]
   -->
   <string name="image_caption_with_hide_screen">Image descriptions aren\'t available when the screen is hidden. Show your screen and try again.</string>
-  <!--
-  Source: Feedback button state is [selected] for like/dislike button.
-  Description: This is spoken to the user. [CHAR_LIMIT=20]
-  -->
-  <string name="feedback_button_state_set">selected</string>
-  <!--
-  Source: Feedback button state is [not selected] for like/dislike button.
-  Description: This is spoken to the user. [CHAR_LIMIT=20]
-  -->
-  <string name="feedback_button_state_unset">not selected</string>
   <!-- Action text for like button. [CHAR_LIMIT=70]-->
   <string name="action_text_like_button">Mark as a good response</string>
   <!-- Action text for dislike button. [CHAR_LIMIT=70]-->
@@ -4545,12 +4188,6 @@ Do not use any markdown in your response."</string>
   <string name="download_all_image_captioning_successful_hint">Automatic image &amp; icon descriptions downloaded</string>
   <!-- The hint to notify the failure of downloading all image-captioning modules. [CHAR_LIMIT=NONE]-->
   <string name="download_all_image_captioning_failed_hint">Can\'t download. Try again later.</string>
-  <!-- The title of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
-  <string name="download_complete_notification_title">Download complete</string>
-  <!-- The content text of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
-  <string name="download_complete_notification_content">You\'ll now hear automatic image and icon descriptions with SandFly </string>
-  <!-- The action of the notification that announces the download completion. [CHAR_LIMIT=NONE]-->
-  <string name="download_complete_notification_action">Settings</string>
   <!-- The hint to notify the failure of downloading the module because storage error. [CHAR_LIMIT=NONE]-->
   <string name="download_storage_error_hint">Storage is full. To download, free up <xliff:g example="50" id="size">%1$d</xliff:g> MB in Settings > Storage.</string>
   <!-- The hint to notify the failure of downloading because network error. [CHAR_LIMIT=NONE]-->
@@ -4561,14 +4198,10 @@ Do not use any markdown in your response."</string>
   <string name="switch_icon_detection_dialog_message">Hear descriptions when you focus on an icon</string>
   <!-- The message of the dialog to disable/enable of the image-description module. [CHAR_LIMIT=NONE]-->
   <string name="switch_image_description_dialog_message">Hear descriptions when you focus on an image. Some apps may not support this.</string>
-  <!-- The title of the dialog to disable/enable of the text-recognition module. [CHAR_LIMIT=NONE]-->
-  <string name="switch_text_recognition_dialog_title">Automatically describe text in images</string>
   <!-- The message of the dialog to disable/enable of the text-recognition module. [CHAR_LIMIT=NONE]-->
   <string name="switch_text_recognition_dialog_message">Hear descriptions when you focus on an image that contains text</string>
   <!-- The subtitle of the dialog to disable/enable of the icon-detection module. [CHAR_LIMIT=NONE]-->
   <string name="switch_auto_image_caption_dialog_subtitle">Downloaded</string>
-  <!-- The subtext of the dialog to disable/enable of a module. [CHAR_LIMIT=NONE]-->
-  <string name="disable_auto_image_caption_dialog_subtext">You can still get descriptions for a selected image from the SandFly menu</string>
   <!-- The button text of the dialog to accept to enable/disable of a module. [CHAR_LIMIT=NONE]-->
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <!-- The button text of the dialog to delete of a module. [CHAR_LIMIT=NONE]-->
@@ -4600,16 +4233,6 @@ Do not use any markdown in your response."</string>
   <!-- The subtext of the dialog to disable Gemini feature. [CHAR_LIMIT=NONE]-->
   <string name="disable_gemini_dialog_subtext">Turn on to enable screen understanding with Gemini</string>
 
-  <!-- The title of the dialog for updating AI services. [CHAR_LIMIT=NONE]-->
-  <string name="ai_services_update_dialog_title">Update <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> app to describe images</string>
-  <!-- The message of the dialog for updating AI services. [CHAR_LIMIT=NONE]-->
-  <string name="ai_services_update_dialog_message">To hear image descriptions, get the latest version of <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g>  from Google Play.\n\nOnce downloading is complete, come back to SandFly settings and turn on automatic image descriptions again. </string>
-  <!-- The confirm button for updating AI services. [CHAR_LIMIT=NONE]-->
-  <string name="ai_services_update_dialog_button_text">Go to Google Play</string>
-  <!-- The app name of AiCore. [CHAR_LIMIT=NONE]-->
-  <string name="aicore_app_name">AICore</string>
-  <!-- The app name of Astrea(go/astrea). [CHAR_LIMIT=NONE]-->
-  <string name="astrea_app_name">Private Compute Services</string>
 
   <!-- The Gemini service unavailable . [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_message">Something went wrong. Try again.</string>
@@ -4657,22 +4280,12 @@ Do not use any markdown in your response."</string>
   <!-- Image Q&A button for speaking an question. [CHAR_LIMIT=NONE]-->
   <string name="image_qna_speak_question_description">Speak question</string>
 
-  <!-- Screen overview introducing the summary of the screen [CHAR_LIMIT=NONE]-->
-  <string name="overviews_summary_intro">Summary of this app screen: %1$s</string>
 
   <!-- Screen Q&A error when it can't find a button or UI element to click. [CHAR_LIMIT=NONE]-->
   <string name="overviews_node_not_found">I\'m sorry, I can\'t find that part of the screen anymore.</string>
 
-  <!-- Screen overview header delineating images found in the focused app [CHAR_LIMIT=NONE]-->
-  <string name="overviews_images_in_app">Major Images found</string>
   <!-- Screen overview numbered list item [CHAR_LIMIT=NONE]-->
   <string name="overviews_list_item"><xliff:g example="1">%1$d</xliff:g>. <xliff:g example="A majestic cassowary on the beach">%2$s</xliff:g></string>
-  <!-- Screen overview header delineating actions (buttons and UI elements) found in the focused app [CHAR_LIMIT=NONE]-->
-  <string name="overviews_actions_in_app">Actions in app</string>
-  <!-- Screen overview description of actions (buttons and UI elements) found in the focused app [CHAR_LIMIT=NONE]-->
-  <string name="overviews_actions_in_app_description">Here are the major actions that you can take from this app screen:</string>
-  <!-- Screen overview type of container of a UI element [CHAR_LIMIT=80]-->
-  <string name="overviews_parent_type">Actions in app</string>
 
   <!-- The hint to notify the misspelling word is replace by the spelling suggestion which is selected by the user. This is spoken to the user. [CHAR_LIMIT=NONE]-->
   <string name="text_replaced_feedback">Text replaced</string>
@@ -4802,8 +4415,6 @@ Do not use any markdown in your response."</string>
   <!-- TalkBack label. [CHAR_LIMIT=NONE]-->
   <string name="talkback_label">SandFly</string>
 
-  <!-- Tip notification content for lock screen notifications. [CHAR_LIMIT=NONE] -->
-  <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \"Speak notifications when screen is off\" in SandFly verbosity settings</string>
 
     <!-- Settings entry that saves all of SandFly's settings to a file. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_export_settings">Export settings</string>

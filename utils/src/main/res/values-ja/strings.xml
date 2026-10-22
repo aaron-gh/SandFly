@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="template_password_selected">文字 %1$d～%2$d</string>
-  <string name="template_password_traversed">%1$d文字目</string>
   <string name="untitled_window">無題</string>
   <string name="template_shorten_text">%2$sから%3$sまでの%1$d文字</string>
   <string name="template_text_copied">コピーしました、%1$s</string>
@@ -20,7 +18,6 @@
   <string name="granularity_web_heading">見出し</string>
   <string name="granularity_web_link">リンク</string>
   <string name="granularity_web_control">コントロール</string>
-  <string name="granularity_pseudo_web_special_content">特殊コンテンツ</string>
   <string name="granularity_web_visited_link">アクセスしたリンク</string>
   <string name="granularity_web_unvisited_link">アクセスしていないリンク</string>
   <string name="granularity_web_button">ボタン</string>
@@ -54,8 +51,6 @@
   <string name="template_viewpager_index_count">%2$d ページ中 %1$d ページ目です</string>
   <string name="template_viewpager_index_count_short">%2$d ページ中 %1$d ページ目です</string>
   <string name="url_dialog_table">%1$s（%2$s）</string>
-  <string name="exit_scrim">終了</string>
-  <string name="settings_button_description">設定</string>
   <string name="close_button_description">閉じる</string>
   <string name="show_keyboard_window">%1$sを表示しています</string>
   <string name="hide_keyboard_window">キーボードは非表示です</string>

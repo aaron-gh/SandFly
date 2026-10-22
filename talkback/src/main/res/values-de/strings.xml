@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Wenn SandFly aktiviert ist, erhältst du gesprochenes Feedback, sodass du dein Gerät bedienen kannst, ohne auf das Display zu sehen. SandFly eignet sich für Situationen, in denen es schwierig ist, den Bildschirm zu sehen, oder für Personen, die damit Probleme haben.<br><br><b>So verwendest du SandFly</b><br>• Wenn du zwischen Elementen wechseln möchtest, wische nach rechts oder links<br>• Wenn du ein Element auswählen möchtest, tippe doppelt darauf<br>• Wenn du scrollen möchtest, ziehe mit zwei Fingern<br><b>So deaktivierst du SandFly</b><br>1. Tippe in den Einstellungen auf <b>SandFly verwenden</b>. Ein Umriss erscheint. Tippe doppelt darauf.<br>2. Tippe in der Bestätigungsnachricht auf <b>Beenden</b>. Ein Umriss erscheint. Tippe doppelt darauf.]]></string>
   <string name="talkback_service_summary">Mit einem Screenreader Elemente vorlesen lassen</string>
   <string name="talkback_preferences_title">SandFly-Einstellungen</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Einstellungen</string>
   <string name="tts_preferences_title">Sprachausgabe</string>
   <string name="language_options">Sprachen</string>
   <string name="spoken_language">Gesprochene Sprache</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Suche abgebrochen</string>
   <string name="notification_type_status_started">Gestartet</string>
   <string name="notification_type_status_stopped">Gestoppt</string>
-  <string name="notification_type_status_connected">verbunden</string>
-  <string name="notification_battery_level_unknown">unbekannt</string>
   <string name="notification_battery_saver_mode">Energiesparmodus an</string>
   <string name="template_no_text_selected">Kein Text ausgewählt</string>
   <string name="template_charging">Laden: %1$s. Akkustand: %2$s Prozent.</string>
   <string name="template_charging_lite">Ladevorgang: %1$s</string>
-  <string name="template_battery_state">Akku %1$s %2$s Prozent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Klingeltonmodus \"Vibration\"</string>
   <string name="value_ringer_silent">Klingelton lautlos</string>
   <string name="value_screen_on">Bildschirm ein</string>
   <string name="value_screen_off">Bildschirm aus</string>
   <string name="value_device_unlocked">Gerät entsperrt</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Sprachlautstärke</string>
-  <string name="title_pref_speech_rate">Sprech­geschwindigkeit</string>
-  <string name="summary_pref_speech_rate">Geschwindigkeit, mit der der Text gesprochen wird</string>
   <string name="title_pref_verbose_scroll_announcement">Immer die Zahl der Listenelemente angeben</string>
   <string name="summary_pref_verbose_scroll_announcement">Nach jedem Scrollen ansagen, welche Elemente angezeigt werden</string>
   <string name="title_pref_cover_proximity_sensor">Näherungssensor abdecken, um die Sprachausgabe zu beenden</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Zeitansage</string>
   <string name="pref_speak_time_summary">Wenn das Display eingeschaltet wird</string>
   <string name="summary_speak_container_element_positions">Ansagen, wenn du Listen, Raster und andere Container aufrufst oder verlässt</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokusverzögerung zu Vorleseoptionen hinzugefügt</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Du kannst die Fokusverzögerung jetzt jederzeit über die Vorleseoptionen ändern.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Zu „Für Eingabe anheben“ wechseln?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Wenn die Fokusverzögerung beim Tippen auf weniger als 0,3 Sekunden eingestellt ist, ist das Doppeltippen zum Eingeben von Text sehr schwierig. Wähle „Wechseln“ aus, um automatisch zu „Für Eingabe anheben“ zu wechseln.\n\nWenn du „Für Eingabe anheben“ verwenden möchtest, halte den Finger gedrückt, um eine beliebige Taste auszuwählen, und hebe ihn dann an, um zu tippen.\n\nDu kannst diese Einstellung in den SandFly-Einstellungen anpassen.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Fokusverzögerung beim Tippen zu Vorleseoptionen hinzugefügt</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Wenn das Doppeltippen bei der Eingabe unzuverlässig ist, kannst du über die Vorleseoptionen jederzeit eine längere Fokusverzögerung beim Tippen einstellen.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Die Fokusverzögerung beim Tippen funktioniert ohne „Für Eingabe anheben“ nicht.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Ok</string>
   <string name="reset_letency_reduction_settings_dialog_title">Verzögerungseinstellungen zurücksetzen?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Dadurch werden alle Verzögerungseinstellungen auf die Standardeinstellungen zurückgesetzt</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Zurücksetzen</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Die Einstellungen zum Reduzieren der Latenz wurden zurückgesetzt.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Wechseln</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Nicht wechseln</string>
   <string name="Reset_gesture_settings_dialog_title">Touch-Gesten zurücksetzen?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Gesten des aktuellen Sets zurücksetzen?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Dadurch werden alle Touch-Gesten auf ihre Standardaktionen zurückgesetzt.\n\nAlle vorgenommenen Anpassungen gehen dabei verloren.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Alle Fortschrittsansagen vorlesen</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Es werden beispielsweise Fortschritte beim Herunterladen und beim Folgen von Wegbeschreibungen angesagt. Wenn diese Option deaktiviert wird, gibt es weiterhin entsprechende Ansagen, allerdings seltener.</string>
   <string name="title_pref_explore_by_touch">Bei Berühren vorlesen</string>
-  <string name="title_pref_category_visual">Visuell</string>
   <string name="title_pref_category_controls">Steuerelemente</string>
-  <string name="title_pref_category_braille">Brailleschrift</string>
-  <string name="title_pref_category_general">Allgemein</string>
-  <string name="title_pref_category_advanced">Erweitert</string>
-  <string name="title_pref_category_others">Andere</string>
-  <string name="title_pref_category_tutorial_and_help">Anleitung &amp; Hilfe</string>
   <string name="title_pref_category_reduce_latency_summary">Mit diesen Einstellungen reagiert SandFly schneller, nachdem du den Bildschirm berührt hast</string>
   <string name="reset_latency_settings_title">Alle Verzögerungseinstellungen zurücksetzen</string>
   <string name="title_pref_single_tap">Zum Aktivieren einmal tippen</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusanzeige</string>
   <string name="title_pref_category_manage_gestures">Touch-Gesten</string>
   <string name="title_pref_manage_labels">Benutzerdefinierte Labels</string>
-  <string name="title_pref_manage_customize_menus">Menüs bearbeiten</string>
   <string name="title_pref_category_context_menu">SandFly-Menü</string>
   <string name="title_pref_category_selector_menu">Vorleseoptionen</string>
   <string name="title_pref_category_navigation_menu">Navigationsoptionen bearbeiten</string>
-  <string name="pref_category_context_menu_summary">Tippe mit drei Fingern oder wische nach oben oder unten und dann nach rechts.</string>
-  <string name="pref_category_context_menu_summary_xr">Wenn du das SandFly-Menü verwenden möchtest, drehe deine sekundäre Handfläche zu dir und ziehe die Finger zusammen.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Wische erst nach unten und dann nach rechts.</string>
-  <string name="pref_category_selector_menu_summary">Drehe zwei Finger wie einen Drehregler oder wische mit drei Fingern nach links oder rechts, um eine Vorleseoption auszuwählen. Wische dann nach oben oder unten, um sie zu ändern.</string>
-  <string name="pref_category_selector_menu_summary_xr">Wenn du zwischen den Vorleseoptionen wechseln möchtest, drehe deine sekundäre Handfläche zu dir, halte deine Finger zusammengezogen, bewege sie nach rechts oder links und lass los.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Wische erst nach oben und dann nach unten oder erst nach unten und dann nach oben, um eine Vorleseoption auszuwählen. Wische dann nach oben oder unten, um sie zu ändern.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Tastenkombinationen</string>
   <string name="title_pref_export_custom_labels">Benutzerdefinierte Labels exportieren</string>
-  <string name="title_pref_play_store">SandFly im Play Store öffnen</string>
-  <string name="summary_pref_play_store">Aktuelle SandFly-Version: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Hilfe &amp; Feedback</string>
-  <string name="title_pref_gup">Support für Barrierefreiheit bei Google-Produkten kontaktieren</string>
-  <string name="subtitle_pref_gup">Unterstützung bei der Nutzung von SandFly erhalten oder Fehler melden</string>
-  <string name="pref_item_licenses">Open Source-Lizenzen</string>
-  <string name="title_pref_tutorial">Anleitung</string>
   <string name="title_pref_help">Hilfe</string>
   <string name="title_pref_show_tos">Nutzungsbedingungen</string>
   <string name="title_pref_show_privacy_policy">Datenschutzerklärung</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gesten auf dem Fingerabdrucksensor</string>
   <string name="title_pref_category_tutorial">SandFly-Anleitung</string>
   <string name="title_pref_category_help_no_tutorial">Hilfe</string>
-  <string name="title_pref_category_typing">Tippen</string>
   <string name="title_pref_advanced_settings">Erweiterte Einstellungen</string>
   <string name="title_pref_show_exit_watermark">Anleitung zum Deaktivieren von SandFly anzeigen</string>
   <string name="summary_pref_show_exit_watermark">Beim Aktivieren von SandFly anzeigen, wie es deaktiviert wird</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Einige Modifikatortasten sind anders.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Weitere Informationen zu Tastaturbelegungen</string>
   <string name="keycombo_go_to_settings">Zu den Einstellungen</string>
-  <string name="keycombo_keymap_changes_notifications_content">Die klassische Tastaturbelegung in SandFly wird demnächst entfernt. Wechsle zur weiteren Nutzung von Tastenkombinationen zur Standardtastaturbelegung.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Weitere Informationen</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ok</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Einstellungen</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Weitere Informationen</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Du verwendest jetzt die standardmäßige SandFly-Tastaturbelegung. Es gibt auch eine neue, erweiterte Tastaturbelegung mit vielen neuen Befehlen. Du kannst sie über die Einstellungen aufrufen oder dir weitere Infos in der Hilfe ansehen.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Neue Tastaturbelegung verfügbar</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Die neue, erweiterte SandFly-Tastaturbelegung bietet viele neue Befehle. Du kannst sie über die Einstellungen aufrufen oder dir weitere Infos in der Hilfe ansehen.</string>
-  <string name="keycombo_update_modifier_key_warning_title">SandFly-Modifikatortaste aktualisieren</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Nicht jetzt</string>
   <string name="keycombo_warning_content_description">Weitere Informationen zur Modifikatortaste</string>
-  <string name="keycombo_warning_dialog_title">Modifikatortaste aktualisieren</string>
-  <string name="keycombo_warning_dialog_message">Damit die SandFly-Tastenkombinationen korrekt funktionieren, aktualisiere deine Modifikatortaste so, dass statt der Aktionstaste die Alt-Taste verwendet wird.\n\nWenn du weiterhin die Aktionstaste verwendest, werden unter dieser Android-Version bei einigen Tastenkombinationen andere Aktionen ausgeführt.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Tastaturbelegung</string>
   <string name="keycombo_menu_select_keymap">Tastaturbelegung auswählen</string>
   <string name="keycombo_menu_reset_keymap">Tastaturbelegung zurücksetzen</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Sprachlautstärke erhöhen</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Sprachlautstärke verringern</string>
   <string name="keycombo_menu_global_refocus_current_node">Aktuellen Fokus vorlesen</string>
-  <string name="keycombo_menu_category_granularity">Navigation</string>
   <string name="keycombo_menu_granularity_increase">Nächste Navigationseinstellung</string>
   <string name="keycombo_menu_granularity_decrease">Vorherige Navigationseinstellung</string>
   <string name="keycombo_menu_category_other">Andere Aktionen</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Möchtest du die Tastenkombinationen für diese Tastaturbelegung wirklich auf die Standardwerte zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Zurücksetzen</string>
   <string name="template_keycombo_menu_browse_mode_command">Im Suchmodus: %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">Drücke die Tastenkombination, um eine neue Kombination festzulegen. Diese muss mindestens eine der Tasten \"Alt\" oder \"Strg\" umfassen.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Drücke die Tastenkombination mit %1$s, um die neue Kombination festzulegen.</string>
   <string name="keycombo_unassigned">Nicht zugewiesen</string>
   <string name="save_button_in_keycombo_assign_dialog">Speichern</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Fokusverzögerung beim Tippen</string>
   <string name="message_pref_touch_explore_latency">Bei einer kürzeren Verzögerung spricht SandFly früher, nachdem du die Tastatur berührt hast.\n\nVerzögerung auswählen</string>
   <string name="title_pref_touch_focus_timeout">Fokusverzögerung</string>
-  <string name="summary_pref_touch_focus_time">
-Du kannst festlegen, wie schnell SandFly zu sprechen anfängt, nachdem der Fokus verschoben wurde. Bei einer kürzeren Verzögerung tritt SandFly schneller in Aktion, aber das Doppel- und Dreifachtippen kann schwieriger sein.\n\n
-Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen zur Aktivierung durch einmaliges Tippen mit zwei Fingern geändert.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Touch-Gesten in SandFly verarbeiten</string>
   <string name="toast_pref_talkback_gesture_detection">Schalte SandFly aus und wieder ein, um die Einstellung zu aktivieren.</string>
   <string name="title_pref_auto_image_captioning">Automatische Beschreibungen</string>
@@ -382,28 +332,16 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="dialog_title_turn_on_image_description">Bildbeschreibungen in den Einstellungen aktivieren</string>
   <string name="dialog_message_turn_on_image_description">Probiere es noch einmal, nachdem du entweder automatische oder detaillierte Bildbeschreibungen aktiviert hast</string>
   <string name="title_pref_detailed_image_description">Detaillierte Bildbeschreibungen</string>
-  <string name="summary_pref_ai_description">Längere Beschreibungen hören, wenn du „<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>“ im SandFly-Menü auswählst</string>
   <string name="dialog_message_on_device_ai_description">Wenn du in unterstützten Apps den Fokus auf ein Bild verschiebst, hörst du eine kurze Beschreibung dazu.\n\nDie Bilder werden auf deinem Gerät verarbeitet und nicht an Google gesendet. \n\nGenerative KI ist experimentell und wird daher Fehler machen. Wenn du fortfährst, stimmst du den <a href="https://policies.google.com/terms/generative-ai">Google-Nutzungsbedingungen</a> zu.</string>
   <string name="enable_gemini">Aktivieren</string>
   <string name="powered_by_gemini">Basierend auf generativer KI</string>
-  <string name="detailed_image_description_ongoing_hint">Beschreibung wird abgerufen</string>
-  <string name="detailed_image_description_result_prefix">Erkannt: Bild. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Für automatische Bildbeschreibungen ist ein Download erforderlich</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Die Bilder werden auf deinem Gerät erstellt und zu keiner Zeit an Google gesendet.\n\nGenerative KI ist experimentell und wird daher Fehler machen. Wenn du fortfährst, stimmst du den %1$s zu.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-Nutzungsbedingungen</string>
   <string name="message_aifeature_downloading">KI‑Modell wird heruntergeladen. Das kann einige Zeit dauern. Du wirst benachrichtigt, wenn der Download beendet ist.</string>
   <string name="message_aifeature_downloading_with_progress">Download noch nicht abgeschlossen. %1$d von %2$d MB heruntergeladen.</string>
-  <string name="message_aifeature_download_complete">KI‑Modell heruntergeladen. SandFly kann jetzt Bildbeschreibungen erstellen.</string>
   <string name="summary_pref_auto_image_captioning">Für Symbole, Bilder und Text in Bildern</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Für Text in Bildern</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Für Bilder und Text in Bildern</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Für Symbole und Text in Bildern</string>
   <string name="summary_pref_module_downloading">Wird heruntergeladen…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Für alle Bilder aktiviert</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Nur für unbeschriftete Bilder aktiviert</string>
   <string name="summary_pref_auto_image_captioning_disabled">Aus</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Für alle Symbole aktiviert</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Nur für unbeschriftete Symbole aktiviert</string>
   <string name="summary_pref_auto_icon_detection_disabled">Aus</string>
   <string name="title_pref_enable_auto_image_caption">Alle Bilder</string>
   <string name="title_pref_enable_auto_image_caption_arg">Alle Bilder\n%1$s</string>
@@ -413,7 +351,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="title_pref_enable_auto_icon_detection">Alle Symbole</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Nur unbeschriftete Symbole</string>
   <string name="title_pref_disable_auto_icon_detection">Symbole nicht beschreiben</string>
-  <string name="dialog_message_on_device_ai_model_download">Wenn du in unterstützten Apps den Fokus auf ein Bild verschiebst, hörst du eine kurze Beschreibung dazu.\n\nDie Bilder werden auf deinem Gerät verarbeitet und nicht an Google gesendet.\n\nGenerative KI ist experimentell und wird daher Fehler machen. Wenn du fortfährst, stimmst du den %1$s zu.</string>
   <string name="title_pref_enable_gemini_support">An</string>
   <string name="title_pref_disable_gemini_support">Aus</string>
   <string name="summary_pref_gemini_support_enabled">Gemini ist aktiviert</string>
@@ -457,7 +394,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="shortcut_print_node_tree">Knotenstruktur drucken</string>
   <string name="shortcut_print_performance_stats">Leistungsstatistiken ausdrucken</string>
   <string name="shortcut_first_in_screen">Auf erstes Bildschirmelement fokussieren</string>
-  <string name="shortcut_summary">Bildschirmlayout zusammenfassen</string>
   <string name="shortcut_voice_commands">Sprachbefehle aktivieren</string>
   <string name="shortcut_last_in_screen">Auf letztes Bildschirmelement fokussieren</string>
   <string name="shortcut_enable_dimming">Display ausschalten</string>
@@ -561,7 +497,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="menu_category_web_navigation">Webnavigation</string>
   <string name="menu_category_basic_navigation">Grundlegende Navigation</string>
   <string name="summary_custom_action">Wird angezeigt, wenn für das aktuelle Element Aktionen wie z. B. Verknüpfen, Kopieren, Einfügen oder Auswählen vorhanden sind</string>
-  <string name="summary_context_menu_links">Links in einem fokussierten Element öffnen</string>
   <string name="summary_viewpager_controls">Zur nächsten oder vorherigen Seite gehen. Wird beim Lesen von Inhalten mit mehreren Seiten angezeigt.</string>
   <string name="summary_labeling_controls">Wird angezeigt, wenn ein Element ohne Label ausgewählt ist</string>
   <string name="summary_granularity">Zeichen für Zeichen, Wort für Wort, Zeile für Zeile usw. vorlesen</string>
@@ -631,12 +566,9 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="summary_screen_overview">Bildschirminhalt mit Aktionsschaltflächen zusammenfassen lassen</string>
   <string name="summary_screen_overview_no_actions">Zusammenfassung der Inhalte auf dem Display anhören</string>
   <string name="summary_image_caption">In einem ausgewählten Bild Text vorlesen und Symbole beschreiben</string>
-  <string name="summary_summarize_view">Zusammenfassung der Ansicht vorlesen lassen</string>
   <string name="summary_typo_suggestions">Anzeige erfolgt, wenn sich der Cursor auf einem Tippfehler befindet</string>
   <string name="summary_cache_keyboard_keys">SandFly lädt Ansagen vorab, um die Verzögerung beim Tippen zu verringern</string>
   <string name="summary_cache_keyboard_keys_disabled">Verwende die Google Sprachausgabe, um diese Funktion zu nutzen</string>
-  <string name="value_direction_down">Nach unten</string>
-  <string name="value_direction_down_and_right">Nach-unten-nach-rechts</string>
   <string name="title_pref_shortcut_up">Nach oben wischen</string>
   <string name="title_pref_shortcut_up_xr">Sekundäre Handfläche zu dir, Finger zusammenziehen und nach oben wischen</string>
   <string name="title_pref_shortcut_down">Nach unten wischen</string>
@@ -704,10 +636,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="title_pref_shortcut_fingerprint_left">Auf Fingerabdrucksensor nach links wischen</string>
   <string name="title_pref_shortcut_fingerprint_right">Auf Fingerabdrucksensor nach rechts wischen</string>
   <string name="title_pref_version_code">Versionscode</string>
-  <string formatted="false" name="value_volume_100_percent">An Sprachlautstärke anpassen</string>
-  <string formatted="false" name="value_volume_75_percent">75 % der Sprachlautstärke</string>
-  <string formatted="false" name="value_volume_50_percent">50 % der Sprachlautstärke</string>
-  <string formatted="false" name="value_volume_25_percent">25 % der Sprachlautstärke</string>
   <string name="value_type_confirmation_double_tap">Gedrückt halten, um beliebige Taste auszuwählen, dann doppeltippen</string>
   <string name="value_type_confirmation_lift_to_type">Gedrückt halten, um Buchstabentaste auszuwählen, dann Finger anheben. Für weitere Tasten doppeltippen.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Gedrückt halten, um beliebige Taste auszuwählen, dann Finger anheben</string>
@@ -720,12 +648,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="value_touch_explore_time_out_200ms">0,2 Sekunden</string>
   <string name="value_touch_explore_time_out_250ms">0,25 Sekunden</string>
   <string name="value_touch_explore_time_out_300ms">0,3 Sekunden (Standard)</string>
-  <string name="value_shake_to_read_disabled">Deaktiviert</string>
-  <string name="value_shake_to_read_threshold_very_light">Ganz leicht</string>
-  <string name="value_shake_to_read_threshold_light">Leicht</string>
-  <string name="value_shake_to_read_threshold_medium">Mittel</string>
-  <string name="value_shake_to_read_threshold_hard">Kräftig</string>
-  <string name="value_shake_to_read_threshold_very_hard">Sehr kräftig</string>
   <string name="title_pref_on_screen_keyboard">Bildschirmtastatur</string>
   <string name="title_pref_physical_keyboard">Physische Tastatur</string>
   <string name="value_keyboard_echo_none">Keines</string>
@@ -738,8 +660,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="pref_time_feedback_format_entries_default">Zeitformat des Geräts verwenden</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 Stunden</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 Stunden</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly-Gesten geändert</string>
-  <string name="notification_message_talkback_gestures_changed">Berühren, um geänderte Gesten für Bedienungshilfen aufzurufen</string>
   <string name="always_show_warning_checkbox">Diese Warnung immer anzeigen</string>
   <string name="label_dialog_title_add">Label hinzufügen</string>
   <string name="label_dialog_title_edit">Label bearbeiten</string>
@@ -760,16 +680,8 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="no_apps_to_export_labels">Keine Apps zum Exportieren von Labels gefunden.</string>
   <string name="label_choose_app_to_import">App zum Importieren von Labels auswählen:</string>
   <string name="label_choose_app_to_export">App zum Exportieren von Labels wählen:</string>
-  <string name="talkback_gesture_change_details">Bei dieser Version von SandFly wurden Änderungen bei den Standardgesten für die Bedienungshilfen vorgenommen. Die Aktionen, die diesen Gesten zugewiesen sind, können in den SandFly-Einstellungen angepasst werden. Wenn „Bei Berühren vorlesen“ aktiviert ist, kannst du die folgenden Touch-Gesten einsetzen, um bestimmte Aktionen auszuführen.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Display ausschalten?</string>
   <string name="dialog_message_dim_screen">Dadurch wird das Display ausgeschaltet, um deine Privatsphäre zu schützen. Einige Inhalte werden möglicherweise weiterhin angezeigt, z. B. Nachrichten, in denen du gefragt wirst, ob du das Display wieder einschalten möchtest, oder Menüs für Bedienungshilfen wie SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Bei dieser Version von SandFly wurden Änderungen an den Standard-Touch-Gesten für die Bedienungshilfen vorgenommen.\n\nMit der Nach-oben-dann-nach-unten-Geste gelangst du zum ersten Element auf dem Bildschirm und mit der Nach-unten-dann-nach-oben-Geste gelangst du zum letzten Element.\n\nDie Leseeinheit kannst du jetzt ändern, indem du den Fokus auf ein Element setzt und anschließend die Einheit aus dem SandFly-Kontextmenü auswählst.\n\nDie mit diesen Touch-Gesten verknüpften Aktionen können in den SandFly-Einstellungen geändert werden.</string>
-  <string name="default_action_changed_details">Wenn du Medien pausieren oder wiedergeben möchtest, kannst du jetzt mit zwei Fingern doppeltippen und halten.\n\nAuch andere Gesten wurden geändert.</string>
-  <string name="talkback_built_in_gesture_open_url">Für weitere Informationen auf Smartphone öffnen</string>
-  <string name="talkback_built_in_gesture_change_details_45">Bei dieser Version von SandFly wurden Änderungen an den Standardgesten für die Bedienungshilfen vorgenommen.\n\nMit der Nach-oben-Geste gelangst du jetzt zur vorherigen Navigationseinstellung und mit der Nach-unten-Geste zur nächsten Navigationseinstellung.</string>
-  <string name="side_tap_shortcuts_removed_details">Folgende Einstellungen werden wegen Problemen mit der Zuverlässigkeit aus SandFly entfernt:\n• Touchgeste: Tippen auf Geräteseite\n• Für kontinuierliches Lesen schütteln</string>
-  <string name="button_accept_changed_gesture_mappings">Touch-Gesten übernehmen</string>
-  <string name="button_customize_gesture_mappings">Touchgesten anpassen</string>
   <string name="button_disable_all_events">Alle deaktivieren</string>
   <string name="button_enable_all_events">Alle aktivieren</string>
   <string name="dialog_title_disable_exploration">„Bei Berühren vorlesen“ deaktivieren?</string>
@@ -893,8 +805,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="screen_search_hint_type_search_tables">In Tabellen suchen</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Der Benachrichtigungskanal von SandFly</string>
-  <string name="pref_selector_summary">1. %1$s, um eine Einstellung auszuwählen. 2. %2$s, um die Einstellung anzupassen.</string>
-  <string name="speech_rate_change">Sprechgeschwindigkeit: %1$d%%</string>
   <string name="speech_pitch_maximum">Höchste Stimmlage</string>
   <string name="speech_pitch_minimum">Tiefste Stimmlage</string>
   <string name="reset_speech_rate_and_pitch">Sprechgeschwindigkeit und Stimmlage zurücksetzen</string>
@@ -904,10 +814,7 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="vibration_feedback_state">Vibrations­feed⁠back %1$s</string>
   <string name="text_formatting_state">Informationen zur Textformatierung vorlesen %1$s</string>
   <string name="typing_echo_change">Echo der physischen Tastatur: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Sekundäre Handfläche zu dir drehen und lange drücken, um Modus „Vorleseoptionen“ zu aktivieren.</string>
   <string name="gesture_1_or_2">%1$s oder %2$s</string>
-  <string name="select_setting_hint">%1$s, um eine andere Einstellung auszuwählen</string>
-  <string name="adjust_setting_hint">%1$s, um die Einstellung anzupassen</string>
   <string name="adjust_granularity_hint">%1$s, um den Text folgendermaßen zu lesen: %2$s</string>
   <string name="adjust_typo_hint">%1$s für Vorschläge.</string>
   <string name="use_action_hint">Doppeltippen, um die Aktion auszuführen</string>
@@ -947,7 +854,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="setting_selector_heading">Vorleseoptionen</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">In Video- oder Musik-Apps: Durch Doppeltippen mit 2 Fingern wird das aktuelle Medium angehalten oder gestartet. Probiere es jetzt aus.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Bei anderen Apps kann diese Touchgeste für andere Funktionen, zum Beispiel zum Annehmen oder Beenden von Anrufen, verwendet werden. Sie wird eventuell nicht von allen Apps unterstützt.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Alle SandFly-Anleitungen ansehen</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Medienwiedergabe läuft oder ist pausiert. Dadurch wird normalerweise die Wiedergabe des aktuellen Videos oder aktuellen Musiktitels gestartet oder pausiert. Wische zum Fortfahren nach rechts.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Durch Tippen mit 2 Fingern wird die SandFly-Sprachausgabe vorübergehend angehalten.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFly-Sprachausgabe angehalten. Dadurch wird normalerweise der momentan von SandFly gesprochene Satz angehalten. Zum Fortfahren wische nach rechts.</string>
@@ -961,38 +867,18 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Auswahlmodus ein oder aus. Dadurch wird normalerweise der Textauswahlmodus gestartet oder beendet, wenn du dich in einem Eingabefeld befindest. Wische zum Fortfahren nach rechts.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Wenn du die Vorleseoptionen verwenden möchtest, wische mit drei Fingern nach links oder rechts. Du kannst auch mit drei Fingern nach oben oder unten wischen.</string>
   <string name="new_shortcut_gesture_note">Hinweis: Da du einige deiner Touch-Gesten angepasst hast, sind diese Informationen möglicherweise nicht ganz korrekt. Deine Touch-Gesten findest du in den SandFly-Einstellungen.</string>
-  <string name="welcome_to_android11">Willkommen bei SandFly für Android 11</string>
   <string name="welcome_to_android11_text">SandFly wurden neue Touch-Gesten hinzugefügt, um die Nutzung schneller und einfacher zu machen.\n\nAuf diesem Bildschirm kannst du die neuen Touch-Gesten ausprobieren. Du kannst diese Informationen jederzeit in den SandFly-Einstellungen nachlesen.</string>
   <string name="new_gesture_notification_title">Neue Touch-Gesten in SandFly</string>
   <string name="new_gesture_notification_content">Tippe hier, um zu erfahren, wie du SandFly mit neuen Touch-Gesten schneller verwenden kannst.</string>
   <string name="dump_node_tree_description">Die Knotenstruktur wurde ins Protokoll gedruckt.</string>
   <string name="report_gesture_description">Diese Touch-Gesten wurden kürzlich ausgeführt. Du kannst uns Probleme mit Touch-Gesten melden und uns sagen, wie sie eigentlich aussehen sollten.</string>
-  <string name="update_welcome_text_content">Du kannst jetzt Braillezeilen über HID verbinden. HID ermöglicht die Verbindung zu Bluetooth-Geräten. Achte darauf, dass du die neuesten Firmware-Treiber deines Herstellers installiert hast, und aktiviere Bluetooth auf deiner Braillezeile. Rufe die SandFly-Einstellungen auf &gt; „Braillezeile“ und aktiviere „Braillezeile verwenden“. Suche dein Gerät in der Geräteliste und stelle eine Verbindung her.</string>
-  <string name="update_welcome_text_content_tts">Du kannst jetzt Braillezeilen über HID verbinden. HID ermöglicht die Verbindung zu Bluetooth-Geräten. Achte darauf, dass du die neuesten Firmware-Treiber deines Herstellers installiert hast, und aktiviere Bluetooth auf deiner Braillezeile. Rufe die SandFly-Einstellungen auf, wähle „Braillezeile“ aus und aktiviere „Braillezeile verwenden“. Suche dein Gerät in der Geräteliste und stelle eine Verbindung her.</string>
-  <string name="update_welcome_text_content_with_link">Hier erfährst du, wie du deine Braillezeile mit SandFly verwendest.</string>
   <string name="update_welcome_talkback_16.1">Mit diesem SandFly-Update wird die Funktion „Bildschirminhalt beschreiben“ in weiteren Sprachen unterstützt und es gibt weitere Verbesserungen, die die Bedienung von SandFly erleichtern.\n\nAuf den nächsten Bildschirmen erfährst du mehr zu diesen Änderungen.\n\nDu kannst dir diese Informationen auch später in den SandFly-Einstellungen &gt; „Neue Funktionen in SandFly“ ansehen.</string>
   <string name="update_welcome_talkback_16.1_tts">Mit diesem SandFly-Update wird die Funktion „Bildschirminhalt beschreiben“ in weiteren Sprachen unterstützt und es gibt weitere Verbesserungen, die die Bedienung von SandFly erleichtern.\n\nAuf den nächsten Bildschirmen erfährst du mehr zu diesen Änderungen.\n\nDu kannst dir diese Informationen auch später in den SandFly-Einstellungen unter „Neue Funktionen in SandFly“ ansehen.</string>
-  <string name="describe_screen_and_qna_title">Neue Sprachen für „Bildschirminhalt beschreiben“ und „Gemini fragen“</string>
-  <string name="describe_screen_and_qna_content">Die Funktionen „Bildschirminhalt beschreiben“ und „Gemini fragen“ sind jetzt in weiteren Sprachen verfügbar. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Weitere Informationen findest du in der Hilfe.&lt;/a&gt;</string>
   <string name="shortcut_for_dictation_title">Geste für Spracheingabe</string>
   <string name="shortcut_for_dictation_content">Wenn du Gboard verwendest, kannst du jetzt mit zwei Fingern doppeltippen, um die Spracheingabe zu starten oder zu beenden.
 &lt;br&gt;
 &lt;br&gt;Dafür musst du die &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;aktuelle bei Google Play verfügbare Gboard-Version&lt;/a&gt; nutzen.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Wenn Gboard auf dem Bildschirm angezeigt wird, kannst du jetzt mit zwei Fingern doppeltippen, um die Spracheingabe zu starten, und die Funktion durch ein weiteres Doppeltippen mit zwei Fingern beenden.</string>
-  <string name="keyboard_title">Tastatur</string>
-  <string name="keyboard_content">SandFly bietet jetzt eine erweiterte Tastaturbelegung mit vielen neuen Befehlen und Tastenkombinationen. Diese Erweiterung, die auch einen Suchmodus für effizientere Webnavigation enthält, optimiert die Navigation und Interaktion für SandFly-Nutzer, die auf physische Tastaturen angewiesen sind. Du kannst in den SandFly-Einstellungen &gt; „Erweiterte Einstellungen“ &gt; „Tastenkombinationen“ zur erweiterten Tastaturbelegung wechseln.</string>
-  <string name="keyboard_content_tts">SandFly bietet jetzt eine erweiterte Tastaturbelegung mit vielen neuen Befehlen und Tastenkombinationen. Diese Erweiterung, die auch einen Suchmodus für effizientere Webnavigation enthält, optimiert die Navigation und Interaktion für SandFly-Nutzer, die auf physische Tastaturen angewiesen sind. Du kannst in den SandFly-Einstellungen unter „Erweiterte Einstellungen“ und dann „Tastenkombinationen“ zur erweiterten Tastaturbelegung wechseln.</string>
-  <string name="reduce_delay_title">Verzögerung reduzieren</string>
-  <string name="reduce_delay_content">Du kannst jetzt die Verzögerungen bei SandFly-Ansagen für Touchfunktionen und das Eintippen verringern. Wenn du die entsprechenden Einstellungen aufrufen möchtest, gehe zu den SandFly-Einstellungen &gt; „Erweiterte Einstellungen“ &gt; „Verzögerung reduzieren“.</string>
-  <string name="reduce_delay_content_tts">Du kannst jetzt die Verzögerungen bei SandFly-Ansagen für Touchfunktionen und das Eintippen verringern. Wenn du die entsprechenden Einstellungen aufrufen möchtest, gehe zu den SandFly-Einstellungen und wähle unter „Erweiterte Einstellungen“ die Option „Verzögerung reduzieren“ aus.</string>
-  <string name="customize_braille_keyboard_improvements_title">Gesten für die Brailletastatur anpassen</string>
-  <string name="customize_braille_keyboard_improvements_content">Du kannst jetzt die Gesten für die virtuelle Brailletastatur auf dem Bildschirm anpassen. Rufe dazu die SandFly-Einstellungen &gt; „Brailletastatur“ &gt; „Gesten“ auf.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Du kannst jetzt die Gesten für die virtuelle Brailletastatur auf dem Bildschirm anpassen. Rufe dazu die SandFly-Einstellungen auf und gehe zu „Brailletastatur“ und dann „Gesten“.</string>
-  <string name="learn_more_about_braille_keyboard">Weitere Informationen zur Brailletastatur</string>
-  <string name="other_changes_title">Sonstige Änderungen</string>
-  <string name="other_changes_content">Wenn SandFly versehentlich aktiviert wurde, kannst du die Funktion über die Meldung, die jetzt auf dem Bildschirm angezeigt wird, direkt wieder deaktivieren. Diese Meldung lässt sich in den SandFly-Einstellungen &gt; „Anleitung zum Deaktivieren von SandFly anzeigen“ deaktivieren.</string>
-  <string name="other_changes_content_tts">Wenn SandFly versehentlich aktiviert wurde, kannst du die Funktion über die Meldung, die jetzt auf dem Bildschirm angezeigt wird, direkt wieder deaktivieren. Diese Meldung lässt sich in den SandFly-Einstellungen unter „Anleitung zum Deaktivieren von SandFly anzeigen“ deaktivieren.</string>
-  <string name="keymap_changes_content">Die klassische Tastaturbelegung wurde auf die Standardtastaturbelegung umgestellt, die mehr Tastenkombinationen enthält.</string>
   <string name="announcing_text_formatting_title">Änderungen an der Textformatierung vorlesen lassen</string>
   <string name="announcing_text_formatting_header">Mit SandFly kannst du dir jetzt Änderungen an der Textformatierung wie Fettdruck, Kursivdruck und Textfarbe vorlesen lassen. So gehts:</string>
   <string name="announcing_text_formatting_option1">Verschiebe den Fokus auf das Element mit der Formatierung, öffne das SandFly-Menü und wähle „Textformatierung beschreiben“ aus. Du kannst auch folgendermaßen vorgehen:</string>
@@ -1083,7 +969,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="additional_tips_link_subtext">Weitere Informationen, z. B. zu Anrufen und zum Senden von Nachrichten</string>
   <string name="practice_gestures_link_text">Touch-Gesten üben</string>
   <string name="practice_gestures_link_subtext">Verschiedene Touch-Gesten ausprobieren, um zu erfahren, was sie bewirken</string>
-  <string name="help_and_feedback_link_subtext">Mehr über SandFly erfahren und Feedback senden</string>
   <string name="choose_tutorial_title">Auswählen, wie du mit SandFly interagieren möchtest</string>
   <string name="touch_tutorial_button">Anleitung zur Touchbedienung</string>
   <string name="keyboard_tutorial_button">Anleitung zur Tastaturnutzung</string>
@@ -1229,8 +1114,6 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="wear_training_typing_text5">Probiere es unten aus.</string>
   <string name="wear_training_typing_practice_button_content_description">Eingabe über Tastatur</string>
   <string name="wear_training_end_tutorial_title">Du kannst jetzt mit SandFly loslegen</string>
-  <string name="talkback_updated_notification_title">SandFly wurde aktualisiert</string>
-  <string name="talkback_updated_notification_content">Tippe hier, um mehr zu erfahren</string>
   <string name="wear_new_feature_page_title">Willkommen beim aktualisierten SandFly</string>
   <string name="wear_new_feature_page_content">Diese Version bringt einige Fehlerkorrekturen und Änderungen beim Verschieben des Fokus mit</string>
   <string name="wear_new_feature_page_button_content_description">Fertig</string>
@@ -1249,10 +1132,7 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="title_pref_blue">Blau</string>
   <string name="title_pref_grey">Grau</string>
   <string name="survey_setting_title">Feedback geben</string>
-  <string name="survey_closed">Umfrage geschlossen</string>
   <string name="title_summarize_view">Bildschirminhalt beschreiben</string>
-  <string name="title_increase_touch_focus_latency">Fokusverzögerung erhöhen</string>
-  <string name="title_decrease_touch_focus_latency">Fokusverzögerung verringern</string>
   <string name="detected_result">Erkannt: %1$s</string>
   <string name="title_image_caption">Bild beschreiben</string>
   <string name="image_caption_with_gemini_prefix">Beschreibe dieses Bild. Verwende dabei kein Markup.</string>
@@ -1279,33 +1159,15 @@ Bei Verzögerungen unter 0,3 Sekunden wird die Aktivierung durch Doppeltippen z
   <string name="image_qna_question_prefix">NUTZER: %1$s</string>
   <string name="image_qna_answer_prefix">MODELL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Weiter zwischen NUTZER und MODELL abwechseln] …</string>
-  <string name="screen_overview_with_screenshot">Beschreibe einer Person, die ihr Smartphone nicht sehen kann, was auf dem Display angezeigt wird. Beschreibe diesen Screenshot in wenigen Sätzen.
-
-Anleitung
-Beginne deine Antwort mit „Auf dem Display sieht man“
-Am Anfang der Antwort sollten die wichtigsten, auffälligsten Bildschirminhalte beschrieben werden. Hier sind einige Beispiele für solche Inhalte
-* in einer Chat-App: der Absender und der Text der letzten Nachricht
-* in einer Social-Media-App: der erste Beitrag, einschließlich des Nutzers, der ihn gepostet hat, des Textes und einer Beschreibung des Bildes
-* in einer Nachrichten-App: der Titel des Artikels und eine Beschreibung des Hauptbildes
-* in einer Shopping-App: eine Beschreibung des gezeigten Produkts und der Preis
-* in einer Kalender-App: der nächste Termin und die Anzahl der Termine, die danach angezeigt werden
-* in einer Liste von Nachrichten: der Name und die Vorschau der ersten Nachricht und dann nur die Namen der nächsten paar Nachrichten in der Liste sowie die Anzahl der ungelesenen Nachrichten
-
-Danach kann die Antwort die Platzierung und die Funktion von Navigationsleisten und wichtigen Schaltflächen beschreiben.
-Erwähne nicht den Inhalt der Statusleiste oben (wie zum Beispiel Uhrzeit, Netzwerkstatus, Akku).
-Verwende in deiner Antwort kein Markdown.</string>
   <string name="title_gemini_opt_in_dialog">Detaillierte Bildbeschreibungen abrufen?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Bildbeschreibungen abrufen?</string>
   <string name="title_gemini_result_dialog">Erkannt: Bild</string>
   <string name="title_gemini_result_bottom_sheet">Bildbeschreibung</string>
   <string name="title_gemini_screen_overview_result_dialog">Bildschirmbeschreibung</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Zusammenfassung</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Aktionen</string>
   <string name="positive_button_gemini_opt_in_dialog">Aktivieren</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ich stimme zu</string>
   <string name="negative_button_gemini_opt_in_dialog">Nein, danke</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Zu den Einstellungen</string>
-  <string name="positive_button_gemini_download_dialog">Herunterladen &amp; aktivieren</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, „%1$s“.</string>
   <string name="detected_icon_label">Symbol, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ Verwende in deiner Antwort kein Markdown.</string>
   <string name="screen_overview_no_result">Bildschirminhalt kann nicht zusammengefasst werden</string>
   <string name="image_caption_no_result">Bild kann nicht beschrieben werden</string>
   <string name="image_caption_with_hide_screen">Bildbeschreibungen sind nicht verfügbar, wenn der Bildschirm ausgeblendet ist. Blende den Bildschirm ein und versuche es noch einmal.</string>
-  <string name="feedback_button_state_set">ausgewählt</string>
-  <string name="feedback_button_state_unset">nicht ausgewählt</string>
   <string name="action_text_like_button">Als gute Antwort markieren</string>
   <string name="action_text_dislike_button">Als schlechte Antwort markieren</string>
   <string name="action_text_clear_like_button">Gute Antwort löschen</string>
@@ -1349,18 +1209,13 @@ Verwende in deiner Antwort kein Markdown.</string>
   <string name="downloading_all_image_captioning_hint">Automatische Bild- und Symbolbeschreibungen werden heruntergeladen</string>
   <string name="download_all_image_captioning_successful_hint">Automatische Bild- und Symbolbeschreibungen heruntergeladen</string>
   <string name="download_all_image_captioning_failed_hint">Fehler beim Download. Versuche es später noch einmal.</string>
-  <string name="download_complete_notification_title">Download abgeschlossen</string>
-  <string name="download_complete_notification_content">Du hörst jetzt automatische Beschreibungen von Bildern und Symbolen mit SandFly</string>
-  <string name="download_complete_notification_action">Einstellungen</string>
   <string name="download_storage_error_hint">Der Speicher ist voll. Gib für den Download in den Einstellungen unter „Speicher“ %1$d MB frei.</string>
   <string name="download_network_error_hint">Fehler beim Download. Prüfe deine Verbindung und versuche es dann noch einmal.</string>
   <string name="switch_icon_detection_dialog_title">Automatische Symbolbeschreibungen</string>
   <string name="switch_icon_detection_dialog_message">Beschreibungen hören, wenn du den Fokus auf ein Symbol verschiebst</string>
   <string name="switch_image_description_dialog_message">Wenn du den Fokus auf ein Bild verschiebst, hörst du eine Beschreibung. Einige Apps unterstützen dies eventuell nicht.</string>
-  <string name="switch_text_recognition_dialog_title">Text in Bildern automatisch beschreiben lassen</string>
   <string name="switch_text_recognition_dialog_message">Beschreibungen hören, wenn du den Fokus auf ein Bild mit Text verschiebst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Heruntergeladen</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Du kannst dir über das SandFly-Menü trotzdem das ausgewählte Bild beschreiben lassen</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Ok</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Download löschen</string>
   <string name="delete_icon_detection_dialog_title">Automatische Symbolbeschreibungen löschen?</string>
@@ -1376,11 +1231,6 @@ Verwende in deiner Antwort kein Markdown.</string>
   <string name="gemini_enable_dialog_title">Gemini in SandFly verwenden</string>
   <string name="gemini_disable_dialog_message">Bildschirmverständnis mit Gemini</string>
   <string name="disable_gemini_dialog_subtext">Aktivieren, um Bildschirmverständnis mit Gemini zu aktivieren</string>
-  <string name="ai_services_update_dialog_title">%1$s aktualisieren, um Bildbeschreibungen zu hören</string>
-  <string name="ai_services_update_dialog_message">Wenn du dir Bildbeschreibungen vorlesen lassen möchtest, musst du die aktuelle Version von <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> bei Google Play herunterladen.\n\nSobald der Download abgeschlossen ist, kannst du die automatischen Bildbeschreibungen in den SandFly-Einstellungen aktivieren.</string>
-  <string name="ai_services_update_dialog_button_text">Zu Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Ein Fehler ist aufgetreten. Bitte versuche es noch einmal.</string>
   <string name="gemini_block_message">Dieses Bild kann nicht verarbeitet werden</string>
   <string name="gemini_network_error">Keine Internetverbindung. Überprüfe deine WLAN- oder Mobilfunkverbindung und versuche es noch einmal.</string>
@@ -1396,13 +1246,8 @@ Verwende in deiner Antwort kein Markdown.</string>
   <string name="image_qna_typing_button_text">Frage für Gemini eingeben</string>
   <string name="image_qna_send_button_text">Fragen</string>
   <string name="image_qna_speak_question_description">Frage mündlich stellen</string>
-  <string name="overviews_summary_intro">Zusammenfassung dieses App-Bildschirms: %1$s</string>
   <string name="overviews_node_not_found">Ich kann diesen Teil des Bildschirms leider nicht mehr finden.</string>
-  <string name="overviews_images_in_app">Wichtige Bilder gefunden</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Aktionen in der App</string>
-  <string name="overviews_actions_in_app_description">Auf diesem App-Bildschirm kannst du folgende wichtige Aktionen ausführen:</string>
-  <string name="overviews_parent_type">Aktionen in der App</string>
   <string name="text_replaced_feedback">Text wurde ersetzt</string>
   <string name="switch_gesture_set">Gesten-Set umschalten</string>
   <string name="switch_gesture_set_to">Auf Gesten-Set %1$d umschalten</string>
@@ -1453,7 +1298,6 @@ Verwende in deiner Antwort kein Markdown.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Schließen</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Wenn du Benachrichtigungen hören möchtest, während dein Display ausgeschaltet ist, aktiviere in den SandFly-Einstellungen für die Ausführlichkeit die Option „Benachrichtigungen vorlesen, wenn Bildschirm aus“</string>
     <string name="title_pref_tts_engine">Sprachausgabe-Engine</string>
     <string name="title_pref_system_tts_settings">Systemeinstellungen für die Sprachausgabe</string>
     <string name="title_selector_switch_tts_engine">Sprachausgabe-Engine</string>

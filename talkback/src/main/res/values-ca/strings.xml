@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Quan SandFly està activat, proporciona avisos de veu perquè puguis utilitzar el dispositiu sense mirar la pantalla. SandFly està pensat per a situacions o persones amb dificultats per veure la pantalla.<br><br><b>Com es pot utilitzar SandFly</b><br>• Llisca cap a la dreta o cap a l\'esquerra per moure\'t pels elements.<br>• Fes doble toc per activar un element.<br>• Arrossega dos dits per desplaçar-te.<br><b>Com es pot desactivar SandFly</b><br>1. A Configuració, toca <b>Utilitza SandFly</b>. Es mostrarà un contorn. Fes-hi doble toc.<br>2. Al missatge de confirmació, toca <b>Atura</b>. Es mostrarà un contorn. Fes-hi doble toc.]]></string>
   <string name="talkback_service_summary">Utilitza un lector de pantalla per escoltar els elements en veu alta</string>
   <string name="talkback_preferences_title">Configuració de SandFly</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Configuració</string>
   <string name="tts_preferences_title">Text a parla</string>
   <string name="language_options">Idiomes</string>
   <string name="spoken_language">Idioma parlat</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Cerca cancel·lada</string>
   <string name="notification_type_status_started">S\'ha iniciat.</string>
   <string name="notification_type_status_stopped">S\'ha aturat.</string>
-  <string name="notification_type_status_connected">connectada</string>
-  <string name="notification_battery_level_unknown">desconegut</string>
   <string name="notification_battery_saver_mode">Estalvi de bateria activat</string>
   <string name="template_no_text_selected">No s\'ha seleccionat cap text</string>
   <string name="template_charging">S\'està carregant %1$s. Nivell de bateria al %2$s per cent.</string>
   <string name="template_charging_lite">S\'està carregant %1$s</string>
-  <string name="template_battery_state">Alimentació %1$s, %2$s per cent, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Mode vibració</string>
   <string name="value_ringer_silent">Mode silenci</string>
   <string name="value_screen_on">Pantalla activada.</string>
   <string name="value_screen_off">Pantalla desactivada</string>
   <string name="value_device_unlocked">Dispositiu desbloquejat</string>
-  <string name="title_pref_category_audio">Àudio</string>
   <string name="title_pref_speech_volume">Volum de la parla</string>
-  <string name="title_pref_speech_rate">Velocitat de parla</string>
-  <string name="summary_pref_speech_rate">Velocitat a què s\'enuncia el text</string>
   <string name="title_pref_verbose_scroll_announcement">Enuncia sempre el nombre d\'elements de la llista</string>
   <string name="summary_pref_verbose_scroll_announcement">Enuncia quins elements es mostren després de cada desplaçament</string>
   <string name="title_pref_cover_proximity_sensor">Tapa el sensor de proximitat per aturar la parla</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Digues l\'hora</string>
   <string name="pref_speak_time_summary">Quan activis la pantalla</string>
   <string name="summary_speak_container_element_positions">Enuncia quan entres a llistes, quadrícules i altres contenidors, o en surts</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">S\'ha afegit un retard del focus al control de lectura</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Ara pots canviar el retard del focus en qualsevol moment amb els controls de lectura.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Vols canviar al mode d\'aixecar el dit per escriure?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Si el retard del focus d\'escriptura s\'estableix per sota de 0,3 segons, serà molt difícil fer doble toc per escriure. Tria Canvia per canviar automàticament al mode d\'aixecar el dit per escriure.\n\nPer utilitzar aquest mode, mantén premut el dit per seleccionar una tecla i, a continuació, aixeca\'l per escriure.\n\nPots personalitzar-ho a la configuració de SandFly.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">S\'ha afegit un retard del focus d\'escriptura al control de lectura</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Si el doble toc no funciona bé mentre escrius, pots canviar a un retard del focus d\'escriptura més llarg en qualsevol moment amb els controls de lectura.</string>
-  <string name="gestures_announce_typing_focus_wont_change">El retard del focus d\'escriptura no funciona sense el mode d\'aixecar el dit per escriure.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Entesos</string>
   <string name="reset_letency_reduction_settings_dialog_title">Vols restablir la configuració del retard?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Es restabliran totes les opcions de configuració del retard als valors predeterminats</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Restableix</string>
   <string name="gestures_announce_reset_latency_reduction_settings">S\'ha restablert la configuració de reducció de la latència.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Canvia</string>
-  <string name="reduce_focus_delay_settings_cancel_button">No canviïs</string>
   <string name="Reset_gesture_settings_dialog_title">Vols restablir els gestos?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Vols restablir els gestos del conjunt actual?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Es restabliran tots els gestos a les accions predeterminades.\n\nPerdràs tots els canvis que hagis fet.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Enuncia les actualitzacions de progrés</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Inclou actualitzacions durant la baixada, mentre segueixes les indicacions amb cotxe i més. Quan aquesta opció estigui desactivada, rebràs actualitzacions menys sovint.</string>
   <string name="title_pref_explore_by_touch">Exploració tàctil</string>
-  <string name="title_pref_category_visual">Visual</string>
   <string name="title_pref_category_controls">Controls</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">General</string>
-  <string name="title_pref_category_advanced">Configuració avançada</string>
-  <string name="title_pref_category_others">Altres</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial i ajuda</string>
   <string name="title_pref_category_reduce_latency_summary">Aquestes opcions de configuració fan que SandFly respongui més ràpid després de tocar la pantalla</string>
   <string name="reset_latency_settings_title">Restableix totes les opcions de configuració del retard</string>
   <string name="title_pref_single_tap">Fes un toc per activar</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Indicador de focus</string>
   <string name="title_pref_category_manage_gestures">Gestos</string>
   <string name="title_pref_manage_labels">Etiquetes personalitzades</string>
-  <string name="title_pref_manage_customize_menus">Edita els menús</string>
   <string name="title_pref_category_context_menu">Menú de SandFly</string>
   <string name="title_pref_category_selector_menu">Controls de lectura</string>
   <string name="title_pref_category_navigation_menu">Edita les opcions de navegació</string>
-  <string name="pref_category_context_menu_summary">Toca amb 3 dits, o llisca cap amunt o cap avall i, després, cap a la dreta.</string>
-  <string name="pref_category_context_menu_summary_xr">Per utilitzar el menú de SandFly, gira el palmell de la mà secundària cap a dins i fes el gest de pinça.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Llisca cap avall i, després, cap a la dreta.</string>
-  <string name="pref_category_selector_menu_summary">Gira 2 dits com si fos un dial, o llisca cap a l\'esquerra o cap a la dreta amb 3 dits, per triar un control de lectura. Després, llisca cap amunt o cap avall per canviar-lo.</string>
-  <string name="pref_category_selector_menu_summary_xr">Per alternar entre els controls de lectura, gira el palmell de la mà secundària cap a dins, mantén la pinça, mou la mà a la dreta o a l\'esquerra i deixa anar la pinça.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Llisca cap amunt i, després, cap avall, o cap avall i, després, cap amunt, per triar un control de lectura. Després, llisca cap amunt o cap avall per canviar-lo.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Tecles de drecera</string>
   <string name="title_pref_export_custom_labels">Exporta les etiquetes personalitzades</string>
-  <string name="title_pref_play_store">Obre SandFly a Play Store</string>
-  <string name="summary_pref_play_store">Versió actual de SandFly: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Ajuda i suggeriments</string>
-  <string name="title_pref_gup">Contacta amb l\'assistència de Google per a persones amb discapacitat</string>
-  <string name="subtitle_pref_gup">Obtén ajuda per utilitzar SandFly o informa de problemes</string>
-  <string name="pref_item_licenses">Llicències de codi obert</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Ajuda</string>
   <string name="title_pref_show_tos">Condicions del servei</string>
   <string name="title_pref_show_privacy_policy">Política de privadesa</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gestos d\'empremtes digitals</string>
   <string name="title_pref_category_tutorial">Tutorial de SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Ajuda</string>
-  <string name="title_pref_category_typing">Escriptura</string>
   <string name="title_pref_advanced_settings">Configuració avançada</string>
   <string name="title_pref_show_exit_watermark">Mostra les instruccions per desactivar SandFly</string>
   <string name="summary_pref_show_exit_watermark">Quan SandFly s\'activa, mostra com desactivar-lo</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Algunes tecles modificadores són diferents.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Més informació sobre els mapes de teclat</string>
   <string name="keycombo_go_to_settings">Ves a Configuració</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly s\'està preparant per suprimir el mapa de teclat clàssic. Per continuar utilitzant les tecles de drecera, canvia al mapa de teclat predeterminat.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Més informació</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Entesos</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Configuració</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Més informació</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Ara estàs utilitzant el mapa de teclat predeterminat de SandFly. També hi ha un mapa de teclat nou millorat que inclou moltes ordres noves. Obtén més informació al Centre d\'ajuda o canvia al mapa de teclat nou a Configuració.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Hi ha un mapa de teclat nou disponible</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">El mapa de teclat nou millorat de SandFly inclou moltes ordres noves. Obtén més informació al Centre d\'ajuda o canvia al mapa de teclat nou a Configuració.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Actualitza la tecla modificadora de SandFly</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ara no</string>
   <string name="keycombo_warning_content_description">Més informació sobre la tecla modificadora</string>
-  <string name="keycombo_warning_dialog_title">Actualitza la tecla modificadora</string>
-  <string name="keycombo_warning_dialog_message">Perquè les tecles de drecera de SandFly funcionin correctament, canvia la tecla modificadora Acció a Alt.\n\nSi continues utilitzant la tecla modificadora Acció, algunes dreceres executaran altres accions per a aquesta versió d\'Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Mapa de teclat</string>
   <string name="keycombo_menu_select_keymap">Tria un mapa de teclat</string>
   <string name="keycombo_menu_reset_keymap">Restableix el mapa de teclat</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Augmenta el volum de la parla</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Disminueix el volum de la parla</string>
   <string name="keycombo_menu_global_refocus_current_node">Enuncia el focus actual</string>
-  <string name="keycombo_menu_category_granularity">Navegació</string>
   <string name="keycombo_menu_granularity_increase">Opció de navegació següent</string>
   <string name="keycombo_menu_granularity_decrease">Opció de navegació anterior</string>
   <string name="keycombo_menu_category_other">Altres accions</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Confirmes que vols restablir la configuració predeterminada de les tecles de drecera d\'aquest mapa de teclat? Tingues present que aquesta acció no es pot desfer.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Restableix</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s en mode de navegació</string>
-  <string name="keycombo_assign_dialog_instruction">Prem una combinació de tecles per definir una drecera nova. S\'ha de fer servir, com a mínim, la tecla ALT o Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Prem la combinació de tecles amb la tecla modificadora %1$s per definir una drecera nova.</string>
   <string name="keycombo_unassigned">Sense assignar</string>
   <string name="save_button_in_keycombo_assign_dialog">Desa</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Retard del focus d\'escriptura</string>
   <string name="message_pref_touch_explore_latency">Amb un retard més curt, SandFly parla abans després de tocar el teclat.\n\nTria un retard</string>
   <string name="title_pref_touch_focus_timeout">Retard del focus</string>
-  <string name="summary_pref_touch_focus_time">
-Controla la rapidesa amb què parla SandFly després de moure el focus. Un retard més curt fa que SandFly sembli més ràpid, però pot dificultar el doble toc i el triple toc.\n\n
-Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviarà al toc amb dos dits per activar.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Gestiona els gestos a SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Desactiva i torna a activar SandFly per activar aquesta opció de configuració.</string>
   <string name="title_pref_auto_image_captioning">Descripcions automàtiques</string>
@@ -382,28 +332,16 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="dialog_title_turn_on_image_description">Activa les descripcions d\'imatges a Configuració</string>
   <string name="dialog_message_turn_on_image_description">Pots tornar-ho a provar després d\'activar les descripcions automàtiques o detallades de les imatges</string>
   <string name="title_pref_detailed_image_description">Descripcions detallades d\'imatges</string>
-  <string name="summary_pref_ai_description">Escolta descripcions més llargues quan seleccionis \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" al menú de SandFly</string>
   <string name="dialog_message_on_device_ai_description">Sentiràs una descripció breu quan posis el focus en una imatge a les aplicacions compatibles.\n\nLes imatges es processen al dispositiu i no s\'envien mai a Google. \n\nLa IA generativa és experimental, de manera que cometrà errors. En continuar, acceptes les <a href="https://policies.google.com/terms/generative-ai">condicions del servei</a> de Google.</string>
   <string name="enable_gemini">Activa</string>
   <string name="powered_by_gemini">Amb la tecnologia de la IA generativa</string>
-  <string name="detailed_image_description_ongoing_hint">S\'està obtenint la descripció</string>
-  <string name="detailed_image_description_result_prefix">Detectat: imatge. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Cal baixar el model per obtenir les descripcions automàtiques de les imatges</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Les imatges es processen al teu dispositiu i no s\'envien mai a Google.\n\nLa IA generativa és experimental, de manera que cometrà errors. En continuar, acceptes les %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Condicions del servei de Google</string>
   <string name="message_aifeature_downloading">S\'està baixant el model d\'IA. Aquest procés pot tardar una estona. T\'avisarem quan s\'hagi completat.</string>
   <string name="message_aifeature_downloading_with_progress">La baixada encara està en curs. S\'han baixat %1$d de %2$d MB.</string>
-  <string name="message_aifeature_download_complete">S\'ha baixat el model d\'IA. SandFly ara pot generar descripcions d\'imatges.</string>
   <string name="summary_pref_auto_image_captioning">Per a les icones, les imatges i el text en imatges</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Per al text en imatges</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Per a les imatges i el text en imatges</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Per a les icones i el text en imatges</string>
   <string name="summary_pref_module_downloading">S\'està baixant…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Activat per a totes les imatges</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Activat només per a les imatges sense etiquetar</string>
   <string name="summary_pref_auto_image_captioning_disabled">Desactivat</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Activat per a totes les icones</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Activat només per a les icones sense etiquetar</string>
   <string name="summary_pref_auto_icon_detection_disabled">Desactivat</string>
   <string name="title_pref_enable_auto_image_caption">Totes les imatges</string>
   <string name="title_pref_enable_auto_image_caption_arg">Totes les imatges\n%1$s</string>
@@ -413,7 +351,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="title_pref_enable_auto_icon_detection">Totes les icones</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Només les icones sense etiquetar</string>
   <string name="title_pref_disable_auto_icon_detection">No descriguis les icones</string>
-  <string name="dialog_message_on_device_ai_model_download">Sentiràs una descripció breu quan posis el focus en una imatge a les aplicacions compatibles.\n\nLes imatges es processen al dispositiu i no s\'envien mai a Google.\n\nLa IA generativa és experimental, de manera que cometrà errors. En continuar, acceptes les %1$s.</string>
   <string name="title_pref_enable_gemini_support">Activat</string>
   <string name="title_pref_disable_gemini_support">Desactivat</string>
   <string name="summary_pref_gemini_support_enabled">Gemini està activat</string>
@@ -457,7 +394,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="shortcut_print_node_tree">Imprimeix l\'arbre de nodes</string>
   <string name="shortcut_print_performance_stats">Imprimeix les estadístiques de rendiment</string>
   <string name="shortcut_first_in_screen">Posa el focus en el primer element en pantalla</string>
-  <string name="shortcut_summary">Resumeix la disposició de la pantalla</string>
   <string name="shortcut_voice_commands">Activa una ordre de veu</string>
   <string name="shortcut_last_in_screen">Posa el focus en el darrer element en pantalla</string>
   <string name="shortcut_enable_dimming">Amaga la pantalla</string>
@@ -561,7 +497,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="menu_category_web_navigation">Navegació web</string>
   <string name="menu_category_basic_navigation">Navegació bàsica</string>
   <string name="summary_custom_action">Mostra quan hi ha accions per a l\'element actual, com ara enllaços, copiar, enganxar, seleccionar i més</string>
-  <string name="summary_context_menu_links">Obre els enllaços dins d\'un element enfocat</string>
   <string name="summary_viewpager_controls">Ves a la pàgina següent o anterior. Es mostra quan llegeixes contingut amb diverses pàgines.</string>
   <string name="summary_labeling_controls">Es mostra quan selecciones un element sense etiquetar</string>
   <string name="summary_granularity">Llegeix per caràcters, paraules, línies i més</string>
@@ -631,12 +566,9 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="summary_screen_overview">Resumeix la pantalla amb botons d\'acció</string>
   <string name="summary_screen_overview_no_actions">Escolta un resum del contingut que hi ha a la pantalla</string>
   <string name="summary_image_caption">Enuncia el text i les icones d\'una imatge seleccionada</string>
-  <string name="summary_summarize_view">Enuncia el resum de la visualització</string>
   <string name="summary_typo_suggestions">Es mostra quan el cursor és a sobre d\'un error tipogràfic</string>
   <string name="summary_cache_keyboard_keys">SandFly precarrega els anuncis per reduir el retard quan escrius</string>
   <string name="summary_cache_keyboard_keys_disabled">Utilitza Síntesi de veu de Google per utilitzar aquesta funció</string>
-  <string name="value_direction_down">avall</string>
-  <string name="value_direction_down_and_right">avall i a la dreta</string>
   <string name="title_pref_shortcut_up">Llisca cap amunt</string>
   <string name="title_pref_shortcut_up_xr">Palmell de la mà secundària cap a dins, pinça i llisca cap amunt</string>
   <string name="title_pref_shortcut_down">Llisca cap avall</string>
@@ -704,10 +636,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="title_pref_shortcut_fingerprint_left">Llisca cap a l\'esquerra al sensor d\'empremtes</string>
   <string name="title_pref_shortcut_fingerprint_right">Llisca cap a la dreta al sensor d\'empremtes</string>
   <string name="title_pref_version_code">Codi de la versió</string>
-  <string formatted="false" name="value_volume_100_percent">Coincideix amb el volum de la parla</string>
-  <string formatted="false" name="value_volume_75_percent">75 % del volum de la parla</string>
-  <string formatted="false" name="value_volume_50_percent">50 % del volum de la parla</string>
-  <string formatted="false" name="value_volume_25_percent">25 % del volum de la parla</string>
   <string name="value_type_confirmation_double_tap">Mantén una tecla premuda per seleccionar-la i fes doble toc</string>
   <string name="value_type_confirmation_lift_to_type">Mantén premuda una tecla de lletra per seleccionar-la i aixeca el dit. En el cas de les altres tecles, fes doble toc.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Mantén una tecla premuda per seleccionar-la i aixeca el dit</string>
@@ -720,12 +648,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="value_touch_explore_time_out_200ms">0,2 segons</string>
   <string name="value_touch_explore_time_out_250ms">0,25 segons</string>
   <string name="value_touch_explore_time_out_300ms">0,3 segons (opció predeterminada)</string>
-  <string name="value_shake_to_read_disabled">Desactivat</string>
-  <string name="value_shake_to_read_threshold_very_light">Molt fluix</string>
-  <string name="value_shake_to_read_threshold_light">Fluix</string>
-  <string name="value_shake_to_read_threshold_medium">Normal</string>
-  <string name="value_shake_to_read_threshold_hard">Fort</string>
-  <string name="value_shake_to_read_threshold_very_hard">Molt fort</string>
   <string name="title_pref_on_screen_keyboard">Teclat en pantalla</string>
   <string name="title_pref_physical_keyboard">Teclat físic</string>
   <string name="value_keyboard_echo_none">Cap</string>
@@ -738,8 +660,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="pref_time_feedback_format_entries_default">Utilitza el format d\'hora del dispositiu</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 hores</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 hores</string>
-  <string name="notification_title_talkback_gestures_changed">Gestos de SandFly canviats</string>
-  <string name="notification_message_talkback_gestures_changed">Toca per revisar els canvis dels gestos d\'accessibilitat.</string>
   <string name="always_show_warning_checkbox">Mostra sempre aquest advertiment</string>
   <string name="label_dialog_title_add">Afegeix una etiqueta</string>
   <string name="label_dialog_title_edit">Edita l\'etiqueta</string>
@@ -760,16 +680,8 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="no_apps_to_export_labels">No s\'ha trobat cap aplicació per exportar etiquetes.</string>
   <string name="label_choose_app_to_import">Tria una aplicació per importar etiquetes:</string>
   <string name="label_choose_app_to_export">Tria l\'aplicació per exportar les etiquetes:</string>
-  <string name="talkback_gesture_change_details">Aquesta versió de SandFly inclou canvis als gestos d\'accessibilitat predeterminats. Les accions associades amb aquests gestos es poden personalitzar dins de la configuració de SandFly. Si Explora amb el tacte està activat, pots utilitzar els gestos següents per dur a terme determinades accions.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Vols amagar la pantalla?</string>
   <string name="dialog_message_dim_screen">Això desactiva la pantalla per millorar la privadesa. És possible que es continuïn mostrant alguns continguts, com ara missatges per tornar a activar la pantalla o menús de funcions d\'accessibilitat com SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Aquesta versió de SandFly inclou canvis als gestos d\'accessibilitat predeterminats.\n\nEl gest cap amunt i cap avall et permetrà moure\'t al primer element de la pantalla, mentre que el gest cap avall i cap amunt et desplaçarà al darrer element.\n\nAra pots canviar la granularitat de lectura posant el focus en un element i, a continuació, seleccionant una granularitat al menú contextual de SandFly.\n\nPots canviar les accions que duen a terme aquests gestos a la configuració de SandFly.</string>
-  <string name="default_action_changed_details">Per reproduir i posar en pausa el contingut multimèdia, ara pots fer doble toc i mantenir premut amb dos dits.\n\nAltres gestos també han canviat.</string>
-  <string name="talkback_built_in_gesture_open_url">Obre al telèfon per obtenir més informació</string>
-  <string name="talkback_built_in_gesture_change_details_45">Aquesta versió de SandFly inclou canvis en els gestos d\'accessibilitat predeterminats.\n\nAra el gest per anar cap amunt porta a l\'opció de navegació anterior, i el gest per anar cap avall, a la següent.</string>
-  <string name="side_tap_shortcuts_removed_details">Aquesta configuració s\'ha suprimit de SandFly a causa de problemes amb la fiabilitat:\n• Gestos de toc al lateral del dispositiu.\n• Agita per iniciar la lectura contínua.</string>
-  <string name="button_accept_changed_gesture_mappings">Accepta els gestos</string>
-  <string name="button_customize_gesture_mappings">Personalitza els gestos</string>
   <string name="button_disable_all_events">Desactiva-ho tot</string>
   <string name="button_enable_all_events">Activa-ho tot</string>
   <string name="dialog_title_disable_exploration">Vols desactivar l\'exploració tàctil?</string>
@@ -893,8 +805,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="screen_search_hint_type_search_tables">Cerca taules</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Canal de notificacions de SandFly</string>
-  <string name="pref_selector_summary">%1$s per seleccionar una opció de configuració. A continuació, %2$s per ajustar l\'opció.</string>
-  <string name="speech_rate_change">Velocitat de parla %1$d%%</string>
   <string name="speech_pitch_maximum">To de parla més alt</string>
   <string name="speech_pitch_minimum">To de parla més baix</string>
   <string name="reset_speech_rate_and_pitch">Restableix la velocitat i el to de la parla</string>
@@ -904,10 +814,7 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="vibration_feedback_state">Avisos amb vibració: %1$s</string>
   <string name="text_formatting_state">Enuncia el format del text %1$s</string>
   <string name="typing_echo_change">Eco del teclat físic: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Palmell de la mà secundària cap a dins, mantén premut per commutar el mode de control de lectura.</string>
   <string name="gesture_1_or_2">%1$s o %2$s</string>
-  <string name="select_setting_hint">%1$s per seleccionar una altra opció de configuració</string>
-  <string name="adjust_setting_hint">%1$s per ajustar l\'opció de configuració</string>
   <string name="adjust_granularity_hint">%1$s per llegir per %2$s</string>
   <string name="adjust_typo_hint">%1$s per veure suggeriments.</string>
   <string name="use_action_hint">Fes doble toc per fer una acció</string>
@@ -947,7 +854,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="setting_selector_heading">Controls de lectura</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Per reproduir contingut multimèdia o posar-lo en pausa en una aplicació de música o de vídeo, fes doble toc amb dos dits. Prova-ho ara.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Pot ser que altres aplicacions utilitzin aquest gest per respondre a una trucada telefònica o finalitzar-la. És possible que aquest gest no sigui compatible amb totes les aplicacions.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Mostra tots els tutorials de SandFly</string>
   <string name="new_shortcut_gesture_pause_media_announcement">La reproducció del contingut multimèdia s\'ha reprès o s\'ha posat en pausa. Normalment, aquesta acció reprendrà o posarà en pausa el vídeo o la música que s\'està reproduint. Llisca cap a la dreta per continuar.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Per aturar SandFly perquè deixi de parlar temporalment, toca amb dos dits.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">La veu de SandFly s\'ha aturat. Normalment, aquesta acció aturarà la frase que SandFly estigui dient. Llisca cap a la dreta per continuar.</string>
@@ -961,38 +867,18 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="new_shortcut_gesture_selection_mode_on_announcement">El mode de selecció s\'ha activat o s\'ha desactivat. Normalment, aquesta acció iniciarà o finalitzarà el mode de selecció quan ets en un camp d\'entrada. Llisca cap a la dreta per continuar.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Per utilitzar els controls de lectura, llisca cap a l\'esquerra o cap a la dreta amb 3 dits.. També pots fer-los lliscar cap amunt o cap avall.</string>
   <string name="new_shortcut_gesture_note">Nota: has personalitzat alguns gestos i és possible que aquesta informació no sigui precisa. Per revisar els teus gestos, ves a la configuració de SandFly.</string>
-  <string name="welcome_to_android11">Et donem la benvinguda a SandFly per a Android 11</string>
   <string name="welcome_to_android11_text">S\'han afegit gestos nous perquè sigui més fàcil i ràpid utilitzar SandFly.\n\nEn aquesta pantalla pots provar els gestos nous. Pots revisar aquesta informació en qualsevol moment a la configuració de SandFly.</string>
   <string name="new_gesture_notification_title">Gestos nous a SandFly</string>
   <string name="new_gesture_notification_content">Toca per obtenir informació sobre com pots utilitzar SandFly més ràpidament amb els gestos nous.</string>
   <string name="dump_node_tree_description">L\'arbre de nodes s\'ha imprès als registres.</string>
   <string name="report_gesture_description">Aquí s\'indiquen els gestos que has dut a terme recentment; informa del gest que no és correcte i explica què n\'esperaves.</string>
-  <string name="update_welcome_text_content">Ara pots connectar-te a les pantalles braille mitjançant HID, una manera de connectar-te als dispositius Bluetooth. Assegura\'t que tens els controladors de microprogramari més recents del fabricant i, a continuació, activa el Bluetooth a la pantalla braille. Ves a la configuració de SandFly &gt; Pantalla braille i activa l\'opció \"Utilitza la pantalla braille\". Cerca el dispositiu a la llista de dispositius i connecta-t\'hi.</string>
-  <string name="update_welcome_text_content_tts">Ara pots connectar-te a les pantalles braille mitjançant HID, una manera de connectar-te als dispositius Bluetooth. Assegura\'t que tens els controladors de microprogramari més recents del fabricant i, a continuació, activa el Bluetooth a la pantalla braille. Ves a la configuració de SandFly, selecciona Pantalla braille i activa l\'opció \"Utilitza la pantalla braille\". Cerca el dispositiu a la llista de dispositius i connecta-t\'hi.</string>
-  <string name="update_welcome_text_content_with_link">Obtén informació sobre com pots utilitzar la pantalla braille amb SandFly.</string>
   <string name="update_welcome_talkback_16.1">Aquesta actualització de SandFly introdueix la compatibilitat amb Descriu la pantalla en més idiomes i altres millores de qualitat que fan que sigui més fàcil d\'utilitzar.\n\nA les pantalles següents, obtindràs més informació sobre aquests canvis.\n\nPots revisar aquesta informació més tard a Configuració de SandFly &gt; Funcions noves a SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">Aquesta actualització de SandFly introdueix la compatibilitat amb Descriu la pantalla en més idiomes i altres millores de qualitat que fan que sigui més fàcil d\'utilitzar.\n\nA les pantalles següents, obtindràs més informació sobre aquests canvis.\n\nPots revisar aquesta informació més tard a Configuració de SandFly i, a continuació, Funcions noves a SandFly.</string>
-  <string name="describe_screen_and_qna_title">Nous idiomes per a Descriu la pantalla i Demana a Gemini</string>
-  <string name="describe_screen_and_qna_content">Descriu la pantalla i Demana a Gemini ara estan disponibles en idiomes addicionals. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Obtén més informació al centre d\'ajuda&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Drecera per a l\'escriptura per veu</string>
   <string name="shortcut_for_dictation_content">Mentre utilitzes Gboard, ara pots fer doble toc amb dos dits per iniciar o aturar l\'escriptura per veu.
 &lt;br&gt;
 &lt;br&gt;Assegura\'t que tens la darrera versió de &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard de Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Quan Gboard estigui en pantalla, podràs fer un doble toc amb dos dits per iniciar la funció de dictat i, després, tornar a fer doble toc amb dos dits per aturar-la.</string>
-  <string name="keyboard_title">Teclat</string>
-  <string name="keyboard_content">Ara SandFly té un mapa de teclat millorat amb diverses ordres i dreceres noves. Aquesta millora, que inclou el mode de navegació per a una navegació web més eficient, simplifica la navegació i la interacció per als usuaris de SandFly que utilitzen teclats físics. Pots canviar al mapa de tecles millorat a Configuració de SandFly &gt; Configuració avançada &gt; Tecles de drecera.</string>
-  <string name="keyboard_content_tts">Ara SandFly té un mapa de teclat millorat amb diverses ordres i dreceres noves. Aquesta millora, que inclou el mode de navegació per a una navegació web més eficient, simplifica la navegació i la interacció per als usuaris de SandFly que utilitzen teclats físics. Pots canviar al mapa de tecles millorat a Configuració de SandFly, Configuració avançada i, a continuació, Tecles de drecera.</string>
-  <string name="reduce_delay_title">Redueix el retard</string>
-  <string name="reduce_delay_content">Ara pots reduir els retards dels anuncis de SandFly per a l\'exploració tàctil i l\'escriptura. Per veure aquestes opcions de configuració, ves a Configuració de SandFly &gt; Configuració avançada &gt; Redueix el retard.</string>
-  <string name="reduce_delay_content_tts">Ara pots reduir els retards dels anuncis de SandFly per a l\'exploració tàctil i l\'escriptura. Per veure aquestes opcions de configuració, ves a Configuració de SandFly, Configuració avançada i, a continuació, Redueix el retard.</string>
-  <string name="customize_braille_keyboard_improvements_title">Personalitza els gestos del teclat braille</string>
-  <string name="customize_braille_keyboard_improvements_content">Ara és possible personalitzar els gestos per al teclat braille virtual en pantalla. Per personalitzar-los, ves a Configuració de SandFly &gt; Teclat braille &gt; Gestos.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Ara és possible personalitzar els gestos per al teclat braille virtual en pantalla. Per personalitzar-los, ves a Configuració de SandFly, Teclat braille i, a continuació, Gestos.</string>
-  <string name="learn_more_about_braille_keyboard">Més informació sobre el teclat braille</string>
-  <string name="other_changes_title">Altres canvis</string>
-  <string name="other_changes_content">Ara, un missatge en pantalla t\'ajuda a desactivar SandFly ràpidament si s\'activa per error. Per desactivar aquesta funció, ves a Configuració de SandFly &gt; Mostra les instruccions per desactivar SandFly.</string>
-  <string name="other_changes_content_tts">Ara, un missatge en pantalla t\'ajuda a desactivar SandFly ràpidament si s\'activa per error. Per desactivar aquesta funció, ves a Configuració de SandFly i, a continuació, Mostra les instruccions per desactivar SandFly.</string>
-  <string name="keymap_changes_content">El mapa de teclat clàssic s\'ha canviat al mapa de teclat predeterminat, que inclou més dreceres.</string>
   <string name="announcing_text_formatting_title">Anuncia el format de text</string>
   <string name="announcing_text_formatting_header">Ara SandFly pot anunciar els canvis en el format del text, com ara la negreta, la cursiva i el color del text. Per començar:</string>
   <string name="announcing_text_formatting_option1">Posa el focus a l\'element amb format, obre el menú de SandFly i selecciona Descriu el format del text; o</string>
@@ -1083,7 +969,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="additional_tips_link_subtext">Obtén informació sobre com pots fer trucades, enviar missatges i més</string>
   <string name="practice_gestures_link_text">Practica els gestos</string>
   <string name="practice_gestures_link_subtext">Prova diversos gestos per saber què fan</string>
-  <string name="help_and_feedback_link_subtext">Més informació sobre SandFly i sobre com pots enviar suggeriments</string>
   <string name="choose_tutorial_title">Tria com vols interaccionar amb SandFly</string>
   <string name="touch_tutorial_button">Tutorial sobre tocs</string>
   <string name="keyboard_tutorial_button">Tutorial sobre el teclat</string>
@@ -1229,8 +1114,6 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="wear_training_typing_text5">Prova-ho a continuació.</string>
   <string name="wear_training_typing_practice_button_content_description">Escriure amb el teclat</string>
   <string name="wear_training_end_tutorial_title">Ja pots començar a utilitzar SandFly</string>
-  <string name="talkback_updated_notification_title">SandFly s\'ha actualitzat</string>
-  <string name="talkback_updated_notification_content">Toca per obtenir més informació</string>
   <string name="wear_new_feature_page_title">Et donem la benvinguda a la versió actualitzada de SandFly</string>
   <string name="wear_new_feature_page_content">Veuràs algunes correccions d\'errors i canvis en la manera com es mou el focus</string>
   <string name="wear_new_feature_page_button_content_description">Finalitza</string>
@@ -1249,10 +1132,7 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="title_pref_blue">Blau</string>
   <string name="title_pref_grey">Gris</string>
   <string name="survey_setting_title">Comparteix els teus suggeriments</string>
-  <string name="survey_closed">S\'ha tancat l\'enquesta</string>
   <string name="title_summarize_view">Descriu la pantalla</string>
-  <string name="title_increase_touch_focus_latency">Augmenta el retard del focus</string>
-  <string name="title_decrease_touch_focus_latency">Redueix el retard del focus</string>
   <string name="detected_result">S\'ha detectat %1$s</string>
   <string name="title_image_caption">Descriu la imatge</string>
   <string name="image_caption_with_gemini_prefix">Descriu la imatge. No utilitzis cap etiqueta a la resposta.</string>
@@ -1279,33 +1159,15 @@ Si els retards són inferiors a 0,3 segons, el doble toc per activar es canviar�
   <string name="image_qna_question_prefix">USUARI: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Continua alternant els torns d\'USUARI i MODEL] ...</string>
-  <string name="screen_overview_with_screenshot">La teva feina és ajudar algú que no pot veure el seu telèfon a entendre què hi ha a la pantalla. Descriu aquesta captura de pantalla en unes quantes frases.
-
-Instruccions
-Comença la resposta dient \"La pantalla mostra\".
-L\'inici de la resposta ha de descriure el contingut més important i destacat de la pantalla. Aquí tens alguns exemples del contingut més important i destacat que es pot descriure:
-* En una aplicació de xat: el remitent i el text del missatge més recent.
-* En una aplicació de mitjans socials: la primera publicació, incloent-hi qui l\'ha publicat, el text i una descripció de la imatge.
-* En una aplicació de notícies: el títol de l\'article i una descripció de la imatge principal.
-* En una aplicació de compres: una descripció del producte que es mostra i el preu.
-* En una aplicació de calendari: el proper esdeveniment i el nombre d\'altres esdeveniments que es mostren després.
-* En una llista de missatges: el nom i la previsualització del primer missatge i, a continuació, només els noms dels missatges següents de la llista i quants missatges no s\'han llegit.
-
-Després, la resposta pot descriure la ubicació espacial i la finalitat de les barres de navegació i dels botons destacats.
-No mencionis el contingut de la barra d\'estat de la part superior (p. ex., l\'hora, l\'estat de la xarxa o la bateria).
-No utilitzis Markdown a la resposta.</string>
   <string name="title_gemini_opt_in_dialog">Vols obtenir descripcions detallades de les imatges?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Vols obtenir descripcions de les imatges?</string>
   <string name="title_gemini_result_dialog">S\'ha detectat: imatge</string>
   <string name="title_gemini_result_bottom_sheet">Descripció de la imatge</string>
   <string name="title_gemini_screen_overview_result_dialog">Descripció de la pantalla</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Resum</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Accions</string>
   <string name="positive_button_gemini_opt_in_dialog">Activa</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Accepto</string>
   <string name="negative_button_gemini_opt_in_dialog">No, gràcies</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Ves a Configuració</string>
-  <string name="positive_button_gemini_download_dialog">Baixa i activa</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, %1$s.</string>
   <string name="detected_icon_label">Icona, %1$s.</string>
@@ -1319,8 +1181,6 @@ No utilitzis Markdown a la resposta.</string>
   <string name="screen_overview_no_result">No es pot resumir la pantalla</string>
   <string name="image_caption_no_result">No es pot descriure la imatge</string>
   <string name="image_caption_with_hide_screen">Les descripcions d\'imatges no estan disponibles quan la pantalla està amagada. Mostra la pantalla i torna-ho a provar.</string>
-  <string name="feedback_button_state_set">seleccionat</string>
-  <string name="feedback_button_state_unset">no seleccionat</string>
   <string name="action_text_like_button">Marca com a bona resposta</string>
   <string name="action_text_dislike_button">Marca com a mala resposta</string>
   <string name="action_text_clear_like_button">Esborra la bona resposta</string>
@@ -1349,18 +1209,13 @@ No utilitzis Markdown a la resposta.</string>
   <string name="downloading_all_image_captioning_hint">S\'estan baixant les descripcions automàtiques d\'imatges i d\'icones</string>
   <string name="download_all_image_captioning_successful_hint">S\'han baixat les descripcions automàtiques d\'imatges i d\'icones</string>
   <string name="download_all_image_captioning_failed_hint">No es poden baixar. Torna-ho a provar més tard.</string>
-  <string name="download_complete_notification_title">Baixada completada</string>
-  <string name="download_complete_notification_content">Ara sentiràs descripcions automàtiques d\'icones i imatges amb SandFly</string>
-  <string name="download_complete_notification_action">Configuració</string>
   <string name="download_storage_error_hint">L\'emmagatzematge és ple. Per fer la baixada, allibera %1$d MB a Configuració &gt; Emmagatzematge.</string>
   <string name="download_network_error_hint">No es poden baixar. Comprova la connexió i torna-ho a provar.</string>
   <string name="switch_icon_detection_dialog_title">Descripcions automàtiques d\'icones</string>
   <string name="switch_icon_detection_dialog_message">Escolta descripcions quan posis el focus en una icona</string>
   <string name="switch_image_description_dialog_message">Escolta descripcions quan posis el focus en una imatge. És possible que algunes aplicacions no admetin aquesta funció.</string>
-  <string name="switch_text_recognition_dialog_title">Descriu automàticament el text que apareix en imatges</string>
   <string name="switch_text_recognition_dialog_message">Escolta descripcions quan posis el focus en una imatge que contingui text</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Baixat</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Pots seguir escoltant descripcions d\'una imatge seleccionada des del menú de SandFly</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">D\'acord</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Suprimeix la baixada</string>
   <string name="delete_icon_detection_dialog_title">Vols suprimir les descripcions automàtiques d\'icones?</string>
@@ -1376,11 +1231,6 @@ No utilitzis Markdown a la resposta.</string>
   <string name="gemini_enable_dialog_title">Utilitza Gemini a SandFly</string>
   <string name="gemini_disable_dialog_message">Identifica contingut de la pantalla amb Gemini</string>
   <string name="disable_gemini_dialog_subtext">Activa la identificació de contingut de la pantalla amb Gemini</string>
-  <string name="ai_services_update_dialog_title">Actualitza l\'aplicació %1$s per descriure imatges</string>
-  <string name="ai_services_update_dialog_message">Per escoltar descripcions d\'imatges, baixa la darrera versió d\'<xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> des de Google Play.\n\nUn cop s\'hagi completat la baixada, ves a la configuració de SandFly de nou i torna a activar les descripcions automàtiques d\'imatges.</string>
-  <string name="ai_services_update_dialog_button_text">Ves a Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">S\'ha produït un error. Torna-ho a provar.</string>
   <string name="gemini_block_message">No es pot processar aquesta imatge</string>
   <string name="gemini_network_error">No hi ha connexió a Internet. Comprova la teva Wi‑Fi o xarxa mòbil i torna-ho a provar.</string>
@@ -1396,13 +1246,8 @@ No utilitzis Markdown a la resposta.</string>
   <string name="image_qna_typing_button_text">Escriu una pregunta per a Gemini</string>
   <string name="image_qna_send_button_text">Pregunta</string>
   <string name="image_qna_speak_question_description">Enuncia la pregunta</string>
-  <string name="overviews_summary_intro">Resum d\'aquesta pantalla de l\'aplicació: %1$s</string>
   <string name="overviews_node_not_found">Ja no trobo aquesta part de la pantalla.</string>
-  <string name="overviews_images_in_app">S\'han trobat imatges principals</string>
   <string name="overviews_list_item">%1$d. %2$s.</string>
-  <string name="overviews_actions_in_app">Accions a l\'aplicació</string>
-  <string name="overviews_actions_in_app_description">Aquestes són les accions principals que pots dur a terme des de la pantalla d\'aquesta aplicació:</string>
-  <string name="overviews_parent_type">Accions a l\'aplicació</string>
   <string name="text_replaced_feedback">S\'ha substituït el text</string>
   <string name="switch_gesture_set">Canvia de conjunt de gestos</string>
   <string name="switch_gesture_set_to">Canvia al conjunt de gestos %1$d</string>
@@ -1453,7 +1298,6 @@ No utilitzis Markdown a la resposta.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Tanca</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Per escoltar les notificacions quan la pantalla està desactivada, activa \"Enuncia les notificacions amb pantalla apagada\" a la configuració de la verbositat de SandFly</string>
     <string name="title_pref_tts_engine">Motor de text a parla</string>
     <string name="title_pref_system_tts_settings">Configuració de text a parla del sistema</string>
     <string name="title_selector_switch_tts_engine">Motor de veu</string>

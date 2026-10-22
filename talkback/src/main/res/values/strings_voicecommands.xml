@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!--
-      Source: Possible user requests from voice commands to read from top.
-      Description: Looks for keyword "read" to see if user has asked to read from top. [CHAR LIMIT=40]
-    -->
-    <string name="voice_commands_read">read</string>
-    <!--
      Source: Possible user requests from voice commands to read from current.
      Description: Looks for keyword "read from cursor position" or "read from cursor" to see if user has asked to read from cursor. [CHAR LIMIT=40]
     -->
@@ -16,11 +11,6 @@
     -->
     <string name="voice_commands_edit_options">Edit options</string>
     <!--
-      Source: Possible user requests from voice commands to edit.
-      Description: Looks for keyword "edit" to see if user has asked to edit. [CHAR LIMIT=40]
-    -->
-    <string name="voice_commands_edit">edit</string>
-    <!--
       Source: Possible user requests from voice commands to see possible voice commands.
       Description: Looks for keyword "what" to see if user has asked to see possible voice commands. [CHAR LIMIT=40]
     -->
@@ -30,11 +20,6 @@
       Description: Looks for keyword "say" to see if user has asked to see possible voice commands. [CHAR LIMIT=40]
     -->
     <string name="voice_commands_say">say</string>
-    <!--
-      Source: Possible user requests from voice commands to read from next item.
-      Description: Looks for keyword "next" to see if user has asked to see read from next item. [CHAR LIMIT=40]
-    -->
-    <string name="voice_commands_next">next</string>
     <!--
       Source: Possible user requests from voice commands to see possible languages.
       Description: Looks for keyword "language" or "languages" "show language now" to see if user has asked to see possible languages. [CHAR LIMIT=40]

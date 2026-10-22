@@ -260,11 +260,6 @@
   -->
   <string name="value_not_checked">not checked</string>
   <!--
-    Source: A value for announcing the partially-checked / mixed state of a check-box.
-    Description: This is spoken to the user. [CHAR LIMIT="NONE"]
-  -->
-  <string name="value_partially_checked">partially checked</string>
-  <!--
     Source: A value for announcing the "on" state of a switch.
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
   -->
@@ -294,16 +289,6 @@
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
   -->
   <string name="value_expanded">expanded</string>
-  <!--
-    Source: A value for announcing the expanded state of a expandable/collapsible view.
-    Description: This is spoken to the user. [CHAR LIMIT=NONE]
-  -->
-  <string name="value_fully_expanded">fully expanded</string>
-  <!--
-    Source: A value for announcing the expanded state of a expandable/collapsible view.
-    Description: This is spoken to the user. [CHAR LIMIT=NONE]
-  -->
-  <string name="value_partially_expanded">partially expanded</string>
   <!--
     Source: A value for announcing the collapsed state of a expandable/collapsible view.
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
@@ -357,8 +342,6 @@
   <string name="template_hint_single_selection_item"><xliff:g id="action" example="Tap">%1$s</xliff:g> to select</string>
   <!-- Hint spoken when the user pauses over an item in a single-selection list while they are navigating with keyboard.-->
   <string name="template_hint_single_selection_item_keyboard">Press <xliff:g id="keyCombo" example="Alt+Enter">%1$s</xliff:g> to select</string>
-  <!-- Hint spoken when the user selects a view pager with multiple pages. -->
-  <string name="template_hint_pager">Swipe with two fingers to switch pages</string>
   <!-- Hint spoken when the user selects a view pager with only one page. -->
   <string name="template_hint_pager_single_page">No more pages</string>
   <!-- Hint spoken when the user selects a seek control on an Android TV device. -->
@@ -704,11 +687,6 @@
     Description: This is spoken to the user. [CHAR_LIMIT=NONE]
   -->
   <string name="brightness_adaptive_on">Turn off adaptive brightness to change brightness.</string>
-  <!--
-    Source: String for notifying the user the accessibility volume is decreased.
-    Description: This is spoken to the user. [CHAR_LIMIT=NONE]
-  -->
-  <string name="template_touch_explore_latency_changed">Typing focus delay: <xliff:g id="milliseconds">%1$d</xliff:g> milliseconds.</string>
   <!--
     Source: String for notifying the user the accessibility volume is decreased.
     Description: This is spoken to the user. [CHAR_LIMIT=NONE]

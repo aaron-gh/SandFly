@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Jika diaktifkan, TalkBack akan memberikan respons lisan agar Anda dapat menggunakan perangkat tanpa melihat layar. TalkBack ditujukan untuk situasi atau pengguna yang mengalami kesulitan melihat layar.&lt;br&gt;&lt;br&gt;&lt;b&gt;Cara menggunakan TalkBack&lt;/b&gt;&lt;br&gt;• Geser ke kanan atau kiri untuk berpindah antar-item&lt;br&gt;• Ketuk dua kali untuk mengaktifkan item&lt;br&gt;• Tarik dengan 2 jari untuk men-scroll&lt;br&gt;&lt;b&gt;Cara menonaktifkan TalkBack&lt;/b&gt;&lt;br&gt;1. Di Setelan, ketuk &lt;b&gt;Gunakan TalkBack&lt;/b&gt;. Anda akan melihat garis batas. Ketuk garis batas dua kali.&lt;br&gt;2. Pada pesan konfirmasi, ketuk &lt;b&gt;Berhenti&lt;/b&gt;. Anda akan melihat garis batas. Ketuk garis batas dua kali.</string>
   <string name="talkback_service_summary">Menggunakan pembaca layar untuk mendengar item yang dibacakan secara lisan</string>
   <string name="talkback_preferences_title">Setelan TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Setelan</string>
   <string name="tts_preferences_title">Text-to-speech</string>
   <string name="language_options">Bahasa</string>
   <string name="spoken_language">Bahasa lisan</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Penelusuran dibatalkan.</string>
   <string name="notification_type_status_started">Dimulai</string>
   <string name="notification_type_status_stopped">Dihentikan</string>
-  <string name="notification_type_status_connected">terhubung</string>
-  <string name="notification_battery_level_unknown">tidak diketahui</string>
   <string name="notification_battery_saver_mode">Penghemat baterai aktif</string>
   <string name="template_no_text_selected">Tidak ada teks yang dipilih</string>
   <string name="template_charging">Mengisi daya %1$s Tingkat baterai %2$s persen.</string>
   <string name="template_charging_lite">Pengisian daya %1$s</string>
-  <string name="template_battery_state">Kabel daya %1$s %2$s persen %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Pendering bergetar.</string>
   <string name="value_ringer_silent">Pendering senyap.</string>
   <string name="value_screen_on">Layar aktif.</string>
   <string name="value_screen_off">Layar mati.</string>
   <string name="value_device_unlocked">Perangkat dibuka kuncinya.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Volume ucapan</string>
-  <string name="title_pref_speech_rate">Kecepatan bicara</string>
-  <string name="summary_pref_speech_rate">Kecepatan teks diucapkan</string>
   <string name="title_pref_verbose_scroll_announcement">Selalu ucapkan jumlah item daftar</string>
   <string name="summary_pref_verbose_scroll_announcement">Ucapkan jumlah untuk semua metode scrolling</string>
   <string name="title_pref_cover_proximity_sensor">Tutupi sensor kedekatan untuk menghentikan ucapan</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Ucapkan waktu</string>
   <string name="pref_speak_time_summary">Saat Anda mengaktifkan layar</string>
   <string name="summary_speak_container_element_positions">Termasuk info saat masuk dan keluar dari daftar, petak, dan penampung lainnya</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Penundaan fokus ditambahkan ke kontrol pembacaan</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Geser dengan 3 jari untuk menggunakan kontrol pembacaan dan mengubah penundaan fokus kapan saja</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Beralih ke gestur angkat untuk mengetik?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Jika penundaan fokus pengetikan disetel di bawah 0,3 detik, ketuk dua kali untuk mengetik akan sangat sulit dilakukan. Pilih \"Alihkan\" untuk beralih secara otomatis ke gestur angkat untuk mengetik.\n\nUntuk menggunakan gestur angkat untuk mengetik, tahan jari untuk memilih tombol, lalu angkat untuk mengetik.\n\nAnda dapat menyesuaikannya di setelan TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Penundaan fokus pengetikan ditambahkan ke kontrol pembacaan</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Jika Anda mengalami masalah dengan gestur ketuk dua kali saat mengetik, geser dengan 3 jari untuk menggunakan kontrol pembacaan, lalu ubah ke penundaan fokus pengetikan yang lebih lama</string>
-  <string name="gestures_announce_typing_focus_wont_change">Penundaan fokus pengetikan tidak berfungsi tanpa gestur Angkat untuk mengetik.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Oke</string>
   <string name="reset_letency_reduction_settings_dialog_title">Reset setelan penundaan?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tindakan ini akan mereset semua setelan ke default</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Reset</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Setelan pengurangan latensi telah direset.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Alihkan</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Jangan alihkan</string>
   <string name="Reset_gesture_settings_dialog_title">Reset gestur?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Reset rangkaian gestur saat ini?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Tindakan ini akan mereset semua gestur ke setelan default.\n\nSemua perubahan yang telah Anda buat akan hilang.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Ucapkan semua pembaruan proses</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Mencakup pembaruan saat mendownload, mengikuti rute mobil, dan lainnya. Saat dinonaktifkan, Anda akan lebih jarang mendapatkan pembaruan.</string>
   <string name="title_pref_explore_by_touch">Jelajahi dengan sentuhan</string>
-  <string name="title_pref_category_visual">Visual</string>
   <string name="title_pref_category_controls">Kontrol</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Umum</string>
-  <string name="title_pref_category_advanced">Lanjutan</string>
-  <string name="title_pref_category_others">Lainnya</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial &amp; bantuan</string>
   <string name="title_pref_category_reduce_latency_summary">Setelan ini dapat mengurangi penundaan sebelum pengumuman TalkBack</string>
   <string name="reset_latency_settings_title">Reset semua setelan penundaan</string>
   <string name="title_pref_single_tap">Satu ketukan untuk mengaktifkan</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Ubah indikator fokus</string>
   <string name="title_pref_category_manage_gestures">Gestur</string>
   <string name="title_pref_manage_labels">Label khusus</string>
-  <string name="title_pref_manage_customize_menus">Edit menu</string>
   <string name="title_pref_category_context_menu">Sesuaikan menu TalkBack</string>
   <string name="title_pref_category_selector_menu">Sesuaikan kontrol pembacaan</string>
   <string name="title_pref_category_navigation_menu">Edit opsi navigasi</string>
-  <string name="pref_category_context_menu_summary">Untuk menggunakan menu TalkBack, ketuk layar dengan 3 jari. Anda juga dapat menggeser ke atas lalu ke kanan atau menggeser ke bawah lalu ke kanan.</string>
-  <string name="pref_category_context_menu_summary_xr">Untuk menggunakan menu TalkBack, arahkan telapak tangan sekunder ke dalam, lalu cubit.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Untuk menggunakan menu TalkBack, geser ke bawah lalu ke kanan.</string>
-  <string name="pref_category_selector_menu_summary">Untuk menggunakan kontrol pembacaan, geser ke kiri atau kanan dengan 3 jari. Anda juga dapat menggeser ke atas atau bawah dengan 3 jari.</string>
-  <string name="pref_category_selector_menu_summary_xr">Untuk berpindah antar kontrol pembacaan, arahkan telapak tangan sekunder ke dalam, cubit dan tahan, gerakkan ke kanan atau kiri, lalu lepaskan.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Untuk menggunakan kontrol pembacaan, geser ke atas lalu ke bawah.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan keyboard</string>
   <string name="title_pref_export_custom_labels">Ekspor label kustom</string>
-  <string name="title_pref_play_store">Buka TalkBack di Google Play Store</string>
-  <string name="summary_pref_play_store">Versi TalkBack Saat Ini: %1$s</string>
   <string name="title_pref_help_and_feedback">Bantuan &amp; masukan</string>
-  <string name="title_pref_gup">Hubungi Dukungan Disabilitas Google</string>
-  <string name="subtitle_pref_gup">Dapatkan bantuan dalam menggunakan TalkBack atau laporkan masalah</string>
-  <string name="pref_item_licenses">Lisensi Open Source</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Bantuan</string>
   <string name="title_pref_show_tos">Persyaratan Layanan</string>
   <string name="title_pref_show_privacy_policy">Kebijakan privasi</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gestur sidik jari</string>
   <string name="title_pref_category_tutorial">Tutorial TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Bantuan</string>
-  <string name="title_pref_category_typing">Mengetik</string>
   <string name="title_pref_advanced_settings">Setelan lanjutan</string>
   <string name="title_pref_show_exit_watermark">Tampilkan petunjuk untuk menonaktifkan TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Saat TalkBack diaktifkan, pesan akan ditampilkan untuk membantu Anda menonaktifkannya dengan cepat</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Beberapa tombol pengubahnya berbeda.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Pelajari lebih lanjut peta tombol</string>
   <string name="keycombo_go_to_settings">Buka Setelan</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack bersiap untuk menghapus peta tombol klasik. Untuk tetap menggunakan pintasan keyboard, ganti ke peta tombol default.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Pelajari lebih lanjut</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Oke</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Setelan</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Pelajari lebih lanjut</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Anda sekarang menggunakan peta tombol default TalkBack. Ada juga peta tombol baru yang ditingkatkan yang memiliki banyak perintah baru. Pelajari lebih lanjut di pusat bantuan atau beralihlah ke peta tombol baru di Setelan.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Peta tombol baru tersedia</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Peta tombol TalkBack yang ditingkatkan menambahkan banyak perintah baru. Pelajari lebih lanjut di pusat bantuan atau beralihlah ke peta tombol baru di Setelan.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Perbarui tombol pengubah TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Lain kali</string>
   <string name="keycombo_warning_content_description">Informasi selengkapnya tentang tombol pengubah</string>
-  <string name="keycombo_warning_dialog_title">Perbarui tombol pengubah</string>
-  <string name="keycombo_warning_dialog_message">Agar pintasan keyboard TalkBack berfungsi dengan benar, perbarui tombol pengubah dari Tindakan menjadi Alt.\n\nJika Anda tetap menggunakan tombol pengubah Tindakan, beberapa pintasan akan melakukan tindakan yang berbeda untuk versi Android ini.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Peta tombol</string>
   <string name="keycombo_menu_select_keymap">Pilih peta tombol</string>
   <string name="keycombo_menu_reset_keymap">Reset peta tombol</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Naikkan volume ucapan</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Turunkan volume ucapan</string>
   <string name="keycombo_menu_global_refocus_current_node">Ucapkan fokus saat ini</string>
-  <string name="keycombo_menu_category_granularity">Navigasi</string>
   <string name="keycombo_menu_granularity_increase">Setelan navigasi berikutnya</string>
   <string name="keycombo_menu_granularity_decrease">Setelan navigasi sebelumnya</string>
   <string name="keycombo_menu_category_other">Tindakan lainnya</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Yakin ingin menyetel ulang tombol pintasan untuk peta tombol ini menjadi nilai defaultnya? Perlu diperhatikan, tindakan ini tidak dapat diurungkan.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Reset</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s dalam mode penjelajahan</string>
-  <string name="keycombo_assign_dialog_instruction">Tekan kombinasi tombol untuk menyetel pintasan baru. Setidaknya harus menggunakan tombol ALT atau Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Tekan kombinasi tombol dengan kunci pengubah %1$s untuk menyetel pintasan baru.</string>
   <string name="keycombo_unassigned">Tidak ditetapkan</string>
   <string name="save_button_in_keycombo_assign_dialog">Simpan</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Penundaan fokus pengetikan</string>
   <string name="message_pref_touch_explore_latency">Penundaan fokus pengetikan yang lebih singkat membuat TalkBack memberi pengumuman lebih cepat setelah keyboard disentuh.\n\nPilih penundaan</string>
   <string name="title_pref_touch_focus_timeout">Penundaan fokus</string>
-  <string name="summary_pref_touch_focus_time">
-Mengontrol kecepatan ucapan TalkBack setelah fokus berpindah. Penundaan yang lebih singkat membuat TalkBack terasa lebih cepat, tetapi dapat menyulitkan penggunaan gestur ketuk dua kali dan ketuk tiga kali.\n\n
-Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktifkan menjadi ketuk dengan dua jari untuk mengaktifkan.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Kelola gestur di TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Nonaktifkan TalkBack lalu aktifkan lagi untuk mengaktifkan setelan.</string>
   <string name="title_pref_auto_image_captioning">Deskripsi otomatis</string>
@@ -382,28 +332,16 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="dialog_title_turn_on_image_description">Aktifkan deskripsi gambar di Setelan</string>
   <string name="dialog_message_turn_on_image_description">Anda dapat mencoba lagi setelah mengaktifkan deskripsi gambar otomatis atau mendetail</string>
   <string name="title_pref_detailed_image_description">Deskripsi gambar mendetail</string>
-  <string name="summary_pref_ai_description">Dengarkan deskripsi yang lebih panjang saat Anda memilih \"%1$s\" dari menu TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Anda akan mendengar deskripsi singkat saat berfokus pada gambar di aplikasi yang didukung.\n\nGambar diproses di perangkat Anda dan tidak pernah dikirim ke Google. \n\nAI generatif bersifat eksperimental sehingga akan membuat kesalahan. Dengan melanjutkan, Anda menyetujui <a href="https://policies.google.com/terms/generative-ai">Persyaratan Layanan Google</a>.</string>
   <string name="enable_gemini">Aktifkan</string>
   <string name="powered_by_gemini">Didukung oleh AI generatif</string>
-  <string name="detailed_image_description_ongoing_hint">Mendapatkan deskripsi</string>
-  <string name="detailed_image_description_result_prefix">Terdeteksi: Gambar. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Anda perlu mendownload modul untuk menggunakan deskripsi gambar otomatis</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Gambar diproses di perangkat Anda dan tidak pernah dikirim ke Google.\n\nAI generatif bersifat eksperimental sehingga dapat melakukan kesalahan. Dengan melanjutkan, Anda menyetujui %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Persyaratan Layanan Google</string>
   <string name="message_aifeature_downloading">Mendownload model AI. Proses ini mungkin memerlukan waktu beberapa saat. Anda akan menerima notifikasi saat download selesai.</string>
   <string name="message_aifeature_downloading_with_progress">Proses download sedang berlangsung. %1$d dari %2$d MB didownload.</string>
-  <string name="message_aifeature_download_complete">Model AI didownload. TalkBack kini dapat membuat deskripsi gambar.</string>
   <string name="summary_pref_auto_image_captioning">Untuk ikon, gambar, dan teks dalam gambar</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Untuk teks dalam gambar</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Untuk gambar dan teks dalam gambar</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Untuk ikon dan teks dalam gambar</string>
   <string name="summary_pref_module_downloading">Mendownload…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Aktifkan untuk semua gambar</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Aktifkan hanya untuk gambar tidak berlabel</string>
   <string name="summary_pref_auto_image_captioning_disabled">Nonaktif</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Aktifkan untuk semua ikon</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Aktifkan hanya untuk ikon tidak berlabel</string>
   <string name="summary_pref_auto_icon_detection_disabled">Nonaktif</string>
   <string name="title_pref_enable_auto_image_caption">Semua gambar</string>
   <string name="title_pref_enable_auto_image_caption_arg">Semua gambar\n%1$s</string>
@@ -413,7 +351,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="title_pref_enable_auto_icon_detection">Semua ikon</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Hanya ikon tidak berlabel</string>
   <string name="title_pref_disable_auto_icon_detection">Jangan deskripsikan ikon</string>
-  <string name="dialog_message_on_device_ai_model_download">Anda akan mendengar deskripsi singkat saat berfokus pada gambar di aplikasi yang didukung.\n\nGambar diproses di perangkat Anda dan tidak pernah dikirim ke Google.\n\nAI generatif bersifat eksperimental, sehingga akan melakukan kesalahan. Dengan melanjutkan, Anda menyetujui %1$s.</string>
   <string name="title_pref_enable_gemini_support">Aktif</string>
   <string name="title_pref_disable_gemini_support">Nonaktif</string>
   <string name="summary_pref_gemini_support_enabled">Gemini diaktifkan</string>
@@ -457,7 +394,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="shortcut_print_node_tree">Cetak pohon node</string>
   <string name="shortcut_print_performance_stats">Cetak statistik performa</string>
   <string name="shortcut_first_in_screen">Fokus pada item pertama di layar</string>
-  <string name="shortcut_summary">Ringkas tata letak layar</string>
   <string name="shortcut_voice_commands">Mulai perintah suara</string>
   <string name="shortcut_last_in_screen">Fokus pada item terakhir di layar</string>
   <string name="shortcut_enable_dimming">Sembunyikan layar</string>
@@ -561,7 +497,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="menu_category_web_navigation">Navigasi web</string>
   <string name="menu_category_basic_navigation">Navigasi dasar</string>
   <string name="summary_custom_action">Muncul saat ada tindakan untuk item saat ini, termasuk link, salin, tempel, pilih, dan lainnya</string>
-  <string name="summary_context_menu_links">Buka link dalam item yang jadi fokus</string>
   <string name="summary_viewpager_controls">Buka halaman berikutnya atau sebelumnya. Muncul saat Anda membaca konten yang berisi beberapa halaman.</string>
   <string name="summary_labeling_controls">Muncul saat Anda memilih item yang tidak berlabel</string>
   <string name="summary_granularity">Baca menurut karakter, kata, baris, dan lainnya</string>
@@ -631,12 +566,9 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="summary_screen_overview">Meringkas layar dengan tombol tindakan</string>
   <string name="summary_screen_overview_no_actions">Dengarkan ringkasan konten di layar</string>
   <string name="summary_image_caption">Ucapkan teks dan ikon dalam gambar yang dipilih</string>
-  <string name="summary_summarize_view">Mengucapkan ringkasan tampilan</string>
   <string name="summary_typo_suggestions">Muncul saat kursor berada pada kesalahan ketik</string>
   <string name="summary_cache_keyboard_keys">TalkBack memuat pengumuman terlebih dahulu untuk mengurangi penundaan saat Anda mengetik</string>
   <string name="summary_cache_keyboard_keys_disabled">Gunakan Google Text-to-Speech untuk menggunakan fitur ini</string>
-  <string name="value_direction_down">ke bawah</string>
-  <string name="value_direction_down_and_right">ke bawah lalu ke kanan</string>
   <string name="title_pref_shortcut_up">Geser ke atas</string>
   <string name="title_pref_shortcut_up_xr">Arahkan telapak tangan sekunder ke dalam, cubit, lalu geser ke atas</string>
   <string name="title_pref_shortcut_down">Geser ke bawah</string>
@@ -704,10 +636,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="title_pref_shortcut_fingerprint_left">Geser ke kiri pada sensor sidik jari</string>
   <string name="title_pref_shortcut_fingerprint_right">Geser ke kanan pada sensor sidik jari</string>
   <string name="title_pref_version_code">Kode Versi</string>
-  <string formatted="false" name="value_volume_100_percent">Cocokkan volume ucapan</string>
-  <string formatted="false" name="value_volume_75_percent">75% dari volume ucapan</string>
-  <string formatted="false" name="value_volume_50_percent">50% dari volume ucapan</string>
-  <string formatted="false" name="value_volume_25_percent">25% dari volume ucapan</string>
   <string name="value_type_confirmation_double_tap">Tahan jari untuk memilih tombol, lalu ketuk dua kali</string>
   <string name="value_type_confirmation_lift_to_type">Tahan jari untuk memilih tombol huruf, lalu angkat. Ketuk dua kali untuk memilih tombol lain.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Tahan jari untuk memilih tombol, lalu angkat</string>
@@ -720,12 +648,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="value_touch_explore_time_out_200ms">0,2 detik</string>
   <string name="value_touch_explore_time_out_250ms">0,25 detik</string>
   <string name="value_touch_explore_time_out_300ms">0,3 detik (default)</string>
-  <string name="value_shake_to_read_disabled">Dinonaktifkan</string>
-  <string name="value_shake_to_read_threshold_very_light">Sangat pelan</string>
-  <string name="value_shake_to_read_threshold_light">Pelan</string>
-  <string name="value_shake_to_read_threshold_medium">Sedang</string>
-  <string name="value_shake_to_read_threshold_hard">Keras</string>
-  <string name="value_shake_to_read_threshold_very_hard">Sangat keras</string>
   <string name="title_pref_on_screen_keyboard">Keyboard virtual</string>
   <string name="title_pref_physical_keyboard">Keyboard fisik</string>
   <string name="value_keyboard_echo_none">Tidak ada</string>
@@ -738,8 +660,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="pref_time_feedback_format_entries_default">Gunakan format waktu perangkat</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 jam</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 jam</string>
-  <string name="notification_title_talkback_gestures_changed">Isyarat TalkBack berubah</string>
-  <string name="notification_message_talkback_gestures_changed">Ketuk untuk meninjau perubahan pada isyarat aksesibilitas</string>
   <string name="always_show_warning_checkbox">Selalu tampilkan peringatan ini</string>
   <string name="label_dialog_title_add">Tambahkan label</string>
   <string name="label_dialog_title_edit">Edit label</string>
@@ -760,16 +680,8 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="no_apps_to_export_labels">Tidak ditemukan aplikasi untuk mengekspor label.</string>
   <string name="label_choose_app_to_import">Pilih aplikasi untuk mengimpor label:</string>
   <string name="label_choose_app_to_export">Pilih aplikasi untuk mengekspor label:</string>
-  <string name="talkback_gesture_change_details">Versi TalkBack ini mencakup perubahan pada isyarat aksesibilitas default. Tindakan yang dikaitkan dengan isyarat ini dapat disesuaikan dalam setelan TalkBack. Saat Jelajahi dengan sentuhan diaktifkan, Anda dapat menggunakan isyarat berikut untuk melakukan tindakan tertentu.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Sembunyikan layar?</string>
   <string name="dialog_message_dim_screen">Tindakan ini akan menonaktifkan layar untuk meningkatkan privasi. Beberapa konten mungkin masih ditampilkan, seperti pesan untuk mengaktifkan kembali layar, atau menu untuk fitur aksesibilitas seperti TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Versi TalkBack ini meliputi perubahan gestur aksesibilitas default.\n\nGestur ke atas lalu ke bawah memungkinkan Anda berpindah ke item pertama di layar, dan gestur ke bawah lalu ke atas memungkinkan Anda berpindah ke item terakhir.\n\nPerincian pembacaan kini dapat diubah dengan memfokuskan sebuah item, lalu memilih perincian dari menu konteks TalkBack.\n\nAnda dapat mengubah tindakan yang dilakukan oleh gestur ini di Setelan TalkBack.</string>
-  <string name="default_action_changed_details">Untuk menjeda dan memutar media, sekarang Anda dapat mengetuk dua kali dan menahan dengan dua jari.\n\nGestur lain juga telah diubah.</string>
-  <string name="talkback_built_in_gesture_open_url">Buka di ponsel untuk mempelajari lebih lanjut</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack versi ini mencakup perubahan isyarat aksesibilitas default.\n\nIsyarat ke atas kini berpindah ke setelan navigasi sebelumnya, dan isyarat ke bawah kini berpindah ke setelan navigasi berikutnya.</string>
-  <string name="side_tap_shortcuts_removed_details">Setelan ini dihapus dari TalkBack, karena masalah keandalan:\n• Gestur ketuk sisi perangkat\n• Goyang untuk memulai mode terus baca</string>
-  <string name="button_accept_changed_gesture_mappings">Terima isyarat</string>
-  <string name="button_customize_gesture_mappings">Sesuaikan isyarat</string>
   <string name="button_disable_all_events">Nonaktifkan semua</string>
   <string name="button_enable_all_events">Aktifkan semua</string>
   <string name="dialog_title_disable_exploration">Nonaktifkan fitur Jelajahi dengan sentuhan?</string>
@@ -893,8 +805,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="screen_search_hint_type_search_tables">Telusuri tabel</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Saluran Notifikasi TalkBack</string>
-  <string name="pref_selector_summary">%1$s untuk memilih setelan. Lalu, %2$s untuk menyesuaikan setelan.</string>
-  <string name="speech_rate_change">Kecepatan bicara %1$d%%</string>
   <string name="speech_pitch_maximum">Nada ucapan tertinggi</string>
   <string name="speech_pitch_minimum">Nada ucapan terendah</string>
   <string name="reset_speech_rate_and_pitch">Reset kecepatan bicara dan tinggi nada</string>
@@ -904,10 +814,7 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="vibration_feedback_state">Efek getar %1$s</string>
   <string name="text_formatting_state">Ucapkan pemformatan teks %1$s</string>
   <string name="typing_echo_change">%1$s gema keyboard fisik</string>
-  <string name="reading_control_toggle_prefix_xr">Arahkan telapak tangan sekunder ke dalam, tekan lama untuk mengaktifkan/menonaktifkan mode kontrol pembacaan.</string>
   <string name="gesture_1_or_2">%1$s atau %2$s</string>
-  <string name="select_setting_hint">%1$s untuk memilih setelan lain</string>
-  <string name="adjust_setting_hint">%1$s untuk menyesuaikan setelan</string>
   <string name="adjust_granularity_hint">%1$s untuk membaca berdasarkan %2$s</string>
   <string name="adjust_typo_hint">%1$s untuk melihat saran.</string>
   <string name="use_action_hint">Ketuk dua kali untuk melakukan tindakan</string>
@@ -947,7 +854,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="setting_selector_heading">Kontrol pembacaan</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Untuk menjeda atau memutar media di aplikasi video atau musik, ketuk dua kali dengan 2 jari. Coba sekarang.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Aplikasi lain mungkin menggunakan gestur ini untuk beberapa hal, seperti menjawab atau mengakhiri panggilan telepon. Gestur ini mungkin tidak didukung di semua aplikasi.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Lihat semua tutorial TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media dijeda atau diputar. Biasanya, ini akan menjeda atau memutar video atau musik saat ini. Geser ke kanan untuk melanjutkan.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Untuk menghentikan sementara fungsi ucapan TalkBack, ketuk dengan 2 jari.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Ucapan TalkBack dihentikan. Biasanya, ini akan menghentikan frasa yang sedang dibacakan oleh TalkBack. Geser ke kanan untuk melanjutkan.</string>
@@ -961,38 +867,18 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Mode pemilihan aktif atau nonaktif. Biasanya, ini akan memulai atau mengakhiri mode pemilihan teks saat Anda berada dalam kolom input. Geser ke kanan untuk melanjutkan.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Untuk menggunakan kontrol pembacaan, geser ke kiri atau kanan dengan 3 jari. Anda juga dapat menggeser ke atas atau bawah dengan 3 jari.</string>
   <string name="new_shortcut_gesture_note">Catatan: Anda telah menyesuaikan beberapa gestur sehingga informasi ini mungkin tidak akurat. Untuk meninjau gestur, buka setelan TalkBack.</string>
-  <string name="welcome_to_android11">Selamat datang di TalkBack di Android 11</string>
   <string name="welcome_to_android11_text">Gestur baru telah ditambahkan untuk mempercepat dan mempermudah penggunaan TalkBack.\n\nDi layar ini, Anda dapat mencoba gestur baru. Anda dapat meninjau informasi ini di Setelan TalkBack kapan saja.</string>
   <string name="new_gesture_notification_title">Gestur baru di TalkBack</string>
   <string name="new_gesture_notification_content">Ketuk untuk mempelajari cara menggunakan TalkBack lebih cepat dengan gestur baru.</string>
   <string name="dump_node_tree_description">Pohon node telah dicetak ke log.</string>
   <string name="report_gesture_description">Berikut adalah gestur yang baru-baru ini dilakukan. Laporkan mana gestur yang salah dan mana yang benar.</string>
-  <string name="update_welcome_text_content">Anda kini dapat terhubung ke penampil braille melalui HID, yaitu cara untuk terhubung ke perangkat Bluetooth. Pastikan Anda memiliki driver firmware terbaru dari produsen, lalu aktifkan Bluetooth di penampil braille. Buka setelan TalkBack &gt; Penampil braille, lalu aktifkan \"Gunakan penampil braille\". Temukan perangkat Anda di daftar perangkat, lalu hubungkan.</string>
-  <string name="update_welcome_text_content_tts">Anda kini dapat terhubung ke penampil braille melalui HID, yaitu cara untuk terhubung ke perangkat Bluetooth. Pastikan Anda memiliki driver firmware terbaru dari produsen, lalu aktifkan Bluetooth di penampil braille. Buka setelan TalkBack, lalu Penampil braille dan aktifkan \"Gunakan penampil braille\". Temukan perangkat Anda di daftar perangkat, lalu hubungkan.</string>
-  <string name="update_welcome_text_content_with_link">Pelajari cara menggunakan penampil braille dengan TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Update TalkBack ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan TalkBack.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan TalkBack &gt; Fitur baru di TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Update TalkBack ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan TalkBack.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan TalkBack, lalu Fitur baru di TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Bahasa baru untuk fitur Deskripsikan layar dan Minta Gemini</string>
-  <string name="describe_screen_and_qna_content">Deskripsikan layar dan Minta Gemini kini tersedia dalam lebih banyak bahasa. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Pelajari lebih lanjut di pusat bantuan&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Pintasan untuk dikte</string>
   <string name="shortcut_for_dictation_content">Saat menggunakan Gboard, Anda kini dapat menggunakan ketuk dua kali dengan dua jari untuk memulai atau menghentikan dikte.
 &lt;br&gt;
 &lt;br&gt;Pastikan Anda memiliki &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard versi terbaru dari Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Saat Gboard ditampilkan di layar, Anda kini dapat menggunakan ketuk dua kali dengan dua jari untuk memulai ketik dengan suara, lalu ketuk dua kali dengan dua jari untuk menghentikannya.</string>
-  <string name="keyboard_title">Keyboard</string>
-  <string name="keyboard_content">TalkBack kini memiliki \"Peta tombol yang ditingkatkan\" untuk keyboard-nya, dengan berbagai perintah dan pintasan baru. Peningkatan ini, yang mencakup \"mode penjelajahan\" untuk navigasi web yang lebih efisien, menyederhanakan navigasi dan interaksi bagi pengguna TalkBack yang mengandalkan keyboard fisik. Anda dapat beralih ke \"Peta tombol yang ditingkatkan\" di setelan TalkBack &gt; Setelan lanjutan &gt; Pintasan keyboard.</string>
-  <string name="keyboard_content_tts">TalkBack kini memiliki \"Peta tombol yang ditingkatkan\" untuk keyboard-nya, dengan berbagai perintah dan pintasan baru. Peningkatan ini, yang mencakup \"mode penjelajahan\" untuk navigasi web yang lebih efisien, menyederhanakan navigasi dan interaksi bagi pengguna TalkBack yang mengandalkan keyboard fisik. Anda dapat beralih ke \"Peta tombol yang ditingkatkan\" di setelan TalkBack, lalu Setelan lanjutan, kemudian Pintasan keyboard.</string>
-  <string name="reduce_delay_title">Kurangi penundaan</string>
-  <string name="reduce_delay_content">Anda kini dapat mengurangi penundaan pengumuman TalkBack untuk penjelajahan sentuh dan pengetikan. Untuk melihat setelan ini, buka setelan TalkBack &gt; Setelan lanjutan &gt; Kurangi penundaan.</string>
-  <string name="reduce_delay_content_tts">Anda kini dapat mengurangi penundaan pengumuman TalkBack untuk penjelajahan sentuh dan pengetikan. Untuk melihat setelan ini, buka setelan TalkBack, lalu Setelan lanjutan, lalu Kurangi penundaan.</string>
-  <string name="customize_braille_keyboard_improvements_title">Sesuaikan gestur keyboard braille</string>
-  <string name="customize_braille_keyboard_improvements_content">Anda kini dapat menyesuaikan gestur untuk keyboard braille virtual di layar. Untuk menyesuaikan, buka setelan TalkBack &gt; Keyboard Braille &gt; Gestur.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Anda kini dapat menyesuaikan gestur untuk keyboard braille virtual di layar. Untuk menyesuaikan, buka setelan TalkBack, lalu Keyboard Braille, lalu Gestur.</string>
-  <string name="learn_more_about_braille_keyboard">Pelajari lebih lanjut keyboard braille</string>
-  <string name="other_changes_title">Perubahan lainnya</string>
-  <string name="other_changes_content">Pesan di layar kini membantu Anda menonaktifkan TalkBack dengan cepat jika fitur ini tidak sengaja diaktifkan. Anda dapat menonaktifkannya di setelan TalkBack &gt; Tampilkan petunjuk untuk menonaktifkan TalkBack.</string>
-  <string name="other_changes_content_tts">Pesan di layar kini membantu Anda menonaktifkan TalkBack dengan cepat jika fitur ini tidak sengaja diaktifkan. Anda dapat menonaktifkannya di setelan TalkBack, lalu Tampilkan petunjuk untuk menonaktifkan TalkBack.</string>
-  <string name="keymap_changes_content">Peta tombol klasik telah diubah ke peta tombol default, yang menyertakan lebih banyak pintasan.</string>
   <string name="announcing_text_formatting_title">Mengumumkan pemformatan teks</string>
   <string name="announcing_text_formatting_header">TalkBack kini dapat mengumumkan perubahan format teks, seperti huruf tebal, huruf miring, dan warna teks. Untuk memulai:</string>
   <string name="announcing_text_formatting_option1">Fokuskan pada item dengan pemformatan, buka menu TalkBack, lalu pilih \"Deskripsikan pemformatan teks\", atau</string>
@@ -1083,7 +969,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="additional_tips_link_subtext">Pelajari cara melakukan panggilan, mengirim pesan, dan lainnya</string>
   <string name="practice_gestures_link_text">Berlatih gestur</string>
   <string name="practice_gestures_link_subtext">Coba berbagai gestur untuk mempelajari tindakan yang dilakukan</string>
-  <string name="help_and_feedback_link_subtext">Pelajari lebih lanjut TalkBack dan mengirim masukan</string>
   <string name="choose_tutorial_title">Pilih cara Anda ingin berinteraksi dengan TalkBack</string>
   <string name="touch_tutorial_button">Tutorial gestur sentuh</string>
   <string name="keyboard_tutorial_button">Tutorial keyboard</string>
@@ -1229,8 +1114,6 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="wear_training_typing_text5">Coba di bawah.</string>
   <string name="wear_training_typing_practice_button_content_description">Mengetik dengan keyboard</string>
   <string name="wear_training_end_tutorial_title">Anda siap untuk mulai menggunakan TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack telah diupdate</string>
-  <string name="talkback_updated_notification_content">Ketuk untuk mengetahui selengkapnya</string>
   <string name="wear_new_feature_page_title">Selamat datang di TalkBack yang telah diupdate</string>
   <string name="wear_new_feature_page_content">Anda akan melihat beberapa perbaikan bug dan perubahan pada pergerakan fokus</string>
   <string name="wear_new_feature_page_button_content_description">Selesai</string>
@@ -1249,10 +1132,7 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="title_pref_blue">Biru</string>
   <string name="title_pref_grey">Abu-abu</string>
   <string name="survey_setting_title">Beri masukan</string>
-  <string name="survey_closed">Survei ditutup</string>
   <string name="title_summarize_view">Deskripsikan layar</string>
-  <string name="title_increase_touch_focus_latency">Naikkan penundaan fokus</string>
-  <string name="title_decrease_touch_focus_latency">Turunkan penundaan fokus</string>
   <string name="detected_result">Terdeteksi: %1$s</string>
   <string name="title_image_caption">Deskripsikan gambar</string>
   <string name="image_caption_with_gemini_prefix">Jelaskan gambar ini. Jangan gunakan markup dalam respons.</string>
@@ -1279,33 +1159,15 @@ Penundaan di bawah 0,3 detik akan mengubah gestur ketuk dua kali untuk mengaktif
   <string name="image_qna_question_prefix">PENGGUNA: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Lanjutkan giliran PENGGUNA dan MODEL secara bergantian] ...</string>
-  <string name="screen_overview_with_screenshot">Tugas Anda adalah membantu seseorang yang tidak dapat melihat ponselnya untuk memahami apa yang ada di layar ponselnya. Deskripsikan screenshot ini dalam beberapa kalimat.
-
-Petunjuk
-Awali respons Anda dengan \"Layar menampilkan\"
-Awal respons harus menjelaskan konten yang paling penting dan mencolok di layar. Berikut beberapa contoh konten terpenting dan paling mencolok untuk dideskripsikan
-* Di aplikasi chat: pengirim dan teks pesan terbaru
-* Di aplikasi media sosial: postingan pertama, termasuk siapa yang mempostingnya, teks, dan deskripsi gambar
-* Di aplikasi berita: judul artikel dan deskripsi gambar utama
-* Di aplikasi belanja: deskripsi produk yang ditampilkan dan harganya
-* Di aplikasi kalender: acara berikutnya dan jumlah acara lain yang ditampilkan setelahnya
-* Di daftar pesan: nama dan pratinjau untuk pesan pertama, lalu hanya nama untuk beberapa pesan berikutnya dalam daftar, dan jumlah pesan yang belum dibaca
-
-Setelah itu, respons dapat mendeskripsikan lokasi spasial dan tujuan menu navigasi serta tombol penting lainnya.
-Jangan sebutkan konten status bar di bagian atas (misalnya, waktu, status jaringan, baterai).
-Jangan gunakan markdown dalam respons Anda.</string>
   <string name="title_gemini_opt_in_dialog">Dapatkan deskripsi gambar mendetail?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Dapatkan deskripsi gambar?</string>
   <string name="title_gemini_result_dialog">Terdeteksi: gambar</string>
   <string name="title_gemini_result_bottom_sheet">Deskripsi gambar</string>
   <string name="title_gemini_screen_overview_result_dialog">Deskripsi layar</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Ringkasan</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Tindakan</string>
   <string name="positive_button_gemini_opt_in_dialog">Aktifkan</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Saya setuju</string>
   <string name="negative_button_gemini_opt_in_dialog">Lain kali</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Buka Setelan</string>
-  <string name="positive_button_gemini_download_dialog">Download &amp; aktifkan</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Teks, \"%1$s\".</string>
   <string name="detected_icon_label">Ikon, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Jangan gunakan markdown dalam respons Anda.</string>
   <string name="screen_overview_no_result">Tidak dapat meringkas layar</string>
   <string name="image_caption_no_result">Tidak dapat mendeskripsikan gambar</string>
   <string name="image_caption_with_hide_screen">Deskripsi gambar tidak tersedia saat layar disembunyikan. Tampilkan layar Anda, lalu coba lagi.</string>
-  <string name="feedback_button_state_set">dipilih</string>
-  <string name="feedback_button_state_unset">tidak dipilih</string>
   <string name="action_text_like_button">Tandai sebagai respons baik</string>
   <string name="action_text_dislike_button">Tandai sebagai respons buruk</string>
   <string name="action_text_clear_like_button">Hapus respons baik</string>
@@ -1349,18 +1209,13 @@ Jangan gunakan markdown dalam respons Anda.</string>
   <string name="downloading_all_image_captioning_hint">Mendownload deskripsi gambar &amp; ikon otomatis</string>
   <string name="download_all_image_captioning_successful_hint">Deskripsi gambar &amp; ikon otomatis didownload</string>
   <string name="download_all_image_captioning_failed_hint">Tidak dapat mendownload. Coba lagi nanti.</string>
-  <string name="download_complete_notification_title">Download selesai</string>
-  <string name="download_complete_notification_content">Anda kini akan mendengar deskripsi gambar dan ikon otomatis melalui TalkBack</string>
-  <string name="download_complete_notification_action">Setelan</string>
   <string name="download_storage_error_hint">Penyimpanan penuh. Untuk mendownload, kosongkan %1$d MB di Setelan &gt; Penyimpanan.</string>
   <string name="download_network_error_hint">Tidak dapat mendownload. Periksa koneksi dan coba lagi.</string>
   <string name="switch_icon_detection_dialog_title">Deskripsi ikon otomatis</string>
   <string name="switch_icon_detection_dialog_message">Dengarkan deskripsi saat Anda fokus pada ikon</string>
   <string name="switch_image_description_dialog_message">Dengarkan deskripsi saat Anda fokus pada gambar. Beberapa aplikasi mungkin tidak mendukung fitur ini.</string>
-  <string name="switch_text_recognition_dialog_title">Otomatis deskripsikan teks dalam gambar</string>
   <string name="switch_text_recognition_dialog_message">Dengarkan deskripsi saat Anda fokus pada gambar yang berisi teks</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Didownload</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Anda tetap bisa mendapatkan deskripsi untuk gambar yang dipilih dari menu TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Oke</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Hapus download</string>
   <string name="delete_icon_detection_dialog_title">Hapus deskripsi ikon otomatis?</string>
@@ -1376,11 +1231,6 @@ Jangan gunakan markdown dalam respons Anda.</string>
   <string name="gemini_enable_dialog_title">Gunakan Gemini di TalkBack</string>
   <string name="gemini_disable_dialog_message">Ringkas konten layar dengan Gemini</string>
   <string name="disable_gemini_dialog_subtext">Aktifkan fitur untuk meringkas konten layar dengan Gemini</string>
-  <string name="ai_services_update_dialog_title">Update aplikasi %1$s untuk mendeskripsikan gambar</string>
-  <string name="ai_services_update_dialog_message">Untuk mendengarkan deskripsi gambar, download %1$s versi terbaru dari Google Play.\n\nSetelah proses download selesai, kembali ke setelan TalkBack dan aktifkan kembali deskripsi gambar otomatis.</string>
-  <string name="ai_services_update_dialog_button_text">Buka Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Terjadi error. Coba lagi.</string>
   <string name="gemini_block_message">Tidak dapat memproses gambar ini</string>
   <string name="gemini_network_error">Tidak ada koneksi internet. Periksa Wi-Fi atau jaringan seluler Anda, lalu coba lagi.</string>
@@ -1396,13 +1246,8 @@ Jangan gunakan markdown dalam respons Anda.</string>
   <string name="image_qna_typing_button_text">Ketik pertanyaan untuk Gemini</string>
   <string name="image_qna_send_button_text">Tanya</string>
   <string name="image_qna_speak_question_description">Ucapkan pertanyaan</string>
-  <string name="overviews_summary_intro">Ringkasan layar aplikasi ini: %1$s</string>
   <string name="overviews_node_not_found">Maaf, bagian layar tersebut tidak dapat ditemukan lagi.</string>
-  <string name="overviews_images_in_app">Gambar Utama ditemukan</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Tindakan dalam aplikasi</string>
-  <string name="overviews_actions_in_app_description">Berikut adalah tindakan utama yang dapat Anda lakukan dari layar aplikasi ini:</string>
-  <string name="overviews_parent_type">Tindakan dalam aplikasi</string>
   <string name="text_replaced_feedback">Teks diganti</string>
   <string name="switch_gesture_set">Beralih Rangkaian Gestur</string>
   <string name="switch_gesture_set_to">Beralih ke rangkaian gestur %1$d</string>
@@ -1453,5 +1298,4 @@ Jangan gunakan markdown dalam respons Anda.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Tutup</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Untuk mendengar notifikasi saat layar nonaktif, aktifkan \"Ucapkan notifikasi saat layar nonaktif\" di setelan panjang respons TalkBack</string>
 </resources>

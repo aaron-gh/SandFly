@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack ဖွင့်ထားသောအခါ တုံ့ပြန်မှုများပြောပေးသဖြင့် ဖန်သားပြင်ကို မကြည့်ဘဲ သင့်စက်ကို သုံးနိုင်သည်။ ဖန်သားပြင်ကို ကြည့်ရန်အခက်အခဲရှိသော အခြေအနေနှင့် လူများအတွက် TalkBack ကို ရည်ရွယ်ပါသည်။&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack အသုံးပြုနည်း&lt;/b&gt;&lt;br&gt;• အကြောင်းအရာများအကြား ရွှေ့ရန် ဘယ်/ညာ ပွတ်ဆွဲပါ&lt;br&gt;• အကြောင်းအရာဖွင့်ရန် နှစ်ချက်တို့ပါ&lt;br&gt;• လှိမ့်ရန် လက်ချောင်း ၂ ချောင်းသုံးပါ&lt;br&gt;&lt;b&gt;TalkBack ပိတ်နည်း&lt;/b&gt;&lt;br&gt;၁။ ဆက်တင်များတွင် &lt;b&gt;TalkBack သုံးရန်&lt;/b&gt; ကို တို့ပါ။ မျဉ်းတစ်ကြောင်းပေါ်လာမည်။ ၎င်းကို နှစ်ချက်တို့ပါ။&lt;br&gt;၂။ အတည်ပြုချက်မက်ဆေ့ဂျ်ပေါ်တွင် &lt;b&gt;ရပ်ရန်&lt;/b&gt;ကို တို့ပါ။ မျဉ်းတစ်ကြောင်းပေါ်လာမည်။ ၎င်းကို နှစ်ချက်တို့ပါ။</string>
   <string name="talkback_service_summary">အကြောင်းအရာများကို အသံထွက်ဖတ်ခိုင်းရန် ဖန်သားပြင်ဖတ်အက်ပ် သုံးနိုင်သည်</string>
   <string name="talkback_preferences_title">TalkBack ဆက်တင်များ</string>
-  <string name="talkback_settings_screen_title_breadcrumb">ဆက်တင်များ</string>
   <string name="tts_preferences_title">စာ-မှ-စကား (TTS)</string>
   <string name="language_options">ဘာသာစကားများ</string>
   <string name="spoken_language">ပြောဆိုသည့် ဘာသာစကား</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">ရှာဖွေရေး ပယ်ဖျက်ရန်။</string>
   <string name="notification_type_status_started">စတင်ခဲ့ပြီ</string>
   <string name="notification_type_status_stopped">ရပ်သွားခဲ့</string>
-  <string name="notification_type_status_connected">ချိတ်ဆက်ထားသည်</string>
-  <string name="notification_battery_level_unknown">အမည်မသိ</string>
   <string name="notification_battery_saver_mode">ဘက်ထရီအားထိန်း ဖွင့်ထားသည်</string>
   <string name="template_no_text_selected">စာသားရွေးမထားပါဘူး။</string>
   <string name="template_charging">အားသွင်းမှု%1$s ဘက္ထရီ အဆင့်%2$s ရာနှုန်း။</string>
   <string name="template_charging_lite">ဘက်ထရီအား သွင်းနေသည် %1$s</string>
-  <string name="template_battery_state">ပါဝါ %1$s %2$s ရာခိုင်နှုန်း %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">တုန်ခါမှုဖြင့် အချက်ပေး။</string>
   <string name="value_ringer_silent">ဖုန်းသံ ပိတ်ထား။</string>
   <string name="value_screen_on">မျက်နှာပြင် ဖွင့်ထား၏။</string>
   <string name="value_screen_off">မျက်နှာပြင် ပိတ်ထား။</string>
   <string name="value_device_unlocked">ကိရိယာ သော့ဖွင့်ထား။</string>
-  <string name="title_pref_category_audio">အသံ</string>
   <string name="title_pref_speech_volume">အသံအတိုးအကျယ်</string>
-  <string name="title_pref_speech_rate">စကားပြောနှုန်း</string>
-  <string name="summary_pref_speech_rate">စာသားကို ဖတ်ပြသော အမြန်နှုန်း</string>
   <string name="title_pref_verbose_scroll_announcement">စာရင်းအရေအတွက်ကို အမြဲပြောရန်</string>
   <string name="summary_pref_verbose_scroll_announcement">လှိမ့်သည့် နည်းလမ်းအားလုံးအတွက် အရေအတွက်ကို ပြောသည်</string>
   <string name="title_pref_cover_proximity_sensor">အနီးတစ်ဝိုက် အာရုံခံကိရိယာကိုဖုံးလျှင် ပြောဆိုမှုရပ်ရန်</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">အချိန်ပြောရန်</string>
   <string name="pref_speak_time_summary">ဖန်သားပြင်ဖွင့်ထားသောအခါ</string>
   <string name="summary_speak_container_element_positions">စာရင်း၊ ဇယားကွက်နှင့် အခြားအကွက်များကို ဝင်စဉ်နှင့် ထွက်စဉ် အချက်အလက်များ ပါဝင်သည်</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">‘ရွေးချယ်မှုနှောင့်နှေးခြင်း’ ကို စာဖတ်ခြင်းထိန်းချုပ်မှုတွင် ထည့်ထားသည်</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">လက် ၃ ချောင်းဖြင့် ပွတ်ဆွဲပြီး အချိန်မရွေး စာဖတ်ခြင်းထိန်းချုပ်မှု သုံးနိုင်၊ ရွေးချယ်မှုနှောင့်နှေးခြင်းကို ပြောင်းနိုင်သည်</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">‘စာရိုက်ရန် လက်ချောင်းကြွခြင်း’ သို့ ပြောင်းမလား။</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်ကို ၀.၃ စက္ကန့်အောက် သတ်မှတ်ထားသည့်အခါ စာရိုက်ရန်အတွက် နှစ်ချက်တို့ရန် အလွန်ခက်ခဲပါမည်။ ‘စာရိုက်ရန် လက်ချောင်းကြွခြင်း’ သို့ အလိုအလျောက်ပြောင်းရန်အတွက် “ပြောင်းရန်” ကို ရွေးပါ။\n\n‘စာရိုက်ရန် လက်ချောင်းကြွခြင်း’ သုံးရန် ကီးတစ်ခုခု ရွေးပါ၊ ထို့နောက် စာရိုက်ရန် လက်ချောင်းကြွပါ။\n\nသင်သည် TalkBack ဆက်တင်များတွင် ၎င်းကို စိတ်ကြိုက်ပြင်နိုင်သည်။</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်ကို စာဖတ်ခြင်းထိန်းချုပ်မှုတွင် ထည့်ထားသည်</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">စာရိုက်နေစဉ် နှစ်ချက်တို့ခြင်းနှင့်ပတ်သက်၍ ပြဿနာများ ရှိနေပါက စာဖတ်ခြင်းထိန်းချုပ်မှု သုံးရန် လက် ၃ ချောင်းဖြင့် ပွတ်ဆွဲပြီး စာရိုက်သွင်းမှု ကြန့်ကြာချိန်ကို တိုးလိုက်ပါ</string>
-  <string name="gestures_announce_typing_focus_wont_change">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်သည် ‘စာရိုက်ရန် လက်ချောင်းကြွခြင်း’ မရှိဘဲ အလုပ်မလုပ်ပါ။</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">နားလည်ပြီ</string>
   <string name="reset_letency_reduction_settings_dialog_title">စောင့်ရချိန် ဆက်တင်များကို ပြင်ဆင်သတ်မှတ်မလား။</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">၎င်းသည် စောင့်ရချိန် ဆက်တင်များကို မူရင်းသို့ ပြင်ဆင်သတ်မှတ်ပါမည်</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">ပြင်ဆင်သတ်မှတ်ရန်</string>
   <string name="gestures_announce_reset_latency_reduction_settings">တုံ့ပြန်ချိန်လျှော့ချမှု ဆက်တင်များကို ပြင်ဆင်သတ်မှတ်လိုက်သည်။</string>
-  <string name="reduce_focus_delay_settings_confirm_button">ပြောင်းရန်</string>
-  <string name="reduce_focus_delay_settings_cancel_button">မပြောင်းပါနှင့်</string>
   <string name="Reset_gesture_settings_dialog_title">လက်ဟန်များကို ပြင်ဆင်သတ်မှတ်မလား။</string>
   <string name="Reset_gesture_settings_set_dialog_title">လက်ရှိ လက်ဟန်အုပ်စုကို ပြင်ဆင်သတ်မှတ်မလား။</string>
   <string name="message_reset_gesture_settings_confirm_dialog">လက်ဟန်များအားလုံးကို ယင်းတို့၏ မူလလုပ်ဆောင်ချက်များသို့ ပြင်ဆင်သတ်မှတ်ပေးသည်။\n\nသင်ပြုလုပ်ထားသော ပြောင်းလဲမှုများကို ဆုံးရှုံးပါမည်။</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">အပ်ဒိတ်အခြေအနေအားလုံး အသံထွက်ပြောရန်</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ဒေါင်းလုဒ်လုပ်နေစဉ်၊ ယာဉ်လမ်းညွှန်များအတိုင်း မောင်နေစဉ်နှင့် အခြားအခြေအနေများ ပါဝင်သည်။ ပိတ်ထားချိန်တွင်ပင် အပ်ဒိတ်အနည်းငယ်ကို ကြားရပါဦးမည်။</string>
   <string name="title_pref_explore_by_touch">တို့ထိလျက် စူးစမ်းပါ</string>
-  <string name="title_pref_category_visual">ရုပ်ပုံ</string>
   <string name="title_pref_category_controls">ထိန်းချုပ်မှုများ</string>
-  <string name="title_pref_category_braille">မျက်မမြင်စာရေးစနစ်</string>
-  <string name="title_pref_category_general">အထွေထွေ</string>
-  <string name="title_pref_category_advanced">အဆင့်မြင့်</string>
-  <string name="title_pref_category_others">အခြား</string>
-  <string name="title_pref_category_tutorial_and_help">ရှင်းလင်းပို့ချချက်နှင့် အကူအညီ</string>
   <string name="title_pref_category_reduce_latency_summary">ဤဆက်တင်များသည် TalkBack ပြောကြားချက်များမစခင် နှောင့်နှေးချိန်ကို လျှော့ချနိုင်သည်</string>
   <string name="reset_latency_settings_title">စောင့်ရချိန် ဆက်တင်အားလုံးကို ပြင်ဆင်သတ်မှတ်ရန်</string>
   <string name="title_pref_single_tap">စဖွင့်ရန် တစ်ကြိမ်တို့ပါ</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">အထူးပြသသည့်အညွှန်းကို ပြောင်းရန်</string>
   <string name="title_pref_category_manage_gestures">လက်ဟန်များ</string>
   <string name="title_pref_manage_labels">စိတ်ကြိုက် အမည်များ</string>
-  <string name="title_pref_manage_customize_menus">မီနူးများ တည်းဖြတ်ရန်</string>
   <string name="title_pref_category_context_menu">TalkBack မီနူးကို စိတ်ကြိုက်လုပ်ရန်</string>
   <string name="title_pref_category_selector_menu">စာဖတ်ခြင်းထိန်းချုပ်မှု စိတ်ကြိုက်လုပ်ရန်</string>
   <string name="title_pref_category_navigation_menu">လမ်းညွှန်မှု နည်းလမ်းများကို တည်းဖြတ်ရန်</string>
-  <string name="pref_category_context_menu_summary">TalkBack မီနူးကို ဖွင့်ရန် ဖန်သားပြင်ကို လက်ချောင်း ၃ ချောင်းဖြင့် တို့ပါ။ အပေါ်သို့ ဆွဲတင်ပြီးနောက် ညာသို့ ပွတ်ဆွဲနိုင်သည် သို့မဟုတ် အောက်သို့ ဆွဲချပြီးနောက် ညာသို့ ပွတ်ဆွဲနိုင်သည်။</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack မီနူးသုံးရန် အရန်မျက်နှာပြင်ကိုလှည့်ပြီး လက်နှစ်ချောင်းဖြင့် ချဲ့ချုံ့ပါ။</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack မီနူးကို သုံးရန် အောက်သို့ ပွတ်ဆွဲချပြီးနောက် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
-  <string name="pref_category_selector_menu_summary">စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို သုံးရန် ဘယ် သို့မဟုတ် ညာသို့ လက်ချောင်း ၃ ချောင်းဖြင့် ပွတ်ဆွဲပါ။ လက်ချောင်း ၃ ချောင်းဖြင့် အပေါ် သို့မဟုတ် အောက်သို့လည်း ပွတ်ဆွဲနိုင်သည်။</string>
-  <string name="pref_category_selector_menu_summary_xr">စာဖတ်ခြင်းထိန်းချုပ်မှုများကြား လှည့်ပြောင်းရန် အရန်မျက်နှာပြင်ကို လှည့်ပါ၊ လက်နှစ်ချောင်းဖြင့် ချဲ့ချုံ့မှုကို ဖိထားပြီး ညာဘက် (သို့) ဘယ်ဘက် ရွှေ့ကာ လွှတ်လိုက်ပါ။</string>
-  <string name="pref_category_selector_menu_summary_single_finger">စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို သုံးရန် အပေါ်သို့ ပွတ်ဆွဲတင်ပြီးနောက် အောက်သို့ ပွတ်ဆွဲချပါ။</string>
   <string name="title_pref_manage_keyboard_shortcuts">ကီးဘုတ် ဖြတ်လမ်းလင့်ခ်များ</string>
   <string name="title_pref_export_custom_labels">စိတ်ကြိုက်အညွှန်းများ ထုတ်ရန်</string>
-  <string name="title_pref_play_store">TalkBack ကို Play စတိုး တွင်ဖွင့်ရန်</string>
-  <string name="summary_pref_play_store">လက်ရှိ TalkBack ဗားရှင်း- %1$s</string>
   <string name="title_pref_help_and_feedback">အကူအညီနှင့် အကြံပြုချက်</string>
-  <string name="title_pref_gup">Google မသန်စွမ်းသူ အကူအညီထံ ဆက်သွယ်ရန်</string>
-  <string name="subtitle_pref_gup">TalkBack သုံး၍ အကူအညီရယူပါ (သို့) ပြဿနာများကို တိုင်ကြားပါ</string>
-  <string name="pref_item_licenses">အခမဲ့ အများသုံးလိုင်စင်များ</string>
-  <string name="title_pref_tutorial">ရှင်းလင်းပို့ချချက်</string>
   <string name="title_pref_help">အကူအညီ</string>
   <string name="title_pref_show_tos">ဝန်ဆောင်မှုစည်းမျဉ်းများ</string>
   <string name="title_pref_show_privacy_policy">ကိုယ်ရေးအချက်အလက်လုံခြုံမှုဆိုင်ရာ မူဝါဒ</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">လက်ဗွေ ဟန်များ</string>
   <string name="title_pref_category_tutorial">TalkBack အသုံးပြုနည်း</string>
   <string name="title_pref_category_help_no_tutorial">အကူအညီ</string>
-  <string name="title_pref_category_typing">စာရိုက်ခြင်း</string>
   <string name="title_pref_advanced_settings">အဆင့်မြင့် ဆက်တင်များ</string>
   <string name="title_pref_show_exit_watermark">TalkBack ပိတ်ခြင်းအတွက် ညွှန်ကြားချက်များ ပြပါ</string>
   <string name="summary_pref_show_exit_watermark">TalkBack ဖွင့်ထားသောအခါ ၎င်းကို အမြန်ပိတ်နိုင်စေရန် မက်ဆေ့ဂျ်ပြသည်</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;မွမ်းမံခလုတ်အချို့သည် မတူပါ။&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ကီးမြေပုံများအကြောင်း ပိုမိုလေ့လာရန်</string>
   <string name="keycombo_go_to_settings">ဆက်တင်များသို့ သွားရန်</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack သည် ကီးမြေပုံအဟောင်းကို ဖယ်ရှားရန် အဆင်သင့်ဖြစ်နေပြီ။ လက်ကွက်ဖြတ်လမ်းများ ဆက်သုံးရန် မူရင်းကီးမြေပုံသို့ ပြောင်းပါ။</string>
-  <string name="keycombo_keymap_changes_notifications_action">ပိုလေ့လာရန်</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">နားလည်ပြီ</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">ဆက်တင်များ</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">ပိုလေ့လာရန်</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">သင်သည် TalkBack မူရင်းကီးမြေပုံကို ယခုသုံးနေသည်။ ကွန်မန်းအသစ်များစွာပါသော အရည်အသွေးမြှင့်ထားသည့် ကီးမြေပုံအသစ်လည်း ရှိသည်။ ကူညီရေးဌာန၌ ပိုမိုလေ့လာပါ (သို့) ဆက်တင်များ၌ ကီးမြေပုံအသစ်သို့ ပြောင်းပါ။</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">ကီးမြေပုံအသစ် ရနိုင်သည်</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">TalkBack ၏ အရည်အသွေးမြှင့်ထားသော ကီးမြေပုံတွင် ကွန်မန်းအသစ်များစွာ ထည့်ထားသည်။ ကူညီရေးဌာန၌ ပိုမိုလေ့လာပါ (သို့) ဆက်တင်များ၌ ကီးမြေပုံအသစ်သို့ ပြောင်းပါ။</string>
-  <string name="keycombo_update_modifier_key_warning_title">သင်၏ TalkBack မွမ်းမံခလုတ်ကို အပ်ဒိတ်လုပ်ပါ</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">ယခုမလုပ်ပါ</string>
   <string name="keycombo_warning_content_description">မွမ်းမံခလုတ်အကြောင်း နောက်ထပ်အချက်အလက်များ</string>
-  <string name="keycombo_warning_dialog_title">သင့်မွမ်းမံခလုတ်ကို အပ်ဒိတ်လုပ်ခြင်း</string>
-  <string name="keycombo_warning_dialog_message">TalkBack ၏ လက်ကွက်ဖြတ်လမ်းများ မှန်ကန်စွာ လုပ်ဆောင်ရန်အတွက် သင့်မွမ်းမံကီးကို ‘လုပ်ဆောင်ချက်’ မှ Alt သို့ အပ်ဒိတ်လုပ်ပါ။\n\nဤ Android ဗားရှင်းအတွက် ‘လုပ်ဆောင်ချက်’ မွမ်းမံကီးကို ဆက်သုံးပါက ဖြတ်လမ်းလင့်ခ်အချို့သည် မတူသော လုပ်ဆောင်ချက်များကို ပြုလုပ်ပါမည်။</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">ကီးမြေပုံ</string>
   <string name="keycombo_menu_select_keymap">ကီးမြေပုံတစ်ခု ရွေးပါ</string>
   <string name="keycombo_menu_reset_keymap">ကီးမြေပုံကို ပြန်လည်သတ်မှတ်ပါ</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">စကားပြောသံ ချဲ့ရန်</string>
   <string name="keycombo_menu_global_speech_volume_decrease">စကားပြောသံ လျှော့ရန်</string>
   <string name="keycombo_menu_global_refocus_current_node">လက်ရှိအထူးပြသမှုကို အသံထွက်ဖတ်ရန်</string>
-  <string name="keycombo_menu_category_granularity">လမ်းညွှန်ချက်</string>
   <string name="keycombo_menu_granularity_increase">နောက် ရွေ့လျားမှုဆက်တင်</string>
   <string name="keycombo_menu_granularity_decrease">ယခင် ရွေ့လျားမှုဆက်တင်</string>
   <string name="keycombo_menu_category_other">အခြား လုပ်ဆောင်ချက်များ</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">ဤခလုတ်ပြမြေပုံအတွက် ဖြတ်လမ်းခလုတ်များကို ၎င်းတို့၏မူရင်းသို့ ပြန်လည်သတ်မှတ်လိုသည်မှာ သေချာပါသလား။ မှတ်ချက်၊ ဤလုပ်ဆောင်ချက်ကို ပြန်ပြောင်း၍မရပါ။</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">ပြန်လည်သတ်မှတ်ပါ</string>
   <string name="template_keycombo_menu_browse_mode_command">ဘရောက်စ်မုဒ်ရှိ %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">အတိုကောက်အသစ် တစ်ခုပြုလုပ်ရန် ခလုတ်ပေါင်းစပ်ခြင်းကို နှိပ်ပါ။ ၎င်းတွင် ALT သို့မဟုတ် Control ခလုတ်ပါရပါမည်။</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">ဖြတ်လမ်းအသစ်သတ်မှတ်ရန် %1$s ခလုတ်နှင့် တွဲနှိပ်ပါ။</string>
   <string name="keycombo_unassigned">တာဝန် ပေးမထား</string>
   <string name="save_button_in_keycombo_assign_dialog">သိမ်းရန်</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်</string>
   <string name="message_pref_touch_explore_latency">စာရိုက်သွင်းမှု ကြန့်ကြာချိန် ပိုနည်းခြင်းသည် ကီးဘုတ်ကို ထိပြီးနောက် TalkBack ပြောကြားချက်များကို ပိုမြန်မြန်လုပ်ခြင်း ဖြစ်သည်။\n\nကြန့်ကြာချိန် ရွေးပါ</string>
   <string name="title_pref_touch_focus_timeout">ပြရန်စောင့်ရချိန်</string>
-  <string name="summary_pref_touch_focus_time">
-ရွေးချယ်မှု ရွှေ့ပြီးသည့်နောက် TalkBack က မည်မျှမြန်မြန် အချိန်အတွင်း စပြောမည်ကို သတ်မှတ်သည်။ နှောင့်နှေးမှု ပိုနည်းခြင်းသည် TalkBack ကို ပိုမြန်စေသော်လည်း နှစ်ချက်၊ သုံးချက်တို့ခြင်းကို လုပ်ဆောင်ရန် ပိုခက်စေနိုင်သည်။\n\n
-၀.၃ စက္ကန့်အောက် နှောင့်နှေးမှုများသည် ‘နှစ်ချက်တို့၍ စတင်ရန်’ ကို ‘လက်နှစ်ချောင်းဖြင့် တို့၍ စတင်ရန်’ သို့ ပြောင်းပါမည်။
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack ရှိ လက်ဟန်များ စီမံရန်</string>
   <string name="toast_pref_talkback_gesture_detection">ဆက်တင်စတင်ရန် TalkBack ပိတ်၍ ပြန်ဖွင့်နိုင်သည်။</string>
   <string name="title_pref_auto_image_captioning">အလိုအလျောက် ရှင်းလင်းချက်များ</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">ဆက်တင်များတွင် ပုံရှင်းလင်းချက်များ ဖွင့်ခြင်း</string>
   <string name="dialog_message_turn_on_image_description">အလိုအလျောက် (သို့) အသေးစိတ် ပုံရှင်းလင်းချက်များကို ဖွင့်ပြီးနောက် ထပ်စမ်းကြည့်နိုင်သည်</string>
   <string name="title_pref_detailed_image_description">ပုံ၏ အသေးစိတ်ရှင်းလင်းချက်</string>
-  <string name="summary_pref_ai_description">TalkBack မီနူးမှ “%1$s” ကို ရွေးသောအခါ ပိုရှည်သော ရှင်းလင်းချက်များ ကြားရပါမည်</string>
   <string name="dialog_message_on_device_ai_description">ပံ့ပိုးထားသော အက်ပ်များတွင် ပုံပေါ်ရွှေ့သည့်အခါ အကျဉ်းချုပ်ရှင်းလင်းချက်ကို ကြားရမည်။\n\nပုံများကို သင့်စက်တွင် စီမံဆောင်ရွက်ပြီး Google သို့ ဘယ်တော့မှမပို့ပါ။ \n\nထုတ်လုပ်မှု AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများရှိမည်။ ရှေ့ဆက်ခြင်းဖြင့် သင်သည် <a href="https://policies.google.com/terms/generative-ai">Google ၏ ဝန်ဆောင်မှုစည်းမျဉ်းများ</a> ကို သဘောတူပါသည်။</string>
   <string name="enable_gemini">ဖွင့်ရန်</string>
   <string name="powered_by_gemini">ထုတ်လုပ်မှု AI က ပံ့ပိုးထားသည်</string>
-  <string name="detailed_image_description_ongoing_hint">ရှင်းလင်းချက် ရယူနေသည်…</string>
-  <string name="detailed_image_description_result_prefix">တွေ့ရှိထားသည်- ပုံ။ %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">အလိုအလျောက် ပုံရှင်းလင်းချက်များအတွက် ဒေါင်းလုဒ်လုပ်ခြင်း လိုအပ်သည်</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">ပုံများကို သင်၏စက်တွင်သာ စီမံဆောင်ရွက်ပြီး Google သို့ ဘယ်တော့မှမပို့ပါ။\n\nထုတ်လုပ်မှု AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများရှိပါမည်။ ရှေ့ဆက်ခြင်းဖြင့် သင်သည် %1$s ကို သဘောတူပါသည်။</string>
   <string name="dialog_message_gen_ai_tos_link">Google ၏ ဝန်ဆောင်မှုစည်းမျဉ်းများ</string>
   <string name="message_aifeature_downloading">AI မိုဒယ် ဒေါင်းလုဒ်လုပ်နေသည်။ အချိန်အနည်းငယ် ကြာနိုင်ပါသည်။ ပြီးသည့်အခါ သင့်ကို အကြောင်းကြားပါမည်။</string>
   <string name="message_aifeature_downloading_with_progress">ဒေါင်းလုဒ်လုပ်နေဆဲဖြစ်သည်။ %2$dMB အနက် %1$d ဒေါင်းလုဒ်လုပ်ထားသည်။</string>
-  <string name="message_aifeature_download_complete">AI မိုဒယ် ဒေါင်းလုဒ်လုပ်ပြီးပြီ။ TalkBack သည် ပုံရှင်းလင်းချက်များကို ယခုထုတ်လုပ်နိုင်ပါပြီ။</string>
   <string name="summary_pref_auto_image_captioning">ပုံများရှိ သင်္ကေတ၊ ပုံနှင့် စာသားများအတွက်</string>
-  <string name="summary_pref_auto_image_captioning_text_only">ပုံများရှိ စာသားအတွက်</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">ပုံများရှိ ပုံနှင့် စာသားများအတွက်</string>
-  <string name="summary_pref_auto_image_captioning_no_image">ပုံများရှိ သင်္ကေတနှင့် စာသားများအတွက်</string>
   <string name="summary_pref_module_downloading">ဒေါင်းလုဒ်လုပ်နေသည်…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">ပုံအားလုံးအတွက် ဖွင့်ထားသည်</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">အညွှန်းတပ်မထားသော ပုံများအတွက်သာ ဖွင့်ထားသည်</string>
   <string name="summary_pref_auto_image_captioning_disabled">ပိတ်</string>
-  <string name="summary_pref_auto_icon_detection_enabled">သင်္ကေတအားလုံးအတွက် ဖွင့်ထားသည်</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">အညွှန်းတပ်မထားသော သင်္ကေတများအတွက်သာ ဖွင့်ထားသည်</string>
   <string name="summary_pref_auto_icon_detection_disabled">ပိတ်</string>
   <string name="title_pref_enable_auto_image_caption">ပုံအားလုံး</string>
   <string name="title_pref_enable_auto_image_caption_arg">ပုံအားလုံး\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">သင်္ကေတအားလုံး</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">အညွှန်းမပါသော သင်္ကေတများသာ</string>
   <string name="title_pref_disable_auto_icon_detection">သင်္ကေတအကြောင်း ရှင်းမပြပါနှင့်</string>
-  <string name="dialog_message_on_device_ai_model_download">ပံ့ပိုးထားသော အက်ပ်များတွင် ပုံပေါ်ရွှေ့သည့်အခါ အကျဉ်းချုပ်ရှင်းလင်းချက်ကို ကြားရမည်။\n\nပုံများကို သင့်စက်တွင် စီမံဆောင်ရွက်ပြီး Google သို့ ဘယ်တော့မှမပို့ပါ။\n\nထုတ်လုပ်မှု AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများရှိမည်။ ရှေ့ဆက်ခြင်းဖြင့် သင်သည် %1$s ကို သဘောတူပါသည်။</string>
   <string name="title_pref_enable_gemini_support">ဖွင့်</string>
   <string name="title_pref_disable_gemini_support">ပိတ်</string>
   <string name="summary_pref_gemini_support_enabled">Gemini ဖွင့်ထားသည်</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">node tree ပရင့်ထုတ်ရန်</string>
   <string name="shortcut_print_performance_stats">စွမ်းဆောင်ရည်ပြ စာရင်းဇယားကို ပုံနှိပ်ထုတ်ယူရန်</string>
   <string name="shortcut_first_in_screen">ဖန်သားပြင်ရှိ ပထမဆုံးအရာကို အထူးဖော်ပြရန်</string>
-  <string name="shortcut_summary">မျက်နှာပြင် အပြင်အဆင်ကို အနှစ်ချုပ်ရန်</string>
   <string name="shortcut_voice_commands">အသံကွန်မန်းကို စတင်ရန်</string>
   <string name="shortcut_last_in_screen">ဖန်သားပြင်ရှိ နောက်ဆုံးအရာကို အထူးဖော်ပြရန်</string>
   <string name="shortcut_enable_dimming">ဖန်သားပြင် ဝှက်ရန်</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">ဝဘ်လမ်းညွှန်</string>
   <string name="menu_category_basic_navigation">အခြေခံလမ်းညွှန်မှု</string>
   <string name="summary_custom_action">လင့်ခ်များ၊ မိတ္တူကူးရန်၊ ကူးထည့်ရန်၊ ရွေးရန် စသည်တို့အပါအဝင် လက်ရှိဖိုင်အတွက် လုပ်ဆောင်ချက်များ ရှိသောအခါ ပြသည်</string>
-  <string name="summary_context_menu_links">ဗဟိုချက်ထားသည့် အရာအတွင်းရှိ လင့်ခ်များကို ဖွင့်သည်</string>
   <string name="summary_viewpager_controls">နောက် သို့မဟုတ် ယခင်စာမျက်နှာသို့ သွားသည်။ စာမျက်နှာများစွာရှိသော အကြောင်းအရာကို ဖတ်နေသောအခါတွင် ပြသည်။</string>
   <string name="summary_labeling_controls">အညွှန်းမပါသောအရာကို ရွေးချယ်လိုက်သောအခါတွင် ပြသည်</string>
   <string name="summary_granularity">အက္ခရာ၊ စာလုံး၊ စာကြောင်း စသည်တို့အလိုက် ဖတ်သည်</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">စခရင်ကို လုပ်ဆောင်ချက်ခလုတ်များဖြင့် အနှစ်ချုပ်ရန်</string>
   <string name="summary_screen_overview_no_actions">စခရင်ပေါ်ရှိ အကြောင်းအရာ၏ အနှစ်ချုပ်ကို နားဆင်နိုင်သည်</string>
   <string name="summary_image_caption">ရွေးထားသောပုံအတွင်း စာသားနှင့် သင်္ကေတများ အသံထွက်ဖတ်ပြရန်</string>
-  <string name="summary_summarize_view">မြင်ကွင်း၏ စကားပြောအနှစ်ချုပ်</string>
   <string name="summary_typo_suggestions">စာလုံးပေါင်းအမှားပေါ်တွင် ကာဆာရောက်သွားသောအခါ ပြသည်</string>
   <string name="summary_cache_keyboard_keys">သင် စာရိုက်သည့်အခါ နှောင့်နှေးချိန်ကို လျှော့ချရန် TalkBack က ကြိုတင်ဖွင့်သော ကြေညာချက်များ</string>
   <string name="summary_cache_keyboard_keys_disabled">ဤဝန်ဆောင်မှုသုံးရန် ‘Google စာ-မှ-စကား’ ကို သုံးနိုင်သည်</string>
-  <string name="value_direction_down">အောက်မြား</string>
-  <string name="value_direction_down_and_right">အောက်နှင့် ညာသို့</string>
   <string name="title_pref_shortcut_up">အပေါ်သို့ ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_up_xr">အရန်မျက်နှာပြင်လှည့်၊ လက်နှစ်ချောင်းဖြင့် ချဲ့ချုံ့ပြီး အပေါ်ပွတ်ဆွဲပါ</string>
   <string name="title_pref_shortcut_down">အောက်သို့ပွတ်ဆွဲပါ</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">လက်ဗွေဖတ်စနစ်ပေါ်၌ဘယ်ဘက်သို့ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_fingerprint_right">လက်ဗွေဖတ်စနစ်ပေါ်၌ ညာဘက်သို့ပွတ်ဆွဲရန်</string>
   <string name="title_pref_version_code">ဗားရှင်းကုဒ်</string>
-  <string formatted="false" name="value_volume_100_percent">စကားပြောသံ အတိုးအကျယ်ကို တူညီအောင်ထားရန်</string>
-  <string formatted="false" name="value_volume_75_percent">စကားပြောသံ အတိုးအကျယ်၏ ၇၅%</string>
-  <string formatted="false" name="value_volume_50_percent">စကားပြောသံ အတိုးအကျယ်၏ ၅၀%</string>
-  <string formatted="false" name="value_volume_25_percent">စကားပြောသံ အတိုးအကျယ်၏ ၂၅%</string>
   <string name="value_type_confirmation_double_tap">ကီးတစ်ခုခုရွေးရန် လက်ချောင်းဖြင့်ဖိထားပြီး နှစ်ချက်တို့ပါ</string>
   <string name="value_type_confirmation_lift_to_type">အက္ခရာကီးရွေးရန် ဖိပြီး လွှတ်လိုက်ပါ။ အခြားကီးများအတွက် နှစ်ချက်တို့ပါ။</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">ကီးရွေးရန် လက်ချောင်းဖြင့် ဖိထားပြီး လွှတ်လိုက်ပါ</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">၀.၂ စက္ကန့်</string>
   <string name="value_touch_explore_time_out_250ms">၀.၂၅ စက္ကန့်</string>
   <string name="value_touch_explore_time_out_300ms">၀.၃ စက္ကန့် (မူရင်း)</string>
-  <string name="value_shake_to_read_disabled">ပိတ်ထားသည်</string>
-  <string name="value_shake_to_read_threshold_very_light">အနည်းငယ်မျှ</string>
-  <string name="value_shake_to_read_threshold_light">အသာအယာ</string>
-  <string name="value_shake_to_read_threshold_medium">အတော်အသင့်</string>
-  <string name="value_shake_to_read_threshold_hard">ပြင်းထန်စွာ</string>
-  <string name="value_shake_to_read_threshold_very_hard">အထူး ပြင်းထန်</string>
   <string name="title_pref_on_screen_keyboard">မျက်နှာပြင် လက်ကွက်</string>
   <string name="title_pref_physical_keyboard">ကီးဘုတ် ခလုတ်ခုံ</string>
   <string name="value_keyboard_echo_none">မရှိ</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">စက်အချိန်ဖော်မက် သုံးရန်</string>
   <string name="pref_time_feedback_format_entries_12_hour">၁၂ နာရီ</string>
   <string name="pref_time_feedback_format_entries_24_hour">၂၄ နာရီ</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack လက်ဟန်များပြောင်းပြီး</string>
-  <string name="notification_message_talkback_gestures_changed">ရယူအသုံးချမှု လက်ဟန်များ ဆိုင်ရာ အပြောင်းအလဲများကို ဆန်းစစ်ရန် ပုတ်ပါ</string>
   <string name="always_show_warning_checkbox">ဒီသတိပေးချက်ကို အမြဲတမ်း ပြရန်</string>
   <string name="label_dialog_title_add">အညွှန်းထည့်ရန်</string>
   <string name="label_dialog_title_edit">အညွှန်း တည်းဖြတ်ရန်</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">အမည်များကို ထုတ်ရန် မည်သည့် အပလီကေးရှင်းမျှ မတွေ့ပါ။</string>
   <string name="label_choose_app_to_import">အမည်များကို တင်သွင်းရန် အပလီကေးရှင်းရွေးပါ−</string>
   <string name="label_choose_app_to_export">တံဆိပ်များကို တင်ပို့ရန် အပလီကေးရှင်းကို ရွေးပါ-</string>
-  <string name="talkback_gesture_change_details">TalkBack ၏ လက်ရှိ ဗားရှင်းထဲမှာ အသုံးပြုရေး ပုံသေ လက်ဟန်များ ထဲက အပြောင်းအလဲများ ပါရှိပါသည်။ ယင်း လက်ဟန်များဖြင့် ဆက်စပ်ကြသည့် လုပ်ဆောင်ချက်များကို TalkBack ဆက်တင်များထဲမှာ စိတ်ကြိုက် ပြုလုပ်နိုင်ပါသည်။ တို့ထိ စူးစမ်းမှုကို ဖွင့်ထားလျှင်၊ သင်သည် အချို့သော လုပ်ဆောင်ချက်များ အတွက် အောက်ပါ လက်ဟန်များကို အသုံးပြုနိုင်သည်။\n\n%1$s</string>
   <string name="dialog_title_dim_screen">ဖန်သားပြင်ကို မှိန်ထားမလား။</string>
   <string name="dialog_message_dim_screen">၎င်းက ကိုယ်ရေးအချက်အလက် လုံခြုံမှု ပိုကောင်းစေရန် ဖန်သားပြင်ကို ပိတ်သည်။ ဖန်သားပြင်ပြန်ဖွင့်ရန် မက်ဆေ့ဂျ်များ (သို့) Talkback ကဲ့သို့ အများသုံးနိုင်သည့် ဝန်ဆောင်မှုများအတွက် မီနူးများကဲ့သို့သော အကြောင်းအရာအချို့ကို ပြနိုင်သေးသည်။</string>
-  <string name="talkback_built_in_gesture_change_details">ဤ TalkBack ဗားရှင်းတွင် မူရင်းအများသုံးနိုင်မှုဆိုင်ရာ လက်ဟန်အပြောင်းအလဲများ ပါဝင်သည်။\n\nအပေါ်မှအောက်သို့ လက်ဟန်က ဖန်သားပြင်ပေါ်ရှိ ပထမအရာသို့ ရွှေ့ခွင့်ပြုပြီး အောက်မှအပေါ်သို့ လက်ဟန်က နောက်ဆုံးအရာသို့ ရွှေ့ပေးမည်။\n\nTalkback အကြောင်းအရာမီနူးထဲမှ အသေးစိတ်ကိုရွေး၍ အကြောင်းအရာတစ်ခုကို ဦးတည်ထားပြီး အသေးစိတ်ဖတ်ရှုခြင်းကို ယခုပြောင်းနိုင်ပါပြီ။\n\nဤလက်ဟန်များဖြင့် လုပ်ဆောင်ချက်များကို \'TalkBack ဆက်တင်များ\' တွင် ပြောင်းနိုင်သည်။</string>
-  <string name="default_action_changed_details">မီဒီယာ ခဏရပ်ရန်နှင့် ဖွင့်ရန်အတွက် နှစ်ချက်တို့ပြီး လက်နှစ်ချောင်းဖြင့် ဖိထားနိုင်ပါပြီ။\n\nအခြားလက်ဟန်များလည်း ပြောင်းသွားပါပြီ။</string>
-  <string name="talkback_built_in_gesture_open_url">ဖုန်းတွင်ဖွင့်ပြီး ပိုမိုလေ့လာရန်</string>
-  <string name="talkback_built_in_gesture_change_details_45">ဤ TalkBack ဗားရှင်းတွင် မူရင်းသုံးစွဲမှုဆိုင်ရာ လှုပ်ရှားမှုဟန် ပြင်ဆင်ချက်များ ပါဝင်သည်။\n\nအပေါ်သို့ညွှန်သည့် လှုပ်ရှားမှုဟန်သည် ယခင်လမ်းညွှန်ချက်ဆက်တင်သို့ ရွှေ့သွားပြီး၊ အောက်သို့ညွှန်သည့် လှုပ်ရှားမှုဟန်သည် နောက်လမ်းညွှန်ချက်ဆက်တင်သို့ ရွှေ့ပါသည်။</string>
-  <string name="side_tap_shortcuts_removed_details">စိတ်ချရမှုဆိုင်ရာ ပြဿနာများကြောင့် TalkBack မှနေ၍ ဤဆက်တင်များကို ဖယ်ရှားထားသည်-\n• စက်ပစ္စည်းလက်ဟန်များ၏ ဘေးတွင် တို့ပါ\n• ဆက်တိုက်ဖတ်ခြင်းကို စတင်ရန် လှုပ်ယမ်းပါ</string>
-  <string name="button_accept_changed_gesture_mappings">လက်ဟန်များကို လက်ခံရန်</string>
-  <string name="button_customize_gesture_mappings">လက်ဟန်များ စိတ်ကြိုက်လုပ်ရန်</string>
   <string name="button_disable_all_events">အားလုံးကို ပိတ်ရန်</string>
   <string name="button_enable_all_events">အားလုံးကို ဖွင့်ရန်</string>
   <string name="dialog_title_disable_exploration">တို့ထိလျက် စူးစမ်းမှုကို ပိတ်ရမလား?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">ဇယားများ ရှာရန်</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack ၏ အကြောင်းကြားချက် ချန်နယ်</string>
-  <string name="pref_selector_summary">ဆက်တင်ရွေးရန် %1$s။ ထို့နောက် ဆက်တင်ပြင်ဆင်ရန် %2$s။</string>
-  <string name="speech_rate_change">စကားပြောနှုန်း %1$d%%</string>
   <string name="speech_pitch_maximum">အမြင့်ဆုံး စကားသံ၏ အသံပေါက်</string>
   <string name="speech_pitch_minimum">အနိမ့်ဆုံး စကားသံ၏ အသံပေါက်</string>
   <string name="reset_speech_rate_and_pitch">စကားပြောနှုန်းနှင့် အသံပေါက် ပြင်ဆင်သတ်မှတ်ပါ</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">တုန်ခါ တုံ့ပြန်ချက် %1$s</string>
   <string name="text_formatting_state">စာသား ဖော်မက်လုပ်ခြင်းကို ပြောရန် %1$s</string>
   <string name="typing_echo_change">%1$s ပဲ့တင်သံ ပကတိကီးဘုတ်</string>
-  <string name="reading_control_toggle_prefix_xr">အရန်မျက်နှာပြင်လှည့်ပြီး စာဖတ်ခြင်းထိန်းချုပ်မှုမုဒ်သို့ ပြောင်းရန် ကြာကြာနှိပ်ပါ။</string>
   <string name="gesture_1_or_2">%1$s သို့မဟုတ် %2$s</string>
-  <string name="select_setting_hint">မတူညီသော ဆက်တင်ရွေးရန် %1$s</string>
-  <string name="adjust_setting_hint">ဆက်တင်ချိန်ညှိရန် %1$s</string>
   <string name="adjust_granularity_hint">%2$s တွင် ဖတ်ရန် %1$s</string>
   <string name="adjust_typo_hint">အကြံပြုချက်များအတွက် %1$s။</string>
   <string name="use_action_hint">လုပ်ဆောင်ရန် နှစ်ချက်တို့ပါ</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">စာဖတ်ခြင်း ထိန်းချုပ်မှုများ</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ဗီဒီယို သို့မဟုတ် သီချင်းအက်ပ်ရှိ မီဒီယာကို ရပ်ရန် သို့မဟုတ် ဖွင့်ရန် လက်ချောင်း ၂ ချောင်းဖြင့် နှစ်ချက်တို့ပါ။ ယခုပဲ စမ်းကြည့်လိုက်ပါ။</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">အခြားအက်ပ်များသည် ဖုန်းခေါ်ဆိုမှုကို ဖြေကြားခြင်း သို့မဟုတ် ဖုန်းချခြင်း ကဲ့သို့သောအရာများအတွက် ဤလက်ဟန်ကို အသုံးပြုနိုင်သည်။ ဤလက်ဟန်ကို အချို့အက်ပ်များက ပံ့ပိုးမထားပါ။</string>
-  <string name="onboarding_link_to_talkback_tutorials">TalkBack အသုံးပြုနည်းအားလုံး ကြည့်ရန်</string>
   <string name="new_shortcut_gesture_pause_media_announcement">မီဒီယာကို ခဏရပ်သည် သို့မဟုတ် ဖွင့်သည်။ ပုံမှန်အားဖြင့် ၎င်းသည် လက်ရှိ ဗီဒီယို သို့မဟုတ် သီချင်းကို ခဏရပ်ပေးသည် သို့မဟုတ် ဖွင့်ပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack ဖတ်ပြနေခြင်းကို ခဏရပ်ရန် လက်ချောင်း ၂ ချောင်းဖြင့် တို့ပါ။</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack ပြောဆိုမှုကို ရပ်လိုက်ပါပြီ။ ပုံမှန်အားဖြင့် ယင်းက TalkBack လက်ရှိပြောနေသည့် စကားကို ရပ်ပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">စာသားရွေးချယ်သောမုဒ်ကို ဖွင့်သည် သို့မဟုတ် ပိတ်သည်။ ပုံမှန်အားဖြင့် ထည့်သွင်းသည့်အကွက်အတွင်း ရှိသောအခါ ယင်းက စာသားရွေးချယ်သောမုဒ်ကို စတင်သည် သို့မဟုတ် ရပ်ပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
   <string name="new_shortcut_gesture_reading_menu_text">စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို သုံးရန် ဘယ် သို့မဟုတ် ညာသို့ လက်ချောင်း ၃ ချောင်းဖြင့် ပွတ်ဆွဲပါ။ လက်ချောင်း ၃ ချောင်းဖြင့် အပေါ် သို့မဟုတ် အောက်သို့လည်း ပွတ်ဆွဲနိုင်သည်။</string>
   <string name="new_shortcut_gesture_note">မှတ်ချက်- သင့်လက်ဟန်အချို့ကို စိတ်ကြိုက်လုပ်ထားသောကြောင့် ဤအချက်အလက်သည် မမှန်ကန်နိုင်ပါ။ သင်၏လက်ဟန်များကို ကြည့်ရန် TalkBack ဆက်တင်များသို့ သွားပါ။</string>
-  <string name="welcome_to_android11">Android 11 ရှိ TalkBack က ကြိုဆိုပါသည်</string>
   <string name="welcome_to_android11_text">TalkBack ကို ပိုမိုလွယ်ကူလျင်မြန်စွာ သုံးနိုင်ရန် လက်ဟန်အသစ်များကို ထည့်ထားသည်။\n\nဤဖန်သားပြင်တွင် လက်ဟန်အသစ်များကို စမ်းကြည့်နိုင်သည်။ TalkBack ဆက်တင်များတွင် ဤအချက်အလက်ကို အချိန်မရွေး ပြန်လည်စစ်ဆေးနိုင်သည်။</string>
   <string name="new_gesture_notification_title">TalkBack ရှိ လက်ဟန်အသစ်များ</string>
   <string name="new_gesture_notification_content">လက်ဟန်အသစ်များဖြင့် TalkBack အမြန်သုံးနည်းကို လေ့လာရန် တို့ပါ။</string>
   <string name="dump_node_tree_description">Node tree ကို မှတ်တမ်းများသို့ ပုံနှိပ်ထုတ်ယူလိုက်သည်။</string>
   <string name="report_gesture_description">၎င်းတို့သည် မကြာသေးမီက ပြုလုပ်ခဲ့သောလက်ဟန်များ ဖြစ်သည်။ မည်သည့်လက်ဟန်က မှားကြောင်းနှင့် မည်သည့်က မှန်ကြောင်းတို့ကို အစီရင်ခံပါ။</string>
-  <string name="update_welcome_text_content">ဘလူးတုသ်သုံးစက်များနှင့် ချိတ်ဆက်ရန် နည်းလမ်းအဖြစ် HID မှတစ်ဆင့် မျက်မမြင်စာဖတ်ကိရိယာများနှင့် ချိတ်ဆက်နိုင်ပါပြီ။ သင့်တွင် ထုတ်လုပ်သူထံမှ နောက်ဆုံးဖာမ်းဝဲ ဒရိုင်ဗာများရှိကြောင်း သေချာအောင်လုပ်ပါ။ ထို့နောက် မျက်မမြင်စာဖတ်ကိရိယာတွင် ဘလူးတုသ်ဖွင့်ပါ။ TalkBack ဆက်တင်များ &gt; မျက်မမြင်စာဖတ်ကိရိယာ သို့သွားပြီး “မျက်မမြင်စာဖတ်ကိရိယာ သုံးရန်” ကိုဖွင့်ပါ။ စက်များစာရင်းတွင် သင့်စက်ကိုရှာပြီး ချိတ်ဆက်ပါ။</string>
-  <string name="update_welcome_text_content_tts">ဘလူးတုသ်သုံးစက်များနှင့် ချိတ်ဆက်ရန် နည်းလမ်းအဖြစ် HID မှတစ်ဆင့် မျက်မမြင်စာဖတ်ကိရိယာများနှင့် ချိတ်ဆက်နိုင်ပါပြီ။ သင့်တွင် ထုတ်လုပ်သူထံမှ နောက်ဆုံးဖာမ်းဝဲ ဒရိုင်ဗာများရှိကြောင်း သေချာအောင်လုပ်ပါ။ ထို့နောက် မျက်မမြင်စာဖတ်ကိရိယာတွင် ဘလူးတုသ်ဖွင့်ပါ။ TalkBack ဆက်တင်များမှ မျက်မမြင်စာဖတ်ကိရိယာ သို့သွားပြီး “မျက်မမြင်စာဖတ်ကိရိယာ သုံးရန်” ကိုဖွင့်ပါ။ စက်များစာရင်းတွင် သင့်စက်ကိုရှာပြီး ချိတ်ဆက်ပါ။</string>
-  <string name="update_welcome_text_content_with_link">TalkBack ဖြင့် မျက်မမြင်စာဖတ်ကိရိယာ သုံးနည်းကို လေ့လာနိုင်သည်။</string>
   <string name="update_welcome_talkback_16.1">ဤ TalkBack အပ်ဒိတ်တွင် Describe စခရင်အတွက် အကူအညီကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး Talkback အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် TalkBack ဆက်တင်များ &gt; TalkBack ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
   <string name="update_welcome_talkback_16.1_tts">ဤ TalkBack အပ်ဒိတ်တွင် Describe စခရင်အတွက် အကူအညီကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး Talkback အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် TalkBack ဆက်တင်များ၊ ထို့နောက် TalkBack ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
-  <string name="describe_screen_and_qna_title">Describe စခရင်နှင့် ‘Gemini ကို မေးပါ’ အတွက် ဘာသာစကားအသစ်များ</string>
-  <string name="describe_screen_and_qna_content">Describe စခရင်နှင့် ‘Gemini ကို မေးပါ’ ကို နောက်ထပ်ဘာသာစကားများဖြင့် ယခုရနိုင်ပါပြီ။ &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;ကူညီရေးဌာနတွင် ပိုလေ့လာရန်&lt;/a&gt;။</string>
   <string name="shortcut_for_dictation_title">အသံဖြင့်စာရိုက်ခြင်းအတွက် ဖြတ်လမ်း</string>
   <string name="shortcut_for_dictation_content">Gboard သုံးနေစဉ် အသံဖြင့်စာရိုက်ခြင်းကို စတင်ရန် (သို့) ရပ်ရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့ခြင်းကို သုံးနိုင်ပါပြီ။
 &lt;br&gt;
 &lt;br&gt;သင့်တွင် &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play မှ Gboard&lt;/a&gt; ၏ နောက်ဆုံးဗားရှင်းရှိကြောင်း သေချာပါစေ။</string>
   <string name="shortcut_for_dictation_content_without_google_play">စခရင်တွင် Gboard ရှိနေသောအခါ ‘အသံဖြင့် နှုတ်တိုက်ချပေးခြင်း’ ကို စတင်ရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့ခြင်းကို သုံးနိုင်ပါပြီ။ ထို့နောက် ရပ်ဆိုင်းရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့နိုင်ပါသည်။</string>
-  <string name="keyboard_title">ကီးဘုတ်</string>
-  <string name="keyboard_content">TalkBack ကီးဘုတ်အတွက် ကွန်မန်းနှင့် ဖြတ်လမ်းအသစ်အမျိုးမျိုးဖြင့် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” ကို ရနိုင်ပါပြီ။ ဤအရည်အသွေးမြှင့်တင်ချက်တွင် ပိုမိုထိရောက်သည့် ဝဘ်တွင်ရွှေ့ကြည့်မှုအတွက် “ဘရောက်စ်မုဒ်” ပါဝင်ပြီး ရွှေ့ကြည့်ခြင်း၊ ပကတိကီးဘုတ်များပေါ် မှီခိုသည့် TalkBack အသုံးပြုသူများအတွက် ပြန်လှန်တုံ့ပြန်မှုတို့ကို ချောမွေ့စေသည်။ TalkBack ဆက်တင်များ &gt; အဆင့်မြင့်ဆက်တင်များ &gt; လက်ကွက်ဖြတ်လမ်းများတွင် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” သို့ ပြောင်းနိုင်သည်။</string>
-  <string name="keyboard_content_tts">TalkBack ကီးဘုတ်အတွက် ကွန်မန်းနှင့် ဖြတ်လမ်းအသစ်အမျိုးမျိုးဖြင့် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” ကို ရနိုင်ပါပြီ။ ဤအရည်အသွေးမြှင့်တင်ချက်တွင် ပိုမိုထိရောက်သည့် ဝဘ်တွင်ရွှေ့ကြည့်မှုအတွက် “ဘရောက်စ်မုဒ်” ပါဝင်ပြီး ရွှေ့ကြည့်ခြင်း၊ ပကတိကီးဘုတ်များပေါ် မှီခိုသည့် TalkBack အသုံးပြုသူများအတွက် ပြန်လှန်တုံ့ပြန်မှုတို့ကို ချောမွေ့စေသည်။ TalkBack ဆက်တင်များ၊ ထို့နောက် အဆင့်မြင့်ဆက်တင်များ၊ ပြီးနောက် လက်ကွက်ဖြတ်လမ်းများတွင် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” သို့ ပြောင်းနိုင်သည်။</string>
-  <string name="reduce_delay_title">စောင့်ရချိန် လျှော့ရန်</string>
-  <string name="reduce_delay_content">ထိပြီး ရှာဖွေစူးစမ်းခြင်းနှင့် စာရိုက်ခြင်းတို့အတွက် TalkBack ကြေညာချက် စောင့်ရချိန်များကို လျှော့နိုင်ပါပြီ။ ဤဆက်တင်များကို ကြည့်ရန် TalkBack ဆက်တင်များ &gt; အဆင့်မြင့်ဆက်တင်များ &gt; စောင့်ရချိန် လျှော့ရန်သို့ သွားပါ။</string>
-  <string name="reduce_delay_content_tts">ထိပြီး ရှာဖွေစူးစမ်းခြင်းနှင့် စာရိုက်ခြင်းတို့အတွက် TalkBack ကြေညာချက် စောင့်ရချိန်များကို လျှော့နိုင်ပါပြီ။ ဤဆက်တင်များကို ကြည့်ရန် TalkBack ဆက်တင်များ၊ ထို့နောက် အဆင့်မြင့်ဆက်တင်များ၊ ပြီးနောက် စောင့်ရချိန် လျှော့ရန်သို့ သွားပါ။</string>
-  <string name="customize_braille_keyboard_improvements_title">မျက်မမြင်စာရေးစနစ် ကီးဘုတ်လက်ဟန်များကို စိတ်ကြိုက်ပြင်ဆင်ခြင်း</string>
-  <string name="customize_braille_keyboard_improvements_content">စခရင်ပေါ်ရှိ ပကတိအသွင် မျက်မမြင်စာရေးစနစ် ကီးဘုတ်အတွက် လက်ဟန်များကို စိတ်ကြိုက်ပြင်ဆင်နိုင်ပါပြီ။ စိတ်ကြိုက်ပြင်ဆင်ရန် TalkBack ဆက်တင်များ &gt; မျက်မမြင်စာရေးစနစ် ကီးဘုတ် &gt; လက်ဟန်များသို့ သွားပါ။</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">စခရင်ပေါ်ရှိ ပကတိအသွင် မျက်မမြင်စာရေးစနစ် ကီးဘုတ်အတွက် လက်ဟန်များကို စိတ်ကြိုက်ပြင်ဆင်နိုင်ပါပြီ။ စိတ်ကြိုက်ပြင်ဆင်ရန် TalkBack ဆက်တင်များ၊ ထို့နောက် မျက်မမြင်စာရေးစနစ် ကီးဘုတ်၊ ပြီးနောက် လက်ဟန်များသို့ သွားပါ။</string>
-  <string name="learn_more_about_braille_keyboard">မျက်မမြင်စာရေးစနစ် ကီးဘုတ်အကြောင်း ပိုလေ့လာရန်</string>
-  <string name="other_changes_title">အခြားပြောင်းလဲမှုများ</string>
-  <string name="other_changes_content">စခရင်ပေါ်ရှိ မက်ဆေ့ဂျ်သည် TalkBack ကို မတော်တဆ ဖွင့်မိပါက အမြန်ပိတ်နိုင်ရန် ကူညီပေးသည်။ TalkBack ဆက်တင်များ &gt; TalkBack ပိတ်ခြင်းအတွက် ညွှန်ကြားချက်များကို ပြပါတွင် ၎င်းကို ပိတ်နိုင်သည်။</string>
-  <string name="other_changes_content_tts">စခရင်ပေါ်ရှိ မက်ဆေ့ဂျ်သည် TalkBack ကို မတော်တဆ ဖွင့်မိပါက အမြန်ပိတ်နိုင်ရန် ကူညီပေးသည်။ TalkBack ဆက်တင်များ၊ ထို့နောက် TalkBack ပိတ်ခြင်းအတွက် ညွှန်ကြားချက်များကို ပြပါတွင် ၎င်းကို ပိတ်နိုင်သည်။</string>
-  <string name="keymap_changes_content">မူရင်းကီးမြေပုံကို နောက်ထပ်ဖြတ်လမ်းများပါဝင်သော ပုံမှန်ကီးမြေပုံသို့ ပြောင်းလိုက်သည်။</string>
   <string name="announcing_text_formatting_title">စာသားဖော်မက်လုပ်ခြင်းကို ကြေညာခြင်း</string>
   <string name="announcing_text_formatting_header">TalkBack တွင် စာလုံးထူ၊ စာလုံးစောင်းနှင့် စာသားအရောင်ကဲ့သို့သော စာသားဖော်မက်လုပ်ခြင်းနှင့် ပတ်သက်သည့် ပြောင်းလဲမှုများကို ကြေညာနိုင်ပါပြီ။ စတင်ရန်-</string>
   <string name="announcing_text_formatting_option1">ဖော်မက်လုပ်ထားသော ဖိုင်ကို အထူးပြသပြီး TalkBack မီနူးဖွင့်ကာ “စာသားဖော်မက်လုပ်ခြင်းကို ဖော်ပြရန်” ကို ရွေးပါ (သို့)</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">ဖုန်းဆက်နည်း၊ မက်ဆေ့ဂျ်ပို့နည်း စသည်တို့ကို လေ့လာပါ</string>
   <string name="practice_gestures_link_text">လက်ဟန်များကို လေ့ကျင့်ပါ</string>
   <string name="practice_gestures_link_subtext">မတူညီသော လက်ဟန်များ၏ လုပ်ဆောင်ချက်ကို လေ့လာရန် ၎င်းတို့ကို စမ်းကြည့်ပါ</string>
-  <string name="help_and_feedback_link_subtext">TalkBack အကြောင်း ပိုမိုလေ့လာပြီး အကြံပြုချက်ပို့ပါ</string>
   <string name="choose_tutorial_title">TalkBack နှင့် ပြန်လှန်တုံ့ပြန်လိုပုံကို ရွေးပါ</string>
   <string name="touch_tutorial_button">ထိတွေ့မှု ရှင်းလင်းပို့ချချက်</string>
   <string name="keyboard_tutorial_button">ကီးဘုတ် ရှင်းလင်းပို့ချချက်</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">အောက်တွင် စမ်းကြည့်ပါ။</string>
   <string name="wear_training_typing_practice_button_content_description">ကီးဘုတ်ဖြင့် စာရိုက်ခြင်း</string>
   <string name="wear_training_end_tutorial_title">TalkBack ကို စသုံးရန် အသင့်ဖြစ်ပါပြီ</string>
-  <string name="talkback_updated_notification_title">TalkBack ကို အပ်ဒိတ်လုပ်ပြီးပြီ</string>
-  <string name="talkback_updated_notification_content">ပိုမိုသိရှိရန် တို့ပါ</string>
   <string name="wear_new_feature_page_title">အပ်ဒိတ်လုပ်ထားသော TalkBack က ကြိုဆိုပါသည်</string>
   <string name="wear_new_feature_page_content">ချွတ်ယွင်းချက်ပြင်ဆင်မှုအချို့နှင့် အထူးပြသမှုရွေ့လျားပုံအတွက် အပြောင်းအလဲများကို သင် သတိပြုမိပါမည်</string>
   <string name="wear_new_feature_page_button_content_description">ပြီးပြီ</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">အပြာရောင်</string>
   <string name="title_pref_grey">မီးခိုးရောင်</string>
   <string name="survey_setting_title">အကြံပြုချက် မျှဝေရန်</string>
-  <string name="survey_closed">စစ်တမ်း ပိတ်ထားသည်</string>
   <string name="title_summarize_view">စခရင်ကို ဖော်ပြရန်</string>
-  <string name="title_increase_touch_focus_latency">ပြရန်စောင့်ရချိန်ကို တိုးရန်</string>
-  <string name="title_decrease_touch_focus_latency">ပြရန်စောင့်ရချိန်ကို လျှော့ရန်</string>
   <string name="detected_result">တွေ့ထားသည်- %1$s</string>
   <string name="title_image_caption">ပုံကို ရှင်းပြရန်</string>
   <string name="image_caption_with_gemini_prefix">ဤပုံကို ဖော်ပြပါ။ ပြန်ကြားချက်တွင် စာပြင်ခြင်း မသုံးပါနှင့်။</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">အသုံးပြုသူ- %1$s</string>
   <string name="image_qna_answer_prefix">မိုဒယ်- %1$s</string>
   <string name="image_qna_with_history_postfix">... [‘အသုံးပြုသူ’ နှင့် ‘မိုဒယ်’ တို့ တစ်လှည့်စီ ဆက်ရန်] ...</string>
-  <string name="screen_overview_with_screenshot">သင့်တာဝန်မှာ ဖုန်းစခရင်ကို မမြင်နိုင်သူ၏ စခရင်တွင် ပေါ်နေသည့်အရာကို သူနားလည်နိုင်ရန်အတွက် ကူညီရန်ဖြစ်သည်။ ဤဖန်သားပြင်ဓာတ်ပုံကို စာကြောင်းအနည်းငယ်ဖြင့် ရှင်းပြပါ။
-
-ညွှန်ကြားချက်များ
-သင့်ပြန်ကြားချက်ကို “စခရင်တွင် ပြသည့်အရာသည်” နှင့် စတင်ပါ
-ပြန်ကြားချက်၏အစပိုင်းသည် စခရင်ပေါ်ရှိ အရေးကြီးဆုံးဖြစ်သော အဓိကအကြောင်းအရာကို ရှင်းပြသင့်သည်။ ရှင်းပြရန်အတွက် အရေးကြီးဆုံးဖြစ်သော အဓိကအကြောင်းအရာနမူနာများမှာ အောက်ပါအတိုင်း ဖြစ်နိုင်သည်
-* ချတ်အက်ပ်တွင်- နောက်ဆုံးမက်ဆေ့ဂျ်ကို ပို့သူနှင့် စာသား
-* လူမှုကွန်ရက်အက်ပ်တွင်- ပို့စ်တင်သူ၊ ပုံစာသားနှင့် ပုံသရုပ်ဖော်ပြမှုအပါအဝင် ပထမဆုံးပို့စ်
-* အက်ပ်အသစ်တွင်- အဓိကပုံ၏ ဆောင်းပါးခေါင်းစဉ်နှင့် ရှင်းလင်းချက်
-* ဈေးဝယ်အက်ပ်တွင်- ပြထားသောကုန်ပစ္စည်းအကြောင်း ရှင်းလင်းချက်နှင့် ဈေးနှုန်း
-* ပြက္ခဒိန်အက်ပ်တွင်- လာမည့်အစီအစဉ်နှင့် ဆက်ပြမည့် အခြားအစီအစဉ်အရေအတွက်
-* မက်ဆေ့ဂျ်စာရင်းတွင်- ပထမဆုံးမက်ဆေ့ဂျ်အမည်နှင့် အစမ်းပြကွက်၊ ထို့နောက် စာရင်းရှိ နောက်ထပ်မက်ဆေ့ဂျ်အနည်းငယ်၏ အမည်သီးသန့်နှင့် မဖတ်ရသေးသော မက်ဆေ့ဂျ်အရေအတွက်
-
-ထို့နောက် ပြန်ကြားချက်တွင် လမ်းညွှန်ဘားများနှင့် ထင်ရှားသောခလုတ်များ၏ တည်နေရာနှင့် ရည်ရွယ်ချက်ကို ဖော်ပြနိုင်သည်။
-အခြေအနေပြဘား၏ ထိပ်ပိုင်းရှိအရာများကို မဖော်ပြပါနှင့် (ဥပမာ- အချိန်၊ ကွန်ရက်အခြေအနေ၊ ဘက်ထရီ)။
-သင့်ပြန်ကြားချက်တွင် စာပြင်ခြင်း မသုံးပါနှင့်။</string>
   <string name="title_gemini_opt_in_dialog">အသေးစိတ် ပုံရှင်းလင်းချက်များ ရယူမလား။</string>
   <string name="title_on_device_gemini_opt_in_dialog">ပုံရှင်းလင်းချက်များ ရယူမလား။</string>
   <string name="title_gemini_result_dialog">တွေ့ရှိထားသည်- ပုံ</string>
   <string name="title_gemini_result_bottom_sheet">ပုံရှင်းလင်းချက်</string>
   <string name="title_gemini_screen_overview_result_dialog">စခရင်ဖော်ပြချက်</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">အနှစ်ချုပ်</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">လုပ်ဆောင်ချက်များ</string>
   <string name="positive_button_gemini_opt_in_dialog">ဖွင့်ရန်</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">သဘောတူသည်</string>
   <string name="negative_button_gemini_opt_in_dialog">မလိုပါ</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">ဆက်တင်များသို့ သွားရန်</string>
-  <string name="positive_button_gemini_download_dialog">ဒေါင်းလုဒ်လုပ်ပြီး ဖွင့်ရန်</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">စာသား၊ “%1$s”။</string>
   <string name="detected_icon_label">သင်္ကေတ၊ “%1$s”။</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">စခရင်ကို အနှစ်ချုပ်၍မရပါ</string>
   <string name="image_caption_no_result">ပုံကို ရှင်းပြ၍မရပါ</string>
   <string name="image_caption_with_hide_screen">စခရင်ကို ဖျောက်ထားချိန်တွင် ပုံရှင်းလင်းချက်များကို မရနိုင်ပါ။ စခရင်ကို ပြ၍ ထပ်စမ်းကြည့်ပါ။</string>
-  <string name="feedback_button_state_set">ရွေးထားသည်</string>
-  <string name="feedback_button_state_unset">ရွေးမထားပါ</string>
   <string name="action_text_like_button">ကောင်းသည့် ပြန်ကြားချက်အဖြစ် သတ်မှတ်ရန်</string>
   <string name="action_text_dislike_button">မကောင်းသည့် ပြန်ကြားချက်အဖြစ် သတ်မှတ်ရန်</string>
   <string name="action_text_clear_like_button">ကောင်းသည့် ပြန်ကြားချက်ကို ဖယ်ရှားရန်</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">အလိုအလျောက် ပုံနှင့် သင်္ကေတ ရှင်းလင်းချက်များကို ဒေါင်းလုဒ်လုပ်နေသည်</string>
   <string name="download_all_image_captioning_successful_hint">အလိုအလျောက် ပုံနှင့် သင်္ကေတ ရှင်းလင်းချက်များကို ဒေါင်းလုဒ်လုပ်ပြီးပါပြီ</string>
   <string name="download_all_image_captioning_failed_hint">ဒေါင်းလုဒ်လုပ်၍မရပါ။ နောက်မှထပ်စမ်းပါ။</string>
-  <string name="download_complete_notification_title">ဒေါင်းလုဒ်လုပ်ပြီးပြီ</string>
-  <string name="download_complete_notification_content">TalkBack ဖြင့် အလိုအလျောက် ပုံနှင့်သင်္ကေတ ရှင်းလင်းချက်များကို ယခုကြားရပါမည်</string>
-  <string name="download_complete_notification_action">ဆက်တင်များ</string>
   <string name="download_storage_error_hint">သိုလှောင်ခန်း ပြည့်နေသည်။ ဒေါင်းလုဒ်လုပ်ရန် ဆက်တင်များ &gt; သိုလှောင်ခန်းတွင် %1$d MB နေရာလွတ်ပြုလုပ်ပါ။</string>
   <string name="download_network_error_hint">ဒေါင်းလုဒ်လုပ်၍မရပါ။ သင်၏ ချိတ်ဆက်မှုကို စစ်ဆေးပြီး ထပ်စမ်းကြည့်ပါ။</string>
   <string name="switch_icon_detection_dialog_title">အလိုအလျောက် သင်္ကေတရှင်းလင်းချက်များ</string>
   <string name="switch_icon_detection_dialog_message">သင်္ကေတပေါ် ရွှေ့သည့်အခါ ရှင်းလင်းချက်ကို ကြားရမည်</string>
   <string name="switch_image_description_dialog_message">ပုံပေါ်ရွှေ့သည့်အခါ ရှင်းလင်းချက်ကို ကြားရမည်။ အက်ပ်အချို့သည် ၎င်းကို မပံ့ပိုးနိုင်ပါ။</string>
-  <string name="switch_text_recognition_dialog_title">ပုံရှိ စာကို အလိုအလျောက် ရှင်းပြခြင်း</string>
   <string name="switch_text_recognition_dialog_message">စာပါဝင်သော ပုံကို ဆုံချက်ထားသည့်အခါ ရှင်းလင်းချက်ကို ကြားရမည်</string>
   <string name="switch_auto_image_caption_dialog_subtitle">ဒေါင်းလုဒ်လုပ်ထားသည်</string>
-  <string name="disable_auto_image_caption_dialog_subtext">TalkBack မီနူးမှ ရွေးထားသောပုံအတွက် ရှင်းလင်းချက်များ ရနိုင်သေးသည်</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">ဒေါင်းလုဒ် ဖျက်ရန်</string>
   <string name="delete_icon_detection_dialog_title">အလိုအလျောက် သင်္ကေတရှင်းလင်းချက်များကို ဖျက်မလား။</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">TalkBack တွင် Gemini သုံးခြင်း</string>
   <string name="gemini_disable_dialog_message">Gemini ဖြင့် ဖန်သားပြင်ကိုဖတ်ခြင်း</string>
   <string name="disable_gemini_dialog_subtext">Gemini ဖြင့် ဖန်သားပြင်ကိုဖတ်ခြင်း သုံးရန် ဖွင့်ပါ</string>
-  <string name="ai_services_update_dialog_title">ပုံအကြောင်း ရှင်းပြရန် %1$s အက်ပ်ကို အပ်ဒိတ်လုပ်ပါ</string>
-  <string name="ai_services_update_dialog_message">ပုံရှင်းလင်းချက်များ ကြားရရန် %1$s နောက်ဆုံးဗားရှင်းကို Google Play မှ ရယူပါ။\n\nဒေါင်းလုဒ်လုပ်ပြီးသွားလျှင် TalkBack ဆက်တင်များသို့ ပြန်လာပြီး အလိုအလျောက် ပုံရှင်းလင်းချက်များကို ထပ်ဖွင့်ပါ။</string>
-  <string name="ai_services_update_dialog_button_text">Google Play သို့ သွားရန်</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">တစ်ခုခုမှားသွားသည်။ ထပ်စမ်းကြည့်ပါ။</string>
   <string name="gemini_block_message">ဤပုံကို စီမံဆောင်ရွက်၍မရပါ</string>
   <string name="gemini_network_error">အင်တာနက် ချိတ်ဆက်မှုမရှိပါ။ Wi-Fi (သို့) မိုဘိုင်းကွန်ရက်ကို စစ်ဆေးပြီး ထပ်စမ်းကြည့်ပါ။</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Gemini အတွက် မေးခွန်းရိုက်ရန်</string>
   <string name="image_qna_send_button_text">မေးရန်</string>
   <string name="image_qna_speak_question_description">မေးခွန်းကို ပြောရန်</string>
-  <string name="overviews_summary_intro">ဤအက်ပ်စခရင်၏ အနှစ်ချုပ်- %1$s</string>
   <string name="overviews_node_not_found">စခရင်၏ အဆိုပါအပိုင်းကို ရှာ၍မရတော့ပါ။</string>
-  <string name="overviews_images_in_app">အဓိကပုံများ တွေ့ထားသည်</string>
   <string name="overviews_list_item">%1$d။ %2$s</string>
-  <string name="overviews_actions_in_app">အက်ပ်အတွင်း လုပ်ဆောင်ချက်များ</string>
-  <string name="overviews_actions_in_app_description">ဤအက်ပ်ဖန်သားပြင်မှ လုပ်ဆောင်နိုင်သည့် အဓိကလုပ်ဆောင်ချက်များမှာ-</string>
-  <string name="overviews_parent_type">အက်ပ်အတွင်း လုပ်ဆောင်ချက်များ</string>
   <string name="text_replaced_feedback">စာသား အစားထိုးထားသည်</string>
   <string name="switch_gesture_set">လက်ဟန်အုပ်စု ပြောင်းရန်</string>
   <string name="switch_gesture_set_to">လက်ဟန်အုပ်စု %1$d သို့ ပြောင်းရန်</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">ပိတ်ရန်</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">စခရင်ပိတ်ထားချိန်၌ အကြောင်းကြားချက်များ ကြားရရန်အတွက် ‘TalkBack အကျယ်ချဲ့ရှင်းပြခြင်း ဆက်တင်များ’ တွင် “စခရင်ပိတ်ထားချိန်၌ အကြောင်းကြားချက်များ ပြောရန်” ကို ဖွင့်ပါ</string>
 </resources>

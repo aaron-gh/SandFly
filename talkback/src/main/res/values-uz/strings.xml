@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack yoqilganda qurilmani ekranga qaramay boshqarishingiz uchun elementlarni oʻqib eshittiradi. TalkBack ekranni xira koʻruvchilar uchun moʻljallangan.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack bilan qanday ishlanadi&lt;/b&gt;&lt;br&gt;• Elementlarga oʻtish uchun oʻng yoki chapga suring&lt;br&gt;• Elementni faollashtirish uchun ikki marta bosing&lt;br&gt;• Varaqlash uchun 2 ta barmoq bilan suring&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack qanday oʻchiriladi&lt;/b&gt;&lt;br&gt;1. Sozlamalarida &lt;b&gt;TalkBack ishlatish&lt;/b&gt; ustiga bosing. Hoshiya paydo boʻladi. Uning ustiga ikki marta bosing.&lt;br&gt;2. Tasdiqlash xabaridagi &lt;b&gt;Toʻxtatish&lt;/b&gt; ustiga bosing. Hoshiya paydo boʻladi. Uning ustiga bosing.</string>
   <string name="talkback_service_summary">Elementlarni skrin-rider yordamida ovoz chiqarib eshitish</string>
   <string name="talkback_preferences_title">TalkBack sozlamalari</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Sozlamalar</string>
   <string name="tts_preferences_title">Matndan nutqqa</string>
   <string name="language_options">Tillar</string>
   <string name="spoken_language">Nutq tili</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Qidiruv bekor qilindi.</string>
   <string name="notification_type_status_started">Boshlandi</string>
   <string name="notification_type_status_stopped">To‘xtatildi</string>
-  <string name="notification_type_status_connected">ulandi</string>
-  <string name="notification_battery_level_unknown">noaniq</string>
   <string name="notification_battery_saver_mode">Quvvat tejash yoniq</string>
   <string name="template_no_text_selected">Hech qanday matn belgilanmagan</string>
   <string name="template_charging">Quvvatlash: %1$s. Batareya darajasi %2$s foiz.</string>
   <string name="template_charging_lite">Quvvatlash %1$s</string>
-  <string name="template_battery_state">Quvvat: %1$s %2$s foiz %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Tebranishli qo‘ng‘iroq.</string>
   <string name="value_ringer_silent">Ovozsiz rejim.</string>
   <string name="value_screen_on">Ekran yoqildi.</string>
   <string name="value_screen_off">Ekran o‘chirildi.</string>
   <string name="value_device_unlocked">Qurilma qulfdan chiqarildi.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Nutqning balandligi</string>
-  <string name="title_pref_speech_rate">Nutq tezligi</string>
-  <string name="summary_pref_speech_rate">Matnni oʻqish tezligi</string>
   <string name="title_pref_verbose_scroll_announcement">Doimo elementlar roʻyxatining raqami aytilsin</string>
   <string name="summary_pref_verbose_scroll_announcement">Barcha aylantirish usullari soni aytilsin</string>
   <string name="title_pref_cover_proximity_sensor">Nutqni toʻxtatish uchun yaqinlashish sensorini yopish</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Vaqtni aytish</string>
   <string name="pref_speak_time_summary">Ekranni yoqqaningizda</string>
   <string name="summary_speak_container_element_positions">Roʻyxatlar, jadvallar va boshqa konteynerlarga kirish va chiqish vaqtidagi maʼlumotlarni oʻz ichiga oladi</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokus kechikishi oʻqish boshqaruviga qoʻshildi</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Oʻqish boshqaruvi va fokus kechikishini istalgan payt oʻzgartirish uchun 3 barmoq bilan suring</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Chizib yozishga almashtirilsinmi?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Yozish fokusi kechikishi 0,3 soniyadan kamroq qilib belgilansa, yozish uchun ikki marta teginish harakatini amalga oshirish juda qiyin boʻladi. Chizib yozishga avtomatik almashish uchun Almashtirish tugmasini bosing.\n\nChizib yozishga almashtirish maqsadida istalgan tugmani tanlash uchun barmoq bilan bosib turing, keyin yozish uchun chizing.\n\nBuni TalkBack sozlamalari orqali sozlash mumkin.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Matn kiritishda fokus kechikishi oʻqish boshqaruviga qoʻshildi</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Agar matn kiritish paytida ikki marta teginish bilan muammolar boʻlsa, oʻqish boshqaruvi uchun 3 ta barmoq bilan suring va matn kiritishda fokusni uzoqroq kechiktirishga almashtiring</string>
-  <string name="gestures_announce_typing_focus_wont_change">Yozish fokusi kechikishi Chizib yozish funksiyasisiz ishlamayapti.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">OK</string>
   <string name="reset_letency_reduction_settings_dialog_title">Kechikish sozlamalari asliga qaytarilsinmi?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Bunda barcha kechikish sozlamalari asliga qaytariladi</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Asliga qaytarish</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Kechikishni kamaytirish sozlamalari asliga qaytarildi.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Almashtirish</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Almashmasin</string>
   <string name="Reset_gesture_settings_dialog_title">Ishoralar asliga qaytarilsinmi?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Joriy toʻplamdagi ishoralar tiklansinmi?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Barcha ishoralarni birlamchi amallariga qaytaradi.\n\nKiritilgan barcha oʻzgartirishlar saqlanmaydi.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Barcha jarayon haqida gapirtirish</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Bunga yuklab olish va navigatsiya paytidagi bildirishnomalar kiradi. Sozlama oʻchiq boʻlsa, kamroq bildirishnoma chiqadi.</string>
   <string name="title_pref_explore_by_touch">Teginib o‘rganish</string>
-  <string name="title_pref_category_visual">Vizual</string>
   <string name="title_pref_category_controls">Boshqaruv</string>
-  <string name="title_pref_category_braille">Brayl</string>
-  <string name="title_pref_category_general">Umumiy</string>
-  <string name="title_pref_category_advanced">Kengaytirilgan</string>
-  <string name="title_pref_category_others">Boshqalar</string>
-  <string name="title_pref_category_tutorial_and_help">Qoʻllanma va yordam</string>
   <string name="title_pref_category_reduce_latency_summary">Bu sozlamalar TalkBack eʼlonlaridan oldingi kechikishni kamaytirishi mumkin</string>
   <string name="reset_latency_settings_title">Barcha kechikish sozlamalarini asliga qaytarish</string>
   <string name="title_pref_single_tap">Faollashtirish uchun bir marta bosing</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fokus indikatorini oʻzgartirish</string>
   <string name="title_pref_category_manage_gestures">Imo-ishoralar</string>
   <string name="title_pref_manage_labels">Maxsus yorliqlar</string>
-  <string name="title_pref_manage_customize_menus">Menyularni tahrirlash</string>
   <string name="title_pref_category_context_menu">TalkBack menyusini sozlash</string>
   <string name="title_pref_category_selector_menu">Oʻqish boshqaruvini sozlash</string>
   <string name="title_pref_category_navigation_menu">Navigatsiya parametrlarini tahrirlash</string>
-  <string name="pref_category_context_menu_summary">TalkBack menyusini ochish uchun ekranga 3 ta barmoq bilan bosing. 3 ta barmoq bilan tepaga, keyin pastga yoki pastga, keyin tepaga surish ham mumkin.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack menyusini ochish uchun ikkichi qoʻlni oʻzingizga qaratib, chimding.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack menyusini ochish uchun pastga, keyin oʻngga suring.</string>
-  <string name="pref_category_selector_menu_summary">Oʻqish boshqaruvidan foydalanish uchun 3 ta barmoq bilan chapga yoki oʻngga suring. 3 ta barmoq bilan tepaga yoki pastga surish ham mumkin.</string>
-  <string name="pref_category_selector_menu_summary_xr">Oʻquv boshqaruvi elementlarini almashtirish uchun ikkinchi qoʻlni oʻzingizga qaratib, ikkita barmoqda chimding va chap yoki oʻng elementga tortib, qoʻyib yuboring.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Oʻqish boshqaruvini ochish uchun tepaga, keyin pastga suring.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Tezkor tugmalar</string>
   <string name="title_pref_export_custom_labels">Shaxsiy yorliqlarni eksport qilish</string>
-  <string name="title_pref_play_store">Google Play Marketdagi TalkBack sahifasi</string>
-  <string name="summary_pref_play_store">Joriy TalkBack versiyasi: %1$s</string>
   <string name="title_pref_help_and_feedback">Yordam/fikr-mulohaza</string>
-  <string name="title_pref_gup">Google Disability yordam xizmatiga murojaat qiling</string>
-  <string name="subtitle_pref_gup">TalkBack yordamida yordam oling yoki muammolar haqida xabar bering</string>
-  <string name="pref_item_licenses">Ochiq kodli DT litsenziyalari</string>
-  <string name="title_pref_tutorial">Darslik</string>
   <string name="title_pref_help">Yordam</string>
   <string name="title_pref_show_tos">Xizmat shartlari</string>
   <string name="title_pref_show_privacy_policy">Maxfiylik siyosati</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Barmoq izi ishoralari</string>
   <string name="title_pref_category_tutorial">TalkBack qoʻllanmasi</string>
   <string name="title_pref_category_help_no_tutorial">Yordam</string>
-  <string name="title_pref_category_typing">Yozish</string>
   <string name="title_pref_advanced_settings">Kengaytirilgan sozlamalar</string>
   <string name="title_pref_show_exit_watermark">TalkBack qulayligini faolsizlantirish tartibi</string>
   <string name="summary_pref_show_exit_watermark">TalkBack yoqilganda uni faolsizlantirishga yordam berish uchun chiqadigan xabar</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Modifikator tugmalarining ayrimlari farq qiladi.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Terilmalar haqida batafsil</string>
   <string name="keycombo_go_to_settings">Sozlamalarni ochish</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack eski terilmani olib tashlaydi. Tezkor tugmalardan foydalanishda davom etish uchun asosiy terilmaga almashtiring.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Batafsil</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Sozlamalar</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Batafsil</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Siz TalkBack standart terilmasidan foydalanyapsiz. Shuningdek, koʻplab yangi buyruqlarga ega yaxshilangan yangi terilma ham mavjud. Yordam markazida batafsil tanishing yoki Sozlamalarda yangi terilmaga almashing.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Yangi terilma mavjud</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Yangi TalkBack yaxshilangan terilmasi koʻplab yangi buyruqlar qoʻshadi. Yordam markazida batafsil tanishing yoki Sozlamalarda yangi terilmaga almashing.</string>
-  <string name="keycombo_update_modifier_key_warning_title">TalkBack modifikator tugmasini yangilash</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Hozir emas</string>
   <string name="keycombo_warning_content_description">Modifikator tugmasi haqida batafsil</string>
-  <string name="keycombo_warning_dialog_title">Modifikator tugmasini yangilang</string>
-  <string name="keycombo_warning_dialog_message">TalkBack tezkor tugmalari bexato ishlashi uchun Amal oʻzgartirish tugmasini Alt tugmasiga yangilang\n\nAmal oʻzgartirish tugmasini ishlatishda davom etsangiz, joriy Android versiyasida ayrim tezkor tugmalar boshqa amal bajarishi mumkin.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Tugmalar sxemasi</string>
   <string name="keycombo_menu_select_keymap">Terilmani tanlash</string>
   <string name="keycombo_menu_reset_keymap">Terilmani asliga qaytarish</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Nutq ovozini koʻtarish</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Nutq ovozini pasaytirish</string>
   <string name="keycombo_menu_global_refocus_current_node">Joriy elementni eshittirish</string>
-  <string name="keycombo_menu_category_granularity">Navigatsiya</string>
   <string name="keycombo_menu_granularity_increase">Keyingi navigatsiya sozlamasi</string>
   <string name="keycombo_menu_granularity_decrease">Avvalgi navigatsiya sozlamasi</string>
   <string name="keycombo_menu_category_other">Boshqa amallar</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Bu tugmalar sxemasi uchun tezkor tugmalarni birlamchi qiymatlariga qayta tiklamoqchimisiz? Yodda tuting, bu amalni ortga qaytarib bo‘lmaydi.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Asliga qaytarish</string>
   <string name="template_keycombo_menu_browse_mode_command">Kezish rejimida %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">Biror amalga tugmalar birikmasini tayinlash uchun ularni bosing. Unda Ctrl yoki ALT tugmasi bo‘lishi shart.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Yangi tezkor tugmalar birikmasini o‘rnatish uchun uni %1$s modifikator tugmasi bilan bosing.</string>
   <string name="keycombo_unassigned">Tayinlanmagan</string>
   <string name="save_button_in_keycombo_assign_dialog">Saqlash</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Matn kiritishdagi fokusda kechikish</string>
   <string name="message_pref_touch_explore_latency">Qisqaroq yozish fokusi kechikishi klaviaturani bosgandan keyin TalkBack eʼlonlari tezroq chiqishini anglatadi.\n\nKechikishni tanlang</string>
   <string name="title_pref_touch_focus_timeout">Fokus kechikishi</string>
-  <string name="summary_pref_touch_focus_time">
-Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaroq kechikish TalkBack tezroq ishlayotgandek tuyulishiga olib keladi, ammo ikki va uch marta teginishlarni bajarishni qiyinlashtirishi mumkin.\n\n
-0,3 soniyadan kam kechikishlar faollashtirish uchun ikki marta teginishni ikki barmoq bilan bosishga oʻzgartiradi.
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack| funksiyasida imo-ishoralarni aniqlashni yoqish</string>
   <string name="toast_pref_talkback_gesture_detection">O\'zgarishlar kuchga kirishi uchun TalkBack funksiyasini qayta ishga tushiring.</string>
   <string name="title_pref_auto_image_captioning">Avtomatik tavsiflar</string>
@@ -382,28 +332,16 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="dialog_title_turn_on_image_description">Sozlamalar orqali rasm tavsiflarini yoqing</string>
   <string name="dialog_message_turn_on_image_description">Avtomatik yoki rasmning batafsil tavsiflarini yoqib, keyin qaytadan urinish mumkin</string>
   <string name="title_pref_detailed_image_description">Rasmning batafsil tavsifi</string>
-  <string name="summary_pref_ai_description">TalkBack menyusidan “%1$s”ni tanlaganingizda uzunroq tavsiflarni eshiting</string>
   <string name="dialog_message_on_device_ai_description">Mos ilovalarda rasmga fokus qaratsangiz, qisqacha tavsifini eshitasiz.\n\nRasmlar qurilmangizda qayta ishlanadi va hech qachon Google\'ga yuborilmaydi. \n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz <a href="https://policies.google.com/terms/generative-ai">Google Xizmat shartlariga</a> rozilik bildirasiz.</string>
   <string name="enable_gemini">Yoqish</string>
   <string name="powered_by_gemini">Generativ AI asosida ishlaydi</string>
-  <string name="detailed_image_description_ongoing_hint">Tavsif yuklanmoqda</string>
-  <string name="detailed_image_description_result_prefix">Aniqlandi: rasm. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Avtomatik rasm tavsiflari moduli yuklab olinishi kerak</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Rasmlar qurilmangizda qayta ishlanadi va hech qachon Google\'ga yuborilmaydi.\n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz %1$sga rozilik bildirasiz.</string>
   <string name="dialog_message_gen_ai_tos_link">Google xizmat shartlari</string>
   <string name="message_aifeature_downloading">AI modeli yuklab olinmoqda. Iltimos, kutib turing. Tayyor boʻlsa, sizga xabar beramiz.</string>
   <string name="message_aifeature_downloading_with_progress">Hali ham yuklab olinmoqda. %1$d/%2$dMB yuklab olindi.</string>
-  <string name="message_aifeature_download_complete">AI modeli yuklab olindi. TalkBack endi rasm tavsiflarini yarata oladi.</string>
   <string name="summary_pref_auto_image_captioning">Belgilar, rasmlar va rasmlar ichidagi matnlar uchun</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Rasmlar ichidagi matn uchun</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Rasmlar ichidagi rasm va matn uchun</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Rasmlar ichidagi belgilar va matn uchun</string>
   <string name="summary_pref_module_downloading">Yuklab olinmoqda…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Barcha rasmlar uchun yoniq</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Faqat yozuvsiz rasmlar uchun yoniq</string>
   <string name="summary_pref_auto_image_captioning_disabled">Oʻchiq</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Barcha belgilar uchun yoniq</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Faqat yozuvsiz belgilar uchun yoniq</string>
   <string name="summary_pref_auto_icon_detection_disabled">Oʻchiq</string>
   <string name="title_pref_enable_auto_image_caption">Barcha rasmlar</string>
   <string name="title_pref_enable_auto_image_caption_arg">Barcha rasmlar\n%1$s</string>
@@ -413,7 +351,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="title_pref_enable_auto_icon_detection">Barcha belgilar</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Faqat yozuvsiz belgilar</string>
   <string name="title_pref_disable_auto_icon_detection">Belgilarga tavsif bermang</string>
-  <string name="dialog_message_on_device_ai_model_download">Mos ilovalarda rasmga fokus qaratsangiz, qisqacha tavsifini eshitasiz.\n\nRasmlar qurilmangizda qayta ishlanadi va hech qachon Google\'ga yuborilmaydi.\n\nGenerativ AI hozir tajriba bosqichida, shu sababli u xato qilishi mumkin. Davom etish orqali siz %1$sga rozilik bildirasiz.</string>
   <string name="title_pref_enable_gemini_support">Yoniq</string>
   <string name="title_pref_disable_gemini_support">Oʻchiq</string>
   <string name="summary_pref_gemini_support_enabled">Gemini yoniq</string>
@@ -457,7 +394,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="shortcut_print_node_tree">Tugunli daraxtni chop qilish</string>
   <string name="shortcut_print_performance_stats">Unumdorlik bo‘yicha statistikani chop etish</string>
   <string name="shortcut_first_in_screen">Ekrandagi birinchi elementga fokus qaratish</string>
-  <string name="shortcut_summary">Ekrandagilarni xulosalash</string>
   <string name="shortcut_voice_commands">Ovozli buyruqni boshlash</string>
   <string name="shortcut_last_in_screen">Ekrandagi oxirgi elementga fokus qaratish</string>
   <string name="shortcut_enable_dimming">Ekranni berkitish</string>
@@ -561,7 +497,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="menu_category_web_navigation">Veb-navigatsiya</string>
   <string name="menu_category_basic_navigation">Asosiy navigatsiya</string>
   <string name="summary_custom_action">Joriy element uchun amallar qachon mavjudligini, jumladan, havolalar, nusxalash, joylash, tanlash va boshqalarni koʻrsatadi</string>
-  <string name="summary_context_menu_links">Havolalarni fokusdagi obyekt ichida ochish</string>
   <string name="summary_viewpager_controls">Avvalgi yoki keyingi sahifaga oʻtkazish. Bir nechta sahifali kontent oʻqilayotganda chiqadi.</string>
   <string name="summary_labeling_controls">Yorliqsiz element tanlanganda chiqadi</string>
   <string name="summary_granularity">Belgi, soʻz, qator va hokazolarni oʻqish</string>
@@ -631,12 +566,9 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="summary_screen_overview">Ekranni amal tugmalari bilan xulosalang</string>
   <string name="summary_screen_overview_no_actions">Ekrandagi kontent xulosasini tinglang</string>
   <string name="summary_image_caption">Tanlangan rasm ichidagi matn va belgilarni oʻqib eshittirish</string>
-  <string name="summary_summarize_view">Tavsifni ovoz chiqarib oʻqish</string>
   <string name="summary_typo_suggestions">Kursor xato ustida turganda chiqadi</string>
   <string name="summary_cache_keyboard_keys">TalkBack yozganingizda kechikishni kamaytirish uchun eʼlonlarni oldindan yuklaydi</string>
   <string name="summary_cache_keyboard_keys_disabled">Bu funksiya uchun Google Nutq sintezatoridan foydalaning</string>
-  <string name="value_direction_down">pastga</string>
-  <string name="value_direction_down_and_right">pastga, keyin o‘ngga</string>
   <string name="title_pref_shortcut_up">Tepaga surish</string>
   <string name="title_pref_shortcut_up_xr">Ikkinchi qoʻlni oʻzingizga qaratib, chimdish va tepaga surish</string>
   <string name="title_pref_shortcut_down">Pastga surish</string>
@@ -704,10 +636,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="title_pref_shortcut_fingerprint_left">Barmoq izi skanerida chapga surish</string>
   <string name="title_pref_shortcut_fingerprint_right">Barmoq izi skanerida o‘ngga surish</string>
   <string name="title_pref_version_code">Versiya kodi</string>
-  <string formatted="false" name="value_volume_100_percent">Nutq tovushi balandligi darajasida</string>
-  <string formatted="false" name="value_volume_75_percent">Nutq tovushi balandligining 75% qismicha</string>
-  <string formatted="false" name="value_volume_50_percent">Nutq tovushi balandligining 50% qismicha</string>
-  <string formatted="false" name="value_volume_25_percent">Nutq tovushi balandligining 25% qismicha</string>
   <string name="value_type_confirmation_double_tap">Birorta tugmani tanlash uchun barmoq bilan bosib turing, keyin ikki marta bosing</string>
   <string name="value_type_confirmation_lift_to_type">Harf tugmasini tanlash uchun barmoq bilan bosib turing va qoʻyib yuboring Boshqa tugmalar uchun ikki marta bosing.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Birorta tugmani tanlash uchun barmoq bilan bosib turing va qoʻyib yuboring</string>
@@ -720,12 +648,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="value_touch_explore_time_out_200ms">0.2 soniya</string>
   <string name="value_touch_explore_time_out_250ms">0.25 soniya</string>
   <string name="value_touch_explore_time_out_300ms">0.3 soniya (birlamchi)</string>
-  <string name="value_shake_to_read_disabled">Oʻchiq</string>
-  <string name="value_shake_to_read_threshold_very_light">Juda yengil</string>
-  <string name="value_shake_to_read_threshold_light">Yengil</string>
-  <string name="value_shake_to_read_threshold_medium">O‘rtacha</string>
-  <string name="value_shake_to_read_threshold_hard">Kuchli</string>
-  <string name="value_shake_to_read_threshold_very_hard">Juda kuchli</string>
   <string name="title_pref_on_screen_keyboard">Ekrandagi klaviatura</string>
   <string name="title_pref_physical_keyboard">Tashqi klaviatura</string>
   <string name="value_keyboard_echo_none">Hech qanday</string>
@@ -738,8 +660,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="pref_time_feedback_format_entries_default">Qurilma vaqt formatidan foydalanish</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 soatlik</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 soatlik</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack ishoralari o‘zgardi</string>
-  <string name="notification_message_talkback_gestures_changed">O‘zgarishlarni ko‘rish uchun bosing</string>
   <string name="always_show_warning_checkbox">Ushbu ogohlantirish har doim ko‘rsatilsin</string>
   <string name="label_dialog_title_add">Yorliq bilan nomlash</string>
   <string name="label_dialog_title_edit">Yorliqni tahrirlash</string>
@@ -760,16 +680,8 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="no_apps_to_export_labels">Yorliqlarni eksport qilish uchun ilova topilmadi.</string>
   <string name="label_choose_app_to_import">Yorliqlarni import qilish uchun ilovani tanlang:</string>
   <string name="label_choose_app_to_export">Yorliqlarni eksport qilish uchun ilovani tanlang:</string>
-  <string name="talkback_gesture_change_details">TalkBack’ning ushbu versiyasida standart imo-ishoralarga o‘zgartirishlar kiritilgan. Ushbu imo-ishoralar bajaradigan harakatlarni sozlamalar orqali tayinlash mumkin. Agar “Teginib o‘rganish” funksiyasi yoqilgan bo‘lsa, quyidagi imo-ishoralardan foydalanishingiz mumkin.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Ekran xiralashtirilsinmi?</string>
   <string name="dialog_message_dim_screen">Yanada ishonchli maxfiylikni taʼminlash uchun ekran oʻchiriladi. Ammo ekranning yoqilishi, TalkBack va boshqa qulayliklar menyusi haqidagi xabarlar chiqishda davom etadi.</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBackning ushbu versiyasida standart imo-ishoralarga o‘zgartirishlar kiritilgan.\n\nBarmoqni avval tepaga, keyin pastga surish ekrandagi birinchi elementga o‘tish imkonini beradi; avval pastga, keyin yuqoriga surish esa – oxirgi elementga.\n\nEndi o‘qishning teranlik darajasini o‘zgartirish uchun avval elementni tanlab, keyin talkback kontekst menyusidan teranlik darajasini tanlash mumkin.\n\nImo-ishoralardan foydalanganda bajariladigan harakatlarni TalkBack sozlamalaridan o‘zgartirish mumkin.</string>
-  <string name="default_action_changed_details">Media fayllarni ikki marta teginib, ikki barmoq bilan bosib turish bilan pauza va ijro qilishingiz mumkin.\n\nBoshqa ishoralar ham oʻzgardi.</string>
-  <string name="talkback_built_in_gesture_open_url">Batafsil axborot olish uchun telefonda ochish</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack’ning ushbu versiyasida standart imo-ishoralarga o‘zgartirishlar kiritilgan.\n\nBarmoqni yuqoriga surish ishorasi bilan endi avvalgi navigatsiya sozlamasiga o‘tiladi va barmoqni pastga surish bilan esa keyingi navigatsiya sozlamasiga o‘tiladi.</string>
-  <string name="side_tap_shortcuts_removed_details">Nosozliklar yuz bergani uchun bu sozlamalar TalkBack funksiyasidan olib tashlangan:\n• Qurilma chetlariga bosish\n• Pauzasiz oʻqishni boshlash uchun silkitish</string>
-  <string name="button_accept_changed_gesture_mappings">Imo-ishoralarni qabul qilish</string>
-  <string name="button_customize_gesture_mappings">Ishoralarni sozlash</string>
   <string name="button_disable_all_events">Hammasini o‘chirish</string>
   <string name="button_enable_all_events">Hammasini yoqish</string>
   <string name="dialog_title_disable_exploration">“Teginib o‘rganish” funksiyasi o‘chirib qo‘yilsinmi?</string>
@@ -893,8 +805,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="screen_search_hint_type_search_tables">Jadvallarni qidirish</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack bildirishnomalar kanali</string>
-  <string name="pref_selector_summary">Sozlama tanlash uchun %1$s. Keyin sozlamani moslash uchun %2$s.</string>
-  <string name="speech_rate_change">Nutq tezligi %1$d%%</string>
   <string name="speech_pitch_maximum">Eng yuqori nutq ohangi</string>
   <string name="speech_pitch_minimum">Eng past nutq ohangi</string>
   <string name="reset_speech_rate_and_pitch">Nutq tezligi va oraliqni asliga qaytarish</string>
@@ -904,10 +814,7 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="vibration_feedback_state">Tebranishli signal %1$s</string>
   <string name="text_formatting_state">Oʻqiladigan matn formati %1$s</string>
   <string name="typing_echo_change">%1$s aytilishi jismoniy klaviatura</string>
-  <string name="reading_control_toggle_prefix_xr">Oʻqish boshqaruvi elementlarini almashtirish uchun ikkinchi qoʻlni oʻzingizga qaratib, bosib turing</string>
   <string name="gesture_1_or_2">%1$s yoki %2$s</string>
-  <string name="select_setting_hint">Boshqa sozlamani tanlash uchun %1$s</string>
-  <string name="adjust_setting_hint">Sozlamani moslash uchun %1$s</string>
   <string name="adjust_granularity_hint">%2$s bilan oʻqish uchun %1$s</string>
   <string name="adjust_typo_hint">Takliflar uchun %1$s.</string>
   <string name="use_action_hint">Amalni bajarish uchun ikki marta bosing</string>
@@ -947,7 +854,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="setting_selector_heading">Oʻqish boshqaruvi</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Video yoki musiqa ilovasida mediani pauza qilish yoki ijro etish uchun ikki barmoq bilan ikki marta bosing. Hoziroq sinang.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Boshqa ilovalar bu ishoradan telefon chaqiruvlariga javob berish yoki chaqiruvni tugatish kabi ishlar uchun foydalanishi mumkin. Bu ishora barcha ilovalarda ishlamasligi mumkin.</string>
-  <string name="onboarding_link_to_talkback_tutorials">TalkBack — barcha darsliklar</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media pauza qilingan yoki ijro etilmoqda. Odatda, bunda joriy video yoki musiqa pauza qilinadi yoki ijro etiladi. Davom etish uchun oʻngga suring.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack gapirishini vaqtinchalik toʻxtatish uchun ikki barmoq bilan bosing.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack nutqi toʻxtatildi. Odatda, bunda TalkBack aytgan joriy ibora toʻxtatiladi. Davom etish uchun oʻngga suring.</string>
@@ -961,38 +867,18 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Tanlash rejimi tugmasi. Odatda, kiritish maydonchasida ekaningizda matn tanlash rejimi ishga tushadi yoki yakunlanadi. Davom etish uchun oʻngga suring.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Oʻqish boshqaruvidan foydalanish uchun 3 ta barmoq bilan chapga yoki oʻngga suring. 3 ta barmoq bilan tepaga yoki pastga surish ham mumkin.</string>
   <string name="new_shortcut_gesture_note">Eslatma: Ayrim ishoralarni moslashtirgansiz, shuning uchun bu axborot aniq boʻlmasligi mumkin. Ishoralarni koʻrish uchun TalkBack sozlamalariga kiring.</string>
-  <string name="welcome_to_android11">Android 11 tizimida TalkBack xizmatiga xush kelibsiz</string>
   <string name="welcome_to_android11_text">TalkBack xizmatidan tezkor va osonroq foydalanish uchun yangi ishoralar kiritildi.\n\nBu ekranda yangi ishoralarni sinashingiz mumkin. Bu axborotni istalgan vaqt TalkBack sozlamalari orqali tekshirish mumkin.</string>
   <string name="new_gesture_notification_title">TalkBack xizmatidagi yangi ishoralar</string>
   <string name="new_gesture_notification_content">Yangi ishoralar bilan TalkBackni tezroq ishlatish haqida batafsil axborot olish uchun bosing.</string>
   <string name="dump_node_tree_description">Tugunlar daraxti jurnalga chop etildi.</string>
   <string name="report_gesture_description">Quyida oxirgi bajarilgan ishoralar keltirilgan, qaysi biri xato va yaxshi ishlamagani haqida xabar qiling.</string>
-  <string name="update_welcome_text_content">Endi Bluetooth qurilmalarga ulanish usuli sanalgan HID orqali brayl displeylariga ulanish mumkin. Ishlab chiqaruvchingizda eng oxirgi mikrodastur drayverlari borligini tekshiring, keyin brayl displeyingizda Bluetooth yoqing. TalkBack sozlamalari &gt; Brayl displeyini oching va “Brayl displeyini ishlatish” funksiyasini yoqing. Qurilmalar roʻyxatida qurilmangizni toping va uni ulang.</string>
-  <string name="update_welcome_text_content_tts">Endi Bluetooth qurilmalarga ulanish usuli sanalgan HID orqali brayl displeylariga ulanish mumkin. Ishlab chiqaruvchingizda eng oxirgi mikrodastur drayverlari borligini tekshiring, keyin brayl displeyingizda Bluetooth yoqing. TalkBack sozlamalarini, keyin Brayl displeyini oching va “Brayl displeyini ishlatish” funksiyasini yoqing. Qurilmalar roʻyxatida qurilmangizni toping va uni ulang.</string>
-  <string name="update_welcome_text_content_with_link">TalkBack yordamida brayl displeyini qanday ishlatish haqida bilib oling.</string>
   <string name="update_welcome_talkback_16.1">Bu TalkBack yangilanishida qoʻshimcha tillarda Ekranni tavsiflash, shuningdek, TalkBack funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq TalkBack sozlamalari &gt; TalkBack yangi funksiyalari ruknida tekshirish mumkin.</string>
   <string name="update_welcome_talkback_16.1_tts">Bu TalkBack yangilanishida qoʻshimcha tillarda Ekranni tavsiflash, shuningdek, TalkBack funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq TalkBack sozlamalari &gt; TalkBack yangi funksiyalari ruknida tekshirish mumkin.</string>
-  <string name="describe_screen_and_qna_title">Ekranni tavsiflash va Ask Gemini uchun yangi tillar</string>
-  <string name="describe_screen_and_qna_content">Ekranni tavsiflash va Ask Gemini endi qoʻshimcha tillarda mavjud. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Batafsil – Yordam markazida&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Ovoz bilan yozish uchun yorliq</string>
   <string name="shortcut_for_dictation_content">Gboard ishlatishda ovozli buyruq yozishni boshlash yoki toʻxtatish uchun ikki barmoq bilan ikki marta bosishingiz mumkin.
 &lt;br&gt;
 &lt;br&gt;&lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard from Google Play&lt;/a&gt; ilovasining eng oxirgi versiyasi oʻrnatilganini tekshiring.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Gboard ekranda payti ovoz bilan yozishni boshlash uchun ikki barmoq bilan ikki marta tegining, keyin toʻxtatish uchun ham ikki barmoq bilan ikki marta tegining.</string>
-  <string name="keyboard_title">Klaviatura</string>
-  <string name="keyboard_content">TalkBack endi oʻzining klaviaturasi uchun “Kengaytirilgan terilmasi” bor, unda turli xil yangi buyruqlar va tezkor tugmalar mavjud. Ushbu takomillashtirish, jumladan veb-saytda yanada samaraliroq harakatlanish uchun “kezish rejimi”, jismoniy klaviaturalardan foydalanadigan TalkBack foydalanuvchilari uchun navigatsiya va oʻzaro taʼsirni soddalashtiradi. TalkBack sozlamalari &gt; Kengaytirilgan sozlamalar &gt; Tezkor tugmalar orqali “Kengaytirilgan terilma” sozlamasiga almashtirishingiz mumkin.</string>
-  <string name="keyboard_content_tts">TalkBack endi oʻzining klaviaturasi uchun “Kengaytirilgan terilmasi” bor, unda turli xil yangi buyruqlar va tezkor tugmalar mavjud. Ushbu takomillashtirish, jumladan veb-saytda yanada samaraliroq harakatlanish uchun “kezish rejimi”, jismoniy klaviaturalardan foydalanadigan TalkBack foydalanuvchilari uchun navigatsiya va oʻzaro taʼsirni soddalashtiradi. TalkBack sozlamalari keyin Kengaytirilgan sozlamalar keyin Tezkor tugmalar orqali “Kengaytirilgan terilma” sozlamasiga almashtirishingiz mumkin.</string>
-  <string name="reduce_delay_title">Kechikishni kamaytirish</string>
-  <string name="reduce_delay_content">Endi sensorli boshqaruv va matn kiritish paytida TalkBack eʼlonlarining kechikishini kamaytirishingiz mumkin. Buning uchun TalkBack sozlamalari &gt; Kengaytirilgan sozlamalar &gt; Kechikishni kamaytirish bandini tanlang.</string>
-  <string name="reduce_delay_content_tts">Endi sensorli boshqaruv va matn kiritish paytida TalkBack eʼlonlarining kechikishini kamaytirishingiz mumkin. Buning uchun TalkBack sozlamalari keyin Kengaytirilgan sozlamalar keyin Kechikishni kamaytirish bandini tanlang.</string>
-  <string name="customize_braille_keyboard_improvements_title">Brayl klaviaturasi ishoralarini sozlash</string>
-  <string name="customize_braille_keyboard_improvements_content">Endi ekrandagi virtual Brayl klaviaturasi uchun ishoralarni sozlash mumkin. Sozlash uchun TalkBack sozlamalari &gt; Brayl klaviaturasi &gt; Ishoralar rukniga kiring.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Endi ekrandagi virtual Brayl klaviaturasi uchun ishoralarni sozlash mumkin. Sozlash uchun TalkBack sozlamalari keyin Brayl klaviaturasi keyin Ishoralar rukniga kiring.</string>
-  <string name="learn_more_about_braille_keyboard">Brayl klaviaturasi haqida batafsil</string>
-  <string name="other_changes_title">Boshqa oʻzgarishlar</string>
-  <string name="other_changes_content">Ekrandagi xabar endi TalkBack tasodifan yoqilganida uni tezda faolsizlantirishga yordam beradi. Buni TalkBack sozlamalari &gt; TalkBack funksiyasini faolsizlantirish uchun koʻrsatmalarni chiqarish ruknida faolsizlantirishingiz mumkin.</string>
-  <string name="other_changes_content_tts">Ekrandagi xabar endi TalkBack tasodifan yoqilganida uni tezda faolsizlantirishga yordam beradi. Buni TalkBack sozlamalari keyin TalkBack funksiyasini faolsizlantirish uchun koʻrsatmalarni chiqarish ruknida faolsizlantirishingiz mumkin.</string>
-  <string name="keymap_changes_content">Klassik terilma koʻplab yorliqlarni oʻz ichiga olgan standart terilmaga almashtirildi.</string>
   <string name="announcing_text_formatting_title">Matn formati haqida xabar</string>
   <string name="announcing_text_formatting_header">TalkBack endi qalin, qiya va matn rangi kabi matn formatidagi oʻzgarishlar haqida xabar qilishi mumkin. Boshlash uchun:</string>
   <string name="announcing_text_formatting_option1">Formatlangan elementga fokusni qarating, TalkBack menyusini oching va “Matn formatini tavsiflash” bandini tanlang yoki</string>
@@ -1083,7 +969,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="additional_tips_link_subtext">Qanday telefon qilish va xabar yuborish haqida batafsil</string>
   <string name="practice_gestures_link_text">Ishoralardan foydalanish amaliyoti</string>
   <string name="practice_gestures_link_subtext">Turli ishoralarni sinang va qaysi amalni bajarishini oʻrganing</string>
-  <string name="help_and_feedback_link_subtext">TalkBack bilan batafsil tanishing va fikr-mulohaza yuboring</string>
   <string name="choose_tutorial_title">TalkBackdan qanday foydalanishni tanlang</string>
   <string name="touch_tutorial_button">Teginish qoʻllanmasi</string>
   <string name="keyboard_tutorial_button">Klaviatura qoʻllanmasi</string>
@@ -1229,8 +1114,6 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="wear_training_typing_text5">Uni quyida sinang.</string>
   <string name="wear_training_typing_practice_button_content_description">Klaviatura bilan yozish</string>
   <string name="wear_training_end_tutorial_title">TalkBack ishlatish uchun tayyorsiz</string>
-  <string name="talkback_updated_notification_title">TalkBack yangilandi</string>
-  <string name="talkback_updated_notification_content">Batafsil axborot olish uchun bosing</string>
   <string name="wear_new_feature_page_title">Yangilangan TalkBack xizmatiga xush kelibsiz</string>
   <string name="wear_new_feature_page_content">Ayrim xatolarni tuzatdik va fokus harakatlanishini oʻzgartirdik.</string>
   <string name="wear_new_feature_page_button_content_description">Tugatish</string>
@@ -1249,10 +1132,7 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="title_pref_blue">Koʻk</string>
   <string name="title_pref_grey">Kulrang</string>
   <string name="survey_setting_title">Fikr-mulohaza bildiring</string>
-  <string name="survey_closed">Soʻrovnoma yopildi</string>
   <string name="title_summarize_view">Ekran sarhisobi</string>
-  <string name="title_increase_touch_focus_latency">Fokus kechikishini oshirish</string>
-  <string name="title_decrease_touch_focus_latency">Fokus kechikishini kamaytirish</string>
   <string name="detected_result">Aniqlandi: %1$s</string>
   <string name="title_image_caption">Rasmga tavsif berish</string>
   <string name="image_caption_with_gemini_prefix">Bu rasmni tavsiflash. Javobda hech qanday ishoralardan foydalanmang.</string>
@@ -1279,33 +1159,15 @@ Fokus koʻchganidan keyin TalkBack qanchalik tez gapirishini boshqaradi. Qisqaro
   <string name="image_qna_question_prefix">FOYDALANUVCHI: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [FOYDALANUVCHI VA MODEL amallarini navbat bilan davom ettiring] ...</string>
-  <string name="screen_overview_with_screenshot">Sizning vazifangiz telefonini koʻra olmaydigan odamga telefon ekranida nima borligini tushunishga yordam berishdir. Ushbu skrinshotni bir necha gap bilan tavsiflang.
-
-Koʻrsatmalar
-Javobingizni “Ekranda koʻrsatilgan” soʻzlari bilan boshlang
-Javobning boshlanishi ekrandagi eng muhim va koʻzga tashlanadigan kontentni tasvirlashi lozim. Quyida tavsiflash uchun eng muhim, ahamiyatli kontent nima boʻlishi mumkinligiga misollar keltirilgan.
-* Chat ilovasida: eng oxirgi xabarning yuboruvchisi va matni
-* Ijtimoiy tarmoq ilovasida: birinchi post, jumladan uni kim joylagani, matn va rasm tavsifi
-* Yangiliklar ilovasida: maqola nomi va asosiy rasm tavsifi
-* Shopping ilovasida: koʻrsatilgan mahsulot tavsifi va narxi
-* Taqvim ilovasida: keyingi tadbir va undan keyingi boshqa tadbirlar soni
-* Xabarlar roʻyxatida: birinchi xabarning nomi va qisqa mazmuni, keyin esa roʻyxatdagi keyingi bir nechta xabarlarning nomi va ochilmagan xabarlar soni
-
-Shundan keyin, javobda navigatsiya panellari va koʻringan tugmalarning joylashuvi hamda maqsadini tavsiflashi mumkin.
-Yuqoridagi holat panelidagi kontentni (masalan, vaqt, tarmoq holati, batareya quvvati) tasvirlamang.
-Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="title_gemini_opt_in_dialog">Rasmning batafsil tavsiflari chiqsinmi?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Rasm tavsiflari chiqsinmi?</string>
   <string name="title_gemini_result_dialog">Aniqlandi: rasm</string>
   <string name="title_gemini_result_bottom_sheet">Rasm tavsifi</string>
   <string name="title_gemini_screen_overview_result_dialog">Ekran tavsifi</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Xulosa</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Amallar</string>
   <string name="positive_button_gemini_opt_in_dialog">Yoqish</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Roziman</string>
   <string name="negative_button_gemini_opt_in_dialog">Kerak emas</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Sozlamalarni ochish</string>
-  <string name="positive_button_gemini_download_dialog">Yuklab olish va yoqish</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Matn: “%1$s”.</string>
   <string name="detected_icon_label">Belgi: “%1$s”.</string>
@@ -1319,8 +1181,6 @@ Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="screen_overview_no_result">Ekran xulosalanmadi</string>
   <string name="image_caption_no_result">Rasm tavsiflanmadi</string>
   <string name="image_caption_with_hide_screen">Rasm tavsiflari ekran berkitilganda ishlamaydi. Ekranni chiqaring va qaytadan urining.</string>
-  <string name="feedback_button_state_set">tanlangan</string>
-  <string name="feedback_button_state_unset">tanlanmagan</string>
   <string name="action_text_like_button">Yaxshi javob sifatida belgilash</string>
   <string name="action_text_dislike_button">Yomon javob sifatida belgilash</string>
   <string name="action_text_clear_like_button">Yaxshi javobni tozalash</string>
@@ -1349,18 +1209,13 @@ Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="downloading_all_image_captioning_hint">Avtomatik rasm va belgi tavsiflari yuklab olinmoqda</string>
   <string name="download_all_image_captioning_successful_hint">Avtomatik rasm va belgi tavsiflari yuklab olindi</string>
   <string name="download_all_image_captioning_failed_hint">Yuklab olinmaydi. Keyinroq qayta urining.</string>
-  <string name="download_complete_notification_title">Yuklab olish tugallandi</string>
-  <string name="download_complete_notification_content">Endi TalkBack rasm va belgilarni avtomatik tavsiflaydi</string>
-  <string name="download_complete_notification_action">Sozlamalar</string>
   <string name="download_storage_error_hint">Xotirada joy qolmadi. Yuklab olish uchun Sozlamalar &gt; Xotira ruknida %1$d MB joy oching.</string>
   <string name="download_network_error_hint">Yuklab olinmaydi. Internet aloqasini tekshiring va qayta urining.</string>
   <string name="switch_icon_detection_dialog_title">Avtomatik belgi tavsiflari</string>
   <string name="switch_icon_detection_dialog_message">Belgiga oʻtilganda tavsiflarni avtomatik tinglash</string>
   <string name="switch_image_description_dialog_message">Rasmga fokus qaratilganda tavsiflarni avtomatik tinglash. Ayrim ilovalarda ishlamasligi mumkin.</string>
-  <string name="switch_text_recognition_dialog_title">Rasmlardagi matnni avtomatik tavsiflash</string>
   <string name="switch_text_recognition_dialog_message">Matni bor rasmga fokus qaratganingizda tavsiflarni tinglang</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Yuklab olindi</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Siz hali ham TalkBack menyusidan tanlangan rasm uchun tavsiflarni olishingiz mumkin</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Yuklab olishni oʻchirish</string>
   <string name="delete_icon_detection_dialog_title">Avtomatik belgi tavsiflari oʻchirilsinmi?</string>
@@ -1376,11 +1231,6 @@ Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="gemini_enable_dialog_title">TalkBackda Gemini ishlatish</string>
   <string name="gemini_disable_dialog_message">Gemini bilan ekran kontentini tekshirish</string>
   <string name="disable_gemini_dialog_subtext">Gemini bilan ekran kontentini tekshirish funksiyasini yoqish</string>
-  <string name="ai_services_update_dialog_title">Rasmlarni tavsiflash uchun %1$s ilovasini yangilang</string>
-  <string name="ai_services_update_dialog_message">Rasm tavsiflarini tinglash uchun Google Play orqali %1$s ilovasining oxirgi versiyasini oling.\n\nYuklab olinganidan keyin TalkBack sozlamalariga qaytib, avtomatik rasm tavsiflarini qayta yoqing.</string>
-  <string name="ai_services_update_dialog_button_text">Google Playni ochish</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Nimadir xato ketdi. Qayta urining.</string>
   <string name="gemini_block_message">Bu rasm qayta ishlanmadi</string>
   <string name="gemini_network_error">Internetga ulanmagan. Wi-Fi yoki mobil tarmoqni tekshirib, qayta urining.</string>
@@ -1396,13 +1246,8 @@ Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="image_qna_typing_button_text">Gemini uchun savol yozish</string>
   <string name="image_qna_send_button_text">Soʻrash</string>
   <string name="image_qna_speak_question_description">Savol berish</string>
-  <string name="overviews_summary_intro">Bu ilova ekranidan xulosa: %1$s</string>
   <string name="overviews_node_not_found">Kechirasiz, ekraning bu qismini endi topa olmayman.</string>
-  <string name="overviews_images_in_app">Asosiy rasmlar topildi</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Ilovadagi amallar</string>
-  <string name="overviews_actions_in_app_description">Bu ilova ekranidan bajarishingiz mumkin boʻlgan asosiy amallar:</string>
-  <string name="overviews_parent_type">Ilovadagi amallar</string>
   <string name="text_replaced_feedback">Matn almashtirildi</string>
   <string name="switch_gesture_set">Ishoralar toʻplamini almashtirish</string>
   <string name="switch_gesture_set_to">Ishoralar toʻplami %1$d bilan almashtirish</string>
@@ -1453,5 +1298,4 @@ Javobingizda hech qanday formatlash ishoralaridan foydalanmang.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Yopish</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Ekran oʻchiqligida bildirishnomalarni eshitish uchun TalkBack tafsilotlari sozlamalarida “Ekran oʻchiqligida bildirishnomalarni eshittirish” bandini yoqing</string>
 </resources>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Ko je funkcija TalkBack vklopljena, omogoča glasovni odziv naprave, da jo lahko uporabljate, ne da bi vam bilo treba gledati v zaslon. Funkcija TalkBack je namenjena za situacije ali osebe, pri katerih prihaja do težav pri razločevanju vsebine zaslona.&lt;br&gt;&lt;br&gt;&lt;b&gt;Kako uporabljate funkcijo TalkBack&lt;/b&gt;&lt;br&gt;• S prstom povlecite v desno ali levo za pomikanje med elementi&lt;br&gt;• Dvakrat se dotaknite za aktiviranje elementa&lt;br&gt;• Vlecite z dvema prstoma za pomikanje po vsebini&lt;br&gt;&lt;b&gt;Uporaba funkcije TalkBack&lt;/b&gt;&lt;br&gt;1. V nastavitvah se dotaknite &lt;b&gt;Uporabi TalkBack&lt;/b&gt;. Prikazala se bo obroba. Dvakrat se je dotaknite.&lt;br&gt;2. V potrditvenem sporočilu se dotaknite &lt;b&gt;Ustavi&lt;/b&gt;. Prikazala se bo obroba. Dvakrat se je dotaknite.</string>
   <string name="talkback_service_summary">Uporaba bralnika zaslona za poslušanje izgovorjenih elementov na zaslonu</string>
   <string name="talkback_preferences_title">Nastavitve funkcije TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Nastavitve</string>
   <string name="tts_preferences_title">Pretvorba besedila v govor</string>
   <string name="language_options">Jeziki</string>
   <string name="spoken_language">Govorjeni jezik</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Iskanje preklicano.</string>
   <string name="notification_type_status_started">Začetek</string>
   <string name="notification_type_status_stopped">Ustavitev</string>
-  <string name="notification_type_status_connected">povezano</string>
-  <string name="notification_battery_level_unknown">neznano</string>
   <string name="notification_battery_saver_mode">Varčevanje z energijo baterije je vklopljeno</string>
   <string name="template_no_text_selected">NI izbranega besedila</string>
   <string name="template_charging">Polnjenje – %1$s. Raven napolnjenosti baterije je %2$s odstotkov.</string>
   <string name="template_charging_lite">Stanje polnjenja: %1$s</string>
-  <string name="template_battery_state">Napajanje: %1$s, odstotek napolnjenosti: %2$s, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Zvonjenje z vibriranjem.</string>
   <string name="value_ringer_silent">Zvonjenje je izklopljeno.</string>
   <string name="value_screen_on">Zaslon je vklopljen.</string>
   <string name="value_screen_off">Zaslon je izklopljen.</string>
   <string name="value_device_unlocked">Naprava je odklenjena.</string>
-  <string name="title_pref_category_audio">Zvok</string>
   <string name="title_pref_speech_volume">Glasnost govora</string>
-  <string name="title_pref_speech_rate">Hitrost govora</string>
-  <string name="summary_pref_speech_rate">Hitrost govorjenega besedila</string>
   <string name="title_pref_verbose_scroll_announcement">Izgovarjanje števila elementov seznama</string>
   <string name="summary_pref_verbose_scroll_announcement">Izgovarjanje števila pri vseh načinih pomikanja</string>
   <string name="title_pref_cover_proximity_sensor">Ustavitev govora s pokrivanjem tipala bližine</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Izgovori uro</string>
   <string name="pref_speak_time_summary">Ko vklopite zaslon</string>
   <string name="summary_speak_container_element_positions">Vključuje informacije o vsebnikih, kot so seznami, mreže in drugo, pri premiku vanje in iz njih</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Kontrolniku za branje je dodana zakasnitev fokusa</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Kadar koli lahko povlečete s tremi prsti, da uporabite kontrolnik za branje in spremenite zakasnitev fokusa</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Želite preklopiti na dvig za tipkanje?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Če je zakasnitev fokusa za tipkanje nastavljena na manj kot 0,3 sekunde, bo dvakratni dotik za tipkanje zelo težko izvesti. Izberite »Preklopi«, če želite samodejno preklopiti na dvig za tipkanje.\n\nČe želite uporabljati dvig za tipkanje, pridržite prst, da izberete poljubno tipko, in nato dvignite prst za tipkanje.\n\nTo lahko prilagodite v nastavitvah funkcije TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">V kontrolnik za branje je dodana zakasnitev fokusa za tipkanje</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Če imate med tipkanjem težave z dvakratnim dotikom, povlecite s tremi prsti, da uporabite kontrolnik za branje in preklopite na daljšo zakasnitev fokusa za tipkanje</string>
-  <string name="gestures_announce_typing_focus_wont_change">Zakasnitev fokusa za tipkanje ne deluje brez funkcije Dvig za tipkanje.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Razumem</string>
   <string name="reset_letency_reduction_settings_dialog_title">Želite ponastaviti nastavitve zakasnitve?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">S tem boste vse nastavitve zakasnitve ponastavili na privzete</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Ponastavi</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Nastavitve zmanjšanja zakasnitve so bile ponastavljene.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Preklopi</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ne preklopi</string>
   <string name="Reset_gesture_settings_dialog_title">Želite ponastaviti poteze?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Želite ponastaviti poteze trenutnega nabora?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">S tem boste vse poteze ponastavili na privzeta dejanja.\n\nIzgubili boste vse opravljene spremembe.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Izgovarjanje vseh obvestil o napredku</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Vključuje obvestila med prenašanjem, sledenjem navodilom za vožnjo in drugim. Ko je to izklopljeno, boste še vedno prejemali obvestila, vendar manj pogosto.</string>
   <string name="title_pref_explore_by_touch">Raziskovanje z dotikom</string>
-  <string name="title_pref_category_visual">Vizualno</string>
   <string name="title_pref_category_controls">Kontrolniki</string>
-  <string name="title_pref_category_braille">Braillova pisava</string>
-  <string name="title_pref_category_general">Splošno</string>
-  <string name="title_pref_category_advanced">Dodatno</string>
-  <string name="title_pref_category_others">Drugo</string>
-  <string name="title_pref_category_tutorial_and_help">Vadnica in pomoč</string>
   <string name="title_pref_category_reduce_latency_summary">S temi nastavitvami lahko skrajšate zakasnitev pred obvestili funkcije TalkBack</string>
   <string name="reset_latency_settings_title">Ponastavitev vseh nastavitev zakasnitve</string>
   <string name="title_pref_single_tap">Enkratni dotik za aktiviranje</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Spreminjanje indikatorja fokusa</string>
   <string name="title_pref_category_manage_gestures">Poteze</string>
   <string name="title_pref_manage_labels">Oznake po meri</string>
-  <string name="title_pref_manage_customize_menus">Urejanje menijev</string>
   <string name="title_pref_category_context_menu">Prilagajanje menija funkcije TalkBack</string>
   <string name="title_pref_category_selector_menu">Prilagajanje kontrolnikov za branje</string>
   <string name="title_pref_category_navigation_menu">Urejanje možnosti pomikanja</string>
-  <string name="pref_category_context_menu_summary">Meni funkcije Talkback odprete tako, da se s tremi prsti dotaknete zaslona. Prav tako lahko povlečete navzgor ali navzdol in nato v desno.</string>
-  <string name="pref_category_context_menu_summary_xr">Če želite uporabiti meni funkcije TalkBack, obrnite dlan druge roke navznoter in primaknite prsta.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Meni funkcije TalkBack odprete tako, da povlečete navzdol in nato v desno.</string>
-  <string name="pref_category_selector_menu_summary">Meni s kontrolniki za branje odprete tako, da s tremi prsti povlečete v levo ali desno. Prav tako lahko s tremi prsti povlečete navzgor ali navzdol.</string>
-  <string name="pref_category_selector_menu_summary_xr">Če se želite krožno pomikati med kontrolniki za branje, obrnite dlan druge roke navznoter, prsta držite primaknjena, premaknite v desno ali levo in spustite.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Meni s kontrolniki za branje odprete tako, da povlečete navzgor in nato navzdol.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Bližnjične tipke</string>
   <string name="title_pref_export_custom_labels">Izvoz oznak po meri</string>
-  <string name="title_pref_play_store">Odpri aplikacijo TalkBack v Trgovini Play</string>
-  <string name="summary_pref_play_store">Trenutna različica aplikacije TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Pomoč in povratne informacije</string>
-  <string name="title_pref_gup">Stik z Googlovo skupino za podporo invalidnim osebam</string>
-  <string name="subtitle_pref_gup">Iskanje pomoči pri uporabi funkcije TalkBack ali prijava težave</string>
-  <string name="pref_item_licenses">Odprtokodne licence</string>
-  <string name="title_pref_tutorial">Vadnica</string>
   <string name="title_pref_help">Pomoč</string>
   <string name="title_pref_show_tos">Pogoji storitve</string>
   <string name="title_pref_show_privacy_policy">Pravilnik o zasebnosti</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Poteze po tipalu prstnih odtisov</string>
   <string name="title_pref_category_tutorial">Vadnica za TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Pomoč</string>
-  <string name="title_pref_category_typing">Tipkanje</string>
   <string name="title_pref_advanced_settings">Dodatne nastavitve</string>
   <string name="title_pref_show_exit_watermark">Prikaz navodil za izklop funkcije TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Ko je funkcija TalkBack vklopljena, se prikaže sporočilo, ki vam jo pomaga hitro izklopiti.</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Nekatere modifikatorske tipke so drugačne.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Preberite več o razporeditvah tipk</string>
   <string name="keycombo_go_to_settings">Odpri nastavitve</string>
-  <string name="keycombo_keymap_changes_notifications_content">V funkciji TalkBack bo odstranjena klasična razporeditev tipk. Če želite še naprej uporabljati bližnjične tipke, preklopite na privzeto razporeditev tipk.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Več o tem</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Razumem</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Nastavitve</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Več o tem</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Zdaj uporabljate privzeto razporeditev tipk za TalkBack. Na voljo je tudi nova izboljšana razporeditev tipk, ki ima številne nove ukaze. Preberite več o tem v centru za pomoč ali v nastavitvah preklopite na novo razporeditev tipk.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Na voljo je nova razporeditev tipk</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nova izboljšana razporeditev tipk za TalkBack ima dodane številne nove ukaze. Preberite več o tem v centru za pomoč ali v nastavitvah preklopite na novo razporeditev tipk.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Posodobite modifikatorsko tipko za TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ne zdaj</string>
   <string name="keycombo_warning_content_description">Več informacij o modifikatorski tipki</string>
-  <string name="keycombo_warning_dialog_title">Posodobitev modifikatorske tipke</string>
-  <string name="keycombo_warning_dialog_message">Za pravilno delovanje bližnjičnih tipk funkcije TalkBack spremenite modifikatorsko tipko iz tipke za dejanje v tipko Alt.\n\nČe boste kot modifikatorsko tipko še naprej uporabljali tipko za dejanje, bodo v tej različici Androida nekatere bližnjice izvajale drugačna dejanja.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Razporeditev tipk</string>
   <string name="keycombo_menu_select_keymap">Izbira razporeditve tipk</string>
   <string name="keycombo_menu_reset_keymap">Ponastavitev razporeditve tipk</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Povečanje glasnosti govora</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Zmanjšanje glasnosti govora</string>
   <string name="keycombo_menu_global_refocus_current_node">Izgovorjava trenutnega fokusa</string>
-  <string name="keycombo_menu_category_granularity">Pomikanje</string>
   <string name="keycombo_menu_granularity_increase">Naslednja nastavitev pomikanja</string>
   <string name="keycombo_menu_granularity_decrease">Prejšnja nastavitev pomikanja</string>
   <string name="keycombo_menu_category_other">Druga dejanja</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Ali res želite bližnjične tipke za to razporeditev tipk ponastaviti na privzete vrednosti? Tega dejanja ni mogoče razveljaviti.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Ponastavi</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s v brskalnem načinu</string>
-  <string name="keycombo_assign_dialog_instruction">Za nastavitev nove bližnjice pritisnite kombinacijo tipk. Vključevati mora vsaj tipko ALT ali Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Pritisnite kombinacijo tipk z modifikatorsko tipko %1$s, če želite nastaviti novo bližnjico.</string>
   <string name="keycombo_unassigned">Nedodeljeno</string>
   <string name="save_button_in_keycombo_assign_dialog">Shrani</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Zakasnitev fokusa za tipkanje</string>
   <string name="message_pref_touch_explore_latency">Krajša zakasnitev fokusa za tipkanje pomeni, da funkcija TalkBack izgovori obvestila hitreje po dotiku tipkovnice.\n\nIzberite zakasnitev</string>
   <string name="title_pref_touch_focus_timeout">Zakasnitev fokusa</string>
-  <string name="summary_pref_touch_focus_time">
-Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zakasnitvijo je funkcija TalkBack hitrejša, vendar lahko to oteži izvajanje dvakratnih in trikratnih dotikov.\n\n
-Če je zakasnitev krajša od 0,3 sekunde, se dvakratni dotik za aktiviranje spremeni v dotik z dvema prstoma za aktiviranje.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Zaznava potez v funkciji TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Nastavitev aktivirate tako, da funkcijo TalkBack izklopite in jo znova vklopite.</string>
   <string name="title_pref_auto_image_captioning">Samodejni opisi</string>
@@ -382,28 +332,16 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="dialog_title_turn_on_image_description">Vklopite opise slik v nastavitvah</string>
   <string name="dialog_message_turn_on_image_description">Lahko poskusite znova, potem ko boste vklopili samodejne ali podrobne opise slik</string>
   <string name="title_pref_detailed_image_description">Podrobni opisi slik</string>
-  <string name="summary_pref_ai_description">Če v meniju funkcije TalkBack izberete »%1$s«, se predvajajo daljši opisi.</string>
   <string name="dialog_message_on_device_ai_description">Ko v podprtih aplikacijah fokus premaknete na sliko, slišite kratek opis.\n\nSlike se obdelajo v napravi in se nikoli ne pošljejo Googlu. \n\nGenerativna umetna inteligenca je preizkusna, zato bo delala napake. Z nadaljevanjem potrjujete, da se strinjate z <a href="https://policies.google.com/terms/generative-ai">Googlovimi pogoji storitve</a>.</string>
   <string name="enable_gemini">Vklopi</string>
   <string name="powered_by_gemini">Uporablja generativno umetno inteligenco</string>
-  <string name="detailed_image_description_ongoing_hint">Pridobivanje opisa</string>
-  <string name="detailed_image_description_result_prefix">Zaznano: Slika. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Za samodejne opise slik je potreben prenos</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Slike se obdelajo v napravi in se nikoli ne pošljejo Googlu.\n\nGenerativna umetna inteligenca je preizkusna, zato bo delala napake. Z nadaljevanjem potrjujete, da se strinjate z naslednjim: %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Googlovi pogoji storitve</string>
   <string name="message_aifeature_downloading">Prenašanje modela umetne inteligence. To lahko traja nekaj časa. Ko bo končano, boste prejeli obvestilo.</string>
   <string name="message_aifeature_downloading_with_progress">Prenašanje še vedno poteka. Preneseno: %1$d od %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Model umetne inteligence je prenesen. TalkBack lahko zdaj generira opise slik.</string>
   <string name="summary_pref_auto_image_captioning">Za ikone, slike in besedilo na slikah</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Za besedilo na slikah</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Za slike in besedilo na slikah</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Za ikone in besedilo na slikah</string>
   <string name="summary_pref_module_downloading">Prenašanje …</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Vklopljeno za vse slike</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Vklopljeno samo za slike brez oznake</string>
   <string name="summary_pref_auto_image_captioning_disabled">Izklopljeno</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Vklopljeno za vse ikone</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Vklopljeno samo za ikone brez oznake</string>
   <string name="summary_pref_auto_icon_detection_disabled">Izklopljeno</string>
   <string name="title_pref_enable_auto_image_caption">Vse slike</string>
   <string name="title_pref_enable_auto_image_caption_arg">Vse slike\n%1$s</string>
@@ -413,7 +351,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="title_pref_enable_auto_icon_detection">Vse ikone</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Samo ikone brez oznake</string>
   <string name="title_pref_disable_auto_icon_detection">Ne opisuj ikon</string>
-  <string name="dialog_message_on_device_ai_model_download">Ko v podprtih aplikacijah fokus premaknete na sliko, slišite kratek opis.\n\nSlike se obdelajo v napravi in se nikoli ne pošljejo Googlu.\n\nGenerativna umetna inteligenca je preizkusna, zato bo delala napake. Z nadaljevanjem potrjujete, da se strinjate z naslednjim: %1$s.</string>
   <string name="title_pref_enable_gemini_support">Vklopljeno</string>
   <string name="title_pref_disable_gemini_support">Izklopljeno</string>
   <string name="summary_pref_gemini_support_enabled">Gemini je omogočen</string>
@@ -457,7 +394,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="shortcut_print_node_tree">Natisni drevo vozlišč</string>
   <string name="shortcut_print_performance_stats">Natisni statistične podatke o uspešnosti</string>
   <string name="shortcut_first_in_screen">Premakni fokus na prvi element na zaslonu</string>
-  <string name="shortcut_summary">Izdelava povzetka postavitve zaslona</string>
   <string name="shortcut_voice_commands">Zaženi glasovni ukaz</string>
   <string name="shortcut_last_in_screen">Premakni fokus na zadnji element na zaslonu</string>
   <string name="shortcut_enable_dimming">Zatemnitev zaslona</string>
@@ -561,7 +497,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="menu_category_web_navigation">Pomikanje po spletu</string>
   <string name="menu_category_basic_navigation">Osnovno pomikanje</string>
   <string name="summary_custom_action">Prikaže se, ko obstajajo dejanja za trenutni element (vključno s povezavami, kopiranjem, lepljenjem, izbiro in drugimi dejanji).</string>
-  <string name="summary_context_menu_links">Odpiranje povezav znotraj elementa v fokusu</string>
   <string name="summary_viewpager_controls">Pomik na naslednjo ali prejšnjo stran. Prikazano pri branju vsebine z več stranmi.</string>
   <string name="summary_labeling_controls">Prikazano, ko izberete element brez oznake</string>
   <string name="summary_granularity">Branje po znakih, besedah, vrsticah in drugem</string>
@@ -631,12 +566,9 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="summary_screen_overview">Povzetek vsebine zaslona z gumbi za dejanja</string>
   <string name="summary_screen_overview_no_actions">Poslušanje povzetka vsebine zaslona</string>
   <string name="summary_image_caption">Izgovorjeni so besedilo in ikone na izbrani sliki.</string>
-  <string name="summary_summarize_view">Izgovarjanje povzetka pogleda</string>
   <string name="summary_typo_suggestions">Prikazano, ko je kazalec na tipkarski napaki</string>
   <string name="summary_cache_keyboard_keys">Funkcija TalkBack vnaprej naloži obvestila za krajšo zakasnitev pri tipkanju</string>
   <string name="summary_cache_keyboard_keys_disabled">Če želite uporabljati to funkcijo, uporabite storitev Google Pretvorba besedila v govor</string>
-  <string name="value_direction_down">navzdol</string>
-  <string name="value_direction_down_and_right">navzdol in nato desno</string>
   <string name="title_pref_shortcut_up">Vlečenje navzgor</string>
   <string name="title_pref_shortcut_up_xr">Dlan druge roke navznoter, primik prstov in vlečenje navzgor</string>
   <string name="title_pref_shortcut_down">Vlečenje navzdol</string>
@@ -704,10 +636,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="title_pref_shortcut_fingerprint_left">Vlečenje levo po tipalu prstnih odtisov</string>
   <string name="title_pref_shortcut_fingerprint_right">Vlečenje desno po tipalu prstnih odtisov</string>
   <string name="title_pref_version_code">Koda različice</string>
-  <string formatted="false" name="value_volume_100_percent">Ujemanje glasnosti govora</string>
-  <string formatted="false" name="value_volume_75_percent">75 % glasnosti govora</string>
-  <string formatted="false" name="value_volume_50_percent">50 % glasnosti govora</string>
-  <string formatted="false" name="value_volume_25_percent">25 % glasnosti govora</string>
   <string name="value_type_confirmation_double_tap">Pridržanje prsta za izbiro poljubne tipke in nato dvakratni dotik</string>
   <string name="value_type_confirmation_lift_to_type">Pridržanje črkovne tipke in nato dvig. Dvakratni dotik za druge tipke.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Pridržanje prsta za izbiro poljubne tipke in nato dvig prsta</string>
@@ -720,12 +648,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="value_touch_explore_time_out_200ms">0,2 sekunde</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekunde</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekunde (privzeto)</string>
-  <string name="value_shake_to_read_disabled">Onemogočeno</string>
-  <string name="value_shake_to_read_threshold_very_light">Zelo rahlo</string>
-  <string name="value_shake_to_read_threshold_light">Rahlo</string>
-  <string name="value_shake_to_read_threshold_medium">Srednje</string>
-  <string name="value_shake_to_read_threshold_hard">Močno</string>
-  <string name="value_shake_to_read_threshold_very_hard">Zelo močno</string>
   <string name="title_pref_on_screen_keyboard">Zaslonska tipkovnica</string>
   <string name="title_pref_physical_keyboard">Fizična tipkovnica</string>
   <string name="value_keyboard_echo_none">Brez</string>
@@ -738,8 +660,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="pref_time_feedback_format_entries_default">Uporabi obliko zapisa ure naprave</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-urna</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-urna</string>
-  <string name="notification_title_talkback_gestures_changed">Poteze za TalkBack spremenjene</string>
-  <string name="notification_message_talkback_gestures_changed">Dotaknite se za pregled sprememb potez za dostopnost</string>
   <string name="always_show_warning_checkbox">Vedno pokaži to opozorilo</string>
   <string name="label_dialog_title_add">Dodajanje oznake</string>
   <string name="label_dialog_title_edit">Urejanje oznake</string>
@@ -760,16 +680,8 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="no_apps_to_export_labels">Najdena ni bila nobena aplikacija za izvoz oznak.</string>
   <string name="label_choose_app_to_import">Izberite aplikacijo za uvoz oznak:</string>
   <string name="label_choose_app_to_export">Izberite aplikacijo za izvoz oznak:</string>
-  <string name="talkback_gesture_change_details">Ta različica aplikacije TalkBack vključuje spremembe privzetih potez za dostopnost. Dejanja, povezana s temi potezami, je mogoče prilagoditi v nastavitvah za TalkBack. Ko je omogočeno Raziskovanje z dotikom, lahko te poteze uporabite za izvajanje nekaterih dejanj.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Želite zatemniti zaslon?</string>
   <string name="dialog_message_dim_screen">S tem izklopite prikaz in si tako zagotovite več zasebnosti. Morda bo še vedno prikazane nekaj vsebine, na primer sporočila za vnovični vklop zaslona ali meniji za funkcije dostopnosti, kot je TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Ta različica funkcije TalkBack vsebuje spremembe privzetih potez za dostopnost.\n\nS potezo »navzgor in nato navzdol« se boste pomaknili na prvi element na zaslonu, s potezo »navzdol in nato navzgor« pa na zadnjega.\n\nRaven podrobnosti branja lahko zdaj spremenite tako, da najprej izberete element in nato raven podrobnosti v kontekstnem meniju funkcije TalkBack.\n\nDejanja, ki jih opravite s temi potezami, lahko spremenite v nastavitvah za TalkBack.</string>
-  <string name="default_action_changed_details">Zdaj se lahko za začasno zaustavitev in predvajanje predstavnosti dvakrat dotaknete in pridržite z dvema prstoma.\n\nTudi druge poteze so se spremenile.</string>
-  <string name="talkback_built_in_gesture_open_url">Odpri v telefonu za več informacij</string>
-  <string name="talkback_built_in_gesture_change_details_45">Ta različica aplikacije TalkBack vključuje spremembe privzetih potez za dostopnost.\n\nPoteza gor zdaj izvede premik na prejšnjo nastavitev pomikanja, poteza dol pa na naslednjo nastavitev pomikanja.</string>
-  <string name="side_tap_shortcuts_removed_details">Te nastavitve so bile zaradi težav z zanesljivostjo odstranjene iz funkcije TalkBack:\n• Poteze z dotikom naprave ob strani\n• Stresanje za neprekinjeno branje</string>
-  <string name="button_accept_changed_gesture_mappings">Sprejem potez</string>
-  <string name="button_customize_gesture_mappings">Prilagajanje potez</string>
   <string name="button_disable_all_events">Onemogoči vse</string>
   <string name="button_enable_all_events">Omogoči vse</string>
   <string name="dialog_title_disable_exploration">Želite onemogočiti Raziskovanje z dotikom?</string>
@@ -893,8 +805,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="screen_search_hint_type_search_tables">Iskanje po tabelah</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Kanal za obveščanje za TalkBack</string>
-  <string name="pref_selector_summary">Nastavitev izberete s potezo »%1$s«. Nato nastavitev prilagodite s potezo »%2$s«.</string>
-  <string name="speech_rate_change">Hitrost govora %1$d %%</string>
   <string name="speech_pitch_maximum">Najvišji ton govora</string>
   <string name="speech_pitch_minimum">Najnižji ton govora</string>
   <string name="reset_speech_rate_and_pitch">Ponastavitev hitrosti in višine tona govora</string>
@@ -904,10 +814,7 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="vibration_feedback_state">Odziv z vibriranjem: %1$s</string>
   <string name="text_formatting_state">Izgovori oblikovanje besedila %1$s</string>
   <string name="typing_echo_change">Odmev fizične tipkovnice: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Dlan druge roke obrnite navznoter in dolgo pritiskajte, da preklopite način kontrolnika za branje.</string>
   <string name="gesture_1_or_2">%1$s ali %2$s</string>
-  <string name="select_setting_hint">Drugo nastavitev izberete s potezo »%1$s«</string>
-  <string name="adjust_setting_hint">Nastavitev prilagodite s potezo »%1$s«</string>
   <string name="adjust_granularity_hint">Za branje po »%2$s« uporabite potezo »%1$s«</string>
   <string name="adjust_typo_hint">%1$s za predloge.</string>
   <string name="use_action_hint">Dvakrat se dotaknite za izvedbo dejanja.</string>
@@ -947,7 +854,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="setting_selector_heading">Kontrolniki za branje</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Če želite začasno zaustaviti ali predvajati predstavnost v aplikaciji za predvajanje videoposnetkov ali glasbe, se dvakrat dotaknite z dvema prstoma. Preizkusite.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">V drugih aplikacijah se ta poteza morda uporablja za sprejem ali končanje telefonskega klica. Ta poteza v nekaterih aplikacijah morda ni podprta.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Prikaži vse vadnice za TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Predstavnost je začasno zaustavljena ali se predvaja. Običajno se s tem začasno zaustavi ali sproži predvajanje trenutnega videoposnetka ali skladbe. Povlecite v desno za nadaljevanje.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Če želite začasno zaustaviti govor funkcije TalkBack, se dotaknite z dvema prstoma.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Govor funkcije TalkBack je zaustavljen. Običajno se s tem prekine trenutni stavek, ki ga TalkBack izgovarja. Povlecite v desno za nadaljevanje.</string>
@@ -961,38 +867,18 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Način za izbiro je vklopljen ali izklopljen. Običajno se s tem zažene ali konča način za izbiro besedila, ko ste v polju za vnos. Povlecite v desno za nadaljevanje.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Meni s kontrolniki za branje odprete tako, da s tremi prsti povlečete v levo ali desno. Prav tako lahko s tremi prsti povlečete navzgor ali navzdol.</string>
   <string name="new_shortcut_gesture_note">Opomba: Ker ste prilagodili nekatere poteze, te informacije morda niso točne. Če želite pregledati svoje poteze, odprite nastavitve funkcije TalkBack.</string>
-  <string name="welcome_to_android11">Pozdravljeni v funkciji TalkBack v Androidu 11</string>
   <string name="welcome_to_android11_text">Dodali smo nove poteze, da je uporaba funkcije TalkBack hitrejša in preprostejša.\n\nNa tem zaslonu lahko preizkusite nove poteze. Te informacije si lahko kadar koli ogledate v nastavitvah za TalkBack.</string>
   <string name="new_gesture_notification_title">Nove poteze v funkciji TalkBack</string>
   <string name="new_gesture_notification_content">Če želite izvedeti, kako z novimi potezami hitreje uporabljati funkcijo TalkBack, se dotaknite.</string>
   <string name="dump_node_tree_description">Drevo vozlišč je bilo zabeleženo v dnevnike.</string>
   <string name="report_gesture_description">Tukaj so navedene nedavno izvedene poteze. Sporočite, katera poteza je napačna in kaj je bilo pričakovano.</string>
-  <string name="update_welcome_text_content">Zdaj se lahko povežete z zasloni braille prek vnosne naprave, kar je eden od načinov povezovanja z napravami Bluetooth. Poskrbite, da imate najnovejše proizvajalčeve gonilnike za vdelano programsko opremo, nato vklopite Bluetooth na zaslonu braille. Odprite nastavitve funkcije TalkBack &gt; »Zaslon braille« in vklopite »Uporaba zaslona braille«. Poiščite napravo na seznamu naprav in vzpostavite povezavo z njo.</string>
-  <string name="update_welcome_text_content_tts">Zdaj se lahko povežete z zasloni braille prek vnosne naprave, kar je eden od načinov povezovanja z napravami Bluetooth. Poskrbite, da imate najnovejše proizvajalčeve gonilnike za vdelano programsko opremo, nato vklopite Bluetooth na zaslonu braille. Odprite nastavitve funkcije TalkBack, nato »Zaslon braille« in vklopite »Uporaba zaslona braille«. Poiščite napravo na seznamu naprav in vzpostavite povezavo z njo.</string>
-  <string name="update_welcome_text_content_with_link">Preberite, kako uporabljate zaslon braille s funkcijo TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Ta posodobitev funkcije TalkBack prinaša podporo za funkcijo Opis vsebine zaslona v več jezikih in druge izboljšave kakovosti, ki olajšajo uporabo.\n\nNa naslednjih nekaj zaslonih boste izvedeli več o teh spremembah.\n\nTe informacije si lahko ogledate tudi pozneje v meniju »Nastavitve funkcije TalkBack« &gt; »Novosti funkcije TalkBack«.</string>
   <string name="update_welcome_talkback_16.1_tts">Ta posodobitev funkcije TalkBack prinaša podporo za funkcijo Opis vsebine zaslona v več jezikih in druge izboljšave kakovosti, ki olajšajo uporabo.\n\nNa naslednjih nekaj zaslonih boste izvedeli več o teh spremembah.\n\nTe informacije si lahko ogledate tudi pozneje v meniju »Nastavitve funkcije TalkBack« in nato »Novosti funkcije TalkBack«.</string>
-  <string name="describe_screen_and_qna_title">Novi jeziki za funkciji Opis vsebine zaslona in Vprašajte Geminija</string>
-  <string name="describe_screen_and_qna_content">Funkciji Opis vsebine zaslona in Vprašajte Geminija sta zdaj na voljo v dodatnih jezikih. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Več o tem lahko preberete v centru za pomoč&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Bližnjica za glasovno tipkanje</string>
   <string name="shortcut_for_dictation_content">Med uporabo tipkovnice Gboard lahko zdaj z dvakratnim dotikom z dvema prstoma začnete ali ustavite glasovno tipkanje.
 &lt;br&gt;
 &lt;br&gt;Poskrbite, da imate najnovejšo različico &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;tipkovnice Gboard iz Googla Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Ko je na zaslonu prikazana tipkovnica Gboard, lahko z dvakratnim dotikom z dvema prstoma začnete glasovni narek in ga nato z dvakratnim dotikom z dvema prstoma tudi ustavite.</string>
-  <string name="keyboard_title">Tipkovnica</string>
-  <string name="keyboard_content">Za tipkovnico funkcije TalkBack je zdaj na voljo možnost »Izboljšana razporeditev tipk«, ki prinaša različne nove ukaze in bližnjice. Ta izboljšava, ki vključuje »brskalni način« za učinkovitejše spletno krmarjenje, poenostavlja krmarjenje in interakcijo za uporabnike funkcije TalkBack, ki se zanašajo na fizične tipkovnice. Na možnost »Izboljšana razporeditev tipk« lahko preklopite v meniju »Nastavitve funkcije TalkBack« &gt; »Dodatne nastavitve« &gt; »Bližnjične tipke«.</string>
-  <string name="keyboard_content_tts">Za tipkovnico funkcije TalkBack je zdaj na voljo možnost »Izboljšana razporeditev tipk«, ki prinaša različne nove ukaze in bližnjice. Ta izboljšava, ki vključuje »brskalni način« za učinkovitejše spletno krmarjenje, poenostavlja krmarjenje in interakcijo za uporabnike funkcije TalkBack, ki se zanašajo na fizične tipkovnice. Na možnost »Izboljšana razporeditev tipk« lahko preklopite v meniju »Nastavitve funkcije TalkBack«, nato »Dodatne nastavitve« in nato »Bližnjične tipke«.</string>
-  <string name="reduce_delay_title">Skrajšanje zakasnitve</string>
-  <string name="reduce_delay_content">Zdaj lahko skrajšate zakasnitve obvestil funkcije TalkBack pri raziskovanju z dotikom in tipkanju. Če si želite ogledati te nastavitve, odprite meni »Nastavitve funkcije TalkBack« &gt; »Dodatne nastavitve« &gt; »Skrajšanje zakasnitve«.</string>
-  <string name="reduce_delay_content_tts">Zdaj lahko skrajšate zakasnitve obvestil funkcije TalkBack pri raziskovanju z dotikom in tipkanju. Če si želite ogledati te nastavitve, odprite meni »Nastavitve funkcije TalkBack«, nato »Dodatne nastavitve« in nato »Skrajšanje zakasnitve«.</string>
-  <string name="customize_braille_keyboard_improvements_title">Prilagajanje potez za braillovo tipkovnico</string>
-  <string name="customize_braille_keyboard_improvements_content">Zdaj je mogoče prilagoditi poteze za navidezno zaslonsko braillovo tipkovnico. Če jih želite prilagoditi, odprite meni »Nastavitve funkcije TalkBack« &gt; »Braillova tipkovnica« &gt; »Poteze«.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Zdaj je mogoče prilagoditi poteze za navidezno zaslonsko braillovo tipkovnico. Če jih želite prilagoditi, odprite meni »Nastavitve funkcije TalkBack«, nato »Braillova tipkovnica« in nato »Poteze«.</string>
-  <string name="learn_more_about_braille_keyboard">Preberite več o braillovi tipkovnici</string>
-  <string name="other_changes_title">Druge spremembe</string>
-  <string name="other_changes_content">Sporočilo na zaslonu vam zdaj pomaga hitro izklopiti funkcijo TalkBack, če jo pomotoma vklopite. To sporočilo lahko izklopite v meniju »Nastavitve funkcije TalkBack« &gt; »Prikaz navodil za izklop funkcije TalkBack«.</string>
-  <string name="other_changes_content_tts">Sporočilo na zaslonu vam zdaj pomaga hitro izklopiti funkcijo TalkBack, če jo pomotoma vklopite. To sporočilo lahko izklopite v meniju »Nastavitve funkcije TalkBack« in nato »Prikaz navodil za izklop funkcije TalkBack«.</string>
-  <string name="keymap_changes_content">Klasična razporeditev tipk je bila preklopljena na privzeto razporeditev tipk, ki vključuje več bližnjic.</string>
   <string name="announcing_text_formatting_title">Najava oblikovanja besedila</string>
   <string name="announcing_text_formatting_header">TalkBack lahko zdaj najavi spremembe oblikovanja besedila, na primer krepko in ležečo pisavo ter barvo besedila. Začnete tako:</string>
   <string name="announcing_text_formatting_option1">Fokus premaknite na element z oblikovanjem, odprite meni funkcije TalkBack in izberite »Opis oblikovanja besedila« ali</string>
@@ -1083,7 +969,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="additional_tips_link_subtext">Več o opravljanju klicev, pošiljanju sporočil in drugem.</string>
   <string name="practice_gestures_link_text">Vadba uporabe potez</string>
   <string name="practice_gestures_link_subtext">Preizkusite različne poteze, da se naučite, katero dejanje izvedejo.</string>
-  <string name="help_and_feedback_link_subtext">Več o funkciji TalkBack in pošiljanje povratnih informacij.</string>
   <string name="choose_tutorial_title">Izberite, kako želite uporabljati funkcijo TalkBack</string>
   <string name="touch_tutorial_button">Vadnica za uporabo z dotiki</string>
   <string name="keyboard_tutorial_button">Vadnica za uporabo s tipkovnico</string>
@@ -1229,8 +1114,6 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="wear_training_typing_text5">Preizkusite spodaj.</string>
   <string name="wear_training_typing_practice_button_content_description">Tipkanje s tipkovnico</string>
   <string name="wear_training_end_tutorial_title">Pripravljeni ste na začetek uporabe funkcije TalkBack</string>
-  <string name="talkback_updated_notification_title">Funkcija TalkBack je bila posodobljena</string>
-  <string name="talkback_updated_notification_content">Dotaknite se za več informacij.</string>
   <string name="wear_new_feature_page_title">Pozdravljeni v posodobljeni funkciji TalkBack</string>
   <string name="wear_new_feature_page_content">Opazili boste nekaj popravkov napak in sprememb pri premikanju fokusa</string>
   <string name="wear_new_feature_page_button_content_description">Dokončaj</string>
@@ -1249,10 +1132,7 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="title_pref_blue">Modra</string>
   <string name="title_pref_grey">Siva</string>
   <string name="survey_setting_title">Pošiljanje povratnih informacij</string>
-  <string name="survey_closed">Anketa ni več na voljo</string>
   <string name="title_summarize_view">Opis vsebine zaslona</string>
-  <string name="title_increase_touch_focus_latency">Podaljšanje zakasnitve fokusa</string>
-  <string name="title_decrease_touch_focus_latency">Skrajšanje zakasnitve fokusa</string>
   <string name="detected_result">Zaznano: %1$s</string>
   <string name="title_image_caption">Opis slike</string>
   <string name="image_caption_with_gemini_prefix">Opiši to sliko. V odgovor ne vključi nobenih oznak.</string>
@@ -1279,33 +1159,15 @@ Nadzoruje, kako hitro funkcija TalkBack govori po premiku fokusa. S krajšo zaka
   <string name="image_qna_question_prefix">UPORABNIK: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Nadaljuj z izmeničnim menjavanjem UPORABNIKA in MODELA] …</string>
-  <string name="screen_overview_with_screenshot">Tvoja naloga je, da osebi, ki ne vidi telefona, pomagaš razumeti, kaj je prikazano na zaslonu telefona. V nekaj stavkih opiši ta posnetek zaslona.
-
-Navodila
-Odgovor začni z besedami »Zaslon prikazuje«.
-Na začetku odgovora opiši najpomembnejšo in najbolj opazno vsebino na zaslonu. Spodaj je nekaj primerov, kaj bi lahko bila najpomembnejša in najbolj opazna vsebina, ki jo je treba opisati:
-* V aplikaciji za klepet: pošiljatelj in besedilo najnovejšega sporočila.
-* V aplikaciji za družbena omrežja: prva objava, vključno s tem, kdo jo je objavil, besedilom in opisom slike.
-* V aplikaciji za novice: naslov članka in opis glavne slike.
-* V aplikaciji za nakupovanje: opis prikazanega izdelka in cena.
-* V aplikaciji za koledar: naslednji dogodek in število drugih dogodkov, ki so prikazani za njim.
-* Na seznamu sporočil: ime in predogled prvega sporočila, nato pa samo imena naslednjih nekaj sporočil na seznamu in število neprebranih sporočil.
-
-Nato je lahko v odgovoru opisano, kje na zaslonu so vrstice za krmarjenje in glavni gumbi ter kakšen je njihov namen.
-Ne omenjaj vsebine vrstice stanja na vrhu (npr. ure, stanja omrežja, napolnjenosti baterije).
-V odgovor ne vključi nobenih oznak.</string>
   <string name="title_gemini_opt_in_dialog">Želite pridobiti podrobne opise slik?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Želite pridobiti opise slik?</string>
   <string name="title_gemini_result_dialog">Zaznano: slika</string>
   <string name="title_gemini_result_bottom_sheet">Opis slike</string>
   <string name="title_gemini_screen_overview_result_dialog">Opis zaslona</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Povzetek</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Dejanja</string>
   <string name="positive_button_gemini_opt_in_dialog">Vklopi</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Strinjam se</string>
   <string name="negative_button_gemini_opt_in_dialog">Ne, hvala</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">V nastavitve</string>
-  <string name="positive_button_gemini_download_dialog">Prenesi in vklopi</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Besedilo, »%1$s«.</string>
   <string name="detected_icon_label">Ikona, »%1$s«.</string>
@@ -1319,8 +1181,6 @@ V odgovor ne vključi nobenih oznak.</string>
   <string name="screen_overview_no_result">Vsebine zaslona ni mogoče povzeti</string>
   <string name="image_caption_no_result">Slike ni mogoče opisati.</string>
   <string name="image_caption_with_hide_screen">Ko je zaslon skrit, opisi slik niso na voljo. Prikažite zaslon in poskusite znova.</string>
-  <string name="feedback_button_state_set">izbrano</string>
-  <string name="feedback_button_state_unset">ni izbrano</string>
   <string name="action_text_like_button">Označi kot ustrezen odgovor</string>
   <string name="action_text_dislike_button">Označi kot neustrezen odgovor</string>
   <string name="action_text_clear_like_button">Počisti ustrezni odgovor</string>
@@ -1349,18 +1209,13 @@ V odgovor ne vključi nobenih oznak.</string>
   <string name="downloading_all_image_captioning_hint">Prenašanje samodejnih opisov slik in ikon</string>
   <string name="download_all_image_captioning_successful_hint">Samodejni opisi slik in ikon so preneseni</string>
   <string name="download_all_image_captioning_failed_hint">Ni mogoče prenesti. Poskusite znova pozneje.</string>
-  <string name="download_complete_notification_title">Prenos je končan</string>
-  <string name="download_complete_notification_content">Zdaj boste s funkcijo TalkBack slišali samodejne opise slik in ikon</string>
-  <string name="download_complete_notification_action">Nastavitve</string>
   <string name="download_storage_error_hint">Shramba je polna. Če želite prenesti, sprostite %1$d MB v meniju »Nastavitve« &gt; »Shramba«.</string>
   <string name="download_network_error_hint">Ni mogoče prenesti. Preverite povezavo in poskusite znova.</string>
   <string name="switch_icon_detection_dialog_title">Samodejni opisi ikon</string>
   <string name="switch_icon_detection_dialog_message">Predvajanje zvočnega opisa ob premiku fokusa na ikono</string>
   <string name="switch_image_description_dialog_message">Predvajanje zvočnega opisa ob premiku fokusa na sliko. Nekatere aplikacije tega morda ne podpirajo.</string>
-  <string name="switch_text_recognition_dialog_title">Samodejni opis besedila na slikah</string>
   <string name="switch_text_recognition_dialog_message">Poslušanje opisov ob premiku fokusa na sliko z besedilom</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Preneseno</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Opise za izbrano sliko lahko še vedno prejemate prek menija TalkBack.</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">V redu</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Izbriši prenos</string>
   <string name="delete_icon_detection_dialog_title">Želite izbrisati samodejne opise ikon?</string>
@@ -1376,11 +1231,6 @@ V odgovor ne vključi nobenih oznak.</string>
   <string name="gemini_enable_dialog_title">Uporaba Geminija v funkciji TalkBack</string>
   <string name="gemini_disable_dialog_message">Razumevanje zaslona z Geminijem</string>
   <string name="disable_gemini_dialog_subtext">Vklopite, če želite omogočiti razumevanje zaslona z Geminijem</string>
-  <string name="ai_services_update_dialog_title">Posodobitev aplikacije %1$s za opisovanje slik</string>
-  <string name="ai_services_update_dialog_message">Če želite slišati opise slik, prenesite najnovejšo različico aplikacije %1$s iz Googla Play.\n\nKo je aplikacija prenesena, se vrnite v nastavitve funkcije TalkBack in znova vklopite samodejne opise slik.</string>
-  <string name="ai_services_update_dialog_button_text">Odpri Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Prišlo je do napake. Poskusite znova.</string>
   <string name="gemini_block_message">Te slike ni mogoče obdelati</string>
   <string name="gemini_network_error">Ni internetne povezave. Preverite povezavo z omrežjem Wi-Fi ali mobilnim omrežjem in poskusite znova.</string>
@@ -1396,13 +1246,8 @@ V odgovor ne vključi nobenih oznak.</string>
   <string name="image_qna_typing_button_text">Vnos vprašanja za Geminija</string>
   <string name="image_qna_send_button_text">Vprašaj</string>
   <string name="image_qna_speak_question_description">Izgovorjava vprašanja</string>
-  <string name="overviews_summary_intro">Povzetek tega zaslona aplikacije: %1$s</string>
   <string name="overviews_node_not_found">Tega dela zaslona ne najdem več.</string>
-  <string name="overviews_images_in_app">Najdene so bile glavne slike</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Dejanja v aplikaciji</string>
-  <string name="overviews_actions_in_app_description">To so glavna dejanja, ki jih lahko izvedete na tem zaslonu aplikacije:</string>
-  <string name="overviews_parent_type">Dejanja v aplikaciji</string>
   <string name="text_replaced_feedback">Besedilo zamenjano</string>
   <string name="switch_gesture_set">Preklopi nabor potez</string>
   <string name="switch_gesture_set_to">Preklopi na nabor potez %1$d</string>
@@ -1453,5 +1298,4 @@ V odgovor ne vključi nobenih oznak.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Zapri</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Če želite slišati obvestila, ko je zaslon izklopljen, vklopite možnost »Izgovarjanje obvestil pri izklopljenem zaslonu« v nastavitvah ravni podrobnosti funkcije TalkBack.</string>
 </resources>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Når TalkBack er på, får du taletilbakemeldinger, slik at du kan bruke enheten uten å se på skjermen. TalkBack er beregnet på folk som har vanskeligheter med å se skjermen i bestemte situasjoner eller på grunn av synsvansker.&lt;br&gt;&lt;br&gt;&lt;b&gt;Slik bruker du TalkBack&lt;/b&gt;&lt;br&gt;• Sveip mot høyre eller venstre for å gå mellom elementer.&lt;br&gt;• Dobbelttrykk for å aktivere et element.&lt;br&gt;• Dra med 2 fingre for å rulle.&lt;br&gt;&lt;br&gt;&lt;b&gt;Slik slår du av TalkBack&lt;/b&gt;&lt;br&gt;&lt;br&gt;1. Trykk på &lt;b&gt;Bruk TalkBack&lt;/b&gt; i innstillingene. Du ser et omriss. Dobbelttrykk på det.&lt;br&gt;2. Trykk på &lt;b&gt;Stopp&lt;/b&gt; på bekreftelsesmeldingen. Du ser et omriss. Dobbelttrykk på det.</string>
   <string name="talkback_service_summary">Bruk en skjermleser for å få lest opp elementer</string>
   <string name="talkback_preferences_title">TalkBack-innstillinger</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Innstillinger</string>
   <string name="tts_preferences_title">Tekst til tale</string>
   <string name="language_options">Språk</string>
   <string name="spoken_language">Talespråk</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Søket er avbrutt.</string>
   <string name="notification_type_status_started">Startet</string>
   <string name="notification_type_status_stopped">Stoppet</string>
-  <string name="notification_type_status_connected">tilkoblet</string>
-  <string name="notification_battery_level_unknown">ukjent</string>
   <string name="notification_battery_saver_mode">batterisparing er på</string>
   <string name="template_no_text_selected">Ingen tekst er valgt</string>
   <string name="template_charging">Lader %1$s Batterinivå %2$s prosent.</string>
   <string name="template_charging_lite">Lader %1$s</string>
-  <string name="template_battery_state">Strøm %1$s %2$s prosent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibreringsmodus.</string>
   <string name="value_ringer_silent">Stillemodus.</string>
   <string name="value_screen_on">Skjerm på.</string>
   <string name="value_screen_off">Skjerm av.</string>
   <string name="value_device_unlocked">Enheten er opplåst.</string>
-  <string name="title_pref_category_audio">Lyd</string>
   <string name="title_pref_speech_volume">Talevolum</string>
-  <string name="title_pref_speech_rate">Talehastighet</string>
-  <string name="summary_pref_speech_rate">Hvor raskt teksten leses</string>
   <string name="title_pref_verbose_scroll_announcement">Les alltid opp antall listeelementer</string>
   <string name="summary_pref_verbose_scroll_announcement">Les opp telling for alle rullemetoder</string>
   <string name="title_pref_cover_proximity_sensor">Dekk avstandssensoren for å stoppe tale</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Les opp klokkeslettet</string>
   <string name="pref_speak_time_summary">Når du slår på skjermen</string>
   <string name="summary_speak_container_element_positions">Inkluderer informasjon når du går inn i og ut av lister, rutenett og andre beholdere</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokusforsinkelse er lagt til i lesekontrollen</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Sveip med tre fingre for å bruke lesekontrollen og endre fokusforsinkelsen når som helst</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Vil du bytte til løfting for å skrive?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Når fokushastigheten for skriving er satt til under 0,3 sekunder, blir det veldig vanskelig å dobbelttrykke for å skrive. Velg «Bytt» for å bytte til løfting for å skrive automatisk.\n\nFor å bruke løfting for å skrive, hold fingeren nede for å velge en tast, og løft fingeren for å skrive.\n\nDu kan tilpasse dette i TalkBack-innstillingene.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Forsinkelse av skrivefokus er lagt til i lesekontrollen</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Hvis du har problemer med å bruke dobbelttrykk mens du skriver, kan du sveipe med tre fingre for å bruke lesekontrollen og bytte til en lengre forsinkelse for skrivefokus</string>
-  <string name="gestures_announce_typing_focus_wont_change">Forsinkelse for skrivefokus fungerer ikke uten løfting for å skrive.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Greit</string>
   <string name="reset_letency_reduction_settings_dialog_title">Vil du tilbakestille innstillingene for forsinkelse?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Dette tilbakestiller alle innstillingene for forsinkelse til standard</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Tilbakestill</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Innstillingene for redusert tidsforsinkelse er tilbakestilt.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Bytt</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ikke bytt</string>
   <string name="Reset_gesture_settings_dialog_title">Vil du tilbakestille bevegelser?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Vil du tilbakestille bevegelsene i det gjeldende settet?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Dette tilbakestiller alle bevegelser til standardhandlingene.\n\nDu mister alle endringer du har gjort.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Les opp alle fremdriftsoppdateringer</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Dette inkluderer oppdateringer under nedlasting, følging av veibeskrivelser med mer. Når dette er slått av, får du fortsatt oppdateringer, men sjeldnere.</string>
   <string name="title_pref_explore_by_touch">Berøringsutforskning</string>
-  <string name="title_pref_category_visual">Visuelt</string>
   <string name="title_pref_category_controls">Kontroller</string>
-  <string name="title_pref_category_braille">Punktskrift</string>
-  <string name="title_pref_category_general">Generelt</string>
-  <string name="title_pref_category_advanced">Avansert</string>
-  <string name="title_pref_category_others">Annet</string>
-  <string name="title_pref_category_tutorial_and_help">Veiledning og hjelp</string>
   <string name="title_pref_category_reduce_latency_summary">Disse innstillingene kan redusere forsinkelsen før TalkBack-kunngjøringer</string>
   <string name="reset_latency_settings_title">Tilbakestill alle innstillingene for forsinkelse</string>
   <string name="title_pref_single_tap">Enkelttrykk for å aktivere</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Endre fokusindikatoren</string>
   <string name="title_pref_category_manage_gestures">Bevegelser</string>
   <string name="title_pref_manage_labels">Tilpassede etiketter</string>
-  <string name="title_pref_manage_customize_menus">Endre menyene</string>
   <string name="title_pref_category_context_menu">Tilpass TalkBack-menyen</string>
   <string name="title_pref_category_selector_menu">Tilpass lesekontrollene</string>
   <string name="title_pref_category_navigation_menu">Endre navigasjonsalternativer</string>
-  <string name="pref_category_context_menu_summary">For å bruke TalkBack-menyen, trykk på skjermen med tre fingre. Du kan også sveipe opp og så til høyre eller sveipe ned og så til høyre.</string>
-  <string name="pref_category_context_menu_summary_xr">For å bruke TalkBack-menyen, vend den sekundære håndflaten innover og klyp.</string>
-  <string name="pref_category_context_menu_summary_single_finger">For å bruke TalkBack-menyen, sveip ned og så til høyre.</string>
-  <string name="pref_category_selector_menu_summary">For å bruke lesekontrollene, sveip til venstre eller høyre med tre fingre. Du kan også sveipe opp eller ned med tre fingre.</string>
-  <string name="pref_category_selector_menu_summary_xr">For å bla mellom lesekontrollene, vend den sekundære håndflaten innover, fortsett å klype, flytt hånden mot høyre eller venstre, og slipp opp.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">For å bruke lesekontrollene, sveip opp og så ned.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Hurtigtaster</string>
   <string name="title_pref_export_custom_labels">Eksportér tilpassede etiketter</string>
-  <string name="title_pref_play_store">Åpne TalkBack i Play-butikken</string>
-  <string name="summary_pref_play_store">Nåværende TalkBack-versjon: %1$s</string>
   <string name="title_pref_help_and_feedback">Hjelp og tilbakemelding</string>
-  <string name="title_pref_gup">Kontakt Google brukerstøtte for personer med nedsatt funksjonsevne</string>
-  <string name="subtitle_pref_gup">Få hjelp med å bruke TalkBack, eller rapporter problemer</string>
-  <string name="pref_item_licenses">Lisenser for åpen kildekode</string>
-  <string name="title_pref_tutorial">Veiledning</string>
   <string name="title_pref_help">Hjelp</string>
   <string name="title_pref_show_tos">Vilkår for bruk</string>
   <string name="title_pref_show_privacy_policy">Personvernregler</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Bevegelser på fingeravtrykkssensor</string>
   <string name="title_pref_category_tutorial">TalkBack-veiledning</string>
   <string name="title_pref_category_help_no_tutorial">Hjelp</string>
-  <string name="title_pref_category_typing">Skriving</string>
   <string name="title_pref_advanced_settings">Avanserte innstillinger</string>
   <string name="title_pref_show_exit_watermark">Vis veiledning om hvordan du slår av TalkBack</string>
   <string name="summary_pref_show_exit_watermark">En melding vises når TalkBack er slått på, slik at du raskt kan slå det av</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Noen av modifikatortastene er annerledes.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Finn ut mer om tastaturoppsett</string>
   <string name="keycombo_go_to_settings">Gå til Innstillinger</string>
-  <string name="keycombo_keymap_changes_notifications_content">Det klassiske tastaturoppsettet fjernes snart fra TalkBack. For å fortsette å bruke hurtigtaster, bytt til standard tastaturoppsett.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Finn ut mer</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Greit</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Innstillinger</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Finn ut mer</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Nå bruker du tastaturoppsettet som er standard for TalkBack. Det finnes også et nytt og bedre tastaturoppsett med mange nye kommandoer. Finn ut mer i brukerstøtten, eller bytt til det nye tastaturoppsettet i innstillingene.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Et nytt tastaturoppsett er tilgjengelig</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Det nye, forbedrede tastaturoppsettet for TalkBack har mange nye kommandoer. Finn ut mer i brukerstøtten, eller bytt til det nye tastaturoppsettet i innstillingene.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Endre TalkBack-modifikatortasten</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ikke nå</string>
   <string name="keycombo_warning_content_description">Mer informasjon om modifikatortasten</string>
-  <string name="keycombo_warning_dialog_title">Oppdater modifikatortasten</string>
-  <string name="keycombo_warning_dialog_message">For at hurtigtastene for TalkBack skal fungere som de skal, må du oppdatere modifikatortasten fra Handling til Alt.\n\nHvis du fortsetter å bruke Handling-modifikatortasten, får noen snarveier forskjellige handlinger for denne versjonen av Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Tastaturoppsett</string>
   <string name="keycombo_menu_select_keymap">Velg et tastaturoppsett</string>
   <string name="keycombo_menu_reset_keymap">Tilbakestill tastaturoppsettet</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Øk talevolumet</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Reduser talevolumet</string>
   <string name="keycombo_menu_global_refocus_current_node">Si hva som er i fokus</string>
-  <string name="keycombo_menu_category_granularity">Navigasjon</string>
   <string name="keycombo_menu_granularity_increase">Neste navigasjonsinnstilling</string>
   <string name="keycombo_menu_granularity_decrease">Forrige navigasjonsinnstilling</string>
   <string name="keycombo_menu_category_other">Andre handlinger</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Er du sikker på at du vil tilbakestille hurtigtastene for tastaturoppsettet til standardverdiene? Vær oppmerksom på at denne handlingen ikke kan angres.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Tilbakestill</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s i surfemodus</string>
-  <string name="keycombo_assign_dialog_instruction">Trykk inn tastekombinasjonen for å angi en ny hurtigtast. Den må inneholde minst ALT- eller Control-tasten.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Trykk inn tastekombinasjonen med den utløsende modifikatortasten %1$s for å angi en ny hurtigtast.</string>
   <string name="keycombo_unassigned">Ikke tildelt</string>
   <string name="save_button_in_keycombo_assign_dialog">Lagre</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Forsinkelse for skrivefokus</string>
   <string name="message_pref_touch_explore_latency">Kortere forsinkelse for skrivefokus betyr at TalkBack-kunngjøringer gjøres raskere når du har trykket på tastaturet.\n\nVelg en forsinkelse</string>
   <string name="title_pref_touch_focus_timeout">Fokusforsinkelse</string>
-  <string name="summary_pref_touch_focus_time">
-Kontrollerer hvor raskt TalkBack snakker når fokuset flyttes. En kortere forsinkelse gjør at TalkBack føles raskere, men kan gjøre det vanskeligere å dobbelttrykke og trippeltrykke.\n\n
-Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere til trykk med to fingre for å aktivere.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Håndter bevegelser i TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Slå TalkBack av og så på igjen for å aktivere innstillingen.</string>
   <string name="title_pref_auto_image_captioning">Automatiske beskrivelser</string>
@@ -382,28 +332,16 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="dialog_title_turn_on_image_description">Slå på bildebeskrivelser i innstillingene</string>
   <string name="dialog_message_turn_on_image_description">Du kan prøve igjen når du har slått på enten automatiske eller detaljerte bildebeskrivelser</string>
   <string name="title_pref_detailed_image_description">Detaljerte bildebeskrivelser</string>
-  <string name="summary_pref_ai_description">Hør lengre beskrivelser når du velger «%1$s» fra TalkBack-menyen</string>
   <string name="dialog_message_on_device_ai_description">Du får en kort beskrivelse når du uthever et bilde i støttede apper.\n\nBilder behandles på enheten og sendes aldri til Google. \n\nGenerativ AI er på forsøksstadiet og gjør feil. Ved å fortsette godtar du <a href="https://policies.google.com/terms/generative-ai">Googles vilkår for bruk</a>.</string>
   <string name="enable_gemini">Slå på</string>
   <string name="powered_by_gemini">Basert på generativ AI</string>
-  <string name="detailed_image_description_ongoing_hint">Henter beskrivelse</string>
-  <string name="detailed_image_description_result_prefix">Oppdaget: bilde. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Nedlasting kreves for automatiske bildebeskrivelser</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Bilder behandles på enheten din og sendes aldri til Google.\n\nGenerativ AI er på forsøksstadiet og gjør feil. Ved å fortsette godtar du %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Googles vilkår for bruk</string>
   <string name="message_aifeature_downloading">Laster ned AI-modellen. Dette kan ta en stund. Du varsles når det er fullført.</string>
   <string name="message_aifeature_downloading_with_progress">Nedlastingen pågår fremdeles. %1$d av %2$d MB er lastet ned.</string>
-  <string name="message_aifeature_download_complete">AI-modellen er lastet ned. Nå kan TalkBack generere bildebeskrivelser.</string>
   <string name="summary_pref_auto_image_captioning">For ikoner, bilder og tekst i bilder</string>
-  <string name="summary_pref_auto_image_captioning_text_only">For tekst i bilder</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">For bilder og tekst i bilder</string>
-  <string name="summary_pref_auto_image_captioning_no_image">For ikoner og tekst i bilder</string>
   <string name="summary_pref_module_downloading">Laster ned …</string>
-  <string name="summary_pref_auto_image_captioning_enabled">På for alle bilder</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Bare på for bilder uten etikett</string>
   <string name="summary_pref_auto_image_captioning_disabled">Av</string>
-  <string name="summary_pref_auto_icon_detection_enabled">På for alle ikoner</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Bare på for ikoner uten etikett</string>
   <string name="summary_pref_auto_icon_detection_disabled">Av</string>
   <string name="title_pref_enable_auto_image_caption">Alle bilder</string>
   <string name="title_pref_enable_auto_image_caption_arg">Alle bilder\n%1$s</string>
@@ -413,7 +351,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="title_pref_enable_auto_icon_detection">Alle ikoner</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Bare ikoner uten etikett</string>
   <string name="title_pref_disable_auto_icon_detection">Ikke beskriv ikoner</string>
-  <string name="dialog_message_on_device_ai_model_download">Du hører en kort beskrivelse når du uthever et bilde i støttede apper.\n\nBilder behandles på enheten og sendes aldri til Google.\n\nGenerativ AI er på forsøksstadiet og gjør feil. Ved å fortsette godtar du %1$s.</string>
   <string name="title_pref_enable_gemini_support">På</string>
   <string name="title_pref_disable_gemini_support">Av</string>
   <string name="summary_pref_gemini_support_enabled">Gemini er slått på</string>
@@ -457,7 +394,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="shortcut_print_node_tree">Skriv ut nodetreet</string>
   <string name="shortcut_print_performance_stats">Skriv ut resultatstatistikken</string>
   <string name="shortcut_first_in_screen">Fokuser på det første elementet på skjermen</string>
-  <string name="shortcut_summary">Oppsummer skjermoppsett</string>
   <string name="shortcut_voice_commands">Start talekommando</string>
   <string name="shortcut_last_in_screen">Fokuser på det siste elementet på skjermen</string>
   <string name="shortcut_enable_dimming">Skjul skjermen</string>
@@ -561,7 +497,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="menu_category_web_navigation">Navigering på nettet</string>
   <string name="menu_category_basic_navigation">Generell navigering</string>
   <string name="summary_custom_action">Vises når det finnes handlinger for det aktive elementet, blant annet linker, kopiering, innliming og valg</string>
-  <string name="summary_context_menu_links">Åpne linker i et element som har fokus</string>
   <string name="summary_viewpager_controls">Gå til neste eller forrige side. Vises når du leser innhold med flere sider.</string>
   <string name="summary_labeling_controls">Vises når du velger et element uten etikett</string>
   <string name="summary_granularity">Les etter tegn, ord, linje med mer</string>
@@ -631,12 +566,9 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="summary_screen_overview">Oppsummer skjermen med handlingsknapper</string>
   <string name="summary_screen_overview_no_actions">Hør et sammendrag av innholdet på skjermen</string>
   <string name="summary_image_caption">Les opp tekst og ikoner i et valgt bilde</string>
-  <string name="summary_summarize_view">Les opp visningssammendraget</string>
   <string name="summary_typo_suggestions">Vises når markøren er på en skrivefeil</string>
   <string name="summary_cache_keyboard_keys">TalkBack forhåndsinnlaster kunngjøringer for å redusere forsinkelsen når du skriver</string>
   <string name="summary_cache_keyboard_keys_disabled">Bruk Google tekst til tale for å bruke denne funksjonen</string>
-  <string name="value_direction_down">ned</string>
-  <string name="value_direction_down_and_right">ned og deretter til høyre</string>
   <string name="title_pref_shortcut_up">Sveip opp</string>
   <string name="title_pref_shortcut_up_xr">Sekundær håndflate innover, klyp og sveip opp</string>
   <string name="title_pref_shortcut_down">Sveip ned</string>
@@ -704,10 +636,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="title_pref_shortcut_fingerprint_left">Sveip venstre på fingeravtrykkssensoren</string>
   <string name="title_pref_shortcut_fingerprint_right">Sveip høyre på fingeravtrykkssensoren</string>
   <string name="title_pref_version_code">Versjonskode</string>
-  <string formatted="false" name="value_volume_100_percent">Match talevolumet</string>
-  <string formatted="false" name="value_volume_75_percent">75 % av talevolumet</string>
-  <string formatted="false" name="value_volume_50_percent">50 % av talevolumet</string>
-  <string formatted="false" name="value_volume_25_percent">25 % av talevolumet</string>
   <string name="value_type_confirmation_double_tap">Hold fingeren for å velge en tast, og dobbelttrykk</string>
   <string name="value_type_confirmation_lift_to_type">Hold fingeren for å velge bokstavtast, og løft (dobbelttrykk for andre taster)</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Hold fingeren for å velge en tast, og løft</string>
@@ -720,12 +648,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="value_touch_explore_time_out_200ms">0,2 sekunder</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekunder</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekunder (standard)</string>
-  <string name="value_shake_to_read_disabled">Slått av</string>
-  <string name="value_shake_to_read_threshold_very_light">Veldig lett</string>
-  <string name="value_shake_to_read_threshold_light">Lett</string>
-  <string name="value_shake_to_read_threshold_medium">Middels</string>
-  <string name="value_shake_to_read_threshold_hard">Kraftig</string>
-  <string name="value_shake_to_read_threshold_very_hard">Veldig kraftig</string>
   <string name="title_pref_on_screen_keyboard">Skjermtastatur</string>
   <string name="title_pref_physical_keyboard">Fysisk tastatur</string>
   <string name="value_keyboard_echo_none">Ingen</string>
@@ -738,8 +660,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="pref_time_feedback_format_entries_default">Bruk tidsformatet på enheten</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-timers</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-timers</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack-bevegelsene ble endret</string>
-  <string name="notification_message_talkback_gestures_changed">Trykk for å gjennomgå endringer i tilgjengelighetsbevegelsene</string>
   <string name="always_show_warning_checkbox">Vis alltid denne advarselen</string>
   <string name="label_dialog_title_add">Legg til etikett</string>
   <string name="label_dialog_title_edit">Rediger etiketten</string>
@@ -760,16 +680,8 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="no_apps_to_export_labels">Finner ingen programmer for å eksportere etiketter.</string>
   <string name="label_choose_app_to_import">Velg et program for å importere etiketter:</string>
   <string name="label_choose_app_to_export">Velg en app for å eksportere etiketter:</string>
-  <string name="talkback_gesture_change_details">Denne versjonen av TalkBack inkluderer endringer i standardbevegelsene for tilgjengelighet. Handlingene som er knyttet til disse bevegelsene, kan tilpasses i TalkBack-innstillingene. Når Berøringsutforskning er aktivert, kan du bruke følgende bevegelser for å utføre bestemte handlinger.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Vil du skjule skjermen?</string>
   <string name="dialog_message_dim_screen">Dette slår av skjermen for å forbedre personvernet. Noe innhold kan fortsatt vises, for eksempel meldinger om å slå på skjermen igjen eller menyer for tilgjengelighetsfunksjoner som TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Denne versjonen av TalkBack inneholder endringer i standardbevegelsene for tilgjengelighet.\n\nOpp-og-deretter-ned-bevegelsen gjør det mulig å bevege seg til det første elementet på skjermen, og ned-og-deretter-opp-bevegelsen tar deg til det siste elementet.\n\nNå kan lesedetaljnivået endres ved å fokusere på et element og deretter velge et detaljnivå fra TalkBack-hurtigmenyen.\n\nDu kan endre handlingene som utføres med disse bevegelsene, i TalkBack-innstillingene.</string>
-  <string name="default_action_changed_details">For å spille av medier eller sette dem på pause kan du nå dobbelttrykke og holde med to fingre.\n\nAndre bevegelser er også endret.</string>
-  <string name="talkback_built_in_gesture_open_url">Åpne på telefonen for å finne ut mer</string>
-  <string name="talkback_built_in_gesture_change_details_45">Denne versjonen av TalkBack innebærer endringer i tilgjengelighetsbevegelsene som er angitt som standard.\n\nNå gjør sveip opp-bevegelsen at du går til den forrige navigeringsinnstillingen, og sveip ned-bevegelsen gjør at du går til den neste navigeringsinnstillingen.</string>
-  <string name="side_tap_shortcuts_removed_details">Disse innstillingene er fjernet fra TalkBack på grunn av problemer med pålitelighet:\n• Bevegelser med trykk på siden av enheten\n• Rist for å starte kontinuerlig lesing</string>
-  <string name="button_accept_changed_gesture_mappings">Godta bevegelser</string>
-  <string name="button_customize_gesture_mappings">Tilpass bevegelser</string>
   <string name="button_disable_all_events">Slå av alle</string>
   <string name="button_enable_all_events">Slå på alle</string>
   <string name="dialog_title_disable_exploration">Vil du slå av berøringsutforskning?</string>
@@ -893,8 +805,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="screen_search_hint_type_search_tables">Søk etter tabeller</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Varselkanalen for TalkBack</string>
-  <string name="pref_selector_summary">%1$s for å velge en innstilling. Deretter %2$s for å justere innstillingen.</string>
-  <string name="speech_rate_change">Talehastighet %1$d %%</string>
   <string name="speech_pitch_maximum">Høyeste taletone</string>
   <string name="speech_pitch_minimum">Laveste taletone</string>
   <string name="reset_speech_rate_and_pitch">Tilbakestill talehastighet og stemmeleie</string>
@@ -904,10 +814,7 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="vibration_feedback_state">Vibrasjonstilbakemelding %1$s</string>
   <string name="text_formatting_state">Opplesing av tekstformatering %1$s</string>
   <string name="typing_echo_change">%1$s-ekko for fysisk tastatur</string>
-  <string name="reading_control_toggle_prefix_xr">Sekundær håndflate inn, trykk lenge for å slå av/på lesekontrollmodus.</string>
   <string name="gesture_1_or_2">%1$s eller %2$s</string>
-  <string name="select_setting_hint">%1$s for å velge en annen innstilling</string>
-  <string name="adjust_setting_hint">%1$s for å justere innstillingen</string>
   <string name="adjust_granularity_hint">%1$s for å lese basert på %2$s</string>
   <string name="adjust_typo_hint">%1$s for forslag.</string>
   <string name="use_action_hint">Dobbelttrykk for å utføre handlingen</string>
@@ -947,7 +854,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="setting_selector_heading">Lesekontroller</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">For å spille av eller sette medier på pause i en video- eller musikkapp, dobbelttrykk med to fingre. Prøv nå.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Andre apper kan bruke denne bevegelsen for ting som å svare på eller avslutte telefonanrop. Denne bevegelsen støttes muligens ikke av alle apper.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Se alle TalkBack-veiledningene</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Medieinnholdet er satt på pause eller spilles av. Dette spiller vanligvis av eller setter på pause nåværende video eller musikk. Sveip til høyre for å fortsette.</string>
   <string name="new_shortcut_gesture_stop_speech_text">For få TalkBack til å slutte å snakke midlertidig, trykk med to fingre.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack-tale er stoppet. Dette stopper vanligvis frasen TalkBack sier nå. Sveip til høyre for å fortsette.</string>
@@ -961,38 +867,18 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Valgmodus er på eller av. Dette starter eller avslutter vanligvis valgmodus når du er i et inndatafelt. Sveip til høyre for å fortsette.</string>
   <string name="new_shortcut_gesture_reading_menu_text">For å bruke lesekontrollene, sveip til venstre eller høyre med tre fingre. Du kan også sveipe opp eller ned med tre fingre.</string>
   <string name="new_shortcut_gesture_note">Merk: Du har tilpasset noen av bevegelsene dine, så denne informasjonen er muligens ikke nøyaktig. For å gjennomgå bevegelsene dine, gå til TalkBack-innstillingene.</string>
-  <string name="welcome_to_android11">Velkommen til TalkBack på Android 11</string>
   <string name="welcome_to_android11_text">Nye bevegelser er lagt til for å gjøre TalkBack raskere og enklere å bruke.\n\nPå denne skjermen kan du prøve de nye bevegelsene. Du kan når som helst se gjennom denne informasjonen i TalkBack-innstillingene.</string>
   <string name="new_gesture_notification_title">Nye bevegelser i TalkBack</string>
   <string name="new_gesture_notification_content">Trykk for å finne ut hvordan du bruker TalkBack raskere med nye bevegelser.</string>
   <string name="dump_node_tree_description">Nodetreet er blitt skrevet ut til logger.</string>
   <string name="report_gesture_description">Dette er bevegelsene som er blitt utført nylig. Rapportér hvilken bevegelse som er feil, og hva du forventet.</string>
-  <string name="update_welcome_text_content">Nå kan du koble til leselister via HID – en måte å koble til Bluetooth-enheter på. Sørg for at du har de nyeste fastvaredriverne fra produsenten, og slå på Bluetooth på leselisten. Gå til TalkBack-innstillingene &gt; Leselist og slå på «Bruk leselist». Finn enheten din i enhetslisten, og koble den til.</string>
-  <string name="update_welcome_text_content_tts">Nå kan du koble til leselister via HID – en måte å koble til Bluetooth-enheter på. Sørg for at du har de nyeste fastvaredriverne fra produsenten, og slå på Bluetooth på leselisten. Gå til TalkBack-innstillingene og deretter til Leselist, og slå på «Bruk leselist». Finn enheten din i enhetslisten, og koble den til.</string>
-  <string name="update_welcome_text_content_with_link">Finn ut hvordan du bruker leselisten med TalkBack.</string>
   <string name="update_welcome_talkback_16.1">I denne TalkBack-oppdateringen introduseres støtte for Beskriv skjermen på flere språk og andre kvalitetsforbedringer som gjør det enklere å bruke TalkBack.\n\nDu finner ut mer om disse endringene på de neste skjermene.\n\nDu kan lese gjennom denne informasjonen senere i TalkBack-innstillinger &gt; Nye funksjoner i TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">I denne TalkBack-oppdateringen introduseres støtte for Beskriv skjermen på flere språk og andre kvalitetsforbedringer som gjør det enklere å bruke TalkBack.\n\nDu finner ut mer om disse endringene på de neste skjermene.\n\nDu kan lese gjennom denne informasjonen senere i TalkBack-innstillinger og så Nye funksjoner i TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Nye språk for Beskriv skjermen og Spør Gemini</string>
-  <string name="describe_screen_and_qna_content">Beskriv skjermen og Spør Gemini er nå tilgjengelig på flere språk. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Du kan finne ut mer i brukerstøtten&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Snarvei for stemmestyrt skriving</string>
   <string name="shortcut_for_dictation_content">Når du bruker Gboard, kan du dobbelttrykke med to fingre for å starte eller stoppe stemmestyrt skriving.
 &lt;br&gt;
 &lt;br&gt;Sørg for at du har den nyeste versjonen av &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard fra Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Når Gboard er på skjermen, kan du bruke et dobbelttrykk med to fingre for å starte diktering og et dobbelttrykk med to fingre for å stoppe.</string>
-  <string name="keyboard_title">Tastatur</string>
-  <string name="keyboard_content">Nå har TalkBack et «utvidet tastaturoppsett» for tastaturet, med en rekke nye kommandoer og snarveier. Denne forbedringen, som inkluderer «surfemodus» for mer effektiv navigering på nettet, gjør navigering og interaksjon enklere for TalkBack-brukere som bruker fysiske tastaturer. Du kan bytte til «Forbedret tastaturoppsett» i TalkBack-innstillinger &gt; Avanserte innstillinger &gt; Hurtigtaster.</string>
-  <string name="keyboard_content_tts">Nå har TalkBack et «utvidet tastaturoppsett» for tastaturet, med en rekke nye kommandoer og snarveier. Denne forbedringen, som inkluderer «surfemodus» for mer effektiv navigering på nettet, gjør navigering og interaksjon enklere for TalkBack-brukere som bruker fysiske tastaturer. Du kan bytte til «Utvidet tastaturoppsett» i TalkBack-innstillinger og så Avanserte innstillinger og deretter Hurtigtaster.</string>
-  <string name="reduce_delay_title">Reduser forsinkelsen</string>
-  <string name="reduce_delay_content">Nå kan du redusere forsinkelsene for TalkBack-kunngjøringer for berøring og skriving. For å se disse innstillingene, gå til TalkBack-innstillinger &gt; Avanserte innstillinger &gt; Reduser forsinkelsen.</string>
-  <string name="reduce_delay_content_tts">Nå kan du redusere forsinkelsene for TalkBack-kunngjøringer for berøring og skriving. For å se disse innstillingene, gå til TalkBack-innstillinger, så til Avanserte innstillinger og så til Reduser forsinkelsen.</string>
-  <string name="customize_braille_keyboard_improvements_title">Tilpass bevegelser for punktskrifttastatur</string>
-  <string name="customize_braille_keyboard_improvements_content">Nå er det mulig å tilpasse bevegelser for det virtuelle punktskrifttastaturet på skjermen. For å tilpasse, gå til TalkBack-innstillinger &gt; Punktskrifttastatur &gt; Bevegelser.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Nå er det mulig å tilpasse bevegelser for det virtuelle punktskrifttastaturet på skjermen. For å tilpasse, gå til TalkBack-innstillinger, så til Punktskrifttastatur og så til Bevegelser.</string>
-  <string name="learn_more_about_braille_keyboard">Finn ut mer om punktskrifttastaturet</string>
-  <string name="other_changes_title">Andre endringer</string>
-  <string name="other_changes_content">Nå kan du bruke en melding på skjermen til å slå av TalkBack raskt hvis det er slått på ved et uhell. Du kan slå dette av i TalkBack-innstillinger &gt; Vis veiledning om hvordan du slår av TalkBack.</string>
-  <string name="other_changes_content_tts">Nå kan du bruke en melding på skjermen til å slå av TalkBack raskt hvis det er slått på ved et uhell. Du kan slå dette av i TalkBack-innstillinger og så Vis veiledning om hvordan du slår av TalkBack.</string>
-  <string name="keymap_changes_content">Det klassiske tastaturoppsettet er byttet til standard tastaturoppsett, som har flere snarveier.</string>
   <string name="announcing_text_formatting_title">Vi lanserer tekstformatering</string>
   <string name="announcing_text_formatting_header">Nå kan TalkBack lese opp endringer i tekstformatering, for eksempel fet, kursiv og tekstfarge. Slik kommer du i gang:</string>
   <string name="announcing_text_formatting_option1">Fokuser på elementet med formatering, åpne TalkBack-menyen, og velg «Beskriv tekstformatering», eller</string>
@@ -1083,7 +969,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="additional_tips_link_subtext">Finn ut hvordan du ringer, sender meldinger med mer</string>
   <string name="practice_gestures_link_text">Øv på bevegelser</string>
   <string name="practice_gestures_link_subtext">Prøv forskjellige bevegelser for å finne ut hva de gjør</string>
-  <string name="help_and_feedback_link_subtext">Finn ut mer om TalkBack, og send tilbakemelding</string>
   <string name="choose_tutorial_title">Velg hvordan du vil bruke TalkBack</string>
   <string name="touch_tutorial_button">Veiledning for trykk</string>
   <string name="keyboard_tutorial_button">Veiledning for tastatur</string>
@@ -1229,8 +1114,6 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="wear_training_typing_text5">Prøv det nedenfor.</string>
   <string name="wear_training_typing_practice_button_content_description">Skriver med tastaturet</string>
   <string name="wear_training_end_tutorial_title">Nå kan du bruke TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack er oppdatert</string>
-  <string name="talkback_updated_notification_content">Trykk for å finne ut mer</string>
   <string name="wear_new_feature_page_title">Velkommen til oppdaterte TalkBack</string>
   <string name="wear_new_feature_page_content">Du kommer til å legge merke til noen feilrettinger og endringer i hvordan fokuset beveger seg</string>
   <string name="wear_new_feature_page_button_content_description">Fullfør</string>
@@ -1249,10 +1132,7 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="title_pref_blue">Blå</string>
   <string name="title_pref_grey">Grå</string>
   <string name="survey_setting_title">Del tilbakemeldingen din</string>
-  <string name="survey_closed">Undersøkelsen er lukket</string>
   <string name="title_summarize_view">Beskriv skjermen</string>
-  <string name="title_increase_touch_focus_latency">Øk fokusforsinkelsen</string>
-  <string name="title_decrease_touch_focus_latency">Reduser fokusforsinkelsen</string>
   <string name="detected_result">Registrert: %1$s</string>
   <string name="title_image_caption">Beskriv bildet</string>
   <string name="image_caption_with_gemini_prefix">Beskriv dette bildet. Ikke bruk oppmerking i svaret.</string>
@@ -1279,33 +1159,15 @@ Hvis forsinkelsen er under 0,3 sekunder, endres dobbelttrykk for å aktivere ti
   <string name="image_qna_question_prefix">BRUKER: %1$s</string>
   <string name="image_qna_answer_prefix">MODELL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Fortsett å veksle mellom BRUKER og MODELL] …</string>
-  <string name="screen_overview_with_screenshot">Du skal hjelpe noen som ikke kan se telefonen sin, med å forstå hva som vises på telefonskjermen. Beskriv dette skjermbildet med noen få setninger.
-
-Veiledning
-Begynn svaret med «Skjermen viser»
-I begynnelsen av svaret beskriver du det viktigste innholdet på skjermen. Her er noen eksempler på hva det viktigste og mest fremtredende innholdet kan være
-* i en chatteapp: avsenderen og teksten i den siste meldingen
-* i en app for sosiale medier: det første innlegget, inkludert hvem som har lagt det ut, teksten og en beskrivelse av bildet
-* i en nyhetsapp: artikkelens tittel og en beskrivelse av hovedbildet
-* i en shopping-app: en beskrivelse av og prisen på produktet som vises
-* i en kalenderapp: den neste hendelsen og antallet andre hendelser som vises etterpå
-* i en meldingsliste: navnet og forhåndsvisningen av den første meldingen og deretter bare navnene på de neste meldingene i listen og hvor mange meldinger som er ulest
-
-Deretter kan svaret beskrive den romlige plasseringen og formålet med navigasjonsrader og fremtredende knapper.
-Ikke nevn innholdet i statusfeltet øverst (f.eks. klokkeslett, nettverksstatus, batteri).
-Ikke bruk Markdown i svaret.</string>
   <string name="title_gemini_opt_in_dialog">Vil du få detaljerte bildebeskrivelser?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Vil du ha bildebeskrivelser?</string>
   <string name="title_gemini_result_dialog">Oppdaget: bilde</string>
   <string name="title_gemini_result_bottom_sheet">Bildebeskrivelse</string>
   <string name="title_gemini_screen_overview_result_dialog">Skjermbeskrivelse</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Sammendrag</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Handlinger</string>
   <string name="positive_button_gemini_opt_in_dialog">Slå på</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Jeg godtar</string>
   <string name="negative_button_gemini_opt_in_dialog">Nei takk</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Gå til Innstillinger</string>
-  <string name="positive_button_gemini_download_dialog">Last ned og slå på</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Tekst: «%1$s».</string>
   <string name="detected_icon_label">Ikon: «%1$s».</string>
@@ -1319,8 +1181,6 @@ Ikke bruk Markdown i svaret.</string>
   <string name="screen_overview_no_result">Kan ikke oppsummere skjermen</string>
   <string name="image_caption_no_result">Kan ikke beskrive bildet</string>
   <string name="image_caption_with_hide_screen">Bildebeskrivelser er ikke tilgjengelige når skjermen er skjult. Vis skjermen og prøv igjen.</string>
-  <string name="feedback_button_state_set">valgt</string>
-  <string name="feedback_button_state_unset">ikke valgt</string>
   <string name="action_text_like_button">Merk som et bra svar</string>
   <string name="action_text_dislike_button">Merk som et dårlig svar</string>
   <string name="action_text_clear_like_button">Fjern bra svar</string>
@@ -1349,18 +1209,13 @@ Ikke bruk Markdown i svaret.</string>
   <string name="downloading_all_image_captioning_hint">Laster ned automatiske bilde- og ikonbeskrivelser</string>
   <string name="download_all_image_captioning_successful_hint">Automatiske bilde- og ikonbeskrivelser er lastet ned</string>
   <string name="download_all_image_captioning_failed_hint">Kan ikke laste ned. Prøv på nytt senere.</string>
-  <string name="download_complete_notification_title">Nedlastingen er fullført</string>
-  <string name="download_complete_notification_content">Nå hører du automatiske beskrivelser av bilder og ikoner med TalkBack</string>
-  <string name="download_complete_notification_action">Innstillinger</string>
   <string name="download_storage_error_hint">Lagringsplassen er full. For å laste ned, frigjør %1$d MB i Innstillinger &gt; Lagring.</string>
   <string name="download_network_error_hint">Kan ikke laste ned. Sjekk tilkoblingen, og prøv igjen.</string>
   <string name="switch_icon_detection_dialog_title">Automatiske ikonbeskrivelser</string>
   <string name="switch_icon_detection_dialog_message">Hør beskrivelser når du fokuserer på et ikon</string>
   <string name="switch_image_description_dialog_message">Hør beskrivelser når du uthever et bilde. Noen apper støtter kanskje ikke dette.</string>
-  <string name="switch_text_recognition_dialog_title">Beskriv tekst i bilder automatisk</string>
   <string name="switch_text_recognition_dialog_message">Hør beskrivelser når du har fokus på et bilde som inneholder tekst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Lastet ned</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Du kan fortsatt få beskrivelser for valgte bilder via TalkBack-menyen</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Slett nedlastingen</string>
   <string name="delete_icon_detection_dialog_title">Vil du slette de automatiske ikonbeskrivelsene?</string>
@@ -1376,11 +1231,6 @@ Ikke bruk Markdown i svaret.</string>
   <string name="gemini_enable_dialog_title">Bruk Gemini i TalkBack</string>
   <string name="gemini_disable_dialog_message">Skjermforståelse med Gemini</string>
   <string name="disable_gemini_dialog_subtext">Slå på for å aktivere skjermforståelse med Gemini</string>
-  <string name="ai_services_update_dialog_title">Oppdater %1$s-appen for å beskrive bilder</string>
-  <string name="ai_services_update_dialog_message">For å høre bildebeskrivelser, installer den nyeste versjonen av %1$s fra Google Play.\n\nNår nedlastingen er fullført, går du tilbake til TalkBack-innstillingene og slår på automatiske bildebeskrivelser igjen.</string>
-  <string name="ai_services_update_dialog_button_text">Gå til Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Noe gikk galt. Prøv på nytt.</string>
   <string name="gemini_block_message">Kan ikke behandle dette bildet</string>
   <string name="gemini_network_error">Ingen internettilkobling. Sjekk wifi- eller mobilnettverket, og prøv på nytt.</string>
@@ -1396,13 +1246,8 @@ Ikke bruk Markdown i svaret.</string>
   <string name="image_qna_typing_button_text">Skriv inn et spørsmål til Gemini</string>
   <string name="image_qna_send_button_text">Spør</string>
   <string name="image_qna_speak_question_description">Si spørsmålet høyt</string>
-  <string name="overviews_summary_intro">Sammendrag av denne appskjermen: %1$s</string>
   <string name="overviews_node_not_found">Beklager, men jeg finner ikke den delen av skjermen lenger.</string>
-  <string name="overviews_images_in_app">Hovedbilder som ble funnet</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Handlinger i appen</string>
-  <string name="overviews_actions_in_app_description">Her er de viktigste handlingene du kan utføre fra denne appskjermen:</string>
-  <string name="overviews_parent_type">Handlinger i appen</string>
   <string name="text_replaced_feedback">Teksten er byttet ut</string>
   <string name="switch_gesture_set">Bytt bevegelsessett</string>
   <string name="switch_gesture_set_to">Bytt til bevegelsessett %1$d</string>
@@ -1453,5 +1298,4 @@ Ikke bruk Markdown i svaret.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Lukk</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">For å høre varsler når skjermen er av, slå på «Les opp varsler når skjermen er av» i TalkBack-innstillingene for detaljnivå</string>
 </resources>

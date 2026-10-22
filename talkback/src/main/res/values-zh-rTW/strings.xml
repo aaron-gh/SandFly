@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">開啟 TalkBack 後，系統會提供互動朗讀內容，讓你不用看螢幕也能操作裝置。如果使用者無法正常查看或難以看清螢幕，就非常適合使用 TalkBack。&lt;br&gt;&lt;br&gt;&lt;b&gt;如何使用 TalkBack&lt;/b&gt;&lt;br&gt;• 向右或向左滑動可在項目之間移動&lt;br&gt;• 輕觸兩下可啟動項目&lt;br&gt;• 用 2 指拖曳可捲動畫面&lt;br&gt;&lt;b&gt;如何關閉 TalkBack&lt;/b&gt;&lt;br&gt;1. 在「設定」中輕觸「使用 TalkBack」&lt;b&gt;&lt;/b&gt;，畫面上會出現外框，這時請輕觸兩下。&lt;br&gt;2. 輕觸確認訊息上的「停止」&lt;b&gt;&lt;/b&gt;，畫面上會出現外框，這時請輕觸兩下。</string>
   <string name="talkback_service_summary">使用螢幕閱讀器朗讀內容</string>
   <string name="talkback_preferences_title">TalkBack 設定</string>
-  <string name="talkback_settings_screen_title_breadcrumb">設定</string>
   <string name="tts_preferences_title">文字轉語音</string>
   <string name="language_options">語言</string>
   <string name="spoken_language">使用的語言</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">已取消搜尋。</string>
   <string name="notification_type_status_started">開始時間</string>
   <string name="notification_type_status_stopped">已停止</string>
-  <string name="notification_type_status_connected">已插電</string>
-  <string name="notification_battery_level_unknown">不明</string>
   <string name="notification_battery_saver_mode">省電模式已開啟</string>
   <string name="template_no_text_selected">尚未選取任何文字</string>
   <string name="template_charging">正在充電%1$s，電量為百分之 %2$s。</string>
   <string name="template_charging_lite">充電：%1$s</string>
-  <string name="template_battery_state">%1$s 電量%2$s %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">鈴聲震動。</string>
   <string name="value_ringer_silent">鈴聲靜音。</string>
   <string name="value_screen_on">螢幕開啟。</string>
   <string name="value_screen_off">螢幕已關閉。</string>
   <string name="value_device_unlocked">裝置已解除鎖定。</string>
-  <string name="title_pref_category_audio">音訊</string>
   <string name="title_pref_speech_volume">語音音量</string>
-  <string name="title_pref_speech_rate">語音速率</string>
-  <string name="summary_pref_speech_rate">文字朗讀速度</string>
   <string name="title_pref_verbose_scroll_announcement">一律朗讀清單項目編號</string>
   <string name="summary_pref_verbose_scroll_announcement">朗讀所有捲動方法的數量</string>
   <string name="title_pref_cover_proximity_sensor">蓋住鄰近感應器即可停止輸出語音內容</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">朗讀時間</string>
   <string name="pref_speak_time_summary">開啟螢幕時</string>
   <string name="summary_speak_container_element_positions">包含進出清單、格線和其他容器時的資訊</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">朗讀控制項已新增焦點延遲</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">用 3 指滑動即可使用朗讀控制項，以及調整焦點延遲時間</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">要改用抬指輸入的方式嗎？</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">如果設定的焦點延遲時間低於 0.3 秒，輕觸兩下輸入文字的操作就難以執行。選擇「切換」即可自動切換為抬指輸入的方式。\n\n如要使用抬指輸入，請用手指按住要選取的按鍵，然後放開即可輸入。\n\n你可以在 TalkBack 設定中自訂這項功能。</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">朗讀控制項已新增輸入焦點延遲</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">如果輸入時輕觸兩下有問題，請以 3 指滑動的方式使用朗讀控制項，並拉長輸入焦點延遲時間</string>
-  <string name="gestures_announce_typing_focus_wont_change">必須啟用「抬指輸入」的方式，輸入焦點延遲才能運作。</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">我知道了</string>
   <string name="reset_letency_reduction_settings_dialog_title">要重設延遲設定嗎？</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">所有延遲設定會回到預設值</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">重設</string>
   <string name="gestures_announce_reset_latency_reduction_settings">縮短延遲設定已重設。</string>
-  <string name="reduce_focus_delay_settings_confirm_button">更改</string>
-  <string name="reduce_focus_delay_settings_cancel_button">不要更改</string>
   <string name="Reset_gesture_settings_dialog_title">要重設手勢嗎？</string>
   <string name="Reset_gesture_settings_set_dialog_title">要重設目前的手勢組合嗎？</string>
   <string name="message_reset_gesture_settings_confirm_dialog">這麼做會將所有手勢還原為預設動作。\n\n系統將不會保留先前所做的任何變更。</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">朗讀所有最新進度</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">包括下載、依照行車路線等進度。如果關閉這項功能，系統仍會朗讀進度，只是頻率較低。</string>
   <string name="title_pref_explore_by_touch">輕觸探索</string>
-  <string name="title_pref_category_visual">影像</string>
   <string name="title_pref_category_controls">控制項</string>
-  <string name="title_pref_category_braille">點字</string>
-  <string name="title_pref_category_general">一般</string>
-  <string name="title_pref_category_advanced">進階</string>
-  <string name="title_pref_category_others">其他</string>
-  <string name="title_pref_category_tutorial_and_help">教學課程和說明</string>
   <string name="title_pref_category_reduce_latency_summary">這些設定可以縮短 TalkBack 朗讀前的延遲時間</string>
   <string name="reset_latency_settings_title">重設所有延遲設定</string>
   <string name="title_pref_single_tap">輕觸一下即可啟用</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">變更焦點指標</string>
   <string name="title_pref_category_manage_gestures">手勢</string>
   <string name="title_pref_manage_labels">自訂標籤</string>
-  <string name="title_pref_manage_customize_menus">編輯選單</string>
   <string name="title_pref_category_context_menu">自訂 TalkBack 選單</string>
   <string name="title_pref_category_selector_menu">自訂朗讀控制項</string>
   <string name="title_pref_category_navigation_menu">編輯導覽選項</string>
-  <string name="pref_category_context_menu_summary">如要使用 TalkBack 選單，請用 3 指輕觸螢幕。或者，先向上再向右滑動，或是先向下再向右滑動。</string>
-  <string name="pref_category_context_menu_summary_xr">如要使用 TalkBack 選單，請將非慣用手的掌心朝向自己，然後雙指捏住。</string>
-  <string name="pref_category_context_menu_summary_single_finger">如要使用 TalkBack 選單，請先向下再向右滑動。</string>
-  <string name="pref_category_selector_menu_summary">如要使用朗讀控制項，請用 3 指向左或向右滑動，或是用 3 指向上或向下滑動。</string>
-  <string name="pref_category_selector_menu_summary_xr">如要切換朗讀控制項，請將非慣用手的掌心朝向自己，雙指捏住並向右或向左移動，然後放開。</string>
-  <string name="pref_category_selector_menu_summary_single_finger">如要使用朗讀控制項，請先向上再向下滑動。</string>
   <string name="title_pref_manage_keyboard_shortcuts">鍵盤快速鍵</string>
   <string name="title_pref_export_custom_labels">匯出自訂標籤</string>
-  <string name="title_pref_play_store">在 Play 商店開啟 Talkback</string>
-  <string name="summary_pref_play_store">目前 TalkBack 版本：%1$s</string>
   <string name="title_pref_help_and_feedback">說明與意見回饋</string>
-  <string name="title_pref_gup">與 Google 身心障礙支援團隊聯絡</string>
-  <string name="subtitle_pref_gup">使用 TalkBack 尋求協助或回報問題</string>
-  <string name="pref_item_licenses">開放原始碼授權</string>
-  <string name="title_pref_tutorial">教學課程</string>
   <string name="title_pref_help">說明</string>
   <string name="title_pref_show_tos">服務條款</string>
   <string name="title_pref_show_privacy_policy">隱私權政策</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">指紋手勢</string>
   <string name="title_pref_category_tutorial">TalkBack 教學課程</string>
   <string name="title_pref_category_help_no_tutorial">說明</string>
-  <string name="title_pref_category_typing">輸入</string>
   <string name="title_pref_advanced_settings">進階設定</string>
   <string name="title_pref_show_exit_watermark">顯示關閉 TalkBack 的操作說明</string>
   <string name="summary_pref_show_exit_watermark">TalkBack 開啟時會顯示訊息，協助你快速關閉 TalkBack</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;部分輔助鍵有所不同。&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">進一步瞭解按鍵對應配置</string>
   <string name="keycombo_go_to_settings">前往「設定」</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack 即將移除傳統按鍵對應配置。如要繼續使用鍵盤快速鍵，請切換至預設按鍵對應配置。</string>
-  <string name="keycombo_keymap_changes_notifications_action">瞭解詳情</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">我知道了</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">設定</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">瞭解詳情</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">你現在使用的是 TalkBack 預設按鍵對應配置。我們目前已推出全新強化版按鍵對應配置，可支援多個新指令。詳情請參閱說明中心，或前往「設定」直接改用全新按鍵對應配置。</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">有新的按鍵對應配置</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">全新 TalkBack 強化版按鍵對應配置支援多個新指令。詳情請參閱說明中心，或前往「設定」直接改用全新按鍵對應配置。</string>
-  <string name="keycombo_update_modifier_key_warning_title">更新 TalkBack 輔助鍵</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">暫時不要</string>
   <string name="keycombo_warning_content_description">進一步瞭解輔助鍵</string>
-  <string name="keycombo_warning_dialog_title">更新輔助鍵</string>
-  <string name="keycombo_warning_dialog_message">為使 TalkBack 的鍵盤快速鍵正確運作，請將輔助鍵從快捷操作鍵改成 Alt 鍵。\n\n如果繼續將快捷操作鍵設為輔助鍵，部分快速鍵會在這個版本的 Android 上執行不同的動作。</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">按鍵對應配置</string>
   <string name="keycombo_menu_select_keymap">選擇按鍵對應配置</string>
   <string name="keycombo_menu_reset_keymap">重設按鍵對應配置</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">調高說話音量</string>
   <string name="keycombo_menu_global_speech_volume_decrease">調低說話音量</string>
   <string name="keycombo_menu_global_refocus_current_node">朗讀目前焦點</string>
-  <string name="keycombo_menu_category_granularity">瀏覽</string>
   <string name="keycombo_menu_granularity_increase">下一頁導覽設定</string>
   <string name="keycombo_menu_granularity_decrease">上一頁導覽設定</string>
   <string name="keycombo_menu_category_other">其他動作</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">確定要將這個按鍵對應配置的快速鍵重設為預設值嗎？請注意，這項操作無法復原。</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">重設</string>
   <string name="template_keycombo_menu_browse_mode_command">在瀏覽模式中使用 %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">按下組合鍵來設定新的快速鍵。快速鍵必須至少包含 ALT 或 Ctrl 鍵。</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">同時按下組合鍵和「%1$s」輔助鍵，即可設定新快速鍵。</string>
   <string name="keycombo_unassigned">未指派</string>
   <string name="save_button_in_keycombo_assign_dialog">儲存</string>
@@ -366,9 +320,6 @@
   <string name="title_pref_touch_explore_timeout">輸入焦點延遲</string>
   <string name="message_pref_touch_explore_latency">輸入焦點延遲時間越短，輕觸鍵盤後 TalkBack 就會越快開始朗讀。\n\n選取延遲時間</string>
   <string name="title_pref_touch_focus_timeout">焦點延遲</string>
-  <string name="summary_pref_touch_focus_time">
-控制 TalkBack 在焦點移動後多久開始朗讀。延遲越短，TalkBack 反應速度就越快，但輕觸兩下和三下的執行難度可能會提高。\n\n如果延遲時間低於 0.3 秒，啟用方式就會從輕觸兩下改成兩指輕觸。
-      </string>
   <string name="title_pref_talkback_gesture_detection">在 TalkBack 中處理手勢</string>
   <string name="toast_pref_talkback_gesture_detection">將 TalkBack 關閉再重新開啟，即可啟動設定。</string>
   <string name="title_pref_auto_image_captioning">自動描述</string>
@@ -381,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">前往「設定」開啟描述圖片功能</string>
   <string name="dialog_message_turn_on_image_description">你可以開啟自動或詳細描述圖片功能，然後再試一次</string>
   <string name="title_pref_detailed_image_description">詳細描述圖片</string>
-  <string name="summary_pref_ai_description">當你選取 TalkBack 選單中的「%1$s」時，提供更詳細的描述內容</string>
   <string name="dialog_message_on_device_ai_description">在支援的應用程式中，系統會在焦點移到圖片時，簡短描述圖片內容。\n\n圖片只會在裝置端處理，絕對不會傳送給 Google。\n\n生成式 AI 仍在實驗階段，因此可能會出錯。繼續操作即表示您同意《<a href="https://policies.google.com/terms/generative-ai">Google 服務條款</a>》。</string>
   <string name="enable_gemini">開啟</string>
   <string name="powered_by_gemini">採用生成式 AI 技術</string>
-  <string name="detailed_image_description_ongoing_hint">正在取得說明</string>
-  <string name="detailed_image_description_result_prefix">偵測到的內容：圖片。%1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">必須下載模型，系統才能自動描述圖片</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">圖片只會在裝置端處理，絕對不會傳送給 Google。\n\n生成式 AI 仍在實驗階段，因此可能會出錯。選擇繼續即表示您同意《%1$s》。</string>
   <string name="dialog_message_gen_ai_tos_link">Google 服務條款</string>
   <string name="message_aifeature_downloading">正在下載 AI 模型，請稍待片刻。系統會在下載完成後通知你。</string>
   <string name="message_aifeature_downloading_with_progress">目前仍在下載，已下載 %1$d MB (共 %2$d MB)。</string>
-  <string name="message_aifeature_download_complete">AI 模型下載完成。TalkBack 現在可以生成圖片描述。</string>
   <string name="summary_pref_auto_image_captioning">適用於圖示、圖片和圖片中的文字</string>
-  <string name="summary_pref_auto_image_captioning_text_only">適用於圖像中的文字</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">適用於圖像和圖像中的文字</string>
-  <string name="summary_pref_auto_image_captioning_no_image">適用於圖示和圖像中的文字</string>
   <string name="summary_pref_module_downloading">下載中…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">已開啟，適用於所有圖片</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">已開啟，僅限無標籤圖片</string>
   <string name="summary_pref_auto_image_captioning_disabled">已關閉</string>
-  <string name="summary_pref_auto_icon_detection_enabled">已開啟，適用於所有圖示</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">已開啟，僅限無標籤圖示</string>
   <string name="summary_pref_auto_icon_detection_disabled">已關閉</string>
   <string name="title_pref_enable_auto_image_caption">所有圖片</string>
   <string name="title_pref_enable_auto_image_caption_arg">所有圖片\n%1$s</string>
@@ -412,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">所有圖示</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">僅限無標籤圖示</string>
   <string name="title_pref_disable_auto_icon_detection">不要描述圖示</string>
-  <string name="dialog_message_on_device_ai_model_download">在支援的應用程式中，系統會在焦點移到圖片時，簡短描述圖片內容。\n\n圖片只會在裝置端處理，絕對不會傳送給 Google。\n\n生成式 AI 仍在實驗階段，因此可能會出錯。選擇繼續即表示您同意《%1$s》。</string>
   <string name="title_pref_enable_gemini_support">開啟</string>
   <string name="title_pref_disable_gemini_support">關閉</string>
   <string name="summary_pref_gemini_support_enabled">Gemini 已啟用</string>
@@ -456,7 +394,6 @@
   <string name="shortcut_print_node_tree">列印節點樹狀結構</string>
   <string name="shortcut_print_performance_stats">列印效能統計資料</string>
   <string name="shortcut_first_in_screen">將焦點移至畫面上的第一個項目</string>
-  <string name="shortcut_summary">畫面配置摘要</string>
   <string name="shortcut_voice_commands">啟動語音指令</string>
   <string name="shortcut_last_in_screen">將焦點移至畫面上的最後一個項目</string>
   <string name="shortcut_enable_dimming">隱藏螢幕畫面</string>
@@ -560,7 +497,6 @@
   <string name="menu_category_web_navigation">網頁瀏覽</string>
   <string name="menu_category_basic_navigation">基本操作</string>
   <string name="summary_custom_action">顯示可對目前項目執行的動作，例如連結、複製、貼上、選取等等</string>
-  <string name="summary_context_menu_links">開啟焦點所在項目中的連結</string>
   <string name="summary_viewpager_controls">前往下一頁或上一頁。在朗讀多頁內容時顯示。</string>
   <string name="summary_labeling_controls">在選取沒有標籤的項目時顯示</string>
   <string name="summary_granularity">依字元、字詞、行和其他單位讀出文字</string>
@@ -630,12 +566,9 @@
   <string name="summary_screen_overview">按下動作按鈕生成畫面摘要</string>
   <string name="summary_screen_overview_no_actions">聽取畫面內容摘要</string>
   <string name="summary_image_caption">朗讀所選圖片內的文字和圖示</string>
-  <string name="summary_summarize_view">說出檢視畫面摘要</string>
   <string name="summary_typo_suggestions">游標移到錯字上即顯示</string>
   <string name="summary_cache_keyboard_keys">TalkBack 會預先載入朗讀內容，縮短輸入內容時的延遲時間</string>
   <string name="summary_cache_keyboard_keys_disabled">透過 Google 文字轉語音技術使用這項功能</string>
-  <string name="value_direction_down">向下</string>
-  <string name="value_direction_down_and_right">先往下再往右</string>
   <string name="title_pref_shortcut_up">向上滑動</string>
   <string name="title_pref_shortcut_up_xr">將非慣用手的掌心朝向自己，雙指捏住並向上滑動</string>
   <string name="title_pref_shortcut_down">向下滑動</string>
@@ -703,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">在指紋感應器上向左滑動</string>
   <string name="title_pref_shortcut_fingerprint_right">在指紋感應器上向右滑動</string>
   <string name="title_pref_version_code">版本代碼</string>
-  <string formatted="false" name="value_volume_100_percent">與系統語音音量相同</string>
-  <string formatted="false" name="value_volume_75_percent">系統語音音量的 75%</string>
-  <string formatted="false" name="value_volume_50_percent">系統語音音量的 50%</string>
-  <string formatted="false" name="value_volume_25_percent">系統語音音量的 25%</string>
   <string name="value_type_confirmation_double_tap">用手指按住任何要選取的鍵，然後輕觸兩下</string>
   <string name="value_type_confirmation_lift_to_type">用手指按住要選取的字母鍵，然後放開。輕觸兩下即可選取其他鍵。</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">用手指按住任何要選取的鍵，然後放開</string>
@@ -719,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0.2 秒</string>
   <string name="value_touch_explore_time_out_250ms">0.25 秒</string>
   <string name="value_touch_explore_time_out_300ms">0.3 秒 (預設)</string>
-  <string name="value_shake_to_read_disabled">已停用</string>
-  <string name="value_shake_to_read_threshold_very_light">很輕</string>
-  <string name="value_shake_to_read_threshold_light">輕</string>
-  <string name="value_shake_to_read_threshold_medium">中</string>
-  <string name="value_shake_to_read_threshold_hard">用力</string>
-  <string name="value_shake_to_read_threshold_very_hard">很用力</string>
   <string name="title_pref_on_screen_keyboard">螢幕小鍵盤</string>
   <string name="title_pref_physical_keyboard">實體鍵盤</string>
   <string name="value_keyboard_echo_none">無</string>
@@ -737,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">使用裝置時間格式</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 小時</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 小時</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack 手勢已變更</string>
-  <string name="notification_message_talkback_gestures_changed">輕觸即可查看無障礙手勢變更</string>
   <string name="always_show_warning_checkbox">一律顯示這項警告</string>
   <string name="label_dialog_title_add">新增標籤</string>
   <string name="label_dialog_title_edit">編輯標籤</string>
@@ -759,16 +680,8 @@
   <string name="no_apps_to_export_labels">找不到可用於匯出標籤的應用程式。</string>
   <string name="label_choose_app_to_import">選擇用於匯入標籤的應用程式：</string>
   <string name="label_choose_app_to_export">選擇應用程式以匯出標籤：</string>
-  <string name="talkback_gesture_change_details">這個 TalkBack 版本變更了部分預設無障礙手勢。你可以在 TalkBack 設定中自訂與這些手勢相關聯的動作。啟用「輕觸探索」時，你可以使用下列手勢執行特定動作。\n\n%1$s</string>
   <string name="dialog_title_dim_screen">要隱藏螢幕畫面嗎？</string>
   <string name="dialog_message_dim_screen">這麼做會關閉螢幕，可保護你的隱私。畫面仍可能會顯示某些內容，例如重新開啟螢幕的訊息或 TalkBack 等無障礙功能的選單。</string>
-  <string name="talkback_built_in_gesture_change_details">這個 TalkBack 版本對預設無障礙手勢做了一些變動。\n\n「先向上再向下」手勢可移至畫面上顯示的第一個項目，「先向下再向上」手勢則可移至最後一個項目。\n\n現在如要變更朗讀切分設定，可先將焦點移至特定項目，再從 TalkBack 內容選單中選取切分設定。\n\n你可在 TalkBack 設定頁面中變更這些手勢所執行的操作。</string>
-  <string name="default_action_changed_details">如要暫停播放及播放媒體，你現在可以用雙指輕觸兩下並按住。\n\n其他手勢也已變更。</string>
-  <string name="talkback_built_in_gesture_open_url">在手機上開啟即可瞭解詳情</string>
-  <string name="talkback_built_in_gesture_change_details_45">這個 TalkBack 版本對預設無障礙手勢做了一些變動。\n\n現在，使用向上滑動手勢可移至上一項導覽設定，使用向下滑動手勢則會移至下一項導覽設定。</string>
-  <string name="side_tap_shortcuts_removed_details">基於穩定性問題，我們已將以下設定從 TalkBack 移除：\n• 輕觸裝置側邊手勢\n• 搖動裝置即可啟動持續朗讀功能</string>
-  <string name="button_accept_changed_gesture_mappings">接受手勢</string>
-  <string name="button_customize_gesture_mappings">自訂手勢</string>
   <string name="button_disable_all_events">全部停用</string>
   <string name="button_enable_all_events">全部啟用</string>
   <string name="dialog_title_disable_exploration">停用輕觸探索？</string>
@@ -892,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">搜尋表格</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack 通知管道</string>
-  <string name="pref_selector_summary">%1$s可選取設定，接著再%2$s即可進行調整。</string>
-  <string name="speech_rate_change">語音速率：%1$d%%</string>
   <string name="speech_pitch_maximum">最高語音音調</string>
   <string name="speech_pitch_minimum">最低語音音調</string>
   <string name="reset_speech_rate_and_pitch">重設語音速率和音調</string>
@@ -903,10 +814,7 @@
   <string name="vibration_feedback_state">震動回饋已%1$s</string>
   <string name="text_formatting_state">朗讀文字格式設定已%1$s</string>
   <string name="typing_echo_change">%1$s 語音實體鍵盤</string>
-  <string name="reading_control_toggle_prefix_xr">將非慣用手的掌心朝向自己，長按即可切換朗讀控制模式。</string>
   <string name="gesture_1_or_2">%1$s或%2$s</string>
-  <string name="select_setting_hint">%1$s即可選取其他設定</string>
-  <string name="adjust_setting_hint">%1$s即可調整設定</string>
   <string name="adjust_granularity_hint">%1$s即可逐%2$s朗讀</string>
   <string name="adjust_typo_hint">%1$s即可取得建議。</string>
   <string name="use_action_hint">輕觸兩下即可執行動作</string>
@@ -946,7 +854,6 @@
   <string name="setting_selector_heading">朗讀控制項</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">如要在影片或音樂應用程式中暫停或播放媒體，請用 2 指輕觸兩下。現在就試試看吧！</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">在其他應用程式中，這個手勢可能是用於執行其他操作，例如接聽來電或結束通話。某些應用程式可能不支援這個手勢。</string>
-  <string name="onboarding_link_to_talkback_tutorials">查看所有 TalkBack 教學課程</string>
   <string name="new_shortcut_gesture_pause_media_announcement">媒體已暫停或正在播放中。這麼做通常會暫停或播放目前的影片或音樂。向右滑動即可繼續。</string>
   <string name="new_shortcut_gesture_stop_speech_text">如要讓 TalkBack 暫時停止讀出內容，請用 2 指輕觸螢幕。</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">已停止讓 TalkBack 讀出內容。這麼做通常會讓 TalkBack 停止朗讀目前唸出的詞組。向右滑動即可繼續。</string>
@@ -960,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">選取模式已啟用或停用。當焦點位在輸入欄位內時，這麼做通常會開啟或關閉文字選取模式。向右滑動即可繼續。</string>
   <string name="new_shortcut_gesture_reading_menu_text">如要使用朗讀控制項，請用 3 指向左或向右滑動，或是用 3 指向上或向下滑動。</string>
   <string name="new_shortcut_gesture_note">注意：由於你自訂了某些手勢，因此這些資訊可能不準確。如要查看手勢，請前往 TalkBack 設定。</string>
-  <string name="welcome_to_android11">歡迎使用 Android 11 的 TalkBack 功能</string>
   <string name="welcome_to_android11_text">TalkBack 現在支援新的手勢，使用起來更加便捷。\n\n你可以在這個畫面中試用這些新手勢。日後也隨時可在 TalkBack 設定頁面中查看這些資訊。</string>
   <string name="new_gesture_notification_title">TalkBack 支援新的手勢</string>
   <string name="new_gesture_notification_content">輕觸即可瞭解如何透過新手勢讓 TalkBack 使用起來更加便捷。</string>
   <string name="dump_node_tree_description">系統已將節點樹狀結構印到記錄中。</string>
   <string name="report_gesture_description">這些是你最近做過的手勢，請回報發生錯誤的手勢和該手勢應執行的操作。</string>
-  <string name="update_welcome_text_content">現在可以透過人機介面裝置 (連結藍牙裝置的方式) 連結點字顯示器。請確認已安裝製造商提供的最新韌體驅動程式，然後開啟點字顯示器的藍牙。接著，依序前往「TalkBack 設定」&gt;「點字顯示器」，開啟「使用點字顯示器」，再從裝置清單中找出裝置並連線。</string>
-  <string name="update_welcome_text_content_tts">現在可以透過人機介面裝置 (連結藍牙裝置的方式) 連結點字顯示器。請確認已安裝製造商提供的最新韌體驅動程式，然後開啟點字顯示器的藍牙。接著，依序前往「TalkBack 設定」和「點字顯示器」，開啟「使用點字顯示器」，再從裝置清單中找出裝置並連線。</string>
-  <string name="update_welcome_text_content_with_link">瞭解如何搭配 TalkBack 使用點字顯示器。</string>
   <string name="update_welcome_talkback_16.1">本次 TalkBack 更新後，「描述畫面」將支援更多語言，還有其他品質改進項目，操作更順手。\n\n在接下來的幾個畫面中，我們將進一步說明更新內容。\n\n如果之後想查看這項資訊，可以在 TalkBack 中依序前往「TalkBack 設定」&gt;「新功能」。</string>
   <string name="update_welcome_talkback_16.1_tts">本次 TalkBack 更新後，「描述畫面」將支援更多語言，還有其他品質改進項目，操作更順手。\n\n在接下來的幾個畫面中，我們將進一步說明更新內容。\n\n如果之後想查看這項資訊，可以在 TalkBack 中依序前往「TalkBack 設定」和「新功能」。</string>
-  <string name="describe_screen_and_qna_title">「描述畫面」和「問問 Gemini」支援新語言</string>
-  <string name="describe_screen_and_qna_content">「描述畫面」和「問問 Gemini」現在支援更多語言。詳情請參閱&lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;說明中心&lt;/a&gt;。</string>
   <string name="shortcut_for_dictation_title">語音輸入捷徑</string>
   <string name="shortcut_for_dictation_content">使用 Gboard 時，只要用兩指輕觸兩下，就能啟動或停止語音輸入功能。
 &lt;br&gt;
 &lt;br&gt;請確認你已透過 &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play&lt;/a&gt; 安裝最新版 Gboard。</string>
   <string name="shortcut_for_dictation_content_without_google_play">畫面顯示 Gboard 時，現在只要用兩指輕觸兩下，就能啟動語音輸入功能，再用兩指輕觸兩下即可停止。</string>
-  <string name="keyboard_title">鍵盤</string>
-  <string name="keyboard_content">TalkBack 現在提供「強化版按鍵對應配置」鍵盤，可支援多個新指令和快速鍵。這項強化功能內含可提升上網效率的「瀏覽模式」，還能簡化 TalkBack 使用者的實體鍵盤操作方式。如要改用「強化版按鍵對應配置」，請依序前往「TalkBack 設定」&gt;「進階設定」&gt;「鍵盤快速鍵」。</string>
-  <string name="keyboard_content_tts">TalkBack 現在提供「強化版按鍵對應配置」鍵盤，可支援多個新指令和快速鍵。這項強化功能內含可提升上網效率的「瀏覽模式」，還能簡化 TalkBack 使用者的實體鍵盤操作方式。如要改用「強化版按鍵對應配置」，請依序前往「TalkBack 設定」、「進階設定」和「鍵盤快速鍵」。</string>
-  <string name="reduce_delay_title">縮短延遲時間</string>
-  <string name="reduce_delay_content">現在可以縮短 TalkBack 在輕觸探索和輸入內容時的朗讀延遲時間。如要查看這些設定，請依序前往「TalkBack 設定」&gt;「進階設定」&gt;「縮短延遲時間」。</string>
-  <string name="reduce_delay_content_tts">現在可以縮短 TalkBack 在輕觸探索和輸入內容時的朗讀延遲時間。如要查看這些設定，請依序前往「TalkBack 設定」、「進階設定」和「縮短延遲時間」。</string>
-  <string name="customize_braille_keyboard_improvements_title">自訂點字鍵盤手勢</string>
-  <string name="customize_braille_keyboard_improvements_content">現在可以自訂螢幕虛擬點字鍵盤的手勢。依序前往「TalkBack 設定」&gt;「點字鍵盤」&gt;「手勢」，即可自訂。</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">現在可以自訂螢幕虛擬點字鍵盤的手勢。依序前往「TalkBack 設定」、「點字鍵盤」和「手勢」，即可自訂。</string>
-  <string name="learn_more_about_braille_keyboard">進一步瞭解點字鍵盤</string>
-  <string name="other_changes_title">其他變更</string>
-  <string name="other_changes_content">如果不小心開啟 TalkBack，畫面現在會顯示訊息，方便你快速關閉。依序輕觸「TalkBack 設定」&gt;「顯示關閉 TalkBack 的操作說明」，即可關閉這項設定。</string>
-  <string name="other_changes_content_tts">如果不小心開啟 TalkBack，畫面現在會顯示訊息，方便你快速關閉。依序輕觸「TalkBack 設定」和「顯示關閉 TalkBack 的操作說明」，即可關閉這項設定。</string>
-  <string name="keymap_changes_content">傳統按鍵對應配置已切換為預設按鍵對應配置，後者有更多快速鍵。</string>
   <string name="announcing_text_formatting_title">朗讀文字格式</string>
   <string name="announcing_text_formatting_header">TalkBack 現在可以朗讀文字格式設定變化，例如粗體、斜體和文字顏色。操作方式如下：</string>
   <string name="announcing_text_formatting_option1">將焦點放在設有格式的項目，開啟 TalkBack 選單，然後選取「描述文字格式」，或</string>
@@ -1082,7 +969,6 @@
   <string name="additional_tips_link_subtext">瞭解如何撥打電話、傳送訊息等等</string>
   <string name="practice_gestures_link_text">練習手勢</string>
   <string name="practice_gestures_link_subtext">試試各種手勢可執行的操作</string>
-  <string name="help_and_feedback_link_subtext">進一步瞭解 TalkBack 並提供意見</string>
   <string name="choose_tutorial_title">選擇與 TalkBack 互動的方式</string>
   <string name="touch_tutorial_button">觸控教學課程</string>
   <string name="keyboard_tutorial_button">鍵盤教學課程</string>
@@ -1228,8 +1114,6 @@
   <string name="wear_training_typing_text5">在下方試試看。</string>
   <string name="wear_training_typing_practice_button_content_description">使用鍵盤輸入</string>
   <string name="wear_training_end_tutorial_title">現在可以開始使用 TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack 已更新</string>
-  <string name="talkback_updated_notification_content">輕觸即可瞭解詳情</string>
   <string name="wear_new_feature_page_title">歡迎使用新版 TalkBack</string>
   <string name="wear_new_feature_page_content">如你所見，部分錯誤已修正，焦點移動的方式也已更改</string>
   <string name="wear_new_feature_page_button_content_description">完成</string>
@@ -1248,10 +1132,7 @@
   <string name="title_pref_blue">藍色</string>
   <string name="title_pref_grey">灰色</string>
   <string name="survey_setting_title">提供意見</string>
-  <string name="survey_closed">問卷調查已結束</string>
   <string name="title_summarize_view">描述畫面</string>
-  <string name="title_increase_touch_focus_latency">拉長焦點延遲時間</string>
-  <string name="title_decrease_touch_focus_latency">縮短焦點延遲時間</string>
   <string name="detected_result">偵測到的項目：%1$s</string>
   <string name="title_image_caption">描述圖片</string>
   <string name="image_caption_with_gemini_prefix">描述這張圖片，回覆中不要使用任何標記。</string>
@@ -1278,33 +1159,15 @@
   <string name="image_qna_question_prefix">使用者：%1$s</string>
   <string name="image_qna_answer_prefix">模型：%1$s</string>
   <string name="image_qna_with_history_postfix">... [對話持續進行，使用者和模型輪流發言] ...</string>
-  <string name="screen_overview_with_screenshot">你的工作是協助無法看見手機螢幕者瞭解畫面內容。請用幾句話簡短描述這張螢幕截圖。
-
-操作說明
-回覆時請以「畫面顯示」開頭
-回覆內容開頭應描述畫面上最醒目的重要內容。以下範例是可能要描述的最醒目的重要內容
-* 即時通訊應用程式：最新訊息的傳送者和文字內容
-* 社群媒體應用程式：第一則貼文，包括貼文者、文字內容和圖片描述
-* 新聞應用程式：報導標題和主要圖片的描述
-* 購物應用程式：描述顯示的產品和價格
-* 日曆應用程式：下一項活動和之後顯示的活動數量
-* 訊息清單：第一則訊息的名稱和預覽、之後幾則訊息的名稱，以及未讀訊息的數量
-
-在上述內容之後，可以在回覆中接著描述導覽列與醒目按鈕在畫面上的空間位置和目的。
-請勿提及頂端狀態列的內容，例如時間、網路狀態、電池電量。
-回覆中不要使用任何 Markdown。</string>
   <string name="title_gemini_opt_in_dialog">要開啟詳細描述圖片功能嗎？</string>
   <string name="title_on_device_gemini_opt_in_dialog">要開啟描述圖片功能嗎？</string>
   <string name="title_gemini_result_dialog">偵測到的內容：圖片</string>
   <string name="title_gemini_result_bottom_sheet">圖像描述</string>
   <string name="title_gemini_screen_overview_result_dialog">螢幕畫面描述</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">摘要</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">動作</string>
   <string name="positive_button_gemini_opt_in_dialog">啟用</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">我同意</string>
   <string name="negative_button_gemini_opt_in_dialog">不用了，謝謝</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">前往「設定」</string>
-  <string name="positive_button_gemini_download_dialog">下載並開啟</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">文字，「%1$s」。</string>
   <string name="detected_icon_label">圖示，「%1$s」。</string>
@@ -1318,8 +1181,6 @@
   <string name="screen_overview_no_result">無法生成畫面摘要</string>
   <string name="image_caption_no_result">無法描述圖像內容</string>
   <string name="image_caption_with_hide_screen">如果隱藏畫面，系統就無法描述圖片。請開啟畫面，然後再試一次。</string>
-  <string name="feedback_button_state_set">已選取</string>
-  <string name="feedback_button_state_unset">未選取</string>
   <string name="action_text_like_button">標示為「答得好」</string>
   <string name="action_text_dislike_button">標示為「有待加強」</string>
   <string name="action_text_clear_like_button">清除「答得好」</string>
@@ -1348,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">正在下載自動描述圖片和圖示模組</string>
   <string name="download_all_image_captioning_successful_hint">已下載自動描述圖片和圖示模組</string>
   <string name="download_all_image_captioning_failed_hint">無法下載，請稍後再試。</string>
-  <string name="download_complete_notification_title">下載完成</string>
-  <string name="download_complete_notification_content">現在可以聽取 TalkBack 的圖片和圖示自動描述</string>
-  <string name="download_complete_notification_action">設定</string>
   <string name="download_storage_error_hint">儲存空間已滿，如要下載，請依序前往「設定」&gt;「儲存空間」，釋出 %1$d MB 的空間。</string>
   <string name="download_network_error_hint">無法下載，請檢查連線狀態，然後再試一次。</string>
   <string name="switch_icon_detection_dialog_title">自動圖示描述功能</string>
   <string name="switch_icon_detection_dialog_message">以語音描述焦點所在圖示</string>
   <string name="switch_image_description_dialog_message">以語音描述焦點所在圖片。部分應用程式可能不支援這項功能。</string>
-  <string name="switch_text_recognition_dialog_title">自動描述圖像中的文字</string>
   <string name="switch_text_recognition_dialog_message">當焦點移到含有文字的圖片上時，系統就會讀出說明</string>
   <string name="switch_auto_image_caption_dialog_subtitle">下載完成</string>
-  <string name="disable_auto_image_caption_dialog_subtext">你仍可從 TalkBack 選單取得所選圖像的說明</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">確定</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">刪除下載</string>
   <string name="delete_icon_detection_dialog_title">要刪除自動描述圖示模組嗎？</string>
@@ -1375,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">在 TalkBack 使用 Gemini</string>
   <string name="gemini_disable_dialog_message">使用 Gemini 瞭解螢幕內容</string>
   <string name="disable_gemini_dialog_subtext">開啟即可使用 Gemini 瞭解螢幕內容</string>
-  <string name="ai_services_update_dialog_title">更新 %1$s 應用程式即可描述圖片</string>
-  <string name="ai_services_update_dialog_message">如要聆聽圖片描述，請前往 Google Play 取得最新版 %1$s。\n\n下載完成後，請返回 TalkBack 設定，並再次開啟自動描述圖片功能。</string>
-  <string name="ai_services_update_dialog_button_text">前往 Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">發生錯誤，請再試一次。</string>
   <string name="gemini_block_message">無法處理這張圖片</string>
   <string name="gemini_network_error">沒有網際網路連線，請檢查 Wi-Fi 或行動網路，然後再試一次。</string>
@@ -1395,13 +1246,8 @@
   <string name="image_qna_typing_button_text">輸入要問 Gemini 的問題</string>
   <string name="image_qna_send_button_text">提問</string>
   <string name="image_qna_speak_question_description">說出問題</string>
-  <string name="overviews_summary_intro">這個應用程式畫面的摘要：%1$s</string>
   <string name="overviews_node_not_found">抱歉，畫面上的那個部分似乎消失了。</string>
-  <string name="overviews_images_in_app">找到主要圖片</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">應用程式中的動作</string>
-  <string name="overviews_actions_in_app_description">以下是可在這個應用程式畫面中採取的主要動作：</string>
-  <string name="overviews_parent_type">應用程式中的動作</string>
   <string name="text_replaced_feedback">已替換文字</string>
   <string name="switch_gesture_set">切換手勢組合</string>
   <string name="switch_gesture_set_to">切換到手勢組合 %1$d</string>
@@ -1452,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">關閉</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">如要在螢幕關閉時聆聽通知，請前往 TalkBack 詳細程度設定開啟「螢幕關閉時朗讀通知內容」</string>
 </resources>

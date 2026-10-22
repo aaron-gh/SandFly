@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">როდესაც TalkBack ჩართულია, ის გაწვდით გახმოვანებულ უკუკავშირს, რათა მოწყობილობის გამოყენება ეკრანზე ყურების გარეშე შეძლოთ. TalkBack განკუთვნილია ისეთი სიტუაციებისთვის, ან ისეთი ადამიანებისთვის, რომლებსაც ეკრანის ყურება უჭირთ.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack-ის გამოყენების წესი&lt;/b&gt;&lt;br&gt;• გადაფურცლეთ მარჯვნივ ან მარცხნივ ერთი ერთეულიდან მეორეზე გადასასვლელად&lt;br&gt;• შეეხეთ ორმაგად ერთეულის გასააქტიურებლად&lt;br&gt;• ჩაავლეთ 2 თითით გადასაადგილებლად&lt;br&gt;&lt;b&gt;TalkBack-ის გამორთვის წესი&lt;/b&gt;&lt;br&gt;1. პარამეტრებში შეეხეთ &lt;b&gt;TalkBack-ის გამოყენებას&lt;/b&gt;. დაინახავთ კონტურს. ორმაგად შეეხეთ მას.&lt;br&gt;2. დადასტურების შეტყობინებაში შეხებით აირჩიეთ &lt;b&gt;გაჩერება&lt;/b&gt;. დაინახავთ კონტურს. ორმაგად შეეხეთ მას.</string>
   <string name="talkback_service_summary">გამოიყენეთ ეკრანის წამკითხველი, რომელიც საშუალებას გაძლევთ, მოისმინოთ ხმამაღლა წარმოთქმული</string>
   <string name="talkback_preferences_title">TalkBack-ის პარამეტრები</string>
-  <string name="talkback_settings_screen_title_breadcrumb">პარამეტრები</string>
   <string name="tts_preferences_title">ტექსტის გახმოვანება</string>
   <string name="language_options">ენები</string>
   <string name="spoken_language">გახმოვანების ენა</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">ძიება გაუქმდა.</string>
   <string name="notification_type_status_started">დაწყება</string>
   <string name="notification_type_status_stopped">შეჩერდა</string>
-  <string name="notification_type_status_connected">დაკავშირებული</string>
-  <string name="notification_battery_level_unknown">უცნობი</string>
   <string name="notification_battery_saver_mode">ბატარეის დამზოგი ჩართულია</string>
   <string name="template_no_text_selected">ტექსტი არჩეული არ არის</string>
   <string name="template_charging">დატენვა %1$s ბატარეის დონე %2$s პროცენტი.</string>
   <string name="template_charging_lite">დატენა %1$s</string>
-  <string name="template_battery_state">ბატარეის %1$s %2$s პროცენტი %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">ვიბრაციის რეჟიმი.</string>
   <string name="value_ringer_silent">უხმო რეჟიმი.</string>
   <string name="value_screen_on">ეკრანი ჩართულია.</string>
   <string name="value_screen_off">ეკრანის გამორთვა.</string>
   <string name="value_device_unlocked">მოწყობილობა განბლოკილია.</string>
-  <string name="title_pref_category_audio">აუდიო</string>
   <string name="title_pref_speech_volume">წარმოთქმის ხმის დონე</string>
-  <string name="title_pref_speech_rate">მეტყველების ტემპი</string>
-  <string name="summary_pref_speech_rate">ტექსტის გამოთქმის სიჩქარე</string>
   <string name="title_pref_verbose_scroll_announcement">სიის პუნქტის ნომრების ყოველთვის წარმოთქმა</string>
   <string name="summary_pref_verbose_scroll_announcement">ხმამაღლა გადათვლა გადაადგილების ყველა მეთოდისთვის</string>
   <string name="title_pref_cover_proximity_sensor">სიახლოვის სენსორის დაფარვა მეტყველების შესაწყვეტად</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">დროის წარმოთქმა</string>
   <string name="pref_speak_time_summary">ეკრანის ჩართვისას</string>
   <string name="summary_speak_container_element_positions">შეიცავს ინფორმაციას სიებში, ბადეებში და სხვა კონტეინერებში შესვლისა და გასვლის დროს</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">ფოკუსის დაყოვნება დამატებულია კითხვის მართვაზე</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">გადაფურცლეთ 3 თითით, რათა გამოიყენოთ კითხვის მართვა და შეცვალოთ ფოკუსის დაყოვნება ნებისმიერ დროს</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">გსურთ ასაკრეფად აშვებაზე გადართვა?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">როცა აკრეფისას ფოკუსის დაყოვნება დაყენებულია 0,3 წამზე დაბლა, ასაკრეფად ორმაგი შეხება ძალიან რთული იქნება. აირჩიეთ „გადართვა“, რათა ავტომატურად გადართოთ ასაკრეფად აშვებაზე.\n\nასაკრეფად აშვების გამოსაყენებლად, თითის ხანგრძლივად დაჭერით აირჩიეთ ნებისმიერი კლავიში, შემდეგ კი ასწიეთ ასაკრეფად.\n\nამის მორგება TalkBack-ის პარამეტრებში შეგიძლიათ.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">აკრეფის ფოკუსის დაყოვნება დამატებულია კითხვის მართვაზე</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">თუ აწყდებით ხარვეზებს ორმაგი შეხებით აკრეფისას, გადაფურცლეთ სამი თითით, რათა გამოიყენოთ კითხვის მართვა და ფოკუსის დაყოვნება უფრო ხანგრძლივზე შეცვალეთ</string>
-  <string name="gestures_announce_typing_focus_wont_change">აკრეფის ფოკუსირების დაყოვნება არ ფუნქციონირებს ასაკრეფად აშვების გარეშე.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">გასაგებია</string>
   <string name="reset_letency_reduction_settings_dialog_title">გსურთ დაყოვნების პარამეტრების გადაყენება?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">ეს გადააყენებს დაყოვნების ყველა პარამეტრს ნაგულისხმევზე</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">გადაყენება</string>
   <string name="gestures_announce_reset_latency_reduction_settings">რეაგირების დროის შემცირების პარამეტრები გადაყენებულია.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">გადართვა</string>
-  <string name="reduce_focus_delay_settings_cancel_button">არ გადაირთოს</string>
   <string name="Reset_gesture_settings_dialog_title">გსურთ ჟესტების გადაყენება?</string>
   <string name="Reset_gesture_settings_set_dialog_title">გსურთ მიმდინარე ნაკრების ჟესტების გადაყენება?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">ამით გადაყენდება ყველა ჟესტი თავიანთ ნაგულისხმევ ქმედებებზე.\n\nთქვენ მიერ შეტანილი ნებისმიერი ცვლილება დაიკარგება.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">პროგრესის განახლების ხმამაღალი განცხ.</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">შეიცავს განახლებებს ჩამოტვირთვისას, საავტომობილო მარშრუტებისთვის თვალის დევნებისას და ა.შ. როცა გამორთულია, ისევ მიიღებთ განახლებებს უფრო იშვიათად.</string>
   <string name="title_pref_explore_by_touch">შეხებით დათვალიერება</string>
-  <string name="title_pref_category_visual">ვიზუალი</string>
   <string name="title_pref_category_controls">მართვის საშუალებები</string>
-  <string name="title_pref_category_braille">ბრაილი</string>
-  <string name="title_pref_category_general">ზოგადი</string>
-  <string name="title_pref_category_advanced">გაფართოებული</string>
-  <string name="title_pref_category_others">სხვა</string>
-  <string name="title_pref_category_tutorial_and_help">სახელმძღვანელო და დახმარება</string>
   <string name="title_pref_category_reduce_latency_summary">ამ პარამეტრებს შეუძლია დაყოვნების შემცირება TalkBack-ის განცხადებებამდე</string>
   <string name="reset_latency_settings_title">დაყოვნების ყველა პარამეტრის გადაყენება</string>
   <string name="title_pref_single_tap">ერთხელ შეეხეთ გასააქტიურებლად</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">ფოკუსის ინდიკატორის შეცვლა</string>
   <string name="title_pref_category_manage_gestures">ჟესტები</string>
   <string name="title_pref_manage_labels">მორგებული ლეიბლები</string>
-  <string name="title_pref_manage_customize_menus">მენიუების რედაქტირება</string>
   <string name="title_pref_category_context_menu">Talkback მენიუს მორგება</string>
   <string name="title_pref_category_selector_menu">წაკითხვის მართვის საშუალებების პარამეტრების დაყენება</string>
   <string name="title_pref_category_navigation_menu">ნავიგაციის ვარიანტების რედაქტირება</string>
-  <string name="pref_category_context_menu_summary">TalkBack მენიუს გამოსაყენებლად ეკრანს შეეხეთ 3 თითით. ან გადაფურცლეთ ჯერ ზევით და შემდეგ მარჯვნივ, ან ჯერ ქვევით და შემდეგ მარჯვნივ.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack-ის მენიუს გამოსაყენებლად თქვენკენ შეატრიალეთ არადომინანტი ხელისგული და მოახდინეთ თითებით მასშტაბირება.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack-ის მენიუს გამოსაყენებლად გადაფურცლეთ ქვემოთ, შემდეგ კი მარჯვნივ.</string>
-  <string name="pref_category_selector_menu_summary">წაკითხვის მართვის საშუალებების გამოსაყენებლად გადაფურცლეთ მარცხნივ ან მარჯვნივ 3 თითით. ასევე, შეგიძლიათ ზემოთ ან ქვემოთ გადაფურცვლა 3 თითით.</string>
-  <string name="pref_category_selector_menu_summary_xr">კითხვის მართვის საშუალებებს შორის გადასასვლელად თქვენკენ შეატრიალეთ არადომინანტი ხელისგული, ხანგრძლივად მოახდინეთ თითებით მასშტაბირება, გაამოძრავეთ მარჯვნივ ან მარცხნივ და გაუშვით.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">წაკითხვის მართვის საშუალებების გამოსაყენებლად გადაფურცლეთ ზემოთ, შემდეგ კი ქვემოთ.</string>
   <string name="title_pref_manage_keyboard_shortcuts">კლავიატურის მალსახმობები</string>
   <string name="title_pref_export_custom_labels">მორგებული ლეიბლების ექსპორტი</string>
-  <string name="title_pref_play_store">TalkBack-ის გახსნა Play Store-ში</string>
-  <string name="summary_pref_play_store">მიმდინარე TalkBack ვერსია: %1$s</string>
   <string name="title_pref_help_and_feedback">დახმარება და გამოხმაურება</string>
-  <string name="title_pref_gup">Google-ის შშმ მომხმარებლების მხარდაჭერის გუნდთან დაკავშირება</string>
-  <string name="subtitle_pref_gup">დახმარების მიღება ან პრობლემების მოხსენება TalkBack-ის საშუალებით</string>
-  <string name="pref_item_licenses">ღია კოდის ლიცენზიები</string>
-  <string name="title_pref_tutorial">სახელმძღვანელო</string>
   <string name="title_pref_help">დახმარება</string>
   <string name="title_pref_show_tos">მომსახურების პირობები</string>
   <string name="title_pref_show_privacy_policy">კონფიდენციალურობის დებულება</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">თითის ანაბეჭდის ჟესტები</string>
   <string name="title_pref_category_tutorial">TalkBack-ის სახელმძღვანელო</string>
   <string name="title_pref_category_help_no_tutorial">დახმარება</string>
-  <string name="title_pref_category_typing">აკრეფა</string>
   <string name="title_pref_advanced_settings">გაფართოებული პარამეტრები</string>
   <string name="title_pref_show_exit_watermark">TalkBack-ის გამორთვის ინსტრუქციების ჩვენება</string>
   <string name="summary_pref_show_exit_watermark">შეტყობინება გამოჩნდება, როდესაც TalkBack ჩართულია, რაც დაგეხმარებათ მის სწრაფად გამორთვაში</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;განსხვავდება ზოგიერთი მოდიფიკატორი კლავიში.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">შეიტყვეთ მეტი კლავიშთა განლაგების შესახებ</string>
   <string name="keycombo_go_to_settings">პარამეტრებზე გადასვლა</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack ემზადება კლასიკური კლავიშთა განლაგების გასაუქმებლად. იმისთვის, რომ გააგრძელოთ კლავიატურის მალსახმობების გამოყენება, გადადით ნაგულისხმევ კლავიშთა განლაგებაზე.</string>
-  <string name="keycombo_keymap_changes_notifications_action">შეიტყვეთ მეტი</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">გასაგებია</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">პარამეტრები</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">შეიტყვეთ მეტი</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ახლა იყენებთ TalkBack-ის კლავიშთა ნაგულისხმევ განლაგებას. ასევე, არსებობს გაუმჯობესებული ახალი განლაგება ბევრი ახალი ბრძანებით. შეიტყვეთ მეტი დახმარების ცენტრში ან გადართეთ კლავიშთა ახალ განლაგებაზე.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">ხელმისაწვდომია კლავიშთა ახალი განლაგება</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">TalkBack-ის კლავიშთა გაუმჯობესებული ახალი განლაგებით ემატა ბევრი ახალი ბრძანება. შეიტყვეთ მეტი დახმარების ცენტრში ან გადართეთ კლავიშთა ახალ განლაგებაზე.</string>
-  <string name="keycombo_update_modifier_key_warning_title">განაახლეთ თქვენი TalkBack-ის მოდიფიკატორი კლავიში</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">ახლა არა</string>
   <string name="keycombo_warning_content_description">მეტი ინფორმაცია თქვენი მოდიფიკატორი კლავიშის შესახებ</string>
-  <string name="keycombo_warning_dialog_title">მოდიფიკატორი კლავიშის განახლება</string>
-  <string name="keycombo_warning_dialog_message">იმისთვის, რომ TalkBack-ის კლავიატურის მალსახმობებმა გამართულად იმუშაოს, განაახლეთ თქვენი მოდიფიკატორი მოქმედების კლავიშიდან Alt-ზე.\n\nთუ მოქმედების მოდიფიკატორი კლავიშით სარგებლობას გააგრძელებთ, ზოგიერთი მალსახმობი Android-ის ამ ვერსიაში სხვა მოქმედებებს შეასრულებს.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">კლავიშთა განლაგება</string>
   <string name="keycombo_menu_select_keymap">განლაგების არჩევა</string>
   <string name="keycombo_menu_reset_keymap">განლაგების გადაყენება</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">მეტყველების ხმის სიმძლავრის გაზრდა</string>
   <string name="keycombo_menu_global_speech_volume_decrease">მეტყველების ხმის სიმძლავრის შემცირება</string>
   <string name="keycombo_menu_global_refocus_current_node">მიმდინარე ფოკუსის წარმოთქმა</string>
-  <string name="keycombo_menu_category_granularity">ნავიგაცია</string>
   <string name="keycombo_menu_granularity_increase">შემდეგი ნავიგაციის პარამეტრი</string>
   <string name="keycombo_menu_granularity_decrease">წინა ნავიგაციის პარამეტრი</string>
   <string name="keycombo_menu_category_other">სხვა ქმედებები</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">ნამდვილად გსურთ ამ განლაგებაში არსებული მალსახმობების კლავიშების ნაგულისხმევ მნიშვნელობებზე დაბრუნება? გთხოვთ, გაითვალისწინოთ, რომ ამ მოქმედების გაუქმება შეუძლებელი იქნება.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">გადაყენება</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s არის დათვალიერების რეჟიმში</string>
-  <string name="keycombo_assign_dialog_instruction">ახალი მალსახმობის დასაყენებლად, დააჭირეთ კლავიშთა კომბინაციას. ის უნდა შედგებოდეს ALT ან Control კლავიშისგან მაინც.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">ახალი მალსახმობის დასაყენებლად, დააჭირეთ კლავიშთა კომბინაციას %1$s მოდიფიკატორ კლავიშთან ერთად.</string>
   <string name="keycombo_unassigned">მიუმაგრებელი</string>
   <string name="save_button_in_keycombo_assign_dialog">შენახვა</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">აკრეფის ფოკუსის დაყოვნება</string>
   <string name="message_pref_touch_explore_latency">აკრეფის ფოკუსის ნაკლები დაყოვნება ნიშნავს, რომ TalkBack-ის განცხადებები უფრო სწრაფია კლავიატურის შეხების შემდეგ.\n\nაირჩიეთ დაყოვნება</string>
   <string name="title_pref_touch_focus_timeout">ფოკუსის დაყოვნება</string>
-  <string name="summary_pref_touch_focus_time">
-მართავს, რამდენად სწრაფად დაიწყებს TalkBack საუბარს ფოკუსის გადანაცვლების შემდეგ. მოკლე დაყოვნება TalkBack-ის გამოყენებას აჩქარებს, მაგრამ შეიძლება, გაართულოს ორმაგი და სამმაგი შეხების შესრულება.\n\n
-0,3 წამზე მოკლე დაყოვნებები შეცვლის ორმაგი შეხებით გააქტიურებას ორი თითის შეხებით გააქტიურებაზე.
-      </string>
   <string name="title_pref_talkback_gesture_detection">ჟესტების გაშიფვრა TalkBack-ში</string>
   <string name="toast_pref_talkback_gesture_detection">გამორთეთ და შემდეგ ისევ ჩართეთ TalkBack პარამეტრის გასააქტიურებლად.</string>
   <string name="title_pref_auto_image_captioning">ავტომატური აღწერილობები</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">ჩართეთ სურათის აღწერები პარამეტრებში</string>
   <string name="dialog_message_turn_on_image_description">შეგიძლიათ კვლავ ცადოთ, მას შემდეგ, რაც ჩართავთ სურათის ავტომატურ ან დეტალურ აღწერებს</string>
   <string name="title_pref_detailed_image_description">დეტალური სურათის აღწერები</string>
-  <string name="summary_pref_ai_description">TalkBack-ის მენიუში „%1$s“ ერთეულის არჩევისას მოისმენთ უფრო დეტალურ აღწერებს.</string>
   <string name="dialog_message_on_device_ai_description">მოისმენთ მოკლე აღწერას, როდესაც ფოკუსში მოაქცევთ სურათს მხარდაჭერილ აპებში.\n\nსურათები მუშავდება თქვენს მოწყობილობაში და არასდროს ეგზავნება Google-ს. \n\nგენერაციული ხელოვნური ინტელექტი ექსპერიმენტულია, შესაბამისად, დაუშვებს შეცდომებს. გაგრძელებით თქვენ ეთანხმებით <a href="https://policies.google.com/terms/generative-ai">Google-ის მომსახურების პირობებს</a>.</string>
   <string name="enable_gemini">ჩართვა</string>
   <string name="powered_by_gemini">გენერაციული ხელოვნური ინტელექტის გამოყენებით</string>
-  <string name="detailed_image_description_ongoing_hint">მიმდინარეობს აღწერილობის მიღება…</string>
-  <string name="detailed_image_description_result_prefix">აღმოჩენილია: სურათი. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">სურათის ავტომატური აღწერებისთვის საჭიროა ჩამოტვირთვა</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">სურათები მუშავდება თქვენს მოწყობილობაში და არასდროს ეგზავნება Google-ს.\n\nგენერაციული ხელოვნური ინტელექტი ექსპერიმენტულია, შესაბამისად, დაუშვებს შეცდომებს. გაგრძელებით თქვენ ეთანხმებით %1$s-ს.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-ის მომსახურების პირობები</string>
   <string name="message_aifeature_downloading">მიმდინარეობს AI მოდელის ჩამოტვირთვა. ამას შეიძლება გარკვეული დრო დასჭირდეს. შეგატყობინებთ, როცა დასრულდება.</string>
   <string name="message_aifeature_downloading_with_progress">კვლავ მიმდინარეობს ჩამოტვირთვა. ჩამოტვირთულია %1$d / %2$d მეგაბაიტიდან.</string>
-  <string name="message_aifeature_download_complete">AI მოდელი ჩამოტვირთულია. TalkBack-ს უკვე შეუძლია სურათის აღწერის გენერაცია.</string>
   <string name="summary_pref_auto_image_captioning">ხატულების, სურათებისა და სურათებში ტექსტისთვის</string>
-  <string name="summary_pref_auto_image_captioning_text_only">სურათების ტექსტისთვის</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">სურათებისთვის და სურათების ტექსტისთვის</string>
-  <string name="summary_pref_auto_image_captioning_no_image">ხატულებისთვის და სურათების ტექსტისთვის</string>
   <string name="summary_pref_module_downloading">მიმდინარეობს ჩამოტვირთვა…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">ჩართულია ყველა სურათისთვის</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">ჩართულია მხოლოდ ულეიბლო სურათებისთვის</string>
   <string name="summary_pref_auto_image_captioning_disabled">გამორთული</string>
-  <string name="summary_pref_auto_icon_detection_enabled">ჩართულია ყველა ხატულასთვის</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">ჩართული მხოლოდ ულეიბლო ხატულებისთვის</string>
   <string name="summary_pref_auto_icon_detection_disabled">გამორთული</string>
   <string name="title_pref_enable_auto_image_caption">ყველა სურათი</string>
   <string name="title_pref_enable_auto_image_caption_arg">ყველა სურათი\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">ყველა ხატულა</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">მხოლოდ ულეიბლო ხატულები</string>
   <string name="title_pref_disable_auto_icon_detection">არ აღიწეროს ხატულები</string>
-  <string name="dialog_message_on_device_ai_model_download">მოისმენთ მოკლე აღწერას, როდესაც ფოკუსში მოაქცევთ სურათს მხარდაჭერილ აპებში.\n\nსურათები მუშავდება თქვენს მოწყობილობაში და არასდროს ეგზავნება Google-ს.\n\nგენერაციული ხელოვნური ინტელექტი ექსპერიმენტულია, შესაბამისად, დაუშვებს შეცდომებს. გაგრძელებით თქვენ ეთანხმებით %1$s-ს.</string>
   <string name="title_pref_enable_gemini_support">ჩართული</string>
   <string name="title_pref_disable_gemini_support">გამორთული</string>
   <string name="summary_pref_gemini_support_enabled">Gemini ჩართულია</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">კვანძების იერარქიის ბეჭდვა</string>
   <string name="shortcut_print_performance_stats">ბეჭდვის მუშაობის სტატისტიკა</string>
   <string name="shortcut_first_in_screen">ეკრანის პირველი ერთეულის ფოკუსში მოქცევა</string>
-  <string name="shortcut_summary">ეკრანის განლაგების შეჯამება</string>
   <string name="shortcut_voice_commands">ხმოვანი ბრძანების დაწყება</string>
   <string name="shortcut_last_in_screen">ეკრანის ბოლო ერთეულის ფოკუსში მოქცევა</string>
   <string name="shortcut_enable_dimming">ეკრანის დამალვა</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">ვებ-ნავიგაცია</string>
   <string name="menu_category_basic_navigation">ძირითადი ნავიგაცია</string>
   <string name="summary_custom_action">გამოჩნდება მიმდინარე ერთეულისთვის მოქმედებების (ბმულები, კოპირება, ჩასმა, მონიშვნა და სხვა) არსებობის შემთხვევაში</string>
-  <string name="summary_context_menu_links">ხსნის ბმულებს ფოკუსირებულ ელემენტებში</string>
   <string name="summary_viewpager_controls">მომდევნო ან წინა გვერდზე გადასვლა. გამოჩნდება, როცა რამდენიმეგვერდიან კონტენტს კითხულობთ.</string>
   <string name="summary_labeling_controls">გამოჩნდება, როცა უწარწერო ერთეულს აირჩევთ</string>
   <string name="summary_granularity">სიმბოლოებად, სიტყვებად, სტრიქონებად და ა.შ. წაკითხვა</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">ეკრანის შეჯამება მოქმედების ღილაკებით</string>
   <string name="summary_screen_overview_no_actions">ეკრანზე ნაჩვენები კონტენტის შეჯამების მოსმენა</string>
   <string name="summary_image_caption">ტექსტის წარმოთქმა და ხატულების ახსნა მონიშნულ სურათში</string>
-  <string name="summary_summarize_view">ხედის შეჯამების წარმოთქმა</string>
   <string name="summary_typo_suggestions">აჩვენებს, როდესაც კურსორი დგას მცდაბეჭდილ სიტყვაზე</string>
   <string name="summary_cache_keyboard_keys">TalkBack წინასწარ ტვირთავს განცხადებებს აკრეფის დროს დაყოვნების შესამცირებლად</string>
   <string name="summary_cache_keyboard_keys_disabled">გამოიყენეთ Google Text-to-speech ამ ფუნქციის გამოსაყენებლად</string>
-  <string name="value_direction_down">ქვევით</string>
-  <string name="value_direction_down_and_right">ქვემოთ, შემდეგ მარჯვნივ</string>
   <string name="title_pref_shortcut_up">ზემოთ გადაფურცვლა</string>
   <string name="title_pref_shortcut_up_xr">არადომ. ხელისგული თქვენკენ, თითებით მასშტაბირება და ზევით გადაფურცვლა</string>
   <string name="title_pref_shortcut_down">ქვემოთ გადაფურცვლა</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">გადაფურცლეთ მარცხნივ, თითის ანაბეჭდის სენსორზე</string>
   <string name="title_pref_shortcut_fingerprint_right">გადაფურცლეთ მარჯვნივ, თითის ანაბეჭდის სენსორზე</string>
   <string name="title_pref_version_code">ვერსიის კოდი</string>
-  <string formatted="false" name="value_volume_100_percent">ემთხვევა მეტყველების ხმის სიმძლავრეს</string>
-  <string formatted="false" name="value_volume_75_percent">მეტყველების ხმის სიმძლავრის 75%</string>
-  <string formatted="false" name="value_volume_50_percent">მეტყველების ხმის სიმძლავრის 50%</string>
-  <string formatted="false" name="value_volume_25_percent">მეტყველების ხმის სიმძლავრის 25%</string>
   <string name="value_type_confirmation_double_tap">გეჭიროთ თითი ნებისმიერი კლავიშის ასარჩევად, შემდეგ ორმაგად შეეხეთ</string>
   <string name="value_type_confirmation_lift_to_type">გეჭიროთ თითი ასოს კლავიშის ასარჩევად, შემდეგ აუშვით ორმაგად შეეხეთ სხვა კლავიშებისთვის.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">გეჭიროთ თითი ნებისმიერი კლავიშის ასარჩევად, შემდეგ აუშვით</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 წამი</string>
   <string name="value_touch_explore_time_out_250ms">0,25 წამი</string>
   <string name="value_touch_explore_time_out_300ms">0,3 წამი (ნაგულისხმევი)</string>
-  <string name="value_shake_to_read_disabled">გამორთულია</string>
-  <string name="value_shake_to_read_threshold_very_light">ძალიან სუსტი</string>
-  <string name="value_shake_to_read_threshold_light">ნათურა</string>
-  <string name="value_shake_to_read_threshold_medium">საშუალო</string>
-  <string name="value_shake_to_read_threshold_hard">ძლიერი</string>
-  <string name="value_shake_to_read_threshold_very_hard">ძალიან ძლიერი</string>
   <string name="title_pref_on_screen_keyboard">ეკრანული კლავიატურა</string>
   <string name="title_pref_physical_keyboard">ფიზიკური კლავიატურა</string>
   <string name="value_keyboard_echo_none">არცერთი</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">მოწყობილობის დროის ფორმატის გამოყენება</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-საათიანი</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-საათიანი</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack ჟესტები შეიცვალა</string>
-  <string name="notification_message_talkback_gestures_changed">შეეხეთ მარტივი წვდომის ჟესტებში ცვლილებების გადასახედად</string>
   <string name="always_show_warning_checkbox">ამ გაფრთხილების ყოველთვის ჩვენება</string>
   <string name="label_dialog_title_add">ლეიბლის დამატება</string>
   <string name="label_dialog_title_edit">ლეიბლის რედაქტირება</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">ლეიბლების ექსპორტისთვის სათანადო აპლიკაცია ვერ მოიძებნა.</string>
   <string name="label_choose_app_to_import">აირჩიეთ აპლიკაცია ლეიბლების იმპორტისთვის:</string>
   <string name="label_choose_app_to_export">აირჩიეთ აპლიკაცია ლეიბლების ექსპორტისთვის:</string>
-  <string name="talkback_gesture_change_details">TalkBack-ის ამ ვერსიაში შეცვლილია ნაგულისხმევად დაყენებული ჟესტები. მათთვის დანიშნული მოქმედებების მორგება შესაძლებელია TalkBack-ის პარამეტრებში. ქვემოთ ჩამოთვლილია ის ჟესტები, რომელთა გამოყენებაც შეიძლება „შეხებით შესწავლის“ რეჟიმში\n\n%1$s</string>
   <string name="dialog_title_dim_screen">დაიმალოს ეკრანი?</string>
   <string name="dialog_message_dim_screen">ეს გამორთავს ეკრანს კონფიდენციალურობის გაუმჯობესებისთვის. გარკვეული კონტენტი შეიძლება კვლავ ხილვადი იყოს, მაგალითად, შეტყობინებები ეკრანის კვლავ ჩართვის შესახებ ან მარტივი წვდომის ისეთი ფუნქციების მენიუები, როგორიცაა TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack-ის ეს ვერსია შეიცავს ნაგულისხმევ გამარტივებული წვდომის ცვლილებებს.\n\nზედა-და-შემდეგ-ქვედა ჟესტი საშუალებას გაძლევთ, გადაანაცვლოთ ერთეული ეკრანის პირველ ერთეულზე, ხოლო ქვედა-და-შემდეგ-ზედა ჟესტი ერთეულს სიის ბოლოში გადაიტანს.\n\nწაკითხვის დეტალიზაცია, შესაძლოა, შეიცვალოს ერთეულზე ფოკუსირებით და შემდეგ ლოკალური კონტექსტური მენიუდან დეტალიზაციის არჩევით.\n\nTalkBack-ის პარამეტრებში შეგიძლიათ, შეცვალოთ მოქმედებები, რომლებიც ამ ჟესტებით განხორციელდა.</string>
-  <string name="default_action_changed_details">მედიის დასაპაუზებლად და დასაკვრელად, ახლა უკვე შეგიძლიათ ორი თითით ორმაგად ხანგრძლივად შეეხოთ.\n\nასევე შეიცვალა სხვა ჟესტები.</string>
-  <string name="talkback_built_in_gesture_open_url">გახსენით ტელეფონზე მეტის შესატყობად</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack-ის ეს ვერსია მარტივი წვდომის ნაგულისხმევი ჟესტების ცვლილებებს შეიცავს.\n\nჟესტი „ზემოთ“ ახლა ნავიგაციის წინა პარამეტრზე გადადის, ხოლო ჟესტი „ქვემოთ“ — შემდეგ პარამეტრზე.</string>
-  <string name="side_tap_shortcuts_removed_details">საიმედოობის მოსაზრებებიდან გამომდინარე, TalkBack-ში გაუქმდა შემდეგი პარამეტრები:\n• მოწყობილობის გვერდზე შეხების ჟესტები\n• უწყვეტი კითხვის დასაწყებად შენჯღრევა</string>
-  <string name="button_accept_changed_gesture_mappings">ნებართვა ჟესტების გამოყენებაზე</string>
-  <string name="button_customize_gesture_mappings">ჟესტების მორგება</string>
   <string name="button_disable_all_events">ყველას გამორთვა</string>
   <string name="button_enable_all_events">ყველას ჩართვა</string>
   <string name="dialog_title_disable_exploration">გამოირთოს შეხებით დათვალიერება?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">ცხრილებში ძიება</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack-ის შეტყობინების არხი</string>
-  <string name="pref_selector_summary">პარამეტრის ასარჩევად %1$s. შემდეგ %2$s პარამეტრის კორექტირებისთვის.</string>
-  <string name="speech_rate_change">მეტყველების ტემპი %1$d%%</string>
   <string name="speech_pitch_maximum">მეტყველების უმაღლესი ტონი</string>
   <string name="speech_pitch_minimum">მეტყველების უდაბლესი ტონი</string>
   <string name="reset_speech_rate_and_pitch">მეტყველების ტემპისა და ტონის გადაყენება</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">უკუკავშირი ვიბრაციით %1$s</string>
   <string name="text_formatting_state">ტექსტის დაფორმატების წარმოთქმა %1$s</string>
   <string name="typing_echo_change">%1$s ექოს ფიზიკური კლავიატურა</string>
-  <string name="reading_control_toggle_prefix_xr">შეაბრუნეთ არადომინანტი ხელისგული თქვენკენ, ხანგრძლივად დააჭირეთ, რათა ჩართოთ კითხვის მართვის რეჟიმი.</string>
   <string name="gesture_1_or_2">%1$s ან %2$s</string>
-  <string name="select_setting_hint">%1$s სხვა პარამეტრის ასარჩევად</string>
-  <string name="adjust_setting_hint">%1$s პარამეტრის დასარეგულირებლად</string>
   <string name="adjust_granularity_hint">%1$s, რომელსაც წაიკითხავს %2$s</string>
   <string name="adjust_typo_hint">%1$s შეთავაზებებისთვის.</string>
   <string name="use_action_hint">შეეხეთ ორმაგად ამ მოქმედების განსახორციელებლად</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">წაკითხვის მართვის საშუალებები</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ვიდეო ან მუსიკალურ აპში მედია-ფაილის დასაკრავად/დასაპაუზებლად, ორმაგად შეეხეთ 2 თითით. ცადეთ ახლავე.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">ამ ჟესტების გამოყენება სხვა აპებსაც შეუძლია, მაგალითად, სატელეფონო ზარის საპასუხოდ ან დასასრულებლად. ამ ჟესტს შეიძლება არ ჰქონდეს ყველა აპის მხარდაჭერა.</string>
-  <string name="onboarding_link_to_talkback_tutorials">TalkBack-ის ყველა სახელმძღვანელოს ნახვა</string>
   <string name="new_shortcut_gesture_pause_media_announcement">მედიის დაპაუზება ან დაკვრა. ჩვეულებრივ, ეს დააპაუზებს ან დაუკრავს მიმდინარე ვიდეოს ან მუსიკას. გასაგრძელებლად გადაფურცლეთ მარჯვნივ.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack-ის დროებით გამოსართავად შეეხეთ ეკრანს 2 თითით.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack-ის ლაპარაკი გამორთულია. როგორც წესი, ამ დროს TalkBack-ის მიმდინარე ფრაზა წყდება. გასაგრძელებლად გადაფურცლეთ მარჯვნივ.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">ტექსტის არჩევის რეჟიმის გამორთვა ან ჩართვა. ჩვეულებრივ, ეს გაუშვებს ან შეწყვეტს ტექსტის არჩევის რეჟიმს, როდესაც შეყვანის ველში იმყოფებით. გასაგრძელებლად გადაფურცლეთ მარჯვნივ.</string>
   <string name="new_shortcut_gesture_reading_menu_text">წაკითხვის მართვის საშუალებების გამოსაყენებლად გადაფურცლეთ მარცხნივ ან მარჯვნივ 3 თითით. ასევე, შეგიძლიათ ზემოთ ან ქვემოთ გადაფურცვლა 3 თითით.</string>
   <string name="new_shortcut_gesture_note">შენიშვნა: თქვენ დააყენეთ ზოგიერთი ჟესტი, ამიტომ ეს ინფორმაცია შეიძლება არ იყოს ზუსტი. თქვენი ჟესტების გადასახედად გადადით TalkBack-ის პარამეტრებზე.</string>
-  <string name="welcome_to_android11">წარმოგიდგენთ TalkBack-ს Android 11-ისთვის</string>
   <string name="welcome_to_android11_text">TalkBack-ის ასაჩქარებლად და მისი გამოყენების გასამარტივებლად ახალი ჟესტები დავამატეთ.\n\nამ ეკრანზე შეგიძლიათ ახალი ჟესტების შემოწმება. ამ ინფორმაციის გადახედვა ნებისმიერ დროს შეგიძლიათ TalkBack-ის პარამეტრებიდან.</string>
   <string name="new_gesture_notification_title">ახალი ჟესტებიTalkBack-ში</string>
   <string name="new_gesture_notification_content">შეეხეთ და შეიყტყვეთ მეტი TalkBack-ის ახალი ჟესტების გამოყენების შესახებ.</string>
   <string name="dump_node_tree_description">კვანძების იერარქია დაიბეჭდა ჟურნალებში.</string>
   <string name="report_gesture_description">აქ ნაჩვენებია ახლახან შესრულებული ჟესტები. გთხოვთ, მოხსენებაში მიუთითოთ, თუ რომელი ჟესტია არასწორი და რა უნდა იყოს მის ნაცვლად.</string>
-  <string name="update_welcome_text_content">ახლა შეგიძლიათ, რომ დაუკავშირდეთ ბრაილის ეკრანებს HID-ს საშუალებით, რაც Bluetooth მოწყობილობებთან დაკავშირების გზაა. დარწმუნდით, რომ ფლობთ ჩაშენებული პროგრამული უზრუნველყოფის უახლეს დრაივერებს თქვენი მწარმოებლისგან და შემდეგ ჩართეთ Bluetooth თქვენს ბრაილის ეკრანზე. გადადით: TalkBack-ის პარამეტრები &gt; ბრაილის ეკრანი და შემდეგ ჩართეთ „ბრაილის ეკრანის გამოყენება“. მოწყობილობების სიაში იპოვეთ თქვენი მოწყობილობა და დაუკავშირდით მას.</string>
-  <string name="update_welcome_text_content_tts">ახლა შეგიძლიათ, რომ დაუკავშირდეთ ბრაილის ეკრანებს HID-ს საშუალებით, რაც Bluetooth მოწყობილობებთან დაკავშირების გზაა. დარწმუნდით, რომ ფლობთ ჩაშენებული პროგრამული უზრუნველყოფის უახლეს დრაივერებს თქვენი მწარმოებლისგან და შემდეგ ჩართეთ Bluetooth თქვენს ბრაილის ეკრანზე. გადადით TalkBack-ის პარამეტრებზე, შემდეგ ბრაილის ეკრანზე და ჩართეთ „ბრაილის ეკრანის გამოყენება“. მოწყობილობების სიაში იპოვეთ თქვენი მოწყობილობა და დაუკავშირდით მას.</string>
-  <string name="update_welcome_text_content_with_link">შეიტყვეთ, როგორ გამოიყენოთ თქვენი ბრაილის ეკრანი TalkBack-ის საშუალებით.</string>
   <string name="update_welcome_talkback_16.1">TalkBack-ის ამ განახლებაში წარმოგიდგენთ ეკრანის აღწერის მხარდაჭერას კიდევ უფრო მეტ ენაზე და ხარისხის სხვა გაუმჯობესებებს, რომლებიც მის გამოყენებას ამარტივებს.\n\nამ ცვლილებების შესახებ მეტს შეიტყობთ შემდეგ ეკრანებზე.\n\nმ ინფორმაციის მოგვიანებით მიმოხილვისთვის გადადით TalkBack-ის პარამეტრებში &gt; TalkBack-ის ახალ ფუნქციებში.</string>
   <string name="update_welcome_talkback_16.1_tts">TalkBack-ის ამ განახლებაში წარმოგიდგენთ ეკრანის აღწერის მხარდაჭერას კიდევ უფრო მეტ ენაზე და ხარისხის სხვა გაუმჯობესებებს, რომლებიც TalkBack-ის გამოყენებას ამარტივებს.\n\nამ ცვლილებების შესახებ მეტს შეიტყობთ შემდეგ ეკრანებზე.\n\nამ ინფორმაციის მოგვიანებით მიმოხილვისთვის გადადით TalkBack-ის პარამეტრებში და შემდეგ TalkBack-ის ახალ ფუნქციებში.</string>
-  <string name="describe_screen_and_qna_title">ახალი ენები შემდეგი ფუნქციებისთვის: ეკრანის აღწერა და ჰკითხეთ Gemini-ს</string>
-  <string name="describe_screen_and_qna_content">ეკრანის აღწერა და ჰკითხეთ Gemini-ს უკვე ხელმისაწვდომია დამატებით ენებზე. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;შეიტყვეთ მეტი დახმარების ცენტრში&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">ხმოვანი აკრეფის მალსახმობი</string>
   <string name="shortcut_for_dictation_content">Gboard-ით სარგებლობისას ხმოვანი აკრეფის დასაწყებად ან გასაჩერებლად შეგიძლიათ ორმაგად შეეხოთ ეკრანს ორი თითით.
 &lt;br&gt;
 &lt;br&gt;დარწმუნდით, რომ გაქვთ &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard-ის უახლესი ვერსია Google Play&lt;/a&gt;-დან.</string>
   <string name="shortcut_for_dictation_content_without_google_play">როდესაც Gboard ეკრანზეა, კარნახის დასაწყებად შეგიძლიათ, გამოიყენოთ ორი თითით ორმაგი შეხება და გასაჩერებლადაც იგივე მოქმედება.</string>
-  <string name="keyboard_title">კლავიატურა</string>
-  <string name="keyboard_content">TalkBack-ს ახლა აქვს კლავიატურის „გაუმჯობესებული კლავიშთა განლაგება“, რომელიც მრავალ ახალ ბრძანებასა და მალსახმობს მოიცავს. ეს გაუმჯობესება, რომელიც ვებში უფრო ეფექტური ნავიგაციისთვის განკუთვნილ „დათვალიერების რეჟიმს“ მოიცავს, ამარტივებს ნავიგაციასა და ინტერაქციას TalkBack-ის იმ მომხმარებლებისთვის, რომლებიც ფიზიკურ კლავიატურას იყენებენ. „გაუმჯობესებული კლავიშთა განლაგების“ ასარჩევად გადადით აქ: TalkBack-ის პარამეტრები &gt; დამატებითი პარამეტრები &gt; კლავიატურის მალსახმობები.</string>
-  <string name="keyboard_content_tts">TalkBack-ს ახლა აქვს კლავიატურის „გაუმჯობესებული კლავიშთა განლაგება“, რომელიც მრავალ ახალ ბრძანებასა და მალსახმობს მოიცავს. ეს გაუმჯობესება, რომელიც ვებში უფრო ეფექტური ნავიგაციისთვის განკუთვნილ „დათვალიერების რეჟიმს“ მოიცავს, ამარტივებს ნავიგაციასა და ინტერაქციას TalkBack-ის იმ მომხმარებლებისთვის, რომლებიც ფიზიკურ კლავიატურას იყენებენ. „გაუმჯობესებული კლავიშთა განლაგების“ ასარჩევად გადადით TalkBack-ის პარამეტრებზე, შემდეგ დამატებით პარამეტრებზე და შემდეგ კლავიატურის მალსახმობებზე.</string>
-  <string name="reduce_delay_title">დაყოვნების შემცირება</string>
-  <string name="reduce_delay_content">ახლა შეგიძლიათ, შეამციროთ TalkBack-ის განცხადებების დაყოვნება შეხებით გამოკვლევისა და აკრეფისთვის. ამ პარამეტრების სანხავად გადადით აქ: TalkBack-ის პარამეტრები &gt; დამატებითი პარამეტრები &gt; დაყოვნების შემცირება.</string>
-  <string name="reduce_delay_content_tts">ახლა შეგიძლიათ, შეამციროთ TalkBack-ის განცხადებების დაყოვნება შეხებით გამოკვლევისა და აკრეფისთვის. ამ პარამეტრების სანხავად გადადით TalkBack-ის პარამეტრებზე, შემდეგ დამატებით პარამეტრებზე და შემდეგ დაყოვნების შემცირებაზე.</string>
-  <string name="customize_braille_keyboard_improvements_title">ბრაილის კლავიატურის ჟესტების მორგება</string>
-  <string name="customize_braille_keyboard_improvements_content">უკვე შესაძლებელია ჟესტების მორგება ვირტუალური ეკრანული ბრაილის კლავიატურისთვის. მოსარგებად გადადით აქ : TalkBack-ის პარამეტრები &gt; ბრაილის კლავიატურა &gt; ჟესტები.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">უკვე შესაძლებელია ჟესტების მორგება ვირტუალური ეკრანული ბრაილის კლავიატურისთვის. მოსარგებად გადადით TalkBack-ის პარამეტრებზე, შემდეგ ბრაილის კლავიატურაზე და — ჟესტებზე.</string>
-  <string name="learn_more_about_braille_keyboard">შეიტყვეთ მეტი ბრაილის კლავიატურის შესახებ</string>
-  <string name="other_changes_title">სხვა ცვლილებები</string>
-  <string name="other_changes_content">ეკრანული შეტყობინება ახლა გეხმარებათ TalkBack-ის სწრაფად გამორთვაში, თუ ის შემთხვევით ჩაირთვება. ამის გამორთვა შეგიძლიათ აქ: TalkBack-ის პარამეტრები &gt; ინსტრუქციების ჩვენება TalkBack-ის გამოსართავად.</string>
-  <string name="other_changes_content_tts">ეკრანული შეტყობინება ახლა გეხმარებათ TalkBack-ის სწრაფად გამორთვაში, თუ ის შემთხვევით ჩაირთვება. ამის გამორთვა შეგიძლიათ TalkBack-ის პარამეტრებში აქ გადასვლით: ინსტრუქციების ჩვენება TalkBack-ის გამოსართავად.</string>
-  <string name="keymap_changes_content">კლასიკური კლავიშთა განლაგება შეიცვალა ნაგულისხმევით, რომელიც შეიცავს უფრო მეტ მალსახმობს.</string>
   <string name="announcing_text_formatting_title">ტექსტის დაფორმატების გამოცხადება</string>
   <string name="announcing_text_formatting_header">TalkBack-ს უკვე შეუძლია გამოაცხადოს ტექსტის დაფორმატების ცვლილებები, მაგალითად, მუქი, დახრილი და ტექსტის ფერი. დასაწყებად:</string>
   <string name="announcing_text_formatting_option1">ფოკუსირდით დაფორმატებულ ერთეულზე, გახსენით TalkBack-ის მენიუ და აირჩიეთ „ტექსტის ფორმატის აღწერა“ ან</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">შეიტყვეთ, როგორ დარეკოთ, გაგზავნოთ შეტყობინებები და ა.შ.</string>
   <string name="practice_gestures_link_text">ჟესტების პრაქტიკა</string>
   <string name="practice_gestures_link_subtext">ცადეთ სხვადასხვა ჟესტის გამოყენება იმის გასაგებად, თუ რა ქმედებას ასრულებს ისინი</string>
-  <string name="help_and_feedback_link_subtext">შეიტყვეთ მეტი TalkBack-ის შესახებ და გაგზავნეთ გამოხმაურება</string>
   <string name="choose_tutorial_title">აირჩიეთ, თუ როგორ გსურთ TalkBack-თან ინტერაქცია</string>
   <string name="touch_tutorial_button">შეხების სახელმძღვანელო</string>
   <string name="keyboard_tutorial_button">კლავიატურის სახელმძღვანელო</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">ცადეთ ქვემოთ.</string>
   <string name="wear_training_typing_practice_button_content_description">კლავიატურით აკრეფა</string>
   <string name="wear_training_end_tutorial_title">თქვენ მზად ხართ, რომ დაიწყოთ TalkBack-ის გამოყენება</string>
-  <string name="talkback_updated_notification_title">TalkBack განახლდა</string>
-  <string name="talkback_updated_notification_content">შეეხეთ მეტი ინფორმაციისთვის</string>
   <string name="wear_new_feature_page_title">წარმოგიდგენთ განახლებულ TalkBack-ს</string>
   <string name="wear_new_feature_page_content">შეცდომების აღმოფხვრებს და ფოკუსში მოქცევის მოძრაობის წესებში გარკვეული ცვლილებები შევიდა</string>
   <string name="wear_new_feature_page_button_content_description">დასრულება</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">ლურჯი</string>
   <string name="title_pref_grey">ნაცრისფერი</string>
   <string name="survey_setting_title">გაგვიზიარეთ გამოხმაურება</string>
-  <string name="survey_closed">გამოკითხვა დაიხურა</string>
   <string name="title_summarize_view">ეკრანის აღწერა</string>
-  <string name="title_increase_touch_focus_latency">ფოკუსის დაყოვნების გაზრდა</string>
-  <string name="title_decrease_touch_focus_latency">ფოკუსის დაყოვნების შემცირება</string>
   <string name="detected_result">აღმოჩენილია: %1$s</string>
   <string name="title_image_caption">აღწერე სურათი</string>
   <string name="image_caption_with_gemini_prefix">აღწერე ეს სურათი. პასუხისას არ გამოიყენო მარკირება.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">მომხმარებელი: %1$s</string>
   <string name="image_qna_answer_prefix">მოდელი: %1$s</string>
   <string name="image_qna_with_history_postfix">... [მომხმარებლის და მოდელის რიგებს შორის ცვალებადობის გაგრძელება] ...</string>
-  <string name="screen_overview_with_screenshot">შენი ამოცანაა, დაეხმარო ადამიანს, რომელსაც ტელეფონის დანახვა არ შეუძლია, გაიგოს, თუ რა წერია მის ეკრანზე. აღწერე ეკრანის ანაბეჭდი რამდენიმე წინადადებით.
-
-მითითებები
-დაიწყე შენი პასუხი ფრაზით: „ეკრანზე ჩანს“
-პასუხის დასაწყისი უნდა აღწერდეს ეკრანზე ყველაზე მნიშვნელოვან და თვალსაჩინო კონტენტს. აქ მოცემულია რამდენიმე მაგალითი იმისა, თუ რა შეიძლება, იყოს ყველაზე მნიშვნელოვანი, თვალსაჩინო კონტენტი აღსაწერად
-* ჩეთის აპში: ბოლო შეტყობინების გამგზავნი და ტექსტი
-* სოციალური ქსელების აპი: პირველი პოსტი, მათ შორის, ვინ გამოაქვეყნა, ტექსტი და სურათის აღწერა
-* სიახლეების აპში: სტატიის სათაური და მთავარი სურათის აღწერა
-* შოპინგის აპში: წარმოდგენილი პროდუქტის აღწერა და ფასი
-* კალენდარის აპში: შემდეგი ღონისძიება და სხვა ღონისძიებების რაოდენობა, რომლებიც შემდეგ გამოჩნდება
-* შეტყობინებების სიაში: სახელი და გადახედვა პირველი შეტყობინებისთვის, შემდეგ კი სიაში მომდევნო რამდენიმე შეტყობინების მხოლოდ სახელი და წაუკითხავი შეტყობინებების რაოდენობა
-
-ამის შემდეგ, პასუხში შეიძლება, აღწერილი იყოს მდებარეობა, ნავიგაციის ზოლების დანიშნულება და გამოჩენილი ღილაკები.
-არ ახსენო ზედა ნაწილში მოცემული სტატუსის ზოლის კონტენტი (მაგალითად: დრო, ქსელის სტატუსი, ბატარეა).
-არ გამოიყენო რაიმე Markdown შენს პასუხში.</string>
   <string name="title_gemini_opt_in_dialog">გსურთ სურათის დეტალური აღწერების მიღება?</string>
   <string name="title_on_device_gemini_opt_in_dialog">გსურთ სურათის აღწერების მიღება?</string>
   <string name="title_gemini_result_dialog">აღმოჩენილია: სურათი</string>
   <string name="title_gemini_result_bottom_sheet">სურათის აღწერა</string>
   <string name="title_gemini_screen_overview_result_dialog">ეკრანის აღწერილობა</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">შეჯამება</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">მოქმედებები</string>
   <string name="positive_button_gemini_opt_in_dialog">ჩართვა</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">ვეთანხმები</string>
   <string name="negative_button_gemini_opt_in_dialog">არა, გმადლობთ</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">პარამეტრებზე გადასვლა</string>
-  <string name="positive_button_gemini_download_dialog">ჩამოტვირთვა და ჩართვა</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">ტექსტი, „%1$s“.</string>
   <string name="detected_icon_label">ხატულა, „%1$s“.</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">ეკრანის შეჯამება ვერ ხერხდება</string>
   <string name="image_caption_no_result">სურათის ახსნა ვერ ხერხდება</string>
   <string name="image_caption_with_hide_screen">როცა ეკრანი დამალულია, სურათის აღწერები მიუწვდომელია. აჩვენეთ ეკრანი და ხელახლა ცადეთ.</string>
-  <string name="feedback_button_state_set">არჩეული</string>
-  <string name="feedback_button_state_unset">არ არის არჩეული</string>
   <string name="action_text_like_button">მონიშვნა, როგორც კარგი პასუხი</string>
   <string name="action_text_dislike_button">მონიშვნა, როგორც ცუდი პასუხი</string>
   <string name="action_text_clear_like_button">კარგი პასუხის გასუფთავება</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">მინდინარეობს სურათის და ხატულას ავტომატური აღწერის ჩამოტვირთვა</string>
   <string name="download_all_image_captioning_successful_hint">სურათის და ხატულას ავტომატური აღწერა ჩამოიტვირთა</string>
   <string name="download_all_image_captioning_failed_hint">ჩამოტვირთვა ვერ ხერხდება. ცადეთ მოგვიანებით.</string>
-  <string name="download_complete_notification_title">ჩამოტვირთვა დასრულდა</string>
-  <string name="download_complete_notification_content">ახლა TalkBack-ის მეშვეობით გაიგებთ სურათისა და ხატულას ავტომატურ აღწერილობებს</string>
-  <string name="download_complete_notification_action">პარამეტრები</string>
   <string name="download_storage_error_hint">მეხსიერება სავსეა. ჩამოსატვირთად გაათავისუფლეთ %1$d მბაიტი მეხსიერებაში, სადაც პარამეტრებიდან გადახვალთ.</string>
   <string name="download_network_error_hint">ჩამოტვირთვა ვერ ხერხდება. შეამოწმეთ კავშირი და ცადეთ ხელახლა.</string>
   <string name="switch_icon_detection_dialog_title">ხატულას ავტომატური აღწერა</string>
   <string name="switch_icon_detection_dialog_message">მოისმინეთ აღწერა, როცა ფოკუსში აქცევთ ხატულას</string>
   <string name="switch_image_description_dialog_message">მოისმინეთ აღწერა, როდესაც ფოკუსში აქცევთ სურათს. შესაძლოა, ამ ფუნქციას არ ჰქონდეს მხარდაჭერა ზოგიერთი აპისგან.</string>
-  <string name="switch_text_recognition_dialog_title">ავტომატურად აღწერეთ ტექსტი სურათებში</string>
   <string name="switch_text_recognition_dialog_message">მოისმინეთ აღწერილობა, როცა ფოკუსირდებით სურათზე, რომელიც შეიცავს ტექსტს</string>
   <string name="switch_auto_image_caption_dialog_subtitle">ჩამოტვირთული</string>
-  <string name="disable_auto_image_caption_dialog_subtext">თქვენ მაინც შეძლებთ აღწერილობების მიღებას არჩეული სურათებისთვის TalkBack-ის მენიუდან</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">კარგი</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">ჩამოტვირთვის წაშლა</string>
   <string name="delete_icon_detection_dialog_title">გსურთ ხატულას ავტომატური აღწერის წაშლა?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Gemini-ს გამოყენება TalkBack-ში</string>
   <string name="gemini_disable_dialog_message">ეკრანის აღქმა Gemini-ს მეშვეობით</string>
   <string name="disable_gemini_dialog_subtext">ჩართეთ Gemini-ს მეშვეობით ეკრანის აღქმის ჩასართავად</string>
-  <string name="ai_services_update_dialog_title">სურათების აღწერისთვის განაახლეთ %1$s აპი</string>
-  <string name="ai_services_update_dialog_message">თუ გსურთ მოისმინოთ სურათის აღწერები, Google Play-დან ჩამოტვირთეთ %1$s-ის უახლესი ვერსია.\n\nჩამოტვირთვის დასრულების შემდეგ დაბრუნდით TalkBack-ის პარამეტრებში და ხელახლა ჩართეთ სურათის ავტომატური აღწერები.</string>
-  <string name="ai_services_update_dialog_button_text">Google Play-ზე გადასვლა</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">წარმოიქმნა შეფერხება. ცადეთ ხელახლა.</string>
   <string name="gemini_block_message">ამ სურათის დამუშავება ვერ ხერხდება</string>
   <string name="gemini_network_error">ინტერნეტ-კავშირი არ არის. შეამოწმეთ თქვენი Wi-Fi ან მობილური ქსელი და ცადეთ ხელახლა.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">შეკითხვის აკრეფა Gemini-სთვის</string>
   <string name="image_qna_send_button_text">შეკითხვა</string>
   <string name="image_qna_speak_question_description">შეკითხვის წარმოთქმა</string>
-  <string name="overviews_summary_intro">ამ აპის ეკრანის შეჯამება: %1$s</string>
   <string name="overviews_node_not_found">სამწუხაროდ, ეკრანის ამ ნაწილს ვეღარ ვპოულობ.</string>
-  <string name="overviews_images_in_app">ნაპოვნი მთავარი სურათები</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">მოქმედებები აპში</string>
-  <string name="overviews_actions_in_app_description">აქ არის მთავარი მოქმედებები, რომლებიც შეგიძლიათ განახორციელოთ აპის ამ ეკრანიდან:</string>
-  <string name="overviews_parent_type">მოქმედებები აპში</string>
   <string name="text_replaced_feedback">ტექსტი ჩანაცვლებულია</string>
   <string name="switch_gesture_set">ჟესტების ნაკრების გადართვა</string>
   <string name="switch_gesture_set_to">ჟესტების ნაკრებზე გადართვა %1$d</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">დახურვა</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">შეტყობინებების მოსასმენად, როცა თქვენი ეკრანი გამორთულია, ჩართეთ „შეტყობინებების წარმოთქმა, როცა ეკრანი გამორთულია“ TalkBack-ის დეტალიზაციის პარამეტრებში</string>
 </resources>

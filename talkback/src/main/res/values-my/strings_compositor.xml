@@ -63,15 +63,12 @@
   <string name="value_not_selected">ရွေးချယ်မထားပါ</string>
   <string name="value_checked">အမှန်ခြစ်ပြီး</string>
   <string name="value_not_checked">ခြစ် မထား</string>
-  <string name="value_partially_checked">တစ်စိတ်တစ်ပိုင်း အမှန်ခြစ်ထားသည်</string>
   <string name="value_on">ဖွင့်</string>
   <string name="value_off">ပိတ်</string>
   <string name="value_disabled">ပိတ်ရန်</string>
   <string name="value_enabled">ဖွင့်ထားသည်</string>
   <string name="value_read_only">ဖတ်ရန်အတွက်သာ</string>
   <string name="value_expanded">တိုးချဲ့ထားပါတယ်</string>
-  <string name="value_fully_expanded">အပြည့်ဖြန့်ထားသည်</string>
-  <string name="value_partially_expanded">တစ်စိတ်တစ်ပိုင်း ဖြန့်ထားသည်</string>
   <string name="value_collapsed">ခေါက်သိမ်းထားပါတယ်</string>
   <string name="value_double_tap">နှစ်ကြိမ်ပုတ်</string>
   <string name="value_single_tap">ပုတ်ရန်</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">ပြောင်းရန် %1$s ကို နှိပ်ပါ</string>
   <string name="template_hint_single_selection_item">ရွေးရန် %1$s</string>
   <string name="template_hint_single_selection_item_keyboard">ရွေးရန် %1$s နှိပ်ပါ</string>
-  <string name="template_hint_pager">စာမျက်နှာပြောင်းရန် လက်နှစ်ချောင်းဖြင့် ပွတ်ဆွဲပါ</string>
   <string name="template_hint_pager_single_page">နောက်ထပ်စာမျက်နှာများ မရှိပါ</string>
   <string name="template_hint_seek_control_tv">ပြောင်းရန် %1$s</string>
   <string name="template_custom_hint_for_actions">%2$s ရန် %1$s</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">စကားပြောနှုန်း %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">အများသုံးနိုင်မှုအသံကို %1$d ရာခိုင်နှုန်းအထိ ချဲ့လိုက်သည်။</string>
   <string name="template_accessibility_volume_change_decrease">အများသုံးနိုင်မှုအသံကို %1$d ရာခိုင်နှုန်းအထိ တိုးလိုက်သည်။</string>
-  <string name="template_touch_explore_latency_changed">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်- %1$d မီလီစက္ကန့်။</string>
   <string name="template_touch_latency_reach_maximum">အများဆုံး</string>
   <string name="template_touch_latency_reach_minimum">အနည်းဆုံး</string>
   <string name="template_volume_change_maximum">အကျယ်ဆုံး</string>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Kui SandFly on sisse lülitatud, annab see teile suulist tagasisidet, et saaksite seadet kasutada ilma ekraanikuva vaatamata. SandFly on mõeldud olukordadeks, kui ekraanikuva on keeruline vaadata, või inimestele, kelle jaoks ekraani kasutamine on keeruline.<br><br><b>Kuidas SandFlyi kasutada?</b><br>• Üksuste vahel liikumiseks pühkige paremale või vasakule.<br>• Üksuse aktiveerimiseks topeltpuudutage.<br>• Kerimiseks lohistage kahe sõrmega.<br><b>Kuidas SandFly välja lülitada?</b><br>1. Puudutage seadetes valikut <b>Kasuta funktsiooni SandFly</b>. Näete piirjoont. Topeltpuudutage seda.<br>2. Puudutage kinnitussõnumis nuppu <b>Peata</b>. Näete piirjoont. Topeltpuudutage seda.]]></string>
   <string name="talkback_service_summary">Ekraanilugeja kasutamine valjult etteloetavate üksuste kuulamiseks.</string>
   <string name="talkback_preferences_title">SandFlyi seaded</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Seaded</string>
   <string name="tts_preferences_title">Kõnesüntees</string>
   <string name="language_options">Keeled</string>
   <string name="spoken_language">Hääle keel</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Otsing tühistati.</string>
   <string name="notification_type_status_started">Alanud</string>
   <string name="notification_type_status_stopped">Peatatud</string>
-  <string name="notification_type_status_connected">ühendatud</string>
-  <string name="notification_battery_level_unknown">teadmata</string>
   <string name="notification_battery_saver_mode">Akusäästja on sees.</string>
   <string name="template_no_text_selected">Teksti pole valitud</string>
   <string name="template_charging">Laadimine on %1$s. Akutase on %2$s protsent(i).</string>
   <string name="template_charging_lite">Laadimine: %1$s</string>
-  <string name="template_battery_state">Toite laadimise olek on %1$s, aku laetuse tase on %2$s protsenti. %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibreeriv telefonihelin.</string>
   <string name="value_ringer_silent">Hääletu telefonihelin.</string>
   <string name="value_screen_on">Ekraan on sisse lülitatud.</string>
   <string name="value_screen_off">Ekraan on väljas.</string>
   <string name="value_device_unlocked">Seade on avatud.</string>
-  <string name="title_pref_category_audio">Heli</string>
   <string name="title_pref_speech_volume">Kõne helitugevus</string>
-  <string name="title_pref_speech_rate">Rääkimiskiirus</string>
-  <string name="summary_pref_speech_rate">Teksti rääkimiskiirus</string>
   <string name="title_pref_verbose_scroll_announcement">Loe loendiüksuste arv alati ette</string>
   <string name="summary_pref_verbose_scroll_announcement">Pärast iga kerimist öeldakse, millised üksused on kuvatud</string>
   <string name="title_pref_cover_proximity_sensor">Kõne peatamiseks lähedusanduri katmine</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Ütle aeg</string>
   <string name="pref_speak_time_summary">Kui ekraani sisse lülitate</string>
   <string name="summary_speak_container_element_positions">Öeldakse, kui sisenete loenditesse, ruudustikesse ja muudesse konteineritesse või väljute neist</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Lugemise juhtimisele lisati fookuse viivitus</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Nüüd saate fookuse viivitust igal ajal lugemise juhtelementidega muuta.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Kas lülituda režiimile Sisestamiseks tõstmine?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Kui fookuse viivitus on sisestamisel seatud alla 0,3 sekundi, on sisestamisel topeltpuudutamist väga raske teha. Tehke valik „Lülita“, et lülituda automaatselt režiimile Sisestamiseks tõstmine.\n\nRežiimi Sisestamiseks tõstmine kasutamiseks hoidke sõrme suvalise klahvi valimiseks ja seejärel tõstke see sisestamiseks üles.\n\nSeda saab SandFlyi seadetes kohandada.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Lugemise juhtimisele lisati sisestamise fookuse viivitus</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Kui topeltpuudutamine sisestamise ajal ei toimi usaldusväärselt, saate igal ajal lugemise juhtelementidega valida pikema sisestamise fookuse viivituse.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Sisestamise fookuse viivitus ei toimi ilma režiimita Sisestamiseks tõstmine.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Selge</string>
   <string name="reset_letency_reduction_settings_dialog_title">Kas lähtestada viivituse seaded?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">See lähtestab kõik viivituse seaded vaikeseadetele.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Lähtesta</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Latentsusaja lühendamise seaded on lähtestatud.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Vaheta</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ära vaheta</string>
   <string name="Reset_gesture_settings_dialog_title">Kas soovite liigutused lähtestada?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Kas lähtestada praegune liigutuste komplekt?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">See lähtestab kõik liigutused vaiketoimingutele.\n\nKaotate kõik tehtud muudatused.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Loe kõik edenemise värskendused ette</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Hõlmab värskendusi allalaadimise, sõidujuhiste järgimise jm ajal. Kui see on välja lülitatud, esitatakse siiski värskendusi, kuid harvem.</string>
   <string name="title_pref_explore_by_touch">Puudutusega uurimine</string>
-  <string name="title_pref_category_visual">Visuaal</string>
   <string name="title_pref_category_controls">Juhtelemendid</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Üldine</string>
-  <string name="title_pref_category_advanced">Täpsemad</string>
-  <string name="title_pref_category_others">Muud</string>
-  <string name="title_pref_category_tutorial_and_help">Õpetused ja abi</string>
   <string name="title_pref_category_reduce_latency_summary">Need seaded muudavad SandFly reageerimise pärast ekraani puudutamist kiiremaks</string>
   <string name="reset_latency_settings_title">Lähtesta kõik viivituse seaded</string>
   <string name="title_pref_single_tap">Üks puudutus aktiveerimiseks</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fookusenäidik</string>
   <string name="title_pref_category_manage_gestures">Liigutused</string>
   <string name="title_pref_manage_labels">Kohandatud sildid</string>
-  <string name="title_pref_manage_customize_menus">Menüüde muutmine</string>
   <string name="title_pref_category_context_menu">SandFlyi menüü</string>
   <string name="title_pref_category_selector_menu">Lugemise juhtelemendid</string>
   <string name="title_pref_category_navigation_menu">Navigeerimisvalikute muutmine</string>
-  <string name="pref_category_context_menu_summary">Puudutage kolme sõrmega või pühkige üles või alla ja seejärel paremale.</string>
-  <string name="pref_category_context_menu_summary_xr">SandFlyi menüü kasutamiseks pöörake oma teisest peopesa sissepoole ja liigutage sõrmi kokku.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Pühkige alla ja seejärel paremale.</string>
-  <string name="pref_category_selector_menu_summary">Lugemise juhtelemendi valimiseks pöörake kahte sõrme nagu ketast või pühkige kolme sõrmega vasakule või paremale. Seejärel pühkige selle muutmiseks üles või alla.</string>
-  <string name="pref_category_selector_menu_summary_xr">Lugemise juhtelementide vahetamiseks pöörake oma teisest peopesa sissepoole, hoidke kokku liigutatud sõrmi koos, liigutage paremale või vasakule ja laske lahti.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Lugemise juhtelemendi valimiseks pühkige üles ja seejärel alla või alla ja seejärel üles. Seejärel pühkige selle muutmiseks üles või alla.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klaviatuuri otseteed</string>
   <string name="title_pref_export_custom_labels">Ekspordi kohandatud sildid</string>
-  <string name="title_pref_play_store">Ava SandFly Play poes</string>
-  <string name="summary_pref_play_store">Praegune SandFlyi versioon: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Abi ja tagasiside</string>
-  <string name="title_pref_gup">Võtke ühendust Google\'i puuetega inimeste tugitiimiga</string>
-  <string name="subtitle_pref_gup">Hankige abi SandFlyiga või teavitage probleemidest</string>
-  <string name="pref_item_licenses">Avatud lähtekoodi litsentsid</string>
-  <string name="title_pref_tutorial">Õpetused</string>
   <string name="title_pref_help">Abi</string>
   <string name="title_pref_show_tos">Teenusetingimused</string>
   <string name="title_pref_show_privacy_policy">Privaatsuseeskirjad</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Sõrmejälje liigutused</string>
   <string name="title_pref_category_tutorial">SandFlyi õpetused</string>
   <string name="title_pref_category_help_no_tutorial">Abi</string>
-  <string name="title_pref_category_typing">Sisestamine</string>
   <string name="title_pref_advanced_settings">Täpsemad seaded</string>
   <string name="title_pref_show_exit_watermark">Kuva SandFlyi väljalüiltamise juhised</string>
   <string name="summary_pref_show_exit_watermark">Kui SandFly lülitub sisse, kuvatakse selle väljalülitamise juhised</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Mõned muuteklahvid on erinevad.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Lisateave klahvitabelite kohta</string>
   <string name="keycombo_go_to_settings">Ava seaded</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly valmistub klassikalise klahvitabeli eemaldamiseks. Klaviatuuri otseteede kasutamise jätkamiseks aktiveerige vaikeklahvitabel.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Lisateave</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Selge</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Seaded</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Lisateave</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Kasutate nüüd SandFlyi vaikeklahvitabelit. Olemas on ka uus täiustatud klahvitabel, millel on palju uusi käske. Vaadake lisateavet abikeskusest või lülituge uuele klahvitabelile seadetes.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Saadaval on uus klahvitabel</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Uue SandFlyi täiustatud klahvitabeliga lisandub palju uusi käske. Vaadake lisateavet abikeskusest või lülituge uuele klahvitabelile seadetes.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Värskendage oma SandFlyi muuteklahvi</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Mitte praegu</string>
   <string name="keycombo_warning_content_description">Lisateave muuteklahvi kohta</string>
-  <string name="keycombo_warning_dialog_title">Muuteklahvi värskendamine</string>
-  <string name="keycombo_warning_dialog_message">SandFlyi klaviatuuri otseteede korralikult toimimiseks määrake muuteklahviks toiminguklahvi asemel klahv Alt.\n\nKui jätkate toiminguklahvi kasutamist, teevad mõned otseteed selles Androidi versioonis muid toiminguid.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Klahvitabel</string>
   <string name="keycombo_menu_select_keymap">Klahvitabeli valimine</string>
   <string name="keycombo_menu_reset_keymap">Klahvitabeli lähtestamine</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Suurenda kõne helitugevust</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Vähenda kõne helitugevust</string>
   <string name="keycombo_menu_global_refocus_current_node">Loe praegune esiletõst ette</string>
-  <string name="keycombo_menu_category_granularity">Navigeerimine</string>
   <string name="keycombo_menu_granularity_increase">Järgmine navigeerimisseade</string>
   <string name="keycombo_menu_granularity_decrease">Eelmine navigeerimisseade</string>
   <string name="keycombo_menu_category_other">Muud toimingud</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Kas soovite kindlasti selle klahvitabeli otseteeklahvid lähtestada vaikeväärtustele? Pange tähele, et seda toimingut ei saa tagasi võtta.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Lähtesta</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s sirvimisrežiimis</string>
-  <string name="keycombo_assign_dialog_instruction">Uue otsetee määramiseks vajutage klahvikombinatsiooni. See peab sisaldama klahvi ALT või juhtklahvi.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Uue otsetee määramiseks vajutage klahvikombinatsiooni koos muuteklahviga %1$s.</string>
   <string name="keycombo_unassigned">Määramata</string>
   <string name="save_button_in_keycombo_assign_dialog">Salvesta</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Sisestamise fookuse viivitus</string>
   <string name="message_pref_touch_explore_latency">Lühema viivituse korral esitab SandFly kõne pärast klaviatuuri puudutamist kiiremini.\n\nValige viivitus</string>
   <string name="title_pref_touch_focus_timeout">Fookuse viivitus</string>
-  <string name="summary_pref_touch_focus_time">
-Reguleerib seda, millal SandFly hakkab pärast fookuse liikumist rääkima. Lühem viivitus muudab SandFlyi töö kiiremaks, kuid topelt- ja kolmikpuudutamine võib olla raskem.\n\n
-Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topeltpuudutus kahe sõrmega puudutuseks.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Liigutuste töötlemine SandFlyis</string>
   <string name="toast_pref_talkback_gesture_detection">Lülitage SandFly välja ja siis uuesti sisse, et seade aktiveerida.</string>
   <string name="title_pref_auto_image_captioning">Automaatsed kirjeldused</string>
@@ -382,28 +332,16 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="dialog_title_turn_on_image_description">Lülitage seadetes pildikirjeldused sisse</string>
   <string name="dialog_message_turn_on_image_description">Võite pärast automaatsete või üksikasjalike pildikirjelduste sisselülitamist uuesti proovida</string>
   <string name="title_pref_detailed_image_description">Piltide üksikasjalikud kirjeldused</string>
-  <string name="summary_pref_ai_description">Kuulete pikemaid kirjeldusi, kui teete SandFlyi menüüs valiku „<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>“</string>
   <string name="dialog_message_on_device_ai_description">Kui tõstate toetatud rakendustes esile pildi, kuulete lühikirjeldust.\n\nPilte töödeldakse teie seadmes ja neid ei saadeta kunagi Google’ile. \n\nGeneratiivne AI on katsejärgus, mistõttu teeb see vigu. Jätkates nõustute <a href="https://policies.google.com/terms/generative-ai">Google’i teenusetingimustega</a>.</string>
   <string name="enable_gemini">Lülita sisse</string>
   <string name="powered_by_gemini">Toimib generatiivse AI platvormil</string>
-  <string name="detailed_image_description_ongoing_hint">Kirjelduse hankimine</string>
-  <string name="detailed_image_description_result_prefix">Tuvastatud: pilt. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Automaatsete pildikirjelduste jaoks on vaja mudel alla laadida</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Pilte töödeldakse teie seadmes ja neid ei saadeta kunagi Google\'ile.\n\nGeneratiivne AI on katsejärgus, mistõttu teeb see vigu. Jätkates kinnitate, et nõustute dokumendi %1$s tingimustega.</string>
   <string name="dialog_message_gen_ai_tos_link">Google\'i teenusetingimused</string>
   <string name="message_aifeature_downloading">AI-mudeli allalaadimine. See võib pisut aega võtta. Teid teavitatakse, kui see on lõpule jõudnud.</string>
   <string name="message_aifeature_downloading_with_progress">Allalaadimine on alles pooleli. %1$d/%2$d MB on alla laaditud.</string>
-  <string name="message_aifeature_download_complete">AI-mudel on alla laaditud. SandFly saab nüüd genereerida pildikirjeldusi.</string>
   <string name="summary_pref_auto_image_captioning">Ikoonide, piltide ja piltidel oleva teksti jaoks</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Piltidel oleva teksti kohta</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Piltidel olevate kujutiste ja teksti kohta</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Piltidel olevate ikoonide ja teksti kohta</string>
   <string name="summary_pref_module_downloading">Allalaadimine …</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Sisse lülitatud kõikide piltide jaoks</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Sisse lülitatud ainult siltideta piltide jaoks</string>
   <string name="summary_pref_auto_image_captioning_disabled">Väljas</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Sisse lülitatud kõikide ikoonide jaoks</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Sisse lülitatud ainult siltideta ikoonide jaoks</string>
   <string name="summary_pref_auto_icon_detection_disabled">Väljas</string>
   <string name="title_pref_enable_auto_image_caption">Kõik pildid</string>
   <string name="title_pref_enable_auto_image_caption_arg">Kõik pildid\n%1$s</string>
@@ -413,7 +351,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="title_pref_enable_auto_icon_detection">Kõik ikoonid</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Ainult siltideta ikoonid</string>
   <string name="title_pref_disable_auto_icon_detection">Ära kirjelda ikoone</string>
-  <string name="dialog_message_on_device_ai_model_download">Kui tõstate toetatud rakendustes esile pildi, kuulete lühikirjeldust.\n\nPilte töödeldakse teie seadmes ja neid ei saadeta kunagi Google’ile.\n\nGeneratiivne AI on katsejärgus, mistõttu teeb see vigu. Jätkates nõustute dokumendiga %1$s.</string>
   <string name="title_pref_enable_gemini_support">Sees</string>
   <string name="title_pref_disable_gemini_support">Väljas</string>
   <string name="summary_pref_gemini_support_enabled">Gemini on lubatud</string>
@@ -457,7 +394,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="shortcut_print_node_tree">Prindi sõlmepuu</string>
   <string name="shortcut_print_performance_stats">Prindi toimivusstatistika</string>
   <string name="shortcut_first_in_screen">Ekraanikuval esimese üksuse esile tõstmine</string>
-  <string name="shortcut_summary">Võta ekraanipaigutus kokku</string>
   <string name="shortcut_voice_commands">Häälkäskluste kasutamise alustamine</string>
   <string name="shortcut_last_in_screen">Ekraanikuval viimase üksuse esile tõstmine</string>
   <string name="shortcut_enable_dimming">Ekraanikuva peitmine</string>
@@ -561,7 +497,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="menu_category_web_navigation">Veebis navigeerimine</string>
   <string name="menu_category_basic_navigation">Navigeerimise põhitõed</string>
   <string name="summary_custom_action">Kuvatakse, kui praeguse üksuse puhul on saadaval toimingud (sh lingid, kopeerimine, kleepimine, valimine ja muud)</string>
-  <string name="summary_context_menu_links">Esiletõstetud üksuses linkide avamine</string>
   <string name="summary_viewpager_controls">Liikumine järgmisele või eelmisele lehele. Kuvatakse, kui loete sisu mitmelt leheküljelt.</string>
   <string name="summary_labeling_controls">Kuvatakse, kui valite sildistamata üksuse</string>
   <string name="summary_granularity">Tähemärgi, sõna, rea või muu haaval lugemine</string>
@@ -631,12 +566,9 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="summary_screen_overview">Toimingunuppude abil ekraanikuvast kokkuvõtte tegemine</string>
   <string name="summary_screen_overview_no_actions">Kuulete ekraanil kuvatava sisu kokkuvõtet</string>
   <string name="summary_image_caption">Valitud pildi teksti ettelugemine ja ikoonide kirjeldamine</string>
-  <string name="summary_summarize_view">Vaate kokkuvõtte ütlemine</string>
   <string name="summary_typo_suggestions">Näitab, kui kursor asub kirjaveal</string>
   <string name="summary_cache_keyboard_keys">SandFly eellaadib teadaanded, et vähendada sisestamisel tekkivat viivitust.</string>
   <string name="summary_cache_keyboard_keys_disabled">Kasutage selle funktsiooni jaoks Google\'i kõnesünteesi.</string>
-  <string name="value_direction_down">alla</string>
-  <string name="value_direction_down_and_right">alla ja paremale</string>
   <string name="title_pref_shortcut_up">Üles pühkimine</string>
   <string name="title_pref_shortcut_up_xr">Teisene peopesa sissepoole, liigutage sõrmed kokku ja pühkige üles</string>
   <string name="title_pref_shortcut_down">Alla pühkimine</string>
@@ -704,10 +636,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="title_pref_shortcut_fingerprint_left">Sõrmejäljeanduril vasakule pühkimine</string>
   <string name="title_pref_shortcut_fingerprint_right">Sõrmejäljeanduril paremale pühkimine</string>
   <string name="title_pref_version_code">Versiooni kood</string>
-  <string formatted="false" name="value_volume_100_percent">Vastavusse viimine hääle helitugevusega</string>
-  <string formatted="false" name="value_volume_75_percent">75% hääle helitugevusest</string>
-  <string formatted="false" name="value_volume_50_percent">50% hääle helitugevusest</string>
-  <string formatted="false" name="value_volume_25_percent">25% hääle helitugevusest</string>
   <string name="value_type_confirmation_double_tap">Hoidke sõrme klahvi valimiseks, seejärel topeltpuudutage</string>
   <string name="value_type_confirmation_lift_to_type">Hoidke täheklahvi valimiseks ja tõstke. Topeltpuud. muude puhul.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Hoidke sõrme klahvi valimiseks, seejärel tõstke</string>
@@ -720,12 +648,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="value_touch_explore_time_out_200ms">0,2 sekundit</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekundit</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekundit (vaikeseade)</string>
-  <string name="value_shake_to_read_disabled">Keelatud</string>
-  <string name="value_shake_to_read_threshold_very_light">Väga õrnalt</string>
-  <string name="value_shake_to_read_threshold_light">Õrnalt</string>
-  <string name="value_shake_to_read_threshold_medium">Keskmiselt</string>
-  <string name="value_shake_to_read_threshold_hard">Kõvasti</string>
-  <string name="value_shake_to_read_threshold_very_hard">Väga kõvasti</string>
   <string name="title_pref_on_screen_keyboard">Ekraanil kuvatav klaviatuur</string>
   <string name="title_pref_physical_keyboard">Füüsiline klaviatuur</string>
   <string name="value_keyboard_echo_none">Puudub</string>
@@ -738,8 +660,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="pref_time_feedback_format_entries_default">Kasuta seadme ajavormingut</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-tunnine</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-tunnine</string>
-  <string name="notification_title_talkback_gestures_changed">SandFlyi liigutusi on muudet.</string>
-  <string name="notification_message_talkback_gestures_changed">Puudutage, et vaadata üle juurdepääsuliigutuste muudatused</string>
   <string name="always_show_warning_checkbox">Kuva see hoiatus alati</string>
   <string name="label_dialog_title_add">Sildi lisamine</string>
   <string name="label_dialog_title_edit">Sildi muutmine</string>
@@ -760,16 +680,8 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="no_apps_to_export_labels">Siltide eksportimiseks ei leitud ühtegi rakendust.</string>
   <string name="label_choose_app_to_import">Valige siltide importimiseks rakendus:</string>
   <string name="label_choose_app_to_export">Valige siltide eksportimiseks rakendus:</string>
-  <string name="talkback_gesture_change_details">See SandFlyi versioon hõlmab muudatusi juurdepääsu vaikeliigutustele. Nende liigutustega seotud toiminguid saab kohandada SandFlyi seadetes. Kui on lubatud funktsioon Puudutusega uurimine, saate teatud toimingute jaoks kasutada järgmiseid liigutusi.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Kas peita ekraanikuva?</string>
   <string name="dialog_message_dim_screen">See lülitab privaatsuse suurendamiseks ekraanikuva välja. Osa sisust võidakse endiselt kuvada, nt ekraani tagasi sisse lülitamise teated või juurdepääsufunktsioonide (nt SandFly) menüüd.</string>
-  <string name="talkback_built_in_gesture_change_details">See SandFlyi versioon sisaldab juurdepääsu vaikeliigutuste muudatusi.\n\nÜlalt alla liigutus võimaldab liikuda ekraanikuval oleva esimese üksuse juurde ja alt üles liigutus viimase üksuse juurde.\n\nLugemise detailsust saab nüüd muuta, valides üksuse ja seejärel SandFlyi kontekstimenüüst detailsuse.\n\nNende liigutustega sooritatavaid toiminguid saate muuta SandFlyi seadetes.</string>
-  <string name="default_action_changed_details">Meedia peatamiseks ja esitamiseks saate nüüd topeltpuudutada ja kahte sõrme all hoida.\n\nMuud liigutused on samuti muutunud.</string>
-  <string name="talkback_built_in_gesture_open_url">Lisateabe saamiseks avage telefonis</string>
-  <string name="talkback_built_in_gesture_change_details_45">See SandFlyi versioon sisaldab juurdepääsu vaikeliigutuste muudatusi.\n\nÜlesliigutamine viib nüüd eelmisele navigeerimisseadele ja allaliigutus järgmisele navigeerimisseadele.</string>
-  <string name="side_tap_shortcuts_removed_details">Järgmised seaded eemaldatakse SandFlyist töökindluse probleemide tõttu.\n• Seadme külje puudutamise liigutused\n• Raputamine pideva lugemise alustamiseks</string>
-  <string name="button_accept_changed_gesture_mappings">Nõustu liigutustega</string>
-  <string name="button_customize_gesture_mappings">Kohanda liigutusi</string>
   <string name="button_disable_all_events">Keela kõik</string>
   <string name="button_enable_all_events">Luba kõik</string>
   <string name="dialog_title_disable_exploration">Kas keelata funktsioon Puudutusega uurimine?</string>
@@ -893,8 +805,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="screen_search_hint_type_search_tables">Otsi tabelitest</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">SandFlyi märguannete kanal</string>
-  <string name="pref_selector_summary">%1$s, et valida seade. %2$s seejärel, et seadet kohandada.</string>
-  <string name="speech_rate_change">Kõne kiirus on %1$d%%</string>
   <string name="speech_pitch_maximum">Suurim kõne helikõrgus</string>
   <string name="speech_pitch_minimum">Väikseim kõne helikõrgus</string>
   <string name="reset_speech_rate_and_pitch">Rääkimiskiirus ja hääle kõrgus lähtestati</string>
@@ -904,10 +814,7 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="vibration_feedback_state">Vibreerimisega tagasiside: %1$s</string>
   <string name="text_formatting_state">Tekstivormingu ettelugemine on %1$s</string>
   <string name="typing_echo_change">Füüsilise klaviatuuri kaja: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Teisene peopesa sissepoole, vajutage pikalt, et lülitada sisse lugemise juhtimise režiim</string>
   <string name="gesture_1_or_2">%1$s või %2$s</string>
-  <string name="select_setting_hint">%1$s muu seade valimiseks</string>
-  <string name="adjust_setting_hint">%1$s seade kohandamiseks</string>
   <string name="adjust_granularity_hint">%1$s, et lugeda %2$s</string>
   <string name="adjust_typo_hint">%1$s, et kuvada soovitused.</string>
   <string name="use_action_hint">Topeltpuudutage toimingu tegemiseks</string>
@@ -947,7 +854,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="setting_selector_heading">Lugemise juhtelemendid</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Video- või muusikarakenduses meedia peatamiseks või esitamiseks topeltpuudutage kahe sõrmega. Proovige kohe.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Muud rakendused võivad seda liigutust kasutada näiteks telefonikõnele vastamiseks või selle lõpetamiseks. Seda liigutust ei pruugita kõigis rakendustes toetada.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Kuva kõik SandFlyi õpetused</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Meedia on peatatud või seda esitatakse. Tavaliselt peatab see praeguse video või muusika või esitab seda. Jätkamiseks pühkige paremale.</string>
   <string name="new_shortcut_gesture_stop_speech_text">SandFlyi kõne ajutiselt peatamiseks puudutage kahe sõrmega.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFlyi kõne peatati. Tavaliselt peatab see SandFlyi kõneldava praeguse fraasi. Jätkamiseks pühkige paremale.</string>
@@ -961,38 +867,18 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Valikurežiim on sisse või välja lülitatud. Tavaliselt käivitab või peatab see tekstivaliku režiimi, kui sisestusväli on aktiveeritud. Jätkamiseks pühkige paremale.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Lugemise juhtelementide kasutamiseks pühkige kolme sõrmega vasakule või paremale. Võite ka pühkida kolme sõrmega üles või alla.</string>
   <string name="new_shortcut_gesture_note">Märkus. Olete mõnda liigutust kohandanud, seega ei pruugi see teave olla täpne. Oma liigutuste nägemiseks avage SandFlyi seaded.</string>
-  <string name="welcome_to_android11">Tere tulemast SandFlyi Android 11-s!</string>
   <string name="welcome_to_android11_text">Lisati uued liigutused, et muuta SandFlyi kasutamine kiiremaks ja lihtsamaks.\n\nSellel ekraanikuval saate uusi liigutusi proovida. Selle teabe saate SandFlyi seadetes alati uuesti üle vaadata.</string>
   <string name="new_gesture_notification_title">Uued liigutused SandFlyis</string>
   <string name="new_gesture_notification_content">Puudutage, et vaadata, kuidas SandFlyi uute liigutuste abil kiiremini kasutada.</string>
   <string name="dump_node_tree_description">Sõlmepuu on logidesse prinditud.</string>
   <string name="report_gesture_description">Siin on hiljuti tehtud liigutused. Teavitage, milline liigutus on vale ja mida liigutuselt ootate.</string>
-  <string name="update_welcome_text_content">Nüüd saate HID (Bluetooth-seadmete ühendamise võimalus) kaudu luua ühenduse Braille ekraanidega. Veenduge, et teil oleks oma tootjalt pärit uusimad püsivaradraiverid, ja siis lülitage Bluetooth oma Braille ekraanil sisse. Avage jaotis SandFlyi seaded &gt; Braille ekraan ja lülitage sisse valik „Kasuta Braille ekraani“. Otsige seadmete loendist oma seade ja looge sellega ühendus.</string>
-  <string name="update_welcome_text_content_tts">Nüüd saate HID (Bluetooth-seadmete ühendamise võimalus) kaudu luua ühenduse Braille ekraanidega. Veenduge, et teil oleks oma tootjalt pärit uusimad püsivaradraiverid, ja siis lülitage Bluetooth oma Braille ekraanil sisse. Avage SandFlyi seaded ja siis Braille ekraan ning „Kasuta Braille ekraani“. Otsige seadmete loendist oma seade ja looge sellega ühendus.</string>
-  <string name="update_welcome_text_content_with_link">Lugege, kuidas kasutada oma Braille ekraani SandFlyiga.</string>
   <string name="update_welcome_talkback_16.1">See SandFlyi värskendus hõlmab rohkemates keeltes ekraani kirjeldamise tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, leiate selle menüüst SandFlyi seaded &gt; SandFlyi uued funktsioonid.</string>
   <string name="update_welcome_talkback_16.1_tts">See SandFlyi värskendus hõlmab rohkemates keeltes ekraani kirjeldamise tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, avage menüü SandFlyi seaded ja tehke valik SandFlyi uued funktsioonid.</string>
-  <string name="describe_screen_and_qna_title">Ekraani kirjeldamise ja Geminilt küsimise uued keeled</string>
-  <string name="describe_screen_and_qna_content">Ekraani kirjeldamine ja Geminilt küsimine on nüüd saadaval täiendavates keeltes. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Lugege lisateavet abikeskuses&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Häälsisestuse otsetee</string>
   <string name="shortcut_for_dictation_content">Gboardi kasutades saate nüüd kasutada kahe sõrmega topeltpuudutust, et käivitada või peatada häälsisestus.
 &lt;br&gt;
 &lt;br&gt;Veenduge, et teil oleks installitud &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Playst Gboardi&lt;/a&gt; uusim versioon.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Kui ekraanil on kuvatud Gboard, saate nüüd kasutada kahe sõrmega topeltpuudutust, et käivitada hääldikteerimine, ja seejärel kahe sõrmega topeltpuudutust, et funktsioon peatada.</string>
-  <string name="keyboard_title">Klaviatuur</string>
-  <string name="keyboard_content">SandFlyil on nüüd oma klaviatuuri jaoks täiustatud klahvitabel mitmesuguste uute käskude ja otseteedega. See täiustus, mis hõlmab tõhusamaks veebis navigeerimiseks sirvimisrežiimi, kiirendab navigeerimist ja interaktsioone SandFlyi kasutajate jaoks, kes kasutavad füüsilisi klaviatuure. Täiustatud klahvitabeli saate aktiveerida jaotises SandFlyi seaded &gt; Täpsemad seaded &gt; Klaviatuuri otseteed.</string>
-  <string name="keyboard_content_tts">SandFlyil on nüüd oma klaviatuuri jaoks täiustatud klahvitabel mitmesuguste uute käskude ja otseteedega. See täiustus, mis hõlmab tõhusamaks veebis navigeerimiseks sirvimisrežiimi, kiirendab navigeerimist ja interaktsioone SandFlyi kasutajate jaoks, kes kasutavad füüsilisi klaviatuure. Täiustatud klahvitabeli saate aktiveerida, kui teete valikud SandFlyi seaded, siis Täpsemad seaded ja seejärel Klaviatuuri otseteed.</string>
-  <string name="reduce_delay_title">Viivituse vähendamine</string>
-  <string name="reduce_delay_content">Nüüd saate vähendada SandFlyi teadaannete viivitusi puudutusega uurimise ja teksti sisestamise jaoks. Nende seadete vaatamiseks avage SandFlyi seaded &gt; Täpsemad seaded &gt; Viivituse vähendamine.</string>
-  <string name="reduce_delay_content_tts">Nüüd saate vähendada SandFlyi teadaannete viivitusi puudutusega uurimise ja teksti sisestamise jaoks. Nende seadete vaatamiseks tehke valikud SandFlyi seaded, siis Täpsemad seaded ja seejärel Viivituse vähendamine.</string>
-  <string name="customize_braille_keyboard_improvements_title">Braille klaviatuuri liigutuste kohandamine</string>
-  <string name="customize_braille_keyboard_improvements_content">Nüüd on võimalik ekraanil kuvatava virtuaalse Braille klaviatuuri jaoks liigutusi kohandada. Kohandamiseks avage SandFlyi seaded &gt; Braille klaviatuur &gt; Liigutused.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Nüüd on võimalik ekraanil kuvatava virtuaalse Braille klaviatuuri jaoks liigutusi kohandada. Kohandamiseks tehke valikud SandFlyi seaded, siis Braille klaviatuur ja seejärel Liigutused.</string>
-  <string name="learn_more_about_braille_keyboard">Lisateave Braille klaviatuuri kohta</string>
-  <string name="other_changes_title">Muud muudatused</string>
-  <string name="other_changes_content">Ekraanil kuvatav teade aitab teil nüüd SandFlyi kiiresti välja lülitada, kui see on kogemata sisse lülitatud. Saate selle välja lülitada jaotises SandFlyi seaded &gt; Kuva juhised SandFlyi väljalülitamiseks.</string>
-  <string name="other_changes_content_tts">Ekraanil kuvatav teade aitab teil nüüd SandFlyi kiiresti välja lülitada, kui see on kogemata sisse lülitatud. Saate väljalülitamiseks tehke valikud SandFlyi seaded ja siis Kuva juhised SandFlyi väljalülitamiseks.</string>
-  <string name="keymap_changes_content">Klassikaline klahvitabel on lülitatud vaikeklahvitabelile, mis hõlmab rohkem otseteid.</string>
   <string name="announcing_text_formatting_title">Tekstivormingu teadaanded</string>
   <string name="announcing_text_formatting_header">SandFly saab nüüd teada anda tekstivormingu muudatustest, nagu paks, kursiiv ja teksti värv. Alustamiseks tehke järgmist.</string>
   <string name="announcing_text_formatting_option1">Võite vormindatud üksuse esile tõsta, avada SandFlyi menüü ja teha valiku „Tekstivormingu kirjeldamine“.</string>
@@ -1083,7 +969,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="additional_tips_link_subtext">Helistamise, sõnumite saatmise jm õpetused</string>
   <string name="practice_gestures_link_text">Liigutuste harjutamine</string>
   <string name="practice_gestures_link_subtext">Eri liigutuste proovimine nende tundmaõppimiseks</string>
-  <string name="help_and_feedback_link_subtext">Lisateave SandFlyi kohta ja tagasiside saatmine</string>
   <string name="choose_tutorial_title">Valige, kuidas soovite SandFlyiga suhelda</string>
   <string name="touch_tutorial_button">Puutetoimingute õpetus</string>
   <string name="keyboard_tutorial_button">Klaviatuuritoimingute õpetus</string>
@@ -1229,8 +1114,6 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="wear_training_typing_text5">Proovige seda allpool.</string>
   <string name="wear_training_typing_practice_button_content_description">Klaviatuuril sisestamine</string>
   <string name="wear_training_end_tutorial_title">Olete valmis SandFlyi kasutama</string>
-  <string name="talkback_updated_notification_title">SandFly on värskendatud</string>
-  <string name="talkback_updated_notification_content">Lisateabe saamiseks puudutage</string>
   <string name="wear_new_feature_page_title">Tere tulemast värskendatud SandFlyi!</string>
   <string name="wear_new_feature_page_content">Märkate mõningaid veaparandusi ja muudatusi teie fookuse liikumises</string>
   <string name="wear_new_feature_page_button_content_description">Lõpeta</string>
@@ -1249,10 +1132,7 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="title_pref_blue">Sinine</string>
   <string name="title_pref_grey">Hall</string>
   <string name="survey_setting_title">Andke tagasisidet</string>
-  <string name="survey_closed">Küsitlus on suletud</string>
   <string name="title_summarize_view">Ekraani kirjeldamine</string>
-  <string name="title_increase_touch_focus_latency">Suurenda fookuse viivitust</string>
-  <string name="title_decrease_touch_focus_latency">Vähenda fookuse viivitust</string>
   <string name="detected_result">Tuvastati: %1$s</string>
   <string name="title_image_caption">Pildi kirjeldamine</string>
   <string name="image_caption_with_gemini_prefix">Kirjelda seda pilti. Ära kasuta vastuses märgistusi.</string>
@@ -1279,33 +1159,15 @@ Alla 0,3-sekundiliste viivituste korral muutub aktiveerimiseks määratud topelt
   <string name="image_qna_question_prefix">KASUTAJA: %1$s</string>
   <string name="image_qna_answer_prefix">MUDEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Jätka vaheldumisi vastamist (KASUTAJA–MUDEL–KASUTAJA…)] ...</string>
-  <string name="screen_overview_with_screenshot">Teie ülesanne on aidata inimesel, kes oma telefoni ei näe, aru saada, mis on tema telefoni ekraanil. Kirjeldage seda ekraanipilti paari lausega.
-
-Juhised
-Alustage oma vastust sõnadega „Ekraanil kuvatakse”.
-Vastuse algus peab kirjeldama ekraanil kuvatavat kõige olulisemat ja silmapaistvamat sisu. Siin on mõned näited kõige olulisema ja silmapaistvama kirjeldatava sisu kohta.
-* Vestlusrakenduses: viimase sõnumi saatja ja tekst.
-* Sotsiaalmeediarakenduses: esimene postitus, sh postitaja, tekst ja pildi kirjeldus.
-* Uudisterakenduses: artikli pealkiri ja peamise pildi kirjeldus.
-* Ostlemisrakenduses: kuvatava toote kirjeldus ja hind.
-* Kalendrirakenduses: järgmine sündmus ja sellele järgnevate sündmuste arv.
-* Sõnumite loendis: esimese sõnumi nimi ja eelvaade ning seejärel ainult mõne järgmise loendis oleva sõnumi nimi ja lugemata sõnumite arv.
-
-Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppude ruumilist asukohta ning otstarvet.
-Ärge mainige ülaosas oleva olekuriba sisu (nt kellaaeg, võrgu olek, aku).
-Ärge kasutage oma vastuses Markdowni.</string>
   <string name="title_gemini_opt_in_dialog">Kas soovite üksikasjalikke pildikirjeldusi?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Kas soovite pildikirjeldusi?</string>
   <string name="title_gemini_result_dialog">Tuvastatud: pilt</string>
   <string name="title_gemini_result_bottom_sheet">Kujutise kirjeldus</string>
   <string name="title_gemini_screen_overview_result_dialog">Ekraanikuva kirjeldus</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Kokkuvõte</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Toimingud</string>
   <string name="positive_button_gemini_opt_in_dialog">Lülita sisse</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Nõustun</string>
   <string name="negative_button_gemini_opt_in_dialog">Tänan, ei</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Ava seaded</string>
-  <string name="positive_button_gemini_download_dialog">Laadi alla ja lülita sisse</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Tekst, „%1$s“.</string>
   <string name="detected_icon_label">Ikoon, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppu
   <string name="screen_overview_no_result">Ekraanikuvast ei saa kokkuvõtet teha</string>
   <string name="image_caption_no_result">Ei saa pilti kirjeldada</string>
   <string name="image_caption_with_hide_screen">Piltide kirjeldused ei ole saadaval, kui ekraan on peidetud. Kuvage ekraan ja proovige uuesti.</string>
-  <string name="feedback_button_state_set">valitud</string>
-  <string name="feedback_button_state_unset">pole valitud</string>
   <string name="action_text_like_button">Märgi heaks vastuseks</string>
   <string name="action_text_dislike_button">Märgi halvaks vastuseks</string>
   <string name="action_text_clear_like_button">Kustuta hea vastus</string>
@@ -1349,18 +1209,13 @@ Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppu
   <string name="downloading_all_image_captioning_hint">Automaatsete pildi- ja ikoonikirjelduste allalaadimine</string>
   <string name="download_all_image_captioning_successful_hint">Automaatsed pildi- ja ikoonikirjeldused on alla laaditud</string>
   <string name="download_all_image_captioning_failed_hint">Ei saa alla laadida. Proovige hiljem uuesti.</string>
-  <string name="download_complete_notification_title">Allalaadimine on lõpetatud</string>
-  <string name="download_complete_notification_content">Nüüd kuulete SandFlyiga automaatseid piltide ja ikoonide kirjeldusi</string>
-  <string name="download_complete_notification_action">Seaded</string>
   <string name="download_storage_error_hint">Salvestusruum on täis. Allalaadimiseks vabastage %1$d MB menüüs Seaded &gt; Salvestusruum.</string>
   <string name="download_network_error_hint">Ei saa alla laadida. Kontrollige ühendust ja proovige uuesti.</string>
   <string name="switch_icon_detection_dialog_title">Automaatsed ikoonikirjeldused</string>
   <string name="switch_icon_detection_dialog_message">Kirjeldused loetakse ette, kui tõstate ikooni esile</string>
   <string name="switch_image_description_dialog_message">Kirjeldused loetakse ette, kui tõstate pildi esile. Mõni rakendus ei pruugi seda toetada.</string>
-  <string name="switch_text_recognition_dialog_title">Piltidel oleva teksti automaatne kirjeldamine</string>
   <string name="switch_text_recognition_dialog_message">Kirjeldused loetakse ette, kui tõstate esile teksti sisaldava pildi</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Alla laaditud</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Valitud pildi kirjeldusi saate siiski hankida SandFlyi menüüst</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Kustuta allalaadimine</string>
   <string name="delete_icon_detection_dialog_title">Kas kustutada automaatsed ikoonikirjeldused?</string>
@@ -1376,11 +1231,6 @@ Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppu
   <string name="gemini_enable_dialog_title">Gemini kasutamine funktsioonis SandFly</string>
   <string name="gemini_disable_dialog_message">Ekraani mõistmine Geminiga</string>
   <string name="disable_gemini_dialog_subtext">Lülitage sisse, et võimaldada Gemini abil ekraani mõistmine</string>
-  <string name="ai_services_update_dialog_title">Piltide kirjeldamiseks värskendage rakendust %1$s</string>
-  <string name="ai_services_update_dialog_message">Piltide kirjelduste kuulamiseks hankige Google Playst rakenduse <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> uusim versioon.\n\nKui allalaadimine on lõppenud, naaske SandFlyi seadetesse ja lülitage automaatsed piltide kirjeldused uuesti sisse.</string>
-  <string name="ai_services_update_dialog_button_text">Ava Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Midagi läks valesti. Proovige uuesti.</string>
   <string name="gemini_block_message">Seda pilti ei saa töödelda</string>
   <string name="gemini_network_error">Internetiühendus puudub. Kontrollige WiFi- või mobiilsidevõrgu ühendust ja proovige uuesti.</string>
@@ -1396,13 +1246,8 @@ Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppu
   <string name="image_qna_typing_button_text">Sisestage Geminile küsimus</string>
   <string name="image_qna_send_button_text">Küsige</string>
   <string name="image_qna_speak_question_description">Ütle küsimus</string>
-  <string name="overviews_summary_intro">Selle rakendusekuva kokkuvõte: %1$s</string>
   <string name="overviews_node_not_found">Vabandust, ma ei leia enam ekraanikuva seda osa.</string>
-  <string name="overviews_images_in_app">Leitud tähtsad pildid</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Toimingud rakenduses</string>
-  <string name="overviews_actions_in_app_description">Peamised toimingud, mida saate rakenduse ekraanil teha, on järgmised.</string>
-  <string name="overviews_parent_type">Toimingud rakenduses</string>
   <string name="text_replaced_feedback">Tekst asendati</string>
   <string name="switch_gesture_set">Liigutuste komplekti vahetamine</string>
   <string name="switch_gesture_set_to">Liigutuste komplektile %1$d vahetamine</string>
@@ -1453,7 +1298,6 @@ Pärast seda saab vastuses kirjeldada navigeerimisribade ja silmapaistvate nuppu
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Sule</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Märguannete kuulmiseks siis, kui ekraan on välja lülitatud, lülitage SandFlyi paljusõnalisuse seadetes sisse valik „Loe märguanded ette, kui ekraan on välja lülitatud”.</string>
     <string name="title_pref_tts_engine">Kõnesünteesi mootor</string>
     <string name="title_pref_system_tts_settings">Süsteemi kõnesünteesi seaded</string>
     <string name="title_selector_switch_tts_engine">Kõnemootor</string>

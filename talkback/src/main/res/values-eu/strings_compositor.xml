@@ -63,15 +63,12 @@
   <string name="value_not_selected">hautatu gabe</string>
   <string name="value_checked">markatuta</string>
   <string name="value_not_checked">ez da markatu</string>
-  <string name="value_partially_checked">erdi-markatuta</string>
   <string name="value_on">aktibatuta</string>
   <string name="value_off">desaktibatuta</string>
   <string name="value_disabled">desgaituta</string>
   <string name="value_enabled">gaituta</string>
   <string name="value_read_only">irakurtzeko soilik</string>
   <string name="value_expanded">zabalduta dago</string>
-  <string name="value_fully_expanded">guztiz zabalduta</string>
-  <string name="value_partially_expanded">partzialki zabalduta</string>
   <string name="value_collapsed">tolestuta dago</string>
   <string name="value_double_tap">Sakatu birritan</string>
   <string name="value_single_tap">Sakatu</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">Sakatu %1$s aldatzeko</string>
   <string name="template_hint_single_selection_item">%1$s hautatzeko</string>
   <string name="template_hint_single_selection_item_keyboard">Sakatu %1$s hautatzeko</string>
-  <string name="template_hint_pager">Pasatu 2 hatz orriz aldatzeko</string>
   <string name="template_hint_pager_single_page">Ez dago beste orririk</string>
   <string name="template_hint_seek_control_tv">%1$s aldatzeko</string>
   <string name="template_custom_hint_for_actions">%1$s %2$s</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">Hizketaren abiadura: %% %1$d</string>
   <string name="template_accessibility_volume_change_increase">Handitu erabilerraztasunaren bolumena ehuneko %1$d izan dadin.</string>
   <string name="template_accessibility_volume_change_decrease">Txikitu erabilerraztasunaren bolumena ehuneko %1$d izan dadin.</string>
-  <string name="template_touch_explore_latency_changed">Idazteko fokuratze-atzerapena: %1$d milisegundo.</string>
   <string name="template_touch_latency_reach_maximum">Gehienekoa</string>
   <string name="template_touch_latency_reach_minimum">Gutxienekoa</string>
   <string name="template_volume_change_maximum">Gehienekoa</string>

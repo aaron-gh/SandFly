@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Երբ TalkBack-ը միացված է, ձեզ կտրամադրվի ձայնային ուղեկցում, որպեսզի կարողանաք օգտագործել ձեր սարքն առանց էկրանին նայելու։ TalkBack-ը նախատեսված է այն մարդկանց համար, որոնք դժվարանում են տեսնել էկրանը, ինչպես նաև այն իրավիճակների համար, երբ էկրանը չի երևում։&lt;br&gt;&lt;br&gt;&lt;b&gt;Ինչպես օգտվել TalkBack-ից&lt;/b&gt;&lt;br&gt;• Մատը սահեցրեք աջ կամ ձախ՝ մի տարրից մյուսին անցնելու համար&lt;br&gt;• Կրկնակի հպեք որևէ տարրի՝ այն ակտիվացնելու համար&lt;br&gt;• Քաշեք երկու մատով՝ ոլորելու համար&lt;br&gt;&lt;b&gt;Ինչպես անջատել TalkBack-ը&lt;/b&gt;&lt;br&gt;1. Կարգավորումներում հպեք &lt;b&gt;Օգտագործել TalkBack-ը&lt;/b&gt;։ Դուք կտեսնեք եզրագիծ։ Կրկնակի հպեք դրան։&lt;br&gt;2. Հաստատման հաղորդագրության վրա հպեք &lt;b&gt;Կանգնեցնել&lt;/b&gt;։ Դուք կտեսնեք եզրագիծ։ Կրկնակի հպեք դրան։</string>
   <string name="talkback_service_summary">Օգտագործեք էկրանի ընթերցիչ, որը բարձրաձայն հնչեցնում է ցուցադրված տարրերը</string>
   <string name="talkback_preferences_title">TalkBack-ի կարգավորումներ</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Կարգավորումներ</string>
   <string name="tts_preferences_title">Տեքստի հնչեցում</string>
   <string name="language_options">Լեզուներ</string>
   <string name="spoken_language">Հնչեցման լեզուն</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Որոնումը չեղարկվեց:</string>
   <string name="notification_type_status_started">Մեկնարկ</string>
   <string name="notification_type_status_stopped">Դադարեցված է</string>
-  <string name="notification_type_status_connected">միացված է</string>
-  <string name="notification_battery_level_unknown">անհայտ</string>
   <string name="notification_battery_saver_mode">Մարտկոցի տնտեսումը միացված է</string>
   <string name="template_no_text_selected">Տեքստ չի ընտրվել</string>
   <string name="template_charging">Լիցքավորումը՝ %1$s Մարտկոցի լիցքավորման աստիճանը՝ %2$s տոկոս:</string>
   <string name="template_charging_lite">Լիցքավորումը %1$s</string>
-  <string name="template_battery_state">Մարտկոց․ %1$s %2$s տոկոս %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Զանգակի թրթռոց:</string>
   <string name="value_ringer_silent">Զանգակը լռեցված է:</string>
   <string name="value_screen_on">Էկրանը միացվում է:</string>
   <string name="value_screen_off">Էկրանն անջատված է:</string>
   <string name="value_device_unlocked">Սարքն ապակողպված է:</string>
-  <string name="title_pref_category_audio">Աուդիո</string>
   <string name="title_pref_speech_volume">Արտասանության բարձրություն</string>
-  <string name="title_pref_speech_rate">Խոսքի արագությունը</string>
-  <string name="summary_pref_speech_rate">Տեքստի արտասանման արագությունը</string>
   <string name="title_pref_verbose_scroll_announcement">Միշտ հնչեցնել ցանկի կետերի թիվը</string>
   <string name="summary_pref_verbose_scroll_announcement">Հնչեցնել ոլորման բոլոր եղանակների թիվը</string>
   <string name="title_pref_cover_proximity_sensor">Դադարեցնել խոսքը, երբ հեռավորության սենսորը ծածկված է</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Հնչեցնել ժամանակը</string>
   <string name="pref_speak_time_summary">Երբ դուք միացնում եք էկրանը</string>
   <string name="summary_speak_container_element_positions">Ներառում է տեղեկություններ՝ ցանկեր, ցանցեր և այլ կոնտեյներներ բացելու և փակելու ժամանակ</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Ընթերցման կառավարման մեջ ավելացվել է տարրի ընտրության հապաղում</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Երեք մատի սահեցման միջոցով ցանկացած ժամանակ կարող եք բացել ընթերցման կառավարման ընտրացանկը և փոխել տարրի ընտրության հապաղման ժամանակը</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Օգտագործե՞լ «Բարձրացնել մատը՝ տեքստ մուտքագրելու համար» գործառույթը</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Եթե տեքստ մուտքագրելիս տարրի ընտրության հապաղումը 0,3 վայրկյանից կարճ է, ակտիվացման համար կրկնակի հպումը չափազանց դժվար կլինի։ Ընտրեք «Փոխել», որպեսզի «Բարձրացնել մատը՝ տեքստ մուտքագրելու համար» գործառույթն ավտոմատ ակտիվանա։\n\nԵթե ուզում եք օգտագործել այս գործառույթը, հպեք և պահեք մատը՝ որևէ ստեղն ընտրելու համար, այնուհետև բարձրացրեք մատը՝ տեքստ մուտքագրելու համար։\n\nԱյս գործառույթը կարող եք հարմարեցնել TalkBack-ի կարգավորումներում։</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Ընթերցման կառավարման մեջ ավելացվել է մուտքագրման ընթացքում տարրի ընտրության հապաղում</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Եթե խնդիրներ են առաջացել կրկնակի հպումով մուտքագրման հետ, երեք մատը սահեցնելով՝ բացեք ընթերցման կառավարման ընտրացանկը և մեծացրեք տարրի ընտրության հապաղման ժամանակը</string>
-  <string name="gestures_announce_typing_focus_wont_change">Տեքստ մուտքագրելիս տարրի ընտրության հապաղումը չի աշխատում առանց «Բարձրացնել մատը՝ տեքստ մուտքագրելու համար» գործառույթի։</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Եղավ</string>
   <string name="reset_letency_reduction_settings_dialog_title">Զրոյացնե՞լ հապաղման կարգավորումները</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Զրոյացման արդյունքում կվերականգնվեն հապաղման կանխադրված կարգավորումները</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Զրոյացնել</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Հապաղման նվազեցման կարգավորումները զրոյացվեցին։</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Փոխել</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Չփոխել</string>
   <string name="Reset_gesture_settings_dialog_title">Վերակայե՞լ ժեստերի կարգավորումները</string>
   <string name="Reset_gesture_settings_set_dialog_title">Զրոյացնե՞լ ընթացիկ հավաքածուի ժեստերը</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Բոլոր ժեստերի կանխադրված կարգավորումները կվերականգնվեն։\n\nՁեր կատարած ոչ մի փոփոխություն չի պահպանվի։</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Հնչեցնել ընթացքի բոլոր ծանուցումները</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Ներառում է ներբեռնման, նավիգացիայի և այլ գործողությունների ժամանակ ցուցադրվող ծանուցումները։ Երբ կարգավորումն անջատված է, դուք ավելի քիչ ծանուցումներ կստանաք։</string>
   <string name="title_pref_explore_by_touch">Հպումով ուսումնասիրում</string>
-  <string name="title_pref_category_visual">Տեսողական</string>
   <string name="title_pref_category_controls">Կառավարման տարրեր</string>
-  <string name="title_pref_category_braille">Բրայլյան գրեր</string>
-  <string name="title_pref_category_general">Ընդհանուր</string>
-  <string name="title_pref_category_advanced">Ընդլայնված</string>
-  <string name="title_pref_category_others">Այլ</string>
-  <string name="title_pref_category_tutorial_and_help">Ուղեցույց և օգնություն</string>
   <string name="title_pref_category_reduce_latency_summary">Այս կարգավորումների միջոցով կարելի է սահմանել, թե որքան պետք է լինի հապաղումը TalkBack-ի արձագանքից առաջ</string>
   <string name="reset_latency_settings_title">Զրոյացնել հապաղման բոլոր կարգավորումները</string>
   <string name="title_pref_single_tap">Մեկ անգամ հպեք՝ ակտիվացնելու համար</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Փոխել ֆոկուսի ցուցիչը</string>
   <string name="title_pref_category_manage_gestures">Ժեստեր</string>
   <string name="title_pref_manage_labels">Հատուկ պիտակներ</string>
-  <string name="title_pref_manage_customize_menus">Փոփոխել ընտրացանկերը</string>
   <string name="title_pref_category_context_menu">Հարմարեցնել TalkBack-ի ընտրացանկը</string>
   <string name="title_pref_category_selector_menu">Հարմարեցնել ընթերցման կառավարման տարրերը</string>
   <string name="title_pref_category_navigation_menu">Փոփոխել նավիգացիայի պարամետրերը</string>
-  <string name="pref_category_context_menu_summary">TalkBack-ի ընտրացանկն օգտագործելու համար երեք մատով հպեք էկրանին։ Կարող եք նաև մատը սահեցնել վերև/ներքև, ապա աջ։</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack-ի ընտրացանկն օգտագործելու համար ձեր պասիվ ձեռքի ափը թեքեք դեպի ձեզ և մատներն իրար միացրեք։</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack-ի ընտրացանկն օգտագործելու համար մատը սահեցրեք ներքև, ապա աջ։</string>
-  <string name="pref_category_selector_menu_summary">Ընթերցման կառավարման տարրերն օգտագործելու համար 3 մատը սահեցրեք ձախ կամ աջ։ Կարող եք նաև երեք մատը վերև կամ ներքև սահեցնել։</string>
-  <string name="pref_category_selector_menu_summary_xr">Ընթերցման կառավարման մի տարրից մյուսին անցնելու համար պասիվ ձեռքի ափը թեքեք դեպի ձեզ և մատներն իրար միացրեք։ Ձեռքը տեղափոխեք դեպի աջ կամ ձախ, մինչև հասնեք ցանկալի տարրին, ապա բաց թողեք մատները։</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Ընթերցման կառավարման տարրերն օգտագործելու համար մատը սահեցրեք վերև, ապա ներքև։</string>
   <string name="title_pref_manage_keyboard_shortcuts">Ստեղնային դյուրանցումներ</string>
   <string name="title_pref_export_custom_labels">Արտահանել հատուկ պիտակները</string>
-  <string name="title_pref_play_store">Բացել TalkBack-ը Play Խանութում</string>
-  <string name="summary_pref_play_store">TalkBack-ի ներկայիս տարբերակը՝ %1$s</string>
   <string name="title_pref_help_and_feedback">Օգնություն և հետադարձ կապ</string>
-  <string name="title_pref_gup">Կապվեք «Google-ը հատուկ կարիքներով անձանց համար» նախագծի աջակցման ծառայության հետ</string>
-  <string name="subtitle_pref_gup">Ստացեք TalkBack-ի օգտագործման հետ կապված օգնություն կամ հաղորդեք խնդիրների մասին</string>
-  <string name="pref_item_licenses">Բաց կոդով ծրագրակազմի լիցենզիաներ</string>
-  <string name="title_pref_tutorial">Ուղեցույց</string>
   <string name="title_pref_help">Օգնություն</string>
   <string name="title_pref_show_tos">Օգտագործման պայմաններ</string>
   <string name="title_pref_show_privacy_policy">Գաղտնիության քաղաքականություն</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Մատնահետքերի սկաների ժեստեր</string>
   <string name="title_pref_category_tutorial">TalkBack-ի ուղեցույց</string>
   <string name="title_pref_category_help_no_tutorial">Օգնություն</string>
-  <string name="title_pref_category_typing">Մուտքագրում</string>
   <string name="title_pref_advanced_settings">Լրացուցիչ կարգավորումներ</string>
   <string name="title_pref_show_exit_watermark">Ցույց տալ TalkBack-ն անջատելու ցուցումները</string>
   <string name="summary_pref_show_exit_watermark">Երբ TalkBack-ը միացված է, հաղորդագրություն է հայտնվում՝ օգնելու ձեզ արագ անջատել այն</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Որոշ կերպափոխիչ ստեղներ տարբեր են։</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Իմանալ ավելին ստեղների շարվածքների մասին</string>
   <string name="keycombo_go_to_settings">Անցնել Կարգավորումներ</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack-ը պատրաստվում է հեռացնել դասական շարվածքը։ Ստեղնային դյուրանցումներն օգտագործելու համար ստեղների դասական շարվածքը փոխեք կանխադրվածի։</string>
-  <string name="keycombo_keymap_changes_notifications_action">Իմանալ ավելին</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Եղավ</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Կարգավորումներ</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Իմանալ ավելին</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Դուք օգտագործում եք TalkBack-ի ստեղների կանխադրված շարվածքը։ Հասանելի է նաև նոր ընդլայնված շարվածք՝ այլ հրամաններով։ Իմացեք ավելին Օգնության կենտրոնում կամ անցեք նոր շարվածքին Կարգավորումներում։</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Հասանելի է ստեղների նոր շարվածք</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">TalkBack-ի նոր, բարելավված ստեղների շարվածքում ավելացվել են մի շարք նոր հրամաններ։ Իմացեք ավելին Օգնության կենտրոնում կամ անցեք նոր շարվածքին Կարգավորումներում։</string>
-  <string name="keycombo_update_modifier_key_warning_title">Թարմացրեք TalkBack-ի կերպափոխիչ ստեղնը</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ոչ հիմա</string>
   <string name="keycombo_warning_content_description">Լրացուցիչ տեղեկություններ կերպափոխիչ ստեղնի մասին</string>
-  <string name="keycombo_warning_dialog_title">Թարմացրեք ձեր կերպափոխիչ ստեղնը</string>
-  <string name="keycombo_warning_dialog_message">Որպեսզի TalkBack-ի դյուրանցումները ճիշտ աշխատեն, որպես կերպափոխիչ ստեղն օգտագործեք Alt-ը, այլ ոչ թե գործողության ստեղնը։\n\nԵթե դա չանեք, Android-ի այս տարբերակում որոշ դյուրանցումների գործողությունները կփոխվեն։</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Ստեղների դասավորություն</string>
   <string name="keycombo_menu_select_keymap">Ընտրել ստեղների դասավորությունը</string>
   <string name="keycombo_menu_reset_keymap">Վերակայել ստեղների դասավորությունը</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Բարձրացնել ձայնի ուժգնությունը</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Իջեցնել ձայնի ուժգնությունը</string>
   <string name="keycombo_menu_global_refocus_current_node">Հնչեցնել ընտրված տարրը</string>
-  <string name="keycombo_menu_category_granularity">Նավիգացիա</string>
   <string name="keycombo_menu_granularity_increase">Նավիգացիայի հաջորդ կարգավորումը</string>
   <string name="keycombo_menu_granularity_decrease">Նավիգացիայի նախորդ կարգավորումը</string>
   <string name="keycombo_menu_category_other">Այլ գործողություններ</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Վերականգնե՞լ կանխադրված արագ ստեղներն այս դասավորության համար։</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Վերակայել</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s՝ դիտարկման ռեժիմում</string>
-  <string name="keycombo_assign_dialog_instruction">Նոր դյուրանցում սահմանելու համար սեղմեք ստեղների համակցությունը: Այն պետք է պարունակի կամ ALT, կամ Control ստեղնը:</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Նոր դյուրանցում կարգավորելու համար սեղմեք %1$s կերպափոխիչ ստեղնի և այլ ստեղների համադրություն:</string>
   <string name="keycombo_unassigned">Չնշանակված</string>
   <string name="save_button_in_keycombo_assign_dialog">Պահել</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Մուտքագրման ընթացքում տարրի ընտրության հապաղում</string>
   <string name="message_pref_touch_explore_latency">Եթե մուտքագրման ընթացքում տարրի ընտրության հապաղումը փոքր է, TalkBack-ն ավելի արագ է արձագանքում, երբ դուք հպում եք ստեղնաշարին։\n\nԸնտրեք հապաղումը։</string>
   <string name="title_pref_touch_focus_timeout">Տարրի ընտրության հապաղում</string>
-  <string name="summary_pref_touch_focus_time">
-Սահմանեք, թե ինչ արագությամբ TalkBack-ը պետք է արձագանքի, երբ ընտրում եք որևէ տարր։ Երբ հապաղումը մեծ չէ, TalkBack-ն ավելի արագ է արձագանքում։ Սակայն կրկնակի կամ եռակի սեղմումը դժվար կլինի։\n\n
-Եթե հապաղումը 0,3 վայրկյանից կարճ է, կրկնակի հպումով ակտիվացումը փոխարինվում է երկու մատի հպումով ակտիվացմամբ։
-      </string>
   <string name="title_pref_talkback_gesture_detection">Միացնել ժեստերի հայտնաբերումը TalkBack-ում</string>
   <string name="toast_pref_talkback_gesture_detection">Կարգավորումն ակտիվացնելու համար անջատեք TalkBack-ը և նորից միացրեք։</string>
   <string name="title_pref_auto_image_captioning">Ավտոմատ նկարագրություններ</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Միացրեք պատկերների նկարագրությունները Կարգավորումներում</string>
   <string name="dialog_message_turn_on_image_description">Միացրեք պատկերների ավտոմատ կամ մանրամասն նկարագրությունները և նորից փորձեք</string>
   <string name="title_pref_detailed_image_description">Պատկերների մանրամասն նկարագրություններ</string>
-  <string name="summary_pref_ai_description">Ավելի երկար նկարագրություններ լսելու համար TalkBack-ի ընտրացանկում սեղմեք «%1$s»</string>
   <string name="dialog_message_on_device_ai_description">Դուք կլսեք համառոտ նկարագրություն, երբ աջակցվող հավելվածներում նշորդը պահեք որևէ պատկերի վրա։\n\nՊատկերները մշակվում են ձեր սարքում և երբեք չեն ուղարկվում Google-ին։ \n\nԳեներատիվ արհեստական բանականությունը փորձնական է, ուստի այն կարող է սխալներ թույլ տալ։ Շարունակելով՝ դուք ընդունում եք <a href="https://policies.google.com/terms/generative-ai">Google-ի օգտագործման պայմանները</a>։</string>
   <string name="enable_gemini">Միացնել</string>
   <string name="powered_by_gemini">Աշխատում է գեներատիվ ԱԲ-ի հիման վրա</string>
-  <string name="detailed_image_description_ongoing_hint">Նկարագրության բեռնում</string>
-  <string name="detailed_image_description_result_prefix">Հայտնաբերվել է՝ պատկեր։ %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Պատկերների ավտոմատ նկարագրություններ ստանալու համար հարկավոր է ներբեռնել ԱԲ մոդելը</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Պատկերները մշակվում են ձեր սարքում և երբեք չեն ուղարկվում Google-ին։\n\nԳեներատիվ արհեստական բանականությունը փորձնական է, ուստի այն կարող է սխալներ թույլ տալ։ Շարունակելով՝ դուք ընդունում եք %1$s։</string>
   <string name="dialog_message_gen_ai_tos_link">Google-ի օգտագործման պայմանները</string>
   <string name="message_aifeature_downloading">ԱԲ մոդելը ներբեռնվում է։ Կարող է որոշ ժամանակ պահանջվել։ Դուք ծանուցում կստանաք, երբ այն պատրաստ լինի։</string>
   <string name="message_aifeature_downloading_with_progress">Ներբեռնումն ընթացքի մեջ է։ %2$d ՄԲ-ից %1$d-ը ներբեռնվել է։</string>
-  <string name="message_aifeature_download_complete">ԱԲ մոդելը ներբեռնվել է։ TalkBack-ը այժմ կարող է պատկերների նկարագրություններ գեներացնել։</string>
   <string name="summary_pref_auto_image_captioning">Պատկերակների, պատկերների և դրանց տեքստերի համար</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Պատկերներում առկա տեքստերի համար</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Պատկերներում առկա պատկերների և տեքստի համար</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Պատկերներում առկա պատկերակների և տեքստի համար</string>
   <string name="summary_pref_module_downloading">Ներբեռնում…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Միացված է բոլոր պատկերների համար</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Միացված է միայն չպիտակված պատկերների համար</string>
   <string name="summary_pref_auto_image_captioning_disabled">Անջատված է</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Միացված է բոլոր պատկերակների համար</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Միացված է միայն չպիտակված պատկերակների համար</string>
   <string name="summary_pref_auto_icon_detection_disabled">Անջատված է</string>
   <string name="title_pref_enable_auto_image_caption">Բոլոր պատկերները</string>
   <string name="title_pref_enable_auto_image_caption_arg">Բոլոր պատկերները\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Բոլոր պատկերակները</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Միայն չպիտակված պատկերակները</string>
   <string name="title_pref_disable_auto_icon_detection">Չնկարագրել պատկերակները</string>
-  <string name="dialog_message_on_device_ai_model_download">Դուք կլսեք համառոտ նկարագրություն, երբ աջակցվող հավելվածներում նշորդը պահեք որևէ պատկերի վրա։\n\nՊատկերները մշակվում են ձեր սարքում և երբեք չեն ուղարկվում Google-ին։\n\nԳեներատիվ արհեստական բանականությունը փորձնական է, ուստի այն կարող է սխալներ թույլ տալ։ Շարունակելով՝ դուք ընդունում եք %1$sը։</string>
   <string name="title_pref_enable_gemini_support">Միացնել</string>
   <string name="title_pref_disable_gemini_support">Անջատել</string>
   <string name="summary_pref_gemini_support_enabled">Gemini-ը միացված է</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Տպել հանգույցի ծառը</string>
   <string name="shortcut_print_performance_stats">Տպել վիճակագրությունը</string>
   <string name="shortcut_first_in_screen">Անցնել էկրանի առաջին տարրին</string>
-  <string name="shortcut_summary">Ամփոփել էկրանի դասավորությունը</string>
   <string name="shortcut_voice_commands">Սկսել ձայնային հրահանգը</string>
   <string name="shortcut_last_in_screen">Անցնել էկրանի վերջին տարրին</string>
   <string name="shortcut_enable_dimming">Թաքցնել էկրանը</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Վեբ նավիգացիա</string>
   <string name="menu_category_basic_navigation">Հիմնական նավիգացիա</string>
   <string name="summary_custom_action">Ցույց է տալիս, երբ ընթացիկ տարրի համար հասանելի են գործողություններ (այդ թվում՝ հղումները, պատճենումը, տեղադրումը, ընտրությունը և այլն)</string>
-  <string name="summary_context_menu_links">Բացում է ընդգծված տարրում առկա հղումները</string>
   <string name="summary_viewpager_controls">Անցում հաջորդ կամ նախորդ էջ։ Ցուցադրվում է, երբ դուք ընթերցում եք մի քանի էջից բաղկացած բովանդակություն։</string>
   <string name="summary_labeling_controls">Ցուցադրվում է, երբ դուք ընտրում եք առանց պիտակի տարր։</string>
   <string name="summary_granularity">Ընթերցում է նիշ առ նիշ, բառ առ բառ, տող առ տող և այլն։</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Ամփոփել էկրանի բովանդակությունը գործողության կոճակների միջոցով</string>
   <string name="summary_screen_overview_no_actions">Լսել էկրանին ցուցադրված բովանդակության ամփոփումը</string>
   <string name="summary_image_caption">Հնչեցնում է ընտրված պատկերների տեքստը և պատկերակների նկարագրությունը</string>
-  <string name="summary_summarize_view">Հնչեցնել ամփոփումը</string>
   <string name="summary_typo_suggestions">Ցուցադրվում է, երբ նշորդը գտնվում է տառասխալի վրա</string>
   <string name="summary_cache_keyboard_keys">TalkBack-ը նախապես բեռնում է հայտարարությունները՝ տեքստի մուտքագրման ընթացքում հապաղումները նվազեցնելու համար</string>
   <string name="summary_cache_keyboard_keys_disabled">Այս գործառույթն օգտագործելու համար միացրեք Google Տեքստի հնչեցումը</string>
-  <string name="value_direction_down">ներքև</string>
-  <string name="value_direction_down_and_right">ներքև, ապա աջ</string>
   <string name="title_pref_shortcut_up">Վերև</string>
   <string name="title_pref_shortcut_up_xr">Պասիվ ձեռքի ափը թեքել դեպի ձեզ և մատներն իրար միացնել և սահեցնել վերև</string>
   <string name="title_pref_shortcut_down">Ներքև</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Ձախ՝ մատնահետքերի սկաների վրայով</string>
   <string name="title_pref_shortcut_fingerprint_right">Աջ՝ մատնահետքերի սկաների վրայով</string>
   <string name="title_pref_version_code">Տարբերակի կոդը</string>
-  <string formatted="false" name="value_volume_100_percent">Համապատասխանեցնել խոսքի ձայնին</string>
-  <string formatted="false" name="value_volume_75_percent">Խոսքի ձայնի ուժգնության 75%-ը</string>
-  <string formatted="false" name="value_volume_50_percent">Խոսքի ձայնի ուժգնության 50%-ը</string>
-  <string formatted="false" name="value_volume_25_percent">Խոսքի ձայնի ուժգնության 25%-ը</string>
   <string name="value_type_confirmation_double_tap">Ստեղն ընտրելու համար մատը սեղմած պահեք, հետո կրկնակի հպեք</string>
   <string name="value_type_confirmation_lift_to_type">Տառային ստեղն ընտրելու համար մատը սեղմած պահեք, հետո բարձրացրեք։ Այլ ստեղների համար կրկնակի հպեք։</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Ստեղն ընտրելու համար մատը սեղմած պահեք, հետո բարձրացրեք</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 վայրկյան</string>
   <string name="value_touch_explore_time_out_250ms">0,25 վայրկյան</string>
   <string name="value_touch_explore_time_out_300ms">0,3 վայրկյան (կանխադրված)</string>
-  <string name="value_shake_to_read_disabled">Անջատված է</string>
-  <string name="value_shake_to_read_threshold_very_light">Շատ թույլ</string>
-  <string name="value_shake_to_read_threshold_light">Թույլ</string>
-  <string name="value_shake_to_read_threshold_medium">Միջին</string>
-  <string name="value_shake_to_read_threshold_hard">Ուժեղ</string>
-  <string name="value_shake_to_read_threshold_very_hard">Շատ ուժեղ</string>
   <string name="title_pref_on_screen_keyboard">Էկրանային ստեղնաշար</string>
   <string name="title_pref_physical_keyboard">Ֆիզիկական ստեղնաշար</string>
   <string name="value_keyboard_echo_none">Միացված չէ</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Օգտագործեք սարքի ժամանակի ձևաչափը</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ժամ</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 ժամ</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack-ի ժեստերը փոփոխված են</string>
-  <string name="notification_message_talkback_gestures_changed">Հպեք՝ հասանելիության ժեստերի փոփոխությունները դիտարկելու համար</string>
   <string name="always_show_warning_checkbox">Միշտ ցույց տալ այս նախազգուշացումը</string>
   <string name="label_dialog_title_add">Ավելացնել պիտակ</string>
   <string name="label_dialog_title_edit">Խմբագրել պիտակը</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Պիտակներ արտահանելու համար հավելվածներ չեն գտնվել։</string>
   <string name="label_choose_app_to_import">Ընտրեք հավելված պիտակներ ներմուծելու համար՝</string>
   <string name="label_choose_app_to_export">Ընտրեք հավելված պիտակներն արտահանելու համար՝</string>
-  <string name="talkback_gesture_change_details">TalkBack-ի այս տարբերակը ներառում է կանխադրված հասանելիության ժեստերի փոփոխությունները: Ժեստերի հետ կապված գործողությունները կարող են հարմարեցվել TalkBack-ի կարգավորումներում: Երբ «Հպումով ուսումնասիրում» գործիքը միացված է, որոշակի գործողություններ կատարելու համար դուք կարող եք օգտագործել հետևյալ ժեստերը:\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Թաքցնե՞լ էկրանը</string>
   <string name="dialog_message_dim_screen">Գործառույթն անջատում է էկրանը գաղտնիության ապահովման համար։ Որոշ բովանդակություն նախկինի պես կարող է ցուցադրվել, օրինակ՝ էկրանի միացման մասին հաղորդագրությունները կամ հատուկ գործառույթների, օրինակ՝ TalkBack-ի ընտրացանկերը։</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack-ի այս տարբերակը ներառում է որոշ փոփոխություններ հատուկ գործառույթների կանխադրված ժեստերում։\n\nՎերև, ապա ներքև ժեստով կանցնեք էկրանի առաջին տարրին, իսկ ներքև, ապա վերև ժեստով՝ վերջին տարրին։\n\nԸնթերցման մանրամասնության մակարդակն այժմ կարող եք փոխել՝ սկզբում նշելով տարրը, ապա TalkBack-ի տեղային ընտրացանկից ընտրելով տարբերակը։\n\nTalkBack-ի կարգավորումներում դուք կարող եք փոփել այս ժեստերի միջոցով կատարվող գործողությունները։</string>
-  <string name="default_action_changed_details">Այժմ կարող եք դադարեցնել և նվագարկել մեդիա բովանդակությունը՝ երկու մատով կրկնակի հպելով և պահելով։\n\nՓոխվել են նաև այլ ժեստեր։</string>
-  <string name="talkback_built_in_gesture_open_url">Բացել հեռախոսում՝ ավելին իմանալու համար</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack-ի այս տարբերակում կատարված են հասանելիության կանխադրված ժեստերի որոշ փոփոխություններ:\n\nՁեռքը վերև շարժելով այժմ կարող եք անցնել նավիգացիայի նախորդ կարգավորմանը, իսկ ներքև շարժելով՝ նավիգացիայի հաջորդ կարգավորմանը:</string>
-  <string name="side_tap_shortcuts_removed_details">Հուսալիության հետ կապված խնդիրների պատճառով այս կարգավորումները հեռացվել են TalkBack-ից՝\n• «Հպեք սարքի կողքին» ժեստեր\n• «Թափահարել՝ ընթերցելու համար» գործառույթ</string>
-  <string name="button_accept_changed_gesture_mappings">Ընդունել ժեստերը</string>
-  <string name="button_customize_gesture_mappings">Հարմարեցնել ժեստերը</string>
   <string name="button_disable_all_events">Անջատել բոլորը</string>
   <string name="button_enable_all_events">Միացնել բոլորը</string>
   <string name="dialog_title_disable_exploration">Անջատե՞լ գործառույթը</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Որոնում աղյուսակներում</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack-ի ծանուցումների կապուղին</string>
-  <string name="pref_selector_summary">%1$s՝ կարգավորում ընտրելու համար։ Ապա %2$s՝ կարգավորումը փոփոխելու համար։</string>
-  <string name="speech_rate_change">Խոսքի արագությունը՝ %1$d%%</string>
   <string name="speech_pitch_maximum">Խոսքի բարձր մակարդակ</string>
   <string name="speech_pitch_minimum">Խոսքի ցածր մակարդակը</string>
   <string name="reset_speech_rate_and_pitch">Զրոյացնել խոսքի արագությունը և բարձրությունը</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Թրթռոցով արձագանք՝ %1$s</string>
   <string name="text_formatting_state">Տեքստի ձևաչափման հնչեցումը %1$s</string>
   <string name="typing_echo_change">%1$s․ ֆիզիկական ստեղնաշարի վրա սեղմած ստեղների հնչյունավորում</string>
-  <string name="reading_control_toggle_prefix_xr">Ընթերցման կառավարման ռեժիմը փոխելու համար պասիվ ձեռքի ափը թեքեք դեպի ձեզ և սեղմեք կոճակը։</string>
   <string name="gesture_1_or_2">%1$s կամ %2$s</string>
-  <string name="select_setting_hint">Այլ կարգավորում ընտրելու համար %1$s</string>
-  <string name="adjust_setting_hint">Կարգավորելու համար %1$s</string>
   <string name="adjust_granularity_hint">%2$sով ընթերցելու համար %1$s</string>
   <string name="adjust_typo_hint">%1$s առաջարկների համար։</string>
   <string name="use_action_hint">Գործողությունը կատարելու համար կրկնակի հպեք</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Ընթերցման կառավարման տարրեր</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Տեսանյութերի կամ երաժշտական որևէ հավելվածում մեդիա բովանդակություն նվագարկելու կամ նվագարկումը դադարեցնելու համար երկու մատով կրկնակի հպեք։ Փորձեք հիմա։</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Այլ հավելվածներում այս ժեստը կարող է օգտագործվել զանգին պատասխանելու կամ զանգն ավարտելու համար։ Այն կարող է ոչ բոլոր հավելվածներում աջակցվել։</string>
-  <string name="onboarding_link_to_talkback_tutorials">Դիտել TalkBack-ի բոլոր ուղեցույցները</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Մեդիան դադարեցված է կամ նվագարկվում է։ Սովորաբար այս ժեստը դադարեցնում կամ նվագարկում է ընթացիկ տեսանյութը կամ երաժշտությունը։ Շարունակելու համար մատը սահեցրեք աջ։</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack-ը ժամանակավորապես անջատելու համար երկու մատով կրկնակի հպեք։</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack-ն անջատված է։ Սովորաբար այս ժեստը դադարեցնում է TalkBack-ի կողմից ընթացիկ արտահայտության հնչեցումը։ Շարունակելու համար մատը սահեցրեք աջ։</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Տեքստի նշման ռեժիմը միացված է կամ անջատված է։ Սովորաբար այս ժեստը միացնում կամ անջատում է տեքստի նշման ռեժիմը, երբ մուտքագրման դաշտում եք։ Շարունակելու համար մատը սահեցրեք աջ։</string>
   <string name="new_shortcut_gesture_reading_menu_text">Ընթերցման կառավարման տարրերն օգտագործելու համար 3 մատը սահեցրեք ձախ կամ աջ։ Կարող եք նաև երեք մատը վերև կամ ներքև սահեցնել։</string>
   <string name="new_shortcut_gesture_note">Նկատի առեք, որ որոշ ժեստեր դուք անհատականացրել եք, ուստի այս տեղեկությունները կարող են ճշգրիտ չլինել։ Ձեր ժեստերի ցանկը դիտելու համար անցեք TalkBack-ի կարգավորումներ։</string>
-  <string name="welcome_to_android11">Ներկայացնում ենք TalkBack-ը Android 11-ում</string>
   <string name="welcome_to_android11_text">TalkBack-ի աշխատանքն արագացնելու և TalkBack-ից օգտվելը հեշտացնելու համար ավելացվել են նոր ժեստեր։\n\nԱյս էկրանին կարող եք փորձել դրանք։ Ցանկացած ժամանակ կարող եք վերընթերցել այս տեղեկությունները TalkBack-ի կարգավորումներում։</string>
   <string name="new_gesture_notification_title">Նոր ժեստեր TalkBack-ում</string>
   <string name="new_gesture_notification_content">Հպեք՝ իմանալու, թե ինչպես ավելի արագ օգտագործել TalkBack-ը նոր ժեստերի օգնությամբ։</string>
   <string name="dump_node_tree_description">Հանգույցի ծառը տպվել է մատյանում։</string>
   <string name="report_gesture_description">Սրանք վերջերս արված ժեստերն են։ Խնդրում ենք հայտնել, թե որ ժեստն է սխալ և ինչ գործողություն էիք ակնկալում։</string>
-  <string name="update_welcome_text_content">Այժմ դուք կարող եք HID սարքերի միջոցով միանալ բրայլյան էկրաններին նույն կերպով, ինչ Bluetooth սարքերին։ Համոզվեք, որ ձեր սարքում տեղադրված են ներկառուցված ծրագրակազմի վերջին դրայվերները ձեր արտադրողից, այնուհետև միացրեք Bluetooth-ը բրայլյան էկրանին։ Անցեք TalkBack-ի կարգավորումներ &gt; «Բրայլյան էկրան» և միացրեք «Օգտագործել բրայլյան էկրանը» պարամետրը։ Սարքերի ցանկում գտեք ձեր սարքը և միացեք դրան։</string>
-  <string name="update_welcome_text_content_tts">Այժմ դուք կարող եք HID սարքերի միջոցով միանալ բրայլյան էկրաններին նույն կերպով, ինչ Bluetooth սարքերին։ Համոզվեք, որ ձեր սարքում տեղադրված են ներկառուցված ծրագրակազմի վերջին դրայվերները ձեր արտադրողից, այնուհետև միացրեք Bluetooth-ը բրայլյան էկրանին։ Անցեք TalkBack-ի կարգավորումներ, ապա «Բրայլյան էկրան» և միացրեք «Օգտագործել բրայլյան էկրանը» պարամետրը։ Սարքերի ցանկում գտեք ձեր սարքը և միացեք դրան։</string>
-  <string name="update_welcome_text_content_with_link">Իմացեք, թե ինչպես օգտագործել բրայլյան էկրանը TalkBack-ով։</string>
   <string name="update_welcome_talkback_16.1">TalkBack-ի այս թարմացման մեջ էկրանի նկարագրության գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ TalkBack-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով TalkBack-ի կարգավորումներ &gt; Նոր գործառույթներ TalkBack-ում։</string>
   <string name="update_welcome_talkback_16.1_tts">TalkBack-ի այս թարմացման մեջ էկրանի նկարագրության գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ TalkBack-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով TalkBack-ի կարգավորումներ, ապա՝ Նոր գործառույթներ TalkBack-ում։</string>
-  <string name="describe_screen_and_qna_title">Նոր լեզուներ էկրանի նկարագրության և «Հարցնել Gemini-ին» գործառույթների համար</string>
-  <string name="describe_screen_and_qna_content">Էկրանի նկարագրության և «Հարցնել Gemini-ին» գործառույթներն այժմ հասանելի են ավելի շատ լեզուներով։ &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Իմանալ ավելին Օգնության կենտրոնում&lt;/a&gt;։</string>
   <string name="shortcut_for_dictation_title">Դյուրանցում ձայնային մուտքագրման համար</string>
   <string name="shortcut_for_dictation_content">Gboard-ն օգտագործելիս դուք կարող եք սկսել կամ դադարեցնել ձայնային մուտքագրումը՝ երկու մատով կրկնակի հպելով էկրանին։
 &lt;br&gt;
 &lt;br&gt;Համոզվեք, որ տեղադրել եք &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard-ի նոր տարբերակը Google Play-ից&lt;/a&gt;։</string>
   <string name="shortcut_for_dictation_content_without_google_play">Երբ Gboard-ը բացված է, կարող եք սկսել կամ դադարեցնել թելադրումը՝ երկու մատով կրկնակի հպելով էկրանին։</string>
-  <string name="keyboard_title">Ստեղնաշար</string>
-  <string name="keyboard_content">TalkBack-ում հայտնվել է «Ստեղների ընդլայնված շարվածք», որը ներառում է բազմաթիվ նոր հրահանգներ և դյուրանցումներ։ Ավելացվել է նաև դիտարկման ռեժիմը, որը հեշտացնում է նավիգացիան վեբ բովանդակության մեջ և ֆիզիկական ստեղնաշար ունեցող մարդկանց օգնում է օգտագործել TalkBack-ը։ Դուք կարող եք միացնել «Ստեղների ընդլայնված շարվածքը»՝ անցնելով TalkBack-ի կարգավորումներ &gt; Ընդլայնված կարգավորումներ &gt; Ստեղնային դյուրանցումներ։</string>
-  <string name="keyboard_content_tts">TalkBack-ում հայտնվել է «Ստեղների ընդլայնված շարվածք», որը ներառում է բազմաթիվ նոր հրահանգներ և դյուրանցումներ։ Ավելացվել է նաև դիտարկման ռեժիմը, որը հեշտացնում է նավիգացիան վեբ բովանդակության մեջ և ֆիզիկական ստեղնաշար ունեցող մարդկանց օգնում է օգտագործել TalkBack-ը։ Դուք կարող եք միացնել «Ստեղների ընդլայնված շարվածքը»՝ անցնելով TalkBack-ի կարգավորումներ &gt; Ընդլայնված կարգավորումներ &gt; Ստեղնային դյուրանցումներ։</string>
-  <string name="reduce_delay_title">Նվազեցնել հապաղումը</string>
-  <string name="reduce_delay_content">Այժմ հնարավոր է նվազեցնել TalkBack-ի արձագանքի հապաղումը սենսորային կառավարման և տեքստի մուտքագրման ժամանակ։ Այս կարգավորումները փոփոխելու համար անցեք TalkBack-ի կարգավորումներ &gt; Ընդլայնված կարգավորումներ &gt; Նվազեցնել հապաղումը։</string>
-  <string name="reduce_delay_content_tts">Այժմ հնարավոր է նվազեցնել TalkBack-ի արձագանքի հապաղումը սենսորային կառավարման և տեքստի մուտքագրման ժամանակ։ Այս կարգավորումները փոփոխելու համար անցեք TalkBack-ի կարգավորումներ, բացեք «Ընդլայնված կարգավորումներ» բաժինը, ապա՝ «Նվազեցնել հապաղումը»։</string>
-  <string name="customize_braille_keyboard_improvements_title">Անհատականացրեք բրայլյան ստեղնաշարի ժեստերը</string>
-  <string name="customize_braille_keyboard_improvements_content">Այժմ դուք կարող եք անհատականացնել բրայլյան ստեղնաշարի ժեստերը։ Անհատականացնելու համար անցեք TalkBack-ի կարգավորումներ &gt; Բրայլյան ստեղնաշար &gt; Ժեստեր։</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Այժմ դուք կարող եք անհատականացնել բրայլյան ստեղնաշարի ժեստերը։ Անհատականացնելու համար անցեք TalkBack-ի կարգավորումներ, բացեք «Բրայլյան ստեղնաշար» բաժինը, ապա՝ Ժեստեր։</string>
-  <string name="learn_more_about_braille_keyboard">Իմանալ ավելին բրայլյան ստեղնաշարի մասին</string>
-  <string name="other_changes_title">Այլ փոփոխություններ</string>
-  <string name="other_changes_content">Եթե պատահաբար միացրել եք TalkBack-ը, էկրանին կհայտնվի ցուցումներով հաղորդագրություն այն մասին, թե ինչպես արագ անջատել գործառույթը։ Սա կարող եք անջատել՝ անցնելով TalkBack-ի կարգավորումներ &gt; Ցույց տալ TalkBack-ն անջատելու ցուցումները։</string>
-  <string name="other_changes_content_tts">Եթե պատահաբար միացրել եք TalkBack-ը, էկրանին կհայտնվի ցուցումներով հաղորդագրություն այն մասին, թե ինչպես արագ անջատել գործառույթը։ Սա կարող եք անջատել՝ անցնելով TalkBack-ի կարգավորումներ և սեղմելով «Ցույց տալ TalkBack-ն անջատելու ցուցումները»։</string>
-  <string name="keymap_changes_content">Ստեղների դասական շարվածքը փոխարինվել է կանխադրված շարվածքով, որն ավելի շատ դյուրանցումներ է ներառում։</string>
   <string name="announcing_text_formatting_title">Տեքստի ձևաչափման մասին հաղորդագրություններ</string>
   <string name="announcing_text_formatting_header">Այժմ TalkBack-ը կարող է ձայնային հուշումների միջոցով հայտնել տեքստի ձևաչափման, օրինակ՝ թավ կամ շեղ տառատեսակի կամ գույնի փոփոխության մասին։ Սկսելու համար կատարեք հետևյալ քայլերը․</string>
   <string name="announcing_text_formatting_option1">Նշորդը պահեք ձևաչափումով տեքստի վրա, բացեք TalkBack-ի ընտրացանկը և ընտրեք «Նկարագրել տեքստի ձևաչափումը», կամ</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Իմացեք, թե ինչպես կատարել զանգեր, ուղարկել հաղորդագրություններ և անել այլ գործողություններ</string>
   <string name="practice_gestures_link_text">Ժեստերի օգտագործման պրակտիկա</string>
   <string name="practice_gestures_link_subtext">Փորձեք տարբեր ժեստեր՝ համապատասխան գործողությանը ծանոթանալու համար</string>
-  <string name="help_and_feedback_link_subtext">Իմացեք ավելին TalkBack-ի մասին և կարծիք հայտնեք</string>
   <string name="choose_tutorial_title">Ընտրեք, թե ինչպես եք ուզում փոխազդել TalkBack-ի հետ</string>
   <string name="touch_tutorial_button">Հպման ուղեցույց</string>
   <string name="keyboard_tutorial_button">Ստեղնաշարի ուղեցույց</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Փորձեք այստեղ։</string>
   <string name="wear_training_typing_practice_button_content_description">Ստեղնաշարով մուտքագրում</string>
   <string name="wear_training_end_tutorial_title">Այժմ դուք գիտեք, թե ինչպես օգտվել TalkBack-ից</string>
-  <string name="talkback_updated_notification_title">TalkBack-ը թարմացվել է</string>
-  <string name="talkback_updated_notification_content">Հպեք՝ ավելին իմանալու համար</string>
   <string name="wear_new_feature_page_title">Ներկայացնում ենք թարմացված TalkBack-ը</string>
   <string name="wear_new_feature_page_content">Մենք շտկել ենք որոշ վրիպակներ և փոխել այն, թե ինչպես է տեղաշարժվում ֆոկուսը</string>
   <string name="wear_new_feature_page_button_content_description">Ավարտել</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Կապույտ</string>
   <string name="title_pref_grey">Մոխրագույն</string>
   <string name="survey_setting_title">Հայտնեք ձեր կարծիքը</string>
-  <string name="survey_closed">Հարցումը փակվել է</string>
   <string name="title_summarize_view">Նկարագրիր էկրանը</string>
-  <string name="title_increase_touch_focus_latency">Մեծացնել տարրի ընտրության հապաղումը</string>
-  <string name="title_decrease_touch_focus_latency">Փոքրացնել տարրի ընտրության հապաղումը</string>
   <string name="detected_result">Հայտնաբերվել է՝ %1$s</string>
   <string name="title_image_caption">Նկարագրել պատկերը</string>
   <string name="image_caption_with_gemini_prefix">Նկարագրիր այս պատկերը՝ առանց նշագրում օգտագործելու։</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ՕԳՏԱՏԵՐ՝ %1$s</string>
   <string name="image_qna_answer_prefix">ՄՈԴԵԼ՝ %1$s</string>
   <string name="image_qna_with_history_postfix">... [Շարունակեք փոխել ՕԳՏԱՏԻՐՈՋ և ՄՈԴԵԼԻ հերթականությունը] ...</string>
-  <string name="screen_overview_with_screenshot">Դուք օգնում եք այն մարդկանց, որոնք չեն կարողանում տեսնել էկրանի բովանդակությունը։ Մի քանի նախադասությամբ նկարագրեք սքրինշոթը։
-
-Ցուցումներ
-Սկսեք պատասխանը «Էկրանում ցուցադրվում է» արտահայտությամբ
-Պատասխանի սկիզբը պետք է նկարագրի ամենակարևոր և էական բովանդակությունը, որը ցուցադրվում է էկրանին։ Այստեղ ներկայացված են մի քանի օրինակներ, թե ինչպիսին պետք է լինի կարևոր և էական բովանդակության նկարագրությունը
-* Զրույցի հավելվածում․ ամենավերջին հաղորդագրության ուղարկողն ու տեքստը
-* Սոցիալական ցանցերի հավելվածում․ առաջին գրառումը, այդ թվում՝ ուղարկողը, տեքստը և պատկերի նկարագրությունը
-* Նորությունների հավելվածում․ հոդվածի վերնագիրը և գլխավոր պատկերի նկարագրությունը
-* Գնումների հավելվածում․ ցուցադրվող ապրանքի նկարագրությունը և գինը
-* Օրացույցի հավելվածում․ հաջորդ միջոցառումը և հաջորդիվ սպասվող միջոցառումների թիվը
-* Հաղորդագրությունների ցանկում․ առաջին հաղորդագրության անվանումն ու նախաբանը, ապա հաջորդող մի քանի հաղորդագրության անվանումները և չկարդացված հաղորդագրությունների թիվը
-
-Այնուհետև պատասխանը կարող է նկարագրել նկատելի կոճակների և նավիգացիոն գոտու տարածական տեղադրությունը և նշանակությունը։
-Հարկավոր չէ նշել վերևում ցուցադրվող կարգավիճակի գոտու բովանդակությունը (օրինակ՝ ժամը, ցանցի կարգավիճակը և մարտկոցի լիցքը)։
-Պատասխանի մեջ մի օգտագործեք որևէ նշագրում։</string>
   <string name="title_gemini_opt_in_dialog">Ստանա՞լ պատկերների մանրամասն նկարագրություններ</string>
   <string name="title_on_device_gemini_opt_in_dialog">Ստանա՞լ պատկերների նկարագրություններ</string>
   <string name="title_gemini_result_dialog">Հայտնաբերվել է պատկեր</string>
   <string name="title_gemini_result_bottom_sheet">Պատկերի նկարագրություն</string>
   <string name="title_gemini_screen_overview_result_dialog">Էկրանի նկարագրությունը</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Ամփոփագիր</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Գործողություններ</string>
   <string name="positive_button_gemini_opt_in_dialog">Միացնել</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ընդունում եմ</string>
   <string name="negative_button_gemini_opt_in_dialog">Ոչ, շնորհակալություն</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Անցնել Կարգավորումներ</string>
-  <string name="positive_button_gemini_download_dialog">Ներբեռնել և միացնել</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Տեքստ, «%1$s»։</string>
   <string name="detected_icon_label">Պատկերակ, «%1$s»։</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Հնարավոր չէ ամփոփել էկրանի բովանդակությունը</string>
   <string name="image_caption_no_result">Չհաջողվեց նկարագրել պատկերը</string>
   <string name="image_caption_with_hide_screen">Պատկերների նկարագրություններն անհասանելի են, երբ էկրանը թաքցված է։ Ցուցադրեք ձեր էկրանը և նորից փորձեք։</string>
-  <string name="feedback_button_state_set">ընտրված է</string>
-  <string name="feedback_button_state_unset">ընտրված չէ</string>
   <string name="action_text_like_button">Նշել որպես լավ պատասխան</string>
   <string name="action_text_dislike_button">Նշել որպես վատ պատասխան</string>
   <string name="action_text_clear_like_button">Հեռացնել լավ պատասխանը</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Պատկերների և պատկերակների ավտոմատ նկարագրությունները ներբեռնվում են</string>
   <string name="download_all_image_captioning_successful_hint">Պատկերների և պատկերակների ավտոմատ նկարագրությունները ներբեռնվեցին</string>
   <string name="download_all_image_captioning_failed_hint">Չհաջողվեց ներբեռնել։ Փորձեք ավելի ուշ։</string>
-  <string name="download_complete_notification_title">Ներբեռնումն ավարտված է</string>
-  <string name="download_complete_notification_content">Այժմ TalkBack-ի միջոցով կլսեք պատկերների և պատկերակների ավտոմատ նկարագրություններ</string>
-  <string name="download_complete_notification_action">Կարգավորումներ</string>
   <string name="download_storage_error_hint">Հիշողությունը լցված է։ Ներբեռնելու համար ազատեք %1$d ՄԲ տարածք՝ անցնելով Կարգավորումներ &gt; Հիշողություն։</string>
   <string name="download_network_error_hint">Չհաջողվեց ներբեռնել։ Միացեք ցանցին և նորից փորձեք։</string>
   <string name="switch_icon_detection_dialog_title">Պատկերակների ավտոմատ նկարագրություններ</string>
   <string name="switch_icon_detection_dialog_message">Լսեք նկարագրությունը՝ պատկերակին անցնելիս</string>
   <string name="switch_image_description_dialog_message">Լսեք նկարագրությունը, երբ նշորդը պահում եք պատկերի վրա։ Որոշ հավելվածներ կարող են չաջակցել այս գործառույթը։</string>
-  <string name="switch_text_recognition_dialog_title">Պատկերների տեքստի ավտոմատ նկարագրում</string>
   <string name="switch_text_recognition_dialog_message">Լսեք նկարագրությունը՝ տեքստ պարունակող պատկերի անցնելիս</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Ներբեռնված</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Դուք կարող եք բեռնել նկարագրություններ ընտրված պատկերների համար TalkBack-ի ընտրացանկից</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Եղավ</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Ջնջել ներբեռնումը</string>
   <string name="delete_icon_detection_dialog_title">Ջնջե՞լ պատկերակների ավտոմատ նկարագրությունները</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Օգտագործել Gemini-ը TalkBack-ում</string>
   <string name="gemini_disable_dialog_message">Էկրանի բովանդակության հասանելիություն Gemini-ին</string>
   <string name="disable_gemini_dialog_subtext">Միացրեք, որպեսզի Gemini-ին հասանելի լինի էկրանի բովանդակությունը</string>
-  <string name="ai_services_update_dialog_title">Թարմացրեք %1$s հավելվածը՝ պատկերների նկարագրությունը ստանալու համար</string>
-  <string name="ai_services_update_dialog_message">Պատկերների նկարագրություններ ստանալու համար տեղադրեք %1$s հավելվածի նոր տարբերակը Google Play-ից։\n\nԴրանից հետո բացեք TalkBack-ի կարգավորումները և նորից միացրեք պատկերների նկարագրությունների ավտոմատ ստեղծումը։</string>
-  <string name="ai_services_update_dialog_button_text">Անցնել Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Սխալ առաջացավ։ Նորից փորձեք։</string>
   <string name="gemini_block_message">Չհաջողվեց մշակել այս պատկերը</string>
   <string name="gemini_network_error">Ինտերնետ կապ չկա։ Համոզվեք, որ միացած եք համացանցին, և նորից փորձեք։</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Հարց մուտքագրել Gemini-ի համար</string>
   <string name="image_qna_send_button_text">Հարցնել</string>
   <string name="image_qna_speak_question_description">Հնչեցնել հարցը</string>
-  <string name="overviews_summary_intro">Այս հավելվածի էկրանի ամփոփում՝ %1$s</string>
   <string name="overviews_node_not_found">Ես այլևս չեմ կարողանում գտնել էկրանի այդ հատվածը։</string>
-  <string name="overviews_images_in_app">Գտնված հիմնական պատկերներ</string>
   <string name="overviews_list_item">%1$d։ %2$s</string>
-  <string name="overviews_actions_in_app">Գործողություններ՝ հավելվածում</string>
-  <string name="overviews_actions_in_app_description">Ահա այն հիմնական գործողությունները, որոնք դուք կարող եք ձեռնարկել հավելվածի էկրանին.</string>
-  <string name="overviews_parent_type">Գործողություններ՝ հավելվածում</string>
   <string name="text_replaced_feedback">Տեքստը փոխարինվել է</string>
   <string name="switch_gesture_set">Փոխել ժեստերի հավաքածուն</string>
   <string name="switch_gesture_set_to">Անցնել ժեստերի «%1$d» հավաքածուին</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Փակել</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Ծանուցումները անջատված էկրանով լսելու համար TalkBack-ի մանրամասնման կարգավորումներում միացրեք «Հնչեցնել ծանուցումները, երբ էկրանն անջատված է» պարամետրը</string>
 </resources>

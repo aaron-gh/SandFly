@@ -63,15 +63,12 @@
   <string name="value_not_selected">ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ</string>
   <string name="value_checked">ਸਹੀ ਦਾ ਨਿਸ਼ਾਨ ਲੱਗਿਆ ਹੋਇਆ</string>
   <string name="value_not_checked">ਸਹੀ ਦਾ ਨਿਸ਼ਾਨ ਨਹੀਂ ਲੱਗਿਆ ਹੋਇਆ</string>
-  <string name="value_partially_checked">ਅੰਸ਼ਕ ਤੌਰ ਤੇ ਜਾਂਚ ਕੀਤੀ ਗਈ</string>
   <string name="value_on">ਚਾਲੂ</string>
   <string name="value_off">ਬੰਦ</string>
   <string name="value_disabled">ਅਸਮਰਥਿਤ</string>
   <string name="value_enabled">ਚਾਲੂ ਹੈ</string>
   <string name="value_read_only">ਸਿਰਫ਼ ਪੜ੍ਹਨ ਲਈ</string>
   <string name="value_expanded">ਵਿਸਤਾਰ ਕੀਤਾ ਗਿਆ</string>
-  <string name="value_fully_expanded">ਪੂਰੀ ਤਰ੍ਹਾਂ ਵਿਸਤਾਰ ਕੀਤਾ ਗਿਆ</string>
-  <string name="value_partially_expanded">ਕੁਝ ਹਿੱਸੇ ਦਾ ਵਿਸਤਾਰ ਕੀਤਾ ਗਿਆ</string>
   <string name="value_collapsed">ਸੁੰਗੇੜਿਆ ਗਿਆ</string>
   <string name="value_double_tap">ਡਬਲ ਟੈਪ ਕਰੋ</string>
   <string name="value_single_tap">ਟੈਪ ਕਰੋ</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">ਬਦਲਣ ਲਈ %1$s ਨੂੰ ਦਬਾਓ</string>
   <string name="template_hint_single_selection_item">ਚੁਣਨ ਲਈ %1$s</string>
   <string name="template_hint_single_selection_item_keyboard">ਚੁਣਨ ਲਈ %1$s ਨੂੰ ਦਬਾਓ</string>
-  <string name="template_hint_pager">ਪੰਨਿਆਂ ਨੂੰ ਸਵਿੱਚ ਕਰਨ ਲਈ ਦੋ ਉਂਗਲਾਂ ਨਾਲ ਸਵਾਈਪ ਕਰੋ</string>
   <string name="template_hint_pager_single_page">ਕੋਈ ਹੋਰ ਪੰਨਾ ਨਹੀਂ ਹੈ</string>
   <string name="template_hint_seek_control_tv">ਬਦਲਣ ਲਈ %1$s</string>
   <string name="template_custom_hint_for_actions">%1$s ਲਈ %2$s</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">ਬੋਲਣ ਦੀ ਗਤੀ %1$d%% ਹੈ</string>
   <string name="template_accessibility_volume_change_increase">ਪਹੁੰਚਯੋਗਤਾ ਅਵਾਜ਼ ਨੂੰ ਵਧਾ ਕੇ %1$d ਫ਼ੀਸਦ ਕਰੋ।</string>
   <string name="template_accessibility_volume_change_decrease">ਪਹੁੰਚਯੋਗਤਾ ਅਵਾਜ਼ ਨੂੰ ਘਟਾ ਕੇ %1$d ਫ਼ੀਸਦ ਕਰੋ।</string>
-  <string name="template_touch_explore_latency_changed">ਟਾਈਪਿੰਗ ਦੌਰਾਨ ਫੋਕਸ ਵਿੱਚ ਦੇਰੀ ਦਾ ਸਮਾਂ: %1$d ਮਿਲੀਸਕਿੰਟ।</string>
   <string name="template_touch_latency_reach_maximum">ਵੱਧੋ-ਵੱਧ</string>
   <string name="template_touch_latency_reach_minimum">ਘੱਟੋ-ਘੱਟ</string>
   <string name="template_volume_change_maximum">ਵੱਧੋ-ਵੱਧ</string>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack асаалттай үед аман тайлбар хийдэг бөгөөд ингэснээр та төхөөрөмжөө дэлгэц рүү нь харалгүйгээр ашиглах боломжтой. TalkBack нь дэлгэцийг харахад хүндрэлтэй нөхцөл байдал эсвэл хүмүүст зориулагдсан.&lt;br&gt;&lt;br&gt;&lt;b&gt;Talkback-г хэрхэн ашиглах вэ?&lt;/b&gt;&lt;br&gt;• Зүйлүүдийн хооронд шилжихийн тулд баруун эсвэл зүүн тийш шударна уу&lt;br&gt;• Зүйлийг идэвхжүүлэхийн тулд хоёр товшино уу&lt;br&gt;• Гүйлгэхийн тулд 2 хуруугаа чирнэ үү&lt;br&gt;&lt;b&gt;TalkBack-г хэрхэн унтраах вэ?&lt;/b&gt;&lt;br&gt;1. Тохиргоонд &lt;b&gt;TalkBack-г ашиглахыг&lt;/b&gt; товшино уу. Гадна хүрээ харагдана. Үүнийг хоёр товшино уу.&lt;br&gt;2. Баталгаажуулах мессеж дээрх &lt;b&gt;Зогсоох&lt;/b&gt; дээр товшино уу. Гадна хүрээ харагдана. Үүнийг хоёр товшино уу.</string>
   <string name="talkback_service_summary">Зүйлсийг чангаар уншихыг сонсохын тулд дэлгэц уншигч ашиглана уу</string>
   <string name="talkback_preferences_title">TalkBack-н тохиргоо</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Тохиргоо</string>
   <string name="tts_preferences_title">Бичвэрийг ярианд хувиргах</string>
   <string name="language_options">Хэл</string>
   <string name="spoken_language">Ярианы хэл</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Хайлтыг цуцалсан.</string>
   <string name="notification_type_status_started">Эхэлсэн</string>
   <string name="notification_type_status_stopped">Зогсоосон</string>
-  <string name="notification_type_status_connected">холбогдсон</string>
-  <string name="notification_battery_level_unknown">тодорхойгүй</string>
   <string name="notification_battery_saver_mode">Батарей хэмнэгчийг асаасан</string>
   <string name="template_no_text_selected">Текст сонгоогүй</string>
   <string name="template_charging">Цэнэглэж байна %1$s Батерейны цэнэгийн түвшин %2$s хувьтай байна.</string>
   <string name="template_charging_lite">%1$s-г цэнэглэж байна</string>
-  <string name="template_battery_state">Тэжээл %1$s %2$s хувь %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Хонхны чичиргээ.</string>
   <string name="value_ringer_silent">Хонхыг хаах.</string>
   <string name="value_screen_on">Дэлгэц асаалттай байна</string>
   <string name="value_screen_off">Дэлгэц унтрах.</string>
   <string name="value_device_unlocked">Төхөөрөмж нээгдсэн.</string>
-  <string name="title_pref_category_audio">Аудио</string>
   <string name="title_pref_speech_volume">Дууны түвшин</string>
-  <string name="title_pref_speech_rate">Ярианы хурд</string>
-  <string name="summary_pref_speech_rate">Текстийг унших хурд</string>
   <string name="title_pref_verbose_scroll_announcement">Жагсаалтын зүйлийн дугаарыг үргэлж унших</string>
   <string name="summary_pref_verbose_scroll_announcement">Бүх гүйлгэх аргын тоог унших</string>
   <string name="title_pref_cover_proximity_sensor">Яриаг зогсоохын тулд зай мэдрэгчийг халхална уу</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Цаг хэд болж байгааг хэлэх</string>
   <string name="pref_speak_time_summary">Таныг дэлгэцийг асаахад</string>
   <string name="summary_speak_container_element_positions">Жагсаалт, хүснэгт болон бусад агуулагчид орох, гарах үеийн мэдээлэл багтана</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Сонголтын саатлыг уншилтын хяналтад нэмсэн</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Хүссэн үедээ уншилтын хяналтыг ашиглаж, сонголтын саатлыг өөрчлөхийн тулд 3 хуруугаараа шударна уу</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Шивэхийн тулд хуруугаа өргөх рүү сэлгэх үү?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Шивэх сонголтын саатлыг 0,3 секундээс доош болгож тохируулсан үед шивэхийн тулд хоёр товшихыг гүйцэтгэхэд маш хүндрэлтэй болно. Шивэхийн тулд өргөх рүү автоматаар сэлгэхийн тулд \"Сэлгэх\"-ийг сонгоно уу.\n\nШивэхийн тулд өргөхийг ашиглахын тулд дурын товч сонгохоор хуруугаараа дараад, шивэх бол өргөнө үү.\n\nТа үүнийг TalkBack-н цэсээс тусгайлан өөрчилж болно.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Шивэх сонголтын саатлыг уншилтын хяналтад нэмсэн</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Хэрэв таныг шивж байхад хоёр товшихтой холбоотой асуудал гарвал уншилтын хяналтыг ашиглахын тулд 3 хуруугаараа шударч, шивэх сонголтын саатлыг урт болгож өөрчилнө үү</string>
-  <string name="gestures_announce_typing_focus_wont_change">Шивэх сонголтын саатал нь Шивэхийн тулд өргөхгүйгээр ажиллахгүй.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Ойлголоо</string>
   <string name="reset_letency_reduction_settings_dialog_title">Саатлын тохиргоог шинэчлэх үү?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Энэ нь саатлын бүх тохиргоог өгөгдмөл тохиргоо руу шинэчилнэ</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Шинэчлэх</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Хоцролтыг багасгах тохиргоог шинэчилсэн.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Сэлгэнэ</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Сэлгэхгүй</string>
   <string name="Reset_gesture_settings_dialog_title">Зангааг шинэчлэх үү?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Одоогийн багцын зангааг шинэчлэх үү?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Энэ нь бүх зангааг өгөгдмөл үйлдлүүд рүү нь шинэчилнэ.\n\nТа хийсэн аливаа өөрчлөлтүүдээ алдана.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Явцын бүх шинэчлэлтийг чангаар унших</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Татах, машинаар явах чиглэлийг дагах болон бусад үеийн шинэчлэлт багтана. Унтраалттай үед та цөөн тооны тогтмол шинэчлэлт авсан хэвээр байх болно.</string>
   <string name="title_pref_explore_by_touch">Хүрэлтээр сонсох</string>
-  <string name="title_pref_category_visual">Визуал</string>
   <string name="title_pref_category_controls">Хяналт</string>
-  <string name="title_pref_category_braille">Брайл</string>
-  <string name="title_pref_category_general">Ерөнхий</string>
-  <string name="title_pref_category_advanced">Дэвшилтэт</string>
-  <string name="title_pref_category_others">Бусад</string>
-  <string name="title_pref_category_tutorial_and_help">Заавар, тусламж</string>
   <string name="title_pref_category_reduce_latency_summary">Эдгээр тохиргоо TalkBack-н мэдэгдлийн өмнөх саатлыг багасгах боломжтой</string>
   <string name="reset_latency_settings_title">Саатлын бүх тохиргоог шинэчлэх</string>
   <string name="title_pref_single_tap">Идэвхжүүлэхийн тулд нэг удаа товшино уу</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Сонголтын заалтыг өөрчлөх</string>
   <string name="title_pref_category_manage_gestures">Зангаа</string>
   <string name="title_pref_manage_labels">Захиалгат шошго</string>
-  <string name="title_pref_manage_customize_menus">Цэс засах</string>
   <string name="title_pref_category_context_menu">Talkback-н цэсийг тохируулан өөрчлөх</string>
   <string name="title_pref_category_selector_menu">Унших хяналтыг өөрчлөх</string>
   <string name="title_pref_category_navigation_menu">Навигацын сонголтыг засах</string>
-  <string name="pref_category_context_menu_summary">TalkBack-н цэсийг ашиглахын тулд дэлгэцийг 3 хуруугаараа товшино уу. Та мөн дээш, дараа нь баруун тийш эсвэл доош, дараа нь баруун тийш шудрах боломжтой.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack-н цэсийг ашиглахын тулд нөгөө гарынхаа алгыг өөр лүүгээ эргүүлж, чимхэнэ үү.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack цэсийг ашиглахын тулд доош, дараа нь баруун тийш шудрах</string>
-  <string name="pref_category_selector_menu_summary">Унших хяналтыг ашиглахын тулд 3 хуруугаараа зүүн эсвэл баруун тийш шударна уу. Та мөн 3 хуруугаараа дээш эсвэл доош шудрах боломжтой.</string>
-  <string name="pref_category_selector_menu_summary_xr">Уншилтын хяналтын хооронд шилжихийн тулд нөгөө гарынхаа алгыг өөр лүүгээ эргүүлж, чимхсээр байж, зүүн эсвэл баруун тийш хөдөлгөж, суллана уу.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Унших хяналтыг ашиглахын тулд дээш, дараа нь доош шудрах</string>
   <string name="title_pref_manage_keyboard_shortcuts">Гарын товчлол</string>
   <string name="title_pref_export_custom_labels">Тусгай шошгыг экспортлох</string>
-  <string name="title_pref_play_store">Play Store дээр TalkBack нээх</string>
-  <string name="summary_pref_play_store">Одоогийн TalkBack-ийн хувилбар: %1$s</string>
   <string name="title_pref_help_and_feedback">Тусламж, санал хүсэлт</string>
-  <string name="title_pref_gup">Google-н хөгжлийн бэрхшээлтэй хэрэглэгчдийн тусламжтай холбогдох</string>
-  <string name="subtitle_pref_gup">TalkBack-г ашиглан тусламж авах эсвэл асуудал мэдээлээрэй</string>
-  <string name="pref_item_licenses">Нээлттэй эхийн лиценз</string>
-  <string name="title_pref_tutorial">Заавар</string>
   <string name="title_pref_help">Тусламж</string>
   <string name="title_pref_show_tos">Үйлчилгээний нөхцөл</string>
   <string name="title_pref_show_privacy_policy">Нууцлалын бодлого</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Хурууны хээний зангаа</string>
   <string name="title_pref_category_tutorial">TalkBack-н заавар</string>
   <string name="title_pref_category_help_no_tutorial">Тусламж</string>
-  <string name="title_pref_category_typing">Бичиж байна</string>
   <string name="title_pref_advanced_settings">Дэвшилтэт тохиргоо</string>
   <string name="title_pref_show_exit_watermark">TalkBack-г унтраах зааварчилгааг харуулна уу</string>
   <string name="summary_pref_show_exit_watermark">TalkBack-г асаахад мессеж гарч ирэх ба энэ нь танд хурдан унтраахад тусална</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Зарим тохируулагч товч өөр байна.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Гарын зургуудын талаар нэмэлт мэдээлэл авах</string>
   <string name="keycombo_go_to_settings">Тохиргоо руу очих</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack нь сонгодог гарын зургийг хасахад бэлдэж байна. Товчлуурын шууд холбооснуудыг үргэлжлүүлэн ашиглахын тулд өгөгдмөл гарын зураг руу сэлгэнэ үү.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Нэмэлт мэдээлэл авах</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ойлголоо</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Тохиргоо</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Нэмэлт мэдээлэл авах</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Та TalkBack-н өгөгдмөл гарын зургийг ашиглаж байна. Олон шинэ тушаалтай шинэ, сайжруулсан гарын зураг бий. Тусламжийн төвөөс нэмэлт мэдээлэл авах эсвэл Тохиргооноос шинэ гарын зураг руу сэлгэнэ үү.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Шинэ гарын зургийг ашиглах боломжтой</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">TalkBack-н шинэ, сайжруулсан гарын зураг олон шинэ тушаалтай боллоо. Тусламжийн төвөөс нэмэлт мэдээлэл авах эсвэл Тохиргооноос шинэ гарын зураг руу сэлгэнэ үү.</string>
-  <string name="keycombo_update_modifier_key_warning_title">TalkBack-нхээ тохируулагч товчийг шинэчилнэ үү</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Одоо биш</string>
   <string name="keycombo_warning_content_description">Таны тохируулагч товчны талаарх бусад мэдээлэл</string>
-  <string name="keycombo_warning_dialog_title">Тохируулагч товчоо шинэчлэх</string>
-  <string name="keycombo_warning_dialog_message">TalkBack-н товчлуурын шууд холбоосыг зохих ёсоор ажиллуулахын тулд тохируулагч товчоо тусгай товчноос Alt болгож шинэчилнэ үү.\n\nХэрэв та тусгай тохируулагч товчоо ашигласаар байвал зарим товчлол Android-н энэ хувилбарт өөр үйлдэл хийнэ.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Гарны зураглал</string>
   <string name="keycombo_menu_select_keymap">Гарны зураглалыг сонгох</string>
   <string name="keycombo_menu_reset_keymap">Гарны зураглалыг дахин тохируулах</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Ярианы дууны түвшнийг нэмэгдүүлэх</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Ярианы дууны түвшнийг багасгах</string>
   <string name="keycombo_menu_global_refocus_current_node">Одоогийн сонголтыг хэлэх</string>
-  <string name="keycombo_menu_category_granularity">Навигац</string>
   <string name="keycombo_menu_granularity_increase">Чиглүүлэгчийн дараагийн тохиргоо</string>
   <string name="keycombo_menu_granularity_decrease">Чиглүүлэгчийн өмнөх тохиргоо</string>
   <string name="keycombo_menu_category_other">Бусад үйлдэл</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Та энэ гарны зураглалд зориулан гарны товчлолуудыг өгөгдмөл утганд дахин тохируулахдаа итгэлтэй байна уу? Энэ үйлдлийг буцаах боломжгүйг анхаарна уу.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Дахин тохируулах</string>
   <string name="template_keycombo_menu_browse_mode_command">Үзэх горимд %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">Шинэ гарны холболт үүсгэхийн тулд товчлууруудын хослол дээр дарна уу. Энэ нь  ALT эсвэл Control товчнуудын аль нэгийг заавал агуулсан байх ёстой.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Шинэ товчлол тохируулахын тулд түлхүүрийн хослолыг %1$s засварын түлхүүртэй хамт дарна уу.</string>
   <string name="keycombo_unassigned">Тодорхой бус</string>
   <string name="save_button_in_keycombo_assign_dialog">Хадгалах</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Шивэх сонголтын саатал</string>
   <string name="message_pref_touch_explore_latency">Шивэх сонголтын богино саатал гэдэг нь гарт хүрсний дараа TalkBack-н мэдэгдлийг илүү хурдан болгосон гэсэн үг юм.\n\nСаатал сонгоно уу</string>
   <string name="title_pref_touch_focus_timeout">Сонголтын саатал</string>
-  <string name="summary_pref_touch_focus_time">
-Сонголтыг зөөсний дараа TalkBack хэр түргэн ярихыг хянана. Богино саатал нь TalkBack-г илүү хурдан юм шиг санагдахаар болгох ч хоёр, гурав товшихыг гүйцэтгэхэд илүү хэцүү болгож болно.\n\n
-0,3 секундээс дооших саатал нь идэвхжүүлэхийн тулд хоёр товшихыг идэвхжүүлэхийн тулд хоёр хуруугаар товших болгож өөрчилнө.
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack-д зангаануудыг зохицуулах</string>
   <string name="toast_pref_talkback_gesture_detection">Уг тохиргоог идэвхжүүлэх бол TalkBack-г унтраагаад, дараа нь дахин асаана уу.</string>
   <string name="title_pref_auto_image_captioning">Автомат тайлбарууд</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Зургийн тайлбарыг Тохиргоонд асаах</string>
   <string name="dialog_message_turn_on_image_description">Та зургийн автомат эсвэл нарийвчилсан тайлбарыг асаасныхаа дараа дахин оролдох боломжтой</string>
   <string name="title_pref_detailed_image_description">Зургийн нарийвчилсан тайлбар</string>
-  <string name="summary_pref_ai_description">Та TalkBack-н цэсээс \"%1$s\"-г сонгох үедээ илүү урт тайлбар сонсоорой</string>
   <string name="dialog_message_on_device_ai_description">Та дэмжигдсэн аппад зураг сонгохдоо товч тайлбар сонсоно.\n\nЗургийг таны төхөөрөмж дээр боловсруулдаг бөгөөд Google рүү хэзээ ч илгээдэггүй. \n\nҮүсгэгч ХОУ нь туршилтынх тул алдаа гаргана. Үргэлжлүүлснээр та <a href="https://policies.google.com/terms/generative-ai">Google-н үйлчилгээний нөхцөлийг</a> зөвшөөрнө.</string>
   <string name="enable_gemini">Асаах</string>
   <string name="powered_by_gemini">Үүсгэгч ХОУ-аар дэмждэг</string>
-  <string name="detailed_image_description_ongoing_hint">Тайлбарыг авч байна</string>
-  <string name="detailed_image_description_result_prefix">Илэрсэн: Зураг. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Зургийн автомат тайлбарыг авахын тулд татах шаардлагатай</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Зургийг таны төхөөрөмж дээр боловсруулдаг бөгөөд Google рүү хэзээ ч илгээдэггүй.\n\nҮүсгэгч ХОУ нь туршилтынх тул алдаа гаргана. Үргэлжлүүлснээр та %1$s-г зөвшөөрч байна.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-н үйлчилгээний нөхцөл</string>
   <string name="message_aifeature_downloading">ХОУ-ы загварыг татаж байна. Үүнд хэсэг хугацаа шаардаж болно. Үүнийг дууссан үед танд мэдэгдэнэ.</string>
   <string name="message_aifeature_downloading_with_progress">Татсаар байна. %2$d МБ-аас %1$d-г татсан.</string>
-  <string name="message_aifeature_download_complete">ХОУ-ы загварыг татсан. TalkBack одоо зургийн тайлбар үүсгэх боломжтой.</string>
   <string name="summary_pref_auto_image_captioning">Дүрс тэмдэг, зураг болон зургийн текстэд зориулсан</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Зургийн текстэд</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Зураг болон зургийн текстэд</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Дүрс тэмдэг болон зургийн текстэд</string>
   <string name="summary_pref_module_downloading">Татаж байна…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Бүх зурагт асаалттай</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Зөвхөн шошголоогүй зургуудад асаалттай</string>
   <string name="summary_pref_auto_image_captioning_disabled">Унтраалттай</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Бүх дүрс тэмдэгт асаалттай</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Зөвхөн шошголоогүй дүрс тэмдгүүдэд асаалттай</string>
   <string name="summary_pref_auto_icon_detection_disabled">Унтраалттай</string>
   <string name="title_pref_enable_auto_image_caption">Бүх зураг</string>
   <string name="title_pref_enable_auto_image_caption_arg">Бүх зураг\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Бүх дүрс тэмдэг</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Зөвхөн шошголоогүй дүрс тэмдгүүд</string>
   <string name="title_pref_disable_auto_icon_detection">Дүрс тэмдгүүдийг бүү тайлбарла</string>
-  <string name="dialog_message_on_device_ai_model_download">Та дэмжигдсэн аппад зураг сонгохдоо товч тайлбар сонсоно.\n\nЗургийг таны төхөөрөмж дээр боловсруулдаг бөгөөд Google рүү хэзээ ч илгээдэггүй.\n\nҮүсгэгч ХОУ нь туршилтынх тул алдаа гаргана. Та үргэлжлүүлснээр %1$s-г зөвшөөрч байна.</string>
   <string name="title_pref_enable_gemini_support">Асаах</string>
   <string name="title_pref_disable_gemini_support">Унтраах</string>
   <string name="summary_pref_gemini_support_enabled">Gemini-г идэвхжүүлсэн</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Зангилаа модыг хэвлэх</string>
   <string name="shortcut_print_performance_stats">Гүйцэтгэлийн статистикийг хэвлэх</string>
   <string name="shortcut_first_in_screen">Дэлгэц дээрх эхний зүйлийг сонгох</string>
-  <string name="shortcut_summary">Дэлгэцийн бүдүүвчийг хураангуйлах</string>
   <string name="shortcut_voice_commands">Дуут тушаалыг эхлүүлэх</string>
   <string name="shortcut_last_in_screen">Дэлгэц дээрх сүүлийн зүйлийг сонгох</string>
   <string name="shortcut_enable_dimming">Дэлгэцийг нуух</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Вебийн навигац</string>
   <string name="menu_category_basic_navigation">Үндсэн навигац</string>
   <string name="summary_custom_action">Одоогийн зүйлд холбоос, хуулах, буулгах, сонгох болон бусад үйлдэл байхад харуулна</string>
-  <string name="summary_context_menu_links">Сонгосон зүйл доторх холбооснуудыг нээх</string>
   <string name="summary_viewpager_controls">Дараагийн эсвэл өмнөх хуудас руу очно. Таныг олон хуудастай контент уншиж байх үед харуулна.</string>
   <string name="summary_labeling_controls">Таныг шошгогүй зүйл сонгосон үед харуулдаг</string>
   <string name="summary_granularity">Тэмдэгт, үг, мөр болон бусад зүйлээр унших</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Үйлдэл хийх товчоор дэлгэцийг хураангуйлах</string>
   <string name="summary_screen_overview_no_actions">Дэлгэц дээрх контентын хураангуйг сонсоно</string>
   <string name="summary_image_caption">Сонгосон зураг дахь текст болон дүрс тэмдгийг чангаар унших</string>
-  <string name="summary_summarize_view">Харагдах байдлын хураангуйг унших</string>
   <string name="summary_typo_suggestions">Курсор алдаатай бичсэн үгэн дээр байгаа үед харуулдаг</string>
   <string name="summary_cache_keyboard_keys">TalkBack таныг бичих үед саатлыг багасгахын тулд мэдэгдлүүдийг урьдчилан ачаалдаг</string>
   <string name="summary_cache_keyboard_keys_disabled">Энэ онцлогийг ашиглахын тулд Google Бичвэрийг ярианд хувиргах аппыг ашиглана уу</string>
-  <string name="value_direction_down">доош</string>
-  <string name="value_direction_down_and_right">доош дараа нь баруун</string>
   <string name="title_pref_shortcut_up">Дээш нь шудрах</string>
   <string name="title_pref_shortcut_up_xr">Нөгөө гарынхаа алгыг өөр лүүгээ харуулж, чимхээд, дээш шудрах</string>
   <string name="title_pref_shortcut_down">Доош нь шудрах</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Хурууны хээ мэдрэгчээр зүүн тийш шудрах</string>
   <string name="title_pref_shortcut_fingerprint_right">Хурууны хээ мэдрэгчээр баруун тийш шудрах</string>
   <string name="title_pref_version_code">Хувилбарын код</string>
-  <string formatted="false" name="value_volume_100_percent">Ярианы дууны түвшнийг тааруулах</string>
-  <string formatted="false" name="value_volume_75_percent">Ярианы дууны түвшин 75%</string>
-  <string formatted="false" name="value_volume_50_percent">Ярианы дууны түвшин 50%</string>
-  <string formatted="false" name="value_volume_25_percent">Ярианы дууны түвшин 25%</string>
   <string name="value_type_confirmation_double_tap">Дурын товчлуурыг сонгохын тулд удаан дараад дараа нь хоёр товшино уу</string>
   <string name="value_type_confirmation_lift_to_type">Үсгийн товчлуурыг сонгохын тулд удаан дараад дараа нь хуруугаа өргөнө үү. Бусад товчлуурыг үзэхийн тулд хоёр товшино уу.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Сонгох дурын товчлуурыг удаан дараад хуруугаа өргөнө үү</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 секунд</string>
   <string name="value_touch_explore_time_out_250ms">0,25 секунд</string>
   <string name="value_touch_explore_time_out_300ms">0,3 секунд (өгөгдмөл)</string>
-  <string name="value_shake_to_read_disabled">Идэвхгүйжүүлсэн</string>
-  <string name="value_shake_to_read_threshold_very_light">Маш сул</string>
-  <string name="value_shake_to_read_threshold_light">Гэрэл</string>
-  <string name="value_shake_to_read_threshold_medium">Дундаж</string>
-  <string name="value_shake_to_read_threshold_hard">Хүчтэй</string>
-  <string name="value_shake_to_read_threshold_very_hard">Маш хүчтэй</string>
   <string name="title_pref_on_screen_keyboard">Дэлгэц дээрх гар</string>
   <string name="title_pref_physical_keyboard">Биет гар</string>
   <string name="value_keyboard_echo_none">Хоосон</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Төхөөрөмжийн цагийн форматыг ашиглах</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 цаг</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 цаг</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack дохио өөрчлөгдөв</string>
-  <string name="notification_message_talkback_gestures_changed">Хандалтын дохионы өөрчлөлтийг хянах бол товшино уу</string>
   <string name="always_show_warning_checkbox">Энэ анхааруулгыг байнга харуулах</string>
   <string name="label_dialog_title_add">Шошго нэмэх</string>
   <string name="label_dialog_title_edit">Шошго засах</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Шошго экспортлох апп олдсонгүй.</string>
   <string name="label_choose_app_to_import">Шошго импортлох апп сонгоно уу:</string>
   <string name="label_choose_app_to_export">Шошго экспортлох апп сонгох:</string>
-  <string name="talkback_gesture_change_details">TalkBack-н энэ хувилбарт үндсэн хандалтын дохионууд өөрчлөгдсөн. Эдгээр дохиотой холбогдсон үйлдлүүдийг TalkBack тохиргооноос тохируулах боломжтой. Хүрэлтээр сонсох идэвхжсэн үед та дараах дохионуудыг ашиглан тодорхой үйлдлийг гүйцэтгэх боломжтой.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Дэлгэцийг нуух уу?</string>
   <string name="dialog_message_dim_screen">Энэ нь нууцлалыг сайжруулахын тулд дэлгэцийг унтраана. Дэлгэцийг дахин асаахад зориулсан мессеж, TalkBack гэх мэт хандалтын онцлогуудын цэс зэрэг зарим контент харагдсан хэвээр байж болно.</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack-н энэ хувилбарт үндсэн хандалтын зангаанд оруулсан өөрчлөлтүүд багтсан.\n\nДээш, доош зангаагаар дэлгэцийн эхний зүйл рүү шилжих бөгөөд доош, дээш зангаагаар сүүлийн зүйл рүү шилжинэ.\n\nУнших масштабыг одоо тухайн зүйлийг сонгосны дараа talkback-н хам сэдэв цэснээс масштабыг сонгох замаар өөрчилж болно.\n\nТа эдгээр зангаагаар гүйцэтгэх үйлдлүүдийг TalkBack-н Тохиргоонд өөрчилж болно.</string>
-  <string name="default_action_changed_details">Медиаг түр зогсоох болон тоглуулахын тулд та одоо хоёр хуруугаараа товшоод удаан дарах боломжтой.\n\nБусад зангааг мөн өөрчилсөн.</string>
-  <string name="talkback_built_in_gesture_open_url">Нэмэлт мэдээлэл авахын тулд утсан дээр нээгээрэй</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack-н энэ хувилбарт хандалтын өгөгдмөл зангааг өөрчилсөн.\n\nДээшээ зангаагаар удирдлагын өмнөх хэсэгт очиж, харин доошоо зангаагаар удирдлагын дараагийн хэсэгт очих боломжтой боллоо.</string>
-  <string name="side_tap_shortcuts_removed_details">Найдвартай байдлын асуудлын улмаас дараах тохиргоог TalkBack-с хассан:\n• Төхөөрөмжийн хажуу тал дээр товших зангаа\n• Үргэлжлүүлэн уншихыг эхлүүлэхийн тулд сэгсрэх</string>
-  <string name="button_accept_changed_gesture_mappings">Дохиог зөвшөөрөх</string>
-  <string name="button_customize_gesture_mappings">Дохиог тохируулах</string>
   <string name="button_disable_all_events">Бүгдийг цуцлах</string>
   <string name="button_enable_all_events">Бүгдийг идэвхжүүлэх</string>
   <string name="dialog_title_disable_exploration">Хүрэлтээр сонсохыг идэвхгүй болгох уу?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Хүснэгтээс хайх</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack сувгийн мэдэгдэл</string>
-  <string name="pref_selector_summary">Тохиргоог сонгохын тулд %1$s. Дараа нь тохиргоог тохируулахын тулд %2$s.</string>
-  <string name="speech_rate_change">Ярианы хурд %1$d%%</string>
   <string name="speech_pitch_maximum">Ярианы хамгийн дээд өнгө</string>
   <string name="speech_pitch_minimum">Ярианы хамгийн доод өнгө</string>
   <string name="reset_speech_rate_and_pitch">Ярианы хурд, өнгийг шинэчилнэ үү</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Санал хүсэлтийн чичиргээ %1$s</string>
   <string name="text_formatting_state">Текстийн форматыг унших %1$s</string>
   <string name="typing_echo_change">%1$s цуурай. Биет гар</string>
-  <string name="reading_control_toggle_prefix_xr">Уншилтын хяналтын горимыг асаах/унтраахын тулд нөгөө гарынхаа алгыг өөр лүүгээ харуулж, удаан дар.</string>
   <string name="gesture_1_or_2">%1$s эсвэл %2$s</string>
-  <string name="select_setting_hint">Өөр тохиргоо сонгохын тулд %1$s</string>
-  <string name="adjust_setting_hint">Тохиргоог тохируулахын тулд %1$s</string>
   <string name="adjust_granularity_hint">%2$s-р уншихын тулд %1$s</string>
   <string name="adjust_typo_hint">Зөвлөмжүүд авах бол %1$s.</string>
   <string name="use_action_hint">Үйлдэл гүйцэтгэхийн тулд хоёр товшино уу</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Унших хяналт</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Видео эсвэл хөгжмийн аппад медиаг түр зогсоох эсвэл тоглуулахын тулд 2 хуруугаараа хоёр товшино уу. Одоо туршиж үзнэ үү.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Бусад апп энэ зангааг утасны дуудлагад хариулах эсвэл дуудлагыг дуусгахад ашиглаж болно. Энэ зангааг бүх апп дэмждэггүй байж болзошгүй.</string>
-  <string name="onboarding_link_to_talkback_tutorials">TalkBack-н бүх зааврыг харах</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Медиаг түр зогсоосон буюу эсвэл тоглуулж байна. Энэ нь ихэвчлэн одоогийн видео эсвэл хөгжмийг тоглуулах буюу эсвэл түр зогсооно. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack-г ярихыг нь түр зогсоохын тулд 2 хуруугаараа товшино уу.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack-н яриа зогссон. Энэ нь ихэвчлэн TalkBack-н хэлж буй одоогийн хэллэгийг зогсооно. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Сонголтын горим асаалттай эсвэл унтарсан. Энэ нь ихэвчлэн таныг оролтын талбарт байх үед текстийн сонголтыг горимыг эхлүүлэх буюу эсвэл зогсооно. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Унших хяналтыг ашиглахын тулд 3 хуруугаараа зүүн эсвэл баруун тийш шударна уу. Та мөн 3 хуруугаараа дээш эсвэл доош шудрах боломжтой.</string>
   <string name="new_shortcut_gesture_note">Санамж: Та зарим зангаагаа өөрчилсөн тул энэ мэдээлэл оновчтой биш байж болзошгүй. Зангаагаа шалгахын тулд TalkBack-н тохиргоо руу очно уу.</string>
-  <string name="welcome_to_android11">Android 11 дээрх TalkBack-д тавтай морилно уу</string>
   <string name="welcome_to_android11_text">TalkBack-г ашиглахад илүү хурдан бөгөөд илүү хялбар болгохын тулд шинэ зангаанууд нэмсэн.\n\nЭнэ дэлгэц дээр та шинэ зангаануудыг туршиж үзэх боломжтой. Та энэ мэдээллийг хүссэн үедээ TalkBack-н тохиргооноос шалгах боломжтой.</string>
   <string name="new_gesture_notification_title">TalkBack-н шинэ зангаанууд</string>
   <string name="new_gesture_notification_content">TalkBack-г шинэ зангаануудаар хэрхэн илүү хурдан ашиглах талаар мэдэж авахын тулд товшино уу.</string>
   <string name="dump_node_tree_description">Зангилааны модыг логт хэвлэсэн.</string>
   <string name="report_gesture_description">Эдгээр нь саяхан гүйцэтгэсэн зангаанууд бөгөөд аль зангаа нь буруу болох хэрхэн гүйцэтгэх ёстойг мэдээлнэ үү.</string>
-  <string name="update_welcome_text_content">Та одоо Bluetooth төхөөрөмжид холбогдох арга болох HID-р брайл дэлгэцэд холбогдох боломжтой. Танд үйлдвэрлэгчийн тань сүүлийн үеийн жижиг программын драйвер байгаа эсэхийг нягтлаад, дараа нь брайл дэлгэц дээрээ Bluetooth-г асаана уу. TalkBack-н тохиргоо &gt; Брайл дэлгэц рүү очоод, \"Брайл дэлгэц ашиглах\" сонголтыг асаана уу. Төхөөрөмжүүдийн жагсаалтаас төхөөрөмжөө олж, холбогдоно уу.</string>
-  <string name="update_welcome_text_content_tts">Та одоо Bluetooth төхөөрөмжид холбогдох арга болох HID-р брайл дэлгэцэд холбогдох боломжтой. Танд үйлдвэрлэгчийн тань сүүлийн үеийн жижиг программын драйвер байгаа эсэхийг нягтлаад, дараа нь брайл дэлгэц дээрээ Bluetooth-г асаана уу. TalkBack-н тохиргоо, дараа нь Брайл дэлгэц рүү очоод, \"Брайл дэлгэц ашиглах\" сонголтыг асаана уу. Төхөөрөмжүүдийн жагсаалтаас төхөөрөмжөө олж, холбогдоно уу.</string>
-  <string name="update_welcome_text_content_with_link">TalkBack-р брайл дэлгэцийг хэрхэн ашиглахыг мэдэж авна уу.</string>
   <string name="update_welcome_talkback_16.1">TalkBack-н энэ шинэчлэлт нь илүү олон хэлээр Дэлгэцийг тайлбарлах тусламж, TalkBack-г ашиглахад хялбар болгох чанарын бусад сайжруулалтыг танилцуулж байна.\n\nТа эдгээр өөрчлөлтийн талаар дараагийн хэдэн дэлгэцээс нэмэлт мэдээлэл авна.\n\nТа энэ мэдээллийг дараа нь TalkBack-н тохиргоо &gt; TalkBack-н шинэ онцлогуудаас хянах боломжтой.</string>
   <string name="update_welcome_talkback_16.1_tts">TalkBack-н энэ шинэчлэлт нь илүү олон хэлээр Дэлгэцийг тайлбарлах тусламж, TalkBack-г ашиглахад хялбар болгох чанарын бусад сайжруулалтыг танилцуулж байна.\n\nТа эдгээр өөрчлөлтийн талаар дараагийн хэдэн дэлгэцээс нэмэлт мэдээлэл авна.\n\nТа энэ мэдээллийг дараа нь TalkBack-н тохиргооноос, тэгээд TalkBack-н шинэ онцлогуудаас хянах боломжтой.</string>
-  <string name="describe_screen_and_qna_title">Дэлгэц тайлбарлах, Gemini-с асуух шинэ хэлнүүд</string>
-  <string name="describe_screen_and_qna_content">Дэлгэц тайлбарлах, Gemini-с асуухад одоо нэмэлт хэл ашиглах боломжтой боллоо. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Тусламжийн төвөөс нэмэлт мэдээлэл авна уу&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Дуу хоолойгоор бичих товчлол</string>
   <string name="shortcut_for_dictation_content">Та Gboard-г ашиглаж байхдаа дуу хоолойгоор бичихийг эхлүүлэх, зогсоохын тулд хоёр хуруугаараа хоёр товшихыг ашиглах боломжтой боллоо.
 &lt;br&gt;
 &lt;br&gt;Танд &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play-н Gboard&lt;/a&gt; хамгийн сүүлийн хувилбар байгаа эсэхийг шалгана уу.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Gboard дэлгэц дээр байх үед та одоо дуугаар бичихийг эхлүүлэхийн тулд хоёр хуруугаараа хоёр товших, дараа нь зогсоохын тулд хоёр хуруугаар хоёр товшихыг ашиглах боломжтой боллоо.</string>
-  <string name="keyboard_title">Гар</string>
-  <string name="keyboard_content">TalkBack одоо гартаа зориулсан янз бүрийн шинэ тушаал, товчлолтой \"Сайжруулсан гарын зураг\"-тай боллоо. Энэ сайжруулалтад үр ашигтай веб навигацад зориулсан \"үзэх горим\" багтсан бөгөөд энэ нь биет гарт тулгуурладаг TalkBack-н хэрэглэгчдэд зориулж навигац, харилцан үйлдлийг хялбаршуулна. Та TalkBack-н тохиргоо &gt; Нарийвчилсан тохиргоо &gt; Товчлуурын шууд холбоосноос \"Сайжруулсан гарын зураг\" руу сэлгэж болно.</string>
-  <string name="keyboard_content_tts">TalkBack одоо гартаа зориулсан янз бүрийн шинэ тушаал, товчлолтой \"Сайжруулсан гарын зураг\"-тай боллоо. Энэ сайжруулалтад үр ашигтай веб навигацад зориулсан \"үзэх горим\" багтсан бөгөөд энэ нь биет гарт тулгуурладаг TalkBack-н хэрэглэгчдэд зориулж навигац, харилцан үйлдлийг хялбаршуулна. Та TalkBack-н тохиргоо, Нарийвчилсан тохиргоо, дараа нь Товчлуурын шууд холбоосноос \"Сайжруулсан гарын зураг\" руу сэлгэж болно.</string>
-  <string name="reduce_delay_title">Саатлыг багасгах</string>
-  <string name="reduce_delay_content">Та одоо хүрч таних, шивэхэд зориулж TalkBack-н мэдэгдлийг багасгах боломжтой. Эдгээр тохиргоог харахын тулд TalkBack-н тохиргоо &gt; Дэвшилтэт тохиргоо &gt; Саатлыг багасгах руу очно уу.</string>
-  <string name="reduce_delay_content_tts">Та одоо хүрч таних, шивэхэд зориулж TalkBack-н мэдэгдлийг багасгах боломжтой. Эдгээр тохиргоог харахын тулд TalkBack-н тохиргоо, Дэвшилтэт тохиргоо, дараа нь Саатлыг багасгах руу очно уу.</string>
-  <string name="customize_braille_keyboard_improvements_title">Брайл гарын зангааг тусгайлан өөрчлөх</string>
-  <string name="customize_braille_keyboard_improvements_content">Одоо виртуал дэлгэц дээрх брайл гарт зориулж зангааг тусгайлан өөрчлөх боломжтой боллоо. Тусгайлан өөрчлөхийн тулд TalkBack-н тохиргоо &gt; Брайл гар &gt; Зангаа руу очно уу.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Одоо виртуал дэлгэц дээрх брайл гарт зориулж зангааг тусгайлан өөрчлөх боломжтой боллоо. Тусгайлан өөрчлөхийн тулд TalkBack-н тохиргоо, Брайл гар, дараа нь Зангаа руу очно уу.</string>
-  <string name="learn_more_about_braille_keyboard">Брайл гарын талаар нэмэлт мэдээлэл авах</string>
-  <string name="other_changes_title">Бусад өөрчлөлт</string>
-  <string name="other_changes_content">Дэлгэц дээрх мессеж одоо танд TalkBack-г санаандгүй асаасан тохиолдолд түргэн унтраахад тусалдаг. Та үүнийг TalkBack-н тохиргоо &gt; TalkBack-г унтраах зааварчилгааг харуулах хэсгээс унтрааж болно.</string>
-  <string name="other_changes_content_tts">Дэлгэц дээрх мессеж одоо танд TalkBack-г санаандгүй асаасан тохиолдолд түргэн унтраахад тусалдаг. Та үүнийг TalkBack-н тохиргоо, дараа нь TalkBack-г унтраах зааварчилгааг харуулахаас унтрааж болно.</string>
-  <string name="keymap_changes_content">Сонгодог гарын зургийг нэмэлт товчлол агуулсан өгөгдмөл гарын зураг руу сэлгэлээ.</string>
   <string name="announcing_text_formatting_title">Текстийн форматыг мэдэгдэх</string>
   <string name="announcing_text_formatting_header">TalkBack одоо тод, налуу, текстийн өнгө зэрэг текстийн форматын өөрчлөлтийг мэдэгдэх боломжтой боллоо. Эхлэхийн тулд:</string>
   <string name="announcing_text_formatting_option1">Форматтай зүйл дээр төвлөрч, TalkBack-н цэсийг нээгээд, \"Текстийн форматыг тайлбарлах\" гэснийг сонгох эсвэл</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Хэрхэн дуудлага хийх, мессеж илгээх болон илүү ихийг мэдэж аваарай</string>
   <string name="practice_gestures_link_text">Зангаанууд дээр дадлага хийх</string>
   <string name="practice_gestures_link_subtext">Тэдгээрийн юу хийдгийг мэдэж авахын тулд өөр өөр зангааг туршиж үзнэ үү</string>
-  <string name="help_and_feedback_link_subtext">TalkBack-н талаар нэмэлт мэдээлэл авч, cанал хүсэлт илгээнэ үү</string>
   <string name="choose_tutorial_title">TalkBack-тай хэрхэн харилцмаар байгаагаа сонгох</string>
   <string name="touch_tutorial_button">Хүрэх заавар</string>
   <string name="keyboard_tutorial_button">Гарын заавар</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Үүнийг доор туршина уу.</string>
   <string name="wear_training_typing_practice_button_content_description">Гар ашиглаж бичих</string>
   <string name="wear_training_end_tutorial_title">Та TalkBack-г ашиглаж эхлэхдээ бэлэн байна</string>
-  <string name="talkback_updated_notification_title">TalkBack-г шинэчиллээ</string>
-  <string name="talkback_updated_notification_content">Илүү ихийг олж мэдэхийн тулд товшино уу</string>
   <string name="wear_new_feature_page_title">Шинэчилсэн TalkBack-д тавтай морилно уу</string>
   <string name="wear_new_feature_page_content">Та зарим алдааны засвар болон сонголт хэрхэн шилжихэд орсон өөрчлөлтүүдийг анзаарна</string>
   <string name="wear_new_feature_page_button_content_description">Дуусгах</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Цэнхэр</string>
   <string name="title_pref_grey">Саарал</string>
   <string name="survey_setting_title">Санал хүсэлтээ хуваалцах</string>
-  <string name="survey_closed">Судалгааг хаасан</string>
   <string name="title_summarize_view">Дэлгэцийг тайлбарлах</string>
-  <string name="title_increase_touch_focus_latency">Сонголтын саатлыг нэмэгдүүлэх</string>
-  <string name="title_decrease_touch_focus_latency">Сонголтын саатлыг багасгах</string>
   <string name="detected_result">Илэрсэн: %1$s</string>
   <string name="title_image_caption">Зургийг тодорхойлох</string>
   <string name="image_caption_with_gemini_prefix">Энэ зургийг тайлбарла. Хариултад тэмдэглэгээт бүү ашигла.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ХЭРЭГЛЭГЧ: %1$s</string>
   <string name="image_qna_answer_prefix">ЗАГВАР: %1$s</string>
   <string name="image_qna_with_history_postfix">... [ХЭРЭГЛЭГЧ болон ЗАГВАРЫН хооронд ээлжлэн сольж үргэлжлүүлнэ үү] ...</string>
-  <string name="screen_overview_with_screenshot">Таны ажил бол утсаа харах боломжгүй хүнд утасных нь дэлгэц дээр юу байгааг ойлгоход туслах юм. Энэ дэлгэцийн агшныг цөөн хэдэн өгүүлбэрээр тайлбарлана уу.
-
-Зааварчилгаа
-Хариултаа \"Дэлгэц дараах зүйлийг харуулж байна\" гэж эхлүүлээрэй
-Хариултын эхлэл нь дэлгэц дээрх хамгийн чухал, гол агуулгыг тайлбарлах ёстой. Хамгийн чухал, гол агуулга юу байж болохыг тайлбарлах зарим жишээ энд байна
-* Чатын аппад: Хамгийн сүүлийн мессежийн илгээгч, текст
-* Сошиал медиагийн аппад: Хэн үүнийг нийтэлсэн, текст, зургийн тайлбар зэрэг эхний нийтлэл
-* Мэдээний аппад: Нийтлэлийн нэр, үндсэн зургийн тайлбар
-* Худалдан авалтын аппад: Харуулсан бүтээгдэхүүний тайлбар, үнэ
-* Календарийн аппад: Дараагийн үйл явдал, дараа нь харуулсан бусад үйл явдлын тоо
-* Мессежүүдийн жагсаалтад: Эхний мессежийн нэр, урьдчилан үзэлт, дараа нь жагсаалтын ердөө цөөн хэдэн мессежийн нэр, хэдэн мессежийг уншаагүй болох
-
-Үүний дараа хариулт орчны байршил, навигацын самбар, чухал товчнуудын зорилгыг тайлбарлаж болно.
-Дээд талд байх статус самбарын агуулгыг бүү дурд (ж.нь: Цаг, сүлжээний статус, батарей).
-Хариултдаа ямар нэг тэмдэглэгээ бүү ашигла.</string>
   <string name="title_gemini_opt_in_dialog">Зургийн нарийвчилсан тайлбарыг авах уу?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Зургийн тайлбарыг авах уу?</string>
   <string name="title_gemini_result_dialog">Илэрсэн: зураг</string>
   <string name="title_gemini_result_bottom_sheet">Зургийн тайлбар</string>
   <string name="title_gemini_screen_overview_result_dialog">Дэлгэцийн тайлбар</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Хураангуй</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Үйлдэл</string>
   <string name="positive_button_gemini_opt_in_dialog">Асаах</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Би зөвшөөрч байна</string>
   <string name="negative_button_gemini_opt_in_dialog">Үгүй, баярлалаа</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Тохиргоо руу очих</string>
-  <string name="positive_button_gemini_download_dialog">Татаад, асаах</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Текст, \"%1$s\".</string>
   <string name="detected_icon_label">Дүрс тэмдэг, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Дэлгэцийг хураангуйлах боломжгүй</string>
   <string name="image_caption_no_result">Зургийг тайлбарлах боломжгүй</string>
   <string name="image_caption_with_hide_screen">Дэлгэцийг нуусан үед зургийн тайлбар авах боломжгүй. Дэлгэцээ харуулаад, дахин оролдоно уу.</string>
-  <string name="feedback_button_state_set">сонгосон</string>
-  <string name="feedback_button_state_unset">сонгоогүй</string>
   <string name="action_text_like_button">Сайн хариулт гэж тэмдэглэх</string>
   <string name="action_text_dislike_button">Муу хариулт гэж тэмдэглэх</string>
   <string name="action_text_clear_like_button">Сайн хариултыг арилгах</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Зураг болон дүрс тэмдгийн автомат тайлбарыг татаж байна</string>
   <string name="download_all_image_captioning_successful_hint">Зураг болон дүрс тэмдгийн автомат тайлбарыг татсан</string>
   <string name="download_all_image_captioning_failed_hint">Татах боломжгүй байна. Дараа дахин оролдоно уу.</string>
-  <string name="download_complete_notification_title">Татаж дууслаа</string>
-  <string name="download_complete_notification_content">Та одоо TalkBack-р зураг болон дүрс тэмдгийн автомат тайлбарыг сонсоно</string>
-  <string name="download_complete_notification_action">Тохиргоо</string>
   <string name="download_storage_error_hint">Хадгалах сан дүүрсэн байна. Татахын тулд Тохиргоо &gt; Хадгалах санд %1$d МБ-ыг суллана уу.</string>
   <string name="download_network_error_hint">Татах боломжгүй байна. Холболтоо шалгаад, дахин оролдоно уу.</string>
   <string name="switch_icon_detection_dialog_title">Дүрс тэмдгийн автомат тайлбар</string>
   <string name="switch_icon_detection_dialog_message">Дүрс тэмдэг сонгох үедээ тайлбар сонсоорой</string>
   <string name="switch_image_description_dialog_message">Зураг сонгохдоо тайлбар сонсоорой. Зарим апп үүнийг дэмжихгүй байж магадгүй.</string>
-  <string name="switch_text_recognition_dialog_title">Зургуудын текстийг автоматаар тайлбарлана уу</string>
   <string name="switch_text_recognition_dialog_message">Та текст агуулсан зураг сонгох үед тайлбар сонсоорой</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Татсан</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Та TalkBack-н цэсээс сонгосон зургийн тайлбар авах боломжтой хэвээр байна</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">ОК</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Таталтыг устгах</string>
   <string name="delete_icon_detection_dialog_title">Дүрс тэмдгийн автомат тайлбарыг устгах уу?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">TalkBack-д Gemini-г ашиглах</string>
   <string name="gemini_disable_dialog_message">Gemini-н тусламжтайгаар дэлгэцийг ойлгох</string>
   <string name="disable_gemini_dialog_subtext">Gemini-н тусламжтайгаар дэлгэцийг ойлгохыг идэвхжүүлэхийн тулд асаана уу</string>
-  <string name="ai_services_update_dialog_title">Зураг тайлбарлахын тулд %1$s аппыг шинэчилнэ үү</string>
-  <string name="ai_services_update_dialog_message">Зургийн тайлбарыг сонсохын тулд %1$s-н хамгийн сүүлийн хувилбарыг Google Play-с аваарай.\n\nТатаж дуусмагц TalkBack-н тохиргоо руу буцаж очоод, зургийн автомат тайлбарыг дахин асаана уу.</string>
-  <string name="ai_services_update_dialog_button_text">Google Play рүү очих</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Ямар нэг алдаа гарлаа. Дахин оролдоно уу.</string>
   <string name="gemini_block_message">Энэ зургийг боловсруулах боломжгүй.</string>
   <string name="gemini_network_error">Интернэт холболт алга. Wi-Fi эсвэл хөдөлгөөнт холбооны сүлжээгээ шалгаад, дахин оролдоно уу.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Gemini-д зориулж асуулт бичих</string>
   <string name="image_qna_send_button_text">Асуух</string>
   <string name="image_qna_speak_question_description">Асуултыг уншина уу</string>
-  <string name="overviews_summary_intro">Энэ аппын дэлгэцийн хураангуй: %1$s</string>
   <string name="overviews_node_not_found">Намайг уучлаарай, би дэлгэцийн тэр хэсгийг дахиад олж чадахгүй байна.</string>
-  <string name="overviews_images_in_app">Чухал зураг олдлоо</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Апп дахь үйлдэл</string>
-  <string name="overviews_actions_in_app_description">Та энэ аппын дэлгэцээс эдгээр чухал үйлдлийг хийж болно:</string>
-  <string name="overviews_parent_type">Апп дахь үйлдэл</string>
   <string name="text_replaced_feedback">Текст солигдсон</string>
   <string name="switch_gesture_set">Зангааны багцыг сэлгэх</string>
   <string name="switch_gesture_set_to">Зангааны %1$d багц руу сэлгэх</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Хаах</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Та дэлгэцээ унтраалттай үед мэдэгдэл сонсохын тулд TalkBack-н нуршсан дэлгэрэнгүй байдлын тохиргооноос \"Дэлгэц унтраалттай үед мэдэгдэл унших\"-ыг асаана уу</string>
 </resources>

@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Þegar kveikt er á TalkBack færðu raddsvörun til að þú getir notað tækið án þess að horfa á skjáinn. TalkBack er gert fyrir aðstæður þegar erfitt er að sjá á skjáinn og fyrir fólk sem á erfitt með það.&lt;br&gt;&lt;br&gt;&lt;b&gt;Notkun TalkBack&lt;/b&gt;&lt;br&gt;• Strjúktu til hægri eða vinstri til að fara á milli atriða&lt;br&gt;• Ýttu tvisvar til að virkja atriði&lt;br&gt;• Dragðu 2 fingur til að fletta&lt;br&gt;&lt;b&gt;Slökkt á TalkBack&lt;/b&gt;&lt;br&gt;1. Í stillingunum skaltu ýta á &lt;b&gt;Nota TalkBack&lt;/b&gt;. Útlína mun birtast. Ýttu tvisvar á hana.&lt;br&gt;2. Þegar staðfestingarskilaboðin birtast skaltu ýta á &lt;b&gt;Stöðva&lt;/b&gt;. Útlína mun birtast. Ýttu tvisvar á hana.</string>
   <string name="talkback_service_summary">Notaðu skjálesara til að hlusta á atriði lesin upphátt</string>
   <string name="talkback_preferences_title">TalkBack-stillingar</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Stillingar</string>
   <string name="tts_preferences_title">Upplestur</string>
   <string name="language_options">Tungumál</string>
   <string name="spoken_language">Talað tungumál</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Hætt við leit.</string>
   <string name="notification_type_status_started">Hófst</string>
   <string name="notification_type_status_stopped">Stöðvað</string>
-  <string name="notification_type_status_connected">tengt</string>
-  <string name="notification_battery_level_unknown">óþekkt</string>
   <string name="notification_battery_saver_mode">Kveikt á rafhlöðusparnaði</string>
   <string name="template_no_text_selected">Enginn texti valinn</string>
   <string name="template_charging">Í hleðslu %1$s Orka rafhlöðu er %2$s prósent.</string>
   <string name="template_charging_lite">Hleðsla %1$s</string>
-  <string name="template_battery_state">Rafmagn %1$s %2$s prósent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Titrar við hringingu.</string>
   <string name="value_ringer_silent">Engin hringing.</string>
   <string name="value_screen_on">Kveikt á skjá.</string>
   <string name="value_screen_off">Slökkt á skjánum.</string>
   <string name="value_device_unlocked">Tæki tekið úr lás.</string>
-  <string name="title_pref_category_audio">Hljóð</string>
   <string name="title_pref_speech_volume">Styrkur tals</string>
-  <string name="title_pref_speech_rate">Talhraði</string>
-  <string name="summary_pref_speech_rate">Hraði upplesturs</string>
   <string name="title_pref_verbose_scroll_announcement">Alltaf lesa upp fjölda listaatriða</string>
   <string name="summary_pref_verbose_scroll_announcement">Lesa upp fjölda atriða fyrir allar flettiaðferðir</string>
   <string name="title_pref_cover_proximity_sensor">Hylja nándarskynjara til að stöðva tal</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Segja hvað klukkan er</string>
   <string name="pref_speak_time_summary">Þegar þú kveikir á skjánum</string>
   <string name="summary_speak_container_element_positions">Inniheldur upplýsingar á meðan farið er inn og út úr listum, hnitanetum og öðrum geymum</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fókustöf var bætt við lesstýringu</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Þú getur hvenær sem er strokið með þremur fingrum til að nota lesstýringuna og breyta fókustöfinni</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Skipta yfir í „Sleppa til að slá inn“?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Þegar fókustöf á innslætti er stillt á undir 0,3 sekúndur verður mjög erfitt að ýta tvisvar við innslátt. Veldu „Skipta“ til að skipta sjálfkrafa yfir í „Sleppa til að slá inn“.\n\nTil að nota „Sleppa til að slá inn“ heldurðu fingrinum inni á hvaða hnappi sem er og lyftir síðan til að slá hann inn.\n\nÞú getur sérsniðið þetta í stillingum TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Töf innsláttarfókuss var bætt við lesstýringu</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Ef vandamál koma upp með að ýta tvisvar við innslátt skaltu strjúka með þremur fingrum til að virkja lesstýringuna og lengja töf innsláttarfókuss</string>
-  <string name="gestures_announce_typing_focus_wont_change">Fókustöf á innslætti virkar ekki án „Sleppa til að slá inn“.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Ég skil</string>
   <string name="reset_letency_reduction_settings_dialog_title">Endurstilla tafarstillingar?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Þetta verður til þess að allar tafarstillingar verða endurstilltar</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Endurstilla</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Stillingar styttingar biðtíma hafa verið endurstilltar.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Skipta</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ekki skipta</string>
   <string name="Reset_gesture_settings_dialog_title">Endurstilla bendingar?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Endurstilla bendingar núverandi setts?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Þetta mun endurstilla allar bendingar á sjálfgefnar aðgerðir.\n\nÞú glatar öllum breytingum sem þú hefur gert.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Lesa upp alla framvindu</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Felur í sér tilkynningar við niðurhal, þegar akstursleiðsögn er fylgt og fleira. Þú færð færri uppfærslur þegar slökkt er á þessu en þó einhverjar.</string>
   <string name="title_pref_explore_by_touch">Snertikönnun</string>
-  <string name="title_pref_category_visual">Myndefni</string>
   <string name="title_pref_category_controls">Stýringar</string>
-  <string name="title_pref_category_braille">Blindraletur</string>
-  <string name="title_pref_category_general">Almennt</string>
-  <string name="title_pref_category_advanced">Ítarlegt</string>
-  <string name="title_pref_category_others">Annað</string>
-  <string name="title_pref_category_tutorial_and_help">Leiðsögn og hjálp</string>
   <string name="title_pref_category_reduce_latency_summary">Þessar stillingar geta stytt töfina áður en TalkBack-tilkynningar heyrast</string>
   <string name="reset_latency_settings_title">Endurstilla allar tafarstillingar</string>
   <string name="title_pref_single_tap">Ýta einu sinni til að virkja</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Breyta fókusvísi</string>
   <string name="title_pref_category_manage_gestures">Bendingar</string>
   <string name="title_pref_manage_labels">Sérsniðnir flokkar</string>
-  <string name="title_pref_manage_customize_menus">Breyta valmyndum</string>
   <string name="title_pref_category_context_menu">Sérsníða TalkBack-valmynd</string>
   <string name="title_pref_category_selector_menu">Sérsníða lesstýringar</string>
   <string name="title_pref_category_navigation_menu">Breyta flettivalkostum</string>
-  <string name="pref_category_context_menu_summary">Ýttu á skjáinn með þremur fingrum til að nota valmynd TalkBack. Þú getur líka strokið upp og svo til hægri eða niður og svo til hægri.</string>
-  <string name="pref_category_context_menu_summary_xr">Snúðu lófa aukahandarinnar að þér og færðu vísifingur og þumalfingur saman til að nota valmynd TalkBack.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Strjúktu niður og til hægri til að nota TalkBack valmyndina.</string>
-  <string name="pref_category_selector_menu_summary">Strjúktu til vinstri eða hægri með 3 fingrum til að nota lesstýringar. Þú getur líka strokið upp eða niður með þremur fingrum.</string>
-  <string name="pref_category_selector_menu_summary_xr">Til að skipta á milli lesstýringa skaltu snúa lófa aukahandarinnar að þér, færa vísifingur og þumalfingur saman, færa höndina til vinstri eða hægri og færa fingurnar síðan sundur.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Strjúktu upp og svo niður til að nota lesstýringar.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Flýtilyklar</string>
   <string name="title_pref_export_custom_labels">Flytja út sérsniðin merki</string>
-  <string name="title_pref_play_store">Opna TalkBack í Play Store</string>
-  <string name="summary_pref_play_store">Núverandi útgáfa TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Hjálp og ábendingar</string>
-  <string name="title_pref_gup">Hafðu samband við aðgangs- og hjálpartækni Google</string>
-  <string name="subtitle_pref_gup">Fáðu hjálp við að nota TalkBack eða tilkynna um vandamál</string>
-  <string name="pref_item_licenses">Leyfi opins kóða</string>
-  <string name="title_pref_tutorial">Leiðsögn</string>
   <string name="title_pref_help">Hjálp</string>
   <string name="title_pref_show_tos">Þjónustuskilmálar</string>
   <string name="title_pref_show_privacy_policy">Persónuverndarstefna</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Fingrafarabendingar</string>
   <string name="title_pref_category_tutorial">Leiðsögn í TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Hjálp</string>
-  <string name="title_pref_category_typing">Skrifar</string>
   <string name="title_pref_advanced_settings">Ítarlegar stillingar</string>
   <string name="title_pref_show_exit_watermark">Sýna leiðbeiningar um hvernig slökkt er á TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Skilaboð sýna hvenær kveikt er á TalkBack is turned on, til að hjálpa þér að slökkva strax á því</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Sumir breytilyklanna eru frábrugðnir.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Nánar um flýtilyklakort</string>
   <string name="keycombo_go_to_settings">Opna stillingar</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack býr sig undir að fjarlægja sígilt flýtilyklakort. Skiptu yfir í sjálfgefið flýtilyklakort til að halda áfram að nota flýtilykla.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Nánar</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ég skil</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Stillingar</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Nánar</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Þú ert nú að nota sjálfgefið flýtilyklakort TalkBack. Þú hefur einnig aðgang að nýju og endurbættu flýtilyklakorti sem felur í sér margar nýjar skipanir. Kynntu þér nýja flýtilyklakortið frekar í hjálparmiðstöðinni eða skiptu yfir í það núna í stillingunum.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Nýtt flýtilyklakort í boði</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nýtt og endurbætt flýtilyklakort TalkBack felur í sér margar nýjar skipanir. Kynntu þér nýja flýtilyklakortið frekar í hjálparmiðstöðinni eða skiptu yfir í það núna í stillingunum.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Uppfærðu breytilykil TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ekki núna</string>
   <string name="keycombo_warning_content_description">Frekari upplýsingar um breytilykilinn þinn</string>
-  <string name="keycombo_warning_dialog_title">Uppfærðu breytilykilinn þinn</string>
-  <string name="keycombo_warning_dialog_message">Uppfærðu breytilykilinn þinn úr aðgerðalyklinum í Alt-lykilinn þannig að flýtilyklar TalkBack virki sem skyldi.\n\nEf þú heldur áfram að nota aðgerðalykilinn sem breytilykil munu sumir flýtilyklar framkvæma aðrar aðgerðir í þessari Android-útgáfu.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Lyklaskipan</string>
   <string name="keycombo_menu_select_keymap">Velja lyklaskipan</string>
   <string name="keycombo_menu_reset_keymap">Endurstilla lyklaskipanina</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Hækka hljóðstyrk tals</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Lækka hljóðstyrk tals</string>
   <string name="keycombo_menu_global_refocus_current_node">Segja upphátt hvað er í fókus</string>
-  <string name="keycombo_menu_category_granularity">Fletting</string>
   <string name="keycombo_menu_granularity_increase">Stilling fyrir flettingu á næsta</string>
   <string name="keycombo_menu_granularity_decrease">Stilling fyrir flettingu á fyrra</string>
   <string name="keycombo_menu_category_other">Aðrar aðgerðir</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Ertu viss um að þú viljir endurstilla flýtilyklana fyrir þessa lyklaskipan á sjálfgildi? Athugaðu að ekki er hægt að afturkalla þessa aðgerð.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Endurstilla</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s í flettiham</string>
-  <string name="keycombo_assign_dialog_instruction">Ýttu á lyklasamsetningu til að vista nýja flýtileið. Hún verður að innihalda að minnsta kosti Alt-lykilinn eða Control-lykilinn.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Til að búa til nýja flýtileið skaltu ýta á lyklasamsetningu með breytilyklinum %1$s.</string>
   <string name="keycombo_unassigned">Ekki úthlutað</string>
   <string name="save_button_in_keycombo_assign_dialog">Vista</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Töf innsláttarfókuss</string>
   <string name="message_pref_touch_explore_latency">Styttri fókustöf við innslátt þýðir að TalkBack-tilkynningar eru lesnar fyrr eftir að þú snertir lyklaborðið.\n\nVelja töf</string>
   <string name="title_pref_touch_focus_timeout">Fókustöf</string>
-  <string name="summary_pref_touch_focus_time">
-Stjórnar því hversu fljótlega TalkBack talar eftir að fókusinn færist. Styttri töf lætur TalkBack virðast virka hraðar, en getur valdið því að erfitt verður að ýta tvisvar eða þrisvar í röð.\n\n
-Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ýta með tveimur fingrum til að virkja“.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Meðhöndla bendingar í TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Slökktu á TalkBack og kveiktu svo aftur til að virkja stillinguna.</string>
   <string name="title_pref_auto_image_captioning">Sjálfvirkar lýsingar</string>
@@ -382,28 +332,16 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="dialog_title_turn_on_image_description">Kveiktu á lýsingum á myndum í stillingunum</string>
   <string name="dialog_message_turn_on_image_description">Þú getur reynt aftur eftir að hafa kveikt á annaðhvort sjálfvirkum eða ítarlegum lýsingum á myndum</string>
   <string name="title_pref_detailed_image_description">Ítarlegar myndalýsingar</string>
-  <string name="summary_pref_ai_description">Heyrðu lengri lýsingar þegar þú velur „%1$s“ úr TalkBack-valmyndinni</string>
   <string name="dialog_message_on_device_ai_description">Þú munt heyra stutta lýsingu þegar þú setur mynd í fókus í studdum forritum.\n\nUnnið er úr myndunum í tækinu þínu og þær eru aldrei sendar til Google. \n\nSkapandi gervigreind er á tilraunastigi og getur því gert mistök. Með því að halda áfram samþykkirðu <a href="https://policies.google.com/terms/generative-ai">þjónustuskilmála Google</a>.</string>
   <string name="enable_gemini">Kveikja á</string>
   <string name="powered_by_gemini">Knúið af skapandi gervigreind</string>
-  <string name="detailed_image_description_ongoing_hint">Sækir lýsingu</string>
-  <string name="detailed_image_description_result_prefix">Greindist: Mynd. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Niðurhals er krafist fyrir sjálfvirkar lýsingar á myndum</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Unnið er úr myndum í tækinu þínu og þær eru aldrei sendar til Google.\n\nSkapandi gervigreind er á tilraunastigi og getur því gert mistök. Með því að halda áfram samþykkirðu %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">þjónustuskilmála Google</string>
   <string name="message_aifeature_downloading">Sækir gervigreindarlíkan. Þetta gæti tekið smástund. Við látum þig vita þegar líkanið hefur verið sótt.</string>
   <string name="message_aifeature_downloading_with_progress">Niðurhal er enn í gangi. %1$d af %2$d MB hafa verið sótt.</string>
-  <string name="message_aifeature_download_complete">Gervigreindarlíkanið hefur verið sótt. TalkBack getur nú búið til lýsingar á myndum.</string>
   <string name="summary_pref_auto_image_captioning">Fyrir tákn, myndir og texta á myndum</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Fyrir texta á myndum</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Fyrir myndir og texta á myndum</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Fyrir tákn og texta á myndum</string>
   <string name="summary_pref_module_downloading">Sækir…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Kveikt fyrir allar myndir</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Aðeins kveikt fyrir ómerktar myndir</string>
   <string name="summary_pref_auto_image_captioning_disabled">Slökkt</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Kveikt fyrir öll tákn</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Aðeins kveikt fyrir ómerkt tákn</string>
   <string name="summary_pref_auto_icon_detection_disabled">Slökkt</string>
   <string name="title_pref_enable_auto_image_caption">Allar myndir</string>
   <string name="title_pref_enable_auto_image_caption_arg">Allar myndir\n%1$s</string>
@@ -413,7 +351,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="title_pref_enable_auto_icon_detection">Öll tákn</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Aðeins ómerkt tákn</string>
   <string name="title_pref_disable_auto_icon_detection">Ekki lýsa táknum</string>
-  <string name="dialog_message_on_device_ai_model_download">Þú munt heyra stutta lýsingu þegar þú setur mynd í fókus í studdum forritum.\n\nUnnið er úr myndunum í tækinu þínu og þær eru aldrei sendar til Google.\n\nSkapandi gervigreind er á tilraunastigi og getur því gert mistök. Með því að halda áfram samþykkirðu %1$s.</string>
   <string name="title_pref_enable_gemini_support">Kveikt</string>
   <string name="title_pref_disable_gemini_support">Slökkt</string>
   <string name="summary_pref_gemini_support_enabled">Kveikt er á Gemini</string>
@@ -457,7 +394,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="shortcut_print_node_tree">Prenta hnútatré</string>
   <string name="shortcut_print_performance_stats">Prenta frammistöðugögn</string>
   <string name="shortcut_first_in_screen">Setja fókus á fyrsta atriðið á skjánum</string>
-  <string name="shortcut_summary">Birta samantekt fyrir skjáútlit</string>
   <string name="shortcut_voice_commands">Hefja raddskipun</string>
   <string name="shortcut_last_in_screen">Setja fókus á síðasta atriðið á skjánum</string>
   <string name="shortcut_enable_dimming">Fela skjá</string>
@@ -561,7 +497,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="menu_category_web_navigation">Vefskoðun</string>
   <string name="menu_category_basic_navigation">Einföld fletting</string>
   <string name="summary_custom_action">Sýnir þegar aðgerðir eru í boði fyrir núverandi atriði, s.s. tenglar, að afrita, líma, velja og fleira</string>
-  <string name="summary_context_menu_links">Opna tengla inni í völdu atriði</string>
   <string name="summary_viewpager_controls">Fara á næstu eða fyrri síðu. Birtist þegar þú lest efni með mörgum síðum.</string>
   <string name="summary_labeling_controls">Birtist þegar þú velur ómerkt atriði</string>
   <string name="summary_granularity">Lesa stafi, orð, línur og fleira</string>
@@ -631,12 +566,9 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="summary_screen_overview">Taka skjá saman með aðgerðarhnöppum</string>
   <string name="summary_screen_overview_no_actions">Hlustaðu á samantekt á efninu á skjánum</string>
   <string name="summary_image_caption">Lesa texta og tákn á valinni mynd</string>
-  <string name="summary_summarize_view">Segðu „Taka yfirlit saman“</string>
   <string name="summary_typo_suggestions">Sýnir þegar bendillinn er á innsláttarvillu</string>
   <string name="summary_cache_keyboard_keys">TalkBack forhleður tilkynningum til að draga úr töfum á meðan þú skrifar</string>
   <string name="summary_cache_keyboard_keys_disabled">Kveiktu á talgervli Google til að nota þennan eiginleika</string>
-  <string name="value_direction_down">niður</string>
-  <string name="value_direction_down_and_right">niður og svo til hægri</string>
   <string name="title_pref_shortcut_up">Strjúka upp</string>
   <string name="title_pref_shortcut_up_xr">Lófi aukahandar að þér, vísifingur og þumalfingur saman og strjúka upp</string>
   <string name="title_pref_shortcut_down">Strjúka niður</string>
@@ -704,10 +636,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="title_pref_shortcut_fingerprint_left">Strjúka til vinstri á fingrafaralesara</string>
   <string name="title_pref_shortcut_fingerprint_right">Strjúka til hægri á fingrafaralesara</string>
   <string name="title_pref_version_code">Útgáfukóði</string>
-  <string formatted="false" name="value_volume_100_percent">Samsvara hljóðstyrk tals</string>
-  <string formatted="false" name="value_volume_75_percent">75% af hljóðstyrk tals</string>
-  <string formatted="false" name="value_volume_50_percent">50% af hljóðstyrk tals</string>
-  <string formatted="false" name="value_volume_25_percent">25% af hljóðstyrk tals</string>
   <string name="value_type_confirmation_double_tap">Haltu inni einhverjum lykli til að velja hann og ýttu svo tvisvar</string>
   <string name="value_type_confirmation_lift_to_type">Haltu inni stafalykli til að velja hann og slepptu svo. Ýttu tvisvar til að velja aðra lykla.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Haltu inni einhverjum lykli til að velja hann og slepptu svo</string>
@@ -720,12 +648,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="value_touch_explore_time_out_200ms">0,2 sekúndur</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekúndur</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekúndur (sjálfgefið)</string>
-  <string name="value_shake_to_read_disabled">Slökkt</string>
-  <string name="value_shake_to_read_threshold_very_light">Mjög létt</string>
-  <string name="value_shake_to_read_threshold_light">Létt</string>
-  <string name="value_shake_to_read_threshold_medium">Miðlungs</string>
-  <string name="value_shake_to_read_threshold_hard">Af krafti</string>
-  <string name="value_shake_to_read_threshold_very_hard">Af miklum krafti</string>
   <string name="title_pref_on_screen_keyboard">Skjályklaborð</string>
   <string name="title_pref_physical_keyboard">Vélbúnaðarlyklaborð</string>
   <string name="value_keyboard_echo_none">Engin</string>
@@ -738,8 +660,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="pref_time_feedback_format_entries_default">Nota tímasnið tækis</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 klst.</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 klst.</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack bendingum breytt</string>
-  <string name="notification_message_talkback_gestures_changed">Ýttu til að fara yfir breytingar á aðgengisbendingum</string>
   <string name="always_show_warning_checkbox">Birta alltaf þessa viðvörun</string>
   <string name="label_dialog_title_add">Bæta við skýringu</string>
   <string name="label_dialog_title_edit">Breyta skýringu</string>
@@ -760,16 +680,8 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="no_apps_to_export_labels">Engin forrit fundust til að flytja út flokka.</string>
   <string name="label_choose_app_to_import">Veldu forrit til að flytja inn flokka:</string>
   <string name="label_choose_app_to_export">Veldu forrit til að flytja út flokka:</string>
-  <string name="talkback_gesture_change_details">Þessi útgáfa af TalkBack inniheldur breytingar á sjálfgefnum aðgengisbendingum. Aðgerðirnar sem tengdar eru þessum bendingum má sérsníða í stillingum TalkBack. Þegar kveikt er á snertikönnun geturðu notað eftirfarandi bendingar til að framkvæma tilteknar aðgerðir.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Fela skjá?</string>
   <string name="dialog_message_dim_screen">Slökkt verður á skjánum í kjölfarið til að auka persónuvernd. Sumt efni verður hugsanlega enn sýnilegt, s.s. skilaboð um að kveikja aftur á skjánum eða valmyndir aðgengiseiginleika, t.d. TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Þessi útgáfa af TalkBack inniheldur breytingar á sjálfgefnum aðgengisbendingum.\n\nBendingin upp-og-svo-niður gerir þér kleift að fara að fyrsta atriði á skjánum og bendingin niður-og-svo-upp fer að síðasta atriðinu.\n\nNú er hægt að breyta niðurskiptingu fyrir lestur með því að setja fókus á atriði og velja síðan niðurskiptingu af samhengisvalmynd TalkBack.\n\nÞú getur breytt aðgerðunum sem framkvæmdar eru við þessar bendingar í stillingum TalkBack.</string>
-  <string name="default_action_changed_details">Nú geturðu ýtt tvisvar og haldið inni með tveimur fingrum til að gera hlé og spila efni.\n\nAðrar bendingar hafa einnig breyst.</string>
-  <string name="talkback_built_in_gesture_open_url">Opnaðu í símanum til að fá frekari upplýsingar</string>
-  <string name="talkback_built_in_gesture_change_details_45">Í þessari útgáfu af TalkBack eru breytingar á sjálfgefnum aðgengisbendingum.\n\nBending upp flettir nú á fyrra atriði og bending niður flettir nú á næsta atriði.</string>
-  <string name="side_tap_shortcuts_removed_details">Þessar flýtileiðir eru fjarlægðar úr TalkBack vegna áreiðanleikavanda:\n• Bendingar þar sem ýtt er á hlið tækis\n• Hrist til að hefja samfelldan upplestur</string>
-  <string name="button_accept_changed_gesture_mappings">Samþykkja bendingar</string>
-  <string name="button_customize_gesture_mappings">Sérsníða bendingar</string>
   <string name="button_disable_all_events">Slökkva á öllu</string>
   <string name="button_enable_all_events">Kveikja á öllu</string>
   <string name="dialog_title_disable_exploration">Slökkva á snertikönnun?</string>
@@ -893,8 +805,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="screen_search_hint_type_search_tables">Leita í töflum</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Tilkynningarás TalkBack</string>
-  <string name="pref_selector_summary">%1$s til að velja stillingu. Svo %2$s til að velja valkosti fyrir stillinguna.</string>
-  <string name="speech_rate_change">Talhraði %1$d%%</string>
   <string name="speech_pitch_maximum">Mesta raddhæð</string>
   <string name="speech_pitch_minimum">Minnsta raddhæð</string>
   <string name="reset_speech_rate_and_pitch">Endurstilla talhraða og tónhæð</string>
@@ -904,10 +814,7 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="vibration_feedback_state">Svörun með titringi %1$s</string>
   <string name="text_formatting_state">Lesa upp textasnið %1$s</string>
   <string name="typing_echo_change">%1$s vélbúnaðarlyklaborðs lesnir upp</string>
-  <string name="reading_control_toggle_prefix_xr">Snúðu lófa aukahandarinnar að þér og haltu inni til að kveikja eða slökkva á lesstýringum.</string>
   <string name="gesture_1_or_2">%1$s eða %2$s</string>
-  <string name="select_setting_hint">%1$s til að velja aðra stillingu</string>
-  <string name="adjust_setting_hint">%1$s til að breyta stillingu</string>
   <string name="adjust_granularity_hint">%1$s til að lesa eftir %2$s</string>
   <string name="adjust_typo_hint">%1$s til að fá tillögur.</string>
   <string name="use_action_hint">Ýttu tvisvar til að framkvæma aðgerðina</string>
@@ -947,7 +854,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="setting_selector_heading">Lesstýringar</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ýttu með tveimur fingrum til að gera hlé á eða spila efni í vídeó- eða tónlistarforriti. Prófaðu það.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Önnur forrit nota hugsanlega þessa bendingu fyrir aðrar aðgerðir eins og t.d. að svara eða ljúka símtali. Ekki er víst að öll forrit styðji þessa bendingu.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Sjá allar TalkBack-leiðsagnir</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Efni í hléi eða spilun. Almennt gerir þetta hlé á eða spilar núverandi vídeó eða tónlist. Strjúktu til hægri til að halda áfram.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Ýttu með tveimur fingrum til að stöðva tal frá TalkBack tímabundið.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Tal frá Talkback stöðvað. Almennt stöðvar þetta setninguna sem TalkBack er að segja. Strjúktu til hægri til að halda áfram.</string>
@@ -961,38 +867,18 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Slökkt eða kveikt á valstillingu. Almennt kveikir þetta eða slekkur á textavalsstillingunni þegar þú ert í innsláttarreit. Strjúktu til hægri til að halda áfram.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Strjúktu til vinstri eða hægri með 3 fingrum til að nota lesstýringar. Þú getur líka strokið upp eða niður með þremur fingrum.</string>
   <string name="new_shortcut_gesture_note">Athugaðu: Þú hefur sérsniðið sumar bendingar svo þessar upplýsingar eru hugsanlega ekki réttar. Opnaðu stillingar TalkBack til að skoða bendingarnar þínar.</string>
-  <string name="welcome_to_android11">Velkomin(n) í TalkBack í Android 11</string>
   <string name="welcome_to_android11_text">Nýjum bendingum var bætt við til að auka hraða og einfalda notkun TalkBack.\n\nÁ þessari skjámynd geturðu prófað nýju bendingarnar. Hægt er að fara yfir þessar upplýsingar í stillingum TalkBack hvenær sem er.</string>
   <string name="new_gesture_notification_title">Nýjar bendingar í TalkBack</string>
   <string name="new_gesture_notification_content">Ýttu til að kynna þér hvernig þú getur gert TalkBack hraðvirkara með nýjum bendingum.</string>
   <string name="dump_node_tree_description">Hnútatré hefur verið prentað í annála.</string>
   <string name="report_gesture_description">Hér eru nýlega notaðar bendingar. Segðu okkur hver þeirra er röng og hvernig hún hefði átt að virka.</string>
-  <string name="update_welcome_text_content">Nú geturðu tengt blindraletursskjái með HID, nýrri leið til að tengjast Bluetooth-tækjum. Gakktu úr skugga um að þú sért með nýjustu fastbúnaðarrekla frá framleiðandanum þínum og kveiktu síðan á Bluetooth á blindraletursskjánum. Farðu í „Stillingar TalkBack &gt; Blindraletursskjár“ og kveiktu á „Nota blindraletursskjá“. Finndu tækið þitt á tækjalistanum og tengstu því.</string>
-  <string name="update_welcome_text_content_tts">Nú geturðu tengt blindraletursskjái með HID, nýrri leið til að tengjast Bluetooth-tækjum. Gakktu úr skugga um að þú sért með nýjustu fastbúnaðarrekla frá framleiðandanum þínum og kveiktu síðan á Bluetooth á blindraletursskjánum. Farðu í stillingar TalkBack, síðan í „Blindraletursskjár“ og kveiktu á „Nota blindraletursskjá“. Finndu tækið þitt á tækjalistanum og tengstu því.</string>
-  <string name="update_welcome_text_content_with_link">Kynntu þér hvernig þú notar blindraletursskjáinn þinn með TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Þessi TalkBack-uppfærsla kynnir til sögunnar stuðning við „Lýstu skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun eiginleikans.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „Stillingar TalkBack &gt; Nýir eiginleikar í TalkBack“.</string>
   <string name="update_welcome_talkback_16.1_tts">Þessi TalkBack-uppfærsla kynnir til sögunnar stuðning við „Lýstu skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun TalkBack.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „Nýir eiginleikar í TalkBack“ í stillingum TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Ný tungumál í „Lýstu skjánum“ og „Spyrðu Gemini“</string>
-  <string name="describe_screen_and_qna_content">„Lýstu skjánum“ og „Spyrðu Gemini“ eru nú í boði á fleiri tungumálum. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Frekari upplýsingar má finna í hjálparmiðstöðinni&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Flýtileið raddinnsláttar</string>
   <string name="shortcut_for_dictation_content">Nú þegar þú notar Gboard geturðu ýtt tvisvar með tveimur fingrum til að hefja eða stöðva raddinnslátt.
 &lt;br&gt;
 &lt;br&gt;Gakktu úr skugga um að þú sért með nýjustu útgáfuna af &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard frá Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Þegar þú notar Gboard á skjá geturðu nú ýtt tvisvar með tveimur fingrum til að hefja raddinnslátt og síðan tvisvar sinnum aftur til að hætta.</string>
-  <string name="keyboard_title">Lyklaborð</string>
-  <string name="keyboard_content">TalkBack er nú með endurbætt flýtilyklakort á lyklaborðinu sínu þar sem má finna ýmsar nýjar skipanir og flýtileiðir. Þessi viðbót, sem býður upp á flettiham sem gerir flettingu á netinu enn skilvirkari, auðveldar notendum TalkBack sem reiða sig á vélbúnaðarlyklaborð að fletta og framkvæma aðgerðir. Þú getur skipt yfir í endurbætta flýtilyklakortið með því að fara í „Stillingar TalkBack &gt; Ítarlegar stillingar &gt; Flýtilyklar“.</string>
-  <string name="keyboard_content_tts">TalkBack er nú með endurbætt flýtilyklakort á lyklaborðinu sínu þar sem má finna ýmsar nýjar skipanir og flýtileiðir. Þessi viðbót, sem býður upp á flettiham sem gerir flettingu á netinu enn skilvirkari, auðveldar notendum TalkBack sem reiða sig á vélbúnaðarlyklaborð að fletta og framkvæma aðgerðir. Þú getur skipt yfir í endurbætta flýtilyklakortið með því að fara í stillingar TalkBack, ítarlegar stillingar og þaðan í flýtilykla.</string>
-  <string name="reduce_delay_title">Að stytta töf</string>
-  <string name="reduce_delay_content">Nú geturðu stytt tafir sem verða á tilkynningum TalkBack þegar þú notar snertikönnunn og slærð inn texta. Farðu í „Stillingar TalkBack &gt; Ítarlegar stillingar &gt; Stytta töf“ til að fara yfir viðeigandi stillingar.</string>
-  <string name="reduce_delay_content_tts">Nú geturðu stytt tafir sem verða á tilkynningum TalkBack þegar þú notar snertikönnunn og slærð inn texta. Farðu í stillingar TalkBack, ítarlegar stillingar og síðan í „Stytta töf“ til að fara yfir viðeigandi stillingar.</string>
-  <string name="customize_braille_keyboard_improvements_title">Sérsniðnar bendingar á braille-lyklaborði</string>
-  <string name="customize_braille_keyboard_improvements_content">Nú geturðu sérsniðið bendingar á braille-sýndarlyklaborðinu á skjánum. Farðu í „Stillingar TalkBack &gt; Braille-lyklaborð &gt; Bendingar“ til að sérsníða bendingar.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Nú geturðu sérsniðið bendingar á braille-sýndarlyklaborðinu á skjánum. Farðu í stillingar TalkBack, síðan í „Braille-lyklaborð“ og þaðan í „Bendingar“ til að sérsníða bendingar.</string>
-  <string name="learn_more_about_braille_keyboard">Nánar um braille-lyklaborð</string>
-  <string name="other_changes_title">Aðrar breytingar</string>
-  <string name="other_changes_content">Skilaboð sem birtast á skjánum gera þér nú kleift að slökkva snögglega á TalkBack ef það kviknar á eiginleikanum fyrir slysni. Þú getur slökkt á þessu með því að fara í „Stillingar TalkBack &gt; Sýna leiðbeiningar um hvernig slökkt er á TalkBack“.</string>
-  <string name="other_changes_content_tts">Skilaboð sem birtast á skjánum gera þér nú kleift að slökkva snögglega á TalkBack ef það kviknar á eiginleikanum fyrir slysni. Þú getur slökkt á þessu með því að fara í stillingar TalkBack og síðan „Sýna leiðbeiningar um hvernig slökkt er á TalkBack“.</string>
-  <string name="keymap_changes_content">Sígildu flýtilyklakorti hefur verið breytt í sjálfgefið flýtilyklakort, sem inniheldur fleiri flýtilykla.</string>
   <string name="announcing_text_formatting_title">Tilkynningar um textasnið</string>
   <string name="announcing_text_formatting_header">TalkBack getur nú tilkynnt þér breytingar á textasniði, t.d. þegar texti er feitletraður, skáletraður eða birtist í öðrum lit. Til að hefjast handa:</string>
   <string name="announcing_text_formatting_option1">Fókusaðu á sniðna atriðið, opnaðu valmynd TalkBack og veldu „Lýsa textasniði“ eða</string>
@@ -1083,7 +969,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="additional_tips_link_subtext">Kynntu þér hvernig þú hringir símtöl, sendir skilaboð og fleira</string>
   <string name="practice_gestures_link_text">Æfingabendingar</string>
   <string name="practice_gestures_link_subtext">Prófaðu mismunandi bendingar til að sjá hvað gerist</string>
-  <string name="help_and_feedback_link_subtext">Fáðu frekari upplýsingar um TalkBack og sendu ábendingar</string>
   <string name="choose_tutorial_title">Veldu hvernig þú vilt eiga í samskiptum við TalkBack</string>
   <string name="touch_tutorial_button">Kynning á snertingum</string>
   <string name="keyboard_tutorial_button">Kynning á lyklaborði</string>
@@ -1229,8 +1114,6 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="wear_training_typing_text5">Prófaðu þetta hér fyrir neðan.</string>
   <string name="wear_training_typing_practice_button_content_description">Innsláttur af lyklaborði</string>
   <string name="wear_training_end_tutorial_title">Þú getur byrjað að nota TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack var uppfært</string>
-  <string name="talkback_updated_notification_content">Ýttu til að fá frekari upplýsingar</string>
   <string name="wear_new_feature_page_title">Velkomin(n) í uppfært TalkBack</string>
   <string name="wear_new_feature_page_content">Þú sérð nokkrar villuleiðréttingar og breytingar á hvernig fókusinn hreyfist</string>
   <string name="wear_new_feature_page_button_content_description">Ljúka</string>
@@ -1249,10 +1132,7 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="title_pref_blue">Blár</string>
   <string name="title_pref_grey">Grár</string>
   <string name="survey_setting_title">Deildu ábendingum</string>
-  <string name="survey_closed">Könnun lokað</string>
   <string name="title_summarize_view">Lýsa skjánum</string>
-  <string name="title_increase_touch_focus_latency">Lengja fókustöf</string>
-  <string name="title_decrease_touch_focus_latency">Stytta fókustöf</string>
   <string name="detected_result">Greint: %1$s</string>
   <string name="title_image_caption">Lýsa mynd</string>
   <string name="image_caption_with_gemini_prefix">Lýstu þessari mynd. Ekki senda svar með neinum merkingum.</string>
@@ -1279,33 +1159,15 @@ Tafir undir 0,3 sekúndum munu breyta „Ýta tvisvar til að virkja“ í „Ý
   <string name="image_qna_question_prefix">NOTANDI: %1$s</string>
   <string name="image_qna_answer_prefix">GERÐ: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Halda áfram að skipta á milli NOTANDI og GERÐ] ...</string>
-  <string name="screen_overview_with_screenshot">Þitt hlutverk er að hjálpa einhverjum sem sér ekki símann sinn að skilja hvað er á skjá símans. Lýstu þessari skjámynd með nokkrum setningum.
-
-Leiðbeiningar
-Byrjaðu svarið á „Skjárinn sýnir“
-Upphaf svarsins ætti að lýsa mikilvægasta og mest áberandi efninu á skjánum. Hér eru nokkur dæmi um hvað mikilvægasta og mest áberandi efnið til að lýsa gæti verið
-* Í spjallforriti: sendandinn og texti nýjustu skilaboðanna
-* Í samfélagsmiðlaforriti: fyrsta færslan, þar með talið hver birti hana, textinn og lýsing á myndinni
-* Í fréttaforriti: heiti greinarinnar og lýsing á aðalmyndinni
-* Í verslunarforriti: lýsing á vörunni sem er sýnd og verðið
-* Í dagatalsforriti: næsti viðburður og fjöldi annarra viðburða sem eru sýndir þar á eftir
-* Í skilaboðalista: nafn og forskoðun á fyrstu skilaboðunum og svo aðeins nöfn nokkurra næstu skilaboðanna á listanum, og hve mörg skilaboð eru ólesin
-
-Eftir það getur svarið lýst staðsetningu og tilgangi flettistika og áberandi hnappa.
-Ekki nefna innihald stöðustikunnar efst (t.d. tími, netkerfisstaða, rafhlaða).
-Ekki nota neitt Markdown í svarinu.</string>
   <string name="title_gemini_opt_in_dialog">Fá ítarlegar lýsingar á myndum?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Fá lýsingar á myndum?</string>
   <string name="title_gemini_result_dialog">Greindist: mynd</string>
   <string name="title_gemini_result_bottom_sheet">Lýsing myndar</string>
   <string name="title_gemini_screen_overview_result_dialog">Lýsing á skjá</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Samantekt</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Aðgerðir</string>
   <string name="positive_button_gemini_opt_in_dialog">Kveikja á</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ég samþykki</string>
   <string name="negative_button_gemini_opt_in_dialog">Nei takk</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Opna stillingar</string>
-  <string name="positive_button_gemini_download_dialog">Sækja og kveikja</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Texti, „%1$s“.</string>
   <string name="detected_icon_label">Tákn, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ Ekki nota neitt Markdown í svarinu.</string>
   <string name="screen_overview_no_result">Ekki er hægt að taka saman skjáinn</string>
   <string name="image_caption_no_result">Ekki er hægt að lýsa mynd</string>
   <string name="image_caption_with_hide_screen">Lýsingar á myndum eru ekki í boði þegar skjárinn er falinn. Gerðu skjáinn sýnilegan og reyndu aftur.</string>
-  <string name="feedback_button_state_set">valið</string>
-  <string name="feedback_button_state_unset">ekki valið</string>
   <string name="action_text_like_button">Merkja sem rétt svar</string>
   <string name="action_text_dislike_button">Merkja sem rangt svar</string>
   <string name="action_text_clear_like_button">Hreinsa rétt svar</string>
@@ -1349,18 +1209,13 @@ Ekki nota neitt Markdown í svarinu.</string>
   <string name="downloading_all_image_captioning_hint">Sækir sjálfvirkar lýsingar á myndum og táknum</string>
   <string name="download_all_image_captioning_successful_hint">Sjálfvirkar lýsingar á myndum og táknum sóttar</string>
   <string name="download_all_image_captioning_failed_hint">Ekki er hægt að sækja. Reyndu aftur síðar.</string>
-  <string name="download_complete_notification_title">Niðurhali lokið</string>
-  <string name="download_complete_notification_content">Þú heyrir núna sjálfvirka lýsingu á myndum og táknum með TalkBack</string>
-  <string name="download_complete_notification_action">Stillingar</string>
   <string name="download_storage_error_hint">Geymslurými er fullt. Til að sækja skaltu losa um %1$d MB í Stillingar &gt; Geymslurými.</string>
   <string name="download_network_error_hint">Ekki er hægt að sækja. Athugaðu tenginguna og reyndu aftur.</string>
   <string name="switch_icon_detection_dialog_title">Sjálfvirkar lýsingar á táknum</string>
   <string name="switch_icon_detection_dialog_message">Hlustaðu á lýsingar þegar þú fókusar á tákn</string>
   <string name="switch_image_description_dialog_message">Hlustaðu á lýsingar þegar þú setur mynd í fókus. Sum forrit kunna ekki að styðja við þetta.</string>
-  <string name="switch_text_recognition_dialog_title">Lýsa texta á myndum sjálfkrafa</string>
   <string name="switch_text_recognition_dialog_message">Heyra lýsingar þegar fókusað er á mynd sem inniheldur texta</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Sótt</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Þú getur áfram fengið lýsingar á valinni mynd frá valmynd TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Í lagi</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Eyða niðurhali</string>
   <string name="delete_icon_detection_dialog_title">Eyða sjálfvirkum lýsingum á táknum?</string>
@@ -1376,11 +1231,6 @@ Ekki nota neitt Markdown í svarinu.</string>
   <string name="gemini_enable_dialog_title">Nota Gemini í TalkBack</string>
   <string name="gemini_disable_dialog_message">Skjáskilningur með Gemini</string>
   <string name="disable_gemini_dialog_subtext">Kveiktu á þessu til að virkja skjáskilning með Gemini</string>
-  <string name="ai_services_update_dialog_title">Uppfærðu %1$s-forritið til að lýsa myndum</string>
-  <string name="ai_services_update_dialog_message">Sæktu nýjustu útgáfuna af %1$s í Google Play til að heyra lýsingar á myndum.\n\nÞegar þú hefur sótt nýjustu útgáfuna skaltu opna stillingar TalkBack og kveikja aftur á sjálfvirkum lýsingum á myndum.</string>
-  <string name="ai_services_update_dialog_button_text">Opna Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Eitthvað fór úrskeiðis. Reyndu aftur.</string>
   <string name="gemini_block_message">Ekki tókst að vinna úr þessari mynd</string>
   <string name="gemini_network_error">Engin nettenging til staðar. Athugaðu WiFi-tenginguna eða farsímakerfið og reyndu aftur.</string>
@@ -1396,13 +1246,8 @@ Ekki nota neitt Markdown í svarinu.</string>
   <string name="image_qna_typing_button_text">Sláðu inn spurningu til Gemini</string>
   <string name="image_qna_send_button_text">Spyrja</string>
   <string name="image_qna_speak_question_description">Segja spurningu</string>
-  <string name="overviews_summary_intro">Samantekt á þessum skjá forritsins: %1$s</string>
   <string name="overviews_node_not_found">Því miður get ég ekki lengur fundið þennan hluta skjásins.</string>
-  <string name="overviews_images_in_app">Helstu myndir sem fundust</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Aðgerðir í forriti</string>
-  <string name="overviews_actions_in_app_description">Hér eru helstu aðgerðirnar sem þú getur framkvæmt á þessari síðu forritsins:</string>
-  <string name="overviews_parent_type">Aðgerðir í forriti</string>
   <string name="text_replaced_feedback">Texta skipt út</string>
   <string name="switch_gesture_set">Skipta um bendingasett</string>
   <string name="switch_gesture_set_to">Skipta yfir í bendingasettið %1$d</string>
@@ -1453,5 +1298,4 @@ Ekki nota neitt Markdown í svarinu.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Loka</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Til að heyra tilkynningar þegar slökkt er á skjánum skaltu kveikja á „Lesa tilkynningar ef slökkt er á skjánum“ í nákvæmnistillingum TalkBack</string>
 </resources>
