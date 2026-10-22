@@ -190,6 +190,22 @@
         android:key="@string/pref_shortcut_edge_right_bottom_long_left_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_edge_right_bottom_long_left"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_edge_first_click_mm_default"
+        android:dialogTitle="@string/title_pref_edge_first_click_mm"
+        android:entries="@array/pref_edge_first_click_mm_entries"
+        android:entryValues="@array/pref_edge_first_click_mm_values"
+        android:key="@string/pref_edge_first_click_mm_key"
+        android:summary="%s"
+        android:title="@string/title_pref_edge_first_click_mm" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_edge_second_click_mm_default"
+        android:dialogTitle="@string/title_pref_edge_second_click_mm"
+        android:entries="@array/pref_edge_second_click_mm_entries"
+        android:entryValues="@array/pref_edge_second_click_mm_values"
+        android:key="@string/pref_edge_second_click_mm_key"
+        android:summary="%s"
+        android:title="@string/title_pref_edge_second_click_mm" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->

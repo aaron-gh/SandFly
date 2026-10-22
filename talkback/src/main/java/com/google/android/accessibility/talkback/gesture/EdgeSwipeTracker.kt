@@ -306,6 +306,12 @@ class EdgeSwipeTracker(
     }
   }
 
+  /** Sets how far a slide goes in to its [first] stage, and on from there to its [second]. */
+  fun setStageDistances(first: Float, second: Float) {
+    stageDistancesPx[0] = first
+    stageDistancesPx[1] = first + second
+  }
+
   private fun updateStage(inward: Float) {
     var reached = 0
     for (s in stages) {

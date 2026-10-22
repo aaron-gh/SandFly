@@ -1152,6 +1152,39 @@
     </string-array>
     <string name="pref_rotor_step_degrees_default" translatable="false">30</string>
 
+    <!-- How far an edge gesture slides in to its first click, in millimeters. -->
+    <string name="pref_edge_first_click_mm_key" translatable="false">pref_edge_first_click_mm</string>
+    <string name="pref_edge_first_click_mm_default" translatable="false">10</string>
+    <string-array name="pref_edge_first_click_mm_entries">
+      <item>@string/value_distance_5mm</item>
+      <item>@string/value_distance_10mm</item>
+      <item>@string/value_distance_15mm</item>
+      <item>@string/value_distance_20mm</item>
+    </string-array>
+    <string-array name="pref_edge_first_click_mm_values">
+      <item>5</item>
+      <item>10</item>
+      <item>15</item>
+      <item>20</item>
+    </string-array>
+    <!-- How far an edge gesture slides on from its first click to its second, in millimeters. -->
+    <string name="pref_edge_second_click_mm_key" translatable="false">pref_edge_second_click_mm</string>
+    <string name="pref_edge_second_click_mm_default" translatable="false">40</string>
+    <string-array name="pref_edge_second_click_mm_entries">
+      <item>@string/value_distance_10mm</item>
+      <item>@string/value_distance_20mm</item>
+      <item>@string/value_distance_30mm</item>
+      <item>@string/value_distance_40mm</item>
+      <item>@string/value_distance_50mm</item>
+    </string-array>
+    <string-array name="pref_edge_second_click_mm_values">
+      <item>10</item>
+      <item>20</item>
+      <item>30</item>
+      <item>40</item>
+      <item>50</item>
+    </string-array>
+
   <!-- Touch explore time entries -->
   <string-array name="pref_touch_explore_time_out_entries">
     <item>@string/value_touch_explore_time_out_150ms</item>
