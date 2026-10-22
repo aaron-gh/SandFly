@@ -53,16 +53,55 @@ object TelegramReplyQuote {
   fun isReplyQuote(node: AccessibilityNodeInfoCompat): Boolean =
     looksLikeQuote(node) && node.parent?.let { isMessage(it) } == true
 
-  /** The reply quote among [message]'s children, or null when it has none. */
+  /**
+   * The reply quote among [message]'s children, or null when it has none. Telegram cuts the
+   * quoted text to fit the bubble; when the quoted message is in the chat list too, the whole of
+   * its text is used.
+   */
   @JvmStatic
   fun quoteOf(message: AccessibilityNodeInfoCompat): Quote? {
     if (!isTelegram(message.packageName) || !isMessage(message)) return null
     for (i in 0 until minOf(message.childCount, MAX_CHILDREN)) {
       val child = message.getChild(i) ?: continue
-      if (looksLikeQuote(child)) return parse(child.contentDescription)
+      if (looksLikeQuote(child)) return parse(child.contentDescription)?.let { whole(message, it) }
     }
     return null
   }
+
+  /** [quote] with the whole quoted text, when it was cut and the quoted message is loaded. */
+  private fun whole(message: AccessibilityNodeInfoCompat, quote: Quote): Quote {
+    val shown = quote.text.toString().trimEnd()
+    if (!shown.endsWith(ELLIPSIS)) return quote
+    val start = normalize(shown.dropLast(1)).trim()
+    if (start.length < MIN_START) return quote
+    val list = message.parent ?: return quote
+    val texts =
+      (0 until minOf(list.childCount, MAX_MESSAGES)).mapNotNull { i ->
+        list.getChild(i)?.takeIf { it != message && isMessage(it) }?.text?.toString()
+      }
+    // The quoted sender's own message first, in case another message starts the same way.
+    val found =
+      texts.firstNotNullOfOrNull { if (it.startsWith(quote.name)) fullText(it, start) else null }
+        ?: texts.firstNotNullOfOrNull { fullText(it, start) }
+    return if (found != null && found.length > start.length) Quote(quote.name, found) else quote
+  }
+
+  /**
+   * The text of a message, [messageText], from where it starts as [start], without the time it
+   * was sent or received, which is its last line. Null when it doesn't contain [start].
+   */
+  @JvmStatic
+  fun fullText(messageText: String, start: String): String? {
+    val lines = messageText.split('\n')
+    if (lines.size < 2) return null
+    val body = normalize(lines.dropLast(1).joinToString(" "))
+    val at = body.indexOf(start)
+    if (at < 0) return null
+    return body.substring(at).trim()
+  }
+
+  /** Telegram puts the quoted text on one line. */
+  private fun normalize(text: String): String = text.replace(SPACES, " ")
 
   /**
    * [description] of a message with [quote] at the end, after the time it was sent or received.
@@ -102,4 +141,9 @@ object TelegramReplyQuote {
       !node.text.isNullOrEmpty()
 
   private const val MAX_CHILDREN = 50
+  private const val MAX_MESSAGES = 100
+  private val SPACES = Regex("\\s+")
+  private const val ELLIPSIS = '…'
+  /** The shortest cut text looked for, so that a few words don't match another message. */
+  private const val MIN_START = 12
 }
