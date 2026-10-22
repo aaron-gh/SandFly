@@ -25,7 +25,7 @@ There are stable releases and development builds:
 *   Stable releases are on the [releases](https://github.com/aaron-gh/SandFly/releases) page, named by version, such as SandFly 0.1.0.
 *   Development builds are on the [dev release](https://github.com/aaron-gh/SandFly/releases/tag/dev) page, which each change replaces. Turn on **Development builds** in SandFly settings to get them. SandFly then checks about once an hour, and offers whichever is newer, so a development build is offered the next stable release.
 
-`sandfly.apk` and `sandfly-wear.apk` each update to builds of their own kind.
+`sandfly.apk` and `sandfly-wear.apk` each update to builds of their own kind. On a watch, the update downloads over Wi-Fi when it is available, with its progress in a notification.
 
 ## Moving from Backtalk Aaron
 
@@ -41,7 +41,7 @@ If you use an accessibility shortcut, grant SandFly permission to change secure 
 
 ## Differences from TalkBack
 
-SandFly speaks sooner after each swipe and screen change, and can play its sounds and speech through a low-latency audio path. It adds a two-finger rotor, edge gestures and a two-finger scrub as in VoiceOver, a circle menu, Pause SandFly, direct touch for audio games, sound themes with control sounds in 3D, a vibration for every sound, a status gesture, and braille keyboard dots that follow how you hold the device. It also changes some defaults and fixes problems in TalkBack. For the full list, see [Differences from TalkBack](differences.md).
+SandFly speaks sooner after each swipe and screen change, and can play its sounds and speech through a low-latency audio path. It adds a two-finger rotor, edge gestures and a two-finger scrub as in VoiceOver, a circle menu, Pause SandFly, direct touch for audio games, sound themes with control sounds in 3D, a vibration for every sound, a status gesture, voice profiles, settings for how notifications are read, its own notification list and quick settings panel, image and screen descriptions from several AI services or a model on the phone, and braille keyboard dots that follow how you hold the device. It also changes some defaults and fixes problems in TalkBack. For the full list, see [Differences from TalkBack](differences.md).
 
 Scripts written in Lua can change how SandFly works in one app or in every app. See [Writing SandFly scripts](docs/scripting.md). Other apps can speak in the user's SandFly voice, through the [speech API](docs/speech-api.md), and give SandFly a braille display it can't reach on its own, such as a notetaker's, through the [braille display API](docs/braille-display-api.md).
 
@@ -56,19 +56,19 @@ With [Shizuku](https://shizuku.rikka.app) installed and running, SandFly grants 
 
 ## Image descriptions
 
-**Describe image** and **Describe screen** can use Gemini through Google's API with your own key, or a model that runs on the phone.
+**Describe image** and **Describe screen** can use an AI service with your own API key, or a model that runs on the phone. Google's source release does not include working Gemini support, so without one of these, **Describe image** only reads text in images, and **Describe screen** does not work. SandFly adds its own support for Describe screen, including follow-up questions.
 
-### Gemini
+### AI services
 
-Google's source release does not include the Gemini settings, so **Describe image** only reads text in images, and **Describe screen** does not work, unless you add your own Gemini API key. SandFly adds its own support for Describe screen, including follow-up questions. To add a key:
+1.  Open SandFly settings, then **Automatic descriptions**, and turn on **Detailed image descriptions**.
+2.  Under **AI services**, open the settings of a service: Gemini, Claude, OpenAI (ChatGPT), Mistral, Groq, OpenRouter, Ollama Cloud, or **Other service** for another service with an OpenAI-compatible API, whose address you enter.
+3.  Choose **Get a key**, where the service has one, to open its website and create a key. Paste the key into the API key field, and choose **Save**.
+4.  Choose a model from the list that the service gives for your key, or enter its name.
+5.  Turn on the service's switch, such as **Use Gemini**. **AI service** in **Automatic descriptions** shows the service in use, and switches between services that are set up. **None** turns AI descriptions off.
 
-1.  Open SandFly settings, then **Automatic descriptions**, then **Gemini API key**.
-2.  Choose **Get a key** to open [Google AI Studio](https://aistudio.google.com/apikey) and create a key.
-3.  Paste the key into the field, and choose **Save**. It works at once.
+A service can't be used until it has an address, a key and a model. When you clear the key of the service in use, SandFly goes back to Gemini if it is set up, or to **None**.
 
-To remove the key, clear the field and save.
-
-Images and screenshots that you describe are sent to Google. On the free tier, Google can use this data to improve its products.
+Images and screenshots that you describe are sent to the service. On Gemini's free tier, Google can use this data to improve its products. With Gemini, when the chosen model is busy or takes more than 15 seconds, SandFly asks Gemini Flash-Lite instead.
 
 ### On-device AI
 
@@ -79,9 +79,13 @@ If you do not want to use an API key, or you have hit the free tier limit, SandF
 3.  Choose **Download model**. It downloads once from [Hugging Face](https://huggingface.co/litert-community) and carries on where it stopped if the connection drops. A notification shows the progress. SandFly checks the file against a known SHA-256 hash and deletes it if it does not match. Or choose **Use a model file from storage** to use a `.litertlm` file that you downloaded yourself, such as `gemma-4-E2B-it.litertlm` from `litert-community/gemma-4-E2B-it-litert-lm`. SandFly works out which model it is.
 4.  Turn on **Use on-device AI**.
 
-You still need to turn on Gemini support in the Gemini settings, which switches on Describe image and Describe screen. After that, they use the model on your phone. Turn **Use on-device AI** off to go back to the Gemini API.
+**Detailed image descriptions** in **Automatic descriptions** must also be on. While **Use on-device AI** is on, Describe image and Describe screen use the model on your phone instead of the AI service. Turn it off to go back to the AI service.
 
 Answers take several seconds and use battery, more than the cloud on a mid-range phone. The model loads on the first request and unloads after two idle minutes to free memory. The model runs in its own process, so if the phone runs out of memory, Android stops the model and not SandFly, and SandFly says so. Before it loads a model, SandFly checks that the phone has at least as much free memory as the model's size, and if not, it says there is not enough free memory and does not load it. To test with a model that is too big for your phone, turn on **Ignore on-device AI memory limits** in **Advanced settings** > **Developer settings**. It lists every model, lets you choose any downloaded one, and skips the free memory check. If answers fail or the phone slows down, try the other model, or turn **Use the GPU** on or off. On-device AI needs a 64-bit ARM phone and adds about 22 MB to the app.
+
+## Languages
+
+SandFly's own strings are translated into German, Afrikaans, Amharic, Arabic, Assamese, Azerbaijani, Belarusian, Bulgarian, Bangla, Bosnian, Catalan, Czech, Danish, Greek, English (United Kingdom, Australia and India), Spanish (Spain and Latin America), Estonian, Basque, Persian, Finnish, Filipino, French (France and Canada), Galician, Hindi, Vietnamese and Simplified Chinese. Strings that are not translated yet, such as most of the notification settings, show in English. Strings from TalkBack keep Google's translations.
 
 ## Android TV
 
