@@ -17,13 +17,137 @@
 package com.google.android.accessibility.talkback.selector
 
 import android.graphics.Rect
+import android.os.Handler
+import android.os.Looper
+import android.text.TextUtils
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
+import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget
+import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
+import com.google.android.accessibility.utils.Performance.EventId
+import com.google.android.accessibility.utils.Role
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollTimeout
+import com.google.android.accessibility.utils.output.ScrollActionRecord
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
 import com.google.android.accessibility.utils.traversal.TraversalStrategy
 import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils
+import com.google.android.accessibility.utils.monitor.InputModeTracker.INPUT_MODE_TOUCH
+
+/**
+ * Moves accessibility focus to the item below or above the focused one for the Vertical navigation
+ * reading control. In a list, it stays in the list and scrolls it a page when no item below or
+ * above is on screen.
+ */
+class VerticalNavigator(
+  private val pipeline: Pipeline.FeedbackReturner,
+  private val focusMonitor: AccessibilityFocusMonitor,
+) {
+  private val handler = Handler(Looper.getMainLooper())
+
+  /** Moves down, or up. Plays the end sound when there is no item to move to. */
+  fun move(eventId: EventId?, forward: Boolean) {
+    handler.removeCallbacksAndMessages(null)
+    val focus = focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false)
+    if (focus == null) {
+      pipeline.returnFeedback(eventId, Feedback.focusTop(INPUT_MODE_TOUCH))
+      return
+    }
+    val list = VerticalNavigation.listOf(focus)
+    if (list != null) {
+      VerticalNavigation.target(focus, forward, list)?.let {
+        focus(eventId, it)
+        return
+      }
+      if (scroll(eventId, list, forward)) {
+        val content = contentOf(focus)
+        handler.postDelayed({ moveAfterScroll(eventId, focus, content, list, forward) }, SCROLL_WAIT_MS)
+        return
+      }
+    }
+    // At the end of the list, or outside one: the next item below or above on screen.
+    val target = VerticalNavigation.target(focus, forward)
+    if (target != null) {
+      focus(eventId, target)
+    } else {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete))
+    }
+  }
+
+  /** Stops a move waiting for a list to scroll, such as when the user touches the screen. */
+  fun cancel() {
+    handler.removeCallbacksAndMessages(null)
+  }
+
+  private fun scroll(eventId: EventId?, list: AccessibilityNodeInfoCompat, forward: Boolean): Boolean {
+    val action =
+      if (forward) AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
+      else AccessibilityNodeInfoCompat.ACTION_SCROLL_BACKWARD
+    return AccessibilityNodeInfoUtils.supportsAction(list, action) &&
+      pipeline.returnFeedback(
+        eventId,
+        // SandFly's own scroll, so focus doesn't follow it as it would the user's scrolling.
+        Feedback.scroll(
+          list,
+          ScrollActionRecord.ACTION_AUTO_SCROLL,
+          action,
+          SCROLL_SOURCE,
+          ScrollTimeout.SCROLL_TIMEOUT_SHORT,
+          /* autoScrollAttempt= */ 0,
+        ),
+      )
+  }
+
+  private fun moveAfterScroll(
+    eventId: EventId?,
+    focus: AccessibilityNodeInfoCompat,
+    content: String,
+    list: AccessibilityNodeInfoCompat,
+    forward: Boolean,
+  ) {
+    if (!list.refresh()) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete))
+      return
+    }
+    // Lists reuse the views of items scrolled away for new ones, so the focused node may now show
+    // another item. If it still shows the focused one, the item below or above it is the target;
+    // otherwise, the list's first or last row, which follows the focused item.
+    val stillShown = focus.refresh() && focus.isVisibleToUser && contentOf(focus) == content
+    val target =
+      if (stillShown) VerticalNavigation.target(focus, forward, list)
+      else VerticalNavigation.edgeRow(list, first = forward)
+    if (target != null) {
+      focus(eventId, target)
+    } else {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete))
+    }
+  }
+
+  private fun focus(eventId: EventId?, target: AccessibilityNodeInfoCompat) {
+    pipeline.returnFeedback(
+      eventId,
+      Feedback.focus(
+        target,
+        FocusActionInfo.builder().setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION).build(),
+      ),
+    )
+  }
+
+  private fun contentOf(node: AccessibilityNodeInfoCompat): String =
+    TextUtils.concat(node.text ?: "", "\n", node.contentDescription ?: "").toString()
+
+  private companion object {
+    const val SCROLL_SOURCE = "VERTICAL_NAVIGATION"
+
+    /** The time a list takes to scroll a page and lay it out. */
+    const val SCROLL_WAIT_MS = 300L
+  }
+}
 
 /**
  * Finds the item below or above the focused one for the Vertical navigation reading control, which
@@ -34,22 +158,19 @@ object VerticalNavigation {
 
   /**
    * Returns the first item after [focus], in reading order, whose middle is below [focus], or the
-   * first item of the row above [focus], or null when there is none on screen.
+   * first item of the row above [focus], or null when there is none on screen. With [within], only
+   * items in it are found.
    */
   @JvmStatic
-  fun target(focus: AccessibilityNodeInfoCompat, forward: Boolean): AccessibilityNodeInfoCompat? {
-    val root = AccessibilityNodeInfoUtils.getRoot(focus) ?: return null
-    val strategy =
-      OrderedTraversalStrategy(
-        root,
-        /* includeChildrenOfNodesWithWebActions= */ true,
-        /* makeFabFirst= */ false,
-      )
-    val focusable: Filter<AccessibilityNodeInfoCompat>? =
-      NavigationTarget.createNodeFilter(
-        NavigationTarget.TARGET_DEFAULT,
-        strategy.speakingNodesCache,
-      )
+  @JvmOverloads
+  fun target(
+    focus: AccessibilityNodeInfoCompat,
+    forward: Boolean,
+    within: AccessibilityNodeInfoCompat? = null,
+  ): AccessibilityNodeInfoCompat? {
+    val root = within ?: AccessibilityNodeInfoUtils.getRoot(focus) ?: return null
+    val strategy = strategy(root)
+    val focusable = focusable(strategy)
     val from = bounds(focus)
     val direction =
       if (forward) TraversalStrategy.SEARCH_FOCUS_FORWARD
@@ -65,6 +186,61 @@ object VerticalNavigation {
       return target
     }
     // Going up lands on the start of the row, as going down does.
+    return rowStart(strategy, focusable, target)
+  }
+
+  /** Returns the start of the first or last row of [list] on screen. */
+  @JvmStatic
+  fun edgeRow(list: AccessibilityNodeInfoCompat, first: Boolean): AccessibilityNodeInfoCompat? {
+    val strategy = strategy(list)
+    val focusable = focusable(strategy)
+    val direction =
+      if (first) TraversalStrategy.SEARCH_FOCUS_FORWARD
+      else TraversalStrategy.SEARCH_FOCUS_BACKWARD
+    val edge =
+      TraversalStrategyUtils.findFirstFocusInNodeTree(
+        strategy,
+        list,
+        direction,
+        filter { focusable?.accept(it) == true },
+      ) ?: return null
+    return if (first) edge else rowStart(strategy, focusable, edge)
+  }
+
+  /**
+   * Returns the nearest ancestor of [node] that scrolls up and down, or null. Rows that scroll
+   * sideways, such as a carousel in a list, and pagers are passed over.
+   */
+  @JvmStatic
+  fun listOf(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
+    AccessibilityNodeInfoUtils.getMatchingAncestor(node, filter { scrollsVertically(it) })
+
+  private fun scrollsVertically(node: AccessibilityNodeInfoCompat): Boolean {
+    if (!node.isVisibleToUser || !AccessibilityNodeInfoUtils.isScrollable(node)) return false
+    when (Role.getRole(node)) {
+      Role.ROLE_SEEK_CONTROL,
+      Role.ROLE_HORIZONTAL_SCROLL_VIEW,
+      Role.ROLE_PAGER -> return false
+    }
+    val actions = node.actionList
+    val vertical =
+      actions.contains(AccessibilityActionCompat.ACTION_SCROLL_DOWN) ||
+        actions.contains(AccessibilityActionCompat.ACTION_SCROLL_UP)
+    val sideways =
+      actions.contains(AccessibilityActionCompat.ACTION_SCROLL_LEFT) ||
+        actions.contains(AccessibilityActionCompat.ACTION_SCROLL_RIGHT)
+    if (vertical) return true
+    if (sideways) return false
+    // A list of one row, such as a horizontal RecyclerView.
+    val info = node.collectionInfo
+    return info == null || info.rowCount != 1 || info.columnCount <= 1
+  }
+
+  private fun rowStart(
+    strategy: OrderedTraversalStrategy,
+    focusable: Filter<AccessibilityNodeInfoCompat>?,
+    target: AccessibilityNodeInfoCompat,
+  ): AccessibilityNodeInfoCompat {
     val row = bounds(target)
     var start: AccessibilityNodeInfoCompat = target
     while (true) {
@@ -80,6 +256,16 @@ object VerticalNavigation {
     }
     return start
   }
+
+  private fun strategy(root: AccessibilityNodeInfoCompat) =
+    OrderedTraversalStrategy(
+      root,
+      /* includeChildrenOfNodesWithWebActions= */ true,
+      /* makeFabFirst= */ false,
+    )
+
+  private fun focusable(strategy: OrderedTraversalStrategy): Filter<AccessibilityNodeInfoCompat>? =
+    NavigationTarget.createNodeFilter(NavigationTarget.TARGET_DEFAULT, strategy.speakingNodesCache)
 
   /**
    * Whether an item with [bounds] is below [from], going [forward], or above it: its middle is past
