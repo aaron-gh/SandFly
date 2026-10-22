@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.notifications
 
 import android.app.Notification
+import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -51,6 +52,7 @@ import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.accessibility.utils.output.VoiceProfiles
+import com.google.android.accessibility.utils.SettingsUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
@@ -83,6 +85,11 @@ object NotificationReader {
   private val DND_TOKEN = Any()
   private const val DND_CHECK_MS = 200L
   private const val DND_CHECKS = 5
+  /** How long the notification listener waits for a notification's accessibility event. */
+  private const val EVENT_WAIT_MS = 1_500L
+  /** How long a notification's accessibility event is remembered, and how many. */
+  private const val EVENT_MEMORY_MS = 10_000L
+  private const val MAX_RECENT_EVENTS = 50
   /** How long after a touch ends the notifications that arrived during it are read. */
   private const val AFTER_TOUCH_MS = 500L
   /**
@@ -252,13 +259,28 @@ object NotificationReader {
   @JvmStatic
   @MainThread
   fun handle(event: AccessibilityEvent, notification: Notification, touching: Boolean, dnd: Boolean): Boolean {
+    val packageName = event.packageName?.toString() ?: return false
+    noteEvent(packageName, notification)
+    return handle(packageName, event, notification, touching, dnd)
+  }
+
+  /**
+   * Handles a notification of [packageName], from its accessibility [event], or from the
+   * notification listener when Android sent no event for it.
+   */
+  private fun handle(
+    packageName: String,
+    event: AccessibilityEvent?,
+    notification: Notification,
+    touching: Boolean,
+    dnd: Boolean,
+  ): Boolean {
     val context = context ?: return false
     if (stateReader == null) return false
     if (notification.category == Notification.CATEGORY_CALL) return false
-    val packageName = event.packageName?.toString() ?: return false
     val touchBehavior = settings(context).touch
     if (touching && touchBehavior == TouchBehavior.SKIP) {
-      noteUnread(event, notification, Outcome.TOUCHING)
+      noteUnread(packageName, notification, Outcome.TOUCHING)
       return true
     }
     // Read right away, or held until the touch ends.
@@ -267,22 +289,74 @@ object NotificationReader {
       when (settings(context).dnd) {
         DndMode.ALL -> {}
         DndMode.NONE -> {
-          noteUnread(event, notification, Outcome.DO_NOT_DISTURB)
+          noteUnread(packageName, notification, Outcome.DO_NOT_DISTURB)
           return true
         }
         DndMode.ALLOWED -> {
           // The event is used after it is handled.
-          @Suppress("DEPRECATION") val copy = AccessibilityEvent.obtain(event)
+          @Suppress("DEPRECATION") val copy = event?.let { AccessibilityEvent.obtain(it) }
           whenDndDecided(packageName, notification, 1) { allowed ->
-            if (allowed) read(copy, notification, hold)
-            else noteUnread(copy, notification, Outcome.DO_NOT_DISTURB)
+            if (allowed) read(packageName, copy, notification, hold)
+            else noteUnread(packageName, notification, Outcome.DO_NOT_DISTURB)
           }
           return true
         }
       }
     }
-    read(event, notification, hold)
+    read(packageName, event, notification, hold)
     return true
+  }
+
+  /** Notifications that came as accessibility events lately, as [eventKey]s, and when. */
+  private val recentEvents = ArrayDeque<Pair<String, Long>>()
+
+  private fun eventKey(packageName: String, notification: Notification): String =
+    "$packageName|${notification.`when`}|${notification.extras?.getCharSequence(Notification.EXTRA_TITLE)}"
+
+  private fun noteEvent(packageName: String, notification: Notification) {
+    val now = SystemClock.uptimeMillis()
+    while (recentEvents.isNotEmpty() && now - recentEvents.first().second > EVENT_MEMORY_MS) {
+      recentEvents.removeFirst()
+    }
+    while (recentEvents.size >= MAX_RECENT_EVENTS) recentEvents.removeFirst()
+    recentEvents.addLast(eventKey(packageName, notification) to now)
+  }
+
+  /**
+   * A new notification, or one whose text changed, that the notification listener received.
+   * Android sends screen readers no accessibility event for a notification that Do Not Disturb
+   * holds back, or for an update posted to alert only once, such as a camera app's latest motion
+   * alert replacing the one before. If no event comes for it within [EVENT_WAIT_MS], it is handled
+   * as an event would be. Progress and ongoing notifications are left out, as their text changes
+   * as they run. [importance] is its channel's.
+   */
+  @JvmStatic
+  @MainThread
+  fun onListenerPosted(packageName: String, notification: Notification, importance: Int) {
+    val context = context ?: return
+    val flags = notification.flags
+    if (packageName == context.packageName ||
+      notification.category == Notification.CATEGORY_CALL ||
+      notification.category == Notification.CATEGORY_PROGRESS ||
+      (notification.extras?.getInt(Notification.EXTRA_PROGRESS_MAX, 0) ?: 0) > 0 ||
+      flags and (Notification.FLAG_ONGOING_EVENT or Notification.FLAG_FOREGROUND_SERVICE) != 0 ||
+      flags and Notification.FLAG_GROUP_SUMMARY != 0 ||
+      importance < NotificationManager.IMPORTANCE_LOW ||
+      !settings(context).enabled
+    ) {
+      return
+    }
+    val key = eventKey(packageName, notification)
+    handler.postDelayed(
+      {
+        if (recentEvents.none { it.first == key }) {
+          LogUtils.d(TAG, "No accessibility event for a notification of %s; handling it", packageName)
+          val dnd = SettingsUtils.getDoNotDisturbState(context) > 0
+          handle(packageName, null, notification, touching = false, dnd = dnd)
+        }
+      },
+      EVENT_WAIT_MS,
+    )
   }
 
   /** Whether a call is announced while Do Not Disturb is on. */
@@ -336,10 +410,14 @@ object NotificationReader {
     held.forEach { schedule(it) }
   }
 
-  private fun read(event: AccessibilityEvent, notification: Notification, holdForTouch: Boolean) {
+  private fun read(
+    packageName: String,
+    event: AccessibilityEvent?,
+    notification: Notification,
+    holdForTouch: Boolean,
+  ) {
     val context = context ?: return
     val stateReader = stateReader ?: return
-    val packageName = event.packageName?.toString() ?: return
     val settings = settings(context)
     val info = NotificationInfo.from(packageName, appName(context, packageName), notification)
     val categoryName =
@@ -386,11 +464,31 @@ object NotificationReader {
   @JvmStatic
   @MainThread
   fun noteUnread(event: AccessibilityEvent, notification: Notification, outcome: Outcome) {
+    val packageName = event.packageName?.toString() ?: return
+    noteUnread(packageName, notification, outcome)
+  }
+
+  private fun noteUnread(packageName: String, notification: Notification, outcome: Outcome) {
     val context = context ?: return
     if (notification.category == Notification.CATEGORY_CALL || !settings(context).history) return
-    val packageName = event.packageName?.toString() ?: return
     val info = NotificationInfo.from(packageName, appName(context, packageName), notification)
     NotificationHistory.add(NotificationHistory.Entry(info, System.currentTimeMillis(), outcome, info.content, emptyList()))
+  }
+
+  /**
+   * Records in the history an incoming call, which is announced as calls always are, whatever the
+   * notification settings say.
+   */
+  @JvmStatic
+  @MainThread
+  fun noteCall(event: AccessibilityEvent, notification: Notification) {
+    val context = context ?: return
+    if (!settings(context).history) return
+    val packageName = event.packageName?.toString() ?: return
+    val info = NotificationInfo.from(packageName, appName(context, packageName), notification)
+    NotificationHistory.add(
+      NotificationHistory.Entry(info, System.currentTimeMillis(), Outcome.CALL, info.content, emptyList())
+    )
   }
 
   /** Reads every notification in the shade. Returns false when SandFly isn't running. */

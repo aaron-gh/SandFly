@@ -235,6 +235,9 @@ public class EventFilter {
         LogUtils.d(TAG, "Do not announce call: DND is enabled");
         return;
       }
+      if (isCall) {
+        NotificationReader.noteCall(event, notification);
+      }
       // Incoming calls are still announced, so that the user hears who is calling.
       if ((notification != null) && !isCall && !globalVariables.getSpeakNotifications()) {
         LogUtils.d(TAG, "Do not announce notification: disabled in settings");

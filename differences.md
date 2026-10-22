@@ -212,6 +212,10 @@ On Samsung watches, SandFly reads the app and title, then the message content, t
 
 To stop SandFly from reading new notifications when they arrive, turn off **Verbosity** > **Speak notifications**. SandFly still reads incoming calls, and you can still read notifications in the notification shade. The setting is on by default.
 
+### Notifications that Android doesn't announce
+
+Android tells screen readers about a new notification only when it alerts. A notification that Do Not Disturb holds back, or an update that an app posts without alerting again, such as a doorbell app replacing its last motion alert, never reaches TalkBack. When SandFly has notification access, it also receives these from its notification listener, and reads them as its notification settings say, so **Do Not Disturb** in the notification settings applies to them too. Progress and ongoing notifications are left out. Incoming calls are listed in the notification history as announced.
+
 ### Toasts in Do Not Disturb
 
 While Do Not Disturb was on, TalkBack didn't speak toasts, the short messages that apps show at the bottom of the screen. SandFly speaks toasts, and stays silent only for notifications.
