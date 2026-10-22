@@ -127,10 +127,28 @@ object ShizukuGrants {
       callbacks.forEach { it(grantResult == PackageManager.PERMISSION_GRANTED) }
     }
 
-  private val binderReceived = Shizuku.OnBinderReceivedListener { onShizukuReady() }
+  private val binderReceived = Shizuku.OnBinderReceivedListener {
+    failPendingRequests()
+    onShizukuReady()
+  }
+
+  private val binderDead = Shizuku.OnBinderDeadListener { failPendingRequests() }
 
   init {
     Shizuku.addRequestPermissionResultListener(permissionListener)
+    Shizuku.addBinderDeadListener(binderDead)
+  }
+
+  /**
+   * Answers no to the requests waiting for the user's answer in Shizuku, when the Shizuku that was
+   * asked has stopped or been replaced and the answer can't come. Otherwise they would wait for
+   * good, and no request after them would be sent.
+   */
+  private fun failPendingRequests() {
+    if (permissionCallbacks.isEmpty()) return
+    val callbacks = permissionCallbacks
+    permissionCallbacks = mutableListOf()
+    callbacks.forEach { it(false) }
   }
 
   /** Whether Shizuku is running and new enough. */
@@ -272,6 +290,7 @@ object ShizukuGrants {
       }
     } catch (e: RuntimeException) {
       LogUtils.w(TAG, "Cannot ask Shizuku for access: %s", e)
+      permissionCallbacks.remove(onResult)
       onResult(false)
     }
   }
