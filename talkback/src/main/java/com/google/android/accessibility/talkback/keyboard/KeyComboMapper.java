@@ -64,7 +64,7 @@ import com.google.android.accessibility.talkback.preference.TalkBackPreferencesA
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.FocusDirection;
-import com.google.android.accessibility.talkback.HelpAndFeedbackUtils;
+import com.google.android.accessibility.talkback.report.ReportsFragment;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
@@ -920,7 +920,13 @@ public class KeyComboMapper {
 
   @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
   public void reportIssue() {
-    HelpAndFeedbackUtils.launchFeedbackViaKeyboard(accessibilityService);
+    if (!SettingsUtils.allowLinksOutOfSettings(accessibilityService.getApplicationContext())) {
+      return;
+    }
+    Intent intent = new Intent(accessibilityService, TalkBackPreferencesActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    intent.putExtra(FRAGMENT_NAME, ReportsFragment.class.getName());
+    accessibilityService.startActivity(intent);
   }
 
   private void resetSpeechSettings() {
