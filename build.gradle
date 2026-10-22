@@ -63,9 +63,6 @@ android {
             if (signWithSandflyKey) {
                 signingConfig = signingConfigs.sandfly
             }
-            // Shrinks and optimizes the libraries, so there is less code to load and compile.
-            minifyEnabled = true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     packaging {
@@ -86,9 +83,6 @@ android {
         // build. To accept new ones on purpose, run ./gradlew updateLintBaselinePhoneDebug.
         baseline = file("lint-baseline.xml")
         abortOnError = true
-        // R8 shrinks code only. Shrinking resources could drop ones found by name, such as sound
-        // theme sounds and script strings. The warning's location also crashes lint's SARIF report.
-        disable 'NotShrinkingResources'
     }
     productFlavors {
         phone {
