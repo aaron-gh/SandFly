@@ -340,9 +340,9 @@ As in VoiceOver on iOS, you can slide one finger in from an edge of the screen. 
 
 - Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about four more centimeters to feel a second click, and lift there for Overview (recent apps).
 - Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click. A long swipe down from either half, to a second click, does nothing by default.
-- Right from the left edge, or left from the right edge. The top half and bottom half of each side edge are separate gestures, each with a first and second click. They do nothing by default. While one of them has an action, a swipe that starts at that half of the edge is that gesture, not an ordinary swipe.
+- Right from the left edge, or left from the right edge. The top half and bottom half of each side edge are separate gestures, each with a first and second click. They do nothing by default.
 
-A long swipe that does nothing has no second click, so sliding further is still the first gesture. In a corner, the top or bottom edge comes first, unless its gestures do nothing.
+Only gestures that have an action click. A swipe that does nothing has no first click, and the slide stays an ordinary swipe until the second click. A long swipe that does nothing has no second click, so sliding further is still the swipe. Lifting before the first click there is an ordinary swipe. In a corner, the top or bottom edge comes first, unless its gestures do nothing.
 
 Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. A sound theme can give each stage a sound; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
