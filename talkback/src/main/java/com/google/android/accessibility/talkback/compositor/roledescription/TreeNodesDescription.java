@@ -36,6 +36,7 @@ import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.StringBuilderUtils;
+import com.google.android.accessibility.utils.TelegramReplyQuote;
 import com.google.android.accessibility.utils.traversal.ReorderedChildrenIterator;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
@@ -286,6 +287,18 @@ public class TreeNodesDescription {
     List<CharSequence> joinList = new ArrayList<>();
     // Join the role description text.
     joinList.add(roleDescriptionExtractor.nodeRoleDescriptionText(node, event));
+    // A Telegram message reads the message it replies to after the sender's name.
+    TelegramReplyQuote.Quote quote = TelegramReplyQuote.quoteOf(node);
+    if (quote != null) {
+      joinList.set(
+          0,
+          TelegramReplyQuote.withQuote(
+              node,
+              joinList.get(0),
+              quote,
+              context.getString(R.string.telegram_replying_to),
+              CompositorUtils.getSeparator()));
+    }
 
     boolean isContentDescriptionEmpty =
         TextUtils.isEmpty(
