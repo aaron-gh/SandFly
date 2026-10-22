@@ -410,6 +410,10 @@ On Android 11, when you picked an action with the **Actions** reading control, a
 
 realme UI reports some volume sliders as not focusable and unlabeled, so TalkBack skipped them. SandFly can focus them.
 
+### Reading control kept when focus moves
+
+When focus moves onto an item with actions, a slider, a table or a spelling mistake, TalkBack changes the reading control to the one for that item, such as Actions, Adjust slider or Proofread, and changes it back afterwards. On web pages, where many items have actions, this replaces a reading control you chose, such as Headings. To keep the reading control you chose, turn off **Reading controls** > **Change reading control automatically**.
+
 ### Volume keys that adjust sliders
 
 When you turn on **Controls** > **Touch and activation** > **Volume keys adjust sliders**, the volume keys change the value of the slider that has focus, and SandFly speaks the new value, as it does when you adjust the slider with the **Adjustable** reading control. Hold a key to keep changing the value. When focus is on anything else, or the screen is off, the volume keys change the volume as usual. They also still change speech volume while a finger is on the screen, during continuous reading, and with the keyboard shortcut modifier. The setting is off by default.

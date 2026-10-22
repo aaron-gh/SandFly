@@ -1285,9 +1285,15 @@ public class SelectorController implements UserInputEventListener {
       return;
     }
     lastFocusedNode = null;
+    boolean autoSwitch =
+        prefs.getBoolean(
+            context.getString(R.string.pref_selector_auto_switch_key),
+            context.getResources().getBoolean(R.bool.pref_selector_auto_switch_default));
     Optional<ContextualSetting> contextualMenu =
-        getMatchedContextualSettingForActivation(
-            context, AccessibilityNodeInfoCompat.wrap(nodeInfo), hiddenSettings);
+        autoSwitch
+            ? getMatchedContextualSettingForActivation(
+                context, AccessibilityNodeInfoCompat.wrap(nodeInfo), hiddenSettings)
+            : Optional.empty();
     if (contextualMenu.isPresent()) {
       // If a matched contextual setting is available, switch to that setting automatically.
       Setting newSetting = contextualMenu.get().getSetting();
