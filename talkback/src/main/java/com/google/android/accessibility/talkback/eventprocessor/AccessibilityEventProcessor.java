@@ -54,6 +54,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.Performance.EventIdAnd;
 import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.TelegramReplyQuote;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor;
 import com.google.android.accessibility.utils.monitor.DisplayMonitor.DisplayStateChangedListener;
@@ -387,6 +388,17 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
     // Do not drop TYPE_SPEECH_STATE_CHANGE event to avoid SpeechStateMonitor has any missing.
     if (event.getEventType() == AccessibilityEvent.TYPE_SPEECH_STATE_CHANGE) {
       return false;
+    }
+
+    // Telegram sends a focus event of its own for the part of a message under the finger, without
+    // moving focus. A reply quote is read with its message, which keeps focus.
+    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        && TelegramReplyQuote.isTelegram(event.getPackageName())) {
+      AccessibilityNodeInfoCompat source = AccessibilityEventUtils.sourceCompat(event);
+      if (source != null && TelegramReplyQuote.isReplyQuote(source)) {
+        LogUtils.v(TAG, "Drop focus event of a Telegram reply quote");
+        return true;
+      }
     }
 
     // If touch exploration is enabled, drop automatically generated events
