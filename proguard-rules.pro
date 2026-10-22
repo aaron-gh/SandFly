@@ -26,3 +26,9 @@
 
 # WorkManager, which ML Kit's model downloads use, creates its Room database by name.
 -keep class * extends androidx.room.RoomDatabase { <init>(); }
+
+# R8's optimizations break ML Kit: its shared Random allows setSeed only while it is being
+# constructed, and the optimized check throws in Random's constructor, so the handwriting model
+# lookup crashed SandFly. Its own builds are optimized already.
+-keep class com.google.mlkit.** { *; }
+-keep class com.google.android.gms.internal.mlkit_** { *; }
