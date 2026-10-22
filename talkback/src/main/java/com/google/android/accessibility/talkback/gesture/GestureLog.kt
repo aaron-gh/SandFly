@@ -17,16 +17,15 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.util.Log
-import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Whether gesture recognition is logged, with the BacktalkGesture tag: in debug builds, and in
- * other builds when Developer settings > Log output level is Debug or Verbose, so that a problem
- * report's log shows how a user's gestures were recognized.
+ * Whether gesture recognition is logged, with the BacktalkGesture tag: when Developer settings >
+ * Log output level is Debug or Verbose, so that a problem report's log shows how a user's gestures
+ * were recognized. The published builds are debug builds, so BuildConfig.DEBUG can't decide it.
  */
 object GestureLog {
   @JvmStatic
   val enabled: Boolean
-    get() = BuildConfig.DEBUG || LogUtils.getLogLevel() <= Log.DEBUG
+    get() = LogUtils.shouldLog(Log.DEBUG)
 }

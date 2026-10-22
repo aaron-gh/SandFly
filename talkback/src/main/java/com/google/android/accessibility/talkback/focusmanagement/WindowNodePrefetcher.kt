@@ -23,8 +23,8 @@ import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.annotation.RequiresApi
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.utils.WebInterfaceUtils
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Executors
 import java.util.concurrent.RejectedExecutionException
@@ -94,7 +94,7 @@ object WindowNodePrefetcher {
     val walk = Walk(start + MAX_WAIT_MS)
     walk.submit(root.unwrap())
     walk.await()
-    if (BuildConfig.DEBUG) {
+    if (LogUtils.shouldLog(Log.DEBUG)) {
       Log.d(TAG, "Read ${walk.nodes.get()} nodes in ${SystemClock.uptimeMillis() - start} ms")
     }
   }

@@ -68,7 +68,6 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionIn
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat;
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
-import com.google.android.accessibility.talkback.BuildConfig;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
@@ -1227,14 +1226,15 @@ public class FocusProcessorForLogicalNavigation {
     }
     boolean usedSavedTree = traversalStrategy != null;
     if (traversalStrategy == null) {
-      long buildStart = BuildConfig.DEBUG ? SystemClock.uptimeMillis() : 0;
-      if (BuildConfig.DEBUG) {
+      boolean trace = LogUtils.shouldLog(Log.DEBUG);
+      long buildStart = trace ? SystemClock.uptimeMillis() : 0;
+      if (trace) {
         Trace.beginSection("BuildTraversalStrategy");
       }
       WindowNodePrefetcher.prefetch(rootNode, service.getPackageName());
       traversalStrategy =
           TraversalStrategyUtils.getTraversalStrategy(rootNode, focusFinder, searchDirection);
-      if (BuildConfig.DEBUG) {
+      if (trace) {
         Trace.endSection();
         Log.d(
             "BacktalkTreeCache",
