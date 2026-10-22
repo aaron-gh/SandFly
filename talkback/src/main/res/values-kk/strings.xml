@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack қосулы кезде, дауыстық кеңестер беріледі және құрылғыны оның экранына қарамай пайдалана беруге болады. TalkBack экранды көру қиын болатын жағдайларға немесе көру қабілеті нашар адамдарға арналған.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack функциясын пайдалану&lt;/b&gt;&lt;br&gt;• Элементтер арасында жылжу үшін саусағыңызды оңға не солға сырғытыңыз.&lt;br&gt;• Элементті іске қосу үшін екі рет түртіңіз.&lt;br&gt;• Айналдыру үшін 2 саусағыңызды сырғытыңыз.&lt;br&gt;&lt;b&gt;TalkBack функциясын өшіру&lt;/b&gt;&lt;br&gt;1. Параметрлерден &lt;b&gt;TalkBack функциясын пайдалану&lt;/b&gt; тармағын түртіңіз. Контур пайда болады. Соны екі рет түртіңіз.&lt;br&gt;2. Растау хабары пайда болғанда, &lt;b&gt;Тоқтату&lt;/b&gt; түймесін түртіңіз. Контур пайда болады. Соны екі рет түртіңіз.</string>
   <string name="talkback_service_summary">Элементтердің дауыстап оқылғанын тыңдау үшін экран оқу құралын пайдаланыңыз.</string>
   <string name="talkback_preferences_title">TalkBack параметрлері</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Параметрлер</string>
   <string name="tts_preferences_title">Мәтінді дыбыстау</string>
   <string name="language_options">Тілдер</string>
   <string name="spoken_language">Дыбысталу тілі</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Іздеуден бас тартылды.</string>
   <string name="notification_type_status_started">Басталды</string>
   <string name="notification_type_status_stopped">Тоқтатылды</string>
-  <string name="notification_type_status_connected">қосылды</string>
-  <string name="notification_battery_level_unknown">белгісіз</string>
   <string name="notification_battery_saver_mode">Батареяны үнемдеу режимі қосулы</string>
   <string name="template_no_text_selected">Мәтін таңдалмады</string>
   <string name="template_charging">Зарядталуда %1$s Батарея деңгейі %2$s пайыз.</string>
   <string name="template_charging_lite">Зарядталуда %1$s</string>
-  <string name="template_battery_state">Қуат %1$s. %2$s пайыз. %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Қоңырауда дірілдету.</string>
   <string name="value_ringer_silent">Қоңырау үнсіз.</string>
   <string name="value_screen_on">Экран қосулы.</string>
   <string name="value_screen_off">Экран өшірулі.</string>
   <string name="value_device_unlocked">Құрылғының бекітпесі ашылды.</string>
-  <string name="title_pref_category_audio">Аудио</string>
   <string name="title_pref_speech_volume">Сөздің дыбыс деңгейі</string>
-  <string name="title_pref_speech_rate">Сөйлеу жылдамдығы</string>
-  <string name="summary_pref_speech_rate">Мәтіннің айтылу жылдамдығы</string>
   <string name="title_pref_verbose_scroll_announcement">Тізім элементтерінің санын әрдайым дыбыстау</string>
   <string name="summary_pref_verbose_scroll_announcement">Барлық айналдыру әдісінің нөмірін дыбыстау</string>
   <string name="title_pref_cover_proximity_sensor">Дыбыстауды тоқтату үшін қашықтық сенсорын жабу</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Сөйлеу уақыты</string>
   <string name="pref_speak_time_summary">Сіз экранды қосқан кезде</string>
   <string name="summary_speak_container_element_positions">Тізімдерге, торларға және басқа да контейнерлерге кірген және шыққан кездегі ақпаратты қамтиды.</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Оқуды басқару параметріне ерекшелеу кідірісі қосылды</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Оқуды басқару параметрін пайдалану және ерекшелеу кідірісін кез келген уақытта өзгерту үшін 3 саусақпен сырғытыңыз.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Мәтін теру үшін көтеру режиміне ауыстыру қажет пе?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Теруді ерекшелеу кідірісі 0,3 секундтан аз уақытқа орнатылған кезде, теру үшін екі рет түрту өте қиын болады. Мәтін теру үшін көтеру режиміне автоматты түрде ауыстыру үшін \"Ауыстыру\" опциясын таңдаңыз.\n\nТеру үшін көтеру режимін пайдалану мақсатында саусағыңызды ұстап тұрып, кез келген түймені таңдаңыз, содан кейін теру үшін көтеріңіз.\n\nМұны TalkBack параметрлерінде бейімдеуге болады.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Оқуды басқару параметріне теруді ерекшелеу кідірісі қосылды</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Теру кезінде екі рет түртуге қатысты мәселелер пайда болса, оқуды басқару параметрін пайдалану және теруді ұзағырақ ерекшелеу кідірісіне өзгерту үшін 3 саусақпен сырғытыңыз.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Теруді ерекшелеу кідірісі мәтін теру үшін көтеру режимінсіз істемейді.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Түсінікті</string>
   <string name="reset_letency_reduction_settings_dialog_title">Кідіріс параметрлерін бастапқы күйге қайтару қажет пе?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Кідірістің барлық параметрі әдепкі мәніне қайтарылады.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Қайтару</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Кідірісті азайту параметрлері бастапқы күйге қайтарылды.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Ауыстыру</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Ауыстырмау</string>
   <string name="Reset_gesture_settings_dialog_title">Қимылдар бастапқы күйіне қайтарылсын ба?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Осы жинақтың қимылдары қайта орнатылсын ба?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Бұл – барлық қимылдарды әдепкі параметрлерге қайтарады.\n\nБұған дейінгі өзгерістердің ешқайсысы сақталмайды.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Прогресс туралы жаңартуларды дыбыстау</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Жүктеп алу кезіндегі хабарландыруларды, автокөлікпен жүру бағыттарын және т.б. қамтиды. Параметр өшірулі кезде, хабарландыру сирегірек келеді.</string>
   <string name="title_pref_explore_by_touch">Түртілген элементтерді дыбыстау</string>
-  <string name="title_pref_category_visual">Визуалдық параметрлер</string>
   <string name="title_pref_category_controls">Басқару элементтері</string>
-  <string name="title_pref_category_braille">Брайль</string>
-  <string name="title_pref_category_general">Жалпы</string>
-  <string name="title_pref_category_advanced">Озық</string>
-  <string name="title_pref_category_others">Басқа функциялар</string>
-  <string name="title_pref_category_tutorial_and_help">Оқулық және анықтама</string>
   <string name="title_pref_category_reduce_latency_summary">Бұл параметрлер TalkBack хабарландыруларына дейінгі кідірісті азайта алады.</string>
   <string name="reset_latency_settings_title">Барлық кідіріс параметрін бастапқы күйге қайтару</string>
   <string name="title_pref_single_tap">Белсендіру үшін бір рет түрту</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Ерекшелеу индикаторын өзгерту</string>
   <string name="title_pref_category_manage_gestures">Қимылдар</string>
   <string name="title_pref_manage_labels">Арнаулы белгілер</string>
-  <string name="title_pref_manage_customize_menus">Мәзірлерді өзгерту</string>
   <string name="title_pref_category_context_menu">Talkback мәзірін реттеу</string>
   <string name="title_pref_category_selector_menu">Оқуды басқару элементтерін реттеу</string>
   <string name="title_pref_category_navigation_menu">Навигация опцияларын өзгерту</string>
-  <string name="pref_category_context_menu_summary">TalkBack мәзірін пайдалану үшін экранды 3 саусағыңызбен түртіңіз. Сондай-ақ алдымен жоғары, одан кейін оңға немесе алдымен төмен, одан кейін оңға сырғытыңыз.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack мәзірін пайдалану үшін бағыныңқы алақаныңызды ішке қаратып, екі саусағыңызды қосыңыз.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack мәзірін пайдалану үшін алдымен төмен, одан кейін оңға сырғытыңыз.</string>
-  <string name="pref_category_selector_menu_summary">Оқуды басқару құралдарын пайдалану үшін 3 саусақпен солға немесе оңға сырғытыңыз. Сондай-ақ 3 саусағыңызбен жоғары не төмен сырғытуыңызға болады.</string>
-  <string name="pref_category_selector_menu_summary_xr">Оқуды басқару элементтері арасында ауысу үшін бағыныңқы алақаныңызды ішке қаратып, екі саусағыңызды қосыңыз және оңға не солға жылжытып, сосын жіберіңіз.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Оқуды басқару құралдарын пайдалану үшін жоғары, одан кейін төмен сырғытыңыз.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Перне тіркесімдері</string>
   <string name="title_pref_export_custom_labels">Арнаулы белгілерді экспорттау</string>
-  <string name="title_pref_play_store">TalkBack қолданбасын Play Store-дан ашу</string>
-  <string name="summary_pref_play_store">Қазіргі TalkBack нұсқасы: %1$s</string>
   <string name="title_pref_help_and_feedback">Анықтама және пікір</string>
-  <string name="title_pref_gup">Google-дың мүмкіндігі шектеулі адамдарға арналған қолдау көрсету қызметіне хабарласу</string>
-  <string name="subtitle_pref_gup">TalkBack көмегімен анықтама алыңыз немесе мәселе туралы хабар жіберіңіз.</string>
-  <string name="pref_item_licenses">Ашық кодты бағдарлама лицензиялары</string>
-  <string name="title_pref_tutorial">Оқулық</string>
   <string name="title_pref_help">Анықтама</string>
   <string name="title_pref_show_tos">Қызмет көрсету шарттары</string>
   <string name="title_pref_show_privacy_policy">Құпиялық саясаты</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Саусақ ізі сканеріндегі қимылдар</string>
   <string name="title_pref_category_tutorial">TalkBack оқулығы</string>
   <string name="title_pref_category_help_no_tutorial">Анықтама</string>
-  <string name="title_pref_category_typing">Теру</string>
   <string name="title_pref_advanced_settings">Қосымша параметрлер</string>
   <string name="title_pref_show_exit_watermark">TalkBack функциясын өшіру нұсқауларын көрсету</string>
   <string name="summary_pref_show_exit_watermark">TalkBack функциясын жылдам өшіру үшін хабарда TalkBack қосулы екені көрсетіледі.</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Кейбір өзгерткіш пернелер басқа болады.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Пернетата схемалары туралы толық ақпарат</string>
   <string name="keycombo_go_to_settings">Параметрлерге өту</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack классикалық пеернетақта схемасын өшіруге дайындалып жатыр. Перне тіркесімдерін пайдалана беру үшін әдепкі пернетақта схемасына ауысыңыз.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Толық ақпарат</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Түсінікті</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Параметрлер</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Толық ақпарат</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Әдепкі TalkBack пернетақта схемасын қолданып жатырсыз. Көптеген жаңа пәрмені бар жақсартылған жаңа пернетақта схемасы да бар. Анықтамалық орталықтан ақпарат алыңыз. Параметрлерде жаңа пернетақта схемасына ауысыңыз.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Жаңа пернетақта схемасы қолжетімді</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Жақсартылған жаңа TalkBack пернетақта схемасына көптеген жаңа пәрмен қосылды. Анықтамалық орталықтан ақпарат алыңыз. Параметрлерде жаңа пернетақта схемасына ауысыңыз.</string>
-  <string name="keycombo_update_modifier_key_warning_title">TalkBack өзгерткіш пернесін жаңарту</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Қазір емес</string>
   <string name="keycombo_warning_content_description">Өзгерткіш перне туралы толық ақпарат.</string>
-  <string name="keycombo_warning_dialog_title">Өзгерткіш пернеңізді жаңартыңыз</string>
-  <string name="keycombo_warning_dialog_message">TalkBack перне тіркесімдері дұрыс жұмыс істеуі үшін, өзгерткіш пернені әрекет пернесінен Alt пернесіне жаңартыңыз.\n\nӘрекет өзгерткіш пернесін жаңартпасаңыз, Android-тың осы нұсқасындағы кейбір тіркесімдер басқа қызметтер атқарады.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Пернетақта схемасы</string>
   <string name="keycombo_menu_select_keymap">Пернетақта схемасын таңдау</string>
   <string name="keycombo_menu_reset_keymap">Пернетақта схемасын қалпына келтіру</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Сөйлеу дыбысын көбейту</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Сөйлеу дыбысын азайту</string>
   <string name="keycombo_menu_global_refocus_current_node">Ерекшеленген элементті айту</string>
-  <string name="keycombo_menu_category_granularity">Навигация</string>
   <string name="keycombo_menu_granularity_increase">Келесі навигация параметрі</string>
   <string name="keycombo_menu_granularity_decrease">Алдыңғы навигация параметрі</string>
   <string name="keycombo_menu_category_other">Басқа әрекеттер</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Осы пернетақта схемасы үшін пернелер тіркесімдерін әдепкі мәндеріне қайтару керек пе? Бұл әрекетті болдырмау мүмкін емес екенін ескеріңіз.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Қалпына келтіру</string>
   <string name="template_keycombo_menu_browse_mode_command">Шолу режиміндегі %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">Жаңа таңбаша орнату үшін пернелер тіркесімін басыңыз. Ол кемінде ALT немесе Control пернесін қамтуы керек.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Жаңа перне тіркесімін орнату үшін оны %1$s өзгерткіш пернесімен бірге басыңыз.</string>
   <string name="keycombo_unassigned">Тағайындалмаған</string>
   <string name="save_button_in_keycombo_assign_dialog">Сақтау</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Теруді ерекшелеу кідірісі</string>
   <string name="message_pref_touch_explore_latency">Теруді ерекшелеу кідірісі аз болса, пернетақтаны түрткеннен кейін, TalkBack хабарландырулары тезірек жіберіледі.\n\nКідіріс уақытын таңдау</string>
   <string name="title_pref_touch_focus_timeout">Ерекшелеу кідірісі</string>
-  <string name="summary_pref_touch_focus_time">
-Ерекшеленген элемент қозғалғаннан кейін TalkBack қаншалықты тез сөйлейтінін басқарады. Кідіріс уақыты аз болса, TalkBack тезірек істейді, бірақ екі рет немесе үш рет түрту қиынырақ болады.\n\n
-Кідіріс 0,3 секундтан аз болса, іске қосу үшін екі рет түрту функциясы іске қосу үшін екі саусақпен түрту функциясына өзгереді.
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack функциясында қимылды анықтау параметрін іске қосу</string>
   <string name="toast_pref_talkback_gesture_detection">Параметрді іске қосу үшін TalkBack функциясын өшіріп қосыңыз.</string>
   <string name="title_pref_auto_image_captioning">Автоматты сипаттамалар</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Сурет сипаттамаларын параметрлерден қосыңыз</string>
   <string name="dialog_message_turn_on_image_description">Автоматты немесе толық сурет сипаттамаларын қосқаннан кейін қайталап көре аласыз.</string>
   <string name="title_pref_detailed_image_description">Суреттердің толық сипаттамасы</string>
-  <string name="summary_pref_ai_description">TalkBack мәзірінде \"%1$s\" опциясын таңдасаңыз, ұзын сипаттама беріледі</string>
   <string name="dialog_message_on_device_ai_description">Қолдау көрсетілетін қолданбаларда суретке өткен кезде, оның қысқаша сипаттамасын естисіз.\n\nСуреттер құрылғыңызда өңделеді және ешқашан Google-ға жіберілмейді. \n\nЖасампаз жасанды интеллект – эксперименттік технология, сондықтан ол қателер жібереді. Жалғастыру арқылы <a href="https://policies.google.com/terms/generative-ai">Google-дың Қызмет көрсету шарттарына</a> келісесіз.</string>
   <string name="enable_gemini">Қосу</string>
   <string name="powered_by_gemini">Жасампаз AI арқылы жұмыс істейді</string>
-  <string name="detailed_image_description_ongoing_hint">Сипаттамасы алынып жатыр</string>
-  <string name="detailed_image_description_result_prefix">Анықталды: сурет. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Автоматты сурет сипаттамаларын үшін жүктеп алу қажет</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Суреттер құрылғыңызда өңделеді және ешқашан Google-ға жіберілмейді.\n\nЖасампаз AI – эксперименттік технология, сондықтан қателер жіберуі мүмкін. Жалғастыру арқылы %1$s құжатына келісесіз.</string>
   <string name="dialog_message_gen_ai_tos_link">Google-дың Қызмет көрсету шарттары</string>
   <string name="message_aifeature_downloading">Жасанды интеллект моделі жүктеп алынып жатыр. Бұл біраз уақыт алуы мүмкін. Дайын болғанда хабарлаймыз.</string>
   <string name="message_aifeature_downloading_with_progress">Әлі жүктеп алынып жатыр. %1$d/%2$d МБ жүктеп алынды.</string>
-  <string name="message_aifeature_download_complete">Жасанды интеллект моделі жүктеп алынды. TalkBack енді сурет сипаттамаларын жасай алады.</string>
   <string name="summary_pref_auto_image_captioning">Белгішелерге, суреттерге және суреттердегі мәтінге арналған.</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Суреттегі мәтін үшін</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Суреттер мен суреттегі мәтін үшін</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Белгішелер мен суреттегі мәтін үшін</string>
   <string name="summary_pref_module_downloading">Жүктеп алынып жатыр…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Барлық сурет үшін қосулы.</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Тек белгісі жоқ суреттер үшін қосулы.</string>
   <string name="summary_pref_auto_image_captioning_disabled">Өшірулі</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Барлық белгіше үшін қосулы.</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Тек белгісі жоқ белгішелер үшін қосулы.</string>
   <string name="summary_pref_auto_icon_detection_disabled">Өшірулі</string>
   <string name="title_pref_enable_auto_image_caption">Барлық сурет</string>
   <string name="title_pref_enable_auto_image_caption_arg">Барлық сурет\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Барлық белгіше</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Жазуы жоқ белгішелер ғана</string>
   <string name="title_pref_disable_auto_icon_detection">Белгішелерді сипаттамау</string>
-  <string name="dialog_message_on_device_ai_model_download">Қолдау көрсетілетін қолданбаларда суретке өткен кезде, оның қысқаша сипаттамасын естисіз.\n\nСуреттер құрылғыңызда өңделеді және ешқашан Google-ға жіберілмейді.\n\nЖасампаз жасанды интеллект – эксперименттік технология, сондықтан ол қателер жібереді. Жалғастыру арқылы %1$s талаптарына келісесіз.</string>
   <string name="title_pref_enable_gemini_support">Қосулы</string>
   <string name="title_pref_disable_gemini_support">Өшірулі</string>
   <string name="summary_pref_gemini_support_enabled">Gemini қосулы</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Түйін тармағын басып шығару</string>
   <string name="shortcut_print_performance_stats">Басып шығару бойынша өнімділік статистикасы</string>
   <string name="shortcut_first_in_screen">Экрандағы бірінші элементке өту</string>
-  <string name="shortcut_summary">Экран құрамын қорытындылау</string>
   <string name="shortcut_voice_commands">Дауыстық пәрменді қосу</string>
   <string name="shortcut_last_in_screen">Экрандағы соңғы элементке өту</string>
   <string name="shortcut_enable_dimming">Экранды жасыру</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Интернеттегі навигация</string>
   <string name="menu_category_basic_navigation">Негізгі навигация</string>
   <string name="summary_custom_action">Ағымдағы элементке қатысты әрекеттердің (соның ішінде сілтемелер, көшіру, қою, таңдау және т.б.) бар екенін көрсетеді.</string>
-  <string name="summary_context_menu_links">Ерекшеленген элементтегі сілтемелерді ашу</string>
   <string name="summary_viewpager_controls">Келесі немесе алдыңғы бетке өту. Бірнеше беттік контентті оқып жатқанда көрсетіледі.</string>
   <string name="summary_labeling_controls">Белгісі жоқ элемент таңдалғанда шығады.</string>
   <string name="summary_granularity">Таңба, сөз, жолдар және т.б. бойынша оқу</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Экранды қысқаша сипаттауға арналған басқару түймелері</string>
   <string name="summary_screen_overview_no_actions">Экрандағы контенттің қысқаша сипаттамасын тыңдау</string>
   <string name="summary_image_caption">Таңдалған суреттегі мәтін мен белгішелерді дауыстап айту</string>
-  <string name="summary_summarize_view">Сипаттаманы дауыстап оқу</string>
   <string name="summary_typo_suggestions">Курсор қате жазылған сөзде тұрғанда көрсетіледі.</string>
   <string name="summary_cache_keyboard_keys">Терген кездегі кідірісті азайту үшін TalkBack хабарландыруларды алдын ала жүктейді.</string>
   <string name="summary_cache_keyboard_keys_disabled">Бұл функцияны пайдалану үшін Google Text-to-speech қолданыңыз</string>
-  <string name="value_direction_down">төменге</string>
-  <string name="value_direction_down_and_right">төмен, содан кейін оңға</string>
   <string name="title_pref_shortcut_up">Жоғары сырғыту</string>
   <string name="title_pref_shortcut_up_xr">Бағыныңқы алақанды ішке қаратып, екі саусақты қосып, жоғары жылжыту</string>
   <string name="title_pref_shortcut_down">Төмен сырғыту</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Саусақ ізі сканерінде солға сырғыту</string>
   <string name="title_pref_shortcut_fingerprint_right">Саусақ ізі сканерінде оңға сырғыту</string>
   <string name="title_pref_version_code">Нұсқа коды</string>
-  <string formatted="false" name="value_volume_100_percent">Дауыстың дыбыс деңгейіне сәйкес</string>
-  <string formatted="false" name="value_volume_75_percent">Дауыстың дыбыс деңгейінен 75%</string>
-  <string formatted="false" name="value_volume_50_percent">Дауыстың дыбыс деңгейінен 50%</string>
-  <string formatted="false" name="value_volume_25_percent">Дауыстың дыбыс деңгейінен 25%</string>
   <string name="value_type_confirmation_double_tap">Кез келген пернені ұстап тұру және екі рет түрту</string>
   <string name="value_type_confirmation_lift_to_type">Әрпі бар пернені ұстап тұру және жіберу. Басқа пернелер үшін екі рет түрту.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Кез келген пернені ұстап тұру және жіберу</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 секунд</string>
   <string name="value_touch_explore_time_out_250ms">0,25 секунд</string>
   <string name="value_touch_explore_time_out_300ms">0,3 секунд (әдепкі)</string>
-  <string name="value_shake_to_read_disabled">Өшірілген</string>
-  <string name="value_shake_to_read_threshold_very_light">Сәл ғана</string>
-  <string name="value_shake_to_read_threshold_light">Жеңіл</string>
-  <string name="value_shake_to_read_threshold_medium">Орташа</string>
-  <string name="value_shake_to_read_threshold_hard">Қатты</string>
-  <string name="value_shake_to_read_threshold_very_hard">Өте қатты</string>
   <string name="title_pref_on_screen_keyboard">Экрандағы пернетақта</string>
   <string name="title_pref_physical_keyboard">Физикалық пернетақта</string>
   <string name="value_keyboard_echo_none">Жоқ</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Құрылғының уақыт форматын пайдалану</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 сағат</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 сағат</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack қимылдары өзгерді</string>
-  <string name="notification_message_talkback_gestures_changed">Арнайы мүмкіндік қимылдарына енг-н өзг-лерді қарап шығу үшін түртіңіз</string>
   <string name="always_show_warning_checkbox">Осы ескерту үнемі көрсетілсін</string>
   <string name="label_dialog_title_add">Белгі қосу</string>
   <string name="label_dialog_title_edit">Белгіні өңдеу</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Белгілерді экспорттайтын қолданбалар жоқ.</string>
   <string name="label_choose_app_to_import">Белгілерді импорттайтын қолданбаны таңдаңыз:</string>
   <string name="label_choose_app_to_export">Белгілерді экспорттайтын қолданбаны таңдаңыз:</string>
-  <string name="talkback_gesture_change_details">Бұл TalkBack нұсқасында бұрынғы арнайы мүмкіндіктерге енгізілген өзгертулер қамтылған. Осы қимылдармен байланысты әрекеттерді TalkBack параметрлерінде реттеуге болады. Түртілген элементтерді дыбыстау функциясы қосылған болса, белгілі бір әрекеттерді орындау үшін төмендегі қимылдарды пайдалана аласыз.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Экранды жасыру керек пе?</string>
   <string name="dialog_message_dim_screen">Бұл опция құпиялықты жақсарту үшін экранды өшіреді. Кейбір контент сонда да көрсетіле беруі мүмкін, мысалы, экранды қайтадан қосуға арналған хабарлар немесе TalkBack сияқты арнайы мүмкіндіктерге арналған мәзірлер.</string>
-  <string name="talkback_built_in_gesture_change_details">Бұл TalkBack нұсқасында әдепкі арнайы мүмкіндіктер қимылдарына енгізілген өзгертулер қамтылған.\n\n\"Алдымен жоғары, одан кейін төмен\" қимылы экрандағы бірінші элементке жылжуға мүмкіндік береді, ал \"алдымен төмен, одан кейін жоғары\" қимылы соңғы элементке жылжытады.\n\nЕнді оқу кезінде детализация деңгейін өзгерту үшін элементті ерекшелеңіз, одан кейін TalkBack контекстік мәзірінен детализацияны таңдаңыз.\n\nОсы қимылдар арқылы орындалатын әрекеттерді TalkBack параметрлерінде өзгертуге болады.</string>
-  <string name="default_action_changed_details">Медиаконтентті кідірту және ойнату үшін саусағыңызбен екі рет түртіп, ұстап тұрыңыз.\n\nБасқа қимылдар да өзгертілді.</string>
-  <string name="talkback_built_in_gesture_open_url">Толық ақпарат алу үшін телефоннан ашу</string>
-  <string name="talkback_built_in_gesture_change_details_45">Бұл TalkBack нұсқасы әдепкі арнайы мүмкіндіктер қимылдарына енгізілген өзгерістерді қамтиды.\n\nЖоғары сырғыту қимылы енді алдыңғы навигация параметріне, ал төмен сырғыту қимылы келесі навигация параметріне өткізеді.</string>
-  <string name="side_tap_shortcuts_removed_details">Ақауға байланысты мына параметрлер TalkBack қолданбасынан өшірілді:\n• құрылғының жанынан түрту;\n• үздіксіз оқуды бастау үшін шайқау.</string>
-  <string name="button_accept_changed_gesture_mappings">Қимылдарды қабылдау</string>
-  <string name="button_customize_gesture_mappings">Қимылдарды теңшеу</string>
   <string name="button_disable_all_events">Барлығын өшіру</string>
   <string name="button_enable_all_events">Барлығын қосу</string>
   <string name="dialog_title_disable_exploration">Түртілген элементтерді дыбыстау функциясын өшіру керек пе?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Кестелерден іздеу</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack-тің хабарландыру арнасы</string>
-  <string name="pref_selector_summary">Параметрді таңдау үшін %1$s. Реттеу үшін %2$s.</string>
-  <string name="speech_rate_change">Сөйлеу жылдамдығы: %1$d%%</string>
   <string name="speech_pitch_maximum">Ең жоғары дауыс тоны</string>
   <string name="speech_pitch_minimum">Ең төмен дауыс тоны</string>
   <string name="reset_speech_rate_and_pitch">Сөйлем жылдамдығы мен дауыс ырғағын бастапқы күйге қайтару</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Діріл сигналы %1$s</string>
   <string name="text_formatting_state">Оқылатын мәтінді форматтау %1$s.</string>
   <string name="typing_echo_change">Физикалық пернетақтаның жаңғырық мәні — %1$s.</string>
-  <string name="reading_control_toggle_prefix_xr">Оқуды басқару режимін ауыстыру үшін бағыныңқы алақанды ішке қаратып, басып тұрыңыз.</string>
   <string name="gesture_1_or_2">%1$s немесе %2$s</string>
-  <string name="select_setting_hint">Басқа параметрді таңдау үшін %1$s</string>
-  <string name="adjust_setting_hint">Параметрді реттеу үшін %1$s</string>
   <string name="adjust_granularity_hint">%2$s бойынша оқу үшін %1$s</string>
   <string name="adjust_typo_hint">Ұсыныстарды көру қимылы: %1$s.</string>
   <string name="use_action_hint">Әрекетті орындау үшін екі рет түртіңіз.</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Оқуды басқару</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Мультимедиалық файлдарды бейне немесе музыка қолданбасынан ойнату немесе кідірту үшін 2 саусақпен екі рет түртіңіз. Қазір байқап көріңіз.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Басқа қолданбаларда бұл қимыл қоңырауға жауап беру немесе аяқтау сияқты әрекеттерге қолданылуы мүмкін. Бұл қимыл барлық қолданбада болмауы мүмкін.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Барлық TalkBack оқулығын көру</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Медиамазмұн кідіртілген не ойнатылып жатыр. Әдетте бұл – ағымдағы бейнені не музыканы кідіртеді не ойнатады. Жалғастыру үшін оңға сырғытыңыз.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack дыбысталуын уақытша тоқтату үшін 2 саусақпен түртіңіз.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack функциясының сөйлегені тоқтатылды. Әдетте TalkBack-тің айтып жатқан сөйлемін тоқтатады. Жалғастыру үшін оңға сырғытыңыз.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Таңдау режимі қосулы не өшірулі. Енгізу өрісінде болғанда, әдетте бұл – мәтін таңдау режимін іске қосады не тоқтатады. Жалғастыру үшін оңға сырғытыңыз.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Оқуды басқару құралдарын пайдалану үшін 3 саусақпен солға немесе оңға сырғытыңыз. Сондай-ақ 3 саусағыңызбен жоғары не төмен сырғытуыңызға болады.</string>
   <string name="new_shortcut_gesture_note">Ескертпе: кейбір қимылдарыңызды реттедіңіз, сондықтан бұл ақпарат дұрыс болмауы мүмкін. Қимылдарыңызды көру үшін TalkBack параметрлеріне өтіңіз.</string>
-  <string name="welcome_to_android11">Android 11 жүйесіндегі TalkBack функциясына қош келдіңіз</string>
   <string name="welcome_to_android11_text">Жаңа қимылдар қосылып, TalkBack функциясын қолдану жылдам әрі оңай бола түсті.\n\nБұл экранда жаңа қимылдарды пайдаланып көруіңізге болады. Бұл ақпаратты кез келген уақытта TalkBack параметрлерінен көре аласыз.</string>
   <string name="new_gesture_notification_title">TalkBack функциясындағы жаңа қимылдар</string>
   <string name="new_gesture_notification_content">TalkBack-ті жаңа қимылдар арқылы жылдамырақ пайдалану туралы толығырақ ақпарат алу үшін түртіңіз.</string>
   <string name="dump_node_tree_description">Түйін ағашы журналдарға басып шығарылды.</string>
   <string name="report_gesture_description">Мұнда жақында қолданылған қимылдар көрсетілген. Олардың қайсысында қате шыққанын және ол нені білдіруі керек болғанын хабарлаңыз.</string>
-  <string name="update_welcome_text_content">Енді HID құрылғысы арқылы Брайль дисплейлеріне қосыла аласыз. Ол Bluetooth құрылғыларына қосылу әдісі болып есептеледі. Өндіруші ұсынған микробағдарлама драйверлерінің соңғы нұсқасының орнатылғанына көз жеткізіңіз. Содан кейін Брайль дисплейінде Bluetooth-ты қосыңыз. \"TalkBack параметрлері &gt; Брайль дисплейі\" тармағына өтіп, \"Брайль дисплейін пайдалану\" функциясын қосыңыз. Құрылғылар тізімінен құрылғыңызды тауып, оған қосылыңыз.</string>
-  <string name="update_welcome_text_content_tts">Енді HID құрылғысы арқылы Брайль дисплейлеріне қосыла аласыз. Ол Bluetooth құрылғыларына қосылу әдісі болып есептеледі. Өндіруші ұсынған микробағдарлама драйверлерінің соңғы нұсқасының орнатылғанына көз жеткізіңіз. Содан кейін Брайль дисплейінде Bluetooth-ты қосыңыз. \"TalkBack параметрлері\", содан кейін \"Брайль дисплейі\" тармағына өтіп, \"Брайль дисплейін пайдалану\" функциясын қосыңыз. Құрылғылар тізімінен құрылғыңызды тауып, оған қосылыңыз.</string>
-  <string name="update_welcome_text_content_with_link">Брайль дисплейін TalkBack функциясымен пайдалану туралы толық ақпарат алыңыз.</string>
   <string name="update_welcome_talkback_16.1">TalkBack-тың бұл жаңа нұсқасында экранды сипаттауға арналған көбірек тіл және TalkBack-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек TalkBack-тағы \"TalkBack параметрлері &gt; Жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
   <string name="update_welcome_talkback_16.1_tts">TalkBack-тың бұл жаңа нұсқасында экранды сипаттауға арналған көбірек тіл және TalkBack-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек TalkBack-тағы \"TalkBack параметрлері &gt; Жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
-  <string name="describe_screen_and_qna_title">Экранды сипаттау және Gemini-дан сұрау функцияларына қосылған жаңа тілдер</string>
-  <string name="describe_screen_and_qna_content">Экранды сипаттау және Gemini-дан сұрау енді басқа да тілдерде қолжетімді. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Толық ақпаратты Анықтамалық орталықтан қараңыз&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Дауыспен теруге арналған жылдам пәрмен</string>
   <string name="shortcut_for_dictation_content">Gboard пайдаланған кезде, дауыспен теруді бастау немесе тоқтату үшін екі саусақпен екі рет түртуге болады.
 &lt;br&gt;
 &lt;br&gt;&lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play-дегі Gboard-тың&lt;/a&gt; соңғы нұсқасы орнатылғанына көз жеткізіңіз.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Gboard экранда көрсетілген кезде, мәтінді дауыспен енгізуді бастау үшін екі саусақпен екі рет түртуге, содан кейін тоқтату үшін екі саусақпен екі рет түртуге болады.</string>
-  <string name="keyboard_title">Пернетақта</string>
-  <string name="keyboard_content">TalkBack пернетақтасында енді \"Жақсартылған пернетақта схемасы\" бар. Ол түрлі жаңа пәрмендер мен жылдам пәрмендерді ұсынады. Интернетті тиімді шарлауға көмектесетін \"шолу режимі\" бар бұл жақсартылған мүмкіндік физикалық пернетақталарға сүйенетін TalkBack пайдаланушылары үшін шарлау мен әрекеттесуді жеңілдетеді. \"TalkBack параметрлері &gt; Қосымша параметрлер &gt; Пернелер тіркесімдері\" бөліміне өтіп, жақсартылған пернетақта схемасына ауысуға болады.</string>
-  <string name="keyboard_content_tts">TalkBack пернетақтасында енді жақсартылған пернетақта схемасы бар. Ол түрлі жаңа пәрмендер мен жылдам пәрмендерді ұсынады. Интернетті тиімді шарлауға көмектесетін \"шолу режимі\" бар бұл жақсартылған мүмкіндік физикалық пернетақталарға сүйенетін TalkBack пайдаланушылары үшін шарлау мен әрекеттесуді жеңілдетеді. \"TalkBack параметрлері &gt; Қосымша параметрлер &gt; Пернелер тіркесімдері\" бөліміне өтіп, жақсартылған пернетақта схемасына ауысуға болады.</string>
-  <string name="reduce_delay_title">Кідірісті азайту</string>
-  <string name="reduce_delay_content">Енді түрту арқылы зерттеу мен теру кезіндегі TalkBack хабарландыруының кідірістерін азайтуға болады. Бұл параметрлерді көру үшін \"TalkBack параметрлері &gt; Қосымша параметрлер &gt; Кідірісті азайту\" бөліміне өтіңіз.</string>
-  <string name="reduce_delay_content_tts">Енді түрту арқылы зерттеу мен теру кезіндегі TalkBack хабарландыруының кідірістерін азайтуға болады. Бұл параметрлерді көру үшін \"TalkBack параметрлері &gt; Қосымша параметрлер &gt; Кідірісті азайту\" бөліміне өтіңіз.</string>
-  <string name="customize_braille_keyboard_improvements_title">Брайль пернетақтасының қимылдарын бейімдеу</string>
-  <string name="customize_braille_keyboard_improvements_content">Енді экрандағы виртуалдық Брайль пернетақтасына арналған қимылдарды бейімдеуге болады. Ол үшін \"TalkBack параметрлері &gt; Брайль пернетақтасы &gt; Қимылдар\" бөліміне өтіңіз.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Енді экрандағы виртуалдық Брайль пернетақтасына арналған қимылдарды бейімдеуге болады. Ол үшін \"TalkBack параметрлері &gt; Брайль пернетақтасы &gt; Қимылдар\" бөліміне өтіңіз.</string>
-  <string name="learn_more_about_braille_keyboard">Брайль пернетақтасы туралы толық ақпарат</string>
-  <string name="other_changes_title">Басқа өзгерістер</string>
-  <string name="other_changes_content">TalkBack кездейсоқ қосылып кеткен жағдайда, экрандағы хабар арқылы енді оны лезде өшіруге болады. Ол үшін \"TalkBack параметрлері &gt; TalkBack-ты өшіру нұсқауларын көрсету\" бөліміне өтіңіз.</string>
-  <string name="other_changes_content_tts">TalkBack кездейсоқ қосылып кеткен жағдайда, экрандағы хабар арқылы енді оны лезде өшіруге болады. Ол үшін \"TalkBack параметрлері &gt; TalkBack-ты өшіру нұсқауларын көрсету\" бөліміне өтіңіз.</string>
-  <string name="keymap_changes_content">Классикалық пернетақта схемасы көбірек тіркесімді қамтитын әдепкі схемаға ауыстырылды.</string>
   <string name="announcing_text_formatting_title">Мәтінді форматтау туралы хабарландыру</string>
   <string name="announcing_text_formatting_header">TalkBack енді жуан, көлбеу қаріп және мәтін түсі сияқты мәтін форматындағы өзгерістер туралы хабарландыру бере алады. Бастау үшін:</string>
   <string name="announcing_text_formatting_option1">Форматталған элементті ерекшелеп, TalkBack мәзірін ашыңыз да, \"Мәтін форматын сипаттау\" опциясын таңдаңыз немесе</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Қоңырау шалуды, хабар жіберуді және т.б. үйреніңіз.</string>
   <string name="practice_gestures_link_text">Қимылдарды үйрену</string>
   <string name="practice_gestures_link_subtext">Әртүрлі қимылдарды үйреніп көріңіз.</string>
-  <string name="help_and_feedback_link_subtext">TalkBack функциясы туралы толық ақпарат алып, пікір жіберіңіз.</string>
   <string name="choose_tutorial_title">TalkBack-ті пайдалану жолын таңдаңыз</string>
   <string name="touch_tutorial_button">Түрту оқулығы</string>
   <string name="keyboard_tutorial_button">Пернетақта оқулығы</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Төменде пайдаланып көріңіз.</string>
   <string name="wear_training_typing_practice_button_content_description">Пернетақтамен теру</string>
   <string name="wear_training_end_tutorial_title">Сіз TalkBack функциясын пайдалануға дайынсыз</string>
-  <string name="talkback_updated_notification_title">TalkBack жаңартылды</string>
-  <string name="talkback_updated_notification_content">Толық ақпарат алу үшін түртіңіз.</string>
   <string name="wear_new_feature_page_title">TalkBack функциясының жаңа нұсқасына қош келдіңіз</string>
   <string name="wear_new_feature_page_content">Кейбір қателердің түзетілгенін және фокус қозғалысына қандай өзгерістер енгізілгенін байқайсыз.</string>
   <string name="wear_new_feature_page_button_content_description">Аяқтау</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Көк</string>
   <string name="title_pref_grey">Сұр</string>
   <string name="survey_setting_title">Пікір білдіру</string>
-  <string name="survey_closed">Сауалнама жабық</string>
   <string name="title_summarize_view">Экранды сипаттаңыз</string>
-  <string name="title_increase_touch_focus_latency">Ерекшелеу кідірісін арттыру</string>
-  <string name="title_decrease_touch_focus_latency">Ерекшелеу кідірісін азайту</string>
   <string name="detected_result">Анықталды: %1$s</string>
   <string name="title_image_caption">Суретті сипаттау</string>
   <string name="image_caption_with_gemini_prefix">Осы суретті сипатта. Жауапта ешқандай белгі пайдаланба.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ПАЙДАЛАНУШЫ: %1$s</string>
   <string name="image_qna_answer_prefix">МОДЕЛЬ: %1$s</string>
   <string name="image_qna_with_history_postfix">... [ПАЙДАЛАНУШЫ мен МОДЕЛЬ іс-әрекеттерін әрі қарай кезек-кезек қолдана беріңіз] ...</string>
-  <string name="screen_overview_with_screenshot">Сіздің тапсырмаңыз – телефон экранындағы нәрсені көрмейтін адамдарға көмектесу. Бұл скриншотты бір-екі сөйлеммен сипаттаңыз.
-
-Нұсқаулар
-Жауабыңызды \"Экранда… көрсетілген\" деп бастаңыз.
-Жауаптың басында экрандағы ең маңызды, бірінші көзге түсетін контент сипатталуы керек. Ең маңызды, көзге түсетін контент мысалдары:
-* чат қолданбасында: ең соңғы хабардың жіберушісі және мәтіні;
-* әлеуметтік желі қолданбасында: бірінші пост, соның ішінде оны кім жариялағаны, мәтіні, сурет сипаттамасы;
-* жаңалықтар қолданбасында: мақала атауы және негізгі суреттің сипаттамасы;
-* сатып алу қолданбасында: көрсетілген өнімнің сипаттамасы және бағасы;
-* күнтізбе қолданбасында: келесі іс-шара және одан кейін көрсетілген іс-шаралар саны;
-* хабарлар тізімінде: бірінші хабардың атауы мен алғы көрінісі және тізімдегі келесі бірнеше хабардың тек атаулары және оқылмаған хабарлар саны.
-
-Содан кейін жауапта навигация жолақтары мен байқалатын түймелердің орналасқан жері мен мақсатының сипаттамасы болады.
-Жоғарғы жақтағы күй жолағында не бар екенін (мысалы, уақыт, желі күйі, батарея) айтып кету қажет емес.
-Жауапта форматтау қолдануға болмайды.</string>
   <string name="title_gemini_opt_in_dialog">Толық сурет сипаттамаларын алу керек пе?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Сурет сипаттамаларын алу керек пе?</string>
   <string name="title_gemini_result_dialog">Анықталды: сурет</string>
   <string name="title_gemini_result_bottom_sheet">Сурет сипаттамасы</string>
   <string name="title_gemini_screen_overview_result_dialog">Экран сипаттамасы</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Сипаттама</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Әрекеттер</string>
   <string name="positive_button_gemini_opt_in_dialog">Қосу</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Келісемін</string>
   <string name="negative_button_gemini_opt_in_dialog">Жоқ, рақмет</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Параметрлерге өту</string>
-  <string name="positive_button_gemini_download_dialog">Жүктеп алу және қосу</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Мәтін: \"%1$s\".</string>
   <string name="detected_icon_label">Мәтін: \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Экранды сипаттау мүмкін емес.</string>
   <string name="image_caption_no_result">Суретті сипаттау мүмкін емес.</string>
   <string name="image_caption_with_hide_screen">Экран жасырылған кезде, сурет сипаттамалары көрсетілмейді. Экранды көрсетіп, әрекетті қайталаңыз.</string>
-  <string name="feedback_button_state_set">таңдалды</string>
-  <string name="feedback_button_state_unset">таңдалмады</string>
   <string name="action_text_like_button">Дұрыс жауап деп белгілеу</string>
   <string name="action_text_dislike_button">Қате жауап деп белгілеу</string>
   <string name="action_text_clear_like_button">Дұрыс жауапты тазалау</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Сурет пен белгішенің автоматты сипаттамалары жүктеп алынып жатыр.</string>
   <string name="download_all_image_captioning_successful_hint">Сурет пен белгішенің автоматты сипаттамалары жүктеп алынды.</string>
   <string name="download_all_image_captioning_failed_hint">Жүктеп алу мүмкін емес. Кейінірек қайталап көріңіз.</string>
-  <string name="download_complete_notification_title">Жүктеп алынды</string>
-  <string name="download_complete_notification_content">Енді TalkBack арқылы сурет пен белгішенің автоматты сипаттамаларын естисіз.</string>
-  <string name="download_complete_notification_action">Параметрлер</string>
   <string name="download_storage_error_hint">Жад толы. Жүктеп алу үшін \"Параметрлер &gt; Жад\" бөліміне кіріп, %1$d МБ босатыңыз.</string>
   <string name="download_network_error_hint">Жүктеп алу мүмкін емес. Байланысты тексеріп, әрекетті қайталап көріңіз.</string>
   <string name="switch_icon_detection_dialog_title">Автоматты белгіше сипаттамалары</string>
   <string name="switch_icon_detection_dialog_message">Белгішеге өткен кезде, оның сипаттамасын естисіз.</string>
   <string name="switch_image_description_dialog_message">Суретке өткен кезде, оның сипаттамасын естисіз. Кейбір қолданба оған қолдау көрсетпеуі мүмкін.</string>
-  <string name="switch_text_recognition_dialog_title">Суреттердегі мәтінді автоматты түрде сипаттау</string>
   <string name="switch_text_recognition_dialog_message">Мәтін берілген суретке өткен кезде, оның сипаттамасы айтылады.</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Жүктеп алынды.</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Таңдалған суреттің сипаттамасын TalkBack мәзірінен бұрынғыша алуыңызға болады.</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Жарайды</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Жүктеп алынғанды жою</string>
   <string name="delete_icon_detection_dialog_title">Белгішенің автоматты сипаттамаларын жою керек пе?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Gemini функциясын TalkBack-те пайдалану</string>
   <string name="gemini_disable_dialog_message">Gemini көмегімен экран бетіндегіні түсіну</string>
   <string name="disable_gemini_dialog_subtext">Gemini көмегімен экран бетіндегіні түсіну функциясын іске қосу үшін қосу</string>
-  <string name="ai_services_update_dialog_title">Суреттерді сипаттау үшін %1$s қолданбасын жаңартыңыз</string>
-  <string name="ai_services_update_dialog_message">Сурет сипаттамаларын тыңдау үшін Google Play-ден %1$s қолданбасының соңғы нұсқасын жүктеп алыңыз.\n\nЖүктеп алған соң, TalkBack параметрлеріне оралып, автоматты сурет сипаттамаларын қайта қосыңыз.</string>
-  <string name="ai_services_update_dialog_button_text">Google Play-ге өту</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Бірдеңе дұрыс болмады. Қайталап көріңіз.</string>
   <string name="gemini_block_message">Бұл суретті өңдеу мүмкін емес</string>
   <string name="gemini_network_error">Интернет байланысы жоқ. Wi-Fi желісін немесе мобильдік желіні тексеріңіз де, қайталап көріңіз.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Gemini-ға қойылатын сұрақты теру</string>
   <string name="image_qna_send_button_text">Сұрау</string>
   <string name="image_qna_speak_question_description">Сұрақ қою</string>
-  <string name="overviews_summary_intro">Осы қолданба экранының қысқаша сипаттамасы: %1$s</string>
   <string name="overviews_node_not_found">Кешіріңіз, экранның сіз сұраған бөлігін таба алмай қалдым.</string>
-  <string name="overviews_images_in_app">Табылған негізгі суреттер</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Қолданбадағы әрекеттер</string>
-  <string name="overviews_actions_in_app_description">Осы қолданбаның экранында орындауға болатын негізгі әрекеттер:</string>
-  <string name="overviews_parent_type">Қолданбадағы әрекеттер</string>
   <string name="text_replaced_feedback">Мәтін ауыстырылды.</string>
   <string name="switch_gesture_set">Қимылдар жинағын ауыстыру</string>
   <string name="switch_gesture_set_to">%1$d қимылдар жинағына ауысу</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Жабу</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Экран өшірулі кезде хабарландыруларды есту үшін TalkBack сөз мөлшері параметрлеріндегі \"Экран өшірулі кезде хабарландыруларды дыбыстау\" параметрін қосыңыз</string>
 </resources>

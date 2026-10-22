@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Όταν το SandFly είναι ενεργό, παρέχει εκφωνημένα σχόλια για να μπορείτε να χρησιμοποιείτε τη συσκευή χωρίς να κοιτάτε την οθόνη. Το SandFly προορίζεται για περιπτώσεις όπου η παρακολούθηση της οθόνης δεν είναι δυνατή ή για άτομα που δυσκολεύονται να δουν το περιεχόμενο της οθόνης.<br><br><b>Τρόπος χρήσης του SandFly</b><br>• Σύρετε προς τα δεξιά ή τα αριστερά για μετακίνηση μεταξύ στοιχείων<br>• Κάντε διπλό πάτημα για να ενεργοποιήσετε ένα στοιχείο<br>• Σύρετε με δύο δάχτυλα για κύλιση<br><b>Τρόπος απενεργοποίησης του SandFly</b><br>1. Στις Ρυθμίσεις, πατήστε <b>Χρήση του SandFly</b>. Θα εμφανίζεται ένα περίγραμμα. Πατήστε το δύο φορές.<br>2. Στο μήνυμα επιβεβαίωσης, πατήστε <b>Διακοπή</b>. Θα εμφανίζεται ένα περίγραμμα. Πατήστε το δύο φορές.]]></string>
   <string name="talkback_service_summary">Χρησιμοποιήστε έναν αναγνώστη οθόνης για να ακούτε την εκφώνηση των στοιχείων</string>
   <string name="talkback_preferences_title">Ρυθμίσεις SandFly</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Ρυθμίσεις</string>
   <string name="tts_preferences_title">Κείμενο σε ομιλία</string>
   <string name="language_options">Γλώσσες</string>
   <string name="spoken_language">Γλώσσα ομιλίας</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Η αναζήτηση ακυρώθηκε.</string>
   <string name="notification_type_status_started">Ξεκίνησε</string>
   <string name="notification_type_status_stopped">Διακόπηκε</string>
-  <string name="notification_type_status_connected">συνδεδεμένο</string>
-  <string name="notification_battery_level_unknown">άγνωστο</string>
   <string name="notification_battery_saver_mode">Εξοικονόμηση μπαταρίας ενεργή</string>
   <string name="template_no_text_selected">Δεν επιλέχτηκε κείμενο</string>
   <string name="template_charging">Φόρτιση %1$s Επίπεδο μπαταρίας %2$s τοις εκατό.</string>
   <string name="template_charging_lite">Φόρτιση %1$s</string>
-  <string name="template_battery_state">Ισχύς %1$s %2$s τοις εκατό %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Ειδοποίηση ήχου στη δόνηση.</string>
   <string name="value_ringer_silent">Ειδοποίηση ήχου στο αθόρυβο.</string>
   <string name="value_screen_on">Οθόνη ενεργοποιημένη.</string>
   <string name="value_screen_off">Οθόνη απενεργοποιημένη.</string>
   <string name="value_device_unlocked">Η συσκευή ξεκλειδώθηκε.</string>
-  <string name="title_pref_category_audio">Ήχος</string>
   <string name="title_pref_speech_volume">Ένταση ομιλίας</string>
-  <string name="title_pref_speech_rate">Ταχύτητα ομιλίας</string>
-  <string name="summary_pref_speech_rate">Ταχύτητα με την οποία εκφωνείται το κείμενο</string>
   <string name="title_pref_verbose_scroll_announcement">Να εκφωνείται πάντα ο αριθμός στοιχείων λίστας</string>
   <string name="summary_pref_verbose_scroll_announcement">Εκφώνηση των στοιχείων που εμφανίζονται μετά από κάθε κύλιση</string>
   <string name="title_pref_cover_proximity_sensor">Καλύψτε τον αισθητήρα εγγύτητας για να σταματήσετε την ομιλία</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Εκφώνηση ώρας</string>
   <string name="pref_speak_time_summary">Όταν ενεργοποιείτε την οθόνη</string>
   <string name="summary_speak_container_element_positions">Εκφώνηση όταν μπαίνετε ή βγαίνετε από λίστες, πλέγματα και άλλα κοντέινερ</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Προστέθηκε καθυστέρηση εστίασης στο στοιχείο ελέγχου ανάγνωσης</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Μπορείτε πλέον να αλλάζετε την καθυστέρηση εστίασης ανά πάσα στιγμή με τα στοιχεία ελέγχου ανάγνωσης.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Να γίνει εναλλαγή σε σήκωμα δαχτύλου για πληκτρολόγηση;</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Όταν η καθυστέρηση εστίασης πληκτρολόγησης έχει οριστεί ως κάτω από 0,3 δευτερόλεπτα, θα είναι πολύ δύσκολο να εκτελέσετε διπλό πάτημα για πληκτρολόγηση. Επιλέξτε Εναλλαγή για αυτόματη εναλλαγή σε σήκωμα δαχτύλου για πληκτρολόγηση.\n\nΓια να χρησιμοποιήσετε το σήκωμα δαχτύλου για πληκτρολόγηση, πατήστε παρατεταμένα με το δάχτυλό σας για να επιλέξετε οποιοδήποτε πλήκτρο και έπειτα σηκώστε το για πληκτρολόγηση.\n\nΜπορείτε να προσαρμόσετε αυτή τη λειτουργία στις ρυθμίσεις του SandFly.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Προστέθηκε καθυστέρηση εστίασης πληκτρολόγησης στο στοιχείο ελέγχου ανάγνωσης</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Αν το διπλό πάτημα δεν λειτουργεί αξιόπιστα κατά την πληκτρολόγηση, μπορείτε να ορίσετε μεγαλύτερη καθυστέρηση εστίασης πληκτρολόγησης ανά πάσα στιγμή με τα στοιχεία ελέγχου ανάγνωσης.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Η καθυστέρηση εστίασης πληκτρολόγησης δεν λειτουργεί χωρίς τη λειτουργία Σήκωμα δαχτύλου για πληκτρολόγηση.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Το κατάλαβα</string>
   <string name="reset_letency_reduction_settings_dialog_title">Επαναφορά ρυθμίσεων καθυστέρησης;</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Με αυτή την ενέργεια, θα γίνει επαναφορά όλων των ρυθμίσεων καθυστέρησης στις προεπιλογές</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Επαναφορά</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Έγινε επαναφορά των ρυθμίσεων μείωσης λανθάνοντος χρόνου.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Εναλλαγή</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Να μην γίνει εναλλαγή</string>
   <string name="Reset_gesture_settings_dialog_title">Επαναφορά κινήσεων;</string>
   <string name="Reset_gesture_settings_set_dialog_title">Επαναφορά κινήσεων στο τρέχον σύνολο;</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Με αυτή την ενέργεια θα γίνει επαναφορά των κινήσεων στις προεπιλεγμένες ενέργειες.\n\Τυχόν αλλαγές που έχετε κάνει θα χαθούν.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Εκφώνηση όλων των ενημερώσεων προόδου</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Περιλαμβάνει ενημερώσεις κατά τη λήψη, την ακολούθηση οδηγιών διαδρομής κ.ά. Όταν έχει απενεργοποιηθεί, θα εξακολουθείτε να λαμβάνετε λιγότερο συχνές ενημερώσεις.</string>
   <string name="title_pref_explore_by_touch">Εξερεύνηση μέσω αφής</string>
-  <string name="title_pref_category_visual">Οπτικές</string>
   <string name="title_pref_category_controls">Στοιχεία ελέγχου</string>
-  <string name="title_pref_category_braille">Μπράιγ</string>
-  <string name="title_pref_category_general">Γενικά</string>
-  <string name="title_pref_category_advanced">Σύνθετες</string>
-  <string name="title_pref_category_others">Άλλες</string>
-  <string name="title_pref_category_tutorial_and_help">Οδηγός και βοήθεια</string>
   <string name="title_pref_category_reduce_latency_summary">Αυτές οι ρυθμίσεις κάνουν το SandFly να αποκρίνεται πιο γρήγορα μετά το άγγιγμα της οθόνης</string>
   <string name="reset_latency_settings_title">Επαναφορά όλων των ρυθμίσεων καθυστέρησης</string>
   <string name="title_pref_single_tap">Ενεργοποίηση με ένα πάτημα</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Ένδειξη εστίασης</string>
   <string name="title_pref_category_manage_gestures">Κινήσεις</string>
   <string name="title_pref_manage_labels">Προσαρμοσμένες ετικέτες</string>
-  <string name="title_pref_manage_customize_menus">Επεξεργασία μενού</string>
   <string name="title_pref_category_context_menu">Μενού SandFly</string>
   <string name="title_pref_category_selector_menu">Στοιχεία ελέγχου ανάγνωσης</string>
   <string name="title_pref_category_navigation_menu">Επεξεργασία επιλογών πλοήγησης</string>
-  <string name="pref_category_context_menu_summary">Πατήστε με 3 δάχτυλα ή σύρετε προς τα επάνω ή προς τα κάτω και μετά προς τα δεξιά.</string>
-  <string name="pref_category_context_menu_summary_xr">Για να χρησιμοποιήσετε το μενού του SandFly, γυρίστε τη δευτερεύουσα παλάμη προς τα μέσα και πλησιάστε/απομακρύνετε τα δάχτυλα.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Σύρετε προς τα κάτω και μετά προς τα δεξιά.</string>
-  <string name="pref_category_selector_menu_summary">Περιστρέψτε 2 δάχτυλα σαν περιστροφικό διακόπτη ή σύρετε προς τα αριστερά ή προς τα δεξιά με 3 δάχτυλα για να επιλέξετε ένα στοιχείο ελέγχου ανάγνωσης. Στη συνέχεια, σύρετε προς τα επάνω ή προς τα κάτω για να το αλλάξετε.</string>
-  <string name="pref_category_selector_menu_summary_xr">Για εναλλαγή μεταξύ των στοιχείων ελέγχου ανάγνωσης, γυρίστε τη δευτερεύουσα παλάμη προς τα μέσα, πλησιάστε/απομακρύνετε τα δάχτυλά σας, κρατήστε παρατεταμένα μετακινώντας προς τα δεξιά ή προς τα αριστερά και αφήστε.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Σύρετε προς τα επάνω και μετά προς τα κάτω ή προς τα κάτω και μετά προς τα επάνω για να επιλέξετε ένα στοιχείο ελέγχου ανάγνωσης. Στη συνέχεια, σύρετε προς τα επάνω ή προς τα κάτω για να το αλλάξετε.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Συντομεύσεις πληκτρολογίου</string>
   <string name="title_pref_export_custom_labels">Εξαγωγή προσαρμοσμένων ετικετών</string>
-  <string name="title_pref_play_store">Άνοιγμα του SandFly στο Play Store</string>
-  <string name="summary_pref_play_store">Τρέχουσα έκδοση SandFly: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Βοήθεια και σχόλια</string>
-  <string name="title_pref_gup">Επικοινωνία με την Υποστήριξη Google για άτομα με αναπηρία</string>
-  <string name="subtitle_pref_gup">Λήψη βοήθειας σχετικά με τη χρήση του SandFly ή αναφορά προβλημάτων</string>
-  <string name="pref_item_licenses">Άδειες λογισμικού ανοικτού κώδικα</string>
-  <string name="title_pref_tutorial">Οδηγός</string>
   <string name="title_pref_help">Βοήθεια</string>
   <string name="title_pref_show_tos">Όροι Παροχής Υπηρεσιών</string>
   <string name="title_pref_show_privacy_policy">Πολιτική απορρήτου</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Κινήσεις δακτυλικών αποτυπωμάτων</string>
   <string name="title_pref_category_tutorial">Οδηγός SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Βοήθεια</string>
-  <string name="title_pref_category_typing">Πληκτρολόγηση</string>
   <string name="title_pref_advanced_settings">Σύνθετες ρυθμίσεις</string>
   <string name="title_pref_show_exit_watermark">Εμφάνιση οδηγιών για την απενεργοποίηση του SandFly</string>
   <string name="summary_pref_show_exit_watermark">Όταν ενεργοποιείται το SandFly, εμφάνιση του τρόπου απενεργοποίησής του</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Κάποια πλήκτρα τροποπ. διαφέρουν.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Μάθετε περισσότερα σχετικά με τις αντιστοιχίσεις πλήκτρων</string>
   <string name="keycombo_go_to_settings">Μετάβαση στις Ρυθμίσεις</string>
-  <string name="keycombo_keymap_changes_notifications_content">Η κλασική αντιστοίχιση πλήκτρων του SandFly πρόκειται να καταργηθεί. Για να συνεχίσετε να χρησιμοποιείτε συντομεύσεις πληκτρολογίου, κάντε εναλλαγή στην προεπιλεγμένη αντιστοίχιση πλήκτρων.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Μάθετε περισσότερα</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Το κατάλαβα</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Ρυθμίσεις</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Μάθετε περισσότερα</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Χρησιμοποιείτε την προεπιλ. αντιστοίχιση πλήκτρων SandFly. Υπάρχει βελτιωμένη αντιστοίχιση πλήκτρων με νέες εντολές. Περισσότερα στο Κέντρο βοήθειας ή εναλλαγή σε νέα αντιστ. πλήκτρων στις Ρυθμίσεις.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Διατίθεται νέα αντιστοίχιση πλήκτρων</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Η νέα βελτιωμένη αντιστοίχιση πλήκτρων του SandFly προσθέτει πολλές νέες εντολές. Μάθετε περισσότερα στο Κέντρο βοήθειας ή κάντε εναλλαγή στη νέα αντιστοίχιση πλήκτρων από τις Ρυθμίσεις.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Ενημερώστε το πλήκτρο τροποποίησης του SandFly</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Όχι τώρα</string>
   <string name="keycombo_warning_content_description">Περισσότερες πληροφορίες σχετικά με το πλήκτρο τροποποίησης</string>
-  <string name="keycombo_warning_dialog_title">Ενημερώστε το πλήκτρο τροποποίησης</string>
-  <string name="keycombo_warning_dialog_message">Για να λειτουργούν σωστά οι συντομεύσεις πληκτρολογίου του SandFly, ενημερώστε το πλήκτρο τροποποίησης από Ενέργεια σε Alt.\n\nΑν συνεχίσετε να χρησιμοποιείτε το πλήκτρο τροποποίησης Ενέργεια, ορισμένες συντομεύσεις θα πραγματοποιούν διαφορετικές ενέργειες για αυτή την έκδοση Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Διάταξη πληκτρολογίου</string>
   <string name="keycombo_menu_select_keymap">Επιλέξτε διάταξη πληκτρολογίου</string>
   <string name="keycombo_menu_reset_keymap">Επαναφορά διάταξης πληκτρολογίου</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Αύξηση έντασης ομιλίας</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Μείωση έντασης ομιλίας</string>
   <string name="keycombo_menu_global_refocus_current_node">Εκφώνηση τρέχοντος σημείου εστίασης</string>
-  <string name="keycombo_menu_category_granularity">Πλοήγηση</string>
   <string name="keycombo_menu_granularity_increase">Επόμενη ρύθμιση πλοήγησης</string>
   <string name="keycombo_menu_granularity_decrease">Προηγούμενη ρύθμιση πλοήγησης</string>
   <string name="keycombo_menu_category_other">Άλλες ενέργειες</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Είστε βέβαιοι ότι θέλετε να επαναφέρετε τα πλήκτρα των συντομεύσεών σας γι\' αυτήν τη διάταξη πληκτρολογίου στις προεπιλεγμένες τιμές τους; Λάβετε υπόψη ότι δεν είναι δυνατή η αναίρεση αυτής της ενέργειας.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Επαναφορά</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s σε λειτουργία περιήγησης</string>
-  <string name="keycombo_assign_dialog_instruction">Πατήστε το συνδυασμό πλήκτρων για να ορίσετε μια νέα συντόμευση. Πρέπει να περιέχει τουλάχιστον το πλήκτρο ALT ή Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Πατήστε τον συνδυασμό πλήκτρων με το πλήκτρο τροποποίησης %1$s για να ορίσετε νέα συντόμευση.</string>
   <string name="keycombo_unassigned">Χωρίς αντιστοιχία</string>
   <string name="save_button_in_keycombo_assign_dialog">Αποθήκευση</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Καθυστέρηση εστίασης πληκτρολόγησης</string>
   <string name="message_pref_touch_explore_latency">Με μικρότερη καθυστέρηση, το SandFly εκφωνεί νωρίτερα μετά το άγγιγμα του πληκτρολογίου.\n\nΕπιλέξτε μια καθυστέρηση</string>
   <string name="title_pref_touch_focus_timeout">Καθυστέρηση εστίασης</string>
-  <string name="summary_pref_touch_focus_time">
-Ελέγχει πόσο γρήγορα μιλάει το SandFly μετά τη μετακίνηση της εστίασης. Με μικρότερη καθυστέρηση, το SandFly φαίνεται πιο γρήγορο, αλλά μπορεί να κάνει πιο δύσκολη την εκτέλεση διπλού και τριπλού πατήματος.\n\n
-Οι καθυστερήσεις κάτω από 0,3 δευτερόλεπτα θα αλλάξουν το διπλό πάτημα για ενεργοποίηση σε πάτημα με δύο δάχτυλα για ενεργοποίηση.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Διαχείριση κινήσεων στο SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Απενεργοποιήστε και ενεργοποιήστε ξανά το SandFly για ενεργοποίηση ρύθμισης.</string>
   <string name="title_pref_auto_image_captioning">Αυτόματες περιγραφές</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Ενεργοποιήστε τις περιγραφές εικόνων στις Ρυθμίσεις</string>
   <string name="dialog_message_turn_on_image_description">Μπορείτε να δοκιμάσετε ξανά αφού ενεργοποιήσετε είτε τις αυτόματες είτε τις λεπτομερείς περιγραφές εικόνων</string>
   <string name="title_pref_detailed_image_description">Λεπτομερείς περιγραφές εικόνων</string>
-  <string name="summary_pref_ai_description">Ακούστε πιο εκτενείς περιγραφές όταν επιλέγετε «<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>» από το μενού του SandFly</string>
   <string name="dialog_message_on_device_ai_description">Θα ακούτε μια σύντομη περιγραφή όταν εστιάζετε σε μια εικόνα σε υποστηριζόμενες εφαρμογές.\n\nΗ επεξεργασία των εικόνων πραγματοποιείται στη συσκευή σας και οι εικόνες δεν αποστέλλονται ποτέ στην Google. \n\nΤο παραγωγικό AI είναι σε πειραματικό στάδιο, οπότε θα κάνει λάθη. Εάν συνεχίσετε, συμφωνείτε με τους <a href="https://policies.google.com/terms/generative-ai">Όρους Παροχής Υπηρεσιών της Google</a>.</string>
   <string name="enable_gemini">Ενεργοποίηση</string>
   <string name="powered_by_gemini">Με την υποστήριξη του παραγωγικού AI</string>
-  <string name="detailed_image_description_ongoing_hint">Λήψη περιγραφής</string>
-  <string name="detailed_image_description_result_prefix">Ανιχνεύτηκε: Εικόνα. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Απαιτείται λήψη για τις αυτόματες περιγραφές εικόνων</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Η επεξεργασία των εικόνων πραγματοποιείται στη συσκευή σας και οι εικόνες δεν αποστέλλονται ποτέ στην Google.\n\nΤο παραγωγικό AI είναι σε πειραματικό στάδιο, οπότε θα κάνει λάθη. Αν συνεχίσετε, συμφωνείτε με τους %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Όρους Παροχής Υπηρεσιών της Google</string>
   <string name="message_aifeature_downloading">Λήψη μοντέλου AI σε εξέλιξη. Μπορεί να χρειαστεί λίγη ώρα. Θα ειδοποιηθείτε όταν ολοκληρωθεί.</string>
   <string name="message_aifeature_downloading_with_progress">Η λήψη βρίσκεται ακόμα σε εξέλιξη. Έγινε λήψη %1$d από %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Έγινε λήψη του μοντέλου AI. Το SandFly μπορεί πλέον να δημιουργεί περιγραφές εικόνων.</string>
   <string name="summary_pref_auto_image_captioning">Για εικονίδια, εικόνες και κείμενο σε εικόνες</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Για κείμενο σε εικόνες</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Για εικόνες και κείμενο σε εικόνες</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Για εικονίδια και κείμενο σε εικόνες</string>
   <string name="summary_pref_module_downloading">Λήψη…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Ενεργό για όλες τις εικόνες</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Ενεργό μόνο για εικόνες χωρίς ετικέτα</string>
   <string name="summary_pref_auto_image_captioning_disabled">Ανενεργό</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Ενεργό για όλα τα εικονίδια</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Ενεργό μόνο για εικονίδια χωρίς ετικέτα</string>
   <string name="summary_pref_auto_icon_detection_disabled">Ανενεργό</string>
   <string name="title_pref_enable_auto_image_caption">Όλες οι εικόνες</string>
   <string name="title_pref_enable_auto_image_caption_arg">Όλες οι εικόνες\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Όλα τα εικονίδια</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Μόνο εικονίδια χωρίς ετικέτα</string>
   <string name="title_pref_disable_auto_icon_detection">Να μην γίνεται περιγραφή των εικονιδίων</string>
-  <string name="dialog_message_on_device_ai_model_download">Όταν εστιάζετε σε μια εικόνα σε υποστηριζόμενες εφαρμογές, θα ακούτε μια σύντομη περιγραφή.\n\nΗ επεξεργασία των εικόνων πραγματοποιείται στη συσκευή σας και οι εικόνες δεν αποστέλλονται ποτέ στην Google.\n\nΤο παραγωγικό AI είναι σε πειραματικό στάδιο, οπότε θα κάνει λάθη. Αν συνεχίσετε, συμφωνείτε με τους %1$s.</string>
   <string name="title_pref_enable_gemini_support">Ενεργό</string>
   <string name="title_pref_disable_gemini_support">Ανενεργό</string>
   <string name="summary_pref_gemini_support_enabled">Το Gemini είναι ενεργό</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Εκτύπωση δέντρου κόμβου</string>
   <string name="shortcut_print_performance_stats">Εκτύπωση στατιστικών στοιχείων απόδοσης</string>
   <string name="shortcut_first_in_screen">Εστίαση στο πρώτο στοιχείο στην οθόνη</string>
-  <string name="shortcut_summary">Σύνοψη διάταξης οθόνης</string>
   <string name="shortcut_voice_commands">Έναρξη φωνητικής εντολής</string>
   <string name="shortcut_last_in_screen">Εστίαση στο τελευταίο στοιχείο στην οθόνη</string>
   <string name="shortcut_enable_dimming">Απόκρυψη οθόνης</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Πλοήγηση ιστού</string>
   <string name="menu_category_basic_navigation">Βασική πλοήγηση</string>
   <string name="summary_custom_action">Δείχνει πότε υπάρχουν ενέργειες για το τρέχον στοιχείο, συμπεριλαμβανομένων των συνδέσμων, της αντιγραφής, της επικόλλησης, της επιλογής και άλλα</string>
-  <string name="summary_context_menu_links">Ανοίξτε τους συνδέσμους στο εστιασμένο στοιχείο.</string>
   <string name="summary_viewpager_controls">Μεταβείτε στην προηγούμενη ή την επόμενη σελίδα. Εμφανίζεται όταν διαβάζετε περιεχόμενο με πολλές σελίδες.</string>
   <string name="summary_labeling_controls">Εμφανίζεται όταν επιλέγετε ένα στοιχείο χωρίς ετικέτα.</string>
   <string name="summary_granularity">Επιλέξτε τον τρόπο ανάγνωσης (ανά χαρακτήρα, λέξη, γραμμή κ.λπ.).</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Σύνοψη της οθόνης με κουμπιά ενεργειών</string>
   <string name="summary_screen_overview_no_actions">Ακούστε μια σύνοψη του περιεχομένου στην οθόνη</string>
   <string name="summary_image_caption">Εκφώνηση κειμένου και εικονιδίων εντός επιλεγμένης εικόνας</string>
-  <string name="summary_summarize_view">Εκφώνηση σύνοψης προβολής</string>
   <string name="summary_typo_suggestions">Εμφανίζεται όταν ο δείκτης βρίσκεται σε ένα ορθογραφικό λάθος</string>
   <string name="summary_cache_keyboard_keys">Το SandFly προφορτώνει τις ανακοινώσεις για να μειώσει την καθυστέρηση κατά την πληκτρολόγηση</string>
   <string name="summary_cache_keyboard_keys_disabled">Χρησιμοποιήστε την τεχνολογία Κείμενο σε ομιλία Google για να χρησιμοποιήσετε αυτή τη λειτουργία</string>
-  <string name="value_direction_down">κάτω</string>
-  <string name="value_direction_down_and_right">κάτω και δεξιά</string>
   <string name="title_pref_shortcut_up">Σύρετε προς τα επάνω</string>
   <string name="title_pref_shortcut_up_xr">Πλησίασμα/απομάκρυνση δαχτύλων και ολίσθηση επάνω με δευτερεύουσα παλάμη μέσα</string>
   <string name="title_pref_shortcut_down">Σύρετε προς τα κάτω</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Σύρετε αριστερά στον αισθ. δακτ. αποτυπ.</string>
   <string name="title_pref_shortcut_fingerprint_right">Σύρετε δεξιά στον αισθητ. δακτ. αποτυπ.</string>
   <string name="title_pref_version_code">Κωδικός έκδοσης</string>
-  <string formatted="false" name="value_volume_100_percent">Αντιστοίχιση με την ένταση ομιλίας</string>
-  <string formatted="false" name="value_volume_75_percent">75% της έντασης ομιλίας</string>
-  <string formatted="false" name="value_volume_50_percent">50% της έντασης ομιλίας</string>
-  <string formatted="false" name="value_volume_25_percent">25% της έντασης ομιλίας</string>
   <string name="value_type_confirmation_double_tap">Πατήστε με το δάχτυλο για επιλογή πλήκτρου &amp; πατήστε 2 φορές</string>
   <string name="value_type_confirmation_lift_to_type">Πατήστε για επιλογή &amp; μετά 2 φορές για άλλα πλήκτρα</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Πατήστε με το δάχτυλό σας για επιλογή και έπειτα σηκώστε το</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 δευτερόλεπτα</string>
   <string name="value_touch_explore_time_out_250ms">0,25 δευτερόλεπτα</string>
   <string name="value_touch_explore_time_out_300ms">0,3 δευτερόλεπτα (προεπιλογή)</string>
-  <string name="value_shake_to_read_disabled">Απενεργοποιημένο</string>
-  <string name="value_shake_to_read_threshold_very_light">Πολύ ελαφριά</string>
-  <string name="value_shake_to_read_threshold_light">Ελαφριά</string>
-  <string name="value_shake_to_read_threshold_medium">Μεσαία</string>
-  <string name="value_shake_to_read_threshold_hard">Δυνατά</string>
-  <string name="value_shake_to_read_threshold_very_hard">Πολύ δυνατά</string>
   <string name="title_pref_on_screen_keyboard">Πληκτρολόγιο οθόνης</string>
   <string name="title_pref_physical_keyboard">Φυσικό πληκτρολόγιο</string>
   <string name="value_keyboard_echo_none">Κανένας</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Χρήση μορφής ώρας συσκευής</string>
   <string name="pref_time_feedback_format_entries_12_hour">12ωρο</string>
   <string name="pref_time_feedback_format_entries_24_hour">24ωρο</string>
-  <string name="notification_title_talkback_gestures_changed">Οι κινήσεις SandFly άλλαξαν</string>
-  <string name="notification_message_talkback_gestures_changed">Πατήστε για να ελέγξετε τις αλλαγές στις κινήσεις προσβασιμότητας</string>
   <string name="always_show_warning_checkbox">Να εμφανίζεται πάντα αυτή η προειδοποίηση</string>
   <string name="label_dialog_title_add">Προσθήκη ετικέτας</string>
   <string name="label_dialog_title_edit">Επεξεργασία ετικέτας</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Δεν βρέθηκαν εφαρμογές για την εξαγωγή ετικετών.</string>
   <string name="label_choose_app_to_import">Επιλέξτε μια εφαρμογή για την εισαγωγή ετικετών:</string>
   <string name="label_choose_app_to_export">Επιλογή εφαρμογής για εξαγωγή ετικετών:</string>
-  <string name="talkback_gesture_change_details">Αυτή η έκδοση του SandFly περιλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις προσβασιμότητας. Οι ενέργειες που συσχετίζονται με αυτές τις κινήσεις μπορούν να προσαρμοστούν μέσα από τις ρυθμίσεις του SandFly. Όταν η \"Εξερεύνηση μέσω αφής\" είναι ενεργοποιημένη, μπορείτε να χρησιμοποιείτε τις ακόλουθες κινήσεις για να εκτελείτε ορισμένες ενέργειες.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Απόκρυψη οθόνης;</string>
   <string name="dialog_message_dim_screen">Αυτή η ενέργεια απενεργοποιεί την οθόνη για τη βελτίωση του απορρήτου. Μπορεί να εξακολουθεί να εμφανίζεται κάποιο περιεχόμενο, όπως μηνύματα για την ενεργοποίηση της οθόνης ή μενού για λειτουργίες προσβασιμότητας, όπως το SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Αυτή η έκδοση του SandFly περιλαμβάνει αλλαγές στις προεπιλεγμένες κινήσεις προσβασιμότητας.\n\nΜε την κίνηση προς τα πάνω και μετά κάτω μετακινείστε στο πρώτο στοιχείο της οθόνης, ενώ με την κίνηση προς τα κάτω και μετά πάνω μετακινείστε στο τελευταίο στοιχείο.\n\nΜπορείτε πλέον να αλλάξετε την ευαισθησία ανάγνωσης εστιάζοντας σε ένα στοιχείο και επιλέγοντας την ευαισθησία από το μενού περιβάλλοντος του Talkback.\n\nΜπορείτε να αλλάξετε τις ενέργειες που εκτελούνται από αυτές τις κινήσεις στις ρυθμίσεις του SandFly.</string>
-  <string name="default_action_changed_details">Για την παύση και την αναπαραγωγή πολυμέσων, μπορείτε τώρα να κάνετε διπλό πάτημα με δύο δάχτυλα και να τα κρατήσετε παρατεταμένα στην οθόνη.\n\nΈχουν αλλάξει και άλλες κινήσεις.</string>
-  <string name="talkback_built_in_gesture_open_url">Άνοιγμα στο τηλέφωνο για περισσότερες πληροφορίες</string>
-  <string name="talkback_built_in_gesture_change_details_45">Σε αυτή την έκδοση του SandFly έχουν γίνει αλλαγές στις προεπιλεγμένες κινήσεις προσβασιμότητας.\n\nΜε την κίνηση προς τα επάνω γίνεται πλέον μετακίνηση στην προηγούμενη ρύθμιση πλοήγησης και με την κίνηση προς τα κάτω γίνεται πλέον μετακίνηση στην επόμενη ρύθμιση πλοήγησης.</string>
-  <string name="side_tap_shortcuts_removed_details">Αυτές οι ρυθμίσεις καταργούνται από το SandFly, λόγω προβλημάτων αξιοπιστίας:\n• Πλευρικό πάτημα των κινήσεων συσκευής\n• Ανακίνηση για έναρξη συνεχούς ανάγνωσης.</string>
-  <string name="button_accept_changed_gesture_mappings">Αποδοχή κινήσεων</string>
-  <string name="button_customize_gesture_mappings">Προσαρμογή κινήσεων</string>
   <string name="button_disable_all_events">Απενεργοποίηση όλων</string>
   <string name="button_enable_all_events">Ενεργοποίηση όλων</string>
   <string name="dialog_title_disable_exploration">Απενεργοποίηση \"Εξερεύνησης μέσω αφής\";</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Αναζήτηση στους πίνακες</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Κανάλι ειδοποιήσεων του SandFly</string>
-  <string name="pref_selector_summary">%1$s για να επιλέξετε μια ρύθμιση. Στη συνέχεια, %2$s για να προσαρμόσετε τη ρύθμιση.</string>
-  <string name="speech_rate_change">Ρυθμός ομιλίας %1$d%%</string>
   <string name="speech_pitch_maximum">Υψηλότερος τόνος ομιλίας</string>
   <string name="speech_pitch_minimum">Χαμηλότερος τόνος ομιλίας</string>
   <string name="reset_speech_rate_and_pitch">Επαναφορά ταχύτητας και τόνου ομιλίας</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Ανάδραση δόνησης %1$s</string>
   <string name="text_formatting_state">Εκφώνηση μορφοποίησης κειμένου %1$s</string>
   <string name="typing_echo_change">Ηχώ %1$s φυσικού πληκτρολογίου</string>
-  <string name="reading_control_toggle_prefix_xr">Παρατεταμένο πάτημα για εναλλαγή λειτουργίας στοιχείου ελέγχου ανάγνωσης με δευτερεύουσα παλάμη μέσα.</string>
   <string name="gesture_1_or_2">%1$s ή %2$s</string>
-  <string name="select_setting_hint">%1$s, για να επιλέξετε άλλη ρύθμιση</string>
-  <string name="adjust_setting_hint">%1$s, για να προσαρμόσετε τη ρύθμιση</string>
   <string name="adjust_granularity_hint">%1$s για ανάγνωση κατά %2$s</string>
   <string name="adjust_typo_hint">%1$s για προτάσεις.</string>
   <string name="use_action_hint">Πατήστε δύο φορές για εκτέλεση της ενέργειας</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Στοιχεία ελέγχου ανάγνωσης</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Για παύση ή αναπαραγωγή μέσων σε μια εφαρμογή βίντεο ή μουσικής, πατήστε δύο φορές με δύο δάχτυλα. Δοκιμάστε το τώρα.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Αυτή η κίνηση ενδέχεται να χρησιμοποιηθεί από άλλες εφαρμογές για διάφορες ενέργειες, όπως για να απαντήσουν ή να τερματίσουν μια τηλεφωνική κλήση. Αυτή η κίνηση ενδέχεται να μην υποστηρίζεται από όλες τις εφαρμογές.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Προβολή όλων των οδηγών για το SandFly</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Παύση ή αναπαραγωγή πολυμέσου. Συνήθως, αυτό θέτει σε παύση ή κάνει αναπαραγωγή του τρέχοντος βίντεο ή της μουσικής που αναπαράγεται. Σύρετε προς τα δεξιά για να συνεχίσετε.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Για να σταματήσετε προσωρινά την εκφώνηση από το SandFly, πατήστε με δύο δάχτυλα.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Η ομιλία του SandFly σταμάτησε. Συνήθως, αυτό διακόπτει την τρέχουσα φράση που το SandFly εκφωνεί. Σύρετε προς τα δεξιά για να συνεχίσετε.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Ενεργοποίηση ή απενεργοποίηση λειτουργίας επιλογής. Συνήθως, αυτό ξεκινά ή τερματίζει τη λειτουργία επιλογής όταν βρίσκεστε εντός ενός πεδίου εισαγωγής. Σύρετε προς τα δεξιά για να συνεχίσετε.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Για να χρησιμοποιήσετε τα στοιχεία ελέγχου ανάγνωσης, σύρετε προς τα αριστερά ή προς τα δεξιά με τρία δάχτυλα. Μπορείτε επίσης να σύρετε προς τα πάνω ή προς τα κάτω με τρία δάχτυλα.</string>
   <string name="new_shortcut_gesture_note">Σημείωση: Αυτές οι πληροφορίες ενδέχεται να μην είναι ακριβείς, επειδή έχετε προσαρμόσει ορισμένες κινήσεις. Για να ελέγξετε τις κινήσεις σας, μεταβείτε στις ρυθμίσεις του SandFly.</string>
-  <string name="welcome_to_android11">Καλώς ορίσατε στο SandFly για Android 11</string>
   <string name="welcome_to_android11_text">Έχουν προστεθεί νέες κινήσεις που διευκολύνουν και επιταχύνουν τη χρήση του SandFly.\n\nΜπορείτε να δοκιμάσετε τις νέες κινήσεις σε αυτή την οθόνη. Μπορείτε να ελέγξετε ανά πάσα στιγμή αυτές τις πληροφορίες στις ρυθμίσεις του SandFly.</string>
   <string name="new_gesture_notification_title">Νέες κινήσεις στο SandFly</string>
   <string name="new_gesture_notification_content">Πατήστε για να μάθετε πώς μπορείτε να χρησιμοποιείτε το SandFly γρηγορότερα με τις νέες κινήσεις.</string>
   <string name="dump_node_tree_description">Το δέντρο κόμβου εκτυπώθηκε σε αρχεία καταγραφής.</string>
   <string name="report_gesture_description">Αυτές είναι κινήσεις που εκτελέστηκαν πρόσφατα. Αναφέρετε ποια κίνηση είναι εσφαλμένη και ποια είναι η αναμενόμενη λειτουργία.</string>
-  <string name="update_welcome_text_content">Μπορείτε πλέον να συνδέεστε σε συσκευές μπράιγ μέσω HID, έναν τρόπο σύνδεσης σε συσκευές Bluetooth. Βεβαιωθείτε ότι έχετε τα νεότερα προγράμματα οδήγησης υλικολογισμικού από τον κατασκευαστή και, στη συνέχεια, ενεργοποιήστε το Bluetooth στη συσκευή μπράιγ. Μεταβείτε στο μενού Ρυθμίσεις SandFly &gt; Συσκευή μπράιγ και ενεργοποιήστε την επιλογή Χρήση συσκευής μπράιγ. Βρείτε τη συσκευή σας στη λίστα συσκευών και συνδεθείτε σε αυτήν.</string>
-  <string name="update_welcome_text_content_tts">Μπορείτε πλέον να συνδέεστε σε συσκευές μπράιγ μέσω HID, έναν τρόπο σύνδεσης σε συσκευές Bluetooth. Βεβαιωθείτε ότι έχετε τα νεότερα προγράμματα οδήγησης υλικολογισμικού από τον κατασκευαστή και, στη συνέχεια, ενεργοποιήστε το Bluetooth στη συσκευή μπράιγ. Μεταβείτε στις Ρυθμίσεις SandFly και έπειτα στη Συσκευή μπράιγ και ενεργοποιήστε την επιλογή Χρήση συσκευής μπράιγ. Βρείτε τη συσκευή σας στη λίστα συσκευών και συνδεθείτε σε αυτήν.</string>
-  <string name="update_welcome_text_content_with_link">Μάθετε πώς μπορείτε να χρησιμοποιήσετε τη συσκευή μπράιγ με το SandFly.</string>
   <string name="update_welcome_talkback_16.1">Αυτή η ενημέρωση του SandFly εισάγει υποστήριξη για τη λειτουργία Περιγραφή οθόνης σε περισσότερες γλώσσες και άλλες βελτιώσεις ποιότητας που κάνουν το SandFly πιο εύχρηστο.\n\nΣτις επόμενες οθόνες, θα μάθετε περισσότερα για αυτές τις αλλαγές.\n\nΜπορείτε να ελέγξετε αυτές τις πληροφορίες αργότερα, επιλέγοντας Ρυθμίσεις SandFly &gt; Νέες λειτουργίες στο SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">Αυτή η ενημέρωση του SandFly εισάγει υποστήριξη για την Περιγραφή οθόνης σε περισσότερες γλώσσες και άλλες βελτιώσεις ποιότητας που κάνουν το SandFly πιο εύχρηστο.\n\nΣτις επόμενες οθόνες, θα μάθετε περισσότερα σχετικά με αυτές τις αλλαγές.\n\nΜπορείτε να ελέγξετε αυτές τις πληροφορίες αργότερα, επιλέγοντας Ρυθμίσεις SandFly και έπειτα Νέες λειτουργίες στο SandFly.</string>
-  <string name="describe_screen_and_qna_title">Νέες γλώσσες για τις λειτουργίες Περιγραφή οθόνης και Ρωτήστε το Gemini</string>
-  <string name="describe_screen_and_qna_content">Οι λειτουργίες Περιγραφή οθόνης και Ρωτήστε το Gemini είναι πλέον διαθέσιμες σε επιπλέον γλώσσες. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Μάθετε περισσότερα στο κέντρο βοήθειας&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Συντόμευση για τη φωνητική πληκτρολόγηση</string>
   <string name="shortcut_for_dictation_content">Όταν χρησιμοποιείτε το Gboard, μπορείτε πλέον να πατήσετε δύο φορές με δύο δάχτυλα για να ξεκινήσετε ή να διακόψετε τη φωνητική πληκτρολόγηση.
 &lt;br&gt;
 &lt;br&gt;Βεβαιωθείτε ότι έχετε τη νεότερη έκδοση του &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard από το Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Όταν το Gboard εμφανίζεται στην οθόνη, μπορείτε πλέον να πατήσετε δύο φορές με δύο δάχτυλα για να ξεκινήσετε τη φωνητική υπαγόρευση και, στη συνέχεια, να πατήσετε δύο φορές με δύο δάχτυλα για να τη διακόψετε.</string>
-  <string name="keyboard_title">Πληκτρολόγιο</string>
-  <string name="keyboard_content">Το SandFly διαθέτει πλέον τη λειτουργία Βελτιωμένη αντιστοίχιση πλήκτρων για το πληκτρολόγιό του, με μια ποικιλία νέων εντολών και συντομεύσεων. Αυτή η βελτίωση, η οποία περιλαμβάνει τη λειτουργία περιήγησης για πιο αποτελεσματική πλοήγηση στον ιστό, βελτιστοποιεί την πλοήγηση και την αλληλεπίδραση για χρήστες του SandFly που βασίζονται σε φυσικά πληκτρολόγια. Μπορείτε να επιλέξετε Βελτιωμένη αντιστοίχιση πλήκτρων από το μενού Ρυθμίσεις SandFly &gt; Σύνθετες ρυθμίσεις &gt; Συντομεύσεις πληκτρολογίου.</string>
-  <string name="keyboard_content_tts">Το SandFly διαθέτει πλέον τη λειτουργία Βελτιωμένη αντιστοίχιση πλήκτρων για το πληκτρολόγιό του, με μια ποικιλία νέων εντολών και συντομεύσεων. Αυτή η βελτίωση, η οποία περιλαμβάνει τη λειτουργία περιήγησης για πιο αποτελεσματική πλοήγηση στον ιστό, βελτιστοποιεί την πλοήγηση και την αλληλεπίδραση για χρήστες του SandFly που βασίζονται σε φυσικά πληκτρολόγια. Μπορείτε να επιλέξετε τη Βελτιωμένη αντιστοίχιση πλήκτρων, αν μεταβείτε στο μενού Ρυθμίσεις SandFly, επιλέξετε Σύνθετες ρυθμίσεις και, στη συνέχεια, Συντομεύσεις πληκτρολογίου.</string>
-  <string name="reduce_delay_title">Μείωση καθυστέρησης</string>
-  <string name="reduce_delay_content">Μπορείτε πλέον να μειώσετε τις καθυστερήσεις ανακοινώσεων του SandFly για την εξερεύνηση μέσω αφής και την πληκτρολόγηση. Για να δείτε αυτές τις ρυθμίσεις, μεταβείτε στο μενού Ρυθμίσεις SandFly &gt; Σύνθετες ρυθμίσεις &gt; Μείωση καθυστέρησης.</string>
-  <string name="reduce_delay_content_tts">Μπορείτε πλέον να μειώσετε τις καθυστερήσεις ανακοινώσεων του SandFly για την εξερεύνηση μέσω αφής και την πληκτρολόγηση. Για να δείτε αυτές τις ρυθμίσεις, μεταβείτε στο μενού Ρυθμίσεις SandFly, επιλέξτε Σύνθετες ρυθμίσεις και, στη συνέχεια, Μείωση καθυστέρησης.</string>
-  <string name="customize_braille_keyboard_improvements_title">Προσαρμογή κινήσεων πληκτρολογίου μπράιγ</string>
-  <string name="customize_braille_keyboard_improvements_content">Είναι πλέον δυνατή η προσαρμογή των κινήσεων για το εικονικό πληκτρολόγιο μπράιγ που εμφανίζεται στην οθόνη. Για να τις προσαρμόσετε, μεταβείτε στο μενού Ρυθμίσεις SandFly &gt; Πληκτρολόγιο μπράιγ &gt; Κινήσεις.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Είναι πλέον δυνατή η προσαρμογή των κινήσεων για το εικονικό πληκτρολόγιο μπράιγ που εμφανίζεται στην οθόνη. Για να τις προσαρμόσετε, μεταβείτε στο μενού Ρυθμίσεις SandFly, επιλέξτε Πληκτρολόγιο μπράιγ και, στη συνέχεια Κινήσεις.</string>
-  <string name="learn_more_about_braille_keyboard">Μάθετε περισσότερα σχετικά με το πληκτρολόγιο μπράιγ</string>
-  <string name="other_changes_title">Άλλες αλλαγές</string>
-  <string name="other_changes_content">Ένα μήνυμα στην οθόνη σάς βοηθά πλέον να απενεργοποιείτε γρήγορα το SandFly σε περίπτωση που ενεργοποιηθεί κατά λάθος. Μπορείτε να απενεργοποιήσετε αυτή τη λειτουργία από το μενού Ρυθμίσεις SandFly &gt; Εμφάνιση οδηγιών για την απενεργοποίηση του SandFly.</string>
-  <string name="other_changes_content_tts">Ένα μήνυμα στην οθόνη σάς βοηθά πλέον να απενεργοποιείτε γρήγορα το SandFly σε περίπτωση που ενεργοποιηθεί κατά λάθος. Μπορείτε να απενεργοποιήσετε αυτή τη λειτουργία, αν μεταβείτε στο μενού Ρυθμίσεις SandFly και επιλέξετε Εμφάνιση οδηγιών για την απενεργοποίηση του SandFly.</string>
-  <string name="keymap_changes_content">Η κλασική αντιστοίχιση πλήκτρων άλλαξε στην προεπιλεγμένη αντιστοίχιση πλήκτρων, η οποία περιλαμβάνει περισσότερες συντομεύσεις.</string>
   <string name="announcing_text_formatting_title">Ανακοίνωση μορφοποίησης του κειμένου</string>
   <string name="announcing_text_formatting_header">Το SandFly μπορεί πλέον να ανακοινώσει αλλαγές στη μορφοποίηση κειμένου, όπως η έντονη και η πλάγια γραφή, καθώς και το χρώμα κειμένου. Για να ξεκινήσετε:</string>
   <string name="announcing_text_formatting_option1">Εστιάστε στο στοιχείο με τη μορφοποίηση, ανοίξτε το μενού του SandFly και επιλέξτε Περιγραφή της μορφοποίησης του κειμένου ή</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Μάθετε πώς μπορείτε να πραγματοποιήσετε κλήσεις, να στείλετε μηνύματα κ.ά.</string>
   <string name="practice_gestures_link_text">Εξάσκηση κινήσεων</string>
   <string name="practice_gestures_link_subtext">Δοκιμάστε διάφορες κινήσεις για να μάθετε τι κάνουν</string>
-  <string name="help_and_feedback_link_subtext">Μάθετε περισσότερα για το SandFly και υποβάλετε σχόλια</string>
   <string name="choose_tutorial_title">Επιλέξτε πώς θέλετε να αλληλεπιδράτε με το SandFly</string>
   <string name="touch_tutorial_button">Οδηγός αφής</string>
   <string name="keyboard_tutorial_button">Οδηγός πληκτρολογίου</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Δοκιμάστε το παρακάτω.</string>
   <string name="wear_training_typing_practice_button_content_description">Πληκτρολόγηση με πληκτρολόγιο</string>
   <string name="wear_training_end_tutorial_title">Είστε έτοιμοι να ξεκινήσετε τη χρήση του SandFly</string>
-  <string name="talkback_updated_notification_title">Το SandFly ενημερώθηκε</string>
-  <string name="talkback_updated_notification_content">Πατήστε για να μάθετε περισσότερα</string>
   <string name="wear_new_feature_page_title">Καλώς ορίσατε στο ενημερωμένο SandFly</string>
   <string name="wear_new_feature_page_content">Θα παρατηρήσετε ορισμένες διορθώσεις σφαλμάτων και αλλαγές στον τρόπο με τον οποίο μετακινείται η εστίαση</string>
   <string name="wear_new_feature_page_button_content_description">Τέλος</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Μπλε</string>
   <string name="title_pref_grey">Γκρι</string>
   <string name="survey_setting_title">Μοιραστείτε τα σχόλιά σας</string>
-  <string name="survey_closed">Η έρευνα έκλεισε</string>
   <string name="title_summarize_view">Περιγραφή οθόνης</string>
-  <string name="title_increase_touch_focus_latency">Αύξηση καθυστέρησης εστίασης</string>
-  <string name="title_decrease_touch_focus_latency">Μείωση καθυστέρησης εστίασης</string>
   <string name="detected_result">Εντοπίστηκε: %1$s</string>
   <string name="title_image_caption">Περιγραφή εικόνας</string>
   <string name="image_caption_with_gemini_prefix">Περίγραψε την εικόνα. Απάντησε χωρίς τη χρήση σήμανσης.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ΧΡΗΣΤΗΣ: %1$s</string>
   <string name="image_qna_answer_prefix">ΜΟΝΤΕΛΟ: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Συνεχίστε να εναλλάσσετε τη σειρά μεταξύ ΧΡΗΣΤΗ και ΜΟΝΤΕΛΟΥ] …</string>
-  <string name="screen_overview_with_screenshot">Ο ρόλος σας είναι να βοηθήσετε κάποιον που δεν μπορεί να δει το τηλέφωνό του να καταλάβει τι υπάρχει στην οθόνη του τηλεφώνου. Περιγράψτε αυτό το στιγμιότυπο οθόνης με μερικές προτάσεις.
-
-Οδηγίες
-Ξεκινήστε την απάντησή σας με τη φράση \"Η οθόνη δείχνει\"
-Η αρχή της απάντησης θα πρέπει να περιγράφει το πιο αξιοσημείωτο περιεχόμενο στην οθόνη. Ακολουθούν ορισμένα παραδείγματα για το πιο αξιοσημείωτο περιεχόμενο που πρέπει να περιγραφεί
-* Σε μια εφαρμογή συζήτησης: ο αποστολέας και το κείμενο του πιο πρόσφατου μηνύματος
-* Σε μια εφαρμογή μέσων κοινωνικής δικτύωσης: η πρώτη ανάρτηση, συμπεριλαμβανομένου του χρήστη που την ανάρτησε, του κειμένου και μιας περιγραφής της εικόνας
-* Σε μια εφαρμογή ειδήσεων: ο τίτλος του άρθρου και μια περιγραφή της κύριας εικόνας
-* Σε μια εφαρμογή αγορών: μια περιγραφή του προϊόντος που εμφανίζεται και της τιμής
-* Σε μια εφαρμογή ημερολογίου: το επόμενο συμβάν και ο αριθμός των άλλων συμβάντων που εμφανίζονται στη συνέχεια
-* Σε μια λίστα μηνυμάτων: το όνομα και η προεπισκόπηση για το πρώτο μήνυμα και, στη συνέχεια, μόνο τα ονόματα για τα επόμενα μηνύματα στη λίστα, καθώς και ο αριθμός των μη αναγνωσμένων μηνυμάτων
-
-Στη συνέχεια, η απάντηση μπορεί να περιγράψει τη χωρική τοποθεσία και τον σκοπό των γραμμών πλοήγησης και των εμφανών κουμπιών.
-Μην αναφέρετε το περιεχόμενο της γραμμής κατάστασης στο επάνω μέρος (π.χ. ώρα, κατάσταση δικτύου, μπαταρία).
-Μην χρησιμοποιήσετε σημάνσεις στην απάντησή σας.</string>
   <string name="title_gemini_opt_in_dialog">Λήψη λεπτομερών περιγραφών εικόνων;</string>
   <string name="title_on_device_gemini_opt_in_dialog">Λήψη περιγραφών εικόνων;</string>
   <string name="title_gemini_result_dialog">Ανιχνεύτηκε: εικόνα</string>
   <string name="title_gemini_result_bottom_sheet">Περιγραφή εικόνας</string>
   <string name="title_gemini_screen_overview_result_dialog">Περιγραφή οθόνης</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Σύνοψη</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Ενέργειες</string>
   <string name="positive_button_gemini_opt_in_dialog">Ενεργοποίηση</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Συμφωνώ</string>
   <string name="negative_button_gemini_opt_in_dialog">Όχι, ευχαριστώ</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Μετάβαση στις Ρυθμίσεις</string>
-  <string name="positive_button_gemini_download_dialog">Λήψη και ενεργοποίηση</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Κείμενο, \"%1$s\".</string>
   <string name="detected_icon_label">Εικονίδιο, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Δεν είναι δυνατή η σύνοψη οθόνης</string>
   <string name="image_caption_no_result">Δεν είναι δυνατή η περιγραφή της εικόνας</string>
   <string name="image_caption_with_hide_screen">Οι περιγραφές εικόνων δεν είναι διαθέσιμες όταν έχει γίνει απόκρυψη της οθόνης. Εμφανίστε την οθόνη και δοκιμάστε ξανά.</string>
-  <string name="feedback_button_state_set">επιλέχθηκε</string>
-  <string name="feedback_button_state_unset">δεν επιλέχθηκε</string>
   <string name="action_text_like_button">Επισήμανση ως επιτυχημένη απάντηση</string>
   <string name="action_text_dislike_button">Επισήμανση ως αποτυχημένη απάντηση</string>
   <string name="action_text_clear_like_button">Διαγραφή επιτυχημένης απάντησης</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Λήψη αυτόματων περιγραφών εικόνων και εικονιδίων σε εξέλιξη</string>
   <string name="download_all_image_captioning_successful_hint">Οι αυτόματες περιγραφές εικόνων και εικονιδίων λήφθηκαν</string>
   <string name="download_all_image_captioning_failed_hint">Δεν είναι δυνατή η λήψη. Δοκιμάστε ξανά αργότερα.</string>
-  <string name="download_complete_notification_title">Η λήψη ολοκληρώθηκε</string>
-  <string name="download_complete_notification_content">Θα ακούτε πλέον αυτόματες περιγραφές εικόνων και εικονιδίων με το SandFly</string>
-  <string name="download_complete_notification_action">Ρυθμίσεις</string>
   <string name="download_storage_error_hint">Ο αποθηκευτικός χώρος είναι πλήρης. Για τη λήψη, ελευθερώστε %1$d MB στις Ρυθμίσεις &gt; Αποθηκευτικός χώρος.</string>
   <string name="download_network_error_hint">Δεν είναι δυνατή η λήψη. Ελέγξτε τη σύνδεση και δοκιμάστε ξανά.</string>
   <string name="switch_icon_detection_dialog_title">Αυτόματες περιγραφές εικονιδίων</string>
   <string name="switch_icon_detection_dialog_message">Ακούστε περιγραφές όταν εστιάζετε σε ένα εικονίδιο</string>
   <string name="switch_image_description_dialog_message">Ακούστε περιγραφές όταν εστιάζετε σε μια εικόνα. Ορισμένες εφαρμογές μπορεί να μην υποστηρίζουν αυτή τη λειτουργία.</string>
-  <string name="switch_text_recognition_dialog_title">Αυτόματη περιγραφή κειμένου σε εικόνες</string>
   <string name="switch_text_recognition_dialog_message">Ακούστε περιγραφές όταν εστιάζετε σε μια εικόνα που περιέχει κείμενο</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Η λήψη ολοκληρώθηκε</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Μπορείτε ακόμα να λάβετε περιγραφές για μια επιλεγμένη εικόνα από το μενού του SandFly</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">ΟΚ</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Διαγραφή λήψης</string>
   <string name="delete_icon_detection_dialog_title">Να διαγραφούν οι αυτόματες περιγραφές εικονιδίων;</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Χρήση του Gemini στο SandFly</string>
   <string name="gemini_disable_dialog_message">Κατανόηση περιεχομένου οθόνης με το Gemini</string>
   <string name="disable_gemini_dialog_subtext">Ενεργοποιήστε την επιλογή για να είναι διαθέσιμη η λειτουργία Κατανόηση περιεχομένου οθόνης με το Gemini</string>
-  <string name="ai_services_update_dialog_title">Ενημέρωση της εφαρμογής %1$s για περιγραφή εικόνων</string>
-  <string name="ai_services_update_dialog_message">Για να ακούσετε περιγραφές εικόνων, αποκτήστε τη νεότερη έκδοση της εφαρμογής <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> από το Google Play.\n\nΜόλις ολοκληρωθεί η λήψη, επιστρέψτε στις ρυθμίσεις του SandFly και ενεργοποιήστε ξανά τις αυτόματες περιγραφές εικόνων.</string>
-  <string name="ai_services_update_dialog_button_text">Μετάβαση στο Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Προέκυψε πρόβλημα. Δοκιμάστε ξανά.</string>
   <string name="gemini_block_message">Δεν είναι δυνατή η επεξεργασία αυτής της εικόνας</string>
   <string name="gemini_network_error">Δεν υπάρχει σύνδεση στο διαδίκτυο. Ελέγξτε το Wi-Fi ή το δίκτυο κινητής τηλεφωνίας και δοκιμάστε ξανά.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Πληκτρολόγηση ερώτησης για το Gemini</string>
   <string name="image_qna_send_button_text">Ερώτηση</string>
   <string name="image_qna_speak_question_description">Εκφώνηση ερώτησης</string>
-  <string name="overviews_summary_intro">Σύνοψη αυτής της οθόνης εφαρμογής: %1$s</string>
   <string name="overviews_node_not_found">Δυστυχώς, δεν μπορώ πλέον να βρω αυτό το μέρος της οθόνης.</string>
-  <string name="overviews_images_in_app">Βρέθηκαν κύριες εικόνες</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Ενέργειες εντός εφαρμογής</string>
-  <string name="overviews_actions_in_app_description">Ακολουθούν οι κύριες ενέργειες που μπορείτε να πραγματοποιήσετε από αυτή την οθόνη εφαρμογής:</string>
-  <string name="overviews_parent_type">Ενέργειες εντός εφαρμογής</string>
   <string name="text_replaced_feedback">Το κείμενο αντικαταστάθηκε</string>
   <string name="switch_gesture_set">Εναλλαγή συνόλου κινήσεων</string>
   <string name="switch_gesture_set_to">Εναλλαγή στο σύνολο κινήσεων %1$d</string>
@@ -1453,7 +1298,6 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Κλείσιμο</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Για να ακούτε ειδοποιήσεις όταν η οθόνη είναι απενεργοποιημένη, ενεργοποιήστε την επιλογή \"Εκφώνηση ειδοποιήσεων όταν η οθόνη είναι απενεργοποιημένη\" στις ρυθμίσεις έκτασης του SandFly</string>
     <string name="title_pref_tts_engine">Μηχανή κειμένου σε ομιλία</string>
     <string name="title_pref_system_tts_settings">Ρυθμίσεις κειμένου σε ομιλία του συστήματος</string>
     <string name="title_selector_switch_tts_engine">Μηχανή ομιλίας</string>

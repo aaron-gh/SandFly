@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Keď je funkcia TalkBack zapnutá, poskytuje hovorenú spätnú väzbu, aby ste mohli zariadenie ovládať aj bez pozerania na obrazovku. Funkcia TalkBack je určená pre ľudí, ktorí majú ťažkosti s pozeraním na obrazovku.&lt;br&gt;&lt;br&gt;&lt;b&gt;Ako funkciu TalkBack používať&lt;/b&gt;&lt;br&gt;• Potiahnutím doprava alebo doľava prechádzajte medzi položkami.&lt;br&gt;• Dvojitým klepnutím aktivujte položku&lt;br&gt;• Posúvajt esa presúvaním dvoma prstami.&lt;br&gt;&lt;br&gt;&lt;b&gt;Ako funkciu TalkBack vypnúť&lt;/b&gt;&lt;br&gt;1. Klepnite v Nastaveniach na &lt;b&gt;Použiť funkciu TalkBack&lt;/b&gt;. Zobrazí sa obrys. Dvakrát naň klepnite.&lt;br&gt;2. Prejdite na potvrdzovaciu správu a klepnite na &lt;b&gt;Ukončiť&lt;/b&gt;. Zobrazí sa obrys. Dvakrát naň klepnite.</string>
   <string name="talkback_service_summary">Používajte čítačku obrazovky, ktorá prečíta položky nahlas</string>
   <string name="talkback_preferences_title">Nastavenia aplikácie TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Nastavenia</string>
   <string name="tts_preferences_title">Prevod textu na reč</string>
   <string name="language_options">Jazyky</string>
   <string name="spoken_language">Hovorený jazyk</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Vyhľadávanie bolo zrušené</string>
   <string name="notification_type_status_started">Začaté</string>
   <string name="notification_type_status_stopped">Zastavené</string>
-  <string name="notification_type_status_connected">pripojené</string>
-  <string name="notification_battery_level_unknown">neznáme</string>
   <string name="notification_battery_saver_mode">Šetrič batérie je zapnutý</string>
   <string name="template_no_text_selected">Nie je vybratý žiadny text</string>
   <string name="template_charging">Stav nabíjania: %1$s. Nabitie batérie: %2$s percent.</string>
   <string name="template_charging_lite">Nabíja sa (stav: %1$s)</string>
-  <string name="template_battery_state">Napájanie je %1$s %2$s perc. %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibračné zvonenie</string>
   <string name="value_ringer_silent">Tiché zvonenie</string>
   <string name="value_screen_on">Obrazovka je zapnutá.</string>
   <string name="value_screen_off">Obrazovka je vypnutá</string>
   <string name="value_device_unlocked">Zariadenie bolo odomknuté</string>
-  <string name="title_pref_category_audio">Zvuk</string>
   <string name="title_pref_speech_volume">Hlasitosť reči</string>
-  <string name="title_pref_speech_rate">Rýchlosť reči</string>
-  <string name="summary_pref_speech_rate">Rýchlosť hovoreného textu</string>
   <string name="title_pref_verbose_scroll_announcement">Vždy vyslovovať počet položiek zoznamu</string>
   <string name="summary_pref_verbose_scroll_announcement">Vyslovovať počet v prípade všetkých spôsobov posúvania</string>
   <string name="title_pref_cover_proximity_sensor">Zastaviť reč zakrytím senzora blízkosti</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Hlásiť čas</string>
   <string name="pref_speak_time_summary">Keď zapnete obrazovku</string>
   <string name="summary_speak_container_element_positions">Zahŕňa informácie čítané počas zadávania a zatvárania zoznamov, mriežok a ďalších kontajnerov</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Do ovládania čítania bolo pridané oneskorenie označovania</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Potiahnutím troma prstami môžete kedykoľvek použiť ovládanie čítania a zmeniť oneskorenie označovania</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Chcete prepnúť na písanie zdvihnutím prsta?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Keď je oneskorenie označovania pri písaní nastavené na menej ako 0,3 sekundy, bude veľmi ťažké písať dvojitým klepnutím. Ak chcete automaticky prepnúť na písanie zdvihnutím prsta, vyberte Prepnúť.\n\nAk chcete používať písanie zdvihnutím prsta, pridržte prst na ľubovoľnom klávese, potom ho zdvihnite a píšte.\n\nTúto funkciu si môžete prispôsobiť v nastaveniach aplikácie TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Do ovládania čítania bolo pridané oneskorenie označovania pri písaní</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Ak máte pri prísaní problémy s dvojitým klepnutím, potiahnutím tromi prstami aktivujete ovládanie čítania a predĺžte oneskorenie označovania</string>
-  <string name="gestures_announce_typing_focus_wont_change">Oneskorenie označovania pri písaní nefunguje bez písania zdvihnutím prsta.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Dobre</string>
   <string name="reset_letency_reduction_settings_dialog_title">Chcete resetovať nastavenia oneskorenia?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Týmto resetujete všetky nastavenia oneskorenia na predvolené hodnoty</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetovať</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Nastavenia zníženia oneskorenia boli resetované.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Prepnúť</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Neprepnúť</string>
   <string name="Reset_gesture_settings_dialog_title">Chcete gestá resetovať?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Chcete resetovať gestá aktuálnej skupiny?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Všetky gestá budú resetované a budú im pridelené predvolené akcie.\n\nPrídete o všetky zmeny, ktoré ste urobili.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Vyslovovať všetky aktuality o postupe</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Zahŕňa aktuality počas sťahovania, šoférovania podľa trás jazdy a ďalších aktivít. Keď túto možnosť vypnete, stále budete dostávať menej časté aktuality.</string>
   <string name="title_pref_explore_by_touch">Preskúmanie dotykom</string>
-  <string name="title_pref_category_visual">Vizuálny obsah</string>
   <string name="title_pref_category_controls">Ovládacie prvky</string>
-  <string name="title_pref_category_braille">Braillovo písmo</string>
-  <string name="title_pref_category_general">Všeobecné</string>
-  <string name="title_pref_category_advanced">Rozšírené</string>
-  <string name="title_pref_category_others">Iné</string>
-  <string name="title_pref_category_tutorial_and_help">Návod a pomocník</string>
   <string name="title_pref_category_reduce_latency_summary">Tieto nastavenia môžu znížiť oneskorenie pred oznamami aplikácie TalkBack</string>
   <string name="reset_latency_settings_title">Reset všetkých nastavení oneskorenia</string>
   <string name="title_pref_single_tap">Aktivácia jedným klepnutím</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Zmeniť indikátor označenia</string>
   <string name="title_pref_category_manage_gestures">Gestá</string>
   <string name="title_pref_manage_labels">Vlastné štítky</string>
-  <string name="title_pref_manage_customize_menus">Upraviť ponuky</string>
   <string name="title_pref_category_context_menu">Prispôsobiť ponuku Talkback</string>
   <string name="title_pref_category_selector_menu">Prispôsobiť ovládanie čítania</string>
   <string name="title_pref_category_navigation_menu">Upraviť možnosti navigácie</string>
-  <string name="pref_category_context_menu_summary">Ponuku aplikácie TalkBack zobrazíte klepnutím troma prstami na obrazovku. Môžete tiež potiahnuť nahor a doprava alebo nadol a doprava.</string>
-  <string name="pref_category_context_menu_summary_xr">Ak chcete použiť ponuku funkcie TalkBack, otočte druhú dlaň dole a stiahnite či roztiahnite prsty.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Ak chcete použiť ponuku aplikácie TalkBack, potiahnite prstom nadol a potom doprava.</string>
-  <string name="pref_category_selector_menu_summary">Ovládacie prvky čítania zobrazíte potiahnutím troma prstami doľava alebo doprava. Môžete tiež potiahnuť troma prstami nahor alebo nadol.</string>
-  <string name="pref_category_selector_menu_summary_xr">Ak chcete prepínať medzi ovládacími prvkami čítania, otočte dlaň druhej ruky dole, majte prsty stiahnuté, posuňte ich doprava alebo doľava a potom ich uvoľnite.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Ak chcete použiť ovládacie prvky čítania, potiahnite nahor a potom nadol.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klávesové skratky</string>
   <string name="title_pref_export_custom_labels">Exportovať vlastné štítky</string>
-  <string name="title_pref_play_store">Otvoriť TalkBack v Obchode Play</string>
-  <string name="summary_pref_play_store">Aktuálna verzia aplikácie TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Pomocník a spätná väzba</string>
-  <string name="title_pref_gup">Kontaktovať podporu Google pre ľudí s postihnutím</string>
-  <string name="subtitle_pref_gup">Získajte pomoc prostredníctvom aplikácie TalkBack alebo nahláste problémy</string>
-  <string name="pref_item_licenses">Licencie open source</string>
-  <string name="title_pref_tutorial">Návod</string>
   <string name="title_pref_help">Pomocník</string>
   <string name="title_pref_show_tos">Zmluvné podmienky</string>
   <string name="title_pref_show_privacy_policy">Pravidlá ochrany súkromia</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gestá odtlačkom prsta</string>
   <string name="title_pref_category_tutorial">Návod k aplikácii TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Pomocník</string>
-  <string name="title_pref_category_typing">Písanie</string>
   <string name="title_pref_advanced_settings">Rozšírené nastavenia</string>
   <string name="title_pref_show_exit_watermark">Zobrazovať pokyny, ako vypnúť TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Keď je aplikácia TalkBack zapnutá, zobrazí sa správa, ktorá vám pomôže rýchlo ju vypnúť</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Niektoré klávesy modifikátora sú odlišné.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Ďalšie informácie o mapách klávesov</string>
   <string name="keycombo_go_to_settings">Prejsť do Nastavení</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack sa pripravuje na odstránenie klasickej mapy klávesov. Ak chcete naďalej používať klávesové skratky, prepnite na predvolenú.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Ďalšie informácie</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Dobre</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Nastavenia</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Ďalšie informácie</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Teraz používate predvolenú mapu klávesov TalkBack. K dispozícii je aj nová zlepšená mapa klávesov, ktorá obsahuje množstvo nových príkazov. Viac sa dozviete v centre pomoci alebo prepnite na novú mapu klávesov v Nastaveniach.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">K dispozícii je nová mapa klávesov</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nová zlepšená mapa klávesov TalkBack pridáva množstvo nových príkazov. Viac sa dozviete v centre pomoci alebo prepnite na novú mapu klávesov v Nastaveniach.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Aktualizujte modifikačný kláves pre TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Teraz nie</string>
   <string name="keycombo_warning_content_description">Ďalšie informácie o modifikačnom klávese</string>
-  <string name="keycombo_warning_dialog_title">Aktualizujte modifikačný kláves</string>
-  <string name="keycombo_warning_dialog_message">Ak chcete, aby fungovali klávesové skratky funkcie TalkBack správne, aktualizujte modifikačný kláves z akčného na Alt.\n\nAk budete ďalej používať akčný kláves ako modifikačný, niektoré skratky budú v tejto verzii Androidu spúšťať odlišné akcie.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Mapa klávesov</string>
   <string name="keycombo_menu_select_keymap">Výber mapy klávesov</string>
   <string name="keycombo_menu_reset_keymap">Resetovať mapu klávesov</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Zvýšiť hlasitosť reči</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Znížiť hlasitosť reči</string>
   <string name="keycombo_menu_global_refocus_current_node">Vyslovenie aktuálne označenej položky</string>
-  <string name="keycombo_menu_category_granularity">Navigácia</string>
   <string name="keycombo_menu_granularity_increase">Ďalšie nastavenie navigácie</string>
   <string name="keycombo_menu_granularity_decrease">Predchádzajúce nastavenie navigácie</string>
   <string name="keycombo_menu_category_other">Iné akcie</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Naozaj chcete v tejto mape klávesov obnoviť predvolené hodnoty klávesových skratiek? Upozorňujeme, že túto akciu nie je možné vrátiť späť.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetovať</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s v režime prehliadania</string>
-  <string name="keycombo_assign_dialog_instruction">Stlačením kombinácie klávesov nastavíte novú skratku. Musí obsahovať kláves ALT alebo CTRL.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Ak chcete nastaviť novú skratku, stlačte kombináciu klávesov s modifikačným klávesom %1$s.</string>
   <string name="keycombo_unassigned">Nepriradené</string>
   <string name="save_button_in_keycombo_assign_dialog">Uložiť</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Oneskorenie označovania pri písaní</string>
   <string name="message_pref_touch_explore_latency">Kratšie oneskorenie označovania pri písaní znamená, že TalkBack bude poskytovať oznámenia rýchlejšie po klepnutí na klávesnicu.\n\nVyberte oneskorenie.</string>
   <string name="title_pref_touch_focus_timeout">Oneskorenie označovania</string>
-  <string name="summary_pref_touch_focus_time">
-Ovláda, ako rýchlo má TalkBack predčítavať po presunutí označenia. Kratšie oneskorenie zrýchli TalkBack, ale sťaží dvojité alebo trojité klepnutia.\n\n
-Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúce aktiváciu sa zmení na aktiváciu dvoma prstami.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Správa gest v aplikácii TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Ak chcete dané nastavenie aktivovať, vypnite a znova zapnite TalkBack.</string>
   <string name="title_pref_auto_image_captioning">Automatické opisy</string>
@@ -382,28 +332,16 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="dialog_title_turn_on_image_description">Zapnite opisy obrázkov v Nastaveniach</string>
   <string name="dialog_message_turn_on_image_description">Môžete to skúsiť znova po zapnutí automatických alebo podrobných opisov obrázkov</string>
   <string name="title_pref_detailed_image_description">Podrobné opisy obrázkov</string>
-  <string name="summary_pref_ai_description">Vypočujte si dlhší opis, keď vyberiete %1$s z ponuky aplikácie TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Keď označíte nejaký obrázok v podporovaných aplikáciách, zaznie krátky opis.\n\nObrázky sa spracúvajú v zariadení a Googlu sa nikdy neodosielajú. \n\nGeneratívna umelá inteligencia je experimentálna, takže bude robiť chyby. Pokračovaním vyjadrujete súhlas so <a href="https://policies.google.com/terms/generative-ai">zmluvnými podmienkami spoločnosti Google</a>.</string>
   <string name="enable_gemini">Zapnúť</string>
   <string name="powered_by_gemini">S využitím generatívnej umelej inteligencie</string>
-  <string name="detailed_image_description_ongoing_hint">Získava sa opis</string>
-  <string name="detailed_image_description_result_prefix">Rozpoznané: obrázok. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Automatické opisy obrázkov vyžadujú stiahnutie</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Obrázky sú spracúvané vo vašom zariadení a nikdy sa neodosielajú Googlu.\n\nGeneratívna umelá inteligencia je experiment, takže bude robiť chyby. Pokračovaním vyjadrujete súhlas s dokumentom %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Zmluvné podmienky spoločnosti Google</string>
   <string name="message_aifeature_downloading">Sťahuje sa model umelej inteligencie. Môže to chvíľu trvať. Po dokončení dostanete upozornenie.</string>
   <string name="message_aifeature_downloading_with_progress">Sťahovanie stále prebieha. Stiahnuté: %1$d z %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Model umelej inteligencie bol stiahnutý. TalkBack môže teraz generovať opisy obrázkov.</string>
   <string name="summary_pref_auto_image_captioning">Pre ikony, obrázky a text na obrázkoch</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Pre text v obrázkoch</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Pre obrázky a text v obrázkoch</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Pre ikony a text v obrázkoch</string>
   <string name="summary_pref_module_downloading">Sťahuje sa…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Zapnuté pre všetky obrázky</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Zapnuté iba pre neoznačené obrázky</string>
   <string name="summary_pref_auto_image_captioning_disabled">Vypnuté</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Zapnuté pre všetky ikony</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Zapnuté iba pre neoznačené ikony</string>
   <string name="summary_pref_auto_icon_detection_disabled">Vypnuté</string>
   <string name="title_pref_enable_auto_image_caption">Všetky obrázky</string>
   <string name="title_pref_enable_auto_image_caption_arg">Všetky obrázky\n%1$s</string>
@@ -413,7 +351,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="title_pref_enable_auto_icon_detection">Všetky ikony</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Iba neoznačené ikony</string>
   <string name="title_pref_disable_auto_icon_detection">Neopisovať ikony</string>
-  <string name="dialog_message_on_device_ai_model_download">Keď označíte obrázok v podporovaných aplikáciách, prehrá sa stručný opis.\n\nObrázky sú spracúvané vo vašom zariadení a nikdy sa neodosielajú Googlu.\n\nGeneratívna umelá inteligencia je experimentálna, takže bude robiť chyby. Pokračovaním vyjadrujete súhlas s dokumentom %1$s.</string>
   <string name="title_pref_enable_gemini_support">Zapnuté</string>
   <string name="title_pref_disable_gemini_support">Vypnuté</string>
   <string name="summary_pref_gemini_support_enabled">Gemini je povolený</string>
@@ -457,7 +394,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="shortcut_print_node_tree">Vytlačiť nodulárny strom</string>
   <string name="shortcut_print_performance_stats">Vytlačiť štatistiky výkonnosti</string>
   <string name="shortcut_first_in_screen">Označiť prvú položku na obrazovke</string>
-  <string name="shortcut_summary">Zhrnúť rozloženie obrazovky</string>
   <string name="shortcut_voice_commands">Spustiť hlasový príkaz</string>
   <string name="shortcut_last_in_screen">Označiť poslednú položku na obrazovke</string>
   <string name="shortcut_enable_dimming">Skryť obrazovku</string>
@@ -561,7 +497,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="menu_category_web_navigation">Navigácia na webe</string>
   <string name="menu_category_basic_navigation">Základná navigácia</string>
   <string name="summary_custom_action">Zobrazí sa, keď budú pre aktuálnu položku k dispozícii určité akcie vrátane odkazov, kopírovania, prilepenia, výberu a ďalších</string>
-  <string name="summary_context_menu_links">Otváranie odkazov v rámci označenej položky</string>
   <string name="summary_viewpager_controls">Prechod na ďalšiu alebo predchádzajúcu stránku. Zobrazí sa pri čítaní obsahu na viacerých stránkach.</string>
   <string name="summary_labeling_controls">Zobrazí sa pri výbere neoznačenej položky</string>
   <string name="summary_granularity">Čítanie po znakoch, slovách, riadkoch a ďalších segmentoch</string>
@@ -631,12 +566,9 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="summary_screen_overview">Vytvoriť zhrnutie obsahu obrazovky pomocou tlačidiel akcie</string>
   <string name="summary_screen_overview_no_actions">Vypočujte si súhrn obsahu na obrazovke</string>
   <string name="summary_image_caption">Vyslovovanie textu a ikon na vybranom obrázku</string>
-  <string name="summary_summarize_view">Prečítať zhrnutie zobrazeného obsahu</string>
   <string name="summary_typo_suggestions">Zobrazí sa po umiestnení kurzora na preklep</string>
   <string name="summary_cache_keyboard_keys">TalkBack prednačítava oznamy, aby sa znížilo oneskorenie pri písaní</string>
   <string name="summary_cache_keyboard_keys_disabled">Ak chcete používať túto funkciu, použite Prevod textu na reč Google</string>
-  <string name="value_direction_down">nadol</string>
-  <string name="value_direction_down_and_right">Dole a doprava</string>
   <string name="title_pref_shortcut_up">Potiahnuť nahor</string>
   <string name="title_pref_shortcut_up_xr">Druhá dlaň dole, stiahnuť prsty a potiahnuť nahor</string>
   <string name="title_pref_shortcut_down">Potiahnuť nadol</string>
@@ -704,10 +636,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="title_pref_shortcut_fingerprint_left">Potiahnutie doľava po senzore odtlačkov</string>
   <string name="title_pref_shortcut_fingerprint_right">Potiahnutie doprava po senzore odtlačkov</string>
   <string name="title_pref_version_code">Kód verzie</string>
-  <string formatted="false" name="value_volume_100_percent">Podľa hlasitosti reči</string>
-  <string formatted="false" name="value_volume_75_percent">75 % hlasitosti reči</string>
-  <string formatted="false" name="value_volume_50_percent">50 % hlasitosti reči</string>
-  <string formatted="false" name="value_volume_25_percent">25 % hlasitosti reči</string>
   <string name="value_type_confirmation_double_tap">Pridržaním prsta vyberte kláves, potom dvakrát klepnite</string>
   <string name="value_type_confirmation_lift_to_type">Pridržaním prsta vyberte kláves písmena, potom ho zdvihnite. Na iné klávesy je potrebné dvakrát klepnúť.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Pridržaním prsta vyberte kláves, potom ho zdvihnite</string>
@@ -720,12 +648,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="value_touch_explore_time_out_200ms">0,2 sekundy</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekundy</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekundy (predvolené)</string>
-  <string name="value_shake_to_read_disabled">Vypnuté</string>
-  <string name="value_shake_to_read_threshold_very_light">Veľmi slabé</string>
-  <string name="value_shake_to_read_threshold_light">Slabé</string>
-  <string name="value_shake_to_read_threshold_medium">Stredné</string>
-  <string name="value_shake_to_read_threshold_hard">Silné</string>
-  <string name="value_shake_to_read_threshold_very_hard">Veľmi silné</string>
   <string name="title_pref_on_screen_keyboard">Klávesnica na obrazovke</string>
   <string name="title_pref_physical_keyboard">Fyzická klávesnica</string>
   <string name="value_keyboard_echo_none">Žiadne</string>
@@ -738,8 +660,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="pref_time_feedback_format_entries_default">Použiť formát času zariadenia</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-hodinový</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-hodinový</string>
-  <string name="notification_title_talkback_gestures_changed">Gestá fun. TalkBack sa zmenili</string>
-  <string name="notification_message_talkback_gestures_changed">Klepnutím skontrolujete zmeny gest dostupnosti</string>
   <string name="always_show_warning_checkbox">Vždy zobrazovať toto upozornenie</string>
   <string name="label_dialog_title_add">Pridať štítok</string>
   <string name="label_dialog_title_edit">Upraviť štítok</string>
@@ -760,16 +680,8 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="no_apps_to_export_labels">Nenašli sa žiadne aplikácie na exportovanie štítkov.</string>
   <string name="label_choose_app_to_import">Vyberte aplikáciu na importovanie štítkov:</string>
   <string name="label_choose_app_to_export">Vyberte aplikáciu, do ktorej budú exportované štítky:</string>
-  <string name="talkback_gesture_change_details">Táto verzia funkcie TalkBack zahrnuje zmeny predvolených gest dostupnosti. Akcie združené s týmito gestami je možné prispôsobiť v nastaveniach funkcie TalkBack. Keď je funkcia Preskúmanie dotykom zapnutá, určité akcie môžete vykonať pomocou nasledovných gest.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Chcete skryť obrazovku?</string>
   <string name="dialog_message_dim_screen">Obrazovka sa vypne, aby sa zvýšilo vaše súkromie. Určitý obsah sa môže stále zobrazovať, napríklad tlačidlá na opätovné zapnutie obrazovky alebo ponuky funkcií dostupnosti, ako je TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Táto verzia aplikácie TalkBack obsahuje zmenené predvolené gestá dostupnosti.\n\nGesto pohybu nahor a nadol vám umožní prejsť na prvú položku na obrazovke. Gesto pohybu nadol a nahor vám umožní prejsť na poslednú položku.\n\nNastavenie podrobnosti čítania je možné zmeniť zameraním na položku a výberom stupňa podrobnosti z kontextovej ponuky aplikácie TalkBack.\n\nAkcie vykonávané na základe týchto gest môžete zmeniť v nastaveniach aplikácie TalkBack.</string>
-  <string name="default_action_changed_details">Ak chcete pozastaviť a prehrať médium, teraz môžete dvakrát klepnúť dvoma prstami a pridržať.\n\nZmenili sa aj iné gestá.</string>
-  <string name="talkback_built_in_gesture_open_url">Otvoriť viac informácií v telefóne</string>
-  <string name="talkback_built_in_gesture_change_details_45">V tejto verzii aplikácie TalkBack sa zmenili predvolené gestá dostupnosti.\n\nGestom nahor sa teraz prejde na predchádzajúce nastavenie navigácie a gestom nadol sa teraz prejde na ďalšie nastavenie navigácie.</string>
-  <string name="side_tap_shortcuts_removed_details">Tieto nastavenia boli odstránené z aplikácie TalkBack, pretože neboli spoľahlivé:\n• Klepnutím na okraj zariadenia zobrazíte gestá.\n• Potrasením spustíte plynulé čítanie.</string>
-  <string name="button_accept_changed_gesture_mappings">Prijať gestá</string>
-  <string name="button_customize_gesture_mappings">Prispôsobiť gestá</string>
   <string name="button_disable_all_events">Zakázať všetko</string>
   <string name="button_enable_all_events">Povoliť všetko</string>
   <string name="dialog_title_disable_exploration">Chcete vypnúť Preskúmanie dotykom?</string>
@@ -893,8 +805,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="screen_search_hint_type_search_tables">Vyhľadajte tabuľky</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Kanál upozornení funkcie TalkBack</string>
-  <string name="pref_selector_summary">%1$s vyberte nastavenie. Potom ho %2$s upravte.</string>
-  <string name="speech_rate_change">Rýchlosť reči %1$d %%</string>
   <string name="speech_pitch_maximum">Najvyšší hlas</string>
   <string name="speech_pitch_minimum">Najnižší hlas</string>
   <string name="reset_speech_rate_and_pitch">Obnovenie rýchlosti reči a výšky hlasu</string>
@@ -904,10 +814,7 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="vibration_feedback_state">Vibračná odozva: %1$s</string>
   <string name="text_formatting_state">Čítanie formátovania textu je %1$s</string>
   <string name="typing_echo_change">Zvuková odozva fyzickej klávesnice: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Otočte druhú dlaň dole a dlhým stlačením prepnite režim ovládania čítania.</string>
   <string name="gesture_1_or_2">%1$s alebo %2$s</string>
-  <string name="select_setting_hint">%1$s a vyberte iné nastavenie</string>
-  <string name="adjust_setting_hint">%1$s a upravte nastavenie</string>
   <string name="adjust_granularity_hint">%1$s a čítajte jednotlivé %2$s</string>
   <string name="adjust_typo_hint">Návrhy zobrazíte gestom %1$s.</string>
   <string name="use_action_hint">Akciu vykonáte dvojitým klepnutím</string>
@@ -947,7 +854,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="setting_selector_heading">Ovládanie čítania</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ak chcete vo videoaplikácii alebo v hudobnej aplikácii pozastaviť alebo spustiť prehrávanie médií, dvakrát klepnite dvoma prstami. Vyskúšajte to.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Iné aplikácie môžu toto gesto používať napríklad na prijatie alebo ukončenie telefonického hovoru. Nemusia ho podporovať všetky aplikácie.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Zobraziť všetky návody pre TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Média sú pozastavené alebo sa prehrávajú. Táto akcia zvyčajne pozastaví alebo prehrá aktuálne video či hudbu. Pokračujte potiahnutím doprava.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Ak chcete reč aplikácie TalkBack dočasne zastaviť, klepnite dvoma prstami.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Reč aplikácie TalkBack je zastavená. Týmto sa zvyčajne zastaví aktuálna fráza, ktorú aplikácia TalkBack vyslovuje. Pokračujte potiahnutím doprava.</string>
@@ -961,38 +867,18 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Režim výberu je zapnutý alebo vypnutý. Týmto sa zvyčajne vo vstupnom poli spustí režim výberu textu Pokračujte potiahnutím doprava.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Ovládacie prvky čítania zobrazíte potiahnutím troma prstami doľava alebo doprava. Môžete tiež potiahnuť troma prstami nahor alebo nadol.</string>
   <string name="new_shortcut_gesture_note">Poznámka: Niektoré gestá ste si prispôsobili, takže tieto informácie nemusia byť presné. Gestá si môžete skontrolovať v nastaveniach aplikácie TalkBack.</string>
-  <string name="welcome_to_android11">Vitajte v aplikácii TalkBack v Androide verzie 11</string>
   <string name="welcome_to_android11_text">Pridali sme nové gestá, aby bolo používanie aplikácie TalkBack rýchlejšie a jednoduchšie.\n\nNa tejto obrazovke ich môžete vyskúšať. Tieto informácie si môžete kedykoľvek pozrieť v nastaveniach aplikácie TalkBack.</string>
   <string name="new_gesture_notification_title">Nové gestá v aplikácii TalkBack</string>
   <string name="new_gesture_notification_content">Klepnutím zistíte, ako vám nové gestá urýchlia používanie aplikácie TalkBack.</string>
   <string name="dump_node_tree_description">Strom uzlov bol vytlačený do denníkov.</string>
   <string name="report_gesture_description">Tu sú nedávno vykonané gestá. Nahláste, ktoré je nesprávne, a čo ste očakávali.</string>
-  <string name="update_welcome_text_content">Teraz sa môžete pripojiť k braillovským displejom prostredníctvom zariadenia s ľudským rozhraním, čo je spôsob pripojenia k zariadeniam s rozhraním Bluetooth. Skontrolujte, či máte najnovšie ovládače firmvéru od výrobcu, a potom zapnite v braillovskom displeji rozhranie Bluetooth. Prejdite do sekcie Nastavenia aplikácie TalkBack &gt; Braillovský displej a zapnite Používať braillovský displej. Nájdite svoje zariadenie v zozname a pripojte sa k nemu.</string>
-  <string name="update_welcome_text_content_tts">Teraz sa môžete pripojiť k braillovským displejom prostredníctvom zariadenia s ľudským rozhraním, čo je spôsob pripojenia k zariadeniam s rozhraním Bluetooth. Skontrolujte, či máte najnovšie ovládače firmvéru od výrobcu, a potom zapnite v braillovskom displeji rozhranie Bluetooth. Prejdite do nastavení aplikácie TalkBack, potom na Braillovský displej a zapnite Používať braillovský displej. Nájdite svoje zariadenie v zozname a pripojte sa k nemu.</string>
-  <string name="update_welcome_text_content_with_link">Ako používať braillovský displej s aplikáciou TalkBack</string>
   <string name="update_welcome_talkback_16.1">V rámci tejto aktualizácie aplikácie TalkBack je teraz k dispozícii podpora funkcie Opísať obrazovku vo viacerých jazykoch a ďalšie zlepšenia kvality uľahčujúce používanie aplikácie TalkBack.\n\nViac o týchto zmenách sa dozviete na nasledujúcich obrazovkách.\n\nTieto informácie si môžete neskôr pozrieť v sekcii Nastavenia aplikácie TalkBack &gt; Nové funkcie v aplikácii TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">V rámci tejto aktualizácie aplikácie TalkBack je teraz k dispozícii podpora funkcie Opísať obrazovku vo viacerých jazykoch a ďalšie zlepšenia kvality uľahčujúce používanie aplikácie TalkBack.\n\nViac o týchto zmenách sa dozviete na nasledujúcich obrazovkách.\n\nAk si budete chcieť tieto informácie pozrieť neskôr, prejdite do sekcie Nastavenia aplikácie TalkBack a vyberte Nové funkcie v aplikácii TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Nové jazyky pre funkcie Opísať obrazovku a Opýtať sa Gemini</string>
-  <string name="describe_screen_and_qna_content">Funkcie Opísať obrazovku a Opýtať sa Gemini sú teraz k dispozícii v ďalších jazykoch. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Viac sa dozviete v centre pomoci&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Skratka pre hlasové zadávanie</string>
   <string name="shortcut_for_dictation_content">Keď používate klávesnicu Gboard, môžete teraz dvojitým klepnutím dvoma prstami spustiť alebo zastaviť hlasové zadávanie.
 &lt;br&gt;
 &lt;br&gt;Uistite sa, že máte najnovšiu verziu &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;klávesnice Gboard zo služby Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Keď je na obrazovke klávesnica Gboard, môžete teraz dvojitým klepnutím dvoma prstami spustiť diktovanie a potom ho dvojitým klepnutím dvoma prstami zastaviť.</string>
-  <string name="keyboard_title">Klávesnica</string>
-  <string name="keyboard_content">TalkBack má teraz pre svoju klávesnicu zlepšenú mapu klávesov s rôznymi novými príkazmi a skratkami. Toto zlepšenie, ktoré zahŕňa režim prehliadania na efektívnejší pohyb na internete, zjednodušuje navigáciu a interakciu pre používateľov aplikácie TalkBack, ktorí využívajú fyzické klávesnice. Na zlepšenú mapu klávesov môžete prepnúť v sekcii Nastavenia aplikácie TalkBack &gt; Rozšírené nastavenia &gt; Klávesové skratky.</string>
-  <string name="keyboard_content_tts">TalkBack má teraz pre svoju klávesnicu zlepšenú mapu klávesov s rôznymi novými príkazmi a skratkami. Toto zlepšenie, ktoré zahŕňa režim prehliadania na efektívnejší pohyb na internete, zjednodušuje navigáciu a interakciu pre používateľov aplikácie TalkBack, ktorí využívajú fyzické klávesnice. Na zlepšenú mapu klávesov môžete prepnúť tak, že v Nastaveniach aplikácie TalkBack vyberiete Rozšírené nastavenia a potom Klávesové skratky.</string>
-  <string name="reduce_delay_title">Zníženie oneskorenia</string>
-  <string name="reduce_delay_content">Teraz môžete znížiť oneskorenie oznamov aplikácie TalkBack pri prieskume dotykom a písaní. Ak si chcete zobraziť tieto nastavenia, prejdite do sekcie Nastavenia aplikácie TalkBack &gt; Rozšírené nastavenia &gt; Zníženie oneskorenia.</string>
-  <string name="reduce_delay_content_tts">Teraz môžete znížiť oneskorenie oznamov aplikácie TalkBack pri prieskume dotykom a písaní. Ak si chcete zobraziť tieto nastavenia, prejdite do Nastavení aplikácie TalkBack, vyberte Rozšírené nastavenia a potom Zníženie oneskorenia.</string>
-  <string name="customize_braille_keyboard_improvements_title">Prispôsobenie gest braillovskej klávesnice</string>
-  <string name="customize_braille_keyboard_improvements_content">Teraz môžete prispôsobiť gestá pre virtuálnu braillovskú klávesnicu na obrazovke. Ak ich chcete prispôsobiť, prejdite do sekcie Nastavenia aplikácie TalkBack &gt; Braillovská klávesnica &gt; Gestá.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Teraz môžete prispôsobiť gestá pre virtuálnu braillovskú klávesnicu na obrazovke. Ak ich chcete prispôsobiť, prejdite do sekcie Nastavenia aplikácie TalkBack, vyberte položku Braillovská klávesnica a potom Gestá.</string>
-  <string name="learn_more_about_braille_keyboard">Ďalšie informácie o braillovskej klávesnici</string>
-  <string name="other_changes_title">Iné zmeny</string>
-  <string name="other_changes_content">Správa na obrazovke vám teraz pomôže rýchlo vypnúť aplikáciu TalkBack, keď sa omylom zapne. Túto možnosť môžete vypnúť v sekcii Nastavenia aplikácie TalkBack &gt; Zobrazovať pokyny, ako vypnúť TalkBack.</string>
-  <string name="other_changes_content_tts">Správa na obrazovke vám teraz pomôže rýchlo vypnúť aplikáciu TalkBack, keď sa omylom zapne. Túto možnosť môžete vypnúť tak, že v Nastaveniach aplikácie TalkBack vyberiete Zobrazovať pokyny, ako vypnúť TalkBack.</string>
-  <string name="keymap_changes_content">Klasická mapa klávesov bola prepnutá na predvolenú, ktorá obsahuje viac skratiek.</string>
   <string name="announcing_text_formatting_title">Oznamovanie formátu textu</string>
   <string name="announcing_text_formatting_header">TalkBack teraz dokáže oznamovať zmeny vo formáte textu, ako sú tučné písmo, kurzíva a farba textu. Začíname:</string>
   <string name="announcing_text_formatting_option1">Označte formátovanú položku, otvorte ponuku aplikácie TalkBack a vyberte Opísať formát textu, prípadne</string>
@@ -1083,7 +969,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="additional_tips_link_subtext">Zistite, ako volať, četovať a vykonávať ďalšie akcie</string>
   <string name="practice_gestures_link_text">Precvičovanie gest</string>
   <string name="practice_gestures_link_subtext">Vyskúšajte si, na čo slúžia rôzne gestá</string>
-  <string name="help_and_feedback_link_subtext">Ďalšie informácie o aplikácii TalkBack a odosielaní spätnej väzby</string>
   <string name="choose_tutorial_title">Vyberte, ako chcete s aplikáciou TalkBack interagovať</string>
   <string name="touch_tutorial_button">Návod na dotykové ovládanie</string>
   <string name="keyboard_tutorial_button">Návod na používanie klávesnice</string>
@@ -1229,8 +1114,6 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="wear_training_typing_text5">Vyskúšajte to nižšie.</string>
   <string name="wear_training_typing_practice_button_content_description">Písanie pomocou klávesnice</string>
   <string name="wear_training_end_tutorial_title">Môžete začať používať TalkBack</string>
-  <string name="talkback_updated_notification_title">Aplikácia TalkBack bola aktualizovaná</string>
-  <string name="talkback_updated_notification_content">Klepnutím získate ďalšie informácie</string>
   <string name="wear_new_feature_page_title">Vitajte v aktualizovanej aplikácii TalkBack</string>
   <string name="wear_new_feature_page_content">Budete si môcť všimnúť niekoľko opráv chýb a zmien v tom, ako funguje zameranie</string>
   <string name="wear_new_feature_page_button_content_description">Dokončiť</string>
@@ -1249,10 +1132,7 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="title_pref_blue">Modrá</string>
   <string name="title_pref_grey">Sivá</string>
   <string name="survey_setting_title">Zdieľanie spätnej väzby</string>
-  <string name="survey_closed">Prieskum je uzavretý</string>
   <string name="title_summarize_view">Opísať obrazovku</string>
-  <string name="title_increase_touch_focus_latency">Zvýšiť oneskorenie označovania</string>
-  <string name="title_decrease_touch_focus_latency">Znížiť oneskorenie označovania</string>
   <string name="detected_result">Rozpoznané: %1$s</string>
   <string name="title_image_caption">Opísať obrázok</string>
   <string name="image_caption_with_gemini_prefix">Opíš tento obrázok. V odpovedi nepoužívaj žiadne značky.</string>
@@ -1279,33 +1159,15 @@ Ak budú oneskorenia kratšie ako 0,3 sekundy, dvojité klepnutie spúšťajúc
   <string name="image_qna_question_prefix">POUŽÍVATEĽ: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Pokračujte v striedaní ťahov POUŽÍVATEĽA a MODELA] …</string>
-  <string name="screen_overview_with_screenshot">Vašou úlohou je pomôcť porozumieť niekomu, kto nevidí svoj telefón, čo je na obrazovke jeho telefónu. Opíšte túto snímku obrazovky niekoľkými vetami.
-
-Pokyny
-Začnite odpoveď slovami „Na obrazovke je“.
-Začiatok odpovede by sa mal opisovať najdôležitejší a najvýznačnejší obsah na obrazovke. Tu je niekoľko príkladov toho, čo môže byť najdôležitejší a najvýznačnejší obsah, ktorý treba opísať:
-* v četovej aplikácii: odosielateľ a text poslednej správy;
-* v aplikácii sociálnych médií: prvý príspevok vrátane mena používateľa, ktorý ho uverejnil, textu a opisu obrázka;
-* v spravodajskej aplikácii: názov článku a opis hlavného obrázka;
-* v nákupnej aplikácii: opis zobrazeného výrobku a cena;
-* v aplikácii kalendára: ďalšia udalosť a počet ďalších udalostí, ktoré sa následne zobrazujú;
-* v zozname správ: názov a ukážka prvej správy, potom iba názvy niekoľkých ďalších v zozname a počet neprečítných správ.
-
-Potom môže byť v odpovedi opísané priestorové umiestnenie a účel navigačných panelov a význačných tlačidiel.
-Nespomínajte obsah stavového riadka hore (napr. čas, stav siete, batéria).
-V odpovedi nepoužívajte formát markdown.</string>
   <string name="title_gemini_opt_in_dialog">Chcete si zobrazovať podrobné opisy obrázkov?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Chcete si zobrazovať opisy obrázkov?</string>
   <string name="title_gemini_result_dialog">Rozpoznané: obrázok</string>
   <string name="title_gemini_result_bottom_sheet">Opis obrázka</string>
   <string name="title_gemini_screen_overview_result_dialog">Opis obrazovky</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Zhrnutie</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Akcie</string>
   <string name="positive_button_gemini_opt_in_dialog">Zapnúť</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Súhlasím</string>
   <string name="negative_button_gemini_opt_in_dialog">Nie, vďaka</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Prejsť do Nastavení</string>
-  <string name="positive_button_gemini_download_dialog">Stiahnuť a zapnúť</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, „%1$s“.</string>
   <string name="detected_icon_label">Ikona, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ V odpovedi nepoužívajte formát markdown.</string>
   <string name="screen_overview_no_result">Zhrnutie obsahu obrazovky sa nedá vytvoriť</string>
   <string name="image_caption_no_result">Obrázok sa nedá opísať</string>
   <string name="image_caption_with_hide_screen">Opisy obrázkov nie sú k dispozícii, keď je obrazovka skrytá. Zobrazte ju a skúste to znova.</string>
-  <string name="feedback_button_state_set">vybrané</string>
-  <string name="feedback_button_state_unset">nevybrané</string>
   <string name="action_text_like_button">Označiť ako dobrú odpoveď</string>
   <string name="action_text_dislike_button">Označiť ako zlú odpoveď</string>
   <string name="action_text_clear_like_button">Vymazať dobrú odpoveď</string>
@@ -1349,18 +1209,13 @@ V odpovedi nepoužívajte formát markdown.</string>
   <string name="downloading_all_image_captioning_hint">Sťahujú sa automatické opisy obrázkov a ikon</string>
   <string name="download_all_image_captioning_successful_hint">Automatické opisy obrázkov a ikon boli stiahnuté</string>
   <string name="download_all_image_captioning_failed_hint">Nedá sa stiahnuť. Skúste to neskôr.</string>
-  <string name="download_complete_notification_title">Sťahovanie je dokončené</string>
-  <string name="download_complete_notification_content">Teraz si môžete pomocou aplikácie TalkBack prehrávať automatické opisy obrázkov a ikon</string>
-  <string name="download_complete_notification_action">Nastavenia</string>
   <string name="download_storage_error_hint">Priestor je plný. Ak chcete stiahnuť, uvoľnite %1$d MB priestoru v sekcii Nastavenia &gt; Úložisko.</string>
   <string name="download_network_error_hint">Nedá sa stiahnuť. Skontrolujte pripojenie a skúste to znova.</string>
   <string name="switch_icon_detection_dialog_title">Automatické opisy ikon</string>
   <string name="switch_icon_detection_dialog_message">Vypočujte si opisy po označení ikony</string>
   <string name="switch_image_description_dialog_message">Keď označíte obrázok, vypočujte si jeho opis. Niektoré aplikácie túto funkciu nemusia podporovať.</string>
-  <string name="switch_text_recognition_dialog_title">Automatický opis textu na obrázkoch</string>
   <string name="switch_text_recognition_dialog_message">Vypočujte si opisy po zameraní sa na obrázok s textom</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Stiahnuté</string>
-  <string name="disable_auto_image_caption_dialog_subtext">V ponuke aplikácie TalkBack máte stále k dispozícii opisy vybraného obrázka</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Odstrániť stiahnutý súbor</string>
   <string name="delete_icon_detection_dialog_title">Chcete automatické opisy ikon odstrániť?</string>
@@ -1376,11 +1231,6 @@ V odpovedi nepoužívajte formát markdown.</string>
   <string name="gemini_enable_dialog_title">Používanie Gemini vo funkcii TalkBack</string>
   <string name="gemini_disable_dialog_message">Porozumenie obsahu obrazovky pomocou Gemini</string>
   <string name="disable_gemini_dialog_subtext">Zapnite, keď chcete povoliť porozumenie obsahu obrazovky pomocou Gemini</string>
-  <string name="ai_services_update_dialog_title">Ak chcete získať opisy obrázkov, aktualizuje aplikáciu %1$s</string>
-  <string name="ai_services_update_dialog_message">Ak chcete mať možnosť vypočuť si opisy obrázkov, stiahnite si zo služby Google Play najnovšiu verziu aplikácie %1$s.\n\nPo dokončení sťahovania sa vráťte do nastavení aplikácie TalkBack a znova zapnite automatické opisy obrázkov.</string>
-  <string name="ai_services_update_dialog_button_text">Prejsť do služby Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Niečo sa pokazilo. Skúste to znova.</string>
   <string name="gemini_block_message">Tento obrázok sa nedá spracovať</string>
   <string name="gemini_network_error">Nemáte internetové pripojenie. Skontrolujte pripojenie k sieti Wi‑Fi alebo mobilnej sieti a skúste to znova.</string>
@@ -1396,13 +1246,8 @@ V odpovedi nepoužívajte formát markdown.</string>
   <string name="image_qna_typing_button_text">Napíšte otázku pre Gemini</string>
   <string name="image_qna_send_button_text">Opýtať sa</string>
   <string name="image_qna_speak_question_description">Vysloviť otázku</string>
-  <string name="overviews_summary_intro">Súhrn obrazovky tejto aplikácie: %1$s</string>
   <string name="overviews_node_not_found">Túto časť obrazovky sa, žiaľ, nepodarilo nájsť.</string>
-  <string name="overviews_images_in_app">Boli nájdené hlavné obrázky</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Akcie v aplikácii</string>
-  <string name="overviews_actions_in_app_description">Tu sú hlavné akcie, ktoré môžete vykonať na tejto obrazovke aplikácie:</string>
-  <string name="overviews_parent_type">Akcie v aplikácii</string>
   <string name="text_replaced_feedback">Text bol nahradený</string>
   <string name="switch_gesture_set">Prepnúť skupinu gest</string>
   <string name="switch_gesture_set_to">Prepnúť na skupinu gest %1$d</string>
@@ -1453,5 +1298,4 @@ V odpovedi nepoužívajte formát markdown.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Zavrieť</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Ak chcete, aby sa predčítavali upozornenia, keď je obrazovka vypnutá, zapnite v nastaveniach podrobnosti aplikácie TalkBack možnosť Vyslovovať upozornenia pri vypnutej obrazovke</string>
 </resources>

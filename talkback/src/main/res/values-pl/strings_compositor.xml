@@ -65,15 +65,12 @@
   <string name="value_not_selected">nie wybrano</string>
   <string name="value_checked">zaznaczono</string>
   <string name="value_not_checked">nie zaznaczono</string>
-  <string name="value_partially_checked">częściowo zaznaczono</string>
   <string name="value_on">włączono</string>
   <string name="value_off">wył.</string>
   <string name="value_disabled">wyłączono</string>
   <string name="value_enabled">włączono</string>
   <string name="value_read_only">tylko do odczytu</string>
   <string name="value_expanded">widok rozwinięty</string>
-  <string name="value_fully_expanded">w pełni rozwinięty</string>
-  <string name="value_partially_expanded">częściowo rozwinięty</string>
   <string name="value_collapsed">widok zwinięty</string>
   <string name="value_double_tap">Kliknij dwukrotnie</string>
   <string name="value_single_tap">Kliknij</string>
@@ -95,7 +92,6 @@
   <string name="template_hint_spinner_keyboard">Naciśnij %1$s, aby zmienić</string>
   <string name="template_hint_single_selection_item">%1$s, aby wybrać</string>
   <string name="template_hint_single_selection_item_keyboard">Naciśnij %1$s, aby wybrać</string>
-  <string name="template_hint_pager">Przesuń dwoma palcami, aby zmienić stronę</string>
   <string name="template_hint_pager_single_page">Nie ma więcej stron</string>
   <string name="template_hint_seek_control_tv">%1$s, aby zmienić</string>
   <string name="template_custom_hint_for_actions">%1$s, aby %2$s</string>
@@ -188,7 +184,6 @@
   <string name="template_speech_rate_change">Szybkość mowy %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">Zwiększ głośność dostępności do %1$d procent.</string>
   <string name="template_accessibility_volume_change_decrease">Zmniejsz głośność dostępności do %1$d procent.</string>
-  <string name="template_touch_explore_latency_changed">Opóźnienie zaznaczenia podczas pisania: %1$d ms.</string>
   <string name="template_touch_latency_reach_maximum">Wartość maksymalna</string>
   <string name="template_touch_latency_reach_minimum">Wartość minimalna</string>
   <string name="template_volume_change_maximum">Wartość maksymalna</string>

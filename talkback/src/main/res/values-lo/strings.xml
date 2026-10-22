@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">ເມື່ອເປີດໃຊ້ Talkback ແລ້ວ, ມັນຈະໃຫ້ການຕອບສະໜອງແບບສຽງເວົ້າເພື່ອໃຫ້ທ່ານສາມາດໃຊ້ອຸປະກອນຂອງທ່ານໂດຍບໍ່ຕ້ອງເບິ່ງໜ້າຈໍໄດ້. TalkBack ມີຈຸດປະສົງສຳລັບສະຖານະການ ຫຼື ຄົນທີ່ມີບັນຫາໃນການເບິ່ງເຫັນໜ້າຈໍ.&lt;br&gt;&lt;br&gt;&lt;b&gt;ວິທີໃຊ້ TalkBack&lt;/b&gt;&lt;br&gt;• ປັດຂວາ ຫຼື ຊ້າຍເພື່ອຍ້າຍໄປມາລະຫວ່າງລາຍການຕ່າງໆ&lt;br&gt;• ແຕະສອງເທື່ອເພື່ອເປີດນຳໃຊ້ລາຍການໃດໜຶ່ງ&lt;br&gt;• ລາກ 2 ນິ້ວເພື່ອເລື່ອນ&lt;br&gt;&lt;b&gt;ວິທີປິດ TalkBack&lt;/b&gt;&lt;br&gt;1. ໃນການຕັ້ງຄ່າ, ໃຫ້ແຕະ &lt;b&gt;ໃຊ້ TalkBack&lt;/b&gt;. ເສັ້ນຂອບຈະປາກົດຂຶ້ນ. ໃຫ້ແຕະສອງເທື່ອໃສ່ມັນ.&lt;br&gt;2. ຢູ່ຂໍ້ຄວາມການຢືນຢັນ, ໃຫ້ແຕະ &lt;b&gt;ຢຸດ&lt;/b&gt;. ເສັ້ນຂອບຈະປາກົດຂຶ້ນ. ໃຫ້ແຕະສອງເທື່ອໃສ່ມັນ.</string>
   <string name="talkback_service_summary">ໃຊ້ໂປຣແກຣມອ່ານໜ້າຈໍເພື່ອຟັງສຽງອ່ານລາຍການຕ່າງໆ</string>
   <string name="talkback_preferences_title">ການຕັ້ງຄ່າ TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">ການຕັ້ງຄ່າ</string>
   <string name="tts_preferences_title">ການປ່ຽນຂໍ້ຄວາມເປັນສຽງເວົ້າ</string>
   <string name="language_options">ພາສາ</string>
   <string name="spoken_language">ພາສາເວົ້າ</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">ຍົກ​ເລີກ​ການ​ຊອກ​ຫາ​ແລ້ວ.</string>
   <string name="notification_type_status_started">ເລີ່ມ​ຕົ້ນແລ້ວ</string>
   <string name="notification_type_status_stopped">ຢຸດແລ້ວ</string>
-  <string name="notification_type_status_connected">ເຊື່ອມຕໍ່ແລ້ວ</string>
-  <string name="notification_battery_level_unknown">ບໍ່ຮູ້ຈັກ</string>
   <string name="notification_battery_saver_mode">ຕົວປະຢັດແບັດເຕີຣີເປີດຢູ່</string>
   <string name="template_no_text_selected">ບໍ່ໄດ້ເລືອກຂໍ້ຄວາມ</string>
   <string name="template_charging">ກຳ​ລັງ​ສາກ %1$s ລະ​ດັບ​ແບັດ​ເຕີ​ຣີ %2$s ເປີ​ເຊັນ.</string>
   <string name="template_charging_lite">ການສາກໄຟ%1$s</string>
-  <string name="template_battery_state">ພະລັງງານ %1$s %2$s ເປີເຊັນ %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">ສັ່ນເຕືອນ​ພ້ອມສຽງເອີ້ນເຂົ້າ.</string>
   <string name="value_ringer_silent">ປິດສຽງເອີ້ນເຂົ້າ.</string>
   <string name="value_screen_on">ໜ້າຈໍເປີດ.</string>
   <string name="value_screen_off">ໜ້າຈໍຖືກປິດ.</string>
   <string name="value_device_unlocked">​ປົດ​ລັອກ​ອຸ​ປະ​ກອນ​ແລ້ວ</string>
-  <string name="title_pref_category_audio">ສຽງ</string>
   <string name="title_pref_speech_volume">ລະດັບສຽງ​ຂອງການເວົ້າ</string>
-  <string name="title_pref_speech_rate">ຄວາມໄວການເວົ້າ</string>
-  <string name="summary_pref_speech_rate">ຄວາມໄວໃນການເວົ້າຂໍ້ຄວາມ</string>
   <string name="title_pref_verbose_scroll_announcement">ອ່ານຈຳນວນຂອງລາຍການລາຍຊື່ສະເໝີ</string>
   <string name="summary_pref_verbose_scroll_announcement">ອ່ານຈຳນວນວິທີການເລື່ອນທັງໝົດ</string>
   <string name="title_pref_cover_proximity_sensor">ບັງເຊັນເຊີກວດສອບຄວາມໃກ້ເພື່ອຢຸດການເວົ້າ</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">ບອກເວລາ</string>
   <string name="pref_speak_time_summary">ເມື່ອທ່ານເປີດໜ້າຈໍ</string>
   <string name="summary_speak_container_element_positions">ຮວມເອົາຂໍ້ມູນໃນຂະນະທີ່ເຂົ້າ ແລະ ອອກຈາກລາຍການ, ຕາໜ່າງ ແລະ ກ່ອງບັນຈຸອື່ນໆ</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">ເພີ່ມຄວາມຫຼ້າຊ້າໂຟກັສໃສ່ໃນຕົວຄວບຄຸມການອ່ານແລ້ວ</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">ໃຊ້ 3 ນິ້ວປັດເພື່ອໃຊ້ຕົວຄວບຄຸມການອ່ານ ແລະ ປ່ຽນຄວາມຫຼ້າຊ້າໂຟກັສໄດ້ທຸກເວລາ</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">ປ່ຽນໄປໃຊ້ຍົກເພື່ອພິມບໍ?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">ເມື່ອຕັ້ງຄ່າຄວາມຫຼ້າຊ້າໂຟກັສການພິມໄວ້ຕ່ຳກວ່າ 0.3 ວິນາທີ, ຈະເຮັດໃຫ້ແຕະສອງເທື່ອເພື່ອພິມຍາກຫຼາຍ. ເລືອກ \"ສະຫຼັບ\" ເພື່ອປ່ຽນເປັນຍົກເພື່ອພິມໂດຍອັດຕະໂນມັດ.\n\nເພື່ອໃຊ້ການຍົກເພື່ອພິມ, ໃຫ້ກົດນິ້ວມືຂອງທ່ານຄ້າງໄວ້ເພື່ອເລືອກປຸ່ມໃດໜຶ່ງ, ຈາກນັ້ນຍົກຂຶ້ນເພື່ອພິມ.\n\nທ່ານສາມາດປັບແຕ່ງສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າ TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">ເພີ່ມຄວາມຫຼ້າຊ້າໂຟກັສການພິມໃສ່ໃນຕົວຄວບຄຸມການອ່ານແລ້ວ</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">ຫາກທ່ານພົບບັນຫາກ່ຽວກັບການແຕະສອງເທື່ອໃນລະຫວ່າງທີ່ພິມ, ໃຫ້ໃຊ້ 3 ນິ້ວປັດເພື່ອໃຊ້ຕົວຄວບຄຸມການອ່ານ ແລະ ປ່ຽນໄປໃຊ້ຄວາມຫຼ້າຊ້າໂຟກັສການພິມທີ່ດົນຂຶ້ນ</string>
-  <string name="gestures_announce_typing_focus_wont_change">ຄວາມຫຼ້າຊ້າໂຟກັສການພິມຈະບໍ່ເຮັດວຽກໂດຍບໍ່ມີຍົກເພື່ອພິມ.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">ເຂົ້າໃຈແລ້ວ</string>
   <string name="reset_letency_reduction_settings_dialog_title">ຣີເຊັດການຕັ້ງຄ່າຄວາມຫຼ້າຊ້າບໍ?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">ການດຳເນີນການນີ້ຈະຣີເຊັດການຕັ້ງຄ່າຄວາມຫຼ້າຊ້າທັງໝົດເປັນຄ່າເລີ່ມຕົ້ນ</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">ຣີເຊັດ</string>
   <string name="gestures_announce_reset_latency_reduction_settings">ຣີເຊັດການຕັ້ງຄ່າການຫຼຸດເວລາໃນການຕອບສະໜອງແລ້ວ.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">ປ່ຽນ</string>
-  <string name="reduce_focus_delay_settings_cancel_button">ບໍ່ປ່ຽນ</string>
   <string name="Reset_gesture_settings_dialog_title">ຣີເຊັດທ່າທາງບໍ?</string>
   <string name="Reset_gesture_settings_set_dialog_title">ຣີເຊັດທ່າທາງຂອງຊຸດປັດຈຸບັນບໍ?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">ນີ້ຈະເປັນການຣີເຊັດທ່າທາງທັງໝົດໄປເປັນຄຳສັ່ງເລີມຕົ້ນຂອງພວກມັນ.\n\nທ່ານຈະສູນເສຍການປ່ຽນແປງໃດກໍຕາມທີ່ທ່ານສ້າງຂຶ້ນ.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">ເວົ້າຂໍ້ມູນອັບເດດຄວາມຄືບໜ້າທັງໝົດ</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ຮວມມີການອັບເດດໃນຂະນະທີ່ດາວໂຫຼດ, ການຕິດຕາມເສັ້ນທາງການຂັບລົດ ແລະ ອື່ນໆອີກ. ເມື່ອປິດແລ້ວ, ທ່ານຈະຍັງໄດ້ຮັບການອັບເດດເລື້ອຍໆໜ້ອຍລົງ.</string>
   <string name="title_pref_explore_by_touch">​ສຳຫຼວດ​ໂດຍ​ການ​ສຳ​ຜັດ</string>
-  <string name="title_pref_category_visual">ພາບ</string>
   <string name="title_pref_category_controls">ການຄວບຄຸມ</string>
-  <string name="title_pref_category_braille">ອັກສອນນູນ</string>
-  <string name="title_pref_category_general">ທົ່ວໄປ</string>
-  <string name="title_pref_category_advanced">ຂັ້ນສູງ</string>
-  <string name="title_pref_category_others">ອື່ນໆ</string>
-  <string name="title_pref_category_tutorial_and_help">ບົດສອນການນຳໃຊ້ ແລະ ຄວາມຊ່ວຍເຫຼືອ</string>
   <string name="title_pref_category_reduce_latency_summary">ການຕັ້ງຄ່າເຫຼົ່ານີ້ສາມາດຫຼຸດຄວາມຫຼ້າຊ້າກ່ອນປະກາດຂອງ TalkBack ໄດ້</string>
   <string name="reset_latency_settings_title">ຣີເຊັດການຕັ້ງຄ່າຄວາມຫຼ້າຊ້າທັງໝົດ</string>
   <string name="title_pref_single_tap">ແຕະເທື່ອດຽວເພື່ອເປີດນຳໃຊ້</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">ປ່ຽນສັນຍານບອກສະຖານະໂຟກັສ</string>
   <string name="title_pref_category_manage_gestures">ທ່າທາງ</string>
   <string name="title_pref_manage_labels">ປ້າຍກຳກັບແບບກຳນົດເອງ</string>
-  <string name="title_pref_manage_customize_menus">ແກ້ໄຂເມນູ</string>
   <string name="title_pref_category_context_menu">ປັບແຕ່ງເມນູ Talkback</string>
   <string name="title_pref_category_selector_menu">ປັບແຕ່ງການຄວບຄຸມການອ່ານ</string>
   <string name="title_pref_category_navigation_menu">ແກ້ໄຂຕົວເລືອກການນຳທາງ</string>
-  <string name="pref_category_context_menu_summary">ເພື່ອໃຊ້ເມນູ TalkBack, ໃຫ້ແຕະໜ້າຈໍດ້ວຍ 3 ນິ້ວ. ທ່ານສາມາດປັດຂຶ້ນຈາກນັ້ນປັດຂວາ ຫຼື ປັດລົງຈາກນັ້ນປັດຂວາໄດ້ນຳ.</string>
-  <string name="pref_category_context_menu_summary_xr">ເພື່ອໃຊ້ເມນູ TalkBack, ໃຫ້ຫັນຝາມືຂ້າງທີ່ທ່ານບໍ່ລຶ້ງເຂົ້າຫາໂຕ ແລ້ວບີບນິ້ວ.</string>
-  <string name="pref_category_context_menu_summary_single_finger">ເພື່ອໃຊ້ເມນູ TalkBack, ໃຫ້ປັດລົງຈາກນັ້ນປັດຂວາ.</string>
-  <string name="pref_category_selector_menu_summary">ເພື່ອໃຊ້ການຄວບຄຸມການອ່ານ, ໃຫ້ປັດຊ້າຍ ຫຼື ຂວາດ້ວຍ 3 ນິ້ວ. ທ່ານສາມາດປັດຂຶ້ນ ຫຼື ລົງດ້ວຍ 3 ນິ້ວນຳກໍໄດ້.</string>
-  <string name="pref_category_selector_menu_summary_xr">ເພື່ອສະຫຼັບໄປມາລະຫວ່າງຕົວຄວບຄຸມການອ່ານ, ໃຫ້ຫັນຝາມືຂ້າງທີ່ທ່ານບໍ່ລຶ້ງເຂົ້າຫາໂຕ ແລ້ວບີບນິ້ວຂອງທ່ານຄ້າງໄວ້, ເລື່ອນໄປທາງຂວາ ຫຼື ຊ້າຍ ແລ້ວປ່ອຍ.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">ເພື່ອໃຊ້ການຄວບຄຸມການອ່ານ, ໃຫ້ປັດຂຶ້ນແລ້ວປັດລົງ.</string>
   <string name="title_pref_manage_keyboard_shortcuts">ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="title_pref_export_custom_labels">ສົ່ງ​ປ້າຍ​ກຳ​ກັບ​ກຳ​ນົດ​ເອງ​ອອກ</string>
-  <string name="title_pref_play_store">ເປີດ TalkBack ໃນ Play Store</string>
-  <string name="summary_pref_play_store">ເວີ​ຊັນ TalkBack ປັດ​ຈຸ​ບັນ: %1$s</string>
   <string name="title_pref_help_and_feedback">ຊ່ວຍເຫຼືອ ແລະ ຕິຊົມ</string>
-  <string name="title_pref_gup">ຕິດຕໍ່ທີມສະໜັບສະໜູນຄົນພິການຂອງ Google</string>
-  <string name="subtitle_pref_gup">ຮັບຄວາມຊ່ວຍເຫຼືອໃນການໃຊ້ TalkBack ຫຼື ລາຍງານບັນຫາ</string>
-  <string name="pref_item_licenses">ລິຂະສິດໂອເພນຊອດ</string>
-  <string name="title_pref_tutorial">ສອນການນຳໃຊ້</string>
   <string name="title_pref_help">ຊ່ວຍເຫຼືອ</string>
   <string name="title_pref_show_tos">ຂໍ້ກຳນົດບໍລິການ</string>
   <string name="title_pref_show_privacy_policy">ນະໂບບາຍຄວາມເປັນສ່ວນຕົວ</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">ທ່າທາງລາຍນິ້ວມື</string>
   <string name="title_pref_category_tutorial">ບົດສອນການນຳໃຊ້ TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">ຊ່ວຍເຫຼືອ</string>
-  <string name="title_pref_category_typing">ກຳລັງພິມ</string>
   <string name="title_pref_advanced_settings">ການຕັ້ງຄ່າຂັ້ນສູງ</string>
   <string name="title_pref_show_exit_watermark">ສະແດງຄຳແນະນຳສຳລັບການປິດ TalkBack</string>
   <string name="summary_pref_show_exit_watermark">ຂໍ້ຄວາມສະແດງວ່າເປີດ TalkBack ຕອນໃດ, ເພື່ອຊ່ວຍທ່ານປິດມັນໄດ້ຢ່າງວ່ອງໄວ</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;ປຸ່ມຕົວດັດແປງບາງປຸ່ມຈະແຕກຕ່າງອອກໄປ.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ສຶກສາເພີ່ມເຕີມກ່ຽວກັບແຜນທີ່ປຸ່ມ</string>
   <string name="keycombo_go_to_settings">ເຂົ້າໄປການຕັ້ງຄ່າ</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack ກຳລັງກຽມຄວາມພ້ອມໃນການລຶບແຜນທີ່ປຸ່ມແບບຄລາດສິກອອກ. ເພື່ອສືບຕໍ່ນຳໃຊ້ຄີລັດ, ໃຫ້ປ່ຽນເປັນແຜນທີ່ປຸ່ມແບບເລີ່ມຕົ້ນ.</string>
-  <string name="keycombo_keymap_changes_notifications_action">ສຶກສາເພີ່ມເຕີມ</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">ເຂົ້າໃຈແລ້ວ</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">ການຕັ້ງຄ່າ</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">ສຶກສາເພີ່ມເຕີມ</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ຕອນນີ້ທ່ານໃຊ້ແຜນທີ່ປຸ່ມເລີ່ມຕົ້ນຂອງ TalkBack ແລ້ວ. ນອກຈາກນີ້, ຍັງມີແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃໝ່ເຊິ່ງມີຄຳສັ່ງໃໝ່ໆຫຼາກຫຼາຍ. ສຶກສາເພີ່ມເຕີມໃນສູນຊ່ວຍເຫຼືອ ຫຼື ປ່ຽນໄປໃຊ້ແຜນທີ່ປຸ່ມໃໝ່ໃນການຕັ້ງຄ່າ.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">ແຜນທີ່ປຸ່ມໃໝ່ພ້ອມໃຫ້ນຳໃຊ້</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃໝ່ຂອງ TalkBack ເພີ່ມຄຳສັ່ງໃໝ່ໆຫຼາກຫຼາຍ. ສຶກສາເພີ່ມເຕີມໃນສູນຊ່ວຍເຫຼືອ ຫຼື ປ່ຽນໄປໃຊ້ແຜນທີ່ປຸ່ມໃໝ່ໃນການຕັ້ງຄ່າ.</string>
-  <string name="keycombo_update_modifier_key_warning_title">ອັບເດດປຸ່ມຕົວດັດແປງ TalkBack ຂອງທ່ານ</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">ບໍ່ຟ້າວເທື່ອ</string>
   <string name="keycombo_warning_content_description">ຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບປຸ່ມຕົວດັດແປງຂອງທ່ານ</string>
-  <string name="keycombo_warning_dialog_title">ອັບເດດປຸ່ມຕົວດັດແປງຂອງທ່ານ</string>
-  <string name="keycombo_warning_dialog_message">ເພື່ອໃຫ້ຄີລັດຂອງ TalkBack ເຮັດວຽກໄດ້ຢ່າງຖືກຕ້ອງ, ໃຫ້ອັບເດດປຸ່ມຕົວດັດແປງຂອງທ່ານຈາກ Action ເປັນ Alt.\n\nຫາກທ່ານສືບຕໍ່ໃຊ້ປຸ່ມຕົວດັດແປງ Action, ຄີລັດບາງລາຍການຈະດຳເນີນການຄຳສັ່ງອື່ນໃນ Android ເວີຊັນນີ້.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">ຄີແມັບ</string>
   <string name="keycombo_menu_select_keymap">ເລືອກຄີແມັບໜຶ່ງ</string>
   <string name="keycombo_menu_reset_keymap">ຣີເຊັດຄີແມັບ</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">ເພີ່ມລະດັບສຽງເວົ້າຂຶ້ນ</string>
   <string name="keycombo_menu_global_speech_volume_decrease">ຫຼຸດລະດັບສຽງເວົ້າລົງ</string>
   <string name="keycombo_menu_global_refocus_current_node">ເວົ້າໂຟກັສປັດຈຸບັນ</string>
-  <string name="keycombo_menu_category_granularity">ການນຳທາງ</string>
   <string name="keycombo_menu_granularity_increase">ການ​ຕັ້ງ​ຄ່າ​ການ​ນຳ​ທາງ​ຕໍ່​ໄປ</string>
   <string name="keycombo_menu_granularity_decrease">ການ​ຕັ້ງ​ຄ່າ​ການ​ນຳ​ທາງ​ຜ່ານ​ມາ</string>
   <string name="keycombo_menu_category_other">ການ​ດຳ​ເນີນ​ການ​ອື່ນໆ</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຣີເຊັດປຸ່ມທາງລັດສຳລັບຄີແມັບນີ້ເປັນຄ່າເລີ່ມຕົ້ນຂອງພວກມັນບໍ? ກະລຸນາຮັບຊາບວ່າ, ຄຳສັ່ງນີ້ຈະບໍ່ສາມາດຍົກເລີກໄດ້.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">ຣີເຊັດ</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s ໃນໂໝດທ່ອງເວັບ</string>
-  <string name="keycombo_assign_dialog_instruction">ກົດ​ການ​ປະ​ສົມ​ປະ​ສານ​ປຸ່ມ ເພື່ອ​ຕັ້ງ​ທາງ​ລັດ​ໃໝ່. ຢ່າງ​ນ້ອຍ​ມັນ​ຕ້ອງ​ມີ​ປຸ່ມ ALT ຫຼື​ປຸ່ມ​ຄວບ​ຄຸມ.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">ກົດປຸ່ມປະສົມດ້ວຍປຸ່ມແກ້ໄຂ %1$s ເພື່ອສ້າງປຸ່ມລັດໃໝ່.</string>
   <string name="keycombo_unassigned">ບໍ່ໄດ້ຖືກຕັ້ງໄວ້</string>
   <string name="save_button_in_keycombo_assign_dialog">ບັນທຶກ</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">ຄວາມຫຼ້າຊ້າໂຟກັສການພິມ</string>
   <string name="message_pref_touch_explore_latency">ຄວາມຫຼ້າຊ້າໂຟກັສການພິມທີ່ສັ້ນລົງໝາຍຄວາມວ່າ TalkBack ຈະປະກາດໄວຂຶ້ນຫຼັງຈາກສຳຜັດແປ້ນພິມ.\n\nເລືອກຄວາມຫຼ້າຊ້າ</string>
   <string name="title_pref_touch_focus_timeout">ຄວາມຫຼ້າຊ້າໂຟກັສ</string>
-  <string name="summary_pref_touch_focus_time">
-ຄວບຄຸມຄວາມໄວທີ່ TalkBack ເວົ້າຫຼັງຈາກທີ່ຍ້າຍໂຟກັສໄປ. ຄວາມຫຼ້າຊ້າທີ່ສັ້ນລົງຈະເຮັດໃຫ້ TalkBack ເຮັດວຽກໄດ້ໄວຂຶ້ນ, ແຕ່ຈະເຮັດໃຫ້ການແຕະສອງເທື່ອ ແລະ ການແຕະສາມເທື່ອເຮັດໄດ້ຍາກຂຶ້ນ.\n\n
-ຄວາມຫຼ້າຊ້າທີ່ຕ່ຳກວ່າ 0.3 ວິນາທີຈະປ່ຽນການແຕະສອງເທື່ອເພື່ອເປີດການນຳໃຊ້ເປັນການແຕະໂດຍໃຊ້ 2 ນິ້ວເພື່ອເປີດການນຳໃຊ້.
-      </string>
   <string name="title_pref_talkback_gesture_detection">ຈັດການທ່າທາງໃນ TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">ປິດ TalkBack ແລ້ວເປີດຄືນໃໝ່ເພື່ອເປີດໃຊ້ການຕັ້ງຄ່າ.</string>
   <string name="title_pref_auto_image_captioning">ຄຳອະທິບາຍອັດຕະໂນມັດ</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">ເປີດໃຊ້ຄຳອະທິບາຍຮູບໃນການຕັ້ງຄ່າ</string>
   <string name="dialog_message_turn_on_image_description">ທ່ານສາມາດລອງໃໝ່ໄດ້ຫຼັງຈາກເປີດໃຊ້ຄຳອະທິບາຍຮູບອັດຕະໂນມັດ ຫຼື ໂດຍລະອຽດ</string>
   <string name="title_pref_detailed_image_description">ຄຳອະທິບາຍຮູບແບບລະອຽດ</string>
-  <string name="summary_pref_ai_description">ຟັງຄຳອະທິບາຍທີ່ຍາວຂຶ້ນເມື່ອທ່ານເລືອກ \"%1$s\" ຈາກເມນູ TalkBack</string>
   <string name="dialog_message_on_device_ai_description">ທ່ານຈະໄດ້ຍິນຄຳອະທິບາຍສັ້ນໆເມື່ອທ່ານໂຟກັສໃສ່ຮູບໃນແອັບທີ່ຮອງຮັບ.\n\nຮູບພາບຖືກປະມວນຜົນຢູ່ອຸປະກອນຂອງທ່ານ ແລະ ຈະບໍ່ຖືກສົ່ງໃຫ້ Google. \n\nAI ສ້າງເນື້ອຫາເປັນເວີຊັນທົດລອງ, ດັ່ງນັ້ນມັນຈຶ່ງອາດເຮັດວຽກຜິດພາດໄດ້. ໂດຍການສືບຕໍ່, ແມ່ນຖືວ່າທ່ານຍອມຮັບ <a href="https://policies.google.com/terms/generative-ai">ຂໍ້ກຳນົດບໍລິການຂອງ Google</a>.</string>
   <string name="enable_gemini">ເປີດ</string>
   <string name="powered_by_gemini">ຂັບເຄື່ອນໂດຍ AI ສ້າງເນື້ອຫາ</string>
-  <string name="detailed_image_description_ongoing_hint">ກຳລັງໂຫຼດຄຳອະທິບາຍ</string>
-  <string name="detailed_image_description_result_prefix">ກວດພົບ: ຮູບພາບ. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">ຈຳເປັນຕ້ອງດາວໂຫຼດສຳລັບຄຳອະທິບາຍຮູບອັດຕະໂນມັດ</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">ຮູບພາບໄດ້ຮັບການປະມວນຜົນຢູ່ອຸປະກອນຂອງທ່ານ ແລະ ຈະບໍ່ມີການສົ່ງໄປໃຫ້ Google.\n\nAI ສ້າງເນື້ອຫາເປັນເວີຊັນທົດລອງ, ດັ່ງນັ້ນຈຶ່ງອາດເຮັດວຽກຜິດພາດໄດ້. ໂດຍການສືບຕໍ່, ແມ່ນຖືວ່າທ່ານຍອມຮັບ %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">ຂໍ້ກຳນົດບໍລິການຂອງ Google</string>
   <string name="message_aifeature_downloading">ກຳລັງດາວໂຫຼດໂມເດວ AI. ຂັ້ນຕອນນີ້ອາດໃຊ້ເວລາໜ້ອຍໜຶ່ງ. ທ່ານຈະໄດ້ຮັບການແຈ້ງເຕືອນເມື່ອດຳເນີນການສຳເລັດແລ້ວ.</string>
   <string name="message_aifeature_downloading_with_progress">ກຳລັງດາວໂຫຼດຢູ່. ດາວໂຫຼດແລ້ວ %1$d ຈາກ %2$dMB.</string>
-  <string name="message_aifeature_download_complete">ດາວໂຫຼດໂມເດວ AI ແລ້ວ. ຕອນນີ້ TalkBack ສາມາດສ້າງຄຳອະທິບາຍຮູບໄດ້ແລ້ວ.</string>
   <string name="summary_pref_auto_image_captioning">ສຳລັບໄອຄອນ, ຮູບ ແລະ ຂໍ້ຄວາມໃນຮູບ</string>
-  <string name="summary_pref_auto_image_captioning_text_only">ສຳລັບຂໍ້ຄວາມໃນຮູບ</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">ສຳລັບຮູບ ແລະ ຂໍ້ຄວາມໃນຮູບ</string>
-  <string name="summary_pref_auto_image_captioning_no_image">ສຳລັບໄອຄອນ ແລະ ຂໍ້ຄວາມໃນຮູບ</string>
   <string name="summary_pref_module_downloading">ກຳລັງດາວໂຫຼດ…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">ເປີດສຳລັບຮູບທັງໝົດ</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">ເປີດສຳລັບຮູບທີ່ບໍ່ມີປ້າຍກຳກັບເທົ່ານັ້ນ</string>
   <string name="summary_pref_auto_image_captioning_disabled">ປິດ</string>
-  <string name="summary_pref_auto_icon_detection_enabled">ເປີດສຳລັບໄອຄອນທັງໝົດ</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">ເປີດສຳລັບໄອຄອນທີ່ບໍ່ມີປ້າຍກຳກັບເທົ່ານັ້ນ</string>
   <string name="summary_pref_auto_icon_detection_disabled">ປິດ</string>
   <string name="title_pref_enable_auto_image_caption">ຮູບທັງໝົດ</string>
   <string name="title_pref_enable_auto_image_caption_arg">ຮູບພາບທັງໝົດ\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">ໄອຄອນທັງໝົດ</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">ໄອຄອນທີ່ບໍ່ມີປ້າຍກຳກັບເທົ່ານັ້ນ</string>
   <string name="title_pref_disable_auto_icon_detection">ຢ່າອະທິບາຍໄອຄອນ</string>
-  <string name="dialog_message_on_device_ai_model_download">ທ່ານຈະໄດ້ຍິນຄຳອະທິບາຍສັ້ນໆເມື່ອທ່ານໂຟກັສໃສ່ຮູບພາບໃນແອັບທີ່ຮອງຮັບ.\n\nຮູບພາບຖືກປະມວນຜົນຢູ່ອຸປະກອນຂອງທ່ານ ແລະ ຈະບໍ່ມີການສົ່ງໄປຫາ Google.\n\nAI ສ້າງເນື້ອຫາເປັນເວີຊັນທົດລອງ, ດັ່ງນັ້ນມັນຈຶ່ງອາດເຮັດວຽກຜິດພາດໄດ້. ໂດຍການສືບຕໍ່, ແມ່ນຖືວ່າທ່ານຍອມຮັບ %1$s.</string>
   <string name="title_pref_enable_gemini_support">ເປີດ</string>
   <string name="title_pref_disable_gemini_support">ປິດ</string>
   <string name="summary_pref_gemini_support_enabled">Gemini ຖືກເປີດການນຳໃຊ້ຢູ່</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">ພິມ​ໂນດ​ແຜ​ນ​ຜັງ​ຕົ້ນ​ໄມ້</string>
   <string name="shortcut_print_performance_stats">ພິມສະຖິຕິປະສິດທິພາບ</string>
   <string name="shortcut_first_in_screen">ໂຟກັສໃສ່ລາຍການທຳອິດຢູ່ໜ້າຈໍ</string>
-  <string name="shortcut_summary">ສະຫຼຸບໂຄງຮ່າງໜ້າຈໍ</string>
   <string name="shortcut_voice_commands">ເລີ່ມຄຳສັ່ງສຽງ</string>
   <string name="shortcut_last_in_screen">ໂຟກັສລາຍການສຸດທ້າຍຢູ່ໜ້າຈໍ</string>
   <string name="shortcut_enable_dimming">ເຊື່ອງໜ້າຈໍ</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">ການນຳທາງໄປຫາສ່ວນຕ່າງໆຂອງເວັບ</string>
   <string name="menu_category_basic_navigation">ການນຳທາງພື້ນຖານໄປຫາສ່ວນຕ່າງໆ</string>
   <string name="summary_custom_action">ສະແດງເມື່ອມີຄຳສັ່ງສຳລັບລາຍການປັດຈຸບັນ, ຮວມທັງລິ້ງ, ສຳເນົາ, ວາງ, ເລືອກ ແລະ ອື່ນໆ</string>
-  <string name="summary_context_menu_links">ເປີດລິ້ງພາຍໃນລາຍການທີ່ໂຟກັສໄວ້</string>
   <string name="summary_viewpager_controls">ໄປຫາໜ້າຕໍ່ໄປ ຫຼື ກ່ອນໜ້າ. ສະແດງເມື່ອທ່ານກຳລັງອ່ານເນື້ອຫາທີ່ມີຫຼາຍໜ້າ.</string>
   <string name="summary_labeling_controls">ສະແດງເມື່ອທ່ານເລືອກລາຍການທີ່ບໍ່ມີປ້າຍກຳກັບ</string>
   <string name="summary_granularity">ອ່ານຕາມຕົວອັກສອນ, ຄຳສັບ, ແຖວ ແລະ ອື່ນໆ</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">ສະຫຼຸບໜ້າຈໍດ້ວຍປຸ່ມຄຳສັ່ງ</string>
   <string name="summary_screen_overview_no_actions">ຟັງສະຫຼຸບເນື້ອຫາຢູ່ໜ້າຈໍ</string>
   <string name="summary_image_caption">ເວົ້າຂໍ້ຄວາມ ແລະ ໄອຄອນພາຍໃນຮູບທີ່ເລືອກ</string>
-  <string name="summary_summarize_view">ກ່າວການສະຫຼຸບການເບິ່ງ</string>
   <string name="summary_typo_suggestions">ສະແດງເມື່ອເຄີເຊີຢູ່ເທິງການພິມຜິດ</string>
   <string name="summary_cache_keyboard_keys">TalkBack ປະກາດການໂຫຼດລ່ວງໜ້າເພື່ອຫຼຸດຜ່ອນຄວາມລ່າຊ້າເມື່ອທ່ານພິມ</string>
   <string name="summary_cache_keyboard_keys_disabled">ໃຊ້ Google ຂໍ້​ຄວາມ​ເປັນ​ຄຳ​ເວົ້າເພື່ອໃຊ້ຄຸນສົມບັດນີ້</string>
-  <string name="value_direction_down">ລົງ</string>
-  <string name="value_direction_down_and_right">ລົງ​ແລ້ວ​ຂວາ</string>
   <string name="title_pref_shortcut_up">ປັດ​ຂຶ້ນ</string>
   <string name="title_pref_shortcut_up_xr">ຫັນຝາມືຂ້າງທີ່ທ່ານບໍ່ລຶ້ງເຂົ້າຫາໂຕ, ຈາກນັ້ນບີບນິ້ວ ແລ້ວປັດຂຶ້ນ</string>
   <string name="title_pref_shortcut_down">ປັດ​ລົງ</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">ເລື່ອນນິ້ວໄປທາງຊ້າຍໃສ່ເຊັນເຊີລາຍນິ້ວມື</string>
   <string name="title_pref_shortcut_fingerprint_right">ເລື່ອນນິ້ວໄປທາງຂວາໃສ່ເຊັນເຊີລາຍນິ້ວມື</string>
   <string name="title_pref_version_code">ເວີຊັນຂອງໂຄດ</string>
-  <string formatted="false" name="value_volume_100_percent">ເທົ່າກັບລະດັບສຽງເວົ້າ</string>
-  <string formatted="false" name="value_volume_75_percent">75% ຂອງສຽງເວົ້າ</string>
-  <string formatted="false" name="value_volume_50_percent">50% ຂອງສຽງເວົ້າ</string>
-  <string formatted="false" name="value_volume_25_percent">25% ຂອງສຽງເວົ້າ</string>
   <string name="value_type_confirmation_double_tap">ກົດນິ້ວຄ້າງໄວ້ເພື່ອເລືອກປຸ່ມໃດກໍໄດ້, ຈາກນັ້ນແຕະສອງເທື່ອ</string>
   <string name="value_type_confirmation_lift_to_type">ກົດນິ້ວຄ້າງໄວ້ເພື່ອເລືອກປຸ່ມຕົວໜັງສືໃດກໍໄດ້, ຈາກນັ້ນຍົກນິ້ວຂຶ້ນ. ແຕະ​ສອງ​ເທື່ອສຳລັບປຸ່ມອື່ນໆ.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">ກົດນິ້ວຄ້າງໄວ້ເພື່ອເລືອກປຸ່ມໃດກໍໄດ້, ຈາກນັ້ນຍົກນິ້ວຂຶ້ນ</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0.2 ວິນາທີ</string>
   <string name="value_touch_explore_time_out_250ms">0.25 ວິນາທີ</string>
   <string name="value_touch_explore_time_out_300ms">0.3 ວິນາທີ (ຄ່າເລີ່ມຕົ້ນ)</string>
-  <string name="value_shake_to_read_disabled">ປິດການນຳໃຊ້</string>
-  <string name="value_shake_to_read_threshold_very_light">ຄ່ອຍຫຼາຍ</string>
-  <string name="value_shake_to_read_threshold_light">ຄ່ອຍ</string>
-  <string name="value_shake_to_read_threshold_medium">​ປານກາງ</string>
-  <string name="value_shake_to_read_threshold_hard">ແຮງ</string>
-  <string name="value_shake_to_read_threshold_very_hard">ແຮງຫຼາຍ</string>
   <string name="title_pref_on_screen_keyboard">ແປ້ນພິມໃນໜ້າຈໍ</string>
   <string name="title_pref_physical_keyboard">ແປ້ນພິມພາຍນອກ</string>
   <string name="value_keyboard_echo_none">ບໍ່ມີ</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">ໃຊ້ຮູບແບບເວລາອຸປະກອນ</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ຊົ່ວໂມງ</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 ຊົ່ວໂມງ</string>
-  <string name="notification_title_talkback_gestures_changed">ປ່ຽນ​ແປງ​ທ່າ​ທາງ​ນິ້ວ​ມືຂອງ TalkBack ແລ້ວ</string>
-  <string name="notification_message_talkback_gestures_changed">ແຕະ​ເພື່ອກວດ​ເບິ່ງ​ການ​ປ່ຽນ​ແປງ​ຕໍ່​ທ່າ​ທາງ​ການ​ຊ່ວຍ​ເຂົ້າ​ເຖິງ</string>
   <string name="always_show_warning_checkbox">ສະແດງ​ຄຳເຕືອນນີ້​ທຸກເທື່ອ</string>
   <string name="label_dialog_title_add">ເພີ່ມປ້າຍກຳກັບ</string>
   <string name="label_dialog_title_edit">ແກ້ໄຂປ້າຍກຳກັບ</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">ບໍ່ພົບແອັບພລິເຄຊັນເພື່ອສົ່ງປ້າຍກຳກັບອອກ.</string>
   <string name="label_choose_app_to_import">ເລືອກແອັບພລິເຄຊັນເພື່ອນຳປ້າຍກຳກັບເຂົ້າ:</string>
   <string name="label_choose_app_to_export">ເລືອກ​ແອັບ​ພ​ລິ​ເຄ​ຊັນ ເພື່ອ​ສົ່ງ​ອອກປ້າຍ​ກຳ​ກັບ:</string>
-  <string name="talkback_gesture_change_details">TalkBack ​ເວີ​ຊັນ​ນີ້​ຮວມ​ມີ​ການ​ປ່ຽນ​ແປງ​ຂອງ​ທ່າ​ທາງ​ນິ້ວ​ມື​ເພື່ອ​ຊ່ວຍ​ໃນ​ການ​ເຂົ້າ​ເຖິງ. ຄຳ​ສັ່ງ​ທີ່​ເຊື່ອມ​ໂຍງ​ກັບ​ທ່າ​ທາງ​ນິ້ວ​ມື​ເຫຼົ່າ​ນີ້​ສາ​ມາດ​ປັບ​ແຕ່ງ​ໄດ້​ພາຍ​ໃນ​ເມ​ນູ​ການ​ຕັ້ງ​ຄ່າ TalkBack. ເມື່ອ​ເປີດ​ນຳ​ໃຊ້​ການ​ສຳຫຼວດ​ໂດຍ​ການ​ສຳ​ຜັດ​ແລ້ວ, ທ່ານ​ສາ​ມາດ​ໃຊ້​ທ່າ​ທາງ​ນິ້ວ​ມື​ຕໍ່​ໄປ​ນີ້​ເພື່ອ​ສັ່ງ​ການ​ບາງ​ຢ່າງ​ໄດ້.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">ເຊື່ອງໜ້າຈໍບໍ?</string>
   <string name="dialog_message_dim_screen">ການດຳເນີນການນີ້ຈະປິດຈໍສະແດງຜົນເພື່ອປັບປຸງຄວາມເປັນສ່ວນຕົວ. ເນື້ອຫາບາງສ່ວນອາດຍັງຄົງສະແດງຢູ່ ເຊັ່ນ: ຂໍ້ຄວາມໃນການເປີດຈໍສະແດງຜົນຄືນໃໝ່ ຫຼື ເມນູສຳລັບຄຸນສົມບັດການຊ່ວຍເຂົ້າເຖິງ ເຊັ່ນ: TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack ເວີຊັນນີ້ມີການປ່ຽນແປງດ້ານການນຳໃຊ້ທ່າທາງນິ້ວມືຈາກມາດຕະຖານ.\n\nການປັດຂຶ້ນແລ້ວລົງຈະຊ່ວຍໃຫ້ທ່ານຍ້າຍໄປຫາລາຍການທຳອິດທີ່ຢູ່ໃນໜ້າຈໍ ແລະ ການປັດລົງແລ້ວຂຶ້ນຈະຍ້າຍທ່ານໄປຫາລາຍການສຸດທ້າຍ.\n\nຕອນນີ້ການອ່ານເທື່ອລະພາກສ່ວນແມ່ນສາມາດປ່ຽນໄດ້ໂດຍການເລືອກໃສ່ລາຍການໃດໜຶ່ງ, ຈາກນັ້ນເລືອກການອ່ານເທື່ອລະພາກສ່ວນຈາກເມນູບໍລິບົດຂອງ TalkBack.\n\nທ່ານສາມາດປ່ຽນແປງຄຳສັ່ງທີ່ເກີດຂຶ້ນໄດ້ຈາກການໃຊ້ທ່າທາງນິ້ວຕໍ່ໄປນີ້ໄດ້ໃນເມນູການຕັ້ງຄ່າ TalkBack.</string>
-  <string name="default_action_changed_details">ເພື່ອຢຸດໄວ້ຊົ່ວຄາວ ແລະ ຫຼິ້ນມີເດຍ, ຕອນນີ້ທ່ານສາມາດແຕະຄ້າງໄວ້ດ້ວຍສອງນິ້ວໄດ້ແລ້ວ.\n\nທ່າທາງອື່ນໆຍັງຖືກປ່ຽນແປງນຳອີກ.</string>
-  <string name="talkback_built_in_gesture_open_url">ເປີດຢູ່ໂທລະສັບເພື່ອສຶກສາເພີ່ມເຕີມ</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack ເວີຊັນນີ້ມີການປ່ຽນແປງຕໍ່ຄຳສັ່ງຊ່ວຍເຂົ້າເຖິງເລີ່ມຕົ້ນ.\n\nທ່າທາງຂຶ້ນຕອນນີ້ຍ້າຍໄປການຕັ້ງຄ່າການນຳທາງກ່ອນໜ້າແລ້ວ ແລະ ທ່າທາງລົງແມ່ນຍ້າຍໄປການຕັ້ງຄ່າການນຳທາງຕໍ່ໄປແລ້ວ.</string>
-  <string name="side_tap_shortcuts_removed_details">ການຕັ້ງຄ່າເຫຼົ່ານີ້ຖືກລຶບອອກຈາກ TalkBack ແລ້ວເນື່ອງຈາກບັນຫາຄວາມສະຖຽນ:\n• ທ່າທາງແຕະໃສ່ທາງຂ້າງຂອງອຸປະກອນ\n• ສັ່ນເພື່ອເລີ່ມການອ່ານຕໍ່ເນື່ອງ</string>
-  <string name="button_accept_changed_gesture_mappings">ຍອມ​ຮັບ​ທ່າ​ທາງ​ນິ້ວ​ມື</string>
-  <string name="button_customize_gesture_mappings">ປັບແຕ່ງທ່າ​ທາງ​ນິ້ວ​ມື</string>
   <string name="button_disable_all_events">ປິດການນຳໃຊ້ທັງໝົດ</string>
   <string name="button_enable_all_events">ເປີດການນຳໃຊ້ທັງໝົດ</string>
   <string name="dialog_title_disable_exploration">ປິດການ​ນຳໃຊ້ \'ການສຳຫຼວດ​ໂດຍການ​ສຳ​ຜັດ\' ຫຼືບໍ່?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">ຊອກຫາຕາຕະລາງ</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">ຊ່ອງທາງການແຈ້ງເຕືອນຂອງ TalkBack</string>
-  <string name="pref_selector_summary">%1$s ເພື່ອເລືອກການຕັ້ງຄ່າໃດໜຶ່ງ. ຈາກນັ້ນ %2$s ເພື່ອປັບແຕ່ງການຕັ້ງຄ່າ.</string>
-  <string name="speech_rate_change">ຄວາມໄວການເວົ້າ %1$d%%</string>
   <string name="speech_pitch_maximum">ສຽງເວົ້າຢູ່ໃນລະດັບສູງສຸດ</string>
   <string name="speech_pitch_minimum">ສຽງເວົ້າຢູ່ໃນລະດັບຕ່ຳສຸດ</string>
   <string name="reset_speech_rate_and_pitch">ຣີເຊັດຄວາມໄວການເວົ້າ ແລະ ລະດັບສຽງ</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">ການສັ່ນເຕືອນ %1$s</string>
   <string name="text_formatting_state">ການຈັດຮູບແບບຂໍ້ຄວາມເວົ້າ %1$s</string>
   <string name="typing_echo_change">%1$s ສະທ້ອນແປ້ນພິມແທ້</string>
-  <string name="reading_control_toggle_prefix_xr">ຫັນຝາມືຂ້າງທີ່ທ່ານບໍ່ລຶ້ງເຂົ້າຫາໂຕ, ກົດຄ້າງໄວ້ເພື່ອສະຫຼັບໂໝດຕົວຄວບຄຸມການອ່ານ.</string>
   <string name="gesture_1_or_2">%1$s ຫຼື %2$s</string>
-  <string name="select_setting_hint">%1$s ເພື່ອເລືອກການຕັ້ງຄ່າອື່ນ</string>
-  <string name="adjust_setting_hint">%1$s ເພື່ອປັບແຕ່ງການຕັ້ງຄ່າ</string>
   <string name="adjust_granularity_hint">%1$s ເພື່ອອ່ານ %2$s</string>
   <string name="adjust_typo_hint">%1$s ສຳລັບການແນະນຳ.</string>
   <string name="use_action_hint">ແຕະ​ສອງ​ເທື່ອເພື່ອເລີ່ມຄຳສັ່ງ</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">ການຄວບຄຸມຕົວອ່ານ</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ເພື່ອຢຸດ ຫຼື ຫຼິ້ນມີເດຍໃນແອັບວິດີໂອ ຫຼື ແອັບເພງ, ໃຫ້ແຕະສອງເທື່ອດ້ວຍ 2 ນິ້ວ. ລອງໃຊ້ມັນດຽວນີ້.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">ແອັບອື່ນສາມາດໃຊ້ທ່າທາງນີ້ສຳລັບສິ່ງຕ່າງໆ ເຊັ່ນ: ການຮັບສາຍ ຫຼື ການວາງສາຍ. ບາງແອັບອາດບໍ່ຮອງຮັບທ່າທາງນີ້.</string>
-  <string name="onboarding_link_to_talkback_tutorials">ເບິ່ງການສອນການນຳໃຊ້ TalkBack ທັງໝົດ</string>
   <string name="new_shortcut_gesture_pause_media_announcement">ມີເດຍຢຸດຊົ່ວຄາວແລ້ວ ຫຼື ກຳລັງຫຼິ້ນ. ໂດຍປົກກະຕິ, ນີ້ຈະຢຸດຊົ່ວຄາວ ຫຼື ຫຼິ້ນວິດີໂອ ຫຼື ເພງປັດຈຸບັນ. ປັດຂວາເພື່ອສືບຕໍ່.</string>
   <string name="new_shortcut_gesture_stop_speech_text">ເພື່ອຢຸດ TalkBack ບໍ່ໃຫ້ເວົ້າຊົ່ວຄາວ, ໃຫ້ແຕະດ້ວຍ 2 ນິ້ວ.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">ຢຸດການເວົ້າຂອງ TalkBack ແລ້ວ. ໂດຍປົກກະຕິແລ້ວ, ນີ້ຈະຢຸດກຸ່ມຄຳປັດຈຸບັນທີ່ TalkBack ກຳລັງເວົ້າຢູ່. ປັດຂວາເພື່ອສືບຕໍ່.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">ໂໝດການເລືອກປິດ ຫຼື ເປີດ. ປົກກະຕິນີ້ຈະເລີ່ມ ຫຼື ຢຸດໂໝດການເລືອກຂໍ້ຄວາມເມື່ອທ່ານຢູ່ໃນຊ່ອງປ້ອນຂໍ້ມູນໃດໜຶ່ງ. ປັດຂວາເພື່ອສືບຕໍ່.</string>
   <string name="new_shortcut_gesture_reading_menu_text">ເພື່ອໃຊ້ການຄວບຄຸມການອ່ານ, ໃຫ້ປັດຊ້າຍ ຫຼື ຂວາດ້ວຍ 3 ນິ້ວ. ທ່ານສາມາດປັດຂຶ້ນ ຫຼື ລົງດ້ວຍ 3 ນິ້ວນຳກໍໄດ້.</string>
   <string name="new_shortcut_gesture_note">ໝາຍເຫດ: ທ່ານໄດ້ປັບແຕ່ງທ່າທາງບາງຢ່າງຂອງທ່ານແລ້ວ, ດັ່ງນັ້ນຂໍ້ມູນນີ້ອາດບໍ່ຖືກຕ້ອງ. ເພື່ອກວດສອບທ່າທາງຂອງທ່ານ, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ TalkBack.</string>
-  <string name="welcome_to_android11">ຍິນດີຕ້ອນຮັບສູ່ TalkBack ໃນ Android 11</string>
   <string name="welcome_to_android11_text">ເພີ່ມທ່າທາງໃໝ່ໃສ່ແລ້ວເພື່ອເຮັດໃຫ້ໃຊ້ TalkBack ໄດ້ໄວຂຶ້ນ ແລະ ງ່າຍຂຶ້ນ.\n\nຢູ່ໜ້າຈໍນີ້, ທ່ານສາມາດທົດລອງໃຊ້ທ່າທາງໃໝ່ໄດ້. ທ່ານສາມາດກວດສອບຂໍ້ມູນນີ້ໃນການຕັ້ງຄ່າ TalkBack ຕອນໃດກໍໄດ້.</string>
   <string name="new_gesture_notification_title">ທ່າທາງໃໝ່ໃນ TalkBack</string>
   <string name="new_gesture_notification_content">ແຕະເພື່ອຮຽນຮູ້ວິທີໃຊ້ TalkBack ໃຫ້ໄວຂຶ້ນດ້ວຍທ່າທາງໃໝ່.</string>
   <string name="dump_node_tree_description">ຜັງໂໜດໄດ້ຖືກພິມໄປໃສ່ບັນທຶກແລ້ວ.</string>
   <string name="report_gesture_description">ນີ້ແມ່ນທ່າທາງທີ່ໃຊ້ໄປຫຼ້າສຸດ, ກະລຸນາລາຍງານວ່າທ່າທາງໃດບໍ່ຖືກຕ້ອງ ແລະ ຄວນແມ່ນຫຍັງ.</string>
-  <string name="update_welcome_text_content">ຕອນນີ້ທ່ານສາມາດເຊື່ອມຕໍ່ກັບຈໍສະແດງຜົນຕົວອັກສອນນູນຜ່ານ HID ໄດ້, ເຊິ່ງເປັນວິທີການເຊື່ອມຕໍ່ກັບອຸປະກອນ Bluetooth. ກວດສອບໃຫ້ໝັ້ນໃຈວ່າທ່ານມີໄດຣເວີເຟີມແວເວີຊັນຫຼ້າສຸດຈາກຜູ້ຜະລິດຂອງທ່ານ, ຈາກນັ້ນໃຫ້ເປີດ Bluetooth ຢູ່ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ. ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack &gt; ຈໍສະແດງຜົນຕົວອັກສອນນູນ ແລ້ວເປີດ \"ໃຊ້ຈໍສະແດງຜົນຕົວອັກສອນນູນ\". ຊອກຫາອຸປະກອນຂອງທ່ານໃນລາຍຊື່ອຸປະກອນ, ແລ້ວເຊື່ອມຕໍ່.</string>
-  <string name="update_welcome_text_content_tts">ຕອນນີ້ທ່ານສາມາດເຊື່ອມຕໍ່ກັບຈໍສະແດງຜົນຕົວອັກສອນນູນຜ່ານ HID ໄດ້, ເຊິ່ງເປັນວິທີການເຊື່ອມຕໍ່ກັບອຸປະກອນ Bluetooth. ກວດສອບໃຫ້ໝັ້ນໃຈວ່າທ່ານມີໄດຣເວີເຟີມແວເວີຊັນຫຼ້າສຸດຈາກຜູ້ຜະລິດຂອງທ່ານ, ຈາກນັ້ນໃຫ້ເປີດ Bluetooth ຢູ່ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ. ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເຂົ້າໄປຈໍສະແດງຜົນຕົວອັກສອນນູນ ແລ້ວເປີດ \"ໃຊ້ຈໍສະແດງຜົນຕົວອັກສອນນູນ\". ຊອກຫາອຸປະກອນຂອງທ່ານໃນລາຍຊື່ອຸປະກອນ, ແລ້ວເຊື່ອມຕໍ່.</string>
-  <string name="update_welcome_text_content_with_link">ສຶກສາວິທີໃຊ້ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານກັບ TalkBack.</string>
   <string name="update_welcome_talkback_16.1">ການອັບເດດ TalkBack ນີ້ແນະນຳການຮອງຮັບໜ້າຈໍອະທິບາຍເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ TalkBack ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ TalkBack &gt; ຄຸນສົມບັດໃໝ່ໃນ TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">ການອັບເດດ TalkBack ນີ້ແນະນຳການຮອງຮັບໜ້າຈໍອະທິບາຍເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ TalkBack ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເລືອກຄຸນສົມບັດໃໝ່ໃນ TalkBack.</string>
-  <string name="describe_screen_and_qna_title">ພາສາໃໝ່ສຳລັບການອະທິບາຍໜ້າຈໍ ແລະ ຖາມ Gemini</string>
-  <string name="describe_screen_and_qna_content">ຕອນນີ້ການອະທິບາຍໜ້າຈໍ ແລະ ຖາມ Gemini ສາມາດໃຊ້ໄດ້ໃນພາສາເພີ່ມເຕີມແລ້ວ. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;ສຶກສາເພີ່ມເຕີມໄດ້ໃນສູນຊ່ວຍເຫຼືອ&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">ທາງລັດສຳລັບການພິມດ້ວຍສຽງ</string>
   <string name="shortcut_for_dictation_content">ໃນຂະນະທີ່ໃຊ້ Gboard, ຕອນນີ້ທ່ານສາມາດໃຊ້ 2 ນິ້ວແຕະສອງເທື່ອເພື່ອເລີ່ມ ຫຼື ຢຸດການພິມດ້ວຍສຽງໄດ້ແລ້ວ.
 &lt;br&gt;
 &lt;br&gt;ກວດສອບໃຫ້ໝັ້ນໃຈວ່າທ່ານໃຊ້ &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard ເວີຊັນຫຼ້າສຸດຈາກ Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">ເມື່ອ Gboard ຢູ່ເທິງໜ້າຈໍ, ຕອນນີ້ທ່ານສາມາດໃຊ້ 2 ນິ້ວແຕະສອງເທື່ອເພື່ອເລີ່ມການສັ່ງດ້ວຍສຽງ, ຈາກນັ້ນໃຊ້ 2 ນິ້ວແຕະສອງເທື່ອເພື່ອຢຸດໄດ້.</string>
-  <string name="keyboard_title">ແປ້ນພິມ</string>
-  <string name="keyboard_content">ຕອນນີ້ TalkBack ມີ \"ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນແລ້ວ\" ສຳລັບແປ້ນພິມ, ເຊິ່ງມີຄຳສັ່ງ ແລະ ທາງລັດໃໝ່ໆທີ່ຫຼາກຫຼາຍ. ການປັບປຸງນີ້, ເຊິ່ງຮວມທັງ \"ໂໝດທ່ອງເວັບ\" ເພື່ອນຳທາງໄປຫາພາກສ່ວນຕ່າງໆໃນເວັບຢ່າງມີປະສິດທິພາບຫຼາຍຂຶ້ນ, ຈະຊ່ວຍປັບປຸງການນຳທາງໄປຫາພາກສ່ວນຕ່າງໆ ແລະ ການໂຕ້ຕອບສຳລັບຜູ້ໃຊ້ TalkBack ທີ່ຕ້ອງໃຊ້ແປ້ນພິມແທ້. ທ່ານສາມາດສະຫຼັບໄປໃຊ້ \"ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນ\" ໃນການຕັ້ງຄ່າ TalkBack &gt; ການຕັ້ງຄ່າຂັ້ນສູງ &gt; ຄີລັດ.</string>
-  <string name="keyboard_content_tts">ຕອນນີ້ TalkBack ມີ \"ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນແລ້ວ\" ສຳລັບແປ້ນພິມ, ເຊິ່ງມີຄຳສັ່ງ ແລະ ທາງລັດໃໝ່ໆທີ່ຫຼາກຫຼາຍ. ການປັບປຸງນີ້, ເຊິ່ງຮວມທັງ \"ໂໝດທ່ອງເວັບ\" ເພື່ອນຳທາງໄປຫາພາກສ່ວນຕ່າງໆໃນເວັບຢ່າງມີປະສິດທິພາບຫຼາຍຂຶ້ນ, ຈະຊ່ວຍປັບປຸງການນຳທາງໄປຫາພາກສ່ວນຕ່າງໆ ແລະ ການໂຕ້ຕອບສຳລັບຜູ້ໃຊ້ TalkBack ທີ່ຕ້ອງໃຊ້ແປ້ນພິມແທ້. ທ່ານສາມາດສະຫຼັບໄປໃຊ້ \"ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນ\" ໃນການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເຂົ້າໄປການຕັ້ງຄ່າຂັ້ນສູງ ແລ້ວເລືອກຄີລັດ.</string>
-  <string name="reduce_delay_title">ຫຼຸດຄວາມຫຼ້າຊ້າ</string>
-  <string name="reduce_delay_content">ຕອນນີ້ທ່ານສາມາດຫຼຸດຄວາມຫຼ້າຊ້າໃນການປະກາດຂອງ TalkBack ສຳລັບການສຳຫຼວດດ້ວຍການສຳຜັດ ແລະ ການພິມໄດ້ແລ້ວ. ເພື່ອເບິ່ງການຕັ້ງຄ່າເຫຼົ່ານີ້, ໃຫ້ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack &gt; ການຕັ້ງຄ່າຂັ້ນສູງ &gt; ຫຼຸດຄວາມຫຼ້າຊ້າ.</string>
-  <string name="reduce_delay_content_tts">ຕອນນີ້ທ່ານສາມາດຫຼຸດຄວາມຫຼ້າຊ້າໃນການປະກາດຂອງ TalkBack ສຳລັບການສຳຫຼວດດ້ວຍການສຳຜັດ ແລະ ການພິມໄດ້ແລ້ວ. ເພື່ອເບິ່ງການຕັ້ງຄ່າເຫຼົ່ານີ້, ໃຫ້ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເຂົ້າໄປການຕັ້ງຄ່າຂັ້ນສູງ ແລ້ວເລືອກຫຼຸດຄວາມຫຼ້າຊ້າ.</string>
-  <string name="customize_braille_keyboard_improvements_title">ປັບແຕ່ງທ່າທາງແປ້ນພິມອັກສອນນູນ</string>
-  <string name="customize_braille_keyboard_improvements_content">ຕອນນີ້ທ່ານສາມາດປັບແຕ່ງທ່າທາງສຳລັບແປ້ນພິມອັກສອນນູນສະເໝືອນຢູ່ໜ້າຈໍໄດ້ແລ້ວ. ເພື່ອປັບແຕ່ງ, ໃຫ້ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack &gt; ແປ້ນພິມອັກສອນນູນ &gt; ທ່າທາງ.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">ຕອນນີ້ທ່ານສາມາດປັບແຕ່ງທ່າທາງສຳລັບແປ້ນພິມອັກສອນນູນສະເໝືອນຢູ່ໜ້າຈໍໄດ້ແລ້ວ. ເພື່ອປັບແຕ່ງ, ໃຫ້ເຂົ້າໄປການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເຂົ້າໄປແປ້ນພິມອັກສອນນູນ ແລ້ວເລືອກທ່າທາງ.</string>
-  <string name="learn_more_about_braille_keyboard">ສຶກສາເພີ່ມເຕີມກ່ຽວກັບແປ້ນພິມອັກສອນນູນ</string>
-  <string name="other_changes_title">ການປ່ຽນແປງອື່ນໆ</string>
-  <string name="other_changes_content">ຕອນນີ້ຂໍ້ຄວາມຢູ່ໜ້າຈໍຈະຊ່ວຍໃຫ້ທ່ານປິດ TalkBack ໄດ້ຢ່າງວ່ອງໄວຫາກເປີດໃຊ້ໂດຍບໍ່ໄດ້ຕັ້ງໃຈ. ທ່ານສາມາດປິດຄຸນສົມບັດນີ້ໄດ້ໃນການຕັ້ງຄ່າ TalkBack &gt; ສະແດງຄຳແນະນຳສຳລັບການປິດ TalkBack.</string>
-  <string name="other_changes_content_tts">ຕອນນີ້ຂໍ້ຄວາມຢູ່ໜ້າຈໍຈະຊ່ວຍໃຫ້ທ່ານປິດ TalkBack ໄດ້ຢ່າງວ່ອງໄວຫາກເປີດໃຊ້ໂດຍບໍ່ໄດ້ຕັ້ງໃຈ. ທ່ານສາມາດປິດຄຸນສົມບັດນີ້ໄດ້ໃນການຕັ້ງຄ່າ TalkBack ຈາກນັ້ນເລືອກ ສະແດງຄຳແນະນຳສຳລັບການປິດ TalkBack.</string>
-  <string name="keymap_changes_content">ສະຫຼັບແຜນທີ່ປຸ່ມແບບຄລາດສິກໄປເປັນແຜນທີ່ປຸ່ມຕາມຄ່າເລີ່ມຕົ້ນແລ້ວ, ເຊິ່ງມີທາງລັດຫຼາຍຂຶ້ນ.</string>
   <string name="announcing_text_formatting_title">ປະກາດການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="announcing_text_formatting_header">ຕອນນີ້ TalkBack ສາມາດປະກາດການປ່ຽນແປງການຈັດຮູບແບບຂໍ້ຄວາມ, ເຊັ່ນ: ຕົວໜາ, ຕົວອຽງ ແລະ ສີຂໍ້ຄວາມໄດ້ແລ້ວ. ເພື່ອເລີ່ມຕົ້ນ:</string>
   <string name="announcing_text_formatting_option1">ໂຟກັສໃສ່ລາຍການທີ່ມີການຈັດຮູບແບບ, ເປີດເມນູ TalkBack ແລ້ວເລືອກ \"ອະທິບາຍການຈັດຮູບແບບຂໍ້ຄວາມ\" ຫຼື</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">ຮຽນຮູ້ວິທີໂທ, ສົ່ງຂໍ້ຄວາມ ແລະ ອື່ນໆອີກ</string>
   <string name="practice_gestures_link_text">ເຝິກແອບທ່າທາງ</string>
   <string name="practice_gestures_link_subtext">ລອງໃຊ້ທ່າທາງອື່ນເພື່ອສຶກສາວ່າພວກມັນເຮັດຫຍັງແດ່</string>
-  <string name="help_and_feedback_link_subtext">ສຶກສາເພີ່ມເຕີມກ່ຽວກັບ TalkBack ແລະ ສົ່ງຄຳຕິຊົມ</string>
   <string name="choose_tutorial_title">ເລືອກວິທີທີ່ທ່ານຕ້ອງການໂຕ້ຕອບກັບ TalkBack</string>
   <string name="touch_tutorial_button">ສອນການນຳໃຊ້ການສຳຜັດ</string>
   <string name="keyboard_tutorial_button">ສອນການນຳໃຊ້ແປ້ນພິມ</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">ລອງໃຊ້ຂ້າງລຸ່ມ.</string>
   <string name="wear_training_typing_practice_button_content_description">ການພິມດ້ວຍແປ້ນພິມ</string>
   <string name="wear_training_end_tutorial_title">ທ່ານພ້ອມທີ່ຈະເລີ່ມໃຊ້ TalkBack ແລ້ວ</string>
-  <string name="talkback_updated_notification_title">ອັບເດດ TalkBack ແລ້ວ</string>
-  <string name="talkback_updated_notification_content">ແຕະເພື່ອເບິ່ງຂໍ້ມູນເພີ່ມເຕີມ</string>
   <string name="wear_new_feature_page_title">ຍິນດີຕ້ອນຮັບສູ່ TalkBack ທີ່ອັບເດດໃໝ່ແລ້ວ</string>
   <string name="wear_new_feature_page_content">ທ່ານຈະສັງເກດເຫັນບາງການແກ້ໄຂຂໍ້ຜິດພາດ ແລະ ການປ່ຽນແປງວິທີຍ້າຍໂຟກັສ</string>
   <string name="wear_new_feature_page_button_content_description">ແລ້ວໆ</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">ສີຟ້າ</string>
   <string name="title_pref_grey">ສີເທົາ</string>
   <string name="survey_setting_title">ແບ່ງປັນຄຳຕິຊົມຂອງທ່ານ</string>
-  <string name="survey_closed">ປິດແບບສຳຫຼວດແລ້ວ</string>
   <string name="title_summarize_view">ອະທິບາຍໜ້າຈໍ</string>
-  <string name="title_increase_touch_focus_latency">ເພີ່ມຄວາມຫຼ້າຊ້າໂຟກັສ</string>
-  <string name="title_decrease_touch_focus_latency">ຫຼຸດຄວາມຫຼ້າຊ້າໂຟກັສ</string>
   <string name="detected_result">ກວດພົບ: %1$s</string>
   <string name="title_image_caption">ອະທິບາຍຮູບ</string>
   <string name="image_caption_with_gemini_prefix">ອະທິບາຍຮູບນີ້. ຢ່າໃຊ້ມາກອັບໃນຄຳຕອບ.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ຜູ້ໃຊ້: %1$s</string>
   <string name="image_qna_answer_prefix">ໂມເດວ: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Continue alternating USER and MODEL turns] ...</string>
-  <string name="screen_overview_with_screenshot">ໜ້າທີ່ຂອງທ່ານແມ່ນເພື່ອຊ່ວຍໃຫ້ຜູ້ທີ່ບໍ່ສາມາດເບິ່ງໂທລະສັບຂອງເຂົາເຈົ້າໄດ້ເຂົ້າໃຈສິ່ງທີ່ຢູ່ໜ້າຈໍໂທລະສັບຂອງຕົນເອງ. ອະທິບາຍຮູບໜ້າຈໍນີ້ໃນສອງສາມປະໂຫຍກ.
-
-ຄຳແນະນຳ
-ເລີ່ມຄຳຕອບຂອງທ່ານດ້ວຍ \"ໜ້າຈໍສະແດງ\"
-ສ່ວນຕົ້ນຂອງຄຳຕອບຄວນອະທິບາຍເນື້ອຫາທີ່ສຳຄັນ ແລະ ໂດດເດັ່ນທີ່ສຸດຢູ່ໜ້າຈໍ. ຕົວຢ່າງເນື້ອຫາທີ່ສຳຄັນ ແລະ ໂດດເດັ່ນທີ່ສຸດທີ່ຄວນອະທິບາຍອາດເປັນ
-* ໃນແອັບສົນທະນາ: ຜູ້ສົ່ງ ແລະ ເນື້ອຫາຂອງຂໍ້ຄວາມຫຼ້າສຸດ
-* ໃນແອັບໂຊຊຽວມີເດຍ: ໂພສທຳອິດ, ເຊິ່ງຮວມທັງຜູ້ໂພສ, ຂໍ້ຄວາມ ແລະ ຄຳອະທິບາຍຮູບພາບ
-* ໃນແອັບຂ່າວ: ຊື່ບົດຄວາມ ແລະ ຄຳອະທິບາຍຮູບພາບຫຼັກ
-* ໃນແອັບຊື້ເຄື່ອງ: ຄຳອະທິບາຍຜະລິດຕະພັນທີ່ສະແດງ ແລະ ລາຄາ
-* ໃນແອັບປະຕິທິນ: ກິດຈະກຳຕໍ່ໄປ ແລະ ຈຳນວນກິດຈະກຳອື່ນໆທີ່ສະແດງຫຼັງຈາກນັ້ນ
-* ໃນລາຍຊື່ຂໍ້ຄວາມ: ຊື່ ແລະ ຕົວຢ່າງຂອງຂໍ້ຄວາມທຳອິດ ຈາກນັ້ນສະແດງສະເພາະຊື່ຂອງຂໍ້ຄວາມຕໍ່ໄປໃນລາຍຊື່ ແລະ ຈຳນວນຂໍ້ຄວາມທີ່ຍັງບໍ່ໄດ້ອ່ານ
-
-ຫຼັງຈາກນັ້ນ, ຄຳຕອບຈະອະທິບາຍສະຖານທີ່ດ້ານມິຕິພື້ນທີ່ ແລະ ຈຸດປະສົງຂອງແຖບການນຳທາງ ແລະ ປຸ່ມທີ່ໂດດເດັ່ນໄດ້.
-ບໍ່ຕ້ອງກ່າວເຖິງເນື້ອຫາຂອງແຖບສະຖານະທາງເທິງ (ເຊັ່ນ: ເວລາ, ສະຖານະເຄືອຂ່າຍ, ແບັດເຕີຣີ).
-ກະລຸນາຢ່າໃຊ້ Markdown ໃດໆໃນຄຳຕອບຂອງທ່ານ.</string>
   <string name="title_gemini_opt_in_dialog">ຮັບຄຳອະທິບາຍຮູບພາບໂດຍລະອຽດບໍ?</string>
   <string name="title_on_device_gemini_opt_in_dialog">ຮັບຄຳອະທິບາຍຮູບບໍ?</string>
   <string name="title_gemini_result_dialog">ກວດພົບ: ຮູບພາບ</string>
   <string name="title_gemini_result_bottom_sheet">ຄຳອະທິບາຍຮູບ</string>
   <string name="title_gemini_screen_overview_result_dialog">ຄຳອະທິບາຍໜ້າຈໍ</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">ສະຫຼຸບ</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">ຄຳສັ່ງ</string>
   <string name="positive_button_gemini_opt_in_dialog">ເປີດ</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">ຂ້ອຍຍອມຮັບ</string>
   <string name="negative_button_gemini_opt_in_dialog">ບໍ່, ຂອບໃຈ</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">ເຂົ້າໄປການຕັ້ງຄ່າ</string>
-  <string name="positive_button_gemini_download_dialog">ດາວໂຫຼດ ແລະ ເປີດ</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">ຂໍ້ຄວາມ, \"%1$s\".</string>
   <string name="detected_icon_label">ໄອຄອນ, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">ບໍ່ສາມາດສະຫຼຸບໜ້າຈໍ</string>
   <string name="image_caption_no_result">ບໍ່ສາມາດອະທິບາຍຮູບໄດ້</string>
   <string name="image_caption_with_hide_screen">ຄຳອະທິບາຍຮູບພາບຈະບໍ່ສາມາດນຳໃຊ້ໄດ້ເມື່ອມີການເຊື່ອງໜ້າຈໍ. ສະແດງໜ້າຈໍຂອງທ່ານແລ້ວລອງໃໝ່.</string>
-  <string name="feedback_button_state_set">ເລືອກແລ້ວ</string>
-  <string name="feedback_button_state_unset">ບໍ່ໄດ້ເລືອກ</string>
   <string name="action_text_like_button">ໝາຍວ່າເປັນຄຳຕອບດີ</string>
   <string name="action_text_dislike_button">ໝາຍວ່າເປັນຄຳຕອບບໍ່ດີ</string>
   <string name="action_text_clear_like_button">ລຶບລ້າງຄຳຕອບດີ</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">ກຳລັງດາວໂຫຼດຄຳອະທິບາຍຮູບ ແລະ ໄອຄອນອັດຕະໂນມັດ</string>
   <string name="download_all_image_captioning_successful_hint">ດາວໂຫຼດຄຳອະທິບາຍຮູບ ແລະ ໄອຄອນອັດຕະໂນມັດແລ້ວ</string>
   <string name="download_all_image_captioning_failed_hint">ບໍ່ສາມາດດາວໂຫຼດໄດ້. ກະລຸນາລອງໃໝ່ໃນພາຍຫຼັງ.</string>
-  <string name="download_complete_notification_title">ດາວໂຫຼດສຳເລັດ</string>
-  <string name="download_complete_notification_content">ຕອນນີ້ທ່ານຈະໄດ້ຍິນຄຳອະທິບາຍຮູບ ແລະ ໄອຄອນອັດຕະໂນມັດດ້ວຍ TalkBack</string>
-  <string name="download_complete_notification_action">ການຕັ້ງຄ່າ</string>
   <string name="download_storage_error_hint">ບ່ອນຈັດເກັບຂໍ້ມູນເຕັມແລ້ວ. ເພື່ອດາວໂຫຼດ, ໃຫ້ເພີ່ມພື້ນທີ່ຫວ່າງ %1$d MB ໃນການຕັ້ງຄ່າ &gt; ບ່ອນຈັດເກັບຂໍ້ມູນ.</string>
   <string name="download_network_error_hint">ບໍ່ສາມາດດາວໂຫຼດໄດ້. ກະລຸນາກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່.</string>
   <string name="switch_icon_detection_dialog_title">ຄຳອະທິບາຍໄອຄອນອັດຕະໂນມັດ</string>
   <string name="switch_icon_detection_dialog_message">ຟັງຄຳອະທິບາຍເມື່ອທ່ານໂຟກັສໃສ່ໄອຄອນໃດໜຶ່ງ</string>
   <string name="switch_image_description_dialog_message">ຟັງຄຳອະທິບາຍເມື່ອທ່ານໂຟກັສໃສ່ຮູບໃດໜຶ່ງ. ບາງແອັບອາດບໍ່ຮອງຮັບສິ່ງນີ້.</string>
-  <string name="switch_text_recognition_dialog_title">ອະທິບາຍຂໍ້ຄວາມໃນຮູບໂດຍອັດຕະໂນມັດ</string>
   <string name="switch_text_recognition_dialog_message">ຟັງຄຳອະທິບາຍເມື່ອທ່ານໂຟກັສໃສ່ຮູບທີ່ມີຂໍ້ຄວາມ</string>
   <string name="switch_auto_image_caption_dialog_subtitle">ດາວໂຫຼດແລ້ວ</string>
-  <string name="disable_auto_image_caption_dialog_subtext">ນອກຈາກນີ້, ທ່ານຍັງສາມາດຮັບຄຳອະທິບາຍສຳລັບຮູບທີ່ເລືອກຈາກເມນູ TalkBack ໄດ້</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">ຕົກລົງ</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">ລຶບການດາວໂຫຼດອອກ</string>
   <string name="delete_icon_detection_dialog_title">ລຶບຄຳອະທິບາຍໄອຄອນອັດຕະໂນມັດບໍ?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">ໃຊ້ Gemini ໃນ TalkBack</string>
   <string name="gemini_disable_dialog_message">ຄວາມເຂົ້າໃຈໜ້າຈໍດ້ວຍ Gemini</string>
   <string name="disable_gemini_dialog_subtext">ເປີດເພື່ອເປີດການນຳໃຊ້ຄວາມເຂົ້າໃຈໜ້າຈໍດ້ວຍ Gemini</string>
-  <string name="ai_services_update_dialog_title">ອັບເດດແອັບ %1$s ເພື່ອອະທິບາຍຮູບ</string>
-  <string name="ai_services_update_dialog_message">ເພື່ອຟັງຄຳອະທິບາຍຮູບ, ກະລຸນາອັບເດດ %1$s ເປັນເວີຊັນຫຼ້າສຸດຈາກ Google Play.\n\nເມື່ອການດາວໂຫຼດສຳເລັດ, ໃຫ້ກັບຄືນມາຫາການຕັ້ງຄ່າ TalkBack ແລ້ວເປີດຄຳອະທິບາຍຮູບອັດຕະໂນມັດອີກຄັ້ງ.</string>
-  <string name="ai_services_update_dialog_button_text">ເຂົ້າໄປ Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">ມີບາງຢ່າງຜິດພາດເກີດຂຶ້ນ. ກະລຸນາລອງໃໝ່.</string>
   <string name="gemini_block_message">ບໍ່ສາມາດປະມວນຜົນຮູບພາບນີ້ໄດ້</string>
   <string name="gemini_network_error">ບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ. ກວດສອບ Wi-Fi ຫຼື ເຄືອຂ່າຍມືຖືຂອງທ່ານແລ້ວລອງໃໝ່.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">ພິມຄຳຖາມໃຫ້ Gemini</string>
   <string name="image_qna_send_button_text">ຖາມ</string>
   <string name="image_qna_speak_question_description">ເວົ້າຄຳຖາມ</string>
-  <string name="overviews_summary_intro">ສະຫຼຸບໜ້າຈໍແອັບນີ້: %1$s</string>
   <string name="overviews_node_not_found">ຂ້ອຍຂໍໂທດ, ຂ້ອຍບໍ່ສາມາດຊອກຫາສ່ວນນັ້ນຂອງໜ້າຈໍໄດ້ອີກຕໍ່ໄປ.</string>
-  <string name="overviews_images_in_app">ພົບຮູບພາບຫຼັກ</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">ການດຳເນີນການໃນແອັບ</string>
-  <string name="overviews_actions_in_app_description">ການດຳເນີນການຫຼັກທີ່ທ່ານສາມາດເຮັດໄດ້ຈາກໜ້າຈໍແອັບນີ້ມີດັ່ງນີ້:</string>
-  <string name="overviews_parent_type">ການດຳເນີນການໃນແອັບ</string>
   <string name="text_replaced_feedback">ແທນທີ່ຂໍ້ຄວາມແລ້ວ</string>
   <string name="switch_gesture_set">ສະຫຼັບຊຸດທ່າທາງ</string>
   <string name="switch_gesture_set_to">ສະຫຼັບໄປຫາຊຸດທ່າທາງ %1$d</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">ປິດ</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">ເພື່ອຟັງການແຈ້ງເຕືອນເມື່ອໜ້າຈໍຂອງທ່ານປິດຢູ່, ໃຫ້ເປີດ \"ເວົ້າການແຈ້ງເຕືອນເມື່ອໜ້າຈໍປິດຢູ່\" ໃນການຕັ້ງຄ່າການໃຊ້ຄຳຫຼາຍເກີນໄປຂອງ TalkBack</string>
 </resources>

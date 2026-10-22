@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Функция SandFly озвучивает текст на экране, поэтому вы можете не смотреть на него, когда пользуетесь устройством. Она предназначена для людей с нарушениями зрения.&lt;br&gt;&lt;br&gt;&lt;b&gt;Как работает SandFly&lt;/b&gt;&lt;br&gt;• Чтобы перейти от одного объекта к другому, проведите по экрану вправо или влево.&lt;br&gt;• Чтобы активировать объект, нажмите на него дважды.&lt;br&gt;• Чтобы прокрутить экран, проведите по нему двумя пальцами.&lt;br&gt;&lt;b&gt;Как отключить SandFly&lt;/b&gt;&lt;br&gt;1. В настройках выберите &lt;b&gt;Использовать SandFly&lt;/b&gt;. Появится контур. Дважды нажмите на него.&lt;br&gt;2. В окне подтверждения нажмите &lt;b&gt;Остановить&lt;/b&gt;. Появится контур. Дважды нажмите на него.</string>
   <string name="talkback_service_summary">Чтобы слушать описание элементов, используйте программу чтения с экрана</string>
   <string name="talkback_preferences_title">Настройки SandFly</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Настройки</string>
   <string name="tts_preferences_title">Синтез речи</string>
   <string name="language_options">Языки</string>
   <string name="spoken_language">Язык озвучивания</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Поиск отменён.</string>
   <string name="notification_type_status_started">Начато</string>
   <string name="notification_type_status_stopped">Остановлено</string>
-  <string name="notification_type_status_connected">подключено</string>
-  <string name="notification_battery_level_unknown">неизвестно</string>
   <string name="notification_battery_saver_mode">Режим энергосбережения включён</string>
   <string name="template_no_text_selected">Текст не выделен</string>
   <string name="template_charging">Зарядка: %1$s. Заряд батареи в процентах: %2$s.</string>
   <string name="template_charging_lite">Статус зарядки: %1$s</string>
-  <string name="template_battery_state">Питание: %1$s, процент заряда %2$s, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Вибровызов.</string>
   <string name="value_ringer_silent">Беззвучный режим.</string>
   <string name="value_screen_on">Экран включён.</string>
   <string name="value_screen_off">Экран выключен.</string>
   <string name="value_device_unlocked">Устройство разблокировано.</string>
-  <string name="title_pref_category_audio">Аудио</string>
   <string name="title_pref_speech_volume">Громкость речи</string>
-  <string name="title_pref_speech_rate">Скорость речи</string>
-  <string name="summary_pref_speech_rate">Скорость чтения текста</string>
   <string name="title_pref_verbose_scroll_announcement">Озвучивать количество элементов списка</string>
   <string name="summary_pref_verbose_scroll_announcement">Озвучивать, какие элементы видны после каждой прокрутки</string>
   <string name="title_pref_cover_proximity_sensor">Останавливать озвучивание, когда прикрыт датчик расстояния</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Озвучивать время</string>
   <string name="pref_speak_time_summary">Когда вы включаете экран</string>
   <string name="summary_speak_container_element_positions">Сообщать о входе в списки, сетки и другие контейнеры и выходе из них</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">В управление чтением добавлена задержка выбора элемента</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Чтобы изменить задержку выбора элемента, проведите по экрану тремя пальцами и откройте настройки управления чтением.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Вводить текст, отпуская клавиши?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Если задержка выбора элемента меньше 0,3 секунды, нажать дважды для ввода текста будет очень сложно. Вы можете активировать ввод текста при отпускании клавиши.\n\nЧтобы ввести символ, удерживайте палец на клавише, а затем уберите его.\n\nЗадать параметры этого способа ввода можно в настройках SandFly.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">В управление чтением добавлена задержка выбора элемента при вводе</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Если у вас не получается набирать текст, дважды нажимая на клавиши, то проведите по экрану тремя пальцами, чтобы открыть меню управления чтением, и увеличьте задержку выбора элемента при вводе.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Задержка выбора элемента при вводе работает, только когда включён ввод текста при отпускании клавиши.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">ОК</string>
   <string name="reset_letency_reduction_settings_dialog_title">Сбросить настройки задержки?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Для всех параметров задержки будут восстановлены значения по умолчанию.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Сбросить</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Настройки уменьшения задержки сброшены.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Переключиться</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Не переключаться</string>
   <string name="Reset_gesture_settings_dialog_title">Сбросить жесты?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Сбросить жесты этого набора?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Для всех жестов будут установлены действия по умолчанию.\n\nВнесённые вами изменения будут отменены.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Озвучивать уведомления о ходе выполнения</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Сюда входят уведомления во время скачивания, навигации и не только. Когда параметр отключён, вы будете получать меньше уведомлений.</string>
   <string name="title_pref_explore_by_touch">Изучение касанием</string>
-  <string name="title_pref_category_visual">Визуальные</string>
   <string name="title_pref_category_controls">Управление</string>
-  <string name="title_pref_category_braille">Шрифт Брайля</string>
-  <string name="title_pref_category_general">Общие</string>
-  <string name="title_pref_category_advanced">Дополнительно</string>
-  <string name="title_pref_category_others">Ещё</string>
-  <string name="title_pref_category_tutorial_and_help">Руководство и справка</string>
   <string name="title_pref_category_reduce_latency_summary">Эти настройки ускоряют отклик SandFly после касания экрана</string>
   <string name="reset_latency_settings_title">Сбросить все настройки задержки</string>
   <string name="title_pref_single_tap">Активировать одним нажатием</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Индикатор фокуса</string>
   <string name="title_pref_category_manage_gestures">Жесты</string>
   <string name="title_pref_manage_labels">Персональные ярлыки</string>
-  <string name="title_pref_manage_customize_menus">Изменить меню</string>
   <string name="title_pref_category_context_menu">Меню SandFly</string>
   <string name="title_pref_category_selector_menu">Управление чтением</string>
   <string name="title_pref_category_navigation_menu">Изменить параметры навигации</string>
-  <string name="pref_category_context_menu_summary">Чтобы использовать меню SandFly, коснитесь экрана тремя пальцами. Вы также можете провести вверх или вниз, а затем вправо.</string>
-  <string name="pref_category_context_menu_summary_xr">Чтобы использовать меню SandFly, поверните ладонь неведущей руки на себя и сведите два пальца вместе</string>
-  <string name="pref_category_context_menu_summary_single_finger">Чтобы использовать меню SandFly, проведите вниз, а затем вправо</string>
-  <string name="pref_category_selector_menu_summary">Чтобы использовать элементы управления чтением, проведите тремя пальцами влево, вправо, вверх или вниз.</string>
-  <string name="pref_category_selector_menu_summary_xr">Чтобы переключаться между элементами управления чтением, поверните ладонь неведущей руки на себя и сведите два пальца вместе. Перемещайте руку вправо или влево до нужного элемента, а затем разомкните пальцы.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Чтобы использовать элементы управления чтением, проведите вверх, а затем вниз</string>
   <string name="title_pref_manage_keyboard_shortcuts">Быстрые клавиши</string>
   <string name="title_pref_export_custom_labels">Экспортировать персональные ярлыки</string>
-  <string name="title_pref_play_store">Страница SandFly в Google Play</string>
-  <string name="summary_pref_play_store">Текущая версия SandFly: %1$s</string>
   <string name="title_pref_help_and_feedback">Справка/отзыв</string>
-  <string name="title_pref_gup">Связаться со службой поддержки проекта \"Google Специальные возможности\"</string>
-  <string name="subtitle_pref_gup">Получить помощь по работе с SandFly или сообщить о проблеме</string>
-  <string name="pref_item_licenses">Лицензии открытого ПО</string>
-  <string name="title_pref_tutorial">Руководство</string>
   <string name="title_pref_help">Справка</string>
   <string name="title_pref_show_tos">Условия использования</string>
   <string name="title_pref_show_privacy_policy">Политика конфиденциальности</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Жесты для сканера отпечатков пальцев</string>
   <string name="title_pref_category_tutorial">Руководство по SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Справка</string>
-  <string name="title_pref_category_typing">Ввод текста</string>
   <string name="title_pref_advanced_settings">Расширенные настройки</string>
   <string name="title_pref_show_exit_watermark">Показывать инструкцию по отключению SandFly</string>
   <string name="summary_pref_show_exit_watermark">После включения SandFly будет появляться сообщение, позволяющее быстро его выключить</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Некоторые клавиши-модификаторы настроены иначе.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Подробнее о раскладках</string>
   <string name="keycombo_go_to_settings">Настройки</string>
-  <string name="keycombo_keymap_changes_notifications_content">Мы планируем удалить классическую раскладку из SandFly. Чтобы продолжить использовать быстрые клавиши, переключитесь на стандартную раскладку.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Подробнее</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">ОК</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Настройки</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Подробнее</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Используется стандартная раскладка SandFly. Также доступна улучшенная раскладка со множеством дополнительных команд. Узнайте больше в Справочном центре или перейдите на новую раскладку в настройках.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Доступна новая раскладка</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Улучшенная раскладка SandFly позволяет использовать множество дополнительных команд. Узнайте больше в Справочном центре или перейдите на новую раскладку в настройках.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Измените клавишу-модификатор для SandFly</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Не сейчас</string>
   <string name="keycombo_warning_content_description">Узнать больше о клавише-модификаторе</string>
-  <string name="keycombo_warning_dialog_title">Измените клавишу-модификатор</string>
-  <string name="keycombo_warning_dialog_message">Чтобы быстрые клавиши SandFly работали корректно, используйте в качестве модификатора Alt, а не клавишу действия.\n\nЕсли вы этого не сделаете, действия для некоторых сочетаний клавиш будут изменены в этой версии Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Раскладка</string>
   <string name="keycombo_menu_select_keymap">Выбрать раскладку</string>
   <string name="keycombo_menu_reset_keymap">Сбросить раскладку</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Увеличить громкость речи</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Уменьшить громкость речи</string>
   <string name="keycombo_menu_global_refocus_current_node">Озвучить выбранный элемент</string>
-  <string name="keycombo_menu_category_granularity">Навигация</string>
   <string name="keycombo_menu_granularity_increase">Следующая настройка навигации</string>
   <string name="keycombo_menu_granularity_decrease">Предыдущая настройка навигации</string>
   <string name="keycombo_menu_category_other">Другие действия</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Вернуть исходные быстрые клавиши для данной раскладки? Это действие нельзя отменить.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Сбросить</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s в режиме обзора</string>
-  <string name="keycombo_assign_dialog_instruction">Чтобы установить сочетание клавиш для команды, нажмите его. В нём должна быть клавиша ALT или CONTROL.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Чтобы задать сочетание клавиш, нажмите его вместе с клавишей-модификатором %1$s.</string>
   <string name="keycombo_unassigned">Не назначено</string>
   <string name="save_button_in_keycombo_assign_dialog">Сохранить</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Задержка выбора элемента при вводе</string>
   <string name="message_pref_touch_explore_latency">Если задержка выбора элемента при вводе небольшая, озвучивание SandFly начинается быстрее после того, как вы коснётесь клавиатуры\n\nВыберите задержку</string>
   <string name="title_pref_touch_focus_timeout">Задержка выбора элемента</string>
-  <string name="summary_pref_touch_focus_time">
-Настройте, как быстро начинается озвучивание SandFly после того, как вы переключаетесь на другой элемент. Когда задержка небольшая, SandFly срабатывает быстрее. Однако выполнять двойные и тройные нажатия может быть сложнее.\n\n
-Если задержка менее 0,3 секунды, активация двойным нажатием заменяется на активацию двумя пальцами.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Включить распознавание жестов в SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Чтобы изменения вступили в силу, перезагрузите SandFly.</string>
   <string name="title_pref_auto_image_captioning">Автоматические описания</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Включите описания изображений в настройках</string>
   <string name="dialog_message_turn_on_image_description">Включите автоматические или подробные описания изображений и повторите попытку.</string>
   <string name="title_pref_detailed_image_description">Подробные описания изображений</string>
-  <string name="summary_pref_ai_description">Чтобы прослушать описание, понадобится нажать \"%1$s\" в меню SandFly</string>
   <string name="dialog_message_on_device_ai_description">При переходе к изображению в поддерживаемом приложении вы услышите краткое описание.\n\nИзображения обрабатываются на вашем устройстве и никогда не отправляются в Google. \n\nГенеративный ИИ может допускать ошибки, поскольку это экспериментальная технология. Продолжая, вы принимаете <a href="https://policies.google.com/terms/generative-ai">Условия использования Google</a>.</string>
   <string name="enable_gemini">Включить</string>
   <string name="powered_by_gemini">На базе генеративного ИИ</string>
-  <string name="detailed_image_description_ongoing_hint">Загрузка описания</string>
-  <string name="detailed_image_description_result_prefix">Обнаружено: изображение. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Чтобы получать автоматические описания изображений, скачайте соответствующий модуль</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Изображения обрабатываются на вашем устройстве и никогда не отправляются в Google.\n\nГенеративный ИИ – это экспериментальная технология, поэтому он может допускать ошибки. Продолжая, вы принимаете %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Условия использования Google</string>
   <string name="message_aifeature_downloading">ИИ-модель скачивается. Подождите. Когда скачивание завершится, вы получите уведомление.</string>
   <string name="message_aifeature_downloading_with_progress">Скачивание ещё не завершено. Подождите. Скачано %1$d из %2$d МБ.</string>
-  <string name="message_aifeature_download_complete">ИИ-модель скачана. SandFly теперь может генерировать описания изображений.</string>
   <string name="summary_pref_auto_image_captioning">Для изображений, текста на них и значков</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Для текста на изображениях</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Для изображений и текста на изображениях</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Для значков и текста на изображениях</string>
   <string name="summary_pref_module_downloading">Скачивание…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Включено для всех изображений</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Включено только для изображений без подписей</string>
   <string name="summary_pref_auto_image_captioning_disabled">Отключено</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Включено для всех значков</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Включено только для значков без подписей</string>
   <string name="summary_pref_auto_icon_detection_disabled">Отключено</string>
   <string name="title_pref_enable_auto_image_caption">Все изображения</string>
   <string name="title_pref_enable_auto_image_caption_arg">Все изображения\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Все значки</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Только значки без подписей</string>
   <string name="title_pref_disable_auto_icon_detection">Не описывать значки</string>
-  <string name="dialog_message_on_device_ai_model_download">При переходе к изображению в поддерживаемом приложении вы услышите краткое описание.\n\nИзображения обрабатываются на вашем устройстве и никогда не отправляются в Google.\n\nГенеративный ИИ может допускать ошибки, поскольку это экспериментальная технология. Продолжая, вы принимаете %1$s.</string>
   <string name="title_pref_enable_gemini_support">Включить</string>
   <string name="title_pref_disable_gemini_support">Отключить</string>
   <string name="summary_pref_gemini_support_enabled">Gemini включён.</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Записать дерево узлов</string>
   <string name="shortcut_print_performance_stats">Передать статистику производительности в журнал</string>
   <string name="shortcut_first_in_screen">Перейти к первому объекту на экране</string>
-  <string name="shortcut_summary">Резюмировать содержимое экрана</string>
   <string name="shortcut_voice_commands">Включить голосовые команды</string>
   <string name="shortcut_last_in_screen">Перейти к последнему объекту на экране</string>
   <string name="shortcut_enable_dimming">Защитить экран</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Навигация по веб-контенту</string>
   <string name="menu_category_basic_navigation">Основы навигации</string>
   <string name="summary_custom_action">Доступно, когда с текущим объектом можно совершить действия, например перейти по ссылке, копировать, вставить или выбрать</string>
-  <string name="summary_context_menu_links">Открытие ссылок, содержащихся в выбранном объекте</string>
   <string name="summary_viewpager_controls">Переход на следующую или предыдущую страницу. Доступно при наличии нескольких страниц.</string>
   <string name="summary_labeling_controls">Доступно при выборе объекта без ярлыка</string>
   <string name="summary_granularity">Чтение по символам, словам, строкам и т. д.</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Краткое описание экрана с кнопками действий</string>
   <string name="summary_screen_overview_no_actions">Озвучивает описание содержимого на экране</string>
   <string name="summary_image_caption">Озвучивает описание значков и текст с выбранных изображений.</string>
-  <string name="summary_summarize_view">Чтение описания вслух</string>
   <string name="summary_typo_suggestions">Показываются, когда курсор находится на ошибке</string>
   <string name="summary_cache_keyboard_keys">SandFly предварительно загружает данные озвучивания, чтобы уменьшить задержку при вводе текста.</string>
   <string name="summary_cache_keyboard_keys_disabled">Чтобы использовать эту функцию, включите Синтезатор речи Google.</string>
-  <string name="value_direction_down">вниз</string>
-  <string name="value_direction_down_and_right">вниз, затем вправо</string>
   <string name="title_pref_shortcut_up">Вверх</string>
   <string name="title_pref_shortcut_up_xr">Повернуть ладонь неведущ. руки к себе, свести 2 пальца, провести вверх</string>
   <string name="title_pref_shortcut_down">Вниз</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Влево по сканеру отпечатков пальцев</string>
   <string name="title_pref_shortcut_fingerprint_right">Вправо по сканеру отпечатков пальцев</string>
   <string name="title_pref_version_code">Код версии</string>
-  <string formatted="false" name="value_volume_100_percent">На уровне громкости речи</string>
-  <string formatted="false" name="value_volume_75_percent">75 % от громкости речи</string>
-  <string formatted="false" name="value_volume_50_percent">50 % от громкости речи</string>
-  <string formatted="false" name="value_volume_25_percent">25 % от громкости речи</string>
   <string name="value_type_confirmation_double_tap">Удерживайте палец на нужной клавише, затем нажмите дважды</string>
   <string name="value_type_confirmation_lift_to_type">Удерживайте палец на клавише с буквой, затем отпустите. Для других клавиш нажмите дважды.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Удерживайте палец на нужной клавише, затем отпустите</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 секунды</string>
   <string name="value_touch_explore_time_out_250ms">0,25 секунды</string>
   <string name="value_touch_explore_time_out_300ms">0,3 секунды (по умолчанию)</string>
-  <string name="value_shake_to_read_disabled">Отключено</string>
-  <string name="value_shake_to_read_threshold_very_light">Слегка</string>
-  <string name="value_shake_to_read_threshold_light">Слабо</string>
-  <string name="value_shake_to_read_threshold_medium">Умеренно</string>
-  <string name="value_shake_to_read_threshold_hard">Сильно</string>
-  <string name="value_shake_to_read_threshold_very_hard">Очень сильно</string>
   <string name="title_pref_on_screen_keyboard">Экранная клавиатура</string>
   <string name="title_pref_physical_keyboard">Физическая клавиатура</string>
   <string name="value_keyboard_echo_none">Отключено</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Использовать формат времени устройства</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-часовой</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-часовой</string>
-  <string name="notification_title_talkback_gestures_changed">Жесты SandFly изменены</string>
-  <string name="notification_message_talkback_gestures_changed">Нажмите, чтобы просмотреть изменения жестов.</string>
   <string name="always_show_warning_checkbox">Всегда предупреждать</string>
   <string name="label_dialog_title_add">Добавление ярлыка</string>
   <string name="label_dialog_title_edit">Изменение ярлыка</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Приложение для экспорта ярлыков отсутствует.</string>
   <string name="label_choose_app_to_import">Выберите приложение для импорта ярлыков:</string>
   <string name="label_choose_app_to_export">Выберите приложение для экспорта ярлыков:</string>
-  <string name="talkback_gesture_change_details">В этой версии SandFly изменены жесты по умолчанию. Назначить действия для них можно в настройках. Ниже перечислены жесты, которые вы можете использовать, если включено Изучение касанием.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Защитить экран?</string>
   <string name="dialog_message_dim_screen">Экран будет затемнён для более надёжной защиты конфиденциальности. Однако по-прежнему могут показываться сообщения о включении экрана, меню специальных возможностей, таких как SandFly, и некоторый другой контент.</string>
-  <string name="talkback_built_in_gesture_change_details">В этой версии SandFly мы изменили жесты по умолчанию.\n\nЧтобы перейти к первому объекту на экране, проведите пальцем вверх, а затем вниз. Для перехода к последнему объекту проведите вниз, а затем вверх.\n\nЧтобы изменить уровень детализации чтения, выберите объект, а затем в контекстном меню – степень детализации.\n\nВы можете назначить жестам другие действия в настройках SandFly.</string>
-  <string name="default_action_changed_details">Теперь, чтобы приостановить или воспроизвести медиаконтент, нужно дважды нажать и удерживать экран двумя пальцами.\n\nДругие жесты также были изменены.</string>
-  <string name="talkback_built_in_gesture_open_url">Открыть на телефоне, чтобы узнать больше</string>
-  <string name="talkback_built_in_gesture_change_details_45">В этой версии SandFly изменены жесты по умолчанию.\n\nТеперь, чтобы перейти к предыдущей настройке навигации, нужно провести по экрану вверх, а чтобы выбрать следующую – вниз.</string>
-  <string name="side_tap_shortcuts_removed_details">Из-за возникновения сбоев из SandFly были удалены следующие настройки:\n• Постукивание по краю.\n• Встряхнуть, чтобы начать чтение.</string>
-  <string name="button_accept_changed_gesture_mappings">Принять жесты</string>
-  <string name="button_customize_gesture_mappings">Настроить жесты</string>
   <string name="button_disable_all_events">Отключить все</string>
   <string name="button_enable_all_events">Включить все</string>
   <string name="dialog_title_disable_exploration">Отключить Изучение касанием?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Поиск по таблицам</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Канал уведомлений SandFly</string>
-  <string name="pref_selector_summary">Для выбора настройки проведите %1$s. Чтобы изменить её, проведите %2$s.</string>
-  <string name="speech_rate_change">Скорость речи %1$d%%</string>
   <string name="speech_pitch_maximum">Самый высокий тон голоса</string>
   <string name="speech_pitch_minimum">Самый низкий тон голоса</string>
   <string name="reset_speech_rate_and_pitch">Сбросить настройки тона и скорости речи</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Виброотклик: %1$s</string>
   <string name="text_formatting_state">Озвучивание параметров форматирования текста: %1$s</string>
   <string name="typing_echo_change">Режим озвучивания нажимаемых клавиш на физической клавиатуре: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Чтобы переключить режим управления чтением, поверните ладонь неведущ. руки на себя и зажмите кнопку.</string>
   <string name="gesture_1_or_2">%1$s или %2$s</string>
-  <string name="select_setting_hint">%1$s, чтобы выбрать другую настройку</string>
-  <string name="adjust_setting_hint">%1$s, чтобы отрегулировать эту настройку</string>
   <string name="adjust_granularity_hint">%1$s для чтения по %2$s</string>
   <string name="adjust_typo_hint">%1$s, чтобы перейти к подсказкам.</string>
   <string name="use_action_hint">Чтобы выполнить действие, дважды нажмите на экран</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Управление чтением</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Чтобы включить или приостановить воспроизведение музыки или видео в приложении, нажмите дважды на экран двумя пальцами. Потренируйтесь на этом экране.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">В некоторых приложениях этот жест может использоваться для других действий, например для ответа на звонки, или не поддерживаться совсем.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Посмотреть все руководства по SandFly</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Воспроизведение включено или приостановлено. Обычно этот жест используется, чтобы включать или приостанавливать воспроизведение видео или музыки. Для продолжения проведите вправо.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Чтобы временно остановить озвучивание SandFly, коснитесь экрана двумя пальцами.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Озвучивание SandFly остановлено. Обычно этот жест останавливает текущую фразу. Для продолжения проведите вправо.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Режим выделения текста включён или отключён. Обычно этот жест используется, чтобы начинать или завершать выделение текста в поле ввода. Для продолжения проведите вправо.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Чтобы использовать элементы управления чтением, проведите тремя пальцами влево, вправо, вверх или вниз.</string>
   <string name="new_shortcut_gesture_note">Примечание. Поскольку вы изменили некоторые жесты, эта информация может быть неточной. Чтобы посмотреть список используемых жестов, перейдите в настройки SandFly.</string>
-  <string name="welcome_to_android11">Представляем SandFly для Android 11</string>
   <string name="welcome_to_android11_text">Чтобы сделать SandFly быстрее и удобнее, мы добавили несколько новых жестов.\n\nПопробуйте выполнить их на этом экране. Вы можете в любое время посмотреть эту информацию в настройках SandFly.</string>
   <string name="new_gesture_notification_title">Новые жесты в SandFly</string>
   <string name="new_gesture_notification_content">Коснитесь экрана, чтобы узнать о новых жестах в SandFly.</string>
   <string name="dump_node_tree_description">Дерево узлов записано в журналы.</string>
   <string name="report_gesture_description">Вот жесты, которые использовались недавно. Сообщите нам, с каким из них возникла проблема и какую команду он должен обозначать.</string>
-  <string name="update_welcome_text_content">Теперь вы можете подключаться к дисплеям Брайля с помощью HID-устройств так же, как и к другим устройствам Bluetooth. Убедитесь, что на вашем устройстве установлены последние версии драйверов для встроенного ПО от производителя. Затем включите Bluetooth на дисплее Брайля. В настройках SandFly выберите \"Дисплей Брайля\" и включите параметр \"Использовать дисплей Брайля\". Найдите ваше устройство и подключитесь к нему.</string>
-  <string name="update_welcome_text_content_tts">Теперь вы можете подключаться к дисплеям Брайля с помощью HID-устройств так же, как и к другим устройствам Bluetooth. Убедитесь, что на вашем устройстве установлены последние версии драйверов для встроенного ПО от производителя. Затем включите Bluetooth на дисплее Брайля. В настройках SandFly выберите \"Дисплей Брайля\" и включите параметр \"Использовать дисплей Брайля\". Найдите ваше устройство и подключитесь к нему.</string>
-  <string name="update_welcome_text_content_with_link">Узнайте, как пользоваться дисплеем Брайля в SandFly.</string>
   <string name="update_welcome_talkback_16.1">В этом обновлении SandFly: функция описания экрана стала поддерживать больше языков и введены другие улучшения, благодаря которым пользоваться SandFly теперь удобнее.\n\nВы узнаете об изменениях больше на следующих экранах.\n\nЭту информацию также можно найти в настройках SandFly (раздел \"Новые функции в SandFly\").</string>
   <string name="update_welcome_talkback_16.1_tts">В этом обновлении SandFly: функция описания экрана стала поддерживать больше языков и введены другие улучшения, благодаря которым пользоваться SandFly теперь удобнее.\n\nВы узнаете об изменениях больше на следующих экранах.\n\nЭту информацию также можно найти в настройках SandFly (раздел \"Новые функции в SandFly\").</string>
-  <string name="describe_screen_and_qna_title">Новые языки для функции описания экрана и функции \"Спросить Gemini\"</string>
-  <string name="describe_screen_and_qna_content">Функция описания экрана и функция \"Спросить Gemini\" теперь доступны на большем количестве языков. Узнайте больше в &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Справочном центре&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Жест для запуска голосового ввода</string>
   <string name="shortcut_for_dictation_content">Когда клавиатура Gboard открыта, вы можете начать или остановить голосовой ввод, дважды нажав двумя пальцами на экран.
 &lt;br&gt;
 &lt;br&gt;Убедитесь, что у вас установлена последняя версия &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard из Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Когда клавиатура Gboard открыта, можно начать или остановить голосовой ввод. Для этого дважды нажмите двумя пальцами на экран.</string>
-  <string name="keyboard_title">Клавиатура</string>
-  <string name="keyboard_content">В SandFly появилась улучшенная раскладка клавиатуры со множеством новых команд и сочетаний клавиш. Также добавлен режим обзора, который упрощает навигацию по веб-контенту и помогает людям с физическими клавиатурами пользоваться SandFly. Чтобы переключиться на новую раскладку, выберите \"Настройки SandFly &gt; Расширенные настройки &gt; Быстрые клавиши\".</string>
-  <string name="keyboard_content_tts">В SandFly появилась улучшенная раскладка клавиатуры со множеством новых команд и сочетаний клавиш. Также добавлен режим обзора, который упрощает навигацию по веб-контенту и помогает людям с физическими клавиатурами пользоваться SandFly. Чтобы переключиться на новую раскладку, в настройках SandFly откройте раздел \"Расширенные настройки\" и нажмите \"Быстрые клавиши\".</string>
-  <string name="reduce_delay_title">Уменьшить задержку</string>
-  <string name="reduce_delay_content">Теперь можно уменьшить задержку озвучивания при сенсорном управлении и вводе текста. Для этого выберите \"Настройки SandFly &gt; Расширенные настройки &gt; Уменьшить задержку\".</string>
-  <string name="reduce_delay_content_tts">Теперь можно уменьшить задержку озвучивания при сенсорном управлении и вводе текста. Для этого в настройках SandFly откройте раздел \"Расширенные настройки\" и нажмите \"Уменьшить задержку\".</string>
-  <string name="customize_braille_keyboard_improvements_title">Настройка жестов для клавиатуры Брайля</string>
-  <string name="customize_braille_keyboard_improvements_content">Теперь вы можете менять жесты для клавиатуры Брайля. Для этого выберите \"Настройки SandFly &gt; Клавиатура Брайля &gt; Жесты\".</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Теперь вы можете менять жесты для клавиатуры Брайля. Для этого в настройках SandFly откройте раздел \"Клавиатура Брайля\" и нажмите \"Жесты\".</string>
-  <string name="learn_more_about_braille_keyboard">Подробнее о клавиатуре Брайля…</string>
-  <string name="other_changes_title">Другие изменения</string>
-  <string name="other_changes_content">Если вы случайно включили SandFly, на экране появится сообщение с инструкцией, как быстро выключить функцию. Чтобы не видеть это сообщение, выберите \"Настройки SandFly &gt; Показывать инструкцию по выключению SandFly\".</string>
-  <string name="other_changes_content_tts">Если вы случайно включили SandFly, на экране появится сообщение с инструкцией, как быстро выключить функцию. Чтобы не видеть это сообщение, в настройках SandFly отключите параметр \"Показывать инструкцию по выключению SandFly\".</string>
-  <string name="keymap_changes_content">Классическая раскладка заменена раскладкой по умолчанию, в которой больше сочетаний клавиш.</string>
   <string name="announcing_text_formatting_title">Сообщения о форматировании текста</string>
   <string name="announcing_text_formatting_header">Теперь SandFly может сообщать пользователю об изменениях в форматировании текста, например о его написании (полужирный, курсив) или цвете. Чтобы использовать эту функцию, сделайте следующее:</string>
   <string name="announcing_text_formatting_option1">Выберите элемент с форматированием, откройте меню SandFly и нажмите \"Описать форматирование текста\".</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Звонки по телефону, отправка сообщений и другие действия</string>
   <string name="practice_gestures_link_text">Практика использования жестов</string>
   <string name="practice_gestures_link_subtext">Информация о жестах и практика в их использовании</string>
-  <string name="help_and_feedback_link_subtext">Справочная информация о SandFly и форма для отзывов</string>
   <string name="choose_tutorial_title">Выберите, как вы хотите взаимодействовать с SandFly</string>
   <string name="touch_tutorial_button">Руководство по использованию касаний</string>
   <string name="keyboard_tutorial_button">Руководство по использованию клавиатуры</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Попробуйте ниже.</string>
   <string name="wear_training_typing_practice_button_content_description">Ввод текста с помощью клавиатуры</string>
   <string name="wear_training_end_tutorial_title">Вы готовы начать пользоваться SandFly</string>
-  <string name="talkback_updated_notification_title">Программа SandFly обновлена</string>
-  <string name="talkback_updated_notification_content">Нажмите, чтобы узнать больше.</string>
   <string name="wear_new_feature_page_title">Функция SandFly обновлена</string>
   <string name="wear_new_feature_page_content">Мы исправили некоторые ошибки и изменили то, как перемещается фокус.</string>
   <string name="wear_new_feature_page_button_content_description">Готово</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Синий</string>
   <string name="title_pref_grey">Серый</string>
   <string name="survey_setting_title">Отправить отзыв</string>
-  <string name="survey_closed">Опрос закрыт</string>
   <string name="title_summarize_view">Описать, что изображено на экране</string>
-  <string name="title_increase_touch_focus_latency">Увеличить задержку выбора элемента</string>
-  <string name="title_decrease_touch_focus_latency">Уменьшить задержку выбора элемента</string>
   <string name="detected_result">Распознано: %1$s</string>
   <string name="title_image_caption">Описать изображение</string>
   <string name="image_caption_with_gemini_prefix">Опиши это изображение, не используя разметку.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">ПОЛЬЗОВАТЕЛЬ: %1$s</string>
   <string name="image_qna_answer_prefix">МОДЕЛЬ: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Продолжай чередовать реплики ПОЛЬЗОВАТЕЛЯ и МОДЕЛИ] ...</string>
-  <string name="screen_overview_with_screenshot">Твоя задача – помочь человеку с нарушением зрения понять, что находится на экране телефона. Опиши этот скриншот в нескольких предложениях.
-
-Инструкции
-Начни ответ с фразы \"На экране…\"
-Сначала опиши самые важные и заметные элементы Вот примеры того, что стоит упомянуть в первую очередь:
-– В мессенджере: отправителя и содержание последнего сообщения.
-– В социальной сети: первую запись, включая автора, содержание и изображение.
-– В новостном приложении: заголовок статьи и основное изображение.
-– В приложении для покупок: показанный товар и цену.
-– В календаре: ближайшее мероприятие и число предстоящих.
-– В списке сообщений: отправителя и начало первого сообщения, отправителей нескольких следующих сообщений и число непрочитанных сообщений.
-
-После этого можно описать панели навигации и основные кнопки: где они находятся и для чего используются.
-Не упоминай содержимое строки состояния в верхней части экрана (например, время, статус сети, заряд батареи).
-Не используй в ответе разметку.</string>
   <string name="title_gemini_opt_in_dialog">Получать подробные описания изображений?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Получать описания изображений?</string>
   <string name="title_gemini_result_dialog">Обнаружено изображение</string>
   <string name="title_gemini_result_bottom_sheet">Описание изображения</string>
   <string name="title_gemini_screen_overview_result_dialog">Описание экрана</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Описание</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Действия</string>
   <string name="positive_button_gemini_opt_in_dialog">Включить</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Принимаю</string>
   <string name="negative_button_gemini_opt_in_dialog">Нет, спасибо</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Открыть настройки</string>
-  <string name="positive_button_gemini_download_dialog">Скачать и включить</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Текст: \"%1$s\".</string>
   <string name="detected_icon_label">Значок \"%1$s\".</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Не получается описать содержимое экрана</string>
   <string name="image_caption_no_result">Не удалось описать изображение</string>
   <string name="image_caption_with_hide_screen">Когда экран затемнён, описания изображений недоступны. Отмените затемнение и повторите попытку.</string>
-  <string name="feedback_button_state_set">выбрано</string>
-  <string name="feedback_button_state_unset">не выбрано</string>
   <string name="action_text_like_button">Отметить как хороший ответ</string>
   <string name="action_text_dislike_button">Отметить как плохой ответ</string>
   <string name="action_text_clear_like_button">Снять отметку «Хороший ответ»</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Скачиваются автоматические описания изображений и значков…</string>
   <string name="download_all_image_captioning_successful_hint">Автоматические описания изображений и значков скачаны.</string>
   <string name="download_all_image_captioning_failed_hint">При скачивании произошла ошибка. Повторите попытку позже.</string>
-  <string name="download_complete_notification_title">Скачивание завершено</string>
-  <string name="download_complete_notification_content">Теперь SandFly будет автоматически описывать изображения и значки.</string>
-  <string name="download_complete_notification_action">Настройки</string>
   <string name="download_storage_error_hint">Хранилище заполнено. Освободите %1$d МБ. Для этого откройте раздел \"Хранилище\" в настройках.</string>
   <string name="download_network_error_hint">При скачивании произошла ошибка. Проверьте подключение и повторите попытку.</string>
   <string name="switch_icon_detection_dialog_title">Автоматические описания значков</string>
   <string name="switch_icon_detection_dialog_message">При переходе к значку вы будете слышать его описание.</string>
   <string name="switch_image_description_dialog_message">Прослушивайте описания при переходе к изображениям. Эта функция поддерживается не во всех приложениях.</string>
-  <string name="switch_text_recognition_dialog_title">Автоматическое описание текста на изображениях</string>
   <string name="switch_text_recognition_dialog_message">Описание озвучивается при переходе к изображению с текстом.</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Скачано</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Вы по-прежнему будете получать описание выбранного изображения через меню SandFly.</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Удалить</string>
   <string name="delete_icon_detection_dialog_title">Удалить автоматические описания значков?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Использование Gemini в SandFly</string>
   <string name="gemini_disable_dialog_message">Использование Gemini</string>
   <string name="disable_gemini_dialog_subtext">Включите, чтобы использовать Gemini для чтения с экрана.</string>
-  <string name="ai_services_update_dialog_title">Чтобы прослушивать описание изображений, обновите приложение \"%1$s\"</string>
-  <string name="ai_services_update_dialog_message">Чтобы прослушивать голосовые описания изображений, установите последнюю версию приложения \"%1$s\" из Google Play.\n\nПосле этого откройте настройки SandFly и снова включите автоматические описания изображений.</string>
-  <string name="ai_services_update_dialog_button_text">Перейдите в Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Сервисы конфиденциальных вычислений</string>
   <string name="gemini_error_message">Что-то пошло не так. Повторите попытку.</string>
   <string name="gemini_block_message">Не удалось обработать это изображение.</string>
   <string name="gemini_network_error">Нет интернет-соединения. Проверьте подключение к Wi-Fi или мобильной сети и повторите попытку.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Ввести вопрос для Gemini</string>
   <string name="image_qna_send_button_text">Спросить</string>
   <string name="image_qna_speak_question_description">Задать вопрос вслух</string>
-  <string name="overviews_summary_intro">Обзор этого экрана приложения: %1$s</string>
   <string name="overviews_node_not_found">Не удаётся найти эту часть экрана.</string>
-  <string name="overviews_images_in_app">Вот какие основные изображения удалось найти</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Действия в приложении</string>
-  <string name="overviews_actions_in_app_description">Вот что можно сделать на этом экране приложения:</string>
-  <string name="overviews_parent_type">Действия в приложении</string>
   <string name="text_replaced_feedback">Текст заменён</string>
   <string name="switch_gesture_set">Сменить набор жестов</string>
   <string name="switch_gesture_set_to">Сменить на набор жестов \"%1$d\"</string>
@@ -1453,7 +1298,6 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Закрыть</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Чтобы слушать уведомления при выключенном экране, перейдите в настройки детализации SandFly и включите параметр \"Озвучивать уведомления при отключённом экране\".</string>
   <string name="title_pref_tts_engine">Синтезатор речи</string>
   <string name="title_pref_system_tts_settings">Системные настройки синтеза речи</string>
   <string name="title_selector_voice_profile">Голосовой профиль</string>

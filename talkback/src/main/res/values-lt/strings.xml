@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Kai „TalkBack“ įjungta, ekranas skaitomas balsu, kad galėtumėte naudoti įrenginį nežiūrėdami į ekraną. „TalkBack“ skirta naudoti esant tokioms situacijoms, kai sudėtinga matyti ekraną, arba regos sutrikimų turintiems žmonėms.&lt;br&gt;&lt;br&gt;&lt;b&gt;Kaip naudoti „TalkBack“&lt;/b&gt;&lt;br&gt;• Perbraukite dešinėn arba kairėn, kad pereitumėte nuo vieno elemento prie kito.&lt;br&gt;• Dukart palieskite, kad suaktyvintumėte elementą.&lt;br&gt;• Slinkite vilkdami dviem pirštais.&lt;br&gt;&lt;b&gt;Kaip išjungti „TalkBack“&lt;/b&gt;&lt;br&gt;1. Nustatymuose palieskite &lt;b&gt;Naudoti „TalkBack“&lt;/b&gt;. Pasirodys kraštinė. Dukart palieskite ją.&lt;br&gt;2. Patvirtinimo pranešime palieskite &lt;b&gt;Sustabdyti&lt;/b&gt;. Pasirodys kraštinė. Dukart palieskite ją.</string>
   <string name="talkback_service_summary">Naudokite ekrano skaitytuvą, kad išgirstumėte garsiai ištariamus elementus</string>
   <string name="talkback_preferences_title">„TalkBack“ nustatymai</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Nustatymai</string>
   <string name="tts_preferences_title">Tekstas į kalbą</string>
   <string name="language_options">Kalbos</string>
   <string name="spoken_language">Kalba, kuria kalbama</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Paieška atšaukta.</string>
   <string name="notification_type_status_started">Pradėta</string>
   <string name="notification_type_status_stopped">Sustabdyta</string>
-  <string name="notification_type_status_connected">prisijungta</string>
-  <string name="notification_battery_level_unknown">nežinoma</string>
   <string name="notification_battery_saver_mode">Akumuliatoriaus tausojimo priemonė įjungta</string>
   <string name="template_no_text_selected">Nėra pasirinkto teksto</string>
   <string name="template_charging">Įkraunama %1$s Akumuliatoriaus įkrovos lygis %2$s proc.</string>
   <string name="template_charging_lite">Įkrovimo procesas %1$s</string>
-  <string name="template_battery_state">Maitinimas %1$s %2$s proc. %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibracija skambinant.</string>
   <string name="value_ringer_silent">Skambutis tylus.</string>
   <string name="value_screen_on">Ekranas įjungtas.</string>
   <string name="value_screen_off">Ekranas išjungtas.</string>
   <string name="value_device_unlocked">Įrenginys atrakintas.</string>
-  <string name="title_pref_category_audio">Garso įrašas</string>
   <string name="title_pref_speech_volume">Kalbos garsumas</string>
-  <string name="title_pref_speech_rate">Kalbėjimo greitis</string>
-  <string name="summary_pref_speech_rate">Greitis, kuriuo sakomas tekstas</string>
   <string name="title_pref_verbose_scroll_announcement">Visada ištarti sąrašo elementų skaičių</string>
   <string name="summary_pref_verbose_scroll_announcement">Ištarti visų slinkimo metodų skaičių</string>
   <string name="title_pref_cover_proximity_sensor">Uždenkite artumo jutiklį, kad sustabdytumėte kalbą</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Sakyti laiką</string>
   <string name="pref_speak_time_summary">Kai įjungiate ekraną</string>
   <string name="summary_speak_container_element_positions">Įtraukiama informacija, rodoma atidarant ir uždarant sąrašus, tinklelius ir kitus sudėtinius failus</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokusavimo delsa pridėta prie skaitymo valdymo</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Perbraukite trimis pirštais, kad galėtumėte naudoti skaitymo valdymą ir bet kada pakeisti fokusavimo delsą</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Perjungti į funkciją „Įvesti pakėlus pirštą“?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Kai teksto vedimo fokusavimo delsa nustatyta mažiau nei 0,3 sek., bus labai sunku dukart paliesti norint įvesti tekstą. Pasirinkite „Perjungti“, kad būtų automatiškai perjungta į funkciją „Įvesti pakėlus pirštą“.\n\nJei norite naudoti funkciją „Įvesti pakėlus pirštą“, laikydami pirštą pasirinkite bet kurį klavišą, tada pakelkite pirštą, kad įvestumėte.\n\nTai galite tinkinti „TalkBack“ nustatymuose.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Teksto vedimo fokusavimo delsa pridėta prie skaitymo valdymo</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Jei kyla problemų dėl palietimo dukart vedant tekstą, perbraukite trimis pirštais, kad galėtumėte naudoti skaitymo valdymą, ir pakeiskite į ilgesnę teksto vedimo fokusavimo delsą</string>
-  <string name="gestures_announce_typing_focus_wont_change">Teksto vedimo fokusavimo delsa neveikia be funkcijos „Įvesti pakėlus pirštą“.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Supratau</string>
   <string name="reset_letency_reduction_settings_dialog_title">Iš naujo nustatyti delsos nustatymus?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tai atlikus visi delsos nustatymai bus iš naujo nustatyti į numatytuosius</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Nustatyti iš naujo</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Delsos mažinimo nustatymai nustatyti iš naujo.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Perjungti</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Neperjungti</string>
   <string name="Reset_gesture_settings_dialog_title">Nustatyti gestus iš naujo?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Iš naujo nustatyti dabartinio rinkinio gestus?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Visiems gestams bus iš naujo nustatyti numatytieji veiksmai.\n\nPrarasite visus atliktus keitimus.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Ištarti visus eigos naujinius</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Apima naujinius atsisiunčiant, naudojantis važiavimo nuorodomis ir kt. Kai išjungta, vis tiek gausite mažiau naujinių.</string>
   <string name="title_pref_explore_by_touch">Naršyti paliečiant</string>
-  <string name="title_pref_category_visual">Vaizdo medžiaga</string>
   <string name="title_pref_category_controls">Valdikliai</string>
-  <string name="title_pref_category_braille">Brailio raštas</string>
-  <string name="title_pref_category_general">Bendrieji</string>
-  <string name="title_pref_category_advanced">Išplėstiniai</string>
-  <string name="title_pref_category_others">Kita</string>
-  <string name="title_pref_category_tutorial_and_help">Mokomoji medžiaga ir pagalba</string>
   <string name="title_pref_category_reduce_latency_summary">Šie nustatymai gali sumažinti delsą prieš „TalkBack“ pranešimus</string>
   <string name="reset_latency_settings_title">Iš naujo nustatyti visus delsos nustatymus</string>
   <string name="title_pref_single_tap">Suaktyvinimas vienu palietimu</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Keisti fokusavimo indikatorių</string>
   <string name="title_pref_category_manage_gestures">Gestai</string>
   <string name="title_pref_manage_labels">Tinkintos etiketės</string>
-  <string name="title_pref_manage_customize_menus">Redaguoti meniu</string>
   <string name="title_pref_category_context_menu">Tinkinti „TalkBack“ meniu</string>
   <string name="title_pref_category_selector_menu">Tinkinti skaitymo valdiklius</string>
   <string name="title_pref_category_navigation_menu">Redaguoti naršymo parinktis</string>
-  <string name="pref_category_context_menu_summary">Jei norite naudoti „TalkBack“ meniu, palieskite ekraną trimis pirštais. Taip pat galite perbraukti aukštyn ir į dešinę arba žemyn ir į dešinę.</string>
-  <string name="pref_category_context_menu_summary_xr">Jei norite naudoti „TalkBack“ meniu, pasukite nedominuojančios rankos delną į save ir suimkite pirštus.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Jei norite naudoti „TalkBack“ meniu, perbraukite žemyn ir dešinėn.</string>
-  <string name="pref_category_selector_menu_summary">Jei norite naudoti skaitymo valdiklius, perbraukite į kairę arba į dešinę trimis pirštais. Taip pat galite perbraukti aukštyn arba žemyn trimis pirštais.</string>
-  <string name="pref_category_selector_menu_summary_xr">Jei norite perjungti skaitymo valdiklius, pasukite nedominuojančios rankos delną į save, suimkite pirštus ir laikykite, pajudinkite į dešinę arba į kairę ir išskleiskite pirštus.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Jei norite naudoti skaitymo valdiklius, perbraukite aukštyn ir žemyn.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Spartieji klavišai</string>
   <string name="title_pref_export_custom_labels">Eksportuoti tinkintas etiketes</string>
-  <string name="title_pref_play_store">Atidaryti „TalkBack“ parduotuvėje „Google Play“</string>
-  <string name="summary_pref_play_store">Esama „TalkBack“ versija: %1$s</string>
   <string name="title_pref_help_and_feedback">Pagalba ir atsiliepimai</string>
-  <string name="title_pref_gup">Susisiekite su „Google“ palaikymo neįgaliesiems komanda</string>
-  <string name="subtitle_pref_gup">Gaukite pagalbos dėl „TalkBack“ naudojimo arba praneškite apie problemas</string>
-  <string name="pref_item_licenses">Atvirojo šaltinio licencijos</string>
-  <string name="title_pref_tutorial">Mokomoji medžiaga</string>
   <string name="title_pref_help">Pagalba</string>
   <string name="title_pref_show_tos">Paslaugų teikimo sąlygos</string>
   <string name="title_pref_show_privacy_policy">Privatumo politika</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Piršto antspaudo gestai</string>
   <string name="title_pref_category_tutorial">„TalkBack“ mokomoji medžiaga</string>
   <string name="title_pref_category_help_no_tutorial">Pagalba</string>
-  <string name="title_pref_category_typing">Vedamas tekstas</string>
   <string name="title_pref_advanced_settings">Išplėstiniai nustatymai</string>
   <string name="title_pref_show_exit_watermark">Rodyti „TalkBack“ išjungimo instrukcijas</string>
   <string name="summary_pref_show_exit_watermark">Įjungus „TalkBack“ rodomas pranešimas, padedantis greitai ją išjungti</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Skiriasi kai kurie modifikavimo klavišai.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Sužinokite daugiau apie klavišų schemas</string>
   <string name="keycombo_go_to_settings">Eiti į nustatymus</string>
-  <string name="keycombo_keymap_changes_notifications_content">Ruošiamasi pašalinti klasikinę klavišų schemą sistemoje „TalkBack“. Jei norite toliau naudoti sparčiuosius klavišus, perjunkite į numatytąją klavišų schemą.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Sužinokite daugiau</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Supratau</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Nustatymai</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Sužinokite daugiau</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Dabar naudojate numatytąją „TalkBack“ klavišų schemą. Taip pat yra nauja patobulinta klavišų schema, kurioje yra daug naujų komandų. Sužinokite daugiau pagalbos centre arba perjunkite į naują klavišų schemą nustatymų skiltyje.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Pasiekiama nauja klavišų schema</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Nauja „TalkBack“ klavišų schema prideda daug naujų komandų. Sužinokite daugiau pagalbos centre arba perjunkite į naują klavišų schemą nustatymų skiltyje.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Atnaujinkite „TalkBack“ modifikavimo klavišą</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ne dabar</string>
   <string name="keycombo_warning_content_description">Daugiau informacijos apie modifikavimo klavišą</string>
-  <string name="keycombo_warning_dialog_title">Modifikavimo klavišo atnaujinimas</string>
-  <string name="keycombo_warning_dialog_message">Kad „TalkBack“ spartieji klavišai tinkamai veiktų, atnaujinkite modifikavimo klavišą iš veiksmų klavišo į „Alt“.\n\nJei toliau naudosite veiksmų modifikavimo klavišą, naudojant tam tikrus sparčiuosius klavišus bus atliekami kitokie veiksmai šios versijos sistemoje „Android“.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Klavišų schema</string>
   <string name="keycombo_menu_select_keymap">Pasirinkti klavišų schemą</string>
   <string name="keycombo_menu_reset_keymap">Iš naujo nustatyti klavišų schemą</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Didinti kalbos garsumą</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Mažinti kalbos garsumą</string>
   <string name="keycombo_menu_global_refocus_current_node">Kalbėkite apie dabartinį tikslą</string>
-  <string name="keycombo_menu_category_granularity">Naršymas</string>
   <string name="keycombo_menu_granularity_increase">Kitas naršymo nustatymas</string>
   <string name="keycombo_menu_granularity_decrease">Ankstesnis naršymo nustatymas</string>
   <string name="keycombo_menu_category_other">Kiti veiksmai</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Ar tikrai norite iš naujo nustatyti šios klavišų schemos sparčiųjų klavišų vertes į numatytąsias? Atminkite, kad šio veiksmo negalima anuliuoti.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Nustatyti iš naujo</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s naršymo režimu</string>
-  <string name="keycombo_assign_dialog_instruction">Paspauskite klavišų derinį, kad nustatytumėte naują spartųjį klavišą. Reikia naudoti ALT arba „Control“ klavišą.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Paspauskite klavišų derinį su „%1$s“ modifikavimo klavišu, kad nustatytumėte naują spartųjį klavišą.</string>
   <string name="keycombo_unassigned">Nepriskirta</string>
   <string name="save_button_in_keycombo_assign_dialog">Išsaugoti</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Teksto vedimo fokusavimo delsa</string>
   <string name="message_pref_touch_explore_latency">Trumpesnė teksto vedimo fokusavimo delsa reiškia, kad „TalkBack“ pranešimai pateikiami greičiau palietus klaviatūrą.\n\nPasirinkite delsą</string>
   <string name="title_pref_touch_focus_timeout">Fokusavimo delsa</string>
-  <string name="summary_pref_touch_focus_time">
-Valdo, kaip greitai „TalkBack“ kalba perkėlus fokusavimą. Dėl trumpesnės delsos „TalkBack“ veikia greičiau, bet gali būti sunkiau atlikti dvigubus ir trigubus palietimus.\n\n
-Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakeistas į palietimą dviem pirštais, norint suaktyvinti.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Gestų apdorojimas naudojant „TalkBack“</string>
   <string name="toast_pref_talkback_gesture_detection">Išjunkite, tada vėl įjunkite „TalkBack“, kad suaktyvintumėte nustatymą.</string>
   <string name="title_pref_auto_image_captioning">Automatiniai aprašai</string>
@@ -382,28 +332,16 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="dialog_title_turn_on_image_description">Skiltyje „Nustatymai“ įjunkite vaizdų aprašymus</string>
   <string name="dialog_message_turn_on_image_description">Galite pabandyti dar kartą, kai įjungsite automatinius arba išsamius vaizdų aprašymus</string>
   <string name="title_pref_detailed_image_description">Išsamūs vaizdų aprašai</string>
-  <string name="summary_pref_ai_description">Klausykitės ilgesnių aprašų, „TalkBack“ meniu pasirinkę „%1$s“</string>
   <string name="dialog_message_on_device_ai_description">Paryškinę vaizdą palaikomose programose išgirsite trumpą apibūdinimą.\n\nVaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“. \n\nGeneratyvinis DI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su <a href="https://policies.google.com/terms/generative-ai">„Google“ paslaugų teikimo sąlygomis</a></string>
   <string name="enable_gemini">Įjungti</string>
   <string name="powered_by_gemini">Teikia generatyvinis DI</string>
-  <string name="detailed_image_description_ongoing_hint">Gaunamas aprašas</string>
-  <string name="detailed_image_description_result_prefix">Aptikta: vaizdas. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Norint gauti automatinius vaizdų aprašymus, reikia atsisiųsti</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Vaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“.\n\nGeneratyvinis DI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">„Google“ paslaugų teikimo sąlygos</string>
   <string name="message_aifeature_downloading">Atsisiunčiamas DI modelis. Tai gali šiek tiek užtrukti. Baigus gausite pranešimą.</string>
   <string name="message_aifeature_downloading_with_progress">Vis dar vyksta atsisiuntimas. Atsisiųsta %1$d MB iš %2$d MB.</string>
-  <string name="message_aifeature_download_complete">DI modelis atsisiųstas. Dabar „TalkBack“ gali generuoti vaizdų aprašymus.</string>
   <string name="summary_pref_auto_image_captioning">Piktogramoms, vaizdams ir tekstui vaizduose</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Skirta tekstui vaizduose</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Skirta vaizdams ir tekstui vaizduose</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Skirta piktogramoms ir tekstui vaizduose</string>
   <string name="summary_pref_module_downloading">Atsisiunčiama…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Įjungta visiems vaizdams</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Įjungta tik nepažymėtiems vaizdams</string>
   <string name="summary_pref_auto_image_captioning_disabled">Išjungta</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Įjungta visoms piktogramoms</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Įjungta tik nepažymėtoms piktogramoms</string>
   <string name="summary_pref_auto_icon_detection_disabled">Išjungta</string>
   <string name="title_pref_enable_auto_image_caption">Visi vaizdai</string>
   <string name="title_pref_enable_auto_image_caption_arg">Visi vaizdai\n%1$s</string>
@@ -413,7 +351,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="title_pref_enable_auto_icon_detection">Visos piktogramos</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Tik nepažymėtos piktogramos</string>
   <string name="title_pref_disable_auto_icon_detection">Neapibūdinti piktogramų</string>
-  <string name="dialog_message_on_device_ai_model_download">Paryškinę vaizdą palaikomose programose išgirsite trumpą apibūdinimą.\n\nVaizdai apdorojami jūsų įrenginyje ir niekada nesiunčiami „Google“.\n\nGeneratyvinis DI yra eksperimentinis, todėl gali daryti klaidų. Tęsdami sutinkate su %1$s.</string>
   <string name="title_pref_enable_gemini_support">Įjungti</string>
   <string name="title_pref_disable_gemini_support">Išjungti</string>
   <string name="summary_pref_gemini_support_enabled">„Gemini“ įgalinta</string>
@@ -457,7 +394,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="shortcut_print_node_tree">Spausdinti mazgų medį</string>
   <string name="shortcut_print_performance_stats">Spausdinti našumo statistiką</string>
   <string name="shortcut_first_in_screen">Paryškinti pirmą elementą ekrane</string>
-  <string name="shortcut_summary">Padaryti ekrano išdėstymo santrauką</string>
   <string name="shortcut_voice_commands">Pradėti komandą balsu</string>
   <string name="shortcut_last_in_screen">Paryškinti paskutinį elementą ekrane</string>
   <string name="shortcut_enable_dimming">Slėpti ekraną</string>
@@ -561,7 +497,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="menu_category_web_navigation">Žiniatinklio naršymas</string>
   <string name="menu_category_basic_navigation">Paprastas naršymas</string>
   <string name="summary_custom_action">Rodoma, kai yra dabartinio elemento veiksmų, įskaitant nuorodas, kopijavimą, įklijavimą, pasirinkimą ir kt.</string>
-  <string name="summary_context_menu_links">Atidarykite paryškinto elemento nuorodas</string>
   <string name="summary_viewpager_controls">Eikite į kitą arba ankstesnį puslapį. Rodoma, kai skaitote kelių puslapių turinį.</string>
   <string name="summary_labeling_controls">Rodoma, kai pasirenkate nepažymėtą elementą</string>
   <string name="summary_granularity">Skaitykite po vieną simbolį, žodį, eilutę ir kt.</string>
@@ -631,12 +566,9 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="summary_screen_overview">Apibendrinkite ekrano turinį naudodami veiksmų mygtukus</string>
   <string name="summary_screen_overview_no_actions">Klausyti ekrane rodomos informacijos santraukos</string>
   <string name="summary_image_caption">Ištarti pasirinkto vaizdo tekstą ir piktogramas</string>
-  <string name="summary_summarize_view">Pateikite rodinio suvestinę balsu</string>
   <string name="summary_typo_suggestions">Rodoma, kai žymeklis yra ant rašybos klaidos</string>
   <string name="summary_cache_keyboard_keys">„TalkBack“ iš anksto įkelia pranešimus, kad sumažintų delsą, kai vedate tekstą</string>
   <string name="summary_cache_keyboard_keys_disabled">Naudokite „Google“ teksto į kalbą funkciją, kad galėtumėte naudoti šią funkciją</string>
-  <string name="value_direction_down">žemyn</string>
-  <string name="value_direction_down_and_right">žemyn, tada dešinėn</string>
   <string name="title_pref_shortcut_up">Perbraukti aukštyn</string>
   <string name="title_pref_shortcut_up_xr">Nedomin. rankos delno pasuk. į save, pirštų suėm. ir perbrauk. aukštyn</string>
   <string name="title_pref_shortcut_down">Perbraukti žemyn</string>
@@ -704,10 +636,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="title_pref_shortcut_fingerprint_left">Perbraukite kairėn kontr. kodo jutikliu</string>
   <string name="title_pref_shortcut_fingerprint_right">Perbraukite dešinėn kontr. kodo jutikliu</string>
   <string name="title_pref_version_code">Versijos kodas</string>
-  <string formatted="false" name="value_volume_100_percent">Sulyginti kalbos garsumą</string>
-  <string formatted="false" name="value_volume_75_percent">75 proc. kalbos garsumo</string>
-  <string formatted="false" name="value_volume_50_percent">50 proc. kalbos garsumo</string>
-  <string formatted="false" name="value_volume_25_percent">25 proc. kalbos garsumo</string>
   <string name="value_type_confirmation_double_tap">Laikydami pirštą pasirinkite bet kurį klavišą, tada dukart palieskite</string>
   <string name="value_type_confirmation_lift_to_type">Laikydami pirštą pasirinkite raidės klavišą, tada pakelkite pirštą. Kitus klavišus dukart palieskite.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Laikydami pirštą pasirinkite bet kurį klavišą, tada pakelkite pirštą</string>
@@ -720,12 +648,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="value_touch_explore_time_out_200ms">0,2 sek.</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sek.</string>
   <string name="value_touch_explore_time_out_300ms">0.3 sek. (numatytasis nustatymas)</string>
-  <string name="value_shake_to_read_disabled">Išjungta</string>
-  <string name="value_shake_to_read_threshold_very_light">Labai švelniai</string>
-  <string name="value_shake_to_read_threshold_light">Švelniai</string>
-  <string name="value_shake_to_read_threshold_medium">Vidutiniškai</string>
-  <string name="value_shake_to_read_threshold_hard">Smarkiai</string>
-  <string name="value_shake_to_read_threshold_very_hard">Labai smarkiai</string>
   <string name="title_pref_on_screen_keyboard">Ekrano klaviatūra</string>
   <string name="title_pref_physical_keyboard">Fizinė klaviatūra</string>
   <string name="value_keyboard_echo_none">Nėra</string>
@@ -738,8 +660,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="pref_time_feedback_format_entries_default">Naudoti įrenginio laiko formatą</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 val.</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 val.</string>
-  <string name="notification_title_talkback_gestures_changed">„TalkBack“ gestai pasikeitė</string>
-  <string name="notification_message_talkback_gestures_changed">Palieskite, kad peržiūrėtumėte pritaikymo neįgaliesiems gestų pakeit.</string>
   <string name="always_show_warning_checkbox">Visada rodyti šį įspėjimą</string>
   <string name="label_dialog_title_add">Pridėkite etiketę</string>
   <string name="label_dialog_title_edit">Redaguokite etiketę</string>
@@ -760,16 +680,8 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="no_apps_to_export_labels">Nerasta jokių programų etiketėms eksportuoti.</string>
   <string name="label_choose_app_to_import">Pasirinkite programą etiketėms importuoti:</string>
   <string name="label_choose_app_to_export">Pasirinkite programą, kurią naudodami eksportuosite etiketes:</string>
-  <string name="talkback_gesture_change_details">Ši „TalkBack“ versija apima numatytųjų pritaikymo neįgaliesiems gestų pakeitimus. Su šiais gestais susietus veiksmus galima tinkinti „TalkBack“ nustatymuose. Kai įgalintas naršymas paliečiant, kad atliktumėte tam tikrus veiksmus, galite naudoti toliau nurodytus gestus.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Slėpti ekraną?</string>
   <string name="dialog_message_dim_screen">Ekranas išjungiamas siekiant pagerinti privatumą. Kai kurie turinio elementai vis tiek gali būti rodomi, pvz., pranešimai apie ekrano įjungimą arba pritaikymo neįgaliesiems funkcijų, pvz., „TalkBack“, meniu.</string>
-  <string name="talkback_built_in_gesture_change_details">Ši „TalkBack“ versija apima numatytųjų pritaikymo neįgaliesiems gestų pakeitimus.\n\nGestu „aukštyn, tada žemyn“ pereisite prie pirmojo ekrano elemento, o gestu „žemyn, tada aukštyn“ pereisite prie paskutinio elemento.\n\nSkaitymo detalumą dabar galite pakeisti išryškinę elementą ir „TalkBack“ kontekstiniame meniu pasirinkę detalumą.\n\nŠių gestų atliekamus veiksmus galite keisti „TalkBack“ nustatymuose.</string>
-  <string name="default_action_changed_details">Jei norite pristabdyti ir leisti mediją, dabar galite dukart paliesti ir palaikyti dviem pirštais.\n\nKiti gestai taip pat buvo pakeisti.</string>
-  <string name="talkback_built_in_gesture_open_url">Atidaryti telefone ir sužinoti daugiau</string>
-  <string name="talkback_built_in_gesture_change_details_45">Šios versijos „TalkBack“ atlikta numatytųjų pritaikymo neįgaliesiems gestų pakeitimų.\n\nAtlikus gestą aukštyn dabar perkeliama į ankstesnį naršymo nustatymą, o atlikus gestą žemyn dabar perkeliama į kitą naršymo nustatymą.</string>
-  <string name="side_tap_shortcuts_removed_details">Toliau nurodyti nustatymai pašalinti iš „TalkBack“ dėl patikimumo problemų.\n• Palietimo įrenginio ekrano šone gestai.\n• Pakratymas, kad būtų galima pradėti nuosekliai skaityti.</string>
-  <string name="button_accept_changed_gesture_mappings">Priimti gestus</string>
-  <string name="button_customize_gesture_mappings">Tinkinti gestus</string>
   <string name="button_disable_all_events">Išjungti viską</string>
   <string name="button_enable_all_events">Įgalinti viską</string>
   <string name="dialog_title_disable_exploration">Išjungti naršymą paliečiant?</string>
@@ -893,8 +805,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="screen_search_hint_type_search_tables">Ieškokite lentelių</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">„TalkBack“ pranešimų kanalas</string>
-  <string name="pref_selector_summary">%1$s, kad pasirinktumėte nustatymą. Tada %2$s, kad koreguotumėte nustatymą.</string>
-  <string name="speech_rate_change">Kalbėjimo sparta: %1$d %%</string>
   <string name="speech_pitch_maximum">Aukščiausias kalbos tonas</string>
   <string name="speech_pitch_minimum">Žemiausias kalbos tonas</string>
   <string name="reset_speech_rate_and_pitch">Iš naujo nustatyti kalbėjimo greitį ir toną</string>
@@ -904,10 +814,7 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="vibration_feedback_state">Atsakas vibruojant %1$s</string>
   <string name="text_formatting_state">Sakomo teksto formatavimas %1$s</string>
   <string name="typing_echo_change">Fizinės klaviatūros aidas: %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Nedominuojančios rankos delno pasukimas į save, ilgai pasp., kad perj. skaitymo valdiklio režimą.</string>
   <string name="gesture_1_or_2">%1$s arba %2$s</string>
-  <string name="select_setting_hint">%1$s, kad pasirinktumėte kitą nustatymą</string>
-  <string name="adjust_setting_hint">%1$s, kad koreguotumėte nustatymą</string>
   <string name="adjust_granularity_hint">%1$s, kad skaitytumėte pagal: %2$s</string>
   <string name="adjust_typo_hint">%1$s, kad būtų rodomi pasiūlymai.</string>
   <string name="use_action_hint">Dukart palieskite, kad atliktumėte veiksmą</string>
@@ -947,7 +854,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="setting_selector_heading">Skaitymo valdikliai</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Jei norite pristabdyti arba leisti mediją vaizdo įrašų ar muzikos programoje, dukart palieskite dviem pirštais. Išbandykite dabar.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Kitose programose šis gestas gali būti naudojamas įvairiems veiksmams, pvz., atsiliepti į telefono skambutį ar jį baigti. Šis gestas gali būti palaikomas ne visose programose.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Žr. visą „TalkBack“ mokomąją medžiagą</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Medija pristabdyta arba leidžiama. Paprastai bus pristabdytas ar leidžiamas dabartinis vaizdo įrašas arba muzika. Jei norite tęsti, perbraukite į dešinę.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Jei norite laikinai išjungti „TalkBack“ kalbėjimą, palieskite dviem pirštais.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">„TalkBack“ kalba sustabdyta. Paprastai bus sustabdoma šiuo metu„TalkBack“ tariama frazė. Jei norite tęsti, perbraukite į dešinę.</string>
@@ -961,38 +867,18 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Pasirinkimo režimas įjungtas arba išjungtas. Paprastai bus įjungiamas arba išjungiamas pasirinkimo režimas, kai būsite pasirinkę įvesties lauką. Jei norite tęsti, perbraukite į dešinę.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Jei norite naudoti skaitymo valdiklius, perbraukite į kairę arba į dešinę trimis pirštais. Taip pat galite perbraukti aukštyn arba žemyn trimis pirštais.</string>
   <string name="new_shortcut_gesture_note">Pastaba: tinkinote kai kuriuos gestus, todėl ši informacija gali būti ne visai tiksli. Jei norite peržiūrėti gestus, eikite į „TalkBack“ nustatymų skiltį.</string>
-  <string name="welcome_to_android11">Sveiki, tai – 11 versijos „Android“„TalkBack“</string>
   <string name="welcome_to_android11_text">Buvo pridėta naujų gestų, kad „TalkBack“ būtų galima naudoti sparčiau ir paprasčiau.\n\nŠiame ekrane galite išbandyti naujus gestus. Šią informaciją galite bet kuriuo metu peržiūrėti „TalkBack“ nustatymuose.</string>
   <string name="new_gesture_notification_title">Nauji „TalkBack“ gestai</string>
   <string name="new_gesture_notification_content">Palieskite, kad sužinotumėte, kaip sparčiau naudoti „TalkBack“ naudojant naujus gestus.</string>
   <string name="dump_node_tree_description">Mazgų medis pateiktas žurnaluose.</string>
   <string name="report_gesture_description">Čia pateikti neseniai atlikti gestai. Praneškite, kuris gestas netinkamas ir koks buvo numatytas.</string>
-  <string name="update_welcome_text_content">Dabar galite prisijungti prie Brailio rašmenų ekranų naudodami HID – būdą, kaip prisijungti prie „Bluetooth“ įrenginių. Įsitikinkite, kad turite naujausias gamintojo programinės aparatinės įrangos tvarkykles, tada įjunkite „Bluetooth“ Brailio rašmenų ekrane. Eikite į skiltį „TalkBack“ nustatymai“ &gt; „Brailio rašmenų ekranas“ ir įjunkite parinktį „Brailio rašmenų ekrano naudojimas“. Raskite įrenginį įrenginių sąraše ir prisijunkite prie jo.</string>
-  <string name="update_welcome_text_content_tts">Dabar galite prisijungti prie Brailio rašmenų ekranų naudodami HID – būdą, kaip prisijungti prie „Bluetooth“ įrenginių. Įsitikinkite, kad turite naujausias gamintojo programinės aparatinės įrangos tvarkykles, tada įjunkite „Bluetooth“ Brailio rašmenų ekrane. Eikite į „TalkBack“ nustatymus, tada į Brailio rašmenų ekraną ir įjunkite „Brailio rašmenų ekrano naudojimas“. Raskite įrenginį įrenginių sąraše ir prisijunkite prie jo.</string>
-  <string name="update_welcome_text_content_with_link">Sužinokite, kaip naudoti Brailio rašmenų ekraną su „TalkBack“.</string>
   <string name="update_welcome_talkback_16.1">Šiame „TalkBack“ atnaujinime pristatomas ekrano aprašymo palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „TalkBack“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „TalkBack“ nustatymai“ &gt; „Naujos „TalkBack“ funkcijos“.</string>
   <string name="update_welcome_talkback_16.1_tts">Šiame „TalkBack“ atnaujinime pristatomas ekrano aprašymo palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „TalkBack“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „TalkBack“ nustatymai“, tada – „Naujos „TalkBack“ funkcijos“.</string>
-  <string name="describe_screen_and_qna_title">Naujos ekrano aprašymo ir funkcijos „Paklausti „Gemini“ kalbos</string>
-  <string name="describe_screen_and_qna_content">Ekrano aprašymo funkcija ir „Paklausti „Gemini“ dabar pasiekiamos papildomomis kalbomis. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Sužinokite daugiau pagalbos centre&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Spartusis rašymo balsu klavišas</string>
   <string name="shortcut_for_dictation_content">Naudodami „Gboard“ dabar galite dukart palietę ekraną dviem pirštais pradėti arba sustabdyti rašymą balsu.
 &lt;br&gt;
 &lt;br&gt;Įsitikinkite, kad turite naujausią &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;„Gboard“ versiją iš „Google Play“&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Kai „Gboard“ rodoma ekrane, galite dukart palietę ekraną dviem pirštais pradėti diktuoti balsu ir vėl dukart palietę dviem pirštais – sustabdyti.</string>
-  <string name="keyboard_title">Klaviatūra</string>
-  <string name="keyboard_content">Dabar „TalkBack“ klaviatūroje yra „Patobulinta klavišų schema“ su įvairiomis naujomis komandomis ir sparčiaisiais klavišais. Šis patobulinimas, apimantis naršymo režimą, kad būtų galima efektyviau naršyti žiniatinklį, „TalkBack“ naudotojams, kurie naudoja fizinę klaviatūrą, užtikrina paprastesnį naršymą bei sąveiką. Galite perjungti į „Patobulintą klavišų schemą“ skiltyje „TalkBack“ nustatymai“ &gt; „Išplėstiniai nustatymai“ &gt; „Spartieji klavišai“.</string>
-  <string name="keyboard_content_tts">Dabar „TalkBack“ klaviatūroje yra „Patobulinta klavišų schema“ su įvairiomis naujomis komandomis ir sparčiaisiais klavišais. Šis patobulinimas, apimantis naršymo režimą, kad būtų galima efektyviau naršyti žiniatinklį, „TalkBack“ naudotojams, kurie naudoja fizinę klaviatūrą, užtikrina paprastesnį naršymą bei sąveiką. Galite perjungti į „Patobulintą klavišų schemą“ skiltyje „TalkBack“ nustatymai“, „Išplėstiniai nustatymai“ ir „Spartieji klavišai“.</string>
-  <string name="reduce_delay_title">Sumažinkite delsą</string>
-  <string name="reduce_delay_content">Dabar galite sumažinti „TalkBack“ pranešimų delsą, kai naršote liesdami ir rašote. Jei norite peržiūrėti šiuos nustatymus, eikite į skiltį „TalkBack“ nustatymai“ &gt; „Išplėstiniai nustatymai“ &gt; „Sumažinti delsą“.</string>
-  <string name="reduce_delay_content_tts">Dabar galite sumažinti „TalkBack“ pranešimų delsą, kai naršote liesdami ir rašote. Jei norite peržiūrėti šiuos nustatymus, eikite į skiltį „TalkBack“ nustatymai“, pasirinkite „Išplėstiniai nustatymai“ ir „Sumažinti delsą“.</string>
-  <string name="customize_braille_keyboard_improvements_title">Brailio rašto klaviatūros gestų tinkinimas</string>
-  <string name="customize_braille_keyboard_improvements_content">Dabar galima tinkinti virtualiosios Brailio rašto klaviatūros ekrane gestus. Jei norite tinkinti, eikite į skiltį „TalkBack“ nustatymai“ &gt; „Brailio rašto klaviatūra“ &gt; „Gestai“.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Dabar galima tinkinti virtualiosios Brailio rašto klaviatūros ekrane gestus. Jei norite tinkinti, eikite į skiltį „TalkBack“ nustatymai“, tada pasirinkite „Brailio rašto klaviatūra“ ir „Gestai“.</string>
-  <string name="learn_more_about_braille_keyboard">Sužinokite daugiau apie Brailio rašto klaviatūrą</string>
-  <string name="other_changes_title">Kiti pakeitimai</string>
-  <string name="other_changes_content">Dabar ekrane rodomas pranešimas padeda greitai išjungti „TalkBack“, jei ji įjungiama netyčia. Galite tai išjungti skiltyje „TalkBack“ nustatymai“ &gt; „Rodyti „TalkBack“ išjungimo instrukcijas“.</string>
-  <string name="other_changes_content_tts">Dabar ekrane rodomas pranešimas padeda greitai išjungti „TalkBack“, jei ji įjungiama netyčia. Galite tai išjungti skiltyje „TalkBack“ nustatymai“ &gt; „Rodyti „TalkBack“ išjungimo instrukcijas“.</string>
-  <string name="keymap_changes_content">Klasikinė klavišų schema pakeista į numatytąją klavišų schemą, kuri apima daugiau sparčiųjų klavišų.</string>
   <string name="announcing_text_formatting_title">Pranešimas apie teksto formatavimą</string>
   <string name="announcing_text_formatting_header">Dabar „TalkBack“ gali pranešti apie teksto formatavimo pakeitimus, pvz., pusjuodį šriftą ar kursyvą, bei teksto spalvą. Jei norite pradėti, atlikite toliau nurodytus veiksmus.</string>
   <string name="announcing_text_formatting_option1">Pasirinkite formatuotą elementą, atidarykite „TalkBack“ meniu ir pasirinkite „Apibūdinti teksto formatavimą“ arba</string>
@@ -1083,7 +969,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="additional_tips_link_subtext">Sužinokite, kaip skambinti, siųsti pranešimus ir kt.</string>
   <string name="practice_gestures_link_text">Gestų mokymasis</string>
   <string name="practice_gestures_link_subtext">Išbandykite skirtingus gestus, kad sužinotumėte, kokius veiksmus galima atlikti naudojant konkretų gestą</string>
-  <string name="help_and_feedback_link_subtext">Sužinokite daugiau apie „TalkBack“ ir siųskite atsiliepimus</string>
   <string name="choose_tutorial_title">Pasirinkite, kaip norite sąveikauti su „TalkBack“</string>
   <string name="touch_tutorial_button">Lietimo mokomoji medžiaga</string>
   <string name="keyboard_tutorial_button">Klaviatūros mokomoji medžiaga</string>
@@ -1229,8 +1114,6 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="wear_training_typing_text5">Išbandykite toliau.</string>
   <string name="wear_training_typing_practice_button_content_description">Teksto vedimas klaviatūra</string>
   <string name="wear_training_end_tutorial_title">Esate pasirengę pradėti naudoti „TalkBack“</string>
-  <string name="talkback_updated_notification_title">„TalkBack“ buvo atnaujinta</string>
-  <string name="talkback_updated_notification_content">Palieskite, kad sužinotumėte daugiau</string>
   <string name="wear_new_feature_page_title">Sveiki! Tai – atnaujinta „TalkBack“</string>
   <string name="wear_new_feature_page_content">Pastebėsite kelis riktų pataisymus ir paryškinimo perkėlimo pakeitimus</string>
   <string name="wear_new_feature_page_button_content_description">Baigti</string>
@@ -1249,10 +1132,7 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="title_pref_blue">Mėlyna</string>
   <string name="title_pref_grey">Pilka</string>
   <string name="survey_setting_title">Bendrinti atsiliepimus</string>
-  <string name="survey_closed">Apklausa uždaryta</string>
   <string name="title_summarize_view">Aprašykite ekraną</string>
-  <string name="title_increase_touch_focus_latency">Padidinti fokusavimo delsą</string>
-  <string name="title_decrease_touch_focus_latency">Sumažinti fokusavimo delsą</string>
   <string name="detected_result">Aptikta: %1$s</string>
   <string name="title_image_caption">Vaizdo apibūdinimas</string>
   <string name="image_caption_with_gemini_prefix">Apibūdink šį vaizdą. Atsakyme nenaudok žymėjimo.</string>
@@ -1279,33 +1159,15 @@ Jei delsa bus mažesnė nei 0,3 sek., dvigubas suaktyvinimo palietimas bus pakei
   <string name="image_qna_question_prefix">NAUDOTOJAS: %1$s</string>
   <string name="image_qna_answer_prefix">MODELIS: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Tęsti NAUDOTOJO ir MODELIO eilės keitimą] ...</string>
-  <string name="screen_overview_with_screenshot">Jūsų užduotis – padėti asmeniui, kuris nemato savo telefono, suprasti, kas yra jo telefono ekrane. Keliais sakiniais apibūdinkite šią ekrano kopiją.
-
-Instrukcijos
-Pradėkite atsakymą fraze „Ekrane rodoma“
-Atsakymo pradžioje turėtų būti apibūdintas svarbiausias, ryškiausias ekrane pateiktas turinys. Toliau pateikiami keli pavyzdžiai, koks gali būti svarbiausias, ryškiausias turinys, kurį reikia apibūdinti.
-* Pokalbių programoje: naujausio pranešimo siuntėjas ir tekstas.
-* Socialinės medijos programoje: pirmasis įrašas, įskaitant tai, kas jį paskelbė, tekstą ir vaizdo aprašą.
-* Naujienų programoje: straipsnio pavadinimas ir pagrindinio vaizdo aprašas.
-* Apsipirkimo programoje: rodomo produkto aprašas ir kaina.
-* Kalendoriaus programoje: kitas įvykis ir kiek kitų įvykių rodoma vėliau.
-* Pranešimų sąraše: pirmojo pranešimo pavadinimas ir peržiūra, o tada tik kelių kitų sąraše esančių pranešimų pavadinimai ir kiek yra neperskaitytų pranešimų.
-
-Po to atsakyme galima apibūdinti naršymo juostų ir svarbių mygtukų erdvinę vietą bei paskirtį.
-Neįtraukite viršuje esančios būsenos juostos turinio (pvz., laiko, tinklo būsenos, akumuliatoriaus).
-Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="title_gemini_opt_in_dialog">Gauti išsamius vaizdų aprašymus?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Gauti vaizdų aprašus?</string>
   <string name="title_gemini_result_dialog">Aptikta: vaizdas</string>
   <string name="title_gemini_result_bottom_sheet">Vaizdo aprašas</string>
   <string name="title_gemini_screen_overview_result_dialog">Ekrano aprašas</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Suvestinė</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Veiksmai</string>
   <string name="positive_button_gemini_opt_in_dialog">Įjungti</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Sutinku</string>
   <string name="negative_button_gemini_opt_in_dialog">Ne, ačiū</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Eiti į nustatymus</string>
-  <string name="positive_button_gemini_download_dialog">Atsisiųsti ir įjungti</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Tekstas, „%1$s“.</string>
   <string name="detected_icon_label">Piktograma, „%1$s“.</string>
@@ -1319,8 +1181,6 @@ Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="screen_overview_no_result">Nepavyko apibendrinti ekrano turinio</string>
   <string name="image_caption_no_result">Vaizdo apibūdinti nepavyko</string>
   <string name="image_caption_with_hide_screen">Vaizdų aprašai nepasiekiami, kai ekranas paslėptas. Rodykite ekraną ir bandykite dar kartą.</string>
-  <string name="feedback_button_state_set">pasirinkta</string>
-  <string name="feedback_button_state_unset">nepasirinkta</string>
   <string name="action_text_like_button">Pažymėti kaip gerą atsakymą</string>
   <string name="action_text_dislike_button">Pažymėti kaip blogą atsakymą</string>
   <string name="action_text_clear_like_button">Išvalyti gerą atsakymą</string>
@@ -1349,18 +1209,13 @@ Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="downloading_all_image_captioning_hint">Atsisiunčiami automatiniai vaizdų ir piktogramų apibūdinimai</string>
   <string name="download_all_image_captioning_successful_hint">Automatiniai vaizdų ir piktogramų apibūdinimai atsisiųsti</string>
   <string name="download_all_image_captioning_failed_hint">Atsisiųsti nepavyko. Bandykite dar kartą vėliau.</string>
-  <string name="download_complete_notification_title">Atsisiuntimas baigtas</string>
-  <string name="download_complete_notification_content">Dabar naudodami „TalkBack“ girdėsite automatinius vaizdų ir piktogramų aprašus</string>
-  <string name="download_complete_notification_action">Nustatymai</string>
   <string name="download_storage_error_hint">Saugykla pilna. Jei norite atsisiųsti, atlaisvinkite %1$d MB, apsilankę skiltyje „Nustatymai“ &gt; „Saugykla“.</string>
   <string name="download_network_error_hint">Atsisiųsti nepavyko. Patikrinkite ryšį ir bandykite dar kartą.</string>
   <string name="switch_icon_detection_dialog_title">Automatiniai piktogramų aprašymai</string>
   <string name="switch_icon_detection_dialog_message">Suaktyvinę piktogramą girdėsite aprašus</string>
   <string name="switch_image_description_dialog_message">Suaktyvinę vaizdą girdėsite apibūdinimus. Kai kuriose programose ši funkcija gali būti nepalaikoma.</string>
-  <string name="switch_text_recognition_dialog_title">Automatiniai teksto vaizduose aprašai</string>
   <string name="switch_text_recognition_dialog_message">Suaktyvinę vaizdą, kuriame yra teksto, girdėsite aprašus</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Atsisiųsta</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Vis tiek galite gauti pasirinkto teksto aprašus iš „TalkBack“ meniu</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Gerai</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Ištrinti atsisiuntimą</string>
   <string name="delete_icon_detection_dialog_title">Ištrinti automatinius piktogramų apibūdinimus?</string>
@@ -1376,11 +1231,6 @@ Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="gemini_enable_dialog_title">„Gemini“ naudojimas sistemoje „TalkBack“</string>
   <string name="gemini_disable_dialog_message">Ekrano elementų paaiškinimas naudojant „Gemini“</string>
   <string name="disable_gemini_dialog_subtext">Įjunkite, kad įgalintumėte ekrano elementų paaiškinimą naudojant „Gemini“</string>
-  <string name="ai_services_update_dialog_title">Atnaujinkite programą „%1$s“, kad galėtumėte aprašyti vaizdus</string>
-  <string name="ai_services_update_dialog_message">Jei norite girdėti vaizdų aprašus, gaukite naujausios versijos „%1$s“ iš „Google Play“.\n\nKai atsisiuntimas bus baigtas, sugrįžkite į „TalkBack“ nustatymus ir vėl įjunkite automatinius vaizdų aprašus.</string>
-  <string name="ai_services_update_dialog_button_text">Eiti į „Google Play“</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Kažkas nepavyko. Bandykite dar kartą.</string>
   <string name="gemini_block_message">Nepavyksta apdoroti šio vaizdo</string>
   <string name="gemini_network_error">Nėra interneto ryšio. Patikrinkite „Wi-Fi“ arba mobiliojo ryšio tinklą ir bandykite dar kartą.</string>
@@ -1396,13 +1246,8 @@ Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="image_qna_typing_button_text">Įvesti klausimą „Gemini“</string>
   <string name="image_qna_send_button_text">Klausti</string>
   <string name="image_qna_speak_question_description">Pasakykite klausimą</string>
-  <string name="overviews_summary_intro">Šios programos ekrano suvestinė: %1$s</string>
   <string name="overviews_node_not_found">Deja, nebegaliu rasti šios ekrano dalies.</string>
-  <string name="overviews_images_in_app">Rasti pagrindiniai vaizdai</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Veiksmai programoje</string>
-  <string name="overviews_actions_in_app_description">Toliau pateikiami pagrindiniai veiksmai, kuriuos galite atlikti šiame programos ekrane.</string>
-  <string name="overviews_parent_type">Veiksmai programoje</string>
   <string name="text_replaced_feedback">Tekstas pakeistas</string>
   <string name="switch_gesture_set">Perjungti gestų rinkinį</string>
   <string name="switch_gesture_set_to">Perjungti į gestų rinkinį %1$d</string>
@@ -1453,5 +1298,4 @@ Atsakyme nenaudok jokių žymėjimų.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Uždaryti</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Jei norite girdėti pranešimus, kai ekranas išjungtas, „TalkBack“ daugiažodiškumo nustatymuose įjunkite parinktį „Ištarti pranešimus, kai ekranas išjungtas“</string>
 </resources>

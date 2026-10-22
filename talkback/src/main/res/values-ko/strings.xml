@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack을 사용 설정하면 음성 피드백이 제공되어 화면을 보지 않고도 기기를 사용할 수 있습니다. TalkBack은 화면을 보기 어려운 상황 또는 사용자를 위해 제작되었습니다.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack 사용 방법&lt;/b&gt;&lt;br&gt;• 오른쪽 또는 왼쪽으로 스와이프하여 항목 간 이동&lt;br&gt;• 두 번 탭하여 항목 활성화&lt;br&gt;• 손가락 2개를 드래그하여 스크롤&lt;br&gt;&lt;b&gt;TalkBack 사용 중지 방법&lt;/b&gt;&lt;br&gt;1. 설정에서 &lt;b&gt;TalkBack 사용&lt;/b&gt;을 탭합니다. 그러면 윤곽선이 표시됩니다. 두 번 탭합니다.&lt;br&gt;2. 확인 메시지가 표시되면 &lt;b&gt;중지&lt;/b&gt;를 탭합니다. 그러면 윤곽선이 표시됩니다. 두 번 탭합니다.</string>
   <string name="talkback_service_summary">스크린 리더를 사용하여 항목을 소리 내어 듣습니다</string>
   <string name="talkback_preferences_title">TalkBack 설정</string>
-  <string name="talkback_settings_screen_title_breadcrumb">설정</string>
   <string name="tts_preferences_title">TTS(텍스트 음성 변환)</string>
   <string name="language_options">언어</string>
   <string name="spoken_language">음성 언어</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">검색이 취소되었습니다.</string>
   <string name="notification_type_status_started">시작됨</string>
   <string name="notification_type_status_stopped">중지됨</string>
-  <string name="notification_type_status_connected">연결됨</string>
-  <string name="notification_battery_level_unknown">알 수 없음</string>
   <string name="notification_battery_saver_mode">절전 모드 사용 중</string>
   <string name="template_no_text_selected">선택된 텍스트가 없습니다.</string>
   <string name="template_charging">충전 %1$s 배터리 수준 %2$s퍼센트</string>
   <string name="template_charging_lite">충전 %1$s</string>
-  <string name="template_battery_state">전원 %1$s %2$s퍼센트 %3$s</string>
   <string name="template_language_options_menu_item">%1$s(%2$s)</string>
   <string name="value_ringer_vibrate">벨소리가 진동입니다.</string>
   <string name="value_ringer_silent">벨소리가 무음입니다.</string>
   <string name="value_screen_on">화면 켜짐</string>
   <string name="value_screen_off">화면이 꺼집니다.</string>
   <string name="value_device_unlocked">기기가 잠금 해제되었습니다.</string>
-  <string name="title_pref_category_audio">오디오</string>
   <string name="title_pref_speech_volume">음성 볼륨</string>
-  <string name="title_pref_speech_rate">말하기 속도</string>
-  <string name="summary_pref_speech_rate">텍스트를 읽어주는 속도</string>
   <string name="title_pref_verbose_scroll_announcement">목록의 항목 개수 항상 소리 내어 읽기</string>
   <string name="summary_pref_verbose_scroll_announcement">모든 스크롤 방식에서 항목 개수를 소리 내어 읽습니다.</string>
   <string name="title_pref_cover_proximity_sensor">근접 센서를 덮어 음성 출력 중지</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">음성 시간 알림</string>
   <string name="pref_speak_time_summary">화면을 켤 때</string>
   <string name="summary_speak_container_element_positions">기존 목록, 그리드, 기타 컨테이너를 입력할 때 정보를 포함합니다.</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">읽기 제어 설정에 포커스 지연 추가됨</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">언제든지 읽기 제어 설정을 사용하고 포커스 지연 시간을 변경하려면 세 손가락으로 스와이프하세요.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">들어올려 입력하기로 전환하시겠습니까?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">입력 포커스 지연이 0.3초 미만으로 설정되면 두 번 탭하여 입력하기가 매우 어려워집니다. 들어올려 입력하기로 자동 전환하려면 \'전환\'을 선택하세요.\n\n들어올려 입력하기를 사용하려면 손가락을 길게 눌러 원하는 키를 선택한 후 들어올려 입력하세요.\n\nTalkBack 설정에서 이 기능을 맞춤설정할 수 있습니다.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">읽기 제어 설정에 입력 포커스 지연이 추가됨</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">입력 중에 두 번 탭하는 데 문제가 있는 경우 세 손가락으로 스와이프하여 읽기 제어 설정을 사용하고 입력 포커스 지연 시간을 더 길게 변경하세요.</string>
-  <string name="gestures_announce_typing_focus_wont_change">입력 포커스 지연은 \'들어올려 입력하기\' 기능이 없으면 작동하지 않습니다.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">확인</string>
   <string name="reset_letency_reduction_settings_dialog_title">지연 설정을 재설정하시겠습니까?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">이렇게 하면 모든 지연 시간 설정이 기본값으로 재설정됩니다.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">재설정</string>
   <string name="gestures_announce_reset_latency_reduction_settings">지연 시간 감소 설정이 재설정되었습니다.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">전환</string>
-  <string name="reduce_focus_delay_settings_cancel_button">전환 안함</string>
   <string name="Reset_gesture_settings_dialog_title">동작을 재설정할까요?</string>
   <string name="Reset_gesture_settings_set_dialog_title">현재 세트의 제스처를 재설정할까요?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">모든 동작이 기본값으로 재설정됩니다.\n\n변경사항이 모두 삭제됩니다.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">모든 진행 상황 업데이트 말하기</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">다운로드, 운전 경로 따르기 등의 작업을 하는 동안의 업데이트가 포함됩니다. 이 기능을 끄면 업데이트 빈도가 줄어듭니다.</string>
   <string name="title_pref_explore_by_touch">터치하여 탐색</string>
-  <string name="title_pref_category_visual">시각 요소</string>
   <string name="title_pref_category_controls">컨트롤</string>
-  <string name="title_pref_category_braille">점자</string>
-  <string name="title_pref_category_general">일반</string>
-  <string name="title_pref_category_advanced">고급</string>
-  <string name="title_pref_category_others">기타</string>
-  <string name="title_pref_category_tutorial_and_help">튜토리얼 및 도움말</string>
   <string name="title_pref_category_reduce_latency_summary">다음 설정을 사용하면 TalkBack 안내 전 지연 시간을 줄일 수 있습니다.</string>
   <string name="reset_latency_settings_title">모든 지연 설정 재설정</string>
   <string name="title_pref_single_tap">한 번 탭하여 활성화</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">초점 표시기 변경</string>
   <string name="title_pref_category_manage_gestures">동작</string>
   <string name="title_pref_manage_labels">맞춤 라벨</string>
-  <string name="title_pref_manage_customize_menus">메뉴 수정</string>
   <string name="title_pref_category_context_menu">TalkBack 메뉴 맞춤설정</string>
   <string name="title_pref_category_selector_menu">읽기 제어 기능 맞춤설정</string>
   <string name="title_pref_category_navigation_menu">탐색 옵션 수정</string>
-  <string name="pref_category_context_menu_summary">TalkBack 메뉴를 사용하려면 세 손가락으로 화면을 탭합니다. 위로 스와이프한 후 오른쪽으로 스와이프하거나 아래로 스와이프한 후 오른쪽으로 스와이프해도 됩니다.</string>
-  <string name="pref_category_context_menu_summary_xr">TalkBack 메뉴를 사용하려면 보조 손의 손바닥이 나를 향한 상태에서 손가락을 모읍니다.</string>
-  <string name="pref_category_context_menu_summary_single_finger">TalkBack 메뉴를 사용하려면 아래로 스와이프한 후 오른쪽으로 스와이프합니다.</string>
-  <string name="pref_category_selector_menu_summary">읽기 제어 기능을 사용하려면 세 손가락을 사용해 왼쪽 또는 오른쪽으로 스와이프합니다. 세 손가락을 사용해 위 또는 아래로 스와이프해도 됩니다.</string>
-  <string name="pref_category_selector_menu_summary_xr">읽기 제어 설정 간에 전환하려면 보조 손의 손바닥이 나를 향하게 하고 손가락을 모은 상태에서 오른쪽이나 왼쪽으로 움직인 다음 손을 놓습니다.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">읽기 제어 기능을 사용하려면 위로 스와이프한 후 아래로 스와이프합니다.</string>
   <string name="title_pref_manage_keyboard_shortcuts">단축키</string>
   <string name="title_pref_export_custom_labels">맞춤 라벨 내보내기</string>
-  <string name="title_pref_play_store">Play 스토어에서 TalkBack 열기</string>
-  <string name="summary_pref_play_store">현재 TalkBack 버전: %1$s</string>
   <string name="title_pref_help_and_feedback">도움말 및 의견</string>
-  <string name="title_pref_gup">Google 장애인 전담 지원팀에 문의하기</string>
-  <string name="subtitle_pref_gup">TalkBack을 사용하여 도움을 받거나 문제를 신고하세요.</string>
-  <string name="pref_item_licenses">오픈소스 라이선스</string>
-  <string name="title_pref_tutorial">튜토리얼</string>
   <string name="title_pref_help">도움말</string>
   <string name="title_pref_show_tos">서비스 약관</string>
   <string name="title_pref_show_privacy_policy">개인정보처리방침</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">지문 동작</string>
   <string name="title_pref_category_tutorial">TalkBack 튜토리얼</string>
   <string name="title_pref_category_help_no_tutorial">도움말</string>
-  <string name="title_pref_category_typing">입력</string>
   <string name="title_pref_advanced_settings">고급 설정</string>
   <string name="title_pref_show_exit_watermark">TalkBack 사용 중지 안내 표시</string>
   <string name="summary_pref_show_exit_watermark">TalkBack이 사용 설정되면 메시지가 표시되어 빠르게 사용 중지할 수 있습니다.</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;일부 특수키가 다릅니다.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">키맵에 대해 자세히 알아보기</string>
   <string name="keycombo_go_to_settings">설정으로 이동</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack에서 클래식 키맵에 제거될 예정입니다. 단축키를 계속 사용하려면 기본 키맵으로 전환하세요.</string>
-  <string name="keycombo_keymap_changes_notifications_action">자세히 알아보기</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">확인</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">설정</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">자세히 알아보기</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">현재 TalkBack 기본 키맵을 사용 중이나, 여러 가지 새로운 명령어를 지원하는 향상된 새 키맵을 이용할 수 있습니다. 고객센터에서 자세히 알아보거나 설정에서 새 키맵으로 전환하세요.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">새 키맵을 사용할 수 있습니다</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">향상된 새 TalkBack 키맵은 여러 가지 새로운 명령어를 지원합니다. 고객센터에서 자세히 알아보거나 설정에서 새 키맵으로 전환하세요.</string>
-  <string name="keycombo_update_modifier_key_warning_title">TalkBack 특수키 업데이트</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">나중에</string>
   <string name="keycombo_warning_content_description">특수키에 관해 자세히 알아보기</string>
-  <string name="keycombo_warning_dialog_title">특수키를 업데이트하세요</string>
-  <string name="keycombo_warning_dialog_message">TalkBack의 단축키가 제대로 작동하도록 하려면 작업에서 특수키를 Alt로 업데이트하세요.\n\n작업 특수키를 계속 사용하면 이 버전의 Android에서 일부 단축키가 다르게 작동합니다.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">키맵</string>
   <string name="keycombo_menu_select_keymap">키맵 선택</string>
   <string name="keycombo_menu_reset_keymap">키맵 재설정</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">음성 볼륨 높이기</string>
   <string name="keycombo_menu_global_speech_volume_decrease">음성 볼륨 줄이기</string>
   <string name="keycombo_menu_global_refocus_current_node">현재 포커스된 항목 말하기</string>
-  <string name="keycombo_menu_category_granularity">탐색</string>
   <string name="keycombo_menu_granularity_increase">다음 탐색 설정</string>
   <string name="keycombo_menu_granularity_decrease">이전 탐색 설정</string>
   <string name="keycombo_menu_category_other">기타 작업</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">이 키맵의 단축키를 기본값으로 재설정하시겠습니까? 이 작업은 취소할 수 없습니다.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">재설정</string>
   <string name="template_keycombo_menu_browse_mode_command">탐색 모드에서 %1$s</string>
-  <string name="keycombo_assign_dialog_instruction">새로운 바로가기를 설정하려면 키 조합을 누르세요. ALT 또는 Control 키가 포함되어야 합니다.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">%1$s 특수키가 포함된 키 조합을 눌러 새로운 단축키를 설정합니다.</string>
   <string name="keycombo_unassigned">지정 안함</string>
   <string name="save_button_in_keycombo_assign_dialog">저장</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">입력 포커스 지연</string>
   <string name="message_pref_touch_explore_latency">입력 포커스 지연 시간이 짧을수록 키보드를 터치한 후 TalkBack 안내가 더 빨리 이루어집니다.\n\n지연 시간 선택</string>
   <string name="title_pref_touch_focus_timeout">포커스 지연</string>
-  <string name="summary_pref_touch_focus_time">
-포커스가 이동한 후 TalkBack이 얼마나 빨리 안내하는지를 제어합니다. 지연 시간이 짧을수록 TalkBack이 더 빠르게 느껴지지만 두 번 탭 및 세 번 탭하기 어려울 수 있습니다.\n\n
-지연 시간이 0.3초 미만이면 두 번 탭하여 활성화가 두 손가락으로 탭하여 활성화로 변경됩니다.
-      </string>
   <string name="title_pref_talkback_gesture_detection">TalkBack 지원 동작 처리</string>
   <string name="toast_pref_talkback_gesture_detection">설정을 활성화하려면 TalkBack을 껐다가 다시 켜보세요.</string>
   <string name="title_pref_auto_image_captioning">자동 설명</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">설정에서 이미지 설명을 사용 설정하세요</string>
   <string name="dialog_message_turn_on_image_description">이미지 자동 설명 또는 자세한 설명 기능을 사용 설정한 후 다시 시도해 보세요.</string>
   <string name="title_pref_detailed_image_description">자세한 이미지 설명</string>
-  <string name="summary_pref_ai_description">TalkBack 메뉴에서 \"%1$s\" 항목을 선택하면 더 긴 설명을 들을 수 있습니다</string>
   <string name="dialog_message_on_device_ai_description">지원되는 앱에서 이미지에 포커스를 맞추면 간략한 설명이 음성으로 제공됩니다.\n\n이미지는 사용자의 기기에서 처리되며 Google로 전송되지 않습니다. \n\n생성형 AI는 실험 기능이기 때문에 실수가 발생할 수 있습니다. 계속하면 <a href="https://policies.google.com/terms/generative-ai">Google 서비스 약관</a>에 동의하는 것으로 간주됩니다.</string>
   <string name="enable_gemini">사용 설정</string>
   <string name="powered_by_gemini">생성형 AI가 제공</string>
-  <string name="detailed_image_description_ongoing_hint">설명 가져오는 중</string>
-  <string name="detailed_image_description_result_prefix">감지됨: 이미지. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">이미지 자동 설명을 사용하려면 다운로드가 필요합니다</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">이미지는 사용자의 기기에서 처리되며 Google로 전송되지 않습니다.\n\n생성형 AI는 실험 기능이기 때문에 실수가 발생할 수 있습니다. 계속 진행하면 %1$s에 동의하는 것으로 간주됩니다.</string>
   <string name="dialog_message_gen_ai_tos_link">Google 서비스 약관</string>
   <string name="message_aifeature_downloading">AI 모델을 다운로드 중입니다. 잠시만 기다려 주세요. 준비되면 알려드리겠습니다.</string>
   <string name="message_aifeature_downloading_with_progress">아직 다운로드가 진행 중입니다. %1$d/%2$dMB가 다운로드되었습니다.</string>
-  <string name="message_aifeature_download_complete">AI 모델이 다운로드되었습니다. 이제 TalkBack에서 이미지 설명을 생성할 수 있습니다.</string>
   <string name="summary_pref_auto_image_captioning">아이콘, 이미지, 이미지에 포함된 텍스트</string>
-  <string name="summary_pref_auto_image_captioning_text_only">이미지에 포함된 텍스트에 대한 설명</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">이미지 및 이미지에 포함된 텍스트에 대한 설명</string>
-  <string name="summary_pref_auto_image_captioning_no_image">아이콘 및 이미지에 포함된 텍스트에 대한 설명</string>
   <string name="summary_pref_module_downloading">다운로드 중…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">모든 이미지에 사용</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">라벨이 지정되지 않은 이미지에만 사용</string>
   <string name="summary_pref_auto_image_captioning_disabled">사용 안함</string>
-  <string name="summary_pref_auto_icon_detection_enabled">모든 아이콘에 사용</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">라벨이 지정되지 않은 아이콘에만 사용</string>
   <string name="summary_pref_auto_icon_detection_disabled">사용 안함</string>
   <string name="title_pref_enable_auto_image_caption">모든 이미지</string>
   <string name="title_pref_enable_auto_image_caption_arg">모든 이미지\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">모든 아이콘</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">라벨이 지정되지 않은 아이콘만</string>
   <string name="title_pref_disable_auto_icon_detection">아이콘 설명 안함</string>
-  <string name="dialog_message_on_device_ai_model_download">지원되는 앱에서 이미지에 포커스를 맞추면 간략한 설명이 음성으로 제공됩니다.\n\n이미지는 사용자의 기기에서 처리되며 Google로 전송되지 않습니다.\n\n생성형 AI는 실험 기능이기 때문에 실수가 발생할 수 있습니다. 계속 진행하면 %1$s에 동의하는 것으로 간주됩니다.</string>
   <string name="title_pref_enable_gemini_support">사용</string>
   <string name="title_pref_disable_gemini_support">사용 안함</string>
   <string name="summary_pref_gemini_support_enabled">Gemini가 사용 설정됨</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">인쇄 노드 트리</string>
   <string name="shortcut_print_performance_stats">실적 통계 인쇄</string>
   <string name="shortcut_first_in_screen">화면의 첫 번째 항목에 포커스</string>
-  <string name="shortcut_summary">화면 레이아웃 요약</string>
   <string name="shortcut_voice_commands">음성 명령 시작</string>
   <string name="shortcut_last_in_screen">화면의 마지막 항목에 포커스</string>
   <string name="shortcut_enable_dimming">화면 숨기기</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">웹 탐색</string>
   <string name="menu_category_basic_navigation">기본 탐색</string>
   <string name="summary_custom_action">링크, 복사, 붙여넣기, 선택 등 현재 항목에 대한 작업이 있을 때 표시</string>
-  <string name="summary_context_menu_links">포커스가 설정된 항목 내에 있는 링크를 엽니다.</string>
   <string name="summary_viewpager_controls">다음 또는 이전 페이지로 이동합니다. 여러 페이지가 있는 콘텐츠를 읽는 경우 표시합니다.</string>
   <string name="summary_labeling_controls">라벨이 지정되지 않은 항목을 선택한 경우 표시합니다.</string>
   <string name="summary_granularity">문자, 단어, 줄 등의 단위로 읽습니다.</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">작업 버튼으로 화면 요약</string>
   <string name="summary_screen_overview_no_actions">화면의 콘텐츠 요약 듣기</string>
   <string name="summary_image_caption">선택된 이미지 내 텍스트와 아이콘을 읽어줍니다.</string>
-  <string name="summary_summarize_view">보기 요약 말하기</string>
   <string name="summary_typo_suggestions">오타 위에 커서를 올려두면 표시됩니다.</string>
   <string name="summary_cache_keyboard_keys">TalkBack은 입력 시 지연 시간을 줄이기 위해 안내를 미리 로드합니다.</string>
   <string name="summary_cache_keyboard_keys_disabled">Google TTS(텍스트 음성 변환)를 사용해 이 기능을 이용합니다.</string>
-  <string name="value_direction_down">아래쪽</string>
-  <string name="value_direction_down_and_right">아래쪽 오른쪽 순</string>
   <string name="title_pref_shortcut_up">위로 스와이프</string>
   <string name="title_pref_shortcut_up_xr">보조 손의 손바닥이 나를 향한 상태에서 손가락을 모은 후 위로 스와이프</string>
   <string name="title_pref_shortcut_down">아래로 스와이프</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">지문 센서에서 왼쪽으로 스와이프</string>
   <string name="title_pref_shortcut_fingerprint_right">지문 센서에서 오른쪽으로 스와이프</string>
   <string name="title_pref_version_code">버전 코드</string>
-  <string formatted="false" name="value_volume_100_percent">음성 볼륨과 일치</string>
-  <string formatted="false" name="value_volume_75_percent">음성 볼륨의 75%</string>
-  <string formatted="false" name="value_volume_50_percent">음성 볼륨의 50%</string>
-  <string formatted="false" name="value_volume_25_percent">음성 볼륨의 25%</string>
   <string name="value_type_confirmation_double_tap">키 선택 후 두 번 탭하기</string>
   <string name="value_type_confirmation_lift_to_type">글자 키 선택 후 떼기. 글자 이외의 키는 두 번 탭하기</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">키 선택 후 떼기</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0.2초</string>
   <string name="value_touch_explore_time_out_250ms">0.25초</string>
   <string name="value_touch_explore_time_out_300ms">0.3초(기본값)</string>
-  <string name="value_shake_to_read_disabled">사용 안함</string>
-  <string name="value_shake_to_read_threshold_very_light">매우 약하게</string>
-  <string name="value_shake_to_read_threshold_light">약하게</string>
-  <string name="value_shake_to_read_threshold_medium">중간</string>
-  <string name="value_shake_to_read_threshold_hard">세게</string>
-  <string name="value_shake_to_read_threshold_very_hard">매우 세게</string>
   <string name="title_pref_on_screen_keyboard">터치 키보드</string>
   <string name="title_pref_physical_keyboard">물리적 키보드</string>
   <string name="value_keyboard_echo_none">없음</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">기기 시간 형식 사용</string>
   <string name="pref_time_feedback_format_entries_12_hour">12시간</string>
   <string name="pref_time_feedback_format_entries_24_hour">24시간</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack 동작이 변경됨</string>
-  <string name="notification_message_talkback_gestures_changed">접근성 동작 변경사항을 검토하려면 탭하세요.</string>
   <string name="always_show_warning_checkbox">이 경고를 항상 표시</string>
   <string name="label_dialog_title_add">라벨 추가</string>
   <string name="label_dialog_title_edit">라벨 수정</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">라벨을 내보낼 때 사용할 수 있는 애플리케이션이 없습니다.</string>
   <string name="label_choose_app_to_import">라벨을 가져올 때 사용할 애플리케이션을 선택하세요.</string>
   <string name="label_choose_app_to_export">라벨을 내보낼 애플리케이션 선택:</string>
-  <string name="talkback_gesture_change_details">해당 버전의 TalkBack에서는 기본 접근성 동작이 변경되었습니다. 이 동작과 관련된 작업은 TalkBack 설정에서 맞춤설정할 수 있습니다. \'터치하여 탐색\'을 사용 설정하면 다음 동작을 사용하여 특정 작업을 수행할 수 있습니다.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">화면을 숨기시겠습니까?</string>
   <string name="dialog_message_dim_screen">이렇게 하면 개인 정보 보호를 위해 디스플레이가 꺼집니다. 디스플레이를 다시 켜는 메시지 또는 TalkBack과 같은 접근성 기능을 위한 메뉴와 같은 일부 콘텐츠는 계속 표시될 수 있습니다.</string>
-  <string name="talkback_built_in_gesture_change_details">이번 TalkBack 버전에서는 기본 접근성 동작이 변경되었습니다.\n\n이제 위로 스와이프한 다음 아래로 스와이프하면 화면의 첫 번째 항목으로 이동하고 아래로 스와이프한 다음 위로 스와이프하면 마지막 항목으로 이동합니다.\n\n이제 항목에 포커스를 설정한 다음 TalkBack 컨텍스트 메뉴에서 단위를 선택하여 읽기 단위를 변경할 수 있습니다.\n\nTalkBack 설정에서 이러한 동작으로 실행되는 작업을 변경할 수 있습니다.</string>
-  <string name="default_action_changed_details">미디어를 일시중지 및 재생하려는 경우 이제 두 손가락을 사용해 두 번 탭한 후 길게 누르면 됩니다.\n\n다른 동작도 변경되었습니다.</string>
-  <string name="talkback_built_in_gesture_open_url">자세히 알아보려면 휴대전화에서 여세요</string>
-  <string name="talkback_built_in_gesture_change_details_45">이 TalkBack 버전에는 기본 접근성 동작 변경사항이 포함되어 있습니다.\n\n이제 위로 올리는 동작을 하면 이전 탐색 설정으로 이동하고 아래로 내리는 동작을 하면 다음 탐색 설정으로 이동합니다.</string>
-  <string name="side_tap_shortcuts_removed_details">이러한 설정은 안정성 문제로 인해 TalkBack에서 삭제되었습니다.\n• 기기 측면을 탭하는 동작\n• 흔들어서 계속 읽기</string>
-  <string name="button_accept_changed_gesture_mappings">동작 추천 동의</string>
-  <string name="button_customize_gesture_mappings">동작 맞춤설정</string>
   <string name="button_disable_all_events">모두 사용 안함</string>
   <string name="button_enable_all_events">모두 사용</string>
   <string name="dialog_title_disable_exploration">\'터치하여 탐색\'을 사용 중지하시겠습니까?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">표 검색</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">TalkBack의 알림 채널</string>
-  <string name="pref_selector_summary">%1$s하여 설정을 선택합니다. 그런 다음 %2$s하여 설정을 조정합니다.</string>
-  <string name="speech_rate_change">말하기 속도 %1$d%%</string>
   <string name="speech_pitch_maximum">가장 높은 음성 피치</string>
   <string name="speech_pitch_minimum">가장 낮은 음성 피치</string>
   <string name="reset_speech_rate_and_pitch">말하기 속도 및 음 높이 재설정</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">진동 피드백 %1$s</string>
   <string name="text_formatting_state">텍스트 소리 내어 읽기 서식 %1$s</string>
   <string name="typing_echo_change">실제 키보드 사용 시 %1$s 에코</string>
-  <string name="reading_control_toggle_prefix_xr">읽기 제어 설정 모드를 전환하려면 보조 손의 손바닥이 나를 향한 상태에서 길게 누릅니다.</string>
   <string name="gesture_1_or_2">%1$s 또는 %2$s</string>
-  <string name="select_setting_hint">%1$s하여 다른 설정을 선택합니다</string>
-  <string name="adjust_setting_hint">%1$s하여 설정을 조정합니다</string>
   <string name="adjust_granularity_hint">%1$s하여 %2$s 단위로 읽습니다</string>
   <string name="adjust_typo_hint">제안을 보려면 %1$s하세요.</string>
   <string name="use_action_hint">작업을 수행하려면 두 번 탭하세요.</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">읽기 제어 설정</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">동영상 또는 음악 앱에서 미디어를 일시중지하거나 재생하려면 두 손가락으로 두 번 탭합니다. 지금 해 보세요.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">다른 앱에서 전화 받기 또는 통화 종료와 같은 작업에 이 동작을 사용할 수도 있습니다. 일부 앱에서는 이 동작이 지원되지 않을 수 있습니다.</string>
-  <string name="onboarding_link_to_talkback_tutorials">모든 TalkBack 튜토리얼 보기</string>
   <string name="new_shortcut_gesture_pause_media_announcement">미디어가 일시중지되었거나 재생 중입니다. 일반적으로 이 동작은 현재 동영상이나 음악을 일시중지하거나 재생합니다. 계속하려면 오른쪽으로 스와이프하세요.</string>
   <string name="new_shortcut_gesture_stop_speech_text">TalkBack의 음성 안내를 잠시 중지하려면 두 손가락으로 탭합니다.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack의 음성 안내를 중지했습니다. 일반적으로 이 동작은 TalkBack에서 안내 중이던 내용을 중지합니다. 계속하려면 오른쪽으로 스와이프하세요.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">선택 모드를 사용하거나 사용 중지했습니다. 일반적으로 이 동작은 입력란에 포커스가 있는 경우에 텍스트 선택 모드를 시작하거나 종료합니다. 계속하려면 오른쪽으로 스와이프하세요.</string>
   <string name="new_shortcut_gesture_reading_menu_text">읽기 제어 기능을 사용하려면 세 손가락을 사용해 왼쪽 또는 오른쪽으로 스와이프합니다. 세 손가락을 사용해 위 또는 아래로 스와이프해도 됩니다.</string>
   <string name="new_shortcut_gesture_note">참고: 동작 중 일부를 맞춤설정했으므로 이 정보가 정확하지 않을 수 있습니다. 동작을 검토하려면 TalkBack 설정으로 이동하세요.</string>
-  <string name="welcome_to_android11">Android 11의 TalkBack을 소개합니다</string>
   <string name="welcome_to_android11_text">TalkBack을 더 빠르고 쉽게 사용할 수 있도록 새로운 동작이 추가되었습니다.\n\n이 화면에서 새로운 동작을 해볼 수 있습니다. 언제든지 TalkBack 설정에서 이 정보를 다시 확인할 수 있습니다.</string>
   <string name="new_gesture_notification_title">TalkBack의 새로운 동작</string>
   <string name="new_gesture_notification_content">탭하여 새로운 동작으로 TalkBack을 빠르게 사용하는 방법을 알아보세요.</string>
   <string name="dump_node_tree_description">노드 트리가 로그에 인쇄되었습니다.</string>
   <string name="report_gesture_description">다음은 최근 사용한 동작입니다. 어떤 동작에 문제가 있었으며 정상적인 동작은 무엇인지 알려 주세요.</string>
-  <string name="update_welcome_text_content">이제 블루투스 기기를 연결하는 방법인 HID를 통해 점자 디스플레이에 연결할 수 있습니다. 제조업체에서 제공하는 최신 펌웨어 드라이버를 설치한 후 점자 디스플레이에서 블루투스를 사용 설정하세요. TalkBack 설정 &gt; 점자 디스플레이로 이동하여 \'점자 디스플레이 사용\'을 사용 설정합니다. 그런 다음 기기 목록에서 기기를 찾아 연결합니다.</string>
-  <string name="update_welcome_text_content_tts">이제 블루투스 기기를 연결하는 방법인 HID를 통해 점자 디스플레이에 연결할 수 있습니다. 제조업체에서 제공하는 최신 펌웨어 드라이버를 설치한 후 점자 디스플레이에서 블루투스를 사용 설정하세요. TalkBack 설정의 점자 디스플레이로 이동한 후 \'점자 디스플레이 사용\'을 사용 설정합니다. 그런 다음 기기 목록에서 기기를 찾아 연결합니다.</string>
-  <string name="update_welcome_text_content_with_link">TalkBack으로 점자 디스플레이를 사용하는 방법을 알아보세요.</string>
   <string name="update_welcome_talkback_16.1">이번 TalkBack 업데이트에서는 화면 설명을 지원하는 언어가 추가되었으며 더욱 간편하게 TalkBack을 사용할 수 있도록 품질이 개선되었습니다.\n\n다음 화면에서는 이러한 변경사항에 관해 자세히 알아봅니다.\n\n이 정보는 나중에 TalkBack 설정 &gt; TalkBack의 새로운 기능에서 다시 확인할 수 있습니다.</string>
   <string name="update_welcome_talkback_16.1_tts">이번 TalkBack 업데이트에서는 화면 설명을 지원하는 언어가 추가되었으며 더욱 간편하게 TalkBack을 사용할 수 있도록 품질이 개선되었습니다.\n\n다음 화면에서는 이러한 변경사항에 관해 자세히 알아봅니다.\n\n이 정보는 나중에 TalkBack 설정에 있는 TalkBack의 새로운 기능에서 다시 확인할 수 있습니다.</string>
-  <string name="describe_screen_and_qna_title">\'화면 설명\' 및 \'Gemini에게 물어보기\'에 지원되는 새로운 언어</string>
-  <string name="describe_screen_and_qna_content">이제 \'화면 설명\' 및 \'Gemini에게 물어보기\'를 더 많은 언어로 사용할 수 있습니다. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;고객센터에서 자세히 알아보기&lt;/a&gt;</string>
   <string name="shortcut_for_dictation_title">음성 입력 바로가기</string>
   <string name="shortcut_for_dictation_content">Gboard를 사용할 때 이제 두 손가락으로 두 번 탭하여 음성 입력을 시작하거나 중지할 수 있습니다.
 &lt;br&gt;
 &lt;br&gt;&lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Google Play에서 최신 버전의 Gboard&lt;/a&gt;를 설치했는지 확인하세요.</string>
   <string name="shortcut_for_dictation_content_without_google_play">화면에 Gboard가 표시될 때 이제 두 손가락으로 두 번 탭하여 음성기록을 시작하고, 두 손가락으로 두 번 탭하여 중지할 수 있습니다.</string>
-  <string name="keyboard_title">키보드</string>
-  <string name="keyboard_content">이제 TalkBack의 키보드에서 다양하고 새로운 명령어와 단축키가 포함된 \'향상된 키맵\'이 지원됩니다. 이번 개선사항에는 더 효율적인 웹 탐색을 위한 \'탐색 모드\'가 포함되어 물리적 키보드에 의존하는 TalkBack 사용자의 탐색 및 상호작용이 간소화됩니다. TalkBack 설정 &gt; 고급 설정 &gt; 단축키에서 \'향상된 키맵\'으로 전환할 수 있습니다.</string>
-  <string name="keyboard_content_tts">이제 TalkBack의 키보드에서 다양하고 새로운 명령어와 단축키가 포함된 \'향상된 키맵\'이 지원됩니다. 이번 개선사항에는 더 효율적인 웹 탐색을 위한 \'탐색 모드\'가 포함되어 물리적 키보드에 의존하는 TalkBack 사용자의 탐색 및 상호작용이 간소화됩니다. TalkBack 설정의 고급 설정에서 단축키로 이동하여 \'향상된 키맵\'으로 전환할 수 있습니다.</string>
-  <string name="reduce_delay_title">지연 시간 줄이기</string>
-  <string name="reduce_delay_content">이제 터치 탐색 및 입력 시 TalkBack 안내 지연 시간을 줄일 수 있습니다. 이 설정을 보려면 TalkBack 설정 &gt; 고급 설정 &gt; 지연 시간 줄이기로 이동하세요.</string>
-  <string name="reduce_delay_content_tts">이제 터치 탐색 및 입력 시 TalkBack 안내 지연 시간을 줄일 수 있습니다. 이 설정을 보려면 TalkBack 설정의 고급 설정에서 지연 시간 줄이기로 이동하세요.</string>
-  <string name="customize_braille_keyboard_improvements_title">점자 키보드 동작 맞춤설정</string>
-  <string name="customize_braille_keyboard_improvements_content">이제 가상 점자 키보드의 동작을 맞춤설정할 수 있습니다. 맞춤설정하려면 TalkBack 설정 &gt; 점자 키보드 &gt; 동작으로 이동하세요.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">이제 가상 점자 키보드의 동작을 맞춤설정할 수 있습니다. 맞춤설정하려면 TalkBack 설정의 점자 키보드에서 동작으로 이동하세요.</string>
-  <string name="learn_more_about_braille_keyboard">점자 키보드에 대해 자세히 알아보기</string>
-  <string name="other_changes_title">기타 변경사항</string>
-  <string name="other_changes_content">실수로 TalkBack이 사용 설정된 경우, 화면에 표시되는 메시지를 통해 TalkBack을 빠르게 사용 중지할 수 있습니다. TalkBack 설정 &gt; TalkBack 사용 중지 안내 표시에서 이 기능을 사용 중지할 수 있습니다.</string>
-  <string name="other_changes_content_tts">실수로 TalkBack이 사용 설정된 경우, 화면에 표시되는 메시지를 통해 TalkBack을 빠르게 사용 중지할 수 있습니다. TalkBack 설정에서 TalkBack 사용 중지 안내 표시로 이동하여 이 기능을 사용 중지할 수 있습니다.</string>
-  <string name="keymap_changes_content">클래식 키맵이 단축키가 더 많이 포함된 기본 키맵으로 전환되었습니다.</string>
   <string name="announcing_text_formatting_title">텍스트 서식 알리기</string>
   <string name="announcing_text_formatting_header">이제 TalkBack에서 굵게, 기울임꼴, 텍스트 색상과 같은 텍스트 서식의 변경사항을 알릴 수 있습니다. 시작하려면 다음 단계를 따르세요.</string>
   <string name="announcing_text_formatting_option1">서식이 지정된 항목에 포커스를 맞추고 TalkBack 메뉴를 연 후 \'텍스트 서식 설명\'을 선택합니다. 또는</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">전화를 걸고 메시지를 보내는 등의 방법 알아보기</string>
   <string name="practice_gestures_link_text">동작 연습</string>
   <string name="practice_gestures_link_subtext">여러 가지 동작을 취해 보며 각 동작의 기능 알아보기</string>
-  <string name="help_and_feedback_link_subtext">TalkBack에 관해 자세히 알아보고 의견을 알려주세요</string>
   <string name="choose_tutorial_title">TalkBack과 상호작용할 방식을 선택하세요.</string>
   <string name="touch_tutorial_button">터치 튜토리얼</string>
   <string name="keyboard_tutorial_button">키보드 튜토리얼</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">아래에서 사용해 보세요.</string>
   <string name="wear_training_typing_practice_button_content_description">키보드로 입력</string>
   <string name="wear_training_end_tutorial_title">TalkBack을 사용할 준비됨</string>
-  <string name="talkback_updated_notification_title">TalkBack 업데이트됨</string>
-  <string name="talkback_updated_notification_content">탭하여 자세한 내용을 확인하세요.</string>
   <string name="wear_new_feature_page_title">업데이트된 TalkBack을 소개합니다</string>
   <string name="wear_new_feature_page_content">일부 버그가 수정되었으며 포커스가 이동하는 방식이 변경되었습니다</string>
   <string name="wear_new_feature_page_button_content_description">완료</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">파란색</string>
   <string name="title_pref_grey">회색</string>
   <string name="survey_setting_title">의견 공유</string>
-  <string name="survey_closed">설문조사 종료됨</string>
   <string name="title_summarize_view">화면 설명</string>
-  <string name="title_increase_touch_focus_latency">포커스 지연 증가</string>
-  <string name="title_decrease_touch_focus_latency">포커스 지연 감소</string>
   <string name="detected_result">감지됨: %1$s</string>
   <string name="title_image_caption">이미지 설명</string>
   <string name="image_caption_with_gemini_prefix">이 이미지를 설명해 주세요. 대답 시 마크업을 사용하지 마세요.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">사용자: %1$s</string>
   <string name="image_qna_answer_prefix">모델: %1$s</string>
   <string name="image_qna_with_history_postfix">... [사용자와 모델이 대화를 번갈아 이어 가기] ...</string>
-  <string name="screen_overview_with_screenshot">휴대전화를 볼 수 없는 사용자가 휴대전화 화면에 표시된 내용을 이해할 수 있도록 도와야 합니다. 몇 문장으로 이 스크린샷을 설명해 주세요.
-
-안내
-답변은 \'화면에 표시되는 내용은\'이라는 말로 시작하세요.
-답변의 시작 부분에는 화면에서 가장 중요하고 눈에 띄는 콘텐츠를 설명해야 합니다. 다음은 설명할 가장 중요하고 두드러진 콘텐츠의 예입니다.
-* 채팅 앱: 최근 메시지의 발신자 및 메시지 내용
-* 소셜 미디어 앱: 첫 번째 게시물(게시물 작성자, 메시지 내용, 이미지 설명 포함)
-* 뉴스 앱: 기사 제목, 주요 이미지 설명
-* 쇼핑 앱: 표시된 제품의 설명 및 가격
-* 캘린더 앱: 다음 일정 및 이후에 표시되는 다른 일정 수
-* 메시지 목록: 이름 및 미리보기(첫 번째 메시지), 이름(두 번째 이후부터 표시되는 메시지), 읽지 않은 메시지 수
-
-이후에는 답변에서 탐색 메뉴 및 눈에 띄는 버튼의 공간적 위치와 용도를 설명할 수 있습니다.
-상단의 상태 표시줄에 있는 콘텐츠(예: 시간, 네트워크 상태, 배터리)를 언급하지 마세요.
-대답 시 마크다운을 사용하지 마세요.</string>
   <string name="title_gemini_opt_in_dialog">이미지에 대한 자세한 설명을 표시하시겠습니까?</string>
   <string name="title_on_device_gemini_opt_in_dialog">이미지 설명을 표시하시겠습니까?</string>
   <string name="title_gemini_result_dialog">감지됨: 이미지</string>
   <string name="title_gemini_result_bottom_sheet">이미지 설명</string>
   <string name="title_gemini_screen_overview_result_dialog">화면 설명</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">요약</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">작업</string>
   <string name="positive_button_gemini_opt_in_dialog">사용 설정</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">동의</string>
   <string name="negative_button_gemini_opt_in_dialog">나중에</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">설정으로 이동</string>
-  <string name="positive_button_gemini_download_dialog">다운로드 및 사용 설정</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">텍스트, \'%1$s\'</string>
   <string name="detected_icon_label">아이콘, \'%1$s\'</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">화면을 요약할 수 없음</string>
   <string name="image_caption_no_result">이미지를 설명하는 텍스트가 없습니다.</string>
   <string name="image_caption_with_hide_screen">화면이 숨겨져 있는 경우 이미지 설명을 사용할 수 없습니다. 화면을 표시하고 다시 시도해 보세요.</string>
-  <string name="feedback_button_state_set">선택됨</string>
-  <string name="feedback_button_state_unset">선택되지 않음</string>
   <string name="action_text_like_button">만족스러운 대답으로 표시</string>
   <string name="action_text_dislike_button">불만족스러운 대답으로 표시</string>
   <string name="action_text_clear_like_button">만족스러운 대답 지우기</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">이미지 및 아이콘 자동 설명 다운로드 중</string>
   <string name="download_all_image_captioning_successful_hint">이미지 및 아이콘 자동 설명을 다운로드함</string>
   <string name="download_all_image_captioning_failed_hint">다운로드할 수 없습니다. 나중에 다시 시도해 주세요.</string>
-  <string name="download_complete_notification_title">다운로드 완료</string>
-  <string name="download_complete_notification_content">이제 TalkBack으로 자동 이미지 및 아이콘 설명을 들을 수 있습니다.</string>
-  <string name="download_complete_notification_action">설정</string>
   <string name="download_storage_error_hint">저장용량이 가득 찼습니다. 다운로드하려면 설정 &gt; 저장용량에서 %1$dMB의 공간을 확보하세요.</string>
   <string name="download_network_error_hint">다운로드할 수 없습니다. 연결 상태를 확인한 후 다시 시도하세요.</string>
   <string name="switch_icon_detection_dialog_title">자동 아이콘 설명</string>
   <string name="switch_icon_detection_dialog_message">아이콘에 초점을 맞추면 설명을 들을 수 있습니다</string>
   <string name="switch_image_description_dialog_message">이미지에 포커스를 맞추면 설명을 들을 수 있습니다. 일부 앱에서는 이 기능이 지원되지 않을 수 있습니다.</string>
-  <string name="switch_text_recognition_dialog_title">이미지에 포함된 텍스트 자동 설명</string>
   <string name="switch_text_recognition_dialog_message">텍스트가 포함된 이미지에 초점을 맞추면 설명을 들을 수 있습니다.</string>
   <string name="switch_auto_image_caption_dialog_subtitle">다운로드됨</string>
-  <string name="disable_auto_image_caption_dialog_subtext">TalkBack 메뉴에서 선택한 이미지의 설명을 계속 들을 수 있습니다.</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">확인</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">다운로드 삭제</string>
   <string name="delete_icon_detection_dialog_title">아이콘 자동 설명을 삭제하시겠습니까?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">TalkBack에서 Gemini 사용</string>
   <string name="gemini_disable_dialog_message">Gemini로 화면 이해하기</string>
   <string name="disable_gemini_dialog_subtext">Gemini로 화면 이해하기를 사용하도록 설정</string>
-  <string name="ai_services_update_dialog_title">%1$s 앱을 업데이트하여 이미지 설명 사용하기</string>
-  <string name="ai_services_update_dialog_message">이미지 설명을 들으려면 Google Play에서 최신 버전의 %1$s 앱을 다운로드하세요.\n\n다운로드가 완료되면 TalkBack 설정으로 돌아와 자동 이미지 설명 기능을 다시 사용 설정하세요.</string>
-  <string name="ai_services_update_dialog_button_text">Google Play로 이동</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">프라이빗 컴퓨트 서비스</string>
   <string name="gemini_error_message">문제가 발생했습니다. 다시 시도해 주세요.</string>
   <string name="gemini_block_message">이미지를 처리할 수 없음</string>
   <string name="gemini_network_error">인터넷에 연결되어 있지 않습니다. Wi-Fi 또는 모바일 네트워크를 확인한 후 다시 시도하세요.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Gemini에 질문 입력</string>
   <string name="image_qna_send_button_text">물어보기</string>
   <string name="image_qna_speak_question_description">질문 말하기</string>
-  <string name="overviews_summary_intro">이 앱 화면의 요약: %1$s</string>
   <string name="overviews_node_not_found">죄송합니다. 더 이상 화면의 해당 부분을 찾을 수 없습니다.</string>
-  <string name="overviews_images_in_app">주요 이미지 찾음</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">앱에서의 활동</string>
-  <string name="overviews_actions_in_app_description">이 앱 화면에서 할 수 있는 주요 작업은 다음과 같습니다.</string>
-  <string name="overviews_parent_type">앱에서의 활동</string>
   <string name="text_replaced_feedback">텍스트 대체됨</string>
   <string name="switch_gesture_set">제스처 세트 전환</string>
   <string name="switch_gesture_set_to">%1$d 제스처 세트로 전환</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">닫기</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">화면이 꺼져 있을 때 알림을 들으려면 TalkBack 상세 설정에서 \'화면이 꺼져 있을 때 알림 읽어주기\'를 사용 설정하세요.</string>
 </resources>

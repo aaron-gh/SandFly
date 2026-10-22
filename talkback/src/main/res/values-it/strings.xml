@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Quando è attivo, TalkBack fornisce una funzione di lettura vocale per permetterti di usare il dispositivo senza guardare lo schermo. TalkBack è pensato per situazioni o persone con difficoltà a visualizzare lo schermo.&lt;br&gt;&lt;br&gt;&lt;b&gt;Come usare TalkBack&lt;/b&gt;&lt;br&gt;• Scorri verso destra o sinistra per spostarti tra gli elementi&lt;br&gt;• Tocca due volte per attivare un elemento&lt;br&gt;• Trascina due dita per scorrere&lt;br&gt;&lt;b&gt;Come disattivare TalkBack&lt;/b&gt;&lt;br&gt;1. In Impostazioni, tocca &lt;b&gt;Usa TalkBack&lt;/b&gt;. Vedrai un contorno. Toccalo due volte.&lt;br&gt;2. Tocca &lt;b&gt;Interrompi&lt;/b&gt; nel messaggio di conferma. Verrà visualizzato un contorno. Toccalo due volte.</string>
   <string name="talkback_service_summary">Utilizza uno screen reader per ascoltare gli elementi letti ad alta voce</string>
   <string name="talkback_preferences_title">Impostazioni di TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Impostazioni</string>
   <string name="tts_preferences_title">Sintesi vocale</string>
   <string name="language_options">Lingue</string>
   <string name="spoken_language">Lingua parlata</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Ricerca annullata.</string>
   <string name="notification_type_status_started">Operazione iniziata</string>
   <string name="notification_type_status_stopped">Operazione interrotta</string>
-  <string name="notification_type_status_connected">connesso</string>
-  <string name="notification_battery_level_unknown">sconosciuto</string>
   <string name="notification_battery_saver_mode">Risparmio energetico on</string>
   <string name="template_no_text_selected">Nessun testo selezionato</string>
   <string name="template_charging">Ricarica: %1$s Livello batteria: %2$s percento.</string>
   <string name="template_charging_lite">Ricarica %1$s</string>
-  <string name="template_battery_state">Alimentazione %1$s %2$s percento %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Suoneria solo vibrazione.</string>
   <string name="value_ringer_silent">Suoneria disattivata.</string>
   <string name="value_screen_on">Schermo acceso.</string>
   <string name="value_screen_off">Schermo spento.</string>
   <string name="value_device_unlocked">Dispositivo sbloccato.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Volume voce</string>
-  <string name="title_pref_speech_rate">Velocità del parlato</string>
-  <string name="summary_pref_speech_rate">Velocità di pronuncia del testo</string>
   <string name="title_pref_verbose_scroll_announcement">Leggi sempre il numero di voci elenco</string>
   <string name="summary_pref_verbose_scroll_announcement">Viene letto il numero per tutti i metodi di scorrimento</string>
   <string name="title_pref_cover_proximity_sensor">Copri il sensore di prossimità per disattivare la voce</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Leggi l\'ora</string>
   <string name="pref_speak_time_summary">Quando attivi lo schermo</string>
   <string name="summary_speak_container_element_positions">Include informazioni durante l\'ingresso e l\'uscita da elenchi, griglie e altri contenitori</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Ritardo di selezione aggiunto al controllo di lettura</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Scorri con 3 dita per usare il controllo di lettura e modificare il ritardo di selezione in qualsiasi momento</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Passare al sollevamento del dito per digitare?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Se il ritardo di selezione della digitazione è impostato su un valore inferiore a 0,3 secondi, sarà molto difficile eseguire il doppio tocco per digitare. Scegli \"Cambia\" per passare automaticamente al sollevamento del dito per digitare.\n\nPer usare questa funzionalità, tieni premuto il dito per selezionare un tasto, poi sollevalo per digitare.\n\nPuoi personalizzare questa funzionalità nelle impostazioni di TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Ritardo di selezione della digitazione aggiunto al controllo di lettura</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Se riscontri problemi con il doppio tocco durante la digitazione, scorri con 3 dita per usare il controllo di lettura e passa a un ritardo di selezione della digitazione più lungo</string>
-  <string name="gestures_announce_typing_focus_wont_change">Il ritardo di selezione della digitazione non funziona senza il sollevamento del dito per digitare.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Ok</string>
   <string name="reset_letency_reduction_settings_dialog_title">Ripristinare le impostazioni del ritardo?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Questa operazione ripristinerà tutte le impostazioni del ritardo ai valori predefiniti</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Ripristina</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Le impostazioni di riduzione della latenza sono state ripristinate.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Cambia</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Non cambiare</string>
   <string name="Reset_gesture_settings_dialog_title">Vuoi reimpostare i gesti?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Vuoi reimpostare i gesti dell\'insieme corrente?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Verranno reimpostate le azioni predefinite di tutti i gesti.\n\nPerderai tutte le eventuali modifiche apportate.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Leggi gli aggiornamenti sui progressi</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Include aggiornamenti durante il download, mentre si seguono le indicazioni stradali e altro ancora. Se disattivi l\'impostazione, riceverai comunque aggiornamenti meno frequenti.</string>
   <string name="title_pref_explore_by_touch">Esplora al tocco</string>
-  <string name="title_pref_category_visual">Immagini</string>
   <string name="title_pref_category_controls">Controlli</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Generali</string>
-  <string name="title_pref_category_advanced">Avanzate</string>
-  <string name="title_pref_category_others">Altre</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial e guida</string>
   <string name="title_pref_category_reduce_latency_summary">Queste impostazioni possono ridurre il ritardo prima degli annunci di TalkBack</string>
   <string name="reset_latency_settings_title">Ripristina tutte le impostazioni del ritardo</string>
   <string name="title_pref_single_tap">Tocca una volta per attivare l\'elemento</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Cambia indicatore di selezione</string>
   <string name="title_pref_category_manage_gestures">Gesti</string>
   <string name="title_pref_manage_labels">Etichette personalizzate</string>
-  <string name="title_pref_manage_customize_menus">Modifica menu</string>
   <string name="title_pref_category_context_menu">Personalizza il menu TalkBack</string>
   <string name="title_pref_category_selector_menu">Personalizza i controlli di lettura</string>
   <string name="title_pref_category_navigation_menu">Modifica opzioni di navigazione</string>
-  <string name="pref_category_context_menu_summary">Per usare il menu TalkBack, tocca lo schermo con 3 dita. Puoi anche scorrere verso l\'alto e poi verso destra oppure verso il basso e poi verso destra.</string>
-  <string name="pref_category_context_menu_summary_xr">Per usare il menu di TalkBack, ruota il palmo della mano non dominante verso l\'interno e pizzica.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Per usare il menu TalkBack, scorri verso il basso e poi verso destra.</string>
-  <string name="pref_category_selector_menu_summary">Per usare i controlli di lettura, scorri verso sinistra o verso destra con 3 dita. Puoi anche scorrere verso l\'alto o verso il basso con 3 dita.</string>
-  <string name="pref_category_selector_menu_summary_xr">Per passare da un controllo di lettura all\'altro, ruota il palmo della mano non dominante verso l\'interno, pizzica e mantieni, spostati verso destra o sinistra, quindi rilascia.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Per usare i controlli di lettura, scorri verso l\'alto e poi verso il basso.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Scorciatoie da tastiera</string>
   <string name="title_pref_export_custom_labels">Esporta etichette personalizzate</string>
-  <string name="title_pref_play_store">Apri TalkBack nel Play Store</string>
-  <string name="summary_pref_play_store">Versione attuale di TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Guida e feedback</string>
-  <string name="title_pref_gup">Contatta il team di assistenza per l\'accessibilità di Google</string>
-  <string name="subtitle_pref_gup">Ricevi assistenza su TalkBack o segnala problemi</string>
-  <string name="pref_item_licenses">Licenze open source</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Guida</string>
   <string name="title_pref_show_tos">Termini di servizio</string>
   <string name="title_pref_show_privacy_policy">Norme sulla privacy</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gesti con sensore di impronte</string>
   <string name="title_pref_category_tutorial">Tutorial di TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Guida</string>
-  <string name="title_pref_category_typing">Digitazione</string>
   <string name="title_pref_advanced_settings">Impostazioni avanzate</string>
   <string name="title_pref_show_exit_watermark">Mostra le istruzioni per disattivare TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Quando TalkBack è attivo, viene visualizzato un messaggio che ti aiuta a disattivarlo rapidamente</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Alcuni tasti di modifica sono diversi.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Scopri di più sulle mappe dei tasti</string>
   <string name="keycombo_go_to_settings">Vai alle Impostazioni</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack sta per rimuovere la mappa dei tasti classica. Per continuare a utilizzare le scorciatoie da tastiera, passa alla mappa dei tasti predefinita.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Scopri di più</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ok</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Impostazioni</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Scopri di più</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Stai usando la mappa dei tasti predefinita di TalkBack. È disponibile anche una versione avanzata con più comandi. Scopri di più nel Centro assistenza o passa alla nuova mappa dei tasti in Impostazioni.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">È disponibile la nuova mappa dei tasti</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">La nuova mappa dei tasti avanzata di TalkBack aggiunge molti nuovi comandi. Scopri di più nel Centro assistenza o passa alla nuova mappa dei tasti in Impostazioni.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Aggiorna il tasto di modifica di TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Non ora</string>
   <string name="keycombo_warning_content_description">Scopri di più sul tasto di modifica</string>
-  <string name="keycombo_warning_dialog_title">Aggiorna il tasto di modifica</string>
-  <string name="keycombo_warning_dialog_message">Per il corretto funzionamento delle scorciatoie da tastiera di TalkBack, aggiorna il tasto di modifica da Azione ad Alt.\n\nSe continui a usare il tasto di modifica Azione, alcune scorciatoie eseguiranno azioni diverse per questa versione di Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Mappa dei tasti</string>
   <string name="keycombo_menu_select_keymap">Scegli una mappa dei tasti</string>
   <string name="keycombo_menu_reset_keymap">Reimposta la mappa dei tasti</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Aumenta volume lettura vocale</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Abbassa volume lettura vocale</string>
   <string name="keycombo_menu_global_refocus_current_node">Pronuncia l\'attuale selezione</string>
-  <string name="keycombo_menu_category_granularity">Navigazione</string>
   <string name="keycombo_menu_granularity_increase">Impostazione di navigazione successiva</string>
   <string name="keycombo_menu_granularity_decrease">Impostazione di navigazione precedente</string>
   <string name="keycombo_menu_category_other">Altre azioni</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Vuoi ripristinare i valori predefiniti delle scorciatoie da tastiera di questa mappa dei tasti? Tieni presente che non è possibile annullare questa azione.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Reimposta</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s in modalità navigazione</string>
-  <string name="keycombo_assign_dialog_instruction">Premi una combinazione di tasti per impostare la nuova scorciatoia. Includi nella combinazione almeno un tasto tra ALT o Ctrl.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Per impostare la nuova scorciatoia, premi la combinazione di tasti insieme al tasto di modifica %1$s.</string>
   <string name="keycombo_unassigned">Non assegnata</string>
   <string name="save_button_in_keycombo_assign_dialog">Salva</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Ritardo di selezione della digitazione</string>
   <string name="message_pref_touch_explore_latency">Un ritardo di selezione della digitazione più breve significa che gli annunci di TalkBack vengono effettuati più velocemente dopo aver toccato la tastiera.\n\nSeleziona un ritardo</string>
   <string name="title_pref_touch_focus_timeout">Ritardo di selezione</string>
-  <string name="summary_pref_touch_focus_time">
-Controlla la velocità con cui TalkBack parla dopo lo spostamento della selezione. Un ritardo più breve rende TalkBack più veloce, ma può complicare l\'esecuzione di tocchi doppi e tripli.\n\n
-I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in tocco con due dita per attivare.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Gestisci i gesti in TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Disattiva e riattiva TalkBack per attivare l\'impostazione.</string>
   <string name="title_pref_auto_image_captioning">Descrizioni automatiche</string>
@@ -382,28 +332,16 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="dialog_title_turn_on_image_description">Attiva le descrizioni delle immagini nelle Impostazioni</string>
   <string name="dialog_message_turn_on_image_description">Puoi riprovare dopo aver attivato le descrizioni delle immagini automatiche o dettagliate</string>
   <string name="title_pref_detailed_image_description">Descrizioni dettagliate delle immagini</string>
-  <string name="summary_pref_ai_description">Ascolta descrizioni più dettagliate selezionando \"%1$s\" dal menu di TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Sentirai una breve descrizione quando selezioni un\'immagine nelle app supportate.\n\nLe immagini vengono elaborate sul tuo dispositivo e non vengono mai inviate a Google. \n\nL\'AI generativa è in fase sperimentale, quindi commetterà errori. Se continui, accetti i <a href="https://policies.google.com/terms/generative-ai">Termini di servizio di Google</a>.</string>
   <string name="enable_gemini">Attiva</string>
   <string name="powered_by_gemini">AI generativa integrata</string>
-  <string name="detailed_image_description_ongoing_hint">Recupero descrizione in corso…</string>
-  <string name="detailed_image_description_result_prefix">Elementi rilevati: immagine. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Download necessario per le descrizioni automatiche delle immagini</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Le immagini vengono elaborate sul tuo dispositivo e non vengono mai inviate a Google.\n\nL\'AI generativa è un esperimento, quindi commetterà errori. Se continui, accetti i %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Termini di servizio di Google</string>
   <string name="message_aifeature_downloading">Download del modello di AI in corso… L\'operazione potrebbe richiedere qualche istante. Al termine, riceverai una notifica.</string>
   <string name="message_aifeature_downloading_with_progress">Il download è ancora in corso. Scaricati %1$d di %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Modello di AI scaricato. Ora TalkBack può generare descrizioni delle immagini.</string>
   <string name="summary_pref_auto_image_captioning">Per icone, immagini e testo nelle immagini</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Per il testo nelle immagini</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Per immagini e testo nelle immagini</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Per icone e testo nelle immagini</string>
   <string name="summary_pref_module_downloading">Download in corso…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Funzione attivata per tutte le immagini</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Funzione attivata solo per le immagini senza etichette</string>
   <string name="summary_pref_auto_image_captioning_disabled">Off</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Funzione attivata per tutte le icone</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Funzione attivata solo per le icone senza etichette</string>
   <string name="summary_pref_auto_icon_detection_disabled">Funzione disattivata</string>
   <string name="title_pref_enable_auto_image_caption">Tutte le immagini</string>
   <string name="title_pref_enable_auto_image_caption_arg">Tutte le immagini\n%1$s</string>
@@ -413,7 +351,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="title_pref_enable_auto_icon_detection">Tutte le icone</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Solo le icone senza etichette</string>
   <string name="title_pref_disable_auto_icon_detection">Non descrivere le icone</string>
-  <string name="dialog_message_on_device_ai_model_download">Sentirai una breve descrizione quando selezioni un\'immagine nelle app supportate.\n\nLe immagini vengono elaborate sul tuo dispositivo e non vengono mai inviate a Google.\n\nL\'AI generativa è in fase sperimentale, quindi commetterà errori. Se continui, accetti i %1$s.</string>
   <string name="title_pref_enable_gemini_support">Attiva</string>
   <string name="title_pref_disable_gemini_support">Disattiva</string>
   <string name="summary_pref_gemini_support_enabled">Gemini è abilitato</string>
@@ -457,7 +394,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="shortcut_print_node_tree">Stampa struttura ad albero dei nodi</string>
   <string name="shortcut_print_performance_stats">Stampa le statistiche sulle prestazioni</string>
   <string name="shortcut_first_in_screen">Imposta lo stato attivo sul primo elemento sullo schermo</string>
-  <string name="shortcut_summary">Layout riepilogazione schermata</string>
   <string name="shortcut_voice_commands">Attiva comandi vocali</string>
   <string name="shortcut_last_in_screen">Imposta lo stato attivo sull\'ultimo elemento sullo schermo</string>
   <string name="shortcut_enable_dimming">Nascondi lo schermo</string>
@@ -561,7 +497,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="menu_category_web_navigation">Navigazione sul web</string>
   <string name="menu_category_basic_navigation">Navigazione di base</string>
   <string name="summary_custom_action">Opzione visualizzata quando sono presenti azioni per l\'elemento corrente, tra cui link, copia, incolla, seleziona e altre</string>
-  <string name="summary_context_menu_links">Consente di aprire un link all\'interno di un elemento attivo</string>
   <string name="summary_viewpager_controls">Consente di passare alla pagina successiva o precedente. Opzione visualizzata quando stai leggendo contenuti con più pagine</string>
   <string name="summary_labeling_controls">Opzione visualizzata quando selezioni un elemento senza etichetta</string>
   <string name="summary_granularity">Leggi per carattere, parola, riga e altro</string>
@@ -631,12 +566,9 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="summary_screen_overview">Riassumi schermata con pulsanti di azione</string>
   <string name="summary_screen_overview_no_actions">Ascolta un riepilogo dei contenuti sullo schermo</string>
   <string name="summary_image_caption">Leggi il testo e descrivi le icone all\'interno di un\'immagine selezionata</string>
-  <string name="summary_summarize_view">Leggi riepilogo visualizzazione</string>
   <string name="summary_typo_suggestions">Opzione visualizzata quando il cursore si trova su un errore ortografico</string>
   <string name="summary_cache_keyboard_keys">TalkBack precarica gli annunci per ridurre il ritardo durante la digitazione</string>
   <string name="summary_cache_keyboard_keys_disabled">Usa la Sintesi vocale di Google per utilizzare questa funzionalità</string>
-  <string name="value_direction_down">verso il basso</string>
-  <string name="value_direction_down_and_right">verso il basso poi a destra</string>
   <string name="title_pref_shortcut_up">Scorri verso l\'alto</string>
   <string name="title_pref_shortcut_up_xr">Palmo della mano non dominante all\'interno, pizzica e scorri in alto</string>
   <string name="title_pref_shortcut_down">Scorri verso il basso</string>
@@ -704,10 +636,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="title_pref_shortcut_fingerprint_left">Scorrimento verso sinistra sul sensore</string>
   <string name="title_pref_shortcut_fingerprint_right">Scorrimento verso destra sul sensore</string>
   <string name="title_pref_version_code">Codice versione</string>
-  <string formatted="false" name="value_volume_100_percent">Pareggia volume voce</string>
-  <string formatted="false" name="value_volume_75_percent">75% del volume voce</string>
-  <string formatted="false" name="value_volume_50_percent">50% del volume voce</string>
-  <string formatted="false" name="value_volume_25_percent">25% del volume voce</string>
   <string name="value_type_confirmation_double_tap">Tieni premuto il dito per selezionare un tasto, poi tocca due volte</string>
   <string name="value_type_confirmation_lift_to_type">Tieni premuto e solleva per tasto lettera. Doppio tocco per altri tasti.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Tieni premuto il dito per selezionare un tasto, poi solleva</string>
@@ -720,12 +648,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="value_touch_explore_time_out_200ms">0,2 secondi</string>
   <string name="value_touch_explore_time_out_250ms">0,25 secondi</string>
   <string name="value_touch_explore_time_out_300ms">0,3 secondi (impostazione predefinita)</string>
-  <string name="value_shake_to_read_disabled">Disattivato</string>
-  <string name="value_shake_to_read_threshold_very_light">Molto leggero</string>
-  <string name="value_shake_to_read_threshold_light">Leggero</string>
-  <string name="value_shake_to_read_threshold_medium">Medio</string>
-  <string name="value_shake_to_read_threshold_hard">Forte</string>
-  <string name="value_shake_to_read_threshold_very_hard">Molto forte</string>
   <string name="title_pref_on_screen_keyboard">Tastiera sullo schermo</string>
   <string name="title_pref_physical_keyboard">Tastiera fisica</string>
   <string name="value_keyboard_echo_none">Nessuna</string>
@@ -738,8 +660,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="pref_time_feedback_format_entries_default">Usa il formato dell\'ora del dispositivo</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ore</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 ore</string>
-  <string name="notification_title_talkback_gestures_changed">Gesti TalkBack modificati</string>
-  <string name="notification_message_talkback_gestures_changed">Tocca per esaminare le modifiche ai gesti di accessibilità</string>
   <string name="always_show_warning_checkbox">Mostra sempre questo avviso</string>
   <string name="label_dialog_title_add">Aggiungi etichetta</string>
   <string name="label_dialog_title_edit">Modifica etichetta</string>
@@ -760,16 +680,8 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="no_apps_to_export_labels">Nessuna applicazione trovata per esportare le etichette.</string>
   <string name="label_choose_app_to_import">Scegli l\'applicazione per importare le etichette:</string>
   <string name="label_choose_app_to_export">Scegli l\'applicazione con cui esportare le etichette:</string>
-  <string name="talkback_gesture_change_details">Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti. Le azioni associate ai gesti possono essere personalizzate nelle impostazioni di TalkBack. Se l\'opzione \"Esplora al tocco\" è attiva, puoi utilizzare i gesti che seguono per compiere determinate azioni.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Vuoi nascondere lo schermo?</string>
   <string name="dialog_message_dim_screen">Il display viene disattivato per una maggiore privacy. Alcuni contenuti potrebbero continuare a essere mostrati, ad esempio messaggi che chiedono di riattivare il display o menu per le funzioni di accessibilità come TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti.\n\nIl gesto dall\'alto verso il basso ti consentirà di passare al primo elemento visualizzato sullo schermo, mentre il gesto dal basso verso l\'alto ti consentirà di passare all\'ultimo elemento.\n\nLa granularità della lettura ora può essere modificata attivando un elemento, quindi selezionando una granularità dal menu contestuale TalkBack.\n\nPuoi cambiare le azioni compiute da questi gesti nelle impostazioni di TalkBack.</string>
-  <string name="default_action_changed_details">Per riprodurre e mettere in pausa i contenuti multimediali, ora puoi toccare e tenere premuto con 2 dita.\n\nAnche altri gesti sono stati modificati.</string>
-  <string name="talkback_built_in_gesture_open_url">Per scoprire di più, apri sul telefono</string>
-  <string name="talkback_built_in_gesture_change_details_45">Questa versione di TalkBack include modifiche ai gesti di accessibilità predefiniti.\n\nIl gesto verso l\'alto consente ora di passare all\'impostazione di navigazione precedente; il gesto verso il basso consente invece di passare all\'impostazione di navigazione successiva.</string>
-  <string name="side_tap_shortcuts_removed_details">Queste impostazioni vengono rimosse da TalkBack a causa di problemi di attendibilità:\n• Tocca i lati del dispositivo.\n• Scuoti per avviare la lettura continua.</string>
-  <string name="button_accept_changed_gesture_mappings">Accetta gesti</string>
-  <string name="button_customize_gesture_mappings">Personalizza gesti</string>
   <string name="button_disable_all_events">Disattiva tutto</string>
   <string name="button_enable_all_events">Attiva tutto</string>
   <string name="dialog_title_disable_exploration">Disattivare la funzione Esplora al tocco?</string>
@@ -893,8 +805,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="screen_search_hint_type_search_tables">Cerca tabelle</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Il canale di notifica di TalkBack</string>
-  <string name="pref_selector_summary">%1$s per selezionare un\'impostazione, poi %2$s per modificare l\'impostazione.</string>
-  <string name="speech_rate_change">Velocità voce del %1$d%%</string>
   <string name="speech_pitch_maximum">Tono di voce più alto</string>
   <string name="speech_pitch_minimum">Tono di voce più basso</string>
   <string name="reset_speech_rate_and_pitch">Reimposta velocità del parlato e tono della voce</string>
@@ -904,10 +814,7 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="vibration_feedback_state">Feedback con vibrazione %1$s</string>
   <string name="text_formatting_state">Leggi la formattazione del testo %1$s</string>
   <string name="typing_echo_change">Tastiera fisica di %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Palmo non dominante all\'interno, tieni premuto per attivare/disattivare modalità controllo lettura.</string>
   <string name="gesture_1_or_2">%1$s o %2$s</string>
-  <string name="select_setting_hint">%1$s per selezionare un\'altra impostazione</string>
-  <string name="adjust_setting_hint">%1$s per modificare l\'impostazione</string>
   <string name="adjust_granularity_hint">%1$s per leggere una %2$s alla volta</string>
   <string name="adjust_typo_hint">%1$s per i suggerimenti</string>
   <string name="use_action_hint">Tocca due volte per compiere l\'azione</string>
@@ -947,7 +854,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="setting_selector_heading">Controlli di lettura</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Per mettere in pausa o riprodurre contenuti multimediali in un\'app di video o musica, tocca due volte con 2 dita. Prova ora.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">In altre app questo gesto potrebbe consentire, ad esempio, di rispondere a una telefonata o di terminarla. Questo gesto potrebbe non essere supportato in tutte le app.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Visualizza tutti i tutorial su TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Contenuti multimediali in pausa o in riproduzione. Generalmente vengono messi in pausa o riprodotti i contenuti video o musicali correnti. Scorri verso destra per continuare.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Per interrompere temporaneamente la funzione di lettura vocale di TalkBack, tocca con 2 dita.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Funzione di lettura vocale di TalkBack interrotta. Generalmente viene interrotta la frase corrente che TalkBack sta leggendo. Scorri verso destra per continuare.</string>
@@ -961,38 +867,18 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Modalità di selezione attiva o non attiva. Generalmente la modalità di selezione del testo viene attivata o disattivata quando è attivo un campo di immissione. Scorri verso destra per continuare.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Per usare i controlli di lettura, scorri verso sinistra o verso destra con 3 dita. Puoi anche scorrere verso l\'alto o verso il basso con 3 dita.</string>
   <string name="new_shortcut_gesture_note">Nota: hai personalizzato alcuni gesti, pertanto queste informazioni potrebbero non essere precise. Per rivedere i tuoi gesti, vai alle impostazioni di TalkBack.</string>
-  <string name="welcome_to_android11">Ti diamo il benvenuto in TalkBack su Android 11</string>
   <string name="welcome_to_android11_text">Sono stati aggiunti nuovi gesti per rendere più facile e veloce l\'utilizzo di TalkBack.\n\nPuoi provarli in questa schermata. Puoi rileggere queste informazioni in qualsiasi momento dalle impostazioni di TalkBack.</string>
   <string name="new_gesture_notification_title">Nuovi gesti in TalkBack</string>
   <string name="new_gesture_notification_content">Tocca per scoprire come usare TalkBack più rapidamente con i nuovi gesti.</string>
   <string name="dump_node_tree_description">La struttura ad albero dei nodi è stata stampata nei log.</string>
   <string name="report_gesture_description">Ecco i gesti eseguiti di recente. Segnala il gesto sbagliato e come dovrebbe essere.</string>
-  <string name="update_welcome_text_content">Ora puoi collegarti ai display braille tramite HID, un modo per connetterti ai dispositivi Bluetooth. Assicurati di avere i driver del firmware più recenti del produttore, poi attiva il Bluetooth sul tuo display braille. Vai alle impostazioni di TalkBack &gt; Display braille e attiva \"Usa display braille\". Trova il tuo dispositivo nell\'elenco dei dispositivi e connettiti.</string>
-  <string name="update_welcome_text_content_tts">Ora puoi collegarti ai display braille tramite HID, un modo per connetterti ai dispositivi Bluetooth. Assicurati di avere i driver del firmware più recenti del produttore, poi attiva il Bluetooth sul tuo display braille. Vai alle impostazioni di TalkBack, poi a Display braille e attiva \"Usa display braille\". Trova il tuo dispositivo nell\'elenco dei dispositivi e connettiti.</string>
-  <string name="update_welcome_text_content_with_link">Scopri come utilizzare il display braille con TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Questo aggiornamento di TalkBack introduce il supporto per Descrivi schermo in più lingue e altri miglioramenti della qualità che rendono TalkBack più facile da usare.\n\nScoprirai di più su queste modifiche nelle prossime schermate.\n\nPuoi rivedere queste informazioni in un secondo momento nelle impostazioni di TalkBack &gt; Nuove funzionalità in TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Questo aggiornamento di TalkBack introduce il supporto per Descrivi schermo in più lingue e altri miglioramenti della qualità che rendono TalkBack più facile da usare.\n\nScoprirai di più su queste modifiche nelle prossime schermate.\n\nPuoi rivedere queste informazioni in un secondo momento nelle impostazioni di TalkBack e poi in Nuove funzionalità in TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Nuove lingue per Descrivi la schermata e Chiedi a Gemini</string>
-  <string name="describe_screen_and_qna_content">Descrivi la schermata e Chiedi a Gemini sono ora disponibili in altre lingue. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Scopri di più nel Centro assistenza&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Scorciatoia per la digitazione vocale</string>
   <string name="shortcut_for_dictation_content">Mentre usi Gboard, puoi toccare due volte con due dita per avviare o interrompere la digitazione vocale.
 &lt;br&gt;
 &lt;br&gt;Assicurati di avere l\'ultima versione di &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard da Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Quando Gboard è sullo schermo, puoi toccare due volte con due dita per avviare la dettatura e toccare due volte con due dita per interromperla.</string>
-  <string name="keyboard_title">Tastiera</string>
-  <string name="keyboard_content">TalkBack ora ha una \"mappa dei tasti avanzata\" per la tastiera, con una serie di nuovi comandi e scorciatoie. Questo miglioramento, che include la \"modalità navigazione\" per una navigazione web più efficiente, semplifica la navigazione e l\'interazione per gli utenti di TalkBack che utilizzano tastiere fisiche. Puoi passare alla \"mappa dei tasti avanzata\" in Impostazioni di TalkBack &gt; Impostazioni avanzate &gt; Scorciatoie da tastiera.</string>
-  <string name="keyboard_content_tts">TalkBack ora ha una \"mappa dei tasti avanzata\" per la tastiera, con una serie di nuovi comandi e scorciatoie. Questo miglioramento, che include la \"modalità navigazione\" per una navigazione web più efficiente, semplifica la navigazione e l\'interazione per gli utenti di TalkBack che utilizzano tastiere fisiche. Puoi passare a alla \"mappa dei tasti avanzata\" nelle impostazioni di TalkBack, poi in Impostazioni avanzate e infine in Scorciatoie da tastiera.</string>
-  <string name="reduce_delay_title">Riduci il ritardo</string>
-  <string name="reduce_delay_content">Ora puoi ridurre i ritardi degli annunci di TalkBack per l\'esplorazione al tocco e la digitazione. Per visualizzare queste impostazioni, vai alle impostazioni di TalkBack &gt; Impostazioni avanzate &gt; Riduci il ritardo.</string>
-  <string name="reduce_delay_content_tts">Ora puoi ridurre i ritardi degli annunci di TalkBack per l\'esplorazione al tocco e la digitazione. Per visualizzare queste impostazioni, vai alle impostazioni di TalkBack, poi a Impostazioni avanzate e infine a Riduci il ritardo.</string>
-  <string name="customize_braille_keyboard_improvements_title">Personalizza i gesti della tastiera braille</string>
-  <string name="customize_braille_keyboard_improvements_content">Ora è possibile personalizzare i gesti per la tastiera braille virtuale sullo schermo. Per personalizzare, vai alle impostazioni di TalkBack &gt; Tastiera braille &gt; Gesti.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Ora è possibile personalizzare i gesti per la tastiera braille virtuale sullo schermo. Per personalizzare, vai alle impostazioni di TalkBack, poi a Tastiera braille e Gesti.</string>
-  <string name="learn_more_about_braille_keyboard">Scopri di più sulla tastiera braille</string>
-  <string name="other_changes_title">Altre modifiche</string>
-  <string name="other_changes_content">Se attivi TalkBack per errore, sullo schermo compare un messaggio che ti aiuta a disattivarlo rapidamente. Puoi disattivare questa opzione nelle impostazioni di TalkBack &gt; Mostra istruzioni per disattivare TalkBack.</string>
-  <string name="other_changes_content_tts">Se attivi TalkBack per errore, sullo schermo compare un messaggio che ti aiuta a disattivarlo rapidamente. Puoi disattivare questa opzione andando alle impostazioni di TalkBack e scegliendo Mostra istruzioni per disattivare TalkBack.</string>
-  <string name="keymap_changes_content">La mappa dei tasti classica è stata sostituita con quella predefinita, che include altre scorciatoie.</string>
   <string name="announcing_text_formatting_title">Annuncio della formattazione del testo</string>
   <string name="announcing_text_formatting_header">Ora TalkBack può annunciare le modifiche alla formattazione del testo, come grassetto, corsivo e colore del testo. Per iniziare:</string>
   <string name="announcing_text_formatting_option1">Seleziona l\'elemento con la formattazione, apri il menu TalkBack e seleziona \"Descrivi la formattazione del testo\" oppure</string>
@@ -1083,7 +969,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="additional_tips_link_subtext">Scopri come effettuare chiamate, inviare messaggi e altro ancora</string>
   <string name="practice_gestures_link_text">Gesti di prova</string>
   <string name="practice_gestures_link_subtext">Prova diversi gesti per scoprire l\'azione corrispondente</string>
-  <string name="help_and_feedback_link_subtext">Scopri di più su TalkBack e invia feedback</string>
   <string name="choose_tutorial_title">Scegli come interagire con TalkBack</string>
   <string name="touch_tutorial_button">Tutorial sul tocco</string>
   <string name="keyboard_tutorial_button">Tutorial sulla tastiera</string>
@@ -1229,8 +1114,6 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="wear_training_typing_text5">Prova qui sotto.</string>
   <string name="wear_training_typing_practice_button_content_description">Digitazione con la tastiera</string>
   <string name="wear_training_end_tutorial_title">Puoi iniziare a usare TalkBack</string>
-  <string name="talkback_updated_notification_title">La funzionalità TalkBack è stata aggiornata</string>
-  <string name="talkback_updated_notification_content">Tocca per saperne di più</string>
   <string name="wear_new_feature_page_title">Ti diamo il benvenuto nella versione aggiornata di TalkBack</string>
   <string name="wear_new_feature_page_content">Noterai alcune correzioni di bug e modifiche allo spostamento dello stato attivo</string>
   <string name="wear_new_feature_page_button_content_description">Fine</string>
@@ -1249,10 +1132,7 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="title_pref_blue">Blu</string>
   <string name="title_pref_grey">Grigio</string>
   <string name="survey_setting_title">Condividi il tuo feedback</string>
-  <string name="survey_closed">Sondaggio chiuso</string>
   <string name="title_summarize_view">Descrivi la schermata</string>
-  <string name="title_increase_touch_focus_latency">Aumenta il ritardo di selezione</string>
-  <string name="title_decrease_touch_focus_latency">Diminuisci il ritardo di selezione</string>
   <string name="detected_result">Rilevato: %1$s</string>
   <string name="title_image_caption">Descrivi l\'immagine</string>
   <string name="image_caption_with_gemini_prefix">Descrivi questa immagine. Non usare markup nella risposta.</string>
@@ -1279,33 +1159,15 @@ I ritardi inferiori a 0,3 secondi cambieranno il doppio tocco per attivare in to
   <string name="image_qna_question_prefix">UTENTE: %1$s</string>
   <string name="image_qna_answer_prefix">MODELLO: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Continua ad alternare UTENTE e MODELLO] ...</string>
-  <string name="screen_overview_with_screenshot">Il tuo compito è aiutare una persona che non può vedere il proprio smartphone a capire cosa c\'è sullo schermo. Descrivi questo screenshot in poche frasi.
-
-Istruzioni
-Inizia a rispondere dicendo: \"Lo schermo mostra\"
-La prima parte della risposta deve descrivere i contenuti più importanti e salienti sullo schermo. Ecco alcuni esempi di contenuti più importanti e salienti da descrivere:
-* In un\'app di chat: il mittente e il testo del messaggio più recente
-* In un\'app di social media: il primo post, inclusi il nome dell\'autore, il testo e una descrizione dell\'immagine
-* In un\'app di notizie: il titolo dell\'articolo e una descrizione dell\'immagine principale
-* In un\'app di shopping: una descrizione del prodotto mostrato e il prezzo
-* In un\'app di calendario: il prossimo evento e il numero di altri eventi mostrati in seguito
-* In un elenco di messaggi: il nome e l\'anteprima del primo messaggio, poi solo i nomi dei successivi messaggi nell\'elenco e il numero di messaggi non letti
-
-Dopodiché, la risposta può descrivere la posizione nello spazio e lo scopo delle barre di navigazione e dei pulsanti in evidenza.
-Non menzionare i contenuti della barra di stato in alto (ad es. ora, stato della rete, batteria).
-Non usare markdown nella risposta.</string>
   <string name="title_gemini_opt_in_dialog">Vuoi ricevere descrizioni delle immagini dettagliate?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Vuoi ricevere descrizioni delle immagini?</string>
   <string name="title_gemini_result_dialog">Elementi rilevati: immagine</string>
   <string name="title_gemini_result_bottom_sheet">Descrizione dell\'immagine</string>
   <string name="title_gemini_screen_overview_result_dialog">Descrizione della schermata</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Riepilogo</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Azioni</string>
   <string name="positive_button_gemini_opt_in_dialog">Attiva</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Accetto</string>
   <string name="negative_button_gemini_opt_in_dialog">No, grazie</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Vai alle Impostazioni</string>
-  <string name="positive_button_gemini_download_dialog">Scarica e attiva</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Testo, \"%1$s\".</string>
   <string name="detected_icon_label">Icona, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Non usare markdown nella risposta.</string>
   <string name="screen_overview_no_result">Impossibile riassumere la schermata</string>
   <string name="image_caption_no_result">Impossibile descrivere l\'immagine</string>
   <string name="image_caption_with_hide_screen">Le descrizioni delle immagini non sono disponibili quando la schermata è nascosta. Mostra la schermata e riprova.</string>
-  <string name="feedback_button_state_set">selezionato</string>
-  <string name="feedback_button_state_unset">non selezionato</string>
   <string name="action_text_like_button">Contrassegna come risposta buona</string>
   <string name="action_text_dislike_button">Contrassegna come risposta scadente</string>
   <string name="action_text_clear_like_button">Cancella risposta buona</string>
@@ -1349,18 +1209,13 @@ Non usare markdown nella risposta.</string>
   <string name="downloading_all_image_captioning_hint">Download delle descrizioni automatiche di immagini e icone in corso…</string>
   <string name="download_all_image_captioning_successful_hint">Descrizioni automatiche di immagini e icone scaricate</string>
   <string name="download_all_image_captioning_failed_hint">Impossibile scaricare. Riprova più tardi.</string>
-  <string name="download_complete_notification_title">Download completato</string>
-  <string name="download_complete_notification_content">Ora ascolterai descrizioni automatiche di immagini e icone con TalkBack</string>
-  <string name="download_complete_notification_action">Impostazioni</string>
   <string name="download_storage_error_hint">Lo spazio di archiviazione è esaurito. Per scaricare, libera %1$d MB in Impostazioni &gt; Memoria.</string>
   <string name="download_network_error_hint">Impossibile scaricare. Controlla la connessione e riprova.</string>
   <string name="switch_icon_detection_dialog_title">Descrizioni automatiche delle icone</string>
   <string name="switch_icon_detection_dialog_message">Ascolta le descrizioni quando imposti lo stato attivo su un\'icona</string>
   <string name="switch_image_description_dialog_message">Ascolta le descrizioni quando selezioni un\'immagine. Alcune app potrebbero non supportare questa funzionalità.</string>
-  <string name="switch_text_recognition_dialog_title">Descrivi automaticamente il testo nelle immagini</string>
   <string name="switch_text_recognition_dialog_message">Ascolta le descrizioni quando imposti lo stato attivo su un\'immagine che contiene testo</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Scaricate</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Puoi ancora ottenere le descrizioni di un\'immagine selezionata dal menu di TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Ok</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Elimina download</string>
   <string name="delete_icon_detection_dialog_title">Eliminare le descrizioni automatiche delle icone?</string>
@@ -1376,11 +1231,6 @@ Non usare markdown nella risposta.</string>
   <string name="gemini_enable_dialog_title">Usare Gemini in TalkBack</string>
   <string name="gemini_disable_dialog_message">Comprensione dello schermo con Gemini</string>
   <string name="disable_gemini_dialog_subtext">Attiva per abilitare la comprensione dello schermo con Gemini</string>
-  <string name="ai_services_update_dialog_title">Aggiorna l\'app %1$s per descrivere le immagini</string>
-  <string name="ai_services_update_dialog_message">Per ascoltare le descrizioni delle immagini, scarica l\'ultima versione di %1$s da Google Play.\n\nUna volta terminato il download, torna alle impostazioni di TalkBack e riattiva le descrizioni automatiche delle immagini.</string>
-  <string name="ai_services_update_dialog_button_text">Vai su Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Si è verificato un problema. Riprova.</string>
   <string name="gemini_block_message">Impossibile elaborare questa immagine</string>
   <string name="gemini_network_error">Nessuna connessione a internet. Controlla la connessione Wi-Fi o la rete mobile e riprova.</string>
@@ -1396,13 +1246,8 @@ Non usare markdown nella risposta.</string>
   <string name="image_qna_typing_button_text">Digita una domanda per Gemini</string>
   <string name="image_qna_send_button_text">Chiedi</string>
   <string name="image_qna_speak_question_description">Fai una domanda</string>
-  <string name="overviews_summary_intro">Riepilogo della schermata dell\'app: %1$s</string>
   <string name="overviews_node_not_found">Mi dispiace, non riesco più a trovare quella parte dello schermata.</string>
-  <string name="overviews_images_in_app">Immagini principali trovate</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Azioni nell\'app</string>
-  <string name="overviews_actions_in_app_description">Ecco le principali azioni che puoi eseguire dalla schermata dell\'app:</string>
-  <string name="overviews_parent_type">Azioni nell\'app</string>
   <string name="text_replaced_feedback">Testo sostituito</string>
   <string name="switch_gesture_set">Cambia insieme di gesti</string>
   <string name="switch_gesture_set_to">Passa all\'insieme di gesti %1$d</string>
@@ -1453,5 +1298,4 @@ Non usare markdown nella risposta.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Chiudi</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Per ascoltare le notifiche quando lo schermo è disattivato, attiva l\'opzione \"Leggi notifiche con schermo disattivato\" nelle impostazioni di Preferenze di lettura di TalkBack</string>
 </resources>

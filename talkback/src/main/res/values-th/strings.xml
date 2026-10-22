@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">TalkBack จะอธิบายและอ่านออกเสียงเมื่อเปิดอยู่ เพื่อให้คุณใช้อุปกรณ์ได้โดยไม่ต้องมองหน้าจอ TalkBack มีไว้สำหรับสถานการณ์หรือผู้ที่มองดูหน้าจอได้ลำบาก&lt;br&gt;&lt;br&gt;&lt;b&gt;วิธีใช้ TalkBack&lt;/b&gt;&lt;br&gt;• ปัดไปทางซ้ายหรือขวาเพื่อเลื่อนไปมาระหว่างรายการต่างๆ&lt;br&gt;• แตะสองครั้งเพื่อเปิดใช้งานรายการ&lt;br&gt;• ใช้ 2 นิ้วลากเพื่อเลื่อน&lt;br&gt;&lt;b&gt;วิธีปิด TalkBack&lt;/b&gt;&lt;br&gt;1. ในการตั้งค่า ให้แตะ&lt;b&gt;ใช้ TalkBack&lt;/b&gt; เส้นขอบจะปรากฏขึ้น แตะสองครั้ง&lt;br&gt;2. ในข้อความยืนยัน ให้แตะ&lt;b&gt;หยุด&lt;/b&gt; เส้นขอบจะปรากฏขึ้น แตะสองครั้ง</string>
   <string name="talkback_service_summary">ใช้โปรแกรมอ่านหน้าจอเพื่อฟังเสียงอ่านรายการต่างๆ</string>
   <string name="talkback_preferences_title">การตั้งค่า TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">การตั้งค่า</string>
   <string name="tts_preferences_title">การอ่านออกเสียงข้อความ</string>
   <string name="language_options">ภาษา</string>
   <string name="spoken_language">ภาษาที่พูด</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">เลิกค้นหาแล้ว</string>
   <string name="notification_type_status_started">เริ่มต้นแล้ว</string>
   <string name="notification_type_status_stopped">หยุดแล้ว</string>
-  <string name="notification_type_status_connected">เชื่อมต่อแล้ว</string>
-  <string name="notification_battery_level_unknown">ไม่ทราบ</string>
   <string name="notification_battery_saver_mode">ประหยัดแบตเตอรี่อยู่</string>
   <string name="template_no_text_selected">ไม่ได้เลือกข้อความไว้</string>
   <string name="template_charging">กำลังชาร์จ %1$s ระดับแบตเตอรี่ %2$s เปอร์เซ็นต์</string>
   <string name="template_charging_lite">กำลังชาร์จ %1$s</string>
-  <string name="template_battery_state">พลังงาน %1$s %2$s เปอร์เซ็นต์ %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">เสียงเรียกเข้าแบบสั่น</string>
   <string name="value_ringer_silent">เสียงเรียกเข้าแบบปิดเสียง</string>
   <string name="value_screen_on">เปิดหน้าจอ</string>
   <string name="value_screen_off">ปิดหน้าจอ</string>
   <string name="value_device_unlocked">ปลดล็อกอุปกรณ์แล้ว</string>
-  <string name="title_pref_category_audio">เสียง</string>
   <string name="title_pref_speech_volume">ระดับเสียงพูด</string>
-  <string name="title_pref_speech_rate">ความเร็วในการพูด</string>
-  <string name="summary_pref_speech_rate">ความเร็วในการพูดข้อความ</string>
   <string name="title_pref_verbose_scroll_announcement">พูดจำนวนรายการในลิสต์เสมอ</string>
   <string name="summary_pref_verbose_scroll_announcement">พูดจำนวนสำหรับวิธีการเลื่อนทั้งหมด</string>
   <string name="title_pref_cover_proximity_sensor">ปิดพร็อกซิมิตีเซ็นเซอร์เพื่อหยุดเสียงพูด</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">พูดบอกเวลา</string>
   <string name="pref_speak_time_summary">เมื่อคุณเปิดหน้าจอ</string>
   <string name="summary_speak_container_element_positions">ประกอบด้วยข้อมูลขณะเข้าและออกจากรายการ ตารางกริด และคอนเทนเนอร์อื่นๆ</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">เพิ่มความล่าช้าโฟกัสไปยังการควบคุมการอ่านแล้ว</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">ใช้ 3 นิ้วปัดเพื่อใช้การควบคุมการอ่านและเปลี่ยนความล่าช้าโฟกัสได้ทุกเมื่อ</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">เปลี่ยนไปใช้การยกเพื่อพิมพ์ใช่ไหม</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">เมื่อตั้งค่าความล่าช้าของโฟกัสการพิมพ์ไว้ต่ำกว่า 0.3 วินาที จะทำให้แตะสองครั้งเพื่อพิมพ์ได้ยากมาก เลือก \"เปลี่ยน\" เพื่อเปลี่ยนไปใช้ฟีเจอร์ยกเพื่อพิมพ์โดยอัตโนมัติ\n\nหากต้องการใช้ฟีเจอร์ยกเพื่อพิมพ์ ให้กดค้างไว้เพื่อเลือกแป้น แล้วจึงยกนิ้วขึ้นเพื่อพิมพ์\n\nคุณปรับแต่งการตั้งค่านี้ได้ในการตั้งค่า TalkBack</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">เพิ่มความล่าช้าโฟกัสการพิมพ์ลงในการควบคุมการอ่านแล้ว</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">หากพบปัญหาเกี่ยวกับการแตะสองครั้งขณะพิมพ์ ให้ใช้ 3 นิ้วปัดเพื่อใช้การควบคุมการอ่านและเปลี่ยนไปใช้ความล่าช้าโฟกัสการพิมพ์ที่นานขึ้น</string>
-  <string name="gestures_announce_typing_focus_wont_change">ความล่าช้าของโฟกัสการพิมพ์จะไม่ทำงานหากไม่มีฟีเจอร์ยกเพื่อพิมพ์</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">รับทราบ</string>
   <string name="reset_letency_reduction_settings_dialog_title">รีเซ็ตการตั้งค่าความล่าช้าไหม</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">การดำเนินการนี้จะรีเซ็ตการตั้งค่าความล่าช้าทั้งหมดเป็นค่าเริ่มต้น</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">รีเซ็ต</string>
   <string name="gestures_announce_reset_latency_reduction_settings">รีเซ็ตการตั้งค่าการลดเวลาในการตอบสนองแล้ว</string>
-  <string name="reduce_focus_delay_settings_confirm_button">เปลี่ยน</string>
-  <string name="reduce_focus_delay_settings_cancel_button">ไม่เปลี่ยน</string>
   <string name="Reset_gesture_settings_dialog_title">รีเซ็ตท่าทางสัมผัสไหม</string>
   <string name="Reset_gesture_settings_set_dialog_title">รีเซ็ตท่าทางสัมผัสที่ตั้งค่าไว้ปัจจุบันใช่ไหม</string>
   <string name="message_reset_gesture_settings_confirm_dialog">การดำเนินการนี้จะรีเซ็ตท่าทางสัมผัสทั้งหมดเป็นการกระทำเริ่มต้น\n\nการเปลี่ยนแปลงทั้งหมดที่คุณทำไว้จะหายไป</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">พูดข้อมูลอัปเดตความคืบหน้าทั้งหมด</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">รวมถึงข้อมูลอัปเดตขณะดาวน์โหลด ติดตามเส้นทางการขับขี่ และอื่นๆ เมื่อปิดการตั้งค่านี้ คุณจะได้รับข้อมูลอัปเดตน้อยลง</string>
   <string name="title_pref_explore_by_touch">แตะเพื่อสำรวจ</string>
-  <string name="title_pref_category_visual">ภาพ</string>
   <string name="title_pref_category_controls">การควบคุม</string>
-  <string name="title_pref_category_braille">อักษรเบรลล์</string>
-  <string name="title_pref_category_general">ทั่วไป</string>
-  <string name="title_pref_category_advanced">ขั้นสูง</string>
-  <string name="title_pref_category_others">อื่นๆ</string>
-  <string name="title_pref_category_tutorial_and_help">บทแนะนำและความช่วยเหลือ</string>
   <string name="title_pref_category_reduce_latency_summary">การตั้งค่าเหล่านี้สามารถลดความล่าช้าก่อนประกาศของ TalkBack</string>
   <string name="reset_latency_settings_title">รีเซ็ตการตั้งค่าความล่าช้าทั้งหมด</string>
   <string name="title_pref_single_tap">แตะครั้งเดียวเพื่อเปิดใช้งาน</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">เปลี่ยนตัวบ่งชี้โฟกัส</string>
   <string name="title_pref_category_manage_gestures">ท่าทางสัมผัส</string>
   <string name="title_pref_manage_labels">ป้ายกำกับที่กำหนดเอง</string>
-  <string name="title_pref_manage_customize_menus">เมนูการแก้ไข</string>
   <string name="title_pref_category_context_menu">ปรับแต่งเมนู TalkBack</string>
   <string name="title_pref_category_selector_menu">ปรับแต่งตัวควบคุมการอ่าน</string>
   <string name="title_pref_category_navigation_menu">แก้ไขตัวเลือกการนําทาง</string>
-  <string name="pref_category_context_menu_summary">หากต้องการใช้เมนู TalkBack ให้ใช้ 3 นิ้วแตะหน้าจอ หรือจะปัดขึ้นแล้วไปทางขวา หรือปัดลงแล้วไปทางขวาก็ได้เช่นกัน</string>
-  <string name="pref_category_context_menu_summary_xr">หากต้องการใช้เมนู TalkBack ให้หันฝ่ามือข้างที่ไม่ถนัดเข้าหาตัวแล้วบีบนิ้ว</string>
-  <string name="pref_category_context_menu_summary_single_finger">หากต้องใช้เมนู TalkBack ให้ปัดลงแล้วไปทางขวา</string>
-  <string name="pref_category_selector_menu_summary">หากต้องการใช้ตัวควบคุมการอ่าน ให้ใช้ 3 นิ้วปัดไปทางซ้ายหรือขวา หรือจะใช้ 3 นิ้วปัดขึ้นหรือลงก็ได้เช่นกัน</string>
-  <string name="pref_category_selector_menu_summary_xr">หากต้องการสลับไปมาระหว่างตัวควบคุมการอ่าน ให้หันฝ่ามือข้างที่ไม่ถนัดเข้าหาตัวแล้วบีบนิ้วค้างไว้ เลื่อนไปทางขวาหรือซ้าย แล้วปล่อย</string>
-  <string name="pref_category_selector_menu_summary_single_finger">หากต้องการใช้ตัวควบคุมการอ่าน ให้ปัดขึ้นแล้วลง</string>
   <string name="title_pref_manage_keyboard_shortcuts">แป้นพิมพ์ลัด</string>
   <string name="title_pref_export_custom_labels">ส่งออกป้ายกำกับที่กำหนดเอง</string>
-  <string name="title_pref_play_store">เปิด TalkBack ที่ Play Store</string>
-  <string name="summary_pref_play_store">เวอร์ชัน TalkBack ปัจจุบัน: %1$s</string>
   <string name="title_pref_help_and_feedback">ความช่วยเหลือและความคิดเห็น</string>
-  <string name="title_pref_gup">ติดต่อทีมสนับสนุนคนพิการของ Google</string>
-  <string name="subtitle_pref_gup">รับความช่วยเหลือในการใช้ TalkBack หรือรายงานปัญหา</string>
-  <string name="pref_item_licenses">ใบอนุญาตโอเพนซอร์ส</string>
-  <string name="title_pref_tutorial">บทแนะนำ</string>
   <string name="title_pref_help">ความช่วยเหลือ</string>
   <string name="title_pref_show_tos">ข้อกำหนดในการให้บริการ</string>
   <string name="title_pref_show_privacy_policy">นโยบายความเป็นส่วนตัว</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">ท่าทางสัมผัสลายนิ้วมือ</string>
   <string name="title_pref_category_tutorial">บทแนะนำของ TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">ความช่วยเหลือ</string>
-  <string name="title_pref_category_typing">การพิมพ์</string>
   <string name="title_pref_advanced_settings">การตั้งค่าขั้นสูง</string>
   <string name="title_pref_show_exit_watermark">แสดงวิธีการปิด TalkBack</string>
   <string name="summary_pref_show_exit_watermark">ข้อความจะแสดงขึ้นเมื่อ TalkBack เปิดอยู่ เพื่อช่วยให้คุณปิดได้อย่างรวดเร็ว</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;คีย์ตัวปรับแต่งบางคีย์จะแตกต่างกัน&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">ดูข้อมูลเพิ่มเติมเกี่ยวกับคีย์แมป</string>
   <string name="keycombo_go_to_settings">ไปที่การตั้งค่า</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack กำลังเตรียมพร้อมนำคีย์แมปแบบคลาสสิก​ออก หากต้องการใช้แป้นพิมพ์ลัดต่อไป ให้เปลี่ยนเป็นคีย์แมปเริ่มต้น</string>
-  <string name="keycombo_keymap_changes_notifications_action">ดูข้อมูลเพิ่มเติม</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">รับทราบ</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">การตั้งค่า</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">ดูข้อมูลเพิ่มเติม</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">ตอนนี้คุณใช้คีย์แมปเริ่มต้นของ TalkBack นอกจากนี้ยังมีคีย์แมปปรับปรุงใหม่ที่มีคำสั่งใหม่ๆ มากมาย ดูข้อมูลเพิ่มเติมในศูนย์ช่วยเหลือหรือเปลี่ยนไปใช้คีย์แมปใหม่ในการตั้งค่า</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">คีย์แมปใหม่พร้อมใช้งาน</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">คีย์แมปปรับปรุงใหม่ของ TalkBack เพิ่มคำสั่งใหม่ๆ มากมาย ดูข้อมูลเพิ่มเติมในศูนย์ช่วยเหลือหรือเปลี่ยนไปใช้คีย์แมปใหม่ในการตั้งค่า</string>
-  <string name="keycombo_update_modifier_key_warning_title">อัปเดตแป้นกดร่วมของ TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">ไว้ทีหลัง</string>
   <string name="keycombo_warning_content_description">ข้อมูลเพิ่มเติมเกี่ยวกับแป้นกดร่วม</string>
-  <string name="keycombo_warning_dialog_title">อัปเดตแป้นกดร่วม</string>
-  <string name="keycombo_warning_dialog_message">เพื่อให้แป้นพิมพ์ลัดของ TalkBack ทำงานได้อย่างถูกต้อง ให้อัปเดตแป้นกดร่วมจาก \"ดำเนินการ\" เป็น Alt\n\nหากคุณใช้แป้นกดร่วม \"ดำเนินการ\" ต่อไป แป้นพิมพ์ลัดบางรายการจะดำเนินการต่างออกไปสำหรับ Android เวอร์ชันนี้</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">คีย์แมป</string>
   <string name="keycombo_menu_select_keymap">เลือกคีย์แมป</string>
   <string name="keycombo_menu_reset_keymap">รีเซ็ตคีย์แมปนี้</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">เพิ่มระดับเสียงพูด</string>
   <string name="keycombo_menu_global_speech_volume_decrease">ลดระดับเสียงพูด</string>
   <string name="keycombo_menu_global_refocus_current_node">พูดโฟกัสปัจจุบัน</string>
-  <string name="keycombo_menu_category_granularity">การนำทาง</string>
   <string name="keycombo_menu_granularity_increase">การตั้งค่าการนำทางถัดไป</string>
   <string name="keycombo_menu_granularity_decrease">การตั้งค่าการนำทางก่อนหน้า</string>
   <string name="keycombo_menu_category_other">การทำงานอื่นๆ</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">คุณแน่ใจไหมว่าต้องการรีเซ็ตแป้นพิมพ์ลัดสำหรับคีย์แมปนี้เป็นค่าเริ่มต้น โปรดทราบว่าการดำเนินการนี้ไม่สามารถเลิกทำได้</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">รีเซ็ต</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s ในโหมดอ่าน</string>
-  <string name="keycombo_assign_dialog_instruction">กดปุ่มที่ใช้ร่วมกันเพื่อตั้งค่าทางลัดใหม่ จะต้องประกอบด้วยปุ่ม ALT หรือ Control เป็นอย่างน้อย</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">กดแป้นที่กดร่วมกันพร้อมกับ %1$s ซึ่งเป็นแป้นกดร่วม เพื่อตั้งค่าแป้นพิมพ์ลัดใหม่</string>
   <string name="keycombo_unassigned">ไม่ได้กำหนด</string>
   <string name="save_button_in_keycombo_assign_dialog">บันทึก</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">ความล่าช้าโฟกัสการพิมพ์</string>
   <string name="message_pref_touch_explore_latency">ความล่าช้าโฟกัสการพิมพ์ที่สั้นลงหมายความว่า TalkBack จะประกาศเร็วขึ้นหลังจากแตะแป้นพิมพ์\n\nเลือกความล่าช้า</string>
   <string name="title_pref_touch_focus_timeout">ความล่าช้าโฟกัส</string>
-  <string name="summary_pref_touch_focus_time">
-ควบคุมความเร็วที่ TalkBack พูดหลังจากย้ายโฟกัสไป ความล่าช้าที่สั้นลงจะทำให้ TalkBack ทำงานได้เร็วขึ้น แต่จะทำให้การแตะสองครั้งและแตะสามครั้งทำได้ยากขึ้น\n\n
-ความล่าช้าที่ต่ำกว่า 0.3 วินาทีจะเปลี่ยนการแตะสองครั้งเพื่อเปิดใช้งานเป็นการแตะด้วย 2 นิ้วเพื่อเปิดใช้งาน
-      </string>
   <string name="title_pref_talkback_gesture_detection">จัดการการแตะสัมผัสใน TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">ปิดและเปิด TalkBack ขึ้นมาใหม่เพื่อเปิดใช้การตั้งค่า</string>
   <string name="title_pref_auto_image_captioning">คำอธิบายอัตโนมัติ</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">เปิดคำอธิบายรูปภาพในการตั้งค่า</string>
   <string name="dialog_message_turn_on_image_description">คุณสามารถลองอีกครั้งหลังจากเปิดคำอธิบายรูปภาพอัตโนมัติหรือคำอธิบายโดยละเอียด</string>
   <string name="title_pref_detailed_image_description">คำอธิบายรูปภาพโดยละเอียด</string>
-  <string name="summary_pref_ai_description">ฟังคำอธิบายที่ยาวขึ้นเมื่อเลือก \"%1$s\" จากเมนู TalkBack</string>
   <string name="dialog_message_on_device_ai_description">คุณจะได้ยินคำอธิบายสั้นๆ เมื่อโฟกัสที่รูปภาพในแอปที่รองรับ\n\nรูปภาพได้รับการประมวลผลบนอุปกรณ์และจะไม่มีการส่งไปยัง Google \n\nGenerative AI อยู่ในขั้นทดลองจึงอาจทำงานผิดพลาดได้ การดำเนินการต่อหมายความว่าคุณยอมรับ<a href="https://policies.google.com/terms/generative-ai">ข้อกำหนดในการให้บริการของ Google</a></string>
   <string name="enable_gemini">เปิด</string>
   <string name="powered_by_gemini">ขับเคลื่อนโดย Generative AI</string>
-  <string name="detailed_image_description_ongoing_hint">กำลังรับคำอธิบาย</string>
-  <string name="detailed_image_description_result_prefix">ตรวจพบ: รูปภาพ %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">จำเป็นต้องดาวน์โหลดสำหรับคำอธิบายรูปภาพอัตโนมัติ</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">รูปภาพได้รับการประมวลผลบนอุปกรณ์และจะไม่มีการส่งไปยัง Google\n\nGenerative AI อยู่ในขั้นทดลองจึงอาจทำงานผิดพลาดได้ การดำเนินการต่อหมายความว่าคุณยอมรับ%1$s</string>
   <string name="dialog_message_gen_ai_tos_link">ข้อกำหนดในการให้บริการของ Google</string>
   <string name="message_aifeature_downloading">กำลังดาวน์โหลดโมเดล AI อาจใช้เวลาสักครู่ คุณจะได้รับการแจ้งเตือนเมื่อดำเนินการเสร็จ</string>
   <string name="message_aifeature_downloading_with_progress">กำลังดาวน์โหลด ดาวน์โหลดแล้ว %1$d จาก %2$d MB</string>
-  <string name="message_aifeature_download_complete">ดาวน์โหลดโมเดล AI แล้ว TalkBack สามารถสร้างคำอธิบายรูปภาพได้แล้ว</string>
   <string name="summary_pref_auto_image_captioning">สำหรับไอคอน รูปภาพ และข้อความในรูปภาพ</string>
-  <string name="summary_pref_auto_image_captioning_text_only">สำหรับข้อความในรูปภาพ</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">สำหรับรูปภาพและข้อความในรูปภาพ</string>
-  <string name="summary_pref_auto_image_captioning_no_image">สำหรับไอคอนและข้อความในรูปภาพ</string>
   <string name="summary_pref_module_downloading">กำลังดาวน์โหลด…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">เปิดใช้งานสำหรับรูปภาพทั้งหมด</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">เปิดใช้งานสำหรับรูปภาพที่ไม่มีป้ายกำกับเท่านั้น</string>
   <string name="summary_pref_auto_image_captioning_disabled">ปิด</string>
-  <string name="summary_pref_auto_icon_detection_enabled">เปิดใช้งานสำหรับไอคอนทั้งหหมด</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">เปิดใช้งานสำหรับไอคอนที่ไม่มีป้ายกำกับเท่านั้น</string>
   <string name="summary_pref_auto_icon_detection_disabled">ปิด</string>
   <string name="title_pref_enable_auto_image_caption">รูปภาพทั้งหมด</string>
   <string name="title_pref_enable_auto_image_caption_arg">รูปภาพทั้งหมด\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">ไอคอนทั้งหมด</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">เฉพาะไอคอนที่ไม่มีป้ายกำกับไว้</string>
   <string name="title_pref_disable_auto_icon_detection">ไม่ต้องอธิบายไอคอน</string>
-  <string name="dialog_message_on_device_ai_model_download">คุณจะได้ยินคำอธิบายสั้นๆ เมื่อโฟกัสที่รูปภาพในแอปที่รองรับ\n\nรูปภาพได้รับการประมวลผลบนอุปกรณ์และจะไม่มีการส่งไปยัง Google\n\nGenerative AI อยู่ในขั้นทดลองจึงอาจทำงานผิดพลาดได้ การดำเนินการต่อหมายความว่าคุณยอมรับ%1$s</string>
   <string name="title_pref_enable_gemini_support">เปิด</string>
   <string name="title_pref_disable_gemini_support">ปิด</string>
   <string name="summary_pref_gemini_support_enabled">Gemini เปิดใช้อยู่</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">พิมพ์โหนดทรี</string>
   <string name="shortcut_print_performance_stats">พิมพ์สถิติประสิทธิภาพ</string>
   <string name="shortcut_first_in_screen">โฟกัสที่รายการแรกในหน้าจอ</string>
-  <string name="shortcut_summary">สรุปรูปแบบหน้าจอ</string>
   <string name="shortcut_voice_commands">เริ่มคำสั่งเสียง</string>
   <string name="shortcut_last_in_screen">โฟกัสที่รายการสุดท้ายในหน้าจอ</string>
   <string name="shortcut_enable_dimming">ซ่อนหน้าจอ</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">วิธีการไปยังส่วนต่างๆ ของเว็บ</string>
   <string name="menu_category_basic_navigation">วิธีพื้นฐานในการไปยังส่วนต่างๆ</string>
   <string name="summary_custom_action">แสดงเมื่อมีการดำเนินการสำหรับรายการปัจจุบัน เช่น ลิงก์ คัดลอก วาง เลือก และอื่นๆ</string>
-  <string name="summary_context_menu_links">เปิดลิงก์ภายในรายการที่โฟกัส</string>
   <string name="summary_viewpager_controls">ไปยังหน้าถัดไปหรือก่อนหน้า แสดงเมื่อคุณกำลังอ่านเนื้อหาที่มีหลายหน้า</string>
   <string name="summary_labeling_controls">แสดงเมื่อคุณเลือกรายการที่ไม่มีป้ายกำกับ</string>
   <string name="summary_granularity">อ่านทีละอักขระ คำ บรรทัด เป็นต้น</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">สรุปหน้าจอด้วยปุ่มดำเนินการ</string>
   <string name="summary_screen_overview_no_actions">ฟังสรุปเนื้อหาบนหน้าจอ</string>
   <string name="summary_image_caption">พูดข้อความและไอคอนในรูปภาพที่เลือก</string>
-  <string name="summary_summarize_view">พูดสรุปมุมมอง</string>
   <string name="summary_typo_suggestions">แสดงเมื่อเคอร์เซอร์อยู่บนคำที่พิมพ์ผิด</string>
   <string name="summary_cache_keyboard_keys">TalkBack โหลดประกาศไว้ล่วงหน้าเพื่อลดความล่าช้าเมื่อคุณพิมพ์</string>
   <string name="summary_cache_keyboard_keys_disabled">ใช้การอ่านออกเสียงข้อความ Google เพื่อใช้ฟีเจอร์นี้</string>
-  <string name="value_direction_down">ลง</string>
-  <string name="value_direction_down_and_right">ลงแล้วไปทางขวา</string>
   <string name="title_pref_shortcut_up">ปัดขึ้น</string>
   <string name="title_pref_shortcut_up_xr">หันฝ่ามือข้างที่ไม่ถนัดเข้าหาตัว จากนั้นบีบนิ้วแล้วปัดขึ้น</string>
   <string name="title_pref_shortcut_down">ปัดลง</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">ปัดนิ้วไปทางซ้ายบนเซ็นเซอร์ลายนิ้วมือ</string>
   <string name="title_pref_shortcut_fingerprint_right">ปัดนิ้วไปทางขวาบนเซ็นเซอร์ลายนิ้วมือ</string>
   <string name="title_pref_version_code">รหัสเวอร์ชัน</string>
-  <string formatted="false" name="value_volume_100_percent">เท่ากับระดับเสียงพูด</string>
-  <string formatted="false" name="value_volume_75_percent">75% ของระดับเสียงพูด</string>
-  <string formatted="false" name="value_volume_50_percent">50% ของระดับเสียงพูด</string>
-  <string formatted="false" name="value_volume_25_percent">25% ของระดับเสียงพูด</string>
   <string name="value_type_confirmation_double_tap">กดค้างไว้เพื่อเลือกแป้น แล้วจึงแตะสองครั้ง</string>
   <string name="value_type_confirmation_lift_to_type">กดค้างไว้เพื่อเลือกแป้นตัวอักษร แล้วจึงยกนิ้วขึ้น สำหรับแป้นอื่นๆ ให้แตะสองครั้ง</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">กดค้างไว้เพื่อเลือกแป้น แล้วจึงยกนิ้วขึ้น</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0.2 วินาที</string>
   <string name="value_touch_explore_time_out_250ms">0.25 วินาที</string>
   <string name="value_touch_explore_time_out_300ms">0.3 วินาที (ค่าเริ่มต้น)</string>
-  <string name="value_shake_to_read_disabled">ปิดอยู่</string>
-  <string name="value_shake_to_read_threshold_very_light">เบามาก</string>
-  <string name="value_shake_to_read_threshold_light">เบา</string>
-  <string name="value_shake_to_read_threshold_medium">ปานกลาง</string>
-  <string name="value_shake_to_read_threshold_hard">แรง</string>
-  <string name="value_shake_to_read_threshold_very_hard">แรงมาก</string>
   <string name="title_pref_on_screen_keyboard">แป้นพิมพ์บนหน้าจอ</string>
   <string name="title_pref_physical_keyboard">แป้นพิมพ์จริง</string>
   <string name="value_keyboard_echo_none">ไม่มี</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">ใช้รูปแบบเวลาของอุปกรณ์</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ชั่วโมง</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 ชั่วโมง</string>
-  <string name="notification_title_talkback_gestures_changed">ท่าทางสัมผัส TalkBack เปลี่ยน</string>
-  <string name="notification_message_talkback_gestures_changed">แตะเพื่อตรวจสอบการเปลี่ยนแปลงของท่าทางสัมผัสในการเข้าถึง</string>
   <string name="always_show_warning_checkbox">แสดงคำเตือนนี้ทุกครั้ง</string>
   <string name="label_dialog_title_add">เพิ่มป้ายกำกับ</string>
   <string name="label_dialog_title_edit">แก้ไขป้ายกำกับ</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">ไม่พบแอปพลิเคชันที่จะส่งออกป้ายกำกับ</string>
   <string name="label_choose_app_to_import">เลือกแอปพลิเคชันที่จะนำเข้าป้ายกำกับ:</string>
   <string name="label_choose_app_to_export">เลือกแอปพลิเคชันที่จะส่งออกป้ายกำกับ:</string>
-  <string name="talkback_gesture_change_details">TalkBack เวอร์ชันนี้มีการเปลี่ยนแปลงของท่าทางสัมผัสในการเข้าถึงเริ่มต้น โดยสามารถกำหนดค่าการทำงานต่างๆ ที่เชื่อมโยงกับท่าทางสัมผัสเหล่านี้ได้จากภายในการตั้งค่า TalkBack เมื่อมีการเปิดใช้ \"แตะเพื่อสำรวจ\" คุณสามารถใช้ท่าทางสัมผัสต่อไปนี้เพื่อทำงานบางอย่างได้\n\n%1$s</string>
   <string name="dialog_title_dim_screen">ซ่อนหน้าจอใช่ไหม</string>
   <string name="dialog_message_dim_screen">ตัวเลือกนี้จะปิดจอแสดงผลเพื่อเพิ่มความเป็นส่วนตัว เนื้อหาบางอย่างอาจยังคงแสดงอยู่ เช่น ข้อความสำหรับเปิดจอแสดงผลอีกครั้ง หรือเมนูสำหรับฟีเจอร์การช่วยเหลือพิเศษ เช่น TalkBack</string>
-  <string name="talkback_built_in_gesture_change_details">TalkBack เวอร์ชันนี้มีการเปลี่ยนแปลงค่าเริ่มต้นของท่าทางสัมผัสเพื่อการช่วยเหลือพิเศษ\n\nท่าทางสัมผัสแบบขึ้นแล้วลงจะช่วยให้คุณย้ายไปยังรายการแรกในหน้าจอ และท่าทางสัมผัสแบบลงแล้วขึ้นจะย้ายคุณไปยังรายการสุดท้าย\n\nรายละเอียดการอ่านในตอนนี้เปลี่ยนแปลงได้โดยการโฟกัสไปที่รายการ แล้วเลือกรายละเอียดจากเมนูตามบริบทของ TalkBack\n\nคุณเปลี่ยนการทำงานที่เกิดจากท่าทางสัมผัสเหล่านี้ได้ในการตั้งค่า TalkBack</string>
-  <string name="default_action_changed_details">หากต้องการหยุดชั่วคราวและเล่นสื่อ ตอนนี้คุณสามารถใช้ 2 นิ้วแตะสองครั้งแล้วค้างไว้\n\nท่าทางสัมผัสอื่นๆ มีการเปลี่ยนแปลงด้วยเช่นกัน</string>
-  <string name="talkback_built_in_gesture_open_url">เปิดบนโทรศัพท์เพื่อดูข้อมูลเพิ่มเติม</string>
-  <string name="talkback_built_in_gesture_change_details_45">TalkBack เวอร์ชันนี้มีการเปลี่ยนแปลงท่าทางสัมผัสการเข้าถึงเริ่มต้น\n\nกล่าวคือท่าทางสัมผัสการเลื่อนขึ้นจะย้ายไปยังการตั้งค่าการนำทางก่อนหน้า และท่าทางสัมผัสการเลื่อนลงจะย้ายไปยังการตั้งค่าการนำทางถัดไป</string>
-  <string name="side_tap_shortcuts_removed_details">เรานำการตั้งค่าเหล่านี้ออกจาก TalkBack เนื่องจากปัญหาด้านความน่าเชื่อถือต่อไปนี้\n• ท่าทางสัมผัสการแตะด้านข้างของอุปกรณ์\n• เขย่าเพื่อเริ่มการอ่านต่อเนื่อง</string>
-  <string name="button_accept_changed_gesture_mappings">ยอมรับท่าทางสัมผัส</string>
-  <string name="button_customize_gesture_mappings">กำหนดค่าท่าทางสัมผัส</string>
   <string name="button_disable_all_events">ปิดใช้ทั้งหมด</string>
   <string name="button_enable_all_events">เปิดใช้ทั้งหมด</string>
   <string name="dialog_title_disable_exploration">ปิดการแตะเพื่อสำรวจใช่ไหม</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">ค้นหาตาราง</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">ช่องทางการแจ้งเตือนของ TalkBack</string>
-  <string name="pref_selector_summary">%1$sเพื่อเลือกการตั้งค่า แล้ว%2$sเพื่อปรับเปลี่ยนการตั้งค่า</string>
-  <string name="speech_rate_change">ความเร็วในการพูด %1$d%%</string>
   <string name="speech_pitch_maximum">เสียงพูดอยู่ในระดับสูงสุด</string>
   <string name="speech_pitch_minimum">เสียงพูดอยู่ในระดับต่ำสุด</string>
   <string name="reset_speech_rate_and_pitch">รีเซ็ตความเร็วและระดับเสียงในการพูด</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">การสั่นเตือน %1$s</string>
   <string name="text_formatting_state">พูดการจัดรูปแบบข้อความ %1$s</string>
   <string name="typing_echo_change">พูด %1$s ที่พิมพ์จากแป้นพิมพ์จริง</string>
-  <string name="reading_control_toggle_prefix_xr">หันฝ่ามือข้างที่ไม่ถนัดเข้าหาตัว กดค้างไว้เพื่อสลับโหมดการควบคุมการอ่าน</string>
   <string name="gesture_1_or_2">%1$sหรือ%2$s</string>
-  <string name="select_setting_hint">%1$s เพื่อเลือกการตั้งค่าอื่น</string>
-  <string name="adjust_setting_hint">%1$s เพื่อปรับการตั้งค่า</string>
   <string name="adjust_granularity_hint">%1$s เพื่ออ่านทีละ%2$s</string>
   <string name="adjust_typo_hint">%1$s ตามคำแนะนำ</string>
   <string name="use_action_hint">แตะสองครั้งเพื่อดำเนินการ</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">การควบคุมการอ่าน</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">หากต้องการเล่นหรือหยุดสื่อชั่วคราวในแอปวิดีโอหรือแอปเพลง ให้ใช้ 2 นิ้วแตะ 2 ครั้ง ลองเลย</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">แอปอื่นๆ อาจใช้ท่าทางสัมผัสนี้สำหรับการดำเนินการอย่างเช่น รับหรือวางสายโทรศัพท์ บางแอปอาจไม่รองรับท่าทางสัมผัสนี้</string>
-  <string name="onboarding_link_to_talkback_tutorials">ดูบทแนะนำทั้งหมดของ TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">สื่อหยุดชั่วคราวหรือกำลังเล่นอยู่ โดยทั่วไปท่าทางสัมผัสนี้จะหยุดชั่วคราวหรือเล่นวิดีโอหรือเพลงที่เปิดในขณะนั้น เลื่อนไปทางขวาเพื่อดำเนินการต่อ</string>
   <string name="new_shortcut_gesture_stop_speech_text">หากต้องการให้ TalkBack หยุดพูดชั่วคราว ให้ใช้ 2 นิ้วแตะ</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">หยุดการพูดออกเสียงของ TalkBack แล้ว โดยทั่วไปท่าทางสัมผัสนี้จะหยุดวลีที่ TalkBack กำลังพูดอยู่ เลื่อนไปทางขวาเพื่อให้พูดออกเสียงต่อ</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">โหมดการเลือกเปิดหรือปิดอยู่ โดยทั่วไปท่าทางสัมผัสนี้จะเริ่มหรือหยุดโหมดการเลือกข้อความเมื่อคุณอยู่ในช่องป้อนข้อมูล เลื่อนไปทางขวาเพื่อดำเนินการต่อ</string>
   <string name="new_shortcut_gesture_reading_menu_text">หากต้องการใช้ตัวควบคุมการอ่าน ให้ใช้ 3 นิ้วปัดไปทางซ้ายหรือขวา หรือจะใช้ 3 นิ้วปัดขึ้นหรือลงก็ได้เช่นกัน</string>
   <string name="new_shortcut_gesture_note">หมายเหตุ: ข้อมูลนี้อาจไม่ถูกต้องทั้งหมดเนื่องจากคุณได้ปรับแต่งท่าทางสัมผัสบางอย่าง หากต้องการตรวจสอบท่าทางสัมผัส ให้ไปที่การตั้งค่า TalkBack</string>
-  <string name="welcome_to_android11">ยินดีต้อนรับสู่ TalkBack ใน Android 11</string>
   <string name="welcome_to_android11_text">เราได้เพิ่มท่าทางสัมผัสใหม่เพื่อให้ TalkBack ใช้งานได้เร็วขึ้นและง่ายขึ้น\n\nคุณลองใช้ท่าทางสัมผัสใหม่ได้ในหน้าจอนี้ คุณดูข้อมูลนี้ในการตั้งค่า TalkBack ได้ทุกเมื่อ</string>
   <string name="new_gesture_notification_title">ท่าทางสัมผัสใหม่ใน TalkBack</string>
   <string name="new_gesture_notification_content">แตะเพื่อดูวิธีใช้ TalkBack ได้เร็วขึ้นด้วยท่าทางสัมผัสใหม่ๆ</string>
   <string name="dump_node_tree_description">พิมพ์โหนดที่สามลงในบันทึกแล้ว</string>
   <string name="report_gesture_description">ท่าทางสัมผัสที่ทำล่าสุดมีดังต่อไปนี้ โปรดรายงานท่าทางสัมผัสที่ไม่ถูกต้องและท่าทางสัมผัสที่ต้องการ</string>
-  <string name="update_welcome_text_content">ตอนนี้คุณสามารถเชื่อมต่อกับจอแสดงผลอักษรเบรลล์ผ่าน HID ซึ่งเป็นวิธีเชื่อมต่อกับอุปกรณ์บลูทูธ ตรวจสอบว่าคุณมีไดรเวอร์เฟิร์มแวร์เวอร์ชันล่าสุดจากผู้ผลิต จากนั้นเปิดบลูทูธในจอแสดงผลอักษรเบรลล์ ไปที่การตั้งค่า TalkBack &gt; จอแสดงผลอักษรเบรลล์ แล้วเปิด \"ใช้จอแสดงผลอักษรเบรลล์\" ค้นหาอุปกรณ์ในรายการแล้วเชื่อมต่อ</string>
-  <string name="update_welcome_text_content_tts">ตอนนี้คุณสามารถเชื่อมต่อกับจอแสดงผลอักษรเบรลล์ผ่าน HID ซึ่งเป็นวิธีเชื่อมต่อกับอุปกรณ์บลูทูธ ตรวจสอบว่าคุณมีไดรเวอร์เฟิร์มแวร์เวอร์ชันล่าสุดจากผู้ผลิต จากนั้นเปิดบลูทูธในจอแสดงผลอักษรเบรลล์ ไปที่การตั้งค่า TalkBack จากนั้นไปที่จอแสดงผลอักษรเบรลล์แล้วเปิด \"ใช้จอแสดงผลอักษรเบรลล์\" ค้นหาอุปกรณ์ในรายการแล้วเชื่อมต่อ</string>
-  <string name="update_welcome_text_content_with_link">ดูวิธีใช้จอแสดงผลอักษรเบรลล์กับ TalkBack</string>
   <string name="update_welcome_talkback_16.1">การอัปเดต TalkBack นี้มีการรองรับฟีเจอร์อธิบายหน้าจอในภาษาต่างๆ เพิ่มเติมและการปรับปรุงคุณภาพอื่นๆ ที่ทำให้ TalkBack ใช้งานได้ง่ายขึ้น\n\nคุณจะดูข้อมูลเพิ่มเติมเกี่ยวกับการเปลี่ยนแปลงเหล่านี้ได้ในอีกไม่กี่หน้าจอถัดไป\n\nคุณดูข้อมูลนี้ในภายหลังได้ที่การตั้งค่า TalkBack &gt; ฟีเจอร์ใหม่ใน TalkBack</string>
   <string name="update_welcome_talkback_16.1_tts">การอัปเดต TalkBack นี้มีการรองรับฟีเจอร์อธิบายหน้าจอในภาษาต่างๆ เพิ่มเติมและการปรับปรุงคุณภาพอื่นๆ ที่ทำให้ TalkBack ใช้งานได้ง่ายขึ้น\n\nคุณจะดูข้อมูลเพิ่มเติมเกี่ยวกับการเปลี่ยนแปลงเหล่านี้ได้ในอีกไม่กี่หน้าจอถัดไป\n\nคุณดูข้อมูลนี้ในภายหลังได้ที่ \"การตั้งค่า TalkBack\" จากนั้นไปที่ \"ฟีเจอร์ใหม่ใน TalkBack\"</string>
-  <string name="describe_screen_and_qna_title">ภาษาใหม่สำหรับฟีเจอร์อธิบายหน้าจอและขอความช่วยเหลือจาก Gemini</string>
-  <string name="describe_screen_and_qna_content">ฟีเจอร์อธิบายหน้าจอและขอความช่วยเหลือจาก Gemini พร้อมให้บริการในภาษาอื่นๆ เพิ่มเติมแล้ว &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;ดูข้อมูลเพิ่มเติมในศูนย์ช่วยเหลือ&lt;/a&gt;</string>
   <string name="shortcut_for_dictation_title">แป้นพิมพ์ลัดสำหรับการพิมพ์ด้วยเสียง</string>
   <string name="shortcut_for_dictation_content">ขณะใช้ Gboard ตอนนี้คุณสามารถใช้ 2 นิ้วแตะสองครั้งเพื่อเริ่มหรือหยุดการพิมพ์ด้วยเสียงได้
 &lt;br&gt;
 &lt;br&gt;ตรวจสอบว่าคุณใช้ &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard เวอร์ชันล่าสุดจาก Google Play&lt;/a&gt;</string>
   <string name="shortcut_for_dictation_content_without_google_play">เมื่อ Gboard อยู่บนหน้าจอ ตอนนี้คุณสามารถใช้ 2 นิ้วแตะสองครั้งเพื่อเริ่มการพิมพ์ตามคำบอก แล้วใช้ 2 นิ้วแตะสองครั้งเพื่อหยุดได้</string>
-  <string name="keyboard_title">แป้นพิมพ์</string>
-  <string name="keyboard_content">ตอนนี้ TalkBack มี \"คีย์แมปที่ปรับปรุงแล้ว\" สำหรับแป้นพิมพ์ ซึ่งมีคำสั่งและแป้นพิมพ์ลัดใหม่ๆ มากมาย การปรับปรุงนี้ซึ่งรวมถึง \"โหมดอ่าน\" เพื่อการไปยังส่วนต่างๆ ในเว็บอย่างมีประสิทธิภาพมากขึ้น จะช่วยปรับปรุงการไปยังส่วนต่างๆ และการโต้ตอบสำหรับผู้ใช้ TalkBack ที่ต้องใช้แป้นพิมพ์จริง คุณเปลี่ยนไปใช้ \"คีย์แมปที่ปรับปรุงแล้ว\" ได้ในการตั้งค่า TalkBack &gt; การตั้งค่าขั้นสูง &gt; แป้นพิมพ์ลัด</string>
-  <string name="keyboard_content_tts">ตอนนี้ TalkBack มี \"คีย์แมปที่ปรับปรุงแล้ว\" สำหรับแป้นพิมพ์ ซึ่งมีคำสั่งและแป้นพิมพ์ลัดใหม่ๆ มากมาย การปรับปรุงนี้ซึ่งรวมถึง \"โหมดอ่าน\" เพื่อการไปยังส่วนต่างๆ ในเว็บอย่างมีประสิทธิภาพมากขึ้น จะช่วยปรับปรุงการไปยังส่วนต่างๆ และการโต้ตอบสำหรับผู้ใช้ TalkBack ที่ต้องใช้แป้นพิมพ์จริง คุณเปลี่ยนไปใช้ \"คีย์แมปที่ปรับปรุงแล้ว\" ได้ในการตั้งค่า TalkBack จากนั้นไปที่การตั้งค่าขั้นสูง แล้วเลือกแป้นพิมพ์ลัด</string>
-  <string name="reduce_delay_title">ลดความล่าช้า</string>
-  <string name="reduce_delay_content">ตอนนี้คุณสามารถลดความล่าช้าในการประกาศของ TalkBack สำหรับการสำรวจด้วยการแตะและการพิมพ์ได้แล้ว หากต้องการดูการตั้งค่าเหล่านี้ ให้ไปที่การตั้งค่า TalkBack &gt; การตั้งค่าขั้นสูง &gt; ลดความล่าช้า</string>
-  <string name="reduce_delay_content_tts">ตอนนี้คุณสามารถลดความล่าช้าในการประกาศของ TalkBack สำหรับการสำรวจด้วยการแตะและการพิมพ์ได้แล้ว หากต้องการดูการตั้งค่าเหล่านี้ ให้ไปที่การตั้งค่า TalkBack จากนั้นไปที่การตั้งค่าขั้นสูง แล้วเลือก \"ลดความล่าช้า\"</string>
-  <string name="customize_braille_keyboard_improvements_title">ปรับแต่งท่าทางสัมผัสของแป้นพิมพ์อักษรเบรลล์</string>
-  <string name="customize_braille_keyboard_improvements_content">ตอนนี้คุณสามารถปรับแต่งท่าทางสัมผัสสำหรับแป้นพิมพ์อักษรเบรลล์เสมือนบนหน้าจอได้แล้ว หากต้องการปรับแต่ง ให้ไปที่การตั้งค่า TalkBack &gt; แป้นพิมพ์อักษรเบรลล์ &gt; ท่าทางสัมผัส</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">ตอนนี้คุณสามารถปรับแต่งท่าทางสัมผัสสำหรับแป้นพิมพ์อักษรเบรลล์เสมือนบนหน้าจอได้แล้ว หากต้องการปรับแต่ง ให้ไปที่การตั้งค่า TalkBack จากนั้นไปที่ \"แป้นพิมพ์อักษรเบรลล์\" แล้วไปที่ \"ท่าทางสัมผัส\"</string>
-  <string name="learn_more_about_braille_keyboard">ดูข้อมูลเพิ่มเติมเกี่ยวกับแป้นพิมพ์อักษรเบรลล์</string>
-  <string name="other_changes_title">การเปลี่ยนแปลงอื่นๆ</string>
-  <string name="other_changes_content">ตอนนี้ข้อความบนหน้าจอจะช่วยให้คุณปิด TalkBack ได้อย่างรวดเร็วหากเปิดใช้โดยไม่ตั้งใจ คุณสามารถปิดฟีเจอร์นี้ได้ในการตั้งค่า TalkBack &gt; แสดงวิธีการปิด TalkBack</string>
-  <string name="other_changes_content_tts">ตอนนี้ข้อความบนหน้าจอจะช่วยให้คุณปิด TalkBack ได้อย่างรวดเร็วหากเปิดใช้โดยไม่ตั้งใจ คุณสามารถปิดฟีเจอร์นี้ได้ในการตั้งค่า TalkBack จากนั้นเลือก \"แสดงวิธีการปิด TalkBack\"</string>
-  <string name="keymap_changes_content">คีย์แมปคลาสสิกเปลี่ยนเป็นคีย์แมปเริ่มต้น ซึ่งมีแป้นพิมพ์ลัดมากกว่าแล้ว</string>
   <string name="announcing_text_formatting_title">ประกาศการจัดรูปแบบข้อความ</string>
   <string name="announcing_text_formatting_header">ตอนนี้ TalkBack สามารถประกาศการเปลี่ยนแปลงการจัดรูปแบบข้อความ เช่น ตัวหนา ตัวเอียง และสีข้อความได้แล้ว วิธีเริ่มต้นใช้งาน</string>
   <string name="announcing_text_formatting_option1">โฟกัสที่รายการที่มีการจัดรูปแบบ เปิดเมนู TalkBack แล้วเลือก \"อธิบายการจัดรูปแบบข้อความ\" หรือ</string>
@@ -1084,7 +970,6 @@
   <string name="additional_tips_link_subtext">ดูวิธีโทรออก ส่งข้อความ และอื่นๆ</string>
   <string name="practice_gestures_link_text">ใช้ท่าทางสัมผัส</string>
   <string name="practice_gestures_link_subtext">ลองสั่งการด้วยการทำท่าทางสัมผัสแบบต่างๆ</string>
-  <string name="help_and_feedback_link_subtext">ดูข้อมูลเพิ่มเติมเกี่ยวกับ TalkBack และส่งความคิดเห็น</string>
   <string name="choose_tutorial_title">เลือกวิธีที่คุณต้องการโต้ตอบกับ TalkBack</string>
   <string name="touch_tutorial_button">บทแนะนำเกี่ยวกับการแตะ</string>
   <string name="keyboard_tutorial_button">บทแนะนำเกี่ยวกับแป้นพิมพ์</string>
@@ -1230,8 +1115,6 @@
   <string name="wear_training_typing_text5">ลองใช้ด้านล่าง</string>
   <string name="wear_training_typing_practice_button_content_description">การพิมพ์ด้วยแป้นพิมพ์</string>
   <string name="wear_training_end_tutorial_title">คุณพร้อมที่จะเริ่มใช้ TalkBack แล้ว</string>
-  <string name="talkback_updated_notification_title">อัปเดต TalkBack แล้ว</string>
-  <string name="talkback_updated_notification_content">แตะเพื่อดูข้อมูลเพิ่มเติม</string>
   <string name="wear_new_feature_page_title">ยินดีต้อนรับสู่ TalkBack ที่อัปเดตแล้ว</string>
   <string name="wear_new_feature_page_content">คุณจะเห็นการแก้ไขข้อบกพร่องและการเปลี่ยนแปลงกับลักษณะการย้ายโฟกัส</string>
   <string name="wear_new_feature_page_button_content_description">เสร็จสิ้น</string>
@@ -1250,10 +1133,7 @@
   <string name="title_pref_blue">น้ำเงิน</string>
   <string name="title_pref_grey">สีเทา</string>
   <string name="survey_setting_title">แชร์ความคิดเห็น</string>
-  <string name="survey_closed">แบบสำรวจปิดแล้ว</string>
   <string name="title_summarize_view">อธิบายหน้าจอ</string>
-  <string name="title_increase_touch_focus_latency">เพิ่มความล่าช้าโฟกัส</string>
-  <string name="title_decrease_touch_focus_latency">ลดความล่าช้าโฟกัส</string>
   <string name="detected_result">ตรวจพบ: %1$s</string>
   <string name="title_image_caption">อธิบายรูปภาพ</string>
   <string name="image_caption_with_gemini_prefix">อธิบายรูปภาพนี้ อย่าใช้มาร์กอัปใดๆ ในการตอบกลับ</string>
@@ -1280,33 +1160,15 @@
   <string name="image_qna_question_prefix">ผู้ใช้: %1$s</string>
   <string name="image_qna_answer_prefix">โมเดล: %1$s</string>
   <string name="image_qna_with_history_postfix">... [สลับระหว่างผู้ใช้และโมเดลต่อไป] ...</string>
-  <string name="screen_overview_with_screenshot">หน้าที่ของคุณคือช่วยให้ผู้ที่ดูโทรศัพท์ไม่ได้เข้าใจสิ่งที่อยู่บนหน้าจอ อธิบายภาพหน้าจอนี้ใน 2-3 ประโยค
-
-วิธีการ
-เริ่มคําตอบด้วย \"หน้าจอแสดง\"
-ส่วนต้นของคําตอบควรอธิบายเนื้อหาที่สําคัญและโดดเด่นที่สุดบนหน้าจอ ตัวอย่างเนื้อหาที่สำคัญและโดดเด่นที่สุดที่ต้องอาจเป็น
-* ในแอปแชท: ผู้ส่งและเนื้อหาของข้อความล่าสุด
-* ในแอปโซเชียลมีเดีย: โพสต์แรก รวมถึงผู้โพสต์ ข้อความ และคำอธิบายรูปภาพ
-* ในแอปข่าว: ชื่อบทความและคำอธิบายรูปภาพหลัก
-* ในแอปช็อปปิ้ง: คำอธิบายผลิตภัณฑ์ที่แสดงและราคา
-* ในแอปปฏิทิน: กิจกรรมถัดไปและจำนวนกิจกรรมอื่นๆ ที่แสดงหลังจากนั้น
-* ในรายการข้อความ: ชื่อและตัวอย่างของข้อความแรก จากนั้นแสดงเฉพาะชื่อของข้อความถัดไปในรายการ และจำนวนข้อความที่ยังไม่อ่าน
-
-หลังจากนั้น คำตอบจะอธิบายตำแหน่งเชิงพื้นที่และวัตถุประสงค์ของแถบนำทางและปุ่มที่โดดเด่นได้
-ไม่ต้องพูดถึงเนื้อหาของแถบสถานะที่ด้านบน (เช่น เวลา สถานะเครือข่าย แบตเตอรี่)
-โปรดอย่าใช้มาร์กดาวน์ใดๆ ในคำตอบ</string>
   <string name="title_gemini_opt_in_dialog">รับคำอธิบายรูปภาพโดยละเอียดไหม</string>
   <string name="title_on_device_gemini_opt_in_dialog">รับคำอธิบายรูปภาพไหม</string>
   <string name="title_gemini_result_dialog">ตรวจพบ: รูปภาพ</string>
   <string name="title_gemini_result_bottom_sheet">คำอธิบายรูปภาพ</string>
   <string name="title_gemini_screen_overview_result_dialog">คำอธิบายหน้าจอ</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">สรุป</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">การดำเนินการ</string>
   <string name="positive_button_gemini_opt_in_dialog">เปิด</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">ฉันยอมรับ</string>
   <string name="negative_button_gemini_opt_in_dialog">ไม่เป็นไร</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">ไปที่การตั้งค่า</string>
-  <string name="positive_button_gemini_download_dialog">ดาวน์โหลดและเปิด</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">ข้อความ, \"%1$s\"</string>
   <string name="detected_icon_label">ไอคอน, \"%1$s\"</string>
@@ -1320,8 +1182,6 @@
   <string name="screen_overview_no_result">สรุปหน้าจอไม่ได้</string>
   <string name="image_caption_no_result">อธิบายรูปภาพไม่ได้</string>
   <string name="image_caption_with_hide_screen">คำอธิบายภาพจะใช้งานไม่ได้เมื่อหน้าจอซ่อนอยู่ โปรดแสดงหน้าจอแล้วลองอีกครั้ง</string>
-  <string name="feedback_button_state_set">เลือกแล้ว</string>
-  <string name="feedback_button_state_unset">ไม่ได้เลือก</string>
   <string name="action_text_like_button">ทำเครื่องหมายว่าเป็นคำตอบดี</string>
   <string name="action_text_dislike_button">ทำเครื่องหมายว่าเป็นคำตอบแย่</string>
   <string name="action_text_clear_like_button">ล้างคำตอบดี</string>
@@ -1350,18 +1210,13 @@
   <string name="downloading_all_image_captioning_hint">กำลังดาวน์โหลดคำอธิบายรูปภาพและไอคอนอัตโนมัติ</string>
   <string name="download_all_image_captioning_successful_hint">ดาวน์โหลดคำอธิบายรูปภาพและไอคอนอัตโนมัติแล้ว</string>
   <string name="download_all_image_captioning_failed_hint">ดาวน์โหลดไม่ได้ โปรดลองอีกครั้งในภายหลัง</string>
-  <string name="download_complete_notification_title">การดาวน์โหลดเสร็จสมบูรณ์</string>
-  <string name="download_complete_notification_content">ตอนนี้คุณจะได้ยินคำอธิบายรูปภาพและไอคอนอัตโนมัติจาก TalkBack</string>
-  <string name="download_complete_notification_action">การตั้งค่า</string>
   <string name="download_storage_error_hint">พื้นที่เก็บข้อมูลเต็ม หากต้องการดาวน์โหลด ให้เพิ่มพื้นที่ว่าง %1$d MB ในการตั้งค่า &gt; พื้นที่เก็บข้อมูล</string>
   <string name="download_network_error_hint">ดาวน์โหลดไม่ได้ โปรดตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง</string>
   <string name="switch_icon_detection_dialog_title">คำอธิบายไอคอนอัตโนมัติ</string>
   <string name="switch_icon_detection_dialog_message">ฟังคำอธิบายเมื่อคุณหยุดอยู่ที่ไอคอน</string>
   <string name="switch_image_description_dialog_message">ฟังคำอธิบายเมื่อคุณโฟกัสที่รูปภาพ บางแอปอาจไม่รองรับฟีเจอร์นี้</string>
-  <string name="switch_text_recognition_dialog_title">อธิบายข้อความในรูปภาพโดยอัตโนมัติ</string>
   <string name="switch_text_recognition_dialog_message">ฟังคำอธิบายเมื่อคุณโฟกัสที่รูปภาพซึ่งมีข้อความ</string>
   <string name="switch_auto_image_caption_dialog_subtitle">ดาวน์โหลดแล้ว</string>
-  <string name="disable_auto_image_caption_dialog_subtext">คุณยังจะได้รับคำอธิบายสำหรับรูปภาพที่เลือกจากเมนู TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">ตกลง</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">ลบการดาวน์โหลด</string>
   <string name="delete_icon_detection_dialog_title">ลบคำอธิบายไอคอนอัตโนมัติใช่ไหม</string>
@@ -1377,11 +1232,6 @@
   <string name="gemini_enable_dialog_title">ใช้ Gemini ใน TalkBack</string>
   <string name="gemini_disable_dialog_message">ทำความเข้าใจหน้าจอด้วย Gemini</string>
   <string name="disable_gemini_dialog_subtext">เปิดเพื่อเปิดใช้การทำความเข้าใจหน้าจอด้วย Gemini</string>
-  <string name="ai_services_update_dialog_title">อัปเดตแอป %1$s เพื่ออธิบายรูปภาพ</string>
-  <string name="ai_services_update_dialog_message">อัปเดต %1$s เป็นเวอร์ชันล่าสุดจาก Google Play เพื่อฟังคำอธิบายรูปภาพ\n\nเมื่อการดาวน์โหลดเสร็จสมบูรณ์ ให้กลับมาที่การตั้งค่า TalkBack แล้วเปิดคำอธิบายรูปภาพอัตโนมัติอีกครั้ง</string>
-  <string name="ai_services_update_dialog_button_text">ไปที่ Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">เกิดข้อผิดพลาด โปรดลองอีกครั้ง</string>
   <string name="gemini_block_message">ประมวลผลรูปภาพนี้ไม่ได้</string>
   <string name="gemini_network_error">ไม่มีการเชื่อมต่ออินเทอร์เน็ต ตรวจสอบ Wi-Fi และเครือข่ายมือถือแล้วลองอีกครั้ง</string>
@@ -1397,13 +1247,8 @@
   <string name="image_qna_typing_button_text">พิมพ์คำถามสำหรับ Gemini</string>
   <string name="image_qna_send_button_text">ถาม</string>
   <string name="image_qna_speak_question_description">พูดคำถาม</string>
-  <string name="overviews_summary_intro">สรุปหน้าจอแอปนี้: %1$s</string>
   <string name="overviews_node_not_found">ขออภัย ไม่พบส่วนนั้นของหน้าจอแล้ว</string>
-  <string name="overviews_images_in_app">พบรูปภาพหลัก</string>
   <string name="overviews_list_item">%1$d %2$s</string>
-  <string name="overviews_actions_in_app">การดำเนินการในแอป</string>
-  <string name="overviews_actions_in_app_description">การดำเนินการหลักที่คุณสามารถทำได้จากหน้าจอแอปมีดังนี้</string>
-  <string name="overviews_parent_type">การดำเนินการในแอป</string>
   <string name="text_replaced_feedback">แทนที่ข้อความแล้ว</string>
   <string name="switch_gesture_set">สลับไปที่การตั้งค่าท่าทางสัมผัส</string>
   <string name="switch_gesture_set_to">สลับไปที่การตั้งค่าท่าทางสัมผัส %1$d</string>
@@ -1454,5 +1299,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">ปิด</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">หากต้องการฟังการแจ้งเตือนเมื่อปิดหน้าจอ ให้เปิด \"พูดการแจ้งเตือนเมื่อปิดหน้าจอ\" ในการตั้งค่าการพูดรายละเอียดของ TalkBack</string>
 </resources>

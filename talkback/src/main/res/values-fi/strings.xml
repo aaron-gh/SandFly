@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Päällä ollessaan SandFly antaa äänipalautetta, joten voit käyttää laitetta näyttöä katsomatta. SandFly on tarkoitettu tilanteisiin, joissa näyttö on vaikea nähdä, tai ihmisille, joilla on vaikeuksia nähdä näyttö.<br><br><b>SandFlyn käyttö</b><br>• Siirry kohteesta toiseen pyyhkäisemällä oikealle tai vasemmalle<br>• Aktivoi kohde kaksoisnapauttamalla<br>• Vieritä vetämällä kahdella sormella<br><b>SandFlyn laittaminen pois päältä</b><br>1. Valitse asetuksissa <b>Käytä SandFlyta</b>. Näet reunuksen. Kaksoisnapauta sitä.<br>2. Valitse vahvistusviestistä <b>Lopeta</b>. Näet reunuksen. Kaksoisnapauta sitä.]]></string>
   <string name="talkback_service_summary">Kuuntele kohteita ääneen luettuina näytönlukuohjelman avulla</string>
   <string name="talkback_preferences_title">SandFly-asetukset</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Asetukset</string>
   <string name="tts_preferences_title">Tekstistä puheeksi</string>
   <string name="language_options">Kielet</string>
   <string name="spoken_language">Puheen kieli</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Haku peruutettiin.</string>
   <string name="notification_type_status_started">Alkanut</string>
   <string name="notification_type_status_stopped">Pysäytetty</string>
-  <string name="notification_type_status_connected">yhdistetty</string>
-  <string name="notification_battery_level_unknown">tuntematon</string>
   <string name="notification_battery_saver_mode">Virransäästö päällä</string>
   <string name="template_no_text_selected">Tekstiä ei ole valittuna.</string>
   <string name="template_charging">Ladataan %1$s Akun varaus %2$s prosenttia.</string>
   <string name="template_charging_lite">Lataus %1$s</string>
-  <string name="template_battery_state">Virta %1$s %2$s prosenttia %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Soittoääni: värinä.</string>
   <string name="value_ringer_silent">Soittoääni: äänetön.</string>
   <string name="value_screen_on">Näyttö päällä.</string>
   <string name="value_screen_off">Näyttö sammutettu.</string>
   <string name="value_device_unlocked">Laitteen lukitus avattu.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Puheen äänenvoimakkuus</string>
-  <string name="title_pref_speech_rate">Puhenopeus</string>
-  <string name="summary_pref_speech_rate">Tekstin puhumisnopeus</string>
   <string name="title_pref_verbose_scroll_announcement">Sano aina luettelokohtien määrä ääneen</string>
   <string name="summary_pref_verbose_scroll_announcement">Sano jokaisen vierityksen jälkeen, mitkä kohteet näkyvät</string>
   <string name="title_pref_cover_proximity_sensor">Lopeta puhe peittämällä lähestymisanturi</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Aika puhuttuna</string>
   <string name="pref_speak_time_summary">Kun laitat näytön päälle</string>
   <string name="summary_speak_container_element_positions">Sano, kun siirryt luetteloihin, ruudukkoihin ja muihin säiliöihin tai poistut niistä</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Valinnan viive lisätty lukuasetuksiin</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Voit nyt muuttaa valinnan viivettä milloin tahansa lukuasetuksilla.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Vaihdetaanko nostamalla kirjoittamiseen?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Kun kirjoittamisen valinnan viive on alle 0,3 sekuntia, kaksoisnapauttamalla kirjoittaminen on hyvin vaikeaa. Valitse \"Vaihda\", niin nostamalla kirjoittaminen otetaan automaattisesti käyttöön.\n\nJos haluat käyttää nostamalla kirjoittamista, valitse näppäin painamalla sormella ja nosta sitten sormesi.\n\nVoit muokata tätä SandFlyin asetuksissa.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Kirjoittamisen valinnan viive lisätty lukuasetuksiin</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Jos kaksoisnapautus ei toimi luotettavasti kirjoittaessasi, voit vaihtaa pidempään kirjoittamisen valinnan viiveeseen milloin tahansa lukuasetuksilla.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Kirjoittamisen valinnan viive ei toimi ilman Kirjoita nostamalla ‑ominaisuutta.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Selvä</string>
   <string name="reset_letency_reduction_settings_dialog_title">Nollataanko viiveasetukset?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tämä palauttaa kaikki viiveasetukset oletusarvoihin</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Nollaa</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Viiveen vähentämisasetukset on nollattu.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Vaihda</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Älä vaihda</string>
   <string name="Reset_gesture_settings_dialog_title">Nollataanko eleet?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Nollataanko nykyisen joukon eleet?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Tämä palauttaa kaikki eleet oletustoimintoihin.\n\nMenetät tekemäsi muutokset.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Sano kaikki etenemispäivitykset</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Sisältää päivitykset esimerkiksi lataamisen ja ajo-ohjeiden seuraamisen aikana. Saat vähemmän päivityksiä, kun ominaisuus on pois päältä.</string>
   <string name="title_pref_explore_by_touch">Kosketuksella tutkiminen</string>
-  <string name="title_pref_category_visual">Visuaalinen</string>
   <string name="title_pref_category_controls">Ohjaimet</string>
-  <string name="title_pref_category_braille">Pistekirjoitus</string>
-  <string name="title_pref_category_general">Yleiset</string>
-  <string name="title_pref_category_advanced">Lisäasetukset</string>
-  <string name="title_pref_category_others">Muut</string>
-  <string name="title_pref_category_tutorial_and_help">Esittely ja ohje</string>
   <string name="title_pref_category_reduce_latency_summary">Nämä asetukset nopeuttavat SandFlyn reagointia, kun kosketat näyttöä</string>
   <string name="reset_latency_settings_title">Nollaa kaikki viiveasetukset</string>
   <string name="title_pref_single_tap">Aktivoi yhdellä napautuksella</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Valitun kohdan osoitin</string>
   <string name="title_pref_category_manage_gestures">Eleet</string>
   <string name="title_pref_manage_labels">Omat tunnisteet</string>
-  <string name="title_pref_manage_customize_menus">Muokkaa valikoita</string>
   <string name="title_pref_category_context_menu">SandFly-valikko</string>
   <string name="title_pref_category_selector_menu">Lukuasetukset</string>
   <string name="title_pref_category_navigation_menu">Muokkaa navigointivaihtoehtoja</string>
-  <string name="pref_category_context_menu_summary">Napauta kolmella sormella tai pyyhkäise ylös tai alas ja sitten oikealle.</string>
-  <string name="pref_category_context_menu_summary_xr">Jos haluat käyttää SandFly-valikkoa, käännä toissijainen kämmen sisäänpäin ja nipistä.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Pyyhkäise alas ja sitten oikealle.</string>
-  <string name="pref_category_selector_menu_summary">Valitse lukuasetus kiertämällä kahta sormea kuin säädintä tai pyyhkäisemällä vasemmalle tai oikealle kolmella sormella. Muuta sitä sitten pyyhkäisemällä ylös tai alas.</string>
-  <string name="pref_category_selector_menu_summary_xr">Voit siirtyä lukuasetuksesta toiseen kääntämällä toissijaisen kämmenen sisäänpäin, nipistämällä pitkään, siirtymällä oikealle tai vasemmalle ja lopettamalla nipistyksen.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Valitse lukuasetus pyyhkäisemällä ylös ja sitten alas tai alas ja sitten ylös. Muuta sitä sitten pyyhkäisemällä ylös tai alas.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pikanäppäimet</string>
   <string name="title_pref_export_custom_labels">Vie muokatut tunnisteet</string>
-  <string name="title_pref_play_store">Avaa SandFly Play Kaupassa</string>
-  <string name="summary_pref_play_store">Nykyinen SandFly-versio: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Ohjeet ja palaute</string>
-  <string name="title_pref_gup">Ota yhteyttä Googlen tukeen toimintarajoitteisille ja vammaisille</string>
-  <string name="subtitle_pref_gup">Hae ohjeita SandFlyin käyttöön tai ilmoita ongelmista</string>
-  <string name="pref_item_licenses">Avoimen lähdekoodin lisenssit</string>
-  <string name="title_pref_tutorial">Esittely</string>
   <string name="title_pref_help">Ohje</string>
   <string name="title_pref_show_tos">Käyttöehdot</string>
   <string name="title_pref_show_privacy_policy">Tietosuojakäytäntö</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Sormenjälkieleet</string>
   <string name="title_pref_category_tutorial">SandFly-ohje</string>
   <string name="title_pref_category_help_no_tutorial">Ohje</string>
-  <string name="title_pref_category_typing">Kirjoita</string>
   <string name="title_pref_advanced_settings">Lisäasetukset</string>
   <string name="title_pref_show_exit_watermark">Näytä ohjeet SandFlyin laittamiseen pois päältä</string>
   <string name="summary_pref_show_exit_watermark">Kun SandFly laitetaan päälle, näytä, miten sen saa pois päältä</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Jotkin muokkausnäppäimet ovat erilaisia.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Lue lisää näppäinkartoista</string>
   <string name="keycombo_go_to_settings">Avaa Asetukset</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly valmistautuu poistamaan klassisen näppäinkartan. Jos haluat jatkaa pikanäppäinten käyttöä, vaihda oletusnäppäinkarttaan.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Lue lisää</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Selvä</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Asetukset</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Lue lisää</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Käytät nyt SandFlyin oletusnäppäinkarttaa. Käytössä on myös uusi parannettu näppäinkartta, jossa on paljon uusia komentoja. Lue lisää ohjekeskuksesta tai vaihda uuteen näppäinkarttaan asetuksista.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Uusi näppäinkartta on saatavilla</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Uuteen SandFlyin laajennettuun näppäinkarttaan on lisätty monia uusia komentoja. Lue lisää ohjekeskuksesta tai vaihda uuteen näppäinkarttaan asetuksista.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Päivitä SandFlyin muokkausnäppäin</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ei nyt</string>
   <string name="keycombo_warning_content_description">Lisätietoa muokkausnäppäimestä</string>
-  <string name="keycombo_warning_dialog_title">Päivitä muokkausnäppäin</string>
-  <string name="keycombo_warning_dialog_message">Vaihda muokkausnäppäimeksi Toiminto-näppäimen sijaan Alt, jotta SandFlyin pikanäppäimet toimivat oikein.\n\nJos käytät jatkossakin Toiminto-näppäintä muokkaukseen, jotkin pikanäppäinyhdistelmät käynnistävät eri toimintoja tässä Android-versiossa.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Näppäinkartta</string>
   <string name="keycombo_menu_select_keymap">Valitse näppäinkartta</string>
   <string name="keycombo_menu_reset_keymap">Nollaa näppäinkartta</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Lisää puheen äänenvoimakkuutta</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Vähennä puheen äänenvoimakkuutta</string>
   <string name="keycombo_menu_global_refocus_current_node">Puhu nykyinen valittu kohta</string>
-  <string name="keycombo_menu_category_granularity">Navigointi</string>
   <string name="keycombo_menu_granularity_increase">Seuraava siirtymisasetus</string>
   <string name="keycombo_menu_granularity_decrease">Edellinen siirtymisasetus</string>
   <string name="keycombo_menu_category_other">Muut toiminnot</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Haluatko varmasti palauttaa tämän näppäinkartan pikanäppäimien oletusarvot? Toimenpidettä ei voi peruuttaa.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Nollaa</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s selaustilassa</string>
-  <string name="keycombo_assign_dialog_instruction">Aseta uusi pikanäppäin painamalla näppäinyhdistelmää. Vähintään alt- tai ctrl-painike vaaditaan.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Määritä uusi pikanäppäin painamalla näppäinyhdistelmää, johon sisältyy muokkausnäppäin %1$s.</string>
   <string name="keycombo_unassigned">Määrittämätön</string>
   <string name="save_button_in_keycombo_assign_dialog">Tallenna</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Kirjoittamisen valinnan viive</string>
   <string name="message_pref_touch_explore_latency">Lyhyempi viive saa SandFlyn puhumaan nopeammin näppäimistön koskettamisen jälkeen.\n\nValitse viive</string>
   <string name="title_pref_touch_focus_timeout">Valinnan viive</string>
-  <string name="summary_pref_touch_focus_time">
-Määrittää, kuinka nopeasti SandFly puhuu valinnan siirtymisen jälkeen. Lyhyempi viive saa SandFlyin tuntumaan nopeammalta, mutta voi vaikeuttaa kaksois- ja kolmoisnapautuksia.\n\n
-Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivoimiseksi kahdella sormella.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Eleiden käsittely SandFlyissa</string>
   <string name="toast_pref_talkback_gesture_detection">Aktivoi asetus laittamalla SandFly pois päältä ja takaisin päälle.</string>
   <string name="title_pref_auto_image_captioning">Automaattiset kuvaukset</string>
@@ -382,28 +332,16 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="dialog_title_turn_on_image_description">Kuvien kuvausten laittaminen päälle asetuksista</string>
   <string name="dialog_message_turn_on_image_description">Voit yrittää uudelleen, kun olet laittanut päälle joko automaattiset tai yksityiskohtaiset kuvien kuvaukset</string>
   <string name="title_pref_detailed_image_description">Yksityiskohtaiset kuvien kuvaukset</string>
-  <string name="summary_pref_ai_description">Kuule pidempiä kuvauksia, kun valitset SandFly-valikossa \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\"</string>
   <string name="dialog_message_on_device_ai_description">Kuulet lyhyen kuvauksen, kun kohdistat kuvaan tuetuissa sovelluksissa.\n\nKuvat käsitellään laitteella, eikä niitä koskaan lähetetä Googlelle. \n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt <a href="https://policies.google.com/terms/generative-ai">Googlen käyttöehdot</a>.</string>
   <string name="enable_gemini">Laita päälle</string>
   <string name="powered_by_gemini">Ominaisuuden tarjoaa generatiivinen AI</string>
-  <string name="detailed_image_description_ongoing_hint">Haetaan kuvausta</string>
-  <string name="detailed_image_description_result_prefix">Havaittu: Kuva. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Lataus tarvitaan automaattisia kuvien kuvauksia varten</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Kuvat käsitellään laitteella, eikä niitä koskaan lähetetä Googlelle.\n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt seuraavat ehdot: %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Googlen käyttöehdot</string>
   <string name="message_aifeature_downloading">Ladataan tekoälymallia. Tässä voi kulua hetki. Saat ilmoituksen, kun lataus on valmis.</string>
   <string name="message_aifeature_downloading_with_progress">Lataus on edelleen kesken. %1$d/%2$d Mt ladattu.</string>
-  <string name="message_aifeature_download_complete">Tekoälymalli ladattu. SandFly voi nyt luoda kuvien kuvauksia.</string>
   <string name="summary_pref_auto_image_captioning">Kuvakkeet, kuvat ja kuvien teksti</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Kuvissa oleva teksti</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Kuvat ja kuvissa oleva teksti</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Kuvakkeet ja kuvissa oleva teksti</string>
   <string name="summary_pref_module_downloading">Ladataan…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Päällä kaikille kuville</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Päällä vain nimettömille kuville</string>
   <string name="summary_pref_auto_image_captioning_disabled">Pois päältä</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Päällä kaikille kuvakkeille</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Päällä vain nimettömille kuvakkeille</string>
   <string name="summary_pref_auto_icon_detection_disabled">Pois päältä</string>
   <string name="title_pref_enable_auto_image_caption">Kaikki kuvat</string>
   <string name="title_pref_enable_auto_image_caption_arg">Kaikki kuvat\n%1$s</string>
@@ -413,7 +351,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="title_pref_enable_auto_icon_detection">Kaikki kuvakkeet</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Vain nimettömät kuvakkeet</string>
   <string name="title_pref_disable_auto_icon_detection">Älä kuvaile kuvakkeita</string>
-  <string name="dialog_message_on_device_ai_model_download">Kuulet lyhyen kuvauksen, kun kohdistat kuvaan tuetuissa sovelluksissa.\n\nKuvat käsitellään laitteella, eikä niitä koskaan lähetetä Googlelle.\n\nGeneratiivinen tekoäly on kokeellinen, joten se tekee virheitä. Jatkamalla hyväksyt seuraavat ehdot: %1$s.</string>
   <string name="title_pref_enable_gemini_support">Päällä</string>
   <string name="title_pref_disable_gemini_support">Pois päältä</string>
   <string name="summary_pref_gemini_support_enabled">Gemini on käytössä</string>
@@ -457,7 +394,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="shortcut_print_node_tree">Tulosta solmupuu</string>
   <string name="shortcut_print_performance_stats">Tulosta toimintatilastot</string>
   <string name="shortcut_first_in_screen">Kohdista näytön ensimmäiseen kohteeseen</string>
-  <string name="shortcut_summary">Tee yhteenveto näytön kohteista</string>
   <string name="shortcut_voice_commands">Aloita äänikomento</string>
   <string name="shortcut_last_in_screen">Kohdista näytön viimeiseen kohteeseen</string>
   <string name="shortcut_enable_dimming">Piilota näyttö</string>
@@ -561,7 +497,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="menu_category_web_navigation">Verkkonavigointi</string>
   <string name="menu_category_basic_navigation">Perusnavigointi</string>
   <string name="summary_custom_action">Näyttää, kun nykyiselle kohteelle on käytettävissä toimintoja, esim. linkitä, kopioi, liitä ja valitse</string>
-  <string name="summary_context_menu_links">Avaa korostetussa kohteessa olevat linkit</string>
   <string name="summary_viewpager_controls">Siirry seuraavalle tai edelliselle sivulle. Näkyy vain, kun luet sisältöä, jossa on useita sivuja.</string>
   <string name="summary_labeling_controls">Näkyy, kun valitset kohteen, jolla ei ole tunnistetta</string>
   <string name="summary_granularity">Lue merkki, sana, rivi tai muu kerrallaan</string>
@@ -631,12 +566,9 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="summary_screen_overview">Luo yhteenveto näytöstä toimintopainikkeilla</string>
   <string name="summary_screen_overview_no_actions">Kuuntele yhteenveto näytöllä olevasta sisällöstä</string>
   <string name="summary_image_caption">Lue ääneen teksti ja kuvakkeet valitusta kuvasta</string>
-  <string name="summary_summarize_view">Sano ääneen näkymän yhteenveto</string>
   <string name="summary_typo_suggestions">Näyttää, kun kohdistin on kirjoitusvirheen päällä</string>
   <string name="summary_cache_keyboard_keys">SandFly esilataa ilmoituksia, jotta viive kirjoittamisen aikana lyhenee</string>
   <string name="summary_cache_keyboard_keys_disabled">Käytä Google Tekstistä puheeksi ‑ominaisuutta</string>
-  <string name="value_direction_down">alas</string>
-  <string name="value_direction_down_and_right">alas ja oikealle</string>
   <string name="title_pref_shortcut_up">Pyyhkäise ylös</string>
   <string name="title_pref_shortcut_up_xr">Toissijainen kämmen sisäänpäin, nipistä ja pyyhkäise ylös</string>
   <string name="title_pref_shortcut_down">Pyyhkäise alas</string>
@@ -704,10 +636,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="title_pref_shortcut_fingerprint_left">Vas. pyyhkäisy sormenjälkitunnistimesta</string>
   <string name="title_pref_shortcut_fingerprint_right">Oik. pyyhkäisy sormenjälkitunnistimesta</string>
   <string name="title_pref_version_code">Versiokoodi</string>
-  <string formatted="false" name="value_volume_100_percent">Sama kuin puheen voimakkuus</string>
-  <string formatted="false" name="value_volume_75_percent">75 % puheen voimakkuudesta</string>
-  <string formatted="false" name="value_volume_50_percent">50 % puheen voimakkuudesta</string>
-  <string formatted="false" name="value_volume_25_percent">25 % puheen voimakkuudesta</string>
   <string name="value_type_confirmation_double_tap">Valitse näppäin painamalla sormella ja kaksoisnapauta</string>
   <string name="value_type_confirmation_lift_to_type">Kirjainnäppäin: paina ja nosta sormi. Muut näppäimet: kaksoisnapauta.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Valitse painike painamalla sormella ja nosta sitten sormesi</string>
@@ -720,12 +648,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="value_touch_explore_time_out_200ms">0,2 sekuntia</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekuntia</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekuntia (oletus)</string>
-  <string name="value_shake_to_read_disabled">Pois päältä</string>
-  <string name="value_shake_to_read_threshold_very_light">Hyvin kevyt</string>
-  <string name="value_shake_to_read_threshold_light">Kevyt</string>
-  <string name="value_shake_to_read_threshold_medium">Keskitaso</string>
-  <string name="value_shake_to_read_threshold_hard">Voimakas</string>
-  <string name="value_shake_to_read_threshold_very_hard">Hyvin voimakas</string>
   <string name="title_pref_on_screen_keyboard">Näyttönäppäimistö</string>
   <string name="title_pref_physical_keyboard">Fyysinen näppäimistö</string>
   <string name="value_keyboard_echo_none">–</string>
@@ -738,8 +660,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="pref_time_feedback_format_entries_default">Käytä laitteen aikamuotoa</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 tuntia</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 tuntia</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly-eleitä on muutettu</string>
-  <string name="notification_message_talkback_gestures_changed">Tarkastele eleitä napauttamalla</string>
   <string name="always_show_warning_checkbox">Näytä tämä varoitus aina</string>
   <string name="label_dialog_title_add">Lisää tunniste</string>
   <string name="label_dialog_title_edit">Muokkaa tunnistetta</string>
@@ -760,16 +680,8 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="no_apps_to_export_labels">Sovelluksia ei löytynyt tunnisteiden viemistä varten.</string>
   <string name="label_choose_app_to_import">Valitse sovellus tunnisteiden tuomista varten:</string>
   <string name="label_choose_app_to_export">Valitse sovellus tunnisteiden viemiseen:</string>
-  <string name="talkback_gesture_change_details">Tämä SandFlyn versio sisältää muutoksia peruseleisiin. Eleisiin liittyviä toimintoja voi muokata SandFly-asetuksissa. Kun kosketuksella tutkiminen on käytössä, voit suorittaa tiettyjä toimintoja seuraavilla eleillä.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Piilotetaanko näyttö?</string>
   <string name="dialog_message_dim_screen">Tämä laittaa näytön pois päältä yksityisyyden parantamiseksi. Osa sisällöstä saattaa silti näkyä, esimerkiksi näytön uudelleenkäynnistämistä koskevat viestit tai saavutettavuusominaisuuksien (esim. SandFlyin) valikot.</string>
-  <string name="talkback_built_in_gesture_change_details">Tämä SandFlyin versio sisältää muutoksia oletusarvoisesti käytettäviin eleisiin.\n\nYlös-alas-eleen avulla voit siirtyä näytön ensimmäiseen kohteeseen, alas-ylös siirtää sinut viimeiseen kohteeseen.\n\nLukemistarkkuutta voi nyt muuttaa kohdistamalla kohteeseen ja valitsemalla tarkkuuden SandFly-kontekstivalikosta.\n\nVoit muuttaa eleiden toimintoja SandFlyin asetuksissa.</string>
-  <string name="default_action_changed_details">Voit keskeyttää ja toistaa mediaa kaksoisnapauttamalla ja koskettamalla pitkään kahdella sormella.\n\nMuut eleet ovat myös muuttuneet.</string>
-  <string name="talkback_built_in_gesture_open_url">Katso lisätietoa avaamalla tämä puhelimella</string>
-  <string name="talkback_built_in_gesture_change_details_45">Tämä SandFly-versio sisältää muutoksia käytettävyystoimintojen oletuseleisiin.\n\nYlös-eleellä siirrytään nyt edelliseen siirtymisasetukseen ja Alas-eleellä seuraavaan siirtymisasetukseen.</string>
-  <string name="side_tap_shortcuts_removed_details">Nämä asetukset on poistettu SandFlyista luotettavuusongelmien takia:\n• Eleet, joissa napautetaan laitteen sivua\n• Jatkuva lukeminen ravistamalla laitetta</string>
-  <string name="button_accept_changed_gesture_mappings">Hyväksy eleet</string>
-  <string name="button_customize_gesture_mappings">Yksilöi eleitä</string>
   <string name="button_disable_all_events">Poista kaikki käytöstä</string>
   <string name="button_enable_all_events">Ota kaikki käyttöön</string>
   <string name="dialog_title_disable_exploration">Poistetaanko kosketuksella tutkiminen käytöstä?</string>
@@ -893,8 +805,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="screen_search_hint_type_search_tables">Hae taulukoita</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">SandFlyin ilmoituskanava</string>
-  <string name="pref_selector_summary">%1$s valitaksesi asetuksen. %2$s muuttaaksesi asetusta.</string>
-  <string name="speech_rate_change">Puheen nopeus: %1$d %%</string>
   <string name="speech_pitch_maximum">Korkein puheen äänenkorkeus</string>
   <string name="speech_pitch_minimum">Matalin puheen äänenkorkeus</string>
   <string name="reset_speech_rate_and_pitch">Nollaa puhenopeus ja äänenkorkeus</string>
@@ -904,10 +814,7 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="vibration_feedback_state">Värinäpalaute %1$s</string>
   <string name="text_formatting_state">Lue tekstin muotoilu ääneen %1$s</string>
   <string name="typing_echo_change">%1$s: kirjoituksen kaiku näppäimistöllä</string>
-  <string name="reading_control_toggle_prefix_xr">Toissijainen kämmen sisäänpäin, vaihda lukuasetustilaa painamalla pitkään.</string>
   <string name="gesture_1_or_2">%1$s tai %2$s</string>
-  <string name="select_setting_hint">%1$s valitaksesi toisen asetuksen</string>
-  <string name="adjust_setting_hint">%1$s muuttaaksesi asetusta</string>
   <string name="adjust_granularity_hint">%1$s lukeaksesi %2$stasolla</string>
   <string name="adjust_typo_hint">%1$s, niin näet ehdotuksia</string>
   <string name="use_action_hint">Suorita toiminto kaksoisnapauttamalla</string>
@@ -947,7 +854,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="setting_selector_heading">Lukuasetukset</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Voit keskeyttää video- tai musiikkisovelluksen median toiston tai jatkaa sitä kaksoisnapauttamalla kahdella sormella. Kokeile nyt.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Muissa sovelluksissa tätä elettä saatetaan käyttää puhelun vastaamiseen tai lopettamiseen. Kaikki sovellukset eivät välttämättä tue tätä elettä.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Näytä kaikki SandFly-ohjeet</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media keskeytetty tai käynnissä. Tämä keskeyttää tai toistaa yleensä nykyisen videon tai musiikin. Pyyhkäise oikealle jatkaaksesi.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Voit pysäyttää SandFlyin puheen väliaikaisesti napauttamalla kahdella sormella.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFlyin puhe on pysäytetty. Tämä pysäyttää yleensä SandFlyin juuri puhuman lauseen. Pyyhkäise oikealle jatkaaksesi.</string>
@@ -961,38 +867,18 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Valintatila päällä tai poissa päältä. Tekstin valintatila otetaan yleensä käyttöön tai poistetaan käytöstä, kun olet syötekentässä. Pyyhkäise oikealle jatkaaksesi.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Voit käyttää lukuasetuksia pyyhkäisemällä oikealle tai vasemmalle kolmella sormella. Voit myös pyyhkäistä ylös tai alas kolmella sormella.</string>
   <string name="new_shortcut_gesture_note">Huom. Olet muokannut joitakin eleitä, joten nämä tiedot eivät välttämättä ole oikein. Voit tarkistaa eleesi SandFlyin asetuksista.</string>
-  <string name="welcome_to_android11">Tervetuloa Android 11:n SandFlyiin</string>
   <string name="welcome_to_android11_text">SandFlyiin on lisätty uusia eleitä, jotta sen käyttö olisi entistä nopeampaa ja helpompaa.\n\nTällä näytöllä voit kokeilla uusia eleitä. Voit lukea nämä tiedot milloin tahansa SandFlyin asetuksista.</string>
   <string name="new_gesture_notification_title">SandFlyin uudet eleet</string>
   <string name="new_gesture_notification_content">Napauta, niin näet ohjeet SandFlyin nopeampaan käyttöön uusilla eleillä.</string>
   <string name="dump_node_tree_description">Solmupuu on lisätty lokeihin.</string>
   <string name="report_gesture_description">Tässä on viime aikoina tehdyt eleet. Ilmoita, mikä ele on väärä ja mitä odotit sen sijaan.</string>
-  <string name="update_welcome_text_content">Voit nyt yhdistää pistekirjoitusnäyttöihin HID:llä, jonka avulla voi yhdistää Bluetooth-laitteisiin. Varmista, että sinulla on valmistajan uusimmat laiteohjelmistoajurit, ja laita sitten Bluetooth päälle pistekirjoitusnäytöllä. Siirry SandFly-asetuksiin &gt; Pistekirjoitusnäyttö ja laita \"Käytä pistekirjoitusnäyttöä\" päälle. Etsi laite laiteluettelosta ja yhdistä se.</string>
-  <string name="update_welcome_text_content_tts">Voit nyt yhdistää pistekirjoitusnäyttöihin HID:llä, jonka avulla voi yhdistää Bluetooth-laitteisiin. Varmista, että sinulla on valmistajan uusimmat laiteohjelmistoajurit, ja laita sitten Bluetooth päälle pistekirjoitusnäytöllä. Avaa SandFlyin asetukset, valitse Pistekirjoitusnäyttö ja laita \"Käytä pistekirjoitusnäyttöä\" päälle. Etsi laite laiteluettelosta ja yhdistä se.</string>
-  <string name="update_welcome_text_content_with_link">Katso, miten voit käyttää pistekirjoitusnäyttöä SandFlyin kanssa.</string>
   <string name="update_welcome_talkback_16.1">Tämä SandFly-päivitys tuo tuen Kuvaile näyttöä ‑ominaisuudelle useammilla kielillä sekä muita laadunparannuksia, jotka helpottavat SandFlyin käyttöä.\n\nSaat lisätietoa muutoksista seuraavilla näytöillä.\n\nVoit tarkistaa tiedot myöhemmin siirtymällä SandFly-asetuksiin &gt; SandFlyin uudet ominaisuudet.</string>
   <string name="update_welcome_talkback_16.1_tts">Tämä SandFly-päivitys tuo tukea Kuvaile näyttöä ‑ominaisuudelle useammilla kielillä sekä muita laadunparannuksia, jotka helpottavat SandFlyin käyttöä.\n\nSaat lisätietoa muutoksista seuraavilla näytöillä.\n\nVoit tarkistaa tiedot myöhemmin siirtymällä SandFly-asetuksiin ja valitsemalla SandFlyin uudet ominaisuudet.</string>
-  <string name="describe_screen_and_qna_title">Uusia kieliä Kuvaile näyttöä- ja Kysy Geminiltä ‑ominaisuuksiin</string>
-  <string name="describe_screen_and_qna_content">Kuvaile näyttöä ja Kysy Geminiltä ovat nyt saatavilla useammilla kielillä. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Lue lisää ohjekeskuksesta&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Puhekirjoituksen pikanäppäin</string>
   <string name="shortcut_for_dictation_content">Kun käytät Gboardia, voit aloittaa tai lopettaa puhekirjoituksen kaksoisnapauttamalla kahdella sormella.
 &lt;br&gt;
 &lt;br&gt;Varmista, että sinulla on &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboardin uusin versio Google Playsta&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Kun Gboard on näytöllä, voit aloittaa sanelun kaksoisnapauttamalla kahdella sormella ja lopettaa sen kaksoisnapauttamalla kahdella sormella.</string>
-  <string name="keyboard_title">Näppäimistö</string>
-  <string name="keyboard_content">SandFlyin näppäimistössä on nyt \"Parannettu näppäinkartta\", jossa on monia uusia komentoja ja pikanäppäimiä. Parannus, joka sisältää \"selaustilan\" tehokkaampaa verkossa siirtymistä varten, sujuvoittaa siirtymistä ja käyttöä SandFlyin käyttäjille, jotka käyttävät fyysisiä näppäimistöjä. Voit vaihtaa \"Parannettuun näppäinkarttaan\" siirtymällä SandFly-asetuksiin &gt; Lisäasetukset &gt; Pikanäppäimet.</string>
-  <string name="keyboard_content_tts">SandFlyin näppäimistössä on nyt \"Parannettu näppäinkartta\", jossa on monia uusia komentoja ja pikanäppäimiä. Parannus, joka sisältää \"selaustilan\" tehokkaampaa verkossa siirtymistä varten, sujuvoittaa siirtymistä ja käyttöä SandFlyin käyttäjille, jotka käyttävät fyysisiä näppäimistöjä. Voit vaihtaa \"Parannettuun näppäinkarttaan\" siirtymällä SandFly-asetuksiin, valitsemalla Lisäasetukset ja sitten Pikanäppäimet.</string>
-  <string name="reduce_delay_title">Viiveen lyhentäminen</string>
-  <string name="reduce_delay_content">Voit nyt vähentää SandFlyin ilmoitusviivettä kosketuksella tutkimisessa ja kirjoittamisessa. Voit tarkistaa asetukset siirtymällä SandFly-asetuksiin &gt; Lisäasetukset &gt; Lyhennä viivettä.</string>
-  <string name="reduce_delay_content_tts">Voit nyt vähentää SandFlyin ilmoitusviivettä kosketuksella tutkimisessa ja kirjoittamisessa. Voit tarkistaa asetukset siirtymällä SandFly-asetuksiin, valitsemalla Lisäasetukset ja sitten Lyhennä viivettä.</string>
-  <string name="customize_braille_keyboard_improvements_title">Muokkaa pistekirjoitusnäppäimistön eleitä</string>
-  <string name="customize_braille_keyboard_improvements_content">Näytöllä näkyvän virtuaalisen pistekirjoitusnäppäimistön eleitä voi nyt muokata. Voit tarkistaa asetukset siirtymällä SandFly-asetuksiin &gt; Pistekirjoitusnäppäimistö &gt; Eleet.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Näytöllä näkyvän virtuaalisen pistekirjoitusnäppäimistön eleitä voi nyt muokata. Voit tarkistaa asetukset siirtymällä SandFly-asetuksiin, valitsemalla Pistekirjoitusnäppäimistö ja sitten Eleet.</string>
-  <string name="learn_more_about_braille_keyboard">Lue lisää pistekirjoitusnäppäimistöstä</string>
-  <string name="other_changes_title">Muut muutokset</string>
-  <string name="other_changes_content">Näytöllä näkyvä viesti auttaa nyt laittamaan SandFlyin nopeasti pois päältä, jos se laitetaan vahingossa päälle. Voit laittaa tämän pois päältä siirtymällä SandFly-asetuksiin &gt; Näytä ohjeet SandFlyin laittamiseen pois päältä.</string>
-  <string name="other_changes_content_tts">Näytöllä näkyvä viesti auttaa nyt laittamaan SandFlyin nopeasti pois päältä, jos se laitetaan vahingossa päälle. Voit laittaa tämän pois päältä siirtymällä SandFly-asetuksiin ja valitsemalla Näytä ohjeet SandFlyin laittamiseen pois päältä.</string>
-  <string name="keymap_changes_content">Klassinen näppäinkartta on vaihdettu oletusnäppäinkarttaan, joka sisältää enemmän pikanäppäimiä.</string>
   <string name="announcing_text_formatting_title">Ilmoitus tekstin muotoilusta</string>
   <string name="announcing_text_formatting_header">SandFly voi nyt ilmoittaa muutoksista tekstin muotoiluun, kuten lihavointiin, kursivointiin ja tekstin väriin. Näin pääset alkuun:</string>
   <string name="announcing_text_formatting_option1">Tarkenna muotoiltuun kohteeseen, avaa SandFly-valikko ja valitse \"Kuvaile tekstin muotoilua\" tai</string>
@@ -1083,7 +969,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="additional_tips_link_subtext">Katso, miten voit esimerkiksi soittaa puheluja ja lähettää viestejä</string>
   <string name="practice_gestures_link_text">Eleiden harjoittelu</string>
   <string name="practice_gestures_link_subtext">Kokeile eri eleitä nähdäksesi, miten ne toimivat</string>
-  <string name="help_and_feedback_link_subtext">Lue lisää SandFlyista ja lähetä palautetta</string>
   <string name="choose_tutorial_title">Valitse, miten haluat käyttää SandFlyia</string>
   <string name="touch_tutorial_button">Kosketusohje</string>
   <string name="keyboard_tutorial_button">Näppäimistöohje</string>
@@ -1229,8 +1114,6 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="wear_training_typing_text5">Kokeile alla.</string>
   <string name="wear_training_typing_practice_button_content_description">Näppäimistöllä kirjoittaminen</string>
   <string name="wear_training_end_tutorial_title">Voit aloittaa SandFlyin käytön</string>
-  <string name="talkback_updated_notification_title">SandFly on päivitetty</string>
-  <string name="talkback_updated_notification_content">Tutustu tarkemmin napauttamalla</string>
   <string name="wear_new_feature_page_title">Tervetuloa uuteen SandFlyiin</string>
   <string name="wear_new_feature_page_content">Näet virheenkorjauksia ja muutoksia tarkennuksen siirtymisessä</string>
   <string name="wear_new_feature_page_button_content_description">Valmis</string>
@@ -1249,10 +1132,7 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="title_pref_blue">Sininen</string>
   <string name="title_pref_grey">Harmaa</string>
   <string name="survey_setting_title">Anna palautetta</string>
-  <string name="survey_closed">Kyselytutkimus suljettu</string>
   <string name="title_summarize_view">Kuvaile näyttöä</string>
-  <string name="title_increase_touch_focus_latency">Lisää valinnan viivettä</string>
-  <string name="title_decrease_touch_focus_latency">Lyhennä valinnan viivettä</string>
   <string name="detected_result">Havaittu: %1$s</string>
   <string name="title_image_caption">Kuvaile kuvaa</string>
   <string name="image_caption_with_gemini_prefix">Kuvaile tätä kuvaa. Älä käytä vastauksessa merkintöjä.</string>
@@ -1279,33 +1159,15 @@ Jos viive on alle 0,3 sekuntia, aktivoiminen kaksoisnapauttamalla muuttuu aktivo
   <string name="image_qna_question_prefix">KÄYTTÄJÄ: %1$s</string>
   <string name="image_qna_answer_prefix">MALLI: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Jatka vuorottelua KÄYTTÄJÄN ja MALLIN välillä] …</string>
-  <string name="screen_overview_with_screenshot">Tehtävänäsi on auttaa henkilöä, joka ei näe puhelintaan, ymmärtämään, mitä puhelimen näytöllä on. Kuvaile tätä kuvakaappausta muutamalla lauseella.
-
-Ohjeet
-Aloita vastaus sanomalla \"Näytöllä näkyy\"
-Vastauksen alussa pitäisi kuvata näytön tärkeintä ja huomattavinta sisältöä. Tässä on esimerkkejä tärkeimmästä ja näkyvimmästä sisällöstä, jota kuvaillaan:
-* Chat-sovelluksessa: viimeisimmän viestin lähettäjä ja teksti
-* Somesovelluksessa: ensimmäinen postaus, mukaan lukien postauksen tekijä, teksti ja kuvaus kuvasta
-* Uutissovelluksessa: artikkelin otsikko ja kuvaus ensisijaisesta kuvasta
-* Ostossovelluksessa: kuvaus näkyvästä tuotteesta ja sen hinta
-* Kalenterisovelluksessa: seuraava tapahtuma ja sen jälkeen näkyvien muiden tapahtumien määrä
-* Viestilistassa: ensimmäisen viestin nimi ja viestin alkuosa sekä seuraavien viestien nimet ja lukemattomien viestien määrä
-
-Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien painikkeiden sijaintia ja tarkoitusta.
-Älä mainitse yläosassa näkyvän tilapalkin sisältöä (esim. aikaa, verkon tilaa tai akun varausta).
-Älä käytä vastauksessa Markdownia.</string>
   <string name="title_gemini_opt_in_dialog">Haluatko ladata yksityiskohtaiset kuvien kuvaukset?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Haluatko ladata kuvien kuvaukset?</string>
   <string name="title_gemini_result_dialog">Havaittu: kuva</string>
   <string name="title_gemini_result_bottom_sheet">Kuvan kuvaus</string>
   <string name="title_gemini_screen_overview_result_dialog">Näytön kuvaus</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Yhteenveto</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Toiminta</string>
   <string name="positive_button_gemini_opt_in_dialog">Laita päälle</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Hyväksyn</string>
   <string name="negative_button_gemini_opt_in_dialog">Ei kiitos</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Avaa Asetukset</string>
-  <string name="positive_button_gemini_download_dialog">Lataa ja laita päälle</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Teksti, \"%1$s\".</string>
   <string name="detected_icon_label">Kuvake, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien paini
   <string name="screen_overview_no_result">Näytöstä ei voi tehdä yleiskatsausta</string>
   <string name="image_caption_no_result">Kuvaa ei voi kuvailla</string>
   <string name="image_caption_with_hide_screen">Kuvien kuvaukset eivät ole saatavilla, kun näyttö on piilotettu. Tuo näyttö näkyviin ja yritä uudelleen.</string>
-  <string name="feedback_button_state_set">valittu</string>
-  <string name="feedback_button_state_unset">ei valittu</string>
   <string name="action_text_like_button">Merkitse hyväksi vastaukseksi</string>
   <string name="action_text_dislike_button">Merkitse huonoksi vastaukseksi</string>
   <string name="action_text_clear_like_button">Tyhjennä hyvä vastaus</string>
@@ -1349,18 +1209,13 @@ Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien paini
   <string name="downloading_all_image_captioning_hint">Ladataan automaattisia kuvien ja kuvakkeiden kuvauksia</string>
   <string name="download_all_image_captioning_successful_hint">Automaattiset kuvien ja kuvakkeiden kuvaukset ladattu</string>
   <string name="download_all_image_captioning_failed_hint">Lataaminen ei onnistu. Yritä myöhemmin uudelleen.</string>
-  <string name="download_complete_notification_title">Lataus valmis</string>
-  <string name="download_complete_notification_content">Kuulet nyt kuvien ja kuvakkeiden automaattiset kuvaukset SandFlyilla</string>
-  <string name="download_complete_notification_action">Asetukset</string>
   <string name="download_storage_error_hint">Tallennustila on täynnä. Jos haluat ladata, vapauta %1$d Mt tilaa kohdasta Asetukset &gt; Tallennustila.</string>
   <string name="download_network_error_hint">Lataaminen ei onnistu. Tarkista verkkoyhteys ja yritä uudelleen.</string>
   <string name="switch_icon_detection_dialog_title">Automaattiset kuvakkeiden kuvaukset</string>
   <string name="switch_icon_detection_dialog_message">Kuule kuvaukset, kun kohdistat kuvakkeeseen</string>
   <string name="switch_image_description_dialog_message">Kuule kuvaukset, kun kohdistat kuvaan. Jotkin sovellukset eivät ehkä tue tätä.</string>
-  <string name="switch_text_recognition_dialog_title">Kuvaile kuvien tekstiä automaattisesti</string>
   <string name="switch_text_recognition_dialog_message">Kuule kuvaukset, kun kohdistat tekstiä sisältävään kuvaan</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Ladattu</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Voit edelleen saada valitun kuvan kuvauksia SandFly-valikosta</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Poista lataus</string>
   <string name="delete_icon_detection_dialog_title">Poistetaanko automaattiset kuvakkeiden kuvaukset?</string>
@@ -1376,11 +1231,6 @@ Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien paini
   <string name="gemini_enable_dialog_title">Geminin käyttö SandFlyilla</string>
   <string name="gemini_disable_dialog_message">Näytön tapahtumien ymmärtäminen Geminin avulla</string>
   <string name="disable_gemini_dialog_subtext">Laita näytön tapahtumien ymmärtäminen Geminin avulla päälle</string>
-  <string name="ai_services_update_dialog_title">Päivitä %1$s, jos haluat kuvauksia kuvista</string>
-  <string name="ai_services_update_dialog_message">Jos haluat kuulla kuvien kuvauksia, tarvitset sovelluksen (<xliff:g example="AICore" id="service_app_name">%1$s</xliff:g>) viimeisimmän version Google Playsta.\n\nKun lataus on valmis, siirry takaisin SandFly-asetuksiin ja laita automaattiset kuvien kuvaukset päälle uudelleen.</string>
-  <string name="ai_services_update_dialog_button_text">Siirry Google Playhin</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Jotain meni pieleen. Yritä uudelleen.</string>
   <string name="gemini_block_message">Kuvan käsitteleminen ei onnistu</string>
   <string name="gemini_network_error">Ei internetyhteyttä. Tarkista Wi-Fi‑ tai mobiiliverkkoyhteys ja yritä uudelleen.</string>
@@ -1396,13 +1246,8 @@ Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien paini
   <string name="image_qna_typing_button_text">Kirjoita kysymys Geminille</string>
   <string name="image_qna_send_button_text">Kysy</string>
   <string name="image_qna_speak_question_description">Kysy ääneen</string>
-  <string name="overviews_summary_intro">Yhteenveto tästä sovellusnäytöstä: %1$s</string>
   <string name="overviews_node_not_found">Valitettavasti en löydä kyseistä näytön osaa enää.</string>
-  <string name="overviews_images_in_app">Tärkeitä kuvia löytyi</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Toiminnot sovelluksessa</string>
-  <string name="overviews_actions_in_app_description">Tässä on tärkeimmät toiminnot, joita voit tehdä tältä sovellusnäytöltä:</string>
-  <string name="overviews_parent_type">Toiminnot sovelluksessa</string>
   <string name="text_replaced_feedback">Teksti vaihdettu</string>
   <string name="switch_gesture_set">Vaihda elejoukkoa</string>
   <string name="switch_gesture_set_to">Vaihda elejoukkoon %1$d</string>
@@ -1453,7 +1298,6 @@ Tämän jälkeen vastauksessa voi kuvailla navigointipalkkien ja näkyvien paini
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Sulje</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Jos haluat kuulla ilmoitukset, kun näyttö on pois päältä, laita \"Sano ilmoitukset näyttö sammutettuna\" päälle SandFlyin puheen määräasetuksista</string>
     <string name="title_pref_tts_engine">Tekstistä puheeksi ‑moottori</string>
     <string name="title_pref_system_tts_settings">Järjestelmän Tekstistä puheeksi ‑asetukset</string>
     <string name="title_selector_switch_tts_engine">Puhemoottori</string>

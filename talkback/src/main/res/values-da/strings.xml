@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Når SandFly er aktiveret, får du talefeedback, så du kan bruge din enhed uden at kigge på skærmen. SandFly er beregnet til synshæmmede brugere og til situationer, hvor det er svært at se skærmen.<br><br><b>Sådan bruger du SandFly</b><br>• Stryg til højre eller venstre for at gå fra et element til et andet<br>• Tryk to gange for at aktivere et element<br>• Træk med 2 fingre for at rulle<br><b>Sådan deaktiverer du SandFly</b><br>1. Tryk på <b>Brug SandFly</b> i Indstillinger. Der vises et omrids. Tryk to gange på det.<br>2. Tryk på <b>Stop</b> i bekræftelsesmeddelelsen. Der vises et omrids. Tryk to gange på det.]]></string>
   <string name="talkback_service_summary">Brug en skærmlæser til at få elementer læst højt</string>
   <string name="talkback_preferences_title">SandFly-indstillinger</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Indstillinger</string>
   <string name="tts_preferences_title">Oplæsning</string>
   <string name="language_options">Sprog</string>
   <string name="spoken_language">Talt sprog</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Søgningen er annulleret.</string>
   <string name="notification_type_status_started">Startet</string>
   <string name="notification_type_status_stopped">Standset</string>
-  <string name="notification_type_status_connected">forbundet</string>
-  <string name="notification_battery_level_unknown">ukendt</string>
   <string name="notification_battery_saver_mode">Batterisparefunktion er aktiveret</string>
   <string name="template_no_text_selected">Der er ikke markeret nogen tekst</string>
   <string name="template_charging">Opladning er %1$s Batteriniveauet er %2$s procent.</string>
   <string name="template_charging_lite">Opladning %1$s</string>
-  <string name="template_battery_state">Strøm: %1$s, %2$s procent, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Ringervibration.</string>
   <string name="value_ringer_silent">Ringer lydløst.</string>
   <string name="value_screen_on">Skærmen er slået til.</string>
   <string name="value_screen_off">Skærmen er slået fra.</string>
   <string name="value_device_unlocked">Enheden er låst op.</string>
-  <string name="title_pref_category_audio">Lyd</string>
   <string name="title_pref_speech_volume">Talelydstyrke</string>
-  <string name="title_pref_speech_rate">Talehastighed</string>
-  <string name="summary_pref_speech_rate">Oplæsningshastighed</string>
   <string name="title_pref_verbose_scroll_announcement">Læs altid antal listeelementer højt</string>
   <string name="summary_pref_verbose_scroll_announcement">Sig, hvilke elementer der vises, efter hver rulning</string>
   <string name="title_pref_cover_proximity_sensor">Dæk nærhedssensoren til for at stoppe oplæsningen</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Sig, hvad klokken er</string>
   <string name="pref_speak_time_summary">Når du tænder skærmen</string>
   <string name="summary_speak_container_element_positions">Sig, når du går ind i eller forlader lister, gitre og andre containere</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokusforsinkelse er føjet til indstillinger for oplæsning</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Du kan nu altid ændre fokusforsinkelsen med indstillingerne for oplæsning.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Vil du skifte til at løfte fingeren for at skrive?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Når fokusforsinkelsen ved indtastning er angivet til under 0,3 sekunder, er det meget svært at trykke to gange for at skrive. Vælg \"Skift\" for automatisk at skifte til at løfte fingeren for at skrive.\n\nHvis du vil løfte fingeren for at skrive, skal du holde fingeren på en tast for at vælge den og derefter løfte fingeren igen for at skrive.\n\nDu kan tilpasse dette i SandFly-indstillingerne.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Fokusforsinkelse ved indtastning er føjet til indstillinger for oplæsning</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Hvis det ikke altid virker at trykke to gange, mens du skriver, kan du altid skifte til en længere fokusforsinkelse ved indtastning med indstillingerne for oplæsning.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Fokusforsinkelse ved indtastning fungerer ikke uden at løfte fingeren for at skrive.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">OK</string>
   <string name="reset_letency_reduction_settings_dialog_title">Vil du nulstille indstillingerne for forsinkelse?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Dette nulstiller alle standardindstillingerne for forsinkelse</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Nulstil</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Indstillingerne for reduktion af forsinkelse er blevet nulstillet.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Skift</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Skift ikke</string>
   <string name="Reset_gesture_settings_dialog_title">Vil du nulstille bevægelser?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Vil du nulstille bevægelserne i det aktuelle sæt?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Denne handling gendanner standardhandlingerne for alle bevægelser.\n\nDu mister eventuelle ændringer, du har foretaget.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Oplæs alle opdateringer om fremskridt</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Omfatter opdateringer under download, brug af rutevejledning m.m. Når indstillingen er deaktiveret, får du stadig opdateringer, men færre af dem.</string>
   <string name="title_pref_explore_by_touch">Tryk for at høre</string>
-  <string name="title_pref_category_visual">Visuel</string>
   <string name="title_pref_category_controls">Styring</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Generelt</string>
-  <string name="title_pref_category_advanced">Avanceret</string>
-  <string name="title_pref_category_others">Andre</string>
-  <string name="title_pref_category_tutorial_and_help">Vejledning og hjælp</string>
   <string name="title_pref_category_reduce_latency_summary">Disse indstillinger får SandFly til at reagere hurtigere, når du rører ved skærmen</string>
   <string name="reset_latency_settings_title">Nulstil alle indstillinger for forsinkelse</string>
   <string name="title_pref_single_tap">Tryk én gang for at aktivere</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusindikator</string>
   <string name="title_pref_category_manage_gestures">Bevægelser</string>
   <string name="title_pref_manage_labels">Tilpassede etiketter</string>
-  <string name="title_pref_manage_customize_menus">Rediger menuer</string>
   <string name="title_pref_category_context_menu">SandFly-menu</string>
   <string name="title_pref_category_selector_menu">Indstillinger for oplæsning</string>
   <string name="title_pref_category_navigation_menu">Rediger navigationsmuligheder</string>
-  <string name="pref_category_context_menu_summary">Tryk med 3 fingre, eller stryg opad eller nedad og derefter mod højre.</string>
-  <string name="pref_category_context_menu_summary_xr">Hvis du vil bruge SandFly-menuen, skal du dreje håndfladen på din ikke-dominante hånd indad og knibe fingrene sammen.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Stryg nedad og derefter mod højre.</string>
-  <string name="pref_category_selector_menu_summary">Drej 2 fingre som en drejeknap, eller stryg mod venstre eller højre med 3 fingre for at vælge en indstilling for oplæsning. Stryg derefter opad eller nedad for at ændre den.</string>
-  <string name="pref_category_selector_menu_summary_xr">Du kan skifte mellem indstillinger for oplæsning ved at vende din ikke-dominante håndflade indad, holde fingrene sammen, mens du bevæger hånden til højre eller venstre, og derefter sprede fingrene.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Stryg opad og derefter nedad eller nedad og derefter opad for at vælge en indstilling for oplæsning. Stryg derefter opad eller nedad for at ændre den.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Tastaturgenveje</string>
   <string name="title_pref_export_custom_labels">Eksportér tilpassede etiketter</string>
-  <string name="title_pref_play_store">Åbn SandFly i Play Butik</string>
-  <string name="summary_pref_play_store">Aktuel SandFly-version: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Hjælp og feedback</string>
-  <string name="title_pref_gup">Kontakt Googles support til brugere med handicap</string>
-  <string name="subtitle_pref_gup">Få hjælp ved at bruge SandFly, eller rapportér problemer</string>
-  <string name="pref_item_licenses">Open source-licenser</string>
-  <string name="title_pref_tutorial">Vejledning</string>
   <string name="title_pref_help">Hjælp</string>
   <string name="title_pref_show_tos">Servicevilkår</string>
   <string name="title_pref_show_privacy_policy">Privatlivspolitik</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Fingeraftryksbevægelser</string>
   <string name="title_pref_category_tutorial">SandFly-vejledning</string>
   <string name="title_pref_category_help_no_tutorial">Hjælp</string>
-  <string name="title_pref_category_typing">Skriver</string>
   <string name="title_pref_advanced_settings">Avancerede indstillinger</string>
   <string name="title_pref_show_exit_watermark">Vis vejledning i, hvordan du deaktiverer SandFly</string>
   <string name="summary_pref_show_exit_watermark">Vis, hvordan SandFly deaktiveres, når SandFly aktiveres</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Visse ændringstaster er anderledes.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Få flere oplysninger om tastaturoversigter</string>
   <string name="keycombo_go_to_settings">Gå til Indstillinger</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly fjerner snart den klassiske tastaturoversigt. Skift til standardtastaturoversigten for at fortsætte med at bruge tastaturgenveje.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Få flere oplysninger</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Indstillinger</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Få flere oplysninger</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Du bruger nu standardtastaturoversigten i SandFly. Der er også en ny og forbedret tastaturoversigt med mange nye kommandoer. Få flere oplysninger i Hjælp, eller skift til den nye tastaturoversigt under Indstillinger.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">En ny tastaturoversigt er tilgængelig</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Den nye og forbedrede SandFly-tastaturoversigt tilføjer mange nye kommandoer. Få flere oplysninger i Hjælp, eller skift til den nye tastaturoversigt under Indstillinger.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Opdater dine ændringstaster for SandFly</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Ikke nu</string>
   <string name="keycombo_warning_content_description">Få flere oplysninger om din ændringstast</string>
-  <string name="keycombo_warning_dialog_title">Opdater din ændringstast</string>
-  <string name="keycombo_warning_dialog_message">Du skal opdatere din ændringstast fra Handling til Alt, for at tastaturgenvejene for SandFly fungerer korrekt.\n\nHvis du fortsætter med at bruge Handling som ændringstast, vil nogle genveje udføre andre handlinger i denne version af Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Tastaturoversigt</string>
   <string name="keycombo_menu_select_keymap">Vælg en tastaturoversigt</string>
   <string name="keycombo_menu_reset_keymap">Nulstil tastaturoversigten</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Skru op for talelydstyrken</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Skru ned for talelydstyrken</string>
   <string name="keycombo_menu_global_refocus_current_node">Læs det, der fokuseres på, højt</string>
-  <string name="keycombo_menu_category_granularity">Navigation</string>
   <string name="keycombo_menu_granularity_increase">Næste indstilling for Navigation</string>
   <string name="keycombo_menu_granularity_decrease">Forrige indstilling for Navigation</string>
   <string name="keycombo_menu_category_other">Andre handlinger</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Er du sikker på, at du vil nulstille dine genvejstaster for denne tastaturoversigt til deres standardværdier? Denne handling kan ikke fortrydes.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Nulstil</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s i browsertilstand</string>
-  <string name="keycombo_assign_dialog_instruction">Tryk på en tastekombination for at oprette en ny genvej. Den skal mindst indeholde ALT- eller Ctrl-tasten.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Tryk på tastekombinationen med ændringstasten %1$s for at angive en ny genvej.</string>
   <string name="keycombo_unassigned">Ikke tildelt</string>
   <string name="save_button_in_keycombo_assign_dialog">Gem</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Fokusforsinkelse ved indtastning</string>
   <string name="message_pref_touch_explore_latency">En kortere forsinkelse får SandFly til at tale hurtigere, efter du har rørt ved tastaturet.\n\nVælg en forsinkelse</string>
   <string name="title_pref_touch_focus_timeout">Fokusforsinkelse</string>
-  <string name="summary_pref_touch_focus_time">
-Styrer, hvor hurtigt SandFly læser, efter fokus er flyttet. En kortere forsinkelse får SandFly til at føles hurtigere, men kan gøre det sværere at trykke to og tre gange.\n\n
-Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tryk med to fingre for at aktivere.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Håndter bevægelser i SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Deaktiver SandFly, og slå det derefter til igen for at aktivere indstillingen.</string>
   <string name="title_pref_auto_image_captioning">Automatiske beskrivelser</string>
@@ -382,28 +332,16 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="dialog_title_turn_on_image_description">Aktivér billedbeskrivelser i Indstillinger</string>
   <string name="dialog_message_turn_on_image_description">Du kan prøve igen, når du har aktiveret enten automatiske eller detaljerede billedbeskrivelser</string>
   <string name="title_pref_detailed_image_description">Detaljerede billedbeskrivelser</string>
-  <string name="summary_pref_ai_description">Hør længere beskrivelser, når du vælger \"<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>\" i SandFly-menuen</string>
   <string name="dialog_message_on_device_ai_description">Du hører en kort beskrivelse, når du fokuserer på et billede i understøttede apps.\n\nBilleder behandles på din enhed og sendes aldrig til Google. \n\nGenerativ AI er en eksperimentel funktion, og den begår derfor fejl. Ved at fortsætte accepterer du Googles <a href="https://policies.google.com/terms/generative-ai">servicevilkår</a>.</string>
   <string name="enable_gemini">Aktivér</string>
   <string name="powered_by_gemini">Ved hjælp af generativ AI</string>
-  <string name="detailed_image_description_ongoing_hint">Henter beskrivelsen</string>
-  <string name="detailed_image_description_result_prefix">Registreret: Billede. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Download er påkrævet for automatiske billedbeskrivelser</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Billeder behandles på din enhed og sendes aldrig til Google.\n\nGenerativ AI er en eksperimentel funktion, og den begår derfor fejl. Ved at fortsætte accepterer du %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Googles servicevilkår</string>
   <string name="message_aifeature_downloading">Downloader AI-model. Dette kan tage lidt tid. Du får besked, når downloaden er fuldført.</string>
   <string name="message_aifeature_downloading_with_progress">Downloaden er stadig i gang. %1$d af %2$d MB er downloadet.</string>
-  <string name="message_aifeature_download_complete">AI-modellen er downloadet. SandFly kan nu generere billedbeskrivelser.</string>
   <string name="summary_pref_auto_image_captioning">Af ikoner, billeder og tekst på billeder</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Til tekst i billeder</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Til billeder og tekst i billeder</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Til ikoner og tekst i billeder</string>
   <string name="summary_pref_module_downloading">Downloader…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Slået til for alle billeder</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Kun slået til for billeder uden etiket</string>
   <string name="summary_pref_auto_image_captioning_disabled">Fra</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Slået til for alle ikoner</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Kun slået til for ikoner uden etiket</string>
   <string name="summary_pref_auto_icon_detection_disabled">Fra</string>
   <string name="title_pref_enable_auto_image_caption">Alle billeder</string>
   <string name="title_pref_enable_auto_image_caption_arg">Alle billeder\n%1$s</string>
@@ -413,7 +351,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="title_pref_enable_auto_icon_detection">Alle ikoner</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Kun ikoner uden etiket</string>
   <string name="title_pref_disable_auto_icon_detection">Beskriv ikke ikoner</string>
-  <string name="dialog_message_on_device_ai_model_download">Du hører en kort beskrivelse, når du fokuserer på et billede i understøttede apps.\n\nBilleder behandles på din enhed og sendes aldrig til Google.\n\nGenerativ AI er en eksperimentel funktion, og den begår derfor fejl. Ved at fortsætte accepterer du %1$s.</string>
   <string name="title_pref_enable_gemini_support">Til</string>
   <string name="title_pref_disable_gemini_support">Fra</string>
   <string name="summary_pref_gemini_support_enabled">Gemini er aktiveret</string>
@@ -457,7 +394,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="shortcut_print_node_tree">Udskriv træstruktur</string>
   <string name="shortcut_print_performance_stats">Udskriv effektivitetsstatistik</string>
   <string name="shortcut_first_in_screen">Fokuser på første element på skærmen</string>
-  <string name="shortcut_summary">Layout for oversigtsskærmen</string>
   <string name="shortcut_voice_commands">Start stemmekommando</string>
   <string name="shortcut_last_in_screen">Fokuser på sidste element på skærmen</string>
   <string name="shortcut_enable_dimming">Skjul skærm</string>
@@ -561,7 +497,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="menu_category_web_navigation">Webnavigation</string>
   <string name="menu_category_basic_navigation">Grundlæggende navigation</string>
   <string name="summary_custom_action">Viser, hvornår handlinger gælder for det aktuelle element, bl.a. tilknytninger, kopiering, indsætning og markering</string>
-  <string name="summary_context_menu_links">Åbn links inden for et fokuseret element</string>
   <string name="summary_viewpager_controls">Gå til næste eller forrige side. Vises, når du læser indhold med flere sider.</string>
   <string name="summary_labeling_controls">Vises, når du markerer et element uden etiket</string>
   <string name="summary_granularity">Læs efter tegn, ord, linjer m.m.</string>
@@ -631,12 +566,9 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="summary_screen_overview">Opsummer skærmen med handlingsknapper</string>
   <string name="summary_screen_overview_no_actions">Hør en oversigt over indholdet på skærmen</string>
   <string name="summary_image_caption">Læs tekst og ikoner på et valgt billede højt</string>
-  <string name="summary_summarize_view">Læs en opsummering af visningen højt</string>
   <string name="summary_typo_suggestions">Vises, når markøren holdes over et ord, der er stavet forkert</string>
   <string name="summary_cache_keyboard_keys">SandFly indlæser meddelelser på forhånd for at reducere forsinkelsen, når du skriver</string>
   <string name="summary_cache_keyboard_keys_disabled">Brug Google Oplæsning for at tilgå denne funktion</string>
-  <string name="value_direction_down">nedad</string>
-  <string name="value_direction_down_and_right">ned og så til højre</string>
   <string name="title_pref_shortcut_up">Stryg op</string>
   <string name="title_pref_shortcut_up_xr">Ikke-dominant håndflade indad, knib fingrene sammen, og stryg opad</string>
   <string name="title_pref_shortcut_down">Stryg ned</string>
@@ -704,10 +636,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="title_pref_shortcut_fingerprint_left">Stryg til venstre på fingeraftrykssensoren</string>
   <string name="title_pref_shortcut_fingerprint_right">Stryg til højre på fingeraftrykssensoren</string>
   <string name="title_pref_version_code">Versionskode</string>
-  <string formatted="false" name="value_volume_100_percent">Match talelydstyrke</string>
-  <string formatted="false" name="value_volume_75_percent">75 % af talelydstyrke</string>
-  <string formatted="false" name="value_volume_50_percent">50 % af talelydstyrke</string>
-  <string formatted="false" name="value_volume_25_percent">25 % af talelydstyrke</string>
   <string name="value_type_confirmation_double_tap">Hold fingeren på en tast for at vælge den, og tryk derefter to gange</string>
   <string name="value_type_confirmation_lift_to_type">Hold fingeren på en bogstavtast for at vælge den, og løft derefter fingeren igen. Tryk to gange på andre taster.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Hold fingeren på en tast for at vælge den, og løft derefter fingeren igen</string>
@@ -720,12 +648,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="value_touch_explore_time_out_200ms">0,2 sekunder</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekunder</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekunder (standard)</string>
-  <string name="value_shake_to_read_disabled">Deaktiveret</string>
-  <string name="value_shake_to_read_threshold_very_light">Meget let</string>
-  <string name="value_shake_to_read_threshold_light">Let</string>
-  <string name="value_shake_to_read_threshold_medium">Normal</string>
-  <string name="value_shake_to_read_threshold_hard">Hårdt</string>
-  <string name="value_shake_to_read_threshold_very_hard">Meget hårdt</string>
   <string name="title_pref_on_screen_keyboard">Skærmtastatur</string>
   <string name="title_pref_physical_keyboard">Fysisk tastatur</string>
   <string name="value_keyboard_echo_none">Ingen</string>
@@ -738,8 +660,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="pref_time_feedback_format_entries_default">Brug enhedens tidsformat</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 timer</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 timer</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly-bevægelser er ændret</string>
-  <string name="notification_message_talkback_gestures_changed">Tryk for at se ændringer af bevægelser for hjælpefunktioner</string>
   <string name="always_show_warning_checkbox">Vis altid denne advarsel</string>
   <string name="label_dialog_title_add">Tilføj etiket</string>
   <string name="label_dialog_title_edit">Rediger etiket</string>
@@ -760,16 +680,8 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="no_apps_to_export_labels">Der blev ikke fundet nogen apps til eksport af etiketter.</string>
   <string name="label_choose_app_to_import">Vælg en app til at importere etiketter:</string>
   <string name="label_choose_app_to_export">Vælg en app for at eksportere etiketter:</string>
-  <string name="talkback_gesture_change_details">I denne version af SandFly er standardbevægelserne for hjælpefunktioner ændret. De handlinger, der knyttes til disse bevægelser, kan tilpasses i indstillingerne for SandFly. Når Udforsk ved berøring er aktiveret, kan du bruge følgende bevægelser til at udføre bestemte handlinger.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Vil du skjule skærmen?</string>
   <string name="dialog_message_dim_screen">Denne indstilling forbedrer dit privatliv ved at slukke skærmen. Noget indhold kan stadig blive vist, f.eks. meddelelser om, hvordan du tænder skærmen igen, eller menuer til hjælpefunktioner såsom SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Denne version af SandFly har ændrede standardbevægelser for hjælpefunktioner.\n\nMed en bevægelse oppefra og ned kan du gå til det første element på skærmen, og med en bevægelse nedefra og op kommer du til det sidste element.\n\nDetaljegraden for læsningen kan nu ændres ved at fokusere på et element og derefter vælge en detaljegrad fra SandFly-genvejsmenu.\n\nDu kan ændre de handlinger, der udføres af disse bevægelser, i indstillingerne for SandFly.</string>
-  <string name="default_action_changed_details">Du kan nu trykke to gange med to fingre og holde fingrene nede for at afspille medier eller sætte dem på pause.\n\nAndre bevægelser er også ændret.</string>
-  <string name="talkback_built_in_gesture_open_url">Åbn på telefonen</string>
-  <string name="talkback_built_in_gesture_change_details_45">Denne version af SandFly omfatter ændringer af standardbevægelser for hjælpefunktioner.\n\nMed bevægelsen Stryg opad kommer du nu til forrige navigationsindstilling, og med bevægelsen Stryg nedad kommer du nu til næste navigationsindstilling.</string>
-  <string name="side_tap_shortcuts_removed_details">Følgende indstillinger fjernes fra SandFly på grund af stabilitetsproblemer:\n• Bevægelser, der kræver tryk på siden af enheden\n•Ryst for at starte kontinuerlig læsning</string>
-  <string name="button_accept_changed_gesture_mappings">Acceptér bevægelser</string>
-  <string name="button_customize_gesture_mappings">Tilpas bevægelser</string>
   <string name="button_disable_all_events">Deaktiver alle</string>
   <string name="button_enable_all_events">Aktivér alle</string>
   <string name="dialog_title_disable_exploration">Vil du deaktivere Udforsk ved berøring?</string>
@@ -893,8 +805,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="screen_search_hint_type_search_tables">Søg efter tabeller</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Notifikationskanal for SandFly</string>
-  <string name="pref_selector_summary">%1$s for at vælge en indstilling. Derefter %2$s for at tilpasse indstillingen.</string>
-  <string name="speech_rate_change">Talehastighed %1$d %%</string>
   <string name="speech_pitch_maximum">Højeste stemmeleje</string>
   <string name="speech_pitch_minimum">Laveste stemmeleje</string>
   <string name="reset_speech_rate_and_pitch">Nulstil talehastighed og stemmeleje</string>
@@ -904,10 +814,7 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="vibration_feedback_state">Vibrationsfeedback er slået %1$s</string>
   <string name="text_formatting_state">Oplæs tekstformatering er %1$s</string>
   <string name="typing_echo_change">Ekko for %1$s på fysisk tastatur</string>
-  <string name="reading_control_toggle_prefix_xr">Hold ikke-dominant håndflade indad, og tryk længe for at skifte indstillinger for oplæsning</string>
   <string name="gesture_1_or_2">%1$s eller %2$s</string>
-  <string name="select_setting_hint">%1$s for at vælge en anden indstilling</string>
-  <string name="adjust_setting_hint">%1$s for at tilpasse indstillingen</string>
   <string name="adjust_granularity_hint">%1$s for at læse en/et %2$s ad gangen</string>
   <string name="adjust_typo_hint">%1$s for at se forslag.</string>
   <string name="use_action_hint">Tryk to gange for at udføre handlingen</string>
@@ -947,7 +854,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="setting_selector_heading">Læsestyring</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Hvis du vil afspille medier eller sætte dem på pause i en video- eller musikapp, skal du trykke to gange med to fingre. Prøv det nu.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Andre apps bruger muligvis denne bevægelse til f.eks. at besvare eller afslutte telefonopkald. Bevægelsen understøttes muligvis ikke af alle apps.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Se alle SandFly-vejledninger</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Mediet er sat på pause eller afspiller indhold. Dette vil normalt starte eller stoppe afspilningen. Stryg mod højre for at fortsætte.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Hvis du midlertidigt vil slå lyden fra SandFly, skal du trykke med to fingre</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFly-tale stoppede. Dette vil som regel stoppe det, SandFly er ved at sige. Stryg mod højre for at fortsætte.</string>
@@ -961,38 +867,18 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Markeringstilstanden er slået til eller fra. Dette vil normalt starte eller stoppe tekstmarkeringstilstanden, når du er i et indtastningsfelt. Stryg mod højre for at fortsætte.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Du kan åbne styringselementerne for læsning ved at stryge mod venstre eller højre med 3 fingre. Du kan også stryge opad eller nedad med 3 fingre.</string>
   <string name="new_shortcut_gesture_note">Bemærk! Du har tilpasset nogle af dine bevægelser, så disse oplysninger er muligvis ikke korrekte. Du kan se dine bevægelser i SandFly-indstillingerne.</string>
-  <string name="welcome_to_android11">Velkommen til SandFly på Android 11</string>
   <string name="welcome_to_android11_text">Der er tilføjet nye bevægelser for at gøre SandFly hurtigere og nemmere at bruge.\n\nDu kan prøve de nye bevægelser på denne skærm. Du kan til enhver tid gennemgå disse oplysninger i indstillingerne for SandFly.</string>
   <string name="new_gesture_notification_title">Nye bevægelser i SandFly</string>
   <string name="new_gesture_notification_content">Tryk for at få flere oplysninger om, hvordan du kan bruge SandFly hurtigere med nye bevægelser.</string>
   <string name="dump_node_tree_description">Træstrukturen er blevet gemt i de pågældende logs.</string>
   <string name="report_gesture_description">Her er de bevægelser, du har brugt for nylig. Rapportér, hvilken af bevægelserne der ikke fungerer, og hvad du forventer af den.</string>
-  <string name="update_welcome_text_content">Du kan nu oprette forbindelse til brailleskærme via HID, som er en måde at oprette forbindelse til Bluetooth-enheder på. Sørg for, at du har de seneste firmwaredrivere fra producenten, og aktivér derefter Bluetooth på din brailleskærm. Gå til indstillingerne for SandFly &gt; Brailleskærm, og aktivér \"Brug brailleskærm\". Find din enhed på listen over enheder, og opret forbindelse til den.</string>
-  <string name="update_welcome_text_content_tts">Du kan nu oprette forbindelse til brailleskærme via HID, som er en måde at oprette forbindelse til Bluetooth-enheder på. Sørg for, at du har de seneste firmwaredrivere fra producenten, og aktivér derefter Bluetooth på din brailleskærm. Gå til indstillingerne for SandFly, gå derefter til Brailleskærm, og aktivér \"Brug brailleskærm\". Find din enhed på listen over enheder, og opret forbindelse til den.</string>
-  <string name="update_welcome_text_content_with_link">Se, hvordan du bruger din brailleskærm med SandFly.</string>
   <string name="update_welcome_talkback_16.1">Denne SandFly-opdatering introducerer understøttelse af Beskriv skærmen på flere sprog og andre kvalitetsforbedringer, der gør SandFly nemmere at bruge.\n\nDu får flere oplysninger om disse ændringer på de følgende skærme.\n\nDu kan gennemgå disse oplysninger senere ved at gå til SandFly-indstillinger &gt; Nye funktioner i SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">Denne SandFly-opdatering introducerer understøttelse af Beskriv skærmen på flere sprog og andre kvalitetsforbedringer, der gør SandFly nemmere at bruge.\n\nDu får flere oplysninger om disse ændringer på de følgende skærme.\n\nDu kan gennemgå disse oplysninger senere ved at gå til SandFly-indstillinger efterfulgt af Nye funktioner i SandFly.</string>
-  <string name="describe_screen_and_qna_title">Nye sprog til Beskriv skærmen og Spørg Gemini</string>
-  <string name="describe_screen_and_qna_content">Beskriv skærmen og Spørg Gemini er nu tilgængelige på flere sprog. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Få flere oplysninger i Hjælp&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Genvej til indtaling</string>
   <string name="shortcut_for_dictation_content">Når du bruger Gboard, kan du nu trykke to gange med to fingre for at starte eller stoppe indtaling.
 &lt;br&gt;
 &lt;br&gt;Sørg for, at du har den nyeste version af &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard fra Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Når Gboard er på skærmen, kan du nu trykke to gange med to fingre for at starte indtaling og derefter trykke to gange med to fingre for at stoppe den.</string>
-  <string name="keyboard_title">Tastatur</string>
-  <string name="keyboard_content">SandFly har nu en \"Forbedret tastaturoversigt\" til sit tastatur med en række nye kommandoer og genveje. Denne forbedring, som omfatter \"browsertilstand\" til mere effektiv webnavigation, strømliner navigation og interaktion for SandFly-brugere, der er afhængige af fysiske tastaturer. Du kan skifte til \"Forbedret tastaturoversigt\" under SandFly-indstillinger &gt; Avancerede indstillinger &gt; Tastaturgenveje.</string>
-  <string name="keyboard_content_tts">SandFly har nu en \"Forbedret tastaturoversigt\" til sit tastatur med en række nye kommandoer og genveje. Denne forbedring, som omfatter \"browsertilstand\" til mere effektiv webnavigation, strømliner navigation og interaktion for SandFly-brugere, der er afhængige af fysiske tastaturer. Du kan skifte til \"Forbedret tastaturoversigt\" under SandFly-indstillinger efterfulgt af Avancerede indstillinger og derefter Tastaturgenveje.</string>
-  <string name="reduce_delay_title">Reducer forsinkelse</string>
-  <string name="reduce_delay_content">Du kan nu reducere forsinkelserne for SandFly-meddelelser, når du trykker for at høre, og når du taster. Du kan se disse indstillinger ved at gå til SandFly-indstillinger &gt; Avancerede indstillinger &gt; Reducer forsinkelse.</string>
-  <string name="reduce_delay_content_tts">Du kan nu reducere forsinkelserne for SandFly-meddelelser, når du trykker for at høre, og når du taster. Du kan se disse indstillinger ved at gå til SandFly-indstillinger efterfulgt af Avancerede indstillinger og derefter Reducer forsinkelse.</string>
-  <string name="customize_braille_keyboard_improvements_title">Tilpas bevægelser for brailletastatur</string>
-  <string name="customize_braille_keyboard_improvements_content">Det er nu muligt at tilpasse bevægelser for det virtuelle brailletastatur på skærmen. Du kan tilpasse bevægelser ved at gå til SandFly-indstillinger &gt; Brailletastatur &gt; Bevægelser.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Det er nu muligt at tilpasse bevægelser for det virtuelle brailletastatur på skærmen. Du kan tilpasse bevægelser ved at gå til SandFly-indstillinger efterfulgt af Brailletastatur og derefter Bevægelser.</string>
-  <string name="learn_more_about_braille_keyboard">Få flere oplysninger om brailletastaturet</string>
-  <string name="other_changes_title">Andre ændringer</string>
-  <string name="other_changes_content">En meddelelse på skærmen hjælper dig nu med hurtigt at deaktivere SandFly, hvis funktionen aktiveres ved en fejl. Du kan deaktivere denne funktion under SandFly-indstillinger &gt; Vis vejledning i, hvordan du deaktiverer SandFly.</string>
-  <string name="other_changes_content_tts">En meddelelse på skærmen hjælper dig nu med hurtigt at deaktivere SandFly, hvis funktionen aktiveres ved en fejl. Du kan deaktivere meddelelsen ved at gå til SandFly-indstillinger efterfulgt af Vis vejledning i, hvordan du deaktiverer SandFly.</string>
-  <string name="keymap_changes_content">Den klassiske tastaturoversigt er ændret til standardtastaturoversigten, der omfatter flere genveje.</string>
   <string name="announcing_text_formatting_title">Meddelelse om tekstformatering</string>
   <string name="announcing_text_formatting_header">SandFly kan nu fortælle om ændringer i tekstformatering, f.eks. fed skrift, kursiv og tekstfarve. Sådan kommer du i gang:</string>
   <string name="announcing_text_formatting_option1">Fokuser på elementet med formateringen, åbn SandFly-menuen, og vælg \"Beskriv tekstformatering\" eller</string>
@@ -1083,7 +969,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="additional_tips_link_subtext">Find ud af, hvordan du foretager opkald, sender beskeder og meget mere</string>
   <string name="practice_gestures_link_text">Afprøv bevægelser</string>
   <string name="practice_gestures_link_subtext">Prøv forskellige bevægelser for at se, hvad de gør</string>
-  <string name="help_and_feedback_link_subtext">Få flere oplysninger om SandFly, og send feedback</string>
   <string name="choose_tutorial_title">Vælg, hvordan du vil interagere med SandFly</string>
   <string name="touch_tutorial_button">Berøringsvejledning</string>
   <string name="keyboard_tutorial_button">Tastaturvejledning</string>
@@ -1229,8 +1114,6 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="wear_training_typing_text5">Prøv det nedenfor.</string>
   <string name="wear_training_typing_practice_button_content_description">Indtastning med tastatur</string>
   <string name="wear_training_end_tutorial_title">Du er klar til at bruge SandFly</string>
-  <string name="talkback_updated_notification_title">SandFly er blevet opdateret</string>
-  <string name="talkback_updated_notification_content">Tryk for at få flere oplysninger</string>
   <string name="wear_new_feature_page_title">Velkommen til det opdaterede SandFly</string>
   <string name="wear_new_feature_page_content">Du vil bemærke nogle fejlrettelser og ændringer af, hvordan ting, der fokuseres på, bevæger sig</string>
   <string name="wear_new_feature_page_button_content_description">Udfør</string>
@@ -1249,10 +1132,7 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="title_pref_blue">Blå</string>
   <string name="title_pref_grey">Grå</string>
   <string name="survey_setting_title">Giv os feedback</string>
-  <string name="survey_closed">Undersøgelsen er slut</string>
   <string name="title_summarize_view">Beskriv skærmen</string>
-  <string name="title_increase_touch_focus_latency">Øg fokusforsinkelse</string>
-  <string name="title_decrease_touch_focus_latency">Sænk fokusforsinkelse</string>
   <string name="detected_result">Registreret: %1$s</string>
   <string name="title_image_caption">Beskriv billedet</string>
   <string name="image_caption_with_gemini_prefix">Beskriv dette billede. Brug ikke opmærkning i svaret.</string>
@@ -1279,33 +1159,15 @@ Forsinkelser på under 0,3 sekunder ændrer tryk to gange for at aktivere til tr
   <string name="image_qna_question_prefix">BRUGER: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Fortsæt med at skifte mellem BRUGER og MODEL] ...</string>
-  <string name="screen_overview_with_screenshot">Din opgave er at hjælpe en person, der ikke kan se sin telefon, med at forstå, hvad der vises på telefonskærmen. Beskriv dette screenshot med nogle få sætninger.
-
-Vejledning
-Indled dit svar med \"Skærmen viser\"
-I begyndelsen af svaret skal du beskrive det vigtigste og mest fremtrædende indhold på skærmen. Her er nogle eksempler på, hvad det vigtigste, mest iøjnefaldende indhold, der skal beskrives, kan være
-*I en chatapp: Afsenderen og teksten i den seneste besked
-*I en app til sociale medier: Det første opslag, herunder hvem der har opslået det, teksten og en beskrivelse af billedet
-*I en nyhedsapp: Artikeltitlen og en beskrivelse af det primære billede
-*I en shoppingapp: En beskrivelse af det viste produkt og prisen
-*I en kalenderapp: Den næste begivenhed, og hvor mange andre begivenheder der vises efterfølgende
-*På en liste over beskeder: Navnet og forhåndsvisningen af den første besked og derefter kun navnene på de næste par på listen, og hvor mange beskeder der er ulæste
-
-Derefter kan svaret beskrive det rumlige sted og formålet med navigationslinjer og tydelige knapper.
-Undlad at nævne indholdet på statusbjælken øverst (f.eks. klokkeslæt, netværksstatus, batteri).
-Brug ikke markdown i dit svar.</string>
   <string name="title_gemini_opt_in_dialog">Vil du have detaljerede billedbeskrivelser?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Vil du have billedbeskrivelser?</string>
   <string name="title_gemini_result_dialog">Registreret: Billede</string>
   <string name="title_gemini_result_bottom_sheet">Billedbeskrivelse</string>
   <string name="title_gemini_screen_overview_result_dialog">Skærmbeskrivelse</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Oversigt</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Handlinger</string>
   <string name="positive_button_gemini_opt_in_dialog">Aktivér</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Jeg accepterer</string>
   <string name="negative_button_gemini_opt_in_dialog">Nej tak</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Gå til Indstillinger</string>
-  <string name="positive_button_gemini_download_dialog">Download, og aktivér</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Tekst, \"%1$s\".</string>
   <string name="detected_icon_label">Ikon, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Brug ikke markdown i dit svar.</string>
   <string name="screen_overview_no_result">Skærmen kan ikke opsummeres</string>
   <string name="image_caption_no_result">Billedet kan ikke beskrives</string>
   <string name="image_caption_with_hide_screen">Billedbeskrivelser er ikke tilgængelige, når skærmen er skjult. Vis din skærm, og prøv igen.</string>
-  <string name="feedback_button_state_set">valgt</string>
-  <string name="feedback_button_state_unset">ikke valgt</string>
   <string name="action_text_like_button">Markér som et godt svar</string>
   <string name="action_text_dislike_button">Markér som et dårligt svar</string>
   <string name="action_text_clear_like_button">Ryd godt svar</string>
@@ -1349,18 +1209,13 @@ Brug ikke markdown i dit svar.</string>
   <string name="downloading_all_image_captioning_hint">Automatiske billed- og ikonbeskrivelser downloades</string>
   <string name="download_all_image_captioning_successful_hint">Automatiske billed- og ikonbeskrivelser er downloadet</string>
   <string name="download_all_image_captioning_failed_hint">Download er ikke muligt. Prøv igen senere.</string>
-  <string name="download_complete_notification_title">Download er fuldført</string>
-  <string name="download_complete_notification_content">Du vil nu høre automatiske billed- og ikonbeskrivelser med SandFly</string>
-  <string name="download_complete_notification_action">Indstillinger</string>
   <string name="download_storage_error_hint">Der er ikke mere lagerplads. For at downloade skal du frigøre %1$d MB under Indstillinger &gt; Lagerplads.</string>
   <string name="download_network_error_hint">Download er ikke muligt. Tjek din forbindelse, og prøv igen.</string>
   <string name="switch_icon_detection_dialog_title">Automatiske ikonbeskrivelser</string>
   <string name="switch_icon_detection_dialog_message">Hør beskrivelser, når du fokuserer på et ikon</string>
   <string name="switch_image_description_dialog_message">Hør beskrivelser, når du fokuserer på et billede. Nogle apps understøtter muligvis ikke dette.</string>
-  <string name="switch_text_recognition_dialog_title">Beskriv automatisk tekst på billeder</string>
   <string name="switch_text_recognition_dialog_message">Hør beskrivelser, når du fokuserer på et billede med tekst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Downloadet</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Du kan stadig høre beskrivelser af et valgt billede via SandFly-menuen</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Slet download</string>
   <string name="delete_icon_detection_dialog_title">Vil du slette automatiske ikonbeskrivelser?</string>
@@ -1376,11 +1231,6 @@ Brug ikke markdown i dit svar.</string>
   <string name="gemini_enable_dialog_title">Brug Gemini i SandFly</string>
   <string name="gemini_disable_dialog_message">Skærmregistrering med Gemini</string>
   <string name="disable_gemini_dialog_subtext">Aktivér for at bruge skærmregistrering med Gemini</string>
-  <string name="ai_services_update_dialog_title">Opdater appen %1$s for at få billedbeskrivelser</string>
-  <string name="ai_services_update_dialog_message">For at høre billedbeskrivelser skal du downloade den nyeste version af <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> i Google Play.\n\nNår downloaden er gennemført, skal du gå tilbage til indstillingerne for SandFly og aktivere automatiske billedbeskrivelser igen.</string>
-  <string name="ai_services_update_dialog_button_text">Gå til Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Noget gik galt. Prøv igen.</string>
   <string name="gemini_block_message">Billedet kan ikke behandles</string>
   <string name="gemini_network_error">Der er ingen internetforbindelse. Tjek dit Wi-Fi-netværk eller mobilnetværk, og prøv igen.</string>
@@ -1396,13 +1246,8 @@ Brug ikke markdown i dit svar.</string>
   <string name="image_qna_typing_button_text">Skriv spørgsmål til Gemini</string>
   <string name="image_qna_send_button_text">Spørg</string>
   <string name="image_qna_speak_question_description">Sig spørgsmål højt</string>
-  <string name="overviews_summary_intro">Opsummering af denne appskærm: %1$s</string>
   <string name="overviews_node_not_found">Jeg kan ikke længere finde den del af skærmen.</string>
-  <string name="overviews_images_in_app">Der blev fundet store billeder</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Handlinger i appen</string>
-  <string name="overviews_actions_in_app_description">Her er de vigtigste handlinger, du kan foretage på denne appskærm:</string>
-  <string name="overviews_parent_type">Handlinger i appen</string>
   <string name="text_replaced_feedback">Ordet blev udskiftet</string>
   <string name="switch_gesture_set">Skift bevægelsessæt</string>
   <string name="switch_gesture_set_to">Skift til bevægelsessættet %1$d</string>
@@ -1453,7 +1298,6 @@ Brug ikke markdown i dit svar.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Luk</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">Hvis du vil høre notifikationer, når skærmen er slukket, skal du aktivere \"Læs notifikationer op ved slukket skærm\" i indstillingerne for SandFly-detaljering</string>
     <string name="title_pref_tts_engine">Tekst-til-tale-maskine</string>
     <string name="title_pref_system_tts_settings">Systemindstillinger for tekst-til-tale</string>
     <string name="title_selector_switch_tts_engine">Talemaskine</string>

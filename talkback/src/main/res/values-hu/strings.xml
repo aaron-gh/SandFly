@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Ha be van kapcsolva a TalkBack, hangos visszajelzést ad, így anélkül használhatja eszközét, hogy a képernyőre kellene néznie. A TalkBack olyan helyzetekre készült, amikor nehezen látható a képernyő, illetve olyan személyeknek, akik nem látják jól a képernyőt.&lt;br&gt;&lt;br&gt;&lt;b&gt;A TalkBack használata&lt;/b&gt;&lt;br&gt;• Az elemek között jobbra és balra csúsztatással válthat.&lt;br&gt;• Az elemek dupla koppintással aktiválhatók.&lt;br&gt;• Húzza két ujját a görgetéshez.&lt;br&gt;&lt;b&gt;A Talkback kikapcsolása&lt;/b&gt;&lt;br&gt;1. A Beállítások között koppintson &lt;b&gt;A Talkback használata&lt;/b&gt; kapcsolóra. Ekkor megjelenik egy körvonal. Kattintson rá duplán.&lt;br&gt;2. A megerősítési üzenetben koppintson a &lt;b&gt;Megállítás&lt;/b&gt; gombra. Ekkor megjelenik egy körvonal. Koppintson rá duplán.</string>
   <string name="talkback_service_summary">Képernyőolvasó használata a hangosan felolvasott elemek meghallgatásához</string>
   <string name="talkback_preferences_title">A TalkBack beállításai</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Beállítások</string>
   <string name="tts_preferences_title">Szövegfelolvasás</string>
   <string name="language_options">Nyelvek</string>
   <string name="spoken_language">Beszélt nyelv</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Keresés megszakítva.</string>
   <string name="notification_type_status_started">Elkezdve</string>
   <string name="notification_type_status_stopped">Leállítva</string>
-  <string name="notification_type_status_connected">csatlakoztatva</string>
-  <string name="notification_battery_level_unknown">ismeretlen</string>
   <string name="notification_battery_saver_mode">Akkumulátorkímélő mód bekapcsolva</string>
   <string name="template_no_text_selected">Nincs kijelölt szöveg</string>
   <string name="template_charging">Töltés %1$s Akkumulátor %2$s százalékon.</string>
   <string name="template_charging_lite">Töltés állapota: %1$s</string>
-  <string name="template_battery_state">Áramforrás %1$s. Akkumulátor töltöttsége: %2$s százalék. %3$s.</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Csengő rezeg.</string>
   <string name="value_ringer_silent">Csengő néma.</string>
   <string name="value_screen_on">Képernyő bekapcsolva.</string>
   <string name="value_screen_off">Képernyő kikapcsolva.</string>
   <string name="value_device_unlocked">Eszköz feloldva.</string>
-  <string name="title_pref_category_audio">Hang</string>
   <string name="title_pref_speech_volume">Beszéd hangereje</string>
-  <string name="title_pref_speech_rate">Beszédsebesség</string>
-  <string name="summary_pref_speech_rate">A szöveg kimondásának sebessége</string>
   <string name="title_pref_verbose_scroll_announcement">A listaelemek számának kimondása minden alkalommal</string>
   <string name="summary_pref_verbose_scroll_announcement">Az elemek számának kimondása az összes görgetési módnál</string>
   <string name="title_pref_cover_proximity_sensor">Közelségérzékelő letakarása a beszéd befejezéséhez</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Az idő kimondása</string>
   <string name="pref_speak_time_summary">A képernyő bekapcsolásakor</string>
   <string name="summary_speak_container_element_positions">Adatokat tartalmaz a listákba, rácsokba és egyéb tárolókba való belépéskor és kilépéskor</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">A fókusz késleltetése hozzá lett adva a felolvasásvezérléshez</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">A felolvasásvezérlés használatához csúsztasson három ujjal a képernyőn – a fókuszálási késleltetést bármikor módosíthatja.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Átvált ujj felemelésével való gépelésre?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Ha a gépelési fókusz késleltetése 0,3 másodpercnél rövidebb időre van beállítva, akkor nagyon nehéz lesz a dupla koppintással való gépelés végrehajtása. Válassza a „Váltás” lehetőséget felemelés gépeléshez módra való automatikus váltáshoz.\n\nAz ujj felemelésével való gépelés használatához az ujját a képernyőn tartva válassza ki a kívánt billentyűt, majd emelje fel az ujját a gépeléshez.\n\nEzt a TalkBack beállításaiban szabhatja személyre.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">A gépelési fókusz késleltetése hozzá lett adva a felolvasásvezérléshez</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Ha a dupla koppintással való gépelés használata közben problémákat tapasztal, csúsztasson három ujjal a felolvasásvezérlés használatához, és válasszon hosszabb fókuszálási késleltetést.</string>
-  <string name="gestures_announce_typing_focus_wont_change">A gépelési fókusz késleltetése csak a felemelés gépeléshez móddal működik.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Értem</string>
   <string name="reset_letency_reduction_settings_dialog_title">Visszaállítja a késleltetési beállításokat?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Ezzel visszaállítja az összes késleltetési beállítást az alapértelmezettre.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Visszaállítás</string>
   <string name="gestures_announce_reset_latency_reduction_settings">A késleltetéscsökkentési beállítások visszaállítása megtörtént.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Váltás</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Nincs váltás</string>
   <string name="Reset_gesture_settings_dialog_title">Biztosan visszaállítja a kézmozdulatokat?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Visszállítja a jelenlegi készlet kézmozdulatait?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Ezzel az összes kézmozdulatot az alapértelmezett műveletekre állítja vissza.\n\nAz elvégzett módosítások így elvesznek.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Minden frissítés kimondása</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">A letöltés, az autós útvonaltervek követése és egyebek közbeni értesítésítésekre is vonatkozik. Amikor ki van kapcsolva, kevesebb értesítést kap.</string>
   <string name="title_pref_explore_by_touch">Felfedezés érintéssel</string>
-  <string name="title_pref_category_visual">Vizuális</string>
   <string name="title_pref_category_controls">Vezérlők</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Általános</string>
-  <string name="title_pref_category_advanced">Speciális</string>
-  <string name="title_pref_category_others">Egyéb</string>
-  <string name="title_pref_category_tutorial_and_help">Útmutató és súgó</string>
   <string name="title_pref_category_reduce_latency_summary">Ezek a beállítások csökkenthetik a TalkBack-közlemények előtti késleltetést</string>
   <string name="reset_latency_settings_title">Az összes késleltetési beállítás visszaállítása</string>
   <string name="title_pref_single_tap">Koppintson egyszer az aktiváláshoz</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fókuszjelző módosítása</string>
   <string name="title_pref_category_manage_gestures">Kézmozdulatok</string>
   <string name="title_pref_manage_labels">Egyéni címkék</string>
-  <string name="title_pref_manage_customize_menus">Menük szerkesztése</string>
   <string name="title_pref_category_context_menu">A TalkBack-menü személyre szabása</string>
   <string name="title_pref_category_selector_menu">Olvasási vezérlők személyre szabása</string>
   <string name="title_pref_category_navigation_menu">Navigációs beállítások szerkesztése</string>
-  <string name="pref_category_context_menu_summary">A TalkBack-menü használatához koppintson három ujjal a képernyőre. Ezt a menüt így is megnyithatja: csúsztasson fel, majd jobbra, illetve csúsztasson le, majd jobbra.</string>
-  <string name="pref_category_context_menu_summary_xr">A TalkBack-menü használatához fordítsa maga felé a másodlagos tenyerét, és csippentse össze az ujjait.</string>
-  <string name="pref_category_context_menu_summary_single_finger">A TalkBack-menü használatához csúsztasson gyorsan lefelé, majd jobbra.</string>
-  <string name="pref_category_selector_menu_summary">Az olvasási vezérlők használatához csúsztasson balra vagy jobbra három ujjal. Felfelé vagy lefelé is csúsztathat három ujjal.</string>
-  <string name="pref_category_selector_menu_summary_xr">Az olvasási vezérlők közötti váltáshoz fordítsa maga felé a másodlagos tenyerét, tatsa összecsippentve ujjait, mozdítsa kezét jobbra vagy balra, majd nyissa szét az ujjait.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Az olvasási vezérlők használatához csúsztasson gyorsan felfelé, majd lefelé.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Billentyűparancsok</string>
   <string name="title_pref_export_custom_labels">Egyéni címkék exportálása</string>
-  <string name="title_pref_play_store">TalkBack megnyitása a Play Áruházban</string>
-  <string name="summary_pref_play_store">A TalkBack jelenlegi verziószáma: %1$s</string>
   <string name="title_pref_help_and_feedback">Súgó és visszajelzés</string>
-  <string name="title_pref_gup">A Google fogyatékossággal élők számára létrehozott ügyfélszolgálatának felkeresése</string>
-  <string name="subtitle_pref_gup">Segítséget kérhet a TalkBack használatához, vagy bejelenthet problémákat</string>
-  <string name="pref_item_licenses">Nyílt forráskódú licencek</string>
-  <string name="title_pref_tutorial">Útmutató</string>
   <string name="title_pref_help">Súgó</string>
   <string name="title_pref_show_tos">Általános Szerződési Feltételek</string>
   <string name="title_pref_show_privacy_policy">Adatvédelmi irányelvek</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Kézmozdulatok az ujjlenyomat-érzékelőn</string>
   <string name="title_pref_category_tutorial">TalkBack-útmutató</string>
   <string name="title_pref_category_help_no_tutorial">Súgó</string>
-  <string name="title_pref_category_typing">Gépelés</string>
   <string name="title_pref_advanced_settings">Speciális beállítások</string>
   <string name="title_pref_show_exit_watermark">Utasítások megjelenítése a TalkBack kikapcsolásához</string>
   <string name="summary_pref_show_exit_watermark">A TalkBack bekapcsolásakor megjelenik egy üzenet, amely segít a gyors kikapcsolásában</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;A módosító billentyűk némelyike eltér.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">További információ a billentyűzetkiosztásról</string>
   <string name="keycombo_go_to_settings">Ugrás a Beállításokhoz</string>
-  <string name="keycombo_keymap_changes_notifications_content">A TalkBack készen áll a hagyományos billentyűzetkiosztás eltávolítására. Ha továbbra is szeretné használni a billentyűparancsokat, váltson az alapértelmezett billentyűzetkiosztásra.</string>
-  <string name="keycombo_keymap_changes_notifications_action">További információ</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Rendben</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Beállítások</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">További információ</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Most a TalkBack alapértelmezett billentyűzetkiosztását használja. Van egy új, bővített billentyűzetkiosztás is számos új paranccsal. Váltson át rá a Beállításokban, vagy tekintse meg a Súgót.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Rendelkezésre áll egy új billentyűzetkiosztás</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">A TalkBack új, bővített billentyűzetkiosztása számos új parancsot tartalmaz. Váltson át rá a Beállításokban, vagy tekintse meg a Súgót.</string>
-  <string name="keycombo_update_modifier_key_warning_title">A TalkBack módosító billentyűjének frissítése</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Most nem</string>
   <string name="keycombo_warning_content_description">További információ az Ön módosító billentyűjéről</string>
-  <string name="keycombo_warning_dialog_title">A módosító billentyű frissítése</string>
-  <string name="keycombo_warning_dialog_message">Ahhoz, hogy a TalkBack-billentyűparancsok helyesen működjenek, változtassa meg a módosító billentyűt a műveletbillentyűről az Altra.\n\nHa továbbra is a Művelet módosító billentyűt használja, egyes billentyűparancsok eltérő műveleteket fognak végrehajtani az Android ezen verziójában.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Billentyűzetkiosztás</string>
   <string name="keycombo_menu_select_keymap">Billentyűzetkiosztás választása</string>
   <string name="keycombo_menu_reset_keymap">Billentyűzetkiosztás visszaállítása</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Beszéd hangerejének növelése</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Beszéd hangerejének csökkentése</string>
   <string name="keycombo_menu_global_refocus_current_node">Aktuális fókusz kimondása</string>
-  <string name="keycombo_menu_category_granularity">Navigáció</string>
   <string name="keycombo_menu_granularity_increase">Következő navigációs beállítás</string>
   <string name="keycombo_menu_granularity_decrease">Előző navigációs beállítás</string>
   <string name="keycombo_menu_category_other">Egyéb műveletek</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Biztosan visszaállítja a billentyűzetkiosztás billentyűkódjait az alapértelmezett értékekre? Felhívjuk figyelmét, hogy ezt a műveletet nem lehet visszavonni.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Visszaállítás</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s böngészés módban</string>
-  <string name="keycombo_assign_dialog_instruction">Nyomja meg a kombinációt az új gyorsparancs beállításához. Az ALT vagy a Control billentyűnek mindenképpen szerepelnie kell a kombinációban.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Gyorsparancs törlése a %1$s módosító billentyűvel új gyorsparancs beállításához.</string>
   <string name="keycombo_unassigned">Nincs társítva</string>
   <string name="save_button_in_keycombo_assign_dialog">Mentés</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Gépelési fókusz késleltetése</string>
   <string name="message_pref_touch_explore_latency">A gépelési fókusz rövidebb késleltetése azt jelenti, hogy a TalkBack gyorsabban mondja ki a közleményeket a billentyűzet megérintése után.\n\nVálassza ki a kívánt késleltetést.</string>
   <string name="title_pref_touch_focus_timeout">Fókusz késleltetése</string>
-  <string name="summary_pref_touch_focus_time">
-Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthelyezése után. A rövidebb késleltetés miatt gyorsabbnak tűnhet a TalkBack használata, de nehezebb lehet a dupla és tripla koppintás.\n\n
-0,3 másodpercnél rövidebb késleltetés esetén a dupla koppintással való aktiválás kétujjas koppintással való aktiválásra módosul.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Kézmozdulatok kezelése a TalkBackben</string>
   <string name="toast_pref_talkback_gesture_detection">A beállítás aktiválásához kapcsolja ki, majd újra be a TalkBack funkciót.</string>
   <string name="title_pref_auto_image_captioning">Automatikus leírások</string>
@@ -382,28 +332,16 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="dialog_title_turn_on_image_description">A képleírásokat a Beállításokban kapcsolhatja be</string>
   <string name="dialog_message_turn_on_image_description">Próbálja újra az automatikus vagy részletes képleírások bekapcsolását követően</string>
   <string name="title_pref_detailed_image_description">Részletes képleírások</string>
-  <string name="summary_pref_ai_description">Hosszabb leírások meghallgatása a TalkBack-menü „%1$s” lehetőségének kiválasztásakor</string>
   <string name="dialog_message_on_device_ai_description">Rövid leírást hallhat, amikor a támogatott alkalmazásokban valamelyik képre fókuszál.\n\nA képeket az eszközön dolgozza fel a rendszer, és soha nem küldi el őket a Google-nak. \n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A továbblépéssel elfogadja a <a href="https://policies.google.com/terms/generative-ai">Google Általános Szerződési Feltételeit</a>.</string>
   <string name="enable_gemini">Bekapcsolás</string>
   <string name="powered_by_gemini">A generatív AI támogatásával</string>
-  <string name="detailed_image_description_ongoing_hint">A leírás lekérdezése folyamatban van</string>
-  <string name="detailed_image_description_result_prefix">Észlelve: kép. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Az automatikus képleírások megjelenítéséhez letöltés szükséges</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">A képeket az eszközön dolgozza fel a rendszer, nem küldi el őket a Google-nak.\n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A folytatással elfogadja a következőt: %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">A Google Általános Szerződési Feltételei</string>
   <string name="message_aifeature_downloading">Folyamatban van az AI-modell letöltése. Ez eltarthat egy ideig. Értesítjük, ha befejeződött a folyamat.</string>
   <string name="message_aifeature_downloading_with_progress">Még folyamatban van a letöltés. %2$d/%1$d MB letöltve.</string>
-  <string name="message_aifeature_download_complete">AI-modell letöltve. A TalkBack mostantól képes képleírások generálására.</string>
   <string name="summary_pref_auto_image_captioning">Képeken található ikonoknál, képeknél és szövegeknél</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Képeken lévő szöveghez</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Képekhez és képeken lévő szöveghez</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Ikonokhoz és képeken lévő szöveghez</string>
   <string name="summary_pref_module_downloading">Letöltés…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Bekapcsolva minden képnél</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Bekapcsolva csak a címke nélküli képeknél</string>
   <string name="summary_pref_auto_image_captioning_disabled">Ki</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Bekapcsolva minden ikonnál</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Bekapcsolva csak a címke nélküli ikonoknál</string>
   <string name="summary_pref_auto_icon_detection_disabled">Ki</string>
   <string name="title_pref_enable_auto_image_caption">Minden kép</string>
   <string name="title_pref_enable_auto_image_caption_arg">Minden kép\n%1$s</string>
@@ -413,7 +351,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="title_pref_enable_auto_icon_detection">Minden ikon</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Csak címke nélküli ikonok</string>
   <string name="title_pref_disable_auto_icon_detection">Ne legyen ikonleírás</string>
-  <string name="dialog_message_on_device_ai_model_download">Rövid leírást hallhat, amikor egy képre fókuszál egy támogatott alkalmazásban.\n\nA képeket az eszközön dolgozza fel a rendszer, nem küldi el őket a Google-nak.\n\nA generatív AI kísérleti fázisban van, ezért elkövet hibákat. A folytatással elfogadja a következőt: %1$s.</string>
   <string name="title_pref_enable_gemini_support">Be</string>
   <string name="title_pref_disable_gemini_support">Ki</string>
   <string name="summary_pref_gemini_support_enabled">A Gemini be van kapcsolva</string>
@@ -457,7 +394,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="shortcut_print_node_tree">Csomópont-hierarchia nyomtatása</string>
   <string name="shortcut_print_performance_stats">Teljesítménytatisztikák nyomtatása</string>
   <string name="shortcut_first_in_screen">Fókuszálás a képernyő első elemére</string>
-  <string name="shortcut_summary">Képernyő-elrendezés összegzése</string>
   <string name="shortcut_voice_commands">Hangalapú utasítás indítása</string>
   <string name="shortcut_last_in_screen">Fókuszálás a képernyő utolsó elemére</string>
   <string name="shortcut_enable_dimming">Képernyő elrejtése</string>
@@ -561,7 +497,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="menu_category_web_navigation">Navigálás az interneten</string>
   <string name="menu_category_basic_navigation">A navigáció alapjai</string>
   <string name="summary_custom_action">Megjeleníti a jelenlegi elemnél rendelkezésre álló műveleteket, beleértve a linkeket, a másolást, a beillesztést, a kiválasztást stb.</string>
-  <string name="summary_context_menu_links">Megnyitja a fókuszban lévő elemen belüli linkeket.</string>
   <string name="summary_viewpager_controls">A következő vagy az előző oldalra ugrik. Megjelenik, amikor Ön többoldalas tartalmat olvas.</string>
   <string name="summary_labeling_controls">Megjelenik, amikor címke nélküli elemet választ ki.</string>
   <string name="summary_granularity">Felolvasás többek között karakterenként, szavanként vagy soronként.</string>
@@ -631,12 +566,9 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="summary_screen_overview">A képernyő összefoglalása műveletgombokkal</string>
   <string name="summary_screen_overview_no_actions">A képernyőn megjelenő tartalom összefoglalójának meghallgatása</string>
   <string name="summary_image_caption">A kijelölt képen belüli szöveg és ikonok felolvasása</string>
-  <string name="summary_summarize_view">A látvány hangos összefoglalása</string>
   <string name="summary_typo_suggestions">Akkor jelenik meg, amikor a kurzor elgépelt szón áll</string>
   <string name="summary_cache_keyboard_keys">A TalkBack előre betölti a közleményeket, hogy csökkentse a gépelés közbeni késleltetést</string>
   <string name="summary_cache_keyboard_keys_disabled">A funkció használatához használja a Google Szövegfelolvasót</string>
-  <string name="value_direction_down">le</string>
-  <string name="value_direction_down_and_right">lefelé, majd jobbra</string>
   <string name="title_pref_shortcut_up">Csúsztatás felfelé</string>
   <string name="title_pref_shortcut_up_xr">Maga felé néző másodlagos tenyér, összecsippentés, felfelé csúsztatás</string>
   <string name="title_pref_shortcut_down">Csúsztatás lefelé</string>
@@ -704,10 +636,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="title_pref_shortcut_fingerprint_left">Csúsztatás balra az ujjlenyomat-érzékelőn</string>
   <string name="title_pref_shortcut_fingerprint_right">Csúsz. jobbra az ujjlenyomat-érzékelőn</string>
   <string name="title_pref_version_code">Verziókód</string>
-  <string formatted="false" name="value_volume_100_percent">Beszéd hangerejével egyező</string>
-  <string formatted="false" name="value_volume_75_percent">Beszéd hangerejének 75%-a</string>
-  <string formatted="false" name="value_volume_50_percent">Beszéd hangerejének 50%-a</string>
-  <string formatted="false" name="value_volume_25_percent">Beszéd hangerejének 25%-a</string>
   <string name="value_type_confirmation_double_tap">A kiválasztáshoz tartsa ujját a kívánt billentyűn, majd koppintson duplán</string>
   <string name="value_type_confirmation_lift_to_type">A kiválasztáshoz tartsa ujját a kívánt billentyűn, majd emelje fel. Egyéb billentyűkhöz koppintson duplán.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">A kiválasztáshoz tartsa ujját a kívánt billentyűn, majd emelje fel</string>
@@ -720,12 +648,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="value_touch_explore_time_out_200ms">0,2 másodperc</string>
   <string name="value_touch_explore_time_out_250ms">0,25 másodperc</string>
   <string name="value_touch_explore_time_out_300ms">0,3 másodperc (alapértelmezett)</string>
-  <string name="value_shake_to_read_disabled">Letiltva</string>
-  <string name="value_shake_to_read_threshold_very_light">Nagyon enyhe</string>
-  <string name="value_shake_to_read_threshold_light">Enyhe</string>
-  <string name="value_shake_to_read_threshold_medium">Közepes</string>
-  <string name="value_shake_to_read_threshold_hard">Erős</string>
-  <string name="value_shake_to_read_threshold_very_hard">Nagyon erős</string>
   <string name="title_pref_on_screen_keyboard">Képernyő-billentyűzet</string>
   <string name="title_pref_physical_keyboard">Fizikai billentyűzet</string>
   <string name="value_keyboard_echo_none">Nincs</string>
@@ -738,8 +660,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="pref_time_feedback_format_entries_default">Eszköz időformátumának használata</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 órás</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 órás</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack-kézmozdulat módosítva</string>
-  <string name="notification_message_talkback_gestures_changed">Érintse meg a kisegítő kézmozdulatok módosításainak áttekintéséhez</string>
   <string name="always_show_warning_checkbox">Mindig jelenjen meg ez a figyelmeztetés</string>
   <string name="label_dialog_title_add">Címke hozzáadása</string>
   <string name="label_dialog_title_edit">Címke szerkesztése</string>
@@ -760,16 +680,8 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="no_apps_to_export_labels">Nem található címkék exportálásra használható alkalmazás.</string>
   <string name="label_choose_app_to_import">Válassza ki a címkék importálásra használt alkalmazást:</string>
   <string name="label_choose_app_to_export">Válasszon alkalmazást a címkék exportálásához:</string>
-  <string name="talkback_gesture_change_details">A TalkBack ezen verziója tartalmazza az alapértelmezett kisegítő kézmozdulatok módosításait. A kézmozdulatokhoz társított műveletek a TalkBack beállításai között személyre szabhatók. Amikor a Felfedezés érintéssel funkció engedélyezve van, akkor a következő kézmozdulatokkal végezhet el bizonyos műveleteket.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Elrejti a képernyőt?</string>
   <string name="dialog_message_dim_screen">Ez kikapcsolja a kijelzőt az adatok védelmének növelése érdekében. Bizonyos tartalmak továbbra is megjelenhetnek, például a kijelző újbóli bekapcsolásával kapcsolatos üzenetek, illetve a TalkBackhez hasonló kisegítő lehetőségek menüi.</string>
-  <string name="talkback_built_in_gesture_change_details">A TalkBack ezen verziójában módosultak a kisegítő lehetőségek alapértelmezett kézmozdulatai.\n\nA fel-le kézmozdulat segítségével a képernyő első eleméhez kerülhet, míg a le-fel kézmozdulattal a legutolsó elemhez juthat.\n\nAz olvasási részletességet mostantól úgy is módosíthatja, hogy kijelöl egy adott elemet, majd a TalkBack helyi menüjéből kiválasztja a részletességet.\n\nA TalkBack-beállításokban módosíthatja az ezen kézmozdulatok által végrehajtható műveleteket.</string>
-  <string name="default_action_changed_details">A médiatartalmak szüneteltetése és lejátszása mostantól dupla koppintással és két ujjal történő nyomva tartással lehetséges.\n\nMás kézmozdulatok is változtak.</string>
-  <string name="talkback_built_in_gesture_open_url">Megnyitás a telefonon további információkért</string>
-  <string name="talkback_built_in_gesture_change_details_45">A TalkBack e verziójában módosultak az alapértelmezett kisegítő kézmozdulatok.\n\nA „fel” kézmozdulat mostantól az előző navigációs elemre ugrik, a „le” kézmozdulat pedig a következőre.</string>
-  <string name="side_tap_shortcuts_removed_details">Ezeket a beállításokat megbízhatósági problémák miatt eltávolítottuk a TalkBack szolgáltatásból:\n• Kézmozdulatok az eszköz szélére koppintva\n• Rázás a folyamatos olvasás megkezdéséhez</string>
-  <string name="button_accept_changed_gesture_mappings">Kézmozdulatok elfogadása</string>
-  <string name="button_customize_gesture_mappings">Kézmozdulatok testreszabása</string>
   <string name="button_disable_all_events">Az összes kikapcsolása</string>
   <string name="button_enable_all_events">Az összes bekapcsolása</string>
   <string name="dialog_title_disable_exploration">Letiltja a Felfedezés érintéssel funkciót?</string>
@@ -893,8 +805,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="screen_search_hint_type_search_tables">Táblázatok keresése</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">A TalkBack értesítési csatornája</string>
-  <string name="pref_selector_summary">%1$s a beállítás kiválasztásához. Majd %2$s a beállítás módosításához.</string>
-  <string name="speech_rate_change">Beszédsebesség: %1$d%%</string>
   <string name="speech_pitch_maximum">Legmagasabb beszédhangmagasság</string>
   <string name="speech_pitch_minimum">Legalacsonyabb beszédhangmagasság</string>
   <string name="reset_speech_rate_and_pitch">Beszédsebesség és hangszín visszaállítása</string>
@@ -904,10 +814,7 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="vibration_feedback_state">Visszajelzés rezgéssel %1$s</string>
   <string name="text_formatting_state">Szöveg formázásának felolvasása %1$s</string>
   <string name="typing_echo_change">%1$s kimondása fizikai billentyűzetnél</string>
-  <string name="reading_control_toggle_prefix_xr">Maga felé néző másodlagos tenyér, hosszú megnyomás a felolvasásvezérlési mód be-/kikapcsolásához.</string>
   <string name="gesture_1_or_2">%1$s vagy %2$s</string>
-  <string name="select_setting_hint">%1$s más beállítás kiválasztásához</string>
-  <string name="adjust_setting_hint">%1$s a beállítás módosításához</string>
   <string name="adjust_granularity_hint">%1$s a következő szerinti felolvasáshoz: %2$s</string>
   <string name="adjust_typo_hint">%1$s a javaslatokhoz.</string>
   <string name="use_action_hint">Koppintson duplán a művelet végrehajtásához</string>
@@ -947,7 +854,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="setting_selector_heading">Olvasási vezérlők</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Videó- vagy zenealkalmazásban lejátszott médiatartalom szüneteltetéséhez koppintson duplán két ujjal. Próbálja ki most.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Más alkalmazások is használhatják ezt a kézmozdulatot, például telefonhívás fogadására vagy befejezésére. Nem biztos, hogy minden alkalmazás támogatja.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Az összes TalkBack-útmutató megtekintése</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Médiatartalom szüneteltetve vagy lejátszás alatt. Ez általában szünetelteti vagy lejátssza az adott videót vagy zenét. A folytatáshoz csúsztasson jobbra.</string>
   <string name="new_shortcut_gesture_stop_speech_text">A TalkBack beszédjének ideiglenes leállításához koppintson két ujjal.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">A TalkBack beszédje leállítva. Ez az esetek többségében leállítja a TalkBack által éppen mondott szöveget. A folytatáshoz csúsztasson jobbra.</string>
@@ -961,38 +867,18 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Kijelölési mód be- vagy kikapcsolva. Ez általában elindítja vagy leállítja a szövegkijelölési módot, amikor beviteli mező van fókuszban. A folytatáshoz csúsztasson jobbra.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Az olvasási vezérlők használatához csúsztasson balra vagy jobbra három ujjal. Felfelé vagy lefelé is csúsztathat három ujjal.</string>
   <string name="new_shortcut_gesture_note">Megjegyzés: Ön személyre szabott egyes kézmozdulatokat, ezért előfordulhat, hogy ezek az információk nem pontosak. A saját kézmozdulatok áttekintéséhez nyissa meg a TalkBack beállításait.</string>
-  <string name="welcome_to_android11">Üdvözli a TalkBack Android 11-es verziója</string>
   <string name="welcome_to_android11_text">Az új kézmozdulatok segítségével a TalkBack még gyorsabban és könnyebben használható.\n\nEzen a képernyőn kipróbálhatja őket. Ezeket az információkat bármikor újra megtekintheti a TalkBack beállításaiban.</string>
   <string name="new_gesture_notification_title">Új kézmozdulatok a TalkBackben</string>
   <string name="new_gesture_notification_content">Koppintással további információhoz juthat arról, hogyan használhatja a TalkBacket gyorsabban az új kézmozdulatokkal.</string>
   <string name="dump_node_tree_description">A csomópont-hierarchia naplókba történő nyomtatása megtörtént.</string>
   <string name="report_gesture_description">Itt láthatja a nemrég végzett kézmozdulatokat. Kérjük, jelentse a problémás kézmozdulatokat, és számoljon be arról, mit várt tőlük.</string>
-  <string name="update_welcome_text_content">Mostantól csatlakozhat Braille-kijelzőkhöz HID-eszközön keresztül, amely a Bluetooth-eszközökhöz való csatlakozás egyik módja. Győződjön meg arról, hogy a gyártótól származó legújabb firmware-illesztőprogramot használja, majd kapcsolja be a Bluetootht a Braille-kijelzőn. Lépjen a TalkBack beállításai &gt; Braille-kijelző szakaszhoz, és kapcsolja be a „Braille-kijelző használata” beállítást. Keresse meg az eszközt az eszközök listájában, és csatlakozzon hozzá.</string>
-  <string name="update_welcome_text_content_tts">Mostantól csatlakozhat Braille-kijelzőkhöz HID-eszközön keresztül, amely a Bluetooth-eszközökhöz való csatlakozás egyik módja. Győződjön meg arról, hogy a gyártótól származó legújabb firmware-illesztőprogramot használja, majd kapcsolja be a Bluetootht a Braille-kijelzőn. Lépjen a TalkBack beállításaihoz, majd a Braille-kijelzőhöz, és kapcsolja be a „Braille-kijelző használata” beállítást. Keresse meg az eszközt az eszközök listájában, és csatlakozzon hozzá.</string>
-  <string name="update_welcome_text_content_with_link">További információ a Braille-kijelzőnek a TalkBack szolgáltatással való használatáról.</string>
   <string name="update_welcome_talkback_16.1">Ez a TalkBack-frissítés több nyelven támogatja a Képernyő leírása funkciót, valamint egyéb olyan minőségbeli javításokat tartalmaz, amelyek megkönnyítik a TalkBack használatát.\n\nA következő néhány képernyőn további információkat talál ezekről az újdonságokról.\n\nAz információkat később A TalkBack beállításai &gt; A TalkBack új funkciói pontban tekintheti át.</string>
   <string name="update_welcome_talkback_16.1_tts">Ez a TalkBack-frissítés több nyelven is támogatja a Képernyő leírása funkciót, valamint egyéb olyan minőségbeli javításokat tartalmaz, amelyek megkönnyítik a TalkBack használatát.\n\nA következő néhány képernyőn további információkat talál ezekről az újdonságokról.\n\nAz információkat később A TalkBack beállításai &gt; A TalkBack új funkciói pontban tekintheti át.</string>
-  <string name="describe_screen_and_qna_title">Új nyelvek a Képernyő leírása és a Kérdezés a Geminitől funkciókhoz</string>
-  <string name="describe_screen_and_qna_content">A Képernyő leírása és a Kérdezés a Geminitől funkció mostantól további nyelveken is rendelkezésre áll. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;További információ a Súgóban&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">A hangvezérelt írás gyorsparancsa</string>
   <string name="shortcut_for_dictation_content">A Gboard használata közben két ujjal duplán koppintva indíthatja el vagy állíthatja le a hangvezérelt írást.
 &lt;br&gt;
 &lt;br&gt;Győződjön meg arról, hogy a &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard Google Playről származó&lt;/a&gt; legújabb verziója van telepítve.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Amikor a Gboard megjelenik a képernyőn, két ujjal duplán koppintva elindíthatja a diktálást, majd két ujjal duplán koppintva leállíthatja.</string>
-  <string name="keyboard_title">Billentyűzet</string>
-  <string name="keyboard_content">A TalkBack mostantól továbbfejlesztett billentyűzetkiosztással rendelkezik, amely számos új parancsot és billentyűparancsot tartalmaz. Ez a fejlesztés, amely tartalmazza a hatékonyabb webes navigációt szolgáló böngészés módot, egyszerűsíti a navigációt és az interakciót a fizikai billentyűzetre támaszkodó TalkBack-felhasználók számára. A TalkBack beállításai &gt; Speciális beállítások &gt; Billentyűparancsok pontban válthat a „Továbbfejlesztett billentyűzetkiosztás” beállításra.</string>
-  <string name="keyboard_content_tts">A TalkBack mostantól továbbfejlesztett billentyűzetkiosztással rendelkezik, amely számos új parancsot és billentyűparancsot tartalmaz. Ez a fejlesztés, amely tartalmazza a hatékonyabb webes navigációt szolgáló böngészés módot, egyszerűsíti a navigációt és az interakciót a fizikai billentyűzetre támaszkodó TalkBack-felhasználók számára. A TalkBack beállításai, majd a Speciális beállítások, majd a Billentyűparancsok pont megnyitásával válthat a „Továbbfejlesztett billentyűzetkiosztás” beállításra.</string>
-  <string name="reduce_delay_title">Késleltetés csökkentése</string>
-  <string name="reduce_delay_content">Mostantól csökkentheti a TalkBack által az érintéses felfedezés és a gépelés során megjelenített közlemények késleltetését. Ezeket a beállításokat A TalkBack beállításai &gt; Speciális beállítások &gt; Késleltetés csökkentése pontban tekintheti meg.</string>
-  <string name="reduce_delay_content_tts">Mostantól csökkentheti a TalkBack által az érintéses felfedezés és a gépelés során megjelenített közlemények késleltetését. Ezeket a beállításokat A TalkBack beállításai, majd a Speciális beállítások, majd a Késleltetés csökkentése pont megnyitásával tekintheti meg.</string>
-  <string name="customize_braille_keyboard_improvements_title">A Braille-billentyűzet kézmozdulatainak személyre szabása</string>
-  <string name="customize_braille_keyboard_improvements_content">Mostantól személyre szabhatja a virtuális, képernyőn megjelenő Braille-billentyűzet kézmozdulatait. A személyre szabáshoz lépjen A TalkBack beállításai &gt; Braille-billentyűzet &gt; Kézmozdulatok ponthoz.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Mostantól személyre szabhatja a virtuális, képernyőn megjelenő Braille-billentyűzet kézmozdulatait. A személyre szabáshoz lépjen A TalkBack beállításai, majd a Braille-billentyűzet, végül a Kézmozdulatok ponthoz.</string>
-  <string name="learn_more_about_braille_keyboard">További információ a Braille-billentyűzetről</string>
-  <string name="other_changes_title">Egyéb változások</string>
-  <string name="other_changes_content">A képernyőn megjelenő üzenet segít gyorsan kikapcsolni a véletlenül bekapcsolt TalkBack funkciót. A funkciót A TalkBack beállításai &gt; „Show instructions for turning off TalkBack” (Utasítások megjelenítése a TalkBack kikapcsolásához) pontban kapcsolhatja ki.</string>
-  <string name="other_changes_content_tts">A képernyőn megjelenő üzenet segít gyorsan kikapcsolni a véletlenül bekapcsolt TalkBack funkciót. A funkciót A TalkBack beállításai, majd a „Show instructions for turning off TalkBack” (Utasítások megjelenítése a TalkBack kikapcsolásához) pontban kapcsolhatja ki.</string>
-  <string name="keymap_changes_content">A hagyományos billentyűzetkiosztás az alapértelmezett billentyűzetkiosztásra váltott, amely több billentyűparancsot tartalmaz.</string>
   <string name="announcing_text_formatting_title">Szövegformázás bejelentése</string>
   <string name="announcing_text_formatting_header">A TalkBack mostantól képes bejelenteni a szövegformázás (például a félkövér, a dőlt betűs szöveg és a szövegszín) terén bekövetkező változásokat. Kezdő lépések:</string>
   <string name="announcing_text_formatting_option1">Fókuszáljon a formázott elemre, nyissa meg a TalkBack-menüt, és válassza a „Szövegformázás leírása” lehetőséget; vagy</string>
@@ -1083,7 +969,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="additional_tips_link_subtext">További információ hívások indításáról, üzenetek küldéséről és egyebekről</string>
   <string name="practice_gestures_link_text">Kézmozdulatok gyakorlása</string>
   <string name="practice_gestures_link_subtext">Különböző kézmozdulatok kipróbálása a hozzájuk tartozó műveletek megtanulásához</string>
-  <string name="help_and_feedback_link_subtext">További információ a TalkBackről és visszajelzés küldése</string>
   <string name="choose_tutorial_title">Válassza ki, hogyan szeretné használni a TalkBacket</string>
   <string name="touch_tutorial_button">Érintéses útmutató</string>
   <string name="keyboard_tutorial_button">Billentyűzetes útmutató</string>
@@ -1229,8 +1114,6 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="wear_training_typing_text5">Próbálja ki alább.</string>
   <string name="wear_training_typing_practice_button_content_description">Gépelés billentyűzettel</string>
   <string name="wear_training_end_tutorial_title">Készen áll a TalkBack használatára</string>
-  <string name="talkback_updated_notification_title">A TalkBack frissítve lett</string>
-  <string name="talkback_updated_notification_content">Koppintson további információért</string>
   <string name="wear_new_feature_page_title">Üdvözli a frissített TalkBack!</string>
   <string name="wear_new_feature_page_content">Néhány programhiba-javítást, valamint a fókusz mozgásával kapcsolatos módosításokat tapasztalhat majd</string>
   <string name="wear_new_feature_page_button_content_description">Befejezés</string>
@@ -1249,10 +1132,7 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="title_pref_blue">Kék</string>
   <string name="title_pref_grey">Szürke</string>
   <string name="survey_setting_title">Visszajelzés</string>
-  <string name="survey_closed">Felmérés lezárva</string>
   <string name="title_summarize_view">Képernyő leírása</string>
-  <string name="title_increase_touch_focus_latency">Fókusz késleltetésének növelése</string>
-  <string name="title_decrease_touch_focus_latency">Fókusz késleltetésének csökkentése</string>
   <string name="detected_result">Észlelve: %1$s</string>
   <string name="title_image_caption">Képleírás</string>
   <string name="image_caption_with_gemini_prefix">Írd le nekem ezt a képet. Ne használj jelölést a válaszban.</string>
@@ -1279,32 +1159,15 @@ Beállíthatja, hogy a TalkBack meddig várjon a felolvasással a fókusz áthel
   <string name="image_qna_question_prefix">FELHASZNÁLÓ: %1$s</string>
   <string name="image_qna_answer_prefix">MODELL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Folytassa a FELHASZNÁLÓ és a MODELL közötti váltást] ...</string>
-  <string name="screen_overview_with_screenshot">A feladata az, hogy segítsen egy olyan személynek, aki nem látja a telefonját, hogy megértse, mi látható a telefon képernyőjén. Ismertesse néhány mondatban ezt a képernyőképet.
-
-Útmutatás
-A választ a „The screen shows” (A képernyőn a következő látható:) kifejezéssel kezdje
-A válasz elején a képernyőn látható legfontosabb, legszembetűnőbb tartalmat kell leírni. Íme néhány példa arra, hogy mi lehet a legfontosabb, legszembetűnőbb tartalom:
-* Csevegőalkalmazásban: a legutóbbi üzenet feladója és szövege
-* Közösségimédia-alkalmazásban: az első bejegyzés (és a közzétevő személy), a szöveg és a kép leírása
-* Híralkalmazásban: a cikk címe és az elsődleges kép leírása
-* Vásárlási alkalmazásban: a megjelenített termék leírása és ára
-* Naptáralkalmazásban: a következő esemény és az utána következő események száma
-* Üzenetlistában: az első üzenet neve és előnézete, majd a lista következő néhány elemének csak a neve, valamint az olvasatlan üzenetek száma
-Ezután a válasz leírhatja a navigációs sávok és a kiemelt gombok térbeli elhelyezkedését és célját.
-Ne említse a felső állapotsor tartalmát (pl. idő, hálózatállapot, akkumulátor).
-Ne használjon Markdown-formázást a válaszában.</string>
   <string name="title_gemini_opt_in_dialog">Részletes képleírásokat szeretne kérni?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Képleírásokat szeretne kérni?</string>
   <string name="title_gemini_result_dialog">Észlelve: kép</string>
   <string name="title_gemini_result_bottom_sheet">Kép leírása</string>
   <string name="title_gemini_screen_overview_result_dialog">Képernyő leírása</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Összegzés</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Műveletek</string>
   <string name="positive_button_gemini_opt_in_dialog">Bekapcsolás</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Elfogadom</string>
   <string name="negative_button_gemini_opt_in_dialog">Most nem</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Ugrás a Beállításokhoz</string>
-  <string name="positive_button_gemini_download_dialog">Letöltés és bekapcsolás</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Szöveg, „%1$s”</string>
   <string name="detected_icon_label">Ikon, „%1$s”</string>
@@ -1318,8 +1181,6 @@ Ne használjon Markdown-formázást a válaszában.</string>
   <string name="screen_overview_no_result">Nem sikerült összefoglalni a képernyő tartalmát</string>
   <string name="image_caption_no_result">Nem sikerült leírni a szöveget</string>
   <string name="image_caption_with_hide_screen">A képleírások nem állnak rendelkezésre, ha a képernyő el van rejtve. Mutassa meg a képernyőt, és próbálja újra.</string>
-  <string name="feedback_button_state_set">kiválasztva</string>
-  <string name="feedback_button_state_unset">nincs kiválasztva</string>
   <string name="action_text_like_button">Megjelölés jó válaszként</string>
   <string name="action_text_dislike_button">Megjelölés rossz válaszként</string>
   <string name="action_text_clear_like_button">Jó válasz törlése</string>
@@ -1348,18 +1209,13 @@ Ne használjon Markdown-formázást a válaszában.</string>
   <string name="downloading_all_image_captioning_hint">Automatikus kép- és ikonleírások letöltése…</string>
   <string name="download_all_image_captioning_successful_hint">Automatikus kép- és ikonleírások letöltve</string>
   <string name="download_all_image_captioning_failed_hint">Nem lehet letölteni. Próbálja újra később.</string>
-  <string name="download_complete_notification_title">A letöltés befejeződött</string>
-  <string name="download_complete_notification_content">Mostantól a TalkBack automatikusan felolvassa a képek és ikonok leírását</string>
-  <string name="download_complete_notification_action">Beállítások</string>
   <string name="download_storage_error_hint">A tárhely megtelt. A letöltéshez szabadítson fel %1$d MB tárhelyet a Beállítások &gt; Tárhely menüben.</string>
   <string name="download_network_error_hint">Nem lehet letölteni. Ellenőrizze a kapcsolatot, és próbálkozzon újra.</string>
   <string name="switch_icon_detection_dialog_title">Automatikus ikonleírások</string>
   <string name="switch_icon_detection_dialog_message">Leírásokat hallhat, amikor ikonokra fókuszál.</string>
   <string name="switch_image_description_dialog_message">Leírásokat hallhat, amikor képekre fókuszál. Előfordulhat, hogy egyes alkalmazások nem támogatják ezt a funkciót.</string>
-  <string name="switch_text_recognition_dialog_title">Képeken található szöveg automatikus leírása</string>
   <string name="switch_text_recognition_dialog_message">Leírásokat hallhat, amikor szöveget tartalmazó képre fókuszál.</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Letöltve</string>
-  <string name="disable_auto_image_caption_dialog_subtext">A TalkBack-menüből továbbra is megjelenhetnek leírások a kijelölt képre vonatkozóan.</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Letöltés törlése</string>
   <string name="delete_icon_detection_dialog_title">Törli az automatikus ikonleírásokat?</string>
@@ -1375,11 +1231,6 @@ Ne használjon Markdown-formázást a válaszában.</string>
   <string name="gemini_enable_dialog_title">A Gemini használata a TalkBack funkcióval</string>
   <string name="gemini_disable_dialog_message">A képernyő értelmezése a Gemini szolgáltatással</string>
   <string name="disable_gemini_dialog_subtext">Kapcsolja be a képernyőn lévő tartalmak Gemini szolgáltatással való értelmezéséhez</string>
-  <string name="ai_services_update_dialog_title">A(z) %1$s alkalmazás frissítésével képleírásokat kaphat</string>
-  <string name="ai_services_update_dialog_message">Ha képleírásokat szeretne hallani, töltse le a(z) %1$s legfrissebb verzióját a Google Playről.\n\nA letöltést követően térjen vissza a TalkBack beállításaihoz, és kapcsolja be újra az automatikus képleírásokat.</string>
-  <string name="ai_services_update_dialog_button_text">A Google Play megnyitása</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Hiba történt. Próbálja újra.</string>
   <string name="gemini_block_message">A kép nem dolgozható fel</string>
   <string name="gemini_network_error">Nincs internetkapcsolat. Ellenőrizze a Wi-Fi- vagy mobilhálózatot, majd próbálja újra.</string>
@@ -1395,13 +1246,8 @@ Ne használjon Markdown-formázást a válaszában.</string>
   <string name="image_qna_typing_button_text">Kérdés beírása a Gemininek</string>
   <string name="image_qna_send_button_text">Kérdezés</string>
   <string name="image_qna_speak_question_description">Kérdés feltevése hanggal</string>
-  <string name="overviews_summary_intro">Ennek az alkalmazás-képernyőnek az összefoglalása: %1$s</string>
   <string name="overviews_node_not_found">Sajnálom, a képernyőnek ezt a részét már nem találom.</string>
-  <string name="overviews_images_in_app">Főbb képek találhatók</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Alkalmazáson belüli műveletek</string>
-  <string name="overviews_actions_in_app_description">Az alábbi főbb műveleteket végezheti el ezen az alkalmazásképernyőn:</string>
-  <string name="overviews_parent_type">Alkalmazáson belüli műveletek</string>
   <string name="text_replaced_feedback">Szöveg lecserélve</string>
   <string name="switch_gesture_set">Kézmozdulatkészlet váltása</string>
   <string name="switch_gesture_set_to">Váltás a következő kézmozdulatkészletre: %1$d</string>
@@ -1452,5 +1298,4 @@ Ne használjon Markdown-formázást a válaszában.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Bezárás</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Ha szeretné meghallgatni az értesítéseket, amikor a képernyő ki van kapcsolva, kapcsolja be az „Értesítések felolvasása kikapcsolt képernyőnél” beállítást a TalkBack részletességi beállításaiban</string>
 </resources>

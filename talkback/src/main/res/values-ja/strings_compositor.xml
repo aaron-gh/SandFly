@@ -63,15 +63,12 @@
   <string name="value_not_selected">未選択</string>
   <string name="value_checked">ON</string>
   <string name="value_not_checked">未選択</string>
-  <string name="value_partially_checked">一部オン</string>
   <string name="value_on">ON</string>
   <string name="value_off">OFF</string>
   <string name="value_disabled">無効</string>
   <string name="value_enabled">有効</string>
   <string name="value_read_only">読み取り専用</string>
   <string name="value_expanded">展開されています</string>
-  <string name="value_fully_expanded">すべて開いています</string>
-  <string name="value_partially_expanded">一部開いています</string>
   <string name="value_collapsed">折りたたまれています</string>
   <string name="value_double_tap">ダブルタップ</string>
   <string name="value_single_tap">タップ</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">変更するには%1$sを押します</string>
   <string name="template_hint_single_selection_item">選択するには%1$sします</string>
   <string name="template_hint_single_selection_item_keyboard">選択するには%1$sを押します</string>
-  <string name="template_hint_pager">ページを切り替えるには2本の指でスワイプします</string>
   <string name="template_hint_pager_single_page">これ以上ページはありません</string>
   <string name="template_hint_seek_control_tv">変更するには%1$sします</string>
   <string name="template_custom_hint_for_actions">%2$sには%1$sします</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">音声の速度は %1$d%% です</string>
   <string name="template_accessibility_volume_change_increase">ユーザー補助機能の音量を %1$d パーセントに上げます。</string>
   <string name="template_accessibility_volume_change_decrease">ユーザー補助機能の音量を %1$d パーセントに下げます。</string>
-  <string name="template_touch_explore_latency_changed">入力フォーカス遅延: %1$d ミリ秒。</string>
   <string name="template_touch_latency_reach_maximum">最大</string>
   <string name="template_touch_latency_reach_minimum">最小</string>
   <string name="template_volume_change_maximum">最大</string>

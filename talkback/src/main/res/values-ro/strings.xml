@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Când funcția TalkBack este activată, oferă feedback rostit, ca să poți folosi dispozitivul fără să te uiți la ecran. Funcția TalkBack este destinată situațiilor sau utilizatorilor cu dificultăți în a vedea ecranul.&lt;br&gt;&lt;br&gt;&lt;b&gt;Cum se folosește TalkBack&lt;/b&gt;&lt;br&gt;• Glisează spre dreapta sau spre stânga pentru a trece de la un element la altul&lt;br&gt;• Atinge de două ori pentru a activa un element&lt;br&gt;• Trage cu două degete pentru a derula&lt;br&gt;&lt;br&gt;&lt;b&gt;Cum se dezactivează TalkBack&lt;/b&gt;&lt;br&gt;1. În Setări, atinge &lt;b&gt;Folosește TalkBack&lt;/b&gt;. Va apărea un contur. Atinge-l de două ori.&lt;br&gt;2. În mesajul de confirmare, atinge &lt;b&gt;Oprește&lt;/b&gt;. Va apărea un contur. Atinge-l de două ori.</string>
   <string name="talkback_service_summary">Folosește un cititor de ecran pentru a auzi elementele rostite cu voce tare</string>
   <string name="talkback_preferences_title">Setări TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Setări</string>
   <string name="tts_preferences_title">Redarea vocală a textului</string>
   <string name="language_options">Limbi</string>
   <string name="spoken_language">Limba vorbită</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Căutare anulată.</string>
   <string name="notification_type_status_started">A început</string>
   <string name="notification_type_status_stopped">S-a oprit</string>
-  <string name="notification_type_status_connected">conectată</string>
-  <string name="notification_battery_level_unknown">necunoscut</string>
   <string name="notification_battery_saver_mode">Economisirea bateriei activată</string>
   <string name="template_no_text_selected">Nu a fost selectat niciun text</string>
   <string name="template_charging">Încărcare: %1$s. Nivelul bateriei: %2$s la sută.</string>
   <string name="template_charging_lite">Încărcare %1$s</string>
-  <string name="template_battery_state">%1$s conectată – %2$s la sută %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Vibrare sonerie.</string>
   <string name="value_ringer_silent">Sonerie silențioasă.</string>
   <string name="value_screen_on">Ecran activat</string>
   <string name="value_screen_off">Ecran dezactivat.</string>
   <string name="value_device_unlocked">Dispozitiv deblocat.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Volumul vorbirii</string>
-  <string name="title_pref_speech_rate">Viteza vorbirii</string>
-  <string name="summary_pref_speech_rate">Viteza cu care este vorbit textul</string>
   <string name="title_pref_verbose_scroll_announcement">Se rostește întotdeauna numărul de elemente din listă</string>
   <string name="summary_pref_verbose_scroll_announcement">Se rostește numărul tuturor metodelor de derulare</string>
   <string name="title_pref_cover_proximity_sensor">Acoperă senzorul de proximitate pentru a opri mesajul vocal</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Rostirea orei</string>
   <string name="pref_speak_time_summary">Când activezi ecranul</string>
   <string name="summary_speak_container_element_positions">Include informații la intrarea și ieșirea din liste, grile și alte containere</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">S-a adăugat un decalaj al focalizării la comanda pentru citire</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Glisează cu trei degete ca să folosești comanda pentru citire și să schimbi oricând decalajul de focalizare</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Treci la opțiunea Ridică pentru a introduce text?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Când setarea pentru decalajul focalizării pentru introducerea textului este sub 0,3 secunde, va fi foarte dificil să atingi de două ori pentru a introduce text. Alege Comută pentru a trece automat la opțiunea Ridică pentru a introduce text.\n\nCa să folosești Ridică pentru a introduce text, atinge lung cu degetul pentru a selecta orice tastă, apoi ridică-l pentru a introduce text.\n\nPoți personaliza această opțiune în setările TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">S-a adăugat un decalaj al focalizării pentru introducerea textului la comanda pentru citire</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Dacă întâmpini probleme legate de atingerea dublă în timpul tastării, glisează cu trei degete ca să folosești comanda pentru citire și treci la un decalaj mai mare al focalizării pentru introducerea textului</string>
-  <string name="gestures_announce_typing_focus_wont_change">Decalajul focalizării pentru introducerea textului nu funcționează fără opțiunea Ridică pentru a introduce text.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">OK</string>
   <string name="reset_letency_reduction_settings_dialog_title">Restabilești setările pentru decalaj?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Astfel, toate setările pentru decalaj vor fi resetate la valorile prestabilite</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetează</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Setările de reducere a latenței au fost resetate.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Comută</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Nu comuta</string>
   <string name="Reset_gesture_settings_dialog_title">Resetezi gesturile?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Resetezi gesturile setului actual?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Astfel, vor fi restabilite toate gesturile la acțiunile lor prestabilite.\n\nVei pierde toate modificările aduse.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Rostește actualizările despre progres</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Aici sunt incluse actualizările la descărcare, urmărirea indicațiilor rutiere și multe altele. Când opțiunea este dezactivată, vei primi actualizări mai puțin frecvente.</string>
   <string name="title_pref_explore_by_touch">Explorează prin atingere</string>
-  <string name="title_pref_category_visual">Vizuale</string>
   <string name="title_pref_category_controls">Comenzi</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">General</string>
-  <string name="title_pref_category_advanced">Avansat</string>
-  <string name="title_pref_category_others">Altele</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial și ajutor</string>
   <string name="title_pref_category_reduce_latency_summary">Aceste setări pot reduce decalajul dinaintea anunțurilor TalkBack</string>
   <string name="reset_latency_settings_title">Restabilește toate setările pentru decalaj</string>
   <string name="title_pref_single_tap">Atinge o singură dată pentru a activa</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Schimbă indicatorul de focalizare</string>
   <string name="title_pref_category_manage_gestures">Gesturi</string>
   <string name="title_pref_manage_labels">Etichete personalizate</string>
-  <string name="title_pref_manage_customize_menus">Editează meniurile</string>
   <string name="title_pref_category_context_menu">Personalizează meniul TalkBack</string>
   <string name="title_pref_category_selector_menu">Personalizează comenzile de citire</string>
   <string name="title_pref_category_navigation_menu">Editează opțiunile de navigare</string>
-  <string name="pref_category_context_menu_summary">Ca să deschizi meniul TalkBack, atinge ecranul cu trei degete. Poți și să glisezi în sus, apoi la dreapta sau în jos, apoi la dreapta.</string>
-  <string name="pref_category_context_menu_summary_xr">Ca să folosești meniul TalkBack, întoarce palma mâinii non-dominante spre tine și ciupește.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Ca să deschizi meniul TalkBack, glisează în jos, apoi la dreapta.</string>
-  <string name="pref_category_selector_menu_summary">Ca să folosești comenzile de citire, glisează spre stânga sau spre dreapta cu trei degete. Poți și să glisezi în sus sau în jos cu trei degete.</string>
-  <string name="pref_category_selector_menu_summary_xr">Ca să comuți între comenzile pentru citire, întoarce palma mâinii non-dominante spre tine, menține gestul de ciupire, mișcă palma spre dreapta sau spre stânga și eliberează.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Ca să folosești comenzile de citire, glisează în sus, apoi în jos.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Comenzi rapide de la tastatură</string>
   <string name="title_pref_export_custom_labels">Exportă etichete personalizate</string>
-  <string name="title_pref_play_store">Deschide TalkBack în Magazinul Play</string>
-  <string name="summary_pref_play_store">Versiunea actuală TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Ajutor și feedback</string>
-  <string name="title_pref_gup">Contactează asistența Google pentru persoanele cu dizabilități</string>
-  <string name="subtitle_pref_gup">Primește ajutor la folosirea TalkBack sau raportează probleme</string>
-  <string name="pref_item_licenses">Licențe open source</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Ajutor</string>
   <string name="title_pref_show_tos">Termeni și condiții</string>
   <string name="title_pref_show_privacy_policy">Politica de confidențialitate</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Redea gesturi ce implică amprenta</string>
   <string name="title_pref_category_tutorial">Tutorial TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Ajutor</string>
-  <string name="title_pref_category_typing">Tastare</string>
   <string name="title_pref_advanced_settings">Setări avansate</string>
   <string name="title_pref_show_exit_watermark">Afișează instrucțiunile pentru dezactivarea TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Se afișează un mesaj atunci când TalkBack este activat, pentru a te ajuta să-l dezactivezi rapid</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Unele taste de modificare sunt diferite.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Află mai multe despre configurările de taste</string>
   <string name="keycombo_go_to_settings">Accesează Setările</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack se pregătește să elimine configurarea de taste clasică. Ca să folosești mai departe comenzi rapide de la tastatură, treci la configurarea de taste prestabilită.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Află mai multe</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Setări</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Află mai multe</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Acum folosești configurarea tastelor prestabilită pentru TalkBack. Este disponibilă și o nouă configurare îmbunătățită a tastelor, care are multe comenzi noi. Află mai multe în centrul de ajutor sau comută la noua configurare a tastelor în Setări.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Configurare nouă a tastelor disponibilă</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Noua configurare a tastelor îmbunătățită pentru TalkBack are multe comenzi noi. Află mai multe în centrul de ajutor sau comută la noua configurare a tastelor în Setări.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Schimbă tasta de modificare pentru TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Nu acum</string>
   <string name="keycombo_warning_content_description">Mai multe informații despre tasta de modificare</string>
-  <string name="keycombo_warning_dialog_title">Actualizează tasta de modificare</string>
-  <string name="keycombo_warning_dialog_message">Pentru a asigura funcționarea corectă a comenzilor rapide de la tastatură pentru TalkBack, actualizează tasta de modificare de la acțiuni la Alt.\n\nDacă folosești în continuare tasta de modificare pentru acțiuni, unele comenzi rapide vor face acțiuni diferite în această versiune Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Aranjarea tastelor</string>
   <string name="keycombo_menu_select_keymap">Alege o aranjare a tastelor</string>
   <string name="keycombo_menu_reset_keymap">Resetează aranjarea tastelor</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Crește volumul vocii</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Scade volumul vocii</string>
   <string name="keycombo_menu_global_refocus_current_node">Rostește zona de focalizare actuală</string>
-  <string name="keycombo_menu_category_granularity">Navigare</string>
   <string name="keycombo_menu_granularity_increase">Setarea de navigare următoare</string>
   <string name="keycombo_menu_granularity_decrease">Setarea de navigare anterioară</string>
   <string name="keycombo_menu_category_other">Alte acțiuni</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Sigur dorești să resetezi tastele de comenzi rapide pentru această aranjare a tastelor la valorile prestabilite? Reține că acțiunea este ireversibilă.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetează</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s în modul de navigare</string>
-  <string name="keycombo_assign_dialog_instruction">Apasă combinația de taste pentru a seta o nouă comandă rapidă. Trebuie să conțină cel puțin tasta ALT sau CTRL.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Ca să setezi o comandă rapidă nouă, apasă combinația de taste folosind tasta de modificare %1$s.</string>
   <string name="keycombo_unassigned">Neatribuit</string>
   <string name="save_button_in_keycombo_assign_dialog">Salvează</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Decalajul focalizării pentru introducerea textului</string>
   <string name="message_pref_touch_explore_latency">Un decalaj mai scurt al focalizării pentru introducerea textului înseamnă că anunțurile TalkBack se fac mai repede după ce atingi tastatura.\n\nSelectează un decalaj</string>
   <string name="title_pref_touch_focus_timeout">Decalajul focalizării</string>
-  <string name="summary_pref_touch_focus_time">
-Controlează cât de repede rostește TalkBack după mutarea focalizării. În cazul decalajelor mai scurte, TalkBack pare mai rapid, dar poate fi mai dificil să atingi de două sau de trei ori.\n\n
-Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atingere cu două degete pentru activare.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Gestionează gesturile în TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Dezactivează, apoi reactivează TalkBack pentru a activa setarea.</string>
   <string name="title_pref_auto_image_captioning">Descrieri automate</string>
@@ -382,28 +332,16 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="dialog_title_turn_on_image_description">Activează descrierile imaginilor din Setări</string>
   <string name="dialog_message_turn_on_image_description">Poți să încerci din nou după ce activezi descrierile automate sau detaliate ale imaginilor</string>
   <string name="title_pref_detailed_image_description">Descrieri detaliate ale imaginilor</string>
-  <string name="summary_pref_ai_description">Auzi descrieri mai lungi când selectezi %1$s din meniul TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Vei auzi o scurtă descriere când focalizezi pe o imagine în aplicațiile acceptate.\n\nImaginile se procesează pe dispozitiv și nu se trimit niciodată la Google. \n\nAI-ul generativ este experimental, așa că va face greșeli. Dacă alegi să continui, accepți <a href="https://policies.google.com/terms/generative-ai">Termenii și condițiile</a> Google</string>
   <string name="enable_gemini">Activează</string>
   <string name="powered_by_gemini">Cu AI generativ</string>
-  <string name="detailed_image_description_ongoing_hint">Se preia descrierea</string>
-  <string name="detailed_image_description_result_prefix">S-a detectat: o imagine. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Pentru descrieri automate ale imaginilor, este necesară descărcarea</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Imaginile sunt procesate pe dispozitiv și nu se trimit niciodată la Google.\n\nAI-ul generativ este experimental, așa că va face greșeli. Dacă alegi să continui, ești de acord cu %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Termenii și condițiile Google</string>
   <string name="message_aifeature_downloading">Se descarcă modelul AI. Poate dura un timp. Vei primi o notificare după finalizare.</string>
   <string name="message_aifeature_downloading_with_progress">Încă se descarcă. Descărcat: %1$d din %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Modelul AI a fost descărcat. TalkBack poate acum să genereze descrieri ale imaginilor.</string>
   <string name="summary_pref_auto_image_captioning">Pentru pictogramele, imaginile și textul din imagini</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Pentru textul din imagini</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Pentru imaginile și textul din imagini</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Pentru pictogramele și textul din imagini</string>
   <string name="summary_pref_module_downloading">Se descarcă…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Activată pentru toate imaginile</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Activată doar pentru imaginile fără etichete</string>
   <string name="summary_pref_auto_image_captioning_disabled">Dezactivată</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Activată pentru toate pictogramele</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Activată doar pentru pictogramele fără etichete</string>
   <string name="summary_pref_auto_icon_detection_disabled">Dezactivată</string>
   <string name="title_pref_enable_auto_image_caption">Toate imaginile</string>
   <string name="title_pref_enable_auto_image_caption_arg">Toate imaginile\n%1$s</string>
@@ -413,7 +351,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="title_pref_enable_auto_icon_detection">Toate pictogramele</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Doar pictogramele fără etichete</string>
   <string name="title_pref_disable_auto_icon_detection">Nu descrie pictogramele</string>
-  <string name="dialog_message_on_device_ai_model_download">Vei auzi o scurtă descriere când focalizezi pe o imagine în aplicațiile acceptate.\n\nImaginile se procesează pe dispozitivul tău și nu se trimit niciodată la Google.\n\nAI generativ este experimental, așa că va face greșeli. Dacă alegi să continui, ești de acord cu %1$s.</string>
   <string name="title_pref_enable_gemini_support">Activată</string>
   <string name="title_pref_disable_gemini_support">Dezactivată</string>
   <string name="summary_pref_gemini_support_enabled">Gemini este activat</string>
@@ -457,7 +394,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="shortcut_print_node_tree">Printează arborele</string>
   <string name="shortcut_print_performance_stats">Printează statisticile de performanță</string>
   <string name="shortcut_first_in_screen">Focalizează pe primul element de pe ecran</string>
-  <string name="shortcut_summary">Aspectul ecranului de rezumare</string>
   <string name="shortcut_voice_commands">Accesează comanda vocală</string>
   <string name="shortcut_last_in_screen">Focalizează pe ultimul element de pe ecran</string>
   <string name="shortcut_enable_dimming">Ascunde ecranul</string>
@@ -561,7 +497,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="menu_category_web_navigation">Navigare pe web</string>
   <string name="menu_category_basic_navigation">Navigare de bază</string>
   <string name="summary_custom_action">Arată când există acțiuni pentru elementul actual, inclusiv linkuri, copierea, inserarea, selectarea și altele</string>
-  <string name="summary_context_menu_links">Deschide linkurile dintr-un element focalizat</string>
   <string name="summary_viewpager_controls">Accesează pagina următoare sau anterioară. Arată când citești conținut cu mai multe pagini.</string>
   <string name="summary_labeling_controls">Arată când selectezi un element neetichetat</string>
   <string name="summary_granularity">Citește pe caractere, cuvinte, rânduri și altele</string>
@@ -631,12 +566,9 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="summary_screen_overview">Rezumă ecranul cu butoane pentru acțiuni</string>
   <string name="summary_screen_overview_no_actions">Ascultă un rezumat al conținutului de pe ecran</string>
   <string name="summary_image_caption">Oferă feedback rostit pentru text și pictograme dintr-o imagine selectată</string>
-  <string name="summary_summarize_view">Rostește rezumatul afișării</string>
   <string name="summary_typo_suggestions">Apare când cursorul este plasat deasupra unei greșeli de ortografie</string>
   <string name="summary_cache_keyboard_keys">TalkBack preîncarcă anunțurile pentru a reduce decalajul când tastezi</string>
   <string name="summary_cache_keyboard_keys_disabled">Folosește Redarea vocală a textului Google pentru a folosi această funcție</string>
-  <string name="value_direction_down">în jos</string>
-  <string name="value_direction_down_and_right">jos-apoi-dreapta</string>
   <string name="title_pref_shortcut_up">Glisează în sus</string>
   <string name="title_pref_shortcut_up_xr">Palma mâinii non-dominante spre tine, ciupește și glisează în sus</string>
   <string name="title_pref_shortcut_down">Glisează în jos</string>
@@ -704,10 +636,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="title_pref_shortcut_fingerprint_left">Glisează stânga pe senzorul de amprente</string>
   <string name="title_pref_shortcut_fingerprint_right">Glisează la dreapta pe senzorul de amprente</string>
   <string name="title_pref_version_code">Codul versiunii</string>
-  <string formatted="false" name="value_volume_100_percent">Potrivește cu volumul vorbirii</string>
-  <string formatted="false" name="value_volume_75_percent">75 % din volumul vorbirii</string>
-  <string formatted="false" name="value_volume_50_percent">50 % din volumul vorbirii</string>
-  <string formatted="false" name="value_volume_25_percent">25 % din volumul vorbirii</string>
   <string name="value_type_confirmation_double_tap">Ține apăsat pentru a selecta orice tastă, apoi atinge de două ori</string>
   <string name="value_type_confirmation_lift_to_type">Ține apăsat pentru a selecta o tastă cu literă, apoi ridică degetul. Atinge de două ori pentru alte taste.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Ține apăsat pentru a selecta orice tastă, apoi ridică degetul</string>
@@ -720,12 +648,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="value_touch_explore_time_out_200ms">0,2 secunde</string>
   <string name="value_touch_explore_time_out_250ms">0,25 secunde</string>
   <string name="value_touch_explore_time_out_300ms">0,3 secunde (prestabilit)</string>
-  <string name="value_shake_to_read_disabled">Dezactivat</string>
-  <string name="value_shake_to_read_threshold_very_light">Foarte ușor</string>
-  <string name="value_shake_to_read_threshold_light">Ușor</string>
-  <string name="value_shake_to_read_threshold_medium">Mediu</string>
-  <string name="value_shake_to_read_threshold_hard">Puternic</string>
-  <string name="value_shake_to_read_threshold_very_hard">Foarte puternic</string>
   <string name="title_pref_on_screen_keyboard">Tastatură pe ecran</string>
   <string name="title_pref_physical_keyboard">Tastatură fizică</string>
   <string name="value_keyboard_echo_none">Fără</string>
@@ -738,8 +660,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="pref_time_feedback_format_entries_default">Folosește formatul de timp al dispozitivului</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 ore</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 de ore</string>
-  <string name="notification_title_talkback_gestures_changed">Gesturi TalkBack modificate</string>
-  <string name="notification_message_talkback_gestures_changed">Atinge pentru a examina modificările gesturilor de accesibilitate</string>
   <string name="always_show_warning_checkbox">Afișează întotdeauna acest avertisment</string>
   <string name="label_dialog_title_add">Adaugă o etichetă</string>
   <string name="label_dialog_title_edit">Editează eticheta</string>
@@ -760,16 +680,8 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="no_apps_to_export_labels">Nu a fost găsită nicio aplicație pentru a exporta etichete.</string>
   <string name="label_choose_app_to_import">Alege aplicația pentru a importa etichete:</string>
   <string name="label_choose_app_to_export">Alege aplicația pentru exportul etichetelor:</string>
-  <string name="talkback_gesture_change_details">Această versiune de TalkBack include modificări ale gesturilor de accesibilitate prestabilite. Acțiunile asociate acestor gesturi pot fi personalizate din setările TalkBack. Când funcția Explorează prin atingere este activată, poți să folosești următoarele gesturi pentru a face anumite acțiuni.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Ascunzi ecranul?</string>
   <string name="dialog_message_dim_screen">Astfel, ecranul se stinge pentru a-ți îmbunătăți confidențialitatea. Unele tipuri de conținut se pot afișa în continuare, de exemplu, mesajele pentru reactivarea ecranului sau meniurile pentru funcții de accesibilitate, cum ar fi TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Această versiune a serviciului TalkBack include modificări ale gesturilor de accesibilitate prestabilite.\n\nCu gestul sus-apoi-jos ajungi la primul element afișat pe ecran, iar cu gestul jos-apoi-sus ajungi la ultimul element.\n\nPentru a schimba nivelul de detaliere a lecturii, acum poți să selectezi un element, apoi să alegi un nivel de detaliere din meniul contextual TalkBack.\n\nPoți modifica acțiunile realizate de aceste gesturi din Setările TalkBack.</string>
-  <string name="default_action_changed_details">Pentru a întrerupe și a reda conținut media, acum poți să atingi de două ori și să ții apăsat cu două degete.\n\nAu fost modificate și alte gesturi.</string>
-  <string name="talkback_built_in_gesture_open_url">Deschide pe telefon pentru a afla mai multe</string>
-  <string name="talkback_built_in_gesture_change_details_45">Această versiune TalkBack include modificări ale gesturilor de accesibilitate prestabilite.\n\nPrin gestul de glisare în sus se accesează acum setarea anterioară de navigare, iar prin gestul de glisare în jos se accesează acum setarea următoare de navigare.</string>
-  <string name="side_tap_shortcuts_removed_details">Setările sunt eliminate din TalkBack, din cauza problemelor de fiabilitate:\n• Gesturi cu atingerea dispozitivului pe lateral\n• Scutură pentru a începe citirea continuă</string>
-  <string name="button_accept_changed_gesture_mappings">Acceptă gesturile</string>
-  <string name="button_customize_gesture_mappings">Personalizează gesturile</string>
   <string name="button_disable_all_events">Dezactivează-le pe toate</string>
   <string name="button_enable_all_events">Activează-le pe toate</string>
   <string name="dialog_title_disable_exploration">Dezactivezi funcția Explorează prin atingere?</string>
@@ -893,8 +805,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="screen_search_hint_type_search_tables">Caută tabele</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Canalul de notificări al funcției TalkBack</string>
-  <string name="pref_selector_summary">%1$s pentru a selecta o setare. Apoi %2$s pentru a o ajusta.</string>
-  <string name="speech_rate_change">Ritmul vorbirii %1$d%%</string>
   <string name="speech_pitch_maximum">Tonalitatea cea mai înaltă a vorbirii</string>
   <string name="speech_pitch_minimum">Tonalitatea cea mai joasă a vorbirii</string>
   <string name="reset_speech_rate_and_pitch">Resetează viteza și tonalitatea vorbirii</string>
@@ -904,10 +814,7 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="vibration_feedback_state">Feedback prin vibrații %1$s</string>
   <string name="text_formatting_state">Rostește formatarea textului %1$s</string>
   <string name="typing_echo_change">Rostirea tastelor fizice pentru %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Palma mâinii non-dominante spre tine, apasă lung pentru a comuta modul comenzilor pentru citire.</string>
   <string name="gesture_1_or_2">%1$s sau %2$s</string>
-  <string name="select_setting_hint">%1$s pentru a selecta altă setare</string>
-  <string name="adjust_setting_hint">%1$s pentru a ajusta setarea</string>
   <string name="adjust_granularity_hint">%1$s pentru a citi cu %2$s</string>
   <string name="adjust_typo_hint">%1$s pentru sugestii.</string>
   <string name="use_action_hint">Atinge de două ori pentru a realiza acțiunea</string>
@@ -947,7 +854,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="setting_selector_heading">Comenzi de citire</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ca să întrerupi sau să redai elemente media într-o aplicație video sau de muzică, atinge de două ori cu două degete. Încearcă acum.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Alte aplicații pot folosi acest gest pentru acțiuni precum răspunsul la un apel telefonic sau încheierea acestuia. Gestul poate să nu fie acceptat de toate aplicațiile.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Vezi toate tutorialele TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Conținut media întrerupt sau în redare. De obicei, această acțiune va întrerupe sau va reda videoclipul sau melodia actuală. Glisează spre dreapta ca să continui.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Pentru ca TalkBack să nu mai vorbească temporar, atinge cu două degete.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Vorbirea TalkBack s-a întrerupt. De obicei, această acțiune va întrerupe fraza pe care o rostește TalkBack. Glisează spre dreapta ca să continui.</string>
@@ -961,38 +867,18 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Modul de selectare este activat sau dezactivat. De obicei, această acțiune va porni sau va opri modul de selectare a textului dacă ești într-un câmp de introducere a textului. Glisează spre dreapta ca să continui.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Ca să folosești comenzile de citire, glisează spre stânga sau spre dreapta cu trei degete. Poți și să glisezi în sus sau în jos cu trei degete.</string>
   <string name="new_shortcut_gesture_note">Notă: ai personalizat unele gesturi, așa că este posibil ca aceste informații să nu fie exacte. Ca să examinezi gesturile, accesează setările TalkBack.</string>
-  <string name="welcome_to_android11">Bun venit la TalkBack pe Android 11</string>
   <string name="welcome_to_android11_text">S-au adăugat gesturi noi pentru a face TalkBack mai rapid și mai ușor de folosit.\n\nPe acest ecran poți testa gesturile noi. Poți consulta informațiile oricând în setările TalkBack.</string>
   <string name="new_gesture_notification_title">Gesturi noi în TalkBack</string>
   <string name="new_gesture_notification_content">Atinge ca să afli cum să folosești TalkBack mai repede cu noile gesturi.</string>
   <string name="dump_node_tree_description">Arborele a fost înregistrat în jurnale.</string>
   <string name="report_gesture_description">Acestea sunt gesturile făcute recent. Raportează gesturile incorecte și ce se așteaptă.</string>
-  <string name="update_welcome_text_content">Acum te poți conecta la afișaje Braille folosind HID, o modalitate de conectare la dispozitive Bluetooth. Asigură-te că ai cele mai recente drivere și firmware de la producător, apoi activează Bluetooth pe afișajul Braille. Accesează Setări TalkBack &gt; Afișaj Braille și activează opțiunea Folosește afișajul Braille. Găsește-ți dispozitivul în lista de dispozitive și conectează-te la el.</string>
-  <string name="update_welcome_text_content_tts">Acum te poți conecta la afișaje Braille folosind HID, o modalitate de conectare la dispozitive Bluetooth. Asigură-te că ai cele mai recente drivere și firmware de la producător, apoi activează Bluetooth pe afișajul Braille. Accesează Setări TalkBack, apoi Afișaj Braille și activează opțiunea Folosește afișajul Braille. Găsește-ți dispozitivul în lista de dispozitive și conectează-te la el.</string>
-  <string name="update_welcome_text_content_with_link">Află cum să folosești afișajul Braille cu TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Această actualizare pentru TalkBack introduce compatibilitatea cu funcția Descrie ecranul în mai multe limbi și alte îmbunătățiri ale calității care facilitează folosirea funcției TalkBack.\n\nVei afla mai multe despre aceste modificări în următoarele ecrane.\n\nPoți să consulți mai târziu aceste informații în Setări TalkBack &gt; Funcții noi în TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Această actualizare pentru TalkBack introduce compatibilitatea cu funcția Descrie ecranul în mai multe limbi și alte îmbunătățiri ale calității care facilitează folosirea funcției TalkBack.\n\nVei afla mai multe despre aceste modificări în următoarele ecrane.\n\nPoți să consulți mai târziu aceste informații în Setări TalkBack, apoi Funcții noi în TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Limbi noi pentru funcțiile Descrie ecranul și Întreabă Gemini</string>
-  <string name="describe_screen_and_qna_content">Funcțiile Descrie ecranul și Întreabă Gemini sunt acum disponibile în mai multe limbi. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Află mai multe din centrul de ajutor&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Comandă rapidă pentru tastarea vocală</string>
   <string name="shortcut_for_dictation_content">Când folosești Gboard, poți să atingi de două ori cu două degete ca să pornești sau să oprești tastarea vocală.
 &lt;br&gt;
 &lt;br&gt;Asigură-te că ai cea mai recentă versiune de &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard din Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Când Gboard este pe ecran, acum poți folosi o atingere dublă cu două degete pentru a începe dictarea, apoi o atingere dublă cu două degete pentru a o opri.</string>
-  <string name="keyboard_title">Tastatură</string>
-  <string name="keyboard_content">TalkBack are acum o Configurare de taste îmbunătățită pentru tastatură, cu diverse comenzi și comenzi rapide noi. Această îmbunătățire, care include modul de navigare pentru navigare mai eficientă pe web, simplifică navigarea și interacțiunea pentru utilizatorii TalkBack care se bazează pe tastaturi fizice. Poți comuta la Configurarea de taste îmbunătățită în Setări TalkBack &gt; Setări avansate &gt; Comenzi rapide de la tastatură.</string>
-  <string name="keyboard_content_tts">TalkBack are acum o configurare de taste îmbunătățită pentru tastatură, cu diverse comenzi și comenzi rapide noi. Această îmbunătățire, care include modul de navigare pentru navigare mai eficientă pe web, simplifică navigarea și interacțiunea pentru utilizatorii TalkBack care se bazează pe tastaturi fizice. Poți comuta la Configurarea de taste îmbunătățită în Setări TalkBack, apoi Setări avansate, apoi Comenzi rapide de la tastatură.</string>
-  <string name="reduce_delay_title">Redu decalajul</string>
-  <string name="reduce_delay_content">Acum poți să reduci decalajele anunțurilor TalkBack pentru explorarea prin atingere și tastare. Pentru a vedea aceste setări, accesează Setări TalkBack &gt; Setări avansate &gt; Redu decalajul.</string>
-  <string name="reduce_delay_content_tts">Acum poți să reduci decalajele anunțurilor TalkBack pentru explorarea prin atingere și tastare. Pentru a vedea aceste setări, accesează Setări TalkBack, apoi Setări avansate, apoi Redu decalajul.</string>
-  <string name="customize_braille_keyboard_improvements_title">Personalizează gesturile pentru tastatura Braille</string>
-  <string name="customize_braille_keyboard_improvements_content">Acum poți personaliza gesturile pentru tastatura Braille virtuală de pe ecran. Pentru a le personaliza, accesează Setări TalkBack &gt; Tastatură Braille &gt; Gesturi.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Acum poți personaliza gesturile pentru tastatura Braille virtuală de pe ecran. Pentru a le personaliza, accesează Setări TalkBack, apoi Tastatură Braille, apoi Gesturi.</string>
-  <string name="learn_more_about_braille_keyboard">Află mai multe despre tastatura Braille</string>
-  <string name="other_changes_title">Alte modificări</string>
-  <string name="other_changes_content">Un mesaj pe ecran te ajută acum să dezactivezi rapid TalkBack dacă se activează din greșeală. Poți dezactiva funcția în setările TalkBack &gt; Afișează instrucțiunile pentru dezactivarea TalkBack.</string>
-  <string name="other_changes_content_tts">Un mesaj pe ecran te ajută acum să dezactivezi rapid TalkBack dacă se activează din greșeală. Poți dezactiva funcția în setările TalkBack, apoi Afișează instrucțiunile pentru dezactivarea TalkBack.</string>
-  <string name="keymap_changes_content">Configurarea clasică a tastelor a fost schimbată cu configurarea prestabilită a tastelor, care include mai multe comenzi rapide.</string>
   <string name="announcing_text_formatting_title">Anunț despre formatarea textului</string>
   <string name="announcing_text_formatting_header">TalkBack poate acum să anunțe modificările formatării textului, cum ar fi stilul aldin sau cursiv și culoarea textului. Pentru a începe:</string>
   <string name="announcing_text_formatting_option1">focalizează pe elementul cu formatare, deschide meniul TalkBack și selectează Descrie formatarea textului sau</string>
@@ -1083,7 +969,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="additional_tips_link_subtext">Află cum să inițiezi apeluri, să trimiți mesaje și multe altele</string>
   <string name="practice_gestures_link_text">Exersarea gesturilor</string>
   <string name="practice_gestures_link_subtext">Încearcă diferite gesturi pentru a afla ce fac</string>
-  <string name="help_and_feedback_link_subtext">Află mai multe despre TalkBack și trimite feedback</string>
   <string name="choose_tutorial_title">Alege modul în care vrei să interacționezi cu TalkBack</string>
   <string name="touch_tutorial_button">Tutorial privind atingerea</string>
   <string name="keyboard_tutorial_button">Tutorial pentru tastatură</string>
@@ -1229,8 +1114,6 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="wear_training_typing_text5">Încearcă mai jos.</string>
   <string name="wear_training_typing_practice_button_content_description">Introducerea textului de la tastatură</string>
   <string name="wear_training_end_tutorial_title">Ești gata să folosești TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack s-a actualizat</string>
-  <string name="talkback_updated_notification_content">Atinge pentru a afla mai multe</string>
   <string name="wear_new_feature_page_title">Bun venit la versiunea TalkBack actualizată</string>
   <string name="wear_new_feature_page_content">Vei observa remedieri de erori și schimbări privind mișcarea focalizării</string>
   <string name="wear_new_feature_page_button_content_description">Finalizează</string>
@@ -1249,10 +1132,7 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="title_pref_blue">Albastru</string>
   <string name="title_pref_grey">Gri</string>
   <string name="survey_setting_title">Trimite feedback</string>
-  <string name="survey_closed">Sondaj încheiat</string>
   <string name="title_summarize_view">Descrie ecranul</string>
-  <string name="title_increase_touch_focus_latency">Mărește decalajul focalizării</string>
-  <string name="title_decrease_touch_focus_latency">Redu decalajul focalizării</string>
   <string name="detected_result">S-a detectat: %1$s</string>
   <string name="title_image_caption">Descrie imaginea</string>
   <string name="image_caption_with_gemini_prefix">Descrie imaginea. Nu folosi limbaj de markup în răspuns.</string>
@@ -1279,33 +1159,15 @@ Decalajele sub 0,3 secunde vor schimba atingerea dublă pentru activare în atin
   <string name="image_qna_question_prefix">UTILIZATOR: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Continuă să alternezi rândurile pentru UTILIZATOR și MODEL] ...</string>
-  <string name="screen_overview_with_screenshot">Trebuie să ajuți o persoană care nu își poate vedea telefonul să înțeleagă ce se află pe ecranul telefonului. Descrie această captură de ecran în câteva propoziții.
-
-Instrucțiuni
-Începe răspunsul cu „Ecranul arată”
-Începutul răspunsului trebuie să descrie cel mai important conținut de pe ecran. Iată câteva exemple de conținut important de descris:
-* într-o aplicație de chat: expeditorul și textul celui mai recent mesaj;
-* într-o aplicație de rețele sociale: primul mesaj, inclusiv cine l-a postat, textul și o descriere a imaginii;
-* într-o aplicație de știri: titlul articolului și o descriere a imaginii principale;
-* într-o aplicație de cumpărături: o descriere a produsului afișat și prețul;
-* într-o aplicație de calendar: următorul eveniment și numărul de evenimente afișate ulterior;
-* într-o listă de mesaje: numele și previzualizarea primului mesaj, apoi doar numele pentru următoarele câteva din listă și câte mesaje sunt necitite.
-
-După aceea, răspunsul poate descrie locația spațială și scopul barelor de navigare și al butoanelor vizibile.
-Nu menționa conținutul din bara de stare de sus (de exemplu, ora, starea rețelei, bateria).
-Nu folosi marcaje de formatare în răspuns.</string>
   <string name="title_gemini_opt_in_dialog">Vrei să primești descrieri detaliate ale imaginilor?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Vrei să primești descrieri ale imaginilor?</string>
   <string name="title_gemini_result_dialog">S-a detectat: o imagine</string>
   <string name="title_gemini_result_bottom_sheet">Descrierea imaginii</string>
   <string name="title_gemini_screen_overview_result_dialog">Descrierea ecranului</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Rezumat</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Acțiuni</string>
   <string name="positive_button_gemini_opt_in_dialog">Activează</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Sunt de acord</string>
   <string name="negative_button_gemini_opt_in_dialog">Nu, mulțumesc</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Accesează Setările</string>
-  <string name="positive_button_gemini_download_dialog">Descarcă și activează</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, „%1$s”.</string>
   <string name="detected_icon_label">Pictogramă, „%1$s”.</string>
@@ -1319,8 +1181,6 @@ Nu folosi marcaje de formatare în răspuns.</string>
   <string name="screen_overview_no_result">Nu se poate rezuma ecranul</string>
   <string name="image_caption_no_result">Nu se poate descrie imaginea</string>
   <string name="image_caption_with_hide_screen">Descrierile imaginilor nu sunt disponibile când ecranul este ascuns. Afișează ecranul și încearcă din nou.</string>
-  <string name="feedback_button_state_set">selectat</string>
-  <string name="feedback_button_state_unset">neselectat</string>
   <string name="action_text_like_button">Marchează ca răspuns bun</string>
   <string name="action_text_dislike_button">Marchează ca răspuns greșit</string>
   <string name="action_text_clear_like_button">Șterge răspunsul bun</string>
@@ -1349,18 +1209,13 @@ Nu folosi marcaje de formatare în răspuns.</string>
   <string name="downloading_all_image_captioning_hint">Se descarcă descrierile automate ale imaginilor și pictogramelor</string>
   <string name="download_all_image_captioning_successful_hint">Descrierile automate ale imaginilor și pictogramelor au fost descărcate</string>
   <string name="download_all_image_captioning_failed_hint">Descărcare nereușită. Încearcă din nou mai târziu.</string>
-  <string name="download_complete_notification_title">Descărcare finalizată</string>
-  <string name="download_complete_notification_content">Acum vei auzi descrieri automate ale imaginilor și ale pictogramelor cu TalkBack</string>
-  <string name="download_complete_notification_action">Setări</string>
   <string name="download_storage_error_hint">Spațiul de stocare este plin. Pentru a descărca, eliberează %1$d MB în Setări &gt; Stocare.</string>
   <string name="download_network_error_hint">Descărcare nereușită. Verifică-ți conexiunea și încearcă din nou.</string>
   <string name="switch_icon_detection_dialog_title">Descrieri automate ale pictogramelor</string>
   <string name="switch_icon_detection_dialog_message">Auzi descrieri când focalizezi pe o pictogramă</string>
   <string name="switch_image_description_dialog_message">Auzi descrieri când focalizezi pe o imagine. Este posibil ca unele aplicații să nu accepte această funcție.</string>
-  <string name="switch_text_recognition_dialog_title">Descrie automat textul din imagini</string>
   <string name="switch_text_recognition_dialog_message">Auzi descrierile când focalizezi pe o imagine care conține text</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Descărcat</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Poți primi descrieri pentru o imagine selectată și din meniul TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Șterge descărcarea</string>
   <string name="delete_icon_detection_dialog_title">Ștergi descrierile automate ale pictogramelor?</string>
@@ -1376,11 +1231,6 @@ Nu folosi marcaje de formatare în răspuns.</string>
   <string name="gemini_enable_dialog_title">Folosește Gemini în TalkBack</string>
   <string name="gemini_disable_dialog_message">Înțelegerea conținutului de pe ecran cu ajutorul Gemini</string>
   <string name="disable_gemini_dialog_subtext">Activează pentru a permite înțelegerea conținutului de pe ecran cu ajutorul Gemini</string>
-  <string name="ai_services_update_dialog_title">Actualizează aplicația %1$s pentru a descrie imagini</string>
-  <string name="ai_services_update_dialog_message">Ca să auzi descrierile imaginilor, descarcă cea mai recentă versiune %1$s din Google Play.\n\nOdată încheiată descărcarea, revino la setările TalkBack și activează din nou descrierile automate ale imaginilor.</string>
-  <string name="ai_services_update_dialog_button_text">Accesează Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">A apărut o eroare. Încearcă din nou.</string>
   <string name="gemini_block_message">Imaginea nu poate fi procesată</string>
   <string name="gemini_network_error">Nu există conexiune la internet. Verifică rețeaua Wi-Fi sau mobilă și încearcă din nou.</string>
@@ -1396,13 +1246,8 @@ Nu folosi marcaje de formatare în răspuns.</string>
   <string name="image_qna_typing_button_text">Scrie o întrebare pentru Gemini</string>
   <string name="image_qna_send_button_text">Întreabă</string>
   <string name="image_qna_speak_question_description">Rostește întrebarea</string>
-  <string name="overviews_summary_intro">Rezumatul ecranului aplicației: %1$s</string>
   <string name="overviews_node_not_found">Nu mai găsesc acea parte a ecranului.</string>
-  <string name="overviews_images_in_app">S-au găsit imagini majore</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Acțiuni în aplicație</string>
-  <string name="overviews_actions_in_app_description">Iată acțiunile principale pe care le poți face din acest ecran al aplicației:</string>
-  <string name="overviews_parent_type">Acțiuni în aplicație</string>
   <string name="text_replaced_feedback">Text înlocuit</string>
   <string name="switch_gesture_set">Schimbă setul de gesturi</string>
   <string name="switch_gesture_set_to">Treci la setul de gesturi %1$d</string>
@@ -1453,5 +1298,4 @@ Nu folosi marcaje de formatare în răspuns.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Închide</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Pentru a auzi notificări când ecranul este inactiv, activează opțiunea Se rostesc notificările cu ecran inactiv în setările de informații rostite TalkBack</string>
 </resources>

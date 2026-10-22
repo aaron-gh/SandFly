@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Als TalkBack aanstaat, krijg je gesproken feedback zodat je je apparaat kunt gebruiken zonder naar het scherm te kijken. TalkBack is bedoeld voor situaties waarin mensen het scherm niet goed kunnen zien.&lt;br&gt;&lt;br&gt;&lt;b&gt;TalkBack gebruiken&lt;/b&gt;&lt;br&gt;• Swipe naar links of rechts om van het ene naar het andere item te gaan.&lt;br&gt;• Dubbeltik om een item te activeren.&lt;br&gt;• Sleep met 2 vingers om te scrollen.&lt;br&gt;&lt;b&gt;TalkBack uitzetten&lt;/b&gt;&lt;br&gt;1. Tik in Instellingen op &lt;b&gt;TalkBack gebruiken&lt;/b&gt;. Er verschijnt een omtrek. Dubbeltik erop.&lt;br&gt;2. Tik in het bevestigingsbericht op &lt;b&gt;Stoppen&lt;/b&gt;. Er verschijnt een omtrek. Dubbeltik erop.</string>
   <string name="talkback_service_summary">Gebruik een schermlezer om items hardop te laten voorlezen</string>
   <string name="talkback_preferences_title">Instellingen voor TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Instellingen</string>
   <string name="tts_preferences_title">Tekst-naar-spraak</string>
   <string name="language_options">Talen</string>
   <string name="spoken_language">Gesproken taal</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Zoeken geannuleerd.</string>
   <string name="notification_type_status_started">Gestart</string>
   <string name="notification_type_status_stopped">Gestopt</string>
-  <string name="notification_type_status_connected">verbonden</string>
-  <string name="notification_battery_level_unknown">onbekend</string>
   <string name="notification_battery_saver_mode">Batterijbesparing aan</string>
   <string name="template_no_text_selected">Geen tekst geselecteerd</string>
   <string name="template_charging">Opladen %1$s Accuniveau %2$s procent.</string>
   <string name="template_charging_lite">%1$s opladen</string>
-  <string name="template_battery_state">Stroom %1$s %2$s procent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Belsoftware trilt.</string>
   <string name="value_ringer_silent">Belsoftware stil.</string>
   <string name="value_screen_on">Scherm aan.</string>
   <string name="value_screen_off">Scherm uit.</string>
   <string name="value_device_unlocked">Apparaat ontgrendeld.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Spraakvolume</string>
-  <string name="title_pref_speech_rate">Spreeksnelheid</string>
-  <string name="summary_pref_speech_rate">Snelheid waarmee de tekst wordt gesproken</string>
   <string name="title_pref_verbose_scroll_announcement">Aantal lijstitems altijd uitspreken</string>
   <string name="summary_pref_verbose_scroll_announcement">Aantal uitspreken voor alle scrollmethoden</string>
   <string name="title_pref_cover_proximity_sensor">Afstandssensor afdekken om spraak te stoppen</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Tijd uitspreken</string>
   <string name="pref_speak_time_summary">Als je het scherm aanzet</string>
   <string name="summary_speak_container_element_positions">Bevat informatie bij het openen en verlaten van lijsten, rasters en andere containers</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Focusvertraging toegevoegd aan leesinstellingen</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Swipe op elk moment met 3 vingers om de leesinstellingen te gebruiken en de focusvertraging te wijzigen</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Wisselen naar Optillen om te typen?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Als de focusvertraging voor typen is ingesteld op minder dan 0,3 seconden, is dubbeltikken om te typen erg moeilijk uit te voeren. Kies Wisselen om automatisch over te schakelen naar Optillen om te typen.\n\nAls je Optillen om te typen wilt gebruiken, houd je je vinger op een toets om deze te selecteren en til je je vinger op om te typen.\n\nJe kunt dit aanpassen in de TalkBack-instellingen.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Focusvertraging voor typen toegevoegd aan leesinstellingen</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Als je problemen hebt met dubbeltikken tijdens het typen, swipe je met 3 vingers om de leesinstellingen te gebruiken en de focusvertraging voor typen te wijzigen in een langere vertraging</string>
-  <string name="gestures_announce_typing_focus_wont_change">Focusvertraging bij typen werkt niet zonder Optillen om te typen.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">OK</string>
   <string name="reset_letency_reduction_settings_dialog_title">Instellingen voor vertraging resetten?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Hiermee worden alle instellingen voor vertraging teruggezet op de standaardwaarden</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetten</string>
   <string name="gestures_announce_reset_latency_reduction_settings">De instellingen voor vertraging verminderen zijn gereset.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Wisselen</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Niet wisselen</string>
   <string name="Reset_gesture_settings_dialog_title">Gebaren resetten?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Gebaren van huidige reeks resetten</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Hiermee worden alle gebaren gereset naar de standaardacties.\n\nJe raakt hiermee je aanpassingen kwijt.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Alle voortgangsupdates voorlezen</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Biedt onder andere updates tijdens het downloaden en het volgen van routebeschrijvingen. Als dit uitstaat, krijg je nog steeds minder frequente updates.</string>
   <string name="title_pref_explore_by_touch">Verkennen via aanraking</string>
-  <string name="title_pref_category_visual">Visueel</string>
   <string name="title_pref_category_controls">Bedieningselementen</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Algemeen</string>
-  <string name="title_pref_category_advanced">Geavanceerd</string>
-  <string name="title_pref_category_others">Overig</string>
-  <string name="title_pref_category_tutorial_and_help">Training en Help</string>
   <string name="title_pref_category_reduce_latency_summary">Met deze instellingen kun je de vertraging vóór TalkBack-aankondigingen verkorten</string>
   <string name="reset_latency_settings_title">Alle instellingen voor vertraging resetten</string>
   <string name="title_pref_single_tap">Tik 1 keer om te activeren</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Focusindicator wijzigen</string>
   <string name="title_pref_category_manage_gestures">Gebaren</string>
   <string name="title_pref_manage_labels">Aangepaste labels</string>
-  <string name="title_pref_manage_customize_menus">Menu\'s bewerken</string>
   <string name="title_pref_category_context_menu">TalkBack-menu aanpassen</string>
   <string name="title_pref_category_selector_menu">Leesopties aanpassen</string>
   <string name="title_pref_category_navigation_menu">Navigatie-opties bewerken</string>
-  <string name="pref_category_context_menu_summary">Tik met 3 vingers op het scherm om het TalkBack-menu te gebruiken. Je kunt ook omhoog swipen en dan naar rechts, of omlaag en dan naar rechts.</string>
-  <string name="pref_category_context_menu_summary_xr">Draai je secundaire handpalm naar binnen en knijp om het TalkBack-menu te gebruiken.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Swipe omlaag en dan naar rechts om het TalkBack-menu te gebruiken.</string>
-  <string name="pref_category_selector_menu_summary">Swipe met 3 vingers naar links of rechts om de leesopties te gebruiken. Je kunt ook met 3 vingers omhoog of omlaag swipen.</string>
-  <string name="pref_category_selector_menu_summary_xr">Als je wilt schakelen tussen leesinstellingen, draai je je secundaire handpalm naar binnen, houd je je duim- en wijsvinger tegen elkaar, beweeg je je hand naar rechts of links en laat je los.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Swipe omhoog en dan omlaag om de leesopties te gebruiken.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Sneltoetsen</string>
   <string name="title_pref_export_custom_labels">Aangepaste labels exporteren</string>
-  <string name="title_pref_play_store">Open TalkBack in de Play Store</string>
-  <string name="summary_pref_play_store">Huidige TalkBack-versie: %1$s</string>
   <string name="title_pref_help_and_feedback">Hulp en feedback</string>
-  <string name="title_pref_gup">Contact opnemen met het Google-supportteam voor gebruikers met een beperking</string>
-  <string name="subtitle_pref_gup">Krijg hulp via TalkBack of meld problemen</string>
-  <string name="pref_item_licenses">Opensource-licenties</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Hulp</string>
   <string name="title_pref_show_tos">Servicevoorwaarden</string>
   <string name="title_pref_show_privacy_policy">Privacybeleid</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Vingerafdrukgebaren</string>
   <string name="title_pref_category_tutorial">TalkBack-tutorial</string>
   <string name="title_pref_category_help_no_tutorial">Hulp</string>
-  <string name="title_pref_category_typing">Typen</string>
   <string name="title_pref_advanced_settings">Geavanceerde instellingen</string>
   <string name="title_pref_show_exit_watermark">Instructies tonen om TalkBack uit te zetten</string>
   <string name="summary_pref_show_exit_watermark">Er wordt een bericht getoond als TalkBack aanstaat, zodat je de functie snel kunt uitzetten</string>
@@ -154,8 +117,6 @@
 &lt;li&gt;Sommige functietoetsen zijn anders.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Meer informatie over keymaps</string>
   <string name="keycombo_go_to_settings">Naar Instellingen</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack staat op het punt de klassieke keymap te verwijderen. Als je sneltoetsen wilt blijven gebruiken, schakel je over naar de standaard keymap.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Meer informatie</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">OK</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Instellingen</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Meer informatie</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Je gebruikt nu de TalkBack-keymap. Er is een betere keymap met veel nieuwe opdrachten. Vind meer informatie in het Helpcentrum of gebruik de nieuwe keymap via Instellingen.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Nieuwe keymap beschikbaar</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">De nieuwe, verbeterde TalkBack-keymap voegt veel nieuwe opdrachten toe. Vind meer informatie in het Helpcentrum of gebruik de nieuwe keymap via Instellingen.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Je TalkBack-functietoets updaten</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Niet nu</string>
   <string name="keycombo_warning_content_description">Meer informatie over de functietoets</string>
-  <string name="keycombo_warning_dialog_title">Je functietoets updaten</string>
-  <string name="keycombo_warning_dialog_message">Update de functietoets van Actie naar Alt om te zorgen dat de TalkBack-sneltoetsen correct werken.\n\nAls je de functietoets Actie blijft gebruiken, voeren sommige sneltoetsen andere acties uit voor deze versie van Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Keymap</string>
   <string name="keycombo_menu_select_keymap">Een keymap kiezen</string>
   <string name="keycombo_menu_reset_keymap">De keymap resetten</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Spraakvolume verhogen</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Spraakvolume verlagen</string>
   <string name="keycombo_menu_global_refocus_current_node">Huidige focus uitspreken</string>
-  <string name="keycombo_menu_category_granularity">Navigatie</string>
   <string name="keycombo_menu_granularity_increase">Volgende navigatie-instelling</string>
   <string name="keycombo_menu_granularity_decrease">Vorige navigatie-instelling</string>
   <string name="keycombo_menu_category_other">Andere acties</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Weet je zeker dat je de standaardinstellingen voor de sneltoetsen van deze toetsenbordindeling wilt resetten? Deze actie kan niet ongedaan worden gemaakt.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Resetten</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s in de browsemodus</string>
-  <string name="keycombo_assign_dialog_instruction">Druk op een toetsencombinatie om een nieuwe sneltoets in te stellen. Deze sneltoets moet in elk geval de Alt- of Ctrl-toets bevatten.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Druk op de toetscombinatie met de functietoets %1$s om een nieuwe sneltoets in te stellen.</string>
   <string name="keycombo_unassigned">Niet toegewezen</string>
   <string name="save_button_in_keycombo_assign_dialog">Opslaan</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Focusvertraging bij typen</string>
   <string name="message_pref_touch_explore_latency">Een kortere focusvertraging voor typen betekent dat TalkBack-aankondigingen sneller worden gedaan nadat je op het toetsenbord hebt getikt.\n\nSelecteer een vertraging</string>
   <string name="title_pref_touch_focus_timeout">Focusvertraging</string>
-  <string name="summary_pref_touch_focus_time">
-Hiermee bepaal je hoe snel TalkBack spreekt nadat de focus is verplaatst. Een kortere vertraging zorgt dat TalkBack sneller aanvoelt, maar kan dubbeltikken en 3 keer tikken moeilijker maken.\n\n
-Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren in tikken met 2 vingers om te activeren.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Gebaren verwerken in TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Zet TalkBack uit en weer aan om de instelling te activeren.</string>
   <string name="title_pref_auto_image_captioning">Automatische beschrijvingen</string>
@@ -382,28 +332,16 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="dialog_title_turn_on_image_description">Afbeeldingsbeschrijvingen aanzetten in Instellingen</string>
   <string name="dialog_message_turn_on_image_description">Je kunt het opnieuw proberen nadat je automatische of gedetailleerde afbeeldingsbeschrijvingen hebt aangezet</string>
   <string name="title_pref_detailed_image_description">Gedetailleerde afbeeldingsbeschrijvingen</string>
-  <string name="summary_pref_ai_description">Luister naar langere beschrijvingen als je %1$s selecteert in het TalkBack-menu</string>
   <string name="dialog_message_on_device_ai_description">Je hoort een korte beschrijving als je in ondersteunde apps de focus op een afbeelding plaatst.\n\nAfbeeldingen worden op je apparaat verwerkt en nooit naar Google gestuurd. \n\nGeneratieve AI is experimenteel, dus het maakt fouten. Als je doorgaat, ga je akkoord met de <a href="https://policies.google.com/terms/generative-ai">Servicevoorwaarden van Google</a>.</string>
   <string name="enable_gemini">Aanzetten</string>
   <string name="powered_by_gemini">Mogelijk gemaakt door generatieve AI</string>
-  <string name="detailed_image_description_ongoing_hint">Beschrijving ophalen</string>
-  <string name="detailed_image_description_result_prefix">Gevonden: Afbeelding. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Downloaden is nodig voor automatische afbeeldingsbeschrijvingen</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Afbeeldingen worden op je apparaat verwerkt en nooit naar Google gestuurd.\n\nGeneratieve AI is experimenteel, dus het maakt fouten. Als je doorgaat, ga je akkoord met de %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Servicevoorwaarden van Google</string>
   <string name="message_aifeature_downloading">Het AI-model wordt gedownload. Dit kan even duren. Je krijgt een melding als het klaar is.</string>
   <string name="message_aifeature_downloading_with_progress">Het downloaden is nog steeds bezig. %1$d van %2$d MB gedownload.</string>
-  <string name="message_aifeature_download_complete">Het AI-model is gedownload. TalkBack kan nu afbeeldingsbeschrijvingen genereren.</string>
   <string name="summary_pref_auto_image_captioning">Voor iconen, afbeeldingen en tekst in afbeeldingen</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Voor tekst in afbeeldingen</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Voor afbeeldingen en tekst in afbeeldingen</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Voor iconen en tekst in afbeeldingen</string>
   <string name="summary_pref_module_downloading">Downloaden…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Aan voor alle afbeeldingen</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Alleen aan voor niet-gelabelde afbeeldingen</string>
   <string name="summary_pref_auto_image_captioning_disabled">Uit</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Aan voor alle iconen</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Alleen aan voor niet-gelabelde iconen</string>
   <string name="summary_pref_auto_icon_detection_disabled">Uit</string>
   <string name="title_pref_enable_auto_image_caption">Alle afbeeldingen</string>
   <string name="title_pref_enable_auto_image_caption_arg">Alle afbeeldingen\n%1$s</string>
@@ -413,7 +351,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="title_pref_enable_auto_icon_detection">Alle iconen</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Alleen niet-gelabelde iconen</string>
   <string name="title_pref_disable_auto_icon_detection">Iconen niet beschrijven</string>
-  <string name="dialog_message_on_device_ai_model_download">Je hoort een korte beschrijving als je in ondersteunde apps de focus op een afbeelding plaatst.\n\nAfbeeldingen worden op je apparaat verwerkt en nooit naar Google gestuurd.\n\nGeneratieve AI is experimenteel, dus het maakt fouten. Als je doorgaat, ga je akkoord met de %1$s.</string>
   <string name="title_pref_enable_gemini_support">Aan</string>
   <string name="title_pref_disable_gemini_support">Uit</string>
   <string name="summary_pref_gemini_support_enabled">Gemini staat aan</string>
@@ -457,7 +394,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="shortcut_print_node_tree">Knooppuntstructuur afdrukken</string>
   <string name="shortcut_print_performance_stats">Prestatiestatistieken afdrukken</string>
   <string name="shortcut_first_in_screen">Focus op eerste item op het scherm plaatsen</string>
-  <string name="shortcut_summary">Overzicht van schermindeling</string>
   <string name="shortcut_voice_commands">Spraakopdracht starten</string>
   <string name="shortcut_last_in_screen">Focus op laatste item op het scherm plaatsen</string>
   <string name="shortcut_enable_dimming">Scherm verbergen</string>
@@ -561,7 +497,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="menu_category_web_navigation">Webnavigatie</string>
   <string name="menu_category_basic_navigation">Basisnavigatie</string>
   <string name="summary_custom_action">Toont wanneer er acties zijn voor het huidige item, waaronder links, kopiëren, plakken en selecteren</string>
-  <string name="summary_context_menu_links">Links binnen een gefocust item openen</string>
   <string name="summary_viewpager_controls">Naar de volgende of vorige pagina gaan. Wordt getoond als je content met meerdere pagina\'s leest.</string>
   <string name="summary_labeling_controls">Wordt getoond als je een niet-gelabeld item selecteert</string>
   <string name="summary_granularity">Lezen per teken, woord, regel en meer</string>
@@ -631,12 +566,9 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="summary_screen_overview">Het scherm samenvatten met actieknoppen</string>
   <string name="summary_screen_overview_no_actions">Luister naar een samenvatting van de content op het scherm</string>
   <string name="summary_image_caption">Tekst en iconen binnen een geselecteerde afbeelding uitspreken</string>
-  <string name="summary_summarize_view">Samenvatting van weergave hardop voorlezen</string>
   <string name="summary_typo_suggestions">Wordt getoond als de cursor op een typfout staat</string>
   <string name="summary_cache_keyboard_keys">TalkBack laadt aankondigingen vooraf om de vertraging tijdens het typen te verminderen</string>
   <string name="summary_cache_keyboard_keys_disabled">Gebruik Google Tekst-naar-spraak om deze functie te gebruiken</string>
-  <string name="value_direction_down">omlaag</string>
-  <string name="value_direction_down_and_right">omlaag en naar rechts</string>
   <string name="title_pref_shortcut_up">Omhoog swipen</string>
   <string name="title_pref_shortcut_up_xr">Secundaire handpalm naar binnen, knijpen en omhoog swipen</string>
   <string name="title_pref_shortcut_down">Omlaag swipen</string>
@@ -704,10 +636,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="title_pref_shortcut_fingerprint_left">Links swipen over vingerafdruksensor</string>
   <string name="title_pref_shortcut_fingerprint_right">Rechts swipen over vingerafdruksensor</string>
   <string name="title_pref_version_code">Versiecode</string>
-  <string formatted="false" name="value_volume_100_percent">Gelijk aan spraakvolume</string>
-  <string formatted="false" name="value_volume_75_percent">75% van spraakvolume</string>
-  <string formatted="false" name="value_volume_50_percent">50% van spraakvolume</string>
-  <string formatted="false" name="value_volume_25_percent">25% van spraakvolume</string>
   <string name="value_type_confirmation_double_tap">Houd je vinger op een toets om deze te selecteren en dubbeltik</string>
   <string name="value_type_confirmation_lift_to_type">Houd je vinger op een lettertoets om deze te selecteren en haal dan je vinger van het scherm. Dubbeltik voor andere toetsen.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Houd je vinger op een toets om te selecteren en haal dan je vinger van het scherm</string>
@@ -720,12 +648,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="value_touch_explore_time_out_200ms">0,2 seconden</string>
   <string name="value_touch_explore_time_out_250ms">0,25 seconden</string>
   <string name="value_touch_explore_time_out_300ms">0,3 seconden (standaard)</string>
-  <string name="value_shake_to_read_disabled">Uitgezet</string>
-  <string name="value_shake_to_read_threshold_very_light">Erg zacht</string>
-  <string name="value_shake_to_read_threshold_light">Zacht</string>
-  <string name="value_shake_to_read_threshold_medium">Normaal</string>
-  <string name="value_shake_to_read_threshold_hard">Hard</string>
-  <string name="value_shake_to_read_threshold_very_hard">Erg hard</string>
   <string name="title_pref_on_screen_keyboard">Schermtoetsenbord</string>
   <string name="title_pref_physical_keyboard">Fysiek toetsenbord</string>
   <string name="value_keyboard_echo_none">Geen</string>
@@ -738,8 +660,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="pref_time_feedback_format_entries_default">Tijdsindeling van apparaat gebruiken</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-uurs</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-uurs</string>
-  <string name="notification_title_talkback_gestures_changed">TalkBack-gebaren gewijzigd</string>
-  <string name="notification_message_talkback_gestures_changed">Tik om wijzigingen in de gebaren voor toegankelijkheid te bekijken</string>
   <string name="always_show_warning_checkbox">Deze waarschuwing altijd tonen</string>
   <string name="label_dialog_title_add">Label toevoegen</string>
   <string name="label_dialog_title_edit">Label bewerken</string>
@@ -760,16 +680,8 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="no_apps_to_export_labels">Geen apps gevonden om labels te exporteren.</string>
   <string name="label_choose_app_to_import">Kies een app om labels te importeren:</string>
   <string name="label_choose_app_to_export">Kies een app om labels te exporteren:</string>
-  <string name="talkback_gesture_change_details">Deze versie van TalkBack omvat wijzigingen in de standaardgebaren voor toegankelijkheid. De acties die horen bij deze gebaren, kunnen worden aangepast in de TalkBack-instellingen. Als Verkennen via aanraking aanstaat, kun je de volgende gebaren gebruiken om bepaalde acties uit te voeren.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Scherm verbergen?</string>
   <string name="dialog_message_dim_screen">Hiermee wordt het scherm uitgezet voor meer privacy. Er kan nog steeds bepaalde content worden getoond, zoals berichten om het scherm weer aan te zetten of menu\'s voor toegankelijkheidsfuncties zoals TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">In deze versie van TalkBack zijn de standaardgebaren voor toegankelijkheid gewijzigd.\n\nMet het gebaar \'omhoog en dan omlaag\' ga je naar het eerste item op het scherm, en met het gebaar \'omlaag en dan omhoog\' naar het laatste item.\n\nHet leesniveau kan nu worden aangepast door de focus op een item te plaatsen en een leesniveau te selecteren in het TalkBack-contextmenu.\n\nIn de TalkBack-instellingen kun je de acties wijzigen die met deze gebaren worden uitgevoerd.</string>
-  <string name="default_action_changed_details">Als je media wilt pauzeren en afspelen, kun je nu dubbeltikken en vasthouden met 2 vingers.\n\nAndere gebaren zijn ook veranderd.</string>
-  <string name="talkback_built_in_gesture_open_url">Openen op telefoon voor meer informatie</string>
-  <string name="talkback_built_in_gesture_change_details_45">In deze versie van TalkBack zijn de standaard toegankelijkheidsgebaren gewijzigd.\n\nMet het omhoog-gebaar ga je nu naar de vorige navigatie-instelling en met het omlaag-gebaar ga je naar de volgende navigatie-instelling.</string>
-  <string name="side_tap_shortcuts_removed_details">Deze instellingen zijn verwijderd uit TalkBack als gevolg van betrouwbaarheidsproblemen:\n• Gebaren waarbij op de zijkant van het apparaat wordt getikt\n• Schudden om doorlopend lezen te starten</string>
-  <string name="button_accept_changed_gesture_mappings">Gebaren accepteren</string>
-  <string name="button_customize_gesture_mappings">Gebaren aanpassen</string>
   <string name="button_disable_all_events">Alles uitzetten</string>
   <string name="button_enable_all_events">Alles aanzetten</string>
   <string name="dialog_title_disable_exploration">Verkennen via aanraking uitzetten?</string>
@@ -893,8 +805,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="screen_search_hint_type_search_tables">Tabellen zoeken</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Het meldingskanaal van TalkBack</string>
-  <string name="pref_selector_summary">%1$s om een instelling te selecteren. %2$s om de instelling aan te passen.</string>
-  <string name="speech_rate_change">Spreeksnelheid %1$d%%</string>
   <string name="speech_pitch_maximum">Hoogste toonhoogte voor spraak</string>
   <string name="speech_pitch_minimum">Laagste toonhoogte voor spraak</string>
   <string name="reset_speech_rate_and_pitch">Spreeksnelheid en toonhoogte resetten</string>
@@ -904,10 +814,7 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="vibration_feedback_state">Trilfeedback %1$s</string>
   <string name="text_formatting_state">Tekstopmaak voorlezen %1$s</string>
   <string name="typing_echo_change">Echo van fysiek toetsenbord voor %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Secundaire handpalm naar binnen, lang indrukken om de modus voor leesinstellingen te schakelen.</string>
   <string name="gesture_1_or_2">%1$s of %2$s</string>
-  <string name="select_setting_hint">%1$s om een andere instelling te selecteren</string>
-  <string name="adjust_setting_hint">%1$s om de instelling aan te passen</string>
   <string name="adjust_granularity_hint">%1$s om te lezen per %2$s</string>
   <string name="adjust_typo_hint">%1$s voor suggesties.</string>
   <string name="use_action_hint">Dubbeltik om de actie uit te voeren</string>
@@ -947,7 +854,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="setting_selector_heading">Leesopties</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Als je media in een muziek- of video-app wilt onderbreken of afspelen, dubbeltik je met 2 vingers. Probeer het nu.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Andere apps kunnen dit gebaar gebruiken voor handelingen als een telefoongesprek beantwoorden of beëindigen. Dit gebaar wordt mogelijk niet ondersteund door alle apps.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Alle TalkBack-tutorials bekijken</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media is gepauzeerd of wordt afgespeeld. Meestal kun je hiermee de huidige video of muziek pauzeren of afspelen. Swipe naar rechts om door te gaan.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Als je wilt dat TalkBack tijdelijk stopt met praten, tik je met 2 vingers.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">TalkBack-spraak gestopt. Hiermee wordt doorgaans de laatste zin gestopt die TalkBack uitspreekt. Swipe naar rechts om door te gaan.</string>
@@ -961,38 +867,18 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Selectiemodus aan of uit. Hiermee wordt meestal de tekstselectiemodus gestart of gestopt als je in een tekstinvoerveld zit. Swipe naar rechts om door te gaan.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Swipe met 3 vingers naar links of rechts om de leesopties te gebruiken. Je kunt ook met 3 vingers omhoog of omlaag swipen.</string>
   <string name="new_shortcut_gesture_note">Opmerking: Je hebt sommige gebaren aangepast, dus deze informatie klopt misschien niet voor jou. Ga naar de TalkBack-instellingen om je gebaren te bekijken.</string>
-  <string name="welcome_to_android11">Welkom bij TalkBack op Android 11</string>
   <string name="welcome_to_android11_text">Er zijn nieuwe gebaren toegevoegd zodat je TalkBack sneller en makkelijker kunt gebruiken.\n\nOp dit scherm kun je de nieuwe gebaren uitproberen. Je kunt deze informatie ook altijd bekijken in de TalkBack-instellingen.</string>
   <string name="new_gesture_notification_title">Nieuwe gebaren in TalkBack</string>
   <string name="new_gesture_notification_content">Tik voor meer informatie over hoe je TalkBack sneller gebruikt met nieuwe gebaren.</string>
   <string name="dump_node_tree_description">Nodestructuur is afgedrukt naar logboeken.</string>
   <string name="report_gesture_description">Hier zijn recent uitgevoerde gebaren. Laat ons weten welk gebaar niet klopt en wat je had verwacht.</string>
-  <string name="update_welcome_text_content">Je kunt nu verbinding maken met brailleleesregels via HID, een manier om verbinding te maken met bluetooth-apparaten. Zorg dat je de nieuwste firmwarestuurprogramma\'s van je fabrikant hebt en zet bluetooth aan op je brailleleesregel. Ga naar TalkBack-instellingen &gt; Brailleleesregel en zet Brailleleesregel gebruiken aan. Zoek je apparaat in de lijst met apparaten en maak er verbinding mee.</string>
-  <string name="update_welcome_text_content_tts">Je kunt nu verbinding maken met brailleleesregels via HID, een manier om verbinding te maken met bluetooth-apparaten. Zorg dat je de nieuwste firmwarestuurprogramma\'s van je fabrikant hebt en zet bluetooth aan op je brailleleesregel. Ga naar de TalkBack-instellingen, daarna naar Brailleleesregel en zet Brailleleesregel gebruiken aan. Zoek je apparaat in de lijst met apparaten en maak er verbinding mee.</string>
-  <string name="update_welcome_text_content_with_link">Ontdek hoe je je brailleleesregel gebruikt met TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Deze TalkBack-update introduceert ondersteuning voor Scherm beschrijven in meer talen en andere kwaliteitsverbeteringen die TalkBack gebruiksvriendelijker maken.\n\nJe krijgt meer informatie over deze wijzigingen in de volgende schermen.\n\nJe kunt deze informatie later doornemen via Instellingen voor TalkBack &gt; Nieuwe functies in TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Deze TalkBack-update introduceert ondersteuning voor Scherm beschrijven in meer talen en andere kwaliteitsverbeteringen die TalkBack gebruiksvriendelijker maken.\n\nJe krijgt meer informatie over deze wijzigingen in de volgende schermen.\n\nJe kunt deze informatie later doornemen via Instellingen voor TalkBack en dan Nieuwe functies in TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Nieuwe talen voor Scherm beschrijven en Vraag het Gemini</string>
-  <string name="describe_screen_and_qna_content">Scherm beschrijven en Vraag het Gemini zijn nu beschikbaar in meer talen. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Meer informatie in het Helpcentrum&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Snelkoppeling voor spraakgestuurd typen</string>
   <string name="shortcut_for_dictation_content">Terwijl je Gboard gebruikt, kun je nu dubbeltikken met 2 vingers om spraakgestuurd typen te starten of te stoppen.
 &lt;br&gt;
 &lt;br&gt;Zorg dat je de nieuwste versie van &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard van Google Play&lt;/a&gt; hebt.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Als Gboard op het scherm staat, kun je nu dubbeltikken met 2 vingers om dicteren te starten en daarna dubbeltikken met 2 vingers om te stoppen.</string>
-  <string name="keyboard_title">Toetsenbord</string>
-  <string name="keyboard_content">TalkBack heeft nu een verbeterde keymap met allerlei nieuwe opdrachten en sneltoetsen. Deze verbetering, met onder andere de browsemodus voor efficiëntere webnavigatie, stroomlijnt de navigatie en interactie voor TalkBack-gebruikers die afhankelijk zijn van fysieke toetsenborden. Je kunt overschakelen naar Verbeterde keymap via Instellingen voor TalkBack &gt; Geavanceerde instellingen &gt; Sneltoetsen.</string>
-  <string name="keyboard_content_tts">TalkBack heeft nu een verbeterde keymap met allerlei nieuwe opdrachten en sneltoetsen. Deze verbetering, met onder andere de browsemodus voor efficiëntere webnavigatie, stroomlijnt de navigatie en interactie voor TalkBack-gebruikers die afhankelijk zijn van fysieke toetsenborden. Je kunt overschakelen naar Verbeterde keymap via de TalkBack-instellingen, dan Geavanceerde instellingen en dan Sneltoetsen.</string>
-  <string name="reduce_delay_title">Vertraging verkorten</string>
-  <string name="reduce_delay_content">Je kunt nu vertragingen in TalkBack-aankondigingen verkorten voor verkenning via aanraking en typen. Ga naar Instellingen voor TalkBack &gt; Geavanceerde instellingen &gt; Vertraging verkorten om deze instellingen te bekijken.</string>
-  <string name="reduce_delay_content_tts">Je kunt nu vertragingen in TalkBack-aankondigingen verkorten voor verkenning via aanraking en typen. Als je deze instellingen wilt bekijken, ga je naar de TalkBack-instellingen, dan naar Geavanceerde instellingen en dan naar Vertraging verkorten.</string>
-  <string name="customize_braille_keyboard_improvements_title">Gebaren voor brailletoetsenbord aanpassen</string>
-  <string name="customize_braille_keyboard_improvements_content">Je kunt nu gebaren aanpassen voor het virtuele brailletoetsenbord op het scherm. Als je dit wilt aanpassen, ga je naar Instellingen voor TalkBack &gt; Brailletoetsenbord &gt; Gebaren.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Je kunt nu gebaren aanpassen voor het virtuele brailletoetsenbord op het scherm. Als je dit wilt aanpassen, ga je naar Instellingen voor TalkBack, dan naar Brailletoetsenbord en dan naar Gebaren.</string>
-  <string name="learn_more_about_braille_keyboard">Meer informatie over het brailletoetsenbord</string>
-  <string name="other_changes_title">Andere wijzigingen</string>
-  <string name="other_changes_content">Een bericht op het scherm helpt je nu om snel TalkBack uit te zetten als de functie per ongeluk is aangezet. Je kunt dit uitzetten in Instellingen voor TalkBack &gt; Instructies tonen om TalkBack uit te zetten.</string>
-  <string name="other_changes_content_tts">Een bericht op het scherm helpt je nu om snel TalkBack uit te zetten als de functie per ongeluk is aangezet. Je kunt dit uitzetten in Instellingen voor TalkBack en dan Instructies tonen om TalkBack uit te zetten.</string>
-  <string name="keymap_changes_content">De klassieke keymap is omgezet naar de standaard keymap, die meer sneltoetsen bevat.</string>
   <string name="announcing_text_formatting_title">Tekstopmaak aankondigen</string>
   <string name="announcing_text_formatting_header">TalkBack kan nu wijzigingen in tekstopmaak aankondigen, zoals vet, cursief en tekstkleur. Zo ga je te werk:</string>
   <string name="announcing_text_formatting_option1">Plaats de focus op het item met opmaak, open het TalkBack-menu en selecteer Tekstopmaak beschrijven, of</string>
@@ -1083,7 +969,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="additional_tips_link_subtext">Meer informatie over onder andere bellen en berichten sturen</string>
   <string name="practice_gestures_link_text">Gebaren oefenen</string>
   <string name="practice_gestures_link_subtext">Probeer verschillende gebaren om te zien wat je ermee kunt doen</string>
-  <string name="help_and_feedback_link_subtext">Meer informatie over TalkBack raadplegen en feedback sturen</string>
   <string name="choose_tutorial_title">Kiezen hoe je wilt communiceren met TalkBack</string>
   <string name="touch_tutorial_button">Tutorial over aanraakbediening</string>
   <string name="keyboard_tutorial_button">Tutorial over toetsenbordbediening</string>
@@ -1229,8 +1114,6 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="wear_training_typing_text5">Probeer het hieronder.</string>
   <string name="wear_training_typing_practice_button_content_description">Typen met toetsenbord</string>
   <string name="wear_training_end_tutorial_title">Je bent klaar om TalkBack te gebruiken</string>
-  <string name="talkback_updated_notification_title">TalkBack is geüpdatet</string>
-  <string name="talkback_updated_notification_content">Tik voor meer informatie</string>
   <string name="wear_new_feature_page_title">Welkom bij het geüpdatete TalkBack</string>
   <string name="wear_new_feature_page_content">Er zijn enkele bugfixes en wijzigingen in hoe de focus wordt verplaatst</string>
   <string name="wear_new_feature_page_button_content_description">Afronden</string>
@@ -1249,10 +1132,7 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="title_pref_blue">Blauw</string>
   <string name="title_pref_grey">Grijs</string>
   <string name="survey_setting_title">Je feedback delen</string>
-  <string name="survey_closed">Enquête gesloten</string>
   <string name="title_summarize_view">Scherm beschrijven</string>
-  <string name="title_increase_touch_focus_latency">Focusvertraging vergroten</string>
-  <string name="title_decrease_touch_focus_latency">Focusvertraging verkleinen</string>
   <string name="detected_result">Waargenomen: %1$s</string>
   <string name="title_image_caption">Afbeelding beschrijven</string>
   <string name="image_caption_with_gemini_prefix">Beschrijf deze afbeelding. Gebruik geen opmaak in de reactie.</string>
@@ -1279,33 +1159,15 @@ Vertragingen van minder dan 0,3 seconden veranderen dubbeltikken om te activeren
   <string name="image_qna_question_prefix">GEBRUIKER: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Ga door met afwisselende beurten voor GEBRUIKER en MODEL] ...</string>
-  <string name="screen_overview_with_screenshot">Het is jouw taak om iemand die hun telefoon niet kan zien, te helpen begrijpen wat er op hun telefoonscherm staat. Beschrijf dit screenshot in een paar zinnen.
-
-Instructies
-Begin je reactie met \'Het scherm toont\'
-Het begin van de reactie moet de belangrijkste, opvallende content op het scherm beschrijven. Dit zijn enkele voorbeelden van wat de belangrijkste, opvallende content is die je kunt beschrijven:
-* In een chat-app: de afzender en tekst van het meest recente bericht
-* In een socialmedia-app: de eerste post, inclusief wie deze heeft gepost, de tekst en een beschrijving van de afbeelding
-* In een nieuws-app: de artikeltitel en een beschrijving van de primaire afbeelding
-* In een app voor winkelen: een beschrijving van het getoonde product en de prijs
-* In een agenda-app: de volgende afspraak en het aantal andere afspraken die daarna worden getoond
-* In een lijst met berichten: de naam en het voorbeeld van het eerste bericht en daarna alleen de namen van de volgende paar items in de lijst en hoeveel berichten ongelezen zijn
-
-Daarna kan het antwoord de ruimtelijke locatie en het doel van navigatiebalken en opvallende knoppen beschrijven.
-Noem de content van de statusbalk bovenaan niet (bijv. tijd, netwerkstatus, batterij).
-Gebruik geen markdown in je reactie.</string>
   <string name="title_gemini_opt_in_dialog">Gedetailleerde afbeeldingsbeschrijvingen ophalen?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Afbeeldingsbeschrijvingen ophalen?</string>
   <string name="title_gemini_result_dialog">Gevonden: afbeelding</string>
   <string name="title_gemini_result_bottom_sheet">Beschrijving van de afbeelding</string>
   <string name="title_gemini_screen_overview_result_dialog">Schermbeschrijving</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Samenvatting</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Acties</string>
   <string name="positive_button_gemini_opt_in_dialog">Aanzetten</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ik ga akkoord</string>
   <string name="negative_button_gemini_opt_in_dialog">Nee, bedankt</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Naar Instellingen</string>
-  <string name="positive_button_gemini_download_dialog">Downloaden en aanzetten</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Tekst, \'%1$s\'.</string>
   <string name="detected_icon_label">Icoon, \'%1$s\'.</string>
@@ -1319,8 +1181,6 @@ Gebruik geen markdown in je reactie.</string>
   <string name="screen_overview_no_result">Kan scherm niet samenvatten</string>
   <string name="image_caption_no_result">Kan afbeelding niet beschrijven</string>
   <string name="image_caption_with_hide_screen">Afbeeldingsbeschrijvingen zijn niet beschikbaar als het scherm verborgen is. Toon je scherm en probeer het opnieuw.</string>
-  <string name="feedback_button_state_set">geselecteerd</string>
-  <string name="feedback_button_state_unset">niet geselecteerd</string>
   <string name="action_text_like_button">Markeren als een goede reactie</string>
   <string name="action_text_dislike_button">Markeren als een slechte reactie</string>
   <string name="action_text_clear_like_button">Goede reactie wissen</string>
@@ -1349,18 +1209,13 @@ Gebruik geen markdown in je reactie.</string>
   <string name="downloading_all_image_captioning_hint">Automatische afbeeldings- en icoonbeschrijvingen downloaden</string>
   <string name="download_all_image_captioning_successful_hint">Automatische afbeeldings- en icoonbeschrijvingen gedownload</string>
   <string name="download_all_image_captioning_failed_hint">Kan niet downloaden. Probeer het later opnieuw.</string>
-  <string name="download_complete_notification_title">Download voltooid</string>
-  <string name="download_complete_notification_content">Je krijgt nu automatische beschrijvingen van afbeeldingen en iconen te horen met TalkBack</string>
-  <string name="download_complete_notification_action">Instellingen</string>
   <string name="download_storage_error_hint">De opslag is vol. Maak %1$d MB vrij via Instellingen &gt; Opslag om te downloaden.</string>
   <string name="download_network_error_hint">Kan niet downloaden. Check de verbinding en probeer het opnieuw.</string>
   <string name="switch_icon_detection_dialog_title">Automatische icoonbeschrijvingen</string>
   <string name="switch_icon_detection_dialog_message">Hoor beschrijvingen als je de focus op een icoon plaatst</string>
   <string name="switch_image_description_dialog_message">Hoor beschrijvingen als je de focus op een afbeelding plaatst. Sommige apps ondersteunen dit misschien niet.</string>
-  <string name="switch_text_recognition_dialog_title">Tekst in afbeeldingen automatisch beschrijven</string>
   <string name="switch_text_recognition_dialog_message">Hoor beschrijvingen als je de focus op een afbeelding met tekst plaatst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Gedownload</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Je kunt nog steeds beschrijvingen voor een geselecteerde afbeelding krijgen via het TalkBack-menu</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Download verwijderen</string>
   <string name="delete_icon_detection_dialog_title">Automatische icoonbeschrijvingen verwijderen?</string>
@@ -1376,11 +1231,6 @@ Gebruik geen markdown in je reactie.</string>
   <string name="gemini_enable_dialog_title">Gemini gebruiken in TalkBack</string>
   <string name="gemini_disable_dialog_message">Scherminterpretatie met Gemini</string>
   <string name="disable_gemini_dialog_subtext">Zet dit aan om scherminterpretatie met Gemini te activeren</string>
-  <string name="ai_services_update_dialog_title">Update de %1$s-app om afbeeldingen te beschrijven</string>
-  <string name="ai_services_update_dialog_message">Als je afbeeldingsbeschrijvingen wilt horen, download je de nieuwste versie van %1$s via Google Play.\n\nAls het downloaden klaar is, ga je terug naar de TalkBack-instellingen en zet je automatische afbeeldingsbeschrijvingen weer aan.</string>
-  <string name="ai_services_update_dialog_button_text">Naar Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Er is iets misgegaan. Probeer het opnieuw.</string>
   <string name="gemini_block_message">Kan deze afbeelding niet verwerken</string>
   <string name="gemini_network_error">Geen internetverbinding. Check je wifi- of mobiele netwerk en probeer het opnieuw.</string>
@@ -1396,13 +1246,8 @@ Gebruik geen markdown in je reactie.</string>
   <string name="image_qna_typing_button_text">Vraag typen voor Gemini</string>
   <string name="image_qna_send_button_text">Vragen</string>
   <string name="image_qna_speak_question_description">Vraag inspreken</string>
-  <string name="overviews_summary_intro">Samenvatting van dit app-scherm: %1$s</string>
   <string name="overviews_node_not_found">Ik kan dat deel van het scherm niet meer vinden.</string>
-  <string name="overviews_images_in_app">Belangrijke afbeeldingen gevonden</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Acties in app</string>
-  <string name="overviews_actions_in_app_description">Dit zijn de belangrijkste acties die je vanaf dit app-scherm kunt uitvoeren:</string>
-  <string name="overviews_parent_type">Acties in app</string>
   <string name="text_replaced_feedback">Tekst vervangen</string>
   <string name="switch_gesture_set">Schakelen naar gebarenreeks</string>
   <string name="switch_gesture_set_to">Schakelen naar gebarenreeks %1$d</string>
@@ -1453,5 +1298,4 @@ Gebruik geen markdown in je reactie.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Sluiten</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Als je meldingen wilt horen als je scherm uitstaat, zet je Meldingen uitspreken als scherm uit is aan in de TalkBack-instellingen voor uitvoerigheid</string>
 </resources>

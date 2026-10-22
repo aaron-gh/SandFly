@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">‏כשהתכונה TalkBack מופעלת, היא מפעילה את קורא המסך הקולי, כך שאפשר להשתמש במכשיר בלי להסתכל במסך. התכונה TalkBack מיועדת למצבים שבהם קשה לראות את המסך או לאנשים שמתקשים לראות אותו.&lt;br&gt;&lt;br&gt;&lt;b&gt;איך להשתמש ב-TalkBack‏&lt;/b&gt;&lt;br&gt;• מחליקים ימינה או שמאלה כדי לעבור בין פריטים.&lt;br&gt;• לוחצים לחיצה כפולה כדי להפעיל פריט.&lt;br&gt;• גוררים 2 אצבעות כדי לגלול.&lt;br&gt;&lt;b&gt;איך להשבית את TalkBack‏&lt;/b&gt;&lt;br&gt;‏1. בהגדרות, לוחצים על &lt;b&gt;שימוש ב-TalkBack‏&lt;/b&gt;. יוצג קו מתאר. לוחצים לחיצה כפולה על הקו.&lt;br&gt;‏2. בהודעת האישור, לוחצים על &lt;b&gt;עצירה&lt;/b&gt;. יוצג קו מתאר. לוחצים לחיצה כפולה על הקו.</string>
   <string name="talkback_service_summary">שימוש בקורא המסך להקראת פריטים</string>
   <string name="talkback_preferences_title">‏ההגדרות של TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">הגדרות</string>
   <string name="tts_preferences_title">‏המרת טקסט לדיבור (TTS)</string>
   <string name="language_options">שפות</string>
   <string name="spoken_language">שפת הדיבור</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">החיפוש בוטל.</string>
   <string name="notification_type_status_started">התחיל</string>
   <string name="notification_type_status_stopped">הופסק</string>
-  <string name="notification_type_status_connected">מחובר</string>
-  <string name="notification_battery_level_unknown">לא ידוע</string>
   <string name="notification_battery_saver_mode">החיסכון בסוללה מופעל</string>
   <string name="template_no_text_selected">לא נבחר טקסט</string>
   <string name="template_charging">בטעינה %1$s. רמת הטעינה בסוללה היא %2$s אחוזים.</string>
   <string name="template_charging_lite">טעינה %1$s</string>
-  <string name="template_battery_state">החשמל: %1$s,‏ %2$s אחוז, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">צלצול ורטט.</string>
   <string name="value_ringer_silent">צלצול מושתק.</string>
   <string name="value_screen_on">המסך פועל.</string>
   <string name="value_screen_off">מסך כבוי.</string>
   <string name="value_device_unlocked">נעילת המכשיר בוטלה.</string>
-  <string name="title_pref_category_audio">אודיו</string>
   <string name="title_pref_speech_volume">עוצמת קול דיבור</string>
-  <string name="title_pref_speech_rate">קצב הדיבור</string>
-  <string name="summary_pref_speech_rate">המהירות שבה הטקסט נאמר</string>
   <string name="title_pref_verbose_scroll_announcement">הקראת מספר הפריטים ברשימה תמיד</string>
   <string name="summary_pref_verbose_scroll_announcement">הקראת המספר בכל שיטות הגלילה</string>
   <string name="title_pref_cover_proximity_sensor">כיסוי של חיישן הקירבה יפסיק את הדיבור</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">הקראת השעה</string>
   <string name="pref_speak_time_summary">כשמפעילים את המסך</string>
   <string name="summary_speak_container_element_positions">כולל פרטים בזמן שיוצאים או נכנסים לרשימה, תצוגת רשת, או מאגרים אחרים.</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">השהיית המיקוד נוספה לממשק לשליטה בהקראה</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">אפשר להחליק עם 3 אצבעות כדי להשתמש בממשק לשליטה בהקראה ולשנות את השהיית המיקוד בכל שלב</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">לעבור להרמה להקלדה?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">‏כשהשהיית המיקוד בהקלדה מוגדרת לפחות מ-0.3 שניות, קשה מאוד ללחוץ לחיצה כפולה כדי להקליד. אפשר לבחור באפשרות \"החלפה\" כדי לעבור אוטומטית להרמה להקלדה.\n\nכדי להשתמש בהרמה להקלדה, צריך להחזיק את האצבע כדי לבחור במקש כלשהו ואז להרים אותה כדי להקליד.\n\nאפשר להתאים אישית את ההגדרה הזו בהגדרות של TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">השהיית המיקוד בהקלדה נוספה לממשק לשליטה בהקראה</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">אם קשה לך ללחוץ לחיצה כפולה בזמן ההקלדה, אפשר להחליק עם 3 אצבעות כדי להשתמש בממשק לשליטה בהקראה ולהאריך את השהיית המיקוד בהקלדה</string>
-  <string name="gestures_announce_typing_focus_wont_change">השהיית המיקוד בהקלדה לא פועלת בלי התכונה \"הרמה להקלדה\".</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">הבנתי</string>
   <string name="reset_letency_reduction_settings_dialog_title">לאפס את הגדרות ההשהיה?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">הפעולה הזו תאפס את כל הגדרות ההשהיה לברירת המחדל</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">איפוס</string>
   <string name="gestures_announce_reset_latency_reduction_settings">ההגדרות של הפחתת זמן הטעינה אופסו.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">החלפה</string>
-  <string name="reduce_focus_delay_settings_cancel_button">לא להחליף</string>
   <string name="Reset_gesture_settings_dialog_title">לאפס את התנועות?</string>
   <string name="Reset_gesture_settings_set_dialog_title">לאפס את התנועות של הקבוצה הנוכחית?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">‏פעולה זו תאפס את כל התנועות לפעולות שמוגדרות כברירת מחדל.\n\nשינויים שביצעת יבוטלו.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">הקראת כל עדכוני ההתקדמות</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ההגדרה הזו כוללת עדכונים בזמן הורדה, מעקב אחר מסלול הנסיעה ועוד. כשההגדרה מושבתת, עדיין יהיו עדכונים, אבל בתדירות נמוכה יותר.</string>
   <string name="title_pref_explore_by_touch">גילוי באמצעות מגע</string>
-  <string name="title_pref_category_visual">תצוגה</string>
   <string name="title_pref_category_controls">אפשרויות</string>
-  <string name="title_pref_category_braille">ברייל</string>
-  <string name="title_pref_category_general">כללי</string>
-  <string name="title_pref_category_advanced">הגדרות מתקדמות</string>
-  <string name="title_pref_category_others">אפשרויות נוספות</string>
-  <string name="title_pref_category_tutorial_and_help">מדריך ועזרה</string>
   <string name="title_pref_category_reduce_latency_summary">‏ההגדרות האלה יכולות לקצר את ההשהיה לפני ההכרזות של TalkBack</string>
   <string name="reset_latency_settings_title">איפוס כל הגדרות ההשהיה</string>
   <string name="title_pref_single_tap">הפעלה בלחיצה אחת</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">שינוי אינדיקטור המיקוד</string>
   <string name="title_pref_category_manage_gestures">תנועות לביצוע פעולות</string>
   <string name="title_pref_manage_labels">תוויות מותאמות אישית</string>
-  <string name="title_pref_manage_customize_menus">עריכת תפריטים</string>
   <string name="title_pref_category_context_menu">‏התאמה של תפריט TalkBack</string>
   <string name="title_pref_category_selector_menu">התאמה של כפתורי ההקראה</string>
   <string name="title_pref_category_navigation_menu">עריכת אפשרויות הניווט</string>
-  <string name="pref_category_context_menu_summary">‏כדי לפתוח את תפריט TalkBack, יש ללחוץ על המסך באמצעות שלוש אצבעות. אפשר גם להחליק למעלה ואז ימינה, או למטה ואז ימינה.</string>
-  <string name="pref_category_context_menu_summary_xr">‏כדי להשתמש בתפריט TalkBack, עליך לעשות תנועת צביטה עם היד שלא מחזיקה את המכשיר.</string>
-  <string name="pref_category_context_menu_summary_single_finger">‏כדי להשתמש בתפריט ה-TalkBack, יש להחליק למטה ואז ימינה.</string>
-  <string name="pref_category_selector_menu_summary">כדי לפתוח את כפתורי ההקראה, יש להחליק שמאלה או ימינה בשלוש אצבעות. אפשר גם להחליק כלפי מעלה או כלפי מטה בשלוש אצבעות.</string>
-  <string name="pref_category_selector_menu_summary_xr">כדי לעבור בין הממשקים לשליטה בהקראה, עליך לעשות תנועת צביטה עם היד שלא מחזיקה את המכשיר, להזיז את היד ימינה או שמאלה ורק אז לשחרר.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">כדי להשתמש בלחצני ההקראה, יש להחליק למעלה ואז למטה.</string>
   <string name="title_pref_manage_keyboard_shortcuts">מקשי קיצור</string>
   <string name="title_pref_export_custom_labels">ייצוא תוויות מותאמות אישית</string>
-  <string name="title_pref_play_store">‏פתיחה של TalkBack בחנות Play</string>
-  <string name="summary_pref_play_store">‏גרסת TalkBack הנוכחית: %1$s</string>
   <string name="title_pref_help_and_feedback">עזרה ומשוב</string>
-  <string name="title_pref_gup">‏פנייה לתמיכה של Google באנשים עם מוגבלויות</string>
-  <string name="subtitle_pref_gup">‏אפשר לקבל עזרה באמצעות TalkBack או לדווח על בעיות</string>
-  <string name="pref_item_licenses">רישיונות קוד פתוח</string>
-  <string name="title_pref_tutorial">מדריך</string>
   <string name="title_pref_help">עזרה</string>
   <string name="title_pref_show_tos">תנאים והגבלות</string>
   <string name="title_pref_show_privacy_policy">מדיניות הפרטיות</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">תנועות על חיישן טביעות האצבע</string>
   <string name="title_pref_category_tutorial">‏המדריך של TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">עזרה</string>
-  <string name="title_pref_category_typing">הקלדה</string>
   <string name="title_pref_advanced_settings">הגדרות מתקדמות</string>
   <string name="title_pref_show_exit_watermark">‏הצגת הוראות להשבתת TalkBack</string>
   <string name="summary_pref_show_exit_watermark">‏כשהתכונה TalkBack מופעלת, מופיעה הודעה שדרכה אפשר להשבית את התכונה במהירות</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;חלק ממקשי הצירוף שונים.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">מידע נוסף על מפות המקשים</string>
   <string name="keycombo_go_to_settings">מעבר להגדרות</string>
-  <string name="keycombo_keymap_changes_notifications_content">‏אפשר להסיר את מפת המקשים הקלאסית ב-TalkBack. כדי להמשיך להשתמש במקשי הקיצור, צריך להחליף למפת המקשים שמוגדרת כברירת מחדל.</string>
-  <string name="keycombo_keymap_changes_notifications_action">מידע נוסף</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">הבנתי</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">הגדרות</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">מידע נוסף</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">‏כרגע המערכת משתמשת במפת ברירת המחדל של TalkBack. יש גם מפת מקשים חדשה ומשופרת עם הרבה פקודות חדשות. אפשר לקרוא מידע נוסף במרכז העזרה או לעבור למפת המקשים החדשה בהגדרות.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">יש מפת מקשים חדשה</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">‏במפת המקשים החדשה והמשופרת של TalkBack יש הרבה פקודות חדשות. אפשר לקרוא מידע נוסף במרכז העזרה או לעבור למפת המקשים החדשה בהגדרות.</string>
-  <string name="keycombo_update_modifier_key_warning_title">‏עדכון מקש הצירוף של TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">לא עכשיו</string>
   <string name="keycombo_warning_content_description">מידע נוסף על מקש הצירוף</string>
-  <string name="keycombo_warning_dialog_title">עדכון מקש הצירוף</string>
-  <string name="keycombo_warning_dialog_message">‏כדי שמקשי הקיצור של TalkBack יעבדו כמו שצריך, צריך לשנות את מקש הצירוף מ\"פעולה\" ל-Alt.‏\n\nבגרסה הזו של Android, אם ממשיכים להשתמש במקש הצירוף \"פעולה\", מקשי קיצור מסוימים יבצעו פעולות אחרות.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">מפת מקשים</string>
   <string name="keycombo_menu_select_keymap">בחירה של מפת מקשים</string>
   <string name="keycombo_menu_reset_keymap">איפוס של מפת המקשים</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">הגברת עוצמת הדיבור</string>
   <string name="keycombo_menu_global_speech_volume_decrease">החלשת עוצמת הדיבור</string>
   <string name="keycombo_menu_global_refocus_current_node">הקראת הרכיב הנוכחי שנמצא במיקוד</string>
-  <string name="keycombo_menu_category_granularity">ניווט</string>
   <string name="keycombo_menu_granularity_increase">הגדרת הניווט \'הבא\'</string>
   <string name="keycombo_menu_granularity_decrease">הגדרת הניווט \'הקודם\'</string>
   <string name="keycombo_menu_category_other">פעולות אחרות</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">האם לאפס את מקשי הקיצור למיפוי המקשים הזה לערכי ברירת המחדל שלהם? פעולה זו אינה הפיכה.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">איפוס</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s במצב הסמן</string>
-  <string name="keycombo_assign_dialog_instruction">‏הקש על שילוב מקשים כדי להגדיר קיצור חדש. הוא צריך להכיל לפחות את המקש ALT או Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">הקש על צירוף מקשים הכולל את מקש הצירוף %1$s כדי להגדיר מקש קיצור חדש.</string>
   <string name="keycombo_unassigned">לא נבחר</string>
   <string name="save_button_in_keycombo_assign_dialog">שמירה</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">השהיית המיקוד בהקלדה</string>
   <string name="message_pref_touch_explore_latency">‏ככל שההשהיה של המיקוד בהקלדה קצרה יותר, כך TalkBack יקריא מהר יותר את הטקסט אחרי נגיעה במקלדת.\n\nלבחירת משך ההשהיה</string>
   <string name="title_pref_touch_focus_timeout">השהיית המיקוד</string>
-  <string name="summary_pref_touch_focus_time">‏
-ההעדפה הזו קובעת את מהירות הדיבור של TalkBack אחרי שהמיקוד זז. ככל שההשהיה קצרה יותר, כך התגובה של TalkBack מהירה יותר, אבל עלול להיות קשה יותר לבצע לחיצות כפולות ומשולשות.\n\n
-בהשהיות של פחות מ-0.3 שניות, במקום לחיצה כפולה להפעלה צריך ללחוץ בשתי אצבעות להפעלה.
-      </string>
   <string name="title_pref_talkback_gesture_detection">‏ניהול התנועות ב-TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">‏יש להשבית ולהפעיל מחדש את TalkBack כדי להפעיל את ההגדרה.</string>
   <string name="title_pref_auto_image_captioning">תיאורים אוטומטיים</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">רוצה להפעיל את תיאורי התמונות בהגדרות?</string>
   <string name="dialog_message_turn_on_image_description">אפשר לנסות שוב לאחר ההפעלה של תיאורי התמונות האוטומטיים או התיאורים המפורטים של התמונות</string>
   <string name="title_pref_detailed_image_description">תיאורי תמונות מפורטים</string>
-  <string name="summary_pref_ai_description">‏אפשר לשמוע תיאורים ארוכים יותר כשבוחרים באפשרות ׳%1$s׳ מתפריט TalkBack</string>
   <string name="dialog_message_on_device_ai_description">‏כשמתמקדים בתוכן ויזואלי באפליקציות נתמכות, מושמע תיאור קצר.\n\nהתוכן הויזואלי מעובד במכשיר ולעולם לא נשלח אל Google. ‫\n\n‏AI גנרטיבי הוא טכנולוגיה ניסיונית כך שעלולות להיות טעויות. המשך הפעולה מבטא את הסכמתך <a href="https://policies.google.com/terms/generative-ai">לתנאים ולהגבלות של Google</a>.</string>
   <string name="enable_gemini">הפעלה</string>
   <string name="powered_by_gemini">‏המידע מבוסס על AI גנרטיבי</string>
-  <string name="detailed_image_description_ongoing_hint">התיאור עוד מעט מוכן</string>
-  <string name="detailed_image_description_result_prefix">זוהתה: תמונה. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">כדי לקבל תיאורי תמונות באופן אוטומטי, צריך להוריד את המודול</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">‏התמונות מעובדות במכשיר שלך ולעולם לא נשלחות אל Google‏.\n\n‏AI גנרטיבי הוא טכנולוגיה ניסיונית כך שעלולות להיות טעויות. המשך התהליך מבטא את הסכמתך ל%1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">‏התנאים וההגבלות של Google</string>
   <string name="message_aifeature_downloading">‏מתבצעת הורדה של מודל ה-AI. הפעולה תימשך זמן מה. נודיע לך כשההורדה תסתיים.</string>
   <string name="message_aifeature_downloading_with_progress">‏ההורדה עדיין מתבצעת. ‫%1$d מתוך ‎%2$dMB‎ הורדו.</string>
-  <string name="message_aifeature_download_complete">‏מודל ה-AI הורד. עכשיו, TalkBack יכול ליצור תיאורי תמונות.</string>
   <string name="summary_pref_auto_image_captioning">לסמלים, לתמונות ולטקסטים בתמונות</string>
-  <string name="summary_pref_auto_image_captioning_text_only">לטקסט בתמונות</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">לתמונות ולטקסט בתמונות</string>
-  <string name="summary_pref_auto_image_captioning_no_image">לסמלים ולטקסט בתמונות</string>
   <string name="summary_pref_module_downloading">מתבצעת הורדה…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">כל התמונות יתוארו</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">רק תמונות בלי תווית יתוארו</string>
   <string name="summary_pref_auto_image_captioning_disabled">אף תמונה לא תתואר</string>
-  <string name="summary_pref_auto_icon_detection_enabled">כל הסמלים יתוארו</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">רק סמלים בלי תווית יתוארו</string>
   <string name="summary_pref_auto_icon_detection_disabled">אף סמל לא יתואר</string>
   <string name="title_pref_enable_auto_image_caption">כל התמונות</string>
   <string name="title_pref_enable_auto_image_caption_arg">‏כל התמונות\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">כל הסמלים</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">רק סמלים בלי תווית</string>
   <string name="title_pref_disable_auto_icon_detection">לא לתאר סמלים</string>
-  <string name="dialog_message_on_device_ai_model_download">‏כשמתמקדים בתוכן ויזואלי באפליקציות נתמכות, מושמע תיאור קצר.\n\nהתוכן הויזואלי מעובד במכשיר ולעולם לא נשלח אל Google.‏\n\n‏AI הגנרטיבי הוא טכנולוגיה ניסיונית כך שעלולות להיות טעויות. המשך התהליך מבטא את הסכמתך ל%1$s.</string>
   <string name="title_pref_enable_gemini_support">מצב פעיל</string>
   <string name="title_pref_disable_gemini_support">מצב מושבת</string>
   <string name="summary_pref_gemini_support_enabled">‏‫Gemini מופעל</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">הדפס עץ צמתים</string>
   <string name="shortcut_print_performance_stats">הדפס נתונים סטטיסטיים של ביצועים</string>
   <string name="shortcut_first_in_screen">התמקדות בפריט הראשון שבמסך</string>
-  <string name="shortcut_summary">סיכום פריסת המסך</string>
   <string name="shortcut_voice_commands">הפעלת הפקודה הקולית</string>
   <string name="shortcut_last_in_screen">התמקדות בפריט האחרון שבמסך</string>
   <string name="shortcut_enable_dimming">הסתרת המסך</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">ניווט באינטרנט</string>
   <string name="menu_category_basic_navigation">ניווט בסיסי</string>
   <string name="summary_custom_action">מוצג כשקיימות פעולות לפריט הנוכחי, כולל קישורים, העתקה, הדבקה, בחירה ועוד</string>
-  <string name="summary_context_menu_links">פתיחת קישורים בתוך הפריט שמתמקדים עליו</string>
   <string name="summary_viewpager_controls">מעבר אל הדף הבא או הקודם. מופיע בהקראה של תוכן עם מספר עמודים.</string>
   <string name="summary_labeling_controls">מופיע כשנבחר פריט ללא תווית</string>
   <string name="summary_granularity">הקראה לפי תו, מילה, שורות ועוד</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">סיכום התוכן במסך באמצעות כפתורי פעולה</string>
   <string name="summary_screen_overview_no_actions">השמעת סיכום של התוכן שמוצג במסך</string>
   <string name="summary_image_caption">הקראה של הטקסט והסמלים בתוך תמונה שנבחרה</string>
-  <string name="summary_summarize_view">הקראת סיכום של התצוגה</string>
   <string name="summary_typo_suggestions">מוצג כשהסמן נמצא על מילה שהוקלדה באופן שגוי</string>
   <string name="summary_cache_keyboard_keys">‏כדי לא לחכות הרבה זמן כשמקלידים, ההכרזות נטענות מראש ב-TalkBack</string>
   <string name="summary_cache_keyboard_keys_disabled">‏כדי שהתכונה הזו תפעל, צריך להשתמש ב\"המרת טקסט לדיבור של Google\"</string>
-  <string name="value_direction_down">למטה</string>
-  <string name="value_direction_down_and_right">למטה ואחר כך ימינה</string>
   <string name="title_pref_shortcut_up">החלקה למעלה</string>
   <string name="title_pref_shortcut_up_xr">תנועת צביטה והחלקה למעלה עם היד שלא מחזיקה את המכשיר</string>
   <string name="title_pref_shortcut_down">החלקה מטה</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">החלקה שמאלה על חיישן טביעות האצבע</string>
   <string name="title_pref_shortcut_fingerprint_right">החלקה ימינה על חיישן טביעות האצבע</string>
   <string name="title_pref_version_code">קוד גרסה</string>
-  <string formatted="false" name="value_volume_100_percent">התאמה של עוצמת קול הדיבור</string>
-  <string formatted="false" name="value_volume_75_percent">75% מעוצמת קול הדיבור</string>
-  <string formatted="false" name="value_volume_50_percent">50% מעוצמת קול הדיבור</string>
-  <string formatted="false" name="value_volume_25_percent">25% מעוצמת קול הדיבור</string>
   <string name="value_type_confirmation_double_tap">בחירת המקש תיעשה בלחיצה ארוכה עליו, ואחריה לחיצה כפולה</string>
   <string name="value_type_confirmation_lift_to_type">בחירת המקש תיעשה בלחיצה ארוכה עליו, ואחריה הרמת האצבע. כדי להשתמש במקשים אחרים, צריך ללחוץ לחיצה כפולה</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">בחירת המקש תיעשה בלחיצה ארוכה עליו, ואחריה הרמת האצבע</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">‫0.2 שניות</string>
   <string name="value_touch_explore_time_out_250ms">‫0.25 שניות</string>
   <string name="value_touch_explore_time_out_300ms">‫0.3 שניות (ברירת מחדל)</string>
-  <string name="value_shake_to_read_disabled">מושבת</string>
-  <string name="value_shake_to_read_threshold_very_light">חלש מאוד</string>
-  <string name="value_shake_to_read_threshold_light">חלש</string>
-  <string name="value_shake_to_read_threshold_medium">בינוני</string>
-  <string name="value_shake_to_read_threshold_hard">חזק</string>
-  <string name="value_shake_to_read_threshold_very_hard">חזק מאוד</string>
   <string name="title_pref_on_screen_keyboard">מקלדת וירטואלית</string>
   <string name="title_pref_physical_keyboard">מקלדת פיזית</string>
   <string name="value_keyboard_echo_none">ללא</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">שימוש בפורמט השעה של המכשיר</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 שעות</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 שעות</string>
-  <string name="notification_title_talkback_gestures_changed">‏תנועות TalkBack שונו</string>
-  <string name="notification_message_talkback_gestures_changed">יש ללחוץ כדי לראות את השינויים בתנועות לביצוע פעולות שקשורות לנגישות</string>
   <string name="always_show_warning_checkbox">האזהרה הזו תופיע תמיד</string>
   <string name="label_dialog_title_add">הוספת תווית</string>
   <string name="label_dialog_title_edit">עריכת תווית</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">לא נמצאו אפליקציות לייצוא של תוויות.</string>
   <string name="label_choose_app_to_import">בחר אפליקציה לייבוא של תוויות:</string>
   <string name="label_choose_app_to_export">בחירת יישום לייצוא תוויות:</string>
-  <string name="talkback_gesture_change_details">‏גרסה זו של TalkBack כוללת שינויים בתנועות הנגישות המוגדרות כברירת מחדל. ניתן להתאים אישית את הפעולות המשויכות לתנועות אלה בתוך הגדרות TalkBack. כש\'גילוי באמצעות מגע\' מופעל, ניתן להשתמש בתנועות הבאות כדי לבצע פעולות מסוימות.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">להסתיר את המסך?</string>
   <string name="dialog_message_dim_screen">‏האפשרות הזו מכבה את המסך כדי לשפר את הפרטיות. תוכן מסוים עדיין יופיע, כמו הודעות לגבי הפעלה מחדש של המסך או תפריטים של תכונות נגישות כמו TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">‏גרסה זו של TalkBack כוללת שינויים בתנועות הנגישות המוגדרות כברירת מחדל.\n\nהתנועה \'למעלה ואחר כך למטה\' תאפשר לך לעבור לפריט הראשון במסך, והתנועה \'למטה ואחר כך למעלה\' תעביר לפריט האחרון.\n\nעכשיו אפשר לשנות את רמת פירוט ההקראה על ידי התמקדות בפריט ולאחר מכן בחירת רמת פירוט מתפריט ההקשר של TalkBack‏.\n\nאפשר לשנות את הפעולות המתבצעות על ידי תנועות אלה ב\'הגדרות TalkBack\'.</string>
-  <string name="default_action_changed_details">‏כדי להשהות ולהפעיל מדיה, אפשר עכשיו ללחוץ פעמיים ולהחזיק בעזרת שתי אצבעות.\n\nתנועות נוספות השתנו גם כן.</string>
-  <string name="talkback_built_in_gesture_open_url">צריך לפתוח בטלפון כדי לקרוא מידע נוסף</string>
-  <string name="talkback_built_in_gesture_change_details_45">‏גרסה זו של TalkBack כוללת שינויים בתנועות הנגישות המוגדרות כברירת מחדל.\n\nההחלקה כלפי מעלה עוברת להגדרת הניווט הקודמת, וההחלקה כלפי מטה עוברת להגדרת הניווט הבאה.</string>
-  <string name="side_tap_shortcuts_removed_details">‏הגדרות אלה מוסרות מ-TalkBack עקב בעיות מהימנות:\n• תנועות לחיצה על הצד של המכשיר\n• ניעור לצורך התחלה של \'הקראה רצופה\'</string>
-  <string name="button_accept_changed_gesture_mappings">אשר תנועות</string>
-  <string name="button_customize_gesture_mappings">התאמה אישית של תנועות</string>
   <string name="button_disable_all_events">השבת הכול</string>
   <string name="button_enable_all_events">הפעל הכול</string>
   <string name="dialog_title_disable_exploration">האם להשבית את \'גילוי באמצעות מגע\'?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">חיפוש בטבלאות</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">‏ערוץ ההתראות של TalkBack</string>
-  <string name="pref_selector_summary">%1$s כדי לבחור הגדרה. לאחר מכן, %2$s כדי לכוונן את ההגדרה.</string>
-  <string name="speech_rate_change">קצב דיבור %%%1$d</string>
   <string name="speech_pitch_maximum">גובה הצליל הגבוה ביותר בדיבור</string>
   <string name="speech_pitch_minimum">גובה הצליל הנמוך ביותר בדיבור</string>
   <string name="reset_speech_rate_and_pitch">איפוס של קצב הדיבור וגובה הצליל</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">משוב ברטט %1$s</string>
   <string name="text_formatting_state">תיאור של עיצוב הטקסט %1$s</string>
   <string name="typing_echo_change">הגיית הקלדה של %1$s במקלדת הפיזית</string>
-  <string name="reading_control_toggle_prefix_xr">הפניית כף היד המשנית לכיוונך, לחיצה ארוכה כדי להחליף את מצב הממשק לשליטה בהקראה.</string>
   <string name="gesture_1_or_2">%1$s או %2$s</string>
-  <string name="select_setting_hint">%1$s כדי לבחור הגדרה אחרת</string>
-  <string name="adjust_setting_hint">%1$s כדי לשנות את ההגדרה</string>
   <string name="adjust_granularity_hint">%1$s כדי לקרוא לפי %2$s</string>
   <string name="adjust_typo_hint">%1$s להצעות.</string>
   <string name="use_action_hint">יש ללחוץ פעמיים כדי לבצע את הפעולה</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">כפתורי ההקראה</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">כדי להשהות או להפעיל קובץ מדיה באפליקציית וידאו או מוזיקה, יש ללחוץ פעמיים באמצעות שתי אצבעות. רוצה לנסות עכשיו?</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">באפליקציות אחרות התנועה הזו יכולה לשמש לפעולות כמו מענה לשיחת טלפון או לניתוק השיחה. ייתכן שלא כל האפליקציות יתמכו בתנועה הזו.</string>
-  <string name="onboarding_link_to_talkback_tutorials">‏כל המדריכים של TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">המדיה מופעלת או מושהית. בדרך כלל, כך יופעלו או יושהו טראק המוזיקה הנוכחי או הסרטון הנוכחי. כדי להמשיך בפעולה יש להחליק ימינה.</string>
   <string name="new_shortcut_gesture_stop_speech_text">‏להפסקה זמנית של הדיבור ב-TalkBack, יש ללחוץ באמצעות שתי אצבעות.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">‏הדיבור ב-TalkBack הופסק. בדרך כלל, פעולה זו תעצור באמצע המשפט הנוכחי ב-TalkBack. כדי להמשיך בפעולה יש להחליק ימינה.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">מצב הבחירה מופעל או כבוי. בדרך כלל, פעולה זו תפעיל או תכבה את מצב בחירת הטקסט כשהסמן נמצא בתוך השדה להזנת קלט. כדי להמשיך בפעולה יש להחליק ימינה.</string>
   <string name="new_shortcut_gesture_reading_menu_text">כדי לפתוח את כפתורי ההקראה, יש להחליק שמאלה או ימינה בשלוש אצבעות. אפשר גם להחליק כלפי מעלה או כלפי מטה בשלוש אצבעות.</string>
   <string name="new_shortcut_gesture_note">‏הערה: חלק מהתנועות שלך מותאמות אישית, לכן ייתכן שהמידע הזה אינו מדויק. כדי לבדוק את התנועות שלך, יש לעבור להגדרות TalkBack.</string>
-  <string name="welcome_to_android11">‏ברוכים הבאים ל-TalkBack ב-Android 11</string>
   <string name="welcome_to_android11_text">‏נוספו ל-TalkBack תנועות חדשות, ועכשיו משתמשים בתכונה זו בצורה קלה ומהירה יותר.\n\nאפשר לנסות את התנועות החדשות במסך הזה. בכל שלב אפשר לעיין במידע הזה בהגדרות של TalkBack.</string>
   <string name="new_gesture_notification_title">‏התנועות החדשות ב-TalkBack</string>
   <string name="new_gesture_notification_content">‏כדי לברר איך להשתמש ב-TalkBack באופן מהיר יותר באמצעות מחוות חדשות, יש ללחוץ.</string>
   <string name="dump_node_tree_description">עץ צמתים הודפס ביומנים.</string>
   <string name="report_gesture_description">כאן מפורטות התנועות שבוצעו לאחרונה. אפשר לדווח על תנועות לא נכונות ולהוסיף את התנועות שצריכות היו להופיע.</string>
-  <string name="update_welcome_text_content">‏עכשיו אפשר להתחבר לצגי ברייל באמצעות מכשיר ממשק אנושי (HID) – שיטה להתחבר למכשירי Bluetooth. צריך לוודא שמותקנים הדרייברים העדכניים של הקושחה מהיצרן, ואז להפעיל Bluetooth בצג הברייל. עוברים להגדרות של TalkBack ואז לאפשרות \"צג ברייל\", ומפעילים את האפשרות \"שימוש בצג הברייל\". מחפשים את המכשיר הרצוי ברשימת המכשירים ומתחברים אליו.</string>
-  <string name="update_welcome_text_content_tts">‏עכשיו אפשר להתחבר לצגי ברייל באמצעות מכשיר ממשק אנושי (HID) – שיטה להתחבר למכשירי Bluetooth. צריך לוודא שמותקנים הדרייברים העדכניים של הקושחה מהיצרן, ואז להפעיל Bluetooth בצג הברייל. עוברים להגדרות של TalkBack ואז לאפשרות \"צג ברייל\", ומפעילים את האפשרות \"שימוש בצג הברייל\". מחפשים את המכשיר הרצוי ברשימת המכשירים ומתחברים אליו.</string>
-  <string name="update_welcome_text_content_with_link">‏אפשר לקרוא הוראות לשימוש בצג הברייל עם TalkBack.</string>
   <string name="update_welcome_talkback_16.1">‏בעדכון הזה של TalkBack הוספנו תמיכה בתכונה \"תיאור המסך\" בעוד שפות וביצענו שיפורים נוספים באיכות שהופכים את השימוש בתכונה לקל יותר.\n\nבמסכים הבאים יש מידע נוסף על השינויים האלו.\n\nרוצה לקרוא את זה אחר כך? אפשר לקרוא את המידע ב-\"הגדרות TalkBack\" &gt; \"תכונות חדשות ב-TalkBack\".</string>
   <string name="update_welcome_talkback_16.1_tts">‏בעדכון הזה של TalkBack הוספנו תמיכה בתכונה \"תיאור המסך\" בעוד שפות וביצענו שיפורים נוספים באיכות שהופכים את השימוש בתכונה לקל יותר.\n\nבמסכים הבאים יש מידע נוסף על השינויים האלו.\n\nרוצה לקרוא את זה אחר כך? אפשר לקרוא את המידע ב-\"הגדרות TalkBack\" ולאחר מכן \"תכונות חדשות ב-TalkBack\".</string>
-  <string name="describe_screen_and_qna_title">‏שפות חדשות לתכונות \"תיאור המסך\" ו\"יש לך שאלה ל-Gemini?\"</string>
-  <string name="describe_screen_and_qna_content">‏התכונות \"תיאור המסך\" ו\"יש לך שאלה ל-Gemini?\" זמינות עכשיו בשפות נוספות. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;אפשר למצוא מידע נוסף במרכז העזרה&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">קיצור דרך להכתבה</string>
   <string name="shortcut_for_dictation_content">‏בשימוש ב-Gboard, אפשר ללחוץ לחיצה כפולה בשתי אצבעות כדי להתחיל או להפסיק הכתבה.
 ‫&lt;br&gt;
 &lt;br&gt;חשוב לוודא שיש לך את הגרסה העדכנית של &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard מ-Google Play‏&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">‏כשמקלדת Gboard מוצגת במסך, אפשר ללחוץ לחיצה כפולה בשתי אצבעות כדי להתחיל הכתבה, ואז לחיצה כפולה בשתי אצבעות כדי להפסיק אותה.</string>
-  <string name="keyboard_title">מקלדת</string>
-  <string name="keyboard_content">‏ב-TalkBack יש מפת מקשים משופרת עם הרבה פקודות ומקשי קיצור חדשים. השיפור הזה כולל את \"מצב סמן\" לניווט יעיל יותר באינטרנט, ומפשט את האינטראקציה למשתמשי TalkBack שמסתמכים על מקלדות פיזיות. כדי להתחיל להשתמש במפת המקשים המשופרת צריך להיכנס להגדרות TalkBack &gt; הגדרות מתקדמות &gt; מקשי קיצור.</string>
-  <string name="keyboard_content_tts">‏ב-TalkBack יש מפת מקשים משופרת עם הרבה פקודות ומקשי קיצור חדשים. השיפור הזה כולל את \"מצב סמן\" לניווט יעיל יותר באינטרנט, ומפשט את האינטראקציה למשתמשי TalkBack שמסתמכים על מקלדות פיזיות. כדי להתחיל להשתמש במפת המקשים המשופרת, צריך להיכנס להגדרות TalkBack, אחר כך ל\"הגדרות מתקדמות\" ואז \"מקשי קיצור\".</string>
-  <string name="reduce_delay_title">קיצור ההשהיה</string>
-  <string name="reduce_delay_content">‏אפשר לקצר את ההשהיה בהודעות של TalkBack בזמן ההקלדה והשימוש ב\"גילוי באמצעות מגע\". כדי לראות את ההגדרות האלה, אפשר לעבור אל ההגדרות של TalkBack &gt; הגדרות מתקדמות &gt; קיצור ההשהיה.</string>
-  <string name="reduce_delay_content_tts">‏אפשר לקצר את ההשהיה בהודעות של TalkBack בזמן ההקלדה והשימוש ב\"גילוי באמצעות מגע\". כדי לראות את ההגדרות האלה, אפשר להיכנס להגדרות של TalkBack, אחר כך ל\"הגדרות מתקדמות\" ואז ל\"קיצור ההשהיה\".</string>
-  <string name="customize_braille_keyboard_improvements_title">התאמה אישית של תנועות במקלדת הברייל</string>
-  <string name="customize_braille_keyboard_improvements_content">‏עכשיו אפשר להתאים אישית את התנועות במקלדת הברייל הווירטואלית במסך. כדי לעשות את זה, צריך לעבור אל \"הגדרות TalkBack\" &gt; \"מקלדת ברייל\" &gt; \"תנועות\".</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">‏עכשיו אפשר להתאים אישית את התנועות במקלדת הברייל הווירטואלית במסך. כדי לעשות את זה, צריך לעבור אל \"הגדרות TalkBack\", אחר כך \"מקלדת ברייל\" ואז \"תנועות\".</string>
-  <string name="learn_more_about_braille_keyboard">למידע נוסף על מקלדת הברייל</string>
-  <string name="other_changes_title">שינויים אחרים</string>
-  <string name="other_changes_content">‏אם התכונה TalkBack מופעלת בטעות, מופיעה הודעה חדשה במסך שדרכה קל להשבית אותה במהירות. לא רוצה לראות את ההודעה הזאת? אפשר להשבית אותה דרך \"הגדרות TalkBack\" &gt; \"הצגת הוראות להשבתת TalkBack\".</string>
-  <string name="other_changes_content_tts">‏אם התכונה TalkBack מופעלת בטעות, מופיעה הודעה חדשה במסך שדרכה קל להשבית אותה במהירות. לא רוצה לראות את ההודעה הזאת? אפשר להשבית אותה דרך \"הגדרות TalkBack\" ואז \"הצגת הוראות להשבתת TalkBack\".</string>
-  <string name="keymap_changes_content">מפת המקשים הקלאסית הוחלפה במפת המקשים שהוגדרה כברירת מחדל, שכוללת מקשי קיצור נוספים.</string>
   <string name="announcing_text_formatting_title">תיאור שינויים בעיצוב הטקסט</string>
   <string name="announcing_text_formatting_header">‏TalkBack יכול לתאר את השינויים בעיצוב הטקסט, כמו טקסט מודגש או נטוי וטקסט בצבע מסוים. כדי להתחיל:</string>
   <string name="announcing_text_formatting_option1">‏צריך להתמקד בפריט עם העיצוב, לפתוח את תפריט TalkBack וללחוץ על \"תיאור של עיצוב הטקסט\" או</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">ביצוע שיחות, שליחת הודעות ועוד</string>
   <string name="practice_gestures_link_text">תרגול תנועות</string>
   <string name="practice_gestures_link_subtext">הזדמנות לנסות תנועות שונות ולהכיר את הפעולות שהן מבצעות</string>
-  <string name="help_and_feedback_link_subtext">‏מידע נוסף על TalkBack ושליחת משוב</string>
   <string name="choose_tutorial_title">‏איך לתקשר עם TalkBack</string>
   <string name="touch_tutorial_button">מדריך להפעלה באמצעות מגע</string>
   <string name="keyboard_tutorial_button">מדריך למקלדת</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">אפשר לנסות כאן למטה.</string>
   <string name="wear_training_typing_practice_button_content_description">הקלדה באמצעות המקלדת</string>
   <string name="wear_training_end_tutorial_title">‏הכול מוכן, אפשר להתחיל להשתמש ב-TalkBack</string>
-  <string name="talkback_updated_notification_title">‏התכונה TalkBack עודכנה</string>
-  <string name="talkback_updated_notification_content">אפשר ללחוץ כדי לקרוא מידע נוסף</string>
   <string name="wear_new_feature_page_title">‏ברוך בואך אל TalkBack המעודכן</string>
   <string name="wear_new_feature_page_content">בוצעו כמה תיקוני באגים ושינויים באופן שבו הפוקוס זז</string>
   <string name="wear_new_feature_page_button_content_description">סיום</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">כחול</string>
   <string name="title_pref_grey">אפור</string>
   <string name="survey_setting_title">שיתוף משוב</string>
-  <string name="survey_closed">הסקר סגור</string>
   <string name="title_summarize_view">תיאור המסך</string>
-  <string name="title_increase_touch_focus_latency">הארכת משך ההשהיה של המיקוד</string>
-  <string name="title_decrease_touch_focus_latency">הקטנת משך ההשהיה של המיקוד</string>
   <string name="detected_result">בוצע זיהוי: %1$s</string>
   <string name="title_image_caption">תיאור תמונה</string>
   <string name="image_caption_with_gemini_prefix">מה מופיע בתמונה? חשוב לא להוסיף תגי עיצוב לתשובה.</string>
@@ -1279,32 +1159,15 @@
   <string name="image_qna_question_prefix">משתמש: %1$s</string>
   <string name="image_qna_answer_prefix">מודל: %1$s</string>
   <string name="image_qna_with_history_postfix">… [מעבר שוב ושוב בין המשתמש למודל] …</string>
-  <string name="screen_overview_with_screenshot">‏המטרה היא לעזור לאדם שלא יכול לראות את הטלפון שלו להבין מה מוצג במסך הטלפון. צריך לתאר את צילום המסך הזה בכמה משפטים.
-
-הוראות
-התשובה צריכה להתחיל כך: \"במסך רואים\"
-התשובה צריכה להתחיל בתיאור התוכן הכי חשוב ובולט שמופיע במסך. הנה כמה דוגמאות לתוכן שיכול להיות הכי חשוב ובולט:
-* באפליקציית צ\'אט: השולח של ההודעה האחרונה והטקסט שלה
-* באפליקציית מדיה חברתית: הפוסט הראשון, כולל האדם שפרסם אותו, הטקסט ותיאור של התמונה
-* באפליקציית חדשות: כותרת הכתבה ותיאור של התמונה הראשית
-* באפליקציית קניות: תיאור של המוצר המוצג והמחיר שלו
-* באפליקציית יומן: האירוע הבא ומספר האירועים הנוספים שמוצגים אחריו
-* ברשימת הודעות: השם והתצוגה המקדימה של ההודעה הראשונה, ואז רק השמות של ההודעות הבאות ברשימה, וכמה הודעות לא נקראו
-* אחר כך, התגובה יכולה לכלול תיאור של המיקום במרחב והתפקיד של סרגלי הניווט ושל הכפתורים העיקריים.
-לא לציין את התוכן של שורת הסטטוס שבחלק העליון (למשל, שעה, מצב הרשת, סוללה).
-לא להוסיף סימון Markdown לתשובה.</string>
   <string name="title_gemini_opt_in_dialog">רוצה לקבל תיאורים מפורטים של תמונות?</string>
   <string name="title_on_device_gemini_opt_in_dialog">רוצה לקבל תיאורים של תמונות?</string>
   <string name="title_gemini_result_dialog">זוהתה: תמונה</string>
   <string name="title_gemini_result_bottom_sheet">תיאור התמונה</string>
   <string name="title_gemini_screen_overview_result_dialog">תיאור המסך</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">סיכום</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">פעולות</string>
   <string name="positive_button_gemini_opt_in_dialog">הפעלה</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">אני מסכים/ה</string>
   <string name="negative_button_gemini_opt_in_dialog">לא, תודה</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">מעבר להגדרות</string>
-  <string name="positive_button_gemini_download_dialog">הורדה והפעלה</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">טקסט, \"%1$s\".</string>
   <string name="detected_icon_label">סמל, \"%1$s\".</string>
@@ -1318,8 +1181,6 @@
   <string name="screen_overview_no_result">לא ניתן לסכם את התוכן במסך</string>
   <string name="image_caption_no_result">לא ניתן לתאר את התמונה</string>
   <string name="image_caption_with_hide_screen">תיאורי התמונות לא זמינים כשהמסך מוסתר. כדאי להציג את המסך ולנסות שוב.</string>
-  <string name="feedback_button_state_set">נבחר</string>
-  <string name="feedback_button_state_unset">לא נבחר</string>
   <string name="action_text_like_button">סימון כתשובה טובה</string>
   <string name="action_text_dislike_button">סימון כתשובה לא טובה</string>
   <string name="action_text_clear_like_button">מחיקת התשובה הטובה</string>
@@ -1348,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">מתבצעת הורדה של תיאורי התמונות והסמלים להשמעה אוטומטית</string>
   <string name="download_all_image_captioning_successful_hint">תיאורי התמונות והסמלים להשמעה אוטומטית הורדו</string>
   <string name="download_all_image_captioning_failed_hint">לא ניתן להוריד. אפשר לנסות שוב מאוחר יותר.</string>
-  <string name="download_complete_notification_title">ההורדה הושלמה</string>
-  <string name="download_complete_notification_content">‏עכשיו אפשר להשמיע תיאורים אוטומטיים של תמונות וסמלים באמצעות TalkBack</string>
-  <string name="download_complete_notification_action">הגדרות</string>
   <string name="download_storage_error_hint">‏אין יותר מקום פנוי. כדי להוריד, צריך להיכנס ל\'הגדרות\' &gt; \'אחסון\' ולפנות MB%1$d‏.</string>
   <string name="download_network_error_hint">לא ניתן להוריד. מומלץ לבדוק את החיבור ולנסות שוב.</string>
   <string name="switch_icon_detection_dialog_title">תיאורי סמלים אוטומטיים</string>
   <string name="switch_icon_detection_dialog_message">כשמתמקדים בסמל, מושמע תיאור שלו</string>
   <string name="switch_image_description_dialog_message">רוצה לשמוע תיאור אם התמקדת בתמונה? חלק מהאפליקציות לא תומכות באפשרות הזו.</string>
-  <string name="switch_text_recognition_dialog_title">תיאור אוטומטי של טקסט בתמונות</string>
   <string name="switch_text_recognition_dialog_message">רוצה לשמוע תיאור אם התמקדת בתמונה שמכילה טקסט?</string>
   <string name="switch_auto_image_caption_dialog_subtitle">כבר הורדת</string>
-  <string name="disable_auto_image_caption_dialog_subtext">‏עדיין אפשר לקבל תיאורים של תמונה נבחרת בתפריט של TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">אישור</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">מחיקת ההורדה</string>
   <string name="delete_icon_detection_dialog_title">למחוק את תיאורי הסמלים האוטומטיים?</string>
@@ -1375,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">‏שימוש ב-Gemini ב-TalkBack</string>
   <string name="gemini_disable_dialog_message">‏הבנת המסך עם Gemini</string>
   <string name="disable_gemini_dialog_subtext">‏הפעלה של הבנת המסך עם Gemini</string>
-  <string name="ai_services_update_dialog_title">צריך לעדכן את האפליקציה %1$s כדי לקבל תיאורי תמונות</string>
-  <string name="ai_services_update_dialog_message">‏כדי לשמוע תיאורי תמונות, צריך להוריד את הגרסה העדכנית של %1$s מ-Google Play‏.\n\nלאחר ההורדה, אפשר לחזור להגדרות TalkBack ולהפעיל שוב את תיאורי התמונות האוטומטיים.</string>
-  <string name="ai_services_update_dialog_button_text">‏מעבר אל Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">משהו השתבש. רוצה לנסות שוב?</string>
   <string name="gemini_block_message">אי אפשר לעבד את התמונה הזו</string>
   <string name="gemini_network_error">‏אין חיבור לאינטרנט. צריך לבדוק את חיבור ה-Wi-Fi או את החיבור לרשת הסלולרית ולנסות שוב.</string>
@@ -1395,13 +1246,8 @@
   <string name="image_qna_typing_button_text">‏הקלדת שאלה ל-Gemini</string>
   <string name="image_qna_send_button_text">לשאלה בצ\'אט</string>
   <string name="image_qna_speak_question_description">הקראת השאלה</string>
-  <string name="overviews_summary_intro">סיכום של מסך האפליקציה: %1$s</string>
   <string name="overviews_node_not_found">סליחה, לא הצלחתי למצוא את החלק הזה במסך.</string>
-  <string name="overviews_images_in_app">נמצאו תמונות בולטות</string>
   <string name="overviews_list_item">‫%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">פעולות באפליקציה</string>
-  <string name="overviews_actions_in_app_description">אלה הפעולות העיקריות שאפשר לבצע במסך הזה באפליקציה:</string>
-  <string name="overviews_parent_type">פעולות באפליקציה</string>
   <string name="text_replaced_feedback">הטקסט הוחלף</string>
   <string name="switch_gesture_set">החלפת קבוצת תנועות</string>
   <string name="switch_gesture_set_to">החלפה לקבוצת התנועות %1$d</string>
@@ -1452,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">סגירה</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">‏כדי לשמוע התראות כשהמסך כבוי, צריך להפעיל את ההגדרה \"הקראת התראות כשהמסך כבוי\" בהגדרות של דרגת המלל של TalkBack</string>
 </resources>

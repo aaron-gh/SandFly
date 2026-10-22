@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">When SandFly is on, it provides spoken feedback so that you can use your device without looking at the screen. SandFly is intended for situations or people who have difficulty seeing the screen.&lt;br&gt;&lt;br&gt;&lt;b&gt;How to use SandFly&lt;/b&gt;&lt;br&gt;• Swipe right or left to move between items&lt;br&gt;• Double-tap to activate an item&lt;br&gt;• Drag 2 fingers to scroll&lt;br&gt;&lt;b&gt;How to turn off SandFly&lt;/b&gt;&lt;br&gt;1. In Settings, tap &lt;b&gt;Use SandFly&lt;/b&gt;. There will be an outline. Double-tap it.&lt;br&gt;2. On the confirmation message, tap &lt;b&gt;Stop&lt;/b&gt;. There will be an outline. Double-tap it.</string>
   <string name="talkback_service_summary">Use a screen reader to hear items spoken aloud</string>
   <string name="talkback_preferences_title">SandFly settings</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Settings</string>
   <string name="tts_preferences_title">Text to speech</string>
   <string name="language_options">Languages</string>
   <string name="spoken_language">Spoken language</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Search cancelled.</string>
   <string name="notification_type_status_started">Started</string>
   <string name="notification_type_status_stopped">Stopped</string>
-  <string name="notification_type_status_connected">connected</string>
-  <string name="notification_battery_level_unknown">unknown</string>
   <string name="notification_battery_saver_mode">Battery Saver on</string>
   <string name="template_no_text_selected">No text selected</string>
   <string name="template_charging">Charging %1$s Battery level %2$s percent.</string>
   <string name="template_charging_lite">Charging %1$s</string>
-  <string name="template_battery_state">Power %1$s %2$s per cent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Ringer vibrate.</string>
   <string name="value_ringer_silent">Ringer silent.</string>
   <string name="value_screen_on">Screen on.</string>
   <string name="value_screen_off">Screen off.</string>
   <string name="value_device_unlocked">Device unlocked.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Speech volume</string>
-  <string name="title_pref_speech_rate">Speech rate</string>
-  <string name="summary_pref_speech_rate">Speed at which the text is spoken</string>
   <string name="title_pref_verbose_scroll_announcement">Always speak number of list items</string>
   <string name="summary_pref_verbose_scroll_announcement">Say which items are showing after every scroll</string>
   <string name="title_pref_cover_proximity_sensor">Cover proximity sensor to stop speech</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Speak time</string>
   <string name="pref_speak_time_summary">When you turn on the screen</string>
   <string name="summary_speak_container_element_positions">Say when you enter or leave lists, grids and other containers</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Focus delay added to reading control</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">You can now change the focus delay at any time with the reading controls.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Switch to lift to type?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">When typing focus delay is set below 0.3 seconds, double-tap to type will be very difficult to perform. Choose \'Switch\' to automatically switch to lift to type.\n\nTo use lift to type, hold your finger to select any key, then lift for typing.\n\nYou can customise this in SandFly settings.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Typing focus delay added to reading control</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">If double-tap is unreliable while you type, you can change to a longer typing focus delay at any time with the reading controls.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Typing focus delay is not functioning without lift to type.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Got it</string>
   <string name="reset_letency_reduction_settings_dialog_title">Reset delay settings?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">This will reset all delay settings to default</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Reset</string>
   <string name="gestures_announce_reset_latency_reduction_settings">The latency reduction settings have been reset.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Switch</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Don\'t switch</string>
   <string name="Reset_gesture_settings_dialog_title">Reset gestures?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Reset gestures of current set?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">This will reset all gestures to their default actions.\n\nYou will lose any changes that you have made.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Speak all progress updates</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Includes updates while downloading, following driving directions and more. When turned off, you\'ll still receive less frequent updates.</string>
   <string name="title_pref_explore_by_touch">Explore by Touch</string>
-  <string name="title_pref_category_visual">Visual</string>
   <string name="title_pref_category_controls">Controls</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">General</string>
-  <string name="title_pref_category_advanced">Advanced</string>
-  <string name="title_pref_category_others">Others</string>
-  <string name="title_pref_category_tutorial_and_help">Tutorial and help</string>
   <string name="title_pref_category_reduce_latency_summary">These settings can reduce the delay before SandFly announcements</string>
   <string name="reset_latency_settings_title">Reset all delay settings</string>
   <string name="title_pref_single_tap">Single-tap to activate</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Focus indicator</string>
   <string name="title_pref_category_manage_gestures">Gestures</string>
   <string name="title_pref_manage_labels">Custom labels</string>
-  <string name="title_pref_manage_customize_menus">Edit menus</string>
   <string name="title_pref_category_context_menu">Customise SandFly menu</string>
   <string name="title_pref_category_selector_menu">Reading controls</string>
   <string name="title_pref_category_navigation_menu">Edit navigation options</string>
-  <string name="pref_category_context_menu_summary">To use the SandFly menu, tap the screen with three fingers. You can also swipe up then right, or swipe down then right.</string>
-  <string name="pref_category_context_menu_summary_xr">To use the SandFly menu, turn your secondary palm in and pinch.</string>
-  <string name="pref_category_context_menu_summary_single_finger">To use the SandFly menu, swipe down then right.</string>
-  <string name="pref_category_selector_menu_summary">Turn 2 fingers like a dial, or swipe left or right with 3 fingers, to choose a reading control. Then swipe up or down to change it.</string>
-  <string name="pref_category_selector_menu_summary_xr">To cycle between reading controls, turn your secondary palm in, hold your pinch, move right or left and release.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Swipe up then down, or down then up, to choose a reading control. Then swipe up or down to change it.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Keyboard shortcuts</string>
   <string name="title_pref_export_custom_labels">Export custom labels</string>
-  <string name="title_pref_play_store">Open SandFly at the Play Store</string>
-  <string name="summary_pref_play_store">Current SandFly Version: %1$s</string>
   <string name="title_pref_help_and_feedback">Help and feedback</string>
-  <string name="title_pref_gup">Contact Google Disability Support</string>
-  <string name="subtitle_pref_gup">Get help using SandFly or report issues</string>
-  <string name="pref_item_licenses">Open-Source Licences</string>
-  <string name="title_pref_tutorial">Tutorial</string>
   <string name="title_pref_help">Help</string>
   <string name="title_pref_show_tos">Terms of Service</string>
   <string name="title_pref_show_privacy_policy">Privacy policy</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Fingerprint gestures</string>
   <string name="title_pref_category_tutorial">SandFly tutorial</string>
   <string name="title_pref_category_help_no_tutorial">Help</string>
-  <string name="title_pref_category_typing">Typing</string>
   <string name="title_pref_advanced_settings">Advanced settings</string>
   <string name="title_pref_show_exit_watermark">Show instructions for turning off SandFly</string>
   <string name="summary_pref_show_exit_watermark">A message shows when SandFly is turned on, to help you quickly turn it off</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Some of the modifier keys are different.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Learn more about keymaps</string>
   <string name="keycombo_go_to_settings">Go to Settings</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly is getting ready to remove the classic keymap. To keep using keyboard shortcuts, switch to the default keymap.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Learn more</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Got it</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Settings</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Learn more</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">You\'re now using the SandFly default keymap. There is also a new enhanced keymap that has many new commands. Learn more in the Help Centre or switch to the new keymap in Settings.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">New keymap available</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">The new SandFly enhanced keymap adds many new commands. Learn more in the Help Centre or switch to the new keymap in Settings.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Update your SandFly modifier key</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Not now</string>
   <string name="keycombo_warning_content_description">More information about your modifier key</string>
-  <string name="keycombo_warning_dialog_title">Update your modifier key</string>
-  <string name="keycombo_warning_dialog_message">For SandFly\'s keyboard shortcuts to work correctly, update your modifier key from action to alt.\n\nIf you keep using the action modifier key, some shortcuts will take different actions for this version of Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Keymap</string>
   <string name="keycombo_menu_select_keymap">Choose a keymap</string>
   <string name="keycombo_menu_reset_keymap">Reset the keymap</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Increase speech volume</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Decrease speech volume</string>
   <string name="keycombo_menu_global_refocus_current_node">Speak current focus</string>
-  <string name="keycombo_menu_category_granularity">Navigation</string>
   <string name="keycombo_menu_granularity_increase">Next navigation setting</string>
   <string name="keycombo_menu_granularity_decrease">Previous navigation setting</string>
   <string name="keycombo_menu_category_other">Other actions</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Are you sure that you would like to reset your shortcut keys for this keymap to their default values? Please note that this action cannot be undone.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Reset</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s in browse mode</string>
-  <string name="keycombo_assign_dialog_instruction">Press key combination to set new shortcut. It must contain at least ALT or Control key.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Press key combination with %1$s modifier key to set new shortcut.</string>
   <string name="keycombo_unassigned">Unassigned</string>
   <string name="save_button_in_keycombo_assign_dialog">Save</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Typing focus delay</string>
   <string name="message_pref_touch_explore_latency">Shorter typing focus delay means that SandFly announcements are made faster after touching the keyboard.\n\nSelect a delay</string>
   <string name="title_pref_touch_focus_timeout">Focus delay</string>
-  <string name="summary_pref_touch_focus_time">
-Controls how quickly SandFly speaks after focus moves. A shorter delay makes SandFly feel faster, but can make double- and triple-taps harder to perform.\n\n
-Delays below 0.3 seconds will change double-tap to activate to two-finger tap to activate.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Handle gestures in SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Turn SandFly off then on again to activate the setting.</string>
   <string name="title_pref_auto_image_captioning">Automatic descriptions</string>
@@ -382,28 +332,16 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="dialog_title_turn_on_image_description">Turn on image descriptions in Settings</string>
   <string name="dialog_message_turn_on_image_description">You can try again after turning on either automatic or detailed image descriptions</string>
   <string name="title_pref_detailed_image_description">Detailed image descriptions</string>
-  <string name="summary_pref_ai_description">Hear longer descriptions when you select \'%1$s\' from the SandFly menu</string>
   <string name="dialog_message_on_device_ai_description">You’ll hear a brief description when you focus on an image in supported apps.\n\nImages are processed on your device and never sent to Google. \n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to <a href="https://policies.google.com/terms/generative-ai">Google\'s Terms of Service</a>.</string>
   <string name="enable_gemini">Turn on</string>
   <string name="powered_by_gemini">Powered by generative AI</string>
-  <string name="detailed_image_description_ongoing_hint">Getting description</string>
-  <string name="detailed_image_description_result_prefix">Detected: Image. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Download needed for automatic image descriptions</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Images are processed on your device and never sent to Google.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to the %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Google\'s Terms of Service</string>
   <string name="message_aifeature_downloading">Downloading AI model. This may take a while. You\'ll be notified when it\'s complete.</string>
   <string name="message_aifeature_downloading_with_progress">Downloading still in progress. %1$d of %2$d MB downloaded.</string>
-  <string name="message_aifeature_download_complete">AI model downloaded. SandFly can now generate image descriptions.</string>
   <string name="summary_pref_auto_image_captioning">For icons, images and text in images</string>
-  <string name="summary_pref_auto_image_captioning_text_only">For text in images</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">For images and text in images</string>
-  <string name="summary_pref_auto_image_captioning_no_image">For icons and text in images</string>
   <string name="summary_pref_module_downloading">Downloading…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">On for all images</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">On for unlabelled images only</string>
   <string name="summary_pref_auto_image_captioning_disabled">Off</string>
-  <string name="summary_pref_auto_icon_detection_enabled">On for all icons</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">On for unlabelled icons only</string>
   <string name="summary_pref_auto_icon_detection_disabled">Off</string>
   <string name="title_pref_enable_auto_image_caption">All images</string>
   <string name="title_pref_enable_auto_image_caption_arg">All images\n%1$s</string>
@@ -413,7 +351,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="title_pref_enable_auto_icon_detection">All icons</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Unlabelled icons only</string>
   <string name="title_pref_disable_auto_icon_detection">Don\'t describe icons</string>
-  <string name="dialog_message_on_device_ai_model_download">You’ll hear a brief description when you focus on an image in supported apps.\n\nImages are processed on your device and never sent to Google.\n\nGenerative AI is experimental, so it will make mistakes. By continuing, you agree to the %1$s.</string>
   <string name="title_pref_enable_gemini_support">On</string>
   <string name="title_pref_disable_gemini_support">Off</string>
   <string name="summary_pref_gemini_support_enabled">Gemini is enabled</string>
@@ -457,7 +394,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="shortcut_print_node_tree">Print node tree</string>
   <string name="shortcut_print_performance_stats">Print performance statistics</string>
   <string name="shortcut_first_in_screen">Focus on first item on screen</string>
-  <string name="shortcut_summary">Summarise screen layout</string>
   <string name="shortcut_voice_commands">Start voice command</string>
   <string name="shortcut_last_in_screen">Focus on last item on screen</string>
   <string name="shortcut_enable_dimming">Hide screen</string>
@@ -561,7 +497,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="menu_category_web_navigation">Web navigation</string>
   <string name="menu_category_basic_navigation">Basic navigation</string>
   <string name="summary_custom_action">Shows when actions exist for the current item, including links, copy, paste, select and more</string>
-  <string name="summary_context_menu_links">Open links within a focused item</string>
   <string name="summary_viewpager_controls">Go to the next or previous page. Shows when you are reading content with multiple pages.</string>
   <string name="summary_labeling_controls">Shows when you select an unlabelled item</string>
   <string name="summary_granularity">Read by character, word, lines and more</string>
@@ -631,12 +566,9 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="summary_screen_overview">Summarise the screen with action buttons</string>
   <string name="summary_screen_overview_no_actions">Hear a summary of the content on the screen</string>
   <string name="summary_image_caption">Speak text and icons within a selected image</string>
-  <string name="summary_summarize_view">Speak summary of view</string>
   <string name="summary_typo_suggestions">Shows when the cursor is on a typo</string>
   <string name="summary_cache_keyboard_keys">SandFly preloads announcements to reduce delay when you type</string>
   <string name="summary_cache_keyboard_keys_disabled">Use Google Text-to-speech to use this feature</string>
-  <string name="value_direction_down">down</string>
-  <string name="value_direction_down_and_right">down then right</string>
   <string name="title_pref_shortcut_up">Swipe up</string>
   <string name="title_pref_shortcut_up_xr">Secondary palm in, pinch and swipe up</string>
   <string name="title_pref_shortcut_down">Swipe down</string>
@@ -704,10 +636,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="title_pref_shortcut_fingerprint_left">Swipe left on fingerprint sensor</string>
   <string name="title_pref_shortcut_fingerprint_right">Swipe right on fingerprint sensor</string>
   <string name="title_pref_version_code">Version code</string>
-  <string formatted="false" name="value_volume_100_percent">Match speech volume</string>
-  <string formatted="false" name="value_volume_75_percent">75% of speech volume</string>
-  <string formatted="false" name="value_volume_50_percent">50% of speech volume</string>
-  <string formatted="false" name="value_volume_25_percent">25% of speech volume</string>
   <string name="value_type_confirmation_double_tap">Hold finger to select any key, then double-tap</string>
   <string name="value_type_confirmation_lift_to_type">Hold finger to select letter key, then lift. Double-tap for other keys.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Hold finger to select any key, then lift</string>
@@ -720,12 +648,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="value_touch_explore_time_out_200ms">0.2 seconds</string>
   <string name="value_touch_explore_time_out_250ms">0.25 seconds</string>
   <string name="value_touch_explore_time_out_300ms">0.3 seconds (default)</string>
-  <string name="value_shake_to_read_disabled">Disabled</string>
-  <string name="value_shake_to_read_threshold_very_light">Very light</string>
-  <string name="value_shake_to_read_threshold_light">Light</string>
-  <string name="value_shake_to_read_threshold_medium">Medium</string>
-  <string name="value_shake_to_read_threshold_hard">Hard</string>
-  <string name="value_shake_to_read_threshold_very_hard">Very hard</string>
   <string name="title_pref_on_screen_keyboard">On-screen keyboard</string>
   <string name="title_pref_physical_keyboard">Physical keyboard</string>
   <string name="value_keyboard_echo_none">None</string>
@@ -738,8 +660,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="pref_time_feedback_format_entries_default">Use device time format</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-hour</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-hour</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly gestures changed</string>
-  <string name="notification_message_talkback_gestures_changed">Tap to review changes to accessibility gestures</string>
   <string name="always_show_warning_checkbox">Always show this warning</string>
   <string name="label_dialog_title_add">Add label</string>
   <string name="label_dialog_title_edit">Edit label</string>
@@ -760,16 +680,8 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="no_apps_to_export_labels">No applications found to export labels.</string>
   <string name="label_choose_app_to_import">Choose application to import labels:</string>
   <string name="label_choose_app_to_export">Choose application to export labels:</string>
-  <string name="talkback_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures. The actions associated with these gestures can be customised within SandFly settings. When Explore by touch is enabled, you can use the following gestures to perform certain actions.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Hide screen?</string>
   <string name="dialog_message_dim_screen">This turns off the display to improve privacy. Some content may still be shown, like messages for turning the display back on or menus for accessibility features like SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">This version of SandFly includes changes to the default accessibility gestures.\n\nThe up-then-down gesture will allow you to move to the first item on the screen, and the down-then-up gesture will move to the last item.\n\nThe reading granularity can now be changed by focusing an item, then selecting a granularity from the talkback context menu.\n\nYou can change the actions performed by these gestures in SandFly settings.</string>
-  <string name="default_action_changed_details">To pause and play media, you can now double-tap and hold with two fingers.\n\nOther gestures have also changed.</string>
-  <string name="talkback_built_in_gesture_open_url">Open on phone to find out more</string>
-  <string name="talkback_built_in_gesture_change_details_45">This version of SandFly includes changes to the default accessibility gestures.\n\nThe \'up\' gesture now moves to the previous navigation setting, and the \'down\' gesture now moves to the next navigation setting.</string>
-  <string name="side_tap_shortcuts_removed_details">These settings are removed from SandFly, due to reliability issues:\n• Tap on side of device gestures\n• Shake to start continuous reading</string>
-  <string name="button_accept_changed_gesture_mappings">Accept gestures</string>
-  <string name="button_customize_gesture_mappings">Customise gestures</string>
   <string name="button_disable_all_events">Disable all</string>
   <string name="button_enable_all_events">Enable all</string>
   <string name="dialog_title_disable_exploration">Disable Explore by touch?</string>
@@ -893,8 +805,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="screen_search_hint_type_search_tables">Search tables</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">The Notification Channel of SandFly</string>
-  <string name="pref_selector_summary">%1$s to select a setting. Then %2$s to adjust the setting.</string>
-  <string name="speech_rate_change">Speech rate %1$d%%</string>
   <string name="speech_pitch_maximum">Highest speech pitch</string>
   <string name="speech_pitch_minimum">Lowest speech pitch</string>
   <string name="reset_speech_rate_and_pitch">Reset speech rate and pitch</string>
@@ -904,10 +814,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="vibration_feedback_state">Vibration feedback %1$s</string>
   <string name="text_formatting_state">Speak text formatting %1$s</string>
   <string name="typing_echo_change">%1$s echo physical keyboard</string>
-  <string name="reading_control_toggle_prefix_xr">Secondary palm in, long press to toggle reading control mode.</string>
   <string name="gesture_1_or_2">%1$s or %2$s</string>
-  <string name="select_setting_hint">%1$s to select a different setting</string>
-  <string name="adjust_setting_hint">%1$s to adjust the setting</string>
   <string name="adjust_granularity_hint">%1$s to read by %2$s</string>
   <string name="adjust_typo_hint">%1$s for suggestions.</string>
   <string name="use_action_hint">Double-tap to perform the action</string>
@@ -947,7 +854,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="setting_selector_heading">Reading controls</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">To pause or play media in a video or music app, double-tap with two fingers. Try it now.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Other apps may use this gesture for things like answering or ending a phone call. This gesture may not be supported by all apps.</string>
-  <string name="onboarding_link_to_talkback_tutorials">View all SandFly tutorials</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media paused or playing. Usually, this will pause or play the current video or music. Swipe right to continue.</string>
   <string name="new_shortcut_gesture_stop_speech_text">To stop SandFly from talking temporarily, tap with two fingers.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFly speech stopped. Usually, this will stop the current phrase that SandFly is saying. Swipe right to continue.</string>
@@ -961,38 +867,18 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Selection mode on or off. Usually, this will start or stop text selection mode when you are inside an input field. Swipe right to continue.</string>
   <string name="new_shortcut_gesture_reading_menu_text">To use the reading controls, swipe left or right with three fingers. You can also swipe up or down with three fingers.</string>
   <string name="new_shortcut_gesture_note">Note: You have customised some of your gestures, so this information may not be accurate. To review your gestures, go to SandFly settings.</string>
-  <string name="welcome_to_android11">Welcome to SandFly on Android 11</string>
   <string name="welcome_to_android11_text">New gestures have been added to make SandFly faster and easier to use.\n\nOn this screen, you can try the new gestures. You can review this information in SandFly settings at any time.</string>
   <string name="new_gesture_notification_title">New gestures in SandFly</string>
   <string name="new_gesture_notification_content">Tap to learn how to use SandFly faster with new gestures.</string>
   <string name="dump_node_tree_description">Node tree has been printed to logs.</string>
   <string name="report_gesture_description">Here are gestures performed recently. Please report which gesture is wrong and what is expected.</string>
-  <string name="update_welcome_text_content">You can now connect to braille displays via HID, a way to connect to Bluetooth devices. Make sure that you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings &gt; Braille display and turn on \'Use braille display\'. Find your device in the devices list and connect to it.</string>
-  <string name="update_welcome_text_content_tts">You can now connect to braille displays via HID, a way to connect to Bluetooth devices. Make sure that you have the latest firmware drivers from your manufacturer, then turn on Bluetooth on your braille display. Go to SandFly settings then Braille display and turn on \'Use braille display\'. Find your device in the devices list and connect to it.</string>
-  <string name="update_welcome_text_content_with_link">Learn how to use your braille display with SandFly.</string>
   <string name="update_welcome_talkback_16.1">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings &gt; New features in SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">This SandFly update introduces support for Describe screen in more languages and other quality improvements that make SandFly easier to use.\n\nYou\'ll learn more about these changes in the next few screens.\n\nYou can review this information later in SandFly settings, then New features in SandFly.</string>
-  <string name="describe_screen_and_qna_title">New languages for Describe screen and Ask Gemini</string>
-  <string name="describe_screen_and_qna_content">Describe screen and Ask Gemini are now available in additional languages. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Learn more in the Help Centre&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Shortcut for voice typing</string>
   <string name="shortcut_for_dictation_content">While using Gboard, you can now use a two-finger double-tap to start or stop voice typing.
 &lt;br&gt;
 &lt;br&gt;Make sure that you have the latest version of &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard from Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">When Gboard is on screen, you can now use a two-finger double-tap to start voice dictation, then a two-finger double-tap to stop.</string>
-  <string name="keyboard_title">Keyboard</string>
-  <string name="keyboard_content">SandFly now has an \'Enhanced keymap\' for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \'browse mode\' for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \'Enhanced keymap\' in SandFly settings &gt; Advanced settings &gt; Keyboard shortcuts.</string>
-  <string name="keyboard_content_tts">SandFly now has an \'Enhanced keymap\' for its keyboard, with a variety of new commands and shortcuts. This enhancement, which includes \'browse mode\' for more efficient web navigation, streamlines navigation and interaction for SandFly users who rely on physical keyboards. You can switch to \'Enhanced keymap\' in SandFly settings, then Advanced settings, then Keyboard shortcuts.</string>
-  <string name="reduce_delay_title">Reduce delay</string>
-  <string name="reduce_delay_content">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings &gt; Advanced settings &gt; Reduce delay.</string>
-  <string name="reduce_delay_content_tts">You can now reduce SandFly announcement delays for touch exploration and typing. To view these settings, go to SandFly settings, then Advanced settings, then Reduce delay.</string>
-  <string name="customize_braille_keyboard_improvements_title">Customise braille keyboard gestures</string>
-  <string name="customize_braille_keyboard_improvements_content">It\'s now possible to customise gestures for the virtual on-screen braille keyboard. To customise, go to SandFly settings &gt; Braille keyboard &gt; Gestures.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">It\'s now possible to customise gestures for the virtual on-screen braille keyboard. To customise, go to SandFly settings, then Braille keyboard, then Gestures.</string>
-  <string name="learn_more_about_braille_keyboard">Learn more about braille keyboard</string>
-  <string name="other_changes_title">Other changes</string>
-  <string name="other_changes_content">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings &gt; Show instructions for turning off SandFly.</string>
-  <string name="other_changes_content_tts">An on-screen message now helps you quickly turn off SandFly if it\'s accidentally turned on. You can turn this off in SandFly settings, then Show instructions for turning off SandFly.</string>
-  <string name="keymap_changes_content">Classic keymap has been switched to default keymap, which includes more shortcuts.</string>
   <string name="announcing_text_formatting_title">Announcing text formatting</string>
   <string name="announcing_text_formatting_header">SandFly can now announce changes in text formatting, like bold, italics and text colour. To get started:</string>
   <string name="announcing_text_formatting_option1">Focus on the item with formatting, open the SandFly menu and select \'Describe text formatting\', or</string>
@@ -1083,7 +969,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="additional_tips_link_subtext">Learn how to make calls, send messages and more</string>
   <string name="practice_gestures_link_text">Practise gestures</string>
   <string name="practice_gestures_link_subtext">Try different gestures to learn what they do</string>
-  <string name="help_and_feedback_link_subtext">Learn more about SandFly and send feedback</string>
   <string name="choose_tutorial_title">Choose how you would like to interact with SandFly</string>
   <string name="touch_tutorial_button">Touch tutorial</string>
   <string name="keyboard_tutorial_button">Keyboard tutorial</string>
@@ -1229,8 +1114,6 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="wear_training_typing_text5">Try it below.</string>
   <string name="wear_training_typing_practice_button_content_description">Typing with keyboard</string>
   <string name="wear_training_end_tutorial_title">You\'re ready to start using SandFly</string>
-  <string name="talkback_updated_notification_title">SandFly has been updated</string>
-  <string name="talkback_updated_notification_content">Tap to find out more</string>
   <string name="wear_new_feature_page_title">Welcome to the updated SandFly</string>
   <string name="wear_new_feature_page_content">You\'ll notice some bug fixes and changes to how the focus moves</string>
   <string name="wear_new_feature_page_button_content_description">Finish</string>
@@ -1249,10 +1132,7 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="title_pref_blue">Blue</string>
   <string name="title_pref_grey">Grey</string>
   <string name="survey_setting_title">Share your feedback</string>
-  <string name="survey_closed">Survey closed</string>
   <string name="title_summarize_view">Describe screen</string>
-  <string name="title_increase_touch_focus_latency">Increase focus delay</string>
-  <string name="title_decrease_touch_focus_latency">Decrease focus delay</string>
   <string name="detected_result">Detected: %1$s</string>
   <string name="title_image_caption">Describe image</string>
   <string name="image_caption_with_gemini_prefix">Describe this image. Do not use any markup in the response.</string>
@@ -1279,33 +1159,15 @@ Delays below 0.3 seconds will change double-tap to activate to two-finger tap to
   <string name="image_qna_question_prefix">USER: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Continue alternating USER and MODEL turns] …</string>
-  <string name="screen_overview_with_screenshot">Your job is to help someone who cannot see their phone to understand what is on their phone screen. Describe this screenshot in a few sentences.
-
-Instructions
-Start your response with \'The screen shows\'
-The beginning of the response should describe the most important, salient content on the screen. Here are some examples of what the most important, salient content to describe might be
-* In a chat app: The sender and text of the most recent message
-* In a social media app: The first post, including who posted it, the text and a description of the image
-* In a news app: The article title and a description of the primary image
-* In a shopping app: A description of the product shown and the price
-* In a calendar app: The next event and the number of other events that are shown afterwards
-* In a list of messages: The name and preview for the first message and then only the names for the next few in the list, and how many messages are unread
-
-After that, the response can describe the spatial location and purpose of navigation bars and prominent buttons.
-Do not mention the contents of the status bar at the top (e.g. time, network status, battery).
-Do not use any markdown in your response.</string>
   <string name="title_gemini_opt_in_dialog">Get detailed image descriptions?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Get image descriptions?</string>
   <string name="title_gemini_result_dialog">Detected: image</string>
   <string name="title_gemini_result_bottom_sheet">Image description</string>
   <string name="title_gemini_screen_overview_result_dialog">Screen description</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Summary</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Actions</string>
   <string name="positive_button_gemini_opt_in_dialog">Turn on</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">I agree</string>
   <string name="negative_button_gemini_opt_in_dialog">No, thanks</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Go to Settings</string>
-  <string name="positive_button_gemini_download_dialog">Download and turn on</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Text, \'%1$s\'.</string>
   <string name="detected_icon_label">Icon, \'%1$s\'.</string>
@@ -1319,8 +1181,6 @@ Do not use any markdown in your response.</string>
   <string name="screen_overview_no_result">Cannot summarise screen</string>
   <string name="image_caption_no_result">Cannot describe image</string>
   <string name="image_caption_with_hide_screen">Image descriptions aren\'t available when the screen is hidden. Show your screen and try again.</string>
-  <string name="feedback_button_state_set">selected</string>
-  <string name="feedback_button_state_unset">not selected</string>
   <string name="action_text_like_button">Mark as a good response</string>
   <string name="action_text_dislike_button">Mark as a bad response</string>
   <string name="action_text_clear_like_button">Clear good response</string>
@@ -1349,18 +1209,13 @@ Do not use any markdown in your response.</string>
   <string name="downloading_all_image_captioning_hint">Downloading automatic image and icon descriptions</string>
   <string name="download_all_image_captioning_successful_hint">Automatic image and icon descriptions downloaded</string>
   <string name="download_all_image_captioning_failed_hint">Can\'t download. Please try again later.</string>
-  <string name="download_complete_notification_title">Download complete</string>
-  <string name="download_complete_notification_content">You\'ll now hear automatic image and icon descriptions with SandFly</string>
-  <string name="download_complete_notification_action">Settings</string>
   <string name="download_storage_error_hint">Storage is full. To download, free up %1$d MB in Settings &gt; Storage.</string>
   <string name="download_network_error_hint">Can\'t download. Check your connection and try again.</string>
   <string name="switch_icon_detection_dialog_title">Automatic icon descriptions</string>
   <string name="switch_icon_detection_dialog_message">Hear descriptions when you focus on an icon</string>
   <string name="switch_image_description_dialog_message">Hear descriptions when you focus on an image. Some apps may not support this.</string>
-  <string name="switch_text_recognition_dialog_title">Automatically describe text in images</string>
   <string name="switch_text_recognition_dialog_message">Hear descriptions when you focus on an image that contains text</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Downloaded</string>
-  <string name="disable_auto_image_caption_dialog_subtext">You can still get descriptions for a selected image from the SandFly menu</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Delete download</string>
   <string name="delete_icon_detection_dialog_title">Delete automatic icon descriptions?</string>
@@ -1376,11 +1231,6 @@ Do not use any markdown in your response.</string>
   <string name="gemini_enable_dialog_title">Use Gemini in SandFly</string>
   <string name="gemini_disable_dialog_message">Screen understanding with Gemini</string>
   <string name="disable_gemini_dialog_subtext">Turn on to enable screen understanding with Gemini</string>
-  <string name="ai_services_update_dialog_title">Update %1$s app to describe images</string>
-  <string name="ai_services_update_dialog_message">To hear image descriptions, get the latest version of %1$s from Google Play.\n\nOnce downloading is complete, come back to SandFly settings and turn on automatic image descriptions again.</string>
-  <string name="ai_services_update_dialog_button_text">Go to Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Something went wrong. Try again.</string>
   <string name="gemini_block_message">Can\'t process this image</string>
   <string name="gemini_network_error">No Internet connection. Check your Wi-Fi or mobile network and try again.</string>
@@ -1396,13 +1246,8 @@ Do not use any markdown in your response.</string>
   <string name="image_qna_typing_button_text">Type question for Gemini</string>
   <string name="image_qna_send_button_text">Ask</string>
   <string name="image_qna_speak_question_description">Speak question</string>
-  <string name="overviews_summary_intro">Summary of this app screen: %1$s</string>
   <string name="overviews_node_not_found">I\'m sorry, I can\'t find that part of the screen any more.</string>
-  <string name="overviews_images_in_app">Major images found</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Actions in app</string>
-  <string name="overviews_actions_in_app_description">Here are the major actions that you can take from this app screen:</string>
-  <string name="overviews_parent_type">Actions in app</string>
   <string name="text_replaced_feedback">Text replaced</string>
   <string name="switch_gesture_set">Switch gesture set</string>
   <string name="switch_gesture_set_to">Switch to gesture set %1$d</string>
@@ -1453,7 +1298,6 @@ Do not use any markdown in your response.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Close</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">To hear notifications when your screen is off, turn on \'Speak notifications when screen is off\' in SandFly verbosity settings</string>
     <string name="title_pref_tts_engine">Text-to-speech engine</string>
     <string name="title_pref_system_tts_settings">System text-to-speech settings</string>
     <string name="title_selector_switch_tts_engine">Speech engine</string>

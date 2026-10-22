@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Кога TalkBack е вклучен, ви обезбедува говорни повратни информации, така што може да го користите уредот без да гледате во екранот. TalkBack е наменет за ситуации или лица што имаат проблем да ја видат содржината на екранот.&lt;br&gt;&lt;br&gt;&lt;b&gt;Како се користи TalkBack&lt;/b&gt;&lt;br&gt;• Повлечете надесно или налево за да се движите меѓу ставките&lt;br&gt;• Допрете двапати за да активирате ставка&lt;br&gt;• Повлечете со 2 прста за да лизгате&lt;br&gt;&lt;b&gt;Како се исклучува TalkBack&lt;/b&gt;&lt;br&gt;1. Во „Поставки“ допрете &lt;b&gt;Користи: TalkBack&lt;/b&gt;. Ќе се прикаже контура. Допрете ја двапати.&lt;br&gt;2. Во пораката за потврда, допрете &lt;b&gt;Сопри&lt;/b&gt;. Ќе се прикаже контура. Допрете ја двапати.</string>
   <string name="talkback_service_summary">Користете читач на екран за да ги слушате ставките изговорени наглас</string>
   <string name="talkback_preferences_title">Поставки за TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Поставки</string>
   <string name="tts_preferences_title">Од текст во говор</string>
   <string name="language_options">Јазици</string>
   <string name="spoken_language">Говорен јазик</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Пребарувањето е откажано.</string>
   <string name="notification_type_status_started">Започнато</string>
   <string name="notification_type_status_stopped">Запрено</string>
-  <string name="notification_type_status_connected">поврзано</string>
-  <string name="notification_battery_level_unknown">непознато</string>
   <string name="notification_battery_saver_mode">штедачот на батерија е вклучен</string>
   <string name="template_no_text_selected">Нема избран текст</string>
   <string name="template_charging">Се полни %1$s Ниво на батерија %2$s проценти.</string>
   <string name="template_charging_lite">Се полни %1$s</string>
-  <string name="template_battery_state">Напојување: %1$s, батерија: %2$s насто, %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Ѕвонче на вибрации.</string>
   <string name="value_ringer_silent">Ѕвонче во тивок режим.</string>
   <string name="value_screen_on">Вклучен екран.</string>
   <string name="value_screen_off">Екранот е исклучен.</string>
   <string name="value_device_unlocked">Уредот е отклучен.</string>
-  <string name="title_pref_category_audio">Аудио</string>
   <string name="title_pref_speech_volume">Јачина на говор</string>
-  <string name="title_pref_speech_rate">Брзина на говор</string>
-  <string name="summary_pref_speech_rate">Брзина со која се изговара текстот</string>
   <string name="title_pref_verbose_scroll_announcement">Секогаш изговарај го бројот на ставки во список</string>
   <string name="summary_pref_verbose_scroll_announcement">Го изговара бројот за сите начини на лизгање</string>
   <string name="title_pref_cover_proximity_sensor">Покривање на сензорот за близина го запира говорот</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Изговарај го точното време</string>
   <string name="pref_speak_time_summary">Кога ќе го вклучите екранот</string>
   <string name="summary_speak_container_element_positions">Опфаќа информации при влегување и излегување од списоци, мрежи и други контејнери</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Додадено е доцнење на фокусот во контролата за читање</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Повлечете со 3 прста за да ја користите контролата за читање и да го промените доцнењето на фокусот во секое време</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Да се префрли на подигање за пишување?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Кога доцнењето на фокусот при пишување е поставено под 0,3 секунди, ќе биде многу тешко да се пишува со двоен допир. Изберете „Префрли“ за да се префрлите автоматски на подигање за пишување.\n\nЗа да користите подигање за пишување, држете го прстот за да изберете некое копче, па подигнете за пишување.\n\nМоже да го приспособите ова во поставките за TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Додадено е доцнење на фокусот при пишување во контролата за читање</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Ако имате проблеми со двојниот допир додека пишувате, повлечете со 3 прста за да ја користите контролата за читање и да промените на подолго доцнење на фокусот при пишување</string>
-  <string name="gestures_announce_typing_focus_wont_change">Доцнењето на фокусот при пишување не функционира без подигање за пишување.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Сфатив</string>
   <string name="reset_letency_reduction_settings_dialog_title">Да се ресетираат поставките за доцнење?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Ова ќе ги ресетира сите поставки за доцнење на стандардните поставки</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Ресетирај</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Поставките за намалување на латенцијата се ресетирани.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Префрли</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Не префрлај</string>
   <string name="Reset_gesture_settings_dialog_title">Да се ресетираат движењата?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Да се ресетираат движењата во актуелниот сет?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Ова ќе ги ресетира сите движења на нивните стандардни дејства.\n\nЌе ги изгубите сите промени што сте ги извршиле.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Изговарај ги известувањата за напредокот</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Вклучува известувања при преземање, следење насоки за возење и друго. Кога е исклучено, сепак ќе добивате известувања, но поретко.</string>
   <string name="title_pref_explore_by_touch">Истражувајте со допир</string>
-  <string name="title_pref_category_visual">Визуелно</string>
   <string name="title_pref_category_controls">Контроли</string>
-  <string name="title_pref_category_braille">Брајово писмо</string>
-  <string name="title_pref_category_general">Општо</string>
-  <string name="title_pref_category_advanced">Напредни</string>
-  <string name="title_pref_category_others">Други</string>
-  <string name="title_pref_category_tutorial_and_help">Упатство и помош</string>
   <string name="title_pref_category_reduce_latency_summary">Поставкиве може да го намалат доцнењето пред соопштенијата на TalkBack</string>
   <string name="reset_latency_settings_title">Ресетирај ги сите поставки за доцнење</string>
   <string name="title_pref_single_tap">Допрете еднаш за активирање</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Промена на индикаторот за фокусирање</string>
   <string name="title_pref_category_manage_gestures">Движења</string>
   <string name="title_pref_manage_labels">Приспособени етикети</string>
-  <string name="title_pref_manage_customize_menus">Изменете ги менијата</string>
   <string name="title_pref_category_context_menu">Приспособете го менито на TalkBack</string>
   <string name="title_pref_category_selector_menu">Приспособете ги контролите за читање</string>
   <string name="title_pref_category_navigation_menu">Изменете ги опциите за навигација</string>
-  <string name="pref_category_context_menu_summary">За да го користите менито за TalkBack, допрете го екранот со три прста. Може и да повлечете нагоре, па надесно или надолу, па надесно.</string>
-  <string name="pref_category_context_menu_summary_xr">За да го користите менито на TalkBack, свртете ја секундарната дланка навнатре и штипнете.</string>
-  <string name="pref_category_context_menu_summary_single_finger">За да го користите менито на TalkBack, повлечете надолу, па надесно.</string>
-  <string name="pref_category_selector_menu_summary">За да ги користите контролите за читање, повлечете налево или надесно со три прста. Може и да повлечете нагоре или надолу со три прста.</string>
-  <string name="pref_category_selector_menu_summary_xr">За да се движите низ контролите за читање, свртете ја секундарната дланка навнатре, штипнете и задржете, движете надесно или налево и отпуштете.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">За да ги користите контролите за читање, повлечете нагоре, па надолу.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Кратенки од тастатурата</string>
   <string name="title_pref_export_custom_labels">Извези ги приспособените етикети</string>
-  <string name="title_pref_play_store">Отвори ја TalkBack во Play Store</string>
-  <string name="summary_pref_play_store">Тековна верзија на TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Помош и повратни информации</string>
-  <string name="title_pref_gup">Контактирајте со службата за поддршка за лица со попреченост на Google</string>
-  <string name="subtitle_pref_gup">Добијте помош за користење на TalkBack или пријавете проблеми</string>
-  <string name="pref_item_licenses">Лиценци за софтвер со отворен код</string>
-  <string name="title_pref_tutorial">Упатство</string>
   <string name="title_pref_help">Помош</string>
   <string name="title_pref_show_tos">Услови за користење</string>
   <string name="title_pref_show_privacy_policy">Политика за приватност</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Движења за отпечатоци</string>
   <string name="title_pref_category_tutorial">Упатство за TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Помош</string>
-  <string name="title_pref_category_typing">Пишување</string>
   <string name="title_pref_advanced_settings">Напредни поставки</string>
   <string name="title_pref_show_exit_watermark">Прикажи инструкции за исклучување на TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Се прикажува порака кога е вклучена TalkBack, за да ви помогне брзо да ја исклучите</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Некои од копчињата модификатори се различни.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Дознајте повеќе за распоредите на копчињата</string>
   <string name="keycombo_go_to_settings">Оди во „Поставки“</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack се подготвува за отстранување на класичниот распоред на копчињата. За да продолжите да користите кратенки од тастатурата, префрлете се на стандардниот распоред на копчињата.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Дознајте повеќе</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Сфатив</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Поставки</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Дознајте повеќе</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Отсега го користите стандардниот распоред на копчињата на TalkBack. Има и нов подобрен распоред на копчињата со многу нови наредби. Дознајте повеќе во „Центарот за помош“ или префрлете се на новиот распоред на копчињата во „Поставки“.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Достапен е нов распоред на копчињата</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Новиот подобрен распоред на копчињата на TalkBack додава многу нови наредби. Дознајте повеќе во „Центарот за помош“ или префрлете се на новиот распоред на копчињата во „Поставки“.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Ажурирајте го копчето модификатор на TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Не сега</string>
   <string name="keycombo_warning_content_description">Повеќе информации за копчето модификатор</string>
-  <string name="keycombo_warning_dialog_title">Ажурирајте го копчето модификатор</string>
-  <string name="keycombo_warning_dialog_message">За правилно функционирање на кратенките од тастатурата на TalkBack, променете го копчето модификатор од Action во Alt.\n\nАко продолжите да го користите копчето модификатор Action, одредени кратенки ќе преземаат различни дејства за оваа верзија на Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Распоред на копчињата</string>
   <string name="keycombo_menu_select_keymap">Изберете распоред на копчиња</string>
   <string name="keycombo_menu_reset_keymap">Ресетирајте го распоредот на копчињата</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Зголемување јачина на звук на говор</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Намалување јачина на звук на говор</string>
   <string name="keycombo_menu_global_refocus_current_node">Изговори го тековниот фокус</string>
-  <string name="keycombo_menu_category_granularity">Навигација</string>
   <string name="keycombo_menu_granularity_increase">Следна поставка за навигација</string>
   <string name="keycombo_menu_granularity_decrease">Претходна поставка за навигација</string>
   <string name="keycombo_menu_category_other">Други дејства</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Дали сте сигурни дека сакате да ги ресетирате копчињата за кратенки за овој распоред на копчиња на нивните стандардни вредности? Имајте предвид дека ова дејство не може да се врати.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Ресетирај</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s во „Режим на прелистување“</string>
-  <string name="keycombo_assign_dialog_instruction">Притиснете комбинација на копчиња да поставите нова кратенка. Таа мора да го содржи барем копчето ALT или Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Притиснете ја комбинацијата од копчиња со копчето модификатор %1$s за да поставите нова кратенка.</string>
   <string name="keycombo_unassigned">Неназначено</string>
   <string name="save_button_in_keycombo_assign_dialog">Зачувај</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Доцнење на фокусот при пишување</string>
   <string name="message_pref_touch_explore_latency">Пократкото доцнење на фокусот при пишување значи дека соопштенијата на TalkBack се појавуваат побрзо по допирањето на тастатурата.\n\nИзберете доцнење</string>
   <string name="title_pref_touch_focus_timeout">Доцнење на фокусот</string>
-  <string name="summary_pref_touch_focus_time">
-Контролира колку брзо зборува TalkBack откако ќе се помести фокусот. Пократкото доцнење прави TalkBack да се чини побрза, но може да ги отежни двојните и тројните допири.\n\n
-Доцнењата под 0,3 секунди ќе го променат двојниот допир за активирање во допир со два прста за активирање.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Управувајте со движењата во TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Исклучете го, па вклучете го TalkBack повторно за да ја активирате поставката.</string>
   <string name="title_pref_auto_image_captioning">Автоматски описи</string>
@@ -382,28 +332,16 @@
   <string name="dialog_title_turn_on_image_description">Вклучете описи на сликите во „Поставки“</string>
   <string name="dialog_message_turn_on_image_description">Може да се обидете повторно откако ќе вклучите или автоматски или детални описи на сликите</string>
   <string name="title_pref_detailed_image_description">Детални описи на сликите</string>
-  <string name="summary_pref_ai_description">Слушајте подолги описи кога ќе изберете „%1$s“ од менито на TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Ќе слушнете краток опис кога ќе се фокусирате на слика во поддржаните апликации.\n\nСликите се обработуваат на вашиот уред и никогаш не се испраќаат до Google. \n\nГенеративната AI е експериментална, па ќе прави грешки. Ако продолжите, се согласувате со <a href="https://policies.google.com/terms/generative-ai">Условите за користење на Google</a>.</string>
   <string name="enable_gemini">Вклучи</string>
   <string name="powered_by_gemini">Овозможено од генеративната AI</string>
-  <string name="detailed_image_description_ongoing_hint">Се вчитува описот</string>
-  <string name="detailed_image_description_result_prefix">Откриено: слика. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Потребно е преземање за автоматски описи на сликите</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Сликите се обработуваат на вашиот уред и никогаш не се испраќаат до Google.\n\nГенеративната AI е експериментална, па ќе прави грешки. Ако продолжите, се согласувате со %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Условите за користење на Google</string>
   <string name="message_aifeature_downloading">Се презема AI-модел. Ова може да потрае. Ќе добиете известување кога ќе заврши.</string>
   <string name="message_aifeature_downloading_with_progress">Сѐ уште се презема. Преземено: %1$d од %2$d MB.</string>
-  <string name="message_aifeature_download_complete">AI-моделот е преземен. Отсега TalkBack може да генерира описи на сликите.</string>
   <string name="summary_pref_auto_image_captioning">За икони, слики и текст во сликите</string>
-  <string name="summary_pref_auto_image_captioning_text_only">За текст во сликите</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">За слики и текст во сликите</string>
-  <string name="summary_pref_auto_image_captioning_no_image">За икони и текст во сликите</string>
   <string name="summary_pref_module_downloading">Се презема…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Вклучено за сите слики</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Вклучено само за неетикетираните слики</string>
   <string name="summary_pref_auto_image_captioning_disabled">Исклучено</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Вклучено за сите икони</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Вклучено само за неетикетираните икони</string>
   <string name="summary_pref_auto_icon_detection_disabled">Исклучено</string>
   <string name="title_pref_enable_auto_image_caption">Сите слики</string>
   <string name="title_pref_enable_auto_image_caption_arg">Сите слики\n%1$s</string>
@@ -413,7 +351,6 @@
   <string name="title_pref_enable_auto_icon_detection">Сите икони</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Само неетикетираните икони</string>
   <string name="title_pref_disable_auto_icon_detection">Не опишувај ги иконите</string>
-  <string name="dialog_message_on_device_ai_model_download">Ќе слушнете краток опис кога ќе се фокусирате на слика во поддржаните апликации.\n\nСликите се обработуваат на вашиот уред и никогаш не се испраќаат до Google.\n\nГенеративната AI е експериментална, па ќе прави грешки. Ако продолжите, се согласувате со %1$s.</string>
   <string name="title_pref_enable_gemini_support">Вклучено</string>
   <string name="title_pref_disable_gemini_support">Исклучено</string>
   <string name="summary_pref_gemini_support_enabled">Gemini е овозможен</string>
@@ -457,7 +394,6 @@
   <string name="shortcut_print_node_tree">Отпечатете го дрвото со јазли</string>
   <string name="shortcut_print_performance_stats">Испечати ја статистиката за изведбата</string>
   <string name="shortcut_first_in_screen">Нагласи ја првата ставка на екранот</string>
-  <string name="shortcut_summary">Прикажи краток преглед од распоредот на екранот</string>
   <string name="shortcut_voice_commands">Започни ја гласовната наредба</string>
   <string name="shortcut_last_in_screen">Нагласи ја последната ставка на екранот</string>
   <string name="shortcut_enable_dimming">Скриј го екранот</string>
@@ -561,7 +497,6 @@
   <string name="menu_category_web_navigation">Навигација на веб</string>
   <string name="menu_category_basic_navigation">Основна навигација</string>
   <string name="summary_custom_action">Ги прикажува дејствата за тековната ставка, како што се линкови, копирање, залепување, избирање и друго</string>
-  <string name="summary_context_menu_links">Отворај линкови во рамките на нагласената ставка</string>
   <string name="summary_viewpager_controls">Оди на следната или претходната страница. Се прикажува кога читате содржини со повеќе страници.</string>
   <string name="summary_labeling_controls">Се прикажува кога ќе изберете ставка без етикета</string>
   <string name="summary_granularity">Читај по знак, збор, редови и друго</string>
@@ -631,12 +566,9 @@
   <string name="summary_screen_overview">Резимирај го екранот со копчињата за дејство</string>
   <string name="summary_screen_overview_no_actions">Слушнете резиме на содржините на екранот</string>
   <string name="summary_image_caption">Изговарај текст и икони во рамките на избрана слика</string>
-  <string name="summary_summarize_view">Изговарај го резимето на прегледот</string>
   <string name="summary_typo_suggestions">Се прикажува кога курсорот е на печатна грешка</string>
   <string name="summary_cache_keyboard_keys">TalkBack ги вчитува соопштенијата однапред за да го намали доцнењето кога пишувате</string>
   <string name="summary_cache_keyboard_keys_disabled">Користете ја „Од текст во говор на Google“ за да ја користите функцијава</string>
-  <string name="value_direction_down">надолу</string>
-  <string name="value_direction_down_and_right">надолу, па надесно</string>
   <string name="title_pref_shortcut_up">Повлекување нагоре</string>
   <string name="title_pref_shortcut_up_xr">Секундарна дланка свртена навнатре, штипнување и повлекување нагоре</string>
   <string name="title_pref_shortcut_down">Повлекување надолу</string>
@@ -704,10 +636,6 @@
   <string name="title_pref_shortcut_fingerprint_left">Повлек. лево на сензорот за отпечатоци</string>
   <string name="title_pref_shortcut_fingerprint_right">Повлек. десно на сензорот за отпечатоци</string>
   <string name="title_pref_version_code">Код на верзијата</string>
-  <string formatted="false" name="value_volume_100_percent">Иста јачина на звук на говорот</string>
-  <string formatted="false" name="value_volume_75_percent">75 % од јачината на звук на говорот</string>
-  <string formatted="false" name="value_volume_50_percent">50 % од јачината на звук на говорот</string>
-  <string formatted="false" name="value_volume_25_percent">25 % од јачината на звук на говорот</string>
   <string name="value_type_confirmation_double_tap">Задржете го прстот за да изберете некое копче, а потоа допрете двапати</string>
   <string name="value_type_confirmation_lift_to_type">Задржете го прстот за да изберете копче за буква, а потоа подигнете го. Допрете двапати за други копчиња.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Задржете го прстот за да изберете копче, а потоа подигнете го</string>
@@ -720,12 +648,6 @@
   <string name="value_touch_explore_time_out_200ms">0,2 секунди</string>
   <string name="value_touch_explore_time_out_250ms">0,25 секунди</string>
   <string name="value_touch_explore_time_out_300ms">0,3 секунди (стандардно)</string>
-  <string name="value_shake_to_read_disabled">Оневозможено</string>
-  <string name="value_shake_to_read_threshold_very_light">Многу слабо</string>
-  <string name="value_shake_to_read_threshold_light">Слабо</string>
-  <string name="value_shake_to_read_threshold_medium">Средно</string>
-  <string name="value_shake_to_read_threshold_hard">Силно</string>
-  <string name="value_shake_to_read_threshold_very_hard">Многу силно</string>
   <string name="title_pref_on_screen_keyboard">Тастатура на екран</string>
   <string name="title_pref_physical_keyboard">Физичка тастатура</string>
   <string name="value_keyboard_echo_none">Нема</string>
@@ -738,8 +660,6 @@
   <string name="pref_time_feedback_format_entries_default">Користи го форматот за време на уредот</string>
   <string name="pref_time_feedback_format_entries_12_hour">12-часовен</string>
   <string name="pref_time_feedback_format_entries_24_hour">24-часовен</string>
-  <string name="notification_title_talkback_gestures_changed">Променети се движењата на TalkBack</string>
-  <string name="notification_message_talkback_gestures_changed">Допрете за да се прегледаат промените на движењата за пристапност</string>
   <string name="always_show_warning_checkbox">Секогаш прикажувај ја оваа опомена</string>
   <string name="label_dialog_title_add">Додај етикета</string>
   <string name="label_dialog_title_edit">Уреди етикета</string>
@@ -760,16 +680,8 @@
   <string name="no_apps_to_export_labels">Не се најдени апликации за извоз на етикети.</string>
   <string name="label_choose_app_to_import">Изберете апликација за увоз на етикети:</string>
   <string name="label_choose_app_to_export">Изберете ја апликацијата за извоз на етикети:</string>
-  <string name="talkback_gesture_change_details">Оваа верзија на TalkBack опфаќа промени на стандардните движења за пристапност. Дејствата поврзани со овие движења може да се приспособат во поставките на TalkBack. Кога ќе се овозможи Истражувај со допир, може да ги употребите следните движења за вршење одредени дејства.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Да се скрие екранот?</string>
   <string name="dialog_message_dim_screen">Ова го исклучува екранот за да се зголеми приватноста. Некои содржини може и понатаму да се прикажуваат, како пораките за повторно вклучување на екранот или менијата за функции за пристапност како TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Оваа верзија на TalkBack опфаќа промени на стандардните движења за пристапност.\n\nДвижењето „Нагоре, па надолу“ ќе ве одведе на првата ставка на екранот, а движењето „Надолу, па нагоре“ ќе ве одведе на последната ставка.\n\nДеталноста при читањето сега може да се промени со избирање на ставката, па избирање на деталноста од контекстуалното мени на TalkBack.\n\nДејствата што се вршат со овие движења може да ги промените во поставките за TalkBack.</string>
-  <string name="default_action_changed_details">За да паузирате и пуштате аудиовизуелни содржини, сега може да допрете двапати и да задржите со два прста.\n\nПроменети се и другите движења.</string>
-  <string name="talkback_built_in_gesture_open_url">Отворете на телефонот за да дознаете повеќе</string>
-  <string name="talkback_built_in_gesture_change_details_45">Оваа верзија на TalkBack вклучува промени на стандардните движења за пристапност.\n\nДвижењето „нагоре“ сега оди на претходната, а движењето „надолу“ на следната поставка за навигација.</string>
-  <string name="side_tap_shortcuts_removed_details">Поставкиве се отстранети од TalkBack поради проблеми со сигурноста:\n• Движења со допир од страна на уредот\n• Протресете за да започне непрекинато читање</string>
-  <string name="button_accept_changed_gesture_mappings">Прифати движења</string>
-  <string name="button_customize_gesture_mappings">Приспособи движења</string>
   <string name="button_disable_all_events">Оневозможи ги сите</string>
   <string name="button_enable_all_events">Овозможи ги сите</string>
   <string name="dialog_title_disable_exploration">Оневозможете Истражувај со допир?</string>
@@ -893,8 +805,6 @@
   <string name="screen_search_hint_type_search_tables">Пребарајте табели</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Каналот за известувања на TalkBack</string>
-  <string name="pref_selector_summary">%1$s за да изберете поставка. Потоа %2$s за да ја приспособите поставката.</string>
-  <string name="speech_rate_change">Брзина на говорот %1$d %%</string>
   <string name="speech_pitch_maximum">Најголема висина на говорот</string>
   <string name="speech_pitch_minimum">Најмала висина на говорот</string>
   <string name="reset_speech_rate_and_pitch">Ресетирајте ги брзината и висината на говорот</string>
@@ -904,10 +814,7 @@
   <string name="vibration_feedback_state">Повратни информации со вибрации %1$s</string>
   <string name="text_formatting_state">Изговарање на форматирањето на текстот %1$s</string>
   <string name="typing_echo_change">Физичка тастатура со ехо на %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Секундарна дланка свртена навнатре, долго притискање за вклучување/исклучување „Контрола за читање“.</string>
   <string name="gesture_1_or_2">%1$s или %2$s</string>
-  <string name="select_setting_hint">%1$s за да изберете друга поставка</string>
-  <string name="adjust_setting_hint">%1$s за да ја приспособите поставката</string>
   <string name="adjust_granularity_hint">%1$s за читање според %2$s</string>
   <string name="adjust_typo_hint">%1$s за предлози.</string>
   <string name="use_action_hint">Допрете двапати за да се изврши дејството</string>
@@ -947,7 +854,6 @@
   <string name="setting_selector_heading">Контроли за читање</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">За да паузирате или да пуштате содржини во видео или музичка апликација, допрете двапати со 2 прста. Пробајте сега.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Други апликации може да го користат движењево за работи како одговарање или завршување телефонски повик. Некои апликации можеби не го поддржуваат движењево.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Прикажи ги сите упатства за TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Аудиовизуелни содржини се паузирани или пуштени. Обично, ова ќе го паузира или пушти тековното видео или музика. Повлечете надесно за продолжување.</string>
   <string name="new_shortcut_gesture_stop_speech_text">За да ја сопрете TalkBack да зборува привремено, допрете со 2 прста.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Зборувањето на TalkBack е сопрено. Обично, ова ќе ја сопре тековната фраза што TalkBack ја изговара. Повлечете надесно за продолжување.</string>
@@ -961,38 +867,18 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Режимот за избор е вклучен или исклучен. Обично, ова ќе го започне или заврши режимот за избор на текст кога ќе бидете во поле за внесување. Повлечете надесно за продолжување.</string>
   <string name="new_shortcut_gesture_reading_menu_text">За да ги користите контролите за читање, повлечете налево или надесно со три прста. Може и да повлечете нагоре или надолу со три прста.</string>
   <string name="new_shortcut_gesture_note">Забелешка: некои од вашите движења се приспособени, па овие информации може да не се точни. За да ги прегледате движењата, одете во поставките за TalkBack.</string>
-  <string name="welcome_to_android11">Добре дојдовте во TalkBack на Android 11</string>
   <string name="welcome_to_android11_text">Додадовме нови движења за да ја направиме TalkBack побрза и полесна за користење.\n\nНа екранов, може да ги испробате новите движења. Во секое време може да ги прегледате информацииве во поставките за TalkBack.</string>
   <string name="new_gesture_notification_title">Нови движења во TalkBack</string>
   <string name="new_gesture_notification_content">Допрете за да дознаете како побрзо да ја користите TalkBack со новите движења.</string>
   <string name="dump_node_tree_description">Дрвото со јазли е отпечатено во дневниците.</string>
   <string name="report_gesture_description">Ова се движења што биле извршени неодамна. Пријавете кое од нив е погрешно и што треба да извршува.</string>
-  <string name="update_welcome_text_content">Отсега може да се поврзувате со уреди за приказ на брајово писмо преку HID, начин на поврзување со уреди со Bluetooth. Проверете дали ги имате најновите драјвери за фирмверот од вашиот производител, па вклучете Bluetooth на вашиот уред за приказ на брајово писмо. Одете во „Поставки за TalkBack &gt; Уред за приказ на брајово писмо“ и вклучете „Користете уред за приказ на брајово писмо“. Најдете го вашиот уред во списокот со уреди и поврзете се со него.</string>
-  <string name="update_welcome_text_content_tts">Отсега може да се поврзувате со уреди за приказ на брајово писмо преку HID, начин на поврзување со уреди со Bluetooth. Проверете дали ги имате најновите драјвери за фирмверот од вашиот производител, па вклучете Bluetooth на вашиот уред за приказ на брајово писмо. Одете во поставките за TalkBack, потоа на уред за приказ на брајово писмо и вклучете „Користете уред за приказ на брајово писмо“. Најдете го вашиот уред во списокот со уреди и поврзете се со него.</string>
-  <string name="update_welcome_text_content_with_link">Дознајте како да го користите вашиот уред за приказ на брајово писмо со TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Ова ажурирање на TalkBack воведува поддршка за „Опиши го екранот“ на повеќе јазици и други подобрувања на квалитетот што го олеснуваат користењето.\n\nЌе дознаете повеќе за промениве на следните неколку екрани.\n\nМоже да ги прегледате информацииве подоцна во „Поставки за TalkBack &gt; Нови функции во TalkBack“.</string>
   <string name="update_welcome_talkback_16.1_tts">Ова ажурирање на TalkBack воведува поддршка за „Опиши го екранот“ на повеќе јазици и други подобрувања на квалитетот што го олеснуваат користењето.\n\nЌе дознаете повеќе за промениве на следните неколку екрани.\n\nМоже да ги прегледате информацииве подоцна во „Поставки за TalkBack“, па „Нови функции во TalkBack“.</string>
-  <string name="describe_screen_and_qna_title">Нови јазици за „Опиши го екранот“ и „Побарајте помош од Gemini“</string>
-  <string name="describe_screen_and_qna_content">„Опиши го екранот“ и „Побарајте помош од Gemini“ отсега се достапни на дополнителни јазици. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Дознајте повеќе во „Центарот за помош“&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Кратенка за гласовно пишување</string>
   <string name="shortcut_for_dictation_content">При користење на Gboard, отсега може да користите двоен допир со два прста за да го стартувате или да го сопрете гласовното пишување.
 &lt;br&gt;
 &lt;br&gt;Погрижете се да ја имате најновата верзија на &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard од Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Кога Gboard е на екранот, отсега може да користите двоен допир со два прста за да стартувате гласовно диктирање, па двоен допир со два прста за да го сопрете.</string>
-  <string name="keyboard_title">Тастатура</string>
-  <string name="keyboard_content">Отсега TalkBack има „Подобрен распоред на копчиња“ за својата тастатура, со различни нови наредби и кратенки. Ова подобрување, што опфаќа и „режим на прелистување“ за поефикасна навигација на интернет, ја поедноставува навигацијата и интеракцијата за корисниците на TalkBack коишто користат физички тастатури. Може да се префрлите на „Подобрен распоред на копчиња“ во „Поставки за TalkBack &gt; Напредни поставки &gt; Кратенки од тастатура“.</string>
-  <string name="keyboard_content_tts">Отсега TalkBack има „Подобрен распоред на копчиња“ за својата тастатура, со различни нови наредби и кратенки. Ова подобрување, што опфаќа и „режим на прелистување“ за поефикасна навигација на интернет, ја поедноставува навигацијата и интеракцијата за корисниците на TalkBack коишто користат физички тастатури. Може да се префрлите на „Подобрен распоред на копчиња“ во „Поставки за TalkBack“, потоа во „Напредни поставки“, па во „Кратенки од тастатура“.</string>
-  <string name="reduce_delay_title">Намалете го доцнењето</string>
-  <string name="reduce_delay_content">Отсега може да ги намалите доцнењата при објавувањето соопштенија на TalkBack за истражување на допир и пишување. За да ги видите поставкиве, одете во „Поставки за TalkBack &gt; Напредни поставки &gt; Намали го доцнењето“.</string>
-  <string name="reduce_delay_content_tts">Отсега може да ги намалите доцнењата при објавувањето соопштенија на TalkBack за истражување на допир и пишување. За да ги видите поставкиве, одете во „Поставки за TalkBack“, потоа во „Напредни поставки“, па во „Намали го доцнењето“.</string>
-  <string name="customize_braille_keyboard_improvements_title">Приспособете ги движењата на тастатурата со брајово писмо</string>
-  <string name="customize_braille_keyboard_improvements_content">Отсега може да ги приспособувате движењата за виртуелната тастатура со брајово писмо на екранот. За приспособување, одете во „Поставки за TalkBack &gt; Тастатура со брајово писмо &gt; Движења“.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Отсега може да ги приспособувате движењата за виртуелната тастатура со брајово писмо на екранот. За приспособување, одете во „Поставки за TalkBack“, потоа во „Тастатура со брајово писмо“, па во „Движења“.</string>
-  <string name="learn_more_about_braille_keyboard">Дознајте повеќе за тастатурата со брајово писмо</string>
-  <string name="other_changes_title">Други промени</string>
-  <string name="other_changes_content">Пораката на екранот отсега ви помага брзо да ја исклучите TalkBack ако се вклучила случајно. Ова може да го исклучите во „Поставки за TalkBack &gt; Прикажи инструкции за исклучување на TalkBack“.</string>
-  <string name="other_changes_content_tts">Пораката на екранот отсега ви помага брзо да ја исклучите TalkBack ако се вклучила случајно. Ова може да го исклучите во „Поставки за TalkBack“, па во „Прикажи инструкции за исклучување на TalkBack“.</string>
-  <string name="keymap_changes_content">Класичниот распоред на копчињата е сменет со стандардниот распоред на копчињата, што опфаќа повеќе кратенки.</string>
   <string name="announcing_text_formatting_title">Соопштување за форматирање текст</string>
   <string name="announcing_text_formatting_header">Отсега TalkBack може да соопштува промени во форматирањето на текстот, како болд, курзив и боја на текстот. За да започнете:</string>
   <string name="announcing_text_formatting_option1">Фокусирајте се на ставката со форматирање, отворете го менито на TalkBack и изберете „Опиши го форматирањето на текстот“ или</string>
@@ -1083,7 +969,6 @@
   <string name="additional_tips_link_subtext">Дознајте како да упатувате повици, да испраќате пораки и друго</string>
   <string name="practice_gestures_link_text">Вежбајте ги движењата</string>
   <string name="practice_gestures_link_subtext">Пробајте различни движења за да ја дознаете нивната функција</string>
-  <string name="help_and_feedback_link_subtext">Дознајте повеќе за TalkBack и испратете повратни информации</string>
   <string name="choose_tutorial_title">Изберете каква интеракција сакате да имате со TalkBack</string>
   <string name="touch_tutorial_button">Упатство за допир</string>
   <string name="keyboard_tutorial_button">Упатство за тастатура</string>
@@ -1229,8 +1114,6 @@
   <string name="wear_training_typing_text5">Испробајте подолу.</string>
   <string name="wear_training_typing_practice_button_content_description">Пишување со тастатура</string>
   <string name="wear_training_end_tutorial_title">Подготвени сте да почнете да користите TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack е ажуриран</string>
-  <string name="talkback_updated_notification_content">Допрете за да дознаете повеќе</string>
   <string name="wear_new_feature_page_title">Добре дојдовте во ажурираната TalkBack</string>
   <string name="wear_new_feature_page_content">Ќе забележите некои поправени грешки и промени во начинот на движење на фокусот</string>
   <string name="wear_new_feature_page_button_content_description">Заврши</string>
@@ -1249,10 +1132,7 @@
   <string name="title_pref_blue">Сина</string>
   <string name="title_pref_grey">Сива</string>
   <string name="survey_setting_title">Споделете повратни информации</string>
-  <string name="survey_closed">Анкетата е затворена</string>
   <string name="title_summarize_view">Опиши го екранот</string>
-  <string name="title_increase_touch_focus_latency">Зголемете го доцнењето на фокусот</string>
-  <string name="title_decrease_touch_focus_latency">Намалете го доцнењето на фокусот</string>
   <string name="detected_result">Откриено: %1$s</string>
   <string name="title_image_caption">Опиши ја сликата</string>
   <string name="image_caption_with_gemini_prefix">Опиши ја сликава. Не користи никакви ознаки во одговорот.</string>
@@ -1279,33 +1159,15 @@
   <string name="image_qna_question_prefix">КОРИСНИК: %1$s</string>
   <string name="image_qna_answer_prefix">МОДЕЛ: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Продолжи со наизменични префрлања меѓу КОРИСНИКОТ и МОДЕЛОТ] …</string>
-  <string name="screen_overview_with_screenshot">Вашата задача е да му помогнете на некој што не може да го види телефонот да разбере што има на екранот на телефонот. Опишете ја сликава од екранот во неколку реченици.
-
-Инструкции
-Започнете го вашиот одговор со „На екранот се прикажува“
-Почетокот на одговорот треба да ги опише најважните, најзначајни содржини на екранот. Еве неколку примери за тоа што би можеле да бидат најважните, најзначајни содржини што треба да се опишат
-* Во апликација за разговор: испраќачот и текстот на најновата порака
-* Во апликација за друштвени мрежи: првата објава, вклучувајќи го и тоа кој ја објавил, текстот и описот на сликата
-* Во апликација за вести: насловот на статијата и описот на примарната слика
-* Во апликација за купување: опис на прикажаниот производ и цената
-* Во апликација за календар: следниот настан и бројот на други настани што се прикажуваат потоа
-* Во список со пораки: името и прегледот за првата порака, а потоа само имињата за следните неколку во списокот и колку пораки се непрочитани
-
-Потоа одговорот може да ја опише просторната локација и намената на лентите за навигација и истакнатите копчиња.
-Не споменувајте ги содржините на статусната лента најгоре (на пр. време, статус на мрежата, батерија).
-Не користете Markdown во вашиот одговор.</string>
   <string name="title_gemini_opt_in_dialog">Сакате да добивате детални описи на сликите?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Сакате да добивате описи на сликите?</string>
   <string name="title_gemini_result_dialog">Откриено: слика</string>
   <string name="title_gemini_result_bottom_sheet">Опис на слика</string>
   <string name="title_gemini_screen_overview_result_dialog">Опис на екранот</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Резиме</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Дејства</string>
   <string name="positive_button_gemini_opt_in_dialog">Вклучи</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Се согласувам</string>
   <string name="negative_button_gemini_opt_in_dialog">Не, фала</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Одете во „Поставки“</string>
-  <string name="positive_button_gemini_download_dialog">Преземи и вклучи</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Текст, „%1$s“.</string>
   <string name="detected_icon_label">Икона, „%1$s“.</string>
@@ -1319,8 +1181,6 @@
   <string name="screen_overview_no_result">Не може да се резимира екранот</string>
   <string name="image_caption_no_result">Сликата не може да се опише</string>
   <string name="image_caption_with_hide_screen">Описите на сликите не се достапни кога екранот е скриен. Прикажете го екранот и обидете се повторно.</string>
-  <string name="feedback_button_state_set">избрано</string>
-  <string name="feedback_button_state_unset">не е избрано</string>
   <string name="action_text_like_button">Означи како добар одговор</string>
   <string name="action_text_dislike_button">Означи како лош одговор</string>
   <string name="action_text_clear_like_button">Избриши го добриот одговор</string>
@@ -1349,18 +1209,13 @@
   <string name="downloading_all_image_captioning_hint">Се преземаат автоматски описи на сликите и иконите</string>
   <string name="download_all_image_captioning_successful_hint">Автоматските описи на сликите и иконите се преземени</string>
   <string name="download_all_image_captioning_failed_hint">Не може да се преземе. Обидете се повторно подоцна.</string>
-  <string name="download_complete_notification_title">Преземањето заврши</string>
-  <string name="download_complete_notification_content">Отсега ќе слушате автоматски описи на сликите и иконите со TalkBack</string>
-  <string name="download_complete_notification_action">Поставки</string>
   <string name="download_storage_error_hint">Просторот е полн. За преземање, ослободете %1$d MB во „Поставки &gt; Простор“.</string>
   <string name="download_network_error_hint">Не може да се преземе. Проверете ја интернет-врската и обидете се повторно.</string>
   <string name="switch_icon_detection_dialog_title">Автоматски описи на иконите</string>
   <string name="switch_icon_detection_dialog_message">Слушајте описи кога ќе се фокусирате на икона</string>
   <string name="switch_image_description_dialog_message">Слушајте описи кога ќе се фокусирате на слика. Некои апликации може да не го поддржуваат ова.</string>
-  <string name="switch_text_recognition_dialog_title">Автоматски опис на текст на слики</string>
   <string name="switch_text_recognition_dialog_message">Слушајте описи кога ќе се фокусирате на икона што содржи текст</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Преземено</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Сè уште може да добивате описи за избраната слика од менито на TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Во ред</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Избриши го преземеното</string>
   <string name="delete_icon_detection_dialog_title">Да се избришат автоматските описи на иконите?</string>
@@ -1376,11 +1231,6 @@
   <string name="gemini_enable_dialog_title">Користете Gemini во TalkBack</string>
   <string name="gemini_disable_dialog_message">Разбирање на екранот со Gemini</string>
   <string name="disable_gemini_dialog_subtext">Вклучете за да овозможите разбирање на екранот со Gemini</string>
-  <string name="ai_services_update_dialog_title">Ажурирајте ја апликацијата %1$s за опишување слики</string>
-  <string name="ai_services_update_dialog_message">За да ги слушате описите на сликите, преземете ја најновата верзија на %1$s од Google Play.\n\nОткако ќе заврши преземањето, вратете се во поставките за TalkBack и вклучете ги автоматските описи на слики повторно.</string>
-  <string name="ai_services_update_dialog_button_text">Одете во Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Нешто тргна наопаку. Обидете се пак.</string>
   <string name="gemini_block_message">Не може да се обработи сликата</string>
   <string name="gemini_network_error">Нема интернет-врска. Проверете ја вашата Wi-Fi или мобилна мрежа и обидете се повторно.</string>
@@ -1396,13 +1246,8 @@
   <string name="image_qna_typing_button_text">Напишете прашање за Gemini</string>
   <string name="image_qna_send_button_text">Прашајте</string>
   <string name="image_qna_speak_question_description">Изговори прашање</string>
-  <string name="overviews_summary_intro">Резиме на екранот на апликацијава: %1$s</string>
   <string name="overviews_node_not_found">За жал, не можам веќе да го најдам тој дел од екранот.</string>
-  <string name="overviews_images_in_app">Најдени се големи слики</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Дејства во апликацијата</string>
-  <string name="overviews_actions_in_app_description">Еве ги главните активности што може да ги преземете од екранот на апликацијава:</string>
-  <string name="overviews_parent_type">Дејства во апликацијата</string>
   <string name="text_replaced_feedback">Текстот е заменет</string>
   <string name="switch_gesture_set">Смени сет со движења</string>
   <string name="switch_gesture_set_to">Префрли на сет со движења %1$d</string>
@@ -1453,5 +1298,4 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Затвори</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">За да слушате известувања кога екранот ви е исклучен, вклучете „Изговарај известувања при исклучен екран“ во поставките за речитост на TalkBack</string>
 </resources>

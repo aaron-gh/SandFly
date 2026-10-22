@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Ukiwasha kipengele cha TalkBack, hutoa maelezo yanayotamkwa ili uweze kutumia kifaa chako bila kuangalia skrini. Kipengele cha TalkBack kinakusudiwa kutumiwa katika hali au na watu walio na matatizo ya kuona maudhui kwenye skrini.&lt;br&gt;&lt;br&gt;&lt;b&gt;Jinsi ya kutumia kipengele cha TalkBack&lt;/b&gt;&lt;br&gt;• Telezesha kidole kulia au kushoto ili upitie vipengee&lt;br&gt;• Gusa mara mbili ili uwashe kipengee&lt;br&gt;• Buruta vidole viwili ili usogeze&lt;br&gt;&lt;br&gt;&lt;b&gt;Jinsi ya kuzima kipengele cha TalkBack&lt;/b&gt;&lt;br&gt;1. Kwenye Mipangilio, gusa &lt;b&gt;Tumia TalkBack&lt;/b&gt;. Utaona mstari. Gusa mara mbili.&lt;br&gt;2. Kwenye ujumbe wa kuthibitisha, gusa &lt;b&gt;Sitisha&lt;b&gt;. Utaona mstari. Gusa mara mbili.</string>
   <string name="talkback_service_summary">Tumia kisoma skrini ili usikie vipengee vikitamkwa kwa sauti</string>
   <string name="talkback_preferences_title">Mipangilio ya TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Mipangilio</string>
   <string name="tts_preferences_title">Kusoma maandishi kwa sauti</string>
   <string name="language_options">Lugha</string>
   <string name="spoken_language">Lugha inayozungumzwa</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Utafutaji umeghairiwa.</string>
   <string name="notification_type_status_started">Imeanza</string>
   <string name="notification_type_status_stopped">Imekomeshwa</string>
-  <string name="notification_type_status_connected">imeunganishwa</string>
-  <string name="notification_battery_level_unknown">haijulikani</string>
   <string name="notification_battery_saver_mode">Kiokoa betri kimewashwa</string>
   <string name="template_no_text_selected">Hakuna maandishi yaliyochaguliwa</string>
   <string name="template_charging">Inachaji %1$s Kiwango cha betri ni asilimia %2$s.</string>
   <string name="template_charging_lite">Inachaji %1$s</string>
-  <string name="template_battery_state">Nishati %1$s asilimia %2$s %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Mtetemo wa mlio.</string>
   <string name="value_ringer_silent">Mlio wa simu uko kimya.</string>
   <string name="value_screen_on">Skrini imewashwa.</string>
   <string name="value_screen_off">Skrini imezima.</string>
   <string name="value_device_unlocked">Kifaa kimefunguliwa.</string>
-  <string name="title_pref_category_audio">Sauti</string>
   <string name="title_pref_speech_volume">Sauti ya utamkaji</string>
-  <string name="title_pref_speech_rate">Kasi ya kutamka</string>
-  <string name="summary_pref_speech_rate">Kasi ya kutamkwa kwa maneno ya maandishi</string>
   <string name="title_pref_verbose_scroll_announcement">Tamka idadi ya vipengee vya orodha kila wakati</string>
   <string name="summary_pref_verbose_scroll_announcement">Tamka idadi ya mbinu zote za kusogeza</string>
   <string name="title_pref_cover_proximity_sensor">Funika kigundua vitu vya karibu ili ukomeshe matamshi</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Tamka wakati</string>
   <string name="pref_speak_time_summary">Unapowasha skrini</string>
   <string name="summary_speak_container_element_positions">Inajumuisha maelezo yanayopatikana wakati wa kufungua na kufunga orodha, gridi na metadata nyingine</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Tumeweka mipangilio ya muda wa kusubiri kabla ya kutekeleza kwenye kidhibiti cha kusoma</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Telezesha vidole 3 ili utumie kidhibiti cha kusoma na ubadilishe muda wa kusubiri kabla ya kutekeleza wakati wowote</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Ungependa kubadilisha utumie kipengele cha kuinua kidole ili kuandika?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Itakuwa vigumu sana kutekeleza kitendo cha kugusa mara mbili ili uandike wakati umeweka muda wa kusubiri kabla ya kuandika uwe chini ya sekunde 0.3. Chagua \"Badilisha\" ili ubadilishe kiotomatiki utumie kipengele cha kuinua kidole ili kuandika.\n\nIli utumie kipengele hiki, chagua kitufe chochote ukitumia kidole chako kisha ukiinue ili uandike.\n\nUnaweza kubadilisha hili upendavyo katika mipangilio ya TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Mipangilio ya muda wa kusubiri kabla ya kuandika imewekwa kwenye kidhibiti cha kusoma</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Iwapo unakumbana na matatizo ya kugusa mara mbili unapoandika, telezesha vidole 3 ili utumie kidhibiti cha kusoma na ubadilishe utumie muda mrefu wa kusubiri kabla ya kutekeleza</string>
-  <string name="gestures_announce_typing_focus_wont_change">Muda wa kusubiri kabla ya kuandika hautumiki bila kipengele cha Kuinua kidole ili kuandika.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Nimeelewa</string>
   <string name="reset_letency_reduction_settings_dialog_title">Ungependa kubadilisha mipangilio ya muda wa kusubiri?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Hatua hii itabadilisha mipangilio yote ya muda wa kusubiri iwe chaguomsingi</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Weka upya</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Umeweka upya mipangilio ya kupunguza muda wa kusubiri.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Badilisha</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Usibadilishe</string>
   <string name="Reset_gesture_settings_dialog_title">Ungependa kubadilisha ishara?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Ungependa kuweka upya ishara za kikundi cha sasa?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Hatua hii itarejesha ishara zote kwenye vitendo vyake chaguomsingi.\n\nUtapoteza mabadiliko yoyote ambayo umefanya.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Tamka taarifa zote za hatua</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Inajumuisha taarifa wakati wa kupakua, kufuata maelekezo ya safari kwa gari na zaidi. Ukizima, bado utapata taarifa mara chache.</string>
   <string name="title_pref_explore_by_touch">Chunguza kwa kugusa</string>
-  <string name="title_pref_category_visual">Video</string>
   <string name="title_pref_category_controls">Vidhibiti</string>
-  <string name="title_pref_category_braille">Nukta nundu</string>
-  <string name="title_pref_category_general">Jumla</string>
-  <string name="title_pref_category_advanced">Mipangilio ya kina</string>
-  <string name="title_pref_category_others">Vingine</string>
-  <string name="title_pref_category_tutorial_and_help">Mafunzo na usaidizi</string>
   <string name="title_pref_category_reduce_latency_summary">Mipangilio hii inaweza kupunguza muda wa kusubiri kabla ya matangazo ya TalkBack</string>
   <string name="reset_latency_settings_title">Badilisha mipangilio yote ya muda wa kusubiri</string>
   <string name="title_pref_single_tap">Gusa mara moja ili uanze kutumia</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Badilisha kiashirio cha uangaziaji</string>
   <string name="title_pref_category_manage_gestures">Ishara</string>
   <string name="title_pref_manage_labels">Lebo maalum</string>
-  <string name="title_pref_manage_customize_menus">Badilisha menyu</string>
   <string name="title_pref_category_context_menu">Badili menyu ya Talkback upendavyo</string>
   <string name="title_pref_category_selector_menu">Badilisha vidhibiti vya kusoma</string>
   <string name="title_pref_category_navigation_menu">Badilisha chaguo za kusogeza</string>
-  <string name="pref_category_context_menu_summary">Ili utumie menyu ya TalkBack, gusa skrini kwa vidole vitatu. Unaweza pia kutelezesha kidole juu kisha kulia au utelezeshe kidole chini kisha kulia.</string>
-  <string name="pref_category_context_menu_summary_xr">Ili utumie menyu ya TalkBack, geuza kiganja cha mkono usiotumia sana kuelekea ndani kisha ubane.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Ili utumie menyu ya TalkBack, telezesha kidole chini kisha kulia.</string>
-  <string name="pref_category_selector_menu_summary">Ili utumie vidhibiti vya kusoma, telezesha vidole vitatu kushoto au kulia. Unaweza pia kutelezesha vidole vitatu juu au chini.</string>
-  <string name="pref_category_selector_menu_summary_xr">Ili uzungushe kati ya vidhibiti vya kusoma, geuza kiganja cha mkono usiotumia sana kuelekea ndani, bana na ushikilie, sogeza kulia au kushoto, kisha uachilie.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Ili utumie vidhibiti vya kusoma, telezesha kidole juu kisha chini.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Mikato ya kibodi</string>
   <string name="title_pref_export_custom_labels">Hamisha lebo maalum</string>
-  <string name="title_pref_play_store">Fungua TalkBack katika Duka la Google Play</string>
-  <string name="summary_pref_play_store">Toleo la Sasa la TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Usaidizi na maoni</string>
-  <string name="title_pref_gup">Wasiliana na Timu ya Google ya Usaidizi kwa Watu wenye Ulemavu</string>
-  <string name="subtitle_pref_gup">Pata usaidizi kupitia TalkBack au uripoti matatizo</string>
-  <string name="pref_item_licenses">Leseni za Programu Huria</string>
-  <string name="title_pref_tutorial">Mafunzo</string>
   <string name="title_pref_help">Usaidizi</string>
   <string name="title_pref_show_tos">Sheria na Masharti</string>
   <string name="title_pref_show_privacy_policy">Sera ya faragha</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Ishara za alama ya kidole</string>
   <string name="title_pref_category_tutorial">Mafunzo ya TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Usaidizi</string>
-  <string name="title_pref_category_typing">Kuandika</string>
   <string name="title_pref_advanced_settings">Mipangilio ya kina</string>
   <string name="title_pref_show_exit_watermark">Onyesha maagizo ya kuzima TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Ujumbe huonyesha wakati umewasha TalkBack ili kukusaidia kuizima kwa haraka</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Baadhi ya vitufe vya kurekebisha ni tofauti.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Pata maelezo zaidi kuhusu ramani za vitufe</string>
   <string name="keycombo_go_to_settings">Nenda kwenye Mipangilio</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack inaondoa ramani ya kawaida ya vitufe. Ili uendelee kutumia mikato ya kibodi, tumia ramani chaguomsingi ya vitufe.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Pata maelezo zaidi</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Nimeelewa</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Mipangilio</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Pata maelezo zaidi</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Unatumia ramani chaguomsingi ya vitufe ya TalkBack. Kuna ramani mpya, bora ya vitufe yenye amri nyingi mpya. Fahamu zaidi katika kituo cha usaidizi au uchague ramani mpya ya vitufe katika Mipangilio.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Ramani mpya ya vitufe inapatikana</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Ramani mpya ya vitufe ya TalkBack iliyoboreshwa huweka amri nyingi mpya. Fahamu zaidi katika kituo cha usaidizi au uchague ramani mpya ya vitufe katika Mipangilio.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Sasisha kitufe chako cha kurekebisha cha TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Si sasa</string>
   <string name="keycombo_warning_content_description">Maelezo zaidi kuhusu kitufe cha kurekebisha</string>
-  <string name="keycombo_warning_dialog_title">Sasisha kitufe chako cha kurekebisha</string>
-  <string name="keycombo_warning_dialog_message">Ili mikato ya kibodi ya TalkBack ifanye kazi kwa usahihi, sasisha kitufe chako cha kurekebisha kutoka Vitendo kiwe Alt.\n\n\Ukiendelea kutumia kitufe cha kurekebisha cha Vitendo, baadhi ya njia za mkato zitatekeleza vitendo tofauti kwenye toleo hili la Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Ramani ya vitufe</string>
   <string name="keycombo_menu_select_keymap">Chagua ramani ya vitufe</string>
   <string name="keycombo_menu_reset_keymap">Weka upya ramani ya vitufe</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Ongeza sauti ya matamshi</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Punguza sauti ya matamshi</string>
   <string name="keycombo_menu_global_refocus_current_node">Tamka kipengee kinachoangaziwa kwa sasa</string>
-  <string name="keycombo_menu_category_granularity">Usogezaji</string>
   <string name="keycombo_menu_granularity_increase">Mipangilio ya maelekezo inayofuata</string>
   <string name="keycombo_menu_granularity_decrease">Mipangilio ya maelekezo iliyotangulia</string>
   <string name="keycombo_menu_category_other">Vitendo vingine</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Una uhakika kuwa ungependa kuweka upya vitufe vya njia ya mkato vya maana ya kundi hili la vitufe kuwa katika thamani chaguomsingi? Kumbuka kuwa kitendo hiki hakiwezi kutenduliwa.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Weka upya</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s katika hali ya kuvinjari</string>
-  <string name="keycombo_assign_dialog_instruction">Bonyeza mchanganyiko wa vitufe ili uweke njia mpya ya mkato. Ni lazima iwe na angalau kitufe cha ALT au Control.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Bonyeza mchanganyiko wa vitufe pamoja na kitufe cha kurekebisha cha %1$s ili uweke njia mpya ya mkato.</string>
   <string name="keycombo_unassigned">Haijapewa jukumu</string>
   <string name="save_button_in_keycombo_assign_dialog">Hifadhi</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Muda wa kusubiri kabla ya kuandika</string>
   <string name="message_pref_touch_explore_latency">Muda mfupi wa kusubiri kabla ya kutekeleza unamaanisha matangazo ya TalkBack yatatekelezwa haraka baada ya kugusa kibodi.\n\nChagua muda wa kusubiri</string>
   <string name="title_pref_touch_focus_timeout">Muda wa kusubiri kabla ya kutekeleza</string>
-  <string name="summary_pref_touch_focus_time">
-Hudhibiti muda ambao TalkBack huchukua kabla ya kuzungumza ukishaangazia kipengee. Muda mfupi zaidi wa kusubiri hufanya TalkBack ionekane kana kwamba inatekeleza haraka, lakini inaweza kufanya iwe vigumu kutekeleza vitendo vya kugusa mara mbili na mara tatu.\n\n
-Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mbili ili kufungua kiwe kugusa kwa vidole viwili ili kufungua.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Shughulikia ishara katika TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Zima kisha uwashe tena TalkBack ili kuweka mipangilio.</string>
   <string name="title_pref_auto_image_captioning">Maelezo ya kiotomatiki</string>
@@ -382,28 +332,16 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="dialog_title_turn_on_image_description">Washa maelezo ya picha katika Mipangilio</string>
   <string name="dialog_message_turn_on_image_description">Unaweza kujaribu tena baada ya kuwasha maelezo ya kina au yanayowekwa kiotomatiki ya picha</string>
   <string name="title_pref_detailed_image_description">Maelezo ya kina ya picha</string>
-  <string name="summary_pref_ai_description">Sikiliza maelezo marefu unapochagua \"%1$s\" kwenye menyu ya TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Utasikia maelezo mafupi ukiangazia picha kwenye programu zinazotumika.\n\nPicha huchakatwa katika kifaa chako na hazitumwi kamwe kwa Google. \n\nAI zalishi inafanyiwa majaribio, kwa hivyo itafanya makosa. Kwa kuendelea, unakubali <a href="https://policies.google.com/terms/generative-ai">Sheria na Masharti ya Google</a>.</string>
   <string name="enable_gemini">Washa</string>
   <string name="powered_by_gemini">Inaendeshwa na mfumo wa AI zalishi</string>
-  <string name="detailed_image_description_ongoing_hint">Inaleta ufafanuzi</string>
-  <string name="detailed_image_description_result_prefix">Imetambua: Picha. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Unahitaji kupakua sehemu ya maelezo ya picha yanayowekwa kiotomatiki</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Picha huchakatwa katika kifaa chako na hazitumwi kamwe kwa Google.\n\nAI zalishi inafanyiwa majaribio, kwa hivyo itafanya makosa. Kwa kuendelea, unakubali %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Sheria na Masharti ya Google</string>
   <string name="message_aifeature_downloading">Inapakua mfumo wa AI. Mchakato huu unaweza kuchukua muda. Utaarifiwa utakapokamilika.</string>
   <string name="message_aifeature_downloading_with_progress">Bado inaendelea kupakua. Imepakua %1$d kati ya MB %2$d.</string>
-  <string name="message_aifeature_download_complete">Imepakua mfumo wa AI. TalkBack sasa inaweza kutoa maelezo ya picha.</string>
   <string name="summary_pref_auto_image_captioning">Kwa aikoni, picha na maandishi yaliyo kwenye picha</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Kwa maandishi kwenye picha</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Kwa picha na maandishi kwenye picha</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Kwa aikoni na maandishi kwenye picha</string>
   <string name="summary_pref_module_downloading">Inapakua…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Kwa picha zote</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Kwa picha zisizo na lebo pekee</string>
   <string name="summary_pref_auto_image_captioning_disabled">Kimezimwa</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Kwa aikoni zote</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Kwa aikoni zisizo na lebo pekee</string>
   <string name="summary_pref_auto_icon_detection_disabled">Kimezimwa</string>
   <string name="title_pref_enable_auto_image_caption">Picha zote</string>
   <string name="title_pref_enable_auto_image_caption_arg">Picha zote\n%1$s</string>
@@ -413,7 +351,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="title_pref_enable_auto_icon_detection">Aikoni zote</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Aikoni zisizo na lebo pekee</string>
   <string name="title_pref_disable_auto_icon_detection">Usifafanue aikoni</string>
-  <string name="dialog_message_on_device_ai_model_download">Utasikia maelezo mafupi ukiangazia picha kwenye programu zinazotumika.\n\nPicha huchakatwa katika kifaa chako na hazitumwi kamwe kwa Google.\n\nAI zalishi inafanyiwa majaribio, kwa hivyo itafanya makosa. Kwa kuendelea, unakubali %1$s.</string>
   <string name="title_pref_enable_gemini_support">Washa</string>
   <string name="title_pref_disable_gemini_support">Zima</string>
   <string name="summary_pref_gemini_support_enabled">Gemini imewashwa</string>
@@ -457,7 +394,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="shortcut_print_node_tree">Chapisha utambuzi wa nguzo</string>
   <string name="shortcut_print_performance_stats">Chapisha takwimu za utendaji</string>
   <string name="shortcut_first_in_screen">Angazia kipengee cha kwanza kwenye skrini</string>
-  <string name="shortcut_summary">Toa muhtasari wa mpangilio wa skrini</string>
   <string name="shortcut_voice_commands">Anzisha amri ya sauti</string>
   <string name="shortcut_last_in_screen">Angazia kipengee cha mwisho kwenye skrini</string>
   <string name="shortcut_enable_dimming">Ficha skrini</string>
@@ -561,7 +497,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="menu_category_web_navigation">Usogezaji kwenye wavuti</string>
   <string name="menu_category_basic_navigation">Usogezaji wa msingi</string>
   <string name="summary_custom_action">Huonyesha wakati vitendo vipo kwenye kipengee cha sasa, ikiwa ni pamoja na viungo, kunakili, kubandika, kuchagua na zaidi</string>
-  <string name="summary_context_menu_links">Fungua viungo katika kipengee kinachoangaziwa</string>
   <string name="summary_viewpager_controls">Nenda kwenye ukurasa unaofuata au uliotangulia. Huonekana unaposoma maudhui yenye kurasa nyingi.</string>
   <string name="summary_labeling_controls">Huonekana unapochagua kipengee kisicho na lebo</string>
   <string name="summary_granularity">Soma kulingana na herufi, neno, mistari na zaidi</string>
@@ -631,12 +566,9 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="summary_screen_overview">Andaa muhtasari wa skrini ukitumia vitufe vya kutenda</string>
   <string name="summary_screen_overview_no_actions">Sikia muhtasari wa maudhui yaliyo kwenye skrini</string>
   <string name="summary_image_caption">Tamka maandishi na aikoni zilizo ndani ya picha iliyochaguliwa</string>
-  <string name="summary_summarize_view">Tamka muhtasari wa mwonekano</string>
   <string name="summary_typo_suggestions">Huonyesha wakati kiteuzi kipo kwenye kosa la tahajia</string>
   <string name="summary_cache_keyboard_keys">TalkBack hupakia mapema matangazo ili kupunguza ucheleweshaji unapoandika</string>
   <string name="summary_cache_keyboard_keys_disabled">Tumia Huduma ya Google ya Kusoma Maandishi kwa Sauti ili utumie kipengele hiki</string>
-  <string name="value_direction_down">chini</string>
-  <string name="value_direction_down_and_right">chini kisha kulia</string>
   <string name="title_pref_shortcut_up">Telezesha kidole juu</string>
   <string name="title_pref_shortcut_up_xr">Geuza kiganja cha mkono usiotumia sana kuelekea ndani, bana na utelezeshe juu</string>
   <string name="title_pref_shortcut_down">Telezesha kidole chini</string>
@@ -704,10 +636,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="title_pref_shortcut_fingerprint_left">Telezesha kushoto kwenye kitambua kidole</string>
   <string name="title_pref_shortcut_fingerprint_right">Telezesha kulia kwenye kitambua kidole</string>
   <string name="title_pref_version_code">Msimbo wa Toleo</string>
-  <string formatted="false" name="value_volume_100_percent">Linganisha sauti ya kutamka</string>
-  <string formatted="false" name="value_volume_75_percent">75% ya sauti ya kutamka</string>
-  <string formatted="false" name="value_volume_50_percent">Asilimia 50 ya sauti ya kutamka</string>
-  <string formatted="false" name="value_volume_25_percent">25% ya sauti ya kutamka</string>
   <string name="value_type_confirmation_double_tap">Shikilia ili uchague kitufe chochote, kisha uguse mara mbili</string>
   <string name="value_type_confirmation_lift_to_type">Shikilia kwa kidole ili uchague kitufe cha herufi, kisha uinue. Gusa mara mbili ili upate vitufe vingine.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Shikilia kwa kidole ili uchague kitufe chochote, kisha uinue</string>
@@ -720,12 +648,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="value_touch_explore_time_out_200ms">Sekunde 0.2</string>
   <string name="value_touch_explore_time_out_250ms">Sekunde 0.25</string>
   <string name="value_touch_explore_time_out_300ms">Sekunde 0.3 (chaguomsingi)</string>
-  <string name="value_shake_to_read_disabled">Kimezimwa</string>
-  <string name="value_shake_to_read_threshold_very_light">Nguvu kidogo sana</string>
-  <string name="value_shake_to_read_threshold_light">Mtikiso Mdogo</string>
-  <string name="value_shake_to_read_threshold_medium">Mtikiso Wastani</string>
-  <string name="value_shake_to_read_threshold_hard">Kwa Nguvu</string>
-  <string name="value_shake_to_read_threshold_very_hard">Kwa nguvu sana</string>
   <string name="title_pref_on_screen_keyboard">Kibodi ya skrini</string>
   <string name="title_pref_physical_keyboard">Kibodi halisi</string>
   <string name="value_keyboard_echo_none">Hamna</string>
@@ -738,8 +660,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="pref_time_feedback_format_entries_default">Tumia mfumo wa saa wa kifaa</string>
   <string name="pref_time_feedback_format_entries_12_hour">Saa 12</string>
   <string name="pref_time_feedback_format_entries_24_hour">Saa 24</string>
-  <string name="notification_title_talkback_gestures_changed">Ishara za TalkBack zimebadilishwa</string>
-  <string name="notification_message_talkback_gestures_changed">Gusa ili ukague mabadiliko katika ishara za ufikiaji</string>
   <string name="always_show_warning_checkbox">Onyesha onyo hili kila wakati</string>
   <string name="label_dialog_title_add">Ongeza lebo</string>
   <string name="label_dialog_title_edit">Badilisha lebo</string>
@@ -760,16 +680,8 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="no_apps_to_export_labels">Haikupata programu zozote za kutuma lebo.</string>
   <string name="label_choose_app_to_import">Chagua programu ya kupakia lebo.</string>
   <string name="label_choose_app_to_export">Chagua programu itakayohamisha lebo:</string>
-  <string name="talkback_gesture_change_details">Toleo hili la TalkBack linajumuisha mabadiliko katika ishara chaguomsingi za ufikiaji. Vitendo vinavyohusiana na ishara hizi vinaweza kugeuzwa kukufaa katika mipangilio ya TalkBack. Wakati Kuchunguza kwa mguso kumewezeshwa, unaweza kutumia ishara zifuatazo kufanya vitendo vingine.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Ungependa kuficha skrini?</string>
   <string name="dialog_message_dim_screen">Hatua hii huzima skrini ili kuboresha faragha. Baadhi ya maudhui bado yanaweza kuonyeshwa, kama vile ujumbe wa kuwasha skrini tena au menyu za vipengele vya ufikivu kama vile TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Toleo hili la TalkBack linajumuisha mabadiliko ya ishara chaguomsingi za ufikivu.\n\nIshara ya juu kisha chini itakuruhusu kusogeza kipengee cha kwanza kwenye skrini, na ishara ya chini kisha juu itasogeza hadi kwenye kipengee cha mwisho.\n\nUmadhubuti wa kusoma sasa unaweza kubadilishwa kwa kulenga kipengee, kisha kuchagua umadhubuti kutoka kwenye menyu ya talkback.\n\nUnaweza kubadilisha hatua zinazotekelezwa kwa ishara hizi katika Mipangilio ya TalkBack.</string>
-  <string name="default_action_changed_details">Ili kusitisha na kucheza maudhui, sasa unaweza kugusa mara mbili na ushikilie kwa vidole viwili.\n\nIshara nyingine pia zimebadilika.</string>
-  <string name="talkback_built_in_gesture_open_url">Fungua mipangilio hii kwenye simu ili upate maelezo zaidi</string>
-  <string name="talkback_built_in_gesture_change_details_45">Toleo hili la TalkBack linajumuisha mabadiliko katika ishara chaguomsingi za zana za walio na matatizo ya kuona au kusikia. \n\nIshara ya juu sasa imehamishiwa kwenye mipangilio ya awali ya usogezaji na ishara ya chini sasa imehamishiwa kwenye mipangilio inayofuta ya usogezaji.</string>
-  <string name="side_tap_shortcuts_removed_details">Mipangilio hii imeondolewa kwenye TalkBack kwa sababu ya masuala ya uaminifu:\n• Gusa upande wa ishara za kifaa\n• Tikisa ili uanze kusoma mfululizo</string>
-  <string name="button_accept_changed_gesture_mappings">Kubali ishara</string>
-  <string name="button_customize_gesture_mappings">Badilisha ishara ziwe utakavyo</string>
   <string name="button_disable_all_events">Zima zote</string>
   <string name="button_enable_all_events">Washa zote</string>
   <string name="dialog_title_disable_exploration">Ungependa kuzima kipengee cha Chunguza kwa Kugusa?</string>
@@ -893,8 +805,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="screen_search_hint_type_search_tables">Tafuta kwenye majedwali</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Kituo cha Arifa cha TalkBack</string>
-  <string name="pref_selector_summary">%1$s ili uchague mipangilio. Kisha %2$s ili ubadilishe mipangilio.</string>
-  <string name="speech_rate_change">Kasi ya kutamka ya %1$d%%</string>
   <string name="speech_pitch_maximum">Kiimbo cha matamshi cha juu zaidi</string>
   <string name="speech_pitch_minimum">Kiimbo cha matamshi cha chini zaidi</string>
   <string name="reset_speech_rate_and_pitch">Weka upya kiwango na kasi ya kutamka</string>
@@ -904,10 +814,7 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="vibration_feedback_state">Kipengele cha majibu kwa mtetemo: %1$s</string>
   <string name="text_formatting_state">Muundo wa kutamka maandishi %1$s</string>
   <string name="typing_echo_change">Kibodi halisi inayotoa sauti unapoandika %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Geuza kiganja cha mkono usiotumia sana kuelekea ndani, bonyeza kwa muda mrefu ili ugeuze hali ya kidhibiti cha kusoma.</string>
   <string name="gesture_1_or_2">%1$s au %2$s</string>
-  <string name="select_setting_hint">%1$s ili uchague mipangilio tofauti</string>
-  <string name="adjust_setting_hint">%1$s ili ubadilishe mipangilio</string>
   <string name="adjust_granularity_hint">%1$s ili usome kulingana na %2$s</string>
   <string name="adjust_typo_hint">%1$s ili uone mapendekezo.</string>
   <string name="use_action_hint">Gusa mara mbili ili utekeleze kitendo</string>
@@ -947,7 +854,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="setting_selector_heading">Vidhibiti vya kusoma</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ili usimamishe au ucheze maudhui katika programu ya video au muziki, gusa mara mbili ukitumia vidole viwili. Ijaribu sasa.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Programu zingine zinaweza kutumia ishara hii katika matukio kama vile kujibu au kukata simu. Huenda ishara hii isitumiwe na programu zote.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Angalia mafunzo yote ya TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Maudhui yamesimamishwa au yanacheza. Kwa kawaida, hatua hii itasimamisha au kucheza video au muziki unaocheza sasa. Telezesha kidole kulia ili uendelee.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Ili usimamishe TalkBack isizungumze kwa muda, gusa kwa vidole viwili.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Matamshi ya TalkBack yamesimamishwa. Kwa kawaida hatua hii itasimamisha maneno ya sasa yanayotamkwa na TalkBack. Telezesha kidole kulia ili uendelee.</string>
@@ -961,38 +867,18 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Hali ya kuchagua imewashwa au imezimwa. Kwa kawaida, hatua hii itaanzisha au kusimamisha hali ya kuchagua maandishi unapokuwa katika sehemu ya kuweka maandishi. Telezesha kidole kulia ili uendelee.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Ili utumie vidhibiti vya kusoma, telezesha vidole vitatu kushoto au kulia. Unaweza pia kutelezesha vidole vitatu juu au chini.</string>
   <string name="new_shortcut_gesture_note">Kumbuka: Umeweka mapendeleo kwenye baadhi ya ishara zako, kwa hivyo huenda maelezo haya yasiwe sahihi. Ili ukague ishara zako, nenda kwenye mipangilio ya TalkBack.</string>
-  <string name="welcome_to_android11">Karibu kwenye TalkBack katika toleo la Android 11</string>
   <string name="welcome_to_android11_text">Tumeongeza ishara mpya ili kuongeza kasi ya TalkBack na kuifanya iwe rahisi kuitumia.\n\nKwenye skrini hii, unaweza kuzifanyia majaribio ishara mpya. Unaweza kukagua maelezo haya katika mipangilio ya TalkBack wakati wowote.</string>
   <string name="new_gesture_notification_title">Ishara mpya katika TalkBack</string>
   <string name="new_gesture_notification_content">Gusa ili upate maelezo kuhusu jinsi ya kutumia TalkBack haraka ukitumia ishara mpya.</string>
   <string name="dump_node_tree_description">Mfumo wa data wa ngazi umechapishwa kwenye kumbukumbu.</string>
   <string name="report_gesture_description">Hizi ni ishara zilizotekelezwa hivi majuzi, tafadhali ripoti ishara isiyo sahihi na ishara inayotarajiwa.</string>
-  <string name="update_welcome_text_content">Sasa unaweza kuunganisha skrini za nukta nundu kupitia HID, mbinu ya kuunganisha vifaa vyenye bluetooth. Hakikisha kuwa una viendeshaji vipya kabisa vya programu dhibiti kutoka kwa mtengenezaji wa kifaa chako, kisha uwashe Bluetooth kwenye skrini yako ya nukta nundu. Nenda kwenye mipangilio ya TalkBack &gt; Skrini ya nukta nundu kisha uwashe \"Tumia skrini ya nukta nundu\". Tafuta kifaa chako kwenye orodha ya vifaa kisha ukiunganishe.</string>
-  <string name="update_welcome_text_content_tts">Sasa unaweza kuunganisha skrini za nukta nundu kupitia HID, mbinu ya kuunganisha vifaa vyenye bluetooth. Hakikisha kuwa una viendeshaji vipya kabisa vya programu dhibiti kutoka kwa mtengenezaji wa kifaa chako, kisha uwashe Bluetooth kwenye skrini yako ya nukta nundu. Nenda kwenye mipangilio ya TalkBack kisha Skrini ya nukta nundu na uwashe \"Tumia skrini ya nukta nundu\". Tafuta kifaa chako kwenye orodha ya vifaa kisha ukiunganishe.</string>
-  <string name="update_welcome_text_content_with_link">Pata maelezo kuhusu jinsi ya kutumia skrini yako ya nukta nundu ukitumia TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Sasisho hili la TalkBack linakuwezesha utumie kipengele cha Kufafanua maudhui yaliyo kwenye skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya TalkBack iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya TalkBack &gt; Vipengele vipya kwenye TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Sasisho hili la TalkBack linakuwezesha utumie kipengele cha Kufafanua maudhui yaliyo kwenye skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya TalkBack iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya TalkBack kisha Vipengele vipya kwenye TalkBack.</string>
-  <string name="describe_screen_and_qna_title">Lugha mpya kwenye kipengele cha Ask Gemini na cha Kufafanua maudhui yaliyo kwenye skrini</string>
-  <string name="describe_screen_and_qna_content">Kipengele cha Ask Gemini na cha Kufafanua maudhui yaliyo kwenye skrini sasa vinapatikana katika lugha zaidi. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Pata maelezo zaidi katika kituo cha usaidizi&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Njia ya mkato ya kuandika kwa kutamka</string>
   <string name="shortcut_for_dictation_content">Sasa unaweza kugusa mara mbili ukitumia vidole viwili ili uanze au uache kuandika kwa kutamka unapotumia Gboard.
 &lt;br&gt;
 &lt;br&gt;Hakikisha kuwa unatumia toleo jipya kabisa la &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard kutoka Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Wakati Gboard iko kwenye skrini, sasa unaweza kugusa mara mbili ukitumia vidole viwili ili uanze kuandika kwa kutamka, kisha uguse mara mbili ukitumia vidole viwili ili uache.</string>
-  <string name="keyboard_title">Kibodi</string>
-  <string name="keyboard_content">TalkBack sasa ina \"Ramani ya vitufe iliyoboreshwa\" kwenye kibodi yake na aina mbalimbali za njia za mkato na amri mpya. Uboreshaji huu, unaojumuisha \"hali ya kuvinjari\" inayokuwezesha kusogeza kwenye wavuti kwa urahisi zaidi, huboresha usogezaji na utumiaji kwa watumiaji wa TalkBack wanaotegemea kibodi halisi. Unaweza kubadilisha utumie \"Ramani ya vitufe iliyoboreshwa\" katika mipangilio ya TalkBack &gt; Mipangilio ya kina &gt; Mikato za kibodi.</string>
-  <string name="keyboard_content_tts">TalkBack sasa ina \"Ramani ya vitufe iliyoboreshwa\" kwenye kibodi yake na aina mbalimbali za njia za mkato na amri mpya. Uboreshaji huu, unaojumuisha \"hali ya kuvinjari\" inayokuwezesha kusogeza kwenye wavuti kwa urahisi zaidi, huboresha usogezaji na utumiaji kwa watumiaji wa TalkBack wanaotegemea kibodi halisi. Unaweza kubadilisha utumie \"Ramani ya vitufe iliyoboreshwa\" katika mipangilio ya TalkBack kisha Mipangilio ya kina kisha Mikato za kibodi.</string>
-  <string name="reduce_delay_title">Kupunguza muda wa kusubiri</string>
-  <string name="reduce_delay_content">Sasa unaweza kupunguza muda wa kusubiri tangazo la TalkBack kwenye hali ya kugusa na kuandika. Ili uangalie mipangilio hii, nenda kwenye mipangilio ya TalkBack &gt; Mipangilio ya kina &gt; Punguza muda wa kusubiri.</string>
-  <string name="reduce_delay_content_tts">Sasa unaweza kupunguza muda wa kusubiri tangazo la TalkBack kwenye hali ya kugusa na kuandika. Ili uangalie mipangilio hii, nenda kwenye mipangilio ya TalkBack kisha Mipangilio ya kina kisha Punguza muda wa kusubiri.</string>
-  <string name="customize_braille_keyboard_improvements_title">Kubadilisha upendavyo miguso ya kibodi ya nukta nundu</string>
-  <string name="customize_braille_keyboard_improvements_content">Sasa unaweza kubadilisha upendavyo miguso ya kibodi pepe ya nukta nundu iliyo kwenye skrini. Ili ubadilishe upendavyo, nenda kwenye mipangilio ya TalkBack &gt; Kibodi ya nukta nundu &gt; Miguso.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Sasa unaweza kubadilisha upendavyo miguso ya kibodi pepe ya nukta nundu iliyo kwenye skrini. Ili ubadilishe upendavyo, nenda kwenye mipangilio ya TalkBack kisha Kibodi ya nukta nundu kisha Miguso.</string>
-  <string name="learn_more_about_braille_keyboard">Pata maelezo zaidi kuhusu kibodi ya nukta nundu</string>
-  <string name="other_changes_title">Mabadiliko mengine</string>
-  <string name="other_changes_content">Ujumbe ulio kwenye skrini sasa unakusaidia kuzima TalkBack kwa haraka ikiwa umeiwasha bila kukusudia. Unaweza kuzima ujumbe huu katika mipangilio ya TalkBack &gt; Onyesha maagizo ya kuzima TalkBack.</string>
-  <string name="other_changes_content_tts">Ujumbe ulio kwenye skrini sasa unakusaidia kuzima TalkBack kwa haraka ikiwa umeiwasha bila kukusudia. Unaweza kuzima ujumbe huu katika mipangilio ya TalkBack kisha Onyesha maagizo ya kuzima TalkBack.</string>
-  <string name="keymap_changes_content">Ramani ya vitufe ya awali sasa imebadilishwa kuwa ramani ya vitufe chaguomsingi ambayo ina njia zaidi za mkato.</string>
   <string name="announcing_text_formatting_title">Kutangaza muundo wa maandishi</string>
   <string name="announcing_text_formatting_header">Talkback sasa inaweza kutangaza mabadiliko kwenye muundo wa maandishi, kama vile herufi nzito, herufi mlazo na rangi ya maandishi. Ili uanze:</string>
   <string name="announcing_text_formatting_option1">Angazia kipengee chenye muundo, fungua menyu ya TalkBack kisha uteue \"Fafanua muundo wa maandishi\" au</string>
@@ -1083,7 +969,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="additional_tips_link_subtext">Pata maelezo kuhusu jinsi ya kupiga simu, kutuma ujumbe na zaidi</string>
   <string name="practice_gestures_link_text">Jaribu kutumia ishara</string>
   <string name="practice_gestures_link_subtext">Jaribu ishara tofauti ili upate maelezo kuhusu amri zinazotekeleza</string>
-  <string name="help_and_feedback_link_subtext">Pata maelezo zaidi kuhusu TalkBack na utume maoni</string>
   <string name="choose_tutorial_title">Chagua jinsi ambavyo ungependa kutumia TalkBack</string>
   <string name="touch_tutorial_button">Mafunzo ya kugusa</string>
   <string name="keyboard_tutorial_button">Mafunzo ya kibodi</string>
@@ -1229,8 +1114,6 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="wear_training_typing_text5">Ijaribu hapa chini.</string>
   <string name="wear_training_typing_practice_button_content_description">Kuandika ukitumia kibodi</string>
   <string name="wear_training_end_tutorial_title">Uko tayari kuanza kutumia TalkBack</string>
-  <string name="talkback_updated_notification_title">Kipengele cha TalkBack kimesasishwa</string>
-  <string name="talkback_updated_notification_content">Gusa ili upate maelezo zaidi</string>
   <string name="wear_new_feature_page_title">Karibu kwenye toleo jipya la TalkBack</string>
   <string name="wear_new_feature_page_content">Utagundua hali fulani za kurekebishwa kwa hitilafu na mabadiliko kwa jinsi hali ya uangaziaji husonga</string>
   <string name="wear_new_feature_page_button_content_description">Kamilisha</string>
@@ -1249,10 +1132,7 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="title_pref_blue">Samawati</string>
   <string name="title_pref_grey">Kijivu</string>
   <string name="survey_setting_title">Tuma maoni yako</string>
-  <string name="survey_closed">Utafiti umefungwa</string>
   <string name="title_summarize_view">Toa maelezo kuhusu skrini</string>
-  <string name="title_increase_touch_focus_latency">Ongeza muda wa kusubiri kabla ya kutekeleza</string>
-  <string name="title_decrease_touch_focus_latency">Punguza muda wa kusubiri kabla ya kutekeleza</string>
   <string name="detected_result">Imetambuliwa: %1$s</string>
   <string name="title_image_caption">Toa maelezo kuhusu picha</string>
   <string name="image_caption_with_gemini_prefix">Elezea picha hii. Usitumie lebo yoyote katika jibu.</string>
@@ -1279,33 +1159,15 @@ Muda wa kusubiri wa chini ya sekunde 0.3 utabadilisha kitendo cha kugusa mara mb
   <string name="image_qna_question_prefix">MTUMIAJI: %1$s</string>
   <string name="image_qna_answer_prefix">MFUMO: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Endeleza mazungumzo ya MTUMIAJI na MFUMO kwa zamu] ...</string>
-  <string name="screen_overview_with_screenshot">Kazi yako ni kumsaidia mtu ambaye hawezi kuona simu yake kuelewa maudhui yaliyo kwenye skrini ya simu yake. Fafanua picha hii ya skrini kwa sentensi chache.
-
-Maagizo
-Anza kujibu kwa kusema \"Skrini inaonyesha\"
-Sehemu ya mwanzo wa jibu inapaswa ifafanue maudhui muhimu zaidi yaliyo kwenye skrini. Hii ni mifano kadhaa ya maudhui muhimu zaidi yanayoweza kufafanuliwa
-* Kwenye programu ya gumzo: mtumaji wa ujumbe wa hivi majuzi na maandishi yaliyomo
-* Kwenye programu ya mtandao wa kijamii: chapisho la kwanza, ikiwa ni pamoja na aliyelichapisha, maandishi, maelezo ya picha
-* Kwenye programu ya habari: jina la makala na maelezo ya picha ya msingi
-* Kwenye programu ya ununuzi: maelezo ya bidhaa inayoonyeshwa pamoja na bei
-* Kwenye programu ya kalenda: tukio linalofuata na idadi ya matukio mengine yanayoonyeshwa baadaye
-* Kwenye orodha ya ujumbe: jina na muhtasari wa ujumbe wa kwanza kisha majina machache tu ya ujumbe unaofuata kwenye orodha na idadi ya ujumbe ambao hujasoma
-
-Baada ya hapo, jibu linaweza kufafanua mahali vilipo na madhumuni ya vitufe na sehemu za viungo muhimu.
-Usitaje maudhui ya sehemu ya arifa katika sehemu ya juu (k.m. saa, hali ya mtandao na betri).
-Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="title_gemini_opt_in_dialog">Ungependa kupata maelezo ya kina ya picha?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Ungependa kupata maelezo ya picha?</string>
   <string name="title_gemini_result_dialog">Imetambua: picha</string>
   <string name="title_gemini_result_bottom_sheet">Maelezo ya picha</string>
   <string name="title_gemini_screen_overview_result_dialog">Maelezo kuhusu skrini</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Muhtasari</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Vitendo</string>
   <string name="positive_button_gemini_opt_in_dialog">Washa</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ninakubali</string>
   <string name="negative_button_gemini_opt_in_dialog">Hapana</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Nenda kwenye Mipangilio</string>
-  <string name="positive_button_gemini_download_dialog">Pakua na uwashe</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Maandishi, \"%1$s\".</string>
   <string name="detected_icon_label">Aikoni, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="screen_overview_no_result">Imeshindwa kuandaa muhtasari wa yaliyo kwenye skrini</string>
   <string name="image_caption_no_result">Imeshindwa kufafanua picha</string>
   <string name="image_caption_with_hide_screen">Maelezo yaliyo kwenye picha hayapatikani wakati umeficha skrini. Onyesha skrini yako kisha ujaribu tena.</string>
-  <string name="feedback_button_state_set">imechaguliwa</string>
-  <string name="feedback_button_state_unset">haijachaguliwa</string>
   <string name="action_text_like_button">Tia alama kuwa ni jibu zuri</string>
   <string name="action_text_dislike_button">Tia alama kuwa ni jibu baya</string>
   <string name="action_text_clear_like_button">Futa jibu zuri</string>
@@ -1349,18 +1209,13 @@ Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="downloading_all_image_captioning_hint">Inapakua maelezo ya kiotomatiki kuhusu picha na aikoni</string>
   <string name="download_all_image_captioning_successful_hint">Imepakua maelezo ya kiotomatiki kuhusu picha na aikoni</string>
   <string name="download_all_image_captioning_failed_hint">Imeshindwa kupakua. Jaribu tena baadaye.</string>
-  <string name="download_complete_notification_title">Imemaliza kupakua</string>
-  <string name="download_complete_notification_content">Sasa utasikia maelezo ya kiotomatiki kuhusu picha na aikoni katika TalkBack</string>
-  <string name="download_complete_notification_action">Mipangilio</string>
   <string name="download_storage_error_hint">Nafasi ya hifadhi imejaa. Ili upakue, futa baadhi ya faili ili upate nafasi ya MB %1$d katika Mipangilio &gt; Hifadhi.</string>
   <string name="download_network_error_hint">Imeshindwa kupakua. Kagua muunganisho wako kisha ujaribu tena.</string>
   <string name="switch_icon_detection_dialog_title">Maelezo ya aikoni yanayowekwa kiotomatiki</string>
   <string name="switch_icon_detection_dialog_message">Sikia maelezo unapoangazia aikoni</string>
   <string name="switch_image_description_dialog_message">Sikia maelezo ukiangazia picha. Huenda baadhi ya programu hazitumii kipengele hiki.</string>
-  <string name="switch_text_recognition_dialog_title">Elezea kiotomatiki kuhusu maandishi yaliyo kwenye picha</string>
   <string name="switch_text_recognition_dialog_message">Sikia maelezo unapolenga picha iliyo na maandishi</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Imepakuliwa</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Bado unaweza kupata maelezo kuhusu picha uliyoteua, kwenye menyu ya TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Sawa</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Futa kipakuliwa</string>
   <string name="delete_icon_detection_dialog_title">Ungependa kufuta maelezo ya kiotomatiki kuhusu aikoni?</string>
@@ -1376,11 +1231,6 @@ Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="gemini_enable_dialog_title">Tumia Gemini kwenye TalkBack</string>
   <string name="gemini_disable_dialog_message">Kuelewa yaliyo kwenye skrini ukitumia Gemini</string>
   <string name="disable_gemini_dialog_subtext">Washa kipengele cha kuelewa yaliyo kwenye skrini ukitumia Gemini</string>
-  <string name="ai_services_update_dialog_title">Sasisha programu ya %1$s ili iwekee picha maelezo</string>
-  <string name="ai_services_update_dialog_message">Pakua toleo jipya kabisa la %1$s kutoka kwenye Google Play ili usikilize maelezo ya picha.\n\nUkimaliza kupakua, rudi kwenye mipangilio ya TalkBack kisha uwashe tena kipengele cha kuweka maelezo ya picha kiotomatiki.</string>
-  <string name="ai_services_update_dialog_button_text">Nenda kwenye Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Hitilafu fulani imetokea. Jaribu tena.</string>
   <string name="gemini_block_message">Imeshindwa kuchakata picha hii</string>
   <string name="gemini_network_error">Hakuna muunganisho wa intaneti. Angalia Wi-Fi au mtandao wako wa simu kisha ujaribu tena.</string>
@@ -1396,13 +1246,8 @@ Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="image_qna_typing_button_text">Andika swali kwenye Gemini</string>
   <string name="image_qna_send_button_text">Uliza</string>
   <string name="image_qna_speak_question_description">Tamka swali</string>
-  <string name="overviews_summary_intro">Muhtasari wa skrini ya programu hii: %1$s</string>
   <string name="overviews_node_not_found">Samahani, sipati tena sehemu hiyo ya skrini.</string>
-  <string name="overviews_images_in_app">Picha Muhimu zilizopatikana</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Vitendo katika programu</string>
-  <string name="overviews_actions_in_app_description">Vifuatavyo ni vitendo vikuu ambavyo unaweza kufanya kwenye skrini hii ya programu:</string>
-  <string name="overviews_parent_type">Vitendo katika programu</string>
   <string name="text_replaced_feedback">Maandishi yamebadilishwa</string>
   <string name="switch_gesture_set">Badilisha Kikundi cha Ishara</string>
   <string name="switch_gesture_set_to">Badilisha utumia kikundi %1$d cha ishara</string>
@@ -1453,5 +1298,4 @@ Usitumie alama zozote maalum za muundo katika jibu lako.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Funga</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Ili usikie arifa wakati skrini yako imezimwa, washa mipangilio ya \"Tamka arifa wakati skrini imezimwa\" katika mipangilio ya kipima maneno cha TalkBack</string>
 </resources>

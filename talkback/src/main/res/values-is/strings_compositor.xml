@@ -63,15 +63,12 @@
   <string name="value_not_selected">ekki valið</string>
   <string name="value_checked">valinn</string>
   <string name="value_not_checked">ekki valinn</string>
-  <string name="value_partially_checked">merkt við að hluta til</string>
   <string name="value_on">kveikt</string>
   <string name="value_off">slökkt</string>
   <string name="value_disabled">óvirk</string>
   <string name="value_enabled">kveikt</string>
   <string name="value_read_only">skrifvarið</string>
   <string name="value_expanded">stækkað</string>
-  <string name="value_fully_expanded">stækkað alveg</string>
-  <string name="value_partially_expanded">stækkað að hluta</string>
   <string name="value_collapsed">minnkað</string>
   <string name="value_double_tap">Ýttu tvisvar</string>
   <string name="value_single_tap">Ýttu</string>
@@ -93,7 +90,6 @@
   <string name="template_hint_spinner_keyboard">Ýttu á %1$s til að breyta</string>
   <string name="template_hint_single_selection_item">%1$s til að velja</string>
   <string name="template_hint_single_selection_item_keyboard">Ýttu á %1$s til að velja</string>
-  <string name="template_hint_pager">Strjúktu með tveimur fingrum til að skipta um síðu</string>
   <string name="template_hint_pager_single_page">Engar fleiri síður</string>
   <string name="template_hint_seek_control_tv">%1$s til að breyta</string>
   <string name="template_custom_hint_for_actions">%1$s til að %2$s</string>
@@ -176,7 +172,6 @@
   <string name="template_speech_rate_change">Talhraði %1$d%%</string>
   <string name="template_accessibility_volume_change_increase">Hækkaðu hljóðstyrk aðgengis í %1$d prósent.</string>
   <string name="template_accessibility_volume_change_decrease">Lækkaðu hljóðstyrk aðgengis í %1$d prósent.</string>
-  <string name="template_touch_explore_latency_changed">Töf innsláttarfókuss: %1$d millisekúndur.</string>
   <string name="template_touch_latency_reach_maximum">Hámark</string>
   <string name="template_touch_latency_reach_minimum">Lágmark</string>
   <string name="template_volume_change_maximum">Hámark</string>

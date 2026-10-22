@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description"><![CDATA[Wanneer SandFly aan is, gee dit vir jou gesproke terugvoer sodat jy jou toestel kan gebruik sonder om na die skerm te kyk. SandFly is bedoel vir situasies of mense wat sukkel om die skerm te sien.<br><br><b>Gebruik SandFly só</b><br>• Swiep regs of links om tussen items te beweeg<br>• Dubbeltik om ’n item te aktiveer<br>• Sleep 2 vingers om te rollees<br><b>Skakel SandFly só af</b><br>1. Tik op <b>Gebruik SandFly</b> in Instellings. Daar sal ’n buitelyn wees. Dubbeltik daarop.<br>2. Tik op <b>Stop</b> in die bevestigingboodskap. Daar sal ’n buitelyn wees. Dubbeltik daarop.]]></string>
   <string name="talkback_service_summary">Gebruik ’n skermleser om items hardop gesê te hoor</string>
   <string name="talkback_preferences_title">SandFly-instellings</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Instellings</string>
   <string name="tts_preferences_title">Teks-na-spraak</string>
   <string name="language_options">Tale</string>
   <string name="spoken_language">Gesproke taal</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Soektog gekanselleer.</string>
   <string name="notification_type_status_started">Het begin</string>
   <string name="notification_type_status_stopped">Het gestop</string>
-  <string name="notification_type_status_connected">gekoppel</string>
-  <string name="notification_battery_level_unknown">onbekend</string>
   <string name="notification_battery_saver_mode">Batterybespaarder aan</string>
   <string name="template_no_text_selected">Geen teks is gekies nie.</string>
   <string name="template_charging">Laai tans %1$s Batteryvlak %2$s persent.</string>
   <string name="template_charging_lite">Laai tans %1$s</string>
-  <string name="template_battery_state">Krag %1$s %2$s persent %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Luitoestel vibreer.</string>
   <string name="value_ringer_silent">Luitoestel stil.</string>
   <string name="value_screen_on">Skerm aan.</string>
   <string name="value_screen_off">Skerm af.</string>
   <string name="value_device_unlocked">Toestel is ontsluit.</string>
-  <string name="title_pref_category_audio">Oudio</string>
   <string name="title_pref_speech_volume">Spraakvolume</string>
-  <string name="title_pref_speech_rate">Praattempo</string>
-  <string name="summary_pref_speech_rate">Spoed waarteen die teks gepraat word</string>
   <string name="title_pref_verbose_scroll_announcement">Sê altyd aantal lysitems hardop</string>
   <string name="summary_pref_verbose_scroll_announcement">Sê watter items wys ná elke rollees</string>
   <string name="title_pref_cover_proximity_sensor">Bedek nabyheidsensor om spraak te stop</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Lees Tyd Hardop</string>
   <string name="pref_speak_time_summary">Wanneer jy die skerm aanskakel</string>
   <string name="summary_speak_container_element_positions">Sê wanneer jy lyste, roosters en ander houers binnegaan of verlaat</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Fokusvertraging is by leesbeheer gevoeg</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Jy kan nou enige tyd die fokusvertraging met die leeskontroles verander.</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Skakel oor na Lig Op om te Tik?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Wanneer tikfokusvertraging onder 0,3 sekondes gestel is, sal dubbeltik om te tik baie moeilik wees om uit te voer. Kies “Skakel oor” om outomaties na Lig Op om te Tik oor te skakel.\n\nOm Lig Op om te Tik te gebruik, moet jy jou vinger hou om enige sleutel te kies en dit dan oplig om te tik.\n\nJy kan dit in SandFly-instellings pasmaak.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Tikfokusvertraging is by leesbeheer gevoeg</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">As dubbeltik onbetroubaar is terwyl jy tik, kan jy enige tyd met die leeskontroles na ’n langer tikfokusvertraging verander.</string>
-  <string name="gestures_announce_typing_focus_wont_change">Tikfokusvertraging werk nie sonder Lig Op om te Tik nie.</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">Het dit</string>
   <string name="reset_letency_reduction_settings_dialog_title">Stel vertraginginstellings terug?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Dit sal alle vertraginginstellings na verstek terugstel</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Stel terug</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Die traagheidverminderinginstellings is teruggestel.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Skakel oor</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Moenie oorskakel nie</string>
   <string name="Reset_gesture_settings_dialog_title">Stel gebare terug?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Stel huidige stel se gebare terug?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Dit sal alle gebaarinstellings na hul verstekhandelinge toe terugstel.\n\nJy sal enige veranderinge wat jy gemaak het, verloor.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Sê alle vorderingopdaterings</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Sluit opdaterings in terwyl daar afgelaai word, rigtingaanwysings gevolg word, en meer. Wanneer dit afgeskakel is, sal jy steeds minder gereelde opdaterings kry.</string>
   <string name="title_pref_explore_by_touch">Verken-met-aanraking</string>
-  <string name="title_pref_category_visual">Visueel</string>
   <string name="title_pref_category_controls">Kontroles</string>
-  <string name="title_pref_category_braille">Braille</string>
-  <string name="title_pref_category_general">Algemeen</string>
-  <string name="title_pref_category_advanced">Gevorderd</string>
-  <string name="title_pref_category_others">Ander</string>
-  <string name="title_pref_category_tutorial_and_help">Tutoriaal en hulp</string>
   <string name="title_pref_category_reduce_latency_summary">Hierdie instellings laat SandFly vinniger reageer nadat jy aan die skerm raak</string>
   <string name="reset_latency_settings_title">Stel alle vertraginginstellings terug</string>
   <string name="title_pref_single_tap">Enkeltik om te aktiveer</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusaanduier</string>
   <string name="title_pref_category_manage_gestures">Gebare</string>
   <string name="title_pref_manage_labels">Gepasmaakte etikette</string>
-  <string name="title_pref_manage_customize_menus">Wysig kieslyste</string>
   <string name="title_pref_category_context_menu">SandFly-kieslys</string>
   <string name="title_pref_category_selector_menu">Leeskontroles</string>
   <string name="title_pref_category_navigation_menu">Wysig navigasie-opsies</string>
-  <string name="pref_category_context_menu_summary">Tik met 3 vingers, of swiep op of af en dan regs.</string>
-  <string name="pref_category_context_menu_summary_xr">Draai jou sekondêre palm in en knyp om die SandFly-kieslys te gebruik.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Swiep af en dan regs.</string>
-  <string name="pref_category_selector_menu_summary">Draai 2 vingers soos ’n draaiknop, of swiep links of regs met 3 vingers, om ’n leeskontrole te kies. Swiep dan op of af om dit te verander.</string>
-  <string name="pref_category_selector_menu_summary_xr">Om tussen leeskontroles te wissel, draai jou sekondêre palm in, hou jou knyp, beweeg regs of links en laat los.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Swiep op en dan af, of af en dan op, om ’n leeskontrole te kies. Swiep dan op of af om dit te verander.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Kortpadsleutels</string>
   <string name="title_pref_export_custom_labels">Voer gepasmaakte etikette uit</string>
-  <string name="title_pref_play_store">Maak SandFly in die Play Winkel oop</string>
-  <string name="summary_pref_play_store">Huidige SandFly-weergawe: <xliff:g id="version_number">%1$s</xliff:g></string>
   <string name="title_pref_help_and_feedback">Hulp en terugvoer</string>
-  <string name="title_pref_gup">Kontak Google Gestremdheidsteundiens</string>
-  <string name="subtitle_pref_gup">Kry hulp met die gebruik van SandFly of gee kwessies aan</string>
-  <string name="pref_item_licenses">Oopbronlisensies</string>
-  <string name="title_pref_tutorial">Tutoriaal</string>
   <string name="title_pref_help">Hulp</string>
   <string name="title_pref_show_tos">Diensbepalings</string>
   <string name="title_pref_show_privacy_policy">Privaatheidsbeleid</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Vingerafdrukgebare</string>
   <string name="title_pref_category_tutorial">SandFly-tutoriaal</string>
   <string name="title_pref_category_help_no_tutorial">Hulp</string>
-  <string name="title_pref_category_typing">Tik tans …</string>
   <string name="title_pref_advanced_settings">Gevorderde instellings</string>
   <string name="title_pref_show_exit_watermark">Wys instruksies om SandFly af te skakel</string>
   <string name="summary_pref_show_exit_watermark">Wys hoe om SandFly af te skakel wanneer dit aanskakel</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Van die wysigersleutels verskil.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Kom meer te wete oor sleutelkaarte</string>
   <string name="keycombo_go_to_settings">Gaan na Instellings</string>
-  <string name="keycombo_keymap_changes_notifications_content">SandFly maak tans gereed om die klassieke sleutelkaart te verwyder. Skakel oor na die versteksleutelkaart as jy wil aanhou om kortpadsleutels te gebruik.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Kom meer te wete</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Het dit</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Instellings</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Meer inligting</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Jy gebruik nou SandFly se versteksleutelkaart. Daar is ook ’n nuwe verbeterde sleutelkaart wat baie nuwe opdragte het. Kry meer inligting in die hulpsentrum of skakel oor na die nuwe sleutelkaart in Instellings.</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Nuwe sleutelkaart is beskikbaar</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">SandFly se nuwe verbeterde sleutelkaart voeg baie nuwe opdragte by. Kry meer inligting in die hulpsentrum of skakel oor na die nuwe sleutelkaart in Instellings.</string>
-  <string name="keycombo_update_modifier_key_warning_title">Dateer jou SandFly-wysigersleutel op</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Nie nou nie</string>
   <string name="keycombo_warning_content_description">Meer inligting oor jou wysigersleutel</string>
-  <string name="keycombo_warning_dialog_title">Dateer jou wysigersleutel op</string>
-  <string name="keycombo_warning_dialog_message">Vir SandFly se kortpadsleutels om korrek te werk, moet jy jou wysigersleutel van Handeling na Alt opdateer.\n\nAs jy aanhou om die Handeling-wysigersleutel te gebruik, sal sommige kortpaaie verskillende handelinge vir hierdie weergawe van Android uitvoer.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Sleutelkaart</string>
   <string name="keycombo_menu_select_keymap">Kies \'n sleutelkaart</string>
   <string name="keycombo_menu_reset_keymap">Stel die sleutelkaart terug</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Verhoog spraakvolume</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Verlaag spraakvolume</string>
   <string name="keycombo_menu_global_refocus_current_node">Praat huidige fokus</string>
-  <string name="keycombo_menu_category_granularity">Navigasie</string>
   <string name="keycombo_menu_granularity_increase">Volgende navigasie-instelling</string>
   <string name="keycombo_menu_granularity_decrease">Vorige navigasie-instelling</string>
   <string name="keycombo_menu_category_other">Ander handelinge</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Is jy seker jy wil jou kortpadsleutels vir hierdie sleutelkaart na hul verstekwaardes terugstel? Let wel, hierdie handeling kan nie ontdoen word nie.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Stel terug</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s in blaaimodus</string>
-  <string name="keycombo_assign_dialog_instruction">Druk sleutelkombinasie om \'n nuwe kortpad te stel. Dit moet minstens ALT- of Control-sleutel bevat.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Druk sleutelkombinasie saam met die %1$s-wysigersleutel om \'n nuwe kortpad te stel.</string>
   <string name="keycombo_unassigned">Nie toegewys nie</string>
   <string name="save_button_in_keycombo_assign_dialog">Stoor</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Tikfokusvertraging</string>
   <string name="message_pref_touch_explore_latency">’n Korter vertraging laat SandFly gouer praat nadat jy aan die sleutelbord raak.\n\nKies ’n vertraging</string>
   <string name="title_pref_touch_focus_timeout">Fokusvertraging</string>
-  <string name="summary_pref_touch_focus_time">
-Beheer hoe vinnig SandFly praat nadat fokus beweeg het. ’n Korter vertraging laat SandFly vinniger voel, maar kan dubbel- en tripeltik moeiliker maak om uit te voer.\n\n
-Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweevingertik om te Aktiveer.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Hanteer gebare in SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Skakel SandFly af en dan weer aan om die instelling te aktiveer.</string>
   <string name="title_pref_auto_image_captioning">Outomatiese beskrywings</string>
@@ -382,28 +332,16 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="dialog_title_turn_on_image_description">Skakel prentbeskrywings in Instellings aan</string>
   <string name="dialog_message_turn_on_image_description">Jy kan weer probeer nadat jy óf outomatiese óf gedetailleerde prentbeskrywings aangeskakel het</string>
   <string name="title_pref_detailed_image_description">Gedetailleerde prentbeskrywings</string>
-  <string name="summary_pref_ai_description">Hoor langer beskrywings wanneer jy “<xliff:g id="SandFly menu item" example="Describe image">%1$s</xliff:g>” op die SandFly-kieslys kies</string>
   <string name="dialog_message_on_device_ai_description">Jy sal ’n kort beskrywing hoor wanneer jy op ’n prent in gesteunde apps fokus.\n\nPrente word op jou toestel verwerk en word nooit na Google toe gestuur nie. \n\nGeneratiewe AI is eksperimenteel en dit sal dus foute maak. Deur voort te gaan, stem jy in tot <a href="https://policies.google.com/terms/generative-ai">Google se diensbepalings</a>.</string>
   <string name="enable_gemini">Skakel aan</string>
   <string name="powered_by_gemini">Aangedryf deur generatiewe KI</string>
-  <string name="detailed_image_description_ongoing_hint">Kry tans beskrywing</string>
-  <string name="detailed_image_description_result_prefix">Bespeur: Prent. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Aflaai is vir outomatiese prentbeskrywings nodig</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Prente word op jou toestel verwerk en word nooit na Google toe gestuur nie.\n\nGeneratiewe AI is eksperimenteel en dit kan dus foute maak. Deur voort te gaan, stem jy in tot %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Google se diensbepalings</string>
   <string name="message_aifeature_downloading">Laai tans AI-model af. Dit kan ’n rukkie neem. Jy sal in kennis gestel word wanneer dit klaar is.</string>
   <string name="message_aifeature_downloading_with_progress">Aflaai is steeds aan die gang. %1$d van %2$d MB is afgelaai.</string>
-  <string name="message_aifeature_download_complete">AI-model is afgelaai. SandFly kan nou prentbeskrywings genereer.</string>
   <string name="summary_pref_auto_image_captioning">Vir ikone, prente en teks op prente</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Vir teks op prente</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Vir prente en teks op prente</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Vir ikone en teks op prente</string>
   <string name="summary_pref_module_downloading">Laai tans af …</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Aan vir alle prente</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Net aan vir etiketlose prente</string>
   <string name="summary_pref_auto_image_captioning_disabled">Af</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Aan vir alle ikone</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Net aan vir etiketlose ikone</string>
   <string name="summary_pref_auto_icon_detection_disabled">Af</string>
   <string name="title_pref_enable_auto_image_caption">Alle prente</string>
   <string name="title_pref_enable_auto_image_caption_arg">Alle prente\n%1$s</string>
@@ -413,7 +351,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="title_pref_enable_auto_icon_detection">Alle ikone</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Net etiketlose ikone</string>
   <string name="title_pref_disable_auto_icon_detection">Moenie ikone beskryf nie</string>
-  <string name="dialog_message_on_device_ai_model_download">Jy sal ’n kort beskrywing hoor wanneer jy op ’n prent in gesteunde apps fokus.\n\nPrente word op jou toestel verwerk en word nooit na Google toe gestuur nie.\n\nGeneratiewe AI is eksperimenteel en dit sal dus foute maak. Deur voort te gaan, stem jy in tot %1$s.</string>
   <string name="title_pref_enable_gemini_support">Aan</string>
   <string name="title_pref_disable_gemini_support">Af</string>
   <string name="summary_pref_gemini_support_enabled">Gemini is geaktiveer</string>
@@ -457,7 +394,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="shortcut_print_node_tree">Druk nodusboom uit</string>
   <string name="shortcut_print_performance_stats">Druk werkverrigtingstatistieke uit</string>
   <string name="shortcut_first_in_screen">Fokus op eerste item op skerm</string>
-  <string name="shortcut_summary">Som skermuitleg op</string>
   <string name="shortcut_voice_commands">Begin stemopdrag</string>
   <string name="shortcut_last_in_screen">Fokus op laaste item op skerm</string>
   <string name="shortcut_enable_dimming">Versteek skerm</string>
@@ -561,7 +497,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="menu_category_web_navigation">Webnavigasie</string>
   <string name="menu_category_basic_navigation">Basiese navigasie</string>
   <string name="summary_custom_action">Wys wanneer handelinge vir die huidige item bestaan, insluitend skakels, kopieer, plak, kies, en meer</string>
-  <string name="summary_context_menu_links">Maak skakels in \'n gefokusde item oop</string>
   <string name="summary_viewpager_controls">Gaan na die volgende of vorige bladsy. Wys wanneer jy inhoud met veelvuldige bladsye lees.</string>
   <string name="summary_labeling_controls">Wys wanneer jy \'n etiketlose item kies</string>
   <string name="summary_granularity">Lees per karakter, woord, reëls en meer</string>
@@ -631,12 +566,9 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="summary_screen_overview">Som die skerm op met handelingknoppies</string>
   <string name="summary_screen_overview_no_actions">Hoor ’n opsomming van die inhoud op die skerm</string>
   <string name="summary_image_caption">Sê teks en ikone binne ’n gekose prent</string>
-  <string name="summary_summarize_view">Praat opsomming van aansig</string>
   <string name="summary_typo_suggestions">Wys wanneer die skermpyltjie op ’n spelfout is</string>
   <string name="summary_cache_keyboard_keys">SandFly laai vooraf aankondigings om vertraging te verminder wanneer jy tik</string>
   <string name="summary_cache_keyboard_keys_disabled">Gebruik Google Teks-na-spraak om hierdie kenmerk te gebruik</string>
-  <string name="value_direction_down">af</string>
-  <string name="value_direction_down_and_right">af, dan regs</string>
   <string name="title_pref_shortcut_up">Swiep op</string>
   <string name="title_pref_shortcut_up_xr">Sekondêre palm in, knyp en swiep op</string>
   <string name="title_pref_shortcut_down">Swiep af</string>
@@ -704,10 +636,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="title_pref_shortcut_fingerprint_left">Swiep links op vingerafdruksensor</string>
   <string name="title_pref_shortcut_fingerprint_right">Swiep regs op vingerafdruksensor</string>
   <string name="title_pref_version_code">Weergawekode</string>
-  <string formatted="false" name="value_volume_100_percent">Maak dieselfde as spraakvolume</string>
-  <string formatted="false" name="value_volume_75_percent">75% van spraakvolume</string>
-  <string formatted="false" name="value_volume_50_percent">50% van spraakvolume</string>
-  <string formatted="false" name="value_volume_25_percent">25% van spraakvolume</string>
   <string name="value_type_confirmation_double_tap">Hou vinger om enige sleutel te kies en dubbeltik dan</string>
   <string name="value_type_confirmation_lift_to_type">Hou vinger om lettersleutel te kies en lig dan op. Dubbeltik vir ander sleutels.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Hou vinger om enige sleutel te kies en lig dan</string>
@@ -720,12 +648,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="value_touch_explore_time_out_200ms">0,2 sekonde</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekonde</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekondes (verstek)</string>
-  <string name="value_shake_to_read_disabled">Gedeaktiveer</string>
-  <string name="value_shake_to_read_threshold_very_light">Baie liggies</string>
-  <string name="value_shake_to_read_threshold_light">Liggies</string>
-  <string name="value_shake_to_read_threshold_medium">Middelmatig</string>
-  <string name="value_shake_to_read_threshold_hard">Hard</string>
-  <string name="value_shake_to_read_threshold_very_hard">Baie hard</string>
   <string name="title_pref_on_screen_keyboard">Skermsleutelbord</string>
   <string name="title_pref_physical_keyboard">Fisieke sleutelbord</string>
   <string name="value_keyboard_echo_none">Geen</string>
@@ -738,8 +660,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="pref_time_feedback_format_entries_default">Gebruik toesteltydformaat</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 uur</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 uur</string>
-  <string name="notification_title_talkback_gestures_changed">SandFly-gebare is verander</string>
-  <string name="notification_message_talkback_gestures_changed">Tik om veranderings aan toeganklikheidsgebare te hersien</string>
   <string name="always_show_warning_checkbox">Wys altyd hierdie waarskuwing</string>
   <string name="label_dialog_title_add">Voeg etiket by</string>
   <string name="label_dialog_title_edit">Wysig etiket</string>
@@ -760,16 +680,8 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="no_apps_to_export_labels">Geen programme is gevind om etikette uit te voer nie.</string>
   <string name="label_choose_app_to_import">Kies app om etikette in te voer:</string>
   <string name="label_choose_app_to_export">Kies app om etikette uit te voer:</string>
-  <string name="talkback_gesture_change_details">Hierdie weergawe van SandFly sluit veranderings aan die verstek-toeganklikheidsgebare in. Die handelinge wat met hierdie gebare geassosieer word, kan binne SandFly-instellings gepasmaak word. Wanneer Verken-met-aanraking geaktiveer is, kan jy die volgende gebare gebruik om bepaalde handelinge uit te voer.\n\n<xliff:g id="mappings">%1$s</xliff:g></string>
   <string name="dialog_title_dim_screen">Versteek skerm?</string>
   <string name="dialog_message_dim_screen">Dit skakel die skerm af om privaatheid te verbeter. Sommige inhoud kan steeds gewys word, soos boodskappe om die skerm weer aan te skakel of kieslyste vir toeganklikheidskenmerke soos SandFly.</string>
-  <string name="talkback_built_in_gesture_change_details">Hierdie weergawe van SandFly sluit veranderinge aan die verstektoeganklikheidsgebare in.\n\nMet die eers-op-dan-af-gebaar beweeg jy na die eerste item op die skerm, en die eers-af-dan-op-gebaar beweeg na die laaste item.\n\nDie leesbesonderhedevlak kan nou verander word deur op \'n item te fokus en \'n besonderhedevlak op die SandFly-kontekskieslys te kies.\n\nJy kan in SandFly-instellings verander watter handelinge hierdie gebare uitvoer.</string>
-  <string name="default_action_changed_details">Jy kan nou met twee vingers dubbeltik en hou om media te onderbreek en te speel.\n\nAnder gebare het ook verander.</string>
-  <string name="talkback_built_in_gesture_open_url">Maak op foon oop om meer te wete te kom</string>
-  <string name="talkback_built_in_gesture_change_details_45">Hierdie weergawe van SandFly sluit veranderinge aan die verstektoeganklikheidsgebare in.\n\nDie op-gebaar beweeg nou na die vorige navigasie-instelling en die af-gebaar beweeg nou na die volgende navigasie-instelling.</string>
-  <string name="side_tap_shortcuts_removed_details">Hierdie instellings is van SandFly verwyder weens betroubaarheidskwessies:\n• Tik op kant van toestelgebare\n• Skud om deurlopende lees te begin</string>
-  <string name="button_accept_changed_gesture_mappings">Aanvaar gebare</string>
-  <string name="button_customize_gesture_mappings">Pasmaak gebare</string>
   <string name="button_disable_all_events">Deaktiveer alles</string>
   <string name="button_enable_all_events">Aktiveer alles</string>
   <string name="dialog_title_disable_exploration">Deaktiveer Verken-met-aanraking?</string>
@@ -893,8 +805,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="screen_search_hint_type_search_tables">Deursoek tabelle</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Die kennisgewingkanaal van SandFly</string>
-  <string name="pref_selector_summary">%1$s om \'n instelling te kies. %2$s dan om die instelling te verstel.</string>
-  <string name="speech_rate_change">Spraaktempo %1$d%%</string>
   <string name="speech_pitch_maximum">Hoogste spraaktoonhoogte</string>
   <string name="speech_pitch_minimum">Laagste spraaktoonhoogte</string>
   <string name="reset_speech_rate_and_pitch">Stel spraaktempo en toonhoogte terug</string>
@@ -904,10 +814,7 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="vibration_feedback_state">Vibrasieterugvoer %1$s</string>
   <string name="text_formatting_state">Praat teksformatering %1$s</string>
   <string name="typing_echo_change">%1$s eggo fisiese sleutelbord</string>
-  <string name="reading_control_toggle_prefix_xr">Sekondêre palm in, druk lank om leesbeheermodus te wissel.</string>
   <string name="gesture_1_or_2">%1$s of %2$s</string>
-  <string name="select_setting_hint">%1$s om \'n ander instelling te kies</string>
-  <string name="adjust_setting_hint">%1$s om die instelling te verstel</string>
   <string name="adjust_granularity_hint">%1$s om te lees teen %2$s</string>
   <string name="adjust_typo_hint">%1$s vir voorstelle.</string>
   <string name="use_action_hint">Dubbeltik om handeling uit te voer</string>
@@ -947,7 +854,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="setting_selector_heading">Leeskontroles</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Dubbeltik met 2 vingers om media in \'n video- of musiekprogram te onderbreek of te speel. Probeer dit nou.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Ander programme kan hierdie gebaar gebruik om dinge te doen soos \'n foonoproep te beantwoord of te beëindig. Hierdie gebaar word dalk nie in alle programme gesteun nie.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Bekyk alle SandFly-tutoriale</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media is onderbreek of speel tans. Dit onderbreek of speel gewoonlik die huidige video of musiek. Swiep na regs om voort te gaan.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Tik met 2 vingers om SandFly tydelik te stop sodat dit nie praat nie.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">SandFly-spraak is gestop. Dit stop gewoonlik die frase wat SandFly besig is om te sê. Swiep na regs om voort te gaan.</string>
@@ -961,38 +867,18 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Keusemodus is aan of af. Dit begin of eindig gewoonlik tekskeusemodus wanneer jy binne \'n invoerveld is. Swiep na regs om voort te gaan.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Swiep links of regs met 3 vingers om die leeskontroles te gebruik. Jy kan ook met 3 vingers op- of afswiep.</string>
   <string name="new_shortcut_gesture_note">Let wel: Jy het sommige van jou gebare gepasmaak, wat beteken dat hierdie inligting dalk nie korrek is nie. Gaan na SandFly-instellings om jou gebare na te gaan.</string>
-  <string name="welcome_to_android11">Welkom by SandFly op Android 11</string>
   <string name="welcome_to_android11_text">Nuwe gebare is bygevoeg om SandFly vinniger en makliker te maak om te gebruik.\n\nJy kan die nuwe gebare op hierdie skerm probeer. Jy kan enige tyd hierdie inligting in SandFly-instellings nagaan.</string>
   <string name="new_gesture_notification_title">Nuwe gebare in SandFly</string>
   <string name="new_gesture_notification_content">Tik om uit te vind hoe om SandFly vinniger met nuwe gebare te gebruik.</string>
   <string name="dump_node_tree_description">Nodusboom is na loglêers gedruk.`</string>
   <string name="report_gesture_description">Hier is gebare wat onlangs uitgevoer is. Meld asseblief aan watter gebaar verkeerd is en wat verwag word.</string>
-  <string name="update_welcome_text_content">Jy kan nou via MKT aan brailleskerms koppel – ’n manier om aan Bluetooth-toestelle te koppel. Maak seker dat jy die jongste fermwaredrywers van jou vervaardiger af het en skakel dan Bluetooth op jou brailleskerm aan. Gaan na SandFly-instellings &gt; Brailleskerm en skakel \"Gebruik brailleskerm\" aan. Soek jou toestel in die toestellys en koppel daaraan.</string>
-  <string name="update_welcome_text_content_tts">Jy kan nou via MKT aan brailleskerms koppel – ’n manier om aan Bluetooth-toestelle te koppel. Maak seker dat jy die jongste fermwaredrywers van jou vervaardiger af het en skakel dan Bluetooth op jou brailleskerm aan. Gaan na SandFly-instellings en dan brailleskerm en skakel \"Gebruik brailleskerm\" aan. Soek jou toestel in die toestellys en koppel daaraan.</string>
-  <string name="update_welcome_text_content_with_link">Vind uit hoe om jou brailleskerm met SandFly te gebruik.</string>
   <string name="update_welcome_talkback_16.1">Hierdie SandFly-opdatering stel ondersteuning vir Beskryf Skerm in meer tale en ander gehalteverbeterings bekend wat dit makliker maak om SandFly te gebruik.\n\nJy sal op die volgende paar skerms meer oor hierdie veranderinge uitvind.\n\nJy kan hierdie inligting later hersien in SandFly-instellings &gt; Nuwe kenmerke in SandFly.</string>
   <string name="update_welcome_talkback_16.1_tts">Hierdie SandFly-opdatering stel ondersteuning vir Beskryf Skerm in meer tale en ander gehalteverbeterings bekend wat SandFly makliker maak om te gebruik.\n\nJy sal op die volgende paar skerms meer oor hierdie veranderinge uitvind.\n\nJy kan hierdie inligting later hersien in SandFly-instellings en dan Nuwe kenmerke in SandFly.</string>
-  <string name="describe_screen_and_qna_title">Nuwe tale vir Beskryf Skerm en Vra Gemini</string>
-  <string name="describe_screen_and_qna_content">Beskryf Skerm en Vra Gemini is nou in bykomende tale beskikbaar. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Kry meer inligting in die hulpsentrum&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Kortpad vir steminvoer</string>
   <string name="shortcut_for_dictation_content">Jy kan nou terwyl jy Gboard gebruik ’n dubbeltik met twee vingers gebruik om steminvoer te begin of te stop.
 &lt;br&gt;
 &lt;br&gt;Maak seker jy het die jongste weergawe van &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard vanaf Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Wanneer Gboard op die skerm is, kan jy nou ’n dubbeltik met twee vingers gebruik om stemdiktee te begin, en dan ’n dubbeltik met twee vingers om te stop.</string>
-  <string name="keyboard_title">Sleutelbord</string>
-  <string name="keyboard_content">SandFly het nou ’n “Verbeterde sleutelkaart” vir sy sleutelbord met ’n verskeidenheid nuwe opdragte en kortpaaie. Hierdie verbetering, wat “blaaimodus” insluit vir meer doeltreffende webnavigasie, stroomlyn navigasie en interaksie vir SandFly-gebruikers wat op fisiese sleutelborde staatmaak. Jy kan na “Verbeterde sleutelkaart” oorskakel in SandFly-instellings &gt; Gevorderde instellings &gt; Sleutelbordkortpaaie.</string>
-  <string name="keyboard_content_tts">SandFly het nou ’n “Verbeterde sleutelkaart” vir sy sleutelbord met ’n verskeidenheid nuwe opdragte en kortpaaie. Hierdie verbetering, wat “blaaimodus” insluit vir meer doeltreffende webnavigasie, stroomlyn navigasie en interaksie vir SandFly-gebruikers wat op fisiese sleutelborde staatmaak. Jy kan na “Verbeterde sleutelkaart” oorskakel in SandFly-instellings, dan Gevorderde instellings en dan Sleutelbordkortpaaie.</string>
-  <string name="reduce_delay_title">Verminder vertraging</string>
-  <string name="reduce_delay_content">Jy kan nou SandFly-aankondigingvertragings vir raakverkenning en tik verminder. Gaan na SandFly-instellings &gt; Gevorderde instellings &gt; Verminder vertraging om hierdie instellings te bekyk.</string>
-  <string name="reduce_delay_content_tts">Jy kan nou SandFly-aankondigingvertragings vir raakverkenning en tik verminder. Gaan na SandFly-instellings, dan Gevorderde instellings en dan Verminder vertraging om hierdie instellings te bekyk.</string>
-  <string name="customize_braille_keyboard_improvements_title">Pasmaak braillesleutelbord se gebare</string>
-  <string name="customize_braille_keyboard_improvements_content">Dis nou moontlik om gebare vir die virtuele braillesleutelbord op die skerm te pasmaak. Gaan na SandFly-instellings &gt; Braillesleutelbord &gt; Gebare om te pasmaak.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Dis nou moontlik om gebare vir die virtuele braillesleutelbord op die skerm te pasmaak. Gaan na SandFly-instellings, dan Braillesleutelbord en dan Gebare om te pasmaak.</string>
-  <string name="learn_more_about_braille_keyboard">Kry meer inligting oor braillesleutelbord</string>
-  <string name="other_changes_title">Ander veranderinge</string>
-  <string name="other_changes_content">’n Boodskap op die skerm help jou om SandFly vinnig af te skakel as dit per ongeluk aangeskakel word. Jy kan dit afskakel in SandFly-instellings &gt; Wys instruksies vir die afskakeling van SandFly.</string>
-  <string name="other_changes_content_tts">’n Boodskap op die skerm help jou om SandFly vinnig af te skakel as dit per ongeluk aangeskakel word. Jy kan dit afskakel in SandFly-instellings, dan Wys instruksies vir die afskakeling van SandFly.</string>
-  <string name="keymap_changes_content">Klassieke sleutelkaart is verander na versteksleutelkaart wat meer kortpaaie insluit.</string>
   <string name="announcing_text_formatting_title">Aankondiging van teksformatering</string>
   <string name="announcing_text_formatting_header">SandFly kan nou veranderinge in teksformatering aankondig, soos vetdruk, kursief en tekskleur. Begin hier:</string>
   <string name="announcing_text_formatting_option1">Fokus op die item met formatering, maak die SandFly-kieslys oop en kies “Beskryf teksformatering”, of</string>
@@ -1083,7 +969,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="additional_tips_link_subtext">Vind uit hoe om oproepe te maak, boodskappe te stuur, en meer</string>
   <string name="practice_gestures_link_text">Oefengebare</string>
   <string name="practice_gestures_link_subtext">Probeer verskillende gebare om uit te vind wat hulle doen</string>
-  <string name="help_and_feedback_link_subtext">Kry meer inligting oor SandFly en stuur terugvoer</string>
   <string name="choose_tutorial_title">Kies hoe jy met SandFly interaksie wil hê</string>
   <string name="touch_tutorial_button">Raaktutoriaal</string>
   <string name="keyboard_tutorial_button">Sleutelbordtutoriaal</string>
@@ -1229,8 +1114,6 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="wear_training_typing_text5">Probeer dit hier onder</string>
   <string name="wear_training_typing_practice_button_content_description">Tik met sleutelbord</string>
   <string name="wear_training_end_tutorial_title">Jy is gereed om SandFly te begin gebruik</string>
-  <string name="talkback_updated_notification_title">SandFly is opgedateer</string>
-  <string name="talkback_updated_notification_content">Tik om meer te wete te kom</string>
   <string name="wear_new_feature_page_title">Welkom by die opgedateerde SandFly</string>
   <string name="wear_new_feature_page_content">Jy sal \'n paar foutoplossings en veranderinge opmerk oor hoe die fokus skuif</string>
   <string name="wear_new_feature_page_button_content_description">Voltooi</string>
@@ -1249,10 +1132,7 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="title_pref_blue">Blou</string>
   <string name="title_pref_grey">Grys</string>
   <string name="survey_setting_title">Deel jou terugvoer</string>
-  <string name="survey_closed">Opname is toegemaak</string>
   <string name="title_summarize_view">Beskryf skerm</string>
-  <string name="title_increase_touch_focus_latency">Vermeerder fokusvertraging</string>
-  <string name="title_decrease_touch_focus_latency">Verminder fokusvertraging</string>
   <string name="detected_result">Bespeur: %1$s</string>
   <string name="title_image_caption">Beskryf prent</string>
   <string name="image_caption_with_gemini_prefix">Beskryf hierdie prent. Moenie enige oorlegging in die antwoord gebruik nie.</string>
@@ -1279,33 +1159,15 @@ Vertragings onder 0,3 sekondes sal Dubbeltik om te Aktiveer verander na Tweeving
   <string name="image_qna_question_prefix">GEBRUIKER: %1$s</string>
   <string name="image_qna_answer_prefix">MODEL: %1$s</string>
   <string name="image_qna_with_history_postfix">… [Gaan voort om tussen die GEBRUIKER- en MODEL-beurte te wissel] …</string>
-  <string name="screen_overview_with_screenshot">Jou werk is om iemand wat nie hulle foon kan sien nie te help om te verstaan wat op hulle foonskerm is. Beskryf die skermskoot in ’n paar sinne.
-
-Instruksies
-Begin jou antwoord met “Die skerm wys”
-Die begin van die antwoord moet die belangrikste, opvallendste inhoud op die skerm beskryf. Hier is ’n paar voorbeelde van wat die belangrikste, opvallendste inhoud kan wees
-* In ’n kletsapp: die stuurder en teks van die mees onlangse boodskap
-* In ’n sosialemedia-app: die eerste plasing, insluitend wie dit geplaas het, die teks en ’n beskrywing van die prent
-* In ’n nuusapp: die titel van die artikel en ’n beskrywing van die belangrikste prent
-* In ’n inkopieapp: ’n beskrywing van die produk gewys en die prys
-* In ’n kalenderapp: die volgende gebeurtenis en die aantal ander gebeurtenisse daarna gewys
-* In ’n lys boodskappe: die naam en voorskou van die eerste boodskap en dan slegs die name vir die volgende paar in die lys, sowel as hoeveel boodskappe nog nie gelees is nie
-
-Ná dit kan die antwoord die ruimtelike ligging en doel van navigasiebalke en belangrike knoppies beskryf.
-Moenie die inhoud van die statusbalk aan die bokant noem nie (bv. tyd, netwerk, status, battery).
-Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="title_gemini_opt_in_dialog">Kry gedetailleerde prentbeskrywings?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Kry prentbeskrywings?</string>
   <string name="title_gemini_result_dialog">Bespeur: prent</string>
   <string name="title_gemini_result_bottom_sheet">Prentbeskrywing</string>
   <string name="title_gemini_screen_overview_result_dialog">Skermbeskrywing</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Opsomming</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Handelinge</string>
   <string name="positive_button_gemini_opt_in_dialog">Skakel aan</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Ek stem in</string>
   <string name="negative_button_gemini_opt_in_dialog">Nee, dankie</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Gaan na Instellings</string>
-  <string name="positive_button_gemini_download_dialog">Laai af en skakel aan</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Teks, “%1$s”.</string>
   <string name="detected_icon_label">Ikoon, “%1$s”.</string>
@@ -1319,8 +1181,6 @@ Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="screen_overview_no_result">Kan nie skerm opsom nie</string>
   <string name="image_caption_no_result">Kan nie prent beskryf nie</string>
   <string name="image_caption_with_hide_screen">Prentbeskrywings is nie beskikbaar wanneer die skerm versteek is nie. Wys jou skerm en probeer weer.</string>
-  <string name="feedback_button_state_set">gekies</string>
-  <string name="feedback_button_state_unset">nie gekies nie</string>
   <string name="action_text_like_button">Merk as ’n goeie antwoord</string>
   <string name="action_text_dislike_button">Merk as ’n slegte antwoord</string>
   <string name="action_text_clear_like_button">Vee goeie antwoord uit</string>
@@ -1349,18 +1209,13 @@ Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="downloading_all_image_captioning_hint">Laai tans outomatiese prent- en ikoonbeskrywings af</string>
   <string name="download_all_image_captioning_successful_hint">Outomatiese prent- en ikoonbeskrywings is afgelaai</string>
   <string name="download_all_image_captioning_failed_hint">Kan nie aflaai nie. Probeer later weer.</string>
-  <string name="download_complete_notification_title">Aflaai voltooi</string>
-  <string name="download_complete_notification_content">Jy sal nou outomatiese prent- en ikoonbeskrywings met SandFly hoor</string>
-  <string name="download_complete_notification_action">Instellings</string>
   <string name="download_storage_error_hint">Berging is vol. Maak %1$d MB beskikbaar in Instellings &gt; Berging.</string>
   <string name="download_network_error_hint">Kan nie aflaai nie. Gaan jou verbinding na en probeer weer.</string>
   <string name="switch_icon_detection_dialog_title">Outomatiese ikoonbeskrywings</string>
   <string name="switch_icon_detection_dialog_message">Hoor beskrywings wanneer jy op ’n ikoon fokus</string>
   <string name="switch_image_description_dialog_message">Hoor beskrywings wanneer jy op ’n prent fokus. Sommige apps steun dalk nie hierdie kenmerk nie.</string>
-  <string name="switch_text_recognition_dialog_title">Beskryf teks op prente outomaties</string>
   <string name="switch_text_recognition_dialog_message">Hoor beskrywings wanneer jy op ’n prent fokus met teks op</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Afgelaai</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Jy kan steeds beskrywings vir ’n gekose prent van die SandFly-kieslys af kry</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">OK</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Vee aflaai uit</string>
   <string name="delete_icon_detection_dialog_title">Vee outomatiese ikoonbeskrywings uit?</string>
@@ -1376,11 +1231,6 @@ Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="gemini_enable_dialog_title">Gebruik Gemini in SandFly</string>
   <string name="gemini_disable_dialog_message">Skermbegrip met Gemini</string>
   <string name="disable_gemini_dialog_subtext">Skakel aan om skermbegrip met Gemini te aktiveer</string>
-  <string name="ai_services_update_dialog_title">Dateer %1$s-app op om prente te beskryf</string>
-  <string name="ai_services_update_dialog_message">Kry die jongste weergawe van <xliff:g example="AICore" id="service_app_name">%1$s</xliff:g> van Google Play af om prentbeskrywings te hoor.\n\nSodra dit klaar afgelaai is, kom terug na SandFly-instellings en skakel weer outomatiese prentbeskrywings aan.</string>
-  <string name="ai_services_update_dialog_button_text">Gaan na Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Iets het skeefgeloop. Probeer weer.</string>
   <string name="gemini_block_message">Kan nie hierdie prent verwerk nie</string>
   <string name="gemini_network_error">Geen internetverbinding nie. Gaan jou wi-fi of selnetwerk na en probeer weer.</string>
@@ -1396,13 +1246,8 @@ Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="image_qna_typing_button_text">Tik vraag vir Gemini</string>
   <string name="image_qna_send_button_text">Vra</string>
   <string name="image_qna_speak_question_description">Vra vraag hardop</string>
-  <string name="overviews_summary_intro">Opsomming van hierdie appskerm: %1$s</string>
   <string name="overviews_node_not_found">Ek is jammer, maar ek kan nie meer daardie deel van die skerm kry nie.</string>
-  <string name="overviews_images_in_app">Belangrike prente gevind</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Aksies in app</string>
-  <string name="overviews_actions_in_app_description">Hier is die belangrike aksies wat jy van hierdie appskerm af kan neem:</string>
-  <string name="overviews_parent_type">Aksies in app</string>
   <string name="text_replaced_feedback">Teks is vervang</string>
   <string name="switch_gesture_set">Wissel gebaarstel</string>
   <string name="switch_gesture_set_to">Skakel oor na gebaarstel %1$d</string>
@@ -1453,7 +1298,6 @@ Moenie enige Markdown in jou antwoord gebruik nie.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Maak toe</string>
   <string name="talkback_label">SandFly</string>
-  <string name="notifictions_in_lock_screen_notification_content">As jy kennisgewings wil hoor wanneer jou skerm af is, moet jy “Sê kennisgewings hardop wanneer skerm af is” in SandFly se instellings vir breedsprakigheid aanskakel.</string>
     <string name="title_pref_tts_engine">Teks-na-spraak-enjin</string>
     <string name="title_pref_system_tts_settings">Stelsel se teks-na-spraak-instellings</string>
     <string name="title_selector_switch_tts_engine">Spraakenjin</string>

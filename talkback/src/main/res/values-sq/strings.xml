@@ -4,7 +4,6 @@
   <string name="talkback_service_html_description">Kur TalkBack është aktiv, ai të jep komente me zë në mënyrë që të mund ta përdorësh pajisjen pa shikuar në ekran. TalkBack është i synuar për situata ku njerëzit kanë vështirësi në shikimin e ekranit.&lt;br&gt;&lt;br&gt;&lt;b&gt;Si të përdorësh TalkBack&lt;/b&gt;&lt;br&gt;• Rrëshqit shpejt djathtas ose majtas për të lëvizur mes artikujve&lt;br&gt;• Trokit dy herë për të aktivizuar një artikull&lt;br&gt;• Zvarrit 2 gishta për të lëvizur në ekran&lt;br&gt;&lt;b&gt;Si të çaktivizosh TalkBack&lt;/b&gt;&lt;br&gt;1. Te \"Cilësimet\", trokit &lt;b&gt;Përdor TalkBack&lt;/b&gt;. Aty do të ketë një kontur. Trokite atë dy herë.&lt;br&gt;2. Në mesazhin e konfirmimit, trokit &lt;b&gt;Ndalo&lt;/b&gt;. Aty do të ketë një kontur. Trokite atë dy herë.</string>
   <string name="talkback_service_summary">Përdor një lexues ekrani për t\'i dëgjuar artikujt të lexuar me zë</string>
   <string name="talkback_preferences_title">Cilësimet e TalkBack</string>
-  <string name="talkback_settings_screen_title_breadcrumb">Cilësimet</string>
   <string name="tts_preferences_title">Tekst në ligjërim</string>
   <string name="language_options">Gjuhët</string>
   <string name="spoken_language">Gjuha e folur</string>
@@ -19,23 +18,17 @@
   <string name="search_mode_cancel">Kërkimi u anulua.</string>
   <string name="notification_type_status_started">Filloi</string>
   <string name="notification_type_status_stopped">Ndaloi</string>
-  <string name="notification_type_status_connected">lidhur</string>
-  <string name="notification_battery_level_unknown">i panjohur</string>
   <string name="notification_battery_saver_mode">\"Kursyesi i baterisë\" aktiv</string>
   <string name="template_no_text_selected">Nuk u zgjodh asnjë tekst</string>
   <string name="template_charging">Po ngarkon %1$s Niveli i baterisë %2$s për qind.</string>
   <string name="template_charging_lite">Po ngarkon %1$s</string>
-  <string name="template_battery_state">Energjia %1$s %2$s përqind %3$s</string>
   <string name="template_language_options_menu_item">%1$s (%2$s)</string>
   <string name="value_ringer_vibrate">Zile me dridhje.</string>
   <string name="value_ringer_silent">Zilja është heshtur.</string>
   <string name="value_screen_on">Ekrani aktiv.</string>
   <string name="value_screen_off">Ekrani është i fikur.</string>
   <string name="value_device_unlocked">Pajisja u shkyç.</string>
-  <string name="title_pref_category_audio">Audio</string>
   <string name="title_pref_speech_volume">Volumi i ligjërimit</string>
-  <string name="title_pref_speech_rate">Shpejtësia e të folurit</string>
-  <string name="summary_pref_speech_rate">Shpejtësia me të cilën thuhet teksti</string>
   <string name="title_pref_verbose_scroll_announcement">Lexo gjithmonë me zë numrat e artikujve në listë</string>
   <string name="summary_pref_verbose_scroll_announcement">Lexo me zë numrin për të gjitha mënyrat e lëvizjes</string>
   <string name="title_pref_cover_proximity_sensor">Mbulo sensorin e afërsisë për të ndaluar të folurën</string>
@@ -59,20 +52,10 @@
   <string name="pref_speak_time_title">Lexo me zë orën</string>
   <string name="pref_speak_time_summary">Kur aktivizon ekranin</string>
   <string name="summary_speak_container_element_positions">Përfshin informacionet gjatë hyrjes dhe daljes në lista, rrjeta dhe kontejnerë të tjerë</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_title">Vonesa e fokusit u shtua te kontrolli i leximit</string>
-  <string name="confirm_focus_delay_reading_control_added_dialog_message">Rrëshqit shpejt me 3 gishta për të përdorur kontrollin e leximit dhe ndrysho vonesën e fokusit në çdo kohë</string>
-  <string name="confirm_the_typing_focus_delay_reduction_dialog_title">Dëshiron të kalosh te ngritja për të shkruar?</string>
-  <string name="message_of_typing_focus_delay_reduction_confirm_dialog">Kur vonesa e fokusit për të shkruar caktohet nën 0,3 sekonda, do të jetë shumë e vështirë të kryhet trokitja dy herë për të shkruar. Zgjidh \"Ndrysho\" për të kaluar automatikisht te ngritja për të shkruar.\n\nPër të përdorur ngritjen për të shkruar, mbaj gishtin për të zgjedhur një çelës dhe më pas ngrije për të shkruar.\n\nMund ta personalizosh këtë te cilësimet e TalkBack.</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_title">Vonesa e fokusit për të shkruar u shtua te kontrolli i leximit</string>
-  <string name="confirm_typing_focus_delay_reading_control_added_dialog_message">Nëse ke probleme me trokitjen dy herë kur shkruan, rrëshqit shpejt me 3 gishta për të përdorur kontrollin e leximit dhe kalo te një vonesë më e gjatë e fokusit për të shkruar</string>
-  <string name="gestures_announce_typing_focus_wont_change">Vonesa e fokusit për të shkruar nuk po funksionon pa \"Ngritjen për të shkruar\".</string>
-  <string name="confirm_latency_reduction_reading_control_added_dialog_positive_button">E kuptova</string>
   <string name="reset_letency_reduction_settings_dialog_title">Të rivendosen cilësimet e vonesës?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Kjo do t\'i rivendosë te parazgjedhja të gjitha cilësimet e vonesës</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Rivendos</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Cilësimet e reduktimit të vonesës janë rivendosur.</string>
-  <string name="reduce_focus_delay_settings_confirm_button">Ndërro</string>
-  <string name="reduce_focus_delay_settings_cancel_button">Mos ndërro</string>
   <string name="Reset_gesture_settings_dialog_title">Të rivendosen gjestet?</string>
   <string name="Reset_gesture_settings_set_dialog_title">Të rivendosen gjestet e grupit aktual?</string>
   <string name="message_reset_gesture_settings_confirm_dialog">Kjo do t\'i rivendosë të gjitha gjestet te veprimet e tyre të parazgjedhura.\n\nDo të humbësh çdo ndryshim që ke bërë.</string>
@@ -85,13 +68,7 @@
   <string name="pref_allow_frequent_content_change_announcement_title">Shqipto përditësimet e progresit</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Përfshin përditësimet ndërkohë që shkarkon, ndjek drejtimet e udhëtimit me makinë etj. Kur është i çaktivizuar, do të marrësh përsëri përditësime më pak të shpeshta.</string>
   <string name="title_pref_explore_by_touch">Eksploro me prekje</string>
-  <string name="title_pref_category_visual">Vizuale</string>
   <string name="title_pref_category_controls">Kontrollet</string>
-  <string name="title_pref_category_braille">Breil</string>
-  <string name="title_pref_category_general">Të përgjithshme</string>
-  <string name="title_pref_category_advanced">I përparuar</string>
-  <string name="title_pref_category_others">Të tjera</string>
-  <string name="title_pref_category_tutorial_and_help">Udhëzuesi dhe ndihma</string>
   <string name="title_pref_category_reduce_latency_summary">Këto cilësime mund të reduktojnë vonesën para njoftimeve të TalkBack</string>
   <string name="reset_latency_settings_title">Rivendos të gjitha cilësimet e vonesës</string>
   <string name="title_pref_single_tap">Trokit një herë për ta aktivizuar</string>
@@ -101,32 +78,18 @@
   <string name="title_pref_category_manage_focus_indicator">Ndrysho treguesin e fokusit</string>
   <string name="title_pref_category_manage_gestures">Gjestet</string>
   <string name="title_pref_manage_labels">Etiketat e personalizuara</string>
-  <string name="title_pref_manage_customize_menus">Modifiko menytë</string>
   <string name="title_pref_category_context_menu">Personalizo menynë e Talkback</string>
   <string name="title_pref_category_selector_menu">Personalizo kontrollet e leximit</string>
   <string name="title_pref_category_navigation_menu">Modifiko opsionet e navigimit</string>
-  <string name="pref_category_context_menu_summary">Për të përdorur menynë e TalkBack, trokit në ekran me 3 gishta. Gjithashtu mund të rrëshqasësh shpejt lart dhe më pas djathtas ose të rrëshqasësh shpejt poshtë dhe më pas djathtas.</string>
-  <string name="pref_category_context_menu_summary_xr">Për të përdorur menynë TalkBack, ktheje drejt vetes pëllëmbën dytësore dhe kap me dy gishta.</string>
-  <string name="pref_category_context_menu_summary_single_finger">Për të përdorur menynë TalkBack, rrëshqit shpejt poshtë pastaj djathtas.</string>
-  <string name="pref_category_selector_menu_summary">Për të përdorur kontrollet e leximit, rrëshqit shpejt majtas ose djathtas me 3 gishta. Mund të rrëshqasësh gjithashtu shpejt lart ose poshtë me 3 gishta.</string>
-  <string name="pref_category_selector_menu_summary_xr">Për të kaluar në cikël nëpër kontrollet e leximit, ktheje drejt vetes pëëlëmbën dytësore, mbaje kapjen me dy gishta, lëviz djathtas ose majtas dhe lëshoje.</string>
-  <string name="pref_category_selector_menu_summary_single_finger">Për të përdorur kontrollet e leximit, rrëshqit shpejt lart pastaj poshtë.</string>
   <string name="title_pref_manage_keyboard_shortcuts">Shkurtoret e tastierës</string>
   <string name="title_pref_export_custom_labels">Eksporto etiketat e importuara</string>
-  <string name="title_pref_play_store">Hape TalkBack te \"Dyqani i Play\"</string>
-  <string name="summary_pref_play_store">Versioni aktual i TalkBack: %1$s</string>
   <string name="title_pref_help_and_feedback">Ndihma dhe komentet</string>
-  <string name="title_pref_gup">Kontakto me ekipin e mbështetjes të Google për personat me aftësi të kufizuara</string>
-  <string name="subtitle_pref_gup">Merr ndihmë duke përdorur TalkBack ose raporto probleme</string>
-  <string name="pref_item_licenses">Licencat me burim të hapur</string>
-  <string name="title_pref_tutorial">Udhëzuesi</string>
   <string name="title_pref_help">Ndihma</string>
   <string name="title_pref_show_tos">Kushtet e shërbimit</string>
   <string name="title_pref_show_privacy_policy">Politika e privatësisë</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gjestet e gjurmës së gishtit</string>
   <string name="title_pref_category_tutorial">Udhëzuesi i TalkBack</string>
   <string name="title_pref_category_help_no_tutorial">Ndihma</string>
-  <string name="title_pref_category_typing">Të shkruarit</string>
   <string name="title_pref_advanced_settings">Cilësimet e përparuara</string>
   <string name="title_pref_show_exit_watermark">Shfaq udhëzimet për çaktivizimin e TalkBack</string>
   <string name="summary_pref_show_exit_watermark">Një mesazh tregon kur aktivizohet TalkBack, për të të ndihmuar ta çaktivizosh atë me shpejtësi.</string>
@@ -154,8 +117,6 @@
       &lt;li&gt;Disa nga tastet modifikues janë ndryshe.&lt;/li&gt;&lt;/ul&gt;</string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Mëso më shumë rreth hartave të tasteve</string>
   <string name="keycombo_go_to_settings">Shko te \"Cilësimet\"</string>
-  <string name="keycombo_keymap_changes_notifications_content">TalkBack po bëhet gati të heqë hartën klasike të tasteve. Për të vazhduar të përdorësh shkurtoret e tastierës, kalo në hartën e parazgjedhur të tasteve.</string>
-  <string name="keycombo_keymap_changes_notifications_action">Mëso më shumë</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">E kuptova</string>
   <string name="keycombo_new_keymap_notification_dialog_negative_button">Cilësimet</string>
   <string name="keycombo_new_keymap_notification_dialog_neutral_button">Mëso më shumë</string>
@@ -163,12 +124,7 @@
   <string name="keycombo_new_keymap_notification_dialog_message_for_classic_keymap">Tani po përdor hartën e parazgjedhur të tasteve të TalkBack. Ka gjithashtu një hartë të re të përmirësuar të tasteve që ka shumë komanda të reja. Mëso më shumë në \"Qendrën e ndihmës\" ose kalo te harta e re e tasteve te \"Cilësimet\".</string>
   <string name="keycombo_new_keymap_notification_dialog_title_for_default_keymap">Ofrohet harta e re e tasteve</string>
   <string name="keycombo_new_keymap_notification_dialog_message_for_default_keymap">Harta e re e tasteve e përmirësuar në TalkBack shton shumë komanda të reja. Mëso më shumë në \"Qendrën e ndihmës\" ose kalo te harta e re e tasteve te \"Cilësimet\".</string>
-  <string name="keycombo_update_modifier_key_warning_title">Përditëso tastin modifikues të TalkBack</string>
-  <string name="keycombo_update_modifier_keys_warning_negative_button">Jo tani</string>
   <string name="keycombo_warning_content_description">Më shumë informacione rreth tastit modifikues</string>
-  <string name="keycombo_warning_dialog_title">Përditëso tastin modifikues</string>
-  <string name="keycombo_warning_dialog_message">Që shkurtoret e tastierës për TalkBack të funksionojnë siç duhet, përditëso tastin modifikues nga \"Veprim\" në Alt.\n\nNëse vazhdon të përdorësh tastin modifikues \"Veprim\", disa shkurtore do të kryejnë veprime të ndryshme për këtë version të Android.</string>
-  <string name="keycombo_warning_dialog_close_button">@string/close_string</string>
   <string name="keycombo_menu_category_select_keymap">Harta e tasteve</string>
   <string name="keycombo_menu_select_keymap">Zgjidh një hartë të tasteve</string>
   <string name="keycombo_menu_reset_keymap">Rivendos hartën e tasteve</string>
@@ -218,7 +174,6 @@
   <string name="keycombo_menu_global_speech_volume_increase">Rrit volumin e ligjërimit</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Ul volumin e ligjërimit</string>
   <string name="keycombo_menu_global_refocus_current_node">Ligjëro fokusin aktual</string>
-  <string name="keycombo_menu_category_granularity">Navigimi</string>
   <string name="keycombo_menu_granularity_increase">Cilësimi i lundrimit të radhës</string>
   <string name="keycombo_menu_granularity_decrease">Cilësimi i lundrimit të mëparshëm</string>
   <string name="keycombo_menu_category_other">Veprimet e tjera</string>
@@ -311,7 +266,6 @@
   <string name="message_in_reset_keymap_confirm_dialog">Je i sigurt që dëshiron të rivendosësh tastet e shkurtoreve për këtë hartë tastesh te vlerat e tyre të parazgjedhura? Ki parasysh se ky veprim nuk mund të zhbëhet.</string>
   <string name="reset_button_in_reset_keymap_confirm_dialog">Rivendos</string>
   <string name="template_keycombo_menu_browse_mode_command">%1$s në modalitetin e shfletimit</string>
-  <string name="keycombo_assign_dialog_instruction">Shtyp kombinimin e tasteve për të caktuar një shkurtore të re. Ajo duhet të përmbajë të paktën tastin ALT ose tastin e kontrollit CTRL.</string>
   <string name="keycombo_assign_dialog_default_keymap_instruction">Shtyp kombinimin e tasteve me tastin e modifikimit %1$s për të caktuar një shkurtore të re.</string>
   <string name="keycombo_unassigned">I pacaktuar</string>
   <string name="save_button_in_keycombo_assign_dialog">Ruaj</string>
@@ -366,10 +320,6 @@
   <string name="title_pref_touch_explore_timeout">Vonesa e fokusit për të shkruar</string>
   <string name="message_pref_touch_explore_latency">Vonesa më e shkurtër e fokusit për të shkruar do të thotë se njoftimet e TalkBack bëhen më shpejt pas prekjes së tastierës.\n\nZgjidh një vonesë</string>
   <string name="title_pref_touch_focus_timeout">Vonesa e fokusit</string>
-  <string name="summary_pref_touch_focus_time">
-Kontrollon sa shpejt flet TalkBack pas zhvendosjes së fokusit. Një vonesë më e shkurtër bën që TalkBack të duket më i shpejtë, por mund ta bëjë më të vështirë kryerjen e trokitjeve dy herë dhe tri herë.\n\n
-Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar te trokitja me dy gishta për të aktivizuar.
-      </string>
   <string name="title_pref_talkback_gesture_detection">Menaxho gjestet në TalkBack</string>
   <string name="toast_pref_talkback_gesture_detection">Çaktivizo TalkBack dhe aktivizoje atë sërish për të aktivizuar këtë cilësim.</string>
   <string name="title_pref_auto_image_captioning">Përshkrimet automatike</string>
@@ -382,28 +332,16 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="dialog_title_turn_on_image_description">Aktivizo përshkrimet e imazheve te \"Cilësimet\"</string>
   <string name="dialog_message_turn_on_image_description">Mund të provosh përsëri pasi të aktivizosh përshkrimet automatike ose të detajuara të imazheve</string>
   <string name="title_pref_detailed_image_description">Përshkrime të detajuara të imazheve</string>
-  <string name="summary_pref_ai_description">Dëgjo përshkrime më të gjata kur zgjedh \"%1$s\" nga menyja e TalkBack</string>
   <string name="dialog_message_on_device_ai_description">Do të dëgjosh një përshkrim të shkurtër kur fokusohesh te një imazh në aplikacionet e mbështetura.\n\nImazhet përpunohen në pajisjen tënde dhe nuk dërgohen asnjëherë te Google. \n\nIA-ja gjeneruese është eksperimentale, kështu që do të bëjë gabime. Duke vazhduar, ti pranon <a href="https://policies.google.com/terms/generative-ai">Kushtet e shërbimit të Google</a>.</string>
   <string name="enable_gemini">Aktivizo</string>
   <string name="powered_by_gemini">Mundësuar nga IA-ja gjeneruese</string>
-  <string name="detailed_image_description_ongoing_hint">Po merr përshkrimin</string>
-  <string name="detailed_image_description_result_prefix">U zbulua: Imazhi. %1$s</string>
-  <string name="dialog_title_on_device_ai_download_needed">Nevojitet shkarkimi për përshkrimet automatike të imazheve</string>
   <string name="dialog_message_on_device_detailed_ai_promotion">Imazhet përpunohen në pajisjen tënde dhe nuk dërgohen asnjëherë te Google.\n\nIA-ja gjeneruese është eksperimentale, kështu që do të bëjë gabime. Duke vazhduar, ti pranon %1$s.</string>
   <string name="dialog_message_gen_ai_tos_link">Kushtet e shërbimit të Google</string>
   <string name="message_aifeature_downloading">Modeli i IA-së po shkarkohet. Kjo mund të zgjasë pak. Do të njoftohesh kur të përfundojë.</string>
   <string name="message_aifeature_downloading_with_progress">Shkarkimi është akoma në vazhdim. Janë shkarkuar: %1$d nga %2$d MB.</string>
-  <string name="message_aifeature_download_complete">Modeli i IA-së u shkarkua. TalkBack tani mund të gjenerojë përshkrimet e imazheve.</string>
   <string name="summary_pref_auto_image_captioning">Për ikonat, imazhet dhe tekstin në imazhe</string>
-  <string name="summary_pref_auto_image_captioning_text_only">Për tekst në imazhe</string>
-  <string name="summary_pref_auto_image_captioning_no_icon">Për imazhe dhe tekst në imazhe</string>
-  <string name="summary_pref_auto_image_captioning_no_image">Për ikona dhe tekst në imazhe</string>
   <string name="summary_pref_module_downloading">Po shkarkohet…</string>
-  <string name="summary_pref_auto_image_captioning_enabled">Aktive për të gjitha imazhet</string>
-  <string name="summary_pref_auto_image_captioning_enabled_unlabelled_only">Aktive vetëm për imazhet pa etiketa</string>
   <string name="summary_pref_auto_image_captioning_disabled">Joaktive</string>
-  <string name="summary_pref_auto_icon_detection_enabled">Joaktive për të gjitha ikonat</string>
-  <string name="summary_pref_auto_icon_detection_enabled_unlabelled_only">Aktive vetëm për ikonat pa etiketa</string>
   <string name="summary_pref_auto_icon_detection_disabled">Joaktive</string>
   <string name="title_pref_enable_auto_image_caption">Të gjitha imazhet</string>
   <string name="title_pref_enable_auto_image_caption_arg">Të gjitha imazhet\n%1$s</string>
@@ -413,7 +351,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="title_pref_enable_auto_icon_detection">Të gjitha ikonat</string>
   <string name="title_pref_enable_auto_icon_detection_unlabelled_only">Vetëm ikonat pa etiketa</string>
   <string name="title_pref_disable_auto_icon_detection">Mos i përshkruaj ikonat</string>
-  <string name="dialog_message_on_device_ai_model_download">Do të dëgjosh një përshkrim të shkurtër kur fokusohesh te një imazh në aplikacionet e mbështetura.\n\nImazhet përpunohen në pajisjen tënde dhe nuk dërgohen asnjëherë te Google.\n\nIA-ja gjeneruese është eksperimentale, kështu që do të bëjë gabime. Duke vazhduar, ti pranon %1$s.</string>
   <string name="title_pref_enable_gemini_support">Aktive</string>
   <string name="title_pref_disable_gemini_support">Joaktive</string>
   <string name="summary_pref_gemini_support_enabled">Gemini është i aktivizuar</string>
@@ -457,7 +394,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="shortcut_print_node_tree">Printo pemën e nyjës</string>
   <string name="shortcut_print_performance_stats">Printo statistikat e performancës</string>
   <string name="shortcut_first_in_screen">Fokuso artikullin e parë në ekran</string>
-  <string name="shortcut_summary">Bëj një përmbledhje të strukturës së ekranit</string>
   <string name="shortcut_voice_commands">Nis veçorinë e komandave zanore</string>
   <string name="shortcut_last_in_screen">Fokuso artikullin e fundit në ekran</string>
   <string name="shortcut_enable_dimming">Fshih ekranin</string>
@@ -561,7 +497,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="menu_category_web_navigation">Navigimi në ueb</string>
   <string name="menu_category_basic_navigation">Navigimi bazë</string>
   <string name="summary_custom_action">Shfaqet kur ekzistojnë veprime për artikullin aktual, duke përfshirë lidhjet, kopjimin, ngjitjen, zgjedhjen etj.</string>
-  <string name="summary_context_menu_links">Hap lidhjet brenda një artikulli të fokusuar</string>
   <string name="summary_viewpager_controls">Shko te faqja tjetër ose e mëparshme. Shfaqet kur je duke lexuar përmbajtje me shumë faqe.</string>
   <string name="summary_labeling_controls">Shfaqet kur zgjedh një artikull të paetiketuar</string>
   <string name="summary_granularity">Lexo sipas karaktereve, fjalëve, rreshtave etj.</string>
@@ -631,12 +566,9 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="summary_screen_overview">Përmblidh ekranin me butonat e veprimit</string>
   <string name="summary_screen_overview_no_actions">Dëgjo një përmbledhje të përmbajtjes në ekran</string>
   <string name="summary_image_caption">Shqipto tekstin dhe ikonat brenda një imazhi të zgjedhur</string>
-  <string name="summary_summarize_view">Lexo me zë përmbledhjen e pamjes</string>
   <string name="summary_typo_suggestions">Shfaqet kur kursori është mbi një gabim drejtshkrimor</string>
   <string name="summary_cache_keyboard_keys">TalkBack ngarkon paraprakisht njoftimet për të zvogëluar vonesën kur ti shkruan</string>
   <string name="summary_cache_keyboard_keys_disabled">Përdor \"Tekstin në ligjërim\" të Google për të përdorur këtë veçori</string>
-  <string name="value_direction_down">poshtë</string>
-  <string name="value_direction_down_and_right">poshtë dhe më pas djathtas</string>
   <string name="title_pref_shortcut_up">Rrëshqitja lart</string>
   <string name="title_pref_shortcut_up_xr">Pëllëmba e dytë drejt vetes, kap me dy gishta dhe rrëshqit shpejt lart</string>
   <string name="title_pref_shortcut_down">Rrëshqitja poshtë</string>
@@ -704,10 +636,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="title_pref_shortcut_fingerprint_left">Rrëshqit majtas mbi sensorin e gjurmës</string>
   <string name="title_pref_shortcut_fingerprint_right">Rrëshqit djathtas mbi sensorin e gjurmës</string>
   <string name="title_pref_version_code">Kodi i versionit</string>
-  <string formatted="false" name="value_volume_100_percent">Përshtate me volumin e të folurit</string>
-  <string formatted="false" name="value_volume_75_percent">75% e volumit të të folurit</string>
-  <string formatted="false" name="value_volume_50_percent">50% e volumit të të folurit</string>
-  <string formatted="false" name="value_volume_25_percent">25% e volumit të të folurit</string>
   <string name="value_type_confirmation_double_tap">Mbaj gishtin për zgjedhur një tast çfarëdo, pastaj trokit dy herë</string>
   <string name="value_type_confirmation_lift_to_type">Mbaj gishtin për zgjedhur tastin e shkronjës, pastaj ngrije. Trokit dy herë për tastet e tjera.</string>
   <string name="value_type_confirmation_lift_to_type_for_any_key">Mbaj gishtin për zgjedhur një tast çfarëdo, pastaj ngrije</string>
@@ -720,12 +648,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="value_touch_explore_time_out_200ms">0,2 sekonda</string>
   <string name="value_touch_explore_time_out_250ms">0,25 sekonda</string>
   <string name="value_touch_explore_time_out_300ms">0,3 sekonda (e parazgjedhur)</string>
-  <string name="value_shake_to_read_disabled">Çaktivizuar</string>
-  <string name="value_shake_to_read_threshold_very_light">Shumë e lehtë</string>
-  <string name="value_shake_to_read_threshold_light">E lehtë</string>
-  <string name="value_shake_to_read_threshold_medium">Mesatare</string>
-  <string name="value_shake_to_read_threshold_hard">E fortë</string>
-  <string name="value_shake_to_read_threshold_very_hard">Shumë e fortë</string>
   <string name="title_pref_on_screen_keyboard">Tastiera në ekran</string>
   <string name="title_pref_physical_keyboard">Tastiera fizike</string>
   <string name="value_keyboard_echo_none">Asnjë</string>
@@ -738,8 +660,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="pref_time_feedback_format_entries_default">Përdor formatin e orës të pajisjes</string>
   <string name="pref_time_feedback_format_entries_12_hour">12 orë</string>
   <string name="pref_time_feedback_format_entries_24_hour">24 orë</string>
-  <string name="notification_title_talkback_gestures_changed">Gjestet e TalkBack u ndryshuan</string>
-  <string name="notification_message_talkback_gestures_changed">Trokit për të rishikuar ndryshimet në gjestet e qasshmërisë</string>
   <string name="always_show_warning_checkbox">Shfaqe gjithmonë këtë paralajmërim</string>
   <string name="label_dialog_title_add">Shto një etiketë</string>
   <string name="label_dialog_title_edit">Redakto etiketën</string>
@@ -760,16 +680,8 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="no_apps_to_export_labels">Nuk u gjetën aplikacione për të eksportuar etiketat.</string>
   <string name="label_choose_app_to_import">Zgjidh aplikacionin për të importuar etiketat:</string>
   <string name="label_choose_app_to_export">Zgjidh një aplikacion për të eksportuar etiketat:</string>
-  <string name="talkback_gesture_change_details">Ky version i TalkBack përfshin ndryshime te gjestet e parazgjedhura të qasshmërisë. Veprimet e lidhura me këto gjeste mund të personalizohen brenda cilësimeve të TalkBack. Kur aktivizohet veçoria \"Eksploro me prekje\", mund të kryesh gjestet e mëposhtme për të kryer veprime të caktuara.\n\n%1$s</string>
   <string name="dialog_title_dim_screen">Do ta fshehësh ekranin?</string>
   <string name="dialog_message_dim_screen">Kjo çaktivizon ekranin për të përmirësuar privatësinë. Disa përmbajtje mund të shfaqen përsëri, si p.sh. mesazhet për aktivizimin e ekranit përsëri ose menytë për veçoritë e qasshmërisë si TalkBack.</string>
-  <string name="talkback_built_in_gesture_change_details">Ky version i TalkBack përfshin ndryshime në gjestet e parazgjedhura të qasshmërisë.\n\nGjesti \"lart e më pas poshtë\" do të të lejojë të lëvizësh tek artikulli i parë në ekran, ndërsa me gjestin \"poshtë e më pas lart\" do të lëvizësh tek artikulli i fundit.\n\nShkalla e detajeve të leximit tani mund të ndryshohet duke e fokusuar një artikull dhe duke zgjedhur më pas një shkallë të detajeve nga menyja kontekstuale e TalkBack.\n\nVeprimet e kryera nga këto gjeste mund t\'i ndryshosh te \"Cilësimet e TalkBack\".</string>
-  <string name="default_action_changed_details">Për të vendosur në pauzë dhe për të luajtur media, tani mund të trokasësh dy herë dhe ta mbash me dy gishta.\n\n Gjestet e tjera gjithashtu kanë ndryshuar.</string>
-  <string name="talkback_built_in_gesture_open_url">Hap në telefon për të mësuar më shumë</string>
-  <string name="talkback_built_in_gesture_change_details_45">Ky version i TalkBack përfshin ndryshime te gjestet e parazgjedhura të qasshmërisë.\n\nGjesti i drejtimit lart tani lëviz te cilësimi i mëparshëm i navigimit dhe gjesti i drejtimit poshtë tani lëviz te cilësimi tjetër i navigimit.</string>
-  <string name="side_tap_shortcuts_removed_details">Këto cilësime janë hequr nga TalkBack për shkak të problemeve me qëndrueshmërinë:\n• Trokit te gjestet në anë të pajisjes\n• Tunde për të nisur leximin e vazhdueshëm</string>
-  <string name="button_accept_changed_gesture_mappings">Prano gjestet</string>
-  <string name="button_customize_gesture_mappings">Personalizo gjestet</string>
   <string name="button_disable_all_events">Çaktivizo të gjitha</string>
   <string name="button_enable_all_events">Aktivizo të gjitha</string>
   <string name="dialog_title_disable_exploration">Të çaktivizohet funksioni \"Eksploro me prekje\"?</string>
@@ -893,8 +805,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="screen_search_hint_type_search_tables">Kërko te tabelat</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
   <string name="talkback_notification_channel_description">Kanali i njoftimeve i TalkBack</string>
-  <string name="pref_selector_summary">%1$s për të zgjedhur një cilësim. Më pas %2$s për të rregulluar cilësimin.</string>
-  <string name="speech_rate_change">Shpejtësia e të folurit %1$d%%</string>
   <string name="speech_pitch_maximum">Tonaliteti më i lartë i ligjërimit</string>
   <string name="speech_pitch_minimum">Tonaliteti më i ulët i ligjërimit</string>
   <string name="reset_speech_rate_and_pitch">Rivendos shpejtësinë e të folurës dhe intonacionin</string>
@@ -904,10 +814,7 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="vibration_feedback_state">Reagimi me dridhje: %1$s</string>
   <string name="text_formatting_state">Lexo informacionet e formatimit të tekstit - %1$s</string>
   <string name="typing_echo_change">Tastierë fizike me jehonë për %1$s</string>
-  <string name="reading_control_toggle_prefix_xr">Pëllëmba dytësore drejt vetes, kryej një shtypje të gjatë për të aktivizuar/çaktivizuar modalitetin e kontrollit të leximit.</string>
   <string name="gesture_1_or_2">%1$s ose %2$s</string>
-  <string name="select_setting_hint">%1$s për të zgjedhur një cilësim tjetër</string>
-  <string name="adjust_setting_hint">%1$s për të rregulluar cilësimin</string>
   <string name="adjust_granularity_hint">%1$s për t\'u lexuar sipas %2$s</string>
   <string name="adjust_typo_hint">%1$s për sugjerime.</string>
   <string name="use_action_hint">Trokit dy herë për të kryer veprimin</string>
@@ -947,7 +854,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="setting_selector_heading">Kontrollet e leximit</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Për ta vendosur në pauzë ose për ta luajtur median në një aplikacion videoje ose muzike, trokit dy herë me 2 gishta. Provoje tani.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Aplikacionet e tjera mund ta përdorin këtë gjest për gjëra të tilla si për t\'iu përgjigjur një telefonate ose për ta përfunduar atë. Ky gjest mund të mos mbështetet nga të gjitha aplikacionet.</string>
-  <string name="onboarding_link_to_talkback_tutorials">Shiko të gjithë udhëzuesit e TalkBack</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media është në pauzë ose po luhet. Zakonisht, kjo do të vendosë në pauzë ose do të luajë videon ose muzikën aktuale. Rrëshqit shpejt djathtas për të vazhduar.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Për të ndaluar përkohësisht të folurën e TalkBack, trokit me 2 gishta.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">E folura e TalkBack u ndalua. Zakonisht, kjo do të ndalojë frazën aktuale që po thotë TalkBack. Rrëshqit shpejt djathtas për të vazhduar.</string>
@@ -961,38 +867,18 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Modaliteti i zgjedhjes është aktiv ose joaktiv. Zakonisht, kjo do të nisë ose ndalojë modalitetin e zgjedhjes së tekstit kur je brenda një fushe hyrjeje. Rrëshqit shpejt djathtas për të vazhduar.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Për të përdorur kontrollet e leximit, rrëshqit shpejt majtas ose djathtas me 3 gishta. Mund të rrëshqasësh gjithashtu shpejt lart ose poshtë me 3 gishta.</string>
   <string name="new_shortcut_gesture_note">Shënim. Ke personalizuar disa prej gjesteve të tua, prandaj këto informacione mund të mos jenë të sakta. Për të rishikuar gjestet e tua, shko te cilësimet e TalkBack.</string>
-  <string name="welcome_to_android11">Mirë se vjen në TalkBack në Android 11</string>
   <string name="welcome_to_android11_text">Janë shtuar gjeste të reja për ta bërë TalkBack më të shpejtë dhe më të lehtë për ta përdorur.\n\nNë këtë ekran, mund të provosh gjestet e reja. Mund t\'i rishikosh këto informacione te cilësimet e TalkBack në çdo moment.</string>
   <string name="new_gesture_notification_title">Gjestet e reja në TalkBack</string>
   <string name="new_gesture_notification_content">Trokit për të mësuar se si ta përdorësh TalkBack më shpejt me gjestet e reja.</string>
   <string name="dump_node_tree_description">Pema e nyjave është printuar tek evidencat.</string>
   <string name="report_gesture_description">Këtu janë gjestet e kryera së fundi. Raporto se cili gjest është gabim dhe çfarë pritet.</string>
-  <string name="update_welcome_text_content">Tani mund të lidhesh me ekranet breil nëpërmjet HID, një mënyrë për t\'u lidhur me pajisjet me Bluetooth. Sigurohu që ke drejtuesit më të fundit të firmuerit nga prodhuesi yt dhe më pas aktivizo Bluetooth-in në ekranin tënd breil. Shko te cilësimet e TalkBack &gt; Ekrani breil dhe aktivizo \"Përdor ekranin breil\". Gjej pajisjen tënde në listën e pajisjeve dhe lidhu me të.</string>
-  <string name="update_welcome_text_content_tts">Tani mund të lidhesh me ekranet breil nëpërmjet HID, një mënyrë për t\'u lidhur me pajisjet me Bluetooth. Sigurohu që ke drejtuesit më të fundit të firmuerit nga prodhuesi yt dhe më pas aktivizo Bluetooth-in në ekranin tënd breil. Shko te cilësimet e TalkBack dhe më pas tek ekrani breil dhe aktivizo \"Përdor ekranin breil\". Gjej pajisjen tënde në listën e pajisjeve dhe lidhu me të.</string>
-  <string name="update_welcome_text_content_with_link">Mëso se si të përdorësh ekranin breil me TalkBack.</string>
   <string name="update_welcome_talkback_16.1">Ky përditësim i TalkBack prezanton mbështetjen për \"Përshkruaj ekranin\" në më shumë gjuhë dhe përmirësime të tjera të cilësisë që e bëjnë më të lehtë përdorimin e TalkBack.\n\nDo të mësosh më shumë për këto ndryshime në ekranet në vijim.\n\nMund t\'i rishikosh këto informacione më vonë te cilësimet e TalkBack &gt; Veçoritë e reja në TalkBack.</string>
   <string name="update_welcome_talkback_16.1_tts">Ky përditësim i TalkBack prezanton mbështetjen për \"Përshkruaj ekranin\" në më shumë gjuhë dhe përmirësime të tjera të cilësisë që e bëjnë më të lehtë përdorimin e TalkBack.\n\nDo të mësosh më shumë për këto ndryshime në ekranet në vijim.\n\nMund t\'i rishikosh këto informacione më vonë te cilësimet e TalkBack dhe më pas te \"Veçoritë e reja në TalkBack\".</string>
-  <string name="describe_screen_and_qna_title">Gjuhë të reja për \"Përshkruaj ekranin\" dhe \"Pyet Gemini\"</string>
-  <string name="describe_screen_and_qna_content">\"Përshkruaj ekranin\" dhe \"Pyet Gemini\" tani ofrohen në më shumë gjuhë. &lt;a href=\"https://support.google.com/accessibility/android?p=talkback_16_1\"&gt;Mëso më shumë te qendra e ndihmës&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_title">Shkurtorja për shkrimin me zë</string>
   <string name="shortcut_for_dictation_content">Kur përdor Gboard, tani mund të përdorësh një trokitje dy herë me dy gishta për të filluar ose ndaluar shkrimin me zë.
 &lt;br&gt;
 &lt;br&gt;Sigurohu që të kesh versionin më të fundit të &lt;a href=\"https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin\"&gt;Gboard nga Google Play&lt;/a&gt;.</string>
   <string name="shortcut_for_dictation_content_without_google_play">Kur Gboard është në ekran, tani mund të përdorësh një trokitje dy herë me dy gishta për të filluar diktimin me zë dhe më pas një trokitje dy herë me dy gishta për ta ndaluar.</string>
-  <string name="keyboard_title">Tastiera</string>
-  <string name="keyboard_content">TalkBack tani ka një \"Hartë të përmirësuar të tasteve\" për tastierën e tij, me një sërë komandash dhe shkurtoresh të reja. Ky përmirësim, i cili përfshin \"modalitetin e shfletimit\" për navigim më efikas në ueb, përmirëson navigimin dhe ndërveprimin për përdoruesit e TalkBack që mbështeten në tastierat fizike. Mund të kalosh te \"Harta e përmirësuar e tasteve\" te cilësimet e TalkBack &gt; Cilësimet e përparuara &gt; Shkurtoret e tastierës.</string>
-  <string name="keyboard_content_tts">TalkBack tani ka një \"Hartë të përmirësuar të tasteve\" për tastierën e tij, me një sërë komandash dhe shkurtoresh të reja. Ky përmirësim, i cili përfshin \"modalitetin e shfletimit\" për navigim më efikas në ueb, përmirëson navigimin dhe ndërveprimin për përdoruesit e TalkBack që mbështeten në tastierat fizike. Mund të kalosh te \"Harta e përmirësuar e tasteve\" te cilësimet e TalkBack, më pas te \"Cilësimet e përparuara\" dhe më pas te \"Shkurtoret e tastierës\".</string>
-  <string name="reduce_delay_title">Redukto vonesën</string>
-  <string name="reduce_delay_content">Tani mund të reduktosh vonesat e njoftimeve të TalkBack për eksplorimin dhe shkrimin me prekje. Për t\'i parë këto cilësime, shko te cilësimet e TalkBack &gt; Cilësimet e përparuara &gt; Redukto vonesën.</string>
-  <string name="reduce_delay_content_tts">Tani mund të reduktosh vonesat e njoftimeve të TalkBack për eksplorimin dhe shkrimin me prekje. Për t\'i parë këto cilësime, shko te cilësimet e TalkBack, më pas te \"Cilësimet e përparuara\" dhe më pas te \"Redukto vonesën\".</string>
-  <string name="customize_braille_keyboard_improvements_title">Personalizo gjestet për tastierën breil</string>
-  <string name="customize_braille_keyboard_improvements_content">Tani është e mundur të personalizosh gjestet për tastierën virtuale breil në ekran. Për t\'i personalizuar, shko te cilësimet e TalkBack &gt; Tastiera breil &gt; Gjestet.</string>
-  <string name="customize_braille_keyboard_improvements_content_tts">Tani është e mundur të personalizosh gjestet për tastierën virtuale breil në ekran. Për t\'i personalizuar, shko te cilësimet e TalkBack, më pas te \"Tastiera breil\" dhe më pas te \"Gjestet\".</string>
-  <string name="learn_more_about_braille_keyboard">Mëso më shumë rreth tastierës breil</string>
-  <string name="other_changes_title">Ndryshime të tjera</string>
-  <string name="other_changes_content">Një mesazh në ekran tani të ndihmon të çaktivizosh me shpejtësi TalkBack nëse aktivizohet aksidentalisht. Mund ta çaktivizosh këtë te cilësimet e TalkBack &gt; Shfaq udhëzimet për çaktivizimin e TalkBack.</string>
-  <string name="other_changes_content_tts">Një mesazh në ekran tani të ndihmon të çaktivizosh me shpejtësi TalkBack nëse aktivizohet aksidentalisht. Mund ta çaktivizosh këtë te cilësimet e TalkBack dhe më pas te \"Shfaq udhëzimet për çaktivizimin e TalkBack\".</string>
-  <string name="keymap_changes_content">Harta klasike e tasteve është kaluar te harta e parazgjedhur e tasteve, e cila përfshin më shumë shkurtore.</string>
   <string name="announcing_text_formatting_title">Njoftimi për formatimin e tekstit</string>
   <string name="announcing_text_formatting_header">TalkBack tani mund të njoftojë për ndryshimet në formatimin e tekstit, si p.sh. teksti i trashësuar, kursiv, si dhe ngjyrën e tekstit. Për të filluar:</string>
   <string name="announcing_text_formatting_option1">Fokusohu tek artikulli me formatimin, hap menynë e TalkBack dhe zgjidh \"Përshkruaj formatimin e tekstit\" ose</string>
@@ -1083,7 +969,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="additional_tips_link_subtext">Mëso si të bësh telefonata, të dërgosh mesazhe dhe më shumë</string>
   <string name="practice_gestures_link_text">Praktiko gjestet</string>
   <string name="practice_gestures_link_subtext">Provo gjeste të ndryshme për të mësuar se çfarë bëjnë</string>
-  <string name="help_and_feedback_link_subtext">Mëso më shumë rreth TalkBack dhe dërgo komente</string>
   <string name="choose_tutorial_title">Zgjidh se si dëshiron të ndërveprosh me TalkBack</string>
   <string name="touch_tutorial_button">Udhëzuesi i prekjes</string>
   <string name="keyboard_tutorial_button">Udhëzuesi i tastierës</string>
@@ -1229,8 +1114,6 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="wear_training_typing_text5">Provoje më poshtë.</string>
   <string name="wear_training_typing_practice_button_content_description">Të shkruarit me tastierë</string>
   <string name="wear_training_end_tutorial_title">Je gati të fillosh përdorimin e TalkBack</string>
-  <string name="talkback_updated_notification_title">TalkBack është përditësuar</string>
-  <string name="talkback_updated_notification_content">Trokit për të zbuluar më shumë</string>
   <string name="wear_new_feature_page_title">Mirë se vjen në versionin e përditësuar të TalkBack</string>
   <string name="wear_new_feature_page_content">Do të vëresh disa rregullime defektesh në kod dhe ndryshime në mënyrën se si lëviz fokusi</string>
   <string name="wear_new_feature_page_button_content_description">Përfundo</string>
@@ -1249,10 +1132,7 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="title_pref_blue">Blu</string>
   <string name="title_pref_grey">Gri</string>
   <string name="survey_setting_title">Ndaj komentet e tua</string>
-  <string name="survey_closed">Anketa është mbyllur</string>
   <string name="title_summarize_view">Përshkruaj ekranin</string>
-  <string name="title_increase_touch_focus_latency">Rrit vonesën e fokusit</string>
-  <string name="title_decrease_touch_focus_latency">Zvogëlo vonesën e fokusit</string>
   <string name="detected_result">Zbuluar: %1$s</string>
   <string name="title_image_caption">Përshkruaj imazhin</string>
   <string name="image_caption_with_gemini_prefix">Përshkruaj këtë imazh. Mos përdor shënime në përgjigje.</string>
@@ -1279,33 +1159,15 @@ Vonesat nën 0,3 sekonda do ta kalojnë trokitjen dy herë për të aktivizuar t
   <string name="image_qna_question_prefix">PËRDORUESI: %1$s</string>
   <string name="image_qna_answer_prefix">MODELI: %1$s</string>
   <string name="image_qna_with_history_postfix">... [Vazhdo të ndryshosh radhët e PËRDORUESIT dhe MODELIT] ...</string>
-  <string name="screen_overview_with_screenshot">Detyra jote është të ndihmosh dikë që nuk mund ta shohë telefonin e vet të kuptojë se çfarë ka në ekranin e telefonit. Përshkruaje këtë pamje ekrani me disa fjali.
-
-Udhëzimet
-Filloje përgjigjen tënde me \"Ekrani shfaq\"
-Fillimi i përgjigjes duhet të përshkruajë përmbajtjen më të rëndësishme dhe të dukshme në ekran. Këtu janë disa shembuj se cilat mund të jenë përmbajtjet më të rëndësishme dhe të dukshme për të përshkruar
-* Në një aplikacion bisede: dërguesi dhe teksti i mesazhit më të fundit
-* Në një aplikacion të medias sociale: postimi i parë, duke përfshirë atë që e ka postuar, tekstin, si dhe një përshkrim të imazhit
-* Në një aplikacion lajmesh: titulli i artikullit dhe një përshkrim i imazhit kryesor
-* Në një aplikacion blerjesh: një përshkrim i produktit të shfaqur dhe çmimi
-* Në një aplikacion kalendari: ngjarja e radhës dhe numri i ngjarjeve të tjera që shfaqen më pas
-* Në një listë mesazhesh: emri dhe pamja paraprake për mesazhin e parë dhe më pas vetëm emrat për disa të tjerë në listë, si dhe numri i mesazheve të palexuara
-
-Pas kësaj, përgjigjja mund të përshkruajë vendndodhjen hapësinore dhe qëllimin e shiritave në navigimit dhe butonave të dallueshëm.
-Mos përmend përmbajtjet e shiritit të statusit në krye (p.sh. ora, statusi i rrjetit, bateria).
-Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="title_gemini_opt_in_dialog">Të merren përshkrimet e detajuara të imazheve?</string>
   <string name="title_on_device_gemini_opt_in_dialog">Të merren përshkrimet e imazheve?</string>
   <string name="title_gemini_result_dialog">U zbulua: Imazh</string>
   <string name="title_gemini_result_bottom_sheet">Përshkrimi i imazhit</string>
   <string name="title_gemini_screen_overview_result_dialog">Përshkrimi i skenës</string>
-  <string name="title_gemini_screen_overview_summary_page_button_label">Përmbledhja</string>
-  <string name="title_gemini_screen_overview_action_page_button_label">Veprimet</string>
   <string name="positive_button_gemini_opt_in_dialog">Aktivizo</string>
   <string name="positive_button_gemini_nano_opt_in_dialog">Pranoj</string>
   <string name="negative_button_gemini_opt_in_dialog">Jo, faleminderit</string>
   <string name="positive_button_turn_on_image_descriptions_dialog">Shko te \"Cilësimet\"</string>
-  <string name="positive_button_gemini_download_dialog">Shkarko dhe aktivizo</string>
   <string name="positive_button_gemini_result_dialog">@string/close_string</string>
   <string name="detected_recognized_text">Teksti, \"%1$s\".</string>
   <string name="detected_icon_label">Ikona, \"%1$s\".</string>
@@ -1319,8 +1181,6 @@ Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="screen_overview_no_result">Nuk mund të krijohet përmbledhja për ekranin</string>
   <string name="image_caption_no_result">Imazhi nuk mund të përshkruhet</string>
   <string name="image_caption_with_hide_screen">Përshkrimet e imazheve nuk ofrohen kur ekrani është i fshehur. Shfaq ekranin dhe provo përsëri.</string>
-  <string name="feedback_button_state_set">është zgjedhur</string>
-  <string name="feedback_button_state_unset">nuk është zgjedhur</string>
   <string name="action_text_like_button">Shënoje si përgjigje e mirë</string>
   <string name="action_text_dislike_button">Shënoje si përgjigje e keqe</string>
   <string name="action_text_clear_like_button">Pastro përgjigjen e mirë</string>
@@ -1349,18 +1209,13 @@ Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="downloading_all_image_captioning_hint">Përshkrimet automatike të imazheve dhe ikonave po shkarkohen</string>
   <string name="download_all_image_captioning_successful_hint">Përshkrimet automatike të imazheve dhe ikonave u shkarkuan</string>
   <string name="download_all_image_captioning_failed_hint">Nuk mund të shkarkohen. Provo përsëri më vonë.</string>
-  <string name="download_complete_notification_title">Shkarkimi përfundoi</string>
-  <string name="download_complete_notification_content">Tani do të dëgjosh përshkrimet automatike të imazheve dhe ikonave me TalkBack</string>
-  <string name="download_complete_notification_action">Cilësimet</string>
   <string name="download_storage_error_hint">Hapësira ruajtëse është plot. Për të shkarkuar, liro deri në %1$d MB te Cilësimet &gt; Hapësira ruajtëse.</string>
   <string name="download_network_error_hint">Nuk mund të shkarkohen. Kontrollo lidhjen tënde dhe provo përsëri.</string>
   <string name="switch_icon_detection_dialog_title">Përshkrimet automatike të ikonave</string>
   <string name="switch_icon_detection_dialog_message">Dëgjo përshkrimet kur fokusohesh te një ikonë</string>
   <string name="switch_image_description_dialog_message">Dëgjo përshkrimet kur fokusohesh te një imazh. Disa aplikacione mund të mos e mbështesin këtë.</string>
-  <string name="switch_text_recognition_dialog_title">Përshkruaj automatikisht tekstin në imazhe</string>
   <string name="switch_text_recognition_dialog_message">Dëgjo përshkrimet kur fokusohesh te një imazh që përmban tekst</string>
   <string name="switch_auto_image_caption_dialog_subtitle">Shkarkuar</string>
-  <string name="disable_auto_image_caption_dialog_subtext">Mund t\'i marrësh përsëri përshkrimet për një imazh të zgjedhur nga menyja e TalkBack</string>
   <string name="switch_auto_image_caption_dialog_positive_button_text">Në rregull</string>
   <string name="switch_auto_image_caption_dialog_negative_button_text">Fshi shkarkimin</string>
   <string name="delete_icon_detection_dialog_title">Të fshihen përshkrimet automatike të ikonave?</string>
@@ -1376,11 +1231,6 @@ Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="gemini_enable_dialog_title">Përdor Gemini në TalkBack</string>
   <string name="gemini_disable_dialog_message">Kuptimi i ekranit me Gemini</string>
   <string name="disable_gemini_dialog_subtext">Aktivizo për të mundësuar kuptimin e ekranit me Gemini</string>
-  <string name="ai_services_update_dialog_title">Përditëso aplikacionin %1$s për të përshkruar imazhet</string>
-  <string name="ai_services_update_dialog_message">Për të dëgjuar përshkrimet e imazheve, merr versionin më të fundit të %1$s nga Google Play.\n\nPasi të përfundojë shkarkimi, kthehu te cilësimet e TalkBack dhe aktivizo përsëri përshkrimet automatike të imazheve.</string>
-  <string name="ai_services_update_dialog_button_text">Shko te Google Play</string>
-  <string name="aicore_app_name">AICore</string>
-  <string name="astrea_app_name">Private Compute Services</string>
   <string name="gemini_error_message">Ndodhi një gabim. Provo përsëri.</string>
   <string name="gemini_block_message">Ky imazh nuk mund të përpunohet</string>
   <string name="gemini_network_error">Nuk ka lidhje interneti. Kontrollo rrjetin Wi-Fi ose celular dhe provo përsëri.</string>
@@ -1396,13 +1246,8 @@ Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="image_qna_typing_button_text">Shkruaj pyetjen për Gemini</string>
   <string name="image_qna_send_button_text">Pyet</string>
   <string name="image_qna_speak_question_description">Thuaj pyetjen</string>
-  <string name="overviews_summary_intro">Përmbledhja e ekranit të këtij aplikacioni: %1$s</string>
   <string name="overviews_node_not_found">Më vjen keq, por nuk mund ta gjej më atë pjesë të ekranit.</string>
-  <string name="overviews_images_in_app">Imazhet kryesore të gjetura</string>
   <string name="overviews_list_item">%1$d. %2$s</string>
-  <string name="overviews_actions_in_app">Veprimet në aplikacion</string>
-  <string name="overviews_actions_in_app_description">Këtu janë veprimet kryesore që mund të kryesh nga ky ekran i aplikacionit:</string>
-  <string name="overviews_parent_type">Veprimet në aplikacion</string>
   <string name="text_replaced_feedback">Teksti u zëvendësua</string>
   <string name="switch_gesture_set">Ndërro grupin e gjesteve</string>
   <string name="switch_gesture_set_to">Kalo te grupi i gjesteve %1$d</string>
@@ -1453,5 +1298,4 @@ Mos përdor asnjë shënim formati në përgjigje.</string>
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Mbyll</string>
   <string name="talkback_label">TalkBack</string>
-  <string name="notifictions_in_lock_screen_notification_content">Për të dëgjuar njoftimet kur ekrani yt është i fikur, aktivizo \"Lexo me zë njoftimet me ekranin të fikur\" në cilësimet e detajimit zanor të TalkBack</string>
 </resources>
