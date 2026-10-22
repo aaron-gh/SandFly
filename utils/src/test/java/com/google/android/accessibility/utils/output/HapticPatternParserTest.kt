@@ -75,4 +75,30 @@ class HapticPatternParserTest {
     assertArrayEquals(longArrayOf(0, 25, 50, 25), fallback)
     assertNull(timings)
   }
+
+  @Test
+  fun aWeakerStrengthScalesTheAmplitudesAndKeepsWeakOnesOn() {
+    val parser = parser(canVaryStrength = true)
+    parser.setStrength(0.5f)
+    parser.parse(intArrayOf(0, 20, -9998, 10, 200, 10, 0, 10, 1))
+    assertArrayEquals(intArrayOf(100, 0, 1), amplitudes)
+  }
+
+  @Test
+  fun aWeakerStrengthGivesOnAndOffTimesAnAmplitude() {
+    val parser = parser(canVaryStrength = true)
+    parser.setStrength(0.4f)
+    parser.parse(intArrayOf(0, 25, 50, 25))
+    assertArrayEquals(longArrayOf(0, 25, 50, 25), timings)
+    assertArrayEquals(intArrayOf(0, 102, 0, 102), amplitudes)
+    assertNull(fallback)
+  }
+
+  @Test
+  fun aWeakerStrengthLeavesOnAndOffTimesAloneOnPhonesThatCannotVaryIt() {
+    val parser = parser(canVaryStrength = false)
+    parser.setStrength(0.4f)
+    parser.parse(intArrayOf(0, 25, 50, 25))
+    assertArrayEquals(longArrayOf(0, 25, 50, 25), fallback)
+  }
 }

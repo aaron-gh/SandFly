@@ -25,11 +25,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Vibrator;
 import android.text.TextUtils;
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.ListPreference;
 import androidx.preference.MultiSelectListPreference;
 import androidx.preference.Preference;
+import androidx.preference.SeekBarPreference;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
@@ -47,6 +49,9 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Fragment to display sound and vibration settings. */
 public class SoundAndVibrationFragment extends TalkbackBaseFragment {
+  private static final int PERCENT_MIN = 5;
+  private static final int PERCENT_STEP = 5;
+
   /** Preferences managed by this activity. */
   private SharedPreferences prefs;
 
@@ -192,6 +197,47 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
     prefs = SharedPreferencesUtils.getSharedPreferences(getContext());
+    setUpPercentSlider(R.string.pref_soundback_volume_seekbar_key_int);
+    // The volume is kept as text, as the list it replaced kept it.
+    if (findPreference(getString(R.string.pref_soundback_volume_seekbar_key_int))
+        instanceof SeekBarPreference volume) {
+      volume.setOnPreferenceChangeListener(
+          (preference, newValue) -> {
+            prefs
+                .edit()
+                .putString(getString(R.string.pref_soundback_volume_key), newValue.toString())
+                .apply();
+            return true;
+          });
+    }
+    setUpPercentSlider(R.string.pref_vibration_strength_key);
+    // Only vibrators that vary their strength can play a weaker vibration.
+    Vibrator vibrator = getContext().getSystemService(Vibrator.class);
+    if (vibrator == null || !vibrator.hasVibrator() || !vibrator.hasAmplitudeControl()) {
+      PreferenceSettingsUtils.hidePreference(
+          getContext(), getPreferenceScreen(), R.string.pref_vibration_strength_key);
+    }
+  }
+
+  /** Sets a slider to go from 5 to 100 percent in steps of 5. */
+  private void setUpPercentSlider(int keyResId) {
+    if (findPreference(getString(keyResId)) instanceof SeekBarPreference slider) {
+      slider.setMin(PERCENT_MIN);
+      slider.setMax(100);
+      slider.setSeekBarIncrement(PERCENT_STEP);
+    }
+  }
+
+  private void updateSoundVolumeSlider() {
+    if (findPreference(getString(R.string.pref_soundback_volume_seekbar_key_int))
+        instanceof SeekBarPreference volume) {
+      volume.setValue(
+          SharedPreferencesUtils.getIntFromStringPref(
+              prefs,
+              getResources(),
+              R.string.pref_soundback_volume_key,
+              R.string.pref_soundback_volume_default));
+    }
   }
 
   @Override
@@ -199,6 +245,7 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
     super.onResume();
     FragmentActivity activity = this.getActivity();
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
+    updateSoundVolumeSlider();
 
     updateTwoStatePreferenceStatus(
         activity, R.string.pref_use_audio_focus_key, R.bool.pref_use_audio_focus_default);

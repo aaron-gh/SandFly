@@ -298,6 +298,8 @@ Frequent actions are a single hit: a soft tap when focus lands on an item, a fir
 
 Progress bar tones, the sound for capital letters, and braille display and braille keyboard sounds don't vibrate. The braille keyboard has vibrations of its own, which **Vibration feedback** turns on and off with the rest. Phones that support rich haptics play the vibrations as composed effects. Phones without them play softer and shorter forms of the same patterns.
 
+**Sound feedback volume** is a slider from 5 to 100 percent in steps of 5, rather than a list of 25, 50, 75 and 100 percent. **Vibration strength**, below **Vibration feedback**, sets how strong vibrations are, from 5 to 100 percent, on phones whose vibrator can vary its strength.
+
 ### Ticks while you scroll with two fingers
 
 TalkBack played its scroll sound and vibration at most every 250 ms while you scrolled. SandFly plays the scroll sound and one light tick for each item that scrolls past, so a slow drag ticks slowly and a fast drag ticks quickly. Lists that don't number their items tick once for every 48 dp of scrolling. You feel the first tick as soon as the drag reaches the app, and SandFly hands the drag to the app sooner than TalkBack did. Scrolls that SandFly makes itself keep the usual sound.
@@ -385,6 +387,7 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 *   **Lock screen** and **Power menu**, in **System actions**.
 *   **Increase media volume** and **Decrease media volume**, in **Special features**, change the media volume a step and say the new volume.
 *   **Scroll to top** and **Scroll to bottom**, in **Basic navigation**, scroll the list that focus is in to its start or end a page at a time, then focus its first or last item. In a list that doesn't scroll, such as a short settings screen, they focus its first or last item. Outside a list, they use the first list on screen, or the first or last item on screen when there is none. A touch, gesture or key while it scrolls stops it. These aren't on watches.
+*   **Refresh**, in **Basic navigation** and as a keyboard shortcut, scrolls the list that focus is in to its top and pulls it down, which refreshes it in most apps. **Scroll back** and **Scroll up** pull a list down too when it is already at its top, as scrolling with two fingers does. SandFly sends the pull as a swipe, so it needs Android 11 or later.
 *   **System quick settings** and **System notification shade** open the system's own quick settings and notification shade, when **Use SandFly's quick settings** or **Use SandFly's notification list** is on.
 *   **Write the letter of a reading control**, in **Menu and controls**, opens a writing surface on the whole screen. Write a letter with one finger, and SandFly chooses the next reading control whose name starts with it: H for Headings, L for Lines, and L again for Links. A tap closes the surface, and so do 10 seconds without writing. Handwriting is recognized on the phone by Google's ML Kit, in the phone's language. The first time, SandFly asks whether to download its model for the language, about 20 MB, from Google, and a message shows when it has downloaded. Not on watches.
 
@@ -486,7 +489,7 @@ realme UI reports some volume sliders as not focusable and unlabeled, so TalkBac
 
 ### Vertical navigation
 
-The **Vertical navigation** reading control, which you can turn on in **Reading controls**, moves to the item below when you swipe down and to the item above when you swipe up. It skips the other items of the same row, such as the channel and options buttons beside a video in YouTube, or the buttons beside a file's name. Going up lands on the first item of the row above. When there is no item below or above on screen, it moves to the next or previous item as a swipe right or left does, scrolling if needed.
+The **Vertical navigation** reading control, which you can turn on in **Reading controls**, moves to the item below when you swipe down and to the item above when you swipe up. It skips the other items of the same row, such as the channel and options buttons beside a video in YouTube, or the buttons beside a file's name. Going up lands on the first item of the row above. In a list, it stays in the list: when there is no row below or above on screen, it scrolls the list a page and moves to the next row. At the end of the list, or outside one, it moves to the item below or above on screen, and plays the end sound when there is none.
 
 ### Reading control kept when focus moves
 

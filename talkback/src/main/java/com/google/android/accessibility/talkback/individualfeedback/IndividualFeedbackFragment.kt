@@ -178,7 +178,15 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
     if (pattern == null || pattern.isEmpty()) {
       return
     }
-    vibrator.vibrate(HapticPatternParser(vibrator).parse(pattern))
+    val parser = HapticPatternParser(vibrator)
+    parser.setStrength(
+      SharedPreferencesUtils.getSharedPreferences(context)
+        .getInt(
+          context.getString(R.string.pref_vibration_strength_key),
+          context.resources.getInteger(R.integer.pref_vibration_strength_default),
+        ) / 100f
+    )
+    vibrator.vibrate(parser.parse(pattern))
     previewVibrator = vibrator
   }
 

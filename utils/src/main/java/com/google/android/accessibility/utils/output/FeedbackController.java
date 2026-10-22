@@ -678,6 +678,11 @@ public class FeedbackController {
     mHapticEnabled = enabled;
   }
 
+  /** Sets how strong vibrations are, from 0 to 1 of their full strength. */
+  public void setHapticStrength(float strength) {
+    parser.setStrength(strength);
+  }
+
   /**
    * Sets whether to enable or disable the auditory feedback.
    *
