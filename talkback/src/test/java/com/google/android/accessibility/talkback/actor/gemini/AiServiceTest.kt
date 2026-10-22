@@ -43,22 +43,52 @@ class AiServiceTest {
   }
 
   @Test
-  fun notSetUpWithoutAnAddressAndAModel() {
+  fun geminiIsUsedUntilAnotherServiceIsChosenAndSetUp() {
     val prefs = FakeSharedPreferences()
     assertFalse(AiService.isSetUp(prefs))
-    AiService.save(prefs, "https://openrouter.ai/api/v1", " ", "key")
+    AiProvider.CLAUDE.setApiKey(prefs, "key")
+    AiProvider.CLAUDE.setModel(prefs, "claude-model")
     assertFalse(AiService.isSetUp(prefs))
-    AiService.save(prefs, "https://openrouter.ai/api/v1", "google/gemma-3-27b-it", "")
+    AiProvider.setActive(prefs, AiProvider.CLAUDE)
     assertTrue(AiService.isSetUp(prefs))
-    assertEquals("", AiService.apiKey(prefs))
+    assertEquals("https://api.anthropic.com/v1", AiService.address(prefs))
+    assertEquals("claude-model", AiService.model(prefs))
+    assertEquals("key", AiService.apiKey(prefs))
+    AiProvider.CLAUDE.setModel(prefs, " ")
+    assertFalse(AiService.isSetUp(prefs))
   }
 
   @Test
-  fun clearingTheAddressGoesBackToGemini() {
+  fun eachServiceKeepsItsOwnKey() {
     val prefs = FakeSharedPreferences()
-    AiService.save(prefs, "https://api.groq.com/openai/v1", "model", "key")
-    AiService.save(prefs, "", "model", "key")
-    assertFalse(AiService.isSetUp(prefs))
+    AiProvider.MISTRAL.setApiKey(prefs, "mistral key")
+    AiProvider.OPENAI.setApiKey(prefs, "openai key")
+    assertEquals("mistral key", AiProvider.MISTRAL.apiKey(prefs))
+    assertEquals("openai key", AiProvider.OPENAI.apiKey(prefs))
+  }
+
+  @Test
+  fun theOldOtherServiceMovesToItsOwnSettings() {
+    val known = FakeSharedPreferences()
+    known.edit()
+      .putString("pref_ai_service_address", "https://api.groq.com/openai/v1/")
+      .putString("pref_ai_service_model", "llama")
+      .putString("pref_ai_service_api_key", "key")
+      .apply()
+    assertEquals(AiProvider.GROQ, AiProvider.active(known))
+    assertEquals("llama", AiProvider.GROQ.model(known))
+    assertEquals("key", AiProvider.GROQ.apiKey(known))
+    assertFalse(known.contains("pref_ai_service_address"))
+
+    val other = FakeSharedPreferences()
+    other.edit()
+      .putString("pref_ai_service_address", "https://example.com/v1")
+      .putString("pref_ai_service_model", "m")
+      .apply()
+    assertEquals(AiProvider.OTHER, AiProvider.active(other))
+    assertEquals("https://example.com/v1", AiService.address(other))
+
+    assertEquals(AiProvider.GEMINI, AiProvider.active(FakeSharedPreferences()))
   }
 
   @Test

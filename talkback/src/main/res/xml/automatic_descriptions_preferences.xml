@@ -19,15 +19,13 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="@string/pref_text_recognition_key"
       android:title="@string/title_pref_text_recognition" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:key="pref_gemini_api_key"
-      android:title="@string/title_pref_gemini_api_key" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:key="pref_gemini_model"
-      android:title="@string/title_pref_gemini_model" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:key="pref_ai_service"
-      android:title="@string/title_pref_ai_service" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_ai_services"
+      android:title="@string/title_pref_category_ai_services">
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_ai_provider_choice"
+        android:title="@string/title_pref_ai_provider" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiFragment"
       android:key="@string/pref_on_device_ai_key"

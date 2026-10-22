@@ -67,3 +67,27 @@ class GeminiModelTest {
     assertThrows(IOException::class.java) { GeminiModel.parse("not json") }
   }
 }
+
+class AiModelsTest {
+  @Test
+  fun theListKeepsChatModels() {
+    val body =
+      """
+      {"data": [
+        {"id": "claude-opus-5", "display_name": "Claude Opus 5"},
+        {"id": "text-embedding-3-large"},
+        {"id": "whisper-1"},
+        {"id": "mistral-large-latest", "name": "Mistral Large"},
+        {"id": "gpt-6"}
+      ]}
+      """
+    assertEquals(
+      listOf(
+        GeminiModel.Choice("claude-opus-5", "Claude Opus 5"),
+        GeminiModel.Choice("mistral-large-latest", "Mistral Large"),
+        GeminiModel.Choice("gpt-6", "gpt-6"),
+      ),
+      AiModels.parse(body),
+    )
+  }
+}

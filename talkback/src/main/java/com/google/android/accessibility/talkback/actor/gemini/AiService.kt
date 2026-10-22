@@ -24,37 +24,22 @@ import org.json.JSONException
 import org.json.JSONObject
 
 /**
- * An AI service with an OpenAI-compatible chat completions API, such as OpenRouter, Groq, Mistral,
- * Ollama or Claude, that Describe image and Describe screen use instead of Gemini when the user
- * sets one up in Automatic descriptions settings. Requests are built for Gemini, so they are turned
+ * An AI service with an OpenAI-compatible chat completions API, such as Claude, OpenAI, Mistral,
+ * Groq, OpenRouter or Ollama, that Describe image and Describe screen use instead of Gemini when
+ * the user chooses one in Automatic descriptions settings; see [AiProvider]. Requests are built for Gemini, so they are turned
  * into chat requests, and the answers back into Gemini's.
  */
 object AiService {
-  const val PREF_ADDRESS = "pref_ai_service_address"
-  const val PREF_MODEL = "pref_ai_service_model"
-  // "api_key" in the name keeps it out of settings backups, as the Gemini key is.
-  const val PREF_API_KEY = "pref_ai_service_api_key"
-
   private const val FINISH_STOP = "stop"
   private const val FINISH_LENGTH = "length"
   const val FINISH_EMPTY = "EMPTY"
 
-  fun address(prefs: SharedPreferences): String = prefs.getString(PREF_ADDRESS, null)?.trim() ?: ""
+  /** The address of the service in use, which is empty for Gemini. */
+  fun address(prefs: SharedPreferences): String = AiProvider.active(prefs).addressOf(prefs)
 
-  fun model(prefs: SharedPreferences): String = prefs.getString(PREF_MODEL, null)?.trim() ?: ""
+  fun model(prefs: SharedPreferences): String = AiProvider.active(prefs).model(prefs)
 
-  fun apiKey(prefs: SharedPreferences): String = prefs.getString(PREF_API_KEY, null)?.trim() ?: ""
-
-  /** Saves the settings, removing each one that is blank. */
-  fun save(prefs: SharedPreferences, address: String, model: String, apiKey: String) {
-    val editor = prefs.edit()
-    val values = listOf(PREF_ADDRESS to address, PREF_MODEL to model, PREF_API_KEY to apiKey)
-    for ((key, value) in values) {
-      val trimmed = value.trim()
-      if (trimmed.isEmpty()) editor.remove(key) else editor.putString(key, trimmed)
-    }
-    editor.apply()
-  }
+  fun apiKey(prefs: SharedPreferences): String = AiProvider.active(prefs).apiKey(prefs)
 
   /** The host of the service's address, to name it to the user. */
   fun host(prefs: SharedPreferences): String =
@@ -64,10 +49,10 @@ object AiService {
       address(prefs)
     }
 
-  /** Whether requests go to the service: it has an address and a model. */
+  /** Whether requests go to a service other than Gemini: one is chosen and set up. */
   @JvmStatic
   fun isSetUp(prefs: SharedPreferences): Boolean =
-    address(prefs).isNotEmpty() && model(prefs).isNotEmpty()
+    AiProvider.active(prefs).let { it != AiProvider.GEMINI && it.isReady(prefs) }
 
   /** Whether [address] can be used: an https address with a host. */
   fun isValidAddress(address: String): Boolean =
