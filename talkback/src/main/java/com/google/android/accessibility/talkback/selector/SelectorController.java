@@ -127,9 +127,11 @@ import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -1404,6 +1406,56 @@ public class SelectorController implements UserInputEventListener {
           eventId, controls.get(index - settings.size()), announceType, showOverlay);
     }
     return true;
+  }
+
+  /**
+   * Selects the next reading control after the current one whose name starts with {@code letter},
+   * in the order of the reading controls, as a letter written by hand does. Writing the same letter
+   * again moves on to the next one. Returns the name of the reading control, or null if no
+   * available reading control starts with the letter.
+   */
+  public @Nullable String selectSettingStartingWith(EventId eventId, String letter) {
+    String wanted = foldForLetter(letter);
+    if (wanted.isEmpty()) {
+      return null;
+    }
+    List<Setting> settings = getFilteredSettings();
+    List<ScriptReadingControl> controls = Scripts.readingControls();
+    int size = settings.size() + controls.size();
+    @Nullable ScriptReadingControl currentControl = currentScriptControl(controls);
+    int current =
+        currentControl != null
+            ? settings.size() + controls.indexOf(currentControl)
+            : settings.indexOf(getCurrentSetting(context, prefs));
+    for (int step = 1; step <= size; step++) {
+      int index = Math.floorMod(current + step, size);
+      String name =
+          index < settings.size()
+              ? getSettingActionDescriptionAndHint(settings.get(index), EVENT_ID_UNTRACKED)
+                  .description
+              : controls.get(index - settings.size()).getTitle().toString();
+      if (name == null || !foldForLetter(name).startsWith(wanted)) {
+        continue;
+      }
+      pipeline.returnFeedback(eventId, Feedback.sound(R.id.next_reading_control));
+      if (index < settings.size()) {
+        setCurrentSetting(eventId, settings.get(index), AnnounceType.DESCRIPTION_AND_HINT, false);
+      } else {
+        selectScriptControl(
+            eventId,
+            controls.get(index - settings.size()),
+            AnnounceType.DESCRIPTION_AND_HINT,
+            /* showOverlay= */ false);
+      }
+      return name;
+    }
+    return null;
+  }
+
+  /** Text in lower case without accents, so that a written "e" finds "É". */
+  private static String foldForLetter(CharSequence text) {
+    String decomposed = Normalizer.normalize(text.toString().trim(), Normalizer.Form.NFD);
+    return decomposed.replaceAll("\\p{M}+", "").toLowerCase(Locale.getDefault());
   }
 
   private @Nullable ScriptReadingControl currentScriptControl(
