@@ -787,13 +787,13 @@ SandFly doesn't stop on a slider's title as a separate item when you swipe throu
 
 ### Feedback
 
-**Send feedback**, in Settings and in the SandFly menu, sends a bug report or suggestion to SandFly's developer without a GitHub account. It has three parts:
+**Send feedback**, in Settings and in the SandFly menu, sends a problem or suggestion to SandFly's developer without a GitHub account. It has three parts:
 
-- **New report**: the form. What you type is kept as a draft until you send the report or choose **Delete draft**.
-- **Inbox**: the reports you sent, each with its status (Open, or Closed: completed, not planned or duplicate) and how many replies you haven't read. Open a report to read the replies and send your own, with **Your reply** and **Send reply**.
-- **Drafts**: reports you started and haven't sent.
+- **Send feedback**: the form. What you type is kept as a draft until you choose **Send** or **Delete draft**.
+- **Inbox**: the feedback you sent, each with its status (Open, or Closed: completed, not planned or duplicate) and how many replies you haven't read. Open one to read the replies and send your own, with **Your reply** and **Send reply**.
+- **Drafts**: feedback you started and haven't sent.
 
-While SandFly is on, it checks for replies and status changes every hour, and when you open **Send feedback**. A reply or a new status posts a notification, with sound, that opens the report. A closed report is still checked for 30 days. **Remove from inbox** stops the checks and deletes the report from the phone; the report stays with the developer.
+While SandFly is on, it checks for replies and status changes every hour, and when you open **Send feedback**. A reply or a new status posts a notification, with sound, that opens the feedback. Closed feedback is still checked for 30 days. **Remove from inbox** stops the checks and deletes the feedback from the phone; the developer keeps it.
 
 ### Export and import settings
 
