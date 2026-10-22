@@ -88,11 +88,12 @@ object ProblemReportSender {
     executor.execute {
       val (result, answer) =
         try {
-          post(appContext, REPORT_URL, (if (withLog) report.copy(log = readLog()) else report).toJson())
+          post(appContext, REPORT_URL, (if (withLog) report.copy(log = logWithCrash(appContext)) else report).toJson())
         } catch (e: RuntimeException) {
           LogUtils.e(TAG, "Report not sent: %s", e)
           Result.NOT_SENT to null
         }
+      if (withLog && result == Result.SENT) CrashLog.clear(appContext)
       val token = answer?.optString("token")?.takeIf { it.isNotEmpty() }
       mainHandler.post {
         isSending = false
@@ -227,6 +228,17 @@ object ProblemReportSender {
 
   /** The most of an answer that is read: 20 threads of up to 100 messages. */
   private const val MAX_ANSWER_BYTES = 4 * 1024 * 1024
+
+  /** The log, after SandFly's last crash if there was one, which the log doesn't reach back to. */
+  @WorkerThread
+  private fun logWithCrash(context: Context): String? {
+    val crash = CrashLog.read(context)
+    val log = readLog()
+    if (crash == null) return log
+    val head = "Last crash:\n$crash\n\nLog:\n"
+    // The crash, then as much of the end of the log as fits.
+    return head + log.orEmpty().takeLast((ProblemReport.MAX_LOG - head.length).coerceAtLeast(0))
+  }
 
   /** The last lines of this process's log, or null if logcat cannot be run. */
   @WorkerThread

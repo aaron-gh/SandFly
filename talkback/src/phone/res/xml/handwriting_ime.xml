@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- SandFly's handwriting keyboard. Its language is the device's. -->
+<!-- SandFly's handwriting keyboard. Its language is the device's. It has no subtypes, so that its
+     name isn't shown twice in Android's keyboard list and picker. -->
 <input-method xmlns:android="http://schemas.android.com/apk/res/android"
-    android:supportsSwitchingToNextInputMethod="true">
-  <subtype
-      android:imeSubtypeLocale=""
-      android:imeSubtypeMode="keyboard"
-      android:label="@string/handwriting_keyboard_name" />
-</input-method>
+    android:supportsSwitchingToNextInputMethod="true" />

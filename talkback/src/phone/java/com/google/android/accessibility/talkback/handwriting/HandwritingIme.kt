@@ -28,6 +28,7 @@ import android.view.inputmethod.EditorInfo
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.handwriting.HandwritingRecognizer.Result
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -80,9 +81,7 @@ class HandwritingIme : InputMethodService() {
 
   override fun onCreate() {
     super.onCreate()
-    recognizer = HandwritingRecognizers.create(this) { done ->
-      speak(getString(if (done) R.string.handwriting_downloaded else R.string.handwriting_download_failed))
-    }
+    recognizer = HandwritingRecognizers.create(this) { HandwritingDownload.onDone(this, it) }
   }
 
   override fun onDestroy() {
@@ -134,20 +133,15 @@ class HandwritingIme : InputMethodService() {
       Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, metrics.widthPixels, metrics.heightPixels)),
     )
     HandwritingKeyboardHost.isTyping = true
-    if (!restarting) {
-      if (!prefs.getBoolean(PREF_TUTORIAL_DONE, false)) {
-        tutorial.start()
-      } else {
-        speak(getString(R.string.handwriting_keyboard_name))
-      }
-    }
+    // Speaks only once the model is known to be there, since without it the keyboard hides and
+    // asks to download it.
     recognizer?.prepare { result ->
-      speak(
-        getString(
-          if (result == Result.UnsupportedLanguage) R.string.handwriting_unsupported_language
-          else R.string.handwriting_downloading
-        )
-      )
+      when {
+        result != null -> notReady(result)
+        restarting -> {}
+        !prefs.getBoolean(PREF_TUTORIAL_DONE, false) -> tutorial.start()
+        else -> speak(getString(R.string.handwriting_keyboard_name))
+      }
     }
   }
 
@@ -308,8 +302,9 @@ class HandwritingIme : InputMethodService() {
             }
           }
         }
-        Result.Downloading -> speak(getString(R.string.handwriting_downloading))
-        Result.UnsupportedLanguage -> speak(getString(R.string.handwriting_unsupported_language))
+        Result.NotDownloaded,
+        Result.Downloading,
+        Result.UnsupportedLanguage -> notReady(result)
         Result.Failed -> speak(getString(R.string.handwriting_not_recognized))
       }
       then?.invoke()
@@ -430,6 +425,29 @@ class HandwritingIme : InputMethodService() {
   private fun textBefore(length: Int): String {
     if (isOwnField()) return ""
     return currentInputConnection?.getTextBeforeCursor(length, 0)?.toString().orEmpty()
+  }
+
+  /**
+   * Hides the keyboard when handwriting can't be recognized yet, and asks to download the model if
+   * it isn't on the phone. The question shows over the screen once the keyboard is hidden, so
+   * that SandFly's touch exploration reaches it.
+   */
+  private fun notReady(result: Result) {
+    tutorial.cancel()
+    requestHideSelf(0)
+    val recognizer = recognizer ?: return
+    when (result) {
+      Result.NotDownloaded -> {
+        val service = TalkBackService.getInstance()
+        if (service != null) {
+          handler.post { HandwritingDownload.ask(service, HandwritingKeyboardHost.feedback, recognizer) }
+        } else {
+          recognizer.download()
+        }
+      }
+      Result.Downloading -> speak(getString(R.string.handwriting_downloading))
+      else -> speak(getString(R.string.handwriting_unsupported_language))
+    }
   }
 
   private fun isOwnField(): Boolean = currentInputEditorInfo?.packageName == packageName

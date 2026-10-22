@@ -82,6 +82,28 @@ public class KeyboardUtils {
     return "";
   }
 
+  /**
+   * Gets the id of the input method {@code component}, among the enabled ones if {@code
+   * enabledOnly}, or empty if there is none. A package can have several input methods, as SandFly
+   * has the braille and the handwriting keyboard, so look one up by its component.
+   */
+  public static String getImeId(Context context, ComponentName component, boolean enabledOnly) {
+    List<InputMethodInfo> list;
+    if (enabledOnly) {
+      list = getEnabledInputMethodList(context);
+    } else {
+      InputMethodManager inputMethodManager =
+          (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+      list = inputMethodManager == null ? new ArrayList<>() : inputMethodManager.getInputMethodList();
+    }
+    for (InputMethodInfo inputMethodInfo : list) {
+      if (inputMethodInfo.getComponent().equals(component)) {
+        return inputMethodInfo.getId();
+      }
+    }
+    return "";
+  }
+
   /** Gets id of first {@link InputMethodInfo} whose package matches {@code packageName}. */
   public static String getImeId(Context context, String packageName) {
     InputMethodManager inputMethodManager =
@@ -109,7 +131,9 @@ public class KeyboardUtils {
       if (next) {
         id = inputMethodInfo.getId();
         break;
-      } else if (inputMethodInfo.getPackageName().equals(context.getPackageName())) {
+      } else if (inputMethodInfo.getComponent().getPackageName().equals(context.getPackageName())
+          && inputMethodInfo.getComponent().getClassName().equals(context.getClass().getName())) {
+        // The input method calling this, not another of its package.
         next = true;
       } else if (TextUtils.isEmpty(firstId)) {
         firstId = inputMethodInfo.getId();

@@ -122,6 +122,7 @@ import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
+import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.KeyboardUtils;
@@ -627,7 +628,9 @@ public class GestureController {
       pipeline.returnFeedback(
           eventId, Feedback.part().setSpeech(Feedback.Speech.create(COPY_LAST)));
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))) {
-      String inputMethodInfoId = KeyboardUtils.getEnabledImeId(service, service.getPackageName());
+      String inputMethodInfoId =
+          KeyboardUtils.getImeId(
+              service, AccessibilityServiceCompatUtils.Constants.BRAILLE_KEYBOARD, /* enabledOnly= */ true);
       if (!TextUtils.isEmpty(inputMethodInfoId)) {
         result = service.getSoftKeyboardController().switchToInputMethod(inputMethodInfoId);
       } else {
