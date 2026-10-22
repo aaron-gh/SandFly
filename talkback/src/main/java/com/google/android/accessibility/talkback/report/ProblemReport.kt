@@ -58,6 +58,7 @@ data class ProblemReport(
 
   companion object {
     const val SUGGESTION = "Suggestion"
+    const val DEFAULT_TYPE = "Incorrect behavior"
     const val MAX_TITLE = 200
     const val MAX_APP = 100
     const val MAX_TEXT = 10_000

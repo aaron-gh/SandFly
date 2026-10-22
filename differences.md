@@ -666,6 +666,16 @@ On Android 12 and later, SandFly's settings follow the system dark mode.
 
 SandFly doesn't stop on a slider's title as a separate item when you swipe through settings.
 
+### Problem reports
+
+**Report a problem** sends a bug report or suggestion to SandFly's developer without a GitHub account. It has three parts:
+
+- **New report**: the form. What you type is kept as a draft until you send the report or choose **Delete draft**.
+- **Inbox**: the reports you sent, each with its status (Open, or Closed: completed, not planned or duplicate) and how many replies you haven't read. Open a report to read the replies and send your own, with **Your reply** and **Send reply**.
+- **Drafts**: reports you started and haven't sent.
+
+While SandFly is on, it checks for replies and status changes every hour, and when you open **Report a problem**. A reply or a new status posts a notification, with sound, that opens the report. A closed report is still checked for 30 days. **Remove from inbox** stops the checks and deletes the report from the phone; the report stays with the developer.
+
 ### Export and import settings
 
 **Export settings** saves SandFly's settings to a file, and **Import settings** replaces them with a file's, such as one from another phone. API keys stay on the phone. Import settings also reads a settings file exported from Backtalk: the settings in it replace SandFly's, and SandFly's own settings that Backtalk doesn't have are kept.

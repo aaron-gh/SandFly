@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.report
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.text.InputFilter
@@ -28,6 +29,7 @@ import androidx.core.content.edit
 import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
 import androidx.preference.Preference
+import androidx.preference.PreferenceDataStore
 import androidx.preference.SwitchPreferenceCompat
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
@@ -37,9 +39,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper
 
 /**
- * Settings > Report a problem: a form that sends a problem report to the report server, which
- * creates a GitHub issue. The fields are kept until the report is sent or Clear form, so a report
- * can be finished later.
+ * A problem report being written, opened from Settings > Report a problem. What is typed is kept
+ * in a draft, until the report is sent or the draft deleted, so a report can be finished later. The
+ * email address and the two switches are kept for every report.
  */
 class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferences) {
   private lateinit var type: ListPreference
@@ -53,9 +55,16 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
   private lateinit var log: SwitchPreferenceCompat
   private lateinit var send: Preference
 
-  override fun getTitle(): CharSequence = getText(R.string.title_pref_problem_report)
+  private val store by lazy { ReportStore.get(requireContext()) }
+  private val draftId: String by lazy {
+    arguments?.getString(ARG_DRAFT_ID) ?: store.newDraftId()
+  }
+
+  override fun getTitle(): CharSequence = getText(R.string.title_report_new)
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    preferenceManager.preferenceDataStore =
+      DraftDataStore(requireContext(), store, draftId, SharedPreferencesUtils.getSharedPreferences(requireContext()))
     super.onCreatePreferences(savedInstanceState, rootKey)
     type = required(R.string.pref_problem_report_type_key)
     area = required(R.string.pref_problem_report_area_key)
@@ -85,7 +94,7 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
       true
     }
     required<Preference>(R.string.pref_problem_report_clear_key).setOnPreferenceClickListener {
-      confirmClear()
+      confirmDelete()
       true
     }
   }
@@ -98,6 +107,8 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
 
   override fun onPause() {
     if (shown === this) shown = null
+    // A new report left empty isn't kept as a draft.
+    if (store.draft(draftId)?.isEmpty == true) store.deleteDraft(draftId)
     super.onPause()
   }
 
@@ -151,47 +162,46 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
       return
     }
     val appContext = context.applicationContext
-    ProblemReportSender.send(appContext, report, log.isChecked) { result ->
+    val id = draftId
+    ProblemReportSender.send(appContext, report, log.isChecked) { result, token ->
       toast(appContext, messageFor(result))
-      if (result == Result.SENT) clearReport(appContext)
+      if (result == Result.SENT) {
+        val sentStore = ReportStore.get(appContext)
+        if (token != null) {
+          sentStore.markSent(
+            id,
+            SentReport(
+              id = id,
+              token = token,
+              type = report.type,
+              title = report.title.trim(),
+              description = report.description.trim(),
+              sentAt = System.currentTimeMillis(),
+            ),
+          )
+        } else {
+          sentStore.deleteDraft(id)
+        }
+      }
       shown?.apply {
-        if (result == Result.SENT) showStoredValues()
         showSending()
+        if (result == Result.SENT && draftId == id) parentFragmentManager.popBackStack()
       }
     }
     showSending()
   }
 
-  private fun confirmClear() {
+  private fun confirmDelete() {
     A11yAlertDialogWrapper.materialDialogBuilder(requireActivity())
-      .setTitle(R.string.dialog_title_problem_report_clear)
-      .setPositiveButton(R.string.button_problem_report_clear) { _, _ ->
-        val context = requireContext()
-        clearReport(context)
-        SharedPreferencesUtils.getSharedPreferences(context).edit {
-          remove(getString(R.string.pref_problem_report_email_key))
-          remove(getString(R.string.pref_problem_report_device_key))
-          remove(getString(R.string.pref_problem_report_log_key))
-        }
-        showStoredValues()
+      .setTitle(R.string.dialog_title_report_delete_draft)
+      .setPositiveButton(R.string.button_report_delete) { _, _ ->
+        store.deleteDraft(draftId)
+        parentFragmentManager.popBackStack()
       }
       .setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
       .setCancelable(true)
       .create()
       .show()
-  }
-
-  /** Shows the stored values, after they were cleared outside the preferences. */
-  private fun showStoredValues() {
-    val prefs = SharedPreferencesUtils.getSharedPreferences(requireContext())
-    type.value = prefs.getString(type.key, type.entryValues.first().toString())
-    area.value = prefs.getString(area.key, null)
-    for (field in listOf(title, app, description, steps, email)) {
-      field.text = prefs.getString(field.key, null)
-    }
-    device.isChecked = prefs.getBoolean(device.key, true)
-    log.isChecked = prefs.getBoolean(log.key, false)
-    steps.isVisible = type.value != ProblemReport.SUGGESTION
   }
 
   private fun deviceInformation(): List<String> =
@@ -200,11 +210,67 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
       "${Build.MANUFACTURER} ${Build.MODEL}",
     )
 
+  /**
+   * Keeps the fields of the report in the draft with [draftId], and the email address and the
+   * switches, which every report shares, in [prefs].
+   */
+  private class DraftDataStore(
+    private val context: Context,
+    private val store: ReportStore,
+    private val draftId: String,
+    private val prefs: SharedPreferences,
+  ) : PreferenceDataStore() {
+    private fun draft() = store.draft(draftId) ?: ReportDraft(id = draftId)
+
+    private fun key(@StringRes id: Int) = context.getString(id)
+
+    override fun getString(key: String, defValue: String?): String? {
+      val draft = draft()
+      return when (key) {
+        key(R.string.pref_problem_report_type_key) -> draft.type
+        key(R.string.pref_problem_report_area_key) -> draft.area ?: defValue
+        key(R.string.pref_problem_report_title_key) -> draft.title
+        key(R.string.pref_problem_report_app_key) -> draft.app
+        key(R.string.pref_problem_report_description_key) -> draft.description
+        key(R.string.pref_problem_report_steps_key) -> draft.steps
+        else -> prefs.getString(key, defValue)
+      }
+    }
+
+    override fun putString(key: String, value: String?) {
+      val draft = draft()
+      val text = value.orEmpty()
+      val changed =
+        when (key) {
+          key(R.string.pref_problem_report_type_key) -> draft.copy(type = text)
+          key(R.string.pref_problem_report_area_key) -> draft.copy(area = value)
+          key(R.string.pref_problem_report_title_key) -> draft.copy(title = text)
+          key(R.string.pref_problem_report_app_key) -> draft.copy(app = text)
+          key(R.string.pref_problem_report_description_key) -> draft.copy(description = text)
+          key(R.string.pref_problem_report_steps_key) -> draft.copy(steps = text)
+          else -> {
+            prefs.edit { putString(key, value) }
+            return
+          }
+        }
+      store.putDraft(changed)
+    }
+
+    override fun getBoolean(key: String, defValue: Boolean): Boolean =
+      prefs.getBoolean(key, defValue)
+
+    override fun putBoolean(key: String, value: Boolean) {
+      prefs.edit { putBoolean(key, value) }
+    }
+  }
+
   companion object {
+    const val ARG_DRAFT_ID = "draft_id"
+
     // The form on screen, which shows the result of a send that started on an earlier one.
     private var shown: ProblemReportFragment? = null
 
-    private val REPORT_KEYS =
+    private val OLD_FORM_KEYS =
       intArrayOf(
         R.string.pref_problem_report_type_key,
         R.string.pref_problem_report_area_key,
@@ -214,11 +280,26 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
         R.string.pref_problem_report_steps_key,
       )
 
-    /** Clears the report, keeping the email address and switches for the next report. */
-    private fun clearReport(context: Context) {
-      SharedPreferencesUtils.getSharedPreferences(context).edit {
-        REPORT_KEYS.forEach { remove(context.getString(it)) }
-      }
+    /**
+     * Moves a report that was being written before drafts, whose fields were settings, to a
+     * draft. The email address and the switches stay settings.
+     */
+    @JvmStatic
+    fun moveOldForm(context: Context) {
+      val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+      fun old(@StringRes key: Int) = prefs.getString(context.getString(key), null).orEmpty()
+      if (OLD_FORM_KEYS.none { prefs.contains(context.getString(it)) }) return
+      val draft =
+        ReportDraft(
+          type = old(R.string.pref_problem_report_type_key).ifEmpty { ProblemReport.DEFAULT_TYPE },
+          area = old(R.string.pref_problem_report_area_key).ifEmpty { null },
+          title = old(R.string.pref_problem_report_title_key),
+          app = old(R.string.pref_problem_report_app_key),
+          description = old(R.string.pref_problem_report_description_key),
+          steps = old(R.string.pref_problem_report_steps_key),
+        )
+      if (!draft.isEmpty) ReportStore.get(context).putDraft(draft)
+      prefs.edit { OLD_FORM_KEYS.forEach { remove(context.getString(it)) } }
     }
 
     @StringRes

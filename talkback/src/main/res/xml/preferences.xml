@@ -206,7 +206,7 @@
         android:key="@string/pref_tutorial_and_help_key"
         android:title="@string/title_pref_category_tutorial" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:fragment="com.google.android.accessibility.talkback.report.ProblemReportFragment"
+        android:fragment="com.google.android.accessibility.talkback.report.ReportsFragment"
         android:key="@string/pref_problem_report_key"
         android:title="@string/title_pref_problem_report" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference

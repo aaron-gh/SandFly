@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title of the settings screen with a form that opens a new GitHub issue about SandFly. [CHAR LIMIT=40] -->
     <string name="title_pref_problem_report">Report a problem</string>
     <!-- Title of the list that sets the type of feedback in a problem report. [CHAR LIMIT=40] -->
@@ -28,12 +28,6 @@
     <string name="title_pref_problem_report_send">Send report</string>
     <!-- Summary of the send action while the report is being sent. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_problem_report_sending">Sending</string>
-    <!-- Title of the action that empties every field of the problem report form. [CHAR LIMIT=40] -->
-    <string name="title_pref_problem_report_clear">Clear form</string>
-    <!-- Title of the dialog that confirms emptying the problem report form. [CHAR LIMIT=NONE] -->
-    <string name="dialog_title_problem_report_clear">Clear form?</string>
-    <!-- Button in the dialog that empties the problem report form. [CHAR LIMIT=20] -->
-    <string name="button_problem_report_clear">Clear</string>
     <!-- Toast when the problem report has no title or no description. [CHAR LIMIT=NONE] -->
     <string name="problem_report_missing_fields">Enter a title and a description.</string>
     <!-- Toast when the email address for replies is not valid. [CHAR LIMIT=NONE] -->
@@ -71,4 +65,80 @@
         <item>Updates</item>
         <item>Other</item>
     </string-array>
+
+    <!-- Item that starts a new problem report. [CHAR LIMIT=40] -->
+    <string name="title_report_new">New report</string>
+    <!-- Heading of the list of problem reports that were sent. [CHAR LIMIT=40] -->
+    <string name="title_report_inbox">Inbox</string>
+    <!-- Heading of the list of problem reports that are being written. [CHAR LIMIT=40] -->
+    <string name="title_report_drafts">Drafts</string>
+    <!-- Shown in the inbox when no report has been sent. [CHAR LIMIT=NONE] -->
+    <string name="report_inbox_empty">No reports sent</string>
+    <!-- Shown under Drafts when there are none. [CHAR LIMIT=NONE] -->
+    <string name="report_drafts_empty">No drafts</string>
+    <!-- When a report or message was written less than a minute ago. [CHAR LIMIT=40] -->
+    <string name="report_just_now">just now</string>
+    <!-- Name of a draft that has no title yet. [CHAR LIMIT=40] -->
+    <string name="report_untitled">Untitled</string>
+    <!-- Summary of a draft: when it was last changed, such as "5 minutes ago". [CHAR LIMIT=NONE] -->
+    <string name="report_draft_summary">Changed <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <!-- Part of a sent report's summary: when it was sent, such as "2 days ago". [CHAR LIMIT=NONE] -->
+    <string name="report_sent_at">sent <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <!-- Part of a sent report's summary: how many replies haven't been opened. [CHAR LIMIT=NONE] -->
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> new reply</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> new replies</item>
+    </plurals>
+    <!-- Part of a sent report's summary: its status changed since it was last opened. [CHAR LIMIT=NONE] -->
+    <string name="report_status_changed">status changed</string>
+    <!-- Status of a sent report that is being looked at. [CHAR LIMIT=40] -->
+    <string name="report_status_open">Open</string>
+    <!-- Status of a sent report that was closed as done: fixed or added. [CHAR LIMIT=40] -->
+    <string name="report_status_completed">Closed, completed</string>
+    <!-- Status of a sent report that was closed without a change being planned. [CHAR LIMIT=40] -->
+    <string name="report_status_not_planned">Closed, not planned</string>
+    <!-- Status of a sent report that was closed as the same as another report. [CHAR LIMIT=40] -->
+    <string name="report_status_duplicate">Closed, duplicate</string>
+    <!-- Status of a sent report that the report server no longer has. [CHAR LIMIT=40] -->
+    <string name="report_status_unknown">Removed</string>
+    <!-- Item that shows the status of a sent report. [CHAR LIMIT=40] -->
+    <string name="title_report_status">Status</string>
+    <!-- Heading of what the reporter sent. [CHAR LIMIT=40] -->
+    <string name="title_report_your_report">Your report</string>
+    <!-- Heading of the replies to a report and the reporter's own messages. [CHAR LIMIT=40] -->
+    <string name="title_report_messages">Messages</string>
+    <!-- Title of a message the developer wrote, with when, such as "2 hours ago". [CHAR LIMIT=NONE] -->
+    <string name="report_message_from_developer">Developer, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <!-- Title of a message the reporter wrote, with when, such as "2 hours ago". [CHAR LIMIT=NONE] -->
+    <string name="report_message_from_you">You, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <!-- Heading of the reply being written to a report. [CHAR LIMIT=40] -->
+    <string name="title_report_reply">Reply</string>
+    <!-- Field for the text of a reply to a report. [CHAR LIMIT=40] -->
+    <string name="title_report_reply_text">Your reply</string>
+    <!-- Button that sends the reply to a report. [CHAR LIMIT=40] -->
+    <string name="title_report_send_reply">Send reply</string>
+    <!-- Shown after a reply to a report was sent. [CHAR LIMIT=NONE] -->
+    <string name="report_reply_sent">Reply sent.</string>
+    <!-- Shown when a reply to a report could not be sent. [CHAR LIMIT=NONE] -->
+    <string name="report_reply_not_sent">Reply not sent. Try again later.</string>
+    <!-- Item that removes a sent report from the inbox on this phone. [CHAR LIMIT=40] -->
+    <string name="title_report_remove">Remove from inbox</string>
+    <!-- Title of the dialog that asks before removing a sent report from the inbox. [CHAR LIMIT=NONE] -->
+    <string name="dialog_title_report_remove">Remove this report from the inbox?</string>
+    <!-- Message of the dialog that asks before removing a sent report from the inbox. [CHAR LIMIT=NONE] -->
+    <string name="dialog_message_report_remove">Replies to it will no longer reach this phone.</string>
+    <!-- Item that deletes the report being written. [CHAR LIMIT=40] -->
+    <string name="title_report_delete_draft">Delete draft</string>
+    <!-- Title of the dialog that asks before deleting the report being written. [CHAR LIMIT=NONE] -->
+    <string name="dialog_title_report_delete_draft">Delete this draft?</string>
+    <!-- Button that deletes a draft or removes a report. [CHAR LIMIT=20] -->
+    <string name="button_report_delete">Delete</string>
+    <!-- Shown when a report that a notification opened is no longer on this phone. [CHAR LIMIT=NONE] -->
+    <string name="report_missing">This report is no longer in the inbox.</string>
+    <!-- Name of the notification channel for replies to problem reports. [CHAR LIMIT=40] -->
+    <string name="notification_channel_problem_reports">Problem report replies</string>
+    <!-- Title of the notification for a reply to a report, with the report's title. [CHAR LIMIT=NONE] -->
+    <string name="report_notification_reply">Reply to <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <!-- Title of the notification for a report whose status changed: its title and new status. [CHAR LIMIT=NONE] -->
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>
