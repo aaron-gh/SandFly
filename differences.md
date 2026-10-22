@@ -662,6 +662,10 @@ On Android 12 and later, SandFly's settings follow the system dark mode.
 
 SandFly doesn't stop on a slider's title as a separate item when you swipe through settings.
 
+### Export and import settings
+
+**Export settings** saves SandFly's settings to a file, and **Import settings** replaces them with a file's, such as one from another phone. API keys stay on the phone. Import settings also reads a settings file exported from Backtalk: the settings in it replace SandFly's, and SandFly's own settings that Backtalk doesn't have are kept.
+
 ### App icon that opens the settings
 
 SandFly has an app icon in the launcher, labelled SandFly, that opens its settings. TalkBack's settings open only from the accessibility settings, which need TalkBack to be on. SandFly's settings open from the icon whether SandFly is on or off, so you can set it up, or change a setting, without turning it on first.

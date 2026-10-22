@@ -28,6 +28,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.migration.MigrationFiles
 import com.google.android.accessibility.utils.FormFactorUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.io.File
 import java.io.IOException
 import org.json.JSONArray
@@ -41,6 +42,8 @@ import org.json.JSONObject
  * Aaron, and API keys.
  *
  * Custom labels, installed scripts and sound themes are files of their own, and are not in it.
+ *
+ * A settings file exported from Backtalk can be imported too.
  */
 object SettingsBackup {
   private const val FORMAT = "sandfly-settings"
@@ -169,6 +172,9 @@ object SettingsBackup {
     val files =
       try {
         val root = JSONObject(json)
+        if (isBacktalkFile(root)) {
+          return importBacktalk(backtalkStores(context), root)
+        }
         if (root.optString("format") != FORMAT || root.optInt("version") > VERSION) return false
         root.getJSONObject("files")
       } catch (e: JSONException) {
@@ -209,6 +215,107 @@ object SettingsBackup {
       editor.commit()
     }
     return true
+  }
+
+  /** Backtalk's settings file: format 1, with a preference file for each store. */
+  private const val BACKTALK_FORMAT = 1
+
+  /** Settings that Backtalk leaves out of its file, by part of their key: state and secrets. */
+  private val BACKTALK_SKIPPED_FRAGMENTS =
+    listOf(
+      "api_key",
+      "_shown",
+      "_installed",
+      "_uninstalled",
+      "install_lib",
+      "first_update",
+      "first_time",
+      "opt_in_count",
+    )
+
+  /** Settings that are state of Backtalk's on its phone, not settings to bring over. */
+  private val BACKTALK_SKIPPED_KEYS =
+    setOf(
+      "pref_developer_version_code",
+      "brailleime_shared_prefs_version",
+      "pref_speech_control_allowed_apps",
+      "pref_speech_control_denied_apps",
+      "remembered_devices_with_addresses",
+    )
+
+  private fun isBacktalkFile(root: JSONObject) =
+    root.opt("format") is Int && root.optJSONObject("stores") != null
+
+  /** SandFly's preference files for the stores in Backtalk's file, by their names there. */
+  private fun backtalkStores(context: Context): Map<String, SharedPreferences> =
+    mapOf(
+      "main" to SharedPreferencesUtils.getSharedPreferences(context),
+      "braille_keyboard" to SharedPreferencesUtils.getSharedPreferences(context, "braille_keyboard"),
+      "braille_display" to SharedPreferencesUtils.getSharedPreferences(context, "braille_display"),
+    )
+
+  /**
+   * Sets the settings in a file exported from Backtalk, [root], in [stores]. Settings that the file
+   * doesn't hold, such as SandFly's own, are kept. Returns false if the file can't be read, and then
+   * changes nothing.
+   */
+  @VisibleForTesting
+  fun importBacktalk(stores: Map<String, SharedPreferences>, root: JSONObject): Boolean {
+    if (root.optInt("format") != BACKTALK_FORMAT) return false
+    val storesJson = root.optJSONObject("stores") ?: return false
+    val edits = mutableListOf<Pair<SharedPreferences, Map<String, Any>>>()
+    for ((name, prefs) in stores) {
+      val entries = storesJson.optJSONObject(name) ?: continue
+      val decoded = mutableMapOf<String, Any>()
+      for (key in entries.keys()) {
+        if (!isBacktalkSettingKept(key)) continue
+        decoded[key] = decodeBacktalk(entries.optJSONObject(key)) ?: return false
+      }
+      edits += prefs to decoded
+    }
+    for ((prefs, values) in edits) {
+      val editor = prefs.edit()
+      for ((key, value) in values) {
+        @Suppress("UNCHECKED_CAST")
+        when (value) {
+          is Boolean -> editor.putBoolean(key, value)
+          is Int -> editor.putInt(key, value)
+          is Long -> editor.putLong(key, value)
+          is Float -> editor.putFloat(key, value)
+          is String -> editor.putString(key, value)
+          is Set<*> -> editor.putStringSet(key, value as Set<String>)
+        }
+      }
+      editor.commit()
+    }
+    return true
+  }
+
+  private fun isBacktalkSettingKept(key: String) =
+    key !in SECRET_KEYS &&
+      key !in BACKTALK_SKIPPED_KEYS &&
+      key !in MigrationFiles.SKIPPED_PREF_KEYS &&
+      BACKTALK_SKIPPED_FRAGMENTS.none { key.contains(it) }
+
+  /** Reads one setting of Backtalk's file: its type in "t" and its value in "v". */
+  private fun decodeBacktalk(json: JSONObject?): Any? {
+    json ?: return null
+    return try {
+      when (json.getString("t")) {
+        "bool" -> json.getBoolean("v")
+        "int" -> json.getInt("v")
+        "long" -> json.getLong("v")
+        "float" -> json.getDouble("v").toFloat()
+        "string" -> json.getString("v")
+        "set" -> {
+          val array = json.getJSONArray("v")
+          (0 until array.length()).map { array.getString(it) }.toSet()
+        }
+        else -> null
+      }
+    } catch (e: JSONException) {
+      null
+    }
   }
 
   private fun storages(context: Context): List<Pair<String, Context>> =
