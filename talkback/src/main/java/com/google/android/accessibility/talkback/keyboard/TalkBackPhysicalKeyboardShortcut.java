@@ -126,6 +126,10 @@ public enum TalkBackPhysicalKeyboardShortcut {
       /* KEYBOARD_SHORTCUT_NEXT_VOICE_PROFILE */ 1004,
       R.string.keycombo_shortcut_global_next_voice_profile,
       R.string.shortcut_next_voice_profile),
+  REFRESH(
+      /* KEYBOARD_SHORTCUT_REFRESH */ 1005,
+      R.string.keycombo_shortcut_global_refresh,
+      R.string.shortcut_refresh),
   SEARCH_SCREEN_FOR_ITEM(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_SEARCH_SCREEN_FOR_ITEM */ 25,
       R.string.keycombo_shortcut_other_toggle_search,
