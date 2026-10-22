@@ -167,6 +167,14 @@
         android:title="@string/title_pref_handwriting_keyboard">
       <intent android:action="android.settings.INPUT_METHOD_SETTINGS" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_handwriting_wait_default"
+        android:dialogTitle="@string/title_pref_handwriting_wait"
+        android:entries="@array/pref_handwriting_wait_entries"
+        android:entryValues="@array/pref_handwriting_wait_values"
+        android:key="@string/pref_handwriting_wait_key"
+        android:summary="%s"
+        android:title="@string/title_pref_handwriting_wait" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_brailledisplay_key"
         android:title="@string/title_pref_brailledisplay">

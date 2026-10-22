@@ -202,6 +202,8 @@ public class TalkBackPreferenceFilter {
     // The handwriting keyboard is in the phone build only.
     HANDWRITING_KEYBOARD(
         R.string.pref_handwriting_keyboard_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    HANDWRITING_WAIT(
+        R.string.pref_handwriting_wait_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
