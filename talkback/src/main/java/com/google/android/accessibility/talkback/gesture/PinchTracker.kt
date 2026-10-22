@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.util.Log
 import android.view.MotionEvent
-import com.google.android.accessibility.talkback.BuildConfig
 import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.hypot
@@ -184,7 +183,7 @@ class PinchTracker(
     val spread = radialChange > 0
     val farEnough = if (spread) ratio >= MIN_RATIO else ratio <= 1f / MIN_RATIO
     if (farEnough && translation <= change && arc <= change) {
-      if (BuildConfig.DEBUG) {
+      if (GestureLog.enabled) {
         val name = if (spread) "Spread" else "Pinch"
         Log.d(
           DEBUG_TAG,
@@ -195,7 +194,7 @@ class PinchTracker(
       state = State.RECOGNIZED
       listener.onPinch(fingerCount, spread)
     } else if (translation > change * GIVE_UP_FACTOR || arc > change * GIVE_UP_FACTOR) {
-      if (BuildConfig.DEBUG) {
+      if (GestureLog.enabled) {
         Log.d(DEBUG_TAG, "Pinch rejected: translation=%.0f arc=%.0f".format(translation, arc))
       }
       state = State.REJECTED

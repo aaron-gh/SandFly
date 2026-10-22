@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.util.Log
 import android.view.MotionEvent
-import com.google.android.accessibility.talkback.BuildConfig
 import kotlin.math.abs
 import kotlin.math.hypot
 
@@ -326,7 +325,7 @@ class EdgeSwipeTracker(
   }
 
   private fun debugLog(message: String) {
-    if (BuildConfig.DEBUG) {
+    if (GestureLog.enabled) {
       Log.d(DEBUG_TAG, "Edge swipe ${edge.name}: $message")
     }
   }
