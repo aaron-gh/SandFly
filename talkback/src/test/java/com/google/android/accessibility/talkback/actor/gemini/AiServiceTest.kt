@@ -59,6 +59,20 @@ class AiServiceTest {
   }
 
   @Test
+  fun aServiceIsSetUpInOrder() {
+    val prefs = FakeSharedPreferences()
+    assertEquals(AiProvider.Missing.ADDRESS, AiProvider.OTHER.missing(prefs))
+    AiProvider.setOtherAddress(prefs, "https://example.com/v1")
+    assertEquals(AiProvider.Missing.API_KEY, AiProvider.OTHER.missing(prefs))
+    AiProvider.OTHER.setApiKey(prefs, "key")
+    assertEquals(AiProvider.Missing.MODEL, AiProvider.OTHER.missing(prefs))
+    AiProvider.OTHER.setModel(prefs, "m")
+    assertEquals(null, AiProvider.OTHER.missing(prefs))
+    assertEquals(AiProvider.Missing.API_KEY, AiProvider.MISTRAL.missing(prefs))
+    assertEquals(null, AiProvider.GEMINI.missing(prefs))
+  }
+
+  @Test
   fun eachServiceKeepsItsOwnKey() {
     val prefs = FakeSharedPreferences()
     AiProvider.MISTRAL.setApiKey(prefs, "mistral key")
@@ -84,11 +98,21 @@ class AiServiceTest {
     other.edit()
       .putString("pref_ai_service_address", "https://example.com/v1")
       .putString("pref_ai_service_model", "m")
+      .putString("pref_ai_service_api_key", "k")
       .apply()
     assertEquals(AiProvider.OTHER, AiProvider.active(other))
     assertEquals("https://example.com/v1", AiService.address(other))
 
     assertEquals(AiProvider.GEMINI, AiProvider.active(FakeSharedPreferences()))
+
+    // One without a key isn't set up, so Gemini stays in use; its address and model are kept.
+    val keyless = FakeSharedPreferences()
+    keyless.edit()
+      .putString("pref_ai_service_address", "https://api.mistral.ai/v1")
+      .putString("pref_ai_service_model", "m")
+      .apply()
+    assertEquals(AiProvider.GEMINI, AiProvider.active(keyless))
+    assertEquals("m", AiProvider.MISTRAL.model(keyless))
   }
 
   @Test
