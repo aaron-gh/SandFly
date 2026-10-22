@@ -2,7 +2,7 @@
 # BRLTTY - A background process providing access to the console screen (when in
 #          text mode) for a blind person using a refreshable braille display.
 #
-# Copyright (C) 1995-2024 by The BRLTTY Developers.
+# Copyright (C) 1995-2026 by The BRLTTY Developers.
 #
 # BRLTTY comes with ABSOLUTELY NO WARRANTY.
 #
@@ -40,21 +40,28 @@ bind Space+Dot7+Dot8 CONTROL
 bind Space+Dot2+Dot5+Dot6 KEY_TAB
 bind Space+Dot2+Dot3+Dot6 KEY_TAB+shift
 
-#Overridden by BrailleBack.
-#bind Space+Dot4 KEY_CURSOR_UP
-#bind Space+Dot6 KEY_CURSOR_DOWN
-#bind Space+Dot2 KEY_CURSOR_LEFT
-#bind Space+Dot5 KEY_CURSOR_RIGHT
+bind Space+Dot4 KEY_CURSOR_UP
+bind Space+Dot6 KEY_CURSOR_DOWN
+bind Space+Dot2 KEY_CURSOR_LEFT
+bind Space+Dot5 KEY_CURSOR_RIGHT
 
 bind Space+Dot1+Dot3 KEY_PAGE_UP
 bind Space+Dot4+Dot6 KEY_PAGE_DOWN
 
-#bind Space+Dot1+Dot2+Dot3 KEY_HOME
-#bind Space+Dot4+Dot5+Dot6 KEY_END
+bind Space+Dot1+Dot2+Dot3 KEY_HOME
+bind Space+Dot4+Dot5+Dot6 KEY_END
 
 bind Space+Dot3+Dot6 KEY_DELETE
 bind Space+Dot1+Dot2+Dot4+Dot5 KEY_ESCAPE
 bind Space+Dot1+Dot3+Dot5 KEY_INSERT
+
+bind Space+Dot1+Dot2+Dot5 HELP
+bind Space+Dot2+Dot3+Dot4 INFO
+bind Space+Dot2+Dot3+Dot4+Dot5 TIME
+
+bind Space+Dot1+Dot2+Dot3+Dot4 PREFMENU
+bind Space+Dot1+Dot2+Dot3+Dot4+Dot7 PREFLOAD
+bind Space+Dot1+Dot2+Dot3+Dot4+Dot8 PREFSAVE
 
 bind Backspace+Dot1 KEY_FUNCTION+0
 bind Backspace+Dot1+Dot2 KEY_FUNCTION+1
@@ -69,9 +76,3 @@ bind Backspace+Dot2+Dot4+Dot5 KEY_FUNCTION+9
 bind Backspace+Dot1+Dot3 KEY_FUNCTION+10
 bind Backspace+Dot1+Dot2+Dot3 KEY_FUNCTION+11
 
-
-########################
-# BrailleBack Bindings #
-########################
-
-include ../android-chords.kti

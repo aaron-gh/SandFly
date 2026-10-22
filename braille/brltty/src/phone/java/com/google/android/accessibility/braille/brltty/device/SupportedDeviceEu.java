@@ -50,7 +50,15 @@ public class SupportedDeviceEu extends SupportedDevice {
           // EuroBraille [reserved]
           new Pair<>(0XC251, 0X1131),
           // EuroBraille [reserved]
-          new Pair<>(0XC251, 0X1132));
+          new Pair<>(0XC251, 0X1132),
+          // EuroBraille [b.note]
+          new Pair<>(0X28AC, 0X0012),
+          // EuroBraille [b.note 2]
+          new Pair<>(0X28AC, 0X0013),
+          // EuroBraille [b.book (internal)]
+          new Pair<>(0X28AC, 0X0020),
+          // EuroBraille [b.book (external)]
+          new Pair<>(0X28AC, 0X0021));
 
   @Override
   public String driverCode() {
@@ -72,6 +80,18 @@ public class SupportedDeviceEu extends SupportedDevice {
         .add("Backspace", R.string.key_Backspace)
         .add("Space", R.string.key_Space)
         .add("RoutingKey1", R.string.key_Routing)
+        // The b.note and b.book: one row of routing keys, keypads and navigation keys.
+        .add("RoutingKey", R.string.key_Routing)
+        .add("LeftKeypadLeft", R.string.key_LeftJoystickLeft)
+        .add("LeftKeypadRight", R.string.key_LeftJoystickRight)
+        .add("LeftKeypadUp", R.string.key_LeftJoystickUp)
+        .add("LeftKeypadDown", R.string.key_LeftJoystickDown)
+        .add("RightKeypadLeft", R.string.key_RightJoystickLeft)
+        .add("RightKeypadRight", R.string.key_RightJoystickRight)
+        .add("RightKeypadUp", R.string.key_RightJoystickUp)
+        .add("RightKeypadDown", R.string.key_RightJoystickDown)
+        .add("Backward", R.string.key_Backward)
+        .add("Forward", R.string.key_Forward)
         .build();
   }
 
