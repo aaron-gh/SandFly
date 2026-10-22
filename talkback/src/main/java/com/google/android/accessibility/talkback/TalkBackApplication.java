@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback;
 
 import android.app.Application;
 import android.os.Build;
+import com.google.android.accessibility.talkback.report.CrashLog;
 import com.google.android.accessibility.talkback.migration.SettingsImporter;
 import com.google.android.accessibility.talkback.training.PageConfigMapperImpl;
 import com.google.android.accessibility.talkback.training.TalkBackDisabledWarmingDialogImpl;
@@ -34,6 +35,7 @@ public class TalkBackApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    CrashLog.install(this);
 
     // Before anything loads the preferences, so settings from the old app ID are not overwritten.
     // Only Backtalk's main process imports them, not the notification reply's.

@@ -171,8 +171,10 @@ public class TalkBackForBrailleDisplayImpl implements TalkBackForBrailleDisplay 
       return service
           .getSoftKeyboardController()
           .switchToInputMethod(
-              KeyboardUtils.getEnabledImeId(
-                  service.getApplicationContext(), service.getPackageName()));
+              KeyboardUtils.getImeId(
+                  service.getApplicationContext(),
+                  AccessibilityServiceCompatUtils.Constants.BRAILLE_KEYBOARD,
+                  /* enabledOnly= */ true));
     }
     return false;
   }

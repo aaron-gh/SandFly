@@ -25,7 +25,10 @@ interface HandwritingRecognizer {
     /** What the strokes may be, most likely first. */
     class Candidates(val texts: List<String>) : Result
 
-    /** The model for the language isn't on the device. It is downloading now. */
+    /** The model for the language isn't on the device. */
+    object NotDownloaded : Result
+
+    /** The model for the language is downloading now. */
     object Downloading : Result
 
     /** There is no handwriting model for the language. */
@@ -47,11 +50,14 @@ interface HandwritingRecognizer {
   )
 
   /**
-   * Checks that the model for the language is on the device, and starts downloading it if not.
-   * Calls [onNotReady] on the main thread with [Result.Downloading] or [Result.UnsupportedLanguage]
-   * when handwriting can't be recognized yet, and nothing otherwise.
+   * Checks that the model for the language is on the device. Calls [onChecked] on the main thread
+   * with null when handwriting can be recognized, or with [Result.NotDownloaded],
+   * [Result.Downloading] or [Result.UnsupportedLanguage].
    */
-  fun prepare(onNotReady: (Result) -> Unit)
+  fun prepare(onChecked: (Result?) -> Unit)
+
+  /** Downloads the model for the language. The recognizer's creator is told when it is done. */
+  fun download()
 
   fun close()
 }

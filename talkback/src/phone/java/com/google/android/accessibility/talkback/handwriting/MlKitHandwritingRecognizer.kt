@@ -60,8 +60,7 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
       .isModelDownloaded(model)
       .addOnSuccessListener { downloaded ->
         if (!downloaded) {
-          download(model)
-          onResult(Result.Downloading)
+          onResult(Result.NotDownloaded)
           return@addOnSuccessListener
         }
         val client =
@@ -97,19 +96,20 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
       }
   }
 
-  override fun prepare(onNotReady: (Result) -> Unit) = withModel { model ->
-    if (model == null) return@withModel onNotReady(Result.UnsupportedLanguage)
-    if (downloading) return@withModel onNotReady(Result.Downloading)
+  override fun prepare(onChecked: (Result?) -> Unit) = withModel { model ->
+    if (model == null) return@withModel onChecked(Result.UnsupportedLanguage)
+    if (downloading) return@withModel onChecked(Result.Downloading)
     models
       .isModelDownloaded(model)
       .addOnSuccessListener { downloaded ->
         LogUtils.d(TAG, "Handwriting model for %s downloaded: %s", modelLocale, downloaded)
-        if (!downloaded) {
-          download(model)
-          onNotReady(Result.Downloading)
-        }
+        onChecked(if (downloaded) null else Result.NotDownloaded)
       }
-      .addOnFailureListener { e -> LogUtils.w(TAG, "Handwriting model state unknown: %s", e) }
+      .addOnFailureListener { e ->
+        // Recognition says what went wrong, if it does.
+        LogUtils.w(TAG, "Handwriting model state unknown: %s", e)
+        onChecked(null)
+      }
   }
 
   /**
@@ -131,6 +131,10 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
         then(model)
       }
     }
+  }
+
+  override fun download() = withModel { model ->
+    if (model != null && !downloading) download(model)
   }
 
   override fun close() {

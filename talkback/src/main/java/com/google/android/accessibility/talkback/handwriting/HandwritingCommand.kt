@@ -77,7 +77,10 @@ class HandwritingCommand(
     // Strokes reach the surface only where touches can pass touch exploration by, from Android 11.
     val recognizer =
       if (!FeatureSupport.supportPassthrough()) null
-      else recognizer ?: HandwritingRecognizers.create(service, ::onDownloadDone)?.also { recognizer = it }
+      else
+        recognizer
+          ?: HandwritingRecognizers.create(service) { HandwritingDownload.onDone(service, it) }
+            ?.also { recognizer = it }
     if (recognizer == null) {
       speak(service.getString(R.string.handwriting_not_available))
       return
@@ -92,14 +95,7 @@ class HandwritingCommand(
     )
     restartIdleTimer()
     recognizer.prepare { result ->
-      if (!isShowing) return@prepare
-      dismiss()
-      speak(
-        service.getString(
-          if (result == Result.UnsupportedLanguage) R.string.handwriting_unsupported_language
-          else R.string.handwriting_downloading
-        )
-      )
+      if (isShowing && result != null) notReady(result)
     }
   }
 
@@ -182,14 +178,9 @@ class HandwritingCommand(
       if (!isShowing) return@recognize
       when (result) {
         is Result.Candidates -> choose(result.texts)
-        Result.Downloading -> {
-          dismiss()
-          speak(service.getString(R.string.handwriting_downloading))
-        }
-        Result.UnsupportedLanguage -> {
-          dismiss()
-          speak(service.getString(R.string.handwriting_unsupported_language))
-        }
+        Result.NotDownloaded,
+        Result.Downloading,
+        Result.UnsupportedLanguage -> notReady(result)
         Result.Failed -> retry(service.getString(R.string.handwriting_not_recognized))
       }
     }
@@ -219,12 +210,18 @@ class HandwritingCommand(
     restartIdleTimer()
   }
 
-  private fun onDownloadDone(success: Boolean) {
-    speak(
-      service.getString(
-        if (success) R.string.handwriting_downloaded else R.string.handwriting_download_failed
-      )
-    )
+  /**
+   * Closes the surface when handwriting can't be recognized yet, and asks to download the model
+   * if it isn't on the phone.
+   */
+  private fun notReady(result: Result) {
+    dismiss()
+    val recognizer = recognizer ?: return
+    when (result) {
+      Result.NotDownloaded -> HandwritingDownload.ask(service, pipeline, recognizer)
+      Result.Downloading -> speak(service.getString(R.string.handwriting_downloading))
+      else -> speak(service.getString(R.string.handwriting_unsupported_language))
+    }
   }
 
   private fun restartIdleTimer() {
