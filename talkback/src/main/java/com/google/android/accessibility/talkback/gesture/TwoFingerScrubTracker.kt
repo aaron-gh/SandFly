@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.util.Log
 import android.view.MotionEvent
-import com.google.android.accessibility.talkback.BuildConfig
 import kotlin.math.abs
 import kotlin.math.hypot
 import kotlin.math.sign
@@ -157,7 +156,7 @@ class TwoFingerScrubTracker(
       strokes++
       strokeTime = time
       if (strokes >= STROKES) {
-        if (BuildConfig.DEBUG) {
+        if (GestureLog.enabled) {
           Log.d(DEBUG_TAG, "Two-finger scrub in ${time - startTime} ms")
         }
         state = State.SCRUBBED
@@ -171,7 +170,7 @@ class TwoFingerScrubTracker(
   }
 
   private fun reject(reason: String) {
-    if (BuildConfig.DEBUG) {
+    if (GestureLog.enabled) {
       Log.d(DEBUG_TAG, "Two-finger scrub rejected: $reason after $strokes strokes")
     }
     state = State.REJECTED

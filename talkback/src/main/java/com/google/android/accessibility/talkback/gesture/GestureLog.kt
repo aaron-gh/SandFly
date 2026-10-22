@@ -1,0 +1,32 @@
+/*
+ * Copyright 2026 Backtalk contributors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.google.android.accessibility.talkback.gesture
+
+import android.util.Log
+import com.google.android.accessibility.talkback.BuildConfig
+import com.google.android.libraries.accessibility.utils.log.LogUtils
+
+/**
+ * Whether gesture recognition is logged, with the BacktalkGesture tag: in debug builds, and in
+ * other builds when Developer settings > Log output level is Debug or Verbose, so that a problem
+ * report's log shows how a user's gestures were recognized.
+ */
+object GestureLog {
+  @JvmStatic
+  val enabled: Boolean
+    get() = BuildConfig.DEBUG || LogUtils.getLogLevel() <= Log.DEBUG
+}
