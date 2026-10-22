@@ -25,6 +25,7 @@ import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
 import androidx.annotation.MainThread
+import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
@@ -106,7 +107,7 @@ class NotificationVoice(private val context: Context) {
     ready = true
     tts.setAudioAttributes(
       AudioAttributes.Builder()
-        .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+        .setUsage(FailoverTextToSpeech.speechUsage(context))
         .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
         .build()
     )

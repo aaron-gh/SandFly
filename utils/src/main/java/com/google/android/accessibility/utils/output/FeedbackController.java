@@ -76,10 +76,10 @@ public class FeedbackController {
 
   /**
    * How Backtalk's sounds play: as speech, so that they follow the audio output device and the
-   * volume chosen for speech. Set by {@link #setUseAccessibilityStream}.
+   * volume chosen for speech. Set by {@link #setSpeechUsage}.
    */
   private static volatile AudioAttributes sFeedbackAttributes =
-      feedbackAttributes(/* useAccessibilityStream= */ true);
+      feedbackAttributes(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY);
 
   //////////////////////////////////////////////////////////////////////////////////////////
   // Member data
@@ -802,23 +802,20 @@ public class FeedbackController {
     return sFeedbackAttributes;
   }
 
-  /** How sounds play with the accessibility volume, or else the media volume. */
-  public static AudioAttributes feedbackAttributes(boolean useAccessibilityStream) {
+  /** How sounds play with the audio usage of speech, {@code usage}. */
+  public static AudioAttributes feedbackAttributes(int usage) {
     return new AudioAttributes.Builder()
-        .setUsage(
-            useAccessibilityStream
-                ? AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY
-                : AudioAttributes.USAGE_MEDIA)
+        .setUsage(usage)
         .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
         .build();
   }
 
   /**
-   * Sets whether sounds use the accessibility volume or the media volume, the same as speech. The
-   * sounds loaded so far are loaded again, with the new volume.
+   * Sets the audio usage of sounds, the same as speech's. The sounds loaded so far are loaded again,
+   * with the new volume.
    */
-  public void setUseAccessibilityStream(boolean useAccessibilityStream) {
-    AudioAttributes attributes = feedbackAttributes(useAccessibilityStream);
+  public void setSpeechUsage(int usage) {
+    AudioAttributes attributes = feedbackAttributes(usage);
     if (attributes.getUsage() == sFeedbackAttributes.getUsage()) {
       return;
     }

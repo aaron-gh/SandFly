@@ -1604,14 +1604,12 @@
       Source: Title for the "use accessibility audio stream" toggle.
       Description: When on, TalkBack speech uses the dedicated accessibility audio stream. [CHAR LIMIT=NONE]
     -->
-    <string name="title_pref_use_accessibility_stream">使用无障碍音量</string>
 
     <!--
       Source: Summary for the "use accessibility audio stream" toggle.
       Description: Explains that enabling this routes TalkBack speech through the accessibility stream,
       allowing independent volume control. [CHAR LIMIT=NONE]
     -->
-    <string name="summary_pref_use_accessibility_stream">语音和声音使用无障碍音量，可与媒体音量分开设置。关闭后改用媒体音量。</string>
 
     <!--
       Source: Title for the "speak long text in phrases" toggle.

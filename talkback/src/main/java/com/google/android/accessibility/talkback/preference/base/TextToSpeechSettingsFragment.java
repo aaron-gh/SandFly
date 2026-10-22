@@ -44,6 +44,9 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
         } else if (TextUtils.equals(key, VoiceProfiles.PREF_ACTIVE)) {
           // Switched by a gesture, keyboard shortcut or the Backtalk menu.
           updateVoiceProfileSummary();
+        } else if (TextUtils.equals(key, FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY)) {
+          // Switched by the reading control.
+          updateSpeechStreamValue();
         }
       };
 
@@ -63,6 +66,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
 
     setUpEnginePreference();
     setUpSystemTtsSettingsPreference();
+    updateSpeechStreamValue();
 
     setUpSeekBar(
         R.string.pref_speech_volume_seekbar_key_int,
@@ -102,6 +106,16 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
   public void onPause() {
     super.onPause();
     prefs.unregisterOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
+  }
+
+  /**
+   * Shows the volume speech uses. Before the list, a switch chose between the accessibility and
+   * media volumes, and its choice is shown until another is made.
+   */
+  private void updateSpeechStreamValue() {
+    if (findPreferenceByResId(R.string.pref_speech_stream_key) instanceof ListPreference list) {
+      list.setValue(FailoverTextToSpeech.chosenSpeechStream(prefs));
+    }
   }
 
   private void setUpEnginePreference() {

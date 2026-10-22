@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.function.IntSupplier;
 
 /**
  * Loads WAV files into memory and plays them using AudioTrack. For now we don't support {@link
@@ -63,15 +64,20 @@ public class AudioTrackSpeechCachePlayer extends SpeechCachePlayer {
 
   private final Thread thread;
 
+  /** The audio usage of speech, read for each sound, so that it follows the chosen volume. */
+  private final IntSupplier usage;
+
   private final Object lock = new Object();
 
   /**
    * Creates an {@link AudioTrackSpeechCachePlayer} with the given maximum speech rate.
    *
    * @param callbackExecutor the executor to dispatch playback state callbacks.
+   * @param usage the audio usage of speech
    */
-  public AudioTrackSpeechCachePlayer(Executor callbackExecutor) {
+  public AudioTrackSpeechCachePlayer(Executor callbackExecutor, IntSupplier usage) {
     super(callbackExecutor);
+    this.usage = usage;
     thread = new Thread(new MessageLoop(), "speechCachePlaybackThread");
     thread.start();
   }
@@ -187,7 +193,7 @@ public class AudioTrackSpeechCachePlayer extends SpeechCachePlayer {
             .setAudioAttributes(
                 new AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                    .setUsage(usage.getAsInt())
                     .build())
             .setAudioFormat(
                 new AudioFormat.Builder()

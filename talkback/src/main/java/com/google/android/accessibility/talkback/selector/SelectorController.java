@@ -401,6 +401,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_switch_tts_engine_key,
         R.string.selector_switch_tts_engine,
         R.bool.pref_selector_switch_tts_engine_default),
+    SPEECH_STREAM(
+        R.string.pref_selector_speech_stream_key,
+        R.string.selector_speech_stream,
+        R.bool.pref_selector_speech_stream_default),
     SWITCH_VOICE_PROFILE(
         R.string.pref_selector_voice_profile_key,
         R.string.selector_voice_profile,
@@ -670,6 +674,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.ADJUSTABLE_WIDGET,
           Setting.CONTROL_TELLING_TIME,
           Setting.SWITCH_TTS_ENGINE,
+          Setting.SPEECH_STREAM,
           Setting.SWITCH_VOICE_PROFILE);
 
   /** Lists all {@link Setting} that should be hidden for users. */
@@ -1013,6 +1018,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case SWITCH_TTS_ENGINE -> {
         actionDescription = context.getString(R.string.title_selector_switch_tts_engine);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case SPEECH_STREAM -> {
+        actionDescription = context.getString(R.string.title_pref_speech_stream);
         hint = getAdjustSelectedSettingGestures();
       }
       case SWITCH_VOICE_PROFILE -> {
@@ -1883,6 +1892,10 @@ public class SelectorController implements UserInputEventListener {
         changeTtsEngine(eventId, isNext);
         return;
       }
+      case SPEECH_STREAM -> {
+        changeSpeechStream(eventId, isNext);
+        return;
+      }
       case SWITCH_VOICE_PROFILE -> {
         changeVoiceProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
@@ -2103,6 +2116,18 @@ public class SelectorController implements UserInputEventListener {
             R.string.template_speech_rate_change,
             actorState.getSpeechRateState().getSpeechRatePercentage());
     announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /** Changes the volume speech and sounds play at to the next or previous of the four. */
+  private void changeSpeechStream(EventId eventId, boolean isNext) {
+    List<String> streams = FailoverTextToSpeech.STREAM_VALUES;
+    int index = streams.indexOf(FailoverTextToSpeech.chosenSpeechStream(prefs));
+    String stream = streams.get(Math.floorMod(index + (isNext ? 1 : -1), streams.size()));
+    prefs.edit().putString(FailoverTextToSpeech.PREF_SPEECH_STREAM_KEY, stream).apply();
+    String[] names = context.getResources().getStringArray(R.array.pref_speech_stream_entries);
+    String displayText = names[streams.indexOf(stream)];
+    announceSetting(eventId, displayText, getSelectSettingGestures());
     showQuickMenuActionOverlay(eventId, displayText);
   }
 

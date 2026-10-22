@@ -14,11 +14,12 @@
       android:key="@string/pref_system_tts_settings_key"
       android:title="@string/title_pref_system_tts_settings"
       android:summary="@string/summary_tts_settings" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_use_accessibility_stream_default"
-      android:key="@string/pref_use_accessibility_stream_key"
-      android:title="@string/title_pref_use_accessibility_stream"
-      android:summary="@string/summary_pref_use_accessibility_stream" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:key="@string/pref_speech_stream_key"
+      android:title="@string/title_pref_speech_stream"
+      android:entries="@array/pref_speech_stream_entries"
+      android:entryValues="@array/pref_speech_stream_values"
+      android:summary="%s" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_speak_in_phrases_default"
       android:key="@string/pref_speak_in_phrases_key"
