@@ -23,3 +23,6 @@
 # Shizuku grants permissions through binder interfaces it finds by name.
 -keep class rikka.shizuku.** { *; }
 -keep class moe.shizuku.** { *; }
+
+# WorkManager, which ML Kit's model downloads use, creates its Room database by name.
+-keep class * extends androidx.room.RoomDatabase { <init>(); }
