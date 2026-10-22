@@ -65,6 +65,11 @@ data class Decision(
   val rules: List<String> = emptyList(),
   /** [text] before a start shared with the app's last notification was left out. */
   val fullText: String = text,
+  /**
+   * The ID of the voice profile to read it with, empty for SandFly's voice, or null for the voice
+   * chosen for every notification.
+   */
+  val voiceProfile: String? = null,
 ) {
   val read: Boolean
     get() = outcome == Outcome.READ
@@ -219,6 +224,7 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
       maxSeconds = if (effects.noLimit) 0 else settings.maxSeconds,
       rules = effects.ruleNames,
       fullText = text,
+      voiceProfile = effects.voiceProfile ?: app.voiceProfile,
     )
   }
 

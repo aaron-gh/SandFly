@@ -583,6 +583,14 @@
     <string name="notification_action_priority">read first</string>
     <!-- A rule action, as said in the rule and the list of actions to add. -->
     <string name="notification_action_always_read">read even in quiet hours and other times notifications are not read</string>
+    <!-- Rule action, in the list of actions to add: the notification is read with a voice profile chosen next. -->
+    <string name="notification_action_voice">read with a voice profile</string>
+    <!-- Rule action: the notification is read with the voice profile named. -->
+    <string name="notification_action_voice_value">read with <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <!-- Rule action: the notification is read with SandFly's own voice, not a voice profile. -->
+    <string name="notification_action_voice_sandfly">read with SandFly\'s voice</string>
+    <!-- Said in place of the name of a voice profile that was deleted, in a rule or an app's voice. -->
+    <string name="notification_voice_removed">Removed voice profile</string>
     <!-- A rule action with its speech format. -->
     <string name="notification_action_format_value">use the speech format <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <!-- A rule action with its number of words. -->
