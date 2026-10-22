@@ -48,6 +48,8 @@ enum class Outcome {
   CAR,
   RULE,
   BUSY,
+  /** An incoming call, announced as calls always are. */
+  CALL,
 }
 
 /** What to do with a notification. */

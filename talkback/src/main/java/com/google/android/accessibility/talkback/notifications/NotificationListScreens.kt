@@ -283,6 +283,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
           Outcome.CAR -> R.string.notification_outcome_car
           Outcome.RULE -> R.string.notification_outcome_rule
           Outcome.BUSY -> R.string.notification_outcome_busy
+          Outcome.CALL -> R.string.notification_outcome_call
         }
       )
   }

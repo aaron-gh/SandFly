@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.notificationlist
 
 import android.app.Notification
+import android.app.NotificationManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.SharedPreferences
@@ -27,7 +28,6 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.talkback.notifications.DndMode
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.notifications.NotificationSettings
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -73,6 +73,10 @@ class NotificationListService : NotificationListenerService() {
       return
     }
     instance = this
+    // Notifications already in the shade aren't new.
+    runCatching { activeNotifications }.getOrNull()?.forEach {
+      postedTexts[it.key] = textOf(it.notification)
+    }
     SharedPreferencesUtils.getSharedPreferences(this)
       .registerOnSharedPreferenceChangeListener(switchListener)
     if (listEnabled()) connectList()
@@ -103,11 +107,31 @@ class NotificationListService : NotificationListenerService() {
     NotificationList.onDisconnected()
   }
 
+  /**
+   * The text of each notification posted while connected, by key, so that an update that only
+   * changes its time or progress isn't taken for a new notification.
+   */
+  private val postedTexts = LinkedHashMap<String, String>()
+
   override fun onNotificationPosted(notification: StatusBarNotification, ranking: RankingMap?) {
     if (listEnabled()) NotificationList.onPosted(notification, ranking)
+    val text = textOf(notification.notification)
+    if (postedTexts.put(notification.key, text) != text) {
+      while (postedTexts.size > MAX_POSTED_KEYS) postedTexts.remove(postedTexts.keys.first())
+      val importance =
+        Ranking().takeIf { ranking?.getRanking(notification.key, it) == true }?.importance
+          ?: NotificationManager.IMPORTANCE_DEFAULT
+      NotificationReader.onListenerPosted(notification.packageName, notification.notification, importance)
+    }
+  }
+
+  private fun textOf(notification: Notification): String {
+    val extras = notification.extras ?: return ""
+    return "${extras.getCharSequence(Notification.EXTRA_TITLE)}|${extras.getCharSequence(Notification.EXTRA_TEXT)}"
   }
 
   override fun onNotificationRemoved(notification: StatusBarNotification, ranking: RankingMap?) {
+    postedTexts.remove(notification.key)
     if (listEnabled()) NotificationList.onRemoved(notification, ranking)
   }
 
@@ -160,6 +184,7 @@ class NotificationListService : NotificationListenerService() {
 
   companion object {
     private const val TAG = "NotificationListService"
+    private const val MAX_POSTED_KEYS = 500
 
     /**
      * Whether the listener is needed: for SandFly's notification list, or to stop reading a
@@ -169,7 +194,9 @@ class NotificationListService : NotificationListenerService() {
       NotificationList.isEnabled(context) ||
         SystemClock.uptimeMillis() < keepConnectedUntil ||
         SharedPreferencesUtils.getSharedPreferences(context).let {
-          NotificationSettings.read(it).let { s -> s.needsListener || (s.enabled && s.dnd == DndMode.ALLOWED) } ||
+          // With notification speech on, it reads notifications that Android sends no
+          // accessibility event for, such as those on silent channels.
+          NotificationSettings.read(it).let { s -> s.needsListener || s.enabled } ||
             it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false)
         }
 
