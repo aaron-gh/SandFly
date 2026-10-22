@@ -36,13 +36,17 @@ import androidx.annotation.NonNull;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceClickListener;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference;
+import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayList;
+import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -159,6 +163,8 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     Context context = getContext();
 
     AccessibilitySuitePreferenceCategory category = null;
+    @Nullable AccessibilitySuitePreferenceCategory selectedCategory = null;
+    List<AccessibilitySuitePreferenceCategory> titledCategories = new ArrayList<>();
     ActionItem item;
     for (int order = 0; order < items.length; order++) {
       item = (ActionItem) items[order];
@@ -167,6 +173,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
           category = new AccessibilitySuitePreferenceCategory(getContext());
           category.setTitle(item.text);
           preferenceScreen.addPreference(category);
+          titledCategories.add(category);
         }
         case TYPE_ACTION_ITEM -> {
           AccessibilitySuiteRadioButtonPreference radioButtonPreference =
@@ -186,7 +193,7 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
           radioButtonPreference.setKey(item.text);
           category.addPreference(radioButtonPreference);
           if (checked) {
-            selectedPosition = order;
+            selectedCategory = category;
           }
           radioButtonPreference.setRequestInitialAccessibilityFocus(checked);
         }
@@ -194,13 +201,46 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
       }
     }
 
+    // Each category of actions starts collapsed, except the one with the action in use.
+    for (AccessibilitySuitePreferenceCategory titled : titledCategories) {
+      titled.setCollapsible(
+          context.getString(R.string.category_collapsed),
+          context.getString(R.string.category_expanded));
+      if (titled == selectedCategory) {
+        titled.setCollapsed(false);
+      }
+    }
+    selectedPosition = findSelectedPosition(preferenceScreen);
+
     return preferenceScreen;
   }
 
+  /** Returns the position in the list of the action in use, among the rows shown, or 0. */
+  private static int findSelectedPosition(PreferenceScreen preferenceScreen) {
+    int position = 0;
+    for (int i = 0; i < preferenceScreen.getPreferenceCount(); i++) {
+      Preference category = preferenceScreen.getPreference(i);
+      position++;
+      if (!(category instanceof PreferenceGroup group)) {
+        continue;
+      }
+      for (int j = 0; j < group.getPreferenceCount(); j++) {
+        Preference preference = group.getPreference(j);
+        if (!preference.isVisible()) {
+          continue;
+        }
+        if (preference instanceof AccessibilitySuiteRadioButtonPreference radioButton
+            && radioButton.isChecked()) {
+          return position;
+        }
+        position++;
+      }
+    }
+    return 0;
+  }
+
   private int getSelectedPositionInAdapter() {
-    // In SettingsBasePreferenceFragment, it has an unknown item in the beginning for the
-    // RecyclerView. So, we offset one position for the selected preference.
-    return selectedPosition + 1;
+    return selectedPosition;
   }
 
   private void scrollToSelectedPosition() {
