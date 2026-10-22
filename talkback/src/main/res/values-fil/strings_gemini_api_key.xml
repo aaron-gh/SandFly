@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API key</string>
-    <string name="summary_pref_gemini_api_key_set">Nakatakda. Gumagamit ng Gemini ang “Ilarawan ang larawan” at “Ilarawan ang screen”</string>
     <string name="summary_pref_gemini_api_key_built_in">Ginagamit ang key na naka-built in sa app na ito</string>
-    <string name="summary_pref_gemini_api_key_not_set">Hindi nakatakda. Kung walang key, text lang ang binabasa ng “Ilarawan ang larawan”, at kailangan ng “Ilarawan ang screen” ang on-device na AI</string>
     <string name="gemini_api_key_dialog_message">Kumuha ng libreng API key mula sa Google AI Studio, sa aistudio.google.com/apikey, at i-paste ito rito. Para alisin ang iyong key, i-clear ang field at i-save.\n\nIpinapadala sa Google ang mga larawan at screen na inilalarawan mo. Sa libreng tier, puwedeng gamitin ng Google ang mga ito para pahusayin ang mga produkto nito.</string>
     <string name="gemini_api_key_hint">API key</string>
     <string name="gemini_api_key_save">I-save</string>

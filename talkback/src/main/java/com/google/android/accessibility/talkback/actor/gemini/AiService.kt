@@ -52,7 +52,9 @@ object AiService {
   /** Whether requests go to a service other than Gemini: one is chosen and set up. */
   @JvmStatic
   fun isSetUp(prefs: SharedPreferences): Boolean =
-    AiProvider.active(prefs).let { it != AiProvider.GEMINI && it.isReady(prefs) }
+    AiProvider.active(prefs).let {
+      it != AiProvider.GEMINI && it != AiProvider.NONE && it.isReady(prefs)
+    }
 
   /** Whether [address] can be used: an https address with a host. */
   fun isValidAddress(address: String): Boolean =

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API ključ</string>
-    <string name="summary_pref_gemini_api_key_set">Postavljen. Opis slike i opisivanje ekrana koriste Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">Koristi se ključ ugrađen u ovu aplikaciju</string>
-    <string name="summary_pref_gemini_api_key_not_set">Nije postavljen. Bez ključa opis slike samo čita tekst, a opisivanje ekrana zahtijeva AI na uređaju</string>
     <string name="gemini_api_key_dialog_message">Nabavite besplatni API ključ u Google AI Studiju na aistudio.google.com/apikey i zalijepite ga ovdje. Da uklonite ključ, ispraznite polje i sačuvajte.\n\nSlike i ekrani koje opisujete šalju se Googleu. U besplatnom paketu Google ih može koristiti za poboljšanje svojih proizvoda.</string>
     <string name="gemini_api_key_hint">API ključ</string>
     <string name="gemini_api_key_save">Sačuvaj</string>

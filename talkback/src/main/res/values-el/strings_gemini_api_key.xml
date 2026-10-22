@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Κλειδί API Gemini</string>
-    <string name="summary_pref_gemini_api_key_set">Ορίστηκε. Η περιγραφή εικόνας και η περιγραφή οθόνης χρησιμοποιούν το Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">Χρήση του κλειδιού που είναι ενσωματωμένο στην εφαρμογή</string>
-    <string name="summary_pref_gemini_api_key_not_set">Δεν ορίστηκε. Χωρίς κλειδί, η περιγραφή εικόνας διαβάζει μόνο κείμενο και η περιγραφή οθόνης απαιτεί AI στη συσκευή</string>
     <string name="gemini_api_key_dialog_message">Αποκτήστε δωρεάν κλειδί API από το Google AI Studio, στη διεύθυνση aistudio.google.com/apikey, και επικολλήστε το εδώ. Για να καταργήσετε το κλειδί σας, διαγράψτε το περιεχόμενο του πεδίου και αποθηκεύστε.\n\nΟι εικόνες και οι οθόνες που περιγράφετε αποστέλλονται στην Google. Στη δωρεάν βαθμίδα, η Google μπορεί να τις χρησιμοποιεί για τη βελτίωση των προϊόντων της.</string>
     <string name="gemini_api_key_hint">Κλειδί API</string>
     <string name="gemini_api_key_save">Αποθήκευση</string>

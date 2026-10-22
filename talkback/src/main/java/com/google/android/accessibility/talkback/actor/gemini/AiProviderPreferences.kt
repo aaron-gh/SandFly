@@ -44,6 +44,7 @@ object AiProviderPreferences {
       true
     }
     for (provider in AiProvider.entries) {
+      if (provider == AiProvider.NONE) continue
       if (category.findPreference<Preference>(KEY_PREFIX + provider.id) != null) continue
       category.addPreference(
         AccessibilitySuitePreference(context).apply {
@@ -68,7 +69,7 @@ object AiProviderPreferences {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val active = AiProvider.active(prefs)
     fragment.findPreference<Preference>(KEY_CHOICE)?.summary =
-      if (active == AiProvider.GEMINI || active.isReady(prefs)) context.getString(active.label)
+      if (active.isReady(prefs)) context.getString(active.label)
       else context.getString(R.string.ai_provider_chosen_not_ready, context.getString(active.label))
     for (provider in AiProvider.entries) {
       val row = fragment.findPreference<Preference>(KEY_PREFIX + provider.id) ?: continue

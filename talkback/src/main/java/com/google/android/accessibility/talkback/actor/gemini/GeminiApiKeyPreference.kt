@@ -35,11 +35,12 @@ object GeminiApiKeyPreference {
 
   /** Sets up the preference, if the [fragment] has it. */
   @JvmStatic
-  fun setUp(fragment: PreferenceFragmentCompat) {
+  @JvmOverloads
+  fun setUp(fragment: PreferenceFragmentCompat, onSaved: () -> Unit = {}) {
     val preference = fragment.findPreference<Preference>(GeminiApiKey.PREF_KEY) ?: return
     updateSummary(preference)
     preference.setOnPreferenceClickListener {
-      showDialog(fragment, preference)
+      showDialog(fragment, preference, onSaved)
       true
     }
   }
@@ -53,15 +54,14 @@ object GeminiApiKeyPreference {
     val prefs = SharedPreferencesUtils.getSharedPreferences(preference.context)
     preference.setSummary(
       when {
-        AiService.isSetUp(prefs) -> R.string.summary_pref_gemini_api_key_other_service
-        GeminiApiKey.userKey(prefs).isNotEmpty() -> R.string.summary_pref_gemini_api_key_set
+        GeminiApiKey.userKey(prefs).isNotEmpty() -> R.string.ai_provider_set
         BuildConfig.GEMINI_API_KEY.isNotBlank() -> R.string.summary_pref_gemini_api_key_built_in
-        else -> R.string.summary_pref_gemini_api_key_not_set
+        else -> R.string.ai_provider_not_set
       }
     )
   }
 
-  private fun showDialog(fragment: PreferenceFragmentCompat, preference: Preference) {
+  private fun showDialog(fragment: PreferenceFragmentCompat, preference: Preference, onSaved: () -> Unit) {
     val context = fragment.requireContext()
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     // A visible password field, so that the key is not learned by the keyboard or offered as a
@@ -87,6 +87,7 @@ object GeminiApiKeyPreference {
       .setPositiveButton(R.string.gemini_api_key_save) { _, _ ->
         GeminiApiKey.setUserKey(prefs, field.text.toString())
         updateSummary(preference)
+        onSaved()
       }
       .setNeutralButton(R.string.gemini_api_key_get) { _, _ ->
         try {

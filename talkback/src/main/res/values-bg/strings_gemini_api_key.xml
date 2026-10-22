@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">API ключ за Gemini</string>
-    <string name="summary_pref_gemini_api_key_set">Зададен. „Описание на изображението“ и „Описание на екрана“ използват Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">Използва се ключът, вграден в това приложение</string>
-    <string name="summary_pref_gemini_api_key_not_set">Не е зададен. Без ключ „Описание на изображението“ само чете текст, а „Описание на екрана“ изисква AI на устройството</string>
     <string name="gemini_api_key_dialog_message">Вземете безплатен API ключ от Google AI Studio на адрес aistudio.google.com/apikey и го поставете тук. За да премахнете ключа си, изчистете полето и запазете.\n\nИзображенията и екраните, които описвате, се изпращат до Google. При безплатния план Google може да ги използва за подобряване на продуктите си.</string>
     <string name="gemini_api_key_hint">API ключ</string>
     <string name="gemini_api_key_save">Запазване</string>

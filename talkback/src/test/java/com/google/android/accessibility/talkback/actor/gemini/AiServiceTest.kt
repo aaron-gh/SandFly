@@ -69,7 +69,21 @@ class AiServiceTest {
     AiProvider.OTHER.setModel(prefs, "m")
     assertEquals(null, AiProvider.OTHER.missing(prefs))
     assertEquals(AiProvider.Missing.API_KEY, AiProvider.MISTRAL.missing(prefs))
+    assertEquals(AiProvider.Missing.API_KEY, AiProvider.GEMINI.missing(prefs))
+    AiProvider.GEMINI.setApiKey(prefs, "gemini key")
     assertEquals(null, AiProvider.GEMINI.missing(prefs))
+    assertEquals(null, AiProvider.NONE.missing(prefs))
+  }
+
+  @Test
+  fun turningAServiceOffFallsBackToGeminiOnlyWhenItHasAKey() {
+    val prefs = FakeSharedPreferences()
+    assertEquals(AiProvider.NONE, AiProvider.fallback(prefs))
+    AiProvider.GEMINI.setApiKey(prefs, "gemini key")
+    assertEquals(AiProvider.GEMINI, AiProvider.fallback(prefs))
+    AiProvider.setActive(prefs, AiProvider.NONE)
+    assertFalse(AiService.isSetUp(prefs))
+    assertEquals("", AiService.apiKey(prefs))
   }
 
   @Test

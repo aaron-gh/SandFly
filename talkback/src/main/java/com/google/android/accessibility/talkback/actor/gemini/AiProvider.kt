@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.actor.gemini
 import android.content.SharedPreferences
 import androidx.annotation.StringRes
 import androidx.core.content.edit
+import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 
 /**
@@ -61,7 +62,9 @@ enum class AiProvider(
     "https://openrouter.ai/settings/keys",
   ),
   OLLAMA("ollama", R.string.ai_provider_ollama, "https://ollama.com/v1", "https://ollama.com/settings/keys"),
-  OTHER("other", R.string.ai_provider_other, "", "");
+  OTHER("other", R.string.ai_provider_other, "", ""),
+  /** No AI service: images and screens are described on the phone, or only their text is read. */
+  NONE("none", R.string.ai_provider_none, "", "");
 
   // "api_key" in the name keeps it out of settings backups, as the Gemini key is.
   val keyPref: String
@@ -71,7 +74,11 @@ enum class AiProvider(
     get() = "pref_ai_${id}_model"
 
   fun apiKey(prefs: SharedPreferences): String =
-    if (this == GEMINI) GeminiApiKey.userKey(prefs) else prefs.getString(keyPref, null)?.trim().orEmpty()
+    when (this) {
+      GEMINI -> GeminiApiKey.userKey(prefs)
+      NONE -> ""
+      else -> prefs.getString(keyPref, null)?.trim().orEmpty()
+    }
 
   fun model(prefs: SharedPreferences): String =
     if (this == GEMINI) GeminiModel.chosen(prefs) else prefs.getString(modelPref, null)?.trim().orEmpty()
@@ -95,10 +102,13 @@ enum class AiProvider(
     MODEL,
   }
 
-  /** The first thing the service still needs, or null when it can be used. Gemini always can. */
+  /** The first thing the service still needs, or null when it can be used. */
   fun missing(prefs: SharedPreferences): Missing? =
     when {
-      this == GEMINI -> null
+      this == NONE -> null
+      // A key built into the app, from local.properties, serves as the user's.
+      this == GEMINI ->
+        if (GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY).isEmpty()) Missing.API_KEY else null
       !AiService.isValidAddress(addressOf(prefs)) -> Missing.ADDRESS
       apiKey(prefs).isEmpty() -> Missing.API_KEY
       model(prefs).isEmpty() -> Missing.MODEL
@@ -128,6 +138,10 @@ enum class AiProvider(
 
     fun setActive(prefs: SharedPreferences, provider: AiProvider) =
       prefs.edit { putString(PREF_ACTIVE, provider.id) }
+
+    /** What is used when a service is turned off: Gemini when it is set up, or else none. */
+    @JvmStatic
+    fun fallback(prefs: SharedPreferences): AiProvider = if (GEMINI.isReady(prefs)) GEMINI else NONE
 
     fun setOtherAddress(prefs: SharedPreferences, address: String) =
       prefs.putOrRemove(PREF_OTHER_ADDRESS, address)

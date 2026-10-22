@@ -69,7 +69,7 @@ class AiProviderFragment : TalkbackBaseFragment() {
         isEnabled = isChecked || provider.isReady(prefs)
         summary = provider.missing(prefs)?.let { missingText(it) }
         setOnPreferenceChangeListener { _, value ->
-          AiProvider.setActive(prefs, if (value as Boolean) provider else AiProvider.GEMINI)
+          AiProvider.setActive(prefs, if (value as Boolean) provider else AiProvider.fallback(prefs))
           true
         }
       }
@@ -200,10 +200,13 @@ class AiProviderFragment : TalkbackBaseFragment() {
       .show()
   }
 
-  /** Goes back to Gemini when the service in use is no longer set up, such as after its key is cleared. */
+  /**
+   * Goes back to Gemini, or to none, when the service in use is no longer set up, such as after its
+   * key is cleared.
+   */
   private fun stopIfNotReady() {
     if (AiProvider.active(prefs) == provider && !provider.isReady(prefs)) {
-      AiProvider.setActive(prefs, AiProvider.GEMINI)
+      AiProvider.setActive(prefs, AiProvider.fallback(prefs))
     }
   }
 
