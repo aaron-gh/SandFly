@@ -224,6 +224,14 @@ public class EventFilter {
       // REFERTO. If the user is touching on screen, skip event.
       // For toast events, the notification parcel is null. (Use event text instead.)
       Notification notification = AccessibilityEventUtils.extractNotification(event);
+      // While the device is locked, a private notification's event has only its public version,
+      // or none, and the notification listener reads the whole notification instead.
+      if (notification == null
+          && Notification.class.getName().contentEquals(String.valueOf(event.getClassName()))
+          && NotificationReader.readsFromListener()) {
+        LogUtils.d(TAG, "Notification without content while locked: read from the listener");
+        return;
+      }
       boolean isCall =
           (notification != null) && Notification.CATEGORY_CALL.equals(notification.category);
       // Read now: the state kept in GlobalVariables changes only when a setting does.

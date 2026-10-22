@@ -214,7 +214,7 @@ To stop SandFly from reading new notifications when they arrive, turn off **Verb
 
 ### Notifications that Android doesn't announce
 
-Android tells screen readers about a new notification only when it alerts. A notification that Do Not Disturb holds back, or an update that an app posts without alerting again, such as a doorbell app replacing its last motion alert, never reaches TalkBack. When SandFly has notification access, it also receives these from its notification listener, and reads them as its notification settings say, so **Do Not Disturb** in the notification settings applies to them too. Progress and ongoing notifications are left out. Incoming calls are listed in the notification history as announced.
+Android tells screen readers about a new notification only when it alerts. A notification that Do Not Disturb holds back, or an update that an app posts without alerting again, such as a doorbell app replacing its last motion alert, never reaches TalkBack. When SandFly has notification access, it also receives these from its notification listener, and reads them as its notification settings say, so **Do Not Disturb** in the notification settings applies to them too. While the phone is locked, Android gives screen readers only the public version of a private notification, which many apps don't have, so TalkBack reads nothing; with notification access, SandFly reads the whole notification from its listener instead. Progress and ongoing notifications are left out. Incoming calls are listed in the notification history as announced.
 
 ### Toasts in Do Not Disturb
 

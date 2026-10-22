@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.notifications
 
+import android.app.KeyguardManager
 import android.app.Notification
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
@@ -260,8 +261,25 @@ object NotificationReader {
   @MainThread
   fun handle(event: AccessibilityEvent, notification: Notification, touching: Boolean, dnd: Boolean): Boolean {
     val packageName = event.packageName?.toString() ?: return false
+    if (readsFromListener() && notification.category != Notification.CATEGORY_CALL) {
+      // The listener has the whole notification; the event may have only its public version.
+      return true
+    }
     noteEvent(packageName, notification)
     return handle(packageName, event, notification, touching, dnd)
+  }
+
+  /**
+   * Whether notifications are read as the notification listener receives them, rather than from
+   * their accessibility events: while the device is locked, when Android puts only a private
+   * notification's public version in the event, which many apps leave out, so the event has no
+   * notification at all.
+   */
+  @JvmStatic
+  fun readsFromListener(): Boolean {
+    val context = context ?: return false
+    return NotificationListService.instance != null &&
+      context.getSystemService(KeyguardManager::class.java)?.isDeviceLocked == true
   }
 
   /**
@@ -349,7 +367,7 @@ object NotificationReader {
     val key = eventKey(packageName, notification)
     handler.postDelayed(
       {
-        if (recentEvents.none { it.first == key }) {
+        if (readsFromListener() || recentEvents.none { it.first == key }) {
           LogUtils.d(TAG, "No accessibility event for a notification of %s; handling it", packageName)
           val dnd = SettingsUtils.getDoNotDisturbState(context) > 0
           handle(packageName, null, notification, touching = false, dnd = dnd)

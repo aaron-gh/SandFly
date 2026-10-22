@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.compositor.Compositor.HandleEve
 import com.google.android.accessibility.talkback.compositor.EventFeedback;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.gesture.GestureHints;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import java.util.Map;
@@ -67,8 +68,11 @@ public final class HeadsUpNotificationAppearedFeedbackRule {
                   context, AccessibilityEventUtils.extractNotification(eventOptions.eventObject));
           // Disable the hint if usage hints or notification speech are disabled.
           // Disable the hint for calls since calls have the media control hint.
+          // While the device is locked, SandFly reads the notification from its notification
+          // listener, and the hint would come before it.
           if (!globalVariables.getUsageHintEnabled()
               || !globalVariables.getSpeakNotifications()
+              || NotificationReader.readsFromListener()
               || notificationCategory
                   .toString()
                   .equals(context.getString(R.string.notification_category_call))) {
