@@ -29,9 +29,20 @@ import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
 import com.google.android.accessibility.utils.compat.provider.SettingsCompatUtils;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 class TextToSpeechUtils {
+
+  // Shuts engines down in the background, one at a time.
+  private static final Executor SHUTDOWN_EXECUTOR =
+      Executors.newSingleThreadExecutor(
+          runnable -> {
+            Thread thread = new Thread(runnable, "TtsShutdown");
+            thread.setDaemon(true);
+            return thread;
+          });
 
   /**
    * Reloads the list of installed TTS engines.
@@ -68,16 +79,24 @@ class TextToSpeechUtils {
   }
 
   /**
-   * Attempts to shutdown the specified TTS engine, ignoring any errors.
+   * Attempts to shutdown the specified TTS engine, ignoring any errors. It happens on a background
+   * thread, because shutting down waits for the engine to answer, which can take many seconds while
+   * the device is busy, such as during boot.
    *
    * @param tts The TTS engine to shutdown.
    */
-  static void attemptTtsShutdown(TextToSpeech tts) {
-    try {
-      tts.shutdown();
-    } catch (Exception e) {
-      // Don't care, we're shutting down.
+  static void attemptTtsShutdown(@Nullable TextToSpeech tts) {
+    if (tts == null) {
+      return;
     }
+    SHUTDOWN_EXECUTOR.execute(
+        () -> {
+          try {
+            tts.shutdown();
+          } catch (Exception e) {
+            // Don't care, we're shutting down.
+          }
+        });
   }
 
   /**

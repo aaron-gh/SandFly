@@ -56,11 +56,22 @@ internal class MainThreadStallLogger private constructor(private val watchdog: H
     private const val TAG = "BacktalkStall"
     private const val STALL_THRESHOLD_MS = 100L
 
+    private var installed: MainThreadStallLogger? = null
+
+    /**
+     * Logs stalls only while debug logging is on, since Android builds two strings for every
+     * message the main thread runs while a logger is set.
+     */
     @JvmStatic
-    fun install() {
-      val watchdogThread = HandlerThread(TAG).apply { start() }
-      Looper.getMainLooper()
-        .setMessageLogging(MainThreadStallLogger(Handler(watchdogThread.looper)))
+    fun setEnabled(enabled: Boolean) {
+      if (enabled == (installed != null)) {
+        return
+      }
+      installed?.watchdog?.looper?.quit()
+      installed =
+        if (enabled) MainThreadStallLogger(Handler(HandlerThread(TAG).apply { start() }.looper))
+        else null
+      Looper.getMainLooper().setMessageLogging(installed)
     }
   }
 }

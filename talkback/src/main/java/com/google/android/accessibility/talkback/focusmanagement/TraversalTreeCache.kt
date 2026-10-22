@@ -21,9 +21,9 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
  * Keeps the reading order of the window that the user last swiped in, so that swiping through a
@@ -112,7 +112,7 @@ object TraversalTreeCache {
     }
     val saved = strategy
     val result = saved?.takeIf { root == this.root && it.containsNode(pivot) }
-    if (BuildConfig.DEBUG) {
+    if (LogUtils.shouldLog(Log.DEBUG)) {
       if (result != null) {
         hits++
         Log.d(TAG, "Reused order ($hits reused, $misses built)")
@@ -232,7 +232,7 @@ object TraversalTreeCache {
   @JvmStatic
   fun onNodeAction(actionId: Int) {
     if (changesNodes(actionId)) {
-      clear(if (BuildConfig.DEBUG) AccessibilityNodeInfoUtils.actionToString(actionId) else "")
+      clear(if (LogUtils.shouldLog(Log.DEBUG)) AccessibilityNodeInfoUtils.actionToString(actionId) else "")
     }
   }
 
@@ -267,7 +267,7 @@ object TraversalTreeCache {
         return
       }
       clear(
-        if (BuildConfig.DEBUG) {
+        if (LogUtils.shouldLog(Log.DEBUG)) {
           AccessibilityEvent.eventTypeToString(type) + " 0x" + Integer.toHexString(changes)
         } else {
           ""

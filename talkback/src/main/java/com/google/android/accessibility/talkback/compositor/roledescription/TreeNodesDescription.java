@@ -391,7 +391,7 @@ public class TreeNodesDescription {
       }
     }
 
-    LogUtils.v(TAG, "      treeNodesDescription:  %s", logString.toString());
+    LogUtils.v(TAG, "      treeNodesDescription:  %s", logString);
 
     // A node with no name of its own, such as a button whose label is a child view, is named by its
     // children, so their text takes the name's place in the description order. Otherwise the type

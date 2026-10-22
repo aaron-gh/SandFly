@@ -100,12 +100,12 @@ public class AccessibilityFocusHint {
           String.format("\n    nodeActionsHintHighVerbosity={%s}", nodeActionsHintHighVerbosity));
       joinList.add(nodeActionsHintHighVerbosity);
 
-      LogUtils.v(TAG, "    getHint: %s", logString.toString());
+      LogUtils.v(TAG, "    getHint: %s", logString);
       LogUtils.v(TAG, "    isLongClickable: %s", node.isLongClickable());
       return CompositorUtils.joinCharSequences(
           joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
     }
-    LogUtils.v(TAG, "    getHint: %s", logString.toString());
+    LogUtils.v(TAG, "    getHint: %s", logString);
     return "";
   }
 

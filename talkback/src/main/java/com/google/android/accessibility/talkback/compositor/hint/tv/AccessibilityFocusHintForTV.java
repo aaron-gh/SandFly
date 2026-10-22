@@ -65,7 +65,7 @@ public class AccessibilityFocusHintForTV extends AccessibilityFocusHint {
           logString.append(String.format("\n    nodeRoleHint={%s}", nodeRoleHint)).toString());
       return nodeRoleHint;
     }
-    LogUtils.v(TAG, "tv    getHint: %s", logString.toString());
+    LogUtils.v(TAG, "tv    getHint: %s", logString);
     return "";
   }
 }

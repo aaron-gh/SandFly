@@ -114,7 +114,7 @@ public class TalkBackFeedbackProvider implements EventFeedbackProvider {
 
     EventFeedback eventFeedback = eventFeedbackFunction.apply(eventOptions);
 
-    LogUtils.v(TAG, " %s:  %s", Compositor.eventTypeToString(event), eventFeedback.toString());
+    LogUtils.v(TAG, " %s:  %s", Compositor.eventTypeToString(event), eventFeedback);
 
     return eventFeedback;
   }
