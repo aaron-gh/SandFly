@@ -88,9 +88,25 @@ enum class AiProvider(
     if (this == GEMINI) GeminiModel.setChosen(prefs, model) else prefs.putOrRemove(modelPref, model)
   }
 
-  /** Whether requests can go to the service: an https address and a model. Gemini always can. */
-  fun isReady(prefs: SharedPreferences): Boolean =
-    this == GEMINI || (AiService.isValidAddress(addressOf(prefs)) && model(prefs).isNotEmpty())
+  /** What the service still needs before it can be used, in the order it is set up. */
+  enum class Missing {
+    ADDRESS,
+    API_KEY,
+    MODEL,
+  }
+
+  /** The first thing the service still needs, or null when it can be used. Gemini always can. */
+  fun missing(prefs: SharedPreferences): Missing? =
+    when {
+      this == GEMINI -> null
+      !AiService.isValidAddress(addressOf(prefs)) -> Missing.ADDRESS
+      apiKey(prefs).isEmpty() -> Missing.API_KEY
+      model(prefs).isEmpty() -> Missing.MODEL
+      else -> null
+    }
+
+  /** Whether requests can go to the service: an https address, an API key and a model. */
+  fun isReady(prefs: SharedPreferences): Boolean = missing(prefs) == null
 
   companion object {
     const val PREF_ACTIVE = "pref_ai_provider"
@@ -137,7 +153,7 @@ enum class AiProvider(
         remove(OLD_ADDRESS)
         remove(OLD_MODEL)
         remove(OLD_API_KEY)
-        val used = provider != null && model.isNotEmpty()
+        val used = provider != null && model.isNotEmpty() && key.isNotEmpty()
         putString(PREF_ACTIVE, if (used) provider!!.id else GEMINI.id)
       }
     }

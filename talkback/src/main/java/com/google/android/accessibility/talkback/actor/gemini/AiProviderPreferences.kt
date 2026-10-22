@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.actor.gemini
 
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -71,11 +72,10 @@ object AiProviderPreferences {
       else context.getString(R.string.ai_provider_chosen_not_ready, context.getString(active.label))
     for (provider in AiProvider.entries) {
       val row = fragment.findPreference<Preference>(KEY_PREFIX + provider.id) ?: continue
-      val model = provider.model(prefs).ifEmpty { if (provider == AiProvider.GEMINI) "" else null }
       row.summary =
         when {
-          provider == active -> context.getString(R.string.ai_provider_in_use)
-          provider != AiProvider.GEMINI && model == null -> context.getString(R.string.ai_provider_not_set_up)
+          provider == active && provider.isReady(prefs) -> context.getString(R.string.ai_provider_in_use)
+          !provider.isReady(prefs) -> context.getString(R.string.ai_provider_not_set_up)
           else -> null
         }
     }
@@ -91,8 +91,19 @@ object AiProviderPreferences {
         providers.map { context.getString(it.label) }.toTypedArray(),
         providers.indexOf(AiProvider.active(prefs)),
       ) { dialog, which ->
-        AiProvider.setActive(prefs, providers[which])
+        val provider = providers[which]
         dialog.dismiss()
+        // Only a service that is set up can be used; its settings say what it still needs.
+        if (!provider.isReady(prefs)) {
+          Toast.makeText(
+              context,
+              context.getString(R.string.ai_provider_set_up_first, context.getString(provider.label)),
+              Toast.LENGTH_LONG,
+            )
+            .show()
+          return@setSingleChoiceItems
+        }
+        AiProvider.setActive(prefs, provider)
         refresh(fragment)
       }
       .setNegativeButton(android.R.string.cancel, null)
