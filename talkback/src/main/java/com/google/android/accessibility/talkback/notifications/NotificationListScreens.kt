@@ -39,6 +39,7 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.VoiceProfiles
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Date
 import java.util.concurrent.Executors
@@ -310,12 +311,17 @@ class NotificationAppsFragment : NotificationCodeFragment(R.string.notification_
       loadApps(context)
       return
     }
+    val voiceNames = voiceProfileNames(context)
     for ((packageName, label) in list) {
       val app = settings.app(packageName)
       val summary =
         listOfNotNull(
             modeText(context, app.mode),
             app.spokenName.takeIf { it.isNotEmpty() }?.let { getString(R.string.notification_app_said_as, it) },
+            app.voiceProfile?.let { id ->
+              if (id.isEmpty()) getString(R.string.notification_action_voice_sandfly)
+              else getString(R.string.notification_action_voice_value, voiceNames[id] ?: getString(R.string.notification_voice_removed))
+            },
           )
           .joinToString(", ")
       apps.link(label, summary, NotificationAppFragment::class.java) { putString(ARG_PACKAGE, packageName) }
@@ -397,6 +403,21 @@ class NotificationAppFragment : NotificationCodeFragment(R.string.notification_a
         setApp(packageName) { it.copy(format = if (text == settings.format) "" else text) }
         rebuild()
         null
+      }
+    }
+    // Null is the voice of every notification, empty SandFly's voice.
+    val voiceNames = voiceProfileNames(context)
+    val voiceIds = listOf<String?>(null, "") + voiceNames.keys
+    fun voiceText(id: String?) =
+      when (id) {
+        null -> getString(R.string.notification_app_mode_default)
+        "" -> getString(R.string.notification_voice_sandfly)
+        else -> voiceNames[id] ?: getString(R.string.notification_voice_removed)
+      }
+    screen.action(getString(R.string.notification_voice_title), voiceText(app.voiceProfile)) {
+      choose(getString(R.string.notification_voice_title), voiceIds.map { voiceText(it) }, voiceIds.indexOf(app.voiceProfile)) { index ->
+        setApp(packageName) { it.copy(voiceProfile = voiceIds[index]) }
+        rebuild()
       }
     }
     if (!app.isEmpty) {
@@ -570,3 +591,12 @@ class NotificationHistoryFragment : NotificationCodeFragment(R.string.notificati
     }
   }
 }
+
+/** The names of the voice profiles, by ID, as the voice profile settings show them. */
+internal fun voiceProfileNames(context: Context): Map<String, String> =
+  VoiceProfiles.names(
+    SharedPreferencesUtils.getSharedPreferences(context),
+    context.getString(R.string.voice_profile_default),
+  ) {
+    context.getString(R.string.voice_profile_new_name, it)
+  }

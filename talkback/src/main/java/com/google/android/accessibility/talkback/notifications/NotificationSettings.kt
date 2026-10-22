@@ -116,9 +116,16 @@ data class AppSettings(
   val cooldownSeconds: Int? = null,
   /** Speech format for the app, or empty for the general one. */
   val format: String = "",
+  /**
+   * The ID of the voice profile the app's notifications are read with, empty for SandFly's voice,
+   * or null for the general voice.
+   */
+  val voiceProfile: String? = null,
 ) {
   val isEmpty: Boolean
-    get() = mode == AppMode.DEFAULT && spokenName.isEmpty() && cooldownSeconds == null && format.isEmpty()
+    get() =
+      mode == AppMode.DEFAULT && spokenName.isEmpty() && cooldownSeconds == null && format.isEmpty() &&
+        voiceProfile == null
 
   fun toJson(): JSONObject =
     JSONObject().apply {
@@ -126,6 +133,7 @@ data class AppSettings(
       if (spokenName.isNotEmpty()) put("name", spokenName)
       cooldownSeconds?.let { put("cooldown", it) }
       if (format.isNotEmpty()) put("format", format)
+      voiceProfile?.let { put("voice", it) }
     }
 
   companion object {
@@ -135,6 +143,7 @@ data class AppSettings(
         spokenName = json.optString("name"),
         cooldownSeconds = if (json.has("cooldown")) json.optInt("cooldown") else null,
         format = json.optString("format"),
+        voiceProfile = if (json.has("voice")) json.optString("voice") else null,
       )
   }
 }

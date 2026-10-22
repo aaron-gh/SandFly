@@ -78,6 +78,8 @@ object NotificationReader {
   /** How often, and for how long at most, another voice waits for SandFly to stop speaking. */
   private const val QUIET_CHECK_MS = 200L
   private const val QUIET_WAIT_MS = 10_000L
+  /** The most voice profiles whose engines are kept running for notifications. */
+  private const val MAX_VOICES = 8
   /** How long after both volume keys go down their ups are taken. */
   private const val VOLUME_UP_WAIT_MS = 2_000L
   /** Marks the callbacks of readouts that wait for SandFly to be quiet, to drop them on stop. */
@@ -107,7 +109,8 @@ object NotificationReader {
   private var sensors: StopSensors? = null
   private var languageIdentifier: LanguageIdentifier? = null
   private var schedules: SpokenSchedules? = null
-  private var voice: NotificationVoice? = null
+  /** The voices of the voice profiles that notifications are read with, by profile ID. */
+  private val voices = HashMap<String, NotificationVoice>()
   private var isSandFlySpeaking: () -> Boolean = { false }
   private var isSilenced: (Boolean, Boolean) -> Boolean = { _, _ -> false }
   private var cachedSettings: NotificationSettings? = null
@@ -120,6 +123,8 @@ object NotificationReader {
   private val queued = mutableListOf<Readout>()
   /** Notifications set aside for a delay. */
   private val waiting = mutableListOf<Readout>()
+  /** Notifications for another voice than the one reading, read once it has finished. */
+  private val heldForVoice = mutableListOf<Readout>()
   /** Notifications that arrived while the screen was touched, read once the touch ends. */
   private val heldForTouch = mutableListOf<Readout>()
   private val releaseHeld = Runnable { releaseTouchHeld() }
@@ -140,6 +145,8 @@ object NotificationReader {
   ) {
     var started = false
     var cancelled = false
+    /** The ID of the voice profile it is read with, or empty for SandFly's voice. */
+    var voiceKey = ""
     val speak = Runnable { NotificationReader.speak(this) }
 
     fun copy() = Readout(info, decision, text, settings)
@@ -174,8 +181,14 @@ object NotificationReader {
         cachedSettings = null
       }
       if (key != null && key.startsWith("pref_notification")) decider.forget()
-      if (key == NotificationSettings.Companion.Keys.VOICE_PROFILE || VoiceProfiles.isProfileKey(key)) {
-        updateVoice(prefs)
+      if (
+        key == NotificationSettings.Companion.Keys.VOICE_PROFILE ||
+          key == NotificationSettings.Companion.Keys.APPS ||
+          key == NotificationSettings.Companion.Keys.RULES ||
+          key == VoiceProfiles.PREF_IDS ||
+          VoiceProfiles.isProfileKey(key)
+      ) {
+        updateVoices(prefs)
       }
     }
 
@@ -212,7 +225,7 @@ object NotificationReader {
     )
     SharedPreferencesUtils.getSharedPreferences(app).registerOnSharedPreferenceChangeListener(settingsListener)
     schedules = SpokenSchedules(app) { text, interrupt -> announce(text, interrupt) }.also { it.start() }
-    updateVoice(SharedPreferencesUtils.getSharedPreferences(app))
+    updateVoices(SharedPreferencesUtils.getSharedPreferences(app))
   }
 
   /** Called when SandFly stops. */
@@ -223,8 +236,8 @@ object NotificationReader {
     cancelAll()
     schedules?.stop()
     schedules = null
-    voice?.shutdown()
-    voice = null
+    voices.values.forEach { it.shutdown() }
+    voices.clear()
     isSandFlySpeaking = { false }
     isSilenced = { _, _ -> false }
     cachedSettings = null
@@ -551,7 +564,11 @@ object NotificationReader {
     val entry = NotificationHistory.lastRead() ?: return false
     val context = context ?: return false
     val settings = settings(context)
-    speak(Readout(entry.info, Decision(Outcome.READ, entry.spoken), entry.spoken, settings), repeat = true)
+    val voiceProfile = settings.app(entry.info.packageName).voiceProfile
+    speak(
+      Readout(entry.info, Decision(Outcome.READ, entry.spoken, voiceProfile = voiceProfile), entry.spoken, settings),
+      repeat = true,
+    )
     return true
   }
 
@@ -565,7 +582,7 @@ object NotificationReader {
     if (current != null) NotificationHistory.markStopped(current.info)
     SpokenSchedules.cancelSummary()
     stopSpeech?.run()
-    voice?.stop()
+    voices.values.forEach { it.stop() }
   }
 
   /**
@@ -590,6 +607,7 @@ object NotificationReader {
         readout.info.postedAtMillis == postedAtMillis &&
         (title.isEmpty() || readout.info.title == title)
     waiting.filter(::matches).forEach { cancel(it) }
+    heldForVoice.removeAll(::matches)
     queued.filter(::matches).forEach { it.cancelled = true }
     repeating.removeAll(::matches)
     if (reading?.let(::matches) == true) stop()
@@ -652,7 +670,11 @@ object NotificationReader {
     if (readout.cancelled) return
     val feedback = feedback ?: return
     val settings = readout.settings
-    val busy = reading != null
+    val voice = voiceFor(readout.decision.voiceProfile ?: settings.voiceProfile)
+    readout.voiceKey = voice?.currentProfile?.id().orEmpty()
+    // Another voice reading, or about to, would talk over this one.
+    val others = (listOfNotNull(reading) + queued).filter { !it.cancelled && it.voiceKey != readout.voiceKey }
+    val busy = reading != null || others.isNotEmpty()
     var flags = 0
     var interrupt = false
     if (busy && !repeat) {
@@ -668,19 +690,27 @@ object NotificationReader {
             FeedbackItem.FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP
       }
     }
+    if (others.isNotEmpty()) {
+      if (!interrupt) {
+        while (heldForVoice.size >= MAX_WAITING) heldForVoice.removeAt(0)
+        heldForVoice += readout
+        return
+      }
+      for (key in others.map { it.voiceKey }.toSet()) {
+        if (key.isEmpty()) stopSpeech?.run() else voices[key]?.stop()
+      }
+    }
     // SandFly's speech is silenced while audio plays, unless it is told otherwise.
     val overMedia = settings.media != MediaBehavior.SKIP
     if (overMedia) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
     val duringCalls = settings.duringCalls
     if (duringCalls) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE
     queued += readout
-    val voice = voiceFor(settings)
     // Silenced speech, such as during a call, goes to SandFly's speech, which drops it.
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
-        if (readout.cancelled) return@whenSandFlyIsQuiet
-        if (isSilenced(overMedia, duringCalls)) {
+        if (readout.cancelled || isSilenced(overMedia, duringCalls)) {
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
@@ -734,6 +764,7 @@ object NotificationReader {
       handler.removeCallbacks(stopAfterLimit)
       abandonFocus()
     }
+    releaseHeldForVoice()
     val context = context ?: return
     val minutes = readout.settings.repeatMinutes
     if (status == SpeechController.STATUS_SPOKEN && readout.started && !readout.cancelled && minutes > 0 &&
@@ -754,7 +785,7 @@ object NotificationReader {
     val settings = settings(context)
     val overMedia = settings.media != MediaBehavior.SKIP
     val duringCalls = settings.duringCalls
-    val voice = voiceFor(settings)
+    val voice = voiceFor(settings.voiceProfile)
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
         if (isSilenced(overMedia, duringCalls)) return@whenSandFlyIsQuiet
@@ -774,27 +805,48 @@ object NotificationReader {
   }
 
   /**
-   * The voice notifications are read with, or null for SandFly's: when none is chosen, its profile
-   * is gone, or its engine didn't start.
+   * The voice of the voice profile [id], or null for SandFly's: when [id] is empty, the profile is
+   * gone, or its engine didn't start.
    */
-  private fun voiceFor(settings: NotificationSettings): NotificationVoice? {
-    val voice = voice ?: return null
-    if (settings.voiceProfile.isEmpty() || voice.failed || voice.currentProfile == null) return null
+  private fun voiceFor(id: String): NotificationVoice? {
+    if (id.isEmpty()) return null
+    val voice = voices[id] ?: return null
+    if (voice.failed || voice.currentProfile == null) return null
     return voice
   }
 
-  /** Starts, stops or changes the notification voice as the settings say. */
-  private fun updateVoice(prefs: SharedPreferences) {
+  /**
+   * Starts, stops or changes the voices of the voice profiles that the settings read notifications
+   * with: the one for every notification, and those of apps and rules.
+   */
+  private fun updateVoices(prefs: SharedPreferences) {
     val context = context ?: return
-    val id = prefs.getString(NotificationSettings.Companion.Keys.VOICE_PROFILE, null).orEmpty()
-    if (id.isEmpty() || id !in VoiceProfiles.ids(prefs)) {
-      voice?.shutdown()
-      voice = null
-      return
+    val settings = NotificationSettings.read(prefs)
+    val ids = VoiceProfiles.ids(prefs)
+    val wanted =
+      (listOf(settings.voiceProfile) +
+          settings.apps.values.mapNotNull { it.voiceProfile } +
+          settings.rules.flatMap { rule ->
+            rule.actions.filter { it.type == RuleAction.Type.VOICE }.map { it.value }
+          })
+        .filter { it.isNotEmpty() && it in ids }
+        .distinct()
+        .take(MAX_VOICES)
+    for (id in voices.keys - wanted.toSet()) voices.remove(id)?.shutdown()
+    for (id in wanted) {
+      val profile = VoiceProfiles.read(prefs, id)
+      val voice = voices.getOrPut(id) { NotificationVoice(context) }
+      if (voice.currentProfile != profile || voice.failed) voice.use(profile)
     }
-    val profile = VoiceProfiles.read(prefs, id)
-    val current = voice ?: NotificationVoice(context).also { voice = it }
-    if (current.currentProfile != profile || current.failed) current.use(profile)
+  }
+
+  /** Reads the notifications held for another voice, once nothing is read. */
+  private fun releaseHeldForVoice() {
+    if (reading != null || queued.isNotEmpty() || heldForVoice.isEmpty()) return
+    val held = heldForVoice.toList()
+    heldForVoice.clear()
+    // The first goes to its voice; those for another voice are held again behind it.
+    held.forEach { speak(it) }
   }
 
   /**
@@ -828,6 +880,7 @@ object NotificationReader {
     waiting.toList().forEach { cancel(it) }
     queued.forEach { it.cancelled = true }
     queued.clear()
+    heldForVoice.clear()
     handler.removeCallbacksAndMessages(QUIET_TOKEN)
     handler.removeCallbacksAndMessages(DND_TOKEN)
     heldForTouch.clear()

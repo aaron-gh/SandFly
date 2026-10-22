@@ -85,6 +85,35 @@ class NotificationDeciderTest {
   }
 
   @Test
+  fun appsAndRulesChooseTheVoice() {
+    assertEquals(null, decide().voiceProfile)
+
+    val dectalk = NotificationSettings(apps = mapOf("com.example.chat" to AppSettings(voiceProfile = "2")))
+    assertEquals("2", decide(dectalk).voiceProfile)
+
+    val sandFly = NotificationSettings(apps = mapOf("com.example.chat" to AppSettings(voiceProfile = "")))
+    assertEquals("", decide(sandFly).voiceProfile)
+
+    // A rule's voice wins over the app's.
+    val rule =
+      NotificationRule(
+        conditions = listOf(RuleCondition(RuleCondition.Type.CONTAINS, value = "see you")),
+        actions = listOf(RuleAction(RuleAction.Type.VOICE, value = "3")),
+      )
+    assertEquals("3", decide(dectalk.copy(rules = listOf(rule))).voiceProfile)
+  }
+
+  @Test
+  fun anAppsVoiceIsSaved() {
+    val apps = mapOf("a" to AppSettings(voiceProfile = "2"), "b" to AppSettings(voiceProfile = ""), "c" to AppSettings(AppMode.READ))
+    val read = NotificationSettings.apps(NotificationSettings.appsToJson(apps))
+    assertEquals("2", read["a"]?.voiceProfile)
+    assertEquals("", read["b"]?.voiceProfile)
+    assertEquals(null, read["c"]?.voiceProfile)
+    assertFalse(AppSettings(voiceProfile = "").isEmpty)
+  }
+
+  @Test
   fun words() {
     assertEquals(
       Outcome.REQUIRED_WORDS_MISSING,

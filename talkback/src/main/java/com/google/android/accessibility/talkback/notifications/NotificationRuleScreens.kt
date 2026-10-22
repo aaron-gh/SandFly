@@ -172,6 +172,13 @@ class NotificationRulesFragment : NotificationCodeFragment(R.string.notification
         RuleAction.Type.KEEP_NUMBERS -> context.getString(R.string.notification_action_keep_numbers)
         RuleAction.Type.PRIORITY -> context.getString(R.string.notification_action_priority)
         RuleAction.Type.ALWAYS_READ -> context.getString(R.string.notification_action_always_read)
+        RuleAction.Type.VOICE ->
+          if (a.value.isEmpty()) context.getString(R.string.notification_action_voice_sandfly)
+          else
+            context.getString(
+              R.string.notification_action_voice_value,
+              voiceProfileNames(context)[a.value] ?: context.getString(R.string.notification_voice_removed),
+            )
       }
 
     private fun daysText(days: Set<Int>): String {
@@ -408,6 +415,14 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
             update { rule -> rule.copy(actions = rule.actions + RuleAction(type, number = counts[it])) }
           }
         }
+        RuleAction.Type.VOICE -> {
+          val names = voiceProfileNames(context)
+          val ids = listOf("") + names.keys
+          val labels = listOf(getString(R.string.notification_voice_sandfly)) + names.values
+          choose(getString(R.string.notification_voice_title), labels) {
+            update { rule -> rule.copy(actions = rule.actions + RuleAction(type, value = ids[it])) }
+          }
+        }
         else -> update { it.copy(actions = it.actions + RuleAction(type)) }
       }
     }
@@ -418,6 +433,7 @@ class NotificationRuleFragment : NotificationCodeFragment(R.string.notification_
     when (type) {
       RuleAction.Type.FORMAT -> getString(R.string.notification_action_format)
       RuleAction.Type.MAX_WORDS -> getString(R.string.notification_action_max_words)
+      RuleAction.Type.VOICE -> getString(R.string.notification_action_voice)
       else -> null
     }
 

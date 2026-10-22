@@ -169,6 +169,8 @@ data class RuleAction(val type: Type, val value: String = "", val number: Int = 
     PRIORITY,
     /** It is read even while notifications would be quiet, as in quiet hours. */
     ALWAYS_READ,
+    /** It is read with the voice profile whose ID is [value], or SandFly's voice when empty. */
+    VOICE,
   }
 
   fun toJson(): JSONObject =
@@ -256,6 +258,8 @@ data class RuleEffects(
   val keepNumbers: Boolean = false,
   val priority: Boolean = false,
   val alwaysRead: Boolean = false,
+  /** The voice profile to read with, as in [AppSettings.voiceProfile], or null for no change. */
+  val voiceProfile: String? = null,
   /** The names of the rules that applied, for the history. */
   val ruleNames: List<String> = emptyList(),
 ) {
@@ -278,6 +282,7 @@ data class RuleEffects(
               RuleAction.Type.KEEP_NUMBERS -> effects.copy(keepNumbers = true)
               RuleAction.Type.PRIORITY -> effects.copy(priority = true)
               RuleAction.Type.ALWAYS_READ -> effects.copy(alwaysRead = true)
+              RuleAction.Type.VOICE -> effects.copy(voiceProfile = action.value)
             }
         }
         effects = effects.copy(ruleNames = effects.ruleNames + rule.name)
