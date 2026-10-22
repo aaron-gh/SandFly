@@ -162,6 +162,12 @@
           android:targetClass="com.google.android.accessibility.brailleime.settings.BrailleImePreferencesActivity" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_handwriting_keyboard_key"
+        android:summary="@string/summary_pref_handwriting_keyboard"
+        android:title="@string/title_pref_handwriting_keyboard">
+      <intent android:action="android.settings.INPUT_METHOD_SETTINGS" />
+    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_brailledisplay_key"
         android:title="@string/title_pref_brailledisplay">
       <intent

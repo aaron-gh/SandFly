@@ -51,6 +51,7 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
     strokes: List<List<InkPoint>>,
     width: Float,
     height: Float,
+    preContext: String,
     onResult: (Result) -> Unit,
   ) = withModel { model ->
     if (model == null) return@withModel onResult(Result.UnsupportedLanguage)
@@ -74,7 +75,7 @@ class MlKitHandwritingRecognizer(private val onDownloadDone: (Boolean) -> Unit) 
           ink.addStroke(builder.build())
         }
         val context =
-          RecognitionContext.builder().setPreContext("").setWritingArea(WritingArea(width, height)).build()
+          RecognitionContext.builder().setPreContext(preContext).setWritingArea(WritingArea(width, height)).build()
         client
           .recognize(ink.build(), context)
           .addOnSuccessListener { result -> onResult(Result.Candidates(result.candidates.map { it.text })) }

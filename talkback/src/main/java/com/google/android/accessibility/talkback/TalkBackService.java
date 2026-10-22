@@ -188,6 +188,7 @@ import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
+import com.google.android.accessibility.talkback.handwriting.HandwritingKeyboardHost;
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionStorage;
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionUtils.CaptionType;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
@@ -1030,6 +1031,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     Updater.stopAutomaticChecks();
     ReportInbox.stopFollowing();
     ShizukuGrants.onServiceDestroyed();
+    HandwritingKeyboardHost.setFeedback(null);
     instance = null;
     // Shutdown and unregister all components.
     shutdownInfrastructure();
@@ -2699,6 +2701,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     final TextEventHistory textEventHistory = new TextEventHistory();
     final TextEventFilter textEventFilter =
         new TextEventFilter(this, textCursorTracker, textEventHistory);
+    // The handwriting keyboard says what it typed itself.
+    textEventFilter.setEchoSuppressor(HandwritingKeyboardHost::typedAround);
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
@@ -2852,6 +2856,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                     ? null
                     : getBrailleImeForTalkBack().getBrailleImeForBrailleDisplay());
 
+    HandwritingKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
     TalkBackForBrailleIme talkBackForBrailleIme =
         new TalkBackForBrailleImeImpl(
             this,

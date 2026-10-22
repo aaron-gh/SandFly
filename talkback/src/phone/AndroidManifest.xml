@@ -2,6 +2,19 @@
 <!-- Parts of SandFly that only phones and tablets have. -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application>
+        <!-- Types what is written on the screen with one finger. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.handwriting.HandwritingIme"
+            android:label="@string/handwriting_keyboard_name"
+            android:exported="true"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/handwriting_ime" />
+        </service>
         <!-- Installs scripts that are opened with or shared to SandFly, through Scripts. -->
         <activity
             android:name="com.google.android.accessibility.talkback.scripting.ScriptImportActivity"
