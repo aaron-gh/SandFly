@@ -185,16 +185,24 @@ class AiProviderFragment : TalkbackBaseFragment() {
       .show()
   }
 
-  /** Lists the service's models, or asks for a model name when they can't be listed. */
+  /**
+   * Lists the service's models once they are fetched, with a way to type a model name first.
+   * Nothing opens until the list is ready; when it can't be fetched, the reason is shown.
+   */
   private fun chooseModel() {
     val context = requireContext().applicationContext
     val address = provider.addressOf(prefs)
     if (!AiService.isValidAddress(address)) {
-      askModel()
+      Toast.makeText(context, R.string.ai_provider_needs_address, Toast.LENGTH_LONG).show()
+      return
+    }
+    val key = provider.apiKey(prefs)
+    if (key.isEmpty() && provider != AiProvider.OTHER) {
+      Toast.makeText(context, getString(R.string.ai_provider_needs_key, getString(provider.label)), Toast.LENGTH_LONG)
+        .show()
       return
     }
     Toast.makeText(context, R.string.gemini_model_loading, Toast.LENGTH_SHORT).show()
-    val key = provider.apiKey(prefs)
     executor.execute {
       val result = runCatching { AiModels.list(provider, address, key) }
       main.post {
@@ -204,7 +212,6 @@ class AiProviderFragment : TalkbackBaseFragment() {
           { error ->
             val reason = (error as? IOException)?.message ?: error.javaClass.simpleName
             Toast.makeText(context, getString(R.string.gemini_model_list_failed, reason), Toast.LENGTH_LONG).show()
-            askModel()
           },
         )
       }
@@ -212,10 +219,6 @@ class AiProviderFragment : TalkbackBaseFragment() {
   }
 
   private fun showModels(models: List<GeminiModel.Choice>) {
-    if (models.isEmpty()) {
-      askModel()
-      return
-    }
     val chosen = provider.model(prefs)
     val labels =
       listOf(getString(R.string.ai_provider_enter_model)) +
