@@ -533,6 +533,16 @@
     <string name="pref_shortcut_edge_bottom_long_up_key" translatable="false">pref_shortcut_edge_bottom_long_up</string>
     <string name="pref_shortcut_edge_top_left_down_key" translatable="false">pref_shortcut_edge_top_left_down</string>
     <string name="pref_shortcut_edge_top_right_down_key" translatable="false">pref_shortcut_edge_top_right_down</string>
+    <string name="pref_shortcut_edge_top_left_long_down_key" translatable="false">pref_shortcut_edge_top_left_long_down</string>
+    <string name="pref_shortcut_edge_top_right_long_down_key" translatable="false">pref_shortcut_edge_top_right_long_down</string>
+    <string name="pref_shortcut_edge_left_top_right_key" translatable="false">pref_shortcut_edge_left_top_right</string>
+    <string name="pref_shortcut_edge_left_top_long_right_key" translatable="false">pref_shortcut_edge_left_top_long_right</string>
+    <string name="pref_shortcut_edge_left_bottom_right_key" translatable="false">pref_shortcut_edge_left_bottom_right</string>
+    <string name="pref_shortcut_edge_left_bottom_long_right_key" translatable="false">pref_shortcut_edge_left_bottom_long_right</string>
+    <string name="pref_shortcut_edge_right_top_left_key" translatable="false">pref_shortcut_edge_right_top_left</string>
+    <string name="pref_shortcut_edge_right_top_long_left_key" translatable="false">pref_shortcut_edge_right_top_long_left</string>
+    <string name="pref_shortcut_edge_right_bottom_left_key" translatable="false">pref_shortcut_edge_right_bottom_left</string>
+    <string name="pref_shortcut_edge_right_bottom_long_left_key" translatable="false">pref_shortcut_edge_right_bottom_long_left</string>
     <string name="pref_category_edge_shortcuts_key" translatable="false">pref_category_edge_shortcuts</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_key" translatable="false">pref_shortcut_two_finger_rotate_counterclockwise</string>
 
@@ -773,6 +783,16 @@
       <item>@string/pref_shortcut_edge_bottom_long_up_key</item>
       <item>@string/pref_shortcut_edge_top_left_down_key</item>
       <item>@string/pref_shortcut_edge_top_right_down_key</item>
+      <item>@string/pref_shortcut_edge_top_left_long_down_key</item>
+      <item>@string/pref_shortcut_edge_top_right_long_down_key</item>
+      <item>@string/pref_shortcut_edge_left_top_right_key</item>
+      <item>@string/pref_shortcut_edge_left_top_long_right_key</item>
+      <item>@string/pref_shortcut_edge_left_bottom_right_key</item>
+      <item>@string/pref_shortcut_edge_left_bottom_long_right_key</item>
+      <item>@string/pref_shortcut_edge_right_top_left_key</item>
+      <item>@string/pref_shortcut_edge_right_top_long_left_key</item>
+      <item>@string/pref_shortcut_edge_right_bottom_left_key</item>
+      <item>@string/pref_shortcut_edge_right_bottom_long_left_key</item>
 
       <!-- Fingerprint gestures-->
       <item>@string/pref_shortcut_fingerprint_up_key</item>
@@ -1879,6 +1899,16 @@
     <string name="pref_shortcut_edge_bottom_long_up_default">@string/shortcut_value_overview</string>
     <string name="pref_shortcut_edge_top_left_down_default">@string/shortcut_value_notifications</string>
     <string name="pref_shortcut_edge_top_right_down_default">@string/shortcut_value_quick_settings</string>
+    <string name="pref_shortcut_edge_top_left_long_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_top_right_long_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_left_top_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_left_top_long_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_left_bottom_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_left_bottom_long_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_right_top_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_right_top_long_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_right_bottom_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_edge_right_bottom_long_left_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_default">@string/shortcut_value_select_previous_setting</string>
 
     <!-- Fingerprint gesture shortcut default values -->

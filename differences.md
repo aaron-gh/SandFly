@@ -270,7 +270,7 @@ To keep hearing the kind of control as well, turn on **Still say the kind of con
 TalkBack plays a sound and vibration when a gesture starts and another when it ends. SandFly plays neither. In their place, a sound theme can give a sound and a vibration to each of these:
 
 - **Next reading control** and **Previous reading control**: selecting another reading control, with a gesture, the rotor, a keyboard shortcut or the braille keyboard.
-- **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and a swipe up from the bottom edge reaching its second click. Top edge gestures have one click, so they use only the bottom and middle sounds. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
+- **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and the gesture reaching its second click. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
 - **Insertion point moved**: moving by character, word, line or paragraph moves the cursor in a text field you are editing.
 - **Column wrap** and **Column wrap back**: swiping forward from the end of a row of a grid or table to the start of the next row, and back from the start of a row to the end of the row before, such as between rows of icons on a home screen. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
 
@@ -336,10 +336,13 @@ The rotor requires Android 13 or later and **Handle gestures in SandFly** turned
 
 ### Edge gestures and scrub
 
-As in VoiceOver on iOS, you can slide one finger in from the top or bottom edge of the screen. Start at the very edge, on the gesture navigation bar or the status bar, and slide in:
+As in VoiceOver on iOS, you can slide one finger in from an edge of the screen. Start at the very edge, such as on the gesture navigation bar or the status bar, and slide in:
 
 - Up from the bottom edge: you feel a click like a home button after about a centimeter. Lift there to go home. Keep sliding for about four more centimeters to feel a second click, and lift there for Overview (recent apps).
-- Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click.
+- Down from the left half of the top edge for notifications, or from the right half for quick settings, after the same click. A long swipe down from either half, to a second click, does nothing by default.
+- Right from the left edge, or left from the right edge. The top half and bottom half of each side edge are separate gestures, each with a first and second click. They do nothing by default. While one of them has an action, a swipe that starts at that half of the edge is that gesture, not an ordinary swipe.
+
+A long swipe that does nothing has no second click, so sliding further is still the first gesture. In a corner, the top or bottom edge comes first, unless its gestures do nothing.
 
 Sliding back from the second click to the first plays one short tap; sliding back to the edge plays two, and lifting there cancels the gesture. To turn off the clicks, turn off **Edge gesture middle** and **Edge gesture top** under vibrations in **Individual sounds and vibrations**; to turn off the taps, turn off **Edge gesture slide back**. A sound theme can give each stage a sound; see [Navigation sounds](#navigation-sounds). A slide that starts away from the edge, or that takes longer than about half a second to reach the first click, is an ordinary swipe or touch exploration. A finger resting at the edge for 0.2 seconds is touch exploration.
 
