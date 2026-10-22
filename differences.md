@@ -417,7 +417,7 @@ Sliding back from the second click to the first plays one short tap; sliding bac
 
 To scrub, move two fingers quickly one way across the screen and back, each stroke about a centimeter long. By default, this goes back. Two fingers moved one way only still scroll.
 
-You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**.
+You can assign other actions to all of these in gesture settings, under **Edges** and **2 fingers**. Under **Edges**, **Distance to first click** sets how far you slide in from the edge to the first click, from 0.5 to 2 cm (1 cm by default), and **Distance from first to second click** how far you slide on to the second, from 1 to 5 cm (4 cm by default).
 
 ### Pinch and spread
 

@@ -152,9 +152,6 @@ public class TouchInteractionMonitor
   // How close to the top or bottom edge a one-finger edge gesture must start, about the height of
   // the gesture navigation bar.
   private static final float EDGE_GESTURE_ZONE_CM = 0.5f;
-  // How far an edge gesture slides in to reach its first and second stage.
-  private static final float EDGE_GESTURE_FIRST_STAGE_CM = 1f;
-  private static final float EDGE_GESTURE_SECOND_STAGE_CM = 5f;
   // The length of each stroke of a two-finger scrub.
   private static final float SCRUB_STROKE_CM = 1f;
   // How far the fingers of a pinch or spread move toward or away from their middle, on average.
@@ -222,6 +219,7 @@ public class TouchInteractionMonitor
   // Recognizes one finger sliding in from the top or bottom edge. A recognized slide owns the
   // whole touch.
   private final EdgeSwipeTracker edgeSwipeTracker;
+  private final float pixelsPerCm;
   // The screen size when the current touch started, for the edge gestures.
   private final Point screenSize = new Point();
   // Whether touch exploration was requested while an edge swipe could still start, and waits for
@@ -436,16 +434,15 @@ public class TouchInteractionMonitor
     rotationTracker =
         new TwoFingerRotationTracker(passthroughTotalSlop, touchSlop, this::onRotationStep);
     DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-    float pixelsPerCm = displayMetrics.ydpi / GestureUtils.CM_PER_INCH;
+    pixelsPerCm = displayMetrics.ydpi / GestureUtils.CM_PER_INCH;
     edgeSwipeTracker =
         new EdgeSwipeTracker(
             pixelsPerCm * EDGE_GESTURE_ZONE_CM,
-            new float[] {
-              pixelsPerCm * EDGE_GESTURE_FIRST_STAGE_CM, pixelsPerCm * EDGE_GESTURE_SECOND_STAGE_CM
-            },
+            new float[2],
             touchSlop,
             this::edgeStages,
             edgeSwipeListener);
+    readEdgeClickDistances(prefs);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
@@ -542,9 +539,30 @@ public class TouchInteractionMonitor
             R.string.pref_multi_tap_timeout_default));
   }
 
+  /** Reads how far edge gestures slide in to their first click, and on to their second. */
+  private void readEdgeClickDistances(SharedPreferences prefs) {
+    int first =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_edge_first_click_mm_key,
+            R.string.pref_edge_first_click_mm_default);
+    int second =
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_edge_second_click_mm_key,
+            R.string.pref_edge_second_click_mm_default);
+    edgeSwipeTracker.setStageDistances(
+        pixelsPerCm * Math.max(first, 1) / 10f, pixelsPerCm * Math.max(second, 1) / 10f);
+  }
+
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
-        if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
+        if (context.getString(R.string.pref_edge_first_click_mm_key).equals(key)
+            || context.getString(R.string.pref_edge_second_click_mm_key).equals(key)) {
+          readEdgeClickDistances(prefs);
+        } else if (context.getString(R.string.pref_typing_focus_time_out_key).equals(key)) {
           typingFocusUserIntentTimeout =
               SharedPreferencesUtils.getIntFromStringPref(
                       prefs,
