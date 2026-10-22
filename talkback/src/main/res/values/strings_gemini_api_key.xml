@@ -94,6 +94,10 @@
     <string name="ai_provider_choose_model">Not chosen</string>
     <!-- Message of the dialog where the user enters an AI service's API key. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_key_message">Paste your <xliff:g id="service" example="Claude">%1$s</xliff:g> API key. To remove it, clear the field and save. Images and screens that you describe are sent to <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <!-- Shown when the model setting is opened before the service's API key is set, such as "Set a Claude API key first". [CHAR LIMIT=NONE] -->
+    <string name="ai_provider_needs_key">Set a <xliff:g id="service" example="Claude">%1$s</xliff:g> API key first</string>
+    <!-- Shown when the other service's model setting is opened before its address is set. [CHAR LIMIT=NONE] -->
+    <string name="ai_provider_needs_address">Set the address first</string>
     <!-- First item of a service's list of models, to type a model name instead. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_enter_model">Enter a model name</string>
 </resources>
