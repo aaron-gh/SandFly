@@ -69,17 +69,17 @@ class NotificationRulesFragment : NotificationCodeFragment(R.string.notification
     }
   }
 
+  /** Opens the rule's screen as its entry in the list does. */
   private fun openRule(id: String) {
-    val args = Bundle().apply { putString(NotificationRuleFragment.ARG_RULE, id) }
     val pref = androidx.preference.Preference(requireContext())
     pref.fragment = NotificationRuleFragment::class.java.name
-    pref.extras.putAll(args)
-    (activity as? androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback)
-      ?.onPreferenceStartFragment(this, pref)
+    pref.extras.putString(NotificationRuleFragment.ARG_RULE, id)
+    onPreferenceTreeClick(pref)
   }
 
   private fun save(rules: List<NotificationRule>) {
     prefs.edit().putString(NotificationSettings.Companion.Keys.RULES, NotificationRule.listToJson(rules)).apply()
+    rebuild()
   }
 
   private fun templates(context: Context): List<NotificationRule> =
