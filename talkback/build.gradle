@@ -19,6 +19,8 @@ dependencies {
     // Scripts run in Lua 5.4 through LuaJava.
     phoneImplementation libs.luajava
     phoneImplementation libs.luajava.lua54
+    // Handwriting recognition on the device, with a model per language downloaded when first used.
+    phoneImplementation libs.mlkit.digital.ink
     // The Lua 5.4 library for each Android ABI, and for the computer that runs the unit tests.
     phoneRuntimeOnly "party.iroiro.luajava:android:${libs.versions.luajava.get()}:lua54@aar"
     testPhoneRuntimeOnly "party.iroiro.luajava:lua54-platform:${libs.versions.luajava.get()}:natives-desktop"
