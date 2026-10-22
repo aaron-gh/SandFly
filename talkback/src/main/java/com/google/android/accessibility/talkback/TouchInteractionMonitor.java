@@ -152,6 +152,8 @@ public class TouchInteractionMonitor
 
   // Queue size to hold the most recent change requests of controller state.
   private static final int MAX_CHANGE_REQUEST_SIZE = 5;
+  /** Time after a swipe's start limit for its last motion event to arrive. */
+  private static final int SWIPE_START_MARGIN_MS = 10;
 
   private static final ImmutableSet<Integer> TOUCH_EXPLORE_GATE =
       ImmutableSet.of(
@@ -235,6 +237,8 @@ public class TouchInteractionMonitor
   // after the finger has been lifted.
   // This happens because of the time overhead of IPCs.
   private final int determineUserIntentTimeout = GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS;
+  /** How long after touch down a one-finger swipe can start: the swipe matchers' start limit. */
+  private final int swipeStartWindowMs;
   private int typingFocusUserIntentTimeout;
   private int touchFocusUserIntentTimeout;
 
@@ -459,6 +463,19 @@ public class TouchInteractionMonitor
     LogUtils.v(LOG_TAG, "Non IME Touch focus time out value:%d", touchFocusUserIntentTimeout);
     updateMultiTapTimeout(prefs);
     requestTouchExplorationDelayed = new RequestTouchExplorationDelayed(determineUserIntentTimeout);
+    swipeStartWindowMs =
+        (int)
+                (context
+                        .getResources()
+                        .getInteger(
+                            com.google.android.accessibility.utils.R.integer
+                                .config_max_time_to_start_swipe_ms_per_cm)
+                    * context
+                        .getResources()
+                        .getFloat(
+                            com.google.android.accessibility.utils.R.dimen
+                                .config_gesture_confirm_distance_cm))
+            + SWIPE_START_MARGIN_MS;
     DisplayMetrics metrics = context.getResources().getDisplayMetrics();
     edgeSwipeHeightPixels = metrics.ydpi / GestureUtils.CM_PER_INCH * EDGE_SWIPE_HEIGHT_CM;
 
@@ -1568,6 +1585,14 @@ public class TouchInteractionMonitor
 
   @Override
   public void onGestureProcessing(int gestureId) {
+    if (gestureId >= GESTURE_SWIPE_UP && gestureId <= GESTURE_SWIPE_DOWN_AND_RIGHT) {
+      // A one-finger swipe moving its way: touch exploration waits until the swipe either starts
+      // or runs out of time to, so that a swipe that starts slowly isn't explored.
+      if (requestTouchExplorationDelayed.isPending() && !isLiftToType && !downOnKeyboard) {
+        requestTouchExplorationDelayed.extendTo(swipeStartWindowMs);
+      }
+      return;
+    }
     if (gestureId != GESTURE_DOUBLE_TAP) {
       return;
     }
@@ -1766,6 +1791,17 @@ public class TouchInteractionMonitor
 
     public void post() {
       post(0);
+    }
+
+    /** Fires no sooner than [totalMs] after it was posted. */
+    public void extendTo(int totalMs) {
+      int elapsed = (int) (SystemClock.uptimeMillis() - postTime);
+      if (totalMs <= actualDelay) {
+        return;
+      }
+      mainHandler.removeCallbacks(this);
+      actualDelay = totalMs;
+      mainHandler.postDelayed(this, Math.max(0, totalMs - elapsed));
     }
 
     public int remainingTime() {

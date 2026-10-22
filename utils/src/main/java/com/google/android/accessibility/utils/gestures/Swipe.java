@@ -189,6 +189,9 @@ class Swipe extends GestureMatcher {
         }
         // This is confirmed to be some kind of swipe so start tracking points.
         strokeBuffer.add(new PointF(baseX, baseY));
+        // A swipe that starts slowly hasn't reached the detection distance when the touch
+        // exploration timer fires. Ask for the timer to wait while this one can still start.
+        processGesture(eventId, event);
       }
     }
     if (moveDelta > gestureDetectionThresholdPixels) {
