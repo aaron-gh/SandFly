@@ -1227,6 +1227,7 @@
         <item>@android:string/cut</item>
         <item>@android:string/paste</item>
         <item>@string/title_copy_last_spoken_phrase</item>
+        <item>@string/granular_editing_title</item>
     </string-array>
 
     <!-- Shortcut preference value of text editing -->
@@ -1240,6 +1241,7 @@
         <item>@string/shortcut_value_cut</item>
         <item>@string/shortcut_value_paste</item>
         <item>@string/shortcut_value_copy_last_spoken_phrase</item>
+        <item>@string/shortcut_value_granular_editing</item>
     </string-array>
 
   <!-- The shortcut of unsupported gestures -->
@@ -1263,6 +1265,7 @@
   <string name="shortcut_value_scroll_to_top">SCROLL_TO_TOP</string>
   <string name="shortcut_value_scroll_to_bottom">SCROLL_TO_BOTTOM</string>
   <string name="shortcut_value_refresh" translatable="false">REFRESH</string>
+  <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="keycombo_shortcut_global_refresh" translatable="false">keycombo_shortcut_global_refresh</string>
   <string name="shortcut_value_scroll_up">SCROLL_UP</string>
   <string name="shortcut_value_scroll_down">SCROLL_DOWN</string>
@@ -1890,6 +1893,7 @@
     <item name="edittext_breakout_copy" type="id" />
     <item name="edittext_breakout_paste" type="id" />
     <item name="edittext_breakout_select_all" type="id" />
+    <item name="edittext_breakout_granular_editing" type="id" />
     <item name="edittext_breakout_start_selection_mode" type="id" />
     <item name="edittext_breakout_end_selection_mode" type="id" />
     <item name="labeling_breakout_add_label" type="id" />

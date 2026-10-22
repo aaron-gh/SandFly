@@ -111,6 +111,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeCha
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
+import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
@@ -609,6 +610,12 @@ public class GestureController {
       } else {
         pipeline.returnFeedback(eventId, Feedback.edit(node, SELECT_ALL));
       }
+    } else if (action.equals(service.getString(R.string.shortcut_value_granular_editing))) {
+      AccessibilityNodeInfoCompat focus =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      AccessibilityNodeInfoCompat editing =
+          accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
+      result = GranularEditing.open(service, editing != null ? editing : focus);
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);

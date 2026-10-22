@@ -36,6 +36,8 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.contextmenu.AbstractOnContextMenuItemClickListener;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenu;
@@ -196,6 +198,16 @@ public class EditingAndSelectingMenu implements NodeMenu {
       items.add(select);
     }
 
+    if (!node.isPassword()) {
+      items.add(
+          ContextMenu.createMenuItem(
+              context,
+              Menu.NONE,
+              R.id.edittext_breakout_granular_editing,
+              Menu.NONE,
+              context.getString(R.string.granular_editing_title)));
+    }
+
     // TODO Use a checkable menu item once supported.
     if (!isAndroidWear) {
       final ContextMenuItem selectionMode;
@@ -264,6 +276,9 @@ public class EditingAndSelectingMenu implements NodeMenu {
         } else if (itemId == R.id.edittext_breakout_select_all
             && !TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(node))) {
           result = pipeline.returnFeedback(eventId, Feedback.edit(node, SELECT_ALL));
+        } else if (itemId == R.id.edittext_breakout_granular_editing) {
+          TalkBackService service = TalkBackService.getInstance();
+          result = service != null && GranularEditing.open(service, node);
         } else if (itemId == R.id.edittext_breakout_start_selection_mode) {
           result = pipeline.returnFeedback(eventId, Feedback.edit(node, START_SELECT));
         } else if (itemId == R.id.edittext_breakout_end_selection_mode) {
