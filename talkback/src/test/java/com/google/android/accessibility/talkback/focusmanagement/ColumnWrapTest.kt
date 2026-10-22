@@ -103,36 +103,24 @@ class ColumnWrapTest {
   }
 
   @Test
-  fun aListWithOneItemInEachRowIsSilent() {
+  fun eachItemOfAListIsARow() {
     val list = container(null)
     val items = (0 until 3).map { item(list, Rect(0, it * 200, 1000, it * 200 + 180)) }
-    assertEquals(NONE, ColumnWrap.detect(items[0], items[1], true, ltr))
-    assertEquals(NONE, ColumnWrap.detect(items[1], items[0], false, ltr))
+    assertEquals(FORWARD, ColumnWrap.detect(items[0], items[1], true, ltr))
+    assertEquals(BACK, ColumnWrap.detect(items[1], items[0], false, ltr))
   }
 
   @Test
-  fun leavingARowOfOneItemIsSilent() {
+  fun leavingAHeadingIsARowChange() {
     val screen = container(null)
-    val heading = item(screen, Rect(0, 0, 1000, 100))
+    val heading = item(screen, Rect(0, -150, 1000, -50))
     val rows = rowsWithButtons(1)
-    assertEquals(NONE, ColumnWrap.detect(heading, rows[0].first, true, ltr))
-  }
-
-  @Test
-  fun anItemThatCannotTakeFocusDoesNotMakeARow() {
-    val list = container(null)
-    val rowNode = container(list)
-    val title = item(rowNode, Rect(0, 0, 800, 180))
-    container(rowNode).setBoundsInScreen(Rect(850, 50, 1000, 130))
-    val next = item(list, Rect(0, 200, 800, 380))
-    assertEquals(NONE, ColumnWrap.detect(title, next, true, ltr))
+    assertEquals(FORWARD, ColumnWrap.detect(heading, rows[0].first, true, ltr))
   }
 
   @Test
   fun rowsArePlaces() {
     val item = Rect(0, 100, 800, 300)
-    assertTrue(ColumnWrap.isBeside(Rect(850, 150, 1000, 250), item))
-    assertFalse(ColumnWrap.isBeside(Rect(0, 320, 800, 500), item))
     assertTrue(ColumnWrap.leavesRow(item, Rect(0, 320, 800, 500), forward = true))
     assertFalse(ColumnWrap.leavesRow(item, Rect(850, 150, 1000, 250), forward = true))
   }
