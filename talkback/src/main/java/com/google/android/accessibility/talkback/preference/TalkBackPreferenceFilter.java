@@ -266,6 +266,14 @@ public class TalkBackPreferenceFilter {
     MENU_BRAILLE_DISPLAY_ECHO(
         R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
+    HANDWRITING_KEYBOARD_ECHO(
+        R.string.pref_echo_handwriting_keyboard_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SELECTOR_HANDWRITING_KEYBOARD_ECHO(
+        R.string.pref_selector_keyboard_echo_handwriting_keyboard_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    MENU_HANDWRITING_KEYBOARD_ECHO(
+        R.string.pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     INTERRUPT_TYPING(R.string.pref_interrupt_typing_key, HIDDEN_ON_WATCH),
     INTERRUPT_ENTER(R.string.pref_interrupt_enter_key, HIDDEN_ON_WATCH),
     LIMIT_FREQUENT_CONTENT_CHANGE_ANNOUNCEMENT(

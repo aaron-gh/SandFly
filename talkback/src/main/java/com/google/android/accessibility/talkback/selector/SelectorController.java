@@ -203,6 +203,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_keyboard_echo_braille_display_key,
         R.string.selector_keyboard_echo_braille_display,
         R.bool.pref_selector_keyboard_echo_default),
+    KEYBOARD_ECHO_HANDWRITING_KEYBOARD(
+        R.string.pref_selector_keyboard_echo_handwriting_keyboard_key,
+        R.string.selector_keyboard_echo_handwriting_keyboard,
+        R.bool.pref_selector_keyboard_echo_default),
     GRANULARITY(
         R.string.pref_selector_granularity_key,
         R.string.selector_granularity,
@@ -665,6 +669,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.KEYBOARD_ECHO_PHYSICAL,
           Setting.KEYBOARD_ECHO_BRAILLE_KEYBOARD,
           Setting.KEYBOARD_ECHO_BRAILLE_DISPLAY,
+          Setting.KEYBOARD_ECHO_HANDWRITING_KEYBOARD,
           Setting.FORMATTING,
           Setting.LANGUAGE,
           // TODO Supports sound feedback and vibration feedback.
@@ -766,6 +771,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_PHYSICAL);
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_KEYBOARD);
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_BRAILLE_DISPLAY);
+      hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_HANDWRITING_KEYBOARD);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
     }
@@ -970,7 +976,8 @@ public class SelectorController implements UserInputEventListener {
       case KEYBOARD_ECHO_ON_SCREEN,
           KEYBOARD_ECHO_PHYSICAL,
           KEYBOARD_ECHO_BRAILLE_KEYBOARD,
-          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
+          KEYBOARD_ECHO_BRAILLE_DISPLAY,
+          KEYBOARD_ECHO_HANDWRITING_KEYBOARD -> {
         actionDescription =
             KeyboardEchoSettings.title(context.getResources(), keyboardEchoInput(setting));
         hint = getAdjustSelectedSettingGestures();
@@ -1588,7 +1595,8 @@ public class SelectorController implements UserInputEventListener {
           KEYBOARD_ECHO_ON_SCREEN,
           KEYBOARD_ECHO_PHYSICAL,
           KEYBOARD_ECHO_BRAILLE_KEYBOARD,
-          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
+          KEYBOARD_ECHO_BRAILLE_DISPLAY,
+          KEYBOARD_ECHO_HANDWRITING_KEYBOARD -> {
         return true;
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
@@ -1897,7 +1905,8 @@ public class SelectorController implements UserInputEventListener {
       case KEYBOARD_ECHO_ON_SCREEN,
           KEYBOARD_ECHO_PHYSICAL,
           KEYBOARD_ECHO_BRAILLE_KEYBOARD,
-          KEYBOARD_ECHO_BRAILLE_DISPLAY -> {
+          KEYBOARD_ECHO_BRAILLE_DISPLAY,
+          KEYBOARD_ECHO_HANDWRITING_KEYBOARD -> {
         cycleKeyboardEcho(eventId, keyboardEchoInput(currentSetting), isNext);
         return;
       }
@@ -2377,6 +2386,7 @@ public class SelectorController implements UserInputEventListener {
       case KEYBOARD_ECHO_PHYSICAL -> TypingInput.PHYSICAL_KEYBOARD;
       case KEYBOARD_ECHO_BRAILLE_KEYBOARD -> TypingInput.BRAILLE_KEYBOARD;
       case KEYBOARD_ECHO_BRAILLE_DISPLAY -> TypingInput.BRAILLE_DISPLAY;
+      case KEYBOARD_ECHO_HANDWRITING_KEYBOARD -> TypingInput.HANDWRITING_KEYBOARD;
       default -> TypingInput.ON_SCREEN_KEYBOARD;
     };
   }

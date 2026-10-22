@@ -83,14 +83,15 @@ public class TextEventFilter {
     ON_SCREEN_KEYBOARD,
     PHYSICAL_KEYBOARD,
     BRAILLE_KEYBOARD,
-    BRAILLE_DISPLAY
+    BRAILLE_DISPLAY,
+    HANDWRITING_KEYBOARD
   }
 
   /** Tells whether the user is typing in braille. */
   public interface BrailleInputReader {
     /**
-     * Returns {@link TypingInput#BRAILLE_KEYBOARD} or {@link TypingInput#BRAILLE_DISPLAY} while the
-     * user types with it, or null.
+     * Returns {@link TypingInput#BRAILLE_KEYBOARD}, {@link TypingInput#BRAILLE_DISPLAY} or {@link
+     * TypingInput#HANDWRITING_KEYBOARD} while the user types with it, or null.
      */
     @Nullable TypingInput readBrailleInput();
   }

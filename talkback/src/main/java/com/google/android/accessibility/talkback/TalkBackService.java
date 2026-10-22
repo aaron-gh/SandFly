@@ -2701,8 +2701,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     final TextEventHistory textEventHistory = new TextEventHistory();
     final TextEventFilter textEventFilter =
         new TextEventFilter(this, textCursorTracker, textEventHistory);
-    // The handwriting keyboard says what it typed itself.
-    textEventFilter.setEchoSuppressor(HandwritingKeyboardHost::typedAround);
+    // The handwriting keyboard echoes what it types itself, as its keyboard echo setting says.
+    textEventFilter.setEchoSuppressor(eventTime -> HandwritingKeyboardHost.isTyping());
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();

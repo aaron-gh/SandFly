@@ -115,26 +115,31 @@
     <string name="pref_echo_physical_keyboard_key" translatable="false">pref_echo_physical_keyboard</string>
     <string name="pref_echo_braille_keyboard_key" translatable="false">pref_echo_braille_keyboard</string>
     <string name="pref_echo_braille_display_key" translatable="false">pref_echo_braille_display</string>
+    <string name="pref_echo_handwriting_keyboard_key" translatable="false">pref_echo_handwriting_keyboard</string>
     <!-- Reading controls and SandFly menu items for each keyboard echo setting, off by default. -->
     <string name="pref_selector_keyboard_echo_on_screen_key" translatable="false">pref_selector_keyboard_echo_on_screen_key</string>
     <string name="pref_selector_keyboard_echo_physical_key" translatable="false">pref_selector_keyboard_echo_physical_key</string>
     <string name="pref_selector_keyboard_echo_braille_keyboard_key" translatable="false">pref_selector_keyboard_echo_braille_keyboard_key</string>
     <string name="pref_selector_keyboard_echo_braille_display_key" translatable="false">pref_selector_keyboard_echo_braille_display_key</string>
+    <string name="pref_selector_keyboard_echo_handwriting_keyboard_key" translatable="false">pref_selector_keyboard_echo_handwriting_keyboard_key</string>
     <string name="selector_keyboard_echo_on_screen" translatable="false">KEYBOARD_ECHO_ON_SCREEN</string>
     <string name="selector_keyboard_echo_physical" translatable="false">KEYBOARD_ECHO_PHYSICAL</string>
     <string name="selector_keyboard_echo_braille_keyboard" translatable="false">KEYBOARD_ECHO_BRAILLE_KEYBOARD</string>
     <string name="selector_keyboard_echo_braille_display" translatable="false">KEYBOARD_ECHO_BRAILLE_DISPLAY</string>
+    <string name="selector_keyboard_echo_handwriting_keyboard" translatable="false">KEYBOARD_ECHO_HANDWRITING_KEYBOARD</string>
     <bool name="pref_selector_keyboard_echo_default">false</bool>
     <string name="pref_show_context_menu_keyboard_echo_on_screen_setting_key" translatable="false">pref_keyboard_echo_on_screen_menu_setting_key</string>
     <string name="pref_show_context_menu_keyboard_echo_physical_setting_key" translatable="false">pref_keyboard_echo_physical_menu_setting_key</string>
     <string name="pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key" translatable="false">pref_keyboard_echo_braille_keyboard_menu_setting_key</string>
     <string name="pref_show_context_menu_keyboard_echo_braille_display_setting_key" translatable="false">pref_keyboard_echo_braille_display_menu_setting_key</string>
+    <string name="pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key" translatable="false">pref_keyboard_echo_handwriting_keyboard_menu_setting_key</string>
     <bool name="pref_show_context_menu_keyboard_echo_default">false</bool>
     <item type="id" name="group_keyboard_echo" />
     <item type="id" name="keyboard_echo_on_screen_menu" />
     <item type="id" name="keyboard_echo_physical_menu" />
     <item type="id" name="keyboard_echo_braille_keyboard_menu" />
     <item type="id" name="keyboard_echo_braille_display_menu" />
+    <item type="id" name="keyboard_echo_handwriting_keyboard_menu" />
     <string name="pref_interrupt_typing_key" translatable="false">pref_interrupt_typing</string>
     <string name="pref_interrupt_enter_key" translatable="false">pref_interrupt_enter</string>
     <string name="pref_node_desc_order_key">pref_node_desc_order_key</string>

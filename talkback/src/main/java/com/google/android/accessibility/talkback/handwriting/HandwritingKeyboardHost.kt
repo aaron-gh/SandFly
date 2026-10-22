@@ -15,13 +15,12 @@
  */
 package com.google.android.accessibility.talkback.handwriting
 
-import android.os.SystemClock
 import com.google.android.accessibility.talkback.Pipeline
 
 /**
  * What the handwriting keyboard, which runs in SandFly's process, uses of SandFly: its speech and
- * feedback, while SandFly is on. The keyboard tells SandFly when it types, so that SandFly doesn't
- * also echo what the keyboard has already said.
+ * feedback, while SandFly is on. The keyboard tells SandFly when it is open, since it echoes what
+ * it types itself: the app's field is hidden behind it, and SandFly doesn't read hidden fields.
  */
 object HandwritingKeyboardHost {
   /** SandFly's feedback, or null while SandFly is off. */
@@ -29,18 +28,8 @@ object HandwritingKeyboardHost {
   @Volatile
   var feedback: Pipeline.FeedbackReturner? = null
 
-  @Volatile private var typedAt = 0L
-
-  /** Notes that the keyboard is changing the text now. */
+  /** Whether the keyboard is open, so that text changes come from it. */
   @JvmStatic
-  fun noteTyping() {
-    typedAt = SystemClock.uptimeMillis()
-  }
-
-  /** Whether a text change at [eventTime], in uptime milliseconds, came from the keyboard. */
-  @JvmStatic
-  fun typedAround(eventTime: Long): Boolean = eventTime - typedAt in -ECHO_WINDOW_MS..ECHO_WINDOW_MS
-
-  /** How far apart the keyboard's change and the app's text change event can be. */
-  private const val ECHO_WINDOW_MS = 1_000L
+  @Volatile
+  var isTyping: Boolean = false
 }
