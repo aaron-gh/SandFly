@@ -144,7 +144,7 @@ public final class EventTypeViewSelectedFeedbackRule {
         log.append(", nodeIsFocused=").append(node.isFocused());
         log.append(", nodeIsAccessibilityFocused=").append(node.isAccessibilityFocused());
         log.append(", nodeLiveRegion=").append(node.getLiveRegion());
-        LogUtils.v(TAG, "computeTtsOutput(): %s", log.toString());
+        LogUtils.v(TAG, "computeTtsOutput(): %s", log);
       }
       default -> {
         output = eventDescription;

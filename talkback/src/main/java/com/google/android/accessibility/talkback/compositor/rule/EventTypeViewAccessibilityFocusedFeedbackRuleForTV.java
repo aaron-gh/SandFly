@@ -169,7 +169,7 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
       logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
     }
 
-    LogUtils.v(TAG, "viewAccessibilityFocusedDescription: %s", logString.toString());
+    LogUtils.v(TAG, "viewAccessibilityFocusedDescription: %s", logString);
 
     return CompositorUtils.joinCharSequences(
         outputJoinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
