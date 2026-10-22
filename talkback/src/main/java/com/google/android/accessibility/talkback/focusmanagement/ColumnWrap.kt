@@ -22,35 +22,24 @@ import android.view.accessibility.AccessibilityEvent
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
-import kotlin.math.abs
-import kotlin.math.max
 
 /**
- * Finds when moving to the next or previous item goes from one row of a grid or table to another:
- * forward from the end of a row to the start of the next, or back from the start of a row to the
- * end of the one before.
- *
- * Items with collection item info, such as table cells and the items of grid lists, are compared
- * by their row and column. Grids without it, such as the icons of a home screen or a keypad, are
- * compared by where the items are: items of the same size, in the same container or in rows of the
- * same container, one below the other and back towards the start of the row.
+ * Finds when moving to the next or previous item leaves the row of items the focus is in: forward
+ * to an item below it, or back to an item above it, when the row has another item beside the
+ * focused one. Rows are found by where items are on the screen, so this works for tables, grids,
+ * home screens and lists whose rows hold several items, such as a title with buttons beside it. A
+ * list with one item in each row has no row to leave.
  */
 object ColumnWrap {
   const val NONE = 0
   const val FORWARD = 1
   const val BACK = 2
 
-  /** How far up from a focused item its cell may be, as in a web table cell holding text. */
-  private const val MAX_CELL_DEPTH = 3
+  /** How far up from the focused item the container of its row may be. */
+  private const val MAX_ROW_DEPTH = 3
 
-  /** How far up from a cell its table or grid may be. */
-  private const val MAX_COLLECTION_DEPTH = 3
-
-  /** How far up from two items, laid out as a grid without collection info, their container is. */
-  private const val MAX_CONTAINER_DEPTH = 2
-
-  /** How much two items of a grid may differ in width or height, as a part of the larger. */
-  private const val SIZE_TOLERANCE = 0.25f
+  /** The most items looked at to find another item in the focused item's row. */
+  private const val MAX_ROW_NODES = 200
 
   /** How long a web page has to move focus after being asked to, in milliseconds. */
   private const val WEB_FOCUS_TIMEOUT_MS = 1000L
@@ -70,10 +59,11 @@ object ColumnWrap {
     }
 
   /**
-   * Whether moving [forward] or back from [from] to [to] goes to another row of a grid: [FORWARD],
+   * Whether moving [forward] or back from [from] to [to] leaves the row [from] is in: [FORWARD],
    * [BACK] or [NONE].
    */
   @JvmStatic
+  @Suppress("UNUSED_PARAMETER")
   fun detect(
     from: AccessibilityNodeInfoCompat?,
     to: AccessibilityNodeInfoCompat?,
@@ -84,18 +74,31 @@ object ColumnWrap {
       return NONE
     }
     return try {
-      val fromCell = cellOf(from)
-      val toCell = cellOf(to)
-      if (fromCell != null && toCell != null) {
-        byCells(fromCell, toCell, forward)
-      } else {
-        byPlace(from, to, forward, rtl)
-      }
+      val a = bounds(from)
+      val b = bounds(to)
+      if (a.isEmpty || b.isEmpty || !leavesRow(a, b, forward) || !hasItemBeside(from, a)) NONE
+      else if (forward) FORWARD
+      else BACK
     } catch (e: RuntimeException) {
       // A node from an app that went away.
       NONE
     }
   }
+
+  /**
+   * Whether an item at [to] is past the row of an item at [from]: below it going [forward], or
+   * above it going back. Its middle is past the edge of [from].
+   */
+  @JvmStatic
+  fun leavesRow(from: Rect, to: Rect, forward: Boolean): Boolean =
+    if (forward) to.centerY() >= from.bottom else to.centerY() <= from.top
+
+  /** Whether an item at [other] is beside an item at [item], in its row. */
+  @JvmStatic
+  fun isBeside(other: Rect, item: Rect): Boolean =
+    other.centerY() > item.top &&
+      other.centerY() < item.bottom &&
+      (other.right <= item.left || other.left >= item.right)
 
   /**
    * Remembers that a web page was asked to move focus [forward] or back from [pivot], so that the
@@ -123,102 +126,41 @@ object ColumnWrap {
     return detect(pivot, AccessibilityNodeInfoUtils.toCompat(event.source), webForward, webRtl)
   }
 
-  private class Cell(val collection: AccessibilityNodeInfoCompat, val row: Int, val column: Int)
-
-  private fun byCells(from: Cell, to: Cell, forward: Boolean): Int {
-    if (from.collection != to.collection) {
-      return NONE
-    }
-    return when {
-      forward && to.row > from.row && to.column < from.column -> FORWARD
-      !forward && to.row < from.row && to.column > from.column -> BACK
-      else -> NONE
-    }
-  }
-
-  /** The cell that [node] is, or is in, with the table or grid it is in. */
-  private fun cellOf(node: AccessibilityNodeInfoCompat): Cell? {
-    var current: AccessibilityNodeInfoCompat? = node
-    for (depth in 0..MAX_CELL_DEPTH) {
-      val item = current?.collectionItemInfo
-      if (current != null && item != null) {
-        val collection = collectionOf(current) ?: return null
-        return Cell(collection, item.rowIndex, item.columnIndex)
-      }
-      current = current?.parent ?: return null
-    }
-    return null
-  }
-
-  private fun collectionOf(cell: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
-    var current = cell.parent
-    for (depth in 0 until MAX_COLLECTION_DEPTH) {
-      if (current == null) {
-        return null
-      }
-      val info = current.collectionInfo
-      if (info != null) {
-        // A list, one item per row, has no rows to wrap.
-        return if (info.columnCount == 1) null else current
-      }
-      current = current.parent
-    }
-    return null
-  }
-
-  private fun byPlace(
-    from: AccessibilityNodeInfoCompat,
-    to: AccessibilityNodeInfoCompat,
-    forward: Boolean,
-    rtl: Boolean,
-  ): Int {
-    val a = Rect().also { from.getBoundsInScreen(it) }
-    val b = Rect().also { to.getBoundsInScreen(it) }
-    if (
-      a.isEmpty ||
-        b.isEmpty ||
-        !similar(a.width(), b.width()) ||
-        !similar(a.height(), b.height())
-    ) {
-      return NONE
-    }
-    // Rows may overlap a little.
-    val slack = minOf(a.height(), b.height()) / 4
-    val below = b.top >= a.bottom - slack
-    val above = b.bottom <= a.top + slack
-    val towardsRowStart = if (rtl) b.centerX() > a.right else b.centerX() < a.left
-    val towardsRowEnd = if (rtl) b.centerX() < a.left else b.centerX() > a.right
-    val wrap =
-      when {
-        forward && below && towardsRowStart -> FORWARD
-        !forward && above && towardsRowEnd -> BACK
-        else -> NONE
-      }
-    return if (wrap != NONE && shareContainer(from, to)) wrap else NONE
-  }
-
-  private fun similar(a: Int, b: Int): Boolean = abs(a - b) <= max(a, b) * SIZE_TOLERANCE
-
   /**
-   * Whether [a] and [b] are in the same container, as many levels down: siblings, or items of rows
-   * that are siblings.
+   * Whether the row of [node], at [place], has another item that can take focus beside it, in the
+   * containers of [node] up to [MAX_ROW_DEPTH] levels up.
    */
-  private fun shareContainer(
-    a: AccessibilityNodeInfoCompat,
-    b: AccessibilityNodeInfoCompat,
-  ): Boolean {
-    var parentA = a.parent
-    var parentB = b.parent
-    for (depth in 0 until MAX_CONTAINER_DEPTH) {
-      if (parentA == null || parentB == null) {
-        return false
+  private fun hasItemBeside(node: AccessibilityNodeInfoCompat, place: Rect): Boolean {
+    var searched: AccessibilityNodeInfoCompat = node
+    var container = node.parent
+    var looked = 0
+    for (depth in 0 until MAX_ROW_DEPTH) {
+      if (container == null) return false
+      val queue = ArrayDeque<AccessibilityNodeInfoCompat>()
+      // The container searched one level down is left out.
+      for (i in 0 until container.childCount) {
+        container.getChild(i)?.takeIf { it != searched }?.let(queue::add)
       }
-      if (parentA == parentB) {
-        return true
+      while (queue.isNotEmpty() && looked < MAX_ROW_NODES) {
+        val candidate = queue.removeFirst()
+        looked++
+        if (candidate == node || !candidate.isVisibleToUser) continue
+        val bounds = bounds(candidate)
+        if (bounds.isEmpty || bounds.bottom <= place.top || bounds.top >= place.bottom) continue
+        if (
+          isBeside(bounds, place) && AccessibilityNodeInfoUtils.isAccessibilityFocusable(candidate)
+        ) {
+          return true
+        }
+        for (i in 0 until candidate.childCount) candidate.getChild(i)?.let(queue::add)
       }
-      parentA = parentA.parent
-      parentB = parentB.parent
+      if (looked >= MAX_ROW_NODES) return false
+      searched = container
+      container = container.parent
     }
     return false
   }
+
+  private fun bounds(node: AccessibilityNodeInfoCompat): Rect =
+    Rect().also { node.getBoundsInScreen(it) }
 }

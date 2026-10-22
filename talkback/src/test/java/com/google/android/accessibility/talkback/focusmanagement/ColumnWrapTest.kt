@@ -19,12 +19,12 @@ package com.google.android.accessibility.talkback.focusmanagement
 import android.graphics.Rect
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionInfoCompat
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.CollectionItemInfoCompat
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap.BACK
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap.FORWARD
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap.NONE
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -36,127 +36,104 @@ import org.robolectric.annotation.Config
 class ColumnWrapTest {
   private val ltr = false
 
-  private fun node(parent: AccessibilityNodeInfo?, bounds: Rect? = null): AccessibilityNodeInfo {
+  /** A visible item that can take focus, at [bounds], in [parent]. */
+  private fun item(parent: AccessibilityNodeInfo?, bounds: Rect): AccessibilityNodeInfoCompat {
+    val node = container(parent)
+    node.setBoundsInScreen(bounds)
+    node.isClickable = true
+    node.isFocusable = true
+    return AccessibilityNodeInfoCompat.wrap(node)
+  }
+
+  private fun container(parent: AccessibilityNodeInfo?): AccessibilityNodeInfo {
     val node = AccessibilityNodeInfo.obtain()
+    node.isVisibleToUser = true
     parent?.let { shadowOf(it).addChild(node) }
-    bounds?.let { node.setBoundsInScreen(it) }
     return node
   }
 
-  /** A [rows] by [columns] table, each cell with collection item info. */
-  private fun table(rows: Int, columns: Int): List<List<AccessibilityNodeInfoCompat>> {
-    val root = node(null)
-    AccessibilityNodeInfoCompat.wrap(root)
-      .setCollectionInfo(CollectionInfoCompat.obtain(rows, columns, /* hierarchical= */ false))
-    return (0 until rows).map { row ->
-      (0 until columns).map { column ->
-        AccessibilityNodeInfoCompat.wrap(node(root)).apply {
-          setCollectionItemInfo(CollectionItemInfoCompat.obtain(row, 1, column, 1, false))
-        }
-      }
-    }
-  }
-
-  /** A [rows] by [columns] grid of 100 pixel icons in one container, without collection info. */
+  /** A [rows] by [columns] grid of 100 pixel icons in one container. */
   private fun iconGrid(rows: Int, columns: Int): List<List<AccessibilityNodeInfoCompat>> {
-    val container = node(null)
+    val grid = container(null)
     return (0 until rows).map { row ->
       (0 until columns).map { column ->
         val left = column * 150
         val top = row * 200
-        AccessibilityNodeInfoCompat.wrap(node(container, Rect(left, top, left + 100, top + 100)))
+        item(grid, Rect(left, top, left + 100, top + 100))
       }
     }
   }
 
-  @Test
-  fun tableForwardFromTheEndOfARowWraps() {
-    val cells = table(3, 3)
-    assertEquals(FORWARD, ColumnWrap.detect(cells[0][2], cells[1][0], true, ltr))
+  /** A list whose rows each have a title and a button beside it, such as videos or settings. */
+  private fun rowsWithButtons(
+    rows: Int
+  ): List<Pair<AccessibilityNodeInfoCompat, AccessibilityNodeInfoCompat>> {
+    val list = container(null)
+    return (0 until rows).map { row ->
+      val rowNode = container(list)
+      val top = row * 200
+      val title = item(rowNode, Rect(0, top, 800, top + 180))
+      title to item(rowNode, Rect(850, top + 50, 1000, top + 130))
+    }
   }
 
   @Test
-  fun tableBackFromTheStartOfARowWrapsBack() {
-    val cells = table(3, 3)
-    assertEquals(BACK, ColumnWrap.detect(cells[1][0], cells[0][2], false, ltr))
-  }
-
-  @Test
-  fun tableWithinARowDoesNotWrap() {
-    val cells = table(3, 3)
-    assertEquals(NONE, ColumnWrap.detect(cells[1][0], cells[1][1], true, ltr))
-    assertEquals(NONE, ColumnWrap.detect(cells[1][1], cells[1][0], false, ltr))
-  }
-
-  @Test
-  fun listDoesNotWrap() {
-    val items = table(5, 1)
-    assertEquals(NONE, ColumnWrap.detect(items[0][0], items[1][0], true, ltr))
-  }
-
-  @Test
-  fun tablesNextToEachOtherDoNotWrap() {
-    val first = table(2, 2)
-    val second = table(2, 2)
-    assertEquals(NONE, ColumnWrap.detect(first[0][1], second[1][0], true, ltr))
-  }
-
-  @Test
-  fun cellOfTextInsideACellIsFound() {
-    val cells = table(2, 2)
-    val text = AccessibilityNodeInfoCompat.wrap(node(cells[1][0].unwrap()))
-    assertEquals(FORWARD, ColumnWrap.detect(cells[0][1], text, true, ltr))
-  }
-
-  @Test
-  fun iconGridForwardFromTheEndOfARowWraps() {
+  fun gridForwardFromTheEndOfARowPlaysTheSound() {
     val icons = iconGrid(2, 4)
     assertEquals(FORWARD, ColumnWrap.detect(icons[0][3], icons[1][0], true, ltr))
     assertEquals(NONE, ColumnWrap.detect(icons[0][2], icons[0][3], true, ltr))
   }
 
   @Test
-  fun iconGridBackFromTheStartOfARowWrapsBack() {
+  fun gridBackFromTheStartOfARowPlaysTheBackSound() {
     val icons = iconGrid(2, 4)
     assertEquals(BACK, ColumnWrap.detect(icons[1][0], icons[0][3], false, ltr))
     assertEquals(NONE, ColumnWrap.detect(icons[1][1], icons[1][0], false, ltr))
   }
 
   @Test
-  fun iconGridRightToLeftWrapsTowardsTheRight() {
-    val icons = iconGrid(2, 4)
-    // In a right-to-left layout rows start at the right.
-    assertEquals(FORWARD, ColumnWrap.detect(icons[0][0], icons[1][3], true, rtl = true))
-    assertEquals(NONE, ColumnWrap.detect(icons[0][3], icons[1][0], true, rtl = true))
+  fun leavingARowWithAButtonBesidePlaysTheSound() {
+    val rows = rowsWithButtons(3)
+    // From the button at the end of a row to the title of the next.
+    assertEquals(FORWARD, ColumnWrap.detect(rows[0].second, rows[1].first, true, ltr))
+    // From the title at the start of a row back to the button of the row before.
+    assertEquals(BACK, ColumnWrap.detect(rows[1].first, rows[0].second, false, ltr))
+    // Along the row.
+    assertEquals(NONE, ColumnWrap.detect(rows[0].first, rows[0].second, true, ltr))
   }
 
   @Test
-  fun keypadRowsInOneContainerWrap() {
-    val keypad = node(null)
-    val rows =
-      (0 until 2).map { row ->
-        val rowNode = node(keypad)
-        (0 until 3).map { column ->
-          val left = column * 100
-          val top = row * 100
-          AccessibilityNodeInfoCompat.wrap(node(rowNode, Rect(left, top, left + 90, top + 90)))
-        }
-      }
-    assertEquals(FORWARD, ColumnWrap.detect(rows[0][2], rows[1][0], true, ltr))
+  fun aListWithOneItemInEachRowIsSilent() {
+    val list = container(null)
+    val items = (0 until 3).map { item(list, Rect(0, it * 200, 1000, it * 200 + 180)) }
+    assertEquals(NONE, ColumnWrap.detect(items[0], items[1], true, ltr))
+    assertEquals(NONE, ColumnWrap.detect(items[1], items[0], false, ltr))
   }
 
   @Test
-  fun itemsOfDifferentSizesDoNotWrap() {
-    val container = node(null)
-    val button = AccessibilityNodeInfoCompat.wrap(node(container, Rect(500, 0, 600, 100)))
-    val wide = AccessibilityNodeInfoCompat.wrap(node(container, Rect(0, 200, 600, 300)))
-    assertEquals(NONE, ColumnWrap.detect(button, wide, true, ltr))
+  fun leavingARowOfOneItemIsSilent() {
+    val screen = container(null)
+    val heading = item(screen, Rect(0, 0, 1000, 100))
+    val rows = rowsWithButtons(1)
+    assertEquals(NONE, ColumnWrap.detect(heading, rows[0].first, true, ltr))
   }
 
   @Test
-  fun itemsInUnrelatedContainersDoNotWrap() {
-    val a = AccessibilityNodeInfoCompat.wrap(node(node(node(null)), Rect(500, 0, 600, 100)))
-    val b = AccessibilityNodeInfoCompat.wrap(node(node(node(null)), Rect(0, 200, 100, 300)))
-    assertEquals(NONE, ColumnWrap.detect(a, b, true, ltr))
+  fun anItemThatCannotTakeFocusDoesNotMakeARow() {
+    val list = container(null)
+    val rowNode = container(list)
+    val title = item(rowNode, Rect(0, 0, 800, 180))
+    container(rowNode).setBoundsInScreen(Rect(850, 50, 1000, 130))
+    val next = item(list, Rect(0, 200, 800, 380))
+    assertEquals(NONE, ColumnWrap.detect(title, next, true, ltr))
+  }
+
+  @Test
+  fun rowsArePlaces() {
+    val item = Rect(0, 100, 800, 300)
+    assertTrue(ColumnWrap.isBeside(Rect(850, 150, 1000, 250), item))
+    assertFalse(ColumnWrap.isBeside(Rect(0, 320, 800, 500), item))
+    assertTrue(ColumnWrap.leavesRow(item, Rect(0, 320, 800, 500), forward = true))
+    assertFalse(ColumnWrap.leavesRow(item, Rect(850, 150, 1000, 250), forward = true))
   }
 }

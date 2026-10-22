@@ -151,8 +151,8 @@ play is left out when the theme is installed, and Backtalk says so.
 | `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the Backtalk theme) |
 | `edge_gesture_top` | An edge gesture reaching its second stage (plays no sound in the Backtalk theme) |
 | `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the Backtalk theme) |
-| `column_wrap` | Swiping forward from the end of a row of a grid or table to the start of the next row (plays no sound in the Backtalk theme) |
-| `column_wrap_back` | Swiping back from the start of a row of a grid or table to the end of the row before (plays no sound in the Backtalk theme) |
+| `column_wrap` | Swiping forward to an item below a row that has more than one item (plays no sound in the Backtalk theme) |
+| `column_wrap_back` | Swiping back to an item above a row that has more than one item (plays no sound in the Backtalk theme) |
 | `typo` | Spelling error |
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
