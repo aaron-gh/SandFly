@@ -25,7 +25,7 @@
     <!-- Summary of the log switch. The log can contain spoken text. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_problem_report_log">May contain text from the screen</string>
     <!-- Title of the action that sends the problem report to the SandFly developers. [CHAR LIMIT=40] -->
-    <string name="title_pref_problem_report_send">Send report</string>
+    <string name="title_pref_problem_report_send">Send</string>
     <!-- Summary of the send action while the report is being sent. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_problem_report_sending">Sending</string>
     <!-- Toast when the problem report has no title or no description. [CHAR LIMIT=NONE] -->
@@ -33,13 +33,13 @@
     <!-- Toast when the email address for replies is not valid. [CHAR LIMIT=NONE] -->
     <string name="problem_report_invalid_email">Enter a valid email address.</string>
     <!-- Toast when the problem report was sent. [CHAR LIMIT=NONE] -->
-    <string name="problem_report_sent">Report sent.</string>
+    <string name="problem_report_sent">Feedback sent.</string>
     <!-- Toast when the report server refuses more reports for now. [CHAR LIMIT=NONE] -->
-    <string name="problem_report_rate_limited">Too many reports. Try again later.</string>
+    <string name="problem_report_rate_limited">Too much feedback sent. Try again later.</string>
     <!-- Toast when the report server could not be reached. [CHAR LIMIT=NONE] -->
-    <string name="problem_report_no_connection">Report not sent. Check the internet connection.</string>
+    <string name="problem_report_no_connection">Feedback not sent. Check the internet connection.</string>
     <!-- Toast when the report server returned an error. [CHAR LIMIT=NONE] -->
-    <string name="problem_report_not_sent">Report not sent. Try again later.</string>
+    <string name="problem_report_not_sent">Feedback not sent. Try again later.</string>
 
     <!-- Types of feedback in a problem report. Must match problem_report_type_values. -->
     <string-array name="problem_report_type_entries">
@@ -67,13 +67,13 @@
     </string-array>
 
     <!-- Item that starts a new problem report. [CHAR LIMIT=40] -->
-    <string name="title_report_new">New report</string>
+    <string name="title_report_new">Send feedback</string>
     <!-- Heading of the list of problem reports that were sent. [CHAR LIMIT=40] -->
     <string name="title_report_inbox">Inbox</string>
     <!-- Heading of the list of problem reports that are being written. [CHAR LIMIT=40] -->
     <string name="title_report_drafts">Drafts</string>
     <!-- Shown in the inbox when no report has been sent. [CHAR LIMIT=NONE] -->
-    <string name="report_inbox_empty">No reports sent</string>
+    <string name="report_inbox_empty">No feedback sent</string>
     <!-- Shown under Drafts when there are none. [CHAR LIMIT=NONE] -->
     <string name="report_drafts_empty">No drafts</string>
     <!-- When a report or message was written less than a minute ago. [CHAR LIMIT=40] -->
@@ -104,7 +104,7 @@
     <!-- Item that shows the status of a sent report. [CHAR LIMIT=40] -->
     <string name="title_report_status">Status</string>
     <!-- Heading of what the reporter sent. [CHAR LIMIT=40] -->
-    <string name="title_report_your_report">Your report</string>
+    <string name="title_report_your_report">Your feedback</string>
     <!-- Heading of the replies to a report and the reporter's own messages. [CHAR LIMIT=40] -->
     <string name="title_report_messages">Messages</string>
     <!-- Title of a message the developer wrote, with when, such as "2 hours ago". [CHAR LIMIT=NONE] -->
@@ -124,7 +124,7 @@
     <!-- Item that removes a sent report from the inbox on this phone. [CHAR LIMIT=40] -->
     <string name="title_report_remove">Remove from inbox</string>
     <!-- Title of the dialog that asks before removing a sent report from the inbox. [CHAR LIMIT=NONE] -->
-    <string name="dialog_title_report_remove">Remove this report from the inbox?</string>
+    <string name="dialog_title_report_remove">Remove this feedback from the inbox?</string>
     <!-- Message of the dialog that asks before removing a sent report from the inbox. [CHAR LIMIT=NONE] -->
     <string name="dialog_message_report_remove">Replies to it will no longer reach this phone.</string>
     <!-- Item that deletes the report being written. [CHAR LIMIT=40] -->
@@ -134,9 +134,9 @@
     <!-- Button that deletes a draft or removes a report. [CHAR LIMIT=20] -->
     <string name="button_report_delete">Delete</string>
     <!-- Shown when a report that a notification opened is no longer on this phone. [CHAR LIMIT=NONE] -->
-    <string name="report_missing">This report is no longer in the inbox.</string>
+    <string name="report_missing">This feedback is no longer in the inbox.</string>
     <!-- Name of the notification channel for replies to problem reports. [CHAR LIMIT=40] -->
-    <string name="notification_channel_problem_reports">Problem report replies</string>
+    <string name="notification_channel_problem_reports">Feedback replies</string>
     <!-- Title of the notification for a reply to a report, with the report's title. [CHAR LIMIT=NONE] -->
     <string name="report_notification_reply">Reply to <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <!-- Title of the notification for a report whose status changed: its title and new status. [CHAR LIMIT=NONE] -->
