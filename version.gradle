@@ -3,7 +3,7 @@ ext { talkbackVersionName = "TfPu_release_16_2" }
 // SandFly's version. A stable release is built with -Psandfly.release=true and tagged
 // v<version>; other builds are <version>-dev. Raise it after each stable release.
 ext {
-    sandflyVersion = "0.1.5"
+    sandflyVersion = "0.1.6"
     sandflyVersionName = sandflyVersion + (providers.gradleProperty("sandfly.release").getOrElse("false") == "true" ? "" : "-dev")
 }
 
