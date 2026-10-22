@@ -49,9 +49,6 @@ class NotificationVoice(private val context: Context) {
     val text: CharSequence,
     val flush: Boolean,
     val locale: Locale?,
-    val rate: Float,
-    val pitch: Float,
-    val volume: Float,
     val listener: Listener?,
   )
 
@@ -159,19 +156,16 @@ class NotificationVoice(private val context: Context) {
 
   /**
    * Says [text], after what this voice is saying unless [flush]. [locale] is the language the
-   * text is written in, when it was detected. Rate, pitch and volume multiply the profile's.
+   * text is written in, when it was detected. The profile's rate, pitch and volume apply.
    */
   @MainThread
   fun speak(
     text: CharSequence,
     flush: Boolean,
     locale: Locale?,
-    rate: Float,
-    pitch: Float,
-    volume: Float,
     listener: Listener?,
   ) {
-    val request = Request("notification_${nextId++}", text, flush, locale, rate, pitch, volume, listener)
+    val request = Request("notification_${nextId++}", text, flush, locale, listener)
     when {
       failed -> listener?.onDone(false)
       ready -> speakNow(request)
@@ -195,11 +189,11 @@ class NotificationVoice(private val context: Context) {
     } else if (request.locale != null) {
       applyVoice()
     }
-    tts.setSpeechRate((profile.rate * request.rate).coerceIn(0.1f, 6f))
-    tts.setPitch((profile.pitch * request.pitch).coerceIn(0.2f, 2f))
+    tts.setSpeechRate(profile.rate.coerceIn(0.1f, 6f))
+    tts.setPitch(profile.pitch.coerceIn(0.2f, 2f))
     val params =
       Bundle().apply {
-        putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, (profile.volume / 100f * request.volume).coerceIn(0f, 1f))
+        putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, (profile.volume / 100f).coerceIn(0f, 1f))
       }
     request.listener?.let { listeners[request.id] = it }
     val text = request.text.let { if (it.length > MAX_LENGTH) it.subSequence(0, MAX_LENGTH) else it }

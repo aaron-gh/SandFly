@@ -45,7 +45,6 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.scripting.Scripts
-import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
@@ -573,9 +572,6 @@ object NotificationReader {
           readout.text,
           flush = interrupt,
           locale = localeOf(readout.text),
-          rate = settings.rate / 100f,
-          pitch = settings.pitch / 100f,
-          volume = settings.volume / 100f,
           listener =
             object : NotificationVoice.Listener {
               override fun onStart() = onStarted(readout)
@@ -594,11 +590,6 @@ object NotificationReader {
         .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
         .setStartingAction { onStarted(readout) }
         .setCompletedAction { status -> onDone(readout, status) }
-    if (settings.rate != 100 || settings.pitch != 100 || settings.volume != 100) {
-      options.setSpeechParams(
-        ExternalSpeech.params(settings.rate / 100f, settings.pitch / 100f, settings.volume / 100f)
-      )
-    }
     val speech = Feedback.speech(readout.text, options)
     if (settings.soundBefore) speech.sound(R.raw.chime_down)
     feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)
@@ -651,7 +642,7 @@ object NotificationReader {
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
         if (isSilenced(overMedia, duringCalls)) return@whenSandFlyIsQuiet
-        voice.speak(text, interrupt, null, settings.rate / 100f, settings.pitch / 100f, settings.volume / 100f, null)
+        voice.speak(text, interrupt, null, null)
       }
       return
     }

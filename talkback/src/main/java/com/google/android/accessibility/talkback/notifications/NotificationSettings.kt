@@ -232,9 +232,6 @@ data class NotificationSettings(
   // Reading.
   val format: String = DEFAULT_FORMAT,
   val privateFormat: String = DEFAULT_PRIVATE_FORMAT,
-  val rate: Int = 100,
-  val pitch: Int = 100,
-  val volume: Int = 100,
   val detectLanguage: Boolean = false,
   /** The voice profile notifications are read with, or empty for SandFly's own voice. */
   val voiceProfile: String = "",
@@ -325,9 +322,6 @@ data class NotificationSettings(
       const val ENABLED = "pref_speak_notifications"
       const val FORMAT = "pref_notification_format"
       const val PRIVATE_FORMAT = "pref_notification_private_format"
-      const val RATE = "pref_notification_rate"
-      const val PITCH = "pref_notification_pitch"
-      const val VOLUME = "pref_notification_volume"
       const val DETECT_LANGUAGE = "pref_notification_detect_language"
       const val VOICE_PROFILE = "pref_notification_voice_profile"
       const val SOUND_BEFORE = "pref_notification_sound_before"
@@ -401,9 +395,6 @@ data class NotificationSettings(
         enabled = b(Keys.ENABLED, d.enabled),
         format = s(Keys.FORMAT, d.format).ifBlank { d.format },
         privateFormat = s(Keys.PRIVATE_FORMAT, d.privateFormat).ifBlank { d.privateFormat },
-        rate = i(Keys.RATE, d.rate).coerceIn(25, 400),
-        pitch = i(Keys.PITCH, d.pitch).coerceIn(25, 400),
-        volume = i(Keys.VOLUME, d.volume).coerceIn(10, 100),
         detectLanguage = b(Keys.DETECT_LANGUAGE, d.detectLanguage),
         voiceProfile = s(Keys.VOICE_PROFILE, ""),
         soundBefore = b(Keys.SOUND_BEFORE, d.soundBefore),

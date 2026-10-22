@@ -67,8 +67,6 @@ internal object NotificationChoices {
     fun counts(plural: Int, vararg values: Int) = values.map { it to count(context, it, plural) }
     val k = NotificationSettings.Companion.Keys
     return when (key) {
-      k.RATE, k.PITCH -> listOf(50, 75, 90, 100, 110, 125, 150, 175, 200).map { it to percent(context, it) }
-      k.VOLUME -> listOf(25, 50, 75, 100).map { it to percent(context, it) }
       k.MIN_DIGITS -> (3..10).map { it to context.resources.getQuantityString(R.plurals.notification_digits, it, it) }
       k.MAX_WORDS -> counts(R.plurals.notification_words, 0, 5, 10, 15, 20, 30, 50, 100)
       k.MAX_SENTENCES -> counts(R.plurals.notification_sentences, 0, 1, 2, 3, 5)
