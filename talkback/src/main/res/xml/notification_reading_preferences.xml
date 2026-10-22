@@ -22,21 +22,6 @@
         android:fragment="com.google.android.accessibility.talkback.preference.base.VoiceProfilesFragment"
         android:key="pref_notification_voice_profiles"
         android:title="@string/title_pref_voice_profiles" />
-    <ListPreference
-        android:defaultValue="100"
-        android:key="pref_notification_rate"
-        android:summary="%s"
-        android:title="@string/notification_rate_title" />
-    <ListPreference
-        android:defaultValue="100"
-        android:key="pref_notification_pitch"
-        android:summary="%s"
-        android:title="@string/notification_pitch_title" />
-    <ListPreference
-        android:defaultValue="100"
-        android:key="pref_notification_volume"
-        android:summary="%s"
-        android:title="@string/notification_volume_title" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="false"
         android:key="pref_notification_detect_language"
