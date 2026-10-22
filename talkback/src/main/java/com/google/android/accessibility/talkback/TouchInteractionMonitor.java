@@ -45,9 +45,19 @@ import static com.google.android.accessibility.utils.gestures.GestureManifold.GE
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SPREAD;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
+import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING;
 import static com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_FAKED_SPLIT_TYPING_AND_HOLD;
@@ -434,7 +444,7 @@ public class TouchInteractionMonitor
               pixelsPerCm * EDGE_GESTURE_FIRST_STAGE_CM, pixelsPerCm * EDGE_GESTURE_SECOND_STAGE_CM
             },
             touchSlop,
-            this::isEdgeInUse,
+            this::edgeStages,
             edgeSwipeListener);
     scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
     pinchTracker =
@@ -1367,14 +1377,45 @@ public class TouchInteractionMonitor
     mainHandler.removeCallbacks(edgeSwipeStallCheck);
   }
 
-  /** Returns whether a gesture from {@code edge} has an action. */
-  private boolean isEdgeInUse(Edge edge) {
+  /**
+   * Returns the number of stages a slide from {@code edge} has: 2 if its long swipe has an action, 1
+   * if only its swipe has one, or 0 if neither has.
+   */
+  private int edgeStages(Edge edge) {
+    if (isGestureAssigned(edgeGestureId(edge, 2))) {
+      return 2;
+    }
+    return isGestureAssigned(edgeGestureId(edge, 1)) ? 1 : 0;
+  }
+
+  /** Returns the gesture of a slide from {@code edge} that ends at {@code stage}, 1 or 2. */
+  private static int edgeGestureId(Edge edge, int stage) {
+    boolean first = stage == 1;
     return switch (edge) {
       case BOTTOM ->
-          isGestureAssigned(GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM)
-              || isGestureAssigned(GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM);
-      case TOP_LEFT -> isGestureAssigned(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT);
-      case TOP_RIGHT -> isGestureAssigned(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT);
+          first ? GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM : GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
+      case TOP_LEFT ->
+          first ? GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT : GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT;
+      case TOP_RIGHT ->
+          first
+              ? GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT
+              : GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT;
+      case LEFT_TOP ->
+          first
+              ? GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP
+              : GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP;
+      case LEFT_BOTTOM ->
+          first
+              ? GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_BOTTOM
+              : GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM;
+      case RIGHT_TOP ->
+          first
+              ? GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP
+              : GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP;
+      case RIGHT_BOTTOM ->
+          first
+              ? GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM
+              : GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM;
     };
   }
 
@@ -1431,15 +1472,7 @@ public class TouchInteractionMonitor
             // Slid back to the edge, or a second finger landed: no gesture.
             return;
           }
-          int gestureId =
-              switch (edge) {
-                case BOTTOM ->
-                    stage == 1
-                        ? GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
-                        : GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM;
-                case TOP_LEFT -> GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT;
-                case TOP_RIGHT -> GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT;
-              };
+          int gestureId = edgeGestureId(edge, stage);
           if (BuildConfig.DEBUG) {
             Log.d(
                 DEBUG_GESTURE_TAG,

@@ -1205,6 +1205,26 @@ public abstract class PageConfig {
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE, ANNOUNCE_REAL_ACTION);

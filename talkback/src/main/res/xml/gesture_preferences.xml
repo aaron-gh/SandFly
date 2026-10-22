@@ -136,10 +136,60 @@
         android:summary="%s"
         android:title="@string/title_pref_shortcut_edge_top_left_down"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_top_left_long_down_default"
+        android:key="@string/pref_shortcut_edge_top_left_long_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_top_left_long_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/pref_shortcut_edge_top_right_down_default"
         android:key="@string/pref_shortcut_edge_top_right_down_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_edge_top_right_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_top_right_long_down_default"
+        android:key="@string/pref_shortcut_edge_top_right_long_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_top_right_long_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_left_top_right_default"
+        android:key="@string/pref_shortcut_edge_left_top_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_left_top_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_left_top_long_right_default"
+        android:key="@string/pref_shortcut_edge_left_top_long_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_left_top_long_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_left_bottom_right_default"
+        android:key="@string/pref_shortcut_edge_left_bottom_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_left_bottom_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_left_bottom_long_right_default"
+        android:key="@string/pref_shortcut_edge_left_bottom_long_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_left_bottom_long_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_right_top_left_default"
+        android:key="@string/pref_shortcut_edge_right_top_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_right_top_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_right_top_long_left_default"
+        android:key="@string/pref_shortcut_edge_right_top_long_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_right_top_long_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_right_bottom_left_default"
+        android:key="@string/pref_shortcut_edge_right_bottom_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_right_bottom_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_edge_right_bottom_long_left_default"
+        android:key="@string/pref_shortcut_edge_right_bottom_long_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_edge_right_bottom_long_left"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Two finger gestures -->

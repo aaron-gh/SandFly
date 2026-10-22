@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback
 
 import android.accessibilityservice.AccessibilityGestureEvent
 import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
 import android.accessibilityservice.TouchInteractionController
 import android.accessibilityservice.TouchInteractionController.STATE_DRAGGING
@@ -41,9 +42,12 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SPREAD
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_PINCH
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import java.time.Duration
 import kotlin.math.cos
@@ -241,6 +245,28 @@ class TrackedGestureTest {
     runUntil(time + 500)
   }
 
+  /**
+   * One finger lands at ([fromX], [y]), slides to each x in [toX] in turn, in 8 steps of 10 ms
+   * each, and lifts.
+   */
+  private fun slideSideways(y: Float, fromX: Float, vararg toX: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, fromX, y)
+    var time = 0L
+    var x = fromX
+    for (target in toX) {
+      val stepX = (target - x) / 8
+      repeat(8) {
+        time += 10
+        x += stepX
+        touchAt(ACTION_MOVE, time, x, y)
+      }
+    }
+    time += 10
+    touchAt(ACTION_UP, time, x, y)
+    runUntil(time + 500)
+  }
+
   @Test
   fun swipeUpFromTheBottomEdgeIsTheFirstStage() {
     slide(160f, 465f, 380f)
@@ -293,6 +319,40 @@ class TrackedGestureTest {
       listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT, GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_RIGHT),
       service.gestures,
     )
+  }
+
+  @Test
+  fun longSwipeDownFromTheTopIsTheSecondStage() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_top_right_long_down_key)
+    slide(260f, 5f, 90f, 360f)
+    assertEquals(listOf(GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun swipeInFromASideEdgeIsByHalf() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_edge_right_top_left_key,
+      R.string.pref_shortcut_edge_left_bottom_long_right_key,
+    )
+    slideSideways(100f, 315f, 230f)
+    slideSideways(400f, 5f, 90f, 330f)
+    assertEquals(
+      listOf(GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP, GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM),
+      service.gestures,
+    )
+  }
+
+  @Test
+  fun swipeRightFromAnUnassignedSideEdgeIsAnOrdinarySwipe() {
+    slideSideways(400f, 5f, 90f, 200f)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun longSwipeDownFromTheTopIsTheFirstStageWhenTheLongSwipeDoesNothing() {
+    slide(60f, 5f, 90f, 360f)
+    assertEquals(listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT), service.gestures)
   }
 
   @Test

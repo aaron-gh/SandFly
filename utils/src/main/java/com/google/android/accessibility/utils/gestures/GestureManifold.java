@@ -70,6 +70,18 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_3_FINGER_SPREAD = -20;
   public static final int GESTURE_4_FINGER_PINCH = -21;
   public static final int GESTURE_4_FINGER_SPREAD = -22;
+  // More edge gestures: the second stage from the top edge, and both stages from each half of the
+  // left and right edges.
+  public static final int GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_LEFT = -23;
+  public static final int GESTURE_EDGE_LONG_SWIPE_DOWN_FROM_TOP_RIGHT = -24;
+  public static final int GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_TOP = -25;
+  public static final int GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_TOP = -26;
+  public static final int GESTURE_EDGE_SWIPE_RIGHT_FROM_LEFT_BOTTOM = -27;
+  public static final int GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM = -28;
+  public static final int GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_TOP = -29;
+  public static final int GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_TOP = -30;
+  public static final int GESTURE_EDGE_SWIPE_LEFT_FROM_RIGHT_BOTTOM = -31;
+  public static final int GESTURE_EDGE_LONG_SWIPE_LEFT_FROM_RIGHT_BOTTOM = -32;
 
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
