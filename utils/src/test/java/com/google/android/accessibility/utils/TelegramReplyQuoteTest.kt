@@ -16,11 +16,6 @@
 
 package com.google.android.accessibility.utils
 
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.ClickableSpan
-import android.view.View
-import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -35,27 +30,6 @@ import org.robolectric.annotation.Config
 class TelegramReplyQuoteTest {
   private val format = "replying to %1\$s: %2\$s"
 
-  private fun message(text: CharSequence): AccessibilityNodeInfoCompat =
-    AccessibilityNodeInfoCompat.obtain().apply {
-      className = "android.view.ViewGroup"
-      packageName = "tw.nekomimi.nekogram"
-      isFocusable = true
-      this.text = text
-    }
-
-  private fun named(name: String, rest: String): CharSequence =
-    SpannableStringBuilder(name).apply {
-      setSpan(
-        object : ClickableSpan() {
-          override fun onClick(widget: View) {}
-        },
-        0,
-        length,
-        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE,
-      )
-      append('\n').append(rest)
-    }
-
   @Test
   fun parsesTheSenderAndText() {
     val quote = TelegramReplyQuote.parse("Reply, Ronan, What other features you love? To me, honestly…")
@@ -66,22 +40,13 @@ class TelegramReplyQuoteTest {
   }
 
   @Test
-  fun theQuoteFollowsTheSendersName() {
-    val text = named("G Melconian", "that has been on the pixel dialer\nReceived at 00:53")
+  fun theQuoteComesLast() {
+    val text = "G Melconian\nthat has been on the pixel dialer\nReceived at 00:53"
     val quote = TelegramReplyQuote.Quote("Ronan", "What other features you love?")
-    val said = TelegramReplyQuote.withQuote(message(text), text.toString(), quote, format, ", ")
     assertEquals(
-      "G Melconian, replying to Ronan: What other features you love?, that has been on the pixel dialer\nReceived at 00:53",
-      said.toString(),
+      "G Melconian\nthat has been on the pixel dialer\nReceived at 00:53, replying to Ronan: What other features you love?",
+      TelegramReplyQuote.withQuote(text, quote, format, ", ").toString(),
     )
-  }
-
-  @Test
-  fun withoutANameTheQuoteComesFirst() {
-    val text = "sure, tasker is more powerful\nReceived at 21:30"
-    val quote = TelegramReplyQuote.Quote("Ann", "Which app?")
-    val said = TelegramReplyQuote.withQuote(message(text), text, quote, format, ", ")
-    assertEquals("replying to Ann: Which app?, sure, tasker is more powerful\nReceived at 21:30", said.toString())
   }
 
   @Test
