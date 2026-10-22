@@ -54,6 +54,10 @@
       Description: Distinguishes the system settings from TalkBack's own speech settings. [CHAR LIMIT=NONE]
     -->
     <string name="title_pref_system_tts_settings">System text-to-speech settings</string>
+    <!-- Title of the reading control that moves to the item below or above, leaving out the other items of the same row. [CHAR LIMIT=40] -->
+    <string name="title_selector_vertical_navigation">Vertical navigation</string>
+    <!-- Summary of the Vertical navigation reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
+    <string name="summary_selector_vertical_navigation">Move to the item below or above, past the other items of the row</string>
     <!-- Title for the "switch TTS engine" reading control selector item. [CHAR LIMIT=NONE] -->
     <string name="title_selector_switch_tts_engine">Speech engine</string>
     <!-- Summary for the "switch TTS engine" reading control selector item. [CHAR LIMIT=NONE] -->

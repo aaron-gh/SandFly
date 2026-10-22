@@ -401,6 +401,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_switch_tts_engine_key,
         R.string.selector_switch_tts_engine,
         R.bool.pref_selector_switch_tts_engine_default),
+    VERTICAL_NAVIGATION(
+        R.string.pref_selector_vertical_navigation_key,
+        R.string.selector_vertical_navigation,
+        R.bool.pref_selector_vertical_navigation_default),
     SPEECH_STREAM(
         R.string.pref_selector_speech_stream_key,
         R.string.selector_speech_stream,
@@ -649,6 +653,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.GRANULARITY_CONTAINERS,
           Setting.GRANULARITY_SEARCH,
           Setting.GRANULARITY_DEFAULT,
+          Setting.VERTICAL_NAVIGATION,
           // TODO Supports special content.
           Setting.SPEECH_RATE,
           Setting.VERBOSITY,
@@ -1022,6 +1027,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case SPEECH_STREAM -> {
         actionDescription = context.getString(R.string.title_pref_speech_stream);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case VERTICAL_NAVIGATION -> {
+        actionDescription = context.getString(R.string.title_selector_vertical_navigation);
         hint = getAdjustSelectedSettingGestures();
       }
       case SWITCH_VOICE_PROFILE -> {
@@ -1896,6 +1905,10 @@ public class SelectorController implements UserInputEventListener {
         changeSpeechStream(eventId, isNext);
         return;
       }
+      case VERTICAL_NAVIGATION -> {
+        moveVertically(eventId, isNext);
+        return;
+      }
       case SWITCH_VOICE_PROFILE -> {
         changeVoiceProfile(eventId, isNext, getAdjustSelectedSettingGestures());
         return;
@@ -2117,6 +2130,38 @@ public class SelectorController implements UserInputEventListener {
             actorState.getSpeechRateState().getSpeechRatePercentage());
     announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
     showQuickMenuActionOverlay(eventId, displayText);
+  }
+
+  /**
+   * Moves to the item below or above the focused one, past the other items of its row. With no such
+   * item on screen, moves to the next or previous item as a swipe does, which scrolls.
+   */
+  private void moveVertically(EventId eventId, boolean isNext) {
+    @Nullable AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    @Nullable AccessibilityNodeInfoCompat target =
+        (focus == null) ? null : VerticalNavigation.target(focus, isNext);
+    if (target != null) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.focus(
+              target,
+              FocusActionInfo.builder()
+                  .setSourceAction(FocusActionInfo.LOGICAL_NAVIGATION)
+                  .build()));
+      return;
+    }
+    boolean moved =
+        pipeline.returnFeedback(
+            eventId,
+            Feedback.focusDirection(isNext ? SEARCH_FOCUS_FORWARD : SEARCH_FOCUS_BACKWARD)
+                .setGranularity(CursorGranularity.DEFAULT)
+                .setInputMode(INPUT_MODE_TOUCH)
+                .setDefaultToInputFocus(true)
+                .setScroll(true));
+    if (!moved) {
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+    }
   }
 
   /** Changes the volume speech and sounds play at to the next or previous of the four. */

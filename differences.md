@@ -417,6 +417,10 @@ On Android 11, when you picked an action with the **Actions** reading control, a
 
 realme UI reports some volume sliders as not focusable and unlabeled, so TalkBack skipped them. SandFly can focus them.
 
+### Vertical navigation
+
+The **Vertical navigation** reading control, which you can turn on in **Reading controls**, moves to the item below when you swipe down and to the item above when you swipe up. It skips the other items of the same row, such as the channel and options buttons beside a video in YouTube, or the buttons beside a file's name. Going up lands on the first item of the row above. When there is no item below or above on screen, it moves to the next or previous item as a swipe right or left does, scrolling if needed.
+
 ### Reading control kept when focus moves
 
 When focus moves onto an item with actions, a slider, a table or a spelling mistake, TalkBack changes the reading control to the one for that item, such as Actions, Adjust slider or Proofread, and changes it back afterwards. On web pages, where many items have actions, this replaces a reading control you chose, such as Headings. To keep the reading control you chose, turn off **Reading controls** > **Change reading control automatically**.
