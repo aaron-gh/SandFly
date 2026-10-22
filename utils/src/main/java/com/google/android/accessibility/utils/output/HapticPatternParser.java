@@ -53,6 +53,7 @@ public class HapticPatternParser {
   private final Function<long[], VibrationEffect> waveformCreator;
   private final @Nullable BiFunction<long[], int[], VibrationEffect> amplitudeWaveformCreator;
   private final IntPredicate isPrimitiveSupported;
+  private float strength = 1f;
 
   /** Creates a new parser, using the given vibrator to determine compatibility. */
   public HapticPatternParser(Vibrator vibrator) {
@@ -83,6 +84,14 @@ public class HapticPatternParser {
     this.waveformCreator = waveformCreator;
     this.amplitudeWaveformCreator = amplitudeWaveformCreator;
     this.isPrimitiveSupported = isPrimitiveSupported;
+  }
+
+  /**
+   * Sets how strong vibrations are, from 0 to 1 of their strength in the pattern. Below 1, plain
+   * on and off patterns play at that share of full strength on vibrators that can vary it.
+   */
+  public void setStrength(float strength) {
+    this.strength = Math.max(0f, Math.min(1f, strength));
   }
 
   /**
@@ -128,7 +137,8 @@ public class HapticPatternParser {
         return null;
       }
 
-      effect.addPrimitive(primitive, (float) pattern[i + 1] / SCALE_MAX, pattern[i + 2]);
+      effect.addPrimitive(
+          primitive, (float) pattern[i + 1] / SCALE_MAX * strength, pattern[i + 2]);
     }
 
     return effect.compose();
@@ -140,9 +150,14 @@ public class HapticPatternParser {
     int[] amplitudes = new int[count];
     for (int i = 0; i < count; i++) {
       timings[i] = pattern[start + 2 * i];
-      amplitudes[i] = pattern[start + 2 * i + 1];
+      amplitudes[i] = scaled(pattern[start + 2 * i + 1]);
     }
     return amplitudeWaveformCreator.apply(timings, amplitudes);
+  }
+
+  /** An amplitude at the strength set, which stays on, however weak, if it was on. */
+  private int scaled(int amplitude) {
+    return amplitude <= 0 ? amplitude : Math.max(1, Math.round(amplitude * strength));
   }
 
   private VibrationEffect parseFallback(int[] patternDefinition, int patternLength) {
@@ -151,6 +166,14 @@ public class HapticPatternParser {
       pattern[i] = patternDefinition[i];
     }
 
+    if (strength < 1f && amplitudeWaveformCreator != null) {
+      // The pattern alternates off and on times, starting with off.
+      int[] amplitudes = new int[patternLength];
+      for (int i = 1; i < patternLength; i += 2) {
+        amplitudes[i] = scaled((int) SCALE_MAX);
+      }
+      return amplitudeWaveformCreator.apply(pattern, amplitudes);
+    }
     return waveformCreator.apply(pattern);
   }
 }

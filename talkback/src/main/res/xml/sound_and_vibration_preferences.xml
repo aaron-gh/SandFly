@@ -5,14 +5,10 @@
       android:defaultValue="@bool/pref_soundback_default"
       android:key="@string/pref_soundback_key"
       android:title="@string/title_pref_soundback" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:defaultValue="@string/pref_soundback_volume_default"
+  <com.google.android.accessibility.talkback.preference.base.PercentSeekBarPreference
       android:dependency="@string/pref_soundback_key"
-      android:dialogTitle="@string/title_pref_soundback_volume"
-      android:entries="@array/pref_soundback_volume_entries"
-      android:entryValues="@array/pref_soundback_volume_values"
-      android:key="@string/pref_soundback_volume_key"
-      android:summary="%s"
+      android:key="@string/pref_soundback_volume_seekbar_key_int"
+      android:persistent="false"
       android:title="@string/title_pref_soundback_volume" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
       android:defaultValue="@string/pref_audio_output_device_default"
@@ -54,6 +50,11 @@
       android:defaultValue="@bool/pref_vibration_default"
       android:key="@string/pref_vibration_key"
       android:title="@string/title_pref_vibration" />
+  <com.google.android.accessibility.talkback.preference.base.PercentSeekBarPreference
+      android:defaultValue="@integer/pref_vibration_strength_default"
+      android:dependency="@string/pref_vibration_key"
+      android:key="@string/pref_vibration_strength_key"
+      android:title="@string/title_pref_vibration_strength" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackFragment"
       android:key="pref_individual_feedback"
