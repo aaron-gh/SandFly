@@ -21,6 +21,7 @@ import android.media.AudioAttributes
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
@@ -189,8 +190,13 @@ class NotificationVoice(private val context: Context) {
     } else if (request.locale != null) {
       applyVoice()
     }
-    tts.setSpeechRate(profile.rate.coerceIn(0.1f, 6f))
-    tts.setPitch(profile.pitch.coerceIn(0.2f, 2f))
+    // As SandFly's own speech does, the profile's rate and pitch are multiples of Android's
+    // default text-to-speech rate and pitch, which an engine connection of its own doesn't apply.
+    val resolver = context.contentResolver
+    val defaultRate = Settings.Secure.getInt(resolver, Settings.Secure.TTS_DEFAULT_RATE, 100) / 100f
+    val defaultPitch = Settings.Secure.getInt(resolver, Settings.Secure.TTS_DEFAULT_PITCH, 100) / 100f
+    tts.setSpeechRate((profile.rate * defaultRate).coerceIn(0.1f, 6f))
+    tts.setPitch((profile.pitch * defaultPitch).coerceIn(0.2f, 2f))
     val params =
       Bundle().apply {
         putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, (profile.volume / 100f).coerceIn(0f, 1f))
