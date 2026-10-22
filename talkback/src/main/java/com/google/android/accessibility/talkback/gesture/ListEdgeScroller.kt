@@ -61,6 +61,12 @@ class ListEdgeScroller(
     this.toStart = toStart
     this.eventId = eventId
     val found = findList() ?: return focusOnScreen()
+    if (!isScrollable(found)) {
+      // A list that shows all of its items, such as one in a page that scrolls: its first or last
+      // item is focused, and the page scrolls to it.
+      focusEdgeOf(found)
+      return true
+    }
     list = found
     isActive = true
     scrolls = 0
@@ -116,15 +122,17 @@ class ListEdgeScroller(
     else AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
 
   /**
-   * The scrollable ancestor of accessibility focus, which may already be at the edge, or else the
-   * first list in the window that can scroll that way. Sliders adjust with scroll actions, so they
-   * are left out.
+   * The list that accessibility focus is in, which may already be at the edge, or else its
+   * scrollable ancestor, or else the first list in the window that can scroll that way. The list
+   * nearest focus comes first, so that in a list within a page that scrolls, the list's edge is
+   * found rather than the page's. Sliders adjust with scroll actions, so they are left out.
    */
   private fun findList(): AccessibilityNodeInfoCompat? {
     val focus = focusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false)
-    AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(focus, filter { isList(it) })?.let {
-      return it
-    }
+    AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(focus, filter { isList(it) || isCollection(it) })
+      ?.let {
+        return it
+      }
     val root =
       focus?.let { AccessibilityNodeInfoUtils.getRoot(it) }
         ?: service.rootInActiveWindow?.let { AccessibilityNodeInfoCompat.wrap(it) }
@@ -138,10 +146,17 @@ class ListEdgeScroller(
   }
 
   private fun isList(node: AccessibilityNodeInfoCompat?): Boolean =
-    node != null &&
-      node.isVisibleToUser &&
-      Role.getRole(node) != Role.ROLE_SEEK_CONTROL &&
-      AccessibilityNodeInfoUtils.isScrollable(node)
+    node != null && node.isVisibleToUser && isScrollable(node)
+
+  private fun isScrollable(node: AccessibilityNodeInfoCompat): Boolean =
+    Role.getRole(node) != Role.ROLE_SEEK_CONTROL && AccessibilityNodeInfoUtils.isScrollable(node)
+
+  /** A list or grid that doesn't scroll, which apps mark with collection information. */
+  private fun isCollection(node: AccessibilityNodeInfoCompat?): Boolean {
+    if (node == null || !node.isVisibleToUser) return false
+    val role = Role.getRole(node)
+    return role == Role.ROLE_LIST || role == Role.ROLE_GRID || node.collectionInfo != null
+  }
 
   private fun filter(accept: (AccessibilityNodeInfoCompat?) -> Boolean) =
     object : Filter<AccessibilityNodeInfoCompat>() {

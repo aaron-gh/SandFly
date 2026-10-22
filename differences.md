@@ -384,7 +384,7 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 *   **Open app**, at the end of the list of actions, lists the apps on the home screen. A gesture set to an app opens it, as its home screen icon does.
 *   **Lock screen** and **Power menu**, in **System actions**.
 *   **Increase media volume** and **Decrease media volume**, in **Special features**, change the media volume a step and say the new volume.
-*   **Scroll to top** and **Scroll to bottom**, in **Basic navigation**, scroll the list to its start or end a page at a time, then focus its first or last item. A touch, gesture or key while it scrolls stops it. These aren't on watches.
+*   **Scroll to top** and **Scroll to bottom**, in **Basic navigation**, scroll the list that focus is in to its start or end a page at a time, then focus its first or last item. In a list that doesn't scroll, such as a short settings screen, they focus its first or last item. Outside a list, they use the first list on screen, or the first or last item on screen when there is none. A touch, gesture or key while it scrolls stops it. These aren't on watches.
 *   **System quick settings** and **System notification shade** open the system's own quick settings and notification shade, when **Use SandFly's quick settings** or **Use SandFly's notification list** is on.
 
 When you choose an action for a gesture, the categories of actions are collapsed, except the one with the gesture's current action. The categories in gesture settings, **Reading controls** and **SandFly menu** are collapsed too, and expand when you activate them.
