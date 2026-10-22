@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.actor.gemini
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -26,6 +25,7 @@ import android.text.InputType
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.net.toUri
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
@@ -166,7 +166,7 @@ class AiProviderFragment : TalkbackBaseFragment() {
     if (provider.keyUrl.isNotEmpty()) {
       dialog.setNeutralButton(R.string.gemini_api_key_get) { _, _ ->
         try {
-          startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(provider.keyUrl)))
+          startActivity(Intent(Intent.ACTION_VIEW, provider.keyUrl.toUri()))
         } catch (e: ActivityNotFoundException) {
           // No browser.
         }
