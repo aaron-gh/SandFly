@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.actor.gemini;
 
+import java.util.ArrayList;
+import java.util.List;
 import static com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.FINISH_REASON_STOP;
 import static com.google.android.accessibility.talkback.actor.gemini.GeminiActor.Action.UNKNOWN;
 
@@ -51,8 +53,6 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
 
   private final Context context;
   private final SharedPreferences prefs;
-  private final String model;
-  private final String url;
   private final String builtInApiKey;
   private final GeminiRestRequestPerformer requestPerformer;
   private final String safetyThresholdHarassment;
@@ -69,8 +69,6 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
   public GeminiRestEndpoint(
       Context context, String builtInApiKey, GeminiRestRequestPerformer requestPerformer) {
     this.context = context;
-    model = GeminiConfiguration.getGeminiModel(context);
-    url = GEMINI_URL + model + GEMINI_URL_NO_PARAM;
     this.builtInApiKey = builtInApiKey;
     this.requestPerformer = requestPerformer;
     safetyThresholdHarassment = GeminiConfiguration.getSafetyThresholdHarassment(context);
@@ -92,7 +90,7 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
                   : PromptStyle.ON_DEVICE;
             },
             (postData, callback) -> {
-              requestPerformer.performRequest(url, apiKey(), postData, callback);
+              requestPerformer.performRequest(urls(), apiKey(), postData, callback);
               return kotlin.Unit.INSTANCE;
             },
             failure -> failure.userMessage(context));
@@ -105,6 +103,15 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
    */
   private String apiKey() {
     return GeminiApiKey.effectiveKey(prefs, builtInApiKey);
+  }
+
+  /** The address of each model to ask, in order, read each time like the key. */
+  private List<String> urls() {
+    List<String> urls = new ArrayList<>();
+    for (String model : GeminiModel.chain(prefs)) {
+      urls.add(GEMINI_URL + model + GEMINI_URL_NO_PARAM);
+    }
+    return urls;
   }
 
   private boolean isSupported() {
@@ -128,7 +135,7 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
 
   @Override
   public boolean createRequestGeminiCommand(GeminiCommand command) {
-    LogUtils.v(TAG, "createRequestGeminiCommand - %s", model);
+    LogUtils.v(TAG, "createRequestGeminiCommand - %s", GeminiModel.chain(prefs));
     String text;
     byte[] imageByteArray;
     GeminiResponseListener geminiResponseListener;
@@ -169,7 +176,7 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
           DataFieldUtils.createPostDataJson(prefixPrompt + text, encodedImage, safetySettings);
 
       requestPerformer.performRequest(
-          url,
+          urls(),
           apiKey(),
           postData,
           new GeminiRestResponseCallback() {

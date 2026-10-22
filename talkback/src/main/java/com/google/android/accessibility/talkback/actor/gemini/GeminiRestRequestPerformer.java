@@ -29,7 +29,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.GeminiResponse;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import com.google.common.collect.ImmutableList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,8 +45,8 @@ public class GeminiRestRequestPerformer {
   private static final int MAX_RETRIES = 0;
 
   /**
-   * How long to wait before asking again when Google answers that it is busy (HTTP 500 and above,
-   * such as 503 when a model is overloaded), which often passes within seconds.
+   * How long to wait before asking every model again when each answered that it is busy (HTTP 500
+   * and above, such as 503 when a model is overloaded), which often passes within seconds.
    */
   private static final long[] BUSY_RETRY_DELAYS_MS = {1_000, 2_000};
 
@@ -81,16 +83,31 @@ public class GeminiRestRequestPerformer {
       String apiKey,
       JSONObject postData,
       GeminiRestResponseCallback unloggedCallback) {
-    send(url, apiKey, postData, loggingFailures(unloggedCallback), 0, SystemClock.uptimeMillis());
+    performRequest(ImmutableList.of(url), apiKey, postData, unloggedCallback);
+  }
+
+  /**
+   * Asks the first of [urls], one per model. When a model is busy or its usage limit is reached,
+   * the next is asked at once; when every model is busy, all are asked again after a pause.
+   */
+  public void performRequest(
+      List<String> urls,
+      String apiKey,
+      JSONObject postData,
+      GeminiRestResponseCallback unloggedCallback) {
+    send(
+        urls, apiKey, postData, loggingFailures(unloggedCallback), 0, 0, SystemClock.uptimeMillis());
   }
 
   private void send(
-      String url,
+      List<String> urls,
       String apiKey,
       JSONObject postData,
       GeminiRestResponseCallback callback,
-      int attempt,
+      int model,
+      int round,
       long firstAt) {
+    String url = urls.get(model);
     JsonObjectRequest stringRequest =
         new JsonObjectRequest(
             Request.Method.POST,
@@ -107,14 +124,21 @@ public class GeminiRestRequestPerformer {
             error -> {
               GeminiFailure failure = GeminiFailure.fromVolleyError(error);
               long now = SystemClock.uptimeMillis();
-              if (failure.getKind() == GeminiFailure.Kind.BUSY
-                  && attempt < BUSY_RETRY_DELAYS_MS.length
-                  && now - firstAt < RETRY_WINDOW_MS) {
+              GeminiFailure.Kind kind = failure.getKind();
+              boolean busy = kind == GeminiFailure.Kind.BUSY;
+              boolean another = busy || kind == GeminiFailure.Kind.QUOTA;
+              if (another && model + 1 < urls.size() && now - firstAt < RETRY_WINDOW_MS) {
+                LogUtils.w(
+                    TAG, "%s, asking the next model: %s", modelOf(url), failure.getLogMessage());
+                send(urls, apiKey, postData, callback, model + 1, round, firstAt);
+                return;
+              }
+              if (busy && round < BUSY_RETRY_DELAYS_MS.length && now - firstAt < RETRY_WINDOW_MS) {
                 LogUtils.w(TAG, "Gemini is busy, asking again: %s", failure.getLogMessage());
                 handler.postAtTime(
-                    () -> send(url, apiKey, postData, callback, attempt + 1, firstAt),
+                    () -> send(urls, apiKey, postData, callback, 0, round + 1, firstAt),
                     retryToken,
-                    now + BUSY_RETRY_DELAYS_MS[attempt]);
+                    now + BUSY_RETRY_DELAYS_MS[round]);
                 return;
               }
               callback.onFailure(failure);
@@ -157,6 +181,13 @@ public class GeminiRestRequestPerformer {
         callback.onCancelled();
       }
     };
+  }
+
+  /** The model in a request [url], for the log. */
+  private static String modelOf(String url) {
+    int start = url.lastIndexOf('/') + 1;
+    int end = url.indexOf(':', start);
+    return end > start ? url.substring(start, end) : url;
   }
 
   /** Drops the retries waiting to be sent, when the request is given up. */
