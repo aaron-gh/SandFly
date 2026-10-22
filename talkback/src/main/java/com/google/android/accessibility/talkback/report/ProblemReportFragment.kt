@@ -39,7 +39,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper
 
 /**
- * A problem report being written, opened from Settings > Report a problem. What is typed is kept
+ * A problem report being written, opened from Settings > Send feedback. What is typed is kept
  * in a draft, until the report is sent or the draft deleted, so a report can be finished later. The
  * email address and the two switches are kept for every report.
  */

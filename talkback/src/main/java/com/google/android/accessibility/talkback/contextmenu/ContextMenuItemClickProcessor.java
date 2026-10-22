@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.menurules.CustomActionMenu;
 import com.google.android.accessibility.talkback.preference.base.TextToSpeechSettingsFragment;
+import com.google.android.accessibility.talkback.report.ReportsFragment;
 import com.google.android.accessibility.talkback.preference.base.VerbosityPrefFragment;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -96,6 +97,7 @@ public class ContextMenuItemClickProcessor {
         || (itemId == R.id.sound_feedback)
         || (itemId == R.id.vibration_feedback)
         || (itemId == R.id.talkback_settings)
+        || (itemId == R.id.send_feedback)
         || (itemId == R.id.tts_settings)
         || (itemId == R.id.enable_dimming)
         || (itemId == R.id.disable_dimming)
@@ -152,6 +154,10 @@ public class ContextMenuItemClickProcessor {
     } else if (itemId == R.id.talkback_settings) {
       final Intent settingsIntent = createSettingsIntent();
       service.startActivity(settingsIntent);
+    } else if (itemId == R.id.send_feedback) {
+      Intent intent = createSettingsIntent();
+      intent.putExtra(FRAGMENT_NAME, ReportsFragment.class.getName());
+      service.startActivity(intent);
     } else if (itemId == R.id.tts_settings) {
       Intent intent = createSettingsIntent();
       intent.putExtra(FRAGMENT_NAME, TextToSpeechSettingsFragment.class.getName());
