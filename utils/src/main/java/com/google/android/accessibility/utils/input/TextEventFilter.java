@@ -36,6 +36,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
+import java.util.function.LongPredicate;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -95,6 +96,12 @@ public class TextEventFilter {
   }
 
   private static final int PHYSICAL_KEY_TIMEOUT = 100;
+
+  /**
+   * Tells, for a text change at an event time, whether a keyboard that speaks for itself typed it,
+   * so that it isn't echoed again.
+   */
+  private @Nullable LongPredicate echoSuppressor;
 
   ///////////////////////////////////////////////////////////////////////////////////
   // Member variables
@@ -338,8 +345,15 @@ public class TextEventFilter {
 
   @KeyboardEchoType
   private int readKeyboardEcho(long textEventTime) {
+    if (echoSuppressor != null && echoSuppressor.test(textEventTime)) {
+      return PREF_ECHO_NONE;
+    }
     Integer echo = keyboardEcho.get(getTypingInput(textEventTime));
     return echo == null ? PREF_ECHO_CHARACTERS_AND_WORDS : echo;
+  }
+
+  public void setEchoSuppressor(@Nullable LongPredicate echoSuppressor) {
+    this.echoSuppressor = echoSuppressor;
   }
 
   public boolean shouldEchoAddedText(long eventTime) {

@@ -35,10 +35,16 @@ interface HandwritingRecognizer {
   }
 
   /**
-   * Recognizes [strokes], written in an area of [width] by [height] pixels, and calls [onResult]
-   * on the main thread.
+   * Recognizes [strokes], written in an area of [width] by [height] pixels after [preContext], the
+   * text before them, and calls [onResult] on the main thread.
    */
-  fun recognize(strokes: List<List<InkPoint>>, width: Float, height: Float, onResult: (Result) -> Unit)
+  fun recognize(
+    strokes: List<List<InkPoint>>,
+    width: Float,
+    height: Float,
+    preContext: String = "",
+    onResult: (Result) -> Unit,
+  )
 
   /**
    * Checks that the model for the language is on the device, and starts downloading it if not.

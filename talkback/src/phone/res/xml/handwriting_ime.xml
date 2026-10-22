@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SandFly's handwriting keyboard. Its language is the device's. -->
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:supportsSwitchingToNextInputMethod="true">
+  <subtype
+      android:imeSubtypeLocale=""
+      android:imeSubtypeMode="keyboard"
+      android:label="@string/handwriting_keyboard_name" />
+</input-method>

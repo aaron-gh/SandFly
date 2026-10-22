@@ -626,6 +626,24 @@ In **On-screen keyboard** > **Typing method**, **Hold finger to select any key, 
 
 On Android 13 and later, **On-screen keyboard** > **Typing method** has **Tap any key to type it, or hold finger to select any key, then lift**. A quick tap on a key types it at once, as when typing directly in VoiceOver, so quick double letters type twice. Holding a finger on the keyboard explores the keys, and lifting types the key under the finger.
 
+### Handwriting keyboard
+
+**SandFly handwriting** is a keyboard that types what you write on the screen with one finger, on phones and tablets with Android 11 or later. To turn it on, choose **Typing and braille** > **Handwriting keyboard**, which opens Android's keyboard settings, and then choose it as the keyboard in a text field. It fills the screen, and while SandFly is on, touches on it go straight to it instead of through touch exploration.
+
+Write a letter, several letters or a whole word anywhere on the screen. Strokes that follow each other within 0.6 seconds are one piece of writing; it is then typed and spoken. Dots, such as on an i, count. Two- and three-finger gestures do the rest:
+
+| Gesture | Action |
+|---|---|
+| Swipe right with two fingers | Space |
+| Swipe left with two fingers | Delete the character before the cursor |
+| Swipe down with two fingers | New line, or the field's action, such as Send, Search or Done |
+| Swipe up with two fingers | Replace the last writing with its next reading, such as "h" for "H", saying which of how many it is |
+| Tap with two fingers | Read the text before the cursor |
+| Swipe down with three fingers | Hide the keyboard |
+| Swipe right or left with three fingers | Switch to the next or previous keyboard |
+
+Handwriting is recognized on the phone by Google's ML Kit, in the phone's language, as in [Write the letter of a reading control](#more-gesture-actions); the first time, its model, about 20 MB, is downloaded from Google. SandFly's keyboard echo doesn't repeat what the keyboard has said. In SandFly's own text fields, the text before the cursor isn't read.
+
 ## Braille keyboard
 
 ### Keyboard echo for the braille keyboard
