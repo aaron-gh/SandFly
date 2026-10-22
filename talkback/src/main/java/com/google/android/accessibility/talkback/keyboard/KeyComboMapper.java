@@ -78,6 +78,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.gesture.PullToRefresh;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget.TargetType;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
@@ -134,6 +135,7 @@ public class KeyComboMapper {
   private final CollectionState collectionState;
   private final AccessibilityService accessibilityService;
   private final GestureShortcutMapping gestureShortcutMapping;
+  private final PullToRefresh pullToRefresh;
 
   public KeyComboMapper(
       AccessibilityService accessibilityService,
@@ -160,6 +162,7 @@ public class KeyComboMapper {
     this.batteryMonitor = batteryMonitor;
     this.screenState = screenState;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
+    pullToRefresh = new PullToRefresh(accessibilityService, pipeline, accessibilityFocusMonitor);
     this.processorPhoneticLetters = processorPhoneticLetters;
     this.collectionState = collectionState;
     this.accessibilityService = accessibilityService;
@@ -618,6 +621,7 @@ public class KeyComboMapper {
       case PREVIOUS_VOICE_PROFILE ->
           selectorController.changeVoiceProfile(eventId, /* isNext= */ false);
       case NEXT_VOICE_PROFILE -> selectorController.changeVoiceProfile(eventId, /* isNext= */ true);
+      case REFRESH -> result = pullToRefresh.refresh(eventId);
       case OPEN_MANAGE_KEYBOARD_SHORTCUTS -> {
         if (SettingsUtils.allowLinksOutOfSettings(accessibilityService.getApplicationContext())) {
           openManageKeyboardShortcuts();

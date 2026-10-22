@@ -175,6 +175,7 @@ public class GestureController {
   private final ScreenStateMonitor.State screenState;
   private final ProcessorPhoneticLetters processorPhoneticLetters;
   private final ListEdgeScroller listEdgeScroller;
+  private final PullToRefresh pullToRefresh;
   private final HandwritingCommand handwritingCommand;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
@@ -228,18 +229,21 @@ public class GestureController {
     this.screenState = screenState;
     this.processorPhoneticLetters = processorPhoneticLetters;
     listEdgeScroller = new ListEdgeScroller(service, pipeline, accessibilityFocusMonitor);
+    pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
   }
 
   /** Stops what gestures started that is still going on. */
   public void shutdown() {
     listEdgeScroller.cancel();
+    pullToRefresh.cancel();
     handwritingCommand.shutdown();
   }
 
   /** Stops scrolling to the top or bottom when the user touches the screen or presses a key. */
   public void onUserInputStarted() {
     listEdgeScroller.cancel();
+    pullToRefresh.cancel();
   }
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -328,11 +332,16 @@ public class GestureController {
               actorState.getDirectionNavigation().hasNavigableWebContent(),
               eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_back))) {
-      result = pipeline.returnFeedback(eventId, Feedback.focusDirection(PREVIOUS_PAGE));
+      // At the top of a list, scrolling back pulls it down to refresh, as two fingers do.
+      result =
+          pullToRefresh.pullIfAtTop(eventId)
+              || pipeline.returnFeedback(eventId, Feedback.focusDirection(PREVIOUS_PAGE));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_forward))) {
       result = pipeline.returnFeedback(eventId, Feedback.focusDirection(NEXT_PAGE));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_up))) {
-      result = pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_UP));
+      result =
+          pullToRefresh.pullIfAtTop(eventId)
+              || pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_UP));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_down))) {
       result = pipeline.returnFeedback(eventId, Feedback.focusDirection(SCROLL_DOWN));
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_left))) {
@@ -350,6 +359,8 @@ public class GestureController {
       result = listEdgeScroller.scroll(/* toStart= */ true, eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_bottom))) {
       result = listEdgeScroller.scroll(/* toStart= */ false, eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
+      result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {
       result =
           pipeline.returnFeedback(

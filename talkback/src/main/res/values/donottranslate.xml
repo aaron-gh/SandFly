@@ -1242,6 +1242,7 @@
         <item>@string/shortcut_scroll_forward</item>
         <item>@string/shortcut_scroll_to_top</item>
         <item>@string/shortcut_scroll_to_bottom</item>
+        <item>@string/shortcut_refresh</item>
     </string-array>
 
     <!-- Shortcut preference value of basic navigation -->
@@ -1260,6 +1261,7 @@
         <item>@string/shortcut_value_scroll_forward</item>
         <item>@string/shortcut_value_scroll_to_top</item>
         <item>@string/shortcut_value_scroll_to_bottom</item>
+        <item>@string/shortcut_value_refresh</item>
     </string-array>
 
     <!-- Shortcut preference of system actions -->
@@ -1383,6 +1385,8 @@
   <string name="shortcut_value_scroll_forward">SCROLL_FORWARD</string>
   <string name="shortcut_value_scroll_to_top">SCROLL_TO_TOP</string>
   <string name="shortcut_value_scroll_to_bottom">SCROLL_TO_BOTTOM</string>
+  <string name="shortcut_value_refresh" translatable="false">REFRESH</string>
+  <string name="keycombo_shortcut_global_refresh" translatable="false">keycombo_shortcut_global_refresh</string>
   <string name="shortcut_value_scroll_up">SCROLL_UP</string>
   <string name="shortcut_value_scroll_down">SCROLL_DOWN</string>
   <string name="shortcut_value_scroll_left">SCROLL_LEFT</string>

@@ -215,7 +215,9 @@ object VerticalNavigation {
   fun listOf(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
     AccessibilityNodeInfoUtils.getMatchingAncestor(node, filter { scrollsVertically(it) })
 
-  private fun scrollsVertically(node: AccessibilityNodeInfoCompat): Boolean {
+  /** Whether [node] is shown and scrolls up and down, unlike a slider, a pager or a carousel. */
+  @JvmStatic
+  fun scrollsVertically(node: AccessibilityNodeInfoCompat): Boolean {
     if (!node.isVisibleToUser || !AccessibilityNodeInfoUtils.isScrollable(node)) return false
     when (Role.getRole(node)) {
       Role.ROLE_SEEK_CONTROL,
