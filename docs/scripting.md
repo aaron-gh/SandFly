@@ -166,7 +166,7 @@ A rule can set any of these:
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `sf.rules.add` comes before the manifest.
 
-To find an item's id, class and role, assign **Inspect focused item** to a gesture, or add it to the SandFly menu in **Customize menus**. **Copy screen tree** copies every item on screen as JSON.
+To find an item's id, class and role, assign **Inspect focused item** to a gesture, or add it to the SandFly menu in **SandFly menu**, under **Controls**. **Copy screen tree** copies every item on screen as JSON.
 
 ### Actions in rules
 

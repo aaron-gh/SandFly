@@ -1,26 +1,30 @@
 # Sound themes
 
-A sound theme is a set of sounds and vibrations that replace Backtalk's own, with its own settings
-for control sounds and 3D audio. Install as many as you like and switch between them. Backtalk's
-own sounds are the **Backtalk** theme, which is always there.
+A sound theme is a set of sounds and vibrations that replace SandFly's own, with its own settings
+for control sounds and 3D audio. Install as many as you like and switch between them. SandFly's
+own sounds are the **SandFly** theme, which is always there.
 
-Sound themes are in Backtalk settings, under **Sound and vibration** > **Sound themes**.
+Sound themes are in SandFly settings, under **Sound and vibration** > **Sound themes**.
 
 ## Installing a theme
 
 A theme comes as a theme file, which is a ZIP file. There are several ways to install one:
 
-*   **Open it with Backtalk.** Open a theme file from your file manager or your browser's
+*   **Open it with SandFly.** Open a theme file from your file manager or your browser's
     downloads, and choose **Install sound theme**.
-*   **Share it with Backtalk.** Share a theme file, or a link to one, from another app, and choose
+*   **Share it with SandFly.** Share a theme file, or a link to one, from another app, and choose
     **Install sound theme**. Sharing a page from your browser works too, as long as it is a link
     to a theme file or to a GitHub repository with a theme in it.
 *   **From a file.** In **Sound themes**, under **Install a theme**, choose **From a file**.
 *   **From a link.** In **Sound themes**, under **Install a theme**, choose **From a link**, and
     enter or paste a link. It can be a link to a theme file, or to a GitHub repository, such as
     `https://github.com/someone/my-theme`. Links must start with https.
+*   **From a source.** In **Sound themes**, under **Install a theme**, choose **From a source**,
+    and add the address of a repository, or of a branch or folder in one, on GitHub, GitLab,
+    Codeberg, Gitea or Bitbucket. Its theme files are listed, and choosing one installs it.
+    **Remove source** removes a source from the list; themes installed from it stay installed.
 
-Before installing, Backtalk says who made the theme, what it has, and anything in it that it could
+Before installing, SandFly says who made the theme, what it has, and anything in it that it could
 not use. Choose **Install and use** to switch to it at once, or **Install** to keep using the theme
 you have. Installing a theme with the same name as one you have replaces it.
 
@@ -34,24 +38,24 @@ Under **Settings of** the theme in use:
 *   **Control sounds and vibrations** gives each kind of control, such as buttons, checkboxes
     and edit fields, its own sound and its own vibration, in place of the focus sound and
     vibration, as the [Unspoken](https://github.com/ahicks92/Unspoken) add-on does for NVDA with
-    sounds. Backtalk has no control sounds or vibrations of its own, so they come from the theme.
-    When a control's sound or vibration plays, Backtalk leaves out saying what kind of control it
+    sounds. SandFly has no control sounds or vibrations of its own, so they come from the theme.
+    When a control's sound or vibration plays, SandFly leaves out saying what kind of control it
     is. A control's vibration plays even with **Sound feedback** off, so you can learn the kinds of
     control by touch alone. A kind of control that the theme gives a vibration but no sound plays
     the focus sound with its own vibration. One the theme gives neither plays the focus sound and
-    vibration, and Backtalk says what kind of control it is.
+    vibration, and SandFly says what kind of control it is.
 *   **3D audio** sets when control sounds play in 3D: with headphones, always, or never.
 *   **Sounds** lists every sound, where you can replace any of them with a sound file of your own,
-    preview it, or go back to Backtalk's sound.
+    preview it, or go back to SandFly's sound.
 
 Each theme remembers its own **Control sounds and vibrations** and **3D audio** settings, so
 switching themes switches them too. A theme starts with the settings in its `theme.json`. **Still
 say the kind of control**, in **Sound and vibration**, is the same for every theme.
 
-To replace a few sounds without installing anything, use **Sounds** with the Backtalk theme in use.
+To replace a few sounds without installing anything, use **Sounds** with the SandFly theme in use.
 To share your sounds, select the theme and choose **Save as a theme file**.
 
-## Creating a theme in Backtalk
+## Creating a theme in SandFly
 
 Choose **Create new theme** above the installed themes. Enter a **Name**, and optionally a
 **Description**, **Author**, and **Website**, then choose **OK**. **Cancel** leaves your themes
@@ -67,7 +71,7 @@ setting untouched, it is enabled automatically when the saved theme contains con
 
 A theme file is a ZIP file with a `theme.json` and the sound files, all in the same folder. Name
 each sound after the sound it replaces, such as `focus.wav`. A theme only needs the sounds it
-changes. Every other sound stays Backtalk's own.
+changes. Every other sound stays SandFly's own.
 
     my-theme.zip
         theme.json
@@ -82,7 +86,7 @@ its link installs it.
 
 Files called `LICENSE`, `LICENCE`, `COPYING`, `README`, `NOTICE`, `AUTHORS` or `CREDITS`, with
 `.txt`, `.md` or no extension, are kept with the theme, and saved with it when someone shares it
-again. Put the license of your sounds there. Backtalk leaves out any other files.
+again. Put the license of your sounds there. SandFly leaves out any other files.
 
 A ZIP file of sounds alone, without a `theme.json`, also installs, named after the file.
 
@@ -116,7 +120,7 @@ Every field is optional.
 
 | Field | What it is |
 | --- | --- |
-| `format` | The version of this format, 1. A theme for a newer Backtalk still installs, with a warning. |
+| `format` | The version of this format, 1. A theme for a newer SandFly still installs, with a warning. |
 | `name` | The theme's name. Without one, the theme is named after its file. A theme with the same name as an installed one replaces it. |
 | `author` | Who made it. |
 | `description` | A sentence or two about it. |
@@ -131,7 +135,7 @@ Every field is optional.
 
 Name each sound file after one of these, with the extension of its format. WAV, OGG, MP3, FLAC,
 M4A, AAC and Opus all work, up to 5 MB each and 50 MB for the whole theme. A file Android can't
-play is left out when the theme is installed, and Backtalk says so.
+play is left out when the theme is installed, and SandFly says so.
 
 | Name | Plays for |
 | --- | --- |
@@ -145,19 +149,19 @@ play is left out when the theme is installed, and Backtalk says so.
 | `chime_down` | Leaving a list |
 | `complete` | Action done or end reached |
 | `window_state` | Window change |
-| `next_reading_control` | Next reading control (plays no sound in the Backtalk theme) |
-| `previous_reading_control` | Previous reading control (plays no sound in the Backtalk theme) |
-| `edge_gesture_bottom` | A finger touching an edge where an edge gesture starts, or sliding back to it (plays no sound in the Backtalk theme) |
-| `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the Backtalk theme) |
-| `edge_gesture_top` | An edge gesture reaching its second stage (plays no sound in the Backtalk theme) |
-| `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the Backtalk theme) |
-| `column_wrap` | Swiping forward to an item on a row below (plays no sound in the Backtalk theme) |
-| `column_wrap_back` | Swiping back to an item on a row above (plays no sound in the Backtalk theme) |
+| `next_reading_control` | Next reading control (plays no sound in the SandFly theme) |
+| `previous_reading_control` | Previous reading control (plays no sound in the SandFly theme) |
+| `edge_gesture_bottom` | A finger touching an edge where an edge gesture starts, or sliding back to it (plays no sound in the SandFly theme) |
+| `edge_gesture_middle` | An edge gesture reaching its first stage, or sliding back to it (plays no sound in the SandFly theme) |
+| `edge_gesture_top` | An edge gesture reaching its second stage (plays no sound in the SandFly theme) |
+| `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the SandFly theme) |
+| `column_wrap` | Swiping forward to an item on a row below (plays no sound in the SandFly theme) |
+| `column_wrap_back` | Swiping back to an item on a row above (plays no sound in the SandFly theme) |
 | `typo` | Spelling error |
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
 | `screen_off` | Screen off |
-| `screen_on` | Screen on (plays no sound by default in the Backtalk theme) |
+| `screen_on` | Screen on (plays no sound by default in the SandFly theme) |
 | `loading` | Loading |
 | `browse_mode_on_v4_2` | Browse mode on |
 | `browse_mode_off_v4_2` | Browse mode off |
@@ -195,12 +199,12 @@ A theme can also set any sound to `"none"` in `theme.json` to silence it:
 }
 ```
 
-This is useful for themes modeled after other screen readers, such as iOS VoiceOver, which play fewer sounds. In Backtalk under **Sounds**, you can also select **No sound** (or use the accessibility action **Set to no sound**) for any sound event.
+This is useful for themes modeled after other screen readers, such as iOS VoiceOver, which play fewer sounds. In SandFly under **Sounds**, you can also select **No sound** (or use the accessibility action **Set to no sound**) for any sound event.
 
 The braille keyboard sounds replace Android's keyboard sounds, and play only with **Typing sounds**
 on in the braille keyboard's settings.
 
-The names are also shown in Backtalk: in **Sounds**, selecting a sound shows its name after its
+The names are also shown in SandFly: in **Sounds**, selecting a sound shows its name after its
 title, such as "Click (tick)".
 
 Tips:
@@ -210,23 +214,23 @@ Tips:
 *   Control sounds, and the focus and list sounds while control sounds are on, come from where the
     item is on the screen. They are mixed down to mono for that, so make them mono to hear them as
     you made them.
-*   Leave some headroom. Backtalk plays sounds at the volume of its **Sound feedback volume**
+*   Leave some headroom. SandFly plays sounds at the volume of its **Sound feedback volume**
     setting, which can't make a quiet sound louder than it is.
 
 ### Vibrations
 
-A theme can replace every vibration Backtalk plays, and define each pattern itself. A vibration
-the theme leaves out keeps Backtalk's.
+A theme can replace every vibration SandFly plays, and define each pattern itself. A vibration
+the theme leaves out keeps SandFly's.
 
 Each sound has a vibration, which plays with it even when sound feedback is off. A theme gives a
 sound its own vibration by the name of the sound, as in the table above. It then replaces that
-vibration everywhere it plays: with the sound, and wherever Backtalk plays the same vibration
+vibration everywhere it plays: with the sound, and wherever SandFly plays the same vibration
 without the sound, such as the click vibration of the circle menu and the focus vibration of
 selection. `radial_menu` replaces the vibrations of all eight circle menu notes. The braille display
 sounds (`display_connected`, `display_disconnected`, `double_beep`, `turn_on`, `turn_off` and
 `calibration_done`) have no vibration, so they can't have one in a theme either.
 
-Backtalk has no vibrations of its own for `next_reading_control`, `previous_reading_control`,
+SandFly has no vibrations of its own for `next_reading_control`, `previous_reading_control`,
 `edge_gesture_bottom`, `insertion_point_moved`, `column_wrap` and `column_wrap_back`, so they vibrate
 only with the theme's. `column_wrap` and `column_wrap_back` play with the focus sound, and their
 vibrations play in place of the focus vibration.
@@ -252,7 +256,7 @@ touch's vibration setting on.
 #### Control vibrations
 
 A theme can give each kind of control its own vibration, by the names of the control sounds, such
-as `control_button`, so that people can tell what a control is by touch alone. Backtalk has none
+as `control_button`, so that people can tell what a control is by touch alone. SandFly has none
 of its own. A control vibration:
 
 *   plays in place of the focus vibration, with **Control sounds and vibrations** on;
@@ -303,7 +307,7 @@ instead, and many phones lack `thud` and `spin`, so `click`, `tick`, `quick_rise
 `quick_fall` are the safest.
 
 Times can be up to 5000 ms, and each form up to 64 steps. A vibration that is not well formed is
-left out when the theme is installed, and Backtalk says why.
+left out when the theme is installed, and SandFly says why.
 
 The **Vibrations** switches in **Individual sounds and vibrations** turn off a theme's vibrations
 too: the switch of the vibration a theme's vibration replaces turns it off, and plays the theme's
@@ -312,9 +316,9 @@ vibration when you preview it.
 ### Sharing a theme
 
 *   Put the theme in a GitHub repository, with `theme.json` and the sounds at the top, and share
-    the repository's link. Anyone can paste it into **From a link**, or share it to Backtalk from
+    the repository's link. Anyone can paste it into **From a link**, or share it to SandFly from
     their browser.
-*   Or share the theme file itself, for anyone to open with Backtalk.
+*   Or share the theme file itself, for anyone to open with SandFly.
 *   To make a theme file from sounds on your phone, choose them in **Sounds** and use **Save as a
     theme file**. Its `theme.json` has the theme's settings.
 
