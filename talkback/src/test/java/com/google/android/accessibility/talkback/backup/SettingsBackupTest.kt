@@ -103,4 +103,42 @@ class SettingsBackupTest {
       )
     )
   }
+
+  @Test
+  fun aBacktalkFileIsImported() {
+    prefs
+      .edit()
+      .clear()
+      .putBoolean("sandfly_only", true)
+      .putString("pref_gemini_api_key", "k")
+      .commit()
+    braille.edit().clear().commit()
+    val backtalk =
+      """{"format":1,"stores":{""" +
+        """"main":{"a_switch":{"t":"bool","v":true},"a_float":{"t":"float","v":1.5},""" +
+        """"a_set":{"t":"set","v":["1","2"]},"pref_gemini_api_key":{"t":"string","v":"x"},""" +
+        """"tutorial_shown":{"t":"bool","v":true}},""" +
+        """"braille_keyboard":{"code":{"t":"string","v":"EN_UEB"}}}}"""
+
+    assertTrue(SettingsBackup.import(context, backtalk))
+
+    assertEquals(true, prefs.getBoolean("a_switch", false))
+    assertEquals(1.5f, prefs.getFloat("a_float", 0f))
+    assertEquals(setOf("1", "2"), prefs.getStringSet("a_set", null))
+    assertEquals("EN_UEB", braille.getString("code", null))
+    // SandFly's own settings and the key stay; Backtalk's state isn't brought over.
+    assertTrue(prefs.getBoolean("sandfly_only", false))
+    assertEquals("k", prefs.getString("pref_gemini_api_key", null))
+    assertFalse(prefs.contains("tutorial_shown"))
+  }
+
+  @Test
+  fun aDamagedBacktalkFileChangesNothing() {
+    prefs.edit().clear().putBoolean("a_switch", false).commit()
+    val damaged =
+      """{"format":1,"stores":{"main":{"a_switch":{"t":"bool","v":true},"b":{"t":"what"}}}}"""
+
+    assertFalse(SettingsBackup.import(context, damaged))
+    assertFalse(prefs.getBoolean("a_switch", true))
+  }
 }
