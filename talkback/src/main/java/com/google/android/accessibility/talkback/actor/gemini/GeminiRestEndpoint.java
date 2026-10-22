@@ -102,6 +102,10 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
    * a key entered in settings works at once.
    */
   private String apiKey() {
+    // Gemini is asked only while it is the service in use; with none, nothing goes to the cloud.
+    if (AiProvider.active(prefs) == AiProvider.NONE) {
+      return "";
+    }
     return GeminiApiKey.effectiveKey(prefs, builtInApiKey);
   }
 

@@ -2,12 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title of the setting, and of its dialog, for the Gemini API key. [CHAR LIMIT=40] -->
     <string name="title_pref_gemini_api_key">Gemini API key</string>
-    <!-- Summary of the Gemini API key setting when the user has entered a key. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_gemini_api_key_set">Set. Describe image and describe screen use Gemini</string>
     <!-- Summary of the Gemini API key setting when the user has not entered a key, but the app was built with one. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_gemini_api_key_built_in">Using the key built into this app</string>
-    <!-- Summary of the Gemini API key setting when there is no key. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_gemini_api_key_not_set">Not set. Without a key, describe image only reads text, and describe screen needs on-device AI</string>
     <!-- Message in the dialog where the user enters a Gemini API key. [CHAR LIMIT=NONE] -->
     <string name="gemini_api_key_dialog_message">Get a free API key from Google AI Studio, at aistudio.google.com/apikey, and paste it here. To remove your key, clear the field and save.\n\nImages and screens that you describe are sent to Google. On the free tier, Google can use them to improve its products.</string>
     <!-- Hint in the empty field for the Gemini API key. [CHAR LIMIT=30] -->
@@ -49,8 +45,6 @@
     <string name="ai_service_error_busy">The AI service is busy right now. Try again in a moment.</string>
     <!-- Spoken when the other AI service does not answer in time. [CHAR LIMIT=NONE] -->
     <string name="ai_service_error_timeout">The AI service took too long to answer. Try again.</string>
-    <!-- Summary of the Gemini API key setting while another AI service is set up. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_gemini_api_key_other_service">Not used while another AI service is in use</string>
 
     <!-- Names of the AI services that Describe image and Describe screen can use. [CHAR LIMIT=40] -->
     <string name="ai_provider_gemini">Gemini</string>
@@ -60,6 +54,10 @@
     <string name="ai_provider_groq">Groq</string>
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
+    <!-- The choice of no AI service: images and screens are described on the phone, or only their text is read. [CHAR LIMIT=40] -->
+    <string name="ai_provider_none">None</string>
+    <!-- Switch in Gemini settings that makes Gemini the AI service in use. [CHAR LIMIT=50] -->
+    <string name="ai_provider_use_gemini">Use Gemini</string>
     <!-- An AI service at an address the user enters. [CHAR LIMIT=40] -->
     <string name="ai_provider_other">Other service</string>
     <!-- Heading of the AI service settings in Automatic descriptions. [CHAR LIMIT=40] -->
@@ -68,8 +66,8 @@
     <string name="title_pref_ai_provider">AI service</string>
     <!-- Title of the settings screen of one AI service, such as "Claude settings". [CHAR LIMIT=50] -->
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> settings</string>
-    <!-- Summary of the AI service setting when the chosen one has no model yet. [CHAR LIMIT=NONE] -->
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, not set up, so Gemini is used</string>
+    <!-- Summary of the AI service setting when the chosen one is not set up. [CHAR LIMIT=NONE] -->
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, not set up</string>
     <!-- Summary of an AI service's settings entry when it is the one in use. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_in_use">In use</string>
     <!-- Summary of an AI service's settings entry when it has no model. [CHAR LIMIT=NONE] -->
