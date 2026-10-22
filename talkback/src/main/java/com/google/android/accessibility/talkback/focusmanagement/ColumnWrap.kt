@@ -25,21 +25,14 @@ import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 
 /**
  * Finds when moving to the next or previous item leaves the row of items the focus is in: forward
- * to an item below it, or back to an item above it, when the row has another item beside the
- * focused one. Rows are found by where items are on the screen, so this works for tables, grids,
- * home screens and lists whose rows hold several items, such as a title with buttons beside it. A
- * list with one item in each row has no row to leave.
+ * to an item below it, or back to an item above it. Rows are found by where items are on the
+ * screen, so each item of a list is a row of its own, and the items of a table, a grid or a row
+ * with buttons beside a title share one.
  */
 object ColumnWrap {
   const val NONE = 0
   const val FORWARD = 1
   const val BACK = 2
-
-  /** How far up from the focused item the container of its row may be. */
-  private const val MAX_ROW_DEPTH = 3
-
-  /** The most items looked at to find another item in the focused item's row. */
-  private const val MAX_ROW_NODES = 200
 
   /** How long a web page has to move focus after being asked to, in milliseconds. */
   private const val WEB_FOCUS_TIMEOUT_MS = 1000L
@@ -76,7 +69,7 @@ object ColumnWrap {
     return try {
       val a = bounds(from)
       val b = bounds(to)
-      if (a.isEmpty || b.isEmpty || !leavesRow(a, b, forward) || !hasItemBeside(from, a)) NONE
+      if (a.isEmpty || b.isEmpty || from.windowId != to.windowId || !leavesRow(a, b, forward)) NONE
       else if (forward) FORWARD
       else BACK
     } catch (e: RuntimeException) {
@@ -92,13 +85,6 @@ object ColumnWrap {
   @JvmStatic
   fun leavesRow(from: Rect, to: Rect, forward: Boolean): Boolean =
     if (forward) to.centerY() >= from.bottom else to.centerY() <= from.top
-
-  /** Whether an item at [other] is beside an item at [item], in its row. */
-  @JvmStatic
-  fun isBeside(other: Rect, item: Rect): Boolean =
-    other.centerY() > item.top &&
-      other.centerY() < item.bottom &&
-      (other.right <= item.left || other.left >= item.right)
 
   /**
    * Remembers that a web page was asked to move focus [forward] or back from [pivot], so that the
@@ -124,41 +110,6 @@ object ColumnWrap {
       return NONE
     }
     return detect(pivot, AccessibilityNodeInfoUtils.toCompat(event.source), webForward, webRtl)
-  }
-
-  /**
-   * Whether the row of [node], at [place], has another item that can take focus beside it, in the
-   * containers of [node] up to [MAX_ROW_DEPTH] levels up.
-   */
-  private fun hasItemBeside(node: AccessibilityNodeInfoCompat, place: Rect): Boolean {
-    var searched: AccessibilityNodeInfoCompat = node
-    var container = node.parent
-    var looked = 0
-    for (depth in 0 until MAX_ROW_DEPTH) {
-      if (container == null) return false
-      val queue = ArrayDeque<AccessibilityNodeInfoCompat>()
-      // The container searched one level down is left out.
-      for (i in 0 until container.childCount) {
-        container.getChild(i)?.takeIf { it != searched }?.let(queue::add)
-      }
-      while (queue.isNotEmpty() && looked < MAX_ROW_NODES) {
-        val candidate = queue.removeFirst()
-        looked++
-        if (candidate == node || !candidate.isVisibleToUser) continue
-        val bounds = bounds(candidate)
-        if (bounds.isEmpty || bounds.bottom <= place.top || bounds.top >= place.bottom) continue
-        if (
-          isBeside(bounds, place) && AccessibilityNodeInfoUtils.isAccessibilityFocusable(candidate)
-        ) {
-          return true
-        }
-        for (i in 0 until candidate.childCount) candidate.getChild(i)?.let(queue::add)
-      }
-      if (looked >= MAX_ROW_NODES) return false
-      searched = container
-      container = container.parent
-    }
-    return false
   }
 
   private fun bounds(node: AccessibilityNodeInfoCompat): Rect =

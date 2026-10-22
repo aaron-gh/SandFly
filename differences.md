@@ -279,11 +279,11 @@ TalkBack plays a sound and vibration when a gesture starts and another when it e
 - **Next reading control** and **Previous reading control**: selecting another reading control, with a gesture, the rotor, a keyboard shortcut or the braille keyboard.
 - **Edge gesture bottom**, **Edge gesture middle** and **Edge gesture top**: a finger touching an edge where an edge gesture starts, the gesture reaching its first click, and the gesture reaching its second click. Sliding back plays the sound of the place the finger is back at. Lifting plays nothing.
 - **Insertion point moved**: moving by character, word, line or paragraph moves the cursor in a text field you are editing.
-- **Column wrap** and **Column wrap back**: swiping forward to an item below the row you are in, and back to an item above it, when the row has more than one item, such as rows of icons on a home screen, cells of a table, or a title with buttons beside it. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
+- **Column wrap** and **Column wrap back**: swiping forward to an item below the row you are in, and back to an item above it. Each item of a list is a row of its own; items side by side, such as icons on a home screen, cells of a table, or a title with buttons beside it, share a row. The sound plays with the focus sound, and its vibration plays in place of the focus vibration.
 
 SandFly has no sounds of its own for these. The edge gesture middle and top have SandFly's edge gesture vibrations; the others vibrate only with a theme's vibration. Each has its own sound and vibration switch in **Individual sounds and vibrations**.
 
-Rows are found by where items are on the screen: an item is in the row of the focused item when its middle is level with it, beside it, and it can take focus. A list with one item in each row plays no column wrap sound, and neither does leaving a row that has only one item, such as a heading. Column wrap doesn't play for swipes that move from one window to another.
+Rows are found by where items are on the screen: an item is on another row when its middle is below the bottom of the focused item, or above its top. Column wrap doesn't play for swipes that move from one window to another.
 
 ### 3D audio
 
