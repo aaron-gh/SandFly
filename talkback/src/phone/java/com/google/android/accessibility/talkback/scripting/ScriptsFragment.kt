@@ -52,7 +52,10 @@ class ScriptsFragment : ScriptInstallFragment() {
     }
   }
 
-  override fun state(): Any = store.all() to store.allOff
+  private var checking = false
+
+  override fun state(): Any =
+    listOf(store.all(), store.allOff, checking, ScriptUpdater.available(requireContext()))
 
   override fun build(screen: PreferenceScreen) {
     screen.switch(
@@ -67,6 +70,29 @@ class ScriptsFragment : ScriptInstallFragment() {
     }
     screen.item(Preference(requireContext()), getString(R.string.script_sources)) {
       fragment = ScriptSourcesFragment::class.java.name
+    }
+    screen.switch(
+      getString(R.string.scripts_auto_update),
+      null,
+      ScriptUpdater.isAutomatic(requireContext()),
+    ) {
+      ScriptUpdater.setAutomatic(requireContext(), it)
+    }
+    screen.action(
+      getString(if (checking) R.string.scripts_checking_updates else R.string.scripts_check_updates)
+    ) {
+      checkForUpdates()
+    }
+    val available = ScriptUpdater.available(requireContext())
+    if (available.isNotEmpty()) {
+      val category = screen.category(getString(R.string.scripts_updates_category))
+      available.forEach { update ->
+        category.action(getString(R.string.script_update_available, update.name, update.version)) {
+          toast(getString(R.string.script_source_downloading, update.name))
+          val context = requireContext().applicationContext
+          read(origin = update.origin) { ScriptUpdater.download(context, update) }
+        }
+      }
     }
     if (store.find(ScriptStore.EXAMPLE_ID) == null) {
       screen.action(
@@ -90,6 +116,31 @@ class ScriptsFragment : ScriptInstallFragment() {
           it.id,
         )
       }
+    }
+  }
+
+  private fun checkForUpdates() {
+    if (checking) return
+    checking = true
+    rebuild()
+    ScriptUpdater.check(requireContext(), install = ScriptUpdater.isAutomatic(requireContext())) { result ->
+      checking = false
+      if (!isAdded) return@check
+      rebuild()
+      toast(
+        when {
+          result.updated.isNotEmpty() ->
+            resources.getQuantityString(
+              R.plurals.scripts_updated,
+              result.updated.size,
+              result.updated.size,
+              result.updated.joinToString(", "),
+            )
+          result.available.isNotEmpty() -> getString(R.string.scripts_updates_to_approve)
+          result.failed > 0 -> getString(R.string.scripts_update_check_failed)
+          else -> getString(R.string.scripts_up_to_date)
+        }
+      )
     }
   }
 

@@ -35,6 +35,8 @@ data class InstalledScript(
   val granted: Set<ScriptPermission>,
   val revision: Long,
   val language: String = "",
+  /** Where the script was installed from, as [ScriptUpdater.originOf] gives it, or empty. */
+  val origin: String = "",
 ) {
   val id: String
     get() = manifest.id
@@ -87,8 +89,18 @@ class ScriptStore private constructor(private val context: Context) {
 
   fun removeListener(listener: Listener) = synchronized(listeners) { listeners.remove(listener) }
 
+  /**
+   * Installs [pkg], or replaces the installed script with its id. [origin] is where it came from;
+   * null keeps what the installed script has.
+   */
+  @Synchronized
   @Throws(IOException::class)
-  fun install(pkg: ScriptPackage, granted: Set<ScriptPermission>, enabled: Boolean = true) {
+  fun install(
+    pkg: ScriptPackage,
+    granted: Set<ScriptPermission>,
+    enabled: Boolean = true,
+    origin: String? = null,
+  ) {
     val id = pkg.manifest.id
     val staging = File(scriptsDir(), ".$id.new").apply { deleteRecursively() }
     for ((path, bytes) in pkg.files) {
@@ -119,6 +131,7 @@ class ScriptStore private constructor(private val context: Context) {
           existing?.enabled ?: enabled,
           granted intersect pkg.manifest.permissions,
           System.currentTimeMillis(),
+          origin = origin ?: existing?.origin.orEmpty(),
         )
       if (existing == null) list + installed else list.map { if (it.id == id) installed else it }
     }
@@ -132,6 +145,8 @@ class ScriptStore private constructor(private val context: Context) {
   }
 
   fun setEnabled(id: String, enabled: Boolean) = update(id) { it.copy(enabled = enabled) }
+
+  fun setOrigin(id: String, origin: String) = update(id) { it.copy(origin = origin) }
 
   fun setGranted(id: String, permission: ScriptPermission, granted: Boolean) =
     update(id) { script ->
@@ -297,6 +312,7 @@ class ScriptStore private constructor(private val context: Context) {
               entry.optBoolean("enabled", false),
               entry.optJSONArray("granted").strings().mapNotNull(ScriptPermission::fromKey).toSet(),
               entry.optLong("revision", 0L),
+              origin = entry.optString("origin"),
             )
           } catch (e: ManifestException) {
             LogUtils.e(TAG, "Dropping a script whose manifest no longer parses: %s", e.message)
@@ -317,6 +333,7 @@ class ScriptStore private constructor(private val context: Context) {
             "enabled" to it.enabled,
             "granted" to JSONArray(it.granted.map(ScriptPermission::key)),
             "revision" to it.revision,
+            "origin" to it.origin,
           )
         }
       )

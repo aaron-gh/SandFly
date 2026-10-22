@@ -23,16 +23,17 @@ import java.util.concurrent.Executors
 /** A screen that installs scripts, after listing what each one can do. */
 abstract class ScriptInstallFragment : ScriptScreenFragment() {
 
-  protected fun read(bytes: () -> ByteArray) {
+  /** Reads a script and asks before installing it. [origin] is where it came from, if from a source. */
+  protected fun read(origin: String? = null, bytes: () -> ByteArray) {
     executor.execute {
       val result = runCatching { ScriptPackage.read(bytes()) }
       view?.post {
-        if (isAdded) result.fold(::confirmInstall) { importFailed(it.message) }
+        if (isAdded) result.fold({ confirmInstall(it, origin) }) { importFailed(it.message) }
       }
     }
   }
 
-  private fun confirmInstall(pkg: ScriptPackage) {
+  private fun confirmInstall(pkg: ScriptPackage, origin: String?) {
     val context = requireContext()
     val translations =
       ScriptTranslations.load(ScriptTranslations.languageOf(context)) { pkg.files[it] }
@@ -58,7 +59,7 @@ abstract class ScriptInstallFragment : ScriptScreenFragment() {
     val message =
       if (existing == null) installMessage(manifest, warning)
       else updateMessage(existing.manifest, manifest, added, warning)
-    confirm(title, message, button) { install(pkg, granted, done) }
+    confirm(title, message, button) { install(pkg, granted, done, origin) }
   }
 
   private fun installMessage(manifest: ScriptManifest, warning: String?): String {
@@ -105,9 +106,9 @@ abstract class ScriptInstallFragment : ScriptScreenFragment() {
       )
       .joinToString("\n\n")
 
-  private fun install(pkg: ScriptPackage, granted: Set<ScriptPermission>, done: String) =
+  private fun install(pkg: ScriptPackage, granted: Set<ScriptPermission>, done: String, origin: String?) =
     try {
-      store.install(pkg, granted)
+      store.install(pkg, granted, origin = origin)
       toast(done)
     } catch (e: IOException) {
       importFailed(e.message)

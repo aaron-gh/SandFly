@@ -23,6 +23,8 @@ To find scripts, choose **Script sources** on the Scripts screen and **Add sourc
 
 Only public repositories on these services work. The source's `.lua` and `.zip` files are listed. Choosing one downloads it and shows the same install dialog as **Import script**. **Remove source** on a source's screen removes it from the list; scripts already installed from it stay installed.
 
+SandFly checks installed scripts for a newer `version` in the source they came from once a day, and **Check for updates** on the Scripts screen checks now. With **Update scripts automatically** on, a newer version is installed without asking when it is by the same author, asks for no new permissions, is made for this SandFly, and comes from the script's own source; scripts installed before SandFly kept their source are updated this way only from SandFly's own scripts. Any other newer version is listed under **Updates** on the Scripts screen, and installs after the usual dialog. A script is found in a source by the file it came from, or, if SandFly doesn't know it, by a file named after its `id`.
+
 Scripts run in [Lua 5.4](https://www.lua.org/manual/5.4/) through [LuaJava](https://github.com/gudzpoz/luajava). A script has the `string`, `table`, `math`, `utf8` and `coroutine` libraries, `os.time`, `os.clock`, `os.date` and `os.difftime`, `json` for JSON text, and the `sf` table described below. It has no `io`, `debug` or `package`, no access to files, and loads only Lua text, not compiled Lua. Unless it has the [`java` permission](#java), it can't reach Android or Java; everything goes through `sf`.
 
 ## A first script
@@ -59,7 +61,7 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `author` | Required. |
 | `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 1. |
 | `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with an older version. |
-| `version` | The script's own version, as text. The default is `'1'`. |
+| `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
 | `apps` | Where the script runs. Leave it out for a script that runs in every app. See [Where a script runs](#where-a-script-runs). |
