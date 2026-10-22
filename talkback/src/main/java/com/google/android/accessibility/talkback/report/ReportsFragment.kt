@@ -25,7 +25,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 
 /**
- * Settings > Report a problem: a new report, the inbox of sent reports with their status and
+ * Settings > Send feedback: a new report, the inbox of sent reports with their status and
  * replies, and the drafts.
  */
 class ReportsFragment : TalkbackBaseFragment() {

@@ -1,6 +1,6 @@
 # SandFly report server
 
-A Cloudflare Worker that receives the reports from Settings > Report a problem and creates
+A Cloudflare Worker that receives the reports from Settings > Send feedback and creates
 issues in a private GitHub repository. Reporters need no GitHub account. The GitHub token is
 stored only in the Worker.
 

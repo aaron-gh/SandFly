@@ -286,6 +286,13 @@
             android:summary="@string/summary_talkback_preferences"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_send_feedback_default"
+            android:key="@string/pref_show_context_menu_send_feedback_setting_key"
+            android:order="23"
+            android:title="@string/title_pref_problem_report"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_show_context_menu_tts_settings_default"
             android:key="@string/pref_show_context_menu_tts_settings_setting_key"
             android:order="24"
