@@ -1410,6 +1410,27 @@
   <string name="shortcut_value_select_next_setting">SELECT_NEXT_SETTING</string>
   <string name="shortcut_value_write_reading_control">WRITE_READING_CONTROL</string>
   <string name="pref_handwriting_keyboard_key" translatable="false">pref_handwriting_keyboard</string>
+  <!-- How long handwriting waits after a stroke for the next one, in milliseconds. -->
+  <string name="pref_handwriting_wait_key" translatable="false">pref_handwriting_wait</string>
+  <string name="pref_handwriting_wait_default" translatable="false">600</string>
+  <string-array name="pref_handwriting_wait_entries">
+    <item>@string/value_handwriting_wait_200</item>
+    <item>@string/value_handwriting_wait_300</item>
+    <item>@string/value_handwriting_wait_400</item>
+    <item>@string/value_handwriting_wait_500</item>
+    <item>@string/value_handwriting_wait_600</item>
+    <item>@string/value_handwriting_wait_800</item>
+    <item>@string/value_handwriting_wait_1000</item>
+  </string-array>
+  <string-array name="pref_handwriting_wait_values">
+    <item>200</item>
+    <item>300</item>
+    <item>400</item>
+    <item>500</item>
+    <item>600</item>
+    <item>800</item>
+    <item>1000</item>
+  </string-array>
   <string name="shortcut_value_select_previous_setting">SELECT_PREVIOUS_SETTING</string>
   <!-- TODO: add selector shortcuts to perform next and previous actions specific to the selected setting. add shortcuts to string-array pref_shortcut_values-->
   <string name="shortcut_value_selected_setting_next_action">SELECTED_SETTING_NEXT_ACTION</string>

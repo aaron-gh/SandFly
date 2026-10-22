@@ -218,7 +218,7 @@ class HandwritingIme : InputMethodService() {
           return
         }
         // A tap is a stroke too: a dot, such as on an i, or a full stop.
-        if (strokes.isNotEmpty()) handler.postDelayed(recognizeNow, STROKE_WAIT_MS)
+        if (strokes.isNotEmpty()) handler.postDelayed(recognizeNow, HandwritingSettings.waitMs(this))
       }
       MotionEvent.ACTION_CANCEL -> {
         strokes.clear()
@@ -450,8 +450,6 @@ class HandwritingIme : InputMethodService() {
     const val TAG = "HandwritingIme"
     const val PREF_TUTORIAL_DONE = "pref_handwriting_tutorial_done"
     const val CM_PER_INCH = 2.54f
-    /** How long after a stroke ends the writing is recognized, unless another stroke starts. */
-    const val STROKE_WAIT_MS = 600L
     const val TAP_MS = 300L
     const val MAX_STROKES = 40
     const val MAX_POINTS = 2_000

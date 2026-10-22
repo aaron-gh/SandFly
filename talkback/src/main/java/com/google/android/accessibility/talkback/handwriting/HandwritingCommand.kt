@@ -162,7 +162,7 @@ class HandwritingCommand(
           return
         }
         // A letter can have more strokes, so wait a moment for the next one.
-        handler.postDelayed(recognizeNow, STROKE_WAIT_MS)
+        handler.postDelayed(recognizeNow, HandwritingSettings.waitMs(service))
       }
       MotionEvent.ACTION_CANCEL -> cancel()
     }
@@ -310,8 +310,6 @@ class HandwritingCommand(
 
   private companion object {
     const val TAG = "HandwritingCommand"
-    /** How long after a stroke ends the letter is recognized, unless another stroke starts. */
-    const val STROKE_WAIT_MS = 600L
     /** The surface closes after this long without writing. */
     const val IDLE_CLOSE_MS = 10_000L
     const val MAX_STROKES = 10

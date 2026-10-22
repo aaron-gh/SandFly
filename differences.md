@@ -630,7 +630,7 @@ On Android 13 and later, **On-screen keyboard** > **Typing method** has **Tap an
 
 **SandFly handwriting** is a keyboard that types what you write on the screen with one finger, on phones and tablets with Android 11 or later. To turn it on, choose **Typing and braille** > **Handwriting keyboard**, which opens Android's keyboard settings, and then choose it as the keyboard in a text field. It fills the screen, and while SandFly is on, touches on it go straight to it instead of through touch exploration.
 
-Write a letter, several letters or a whole word anywhere on the screen. Strokes that follow each other within 0.6 seconds are one piece of writing; it is then typed and spoken. Dots, such as on an i, count. Two- and three-finger gestures do the rest:
+Write a letter, several letters or a whole word anywhere on the screen. Strokes that follow each other within 0.6 seconds are one piece of writing; it is then typed and spoken. **Typing and braille** > **Wait after writing** sets this wait, from 0.2 to 1 second, for the keyboard and for **Write the letter of a reading control**. A shorter wait answers sooner, but a letter with several strokes, such as H, needs each stroke to start within it. Dots, such as on an i, count. Two- and three-finger gestures do the rest:
 
 | Gesture | Action |
 |---|---|
