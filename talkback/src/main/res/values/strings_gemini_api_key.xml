@@ -16,6 +16,20 @@
     <string name="gemini_api_key_save">Save</string>
     <!-- Button that opens Google AI Studio in the browser to get a Gemini API key. [CHAR LIMIT=20] -->
     <string name="gemini_api_key_get">Get a key</string>
+    <!-- Title of the setting, and of its list, for the Gemini model that Describe image and Describe screen ask. [CHAR LIMIT=40] -->
+    <string name="title_pref_gemini_model">Gemini model</string>
+    <!-- The choice of the Gemini model setting that leaves it to SandFly. [CHAR LIMIT=40] -->
+    <string name="gemini_model_automatic">Automatic</string>
+    <!-- Summary of the Gemini model setting on Automatic. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_model_automatic">Automatic: Gemini Flash, then Flash-Lite when Flash is busy</string>
+    <!-- Summary of the Gemini model setting when the user chose a model, such as gemini-3.6-flash. [CHAR LIMIT=NONE] -->
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, then Flash-Lite when it is busy</string>
+    <!-- Shown while SandFly gets the list of Gemini models from Google. [CHAR LIMIT=NONE] -->
+    <string name="gemini_model_loading">Getting the models…</string>
+    <!-- Shown when the list of Gemini models could not be got, with the reason. [CHAR LIMIT=NONE] -->
+    <string name="gemini_model_list_failed">Could not get the models: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <!-- Shown when the Gemini model setting is opened without an API key. [CHAR LIMIT=NONE] -->
+    <string name="gemini_model_needs_key">Set a Gemini API key first</string>
     <!-- Link text in the AI consent dialogs, to the terms that cover requests to the Gemini API. -->
     <string name="gemini_api_terms_link">Gemini API Additional Terms of Service</string>
 

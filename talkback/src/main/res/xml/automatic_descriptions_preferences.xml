@@ -23,6 +23,9 @@
       android:key="pref_gemini_api_key"
       android:title="@string/title_pref_gemini_api_key" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_gemini_model"
+      android:title="@string/title_pref_gemini_model" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_ai_service"
       android:title="@string/title_pref_ai_service" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
