@@ -284,4 +284,25 @@
     <string name="script_source_remove_title">Remove <xliff:g id="name">%1$s</xliff:g>?</string>
     <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
     <string name="script_source_remove_message">Scripts installed from it stay installed.</string>
+    <!-- Switch in Scripts: newer versions of installed scripts are installed without asking when nothing the user agreed to changes. [CHAR LIMIT=NONE] -->
+    <string name="scripts_auto_update">Update scripts automatically</string>
+    <!-- Button in Scripts that looks for newer versions of the installed scripts now. [CHAR LIMIT=NONE] -->
+    <string name="scripts_check_updates">Check for updates</string>
+    <!-- The Check for updates button while the check runs. [CHAR LIMIT=NONE] -->
+    <string name="scripts_checking_updates">Checking for updates…</string>
+    <!-- Heading in Scripts of the newer versions that wait for the user to install them. [CHAR LIMIT=NONE] -->
+    <string name="scripts_updates_category">Updates</string>
+    <!-- A newer version that waits for the user, such as "WhatsApp messages 3.4". [CHAR LIMIT=NONE] -->
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <!-- Shown after checking for updates when scripts were updated, with their names. [CHAR LIMIT=NONE] -->
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script updated: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts updated: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <!-- Shown after checking for updates when newer versions need the user to install them. [CHAR LIMIT=NONE] -->
+    <string name="scripts_updates_to_approve">Updates are listed under Updates</string>
+    <!-- Shown after checking for updates when a source could not be reached. [CHAR LIMIT=NONE] -->
+    <string name="scripts_update_check_failed">Some sources could not be checked</string>
+    <!-- Shown after checking for updates when every script is up to date. [CHAR LIMIT=NONE] -->
+    <string name="scripts_up_to_date">All scripts are up to date</string>
 </resources>

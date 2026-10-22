@@ -54,6 +54,7 @@ class LazyScriptHost(
       override fun onReceive(context: Context, intent: Intent) {
         screenOn = intent.action != Intent.ACTION_SCREEN_OFF
         update()
+        if (screenOn && store.all().isNotEmpty()) ScriptUpdater.checkIfDue(service)
       }
     }
 
@@ -71,6 +72,7 @@ class LazyScriptHost(
       ContextCompat.RECEIVER_NOT_EXPORTED,
     )
     update()
+    if (store.all().isNotEmpty()) ScriptUpdater.checkIfDue(service)
   }
 
   override fun onScriptsChanged() = update()
