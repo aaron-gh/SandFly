@@ -1271,6 +1271,30 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Whether Ctrl is held on a physical keyboard with no other key pressed since it went down. */
   private boolean ctrlTapPending = false;
 
+  /** Whether the press of Ctrl now held was kept from apps, so its release is kept from them too. */
+  private boolean ctrlKeptFromApps = false;
+
+  /**
+   * Returns whether a press or release of Ctrl on a physical keyboard is kept from apps, so that an
+   * app such as YouTube doesn't act on Ctrl alone, which pauses speech. Ctrl shortcuts still reach
+   * apps, since the other key's event says that Ctrl is held.
+   */
+  private boolean keepCtrlFromApps(KeyEvent keyEvent) {
+    int keyCode = keyEvent.getKeyCode();
+    if (keyCode != KeyEvent.KEYCODE_CTRL_LEFT && keyCode != KeyEvent.KEYCODE_CTRL_RIGHT) {
+      return false;
+    }
+    if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+      if (keyEvent.getRepeatCount() == 0) {
+        ctrlKeptFromApps = isServiceActive() && isFromPhysicalKeyboard(keyEvent);
+      }
+      return ctrlKeptFromApps;
+    }
+    boolean kept = ctrlKeptFromApps;
+    ctrlKeptFromApps = false;
+    return kept;
+  }
+
   /**
    * Pauses or resumes speech when Ctrl on a physical keyboard is pressed and released with no other
    * key, as a two-finger tap does. A shortcut with Ctrl doesn't.
@@ -1525,7 +1549,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       textEventInterpreter.setLastKeyDown(keyCode, keyEvent.getModifiers());
     }
 
-    return false;
+    return keepCtrlFromApps(keyEvent);
   }
 
   /**
