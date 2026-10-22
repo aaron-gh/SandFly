@@ -344,6 +344,17 @@ class TrackedGestureTest {
   }
 
   @Test
+  fun swipeFromAnEdgeWhoseSwipeDoesNothingIsAnOrdinarySwipe() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_edge_left_bottom_long_right_key)
+    slideSideways(400f, 5f, 90f, 200f)
+    slideSideways(400f, 5f, 90f, 330f)
+    assertEquals(
+      listOf(GESTURE_SWIPE_RIGHT, GESTURE_EDGE_LONG_SWIPE_RIGHT_FROM_LEFT_BOTTOM),
+      service.gestures,
+    )
+  }
+
+  @Test
   fun swipeRightFromAnUnassignedSideEdgeIsAnOrdinarySwipe() {
     slideSideways(400f, 5f, 90f, 200f)
     assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)

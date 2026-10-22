@@ -31,13 +31,13 @@ class EdgeSwipeTrackerTest {
   private val events = mutableListOf<String>()
   private val ended = mutableListOf<Pair<Edge, Int>>()
   private var edgesInUse = Edge.entries.toSet()
-  private var stagesInUse = 2
+  private var stagesInUse = listOf(1, 2)
   private val tracker =
     EdgeSwipeTracker(
       edgeZonePx = 30f,
       stageDistancesPx = floatArrayOf(100f, 400f),
       slopPx = 15f,
-      edgeStages = { if (it in edgesInUse) stagesInUse else 0 },
+      edgeStages = { if (it in edgesInUse) stagesInUse else emptyList() },
       listener =
         object : EdgeSwipeTracker.Listener {
           override fun onEdgeSwipeStarted(edge: Edge) {
@@ -134,8 +134,17 @@ class EdgeSwipeTrackerTest {
 
   @Test
   fun edgeWithOneStageHasNoSecondStage() {
-    stagesInUse = 1
+    stagesInUse = listOf(1)
     slide(950f, 880f, 500f)
     assertEquals(listOf("start", "0>1", "end 1"), events)
+  }
+
+  @Test
+  fun edgeWithOnlyTheSecondStageStartsThere() {
+    stagesInUse = listOf(2)
+    slide(950f, 800f)
+    slide(950f, 880f, 500f)
+    slide(950f, 880f, 500f, 800f)
+    assertEquals(listOf("start", "0>2", "end 2", "start", "0>2", "2>0", "end 0"), events)
   }
 }

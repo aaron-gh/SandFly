@@ -1378,14 +1378,17 @@ public class TouchInteractionMonitor
   }
 
   /**
-   * Returns the number of stages a slide from {@code edge} has: 2 if its long swipe has an action, 1
-   * if only its swipe has one, or 0 if neither has.
+   * Returns the stages a slide from {@code edge} has: 1 if its swipe has an action, and 2 if its
+   * long swipe has one.
    */
-  private int edgeStages(Edge edge) {
-    if (isGestureAssigned(edgeGestureId(edge, 2))) {
-      return 2;
+  private List<Integer> edgeStages(Edge edge) {
+    List<Integer> stages = new ArrayList<>(2);
+    for (int stage = 1; stage <= 2; stage++) {
+      if (isGestureAssigned(edgeGestureId(edge, stage))) {
+        stages.add(stage);
+      }
     }
-    return isGestureAssigned(edgeGestureId(edge, 1)) ? 1 : 0;
+    return stages;
   }
 
   /** Returns the gesture of a slide from {@code edge} that ends at {@code stage}, 1 or 2. */
