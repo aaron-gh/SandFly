@@ -4,6 +4,10 @@
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_selector_menu_reading_control_category_key"
         android:title="@string/menu_category_reading_controls">
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+            android:defaultValue="@bool/pref_selector_auto_switch_default"
+            android:key="@string/pref_selector_auto_switch_key"
+            android:title="@string/title_pref_selector_auto_switch"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_actions_default"
