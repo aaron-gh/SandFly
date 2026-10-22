@@ -619,6 +619,18 @@ If you develop a game, add this `<meta-data>` element inside your `<application>
     android:value="true" />
 ```
 
+## Granular editing
+
+**Granular editing** opens the text of the focused text field, or of any focused item with text, in a screen of its own, split into pieces: characters, words, sentences, lines or paragraphs, chosen with **Split by**. It is in the **Editing** actions of a text field, and is a gesture action under **Text editing**.
+
+- Double tap a piece to edit it. Leaving it empty deletes it.
+- A piece's actions are **Select**, **Insert before**, **Insert after** and **Delete**, also in a dialog with a double tap and hold.
+- **Copy** copies the selected pieces, or all of the text when none is selected.
+- **More** has **Undo**, **Redo**, **Find**, **Find next**, **Replace** (all matches, ignoring case), **Add text at end**, **Select all**, **Clear selection**, **Cut selected** and **Delete selected**.
+- **Save** writes the text back to the text field and closes the screen. If the field is gone by then, the text is copied instead. Back asks whether to save or discard changes.
+
+Text that isn't in a text field, such as a message, can be edited and copied but not saved. Password fields can't be opened.
+
 ## On-screen keyboard
 
 ### Lift to type, except to send

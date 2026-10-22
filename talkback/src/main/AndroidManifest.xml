@@ -411,6 +411,17 @@
             android:theme="@style/NotificationReplyTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
+        <!-- Granular editing: the focused text split into pieces to edit one at a time. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.granularediting.GranularEditingActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/granular_editing_title"
+            android:taskAffinity="com.google.android.accessibility.talkback.GranularEditingAffinity"
+            android:theme="@style/NotificationListTheme"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- SandFly's own quick settings panel, opened instead of the system's quick settings. -->
         <activity
             android:name="com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity"
