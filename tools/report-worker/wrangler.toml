@@ -16,3 +16,8 @@ simple = { limit = 2, period = 60 }
 [[kv_namespaces]]
 binding = "COUNTS"
 id = "7e7bb2e21f4f47c1b568a8223c9157b8"
+
+# The issue of each report, by the SHA-256 of the report's token.
+[[kv_namespaces]]
+binding = "THREADS"
+id = "4ee8434394b8491eaffb9aa887733902"

@@ -1,5 +1,7 @@
 // Validates a SandFly problem report and writes it as a GitHub issue.
 
+import { LOG_MARKER, reportIdLine } from './thread.js';
+
 export const TYPES = ['Incorrect behavior', 'Crash', 'Slow or unresponsive', 'Suggestion'];
 export const AREAS = [
   'Speech',
@@ -89,9 +91,10 @@ export function labels(report) {
   return [report.type === 'Suggestion' ? 'enhancement' : 'bug', 'user report'];
 }
 
-/** The issue body in GitHub Markdown. */
-export function issueBody(report) {
-  let body = `**Type:** ${report.type}\n`;
+/** The issue body in GitHub Markdown, with the hidden ID of the report if there is one. */
+export function issueBody(report, id) {
+  let body = id ? `${reportIdLine(id)}\n` : '';
+  body += `**Type:** ${report.type}\n`;
   if (report.area) body += `**Area:** ${report.area}\n`;
   if (report.app) body += `**App:** ${inline(report.app)}\n`;
   if (report.email) body += `**Email:** \`${report.email}\`\n`;
@@ -117,7 +120,7 @@ export function issueTitle(report) {
 export function logComment(report) {
   const longestRun = Math.max(2, ...(report.log.match(/`+/g) || []).map((run) => run.length));
   const fence = '`'.repeat(longestRun + 1);
-  return `SandFly log\n\n${fence}text\n${report.log.replace(/\s+$/, '')}\n${fence}\n`;
+  return `${LOG_MARKER}\nSandFly log\n\n${fence}text\n${report.log.replace(/\s+$/, '')}\n${fence}\n`;
 }
 
 // Stops @names in the reporter's text from notifying GitHub users.

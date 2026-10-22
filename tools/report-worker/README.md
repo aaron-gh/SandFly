@@ -16,6 +16,30 @@ SandFly posts JSON to `https://<worker>/report`. The Worker:
 Responses: 201 sent, 400 bad field, 413 too large, 415 not JSON, 429 rate limited, 502 GitHub
 error.
 
+### Conversations
+
+Each report gets a secret token, returned as `{"sent": true, "token": "…"}`. SandFly keeps it;
+the Worker keeps only its SHA-256 in the `THREADS` KV namespace, with the issue number. The issue
+body starts with a hidden `<!-- sandfly-report: <id> -->` line naming the report.
+
+- `POST /threads` with `{"tokens": [...]}` (at most 20) returns `{"threads": [...]}`: for each
+  token, `status` (`open`, `completed`, `not_planned`, `duplicate`, or `unknown` for a token the
+  Worker doesn't know) and `messages`, each with `id`, `from` (`developer` or `reporter`), `body`
+  and `at`.
+- `POST /reply` with `{"token": "...", "body": "..."}` (at most 10,000 characters) adds the
+  reporter's reply as a comment marked `<!-- sandfly-user -->`. 30 replies a day from one address.
+
+Which comments the reporter sees:
+
+- Comments you write on the issue on GitHub are replies, shown in SandFly.
+- A comment that starts with `[private]` stays on GitHub and is not shown.
+- The log comment, marked `<!-- sandfly-log -->`, is not shown.
+- Closing the issue sets the status the reporter sees: closed as completed, as not planned, or as
+  a duplicate.
+
+SandFly checks for replies hourly while it runs, so a reply reaches the reporter within about an
+hour.
+
 ## Set up
 
 1. Create the private repository `aaron-gh/SandFly-reports`, with the labels `bug`,
@@ -28,6 +52,7 @@ error.
    ```sh
    npx wrangler login
    npx wrangler kv namespace create COUNTS   # put the printed id in wrangler.toml
+   npx wrangler kv namespace create THREADS  # the same
    npx wrangler secret put GITHUB_TOKEN      # paste the token
    npx wrangler deploy
    ```
@@ -41,6 +66,7 @@ When the token expires, create a new one and run `npx wrangler secret put GITHUB
 
 ```sh
 /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc -m test/report_test.mjs
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc -m test/thread_test.mjs
 ```
 
 The test covers validation and the issue text in `src/report.js`. To run the whole Worker
