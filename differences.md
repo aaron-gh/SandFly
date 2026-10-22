@@ -720,6 +720,10 @@ A phone that's opened flat, and that hasn't been held up since the screen came o
 
 ## Braille displays
 
+### EuroBraille b.note and b.book
+
+SandFly's EuroBraille driver is from a newer brltty than TalkBack's, so it also supports the b.note, b.note 2, b.book and b.book 2, with their keypads and navigation keys. Over USB they are found by their USB IDs.
+
 ### Any braille display that uses HID
 
 On Android 15 and later, TalkBack connects to braille displays that use the HID braille standard over Bluetooth, but only lists displays whose names it knows, so newer displays and braille terminals were left out. SandFly lists any Bluetooth device that offers HID, whatever its name, and connecting checks that it's a braille display, so other HID devices, such as keyboards, can appear in the list too. TalkBack also refused displays that send their keys and receive their cells in separate HID reports, as the standard allows; SandFly connects to those.
