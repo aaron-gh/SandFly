@@ -17,6 +17,9 @@
 package com.google.android.accessibility.talkback.actor.gemini;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -39,6 +42,15 @@ public class GeminiRestRequestPerformer {
   // Retrying a request that timed out sends and pays for the same slow request again.
   private static final int MAX_RETRIES = 0;
 
+  /**
+   * How long to wait before asking again when Google answers that it is busy (HTTP 500 and above,
+   * such as 503 when a model is overloaded), which often passes within seconds.
+   */
+  private static final long[] BUSY_RETRY_DELAYS_MS = {1_000, 2_000};
+
+  /** No retry starts later than this after the first request, so the answer comes in time. */
+  private static final long RETRY_WINDOW_MS = 20_000;
+
   interface GeminiRestResponseCallback {
     void onResponse(GeminiResponse response);
 
@@ -48,6 +60,9 @@ public class GeminiRestRequestPerformer {
   }
 
   private final RequestQueue requestQueue;
+  private final Handler handler = new Handler(Looper.getMainLooper());
+  /** Marks the retries waiting to be sent, so that cancelling drops them. */
+  private final Object retryToken = new Object();
 
   public GeminiRestRequestPerformer(Context context) {
     requestQueue = Volley.newRequestQueue(context);
@@ -66,7 +81,16 @@ public class GeminiRestRequestPerformer {
       String apiKey,
       JSONObject postData,
       GeminiRestResponseCallback unloggedCallback) {
-    GeminiRestResponseCallback callback = loggingFailures(unloggedCallback);
+    send(url, apiKey, postData, loggingFailures(unloggedCallback), 0, SystemClock.uptimeMillis());
+  }
+
+  private void send(
+      String url,
+      String apiKey,
+      JSONObject postData,
+      GeminiRestResponseCallback callback,
+      int attempt,
+      long firstAt) {
     JsonObjectRequest stringRequest =
         new JsonObjectRequest(
             Request.Method.POST,
@@ -80,7 +104,21 @@ public class GeminiRestRequestPerformer {
                 callback.onFailure(GeminiFailure.other("Could not read the answer: " + e));
               }
             },
-            error -> callback.onFailure(GeminiFailure.fromVolleyError(error))) {
+            error -> {
+              GeminiFailure failure = GeminiFailure.fromVolleyError(error);
+              long now = SystemClock.uptimeMillis();
+              if (failure.getKind() == GeminiFailure.Kind.BUSY
+                  && attempt < BUSY_RETRY_DELAYS_MS.length
+                  && now - firstAt < RETRY_WINDOW_MS) {
+                LogUtils.w(TAG, "Gemini is busy, asking again: %s", failure.getLogMessage());
+                handler.postAtTime(
+                    () -> send(url, apiKey, postData, callback, attempt + 1, firstAt),
+                    retryToken,
+                    now + BUSY_RETRY_DELAYS_MS[attempt]);
+                return;
+              }
+              callback.onFailure(failure);
+            }) {
           @Override
           public Map<String, String> getHeaders() throws AuthFailureError {
             if (TextUtils.isEmpty(apiKey)) {
@@ -121,7 +159,10 @@ public class GeminiRestRequestPerformer {
     };
   }
 
-  public void cancelExistingRequestIfNeeded() {}
+  /** Drops the retries waiting to be sent, when the request is given up. */
+  public void cancelExistingRequestIfNeeded() {
+    handler.removeCallbacksAndMessages(retryToken);
+  }
 
   public boolean hasPendingTransaction() {
     return false;
