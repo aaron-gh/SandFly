@@ -50,6 +50,16 @@ class TelegramReplyQuoteTest {
   }
 
   @Test
+  fun theWholeQuotedTextComesFromTheQuotedMessage() {
+    val quoted = "Ronan\nWhat other features you love? To me to be honest I can't live\nwithout the edge gestures.\nReceived at 21:32"
+    assertEquals(
+      "What other features you love? To me to be honest I can't live without the edge gestures.",
+      TelegramReplyQuote.fullText(quoted, "What other features you love? To me to be honest I ca"),
+    )
+    assertNull(TelegramReplyQuote.fullText(quoted, "Something else entirely"))
+  }
+
+  @Test
   fun onlyTelegramApps() {
     assertTrue(TelegramReplyQuote.isTelegram("org.telegram.messenger"))
     assertTrue(TelegramReplyQuote.isTelegram("tw.nekomimi.nekogram"))
