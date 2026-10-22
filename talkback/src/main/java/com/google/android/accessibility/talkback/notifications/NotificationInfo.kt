@@ -97,13 +97,25 @@ data class NotificationInfo(
         groupSummary = flags and Notification.FLAG_GROUP_SUMMARY != 0,
         lowPriority = priority < Notification.PRIORITY_DEFAULT,
         media = extras.containsKey(Notification.EXTRA_MEDIA_SESSION) ||
-          notification.category == Notification.CATEGORY_TRANSPORT,
+          notification.category == Notification.CATEGORY_TRANSPORT ||
+          isSamsungMediaActivity(extras, notification.channelId),
         progress = extras.getInt(Notification.EXTRA_PROGRESS_MAX, 0) > 0 ||
           extras.getBoolean(Notification.EXTRA_PROGRESS_INDETERMINATE, false) ||
           notification.category == Notification.CATEGORY_PROGRESS,
         call = notification.category == Notification.CATEGORY_CALL,
       )
     }
+
+    /**
+     * Whether it is the notification One UI's System UI posts while media plays, titled
+     * "MediaOngoingActivity", which stands for the media player in the Now Bar.
+     */
+    private fun isSamsungMediaActivity(extras: Bundle, channelId: String?): Boolean =
+      extras.containsKey(SAMSUNG_ONGOING_ACTIVITY_STYLE) &&
+        channelId?.contains("media", ignoreCase = true) == true
+
+    /** The extra One UI puts on its ongoing activity notifications, shown in the Now Bar. */
+    private const val SAMSUNG_ONGOING_ACTIVITY_STYLE = "android.ongoingActivityNoti.style"
 
     /** Inbox lines, or the messages of a conversation as "sender: text". */
     private fun lines(extras: Bundle): List<String> {
