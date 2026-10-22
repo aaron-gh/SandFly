@@ -38,7 +38,7 @@
     <!-- Message of the dialogs that ask before images or screenshots are sent to be described, when another AI service is set up. [CHAR LIMIT=NONE] -->
     <string name="dialog_message_ai_service_consent">Images and screenshots are sent to <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> to be described, which takes several seconds. Its own terms and privacy policy apply. Generative AI is experimental, so it will make mistakes.</string>
     <!-- Spoken when the other AI service rejects the API key. [CHAR LIMIT=NONE] -->
-    <string name="ai_service_error_api_key">The AI service didn\'t accept the API key. Check Other AI service in Automatic descriptions settings.</string>
+    <string name="ai_service_error_api_key">The AI service didn\'t accept the API key. Check its settings in Automatic descriptions.</string>
     <!-- Spoken when the usage limit of the other AI service is reached. [CHAR LIMIT=NONE] -->
     <string name="ai_service_error_quota">The usage limit of the AI service has been reached. Try again later.</string>
     <!-- Spoken when the other AI service is overloaded. [CHAR LIMIT=NONE] -->
