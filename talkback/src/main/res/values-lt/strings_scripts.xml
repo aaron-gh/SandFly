@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Scenarijai</string>
+    <string name="summary_pref_scripts">Pakeiskite, kaip SandFly veikia programose</string>
+    <string name="script_import">Importuoti scenarijų</string>
+    <string name="script_install_label">Įdiekite SandFly scenarijų</string>
+    <string name="script_import_nothing">Nėra scenarijaus failo, kurį būtų galima įdiegti.</string>
+    <string name="script_import_cannot_open">Failo atidaryti nepavyko.</string>
+    <string name="script_import_repository">Ši nuoroda nukreipta į visą saugyklą. Atidarykite norimą scenarijų, tada bendrinkite jo nuorodą.</string>
+    <string name="script_import_summary">.lua failas arba .zip su main.lua</string>
+    <string name="scripts_category_app">Programų scenarijai</string>
+    <string name="scripts_category_global">Pasauliniai įskiepiai</string>
+    <string name="scripts_none">Jokių scenarijų neįdiegta</string>
+    <string name="scripts_all_off">Išjunkite visus scenarijus</string>
+    <string name="scripts_all_off_summary">Scenarijai lieka įdiegti ir turi savo jungiklius. Tą patį daro ir gestas Įjungti arba išjungti visus scenarijus.</string>
+    <string name="shortcut_toggle_scripts">Įjunkite arba išjunkite visus scenarijus</string>
+    <string name="scripts_now_off">Scenarijai išjungti</string>
+    <string name="scripts_now_on">Scenarijai įjungti</string>
+    <string name="scripts_unavailable">Šiame įrenginyje scenarijai nepasiekiami</string>
+    <string name="script_add_example">Pridėkite scenarijaus pavyzdį</string>
+    <string name="script_add_example_summary">Pasako kiekvienos programos, į kurią perjungiate, pavadinimą. Scenarijus, nuo kurio reikia pradėti.</string>
+    <string name="script_state_on">Įjungti</string>
+    <string name="script_state_off">Išjungti</string>
+    <string name="script_runs_in">Veikia <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Veikia visose programose</string>
+    <string name="script_version"><xliff:g id="version">%1$s</xliff:g> versija</string>
+    <string name="script_author">Iki <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Įdiegti <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Jis gali:</string>
+    <string name="script_install_no_permissions">Nereikia jokių leidimų.</string>
+    <string name="script_install_button">Įdiegti</string>
+    <string name="script_update_title">Atnaujinti <xliff:g id="name">%1$s</xliff:g> į <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Nauji leidimai:</string>
+    <string name="script_update_button">Atnaujinti</string>
+    <string name="script_update_replaces">Tai pakeičia versiją <xliff:g id="version">%1$s</xliff:g> į <xliff:g id="author">%2$s</xliff:g> ir išsaugo jos duomenis bei nustatymus.</string>
+    <string name="script_update_other_author">Naujasis yra <xliff:g id="author">%1$s</xliff:g>, kito autoriaus. Atnaujinkite tik tuo atveju, jei pasitikite.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> įdiegta</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atnaujinta į <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Importuoti nepavyko. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Leisti tik patikimus scenarijus.</string>
+    <string name="script_permission_screen">Skaityti ekraną</string>
+    <string name="script_permission_actions">Spustelėkite, slinkite, įveskite ir perkelkite fokusą</string>
+    <string name="script_permission_speech">Išgirskite ir pakeiskite SandFly kalbą</string>
+    <string name="script_permission_passwords">Skaityti slaptažodžių laukus</string>
+    <string name="script_permission_input">Pridėkite gestus, klavišus, meniu elementus ir skaitymo valdiklius</string>
+    <string name="script_permission_network">Naudokite internetą</string>
+    <string name="script_permission_clipboard">Skaitykite ir pakeiskite mainų sritį</string>
+    <string name="script_permission_system">Grįžkite arba namo, atidarykite pranešimus ir programas</string>
+    <string name="script_permission_notifications">Skaityti ir keisti sakytinius pranešimus</string>
+    <string name="script_permission_events">Peržiūrėkite visą veiklą kiekvienoje programoje, įskaitant teksto vedimą</string>
+    <string name="script_permission_dialogs">Rodyti dialogus bet kurioje programoje</string>
+    <string name="script_permission_java">Kiekvienoje programoje paleiskite „Java“ kodą su visa SandFly prieiga</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Įjungti</string>
+    <string name="script_permissions_title">Leidimai</string>
+    <string name="script_permissions_none">Nėra</string>
+    <string name="script_settings_category">Nustatymai</string>
+    <string name="script_list_filter">Filtruoti</string>
+    <string name="script_button_off">Pirmiausia įjunkite scenarijų</string>
+    <string name="script_permissions_summary">Išjungus, sustabdomos dalys, kurioms to reikia.</string>
+    <string name="script_install_permissions_note">Vėliau galėsite juos išjungti.</string>
+    <string name="script_manage_category">Tvarkyti</string>
+    <string name="script_move_up">Bėk anksčiau</string>
+    <string name="script_move_down">Paleisti vėliau</string>
+    <string name="script_order_summary">Užsakyti scenarijus, kurie keičia tą pačią kalbą. Pirmiausia paleidžiami programų scenarijai.</string>
+    <string name="script_log">Žurnalas</string>
+    <string name="script_log_summary">Išvestis ir klaidos nuo SandFly pradžios</string>
+    <string name="script_clear_storage">Išvalyti saugomus duomenis</string>
+    <string name="script_storage_cleared">Išsaugoti duomenys išvalyti</string>
+    <string name="script_remove">Pašalinti</string>
+    <string name="script_remove_title">Pašalinti <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Ištrina jo kodą, duomenis ir nustatymus.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> pašalinta</string>
+    <string name="script_log_empty">Žurnalas tuščias</string>
+    <string name="script_log_clear">Išvalyti žurnalą</string>
+    <string name="script_log_copy">Kopijuoti žurnalą</string>
+    <string name="script_log_copied">Žurnalas nukopijuotas</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Reikia scenarijaus API <xliff:g id="needed">%1$d</xliff:g> arba naujesnės. Šis SandFly turi <xliff:g id="current">%2$d</xliff:g>, todėl dalys gali neveikti.</string>
+    <string name="script_api_untested">Išbandyta iki scenarijaus API <xliff:g id="tested">%1$d</xliff:g>. Šis SandFly turi <xliff:g id="current">%2$d</xliff:g>, todėl jis gali neveikti taip, kaip tikėtasi.</string>
+    <string name="script_state_incompatible">Gali neveikti su šiuo SandFly</string>
+    <string name="script_api_range">Scenarijaus API nuo <xliff:g id="min">%1$d</xliff:g> iki <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Suderinamumas</string>
+    <string name="script_install_anyway">Vis tiek įdiekite</string>
+    <string name="script_update_anyway">Vis tiek atnaujinkite</string>
+    <string name="script_homepage">Atidaryti pagrindinį puslapį</string>
+    <string name="script_homepage_confirm_title">Atidaryti šį adresą?</string>
+    <string name="script_homepage_open">Atidaryti</string>
+    <string name="script_homepage_failed">Jokia programa negali atidaryti <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> išjungtas po pasikartojančių klaidų. Žiūrėkite jo prisijungimą Skriptuose.</string>
+    <string name="shortcut_inspect_item">Patikrinkite sufokusuotą elementą</string>
+    <string name="script_inspect_no_item">Nė vienas elementas neturi fokusavimo</string>
+    <string name="script_inspect_copied">Nukopijuota. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nėra ID, todėl taisyklės negali jo pavadinti. Nukopijuota. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopijuoti ekrano medį</string>
+    <string name="script_tree_copied">Nukopijuota <xliff:g id="count">%1$d</xliff:g> elementų</string>
+    <string name="script_tree_none">Nėra lango, kurį būtų galima kopijuoti</string>
+    <string name="script_tree_clip_label">Ekrano medis</string>
+    <string name="summary_copy_screen_tree_menu">Nukopijuokite visus elementus ekrane kaip JSON, kad galėtumėte rašyti scenarijus</string>
+    <string name="script_inspect_clip_label">Prekės detalės</string>
+    <string name="summary_inspect_item_menu">Norėdami rašyti scenarijus, pasakykite ir nukopijuokite informaciją apie elementą, kuriame dalyvavote</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifikatorius</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, tada <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Komandos</string>
+    <string name="script_commands_summary">Vykdomo scenarijaus gestai ir klavišai yra prieš SandFly. Išjunkite vieną, kad liktų SandFly.</string>
+    <string name="script_binding_gesture">Gestas: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Raktai: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly meniu</string>
+    <string name="script_binding_control">Skaitymo valdikliai</string>
+    <string name="script_binding_none">Nėra</string>
+    <string name="script_binding_turn_on">Įjungti</string>
+    <string name="script_binding_turn_off">Išjungti</string>
+    <string name="script_binding_restore">Atkurti numatytuosius nustatymus</string>
+    <string name="script_binding_restored">Numatytieji nustatymai atkurti</string>
+    <string name="script_binding_perform">Atlikite gestą arba klavišus</string>
+    <string name="script_binding_perform_summary">Priskirkite kitą gestą arba paspaustus klavišus naudodami modifikatorių SandFly</string>
+    <string name="script_binding_perform_message">Atlikite gestą arba paspauskite klavišus.</string>
+    <string name="script_binding_assign_title">Priskirti <xliff:g id="binding">%1$s</xliff:g> prie <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Priskirti</string>
+    <string name="script_binding_choose_gesture">Pasirinkite gestą</string>
+    <string name="script_binding_type_keys">Įveskite klavišus</string>
+    <string name="script_binding_type_keys_summary">Patinka sf+shift+n, arba sf+t, s</string>
+    <string name="script_binding_bad_keys">Negalite naudoti šių raktų. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Jame priduriama:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Scenarijaus šaltiniai</string>
+    <string name="script_sources_none">Jokių šaltinių nepridėta</string>
+    <string name="script_source_add">Pridėti šaltinį</string>
+    <string name="script_source_add_button">Pridėti</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Ne saugyklos adresas GitHub, GitLab, Codeberg, Gitea ar Bitbucket.</string>
+    <string name="script_source_exists">Šis šaltinis jau pridėtas.</string>
+    <string name="script_source_loading">Įkeliama</string>
+    <string name="script_source_empty">Šiame šaltinyje nėra scenarijų</string>
+    <string name="script_source_failed">Nepavyko įkelti scenarijų. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Bandykite dar kartą</string>
+    <string name="script_source_downloading">Atsisiunčiama <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Pašalinti šaltinį</string>
+    <string name="script_source_remove_title">Pašalinti <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Iš jo įdiegti scenarijai lieka įdiegti.</string>
+    <string name="scripts_auto_update">Automatiškai atnaujinkite scenarijus</string>
+    <string name="scripts_check_updates">Patikrinkite, ar nėra atnaujinimų</string>
+    <string name="scripts_checking_updates">Tikrinama, ar yra naujinių…</string>
+    <string name="scripts_updates_category">Atnaujinimai</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> scenarijus atnaujintas: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> scenarijai atnaujinti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scenarijai atnaujinti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scenarijai atnaujinti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Atnaujinimai pateikiami skiltyje Atnaujinimai</string>
+    <string name="scripts_update_check_failed">Kai kurių šaltinių patikrinti nepavyko</string>
+    <string name="scripts_up_to_date">Visi scenarijai yra atnaujinti</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API raktas</string>
+    <string name="summary_pref_gemini_api_key_built_in">Naudojant šioje programoje įmontuotą raktą</string>
+    <string name="gemini_api_key_dialog_message">Gaukite nemokamą API raktą iš Google AI Studio adresu aistudio.google.com/apikey ir įklijuokite jį čia. Norėdami pašalinti raktą, išvalykite lauką ir išsaugokite.\n\nJūsų aprašyti vaizdai ir ekranai siunčiami adresu Google. Nemokamoje pakopoje Google gali juos naudoti savo produktams tobulinti.</string>
+    <string name="gemini_api_key_hint">API raktas</string>
+    <string name="gemini_api_key_save">Išsaugoti</string>
+    <string name="gemini_api_key_get">Gaukite raktą</string>
+    <string name="title_pref_gemini_model">Gemini modelis</string>
+    <string name="gemini_model_automatic">Automatinis</string>
+    <string name="summary_pref_gemini_model_automatic">Automatinis: Gemini „Flash“, tada „Flash-Lite“, kai „Flash“ užimta</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, tada „Flash-Lite“, kai jis užimtas</string>
+    <string name="gemini_model_loading">Gaunami modeliai…</string>
+    <string name="gemini_model_list_failed">Nepavyko gauti modelių: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Pirmiausia nustatykite Gemini API raktą</string>
+    <string name="gemini_api_terms_link">Gemini API papildomos paslaugų teikimo sąlygos</string>
+    <string name="ai_service_address_hint">Adresas, pvz., https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Modelis</string>
+    <string name="ai_service_address_invalid">Adresas turi prasidėti https://. Nieko neišsaugota.</string>
+    <string name="dialog_message_ai_service_consent">Vaizdai ir ekrano kopijos siunčiamos <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, kad būtų aprašytos. Tai užtrunka kelias sekundes. Taikomos jos sąlygos ir privatumo politika. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų.</string>
+    <string name="ai_service_error_api_key">AI paslauga nepriėmė API rakto. Patikrinkite jo nustatymus automatiniuose aprašuose.</string>
+    <string name="ai_service_error_quota">Pasiektas AI paslaugos naudojimo limitas. Vėliau bandykite dar kartą.</string>
+    <string name="ai_service_error_busy">AI paslauga šiuo metu užimta. Po akimirkos bandykite dar kartą.</string>
+    <string name="ai_service_error_timeout">AI paslauga per ilgai atsakė. Bandykite dar kartą.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Nėra</string>
+    <string name="ai_service_not_set_up">AI paslauga nenaudojama. Nustatykite arba pasirinkite automatinių aprašų nustatymuose.</string>
+    <string name="ai_provider_none_set_up">AI paslauga nenustatyta. Nustatykite jį toliau pateiktuose nustatymuose.</string>
+    <string name="ai_provider_other">Kita paslauga</string>
+    <string name="title_pref_category_ai_services">AI paslaugos</string>
+    <string name="title_pref_ai_provider">AI paslauga</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> nustatymai</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nenustatyta</string>
+    <string name="ai_provider_in_use">Naudojamas</string>
+    <string name="ai_provider_not_set_up">Nenustatyta</string>
+    <string name="ai_provider_not_ready">Pirmiausia pasirinkite modelį</string>
+    <string name="ai_provider_address">Adresas</string>
+    <string name="ai_provider_address_message">Paslaugos su OpenAI suderinama pokalbių API ir vaizdo įvesties adresas, pvz., https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Nenustatyta</string>
+    <string name="ai_provider_set">Sukonfigūruota</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API raktas</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modelis</string>
+    <string name="ai_provider_choose_model">Neišrinktas</string>
+    <string name="ai_provider_key_message">Įklijuokite <xliff:g id="service" example="Claude">%1$s</xliff:g> API raktą. Norėdami jį pašalinti, išvalykite lauką ir išsaugokite. Jūsų aprašyti vaizdai ir ekranai siunčiami adresu <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Pirmiausia nustatykite API raktą <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_address">Pirmiausia nustatykite adresą</string>
+    <string name="ai_provider_enter_model">Įveskite modelio pavadinimą</string>
+</resources>

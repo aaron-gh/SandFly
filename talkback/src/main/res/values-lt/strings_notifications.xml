@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Stiprus</string>
+    <string name="notification_shake_2">Vidutinis</string>
+    <string name="notification_shake_1">Švelnus</string>
+    <string name="notification_media_skip">Neskaitykite garsiai</string>
+    <string name="notification_media_pause">Skaitydami pristabdykite laikmeną</string>
+    <string name="notification_media_read">Skaityti garsiai</string>
+    <string name="notification_headphones_only_without">Tik be ausinių</string>
+    <string name="notification_headphones_only_with">Tik su ausinėmis</string>
+    <string name="notification_headphones_always">Skaitykite garsiai su ausinėmis arba be jų</string>
+    <string name="notification_queue_skip">Neskaitykite naujo pranešimo garsiai</string>
+    <string name="notification_queue_interrupt">Pertraukite garsiai skaitomą pranešimą</string>
+    <string name="notification_queue_queue">Skaitykite garsiai po dabartinio pranešimo</string>
+    <string name="notification_url_omit">Palikite lauk</string>
+    <string name="notification_url_replace">Pasakykite toliau pateiktą tekstą</string>
+    <string name="notification_url_domain">Skaitykite tik svetainę</string>
+    <string name="notification_url_full">Perskaitykite visą nuorodą</string>
+    <string name="notification_category_title">Pranešimai</string>
+    <string name="notification_reading_title">Pranešimų skaitymas garsiai</string>
+    <string name="notification_apps_title">Programos</string>
+    <string name="notification_words_title">Žodžiai ir pakaitalai</string>
+    <string name="notification_kinds_title">Pranešimų rūšys</string>
+    <string name="notification_when_title">Kada skaityti</string>
+    <string name="notification_rules_title">Taisyklės</string>
+    <string name="notification_repeats_title">Pasikartoja</string>
+    <string name="notification_stop_title">Nustokite skaityti</string>
+    <string name="notification_schedules_title">Santrauka ir laikas</string>
+    <string name="notification_history_title">Pranešimų istorija</string>
+    <string name="notification_test_title">Siųsti pranešimą apie bandymą</string>
+    <string name="notification_automation_title">Automatika</string>
+    <string name="notification_automation_allowed_title">Leisti automatizavimo programas</string>
+    <string name="notification_category_said">Kas pasakyta</string>
+    <string name="notification_format_title">Kalbos formatas</string>
+    <string name="notification_format_message">Vietos žymos: {app}, {title}, {text}, {content} (visas tekstas), {bigtext}, {subtext}, {ticker}, {category} ir {time}.</string>
+    <string name="notification_private_format_title">Asmeniniuose pranešimuose rašoma</string>
+    <string name="notification_private_format_message">Sakyta vietoje privataus pranešimo turinio. Vietos žymos: {app}, {category} ir {time}.</string>
+    <string name="notification_category_voice">Balsas</string>
+    <string name="notification_voice_title">Balsas</string>
+    <string name="notification_voice_sandfly">SandFly balsas</string>
+    <string name="notification_detect_language_title">Aptikti kalbą</string>
+    <string name="notification_detect_language_summary">Pasakykite kiekvieną pranešimą ta kalba, kuria jis parašytas. Reikia automatiškai perjungti kalbą teksto į kalbą nustatymuose.</string>
+    <string name="notification_sound_before_title">Garsas prieš pranešimus</string>
+    <string name="notification_category_text">Tekstas</string>
+    <string name="notification_remove_emoji_title">Palikite jaustukus</string>
+    <string name="notification_lowercase_title">Skaitykite didžiąsias raides kaip žodžius</string>
+    <string name="notification_lowercase_summary">Kai kurie kalbos varikliai rašo žodžius didžiosiomis raidėmis po raidės</string>
+    <string name="notification_separate_digits_title">Skaitykite ilgus skaičius skaitmuo po skaitmens</string>
+    <string name="notification_separate_digits_summary">Tokie kaip kodai ir telefonų numeriai</string>
+    <string name="notification_min_digits_title">Mažiausias skaitmenų skaičius ilgame skaičiuje</string>
+    <string name="notification_urls_title">Nuorodos</string>
+    <string name="notification_url_text_title">Sakė vietoje nuorodos</string>
+    <string name="notification_skip_empty_title">Praleiskite pranešimus be teksto</string>
+    <string name="notification_category_length">Ilgis</string>
+    <string name="notification_max_words_title">Maksimalus žodžių skaičius</string>
+    <string name="notification_max_sentences_title">Maksimalus sakinių skaičius</string>
+    <string name="notification_max_characters_title">Maksimalus teksto simbolių skaičius</string>
+    <string name="notification_max_seconds_title">Nustokite skaityti po to</string>
+    <string name="notification_category_timing">Laikas</string>
+    <string name="notification_delay_title">Palaukite prieš skaitydami</string>
+    <string name="notification_queue_title">Kai skaitomas kitas pranešimas</string>
+    <string name="notification_repeat_minutes_title">Skaitykite dar kartą, kol ekranas įsijungs</string>
+    <string name="notification_skip_media_title">Praleiskite medijos leistuvus</string>
+    <string name="notification_skip_ongoing_title">Praleiskite vykstančius pranešimus</string>
+    <string name="notification_skip_ongoing_summary">Tokie kaip navigacija ir laikmačiai</string>
+    <string name="notification_skip_foreground_title">Praleiskite veikiančių programų pranešimus</string>
+    <string name="notification_skip_foreground_summary">Pavyzdžiui, VPN arba garso įrašymo įrenginį</string>
+    <string name="notification_skip_progress_title">Praleiskite progreso pranešimus</string>
+    <string name="notification_skip_group_summaries_title">Praleisti grupių santraukas</string>
+    <string name="notification_skip_group_summaries_summary">Pavyzdžiui, „3 nauji pranešimai“</string>
+    <string name="notification_skip_low_priority_title">Praleiskite žemo prioriteto pranešimus</string>
+    <string name="notification_skip_system_title">Praleisti sistemos pranešimus</string>
+    <string name="notification_screen_on_title">Kol ekranas įjungtas</string>
+    <string name="notification_screen_off_title">Kol ekranas išjungtas</string>
+    <string name="notification_locked_title">Kol telefonas užrakintas</string>
+    <string name="notification_headphones_title">Ausinės</string>
+    <string name="notification_media_title">Kol groja žiniasklaida</string>
+    <string name="notification_dnd_title">Netrukdyti</string>
+    <string name="notification_dnd_none">Neskaitykite jokių pranešimų garsiai</string>
+    <string name="notification_dnd_allowed">Skaitykite pranešimus, leidžiamus režimu Netrukdyti</string>
+    <string name="notification_dnd_all">Skaityti viską</string>
+    <string name="notification_touch_title">Kol paliečiamas ekranas</string>
+    <string name="notification_touch_read">Skaitykite iš karto</string>
+    <string name="notification_touch_after">Skaitykite, kai prisilietimas baigiasi</string>
+    <string name="notification_touch_skip">Neskaitykite garsiai</string>
+    <string name="notification_during_calls_title">Pokalbių metu</string>
+    <string name="notification_honour_silent_title">Ne tyliuoju režimu</string>
+    <string name="notification_honour_vibrate_title">Ne vibravimo režimu</string>
+    <string name="notification_skip_in_car_title">Ne automobilio režimu</string>
+    <string name="notification_skip_in_car_summary">Pavyzdžiui, su Android Auto, kuris pats juos nuskaito</string>
+    <string name="notification_category_quiet_hours">Ramios valandos</string>
+    <string name="notification_quiet_hours_title">Ramios valandos</string>
+    <string name="notification_quiet_start_title">Pradėti</string>
+    <string name="notification_quiet_end_title">Pabaiga</string>
+    <string name="notification_repeat_seconds_title">Praleiskite tą patį pranešimą</string>
+    <string name="notification_numbers_alike_title">Skirtingus skaičius traktuokite kaip vienodus</string>
+    <string name="notification_numbers_alike_summary">Pavyzdžiui, atsisiuntimo procentas</string>
+    <string name="notification_cooldown_title">Laikas tarp programos pranešimų</string>
+    <string name="notification_skip_prefix_title">Praleiskite pasikartojantį teksto priešdėlį</string>
+    <string name="notification_skip_prefix_summary">Pavyzdžiui, grupės pavadinimas pokalbyje</string>
+    <string name="notification_prefix_memory_title">Kiek laiko atsiminti teksto priešdėlį</string>
+    <string name="notification_access_summary">Reikalingas norint nustoti skaityti atmestą pranešimą ir suvestines</string>
+    <string name="notification_shake_title">Papurtykite, kad sustotų</string>
+    <string name="notification_shake_strength_title">Drebėjimo intensyvumas</string>
+    <string name="notification_wave_title">Pamojuokite ranka, kad nustotumėte skaityti</string>
+    <string name="notification_wave_summary">Perkelkite ranką virš artumo jutiklio</string>
+    <string name="notification_pocket_title">Kišeninis režimas</string>
+    <string name="notification_pocket_summary">Sensorius, kuris uždengiamas pradėjus skaityti, kaip kišenėje, jo nestabdo</string>
+    <string name="notification_volume_keys_title">Paspauskite abu garsumo klavišus</string>
+    <string name="notification_dismiss_title">Nustokite skaityti, kai pranešimas bus atmestas</string>
+    <string name="notification_watch_dismiss_title">Taip pat kai pranešimas atmetamas išmaniajame laikrodyje</string>
+    <string name="notification_app_cancel_title">Nustokite skaityti, kai programa pašalins pranešimą</string>
+    <string name="notification_category_summary">Santrauka</string>
+    <string name="notification_summary_now_title">Skaitykite pranešimus dabar</string>
+    <string name="notification_summary_daily_title">Skaitykite pranešimus kiekvieną dieną</string>
+    <string name="notification_summary_time_title">Laikas</string>
+    <string name="notification_summary_newest_first_title">Pirmiausia naujausi</string>
+    <string name="notification_summary_name_title">Tavo vardas</string>
+    <string name="notification_summary_gap_title">Pertrauka tarp pranešimų</string>
+    <string name="notification_summary_needs_sandfly">Įjunkite SandFly, kad skaitytumėte pranešimus</string>
+    <string name="notification_summary_no_access">Prieiga prie pranešimų išjungta</string>
+    <string name="notification_summary_morning">Labas rytas.</string>
+    <string name="notification_summary_afternoon">Laba diena.</string>
+    <string name="notification_summary_evening">Labas vakaras.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Laiko pranešimai</string>
+    <string name="notification_clock_interval_title">Kaskart sakyk laiką</string>
+    <string name="notification_clock_format_title">Laiko formatas</string>
+    <string name="notification_clock_format_message">Vietos žymos: {time}, {date} ir {battery} (akumuliatoriaus procentas).</string>
+    <string name="notification_clock_format_default">Tai {time}</string>
+    <string name="notification_clock_exact_title">Tikslūs laikai</string>
+    <string name="notification_clock_exact_summary">Reikia pavojaus signalų ir priminimų. Priešingu atveju laikas gali būti pavėluotas iki minutės.</string>
+    <string name="notification_other_apps_title">Kitos programos</string>
+    <string name="notification_apps_category">Programos</string>
+    <string name="notification_apps_loading">Įkeliamos programos</string>
+    <string name="notification_app_mode_title">Pranešimai</string>
+    <string name="notification_app_mode_default">Kaip ir kitos programos</string>
+    <string name="notification_app_mode_read">Skaityti garsiai</string>
+    <string name="notification_app_mode_private">Tik programos pavadinimas</string>
+    <string name="notification_app_mode_priority">Pirmiausia skaitykite</string>
+    <string name="notification_app_mode_ignore">Neskaitykite garsiai</string>
+    <string name="notification_app_name_title">Ištartas vardas</string>
+    <string name="notification_app_said_as">pasakė kaip <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Nustatyti iš naujo</string>
+    <string name="notification_required_title">Skaitykite tik pranešimus su</string>
+    <string name="notification_blocked_title">Neskaitykite pranešimų su</string>
+    <string name="notification_private_title">Skaitykite tik programos pavadinimą</string>
+    <string name="notification_replacements_title">Sakyk kitaip</string>
+    <string name="notification_add_word">Pridėkite žodį</string>
+    <string name="notification_add_replacement">Pridėti pakaitalą</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kaip <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Tekstas</string>
+    <string name="notification_replace_with">Sakyk kaip</string>
+    <string name="notification_whole_words">Tik visi žodžiai</string>
+    <string name="notification_regex">Reguliari išraiška</string>
+    <string name="notification_enter_text">Įveskite tekstą</string>
+    <string name="notification_invalid_regex">Netinkama reguliarioji išraiška</string>
+    <string name="notification_edit">Redaguoti</string>
+    <string name="notification_remove">Pašalinti</string>
+    <string name="notification_history_keep">Išsaugoti pranešimų istoriją</string>
+    <string name="notification_history_clear">Išvalyti istoriją</string>
+    <string name="notification_history_category">Pranešimai</string>
+    <string name="notification_history_empty">Jokių pranešimų</string>
+    <string name="notification_history_ignore_app">Neskaitykite <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Skaityti tik <xliff:g id="app" example="Chat">%1$s</xliff:g> pavadinimą</string>
+    <string name="notification_history_priority_app">Pirmiausia perskaitykite <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Neskaitykite tokių pranešimų</string>
+    <string name="notification_history_copy">Kopijuoti</string>
+    <string name="notification_saved">Išsaugota</string>
+    <string name="notification_copied">Nukopijuota</string>
+    <string name="notification_outcome_read">Sėkmingai skaitykite garsiai</string>
+    <string name="notification_outcome_stopped">Skaitant sustojo</string>
+    <string name="notification_outcome_speech_off">Neskaityta: pranešimo kalba išjungta</string>
+    <string name="notification_outcome_dnd">Neskaityta: Netrukdyti</string>
+    <string name="notification_outcome_touching">Neskaityta: buvo paliestas ekranas</string>
+    <string name="notification_outcome_app">Neskaityta: programėlė</string>
+    <string name="notification_outcome_ongoing">Neskaityta: vyksta</string>
+    <string name="notification_outcome_foreground">Neskaityta: veikia programa</string>
+    <string name="notification_outcome_low_priority">Neskaityta: žemas prioritetas</string>
+    <string name="notification_outcome_system">Neskaityta: sistema</string>
+    <string name="notification_outcome_media">Neskaityta: medijos grotuvas</string>
+    <string name="notification_outcome_group_summary">Neskaityta: grupės santrauka</string>
+    <string name="notification_outcome_progress">Neskaityta: pažanga</string>
+    <string name="notification_outcome_required">Neskaityta: trūksta būtinų žodžių</string>
+    <string name="notification_outcome_blocked">Neskaityta: užblokuotas žodis</string>
+    <string name="notification_outcome_empty">Neskaityta: nėra teksto</string>
+    <string name="notification_outcome_repeat">Neskaityta: kartoti</string>
+    <string name="notification_outcome_cooldown">Neskaityta garsiai: kitas šios programos pranešimas buvo perskaitytas per neseniai</string>
+    <string name="notification_outcome_quiet_hours">Neskaityta: ramios valandos</string>
+    <string name="notification_outcome_screen_on">Neskaityta: ekranas įjungtas</string>
+    <string name="notification_outcome_screen_off">Neskaityta: ekranas išjungtas</string>
+    <string name="notification_outcome_locked">Neskaityta: užrakinta</string>
+    <string name="notification_outcome_headphones">Neskaityta: prijungtos ausinės</string>
+    <string name="notification_outcome_no_headphones">Neskaityta: nėra ausinių</string>
+    <string name="notification_outcome_silent">Neskaityta: tylus režimas</string>
+    <string name="notification_outcome_vibrate">Neskaityta: vibravimo režimas</string>
+    <string name="notification_outcome_media_playing">Neskaityta: leidžiama medija</string>
+    <string name="notification_outcome_car">Neskaityta: automobilio režimas</string>
+    <string name="notification_outcome_rule">Neskaityta: taisyklė</string>
+    <string name="notification_outcome_busy">Neskaityta: buvo perskaitytas kitas pranešimas</string>
+    <string name="notification_outcome_call">Paskelbta kaip įeinantis telefono skambutis</string>
+    <string name="notification_rule_add">Pridėkite taisyklę</string>
+    <string name="notification_rule_from_template">Pridėkite taisyklę iš šablono</string>
+    <string name="notification_rules_category">Taisyklės</string>
+    <string name="notification_rules_empty">Jokių taisyklių</string>
+    <string name="notification_rule_name">Vardas</string>
+    <string name="notification_rule_untitled">Taisyklė</string>
+    <string name="notification_rule_enabled">Įjungta</string>
+    <string name="notification_rule_match">Sąlygos</string>
+    <string name="notification_rule_match_all">Turi būti įvykdytos visos sąlygos</string>
+    <string name="notification_rule_match_any">Turi būti įvykdyta bent viena sąlyga</string>
+    <string name="notification_rule_conditions">Kada</string>
+    <string name="notification_rule_actions">Tada</string>
+    <string name="notification_rule_add_condition">Pridėkite sąlygą</string>
+    <string name="notification_rule_add_action">Pridėti veiksmą</string>
+    <string name="notification_rule_invert">Apverskite sąlygą</string>
+    <string name="notification_rule_delete">Ištrinkite taisyklę</string>
+    <string name="notification_rule_delete_confirm">Ištrinti <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Visada</string>
+    <string name="notification_rule_no_actions">nieko nevyksta</string>
+    <string name="notification_rule_and">" ir "</string>
+    <string name="notification_rule_or">" arba "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Tik su ausinėmis</string>
+    <string name="notification_template_night">Naktimis tylu</string>
+    <string name="notification_template_screen_off">Tik išjungus ekraną</string>
+    <string name="notification_template_locked_private">Tik programos pavadinimas, kai telefonas užrakintas</string>
+    <string name="notification_template_short_on_battery">Trumpai perskaitykite, kai neįkraunate</string>
+    <string name="notification_type_bluetooth">Bluetooth įrenginį</string>
+    <string name="notification_type_wired">Laidinės ausinės</string>
+    <string name="notification_type_wifi">Wi-Fi tinklas</string>
+    <string name="notification_type_time">Paros laikas</string>
+    <string name="notification_type_screen">Ekranas įjungtas</string>
+    <string name="notification_type_locked">Telefonas užrakintas</string>
+    <string name="notification_type_from_app">Pranešimas iš programos</string>
+    <string name="notification_type_foreground">Programa pirmame plane</string>
+    <string name="notification_type_contains">Pranešime yra</string>
+    <string name="notification_type_battery">Baterijos lygis žemiau</string>
+    <string name="notification_type_charging">Įkrovimas</string>
+    <string name="notification_type_landscape">Gulsčias</string>
+    <string name="notification_type_silent">Tylus arba vibruojantis režimas</string>
+    <string name="notification_type_media">Žiniasklaidos grojimas</string>
+    <string name="notification_bluetooth_any">Bet koks įrenginys</string>
+    <string name="notification_wifi_hint">Tinklo pavadinimas</string>
+    <string name="notification_choose_app">Pasirinkite programą</string>
+    <string name="notification_time_start">Nuo</string>
+    <string name="notification_time_end">Iki</string>
+    <string name="notification_time_days">Dienos</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> iki <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly reikalingas leidimas šiai sąlygai</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> yra prijungtas</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> neprijungtas</string>
+    <string name="notification_cond_bluetooth_any">Prijungtas Bluetooth garso įrenginys</string>
+    <string name="notification_cond_bluetooth_any_not">Neprijungtas joks Bluetooth garso įrenginys</string>
+    <string name="notification_cond_wired">Prijungtos laidinės ausinės</string>
+    <string name="notification_cond_wired_not">Laidinės ausinės neprijungtos</string>
+    <string name="notification_cond_battery_below">Akumuliatoriaus įkrova yra mažesnė nei <xliff:g id="percent" example="20">%1$d</xliff:g> proc</string>
+    <string name="notification_cond_battery_below_not">Akumuliatoriaus įkrova yra <xliff:g id="percent" example="20">%1$d</xliff:g> procentų ar daugiau</string>
+    <string name="notification_cond_charging">Telefonas kraunasi</string>
+    <string name="notification_cond_charging_not">Telefonas neįkraunamas</string>
+    <string name="notification_cond_locked">Telefonas užrakintas</string>
+    <string name="notification_cond_locked_not">Telefonas atrakintas</string>
+    <string name="notification_cond_screen_on">Ekranas įjungtas</string>
+    <string name="notification_cond_screen_on_not">Ekranas išjungtas</string>
+    <string name="notification_cond_landscape">Ekranas yra gulsčioje padėtyje</string>
+    <string name="notification_cond_landscape_not">Ekranas yra portretinis</string>
+    <string name="notification_cond_time">Laikas yra <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Laikas ne <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Prisijungta prie <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Neprisijungta prie <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Prisijungta prie Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Neprisijungta prie Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> yra priekyje</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nėra priekyje</string>
+    <string name="notification_cond_from">Pranešimas yra nuo <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Pranešimas nėra nuo <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Pranešime yra <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Pranešime nėra <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Skambutis tyli arba vibruoja</string>
+    <string name="notification_cond_silent_not">Suskamba skambutis</string>
+    <string name="notification_cond_media">Groja medija</string>
+    <string name="notification_cond_media_not">Neleidžiama jokia medija</string>
+    <string name="notification_action_skip">neskaityk</string>
+    <string name="notification_action_private">skaityti tik programos pavadinimą</string>
+    <string name="notification_action_not_private">perskaityti iki galo, net jei privačiai</string>
+    <string name="notification_action_format">naudoti kalbos formatą</string>
+    <string name="notification_action_max_words">perskaityti iki kelių žodžių</string>
+    <string name="notification_action_no_limit">skaityti be ilgio apribojimų</string>
+    <string name="notification_action_keep_emoji">išlaikyti jaustukus</string>
+    <string name="notification_action_keep_numbers">laikykite skaičius kartu</string>
+    <string name="notification_action_priority">pirma skaityk</string>
+    <string name="notification_action_always_read">Skaitykite pranešimus garsiai net tyliomis valandomis ar kitu ribotu laiku</string>
+    <string name="notification_action_voice">skaityti naudojant balso profilį</string>
+    <string name="notification_action_voice_value">skaityti su <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">skaityti SandFly balsu</string>
+    <string name="notification_voice_removed">Pašalintas balso profilis</string>
+    <string name="notification_action_format_value">naudoti kalbos formatą <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">skaityti iki <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Išjungti</string>
+    <string name="notification_on">Įjungti</string>
+    <string name="notification_never_again">Kol SandFly bus paleistas iš naujo</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Pranešimų skaitymas garsiai</string>
+    <string name="notification_speech_now_on">Įgalintas pranešimų skaitymas garsiai</string>
+    <string name="notification_speech_now_off">Pranešimų skaitymas garsiai išjungtas</string>
+    <string name="notification_no_last_notification">Pranešimas nebuvo perskaitytas</string>
+    <string name="shortcut_read_notifications">Skaityti pranešimus</string>
+    <string name="shortcut_toggle_notification_speech">Pranešimo kalba įjungta arba išjungta</string>
+    <string name="shortcut_read_last_notification">Dar kartą perskaitykite paskutinį pranešimą</string>
+    <string name="shortcut_stop_notification">Nustokite skaityti pranešimą</string>
+    <string name="notification_test_posting">Po 5 sekundžių pasirodo bandymo pranešimas</string>
+    <string name="notification_test_not_allowed">Leiskite SandFly pirmiausia rodyti pranešimus</string>
+    <string name="notification_test_content_title">SandFly testas</string>
+    <string name="notification_test_content_text">Tai bandomasis pranešimas, perskaitykite su pranešimų nustatymais. 123456</string>
+    <string name="notification_automation_on">Įgalinkite pranešimų skaitymą garsiai</string>
+    <string name="notification_automation_off">Išjungti pranešimų skaitymą garsiai</string>
+    <string name="notification_automation_toggle">Įgalinkite arba išjunkite pranešimų skaitymą garsiai</string>
+    <string name="notification_automation_stop">Sustabdykite pranešimo skaitymą</string>
+    <string name="notification_automation_read_all">Skaityti pranešimus</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekundės</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sekundžių</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> sekundžių</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekundžių</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutę</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> minučių</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> minučių</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minučių</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> valanda</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> valandos</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> valandos</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> valandos</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> žodis</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> žodžių</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> žodžių</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> žodžių</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sakinys</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sakinių</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> sakinių</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sakinių</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> teksto simbolis</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> teksto simboliai</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> teksto simboliai</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> teksto simboliai</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> skaitmuo</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> skaitmenų</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> skaitmenų</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> skaitmenų</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Turite <xliff:g id="count" example="1">%d</xliff:g> pranešimą.</item>
+        <item quantity="few">Turite <xliff:g id="count" example="5">%d</xliff:g> pranešimų.</item>
+        <item quantity="many">Turite <xliff:g id="count" example="5">%d</xliff:g> pranešimų.</item>
+        <item quantity="other">Turite <xliff:g id="count" example="5">%d</xliff:g> pranešimų.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
