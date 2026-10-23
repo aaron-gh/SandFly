@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">સ્ટેટસ બોલો</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g>માંથી <xliff:g id="level" example="3">%1$d</xliff:g> બાર</string>
+    <string name="status_wifi_off">વાઇ-ફાઇ બંધ</string>
+    <string name="status_wifi_not_connected">વાઇ-ફાઇ કનેક્ટ થયેલું નથી</string>
+    <string name="template_status_wifi">વાઇ-ફાઇ, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">વાઇ-ફાઇ <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">મોબાઇલ</string>
+    <string name="status_mobile_no_service">કોઈ મોબાઇલ સેવા નથી</string>
+    <string name="status_do_not_disturb">ખલેલ પાડશો નહીં</string>
+    <string name="status_ringer_vibrate">વાઇબ્રેટ</string>
+    <string name="status_ringer_silent">શાંત</string>
+    <string name="status_airplane_mode">એરપ્લેન મોડ</string>
+    <string name="title_pref_status_readout">સ્ટેટસની માહિતી</string>
+    <string name="status_item_time">સમય</string>
+    <string name="status_item_time_summary">વર્તમાન સમય</string>
+    <string name="status_item_battery">બૅટરી</string>
+    <string name="status_item_battery_summary">બૅટરી સ્તર, ચાર્જિંગ અને બૅટરી સેવર</string>
+    <string name="status_item_wifi">વાઇ-ફાઇ</string>
+    <string name="status_item_wifi_summary">નેટવર્કનું નામ અને સિગ્નલની તીવ્રતા</string>
+    <string name="status_item_mobile">મોબાઇલ નેટવર્ક</string>
+    <string name="status_item_mobile_summary">મોબાઇલ ઑપરેટર, નેટવર્કનો પ્રકાર અને સિગ્નલની તીવ્રતા</string>
+    <string name="status_item_ringer">રિંગર અને ખલેલ પાડશો નહીં</string>
+    <string name="status_item_ringer_summary">માત્ર ત્યારે, જ્યારે રિંગર રિંગ વગાડવા પર સેટ ન હોય અથવા ખલેલ પાડશો નહીં ચાલુ હોય</string>
+    <string name="status_item_airplane_mode">એરપ્લેન મોડ</string>
+    <string name="status_item_airplane_mode_summary">માત્ર એરપ્લેન મોડ ચાલુ હોય ત્યારે</string>
+</resources>
