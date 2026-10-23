@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Verifique se há atualizações</string>
+    <string name="summary_pref_check_for_updates_version">Versão <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, compilação <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Verifique automaticamente se há atualizações</string>
+    <string name="summary_pref_auto_update_check">Verifique uma vez por dia e mostre uma notificação quando uma nova versão estiver disponível</string>
+    <string name="title_pref_dev_builds">Construções de desenvolvimento</string>
+    <string name="update_notification_title">SandFly atualização disponível</string>
+    <string name="update_notification_text">Construir <xliff:g id="build" example="97">%1$d</xliff:g>. Toque para instalar.</string>
+    <string name="update_dialog_title">SandFly compilação <xliff:g id="build" example="97">%1$d</xliff:g> está disponível</string>
+    <string name="update_dialog_install">Instalar</string>
+    <string name="update_checking">Verificando atualizações</string>
+    <string name="update_up_to_date">SandFly está atualizado</string>
+    <string name="update_check_failed">Não foi possível verificar atualizações</string>
+    <string name="update_downloading">Baixando atualização</string>
+    <string name="update_already_downloading">A atualização já está baixando</string>
+    <string name="update_ready_title">SandFly atualização baixada</string>
+    <string name="update_ready_text">Toque para instalar.</string>
+    <string name="update_install_failed">Não foi possível instalar a atualização</string>
+    <string name="update_install_canceled">Atualização cancelada</string>
+    <string name="update_allow_install">Permita que SandFly instale aplicativos e tente atualizar novamente</string>
+</resources>
