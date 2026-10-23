@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">점자 하드웨어 키보드</string>
   <string name="bd_application_name">Android 접근성 도구 모음</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack 점자 키보드 사용 불가</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack 점자 키보드 사용 설정</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly 점자 키보드 사용 불가</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly 점자 키보드 사용 설정</string>
   <string name="bd_ime_disabled_dialog_message">입력 시 점자 디스플레이를 사용하려면 입력 설정으로 이동하여 사용 설정하세요.</string>
   <string name="bd_ime_disabled_dialog_title_positive">입력 설정</string>
   <string name="bd_ime_not_default_dialog_title">입력 방법 전환</string>
-  <string name="bd_ime_not_default_dialog_message">계속해서 입력하려면 TalkBack 점자 키보드를 입력 방법으로 설정하세요.</string>
+  <string name="bd_ime_not_default_dialog_message">계속해서 입력하려면 SandFly 점자 키보드를 입력 방법으로 설정하세요.</string>
   <string name="bd_ime_not_default_dialog_positive">입력 전환</string>
   <string name="type_unlabeled">라벨이 없는 위젯</string>
   <string name="type_unlabeled_edittext">라벨이 지정되지 않은 편집 상자</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">좌측으로 이동</string>
   <string name="overlay_pan_right_button">우측으로 이동</string>
   <string name="bd_preferences_title">점자 디스플레이</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">점자 디스플레이를 사용하려면 먼저 TalkBack을 사용 설정하세요.</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack으로 이동</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">점자 디스플레이를 사용하려면 먼저 SandFly을 사용 설정하세요.</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly으로 이동</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">점자 디스플레이를 사용하려면 먼저 블루투스를 사용 설정하세요.</string>
   <string name="bd_preferences_banner_bluetooth_off_button">블루투스 사용 설정</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">점자 디스플레이를 사용하려면 %s에서 근처 기기에 액세스할 수 있어야 합니다.</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">탐색 모드를 사용하려면 기본 키맵에서 향상된 키맵으로 전환해야 합니다. 이 변경사항은 일부 점자 디스플레이 명령어를 업데이트합니다.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">설정</string>
   <string name="bd_command_change_dialog_title">일부 명령어가 업데이트되었습니다</string>
-  <string name="bd_command_change_dialog_message">이 TalkBack 버전에서 다음 점자 디스플레이 명령어가 업데이트되었습니다.\n\n• 이전 항목: 점 1, 7 누르기\n\n• 다음 항목: 점 4, 8 누르기\n\n• 이전 읽기 제어 설정: 점 2, 3, 7, 8 누르기\n\n• 다음 읽기 제어 설정: 점 5, 6, 7, 8 누르기</string>
+  <string name="bd_command_change_dialog_message">이 SandFly 버전에서 다음 점자 디스플레이 명령어가 업데이트되었습니다.\n\n• 이전 항목: 점 1, 7 누르기\n\n• 다음 항목: 점 4, 8 누르기\n\n• 이전 읽기 제어 설정: 점 2, 3, 7, 8 누르기\n\n• 다음 읽기 제어 설정: 점 5, 6, 7, 8 누르기</string>
   <string name="bd_preference_braille_contracted">축약 점자</string>
   <string name="bd_preference_braille_uncontracted">정자 점자</string>
   <string name="bd_braille_grade_tips">점자 디스플레이를 사용해 축약 점자 모드 및 비축약 점자 모드를 빠르게 전환하려면 스페이스바와 점 1, 2, 4, 5를 누르세요.\n\n이 명령어는 두 가지 점자 급수를 모두 가진 언어를 사용하고 있을 때 작동합니다.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">항목 간 이동</string>
   <string name="bd_commands_bindings_category_system_actions_title">시스템 작업</string>
   <string name="bd_commands_bindings_category_system_actions_summary">뒤로, 홈, 알림 등</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack 기능</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack 메뉴 및 설정</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly 기능</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly 메뉴 및 설정</string>
   <string name="bd_commands_bindings_category_braille_settings_title">점자 설정</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">점자 언어 및 설정</string>
   <string name="bd_commands_bindings_category_text_editing_title">텍스트 수정</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">모든 앱 열기</string>
   <string name="bd_cmd_toggle_screen_search">화면검색 열기</string>
   <string name="bd_cmd_edit_custom_label">맞춤 라벨 수정</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack 메뉴 열기</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack 음성 안내 사용 설정 또는 중지</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly 메뉴 열기</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly 음성 안내 사용 설정 또는 중지</string>
   <string name="bd_cmd_read_stop">읽기 중지</string>
-  <string name="bd_cmd_talkback_settings">TalkBack 설정 열기</string>
+  <string name="bd_cmd_talkback_settings">SandFly 설정 열기</string>
   <string name="bd_cmd_switch_to_next_input_language">다음 입력 언어로 전환</string>
   <string name="bd_cmd_switch_to_next_output_language">다음 읽기 언어로 전환</string>
   <string name="bd_cmd_toggle_contracted_mode">약자와 정자 간 전환</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">명령어를 사용하여 탐색 모드로 전환한 후 다음 문자 또는 숫자 단축키를 입력하면 웹페이지를 빠르게 탐색할 수 있습니다.\n\n이러한 단축키는 탐색 모드로 전환하지 않고도 사용할 수 있지만 \'다음\' 명령어에 \'.8\'을 추가해야 합니다.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">표 탐색</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">점자 디스플레이 기능을 사용 중지하시겠습니까?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">언제든지 TalkBack 설정에서 다시 사용 설정할 수 있습니다.</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">언제든지 SandFly 설정에서 다시 사용 설정할 수 있습니다.</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">사용 중지</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">일부 명령을 사용할 수 없음</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">탐색, 점자 설정, 일부 TalkBack 기능에 대한 명령은 입력 또는 수정 중에 사용할 수 없습니다.\n\n이 명령을 사용하려면 먼저 키보드를 닫으세요.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">탐색, 점자 설정, 일부 SandFly 기능에 대한 명령은 입력 또는 수정 중에 사용할 수 없습니다.\n\n이 명령을 사용하려면 먼저 키보드를 닫으세요.</string>
   <string name="bd_caption_tutorial_dialog_title">점자 디스플레이의 자막</string>
   <string name="bd_caption_tutorial_dialog_message">이 동영상의 자막을 표시하거나 숨기려면 스페이스바와 점 1, 4, 7, 8을 누르세요.\n\n지원되는 미디어의 자막이 자동으로 표시되도록 하려면 설정에서 점자 디스플레이에 자막 표시를 사용 설정하세요.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">자막이 있는 경우 항상 이 메시지 표시</string>
   <string name="bd_usb_connect_dialog_title">점자 디스플레이가 USB에 연결됨</string>
-  <string name="bd_usb_connect_dialog_message">%s의 배터리로 점자 디스플레이를 충전 중입니다.\n\n블루투스로 전환하려면 USB 또는 USB 허브의 연결을 해제하고 TalkBack 설정 &gt; 점자 디스플레이로 이동하세요.</string>
+  <string name="bd_usb_connect_dialog_message">%s의 배터리로 점자 디스플레이를 충전 중입니다.\n\n블루투스로 전환하려면 USB 또는 USB 허브의 연결을 해제하고 SandFly 설정 &gt; 점자 디스플레이로 이동하세요.</string>
   <string name="bd_device">휴대전화</string>
   <string name="bd_battery_low_dialog_title">%s 배터리 부족</string>
   <string name="bd_battery_low_dialog_message">%s의 배터리로 점자 디스플레이를 충전 중입니다.\n\n배터리를 절약하려면 다음 단계를 따르세요.\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">모두 지우기</string>
   <string name="popup_message_history_empty">비어 있음</string>
   <string name="popup_message_history_consent_dialog_title">기기 메시지 기록을 사용 설정하시겠습니까?</string>
-  <string name="popup_message_history_consent_dialog_msg">알림 및 알람과 같은 일부 메시지가 TalkBack에 저장됩니다. 언제든지 이 설정을 변경할 수 있습니다.</string>
+  <string name="popup_message_history_consent_dialog_msg">알림 및 알람과 같은 일부 메시지가 SandFly에 저장됩니다. 언제든지 이 설정을 변경할 수 있습니다.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">사용</string>
   <string name="popup_message_history_consent_dialog_negative_btn">아니요</string>
+    <string name="external_display_channel">다른 앱의 점자 디스플레이</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>을 SandFly의 점자 디스플레이로 허용하시겠습니까?</string>
+    <string name="external_display_ask_text">SandFly 허용할 때까지 사용하지 않습니다.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>는 메시지와 입력 내용을 포함하여 화면에 있는 모든 내용을 점자로 표시하는 모든 SandFly을 읽을 수 있습니다. 또한 점자 디스플레이를 사용하여 장치를 제어할 수 있습니다. 즉, 앱을 입력하고 열고 SandFly 명령을 실행할 수 있습니다. 신뢰할 수 있는 앱만 허용하세요.</string>
+    <string name="external_display_allow">허용</string>
+    <string name="external_display_deny">허용하지 않음</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>는 점자 디스플레이입니다</string>
+    <string name="external_display_in_use_text">SandFly가 사용하는 동안 <xliff:g id="app" example="Notetaker">%1$s</xliff:g>는 화면을 읽고 기기를 제어할 수 있습니다.</string>
+    <string name="external_displays_title">다른 앱의 디스플레이</string>
+    <string name="external_displays_summary">허용하는 앱은 SandFly용 점자 디스플레이일 수 있습니다. 점자 디스플레이인 앱은 화면을 읽고 기기를 제어할 수 있습니다.</string>
+    <string name="external_displays_none">어떤 앱도 점자 디스플레이가 될 수 없습니다.</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack 점자 키보드</string>
+  <string name="braille_ime_service_name">SandFly 점자 키보드</string>
   <string name="braille_ime_bd_mode_name">점자 디스플레이 입력</string>
   <string name="switch_to_tabletop_announcement">탁자 모드입니다. 충전 포트가 왼쪽으로 오도록 기기를 놓습니다.</string>
   <string name="calibration_tip_announcement">점 위치를 업데이트하려면 손가락 %d개를 사용해 길게 누릅니다.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">정자 점자 키보드로 전환됨</string>
   <string name="braille_ime_displayed_name">점자 키보드</string>
   <string name="multiple_languages_braille_ime_displayed_name">점자 키보드, %s</string>
-  <string name="input_view_caption">TalkBack 점자 키보드입니다. 도움이 필요하면 g.co/help/braille를 방문하세요.</string>
+  <string name="input_view_caption">SandFly 점자 키보드입니다. 도움이 필요하면 g.co/help/braille를 방문하세요.</string>
   <string name="perform_action_next">다음</string>
   <string name="perform_action_submitting">텍스트 제출 중</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">점 위치를 업데이트하는 중입니다. 먼저 %s의 점 위치를 기록합니다.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">점자 키보드로 입력하는 중에 언어를 변경하려면 세 손가락을 사용해 위로 스와이프하세요. 그런 다음 \'다음 언어로 전환\'을 선택하세요.</string>
   <string name="title_pref_accumulate_presses">사용자가 누른 점 모두 포함</string>
   <string name="summary_pref_accumulate_presses">점을 누른 다음 다른 점을 누르기 위해 손가락을 떼었다고 해도, 사용자가 누른 모든 점은 입력에 포함됩니다.</string>
-  <string name="title_pref_reverse_dots">점 위치 교환</string>
-  <string name="summary_pref_reverse_dots">점 위치를 교환합니다. 예를 들어 점 1과 4의 위치를 바꿀 수 있습니다.</string>
+  <string name="title_pref_reverse_dots">왼쪽 및 오른쪽 점 교환</string>
+  <string name="summary_pref_reverse_dots">점 1, 2, 3은 점 4, 5, 6과 위치를 바꿉니다.</string>
   <string name="bd_preference_braille_contracted">축약 점자</string>
   <string name="bd_preference_braille_uncontracted">정자 점자</string>
   <string name="context_menu_title">점자 키보드 옵션</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">키보드</string>
   <string name="not_enough_touch_points_dialog_title">기기에서 점자 키보드가 지원되지 않음</string>
   <string name="not_enough_touch_points_dialog_message">기기에서 충분한 터치 포인트를 지원하지 않습니다. 자세한 내용은 기기 제조업체에 문의하세요.</string>
-  <string name="talkback_off_dialog_title">점자 키보드 사용을 위해 TalkBack을 사용 설정해야 함</string>
+  <string name="talkback_off_dialog_title">점자 키보드 사용을 위해 SandFly을 사용 설정해야 함</string>
   <string name="talkback_off_dialog_positive_button">접근성 설정 사용</string>
-  <string name="talkback_suspend_dialog_title">점자 키보드를 사용하려면 TalkBack을 재개하세요.</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack이 켜져 있으면 화면을 탭하여 점자 기호를 입력할 수 있습니다.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">동작을 변경하려면 TalkBack을 사용 설정하세요</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack이 사용 중지되어 있습니다. 점자 키보드 동작을 변경하려면 TalkBack을 사용 설정하세요.</string>
+  <string name="talkback_suspend_dialog_title">점자 키보드를 사용하려면 SandFly을 재개하세요.</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly이 켜져 있으면 화면을 탭하여 점자 기호를 입력할 수 있습니다.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">동작을 변경하려면 SandFly을 사용 설정하세요</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly이 사용 중지되어 있습니다. 점자 키보드 동작을 변경하려면 SandFly을 사용 설정하세요.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">설정으로 이동</string>
   <string name="reset_gestures_dialog_title">모든 동작을 재설정하시겠습니까?</string>
   <string name="reset_gestures_dialog_message">모든 점자 키보드 동작이 기본값으로 재설정됩니다.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">기본값으로 재설정</string>
   <string name="custom_gestures_dialog_remove_button">동작 삭제</string>
   <string name="change_gestures_dialog_message_title">동작 변경 방법</string>
-  <string name="change_gestures_dialog_message">다음 화면에서 점자 키보드가 열리면 TalkBack 지원 동작을 사용할 수 없습니다.\n\n점자 키보드가 열리면 사용하려는 동작을 수행하거나, 점자 키보드를 닫고 동작 변경을 취소하려면 두 손가락으로 아래로 스와이프하세요.\n\n사용 가능한 동작 보기\n</string>
+  <string name="change_gestures_dialog_message">다음 화면에서 점자 키보드가 열리면 SandFly 지원 동작을 사용할 수 없습니다.\n\n점자 키보드가 열리면 사용하려는 동작을 수행하거나, 점자 키보드를 닫고 동작 변경을 취소하려면 두 손가락으로 아래로 스와이프하세요.\n\n사용 가능한 동작 보기\n</string>
   <string name="change_gestures_dialog_message_link">사용 가능한 동작 보기</string>
   <string name="change_gestures_dialog_dont_show_checkbox">이 메시지를 다시 표시하지 않음</string>
   <string name="change_gestures_dialog_positive_button">계속</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">사용 안 함</string>
   <string name="next_keyboard">다음 키보드</string>
   <string name="braille_tutorial_title">점자 키보드 가이드</string>
-  <string name="tutorial_intro_description">점자 키보드를 사용하면 화면을 탭하여 6점 점자를 입력할 수 있습니다.\n\n사용 중인 점자는 통합 영어 점자입니다. 입력 언어를 바꾸려면 TalkBack 설정으로 이동하세요.\n\n점자를 입력하려면 휴대전화를 다른 방식으로 잡고 사용해야 합니다.</string>
+  <string name="tutorial_intro_description">점자 키보드를 사용하면 화면을 탭하여 6점 점자를 입력할 수 있습니다.\n\n사용 중인 점자는 통합 영어 점자입니다. 입력 언어를 바꾸려면 SandFly 설정으로 이동하세요.\n\n점자를 입력하려면 휴대전화를 다른 방식으로 잡고 사용해야 합니다.</string>
   <string name="next_step">다음</string>
   <string name="leave_keyboard">점자 키보드 종료</string>
-  <string name="hold_six_fingers_description">점자 키보드에서는 일반 TalkBack 동작을 사용할 수 없습니다.\n\n시작하기 위해 입력할 때 사용할 점자 점 위치 6곳을 설정합니다.</string>
-  <string name="rotate_orientation_description_1">지금부터 일반적인 TalkBack 동작은 사용할 수 없습니다. 점자 키보드를 사용할 때는 TalkBack을 사용할 수 없습니다.</string>
+  <string name="hold_six_fingers_description">점자 키보드에서는 일반 SandFly 동작을 사용할 수 없습니다.\n\n시작하기 위해 입력할 때 사용할 점자 점 위치 6곳을 설정합니다.</string>
+  <string name="rotate_orientation_description_1">지금부터 일반적인 SandFly 동작은 사용할 수 없습니다. 점자 키보드를 사용할 때는 SandFly을 사용할 수 없습니다.</string>
   <string name="rotate_orientation_description_2">시작하려면 화면이 나의 반대쪽을 향하도록 휴대전화를 드세요.</string>
   <string name="tap_to_continue">계속하려면 아무 곳이나 두 번 탭하세요.</string>
   <string name="instruction_type_letter_a">왼쪽 검지 손가락으로 1점을 탭하여 \'A\'를 입력합니다.</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">커서 앞으로 이동</string>
   <string name="result_swipe_down_2_fingers">키보드 숨기기</string>
   <string name="result_swipe_down_3_fingers">다음 키보드</string>
-  <string name="rotate_orientation_announcement">지금부터 일반적인 TalkBack 동작은 사용할 수 없습니다. 점자 키보드를 사용할 때는 TalkBack이 지원되지 않습니다.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">지금부터 일반적인 SandFly 동작은 사용할 수 없습니다. 점자 키보드를 사용할 때는 SandFly이 지원되지 않습니다.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">우선 화면이 내 반대쪽을 향하도록 휴대전화를 듭니다.\n\n다음으로 휴대전화가 가로 모드가 되도록 돌립니다. 손으로 휴대전화의 짧은 쪽 모서리를 쥐어야 합니다. 오른손으로 USB 포트가 있는 쪽을 잡아야 합니다. 가운데 세 손가락을 화면에 두고 새끼손가락과 엄지손가락으로 휴대전화를 지지합니다.\n\n준비가 되면 화면을 두 번 탭하여 계속합니다.\n\n점자 키보드를 종료하려면 세 손가락을 사용하여 땅을 향해 아래로 스와이프하세요. 이렇게 하면 원래 키보드로 다시 전환됩니다.</string>
   <string name="rotate_orientation_continue_announcement">휴대전화가 세로 모드입니다. 계속하려면 긴 쪽이 밑으로 가도록 휴대전화를 가로로 돌립니다. 그런 다음 화면이 나의 반대쪽을 향하도록 돌립니다. 준비가 되면 화면을 두 번 탭하여 계속합니다.</string>
   <string name="type_letter_a_announcement">화면이 나의 반대쪽을 향하도록 유지합니다. 양손의 가운데 세 손가락이 화면을 터치할 수 있도록 두 손으로 휴대전화 양쪽의 짧은 쪽 모서리를 잡습니다.\n\n왼쪽 검지 손가락이 1점 위에 위치해야 합니다. 이제 1점을 탭하여 \'A\'를 입력합니다.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">다른 키보드로 전환하려면 세 손가락으로 아래로 스와이프합니다. 지금 해 보세요.</string>
   <string name="swipe_down_3_fingers_completed_announcement">다음 키보드입니다. 보통 이렇게 하면 다음 키보드로 전환됩니다. 아직 가이드가 진행되고 있기 때문에 이번에는 점자 키보드가 켜진 상태로 유지됩니다.</string>
   <string name="swipe_up_3_fingers_announcement">휴대전화를 탁자 위에 평평하게 올려놓고 탁자 모드에서 입력할 수도 있습니다. 가이드를 종료하려면 세 손가락을 사용하여 위로 스와이프하고 가이드 종료 옵션을 찾습니다.</string>
-  <string name="open_context_menu_announcement">옵션 메뉴가 열렸습니다. 화면이 나를 향하도록 휴대전화를 다시 돌려 평소와 같이 잡습니다. 이제 일반적인 TalkBack 동작을 사용해 탐색할 수 있습니다. 옵션을 더 보려면 오른쪽으로 스와이프하세요.</string>
+  <string name="open_context_menu_announcement">옵션 메뉴가 열렸습니다. 화면이 나를 향하도록 휴대전화를 다시 돌려 평소와 같이 잡습니다. 이제 일반적인 SandFly 동작을 사용해 탐색할 수 있습니다. 옵션을 더 보려면 오른쪽으로 스와이프하세요.</string>
   <string name="hold_six_fingers_announcement">%s\n기기를 탁자 위에 평평하게 올려놓습니다. 입력하기 편한 자세로 양손 가운데 세 손가락을 사용하여 화면을 길게 터치합니다.</string>
   <string name="hold_six_fingers_inactive_announcement">기기를 탁자 위에 평평하게 올려놓습니다. 입력하기 편한 자세로 양손 가운데 세 손가락을 사용하여 화면을 길게 터치합니다.</string>
   <string name="finish_tutorial_announcement">점자 키보드를 표시하고 있습니다. 화면이 내 반대쪽을 향하도록 휴대전화를 돌립니다. 가로 모드가 되도록 휴대전화를 가로로 돌립니다. 그런 다음 키보드 입력을 시작합니다.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">이 동작은 \"%1$s\"에 사용되며 변경할 수 없습니다. 다른 동작을 시도해 보세요. %2$s</string>
   <string name="custom_gesture_cannot_used">이 동작은 사용할 수 없습니다</string>
   <string name="custom_gesture_no_gesture">수행된 동작이 없습니다</string>
-  <string name="custom_gesture_try_another">다른 동작을 시도해 보세요. 사용 가능한 모든 동작의 목록을 보려면 TalkBack 점자 키보드 고객센터로 이동하세요. %s</string>
+  <string name="custom_gesture_try_another">다른 동작을 시도해 보세요. 사용 가능한 모든 동작의 목록을 보려면 SandFly 점자 키보드 고객센터로 이동하세요. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">동작이 일치하지 않습니다</string>
   <string name="custom_gesture_perform_again">사용하려는 동작을 다시 취해 보세요. %s</string>
+    <string name="tabletop_port_left_announcement">탁상 모드, 왼쪽에 충전 포트</string>
+    <string name="tabletop_port_right_announcement">탁상 모드, 오른쪽 충전 포트</string>
+    <string name="screen_away_port_right_announcement">화면 꺼짐 모드, 오른쪽 충전 포트</string>
+    <string name="screen_away_port_left_announcement">화면 꺼짐 모드, 왼쪽에 충전 포트</string>
+    <string name="screen_toward_announcement">너를 향한 스크린</string>
+    <string name="screen_toward_port_left_announcement">당신을 향한 화면, 왼쪽에 충전 포트</string>
+    <string name="screen_toward_port_right_announcement">당신을 향한 화면, 오른쪽에 충전 포트</string>
+    <string name="screen_toward_port_down_announcement">화면이 나를 향해 있고 충전 포트가 아래를 향하고 있습니다.</string>
+    <string name="screen_toward_port_up_announcement">화면이 나를 향해 있고 충전 포트가 위를 향하고 있습니다.</string>
+    <string name="port_right_announcement">오른쪽 충전 포트</string>
+    <string name="port_left_announcement">왼쪽 충전 포트</string>
+    <string name="tabletop_port_near_announcement">탁상 모드, 충전 포트가 당신을 향해 있습니다.</string>
+    <string name="tabletop_port_far_announcement">탁상 모드, 충전 포트가 멀리 떨어져 있음</string>
+    <string name="screen_away_port_down_announcement">화면 꺼짐 모드, 충전 포트가 아래를 향함</string>
+    <string name="screen_away_port_up_announcement">화면 꺼짐 모드, 충전 포트가 위를 향함</string>
+    <string name="port_near_announcement">당신을 향한 충전 포트</string>
+    <string name="port_far_announcement">충전 포트가 사용자에게서 멀리 떨어져 있음</string>
+    <string name="port_down_announcement">충전 포트가 아래쪽을 향하고 있음</string>
+    <string name="port_up_announcement">위쪽을 가리키는 충전 포트</string>
+    <string name="orientation_locked_announcement">방향이 잠겼습니다.</string>
+    <string name="orientation_locked_port_announcement">방향이 잠겨 있습니다. %1$s</string>
+    <string name="orientation_unlocked_announcement">방향 잠금 해제됨</string>
+    <string name="switch_to_language_contracted_announcement">%s로 전환됨, 축약 점자</string>
+    <string name="switch_to_language_uncontracted_announcement">%s로 전환됨, 정자 점자</string>
+    <string name="title_pref_flip_dots_vertically">상단 및 하단 점 교환</string>
+    <string name="summary_pref_flip_dots_vertically">점 1은 점 3과 자리를 바꾸고, 점 4는 점 6과 자리를 바꿉니다.</string>
+    <string name="title_pref_tablet_held_up_faces_away">태블릿이 얼굴을 멀리 들고 있음</string>
+    <string name="summary_pref_tablet_held_up_faces_away">꺼져 있으면 태블릿이나 펼친 휴대폰을 들고 있으면 테이블 위 레이아웃이 사용자를 향하게 됩니다.</string>
+    <string name="title_pref_typing_sounds">타이핑 소리</string>
+    <string name="summary_pref_typing_sounds">문자, 공백, 새 줄을 입력하거나 삭제할 때 키보드 클릭을 재생합니다.</string>
+    <string name="skip_tutorial">튜토리얼 건너뛰기</string>
 </resources>

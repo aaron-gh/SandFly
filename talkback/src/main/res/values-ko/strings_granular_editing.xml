@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">세분화된 편집</string>
+    <string name="granular_editing_split_by">분할 기준: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">분할 기준</string>
+    <string name="granular_editing_characters">문자</string>
+    <string name="granular_editing_words">단어</string>
+    <string name="granular_editing_sentences">문장</string>
+    <string name="granular_editing_lines">줄</string>
+    <string name="granular_editing_paragraphs">단락</string>
+    <string name="granular_editing_space">띄어쓰기</string>
+    <string name="granular_editing_new_line">줄바꿈</string>
+    <string name="granular_editing_tab">탭 문자</string>
+    <string name="granular_editing_empty">텍스트가 없습니다. 더보기에서 끝에 텍스트 추가를 사용하세요.</string>
+    <string name="granular_editing_edit">편집</string>
+    <string name="granular_editing_insert_before">이전에 삽입</string>
+    <string name="granular_editing_insert_after">뒤에 삽입</string>
+    <string name="granular_editing_delete">삭제</string>
+    <string name="granular_editing_select">선택</string>
+    <string name="granular_editing_unselect">선택 취소</string>
+    <string name="granular_editing_selected">선택됨</string>
+    <string name="granular_editing_save">저장</string>
+    <string name="granular_editing_more">더보기</string>
+    <string name="granular_editing_undo">실행 취소</string>
+    <string name="granular_editing_redo">마지막으로 실행 취소된 편집 다시 실행</string>
+    <string name="granular_editing_find">찾기</string>
+    <string name="granular_editing_find_next">다음 찾기</string>
+    <string name="granular_editing_replace">바꾸기</string>
+    <string name="granular_editing_replace_with">다음으로 교체</string>
+    <string name="granular_editing_replace_all">모두 교체</string>
+    <string name="granular_editing_add_at_end">끝에 텍스트 추가</string>
+    <string name="granular_editing_clear_selection">모든 텍스트 선택 해제</string>
+    <string name="granular_editing_cut_selected">선택한 텍스트 잘라내기</string>
+    <string name="granular_editing_delete_selected">선택 항목 삭제</string>
+    <string name="granular_editing_copied">복사됨</string>
+    <string name="granular_editing_deleted">삭제됨</string>
+    <string name="granular_editing_not_found">찾을 수 없음</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>개 교체됨</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>개 교체됨</item>
+    </plurals>
+    <string name="granular_editing_save_changes">변경사항을 저장하시겠습니까?</string>
+    <string name="granular_editing_copy_changes">변경된 텍스트를 복사하시겠습니까?</string>
+    <string name="granular_editing_discard">폐기</string>
+    <string name="granular_editing_keep_editing">계속 수정하세요</string>
+    <string name="granular_editing_not_saved">저장되지 않음: 텍스트 필드가 사라졌습니다. 텍스트가 복사됩니다.</string>
+    <string name="granular_editing_no_text">편집할 텍스트가 없습니다.</string>
+    <string name="granular_editing_password">비밀번호 필드에서는 사용할 수 없습니다.</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">상태 말하기</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g>바 중 <xliff:g id="level" example="3">%1$d</xliff:g>바</string>
+    <string name="status_wifi_off">Wi-Fi 꺼짐</string>
+    <string name="status_wifi_not_connected">Wi-Fi 연결되지 않음</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">모바일</string>
+    <string name="status_mobile_no_service">모바일 서비스 없음</string>
+    <string name="status_do_not_disturb">방해하지 마세요</string>
+    <string name="status_ringer_vibrate">진동</string>
+    <string name="status_ringer_silent">침묵</string>
+    <string name="status_airplane_mode">비행기 모드</string>
+    <string name="title_pref_status_readout">상태 판독</string>
+    <string name="status_item_time">시간</string>
+    <string name="status_item_time_summary">현재 시간</string>
+    <string name="status_item_battery">배터리</string>
+    <string name="status_item_battery_summary">배터리 잔량, 충전, 배터리 세이버</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">네트워크 이름 및 신호 강도</string>
+    <string name="status_item_mobile">모바일 네트워크</string>
+    <string name="status_item_mobile_summary">이동통신사, 네트워크 유형, 신호 강도</string>
+    <string name="status_item_ringer">벨소리 및 방해 금지 모드</string>
+    <string name="status_item_ringer_summary">벨소리가 울리도록 설정되지 않았거나 방해 금지 모드가 켜져 있는 경우에만</string>
+    <string name="status_item_airplane_mode">비행기 모드</string>
+    <string name="status_item_airplane_mode_summary">비행기 모드가 켜져 있을 때만</string>
+</resources>
