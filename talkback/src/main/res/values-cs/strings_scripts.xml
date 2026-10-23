@@ -123,4 +123,18 @@
     <string name="script_install_adds">Přidává:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_permission_java">Spouštět kód Java s veškerým přístupem SandFly ve všech aplikacích</string>
+    <string name="scripts_auto_update">Aktualizujte skripty automaticky</string>
+    <string name="scripts_check_updates">Zkontrolovat aktualizace</string>
+    <string name="scripts_checking_updates">Kontrola aktualizací…</string>
+    <string name="scripts_updates_category">Aktualizace</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> aktualizovaný skript: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="few">Aktualizovány <xliff:g id="count" example="2">%1$d</xliff:g> skripty: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many">Aktualizované skripty <xliff:g id="count" example="2">%1$d</xliff:g>: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other">Aktualizováno <xliff:g id="count" example="2">%1$d</xliff:g> skriptů: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Aktualizace jsou uvedeny v části Aktualizace</string>
+    <string name="scripts_update_check_failed">Některé zdroje nebylo možné zkontrolovat</string>
+    <string name="scripts_up_to_date">Všechny skripty jsou aktuální</string>
 </resources>

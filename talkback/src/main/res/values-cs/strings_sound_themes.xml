@@ -88,4 +88,10 @@
     <string name="theme_sound_too_large">Tento soubor je příliš velký. Zvuk může mít nejvýše 5 MB.</string>
     <string name="theme_sound_not_audio">SandFly tento soubor nemůže přehrát. Vyberte zvuk ve formátu WAV, OGG, MP3 nebo FLAC.</string>
     <string name="theme_sound_failed">SandFly tento soubor nemohl načíst.</string>
+    <string name="title_pref_sound_theme_install_source">Ze zdroje</string>
+    <string name="summary_pref_sound_theme_install_source">Soubory motivů v úložišti na GitHub, GitLab, Codeberg, Gitea nebo Bitbucket.</string>
+    <string name="sound_theme_sources">Zdroje zvukových motivů</string>
+    <string name="sound_theme_source_empty">V tomto zdroji nejsou žádné zvukové motivy</string>
+    <string name="sound_theme_source_failed">Zvukové motivy nelze načíst. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Zvukové motivy nainstalované z něj zůstanou nainstalované.</string>
 </resources>
