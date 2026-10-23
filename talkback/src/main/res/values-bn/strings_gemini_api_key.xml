@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">সেভ করুন</string>
     <string name="gemini_api_key_get">কী নিন</string>
     <string name="gemini_api_terms_link">Gemini API-এর অতিরিক্ত পরিষেবার শর্তাবলী</string>
+    <string name="title_pref_gemini_model">Gemini মডেল</string>
+    <string name="gemini_model_automatic">স্বয়ংক্রিয়</string>
+    <string name="summary_pref_gemini_model_automatic">স্বয়ংক্রিয়: Gemini ফ্ল্যাশ, তারপর ফ্ল্যাশ ব্যস্ত থাকলে ফ্ল্যাশ-লাইট৷</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, তারপর ফ্ল্যাশ-লাইট যখন ব্যস্ত থাকে</string>
+    <string name="gemini_model_loading">মডেলগুলো পাওয়া যাচ্ছে...</string>
+    <string name="gemini_model_list_failed">মডেলগুলি পাওয়া যায়নি: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">প্রথমে একটি Gemini API কী সেট করুন</string>
+    <string name="ai_service_address_hint">ঠিকানা, যেমন https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">মডেল</string>
+    <string name="ai_service_address_invalid">ঠিকানাটি অবশ্যই https://. দিয়ে শুরু হবে কিছুই সংরক্ষিত হয়নি৷</string>
+    <string name="dialog_message_ai_service_consent">চিত্র এবং স্ক্রিনশটগুলি বর্ণনা করার জন্য <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> এ পাঠানো হয়, যা কয়েক সেকেন্ড সময় নেয়। এর নিজস্ব শর্তাবলী এবং গোপনীয়তা নীতি প্রযোজ্য। জেনারেটিভ এআই পরীক্ষামূলক, তাই এটি ভুল করবে।</string>
+    <string name="ai_service_error_api_key">AI পরিষেবা API কী গ্রহণ করেনি। স্বয়ংক্রিয় বিবরণে এর সেটিংস পরীক্ষা করুন।</string>
+    <string name="ai_service_error_quota">AI পরিষেবার ব্যবহারের সীমা পৌঁছে গেছে। পরে আবার চেষ্টা করুন.</string>
+    <string name="ai_service_error_busy">এআই পরিষেবা এখন ব্যস্ত। কিছুক্ষণের মধ্যে আবার চেষ্টা করুন।</string>
+    <string name="ai_service_error_timeout">AI পরিষেবাটি উত্তর দিতে খুব বেশি সময় নিয়েছে। আবার চেষ্টা করুন</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">কোনওটিই নয়</string>
+    <string name="ai_service_not_set_up">কোনো AI পরিষেবা ব্যবহার করা হচ্ছে না। একটি সেট আপ করুন বা স্বয়ংক্রিয় বিবরণ সেটিংসে একটি চয়ন করুন৷</string>
+    <string name="ai_provider_none_set_up">কোনো AI পরিষেবা সেট আপ করা হয়নি। নিচের সেটিংসে একটি সেট আপ করুন।</string>
+    <string name="ai_provider_other">অন্যান্য পরিষেবা</string>
+    <string name="title_pref_category_ai_services">এআই পরিষেবা</string>
+    <string name="title_pref_ai_provider">এআই পরিষেবা</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> সেটিংস</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, সেট আপ করা হয়নি</string>
+    <string name="ai_provider_in_use">ব্যবহার করা হচ্ছে</string>
+    <string name="ai_provider_not_set_up">সেট আপ করা হয়নি</string>
+    <string name="ai_provider_not_ready">প্রথমে একটি মডেল চয়ন করুন</string>
+    <string name="ai_provider_address">ঠিকানা</string>
+    <string name="ai_provider_address_message">একটি OpenAI-সামঞ্জস্যপূর্ণ চ্যাট API এবং চিত্র ইনপুট সহ একটি পরিষেবার ঠিকানা, যেমন https://example.com/v1.</string>
+    <string name="ai_provider_not_set">সেট করা হয়নি</string>
+    <string name="ai_provider_set">কনফিগার করা হয়েছে</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API কী</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> মডেল</string>
+    <string name="ai_provider_choose_model">নির্বাচিত হয়নি</string>
+    <string name="ai_provider_key_message">আপনার <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী পেস্ট করুন। এটি অপসারণ করতে, ক্ষেত্রটি সাফ করুন এবং সংরক্ষণ করুন। আপনার বর্ণনা করা ছবি এবং স্ক্রীন <xliff:g id="service" example="Claude">%1$s</xliff:g> এ পাঠানো হয়েছে।</string>
+    <string name="ai_provider_needs_key">প্রথমে <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী সেট করুন</string>
+    <string name="ai_provider_needs_address">আগে ঠিকানা সেট করুন</string>
+    <string name="ai_provider_enter_model">একটি মডেলের নাম লিখুন</string>
 </resources>
