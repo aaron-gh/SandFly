@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Salvesta</string>
     <string name="gemini_api_key_get">Hangi võti</string>
     <string name="gemini_api_terms_link">Gemini API täiendavad teenusetingimused</string>
+    <string name="title_pref_gemini_model">Gemini mudel</string>
+    <string name="gemini_model_automatic">Automaatne</string>
+    <string name="summary_pref_gemini_model_automatic">Automaatne: Gemini Flash, seejärel Flash-Lite, kui Flash on hõivatud</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, seejärel Flash-Lite, kui see on hõivatud</string>
+    <string name="gemini_model_loading">Mudelite hankimine…</string>
+    <string name="gemini_model_list_failed">Mudeleid ei õnnestunud hankida: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Esmalt määrake API võti Gemini</string>
+    <string name="ai_service_address_hint">Aadress, näiteks https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Mudel</string>
+    <string name="ai_service_address_invalid">Aadress peab algama tähega https://. Midagi ei salvestatud.</string>
+    <string name="dialog_message_ai_service_consent">Pildid ja ekraanipildid saadetakse kirjeldamiseks aadressile <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, mis võtab aega mitu sekundit. Kehtivad tema enda tingimused ja privaatsuspoliitika. Generatiivne AI on eksperimentaalne, nii et see teeb vigu.</string>
+    <string name="ai_service_error_api_key">AI-teenus ei aktsepteerinud API-võtit. Kontrollige selle seadeid jaotises Automaatsed kirjeldused.</string>
+    <string name="ai_service_error_quota">AI-teenuse kasutuslimiit on täis. Proovige hiljem uuesti.</string>
+    <string name="ai_service_error_busy">AI-teenus on praegu hõivatud. Proovige hetke pärast uuesti.</string>
+    <string name="ai_service_error_timeout">AI-teenusel võttis vastamine liiga kaua aega. Proovi uuesti.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Puudub</string>
+    <string name="ai_service_not_set_up">AI-teenust ei kasutata. Seadistage see või valige see automaatsete kirjelduste seadetes.</string>
+    <string name="ai_provider_none_set_up">AI-teenust pole seadistatud. Seadistage see allolevates seadetes.</string>
+    <string name="ai_provider_other">Muu teenus</string>
+    <string name="title_pref_category_ai_services">AI teenused</string>
+    <string name="title_pref_ai_provider">Tehisintellekti teenus</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> seaded</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, pole seadistatud</string>
+    <string name="ai_provider_in_use">Kasutusel</string>
+    <string name="ai_provider_not_set_up">Pole seadistatud</string>
+    <string name="ai_provider_not_ready">Kõigepealt valige mudel</string>
+    <string name="ai_provider_address">Aadress</string>
+    <string name="ai_provider_address_message">OpenAI-ühilduva vestluse API ja pildisisendiga teenuse aadress, nt https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Pole määratud</string>
+    <string name="ai_provider_set">Seadistatud</string>
+    <string name="title_pref_gemini_api_key_of">Teenuse <xliff:g id="service" example="Claude">%1$s</xliff:g> API-võti</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> mudel</string>
+    <string name="ai_provider_choose_model">Ei valitud</string>
+    <string name="ai_provider_key_message">Kleepige oma <xliff:g id="service" example="Claude">%1$s</xliff:g> API võti. Selle eemaldamiseks tühjendage väli ja salvestage. Teie kirjeldatud pildid ja ekraanid saadetakse aadressile <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Esmalt määrake API võti <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_address">Esmalt määrake aadress</string>
+    <string name="ai_provider_enter_model">Sisestage mudeli nimi</string>
 </resources>
