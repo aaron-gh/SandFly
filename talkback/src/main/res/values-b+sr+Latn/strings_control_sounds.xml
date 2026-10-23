@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Kontrolišite zvukove i vibracije</string>
+    <string name="summary_pref_control_sounds">Dajte svakoj vrsti kontrole, kao što su dugmad, polja za potvrdu, polja za uređivanje i stavke liste, sopstveni zvuk i sopstvenu vibraciju iz teme, umesto zvuka fokusa i vibracije, kao što Unspoken radi za NVDA. Zvuk dolazi sa mesta gde je kontrola na ekranu, a SandFly izostavlja da kaže kakva je to kontrola.</string>
+    <string name="title_pref_control_sounds_speak_roles">Još kažemo vrstu kontrole</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kada se reprodukuje kontrolni zvuk, ipak recite kakva je to kontrola, na primer dugme. Ovo je za svaku zvučnu temu.</string>
+    <string name="title_pref_control_sounds_3d">3D audio</string>
+    <string name="pref_control_sounds_3d_headphones">Sa slušalicama</string>
+    <string name="pref_control_sounds_3d_always">Uvek</string>
+    <string name="pref_control_sounds_3d_never">Nikad, samo levo i desno</string>
+    <string name="individual_sound_control_button">Kontrolni zvuk: dugme</string>
+    <string name="individual_sound_control_checkbox">Kontrolni zvuk: polje za potvrdu</string>
+    <string name="individual_sound_control_radio_button">Kontrolni zvuk: radio dugme</string>
+    <string name="individual_sound_control_edit_text">Kontrolni zvuk: polje za uređivanje</string>
+    <string name="individual_sound_control_combo_box">Kontrola zvuka: padajuća lista</string>
+    <string name="individual_sound_control_slider">Kontrolni zvuk: klizač</string>
+    <string name="individual_sound_control_link">Kontrolni zvuk: link</string>
+    <string name="individual_sound_control_image">Kontrolni zvuk: slika</string>
+    <string name="individual_sound_control_clock">Kontrolni zvuk: sat</string>
+    <string name="individual_sound_control_tab">Kontrolni zvuk: tab</string>
+    <string name="individual_sound_control_menu_item">Kontrolni zvuk: stavka menija</string>
+    <string name="individual_sound_control_list_item">Kontrolni zvuk: stavka liste</string>
+    <string name="individual_sound_control_tree_item">Kontrolni zvuk: stavka drveta</string>
+</resources>

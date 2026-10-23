@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack тастатура са Брајевом азбуком</string>
+  <string name="braille_ime_service_name">SandFly тастатура са Брајевом азбуком</string>
   <string name="braille_ime_bd_mode_name">Унос на Брајевом екрану</string>
   <string name="switch_to_tabletop_announcement">Стони режим. Поставите уређај тако да порт за пуњење буде лево.</string>
   <string name="calibration_tip_announcement">Да бисте ажурирали положај тачака, притисните и држите са %d прста.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Прешли сте у режим пуне Брајеве азбуке</string>
   <string name="braille_ime_displayed_name">тастатура са Брајевом азбуком</string>
   <string name="multiple_languages_braille_ime_displayed_name">тастатура са Брајевом азбуком, %s</string>
-  <string name="input_view_caption">Тастатура са Брајевом азбуком – да бисте пронашли помоћ, посетите g.co/help/braille</string>
+  <string name="input_view_caption">SandFly Брајева тастатура - за помоћ посетите г.цо/хелп/браилле</string>
   <string name="perform_action_next">Даље</string>
   <string name="perform_action_submitting">Текст се шаље</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ажурира се положај тачака. Хајде прво да снимимо тачке: %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Да бисте променили језик док куцате помоћу тастатуре са Брајевом азбуком, превуците нагоре помоћу 3 прста. Затим изаберите „пређи на следећи језик“.</string>
   <string name="title_pref_accumulate_presses">Уврсти све притиснуте тачке</string>
   <string name="summary_pref_accumulate_presses">Свака притиснута тачка је део уноса, чак и ако се тачка отпусти пре других тачака</string>
-  <string name="title_pref_reverse_dots">Обрни тачке</string>
-  <string name="summary_pref_reverse_dots">Замените положаје тачака, на пример, тако да 1. и 4. тачка замене места</string>
+  <string name="title_pref_reverse_dots">Замените леву и десну тачку</string>
+  <string name="summary_pref_reverse_dots">Тачке 1, 2 и 3 мењају места са тачкама 4, 5 и 6</string>
   <string name="bd_preference_braille_contracted">Брајева азбука са скраћеницама</string>
   <string name="bd_preference_braille_uncontracted">Брајева азбука са целим речима</string>
   <string name="context_menu_title">Опције тастатуре са Брајевом азбуком</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Тастатура</string>
   <string name="not_enough_touch_points_dialog_title">Уређај не подржава тастатуру са Брајевом азбуком</string>
   <string name="not_enough_touch_points_dialog_message">Уређај не подржава довољно додирних тачака. Више информација потражите од произвођача уређаја.</string>
-  <string name="talkback_off_dialog_title">Укључите TalkBack да бисте користили тастатуру са Брајевом азбуком</string>
+  <string name="talkback_off_dialog_title">Укључите SandFly да бисте користили тастатуру са Брајевом азбуком</string>
   <string name="talkback_off_dialog_positive_button">Укључи у подешавањима приступачности</string>
-  <string name="talkback_suspend_dialog_title">Наставите да користите TalkBack да бисте користили тастатуру са Брајевом азбуком</string>
-  <string name="talkback_off_or_suspend_dialog_message">Када је TalkBack укључен, можете да додирнете екран да бисте уносили Брајеве симболе.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Укључите TalkBack да бисте променили покрет</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack је искључен. Укључите га да бисте променили покрете за Брајеву тастатуру.</string>
+  <string name="talkback_suspend_dialog_title">Наставите да користите SandFly да бисте користили тастатуру са Брајевом азбуком</string>
+  <string name="talkback_off_or_suspend_dialog_message">Када је SandFly укључен, можете да додирнете екран да бисте уносили Брајеве симболе.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Укључите SandFly да бисте променили покрет</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly је искључен. Укључите га да бисте променили покрете за Брајеву тастатуру.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Иди у Подешавања</string>
   <string name="reset_gestures_dialog_title">Желите да ресетујете све покрете?</string>
   <string name="reset_gestures_dialog_message">Сви покрети за Брајеву тастатуру ће се ресетовати на подразумеване</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Ресетуј на подразумевано</string>
   <string name="custom_gestures_dialog_remove_button">Уклони покрет</string>
   <string name="change_gestures_dialog_message_title">Како да промените покрет</string>
-  <string name="change_gestures_dialog_message">На следећем екрану ће се отворити Брајева тастатура и нећете моћи да користите TalkBack покрете.\n\nКада се отвори Брајева тастатура, обавите покрет који желите да користите или превуците надоле са 2 прста да бисте затворили Брајеву тастатуру и отказали промену покрета.\n\nПогледајте доступне покрете\n</string>
+  <string name="change_gestures_dialog_message">На следећем екрану ће се отворити Брајева тастатура и нећете моћи да користите SandFly покрете.\n\nКада се отвори Брајева тастатура, обавите покрет који желите да користите или превуците надоле са 2 прста да бисте затворили Брајеву тастатуру и отказали промену покрета.\n\nПогледајте доступне покрете\n</string>
   <string name="change_gestures_dialog_message_link">Погледајте доступне покрете</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Не приказуј ову поруку поново</string>
   <string name="change_gestures_dialog_positive_button">Настави</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Не користи</string>
   <string name="next_keyboard">Следећа тастатура</string>
   <string name="braille_tutorial_title">Водич за тастатуру са Брајевом азбуком</string>
-  <string name="tutorial_intro_description">Уз тастатуру са Брајевом азбуком можете да додирнете екран да бисте унели Брајев знак од 6 тачака.\n\nКористите јединствену Брајеву азбуку за енглески. Да бисте променили језик за унос текста, идите у подешавања TalkBack-а.\n\nДа бисте уносили Брајеве знакове, морате да држите и користите телефон другачије.</string>
+  <string name="tutorial_intro_description">Уз тастатуру са Брајевом азбуком можете да додирнете екран да бисте унели Брајев знак од 6 тачака.\n\nКористите јединствену Брајеву азбуку за енглески. Да бисте променили језик за унос текста, идите у подешавања SandFly-а.\n\nДа бисте уносили Брајеве знакове, морате да држите и користите телефон другачије.</string>
   <string name="next_step">Даље</string>
   <string name="leave_keyboard">Затвори тастатуру са Брајевом азбуком</string>
-  <string name="hold_six_fingers_description">Нећете моћи да користите стандардне TalkBack покрете на тастатури са Брајевом азбуком.\n\nДа бисте започели, подесите положај 6 тачака за коришћење Брајеве азбуке при уносу текста.</string>
-  <string name="rotate_orientation_description_1">Од сада више нећете моћи да користите уобичајене TalkBack покрете. TalkBack није доступан када користите тастатуруру са Брајевом азбуком.</string>
+  <string name="hold_six_fingers_description">Нећете моћи да користите стандардне SandFly покрете на тастатури са Брајевом азбуком.\n\nДа бисте започели, подесите положај 6 тачака за коришћење Брајеве азбуке при уносу текста.</string>
+  <string name="rotate_orientation_description_1">Од сада више нећете моћи да користите уобичајене SandFly покрете. SandFly није доступан када користите тастатуруру са Брајевом азбуком.</string>
   <string name="rotate_orientation_description_2">Да бисте започели, држите телефон овако, тако да је екран окренут од вас.</string>
   <string name="tap_to_continue">Двапут додирните било где да бисте наставили</string>
   <string name="instruction_type_letter_a">Додирните 1. тачку левим кажипрстом да бисте унели слово А</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ПОМЕРИЛИ СТЕ КУРСОР УНАПРЕД</string>
   <string name="result_swipe_down_2_fingers">САКРИЈ ТАСТАТУРУ</string>
   <string name="result_swipe_down_3_fingers">СЛЕДЕЋА ТАСТАТУРА</string>
-  <string name="rotate_orientation_announcement">Од сада више нећете моћи да користите уобичајене TalkBack покрете. TalkBack није доступан када користите тастатуру са Брајевом азбуком.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Од сада више нећете моћи да користите уобичајене SandFly покрете. SandFly није доступан када користите тастатуру са Брајевом азбуком.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Прво окрените телефон тако да је екран окренут од вас.\n\nЗатим ротирајте телефон хоризонтално у водораван положај. Руке би требало да обухватају кратке крајеве телефона. Десна рука би требало да држи крај са USB портом. Положите средња 3 прста на екран и придржавајте телефон помоћу малог прста и палца.\n\nКада будете спремни, двапут додирните екран да бисте наставили.\n\nДа бисте затворили тастатуру са Брајевом азбуком, превуците надоле према тлу помоћу 3 прста. Тиме се враћате на првобитну тастатуру.</string>
   <string name="rotate_orientation_continue_announcement">Телефон је у вертикалном положају. Да бисте наставили, ротирајте телефон хоризонтално тако да дужа страна буде на дну. Затим окрените екран тако да буде окренут од вас. Када будете спремни, двапут додирните екран да бисте наставили.</string>
   <string name="type_letter_a_announcement">Нека екран остане окренут од вас. Држите телефон обема рукама за кратке ивице телефона тако да средња 3 прста сваке руке могу да додирну екран.\n\nЛеви кажипрст би требало да буде на 1. тачки. Сада додирните 1. тачку да бисте унели слово А.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Да бисте прешли на другу тастатуру, превуците надоле помоћу 3 прста. Испробајте.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Следећа тастатура. Овим се обично прелази на следећу тастатуру. Овај пут остајете на тастатури са Брајевом азбуком зато што сте још увек у водичу.</string>
   <string name="swipe_up_3_fingers_announcement">Можете и да уносите текст у стоном режиму тако што ћете поставити телефон равно на сто. Да бисте довршили водич, превуците нагоре помоћу 3 прста и пронађите опцију Доврши водич</string>
-  <string name="open_context_menu_announcement">Мени са опцијама је отворен. Обрните телефон тако да је окренут ка вама и држите га нормално. Сада можете да користите уобичајене TalkBack покрете за кретање. Превуците удесно да бисте видели још опција.</string>
+  <string name="open_context_menu_announcement">Мени са опцијама је отворен. Обрните телефон тако да је окренут ка вама и држите га нормално. Сада можете да користите уобичајене SandFly покрете за кретање. Превуците удесно да бисте видели још опција.</string>
   <string name="hold_six_fingers_announcement">%s\nПоставите уређај равно на сто. Затим додирните и задржите екран помоћу средња 3 прста обе руке у положају за унос текста који вам је удобан.</string>
   <string name="hold_six_fingers_inactive_announcement">Поставите уређај равно на сто. Затим додирните и задржите екран помоћу средња 3 прста обе руке у положају за унос текста који вам је удобан.</string>
   <string name="finish_tutorial_announcement">Приказује се тастатура са Брајевом азбуком. Окрените телефон тако да је екран окренут од вас. Ротирајте телефон хоризонтално у водораван положај. Затим почните са уносом текста.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Овај покрет се користи за „%1$s“ и не може да се промени. Пробајте са другим покретом. %2$s</string>
   <string name="custom_gesture_cannot_used">Овај покрет не може да се користи</string>
   <string name="custom_gesture_no_gesture">Није направљен ниједан покрет</string>
-  <string name="custom_gesture_try_another">Пробајте са другим покретом. Да бисте видели листу свих доступних покрета, идите у центар за помоћ за TalkBack Брајеву тастатуру. %s</string>
+  <string name="custom_gesture_try_another">Пробајте са другим покретом. Да бисте видели листу свих доступних покрета, идите у центар за помоћ за SandFly Брајеву тастатуру. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Покрети се не подударају</string>
   <string name="custom_gesture_perform_again">Поновите покрет који желите да користите. %s</string>
+    <string name="tabletop_port_left_announcement">Стони режим, прикључак за пуњење на левој страни</string>
+    <string name="tabletop_port_right_announcement">Режим стола, прикључак за пуњење на десној страни</string>
+    <string name="screen_away_port_right_announcement">Режим без екрана, прикључак за пуњење на десној страни</string>
+    <string name="screen_away_port_left_announcement">Режим без екрана, прикључак за пуњење на левој страни</string>
+    <string name="screen_toward_announcement">Екран према вама</string>
+    <string name="screen_toward_port_left_announcement">Екран према вама, прикључак за пуњење на левој страни</string>
+    <string name="screen_toward_port_right_announcement">Екран према вама, прикључак за пуњење на десној страни</string>
+    <string name="screen_toward_port_down_announcement">Екран према вама, порт за пуњење окренут надоле</string>
+    <string name="screen_toward_port_up_announcement">Екран према вама, порт за пуњење окренут нагоре</string>
+    <string name="port_right_announcement">Порт за пуњење на десној страни</string>
+    <string name="port_left_announcement">Порт за пуњење на левој страни</string>
+    <string name="tabletop_port_near_announcement">Режим стола, прикључак за пуњење према вама</string>
+    <string name="tabletop_port_far_announcement">Стони режим, прикључак за пуњење удаљен од вас</string>
+    <string name="screen_away_port_down_announcement">Режим одвојеног екрана, порт за пуњење окренут надоле</string>
+    <string name="screen_away_port_up_announcement">Режим уклоњеног екрана, прикључак за пуњење окренут нагоре</string>
+    <string name="port_near_announcement">Порт за пуњење према вама</string>
+    <string name="port_far_announcement">Порт за пуњење удаљен од вас</string>
+    <string name="port_down_announcement">Порт за пуњење окренут надоле</string>
+    <string name="port_up_announcement">Порт за пуњење окренут нагоре</string>
+    <string name="orientation_locked_announcement">Оријентација закључана</string>
+    <string name="orientation_locked_port_announcement">Оријентација закључана. %1$s</string>
+    <string name="orientation_unlocked_announcement">Оријентација је откључана</string>
+    <string name="switch_to_language_contracted_announcement">Прешли сте на: %s, Брајева азбука са скраћеницама</string>
+    <string name="switch_to_language_uncontracted_announcement">Прешли сте на: %s, Брајева азбука са целим речима</string>
+    <string name="title_pref_flip_dots_vertically">Замените горње и доње тачке</string>
+    <string name="summary_pref_flip_dots_vertically">Тачка 1 мења места са тачком 3, а тачка 4 са тачком 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Таблет је окренут лицем у страну</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Када је искључен, таблет или расклопљени телефон који је подигнут користи изглед стола, окренут према вама</string>
+    <string name="title_pref_typing_sounds">Звуци куцања</string>
+    <string name="summary_pref_typing_sounds">Плаи тастатура кликће када унесете знак, размак, нови ред или избришете</string>
+    <string name="skip_tutorial">Прескочи водич</string>
 </resources>

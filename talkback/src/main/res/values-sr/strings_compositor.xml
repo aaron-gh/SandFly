@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack је укључен</string>
-  <string name="talkback_disabled">TalkBack је искључен</string>
+  <string name="talkback_on">SandFly је укључен</string>
+  <string name="talkback_disabled">SandFly је искључен</string>
   <string name="notification_type_beginning_of_field">Почетак поља</string>
   <string name="notification_type_end_of_field">Крај поља</string>
   <string name="notification_type_selection_mode_on">Режим избора је укључен</string>
@@ -196,4 +196,8 @@
   <string name="drag_started">Превлачење је започето</string>
   <string name="drag_dropped">Превучена ставка је отпуштена</string>
   <string name="drag_cancelled">Превлачење је отказано</string>
+    <string name="template_brightness_changed">Осветљеност <xliff:g id="percent">%1$d</xliff:g> процената.</string>
+    <string name="brightness_needs_permission">Дозволите измену поставки система да бисте променили осветљеност.</string>
+    <string name="brightness_adaptive_on">Искључите прилагодљиву осветљеност да бисте променили осветљеност.</string>
+    <string name="telegram_replying_to">одговара на <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
