@@ -28,9 +28,12 @@ import java.nio.ByteOrder
 /**
  * Records the microphone as 16 kHz mono 16-bit audio, the format Whisper and Gemini 3.5 Transcribe
  * take, from [start] until [stop]. Recording ends by itself after [MAX_SECONDS], and then
- * [onLimit] runs on the recording thread.
+ * [onLimit] runs on the recording thread, as does [onChunk], with each tenth of a second recorded.
  */
-class AudioCapture(private val onLimit: () -> Unit) {
+class AudioCapture(
+  private val onLimit: () -> Unit,
+  private val onChunk: ((ByteArray) -> Unit)? = null,
+) {
   private val audio = ByteArrayOutputStream()
   @Volatile private var recording = false
   private var thread: Thread? = null
@@ -88,6 +91,7 @@ class AudioCapture(private val onLimit: () -> Unit) {
           break
         }
         synchronized(audio) { audio.write(buffer, 0, read) }
+        onChunk?.invoke(buffer.copyOf(read))
         if (audio.size() >= MAX_BYTES) {
           recording = false
           onLimit()

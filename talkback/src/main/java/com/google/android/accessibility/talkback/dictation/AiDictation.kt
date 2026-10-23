@@ -88,6 +88,8 @@ class AiDictation(
   private var capture: AudioCapture? = null
   private var continuous: ContinuousRecognition? = null
   @Volatile private var transcriber: SpeechTranscriber? = null
+  /** The Rambler live transcription session of the dictation being recorded, if any. */
+  private var live: RamblerLive? = null
   /** Counts dictations, so that the result of one that was given up on is ignored. */
   private var generation = 0
   /** Types the recognized text when the correction takes too long, or null when none waits. */
@@ -151,10 +153,24 @@ class AiDictation(
       continuous = recognizer
       return true
     }
+    // Rambler live transcription transcribes while the user speaks.
+    val session =
+      if (used == Recognition.RAMBLER && DictationSettings.ramblerLive(prefs)) {
+        RamblerLive(DictationSettings.ramblerKey(prefs)).also { it.start() }
+      } else {
+        null
+      }
     val recorder =
-      AudioCapture(onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } })
-    if (!recorder.start()) return false
+      AudioCapture(
+        onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } },
+        onChunk = session?.let { live -> { pcm -> live.send(pcm) } },
+      )
+    if (!recorder.start()) {
+      session?.cancel()
+      return false
+    }
     capture = recorder
+    live = session
     return true
   }
 
@@ -170,12 +186,34 @@ class AiDictation(
     val pcm = capture?.stop() ?: ByteArray(0)
     capture = null
     if (!AudioCapture.hasSpeechLength(pcm)) {
+      live?.cancel()
+      live = null
       recognized("", cleaned = false)
       return
     }
     val request = ++generation
     val used = recognition
     tones.play(/* playTone= */ true, /* delayPlayTone= */ true)
+    live?.let { session ->
+      live = null
+      session.finish { text ->
+        if (request != generation) return@finish
+        if (text != null) {
+          tones.stop()
+          recognized(text, cleaned = true)
+        } else {
+          // The session failed: the whole recording goes the usual way.
+          LogUtils.w(TAG, "Live transcription failed, sending the recording")
+          transcribeRecording(request, used, pcm)
+        }
+      }
+      return
+    }
+    transcribeRecording(request, used, pcm)
+  }
+
+  /** Recognizes [pcm] on the worker thread, then types it, unless a newer dictation started. */
+  private fun transcribeRecording(request: Int, used: Recognition, pcm: ByteArray) {
     worker.execute {
       val result =
         try {
@@ -362,6 +400,8 @@ class AiDictation(
     continuous = null
     capture?.stop()
     capture = null
+    live?.cancel()
+    live = null
     transcriber?.cancel()
     if (phase == Phase.RECORDING) pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     field = null

@@ -35,6 +35,7 @@ object DictationSettings {
   const val PREF_AI_SERVICE = "pref_dictation_ai_service"
   const val PREF_WHISPER_MODEL = "pref_dictation_whisper_model"
   const val PREF_WHISPER_GPU = "pref_dictation_whisper_gpu"
+  const val PREF_RAMBLER_LIVE = "pref_dictation_rambler_live"
 
   /** The AI service of automatic descriptions corrects dictation too. */
   const val AI_SAME = "same"
@@ -84,6 +85,9 @@ object DictationSettings {
   /** The Gemini API key Rambler uses, or empty when there is none. */
   fun ramblerKey(prefs: SharedPreferences): String =
     GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY)
+
+  /** Whether Rambler transcribes while the user speaks, so that the text is ready sooner. */
+  fun ramblerLive(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_RAMBLER_LIVE, true)
 
   /** Whether Rambler recognizes [locale]'s language. */
   fun ramblerSupports(locale: Locale): Boolean = locale.language in RAMBLER_LANGUAGES

@@ -4417,6 +4417,8 @@
   <string name="dictation_transcription_failed">Speech not transcribed. Nothing typed.</string>
   <!-- Title of the Dictation settings screen and its entry in SandFly settings. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation">Dictation</string>
+  <!-- Dictation switch: Rambler transcribes while the user speaks, so that the text is typed sooner after recording stops. Rambler is a product name. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_dictation_rambler_live">Rambler live transcription</string>
   <!-- Dictation setting: how speech is turned into text. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation_recognition">Speech recognition</string>
   <!-- Speech recognition choice: Rambler for languages it supports, then Whisper, then Android speech recognition. [CHAR_LIMIT=NONE] -->
