@@ -318,4 +318,15 @@
   <string name="popup_message_history_consent_dialog_msg">This will store some messages, like notifications and alarms, in SandFly. You can change this setting at any time.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Turn on</string>
   <string name="popup_message_history_consent_dialog_negative_btn">No, thanks</string>
+    <string name="external_display_channel">Braille displays from other apps</string>
+    <string name="external_display_ask_title">Allow <xliff:g id="app" example="Notetaker">%1$s</xliff:g> to be a braille display for SandFly?</string>
+    <string name="external_display_ask_text">SandFly won\'t use it until you allow it.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> will be able to read everything SandFly shows in braille, which can be anything on the screen, including messages and what you type. It will also be able to control your device as you can with a braille display: type, open apps and run any SandFly command. Only allow apps you trust.</string>
+    <string name="external_display_allow">Allow</string>
+    <string name="external_display_deny">Don\'t allow</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is your braille display</string>
+    <string name="external_display_in_use_text">While SandFly uses it, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> can read the screen and control the device.</string>
+    <string name="external_displays_title">Displays from other apps</string>
+    <string name="external_displays_summary">Apps that you allow can be braille displays for SandFly. An app that is a braille display can read the screen and control the device.</string>
+    <string name="external_displays_none">No apps can be braille displays.</string>
 </resources>
