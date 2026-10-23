@@ -65,6 +65,8 @@ android {
             }
         }
     }
+    // The NDK of the native modules, whose tools strip debug symbols from the native libraries.
+    ndkVersion = "27.3.13750724"
     packaging {
         resources {
             excludes += ['LICENSE', 'README']

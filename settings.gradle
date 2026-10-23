@@ -19,6 +19,7 @@ rootProject.name = 'sandfly'
 include ':talkback'
 include ':utils'
 include ':proguard'
+include ':whisper'
 
 // Those subroots which are not direct sub-folders root need to be specially declared.
 include ':braillecommon'

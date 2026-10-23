@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_dictation_recognition_choice"
+      android:order="0"
+      android:persistent="false"
+      android:title="@string/title_pref_dictation_recognition" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_dictation_ai"
+      android:order="2"
+      android:title="@string/title_pref_category_ai_services">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_ai_dictation_default"
+        android:key="@string/pref_ai_dictation_key"
+        android:title="@string/title_pref_ai_dictation" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:dependency="@string/pref_ai_dictation_key"
+        android:key="pref_dictation_ai_service_choice"
+        android:persistent="false"
+        android:title="@string/title_pref_dictation_ai_service" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
+</PreferenceScreen>
