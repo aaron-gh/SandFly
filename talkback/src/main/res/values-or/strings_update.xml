@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
+    <string name="summary_pref_check_for_updates_version">ସଂସ୍କରଣ <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, <xliff:g id="build" example="96">%2$d</xliff:g> ନିର୍ମାଣ କରନ୍ତୁ |</string>
+    <string name="title_pref_auto_update_check">ଅଦ୍ୟତନଗୁଡ଼ିକ ପାଇଁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
+    <string name="summary_pref_auto_update_check">ଦିନରେ ଥରେ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ଏକ ନୂତନ ବିଲ୍ଡ ଉପଲବ୍ଧ ହେଲେ ଏକ ବିଜ୍ଞପ୍ତି ଦେଖାନ୍ତୁ |</string>
+    <string name="title_pref_dev_builds">ବିକାଶ ଗଠନ କରେ |</string>
+    <string name="update_notification_title">SandFly ଅଦ୍ୟତନ ଉପଲବ୍ଧ |</string>
+    <string name="update_notification_text"><xliff:g id="build" example="97">%1$d</xliff:g> ନିର୍ମାଣ କରନ୍ତୁ | ସଂସ୍ଥାପନ କରିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ |</string>
+    <string name="update_dialog_title">SandFly ନିର୍ମାଣ <xliff:g id="build" example="97">%1$d</xliff:g> ଉପଲବ୍ଧ |</string>
+    <string name="update_dialog_install">ସଂସ୍ଥାପନ କରନ୍ତୁ |</string>
+    <string name="update_checking">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରୁଛି |</string>
+    <string name="update_up_to_date">SandFly ଅପ୍ ଟୁ ଡେଟ୍ ଅଟେ |</string>
+    <string name="update_check_failed">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରିପାରିଲା ନାହିଁ |</string>
+    <string name="update_downloading">ଅଦ୍ୟତନ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
+    <string name="update_already_downloading">ଅପଡେଟ୍ ପୂର୍ବରୁ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
+    <string name="update_ready_title">SandFly ଅଦ୍ୟତନ ଡାଉନଲୋଡ୍ ହୋଇଛି |</string>
+    <string name="update_ready_text">ସଂସ୍ଥାପନ କରିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ |</string>
+    <string name="update_install_failed">ଅଦ୍ୟତନ ସଂସ୍ଥାପନ କରିପାରିଲା ନାହିଁ |</string>
+    <string name="update_install_canceled">ଅଦ୍ୟତନ ବାତିଲ ହୋଇଛି |</string>
+    <string name="update_allow_install">ଆପ୍ ସଂସ୍ଥାପନ କରିବାକୁ SandFly କୁ ଅନୁମତି ଦିଅନ୍ତୁ, ତାପରେ ପୁନର୍ବାର ଅଦ୍ୟତନ ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+</resources>
