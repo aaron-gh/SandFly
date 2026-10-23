@@ -1658,4 +1658,96 @@
     <string name="settings_export_failed">Không xuất được chế độ cài đặt</string>
     <string name="settings_import_done">Đã nhập chế độ cài đặt</string>
     <string name="settings_import_failed">Tệp này không phải là tệp cài đặt SandFly hoặc không đọc được</string>
+    <string name="title_selector_vertical_navigation">Điều hướng dọc</string>
+    <string name="summary_selector_vertical_navigation">Chuyển đến mục bên dưới hoặc bên trên, bỏ qua các mục khác trong hàng</string>
+    <string name="title_pref_speech_stream">Âm lượng lời nói</string>
+    <string name="summary_selector_speech_stream">Chuyển đổi giữa âm lượng hỗ trợ tiếp cận, nội dung nghe nhìn, chuông và cuộc gọi</string>
+    <string name="speech_stream_accessibility">Âm lượng hỗ trợ tiếp cận</string>
+    <string name="speech_stream_media">Âm lượng nội dung nghe nhìn</string>
+    <string name="speech_stream_ring">Âm lượng chuông</string>
+    <string name="speech_stream_call">Âm lượng cuộc gọi, loa thoại</string>
+    <string-array name="pref_speech_stream_entries">
+        <item>@string/speech_stream_accessibility</item>
+        <item>@string/speech_stream_media</item>
+        <item>@string/speech_stream_ring</item>
+        <item>@string/speech_stream_call</item>
+    </string-array>
+    <string name="keycombo_menu_other_toggle_browse_mode_extra">Phím tắt khác để bật hoặc tắt chế độ duyệt</string>
+    <string name="title_pref_vibration_strength">Cường độ rung</string>
+    <string name="shortcut_write_reading_control">Viết chữ cái của một chế độ điều khiển đọc</string>
+    <string name="title_pref_reading_control_letters">Chữ cái viết tay</string>
+    <string name="reading_control_letter_none">Không có</string>
+    <string name="handwriting_prompt">Viết một chữ cái</string>
+    <string name="handwriting_closed">Đã đóng tính năng viết tay</string>
+    <string name="handwriting_no_match">Không có chế độ điều khiển đọc nào bắt đầu bằng <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_not_recognized">Không nhận dạng được</string>
+    <string name="handwriting_downloading">Đang tải tính năng nhận dạng chữ viết tay</string>
+    <string name="handwriting_download_title">Tải tính năng nhận dạng chữ viết tay?</string>
+    <string name="handwriting_download_message">Chữ viết tay được nhận dạng trên điện thoại này. Mô hình cho ngôn ngữ này, khoảng 20 MB, được tải từ Google một lần. Một thông báo sẽ xuất hiện khi tải xong.</string>
+    <string name="handwriting_download_button">Tải xuống</string>
+    <string name="handwriting_downloaded">Đã tải tính năng nhận dạng chữ viết tay</string>
+    <string name="handwriting_download_failed">Không thể tải tính năng nhận dạng chữ viết tay. Hãy kiểm tra kết nối Internet.</string>
+    <string name="handwriting_unsupported_language">Tính năng nhận dạng chữ viết tay không hỗ trợ ngôn ngữ này</string>
+    <string name="title_pref_handwriting_keyboard">Bàn phím viết tay</string>
+    <string name="summary_pref_handwriting_keyboard">Bật tính năng viết tay SandFly trong phần cài đặt bàn phím của Android</string>
+    <string name="title_pref_handwriting_wait">Thời gian chờ sau khi viết</string>
+    <string name="value_handwriting_wait_200">0,2 giây</string>
+    <string name="value_handwriting_wait_300">0,3 giây</string>
+    <string name="value_handwriting_wait_400">0,4 giây</string>
+    <string name="value_handwriting_wait_500">0,5 giây</string>
+    <string name="value_handwriting_wait_600">0,6 giây</string>
+    <string name="value_handwriting_wait_800">0,8 giây</string>
+    <string name="value_handwriting_wait_1000">1 giây</string>
+    <string name="handwriting_keyboard_name">Viết tay SandFly</string>
+    <string name="handwriting_space">Dấu cách</string>
+    <string name="handwriting_new_line">Dòng mới</string>
+    <string name="handwriting_tutorial_intro">Hướng dẫn bàn phím viết tay. Viết bằng một ngón tay ở bất kỳ đâu trên màn hình. Nội dung bạn viết sẽ được nhập khi bạn dừng một lát. Để kết thúc hướng dẫn, hãy vuốt xuống bằng ba ngón tay.</string>
+    <string name="handwriting_tutorial_write_letter">Viết chữ cái a.</string>
+    <string name="handwriting_tutorial_write_word">Bây giờ hãy viết từ hi.</string>
+    <string name="handwriting_tutorial_typed">Đã nhập <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_space">Vuốt sang phải bằng hai ngón tay để nhập dấu cách.</string>
+    <string name="handwriting_tutorial_delete">Vuốt sang trái bằng hai ngón tay để xoá ký tự trước con trỏ.</string>
+    <string name="handwriting_tutorial_deleted">Đã xoá.</string>
+    <string name="handwriting_tutorial_next_reading">Khi chữ viết được nhập thành dạng khác, chẳng hạn như chữ in hoa, hãy vuốt lên bằng hai ngón tay để chọn kết quả nhận dạng tiếp theo. Hãy thử ngay.</string>
+    <string name="handwriting_tutorial_read_back">Nhấn bằng hai ngón tay để đọc văn bản trước con trỏ.</string>
+    <string name="handwriting_tutorial_new_line">Vuốt xuống bằng hai ngón tay để xuống dòng hoặc thực hiện hành động của trường, chẳng hạn như Gửi.</string>
+    <string name="handwriting_tutorial_not_that">Đó là một cử chỉ khác.</string>
+    <string name="handwriting_tutorial_done">Dòng mới. Đã hoàn thành hướng dẫn. Vuốt xuống bằng ba ngón tay để ẩn bàn phím, hoặc vuốt sang phải hay trái bằng ba ngón tay để chuyển bàn phím. Để mở lại hướng dẫn, hãy nhấn bằng ba ngón tay.</string>
+    <string name="handwriting_tutorial_finished">Đã kết thúc hướng dẫn. Để mở lại, hãy nhấn bằng ba ngón tay.</string>
+    <string name="handwriting_no_alternatives">Không có gợi ý khác</string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> trên <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_empty">Trống</string>
+    <string name="handwriting_not_available">Tính năng nhận dạng chữ viết tay không có trên thiết bị này</string>
+    <string name="shortcut_refresh">Làm mới</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Vuốt dài xuống từ góc trên bên trái</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Vuốt dài xuống từ góc trên bên phải</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Vuốt sang phải từ nửa trên của cạnh trái</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Vuốt dài sang phải từ nửa trên của cạnh trái</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Vuốt sang phải từ nửa dưới của cạnh trái</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Vuốt dài sang phải từ nửa dưới của cạnh trái</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Vuốt sang trái từ nửa trên của cạnh phải</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Vuốt dài sang trái từ nửa trên của cạnh phải</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Vuốt sang trái từ nửa dưới của cạnh phải</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Vuốt dài sang trái từ nửa dưới của cạnh phải</string>
+    <string name="title_pref_edge_first_click_mm">Khoảng cách đến tiếng tách đầu tiên</string>
+    <string name="title_pref_edge_second_click_mm">Khoảng cách từ tiếng tách thứ nhất đến thứ hai</string>
+    <string name="value_distance_5mm">0,5 cm</string>
+    <string name="value_distance_10mm">1 cm</string>
+    <string name="value_distance_15mm">1,5 cm</string>
+    <string name="value_distance_20mm">2 cm</string>
+    <string name="value_distance_30mm">3 cm</string>
+    <string name="value_distance_40mm">4 cm</string>
+    <string name="value_distance_50mm">5 cm</string>
+    <string name="title_pref_selector_auto_switch">Tự động đổi chế độ điều khiển đọc</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Phản hồi khi dùng bàn phím viết tay</string>
+    <string name="image_qna_ask_by_voice">Hỏi bằng giọng nói</string>
+    <string name="image_qna_stop_listening">Dừng nghe</string>
+    <string name="image_qna_type_question">Nhập câu hỏi</string>
+    <string name="shortcut_dictate">Nhập bằng giọng nói</string>
+    <string name="title_pref_ai_dictation">Sửa nội dung nhập bằng giọng nói bằng AI</string>
+    <string name="dictation_not_corrected">Chưa sửa. Đã nhập theo kết quả nhận dạng.</string>
+    <string name="dictation_nothing_recognized">Không nhận dạng được nội dung nào</string>
+    <string name="dictation_unavailable">Không có tính năng nhận dạng giọng nói</string>
+    <string name="dictation_field_gone">Trường văn bản đã đóng. Chưa nhập nội dung nào.</string>
+    <string name="title_pref_browse_mode_per_app">Ghi nhớ chế độ duyệt trong từng ứng dụng</string>
 </resources>
