@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">கடிதத்திற்குப் பிறகு, \"எச் ஹோட்டல்\" போன்ற தாமதம் இல்லை</string>
     <string name="phonetic_letters_mode_instead_of_letter">கடிதத்திற்கு பதிலாக, \"ஹோட்டல்\" போன்றது</string>
     <string name="title_pref_emoji_speech">ஈமோஜி</string>
-    <string name="emoji_speech_engine">பேச்சு இயந்திரம் மூலம் படிக்கவும்</string>
+    <string name="emoji_speech_engine">பேச்சு இன்ஜின் படிக்கும்</string>
     <string name="emoji_speech_names">SandFly படிக்கும்</string>
     <string name="emoji_speech_none">எதுவுமில்லை</string>
     <string name="summary_selector_menu_emoji">ஈமோஜி படிக்கும் முறையை மாற்றவும்</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">எதுவுமில்லை</string>
     <string name="handwriting_prompt">ஒரு எழுத்தை எழுதுங்கள்</string>
     <string name="handwriting_closed">கையெழுத்து மூடப்பட்டது</string>
-    <string name="handwriting_no_match">எந்த வாசிப்பு கட்டுப்பாடும் <xliff:g id="letter" example="Q">%1$s</xliff:g> இல் தொடங்குவதில்லை</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> இல் தொடங்கும் வாசிப்புக் கட்டுப்பாடு எதுவும் இல்லை</string>
     <string name="handwriting_not_recognized">கையெழுத்தை அறிய முடியவில்லை</string>
     <string name="handwriting_downloading">கையெழுத்து அறிதல் பதிவிறக்கப்படுகிறது</string>
     <string name="handwriting_download_title">கையெழுத்து அறிதலைப் பதிவிறக்கவா?</string>
@@ -1608,9 +1608,9 @@
     <string name="handwriting_tutorial_done">புதிய வரி. பயிற்சி முடிந்தது. விசைப்பலகையை மறைக்க மூன்று விரல்களால் கீழே ஸ்வைப் செய்யவும், விசைப்பலகைகளை மாற்ற மூன்று விரல்களால் வலது அல்லது இடதுபுறமாகவும் ஸ்வைப் செய்யவும். டுடோரியலை மீண்டும் திறக்க, மூன்று விரல்களால் தட்டவும்.</string>
     <string name="handwriting_tutorial_finished">பயிற்சி முடிந்தது. மீண்டும் திறக்க, மூன்று விரல்களால் தட்டவும்.</string>
     <string name="handwriting_no_alternatives">வேறு பரிந்துரைகள் இல்லை</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> இல் <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">வெற்று உரை</string>
-    <string name="handwriting_not_available">இந்தச் சாதனத்தில் கையெழுத்து அங்கீகாரம் இல்லை</string>
+    <string name="handwriting_not_available">இந்தச் சாதனத்தில் கையெழுத்து அறிதல் இல்லை</string>
     <string name="shortcut_scroll_to_bottom">கீழே உருட்டவும்</string>
     <string name="shortcut_refresh">புதுப்பிக்கவும்</string>
     <string name="shortcut_system_notifications">கணினி அறிவிப்புப் பேனல்</string>

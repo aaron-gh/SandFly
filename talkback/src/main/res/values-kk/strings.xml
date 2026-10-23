@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Хаттан кейін кідіріс жоқ, «h hotel» сияқты</string>
     <string name="phonetic_letters_mode_instead_of_letter">Әріптің орнына «қонақүй» сияқты</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
-    <string name="emoji_speech_engine">Сөйлеу механизмі арқылы оқу</string>
+    <string name="emoji_speech_engine">Сөйлеу механизмі оқиды</string>
     <string name="emoji_speech_names">SandFly оқиды</string>
     <string name="emoji_speech_none">Жоқ</string>
     <string name="summary_selector_menu_emoji">Эмодзилерді оқу әдісін өзгертіңіз</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Жоқ</string>
     <string name="handwriting_prompt">Алфавиттік әріпті жаз</string>
     <string name="handwriting_closed">Қолжазба енгізу жабылды</string>
-    <string name="handwriting_no_match">Оқуды басқару <xliff:g id="letter" example="Q">%1$s</xliff:g> белгісінен басталмайды</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> әрпінен басталатын оқуды басқару элементі жоқ</string>
     <string name="handwriting_not_recognized">Қолжазба танылмады</string>
     <string name="handwriting_downloading">Қолжазбаны тану жүктелуде</string>
     <string name="handwriting_download_title">Қолжазбаны тануды жүктеп алу керек пе?</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_tutorial_next_reading">Егер қолжазба бас әріп сияқты басқа таңба ретінде танылса, келесі тану ұсынысын таңдау үшін екі саусақпен жоғары сырғытыңыз. Қазір көріңіз.</string>
     <string name="handwriting_tutorial_read_back">Курсор алдындағы мәтінді оқу үшін екі саусақпен түртіңіз.</string>
     <string name="handwriting_tutorial_new_line">Жаңа жол енгізу немесе Жіберу сияқты мәтін өрісінің әрекетін орындау үшін екі саусақпен төмен сырғытыңыз.</string>
-    <string name="handwriting_tutorial_not_that">Бұл тағы бір қимыл болды.</string>
+    <string name="handwriting_tutorial_not_that">Бұл басқа қимыл болды.</string>
     <string name="handwriting_tutorial_done">Жаңа жол. Оқулық аяқталды. Пернетақтаны жасыру үшін үш саусақпен төмен сырғытыңыз, ал пернетақталарды ауыстыру үшін үш саусақпен оңға немесе солға сырғытыңыз. Оқулықты қайта ашу үшін үш саусақпен түртіңіз.</string>
     <string name="handwriting_tutorial_finished">Оқулық аяқталды. Оны қайта ашу үшін үш саусақпен түртіңіз.</string>
     <string name="handwriting_no_alternatives">Басқа ұсыныстар жоқ</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini API кілтін қабылдамады. Автоматты сипаттамалар параметрлеріндегі пернені тексеріңіз.</string>
     <string name="gemini_error_quota">Gemini API кілтінің пайдалану шегіне жетті. Әрекетті кейінірек қайталаңыз.</string>
     <string name="gemini_error_busy">Gemini қазір бос емес. Біраз уақыттан кейін қайталап көріңіз.</string>
-    <string name="gemini_error_timeout">Gemini жауап беру тым ұзақ болды. Қайтадан байқап көріңіз.</string>
+    <string name="gemini_error_timeout">Gemini тым ұзақ жауап бермеді. Қайталап көріңіз.</string>
     <string name="gemini_error_with_code">Gemini жауап бере алмады, қате <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini жауап бере алмады, қате <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Толығырақ сурет сипаттамасын алу мүмкін емес: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

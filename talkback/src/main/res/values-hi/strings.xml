@@ -1667,7 +1667,7 @@
     <string name="reading_control_letter_none">कोई नहीं</string>
     <string name="handwriting_prompt">वर्णमाला का एक अक्षर लिखें</string>
     <string name="handwriting_closed">लिखावट बंद</string>
-    <string name="handwriting_no_match">कोई पठन नियंत्रण <xliff:g id="letter" example="Q">%1$s</xliff:g> से प्रारंभ नहीं होता</string>
+    <string name="handwriting_no_match">टेक्स्ट पढ़ने से जुड़ा ऐसा कोई कंट्रोल नहीं है जो <xliff:g id="letter" example="Q">%1$s</xliff:g> से शुरू होता हो</string>
     <string name="handwriting_not_recognized">लिखावट पहचानी नहीं गई</string>
     <string name="handwriting_downloading">लिखावट पहचान डाउनलोड हो रही है</string>
     <string name="handwriting_download_title">हस्तलेखन पहचान डाउनलोड करें?</string>
@@ -1699,11 +1699,11 @@
     <string name="handwriting_tutorial_next_reading">यदि लिखावट को किसी अन्य वर्ण, जैसे कि बड़े अक्षर, के रूप में पहचाना जाता है, तो अगले पहचान सुझाव को चुनने के लिए दो अंगुलियों से ऊपर की ओर स्वाइप करें। अब इसे आजमाओ।</string>
     <string name="handwriting_tutorial_read_back">कर्सर से पहले टेक्स्ट को पढ़ने के लिए दो अंगुलियों से टैप करें।</string>
     <string name="handwriting_tutorial_new_line">नई लाइन डालने या टेक्स्ट फ़ील्ड क्रिया करने के लिए दो अंगुलियों से नीचे की ओर स्वाइप करें, जैसे भेजें।</string>
-    <string name="handwriting_tutorial_not_that">वह एक और इशारा था.</string>
+    <string name="handwriting_tutorial_not_that">वह कोई दूसरा जेस्चर था.</string>
     <string name="handwriting_tutorial_done">नई लाइन. ट्यूटोरियल समाप्त हुआ. कीबोर्ड को छिपाने के लिए तीन अंगुलियों से नीचे की ओर स्वाइप करें, और कीबोर्ड स्विच करने के लिए तीन अंगुलियों से दाएं या बाएं स्वाइप करें। ट्यूटोरियल को दोबारा खोलने के लिए, तीन अंगुलियों से टैप करें।</string>
     <string name="handwriting_tutorial_finished">ट्यूटोरियल समाप्त हुआ. इसे दोबारा खोलने के लिए तीन अंगुलियों से टैप करें.</string>
     <string name="handwriting_no_alternatives">कोई अन्य सुझाव नहीं</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> का <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> में से <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">खाली पाठ</string>
     <string name="handwriting_not_available">इस डिवाइस पर हस्तलेखन पहचान उपलब्ध नहीं है</string>
     <string name="shortcut_scroll_to_bottom">नीचे स्क्रॉल करें</string>

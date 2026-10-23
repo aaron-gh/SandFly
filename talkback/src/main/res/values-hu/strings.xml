@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">A levél után nincs késés, például \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">A betű helyett például \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Olvasás beszédmotorral</string>
+    <string name="emoji_speech_engine">A beszédmotor olvassa fel</string>
     <string name="emoji_speech_names">A SandFly olvassa fel</string>
     <string name="emoji_speech_none">Nincs</string>
     <string name="summary_selector_menu_emoji">Módosítsa a hangulatjelek olvasásának módját</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Nincs</string>
     <string name="handwriting_prompt">Írj egy ábécé betűt</string>
     <string name="handwriting_closed">Kézírás bezárva</string>
-    <string name="handwriting_no_match">Egyetlen olvasásvezérlő sem <xliff:g id="letter" example="Q">%1$s</xliff:g>-val kezdődik</string>
+    <string name="handwriting_no_match">Nincs <xliff:g id="letter" example="Q">%1$s</xliff:g> betűvel kezdődő felolvasásvezérlés</string>
     <string name="handwriting_not_recognized">A kézírás nem ismerhető fel</string>
     <string name="handwriting_downloading">A kézírás-felismerés letöltése folyamatban van</string>
     <string name="handwriting_download_title">Letölti a kézírás-felismerést?</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_tutorial_next_reading">Ha a kézírást más karakterként, például nagybetűként ismeri fel, húzza felfelé két ujját a következő felismerési javaslat kiválasztásához. Próbálja ki most.</string>
     <string name="handwriting_tutorial_read_back">Érintse meg két ujjal a kurzor előtti szöveg elolvasásához.</string>
     <string name="handwriting_tutorial_new_line">Csúsztassa két ujját lefelé egy új sor beszúrásához, vagy hajtsa végre a szövegmezőműveletet, például a Küldést.</string>
-    <string name="handwriting_tutorial_not_that">Ez egy másik gesztus volt.</string>
+    <string name="handwriting_tutorial_not_that">Ez egy másik kézmozdulat volt.</string>
     <string name="handwriting_tutorial_done">Új vonal. A bemutató befejeződött. Csúsztassa lefelé három ujját a billentyűzet elrejtéséhez, három ujjal pedig jobbra vagy balra a billentyűzet váltásához. Az oktatóanyag újbóli megnyitásához koppintson három ujjal.</string>
     <string name="handwriting_tutorial_finished">A bemutató véget ért. Újbóli megnyitásához koppintson három ujjal.</string>
     <string name="handwriting_no_alternatives">Nincs más javaslat</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításainál.</string>
     <string name="gemini_error_quota">Elérte a Gemini API-kulcs használati korlátját. Próbálja újra később.</string>
     <string name="gemini_error_busy">Gemini jelenleg elfoglalt. Próbálja újra egy pillanat múlva.</string>
-    <string name="gemini_error_timeout">Gemini túl sokáig tartott a válaszadáshoz. Próbáld újra.</string>
+    <string name="gemini_error_timeout">A Gemini túl sokáig nem válaszolt. Próbálja újra.</string>
     <string name="gemini_error_with_code">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nem tudok részletesebb képleírást kapni: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

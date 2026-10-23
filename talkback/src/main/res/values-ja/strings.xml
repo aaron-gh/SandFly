@@ -1569,7 +1569,7 @@
     <string name="reading_control_letter_none">なし</string>
     <string name="handwriting_prompt">文字を書いてください</string>
     <string name="handwriting_closed">手書き終了</string>
-    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> で始まる読み取り制御はありません</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> で始まる読み上げコントロールはありません</string>
     <string name="handwriting_not_recognized">手書きを認識できませんでした</string>
     <string name="handwriting_downloading">手書き認識をダウンロード中です</string>
     <string name="handwriting_download_title">手書き認識をダウンロードしますか?</string>
@@ -1601,7 +1601,7 @@
     <string name="handwriting_tutorial_next_reading">手書きが大文字などの別の文字として認識された場合は、2 本の指で上にスワイプして次の認識候補を選択します。今すぐ試してください。</string>
     <string name="handwriting_tutorial_read_back">2 本の指でタップすると、カーソルの前のテキストが読み上げられます。</string>
     <string name="handwriting_tutorial_new_line">2 本の指で下にスワイプして新しい行を挿入するか、送信などのテキスト フィールド アクションを実行します。</string>
-    <string name="handwriting_tutorial_not_that">それもまたジェスチャーでした。</string>
+    <string name="handwriting_tutorial_not_that">別のジェスチャーでした。</string>
     <string name="handwriting_tutorial_done">改行。チュートリアルが終了しました。 3 本の指で下にスワイプするとキーボードが非表示になり、3 本の指で右または左にスワイプするとキーボードが切り替わります。チュートリアルを再度開くには、3 本の指でタップします。</string>
     <string name="handwriting_tutorial_finished">チュートリアルが終了しました。再度開くには、3 本の指でタップします。</string>
     <string name="handwriting_no_alternatives">他に提案はありません</string>
@@ -1731,7 +1731,7 @@
     <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。自動説明設定でキーを確認してください。</string>
     <string name="gemini_error_quota">Gemini API キーの使用制限に達しました。後でもう一度試してください。</string>
     <string name="gemini_error_busy">Gemini は現在忙しいです。しばらくしてからもう一度試してください。</string>
-    <string name="gemini_error_timeout">Gemini は答えるのに時間がかかりすぎました。もう一度やり直してください。</string>
+    <string name="gemini_error_timeout">Gemini の応答に時間がかかりすぎました。もう一度お試しください。</string>
     <string name="gemini_error_with_code">Gemini は応答できませんでした。エラー <xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
     <string name="gemini_error_with_details">Gemini は応答できませんでした。エラー <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>。より詳細な画像の説明を取得できません: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

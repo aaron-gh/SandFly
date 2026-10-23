@@ -1378,7 +1378,7 @@
   <string name="phonetic_letters_mode_after_letter_no_delay">После буквы, без задержки, например «а Анна»</string>
   <string name="phonetic_letters_mode_instead_of_letter">Вместо буквы, например «Анна»</string>
   <string name="title_pref_emoji_speech">Эмодзи</string>
-  <string name="emoji_speech_engine">Озвучивать синтезатором речи</string>
+  <string name="emoji_speech_engine">Озвучивает синтезатор речи</string>
   <string name="emoji_speech_names">Озвучивать средствами SandFly</string>
   <string name="emoji_speech_none">Не озвучивать</string>
   <string name="summary_selector_menu_emoji">Изменить способ озвучивания эмодзи</string>
@@ -1643,7 +1643,7 @@
     <string name="reading_control_letter_none">Нет</string>
     <string name="handwriting_prompt">Напишите букву алфавита</string>
     <string name="handwriting_closed">Рукописный ввод закрыт</string>
-    <string name="handwriting_no_match">Отсутствие контроля чтения начинается с <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Ни один элемент управления чтением не начинается с <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Рукописный ввод не распознан</string>
     <string name="handwriting_downloading">Распознавание рукописного ввода загружается</string>
     <string name="handwriting_download_title">Скачать распознавание рукописного ввода?</string>
@@ -1675,7 +1675,7 @@
     <string name="handwriting_tutorial_next_reading">Если рукописный текст распознается как другой символ, например заглавная буква, проведите двумя пальцами вверх, чтобы выбрать следующий вариант распознавания. Попробуйте сейчас.</string>
     <string name="handwriting_tutorial_read_back">Коснитесь двумя пальцами, чтобы прочитать текст перед курсором.</string>
     <string name="handwriting_tutorial_new_line">Проведите двумя пальцами вниз, чтобы вставить новую строку или выполнить действие над текстовым полем, например «Отправить».</string>
-    <string name="handwriting_tutorial_not_that">Это был еще один жест.</string>
+    <string name="handwriting_tutorial_not_that">Это был другой жест.</string>
     <string name="handwriting_tutorial_done">Новая линия. Учебник закончен. Проведите тремя пальцами вниз, чтобы скрыть клавиатуру, и тремя пальцами вправо или влево, чтобы переключить клавиатуру. Чтобы снова открыть учебник, коснитесь экрана тремя пальцами.</string>
     <string name="handwriting_tutorial_finished">Учебник окончен. Чтобы открыть его снова, коснитесь тремя пальцами.</string>
     <string name="handwriting_no_alternatives">Других вариантов нет</string>

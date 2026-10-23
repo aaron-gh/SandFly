@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Depois da carta, sem demora, como \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Em vez da letra, como \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Ler por mecanismo de fala</string>
+    <string name="emoji_speech_engine">Lidos pelo motor de voz</string>
     <string name="emoji_speech_names">Lidos pelo SandFly</string>
     <string name="emoji_speech_none">Nenhum</string>
     <string name="summary_selector_menu_emoji">Alterar a forma como os emojis são lidos</string>
@@ -1572,9 +1572,9 @@
     <string name="reading_control_letter_none">Nenhum</string>
     <string name="handwriting_prompt">Escreva uma letra do alfabeto</string>
     <string name="handwriting_closed">Escrita à mão fechada</string>
-    <string name="handwriting_no_match">Nenhum controle de leitura começa com <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Nenhum controlo de leitura começa com <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Escrita à mão não reconhecida</string>
-    <string name="handwriting_downloading">O reconhecimento de escrita está sendo baixado</string>
+    <string name="handwriting_downloading">O reconhecimento de escrita está a ser transferido</string>
     <string name="handwriting_download_title">Transferir o reconhecimento de escrita manual?</string>
     <string name="handwriting_download_message">A escrita manual é reconhecida neste telefone. Seu modelo para esta linguagem, com cerca de 20 MB, é baixado de Google uma vez. Uma mensagem mostra quando o download foi feito.</string>
     <string name="handwriting_download_button">Transferir</string>
@@ -1734,9 +1734,9 @@
     <string name="gemini_error_api_key">Gemini não aceitou a chave API. Verifique a chave nas configurações de descrições automáticas.</string>
     <string name="gemini_error_quota">O limite de uso da sua chave API Gemini foi atingido. Tente novamente mais tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora. Tente novamente em alguns instantes.</string>
-    <string name="gemini_error_timeout">Gemini demorou muito para responder. Tente novamente.</string>
-    <string name="gemini_error_with_code">Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini não foi possível responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_timeout">O Gemini demorou demasiado a responder. Tente novamente.</string>
+    <string name="gemini_error_with_code">O Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">O Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Não é possível obter uma descrição mais detalhada da imagem: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pergunte por voz</string>
     <string name="image_qna_stop_listening">Parar de ouvir</string>

@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">បន្ទាប់ពីសំបុត្រមិនបង្អង់យូរ ដូចជា \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">ជំនួសឱ្យអក្សរដូចជា \"សណ្ឋាគារ\"</string>
     <string name="title_pref_emoji_speech">សញ្ញាអារម្មណ៍</string>
-    <string name="emoji_speech_engine">អានដោយម៉ាស៊ីននិយាយ</string>
+    <string name="emoji_speech_engine">ម៉ាស៊ីននិយាយអាន</string>
     <string name="emoji_speech_names">អានដោយ SandFly</string>
     <string name="emoji_speech_none">គ្មាន</string>
     <string name="summary_selector_menu_emoji">ផ្លាស់ប្តូររបៀបអាន emoji</string>
@@ -1572,9 +1572,9 @@
     <string name="reading_control_letter_none">គ្មាន</string>
     <string name="handwriting_prompt">សរសេរអក្សរអក្ខរក្រម</string>
     <string name="handwriting_closed">បិទការសរសេរដោយដៃ</string>
-    <string name="handwriting_no_match">គ្មានការគ្រប់គ្រងការអានចាប់ផ្តើមដោយ <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">គ្មានការគ្រប់គ្រងការអានដែលចាប់ផ្ដើមដោយ <xliff:g id="letter" example="Q">%1$s</xliff:g> ទេ</string>
     <string name="handwriting_not_recognized">មិនបានសម្គាល់ការសរសេរដោយដៃទេ</string>
-    <string name="handwriting_downloading">ការទទួលស្គាល់ការសរសេរដោយដៃកំពុងទាញយក</string>
+    <string name="handwriting_downloading">ការស្គាល់ការសរសេរដោយដៃកំពុងត្រូវបានទាញយក</string>
     <string name="handwriting_download_title">ទាញយកការសម្គាល់ការសរសេរដោយដៃឬ?</string>
     <string name="handwriting_download_message">ការសរសេរដោយដៃត្រូវបានទទួលស្គាល់នៅលើទូរសព្ទនេះ។ គំរូរបស់វាសម្រាប់ភាសានេះប្រហែល 20 MB ត្រូវបានទាញយកពី Google ម្តង។ សារបង្ហាញនៅពេលដែលវាបានទាញយក។</string>
     <string name="handwriting_download_button">ទាញយក</string>
@@ -1735,8 +1735,8 @@
     <string name="gemini_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សម្រាប់សោ Gemini API របស់អ្នកត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
     <string name="gemini_error_busy">Gemini ពេលនេះរវល់។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>
     <string name="gemini_error_timeout">Gemini ចំណាយពេលយូរពេកក្នុងការឆ្លើយ។ ព្យាយាមម្តងទៀត។</string>
-    <string name="gemini_error_with_code">Gemini មិនអាចឆ្លើយបានទេ error <xliff:g id="http_status" example="400">%1$d</xliff:g>។</string>
-    <string name="gemini_error_with_details">Geminiមិនអាចឆ្លើយបាន កំហុស<xliff:g id="http_status" example="400">%1$d</xliff:g>៖ <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_with_code">Gemini មិនអាចឆ្លើយបានទេ កំហុស <xliff:g id="http_status" example="400">%1$d</xliff:g>។</string>
+    <string name="gemini_error_with_details">Gemini មិនអាចឆ្លើយបានទេ កំហុស <xliff:g id="http_status" example="400">%1$d</xliff:g>៖ <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>។ មិនអាចទទួលបានការពិពណ៌នារូបភាពលម្អិតបន្ថែមទៀត៖ <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">សួរដោយសំឡេង</string>
     <string name="image_qna_stop_listening">ឈប់ស្តាប់</string>

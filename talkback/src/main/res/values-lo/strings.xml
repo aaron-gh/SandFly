@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">ຫຼັງຈາກຈົດຫມາຍ, ບໍ່ມີການຊັກຊ້າ, ເຊັ່ນ \"h ໂຮງແຮມ\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">ແທນທີ່ຈະເປັນຕົວອັກສອນເຊັ່ນ \"ໂຮງແຮມ\"</string>
     <string name="title_pref_emoji_speech">ອີໂມຈິ</string>
-    <string name="emoji_speech_engine">ອ່ານດ້ວຍເຄື່ອງເວົ້າ</string>
+    <string name="emoji_speech_engine">ເຄື່ອງມືສັງເຄາະສຽງອ່ານ</string>
     <string name="emoji_speech_names">ອ່ານໂດຍ SandFly</string>
     <string name="emoji_speech_none">ບໍ່ມີ</string>
     <string name="summary_selector_menu_emoji">ປ່ຽນວິທີອ່ານ emoji</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">ບໍ່ມີ</string>
     <string name="handwriting_prompt">ຂຽນຕົວອັກສອນ</string>
     <string name="handwriting_closed">ປິດການຂຽນດ້ວຍມື</string>
-    <string name="handwriting_no_match">ບໍ່ມີການຄວບຄຸມການອ່ານເລີ່ມຕົ້ນດ້ວຍ <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">ບໍ່ມີຕົວຄວບຄຸມການອ່ານທີ່ເລີ່ມຕົ້ນດ້ວຍ <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">ບໍ່ສາມາດຈຳແນກລາຍມືໄດ້</string>
     <string name="handwriting_downloading">ກຳລັງດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມື</string>
     <string name="handwriting_download_title">ດາວໂຫຼດການຈຳແນກລາຍມືບໍ?</string>
@@ -1734,9 +1734,9 @@
     <string name="gemini_error_api_key">Gemini ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງລະຫັດໃນການຕັ້ງຄ່າຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
     <string name="gemini_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ສຳລັບລະຫັດ API Gemini ຂອງທ່ານແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
     <string name="gemini_error_busy">Gemini ຕອນນີ້ບໍ່ຫວ່າງ. ກະລຸນາລອງໃໝ່ໃນອີກຈັກໜ່ອຍ.</string>
-    <string name="gemini_error_timeout">Geminiໃຊ້ເວລາດົນເກີນໄປທີ່ຈະຕອບ. ລອງອີກຄັ້ງ.</string>
-    <string name="gemini_error_with_code">Gemini ຕອບບໍ່ໄດ້, ຜິດພາດ<xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini ຕອບບໍ່ໄດ້, ຜິດພາດ<xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_timeout">Gemini ໃຊ້ເວລາຕອບດົນເກີນໄປ. ລອງໃໝ່.</string>
+    <string name="gemini_error_with_code">Gemini ຕອບບໍ່ໄດ້, ຜິດພາດ <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini ຕອບບໍ່ໄດ້, ຜິດພາດ <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. ບໍ່​ສາ​ມາດ​ໄດ້​ຮັບ​ຄໍາ​ອະ​ທິ​ບາຍ​ຮູບ​ພາບ​ທີ່​ລະ​ອຽດ​ເພີ່ມ​ເຕີມ​: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">ຖາມດ້ວຍສຽງ</string>
     <string name="image_qna_stop_listening">ຢຸດຟັງ</string>

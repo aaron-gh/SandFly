@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">ਚਿੱਠੀ ਤੋਂ ਬਾਅਦ, ਕੋਈ ਦੇਰੀ ਨਹੀਂ, ਜਿਵੇਂ \"h ਹੋਟਲ\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">ਅੱਖਰ ਦੀ ਬਜਾਏ, ਜਿਵੇਂ \"ਹੋਟਲ\"</string>
     <string name="title_pref_emoji_speech">ਇਮੋਜੀ</string>
-    <string name="emoji_speech_engine">ਸਪੀਚ ਇੰਜਣ ਦੁਆਰਾ ਪੜ੍ਹੋ</string>
+    <string name="emoji_speech_engine">ਸਪੀਚ ਇੰਜਣ ਪੜ੍ਹਦਾ ਹੈ</string>
     <string name="emoji_speech_names">SandFly ਦੁਆਰਾ ਪੜ੍ਹਿਆ ਗਿਆ</string>
     <string name="emoji_speech_none">ਕੋਈ ਨਹੀਂ</string>
     <string name="summary_selector_menu_emoji">ਇਮੋਜੀ ਪੜ੍ਹਨ ਦੇ ਤਰੀਕੇ ਨੂੰ ਬਦਲੋ</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">ਕੋਈ ਨਹੀਂ</string>
     <string name="handwriting_prompt">ਇੱਕ ਵਰਣਮਾਲਾ ਅੱਖਰ ਲਿਖੋ</string>
     <string name="handwriting_closed">ਹੱਥ ਲਿਖਤ ਬੰਦ</string>
-    <string name="handwriting_no_match">ਕੋਈ ਰੀਡਿੰਗ ਕੰਟਰੋਲ <xliff:g id="letter" example="Q">%1$s</xliff:g> ਨਾਲ ਸ਼ੁਰੂ ਨਹੀਂ ਹੁੰਦਾ</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ਨਾਲ ਸ਼ੁਰੂ ਹੋਣ ਵਾਲਾ ਕੋਈ ਪੜ੍ਹਨ ਸੰਬੰਧੀ ਕੰਟਰੋਲ ਨਹੀਂ ਹੈ</string>
     <string name="handwriting_not_recognized">ਹੱਥ ਲਿਖਤ ਪਛਾਣਿਆ ਨਹੀਂ ਗਿਆ</string>
     <string name="handwriting_downloading">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ</string>
     <string name="handwriting_download_title">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਡਾਊਨਲੋਡ ਕਰਨੀ ਹੈ?</string>
@@ -1604,11 +1604,11 @@
     <string name="handwriting_tutorial_next_reading">ਜੇਕਰ ਹੱਥ ਲਿਖਤ ਨੂੰ ਕਿਸੇ ਹੋਰ ਅੱਖਰ, ਜਿਵੇਂ ਕਿ ਵੱਡੇ ਅੱਖਰ ਵਜੋਂ ਪਛਾਣਿਆ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਅਗਲਾ ਪਛਾਣ ਸੁਝਾਅ ਚੁਣਨ ਲਈ ਦੋ ਉਂਗਲਾਂ ਨਾਲ ਉੱਪਰ ਵੱਲ ਸਵਾਈਪ ਕਰੋ। ਹੁਣੇ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="handwriting_tutorial_read_back">ਕਰਸਰ ਤੋਂ ਪਹਿਲਾਂ ਟੈਕਸਟ ਨੂੰ ਪੜ੍ਹਨ ਲਈ ਦੋ ਉਂਗਲਾਂ ਨਾਲ ਟੈਪ ਕਰੋ।</string>
     <string name="handwriting_tutorial_new_line">ਨਵੀਂ ਲਾਈਨ ਪਾਉਣ ਲਈ ਦੋ ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ ਜਾਂ ਟੈਕਸਟ ਫੀਲਡ ਐਕਸ਼ਨ ਕਰੋ, ਜਿਵੇਂ ਕਿ ਭੇਜੋ।</string>
-    <string name="handwriting_tutorial_not_that">ਇਹ ਇੱਕ ਹੋਰ ਇਸ਼ਾਰਾ ਸੀ।</string>
+    <string name="handwriting_tutorial_not_that">ਇਹ ਕੋਈ ਹੋਰ ਇਸ਼ਾਰਾ ਸੀ।</string>
     <string name="handwriting_tutorial_done">ਨਵੀਂ ਲਾਈਨ। ਟਿਊਟੋਰਿਅਲ ਪੂਰਾ ਹੋਇਆ। ਕੀਬੋਰਡ ਨੂੰ ਲੁਕਾਉਣ ਲਈ ਤਿੰਨ ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ, ਅਤੇ ਕੀਬੋਰਡ ਬਦਲਣ ਲਈ ਤਿੰਨ ਉਂਗਲਾਂ ਨਾਲ ਸੱਜੇ ਜਾਂ ਖੱਬੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ। ਟਿਊਟੋਰਿਅਲ ਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹਣ ਲਈ, ਤਿੰਨ ਉਂਗਲਾਂ ਨਾਲ ਟੈਪ ਕਰੋ।</string>
     <string name="handwriting_tutorial_finished">ਟਿਊਟੋਰਿਅਲ ਸਮਾਪਤ ਹੋਇਆ। ਇਸਨੂੰ ਦੁਬਾਰਾ ਖੋਲ੍ਹਣ ਲਈ, ਤਿੰਨ ਉਂਗਲਾਂ ਨਾਲ ਟੈਪ ਕਰੋ।</string>
     <string name="handwriting_no_alternatives">ਕੋਈ ਹੋਰ ਸੁਝਾਅ ਨਹੀਂ</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> ਦਾ <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> ਵਿੱਚੋਂ <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">ਖਾਲੀ ਲਿਖਤ</string>
     <string name="handwriting_not_available">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
     <string name="shortcut_scroll_to_bottom">ਹੇਠਾਂ ਤੱਕ ਸਕ੍ਰੋਲ ਕਰੋ</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini ਨੇ API ਕੁੰਜੀ ਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ। ਆਟੋਮੈਟਿਕ ਵਰਣਨ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਕੁੰਜੀ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
     <string name="gemini_error_quota">ਤੁਹਾਡੀ Gemini API ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਸੀਮਾ ਪੂਰੀ ਹੋ ਗਈ ਹੈ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="gemini_error_busy">Gemini ਇਸ ਵੇਲੇ ਵਿਅਸਤ ਹੈ। ਇੱਕ ਪਲ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
-    <string name="gemini_error_timeout">Gemini ਨੇ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਬਹੁਤ ਸਮਾਂ ਲਿਆ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ.</string>
+    <string name="gemini_error_timeout">Gemini ਨੇ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਬਹੁਤ ਸਮਾਂ ਲਿਆ। ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="gemini_error_with_code">Gemini ਜਵਾਬ ਨਹੀਂ ਦੇ ਸਕਿਆ, ਤਰੁੱਟੀ <xliff:g id="http_status" example="400">%1$d</xliff:g>।</string>
     <string name="gemini_error_with_details">Gemini ਜਵਾਬ ਨਹੀਂ ਦੇ ਸਕਿਆ, ਤਰੁੱਟੀ <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>। ਵਧੇਰੇ ਵਿਸਤ੍ਰਿਤ ਚਿੱਤਰ ਵਰਣਨ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

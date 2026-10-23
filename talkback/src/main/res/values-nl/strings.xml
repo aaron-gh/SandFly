@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Geen</string>
     <string name="handwriting_prompt">Schrijf een letter</string>
     <string name="handwriting_closed">Handschrift gesloten</string>
-    <string name="handwriting_no_match">Geen leescontrole begint met <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Geen leesinstelling begint met <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Handschrift niet herkend</string>
     <string name="handwriting_downloading">Handschriftherkenning wordt gedownload</string>
     <string name="handwriting_download_title">Handschriftherkenning downloaden?</string>
@@ -1604,11 +1604,11 @@
     <string name="handwriting_tutorial_next_reading">Als handschrift wordt herkend als een ander teken, zoals een hoofdletter, veegt u met twee vingers omhoog om de volgende herkenningssuggestie te kiezen. Probeer het nu.</string>
     <string name="handwriting_tutorial_read_back">Tik met twee vingers om de tekst vóór de cursor te lezen.</string>
     <string name="handwriting_tutorial_new_line">Veeg met twee vingers omlaag om een ​​nieuwe regel in te voegen of voer een tekstveldactie uit, zoals Verzenden.</string>
-    <string name="handwriting_tutorial_not_that">Dat was nog een gebaar.</string>
+    <string name="handwriting_tutorial_not_that">Dat was een ander gebaar.</string>
     <string name="handwriting_tutorial_done">Nieuwe lijn. Les afgerond. Veeg met drie vingers naar beneden om het toetsenbord te verbergen, en met drie vingers naar rechts of links om van toetsenbord te wisselen. Om de tutorial opnieuw te openen, tikt u met drie vingers.</string>
     <string name="handwriting_tutorial_finished">Les beëindigd. Om het weer te openen, tikt u met drie vingers.</string>
     <string name="handwriting_no_alternatives">Geen andere suggesties</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> van <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Lege tekst</string>
     <string name="handwriting_not_available">Handschriftherkenning is niet beschikbaar op dit apparaat</string>
     <string name="shortcut_scroll_to_bottom">Naar beneden scrollen</string>

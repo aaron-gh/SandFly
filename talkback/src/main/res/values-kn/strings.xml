@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">ಪತ್ರದ ನಂತರ, ಯಾವುದೇ ವಿಳಂಬವಿಲ್ಲ, \"h ಹೋಟೆಲ್\" ನಂತೆ</string>
     <string name="phonetic_letters_mode_instead_of_letter">ಅಕ್ಷರದ ಬದಲಿಗೆ, \"ಹೋಟೆಲ್\" ನಂತೆ</string>
     <string name="title_pref_emoji_speech">ಎಮೋಜಿ</string>
-    <string name="emoji_speech_engine">ಸ್ಪೀಚ್ ಎಂಜಿನ್ ಮೂಲಕ ಓದಿ</string>
+    <string name="emoji_speech_engine">ಸ್ಪೀಚ್ ಎಂಜಿನ್ ಓದುತ್ತದೆ</string>
     <string name="emoji_speech_names">SandFly ಓದುತ್ತದೆ</string>
     <string name="emoji_speech_none">ಯಾವುದೂ ಅಲ್ಲ</string>
     <string name="summary_selector_menu_emoji">ಎಮೋಜಿಯನ್ನು ಹೇಗೆ ಓದಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಬದಲಾಯಿಸಿ</string>
@@ -1573,7 +1573,7 @@
     <string name="reading_control_letter_none">ಯಾವುದೂ ಅಲ್ಲ</string>
     <string name="handwriting_prompt">ವರ್ಣಮಾಲೆಯ ಅಕ್ಷರವನ್ನು ಬರೆಯಿರಿ</string>
     <string name="handwriting_closed">ಕೈಬರಹ ಮುಚ್ಚಿದೆ</string>
-    <string name="handwriting_no_match">ಯಾವುದೇ ಓದುವ ನಿಯಂತ್ರಣವು <xliff:g id="letter" example="Q">%1$s</xliff:g> ನೊಂದಿಗೆ ಪ್ರಾರಂಭವಾಗುವುದಿಲ್ಲ</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ನಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಓದುವಿಕೆ ನಿಯಂತ್ರಣ ಇಲ್ಲ</string>
     <string name="handwriting_not_recognized">ಕೈಬರಹವನ್ನು ಗುರುತಿಸಲಾಗಿಲ್ಲ</string>
     <string name="handwriting_downloading">ಕೈಬರಹ ಗುರುತಿಸುವಿಕೆ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
     <string name="handwriting_download_title">ಕೈಬರಹ ಗುರುತಿಸುವಿಕೆಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡುವುದೇ?</string>
@@ -1609,7 +1609,7 @@
     <string name="handwriting_tutorial_done">ಹೊಸ ಸಾಲು. ಟ್ಯುಟೋರಿಯಲ್ ಮುಗಿದಿದೆ. ಕೀಬೋರ್ಡ್ ಅನ್ನು ಮರೆಮಾಡಲು ಮೂರು ಬೆರಳುಗಳಿಂದ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ ಮತ್ತು ಕೀಬೋರ್ಡ್ಗಳನ್ನು ಬದಲಾಯಿಸಲು ಮೂರು ಬೆರಳುಗಳಿಂದ ಬಲ ಅಥವಾ ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ. ಟ್ಯುಟೋರಿಯಲ್ ಅನ್ನು ಮತ್ತೆ ತೆರೆಯಲು, ಮೂರು ಬೆರಳುಗಳಿಂದ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="handwriting_tutorial_finished">ಟ್ಯುಟೋರಿಯಲ್ ಮುಗಿದಿದೆ. ಅದನ್ನು ಮತ್ತೆ ತೆರೆಯಲು, ಮೂರು ಬೆರಳುಗಳಿಂದ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="handwriting_no_alternatives">ಬೇರೆ ಯಾವುದೇ ಸಲಹೆಗಳಿಲ್ಲ</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> ರಲ್ಲಿ <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">ಖಾಲಿ ಪಠ್ಯ</string>
     <string name="handwriting_not_available">ಈ ಸಾಧನದಲ್ಲಿ ಕೈಬರಹ ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ</string>
     <string name="shortcut_scroll_to_bottom">ಕೆಳಕ್ಕೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಿ</string>

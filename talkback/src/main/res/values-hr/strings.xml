@@ -1608,7 +1608,7 @@
     <string name="handwriting_tutorial_next_reading">Ako je rukopis prepoznat kao drugi znak, kao što je veliko slovo, prijeđite s dva prsta prema gore za odabir sljedećeg prijedloga prepoznavanja. Pokušajte sada.</string>
     <string name="handwriting_tutorial_read_back">Dodirnite s dva prsta za čitanje teksta ispred kursora.</string>
     <string name="handwriting_tutorial_new_line">Povucite prema dolje s dva prsta da biste umetnuli novi redak ili izvršili radnju tekstualnog polja, kao što je Pošalji.</string>
-    <string name="handwriting_tutorial_not_that">To je bila još jedna gesta.</string>
+    <string name="handwriting_tutorial_not_that">To je bila druga kretnja.</string>
     <string name="handwriting_tutorial_done">Nova linija. Vodič je završen. Povucite prema dolje s tri prsta da biste sakrili tipkovnicu, a desno ili lijevo s tri prsta za promjenu tipkovnice. Za ponovno otvaranje vodiča dodirnite s tri prsta.</string>
     <string name="handwriting_tutorial_finished">Vodič je završio. Za ponovno otvaranje dodirnite s tri prsta.</string>
     <string name="handwriting_no_alternatives">Nema drugih prijedloga</string>
@@ -1738,8 +1738,8 @@
     <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Provjerite ključ u postavkama automatskih opisa.</string>
     <string name="gemini_error_quota">Dosegnuto je ograničenje upotrebe za vaš Gemini API ključ. Pokušajte ponovno kasnije.</string>
     <string name="gemini_error_busy">Gemini je trenutno zauzet. Pokušajte ponovno za trenutak.</string>
-    <string name="gemini_error_timeout">Gemini trebalo je predugo za odgovor. Pokušajte ponovno.</string>
-    <string name="gemini_error_with_code">Gemini nisam mogao odgovoriti, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_timeout">Geminiju je trebalo predugo za odgovor. Pokušajte ponovno.</string>
+    <string name="gemini_error_with_code">Gemini nije mogao odgovoriti, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nije mogao odgovoriti, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Ne mogu dobiti detaljniji opis slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pitajte glasom</string>

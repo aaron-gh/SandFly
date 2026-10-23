@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">אחרי המכתב, ללא עיכוב, כמו \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">במקום האות, כמו \"מלון\"</string>
     <string name="title_pref_emoji_speech">אימוג\'י</string>
-    <string name="emoji_speech_engine">קריאה באמצעות מנוע דיבור</string>
+    <string name="emoji_speech_engine">מנוע הדיבור מקריא</string>
     <string name="emoji_speech_names">הקראה על ידי SandFly</string>
     <string name="emoji_speech_none">ללא</string>
     <string name="summary_selector_menu_emoji">שנה את אופן קריאת האמוג\'י</string>
@@ -1576,9 +1576,9 @@
     <string name="reading_control_letter_none">ללא</string>
     <string name="handwriting_prompt">כתוב אות אלפבית</string>
     <string name="handwriting_closed">כתב יד סגור</string>
-    <string name="handwriting_no_match">אין בקרת קריאה מתחילה ב-<xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">אין כפתור הקראה שמתחיל ב-<xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">כתב היד לא זוהה</string>
-    <string name="handwriting_downloading">זיהוי כתב יד מוריד</string>
+    <string name="handwriting_downloading">זיהוי כתב היד בהורדה</string>
     <string name="handwriting_download_title">להוריד זיהוי כתב יד?</string>
     <string name="handwriting_download_message">כתב היד מזוהה בטלפון זה. המודל שלו לשפה זו, כ-20 מגה-בייט, מורידים מ-Google פעם אחת. הודעה מופיעה כאשר הוא הורד.</string>
     <string name="handwriting_download_button">הורדה</string>
@@ -1608,7 +1608,7 @@
     <string name="handwriting_tutorial_next_reading">אם כתב יד מזוהה כתו אחר, כגון אות גדולה, החלק למעלה בשתי אצבעות כדי לבחור את הצעת הזיהוי הבאה. נסה את זה עכשיו.</string>
     <string name="handwriting_tutorial_read_back">הקש בשתי אצבעות כדי לקרוא את הטקסט לפני הסמן.</string>
     <string name="handwriting_tutorial_new_line">החלק מטה בשתי אצבעות כדי להוסיף שורה חדשה או לבצע את פעולת שדה הטקסט, כגון שלח.</string>
-    <string name="handwriting_tutorial_not_that">זו הייתה מחווה אחרת.</string>
+    <string name="handwriting_tutorial_not_that">זו הייתה תנועה אחרת.</string>
     <string name="handwriting_tutorial_done">קו חדש. ההדרכה הסתיימה. החלק מטה בשלוש אצבעות כדי להסתיר את המקלדת, וימינה או שמאלה בשלוש אצבעות כדי להחליף מקלדת. כדי לפתוח שוב את המדריך, הקש בשלוש אצבעות.</string>
     <string name="handwriting_tutorial_finished">ההדרכה הסתיימה. כדי לפתוח אותו שוב, הקש בשלוש אצבעות.</string>
     <string name="handwriting_no_alternatives">אין הצעות אחרות</string>
@@ -1738,7 +1738,7 @@
     <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. סמן את המפתח בהגדרות תיאורים אוטומטיים.</string>
     <string name="gemini_error_quota">הגעת למגבלת השימוש עבור מפתח ה-API שלך Gemini. נסה שוב מאוחר יותר.</string>
     <string name="gemini_error_busy">Gemini עסוק כרגע. נסה שוב בעוד רגע.</string>
-    <string name="gemini_error_timeout">Gemini לקח יותר מדי זמן לענות. נסה שוב.</string>
+    <string name="gemini_error_timeout">Gemini לא ענה בזמן. יש לנסות שוב.</string>
     <string name="gemini_error_with_code">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. לא ניתן לקבל תיאור תמונה מפורט יותר: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Po liste bez meškania, napríklad „h hotel“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Namiesto písmena ako „hotel“</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Čítanie pomocou rečového nástroja</string>
+    <string name="emoji_speech_engine">Číta rečový nástroj</string>
     <string name="emoji_speech_names">Číta SandFly</string>
     <string name="emoji_speech_none">Žiadne</string>
     <string name="summary_selector_menu_emoji">Zmeňte spôsob čítania emodži</string>
@@ -1580,7 +1580,7 @@
     <string name="reading_control_letter_none">Žiadne</string>
     <string name="handwriting_prompt">Napíšte písmeno abecedy</string>
     <string name="handwriting_closed">Rukopis uzavretý</string>
-    <string name="handwriting_no_match">Žiadna kontrola čítania nezačína <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Žiadne ovládanie čítania nezačína na <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Rukopis nebol rozpoznaný</string>
     <string name="handwriting_downloading">Sťahuje sa rozpoznávanie rukopisu</string>
     <string name="handwriting_download_title">Stiahnuť rozpoznávanie rukopisu?</string>
@@ -1612,7 +1612,7 @@
     <string name="handwriting_tutorial_next_reading">Ak sa rukopis rozpozná ako iný znak, napríklad veľké písmeno, potiahnutím dvoma prstami nahor vyberte ďalší návrh na rozpoznávanie. Skúste to teraz.</string>
     <string name="handwriting_tutorial_read_back">Klepnutím dvoma prstami si prečítajte text pred kurzorom.</string>
     <string name="handwriting_tutorial_new_line">Potiahnutím dvoma prstami nadol vložte nový riadok alebo vykonajte akciu textového poľa, napríklad Odoslať.</string>
-    <string name="handwriting_tutorial_not_that">To bolo ďalšie gesto.</string>
+    <string name="handwriting_tutorial_not_that">To bolo iné gesto.</string>
     <string name="handwriting_tutorial_done">Nový riadok. Výukový program dokončený. Potiahnutím troch prstov nadol klávesnicu skryjete a tromi prstami doprava alebo doľava prepnete klávesnice. Ak chcete znova otvoriť návod, klepnite tromi prstami.</string>
     <string name="handwriting_tutorial_finished">Kurz skončil. Ak ho chcete znova otvoriť, klepnite naň tromi prstami.</string>
     <string name="handwriting_no_alternatives">Žiadne ďalšie návrhy</string>
@@ -1742,7 +1742,7 @@
     <string name="gemini_error_api_key">Gemini neakceptoval API kľúč. Skontrolujte kľúč v nastaveniach automatických popisov.</string>
     <string name="gemini_error_quota">Dosiahli ste limit použitia pre váš kľúč API Gemini. Skúste to znova neskôr.</string>
     <string name="gemini_error_busy">Gemini je práve zaneprázdnený. Skúste to znova o chvíľu.</string>
-    <string name="gemini_error_timeout">Odpoveď Gemini trvalo príliš dlho. Skúste to znova.</string>
+    <string name="gemini_error_timeout">Gemini odpovedal príliš dlho. Skúste to znova.</string>
     <string name="gemini_error_with_code">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nie je možné získať podrobnejší popis obrázka: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

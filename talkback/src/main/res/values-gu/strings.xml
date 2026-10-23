@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">એકપણ નહીં</string>
     <string name="handwriting_prompt">એક મૂળાક્ષર અક્ષર લખો</string>
     <string name="handwriting_closed">હસ્તાક્ષર બંધ</string>
-    <string name="handwriting_no_match">વાંચન નિયંત્રણ <xliff:g id="letter" example="Q">%1$s</xliff:g> થી શરૂ થતું નથી</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> થી શરૂ થતું કોઈ વાંચન નિયંત્રણ નથી</string>
     <string name="handwriting_not_recognized">હસ્તાક્ષર ઓળખાયા નથી</string>
     <string name="handwriting_downloading">હસ્તાક્ષરની ઓળખ ડાઉનલોડ થઈ રહી છે</string>
     <string name="handwriting_download_title">હસ્તાક્ષર ઓળખ ડાઉનલોડ કરીએ?</string>
@@ -1604,11 +1604,11 @@
     <string name="handwriting_tutorial_next_reading">જો હસ્તલેખનને બીજા અક્ષર તરીકે ઓળખવામાં આવે છે, જેમ કે મોટા અક્ષર, તો આગલું ઓળખ સૂચન પસંદ કરવા માટે બે આંગળીઓથી ઉપર સ્વાઇપ કરો. હવે તેને અજમાવી જુઓ.</string>
     <string name="handwriting_tutorial_read_back">કર્સર પહેલાં ટેક્સ્ટ વાંચવા માટે બે આંગળીઓથી ટેપ કરો.</string>
     <string name="handwriting_tutorial_new_line">નવી લાઇન દાખલ કરવા અથવા ટેક્સ્ટ ફીલ્ડ ક્રિયા કરવા માટે બે આંગળીઓ વડે નીચે સ્વાઇપ કરો, જેમ કે મોકલો.</string>
-    <string name="handwriting_tutorial_not_that">તે બીજી ચેષ્ટા હતી.</string>
+    <string name="handwriting_tutorial_not_that">તે બીજો સંકેત હતો.</string>
     <string name="handwriting_tutorial_done">નવી લાઇન. ટ્યુટોરીયલ સમાપ્ત. કીબોર્ડને છુપાવવા માટે ત્રણ આંગળીઓથી નીચે સ્વાઇપ કરો અને કીબોર્ડ સ્વિચ કરવા માટે ત્રણ આંગળીઓથી જમણે કે ડાબે સ્વાઇપ કરો. ટ્યુટોરીયલ ફરીથી ખોલવા માટે, ત્રણ આંગળીઓ વડે ટેપ કરો.</string>
     <string name="handwriting_tutorial_finished">ટ્યુટોરીયલ સમાપ્ત. તેને ફરીથી ખોલવા માટે, ત્રણ આંગળીઓથી ટેપ કરો.</string>
     <string name="handwriting_no_alternatives">અન્ય કોઈ સૂચનો નથી</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> માંથી <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> માંથી <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">ખાલી ટેક્સ્ટ</string>
     <string name="handwriting_not_available">આ ઉપકરણ પર હસ્તલેખન ઓળખ ઉપલબ્ધ નથી</string>
     <string name="shortcut_scroll_to_bottom">નીચે સુધી સ્ક્રોલ કરો</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini એ API કી સ્વીકારી નથી. સ્વચાલિત વર્ણન સેટિંગ્સમાં કી તપાસો.</string>
     <string name="gemini_error_quota">તમારી Gemini API કી માટેની વપરાશ મર્યાદા પહોંચી ગઈ છે. પછીથી ફરી પ્રયાસ કરો.</string>
     <string name="gemini_error_busy">Gemini અત્યારે વ્યસ્ત છે. થોડીવારમાં ફરી પ્રયાસ કરો.</string>
-    <string name="gemini_error_timeout">Gemini જવાબ આપવામાં ઘણો સમય લાગ્યો. ફરી પ્રયાસ કરો.</string>
+    <string name="gemini_error_timeout">Gemini ને જવાબ આપવામાં ઘણો સમય લાગ્યો. ફરી પ્રયાસ કરો.</string>
     <string name="gemini_error_with_code">Gemini જવાબ આપી શક્યો નહીં, ભૂલ <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini જવાબ આપી શક્યો નહીં, ભૂલ <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. વધુ વિગતવાર છબી વર્ણન મેળવી શકાતું નથી: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

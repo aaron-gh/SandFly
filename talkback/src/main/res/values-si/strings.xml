@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">ලිපියෙන් පසුව, \"h හෝටලය\" වැනි ප්‍රමාදයක් නැත</string>
     <string name="phonetic_letters_mode_instead_of_letter">ලිපිය වෙනුවට, \"හෝටල්\" වැනි</string>
     <string name="title_pref_emoji_speech">ඉමොජි</string>
-    <string name="emoji_speech_engine">කථන එන්ජිමෙන් කියවන්න</string>
+    <string name="emoji_speech_engine">කථන එන්ජිම කියවයි</string>
     <string name="emoji_speech_names">SandFly විසින් කියවයි</string>
     <string name="emoji_speech_none">කිසිවක් නැත</string>
     <string name="summary_selector_menu_emoji">ඉමොජි කියවන ආකාරය වෙනස් කරන්න</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">කිසිවක් නැත</string>
     <string name="handwriting_prompt">හෝඩියේ අකුරක් ලියන්න</string>
     <string name="handwriting_closed">අත් අකුරු වසා ඇත</string>
-    <string name="handwriting_no_match">කියවීම් පාලනයක් <xliff:g id="letter" example="Q">%1$s</xliff:g> සමඟ ආරම්භ නොවේ</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> න් ආරම්භ වන කියවීම් පාලනයක් නැත</string>
     <string name="handwriting_not_recognized">අත් අකුරු හඳුනාගෙන නොමැත</string>
     <string name="handwriting_downloading">අත් අකුරු හඳුනාගැනීම බාගත වෙමින් පවතී</string>
     <string name="handwriting_download_title">අත් අකුරු හඳුනාගැනීම බාගන්නද?</string>
@@ -1604,13 +1604,13 @@
     <string name="handwriting_tutorial_next_reading">අත් අකුරු ලොකු අකුරක් වැනි තවත් අක්ෂරයක් ලෙස හඳුනාගෙන තිබේ නම්, ඊළඟ හඳුනාගැනීමේ යෝජනාව තේරීමට ඇඟිලි දෙකකින් ඉහළට ස්වයිප් කරන්න. දැන් එය උත්සාහ කරන්න.</string>
     <string name="handwriting_tutorial_read_back">කර්සරයට පෙර පෙළ කියවීමට ඇඟිලි දෙකකින් තට්ටු කරන්න.</string>
     <string name="handwriting_tutorial_new_line">නව රේඛාවක් ඇතුළු කිරීමට හෝ යැවීම වැනි පෙළ ක්ෂේත්‍ර ක්‍රියාව සිදු කිරීමට ඇඟිලි දෙකකින් පහළට ස්වයිප් කරන්න.</string>
-    <string name="handwriting_tutorial_not_that">ඒ තවත් ඉරියව්වක්.</string>
+    <string name="handwriting_tutorial_not_that">ඒ වෙනත් ඉංගිතයකි.</string>
     <string name="handwriting_tutorial_done">නව රේඛාව. නිබන්ධනය අවසන්. යතුරුපුවරුව සැඟවීමට ඇඟිලි තුනකින් පහළට ස්වයිප් කරන්න, යතුරුපුවරුව මාරු කිරීමට ඇඟිලි තුනකින් දකුණට හෝ වමට ස්වයිප් කරන්න. නිබන්ධනය නැවත විවෘත කිරීමට, ඇඟිලි තුනකින් තට්ටු කරන්න.</string>
     <string name="handwriting_tutorial_finished">නිබන්ධනය අවසන්. එය නැවත විවෘත කිරීමට, ඇඟිලි තුනකින් තට්ටු කරන්න.</string>
     <string name="handwriting_no_alternatives">වෙනත් යෝජනා නොමැත</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> න් <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">හිස් පෙළ</string>
-    <string name="handwriting_not_available">මෙම උපාංගයේ අත් අකුරු හඳුනාගැනීමක් නොමැත</string>
+    <string name="handwriting_not_available">මෙම උපාංගයේ අත් අකුරු හඳුනාගැනීම ලබා ගත නොහැක</string>
     <string name="shortcut_scroll_to_bottom">පහළට අනුචලනය කරන්න</string>
     <string name="shortcut_refresh">නැවුම් කරන්න</string>
     <string name="shortcut_system_notifications">පද්ධති දැනුම්දීම් පැනලය</string>

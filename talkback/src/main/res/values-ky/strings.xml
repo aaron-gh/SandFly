@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Каттан кийин, \"h hotel\" сыяктуу кечигүү жок</string>
     <string name="phonetic_letters_mode_instead_of_letter">Каттын ордуна, \"мейманкана\" сыяктуу</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
-    <string name="emoji_speech_engine">Кеп кыймылдаткычы менен окуу</string>
+    <string name="emoji_speech_engine">Кеп кыймылдаткычы окуйт</string>
     <string name="emoji_speech_names">SandFly окуйт</string>
     <string name="emoji_speech_none">Жок</string>
     <string name="summary_selector_menu_emoji">Быйтыкчаларды окуу ыкмасын өзгөртүңүз</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Жок</string>
     <string name="handwriting_prompt">Алфавит тамгасын жаз</string>
     <string name="handwriting_closed">Колжазма жабылды</string>
-    <string name="handwriting_no_match">Окууну көзөмөлдөө <xliff:g id="letter" example="Q">%1$s</xliff:g> менен башталбайт</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> тамгасынан башталган окууну башкаруу элементи жок</string>
     <string name="handwriting_not_recognized">Колжазма таанылган жок</string>
     <string name="handwriting_downloading">Колжазманы таануу жүктөлүп алынууда</string>
     <string name="handwriting_download_title">Колжазманы таанууну жүктөп алуу керекпи?</string>
@@ -1604,11 +1604,11 @@
     <string name="handwriting_tutorial_next_reading">Эгер колжазма баш тамга сыяктуу башка символ катары таанылса, кийинки таануу сунушун тандоо үчүн эки манжаңыз менен өйдө сүрүңүз. Азыр аракет кылып көрүңүз.</string>
     <string name="handwriting_tutorial_read_back">Курсордун алдындагы текстти окуу үчүн эки манжаңыз менен таптаңыз.</string>
     <string name="handwriting_tutorial_new_line">Жаңы сап киргизүү же Жөнөтүү сыяктуу текст талаасынын аракетин аткаруу үчүн эки манжаңыз менен ылдый сүрүңүз.</string>
-    <string name="handwriting_tutorial_not_that">Бул дагы бир ишарат болду.</string>
+    <string name="handwriting_tutorial_not_that">Бул башка жаңсоо болду.</string>
     <string name="handwriting_tutorial_done">Жаңы линия. Окутуу аяктады. Баскычтопту жашыруу үчүн үч манжаңыз менен ылдый сүрүңүз, ал эми баскычтопту которуу үчүн үч манжаңыз менен оңго же солго сүрүңүз. Үйрөткүчтү кайра ачуу үчүн үч манжаңыз менен таптаңыз.</string>
     <string name="handwriting_tutorial_finished">Окутуу аяктады. Аны кайра ачуу үчүн үч манжаңыз менен таптаңыз.</string>
     <string name="handwriting_no_alternatives">Башка сунуштар жок</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> ичинен <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> ичинен <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">Бош текст</string>
     <string name="handwriting_not_available">Колжазманы таануу бул түзмөктө жеткиликтүү эмес</string>
     <string name="shortcut_scroll_to_bottom">Ылдыйга сыдыруу</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. Автоматтык сүрөттөмөлөр жөндөөлөрүндөгү ачкычты текшериңиз.</string>
     <string name="gemini_error_quota">Gemini API ачкычыңыздын колдонуу чегине жеттиңиз. Кийинчерээк кайра аракет кылыңыз.</string>
     <string name="gemini_error_busy">Gemini азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>
-    <string name="gemini_error_timeout">Gemini жооп берүү өтө көпкө созулду. Кайра аракет кыл.</string>
+    <string name="gemini_error_timeout">Gemini өтө көпкө жооп берген жок. Кайра аракет кылыңыз.</string>
     <string name="gemini_error_with_code">Gemini жооп бере алган жок, ката <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini жооп бере алган жок, ката <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Сүрөттүн кеңири сүрөттөмөсүн алуу мүмкүн эмес: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

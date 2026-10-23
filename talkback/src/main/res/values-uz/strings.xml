@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Maktubdan keyin \"h hotel\" kabi kechikish yo\'q</string>
     <string name="phonetic_letters_mode_instead_of_letter">Harf o\'rniga \"mehmonxona\" kabi</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Nutq mexanizmi orqali o\'qing</string>
+    <string name="emoji_speech_engine">Nutq sintezatori oʻqiydi</string>
     <string name="emoji_speech_names">SandFly oʻqiydi</string>
     <string name="emoji_speech_none">Hech qanday</string>
     <string name="summary_selector_menu_emoji">Emoji o‘qilishini o‘zgartiring</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Hech qanday</string>
     <string name="handwriting_prompt">Alfavit harfini yozing</string>
     <string name="handwriting_closed">Qoʻlda yozish yopildi</string>
-    <string name="handwriting_no_match">Hech qanday o\'qishni boshqarish <xliff:g id="letter" example="Q">%1$s</xliff:g> bilan boshlanmaydi</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> bilan boshlanadigan oʻqish boshqaruvi yoʻq</string>
     <string name="handwriting_not_recognized">Qoʻl yozuvi aniqlanmadi</string>
     <string name="handwriting_downloading">Qo‘l yozuvini tanish yuklab olinmoqda</string>
     <string name="handwriting_download_title">Qo‘l yozuvini tanish yuklab olinsinmi?</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_tutorial_next_reading">Agar qoʻl yozuvi bosh harf kabi boshqa belgi sifatida tan olinsa, keyingi tanish taklifini tanlash uchun ikki barmogʻingiz bilan tepaga suring. Hozir sinab ko\'ring.</string>
     <string name="handwriting_tutorial_read_back">Kursor oldidagi matnni oʻqish uchun ikki barmogʻingiz bilan bosing.</string>
     <string name="handwriting_tutorial_new_line">Yangi qator qoʻshish yoki Yuborish kabi matn maydoni amalini bajarish uchun ikki barmogʻingiz bilan pastga suring.</string>
-    <string name="handwriting_tutorial_not_that">Bu yana bir ishora edi.</string>
+    <string name="handwriting_tutorial_not_that">Bu boshqa ishora edi.</string>
     <string name="handwriting_tutorial_done">Yangi qator. O\'quv qo\'llanma tugadi. Klaviaturani yashirish uchun uchta barmoq bilan pastga, klaviaturani almashtirish uchun esa uchta barmoq bilan o‘ngga yoki chapga suring. Qo‘llanmani yana ochish uchun uchta barmoq bilan bosing.</string>
     <string name="handwriting_tutorial_finished">Darslik tugadi. Uni qayta ochish uchun uchta barmoq bilan bosing.</string>
     <string name="handwriting_no_alternatives">Boshqa takliflar yo\'q</string>
@@ -1734,7 +1734,7 @@
     <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. Avtomatik tavsiflar sozlamalarida kalitni tekshiring.</string>
     <string name="gemini_error_quota">Gemini API kalitingizdan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
     <string name="gemini_error_busy">Gemini hozir band. Birozdan keyin qayta urinib ko‘ring.</string>
-    <string name="gemini_error_timeout">Gemini javob berish uchun juda uzoq vaqt ketdi. Qayta urinib ko\'ring.</string>
+    <string name="gemini_error_timeout">Gemini juda uzoq javob bermadi. Qayta urinib koʻring.</string>
     <string name="gemini_error_with_code">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Batafsilroq rasm tavsifini ololmadim: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

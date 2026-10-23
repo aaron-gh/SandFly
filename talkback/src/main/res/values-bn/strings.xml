@@ -1667,9 +1667,9 @@
     <string name="reading_control_letter_none">কোনওটিই নয়</string>
     <string name="handwriting_prompt">একটি অক্ষর লিখুন</string>
     <string name="handwriting_closed">হাতের লেখা বন্ধ</string>
-    <string name="handwriting_no_match">কোনো রিডিং কন্ট্রোল <xliff:g id="letter" example="Q">%1$s</xliff:g> দিয়ে শুরু হয় না</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> দিয়ে শুরু হওয়া কোনো রিডিং কন্ট্রোল নেই</string>
     <string name="handwriting_not_recognized">হাতের লেখা শনাক্ত করা যায়নি</string>
-    <string name="handwriting_downloading">হাতের লেখার স্বীকৃতি ডাউনলোড হচ্ছে</string>
+    <string name="handwriting_downloading">হাতের লেখা শনাক্তকরণ ডাউনলোড হচ্ছে</string>
     <string name="handwriting_download_title">হাতের লেখা শনাক্তকরণ ডাউনলোড করবেন?</string>
     <string name="handwriting_download_message">এই ফোনে হাতের লেখা স্বীকৃত। এই ভাষার জন্য এর মডেল, প্রায় 20 MB, Google থেকে একবার ডাউনলোড করা হয়। এটি ডাউনলোড করা হলে একটি বার্তা দেখায়।</string>
     <string name="handwriting_download_button">ডাউনলোড করুন</string>
@@ -1699,13 +1699,13 @@
     <string name="handwriting_tutorial_next_reading">যদি হাতের লেখা অন্য একটি অক্ষর হিসাবে স্বীকৃত হয়, যেমন একটি বড় অক্ষর, তাহলে পরবর্তী স্বীকৃতির পরামর্শটি বেছে নিতে দুটি আঙুল দিয়ে উপরে সোয়াইপ করুন। এখনই চেষ্টা করুন।</string>
     <string name="handwriting_tutorial_read_back">কার্সারের আগে পাঠ্য পড়তে দুই আঙুল দিয়ে আলতো চাপুন।</string>
     <string name="handwriting_tutorial_new_line">একটি নতুন লাইন সন্নিবেশ করতে দুই আঙ্গুল দিয়ে নিচের দিকে সোয়াইপ করুন বা পাঠ্য ক্ষেত্রের ক্রিয়া সম্পাদন করুন, যেমন পাঠান৷</string>
-    <string name="handwriting_tutorial_not_that">এটা অন্য অঙ্গভঙ্গি ছিল.</string>
+    <string name="handwriting_tutorial_not_that">এটি অন্য জেসচার ছিল।</string>
     <string name="handwriting_tutorial_done">নতুন লাইন। টিউটোরিয়াল শেষ। কীবোর্ড লুকানোর জন্য তিনটি আঙুল দিয়ে নিচের দিকে সোয়াইপ করুন এবং কীবোর্ড স্যুইচ করতে তিনটি আঙুল দিয়ে ডান বা বামে সোয়াইপ করুন। টিউটোরিয়ালটি আবার খুলতে, তিনটি আঙ্গুল দিয়ে আলতো চাপুন।</string>
     <string name="handwriting_tutorial_finished">টিউটোরিয়াল শেষ। এটি আবার খুলতে, তিনটি আঙ্গুল দিয়ে আলতো চাপুন।</string>
     <string name="handwriting_no_alternatives">অন্য কোনো পরামর্শ নেই</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> এর <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g>টির মধ্যে <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">খালি লেখা</string>
-    <string name="handwriting_not_available">এই ডিভাইসে হাতের লেখার স্বীকৃতি পাওয়া যায় না</string>
+    <string name="handwriting_not_available">এই ডিভাইসে হাতের লেখা শনাক্তকরণ উপলভ্য নয়</string>
     <string name="shortcut_scroll_to_bottom">নীচে স্ক্রোল করুন</string>
     <string name="shortcut_refresh">রিফ্রেশ</string>
     <string name="shortcut_system_quick_settings">সিস্টেম দ্রুত সেটিংস</string>

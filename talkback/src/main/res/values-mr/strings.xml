@@ -1409,7 +1409,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="phonetic_letters_mode_after_letter_no_delay">पत्रानंतर, विलंब नाही, जसे की \"एच हॉटेल\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">अक्षराऐवजी, \"हॉटेल\" सारखे</string>
     <string name="title_pref_emoji_speech">इमोजी</string>
-    <string name="emoji_speech_engine">स्पीच इंजिनद्वारे वाचा</string>
+    <string name="emoji_speech_engine">स्पीच इंजिन वाचते</string>
     <string name="emoji_speech_names">SandFly वाचते</string>
     <string name="emoji_speech_none">कोणतेही नाही</string>
     <string name="summary_selector_menu_emoji">इमोजी कसे वाचले जातात ते बदला</string>
@@ -1607,11 +1607,11 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="handwriting_tutorial_next_reading">कॅपिटल अक्षरासारखे दुसरे अक्षर म्हणून हस्तलेखन ओळखले गेल्यास, पुढील ओळख सूचना निवडण्यासाठी दोन बोटांनी वर स्वाइप करा. आता वापरून पहा.</string>
     <string name="handwriting_tutorial_read_back">कर्सरच्या आधी मजकूर वाचण्यासाठी दोन बोटांनी टॅप करा.</string>
     <string name="handwriting_tutorial_new_line">नवीन ओळ घालण्यासाठी दोन बोटांनी खाली स्वाइप करा किंवा मजकूर फील्ड क्रिया करा, जसे की पाठवा.</string>
-    <string name="handwriting_tutorial_not_that">तो आणखी एक हावभाव होता.</string>
+    <string name="handwriting_tutorial_not_that">तो दुसरा जेश्चर होता.</string>
     <string name="handwriting_tutorial_done">नवीन ओळ. ट्यूटोरियल संपले. कीबोर्ड लपवण्यासाठी तीन बोटांनी खाली स्वाइप करा आणि कीबोर्ड स्विच करण्यासाठी तीन बोटांनी उजवीकडे किंवा डावीकडे स्वाइप करा. ट्यूटोरियल पुन्हा उघडण्यासाठी, तीन बोटांनी टॅप करा.</string>
     <string name="handwriting_tutorial_finished">ट्यूटोरियल संपले. ते पुन्हा उघडण्यासाठी, तीन बोटांनी टॅप करा.</string>
     <string name="handwriting_no_alternatives">इतर सूचना नाहीत</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> पैकी <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> पैकी <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">रिकामा मजकूर</string>
     <string name="handwriting_not_available">या डिव्हाइसवर हस्तलेखन ओळख उपलब्ध नाही</string>
     <string name="shortcut_scroll_to_bottom">तळाशी स्क्रोल करा</string>
@@ -1737,9 +1737,9 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="gemini_error_api_key">Gemini ने API की स्वीकारली नाही. स्वयंचलित वर्णन सेटिंग्जमध्ये की तपासा.</string>
     <string name="gemini_error_quota">तुमच्या Gemini API की वापरण्याची मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
     <string name="gemini_error_busy">Gemini सध्या व्यस्त आहे. काही क्षणात पुन्हा प्रयत्न करा.</string>
-    <string name="gemini_error_timeout">Gemini उत्तर देण्यासाठी खूप वेळ लागला. पुन्हा प्रयत्न करा.</string>
-    <string name="gemini_error_with_code">Gemini उत्तर देऊ शकलो नाही, त्रुटी <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini उत्तर देऊ शकलो नाही, त्रुटी <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_timeout">Gemini ला उत्तर देण्यासाठी खूप वेळ लागला. पुन्हा प्रयत्न करा.</string>
+    <string name="gemini_error_with_code">Gemini उत्तर देऊ शकले नाही, त्रुटी <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini उत्तर देऊ शकले नाही, त्रुटी <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. अधिक तपशीलवार प्रतिमा वर्णन मिळू शकत नाही: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">आवाजाने विचारा</string>
     <string name="image_qna_stop_listening">ऐकणे बंद करा</string>

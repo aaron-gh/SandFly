@@ -1485,7 +1485,7 @@
     <string name="reading_control_letter_none">Žádné</string>
     <string name="handwriting_prompt">Napište písmeno abecedy</string>
     <string name="handwriting_closed">Rukopis uzavřen</string>
-    <string name="handwriting_no_match">Žádná kontrola čtení nezačíná <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Žádný ovládací prvek čtení nezačíná na <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Rukopis nebyl rozpoznán</string>
     <string name="handwriting_downloading">Rozpoznávání rukopisu se stahuje</string>
     <string name="handwriting_download_title">Stáhnout rozpoznávání rukopisu?</string>
@@ -1517,11 +1517,11 @@
     <string name="handwriting_tutorial_next_reading">Pokud je rukopis rozpoznán jako jiný znak, například velké písmeno, přejeďte dvěma prsty nahoru a vyberte další návrh rozpoznání. Zkuste to teď.</string>
     <string name="handwriting_tutorial_read_back">Klepnutím dvěma prsty přečtete text před kurzorem.</string>
     <string name="handwriting_tutorial_new_line">Přejetím dvěma prsty dolů vložte nový řádek nebo proveďte akci textového pole, například Odeslat.</string>
-    <string name="handwriting_tutorial_not_that">To bylo další gesto.</string>
+    <string name="handwriting_tutorial_not_that">To bylo jiné gesto.</string>
     <string name="handwriting_tutorial_done">Nová řada. Výukový program dokončen. Přejetím třemi prsty dolů klávesnici skryjete a třemi prsty doprava nebo doleva přepnete klávesnice. Chcete-li znovu otevřít výukový program, klepněte třemi prsty.</string>
     <string name="handwriting_tutorial_finished">Kurz skončil. Chcete-li jej znovu otevřít, klepněte třemi prsty.</string>
     <string name="handwriting_no_alternatives">Žádné další návrhy</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prázdný text</string>
     <string name="handwriting_not_available">Na tomto zařízení není k dispozici rozpoznávání rukopisu</string>
     <string name="shortcut_scroll_to_bottom">Přejít na konec</string>

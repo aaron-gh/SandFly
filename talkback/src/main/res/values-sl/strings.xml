@@ -1580,7 +1580,7 @@
     <string name="reading_control_letter_none">Brez</string>
     <string name="handwriting_prompt">Napišite črko abecede</string>
     <string name="handwriting_closed">Rokopis zaprt</string>
-    <string name="handwriting_no_match">Noben nadzor za branje se ne začne z <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Noben kontrolnik za branje se ne začne z <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Rokopis ni prepoznan</string>
     <string name="handwriting_downloading">Prepoznavanje rokopisa se prenaša</string>
     <string name="handwriting_download_title">Prenesti prepoznavanje rokopisa?</string>
@@ -1612,7 +1612,7 @@
     <string name="handwriting_tutorial_next_reading">Če je rokopis prepoznan kot drug znak, na primer velika začetnica, povlecite z dvema prstoma navzgor, da izberete naslednji predlog za prepoznavanje. Poskusite zdaj.</string>
     <string name="handwriting_tutorial_read_back">Tapnite z dvema prstoma, da preberete besedilo pred kazalcem.</string>
     <string name="handwriting_tutorial_new_line">Z dvema prstoma povlecite navzdol, da vstavite novo vrstico ali izvedete dejanje besedilnega polja, na primer Pošlji.</string>
-    <string name="handwriting_tutorial_not_that">To je bila še ena gesta.</string>
+    <string name="handwriting_tutorial_not_that">To je bila druga poteza.</string>
     <string name="handwriting_tutorial_done">Nova linija. Vadnica je končana. Povlecite navzdol s tremi prsti, da skrijete tipkovnico, in desno ali levo s tremi prsti, da preklopite tipkovnico. Če želite znova odpreti vadnico, tapnite s tremi prsti.</string>
     <string name="handwriting_tutorial_finished">Vadnica je končana. Če ga želite znova odpreti, tapnite s tremi prsti.</string>
     <string name="handwriting_no_alternatives">Nobenih drugih predlogov</string>
@@ -1742,7 +1742,7 @@
     <string name="gemini_error_api_key">Gemini ni sprejel ključa API. Preverite ključ v nastavitvah samodejnih opisov.</string>
     <string name="gemini_error_quota">Omejitev uporabe za vaš ključ API Gemini je bila dosežena. Poskusite znova pozneje.</string>
     <string name="gemini_error_busy">Gemini je trenutno zaseden. Poskusite znova čez trenutek.</string>
-    <string name="gemini_error_timeout">Gemini took too long to answer. poskusi ponovno</string>
+    <string name="gemini_error_timeout">Gemini se ni odzval pravočasno. Poskusite znova.</string>
     <string name="gemini_error_with_code">Gemini ni mogel odgovoriti, napaka <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini ni mogel odgovoriti, napaka <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Ni mogoče dobiti podrobnejšega opisa slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

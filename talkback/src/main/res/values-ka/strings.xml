@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">წერილის შემდეგ, არ დაგვიანებით, როგორიცაა \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">წერილის ნაცვლად, როგორიცაა \"სასტუმრო\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">წაიკითხეთ მეტყველების ძრავით</string>
+    <string name="emoji_speech_engine">კითხულობს მეტყველების ძრავა</string>
     <string name="emoji_speech_names">კითხულობს SandFly</string>
     <string name="emoji_speech_none">არცერთი</string>
     <string name="summary_selector_menu_emoji">შეცვალეთ როგორ იკითხება emoji</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">არცერთი</string>
     <string name="handwriting_prompt">დაწერეთ ანბანის ასო</string>
     <string name="handwriting_closed">ხელწერა დაიხურა</string>
-    <string name="handwriting_no_match">კითხვის კონტროლი არ იწყება <xliff:g id="letter" example="Q">%1$s</xliff:g>-ით</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g>-ით დაწყებული კითხვის მართვის ელემენტი არ არის</string>
     <string name="handwriting_not_recognized">ხელნაწერი ვერ ამოიცნო</string>
     <string name="handwriting_downloading">მიმდინარეობს ხელნაწერის ამოცნობის ჩამოტვირთვა</string>
     <string name="handwriting_download_title">ჩამოიტვირთოს ხელნაწერის ამოცნობა?</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_tutorial_next_reading">თუ ხელწერა აღიარებულია, როგორც სხვა სიმბოლო, როგორიცაა დიდი ასო, გადაფურცლეთ ზემოთ ორი თითით, რათა აირჩიოთ შემდეგი ამოცნობის შეთავაზება. სცადე ახლავე.</string>
     <string name="handwriting_tutorial_read_back">შეეხეთ ორი თითით კურსორის წინ ტექსტის წასაკითხად.</string>
     <string name="handwriting_tutorial_new_line">გადაფურცლეთ ქვემოთ ორი თითით ახალი ხაზის ჩასართავად ან ტექსტის ველის მოქმედების შესასრულებლად, როგორიცაა გაგზავნა.</string>
-    <string name="handwriting_tutorial_not_that">ეს კიდევ ერთი ჟესტი იყო.</string>
+    <string name="handwriting_tutorial_not_that">ეს სხვა ჟესტი იყო.</string>
     <string name="handwriting_tutorial_done">ახალი ხაზი. გაკვეთილი დასრულდა. გადაფურცლეთ ქვემოთ სამი თითით კლავიატურის დასამალად და სამი თითით მარჯვნივ ან მარცხნივ კლავიატურაზე გადასართავად. სახელმძღვანელოს ხელახლა გასახსნელად, შეეხეთ სამი თითით.</string>
     <string name="handwriting_tutorial_finished">გაკვეთილი დასრულდა. ხელახლა გასახსნელად შეეხეთ სამი თითით.</string>
     <string name="handwriting_no_alternatives">სხვა წინადადებები არ არის</string>
@@ -1735,8 +1735,8 @@
     <string name="gemini_error_quota">თქვენი Gemini API გასაღების გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
     <string name="gemini_error_busy">Gemini ახლა დაკავებულია. სცადეთ ხელახლა რამდენიმე წუთში.</string>
     <string name="gemini_error_timeout">Gemini პასუხის გაცემას ძალიან დიდი დრო დასჭირდა. სცადეთ ხელახლა.</string>
-    <string name="gemini_error_with_code">Gemini ვერ ვუპასუხე, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini ვერ ვუპასუხე, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_with_code">Gemini-მ ვერ უპასუხა, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini-მ ვერ უპასუხა, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. სურათის უფრო დეტალური აღწერა ვერ მივიღე: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">იკითხეთ ხმით</string>
     <string name="image_qna_stop_listening">მოსმენის შეწყვეტა</string>

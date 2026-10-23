@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Posle pisma, bez odlaganja, kao \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, kao \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emodži</string>
-    <string name="emoji_speech_engine">Čitanje pomoću govornog mehanizma</string>
+    <string name="emoji_speech_engine">Čita govorni mehanizam</string>
     <string name="emoji_speech_names">Čita SandFly</string>
     <string name="emoji_speech_none">Ništa</string>
     <string name="summary_selector_menu_emoji">Promenite način čitanja emodžija</string>
@@ -1608,7 +1608,7 @@
     <string name="handwriting_tutorial_next_reading">Ako je rukopis prepoznat kao drugi znak, na primer veliko slovo, prevucite nagore sa dva prsta da biste izabrali sledeći predlog za prepoznavanje. Pokušajte sada.</string>
     <string name="handwriting_tutorial_read_back">Dodirnite sa dva prsta da pročitate tekst ispred kursora.</string>
     <string name="handwriting_tutorial_new_line">Prevucite nadole sa dva prsta da biste umetnuli novi red ili izvršili radnju u polju za tekst, kao što je Pošalji.</string>
-    <string name="handwriting_tutorial_not_that">To je bio još jedan gest.</string>
+    <string name="handwriting_tutorial_not_that">To je bio drugi pokret.</string>
     <string name="handwriting_tutorial_done">Nova linija. Tutorial je završen. Prevucite nadole sa tri prsta da biste sakrili tastaturu, a udesno ili ulevo sa tri prsta da biste promenili tastaturu. Da biste ponovo otvorili vodič, dodirnite sa tri prsta.</string>
     <string name="handwriting_tutorial_finished">Tutorijal je završen. Da biste je ponovo otvorili, dodirnite sa tri prsta.</string>
     <string name="handwriting_no_alternatives">Nema drugih predloga</string>
@@ -1738,7 +1738,7 @@
     <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Proverite ključ u podešavanjima automatskih opisa.</string>
     <string name="gemini_error_quota">Ograničenje upotrebe vašeg Gemini API ključa je dostignuto. Pokušajte ponovo kasnije.</string>
     <string name="gemini_error_busy">Gemini je trenutno zauzet. Pokušajte ponovo za trenutak.</string>
-    <string name="gemini_error_timeout">Gemini trebalo je predugo za odgovor. Pokušajte ponovo.</string>
+    <string name="gemini_error_timeout">Gemini-ju je trebalo predugo za odgovor. Pokušajte ponovo.</string>
     <string name="gemini_error_with_code">Gemini nije mogao da odgovori, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nije mogao da odgovori, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Ne mogu da dobijem detaljniji opis slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

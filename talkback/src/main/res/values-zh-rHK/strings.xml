@@ -1405,7 +1405,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">信完後，毫不拖延，就像“H酒店”</string>
     <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“酒店”</string>
     <string name="title_pref_emoji_speech">表情符號</string>
-    <string name="emoji_speech_engine">由語音引擎讀取</string>
+    <string name="emoji_speech_engine">由語音引擎朗讀</string>
     <string name="emoji_speech_names">由 SandFly 朗讀</string>
     <string name="emoji_speech_none">無</string>
     <string name="summary_selector_menu_emoji">更改表情符號的讀取方式</string>
@@ -1571,7 +1571,7 @@
     <string name="reading_control_letter_none">無</string>
     <string name="handwriting_prompt">寫一個字母</string>
     <string name="handwriting_closed">手寫已關閉</string>
-    <string name="handwriting_no_match">無讀取控制以<xliff:g id="letter" example="Q">%1$s</xliff:g>開頭</string>
+    <string name="handwriting_no_match">沒有以 <xliff:g id="letter" example="Q">%1$s</xliff:g> 開頭的朗讀控制項</string>
     <string name="handwriting_not_recognized">手寫體無法辨識</string>
     <string name="handwriting_downloading">手寫辨識正在下載</string>
     <string name="handwriting_download_title">下載手寫辨識？</string>
@@ -1603,13 +1603,13 @@
     <string name="handwriting_tutorial_next_reading">如果手寫體被識別為其他字元（例如大寫字母），請用兩根手指向上滑動以選擇下一個識別建議。現在就試試看。</string>
     <string name="handwriting_tutorial_read_back">用兩根手指點擊可閱讀遊標之前的文字。</string>
     <string name="handwriting_tutorial_new_line">用兩根手指向下滑動可插入新行或執行文字欄位操作，例如發送。</string>
-    <string name="handwriting_tutorial_not_that">那是另一個姿態。</string>
+    <string name="handwriting_tutorial_not_that">那是其他手勢。</string>
     <string name="handwriting_tutorial_done">新線。教程完成。三指向下滑動可隱藏鍵盤，三指左右滑動可切換鍵盤。要再次打開教程，請用三個手指點擊。</string>
     <string name="handwriting_tutorial_finished">教程結束。要再次打開它，請用三個手指點擊。</string>
     <string name="handwriting_no_alternatives">沒有其他建議</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>、<xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">空文本</string>
-    <string name="handwriting_not_available">此設備不支援手寫識別</string>
+    <string name="handwriting_not_available">此裝置不支援手寫辨識</string>
     <string name="shortcut_scroll_to_bottom">滾動到底部</string>
     <string name="shortcut_refresh">重新整理</string>
     <string name="shortcut_system_notifications">系統通知欄</string>
@@ -1733,7 +1733,7 @@
     <string name="gemini_error_api_key">Gemini 不接受 API 金鑰。檢查自動描述設定中的鍵。</string>
     <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。稍後再試。</string>
     <string name="gemini_error_busy">Gemini現在很忙。稍後再試一次。</string>
-    <string name="gemini_error_timeout">Gemini 花了太長時間才回答。再試一次。</string>
+    <string name="gemini_error_timeout">Gemini 回應時間過長。請再試一次。</string>
     <string name="gemini_error_with_code">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
     <string name="gemini_error_with_details">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>：<xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>。無法獲得更詳細的圖片描述：<xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>

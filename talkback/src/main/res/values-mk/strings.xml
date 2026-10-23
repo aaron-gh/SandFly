@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">По писмото, без доцнење, како „h хотел“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Наместо писмото, како „хотел“</string>
     <string name="title_pref_emoji_speech">Емоџи</string>
-    <string name="emoji_speech_engine">Читање со говорен мотор</string>
+    <string name="emoji_speech_engine">Чита говорниот мотор</string>
     <string name="emoji_speech_names">Чита SandFly</string>
     <string name="emoji_speech_none">Нема</string>
     <string name="summary_selector_menu_emoji">Променете како се читаат емотиконите</string>
@@ -1572,7 +1572,7 @@
     <string name="reading_control_letter_none">Нема</string>
     <string name="handwriting_prompt">Напишете буква од азбуката</string>
     <string name="handwriting_closed">Ракописот е затворен</string>
-    <string name="handwriting_no_match">Нема контрола за читање започнува со <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Нема контрола за читање што започнува со <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Ракописот не е препознаен</string>
     <string name="handwriting_downloading">Препознавањето на ракопис се презема</string>
     <string name="handwriting_download_title">Да се преземе препознавање ракопис?</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_tutorial_next_reading">Ако ракописот се препознае како друг знак, како што е голема буква, повлечете нагоре со два прста за да го изберете следниот предлог за препознавање. Пробајте го сега.</string>
     <string name="handwriting_tutorial_read_back">Допрете со два прста за да го прочитате текстот пред курсорот.</string>
     <string name="handwriting_tutorial_new_line">Повлечете надолу со два прста за да вметнете нова линија или да го извршите дејството на полето за текст, како што е Испрати.</string>
-    <string name="handwriting_tutorial_not_that">Тоа беше уште еден гест.</string>
+    <string name="handwriting_tutorial_not_that">Тоа беше друго движење.</string>
     <string name="handwriting_tutorial_done">Нова линија. Упатството заврши. Повлечете надолу со три прста за да ја скриете тастатурата и надесно или налево со три прста за менување на тастатурата. За повторно да го отворите упатството, допрете со три прста.</string>
     <string name="handwriting_tutorial_finished">Упатството заврши. За да го отворите повторно, допрете со три прста.</string>
     <string name="handwriting_no_alternatives">Нема други предлози</string>
@@ -1734,9 +1734,9 @@
     <string name="gemini_error_api_key">Gemini не го прифати клучот API. Проверете го клучот во поставките за автоматски описи.</string>
     <string name="gemini_error_quota">Ограничувањето за користење на вашиот клуч API Gemini е достигнато. Обидете се повторно подоцна.</string>
     <string name="gemini_error_busy">Gemini е зафатен во моментов. Обидете се повторно за момент.</string>
-    <string name="gemini_error_timeout">На Gemini им требаше предолго да се одговори. Обидете се повторно.</string>
+    <string name="gemini_error_timeout">Gemini предолго не одговори. Обидете се повторно.</string>
     <string name="gemini_error_with_code">Gemini не можеше да одговори, грешка <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini не можев да одговори, грешка <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_with_details">Gemini не можеше да одговори, грешка <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Не можам да добијам подетален опис на сликата: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Прашај со глас</string>
     <string name="image_qna_stop_listening">Запри слушање</string>

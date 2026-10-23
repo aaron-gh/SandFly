@@ -1406,7 +1406,7 @@
     <string name="phonetic_letters_mode_after_letter_no_delay">Pas letrës, pa vonesë, si \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Në vend të letrës, si \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Lexoni nga motori i të folurit</string>
+    <string name="emoji_speech_engine">I lexon motori i të folurit</string>
     <string name="emoji_speech_names">Lexuar nga SandFly</string>
     <string name="emoji_speech_none">Asnjë</string>
     <string name="summary_selector_menu_emoji">Ndrysho mënyrën se si lexohen emoji</string>
@@ -1735,8 +1735,8 @@
     <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj API Gemini është arritur. Provo sërish më vonë.</string>
     <string name="gemini_error_busy">Gemini është i zënë për momentin. Provo sërish pas një momenti.</string>
     <string name="gemini_error_timeout">Gemini iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
-    <string name="gemini_error_with_code">Gemini nuk mund të përgjigjem, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini nuk mund të përgjigjem, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_with_code">Gemini nuk mundi të përgjigjej, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini nuk mundi të përgjigjej, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nuk mund të marr një përshkrim më të detajuar të imazhit: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pyet me zë</string>
     <string name="image_qna_stop_listening">Ndalo dëgjimin</string>
