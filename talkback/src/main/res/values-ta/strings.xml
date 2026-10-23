@@ -1327,8 +1327,8 @@
     <string name="voice_profile_move_up">மேலே நகர்த்தவும்</string>
     <string name="voice_profile_move_down">கீழே நகர்த்தவும்</string>
     <string name="voice_profile_rename">மறுபெயரிடவும்</string>
-    <string name="voice_profile_moved_above">மேலே நகர்த்தப்பட்டது <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">கீழே நகர்த்தப்பட்டது <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> க்கு மேலே நகர்த்தப்பட்டது</string>
+    <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> க்குக் கீழே நகர்த்தப்பட்டது</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> நீக்கப்பட்டது</string>
     <string name="title_pref_delete_voice_profile">குரல் சுயவிவரத்தை நீக்கு</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> ஐ நீக்கவா?</string>
@@ -1701,8 +1701,8 @@
     <string name="title_pref_volume_keys_move_cursor">வால்யூம் கீகள் கர்சரை நகர்த்துகின்றன</string>
     <string name="summary_pref_volume_keys_move_cursor">ஒரு உரைப் புலத்தில் ஃபோகஸ் இருக்கும்போது, வால்யூம் அப் கர்சரை ஒரு எழுத்தின் பின்னே நகர்த்துகிறது மற்றும் வால்யூம் டவுன் அதை இயக்குகிறது</string>
     <string name="summary_support_wrap_around">கடைசி உருப்படியிலிருந்து முதல் ஆன் அல்லது ஆஃப் வரை மடக்குதலைத் திருப்பவும்</string>
-    <string name="wrap_around_on">சுற்றி வளைக்கவும்</string>
-    <string name="wrap_around_off">சுற்றி வளைக்கவும்</string>
+    <string name="wrap_around_on">தொடக்கத்திற்குத் திரும்பு: இயக்கப்பட்டுள்ளது</string>
+    <string name="wrap_around_off">தொடக்கத்திற்குத் திரும்பு: முடக்கப்பட்டுள்ளது</string>
     <string name="title_selector_tablet_held_up_faces_away">டேப்லெட் முகங்களைத் தள்ளி வைத்தது</string>
     <string name="summary_support_tablet_held_up_faces_away">டேப்லெட் அல்லது விரிக்கப்பட்ட மொபைலில் பிரெய்லி விசைப்பலகைக்கு</string>
     <string name="tablet_held_up_faces_away_on">டேப்லெட் முகங்களைத் தள்ளி வைத்தது</string>

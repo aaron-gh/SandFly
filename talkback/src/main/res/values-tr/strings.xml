@@ -1328,7 +1328,7 @@
     <string name="voice_profile_move_down">Aşağı taşı</string>
     <string name="voice_profile_rename">Yeniden adlandır</string>
     <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> üstüne taşındı</string>
-    <string name="voice_profile_moved_below">Aşağıya taşındı <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> altına taşındı</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> silindi</string>
     <string name="title_pref_delete_voice_profile">Ses profilini sil</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> silinsin mi?</string>
@@ -1701,8 +1701,8 @@
     <string name="title_pref_volume_keys_move_cursor">Ses tuşları imleci hareket ettirir</string>
     <string name="summary_pref_volume_keys_move_cursor">Bir metin alanına odaklanıldığında, ses seviyesi yukarı imleci bir karakter geri taşır ve ses seviyesi aşağı imleci bir karakter geri taşır</string>
     <string name="summary_support_wrap_around">Son öğeden ilk öğeye sarmayı açma veya kapatma</string>
-    <string name="wrap_around_on">Etrafını sar</string>
-    <string name="wrap_around_off">Etrafı sarın</string>
+    <string name="wrap_around_on">Başa dön: açık</string>
+    <string name="wrap_around_off">Başa dön: kapalı</string>
     <string name="title_selector_tablet_held_up_faces_away">Tablet yüzleri uzağa doğru tutuldu</string>
     <string name="summary_support_tablet_held_up_faces_away">Tablet veya açılmış telefondaki braille klavyesi için</string>
     <string name="tablet_held_up_faces_away_on">Tablet yüzleri uzağa doğru tutuldu</string>

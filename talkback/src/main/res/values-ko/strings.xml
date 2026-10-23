@@ -1327,8 +1327,8 @@
     <string name="voice_profile_move_up">위로 이동</string>
     <string name="voice_profile_move_down">아래로 이동</string>
     <string name="voice_profile_rename">이름 바꾸기</string>
-    <string name="voice_profile_moved_above">위로 이동 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">아래로 이동 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> 위로 이동함</string>
+    <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> 아래로 이동함</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 삭제됨</string>
     <string name="title_pref_delete_voice_profile">음성 프로필 삭제</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g>을 삭제하시겠습니까?</string>
@@ -1701,8 +1701,8 @@
     <string name="title_pref_volume_keys_move_cursor">볼륨 키로 커서 이동</string>
     <string name="summary_pref_volume_keys_move_cursor">텍스트 필드에 포커스가 있을 때 볼륨을 높이면 커서가 한 문자 뒤로 이동하고 볼륨을 낮추면 커서가 한 문자 뒤로 이동합니다.</string>
     <string name="summary_support_wrap_around">마지막 항목부터 첫 번째 항목까지 포장을 켜거나 끕니다.</string>
-    <string name="wrap_around_on">둘러싸기</string>
-    <string name="wrap_around_off">둘러싸서 끄기</string>
+    <string name="wrap_around_on">순환 탐색: 사용</string>
+    <string name="wrap_around_off">순환 탐색: 사용 안함</string>
     <string name="title_selector_tablet_held_up_faces_away">태블릿이 얼굴을 멀리 들고 있음</string>
     <string name="summary_support_tablet_held_up_faces_away">태블릿이나 펼쳐진 휴대폰의 점자 키보드의 경우</string>
     <string name="tablet_held_up_faces_away_on">태블릿이 얼굴을 멀리 대고 있음</string>

@@ -1315,7 +1315,7 @@
     <string name="shortcut_next_voice_profile">Volgende stemprofiel</string>
     <string name="title_pref_voice_profile_in_use">Spraakprofiel in gebruik</string>
     <string name="title_pref_add_voice_profile">Stemprofiel toevoegen</string>
-    <string name="voice_profile_new_name">Spraakprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_new_name">Stemprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Een stemprofiel heet al <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Naam</string>
     <string name="title_pref_voice_profile_language">Taal</string>
@@ -1327,8 +1327,8 @@
     <string name="voice_profile_move_up">Omhoog verplaatsen</string>
     <string name="voice_profile_move_down">Omlaag verplaatsen</string>
     <string name="voice_profile_rename">Hernoemen</string>
-    <string name="voice_profile_moved_above">Verplaatst naar boven <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">Verplaatst naar beneden <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above">Verplaatst boven <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">Verplaatst onder <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderd</string>
     <string name="title_pref_delete_voice_profile">Stemprofiel verwijderen</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderen?</string>
@@ -1701,8 +1701,8 @@
     <string name="title_pref_volume_keys_move_cursor">Volumetoetsen verplaatsen de cursor</string>
     <string name="summary_pref_volume_keys_move_cursor">Wanneer een tekstveld focus heeft, verplaatst volume omhoog de cursor een teken terug, terwijl volume omlaag de cursor verder verplaatst</string>
     <string name="summary_support_wrap_around">Schakel de verpakking van het laatste item naar het eerste in of uit</string>
-    <string name="wrap_around_on">Wikkel rond</string>
-    <string name="wrap_around_off">Wikkel rond af</string>
+    <string name="wrap_around_on">Rondgaan: aan</string>
+    <string name="wrap_around_off">Rondgaan: uit</string>
     <string name="title_selector_tablet_held_up_faces_away">Tablet omhoog gehouden, gezichten weg</string>
     <string name="summary_support_tablet_held_up_faces_away">Voor het brailletoetsenbord op een tablet of uitgeklapte telefoon</string>
     <string name="tablet_held_up_faces_away_on">Tablet omhoog gehouden, gezichten weg</string>
