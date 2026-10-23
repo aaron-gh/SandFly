@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Μόνο χωρίς ακουστικά</string>
     <string name="notification_headphones_only_with">Μόνο με ακουστικά</string>
     <string name="notification_headphones_always">Διαβάστε δυνατά με ή χωρίς ακουστικά</string>
-    <string name="notification_queue_skip">Μην διαβάζετε τη νέα ειδοποίηση δυνατά</string>
+    <string name="notification_queue_skip">Χωρίς ανάγνωση της νέας</string>
     <string name="notification_queue_interrupt">Διακοπή</string>
     <string name="notification_queue_queue">Ανάγνωση μετά</string>
     <string name="notification_url_omit">Παράλειψη</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Χρονισμός</string>
     <string name="notification_delay_title">Αναμονή πριν την ανάγνωση</string>
     <string name="notification_queue_title">Όταν διαβάζεται μια άλλη ειδοποίηση</string>
-    <string name="notification_repeat_minutes_title">Διαβάστε ξανά μέχρι να ενεργοποιηθεί η οθόνη</string>
+    <string name="notification_repeat_minutes_title">Ανάγνωση ξανά μέχρι να ανάψει η οθόνη</string>
     <string name="notification_skip_media_title">Παράλειψη προγραμμάτων αναπαραγωγής πολυμέσων</string>
     <string name="notification_skip_ongoing_title">Παράλειψη συνεχιζόμενων ειδοποιήσεων</string>
     <string name="notification_skip_ongoing_summary">Όπως πλοήγηση και χρονόμετρα</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Χρόνος μεταξύ των ειδοποιήσεων μιας εφαρμογής</string>
     <string name="notification_skip_prefix_title">Παραλείψτε ένα επαναλαμβανόμενο πρόθεμα κειμένου</string>
     <string name="notification_skip_prefix_summary">Όπως το όνομα μιας ομάδας σε μια συνομιλία</string>
-    <string name="notification_prefix_memory_title">Πόσο καιρό να θυμάστε το πρόθεμα κειμένου</string>
+    <string name="notification_prefix_memory_title">Απομνημόνευση αρχής για</string>
     <string name="notification_access_summary">Απαιτείται για να σταματήσει η ανάγνωση μιας ειδοποίησης που απορρίφθηκε και για περιλήψεις</string>
     <string name="notification_shake_title">Ανακινήστε για να σταματήσει</string>
     <string name="notification_shake_strength_title">Ένταση ανακίνησης</string>
@@ -143,7 +143,7 @@
     <string name="notification_app_name_title">Προφορικό όνομα</string>
     <string name="notification_app_said_as">εκφωνείται ως <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Επαναφορά</string>
-    <string name="notification_required_title">Διαβάστε μόνο ειδοποιήσεις με</string>
+    <string name="notification_required_title">Ανάγνωση μόνο ειδοποιήσεων που περιέχουν</string>
     <string name="notification_blocked_title">Χωρίς ανάγνωση ειδοποιήσεων που περιέχουν</string>
     <string name="notification_private_title">Διαβάστε μόνο το όνομα της εφαρμογής για</string>
     <string name="notification_replacements_title">Διαφορετική εκφώνηση</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Μέχρι</string>
     <string name="notification_time_days">Ημέρες</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> έως <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">Το SandFly χρειάζεται αυτήν την άδεια για αυτήν την κατάσταση</string>
+    <string name="notification_permission_needed">Το SandFly χρειάζεται αυτήν την άδεια για αυτήν τη συνθήκη</string>
     <string name="notification_cond_bluetooth">Το <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> είναι συνδεδεμένο</string>
     <string name="notification_cond_bluetooth_not">Το <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> δεν είναι συνδεδεμένο</string>
     <string name="notification_cond_bluetooth_any">Έχει συνδεθεί μια συσκευή ήχου Bluetooth</string>

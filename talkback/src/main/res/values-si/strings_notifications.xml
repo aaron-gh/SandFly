@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">හෙඩ්ෆෝන් නොමැතිව පමණි</string>
     <string name="notification_headphones_only_with">හෙඩ්ෆෝන් සමඟ පමණි</string>
     <string name="notification_headphones_always">හෙඩ්ෆෝන් සමඟ හෝ නැතිව ශබ්ද නඟා කියවන්න</string>
-    <string name="notification_queue_skip">නව දැනුම්දීම ශබ්ද නඟා කියවන්න එපා</string>
+    <string name="notification_queue_skip">අලුත් එක කියවන්න එපා</string>
     <string name="notification_queue_interrupt">බාධා කරන්න</string>
     <string name="notification_queue_queue">පසුව කියවන්න</string>
     <string name="notification_url_omit">මඟ හරින්න</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">මෙපමණ කාලයකට පසු කියවීම නවත්වන්න</string>
     <string name="notification_category_timing">කාල නිර්ණය</string>
     <string name="notification_delay_title">කියවීමට පෙර රැඳී සිටින්න</string>
-    <string name="notification_queue_title">වෙනත් දැනුම්දීමක් කියවන විට</string>
+    <string name="notification_queue_title">වෙනත් දැනුම්දීමක් කියවමින් සිටින විට</string>
     <string name="notification_repeat_minutes_title">තිරය ක්‍රියාත්මක වන තුරු නැවත කියවන්න</string>
     <string name="notification_skip_media_title">මාධ්‍ය ධාවකයන් මඟ හරින්න</string>
     <string name="notification_skip_ongoing_title">අඛණ්ඩ දැනුම්දීම් මඟ හරින්න</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">නිහඬ පැය</string>
     <string name="notification_quiet_start_title">ආරම්භය</string>
     <string name="notification_quiet_end_title">අවසානය</string>
-    <string name="notification_repeat_seconds_title">සඳහා එකම දැනුම්දීම මඟ හරින්න</string>
+    <string name="notification_repeat_seconds_title">එකම දැනුම්දීම මඟ හරින කාලය</string>
     <string name="notification_numbers_alike_title">අංක සමාන ලෙස ගණන් ගැනේ</string>
     <string name="notification_numbers_alike_summary">බාගැනීම් ප්‍රතිශතයක් වැනි</string>
     <string name="notification_cooldown_title">යෙදුමක දැනුම්දීම් අතර කාලය</string>
     <string name="notification_skip_prefix_title">පුනරාවර්තන පෙළ උපසර්ගයක් අතහරින්න</string>
     <string name="notification_skip_prefix_summary">චැට් එකක සිටින කණ්ඩායමක නම වැනි</string>
-    <string name="notification_prefix_memory_title">පෙළ උපසර්ගය මතක තබා ගැනීමට කොපමණ කාලයක්</string>
+    <string name="notification_prefix_memory_title">ආරම්භය මතක තබා ගන්නා කාලය</string>
     <string name="notification_access_summary">ඉවත දැමූ දැනුම්දීමක් කියවීම නැවැත්වීමට සහ සාරාංශ සඳහා අවශ්‍ය වේ</string>
     <string name="notification_shake_title">නතර කිරීමට සොලවන්න</string>
     <string name="notification_shake_strength_title">සෙලවීමේ තීව්‍රතාව</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">උච්චාරණය කරන නම</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ලෙස කියවේ</string>
     <string name="notification_app_reset">යළි පිහිටුවන්න</string>
-    <string name="notification_required_title">සමඟ දැනුම්දීම් පමණක් කියවන්න</string>
+    <string name="notification_required_title">මේවා අඩංගු දැනුම්දීම් පමණක් කියවන්න</string>
     <string name="notification_blocked_title">මේවා අඩංගු දැනුම්දීම් කියවන්න එපා</string>
-    <string name="notification_private_title">යෙදුමේ නම පමණක් කියවන්න</string>
+    <string name="notification_private_title">මේවා අඩංගු දැනුම්දීම් සඳහා යෙදුමේ නම පමණක් කියවන්න</string>
     <string name="notification_replacements_title">වෙනස් උච්චාරණය</string>
     <string name="notification_add_word">වචනයක් එකතු කරන්න</string>
     <string name="notification_add_replacement">ආදේශකයක් එකතු කරන්න</string>

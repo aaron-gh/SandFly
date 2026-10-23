@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Només sense auriculars</string>
     <string name="notification_headphones_only_with">Només amb auriculars</string>
     <string name="notification_headphones_always">Llegeix en veu alta amb o sense auriculars</string>
-    <string name="notification_queue_skip">No llegiu la nova notificació en veu alta</string>
+    <string name="notification_queue_skip">No llegir la nova</string>
     <string name="notification_queue_interrupt">Interromp-la</string>
     <string name="notification_queue_queue">Llegeix-la després</string>
     <string name="notification_url_omit">Omet</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Temporització</string>
     <string name="notification_delay_title">Espera abans de llegir</string>
     <string name="notification_queue_title">Quan es llegeix una altra notificació</string>
-    <string name="notification_repeat_minutes_title">Torna a llegir fins que s\'encengui la pantalla</string>
+    <string name="notification_repeat_minutes_title">Tornar a llegir fins que s\'encengui la pantalla</string>
     <string name="notification_skip_media_title">Omet els reproductors multimèdia</string>
     <string name="notification_skip_ongoing_title">Omet les notificacions en curs</string>
     <string name="notification_skip_ongoing_summary">Com ara la navegació i els temporitzadors</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Hores tranquil·les</string>
     <string name="notification_quiet_start_title">Inici</string>
     <string name="notification_quiet_end_title">Final</string>
-    <string name="notification_repeat_seconds_title">Omet la mateixa notificació per</string>
+    <string name="notification_repeat_seconds_title">Omet la mateixa notificació durant</string>
     <string name="notification_numbers_alike_title">Els nombres compten com a iguals</string>
     <string name="notification_numbers_alike_summary">Com ara el percentatge de descàrrega</string>
     <string name="notification_cooldown_title">Temps entre les notificacions d\'una aplicació</string>
     <string name="notification_skip_prefix_title">Omet un prefix de text repetit</string>
     <string name="notification_skip_prefix_summary">Com ara el nom d\'un grup en un xat</string>
-    <string name="notification_prefix_memory_title">Quant de temps per recordar el prefix del text</string>
+    <string name="notification_prefix_memory_title">Recorda l\'inici durant</string>
     <string name="notification_access_summary">Necessari per deixar de llegir una notificació ignorada i per als resums</string>
     <string name="notification_shake_title">Sacseja per aturar</string>
     <string name="notification_shake_strength_title">Força de la sacsejada</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Nom parlat</string>
     <string name="notification_app_said_as">dit com <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Restableix</string>
-    <string name="notification_required_title">Només llegiu notificacions amb</string>
+    <string name="notification_required_title">Llegir només notificacions que continguin</string>
     <string name="notification_blocked_title">No llegir les notificacions que continguin</string>
-    <string name="notification_private_title">Llegiu només el nom de l\'aplicació</string>
+    <string name="notification_private_title">Llegir només el nom de l\'aplicació per a notificacions que continguin</string>
     <string name="notification_replacements_title">Pronúncia diferent</string>
     <string name="notification_add_word">Afegeix una paraula</string>
     <string name="notification_add_replacement">Afegeix un substitut</string>

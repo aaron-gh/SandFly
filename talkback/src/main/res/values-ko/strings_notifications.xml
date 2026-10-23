@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">헤드폰 미사용 시에만</string>
     <string name="notification_headphones_only_with">헤드폰 사용 시에만</string>
     <string name="notification_headphones_always">헤드폰을 사용하거나 사용하지 않고 소리내어 읽기</string>
-    <string name="notification_queue_skip">새 알림을 소리내어 읽지 마세요.</string>
+    <string name="notification_queue_skip">새 알림 읽지 않기</string>
     <string name="notification_queue_interrupt">중단</string>
     <string name="notification_queue_queue">다음에 읽기</string>
     <string name="notification_url_omit">생략</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">읽기 중지 시간</string>
     <string name="notification_category_timing">타이밍</string>
     <string name="notification_delay_title">읽기 전 대기 시간</string>
-    <string name="notification_queue_title">다른 알림을 읽었을 때</string>
-    <string name="notification_repeat_minutes_title">화면이 켜질 때까지 다시 읽어보세요</string>
+    <string name="notification_queue_title">다른 알림을 읽는 중일 때</string>
+    <string name="notification_repeat_minutes_title">화면이 켜질 때까지 다시 읽기</string>
     <string name="notification_skip_media_title">미디어 플레이어 건너뛰기</string>
     <string name="notification_skip_ongoing_title">진행 중인 알림 건너뛰기</string>
     <string name="notification_skip_ongoing_summary">내비게이션, 타이머 등</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">조용한 시간</string>
     <string name="notification_quiet_start_title">시작</string>
     <string name="notification_quiet_end_title">끝</string>
-    <string name="notification_repeat_seconds_title">다음에 대한 동일한 알림 건너뛰기</string>
+    <string name="notification_repeat_seconds_title">같은 알림 건너뛰기 시간</string>
     <string name="notification_numbers_alike_title">숫자가 달라도 같은 알림으로 간주</string>
     <string name="notification_numbers_alike_summary">다운로드 비율 등</string>
     <string name="notification_cooldown_title">앱 알림 간격</string>
     <string name="notification_skip_prefix_title">반복되는 텍스트 접두사 생략</string>
     <string name="notification_skip_prefix_summary">채팅의 그룹 이름 등</string>
-    <string name="notification_prefix_memory_title">텍스트 접두어를 기억하는 기간</string>
+    <string name="notification_prefix_memory_title">시작 부분 기억 시간</string>
     <string name="notification_access_summary">닫은 알림 및 요약 읽기를 중지하는 데 필요함</string>
     <string name="notification_shake_title">흔들어서 중지</string>
     <string name="notification_shake_strength_title">흔들기 강도</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">음성 이름</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>(으)로 읽음</string>
     <string name="notification_app_reset">재설정</string>
-    <string name="notification_required_title">다음이 포함된 알림만 읽습니다.</string>
+    <string name="notification_required_title">다음이 포함된 알림만 읽기</string>
     <string name="notification_blocked_title">다음이 포함된 알림 읽지 않기</string>
-    <string name="notification_private_title">앱 이름만 읽기</string>
+    <string name="notification_private_title">다음이 포함된 알림은 앱 이름만 읽기</string>
     <string name="notification_replacements_title">다르게 읽기</string>
     <string name="notification_add_word">단어 추가</string>
     <string name="notification_add_replacement">교체 추가</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">까지</string>
     <string name="notification_time_days">요일</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ~ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly 이 조건에 대한 권한이 필요합니다.</string>
+    <string name="notification_permission_needed">SandFly는 이 조건에 그 권한이 필요합니다</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결됨</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결되지 않음</string>
     <string name="notification_cond_bluetooth_any">Bluetooth 오디오 장치가 연결되어 있습니다</string>

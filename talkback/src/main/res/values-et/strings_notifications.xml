@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Ainult ilma kõrvaklappideta</string>
     <string name="notification_headphones_only_with">Ainult kõrvaklappidega</string>
     <string name="notification_headphones_always">Lugege ette kõrvaklappidega või ilma</string>
-    <string name="notification_queue_skip">Ärge lugege uut teadet ette</string>
+    <string name="notification_queue_skip">Ära loe uut</string>
     <string name="notification_queue_interrupt">Katkesta</string>
     <string name="notification_queue_queue">Loe pärast seda</string>
     <string name="notification_url_omit">Jäta välja</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Lõpeta lugemine pärast</string>
     <string name="notification_category_timing">Ajastus</string>
     <string name="notification_delay_title">Ootamine enne lugemist</string>
-    <string name="notification_queue_title">Kui loetakse teist teadet</string>
-    <string name="notification_repeat_minutes_title">Lugege uuesti, kuni ekraan sisse lülitub</string>
+    <string name="notification_queue_title">Kui loetakse teist märguannet</string>
+    <string name="notification_repeat_minutes_title">Loe uuesti, kuni ekraan lülitub sisse</string>
     <string name="notification_skip_media_title">Jäta meediumipleierid vahele</string>
     <string name="notification_skip_ongoing_title">Jäta püsivad märguanded vahele</string>
     <string name="notification_skip_ongoing_summary">Nagu navigeerimine ja taimerid</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Vaiksed tunnid</string>
     <string name="notification_quiet_start_title">Algus</string>
     <string name="notification_quiet_end_title">Lõpp</string>
-    <string name="notification_repeat_seconds_title">Jäta sama märguanne vahele</string>
+    <string name="notification_repeat_seconds_title">Sama märguande vahelejätmise aeg</string>
     <string name="notification_numbers_alike_title">Numbreid loetakse samaks</string>
     <string name="notification_numbers_alike_summary">Näiteks allalaadimise protsent</string>
     <string name="notification_cooldown_title">Rakenduse märguannete vaheline aeg</string>
     <string name="notification_skip_prefix_title">Jätke korduv teksti eesliide välja</string>
     <string name="notification_skip_prefix_summary">Näiteks grupi nimi vestluses</string>
-    <string name="notification_prefix_memory_title">Kui kaua teksti eesliidet meeles pidada</string>
+    <string name="notification_prefix_memory_title">Alguse meelespidamise aeg</string>
     <string name="notification_access_summary">Vajalik tagasilükatud teatise lugemise lõpetamiseks ja kokkuvõtete jaoks</string>
     <string name="notification_shake_title">Peatamiseks raputage</string>
     <string name="notification_shake_strength_title">Raputamise intensiivsus</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Ettelöetav nimi</string>
     <string name="notification_app_said_as">öeldud kui <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Lähtesta</string>
-    <string name="notification_required_title">Lugege märguandeid ainult rakendusega</string>
+    <string name="notification_required_title">Loe ainult märguandeid, mis sisaldavad</string>
     <string name="notification_blocked_title">Ära loe märguandeid, mis sisaldavad</string>
-    <string name="notification_private_title">Lugege ainult rakenduse nime</string>
+    <string name="notification_private_title">Loe ainult rakenduse nime märguannete puhul, mis sisaldavad</string>
     <string name="notification_replacements_title">Teistsugune hääldus</string>
     <string name="notification_add_word">Lisa sõna</string>
     <string name="notification_add_replacement">Lisa asendus</string>

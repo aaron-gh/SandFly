@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Aðeins án heyrnartóla</string>
     <string name="notification_headphones_only_with">Aðeins með heyrnartólum</string>
     <string name="notification_headphones_always">Lestu upp með eða án heyrnartóla</string>
-    <string name="notification_queue_skip">Ekki lesa nýju tilkynninguna upphátt</string>
+    <string name="notification_queue_skip">Ekki lesa þá nýju</string>
     <string name="notification_queue_interrupt">Trufla</string>
     <string name="notification_queue_queue">Lesa á eftir</string>
     <string name="notification_url_omit">Sleppa</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Tímasetning</string>
     <string name="notification_delay_title">Bið fyrir lestur</string>
     <string name="notification_queue_title">Þegar önnur tilkynning er lesin</string>
-    <string name="notification_repeat_minutes_title">Lestu aftur þar til kveikt er á skjánum</string>
+    <string name="notification_repeat_minutes_title">Lesa aftur þar til kveikt er á skjánum</string>
     <string name="notification_skip_media_title">Sleppa margmiðlunarspilurum</string>
     <string name="notification_skip_ongoing_title">Sleppa viðvarandi tilkynningum</string>
     <string name="notification_skip_ongoing_summary">Svo sem flakk og tímamælir</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Kyrrðarstundir</string>
     <string name="notification_quiet_start_title">Upphaf</string>
     <string name="notification_quiet_end_title">Enda</string>
-    <string name="notification_repeat_seconds_title">Slepptu sömu tilkynningu fyrir</string>
+    <string name="notification_repeat_seconds_title">Sleppa sömu tilkynningu í</string>
     <string name="notification_numbers_alike_title">Tölur teljast eins</string>
     <string name="notification_numbers_alike_summary">Til dæmis niðurhalshlutfall</string>
     <string name="notification_cooldown_title">Tími á milli tilkynninga apps</string>
     <string name="notification_skip_prefix_title">Slepptu endurteknu textaforskeyti</string>
     <string name="notification_skip_prefix_summary">Svo sem nafn hóps í spjalli</string>
-    <string name="notification_prefix_memory_title">Hversu lengi á að muna textaforskeytið</string>
+    <string name="notification_prefix_memory_title">Muna upphafið í</string>
     <string name="notification_access_summary">Þarf að hætta að lesa tilkynningu sem var vísað frá og fyrir samantektir</string>
     <string name="notification_shake_title">Hrista til að stöðva</string>
     <string name="notification_shake_strength_title">Hristingarstyrkur</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Talað nafn</string>
     <string name="notification_app_said_as">sagt sem <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Endurstilla</string>
-    <string name="notification_required_title">Lestu aðeins tilkynningar með</string>
+    <string name="notification_required_title">Lesa aðeins tilkynningar sem innihalda</string>
     <string name="notification_blocked_title">Ekki lesa tilkynningar sem innihalda</string>
-    <string name="notification_private_title">Lestu aðeins nafn appsins fyrir</string>
+    <string name="notification_private_title">Lesa aðeins heiti forritsins fyrir tilkynningar sem innihalda</string>
     <string name="notification_replacements_title">Annar framburður</string>
     <string name="notification_add_word">Bættu við orði</string>
     <string name="notification_add_replacement">Bæta við útskiptingu</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Til</string>
     <string name="notification_time_days">Dagar</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> til <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly þarf leyfi fyrir þessu ástandi</string>
+    <string name="notification_permission_needed">SandFly þarf þessa heimild fyrir þetta skilyrði</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er tengdur</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er ekki tengt</string>
     <string name="notification_cond_bluetooth_any">Bluetooth hljóðtæki er tengt</string>

@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">فقط بدون هدفون</string>
     <string name="notification_headphones_only_with">فقط با هدفون</string>
     <string name="notification_headphones_always">با هدفون یا بدون هدفون با صدای بلند بخوانید</string>
-    <string name="notification_queue_skip">اعلان جدید را با صدای بلند نخوانید</string>
+    <string name="notification_queue_skip">اعلان جدید خوانده نشود</string>
     <string name="notification_queue_interrupt">قطع کردن</string>
     <string name="notification_queue_queue">خواندن پس از آن</string>
     <string name="notification_url_omit">حذف</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">زمان بندی</string>
     <string name="notification_delay_title">انتظار قبل از خواندن</string>
     <string name="notification_queue_title">وقتی اعلان دیگری خوانده می شود</string>
-    <string name="notification_repeat_minutes_title">دوباره بخوانید تا صفحه روشن شود</string>
+    <string name="notification_repeat_minutes_title">خواندن دوباره تا روشن شدن صفحه</string>
     <string name="notification_skip_media_title">رد شدن از پخش‌کننده‌های رسانه</string>
     <string name="notification_skip_ongoing_title">رد شدن از اعلان‌های جاری</string>
     <string name="notification_skip_ongoing_summary">مانند ناوبری و تایمر</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ساعات خلوت</string>
     <string name="notification_quiet_start_title">شروع</string>
     <string name="notification_quiet_end_title">پایان</string>
-    <string name="notification_repeat_seconds_title">از همان اعلان برای</string>
+    <string name="notification_repeat_seconds_title">مدت رد شدن از همان اعلان</string>
     <string name="notification_numbers_alike_title">اعداد یکسان در نظر گرفته می‌شوند</string>
     <string name="notification_numbers_alike_summary">مانند درصد دانلود</string>
     <string name="notification_cooldown_title">زمان بین اعلان‌های یک برنامه</string>
     <string name="notification_skip_prefix_title">یک پیشوند متن تکراری را حذف کنید</string>
     <string name="notification_skip_prefix_summary">مانند نام یک گروه در یک چت</string>
-    <string name="notification_prefix_memory_title">چه مدت باید پیشوند متن را به خاطر بسپارید</string>
+    <string name="notification_prefix_memory_title">مدت به خاطر سپردن ابتدا</string>
     <string name="notification_access_summary">برای توقف خواندن اعلان رد شده و برای خلاصه‌ها لازم است</string>
     <string name="notification_shake_title">تکان دهید تا متوقف شود</string>
     <string name="notification_shake_strength_title">شدت تکان دادن</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">نام گفتاری</string>
     <string name="notification_app_said_as">گفته شده به عنوان <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">بازنشانی</string>
-    <string name="notification_required_title">فقط خواندن اعلان ها با</string>
+    <string name="notification_required_title">فقط اعلان‌های حاوی این موارد خوانده شوند</string>
     <string name="notification_blocked_title">اعلان‌های حاوی این موارد خوانده نشوند</string>
-    <string name="notification_private_title">فقط نام برنامه را بخوانید</string>
+    <string name="notification_private_title">فقط نام برنامه برای اعلان‌های حاوی این موارد خوانده شود</string>
     <string name="notification_replacements_title">تلفظ متفاوت</string>
     <string name="notification_add_word">افزودن کلمه</string>
     <string name="notification_add_replacement">افزودن جایگزین</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">تا</string>
     <string name="notification_time_days">روزها</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> تا <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly برای این شرایط به آن اجازه نیاز دارد</string>
+    <string name="notification_permission_needed">SandFly برای این شرط به آن مجوز نیاز دارد</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> متصل است</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> متصل نیست</string>
     <string name="notification_cond_bluetooth_any">یک دستگاه صوتی Bluetooth متصل است</string>

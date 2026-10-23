@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">କେବଳ ହେଡଫୋନ୍ ବିନା</string>
     <string name="notification_headphones_only_with">କେବଳ ହେଡଫୋନ୍ ସହିତ</string>
     <string name="notification_headphones_always">ହେଡଫୋନ୍ ସହିତ କିମ୍ବା ବିନା ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_queue_skip">ନୂତନ ବିଜ୍ଞପ୍ତିକୁ ଉଚ୍ଚ ସ୍ୱରରେ ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_queue_skip">ନୂଆ ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_queue_interrupt">ବାଧା ଦିଅନ୍ତୁ</string>
     <string name="notification_queue_queue">ପରେ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_url_omit">ବାଦ ଦିଅନ୍ତୁ</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">ଏତେ ସମୟ ପରେ ପଢ଼ିବା ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_category_timing">ସମୟ</string>
     <string name="notification_delay_title">ପଢ଼ିବା ପୂର୍ବରୁ ଅପେକ୍ଷା</string>
-    <string name="notification_queue_title">ଯେତେବେଳେ ଅନ୍ୟ ଏକ ବିଜ୍ଞପ୍ତି ପ read ଼ାଯାଏ</string>
-    <string name="notification_repeat_minutes_title">ସ୍କ୍ରିନ୍ ଅନ୍ ନହେବା ପର୍ଯ୍ୟନ୍ତ ପୁନର୍ବାର ପ Read ନ୍ତୁ</string>
+    <string name="notification_queue_title">ଯେତେବେଳେ ଅନ୍ୟ ଏକ ବିଜ୍ଞପ୍ତି ପଢ଼ାଯାଉଥାଏ</string>
+    <string name="notification_repeat_minutes_title">ସ୍କ୍ରିନ୍ ଚାଲୁ ନହେବା ପର୍ଯ୍ୟନ୍ତ ପୁଣି ପଢ଼ନ୍ତୁ</string>
     <string name="notification_skip_media_title">ମିଡିଆ ପ୍ଲେୟାର ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_skip_ongoing_title">ଚାଲୁଥିବା ବିଜ୍ଞପ୍ତି ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_skip_ongoing_summary">ଯେପରିକି ନାଭିଗେସନ୍ ଏବଂ ଟାଇମର୍</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ଶାନ୍ତ ଘଣ୍ଟା</string>
     <string name="notification_quiet_start_title">ଆରମ୍ଭ</string>
     <string name="notification_quiet_end_title">ଶେଷ</string>
-    <string name="notification_repeat_seconds_title">ସମାନ ବିଜ୍ଞପ୍ତିକୁ ଏଡ଼ାଇଦିଅ</string>
+    <string name="notification_repeat_seconds_title">ସମାନ ବିଜ୍ଞପ୍ତି ଛାଡ଼ିବା ସମୟ</string>
     <string name="notification_numbers_alike_title">ସଂଖ୍ୟାଗୁଡ଼ିକ ସମାନ ଭାବେ ଗଣାଯାଏ</string>
     <string name="notification_numbers_alike_summary">ଯେପରିକି ଏକ ଡାଉନଲୋଡ୍ ଶତକଡା</string>
     <string name="notification_cooldown_title">ଏକ ଆପର ବିଜ୍ଞପ୍ତି ମଧ୍ୟରେ ସମୟ</string>
     <string name="notification_skip_prefix_title">ବାରମ୍ବାର ପାଠ୍ୟ ଉପସର୍ଗକୁ ଛାଡିଦିଅ</string>
     <string name="notification_skip_prefix_summary">ଯେପରିକି ଏକ ଚାଟରେ ଗୋଷ୍ଠୀର ନାମ</string>
-    <string name="notification_prefix_memory_title">ପାଠ୍ୟ ଉପସର୍ଗକୁ କେତେ ଦିନ ମନେରଖିବାକୁ</string>
+    <string name="notification_prefix_memory_title">ଆରମ୍ଭ ମନେ ରଖିବା ସମୟ</string>
     <string name="notification_access_summary">ଏକ ବରଖାସ୍ତ ବିଜ୍ଞପ୍ତି ଏବଂ ସାରାଂଶ ପାଇଁ ପ reading ିବା ବନ୍ଦ କରିବା ଆବଶ୍ୟକ</string>
     <string name="notification_shake_title">ବନ୍ଦ କରିବାକୁ ହଲାନ୍ତୁ</string>
     <string name="notification_shake_strength_title">ହଲାଇବାର ତୀବ୍ରତା</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">କଥିତ ନାମ</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ଭାବରେ ପଢ଼ାଯାଏ</string>
     <string name="notification_app_reset">ରିସେଟ୍‍ କରନ୍ତୁ</string>
-    <string name="notification_required_title">ସହିତ କେବଳ ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ</string>
+    <string name="notification_required_title">କେବଳ ଏଗୁଡ଼ିକ ଥିବା ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ</string>
     <string name="notification_blocked_title">ଏଗୁଡ଼ିକ ଥିବା ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
-    <string name="notification_private_title">କେବଳ ଆପ୍ ନାମ ପ Read ନ୍ତୁ</string>
+    <string name="notification_private_title">ଏଗୁଡ଼ିକ ଥିବା ବିଜ୍ଞପ୍ତି ପାଇଁ କେବଳ ଆପ୍ ନାମ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_replacements_title">ଭିନ୍ନ ଉଚ୍ଚାରଣ</string>
     <string name="notification_add_word">ଏକ ଶବ୍ଦ ଯୋଡନ୍ତୁ</string>
     <string name="notification_add_replacement">ଏକ ବଦଳ ଯୋଡନ୍ତୁ</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">ପର୍ଯ୍ୟନ୍ତ</string>
     <string name="notification_time_days">ଦିନଗୁଡିକ</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ରୁ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">ଏହି ଅବସ୍ଥା ପାଇଁ SandFly ସେହି ଅନୁମତି ଆବଶ୍ୟକ କରେ</string>
+    <string name="notification_permission_needed">ଏହି ସର୍ତ୍ତ ପାଇଁ SandFly କୁ ସେହି ଅନୁମତି ଆବଶ୍ୟକ</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ସଂଯୁକ୍ତ</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ସଂଯୋଗ ହୋଇନାହିଁ</string>
     <string name="notification_cond_bluetooth_any">ଏକ Bluetooth ଅଡିଓ ଉପକରଣ ସଂଯୁକ୍ତ</string>

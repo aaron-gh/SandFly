@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Kuphela ngaphandle kwama-headphone</string>
     <string name="notification_headphones_only_with">Ngama-headphone kuphela</string>
     <string name="notification_headphones_always">Funda ngokuzwakalayo usebenzisa noma ngaphandle kwama-headphone</string>
-    <string name="notification_queue_skip">Ungafundi isaziso esisha uphimisele</string>
+    <string name="notification_queue_skip">Ungasifundi esisha</string>
     <string name="notification_queue_interrupt">Phazamisa</string>
     <string name="notification_queue_queue">Funda ngemva kwalokho</string>
     <string name="notification_url_omit">Yeqa</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Isikhathi</string>
     <string name="notification_delay_title">Linda ngaphambi kokufunda</string>
     <string name="notification_queue_title">Uma esinye isaziso sifundwa</string>
-    <string name="notification_repeat_minutes_title">Funda futhi kuze kube yilapho isikrini sivuleka</string>
+    <string name="notification_repeat_minutes_title">Funda futhi kuze kuvuleke isikrini</string>
     <string name="notification_skip_media_title">Yeqa abadlali bemidiya</string>
     <string name="notification_skip_ongoing_title">Yeqa izaziso eziqhubekayo</string>
     <string name="notification_skip_ongoing_summary">Okufana nokuzulazula nezibali sikhathi</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Amahora okuthula</string>
     <string name="notification_quiet_start_title">Ukuqala</string>
     <string name="notification_quiet_end_title">Ukuphela</string>
-    <string name="notification_repeat_seconds_title">Yeqa isaziso esifanayo ukuze</string>
+    <string name="notification_repeat_seconds_title">Isikhathi sokweqa isaziso esifanayo</string>
     <string name="notification_numbers_alike_title">Izinombolo zibalwa njengezifanayo</string>
     <string name="notification_numbers_alike_summary">Okufana namaphesenti okulanda</string>
     <string name="notification_cooldown_title">Isikhathi phakathi kwezaziso zohlelo lokusebenza</string>
     <string name="notification_skip_prefix_title">Khipha isiqalo sombhalo esiphindiwe</string>
     <string name="notification_skip_prefix_summary">Njengegama leqembu engxoxweni</string>
-    <string name="notification_prefix_memory_title">Isikhathi esingakanani ukukhumbula isiqalo sombhalo</string>
+    <string name="notification_prefix_memory_title">Isikhathi sokukhumbula isiqalo</string>
     <string name="notification_access_summary">Kudingeka ukuze kumiswe ukufunda isaziso esicashisiwe kanye nezifinyezo</string>
     <string name="notification_shake_title">Nyakazisa ukuze kume</string>
     <string name="notification_shake_strength_title">Amandla okunyakazisa</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Igama elikhulunyiwe</string>
     <string name="notification_app_said_as">kuthiwa <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Setha kabusha</string>
-    <string name="notification_required_title">Funda kuphela izaziso nge</string>
+    <string name="notification_required_title">Funda kuphela izaziso eziqukethe</string>
     <string name="notification_blocked_title">Ungafundi izaziso eziqukethe</string>
-    <string name="notification_private_title">Funda kuphela igama lohlelo lokusebenza</string>
+    <string name="notification_private_title">Funda igama lohlelo lokusebenza kuphela ezazisweni eziqukethe</string>
     <string name="notification_replacements_title">Ukuphimisa okuhlukile</string>
     <string name="notification_add_word">Faka igama</string>
     <string name="notification_add_replacement">Engeza okufakwa esikhundleni</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Kuze</string>
     <string name="notification_time_days">Izinsuku</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> kuya ku-<xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly idinga leyo mvume kulesi simo</string>
+    <string name="notification_permission_needed">I-SandFly idinga leyo mvume kulo mbandela</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ixhunyiwe</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ayixhunyiwe</string>
     <string name="notification_cond_bluetooth_any">Idivayisi yomsindo ye-Bluetooth ixhunyiwe</string>

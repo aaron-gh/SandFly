@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Тек құлаққапсыз</string>
     <string name="notification_headphones_only_with">Тек құлаққаппен</string>
     <string name="notification_headphones_always">Құлақаспаппен немесе онсыз оқу</string>
-    <string name="notification_queue_skip">Жаңа хабарландыруды дауыстап оқымаңыз</string>
+    <string name="notification_queue_skip">Жаңасын оқымау</string>
     <string name="notification_queue_interrupt">Үзу</string>
     <string name="notification_queue_queue">Одан кейін оқу</string>
     <string name="notification_url_omit">Өткізіп жіберу</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Уақыт</string>
     <string name="notification_delay_title">Оқу алдындағы күту</string>
     <string name="notification_queue_title">Басқа хабарландыру оқылғанда</string>
-    <string name="notification_repeat_minutes_title">Экран қосылғанша қайта оқыңыз</string>
+    <string name="notification_repeat_minutes_title">Экран қосылғанша қайта оқу</string>
     <string name="notification_skip_media_title">Медиа ойнатқыштарды өткізіп жіберу</string>
     <string name="notification_skip_ongoing_title">Тұрақты хабарландыруларды өткізіп жіберу</string>
     <string name="notification_skip_ongoing_summary">Навигация және таймерлер сияқты</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Тыныш сағаттар</string>
     <string name="notification_quiet_start_title">Басталуы</string>
     <string name="notification_quiet_end_title">Аяқталуы</string>
-    <string name="notification_repeat_seconds_title">Үшін бірдей хабарландыруды өткізіп жіберіңіз</string>
+    <string name="notification_repeat_seconds_title">Бірдей хабарландыруды өткізіп жіберу уақыты</string>
     <string name="notification_numbers_alike_title">Сандар бірдей саналады</string>
     <string name="notification_numbers_alike_summary">Жүктеп алу пайызы сияқты</string>
     <string name="notification_cooldown_title">Қолданба хабарландырулары арасындағы уақыт</string>
     <string name="notification_skip_prefix_title">Қайталанатын мәтін префиксін алып тастаңыз</string>
     <string name="notification_skip_prefix_summary">Чаттағы топтың аты сияқты</string>
-    <string name="notification_prefix_memory_title">Мәтін префиксі қанша уақыт есте сақталады</string>
+    <string name="notification_prefix_memory_title">Басын есте сақтау уақыты</string>
     <string name="notification_access_summary">Қабылданбаған хабарландыруды оқуды тоқтату және қорытындылар үшін қажет</string>
     <string name="notification_shake_title">Тоқтату үшін шайқаңыз</string>
     <string name="notification_shake_strength_title">Шайқау қарқындылығы</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Айтылатын атау</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ретінде айтылды</string>
     <string name="notification_app_reset">Қалпына келтіру</string>
-    <string name="notification_required_title">Хабарландыруларды тек көмегімен оқыңыз</string>
+    <string name="notification_required_title">Тек мыналар бар хабарландыруларды оқу</string>
     <string name="notification_blocked_title">Мыналар бар хабарландыруларды оқымау</string>
-    <string name="notification_private_title">Қолданбаның атын ғана оқыңыз</string>
+    <string name="notification_private_title">Мыналар бар хабарландыруларда тек қолданба атын оқу</string>
     <string name="notification_replacements_title">Басқаша айту</string>
     <string name="notification_add_word">Сөз қосу</string>
     <string name="notification_add_replacement">Ауыстыру қосу</string>

@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Len bez slúchadiel</string>
     <string name="notification_headphones_only_with">Len so slúchadlami</string>
     <string name="notification_headphones_always">Čítajte nahlas so slúchadlami alebo bez nich</string>
-    <string name="notification_queue_skip">Nečítajte nové upozornenie nahlas</string>
+    <string name="notification_queue_skip">Nečítať nové</string>
     <string name="notification_queue_interrupt">Prerušiť</string>
     <string name="notification_queue_queue">Čítať potom</string>
     <string name="notification_url_omit">Vynechať</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Prestať čítať po</string>
     <string name="notification_category_timing">Načasovanie</string>
     <string name="notification_delay_title">Čakanie pred čítaním</string>
-    <string name="notification_queue_title">Keď sa prečíta ďalšie upozornenie</string>
-    <string name="notification_repeat_minutes_title">Čítajte znova, kým sa obrazovka nezapne</string>
+    <string name="notification_queue_title">Keď sa číta iné upozornenie</string>
+    <string name="notification_repeat_minutes_title">Čítať znova, kým sa nezapne obrazovka</string>
     <string name="notification_skip_media_title">Preskočiť prehrávače médií</string>
     <string name="notification_skip_ongoing_title">Preskočiť trvalé upozornenia</string>
     <string name="notification_skip_ongoing_summary">Napríklad navigácia a časovače</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Tiché hodiny</string>
     <string name="notification_quiet_start_title">Začiatok</string>
     <string name="notification_quiet_end_title">Koniec</string>
-    <string name="notification_repeat_seconds_title">Preskočiť rovnaké upozornenie pre</string>
+    <string name="notification_repeat_seconds_title">Preskakovať rovnaké upozornenie počas</string>
     <string name="notification_numbers_alike_title">Čísla sa považujú za rovnaké</string>
     <string name="notification_numbers_alike_summary">Napríklad percento stiahnutia</string>
     <string name="notification_cooldown_title">Čas medzi upozorneniami aplikácie</string>
     <string name="notification_skip_prefix_title">Vynechajte opakovanú textovú predponu</string>
     <string name="notification_skip_prefix_summary">Napríklad názov skupiny v rozhovore</string>
-    <string name="notification_prefix_memory_title">Ako dlho si zapamätať textovú predponu</string>
+    <string name="notification_prefix_memory_title">Pamätať si začiatok počas</string>
     <string name="notification_access_summary">Potrebné na zastavenie čítania odmietnutého oznámenia a súhrnov</string>
     <string name="notification_shake_title">Zatrasením zastavíte</string>
     <string name="notification_shake_strength_title">Intenzita trasenia</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Vyslovovaný názov</string>
     <string name="notification_app_said_as">povedané ako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetovať</string>
-    <string name="notification_required_title">Čítať upozornenia iba pomocou</string>
+    <string name="notification_required_title">Čítať iba upozornenia obsahujúce</string>
     <string name="notification_blocked_title">Nečítať upozornenia obsahujúce</string>
-    <string name="notification_private_title">Čítať iba názov aplikácie</string>
+    <string name="notification_private_title">Čítať iba názov aplikácie pri upozorneniach obsahujúcich</string>
     <string name="notification_replacements_title">Iná výslovnosť</string>
     <string name="notification_add_word">Pridať slovo</string>
     <string name="notification_add_replacement">Pridať náhradu</string>

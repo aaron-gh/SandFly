@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Tylko bez słuchawek</string>
     <string name="notification_headphones_only_with">Tylko ze słuchawkami</string>
     <string name="notification_headphones_always">Czytaj na głos ze słuchawkami lub bez</string>
-    <string name="notification_queue_skip">Nie czytaj na głos nowego powiadomienia</string>
+    <string name="notification_queue_skip">Nie czytaj nowego</string>
     <string name="notification_queue_interrupt">Przerwij</string>
     <string name="notification_queue_queue">Czytaj po nim</string>
     <string name="notification_url_omit">Pomiń</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">Przestań czytać po</string>
     <string name="notification_category_timing">Czas</string>
     <string name="notification_delay_title">Czekaj przed odczytaniem</string>
-    <string name="notification_queue_title">Kiedy zostanie odczytane kolejne powiadomienie</string>
+    <string name="notification_queue_title">Gdy czytane jest inne powiadomienie</string>
     <string name="notification_repeat_minutes_title">Przeczytaj ponownie, aż ekran się włączy</string>
     <string name="notification_skip_media_title">Pomiń odtwarzacze multimedialne</string>
     <string name="notification_skip_ongoing_title">Pomiń stałe powiadomienia</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Ciche godziny</string>
     <string name="notification_quiet_start_title">Początek</string>
     <string name="notification_quiet_end_title">Koniec</string>
-    <string name="notification_repeat_seconds_title">Pomiń to samo powiadomienie dla</string>
+    <string name="notification_repeat_seconds_title">Pomijaj to samo powiadomienie przez</string>
     <string name="notification_numbers_alike_title">Liczby są traktowane jako takie same</string>
     <string name="notification_numbers_alike_summary">Na przykład procent pobierania</string>
     <string name="notification_cooldown_title">Czas pomiędzy powiadomieniami aplikacji</string>
     <string name="notification_skip_prefix_title">Pomiń powtarzający się przedrostek tekstu</string>
     <string name="notification_skip_prefix_summary">Na przykład nazwa grupy na czacie</string>
-    <string name="notification_prefix_memory_title">Jak długo pamiętać prefiks tekstu</string>
+    <string name="notification_prefix_memory_title">Pamiętaj początek przez</string>
     <string name="notification_access_summary">Musiałem przestać czytać odrzucone powiadomienia i podsumowania</string>
     <string name="notification_shake_title">Potrząśnij, aby zatrzymać</string>
     <string name="notification_shake_strength_title">Intensywność wstrząsania</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Wypowiadana nazwa</string>
     <string name="notification_app_said_as">wymawiane jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetuj</string>
-    <string name="notification_required_title">Czytaj tylko powiadomienia za pomocą</string>
+    <string name="notification_required_title">Czytaj tylko powiadomienia zawierające</string>
     <string name="notification_blocked_title">Nie czytaj powiadomień zawierających</string>
-    <string name="notification_private_title">Przeczytaj tylko nazwę aplikacji</string>
+    <string name="notification_private_title">Czytaj tylko nazwę aplikacji w powiadomieniach zawierających</string>
     <string name="notification_replacements_title">Inna wymowa</string>
     <string name="notification_add_word">Dodaj słowo</string>
     <string name="notification_add_replacement">Dodaj zamiennik</string>

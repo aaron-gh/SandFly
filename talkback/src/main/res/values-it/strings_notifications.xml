@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Solo senza cuffie</string>
     <string name="notification_headphones_only_with">Solo con le cuffie</string>
     <string name="notification_headphones_always">Leggi ad alta voce con o senza cuffie</string>
-    <string name="notification_queue_skip">Non leggere ad alta voce la nuova notifica</string>
+    <string name="notification_queue_skip">Non leggere la nuova</string>
     <string name="notification_queue_interrupt">Interrompi</string>
     <string name="notification_queue_queue">Leggi dopo</string>
     <string name="notification_url_omit">Ometti</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Tempistica</string>
     <string name="notification_delay_title">Attesa prima della lettura</string>
     <string name="notification_queue_title">Quando viene letta un\'altra notifica</string>
-    <string name="notification_repeat_minutes_title">Leggi di nuovo finché lo schermo non si accende</string>
+    <string name="notification_repeat_minutes_title">Rileggi finché lo schermo non si accende</string>
     <string name="notification_skip_media_title">Salta i lettori multimediali</string>
     <string name="notification_skip_ongoing_title">Salta le notifiche in corso</string>
     <string name="notification_skip_ongoing_summary">Come la navigazione e i timer</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Tempo tra le notifiche di un\'app</string>
     <string name="notification_skip_prefix_title">Omettere un prefisso di testo ripetuto</string>
     <string name="notification_skip_prefix_summary">Come il nome di un gruppo in una chat</string>
-    <string name="notification_prefix_memory_title">Per quanto tempo ricordare il prefisso del testo</string>
+    <string name="notification_prefix_memory_title">Ricorda l\'inizio per</string>
     <string name="notification_access_summary">Necessario per interrompere la lettura di una notifica respinta e per i riepiloghi</string>
     <string name="notification_shake_title">Scuoti per fermare</string>
     <string name="notification_shake_strength_title">Intensità dello scuotimento</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Nome parlato</string>
     <string name="notification_app_said_as">detto come <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Reimposta</string>
-    <string name="notification_required_title">Leggi solo le notifiche con</string>
+    <string name="notification_required_title">Leggere solo le notifiche contenenti</string>
     <string name="notification_blocked_title">Non leggere le notifiche contenenti</string>
-    <string name="notification_private_title">Leggi solo il nome dell\'app per</string>
+    <string name="notification_private_title">Leggere solo il nome dell\'app per le notifiche contenenti</string>
     <string name="notification_replacements_title">Pronuncia diversa</string>
     <string name="notification_add_word">Aggiungi una parola</string>
     <string name="notification_add_replacement">Aggiungi una sostituzione</string>

@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Kun uden høretelefoner</string>
     <string name="notification_headphones_only_with">Kun med høretelefoner</string>
     <string name="notification_headphones_always">Læs højt med eller uden høretelefoner</string>
-    <string name="notification_queue_skip">Læs ikke den nye notifikation højt</string>
+    <string name="notification_queue_skip">Læs ikke den nye</string>
     <string name="notification_queue_interrupt">Afbryd</string>
     <string name="notification_queue_queue">Læs bagefter</string>
     <string name="notification_url_omit">Udelad</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">Stop med at læse efter</string>
     <string name="notification_category_timing">Timing</string>
     <string name="notification_delay_title">Vent før læsning</string>
-    <string name="notification_queue_title">Når en anden notifikation læses</string>
+    <string name="notification_queue_title">Når en anden notifikation læses op</string>
     <string name="notification_repeat_minutes_title">Læs igen, indtil skærmen tændes</string>
     <string name="notification_skip_media_title">Spring medieafspillere over</string>
     <string name="notification_skip_ongoing_title">Spring vedvarende notifikationer over</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Tid mellem en apps notifikationer</string>
     <string name="notification_skip_prefix_title">Udelad et gentaget tekstpræfiks</string>
     <string name="notification_skip_prefix_summary">Som f.eks. navnet på en gruppe i en chat</string>
-    <string name="notification_prefix_memory_title">Hvor længe skal man huske tekstpræfikset</string>
+    <string name="notification_prefix_memory_title">Husk starten i</string>
     <string name="notification_access_summary">Nødvendig for at stoppe med at læse en afvist notifikation og for resuméer</string>
     <string name="notification_shake_title">Ryst for at stoppe</string>
     <string name="notification_shake_strength_title">Rystestyrke</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Talt navn</string>
     <string name="notification_app_said_as">sagt som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nulstil</string>
-    <string name="notification_required_title">Læs kun notifikationer med</string>
+    <string name="notification_required_title">Læs kun notifikationer, der indeholder</string>
     <string name="notification_blocked_title">Læs ikke notifikationer, der indeholder</string>
-    <string name="notification_private_title">Læs kun appnavnet for</string>
+    <string name="notification_private_title">Læs kun appnavnet for notifikationer, der indeholder</string>
     <string name="notification_replacements_title">Anden udtale</string>
     <string name="notification_add_word">Tilføj et ord</string>
     <string name="notification_add_replacement">Tilføj en erstatning</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Indtil</string>
     <string name="notification_time_days">Dage</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> til <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly har brug for den tilladelse til denne tilstand</string>
+    <string name="notification_permission_needed">SandFly skal bruge den tilladelse til denne betingelse</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er tilsluttet</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er ikke tilsluttet</string>
     <string name="notification_cond_bluetooth_any">En Bluetooth-lydenhed er tilsluttet</string>

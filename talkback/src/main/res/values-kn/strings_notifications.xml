@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">ಹೆಡ್‌ಫೋನ್ ಇಲ್ಲದೆ ಮಾತ್ರ</string>
     <string name="notification_headphones_only_with">ಹೆಡ್‌ಫೋನ್‌ಗಳೊಂದಿಗೆ ಮಾತ್ರ</string>
     <string name="notification_headphones_always">ಹೆಡ್‌ಫೋನ್‌ಗಳೊಂದಿಗೆ ಅಥವಾ ಇಲ್ಲದೆ ಗಟ್ಟಿಯಾಗಿ ಓದಿ</string>
-    <string name="notification_queue_skip">ಹೊಸ ಅಧಿಸೂಚನೆಯನ್ನು ಜೋರಾಗಿ ಓದಬೇಡಿ</string>
+    <string name="notification_queue_skip">ಹೊಸದನ್ನು ಓದಬೇಡಿ</string>
     <string name="notification_queue_interrupt">ಅಡ್ಡಿಪಡಿಸಿ</string>
     <string name="notification_queue_queue">ನಂತರ ಓದಿ</string>
     <string name="notification_url_omit">ಬಿಟ್ಟುಬಿಡಿ</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">ಇಷ್ಟು ಸಮಯದ ನಂತರ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_category_timing">ಟೈಮಿಂಗ್</string>
     <string name="notification_delay_title">ಓದುವ ಮೊದಲು ನಿರೀಕ್ಷಿಸಿ</string>
-    <string name="notification_queue_title">ಮತ್ತೊಂದು ಅಧಿಸೂಚನೆಯನ್ನು ಓದಿದಾಗ</string>
+    <string name="notification_queue_title">ಇನ್ನೊಂದು ಅಧಿಸೂಚನೆಯನ್ನು ಓದುತ್ತಿರುವಾಗ</string>
     <string name="notification_repeat_minutes_title">ಪರದೆಯು ಆನ್ ಆಗುವವರೆಗೆ ಮತ್ತೆ ಓದಿ</string>
     <string name="notification_skip_media_title">ಮೀಡಿಯಾ ಪ್ಲೇಯರ್‌ಗಳನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
     <string name="notification_skip_ongoing_title">ಚಾಲ್ತಿಯಲ್ಲಿರುವ ಅಧಿಸೂಚನೆಗಳನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ಶಾಂತ ಗಂಟೆಗಳು</string>
     <string name="notification_quiet_start_title">ಪ್ರಾರಂಭ</string>
     <string name="notification_quiet_end_title">ಅಂತ್ಯ</string>
-    <string name="notification_repeat_seconds_title">ಇದಕ್ಕಾಗಿ ಅದೇ ಅಧಿಸೂಚನೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
+    <string name="notification_repeat_seconds_title">ಒಂದೇ ಅಧಿಸೂಚನೆಯನ್ನು ಬಿಟ್ಟುಬಿಡುವ ಅವಧಿ</string>
     <string name="notification_numbers_alike_title">ಸಂಖ್ಯೆಗಳನ್ನು ಒಂದೇ ಎಂದು ಪರಿಗಣಿಸಲಾಗುತ್ತದೆ</string>
     <string name="notification_numbers_alike_summary">ಉದಾಹರಣೆಗೆ ಡೌನ್‌ಲೋಡ್‌ನ ಶೇಕಡಾವಾರು</string>
     <string name="notification_cooldown_title">ಅಪ್ಲಿಕೇಶನ್‌ನ ಅಧಿಸೂಚನೆಗಳ ನಡುವಿನ ಸಮಯ</string>
     <string name="notification_skip_prefix_title">ಪುನರಾವರ್ತಿತ ಪಠ್ಯ ಪೂರ್ವಪ್ರತ್ಯಯವನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
     <string name="notification_skip_prefix_summary">ಚಾಟ್‌ನಲ್ಲಿರುವ ಗುಂಪಿನ ಹೆಸರಿನಂತೆ</string>
-    <string name="notification_prefix_memory_title">ಪಠ್ಯ ಪೂರ್ವಪ್ರತ್ಯಯವನ್ನು ಎಷ್ಟು ಸಮಯದವರೆಗೆ ನೆನಪಿಟ್ಟುಕೊಳ್ಳಬೇಕು</string>
+    <string name="notification_prefix_memory_title">ಆರಂಭವನ್ನು ನೆನಪಿಡುವ ಅವಧಿ</string>
     <string name="notification_access_summary">ವಜಾಗೊಳಿಸಿದ ಅಧಿಸೂಚನೆ ಮತ್ತು ಸಾರಾಂಶಗಳನ್ನು ಓದುವುದನ್ನು ನಿಲ್ಲಿಸುವ ಅಗತ್ಯವಿದೆ</string>
     <string name="notification_shake_title">ನಿಲ್ಲಿಸಲು ಅಲ್ಲಾಡಿಸಿ</string>
     <string name="notification_shake_strength_title">ಅಲುಗಾಡುವ ತೀವ್ರತೆ</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">ಓದುವ ಹೆಸರು</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ಎಂದು ಓದಲಾಗುತ್ತದೆ</string>
     <string name="notification_app_reset">ಮರುಹೊಂದಿಸಿ</string>
-    <string name="notification_required_title">ಇದರೊಂದಿಗೆ ಅಧಿಸೂಚನೆಗಳನ್ನು ಮಾತ್ರ ಓದಿ</string>
+    <string name="notification_required_title">ಇವುಗಳನ್ನು ಒಳಗೊಂಡ ಅಧಿಸೂಚನೆಗಳನ್ನು ಮಾತ್ರ ಓದಿ</string>
     <string name="notification_blocked_title">ಇವುಗಳನ್ನು ಒಳಗೊಂಡ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಬೇಡಿ</string>
-    <string name="notification_private_title">ಅಪ್ಲಿಕೇಶನ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಓದಿ</string>
+    <string name="notification_private_title">ಇವುಗಳನ್ನು ಒಳಗೊಂಡ ಅಧಿಸೂಚನೆಗಳಿಗೆ ಆ್ಯಪ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಓದಿ</string>
     <string name="notification_replacements_title">ಬೇರೆ ಉಚ್ಚಾರಣೆ</string>
     <string name="notification_add_word">ಒಂದು ಪದವನ್ನು ಸೇರಿಸಿ</string>
     <string name="notification_add_replacement">ಬದಲಿ ಸೇರಿಸಿ</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">ತನಕ</string>
     <string name="notification_time_days">ದಿನಗಳು</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ರಿಂದ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">ಈ ಸ್ಥಿತಿಗೆ SandFly ಗೆ ಅನುಮತಿಯ ಅಗತ್ಯವಿದೆ</string>
+    <string name="notification_permission_needed">ಈ ಷರತ್ತಿಗೆ SandFly ಗೆ ಆ ಅನುಮತಿ ಅಗತ್ಯವಿದೆ</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ</string>
     <string name="notification_cond_bluetooth_any">Bluetooth ಆಡಿಯೋ ಸಾಧನವನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಿದೆ</string>

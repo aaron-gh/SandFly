@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">केवल हेडफोन के बिना</string>
     <string name="notification_headphones_only_with">केवल हेडफ़ोन के साथ</string>
     <string name="notification_headphones_always">हेडफ़ोन के साथ या उसके बिना ज़ोर से पढ़ें</string>
-    <string name="notification_queue_skip">नए नोटिफिकेशन को जोर से न पढ़ें</string>
+    <string name="notification_queue_skip">नई सूचना न पढ़ें</string>
     <string name="notification_queue_interrupt">बीच में रोकें</string>
     <string name="notification_queue_queue">उसके बाद पढ़ें</string>
     <string name="notification_url_omit">छोड़ें</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">इतने समय बाद पढ़ना बंद करें</string>
     <string name="notification_category_timing">समय</string>
     <string name="notification_delay_title">पढ़ने से पहले इंतज़ार</string>
-    <string name="notification_queue_title">जब कोई अन्य अधिसूचना पढ़ी जाती है</string>
+    <string name="notification_queue_title">जब कोई दूसरी सूचना पढ़ी जा रही हो</string>
     <string name="notification_repeat_minutes_title">स्क्रीन चालू होने तक दोबारा पढ़ें</string>
     <string name="notification_skip_media_title">मीडिया प्लेयर छोड़ें</string>
     <string name="notification_skip_ongoing_title">चल रही सूचनाएं छोड़ें</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">शांत घंटे</string>
     <string name="notification_quiet_start_title">शुरुआत</string>
     <string name="notification_quiet_end_title">ख़त्म</string>
-    <string name="notification_repeat_seconds_title">के लिए वही अधिसूचना छोड़ें</string>
+    <string name="notification_repeat_seconds_title">एक जैसी सूचना छोड़ने की अवधि</string>
     <string name="notification_numbers_alike_title">संख्याएं एक जैसी मानी जाती हैं</string>
     <string name="notification_numbers_alike_summary">जैसे डाउनलोड का प्रतिशत</string>
     <string name="notification_cooldown_title">किसी ऐप के नोटिफिकेशन के बीच का समय</string>
     <string name="notification_skip_prefix_title">दोहराए गए पाठ उपसर्ग को हटा दें</string>
     <string name="notification_skip_prefix_summary">जैसे किसी चैट में ग्रुप का नाम</string>
-    <string name="notification_prefix_memory_title">पाठ उपसर्ग को कितनी देर तक याद रखें</string>
+    <string name="notification_prefix_memory_title">शुरुआत याद रखने की अवधि</string>
     <string name="notification_access_summary">खारिज की गई अधिसूचना को पढ़ना बंद करने और सारांश की आवश्यकता है</string>
     <string name="notification_shake_title">रोकने के लिए हिलाएँ</string>
     <string name="notification_shake_strength_title">हिलाने की तीव्रता</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">बोला गया नाम</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> बोला जाता है</string>
     <string name="notification_app_reset">रीसेट करें</string>
-    <string name="notification_required_title">केवल नोटिफिकेशन पढ़ें</string>
+    <string name="notification_required_title">केवल इन्हें शामिल करने वाली सूचनाएं पढ़ें</string>
     <string name="notification_blocked_title">इन्हें शामिल करने वाली सूचनाएं न पढ़ें</string>
-    <string name="notification_private_title">केवल ऐप का नाम पढ़ें</string>
+    <string name="notification_private_title">इन्हें शामिल करने वाली सूचनाओं के लिए केवल ऐप का नाम पढ़ें</string>
     <string name="notification_replacements_title">अलग उच्चारण</string>
     <string name="notification_add_word">एक शब्द जोड़ें</string>
     <string name="notification_add_replacement">एक प्रतिस्थापन जोड़ें</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">तक</string>
     <string name="notification_time_days">दिन</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> से <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly को इस शर्त के लिए अनुमति की आवश्यकता है</string>
+    <string name="notification_permission_needed">इस शर्त के लिए SandFly को वह अनुमति चाहिए</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> जुड़ा हुआ है</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> कनेक्ट नहीं है</string>
     <string name="notification_cond_bluetooth_any">एक Bluetooth ऑडियो डिवाइस जुड़ा हुआ है</string>

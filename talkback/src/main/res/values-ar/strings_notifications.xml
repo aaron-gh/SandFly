@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">فقط بدون سماعات</string>
     <string name="notification_headphones_only_with">فقط مع سماعات الرأس</string>
     <string name="notification_headphones_always">القراءة بصوت عال مع أو بدون سماعات الرأس</string>
-    <string name="notification_queue_skip">لا تقرأ الإشعار الجديد بصوت عالٍ</string>
+    <string name="notification_queue_skip">عدم قراءة الإشعار الجديد</string>
     <string name="notification_queue_interrupt">مقاطعته</string>
     <string name="notification_queue_queue">القراءة بعده</string>
     <string name="notification_url_omit">حذف</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">التوقيت</string>
     <string name="notification_delay_title">انتظر قبل القراءة</string>
     <string name="notification_queue_title">عند قراءة إشعار آخر</string>
-    <string name="notification_repeat_minutes_title">اقرأ مرة أخرى حتى يتم تشغيل الشاشة</string>
+    <string name="notification_repeat_minutes_title">إعادة القراءة حتى تعمل الشاشة</string>
     <string name="notification_skip_media_title">تخطي مشغلات الوسائط</string>
     <string name="notification_skip_ongoing_title">تخطي الإخطارات الجارية</string>
     <string name="notification_skip_ongoing_summary">مثل الملاحة والموقتات</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ساعات هادئة</string>
     <string name="notification_quiet_start_title">وقت البدء</string>
     <string name="notification_quiet_end_title">وقت الانتهاء</string>
-    <string name="notification_repeat_seconds_title">تخطي نفس الإخطار ل</string>
+    <string name="notification_repeat_seconds_title">تخطي الإشعار نفسه لمدة</string>
     <string name="notification_numbers_alike_title">الأرقام تُعدّ متطابقة</string>
     <string name="notification_numbers_alike_summary">مثل نسبة التنزيل</string>
     <string name="notification_cooldown_title">الوقت بين إشعارات التطبيق</string>
     <string name="notification_skip_prefix_title">حذف بادئة نصية متكررة</string>
     <string name="notification_skip_prefix_summary">مثل اسم مجموعة في الدردشة</string>
-    <string name="notification_prefix_memory_title">كم من الوقت يجب أن نتذكر بادئة النص</string>
+    <string name="notification_prefix_memory_title">تذكُّر البداية لمدة</string>
     <string name="notification_access_summary">مطلوب لإيقاف القراءة عند إزالة الإشعار ولإعداد الملخصات</string>
     <string name="notification_shake_title">الهز للإيقاف</string>
     <string name="notification_shake_strength_title">شدة الاهتزاز</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">الاسم المنطوق</string>
     <string name="notification_app_said_as">يُنطق <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">إعادة الضبط</string>
-    <string name="notification_required_title">قراءة الإخطارات فقط مع</string>
+    <string name="notification_required_title">قراءة الإشعارات التي تحتوي على ما يلي فقط</string>
     <string name="notification_blocked_title">عدم قراءة الإشعارات التي تحتوي على</string>
-    <string name="notification_private_title">اقرأ فقط اسم التطبيق لـ</string>
+    <string name="notification_private_title">قراءة اسم التطبيق فقط للإشعارات التي تحتوي على</string>
     <string name="notification_replacements_title">نطق مختلف</string>
     <string name="notification_add_word">إضافة كلمة</string>
     <string name="notification_add_replacement">إضافة بديل</string>

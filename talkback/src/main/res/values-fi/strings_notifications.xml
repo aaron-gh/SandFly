@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Vain ilman kuulokkeita</string>
     <string name="notification_headphones_only_with">Vain kuulokkeilla</string>
     <string name="notification_headphones_always">Lue ääneen kuulokkeilla tai ilman</string>
-    <string name="notification_queue_skip">Älä lue uutta ilmoitusta ääneen</string>
+    <string name="notification_queue_skip">Älä lue uutta</string>
     <string name="notification_queue_interrupt">Keskeytä</string>
     <string name="notification_queue_queue">Lue sen jälkeen</string>
     <string name="notification_url_omit">Jätä pois</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Hiljaiset tunnit</string>
     <string name="notification_quiet_start_title">Alku</string>
     <string name="notification_quiet_end_title">Loppu</string>
-    <string name="notification_repeat_seconds_title">Ohita sama ilmoitus</string>
+    <string name="notification_repeat_seconds_title">Saman ilmoituksen ohitusaika</string>
     <string name="notification_numbers_alike_title">Numerot lasketaan samoiksi</string>
     <string name="notification_numbers_alike_summary">Kuten latausprosentti</string>
     <string name="notification_cooldown_title">Sovelluksen ilmoitusten välinen aika</string>
     <string name="notification_skip_prefix_title">Jätä pois toistuva tekstin etuliite</string>
     <string name="notification_skip_prefix_summary">Kuten chatissa olevan ryhmän nimi</string>
-    <string name="notification_prefix_memory_title">Kuinka kauan tekstin etuliite muistaa</string>
+    <string name="notification_prefix_memory_title">Alun muistamisaika</string>
     <string name="notification_access_summary">Tarvitaan hylätyn ilmoituksen lukemisen ja yhteenvetojen lopettamiseksi</string>
     <string name="notification_shake_title">Ravista lopettaaksesi</string>
     <string name="notification_shake_strength_title">Ravistelun voimakkuus</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Puhuttu nimi</string>
     <string name="notification_app_said_as">sanotaan <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nollaa</string>
-    <string name="notification_required_title">Lue vain ilmoitukset</string>
+    <string name="notification_required_title">Lue vain ilmoitukset, joissa on</string>
     <string name="notification_blocked_title">Älä lue ilmoituksia, joissa on</string>
-    <string name="notification_private_title">Lue vain sovelluksen nimi</string>
+    <string name="notification_private_title">Lue vain sovelluksen nimi ilmoituksista, joissa on</string>
     <string name="notification_replacements_title">Toisenlainen ääntäminen</string>
     <string name="notification_add_word">Lisää sana</string>
     <string name="notification_add_replacement">Lisää korvaava</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Päättyy</string>
     <string name="notification_time_days">Päivät</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> - <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly tarvitsee luvan tähän ehtoon</string>
+    <string name="notification_permission_needed">SandFly tarvitsee sen luvan tätä ehtoa varten</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> on yhdistetty</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ei ole yhdistetty</string>
     <string name="notification_cond_bluetooth_any">Bluetooth-äänilaite on kytketty</string>

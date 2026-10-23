@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Faqat naushniksiz</string>
     <string name="notification_headphones_only_with">Faqat naushniklar bilan</string>
     <string name="notification_headphones_always">Naushnik bilan yoki naushniksiz oʻqish</string>
-    <string name="notification_queue_skip">Yangi bildirishnomani ovoz chiqarib o\'qimang</string>
+    <string name="notification_queue_skip">Yangisini oʻqimaslik</string>
     <string name="notification_queue_interrupt">Toʻxtatish</string>
     <string name="notification_queue_queue">Undan keyin oʻqish</string>
     <string name="notification_url_omit">Oʻtkazib yuborish</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Vaqt</string>
     <string name="notification_delay_title">O\'qishdan oldin kutish</string>
     <string name="notification_queue_title">Boshqa bildirishnoma o\'qilganda</string>
-    <string name="notification_repeat_minutes_title">Ekran yoqilguncha qayta o\'qing</string>
+    <string name="notification_repeat_minutes_title">Ekran yonguncha qayta oʻqish</string>
     <string name="notification_skip_media_title">Media pleerlarni oʻtkazib yuborish</string>
     <string name="notification_skip_ongoing_title">Doimiy bildirishnomalarni oʻtkazib yuborish</string>
     <string name="notification_skip_ongoing_summary">Navigatsiya va taymerlar kabi</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Sokin soatlar</string>
     <string name="notification_quiet_start_title">Boshlanish</string>
     <string name="notification_quiet_end_title">Tugash vaqti</string>
-    <string name="notification_repeat_seconds_title">uchun bir xil bildirishnomani o\'tkazib yuboring</string>
+    <string name="notification_repeat_seconds_title">Bir xil bildirishnomani oʻtkazib yuborish vaqti</string>
     <string name="notification_numbers_alike_title">Raqamlar bir xil hisoblanadi</string>
     <string name="notification_numbers_alike_summary">Masalan, yuklab olish foizi</string>
     <string name="notification_cooldown_title">Ilova bildirishnomalari orasidagi vaqt</string>
     <string name="notification_skip_prefix_title">Takroriy matn prefiksini qoldirmang</string>
     <string name="notification_skip_prefix_summary">Chatdagi guruh nomi kabi</string>
-    <string name="notification_prefix_memory_title">Matn prefiksini qancha vaqt eslab qolish kerak</string>
+    <string name="notification_prefix_memory_title">Boshini eslab qolish vaqti</string>
     <string name="notification_access_summary">Bekor qilingan bildirishnomani o\'qishni to\'xtatish va xulosalar uchun kerak</string>
     <string name="notification_shake_title">To\'xtatish uchun silkiting</string>
     <string name="notification_shake_strength_title">Silkitish kuchi</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Aytiladigan nom</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> deb aytildi</string>
     <string name="notification_app_reset">Asliga qaytarish</string>
-    <string name="notification_required_title">Faqat bildirishnomalarni o\'qing</string>
+    <string name="notification_required_title">Faqat quyidagilar bor bildirishnomalarni oʻqish</string>
     <string name="notification_blocked_title">Quyidagilar bor bildirishnomalarni oʻqimaslik</string>
-    <string name="notification_private_title">Faqat ilova nomini oʻqing</string>
+    <string name="notification_private_title">Quyidagilar bor bildirishnomalarda faqat ilova nomini oʻqish</string>
     <string name="notification_replacements_title">Boshqacha talaffuz</string>
     <string name="notification_add_word">So\'z qo\'shish</string>
     <string name="notification_add_replacement">Almashtirish qo\'shish</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Tugash</string>
     <string name="notification_time_days">Kunlar</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> dan <xliff:g id="end" example="07:00">%2$s</xliff:g> gacha</string>
-    <string name="notification_permission_needed">SandFly uchun bu shart uchun ruxsat kerak</string>
+    <string name="notification_permission_needed">SandFly ushbu shart uchun bu ruxsatni talab qiladi</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ulangan</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ulanmagan</string>
     <string name="notification_cond_bluetooth_any">Bluetooth audio qurilmasi ulangan</string>

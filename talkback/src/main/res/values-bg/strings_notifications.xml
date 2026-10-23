@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Само без слушалки</string>
     <string name="notification_headphones_only_with">Само със слушалки</string>
     <string name="notification_headphones_always">Четете на глас със или без слушалки</string>
-    <string name="notification_queue_skip">Не четете новото известие на глас</string>
+    <string name="notification_queue_skip">Без четене на новото</string>
     <string name="notification_queue_interrupt">Прекъсване</string>
     <string name="notification_queue_queue">Четене след него</string>
     <string name="notification_url_omit">Пропускане</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Спиране на четенето след</string>
     <string name="notification_category_timing">Време</string>
     <string name="notification_delay_title">Изчакване преди четене</string>
-    <string name="notification_queue_title">Когато бъде прочетено друго известие</string>
-    <string name="notification_repeat_minutes_title">Прочетете отново, докато екранът се включи</string>
+    <string name="notification_queue_title">Докато се чете друго известие</string>
+    <string name="notification_repeat_minutes_title">Повторно четене, докато се включи екранът</string>
     <string name="notification_skip_media_title">Пропускане на медийни плейъри</string>
     <string name="notification_skip_ongoing_title">Пропускане на постоянните известия</string>
     <string name="notification_skip_ongoing_summary">Като навигация и таймери</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Тихи часове</string>
     <string name="notification_quiet_start_title">Начало</string>
     <string name="notification_quiet_end_title">Край</string>
-    <string name="notification_repeat_seconds_title">Пропуснете същото известие за</string>
+    <string name="notification_repeat_seconds_title">Пропускане на същото известие за</string>
     <string name="notification_numbers_alike_title">Числата се смятат за еднакви</string>
     <string name="notification_numbers_alike_summary">Като например процент на изтегляне</string>
     <string name="notification_cooldown_title">Време между известията на едно приложение</string>
     <string name="notification_skip_prefix_title">Пропуснете повтарящ се текстов префикс</string>
     <string name="notification_skip_prefix_summary">Като например името на група в чат</string>
-    <string name="notification_prefix_memory_title">Колко дълго да запомните текстовия префикс</string>
+    <string name="notification_prefix_memory_title">Запомняне на началото за</string>
     <string name="notification_access_summary">Необходимо е за спиране на четенето на отхвърлено известие и за обобщения</string>
     <string name="notification_shake_title">Разклатете, за да спрете</string>
     <string name="notification_shake_strength_title">Сила на разклащане</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Изговорено име</string>
     <string name="notification_app_said_as">изговаря се като <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Нулиране</string>
-    <string name="notification_required_title">Четете само известия с</string>
+    <string name="notification_required_title">Четене само на известия, съдържащи</string>
     <string name="notification_blocked_title">Без четене на известия, съдържащи</string>
-    <string name="notification_private_title">Прочетете само името на приложението за</string>
+    <string name="notification_private_title">Четене само на името на приложението за известия, съдържащи</string>
     <string name="notification_replacements_title">Различно произношение</string>
     <string name="notification_add_word">Добавяне на дума</string>
     <string name="notification_add_replacement">Добавяне на заместител</string>

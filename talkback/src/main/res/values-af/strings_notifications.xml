@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Slegs sonder oorfone</string>
     <string name="notification_headphones_only_with">Slegs met oorfone</string>
     <string name="notification_headphones_always">Lees hardop met of sonder oorfone</string>
-    <string name="notification_queue_skip">Moenie die nuwe kennisgewing hardop lees nie</string>
+    <string name="notification_queue_skip">Moenie die nuwe een lees nie</string>
     <string name="notification_queue_interrupt">Onderbreek dit</string>
     <string name="notification_queue_queue">Lees daarna</string>
     <string name="notification_url_omit">Los uit</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Tyd tussen \'n program se kennisgewings</string>
     <string name="notification_skip_prefix_title">Laat \'n herhaalde teksvoorvoegsel weg</string>
     <string name="notification_skip_prefix_summary">Soos die naam van \'n groep in \'n klets</string>
-    <string name="notification_prefix_memory_title">Hoe lank om die teksvoorvoegsel te onthou</string>
+    <string name="notification_prefix_memory_title">Onthou die begin vir</string>
     <string name="notification_access_summary">Nodig om op te hou om \'n afgekeurde kennisgewing te lees en vir opsommings</string>
     <string name="notification_shake_title">Skud om te stop</string>
     <string name="notification_shake_strength_title">Skudsterkte</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Gesproke naam</string>
     <string name="notification_app_said_as">gesê as <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Stel terug</string>
-    <string name="notification_required_title">Lees slegs kennisgewings met</string>
+    <string name="notification_required_title">Lees slegs kennisgewings wat die volgende bevat</string>
     <string name="notification_blocked_title">Moenie kennisgewings lees wat die volgende bevat nie</string>
-    <string name="notification_private_title">Lees slegs die programnaam vir</string>
+    <string name="notification_private_title">Lees slegs die toepassingnaam vir kennisgewings met</string>
     <string name="notification_replacements_title">Ander uitspraak</string>
     <string name="notification_add_word">Voeg \'n woord by</string>
     <string name="notification_add_replacement">Voeg \'n plaasvervanger by</string>

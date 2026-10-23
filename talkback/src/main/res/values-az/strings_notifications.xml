@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Yalnız qulaqcıqsız</string>
     <string name="notification_headphones_only_with">Yalnız qulaqcıqlarla</string>
     <string name="notification_headphones_always">Qulaqlıq ilə və ya qulaqcıqsız ucadan oxuyun</string>
-    <string name="notification_queue_skip">Yeni bildirişi ucadan oxumayın</string>
+    <string name="notification_queue_skip">Yenisini oxuma</string>
     <string name="notification_queue_interrupt">Kəs</string>
     <string name="notification_queue_queue">Ondan sonra oxu</string>
     <string name="notification_url_omit">Ötür</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Zamanlama</string>
     <string name="notification_delay_title">Oxumadan əvvəl gözləmə</string>
     <string name="notification_queue_title">Başqa bildiriş oxunduqda</string>
-    <string name="notification_repeat_minutes_title">Ekran açılana qədər yenidən oxuyun</string>
+    <string name="notification_repeat_minutes_title">Ekran açılana qədər yenidən oxu</string>
     <string name="notification_skip_media_title">Media pleyerlərini keç</string>
     <string name="notification_skip_ongoing_title">Davam edən bildirişləri keç</string>
     <string name="notification_skip_ongoing_summary">Naviqasiya və taymerlər kimi</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Sakit saatlar</string>
     <string name="notification_quiet_start_title">Başlanğıc</string>
     <string name="notification_quiet_end_title">Son</string>
-    <string name="notification_repeat_seconds_title">Üçün eyni bildirişi keçin</string>
+    <string name="notification_repeat_seconds_title">Eyni bildirişi ötürmə müddəti</string>
     <string name="notification_numbers_alike_title">Rəqəmlər eyni sayılır</string>
     <string name="notification_numbers_alike_summary">Yükləmə faizi kimi</string>
     <string name="notification_cooldown_title">Tətbiqin bildirişləri arasındakı vaxt</string>
     <string name="notification_skip_prefix_title">Təkrarlanan mətn prefiksini buraxın</string>
     <string name="notification_skip_prefix_summary">Söhbətdəki qrupun adı kimi</string>
-    <string name="notification_prefix_memory_title">Mətn prefiksini nə qədər yadda saxlamaq lazımdır</string>
+    <string name="notification_prefix_memory_title">Başlanğıcı yadda saxlama müddəti</string>
     <string name="notification_access_summary">Rədd edilmiş bildirişi oxumağı dayandırmaq və xülasələr üçün lazımdır</string>
     <string name="notification_shake_title">Dayandırmaq üçün silkələ</string>
     <string name="notification_shake_strength_title">Silkələmə gücü</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Səsləndirilən ad</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> kimi deyilir</string>
     <string name="notification_app_reset">Sıfırla</string>
-    <string name="notification_required_title">Yalnız bildirişləri oxuyun</string>
+    <string name="notification_required_title">Yalnız bunları ehtiva edən bildirişləri oxu</string>
     <string name="notification_blocked_title">Bunları ehtiva edən bildirişləri oxuma</string>
-    <string name="notification_private_title">Yalnız tətbiqin adını oxuyun</string>
+    <string name="notification_private_title">Bunları ehtiva edən bildirişlər üçün yalnız tətbiqin adını oxu</string>
     <string name="notification_replacements_title">Fərqli tələffüz</string>
     <string name="notification_add_word">Söz əlavə et</string>
     <string name="notification_add_replacement">Əvəzetmə əlavə et</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Son</string>
     <string name="notification_time_days">Günlər</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> - <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly bu şərt üçün icazə tələb edir</string>
+    <string name="notification_permission_needed">SandFly-a bu şərt üçün həmin icazə lazımdır</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> qoşulub</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> qoşulmayıb</string>
     <string name="notification_cond_bluetooth_any">Bluetooth audio cihazı qoşulub</string>

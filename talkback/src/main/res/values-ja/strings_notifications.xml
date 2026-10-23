@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">ヘッドフォン未使用時のみ</string>
     <string name="notification_headphones_only_with">ヘッドフォン使用時のみ</string>
     <string name="notification_headphones_always">ヘッドフォンの有無にかかわらず読み上げる</string>
-    <string name="notification_queue_skip">新しい通知を読み上げないでください</string>
+    <string name="notification_queue_skip">新しい通知を読み上げない</string>
     <string name="notification_queue_interrupt">中断する</string>
     <string name="notification_queue_queue">後で読み上げる</string>
     <string name="notification_url_omit">除外する</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">読み上げを停止するまでの時間</string>
     <string name="notification_category_timing">タイミング</string>
     <string name="notification_delay_title">読み上げ前の待機時間</string>
-    <string name="notification_queue_title">別の通知を読んだとき</string>
-    <string name="notification_repeat_minutes_title">画面がオンになるまでもう一度読みます</string>
+    <string name="notification_queue_title">別の通知を読み上げ中のとき</string>
+    <string name="notification_repeat_minutes_title">画面がオンになるまで繰り返し読み上げる</string>
     <string name="notification_skip_media_title">メディアプレーヤーをスキップ</string>
     <string name="notification_skip_ongoing_title">常駐通知をスキップ</string>
     <string name="notification_skip_ongoing_summary">ナビゲーションやタイマーなど</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">静かな時間帯</string>
     <string name="notification_quiet_start_title">開始</string>
     <string name="notification_quiet_end_title">終了</string>
-    <string name="notification_repeat_seconds_title">同じ通知をスキップする</string>
+    <string name="notification_repeat_seconds_title">同じ通知をスキップする期間</string>
     <string name="notification_numbers_alike_title">数字が違っても同じ通知とみなす</string>
     <string name="notification_numbers_alike_summary">ダウンロードの割合など</string>
     <string name="notification_cooldown_title">同じアプリの通知の間隔</string>
     <string name="notification_skip_prefix_title">繰り返されるテキストの接頭辞を省略します</string>
     <string name="notification_skip_prefix_summary">チャット内のグループ名など</string>
-    <string name="notification_prefix_memory_title">テキストの接頭辞をどれくらいの期間覚えておくか</string>
+    <string name="notification_prefix_memory_title">冒頭を記憶する期間</string>
     <string name="notification_access_summary">却下された通知と概要を読むのをやめるために必要</string>
     <string name="notification_shake_title">振って停止</string>
     <string name="notification_shake_strength_title">振る強さ</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">読み上げ名</string>
     <string name="notification_app_said_as">読み上げ名: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">リセット</string>
-    <string name="notification_required_title">通知のみを読む</string>
+    <string name="notification_required_title">次を含む通知のみ読み上げる</string>
     <string name="notification_blocked_title">次を含む通知を読み上げない</string>
-    <string name="notification_private_title">アプリ名のみを読み取ります</string>
+    <string name="notification_private_title">次を含む通知はアプリ名のみ読み上げる</string>
     <string name="notification_replacements_title">読み方の変更</string>
     <string name="notification_add_word">単語を追加</string>
     <string name="notification_add_replacement">置換を追加</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">まで</string>
     <string name="notification_time_days">曜日</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> から <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly はこの条件に対してその許可が必要です</string>
+    <string name="notification_permission_needed">SandFly がこの条件を判断するにはその権限が必要です</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続中</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続されていません</string>
     <string name="notification_cond_bluetooth_any">Bluetooth オーディオデバイスが接続されています</string>

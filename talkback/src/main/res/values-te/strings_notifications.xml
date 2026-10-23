@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">హెడ్‌ఫోన్స్ లేకుండా మాత్రమే</string>
     <string name="notification_headphones_only_with">హెడ్‌ఫోన్‌లతో మాత్రమే</string>
     <string name="notification_headphones_always">హెడ్‌ఫోన్‌లతో లేదా లేకుండా బిగ్గరగా చదవండి</string>
-    <string name="notification_queue_skip">కొత్త నోటిఫికేషన్‌ను బిగ్గరగా చదవవద్దు</string>
+    <string name="notification_queue_skip">కొత్తదాన్ని చదవవద్దు</string>
     <string name="notification_queue_interrupt">అంతరాయం కలిగించండి</string>
     <string name="notification_queue_queue">తర్వాత చదవండి</string>
     <string name="notification_url_omit">వదిలేయండి</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">ఇంత సమయం తర్వాత చదవడం ఆపండి</string>
     <string name="notification_category_timing">సమయపాలన</string>
     <string name="notification_delay_title">చదవడానికి ముందు వేచి ఉండండి</string>
-    <string name="notification_queue_title">మరొక నోటిఫికేషన్ చదివినప్పుడు</string>
+    <string name="notification_queue_title">మరొక నోటిఫికేషన్ చదువుతున్నప్పుడు</string>
     <string name="notification_repeat_minutes_title">స్క్రీన్ ఆన్ అయ్యే వరకు మళ్లీ చదవండి</string>
     <string name="notification_skip_media_title">మీడియా ప్లేయర్‌లను దాటవేయండి</string>
     <string name="notification_skip_ongoing_title">కొనసాగుతున్న నోటిఫికేషన్‌లను దాటవేయండి</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">నిశ్శబ్ద గంటలు</string>
     <string name="notification_quiet_start_title">ప్రారంభం</string>
     <string name="notification_quiet_end_title">ముగింపు</string>
-    <string name="notification_repeat_seconds_title">కోసం అదే నోటిఫికేషన్‌ను దాటవేయండి</string>
+    <string name="notification_repeat_seconds_title">అదే నోటిఫికేషన్‌ను దాటవేసే వ్యవధి</string>
     <string name="notification_numbers_alike_title">సంఖ్యలు ఒకేలా పరిగణించబడతాయి</string>
     <string name="notification_numbers_alike_summary">డౌన్‌లోడ్ శాతం వంటివి</string>
     <string name="notification_cooldown_title">యాప్ నోటిఫికేషన్‌ల మధ్య సమయం</string>
     <string name="notification_skip_prefix_title">పునరావృత వచన ఉపసర్గను వదిలివేయండి</string>
     <string name="notification_skip_prefix_summary">చాట్‌లోని గ్రూప్ పేరు వంటివి</string>
-    <string name="notification_prefix_memory_title">వచన ఉపసర్గను ఎంతకాలం గుర్తుంచుకోవాలి</string>
+    <string name="notification_prefix_memory_title">ప్రారంభాన్ని గుర్తుంచుకునే సమయం</string>
     <string name="notification_access_summary">తీసివేయబడిన నోటిఫికేషన్ మరియు సారాంశాల కోసం చదవడం ఆపివేయడం అవసరం</string>
     <string name="notification_shake_title">ఆపడానికి కదిలించండి</string>
     <string name="notification_shake_strength_title">కదిలించే తీవ్రత</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">చదివే పేరు</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> గా చెప్పబడింది</string>
     <string name="notification_app_reset">రీసెట్ చేయండి</string>
-    <string name="notification_required_title">దీనితో నోటిఫికేషన్‌లను మాత్రమే చదవండి</string>
+    <string name="notification_required_title">వీటిని కలిగిన నోటిఫికేషన్‌లను మాత్రమే చదవండి</string>
     <string name="notification_blocked_title">వీటిని కలిగిన నోటిఫికేషన్‌లను చదవవద్దు</string>
-    <string name="notification_private_title">దీని కోసం యాప్ పేరు మాత్రమే చదవండి</string>
+    <string name="notification_private_title">వీటిని కలిగిన నోటిఫికేషన్‌లకు యాప్ పేరు మాత్రమే చదవండి</string>
     <string name="notification_replacements_title">వేరే ఉచ్చారణ</string>
     <string name="notification_add_word">ఒక పదాన్ని జోడించండి</string>
     <string name="notification_add_replacement">ప్రత్యామ్నాయాన్ని జోడించండి</string>

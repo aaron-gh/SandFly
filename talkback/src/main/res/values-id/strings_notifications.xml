@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Hanya tanpa headphone</string>
     <string name="notification_headphones_only_with">Hanya dengan headphone</string>
     <string name="notification_headphones_always">Membaca dengan lantang dengan atau tanpa headphone</string>
-    <string name="notification_queue_skip">Jangan membaca notifikasi baru dengan keras</string>
+    <string name="notification_queue_skip">Jangan bacakan yang baru</string>
     <string name="notification_queue_interrupt">Interupsi</string>
     <string name="notification_queue_queue">Baca setelahnya</string>
     <string name="notification_url_omit">Lewati</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Jam tenang</string>
     <string name="notification_quiet_start_title">Mulai</string>
     <string name="notification_quiet_end_title">Akhir</string>
-    <string name="notification_repeat_seconds_title">Lewati pemberitahuan yang sama untuk</string>
+    <string name="notification_repeat_seconds_title">Lewati notifikasi yang sama selama</string>
     <string name="notification_numbers_alike_title">Angka dianggap sama</string>
     <string name="notification_numbers_alike_summary">Seperti persentase unduhan</string>
     <string name="notification_cooldown_title">Waktu antara notifikasi aplikasi</string>
     <string name="notification_skip_prefix_title">Hilangkan awalan teks yang berulang</string>
     <string name="notification_skip_prefix_summary">Seperti nama grup dalam chat</string>
-    <string name="notification_prefix_memory_title">Berapa lama untuk mengingat awalan teks</string>
+    <string name="notification_prefix_memory_title">Ingat awal selama</string>
     <string name="notification_access_summary">Diperlukan untuk berhenti membaca notifikasi yang ditutup dan untuk ringkasan</string>
     <string name="notification_shake_title">Kocok untuk berhenti</string>
     <string name="notification_shake_strength_title">Kekuatan guncangan</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Nama yang diucapkan</string>
     <string name="notification_app_said_as">dikatakan sebagai <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Setel ulang</string>
-    <string name="notification_required_title">Hanya baca notifikasi dengan</string>
+    <string name="notification_required_title">Hanya bacakan notifikasi yang berisi</string>
     <string name="notification_blocked_title">Jangan bacakan notifikasi yang berisi</string>
-    <string name="notification_private_title">Baca hanya nama aplikasinya</string>
+    <string name="notification_private_title">Bacakan hanya nama aplikasi untuk notifikasi yang berisi</string>
     <string name="notification_replacements_title">Ucapan berbeda</string>
     <string name="notification_add_word">Tambahkan sebuah kata</string>
     <string name="notification_add_replacement">Tambahkan pengganti</string>

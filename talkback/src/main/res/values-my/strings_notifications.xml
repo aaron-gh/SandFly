@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">နားကြပ်မပါဘဲသာ</string>
     <string name="notification_headphones_only_with">နားကြပ်များဖြင့်သာ</string>
     <string name="notification_headphones_always">နားကြပ်ဖြင့် သို့မဟုတ် မပါပဲ အသံထွက်ဖတ်ပါ</string>
-    <string name="notification_queue_skip">သတိပေးချက်အသစ်ကို အသံထွက်မဖတ်ပါနှင့်</string>
+    <string name="notification_queue_skip">အသစ်ကို မဖတ်ရန်</string>
     <string name="notification_queue_interrupt">ကြားဖြတ်ရန်</string>
     <string name="notification_queue_queue">ပြီးမှ ဖတ်ရန်</string>
     <string name="notification_url_omit">ချန်ထားရန်</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">ဤအချိန်ပြီးနောက် ဖတ်ခြင်း ရပ်ရန်</string>
     <string name="notification_category_timing">အချိန်ကိုက်</string>
     <string name="notification_delay_title">မဖတ်ခင် စောင့်ပါ</string>
-    <string name="notification_queue_title">အခြားသတိပေးချက်ကို ဖတ်သည့်အခါ</string>
+    <string name="notification_queue_title">အခြား အကြောင်းကြားချက်ကို ဖတ်နေစဉ်</string>
     <string name="notification_repeat_minutes_title">မျက်နှာပြင်မဖွင့်မချင်း ပြန်ဖတ်ပါ</string>
     <string name="notification_skip_media_title">မီဒီယာပလေယာကို ကျော်ပါ</string>
     <string name="notification_skip_ongoing_title">အမြဲပြနေသော အကြောင်းကြားချက်များကို ကျော်ရန်</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">တိတ်ဆိတ်သောနာရီ</string>
     <string name="notification_quiet_start_title">စတင်ချိန်</string>
     <string name="notification_quiet_end_title">အဆုံး</string>
-    <string name="notification_repeat_seconds_title">တူညီသောသတိပေးချက်ကို ကျော်သွားပါ</string>
+    <string name="notification_repeat_seconds_title">တူညီသော အကြောင်းကြားချက်ကို ကျော်မည့် ကြာချိန်</string>
     <string name="notification_numbers_alike_title">ဂဏန်းများကို တူညီသည်ဟု သတ်မှတ်သည်</string>
     <string name="notification_numbers_alike_summary">ဒေါင်းလုဒ် ရာခိုင်နှုန်း ကဲ့သို့</string>
     <string name="notification_cooldown_title">အက်ပ်တစ်ခု၏ အသိပေးချက်များကြား အချိန်</string>
     <string name="notification_skip_prefix_title">ထပ်ခါတလဲလဲ စာသားရှေ့ဆက်ကို ချန်လှပ်ထားပါ</string>
     <string name="notification_skip_prefix_summary">ချတ်တစ်ခုတွင် အုပ်စုတစ်ခု၏အမည်ကဲ့သို့သော</string>
-    <string name="notification_prefix_memory_title">စာသားရှေ့ဆက်ကို မည်မျှကြာအောင် မှတ်မိမည်နည်း</string>
+    <string name="notification_prefix_memory_title">အစပိုင်းကို မှတ်ထားမည့် ကြာချိန်</string>
     <string name="notification_access_summary">ပယ်ချခံထားရသော အကြောင်းကြားစာကို ဖတ်ရှုခြင်းကို ရပ်တန့်ရန်နှင့် အနှစ်ချုပ်များအတွက် လိုအပ်ပါသည်</string>
     <string name="notification_shake_title">ရပ်ရန် လှုပ်ခါပါ</string>
     <string name="notification_shake_strength_title">လှုပ်ခါမှု ပြင်းအား</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">ပြောသောအမည်</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ဟု ဆိုသည်</string>
     <string name="notification_app_reset">ပြန်လည်သတ်မှတ်ပါ</string>
-    <string name="notification_required_title">အသိပေးချက်များကိုသာ ဖတ်ပါ</string>
+    <string name="notification_required_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များကိုသာ ဖတ်ရန်</string>
     <string name="notification_blocked_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များကို မဖတ်ရန်</string>
-    <string name="notification_private_title">အက်ပ်အမည်ကိုသာ ဖတ်ပါ</string>
+    <string name="notification_private_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များအတွက် အက်ပ်အမည်ကိုသာ ဖတ်ရန်</string>
     <string name="notification_replacements_title">ကွဲပြားစွာ ဖတ်ခြင်း</string>
     <string name="notification_add_word">စကားလုံးထည့်ပါ</string>
     <string name="notification_add_replacement">အစားထိုးထည့်ပါ</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">အထိ</string>
     <string name="notification_time_days">နေ့ရက်များ</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> မှ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်</string>
+    <string name="notification_permission_needed">SandFly သည် ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ချိတ်ဆက်ထားသည်</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> မချိတ်ဆက်ပါ</string>
     <string name="notification_cond_bluetooth_any">Bluetooth အသံ စက်ပစ္စည်း ချိတ်ဆက်ထားသည်</string>

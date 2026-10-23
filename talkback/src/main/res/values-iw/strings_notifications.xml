@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">רק בלי אוזניות</string>
     <string name="notification_headphones_only_with">רק עם אוזניות</string>
     <string name="notification_headphones_always">קרא בקול עם או בלי אוזניות</string>
-    <string name="notification_queue_skip">אל תקראו את ההודעה החדשה בקול רם</string>
+    <string name="notification_queue_skip">לא להקריא את החדשה</string>
     <string name="notification_queue_interrupt">קטיעה</string>
     <string name="notification_queue_queue">הקראה אחריה</string>
     <string name="notification_url_omit">השמטה</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">הפסקת ההקראה אחרי</string>
     <string name="notification_category_timing">תזמון</string>
     <string name="notification_delay_title">המתנה לפני הקראה</string>
-    <string name="notification_queue_title">כאשר הודעה נוספת נקראת</string>
-    <string name="notification_repeat_minutes_title">קרא שוב עד שהמסך נדלק</string>
+    <string name="notification_queue_title">כשהתראה אחרת מוקראת</string>
+    <string name="notification_repeat_minutes_title">להקריא שוב עד שהמסך נדלק</string>
     <string name="notification_skip_media_title">דילוג על נגני מדיה</string>
     <string name="notification_skip_ongoing_title">דילוג על התראות מתמשכות</string>
     <string name="notification_skip_ongoing_summary">כגון ניווט וטיימרים</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">שעות שקטות</string>
     <string name="notification_quiet_start_title">התחלה</string>
     <string name="notification_quiet_end_title">סוף</string>
-    <string name="notification_repeat_seconds_title">דלג על אותה הודעה עבור</string>
+    <string name="notification_repeat_seconds_title">דילוג על אותה התראה למשך</string>
     <string name="notification_numbers_alike_title">מספרים נחשבים זהים</string>
     <string name="notification_numbers_alike_summary">כמו אחוז הורדה</string>
     <string name="notification_cooldown_title">זמן בין הודעות של אפליקציה</string>
     <string name="notification_skip_prefix_title">השמט קידומת טקסט חוזרת</string>
     <string name="notification_skip_prefix_summary">כמו שם קבוצה בצ\'אט</string>
-    <string name="notification_prefix_memory_title">כמה זמן לזכור את קידומת הטקסט</string>
+    <string name="notification_prefix_memory_title">זכירת ההתחלה למשך</string>
     <string name="notification_access_summary">נדרש להפסיק לקרוא הודעה שנפסלה ולסיכומים</string>
     <string name="notification_shake_title">לנער כדי לעצור</string>
     <string name="notification_shake_strength_title">עוצמת הניעור</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">שם מוקרא</string>
     <string name="notification_app_said_as">נאמר כ-<xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">איפוס</string>
-    <string name="notification_required_title">קרא רק התראות עם</string>
+    <string name="notification_required_title">להקריא רק התראות שמכילות</string>
     <string name="notification_blocked_title">לא להקריא התראות שמכילות</string>
-    <string name="notification_private_title">קרא רק את שם האפליקציה עבור</string>
+    <string name="notification_private_title">להקריא רק את שם האפליקציה בהתראות שמכילות</string>
     <string name="notification_replacements_title">הגייה אחרת</string>
     <string name="notification_add_word">הוספת מילה</string>
     <string name="notification_add_replacement">הוספת תחליף</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">עד</string>
     <string name="notification_time_days">ימים</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> עד <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly זקוק להרשאה זו עבור מצב זה</string>
+    <string name="notification_permission_needed">SandFly זקוק להרשאה הזו עבור התנאי הזה</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> מחובר</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> אינו מחובר</string>
     <string name="notification_cond_bluetooth_any">התקן שמע Bluetooth מחובר</string>

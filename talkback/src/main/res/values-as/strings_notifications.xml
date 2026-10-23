@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">কেৱল হেডফোন অবিহনে</string>
     <string name="notification_headphones_only_with">কেৱল হেডফোনৰ সৈতে</string>
     <string name="notification_headphones_always">হেডফোনৰ সৈতে বা অবিহনে উচ্চস্বৰে পঢ়ক</string>
-    <string name="notification_queue_skip">নতুন জাননীখন উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_queue_skip">নতুনটো নপঢ়িব</string>
     <string name="notification_queue_interrupt">বাধা দিয়ক</string>
     <string name="notification_queue_queue">পিছত পঢ়ক</string>
     <string name="notification_url_omit">বাদ দিয়ক</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">নিস্তব্ধ ঘন্টা</string>
     <string name="notification_quiet_start_title">আৰম্ভণি</string>
     <string name="notification_quiet_end_title">শেষ</string>
-    <string name="notification_repeat_seconds_title">ৰ বাবে একেটা জাননী এৰি দিয়ক</string>
+    <string name="notification_repeat_seconds_title">একেটা জাননী এৰি দিয়াৰ সময়</string>
     <string name="notification_numbers_alike_title">সংখ্যাবোৰ একে বুলি গণ্য হয়</string>
     <string name="notification_numbers_alike_summary">যেনে এটা ডাউনলোডৰ শতাংশ</string>
     <string name="notification_cooldown_title">এটা এপৰ জাননীৰ মাজৰ সময়</string>
     <string name="notification_skip_prefix_title">এটা পুনৰাবৃত্তিমূলক লিখনী উপসৰ্গ বাদ দিয়ক</string>
     <string name="notification_skip_prefix_summary">যেনে আড্ডাত এটা গোটৰ নাম</string>
-    <string name="notification_prefix_memory_title">লিখনী উপসৰ্গটো কিমান দিনলৈ মনত ৰাখিব লাগে</string>
+    <string name="notification_prefix_memory_title">আৰম্ভণি মনত ৰখাৰ সময়</string>
     <string name="notification_access_summary">চাকৰিৰ পৰা বৰ্খাস্ত কৰা জাননী পঢ়া বন্ধ কৰাৰ প্ৰয়োজন আৰু সাৰাংশৰ বাবে</string>
     <string name="notification_shake_title">বন্ধ কৰিবলৈ জোকাৰি দিয়ক</string>
     <string name="notification_shake_strength_title">জোকাৰণিৰ তীব্ৰতা</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">কথিত নাম</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> বুলি কোৱা হৈছে</string>
     <string name="notification_app_reset">ৰিছেট কৰক</string>
-    <string name="notification_required_title">কেৱল জাননীসমূহ পঢ়ক</string>
+    <string name="notification_required_title">কেৱল এইবোৰ থকা জাননী পঢ়ক</string>
     <string name="notification_blocked_title">এইবোৰ থকা জাননী নপঢ়িব</string>
-    <string name="notification_private_title">কেৱল এপৰ নামটো পঢ়ক</string>
+    <string name="notification_private_title">এইবোৰ থকা জাননীৰ বাবে কেৱল এপৰ নাম পঢ়ক</string>
     <string name="notification_replacements_title">বেলেগ উচ্চাৰণ</string>
     <string name="notification_add_word">এটা শব্দ যোগ কৰক</string>
     <string name="notification_add_replacement">এটা প্ৰতিস্থাপন যোগ কৰক</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">শেষ</string>
     <string name="notification_time_days">দিন</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ৰ পৰা <xliff:g id="end" example="07:00">%2$s</xliff:g> লৈ</string>
-    <string name="notification_permission_needed">SandFly এই অৱস্থাৰ বাবে সেই অনুমতিৰ প্ৰয়োজন</string>
+    <string name="notification_permission_needed">এই চৰ্তৰ বাবে SandFlyক সেই অনুমতিৰ প্ৰয়োজন</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযোগ কৰা হৈছে</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযোগ কৰা হোৱা নাই</string>
     <string name="notification_cond_bluetooth_any">এটা Bluetooth অডিঅ\' ডিভাইচ সংযোগ কৰা হৈছে</string>

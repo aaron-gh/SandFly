@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Bare uten hodetelefoner</string>
     <string name="notification_headphones_only_with">Kun med hodetelefoner</string>
     <string name="notification_headphones_always">Les høyt med eller uten hodetelefoner</string>
-    <string name="notification_queue_skip">Ikke les det nye varselet høyt</string>
+    <string name="notification_queue_skip">Ikke les den nye</string>
     <string name="notification_queue_interrupt">Avbryt</string>
     <string name="notification_queue_queue">Les etterpå</string>
     <string name="notification_url_omit">Utelat</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Tid mellom varslene til en app</string>
     <string name="notification_skip_prefix_title">Utelat et gjentatt tekstprefiks</string>
     <string name="notification_skip_prefix_summary">For eksempel navnet på en gruppe i en chat</string>
-    <string name="notification_prefix_memory_title">Hvor lenge skal du huske tekstprefikset</string>
+    <string name="notification_prefix_memory_title">Husk starten i</string>
     <string name="notification_access_summary">Trengte for å slutte å lese et avvist varsel og for oppsummeringer</string>
     <string name="notification_shake_title">Rist for å stoppe</string>
     <string name="notification_shake_strength_title">Ristestyrke</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Talt navn</string>
     <string name="notification_app_said_as">sagt som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Tilbakestill</string>
-    <string name="notification_required_title">Les kun varsler med</string>
+    <string name="notification_required_title">Les bare varsler som inneholder</string>
     <string name="notification_blocked_title">Ikke les varsler som inneholder</string>
-    <string name="notification_private_title">Les kun appnavnet for</string>
+    <string name="notification_private_title">Les bare appnavnet for varsler som inneholder</string>
     <string name="notification_replacements_title">Annen uttale</string>
     <string name="notification_add_word">Legg til et ord</string>
     <string name="notification_add_replacement">Legg til en erstatning</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Til</string>
     <string name="notification_time_days">Dager</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> til <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly trenger den tillatelsen for denne tilstanden</string>
+    <string name="notification_permission_needed">SandFly trenger den tillatelsen for denne betingelsen</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er tilkoblet</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er ikke tilkoblet</string>
     <string name="notification_cond_bluetooth_any">En Bluetooth-lydenhet er tilkoblet</string>

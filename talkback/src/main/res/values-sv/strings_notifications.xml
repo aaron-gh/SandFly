@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Endast utan hörlurar</string>
     <string name="notification_headphones_only_with">Endast med hörlurar</string>
     <string name="notification_headphones_always">Läs högt med eller utan hörlurar</string>
-    <string name="notification_queue_skip">Läs inte den nya aviseringen högt</string>
+    <string name="notification_queue_skip">Läs inte den nya</string>
     <string name="notification_queue_interrupt">Avbryt</string>
     <string name="notification_queue_queue">Läs efteråt</string>
     <string name="notification_url_omit">Utelämna</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">Sluta läsa efter</string>
     <string name="notification_category_timing">Timing</string>
     <string name="notification_delay_title">Vänta innan läsning</string>
-    <string name="notification_queue_title">När ett annat meddelande läses</string>
+    <string name="notification_queue_title">När en annan avisering läses upp</string>
     <string name="notification_repeat_minutes_title">Läs igen tills skärmen slås på</string>
     <string name="notification_skip_media_title">Hoppa över mediaspelare</string>
     <string name="notification_skip_ongoing_title">Hoppa över pågående aviseringar</string>
@@ -98,7 +98,7 @@
     <string name="notification_cooldown_title">Tid mellan en apps aviseringar</string>
     <string name="notification_skip_prefix_title">Utelämna ett upprepat textprefix</string>
     <string name="notification_skip_prefix_summary">Till exempel namnet på en grupp i en chatt</string>
-    <string name="notification_prefix_memory_title">Hur länge ska man komma ihåg textprefixet</string>
+    <string name="notification_prefix_memory_title">Kom ihåg början i</string>
     <string name="notification_access_summary">Behövde sluta läsa en avvisad anmälan och för sammanfattningar</string>
     <string name="notification_shake_title">Skaka för att stoppa</string>
     <string name="notification_shake_strength_title">Skakstyrka</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Talat namn</string>
     <string name="notification_app_said_as">sägs som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Återställ</string>
-    <string name="notification_required_title">Läs endast aviseringar med</string>
+    <string name="notification_required_title">Läs bara aviseringar som innehåller</string>
     <string name="notification_blocked_title">Läs inte aviseringar som innehåller</string>
-    <string name="notification_private_title">Läs endast appnamnet för</string>
+    <string name="notification_private_title">Läs bara appnamnet för aviseringar som innehåller</string>
     <string name="notification_replacements_title">Annat uttal</string>
     <string name="notification_add_word">Lägg till ett ord</string>
     <string name="notification_add_replacement">Lägg till en ersättning</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Till</string>
     <string name="notification_time_days">Dagar</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> till <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly behöver det tillståndet för detta tillstånd</string>
+    <string name="notification_permission_needed">SandFly behöver den behörigheten för det här villkoret</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är ansluten</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är inte ansluten</string>
     <string name="notification_cond_bluetooth_any">En Bluetooth-ljudenhet är ansluten</string>

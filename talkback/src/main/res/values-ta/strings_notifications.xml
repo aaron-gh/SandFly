@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">ஹெட்ஃபோன்கள் இல்லாமல் மட்டுமே</string>
     <string name="notification_headphones_only_with">ஹெட்ஃபோன்களுடன் மட்டுமே</string>
     <string name="notification_headphones_always">ஹெட்ஃபோன்களுடன் அல்லது இல்லாமல் சத்தமாக வாசிக்கவும்</string>
-    <string name="notification_queue_skip">புதிய அறிவிப்பை சத்தமாக படிக்க வேண்டாம்</string>
+    <string name="notification_queue_skip">புதியதைப் படிக்க வேண்டாம்</string>
     <string name="notification_queue_interrupt">குறுக்கிடு</string>
     <string name="notification_queue_queue">அதன் பிறகு படி</string>
     <string name="notification_url_omit">தவிர்</string>
@@ -58,7 +58,7 @@
     <string name="notification_max_seconds_title">இவ்வளவு நேரத்திற்குப் பிறகு படிப்பதை நிறுத்து</string>
     <string name="notification_category_timing">டைமிங்</string>
     <string name="notification_delay_title">படிக்கும் முன் காத்திருங்கள்</string>
-    <string name="notification_queue_title">மற்றொரு அறிவிப்பைப் படிக்கும்போது</string>
+    <string name="notification_queue_title">மற்றொரு அறிவிப்பு படிக்கப்படும்போது</string>
     <string name="notification_repeat_minutes_title">திரை இயக்கப்படும் வரை மீண்டும் படிக்கவும்</string>
     <string name="notification_skip_media_title">மீடியா பிளேயர்களைத் தவிர்க்கவும்</string>
     <string name="notification_skip_ongoing_title">தொடர் அறிவிப்புகளைத் தவிர்</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">அமைதியான நேரம்</string>
     <string name="notification_quiet_start_title">தொடக்கம்</string>
     <string name="notification_quiet_end_title">முடிவு</string>
-    <string name="notification_repeat_seconds_title">அதே அறிவிப்பைத் தவிர்க்கவும்</string>
+    <string name="notification_repeat_seconds_title">அதே அறிவிப்பைத் தவிர்க்கும் நேரம்</string>
     <string name="notification_numbers_alike_title">எண்கள் ஒன்றாகவே கணக்கிடப்படும்</string>
     <string name="notification_numbers_alike_summary">பதிவிறக்கத்தின் சதவீதம் போன்றவை</string>
     <string name="notification_cooldown_title">பயன்பாட்டின் அறிவிப்புகளுக்கு இடையேயான நேரம்</string>
     <string name="notification_skip_prefix_title">மீண்டும் மீண்டும் உரை முன்னொட்டைத் தவிர்க்கவும்</string>
     <string name="notification_skip_prefix_summary">அரட்டையில் உள்ள குழுவின் பெயர் போன்றவை</string>
-    <string name="notification_prefix_memory_title">உரை முன்னொட்டை எவ்வளவு காலம் நினைவில் வைத்திருக்க வேண்டும்</string>
+    <string name="notification_prefix_memory_title">தொடக்கத்தை நினைவில் வைக்கும் நேரம்</string>
     <string name="notification_access_summary">தள்ளுபடி செய்யப்பட்ட அறிவிப்பைப் படிப்பதை நிறுத்த வேண்டும் மற்றும் சுருக்கம்</string>
     <string name="notification_shake_title">நிறுத்த குலுக்கவும்</string>
     <string name="notification_shake_strength_title">அசைக்கும் வலிமை</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">பேசப்படும் பெயர்</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> எனப் படிக்கப்படும்</string>
     <string name="notification_app_reset">மீட்டமை</string>
-    <string name="notification_required_title">உடன் அறிவிப்புகளை மட்டும் படிக்கவும்</string>
+    <string name="notification_required_title">இவற்றைக் கொண்ட அறிவிப்புகளை மட்டும் படிக்கவும்</string>
     <string name="notification_blocked_title">இவற்றைக் கொண்ட அறிவிப்புகளைப் படிக்க வேண்டாம்</string>
-    <string name="notification_private_title">ஆப்ஸ் பெயரை மட்டும் படிக்கவும்</string>
+    <string name="notification_private_title">இவற்றைக் கொண்ட அறிவிப்புகளுக்கு ஆப்ஸ் பெயரை மட்டும் படிக்கவும்</string>
     <string name="notification_replacements_title">வேறு உச்சரிப்பு</string>
     <string name="notification_add_word">ஒரு வார்த்தையைச் சேர்க்கவும்</string>
     <string name="notification_add_replacement">மாற்றீட்டைச் சேர்க்கவும்</string>

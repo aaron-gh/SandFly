@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">მხოლოდ ყურსასმენების გარეშე</string>
     <string name="notification_headphones_only_with">მხოლოდ ყურსასმენებით</string>
     <string name="notification_headphones_always">წაიკითხეთ ხმამაღლა ყურსასმენებით ან მის გარეშე</string>
-    <string name="notification_queue_skip">არ წაიკითხოთ ახალი შეტყობინება ხმამაღლა</string>
+    <string name="notification_queue_skip">ახალი არ წაიკითხოს</string>
     <string name="notification_queue_interrupt">შეწყვეტა</string>
     <string name="notification_queue_queue">შემდეგ წაკითხვა</string>
     <string name="notification_url_omit">გამოტოვება</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">დრო</string>
     <string name="notification_delay_title">ლოდინი წაკითხვამდე</string>
     <string name="notification_queue_title">როდესაც სხვა შეტყობინება იკითხება</string>
-    <string name="notification_repeat_minutes_title">ხელახლა წაიკითხეთ სანამ ეკრანი არ ჩაირთვება</string>
+    <string name="notification_repeat_minutes_title">ხელახლა წაკითხვა ეკრანის ჩართვამდე</string>
     <string name="notification_skip_media_title">მედიაფლეერების გამოტოვება</string>
     <string name="notification_skip_ongoing_title">მუდმივი შეტყობინებების გამოტოვება</string>
     <string name="notification_skip_ongoing_summary">როგორიცაა ნავიგაცია და ტაიმერები</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">მშვიდი საათები</string>
     <string name="notification_quiet_start_title">დასაწყისი</string>
     <string name="notification_quiet_end_title">დასასრული</string>
-    <string name="notification_repeat_seconds_title">გამოტოვეთ იგივე შეტყობინება</string>
+    <string name="notification_repeat_seconds_title">იგივე შეტყობინების გამოტოვების ხანგრძლივობა</string>
     <string name="notification_numbers_alike_title">რიცხვები ერთნაირად ითვლება</string>
     <string name="notification_numbers_alike_summary">როგორიცაა ჩამოტვირთვის პროცენტი</string>
     <string name="notification_cooldown_title">დრო აპის შეტყობინებებს შორის</string>
     <string name="notification_skip_prefix_title">გამოტოვეთ განმეორებითი ტექსტის პრეფიქსი</string>
     <string name="notification_skip_prefix_summary">როგორიცაა ჯგუფის სახელი ჩატში</string>
-    <string name="notification_prefix_memory_title">რამდენ ხანს უნდა დაიმახსოვროთ ტექსტის პრეფიქსი</string>
+    <string name="notification_prefix_memory_title">დასაწყისის დამახსოვრების ხანგრძლივობა</string>
     <string name="notification_access_summary">საჭიროა გაუქმებული შეტყობინების წაკითხვისა და შეჯამებისთვის</string>
     <string name="notification_shake_title">შეანჯღრიეთ გასაჩერებლად</string>
     <string name="notification_shake_strength_title">შერყევის ინტენსივობა</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">წარმოთქმული სახელი</string>
     <string name="notification_app_said_as">ნათქვამია როგორც <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">გადაყენება</string>
-    <string name="notification_required_title">მხოლოდ შეტყობინებების წაკითხვა</string>
+    <string name="notification_required_title">მხოლოდ იმ შეტყობინებების წაკითხვა, რომლებიც შეიცავს</string>
     <string name="notification_blocked_title">არ წაიკითხოს შეტყობინებები, რომლებიც შეიცავს</string>
-    <string name="notification_private_title">წაიკითხეთ მხოლოდ აპლიკაციის სახელი</string>
+    <string name="notification_private_title">მხოლოდ აპის სახელის წაკითხვა შეტყობინებებისთვის, რომლებიც შეიცავს</string>
     <string name="notification_replacements_title">განსხვავებული წარმოთქმა</string>
     <string name="notification_add_word">სიტყვის დამატება</string>
     <string name="notification_add_replacement">ჩანაცვლების დამატება</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">-მდე</string>
     <string name="notification_time_days">დღეები</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-დან <xliff:g id="end" example="07:00">%2$s</xliff:g>-მდე</string>
-    <string name="notification_permission_needed">SandFly სჭირდება ეს ნებართვა ამ მდგომარეობისთვის</string>
+    <string name="notification_permission_needed">SandFly-ს ამ პირობისთვის ეს ნებართვა სჭირდება</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> დაკავშირებულია</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> არ არის დაკავშირებული</string>
     <string name="notification_cond_bluetooth_any">დაკავშირებულია Bluetooth აუდიო მოწყობილობა</string>

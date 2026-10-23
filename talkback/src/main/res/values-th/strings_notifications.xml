@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">เฉพาะเมื่อไม่ใช้หูฟัง</string>
     <string name="notification_headphones_only_with">ด้วยหูฟังเท่านั้น</string>
     <string name="notification_headphones_always">อ่านออกเสียงโดยมีหรือไม่มีหูฟัง</string>
-    <string name="notification_queue_skip">อย่าอ่านออกเสียงการแจ้งเตือนใหม่</string>
+    <string name="notification_queue_skip">ไม่อ่านอันใหม่</string>
     <string name="notification_queue_interrupt">ขัดจังหวะ</string>
     <string name="notification_queue_queue">อ่านต่อจากนั้น</string>
     <string name="notification_url_omit">ข้าม</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ช่วงเวลาเงียบ</string>
     <string name="notification_quiet_start_title">เริ่ม</string>
     <string name="notification_quiet_end_title">สิ้นสุด</string>
-    <string name="notification_repeat_seconds_title">ข้ามการแจ้งเตือนเดียวกันสำหรับ</string>
+    <string name="notification_repeat_seconds_title">ระยะเวลาข้ามการแจ้งเตือนเดียวกัน</string>
     <string name="notification_numbers_alike_title">ถือว่าตัวเลขเหมือนกัน</string>
     <string name="notification_numbers_alike_summary">เช่น เปอร์เซ็นต์การดาวน์โหลด</string>
     <string name="notification_cooldown_title">เวลาระหว่างการแจ้งเตือนของแอป</string>
     <string name="notification_skip_prefix_title">ละเว้นคำนำหน้าข้อความที่ซ้ำกัน</string>
     <string name="notification_skip_prefix_summary">เช่นชื่อกลุ่มในการแชท</string>
-    <string name="notification_prefix_memory_title">นานแค่ไหนในการจำคำนำหน้าข้อความ</string>
+    <string name="notification_prefix_memory_title">ระยะเวลาจำส่วนต้น</string>
     <string name="notification_access_summary">จำเป็นต้องหยุดอ่านการแจ้งเตือนที่ถูกปิดและสำหรับข้อมูลสรุป</string>
     <string name="notification_shake_title">เขย่าเพื่อหยุด</string>
     <string name="notification_shake_strength_title">ความแรงของการสั่น</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">ชื่อที่พูด</string>
     <string name="notification_app_said_as">อ่านว่า <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">รีเซ็ต</string>
-    <string name="notification_required_title">อ่านการแจ้งเตือนด้วยเท่านั้น</string>
+    <string name="notification_required_title">อ่านเฉพาะการแจ้งเตือนที่มี</string>
     <string name="notification_blocked_title">ไม่อ่านการแจ้งเตือนที่มี</string>
-    <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับ</string>
+    <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับการแจ้งเตือนที่มี</string>
     <string name="notification_replacements_title">การอ่านแบบอื่น</string>
     <string name="notification_add_word">เพิ่มคำ</string>
     <string name="notification_add_replacement">เพิ่มการทดแทน</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">ถึง</string>
     <string name="notification_time_days">วัน</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ถึง <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly ต้องได้รับอนุญาตสำหรับเงื่อนไขนี้</string>
+    <string name="notification_permission_needed">SandFly ต้องใช้สิทธิ์นั้นสำหรับเงื่อนไขนี้</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> เชื่อมต่อแล้ว</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ไม่ได้เชื่อมต่อ</string>
     <string name="notification_cond_bluetooth_any">เชื่อมต่ออุปกรณ์เสียง Bluetooth แล้ว</string>

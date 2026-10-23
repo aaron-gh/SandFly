@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">僅在未使用耳機時</string>
     <string name="notification_headphones_only_with">僅在使用耳機時</string>
     <string name="notification_headphones_always">無論有否耳機都朗讀</string>
-    <string name="notification_queue_skip">請勿大聲朗讀新通知</string>
+    <string name="notification_queue_skip">不朗讀新通知</string>
     <string name="notification_queue_interrupt">中斷</string>
     <string name="notification_queue_queue">之後朗讀</string>
     <string name="notification_url_omit">省略</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">朗讀時間上限</string>
     <string name="notification_category_timing">時機</string>
     <string name="notification_delay_title">朗讀前的等待時間</string>
-    <string name="notification_queue_title">當閱讀另一個通知時</string>
-    <string name="notification_repeat_minutes_title">再次閱讀直至螢幕亮起</string>
+    <string name="notification_queue_title">朗讀其他通知時</string>
+    <string name="notification_repeat_minutes_title">重複朗讀直到螢幕亮起</string>
     <string name="notification_skip_media_title">跳過媒體播放器</string>
     <string name="notification_skip_ongoing_title">跳過常駐通知</string>
     <string name="notification_skip_ongoing_summary">例如導航和計時器</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">安靜時間</string>
     <string name="notification_quiet_start_title">開始</string>
     <string name="notification_quiet_end_title">結束</string>
-    <string name="notification_repeat_seconds_title">跳過相同的通知</string>
+    <string name="notification_repeat_seconds_title">相同通知的略過時長</string>
     <string name="notification_numbers_alike_title">數字視為相同</string>
     <string name="notification_numbers_alike_summary">例如下載百分比</string>
     <string name="notification_cooldown_title">應用程式通知之間的間隔</string>
     <string name="notification_skip_prefix_title">省略重复的文本前缀</string>
     <string name="notification_skip_prefix_summary">例如聊天中的群组名称</string>
-    <string name="notification_prefix_memory_title">记住文本前缀多长时间</string>
+    <string name="notification_prefix_memory_title">開頭的記憶時長</string>
     <string name="notification_access_summary">需要停止阅读已驳回的通知并获取摘要</string>
     <string name="notification_shake_title">搖晃即可停止</string>
     <string name="notification_shake_strength_title">搖晃強度</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">朗讀名稱</string>
     <string name="notification_app_said_as">讀作 <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">重設</string>
-    <string name="notification_required_title">僅閱讀通知</string>
+    <string name="notification_required_title">只朗讀包含以下字詞的通知</string>
     <string name="notification_blocked_title">不朗讀包含以下字詞的通知</string>
-    <string name="notification_private_title">只讀應用程式名稱</string>
+    <string name="notification_private_title">包含以下字詞時只朗讀應用程式名稱</string>
     <string name="notification_replacements_title">其他讀法</string>
     <string name="notification_add_word">添加一個詞</string>
     <string name="notification_add_replacement">添加替換</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">直到</string>
     <string name="notification_time_days">星期</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> 至 <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly 需要取得此條件的許可</string>
+    <string name="notification_permission_needed">SandFly 需要此權限才能判斷該條件</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>已連接</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 未連接</string>
     <string name="notification_cond_bluetooth_any">已連接 Bluetooth 音訊裝置</string>

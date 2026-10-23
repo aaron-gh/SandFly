@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Koha</string>
     <string name="notification_delay_title">Prit para leximit</string>
     <string name="notification_queue_title">Kur lexohet një njoftim tjetër</string>
-    <string name="notification_repeat_minutes_title">Lexoni përsëri derisa ekrani të ndizet</string>
+    <string name="notification_repeat_minutes_title">Lexo përsëri derisa të ndizet ekrani</string>
     <string name="notification_skip_media_title">Kapërce luajtësit e medias</string>
     <string name="notification_skip_ongoing_title">Kapërce njoftimet e vazhdueshme</string>
     <string name="notification_skip_ongoing_summary">Të tilla si navigimi dhe kohëmatësit</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Orë të qeta</string>
     <string name="notification_quiet_start_title">Fillimi</string>
     <string name="notification_quiet_end_title">Fund</string>
-    <string name="notification_repeat_seconds_title">Kapërceni të njëjtin njoftim për</string>
+    <string name="notification_repeat_seconds_title">Kapërce të njëjtin njoftim për</string>
     <string name="notification_numbers_alike_title">Numrat llogariten si të njëjtë</string>
     <string name="notification_numbers_alike_summary">Si p.sh. përqindja e shkarkimit</string>
     <string name="notification_cooldown_title">Koha midis njoftimeve të një aplikacioni</string>
     <string name="notification_skip_prefix_title">Hiqni një parashtesë të përsëritur të tekstit</string>
     <string name="notification_skip_prefix_summary">Të tilla si emri i një grupi në një bisedë</string>
-    <string name="notification_prefix_memory_title">Sa kohë të mbahet mend parashtesa e tekstit</string>
+    <string name="notification_prefix_memory_title">Mbaj mend fillimin për</string>
     <string name="notification_access_summary">Nevojitet për të ndaluar leximin e një njoftimi të hedhur poshtë dhe për përmbledhjet</string>
     <string name="notification_shake_title">Shkund për të ndaluar</string>
     <string name="notification_shake_strength_title">Intensiteti i lëkundjes</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Emri i folur</string>
     <string name="notification_app_said_as">e thënë si <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Rivendos</string>
-    <string name="notification_required_title">Lexoni vetëm njoftimet me</string>
+    <string name="notification_required_title">Lexo vetëm njoftimet që përmbajnë</string>
     <string name="notification_blocked_title">Mos lexo njoftimet që përmbajnë</string>
-    <string name="notification_private_title">Lexoni vetëm emrin e aplikacionit për</string>
+    <string name="notification_private_title">Lexo vetëm emrin e aplikacionit për njoftimet që përmbajnë</string>
     <string name="notification_replacements_title">Shqiptim ndryshe</string>
     <string name="notification_add_word">Shto një fjalë</string>
     <string name="notification_add_replacement">Shto një zëvendësim</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Deri</string>
     <string name="notification_time_days">Ditët</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> deri në <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly ka nevojë për atë leje për këtë gjendje</string>
+    <string name="notification_permission_needed">SandFly ka nevojë për atë leje për këtë kusht</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> është i lidhur</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nuk është i lidhur</string>
     <string name="notification_cond_bluetooth_any">Është lidhur një pajisje audio Bluetooth</string>

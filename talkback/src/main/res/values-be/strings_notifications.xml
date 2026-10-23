@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Толькі без навушнікаў</string>
     <string name="notification_headphones_only_with">Толькі з навушнікамі</string>
     <string name="notification_headphones_always">Чытаць у навушніках і без іх</string>
-    <string name="notification_queue_skip">Не чытайце новае апавяшчэнне ўслых</string>
+    <string name="notification_queue_skip">Не чытаць новае</string>
     <string name="notification_queue_interrupt">Перапыніць</string>
     <string name="notification_queue_queue">Чытаць пасля</string>
     <string name="notification_url_omit">Прапускаць</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Час</string>
     <string name="notification_delay_title">Затрымка перад чытаннем</string>
     <string name="notification_queue_title">Калі чытаецца іншае апавяшчэнне</string>
-    <string name="notification_repeat_minutes_title">Прачытайце яшчэ раз, пакуль экран не ўключыцца</string>
+    <string name="notification_repeat_minutes_title">Паўтараць, пакуль не ўключыцца экран</string>
     <string name="notification_skip_media_title">Прапусціць медыяплэеры</string>
     <string name="notification_skip_ongoing_title">Прапускаць пастаянныя апавяшчэнні</string>
     <string name="notification_skip_ongoing_summary">Такія як навігацыя і таймеры</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Ціхія гадзіны</string>
     <string name="notification_quiet_start_title">Пачатак</string>
     <string name="notification_quiet_end_title">Канец</string>
-    <string name="notification_repeat_seconds_title">Прапусціць тое ж апавяшчэнне для</string>
+    <string name="notification_repeat_seconds_title">Прапускаць аднолькавыя апавяшчэнні на працягу</string>
     <string name="notification_numbers_alike_title">Лічбы лічацца аднолькавымі</string>
     <string name="notification_numbers_alike_summary">Напрыклад, працэнт загрузкі</string>
     <string name="notification_cooldown_title">Час паміж апавяшчэннямі праграмы</string>
     <string name="notification_skip_prefix_title">Прапусціць паўторны тэкставы прэфікс</string>
     <string name="notification_skip_prefix_summary">Напрыклад, назва групы ў чаце</string>
-    <string name="notification_prefix_memory_title">Як доўга запамінаць тэкставы прэфікс</string>
+    <string name="notification_prefix_memory_title">Памятаць пачатак на працягу</string>
     <string name="notification_access_summary">Неабходна, каб спыніць чытанне адхіленага апавяшчэння і для зводак</string>
     <string name="notification_shake_title">Падтрасіце, каб спыніць</string>
     <string name="notification_shake_strength_title">Сіла страсання</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Вымаўляная назва</string>
     <string name="notification_app_said_as">вымаўляецца як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Скінуць</string>
-    <string name="notification_required_title">Толькі чытаць апавяшчэнні з</string>
+    <string name="notification_required_title">Чытаць толькі апавяшчэнні, якія змяшчаюць</string>
     <string name="notification_blocked_title">Не чытаць апавяшчэнні, якія змяшчаюць</string>
-    <string name="notification_private_title">Чытайце толькі назву праграмы для</string>
+    <string name="notification_private_title">Чытаць толькі назву праграмы для апавяшчэнняў, якія змяшчаюць</string>
     <string name="notification_replacements_title">Іншае вымаўленне</string>
     <string name="notification_add_word">Дадаць слова</string>
     <string name="notification_add_replacement">Дадаць замену</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Да</string>
     <string name="notification_time_days">Дні</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> да <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly патрабуецца гэты дазвол для гэтай умовы</string>
+    <string name="notification_permission_needed">SandFly патрэбны гэты дазвол для гэтай умовы</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> падключаны</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> не падлучаны</string>
     <string name="notification_cond_bluetooth_any">Падключана гукавая прылада Bluetooth</string>

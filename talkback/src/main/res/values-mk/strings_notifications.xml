@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Само без слушалки</string>
     <string name="notification_headphones_only_with">Само со слушалки</string>
     <string name="notification_headphones_always">Читајте на глас со или без слушалки</string>
-    <string name="notification_queue_skip">Не читајте го новото известување на глас</string>
+    <string name="notification_queue_skip">Без читање на новото</string>
     <string name="notification_queue_interrupt">Прекини</string>
     <string name="notification_queue_queue">Читај потоа</string>
     <string name="notification_url_omit">Изостави</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Престани да читаш по</string>
     <string name="notification_category_timing">Време</string>
     <string name="notification_delay_title">Чекање пред читање</string>
-    <string name="notification_queue_title">Кога ќе се прочита друго известување</string>
-    <string name="notification_repeat_minutes_title">Прочитајте повторно додека не се вклучи екранот</string>
+    <string name="notification_queue_title">Додека се чита друго известување</string>
+    <string name="notification_repeat_minutes_title">Повторно читање додека не се вклучи екранот</string>
     <string name="notification_skip_media_title">Прескокни медиа плеери</string>
     <string name="notification_skip_ongoing_title">Прескокни ги трајните известувања</string>
     <string name="notification_skip_ongoing_summary">Како навигација и тајмери</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Тивки часови</string>
     <string name="notification_quiet_start_title">Почеток</string>
     <string name="notification_quiet_end_title">Крај</string>
-    <string name="notification_repeat_seconds_title">Прескокнете го истото известување за</string>
+    <string name="notification_repeat_seconds_title">Прескокни го истото известување за</string>
     <string name="notification_numbers_alike_title">Броевите се сметаат за исти</string>
     <string name="notification_numbers_alike_summary">Како што е процентот на преземање</string>
     <string name="notification_cooldown_title">Време помеѓу известувањата на апликацијата</string>
     <string name="notification_skip_prefix_title">Изостави префикс со повторен текст</string>
     <string name="notification_skip_prefix_summary">Како што е името на групата во разговор</string>
-    <string name="notification_prefix_memory_title">Колку долго да се запамети префиксот на текстот</string>
+    <string name="notification_prefix_memory_title">Запомни го почетокот</string>
     <string name="notification_access_summary">Потребно е да престане да чита отфрлено известување и за резимеа</string>
     <string name="notification_shake_title">Протреси за запирање</string>
     <string name="notification_shake_strength_title">Интензитетот на тресење</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Изговорено име</string>
     <string name="notification_app_said_as">речено како <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Ресетирај</string>
-    <string name="notification_required_title">Само читајте известувања со</string>
+    <string name="notification_required_title">Читање само на известувања што содржат</string>
     <string name="notification_blocked_title">Без читање на известувања што содржат</string>
-    <string name="notification_private_title">Прочитајте го само името на апликацијата за</string>
+    <string name="notification_private_title">Читање само на името на апликацијата за известувања што содржат</string>
     <string name="notification_replacements_title">Поинаков изговор</string>
     <string name="notification_add_word">Додај збор</string>
     <string name="notification_add_replacement">Додај замена</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">До</string>
     <string name="notification_time_days">Денови</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> до <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">На SandFly му е потребна таа дозвола за оваа состојба</string>
+    <string name="notification_permission_needed">На SandFly му е потребна таа дозвола за овој услов</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> е поврзан</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> не е поврзан</string>
     <string name="notification_cond_bluetooth_any">Поврзан е аудио уред со Bluetooth</string>

@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">ഹെഡ്‌ഫോണുകൾ ഇല്ലാതെ മാത്രം</string>
     <string name="notification_headphones_only_with">ഹെഡ്‌ഫോണുകൾ ഉപയോഗിച്ച് മാത്രം</string>
     <string name="notification_headphones_always">ഹെഡ്‌ഫോണുകൾ ഉപയോഗിച്ചോ അല്ലാതെയോ ഉറക്കെ വായിക്കുക</string>
-    <string name="notification_queue_skip">പുതിയ അറിയിപ്പ് ഉറക്കെ വായിക്കരുത്</string>
+    <string name="notification_queue_skip">പുതിയത് വായിക്കരുത്</string>
     <string name="notification_queue_interrupt">തടസ്സപ്പെടുത്തുക</string>
     <string name="notification_queue_queue">അതിന് ശേഷം വായിക്കുക</string>
     <string name="notification_url_omit">ഒഴിവാക്കുക</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ശാന്തമായ മണിക്കൂറുകൾ</string>
     <string name="notification_quiet_start_title">ആരംഭം</string>
     <string name="notification_quiet_end_title">അവസാനം</string>
-    <string name="notification_repeat_seconds_title">ഇതിനായി ഒരേ അറിയിപ്പ് ഒഴിവാക്കുക</string>
+    <string name="notification_repeat_seconds_title">ഒരേ അറിയിപ്പ് ഒഴിവാക്കുന്ന സമയം</string>
     <string name="notification_numbers_alike_title">സംഖ്യകൾ ഒരുപോലെ കണക്കാക്കുന്നു</string>
     <string name="notification_numbers_alike_summary">ഡൗൺലോഡിൻ്റെ ശതമാനം പോലെ</string>
     <string name="notification_cooldown_title">ഒരു ആപ്പിൻ്റെ അറിയിപ്പുകൾക്കിടയിലുള്ള സമയം</string>
     <string name="notification_skip_prefix_title">ആവർത്തിച്ചുള്ള ടെക്‌സ്‌റ്റ് പ്രിഫിക്‌സ് ഒഴിവാക്കുക</string>
     <string name="notification_skip_prefix_summary">ഒരു ചാറ്റിലെ ഒരു ഗ്രൂപ്പിൻ്റെ പേര് പോലെ</string>
-    <string name="notification_prefix_memory_title">ടെക്‌സ്‌റ്റ് പ്രിഫിക്‌സ് എത്രത്തോളം ഓർക്കണം</string>
+    <string name="notification_prefix_memory_title">തുടക്കം ഓർക്കുന്ന സമയം</string>
     <string name="notification_access_summary">ഒഴിവാക്കിയ അറിയിപ്പും സംഗ്രഹങ്ങളും വായിക്കുന്നത് നിർത്തേണ്ടതുണ്ട്</string>
     <string name="notification_shake_title">നിർത്താൻ കുലുക്കുക</string>
     <string name="notification_shake_strength_title">കുലുക്കത്തിൻ്റെ തീവ്രത</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">സംസാരിച്ച പേര്</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> എന്ന് വായിക്കുന്നു</string>
     <string name="notification_app_reset">പുനഃക്രമീകരിക്കുക</string>
-    <string name="notification_required_title">കൂടെ അറിയിപ്പുകൾ മാത്രം വായിക്കുക</string>
+    <string name="notification_required_title">ഇവ അടങ്ങിയ അറിയിപ്പുകൾ മാത്രം വായിക്കുക</string>
     <string name="notification_blocked_title">ഇവ അടങ്ങിയ അറിയിപ്പുകൾ വായിക്കരുത്</string>
-    <string name="notification_private_title">ആപ്പിൻ്റെ പേര് മാത്രം വായിക്കുക</string>
+    <string name="notification_private_title">ഇവ അടങ്ങിയ അറിയിപ്പുകൾക്ക് ആപ്പിന്റെ പേര് മാത്രം വായിക്കുക</string>
     <string name="notification_replacements_title">വ്യത്യസ്ത ഉച്ചാരണം</string>
     <string name="notification_add_word">ഒരു വാക്ക് ചേർക്കുക</string>
     <string name="notification_add_replacement">പകരം വാക്ക് ചേർക്കുക</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">വരെ</string>
     <string name="notification_time_days">ദിവസങ്ങൾ</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> മുതൽ <xliff:g id="end" example="07:00">%2$s</xliff:g> വരെ</string>
-    <string name="notification_permission_needed">ഈ അവസ്ഥയ്ക്ക് SandFly ന് ആ അനുമതി ആവശ്യമാണ്</string>
+    <string name="notification_permission_needed">ഈ വ്യവസ്ഥയ്ക്ക് SandFly-ക്ക് ആ അനുമതി ആവശ്യമാണ്</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ബന്ധിപ്പിച്ചിരിക്കുന്നു</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ബന്ധിപ്പിച്ചിട്ടില്ല</string>
     <string name="notification_cond_bluetooth_any">ഒരു Bluetooth ഓഡിയോ ഉപകരണം കണക്റ്റുചെയ്തിരിക്കുന്നു</string>

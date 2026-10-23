@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Alleen zonder koptelefoon</string>
     <string name="notification_headphones_only_with">Alleen met koptelefoon</string>
     <string name="notification_headphones_always">Voorlezen met of zonder koptelefoon</string>
-    <string name="notification_queue_skip">Lees de nieuwe melding niet hardop voor</string>
+    <string name="notification_queue_skip">Nieuwe niet voorlezen</string>
     <string name="notification_queue_interrupt">Onderbreken</string>
     <string name="notification_queue_queue">Erna voorlezen</string>
     <string name="notification_url_omit">Weglaten</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Stoppen met lezen na</string>
     <string name="notification_category_timing">Tijdstip</string>
     <string name="notification_delay_title">Wachten voor voorlezen</string>
-    <string name="notification_queue_title">Wanneer een andere melding wordt gelezen</string>
-    <string name="notification_repeat_minutes_title">Lees opnieuw totdat het scherm wordt ingeschakeld</string>
+    <string name="notification_queue_title">Wanneer een andere melding wordt voorgelezen</string>
+    <string name="notification_repeat_minutes_title">Opnieuw voorlezen tot het scherm aangaat</string>
     <string name="notification_skip_media_title">Mediaspelers overslaan</string>
     <string name="notification_skip_ongoing_title">Lopende meldingen overslaan</string>
     <string name="notification_skip_ongoing_summary">Zoals navigatie en timers</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Rustige uren</string>
     <string name="notification_quiet_start_title">Begin</string>
     <string name="notification_quiet_end_title">Einde</string>
-    <string name="notification_repeat_seconds_title">Sla dezelfde melding over voor</string>
+    <string name="notification_repeat_seconds_title">Dezelfde melding overslaan gedurende</string>
     <string name="notification_numbers_alike_title">Getallen tellen als gelijk</string>
     <string name="notification_numbers_alike_summary">Zoals het downloadpercentage</string>
     <string name="notification_cooldown_title">Tijd tussen de meldingen van een app</string>
     <string name="notification_skip_prefix_title">Laat een herhaald tekstvoorvoegsel weg</string>
     <string name="notification_skip_prefix_summary">Zoals de naam van een groep in een chat</string>
-    <string name="notification_prefix_memory_title">Hoe lang het tekstvoorvoegsel moet worden onthouden</string>
+    <string name="notification_prefix_memory_title">Begin onthouden gedurende</string>
     <string name="notification_access_summary">Nodig om te stoppen met het lezen van een afgewezen melding en voor samenvattingen</string>
     <string name="notification_shake_title">Schud om te stoppen</string>
     <string name="notification_shake_strength_title">Intensiteit van schudden</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Gesproken naam</string>
     <string name="notification_app_said_as">uitgesproken als <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetten</string>
-    <string name="notification_required_title">Lees alleen meldingen met</string>
+    <string name="notification_required_title">Alleen meldingen voorlezen met</string>
     <string name="notification_blocked_title">Geen meldingen voorlezen met</string>
-    <string name="notification_private_title">Lees alleen de app-naam voor</string>
+    <string name="notification_private_title">Alleen de app-naam voorlezen bij meldingen met</string>
     <string name="notification_replacements_title">Andere uitspraak</string>
     <string name="notification_add_word">Woord toevoegen</string>
     <string name="notification_add_replacement">Vervanging toevoegen</string>

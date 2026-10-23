@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Tikai bez austiņām</string>
     <string name="notification_headphones_only_with">Tikai ar austiņām</string>
     <string name="notification_headphones_always">Lasiet skaļi ar austiņām vai bez tām</string>
-    <string name="notification_queue_skip">Nelasiet jauno paziņojumu skaļi</string>
+    <string name="notification_queue_skip">Nelasīt jauno</string>
     <string name="notification_queue_interrupt">Pārtraukt</string>
     <string name="notification_queue_queue">Lasīt pēc tā</string>
     <string name="notification_url_omit">Izlaist</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Laiks</string>
     <string name="notification_delay_title">Gaidīšana pirms lasīšanas</string>
     <string name="notification_queue_title">Kad tiek lasīts cits paziņojums</string>
-    <string name="notification_repeat_minutes_title">Lasiet vēlreiz, līdz ekrāns ieslēdzas</string>
+    <string name="notification_repeat_minutes_title">Lasīt vēlreiz, līdz ekrāns ieslēdzas</string>
     <string name="notification_skip_media_title">Izlaist multivides atskaņotājus</string>
     <string name="notification_skip_ongoing_title">Izlaist pastāvīgos paziņojumus</string>
     <string name="notification_skip_ongoing_summary">Piemēram, navigācija un taimeri</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Klusas stundas</string>
     <string name="notification_quiet_start_title">Sākums</string>
     <string name="notification_quiet_end_title">Beigas</string>
-    <string name="notification_repeat_seconds_title">Izlaist to pašu paziņojumu par</string>
+    <string name="notification_repeat_seconds_title">To pašu paziņojumu izlaist</string>
     <string name="notification_numbers_alike_title">Skaitļi tiek uzskatīti par vienādiem</string>
     <string name="notification_numbers_alike_summary">Piemēram, lejupielādes procentuālā daļa</string>
     <string name="notification_cooldown_title">Laiks starp lietotnes paziņojumiem</string>
     <string name="notification_skip_prefix_title">Izlaidiet atkārtotu teksta prefiksu</string>
     <string name="notification_skip_prefix_summary">Piemēram, grupas nosaukums tērzēšanā</string>
-    <string name="notification_prefix_memory_title">Cik ilgi jāatceras teksta prefikss</string>
+    <string name="notification_prefix_memory_title">Atcerēties sākumu</string>
     <string name="notification_access_summary">Nepieciešams, lai pārtrauktu noraidītā paziņojuma lasīšanu un kopsavilkumus</string>
     <string name="notification_shake_title">Kratiet, lai apturētu</string>
     <string name="notification_shake_strength_title">Kratīšanas intensitāte</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Izrunātais nosaukums</string>
     <string name="notification_app_said_as">izrunā kā <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Atiestatīt</string>
-    <string name="notification_required_title">Lasiet tikai paziņojumus ar</string>
+    <string name="notification_required_title">Lasīt tikai paziņojumus, kuros ir</string>
     <string name="notification_blocked_title">Nelasīt paziņojumus, kuros ir</string>
-    <string name="notification_private_title">Lasiet tikai lietotnes nosaukumu</string>
+    <string name="notification_private_title">Lasīt tikai lietotnes nosaukumu paziņojumiem, kuros ir</string>
     <string name="notification_replacements_title">Citāda izruna</string>
     <string name="notification_add_word">Pievienot vārdu</string>
     <string name="notification_add_replacement">Pievienot aizstājēju</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Līdz plkst</string>
     <string name="notification_time_days">Dienas</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> līdz <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly šim nosacījumam nepieciešama šī atļauja</string>
+    <string name="notification_permission_needed">SandFly šim nosacījumam ir nepieciešama šī atļauja</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ir pievienots</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nav savienots</string>
     <string name="notification_cond_bluetooth_any">Ir pievienota Bluetooth audio ierīce</string>

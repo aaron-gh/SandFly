@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">ພຽງແຕ່ບໍ່ມີຫູຟັງ</string>
     <string name="notification_headphones_only_with">ມີຫູຟັງເທົ່ານັ້ນ</string>
     <string name="notification_headphones_always">ອ່ານອອກສຽງດ້ວຍ ຫຼືບໍ່ມີຫູຟັງ</string>
-    <string name="notification_queue_skip">ຢ່າອ່ານການແຈ້ງເຕືອນໃໝ່ດັງໆ</string>
+    <string name="notification_queue_skip">ບໍ່ອ່ານອັນໃໝ່</string>
     <string name="notification_queue_interrupt">ຂັດຈັງຫວະ</string>
     <string name="notification_queue_queue">ອ່ານຫຼັງຈາກນັ້ນ</string>
     <string name="notification_url_omit">ຂ້າມ</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">ຊົ່ວໂມງງຽບ</string>
     <string name="notification_quiet_start_title">ເລີ່ມ</string>
     <string name="notification_quiet_end_title">ຈົບ</string>
-    <string name="notification_repeat_seconds_title">ຂ້າມການແຈ້ງເຕືອນດຽວກັນສໍາລັບ</string>
+    <string name="notification_repeat_seconds_title">ໄລຍະເວລາຂ້າມການແຈ້ງເຕືອນດຽວກັນ</string>
     <string name="notification_numbers_alike_title">ຕົວເລກຖືວ່າຄືກັນ</string>
     <string name="notification_numbers_alike_summary">ເຊັ່ນ: ອັດຕາສ່ວນການດາວໂຫຼດ</string>
     <string name="notification_cooldown_title">ເວລາລະຫວ່າງການແຈ້ງເຕືອນຂອງແອັບຯ</string>
     <string name="notification_skip_prefix_title">ຍົກເລີກຄຳນຳໜ້າຂໍ້ຄວາມຊ້ຳໆ</string>
     <string name="notification_skip_prefix_summary">ເຊັ່ນ: ຊື່ຂອງກຸ່ມໃນການສົນທະນາ</string>
-    <string name="notification_prefix_memory_title">ດົນປານໃດທີ່ຈະຈື່ຈໍາຄໍານໍາຫນ້າຂໍ້ຄວາມ</string>
+    <string name="notification_prefix_memory_title">ໄລຍະເວລາຈື່ຈຳສ່ວນຕົ້ນ</string>
     <string name="notification_access_summary">ຈໍາເປັນຕ້ອງຢຸດເຊົາການອ່ານແຈ້ງການທີ່ຖືກຍົກເລີກແລະສໍາລັບການສະຫຼຸບ</string>
     <string name="notification_shake_title">ສັ່ນເພື່ອຢຸດ</string>
     <string name="notification_shake_strength_title">ຄວາມແຮງສັ່ນ</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">ຊື່ເວົ້າ</string>
     <string name="notification_app_said_as">ອ່ານວ່າ <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">ຣີເຊັດ</string>
-    <string name="notification_required_title">ພຽງແຕ່ອ່ານການແຈ້ງເຕືອນດ້ວຍ</string>
+    <string name="notification_required_title">ອ່ານສະເພາະການແຈ້ງເຕືອນທີ່ມີ</string>
     <string name="notification_blocked_title">ບໍ່ອ່ານການແຈ້ງເຕືອນທີ່ມີ</string>
-    <string name="notification_private_title">ອ່ານພຽງແຕ່ຊື່ app ສໍາລັບ</string>
+    <string name="notification_private_title">ອ່ານສະເພາະຊື່ແອັບສຳລັບການແຈ້ງເຕືອນທີ່ມີ</string>
     <string name="notification_replacements_title">ອ່ານແບບອື່ນ</string>
     <string name="notification_add_word">ເພີ່ມຄໍາ</string>
     <string name="notification_add_replacement">ຕື່ມການທົດແທນ</string>

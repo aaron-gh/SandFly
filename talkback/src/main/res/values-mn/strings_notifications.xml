@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Зөвхөн чихэвчгүй</string>
     <string name="notification_headphones_only_with">Зөвхөн чихэвчтэй</string>
     <string name="notification_headphones_always">Чихэвчтэй эсвэл чихэвчгүй чангаар унш</string>
-    <string name="notification_queue_skip">Шинэ мэдэгдлийг чангаар уншиж болохгүй</string>
+    <string name="notification_queue_skip">Шинийг уншихгүй</string>
     <string name="notification_queue_interrupt">Тасалдуулах</string>
     <string name="notification_queue_queue">Дараа нь унших</string>
     <string name="notification_url_omit">Орхих</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Хугацаа</string>
     <string name="notification_delay_title">Уншихын өмнөх хүлээлт</string>
     <string name="notification_queue_title">Өөр мэдэгдэл унших үед</string>
-    <string name="notification_repeat_minutes_title">Дэлгэц асах хүртэл дахин уншина уу</string>
+    <string name="notification_repeat_minutes_title">Дэлгэц асах хүртэл дахин унших</string>
     <string name="notification_skip_media_title">Медиа тоглуулагчийг алгасах</string>
     <string name="notification_skip_ongoing_title">Үргэлжилсэн мэдэгдлүүдийг алгасах</string>
     <string name="notification_skip_ongoing_summary">Навигаци, таймер гэх мэт</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Чимээгүй цаг</string>
     <string name="notification_quiet_start_title">Эхлэл</string>
     <string name="notification_quiet_end_title">Төгсгөл</string>
-    <string name="notification_repeat_seconds_title">Үүнтэй ижил мэдэгдлийг алгасах</string>
+    <string name="notification_repeat_seconds_title">Ижил мэдэгдлийг алгасах хугацаа</string>
     <string name="notification_numbers_alike_title">Тоонуудыг ижил гэж тооцно</string>
     <string name="notification_numbers_alike_summary">Татаж авах хувь гэх мэт</string>
     <string name="notification_cooldown_title">Аппликешны мэдэгдлийн хоорондох хугацаа</string>
     <string name="notification_skip_prefix_title">Давтагдсан текстийн угтварыг орхи</string>
     <string name="notification_skip_prefix_summary">Чат дахь бүлгийн нэр гэх мэт</string>
-    <string name="notification_prefix_memory_title">Текстийн угтварыг хэр удаан санах вэ</string>
+    <string name="notification_prefix_memory_title">Эхлэлийг санах хугацаа</string>
     <string name="notification_access_summary">Татгалзсан мэдэгдэл болон хураангуйг уншихаа болих шаардлагатай</string>
     <string name="notification_shake_title">Зогсоохын тулд сэгсэрнэ үү</string>
     <string name="notification_shake_strength_title">Сэгсрэх хүч</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Хэлсэн нэр</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлнэ</string>
     <string name="notification_app_reset">Дахин тохируулах</string>
-    <string name="notification_required_title">Зөвхөн мэдэгдлийг уншина уу</string>
+    <string name="notification_required_title">Зөвхөн эдгээрийг агуулсан мэдэгдлийг унших</string>
     <string name="notification_blocked_title">Эдгээрийг агуулсан мэдэгдлийг уншихгүй</string>
-    <string name="notification_private_title">Зөвхөн програмын нэрийг уншина уу</string>
+    <string name="notification_private_title">Эдгээрийг агуулсан мэдэгдэлд зөвхөн аппын нэрийг унших</string>
     <string name="notification_replacements_title">Өөрөөр хэлэх</string>
     <string name="notification_add_word">Үг нэмэх</string>
     <string name="notification_add_replacement">Орлуулга нэмэх</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Хүртэл</string>
     <string name="notification_time_days">Өдөр</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-с <xliff:g id="end" example="07:00">%2$s</xliff:g> хүртэл</string>
-    <string name="notification_permission_needed">SandFly-д энэ нөхцөлд зөвшөөрөл шаардлагатай</string>
+    <string name="notification_permission_needed">SandFly-д энэ нөхцөлд тэр зөвшөөрөл хэрэгтэй</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> холбогдсон байна</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> холбогдоогүй байна</string>
     <string name="notification_cond_bluetooth_any">Bluetooth аудио төхөөрөмж холбогдсон байна</string>

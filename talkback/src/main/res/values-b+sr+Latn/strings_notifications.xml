@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Samo bez slušalica</string>
     <string name="notification_headphones_only_with">Samo sa slušalicama</string>
     <string name="notification_headphones_always">Čitajte naglas sa ili bez slušalica</string>
-    <string name="notification_queue_skip">Ne čitajte novo obaveštenje naglas</string>
+    <string name="notification_queue_skip">Ne čitati novo</string>
     <string name="notification_queue_interrupt">Prekini</string>
     <string name="notification_queue_queue">Čitaj posle</string>
     <string name="notification_url_omit">Izostavi</string>
@@ -58,8 +58,8 @@
     <string name="notification_max_seconds_title">Prestani da čitaš nakon</string>
     <string name="notification_category_timing">Vreme</string>
     <string name="notification_delay_title">Čekanje pre čitanja</string>
-    <string name="notification_queue_title">Kada se pročita drugo obaveštenje</string>
-    <string name="notification_repeat_minutes_title">Čitajte ponovo dok se ekran ne uključi</string>
+    <string name="notification_queue_title">Dok se čita drugo obaveštenje</string>
+    <string name="notification_repeat_minutes_title">Ponovo čitati dok se ekran ne uključi</string>
     <string name="notification_skip_media_title">Preskoči medijske plejere</string>
     <string name="notification_skip_ongoing_title">Preskoči trajna obaveštenja</string>
     <string name="notification_skip_ongoing_summary">Kao što su navigacija i tajmeri</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Tihi sati</string>
     <string name="notification_quiet_start_title">Početak</string>
     <string name="notification_quiet_end_title">Kraj</string>
-    <string name="notification_repeat_seconds_title">Preskočite isto obaveštenje za</string>
+    <string name="notification_repeat_seconds_title">Preskoči isto obaveštenje tokom</string>
     <string name="notification_numbers_alike_title">Brojevi se smatraju istim</string>
     <string name="notification_numbers_alike_summary">Kao što je procenat preuzimanja</string>
     <string name="notification_cooldown_title">Vreme između obaveštenja aplikacije</string>
     <string name="notification_skip_prefix_title">Izostavite ponovljeni tekstualni prefiks</string>
     <string name="notification_skip_prefix_summary">Kao što je ime grupe u ćaskanju</string>
-    <string name="notification_prefix_memory_title">Koliko dugo treba zapamtiti tekstualni prefiks</string>
+    <string name="notification_prefix_memory_title">Pamti početak tokom</string>
     <string name="notification_access_summary">Potrebno je da prestanete da čitate odbačeno obaveštenje i za rezime</string>
     <string name="notification_shake_title">Protresi za zaustavljanje</string>
     <string name="notification_shake_strength_title">Jačina protresanja</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Izgovoreno ime</string>
     <string name="notification_app_said_as">rečeno kao <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetuj</string>
-    <string name="notification_required_title">Čitajte samo obaveštenja sa</string>
+    <string name="notification_required_title">Čitati samo obaveštenja koja sadrže</string>
     <string name="notification_blocked_title">Ne čitati obaveštenja koja sadrže</string>
-    <string name="notification_private_title">Pročitajte samo naziv aplikacije za</string>
+    <string name="notification_private_title">Čitati samo naziv aplikacije za obaveštenja koja sadrže</string>
     <string name="notification_replacements_title">Drugačiji izgovor</string>
     <string name="notification_add_word">Dodaj reč</string>
     <string name="notification_add_replacement">Dodaj zamenu</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Do</string>
     <string name="notification_time_days">Dani</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> do <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly je potrebna ta dozvola za ovaj uslov</string>
+    <string name="notification_permission_needed">SandFly-u je potrebna ta dozvola za ovaj uslov</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> je povezan</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nije povezan</string>
     <string name="notification_cond_bluetooth_any">Bluetooth audio uređaj je povezan</string>

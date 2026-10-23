@@ -9,7 +9,7 @@
     <string name="notification_headphones_only_without">Միայն առանց ականջակալների</string>
     <string name="notification_headphones_only_with">Միայն ականջակալներով</string>
     <string name="notification_headphones_always">Բարձրաձայն կարդացեք ականջակալներով կամ առանց ականջակալների</string>
-    <string name="notification_queue_skip">Մի՛ կարդացեք նոր ծանուցումը բարձրաձայն</string>
+    <string name="notification_queue_skip">Չկարդալ նորը</string>
     <string name="notification_queue_interrupt">Ընդհատել</string>
     <string name="notification_queue_queue">Կարդալ դրանից հետո</string>
     <string name="notification_url_omit">Բաց թողնել</string>
@@ -59,7 +59,7 @@
     <string name="notification_category_timing">Ժամանակ</string>
     <string name="notification_delay_title">Սպասում կարդալուց առաջ</string>
     <string name="notification_queue_title">Երբ կարդացվում է մեկ այլ ծանուցում</string>
-    <string name="notification_repeat_minutes_title">Կրկին կարդացեք, մինչև էկրանը միանա</string>
+    <string name="notification_repeat_minutes_title">Կրկին կարդալ, մինչև էկրանը միանա</string>
     <string name="notification_skip_media_title">Բաց թողնել մեդիա նվագարկիչները</string>
     <string name="notification_skip_ongoing_title">Բաց թողնել ընթացիկ ծանուցումները</string>
     <string name="notification_skip_ongoing_summary">Ինչպես, օրինակ, նավիգացիան և ժամանակաչափերը</string>
@@ -92,13 +92,13 @@
     <string name="notification_quiet_hours_title">Հանգիստ ժամեր</string>
     <string name="notification_quiet_start_title">Սկիզբ</string>
     <string name="notification_quiet_end_title">Վերջ</string>
-    <string name="notification_repeat_seconds_title">Բաց թողնել նույն ծանուցումը</string>
+    <string name="notification_repeat_seconds_title">Նույն ծանուցումը բաց թողնելու ժամանակը</string>
     <string name="notification_numbers_alike_title">Թվերը համարվում են նույնը</string>
     <string name="notification_numbers_alike_summary">Օրինակ՝ ներբեռնման տոկոսը</string>
     <string name="notification_cooldown_title">Հավելվածի ծանուցումների միջև ընկած ժամանակը</string>
     <string name="notification_skip_prefix_title">Բաց թողեք կրկնվող տեքստի նախածանցը</string>
     <string name="notification_skip_prefix_summary">Օրինակ՝ խմբի անունը չաթում</string>
-    <string name="notification_prefix_memory_title">Որքա՞ն ժամանակ պետք է հիշել տեքստի նախածանցը</string>
+    <string name="notification_prefix_memory_title">Սկիզբը հիշելու ժամանակը</string>
     <string name="notification_access_summary">Անհրաժեշտ է դադարեցնել մերժված ծանուցման ընթերցումը և ամփոփագրերը</string>
     <string name="notification_shake_title">Թափահարել՝ դադարեցնելու համար</string>
     <string name="notification_shake_strength_title">Թափահարման ինտենսիվությունը</string>
@@ -143,9 +143,9 @@
     <string name="notification_app_name_title">Արտասանվող անուն</string>
     <string name="notification_app_said_as">ասված է որպես <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Վերակայել</string>
-    <string name="notification_required_title">Կարդացեք միայն ծանուցումները</string>
+    <string name="notification_required_title">Կարդալ միայն այն ծանուցումները, որոնք պարունակում են</string>
     <string name="notification_blocked_title">Չկարդալ ծանուցումները, որոնք պարունակում են</string>
-    <string name="notification_private_title">Կարդացեք միայն հավելվածի անունը</string>
+    <string name="notification_private_title">Կարդալ միայն հավելվածի անունը այն ծանուցումների համար, որոնք պարունակում են</string>
     <string name="notification_replacements_title">Այլ արտասանություն</string>
     <string name="notification_add_word">Ավելացնել բառ</string>
     <string name="notification_add_replacement">Ավելացնել փոխարինող</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Մինչև</string>
     <string name="notification_time_days">Օրեր</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-ից <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly այս պայմանի համար անհրաժեշտ է այդ թույլտվությունը</string>
+    <string name="notification_permission_needed">SandFly-ին այս պայմանի համար անհրաժեշտ է այդ թույլտվությունը</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> միացված է</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> միացված չէ</string>
     <string name="notification_cond_bluetooth_any">Միացված է Bluetooth աուդիո սարք</string>
