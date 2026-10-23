@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack ബ്രെയ്‌ലി കീബോർഡ്</string>
+  <string name="braille_ime_service_name">SandFly ബ്രെയ്‌ലി കീബോർഡ്</string>
   <string name="braille_ime_bd_mode_name">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഇൻപുട്ട്</string>
   <string name="switch_to_tabletop_announcement">ടേബിൾടോപ്പ് മോഡ്. ചാർജിംഗ് പോർട്ട് നിങ്ങളുടെ ഇടത് വശത്ത് വരുന്ന വിധത്തിൽ ഉപകരണം സ്ഥാപിക്കുക.</string>
   <string name="calibration_tip_announcement">ഡോട്ട് സ്ഥാനം അപ്‌ഡേറ്റ് ചെയ്യാൻ %d വിരലുകൾ ഉപയോഗിച്ച് അമർത്തിപ്പിടിക്കുക.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">ബ്രെയ്‍ലിയുടെ ചുരുക്കാത്ത മോഡിലേക്ക് മാറി</string>
   <string name="braille_ime_displayed_name">ബ്രെയ്‌ലി കീബോർഡ്</string>
   <string name="multiple_languages_braille_ime_displayed_name">ബ്രെയ്‌ലി കീബോർഡ്, %s</string>
-  <string name="input_view_caption">TalkBack ബ്രെയ്‌ലി കീബോർഡ് - സഹായത്തിന് g.co/help/braille സന്ദർശിക്കുക</string>
+  <string name="input_view_caption">SandFly ബ്രെയ്‌ലി കീബോർഡ് - സഹായത്തിന് g.co/help/braille സന്ദർശിക്കുക</string>
   <string name="perform_action_next">അടുത്തത്</string>
   <string name="perform_action_submitting">ടെക്സ്റ്റ് സമർപ്പിക്കുന്നു</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ഡോട്ട് സ്ഥാനം അപ്‌ഡേറ്റ് ചെയ്യുന്നു. ആദ്യം, നിങ്ങളുടെ %s സ്‌പർശിക്കുന്ന ഡോട്ടുകൾ റെക്കോർഡ് ചെയ്യാം.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">ബ്രെയ്‌ലി കീബോർഡ് ഉപയോഗിച്ച് ടൈപ്പ് ചെയ്യുമ്പോൾ നിങ്ങളുടെ ഭാഷ മാറ്റാൻ, 3 വിരലുകൾ ഉപയോഗിച്ച് മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക. തുടർന്ന് \"അടുത്ത ഭാഷയിലേക്ക് മാറുക\" തിരഞ്ഞെടുക്കുക.</string>
   <string name="title_pref_accumulate_presses">പ്രസ് ചെയ്‍ത എല്ലാ ഡോട്ടുകളും ഉൾപ്പെടുത്തുക</string>
   <string name="summary_pref_accumulate_presses">മറ്റ് ഡോട്ടുകൾക്ക് മുമ്പ് ഡോട്ട് റിലീസ് ചെയ്‍താൽ പോലും പ്രസ് ചെയ്‍ത ഓരോ ഡോട്ടും ഇൻപുട്ടിന്റെ ഭാഗമാണ്</string>
-  <string name="title_pref_reverse_dots">വിപരീത ഡോട്ടുകൾ</string>
-  <string name="summary_pref_reverse_dots">ഡോട്ട് സ്ഥാനങ്ങൾ സ്വാപ്പ് ചെയ്യുക, ഉദാഹരണത്തിന് 1, 4 ഡോട്ടുകൾ തമ്മിൽ സ്ഥാനങ്ങൾ കൈമാറുന്നു</string>
+  <string name="title_pref_reverse_dots">ഇടത്, വലത് ഡോട്ടുകൾ മാറ്റുക</string>
+  <string name="summary_pref_reverse_dots">1, 2, 3 ഡോട്ടുകൾ 4, 5, 6 എന്നീ ഡോട്ടുകളുള്ള വ്യാപാര സ്ഥലങ്ങൾ</string>
   <string name="bd_preference_braille_contracted">കോൺ‌ട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
   <string name="bd_preference_braille_uncontracted">അൺകോൺട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
   <string name="context_menu_title">ബ്രെയ്‌ലി കീബോർഡ് ഓപ്ഷനുകൾ</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">കീബോർഡ്</string>
   <string name="not_enough_touch_points_dialog_title">നിങ്ങളുടെ ഉപകരണം ബ്രെയ്‍ലി കീബോർഡിനെ പിന്തുണയ്ക്കുന്നില്ല</string>
   <string name="not_enough_touch_points_dialog_message">നിങ്ങളുടെ ഉപകരണം ആവശ്യത്തിന് ടച്ച് പോയിന്റുകളെ പിന്തുണയ്ക്കുന്നില്ല. കൂടുതൽ വിവരങ്ങൾക്ക് നിങ്ങളുടെ ഉപകരണ നിർമ്മാതാവിനെ സമീപിക്കുക.</string>
-  <string name="talkback_off_dialog_title">ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കാൻ TalkBack ഓണാക്കുക</string>
+  <string name="talkback_off_dialog_title">ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കാൻ SandFly ഓണാക്കുക</string>
   <string name="talkback_off_dialog_positive_button">ഉപയോഗസഹായി ക്രമീകരണത്തിൽ ഓണാക്കുക</string>
-  <string name="talkback_suspend_dialog_title">ബ്രെയ്‌ലി കീബോർഡ് ഉപയോഗിക്കാൻ TalkBack പുനരാരംഭിക്കുക</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack ഓണായിരിക്കുമ്പോൾ ബ്രെയ്‍ലി ചിഹ്നങ്ങൾ നൽകാൻ നിങ്ങൾക്ക് സ്ക്രീനിൽ ടാപ്പ് ചെയ്യാം.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">ജെസ്ച്ചർ മാറ്റാൻ TalkBack ഓണാക്കുക</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ഓഫാണ്. ബ്രെയ്‌ലി കീബോർഡ് ജെസ്ച്ചറുകൾ മാറ്റാൻ അത് ഓണാക്കുക.</string>
+  <string name="talkback_suspend_dialog_title">ബ്രെയ്‌ലി കീബോർഡ് ഉപയോഗിക്കാൻ SandFly പുനരാരംഭിക്കുക</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly ഓണായിരിക്കുമ്പോൾ ബ്രെയ്‍ലി ചിഹ്നങ്ങൾ നൽകാൻ നിങ്ങൾക്ക് സ്ക്രീനിൽ ടാപ്പ് ചെയ്യാം.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">ജെസ്ച്ചർ മാറ്റാൻ SandFly ഓണാക്കുക</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ഓഫാണ്. ബ്രെയ്‌ലി കീബോർഡ് ജെസ്ച്ചറുകൾ മാറ്റാൻ അത് ഓണാക്കുക.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ക്രമീകരണത്തിലേക്ക് പോകുക</string>
   <string name="reset_gestures_dialog_title">എല്ലാ ജെസ്ച്ചറുകളും റീസെറ്റ് ചെയ്യണോ?</string>
   <string name="reset_gestures_dialog_message">ബ്രെയ്‌ലി കീബോർഡുകളുടെ എല്ലാ ജെസ്‌ച്ചറുകളും ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യും</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ഡിഫോൾട്ടിലേക്ക് റീസെറ്റ് ചെയ്യുക</string>
   <string name="custom_gestures_dialog_remove_button">ജെസ്ച്ചർ നീക്കം ചെയ്യുക</string>
   <string name="change_gestures_dialog_message_title">ജെസ്‌ച്ചർ എങ്ങനെ മാറ്റാം</string>
-  <string name="change_gestures_dialog_message">അടുത്ത സ്ക്രീനിൽ, ബ്രെയ്‌ലി കീബോർഡ് തുറക്കും, നിങ്ങൾക്ക് TalkBack ജെസ്ച്ചറുകൾ ഉപയോഗിക്കാൻ കഴിയില്ല.\n\nബ്രെയ്‌ലി കീബോർഡ് തുറന്നുകഴിഞ്ഞാൽ, നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന ജെസ്ച്ചർ ഉപയോഗിക്കുക, അല്ലെങ്കിൽ ബ്രെയ്‌ലി കീബോർഡ് അടച്ച് ജെസ്ച്ചർ മാറ്റം റദ്ദാക്കാൻ, 2 വിരലുകൾ ഉപയോഗിച്ച് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക.\n\nലഭ്യമായ ജെസ്ച്ചറുകൾ കാണുക\n</string>
+  <string name="change_gestures_dialog_message">അടുത്ത സ്ക്രീനിൽ, ബ്രെയ്‌ലി കീബോർഡ് തുറക്കും, നിങ്ങൾക്ക് SandFly ജെസ്ച്ചറുകൾ ഉപയോഗിക്കാൻ കഴിയില്ല.\n\nബ്രെയ്‌ലി കീബോർഡ് തുറന്നുകഴിഞ്ഞാൽ, നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന ജെസ്ച്ചർ ഉപയോഗിക്കുക, അല്ലെങ്കിൽ ബ്രെയ്‌ലി കീബോർഡ് അടച്ച് ജെസ്ച്ചർ മാറ്റം റദ്ദാക്കാൻ, 2 വിരലുകൾ ഉപയോഗിച്ച് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക.\n\nലഭ്യമായ ജെസ്ച്ചറുകൾ കാണുക\n</string>
   <string name="change_gestures_dialog_message_link">ലഭ്യമായ ജെസ്ച്ചറുകൾ കാണുക</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ഈ സന്ദേശം വീണ്ടും കാണിക്കരുത്</string>
   <string name="change_gestures_dialog_positive_button">തുടരുക</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">ഉപയോഗിക്കരുത്</string>
   <string name="next_keyboard">അടുത്ത കീബോർഡ്</string>
   <string name="braille_tutorial_title">ബ്രെയ്‍ലി കീബോർഡ് ട്യൂട്ടോറിയൽ</string>
-  <string name="tutorial_intro_description">ബ്രെയ്‌ലി കീബോർഡ് ഉപയോഗിച്ച്, 6-ഡോട്ട് ബ്രെയ്‌ലി നൽകാൻ നിങ്ങൾക്ക് സ്ക്രീനിൽ ടാപ്പ് ചെയ്യാം.\n\nനിങ്ങൾ ഏകീകൃത ഇംഗ്ലീഷ് ബ്രെയ്‌ലിയാണ് ഉപയോഗിക്കുന്നത്. ടൈപ്പിംഗ് ഭാഷ മാറാൻ, TalkBack ക്രമീകരണത്തിലേക്ക് പോകുക.\n\nബ്രെയ്‌ലിയിൽ ടൈപ്പ് ചെയ്യാൻ, നിങ്ങളുടെ ഫോൺ മറ്റൊരു രീതിയിൽ പിടിച്ച് ഉപയോഗിക്കേണ്ടതുണ്ട്.</string>
+  <string name="tutorial_intro_description">ബ്രെയ്‌ലി കീബോർഡ് ഉപയോഗിച്ച്, 6-ഡോട്ട് ബ്രെയ്‌ലി നൽകാൻ നിങ്ങൾക്ക് സ്ക്രീനിൽ ടാപ്പ് ചെയ്യാം.\n\nനിങ്ങൾ ഏകീകൃത ഇംഗ്ലീഷ് ബ്രെയ്‌ലിയാണ് ഉപയോഗിക്കുന്നത്. ടൈപ്പിംഗ് ഭാഷ മാറാൻ, SandFly ക്രമീകരണത്തിലേക്ക് പോകുക.\n\nബ്രെയ്‌ലിയിൽ ടൈപ്പ് ചെയ്യാൻ, നിങ്ങളുടെ ഫോൺ മറ്റൊരു രീതിയിൽ പിടിച്ച് ഉപയോഗിക്കേണ്ടതുണ്ട്.</string>
   <string name="next_step">അടുത്തത്</string>
   <string name="leave_keyboard">ബ്രെയ്‌ലി കീബോർഡിൽ നിന്ന് പുറത്തുകടക്കുക</string>
-  <string name="hold_six_fingers_description">ബ്രെയ്‌ലി കീബോർഡിൽ സാധാരണയുള്ള TalkBack വിരൽചലനങ്ങൾ നിങ്ങൾക്ക് ഉപയോഗിക്കാൻ കഴിയില്ല.\n\nആരംഭിക്കാൻ, നിങ്ങൾ ടൈപ്പ് ചെയ്യുമ്പോൾ 6 ബ്രെയ്‌ലി ഡോട്ടുകളുടെ സ്ഥാനം നമുക്ക് സജ്ജീകരിക്കാം.</string>
-  <string name="rotate_orientation_description_1">ഇപ്പോൾ മുതൽ നിങ്ങൾക്ക് സാധാരണ TalkBack വിരൽചലനങ്ങൾ ഉപയോഗിക്കാനാവില്ല. ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കുമ്പോൾ TalkBack ലഭ്യമല്ല.</string>
+  <string name="hold_six_fingers_description">ബ്രെയ്‌ലി കീബോർഡിൽ സാധാരണയുള്ള SandFly വിരൽചലനങ്ങൾ നിങ്ങൾക്ക് ഉപയോഗിക്കാൻ കഴിയില്ല.\n\nആരംഭിക്കാൻ, നിങ്ങൾ ടൈപ്പ് ചെയ്യുമ്പോൾ 6 ബ്രെയ്‌ലി ഡോട്ടുകളുടെ സ്ഥാനം നമുക്ക് സജ്ജീകരിക്കാം.</string>
+  <string name="rotate_orientation_description_1">ഇപ്പോൾ മുതൽ നിങ്ങൾക്ക് സാധാരണ SandFly വിരൽചലനങ്ങൾ ഉപയോഗിക്കാനാവില്ല. ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കുമ്പോൾ SandFly ലഭ്യമല്ല.</string>
   <string name="rotate_orientation_description_2">തുടങ്ങാൻ, സ്ക്രീൻ നിങ്ങൾക്ക് അഭിമുഖമല്ലാത്ത തരത്തിൽ ഫോൺ തിരിച്ച്, ഇതുപോലെ പിടിക്കുക.</string>
   <string name="tap_to_continue">തുടരാൻ എവിടെയെങ്കിലും ഡബിൾ ടാപ്പ് ചെയ്യുക</string>
   <string name="instruction_type_letter_a">അക്ഷരം \"A\" ടൈപ്പ് ചെയ്യാൻ നിങ്ങളുടെ ഇടത്തേ ചൂണ്ടുവിരൽ കൊണ്ട് ഡോട്ട് 1 ടാപ്പ് ചെയ്യുക</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">കഴ്‌സർ മുന്നോട്ട് നീക്കി</string>
   <string name="result_swipe_down_2_fingers">കീബോർഡ് മറയ്‌ക്കുക</string>
   <string name="result_swipe_down_3_fingers">അടുത്ത കീബോർഡ്</string>
-  <string name="rotate_orientation_announcement">ഇനി മുതൽ നിങ്ങൾക്ക് സാധാരണ TalkBack വിരൽചലനങ്ങൾ ഉപയോഗിക്കാനാവില്ല. ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കുമ്പോൾ TalkBack ലഭ്യമാവില്ല.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">ഇനി മുതൽ നിങ്ങൾക്ക് സാധാരണ SandFly വിരൽചലനങ്ങൾ ഉപയോഗിക്കാനാവില്ല. ബ്രെയ്‍ലി കീബോർഡ് ഉപയോഗിക്കുമ്പോൾ SandFly ലഭ്യമാവില്ല.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">ആദ്യം, നിങ്ങൾക്ക് അഭിമുഖമല്ലാത്ത രീതിയിൽ ഫോൺ പിടിക്കുക.\n\nതുടർന്ന്, ലാൻഡ്സ്കേപ്പ് പൊസിഷനിൽ കൊണ്ടുവരാൻ ഫോൺ തിരശ്ചീനമായി തിരിക്കുക. ഫോണിന്റെ നീളം കുറഞ്ഞ വശങ്ങളിലാണ് പിടിക്കേണ്ടത്. USB പോർട്ടോട് കൂടിയ വശം വലത് കയ്യിലായിരിക്കണം. നടുവിലെ 3 വിരലുകൾ സ്ക്രീനിൽ വയ്ക്കുക, ഫോൺ വീഴാതെ പിടിക്കാൻ ചെറുവിരലും തള്ളവിരലും ഉപയോഗിക്കുക.\n\nനിങ്ങൾ തയ്യാറാവുമ്പോൾ തുടരാൻ സ്ക്രീനിൽ ഡബിൾ ടാപ്പ് ചെയ്യുക.\n\nബ്രെയ്‍ലി കീബോർഡിൽ നിന്ന് പുറത്തുകടക്കാൻ, 3 വിരലുകൾ ഉപയോഗിച്ച് താഴ്ഭാഗത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക. ഇത് നിങ്ങളുടെ ഒറിജിനൽ കീബോർഡിലേക്ക് വീണ്ടും മാറ്റുന്നു.</string>
   <string name="rotate_orientation_continue_announcement">നിങ്ങളുടെ ഫോൺ ലംബമായ പൊസിഷനിലാണ്. തുടരാൻ, നീളമുള്ള ഭാഗം താഴെയാക്കി നിങ്ങളുടെ ഫോൺ തിരശ്ചീനമായി പിടിക്കുക. തുടർന്ന് സ്ക്രീൻ നിങ്ങൾക്ക് അഭിമുഖമല്ലാത്ത തരത്തിൽ തിരിച്ച് പിടിക്കുക. നിങ്ങൾ തയ്യാറായി കഴിയുമ്പോൾ തുടരാൻ സ്ക്രീനിൽ ഡബിൾ ടാപ്പ് ചെയ്യുക.</string>
   <string name="type_letter_a_announcement">സ്ക്രീൻ നിങ്ങൾക്ക് അഭിമുഖമല്ലാത്ത തരത്തിൽ തിരിച്ച് പിടിക്കുക. രണ്ട് കൈയുടെയും നടുവിലെ 3 വിരലുകൾ സ്ക്രീനിൽ വയ്ക്കാൻ കഴിയുന്ന തരത്തിൽ ഫോണിന്റെ നീളം കുറഞ്ഞ വശങ്ങളിൽ രണ്ട് കൈകളും ഉപയോഗിച്ച് വേണം ഫോൺ പിടിയ്ക്കാൻ.\n\nനിങ്ങളുടെ ഇടത് ചൂണ്ടുവിരൽ ഡോട്ട് 1-ൽ ആയിരിക്കണം. ഇപ്പോൾ, അക്ഷരം \"A\" ടൈപ്പ് ചെയ്യാൻ ഡോട്ട് 1 ടാപ്പ് ചെയ്യുക.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">മറ്റൊരു കീബോർഡിലേക്ക് മാറാൻ 3 വിരലുകൾ ഉപയോഗിച്ച് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക. ഇപ്പോൾ ശ്രമിക്കൂ.</string>
   <string name="swipe_down_3_fingers_completed_announcement">അടുത്ത കീബോർഡ്. സാധാരണയായി ഇത് അടുത്ത കീബോർഡിലേക്ക് മാറും. നിങ്ങൾ ഇപ്പോഴും ട്യൂട്ടോറിയലിൽ ആയതിനാലാണ് ഇത്തവണ ബ്രെയ്‌ലി കീബോർഡ് തുറന്ന് തന്നെ ഇരിക്കുന്നത്.</string>
   <string name="swipe_up_3_fingers_announcement">ഫോൺ മേശപ്പുറത്ത് വച്ച് നിങ്ങൾക്ക് ടേബിൾടോപ്പ് മോഡിൽ ടൈപ്പ് ചെയ്യാനും കഴിയും. ട്യൂട്ടോറിയൽ പൂർത്തിയാക്കാൻ, 3 വിരലുകൾ ഉപയോഗിച്ച് മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക, ട്യൂട്ടോറിയൽ പൂർത്തിയാക്കുക” ഓപ്ഷൻ കണ്ടെത്തുക</string>
-  <string name="open_context_menu_announcement">ഓപ്ഷനുകൾ മെനു തുറന്നിരിക്കുന്നു. ഫോണിന്റെ പിൻഭാഗം നിങ്ങൾക്ക് അഭിമുഖമായ തരത്തിൽ സാധാരണ രീതിയിൽ പിടിക്കുക. ഇപ്പോൾ നാവിഗേറ്റ് ചെയ്യാൻ നിങ്ങൾക്ക് സാധാരണ TalkBack വിരൽചലനങ്ങൾ ഉപയോഗിക്കാം. കൂടുതൽ ഓപ്ഷനുകൾ കാണാൻ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
+  <string name="open_context_menu_announcement">ഓപ്ഷനുകൾ മെനു തുറന്നിരിക്കുന്നു. ഫോണിന്റെ പിൻഭാഗം നിങ്ങൾക്ക് അഭിമുഖമായ തരത്തിൽ സാധാരണ രീതിയിൽ പിടിക്കുക. ഇപ്പോൾ നാവിഗേറ്റ് ചെയ്യാൻ നിങ്ങൾക്ക് സാധാരണ SandFly വിരൽചലനങ്ങൾ ഉപയോഗിക്കാം. കൂടുതൽ ഓപ്ഷനുകൾ കാണാൻ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
   <string name="hold_six_fingers_announcement">%s\nനിങ്ങളുടെ ഉപകരണം മേശപ്പുറത്ത് വയ്ക്കുക. തുടർന്ന്, ടൈപ്പ് ചെയ്യാൻ നിങ്ങൾക്ക് സൗകര്യപ്രദമായ സ്ഥാനത്ത് ഓരോ കൈയ്യിലെയും നടുവിലെ 3 വിരലുകൾ ഉപയോഗിച്ച് സ്‌ക്രീൻ സ്‌പർശിച്ചുപിടിക്കുക.</string>
   <string name="hold_six_fingers_inactive_announcement">നിങ്ങളുടെ ഉപകരണം മേശപ്പുറത്ത് വയ്ക്കുക. തുടർന്ന്, ടൈപ്പ് ചെയ്യാൻ നിങ്ങൾക്ക് സൗകര്യപ്രദമായ സ്ഥാനത്ത് ഓരോ കൈയ്യിലെയും നടുവിലെ 3 വിരലുകൾ ഉപയോഗിച്ച് സ്‌ക്രീൻ സ്‌പർശിച്ചുപിടിക്കുക.</string>
   <string name="finish_tutorial_announcement">ബ്രെയ്‌ലി കീബോർഡ് കാണിക്കുന്നു. സ്ക്രീൻ നിങ്ങൾക്ക് അഭിമുഖമല്ലാത്ത രീതിയിൽ ഫോൺ തിരിക്കുക. ലാൻഡ്സ്കേപ്പ് പൊസിഷനിൽ കൊണ്ടുവരാൻ ഫോൺ തിരശ്ചീനമായി തിരിക്കുക. തുടർന്ന് ടൈപ്പ് ചെയ്യാൻ ആരംഭിക്കുക.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ഈ ജെസ്ച്ചർ \"%1$s\" എന്നതിനായാണ് ഉപയോഗിക്കുന്നത്, ഇത് മാറ്റാനാകില്ല. മറ്റൊരു ജെസ്‌ച്ചർ പരീക്ഷിക്കുക. %2$s</string>
   <string name="custom_gesture_cannot_used">ഈ ജെസ്‌ച്ചർ ഉപയോഗിക്കാനാകില്ല</string>
   <string name="custom_gesture_no_gesture">ജെസ്‌ച്ചർ ഒന്നും ചെയ്‌തില്ല</string>
-  <string name="custom_gesture_try_another">മറ്റൊരു ജെസ്‌ച്ചർ പരീക്ഷിക്കുക. ലഭ്യമായ എല്ലാ ജെസ്‌ച്ചറുകളുടെയും ലിസ്‌റ്റ് കാണാൻ, TalkBack ബ്രെയിലി കീബോർഡ് സഹായ കേന്ദ്രത്തിലേക്ക് പോകുക. %s</string>
+  <string name="custom_gesture_try_another">മറ്റൊരു ജെസ്‌ച്ചർ പരീക്ഷിക്കുക. ലഭ്യമായ എല്ലാ ജെസ്‌ച്ചറുകളുടെയും ലിസ്‌റ്റ് കാണാൻ, SandFly ബ്രെയിലി കീബോർഡ് സഹായ കേന്ദ്രത്തിലേക്ക് പോകുക. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">ജെസ്‌ച്ചറുകൾ പൊരുത്തപ്പെട്ടില്ല</string>
   <string name="custom_gesture_perform_again">നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന ജെസ്‌ച്ചർ വീണ്ടും ചെയ്യുക. %s</string>
+    <string name="tabletop_port_left_announcement">ടാബ്‌ലെറ്റ് മോഡ്, ഇടതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="tabletop_port_right_announcement">ടാബ്‌ലെറ്റ് മോഡ്, വലതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="screen_away_port_right_announcement">സ്‌ക്രീൻ-എവേ മോഡ്, വലതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="screen_away_port_left_announcement">സ്‌ക്രീൻ-എവേ മോഡ്, ഇടതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="screen_toward_announcement">നിങ്ങളുടെ നേരെ സ്ക്രീൻ</string>
+    <string name="screen_toward_port_left_announcement">നിങ്ങളുടെ നേരെ സ്‌ക്രീൻ ചെയ്യുക, ഇടതുവശത്ത് പോർട്ട് ചാർജുചെയ്യുക</string>
+    <string name="screen_toward_port_right_announcement">നിങ്ങളുടെ നേരെ സ്‌ക്രീൻ ചെയ്യുക, വലതുവശത്ത് പോർട്ട് ചാർജുചെയ്യുക</string>
+    <string name="screen_toward_port_down_announcement">നിങ്ങളുടെ നേരെ സ്‌ക്രീൻ, ചാർജിംഗ് പോർട്ട് താഴേക്ക് ചൂണ്ടിക്കാണിക്കുന്നു</string>
+    <string name="screen_toward_port_up_announcement">നിങ്ങളുടെ നേരെ സ്‌ക്രീൻ, ചാർജിംഗ് പോർട്ട് മുകളിലേക്ക് ചൂണ്ടിക്കാണിക്കുന്നു</string>
+    <string name="port_right_announcement">വലതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="port_left_announcement">ഇടതുവശത്ത് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="tabletop_port_near_announcement">ടാബ്‌ലെറ്റ് മോഡ്, നിങ്ങൾക്ക് നേരെ ചാർജിംഗ് പോർട്ട്</string>
+    <string name="tabletop_port_far_announcement">ടാബ്‌ലെറ്റ് മോഡ്, നിങ്ങളിൽ നിന്ന് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="screen_away_port_down_announcement">സ്‌ക്രീൻ-എവേ മോഡ്, ചാർജിംഗ് പോർട്ട് താഴേക്ക് പോയിൻ്റ് ചെയ്യുന്നു</string>
+    <string name="screen_away_port_up_announcement">സ്‌ക്രീൻ-എവേ മോഡ്, ചാർജിംഗ് പോർട്ട് മുകളിലേക്ക് പോയിൻ്റ് ചെയ്യുന്നു</string>
+    <string name="port_near_announcement">നിങ്ങളുടെ നേരെ ചാർജിംഗ് പോർട്ട്</string>
+    <string name="port_far_announcement">നിങ്ങളിൽ നിന്ന് ചാർജിംഗ് പോർട്ട്</string>
+    <string name="port_down_announcement">ചാർജിംഗ് പോർട്ട് താഴേക്ക് ചൂണ്ടുന്നു</string>
+    <string name="port_up_announcement">ചാർജിംഗ് പോർട്ട് മുകളിലേക്ക് ചൂണ്ടുന്നു</string>
+    <string name="orientation_locked_announcement">ഓറിയൻ്റേഷൻ ലോക്ക് ചെയ്തു</string>
+    <string name="orientation_locked_port_announcement">ഓറിയൻ്റേഷൻ ലോക്ക് ചെയ്തു. %1$s</string>
+    <string name="orientation_unlocked_announcement">ഓറിയൻ്റേഷൻ അൺലോക്ക് ചെയ്തു</string>
+    <string name="switch_to_language_contracted_announcement">%s എന്നതിലേക്ക് മാറി, കോൺ‌ട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
+    <string name="switch_to_language_uncontracted_announcement">%s എന്നതിലേക്ക് മാറി, അൺകോൺട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
+    <string name="title_pref_flip_dots_vertically">മുകളിലും താഴെയുമുള്ള ഡോട്ടുകൾ മാറ്റുക</string>
+    <string name="summary_pref_flip_dots_vertically">ഡോട്ട് 1, ഡോട്ട് 3, ഡോട്ട് 4, ഡോട്ട് 6 എന്നിവ ഉപയോഗിച്ച് സ്ഥലങ്ങൾ ട്രേഡ് ചെയ്യുന്നു</string>
+    <string name="title_pref_tablet_held_up_faces_away">ടാബ്‌ലെറ്റ് മുഖം ഉയർത്തി പിടിച്ചു</string>
+    <string name="summary_pref_tablet_held_up_faces_away">ഓഫായിരിക്കുമ്പോൾ, ഒരു ടാബ്‌ലെറ്റോ മടക്കിയിട്ടില്ലാത്ത ഫോണോ നിങ്ങൾക്ക് അഭിമുഖമായി ടാബ്‌ലെറ്റ് ലേഔട്ട് ഉപയോഗിക്കുന്നു</string>
+    <string name="title_pref_typing_sounds">ടൈപ്പിംഗ് ശബ്ദങ്ങൾ</string>
+    <string name="summary_pref_typing_sounds">നിങ്ങൾ ഒരു പ്രതീകം, ഒരു സ്‌പെയ്‌സ്, ഒരു പുതിയ വരി ടൈപ്പ് ചെയ്യുമ്പോൾ അല്ലെങ്കിൽ ഇല്ലാതാക്കുമ്പോൾ കീബോർഡ് ക്ലിക്കുകൾ പ്ലേ ചെയ്യുക</string>
+    <string name="skip_tutorial">ട്യൂട്ടോറിയൽ ഒഴിവാക്കുക</string>
 </resources>
