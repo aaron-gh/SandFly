@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Tiedosto on liian suuri. Äänen enimmäiskoko on 5 Mt.</string>
     <string name="theme_sound_not_audio">SandFly ei voi toistaa tiedostoa. Valitse WAV-, OGG-, MP3- tai FLAC-ääni.</string>
     <string name="theme_sound_failed">SandFly ei voinut lukea tiedostoa.</string>
+    <string name="title_pref_sound_theme_install_source">Lähteestä</string>
+    <string name="summary_pref_sound_theme_install_source">Teematiedostot arkistossa GitHub, GitLab, Codeberg, Gitea tai Bitbucket.</string>
+    <string name="sound_theme_sources">Ääniteemalähteet</string>
+    <string name="sound_theme_source_empty">Tässä lähteessä ei ole ääniteemoja</string>
+    <string name="sound_theme_source_failed">Ääniteemojen lataaminen epäonnistui. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Siitä asennetut ääniteemat pysyvät asennettuina.</string>
 </resources>

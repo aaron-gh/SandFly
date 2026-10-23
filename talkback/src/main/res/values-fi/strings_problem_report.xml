@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Lähetä palautetta</string>
+    <string name="title_pref_problem_report_type">Palautteen tyyppi</string>
+    <string name="title_pref_problem_report_area">Alue</string>
+    <string name="title_pref_problem_report_title">Otsikko</string>
+    <string name="title_pref_problem_report_app">Sovellus missä se tapahtuu</string>
+    <string name="title_pref_problem_report_description">Kuvaus</string>
+    <string name="dialog_message_problem_report_description">Mitä tapahtuu ja mitä odotit.</string>
+    <string name="title_pref_problem_report_steps">Vaiheet lisääntymiseen</string>
+    <string name="title_pref_problem_report_email">Sähköposti vastauksia varten</string>
+    <string name="title_pref_problem_report_device">Sisällytä laitetiedot</string>
+    <string name="title_pref_problem_report_log">Sisällytä SandFly loki</string>
+    <string name="summary_pref_problem_report_log">Saattaa sisältää tekstiä näytöltä</string>
+    <string name="title_pref_problem_report_send">Lähetä</string>
+    <string name="summary_pref_problem_report_sending">Lähetetään</string>
+    <string name="problem_report_missing_fields">Kirjoita otsikko ja kuvaus.</string>
+    <string name="problem_report_invalid_email">Anna kelvollinen sähköpostiosoite.</string>
+    <string name="problem_report_sent">Palaute lähetetty.</string>
+    <string name="problem_report_rate_limited">Liian paljon palautetta lähetetty. Yritä myöhemmin uudelleen.</string>
+    <string name="problem_report_no_connection">Palautetta ei lähetetty. Tarkista Internet-yhteys.</string>
+    <string name="problem_report_not_sent">Palautetta ei lähetetty. Yritä myöhemmin uudelleen.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Väärä käytös</item>
+        <item>Crash</item>
+        <item>Hidas tai ei reagoi</item>
+        <item>Ehdotus</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Puhe</item>
+        <item>Eleet</item>
+        <item>Kosketa tutkimista</item>
+        <item>Lukuohjaimet ja valikot</item>
+        <item>Kirjoitus ja näppäimistöt</item>
+        <item>Pistekirjoitusnäppäimistö</item>
+        <item>Pistekirjoitusnäyttö</item>
+        <item>Äänet ja värinä</item>
+        <item>Ilmoitukset</item>
+        <item>Web-sisältöä</item>
+        <item>Skriptit</item>
+        <item>Asetukset</item>
+        <item>Päivitykset</item>
+        <item>Muu</item>
+    </string-array>
+    <string name="title_report_new">Lähetä palautetta</string>
+    <string name="title_report_inbox">Saapuneet</string>
+    <string name="title_report_drafts">Luonnokset</string>
+    <string name="report_inbox_empty">Palautetta ei lähetetty</string>
+    <string name="report_drafts_empty">Ei luonnoksia</string>
+    <string name="report_just_now">juuri nyt</string>
+    <string name="report_untitled">Nimetön</string>
+    <string name="report_draft_summary">Muutettu <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">lähetetty <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> uusi vastaus</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> uutta vastausta</item>
+    </plurals>
+    <string name="report_status_changed">tila muuttunut</string>
+    <string name="report_status_open">Avoin</string>
+    <string name="report_status_completed">Suljettu, valmis</string>
+    <string name="report_status_not_planned">Suljettu, ei suunniteltu</string>
+    <string name="report_status_duplicate">Suljettu, kopio</string>
+    <string name="report_status_unknown">Poistettu</string>
+    <string name="title_report_status">Tila</string>
+    <string name="title_report_your_report">Palautteesi</string>
+    <string name="title_report_messages">Viestit</string>
+    <string name="report_message_from_developer">Kehittäjä, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Sinä, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Vastaa</string>
+    <string name="title_report_reply_text">Sinun vastauksesi</string>
+    <string name="title_report_send_reply">Lähetä vastaus</string>
+    <string name="report_reply_sent">Vastaus lähetetty.</string>
+    <string name="report_reply_not_sent">Vastausta ei lähetetty. Yritä myöhemmin uudelleen.</string>
+    <string name="title_report_remove">Poista postilaatikosta</string>
+    <string name="dialog_title_report_remove">Poistetaanko tämä palaute postilaatikosta?</string>
+    <string name="dialog_message_report_remove">Vastaukset siihen eivät enää tavoita tätä puhelinta.</string>
+    <string name="title_report_delete_draft">Poista luonnos</string>
+    <string name="dialog_title_report_delete_draft">Poistetaanko tämä luonnos?</string>
+    <string name="button_report_delete">Poista</string>
+    <string name="report_missing">Tämä palaute ei ole enää postilaatikossa.</string>
+    <string name="notification_channel_problem_reports">Palautevastauksia</string>
+    <string name="report_notification_reply">Vastaa numeroon <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
