@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Zvučne teme</string>
+    <string name="summary_pref_sound_themes">Instalirajte i izaberite skupove zvukova i vibracija, zamenite pojedinačne zvukove sopstvenim i uključite kontrolne zvukove i vibracije i 3D zvuk.</string>
+    <string name="sound_themes_installed_category">Instalirane teme</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly sopstveni zvuci i vibracije, i bilo koji sopstveni zvuk.</string>
+    <string name="sound_theme_in_use">U upotrebi</string>
+    <string name="sound_theme_by">Do <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licenca: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> zvuk.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> zvuka.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> zvukova.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibracija.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> vibracije.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibracija.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Uključuje kontrolne zvukove i vibracije.</string>
+    <string name="sound_theme_control_sounds_off">Isključuje kontrolne zvukove i vibracije.</string>
+    <string name="sound_theme_use">Koristite ovu temu</string>
+    <string name="sound_theme_about">O ovoj temi</string>
+    <string name="sound_theme_export">Sačuvaj kao datoteku teme</string>
+    <string name="sound_theme_remove">Ukloni</string>
+    <string name="sound_theme_remove_confirm">Uklonite temu <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Ukloni</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Tema je sačuvana, sa <xliff:g id="count" example="1">%d</xliff:g> zvukom.</item>
+        <item quantity="few">Tema je sačuvana, sa <xliff:g id="count" example="13">%d</xliff:g> zvuka.</item>
+        <item quantity="other">Tema je sačuvana, sa <xliff:g id="count" example="13">%d</xliff:g> zvukova.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly nije mogao da sačuva datoteku teme.</string>
+    <string name="sound_theme_no_picker">Na ovom uređaju nema aplikacije za odabir datoteka.</string>
+    <string name="sound_theme_settings_category">Podešavanja od <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Zvukovi</string>
+    <string name="summary_pref_theme_sounds">Zamenite bilo koji zvuk ove teme sopstvenom zvučnom datotekom.</string>
+    <string name="sound_themes_install_category">Instalirajte temu</string>
+    <string name="title_pref_sound_theme_install_file">Iz datoteke</string>
+    <string name="summary_pref_sound_theme_install_file">Datoteka teme je ZIP datoteka. Takođe možete otvoriti jednu ili je podeliti sa SandFly iz druge aplikacije.</string>
+    <string name="title_pref_sound_theme_install_link">Sa veze</string>
+    <string name="summary_pref_sound_theme_install_link">Veza do datoteke teme ili do GitHub spremišta sa temom u njemu. Takođe možete da delite vezu sa SandFly iz vašeg pretraživača.</string>
+    <string name="title_pref_sound_theme_install_source">Iz izvora</string>
+    <string name="summary_pref_sound_theme_install_source">Datoteke tema u spremištu na GitHub, GitLab, Codeberg, Gitea ili Bitbucket.</string>
+    <string name="sound_theme_sources">Izvori zvučnih tema</string>
+    <string name="sound_theme_source_empty">Nema zvučnih tema u ovom izvoru</string>
+    <string name="sound_theme_source_failed">Nije moguće učitati zvučne teme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Zvučne teme instalirane sa njega ostaju instalirane.</string>
+    <string name="sound_theme_link_message">Unesite ili nalepite vezu do datoteke teme ili do GitHub spremišta sa temom u njemu.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instalirajte zvučnu temu</string>
+    <string name="sound_theme_install_reading">Čitanje zvučne teme</string>
+    <string name="sound_theme_install_title">Instalirati <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Instalirajte i koristite</string>
+    <string name="sound_theme_install">Instaliraj</string>
+    <string name="sound_theme_install_replaces">Ovo zamenjuje instaliranu temu istog imena.</string>
+    <string name="sound_theme_install_skipped">Izostavljeno:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Instalirano <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Instalirano <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Sada je u upotrebi.</string>
+    <string name="sound_theme_install_nothing">Ne postoji zvučna tema za instaliranje.</string>
+    <string name="sound_theme_install_not_a_theme">Ovo nije zvučna tema SandFly može da koristi: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly nije mogao da instaliram zvučnu temu. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Veze do zvučnih tema moraju da počinju sa https.</string>
+    <string name="title_pref_theme_sounds_of">Zvuci <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Koristite zvukove SandFly za sve</string>
+    <string name="theme_sounds_reset_confirm">Uklonite sve zvukove ove teme i koristite sopstvene zvukove SandFly?</string>
+    <string name="theme_sounds_reset_button">Ukloni</string>
+    <string name="theme_sounds_category">Zvukovi</string>
+    <string name="theme_sound_summary_default">Zvuk SandFly</string>
+    <string name="theme_sound_summary_custom">Zvuk teme</string>
+    <string name="theme_sound_summary_none">Nema zvuka. Zvuk fokusa se reprodukuje.</string>
+    <string name="theme_sound_summary_android_keyboard">Zvuk tastature Android</string>
+    <string name="theme_sound_use_android_keyboard">Koristite zvuk tastature Android</string>
+    <string name="theme_sound_braille_character">Brajeva tastatura: kucanje znaka</string>
+    <string name="theme_sound_braille_space">Brajeva tastatura: razmak</string>
+    <string name="theme_sound_braille_delete">Brajeva tastatura: brisanje</string>
+    <string name="theme_sound_braille_new_line">Brajeva tastatura: nova linija</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Izaberite zvučnu datoteku</string>
+    <string name="theme_sound_preview">Pregled</string>
+    <string name="theme_sound_none">Nema zvuka</string>
+    <string name="theme_sound_summary_no_sound">Nema zvuka</string>
+    <string name="theme_sound_action_set_none">Podesite na bez zvuka</string>
+    <string name="theme_sound_use_default">Koristite zvuk SandFly</string>
+    <string name="theme_sound_remove">Uklonite zvuk</string>
+    <string name="theme_sound_too_large">Taj fajl je prevelik. Zvuk može biti do 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly ne može da pusti tu datoteku. Izaberite VAV, OGG, MP3 ili FLAC zvuk.</string>
+    <string name="theme_sound_failed">SandFly nije mogao da pročita tu datoteku.</string>
+</resources>

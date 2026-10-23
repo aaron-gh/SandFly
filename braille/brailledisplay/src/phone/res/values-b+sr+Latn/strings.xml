@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Hardverska tastatura sa Brajevom azbukom</string>
   <string name="bd_application_name">Pristupačnost na Android-u</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack tastatura sa Brajevom azbukom je nedostupna</string>
-  <string name="bd_ime_disabled_dialog_title">Uključite TalkBack tastaturu sa Brajevom azbukom</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly tastatura sa Brajevom azbukom je nedostupna</string>
+  <string name="bd_ime_disabled_dialog_title">Uključite SandFly tastaturu sa Brajevom azbukom</string>
   <string name="bd_ime_disabled_dialog_message">Da biste koristili Brajev ekran za unos teksta, uključite ga u podešavanjima unosa</string>
   <string name="bd_ime_disabled_dialog_title_positive">Podešavanja unosa</string>
   <string name="bd_ime_not_default_dialog_title">Promenite metod unosa</string>
-  <string name="bd_ime_not_default_dialog_message">Da biste nastavili da unosite tekst, podesite TalkBack tastaturu sa Brajevom azbukom kao metod unosa</string>
+  <string name="bd_ime_not_default_dialog_message">Da biste nastavili da unosite tekst, podesite SandFly tastaturu sa Brajevom azbukom kao metod unosa</string>
   <string name="bd_ime_not_default_dialog_positive">Promeni unos</string>
   <string name="type_unlabeled">Neoznačeno</string>
   <string name="type_unlabeled_edittext">Neoznačeni okvir za izmene</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Pomeri nalevo</string>
   <string name="overlay_pan_right_button">Pomeri nadesno</string>
   <string name="bd_preferences_title">Brajev ekran</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Da biste koristili Brajev ekran, prvo uključite TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Idi u TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Da biste koristili Brajev ekran, prvo uključite SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Idi u SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Da biste koristili Brajev ekran, prvo uključite Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Uključi Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Da bi koristila Brajev ekran, aplikacija %s treba da ima pristup uređajima u blizini</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Da biste koristili režim pregledanja, morate da pređete sa podrazumevanog na poboljšani raspored tastera. Ova promena će ažurirati neke komande Brajevog ekrana</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Podešavanja</string>
   <string name="bd_command_change_dialog_title">Neke komande su ažurirane</string>
-  <string name="bd_command_change_dialog_message">Ove komande za Brajev ekran ažurirane su u ovoj verziji TalkBack-a:\n\n• Prethodna stavka: pritisnite tačke 1, 7\n\n• Sledeća stavka: pritisnite tačke 4, 8\n\n• Prethodna kontrola čitanja: pritisnite tačke 2, 3, 7, 8\n\n• Sledeća kontrola čitanja: pritisnite tačke 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Ove komande za Brajev ekran ažurirane su u ovoj verziji SandFly-a:\n\n• Prethodna stavka: pritisnite tačke 1, 7\n\n• Sledeća stavka: pritisnite tačke 4, 8\n\n• Prethodna kontrola čitanja: pritisnite tačke 2, 3, 7, 8\n\n• Sledeća kontrola čitanja: pritisnite tačke 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Brajeva azbuka sa skraćenicama</string>
   <string name="bd_preference_braille_uncontracted">Brajeva azbuka sa celim rečima</string>
   <string name="bd_braille_grade_tips">Da biste brzo prelazili između Brajeve azbuke sa skraćenicama i one sa celim rečima na Brajevom ekranu, pritisnite razmak i tačke 1, 2, 4, 5.\n\nOva komanda funkcioniše ako koristite jezik sa oba tipa Brajeve azbuke.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Premeštanje sa jedne stavke na drugu</string>
   <string name="bd_commands_bindings_category_system_actions_title">Sistemske radnje</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Nazad, početna stranica, obaveštenja i drugo</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack funkcije</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback meniji i podešavanja</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly funkcije</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly meniji i podešavanja</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Podešavanja Brajeve azbuke</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Jezik i podešavanja Brajeve azbuke</string>
   <string name="bd_commands_bindings_category_text_editing_title">Menjanje teksta</string>
@@ -221,10 +221,10 @@
   <string name="bd_cmd_global_all_apps">Otvorite sve aplikacije</string>
   <string name="bd_cmd_toggle_screen_search">Otvorite pretragu ekrana</string>
   <string name="bd_cmd_edit_custom_label">Izmenite prilagođenu oznaku</string>
-  <string name="bd_cmd_open_talkback_menu">Otvorite TalkBack meni</string>
-  <string name="bd_cmd_toggle_voice_feedback">Uključite/isključite TalkBack govor</string>
+  <string name="bd_cmd_open_talkback_menu">Otvorite SandFly meni</string>
+  <string name="bd_cmd_toggle_voice_feedback">Uključite/isključite SandFly govor</string>
   <string name="bd_cmd_read_stop">Zaustavite čitanje</string>
-  <string name="bd_cmd_talkback_settings">Otvorite podešavanja TalkBack-a</string>
+  <string name="bd_cmd_talkback_settings">Otvorite podešavanja SandFly-a</string>
   <string name="bd_cmd_switch_to_next_input_language">Pređite na sledeći jezik za kucanje</string>
   <string name="bd_cmd_switch_to_next_output_language">Pređite na sledeći jezik za čitanje</string>
   <string name="bd_cmd_toggle_contracted_mode">Uključite/isključite skraćenice</string>
@@ -297,15 +297,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Možete brzo da se krećete po veb-stranicama pomoću komande za ulazak u režim pregledanja, posle čega treba da unesete sledeće prečice od slova ili brojeva\n\nOve prečice možete da koristite i bez ulaska u režim pregledanja, ali morate da dodate tačku 8 komandama koje obuhvataju termin „sledeće“</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Kretanje u tabeli</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Želite da isključite podešavanje Brajevog ekrana?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Uvek možete da ga ponovo uključite u podešavanjima TalkBack-a</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Uvek možete da ga ponovo uključite u podešavanjima SandFly-a</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Isključite</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Neke komande nisu dostupne</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Komande za navigaciju, podešavanja Brajeve azbuke i neke TalkBack funkcije nisu dostupne tokom unosa ili izmene.\n\nZatvorite tastaturu da biste ih koristili.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Komande za navigaciju, podešavanja Brajeve azbuke i neke SandFly funkcije nisu dostupne tokom unosa ili izmene.\n\nZatvorite tastaturu da biste ih koristili.</string>
   <string name="bd_caption_tutorial_dialog_title">Titlovi na Brajevom ekranu</string>
   <string name="bd_caption_tutorial_dialog_message">Da biste prikazali ili sakrili titlove za video, pritisnite razmak i tačke 1, 4, 7, 8.\n\nZa automatski prikaz titlova za podržane medije, u Podešavanjima uključite Prikaži titlove na Brajevom ekranu.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Uvek prikazuj ovu poruku kada su titlovi dostupni</string>
   <string name="bd_usb_connect_dialog_title">Brajev ekran je povezan na USB</string>
-  <string name="bd_usb_connect_dialog_message">%s baterija puni Brajev ekran.\n\nAko treba da pređete na Bluetooth, isključite USB ili USB razdelnik i idite na TalkBack podešavanja &gt; Brajev ekran.</string>
+  <string name="bd_usb_connect_dialog_message">%s baterija puni Brajev ekran.\n\nAko treba da pređete na Bluetooth, isključite USB ili USB razdelnik i idite na SandFly podešavanja &gt; Brajev ekran.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">%s nizak nivo baterije</string>
   <string name="bd_battery_low_dialog_message">%s baterija puni Brajev ekran.\n\nDa biste uštedeli bateriju:\n\n
@@ -317,7 +317,18 @@
   <string name="popup_message_history_clear">Obriši sve</string>
   <string name="popup_message_history_empty">Prazno</string>
   <string name="popup_message_history_consent_dialog_title">Želite da uključite istoriju poruka na uređaju?</string>
-  <string name="popup_message_history_consent_dialog_msg">Na taj način ćete čuvati neke poruke, poput obaveštenja i alarma, u TalkBack-u. Ovo podešavanje možete da promenite u bilo kom trenutku.</string>
+  <string name="popup_message_history_consent_dialog_msg">Na taj način ćete čuvati neke poruke, poput obaveštenja i alarma, u SandFly-u. Ovo podešavanje možete da promenite u bilo kom trenutku.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Uključi</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ne, hvala</string>
+    <string name="external_display_channel">Brajevo pismo prikazuje iz drugih aplikacija</string>
+    <string name="external_display_ask_title">Dozvoliti da <xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude Brajevo pismo za SandFly?</string>
+    <string name="external_display_ask_text">SandFly ga neće koristiti dok to ne dozvolite.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> će moći da čita sve što se SandFly prikazuje na Brajevom pismu, što može biti bilo šta na ekranu, uključujući poruke i ono što kucate. Takođe će moći da kontroliše vaš uređaj kao što možete pomoću Brajevog displeja: kucajte, otvarajte aplikacije i pokrenite bilo koju komandu SandFly. Dozvolite samo aplikacije kojima verujete.</string>
+    <string name="external_display_allow">Dozvoli</string>
+    <string name="external_display_deny">Ne dozvolite</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> je vaš Brajev ekran</string>
+    <string name="external_display_in_use_text">Dok ga SandFly koristi, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> može da čita ekran i kontroliše uređaj.</string>
+    <string name="external_displays_title">Prikazuje se iz drugih aplikacija</string>
+    <string name="external_displays_summary">Aplikacije koje dozvolite mogu biti ekrani na Brajevom azbuku za SandFly. Aplikacija koja je Brajev ekran može da čita ekran i kontroliše uređaj.</string>
+    <string name="external_displays_none">Nijedna aplikacija ne može biti ekran na Brajevom azbuku.</string>
 </resources>

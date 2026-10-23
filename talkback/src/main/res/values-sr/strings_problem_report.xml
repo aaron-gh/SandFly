@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Пошаљи повратне информације</string>
+    <string name="title_pref_problem_report_type">Врста повратне информације</string>
+    <string name="title_pref_problem_report_area">Подручје</string>
+    <string name="title_pref_problem_report_title">Наслов</string>
+    <string name="title_pref_problem_report_app">Апликација где се то дешава</string>
+    <string name="title_pref_problem_report_description">Опис</string>
+    <string name="dialog_message_problem_report_description">Шта се дешава и шта сте очекивали.</string>
+    <string name="title_pref_problem_report_steps">Кораци за репродукцију софтверског проблема</string>
+    <string name="title_pref_problem_report_email">Имејл за одговоре</string>
+    <string name="title_pref_problem_report_device">Укључите информације о уређају</string>
+    <string name="title_pref_problem_report_log">Укључи дневник SandFly</string>
+    <string name="summary_pref_problem_report_log">Може да садржи текст са екрана</string>
+    <string name="title_pref_problem_report_send">Пошаљи</string>
+    <string name="summary_pref_problem_report_sending">Слање</string>
+    <string name="problem_report_missing_fields">Унесите наслов и опис.</string>
+    <string name="problem_report_invalid_email">Унесите важећу адресу е-поште.</string>
+    <string name="problem_report_sent">Повратне информације су послате.</string>
+    <string name="problem_report_rate_limited">Послато је превише повратних информација. Покушајте поново касније.</string>
+    <string name="problem_report_no_connection">Повратне информације нису послате. Проверите интернет везу.</string>
+    <string name="problem_report_not_sent">Повратне информације нису послате. Покушајте поново касније.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Неправилно понашање</item>
+        <item>Црасх</item>
+        <item>Споро или не реагује</item>
+        <item>Предлог</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Говор</item>
+        <item>Покрети</item>
+        <item>Истраживање додиром</item>
+        <item>Контроле за читање и меније</item>
+        <item>Куцање и тастатуре</item>
+        <item>Тастатура са Брајевом азбуком</item>
+        <item>Брајев екран</item>
+        <item>Звукови и вибрације</item>
+        <item>Обавештења</item>
+        <item>Веб садржај</item>
+        <item>Скрипте</item>
+        <item>Подешавања</item>
+        <item>Ажурирања</item>
+        <item>Друго</item>
+    </string-array>
+    <string name="title_report_new">Пошаљи повратне информације</string>
+    <string name="title_report_inbox">Инбок</string>
+    <string name="title_report_drafts">Нацрти</string>
+    <string name="report_inbox_empty">Нису послате повратне информације</string>
+    <string name="report_drafts_empty">Нема нацрта</string>
+    <string name="report_just_now">управо сада</string>
+    <string name="report_untitled">Унтитлед</string>
+    <string name="report_draft_summary">Промењено <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">послато <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> нови одговор</item>
+        <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> нова одговора</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> нових одговора</item>
+    </plurals>
+    <string name="report_status_changed">статус промењен</string>
+    <string name="report_status_open">Отворено питање</string>
+    <string name="report_status_completed">Затворено, завршено</string>
+    <string name="report_status_not_planned">Затворено, није планирано</string>
+    <string name="report_status_duplicate">Затворено, дупликат</string>
+    <string name="report_status_unknown">Уклоњено</string>
+    <string name="title_report_status">Статус</string>
+    <string name="title_report_your_report">Ваше повратне информације</string>
+    <string name="title_report_messages">Поруке</string>
+    <string name="report_message_from_developer">Програмер, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ви, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Одговори</string>
+    <string name="title_report_reply_text">Ваш одговор</string>
+    <string name="title_report_send_reply">Пошаљи одговор</string>
+    <string name="report_reply_sent">Одговор је послат.</string>
+    <string name="report_reply_not_sent">Одговор није послат. Покушајте поново касније.</string>
+    <string name="title_report_remove">Уклони из пријемног сандучета</string>
+    <string name="dialog_title_report_remove">Желите ли да уклоните ове повратне информације из пријемног сандучета?</string>
+    <string name="dialog_message_report_remove">Одговори на њега више неће стизати на овај телефон.</string>
+    <string name="title_report_delete_draft">Избриши нацрт</string>
+    <string name="dialog_title_report_delete_draft">Желите ли да избришете ову радну верзију?</string>
+    <string name="button_report_delete">Избриши</string>
+    <string name="report_missing">Ове повратне информације више нису у пријемном сандучету.</string>
+    <string name="notification_channel_problem_reports">Одговори на повратне информације</string>
+    <string name="report_notification_reply">Одговори на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
