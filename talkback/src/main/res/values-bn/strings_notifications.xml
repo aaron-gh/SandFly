@@ -50,7 +50,7 @@
     <string name="notification_min_digits_title">দীর্ঘ সংখ্যায় ন্যূনতম অঙ্ক</string>
     <string name="notification_urls_title">লিঙ্ক</string>
     <string name="notification_url_text_title">একটি লিঙ্কের জায়গায় বলেছেন</string>
-    <string name="notification_skip_empty_title">কোন টেক্সট ছাড়া বিজ্ঞপ্তি এড়িয়ে যান</string>
+    <string name="notification_skip_empty_title">টেক্সট ছাড়া বিজ্ঞপ্তি এড়িয়ে যান</string>
     <string name="notification_category_length">দৈর্ঘ্য</string>
     <string name="notification_max_words_title">শব্দের সর্বোচ্চ সংখ্যা</string>
     <string name="notification_max_sentences_title">বাক্যের সর্বোচ্চ সংখ্যা</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">সংখ্যা একই হিসেবে গণ্য হয়</string>
     <string name="notification_numbers_alike_summary">যেমন একটি ডাউনলোড এর শতাংশ</string>
     <string name="notification_cooldown_title">একটি অ্যাপের বিজ্ঞপ্তির মধ্যে সময়</string>
-    <string name="notification_skip_prefix_title">একটি বারবার পাঠ্য উপসর্গ বাদ দিন</string>
+    <string name="notification_skip_prefix_title">পুনরাবৃত্ত শুরু বাদ দিন</string>
     <string name="notification_skip_prefix_summary">যেমন একটি চ্যাটে একটি গ্রুপের নাম</string>
     <string name="notification_prefix_memory_title">শুরুর অংশ মনে রাখার সময়</string>
     <string name="notification_access_summary">একটি খারিজ বিজ্ঞপ্তি পড়া বন্ধ করা এবং সারাংশের জন্য প্রয়োজন</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">নিয়ম</string>
     <string name="notification_rule_enabled">চালু</string>
     <string name="notification_rule_match">শর্তাবলী</string>
-    <string name="notification_rule_match_all">সব শর্ত সন্তুষ্ট করা আবশ্যক</string>
-    <string name="notification_rule_match_any">অন্তত একটি শর্ত সন্তুষ্ট করা আবশ্যক</string>
+    <string name="notification_rule_match_all">সব শর্ত পূরণ হতে হবে</string>
+    <string name="notification_rule_match_any">অন্তত একটি শর্ত পূরণ হতে হবে</string>
     <string name="notification_rule_conditions">যখন</string>
     <string name="notification_rule_actions">তারপর</string>
     <string name="notification_rule_add_condition">একটি শর্ত যোগ করুন</string>

@@ -50,7 +50,7 @@
     <string name="notification_min_digits_title">긴 숫자의 최소 자릿수</string>
     <string name="notification_urls_title">링크</string>
     <string name="notification_url_text_title">링크 대신 말함</string>
-    <string name="notification_skip_empty_title">문자가 없는 알림 건너뛰기</string>
+    <string name="notification_skip_empty_title">텍스트가 없는 알림 건너뛰기</string>
     <string name="notification_category_length">길이</string>
     <string name="notification_max_words_title">최대 단어 수</string>
     <string name="notification_max_sentences_title">최대 문장 수</string>
@@ -71,7 +71,7 @@
     <string name="notification_skip_low_priority_title">우선순위가 낮은 알림 건너뛰기</string>
     <string name="notification_skip_system_title">시스템 알림 건너뛰기</string>
     <string name="notification_screen_on_title">화면이 켜져 있는 동안</string>
-    <string name="notification_screen_off_title">화면이 꺼진 상태에서</string>
+    <string name="notification_screen_off_title">화면이 꺼져 있는 동안</string>
     <string name="notification_locked_title">휴대전화가 잠겨 있는 동안</string>
     <string name="notification_headphones_title">헤드폰</string>
     <string name="notification_media_title">미디어가 재생되는 동안</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">숫자가 달라도 같은 알림으로 간주</string>
     <string name="notification_numbers_alike_summary">다운로드 비율 등</string>
     <string name="notification_cooldown_title">앱 알림 간격</string>
-    <string name="notification_skip_prefix_title">반복되는 텍스트 접두사 생략</string>
+    <string name="notification_skip_prefix_title">반복되는 시작 부분 생략</string>
     <string name="notification_skip_prefix_summary">채팅의 그룹 이름 등</string>
     <string name="notification_prefix_memory_title">시작 부분 기억 시간</string>
     <string name="notification_access_summary">닫은 알림 및 요약 읽기를 중지하는 데 필요함</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">규칙</string>
     <string name="notification_rule_enabled">켜짐</string>
     <string name="notification_rule_match">조건</string>
-    <string name="notification_rule_match_all">모든 조건이 충족되어야 합니다.</string>
-    <string name="notification_rule_match_any">최소한 하나의 조건을 만족해야 합니다.</string>
+    <string name="notification_rule_match_all">모든 조건 충족</string>
+    <string name="notification_rule_match_any">하나 이상의 조건 충족</string>
     <string name="notification_rule_conditions">조건</string>
     <string name="notification_rule_actions">그런 다음</string>
     <string name="notification_rule_add_condition">조건 추가</string>

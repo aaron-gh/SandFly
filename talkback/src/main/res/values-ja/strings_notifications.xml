@@ -45,12 +45,12 @@
     <string name="notification_remove_emoji_title">絵文字を省く</string>
     <string name="notification_lowercase_title">大文字を単語として読む</string>
     <string name="notification_lowercase_summary">大文字の単語を1文字ずつ読み上げる音声エンジンもあります</string>
-    <string name="notification_separate_digits_title">長い数字を一桁ずつ読み取る</string>
+    <string name="notification_separate_digits_title">長い数字を1桁ずつ読み上げる</string>
     <string name="notification_separate_digits_summary">コードや電話番号など</string>
     <string name="notification_min_digits_title">長い数値の最小桁数</string>
     <string name="notification_urls_title">リンク</string>
     <string name="notification_url_text_title">リンクの代わりに言いました</string>
-    <string name="notification_skip_empty_title">テキストのない通知をスキップする</string>
+    <string name="notification_skip_empty_title">テキストのない通知をスキップ</string>
     <string name="notification_category_length">長さ</string>
     <string name="notification_max_words_title">最大単語数</string>
     <string name="notification_max_sentences_title">最大文数</string>
@@ -63,12 +63,12 @@
     <string name="notification_skip_media_title">メディアプレーヤーをスキップ</string>
     <string name="notification_skip_ongoing_title">常駐通知をスキップ</string>
     <string name="notification_skip_ongoing_summary">ナビゲーションやタイマーなど</string>
-    <string name="notification_skip_foreground_title">実行中のアプリの通知をスキップする</string>
+    <string name="notification_skip_foreground_title">実行中のアプリの通知をスキップ</string>
     <string name="notification_skip_foreground_summary">VPN やオーディオレコーダーなど</string>
     <string name="notification_skip_progress_title">進行状況の通知をスキップ</string>
     <string name="notification_skip_group_summaries_title">グループの概要をスキップ</string>
     <string name="notification_skip_group_summaries_summary">「新着メッセージ 3 件」など</string>
-    <string name="notification_skip_low_priority_title">優先度の低い通知をスキップする</string>
+    <string name="notification_skip_low_priority_title">優先度の低い通知をスキップ</string>
     <string name="notification_skip_system_title">システム通知をスキップ</string>
     <string name="notification_screen_on_title">画面がオンになっている間</string>
     <string name="notification_screen_off_title">画面がオフになっている間</string>
@@ -86,7 +86,7 @@
     <string name="notification_during_calls_title">通話中</string>
     <string name="notification_honour_silent_title">サイレントモード時は読み上げない</string>
     <string name="notification_honour_vibrate_title">バイブレーション時は読み上げない</string>
-    <string name="notification_skip_in_car_title">カーモードではありません</string>
+    <string name="notification_skip_in_car_title">カーモード時は読み上げない</string>
     <string name="notification_skip_in_car_summary">Android Auto など、それ自体を読み取ります</string>
     <string name="notification_category_quiet_hours">静かな時間帯</string>
     <string name="notification_quiet_hours_title">静かな時間帯</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">数字が違っても同じ通知とみなす</string>
     <string name="notification_numbers_alike_summary">ダウンロードの割合など</string>
     <string name="notification_cooldown_title">同じアプリの通知の間隔</string>
-    <string name="notification_skip_prefix_title">繰り返されるテキストの接頭辞を省略します</string>
+    <string name="notification_skip_prefix_title">繰り返される冒頭を省略</string>
     <string name="notification_skip_prefix_summary">チャット内のグループ名など</string>
     <string name="notification_prefix_memory_title">冒頭を記憶する期間</string>
     <string name="notification_access_summary">却下された通知と概要を読むのをやめるために必要</string>
@@ -112,7 +112,7 @@
     <string name="notification_app_cancel_title">アプリが削除したら停止</string>
     <string name="notification_category_summary">概要</string>
     <string name="notification_summary_now_title">今すぐ通知を読み上げる</string>
-    <string name="notification_summary_daily_title">毎日通知を読む</string>
+    <string name="notification_summary_daily_title">毎日通知を読み上げる</string>
     <string name="notification_summary_time_title">時刻</string>
     <string name="notification_summary_newest_first_title">新しい順</string>
     <string name="notification_summary_name_title">名前</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">ルール</string>
     <string name="notification_rule_enabled">オン</string>
     <string name="notification_rule_match">条件</string>
-    <string name="notification_rule_match_all">すべての条件を満たさなければなりません</string>
-    <string name="notification_rule_match_any">少なくとも 1 つの条件を満たさなければなりません</string>
+    <string name="notification_rule_match_all">すべての条件を満たす</string>
+    <string name="notification_rule_match_any">いずれかの条件を満たす</string>
     <string name="notification_rule_conditions">条件</string>
     <string name="notification_rule_actions">次を実行</string>
     <string name="notification_rule_add_condition">条件を追加</string>

@@ -45,12 +45,12 @@
     <string name="notification_remove_emoji_title">इमोजी छोड्नुहोस्</string>
     <string name="notification_lowercase_title">ठूला अक्षरहरूलाई शब्दका रूपमा पढ्नुहोस्</string>
     <string name="notification_lowercase_summary">केही स्पीच इन्जिनहरूले अक्षरहरू अक्षरमा क्यापिटल अक्षरहरूमा शब्दहरू हिज्जे गर्छन्</string>
-    <string name="notification_separate_digits_title">अंक द्वारा लामो संख्या अंक पढ्नुहोस्</string>
+    <string name="notification_separate_digits_title">लामो सङ्ख्या अङ्क-अङ्क गरी पढ्नुहोस्</string>
     <string name="notification_separate_digits_summary">जस्तै कोड र फोन नम्बरहरू</string>
     <string name="notification_min_digits_title">लामो संख्यामा न्यूनतम अंकहरू</string>
     <string name="notification_urls_title">लिंकहरू</string>
     <string name="notification_url_text_title">लिङ्कको सट्टामा भन्नुभयो</string>
-    <string name="notification_skip_empty_title">कुनै पाठ बिना सूचनाहरू छोड्नुहोस्</string>
+    <string name="notification_skip_empty_title">पाठ नभएका सूचनाहरू छोड्नुहोस्</string>
     <string name="notification_category_length">लम्बाइ</string>
     <string name="notification_max_words_title">शब्दहरूको अधिकतम संख्या</string>
     <string name="notification_max_sentences_title">वाक्यहरूको अधिकतम संख्या</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">सङ्ख्याहरू उस्तै मानिन्छन्</string>
     <string name="notification_numbers_alike_summary">जस्तै डाउनलोडको प्रतिशत</string>
     <string name="notification_cooldown_title">एपको सूचनाहरू बीचको समय</string>
-    <string name="notification_skip_prefix_title">दोहोर्याइएको पाठ उपसर्ग छोड्नुहोस्</string>
+    <string name="notification_skip_prefix_title">दोहोरिएको सुरुवात छोड्नुहोस्</string>
     <string name="notification_skip_prefix_summary">जस्तै च्याटमा समूहको नाम</string>
     <string name="notification_prefix_memory_title">सुरुवात सम्झने अवधि</string>
     <string name="notification_access_summary">खारेज गरिएको सूचना र सारांशहरू पढ्न रोक्न आवश्यक छ</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">नियम</string>
     <string name="notification_rule_enabled">अन</string>
     <string name="notification_rule_match">सर्तहरू</string>
-    <string name="notification_rule_match_all">सबै सर्तहरू सन्तुष्ट हुनुपर्छ</string>
-    <string name="notification_rule_match_any">कम्तिमा एउटा शर्त पूरा गर्नुपर्छ</string>
+    <string name="notification_rule_match_all">सबै सर्तहरू पूरा हुनुपर्छ</string>
+    <string name="notification_rule_match_any">कम्तीमा एउटा सर्त पूरा हुनुपर्छ</string>
     <string name="notification_rule_conditions">जब</string>
     <string name="notification_rule_actions">त्यसपछि</string>
     <string name="notification_rule_add_condition">शर्त थप्नुहोस्</string>

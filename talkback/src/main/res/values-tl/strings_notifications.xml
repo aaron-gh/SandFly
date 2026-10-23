@@ -63,7 +63,7 @@
     <string name="notification_skip_media_title">Laktawan ang mga media player</string>
     <string name="notification_skip_ongoing_title">Laktawan ang mga tuloy-tuloy na notification</string>
     <string name="notification_skip_ongoing_summary">Gaya ng nabigasyon at mga timer</string>
-    <string name="notification_skip_foreground_title">Laktawan ang pagpapatakbo ng mga notification ng app</string>
+    <string name="notification_skip_foreground_title">Laktawan ang mga notification ng tumatakbong app</string>
     <string name="notification_skip_foreground_summary">Gaya ng VPN o isang recorder</string>
     <string name="notification_skip_progress_title">Laktawan ang mga notification ng progreso</string>
     <string name="notification_skip_group_summaries_title">Laktawan ang mga buod ng pangkat</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">Itinuturing na pareho ang mga numero</string>
     <string name="notification_numbers_alike_summary">Gaya ng porsyento ng pag-download</string>
     <string name="notification_cooldown_title">Oras sa pagitan ng mga notification ng isang app</string>
-    <string name="notification_skip_prefix_title">Alisin ang paulit-ulit na prefix ng teksto</string>
+    <string name="notification_skip_prefix_title">Alisin ang paulit-ulit na simula</string>
     <string name="notification_skip_prefix_summary">Gaya ng pangalan ng isang grupo sa isang chat</string>
     <string name="notification_prefix_memory_title">Tandaan ang simula nang</string>
     <string name="notification_access_summary">Kailangang ihinto ang pagbabasa ng na-dismiss na notification at para sa mga buod</string>
@@ -112,7 +112,7 @@
     <string name="notification_app_cancel_title">Ihinto kapag inalis ito ng app</string>
     <string name="notification_category_summary">Buod</string>
     <string name="notification_summary_now_title">Basahin ang mga notification ngayon</string>
-    <string name="notification_summary_daily_title">Basahin ang mga abiso araw-araw</string>
+    <string name="notification_summary_daily_title">Basahin ang mga notification araw-araw</string>
     <string name="notification_summary_time_title">Oras</string>
     <string name="notification_summary_newest_first_title">Pinakabago muna</string>
     <string name="notification_summary_name_title">Pangalan mo</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">Panuntunan</string>
     <string name="notification_rule_enabled">Naka-on</string>
     <string name="notification_rule_match">Mga kundisyon</string>
-    <string name="notification_rule_match_all">Ang lahat ng mga kondisyon ay dapat matugunan</string>
-    <string name="notification_rule_match_any">Hindi bababa sa isang kundisyon ang dapat matugunan</string>
+    <string name="notification_rule_match_all">Dapat matugunan ang lahat ng kondisyon</string>
+    <string name="notification_rule_match_any">Dapat matugunan ang kahit isang kondisyon</string>
     <string name="notification_rule_conditions">Kapag</string>
     <string name="notification_rule_actions">Pagkatapos</string>
     <string name="notification_rule_add_condition">Magdagdag ng kundisyon</string>

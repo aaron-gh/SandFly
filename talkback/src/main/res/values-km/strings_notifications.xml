@@ -45,12 +45,12 @@
     <string name="notification_remove_emoji_title">រំលង emoji</string>
     <string name="notification_lowercase_title">អានអក្សរធំជាពាក្យ</string>
     <string name="notification_lowercase_summary">ម៉ាស៊ីននិយាយមួយចំនួនប្រកបពាក្យជាអក្សរធំតាមអក្សរ</string>
-    <string name="notification_separate_digits_title">អានលេខវែងតាមខ្ទង់</string>
+    <string name="notification_separate_digits_title">អានលេខវែងម្ដងមួយខ្ទង់</string>
     <string name="notification_separate_digits_summary">ដូចជាលេខកូដ និងលេខទូរស័ព្ទ</string>
     <string name="notification_min_digits_title">ចំនួនខ្ទង់អប្បបរមានៃលេខវែង</string>
     <string name="notification_urls_title">តំណ</string>
     <string name="notification_url_text_title">បាននិយាយជំនួសតំណ</string>
-    <string name="notification_skip_empty_title">រំលងការជូនដំណឹងដោយគ្មានអត្ថបទ</string>
+    <string name="notification_skip_empty_title">រំលងការជូនដំណឹងដែលគ្មានអត្ថបទ</string>
     <string name="notification_category_length">ប្រវែង</string>
     <string name="notification_max_words_title">ចំនួនពាក្យអតិបរមា</string>
     <string name="notification_max_sentences_title">ចំនួនប្រយោគអតិបរមា</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">លេខត្រូវបានរាប់ថាដូចគ្នា</string>
     <string name="notification_numbers_alike_summary">ដូចជាភាគរយនៃការទាញយក</string>
     <string name="notification_cooldown_title">ពេលវេលារវាងការជូនដំណឹងរបស់កម្មវិធី</string>
-    <string name="notification_skip_prefix_title">លុបបុព្វបទអត្ថបទដដែលៗ</string>
+    <string name="notification_skip_prefix_title">លុបផ្នែកខាងដើមដែលដដែលៗ</string>
     <string name="notification_skip_prefix_summary">ដូចជាឈ្មោះក្រុមនៅក្នុងការជជែក</string>
     <string name="notification_prefix_memory_title">រយៈពេលចងចាំផ្នែកខាងដើម</string>
     <string name="notification_access_summary">ចាំបាច់ត្រូវបញ្ឈប់ការអានការជូនដំណឹងដែលត្រូវបានច្រានចោល និងសម្រាប់ការសង្ខេប</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">ក្បួន</string>
     <string name="notification_rule_enabled">បានបើក</string>
     <string name="notification_rule_match">លក្ខខណ្ឌ</string>
-    <string name="notification_rule_match_all">លក្ខខណ្ឌទាំងអស់ត្រូវតែពេញចិត្ត</string>
-    <string name="notification_rule_match_any">យ៉ាងហោចណាស់លក្ខខណ្ឌមួយត្រូវតែពេញចិត្ត</string>
+    <string name="notification_rule_match_all">ត្រូវតែបំពេញលក្ខខណ្ឌទាំងអស់</string>
+    <string name="notification_rule_match_any">ត្រូវតែបំពេញលក្ខខណ្ឌយ៉ាងហោចណាស់មួយ</string>
     <string name="notification_rule_conditions">នៅពេល</string>
     <string name="notification_rule_actions">បន្ទាប់មក</string>
     <string name="notification_rule_add_condition">បន្ថែមលក្ខខណ្ឌ</string>

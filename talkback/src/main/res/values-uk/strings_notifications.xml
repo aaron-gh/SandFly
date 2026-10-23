@@ -45,7 +45,7 @@
     <string name="notification_remove_emoji_title">Пропускати емодзі</string>
     <string name="notification_lowercase_title">Читати великі літери як слова</string>
     <string name="notification_lowercase_summary">Деякі синтезатори мовлення читають слова, написані великими літерами, по одній літері.</string>
-    <string name="notification_separate_digits_title">Читайте довгі числа цифра за цифрою</string>
+    <string name="notification_separate_digits_title">Читати довгі числа по цифрах</string>
     <string name="notification_separate_digits_summary">Такі як коди та номери телефонів</string>
     <string name="notification_min_digits_title">Мінімальна кількість цифр у довгому числі</string>
     <string name="notification_urls_title">Посилання</string>
@@ -63,12 +63,12 @@
     <string name="notification_skip_media_title">Пропускати медіаплеєри</string>
     <string name="notification_skip_ongoing_title">Пропускати постійні сповіщення</string>
     <string name="notification_skip_ongoing_summary">Такі як навігація та таймери</string>
-    <string name="notification_skip_foreground_title">Пропустити сповіщення про запущену програму</string>
+    <string name="notification_skip_foreground_title">Пропускати сповіщення про запущені програми</string>
     <string name="notification_skip_foreground_summary">Наприклад, VPN або аудіозаписувач</string>
     <string name="notification_skip_progress_title">Пропускати сповіщення про хід виконання</string>
     <string name="notification_skip_group_summaries_title">Пропускати підсумки груп</string>
     <string name="notification_skip_group_summaries_summary">Наприклад, «3 нових повідомлення»</string>
-    <string name="notification_skip_low_priority_title">Пропустити низькопріоритетні сповіщення</string>
+    <string name="notification_skip_low_priority_title">Пропускати низькопріоритетні сповіщення</string>
     <string name="notification_skip_system_title">Пропускати системні сповіщення</string>
     <string name="notification_screen_on_title">Поки екран увімкнено</string>
     <string name="notification_screen_off_title">Поки екран вимкнено</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">Числа вважаються однаковими</string>
     <string name="notification_numbers_alike_summary">Наприклад, відсоток завантаження</string>
     <string name="notification_cooldown_title">Час між сповіщеннями програми</string>
-    <string name="notification_skip_prefix_title">Пропустіть префікс, що повторюється</string>
+    <string name="notification_skip_prefix_title">Пропускати повторюваний початок</string>
     <string name="notification_skip_prefix_summary">Наприклад, назва групи в чаті</string>
     <string name="notification_prefix_memory_title">Запам’ятовувати початок на</string>
     <string name="notification_access_summary">Необхідний, щоб зупинити читання відхиленого сповіщення та для підсумків</string>
@@ -112,7 +112,7 @@
     <string name="notification_app_cancel_title">Припиняти, коли програма видаляє сповіщення</string>
     <string name="notification_category_summary">Зведення</string>
     <string name="notification_summary_now_title">Прочитати сповіщення зараз</string>
-    <string name="notification_summary_daily_title">Читайте сповіщення щодня</string>
+    <string name="notification_summary_daily_title">Читати сповіщення щодня</string>
     <string name="notification_summary_time_title">Час</string>
     <string name="notification_summary_newest_first_title">Спочатку найновіші</string>
     <string name="notification_summary_name_title">Ваше ім\'я</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">Правило</string>
     <string name="notification_rule_enabled">Увімкнено</string>
     <string name="notification_rule_match">Умови</string>
-    <string name="notification_rule_match_all">Всі умови мають бути дотримані</string>
-    <string name="notification_rule_match_any">Принаймні одна умова повинна бути виконана</string>
+    <string name="notification_rule_match_all">Усі умови мають виконуватися</string>
+    <string name="notification_rule_match_any">Принаймні одна умова має виконуватися</string>
     <string name="notification_rule_conditions">Коли</string>
     <string name="notification_rule_actions">Потім</string>
     <string name="notification_rule_add_condition">Додати умову</string>

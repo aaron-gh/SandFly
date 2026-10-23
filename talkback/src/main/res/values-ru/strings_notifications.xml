@@ -46,7 +46,7 @@
     <string name="notification_lowercase_title">Читать заглавные буквы как слова</string>
     <string name="notification_lowercase_summary">Некоторые речевые движки пишут слова заглавными буквами по буквам.</string>
     <string name="notification_separate_digits_title">Чтение длинных чисел по цифрам</string>
-    <string name="notification_separate_digits_summary">Например, коды и номера телефонов.</string>
+    <string name="notification_separate_digits_summary">Например, коды и номера телефонов</string>
     <string name="notification_min_digits_title">Минимальное количество цифр в длинном числе</string>
     <string name="notification_urls_title">Ссылки</string>
     <string name="notification_url_text_title">Сказано вместо ссылки</string>
@@ -63,11 +63,11 @@
     <string name="notification_skip_media_title">Пропускать медиаплееры</string>
     <string name="notification_skip_ongoing_title">Пропускать постоянные уведомления</string>
     <string name="notification_skip_ongoing_summary">Например, навигация и таймеры</string>
-    <string name="notification_skip_foreground_title">Пропустить уведомления запущенных приложений</string>
-    <string name="notification_skip_foreground_summary">Например, VPN или диктофон.</string>
+    <string name="notification_skip_foreground_title">Пропускать уведомления запущенных приложений</string>
+    <string name="notification_skip_foreground_summary">Например, VPN или диктофон</string>
     <string name="notification_skip_progress_title">Пропускать уведомления о ходе выполнения</string>
     <string name="notification_skip_group_summaries_title">Пропускать сводки групп</string>
-    <string name="notification_skip_group_summaries_summary">Например, «3 новых сообщения».</string>
+    <string name="notification_skip_group_summaries_summary">Например, «3 новых сообщения»</string>
     <string name="notification_skip_low_priority_title">Пропускать уведомления с низким приоритетом</string>
     <string name="notification_skip_system_title">Пропускать системные уведомления</string>
     <string name="notification_screen_on_title">Пока экран включен</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">Числа считаются одинаковыми</string>
     <string name="notification_numbers_alike_summary">Например, процент загрузки</string>
     <string name="notification_cooldown_title">Время между уведомлениями приложения</string>
-    <string name="notification_skip_prefix_title">Пропустить повторяющийся текстовый префикс</string>
+    <string name="notification_skip_prefix_title">Пропускать повторяющееся начало</string>
     <string name="notification_skip_prefix_summary">Например, название группы в чате</string>
     <string name="notification_prefix_memory_title">Запоминать начало на</string>
     <string name="notification_access_summary">Требуется, чтобы перестать читать отклоненное уведомление и просмотреть сводку.</string>
@@ -112,7 +112,7 @@
     <string name="notification_app_cancel_title">Прекращать, когда приложение удаляет уведомление</string>
     <string name="notification_category_summary">Сводка</string>
     <string name="notification_summary_now_title">Читать уведомления сейчас</string>
-    <string name="notification_summary_daily_title">Читайте уведомления каждый день</string>
+    <string name="notification_summary_daily_title">Читать уведомления каждый день</string>
     <string name="notification_summary_time_title">Время</string>
     <string name="notification_summary_newest_first_title">Сначала самые новые</string>
     <string name="notification_summary_name_title">Ваше имя</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">Правило</string>
     <string name="notification_rule_enabled">Включено</string>
     <string name="notification_rule_match">Условия</string>
-    <string name="notification_rule_match_all">Все условия должны быть соблюдены</string>
-    <string name="notification_rule_match_any">Хотя бы одно условие должно быть выполнено</string>
+    <string name="notification_rule_match_all">Все условия должны выполняться</string>
+    <string name="notification_rule_match_any">Хотя бы одно условие должно выполняться</string>
     <string name="notification_rule_conditions">Когда</string>
     <string name="notification_rule_actions">Тогда</string>
     <string name="notification_rule_add_condition">Добавить условие</string>

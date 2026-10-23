@@ -45,7 +45,7 @@
     <string name="notification_remove_emoji_title">Izostavi emoji</string>
     <string name="notification_lowercase_title">Čitaj velika slova kao riječi</string>
     <string name="notification_lowercase_summary">Neki govorni strojevi sriču riječi velikim slovima slovo po slovo</string>
-    <string name="notification_separate_digits_title">Čitajte dugačke brojeve znamenku po znamenku</string>
+    <string name="notification_separate_digits_title">Čitati duge brojeve znamenku po znamenku</string>
     <string name="notification_separate_digits_summary">Kao što su kodovi i telefonski brojevi</string>
     <string name="notification_min_digits_title">Minimalni broj znamenki u dugom broju</string>
     <string name="notification_urls_title">Veze</string>
@@ -63,12 +63,12 @@
     <string name="notification_skip_media_title">Preskoči medijske playere</string>
     <string name="notification_skip_ongoing_title">Preskoči trajne obavijesti</string>
     <string name="notification_skip_ongoing_summary">Kao što su navigacija i mjerači vremena</string>
-    <string name="notification_skip_foreground_title">Preskočite obavijesti pokrenute aplikacije</string>
+    <string name="notification_skip_foreground_title">Preskoči obavijesti pokrenutih aplikacija</string>
     <string name="notification_skip_foreground_summary">Kao što je VPN ili audio snimač</string>
     <string name="notification_skip_progress_title">Preskoči obavijesti o napretku</string>
     <string name="notification_skip_group_summaries_title">Preskoči grupne sažetke</string>
     <string name="notification_skip_group_summaries_summary">Kao što je \"3 nove poruke\"</string>
-    <string name="notification_skip_low_priority_title">Preskočite obavijesti niskog prioriteta</string>
+    <string name="notification_skip_low_priority_title">Preskoči obavijesti niskog prioriteta</string>
     <string name="notification_skip_system_title">Preskoči obavijesti sustava</string>
     <string name="notification_screen_on_title">Dok je ekran uključen</string>
     <string name="notification_screen_off_title">Dok je ekran isključen</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">Brojevi se smatraju istima</string>
     <string name="notification_numbers_alike_summary">Kao što je postotak preuzimanja</string>
     <string name="notification_cooldown_title">Vrijeme između obavijesti aplikacije</string>
-    <string name="notification_skip_prefix_title">Izostavite ponovljeni tekstualni prefiks</string>
+    <string name="notification_skip_prefix_title">Izostavi ponovljeni početak</string>
     <string name="notification_skip_prefix_summary">Kao što je naziv grupe u chatu</string>
     <string name="notification_prefix_memory_title">Pamti početak tijekom</string>
     <string name="notification_access_summary">Potrebno za zaustavljanje čitanja odbačene obavijesti i za sažetke</string>
@@ -112,7 +112,7 @@
     <string name="notification_app_cancel_title">Zaustavi kada je aplikacija ukloni</string>
     <string name="notification_category_summary">Sažetak</string>
     <string name="notification_summary_now_title">Pročitaj obavijesti sada</string>
-    <string name="notification_summary_daily_title">Čitajte obavijesti svaki dan</string>
+    <string name="notification_summary_daily_title">Čitati obavijesti svaki dan</string>
     <string name="notification_summary_time_title">Vrijeme</string>
     <string name="notification_summary_newest_first_title">Prvo najnoviji</string>
     <string name="notification_summary_name_title">Vaše ime</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">Pravilo</string>
     <string name="notification_rule_enabled">Uključeno</string>
     <string name="notification_rule_match">Uvjeti</string>
-    <string name="notification_rule_match_all">Svi uvjeti moraju biti zadovoljeni</string>
-    <string name="notification_rule_match_any">Najmanje jedan uvjet mora biti zadovoljen</string>
+    <string name="notification_rule_match_all">Svi uvjeti moraju biti ispunjeni</string>
+    <string name="notification_rule_match_any">Najmanje jedan uvjet mora biti ispunjen</string>
     <string name="notification_rule_conditions">Kada</string>
     <string name="notification_rule_actions">Zatim</string>
     <string name="notification_rule_add_condition">Dodaj uvjet</string>

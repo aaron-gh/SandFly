@@ -50,7 +50,7 @@
     <string name="notification_min_digits_title">పెద్ద సంఖ్యలో కనీస అంకెల సంఖ్య</string>
     <string name="notification_urls_title">లింక్‌లు</string>
     <string name="notification_url_text_title">లింక్ స్థానంలో చెప్పారు</string>
-    <string name="notification_skip_empty_title">టెక్స్ట్ లేకుండా నోటిఫికేషన్‌లను దాటవేయండి</string>
+    <string name="notification_skip_empty_title">టెక్స్ట్ లేని నోటిఫికేషన్‌లను దాటవేయండి</string>
     <string name="notification_category_length">పొడవు</string>
     <string name="notification_max_words_title">పదాల గరిష్ట సంఖ్య</string>
     <string name="notification_max_sentences_title">వాక్యాల గరిష్ట సంఖ్య</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">సంఖ్యలు ఒకేలా పరిగణించబడతాయి</string>
     <string name="notification_numbers_alike_summary">డౌన్‌లోడ్ శాతం వంటివి</string>
     <string name="notification_cooldown_title">యాప్ నోటిఫికేషన్‌ల మధ్య సమయం</string>
-    <string name="notification_skip_prefix_title">పునరావృత వచన ఉపసర్గను వదిలివేయండి</string>
+    <string name="notification_skip_prefix_title">పునరావృతమైన ప్రారంభాన్ని వదిలివేయండి</string>
     <string name="notification_skip_prefix_summary">చాట్‌లోని గ్రూప్ పేరు వంటివి</string>
     <string name="notification_prefix_memory_title">ప్రారంభాన్ని గుర్తుంచుకునే సమయం</string>
     <string name="notification_access_summary">తీసివేయబడిన నోటిఫికేషన్ మరియు సారాంశాల కోసం చదవడం ఆపివేయడం అవసరం</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">నియమం</string>
     <string name="notification_rule_enabled">ఆన్</string>
     <string name="notification_rule_match">షరతులు</string>
-    <string name="notification_rule_match_all">అన్ని షరతులు సంతృప్తి చెందాలి</string>
-    <string name="notification_rule_match_any">కనీసం ఒక షరతును సంతృప్తి పరచాలి</string>
+    <string name="notification_rule_match_all">అన్ని షరతులు నెరవేరాలి</string>
+    <string name="notification_rule_match_any">కనీసం ఒక షరతు నెరవేరాలి</string>
     <string name="notification_rule_conditions">ఎప్పుడు</string>
     <string name="notification_rule_actions">అప్పుడు</string>
     <string name="notification_rule_add_condition">ఒక షరతును జోడించండి</string>

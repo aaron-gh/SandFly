@@ -45,12 +45,12 @@
     <string name="notification_remove_emoji_title">ຂ້າມ emoji</string>
     <string name="notification_lowercase_title">ອ່ານຕົວພິມໃຫຍ່ເປັນຄໍາສັບ</string>
     <string name="notification_lowercase_summary">ເຄື່ອງເວົ້າບາງເຄື່ອງສະກົດຄໍາໃນຕົວພິມໃຫຍ່ໂດຍຕົວອັກສອນ</string>
-    <string name="notification_separate_digits_title">ອ່ານຕົວເລກຍາວເປັນຕົວເລກ</string>
+    <string name="notification_separate_digits_title">ອ່ານຕົວເລກຍາວເທື່ອລະຫຼັກ</string>
     <string name="notification_separate_digits_summary">ເຊັ່ນ: ລະຫັດ ແລະເບີໂທລະສັບ</string>
     <string name="notification_min_digits_title">ຈຳນວນຫຼັກຕ່ຳສຸດຂອງຕົວເລກຍາວ</string>
     <string name="notification_urls_title">ລິ້ງ</string>
     <string name="notification_url_text_title">ກ່າວແທນການເຊື່ອມຕໍ່</string>
-    <string name="notification_skip_empty_title">ຂ້າມການແຈ້ງເຕືອນໂດຍບໍ່ມີຂໍ້ຄວາມ</string>
+    <string name="notification_skip_empty_title">ຂ້າມການແຈ້ງເຕືອນທີ່ບໍ່ມີຂໍ້ຄວາມ</string>
     <string name="notification_category_length">ຄວາມຍາວ</string>
     <string name="notification_max_words_title">ຈໍາ​ນວນ​ສູງ​ສຸດ​ຂອງ​ຄໍາ​ສັບ​ຕ່າງໆ​</string>
     <string name="notification_max_sentences_title">ຈໍານວນສູງສຸດຂອງປະໂຫຍກ</string>
@@ -63,7 +63,7 @@
     <string name="notification_skip_media_title">ຂ້າມເຄື່ອງຫຼິ້ນມີເດຍ</string>
     <string name="notification_skip_ongoing_title">ຂ້າມການແຈ້ງເຕືອນຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="notification_skip_ongoing_summary">ເຊັ່ນການນໍາທາງ ແລະເຄື່ອງຈັບເວລາ</string>
-    <string name="notification_skip_foreground_title">ຂ້າມການແຈ້ງເຕືອນແອັບ</string>
+    <string name="notification_skip_foreground_title">ຂ້າມການແຈ້ງເຕືອນຂອງແອັບທີ່ກຳລັງເຮັດວຽກ</string>
     <string name="notification_skip_foreground_summary">ເຊັ່ນ: VPN ຫຼື ເຄື່ອງບັນທຶກສຽງ</string>
     <string name="notification_skip_progress_title">ຂ້າມການແຈ້ງເຕືອນຄວາມຄືບໜ້າ</string>
     <string name="notification_skip_group_summaries_title">ຂ້າມການສະຫຼຸບກຸ່ມ</string>
@@ -96,7 +96,7 @@
     <string name="notification_numbers_alike_title">ຕົວເລກຖືວ່າຄືກັນ</string>
     <string name="notification_numbers_alike_summary">ເຊັ່ນ: ອັດຕາສ່ວນການດາວໂຫຼດ</string>
     <string name="notification_cooldown_title">ເວລາລະຫວ່າງການແຈ້ງເຕືອນຂອງແອັບຯ</string>
-    <string name="notification_skip_prefix_title">ຍົກເລີກຄຳນຳໜ້າຂໍ້ຄວາມຊ້ຳໆ</string>
+    <string name="notification_skip_prefix_title">ຂ້າມສ່ວນຕົ້ນທີ່ຊ້ຳ</string>
     <string name="notification_skip_prefix_summary">ເຊັ່ນ: ຊື່ຂອງກຸ່ມໃນການສົນທະນາ</string>
     <string name="notification_prefix_memory_title">ໄລຍະເວລາຈື່ຈຳສ່ວນຕົ້ນ</string>
     <string name="notification_access_summary">ຈໍາເປັນຕ້ອງຢຸດເຊົາການອ່ານແຈ້ງການທີ່ຖືກຍົກເລີກແລະສໍາລັບການສະຫຼຸບ</string>
@@ -208,8 +208,8 @@
     <string name="notification_rule_untitled">ກົດລະບຽບ</string>
     <string name="notification_rule_enabled">ເປີດແລ້ວ</string>
     <string name="notification_rule_match">ເງື່ອນໄຂ</string>
-    <string name="notification_rule_match_all">ເງື່ອນໄຂທັງຫມົດຕ້ອງໄດ້ຮັບການພໍໃຈ</string>
-    <string name="notification_rule_match_any">ຢ່າງໜ້ອຍໜຶ່ງເງື່ອນໄຂຕ້ອງພໍໃຈ</string>
+    <string name="notification_rule_match_all">ຕ້ອງກົງກັບເງື່ອນໄຂທັງໝົດ</string>
+    <string name="notification_rule_match_any">ຕ້ອງກົງກັບຢ່າງໜ້ອຍໜຶ່ງເງື່ອນໄຂ</string>
     <string name="notification_rule_conditions">ເມື່ອ</string>
     <string name="notification_rule_actions">ຈາກນັ້ນ</string>
     <string name="notification_rule_add_condition">ເພີ່ມເງື່ອນໄຂ</string>
