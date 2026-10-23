@@ -47,6 +47,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -96,8 +97,11 @@ public class FeedbackController {
   /** Whether sounds play through {@link LowLatencyAudio}. */
   private volatile boolean mLowLatencyAudio;
 
-  /** The most decoded samples kept for {@link LowLatencyAudio}, about 8 MB. */
-  private static final long MAX_CLIP_SAMPLES = 2_000_000L;
+  /**
+   * The most decoded samples kept for {@link LowLatencyAudio}, about 16 MB: over a minute of mono
+   * sound at 48 kHz, so that a whole sound theme stays decoded.
+   */
+  private static final long MAX_CLIP_SAMPLES = 4_000_000L;
 
   /** The most sounds remembered for {@link LowLatencyAudio}, decoded or not. */
   private static final int MAX_CLIPS = 256;
@@ -117,6 +121,12 @@ public class FeedbackController {
 
   /** The vibration service used to play vibration patterns. */
   private final Vibrator mVibrator;
+
+  /**
+   * How to play each sound that SoundPool is loading, by SoundPool sound ID: its left and right
+   * volumes and its rate. Each plays once loaded.
+   */
+  private final SparseArray<float[]> mPendingPlays = new SparseArray<>();
 
   /** Map from the resource IDs of loaded sounds to SoundPool sound IDs. */
   private final SparseIntArray mSoundIds = new SparseIntArray();
@@ -198,6 +208,7 @@ public class FeedbackController {
     mContext = context;
     mResources = context.getResources();
     mSoundPool = soundPool;
+    listenForLoads(soundPool);
     mVibrator = vibrator;
     parser = new HapticPatternParser(mVibrator);
   }
@@ -490,17 +501,29 @@ public class FeedbackController {
       new EarconsPlayTask(mSoundPool, soundId, leftVolume, rightVolume, rate).execute();
     } else {
       // The sound could not be played from the cache. Start loading the sound into the
-      // SoundPool for future use, and use a listener to play the sound ASAP.
-      mSoundPool.setOnLoadCompleteListener(
-          (soundPool, sampleId, status) -> {
-            if (mAuditoryEnabled && sampleId != 0) {
-              new EarconsPlayTask(mSoundPool, sampleId, leftVolume, rightVolume, rate).execute();
-            }
-          });
-      mSoundIds.put(
-          resId, path != null ? mSoundPool.load(path, 1) : mSoundPool.load(mContext, resId, 1));
+      // SoundPool for future use, and play it as soon as it has loaded.
+      soundId = path != null ? mSoundPool.load(path, 1) : mSoundPool.load(mContext, resId, 1);
+      mSoundIds.put(resId, soundId);
       mLoadedPaths.put(resId, path);
+      if (soundId != 0) {
+        mPendingPlays.put(soundId, new float[] {leftVolume, rightVolume, rate});
+      }
     }
+  }
+
+  /**
+   * Plays each sound that {@code soundPool} loads as asked when its load started. One listener
+   * serves every load, so that sounds loading at the same time each play with their own volumes.
+   */
+  private void listenForLoads(SoundPool soundPool) {
+    soundPool.setOnLoadCompleteListener(
+        (pool, sampleId, status) -> {
+          float @Nullable [] play = mPendingPlays.get(sampleId);
+          mPendingPlays.remove(sampleId);
+          if (play != null && pool == mSoundPool && mAuditoryEnabled && status == 0) {
+            new EarconsPlayTask(pool, sampleId, play[0], play[1], play[2]).execute();
+          }
+        });
   }
 
   /**
@@ -764,6 +787,28 @@ public class FeedbackController {
     if (mSpatialSoundPlayer != null) {
       mSpatialSoundPlayer.forgetSounds();
     }
+    decodeCustomSounds();
+  }
+
+  /**
+   * Decodes the sounds the user chose for {@link LowLatencyAudio} now, so that none has to wait
+   * for its first play to be decoded, and play the slower usual way meanwhile.
+   */
+  private void decodeCustomSounds() {
+    if (!mLowLatencyAudio || mCustomSoundPaths.isEmpty()) {
+      return;
+    }
+    @Nullable LowLatencyAudio player = LowLatencyAudio.get(mContext, sFeedbackAttributes);
+    if (player == null) {
+      return;
+    }
+    for (String path : new HashSet<>(mCustomSoundPaths.values())) {
+      if (!ThemeSounds.NONE.equals(path)) {
+        synchronized (mClips) {
+          decodeLater(player, path, /* resId= */ 0, path);
+        }
+      }
+    }
   }
 
   /**
@@ -827,6 +872,8 @@ public class FeedbackController {
     sFeedbackAttributes = attributes;
     mSoundPool.release();
     mSoundPool = createSoundPool();
+    listenForLoads(mSoundPool);
+    mPendingPlays.clear();
     mSoundIds.clear();
     mLoadedPaths.clear();
     // Whether sounds reach headphones is asked again, for the new kind of audio.
@@ -850,17 +897,31 @@ public class FeedbackController {
     synchronized (mClips) {
       clip = mClips.get(key);
       if (clip == null) {
-        if (!mClips.containsKey(key)) {
-          // Null marks a sound being decoded, or one that cannot be.
-          mClips.put(key, null);
-          trimClips(key);
-          mDecoder.execute(() -> decodeClip(player, key, resId, path));
-        }
+        decodeLater(player, key, resId, path);
         return false;
       }
     }
     player.play(clip, leftVolume, rightVolume, rate);
     return true;
+  }
+
+  /**
+   * Decodes a sound for {@link #mClips} on {@link #mDecoder}, unless it is decoded, being decoded
+   * or cannot be. Called with {@link #mClips} held.
+   */
+  private void decodeLater(LowLatencyAudio player, String key, int resId, @Nullable String path) {
+    if (mClips.containsKey(key)) {
+      return;
+    }
+    // Null marks a sound being decoded, or one that cannot be.
+    mClips.put(key, null);
+    trimClips(key);
+    try {
+      mDecoder.execute(() -> decodeClip(player, key, resId, path));
+    } catch (RejectedExecutionException e) {
+      // Shut down.
+      mClips.remove(key);
+    }
   }
 
   /** Decodes a sound for {@link #mClips}, on {@link #mDecoder}. */
@@ -940,6 +1001,8 @@ public class FeedbackController {
     if (wasEnabled && !enabled) {
       clearClips();
       LowLatencyAudio.shutdownAll();
+    } else if (!wasEnabled && enabled) {
+      decodeCustomSounds();
     }
   }
 
