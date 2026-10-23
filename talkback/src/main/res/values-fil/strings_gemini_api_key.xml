@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">I-save</string>
     <string name="gemini_api_key_get">Kumuha ng key</string>
     <string name="gemini_api_terms_link">Mga Karagdagang Tuntunin ng Serbisyo ng Gemini API</string>
+    <string name="title_pref_gemini_model">Gemini modelo</string>
+    <string name="gemini_model_automatic">Awtomatiko</string>
+    <string name="summary_pref_gemini_model_automatic">Awtomatiko: Gemini Flash, pagkatapos ay Flash-Lite kapag abala ang Flash</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, pagkatapos ay Flash-Lite kapag abala ito</string>
+    <string name="gemini_model_loading">Kinukuha ang mga modelo…</string>
+    <string name="gemini_model_list_failed">Hindi makuha ang mga modelo: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Magtakda muna ng Gemini API key</string>
+    <string name="ai_service_address_hint">Address, gaya ng https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Modelo</string>
+    <string name="ai_service_address_invalid">Ang address ay dapat magsimula sa https://. Walang na-save.</string>
+    <string name="dialog_message_ai_service_consent">Ang mga imahe at screenshot ay ipinapadala sa <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> upang ilarawan, na tumatagal ng ilang segundo. Nalalapat ang sarili nitong mga tuntunin at patakaran sa privacy. Pang-eksperimento ang Generative AI, kaya magkakamali ito.</string>
+    <string name="ai_service_error_api_key">Hindi tinanggap ng serbisyo ng AI ang API key. Suriin ang mga setting nito sa Mga awtomatikong paglalarawan.</string>
+    <string name="ai_service_error_quota">Naabot na ang limitasyon sa paggamit ng serbisyo ng AI. Subukan ulit mamaya.</string>
+    <string name="ai_service_error_busy">Ang serbisyo ng AI ay abala ngayon. Subukan muli sa isang sandali.</string>
+    <string name="ai_service_error_timeout">Masyadong matagal bago sumagot ang serbisyo ng AI. Subukan muli.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Wala</string>
+    <string name="ai_service_not_set_up">Walang ginagamit na serbisyo ng AI. Mag-set up ng isa o pumili ng isa sa mga setting ng Mga awtomatikong paglalarawan.</string>
+    <string name="ai_provider_none_set_up">Walang serbisyo ng AI na naka-set up. Mag-set up ng isa sa mga setting nito sa ibaba.</string>
+    <string name="ai_provider_other">Iba pang serbisyo</string>
+    <string name="title_pref_category_ai_services">Mga serbisyo ng AI</string>
+    <string name="title_pref_ai_provider">Serbisyo ng AI</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> mga setting</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, hindi naka-set up</string>
+    <string name="ai_provider_in_use">Ginagamit</string>
+    <string name="ai_provider_not_set_up">Hindi naka-set up</string>
+    <string name="ai_provider_not_ready">Pumili muna ng modelo</string>
+    <string name="ai_provider_address">Address</string>
+    <string name="ai_provider_address_message">Ang address ng isang serbisyo na may OpenAI-compatible na chat API at image input, gaya ng https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Hindi nakatakda</string>
+    <string name="ai_provider_set">Na-configure</string>
+    <string name="title_pref_gemini_api_key_of">API key ng <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modelo</string>
+    <string name="ai_provider_choose_model">Hindi pinili</string>
+    <string name="ai_provider_key_message">I-paste ang iyong <xliff:g id="service" example="Claude">%1$s</xliff:g> API key. Upang alisin ito, i-clear ang field at i-save. Ang mga larawan at screen na iyong inilalarawan ay ipinapadala sa <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Itakda muna ang <xliff:g id="service" example="Claude">%1$s</xliff:g> API key</string>
+    <string name="ai_provider_needs_address">Itakda muna ang address</string>
+    <string name="ai_provider_enter_model">Maglagay ng pangalan ng modelo</string>
 </resources>

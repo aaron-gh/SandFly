@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Malakas</string>
+    <string name="notification_shake_2">Katamtaman</string>
+    <string name="notification_shake_1">Malumanay</string>
+    <string name="notification_media_skip">Huwag basahin nang malakas</string>
+    <string name="notification_media_pause">I-pause ang media habang nagbabasa</string>
+    <string name="notification_media_read">Basahin nang malakas</string>
+    <string name="notification_headphones_only_without">Tanging walang headphones</string>
+    <string name="notification_headphones_only_with">May headphones lang</string>
+    <string name="notification_headphones_always">Magbasa nang malakas nang may headphone o walang</string>
+    <string name="notification_queue_skip">Huwag basahin nang malakas ang bagong notification</string>
+    <string name="notification_queue_interrupt">Abalahin ang notification na binabasa nang malakas</string>
+    <string name="notification_queue_queue">Basahin nang malakas pagkatapos ng kasalukuyang notification</string>
+    <string name="notification_url_omit">Huwag isama</string>
+    <string name="notification_url_replace">Sabihin ang teksto sa ibaba</string>
+    <string name="notification_url_domain">Basahin lamang ang site</string>
+    <string name="notification_url_full">Basahin ang buong link</string>
+    <string name="notification_category_title">Mga Notification</string>
+    <string name="notification_reading_title">Binabasa nang malakas ang mga notification</string>
+    <string name="notification_apps_title">Mga App</string>
+    <string name="notification_words_title">Mga salita at kapalit</string>
+    <string name="notification_kinds_title">Mga uri ng notification</string>
+    <string name="notification_when_title">Kung kailan magbabasa</string>
+    <string name="notification_rules_title">Mga tuntunin</string>
+    <string name="notification_repeats_title">Umuulit</string>
+    <string name="notification_stop_title">Itigil ang pagbabasa</string>
+    <string name="notification_schedules_title">Buod at oras</string>
+    <string name="notification_history_title">Kasaysayan ng abiso</string>
+    <string name="notification_test_title">Magpadala ng test notification</string>
+    <string name="notification_automation_title">Automation</string>
+    <string name="notification_automation_allowed_title">Payagan ang mga automation app</string>
+    <string name="notification_category_said">Kung ano ang sinasabi</string>
+    <string name="notification_format_title">Format ng pagsasalita</string>
+    <string name="notification_format_message">Mga Placeholder: {app}, {title}, {text}, {content} (ang buong text), {bigtext}, {subtext}, {ticker}, {category} at {time}.</string>
+    <string name="notification_private_format_title">Sabi ng mga pribadong notification</string>
+    <string name="notification_private_format_message">Sinabi bilang kapalit ng nilalaman ng pribadong notification. Mga placeholder: {app}, {category} at {time}.</string>
+    <string name="notification_category_voice">Boses</string>
+    <string name="notification_voice_title">Boses</string>
+    <string name="notification_voice_sandfly">Boses ni SandFly</string>
+    <string name="notification_detect_language_title">I-detect ang wika</string>
+    <string name="notification_detect_language_summary">Sabihin ang bawat notification sa wika kung saan ito nakasulat. Kailangang awtomatikong lumipat ng wika sa mga setting ng Text-to-speech.</string>
+    <string name="notification_sound_before_title">Tunog bago ang mga notification</string>
+    <string name="notification_category_text">Text</string>
+    <string name="notification_remove_emoji_title">Iwanan ang emoji</string>
+    <string name="notification_lowercase_title">Basahin ang mga malalaking titik bilang mga salita</string>
+    <string name="notification_lowercase_summary">Ang ilang mga speech engine ay nagbabaybay ng mga salita sa malalaking titik bawat titik</string>
+    <string name="notification_separate_digits_title">Basahin ang mahahabang numero digit sa digit</string>
+    <string name="notification_separate_digits_summary">Gaya ng mga code at numero ng telepono</string>
+    <string name="notification_min_digits_title">Minimum na digit sa mahabang numero</string>
+    <string name="notification_urls_title">Mga Link</string>
+    <string name="notification_url_text_title">Sinabi sa lugar ng isang link</string>
+    <string name="notification_skip_empty_title">Laktawan ang mga notification na walang text</string>
+    <string name="notification_category_length">Ang haba</string>
+    <string name="notification_max_words_title">Pinakamataas na bilang ng mga salita</string>
+    <string name="notification_max_sentences_title">Pinakamataas na bilang ng mga pangungusap</string>
+    <string name="notification_max_characters_title">Pinakamataas na bilang ng mga character</string>
+    <string name="notification_max_seconds_title">Itigil ang pagbabasa pagkatapos</string>
+    <string name="notification_category_timing">Timing</string>
+    <string name="notification_delay_title">Maghintay bago magbasa</string>
+    <string name="notification_queue_title">Kapag binasa ang isa pang notification</string>
+    <string name="notification_repeat_minutes_title">Basahin muli hanggang sa mag-on ang screen</string>
+    <string name="notification_skip_media_title">Laktawan ang mga media player</string>
+    <string name="notification_skip_ongoing_title">Laktawan ang mga kasalukuyang notification</string>
+    <string name="notification_skip_ongoing_summary">Gaya ng nabigasyon at mga timer</string>
+    <string name="notification_skip_foreground_title">Laktawan ang pagpapatakbo ng mga notification ng app</string>
+    <string name="notification_skip_foreground_summary">Gaya ng VPN o isang recorder</string>
+    <string name="notification_skip_progress_title">Laktawan ang mga abiso sa pag-unlad</string>
+    <string name="notification_skip_group_summaries_title">Laktawan ang mga buod ng pangkat</string>
+    <string name="notification_skip_group_summaries_summary">Gaya ng \"3 bagong mensahe\"</string>
+    <string name="notification_skip_low_priority_title">Laktawan ang mga notification na mababa ang priyoridad</string>
+    <string name="notification_skip_system_title">Laktawan ang mga notification ng system</string>
+    <string name="notification_screen_on_title">Habang naka-on ang screen</string>
+    <string name="notification_screen_off_title">Habang naka-off ang screen</string>
+    <string name="notification_locked_title">Habang naka lock ang phone</string>
+    <string name="notification_headphones_title">Mga headphone</string>
+    <string name="notification_media_title">Habang naglalaro ang media</string>
+    <string name="notification_dnd_title">Huwag Istorbohin</string>
+    <string name="notification_dnd_none">Huwag basahin nang malakas ang anumang notification</string>
+    <string name="notification_dnd_allowed">Basahin ang mga notification na pinapayagan ng Do Not Disturb mode</string>
+    <string name="notification_dnd_all">Basahin lahat</string>
+    <string name="notification_touch_title">Habang hinawakan ang screen</string>
+    <string name="notification_touch_read">Basahin agad</string>
+    <string name="notification_touch_after">Basahin kapag natapos na ang pagpindot</string>
+    <string name="notification_touch_skip">Huwag basahin nang malakas</string>
+    <string name="notification_during_calls_title">Habang tumatawag</string>
+    <string name="notification_honour_silent_title">Wala sa silent mode</string>
+    <string name="notification_honour_vibrate_title">Wala sa vibrate mode</string>
+    <string name="notification_skip_in_car_title">Wala sa car mode</string>
+    <string name="notification_skip_in_car_summary">Gaya ng sa Android Auto, na mismong nagbabasa sa kanila</string>
+    <string name="notification_category_quiet_hours">Tahimik na oras</string>
+    <string name="notification_quiet_hours_title">Tahimik na oras</string>
+    <string name="notification_quiet_start_title">Magsimula</string>
+    <string name="notification_quiet_end_title">Tapusin</string>
+    <string name="notification_repeat_seconds_title">Laktawan ang parehong notification para sa</string>
+    <string name="notification_numbers_alike_title">Tratuhin ang iba\'t ibang mga numero bilang magkapareho</string>
+    <string name="notification_numbers_alike_summary">Gaya ng porsyento ng pag-download</string>
+    <string name="notification_cooldown_title">Oras sa pagitan ng mga notification ng isang app</string>
+    <string name="notification_skip_prefix_title">Alisin ang paulit-ulit na prefix ng teksto</string>
+    <string name="notification_skip_prefix_summary">Gaya ng pangalan ng isang grupo sa isang chat</string>
+    <string name="notification_prefix_memory_title">Gaano katagal dapat tandaan ang prefix ng teksto</string>
+    <string name="notification_access_summary">Kailangang ihinto ang pagbabasa ng na-dismiss na notification at para sa mga buod</string>
+    <string name="notification_shake_title">Umiling para huminto</string>
+    <string name="notification_shake_strength_title">Lakas ng pag-alog</string>
+    <string name="notification_wave_title">Iwagayway ang kamay para tumigil sa pagbabasa</string>
+    <string name="notification_wave_summary">Paglipat ng kamay sa proximity sensor</string>
+    <string name="notification_pocket_title">Pocket mode</string>
+    <string name="notification_pocket_summary">Ang isang sensor na natatakpan kapag nagsimula ang pagbabasa, tulad ng sa isang bulsa, ay hindi humihinto dito</string>
+    <string name="notification_volume_keys_title">Pindutin ang parehong volume key</string>
+    <string name="notification_dismiss_title">Itigil ang pagbabasa kapag na-dismiss ang notification</string>
+    <string name="notification_watch_dismiss_title">Gayundin kapag na-dismiss ang notification sa isang smartwatch</string>
+    <string name="notification_app_cancel_title">Itigil ang pagbabasa kapag inalis ng app ang notification</string>
+    <string name="notification_category_summary">Buod</string>
+    <string name="notification_summary_now_title">Basahin ang mga abiso ngayon</string>
+    <string name="notification_summary_daily_title">Basahin ang mga abiso araw-araw</string>
+    <string name="notification_summary_time_title">Oras</string>
+    <string name="notification_summary_newest_first_title">Pinakabago muna</string>
+    <string name="notification_summary_name_title">Pangalan mo</string>
+    <string name="notification_summary_gap_title">I-pause sa pagitan ng mga notification</string>
+    <string name="notification_summary_needs_sandfly">I-on ang SandFly para basahin ang mga notification</string>
+    <string name="notification_summary_no_access">Naka-off ang access sa notification</string>
+    <string name="notification_summary_morning">Magandang umaga po.</string>
+    <string name="notification_summary_afternoon">Magandang hapon po.</string>
+    <string name="notification_summary_evening">Magandang gabi po.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Mga anunsyo ng oras</string>
+    <string name="notification_clock_interval_title">Sabihin ang oras sa bawat</string>
+    <string name="notification_clock_format_title">Format ng oras</string>
+    <string name="notification_clock_format_message">Mga placeholder: {time}, {date} at {battery} (ang porsyento ng baterya).</string>
+    <string name="notification_clock_format_default">Ito ay {time}</string>
+    <string name="notification_clock_exact_title">Mga eksaktong oras</string>
+    <string name="notification_clock_exact_summary">Nangangailangan ng mga Alarm at paalala. Kung hindi, ang oras ay masasabing huli ng isang minuto.</string>
+    <string name="notification_other_apps_title">Iba pang mga app</string>
+    <string name="notification_apps_category">Mga App</string>
+    <string name="notification_apps_loading">Naglo-load ng mga app</string>
+    <string name="notification_app_mode_title">Mga Notification</string>
+    <string name="notification_app_mode_default">Tulad ng iba pang mga app</string>
+    <string name="notification_app_mode_read">Basahin nang malakas</string>
+    <string name="notification_app_mode_private">Pangalan lang ng app</string>
+    <string name="notification_app_mode_priority">Basahin muna</string>
+    <string name="notification_app_mode_ignore">Huwag basahin nang malakas</string>
+    <string name="notification_app_name_title">Binibigkas na pangalan</string>
+    <string name="notification_app_said_as">sinabi bilang <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">I-reset</string>
+    <string name="notification_required_title">Basahin lamang ang mga notification gamit ang</string>
+    <string name="notification_blocked_title">Huwag basahin ang mga notification gamit ang</string>
+    <string name="notification_private_title">Basahin lamang ang pangalan ng app para sa</string>
+    <string name="notification_replacements_title">Iba ang sabihin</string>
+    <string name="notification_add_word">Magdagdag ng salita</string>
+    <string name="notification_add_replacement">Magdagdag ng kapalit</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> bilang <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Text</string>
+    <string name="notification_replace_with">Sabihin bilang</string>
+    <string name="notification_whole_words">Buong salita lang</string>
+    <string name="notification_regex">Regular na pagpapahayag</string>
+    <string name="notification_enter_text">Maglagay ng text</string>
+    <string name="notification_invalid_regex">Hindi wastong regular na expression</string>
+    <string name="notification_edit">I-edit</string>
+    <string name="notification_remove">Alisin</string>
+    <string name="notification_history_keep">I-save ang kasaysayan ng notification</string>
+    <string name="notification_history_clear">I-clear ang kasaysayan</string>
+    <string name="notification_history_category">Mga Notification</string>
+    <string name="notification_history_empty">Walang notification</string>
+    <string name="notification_history_ignore_app">Huwag basahin <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Basahin lamang ang pangalan ng <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Basahin muna ang <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Huwag basahin ang mga notification na tulad nito</string>
+    <string name="notification_history_copy">Kopyahin</string>
+    <string name="notification_saved">Nai-save</string>
+    <string name="notification_copied">Kinopya</string>
+    <string name="notification_outcome_read">Matagumpay na basahin nang malakas</string>
+    <string name="notification_outcome_stopped">Huminto habang nagbabasa</string>
+    <string name="notification_outcome_speech_off">Hindi nabasa: naka-off ang notification speech</string>
+    <string name="notification_outcome_dnd">Hindi nabasa: Huwag Istorbohin</string>
+    <string name="notification_outcome_touching">Hindi nabasa: hinawakan ang screen</string>
+    <string name="notification_outcome_app">Hindi nabasa: app</string>
+    <string name="notification_outcome_ongoing">Hindi nabasa: patuloy</string>
+    <string name="notification_outcome_foreground">Hindi nabasa: tumatakbo ang app</string>
+    <string name="notification_outcome_low_priority">Hindi nabasa: mababang priyoridad</string>
+    <string name="notification_outcome_system">Hindi nabasa: system</string>
+    <string name="notification_outcome_media">Hindi nabasa: media player</string>
+    <string name="notification_outcome_group_summary">Hindi nabasa: buod ng grupo</string>
+    <string name="notification_outcome_progress">Hindi nabasa: pag-unlad</string>
+    <string name="notification_outcome_required">Hindi nabasa: kulang ang mga kinakailangang salita</string>
+    <string name="notification_outcome_blocked">Hindi nabasa: naka-block na salita</string>
+    <string name="notification_outcome_empty">Hindi nabasa: walang text</string>
+    <string name="notification_outcome_repeat">Hindi nabasa: ulitin</string>
+    <string name="notification_outcome_cooldown">Hindi binasa nang malakas: kamakailan lang binasa ang isa pang notification mula sa app na ito</string>
+    <string name="notification_outcome_quiet_hours">Hindi nabasa: tahimik na oras</string>
+    <string name="notification_outcome_screen_on">Hindi nabasa: naka-on ang screen</string>
+    <string name="notification_outcome_screen_off">Hindi nabasa: naka-off ang screen</string>
+    <string name="notification_outcome_locked">Hindi nabasa: naka-lock</string>
+    <string name="notification_outcome_headphones">Hindi nabasa: nakakonekta ang mga headphone</string>
+    <string name="notification_outcome_no_headphones">Hindi nabasa: walang headphone</string>
+    <string name="notification_outcome_silent">Hindi nabasa: silent mode</string>
+    <string name="notification_outcome_vibrate">Hindi nabasa: vibrate mode</string>
+    <string name="notification_outcome_media_playing">Hindi nabasa: media playing</string>
+    <string name="notification_outcome_car">Hindi nabasa: mode ng kotse</string>
+    <string name="notification_outcome_rule">Hindi nabasa: tuntunin</string>
+    <string name="notification_outcome_busy">Hindi nabasa: binasa ang isa pang notification</string>
+    <string name="notification_outcome_call">Inanunsyo bilang isang papasok na tawag sa telepono</string>
+    <string name="notification_rule_add">Magdagdag ng panuntunan</string>
+    <string name="notification_rule_from_template">Magdagdag ng panuntunan mula sa isang template</string>
+    <string name="notification_rules_category">Mga tuntunin</string>
+    <string name="notification_rules_empty">Walang rules</string>
+    <string name="notification_rule_name">Pangalan</string>
+    <string name="notification_rule_untitled">Panuntunan</string>
+    <string name="notification_rule_enabled">Naka-on</string>
+    <string name="notification_rule_match">Mga kundisyon</string>
+    <string name="notification_rule_match_all">Ang lahat ng mga kondisyon ay dapat matugunan</string>
+    <string name="notification_rule_match_any">Hindi bababa sa isang kundisyon ang dapat matugunan</string>
+    <string name="notification_rule_conditions">Kailan</string>
+    <string name="notification_rule_actions">Pagkatapos</string>
+    <string name="notification_rule_add_condition">Magdagdag ng kundisyon</string>
+    <string name="notification_rule_add_action">Magdagdag ng aksyon</string>
+    <string name="notification_rule_invert">Baligtarin ang kundisyon</string>
+    <string name="notification_rule_delete">Tanggalin ang panuntunan</string>
+    <string name="notification_rule_delete_confirm">Tanggalin ang <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Palagi</string>
+    <string name="notification_rule_no_actions">walang nangyayari</string>
+    <string name="notification_rule_and">" at "</string>
+    <string name="notification_rule_or">" o "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">May headphones lang</string>
+    <string name="notification_template_night">Tahimik sa gabi</string>
+    <string name="notification_template_screen_off">Naka-off lang ang screen</string>
+    <string name="notification_template_locked_private">Tanging ang pangalan ng app kapag naka-lock ang telepono</string>
+    <string name="notification_template_short_on_battery">Magbasa nang maikli kapag hindi nagcha-charge</string>
+    <string name="notification_type_bluetooth">Bluetooth device</string>
+    <string name="notification_type_wired">Wired na headphones</string>
+    <string name="notification_type_wifi">Wi-Fi network</string>
+    <string name="notification_type_time">Oras ng araw</string>
+    <string name="notification_type_screen">Naka-on ang screen</string>
+    <string name="notification_type_locked">Naka-lock ang telepono</string>
+    <string name="notification_type_from_app">Notification mula sa isang app</string>
+    <string name="notification_type_foreground">App sa foreground</string>
+    <string name="notification_type_contains">Naglalaman ang notification</string>
+    <string name="notification_type_battery">Antas ng baterya sa ibaba</string>
+    <string name="notification_type_charging">Nagcha-charge</string>
+    <string name="notification_type_landscape">Landscape</string>
+    <string name="notification_type_silent">Silent o vibrate mode</string>
+    <string name="notification_type_media">Naglalaro ng media</string>
+    <string name="notification_bluetooth_any">Kahit anong device</string>
+    <string name="notification_wifi_hint">Pangalan ng network</string>
+    <string name="notification_choose_app">Pumili ng app</string>
+    <string name="notification_time_start">Mula sa</string>
+    <string name="notification_time_end">Hanggang sa</string>
+    <string name="notification_time_days">Mga araw</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> hanggang <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">Kailangan ng SandFly ang pahintulot na iyon para sa kundisyong ito</string>
+    <string name="notification_cond_bluetooth">Ang <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ay konektado</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ay hindi konektado</string>
+    <string name="notification_cond_bluetooth_any">Nakakonekta ang isang Bluetooth audio device</string>
+    <string name="notification_cond_bluetooth_any_not">Walang nakakonektang Bluetooth audio device</string>
+    <string name="notification_cond_wired">Nakakonekta ang mga wired na headphone</string>
+    <string name="notification_cond_wired_not">Ang mga wired na headphone ay hindi konektado</string>
+    <string name="notification_cond_battery_below">Ang baterya ay mas mababa sa <xliff:g id="percent" example="20">%1$d</xliff:g> porsyento</string>
+    <string name="notification_cond_battery_below_not">Ang baterya ay nasa <xliff:g id="percent" example="20">%1$d</xliff:g> porsyento o higit pa</string>
+    <string name="notification_cond_charging">Nagcha-charge ang telepono</string>
+    <string name="notification_cond_charging_not">Ang telepono ay hindi nagcha-charge</string>
+    <string name="notification_cond_locked">Naka-lock ang telepono</string>
+    <string name="notification_cond_locked_not">Naka-unlock ang telepono</string>
+    <string name="notification_cond_screen_on">Naka-on ang screen</string>
+    <string name="notification_cond_screen_on_not">Naka-off ang screen</string>
+    <string name="notification_cond_landscape">Ang screen ay nasa landscape</string>
+    <string name="notification_cond_landscape_not">Ang screen ay nasa portrait</string>
+    <string name="notification_cond_time">Ang oras ay <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Ang oras ay hindi <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Nakakonekta sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Hindi konektado sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Nakakonekta sa Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Hindi konektado sa Wi-Fi</string>
+    <string name="notification_cond_foreground">Nasa foreground ang <xliff:g id="app" example="Maps">%1$s</xliff:g></string>
+    <string name="notification_cond_foreground_not">Wala si <xliff:g id="app" example="Maps">%1$s</xliff:g> sa harap</string>
+    <string name="notification_cond_from">Ang notification ay mula sa <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Ang notification ay hindi mula sa <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Ang notification ay naglalaman ng <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Ang notification ay hindi naglalaman ng <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Ang ring ay tahimik o nag-vibrate</string>
+    <string name="notification_cond_silent_not">Tumunog ang ring</string>
+    <string name="notification_cond_media">Naglalaro ang media</string>
+    <string name="notification_cond_media_not">Walang nagpe-play na media</string>
+    <string name="notification_action_skip">huwag basahin</string>
+    <string name="notification_action_private">basahin lamang ang pangalan ng app</string>
+    <string name="notification_action_not_private">basahin nang buo, kahit pribado</string>
+    <string name="notification_action_format">gumamit ng format ng pagsasalita</string>
+    <string name="notification_action_max_words">basahin hanggang sa ilang salita</string>
+    <string name="notification_action_no_limit">basahin nang walang limitasyon sa haba</string>
+    <string name="notification_action_keep_emoji">panatilihin ang emoji</string>
+    <string name="notification_action_keep_numbers">panatilihing magkasama ang mga numero</string>
+    <string name="notification_action_priority">basahin mo muna</string>
+    <string name="notification_action_always_read">Basahin nang malakas ang mga notification kahit sa tahimik na oras o iba pang pinaghihigpitang oras</string>
+    <string name="notification_action_voice">basahin gamit ang isang voice profile</string>
+    <string name="notification_action_voice_value">basahin gamit ang <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">basahin gamit ang boses ng SandFly</string>
+    <string name="notification_voice_removed">Inalis ang profile ng boses</string>
+    <string name="notification_action_format_value">gamitin ang format ng pagsasalita <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">basahin hanggang <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Naka-off</string>
+    <string name="notification_on">Naka-on</string>
+    <string name="notification_never_again">Hanggang mag-restart ang SandFly</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Binabasa nang malakas ang mga notification</string>
+    <string name="notification_speech_now_on">Naka-enable ang pagbabasa ng mga notification nang malakas</string>
+    <string name="notification_speech_now_off">Na-disable ang pagbabasa ng mga notification nang malakas</string>
+    <string name="notification_no_last_notification">Walang nabasang notification</string>
+    <string name="shortcut_read_notifications">Basahin ang mga notification</string>
+    <string name="shortcut_toggle_notification_speech">Naka-on o naka-off ang notification speech</string>
+    <string name="shortcut_read_last_notification">Basahin muli ang huling notification</string>
+    <string name="shortcut_stop_notification">Itigil ang pagbabasa ng notification</string>
+    <string name="notification_test_posting">Susundan ang isang abiso sa pagsubok sa loob ng 5 segundo</string>
+    <string name="notification_test_not_allowed">Payagan ang SandFly na magpakita muna ng mga notification</string>
+    <string name="notification_test_content_title">SandFly pagsubok</string>
+    <string name="notification_test_content_text">Isa itong pansubok na notification, basahin kasama ang iyong mga setting ng notification. 123456</string>
+    <string name="notification_automation_on">I-enable ang pagbabasa ng mga notification nang malakas</string>
+    <string name="notification_automation_off">I-disable ang pagbabasa ng mga notification nang malakas</string>
+    <string name="notification_automation_toggle">Paganahin o huwag paganahin ang pagbabasa ng mga notification nang malakas</string>
+    <string name="notification_automation_stop">Itigil ang pagbabasa ng notification</string>
+    <string name="notification_automation_read_all">Basahin ang mga notification</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segundo</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> segundo</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuto</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minuto</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> oras</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> oras</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> salita</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> salita</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> pangungusap</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> pangungusap</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> character ng teksto</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> character ng teksto</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> digit</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> digit</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Mayroon kang <xliff:g id="count" example="1">%d</xliff:g> notification.</item>
+        <item quantity="other">Mayroon kang <xliff:g id="count" example="5">%d</xliff:g> notification.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
