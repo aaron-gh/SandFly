@@ -503,6 +503,10 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 **Controls** > **Touch and activation** > **Volume keys move the cursor**, off by default, makes the volume keys move the cursor while a text field has focus: volume up moves it back a character and volume down moves it on, saying the character.
 
+### Container navigation
+
+Next container and Previous container (Action + Control + Alt + Right or Left arrow, or a four-finger swipe right or left) also stop at toolbars, tab bars, navigation bars, search bars and panes, besides lists, grids and scroll views. Previous container moves to the first item of the container, as Next container does, not its last item.
+
 ### Telegram reply quotes
 
 In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own, so the quoted message can't be opened from it.

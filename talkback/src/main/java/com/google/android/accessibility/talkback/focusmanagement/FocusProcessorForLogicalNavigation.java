@@ -186,6 +186,9 @@ public class FocusProcessorForLogicalNavigation {
   private static final long EARLY_SCROLL_RETRY_MS = 16;
   private static final int EARLY_SCROLL_RETRIES = 6;
 
+  /** Most items that previous container steps back over to reach the start of a container. */
+  private static final int MAX_CONTAINER_START_STEPS = 500;
+
   // Checks whether a page scroll has already moved the list, before its scroll event arrives.
   private final Handler earlyScrollCheckHandler = new Handler(Looper.getMainLooper());
 
@@ -870,6 +873,28 @@ public class FocusProcessorForLogicalNavigation {
                     !Objects.equals(containerOld, currentContainer(n))
                         && AccessibilityNodeInfoUtils.shouldFocusNode(
                             n, traversalStrategy.getSpeakingNodesCache())));
+    // SandFly: the previous container is entered at its start, as the next one is, rather than at
+    // its last item.
+    if (target != null
+        && direction == TraversalStrategy.SEARCH_FOCUS_BACKWARD
+        && navigationAction.targetType == TARGET_CONTAINER) {
+      @Nullable AccessibilityNodeInfoCompat containerNew = currentContainer(target);
+      for (int step = 0; step < MAX_CONTAINER_START_STEPS; step++) {
+        @Nullable AccessibilityNodeInfoCompat previous =
+            TraversalStrategyUtils.searchFocus(
+                traversalStrategy,
+                target,
+                direction,
+                Filter.node(
+                    n ->
+                        AccessibilityNodeInfoUtils.shouldFocusNode(
+                            n, traversalStrategy.getSpeakingNodesCache())));
+        if (previous == null || !Objects.equals(containerNew, currentContainer(previous))) {
+          break;
+        }
+        target = previous;
+      }
+    }
     LogUtils.v(
         TAG,
         "FocusProcessorForLogicalNavigation.findContainerTarget() target container=%s",
