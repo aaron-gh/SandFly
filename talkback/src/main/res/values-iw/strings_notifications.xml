@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">קטיעה</string>
     <string name="notification_queue_queue">הקראה אחריה</string>
     <string name="notification_url_omit">השמטה</string>
-    <string name="notification_url_replace">אמור את הטקסט למטה</string>
-    <string name="notification_url_domain">קרא את האתר בלבד</string>
-    <string name="notification_url_full">קרא את כל הקישור</string>
+    <string name="notification_url_replace">לומר את הטקסט שלמטה</string>
+    <string name="notification_url_domain">להקריא רק את האתר</string>
+    <string name="notification_url_full">להקריא את כל הקישור</string>
     <string name="notification_category_title">התראות</string>
     <string name="notification_reading_title">קריאת התראות בקול</string>
     <string name="notification_apps_title">אפליקציות</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">כמו קודים ומספרי טלפון</string>
     <string name="notification_min_digits_title">ספרות מינימום במספר ארוך</string>
     <string name="notification_urls_title">קישורים</string>
-    <string name="notification_url_text_title">נאמר במקום קישור</string>
+    <string name="notification_url_text_title">טקסט שנאמר במקום קישור</string>
     <string name="notification_skip_empty_title">דלג על התראות ללא טקסט</string>
     <string name="notification_category_length">אורך</string>
     <string name="notification_max_words_title">מספר מקסימלי של מילים</string>
@@ -81,7 +81,7 @@
     <string name="notification_dnd_all">הקראת הכול</string>
     <string name="notification_touch_title">בזמן שנוגעים במסך</string>
     <string name="notification_touch_read">הקראה מיידית</string>
-    <string name="notification_touch_after">קרא כאשר המגע מסתיים</string>
+    <string name="notification_touch_after">להקריא כשהמגע מסתיים</string>
     <string name="notification_touch_skip">לא להקריא</string>
     <string name="notification_during_calls_title">במהלך שיחות</string>
     <string name="notification_honour_silent_title">לא במצב שקט</string>
@@ -233,7 +233,7 @@
     <string name="notification_type_time">שעה ביום</string>
     <string name="notification_type_screen">מסך דולק</string>
     <string name="notification_type_locked">הטלפון נעול</string>
-    <string name="notification_type_from_app">הודעה מאפליקציה</string>
+    <string name="notification_type_from_app">התראה מאפליקציה</string>
     <string name="notification_type_foreground">אפליקציה בחזית</string>
     <string name="notification_type_contains">הודעה מכילה</string>
     <string name="notification_type_battery">רמת הסוללה מתחת</string>

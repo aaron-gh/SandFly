@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">中斷</string>
     <string name="notification_queue_queue">之後朗讀</string>
     <string name="notification_url_omit">省略</string>
-    <string name="notification_url_replace">說出下面的文字</string>
-    <string name="notification_url_domain">僅閱讀網站</string>
-    <string name="notification_url_full">閱讀整個鏈接</string>
+    <string name="notification_url_replace">說出下方文字</string>
+    <string name="notification_url_domain">只朗讀網站名稱</string>
+    <string name="notification_url_full">朗讀完整連結</string>
     <string name="notification_category_title">通知</string>
     <string name="notification_reading_title">通知朗讀</string>
     <string name="notification_apps_title">應用程式</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">例如代碼和電話號碼</string>
     <string name="notification_min_digits_title">長數字的最少位數</string>
     <string name="notification_urls_title">連結</string>
-    <string name="notification_url_text_title">代替連結說</string>
+    <string name="notification_url_text_title">代替連結讀出的文字</string>
     <string name="notification_skip_empty_title">跳過沒有文字的通知</string>
     <string name="notification_category_length">長度</string>
     <string name="notification_max_words_title">最大字數</string>
@@ -79,9 +79,9 @@
     <string name="notification_dnd_none">不朗讀任何通知</string>
     <string name="notification_dnd_allowed">閱讀「請勿打擾」模式允許的通知</string>
     <string name="notification_dnd_all">朗讀全部</string>
-    <string name="notification_touch_title">當觸摸螢幕時</string>
+    <string name="notification_touch_title">觸控螢幕時</string>
     <string name="notification_touch_read">立即朗讀</string>
-    <string name="notification_touch_after">觸摸結束時讀取</string>
+    <string name="notification_touch_after">觸控結束後朗讀</string>
     <string name="notification_touch_skip">不朗讀</string>
     <string name="notification_during_calls_title">通話期間</string>
     <string name="notification_honour_silent_title">不在靜音模式下</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">電池電量低於</string>
     <string name="notification_type_charging">充電</string>
     <string name="notification_type_landscape">橫向</string>
-    <string name="notification_type_silent">靜音或振動模式</string>
+    <string name="notification_type_silent">靜音或震動模式</string>
     <string name="notification_type_media">媒體播放</string>
     <string name="notification_bluetooth_any">任何裝置</string>
     <string name="notification_wifi_hint">網路名稱</string>

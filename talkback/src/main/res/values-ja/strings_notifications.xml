@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">中断する</string>
     <string name="notification_queue_queue">後で読み上げる</string>
     <string name="notification_url_omit">除外する</string>
-    <string name="notification_url_replace">以下のテキストを言ってください</string>
-    <string name="notification_url_domain">サイトだけ読む</string>
-    <string name="notification_url_full">リンク全体を読む</string>
+    <string name="notification_url_replace">下のテキストを読み上げる</string>
+    <string name="notification_url_domain">サイト名のみ読み上げる</string>
+    <string name="notification_url_full">リンク全体を読み上げる</string>
     <string name="notification_category_title">通知</string>
     <string name="notification_reading_title">通知を読み上げる</string>
     <string name="notification_apps_title">アプリ</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">コードや電話番号など</string>
     <string name="notification_min_digits_title">長い数値の最小桁数</string>
     <string name="notification_urls_title">リンク</string>
-    <string name="notification_url_text_title">リンクの代わりに言いました</string>
+    <string name="notification_url_text_title">リンクの代わりに読み上げるテキスト</string>
     <string name="notification_skip_empty_title">テキストのない通知をスキップ</string>
     <string name="notification_category_length">長さ</string>
     <string name="notification_max_words_title">最大単語数</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">バッテリー残量が次より少ない</string>
     <string name="notification_type_charging">充電中</string>
     <string name="notification_type_landscape">横向き</string>
-    <string name="notification_type_silent">サイレントモードまたはバイブレーションモード</string>
+    <string name="notification_type_silent">サイレント モードまたはバイブレーション モード</string>
     <string name="notification_type_media">メディアの再生</string>
     <string name="notification_bluetooth_any">すべてのデバイス</string>
     <string name="notification_wifi_hint">ネットワーク名</string>

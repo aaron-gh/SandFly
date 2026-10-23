@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Тасалдуулах</string>
     <string name="notification_queue_queue">Дараа нь унших</string>
     <string name="notification_url_omit">Орхих</string>
-    <string name="notification_url_replace">Доорх текстийг хэлнэ үү</string>
-    <string name="notification_url_domain">Зөвхөн сайтыг уншина уу</string>
-    <string name="notification_url_full">Холбоосыг бүхэлд нь уншина уу</string>
+    <string name="notification_url_replace">Доорх текстийг хэлэх</string>
+    <string name="notification_url_domain">Зөвхөн сайтыг унших</string>
+    <string name="notification_url_full">Холбоосыг бүтнээр нь унших</string>
     <string name="notification_category_title">Мэдэгдлүүд</string>
     <string name="notification_reading_title">Мэдэгдэлийг чангаар унших</string>
     <string name="notification_apps_title">Аппууд</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Код, утасны дугаар гэх мэт</string>
     <string name="notification_min_digits_title">Урт тооны хамгийн бага цифрийн тоо</string>
     <string name="notification_urls_title">Холбооснууд</string>
-    <string name="notification_url_text_title">Холбоосны оронд хэлсэн</string>
+    <string name="notification_url_text_title">Холбоосын оронд хэлэх текст</string>
     <string name="notification_skip_empty_title">Текстгүй мэдэгдлийг алгасах</string>
     <string name="notification_category_length">Урт</string>
     <string name="notification_max_words_title">Үгийн хамгийн их тоо</string>
@@ -81,7 +81,7 @@
     <string name="notification_dnd_all">Бүгдийг унш</string>
     <string name="notification_touch_title">Дэлгэцэнд хүрч байхад</string>
     <string name="notification_touch_read">Шууд унших</string>
-    <string name="notification_touch_after">Мэдрэлт дуусах үед уншина уу</string>
+    <string name="notification_touch_after">Хүрэлт дуусахад унших</string>
     <string name="notification_touch_skip">Уншихгүй</string>
     <string name="notification_during_calls_title">Дуудлагын үеэр</string>
     <string name="notification_honour_silent_title">Чимээгүй горимд биш</string>
@@ -233,7 +233,7 @@
     <string name="notification_type_time">Өдрийн цаг</string>
     <string name="notification_type_screen">Дэлгэц асаалттай</string>
     <string name="notification_type_locked">Утас түгжигдсэн</string>
-    <string name="notification_type_from_app">Аппликешны мэдэгдэл</string>
+    <string name="notification_type_from_app">Аппын мэдэгдэл</string>
     <string name="notification_type_foreground">Аппликешн урд талд</string>
     <string name="notification_type_contains">Мэдэгдэл агуулж байна</string>
     <string name="notification_type_battery">Батерейны түвшин үүнээс доош</string>

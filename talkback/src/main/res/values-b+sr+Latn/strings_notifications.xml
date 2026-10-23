@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Prekini</string>
     <string name="notification_queue_queue">Čitaj posle</string>
     <string name="notification_url_omit">Izostavi</string>
-    <string name="notification_url_replace">Recite tekst ispod</string>
-    <string name="notification_url_domain">Čitajte samo sajt</string>
-    <string name="notification_url_full">Pročitajte ceo link</string>
+    <string name="notification_url_replace">Izgovoriti tekst ispod</string>
+    <string name="notification_url_domain">Čitati samo sajt</string>
+    <string name="notification_url_full">Čitati ceo link</string>
     <string name="notification_category_title">Obaveštenja</string>
     <string name="notification_reading_title">Čitanje obaveštenja naglas</string>
     <string name="notification_apps_title">Aplikacije</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Kao što su kodovi i brojevi telefona</string>
     <string name="notification_min_digits_title">Minimum cifara u dugom broju</string>
     <string name="notification_urls_title">Linkovi</string>
-    <string name="notification_url_text_title">Rečeno umesto veze</string>
+    <string name="notification_url_text_title">Tekst umesto linka</string>
     <string name="notification_skip_empty_title">Preskoči obaveštenja bez teksta</string>
     <string name="notification_category_length">Dužina</string>
     <string name="notification_max_words_title">Maksimalan broj reči</string>
@@ -81,7 +81,7 @@
     <string name="notification_dnd_all">Čitaj sve</string>
     <string name="notification_touch_title">Dok se dodiruje ekran</string>
     <string name="notification_touch_read">Čitaj odmah</string>
-    <string name="notification_touch_after">Pročitajte kada se dodir završi</string>
+    <string name="notification_touch_after">Čitati kada se dodir završi</string>
     <string name="notification_touch_skip">Ne čitaj</string>
     <string name="notification_during_calls_title">Tokom poziva</string>
     <string name="notification_honour_silent_title">Ne u nečujnom režimu</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">Nivo baterije ispod</string>
     <string name="notification_type_charging">Punjenje</string>
     <string name="notification_type_landscape">Vodoravno</string>
-    <string name="notification_type_silent">Tihi ili vibrirajući režim</string>
+    <string name="notification_type_silent">Nečujni režim ili režim vibracije</string>
     <string name="notification_type_media">Reprodukcija medija</string>
     <string name="notification_bluetooth_any">Bilo koji uređaj</string>
     <string name="notification_wifi_hint">Ime mreže</string>

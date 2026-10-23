@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Megszakítás</string>
     <string name="notification_queue_queue">Felolvasás utána</string>
     <string name="notification_url_omit">Kihagyás</string>
-    <string name="notification_url_replace">Mondja el az alábbi szöveget</string>
-    <string name="notification_url_domain">Csak olvassa el az oldalt</string>
-    <string name="notification_url_full">Olvasd el a teljes linket</string>
+    <string name="notification_url_replace">Az alábbi szöveg kimondása</string>
+    <string name="notification_url_domain">Csak a webhely felolvasása</string>
+    <string name="notification_url_full">Teljes link felolvasása</string>
     <string name="notification_category_title">Értesítések</string>
     <string name="notification_reading_title">Értesítések hangos felolvasása</string>
     <string name="notification_apps_title">Alkalmazások</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Például kódok és telefonszámok</string>
     <string name="notification_min_digits_title">Hosszú szám legkevesebb számjegye</string>
     <string name="notification_urls_title">Linkek</string>
-    <string name="notification_url_text_title">Link helyett mondták</string>
+    <string name="notification_url_text_title">Link helyett kimondott szöveg</string>
     <string name="notification_skip_empty_title">Szöveg nélküli értesítések kihagyása</string>
     <string name="notification_category_length">Hossz</string>
     <string name="notification_max_words_title">A szavak maximális száma</string>
@@ -79,9 +79,9 @@
     <string name="notification_dnd_none">Egyiket se olvassa fel</string>
     <string name="notification_dnd_allowed">Amit a Ne zavarjanak mód enged, azt felolvassa</string>
     <string name="notification_dnd_all">Összes felolvasása</string>
-    <string name="notification_touch_title">Miközben megérinti a képernyőt</string>
+    <string name="notification_touch_title">Amíg a képernyőt érintik</string>
     <string name="notification_touch_read">Azonnali felolvasás</string>
-    <string name="notification_touch_after">Olvassa el, amikor az érintés véget ér</string>
+    <string name="notification_touch_after">Felolvasás az érintés végén</string>
     <string name="notification_touch_skip">Ne olvassa fel</string>
     <string name="notification_during_calls_title">Hívások közben</string>
     <string name="notification_honour_silent_title">Nem néma üzemmódban</string>

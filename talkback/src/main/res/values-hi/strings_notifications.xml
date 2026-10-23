@@ -13,7 +13,7 @@
     <string name="notification_queue_interrupt">बीच में रोकें</string>
     <string name="notification_queue_queue">उसके बाद पढ़ें</string>
     <string name="notification_url_omit">छोड़ें</string>
-    <string name="notification_url_replace">नीचे दिया गया पाठ बोलें</string>
+    <string name="notification_url_replace">नीचे दिया टेक्स्ट बोलें</string>
     <string name="notification_url_domain">केवल साइट पढ़ें</string>
     <string name="notification_url_full">पूरा लिंक पढ़ें</string>
     <string name="notification_category_title">सूचनाएं</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">जैसे कोड और फ़ोन नंबर</string>
     <string name="notification_min_digits_title">लंबी संख्या में न्यूनतम अंक</string>
     <string name="notification_urls_title">लिंक</string>
-    <string name="notification_url_text_title">लिंक के स्थान पर कहा गया</string>
+    <string name="notification_url_text_title">लिंक की जगह बोला जाने वाला टेक्स्ट</string>
     <string name="notification_skip_empty_title">बिना टेक्स्ट वाली सूचनाएं छोड़ें</string>
     <string name="notification_category_length">लंबाई</string>
     <string name="notification_max_words_title">शब्दों की अधिकतम संख्या</string>
@@ -79,7 +79,7 @@
     <string name="notification_dnd_none">कोई न पढ़ें</string>
     <string name="notification_dnd_allowed">डू नॉट डिस्टर्ब मोड द्वारा अनुमत सूचनाएं पढ़ें</string>
     <string name="notification_dnd_all">सभी पढ़ें</string>
-    <string name="notification_touch_title">जबकि स्क्रीन को छुआ गया है</string>
+    <string name="notification_touch_title">जब स्क्रीन को छुआ जा रहा हो</string>
     <string name="notification_touch_read">तुरंत पढ़ें</string>
     <string name="notification_touch_after">स्पर्श समाप्त होने पर पढ़ें</string>
     <string name="notification_touch_skip">न पढ़ें</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">बैटरी स्तर नीचे</string>
     <string name="notification_type_charging">चार्जिंग</string>
     <string name="notification_type_landscape">लैंडस्केप</string>
-    <string name="notification_type_silent">मौन या कंपन मोड</string>
+    <string name="notification_type_silent">साइलेंट या वाइब्रेट मोड</string>
     <string name="notification_type_media">मीडिया चल रहा है</string>
     <string name="notification_bluetooth_any">कोई भी डिवाइस</string>
     <string name="notification_wifi_hint">नेटवर्क का नाम</string>

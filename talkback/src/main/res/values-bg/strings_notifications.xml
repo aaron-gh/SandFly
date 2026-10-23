@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Прекъсване</string>
     <string name="notification_queue_queue">Четене след него</string>
     <string name="notification_url_omit">Пропускане</string>
-    <string name="notification_url_replace">Кажете текста по-долу</string>
-    <string name="notification_url_domain">Четете само сайта</string>
-    <string name="notification_url_full">Прочетете целия линк</string>
+    <string name="notification_url_replace">Изговаряне на текста по-долу</string>
+    <string name="notification_url_domain">Четене само на сайта</string>
+    <string name="notification_url_full">Четене на целия линк</string>
     <string name="notification_category_title">Известия</string>
     <string name="notification_reading_title">Четене на известия на глас</string>
     <string name="notification_apps_title">Приложения</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Като кодове и телефонни номера</string>
     <string name="notification_min_digits_title">Минимален брой цифри в дълго число</string>
     <string name="notification_urls_title">Връзки</string>
-    <string name="notification_url_text_title">Казано на мястото на връзка</string>
+    <string name="notification_url_text_title">Текст вместо линк</string>
     <string name="notification_skip_empty_title">Пропускане на известия без текст</string>
     <string name="notification_category_length">Дължина</string>
     <string name="notification_max_words_title">Максимален брой думи</string>
@@ -79,9 +79,9 @@
     <string name="notification_dnd_none">Без четене</string>
     <string name="notification_dnd_allowed">Четене на позволеното от „Не безпокойте“</string>
     <string name="notification_dnd_all">Четене на всички</string>
-    <string name="notification_touch_title">Докато екранът е докоснат</string>
+    <string name="notification_touch_title">Докато се докосва екранът</string>
     <string name="notification_touch_read">Четене веднага</string>
-    <string name="notification_touch_after">Прочетете, когато докосването приключи</string>
+    <string name="notification_touch_after">Четене след края на докосването</string>
     <string name="notification_touch_skip">Без четене</string>
     <string name="notification_during_calls_title">По време на разговори</string>
     <string name="notification_honour_silent_title">Не в безшумен режим</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">Нивото на батерията под</string>
     <string name="notification_type_charging">Зареждане</string>
     <string name="notification_type_landscape">Хоризонтален режим</string>
-    <string name="notification_type_silent">Безшумен или вибриращ режим</string>
+    <string name="notification_type_silent">Тих режим или режим на вибрация</string>
     <string name="notification_type_media">Мултимедия се възпроизвежда</string>
     <string name="notification_bluetooth_any">Всяко устройство</string>
     <string name="notification_wifi_hint">Име на мрежата</string>

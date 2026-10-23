@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Ընդհատել</string>
     <string name="notification_queue_queue">Կարդալ դրանից հետո</string>
     <string name="notification_url_omit">Բաց թողնել</string>
-    <string name="notification_url_replace">Ասա ստորև տեքստը</string>
-    <string name="notification_url_domain">Կարդացեք միայն կայքը</string>
-    <string name="notification_url_full">Կարդացեք ամբողջ հղումը</string>
+    <string name="notification_url_replace">Ասել ստորև նշված տեքստը</string>
+    <string name="notification_url_domain">Կարդալ միայն կայքը</string>
+    <string name="notification_url_full">Կարդալ ամբողջ հղումը</string>
     <string name="notification_category_title">Ծանուցումներ</string>
     <string name="notification_reading_title">Ծանուցումների բարձրաձայն ընթերցում</string>
     <string name="notification_apps_title">Հավելվածներ</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Ինչպես օրինակ կոդերը և հեռախոսահամարները</string>
     <string name="notification_min_digits_title">Երկար թվի նվազագույն թվանշանների քանակ</string>
     <string name="notification_urls_title">Հղումներ</string>
-    <string name="notification_url_text_title">Հղման փոխարեն ասված է</string>
+    <string name="notification_url_text_title">Հղման փոխարեն ասվող տեքստ</string>
     <string name="notification_skip_empty_title">Բաց թողնել առանց տեքստի ծանուցումները</string>
     <string name="notification_category_length">Երկարություն</string>
     <string name="notification_max_words_title">Բառերի առավելագույն քանակը</string>
@@ -81,7 +81,7 @@
     <string name="notification_dnd_all">Կարդալ բոլորը</string>
     <string name="notification_touch_title">Մինչ էկրանը հպվում է</string>
     <string name="notification_touch_read">Կարդալ անմիջապես</string>
-    <string name="notification_touch_after">Կարդացեք, երբ հպումն ավարտվում է</string>
+    <string name="notification_touch_after">Կարդալ, երբ հպումն ավարտվի</string>
     <string name="notification_touch_skip">Չկարդալ</string>
     <string name="notification_during_calls_title">Զանգերի ժամանակ</string>
     <string name="notification_honour_silent_title">Ոչ լուռ ռեժիմում</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">Մարտկոցի մակարդակը ցածր է</string>
     <string name="notification_type_charging">Լիցքավորում</string>
     <string name="notification_type_landscape">Հորիզոնական</string>
-    <string name="notification_type_silent">Լուռ կամ թրթռումային ռեժիմ</string>
+    <string name="notification_type_silent">Անձայն կամ թրթռման ռեժիմ</string>
     <string name="notification_type_media">Մեդիա նվագարկում</string>
     <string name="notification_bluetooth_any">Ցանկացած սարք</string>
     <string name="notification_wifi_hint">Ցանցի անվանումը</string>

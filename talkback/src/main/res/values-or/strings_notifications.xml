@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">ବାଧା ଦିଅନ୍ତୁ</string>
     <string name="notification_queue_queue">ପରେ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_url_omit">ବାଦ ଦିଅନ୍ତୁ</string>
-    <string name="notification_url_replace">ନିମ୍ନରେ ଲେଖା କୁହନ୍ତୁ</string>
-    <string name="notification_url_domain">କେବଳ ସାଇଟ୍ ପ Read ନ୍ତୁ</string>
-    <string name="notification_url_full">ପୁରା ଲିଙ୍କ୍ ପ Read ନ୍ତୁ</string>
+    <string name="notification_url_replace">ତଳ ଲେଖା କୁହନ୍ତୁ</string>
+    <string name="notification_url_domain">କେବଳ ସାଇଟ୍ ପଢ଼ନ୍ତୁ</string>
+    <string name="notification_url_full">ପୁରା ଲିଙ୍କ୍ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_category_title">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ</string>
     <string name="notification_reading_title">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା</string>
     <string name="notification_apps_title">ଆପଗୁଡ଼ିକ</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">ଯେପରିକି କୋଡ୍ ଏବଂ ଫୋନ୍ ନମ୍ବର</string>
     <string name="notification_min_digits_title">ଏକ ଲମ୍ବା ସଂଖ୍ୟାରେ ସର୍ବନିମ୍ନ ଅଙ୍କ</string>
     <string name="notification_urls_title">ଲିଙ୍କ</string>
-    <string name="notification_url_text_title">ଏକ ଲିଙ୍କ୍ ସ୍ଥାନରେ କହିଲା</string>
+    <string name="notification_url_text_title">ଲିଙ୍କ୍ ବଦଳରେ କୁହାଯାଉଥିବା ଲେଖା</string>
     <string name="notification_skip_empty_title">ପାଠ ନଥିବା ବିଜ୍ଞପ୍ତି ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_category_length">ଦୈର୍ଘ୍ୟ</string>
     <string name="notification_max_words_title">ଶବ୍ଦର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
@@ -79,9 +79,9 @@
     <string name="notification_dnd_none">କିଛି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_dnd_allowed">ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ ଯାହା ଅନୁମତି ଦିଏ ତାହା ପଢ଼ନ୍ତୁ</string>
     <string name="notification_dnd_all">ସବୁ ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_touch_title">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ସ୍ପର୍ଶ ହୁଏ</string>
+    <string name="notification_touch_title">ସ୍କ୍ରିନ୍ ସ୍ପର୍ଶ ହେଉଥିବାବେଳେ</string>
     <string name="notification_touch_read">ତୁରନ୍ତ ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_touch_after">ସ୍ପର୍ଶ ସମାପ୍ତ ହେଲେ ପ Read ନ୍ତୁ</string>
+    <string name="notification_touch_after">ସ୍ପର୍ଶ ଶେଷ ହେଲେ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_touch_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_during_calls_title">କଲ୍ ସମୟରେ</string>
     <string name="notification_honour_silent_title">ନୀରବ ମୋଡରେ ନୁହେଁ</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">ବ୍ୟାଟେରୀ ସ୍ତର ଏହାଠାରୁ କମ୍</string>
     <string name="notification_type_charging">ଚାର୍ଜିଂ</string>
     <string name="notification_type_landscape">ଲ୍ୟାଣ୍ଡସ୍କେପ୍</string>
-    <string name="notification_type_silent">ନୀରବ କିମ୍ବା କମ୍ପନ ମୋଡ୍</string>
+    <string name="notification_type_silent">ସାଇଲେଣ୍ଟ କିମ୍ବା ଭାଇବ୍ରେଟ୍ ମୋଡ୍</string>
     <string name="notification_type_media">ମିଡିଆ ଚାଲୁଛି</string>
     <string name="notification_bluetooth_any">ଯେକୌଣସି ଉପକରଣ</string>
     <string name="notification_wifi_hint">ନେଟୱର୍କ ନାମ</string>

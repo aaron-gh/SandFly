@@ -13,9 +13,9 @@
     <string name="notification_queue_interrupt">Onderbreken</string>
     <string name="notification_queue_queue">Erna voorlezen</string>
     <string name="notification_url_omit">Weglaten</string>
-    <string name="notification_url_replace">Spreek de onderstaande tekst uit</string>
-    <string name="notification_url_domain">Lees alleen de site</string>
-    <string name="notification_url_full">Lees de hele link</string>
+    <string name="notification_url_replace">Onderstaande tekst uitspreken</string>
+    <string name="notification_url_domain">Alleen de site voorlezen</string>
+    <string name="notification_url_full">Volledige link voorlezen</string>
     <string name="notification_category_title">Meldingen</string>
     <string name="notification_reading_title">Meldingen voorlezen</string>
     <string name="notification_apps_title">Apps</string>
@@ -49,7 +49,7 @@
     <string name="notification_separate_digits_summary">Zoals codes en telefoonnummers</string>
     <string name="notification_min_digits_title">Minimaal aantal cijfers in een lang getal</string>
     <string name="notification_urls_title">Koppelingen</string>
-    <string name="notification_url_text_title">Gezegd in plaats van een link</string>
+    <string name="notification_url_text_title">Tekst in plaats van een link</string>
     <string name="notification_skip_empty_title">Meldingen zonder tekst overslaan</string>
     <string name="notification_category_length">Lengte</string>
     <string name="notification_max_words_title">Maximaal aantal woorden</string>
@@ -81,7 +81,7 @@
     <string name="notification_dnd_all">Lees alles</string>
     <string name="notification_touch_title">Terwijl het scherm wordt aangeraakt</string>
     <string name="notification_touch_read">Lees meteen</string>
-    <string name="notification_touch_after">Lees wanneer de aanraking eindigt</string>
+    <string name="notification_touch_after">Voorlezen wanneer de aanraking eindigt</string>
     <string name="notification_touch_skip">Niet lezen</string>
     <string name="notification_during_calls_title">Tijdens gesprekken</string>
     <string name="notification_honour_silent_title">Niet in stille modus</string>
@@ -233,13 +233,13 @@
     <string name="notification_type_time">Tijd van de dag</string>
     <string name="notification_type_screen">Scherm aan</string>
     <string name="notification_type_locked">Telefoon vergrendeld</string>
-    <string name="notification_type_from_app">Melding vanuit een app</string>
+    <string name="notification_type_from_app">Melding van een app</string>
     <string name="notification_type_foreground">App op de voorgrond</string>
     <string name="notification_type_contains">Melding bevat</string>
     <string name="notification_type_battery">Batterijniveau lager dan</string>
     <string name="notification_type_charging">Opladen</string>
     <string name="notification_type_landscape">Liggend</string>
-    <string name="notification_type_silent">Stille of trilmodus</string>
+    <string name="notification_type_silent">Stille modus of trilmodus</string>
     <string name="notification_type_media">Media afspelen</string>
     <string name="notification_bluetooth_any">Elk apparaat</string>
     <string name="notification_wifi_hint">Netwerknaam</string>
