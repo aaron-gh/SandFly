@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ବ୍ରେଲି ହାର୍ଡୱେର କୀବୋର୍ଡ</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack ବ୍ରେଲି କୀବୋର୍ଡ ଉପଲବ୍ଧ ନାହିଁ</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack ବ୍ରେଲି କୀବୋର୍ଡକୁ ଚାଲୁ କରନ୍ତୁ</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly ବ୍ରେଲି କୀବୋର୍ଡ ଉପଲବ୍ଧ ନାହିଁ</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly ବ୍ରେଲି କୀବୋର୍ଡକୁ ଚାଲୁ କରନ୍ତୁ</string>
   <string name="bd_ime_disabled_dialog_message">ଟାଇପିଂ ପାଇଁ ଆପଣଙ୍କ ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରିବା ପାଇଁ, ଏହାକୁ ଚାଲୁ କରିବା ନିମନ୍ତେ ଇନପୁଟ ସେଟିଂସକୁ ଯାଆନ୍ତୁ</string>
   <string name="bd_ime_disabled_dialog_title_positive">ଇନପୁଟ ସେଟିଂସ</string>
   <string name="bd_ime_not_default_dialog_title">ଆପଣଙ୍କ ଇନପୁଟ ପଦ୍ଧତିକୁ ସ୍ୱିଚ କରନ୍ତୁ</string>
-  <string name="bd_ime_not_default_dialog_message">ଟାଇପ କରିବା ଜାରି ରଖିବା ପାଇଁ, TalkBack ବ୍ରେଲି କୀବୋର୍ଡକୁ ଆପଣଙ୍କ ଇନପୁଟ ପଦ୍ଧତି ଭାବେ ସେଟ କରନ୍ତୁ</string>
+  <string name="bd_ime_not_default_dialog_message">ଟାଇପ କରିବା ଜାରି ରଖିବା ପାଇଁ, SandFly ବ୍ରେଲି କୀବୋର୍ଡକୁ ଆପଣଙ୍କ ଇନପୁଟ ପଦ୍ଧତି ଭାବେ ସେଟ କରନ୍ତୁ</string>
   <string name="bd_ime_not_default_dialog_positive">ଇନପୁଟ ପଦ୍ଧତିକୁ ସ୍ୱିଚ କରନ୍ତୁ</string>
   <string name="type_unlabeled">ଲେବଲ କରାଯାଇନଥିବା</string>
   <string name="type_unlabeled_edittext">ଲେବଲ କରାଯାଇନଥିବା ଏଡିଟ ବକ୍ସ</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ବାମକୁ ପ୍ୟାନ କରନ୍ତୁ</string>
   <string name="overlay_pan_right_button">ଡାହାଣକୁ ପ୍ୟାନ କରନ୍ତୁ</string>
   <string name="bd_preferences_title">ବ୍ରେଲି ଡିସପ୍ଲେ</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରିବାକୁ, ପ୍ରଥମେ TalkBackକୁ ଚାଲୁ କରନ୍ତୁ</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBackକୁ ଯାଆନ୍ତୁ</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରିବାକୁ, ପ୍ରଥମେ SandFlyକୁ ଚାଲୁ କରନ୍ତୁ</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFlyକୁ ଯାଆନ୍ତୁ</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରିବାକୁ, ପ୍ରଥମେ ବ୍ଲୁଟୁଥ ଚାଲୁ କରନ୍ତୁ</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ବ୍ଲୁଟୁଥ ଚାଲୁ କରନ୍ତୁ</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରିବାକୁ, %s ଆଖପାଖର ଡିଭାଇସଗୁଡ଼ିକୁ ଆକ୍ସେସ ଆବଶ୍ୟକ କରେ</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ବ୍ରାଉଜ ମୋଡ ବ୍ୟବହାର କରିବା ପାଇଁ ଆପଣଙ୍କୁ ଡିଫଲ୍ଟ କୀ\'ମେପରୁ ଉନ୍ନତ କୀ\'ମେପକୁ ସ୍ୱିଚ କରିବାକୁ ହେବ। ଏହି ପରିବର୍ତ୍ତନ ଆପଣଙ୍କର କିଛି ବ୍ରେଲି ଡିସପ୍ଲେ କମାଣ୍ଡଗୁଡ଼ିକୁ ଅପଡେଟ କରିବ</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ସେଟିଂସ</string>
   <string name="bd_command_change_dialog_title">କିଛି କମାଣ୍ଡକୁ ଅପଡେଟ କରାଯାଇଛି</string>
-  <string name="bd_command_change_dialog_message">TalkBackର ଏହି ଭର୍ସନରେ ଏହି ବ୍ରେଲି ଡିସପ୍ଲେ କମାଣ୍ଡଗୁଡ଼ିକୁ ଅପଡେଟ କରାଯାଇଛି:\n\n• ପୂର୍ବବର୍ତ୍ତୀ ଆଇଟମ: ଡଟ 1, 7କୁ ଦବାନ୍ତୁ\n\n• ପରବର୍ତ୍ତୀ ଆଇଟମ: ଡଟ 4, 8କୁ ଦବାନ୍ତୁ\n\n• ପୂର୍ବବର୍ତ୍ତୀ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ: ଡଟ 2, 3, 7, 8କୁ ଦବାନ୍ତୁ\n\n• ପରବର୍ତ୍ତୀ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ: ଡଟ 5, 6, 7, 8କୁ ଦବାନ୍ତୁ</string>
+  <string name="bd_command_change_dialog_message">SandFlyର ଏହି ଭର୍ସନରେ ଏହି ବ୍ରେଲି ଡିସପ୍ଲେ କମାଣ୍ଡଗୁଡ଼ିକୁ ଅପଡେଟ କରାଯାଇଛି:\n\n• ପୂର୍ବବର୍ତ୍ତୀ ଆଇଟମ: ଡଟ 1, 7କୁ ଦବାନ୍ତୁ\n\n• ପରବର୍ତ୍ତୀ ଆଇଟମ: ଡଟ 4, 8କୁ ଦବାନ୍ତୁ\n\n• ପୂର୍ବବର୍ତ୍ତୀ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ: ଡଟ 2, 3, 7, 8କୁ ଦବାନ୍ତୁ\n\n• ପରବର୍ତ୍ତୀ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ: ଡଟ 5, 6, 7, 8କୁ ଦବାନ୍ତୁ</string>
   <string name="bd_preference_braille_contracted">କଣ୍ଟ୍ରାକ୍ଟେଡ ବ୍ରେଲି</string>
   <string name="bd_preference_braille_uncontracted">ଅନକଣ୍ଟ୍ରାକ୍ଟେଡ ବ୍ରେଲି</string>
   <string name="bd_braille_grade_tips">ଏକ ବ୍ରେଲି ଡିସପ୍ଲେ ବ୍ୟବହାର କରି କଣ୍ଟ୍ରାକ୍ଟେଡ ଏବଂ ଅନକଣ୍ଟ୍ରାକ୍ଟେଡ ମଧ୍ୟରେ ଶୀଘ୍ର ସୁଇଚ କରିବାକୁ, ସ୍ପେସ ଓ ଡଟ 1, 2, 4, 5 ଦବାନ୍ତୁ।\n\nଯଦି ଆପଣ ଉଭୟ ବ୍ରେଲି ଗ୍ରେଡ ସହ ଏକ ଭାଷା ବ୍ୟବହାର କରୁଛନ୍ତି, ତେବେ ଏହି କମାଣ୍ଡ କାମ କରେ।</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ଆଇଟମଗୁଡ଼ିକ ମଧ୍ୟରେ ମୁଭ କରାଯାଉଛି</string>
   <string name="bd_commands_bindings_category_system_actions_title">ସିଷ୍ଟମ କାର୍ଯ୍ୟଗୁଡ଼ିକ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ପଛକୁ ଫେରନ୍ତୁ, ହୋମ, ବିଜ୍ଞପ୍ତି ଏବଂ ଆହୁରି ଅନେକ କିଛି</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack ଫିଚରଗୁଡ଼ିକ</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack ମେନୁ ଏବଂ ସେଟିଂସ</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly ଫିଚରଗୁଡ଼ିକ</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ମେନୁ ଏବଂ ସେଟିଙ୍ଗ୍ |</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ବ୍ରେଲି ସେଟିଂସ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ବ୍ରେଲି ଭାଷା ଏବଂ ସେଟିଂସ</string>
   <string name="bd_commands_bindings_category_text_editing_title">ଟେକ୍ସଟ ଏଡିଟିଂ</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">ସମସ୍ତ ଆପ ଖୋଲନ୍ତୁ</string>
   <string name="bd_cmd_toggle_screen_search">ସ୍କ୍ରିନ ସର୍ଚ୍ଚ ଖୋଲନ୍ତୁ</string>
   <string name="bd_cmd_edit_custom_label">କଷ୍ଟମ ଲେବଲକୁ ଏଡିଟ କରନ୍ତୁ</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack ମେନୁ ଖୋଲନ୍ତୁ</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack ସ୍ପିଚକୁ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରନ୍ତୁ</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly ମେନୁ ଖୋଲନ୍ତୁ</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly ସ୍ପିଚକୁ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରନ୍ତୁ</string>
   <string name="bd_cmd_read_stop">ପଢ଼ିବା ବନ୍ଦ କରନ୍ତୁ</string>
-  <string name="bd_cmd_talkback_settings">TalkBack ସେଟିଂସ ଖୋଲନ୍ତୁ</string>
+  <string name="bd_cmd_talkback_settings">SandFly ସେଟିଂସ ଖୋଲନ୍ତୁ</string>
   <string name="bd_cmd_switch_to_next_input_language">ପରବର୍ତ୍ତୀ ଟାଇପିଂ ଭାଷାକୁ ସ୍ୱିଚ କରନ୍ତୁ</string>
   <string name="bd_cmd_switch_to_next_output_language">ପରବର୍ତ୍ତୀ ପଢ଼ିବା ଭାଷାକୁ ସ୍ୱିଚ କରନ୍ତୁ</string>
   <string name="bd_cmd_toggle_contracted_mode">କଣ୍ଟ୍ରାକ୍ଟେଡ ଏବଂ ଅନକଣ୍ଟ୍ରାକ୍ଟେଡ ମଧ୍ୟରେ ସ୍ୱିଚ କରନ୍ତୁ</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ଆପଣ ବ୍ରାଉଜ ମୋଡରେ ଏଣ୍ଟର କରିବା ପାଇଁ କମାଣ୍ଡକୁ ବ୍ୟବହାର କରି, ତା\'ପରେ ନିମ୍ନୋକ୍ତ ଅକ୍ଷର କିମ୍ବା ସଂଖ୍ୟା ସର୍ଟକଟକୁ ଟାଇପ କରି ୱେବ ପୃଷ୍ଠାଗୁଡ଼ିକୁ ଶୀଘ୍ର ନାଭିଗେଟ କରିପାରିବେ\n\nଏହି ସର୍ଟକଟଗୁଡ଼ିକୁ ବ୍ରାଉଜ ମୋଡରେ ଏଣ୍ଟର ନକରି ମଧ୍ୟ ବ୍ୟବହାର କରାଯାଇପାରିବ, କିନ୍ତୁ ଆପଣଙ୍କୁ \"ପରବର୍ତ୍ତୀ\" କମାଣ୍ଡଗୁଡ଼ିକରେ ଡଟ 8 ଯୋଗ କରିବାକୁ ହେବ</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ଟେବୁଲ ନାଭିଗେସନ</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ବ୍ରେଲି ଡିସପ୍ଲେ ସେଟିଂକୁ ବନ୍ଦ କରିବେ?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">TalkBack ସେଟିଂସରେ ଆପଣ ଏହାକୁ ଯେ କୌଣସି ସମୟରେ ପୁଣି ଚାଲୁ କରିପାରିବେ</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">SandFly ସେଟିଂସରେ ଆପଣ ଏହାକୁ ଯେ କୌଣସି ସମୟରେ ପୁଣି ଚାଲୁ କରିପାରିବେ</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ବନ୍ଦ କରନ୍ତୁ</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">କିଛି କମାଣ୍ଡ ଉପଲବ୍ଧ ନାହିଁ</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ଟାଇପ ବା ଏଡିଟ କରିବା ବେଳେ ନାଭିଗେସନ, ବ୍ରେଲି ସେଟିଂସ ଓ କିଛି TalkBack ଫିଚର ପାଇଁ କମାଣ୍ଡଗୁଡ଼ିକ ଉପଲବ୍ଧ ନାହିଁ।\n\nଏହି କମାଣ୍ଡଗୁଡ଼ିକୁ ବ୍ୟବହାର କରିବା ପାଇଁ କୀବୋର୍ଡ ବନ୍ଦ କରନ୍ତୁ।</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ଟାଇପ ବା ଏଡିଟ କରିବା ବେଳେ ନାଭିଗେସନ, ବ୍ରେଲି ସେଟିଂସ ଓ କିଛି SandFly ଫିଚର ପାଇଁ କମାଣ୍ଡଗୁଡ଼ିକ ଉପଲବ୍ଧ ନାହିଁ।\n\nଏହି କମାଣ୍ଡଗୁଡ଼ିକୁ ବ୍ୟବହାର କରିବା ପାଇଁ କୀବୋର୍ଡ ବନ୍ଦ କରନ୍ତୁ।</string>
   <string name="bd_caption_tutorial_dialog_title">ବ୍ରେଲି ଡିସପ୍ଲେରେ ଥିବା କେପ୍ସନ</string>
   <string name="bd_caption_tutorial_dialog_message">ଏ ଭିଡିଓ ପାଇଁ କେପ୍ସନଗୁଡ଼ିକ ଦେଖାଇବା ବା ଲୁଚାଇବାକୁ ସ୍ପେସ ଓ ଡଟ 1, 4, 7, 8 ଦବାନ୍ତୁ।\n\nସପୋର୍ଟ ଥିବା ମିଡିଆ ପାଇଁ ସ୍ୱତଃ କେପ୍ସନଗୁଡ଼ିକ ଦେଖାଇବାକୁ ସେଟିଂସରେ ବ୍ରେଲି ଡିସପ୍ଲେରେ କେପ୍ସନଗୁଡ଼ିକୁ ଦେଖାନ୍ତୁକୁ ଚାଲୁ କରନ୍ତୁ।</string>
   <string name="bd_caption_tutorial_dialog_checkbox">କେପ୍ସନଗୁଡ଼ିକ ଉପଲବ୍ଧ ହେବା ସମୟରେ ସର୍ବଦା ଏହି ମେସେଜ ଦେଖାନ୍ତୁ</string>
   <string name="bd_usb_connect_dialog_title">ବ୍ରେଲି ଡିସପ୍ଲେକୁ USB ସହ କନେକ୍ଟ କରାଯାଇଛି</string>
-  <string name="bd_usb_connect_dialog_message">ଆପଣଙ୍କ %sର ବେଟେରୀ ଆପଣଙ୍କର ବ୍ରେଲି ଡିସପ୍ଲେକୁ ଚାର୍ଜ କରୁଛି।\n\nଯଦି ଆପଣ ବ୍ଲୁଟୁଥକୁ ସ୍ୱିଚ କରିବା ଆବଶ୍ୟକ କରନ୍ତି, ତେବେ ଆପଣଙ୍କ USB କିମ୍ବା USB ହବକୁ ଡିସକନେକ୍ଟ କରି TalkBack ସେଟିଂସ &gt; ବ୍ରେଲି ଡିସପ୍ଲେକୁ ଯାଆନ୍ତୁ।</string>
+  <string name="bd_usb_connect_dialog_message">ଆପଣଙ୍କ %sର ବେଟେରୀ ଆପଣଙ୍କର ବ୍ରେଲି ଡିସପ୍ଲେକୁ ଚାର୍ଜ କରୁଛି।\n\nଯଦି ଆପଣ ବ୍ଲୁଟୁଥକୁ ସ୍ୱିଚ କରିବା ଆବଶ୍ୟକ କରନ୍ତି, ତେବେ ଆପଣଙ୍କ USB କିମ୍ବା USB ହବକୁ ଡିସକନେକ୍ଟ କରି SandFly ସେଟିଂସ &gt; ବ୍ରେଲି ଡିସପ୍ଲେକୁ ଯାଆନ୍ତୁ।</string>
   <string name="bd_device">ଫୋନ</string>
   <string name="bd_battery_low_dialog_title">%s ବେଟେରୀର ଚାର୍ଜ କମ୍ ଅଛି</string>
   <string name="bd_battery_low_dialog_message">ଆପଣଙ୍କ %sର ବେଟେରୀ ଆପଣଙ୍କର ବ୍ରେଲି ଡିସପ୍ଲେକୁ ଚାର୍ଜ କରୁଛି।\n\nବେଟେରୀର ଚାର୍ଜ ସେଭ କରିବାକୁ:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">ସବୁ ଖାଲି କରନ୍ତୁ</string>
   <string name="popup_message_history_empty">ଖାଲି</string>
   <string name="popup_message_history_consent_dialog_title">ଡିଭାଇସ ମେସେଜ ଇତିହାସ ଚାଲୁ କରିବେ?</string>
-  <string name="popup_message_history_consent_dialog_msg">TalkBackରେ, ଏହା କିଛି ମେସେଜ ଷ୍ଟୋର କରିବ, ଯେପରି କି ବିଜ୍ଞପ୍ତି ଏବଂ ଆଲାରାମ। ଯେ କୌଣସି ସମୟରେ ଆପଣ ଏହି ସେଟିଂ ପରିବର୍ତ୍ତନ କରିପାରିବେ।</string>
+  <string name="popup_message_history_consent_dialog_msg">SandFlyରେ, ଏହା କିଛି ମେସେଜ ଷ୍ଟୋର କରିବ, ଯେପରି କି ବିଜ୍ଞପ୍ତି ଏବଂ ଆଲାରାମ। ଯେ କୌଣସି ସମୟରେ ଆପଣ ଏହି ସେଟିଂ ପରିବର୍ତ୍ତନ କରିପାରିବେ।</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ଚାଲୁ କରନ୍ତୁ</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ନା, ଧନ୍ୟବାଦ</string>
+    <string name="external_display_channel">ଅନ୍ୟ ଆପ୍ସରୁ ବ୍ରେଲି ପ୍ରଦର୍ଶନ କରେ |</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> କୁ SandFly ପାଇଁ ଏକ ବ୍ରେଲି ପ୍ରଦର୍ଶନ ହେବାକୁ ଅନୁମତି ଦିଅନ୍ତୁ?</string>
+    <string name="external_display_ask_text">ଯେପର୍ଯ୍ୟନ୍ତ ଆପଣ ଏହାକୁ ଅନୁମତି ନ ଦିଅନ୍ତି SandFly ଏହାକୁ ବ୍ୟବହାର କରିବ ନାହିଁ |</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ବ୍ରେଲିରେ SandFly ଶୋ ସବୁକିଛି ପ to ିବାକୁ ସକ୍ଷମ ହେବ, ଯାହା ମେସେଜ୍ ଏବଂ ଆପଣ ଟାଇପ୍ କରି ସ୍କ୍ରିନରେ କିଛି ହୋଇପାରେ | ଏହା ମଧ୍ୟ ତୁମ ଡିଭାଇସକୁ ନିୟନ୍ତ୍ରଣ କରିବାରେ ସକ୍ଷମ ହେବ ଯେପରି ତୁମେ ବ୍ରେଲି ଡିସପ୍ଲେ ସହିତ ଟାଇପ୍ କର, ଆପ୍ ଖୋଲ ଏବଂ ଯେକ any ଣସି SandFly କମାଣ୍ଡ୍ ଚଲ | ଆପଣ ବିଶ୍ trust ାସ କରୁଥିବା ଆପ୍ସକୁ ଅନୁମତି ଦିଅନ୍ତୁ |</string>
+    <string name="external_display_allow">ଅନୁମତି ଦିଅନ୍ତୁ |</string>
+    <string name="external_display_deny">ଅନୁମତି ଦିଅନ୍ତୁ ନାହିଁ |</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ହେଉଛି ଆପଣଙ୍କର ବ୍ରେଲି ପ୍ରଦର୍ଶନ |</string>
+    <string name="external_display_in_use_text">SandFly ଏହାକୁ ବ୍ୟବହାର କରୁଥିବାବେଳେ, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ସ୍କ୍ରିନ୍ ପ read ି ଡିଭାଇସ୍ କୁ ନିୟନ୍ତ୍ରଣ କରିପାରିବ |</string>
+    <string name="external_displays_title">ଅନ୍ୟ ଆପ୍ସରୁ ପ୍ରଦର୍ଶନ କରେ |</string>
+    <string name="external_displays_summary">ଆପଣ ଅନୁମତି ଦେଇଥିବା ଆପ୍ଲିକେସନ୍ SandFly ପାଇଁ ବ୍ରେଲି ପ୍ରଦର୍ଶନ ହୋଇପାରେ | ଏକ ଆପ୍ ଯାହା ଏକ ବ୍ରେଲି ଡିସପ୍ଲେ ସ୍କ୍ରିନ୍ ପ read ି ଡିଭାଇସ୍ କୁ ନିୟନ୍ତ୍ରଣ କରିପାରିବ |</string>
+    <string name="external_displays_none">କ apps ଣସି ଆପ୍ ବ୍ରେଲି ପ୍ରଦର୍ଶନ ହୋଇପାରିବ ନାହିଁ |</string>
 </resources>

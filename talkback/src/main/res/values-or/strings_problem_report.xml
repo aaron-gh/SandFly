@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">ମତାମତ ପଠାନ୍ତୁ</string>
+    <string name="title_pref_problem_report_type">ମତାମତ ପ୍ରକାର |</string>
+    <string name="title_pref_problem_report_area">କ୍ଷେତ୍ର</string>
+    <string name="title_pref_problem_report_title">ଆଖ୍ୟା</string>
+    <string name="title_pref_problem_report_app">ଯେଉଁଠାରେ ଏହା ଘଟେ ଆପ୍ କରନ୍ତୁ |</string>
+    <string name="title_pref_problem_report_description">ବର୍ଣ୍ଣନା</string>
+    <string name="dialog_message_problem_report_description">କ’ଣ ହୁଏ ଏବଂ ତୁମେ ଯାହା ଆଶା କରିଥିଲ |</string>
+    <string name="title_pref_problem_report_steps">ସଫ୍ଟୱେର୍ ସମସ୍ୟାକୁ ପୁନ oduc ପ୍ରକାଶ କରିବାକୁ ପଦକ୍ଷେପ |</string>
+    <string name="title_pref_problem_report_email">ଉତ୍ତର ପାଇଁ ଇମେଲ୍ |</string>
+    <string name="title_pref_problem_report_device">ଉପକରଣ ସୂଚନା ଅନ୍ତର୍ଭୂକ୍ତ କରନ୍ତୁ |</string>
+    <string name="title_pref_problem_report_log">SandFly ଲଗ ଅନ୍ତର୍ଭୂକ୍ତ କରନ୍ତୁ |</string>
+    <string name="summary_pref_problem_report_log">ସ୍କ୍ରିନରୁ ଟେକ୍ସଟ୍ ଧାରଣ କରିପାରେ |</string>
+    <string name="title_pref_problem_report_send">ପଠାନ୍ତୁ |</string>
+    <string name="summary_pref_problem_report_sending">ପଠାଉଛି</string>
+    <string name="problem_report_missing_fields">ଏକ ଆଖ୍ୟା ଏବଂ ଏକ ବର୍ଣ୍ଣନା ପ୍ରବେଶ କରନ୍ତୁ |</string>
+    <string name="problem_report_invalid_email">ଏକ ବ valid ଧ ଇମେଲ୍ ଠିକଣା ପ୍ରବେଶ କରନ୍ତୁ |</string>
+    <string name="problem_report_sent">ମତାମତ ପଠାଯାଇଛି |</string>
+    <string name="problem_report_rate_limited">ଅତ୍ୟଧିକ ମତାମତ ପଠାଯାଇଛି | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="problem_report_no_connection">ମତାମତ ପଠାଯାଇ ନାହିଁ | ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
+    <string name="problem_report_not_sent">ମତାମତ ପଠାଯାଇ ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string-array name="problem_report_type_entries">
+        <item>ଭୁଲ ଆଚରଣ</item>
+        <item>ଦୁର୍ଘଟଣା |</item>
+        <item>ଧୀର କିମ୍ବା ପ୍ରତିକ୍ରିୟାଶୀଳ |</item>
+        <item>ପରାମର୍ଶ |</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>ଭାଷଣ</item>
+        <item>ଜେଶ୍ଚର</item>
+        <item>ଅନୁସନ୍ଧାନକୁ ସ୍ପର୍ଶ କରନ୍ତୁ |</item>
+        <item>ପଠନ ନିୟନ୍ତ୍ରଣ ଏବଂ ମେନୁଗୁଡ଼ିକ |</item>
+        <item>ଟାଇପିଂ ଏବଂ କୀବୋର୍ଡ୍ |</item>
+        <item>ବ୍ରେଲି କୀବୋର୍ଡ</item>
+        <item>ବ୍ରେଲି ଡିସପ୍ଲେ</item>
+        <item>ଶବ୍ଦ ଏବଂ କମ୍ପନ |</item>
+        <item>ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ</item>
+        <item>ୱେବ୍ ବିଷୟବସ୍ତୁ |</item>
+        <item>ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ</item>
+        <item>ସେଟିଂସ</item>
+        <item>ଅଦ୍ୟତନଗୁଡିକ</item>
+        <item>ଅନ୍ୟ</item>
+    </string-array>
+    <string name="title_report_new">ମତାମତ ପଠାନ୍ତୁ</string>
+    <string name="title_report_inbox">ଇନବକ୍ସ |</string>
+    <string name="title_report_drafts">ଡ୍ରାଫ୍ଟଗୁଡିକ</string>
+    <string name="report_inbox_empty">କ feedback ଣସି ମତାମତ ପଠାଗଲା ନାହିଁ |</string>
+    <string name="report_drafts_empty">କ No ଣସି ଡ୍ରାଫ୍ଟ ନାହିଁ |</string>
+    <string name="report_just_now">ବର୍ତ୍ତମାନ</string>
+    <string name="report_untitled">ଆଖ୍ୟାବିହୀନ |</string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ପରିବର୍ତ୍ତିତ |</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ପଠାଯାଇଛି</string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ନୂତନ ଉତ୍ତର |</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ନୂତନ ଉତ୍ତର</item>
+    </plurals>
+    <string name="report_status_changed">ସ୍ଥିତି ବଦଳିଗଲା |</string>
+    <string name="report_status_open">ଖୋଲା ଇସ୍ୟୁ |</string>
+    <string name="report_status_completed">ବନ୍ଦ, ସମାପ୍ତ</string>
+    <string name="report_status_not_planned">ବନ୍ଦ, ଯୋଜନା ନୁହେଁ |</string>
+    <string name="report_status_duplicate">ବନ୍ଦ, ନକଲ |</string>
+    <string name="report_status_unknown">ଅପସାରିତ ହୋଇଛି |</string>
+    <string name="title_report_status">ସ୍ଥିତି</string>
+    <string name="title_report_your_report">ଆପଣଙ୍କର ମତାମତ</string>
+    <string name="title_report_messages">ବାର୍ତ୍ତାଗୁଡିକ</string>
+    <string name="report_message_from_developer">ବିକାଶକାରୀ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">ଆପଣ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">ଉତ୍ତର ଦିଅ</string>
+    <string name="title_report_reply_text">ତୁମର ଉତ୍ତର</string>
+    <string name="title_report_send_reply">ଉତ୍ତର ପଠାନ୍ତୁ |</string>
+    <string name="report_reply_sent">ଉତ୍ତର ପଠାଯାଇଛି |</string>
+    <string name="report_reply_not_sent">ଉତ୍ତର ପଠାଯାଇ ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="title_report_remove">ଇନବକ୍ସରୁ ଅପସାରଣ କରନ୍ତୁ |</string>
+    <string name="dialog_title_report_remove">ଏହି ମତାମତକୁ ଇନବକ୍ସରୁ ହଟାନ୍ତୁ?</string>
+    <string name="dialog_message_report_remove">ଏହାର ଉତ୍ତର ଆଉ ଏହି ଫୋନରେ ପହଞ୍ଚିବ ନାହିଁ |</string>
+    <string name="title_report_delete_draft">ଡ୍ରାଫ୍ଟ ବିଲୋପ କରନ୍ତୁ |</string>
+    <string name="dialog_title_report_delete_draft">ଏହି ଡ୍ରାଫ୍ଟ ବିଲୋପ କରିବେ କି?</string>
+    <string name="button_report_delete">ଡିଲିଟ କରନ୍ତୁ</string>
+    <string name="report_missing">ଏହି ମତାମତ ଆଉ ଇନବକ୍ସରେ ନାହିଁ |</string>
+    <string name="notification_channel_problem_reports">ମତାମତ ଉତ୍ତର</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> କୁ ଉତ୍ତର ଦିଅ |</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
