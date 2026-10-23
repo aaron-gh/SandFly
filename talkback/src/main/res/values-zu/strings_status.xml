@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Khuluma isimo</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> kwamabha angu-<xliff:g id="max_level" example="4">%2$d</xliff:g></string>
+    <string name="status_wifi_off">Wi-Fi ivaliwe</string>
+    <string name="status_wifi_not_connected">Wi-Fi ayixhunyiwe</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Iselula</string>
+    <string name="status_mobile_no_service">Ayikho isevisi yeselula</string>
+    <string name="status_do_not_disturb">Ungaphazamisi</string>
+    <string name="status_ringer_vibrate">Dlidliza</string>
+    <string name="status_ringer_silent">Athule</string>
+    <string name="status_airplane_mode">Imodi yendiza</string>
+    <string name="title_pref_status_readout">Ukufundwa kwesimo</string>
+    <string name="status_item_time">Isikhathi</string>
+    <string name="status_item_time_summary">Isikhathi samanje</string>
+    <string name="status_item_battery">Ibhethri</string>
+    <string name="status_item_battery_summary">Ileveli yebhethri, ukushaja, nesilondolozi sebhethri</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Igama lenethiwekhi namandla esignali</string>
+    <string name="status_item_mobile">Inethiwekhi yeselula</string>
+    <string name="status_item_mobile_summary">Inkampani yenethiwekhi, uhlobo lwenethiwekhi, namandla esignali</string>
+    <string name="status_item_ringer">Khalisa futhi Ungaphazamisi</string>
+    <string name="status_item_ringer_summary">Kuphela uma isikhalisi singasethiwe ukuthi ikhale, noma okuthi Ungaphazamisi kuvuliwe</string>
+    <string name="status_item_airplane_mode">Imodi yendiza</string>
+    <string name="status_item_airplane_mode_summary">Kuphela uma imodi yendiza ivuliwe</string>
+</resources>

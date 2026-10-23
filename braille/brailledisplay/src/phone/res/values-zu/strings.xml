@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Ikhibhodi yezingxenyekazi zekhompyutha ye-braille</string>
   <string name="bd_application_name">I-Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">Ikhibhodi ye-braille ye-TalkBack ayitholakali</string>
-  <string name="bd_ime_disabled_dialog_title">Vula ikhibhodi ye-braille ye-TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Ikhibhodi ye-braille ye-SandFly ayitholakali</string>
+  <string name="bd_ime_disabled_dialog_title">Vula ikhibhodi ye-braille ye-SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Ukuze usebenzise isibonisi sakho se-braille ukuthayipha, iya kumasethingi wokokufaka ukuze usivule</string>
   <string name="bd_ime_disabled_dialog_title_positive">Amasethingi okufaka</string>
   <string name="bd_ime_not_default_dialog_title">Shintsha indlela yakho yokufaka</string>
-  <string name="bd_ime_not_default_dialog_message">Ukuze uqhubeke nokuthayipha, setha ikhibhodi ye-braille ye-TalkBack njengendlela yakho yokufaka</string>
+  <string name="bd_ime_not_default_dialog_message">Ukuze uqhubeke nokuthayipha, setha ikhibhodi ye-braille ye-SandFly njengendlela yakho yokufaka</string>
   <string name="bd_ime_not_default_dialog_positive">Shintsha ukufaka</string>
   <string name="type_unlabeled">Akunalebula</string>
   <string name="type_unlabeled_edittext">Ibhokisi Lokuhlelo Elingenalebuli</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Jikisela ngakwesokunxele</string>
   <string name="overlay_pan_right_button">Jikisela ngakwesokudla</string>
   <string name="bd_preferences_title">Isibonisi se-braille</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Ukuze usebenzise isibonisi se-braille, qala uvule i-TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Iya ku-TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Ukuze usebenzise isibonisi se-braille, qala uvule i-SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Iya ku-SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Ukuze usebenzise isibonisi se-braille, qala uvule i-Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Vula i-Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Ukuze usebenzise isibonisi se-braille, i-%sidinga ukufinyelela kumadivayisi aseduze</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Ukuze usebenzise imodi yokubhrawuza, uzodinga ukushintsha usuka kumephu esemqoka ezenzakalelayo uye kumephu esemqoka ethuthukisiwe. Lolu shintsho luzobuyekeza eminye imiyalo yakho yesibonisi se-braille</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Amasethingi</string>
   <string name="bd_command_change_dialog_title">Eminye imiyalo ibuyekeziwe</string>
-  <string name="bd_command_change_dialog_message">Imiyalo yesibonisi sebraille ibuyekeziwe kuTalkBack:\n\n• Okwangaphambilini: Cindezela amachashazi 1, 7\n\n• Kokulandelayo: Cindezela amachashazi 4, 8\n\n• Isilawuli esifundayo sangaphambilini: Cindezela amachashazi 2, 3, 7, 8\n\n• Isilawuli esifundayo esilandelayo: Cindezela amachashazi 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Imiyalo yesibonisi sebraille ibuyekeziwe kuSandFly:\n\n• Okwangaphambilini: Cindezela amachashazi 1, 7\n\n• Kokulandelayo: Cindezela amachashazi 4, 8\n\n• Isilawuli esifundayo sangaphambilini: Cindezela amachashazi 2, 3, 7, 8\n\n• Isilawuli esifundayo esilandelayo: Cindezela amachashazi 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">I-braille enenkontileka</string>
   <string name="bd_preference_braille_uncontracted">I-braille engenankontileka</string>
   <string name="bd_braille_grade_tips">Ukuze ushintshe ngokushesha phakathi kwenkontileka nengenayo inkontileka usebenzisa isibonisi se-braille, cindezela isikhala namachashazi 1, 2, 4, 5.\n\nLo myalo usebenza uma usebenzisa ulimi olunawo womabili amabanga e-braille.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Ukuhamba ngaphakathi kwezinto</string>
   <string name="bd_commands_bindings_category_system_actions_title">Izenzo zesistimu</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Emuva, ekhaya, izaziso nokuningi</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Izakhi ze-TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Amamenyu namasethingi we-Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Izakhi ze-SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly amamenyu nezilungiselelo</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Amasethingi e-Braille</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Ulimi namasethingi we-Braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Ukuhlela umbhalo</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Vula wonke ama-app</string>
   <string name="bd_cmd_toggle_screen_search">Vula isikrinikufuna</string>
   <string name="bd_cmd_edit_custom_label">Hlela ilebula engokwezifiso</string>
-  <string name="bd_cmd_open_talkback_menu">Vula imenyu ye-TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Vula noma uvale inkulumo ye-TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Vula imenyu ye-SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Vula noma uvale inkulumo ye-SandFly</string>
   <string name="bd_cmd_read_stop">Misa ukufunda</string>
-  <string name="bd_cmd_talkback_settings">Vula amasethingi e-TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Vula amasethingi e-SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Shintshela olimini lokuthayipha olulandelayo</string>
   <string name="bd_cmd_switch_to_next_output_language">Shintshela olimini lokufunda olulandelayo</string>
   <string name="bd_cmd_toggle_contracted_mode">Shintsha phakathi kwabanenkontileka nabangenankontileka</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Ungasesha amakhasi ewebhu ngomyalo wokufaka imodi yokubhrawuza, thayipha izinqamuleli\n\nZingasetshenziswa ngaphandle kwemodi yokubhrawuza, kodwa uzodinga ukufaka ichashazi 8 emiyalweni \"elandelayo\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Ukufuna kwethebula</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Vala amasethingi wesibonisi se-braille?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Ungayivula futhi noma nini kumasethingi we-TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Ungayivula futhi noma nini kumasethingi we-SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Vala</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Eminye imiyalo ayitholakali</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Imiyalo yokuzulazula, amasethingi e-braille, nezinye izakhi ze-TalkBack azitholakali ngenkathi uthayipha noma uhlela.\n\nUkuze usebenzise le miyalo, qala ngokuvala ikhibhodi.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Imiyalo yokuzulazula, amasethingi e-braille, nezinye izakhi ze-SandFly azitholakali ngenkathi uthayipha noma uhlela.\n\nUkuze usebenzise le miyalo, qala ngokuvala ikhibhodi.</string>
   <string name="bd_caption_tutorial_dialog_title">Amagama-ncazo esibonisini sakho sebraille</string>
   <string name="bd_caption_tutorial_dialog_message">Ukuze ubonise noma ufihle amagama-ncazo ale vidiyo, cindezela inkinobho yesikhala namachashazi 1, 4, 7, 8.\n\nUkubonisa ngokuzenzekelayo amagama-ncazo emidiya esekelwayo, vula okuthi Bonisa amagama-ncazo esibonisini sebraille Kumasethingi.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Bonisa njalo lo mlayezo uma amagama-ncazo etholakala</string>
   <string name="bd_usb_connect_dialog_title">Isibonisi se-Braille sixhunywe ku-USB</string>
-  <string name="bd_usb_connect_dialog_message">I-%s yebhethri lakho ishaja isibonisi sakho se-braille.\n\nUma udinga ukushintshela ku-Bluetooth, nqamula i-USB yakho noma ihabhu le-USB bese uya kumasethingi e-TalkBack &gt; Isibonisi se-Braille.</string>
+  <string name="bd_usb_connect_dialog_message">I-%s yebhethri lakho ishaja isibonisi sakho se-braille.\n\nUma udinga ukushintshela ku-Bluetooth, nqamula i-USB yakho noma ihabhu le-USB bese uya kumasethingi e-SandFly &gt; Isibonisi se-Braille.</string>
   <string name="bd_device">ifoni</string>
   <string name="bd_battery_low_dialog_title">Ibhethri le-%s liphansi</string>
   <string name="bd_battery_low_dialog_message">Ibhethri lakho le-%s lishaja isibonisi sakho se-braille.\n\nUkuze wonge ibhethri:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Sula konke</string>
   <string name="popup_message_history_empty">Akunalutho</string>
   <string name="popup_message_history_consent_dialog_title">Vula umlando womyalezo wedivayisi?</string>
-  <string name="popup_message_history_consent_dialog_msg">Lokhu kuzogcina imiyalezo ethile, njengezaziso nama-alamu, kuTalkBack. Ungashintsha le sethingi noma nini.</string>
+  <string name="popup_message_history_consent_dialog_msg">Lokhu kuzogcina imiyalezo ethile, njengezaziso nama-alamu, kuSandFly. Ungashintsha le sethingi noma nini.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Vula</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Cha ngiyabonga</string>
+    <string name="external_display_channel">Izibonisi ze-Braille ezivela kwezinye izinhlelo zokusebenza</string>
+    <string name="external_display_ask_title">Vumela <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ukuthi kube isibonisi se-braille se-SandFly?</string>
+    <string name="external_display_ask_text">SandFly ngeke iyisebenzise uze uyivumele.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> uzokwazi ukufunda yonke into SandFly imibukiso nge-braille, okungaba noma yini esikrinini, okuhlanganisa imilayezo nalokho okuthayiphayo. Izokwazi futhi ukulawula idivayisi yakho njengoba ungakwazi ngesibonisi se-braille: thayipha, vula izinhlelo zokusebenza futhi usebenzise noma yimuphi umyalo SandFly. Vumela izinhlelo zokusebenza ozethembayo kuphela.</string>
+    <string name="external_display_allow">Vumela</string>
+    <string name="external_display_deny">Ungavumeli</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> isibonisi sakho se-braille</string>
+    <string name="external_display_in_use_text">Ngenkathi SandFly iyisebenzisa, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ingafunda isikrini futhi ilawule idivayisi.</string>
+    <string name="external_displays_title">Ibonisa kwezinye izinhlelo zokusebenza</string>
+    <string name="external_displays_summary">Izinhlelo zokusebenza ozivumelayo zingaba yizibonisi ze-braille ze-SandFly. Uhlelo lokusebenza oluyisibonisi se-braille lungafunda isikrini futhi lulawule idivayisi.</string>
+    <string name="external_displays_none">Azikho izinhlelo zokusebenza ezingaba yizibonisi ze-braille.</string>
 </resources>
