@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">Վերնագիր</string>
     <string name="title_pref_problem_report_app">Հավելված, որտեղ դա տեղի է ունենում</string>
     <string name="title_pref_problem_report_description">Նկարագրություն</string>
-    <string name="dialog_message_problem_report_description">Ինչ է տեղի ունենում և ինչ էիք սպասում:</string>
+    <string name="dialog_message_problem_report_description">Ինչ է տեղի ունենում և ինչ էիք սպասում։</string>
     <string name="title_pref_problem_report_steps">Վերարտադրման քայլեր</string>
     <string name="title_pref_problem_report_email">Էլ. փոստ պատասխանների համար</string>
     <string name="title_pref_problem_report_device">Ներառել սարքի տեղեկությունները</string>
@@ -14,12 +14,12 @@
     <string name="summary_pref_problem_report_log">Կարող է պարունակել տեքստ էկրանից</string>
     <string name="title_pref_problem_report_send">Ուղարկել</string>
     <string name="summary_pref_problem_report_sending">Ուղարկում</string>
-    <string name="problem_report_missing_fields">Մուտքագրեք վերնագիր և նկարագրություն:</string>
-    <string name="problem_report_invalid_email">Մուտքագրեք վավեր էլփոստի հասցե:</string>
+    <string name="problem_report_missing_fields">Մուտքագրեք վերնագիր և նկարագրություն։</string>
+    <string name="problem_report_invalid_email">Մուտքագրեք վավեր էլփոստի հասցե։</string>
     <string name="problem_report_sent">Հետադարձ կապն ուղարկվեց։</string>
-    <string name="problem_report_rate_limited">Չափազանց շատ արձագանք ուղարկվեց: Փորձեք ավելի ուշ:</string>
-    <string name="problem_report_no_connection">Հետադարձ կապ չի ուղարկվել: Ստուգեք ինտերնետ կապը:</string>
-    <string name="problem_report_not_sent">Հետադարձ կապ չի ուղարկվել: Փորձեք ավելի ուշ:</string>
+    <string name="problem_report_rate_limited">Չափազանց շատ կարծիքներ են ուղարկվել։ Փորձեք ավելի ուշ։</string>
+    <string name="problem_report_no_connection">Կարծիքը չի ուղարկվել։ Ստուգեք ինտերնետ կապը։</string>
+    <string name="problem_report_not_sent">Կարծիքը չի ուղարկվել։ Փորձեք ավելի ուշ։</string>
     <string-array name="problem_report_type_entries">
         <item>Սխալ վարքագիծ</item>
         <item>Վթար</item>
@@ -72,12 +72,12 @@
     <string name="report_reply_sent">Պատասխանն ուղարկվեց։</string>
     <string name="report_reply_not_sent">Պատասխանը չի ուղարկվել: Փորձեք ավելի ուշ:</string>
     <string name="title_report_remove">Հեռացնել մուտքի արկղից</string>
-    <string name="dialog_title_report_remove">Հեռացնե՞լ այս կարծիքը մուտքի արկղից:</string>
+    <string name="dialog_title_report_remove">Հեռացնե՞լ այս կարծիքը մուտքի արկղից</string>
     <string name="dialog_message_report_remove">Դրա պատասխաններն այլևս չեն հասնի այս հեռախոսին:</string>
     <string name="title_report_delete_draft">Ջնջել սևագիրը</string>
     <string name="dialog_title_report_delete_draft">Ջնջե՞լ այս սևագիրը</string>
     <string name="button_report_delete">Ջնջել</string>
-    <string name="report_missing">Այս կարծիքն այլևս մուտքի արկղում չէ:</string>
+    <string name="report_missing">Այս կարծիքն այլևս մուտքի արկղում չէ։</string>
     <string name="notification_channel_problem_reports">Հետադարձ կապի պատասխաններ</string>
     <string name="report_notification_reply">Պատասխան <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-ին</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>

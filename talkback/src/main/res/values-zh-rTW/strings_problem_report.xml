@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">標題</string>
     <string name="title_pref_problem_report_app">應用程式發生的地方</string>
     <string name="title_pref_problem_report_description">描述</string>
-    <string name="dialog_message_problem_report_description">發生了什麼以及您所期望的。</string>
+    <string name="dialog_message_problem_report_description">發生了什麼，以及您原本預期的結果。</string>
     <string name="title_pref_problem_report_steps">重現步驟</string>
     <string name="title_pref_problem_report_email">接收回覆的電子郵件</string>
     <string name="title_pref_problem_report_device">包含設備資訊</string>
@@ -17,9 +17,9 @@
     <string name="problem_report_missing_fields">輸入標題和說明。</string>
     <string name="problem_report_invalid_email">輸入有效的電子郵件地址。</string>
     <string name="problem_report_sent">意見已傳送。</string>
-    <string name="problem_report_rate_limited">發送的反饋太多。稍後再試。</string>
-    <string name="problem_report_no_connection">反饋未發送。檢查網路連線。</string>
-    <string name="problem_report_not_sent">反饋未發送。稍後再試。</string>
+    <string name="problem_report_rate_limited">傳送的回饋太多。請稍後再試。</string>
+    <string name="problem_report_no_connection">回饋未傳送。請檢查網路連線。</string>
+    <string name="problem_report_not_sent">回饋未傳送。請稍後再試。</string>
     <string-array name="problem_report_type_entries">
         <item>不正確的行為</item>
         <item>崩潰</item>

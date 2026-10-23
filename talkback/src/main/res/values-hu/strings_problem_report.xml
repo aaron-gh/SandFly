@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">Cím</string>
     <string name="title_pref_problem_report_app">Alkalmazás, ahol ez történik</string>
     <string name="title_pref_problem_report_description">Leírás</string>
-    <string name="dialog_message_problem_report_description">Mi történik és mire számítottál.</string>
+    <string name="dialog_message_problem_report_description">Mi történik, és mire számított.</string>
     <string name="title_pref_problem_report_steps">Reprodukálás lépései</string>
     <string name="title_pref_problem_report_email">E-mail-cím a válaszokhoz</string>
     <string name="title_pref_problem_report_device">Eszközadatok csatolása</string>
@@ -17,9 +17,9 @@
     <string name="problem_report_missing_fields">Adja meg a címet és a leírást.</string>
     <string name="problem_report_invalid_email">Adjon meg egy érvényes e-mail címet.</string>
     <string name="problem_report_sent">Visszajelzés elküldve.</string>
-    <string name="problem_report_rate_limited">Túl sok visszajelzést küldtünk. Próbálja újra később.</string>
-    <string name="problem_report_no_connection">A visszajelzést nem küldték el. Ellenőrizze az internetkapcsolatot.</string>
-    <string name="problem_report_not_sent">A visszajelzést nem küldték el. Próbálja újra később.</string>
+    <string name="problem_report_rate_limited">Túl sok visszajelzést küldött. Próbálja újra később.</string>
+    <string name="problem_report_no_connection">A visszajelzést nem sikerült elküldeni. Ellenőrizze az internetkapcsolatot.</string>
+    <string name="problem_report_not_sent">A visszajelzést nem sikerült elküldeni. Próbálja újra később.</string>
     <string-array name="problem_report_type_entries">
         <item>Helytelen viselkedés</item>
         <item>Összeomlás</item>

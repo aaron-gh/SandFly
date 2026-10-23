@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">标题</string>
     <string name="title_pref_problem_report_app">发生问题的应用</string>
     <string name="title_pref_problem_report_description">描述</string>
-    <string name="dialog_message_problem_report_description">发生了什么以及您所期望的。</string>
+    <string name="dialog_message_problem_report_description">发生了什么，以及您原本预期的结果。</string>
     <string name="title_pref_problem_report_steps">重现步骤</string>
     <string name="title_pref_problem_report_email">用于接收回复的电子邮件地址</string>
     <string name="title_pref_problem_report_device">包含设备信息</string>
@@ -17,9 +17,9 @@
     <string name="problem_report_missing_fields">输入标题和说明。</string>
     <string name="problem_report_invalid_email">输入有效的电子邮件地址。</string>
     <string name="problem_report_sent">反馈已发送。</string>
-    <string name="problem_report_rate_limited">发送的反馈太多。稍后再试。</string>
-    <string name="problem_report_no_connection">反馈未发送。检查互联网连接。</string>
-    <string name="problem_report_not_sent">反馈未发送。稍后再试。</string>
+    <string name="problem_report_rate_limited">发送的反馈太多。请稍后再试。</string>
+    <string name="problem_report_no_connection">反馈未发送。请检查互联网连接。</string>
+    <string name="problem_report_not_sent">反馈未发送。请稍后再试。</string>
     <string-array name="problem_report_type_entries">
         <item>不正确的行为</item>
         <item>崩溃</item>

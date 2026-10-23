@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">Título</string>
     <string name="title_pref_problem_report_app">App onde isso acontece</string>
     <string name="title_pref_problem_report_description">Descrição</string>
-    <string name="dialog_message_problem_report_description">O que acontece e o que você esperava.</string>
+    <string name="dialog_message_problem_report_description">O que acontece e o que esperava.</string>
     <string name="title_pref_problem_report_steps">Passos para reproduzir</string>
     <string name="title_pref_problem_report_email">E-mail para respostas</string>
     <string name="title_pref_problem_report_device">Incluir informações do dispositivo</string>
@@ -17,8 +17,8 @@
     <string name="problem_report_missing_fields">Insira um título e uma descrição.</string>
     <string name="problem_report_invalid_email">Insira um endereço de e-mail válido.</string>
     <string name="problem_report_sent">Feedback enviado.</string>
-    <string name="problem_report_rate_limited">Muitos comentários enviados. Tente novamente mais tarde.</string>
-    <string name="problem_report_no_connection">Feedback não enviado. Verifique a conexão com a internet.</string>
+    <string name="problem_report_rate_limited">Foram enviados comentários demais. Tente novamente mais tarde.</string>
+    <string name="problem_report_no_connection">Feedback não enviado. Verifique a ligação à Internet.</string>
     <string name="problem_report_not_sent">Feedback não enviado. Tente novamente mais tarde.</string>
     <string-array name="problem_report_type_entries">
         <item>Comportamento incorreto</item>
@@ -77,7 +77,7 @@
     <string name="title_report_delete_draft">Eliminar rascunho</string>
     <string name="dialog_title_report_delete_draft">Eliminar este rascunho?</string>
     <string name="button_report_delete">Eliminar</string>
-    <string name="report_missing">Este feedback não está mais na caixa de entrada.</string>
+    <string name="report_missing">Este feedback já não está na caixa de entrada.</string>
     <string name="notification_channel_problem_reports">Respostas ao feedback</string>
     <string name="report_notification_reply">Resposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>

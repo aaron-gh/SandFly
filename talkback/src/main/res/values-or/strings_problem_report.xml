@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">ଆଖ୍ୟା</string>
     <string name="title_pref_problem_report_app">ଯେଉଁଠାରେ ଏହା ଘଟେ ଆପ୍ କରନ୍ତୁ</string>
     <string name="title_pref_problem_report_description">ବର୍ଣ୍ଣନା</string>
-    <string name="dialog_message_problem_report_description">କ’ଣ ହୁଏ ଏବଂ ତୁମେ ଯାହା ଆଶା କରିଥିଲ |</string>
+    <string name="dialog_message_problem_report_description">କ’ଣ ହୁଏ ଏବଂ ଆପଣ କ’ଣ ଆଶା କରିଥିଲେ।</string>
     <string name="title_pref_problem_report_steps">ସମସ୍ୟା ପୁଣି ଘଟାଇବାର ପଦକ୍ଷେପ</string>
     <string name="title_pref_problem_report_email">ଉତ୍ତର ପାଇଁ ଇମେଲ୍</string>
     <string name="title_pref_problem_report_device">ଉପକରଣ ସୂଚନା ଅନ୍ତର୍ଭୂକ୍ତ କରନ୍ତୁ</string>
@@ -14,12 +14,12 @@
     <string name="summary_pref_problem_report_log">ସ୍କ୍ରିନରୁ ଟେକ୍ସଟ୍ ଧାରଣ କରିପାରେ</string>
     <string name="title_pref_problem_report_send">ପଠାନ୍ତୁ</string>
     <string name="summary_pref_problem_report_sending">ପଠାଉଛି</string>
-    <string name="problem_report_missing_fields">ଏକ ଆଖ୍ୟା ଏବଂ ଏକ ବର୍ଣ୍ଣନା ପ୍ରବେଶ କରନ୍ତୁ |</string>
-    <string name="problem_report_invalid_email">ଏକ ବ valid ଧ ଇମେଲ୍ ଠିକଣା ପ୍ରବେଶ କରନ୍ତୁ |</string>
+    <string name="problem_report_missing_fields">ଏକ ଶୀର୍ଷକ ଏବଂ ଏକ ବର୍ଣ୍ଣନା ଲେଖନ୍ତୁ।</string>
+    <string name="problem_report_invalid_email">ଏକ ବୈଧ ଇମେଲ୍ ଠିକଣା ଲେଖନ୍ତୁ।</string>
     <string name="problem_report_sent">ମତାମତ ପଠାଯାଇଛି।</string>
-    <string name="problem_report_rate_limited">ଅତ୍ୟଧିକ ମତାମତ ପଠାଯାଇଛି | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
-    <string name="problem_report_no_connection">ମତାମତ ପଠାଯାଇ ନାହିଁ | ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
-    <string name="problem_report_not_sent">ମତାମତ ପଠାଯାଇ ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="problem_report_rate_limited">ଅତ୍ୟଧିକ ମତାମତ ପଠାଯାଇଛି। ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
+    <string name="problem_report_no_connection">ମତାମତ ପଠାଯାଇନାହିଁ। ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ।</string>
+    <string name="problem_report_not_sent">ମତାମତ ପଠାଯାଇନାହିଁ। ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
     <string-array name="problem_report_type_entries">
         <item>ଭୁଲ ଆଚରଣ</item>
         <item>ଦୁର୍ଘଟଣା</item>
@@ -77,7 +77,7 @@
     <string name="title_report_delete_draft">ଡ୍ରାଫ୍ଟ ବିଲୋପ କରନ୍ତୁ</string>
     <string name="dialog_title_report_delete_draft">ଏହି ଡ୍ରାଫ୍ଟ ବିଲୋପ କରିବେ କି?</string>
     <string name="button_report_delete">ଡିଲିଟ କରନ୍ତୁ</string>
-    <string name="report_missing">ଏହି ମତାମତ ଆଉ ଇନବକ୍ସରେ ନାହିଁ |</string>
+    <string name="report_missing">ଏହି ମତାମତ ଆଉ ଇନବକ୍ସରେ ନାହିଁ।</string>
     <string name="notification_channel_problem_reports">ମତାମତ ଉତ୍ତର</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ର ଉତ୍ତର</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>

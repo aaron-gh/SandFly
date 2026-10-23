@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">タイトル</string>
     <string name="title_pref_problem_report_app">それが起こるアプリ</string>
     <string name="title_pref_problem_report_description">説明</string>
-    <string name="dialog_message_problem_report_description">何が起こるか、そしてあなたが期待していたこと。</string>
+    <string name="dialog_message_problem_report_description">何が起きるのか、何を期待していたのか。</string>
     <string name="title_pref_problem_report_steps">再現手順</string>
     <string name="title_pref_problem_report_email">返信先メールアドレス</string>
     <string name="title_pref_problem_report_device">デバイス情報を含める</string>
@@ -14,8 +14,8 @@
     <string name="summary_pref_problem_report_log">画面のテキストが含まれる場合があります</string>
     <string name="title_pref_problem_report_send">送信</string>
     <string name="summary_pref_problem_report_sending">送信中</string>
-    <string name="problem_report_missing_fields">タイトルと説明を入力します。</string>
-    <string name="problem_report_invalid_email">有効な電子メール アドレスを入力してください。</string>
+    <string name="problem_report_missing_fields">タイトルと説明を入力してください。</string>
+    <string name="problem_report_invalid_email">有効なメールアドレスを入力してください。</string>
     <string name="problem_report_sent">フィードバックを送信しました。</string>
     <string name="problem_report_rate_limited">送信されたフィードバックが多すぎます。後でもう一度試してください。</string>
     <string name="problem_report_no_connection">フィードバックは送信されませんでした。インターネット接続を確認してください。</string>
@@ -77,7 +77,7 @@
     <string name="title_report_delete_draft">下書きの削除</string>
     <string name="dialog_title_report_delete_draft">この下書きを削除しますか?</string>
     <string name="button_report_delete">削除</string>
-    <string name="report_missing">このフィードバックは受信トレイに表示されなくなりました。</string>
+    <string name="report_missing">このフィードバックは受信トレイにありません。</string>
     <string name="notification_channel_problem_reports">フィードバックの返信</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> への返信</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>

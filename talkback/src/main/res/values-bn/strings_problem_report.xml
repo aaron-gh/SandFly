@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">শিরোনাম</string>
     <string name="title_pref_problem_report_app">অ্যাপ যেখানে এটি ঘটে</string>
     <string name="title_pref_problem_report_description">বিবরণ</string>
-    <string name="dialog_message_problem_report_description">কি ঘটবে এবং আপনি কি প্রত্যাশিত.</string>
+    <string name="dialog_message_problem_report_description">কী ঘটে এবং আপনি কী আশা করেছিলেন।</string>
     <string name="title_pref_problem_report_steps">সমস্যাটি পুনরায় ঘটানোর ধাপ</string>
     <string name="title_pref_problem_report_email">উত্তরের জন্য ইমেল</string>
     <string name="title_pref_problem_report_device">ডিভাইস তথ্য অন্তর্ভুক্ত করুন</string>
@@ -17,9 +17,9 @@
     <string name="problem_report_missing_fields">একটি শিরোনাম এবং একটি বিবরণ লিখুন।</string>
     <string name="problem_report_invalid_email">একটি বৈধ ইমেল ঠিকানা লিখুন.</string>
     <string name="problem_report_sent">প্রতিক্রিয়া পাঠানো হয়েছে।</string>
-    <string name="problem_report_rate_limited">খুব বেশি প্রতিক্রিয়া পাঠানো হয়েছে। পরে আবার চেষ্টা করুন.</string>
-    <string name="problem_report_no_connection">প্রতিক্রিয়া পাঠানো হয়নি. ইন্টারনেট সংযোগ পরীক্ষা করুন।</string>
-    <string name="problem_report_not_sent">প্রতিক্রিয়া পাঠানো হয়নি. পরে আবার চেষ্টা করুন.</string>
+    <string name="problem_report_rate_limited">খুব বেশি প্রতিক্রিয়া পাঠানো হয়েছে। পরে আবার চেষ্টা করুন।</string>
+    <string name="problem_report_no_connection">প্রতিক্রিয়া পাঠানো হয়নি। ইন্টারনেট সংযোগ পরীক্ষা করুন।</string>
+    <string name="problem_report_not_sent">প্রতিক্রিয়া পাঠানো হয়নি। পরে আবার চেষ্টা করুন।</string>
     <string-array name="problem_report_type_entries">
         <item>ভুল আচরণ</item>
         <item>ক্রাশ</item>
@@ -77,7 +77,7 @@
     <string name="title_report_delete_draft">খসড়া মুছুন</string>
     <string name="dialog_title_report_delete_draft">এই খসড়া মুছবেন?</string>
     <string name="button_report_delete">মুছুন</string>
-    <string name="report_missing">এই প্রতিক্রিয়া ইনবক্সে আর নেই.</string>
+    <string name="report_missing">এই প্রতিক্রিয়া আর ইনবক্সে নেই।</string>
     <string name="notification_channel_problem_reports">প্রতিক্রিয়া উত্তর</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-এর উত্তর</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>

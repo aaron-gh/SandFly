@@ -6,7 +6,7 @@
     <string name="title_pref_problem_report_title">தலைப்பு</string>
     <string name="title_pref_problem_report_app">அது நடக்கும் இடத்தில் ஆப்</string>
     <string name="title_pref_problem_report_description">விளக்கம்</string>
-    <string name="dialog_message_problem_report_description">என்ன நடக்கிறது மற்றும் நீங்கள் எதிர்பார்த்தது.</string>
+    <string name="dialog_message_problem_report_description">என்ன நடக்கிறது, நீங்கள் என்ன எதிர்பார்த்தீர்கள்.</string>
     <string name="title_pref_problem_report_steps">சிக்கலை மீண்டும் உருவாக்கும் படிகள்</string>
     <string name="title_pref_problem_report_email">பதில்களுக்கான மின்னஞ்சல்</string>
     <string name="title_pref_problem_report_device">சாதனத் தகவலைச் சேர்க்கவும்</string>
@@ -19,7 +19,7 @@
     <string name="problem_report_sent">கருத்து அனுப்பப்பட்டது.</string>
     <string name="problem_report_rate_limited">அதிக கருத்து அனுப்பப்பட்டது. பிறகு முயற்சிக்கவும்.</string>
     <string name="problem_report_no_connection">கருத்து அனுப்பப்படவில்லை. இணைய இணைப்பைச் சரிபார்க்கவும்.</string>
-    <string name="problem_report_not_sent">கருத்து அனுப்பப்படவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="problem_report_not_sent">கருத்து அனுப்பப்படவில்லை. பிறகு மீண்டும் முயற்சிக்கவும்.</string>
     <string-array name="problem_report_type_entries">
         <item>தவறான நடத்தை</item>
         <item>விபத்து</item>
@@ -77,7 +77,7 @@
     <string name="title_report_delete_draft">வரைவை நீக்கு</string>
     <string name="dialog_title_report_delete_draft">இந்த வரைவை நீக்கவா?</string>
     <string name="button_report_delete">நீக்கு</string>
-    <string name="report_missing">இந்தக் கருத்து இனி இன்பாக்ஸில் இருக்காது.</string>
+    <string name="report_missing">இந்தக் கருத்து இனி இன்பாக்ஸில் இல்லை.</string>
     <string name="notification_channel_problem_reports">கருத்து பதில்கள்</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>க்கான பதில்</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
