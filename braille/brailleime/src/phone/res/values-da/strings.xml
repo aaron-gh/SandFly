@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack-brailletastatur</string>
+  <string name="braille_ime_service_name">SandFly-brailletastatur</string>
   <string name="braille_ime_bd_mode_name">Indtastning via brailleskærm</string>
   <string name="switch_to_tabletop_announcement">Tilstanden Skærm vendt op. Placer enheden, så opladningsporten vender mod venstre.</string>
   <string name="calibration_tip_announcement">Opdater punkternes placering ved at holde %d fingre nede.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Skiftede til uforkortet braille</string>
   <string name="braille_ime_displayed_name">brailletastatur</string>
   <string name="multiple_languages_braille_ime_displayed_name">brailletastatur, %s</string>
-  <string name="input_view_caption">TalkBack-brailletastatur – du kan få hjælp på g.co/help/braille</string>
+  <string name="input_view_caption">SandFly-brailletastatur – du kan få hjælp på g.co/help/braille</string>
   <string name="perform_action_next">Næste</string>
   <string name="perform_action_submitting">Indsender tekst</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Opdaterer punkternes placering. Lad os starte med at registrere punkterne for din %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Hvis du vil skifte sprog, mens du skriver via brailletastaturet, skal du stryge opad med 3 fingre. Vælg derefter \"skift til næste sprog\".</string>
   <string name="title_pref_accumulate_presses">Medtag alle punkter, der trykkes på</string>
   <string name="summary_pref_accumulate_presses">Hvert punkt, der trykkes på, er en del af inputtet, selv hvis punktet slippes inden andre punkter</string>
-  <string name="title_pref_reverse_dots">Omvendte punkter</string>
-  <string name="summary_pref_reverse_dots">Byt rundt på punktplaceringer, så punkterne 1 og 4 f.eks. skifter plads</string>
+  <string name="title_pref_reverse_dots">Byt om på venstre og højre punkter</string>
+  <string name="summary_pref_reverse_dots">Punkt 1, 2 og 3 bytter plads med punkt 4, 5 og 6</string>
   <string name="bd_preference_braille_contracted">Forkortet braille</string>
   <string name="bd_preference_braille_uncontracted">Uforkortet braille</string>
   <string name="context_menu_title">Indstillinger for brailletastatur</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tastatur</string>
   <string name="not_enough_touch_points_dialog_title">Din enhed understøtter ikke brailletastatur</string>
   <string name="not_enough_touch_points_dialog_message">Din enhed understøtter ikke nok trykpunkter. Kontakt producenten af din enhed for at få flere oplysninger.</string>
-  <string name="talkback_off_dialog_title">Aktivér TalkBack for at bruge braille-tastaturet</string>
+  <string name="talkback_off_dialog_title">Aktivér SandFly for at bruge braille-tastaturet</string>
   <string name="talkback_off_dialog_positive_button">Aktivér funktionen i indstillingerne for hjælpefunktioner</string>
-  <string name="talkback_suspend_dialog_title">Aktivér TalkBack igen for at bruge braille-tastaturet</string>
-  <string name="talkback_off_or_suspend_dialog_message">Når TalkBack er aktiveret, kan du trykke på din skærm for at indtaste braille-tegn</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Aktivér TalkBack for at ændre bevægelsen</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack er deaktiveret. Aktivér funktionen for at ændre bevægelser på brailletastaturet.</string>
+  <string name="talkback_suspend_dialog_title">Aktivér SandFly igen for at bruge braille-tastaturet</string>
+  <string name="talkback_off_or_suspend_dialog_message">Når SandFly er aktiveret, kan du trykke på din skærm for at indtaste braille-tegn</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Aktivér SandFly for at ændre bevægelsen</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly er deaktiveret. Aktivér funktionen for at ændre bevægelser på brailletastaturet.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Gå til Indstillinger</string>
   <string name="reset_gestures_dialog_title">Vil du nulstille alle bevægelser?</string>
   <string name="reset_gestures_dialog_message">Alle bevægelser på brailletastaturet nulstilles til standard</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Nulstil til standard</string>
   <string name="custom_gestures_dialog_remove_button">Fjern bevægelse</string>
   <string name="change_gestures_dialog_message_title">Sådan ændrer du en bevægelse</string>
-  <string name="change_gestures_dialog_message">På den næste skærm åbnes brailletastaturet, og du kan ikke bruge TalkBack-bevægelser.\n\nNår brailletastaturet er åbent, skal du udføre den bevægelse, du vil bruge. Hvis du vil lukke brailletastaturet og annullere ændringen af bevægelsen, skal du stryge nedad med 2 fingre.\n\nSe tilgængelige bevægelser\n</string>
+  <string name="change_gestures_dialog_message">På den næste skærm åbnes brailletastaturet, og du kan ikke bruge SandFly-bevægelser.\n\nNår brailletastaturet er åbent, skal du udføre den bevægelse, du vil bruge. Hvis du vil lukke brailletastaturet og annullere ændringen af bevægelsen, skal du stryge nedad med 2 fingre.\n\nSe tilgængelige bevægelser\n</string>
   <string name="change_gestures_dialog_message_link">Se tilgængelige bevægelser</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Vis ikke denne meddelelse igen</string>
   <string name="change_gestures_dialog_positive_button">Fortsæt</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Anvend ikke</string>
   <string name="next_keyboard">Næste tastatur</string>
   <string name="braille_tutorial_title">Vejledning til brailletastatur</string>
-  <string name="tutorial_intro_description">Med brailletastaturet kan du trykke på din skærm for at indtaste 6-punkts braille.\n\nDu bruger i øjeblikket Unified English Braille. Hvis du vil skifte dit indtastningssprog, skal du gå til TalkBack-indstillinger.\n\nHvis du vil skrive braille, skal du holde og bruge din telefon på en anden måde.</string>
+  <string name="tutorial_intro_description">Med brailletastaturet kan du trykke på din skærm for at indtaste 6-punkts braille.\n\nDu bruger i øjeblikket Unified English Braille. Hvis du vil skifte dit indtastningssprog, skal du gå til SandFly-indstillinger.\n\nHvis du vil skrive braille, skal du holde og bruge din telefon på en anden måde.</string>
   <string name="next_step">Næste</string>
   <string name="leave_keyboard">Luk brailletastatur</string>
-  <string name="hold_six_fingers_description">Du kan ikke bruge almindelige TalkBack-bevægelser på braille-tastaturet.\n\nLad os starte med at konfigurere placeringen af de seks braille-punkter, når du skriver.</string>
-  <string name="rotate_orientation_description_1">Fra nu af kan du ikke bruge almindelige TalkBack-bevægelser. TalkBack er ikke tilgængelig, når du bruger braille-tastaturet.</string>
+  <string name="hold_six_fingers_description">Du kan ikke bruge almindelige SandFly-bevægelser på braille-tastaturet.\n\nLad os starte med at konfigurere placeringen af de seks braille-punkter, når du skriver.</string>
+  <string name="rotate_orientation_description_1">Fra nu af kan du ikke bruge almindelige SandFly-bevægelser. SandFly er ikke tilgængelig, når du bruger braille-tastaturet.</string>
   <string name="rotate_orientation_description_2">For at komme i gang skal du holde din telefon sådan, med skærmen vendt væk fra dig selv.</string>
   <string name="tap_to_continue">Tryk to gange et vilkårligt sted for at fortsætte</string>
   <string name="instruction_type_letter_a">Tryk på punkt 1 med din venstre pegefinger for at skrive bogstavet \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">MARKØREN BLEV FLYTTET FREM</string>
   <string name="result_swipe_down_2_fingers">SKJUL TASTATURET</string>
   <string name="result_swipe_down_3_fingers">NÆSTE TASTATUR</string>
-  <string name="rotate_orientation_announcement">Du kan nu ikke længere bruge almindelige TalkBack-bevægelser. TalkBack er ikke tilgængelig, når du bruger braille-tastaturet.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Du kan nu ikke længere bruge almindelige SandFly-bevægelser. SandFly er ikke tilgængelig, når du bruger braille-tastaturet.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Først skal du vende din telefon, så skærmen vender væk fra dig selv.\n\nDerefter skal du rotere telefonen til liggende format. Dine hænder skal holde om telefonens korte sider. Højre hånd skal holde om den ende, hvor USB-porten er. Lad dine tre midterste fingre hvile på skærmen, og brug din lillefinger og tommelfinger til at holde telefonen.\n\nNår du er klar, skal du trykke to gange på skærmen for at fortsætte.\n\nHvis du vil lukke braille-tastaturet, skal du stryge nedad mod jorden med tre fingre. Dermed skiftes der tilbage til dit oprindelige tastatur.</string>
   <string name="rotate_orientation_continue_announcement">Din telefon er i stående format. Hvis du vil fortsætte, skal du rotere din telefon til liggende format, så den lange side vender nedad. Derefter skal du vende skærmen væk fra dig selv. Når du er klar, skal du trykke to gange på skærmen for at fortsætte.</string>
   <string name="type_letter_a_announcement">Hold skærmen væk fra dig selv. Hold din telefon med begge hænder på de korte sider, så de tre midterste fingre på hver hånd kan røre skærmen.\n\nDin venstre pegefinger skal være på punkt 1. Tryk så på punkt 1 for at skrive bogstavet \"A\".</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Hvis du vil skifte til dit andet tastatur, skal du stryge nedad med tre fingre. Prøv det nu.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Næste tastatur. Dette skifter normalt til det næste tastatur. I øjeblikket beholder du braille-tastaturet, fordi du stadig er i vejledningen.</string>
   <string name="swipe_up_3_fingers_announcement">Du kan også skrive i tilstanden Skærm vendt op ved at placere din telefon fladt på et bord. Hvis du vil afslutte vejledningen, skal du stryge opad med tre fingre og finde muligheden for at afslutte vejledningen.</string>
-  <string name="open_context_menu_announcement">Indstillingsmenuen er åben. Vend din telefon om igen, så den er rettet mod dig, og hold den normalt. Du kan nu bruge almindelige TalkBack-bevægelser til at navigere på telefonen. Stryg til højre for at se flere valgmuligheder.</string>
+  <string name="open_context_menu_announcement">Indstillingsmenuen er åben. Vend din telefon om igen, så den er rettet mod dig, og hold den normalt. Du kan nu bruge almindelige SandFly-bevægelser til at navigere på telefonen. Stryg til højre for at se flere valgmuligheder.</string>
   <string name="hold_six_fingers_announcement">%s\nLæg din enhed fladt på et bord. Derefter skal du holde nede på skærmen med de tre midterste fingre på hver hånd i en position, der er behagelig for dig at skrive i.</string>
   <string name="hold_six_fingers_inactive_announcement">Læg din enhed fladt på et bord. Derefter skal du holde nede på skærmen med de tre midterste fingre på hver hånd i en position, der er behagelig for dig at skrive i.</string>
   <string name="finish_tutorial_announcement">Viser braille-tastaturet. Vend din telefon, så skærmen vender væk fra dig. Drej telefonen vandret, så den er i liggende format. Du kan nu begynde at skrive.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Denne bevægelse bruges til \"%1$s\" og kan ikke ændres. Prøv en anden bevægelse. %2$s</string>
   <string name="custom_gesture_cannot_used">Denne bevægelse kan ikke bruges</string>
   <string name="custom_gesture_no_gesture">Ingen udført bevægelse</string>
-  <string name="custom_gesture_try_another">Prøv en anden bevægelse. Du kan se en liste over alle tilgængelige bevægelser ved at gå til Hjælp til TalkBack-brailletastaturet. %s</string>
+  <string name="custom_gesture_try_another">Prøv en anden bevægelse. Du kan se en liste over alle tilgængelige bevægelser ved at gå til Hjælp til SandFly-brailletastaturet. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Bevægelserne var ikke ens</string>
   <string name="custom_gesture_perform_again">Udfør den bevægelse, du vil bruge, igen. %s</string>
+    <string name="tabletop_port_left_announcement">Bordtilstand, opladningsport til venstre</string>
+    <string name="tabletop_port_right_announcement">Bordtilstand, opladningsport til højre</string>
+    <string name="screen_away_port_right_announcement">Skærmen vender væk fra dig, opladningsport til højre</string>
+    <string name="screen_away_port_left_announcement">Skærmen vender væk fra dig, opladningsport til venstre</string>
+    <string name="screen_toward_announcement">Skærmen vender mod dig</string>
+    <string name="screen_toward_port_left_announcement">Skærmen vender mod dig, opladningsport til venstre</string>
+    <string name="screen_toward_port_right_announcement">Skærmen vender mod dig, opladningsport til højre</string>
+    <string name="screen_toward_port_down_announcement">Skærmen vender mod dig, opladningsport peger nedad</string>
+    <string name="screen_toward_port_up_announcement">Skærmen vender mod dig, opladningsport peger opad</string>
+    <string name="port_right_announcement">Opladningsport til højre</string>
+    <string name="port_left_announcement">Opladningsport til venstre</string>
+    <string name="tabletop_port_near_announcement">Bordtilstand, opladningsport vender mod dig</string>
+    <string name="tabletop_port_far_announcement">Bordtilstand, opladningsport vender væk fra dig</string>
+    <string name="screen_away_port_down_announcement">Skærmen vender væk fra dig, opladningsport peger nedad</string>
+    <string name="screen_away_port_up_announcement">Skærmen vender væk fra dig, opladningsport peger opad</string>
+    <string name="port_near_announcement">Opladningsport vender mod dig</string>
+    <string name="port_far_announcement">Opladningsport vender væk fra dig</string>
+    <string name="port_down_announcement">Opladningsport peger nedad</string>
+    <string name="port_up_announcement">Opladningsport peger opad</string>
+    <string name="orientation_locked_announcement">Retning låst</string>
+    <string name="orientation_locked_port_announcement">Retning låst. %1$s</string>
+    <string name="orientation_unlocked_announcement">Retning låst op</string>
+    <string name="switch_to_language_contracted_announcement">Der blev skiftet til %s, Forkortet braille</string>
+    <string name="switch_to_language_uncontracted_announcement">Der blev skiftet til %s, Uforkortet braille</string>
+    <string name="title_pref_flip_dots_vertically">Byt om på øverste og nederste punkter</string>
+    <string name="summary_pref_flip_dots_vertically">Punkt 1 bytter plads med punkt 3, og punkt 4 med punkt 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tabletskærmen vender væk, når tabletten holdes op</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Når indstillingen er slået fra, bruger en tablet eller udfoldet telefon, der holdes op, bordlayoutet med skærmen vendt mod dig</string>
+    <string name="title_pref_typing_sounds">Tastelyde</string>
+    <string name="summary_pref_typing_sounds">Afspil tastaturklik, når du indtaster et tegn, et mellemrum eller en ny linje eller sletter noget</string>
+    <string name="skip_tutorial">Spring vejledningen over</string>
 </resources>

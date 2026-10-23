@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braillehardwaretastatur</string>
   <string name="bd_application_name">Android Hjælpefunktioner</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-brailletastatur er ikke tilgængeligt</string>
-  <string name="bd_ime_disabled_dialog_title">Aktivér TalkBack-brailletastatur</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-brailletastatur er ikke tilgængeligt</string>
+  <string name="bd_ime_disabled_dialog_title">Aktivér SandFly-brailletastatur</string>
   <string name="bd_ime_disabled_dialog_message">Hvis du vil bruge din brailleskærm til at skrive, skal du aktivere den ved at gå til indstillingerne for indtastning</string>
   <string name="bd_ime_disabled_dialog_title_positive">Indstillinger for indtastning</string>
   <string name="bd_ime_not_default_dialog_title">Skift indtastningsmetode</string>
-  <string name="bd_ime_not_default_dialog_message">Angiv TalkBack-brailletastaturet som din indtastningsmetode for at fortsætte med at skrive</string>
+  <string name="bd_ime_not_default_dialog_message">Angiv SandFly-brailletastaturet som din indtastningsmetode for at fortsætte med at skrive</string>
   <string name="bd_ime_not_default_dialog_positive">Skift indtastningsmetode</string>
   <string name="type_unlabeled">Ingen etiket</string>
   <string name="type_unlabeled_edittext">Redigeringsfeltet har ingen etiket</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Panorer til venstre</string>
   <string name="overlay_pan_right_button">Panorer til højre</string>
   <string name="bd_preferences_title">Brailleskærm</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Aktivér TalkBack for at bruge en brailleskærm</string>
-  <string name="bd_preferences_banner_talkback_off_button">Gå til TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Aktivér SandFly for at bruge en brailleskærm</string>
+  <string name="bd_preferences_banner_talkback_off_button">Gå til SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Aktivér Bluetooth for at bruge brailleskærm</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Aktivér Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Hvis du vil bruge en brailleskærm, skal %s have adgang til enheder i nærheden</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Hvis du vil bruge browsertilstand, skal du skifte fra standardtastaturoversigten til den forbedrede tastaturoversigt. Denne ændring opdaterer nogle af dine kommandoer for brailleskærme</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Indstillinger</string>
   <string name="bd_command_change_dialog_title">Nogle kommandoer er blevet opdateret</string>
-  <string name="bd_command_change_dialog_message">Disse kommandoer til brailleskærmen er opdateret i denne version af TalkBack:\n\n• Forrige element: Tryk på punkt 1 og 7\n\n• Næste element: Tryk på punkt 4 og 8\n\n• Forrige indstillinger for oplæsning: Tryk på punkt 2, 3, 7 og 8\n\n• Næste indstillinger for oplæsning: Tryk på punkt 5, 6, 7 og 8</string>
+  <string name="bd_command_change_dialog_message">Disse kommandoer til brailleskærmen er opdateret i denne version af SandFly:\n\n• Forrige element: Tryk på punkt 1 og 7\n\n• Næste element: Tryk på punkt 4 og 8\n\n• Forrige indstillinger for oplæsning: Tryk på punkt 2, 3, 7 og 8\n\n• Næste indstillinger for oplæsning: Tryk på punkt 5, 6, 7 og 8</string>
   <string name="bd_preference_braille_contracted">Forkortet braille</string>
   <string name="bd_preference_braille_uncontracted">Uforkortet braille</string>
   <string name="bd_braille_grade_tips">Hvis du hurtigt vil skifte mellem forkortet og uforkortet braille på en brailleskærm, skal du trykke på mellemrumstasten samt punkt 1, 2, 4 og 5.\n\nDenne kommando fungerer, hvis du bruger et sprog med begge forkortelsesgrader.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Skift mellem elementer</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systemhandlinger</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Tilbage, startskærm, notifikationer m.m.</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-funktioner</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack-menuer og -indstillinger</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-funktioner</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-menuer og -indstillinger</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Brailleindstillinger</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Sprog og indstillinger for braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Tekstredigering</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Åbn alle apps</string>
   <string name="bd_cmd_toggle_screen_search">Åbn skærmsøgning</string>
   <string name="bd_cmd_edit_custom_label">Rediger tilpasset etiket</string>
-  <string name="bd_cmd_open_talkback_menu">Åbn TalkBack-menu</string>
-  <string name="bd_cmd_toggle_voice_feedback">Aktivér eller deaktiver TalkBack-tale</string>
+  <string name="bd_cmd_open_talkback_menu">Åbn SandFly-menu</string>
+  <string name="bd_cmd_toggle_voice_feedback">Aktivér eller deaktiver SandFly-tale</string>
   <string name="bd_cmd_read_stop">Stop med at læse</string>
-  <string name="bd_cmd_talkback_settings">Åbn TalkBack-indstillinger</string>
+  <string name="bd_cmd_talkback_settings">Åbn SandFly-indstillinger</string>
   <string name="bd_cmd_switch_to_next_input_language">Skift til næste tastatursprog</string>
   <string name="bd_cmd_switch_to_next_output_language">Skift til næste læsesprog</string>
   <string name="bd_cmd_toggle_contracted_mode">Skift mellem forkortede og uforkortede</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Naviger hurtigt på websider ved at bruge kommandoen til at gå til browsertilstand, og indtast derefter følgende bogstavs- eller talgenveje\n\nGenvejene kan også bruges uden at gå til browsertilstand, men du skal føje punkt 8 til \"næste\"-kommandoer</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabelnavigation</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Vil du deaktivere indstillingen for brailleskærmen?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan til enhver tid aktivere denne indstilling i TalkBack-indstillingerne</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan til enhver tid aktivere denne indstilling i SandFly-indstillingerne</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Deaktiver</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Visse kommandoer er ikke tilgængelige</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandoer til navigation, brailleindstillinger og visse TalkBack-funktioner kan ikke bruges ved indtastning og redigering.\n\nLuk tastaturet for at bruge disse.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandoer til navigation, brailleindstillinger og visse SandFly-funktioner kan ikke bruges ved indtastning og redigering.\n\nLuk tastaturet for at bruge disse.</string>
   <string name="bd_caption_tutorial_dialog_title">Undertekster på din brailleskærm</string>
   <string name="bd_caption_tutorial_dialog_message">Vis eller skjul undertekster til denne video ved at trykke på mellemrumstasten og punkt 1, 4, 7 og 8.\n\nVis automatisk undertekster for understøttede medier ved at aktivere Vis undertekster på brailleskærm i Indstillinger.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Vis altid denne meddelelse, når undertekster er tilgængelige</string>
   <string name="bd_usb_connect_dialog_title">Brailleskærmen er sluttet til USB</string>
-  <string name="bd_usb_connect_dialog_message">Batteriet på din %s oplader din brailleskærm.\n\nHvis du vil skifte til Bluetooth, skal du frakoble dit USB eller din USB-hub og gå til indstillingerne for TalkBack &gt; Brailleskærm.</string>
+  <string name="bd_usb_connect_dialog_message">Batteriet på din %s oplader din brailleskærm.\n\nHvis du vil skifte til Bluetooth, skal du frakoble dit USB eller din USB-hub og gå til indstillingerne for SandFly &gt; Brailleskærm.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Lavt batteriniveau på %s</string>
   <string name="bd_battery_low_dialog_message">Batteriet på din %s oplader din brailleskærm.\n\nSådan sparer du på batteriet:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Ryd alt</string>
   <string name="popup_message_history_empty">Tom</string>
   <string name="popup_message_history_consent_dialog_title">Vil du aktivere beskedhistorik på enheden?</string>
-  <string name="popup_message_history_consent_dialog_msg">Dette gemmer visse beskeder, f.eks. notifikationer og alarmer, i TalkBack. Du kan til enhver tid ændre denne indstilling.</string>
+  <string name="popup_message_history_consent_dialog_msg">Dette gemmer visse beskeder, f.eks. notifikationer og alarmer, i SandFly. Du kan til enhver tid ændre denne indstilling.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aktivér</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nej tak</string>
+    <string name="external_display_channel">Brailleskærme fra andre apps</string>
+    <string name="external_display_ask_title">Vil du tillade, at <xliff:g id="app" example="Notetaker">%1$s</xliff:g> fungerer som brailleskærm for SandFly?</string>
+    <string name="external_display_ask_text">SandFly bruger det ikke, før du giver tilladelse.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> vil kunne læse alt, hvad SandFly viser i braille. Det kan være alt på skærmen, herunder beskeder og det, du skriver. Appen vil også kunne styre din enhed som et brailleskærm: skrive, åbne apps og udføre alle SandFly-kommandoer. Giv kun tilladelse til apps, du har tillid til.</string>
+    <string name="external_display_allow">Tillad</string>
+    <string name="external_display_deny">Tillad ikke</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> er dit brailleskærm</string>
+    <string name="external_display_in_use_text">Mens SandFly bruger det, kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> læse skærmen og styre enheden.</string>
+    <string name="external_displays_title">Skærme fra andre apps</string>
+    <string name="external_displays_summary">Apps, du giver tilladelse til, kan fungere som brailleskærme for SandFly. En app, der fungerer som brailleskærm, kan læse skærmen og styre enheden.</string>
+    <string name="external_displays_none">Ingen apps har tilladelse til at fungere som brailleskærme.</string>
 </resources>
