@@ -24,7 +24,7 @@
     <string name="script_runs_in">Трча за <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Работи во сите апликации</string>
     <string name="script_version">Верзија <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author">До <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_author">Автор: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Да се инсталира <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Тоа може:</string>
     <string name="script_install_no_permissions">Не се потребни дозволи.</string>
@@ -104,7 +104,7 @@
     <string name="script_commands_category">Наредби</string>
     <string name="script_commands_summary">Гестовите и копчињата на скрипта која работи се пред SandFly. Исклучете еден за да ги задржите SandFly.</string>
     <string name="script_binding_gesture">Гест: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">Клучеви: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Копчиња: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly мени</string>
     <string name="script_binding_control">Контроли за читање</string>
     <string name="script_binding_none">Нема</string>
@@ -116,8 +116,8 @@
     <string name="script_binding_perform_summary">Доделете го следниот гест или копчињата притиснати со модификаторот SandFly</string>
     <string name="script_binding_perform_message">Направете гест или притиснете ги копчињата.</string>
     <string name="script_binding_assign_title">Доделете <xliff:g id="binding">%1$s</xliff:g> на <xliff:g id="command">%2$s</xliff:g>?</string>
-    <string name="script_binding_assign">Доделете</string>
-    <string name="script_binding_choose_gesture">Изберете гест</string>
+    <string name="script_binding_assign">Додели</string>
+    <string name="script_binding_choose_gesture">Избери гест</string>
     <string name="script_binding_type_keys">Внесете копчиња</string>
     <string name="script_binding_type_keys_summary">Како sf+shift+n, или sf+t, s</string>
     <string name="script_binding_bad_keys">Не може да се користат овие клучеви. <xliff:g id="reason">%1$s</xliff:g></string>

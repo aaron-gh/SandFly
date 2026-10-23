@@ -24,7 +24,7 @@
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>-д ажиллана</string>
     <string name="script_runs_everywhere">Бүх программ дээр ажилладаг</string>
     <string name="script_version">Хувилбар <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author"><xliff:g id="author">%1$s</xliff:g>-ээр</string>
+    <string name="script_author">Зохиогч: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> суулгах уу?</string>
     <string name="script_install_can">Энэ нь:</string>
     <string name="script_install_no_permissions">Зөвшөөрөл шаардлагагүй.</string>
@@ -104,7 +104,7 @@
     <string name="script_commands_category">Тушаалууд</string>
     <string name="script_commands_summary">Ажиллаж байгаа скриптийн дохио зангаа болон товчлуурууд SandFly-ийн өмнө ирдэг. SandFly-г хадгалахын тулд нэгийг нь унтраа.</string>
     <string name="script_binding_gesture">Зангаа: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">Түлхүүр: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Товчлуурууд: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly цэс</string>
     <string name="script_binding_control">Уншилтын хяналт</string>
     <string name="script_binding_none">Байхгүй</string>
@@ -116,8 +116,8 @@
     <string name="script_binding_perform_summary">Дараагийн дохио эсвэл SandFly өөрчлөгчөөр дарагдсан товчлууруудыг зааж өгнө үү</string>
     <string name="script_binding_perform_message">Дохио хийх эсвэл товчлууруудыг дар.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>-д <xliff:g id="command">%2$s</xliff:g> оноох уу?</string>
-    <string name="script_binding_assign">Даалгах</string>
-    <string name="script_binding_choose_gesture">Дохио сонгоно уу</string>
+    <string name="script_binding_assign">Оноох</string>
+    <string name="script_binding_choose_gesture">Дохио сонгох</string>
     <string name="script_binding_type_keys">Түлхүүрүүдийг бичнэ үү</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, эсвэл sf+t, сек гэх мэт</string>
     <string name="script_binding_bad_keys">Эдгээр түлхүүрүүдийг ашиглах боломжгүй. <xliff:g id="reason">%1$s</xliff:g></string>

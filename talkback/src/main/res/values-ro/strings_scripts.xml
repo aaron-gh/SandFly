@@ -24,7 +24,7 @@
     <string name="script_runs_in">Se rulează în <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Se rulează în toate aplicațiile</string>
     <string name="script_version">Versiunea <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author">Până la <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_author">De <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Instalați <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Poate:</string>
     <string name="script_install_no_permissions">Nu sunt necesare permisiuni.</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, apoi <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comenzi</string>
     <string name="script_commands_summary">Gesturile și tastele unui script care rulează vin înaintea lui SandFly. Opriți unul pentru a păstra SandFly.</string>
-    <string name="script_binding_gesture">Gesturi: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Taste: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Meniul SandFly</string>
     <string name="script_binding_control">Comenzi pentru citire</string>
@@ -116,8 +116,8 @@
     <string name="script_binding_perform_summary">Atribuiți următorul gest sau tastele apăsate cu modificatorul SandFly</string>
     <string name="script_binding_perform_message">Faceți gestul sau apăsați tastele.</string>
     <string name="script_binding_assign_title">Atribuiți <xliff:g id="binding">%1$s</xliff:g> la <xliff:g id="command">%2$s</xliff:g>?</string>
-    <string name="script_binding_assign">Atribuiți</string>
-    <string name="script_binding_choose_gesture">Alegeți gestul</string>
+    <string name="script_binding_assign">Atribuie</string>
+    <string name="script_binding_choose_gesture">Alege gestul</string>
     <string name="script_binding_type_keys">Tastați cheile</string>
     <string name="script_binding_type_keys_summary">Ca sf+shift+n, sau sf+t, s</string>
     <string name="script_binding_bad_keys">Nu pot folosi aceste taste. <xliff:g id="reason">%1$s</xliff:g></string>

@@ -24,7 +24,7 @@
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>တွင် အလုပ်လုပ်သည်</string>
     <string name="script_runs_everywhere">အက်ပ်များအားလုံးတွင် လုပ်ဆောင်သည်</string>
     <string name="script_version">ဗားရှင်း <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author"><xliff:g id="author">%1$s</xliff:g> မှ</string>
+    <string name="script_author">ရေးသူ- <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ထည့်သွင်းမလား။</string>
     <string name="script_install_can">၎င်းသည်-</string>
     <string name="script_install_no_permissions">ခွင့်ပြုချက်မလိုအပ်ပါ။</string>
@@ -104,7 +104,7 @@
     <string name="script_commands_category">အမိန့်များ</string>
     <string name="script_commands_summary">လည်ပတ်နေသော script တစ်ခု၏ လက်ဟန်များနှင့် သော့များသည် SandFly ၏ ရှေ့တွင် ရှိသည်။ SandFly ထားရှိရန် တစ်ခုပိတ်ပါ။</string>
     <string name="script_binding_gesture">အမူအရာ- <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">သော့များ- <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">ခလုတ်များ- <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly မီနူး</string>
     <string name="script_binding_control">စာဖတ်ခြင်းထိန်းချုပ်မှုများ</string>
     <string name="script_binding_none">မရှိ</string>
@@ -116,7 +116,7 @@
     <string name="script_binding_perform_summary">နောက်လက်ဟန်ကို သတ်မှတ်ပါ သို့မဟုတ် SandFly မွမ်းမံမှုဖြင့် နှိပ်ထားသော ခလုတ်များ</string>
     <string name="script_binding_perform_message">လက်ဟန်လုပ်ပါ သို့မဟုတ် ခလုတ်များကို နှိပ်ပါ။</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>ကို <xliff:g id="command">%2$s</xliff:g>ကို သတ်မှတ်မလား။</string>
-    <string name="script_binding_assign">တာဝန်ပေးပါ</string>
+    <string name="script_binding_assign">သတ်မှတ်ရန်</string>
     <string name="script_binding_choose_gesture">လက်ဟန်ခြေဟန်ကို ရွေးပါ</string>
     <string name="script_binding_type_keys">သော့ရိုက်ပါ</string>
     <string name="script_binding_type_keys_summary">sf+shift+n, သို့မဟုတ် sf+t, s ကဲ့သို့</string>

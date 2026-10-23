@@ -24,7 +24,7 @@
     <string name="script_runs_in">გადის <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">მუშაობს ყველა აპლიკაციაში</string>
     <string name="script_version">ვერსია <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author"><xliff:g id="author">%1$s</xliff:g>-ით</string>
+    <string name="script_author">ავტორი: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">დააინსტალირეთ <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">მას შეუძლია:</string>
     <string name="script_install_no_permissions">არ არის საჭირო ნებართვები.</string>
@@ -104,7 +104,7 @@
     <string name="script_commands_category">ბრძანებები</string>
     <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტები და კლავიშები მოდის SandFly-ზე წინ. გამორთეთ ერთი SandFly-ების შესანარჩუნებლად.</string>
     <string name="script_binding_gesture">ჟესტი: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">გასაღებები: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">კლავიშები: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly მენიუ</string>
     <string name="script_binding_control">კითხვის მართვა</string>
     <string name="script_binding_none">არცერთი</string>
@@ -116,8 +116,8 @@
     <string name="script_binding_perform_summary">მიანიჭეთ შემდეგი ჟესტი, ან ღილაკები დაჭერით SandFly მოდიფიკატორით</string>
     <string name="script_binding_perform_message">გააკეთეთ ჟესტი ან დააჭირეთ კლავიშებს.</string>
     <string name="script_binding_assign_title">მივანიჭოთ <xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ს?</string>
-    <string name="script_binding_assign">მიანიჭეთ</string>
-    <string name="script_binding_choose_gesture">აირჩიეთ ჟესტი</string>
+    <string name="script_binding_assign">მინიჭება</string>
+    <string name="script_binding_choose_gesture">ჟესტის არჩევა</string>
     <string name="script_binding_type_keys">აკრიფეთ გასაღებები</string>
     <string name="script_binding_type_keys_summary">მოიწონეთ sf+shift+n, ან sf+t, წმ</string>
     <string name="script_binding_bad_keys">ამ გასაღებების გამოყენება შეუძლებელია. <xliff:g id="reason">%1$s</xliff:g></string>

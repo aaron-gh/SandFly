@@ -24,7 +24,7 @@
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>で実行</string>
     <string name="script_runs_everywhere">すべてのアプリで実行</string>
     <string name="script_version">バージョン <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="script_author"><xliff:g id="author">%1$s</xliff:g> までに</string>
+    <string name="script_author">作成者: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>をインストールしますか?</string>
     <string name="script_install_can">次のことが可能です。</string>
     <string name="script_install_no_permissions">権限は必要ありません。</string>
@@ -116,7 +116,7 @@
     <string name="script_binding_perform_summary">次のジェスチャ、または SandFly 修飾子を使用して押されたキーを割り当てます</string>
     <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押します。</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>を<xliff:g id="command">%2$s</xliff:g>に割り当てますか?</string>
-    <string name="script_binding_assign">割り当てる</string>
+    <string name="script_binding_assign">割り当て</string>
     <string name="script_binding_choose_gesture">ジェスチャーを選択</string>
     <string name="script_binding_type_keys">キーを入力します</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, または sf+t, 秒のように</string>
