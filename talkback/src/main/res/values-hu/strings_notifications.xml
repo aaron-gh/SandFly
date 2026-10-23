@@ -117,7 +117,7 @@
     <string name="notification_summary_newest_first_title">Először a legújabb</string>
     <string name="notification_summary_name_title">A neved</string>
     <string name="notification_summary_gap_title">Szünet az értesítések között</string>
-    <string name="notification_summary_needs_sandfly">Az értesítések olvasásához kapcsolja be a SandFly értéket</string>
+    <string name="notification_summary_needs_sandfly">Az értesítések felolvasásához kapcsolja be a SandFly-t</string>
     <string name="notification_summary_no_access">Az értesítésekhez való hozzáférés ki van kapcsolva</string>
     <string name="notification_summary_morning">Jó reggelt.</string>
     <string name="notification_summary_afternoon">Jó napot.</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">Csend éjszaka</string>
     <string name="notification_template_screen_off">Csak kikapcsolt képernyővel</string>
     <string name="notification_template_locked_private">Csak az alkalmazás neve, ha a telefon le van zárva</string>
-    <string name="notification_template_short_on_battery">Olvassa el röviden, amikor nem tölt</string>
+    <string name="notification_template_short_on_battery">Rövid, ha nem töltődik</string>
     <string name="notification_type_bluetooth">Bluetooth eszköz</string>
     <string name="notification_type_wired">Vezetékes fejhallgató</string>
     <string name="notification_type_wifi">Wi-Fi hálózat</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">Értesítések felolvasásának be- vagy kikapcsolása</string>
     <string name="shortcut_read_last_notification">Olvassa el újra az utolsó értesítést</string>
     <string name="shortcut_stop_notification">Hagyja abba az értesítés olvasását</string>
-    <string name="notification_test_posting">5 másodpercen belül tesztértesítés érkezik</string>
-    <string name="notification_test_not_allowed">Engedélyezze a SandFly számára, hogy először az értesítéseket jelenítse meg</string>
+    <string name="notification_test_posting">5 másodperc múlva tesztértesítés érkezik</string>
+    <string name="notification_test_not_allowed">Előbb engedélyezze, hogy a SandFly értesítéseket jelenítsen meg</string>
     <string name="notification_test_content_title">SandFly-teszt</string>
     <string name="notification_test_content_text">Ez egy tesztértesítés, olvassa el az értesítési beállításait. 123456</string>
     <string name="notification_automation_on">Értesítések felolvasásának bekapcsolása</string>

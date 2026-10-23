@@ -27,7 +27,7 @@
     <string name="notification_stop_title">Окууну токтотуу</string>
     <string name="notification_schedules_title">Жыйынтык жана убакыт</string>
     <string name="notification_history_title">Эскертме таржымалы</string>
-    <string name="notification_test_title">Сыноо эскертмесин жөнөтүңүз</string>
+    <string name="notification_test_title">Сыноо билдирмесин жөнөтүү</string>
     <string name="notification_automation_title">Автоматташтыруу</string>
     <string name="notification_automation_allowed_title">Автоматташтыруу колдонмолоруна уруксат берүү</string>
     <string name="notification_category_said">Эмне окулат</string>
@@ -118,7 +118,7 @@
     <string name="notification_summary_name_title">Сиздин атыңыз</string>
     <string name="notification_summary_gap_title">Эскертмелердин ортосунда тыныгуу</string>
     <string name="notification_summary_needs_sandfly">Эскертмелерди окуу үчүн SandFly күйгүзүңүз</string>
-    <string name="notification_summary_no_access">Эскертмеге кирүү өчүк</string>
+    <string name="notification_summary_no_access">Билдирмелерге мүмкүнчүлүк өчүк</string>
     <string name="notification_summary_morning">Кайырлы таң.</string>
     <string name="notification_summary_afternoon">Кайырдуу күн.</string>
     <string name="notification_summary_evening">Кайырдуу кеч.</string>
@@ -225,8 +225,8 @@
     <string name="notification_template_headphones">Наушник менен гана</string>
     <string name="notification_template_night">Түндө үнсүз</string>
     <string name="notification_template_screen_off">Экран өчүк болгондо гана</string>
-    <string name="notification_template_locked_private">Телефон кулпуланганда гана колдонмонун аталышы</string>
-    <string name="notification_template_short_on_battery">Заряддалбай жатканда кыскача окуңуз</string>
+    <string name="notification_template_locked_private">Кулпуланганда колдонмонун аты гана</string>
+    <string name="notification_template_short_on_battery">Кубатталбаганда кыска</string>
     <string name="notification_type_bluetooth">Bluetooth түзмөк</string>
     <string name="notification_type_wired">Зымдуу кулакчындар</string>
     <string name="notification_type_wifi">Wi-Fi тармагы</string>
@@ -309,7 +309,7 @@
     <string name="shortcut_toggle_notification_speech">Билдирмелерди окууну күйгүзүү же өчүрүү</string>
     <string name="shortcut_read_last_notification">Акыркы эскертмени кайра окуңуз</string>
     <string name="shortcut_stop_notification">Билдирмени окууну токтотуңуз</string>
-    <string name="notification_test_posting">Сыноо жөнүндө эскертме 5 секунддан кийин келет</string>
+    <string name="notification_test_posting">5 секунддан кийин сыноо билдирмеси келет</string>
     <string name="notification_test_not_allowed">Алгач SandFlyга эскертмелерди көрсөтүүгө уруксат бериңиз</string>
     <string name="notification_test_content_title">SandFly тест</string>
     <string name="notification_test_content_text">Бул сыноо эскертмеси, эскертме жөндөөлөрүңүз менен окуңуз. 123456</string>

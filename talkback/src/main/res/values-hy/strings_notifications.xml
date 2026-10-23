@@ -27,7 +27,7 @@
     <string name="notification_stop_title">Կարդալու դադարեցում</string>
     <string name="notification_schedules_title">Ամփոփում և ժամանակ</string>
     <string name="notification_history_title">Ծանուցումների պատմություն</string>
-    <string name="notification_test_title">Ուղարկեք թեստի ծանուցում</string>
+    <string name="notification_test_title">Ուղարկել փորձնական ծանուցում</string>
     <string name="notification_automation_title">Ավտոմատացում</string>
     <string name="notification_automation_allowed_title">Թույլատրել ավտոմատացման հավելվածները</string>
     <string name="notification_category_said">Ինչ է կարդացվում</string>
@@ -117,7 +117,7 @@
     <string name="notification_summary_newest_first_title">Սկզբում նորերը</string>
     <string name="notification_summary_name_title">Ձեր անունը</string>
     <string name="notification_summary_gap_title">Դադար ծանուցումների միջև</string>
-    <string name="notification_summary_needs_sandfly">Միացրեք SandFly ծանուցումները կարդալու համար</string>
+    <string name="notification_summary_needs_sandfly">Միացրեք SandFly-ը՝ ծանուցումները կարդալու համար</string>
     <string name="notification_summary_no_access">Ծանուցումների հասանելիությունն անջատված է</string>
     <string name="notification_summary_morning">Բարի լույս։</string>
     <string name="notification_summary_afternoon">Բարի կեսօր։</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Միայն ականջակալներով</string>
     <string name="notification_template_night">Գիշերը լուռ</string>
-    <string name="notification_template_screen_off">Միայն անջատված էկրանով</string>
+    <string name="notification_template_screen_off">Միայն էկրանն անջատված ժամանակ</string>
     <string name="notification_template_locked_private">Միայն հավելվածի անունը, երբ հեռախոսը կողպված է</string>
-    <string name="notification_template_short_on_battery">Կարճ կարդացեք, երբ չլիցքավորվում է</string>
+    <string name="notification_template_short_on_battery">Կարճ, երբ չի լիցքավորվում</string>
     <string name="notification_type_bluetooth">Bluetooth սարք</string>
     <string name="notification_type_wired">Լարային ականջակալներ</string>
     <string name="notification_type_wifi">Wi-Fi ցանց</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">Ծանուցումների ընթերցում՝ միացնել կամ անջատել</string>
     <string name="shortcut_read_last_notification">Կրկին կարդացեք վերջին ծանուցումը</string>
     <string name="shortcut_stop_notification">Դադարեցրեք ծանուցումը կարդալը</string>
-    <string name="notification_test_posting">Փորձարկման ծանուցումը հաջորդում է 5 վայրկյանից</string>
-    <string name="notification_test_not_allowed">Թույլ տվեք SandFly-ին նախ ցույց տալ ծանուցումները</string>
+    <string name="notification_test_posting">Փորձնական ծանուցումը կհայտնվի 5 վայրկյանից</string>
+    <string name="notification_test_not_allowed">Նախ թույլ տվեք SandFly-ին ցուցադրել ծանուցումներ</string>
     <string name="notification_test_content_title">SandFly թեստ</string>
     <string name="notification_test_content_text">Սա փորձնական ծանուցում է, կարդացեք ձեր ծանուցման կարգավորումներով: 123456</string>
     <string name="notification_automation_on">Միացնել ծանուցումների ընթերցումը</string>

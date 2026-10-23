@@ -27,7 +27,7 @@
     <string name="notification_stop_title">読み上げの停止</string>
     <string name="notification_schedules_title">まとめと時刻</string>
     <string name="notification_history_title">通知履歴</string>
-    <string name="notification_test_title">テスト通知を送信する</string>
+    <string name="notification_test_title">テスト通知を送信</string>
     <string name="notification_automation_title">自動化</string>
     <string name="notification_automation_allowed_title">自動化アプリを許可</string>
     <string name="notification_category_said">読み上げ内容</string>
@@ -118,7 +118,7 @@
     <string name="notification_summary_name_title">名前</string>
     <string name="notification_summary_gap_title">通知間の間隔</string>
     <string name="notification_summary_needs_sandfly">通知を読むには SandFly をオンにしてください</string>
-    <string name="notification_summary_no_access">通知へのアクセスがオフになっています</string>
+    <string name="notification_summary_no_access">通知へのアクセスがオフです</string>
     <string name="notification_summary_morning">おはようございます。</string>
     <string name="notification_summary_afternoon">こんにちは。</string>
     <string name="notification_summary_evening">こんばんは。</string>
@@ -225,8 +225,8 @@
     <string name="notification_template_headphones">ヘッドフォン使用時のみ</string>
     <string name="notification_template_night">夜間は読み上げない</string>
     <string name="notification_template_screen_off">画面がオフの場合のみ</string>
-    <string name="notification_template_locked_private">携帯電話がロックされている場合はアプリ名のみ</string>
-    <string name="notification_template_short_on_battery">充電していないときに軽く読んでください</string>
+    <string name="notification_template_locked_private">ロック中はアプリ名のみ</string>
+    <string name="notification_template_short_on_battery">充電していないときは短く</string>
     <string name="notification_type_bluetooth">Bluetooth デバイス</string>
     <string name="notification_type_wired">有線ヘッドフォン</string>
     <string name="notification_type_wifi">Wi-Fiネットワーク</string>
@@ -310,7 +310,7 @@
     <string name="shortcut_read_last_notification">最後の通知をもう一度読んでください</string>
     <string name="shortcut_stop_notification">通知を読むのをやめる</string>
     <string name="notification_test_posting">5 秒後にテスト通知が表示されます</string>
-    <string name="notification_test_not_allowed">SandFly が最初に通知を表示できるようにします</string>
+    <string name="notification_test_not_allowed">先に SandFly に通知の表示を許可してください</string>
     <string name="notification_test_content_title">SandFly テスト</string>
     <string name="notification_test_content_text">これはテスト通知です。通知設定とともにお読みください。 123456</string>
     <string name="notification_automation_on">通知の読み上げをオンにする</string>

@@ -27,7 +27,7 @@
     <string name="notification_stop_title">Oxumanı dayandırmaq</string>
     <string name="notification_schedules_title">Xülasə və vaxt</string>
     <string name="notification_history_title">Bildiriş tarixçəsi</string>
-    <string name="notification_test_title">Test bildirişi göndərin</string>
+    <string name="notification_test_title">Sınaq bildirişi göndər</string>
     <string name="notification_automation_title">Avtomatlaşdırma</string>
     <string name="notification_automation_allowed_title">Avtomatlaşdırma tətbiqlərinə icazə ver</string>
     <string name="notification_category_said">Nə deyilir</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Yalnız qulaqcıqlarla</string>
     <string name="notification_template_night">Gecələr səssiz</string>
-    <string name="notification_template_screen_off">Yalnız ekran söndürüldükdə</string>
+    <string name="notification_template_screen_off">Yalnız ekran sönük olduqda</string>
     <string name="notification_template_locked_private">Telefon kilidli olduqda yalnız proqram adı</string>
-    <string name="notification_template_short_on_battery">Şarj etmədikdə qısa oxuyun</string>
+    <string name="notification_template_short_on_battery">Şarj olunmadıqda qısa</string>
     <string name="notification_type_bluetooth">Bluetooth cihaz</string>
     <string name="notification_type_wired">Naqilli qulaqlıq</string>
     <string name="notification_type_wifi">Wi-Fi şəbəkəsi</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">Bildirişlərin oxunması: aktiv və ya deaktiv</string>
     <string name="shortcut_read_last_notification">Son bildirişi yenidən oxuyun</string>
     <string name="shortcut_stop_notification">Bildirişi oxumağı dayandırın</string>
-    <string name="notification_test_posting">5 saniyə ərzində sınaq bildirişi gəlir</string>
-    <string name="notification_test_not_allowed">Əvvəlcə bildirişləri göstərməyə SandFly icazə verin</string>
+    <string name="notification_test_posting">5 saniyə sonra sınaq bildirişi gələcək</string>
+    <string name="notification_test_not_allowed">Əvvəlcə SandFly-a bildirişləri göstərməyə icazə verin</string>
     <string name="notification_test_content_title">SandFly testi</string>
     <string name="notification_test_content_text">Bu sınaq bildirişidir, bildiriş parametrlərinizlə oxuyun. 123456</string>
     <string name="notification_automation_on">Bildirişlərin oxunmasını aktiv et</string>

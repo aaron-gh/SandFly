@@ -27,7 +27,7 @@
     <string name="notification_stop_title">ឈប់អាន</string>
     <string name="notification_schedules_title">សង្ខេបនិងពេលវេលា</string>
     <string name="notification_history_title">ប្រវត្តិនៃការជូនដំណឹង</string>
-    <string name="notification_test_title">ផ្ញើការជូនដំណឹងអំពីការសាកល្បង</string>
+    <string name="notification_test_title">ផ្ញើការជូនដំណឹងសាកល្បង</string>
     <string name="notification_automation_title">ស្វ័យប្រវត្តិកម្ម</string>
     <string name="notification_automation_allowed_title">អនុញ្ញាតកម្មវិធីស្វ័យប្រវត្តិកម្ម</string>
     <string name="notification_category_said">អ្វីដែលត្រូវបាននិយាយ</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">តែជាមួយកាស</string>
     <string name="notification_template_night">ស្ងាត់នៅពេលយប់</string>
-    <string name="notification_template_screen_off">មានតែអេក្រង់បិទប៉ុណ្ណោះ</string>
+    <string name="notification_template_screen_off">តែពេលអេក្រង់បិទប៉ុណ្ណោះ</string>
     <string name="notification_template_locked_private">មានតែឈ្មោះកម្មវិធីប៉ុណ្ណោះនៅពេលដែលទូរស័ព្ទត្រូវបានចាក់សោ</string>
-    <string name="notification_template_short_on_battery">អានខ្លីៗពេលមិនសាក</string>
+    <string name="notification_template_short_on_battery">ខ្លីពេលមិនសាកថ្ម</string>
     <string name="notification_type_bluetooth">ឧបករណ៍ Bluetooth</string>
     <string name="notification_type_wired">កាសស្តាប់ត្រចៀកមានខ្សែ</string>
     <string name="notification_type_wifi">បណ្តាញ Wi-Fi</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">បើក ឬបិទការអានការជូនដំណឹង</string>
     <string name="shortcut_read_last_notification">អានការជូនដំណឹងចុងក្រោយម្តងទៀត</string>
     <string name="shortcut_stop_notification">ឈប់អានការជូនដំណឹង</string>
-    <string name="notification_test_posting">ការជូនដំណឹងអំពីការសាកល្បងធ្វើឡើងក្នុងរយៈពេល 5 វិនាទី</string>
-    <string name="notification_test_not_allowed">អនុញ្ញាតឱ្យ SandFly បង្ហាញការជូនដំណឹងជាមុន</string>
+    <string name="notification_test_posting">ការជូនដំណឹងសាកល្បងនឹងមកក្នុងរយៈពេល 5 វិនាទី</string>
+    <string name="notification_test_not_allowed">អនុញ្ញាតឱ្យ SandFly បង្ហាញការជូនដំណឹងជាមុនសិន</string>
     <string name="notification_test_content_title">តេស្ត SandFly</string>
     <string name="notification_test_content_text">នេះគឺជាការជូនដំណឹងសាកល្បង អានជាមួយការកំណត់ការជូនដំណឹងរបស់អ្នក។ ១២៣៤៥៦</string>
     <string name="notification_automation_on">បើកការអានការជូនដំណឹង</string>

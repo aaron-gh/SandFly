@@ -27,7 +27,7 @@
     <string name="notification_stop_title">หยุดอ่าน</string>
     <string name="notification_schedules_title">สรุปและเวลา</string>
     <string name="notification_history_title">ประวัติการแจ้งเตือน</string>
-    <string name="notification_test_title">ส่งการแจ้งเตือนการทดสอบ</string>
+    <string name="notification_test_title">ส่งการแจ้งเตือนทดสอบ</string>
     <string name="notification_automation_title">ระบบอัตโนมัติ</string>
     <string name="notification_automation_allowed_title">อนุญาตแอปอัตโนมัติ</string>
     <string name="notification_category_said">สิ่งที่พูด</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">ด้วยหูฟังเท่านั้น</string>
     <string name="notification_template_night">เงียบในเวลากลางคืน</string>
-    <string name="notification_template_screen_off">พอปิดหน้าจอเท่านั้น</string>
+    <string name="notification_template_screen_off">เฉพาะเมื่อหน้าจอปิด</string>
     <string name="notification_template_locked_private">เฉพาะชื่อแอปเมื่อโทรศัพท์ถูกล็อค</string>
-    <string name="notification_template_short_on_battery">อ่านสั้นๆ เมื่อไม่ได้ชาร์จ</string>
+    <string name="notification_template_short_on_battery">สั้นๆ เมื่อไม่ได้ชาร์จ</string>
     <string name="notification_type_bluetooth">อุปกรณ์ Bluetooth</string>
     <string name="notification_type_wired">หูฟังแบบมีสาย</string>
     <string name="notification_type_wifi">เครือข่าย Wi-Fi</string>
@@ -309,7 +309,7 @@
     <string name="shortcut_toggle_notification_speech">เปิดหรือปิดการอ่านการแจ้งเตือน</string>
     <string name="shortcut_read_last_notification">อ่านการแจ้งเตือนครั้งล่าสุดอีกครั้ง</string>
     <string name="shortcut_stop_notification">หยุดอ่านการแจ้งเตือน</string>
-    <string name="notification_test_posting">การแจ้งเตือนการทดสอบจะตามมาใน 5 วินาที</string>
+    <string name="notification_test_posting">การแจ้งเตือนทดสอบจะแสดงใน 5 วินาที</string>
     <string name="notification_test_not_allowed">อนุญาตให้ SandFly แสดงการแจ้งเตือนก่อน</string>
     <string name="notification_test_content_title">การทดสอบ SandFly</string>
     <string name="notification_test_content_text">นี่คือการแจ้งเตือนทดสอบ โปรดอ่านการตั้งค่าการแจ้งเตือนของคุณ 123456</string>

@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">শুধু হেডফোন দিয়ে</string>
     <string name="notification_template_night">রাতে চুপচাপ</string>
-    <string name="notification_template_screen_off">শুধুমাত্র পর্দা বন্ধ সঙ্গে</string>
+    <string name="notification_template_screen_off">শুধু স্ক্রিন বন্ধ থাকলে</string>
     <string name="notification_template_locked_private">ফোন লক থাকলে শুধুমাত্র অ্যাপের নাম</string>
-    <string name="notification_template_short_on_battery">চার্জ না করার সময় সংক্ষেপে পড়ুন</string>
+    <string name="notification_template_short_on_battery">চার্জ না হলে সংক্ষিপ্ত</string>
     <string name="notification_type_bluetooth">Bluetooth ডিভাইস</string>
     <string name="notification_type_wired">তারযুক্ত হেডফোন</string>
     <string name="notification_type_wifi">Wi-Fi নেটওয়ার্ক</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">বিজ্ঞপ্তি পড়া চালু বা বন্ধ</string>
     <string name="shortcut_read_last_notification">শেষ বিজ্ঞপ্তিটি আবার পড়ুন</string>
     <string name="shortcut_stop_notification">বিজ্ঞপ্তি পড়া বন্ধ করুন</string>
-    <string name="notification_test_posting">একটি পরীক্ষার বিজ্ঞপ্তি 5 সেকেন্ডের মধ্যে অনুসরণ করে</string>
-    <string name="notification_test_not_allowed">SandFly কে প্রথমে বিজ্ঞপ্তি দেখানোর অনুমতি দিন</string>
+    <string name="notification_test_posting">5 সেকেন্ড পরে একটি পরীক্ষামূলক বিজ্ঞপ্তি আসবে</string>
+    <string name="notification_test_not_allowed">প্রথমে SandFly-কে বিজ্ঞপ্তি দেখানোর অনুমতি দিন</string>
     <string name="notification_test_content_title">SandFly পরীক্ষা</string>
     <string name="notification_test_content_text">এটি একটি পরীক্ষার বিজ্ঞপ্তি, আপনার বিজ্ঞপ্তি সেটিংস সহ পড়ুন। 123456</string>
     <string name="notification_automation_on">বিজ্ঞপ্তি পড়া চালু করুন</string>

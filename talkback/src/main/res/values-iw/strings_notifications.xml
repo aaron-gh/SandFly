@@ -27,7 +27,7 @@
     <string name="notification_stop_title">עצירת ההקראה</string>
     <string name="notification_schedules_title">סיכום וזמן</string>
     <string name="notification_history_title">היסטוריית התראות</string>
-    <string name="notification_test_title">שלח הודעת בדיקה</string>
+    <string name="notification_test_title">שליחת התראת בדיקה</string>
     <string name="notification_automation_title">אוטומציה</string>
     <string name="notification_automation_allowed_title">אפשר אפליקציות אוטומציה</string>
     <string name="notification_category_said">מה מוקרא</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">שקט בלילה</string>
     <string name="notification_template_screen_off">רק כשהמסך כבוי</string>
     <string name="notification_template_locked_private">רק שם האפליקציה כשהטלפון נעול</string>
-    <string name="notification_template_short_on_battery">קרא בקצרה כאשר לא נטען</string>
+    <string name="notification_template_short_on_battery">קצר כשהטלפון לא בטעינה</string>
     <string name="notification_type_bluetooth">מכשיר Bluetooth</string>
     <string name="notification_type_wired">אוזניות חוטיות</string>
     <string name="notification_type_wifi">רשת Wi-Fi</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">הפעלה או כיבוי של הקראת התראות</string>
     <string name="shortcut_read_last_notification">קרא שוב את ההודעה האחרונה</string>
     <string name="shortcut_stop_notification">תפסיק לקרוא את ההודעה</string>
-    <string name="notification_test_posting">הודעת בדיקה מגיעה תוך 5 שניות</string>
-    <string name="notification_test_not_allowed">אפשר ל-SandFly להציג הודעות תחילה</string>
+    <string name="notification_test_posting">התראת בדיקה תופיע בעוד 5 שניות</string>
+    <string name="notification_test_not_allowed">יש לאפשר קודם ל-SandFly להציג התראות</string>
     <string name="notification_test_content_title">מבחן SandFly</string>
     <string name="notification_test_content_text">זו הודעת בדיקה, קרא עם הגדרות ההתראות שלך. 123456</string>
     <string name="notification_automation_on">הפעלת הקראת התראות</string>

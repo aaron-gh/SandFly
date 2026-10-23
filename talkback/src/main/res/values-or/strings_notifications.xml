@@ -117,7 +117,7 @@
     <string name="notification_summary_newest_first_title">ପ୍ରଥମେ ନୂତନ</string>
     <string name="notification_summary_name_title">ଆପଣଙ୍କ ନାମ</string>
     <string name="notification_summary_gap_title">ବିଜ୍ଞପ୍ତି ମଧ୍ୟରେ ବିରତି</string>
-    <string name="notification_summary_needs_sandfly">ବିଜ୍ଞପ୍ତି ପ read ିବା ପାଇଁ SandFly ଟର୍ନ୍ ଅନ୍ କରନ୍ତୁ</string>
+    <string name="notification_summary_needs_sandfly">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ପାଇଁ SandFly ଚାଲୁ କରନ୍ତୁ</string>
     <string name="notification_summary_no_access">ବିଜ୍ଞପ୍ତି ପ୍ରବେଶ ବନ୍ଦ ଅଛି</string>
     <string name="notification_summary_morning">ଶୁଭ ସକାଳ।</string>
     <string name="notification_summary_afternoon">ଶୁଭ ଅପରାହ୍ନ।</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">କେବଳ ହେଡଫୋନ୍ ସହିତ</string>
     <string name="notification_template_night">ରାତିରେ ନୀରବ</string>
-    <string name="notification_template_screen_off">କେବଳ ସ୍କ୍ରିନ୍ ଅଫ୍ ସହିତ</string>
-    <string name="notification_template_locked_private">ଫୋନ୍ ଲକ୍ ହୋଇଗଲେ କେବଳ ଆପ୍ ନାମ</string>
-    <string name="notification_template_short_on_battery">ଚାର୍ଜ ନକରିବା ସମୟରେ ସଂକ୍ଷେପରେ ପ Read ନ୍ତୁ</string>
+    <string name="notification_template_screen_off">କେବଳ ସ୍କ୍ରିନ୍ ବନ୍ଦ ଥିଲେ</string>
+    <string name="notification_template_locked_private">ଫୋନ୍ ଲକ୍ ଥିଲେ କେବଳ ଆପ୍ ନାମ</string>
+    <string name="notification_template_short_on_battery">ଚାର୍ଜ ନହେଲେ ସଂକ୍ଷିପ୍ତ</string>
     <string name="notification_type_bluetooth">Bluetooth ଉପକରଣ</string>
     <string name="notification_type_wired">ତାରଯୁକ୍ତ ହେଡଫୋନ୍</string>
     <string name="notification_type_wifi">Wi-Fi ନେଟୱାର୍କ</string>
@@ -309,7 +309,7 @@
     <string name="shortcut_toggle_notification_speech">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଚାଲୁ କିମ୍ବା ବନ୍ଦ</string>
     <string name="shortcut_read_last_notification">ଶେଷ ବିଜ୍ଞପ୍ତିକୁ ପୁନର୍ବାର ପ .଼ନ୍ତୁ</string>
     <string name="shortcut_stop_notification">ବିଜ୍ଞପ୍ତି ପ reading ିବା ବନ୍ଦ କରନ୍ତୁ</string>
-    <string name="notification_test_posting">ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି 5 ସେକେଣ୍ଡରେ ଅନୁସରଣ ହୁଏ</string>
+    <string name="notification_test_posting">5 ସେକେଣ୍ଡରେ ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି ଆସିବ</string>
     <string name="notification_test_not_allowed">ପ୍ରଥମେ ବିଜ୍ଞପ୍ତି ଦେଖାଇବାକୁ SandFly କୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="notification_test_content_title">SandFly ପରୀକ୍ଷା</string>
     <string name="notification_test_content_text">ଏହା ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି, ତୁମର ବିଜ୍ଞପ୍ତି ସେଟିଂସମୂହ ସହିତ ପ read | 123456</string>

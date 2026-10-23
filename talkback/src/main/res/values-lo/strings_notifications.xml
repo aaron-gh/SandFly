@@ -27,7 +27,7 @@
     <string name="notification_stop_title">ຢຸດການອ່ານ</string>
     <string name="notification_schedules_title">ສະຫຼຸບແລະເວລາ</string>
     <string name="notification_history_title">ປະຫວັດການແຈ້ງເຕືອນ</string>
-    <string name="notification_test_title">ສົ່ງການແຈ້ງເຕືອນການທົດສອບ</string>
+    <string name="notification_test_title">ສົ່ງການແຈ້ງເຕືອນທົດສອບ</string>
     <string name="notification_automation_title">ອັດຕະໂນມັດ</string>
     <string name="notification_automation_allowed_title">ອະນຸຍາດໃຫ້ແອັບຯອັດຕະໂນມັດ</string>
     <string name="notification_category_said">ສິ່ງທີ່ເວົ້າ</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">ມີຫູຟັງເທົ່ານັ້ນ</string>
     <string name="notification_template_night">ງຽບໃນຕອນກາງຄືນ</string>
-    <string name="notification_template_screen_off">ພຽງແຕ່ປິດຫນ້າຈໍ</string>
-    <string name="notification_template_locked_private">ພຽງແຕ່ຊື່ແອັບຯເມື່ອໂທລະສັບຖືກລັອກ</string>
-    <string name="notification_template_short_on_battery">ອ່ານສັ້ນໆເມື່ອບໍ່ໄດ້ສາກໄຟ</string>
+    <string name="notification_template_screen_off">ສະເພາະເມື່ອໜ້າຈໍປິດ</string>
+    <string name="notification_template_locked_private">ສະເພາະຊື່ແອັບເມື່ອລັອກ</string>
+    <string name="notification_template_short_on_battery">ສັ້ນເມື່ອບໍ່ໄດ້ສາກ</string>
     <string name="notification_type_bluetooth">ອຸປະກອນ Bluetooth</string>
     <string name="notification_type_wired">ຫູຟັງແບບມີສາຍ</string>
     <string name="notification_type_wifi">ເຄືອຂ່າຍ Wi-Fi</string>
@@ -309,7 +309,7 @@
     <string name="shortcut_toggle_notification_speech">ເປີດ ຫຼື ປິດການອ່ານການແຈ້ງເຕືອນ</string>
     <string name="shortcut_read_last_notification">ອ່ານການແຈ້ງເຕືອນຫຼ້າສຸດອີກຄັ້ງ</string>
     <string name="shortcut_stop_notification">ຢຸດການອ່ານການແຈ້ງເຕືອນ</string>
-    <string name="notification_test_posting">ການແຈ້ງເຕືອນການທົດສອບປະຕິບັດຕາມໃນ 5 ວິນາທີ</string>
+    <string name="notification_test_posting">ການແຈ້ງເຕືອນທົດສອບຈະມາໃນ 5 ວິນາທີ</string>
     <string name="notification_test_not_allowed">ອະນຸຍາດໃຫ້ SandFly ສະແດງການແຈ້ງເຕືອນກ່ອນ</string>
     <string name="notification_test_content_title">ການທົດສອບ SandFly</string>
     <string name="notification_test_content_text">ນີ້ແມ່ນການແຈ້ງເຕືອນການທົດສອບ, ອ່ານດ້ວຍການຕັ້ງຄ່າການແຈ້ງເຕືອນຂອງທ່ານ. 123456</string>

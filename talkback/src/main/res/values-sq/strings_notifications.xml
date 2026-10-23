@@ -27,7 +27,7 @@
     <string name="notification_stop_title">Ndalimi i leximit</string>
     <string name="notification_schedules_title">Përmbledhja dhe koha</string>
     <string name="notification_history_title">Historia e njoftimeve</string>
-    <string name="notification_test_title">Dërgoni një njoftim testimi</string>
+    <string name="notification_test_title">Dërgo një njoftim testimi</string>
     <string name="notification_automation_title">Automatizimi</string>
     <string name="notification_automation_allowed_title">Lejo aplikacionet e automatizimit</string>
     <string name="notification_category_said">Çfarë thuhet</string>
@@ -118,7 +118,7 @@
     <string name="notification_summary_name_title">Emri juaj</string>
     <string name="notification_summary_gap_title">Pauzë ndërmjet njoftimeve</string>
     <string name="notification_summary_needs_sandfly">Aktivizo SandFly për të lexuar njoftimet</string>
-    <string name="notification_summary_no_access">Qasja në njoftim është joaktiv</string>
+    <string name="notification_summary_no_access">Qasja te njoftimet është joaktive</string>
     <string name="notification_summary_morning">Mirëmëngjes.</string>
     <string name="notification_summary_afternoon">Mirëdita.</string>
     <string name="notification_summary_evening">Mirëmbrëma.</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">I heshtur natën</string>
     <string name="notification_template_screen_off">Vetëm me ekran të fikur</string>
     <string name="notification_template_locked_private">Vetëm emri i aplikacionit kur telefoni është i kyçur</string>
-    <string name="notification_template_short_on_battery">Lexoni shkurt kur nuk karikoni</string>
+    <string name="notification_template_short_on_battery">Shkurt kur nuk po ngarkohet</string>
     <string name="notification_type_bluetooth">Pajisje Bluetooth</string>
     <string name="notification_type_wired">Kufje me tela</string>
     <string name="notification_type_wifi">Rrjeti Wi-Fi</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">Aktivizimi ose çaktivizimi i leximit të njoftimeve</string>
     <string name="shortcut_read_last_notification">Lexoni sërish njoftimin e fundit</string>
     <string name="shortcut_stop_notification">Ndalo leximin e njoftimit</string>
-    <string name="notification_test_posting">Pas 5 sekondash vjen një njoftim testimi</string>
-    <string name="notification_test_not_allowed">Lejo që SandFly të shfaqë njoftimet në fillim</string>
+    <string name="notification_test_posting">Një njoftim testimi vjen pas 5 sekondash</string>
+    <string name="notification_test_not_allowed">Fillimisht lejo SandFly të shfaqë njoftime</string>
     <string name="notification_test_content_title">Test SandFly</string>
     <string name="notification_test_content_text">Ky është një njoftim provë, lexo me cilësimet e njoftimit. 123456</string>
     <string name="notification_automation_on">Aktivizo leximin e njoftimeve</string>

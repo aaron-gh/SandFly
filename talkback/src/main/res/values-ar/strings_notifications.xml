@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">فقط مع سماعات الرأس</string>
     <string name="notification_template_night">صامت في الليل</string>
-    <string name="notification_template_screen_off">فقط مع إيقاف تشغيل الشاشة</string>
+    <string name="notification_template_screen_off">فقط عندما تكون الشاشة مطفأة</string>
     <string name="notification_template_locked_private">اسم التطبيق فقط عندما يكون الهاتف مقفلاً</string>
-    <string name="notification_template_short_on_battery">اقرأ لفترة وجيزة عند عدم الشحن</string>
+    <string name="notification_template_short_on_battery">قراءة مختصرة عند عدم الشحن</string>
     <string name="notification_type_bluetooth">جهاز Bluetooth</string>
     <string name="notification_type_wired">سمّاعات رأس سلكية</string>
     <string name="notification_type_wifi">شبكة Wi-Fi</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">تفعيل قراءة الإشعارات أو إيقافها</string>
     <string name="shortcut_read_last_notification">اقرأ الإخطار الأخير مرة أخرى</string>
     <string name="shortcut_stop_notification">توقف عن قراءة الإشعار</string>
-    <string name="notification_test_posting">يأتي إشعار الاختبار بعد 5 ثوانٍ</string>
-    <string name="notification_test_not_allowed">اسمح لـ SandFly بإظهار الإشعارات أولاً</string>
+    <string name="notification_test_posting">سيظهر إشعار تجريبي بعد 5 ثوانٍ</string>
+    <string name="notification_test_not_allowed">اسمح أولاً لـ SandFly بإظهار الإشعارات</string>
     <string name="notification_test_content_title">اختبار SandFly</string>
     <string name="notification_test_content_text">هذا إشعار اختباري، يمكنك قراءته باستخدام إعدادات الإشعارات لديك. 123456</string>
     <string name="notification_automation_on">تفعيل قراءة الإشعارات</string>

@@ -27,7 +27,7 @@
     <string name="notification_stop_title">კითხვის შეწყვეტა</string>
     <string name="notification_schedules_title">შეჯამება და დრო</string>
     <string name="notification_history_title">შეტყობინებების ისტორია</string>
-    <string name="notification_test_title">გაგზავნეთ ტესტის შეტყობინება</string>
+    <string name="notification_test_title">სატესტო შეტყობინების გაგზავნა</string>
     <string name="notification_automation_title">ავტომატიზაცია</string>
     <string name="notification_automation_allowed_title">ავტომატიზაციის აპების დაშვება</string>
     <string name="notification_category_said">წარმოთქმული ტექსტი</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">მხოლოდ ყურსასმენებით</string>
     <string name="notification_template_night">ღამით ჩუმად</string>
-    <string name="notification_template_screen_off">მხოლოდ გამორთული ეკრანით</string>
+    <string name="notification_template_screen_off">მხოლოდ გამორთული ეკრანისას</string>
     <string name="notification_template_locked_private">მხოლოდ აპის სახელი, როდესაც ტელეფონი დაბლოკილია</string>
-    <string name="notification_template_short_on_battery">მოკლედ წაიკითხეთ, როცა არ იტენება</string>
+    <string name="notification_template_short_on_battery">მოკლედ, როცა არ იტენება</string>
     <string name="notification_type_bluetooth">Bluetooth მოწყობილობა</string>
     <string name="notification_type_wired">სადენიანი ყურსასმენები</string>
     <string name="notification_type_wifi">Wi-Fi ქსელი</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">შეტყობინებების წაკითხვის ჩართვა ან გამორთვა</string>
     <string name="shortcut_read_last_notification">კიდევ ერთხელ წაიკითხეთ ბოლო შეტყობინება</string>
     <string name="shortcut_stop_notification">შეწყვიტე შეტყობინების კითხვა</string>
-    <string name="notification_test_posting">ტესტის შეტყობინება მოდის 5 წამში</string>
-    <string name="notification_test_not_allowed">მიეცით საშუალება SandFly-ს, ჯერ აჩვენოს შეტყობინებები</string>
+    <string name="notification_test_posting">სატესტო შეტყობინება 5 წამში გამოჩნდება</string>
+    <string name="notification_test_not_allowed">ჯერ მიეცით SandFly-ს შეტყობინებების ჩვენების ნებართვა</string>
     <string name="notification_test_content_title">SandFly ტესტი</string>
     <string name="notification_test_content_text">ეს არის სატესტო შეტყობინება, წაიკითხეთ თქვენი შეტყობინებების პარამეტრებით. 123456</string>
     <string name="notification_automation_on">შეტყობინებების წაკითხვის ჩართვა</string>

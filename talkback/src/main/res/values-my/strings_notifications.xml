@@ -27,7 +27,7 @@
     <string name="notification_stop_title">ဖတ်ခြင်း ရပ်ရန်</string>
     <string name="notification_schedules_title">အကျဉ်းချုပ်နှင့်အချိန်</string>
     <string name="notification_history_title">အကြောင်းကြားချက် မှတ်တမ်း</string>
-    <string name="notification_test_title">စမ်းသပ်မှုသတိပေးချက်ပေးပို့ပါ</string>
+    <string name="notification_test_title">စမ်းသပ် အကြောင်းကြားချက် ပို့ရန်</string>
     <string name="notification_automation_title">အလိုအလျောက်စနစ်</string>
     <string name="notification_automation_allowed_title">အလိုအလျောက်စနစ်အက်ပ်များကို ခွင့်ပြုပါ</string>
     <string name="notification_category_said">ဖတ်မည့်အရာ</string>
@@ -224,9 +224,9 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">နားကြပ်များဖြင့်သာ</string>
     <string name="notification_template_night">ညအချိန် အသံပိတ်</string>
-    <string name="notification_template_screen_off">ဖန်သားပြင်ကို ပိတ်ထားခြင်းဖြင့်သာ</string>
-    <string name="notification_template_locked_private">ဖုန်းကို လော့ခ်ချထားသောအခါတွင်သာ အက်ပ်အမည်</string>
-    <string name="notification_template_short_on_battery">အားမသွင်းသည့်အခါ အတိုချုံးဖတ်ပါ</string>
+    <string name="notification_template_screen_off">မျက်နှာပြင် ပိတ်ထားချိန်တွင်သာ</string>
+    <string name="notification_template_locked_private">လော့ခ်ချထားချိန်တွင် အက်ပ်အမည်သာ</string>
+    <string name="notification_template_short_on_battery">အားမသွင်းချိန်တွင် အတိုချုံး</string>
     <string name="notification_type_bluetooth">Bluetooth စက်</string>
     <string name="notification_type_wired">ကြိုးတပ်နားကြပ်များ</string>
     <string name="notification_type_wifi">Wi-Fi ကွန်ရက်</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် ဖတ်ခြင်း ဖွင့်/ပိတ်</string>
     <string name="shortcut_read_last_notification">နောက်ဆုံးသတိပေးချက်ကို ထပ်ဖတ်ပါ</string>
     <string name="shortcut_stop_notification">အကြောင်းကြားစာကို ဖတ်ခြင်းကို ရပ်ပါ</string>
-    <string name="notification_test_posting">စမ်းသပ်မှုသတိပေးချက်သည် ၅ စက္ကန့်အတွင်း ထွက်ပေါ်လာသည်</string>
-    <string name="notification_test_not_allowed">အကြောင်းကြားချက်များကို ဦးစွာပြသရန် SandFlyအား ခွင့်ပြုပါ</string>
+    <string name="notification_test_posting">စမ်းသပ် အကြောင်းကြားချက်တစ်ခု ၅ စက္ကန့်အတွင်း ရောက်လာမည်</string>
+    <string name="notification_test_not_allowed">SandFly ကို အကြောင်းကြားချက်များ ပြသခွင့် အရင်ပေးပါ</string>
     <string name="notification_test_content_title">SandFly စမ်းသပ်မှု</string>
     <string name="notification_test_content_text">ဤသည်မှာ စမ်းသပ်မှုသတိပေးချက်ဖြစ်ပြီး၊ သင်၏သတိပေးချက်ဆက်တင်များဖြင့် ဖတ်ပါ။ ၁၂၃၄၅၆</string>
     <string name="notification_automation_on">အကြောင်းကြားချက် ဖတ်ခြင်းကို ဖွင့်ရန်</string>

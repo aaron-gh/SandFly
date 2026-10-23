@@ -27,7 +27,7 @@
     <string name="notification_stop_title">Stop med at læse</string>
     <string name="notification_schedules_title">Opsummering og tid</string>
     <string name="notification_history_title">Notifikationshistorik</string>
-    <string name="notification_test_title">Send en testmeddelelse</string>
+    <string name="notification_test_title">Send en testnotifikation</string>
     <string name="notification_automation_title">Automatisering</string>
     <string name="notification_automation_allowed_title">Tillad automatiseringsapps</string>
     <string name="notification_category_said">Hvad der læses</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">Stille om natten</string>
     <string name="notification_template_screen_off">Kun med slukket skærm</string>
     <string name="notification_template_locked_private">Kun appnavnet, når telefonen er låst</string>
-    <string name="notification_template_short_on_battery">Læs kort, når du ikke oplader</string>
+    <string name="notification_template_short_on_battery">Kort, når telefonen ikke oplader</string>
     <string name="notification_type_bluetooth">Bluetooth-enhed</string>
     <string name="notification_type_wired">Hovedtelefoner med ledning</string>
     <string name="notification_type_wifi">Wi-Fi-netværk</string>
@@ -309,8 +309,8 @@
     <string name="shortcut_toggle_notification_speech">Oplæsning af notifikationer til eller fra</string>
     <string name="shortcut_read_last_notification">Læs den sidste notifikation igen</string>
     <string name="shortcut_stop_notification">Stop med at læse meddelelsen</string>
-    <string name="notification_test_posting">En testmeddelelse følger efter 5 sekunder</string>
-    <string name="notification_test_not_allowed">Tillad SandFly at vise meddelelser først</string>
+    <string name="notification_test_posting">En testnotifikation vises om 5 sekunder</string>
+    <string name="notification_test_not_allowed">Tillad først SandFly at vise notifikationer</string>
     <string name="notification_test_content_title">SandFly-test</string>
     <string name="notification_test_content_text">Dette er en testnotifikation, læs med dine notifikationsindstillinger. 123456</string>
     <string name="notification_automation_on">Slå oplæsning af notifikationer til</string>
