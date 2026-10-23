@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">გადაყენება</string>
   <string name="gestures_announce_reset_gesture_settings">ჟესტის პარამეტრები გადაყენებულია.</string>
   <string name="pref_speak_roles_title">ელემენტის ტიპის გახმოვანება</string>
-  <string name="pref_speak_roles_summary">მოწონება ღილაკი ან ჩამრთველი</string>
+  <string name="pref_speak_roles_summary">მაგ. ღილაკი ან მოსანიშნი ველი</string>
   <string name="title_pref_speak_element_ids">ელემენტის ID-ების გახმოვანება</string>
   <string name="summary_pref_speak_element_ids">თქვით ღილაკების ID, რომლებსაც არ აქვთ ეტიკეტი</string>
   <string name="pref_allow_frequent_content_change_announcement_title">პროგრესის განახლების ხმამაღალი განცხ.</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">კლავიშთა ეს კომბინაცია უკვე გამოიყენება მოქმედებისთვის „%1$s“. გსურთ მისი გასუფთავება და ამ მალსახმობის „%2$s“-სთვის გადაცემა?</string>
   <string name="title_pref_intonation">გამოიყენე ტონალობის ცვლილება</string>
   <string name="title_pref_keyboard_echo">კლავიატურის ექო</string>
-  <string name="pref_node_desc_order_title">ნივთის დეტალების თანმიმდევრობა</string>
+  <string name="pref_node_desc_order_title">ელემენტის დეტალების თანმიმდევრობა</string>
   <string name="pref_time_feedback_format_title">დროის ფორმატი</string>
   <string name="title_pref_latency_reduction">დაყოვნების შემცირება</string>
   <string name="talkback_latency_reduction_summary">დააჩქარეთ SandFly პასუხი ეკრანზე შეხების შემდეგ</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">გამორთული</string>
     <string name="phonetic_letters_mode_after_letter_delay">ასოს შემდეგ, პაუზით, მაგ. „ჰ, ჰაერი“</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">ასოს შემდეგ, პაუზის გარეშე, მაგ. „ჰ ჰაერი“</string>
-    <string name="phonetic_letters_mode_instead_of_letter">წერილის ნაცვლად, როგორიცაა \"სასტუმრო\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">ასოს ნაცვლად, მაგ. „ჰაერი“</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">კითხულობს მეტყველების ძრავა</string>
     <string name="emoji_speech_names">კითხულობს SandFly</string>

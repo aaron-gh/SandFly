@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Visszaállítás</string>
   <string name="gestures_announce_reset_gesture_settings">Sikerült a kézmozdulatok beállításainak visszaállítása.</string>
   <string name="pref_speak_roles_title">Elemtípus kimondása</string>
-  <string name="pref_speak_roles_summary">Tetszik gomb vagy jelölőnégyzet</string>
+  <string name="pref_speak_roles_summary">Például gomb vagy jelölőnégyzet</string>
   <string name="title_pref_speak_element_ids">Elemazonosítók felolvasása</string>
   <string name="summary_pref_speak_element_ids">Mondja ki azoknak a gomboknak az azonosítóját, amelyeken nincs felirat</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Minden frissítés kimondása</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Ez a kombináció a(z) „%1$s” művelethez van hozzárendelve. Szeretné törölni a hozzárendelést, és a kombinációt társítani a következő művelethez: „%2$s”?</string>
   <string name="title_pref_intonation">Hangmagasság-változtatások használata</string>
   <string name="title_pref_keyboard_echo">Leütött billentyűk kimondása</string>
-  <string name="pref_node_desc_order_title">A tétel sorrendjének részletei</string>
+  <string name="pref_node_desc_order_title">Az elemadatok sorrendje</string>
   <string name="pref_time_feedback_format_title">Időformátum</string>
   <string name="title_pref_latency_reduction">Késleltetés csökkentése</string>
   <string name="talkback_latency_reduction_summary">Gyorsítsa a SandFly válaszadást a képernyő megérintése után</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Előző oszlop</string>
   <string name="shortcut_column_right">Következő oszlop</string>
   <string name="table_navigation_not_supported">A táblázatban való navigáció nem támogatott</string>
-  <string name="pref_auto_enter_table_navigation_title">Váltson a táblázatban történő navigációra</string>
+  <string name="pref_auto_enter_table_navigation_title">Váltás táblázatnavigációra táblázatokban</string>
   <string name="title_text_formatting_menu">Szövegformázás leírása</string>
   <string name="summary_text_formatting_menu">A félkövér, dőlt, aláhúzott és egyéb módosításokhoz</string>
   <string name="title_text_formatting_inline">Szöveg formázásának felolvasása</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">Ki</string>
     <string name="phonetic_letters_mode_after_letter_delay">A betű után, szünettel, például „h, Huba”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">A betű után, szünet nélkül, például „h Huba”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">A betű helyett például \"hotel\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">A betű helyett, például „Huba”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">A beszédmotor olvassa fel</string>
     <string name="emoji_speech_names">A SandFly olvassa fel</string>

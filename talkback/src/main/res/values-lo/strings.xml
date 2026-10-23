@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">ຣີເຊັດ</string>
   <string name="gestures_announce_reset_gesture_settings">ຣີເຊັດການຕັ້ງຄ່າທ່າທາງແລ້ວ.</string>
   <string name="pref_speak_roles_title">ອ່ານປະເພດລາຍການ</string>
-  <string name="pref_speak_roles_summary">ປຸ່ມມັກ ຫຼື checkbox</string>
+  <string name="pref_speak_roles_summary">ເຊັ່ນ ປຸ່ມ ຫຼື ກ່ອງໝາຍ</string>
   <string name="title_pref_speak_element_ids">ໄອດີອົງປະກອບການເວົ້າ</string>
   <string name="summary_pref_speak_element_ids">ເວົ້າ ID ຂອງປຸ່ມທີ່ບໍ່ມີປ້າຍຊື່</string>
   <string name="pref_allow_frequent_content_change_announcement_title">ເວົ້າຂໍ້ມູນອັບເດດຄວາມຄືບໜ້າທັງໝົດ</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">ການ​ປະ​ສົມ​ປຸ່ມ​ນີ້ຖືກ​ນຳ​ໃຊ້​ສຳ​ລັບການ​ກະ​ທຳ \'%1$s\'. ທ່ານ​ຕ້ອງ​ການ​ລຶບ​ມັນ ແລະ​ກຳ​ນົດ​ທາງ​ລັດ​ນີ້​ໃສ່ \'%2$s\' ບໍ?</string>
   <string name="title_pref_intonation">ໃຊ້ການ​ປ່ຽນໂທນສຽງ</string>
   <string name="title_pref_keyboard_echo">ອອກສຽງແປ້ນພິມ</string>
-  <string name="pref_node_desc_order_title">ລາຍ​ລະ​ອຽດ​ຄໍາ​ສັ່ງ​ຂອງ​ລາຍ​ການ​</string>
+  <string name="pref_node_desc_order_title">ລຳດັບລາຍລະອຽດລາຍການ</string>
   <string name="pref_time_feedback_format_title">ຮູບແບບເວລາ</string>
   <string name="title_pref_latency_reduction">ຫຼຸດຄວາມຫຼ້າຊ້າ</string>
   <string name="talkback_latency_reduction_summary">ເຮັດໃຫ້ SandFly ຕອບສະໜອງໄວຂຶ້ນຫຼັງຈາກທີ່ທ່ານແຕະໜ້າຈໍ</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">ປິດ</string>
     <string name="phonetic_letters_mode_after_letter_delay">ຫຼັງຕົວອັກສອນ, ມີຢຸດ, ເຊັ່ນ “ກ, ໄກ່”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">ຫຼັງຕົວອັກສອນ, ບໍ່ມີຢຸດ, ເຊັ່ນ “ກ ໄກ່”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">ແທນທີ່ຈະເປັນຕົວອັກສອນເຊັ່ນ \"ໂຮງແຮມ\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">ແທນຕົວອັກສອນ, ເຊັ່ນ “ໄກ່”</string>
     <string name="title_pref_emoji_speech">ອີໂມຈິ</string>
     <string name="emoji_speech_engine">ເຄື່ອງມືສັງເຄາະສຽງອ່ານ</string>
     <string name="emoji_speech_names">ອ່ານໂດຍ SandFly</string>

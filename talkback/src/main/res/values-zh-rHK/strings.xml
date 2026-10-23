@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">重設</string>
   <string name="gestures_announce_reset_gesture_settings">手勢設定已重設。</string>
   <string name="pref_speak_roles_title">讀出元素類型</string>
-  <string name="pref_speak_roles_summary">喜歡按鈕或複選框</string>
+  <string name="pref_speak_roles_summary">例如按鈕或核取方塊</string>
   <string name="title_pref_speak_element_ids">讀出元素 ID</string>
   <string name="summary_pref_speak_element_ids">說出沒有標籤的按鈕的 ID</string>
   <string name="pref_allow_frequent_content_change_announcement_title">朗讀所有最新進度</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">此組合鍵已用於「%1$s」動作。你要清除並指定這個快速鍵用於「%2$s」嗎？</string>
   <string name="title_pref_intonation">使用音調變化</string>
   <string name="title_pref_keyboard_echo">鍵盤語音提示</string>
-  <string name="pref_node_desc_order_title">商品详细信息的顺序</string>
+  <string name="pref_node_desc_order_title">項目詳細資料的順序</string>
   <string name="pref_time_feedback_format_title">時間格式</string>
   <string name="title_pref_latency_reduction">縮短延遲時間</string>
   <string name="talkback_latency_reduction_summary">讓SandFly觸碰螢幕後反應更快</string>
@@ -1253,7 +1253,7 @@
   <string name="shortcut_column_left">上一欄</string>
   <string name="shortcut_column_right">下一欄</string>
   <string name="table_navigation_not_supported">無法瀏覽表格</string>
-  <string name="pref_auto_enter_table_navigation_title">切換到表格中的表格導航</string>
+  <string name="pref_auto_enter_table_navigation_title">在表格中切換到表格瀏覽</string>
   <string name="title_text_formatting_menu">描述文字格式</string>
   <string name="summary_text_formatting_menu">用於粗體、斜體、底線等變更</string>
   <string name="title_text_formatting_inline">朗讀文字格式</string>
@@ -1403,7 +1403,7 @@
     <string name="phonetic_letters_mode_off">關閉</string>
     <string name="phonetic_letters_mode_after_letter_delay">字母後，有停頓，例如「h，hotel」</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">字母後，無停頓，例如「h hotel」</string>
-    <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“酒店”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">代替字母，例如「hotel」</string>
     <string name="title_pref_emoji_speech">表情符號</string>
     <string name="emoji_speech_engine">由語音引擎朗讀</string>
     <string name="emoji_speech_names">由 SandFly 朗讀</string>

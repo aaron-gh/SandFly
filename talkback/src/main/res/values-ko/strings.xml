@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">재설정</string>
   <string name="gestures_announce_reset_gesture_settings">동작 설정이 재설정되었습니다.</string>
   <string name="pref_speak_roles_title">요소 유형 소리 내어 읽기</string>
-  <string name="pref_speak_roles_summary">좋아요 버튼이나 체크박스</string>
+  <string name="pref_speak_roles_summary">예: 버튼 또는 체크박스</string>
   <string name="title_pref_speak_element_ids">요소 ID 읽기</string>
   <string name="summary_pref_speak_element_ids">라벨이 없는 버튼의 ID를 말해보세요</string>
   <string name="pref_allow_frequent_content_change_announcement_title">모든 진행 상황 업데이트 말하기</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">\'%1$s\' 작업에 사용되는 키 조합입니다. 이전 작업을 삭제하고 이 키 조합에 \'%2$s\' 작업을 할당하시겠습니까?</string>
   <string name="title_pref_intonation">음조 변경 사용</string>
   <string name="title_pref_keyboard_echo">키보드 에코</string>
-  <string name="pref_node_desc_order_title">품목 세부정보 순서</string>
+  <string name="pref_node_desc_order_title">항목 세부정보 순서</string>
   <string name="pref_time_feedback_format_title">시간 형식</string>
   <string name="title_pref_latency_reduction">지연 시간 줄이기</string>
   <string name="talkback_latency_reduction_summary">화면을 터치한 후 SandFly가 더 빠르게 반응하도록 설정</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">사용 안함</string>
     <string name="phonetic_letters_mode_after_letter_delay">글자 다음에 잠시 쉬고, 예: “ㅎ, 하늘”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">글자 다음에 바로, 예: “ㅎ 하늘”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">\"호텔\"이라는 글자 대신</string>
+    <string name="phonetic_letters_mode_instead_of_letter">글자 대신, 예: “하늘”</string>
     <string name="title_pref_emoji_speech">이모티콘</string>
     <string name="emoji_speech_engine">음성 엔진이 읽음</string>
     <string name="emoji_speech_names">SandFly에서 읽기</string>

@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">ပြန်သတ်မှတ်ရန်</string>
   <string name="gestures_announce_reset_gesture_settings">လက်ဟန်ဆက်တင်များကို ပြန်သတ်မှတ်လိုက်ပါပြီ။</string>
   <string name="pref_speak_roles_title">အကြောင်းအရာ အမျိုးအစားကို ပြောရန်</string>
-  <string name="pref_speak_roles_summary">Like ခလုတ် သို့မဟုတ် အမှန်ခြစ်ပေးပါ</string>
+  <string name="pref_speak_roles_summary">ခလုတ် သို့မဟုတ် အမှန်ခြစ်အကွက် ကဲ့သို့</string>
   <string name="title_pref_speak_element_ids">အကြောင်းအရာ ID များကို အသံထွက်ပြောပေးရန်</string>
   <string name="summary_pref_speak_element_ids">အညွှန်းမပါသော ခလုတ်များ၏ ID ကို ပြောပါ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">အပ်ဒိတ်အခြေအနေအားလုံး အသံထွက်ပြောရန်</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">ကီးပေါင်းစပ်ခြင်းသည်  \'%1$s\' လုပ်ဆောင်ချက်အတွက် အသုံးပြုထားပါသည်။ ၎င်းကိုရှင်းလင် \'%2$s\'?</string>
   <string name="title_pref_intonation">အသံအနိမ့်အမြင့် ပြောင်းလဲမှုများ အသုံးပြုရန်</string>
   <string name="title_pref_keyboard_echo">ကီးဘုတ် အသံထွက်</string>
-  <string name="pref_node_desc_order_title">မှာယူမှုအသေးစိတ်</string>
+  <string name="pref_node_desc_order_title">အရာ၏ အသေးစိတ်အစီအစဉ်</string>
   <string name="pref_time_feedback_format_title">အချိန်ဖော်မက်</string>
   <string name="title_pref_latency_reduction">စောင့်ရချိန် လျှော့ရန်</string>
   <string name="talkback_latency_reduction_summary">မျက်နှာပြင်ကို ထိပြီးနောက် SandFly တုံ့ပြန်မှုကို ပိုမြန်အောင်လုပ်ပါ</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">ယခင်ကော်လံ</string>
   <string name="shortcut_column_right">နောက်ကော်လံ</string>
   <string name="table_navigation_not_supported">ဇယား၌ရွှေ့ကြည့်ခြင်း မပံ့ပိုးပါ</string>
-  <string name="pref_auto_enter_table_navigation_title">ဇယားများတွင် ဇယားလမ်းညွှန်မှုသို့ ပြောင်းပါ</string>
+  <string name="pref_auto_enter_table_navigation_title">ဇယားများတွင် ဇယားလမ်းညွှန်မှုသို့ ပြောင်းရန်</string>
   <string name="title_text_formatting_menu">စာသားဖော်မက်လုပ်ခြင်း ဖော်ပြရန်</string>
   <string name="summary_text_formatting_menu">စာလုံးထူ၊ စာလုံးစောင်း၊ မျဉ်းသားခြင်း စသည်တို့ကဲ့သို့သော ပြောင်းလဲမှုများအတွက်</string>
   <string name="title_text_formatting_inline">စကားပြော စာသား ဖော်မက်လုပ်ခြင်း</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">ပိတ်</string>
     <string name="phonetic_letters_mode_after_letter_delay">အက္ခရာနောက်တွင် ခဏရပ်၍ ဥပမာ “က၊ ကြက်”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">အက္ခရာနောက်တွင် မရပ်ဘဲ ဥပမာ “က ကြက်”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">အက္ခရာအစား “ဟိုတယ်” ကဲ့သို့၊</string>
+    <string name="phonetic_letters_mode_instead_of_letter">အက္ခရာအစား ဥပမာ “ကြက်”</string>
     <string name="title_pref_emoji_speech">အီမိုဂျီ</string>
     <string name="emoji_speech_engine">စကားပြောအင်ဂျင်က ဖတ်သည်</string>
     <string name="emoji_speech_names">SandFly က ဖတ်သည်</string>

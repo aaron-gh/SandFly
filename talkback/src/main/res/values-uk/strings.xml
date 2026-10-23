@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Скинути</string>
   <string name="gestures_announce_reset_gesture_settings">Налаштування жестів скинуто.</string>
   <string name="pref_speak_roles_title">Озвучувати тип елемента</string>
-  <string name="pref_speak_roles_summary">Кнопка \"Подобається\" або прапорець</string>
+  <string name="pref_speak_roles_summary">Наприклад, кнопка або прапорець</string>
   <string name="title_pref_speak_element_ids">Озвучувати ідентифікатори елементів</string>
   <string name="summary_pref_speak_element_ids">Назвіть ідентифікатори кнопок, які не мають мітки</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Озвучувати всі зміни перебігу виконання</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Ви вибрали цю комбінацію клавіш для дії \"%1$s\". Скасувати та призначити цю комбінацію для дії \"%2$s\"?</string>
   <string name="title_pref_intonation">Змінювати тон під час озвучування</string>
   <string name="title_pref_keyboard_echo">Озвучення натиснених клавіш</string>
-  <string name="pref_node_desc_order_title">Порядок деталей товару</string>
+  <string name="pref_node_desc_order_title">Порядок відомостей про елемент</string>
   <string name="pref_time_feedback_format_title">Формат часу</string>
   <string name="title_pref_latency_reduction">Зменшити затримку</string>
   <string name="talkback_latency_reduction_summary">Зробіть так, щоб SandFly реагував швидше після дотику до екрана</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Попередній стовпець</string>
   <string name="shortcut_column_right">Наступний стовпець</string>
   <string name="table_navigation_not_supported">Навігація в таблиці не підтримується</string>
-  <string name="pref_auto_enter_table_navigation_title">Перейти до навігації таблицями</string>
+  <string name="pref_auto_enter_table_navigation_title">Перемикатися на навігацію таблицею в таблицях</string>
   <string name="title_text_formatting_menu">Описати форматування тексту</string>
   <string name="summary_text_formatting_menu">Стосується таких змін, як жирний шрифт, курсив, підкреслення тощо</string>
   <string name="title_text_formatting_inline">Озвучувати форматування тексту</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">Вимкнено</string>
     <string name="phonetic_letters_mode_after_letter_delay">Після літери, з паузою, наприклад «г, Галина»</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Після літери, без паузи, наприклад «г Галина»</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Замість літери, як \"готель\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Замість літери, наприклад «Галина»</string>
     <string name="title_pref_emoji_speech">Емодзі</string>
     <string name="emoji_speech_engine">Читає синтезатор мовлення</string>
     <string name="emoji_speech_names">Читає SandFly</string>

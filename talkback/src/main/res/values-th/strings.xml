@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">รีเซ็ต</string>
   <string name="gestures_announce_reset_gesture_settings">รีเซ็ตการตั้งค่าท่าทางสัมผัสแล้ว</string>
   <string name="pref_speak_roles_title">พูดประเภทองค์ประกอบ</string>
-  <string name="pref_speak_roles_summary">ปุ่มถูกใจหรือช่องทำเครื่องหมาย</string>
+  <string name="pref_speak_roles_summary">เช่น ปุ่มหรือช่องทำเครื่องหมาย</string>
   <string name="title_pref_speak_element_ids">พูดรหัสองค์ประกอบ</string>
   <string name="summary_pref_speak_element_ids">พูด ID ของปุ่มที่ไม่มีป้ายกำกับ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">พูดข้อมูลอัปเดตความคืบหน้าทั้งหมด</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">ปุ่มที่ใช้ร่วมกันนี้ใช้สำหรับการทำงาน \"%1$s\" คุณต้องการล้างและกำหนดทางลัดนี้ให้กับ \"%2$s\" ไหม</string>
   <string name="title_pref_intonation">ใช้การเปลี่ยนแปลงระดับเสียงสูงต่ำ</string>
   <string name="title_pref_keyboard_echo">เสียงสะท้อนของแป้นพิมพ์</string>
-  <string name="pref_node_desc_order_title">รายละเอียดการเรียงลำดับรายการ</string>
+  <string name="pref_node_desc_order_title">ลำดับรายละเอียดรายการ</string>
   <string name="pref_time_feedback_format_title">รูปแบบเวลา</string>
   <string name="title_pref_latency_reduction">ลดความล่าช้า</string>
   <string name="talkback_latency_reduction_summary">ทำให้ SandFly ตอบสนองเร็วขึ้นหลังจากที่คุณสัมผัสหน้าจอ</string>
@@ -1405,7 +1405,7 @@
     <string name="phonetic_letters_mode_off">ปิด</string>
     <string name="phonetic_letters_mode_after_letter_delay">หลังตัวอักษร เว้นช่วง เช่น “ห, หีบ”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">หลังตัวอักษร ไม่เว้นช่วง เช่น “ห หีบ”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">แทนที่จะเป็นตัวอักษร เช่น \"โรงแรม\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">แทนตัวอักษร เช่น “หีบ”</string>
     <string name="title_pref_emoji_speech">อิโมจิ</string>
     <string name="emoji_speech_engine">เอนจินเสียงพูดอ่าน</string>
     <string name="emoji_speech_names">อ่านโดย SandFly</string>

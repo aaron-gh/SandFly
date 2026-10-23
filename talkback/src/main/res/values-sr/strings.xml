@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Ресетуј</string>
   <string name="gestures_announce_reset_gesture_settings">Подешавања покрета су ресетована.</string>
   <string name="pref_speak_roles_title">Изговори тип елемента</string>
-  <string name="pref_speak_roles_summary">Дугме Свиђа ми се или поље за потврду</string>
+  <string name="pref_speak_roles_summary">На пример дугме или поље за потврду</string>
   <string name="title_pref_speak_element_ids">Изговарај ИД-ове елемената</string>
   <string name="summary_pref_speak_element_ids">Изговорите ИД дугмади која немају ознаку</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Изговарај све новости о напретку</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Комбинација тастера се већ користи за радњу „%1$s“. Желите ли да је обришете и доделите ту пречицу радњи „%2$s“?</string>
   <string name="title_pref_intonation">Користи промене тоналитета</string>
   <string name="title_pref_keyboard_echo">Ехо тастатуре</string>
-  <string name="pref_node_desc_order_title">Детаљи о редоследу ставке</string>
+  <string name="pref_node_desc_order_title">Редослед детаља ставке</string>
   <string name="pref_time_feedback_format_title">Формат времена</string>
   <string name="title_pref_latency_reduction">Смањи кашњење</string>
   <string name="talkback_latency_reduction_summary">Нека SandFly одговори брже након што додирнете екран</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Претходна колона</string>
   <string name="shortcut_column_right">Следећа колона</string>
   <string name="table_navigation_not_supported">Кретање кроз табелу није подржано</string>
-  <string name="pref_auto_enter_table_navigation_title">Пребаците се на навигацију табеле у табелама</string>
+  <string name="pref_auto_enter_table_navigation_title">Пређи на навигацију табелом у табелама</string>
   <string name="title_text_formatting_menu">Опиши форматирање текста</string>
   <string name="summary_text_formatting_menu">За промене као што су подебљано, курзив, подвучено и друго</string>
   <string name="title_text_formatting_inline">Форматирање текста за говор</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">Искључено</string>
     <string name="phonetic_letters_mode_after_letter_delay">После слова, са паузом, нпр. „х, Христина“</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">После слова, без паузе, нпр. „х Христина“</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Уместо слова, као \"хотел\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Уместо слова, нпр. „Христина“</string>
     <string name="title_pref_emoji_speech">Емоџи</string>
     <string name="emoji_speech_engine">Чита говорни механизам</string>
     <string name="emoji_speech_names">Чита SandFly</string>

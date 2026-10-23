@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Кайра коюу</string>
   <string name="gestures_announce_reset_gesture_settings">Жаңсоо параметрлери баштапкы абалга келтирилди.</string>
   <string name="pref_speak_roles_title">Элементтин түрүн айтуу</string>
-  <string name="pref_speak_roles_summary">Like баскычы же белги кутучасы</string>
+  <string name="pref_speak_roles_summary">Мисалы, баскыч же белги кутучасы</string>
   <string name="title_pref_speak_element_ids">Элементтин идентификаторлорун айтуу</string>
   <string name="summary_pref_speak_element_ids">Энбелгиси жок баскычтардын идентификаторун айтыңыз</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Аткарылып жатканын айтып туруу</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Бул баскычтар айкалышы \"%1$s\" аракети үчүн колдонулат. Аны тазалап, бул кыска жолду \"%2$s\" үчүн дайындагыңыз келеби?</string>
   <string name="title_pref_intonation">Айтып жаткан үндүн бийиктигин өзгөртүү</string>
   <string name="title_pref_keyboard_echo">Баскыч басылганда үн чыгат</string>
-  <string name="pref_node_desc_order_title">Буюмдун реквизиттеринин тартиби</string>
+  <string name="pref_node_desc_order_title">Элементтин чоо-жайынын тартиби</string>
   <string name="pref_time_feedback_format_title">Убакыт форматы</string>
   <string name="title_pref_latency_reduction">Кечигүүнү азайтуу</string>
   <string name="talkback_latency_reduction_summary">Экранга тийгениңизден кийин SandFly тезирээк жооп бериңиз</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Мурунку мамыча</string>
   <string name="shortcut_column_right">Кийинки мамыча</string>
   <string name="table_navigation_not_supported">Таблица боюнча чабыттоо колдоого алынбайт</string>
-  <string name="pref_auto_enter_table_navigation_title">Таблицаларда үстөл навигациясына өтүңүз</string>
+  <string name="pref_auto_enter_table_navigation_title">Таблицаларда таблица боюнча навигацияга өтүү</string>
   <string name="title_text_formatting_menu">Тексттин форматын сүрөттөп берүү</string>
   <string name="summary_text_formatting_menu">Жоон, жантык, алды сызылган сыяктуу жана башка өзгөртүүлөр үчүн</string>
   <string name="title_text_formatting_inline">Тексттин форматын айтуу</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">Өчүк</string>
     <string name="phonetic_letters_mode_after_letter_delay">Тамгадан кийин, тыным менен, мисалы «а, Алма»</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Тамгадан кийин, тынымсыз, мисалы «а Алма»</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Каттын ордуна, \"мейманкана\" сыяктуу</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Тамганын ордуна, мисалы «Алма»</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
     <string name="emoji_speech_engine">Кеп кыймылдаткычы окуйт</string>
     <string name="emoji_speech_names">SandFly окуйт</string>

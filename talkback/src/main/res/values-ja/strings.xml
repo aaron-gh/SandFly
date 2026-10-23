@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">リセット</string>
   <string name="gestures_announce_reset_gesture_settings">ジェスチャー設定がリセットされました。</string>
   <string name="pref_speak_roles_title">要素タイプを読み上げる</string>
-  <string name="pref_speak_roles_summary">「いいね！」ボタンまたはチェックボックス</string>
+  <string name="pref_speak_roles_summary">ボタン、チェックボックスなど</string>
   <string name="title_pref_speak_element_ids">要素 ID の読み上げ</string>
   <string name="summary_pref_speak_element_ids">ラベルのないボタンの ID を言います</string>
   <string name="pref_allow_frequent_content_change_announcement_title">状況の変動をすべて読み上げる</string>
@@ -1251,7 +1251,7 @@
   <string name="shortcut_column_left">前の列</string>
   <string name="shortcut_column_right">次の列</string>
   <string name="table_navigation_not_supported">表内の移動はサポートされていません</string>
-  <string name="pref_auto_enter_table_navigation_title">テーブル内のテーブル ナビゲーションに切り替える</string>
+  <string name="pref_auto_enter_table_navigation_title">表内では表ナビゲーションに切り替える</string>
   <string name="title_text_formatting_menu">テキストの書式設定の説明</string>
   <string name="summary_text_formatting_menu">太字、斜体、下線などの変更</string>
   <string name="title_text_formatting_inline">テキストの書式設定の読み上げ</string>
@@ -1401,7 +1401,7 @@
     <string name="phonetic_letters_mode_off">オフ</string>
     <string name="phonetic_letters_mode_after_letter_delay">文字の後に間を置く（例:「h、ホテル」）</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">文字の後に間を置かない（例:「h ホテル」）</string>
-    <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに「ホテル」みたいに</string>
+    <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに（例:「ホテル」）</string>
     <string name="title_pref_emoji_speech">絵文字</string>
     <string name="emoji_speech_engine">音声エンジンによる読み上げ</string>
     <string name="emoji_speech_names">SandFly が読む</string>

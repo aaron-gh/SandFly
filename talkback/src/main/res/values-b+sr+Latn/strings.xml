@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Resetuj</string>
   <string name="gestures_announce_reset_gesture_settings">Podešavanja pokreta su resetovana.</string>
   <string name="pref_speak_roles_title">Izgovori tip elementa</string>
-  <string name="pref_speak_roles_summary">Dugme Sviđa mi se ili polje za potvrdu</string>
+  <string name="pref_speak_roles_summary">Na primer dugme ili polje za potvrdu</string>
   <string name="title_pref_speak_element_ids">Izgovaraj ID-ove elemenata</string>
   <string name="summary_pref_speak_element_ids">Izgovorite ID dugmadi koja nemaju oznaku</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Izgovaraj sve novosti o napretku</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Kombinacija tastera se već koristi za radnju „%1$s“. Želite li da je obrišete i dodelite tu prečicu radnji „%2$s“?</string>
   <string name="title_pref_intonation">Koristi promene tonaliteta</string>
   <string name="title_pref_keyboard_echo">Eho tastature</string>
-  <string name="pref_node_desc_order_title">Detalji o redosledu stavke</string>
+  <string name="pref_node_desc_order_title">Redosled detalja stavke</string>
   <string name="pref_time_feedback_format_title">Format vremena</string>
   <string name="title_pref_latency_reduction">Smanji kašnjenje</string>
   <string name="talkback_latency_reduction_summary">Neka SandFly odgovori brže nakon što dodirnete ekran</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Prethodna kolona</string>
   <string name="shortcut_column_right">Sledeća kolona</string>
   <string name="table_navigation_not_supported">Kretanje kroz tabelu nije podržano</string>
-  <string name="pref_auto_enter_table_navigation_title">Prebacite se na navigaciju tabele u tabelama</string>
+  <string name="pref_auto_enter_table_navigation_title">Pređi na navigaciju tabelom u tabelama</string>
   <string name="title_text_formatting_menu">Opiši formatiranje teksta</string>
   <string name="summary_text_formatting_menu">Za promene kao što su podebljano, kurziv, podvučeno i drugo</string>
   <string name="title_text_formatting_inline">Formatiranje teksta za govor</string>
@@ -1404,7 +1404,7 @@
     <string name="phonetic_letters_mode_off">Isključeno</string>
     <string name="phonetic_letters_mode_after_letter_delay">Posle slova, sa pauzom, npr. „h, Hristina“</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Posle slova, bez pauze, npr. „h Hristina“</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, kao \"hotel\"</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, npr. „Hristina“</string>
     <string name="title_pref_emoji_speech">Emodži</string>
     <string name="emoji_speech_engine">Čita govorni mehanizam</string>
     <string name="emoji_speech_names">Čita SandFly</string>
