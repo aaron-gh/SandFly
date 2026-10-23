@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Gera hlé á SandFly</string>
+    <string name="summary_pause_backtalk">Slökkva á tali, bendingum og snertikönnun þar til þú heldur áfram með SandFly</string>
+    <string name="keycombo_menu_global_pause_backtalk">Gera hlé á eða halda áfram með SandFly</string>
+    <string name="backtalk_paused">Hlé gert á SandFly</string>
+    <string name="backtalk_resumed">SandFly virkt aftur</string>
+    <string name="notification_title_backtalk_paused">Hlé er á SandFly</string>
+    <string name="notification_message_backtalk_paused">Ýttu til að halda áfram</string>
+    <string name="notification_channel_backtalk_paused">Hlé á SandFly</string>
+    <string name="dialog_title_pause_backtalk">Gera hlé á SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Gera hlé</string>
+    <string name="dialog_message_pause_backtalk">Meðan hlé er á SandFly er ekkert lesið upp, bendingar virka ekki og skjárinn virkar eins og enginn skjálesari sé í gangi.</string>
+    <string name="message_resume_keyguard">Til að halda áfram skaltu ýta á tilkynninguna „Hlé er á SandFly“, ýta þrisvar hratt á takkann til að lækka hljóðstyrk eða læsa símanum og vekja hann svo lásskjárinn birtist.</string>
+    <string name="message_resume_screen_on">Til að halda áfram skaltu ýta á tilkynninguna „Hlé er á SandFly“, ýta þrisvar hratt á takkann til að lækka hljóðstyrk eða slökkva á skjánum og kveikja á honum aftur.</string>
+    <string name="message_resume_manual">Til að halda áfram skaltu ýta á tilkynninguna „Hlé er á SandFly“ eða ýta þrisvar hratt á takkann til að lækka hljóðstyrk.</string>
+    <string name="message_resume_key_combo">Þú getur líka ýtt á <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">Halda áfram með SandFly</string>
+    <string name="value_resume_keyguard">Þegar lásskjárinn birtist</string>
+    <string name="value_resume_screen_on">Þegar kveikt er á skjánum</string>
+    <string name="value_resume_manual">Aðeins úr tilkynningunni eða með flýtileið</string>
+</resources>

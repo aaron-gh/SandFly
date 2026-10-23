@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Blindraleturslyklaborð</string>
   <string name="bd_application_name">Android-aðgengishjálp</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-blindraleturslyklaborð er ekki tiltækt</string>
-  <string name="bd_ime_disabled_dialog_title">Kveikja á TalkBack-blindraleturslyklaborði</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-blindraleturslyklaborð er ekki tiltækt</string>
+  <string name="bd_ime_disabled_dialog_title">Kveikja á SandFly-blindraleturslyklaborði</string>
   <string name="bd_ime_disabled_dialog_message">Svo hægt sé að nota blindraletursskjáinn til að slá inn skaltu fara í innfærslustillingar og kveikja á honum</string>
   <string name="bd_ime_disabled_dialog_title_positive">Innfærslustillingar</string>
   <string name="bd_ime_not_default_dialog_title">Skipta um innfærsluaðferð</string>
-  <string name="bd_ime_not_default_dialog_message">Til að halda áfram að slá inn skaltu velja TalkBack-blindraleturslyklaborðið sem innfærsluaðferð</string>
+  <string name="bd_ime_not_default_dialog_message">Til að halda áfram að slá inn skaltu velja SandFly-blindraleturslyklaborðið sem innfærsluaðferð</string>
   <string name="bd_ime_not_default_dialog_positive">Skipta um innfærslu</string>
   <string name="type_unlabeled">Óflokkað</string>
   <string name="type_unlabeled_edittext">Ómerktur breytingareitur</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Hliðra til vinstri</string>
   <string name="overlay_pan_right_button">Hliðra til hægri</string>
   <string name="bd_preferences_title">Blindraletursskjár</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Kveiktu fyrst á TalkBack til að nota blindraletursskjá</string>
-  <string name="bd_preferences_banner_talkback_off_button">Fara í TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Kveiktu fyrst á SandFly til að nota blindraletursskjá</string>
+  <string name="bd_preferences_banner_talkback_off_button">Fara í SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Kveiktu fyrst á Bluetooth til að nota blindraletursskjá</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Kveikja á Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Svo hægt sé að nota blindraletursskjá þarf %s aðgang að nálægum tækjum</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Til að nota flettiham þarftu að skipta úr sjálfgefna flýtilyklakortinu yfir í aukna flýtilyklakortið. Þessi breyting mun uppfæra einhverjar skipanir blindraletursskjásins þíns</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Stillingar</string>
   <string name="bd_command_change_dialog_title">Sumar skipanir hafa verið uppfærðar</string>
-  <string name="bd_command_change_dialog_message">Þessar skipanir fyrir blindraletursskjá voru uppfærðar í þessari útgáfu af TalkBack:\n\n• Fyrra atriði: Ýttu á punkta 1, 7\n\n• Næsta atriði: Ýttu á punkta 4, 8\n\n• Fyrri lesstýring: Ýttu á punkta 2, 3, 7, 8\n\n• Næsta lesstýring: Ýttu á punkta 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Þessar skipanir fyrir blindraletursskjá voru uppfærðar í þessari útgáfu af SandFly:\n\n• Fyrra atriði: Ýttu á punkta 1, 7\n\n• Næsta atriði: Ýttu á punkta 4, 8\n\n• Fyrri lesstýring: Ýttu á punkta 2, 3, 7, 8\n\n• Næsta lesstýring: Ýttu á punkta 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Stytt blindraletur</string>
   <string name="bd_preference_braille_uncontracted">Óstytt blindraletur</string>
   <string name="bd_braille_grade_tips">Ýttu á bilslána og punkta 1, 2, 4 og 5 til að skipta hratt á milli þess að nota stytt og óstytt blindraletur á blindraletursskjá.\n\nÞessi skipun virkar ef nú notar tungumál með báðum útgáfum blindraleturs.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Fara á milli atriða</string>
   <string name="bd_commands_bindings_category_system_actions_title">Kerfisaðgerðir</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Til baka, heim, tilkynningar og fleira</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-eiginleikar</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Valmyndir og stillingar TalkBack</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-eiginleikar</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly valmyndir og stillingar</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Blindraletursstillingar</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Tungumál og stillingar blindraleturs</string>
   <string name="bd_commands_bindings_category_text_editing_title">Breytingar á texta</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Opna öll forrit</string>
   <string name="bd_cmd_toggle_screen_search">Opna skjáleit</string>
   <string name="bd_cmd_edit_custom_label">Breyta sérsniðnu merki</string>
-  <string name="bd_cmd_open_talkback_menu">Opna valmynd TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Kveikja eða slökkva á tali TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Opna valmynd SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Kveikja eða slökkva á tali SandFly</string>
   <string name="bd_cmd_read_stop">Hætta að lesa</string>
-  <string name="bd_cmd_talkback_settings">Opna stillingar TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Opna stillingar SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Skipta yfir í næsta innsláttartungumál</string>
   <string name="bd_cmd_switch_to_next_output_language">Skipta yfir í næsta lestungumál</string>
   <string name="bd_cmd_toggle_contracted_mode">Skipta á milli þess að nota stytt og óstytt</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Þú getur skoðað vefsíður á fljótlegri hátt með því að nota skipunina um að fara í flettiham og slá síðan inn eftirfarandi stafa- eða talnaflýtileiðir\n\nÞú getur einnig notað þessar flýtileiðir án þess að fara í flettiham en þá þarftu að bæta punkti og 8 við skipanir um að fara áfram.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Töflufletting</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Slökkva á stillingum blindraletursskjás?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Þú getur kveikt aftur á þessu hvenær sem er í stillingum TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Þú getur kveikt aftur á þessu hvenær sem er í stillingum SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Slökkva</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Tilteknar skipanir eru ekki í boði</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Flettiskipanir, stillingar blindraleturs og tilteknir TalkBack-eiginleikar eru ekki í boði á meðan þú skrifar eða breytir.\n\nTil að nota skipanirnar skaltu loka lyklaborðinu fyrst.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Flettiskipanir, stillingar blindraleturs og tilteknir SandFly-eiginleikar eru ekki í boði á meðan þú skrifar eða breytir.\n\nTil að nota skipanirnar skaltu loka lyklaborðinu fyrst.</string>
   <string name="bd_caption_tutorial_dialog_title">Skjátextar á blindraletursskjánum þínum</string>
   <string name="bd_caption_tutorial_dialog_message">Til að sýna eða fela skjátexta fyrir þetta vídeó skaltu ýta á bil og punkta 1, 4, 7, 8.\n\nKveiktu á Sýna skjátexta á blindraletursskjá í stillingum til að sýna skjátexta sjálfvirkt fyrir stutt efni.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Sýna alltaf þessi skilaboð þegar skjátextar eru í boði</string>
   <string name="bd_usb_connect_dialog_title">Blindraletursskjár tengdur við USB</string>
-  <string name="bd_usb_connect_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nEf þú þarft að skipta yfir í Bluetooth skaltu aftengja USB eða USB-fjöltengi og fara í „Stillingar TalkBack &gt; Blindraletursskjár“.</string>
+  <string name="bd_usb_connect_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nEf þú þarft að skipta yfir í Bluetooth skaltu aftengja USB eða USB-fjöltengi og fara í „Stillingar SandFly &gt; Blindraletursskjár“.</string>
   <string name="bd_device">sími</string>
   <string name="bd_battery_low_dialog_title">Lítil rafhleðsla á %s</string>
   <string name="bd_battery_low_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nTil að spara rafhlöðu:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Hreinsa allt</string>
   <string name="popup_message_history_empty">Autt</string>
   <string name="popup_message_history_consent_dialog_title">Kveikja á skilaboðaferli tækis?</string>
-  <string name="popup_message_history_consent_dialog_msg">Þetta vistar einhver skilaboð í TalkBack, t.d. tilkynningar og vekjara. Þú getur breytt þessari stillingu hvenær sem er.</string>
+  <string name="popup_message_history_consent_dialog_msg">Þetta vistar einhver skilaboð í SandFly, t.d. tilkynningar og vekjara. Þú getur breytt þessari stillingu hvenær sem er.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Kveikja</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nei, takk</string>
+    <string name="external_display_channel">Blindraletursskjáir frá öðrum forritum</string>
+    <string name="external_display_ask_title">Leyfa <xliff:g id="app" example="Notetaker">%1$s</xliff:g> að vera blindraletursskjár fyrir SandFly?</string>
+    <string name="external_display_ask_text">SandFly mun ekki nota það fyrr en þú leyfir það.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> mun geta lesið allt sem SandFly sýnir á blindraletri, sem getur verið hvað sem er á skjánum, þar á meðal skilaboð og það sem þú skrifar. Það mun einnig geta stjórnað tækinu þínu eins og þú getur með blindraletursskjá: sláðu inn, opnaðu forrit og keyrðu hvaða SandFly skipun sem er. Leyfðu aðeins forritum sem þú treystir.</string>
+    <string name="external_display_allow">Leyfa</string>
+    <string name="external_display_deny">Ekki leyfa</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> er blindraletursskjárinn þinn</string>
+    <string name="external_display_in_use_text">Á meðan SandFly notar það getur <xliff:g id="app" example="Notetaker">%1$s</xliff:g> lesið skjáinn og stjórnað tækinu.</string>
+    <string name="external_displays_title">Sýnir frá öðrum forritum</string>
+    <string name="external_displays_summary">Forrit sem þú leyfir geta verið blindraletursskjáir fyrir SandFly. Forrit sem er blindraletursskjár getur lesið skjáinn og stjórnað tækinu.</string>
+    <string name="external_displays_none">Engin forrit geta verið blindraletursskjáir.</string>
 </resources>

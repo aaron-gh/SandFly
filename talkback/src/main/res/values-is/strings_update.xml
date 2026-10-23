@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Leitaðu að uppfærslum</string>
+    <string name="summary_pref_check_for_updates_version">Útgáfa <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, smíða <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Leitaðu sjálfkrafa að uppfærslum</string>
+    <string name="summary_pref_auto_update_check">Athugaðu einu sinni á dag og sýndu tilkynningu þegar ný smíði er tiltæk</string>
+    <string name="title_pref_dev_builds">Þróun byggir upp</string>
+    <string name="update_notification_title">SandFly uppfærsla í boði</string>
+    <string name="update_notification_text">Byggja <xliff:g id="build" example="97">%1$d</xliff:g>. Bankaðu til að setja upp.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> er í boði</string>
+    <string name="update_dialog_install">Settu upp</string>
+    <string name="update_checking">Leitar eftir uppfærslum</string>
+    <string name="update_up_to_date">SandFly er uppfært</string>
+    <string name="update_check_failed">Gat ekki leitað að uppfærslum</string>
+    <string name="update_downloading">Er að sækja uppfærslu</string>
+    <string name="update_already_downloading">Nú þegar er verið að hlaða niður uppfærslunni</string>
+    <string name="update_ready_title">SandFly uppfærsla sótt</string>
+    <string name="update_ready_text">Bankaðu til að setja upp.</string>
+    <string name="update_install_failed">Gat ekki sett upp uppfærsluna</string>
+    <string name="update_install_canceled">Hætt við uppfærslu</string>
+    <string name="update_allow_install">Leyfðu SandFly að setja upp forrit og reyndu síðan uppfærsluna aftur</string>
+</resources>
