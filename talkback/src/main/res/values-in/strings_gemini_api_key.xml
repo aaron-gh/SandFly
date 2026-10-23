@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Kunci API Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Menggunakan kunci bawaan aplikasi ini</string>
+    <string name="gemini_api_key_dialog_message">Dapatkan kunci API gratis dari Google AI Studio, di aistudio.google.com/apikey, lalu tempel di sini. Untuk menghapus kunci, kosongkan kolom lalu simpan.\n\nGambar dan layar yang Anda deskripsikan dikirim ke Google. Pada paket gratis, Google dapat menggunakannya untuk meningkatkan produknya.</string>
+    <string name="gemini_api_key_hint">Kunci API</string>
+    <string name="gemini_api_key_save">Simpan</string>
+    <string name="gemini_api_key_get">Dapatkan kunci</string>
+    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="gemini_model_automatic">Otomatis</string>
+    <string name="summary_pref_gemini_model_automatic">Otomatis: Gemini Flash, lalu Flash-Lite saat Flash sibuk</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, lalu Flash-Lite saat sedang sibuk</string>
+    <string name="gemini_model_loading">Mendapatkan model…</string>
+    <string name="gemini_model_list_failed">Tidak bisa mendapatkan modelnya: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Tetapkan kunci API Gemini terlebih dahulu</string>
+    <string name="gemini_api_terms_link">Persyaratan Layanan Tambahan Gemini API</string>
+    <string name="ai_service_address_hint">Alamat, seperti https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Alamat harus dimulai dengan https://. Tidak ada yang disimpan.</string>
+    <string name="dialog_message_ai_service_consent">Gambar dan tangkapan layar dikirim ke <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> untuk dijelaskan, yang memerlukan waktu beberapa detik. Ketentuan dan kebijakan privasinya sendiri berlaku. AI generatif bersifat eksperimental, sehingga akan membuat kesalahan.</string>
+    <string name="ai_service_error_api_key">Layanan AI tidak menerima kunci API. Periksa pengaturannya di Deskripsi otomatis.</string>
+    <string name="ai_service_error_quota">Batas penggunaan layanan AI telah tercapai. Coba lagi nanti.</string>
+    <string name="ai_service_error_busy">Layanan AI sedang sibuk saat ini. Coba lagi sebentar lagi.</string>
+    <string name="ai_service_error_timeout">Layanan AI membutuhkan waktu terlalu lama untuk menjawab. Coba lagi.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Tidak ada</string>
+    <string name="ai_service_not_set_up">Tidak ada layanan AI yang digunakan. Siapkan satu atau pilih salah satu di Pengaturan deskripsi otomatis.</string>
+    <string name="ai_provider_none_set_up">Tidak ada layanan AI yang disiapkan. Atur satu dalam pengaturannya di bawah.</string>
+    <string name="ai_provider_other">Layanan lainnya</string>
+    <string name="title_pref_category_ai_services">Layanan AI</string>
+    <string name="title_pref_ai_provider">Layanan AI</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> pengaturan</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, belum diatur</string>
+    <string name="ai_provider_in_use">Sedang digunakan</string>
+    <string name="ai_provider_not_set_up">Tidak diatur</string>
+    <string name="ai_provider_not_ready">Pilih model terlebih dahulu</string>
+    <string name="ai_provider_address">Alamat</string>
+    <string name="ai_provider_address_message">Alamat layanan dengan API obrolan dan masukan gambar yang kompatibel dengan OpenAI, seperti https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Tidak disetel</string>
+    <string name="ai_provider_set">Dikonfigurasi</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Kunci API</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="ai_provider_choose_model">Tidak dipilih</string>
+    <string name="ai_provider_key_message">Tempelkan kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> Anda. Untuk menghapusnya, kosongkan bidang dan simpan. Gambar dan layar yang Anda jelaskan dikirim ke <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Setel kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> terlebih dahulu</string>
+    <string name="ai_provider_needs_address">Tetapkan alamatnya terlebih dahulu</string>
+    <string name="ai_provider_enter_model">Masukkan nama model</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Periksa pembaruan</string>
+    <string name="summary_pref_check_for_updates_version">Versi <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, versi <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Periksa pembaruan secara otomatis</string>
+    <string name="summary_pref_auto_update_check">Periksa sekali sehari dan tampilkan pemberitahuan ketika versi baru tersedia</string>
+    <string name="title_pref_dev_builds">Pembangunan membangun</string>
+    <string name="update_notification_title">SandFly pembaruan tersedia</string>
+    <string name="update_notification_text">Bangun <xliff:g id="build" example="97">%1$d</xliff:g>. Ketuk untuk menginstal.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> tersedia</string>
+    <string name="update_dialog_install">Instal</string>
+    <string name="update_checking">Memeriksa pembaruan</string>
+    <string name="update_up_to_date">SandFly terkini</string>
+    <string name="update_check_failed">Tidak dapat memeriksa pembaruan</string>
+    <string name="update_downloading">Mengunduh pembaruan</string>
+    <string name="update_already_downloading">Pembaruan sudah diunduh</string>
+    <string name="update_ready_title">SandFly pembaruan diunduh</string>
+    <string name="update_ready_text">Ketuk untuk menginstal.</string>
+    <string name="update_install_failed">Tidak dapat menginstal pembaruan</string>
+    <string name="update_install_canceled">Pembaruan dibatalkan</string>
+    <string name="update_allow_install">Izinkan SandFly untuk memasang aplikasi, lalu coba perbarui lagi</string>
+</resources>

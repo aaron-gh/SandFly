@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Suara dan getaran kontrol</string>
+    <string name="summary_pref_control_sounds">Berikan suara dan getaran tersendiri dari tema untuk setiap jenis kontrol, seperti tombol, kotak centang, bidang edit, dan item daftar, sebagai pengganti suara dan getaran fokus, seperti Unspoken untuk NVDA. Suara diputar dari posisi kontrol di layar, dan SandFly tidak mengucapkan jenis kontrolnya.</string>
+    <string name="title_pref_control_sounds_speak_roles">Tetap ucapkan jenis kontrol</string>
+    <string name="summary_pref_control_sounds_speak_roles">Saat suara kontrol diputar, tetap ucapkan jenis kontrolnya, seperti tombol. Berlaku untuk semua tema suara.</string>
+    <string name="title_pref_control_sounds_3d">Audio 3D</string>
+    <string name="pref_control_sounds_3d_headphones">Dengan headphone</string>
+    <string name="pref_control_sounds_3d_always">Selalu</string>
+    <string name="pref_control_sounds_3d_never">Tidak pernah, hanya kiri dan kanan</string>
+    <string name="individual_sound_control_button">Suara kontrol: tombol</string>
+    <string name="individual_sound_control_checkbox">Suara kontrol: kotak centang</string>
+    <string name="individual_sound_control_radio_button">Suara kontrol: tombol pilihan</string>
+    <string name="individual_sound_control_edit_text">Suara kontrol: bidang edit</string>
+    <string name="individual_sound_control_combo_box">Suara kontrol: daftar drop-down</string>
+    <string name="individual_sound_control_slider">Suara kontrol: penggeser</string>
+    <string name="individual_sound_control_link">Suara kontrol: link</string>
+    <string name="individual_sound_control_image">Suara kontrol: gambar</string>
+    <string name="individual_sound_control_clock">Suara kontrol: jam</string>
+    <string name="individual_sound_control_tab">Suara kontrol: tab</string>
+    <string name="individual_sound_control_menu_item">Suara kontrol: item menu</string>
+    <string name="individual_sound_control_list_item">Suara kontrol: item daftar</string>
+    <string name="individual_sound_control_tree_item">Suara kontrol: item hierarki</string>
+</resources>
