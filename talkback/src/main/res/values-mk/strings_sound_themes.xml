@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Звучни теми</string>
+    <string name="summary_pref_sound_themes">Инсталирајте и изберете збирки звуци и вибрации, заменете ги единечните звуци со ваши и вклучете ги контролните звуци и вибрации и 3D аудио.</string>
+    <string name="sound_themes_installed_category">Инсталирани теми</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Сопствените звуци и вибрации на SandFly и сите ваши звуци.</string>
+    <string name="sound_theme_in_use">Во употреба</string>
+    <string name="sound_theme_by">До <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Лиценца: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> звук.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> звуци.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> вибрации.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> вибрации.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Вклучува контролни звуци и вибрации.</string>
+    <string name="sound_theme_control_sounds_off">Ги исклучува контролните звуци и вибрации.</string>
+    <string name="sound_theme_use">Користете ја оваа тема</string>
+    <string name="sound_theme_about">За оваа тема</string>
+    <string name="sound_theme_export">Зачувај како датотека со тема</string>
+    <string name="sound_theme_remove">Отстрани</string>
+    <string name="sound_theme_remove_confirm">Да се отстрани темата <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Отстрани</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Темата е зачувана со звук <xliff:g id="count" example="1">%d</xliff:g>.</item>
+        <item quantity="other">Темата е зачувана со звуци <xliff:g id="count" example="13">%d</xliff:g>.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly не можеше да ја зачува тематската датотека.</string>
+    <string name="sound_theme_no_picker">Нема апликација на уредов за избор на датотеки.</string>
+    <string name="sound_theme_settings_category">Поставки на <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Звуци</string>
+    <string name="summary_pref_theme_sounds">Заменете го секој звук од оваа тема со ваша звучна датотека.</string>
+    <string name="sound_themes_install_category">Инсталирајте тема</string>
+    <string name="title_pref_sound_theme_install_file">Од датотека</string>
+    <string name="summary_pref_sound_theme_install_file">Датотеката со тема е ZIP-датотека. Можете исто така да отворите една или да ја споделите со SandFly од друга апликација.</string>
+    <string name="title_pref_sound_theme_install_link">Од линк</string>
+    <string name="summary_pref_sound_theme_install_link">Врска до датотека со тема или до складиште GitHub со тема во него. Можете исто така да споделите врска со SandFly од вашиот прелистувач.</string>
+    <string name="title_pref_sound_theme_install_source">Од извор</string>
+    <string name="summary_pref_sound_theme_install_source">Датотеки со теми во складиште на GitHub, GitLab, Codeberg, Gitea или Bitbucket.</string>
+    <string name="sound_theme_sources">Извори на звучна тема</string>
+    <string name="sound_theme_source_empty">Нема звучни теми во овој извор</string>
+    <string name="sound_theme_source_failed">Не може да се вчитаат звучните теми. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Звучните теми инсталирани од него остануваат инсталирани.</string>
+    <string name="sound_theme_link_message">Внесете или залепете врска до датотека со тема или до складиште GitHub со тема во него.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Инсталирајте звучна тема</string>
+    <string name="sound_theme_install_reading">Читање на звучната тема</string>
+    <string name="sound_theme_install_title">Да се инсталира <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Инсталирајте и користете</string>
+    <string name="sound_theme_install">Инсталирајте</string>
+    <string name="sound_theme_install_replaces">Ова ја заменува инсталираната тема со исто име.</string>
+    <string name="sound_theme_install_skipped">Изоставено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Инсталиран <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Инсталиран <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Сега е во употреба.</string>
+    <string name="sound_theme_install_nothing">Нема звучна тема за инсталирање.</string>
+    <string name="sound_theme_install_not_a_theme">Ова не е звучна тема SandFly може да се користи: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly не може да се инсталира звучната тема. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Врските до звучните теми мора да започнуваат со https.</string>
+    <string name="title_pref_theme_sounds_of">Звуците на <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Користете ги звуците на SandFly за сите</string>
+    <string name="theme_sounds_reset_confirm">Да се отстранат сите звуци од оваа тема и да се користи сопствената SandFly?</string>
+    <string name="theme_sounds_reset_button">Отстрани</string>
+    <string name="theme_sounds_category">Звуци</string>
+    <string name="theme_sound_summary_default">Звукот на SandFly</string>
+    <string name="theme_sound_summary_custom">Звук на тема</string>
+    <string name="theme_sound_summary_none">Нема звук. Фокусниот звук се репродуцира.</string>
+    <string name="theme_sound_summary_android_keyboard">Звукот на тастатурата на Android</string>
+    <string name="theme_sound_use_android_keyboard">Користете го звукот на тастатурата на Android</string>
+    <string name="theme_sound_braille_character">Брајова тастатура: пишување знак</string>
+    <string name="theme_sound_braille_space">Брајова тастатура: празно место</string>
+    <string name="theme_sound_braille_delete">Брајова тастатура: избришете</string>
+    <string name="theme_sound_braille_new_line">Брајова тастатура: нова линија</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Изберете звучна датотека</string>
+    <string name="theme_sound_preview">Преглед</string>
+    <string name="theme_sound_none">Нема звук</string>
+    <string name="theme_sound_summary_no_sound">Нема звук</string>
+    <string name="theme_sound_action_set_none">Поставете без звук</string>
+    <string name="theme_sound_use_default">Користете го звукот на SandFly</string>
+    <string name="theme_sound_remove">Отстранете го звукот</string>
+    <string name="theme_sound_too_large">Таа датотека е преголема. Звукот може да биде до 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly не може да ја репродуцира таа датотека. Изберете звук WAV, OGG, MP3 или FLAC.</string>
+    <string name="theme_sound_failed">SandFly не можеше да ја прочита таа датотека.</string>
+</resources>

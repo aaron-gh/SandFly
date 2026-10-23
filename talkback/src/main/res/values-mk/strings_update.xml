@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Проверете дали има ажурирања</string>
+    <string name="summary_pref_check_for_updates_version">Верзија <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, изградба <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Автоматски проверете дали има ажурирања</string>
+    <string name="summary_pref_auto_update_check">Проверувајте еднаш дневно и прикажувајте известување кога е достапна нова верзија</string>
+    <string name="title_pref_dev_builds">Развојот гради</string>
+    <string name="update_notification_title">Достапно е ажурирање SandFly</string>
+    <string name="update_notification_text">Изградба <xliff:g id="build" example="97">%1$d</xliff:g>. Допрете за да инсталирате.</string>
+    <string name="update_dialog_title">SandFly изградбата <xliff:g id="build" example="97">%1$d</xliff:g> е достапна</string>
+    <string name="update_dialog_install">Инсталирајте</string>
+    <string name="update_checking">Проверка за ажурирања</string>
+    <string name="update_up_to_date">SandFly е ажуриран</string>
+    <string name="update_check_failed">Не може да се провери дали има ажурирања</string>
+    <string name="update_downloading">Се презема ажурирање</string>
+    <string name="update_already_downloading">Ажурирањето веќе се презема</string>
+    <string name="update_ready_title">SandFly ажурирањето е преземено</string>
+    <string name="update_ready_text">Допрете за да инсталирате.</string>
+    <string name="update_install_failed">Не може да се инсталира ажурирањето</string>
+    <string name="update_install_canceled">Ажурирањето е откажано</string>
+    <string name="update_allow_install">Дозволете SandFly да инсталира апликации, а потоа обидете се со ажурирањето повторно</string>
+</resources>
