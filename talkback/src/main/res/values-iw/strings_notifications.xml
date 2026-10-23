@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">חזק</string>
+    <string name="notification_shake_2">בינוני</string>
+    <string name="notification_shake_1">עדין</string>
+    <string name="notification_media_skip">אל תקראו בקול רם</string>
+    <string name="notification_media_pause">השהה את המדיה בזמן הקריאה</string>
+    <string name="notification_media_read">קרא בקול רם</string>
+    <string name="notification_headphones_only_without">רק בלי אוזניות</string>
+    <string name="notification_headphones_only_with">רק עם אוזניות</string>
+    <string name="notification_headphones_always">קרא בקול עם או בלי אוזניות</string>
+    <string name="notification_queue_skip">אל תקראו את ההודעה החדשה בקול רם</string>
+    <string name="notification_queue_interrupt">קטע את ההתראה הנקראת בקול רם</string>
+    <string name="notification_queue_queue">קרא בקול אחרי ההודעה הנוכחית</string>
+    <string name="notification_url_omit">תשאיר בחוץ</string>
+    <string name="notification_url_replace">אמור את הטקסט למטה</string>
+    <string name="notification_url_domain">קרא את האתר בלבד</string>
+    <string name="notification_url_full">קרא את כל הקישור</string>
+    <string name="notification_category_title">התראות</string>
+    <string name="notification_reading_title">קריאת התראות בקול</string>
+    <string name="notification_apps_title">אפליקציות</string>
+    <string name="notification_words_title">מילים והחלפות</string>
+    <string name="notification_kinds_title">סוגי הודעות</string>
+    <string name="notification_when_title">מתי לקרוא</string>
+    <string name="notification_rules_title">כללים</string>
+    <string name="notification_repeats_title">חוזר</string>
+    <string name="notification_stop_title">תפסיק לקרוא</string>
+    <string name="notification_schedules_title">סיכום וזמן</string>
+    <string name="notification_history_title">היסטוריית הודעות</string>
+    <string name="notification_test_title">שלח הודעת בדיקה</string>
+    <string name="notification_automation_title">אוטומציה</string>
+    <string name="notification_automation_allowed_title">אפשר אפליקציות אוטומציה</string>
+    <string name="notification_category_said">מה נאמר</string>
+    <string name="notification_format_title">פורמט דיבור</string>
+    <string name="notification_format_message">מצייני מיקום: {app}, {title}, {text}, {content} (כל הטקסט), {bigtext}, {subtext}, {ticker}, {category} ו-{time}.</string>
+    <string name="notification_private_format_title">הודעות פרטיות אומרות</string>
+    <string name="notification_private_format_message">נאמר במקום תוכן של הודעה פרטית. מצייני מיקום: {app}, {category} ו-{time}.</string>
+    <string name="notification_category_voice">קול</string>
+    <string name="notification_voice_title">קול</string>
+    <string name="notification_voice_sandfly">הקול של SandFly</string>
+    <string name="notification_detect_language_title">זיהוי שפה</string>
+    <string name="notification_detect_language_summary">אמור כל הודעה בשפה שבה היא כתובה. צרכים החלפת שפה אוטומטית בהגדרות טקסט לדיבור.</string>
+    <string name="notification_sound_before_title">צליל לפני הודעות</string>
+    <string name="notification_category_text">טקסט</string>
+    <string name="notification_remove_emoji_title">עזוב את האימוג\'י</string>
+    <string name="notification_lowercase_title">קרא אותיות רישיות כמילים</string>
+    <string name="notification_lowercase_summary">מנועי דיבור מסוימים מאייתים מילים באותיות רישיות אות אחר אות</string>
+    <string name="notification_separate_digits_title">קרא מספרים ארוכים ספרה אחר ספרה</string>
+    <string name="notification_separate_digits_summary">כמו קודים ומספרי טלפון</string>
+    <string name="notification_min_digits_title">ספרות מינימום במספר ארוך</string>
+    <string name="notification_urls_title">קישורים</string>
+    <string name="notification_url_text_title">נאמר במקום קישור</string>
+    <string name="notification_skip_empty_title">דלג על התראות ללא טקסט</string>
+    <string name="notification_category_length">אורך</string>
+    <string name="notification_max_words_title">מספר מקסימלי של מילים</string>
+    <string name="notification_max_sentences_title">מספר משפטים מקסימלי</string>
+    <string name="notification_max_characters_title">מספר מקסימלי של תווי טקסט</string>
+    <string name="notification_max_seconds_title">תפסיק לקרוא אחרי</string>
+    <string name="notification_category_timing">תזמון</string>
+    <string name="notification_delay_title">המתן לפני הקריאה</string>
+    <string name="notification_queue_title">כאשר הודעה נוספת נקראת</string>
+    <string name="notification_repeat_minutes_title">קרא שוב עד שהמסך נדלק</string>
+    <string name="notification_skip_media_title">דלג על נגני מדיה</string>
+    <string name="notification_skip_ongoing_title">דלג על הודעות מתמשכות</string>
+    <string name="notification_skip_ongoing_summary">כגון ניווט וטיימרים</string>
+    <string name="notification_skip_foreground_title">דלג על הפעלת הודעות אפליקציה</string>
+    <string name="notification_skip_foreground_summary">כגון VPN או מקליט שמע</string>
+    <string name="notification_skip_progress_title">דלג על הודעות התקדמות</string>
+    <string name="notification_skip_group_summaries_title">דלג על סיכומי קבוצות</string>
+    <string name="notification_skip_group_summaries_summary">כמו \"3 הודעות חדשות\"</string>
+    <string name="notification_skip_low_priority_title">דלג על התראות בעדיפות נמוכה</string>
+    <string name="notification_skip_system_title">דלג על הודעות מערכת</string>
+    <string name="notification_screen_on_title">בזמן שהמסך דולק</string>
+    <string name="notification_screen_off_title">בזמן שהמסך כבוי</string>
+    <string name="notification_locked_title">בזמן שהטלפון נעול</string>
+    <string name="notification_headphones_title">אוזניות</string>
+    <string name="notification_media_title">בזמן שהמדיה מתנגנת</string>
+    <string name="notification_dnd_title">אל תפריע</string>
+    <string name="notification_dnd_none">אל תקראו הודעות בקול רם</string>
+    <string name="notification_dnd_allowed">קרא הודעות המותרות במצב \'נא לא להפריע\'</string>
+    <string name="notification_dnd_all">קרא הכל</string>
+    <string name="notification_touch_title">בזמן שנוגעים במסך</string>
+    <string name="notification_touch_read">קרא מיד</string>
+    <string name="notification_touch_after">קרא כאשר המגע מסתיים</string>
+    <string name="notification_touch_skip">אל תקראו בקול רם</string>
+    <string name="notification_during_calls_title">במהלך שיחות</string>
+    <string name="notification_honour_silent_title">לא במצב שקט</string>
+    <string name="notification_honour_vibrate_title">לא במצב רטט</string>
+    <string name="notification_skip_in_car_title">לא במצב רכב</string>
+    <string name="notification_skip_in_car_summary">כמו למשל עם Android Auto, שקורא אותם בעצמו</string>
+    <string name="notification_category_quiet_hours">שעות שקטות</string>
+    <string name="notification_quiet_hours_title">שעות שקטות</string>
+    <string name="notification_quiet_start_title">התחל</string>
+    <string name="notification_quiet_end_title">סוף</string>
+    <string name="notification_repeat_seconds_title">דלג על אותה הודעה עבור</string>
+    <string name="notification_numbers_alike_title">התייחס למספרים שונים כאל זהים</string>
+    <string name="notification_numbers_alike_summary">כמו אחוז הורדה</string>
+    <string name="notification_cooldown_title">זמן בין הודעות של אפליקציה</string>
+    <string name="notification_skip_prefix_title">השמט קידומת טקסט חוזרת</string>
+    <string name="notification_skip_prefix_summary">כמו שם קבוצה בצ\'אט</string>
+    <string name="notification_prefix_memory_title">כמה זמן לזכור את קידומת הטקסט</string>
+    <string name="notification_access_summary">נדרש להפסיק לקרוא הודעה שנפסלה ולסיכומים</string>
+    <string name="notification_shake_title">לנער כדי לעצור</string>
+    <string name="notification_shake_strength_title">עוצמת רועד</string>
+    <string name="notification_wave_title">הניפו יד כדי להפסיק לקרוא</string>
+    <string name="notification_wave_summary">העברת יד מעל חיישן הקרבה</string>
+    <string name="notification_pocket_title">מצב כיס</string>
+    <string name="notification_pocket_summary">חיישן שמכוסה בעת תחילת הקריאה, כמו בכיס, לא עוצר אותו</string>
+    <string name="notification_volume_keys_title">לחץ על שני מקשי עוצמת הקול</string>
+    <string name="notification_dismiss_title">הפסק לקרוא כאשר ההודעה נמחקת</string>
+    <string name="notification_watch_dismiss_title">גם כאשר ההודעה נמחקת בשעון חכם</string>
+    <string name="notification_app_cancel_title">הפסק לקרוא כאשר האפליקציה מסירה את ההודעה</string>
+    <string name="notification_category_summary">סיכום</string>
+    <string name="notification_summary_now_title">קרא הודעות עכשיו</string>
+    <string name="notification_summary_daily_title">קרא התראות כל יום</string>
+    <string name="notification_summary_time_title">זמן</string>
+    <string name="notification_summary_newest_first_title">הכי חדש ראשון</string>
+    <string name="notification_summary_name_title">השם שלך</string>
+    <string name="notification_summary_gap_title">השהה בין הודעות</string>
+    <string name="notification_summary_needs_sandfly">הפעל את SandFly כדי לקרוא התראות</string>
+    <string name="notification_summary_no_access">הגישה להתראות מושבתת</string>
+    <string name="notification_summary_morning">בוקר טוב.</string>
+    <string name="notification_summary_afternoon">צהריים טובים.</string>
+    <string name="notification_summary_evening">ערב טוב.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">הודעות זמן</string>
+    <string name="notification_clock_interval_title">תגיד את השעה כל פעם</string>
+    <string name="notification_clock_format_title">פורמט השעה</string>
+    <string name="notification_clock_format_message">מצייני מיקום: {time}, {date} ו-{battery} (אחוז הסוללה).</string>
+    <string name="notification_clock_format_default">זה {time}</string>
+    <string name="notification_clock_exact_title">זמנים מדויקים</string>
+    <string name="notification_clock_exact_summary">צריך אזעקות ותזכורות. אחרת ניתן לומר את השעה באיחור של עד דקה.</string>
+    <string name="notification_other_apps_title">אפליקציות אחרות</string>
+    <string name="notification_apps_category">אפליקציות</string>
+    <string name="notification_apps_loading">טוען אפליקציות</string>
+    <string name="notification_app_mode_title">התראות</string>
+    <string name="notification_app_mode_default">כמו אפליקציות אחרות</string>
+    <string name="notification_app_mode_read">קרא בקול רם</string>
+    <string name="notification_app_mode_private">שם האפליקציה בלבד</string>
+    <string name="notification_app_mode_priority">תקרא קודם</string>
+    <string name="notification_app_mode_ignore">אל תקראו בקול רם</string>
+    <string name="notification_app_name_title">שם מדובר</string>
+    <string name="notification_app_said_as">נאמר כ-<xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">איפוס</string>
+    <string name="notification_required_title">קרא רק התראות עם</string>
+    <string name="notification_blocked_title">אל תקראו הודעות עם</string>
+    <string name="notification_private_title">קרא רק את שם האפליקציה עבור</string>
+    <string name="notification_replacements_title">תגיד אחרת</string>
+    <string name="notification_add_word">הוסף מילה</string>
+    <string name="notification_add_replacement">הוסף תחליף</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> כמו <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">טקסט</string>
+    <string name="notification_replace_with">אמור כמו</string>
+    <string name="notification_whole_words">מילים שלמות בלבד</string>
+    <string name="notification_regex">ביטוי רגיל</string>
+    <string name="notification_enter_text">הזן טקסט</string>
+    <string name="notification_invalid_regex">לא ביטוי רגולרי חוקי</string>
+    <string name="notification_edit">ערוך</string>
+    <string name="notification_remove">הסר</string>
+    <string name="notification_history_keep">שמור היסטוריית הודעות</string>
+    <string name="notification_history_clear">נקה את ההיסטוריה</string>
+    <string name="notification_history_category">התראות</string>
+    <string name="notification_history_empty">אין הודעות</string>
+    <string name="notification_history_ignore_app">אל תקראו <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">קרא רק את השם של <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">קרא תחילה את <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">אל תקראו הודעות כאלה</string>
+    <string name="notification_history_copy">העתקה</string>
+    <string name="notification_saved">נשמר</string>
+    <string name="notification_copied">הועתק</string>
+    <string name="notification_outcome_read">קרא בקול בהצלחה</string>
+    <string name="notification_outcome_stopped">נעצר בזמן הקריאה</string>
+    <string name="notification_outcome_speech_off">לא נקרא: דיבור ההתראה כבוי</string>
+    <string name="notification_outcome_dnd">לא לקרוא: נא לא להפריע</string>
+    <string name="notification_outcome_touching">לא נקרא: נגע במסך</string>
+    <string name="notification_outcome_app">לא קראו: אפליקציה</string>
+    <string name="notification_outcome_ongoing">לא נקרא: מתמשך</string>
+    <string name="notification_outcome_foreground">לא נקרא: הפעלת אפליקציה</string>
+    <string name="notification_outcome_low_priority">לא נקרא: בעדיפות נמוכה</string>
+    <string name="notification_outcome_system">לא נקרא: מערכת</string>
+    <string name="notification_outcome_media">לא נקרא: נגן מדיה</string>
+    <string name="notification_outcome_group_summary">לא נקרא: סיכום קבוצה</string>
+    <string name="notification_outcome_progress">לא קראו: התקדמות</string>
+    <string name="notification_outcome_required">לא נקרא: חסרות מילים נדרשות</string>
+    <string name="notification_outcome_blocked">לא נקרא: מילה חסומה</string>
+    <string name="notification_outcome_empty">לא נקרא: אין טקסט</string>
+    <string name="notification_outcome_repeat">לא נקרא: חוזר</string>
+    <string name="notification_outcome_cooldown">לא נקרא בקול: התראה נוספת מאפליקציה זו נקראה לאחרונה מדי</string>
+    <string name="notification_outcome_quiet_hours">לא נקרא: שעות שקט</string>
+    <string name="notification_outcome_screen_on">לא נקרא: מסך דולק</string>
+    <string name="notification_outcome_screen_off">לא נקרא: מסך כבוי</string>
+    <string name="notification_outcome_locked">לא נקרא: נעול</string>
+    <string name="notification_outcome_headphones">לא נקרא: אוזניות מחוברות</string>
+    <string name="notification_outcome_no_headphones">לא נקרא: אין אוזניות</string>
+    <string name="notification_outcome_silent">לא נקרא: מצב שקט</string>
+    <string name="notification_outcome_vibrate">לא נקרא: מצב רטט</string>
+    <string name="notification_outcome_media_playing">לא נקרא: מדיה משחקת</string>
+    <string name="notification_outcome_car">לא נקרא: מצב רכב</string>
+    <string name="notification_outcome_rule">לא קראו: כלל</string>
+    <string name="notification_outcome_busy">לא נקרא: הודעה נוספת נקראה</string>
+    <string name="notification_outcome_call">הוכרז כשיחת טלפון נכנסת</string>
+    <string name="notification_rule_add">הוסף כלל</string>
+    <string name="notification_rule_from_template">הוסף כלל מתבנית</string>
+    <string name="notification_rules_category">כללים</string>
+    <string name="notification_rules_empty">אין חוקים</string>
+    <string name="notification_rule_name">שם</string>
+    <string name="notification_rule_untitled">כלל</string>
+    <string name="notification_rule_enabled">מופעל</string>
+    <string name="notification_rule_match">תנאים</string>
+    <string name="notification_rule_match_all">יש לעמוד בכל התנאים</string>
+    <string name="notification_rule_match_any">יש לעמוד בתנאי אחד לפחות</string>
+    <string name="notification_rule_conditions">מתי</string>
+    <string name="notification_rule_actions">ואז</string>
+    <string name="notification_rule_add_condition">הוסף תנאי</string>
+    <string name="notification_rule_add_action">הוסף פעולה</string>
+    <string name="notification_rule_invert">הפוך את התנאי</string>
+    <string name="notification_rule_delete">מחק את הכלל</string>
+    <string name="notification_rule_delete_confirm">למחוק את <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">תמיד</string>
+    <string name="notification_rule_no_actions">שום דבר לא קורה</string>
+    <string name="notification_rule_and">" ו "</string>
+    <string name="notification_rule_or">" או "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">רק עם אוזניות</string>
+    <string name="notification_template_night">שקט בלילה</string>
+    <string name="notification_template_screen_off">רק כשהמסך כבוי</string>
+    <string name="notification_template_locked_private">רק שם האפליקציה כשהטלפון נעול</string>
+    <string name="notification_template_short_on_battery">קרא בקצרה כאשר לא נטען</string>
+    <string name="notification_type_bluetooth">מכשיר Bluetooth</string>
+    <string name="notification_type_wired">אוזניות חוטיות</string>
+    <string name="notification_type_wifi">רשת Wi-Fi</string>
+    <string name="notification_type_time">שעה ביום</string>
+    <string name="notification_type_screen">מסך דולק</string>
+    <string name="notification_type_locked">הטלפון נעול</string>
+    <string name="notification_type_from_app">הודעה מאפליקציה</string>
+    <string name="notification_type_foreground">אפליקציה בחזית</string>
+    <string name="notification_type_contains">הודעה מכילה</string>
+    <string name="notification_type_battery">רמת הסוללה מתחת</string>
+    <string name="notification_type_charging">טעינה</string>
+    <string name="notification_type_landscape">לרוחב</string>
+    <string name="notification_type_silent">מצב שקט או רטט</string>
+    <string name="notification_type_media">מדיה מתנגנת</string>
+    <string name="notification_bluetooth_any">כל מכשיר</string>
+    <string name="notification_wifi_hint">שם רשת</string>
+    <string name="notification_choose_app">בחר אפליקציה</string>
+    <string name="notification_time_start">מ</string>
+    <string name="notification_time_end">עד</string>
+    <string name="notification_time_days">ימים</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> עד <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly זקוק להרשאה זו עבור מצב זה</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> מחובר</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> אינו מחובר</string>
+    <string name="notification_cond_bluetooth_any">התקן שמע Bluetooth מחובר</string>
+    <string name="notification_cond_bluetooth_any_not">לא מחובר התקן שמע Bluetooth</string>
+    <string name="notification_cond_wired">אוזניות חוטיות מחוברות</string>
+    <string name="notification_cond_wired_not">אוזניות חוטיות אינן מחוברות</string>
+    <string name="notification_cond_battery_below">הסוללה נמוכה מ-<xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים</string>
+    <string name="notification_cond_battery_below_not">הסוללה היא ב-<xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים או יותר</string>
+    <string name="notification_cond_charging">הטלפון בטעינה</string>
+    <string name="notification_cond_charging_not">הטלפון לא נטען</string>
+    <string name="notification_cond_locked">הטלפון נעול</string>
+    <string name="notification_cond_locked_not">הטלפון לא נעול</string>
+    <string name="notification_cond_screen_on">המסך דולק</string>
+    <string name="notification_cond_screen_on_not">המסך כבוי</string>
+    <string name="notification_cond_landscape">המסך הוא בנוף</string>
+    <string name="notification_cond_landscape_not">המסך לאורך</string>
+    <string name="notification_cond_time">השעה היא <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">השעה היא לא <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">מחובר ל<xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">לא מחובר ל<xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">מחובר לWi-Fi</string>
+    <string name="notification_cond_wifi_any_not">לא מחובר לWi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> נמצא מקדימה</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> אינו מקדימה</string>
+    <string name="notification_cond_from">ההודעה היא מ-<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">ההודעה אינה מ-<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">ההודעה מכילה <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">ההודעה לא מכילה <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">הצלצול שקט או רוטט</string>
+    <string name="notification_cond_silent_not">הצלצול מצלצל</string>
+    <string name="notification_cond_media">המדיה מתנגנת</string>
+    <string name="notification_cond_media_not">שום מדיה לא מתנגנת</string>
+    <string name="notification_action_skip">לא לקרוא</string>
+    <string name="notification_action_private">קרא רק את שם האפליקציה</string>
+    <string name="notification_action_not_private">קרא במלואו, גם אם פרטי</string>
+    <string name="notification_action_format">השתמש בפורמט דיבור</string>
+    <string name="notification_action_max_words">לקרוא עד מספר מילים</string>
+    <string name="notification_action_no_limit">לקרוא ללא הגבלת אורך</string>
+    <string name="notification_action_keep_emoji">לשמור אימוג\'י</string>
+    <string name="notification_action_keep_numbers">לשמור מספרים ביחד</string>
+    <string name="notification_action_priority">לקרוא קודם</string>
+    <string name="notification_action_always_read">קרא התראות בקול אפילו בשעות שקטות או בשעות מוגבלות אחרות</string>
+    <string name="notification_action_voice">לקרוא עם פרופיל קולי</string>
+    <string name="notification_action_voice_value">קרא עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">קרא בקול של SandFly</string>
+    <string name="notification_voice_removed">הפרופיל הקולי הוסר</string>
+    <string name="notification_action_format_value">השתמש בפורמט הדיבור <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">קרא עד <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">מצב מושבת</string>
+    <string name="notification_on">מצב פעיל</string>
+    <string name="notification_never_again">עד להפעלה מחדש של SandFly</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">קריאת התראות בקול</string>
+    <string name="notification_speech_now_on">קריאת התראות בקול מופעלת</string>
+    <string name="notification_speech_now_off">קריאת התראות בקול מושבתת</string>
+    <string name="notification_no_last_notification">לא נקראה הודעה</string>
+    <string name="shortcut_read_notifications">קרא הודעות</string>
+    <string name="shortcut_toggle_notification_speech">דיבור הודעה מופעל או כבוי</string>
+    <string name="shortcut_read_last_notification">קרא שוב את ההודעה האחרונה</string>
+    <string name="shortcut_stop_notification">תפסיק לקרוא את ההודעה</string>
+    <string name="notification_test_posting">הודעת בדיקה מגיעה תוך 5 שניות</string>
+    <string name="notification_test_not_allowed">אפשר ל-SandFly להציג הודעות תחילה</string>
+    <string name="notification_test_content_title">מבחן SandFly</string>
+    <string name="notification_test_content_text">זו הודעת בדיקה, קרא עם הגדרות ההתראות שלך. 123456</string>
+    <string name="notification_automation_on">אפשר קריאת התראות בקול</string>
+    <string name="notification_automation_off">השבת קריאת התראות בקול</string>
+    <string name="notification_automation_toggle">הפעל או השבת קריאת התראות בקול</string>
+    <string name="notification_automation_stop">עצור את קריאת ההודעה</string>
+    <string name="notification_automation_read_all">קרא הודעות</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> שנייה</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> שניות</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> שניות</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> דקה</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> דקות</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> דקות</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> שעה</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> שעות</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> שעות</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> מילה</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> מילים</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> מילים</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> משפט</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> משפטים</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> משפטים</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> תו</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> תווים</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> תווים</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ספרה</item>
+        <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> ספרות</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ספרות</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">יש לך <xliff:g id="count" example="1">%d</xliff:g> התראה.</item>
+        <item quantity="two">יש לך <xliff:g id="count" example="5">%d</xliff:g> התראות.</item>
+        <item quantity="other">יש לך <xliff:g id="count" example="5">%d</xliff:g> התראות.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
