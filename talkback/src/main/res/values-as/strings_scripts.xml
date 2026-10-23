@@ -138,4 +138,16 @@
     <string name="script_source_remove">উৎস আঁতৰাওক</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> আঁতৰাবনে?</string>
     <string name="script_source_remove_message">ইয়াৰ পৰা ইনষ্টল কৰা স্ক্ৰিপ্টসমূহ ইনষ্টল হৈ থাকিব।</string>
+    <string name="scripts_auto_update">স্ক্ৰিপ্টসমূহ স্বয়ংক্ৰিয়ভাৱে আপডেইট কৰক</string>
+    <string name="scripts_check_updates">আপডে’ট আছে নেকি চাওক</string>
+    <string name="scripts_checking_updates">আপডেটৰ বাবে পৰীক্ষা কৰা হৈছে...</string>
+    <string name="scripts_updates_category">আপডেটসমূহ</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> লিপি আপডেট কৰা হৈছে: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> লিপি আপডেট: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">আপডেইটসমূহ আপডেইটসমূহৰ অন্তৰ্গত তালিকাভুক্ত কৰা হৈছে</string>
+    <string name="scripts_update_check_failed">কিছুমান উৎস পৰীক্ষা কৰিব পৰা নগ’ল</string>
+    <string name="scripts_up_to_date">সকলো লিপি আপডেট</string>
 </resources>

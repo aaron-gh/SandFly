@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">সেই ফাইলটো অতি ডাঙৰ। এটা ধ্বনি সৰ্বাধিক 5 MB হ’ব পাৰে।</string>
     <string name="theme_sound_not_audio">SandFlyএ সেই ফাইলটো বজাব নোৱাৰে। এটা WAV, OGG, MP3 বা FLAC ধ্বনি বাছনি কৰক।</string>
     <string name="theme_sound_failed">SandFlyএ সেই ফাইলটো পঢ়িব পৰা নাই।</string>
+    <string name="title_pref_sound_theme_install_source">এটা উৎসৰ পৰা</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea বা Bitbucket ত এটা ভঁৰালত থকা থিম ফাইলসমূহ।</string>
+    <string name="sound_theme_sources">শব্দ থিমৰ উৎস</string>
+    <string name="sound_theme_source_empty">এই উৎসত কোনো শব্দ বিষয়বস্তু নাই</string>
+    <string name="sound_theme_source_failed">শব্দ থিম লোড কৰিব পৰা নগ\'ল। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">ইয়াৰ পৰা ইনষ্টল কৰা শব্দ থিমসমূহ ইনষ্টল হৈ থাকে।</string>
 </resources>
