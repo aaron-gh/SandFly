@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക</string>
+    <string name="summary_pref_check_for_updates_version">പതിപ്പ് <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, ബിൽഡ് <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">അപ്‌ഡേറ്റുകൾക്കായി സ്വയമേവ പരിശോധിക്കുക</string>
+    <string name="summary_pref_auto_update_check">ദിവസത്തിൽ ഒരിക്കൽ പരിശോധിച്ച് ഒരു പുതിയ ബിൽഡ് ലഭ്യമാകുമ്പോൾ ഒരു അറിയിപ്പ് കാണിക്കുക</string>
+    <string name="title_pref_dev_builds">വികസനം നിർമ്മിക്കുന്നു</string>
+    <string name="update_notification_title">SandFly അപ്‌ഡേറ്റ് ലഭ്യമാണ്</string>
+    <string name="update_notification_text">ബിൽഡ് <xliff:g id="build" example="97">%1$d</xliff:g>. ഇൻസ്റ്റാൾ ചെയ്യാൻ ടാപ്പ് ചെയ്യുക.</string>
+    <string name="update_dialog_title">SandFly ബിൽഡ് <xliff:g id="build" example="97">%1$d</xliff:g> ലഭ്യമാണ്</string>
+    <string name="update_dialog_install">ഇൻസ്റ്റാൾ ചെയ്യുക</string>
+    <string name="update_checking">അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുന്നു</string>
+    <string name="update_up_to_date">SandFly കാലികമാണ്</string>
+    <string name="update_check_failed">അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കാനായില്ല</string>
+    <string name="update_downloading">അപ്ഡേറ്റ് ഡൗൺലോഡ് ചെയ്യുന്നു</string>
+    <string name="update_already_downloading">അപ്ഡേറ്റ് ഇതിനകം ഡൗൺലോഡ് ചെയ്യുന്നു</string>
+    <string name="update_ready_title">SandFly അപ്ഡേറ്റ് ഡൗൺലോഡ് ചെയ്തു</string>
+    <string name="update_ready_text">ഇൻസ്റ്റാൾ ചെയ്യാൻ ടാപ്പ് ചെയ്യുക.</string>
+    <string name="update_install_failed">അപ്ഡേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
+    <string name="update_install_canceled">അപ്ഡേറ്റ് റദ്ദാക്കി</string>
+    <string name="update_allow_install">ആപ്പുകൾ ഇൻസ്‌റ്റാൾ ചെയ്യാൻ SandFly-നെ അനുവദിക്കുക, തുടർന്ന് അപ്‌ഡേറ്റ് വീണ്ടും ശ്രമിക്കുക</string>
+</resources>

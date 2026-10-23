@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ബ്രെയ്‌ലി ഹാർഡ്‌വെയർ കീബോർഡ്</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack ബ്രെയ്‌ലി കീബോർഡ് ലഭ്യമല്ല</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack ബ്രെയ്‌ലി കീബോർഡ് ഓണാക്കുക</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly ബ്രെയ്‌ലി കീബോർഡ് ലഭ്യമല്ല</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly ബ്രെയ്‌ലി കീബോർഡ് ഓണാക്കുക</string>
   <string name="bd_ime_disabled_dialog_message">ടൈപ്പ് ചെയ്യാൻ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിക്കുന്നതിന്, അത് ഓണാക്കാൻ ഇൻപുട്ട് ക്രമീകരണത്തിലേക്ക് പോകുക</string>
   <string name="bd_ime_disabled_dialog_title_positive">ഇൻപുട്ട് ക്രമീകരണം</string>
   <string name="bd_ime_not_default_dialog_title">നിങ്ങളുടെ ഇൻപുട്ട് രീതി മാറ്റുക</string>
-  <string name="bd_ime_not_default_dialog_message">ടൈപ്പ് ചെയ്യുന്നത് തുടരാൻ, നിങ്ങളുടെ ഇൻപുട്ട് രീതിയായി TalkBack ബ്രെയ്‌ലി കീബോർഡ് സജ്ജീകരിക്കുക</string>
+  <string name="bd_ime_not_default_dialog_message">ടൈപ്പ് ചെയ്യുന്നത് തുടരാൻ, നിങ്ങളുടെ ഇൻപുട്ട് രീതിയായി SandFly ബ്രെയ്‌ലി കീബോർഡ് സജ്ജീകരിക്കുക</string>
   <string name="bd_ime_not_default_dialog_positive">ഇൻപുട്ട് മാറ്റുക</string>
   <string name="type_unlabeled">ലേബൽ ചെയ്യാത്തത്</string>
   <string name="type_unlabeled_edittext">ലേബൽ ചെയ്യാത്ത എഡിറ്റ് ബോക്‌സ്</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ഇടത്തേക്ക് പാൻ ചെയ്യുക</string>
   <string name="overlay_pan_right_button">വലത്തേക്ക് പാൻ ചെയ്യുക</string>
   <string name="bd_preferences_title">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിക്കുന്നതിന്, ആദ്യം TalkBack ഓണാക്കുക</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack എന്നതിലേക്ക് പോകുക</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിക്കുന്നതിന്, ആദ്യം SandFly ഓണാക്കുക</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly എന്നതിലേക്ക് പോകുക</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിക്കാൻ ആദ്യം Bluetooth ഓണാക്കുക</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth ഓണാക്കുക</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിക്കാൻ %s എന്ന ആപ്പിന് സമീപമുള്ള ഉപകരണങ്ങളിലേക്ക് ആക്സസ് ആവശ്യമാണ്.</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ബ്രൗസ് മോഡ് ഉപയോഗിക്കാൻ, നിങ്ങൾ ഡിഫോൾട്ട് കീമാപ്പിൽ നിന്ന് മെച്ചപ്പെടുത്തിയ കീമാപ്പിലേക്ക് മാറേണ്ടതുണ്ട്. ഈ മാറ്റം നിങ്ങളുടെ ചില ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ കമാൻഡുകൾ അപ്ഡേറ്റ് ചെയ്യും</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ക്രമീകരണം</string>
   <string name="bd_command_change_dialog_title">ചില കമാൻഡുകൾ അപ്‌ഡേറ്റ് ചെയ്തു</string>
-  <string name="bd_command_change_dialog_message">TalkBack-ന്റെ ഈ പതിപ്പിൽ ഈ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ കമാൻഡുകൾ അപ്‌ഡേറ്റ് ചെയ്‌തു:\n\n• മുമ്പത്തെ ഇനം: 1, 7 ഡോട്ടുകൾ അമർത്തൂ\n\n• അടുത്ത ഇനം: 4, 8 ഡോട്ടുകൾ അമർത്തൂ\n\n• മുമ്പത്തെ വായനാ നിയന്ത്രണം: 2, 3, 7, 8 ഡോട്ടുകൾ അമർത്തൂ\n\n• അടുത്ത വായനാ നിയന്ത്രണം: 5, 6, 7, 8 ഡോട്ടുകൾ അമർത്തൂ</string>
+  <string name="bd_command_change_dialog_message">SandFly-ന്റെ ഈ പതിപ്പിൽ ഈ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ കമാൻഡുകൾ അപ്‌ഡേറ്റ് ചെയ്‌തു:\n\n• മുമ്പത്തെ ഇനം: 1, 7 ഡോട്ടുകൾ അമർത്തൂ\n\n• അടുത്ത ഇനം: 4, 8 ഡോട്ടുകൾ അമർത്തൂ\n\n• മുമ്പത്തെ വായനാ നിയന്ത്രണം: 2, 3, 7, 8 ഡോട്ടുകൾ അമർത്തൂ\n\n• അടുത്ത വായനാ നിയന്ത്രണം: 5, 6, 7, 8 ഡോട്ടുകൾ അമർത്തൂ</string>
   <string name="bd_preference_braille_contracted">കോൺ‌ട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
   <string name="bd_preference_braille_uncontracted">അൺകോൺട്രാക്‌റ്റഡ് ബ്രെയ്‌ലി</string>
   <string name="bd_braille_grade_tips">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിച്ച് കോൺട്രാക്‌റ്റഡ്, അൺകോൺട്രാക്‌റ്റഡ് ബ്രെയ്‌ലികൾ തമ്മിൽ പെട്ടെന്ന് മാറുന്നതിന് സ്‌പെയ്‌സും 1, 2, 4, 5 ഡോട്ടുകളും അമർത്തുക.\n\nരണ്ട് ബ്രെയ്‌ലി ഗ്രേഡുകളുമുള്ള ഭാഷയാണ് നിങ്ങൾ ഉപയോഗിക്കുന്നതെങ്കിൽ, ഈ കമാൻഡ് പ്രവർത്തിക്കും.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ഇനങ്ങൾക്കിടയിലൂടെ നീങ്ങൽ</string>
   <string name="bd_commands_bindings_category_system_actions_title">സിസ്റ്റം പ്രവർത്തനങ്ങൾ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">മടങ്ങുക, ഹോം, അറിയിപ്പുകൾ എന്നിവയും മറ്റും</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack ഫീച്ചറുകൾ</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback മെനുകളും ക്രമീകരണവും</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly ഫീച്ചറുകൾ</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly മെനുകളും ക്രമീകരണങ്ങളും</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ബ്രെയ്‌ലി ക്രമീകരണം</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ബ്രെയ്‌ലി ഭാഷയും ക്രമീകരണവും</string>
   <string name="bd_commands_bindings_category_text_editing_title">ടെക്‌സ്റ്റ് തിരുത്തൽ</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">എല്ലാ ആപ്പുകളും തുറക്കുക</string>
   <string name="bd_cmd_toggle_screen_search">സ്ക്രീനിലെ വിവരങ്ങൾ തുറക്കുക</string>
   <string name="bd_cmd_edit_custom_label">ഇഷ്‌ടാനുസൃത ലേബൽ എഡിറ്റ് ചെയ്യുക</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack മെനു തുറക്കുക</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack സ്പീച്ച് ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly മെനു തുറക്കുക</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly സ്പീച്ച് ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
   <string name="bd_cmd_read_stop">വായിക്കുന്നത് നിർത്തൂ</string>
-  <string name="bd_cmd_talkback_settings">TalkBack ക്രമീകരണം തുറക്കുക</string>
+  <string name="bd_cmd_talkback_settings">SandFly ക്രമീകരണം തുറക്കുക</string>
   <string name="bd_cmd_switch_to_next_input_language">ടൈപ്പ് ചെയ്യുന്ന അടുത്ത ഭാഷയിലേക്ക് മാറുക</string>
   <string name="bd_cmd_switch_to_next_output_language">വായിക്കുന്ന അടുത്ത ഭാഷയിലേക്ക് മാറുക</string>
   <string name="bd_cmd_toggle_contracted_mode">ചുരുക്കിയ, ചുരുക്കാത്ത മോഡുകൾക്കിടയിൽ മാറുക</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ബ്രൗസ് മോഡിൽ പ്രവേശിക്കുന്നതിനുള്ള കമാൻഡ് ഉപയോഗിച്ച്, ഇനിപ്പറയുന്ന അക്ഷര, നമ്പർ കുറുക്കുവഴികൾ ടൈപ്പ് ചെയ്ത് വെബ് പേജുകൾ വേഗത്തിൽ നാവിഗേറ്റ് ചെയ്യാം\n\nബ്രൗസ് മോഡിൽ പ്രവേശിക്കാതെയും ഈ കുറുക്കുവഴികൾ ഉപയോഗിക്കാം, എന്നാൽ \"അടുത്ത\" കമാൻഡുകളിലേക്ക് ഡോട്ട് 8 ചേർക്കേണ്ടതുണ്ട്</string>
   <string name="bd_cmd_subcategory_title_web_navigation">പട്ടികയിലെ നാവിഗേഷൻ</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ക്രമീകരണം ഓഫാക്കണോ?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">TalkBack ക്രമീകരണത്തിൽ നിങ്ങൾക്ക് ഏത് സമയത്തും അത് വീണ്ടും ഓണാക്കാം</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">SandFly ക്രമീകരണത്തിൽ നിങ്ങൾക്ക് ഏത് സമയത്തും അത് വീണ്ടും ഓണാക്കാം</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ഓഫാക്കുക</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">ചില കമാൻഡുകൾ ലഭ്യമല്ല</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ടൈപ്പോ എഡിറ്റോ ചെയ്യുമ്പോൾ നാവിഗേഷൻ, ബ്രെയ്‌ലി ക്രമീകരണം, ചില TalkBack ഫീച്ചറുകൾ എന്നിവയ്ക്കുള്ള കമാൻഡുകൾ ലഭ്യമല്ല.\n\nഈ കമാൻഡുകൾ ഉപയോഗിക്കാൻ ആദ്യം കീബോർഡ് അടയ്ക്കൂ.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ടൈപ്പോ എഡിറ്റോ ചെയ്യുമ്പോൾ നാവിഗേഷൻ, ബ്രെയ്‌ലി ക്രമീകരണം, ചില SandFly ഫീച്ചറുകൾ എന്നിവയ്ക്കുള്ള കമാൻഡുകൾ ലഭ്യമല്ല.\n\nഈ കമാൻഡുകൾ ഉപയോഗിക്കാൻ ആദ്യം കീബോർഡ് അടയ്ക്കൂ.</string>
   <string name="bd_caption_tutorial_dialog_title">നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയിൽ സബ്‌ടൈറ്റിലുകൾ</string>
   <string name="bd_caption_tutorial_dialog_message">ഈ വീഡിയോയിൽ സബ്‌ടൈറ്റിൽ കാണിക്കാനോ മറയ്ക്കാനോ, സ്‌പെയ്‌സും 1, 4, 7, 8 ഡോട്ടുകളും അമർത്തുക.\n\nപിന്തുണയുള്ള മീഡിയയിൽ സ്വയമേവ സബ്‌ടൈറ്റിൽ കാണിക്കാൻ, ക്രമീകരണത്തിലെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയിൽ \'സബ്‌ടൈറ്റിലുകൾ കാണിക്കുക\' ഓണാക്കുക.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">സബ്‌ടൈറ്റിലുകൾ ലഭ്യമാകുമ്പോഴെല്ലാം ഈ സന്ദേശം കാണിക്കുക</string>
   <string name="bd_usb_connect_dialog_title">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ, USB-യിലേക്ക് കണക്റ്റ് ചെയ്തു</string>
-  <string name="bd_usb_connect_dialog_message">നിങ്ങളുടെ %s എന്നതിന്റെ ബാറ്ററി, ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ചാർജ് ചെയ്യുന്നുണ്ട്.\n\nനിങ്ങൾക്ക് Bluetooth-ലേക്ക് മാറണമെങ്കിൽ, USB അല്ലെങ്കിൽ USB ഹബ് വിച്ഛേദിച്ച് TalkBack ക്രമീകരണം &gt; ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ എന്നതിലേക്ക് പോകുക.</string>
+  <string name="bd_usb_connect_dialog_message">നിങ്ങളുടെ %s എന്നതിന്റെ ബാറ്ററി, ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ചാർജ് ചെയ്യുന്നുണ്ട്.\n\nനിങ്ങൾക്ക് Bluetooth-ലേക്ക് മാറണമെങ്കിൽ, USB അല്ലെങ്കിൽ USB ഹബ് വിച്ഛേദിച്ച് SandFly ക്രമീകരണം &gt; ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ എന്നതിലേക്ക് പോകുക.</string>
   <string name="bd_device">ഫോൺ</string>
   <string name="bd_battery_low_dialog_title">%s ചാർജ് കുറവാണ്</string>
   <string name="bd_battery_low_dialog_message">%s എന്നതിന്റെ ബാറ്ററി ചാർജ് നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ കുറയ്ക്കുന്നു.\n\nബാറ്ററി ലാഭിക്കാൻ:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">എല്ലാം മായ്‌ക്കുക</string>
   <string name="popup_message_history_empty">ശൂന്യം</string>
   <string name="popup_message_history_consent_dialog_title">ഉപകരണ സന്ദേശ ചരിത്രം ഓണാക്കണോ?</string>
-  <string name="popup_message_history_consent_dialog_msg">അറിയിപ്പുകളും അലാറങ്ങളും പോലുള്ള ചില സന്ദേശങ്ങൾ ഇത് TalkBack-ൽ സംഭരിക്കും. ഏതുസമയത്തും നിങ്ങൾക്ക് ഈ ക്രമീകരണത്തിൽ മാറ്റം വരുത്താം.</string>
+  <string name="popup_message_history_consent_dialog_msg">അറിയിപ്പുകളും അലാറങ്ങളും പോലുള്ള ചില സന്ദേശങ്ങൾ ഇത് SandFly-ൽ സംഭരിക്കും. ഏതുസമയത്തും നിങ്ങൾക്ക് ഈ ക്രമീകരണത്തിൽ മാറ്റം വരുത്താം.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ഓണാക്കുക</string>
   <string name="popup_message_history_consent_dialog_negative_btn">വേണ്ട</string>
+    <string name="external_display_channel">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള ബ്രെയിൽ ഡിസ്പ്ലേകൾ</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly-ന് ബ്രെയിൽ ഡിസ്‌പ്ലേ ആകാൻ അനുവദിക്കണോ?</string>
+    <string name="external_display_ask_text">നിങ്ങൾ അനുവദിക്കുന്നതുവരെ SandFly അത് ഉപയോഗിക്കില്ല.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>-ന് SandFly ബ്രെയ്‌ലിയിൽ കാണിക്കുന്നതെല്ലാം വായിക്കാൻ കഴിയും, സന്ദേശങ്ങളും നിങ്ങൾ ടൈപ്പ് ചെയ്യുന്നതും ഉൾപ്പെടെ സ്ക്രീനിൽ എന്തും ആകാം. ഒരു ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിച്ച് നിങ്ങളുടെ ഉപകരണം നിയന്ത്രിക്കാനും ഇതിന് കഴിയും: ടൈപ്പ് ചെയ്യുക, ആപ്പുകൾ തുറക്കുക, ഏതെങ്കിലും SandFly കമാൻഡ് പ്രവർത്തിപ്പിക്കുക. നിങ്ങൾ വിശ്വസിക്കുന്ന ആപ്പുകൾ മാത്രം അനുവദിക്കുക.</string>
+    <string name="external_display_allow">അനുവദിക്കുക</string>
+    <string name="external_display_deny">അനുവദിക്കരുത്</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> എന്നത് നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയാണ്</string>
+    <string name="external_display_in_use_text">SandFly ഇത് ഉപയോഗിക്കുമ്പോൾ, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ന് സ്‌ക്രീൻ വായിക്കാനും ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും.</string>
+    <string name="external_displays_title">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള ഡിസ്പ്ലേകൾ</string>
+    <string name="external_displays_summary">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകൾ SandFly എന്നതിനുള്ള ബ്രെയിലി ഡിസ്പ്ലേകളാകാം. ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ആയ ഒരു ആപ്പിന് സ്‌ക്രീൻ വായിക്കാനും ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും.</string>
+    <string name="external_displays_none">ആപ്പുകൾക്കൊന്നും ബ്രെയിലി ഡിസ്പ്ലേകളാകാൻ കഴിയില്ല.</string>
 </resources>
