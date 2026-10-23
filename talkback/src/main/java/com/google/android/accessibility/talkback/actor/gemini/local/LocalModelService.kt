@@ -28,6 +28,7 @@ import android.os.Message
 import android.os.Messenger
 import android.os.RemoteException
 import android.util.Log
+import com.google.android.accessibility.talkback.acceleration.Accelerators
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicInteger
@@ -152,7 +153,12 @@ class LocalModelService : Service() {
         file,
         config.processor,
         // Downloaded the first time the NPU is used.
-        if (processor == OnDeviceAiSettings.Processor.NPU) NpuRuntime.ensure(appContext).path else null,
+        if (processor == OnDeviceAiSettings.Processor.NPU) {
+          val chip = Accelerators.npuChip ?: throw LocalLlmException("No NPU on this phone")
+          NpuRuntime.ensure(appContext, chip).path
+        } else {
+          null
+        },
         maxTokens,
         beforeLoad = { if (checkMemory) checkFreeMemory(appContext, file.length()) },
       )

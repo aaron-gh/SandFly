@@ -55,20 +55,28 @@ object Accelerators {
   }
 
   /**
-   * The Google Tensor chip whose NPU on-device AI can use, such as "Tensor_G5", or null. Only
-   * chips that have a model built for their NPU count.
+   * The chip whose NPU on-device AI can use, such as [TENSOR_G5] or [SNAPDRAGON_8_ELITE], or null.
+   * Only chips that have a model built for their NPU count, and only when Android lets apps use the
+   * NPU's driver.
    */
-  val googleTensorNpu: String? by lazy {
-    if (!is64BitArm || "libedgetpu_litert.so" !in publicLibraries) return@lazy null
-    when (socModel().lowercase().filter { it.isLetterOrDigit() }) {
-      "tensorg5" -> TENSOR_G5
-      "tensorg6" -> TENSOR_G6
+  val npuChip: String? by lazy {
+    if (!is64BitArm) return@lazy null
+    val soc = socModel().uppercase().filter { it.isLetterOrDigit() }
+    when {
+      soc == "TENSORG5" && "libedgetpu_litert.so" in publicLibraries -> TENSOR_G5
+      soc == "TENSORG6" && "libedgetpu_litert.so" in publicLibraries -> TENSOR_G6
+      soc.startsWith("SM8750") && "libcdsprpc.so" in publicLibraries -> SNAPDRAGON_8_ELITE
+      soc.startsWith("SM8850") && "libcdsprpc.so" in publicLibraries -> SNAPDRAGON_8_ELITE_GEN_5
       else -> null
     }
   }
 
   const val TENSOR_G5 = "Tensor_G5"
   const val TENSOR_G6 = "Tensor_G6"
+  /** Snapdragon 8 Elite, with a Hexagon v79 NPU, as in the Galaxy S25 and Z Fold7. */
+  const val SNAPDRAGON_8_ELITE = "SM8750"
+  /** Snapdragon 8 Elite Gen 5, with a Hexagon v81 NPU. */
+  const val SNAPDRAGON_8_ELITE_GEN_5 = "SM8850"
 
   private fun socModel(): String =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) (Build.SOC_MODEL as String?).orEmpty() else ""

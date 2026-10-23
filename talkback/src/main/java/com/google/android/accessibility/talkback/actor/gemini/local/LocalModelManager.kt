@@ -199,7 +199,7 @@ class LocalModelManager private constructor(context: Context) {
       val runtimeFailed =
         result == ModelDownloader.Result.Done &&
           model.npuChip != null &&
-          runCatching { NpuRuntime.ensure(appContext) }.isFailure
+          runCatching { NpuRuntime.ensure(appContext, model.npuChip) }.isFailure
       setState(if (runtimeFailed) State.Failed(ModelFiles.Failure.NETWORK) else stateAfter(result))
     }
   }

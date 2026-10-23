@@ -773,7 +773,7 @@ With Gemini, SandFly asks the model to think as little as it can, and asks Gemin
 
 ### On-device AI
 
-SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai). On phones that have one, **Processor** runs the model on the GPU, or on Google Tensor G5 and G6, on the NPU.
+SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai). On phones that have one, **Processor** runs the model on the GPU, or on the NPU of Google Tensor G5 and G6 (Gemma 4 E2B) and Snapdragon 8 Elite and 8 Elite Gen 5 (FastVLM 0.5B).
 
 ### Clear error messages
 
