@@ -138,4 +138,16 @@
     <string name="script_source_remove">Премахване на източника</string>
     <string name="script_source_remove_title">Да се премахне ли <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Скриптовете, инсталирани от него, остават инсталирани.</string>
+    <string name="scripts_auto_update">Автоматично актуализиране на скриптове</string>
+    <string name="scripts_check_updates">Проверка за актуализации</string>
+    <string name="scripts_checking_updates">Проверка за актуализации...</string>
+    <string name="scripts_updates_category">Актуализации</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> актуализиран скрипт: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> актуализирани скрипта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Актуализациите са посочени под Актуализации</string>
+    <string name="scripts_update_check_failed">Някои източници не можаха да бъдат проверени</string>
+    <string name="scripts_up_to_date">Всички скриптове са актуални</string>
 </resources>

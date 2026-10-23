@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Файлът е твърде голям. Звукът може да е до 5 MB.</string>
     <string name="theme_sound_not_audio">SandFly не може да възпроизведе този файл. Изберете звук във формат WAV, OGG, MP3 или FLAC.</string>
     <string name="theme_sound_failed">SandFly не можа да прочете този файл.</string>
+    <string name="title_pref_sound_theme_install_source">От източник</string>
+    <string name="summary_pref_sound_theme_install_source">Тематични файлове в хранилище на GitHub, GitLab, Codeberg, Gitea или Bitbucket.</string>
+    <string name="sound_theme_sources">Източници на звукови теми</string>
+    <string name="sound_theme_source_empty">Няма звукови теми в този източник</string>
+    <string name="sound_theme_source_failed">Звуковите теми не можаха да се заредят. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Звуковите теми, инсталирани от него, остават инсталирани.</string>
 </resources>

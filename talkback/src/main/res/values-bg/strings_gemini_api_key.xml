@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Запазване</string>
     <string name="gemini_api_key_get">Вземане на ключ</string>
     <string name="gemini_api_terms_link">Допълнителни общи условия за Gemini API</string>
+    <string name="title_pref_gemini_model">Gemini модел</string>
+    <string name="gemini_model_automatic">Автоматичен</string>
+    <string name="summary_pref_gemini_model_automatic">Автоматично: Gemini Flash, след това Flash-Lite, когато Flash е зает</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, след това Flash-Lite, когато е заето</string>
+    <string name="gemini_model_loading">Получаване на моделите...</string>
+    <string name="gemini_model_list_failed">Не можах да взема моделите: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Първо задайте Gemini API ключ</string>
+    <string name="ai_service_address_hint">Адрес, като например https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Модел</string>
+    <string name="ai_service_address_invalid">Адресът трябва да започва с https://. Нищо не е запазено.</string>
+    <string name="dialog_message_ai_service_consent">Изображенията и екранните снимки се изпращат до <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, за да бъдат описани, което отнема няколко секунди. Прилагат се неговите собствени условия и политика за поверителност. Генеративният AI е експериментален, така че ще допуска грешки.</string>
+    <string name="ai_service_error_api_key">Услугата AI не прие API ключа. Проверете настройките му в Автоматични описания.</string>
+    <string name="ai_service_error_quota">Лимитът за използване на услугата AI е достигнат. Опитайте отново по-късно.</string>
+    <string name="ai_service_error_busy">Услугата AI е заета в момента. Опитайте отново след малко.</string>
+    <string name="ai_service_error_timeout">Отговорът на услугата AI отне твърде много време. Опитайте отново.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Няма</string>
+    <string name="ai_service_not_set_up">Не се използва AI услуга. Задайте такъв или изберете такъв в настройките за автоматични описания.</string>
+    <string name="ai_provider_none_set_up">Не е настроена AI услуга. Задайте такъв в настройките му по-долу.</string>
+    <string name="ai_provider_other">Друга услуга</string>
+    <string name="title_pref_category_ai_services">AI услуги</string>
+    <string name="title_pref_ai_provider">AI услуга</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> настройки</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, не е настроено</string>
+    <string name="ai_provider_in_use">Използва се</string>
+    <string name="ai_provider_not_set_up">Не е настроен</string>
+    <string name="ai_provider_not_ready">Първо изберете модел</string>
+    <string name="ai_provider_address">Адрес</string>
+    <string name="ai_provider_address_message">Адресът на услуга със съвместим с OpenAI API за чат и въвеждане на изображение, като например https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Не е зададено</string>
+    <string name="ai_provider_set">Конфигуриран</string>
+    <string name="title_pref_gemini_api_key_of">API ключ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модел</string>
+    <string name="ai_provider_choose_model">Не е избран</string>
+    <string name="ai_provider_key_message">Поставете вашия <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключ. За да го премахнете, изчистете полето и запазете. Изображенията и екраните, които описвате, се изпращат на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Първо задайте <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключа</string>
+    <string name="ai_provider_needs_address">Първо задайте адреса</string>
+    <string name="ai_provider_enter_model">Въведете име на модел</string>
 </resources>
