@@ -1422,8 +1422,8 @@
     <string name="pref_table_column_headers_entry_after">單元格資料後</string>
     <string name="pref_table_column_headers_entry_before">單元格資料之前</string>
     <string name="pref_table_column_headers_entry_off">不讀</string>
-    <string name="pref_table_speak_row_column_numbers_title">說出行號和列號</string>
-    <string name="pref_table_speak_row_column_numbers_summary">宣告表格儲存格的行號和列號</string>
+    <string name="pref_table_speak_row_column_numbers_title">讀出列號和欄號</string>
+    <string name="pref_table_speak_row_column_numbers_summary">讀出表格儲存格的列號和欄號</string>
     <string name="title_pref_speak_volume_changes">讀出音量變化</string>
     <string name="summary_pref_speak_volume_changes">按音量鍵後說出新音量</string>
     <string name="title_pref_speak_notifications">說出通知</string>
@@ -1501,8 +1501,8 @@
     <string name="quick_settings_settings">設定</string>
     <string name="quick_settings_power_menu">電源選單</string>
     <string name="quick_settings_add_system_tile">新增系統磁貼</string>
-    <string name="quick_settings_no_system_tiles">無需新增系統圖塊</string>
-    <string name="quick_settings_tile_not_found">系统快捷设置中没有%1$s</string>
+    <string name="quick_settings_no_system_tiles">沒有可新增的系統圖塊</string>
+    <string name="quick_settings_tile_not_found">系統快速設定中沒有%1$s</string>
     <string name="quick_settings_never">永不</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d 第二</item>
@@ -1531,7 +1531,7 @@
     <string name="quick_settings_columns">欄數</string>
     <string name="quick_settings_move">移動</string>
     <string name="quick_settings_move_title">移動%1$s</string>
-    <string name="quick_settings_cell">第 %1$d 行，第 %2$d 列</string>
+    <string name="quick_settings_cell">第 %1$d 列，第 %2$d 欄</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
     <plurals name="quick_settings_others_moved">
