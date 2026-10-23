@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">कोई ड्राफ्ट नहीं</string>
     <string name="report_just_now">अभी अभी</string>
     <string name="report_untitled">शीर्षकहीन</string>
-    <string name="report_draft_summary">परिवर्तित <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> बदला गया</string>
     <string name="report_sent_at">भेजा गया <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> नया उत्तर</item>
@@ -76,9 +76,9 @@
     <string name="dialog_message_report_remove">इसके उत्तर अब इस फ़ोन पर नहीं पहुंचेंगे.</string>
     <string name="title_report_delete_draft">ड्राफ्ट हटाएं</string>
     <string name="dialog_title_report_delete_draft">यह ड्राफ़्ट हटाएं?</string>
-    <string name="button_report_delete">मिटाओ</string>
+    <string name="button_report_delete">मिटाएं</string>
     <string name="report_missing">यह फीडबैक अब इनबॉक्स में नहीं है.</string>
-    <string name="notification_channel_problem_reports">प्रतिक्रिया उत्तर</string>
+    <string name="notification_channel_problem_reports">प्रतिक्रिया के जवाब</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> का उत्तर दें</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

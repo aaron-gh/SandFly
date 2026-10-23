@@ -16,7 +16,7 @@
     <string name="summary_pref_problem_report_sending">送信中</string>
     <string name="problem_report_missing_fields">タイトルと説明を入力します。</string>
     <string name="problem_report_invalid_email">有効な電子メール アドレスを入力してください。</string>
-    <string name="problem_report_sent">フィードバックが送信されました。</string>
+    <string name="problem_report_sent">フィードバックを送信しました。</string>
     <string name="problem_report_rate_limited">送信されたフィードバックが多すぎます。後でもう一度試してください。</string>
     <string name="problem_report_no_connection">フィードバックは送信されませんでした。インターネット接続を確認してください。</string>
     <string name="problem_report_not_sent">フィードバックは送信されませんでした。後でもう一度試してください。</string>
@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">下書きなし</string>
     <string name="report_just_now">たった今</string>
     <string name="report_untitled">無題</string>
-    <string name="report_draft_summary">変更されました <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g>に変更</string>
     <string name="report_sent_at">送信しました <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 件の新しい返信</item>

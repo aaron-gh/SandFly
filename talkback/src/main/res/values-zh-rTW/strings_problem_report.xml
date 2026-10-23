@@ -16,7 +16,7 @@
     <string name="summary_pref_problem_report_sending">傳送</string>
     <string name="problem_report_missing_fields">輸入標題和說明。</string>
     <string name="problem_report_invalid_email">輸入有效的電子郵件地址。</string>
-    <string name="problem_report_sent">反饋已發送。</string>
+    <string name="problem_report_sent">意見已傳送。</string>
     <string name="problem_report_rate_limited">發送的反饋太多。稍後再試。</string>
     <string name="problem_report_no_connection">反饋未發送。檢查網路連線。</string>
     <string name="problem_report_not_sent">反饋未發送。稍後再試。</string>
@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">無草稿</string>
     <string name="report_just_now">剛才</string>
     <string name="report_untitled">無題</string>
-    <string name="report_draft_summary">改<xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g>變更</string>
     <string name="report_sent_at">已發送<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 新回覆</item>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">刪除這個草稿嗎？</string>
     <string name="button_report_delete">刪除</string>
     <string name="report_missing">此回饋不再出現在收件匣中。</string>
-    <string name="notification_channel_problem_reports">回饋回覆</string>
+    <string name="notification_channel_problem_reports">意見回覆</string>
     <string name="report_notification_reply">回覆<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

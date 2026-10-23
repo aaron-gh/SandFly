@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">Qaralama yoxdur</string>
     <string name="report_just_now">indi</string>
     <string name="report_untitled">Başlıqsız</string>
-    <string name="report_draft_summary">Dəyişdi <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> dəyişdirilib</string>
     <string name="report_sent_at">göndərildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yeni cavab</item>
@@ -76,7 +76,7 @@
     <string name="dialog_message_report_remove">Ona verilən cavablar daha bu telefona çatmayacaq.</string>
     <string name="title_report_delete_draft">Qaralamanı silin</string>
     <string name="dialog_title_report_delete_draft">Bu qaralama silinsin?</string>
-    <string name="button_report_delete">Silin</string>
+    <string name="button_report_delete">Sil</string>
     <string name="report_missing">Bu rəy artıq gələnlər qutusunda deyil.</string>
     <string name="notification_channel_problem_reports">Rəy cavabları</string>
     <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-a cavab verin</string>

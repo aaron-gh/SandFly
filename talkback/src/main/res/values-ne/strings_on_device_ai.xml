@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_on_device_ai">यन्त्रमा AI</string>
+    <string name="title_pref_on_device_ai">डिभाइसमै चल्ने AI</string>
     <string name="summary_pref_on_device_ai">छवि वर्णन गर्नुहोस् र यस फोनमा कुनै एपीआई कुञ्जी बिना मोडेलको साथ स्क्रिनको वर्णन गर्नुहोस्</string>
     <string name="pref_on_device_ai_enable">डिभाइसमै चल्ने AI प्रयोग गर्नुहोस्</string>
     <string name="pref_on_device_ai_enable_summary">छविहरू र स्क्रिनसटहरू यस फोनमा वर्णन गरिएका छन् र Google मा कहिल्यै पठाइँदैन। यो क्लाउड भन्दा ढिलो छ र अधिक ब्याट्री प्रयोग गर्दछ।</string>
@@ -36,7 +36,7 @@
         <item quantity="one">%1$d मोडेल डाउनलोड गरियो</item>
         <item quantity="other">%1$d मोडेलहरू डाउनलोड गरियो</item>
     </plurals>
-    <string name="title_pref_manage_models">मोडेलहरू प्रबन्ध गर्नुहोस्</string>
+    <string name="title_pref_manage_models">मोडेल व्यवस्थापन</string>
     <string name="manage_models_storage_used">मोडेलहरूले %1$s भण्डारण प्रयोग गरिरहेका छन्।</string>
     <string name="manage_models_empty">कुनै मोडेलहरू डाउनलोड गरिएका छैनन्।</string>
     <string name="manage_models_unfinished">%1$s, अधूरो डाउनलोड</string>

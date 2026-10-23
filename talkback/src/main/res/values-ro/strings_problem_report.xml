@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">Fără schițe</string>
     <string name="report_just_now">tocmai acum</string>
     <string name="report_untitled">Fără titlu</string>
-    <string name="report_draft_summary">Schimbat <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary">Modificat <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">trimis <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> răspuns nou</item>
@@ -76,10 +76,10 @@
     <string name="dialog_title_report_remove">Eliminați acest feedback din căsuța de e-mail?</string>
     <string name="dialog_message_report_remove">Răspunsurile la acesta nu vor mai ajunge la acest telefon.</string>
     <string name="title_report_delete_draft">Ștergeți schița</string>
-    <string name="dialog_title_report_delete_draft">Ștergeți această schiță?</string>
+    <string name="dialog_title_report_delete_draft">Ștergi această schiță?</string>
     <string name="button_report_delete">Șterge</string>
     <string name="report_missing">Acest feedback nu mai este în căsuța de e-mail.</string>
-    <string name="notification_channel_problem_reports">Răspunsuri de feedback</string>
+    <string name="notification_channel_problem_reports">Răspunsuri la feedback</string>
     <string name="report_notification_reply">Răspunde la <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

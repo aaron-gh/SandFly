@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">Inga utkast</string>
     <string name="report_just_now">just nu</string>
     <string name="report_untitled">Namnlös</string>
-    <string name="report_draft_summary">Ändrade <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary">Ändrades <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">skickade <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nytt svar</item>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">Vill du ta bort det här utkastet?</string>
     <string name="button_report_delete">Radera</string>
     <string name="report_missing">Denna feedback finns inte längre i inkorgen.</string>
-    <string name="notification_channel_problem_reports">Feedback svarar</string>
+    <string name="notification_channel_problem_reports">Svar på feedback</string>
     <string name="report_notification_reply">Svara på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>
