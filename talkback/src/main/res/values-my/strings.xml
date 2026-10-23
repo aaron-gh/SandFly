@@ -1397,9 +1397,9 @@
     <string name="speech_control_allow">ခွင့်ပြုပါ</string>
     <string name="speech_control_deny">ခွင့်မပြုပါ</string>
     <string name="permission_speak_label">SandFly မှတစ်ဆင့် ပြောဆိုခြင်း</string>
-    <string name="permission_speak_description">အက်ပ်အား သင်၏ SandFly အသံဖြင့် စာသားပြောခိုင်းစေပါ။ SandFly အက်ပ်က စကားမပြောမီ သင့်ကိုမေးသည်။</string>
+    <string name="permission_speak_description">အက်ပ်ကို သင်၏ SandFly အသံဖြင့် စာသား ပြောခွင့် တောင်းခွင့်ပေးသည်။ အက်ပ် မပြောမီ SandFly က သင့်ကို မေးသည်။</string>
     <string name="permission_braille_display_label">SandFly အတွက် ဘရေးလ် ဖန်သားပြင်ဖြစ်ရန် တောင်းဆိုခြင်း</string>
-    <string name="permission_braille_display_description">အက်ပ်အား SandFlyအတွက် မျက်မမြင်စာအဖြစ် ပြသခွင့်ပြုပါ။ ၎င်းကို SandFly ဖြင့် ခွင့်ပြုပါက၊ ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။ SandFly မင်းကို အရင်မေးတယ်။</string>
+    <string name="permission_braille_display_description">အက်ပ်ကို SandFly အတွက် မျက်မမြင်စာဖတ်ကိရိယာ ဖြစ်ခွင့် တောင်းခွင့်ပေးသည်။ SandFly တွင် ခွင့်ပြုလျှင် ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ကို ထိန်းချုပ်နိုင်သည်။ SandFly က သင့်ကို အရင်မေးသည်။</string>
     <string name="title_pref_phonetic_letters_mode">စာလုံးများကို အသံထွက်ဥပမာဖြင့် ဖတ်ပါ</string>
     <string name="phonetic_letters_mode_off">ပိတ်</string>
     <string name="phonetic_letters_mode_after_letter_delay">အက္ခရာနောက်တွင် ခဏရပ်၍ ဥပမာ “က၊ ကြက်”</string>
@@ -1560,7 +1560,7 @@
     <string name="title_pref_speaker_devices">ဤစက်ပစ္စည်းများ ချိတ်ဆက်ထားစဉ် ဖုန်းစပီကာ</string>
     <string name="summary_pref_speaker_devices_none">မရှိ</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth သို့မဟုတ် ကြိုးတပ်ကိရိယာများ မချိတ်ဆက်ရသေးပါ</string>
-    <string name="pref_reduce_window_delay_summary">အန်နီမေးရှင်းများကို ပိတ်ထားသည့်အခါ SandFly မျက်နှာပြင်အသစ်များကို ပိုမိုမြန်ဆန်စွာဖတ်သည်။ ၎င်းက ဖုန်းတစ်ခုလုံးအတွက် ကာတွန်းများကို ပိတ်ပေးသည်။</string>
+    <string name="pref_reduce_window_delay_summary">အန်နီမေးရှင်းများ ပိတ်ထားသည့်အခါ SandFly သည် မျက်နှာပြင်အသစ်များကို ပိုမြန်စွာ ဖတ်သည်။ ၎င်းသည် ဖုန်းတစ်ခုလုံးအတွက် အန်နီမေးရှင်းများကို ပိတ်သည်။</string>
     <string name="dialog_message_detailed_ai_description">ရွေးထားသော ပုံများကို ဖော်ပြချက်ရယူရန် Google ၏ Gemini API သို့ ပို့သည်။ စက်ပေါ်ရှိ AI ကို ဖွင့်ထားလျှင် ၎င်းတို့ကို ဤဖုန်းပေါ်တွင်သာ ဖော်ပြပြီး မပို့ပါ။\n\nအခမဲ့ API ကီးဖြင့် Google သည် ရရှိသည့်အရာများကို သိမ်းထားနိုင်၊ ၎င်း၏ ထုတ်ကုန်များ တိုးတက်စေရန် အသုံးပြုနိုင်ပြီး လူများကို စစ်ဆေးခိုင်းနိုင်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများ ရှိမည်။ <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> သက်ရောက်သည်။</string>
     <string name="dialog_message_detailed_ai_promotion">အသေးစိတ် ပုံဖော်ပြချက်များကို Generative AI ဖြင့် ပြုလုပ်သည်။ ရွေးထားသော ပုံများကို ဖော်ပြချက်ရယူရန် Google ၏ Gemini API သို့ ပို့သည်။ စက်ပေါ်ရှိ AI ကို ဖွင့်ထားလျှင် ၎င်းတို့ကို ဤဖုန်းပေါ်တွင်သာ ဖော်ပြပြီး မပို့ပါ။\n\nအခမဲ့ API ကီးဖြင့် Google သည် ရရှိသည့်အရာများကို သိမ်းထားနိုင်၊ ၎င်း၏ ထုတ်ကုန်များ တိုးတက်စေရန် အသုံးပြုနိုင်ပြီး လူများကို စစ်ဆေးခိုင်းနိုင်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများ ရှိမည်။ SandFly ဆက်တင်များတွင် အသေးစိတ် ပုံဖော်ပြချက်များကို အချိန်မရွေး ပိတ်နိုင်သည်။\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> သက်ရောက်သည်။</string>
     <string name="dialog_message_screen_overview_promotion">မျက်နှာပြင်ဓာတ်ပုံကို ဖော်ပြချက်ရယူရန် Google ၏ Gemini API သို့ ပို့ပြီး စက္ကန့်အနည်းငယ် ကြာသည်။ စက်ပေါ်ရှိ AI ကို ဖွင့်ထားလျှင် ၎င်းကို ဤဖုန်းပေါ်တွင်သာ ဖော်ပြပြီး မပို့ပါ။\n\nအခမဲ့ API ကီးဖြင့် Google သည် ရရှိသည့်အရာများကို သိမ်းထားနိုင်၊ ၎င်း၏ ထုတ်ကုန်များ တိုးတက်စေရန် အသုံးပြုနိုင်ပြီး လူများကို စစ်ဆေးခိုင်းနိုင်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သဖြင့် အမှားများ ရှိမည်။ <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> သက်ရောက်သည်။</string>

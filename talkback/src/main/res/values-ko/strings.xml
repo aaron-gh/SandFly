@@ -1397,9 +1397,9 @@
     <string name="speech_control_allow">허용</string>
     <string name="speech_control_deny">허용하지 않음</string>
     <string name="permission_speak_label">SandFly를 통해 말하기</string>
-    <string name="permission_speak_description">앱이 SandFly 음성으로 텍스트를 말하도록 요청합니다. SandFly 앱이 말하기 전에 묻습니다.</string>
+    <string name="permission_speak_description">앱에서 SandFly 음성으로 텍스트를 말하도록 요청할 수 있습니다. 앱이 말하기 전에 SandFly에서 확인을 요청합니다.</string>
     <string name="permission_braille_display_label">SandFly의 점자 디스플레이 역할 요청</string>
-    <string name="permission_braille_display_description">앱이 SandFly에 대한 점자 디스플레이가 되도록 요청할 수 있습니다. SandFly에서 허용하면 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly 먼저 물어보세요.</string>
+    <string name="permission_braille_display_description">앱에서 SandFly의 점자 디스플레이로 사용되도록 요청할 수 있습니다. SandFly에서 허용하면 앱이 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly에서 먼저 확인을 요청합니다.</string>
     <string name="title_pref_phonetic_letters_mode">글자를 음성 기호로 읽기</string>
     <string name="phonetic_letters_mode_off">사용 안함</string>
     <string name="phonetic_letters_mode_after_letter_delay">글자 다음에 잠시 쉬고, 예: “ㅎ, 하늘”</string>
@@ -1560,7 +1560,7 @@
     <string name="title_pref_speaker_devices">이 기기 연결 시 휴대전화 스피커 사용</string>
     <string name="summary_pref_speaker_devices_none">없음</string>
     <string name="summary_pref_speaker_devices_no_devices">아직 Bluetooth 또는 유선 기기가 연결되지 않았습니다.</string>
-    <string name="pref_reduce_window_delay_summary">SandFly 애니메이션이 꺼지면 새 화면을 더 빠르게 읽습니다. 그러면 전체 전화기의 애니메이션이 꺼집니다.</string>
+    <string name="pref_reduce_window_delay_summary">애니메이션이 꺼져 있으면 SandFly가 새 화면을 더 빠르게 읽습니다. 이 설정은 휴대전화 전체의 애니메이션을 끕니다.</string>
     <string name="dialog_message_detailed_ai_description">선택한 이미지는 설명을 위해 Google의 Gemini API로 전송됩니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
     <string name="dialog_message_detailed_ai_promotion">자세한 이미지 설명은 생성형 AI로 만들어집니다. 선택한 이미지는 설명을 위해 Google의 Gemini API로 전송됩니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. 자세한 이미지 설명은 SandFly 설정에서 언제든지 사용 중지할 수 있습니다.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
     <string name="dialog_message_screen_overview_promotion">화면의 스크린샷이 설명을 위해 Google의 Gemini API로 전송되며, 몇 초 정도 걸립니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
