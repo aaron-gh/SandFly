@@ -137,4 +137,19 @@
   <string name="script_source_remove">Удалить источник</string>
   <string name="script_source_remove_title">Удалить <xliff:g id="name">%1$s</xliff:g>?</string>
   <string name="script_source_remove_message">Установленные из него скрипты останутся установленными.</string>
+    <string name="script_permission_java">Запускайте Java-код со всеми доступами SandFly в каждом приложении.</string>
+    <string name="scripts_auto_update">Автоматическое обновление скриптов</string>
+    <string name="scripts_check_updates">Проверить обновления</string>
+    <string name="scripts_checking_updates">Проверка обновлений…</string>
+    <string name="scripts_updates_category">Обновления</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one">Обновлён <xliff:g id="count" example="1">%1$d</xliff:g> скрипт: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="few">Обновлено <xliff:g id="count" example="2">%1$d</xliff:g> скрипта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many">Обновлено <xliff:g id="count" example="5">%1$d</xliff:g> скриптов: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other">Обновлено <xliff:g id="count" example="1.5">%1$d</xliff:g> скрипта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Обновления перечислены в разделе «Обновления».</string>
+    <string name="scripts_update_check_failed">Некоторые источники не удалось проверить</string>
+    <string name="scripts_up_to_date">Все скрипты актуальны</string>
 </resources>

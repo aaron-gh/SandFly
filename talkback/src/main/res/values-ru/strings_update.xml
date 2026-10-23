@@ -14,4 +14,9 @@
   <string name="update_install_failed">Не удалось установить обновление</string>
   <string name="update_install_canceled">Обновление отменено</string>
   <string name="update_allow_install">Разрешите SandFly устанавливать приложения, затем повторите обновление</string>
+    <string name="summary_pref_check_for_updates_version">Версия <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, сборка <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_dev_builds">Разработка сборки</string>
+    <string name="update_already_downloading">Обновление уже загружается</string>
+    <string name="update_ready_title">SandFly обновление загружено</string>
+    <string name="update_ready_text">Нажмите, чтобы установить.</string>
 </resources>
