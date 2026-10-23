@@ -4,10 +4,10 @@
     <string name="summary_pref_scripts">更改 SandFly 在應用程式中的工作方式</string>
     <string name="script_import">匯入指令碼</string>
     <string name="script_install_label">安裝 SandFly 指令碼</string>
-    <string name="script_import_nothing">沒有要安裝的腳本檔案。</string>
-    <string name="script_import_cannot_open">該文件無法開啟。</string>
+    <string name="script_import_nothing">沒有可安裝的指令碼檔案。</string>
+    <string name="script_import_cannot_open">無法開啟該檔案。</string>
     <string name="script_import_repository">此連結指向整個儲存庫。打開所需的腳本，然後分享其連結。</string>
-    <string name="script_import_summary">.lua 文件，或帶有 main.lua 的 .zip</string>
+    <string name="script_import_summary">.lua 檔案，或含有 main.lua 的 .zip</string>
     <string name="scripts_category_app">應用程式指令碼</string>
     <string name="scripts_category_global">全域外掛程式</string>
     <string name="scripts_none">未安裝任何指令碼</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">無</string>
     <string name="script_settings_category">設定</string>
     <string name="script_list_filter">篩選</string>
-    <string name="script_button_off">首先打開腳本</string>
+    <string name="script_button_off">請先開啟指令碼</string>
     <string name="script_permissions_summary">關閉其中一個會停止需要它的部分。</string>
     <string name="script_install_permissions_note">您可以稍後將其關閉。</string>
     <string name="script_manage_category">管理</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">稍後運行</string>
     <string name="script_order_summary">更改相同演講的腳本的順序。應用程式腳本首先運行。</string>
     <string name="script_log">紀錄</string>
-    <string name="script_log_summary">自 SandFly 開始以來的輸出與錯誤</string>
+    <string name="script_log_summary">自 SandFly 啟動以來的輸出和錯誤</string>
     <string name="script_clear_storage">清除儲存的資料</string>
     <string name="script_storage_cleared">已清除儲存的資料</string>
     <string name="script_remove">刪除</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">開啟首頁</string>
     <string name="script_homepage_confirm_title">開啟這個網址？</string>
     <string name="script_homepage_open">開啟</string>
-    <string name="script_homepage_failed">沒有應用程式可以打開<xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">沒有應用程式可以開啟 <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 多次錯誤後關閉。在腳本中查看其日誌。</string>
     <string name="shortcut_inspect_item">檢查焦點項目</string>
     <string name="script_inspect_no_item">沒有項目獲得焦點</string>
@@ -114,12 +114,12 @@
     <string name="script_binding_restored">已恢復預設值</string>
     <string name="script_binding_perform">執行手勢或按鍵</string>
     <string name="script_binding_perform_summary">指定下一個手勢，或使用 SandFly 修飾符按下的按鍵</string>
-    <string name="script_binding_perform_message">做出手勢或按下按鍵。</string>
+    <string name="script_binding_perform_message">請做出手勢或按下按鍵。</string>
     <string name="script_binding_assign_title">將 <xliff:g id="binding">%1$s</xliff:g> 指派給 <xliff:g id="command">%2$s</xliff:g>？</string>
     <string name="script_binding_assign">分配</string>
     <string name="script_binding_choose_gesture">選擇手勢</string>
     <string name="script_binding_type_keys">鍵入按鍵</string>
-    <string name="script_binding_type_keys_summary">就像 sf+shift+n, 或 sf+t, s</string>
+    <string name="script_binding_type_keys_summary">例如 sf+shift+n 或 sf+t, s</string>
     <string name="script_binding_bad_keys">無法使用這些按鍵。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">會新增：</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">ഇൻസ്റ്റാൾ ചെയ്യാൻ സ്‌ക്രിപ്റ്റ് ഫയലൊന്നുമില്ല.</string>
     <string name="script_import_cannot_open">ഫയൽ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
     <string name="script_import_repository">ഈ ലിങ്ക് ഒരു മുഴുവൻ സംഭരണിയിലേക്കുള്ളതാണ്. നിങ്ങൾക്ക് ആവശ്യമുള്ള സ്ക്രിപ്റ്റ് തുറക്കുക, തുടർന്ന് അതിൻ്റെ ലിങ്ക് പങ്കിടുക.</string>
-    <string name="script_import_summary">.lua ഫയൽ, അല്ലെങ്കിൽ main.lua ഉപയോഗിച്ച് .zip</string>
+    <string name="script_import_summary">.lua ഫയൽ, അല്ലെങ്കിൽ main.lua ഉള്ള .zip</string>
     <string name="scripts_category_app">ആപ്പ് സ്ക്രിപ്റ്റുകൾ</string>
     <string name="scripts_category_global">പൊതു പ്ലഗിനുകൾ</string>
     <string name="scripts_none">സ്ക്രിപ്റ്റുകളൊന്നും ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">ഇറക്കുമതി പരാജയപ്പെട്ടു. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. വിശ്വസനീയമായ സ്ക്രിപ്റ്റുകൾ മാത്രം അനുവദിക്കുക.</string>
     <string name="script_permission_screen">സ്ക്രീൻ വായിക്കുക</string>
-    <string name="script_permission_actions">ക്ലിക്ക് ചെയ്യുക, സ്ക്രോൾ ചെയ്യുക, ടൈപ്പ് ചെയ്യുക, ഫോക്കസ് നീക്കുക</string>
+    <string name="script_permission_actions">ക്ലിക്ക് ചെയ്യൽ, സ്ക്രോൾ ചെയ്യൽ, ടൈപ്പ് ചെയ്യൽ, ഫോക്കസ് നീക്കൽ</string>
     <string name="script_permission_speech">SandFlyൻ്റെ സംസാരം കേൾക്കുകയും മാറ്റുകയും ചെയ്യുക</string>
     <string name="script_permission_passwords">പാസ്‌വേഡ് ഫീൽഡുകൾ വായിക്കുക</string>
     <string name="script_permission_input">ആംഗ്യങ്ങൾ, കീകൾ, മെനു ഇനങ്ങൾ, വായന നിയന്ത്രണങ്ങൾ എന്നിവ ചേർക്കുക</string>
     <string name="script_permission_network">ഇന്റർനെറ്റ് ഉപയോഗിക്കൽ</string>
-    <string name="script_permission_clipboard">ക്ലിപ്പ്ബോർഡ് വായിച്ച് മാറ്റുക</string>
+    <string name="script_permission_clipboard">ക്ലിപ്പ്ബോർഡ് വായിക്കലും മാറ്റലും</string>
     <string name="script_permission_system">തിരിച്ചോ വീട്ടിലേക്കോ പോകുക, അറിയിപ്പുകളും ആപ്പുകളും തുറക്കുക</string>
     <string name="script_permission_notifications">സംഭാഷണ അറിയിപ്പുകൾ വായിക്കുകയും മാറ്റുകയും ചെയ്യുക</string>
     <string name="script_permission_events">ടൈപ്പിംഗ് ഉൾപ്പെടെ എല്ലാ ആപ്പിലെയും എല്ലാ പ്രവർത്തനങ്ങളും കാണുക</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">അസൈൻ ചെയ്യുക</string>
     <string name="script_binding_choose_gesture">ആംഗ്യം തിരഞ്ഞെടുക്കുക</string>
     <string name="script_binding_type_keys">കീകൾ ടൈപ്പ് ചെയ്യുക</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, അല്ലെങ്കിൽ sf+t, s പോലെ</string>
+    <string name="script_binding_type_keys_summary">sf+shift+n അല്ലെങ്കിൽ sf+t, s പോലെ</string>
     <string name="script_binding_bad_keys">ഈ കീകൾ ഉപയോഗിക്കാൻ കഴിയില്ല. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ഇത് കൂട്ടിച്ചേർക്കുന്നു:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

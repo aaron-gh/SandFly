@@ -7,7 +7,7 @@
     <string name="script_import_nothing">ස්ථාපනය කිරීමට ස්ක්‍රිප්ට් ගොනුවක් නොමැත.</string>
     <string name="script_import_cannot_open">ගොනුව විවෘත කළ නොහැකි විය.</string>
     <string name="script_import_repository">මෙම සබැඳිය සම්පූර්ණ ගබඩාවකට වේ. ඔබට අවශ්‍ය ස්ක්‍රිප්ට් එක විවෘත කරන්න, ඉන්පසු එහි සබැඳිය බෙදා ගන්න.</string>
-    <string name="script_import_summary">.lua ගොනුව, හෝ main.lua සමඟ .zip</string>
+    <string name="script_import_summary">.lua ගොනුව, හෝ main.lua සහිත .zip</string>
     <string name="scripts_category_app">යෙදුම් ස්ක්‍රිප්ට්</string>
     <string name="scripts_category_global">පොදු ප්ලගින</string>
     <string name="scripts_none">ස්ක්‍රිප්ට් ස්ථාපනය කර නැත</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">ආයාත කිරීම අසාර්ථක විය. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. විශ්වාසදායී ස්ක්‍රිප්ට් සඳහා පමණක් ඉඩ දෙන්න.</string>
     <string name="script_permission_screen">තිරය කියවීම</string>
-    <string name="script_permission_actions">ක්ලික් කරන්න, අනුචලනය කරන්න, ටයිප් කරන්න සහ අවධානය යොමු කරන්න</string>
+    <string name="script_permission_actions">ක්ලික් කිරීම, අනුචලනය, ටයිප් කිරීම සහ ෆෝකස් ගෙන යාම</string>
     <string name="script_permission_speech">SandFlyගේ කතාව අසා වෙනස් කරන්න</string>
     <string name="script_permission_passwords">මුරපද ක්ෂේත්‍ර කියවීම</string>
     <string name="script_permission_input">අභිනයන්, යතුරු, මෙනු අයිතම සහ කියවීම් පාලන එකතු කරන්න</string>
     <string name="script_permission_network">අන්තර්ජාලය භාවිතා කිරීම</string>
-    <string name="script_permission_clipboard">ක්ලිප්බෝඩ් එක කියවා වෙනස් කරන්න</string>
+    <string name="script_permission_clipboard">ක්ලිප්බෝඩය කියවීම සහ වෙනස් කිරීම</string>
     <string name="script_permission_system">ආපසු හෝ නිවසට යන්න, දැනුම්දීම් සහ යෙදුම් විවෘත කරන්න</string>
     <string name="script_permission_notifications">කථන දැනුම්දීම් කියවා වෙනස් කරන්න</string>
     <string name="script_permission_events">ටයිප් කිරීම ඇතුළුව, සෑම යෙදුමකම සියලුම ක්‍රියාකාරකම් බලන්න</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">කිසිදු යෙදුමකට <xliff:g id="address">%1$s</xliff:g> විවෘත කළ නොහැක</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> නැවත නැවත දෝෂ වලින් පසුව අක්‍රිය කර ඇත. එහි log in Scripts බලන්න.</string>
     <string name="shortcut_inspect_item">ෆෝකස් කළ අයිතමය පරීක්ෂා කරන්න</string>
-    <string name="script_inspect_no_item">කිසිම අයිතමයක් අවධානය යොමු කර නැත</string>
+    <string name="script_inspect_no_item">කිසිදු අයිතමයක ෆෝකස් නැත</string>
     <string name="script_inspect_copied">පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">හැඳුනුම්පත නැත, එබැවින් රීතිවලට එය නම් කළ නොහැක. පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">තිර ට්‍රී පිටපත් කරන්න</string>

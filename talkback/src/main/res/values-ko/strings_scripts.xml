@@ -56,9 +56,9 @@
     <string name="script_permissions_none">없음</string>
     <string name="script_settings_category">설정</string>
     <string name="script_list_filter">필터</string>
-    <string name="script_button_off">먼저 스크립트를 켜세요.</string>
+    <string name="script_button_off">먼저 스크립트를 켜세요</string>
     <string name="script_permissions_summary">하나를 끄면 필요한 부품이 중지됩니다.</string>
-    <string name="script_install_permissions_note">나중에 이 기능을 끌 수 있습니다.</string>
+    <string name="script_install_permissions_note">나중에 이 권한을 끌 수 있습니다.</string>
     <string name="script_manage_category">관리</string>
     <string name="script_move_up">더 일찍 실행</string>
     <string name="script_move_down">나중에 실행</string>
@@ -86,10 +86,10 @@
     <string name="script_homepage">홈페이지 열기</string>
     <string name="script_homepage_confirm_title">이 주소를 열까요?</string>
     <string name="script_homepage_open">열기</string>
-    <string name="script_homepage_failed">어떤 앱도 열 수 없습니다 <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g>을(를) 열 수 있는 앱이 없습니다</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 반복된 오류로 인해 꺼졌습니다. 스크립트의 로그인을 참조하세요.</string>
     <string name="shortcut_inspect_item">포커스된 항목 검사</string>
-    <string name="script_inspect_no_item">포커스가 있는 항목이 없습니다.</string>
+    <string name="script_inspect_no_item">포커스가 있는 항목이 없습니다</string>
     <string name="script_inspect_copied">복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ID가 없으므로 규칙에 따라 이름을 지정할 수 없습니다. 복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">화면 트리 복사</string>
@@ -114,12 +114,12 @@
     <string name="script_binding_restored">기본값 복원됨</string>
     <string name="script_binding_perform">제스처 또는 키 수행</string>
     <string name="script_binding_perform_summary">다음 동작 또는 SandFly 수정자와 함께 누른 키를 할당합니다.</string>
-    <string name="script_binding_perform_message">제스처를 취하거나 키를 누릅니다.</string>
+    <string name="script_binding_perform_message">제스처를 하거나 키를 누르세요.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>을(를) <xliff:g id="command">%2$s</xliff:g>에 할당할까요?</string>
     <string name="script_binding_assign">할당</string>
     <string name="script_binding_choose_gesture">동작 선택</string>
     <string name="script_binding_type_keys">키 입력</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, 또는 sf+t, 과 같은</string>
+    <string name="script_binding_type_keys_summary">예: sf+shift+n 또는 sf+t, s</string>
     <string name="script_binding_bad_keys">이 키를 사용할 수 없습니다. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">추가 항목:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

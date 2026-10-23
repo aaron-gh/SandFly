@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Tiada fail skrip untuk dipasang.</string>
     <string name="script_import_cannot_open">Fail tidak dapat dibuka.</string>
     <string name="script_import_repository">Pautan ini adalah ke seluruh repositori. Buka skrip yang anda mahu, kemudian kongsi pautannya.</string>
-    <string name="script_import_summary">fail .lua, atau .zip dengan main.lua</string>
+    <string name="script_import_summary">Fail .lua atau .zip dengan main.lua</string>
     <string name="scripts_category_app">Skrip apl</string>
     <string name="scripts_category_global">Pemalam global</string>
     <string name="scripts_none">Tiada skrip dipasang</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Import gagal. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Benarkan hanya untuk skrip yang dipercayai.</string>
     <string name="script_permission_screen">Baca skrin</string>
-    <string name="script_permission_actions">Klik, tatal, taip dan alihkan fokus</string>
+    <string name="script_permission_actions">Mengklik, menatal, menaip dan mengalihkan fokus</string>
     <string name="script_permission_speech">Dengar dan tukar ucapan SandFly</string>
     <string name="script_permission_passwords">Baca medan kata laluan</string>
     <string name="script_permission_input">Tambahkan gerak isyarat, kekunci, item menu dan kawalan bacaan</string>
     <string name="script_permission_network">Menggunakan internet</string>
-    <string name="script_permission_clipboard">Baca dan tukar papan keratan</string>
+    <string name="script_permission_clipboard">Membaca dan menukar papan keratan</string>
     <string name="script_permission_system">Balik atau ke rumah, buka pemberitahuan dan apl</string>
     <string name="script_permission_notifications">Baca dan tukar pemberitahuan yang dituturkan</string>
     <string name="script_permission_events">Lihat semua aktiviti dalam setiap apl, termasuk menaip</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">Buka laman utama</string>
     <string name="script_homepage_confirm_title">Buka alamat ini?</string>
     <string name="script_homepage_open">Buka</string>
-    <string name="script_homepage_failed">Tiada apl boleh dibuka <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Tiada apl yang boleh membuka <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dimatikan selepas kesilapan berulang. Lihat log masuknya Skrip.</string>
     <string name="shortcut_inspect_item">Periksa item yang difokuskan</string>
     <string name="script_inspect_no_item">Tiada item mempunyai fokus</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Tugaskan</string>
     <string name="script_binding_choose_gesture">Pilih gerak isyarat</string>
     <string name="script_binding_type_keys">Taip kekunci</string>
-    <string name="script_binding_type_keys_summary">Suka sf+shift+n, atau sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Seperti sf+shift+n atau sf+t, s</string>
     <string name="script_binding_bad_keys">Kekunci ini tidak boleh digunakan. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ia menambah:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

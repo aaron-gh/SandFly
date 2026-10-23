@@ -4,7 +4,7 @@
     <string name="summary_pref_scripts">SandFly қолданбаларда қалай жұмыс істейтінін өзгертіңіз</string>
     <string name="script_import">Скриптті импорттау</string>
     <string name="script_install_label">SandFly скриптін орнату</string>
-    <string name="script_import_nothing">Орнатылатын сценарий файлы жоқ.</string>
+    <string name="script_import_nothing">Орнататын скрипт файлы жоқ.</string>
     <string name="script_import_cannot_open">Файлды ашу мүмкін болмады.</string>
     <string name="script_import_repository">Бұл сілтеме бүкіл репозиторийге арналған. Қалаған сценарийді ашып, оның сілтемесін бөлісіңіз.</string>
     <string name="script_import_summary">.lua файлы немесе main.lua бар .zip</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Импорттау сәтсіз аяқталды. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Тек сенімді сценарийлерге рұқсат етіңіз.</string>
     <string name="script_permission_screen">Экранды оқу</string>
-    <string name="script_permission_actions">Фокусты басыңыз, айналдырыңыз, теріңіз және жылжытыңыз</string>
+    <string name="script_permission_actions">Басу, айналдыру, теру және фокусты жылжыту</string>
     <string name="script_permission_speech">SandFly сөзін тыңдаңыз және өзгертіңіз</string>
     <string name="script_permission_passwords">Құпия сөз өрістерін оқу</string>
     <string name="script_permission_input">Қимылдарды, пернелерді, мәзір элементтерін және оқуды басқару элементтерін қосыңыз</string>
     <string name="script_permission_network">Интернетті пайдалану</string>
-    <string name="script_permission_clipboard">Алмасу буферін оқыңыз және өзгертіңіз</string>
+    <string name="script_permission_clipboard">Алмасу буферін оқу және өзгерту</string>
     <string name="script_permission_system">Артқа немесе үйге оралыңыз, хабарландырулар мен қолданбаларды ашыңыз</string>
     <string name="script_permission_notifications">Ауызша хабарландыруларды оқу және өзгерту</string>
     <string name="script_permission_events">Әр қолданбадағы барлық әрекеттерді, соның ішінде теруді қараңыз</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">Жоқ</string>
     <string name="script_settings_category">Параметрлер</string>
     <string name="script_list_filter">Сүзгі</string>
-    <string name="script_button_off">Алдымен сценарийді қосыңыз</string>
+    <string name="script_button_off">Алдымен скриптті қосыңыз</string>
     <string name="script_permissions_summary">Біреуін өшіру қажет бөліктерді тоқтатады.</string>
     <string name="script_install_permissions_note">Оларды кейінірек өшіруге болады.</string>
     <string name="script_manage_category">Басқару</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Тағайындау</string>
     <string name="script_binding_choose_gesture">Қимылды таңдау</string>
     <string name="script_binding_type_keys">Пернелерді теру</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, немесе sf+t, с сияқты</string>
+    <string name="script_binding_type_keys_summary">Мысалы, sf+shift+n немесе sf+t, s</string>
     <string name="script_binding_bad_keys">Бұл пернелерді пайдалану мүмкін емес. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ол қосады:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

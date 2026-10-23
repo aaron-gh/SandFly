@@ -7,7 +7,7 @@
     <string name="script_import_nothing">ಸ್ಥಾಪಿಸಲು ಯಾವುದೇ ಸ್ಕ್ರಿಪ್ಟ್ ಫೈಲ್ ಇಲ್ಲ.</string>
     <string name="script_import_cannot_open">ಫೈಲ್ ತೆರೆಯಲಾಗಲಿಲ್ಲ.</string>
     <string name="script_import_repository">ಈ ಲಿಂಕ್ ಸಂಪೂರ್ಣ ಭಂಡಾರಕ್ಕೆ ಆಗಿದೆ. ನಿಮಗೆ ಬೇಕಾದ ಸ್ಕ್ರಿಪ್ಟ್ ತೆರೆಯಿರಿ, ನಂತರ ಅದರ ಲಿಂಕ್ ಅನ್ನು ಹಂಚಿಕೊಳ್ಳಿ.</string>
-    <string name="script_import_summary">.lua ಫೈಲ್, ಅಥವಾ main.lua ಜೊತೆಗೆ .zip</string>
+    <string name="script_import_summary">.lua ಫೈಲ್, ಅಥವಾ main.lua ಇರುವ .zip</string>
     <string name="scripts_category_app">ಅಪ್ಲಿಕೇಶನ್ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು</string>
     <string name="scripts_category_global">ಸಾಮಾನ್ಯ ಪ್ಲಗಿನ್‌ಗಳು</string>
     <string name="scripts_none">ಯಾವುದೇ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">ಆಮದು ವಿಫಲವಾಗಿದೆ. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. ವಿಶ್ವಾಸಾರ್ಹ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳಿಗೆ ಮಾತ್ರ ಅನುಮತಿಸಿ.</string>
     <string name="script_permission_screen">ಪರದೆಯನ್ನು ಓದುವುದು</string>
-    <string name="script_permission_actions">ಕ್ಲಿಕ್ ಮಾಡಿ, ಸ್ಕ್ರಾಲ್ ಮಾಡಿ, ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಗಮನವನ್ನು ಸರಿಸಿ</string>
+    <string name="script_permission_actions">ಕ್ಲಿಕ್ ಮಾಡುವುದು, ಸ್ಕ್ರಾಲ್ ಮಾಡುವುದು, ಟೈಪ್ ಮಾಡುವುದು ಮತ್ತು ಫೋಕಸ್ ಸರಿಸುವುದು</string>
     <string name="script_permission_speech">SandFly ಅವರ ಭಾಷಣವನ್ನು ಕೇಳಿ ಮತ್ತು ಬದಲಾಯಿಸಿ</string>
     <string name="script_permission_passwords">ಪಾಸ್‌ವರ್ಡ್ ಕ್ಷೇತ್ರಗಳನ್ನು ಓದುವುದು</string>
     <string name="script_permission_input">ಗೆಸ್ಚರ್‌ಗಳು, ಕೀಗಳು, ಮೆನು ಐಟಂಗಳು ಮತ್ತು ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ಸೇರಿಸಿ</string>
     <string name="script_permission_network">ಇಂಟರ್ನೆಟ್ ಬಳಸುವುದು</string>
-    <string name="script_permission_clipboard">ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಅನ್ನು ಓದಿ ಮತ್ತು ಬದಲಾಯಿಸಿ</string>
+    <string name="script_permission_clipboard">ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ಓದುವುದು ಮತ್ತು ಬದಲಾಯಿಸುವುದು</string>
     <string name="script_permission_system">ಹಿಂತಿರುಗಿ ಅಥವಾ ಮನೆಗೆ ಹೋಗಿ, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ</string>
     <string name="script_permission_notifications">ಮಾತನಾಡುವ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ ಮತ್ತು ಬದಲಾಯಿಸಿ</string>
     <string name="script_permission_events">ಟೈಪಿಂಗ್ ಸೇರಿದಂತೆ ಪ್ರತಿ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಎಲ್ಲಾ ಚಟುವಟಿಕೆಗಳನ್ನು ನೋಡಿ</string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">ਸਥਾਪਤ ਕਰਨ ਲਈ ਕੋਈ ਸਕ੍ਰਿਪਟ ਫਾਈਲ ਨਹੀਂ ਹੈ।</string>
     <string name="script_import_cannot_open">ਫ਼ਾਈਲ ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ।</string>
     <string name="script_import_repository">ਇਹ ਲਿੰਕ ਇੱਕ ਪੂਰੀ ਰਿਪੋਜ਼ਟਰੀ ਲਈ ਹੈ। ਉਹ ਸਕ੍ਰਿਪਟ ਖੋਲ੍ਹੋ ਜੋ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ, ਫਿਰ ਇਸਦਾ ਲਿੰਕ ਸਾਂਝਾ ਕਰੋ।</string>
-    <string name="script_import_summary">.lua ਫਾਈਲ, ਜਾਂ main.lua ਨਾਲ .zip</string>
+    <string name="script_import_summary">.lua ਫਾਈਲ, ਜਾਂ main.lua ਵਾਲੀ .zip</string>
     <string name="scripts_category_app">ਐਪ ਸਕ੍ਰਿਪਟਾਂ</string>
     <string name="scripts_category_global">ਗਲੋਬਲ ਪਲੱਗਇਨ</string>
     <string name="scripts_none">ਕੋਈ ਸਕ੍ਰਿਪਟਾਂ ਸਥਾਪਤ ਨਹੀਂ ਹਨ</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">ਆਯਾਤ ਅਸਫਲ ਰਿਹਾ। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। ਸਿਰਫ਼ ਭਰੋਸੇਯੋਗ ਸਕ੍ਰਿਪਟਾਂ ਲਈ ਇਜਾਜ਼ਤ ਦਿਓ।</string>
     <string name="script_permission_screen">ਸਕਰੀਨ ਪੜ੍ਹਨਾ</string>
-    <string name="script_permission_actions">ਕਲਿਕ ਕਰੋ, ਸਕ੍ਰੋਲ ਕਰੋ, ਟਾਈਪ ਕਰੋ ਅਤੇ ਫੋਕਸ ਨੂੰ ਮੂਵ ਕਰੋ</string>
+    <string name="script_permission_actions">ਕਲਿੱਕ ਕਰਨਾ, ਸਕ੍ਰੋਲ ਕਰਨਾ, ਟਾਈਪ ਕਰਨਾ ਅਤੇ ਫੋਕਸ ਹਿਲਾਉਣਾ</string>
     <string name="script_permission_speech">SandFly ਦੇ ਭਾਸ਼ਣ ਨੂੰ ਸੁਣੋ ਅਤੇ ਬਦਲੋ</string>
     <string name="script_permission_passwords">ਪਾਸਵਰਡ ਖੇਤਰ ਪੜ੍ਹਨਾ</string>
     <string name="script_permission_input">ਸੰਕੇਤ, ਕੁੰਜੀਆਂ, ਮੀਨੂ ਆਈਟਮਾਂ ਅਤੇ ਰੀਡਿੰਗ ਨਿਯੰਤਰਣ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="script_permission_network">ਇੰਟਰਨੈੱਟ ਦੀ ਵਰਤੋਂ ਕਰਨਾ</string>
-    <string name="script_permission_clipboard">ਕਲਿੱਪਬੋਰਡ ਪੜ੍ਹੋ ਅਤੇ ਬਦਲੋ</string>
+    <string name="script_permission_clipboard">ਕਲਿੱਪਬੋਰਡ ਪੜ੍ਹਨਾ ਅਤੇ ਬਦਲਣਾ</string>
     <string name="script_permission_system">ਵਾਪਸ ਜਾਂ ਘਰ ਜਾਓ, ਸੂਚਨਾਵਾਂ ਅਤੇ ਐਪਸ ਖੋਲ੍ਹੋ</string>
     <string name="script_permission_notifications">ਬੋਲੀਆਂ ਗਈਆਂ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ ਅਤੇ ਬਦਲੋ</string>
     <string name="script_permission_events">ਟਾਈਪਿੰਗ ਸਮੇਤ ਹਰ ਐਪ ਵਿੱਚ ਸਾਰੀ ਗਤੀਵਿਧੀ ਦੇਖੋ</string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Nuk ka asnjë skedar skripti për të instaluar.</string>
     <string name="script_import_cannot_open">Skedari nuk mund të hapej.</string>
     <string name="script_import_repository">Kjo lidhje është në një depo të tërë. Hapni skriptin që dëshironi, më pas ndajeni lidhjen e tij.</string>
-    <string name="script_import_summary">skedar .lua, ose .zip me main.lua</string>
+    <string name="script_import_summary">Skedar .lua ose .zip me main.lua</string>
     <string name="scripts_category_app">Skriptet e aplikacioneve</string>
     <string name="scripts_category_global">Shtojcat globale</string>
     <string name="scripts_none">Asnjë skript i instaluar</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Importi dështoi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Lejo vetëm skriptet e besuara.</string>
     <string name="script_permission_screen">Të lexojë ekranin</string>
-    <string name="script_permission_actions">Klikoni, lëvizni, shkruani dhe lëvizni fokusin</string>
+    <string name="script_permission_actions">Klikim, lëvizje, shkrim dhe zhvendosje e fokusit</string>
     <string name="script_permission_speech">Dëgjoni dhe ndryshoni fjalimin e SandFly</string>
     <string name="script_permission_passwords">Të lexojë fushat e fjalëkalimit</string>
     <string name="script_permission_input">Shtoni gjestet, tastet, artikujt e menysë dhe kontrollet e leximit</string>
     <string name="script_permission_network">Të përdorë internetin</string>
-    <string name="script_permission_clipboard">Lexoni dhe ndryshoni clipboard</string>
+    <string name="script_permission_clipboard">Leximi dhe ndryshimi i kujtesës së fragmenteve</string>
     <string name="script_permission_system">Kthehu prapa ose në shtëpi, hap njoftimet dhe aplikacionet</string>
     <string name="script_permission_notifications">Lexoni dhe ndryshoni njoftimet e folura</string>
     <string name="script_permission_events">Shikoni të gjithë aktivitetin në çdo aplikacion, duke përfshirë shkrimin</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">Asnjë</string>
     <string name="script_settings_category">Cilësimet</string>
     <string name="script_list_filter">Filtro</string>
-    <string name="script_button_off">Fillimisht ndizni skenarin</string>
+    <string name="script_button_off">Fillimisht aktivizo skriptin</string>
     <string name="script_permissions_summary">Fikja e njërës ndalon pjesët që kanë nevojë për të.</string>
     <string name="script_install_permissions_note">Mund t\'i çaktivizoni më vonë.</string>
     <string name="script_manage_category">Menaxhimi</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Ekzekuto më vonë</string>
     <string name="script_order_summary">Porosit për skriptet që ndryshojnë të njëjtin fjalim. Skriptet e aplikacioneve ekzekutohen së pari.</string>
     <string name="script_log">Regjistri</string>
-    <string name="script_log_summary">Prodhimi dhe gabimet që nga fillimi SandFly</string>
+    <string name="script_log_summary">Dalja dhe gabimet që nga nisja e SandFly</string>
     <string name="script_clear_storage">Pastro të dhënat e ruajtura</string>
     <string name="script_storage_cleared">Të dhënat e ruajtura u pastruan</string>
     <string name="script_remove">Hiq</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">Hap faqen kryesore</string>
     <string name="script_homepage_confirm_title">Të hapet kjo adresë?</string>
     <string name="script_homepage_open">Hap</string>
-    <string name="script_homepage_failed">Asnjë aplikacion nuk mund të hapet <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Asnjë aplikacion nuk mund të hapë <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> fiket pas gabimeve të përsëritura. Shih regjistrin e tij në Skriptet.</string>
     <string name="shortcut_inspect_item">Inspekto artikullin e fokusuar</string>
     <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Cakto</string>
     <string name="script_binding_choose_gesture">Zgjidh gjestin</string>
     <string name="script_binding_type_keys">Shkruaj tastet</string>
-    <string name="script_binding_type_keys_summary">Pëlqejeni sf+shift+n, ose sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Si sf+shift+n ose sf+t, s</string>
     <string name="script_binding_bad_keys">Këta tastë nuk mund të përdoren. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ai shton:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

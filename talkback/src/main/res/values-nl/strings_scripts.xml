@@ -4,7 +4,7 @@
     <string name="summary_pref_scripts">Wijzig hoe SandFly werkt in apps</string>
     <string name="script_import">Script importeren</string>
     <string name="script_install_label">SandFly-script installeren</string>
-    <string name="script_import_nothing">Er hoeft geen scriptbestand te worden geïnstalleerd.</string>
+    <string name="script_import_nothing">Er is geen scriptbestand om te installeren.</string>
     <string name="script_import_cannot_open">Het bestand kon niet worden geopend.</string>
     <string name="script_import_repository">Deze link verwijst naar een hele repository. Open het gewenste script en deel de link ervan.</string>
     <string name="script_import_summary">.lua-bestand, of .zip met main.lua</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Importeren is mislukt. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Alleen toegestaan ​​voor vertrouwde scripts.</string>
     <string name="script_permission_screen">Het scherm lezen</string>
-    <string name="script_permission_actions">Klik, scroll, typ en verplaats de focus</string>
+    <string name="script_permission_actions">Klikken, scrollen, typen en de focus verplaatsen</string>
     <string name="script_permission_speech">Hoor en verander de toespraak van SandFly</string>
     <string name="script_permission_passwords">Wachtwoordvelden lezen</string>
     <string name="script_permission_input">Voeg gebaren, toetsen, menu-items en leesbedieningen toe</string>
     <string name="script_permission_network">Internet gebruiken</string>
-    <string name="script_permission_clipboard">Lees en wijzig het klembord</string>
+    <string name="script_permission_clipboard">Het klembord lezen en wijzigen</string>
     <string name="script_permission_system">Ga terug of naar huis, open meldingen en apps</string>
     <string name="script_permission_notifications">Gesproken meldingen lezen en wijzigen</string>
     <string name="script_permission_events">Bekijk alle activiteiten in elke app, inclusief typen</string>

@@ -4,10 +4,10 @@
     <string name="summary_pref_scripts">Altere a forma como SandFly funciona em aplicativos</string>
     <string name="script_import">Importar script</string>
     <string name="script_install_label">Instalar script do SandFly</string>
-    <string name="script_import_nothing">Não há arquivo de script para instalar.</string>
-    <string name="script_import_cannot_open">O arquivo não pôde ser aberto.</string>
+    <string name="script_import_nothing">Não há nenhum ficheiro de script para instalar.</string>
+    <string name="script_import_cannot_open">Não foi possível abrir o ficheiro.</string>
     <string name="script_import_repository">Este link é para um repositório completo. Abra o script desejado e compartilhe seu link.</string>
-    <string name="script_import_summary">Arquivo .lua ou .zip com main.lua</string>
+    <string name="script_import_summary">Ficheiro .lua ou .zip com main.lua</string>
     <string name="scripts_category_app">Scripts de apps</string>
     <string name="scripts_category_global">Plug-ins globais</string>
     <string name="scripts_none">Nenhum script instalado</string>
@@ -39,7 +39,7 @@
     <string name="script_import_failed">Falha na importação. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permitir apenas scripts confiáveis.</string>
     <string name="script_permission_screen">Ler o ecrã</string>
-    <string name="script_permission_actions">Clique, role, digite e mova o foco</string>
+    <string name="script_permission_actions">Clicar, deslocar, escrever e mover o foco</string>
     <string name="script_permission_speech">Ouça e mude o discurso de SandFly</string>
     <string name="script_permission_passwords">Ler campos de palavra-passe</string>
     <string name="script_permission_input">Adicione gestos, teclas, itens de menu e controles de leitura</string>
@@ -58,13 +58,13 @@
     <string name="script_list_filter">Filtro</string>
     <string name="script_button_off">Ative o script primeiro</string>
     <string name="script_permissions_summary">Desligar um interrompe as peças que precisam dele.</string>
-    <string name="script_install_permissions_note">Você pode desativá-los mais tarde.</string>
+    <string name="script_install_permissions_note">Pode desativá-las mais tarde.</string>
     <string name="script_manage_category">Gestão</string>
     <string name="script_move_up">Executar mais cedo</string>
     <string name="script_move_down">Executar mais tarde</string>
     <string name="script_order_summary">Peça scripts que alterem o mesmo discurso. Os scripts do aplicativo são executados primeiro.</string>
     <string name="script_log">Registo</string>
-    <string name="script_log_summary">Saída e erros desde o início de SandFly</string>
+    <string name="script_log_summary">Saída e erros desde que o SandFly foi iniciado</string>
     <string name="script_clear_storage">Limpar dados armazenados</string>
     <string name="script_storage_cleared">Dados armazenados apagados</string>
     <string name="script_remove">Remover</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">Abrir página inicial</string>
     <string name="script_homepage_confirm_title">Abrir este endereço?</string>
     <string name="script_homepage_open">Abrir</string>
-    <string name="script_homepage_failed">Nenhum aplicativo pode abrir <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Nenhuma aplicação consegue abrir <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> desativado após erros repetidos. Veja seu log em Scripts.</string>
     <string name="shortcut_inspect_item">Inspecionar item em foco</string>
     <string name="script_inspect_no_item">Nenhum item tem foco</string>
@@ -114,7 +114,7 @@
     <string name="script_binding_restored">Predefinições repostas</string>
     <string name="script_binding_perform">Faça o gesto ou prima as teclas</string>
     <string name="script_binding_perform_summary">Atribua o próximo gesto ou teclas pressionadas com o modificador SandFly</string>
-    <string name="script_binding_perform_message">Faça o gesto ou pressione as teclas.</string>
+    <string name="script_binding_perform_message">Faça o gesto ou prima as teclas.</string>
     <string name="script_binding_assign_title">Atribuir <xliff:g id="binding">%1$s</xliff:g> a <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuir</string>
     <string name="script_binding_choose_gesture">Escolher gesto</string>

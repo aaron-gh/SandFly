@@ -39,7 +39,7 @@
     <string name="script_import_failed">Importazione non riuscita. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Consenti solo per script attendibili.</string>
     <string name="script_permission_screen">Leggere lo schermo</string>
-    <string name="script_permission_actions">Fare clic, scorrere, digitare e spostare la selezione</string>
+    <string name="script_permission_actions">Fare clic, scorrere, digitare e spostare lo stato attivo</string>
     <string name="script_permission_speech">Leggere e modificare la sintesi vocale di SandFly</string>
     <string name="script_permission_passwords">Leggere i campi password</string>
     <string name="script_permission_input">Aggiungere gesti, tasti, voci di menu e controlli di lettura</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">Nessuna app può aprire <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> disattivato dopo errori ripetuti. Consulta il suo log in Script.</string>
     <string name="shortcut_inspect_item">Esamina elemento selezionato</string>
-    <string name="script_inspect_no_item">Nessun elemento selezionato</string>
+    <string name="script_inspect_no_item">Nessun elemento attivo</string>
     <string name="script_inspect_copied">Copiato. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nessun ID, quindi le regole non possono identificarlo. Copiato. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Copia albero della schermata</string>

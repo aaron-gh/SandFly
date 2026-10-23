@@ -7,7 +7,7 @@
     <string name="script_import_nothing">स्थापना गर्न कुनै स्क्रिप्ट फाइल छैन।</string>
     <string name="script_import_cannot_open">फाइल खोल्न सकिएन।</string>
     <string name="script_import_repository">यो लिङ्क सम्पूर्ण भण्डारमा छ। तपाईले चाहानु भएको स्क्रिप्ट खोल्नुहोस्, त्यसपछि यसको लिङ्क साझा गर्नुहोस्।</string>
-    <string name="script_import_summary">.lua फाइल, वा main.lua सँग zip</string>
+    <string name="script_import_summary">.lua फाइल, वा main.lua भएको .zip</string>
     <string name="scripts_category_app">एप स्क्रिप्टहरू</string>
     <string name="scripts_category_global">ग्लोबल प्लगइनहरू</string>
     <string name="scripts_none">कुनै स्क्रिप्ट स्थापना गरिएको छैन</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">आयात असफल भयो। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। विश्वसनीय स्क्रिप्टहरूको लागि मात्र अनुमति दिनुहोस्।</string>
     <string name="script_permission_screen">स्क्रिन पढ्ने</string>
-    <string name="script_permission_actions">क्लिक गर्नुहोस्, स्क्रोल गर्नुहोस्, टाइप गर्नुहोस् र फोकस सार्नुहोस्</string>
+    <string name="script_permission_actions">क्लिक गर्ने, स्क्रोल गर्ने, टाइप गर्ने र फोकस सार्ने</string>
     <string name="script_permission_speech">SandFly को बोली सुन्नुहोस् र परिवर्तन गर्नुहोस्</string>
     <string name="script_permission_passwords">पासवर्ड फिल्डहरू पढ्ने</string>
     <string name="script_permission_input">इशाराहरू, कुञ्जीहरू, मेनु वस्तुहरू र पढ्ने नियन्त्रणहरू थप्नुहोस्</string>
     <string name="script_permission_network">इन्टरनेट प्रयोग गर्ने</string>
-    <string name="script_permission_clipboard">क्लिपबोर्ड पढ्नुहोस् र परिवर्तन गर्नुहोस्</string>
+    <string name="script_permission_clipboard">क्लिपबोर्ड पढ्ने र परिवर्तन गर्ने</string>
     <string name="script_permission_system">फर्कनुहोस् वा घर जानुहोस्, सूचनाहरू र एपहरू खोल्नुहोस्</string>
     <string name="script_permission_notifications">पढ्नुहोस् र बोलिएका सूचनाहरू परिवर्तन गर्नुहोस्</string>
     <string name="script_permission_events">टाइपिङ सहित हरेक एपमा सबै गतिविधि हेर्नुहोस्</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">होमपेज खोल्नुहोस्</string>
     <string name="script_homepage_confirm_title">यो ठेगाना खोल्ने हो?</string>
     <string name="script_homepage_open">खोल्नुहोस्</string>
-    <string name="script_homepage_failed">कुनै पनि एप खोल्न सक्दैन <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> खोल्न सक्ने कुनै एप छैन</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> बारम्बार त्रुटिहरू पछि बन्द गरियो। स्क्रिप्टमा यसको लग हेर्नुहोस्।</string>
     <string name="shortcut_inspect_item">फोकस गरिएको वस्तु निरीक्षण गर्नुहोस्</string>
     <string name="script_inspect_no_item">कुनै पनि वस्तुमा फोकस छैन</string>

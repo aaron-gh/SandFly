@@ -7,7 +7,7 @@
     <string name="script_import_nothing">O\'rnatish uchun skript fayli yo\'q.</string>
     <string name="script_import_cannot_open">Faylni ochib boʻlmadi.</string>
     <string name="script_import_repository">Bu havola butun omborga tegishli. O\'zingiz xohlagan skriptni oching, keyin uning havolasini baham ko\'ring.</string>
-    <string name="script_import_summary">.lua fayli yoki main.lua bilan .zip</string>
+    <string name="script_import_summary">.lua fayli yoki main.lua bor .zip</string>
     <string name="scripts_category_app">Ilova skriptlari</string>
     <string name="scripts_category_global">Global plaginlar</string>
     <string name="scripts_none">Hech qanday skript o\'rnatilmagan</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Import amalga oshmadi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Faqat ishonchli skriptlar uchun ruxsat bering.</string>
     <string name="script_permission_screen">Ekranni oʻqish</string>
-    <string name="script_permission_actions">Fokusni bosing, aylantiring, yozing va ko\'chiring</string>
+    <string name="script_permission_actions">Bosish, aylantirish, yozish va fokusni koʻchirish</string>
     <string name="script_permission_speech">SandFly nutqini tinglang va o\'zgartiring</string>
     <string name="script_permission_passwords">Parol maydonlarini oʻqish</string>
     <string name="script_permission_input">Imo-ishoralar, tugmalar, menyu elementlari va o‘qishni boshqarish elementlarini qo‘shing</string>
     <string name="script_permission_network">Internetdan foydalanish</string>
-    <string name="script_permission_clipboard">Buferni o\'qing va o\'zgartiring</string>
+    <string name="script_permission_clipboard">Buferni oʻqish va oʻzgartirish</string>
     <string name="script_permission_system">Orqaga yoki uyga qayting, bildirishnomalar va ilovalarni oching</string>
     <string name="script_permission_notifications">Og\'zaki bildirishnomalarni o\'qing va o\'zgartiring</string>
     <string name="script_permission_events">Har bir ilovadagi barcha harakatlarni, jumladan yozishni koʻring</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">Bosh sahifani ochish</string>
     <string name="script_homepage_confirm_title">Bu manzil ochilsinmi?</string>
     <string name="script_homepage_open">Ochish</string>
-    <string name="script_homepage_failed">Hech bir ilova ochilmaydi <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> ni ocha oladigan ilova yoʻq</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> takroriy xatolardan keyin o\'chirildi. Skriptlarda uning jurnaliga qarang.</string>
     <string name="shortcut_inspect_item">Fokusdagi elementni tekshirish</string>
     <string name="script_inspect_no_item">Hech bir elementda fokus yoʻq</string>

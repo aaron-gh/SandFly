@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Ni skriptne datoteke za namestitev.</string>
     <string name="script_import_cannot_open">Datoteke ni bilo mogoče odpreti.</string>
     <string name="script_import_repository">Ta povezava vodi do celotnega repozitorija. Odprite želeni skript in nato delite njegovo povezavo.</string>
-    <string name="script_import_summary">.lua ali .zip z main.lua</string>
+    <string name="script_import_summary">Datoteka .lua ali .zip z main.lua</string>
     <string name="scripts_category_app">Skripti aplikacij</string>
     <string name="scripts_category_global">Globalni vtičniki</string>
     <string name="scripts_none">Ni nameščenih skriptov</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Uvoz ni uspel. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Dovoli samo za zaupanja vredne skripte.</string>
     <string name="script_permission_screen">Brati zaslon</string>
-    <string name="script_permission_actions">Kliknite, pomaknite se, vnesite in premaknite fokus</string>
+    <string name="script_permission_actions">Klikanje, pomikanje, tipkanje in premikanje fokusa</string>
     <string name="script_permission_speech">Poslušajte in spremenite govor SandFly</string>
     <string name="script_permission_passwords">Brati polja za geslo</string>
     <string name="script_permission_input">Dodajte poteze, tipke, elemente menija in kontrolnike za branje</string>
     <string name="script_permission_network">Uporabljati internet</string>
-    <string name="script_permission_clipboard">Preberite in spremenite odložišče</string>
+    <string name="script_permission_clipboard">Branje in spreminjanje odložišča</string>
     <string name="script_permission_system">Pojdite nazaj ali domov, odprite obvestila in aplikacije</string>
     <string name="script_permission_notifications">Branje in spreminjanje govorjenih obvestil</string>
     <string name="script_permission_events">Oglejte si vso dejavnost v vsaki aplikaciji, vključno s tipkanjem</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Zaženi pozneje</string>
     <string name="script_order_summary">Naročilo za skripte, ki spremenijo isti govor. Najprej se zaženejo skripti aplikacije.</string>
     <string name="script_log">Dnevnik</string>
-    <string name="script_log_summary">Izhod in napake od začetka SandFly</string>
+    <string name="script_log_summary">Izhod in napake od zagona SandFly</string>
     <string name="script_clear_storage">Počisti shranjene podatke</string>
     <string name="script_storage_cleared">Shranjeni podatki so izbrisani</string>
     <string name="script_remove">Odstrani</string>

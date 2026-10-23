@@ -4,7 +4,7 @@
     <string name="summary_pref_scripts">Badilisha jinsi SandFly inavyofanya kazi katika programu</string>
     <string name="script_import">Ingiza skripti</string>
     <string name="script_install_label">Sakinisha skripti ya SandFly</string>
-    <string name="script_import_nothing">Hakuna faili ya hati ya kusakinisha.</string>
+    <string name="script_import_nothing">Hakuna faili ya skripti ya kusakinisha.</string>
     <string name="script_import_cannot_open">Faili haikuweza kufunguliwa.</string>
     <string name="script_import_repository">Kiungo hiki ni cha hazina nzima. Fungua hati unayotaka, kisha ushiriki kiungo chake.</string>
     <string name="script_import_summary">.lua faili, au .zip iliyo na main.lua</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Imeshindwa kuleta. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Ruhusu hati zinazoaminika pekee.</string>
     <string name="script_permission_screen">Kusoma skrini</string>
-    <string name="script_permission_actions">Bofya, tembeza, chapa na usogeze umakini</string>
+    <string name="script_permission_actions">Kubofya, kusogeza, kuandika na kuhamisha fokasi</string>
     <string name="script_permission_speech">Sikia na ubadilishe hotuba ya SandFly</string>
     <string name="script_permission_passwords">Kusoma sehemu za nenosiri</string>
     <string name="script_permission_input">Ongeza ishara, vitufe, vipengee vya menyu na vidhibiti vya kusoma</string>
     <string name="script_permission_network">Kutumia mtandao</string>
-    <string name="script_permission_clipboard">Soma na ubadilishe ubao wa kunakili</string>
+    <string name="script_permission_clipboard">Kusoma na kubadilisha ubao wa kunakili</string>
     <string name="script_permission_system">Rudi nyuma au nyumbani, fungua arifa na programu</string>
     <string name="script_permission_notifications">Soma na ubadilishe arifa zinazotamkwa</string>
     <string name="script_permission_events">Angalia shughuli zote katika kila programu, ikiwa ni pamoja na kuandika</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">Hamna</string>
     <string name="script_settings_category">Mipangilio</string>
     <string name="script_list_filter">Chuja</string>
-    <string name="script_button_off">Washa hati kwanza</string>
+    <string name="script_button_off">Washa skripti kwanza</string>
     <string name="script_permissions_summary">Kuzima moja husimamisha sehemu zinazohitaji.</string>
     <string name="script_install_permissions_note">Unaweza kuzima hizi baadaye.</string>
     <string name="script_manage_category">Udhibiti</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Endesha baadaye</string>
     <string name="script_order_summary">Agiza kwa hati zinazobadilisha usemi sawa. Hati za programu huendeshwa kwanza.</string>
     <string name="script_log">Kumbukumbu</string>
-    <string name="script_log_summary">Pato na hitilafu tangu SandFly ianze</string>
+    <string name="script_log_summary">Matokeo na hitilafu tangu SandFly ianze</string>
     <string name="script_clear_storage">Futa data iliyohifadhiwa</string>
     <string name="script_storage_cleared">Data iliyohifadhiwa imefutwa</string>
     <string name="script_remove">Ondoa</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">Hakuna programu inayoweza kufungua <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> imezimwa baada ya hitilafu zinazorudiwa. Tazama kumbukumbu yake katika Hati.</string>
     <string name="shortcut_inspect_item">Kagua kipengee kilicholengwa</string>
-    <string name="script_inspect_no_item">Hakuna kipengee kinachozingatia</string>
+    <string name="script_inspect_no_item">Hakuna kipengee chenye fokasi</string>
     <string name="script_inspect_copied">Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Hakuna kitambulisho, kwa hivyo sheria haziwezi kuipa jina. Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Nakili mti wa skrini</string>
@@ -114,12 +114,12 @@
     <string name="script_binding_restored">Chaguo-msingi zimerejeshwa</string>
     <string name="script_binding_perform">Fanya ishara au bonyeza vitufe</string>
     <string name="script_binding_perform_summary">Agiza ishara inayofuata, au vitufe vilivyobonyezwa na kirekebishaji SandFly</string>
-    <string name="script_binding_perform_message">Tengeneza ishara au bonyeza vitufe.</string>
+    <string name="script_binding_perform_message">Fanya ishara au bonyeza vitufe.</string>
     <string name="script_binding_assign_title">Je, ungependa kukabidhi <xliff:g id="binding">%1$s</xliff:g> kwa <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Weka</string>
     <string name="script_binding_choose_gesture">Chagua ishara</string>
     <string name="script_binding_type_keys">Andika vitufe</string>
-    <string name="script_binding_type_keys_summary">Penda sf+shift+n, au sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Kama sf+shift+n au sf+t, s</string>
     <string name="script_binding_bad_keys">Vitufe hivi haviwezi kutumika. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Inaongeza:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

@@ -39,12 +39,12 @@
     <string name="script_import_failed">Importuoti nepavyko. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Leisti tik patikimus scenarijus.</string>
     <string name="script_permission_screen">Skaityti ekraną</string>
-    <string name="script_permission_actions">Spustelėkite, slinkite, įveskite ir perkelkite fokusą</string>
+    <string name="script_permission_actions">Spustelėti, slinkti, įvesti ir perkelti fokusą</string>
     <string name="script_permission_speech">Išgirskite ir pakeiskite SandFly kalbą</string>
     <string name="script_permission_passwords">Skaityti slaptažodžių laukus</string>
     <string name="script_permission_input">Pridėkite gestus, klavišus, meniu elementus ir skaitymo valdiklius</string>
     <string name="script_permission_network">Naudoti internetą</string>
-    <string name="script_permission_clipboard">Skaitykite ir pakeiskite mainų sritį</string>
+    <string name="script_permission_clipboard">Skaityti ir keisti iškarpinę</string>
     <string name="script_permission_system">Grįžkite arba namo, atidarykite pranešimus ir programas</string>
     <string name="script_permission_notifications">Skaityti ir keisti sakytinius pranešimus</string>
     <string name="script_permission_events">Peržiūrėkite visą veiklą kiekvienoje programoje, įskaitant teksto vedimą</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Paleisti vėliau</string>
     <string name="script_order_summary">Užsakyti scenarijus, kurie keičia tą pačią kalbą. Pirmiausia paleidžiami programų scenarijai.</string>
     <string name="script_log">Žurnalas</string>
-    <string name="script_log_summary">Išvestis ir klaidos nuo SandFly pradžios</string>
+    <string name="script_log_summary">Išvestis ir klaidos nuo SandFly paleidimo</string>
     <string name="script_clear_storage">Išvalyti saugomus duomenis</string>
     <string name="script_storage_cleared">Išsaugoti duomenys išvalyti</string>
     <string name="script_remove">Pašalinti</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Priskirti</string>
     <string name="script_binding_choose_gesture">Pasirinkti gestą</string>
     <string name="script_binding_type_keys">Įvesti klavišus</string>
-    <string name="script_binding_type_keys_summary">Patinka sf+shift+n, arba sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Pvz., sf+shift+n arba sf+t, s</string>
     <string name="script_binding_bad_keys">Šių klavišų naudoti negalima. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Prideda:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

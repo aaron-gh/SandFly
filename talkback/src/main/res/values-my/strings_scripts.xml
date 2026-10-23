@@ -4,10 +4,10 @@
     <string name="summary_pref_scripts">အက်ပ်များတွင် SandFly အလုပ်လုပ်ပုံကို ပြောင်းလဲပါ</string>
     <string name="script_import">စခရစ်ကို တင်သွင်းရန်</string>
     <string name="script_install_label">SandFly စခရစ် ထည့်သွင်းရန်</string>
-    <string name="script_import_nothing">ထည့်သွင်းရန် script ဖိုင်မရှိပါ။</string>
+    <string name="script_import_nothing">ထည့်သွင်းရန် စခရစ်ဖိုင် မရှိပါ။</string>
     <string name="script_import_cannot_open">ဖိုင်ကို ဖွင့်၍မရပါ။</string>
     <string name="script_import_repository">ဤလင့်ခ်သည် သိုလှောင်ရုံတစ်ခုလုံးသို့ဖြစ်သည်။ သင်အလိုရှိသော ဇာတ်ညွှန်းကိုဖွင့်ပါ၊ ထို့နောက် ၎င်း၏လင့်ခ်ကို မျှဝေပါ။</string>
-    <string name="script_import_summary">.lua ဖိုင် သို့မဟုတ် main.lua ဖြင့် .zip</string>
+    <string name="script_import_summary">.lua ဖိုင် သို့မဟုတ် main.lua ပါသော .zip</string>
     <string name="scripts_category_app">အက်ပ် စခရစ်များ</string>
     <string name="scripts_category_global">အထွေထွေ ပလပ်အင်များ</string>
     <string name="scripts_none">စခရစ်များ ထည့်သွင်းထားခြင်းမရှိပါ</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">တင်သွင်းမှု မအောင်မြင်ပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>။ ယုံကြည်ရသော ဇာတ်ညွှန်းများအတွက်သာ ခွင့်ပြုပါ။</string>
     <string name="script_permission_screen">မျက်နှာပြင်ကို ဖတ်ခြင်း</string>
-    <string name="script_permission_actions">နှိပ်ပါ၊ လှိမ့်ပါ၊ ရိုက်ပြီး အာရုံကို ရွှေ့ပါ</string>
+    <string name="script_permission_actions">နှိပ်ခြင်း၊ လှိမ့်ခြင်း၊ စာရိုက်ခြင်းနှင့် ဖိုကပ်စ် ရွှေ့ခြင်း</string>
     <string name="script_permission_speech">SandFly ၏မိန့်ခွန်းကို နားထောင်ပြီး ပြောင်းလဲပါ</string>
     <string name="script_permission_passwords">စကားဝှက်အကွက်များကို ဖတ်ခြင်း</string>
     <string name="script_permission_input">လက်ဟန်ခြေဟန်များ၊ သော့များ၊ မီနူးအကြောင်းအရာများနှင့် စာဖတ်ခြင်းထိန်းချုပ်မှုများကို ထည့်ပါ</string>
     <string name="script_permission_network">အင်တာနက် သုံးခြင်း</string>
-    <string name="script_permission_clipboard">ကလစ်ဘုတ်ကိုဖတ်ပြီး ပြောင်းလဲပါ</string>
+    <string name="script_permission_clipboard">ကလစ်ဘုတ်ကို ဖတ်ခြင်းနှင့် ပြောင်းခြင်း</string>
     <string name="script_permission_system">အိမ်ပြန်သွားပါ၊ အကြောင်းကြားချက်များနှင့် အက်ပ်များကိုဖွင့်ပါ</string>
     <string name="script_permission_notifications">စကားပြောသတိပေးချက်များကို ဖတ်ပြီး ပြောင်းလဲပါ</string>
     <string name="script_permission_events">စာရိုက်ခြင်းအပါအဝင် အက်ပ်တိုင်းတွင် လှုပ်ရှားမှုအားလုံးကို ကြည့်ပါ</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">မရှိ</string>
     <string name="script_settings_category">ဆက်တင်များ</string>
     <string name="script_list_filter">စစ်ထုတ်ရန်</string>
-    <string name="script_button_off">ဇာတ်ညွှန်းကို ဦးစွာဖွင့်ပါ</string>
+    <string name="script_button_off">စခရစ်ကို ဦးစွာ ဖွင့်ပါ</string>
     <string name="script_permissions_summary">တစ်ချက်ပိတ်လိုက်ခြင်းဖြင့် ၎င်းလိုအပ်သော အစိတ်အပိုင်းများကို ရပ်တန့်စေသည်။</string>
     <string name="script_install_permissions_note">ဒါတွေကို နောက်မှ ပိတ်နိုင်ပါတယ်။</string>
     <string name="script_manage_category">စီမံခန့်ခွဲမှု</string>
@@ -86,10 +86,10 @@
     <string name="script_homepage">ပင်မစာမျက်နှာ ဖွင့်ရန်</string>
     <string name="script_homepage_confirm_title">ဤလိပ်စာကိုဖွင့်မလား။</string>
     <string name="script_homepage_open">ဖွင့်ရန်</string>
-    <string name="script_homepage_failed">မည်သည့်အက်ပ်မှ ဖွင့်၍မရပါ <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> ကို ဖွင့်နိုင်သော အက်ပ် မရှိပါ</string>
     <string name="script_turned_off">ထပ်ခါတလဲလဲ အမှားများပြီးနောက် <xliff:g id="name">%1$s</xliff:g> ပိတ်ထားသည်။ ၎င်း၏ log in Scripts ကိုကြည့်ပါ။</string>
     <string name="shortcut_inspect_item">ဖိုကပ်စ်ရှိ အရာကို စစ်ဆေးရန်</string>
-    <string name="script_inspect_no_item">မည်သည့်အရာမျှ အာရုံမစိုက်ပါ</string>
+    <string name="script_inspect_no_item">ဖိုကပ်စ်ရှိသော အရာ မရှိပါ</string>
     <string name="script_inspect_copied">ကူးယူပြီးပါပြီ။ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ID မရှိတဲ့အတွက် စည်းကမ်းတွေက နာမည်ပေးလို့မရပါဘူး။ ကူးယူသည်။ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">မျက်နှာပြင် ဖွဲ့စည်းပုံကို ကူးယူရန်</string>

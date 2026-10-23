@@ -4,10 +4,10 @@
     <string name="summary_pref_scripts">SandFly\'nin uygulamalarda çalışma şeklini değiştirin</string>
     <string name="script_import">Komut dosyasını içe aktar</string>
     <string name="script_install_label">SandFly betiğini yükle</string>
-    <string name="script_import_nothing">Yüklenecek bir komut dosyası yok.</string>
+    <string name="script_import_nothing">Yüklenecek bir betik dosyası yok.</string>
     <string name="script_import_cannot_open">Dosya açılamadı.</string>
     <string name="script_import_repository">Bu bağlantı tüm bir depoya yöneliktir. İstediğiniz betiği açın ve bağlantısını paylaşın.</string>
-    <string name="script_import_summary">.lua dosyası veya main.lua ile .zip</string>
+    <string name="script_import_summary">.lua dosyası veya main.lua içeren .zip</string>
     <string name="scripts_category_app">Uygulama komut dosyaları</string>
     <string name="scripts_category_global">Genel eklentiler</string>
     <string name="scripts_none">Hiçbir komut dosyası yüklü değil</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">İçe aktarma başarısız oldu. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Yalnızca güvenilir komut dosyalarına izin ver.</string>
     <string name="script_permission_screen">Ekranı okumak</string>
-    <string name="script_permission_actions">Tıklayın, kaydırın, yazın ve odağı taşıyın</string>
+    <string name="script_permission_actions">Tıklama, kaydırma, yazma ve odağı taşıma</string>
     <string name="script_permission_speech">SandFly\'nin konuşmasını duyun ve değiştirin</string>
     <string name="script_permission_passwords">Şifre alanlarını okumak</string>
     <string name="script_permission_input">Hareketler, tuşlar, menü öğeleri ve okuma kontrolleri ekleyin</string>
     <string name="script_permission_network">İnterneti kullanmak</string>
-    <string name="script_permission_clipboard">Panoyu okuyun ve değiştirin</string>
+    <string name="script_permission_clipboard">Panoyu okuma ve değiştirme</string>
     <string name="script_permission_system">Geri dönün veya eve gidin, bildirimleri ve uygulamaları açın</string>
     <string name="script_permission_notifications">Sesli bildirimleri okuma ve değiştirme</string>
     <string name="script_permission_events">Yazma da dahil olmak üzere her uygulamadaki tüm etkinlikleri görün</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">Yok</string>
     <string name="script_settings_category">Ayarlar</string>
     <string name="script_list_filter">Filtre</string>
-    <string name="script_button_off">İlk önce betiği açın</string>
+    <string name="script_button_off">Önce betiği açın</string>
     <string name="script_permissions_summary">Birini kapatmak, ona ihtiyaç duyan parçaları durdurur.</string>
     <string name="script_install_permissions_note">Bunları daha sonra kapatabilirsiniz.</string>
     <string name="script_manage_category">Yönetim</string>
@@ -86,10 +86,10 @@
     <string name="script_homepage">Ana sayfayı aç</string>
     <string name="script_homepage_confirm_title">Bu adres açılsın mı?</string>
     <string name="script_homepage_open">Aç</string>
-    <string name="script_homepage_failed">Hiçbir uygulama açılamıyor <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Hiçbir uygulama <xliff:g id="address">%1$s</xliff:g> adresini açamıyor</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> tekrarlanan hatalardan sonra kapatıldı. Komut Dosyaları\'ndaki günlüğüne bakın.</string>
     <string name="shortcut_inspect_item">Odaklanılan öğeyi incele</string>
-    <string name="script_inspect_no_item">Hiçbir öğenin odağı yok</string>
+    <string name="script_inspect_no_item">Odakta öğe yok</string>
     <string name="script_inspect_copied">Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Kimlik yok, dolayısıyla kurallar onu adlandıramaz. Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Ekran ağacını kopyala</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Ata</string>
     <string name="script_binding_choose_gesture">Hareket seç</string>
     <string name="script_binding_type_keys">Tuşları yazın</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, veya sf+t, gibi</string>
+    <string name="script_binding_type_keys_summary">Örneğin sf+shift+n veya sf+t, s</string>
     <string name="script_binding_bad_keys">Bu tuşlar kullanılamaz. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Şunları ekliyor:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

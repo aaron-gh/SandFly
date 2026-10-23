@@ -5,9 +5,9 @@
     <string name="script_import">Увези скрипту</string>
     <string name="script_install_label">Инсталирај SandFly скрипту</string>
     <string name="script_import_nothing">Не постоји датотека скрипте за инсталирање.</string>
-    <string name="script_import_cannot_open">Датотека се не може отворити.</string>
+    <string name="script_import_cannot_open">Датотеку није било могуће отворити.</string>
     <string name="script_import_repository">Ова веза је до целог спремишта. Отворите скрипту коју желите, а затим поделите њену везу.</string>
-    <string name="script_import_summary">.луа датотеку или .зип са маин.луа</string>
+    <string name="script_import_summary">Датотека .lua или .zip са main.lua</string>
     <string name="scripts_category_app">Скрипте апликације</string>
     <string name="scripts_category_global">Глобални додаци</string>
     <string name="scripts_none">Нема инсталираних скрипти</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Увоз није успео. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Дозволи само за поуздане скрипте.</string>
     <string name="script_permission_screen">Читање екрана</string>
-    <string name="script_permission_actions">Кликните, скролујте, откуцајте и померите фокус</string>
+    <string name="script_permission_actions">Кликтање, померање, куцање и премештање фокуса</string>
     <string name="script_permission_speech">Слушајте и промените говор SandFly</string>
     <string name="script_permission_passwords">Читање поља за лозинку</string>
     <string name="script_permission_input">Додајте покрете, тастере, ставке менија и контроле за читање</string>
     <string name="script_permission_network">Коришћење интернета</string>
-    <string name="script_permission_clipboard">Прочитајте и промените међуспремник</string>
+    <string name="script_permission_clipboard">Читање и мењање привремене меморије</string>
     <string name="script_permission_system">Вратите се или кући, отворите обавештења и апликације</string>
     <string name="script_permission_notifications">Читајте и мењајте изговорена обавештења</string>
     <string name="script_permission_events">Погледајте све активности у свакој апликацији, укључујући куцање</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Покрени касније</string>
     <string name="script_order_summary">Ред за скрипте које мењају исти говор. Прво се покрећу скрипте апликације.</string>
     <string name="script_log">Дневник</string>
-    <string name="script_log_summary">Излаз и грешке од почетка SandFly</string>
+    <string name="script_log_summary">Излаз и грешке од покретања SandFly-а</string>
     <string name="script_clear_storage">Обриши сачуване податке</string>
     <string name="script_storage_cleared">Сачувани подаци су обрисани</string>
     <string name="script_remove">Уклони</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">Отвори почетну страницу</string>
     <string name="script_homepage_confirm_title">Отворити ову адресу?</string>
     <string name="script_homepage_open">Отвори</string>
-    <string name="script_homepage_failed">Ниједна апликација не може да се отвори <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Ниједна апликација не може да отвори <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> се искључује након поновљених грешака. Погледајте његов дневник у Скриптама.</string>
     <string name="shortcut_inspect_item">Прегледај фокусирану ставку</string>
     <string name="script_inspect_no_item">Ниједна ставка нема фокус</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Додели</string>
     <string name="script_binding_choose_gesture">Изабери гест</string>
     <string name="script_binding_type_keys">Укуцај тастере</string>
-    <string name="script_binding_type_keys_summary">Као sf+shift+n, или sf+t, с</string>
+    <string name="script_binding_type_keys_summary">Као sf+shift+n или sf+t, s</string>
     <string name="script_binding_bad_keys">Ови тастери не могу да се користе. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Додаје:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Nu există niciun fișier script de instalat.</string>
     <string name="script_import_cannot_open">Fișierul nu a putut fi deschis.</string>
     <string name="script_import_repository">Acest link este către un întreg depozit. Deschideți scriptul dorit, apoi partajați linkul acestuia.</string>
-    <string name="script_import_summary">.lua sau .zip cu main.lua</string>
+    <string name="script_import_summary">Fișier .lua sau .zip cu main.lua</string>
     <string name="scripts_category_app">Scripturi pentru aplicații</string>
     <string name="scripts_category_global">Pluginuri globale</string>
     <string name="scripts_none">Nu există scripturi instalate</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Importul nu a reușit. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permiteți numai pentru scripturi de încredere.</string>
     <string name="script_permission_screen">Să citească ecranul</string>
-    <string name="script_permission_actions">Faceți clic, derulați, tastați și mutați focalizarea</string>
+    <string name="script_permission_actions">Clic, derulare, tastare și mutarea focalizării</string>
     <string name="script_permission_speech">Ascultă și schimbă discursul lui SandFly</string>
     <string name="script_permission_passwords">Să citească câmpurile de parolă</string>
     <string name="script_permission_input">Adăugați gesturi, taste, elemente de meniu și comenzi de citire</string>
     <string name="script_permission_network">Să folosească internetul</string>
-    <string name="script_permission_clipboard">Citiți și schimbați clipboard-ul</string>
+    <string name="script_permission_clipboard">Citirea și modificarea clipboardului</string>
     <string name="script_permission_system">Du-te înapoi sau acasă, deschide notificări și aplicații</string>
     <string name="script_permission_notifications">Citiți și modificați notificările vocale</string>
     <string name="script_permission_events">Vedeți toată activitatea din fiecare aplicație, inclusiv tastarea</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Rulează mai târziu</string>
     <string name="script_order_summary">Comanda pentru scripturi care schimbă același discurs. Scripturile de aplicație rulează mai întâi.</string>
     <string name="script_log">Jurnal</string>
-    <string name="script_log_summary">Ieșire și erori de la începutul SandFly</string>
+    <string name="script_log_summary">Ieșire și erori de la pornirea SandFly</string>
     <string name="script_clear_storage">Șterge datele stocate</string>
     <string name="script_storage_cleared">Datele stocate au fost șterse</string>
     <string name="script_remove">Elimină</string>
@@ -86,10 +86,10 @@
     <string name="script_homepage">Deschide pagina principală</string>
     <string name="script_homepage_confirm_title">Deschizi această adresă?</string>
     <string name="script_homepage_open">Deschide</string>
-    <string name="script_homepage_failed">Nicio aplicație nu se poate deschide <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">Nicio aplicație nu poate deschide <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dezactivat după erori repetate. Vedeți logul său în Scripturi.</string>
     <string name="shortcut_inspect_item">Inspectează elementul focalizat</string>
-    <string name="script_inspect_no_item">Niciun articol nu are focalizare</string>
+    <string name="script_inspect_no_item">Niciun element nu are focalizarea</string>
     <string name="script_inspect_copied">Copiat. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Fără id, așa că regulile nu-l pot denumi. Copiat. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Copiază arborele ecranului</string>

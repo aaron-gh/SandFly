@@ -7,7 +7,7 @@
     <string name="script_import_nothing">មិនមានឯកសារស្គ្រីបសម្រាប់ដំឡើងទេ។</string>
     <string name="script_import_cannot_open">ឯកសារមិនអាចបើកបានទេ។</string>
     <string name="script_import_repository">តំណភ្ជាប់នេះគឺទៅកាន់ឃ្លាំងទាំងមូល។ បើកស្គ្រីបដែលអ្នកចង់បាន បន្ទាប់មកចែករំលែកតំណរបស់វា។</string>
-    <string name="script_import_summary">ឯកសារ .lua ឬ .zip ជាមួយ main.lua</string>
+    <string name="script_import_summary">ឯកសារ .lua ឬ .zip ដែលមាន main.lua</string>
     <string name="scripts_category_app">ស្គ្រីបកម្មវិធី</string>
     <string name="scripts_category_global">កម្មវិធីជំនួយសកល</string>
     <string name="scripts_none">មិនមានស្គ្រីបដែលបានដំឡើងទេ</string>
@@ -39,7 +39,7 @@
     <string name="script_import_failed">ការនាំចូលបានបរាជ័យ។ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>។ អនុញ្ញាតសម្រាប់តែស្គ្រីបដែលទុកចិត្តប៉ុណ្ណោះ។</string>
     <string name="script_permission_screen">អានអេក្រង់</string>
-    <string name="script_permission_actions">ចុច រំកិល វាយ និងផ្លាស់ទីការផ្តោតអារម្មណ៍</string>
+    <string name="script_permission_actions">ចុច រំកិល វាយ និងផ្លាស់ទីការផ្ដោត</string>
     <string name="script_permission_speech">ស្តាប់ និងផ្លាស់ប្តូរសុន្ទរកថារបស់ SandFly</string>
     <string name="script_permission_passwords">អានវាលពាក្យសម្ងាត់</string>
     <string name="script_permission_input">បន្ថែមកាយវិការ គ្រាប់ចុច ធាតុម៉ឺនុយ និងការគ្រប់គ្រងការអាន</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">ចាត់តាំង</string>
     <string name="script_binding_choose_gesture">ជ្រើសរើសកាយវិការ</string>
     <string name="script_binding_type_keys">វាយគ្រាប់ចុច</string>
-    <string name="script_binding_type_keys_summary">ចូលចិត្ត sf+shift+n, ឬ sf+t, s</string>
+    <string name="script_binding_type_keys_summary">ដូចជា sf+shift+n ឬ sf+t, s</string>
     <string name="script_binding_bad_keys">មិនអាចប្រើសោទាំងនេះបានទេ។ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">វាបន្ថែម៖</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">Neexistuje žiadny súbor skriptu na inštaláciu.</string>
     <string name="script_import_cannot_open">Súbor sa nepodarilo otvoriť.</string>
     <string name="script_import_repository">Tento odkaz je na celé úložisko. Otvorte požadovaný skript a zdieľajte jeho odkaz.</string>
-    <string name="script_import_summary">.lua alebo .zip s main.lua</string>
+    <string name="script_import_summary">Súbor .lua alebo .zip s main.lua</string>
     <string name="scripts_category_app">Skripty aplikácií</string>
     <string name="scripts_category_global">Globálne doplnky</string>
     <string name="scripts_none">Nie sú nainštalované žiadne skripty</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">Import zlyhal. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Povoliť len pre dôveryhodné skripty.</string>
     <string name="script_permission_screen">Čítať obrazovku</string>
-    <string name="script_permission_actions">Klikajte, posúvajte, píšte a presúvajte zameranie</string>
+    <string name="script_permission_actions">Klikať, posúvať, písať a presúvať fokus</string>
     <string name="script_permission_speech">Vypočujte si a zmeňte reč SandFly</string>
     <string name="script_permission_passwords">Čítať polia hesiel</string>
     <string name="script_permission_input">Pridajte gestá, klávesy, položky ponuky a ovládacie prvky čítania</string>
     <string name="script_permission_network">Používať internet</string>
-    <string name="script_permission_clipboard">Prečítajte si a zmeňte schránku</string>
+    <string name="script_permission_clipboard">Čítať a meniť schránku</string>
     <string name="script_permission_system">Vráťte sa späť alebo domov, otvorte upozornenia a aplikácie</string>
     <string name="script_permission_notifications">Čítanie a zmena hovorených upozornení</string>
     <string name="script_permission_events">Pozrite si všetku aktivitu v každej aplikácii vrátane písania</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Spúšťať neskôr</string>
     <string name="script_order_summary">Objednávka pre skripty, ktoré menia rovnakú reč. Najprv sa spustia skripty aplikácií.</string>
     <string name="script_log">Denník</string>
-    <string name="script_log_summary">Výstup a chyby od začiatku SandFly</string>
+    <string name="script_log_summary">Výstup a chyby od spustenia SandFly</string>
     <string name="script_clear_storage">Vymazať uložené údaje</string>
     <string name="script_storage_cleared">Uložené údaje boli vymazané</string>
     <string name="script_remove">Odstrániť</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">Žiadna aplikácia nemôže otvoriť <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> sa po opakovaných chybách vypol. Pozrite si jeho prihlásenie v skriptoch.</string>
     <string name="shortcut_inspect_item">Skontrolovať zameranú položku</string>
-    <string name="script_inspect_no_item">Žiadna položka nie je zameraná</string>
+    <string name="script_inspect_no_item">Žiadna položka nemá fokus</string>
     <string name="script_inspect_copied">Skopírované. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Žiadne ID, takže pravidlá to nemôžu pomenovať. Skopírované. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopírovať strom obrazovky</string>

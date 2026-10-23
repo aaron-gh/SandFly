@@ -4,10 +4,10 @@
     <string name="summary_pref_scripts">ଆପ୍ସରେ SandFly କିପରି କାମ କରେ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
     <string name="script_import">ସ୍କ୍ରିପ୍ଟ ଆମଦାନୀ କରନ୍ତୁ</string>
     <string name="script_install_label">SandFly ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
-    <string name="script_import_nothing">ସଂସ୍ଥାପନ କରିବାକୁ କୌଣସି ସ୍କ୍ରିପ୍ଟ ଫାଇଲ୍ ନାହିଁ |</string>
-    <string name="script_import_cannot_open">ଫାଇଲ୍ ଖୋଲାଯାଇ ପାରିଲା ନାହିଁ |</string>
+    <string name="script_import_nothing">ସଂସ୍ଥାପନ କରିବାକୁ କୌଣସି ସ୍କ୍ରିପ୍ଟ ଫାଇଲ୍ ନାହିଁ।</string>
+    <string name="script_import_cannot_open">ଫାଇଲ୍ ଖୋଲାଯାଇପାରିଲା ନାହିଁ।</string>
     <string name="script_import_repository">ଏହି ଲିଙ୍କ୍ ଏକ ପୁରା ସଂଗ୍ରହାଳୟ ସହିତ | ଆପଣ ଚାହୁଁଥିବା ସ୍କ୍ରିପ୍ଟ ଖୋଲନ୍ତୁ, ତା’ପରେ ଏହାର ଲିଙ୍କ୍ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
-    <string name="script_import_summary">.lua ଫାଇଲ୍, କିମ୍ବା main.lua ସହିତ .zip</string>
+    <string name="script_import_summary">.lua ଫାଇଲ୍, କିମ୍ବା main.lua ଥିବା .zip</string>
     <string name="scripts_category_app">ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡିକ</string>
     <string name="scripts_category_global">ଗ୍ଲୋବାଲ୍ ପ୍ଲଗଇନ୍</string>
     <string name="scripts_none">କୌଣସି ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପିତ ହୋଇନାହିଁ</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। କେବଳ ବିଶ୍ୱସ୍ତ ସ୍କ୍ରିପ୍ଟ ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ |</string>
     <string name="script_permission_screen">ସ୍କ୍ରିନ୍ ପଢ଼ିବା</string>
-    <string name="script_permission_actions">ଫୋକସ୍ କ୍ଲିକ୍, ସ୍କ୍ରୋଲ୍, ଟାଇପ୍ ଏବଂ ଘୁଞ୍ଚାନ୍ତୁ</string>
+    <string name="script_permission_actions">କ୍ଲିକ୍, ସ୍କ୍ରୋଲ୍, ଟାଇପ୍ କରିବା ଏବଂ ଫୋକସ୍ ଘୁଞ୍ଚାଇବା</string>
     <string name="script_permission_speech">SandFly ର ବକ୍ତବ୍ୟ ଶୁଣ ଏବଂ ପରିବର୍ତ୍ତନ କର</string>
     <string name="script_permission_passwords">ପାସୱାର୍ଡ ଫିଲ୍ଡ ପଢ଼ିବା</string>
     <string name="script_permission_input">ଅଙ୍ଗଭଙ୍ଗୀ, ଚାବି, ମେନୁ ଆଇଟମ୍ ଏବଂ ପଠନ ନିୟନ୍ତ୍ରଣ ଯୋଡନ୍ତୁ</string>
     <string name="script_permission_network">ଇଣ୍ଟରନେଟ୍ ବ୍ୟବହାର କରିବା</string>
-    <string name="script_permission_clipboard">କ୍ଲିପବୋର୍ଡ ପ Read ଏବଂ ପରିବର୍ତ୍ତନ କର</string>
+    <string name="script_permission_clipboard">କ୍ଲିପବୋର୍ଡ ପଢ଼ିବା ଏବଂ ବଦଳାଇବା</string>
     <string name="script_permission_system">ଘରକୁ କିମ୍ବା ଘରକୁ ଯାଆନ୍ତୁ, ବିଜ୍ଞପ୍ତି ଏବଂ ଆପ୍ ଖୋଲନ୍ତୁ</string>
     <string name="script_permission_notifications">କଥିତ ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ଏବଂ ପରିବର୍ତ୍ତନ କର</string>
     <string name="script_permission_events">ଟାଇପିଂ ସହିତ ପ୍ରତ୍ୟେକ ଆପରେ ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ଦେଖନ୍ତୁ</string>
@@ -56,9 +56,9 @@
     <string name="script_permissions_none">କିଛି ନାହିଁ</string>
     <string name="script_settings_category">ସେଟିଂସ</string>
     <string name="script_list_filter">ଫିଲ୍ଟର୍</string>
-    <string name="script_button_off">ସ୍କ୍ରିପ୍ଟକୁ ପ୍ରଥମେ ଟର୍ନ୍ କର</string>
+    <string name="script_button_off">ପ୍ରଥମେ ସ୍କ୍ରିପ୍ଟ ଚାଲୁ କରନ୍ତୁ</string>
     <string name="script_permissions_summary">ଗୋଟିଏ ବନ୍ଦ କରିବା ଆବଶ୍ୟକ କରୁଥିବା ଅଂଶଗୁଡ଼ିକୁ ବନ୍ଦ କରିଦିଏ |</string>
-    <string name="script_install_permissions_note">ଆପଣ ପରେ ଏହାକୁ ବନ୍ଦ କରିପାରିବେ |</string>
+    <string name="script_install_permissions_note">ଆପଣ ପରେ ଏହାକୁ ବନ୍ଦ କରିପାରିବେ।</string>
     <string name="script_manage_category">ପରିଚାଳନା</string>
     <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ</string>
     <string name="script_move_down">ପରେ ଚଲାନ୍ତୁ</string>
@@ -114,7 +114,7 @@
     <string name="script_binding_restored">ଡିଫଲ୍ଟଗୁଡ଼ିକ ପୁନଃସ୍ଥାପିତ ହୋଇଛି</string>
     <string name="script_binding_perform">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ</string>
     <string name="script_binding_perform_summary">ପରବର୍ତ୍ତୀ ଅଙ୍ଗଭଙ୍ଗୀ, କିମ୍ବା SandFly ମୋଡିଫାୟର୍ ସହିତ ଦବାଯାଇଥିବା କିଗୁଡ଼ିକୁ ନ୍ୟସ୍ତ କରନ୍ତୁ</string>
-    <string name="script_binding_perform_message">ଅଙ୍ଗଭଙ୍ଗୀ କରନ୍ତୁ କିମ୍ବା ଚାବିକୁ ଦବାନ୍ତୁ |</string>
+    <string name="script_binding_perform_message">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> କୁ <xliff:g id="command">%2$s</xliff:g> ନ୍ୟସ୍ତ କରନ୍ତୁ?</string>
     <string name="script_binding_assign">ନ୍ୟସ୍ତ କରନ୍ତୁ</string>
     <string name="script_binding_choose_gesture">ଅଙ୍ଗଭଙ୍ଗୀ ବାଛନ୍ତୁ</string>

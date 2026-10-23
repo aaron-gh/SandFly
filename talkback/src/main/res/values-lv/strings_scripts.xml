@@ -39,12 +39,12 @@
     <string name="script_import_failed">Importēšana neizdevās. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Atļaut tikai uzticamiem skriptiem.</string>
     <string name="script_permission_screen">Lasīt ekrānu</string>
-    <string name="script_permission_actions">Noklikšķiniet, ritiniet, ierakstiet un pārvietojiet fokusu</string>
+    <string name="script_permission_actions">Noklikšķināt, ritināt, rakstīt un pārvietot fokusu</string>
     <string name="script_permission_speech">Klausieties un mainiet lietotāja SandFly runu</string>
     <string name="script_permission_passwords">Lasīt paroles laukus</string>
     <string name="script_permission_input">Pievienojiet žestus, taustiņus, izvēlnes vienumus un lasīšanas vadīklas</string>
     <string name="script_permission_network">Izmantot internetu</string>
-    <string name="script_permission_clipboard">Lasiet un mainiet starpliktuvi</string>
+    <string name="script_permission_clipboard">Lasīt un mainīt starpliktuvi</string>
     <string name="script_permission_system">Dodieties atpakaļ vai mājās, atveriet paziņojumus un lietotnes</string>
     <string name="script_permission_notifications">Lasiet un mainiet izrunātos paziņojumus</string>
     <string name="script_permission_events">Skatiet visas darbības katrā lietotnē, tostarp rakstīšanu</string>
@@ -64,7 +64,7 @@
     <string name="script_move_down">Palaist vēlāk</string>
     <string name="script_order_summary">Pasūtiet skriptus, kas maina vienu un to pašu runu. Vispirms tiek palaisti lietotņu skripti.</string>
     <string name="script_log">Žurnāls</string>
-    <string name="script_log_summary">Izvade un kļūdas kopš SandFly sākuma</string>
+    <string name="script_log_summary">Izvade un kļūdas kopš SandFly palaišanas</string>
     <string name="script_clear_storage">Notīrīt saglabātos datus</string>
     <string name="script_storage_cleared">Saglabātie dati ir notīrīti</string>
     <string name="script_remove">Noņemt</string>
@@ -119,7 +119,7 @@
     <string name="script_binding_assign">Piešķirt</string>
     <string name="script_binding_choose_gesture">Izvēlēties žestu</string>
     <string name="script_binding_type_keys">Ievadīt taustiņus</string>
-    <string name="script_binding_type_keys_summary">Patīk sf+shift+n, vai sf+t, s</string>
+    <string name="script_binding_type_keys_summary">Piemēram, sf+shift+n vai sf+t, s</string>
     <string name="script_binding_bad_keys">Šos taustiņus nevar izmantot. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Tas pievieno:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>

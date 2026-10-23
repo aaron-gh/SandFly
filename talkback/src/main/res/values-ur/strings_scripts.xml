@@ -7,7 +7,7 @@
     <string name="script_import_nothing">انسٹال کرنے کے لیے کوئی اسکرپٹ فائل نہیں ہے۔</string>
     <string name="script_import_cannot_open">فائل نہیں کھولی جا سکی۔</string>
     <string name="script_import_repository">یہ لنک ایک پورے ذخیرہ کا ہے۔ آپ جو اسکرپٹ چاہتے ہیں اسے کھولیں، پھر اس کا لنک شیئر کریں۔</string>
-    <string name="script_import_summary">.lua فائل، یا main.lua کے ساتھ .zip</string>
+    <string name="script_import_summary">.lua فائل، یا main.lua والی .zip</string>
     <string name="scripts_category_app">ایپ اسکرپٹس</string>
     <string name="scripts_category_global">عمومی پلگ انز</string>
     <string name="scripts_none">کوئی اسکرپٹ انسٹال نہیں ہے</string>
@@ -39,12 +39,12 @@
     <string name="script_import_failed">درآمد ناکام ہو گیا۔ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g> صرف بھروسہ مند اسکرپٹس کے لیے اجازت دیں۔</string>
     <string name="script_permission_screen">اسکرین پڑھنا</string>
-    <string name="script_permission_actions">کلک کریں، سکرول کریں، ٹائپ کریں اور فوکس منتقل کریں</string>
+    <string name="script_permission_actions">کلک کرنا، اسکرول کرنا، ٹائپ کرنا اور فوکس منتقل کرنا</string>
     <string name="script_permission_speech">SandFly کی تقریر سنیں اور تبدیل کریں</string>
     <string name="script_permission_passwords">پاس ورڈ فیلڈز پڑھنا</string>
     <string name="script_permission_input">اشارے، چابیاں، مینو آئٹمز اور پڑھنے کے کنٹرول شامل کریں</string>
     <string name="script_permission_network">انٹرنیٹ استعمال کرنا</string>
-    <string name="script_permission_clipboard">کلپ بورڈ کو پڑھیں اور تبدیل کریں</string>
+    <string name="script_permission_clipboard">کلپ بورڈ پڑھنا اور تبدیل کرنا</string>
     <string name="script_permission_system">واپس جائیں یا گھر جائیں، اطلاعات اور ایپس کھولیں</string>
     <string name="script_permission_notifications">بولی جانے والی اطلاعات کو پڑھیں اور تبدیل کریں</string>
     <string name="script_permission_events">ہر ایپ میں تمام سرگرمیاں دیکھیں، بشمول ٹائپنگ</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">ہوم پیج کھولیں</string>
     <string name="script_homepage_confirm_title">یہ پتہ کھولیں؟</string>
     <string name="script_homepage_open">کھولیں</string>
-    <string name="script_homepage_failed">کوئی ایپ نہیں کھول سکتی <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">کوئی ایپ <xliff:g id="address">%1$s</xliff:g> نہیں کھول سکتی</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> بار بار کی غلطیوں کے بعد آف ہو گیا۔ اسکرپٹس میں اس کا لاگ دیکھیں۔</string>
     <string name="shortcut_inspect_item">فوکس شدہ آئٹم کا معائنہ کریں</string>
     <string name="script_inspect_no_item">کسی بھی شے پر فوکس نہیں ہے</string>
@@ -114,7 +114,7 @@
     <string name="script_binding_restored">ڈیفالٹس بحال ہو گئے</string>
     <string name="script_binding_perform">اشارہ کریں یا کیز دبائیں</string>
     <string name="script_binding_perform_summary">اگلا اشارہ تفویض کریں، یا SandFly موڈیفائر کے ساتھ دبائی گئی کلیدیں</string>
-    <string name="script_binding_perform_message">اشارہ کریں یا چابیاں دبائیں۔</string>
+    <string name="script_binding_perform_message">اشارہ کریں یا کیز دبائیں۔</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> کو <xliff:g id="command">%2$s</xliff:g> تفویض کریں؟</string>
     <string name="script_binding_assign">تفویض کریں</string>
     <string name="script_binding_choose_gesture">اشارہ منتخب کریں</string>

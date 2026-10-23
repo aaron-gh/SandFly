@@ -39,12 +39,12 @@
     <string name="script_import_failed">הייבוא נכשל. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. אפשר רק סקריפטים מהימנים.</string>
     <string name="script_permission_screen">קריאת המסך</string>
-    <string name="script_permission_actions">לחץ, גלול, הקלד והזז את המיקוד</string>
+    <string name="script_permission_actions">לחיצה, גלילה, הקלדה והזזת המיקוד</string>
     <string name="script_permission_speech">שמע ושנה את הנאום של SandFly</string>
     <string name="script_permission_passwords">קריאת שדות סיסמה</string>
     <string name="script_permission_input">הוסף מחוות, מקשים, פריטי תפריט ופקדי קריאה</string>
     <string name="script_permission_network">שימוש באינטרנט</string>
-    <string name="script_permission_clipboard">קרא ושנה את הלוח</string>
+    <string name="script_permission_clipboard">קריאה ושינוי של הלוח</string>
     <string name="script_permission_system">חזור או הביתה, פתח הודעות ואפליקציות</string>
     <string name="script_permission_notifications">קרא ושנה התראות מדוברות</string>
     <string name="script_permission_events">ראה את כל הפעילות בכל אפליקציה, כולל הקלדה</string>
@@ -56,15 +56,15 @@
     <string name="script_permissions_none">ללא</string>
     <string name="script_settings_category">הגדרות</string>
     <string name="script_list_filter">מסנן</string>
-    <string name="script_button_off">תחילה הפעל את התסריט</string>
+    <string name="script_button_off">יש להפעיל קודם את הסקריפט</string>
     <string name="script_permissions_summary">כיבוי אחד מפסיק את החלקים שזקוקים לו.</string>
-    <string name="script_install_permissions_note">אתה יכול לכבות את אלה מאוחר יותר.</string>
+    <string name="script_install_permissions_note">אפשר לכבות אותן מאוחר יותר.</string>
     <string name="script_manage_category">ניהול</string>
     <string name="script_move_up">הרצה מוקדם יותר</string>
     <string name="script_move_down">הרצה מאוחר יותר</string>
     <string name="script_order_summary">סדר לתסריטים שמשנים את אותו דיבור. סקריפטים של אפליקציה פועלים תחילה.</string>
     <string name="script_log">יומן</string>
-    <string name="script_log_summary">פלט ושגיאות מאז SandFly התחיל</string>
+    <string name="script_log_summary">פלט ושגיאות מאז הפעלת SandFly</string>
     <string name="script_clear_storage">ניקוי נתונים מאוחסנים</string>
     <string name="script_storage_cleared">הנתונים המאוחסנים נוקו</string>
     <string name="script_remove">הסרה</string>
@@ -86,7 +86,7 @@
     <string name="script_homepage">פתיחת דף הבית</string>
     <string name="script_homepage_confirm_title">לפתוח את הכתובת הזו?</string>
     <string name="script_homepage_open">פתיחה</string>
-    <string name="script_homepage_failed">אף אפליקציה לא יכולה לפתוח <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">אין אפליקציה שיכולה לפתוח את <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> כבוי לאחר שגיאות חוזרות ונשנות. ראה את היומן שלו ב-Scripts.</string>
     <string name="shortcut_inspect_item">בדיקת הפריט שבמיקוד</string>
     <string name="script_inspect_no_item">לאף פריט אין מיקוד</string>
@@ -114,7 +114,7 @@
     <string name="script_binding_restored">ברירות המחדל שוחזרו</string>
     <string name="script_binding_perform">יש לבצע תנועה או ללחוץ על מקשים</string>
     <string name="script_binding_perform_summary">הקצה את המחווה הבאה, או את המקשים שנלחצו עם השינוי SandFly</string>
-    <string name="script_binding_perform_message">בצע את המחווה או לחץ על המקשים.</string>
+    <string name="script_binding_perform_message">יש לבצע את התנועה או ללחוץ על המקשים.</string>
     <string name="script_binding_assign_title">להקצות את <xliff:g id="binding">%1$s</xliff:g> ל-<xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">הקצאה</string>
     <string name="script_binding_choose_gesture">בחירת מחווה</string>

@@ -7,7 +7,7 @@
     <string name="script_import_nothing">ไม่มีไฟล์สคริปต์ที่จะติดตั้ง</string>
     <string name="script_import_cannot_open">ไม่สามารถเปิดไฟล์ได้</string>
     <string name="script_import_repository">ลิงก์นี้ไปยังพื้นที่เก็บข้อมูลทั้งหมด เปิดสคริปต์ที่คุณต้องการ จากนั้นแชร์ลิงก์</string>
-    <string name="script_import_summary">ไฟล์ .lua หรือ .zip ด้วย main.lua</string>
+    <string name="script_import_summary">ไฟล์ .lua หรือ .zip ที่มี main.lua</string>
     <string name="scripts_category_app">สคริปต์ของแอป</string>
     <string name="scripts_category_global">ปลั๊กอินส่วนกลาง</string>
     <string name="scripts_none">ไม่มีการติดตั้งสคริปต์</string>
@@ -86,10 +86,10 @@
     <string name="script_homepage">เปิดหน้าแรก</string>
     <string name="script_homepage_confirm_title">เปิดที่อยู่นี้ใช่ไหม</string>
     <string name="script_homepage_open">เปิด</string>
-    <string name="script_homepage_failed">ไม่มีแอปใดที่สามารถเปิดได้ <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_homepage_failed">ไม่มีแอปที่เปิด <xliff:g id="address">%1$s</xliff:g> ได้</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ปิดหลังจากเกิดข้อผิดพลาดซ้ำๆ ดูบันทึกในสคริปต์</string>
     <string name="shortcut_inspect_item">ตรวจสอบรายการที่โฟกัส</string>
-    <string name="script_inspect_no_item">ไม่มีรายการใดมีจุดสนใจ</string>
+    <string name="script_inspect_no_item">ไม่มีรายการที่โฟกัสอยู่</string>
     <string name="script_inspect_copied">คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ไม่มีรหัส ดังนั้นกฎจึงไม่สามารถตั้งชื่อได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">คัดลอกโครงสร้างหน้าจอ</string>

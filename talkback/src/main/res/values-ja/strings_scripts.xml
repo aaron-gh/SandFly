@@ -86,7 +86,7 @@
     <string name="script_homepage">ホームページを開く</string>
     <string name="script_homepage_confirm_title">このアドレスを開きますか?</string>
     <string name="script_homepage_open">開く</string>
-    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> 開けないアプリはありません</string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> を開けるアプリがありません</string>
     <string name="script_turned_off">エラーが繰り返された後、<xliff:g id="name">%1$s</xliff:g> がオフになりました。スクリプトのログを参照してください。</string>
     <string name="shortcut_inspect_item">フォーカス中の項目を検査</string>
     <string name="script_inspect_no_item">フォーカスのある項目はありません</string>
@@ -114,12 +114,12 @@
     <string name="script_binding_restored">デフォルトに戻しました</string>
     <string name="script_binding_perform">ジェスチャーを実行するか、キーを押してください</string>
     <string name="script_binding_perform_summary">次のジェスチャ、または SandFly 修飾子を使用して押されたキーを割り当てます</string>
-    <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押します。</string>
+    <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押してください。</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>を<xliff:g id="command">%2$s</xliff:g>に割り当てますか?</string>
     <string name="script_binding_assign">割り当て</string>
     <string name="script_binding_choose_gesture">ジェスチャーを選択</string>
     <string name="script_binding_type_keys">キーを入力</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, または sf+t, 秒のように</string>
+    <string name="script_binding_type_keys_summary">例: sf+shift+n、sf+t, s</string>
     <string name="script_binding_bad_keys">これらのキーは使用できません。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">追加される項目:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
