@@ -39,7 +39,7 @@
   <string name="punctuation_most">Dauguma</string>
   <string name="punctuation_some">Kai kas</string>
   <string name="title_pref_count_repeated_symbols">Suskaičiuoti pasikartojančius simbolius</string>
-  <string name="summary_pref_count_repeated_symbols">Pasakykite, kiek kartų simbolis kartojasi, kai kartojasi 4 ar daugiau kartų</string>
+  <string name="summary_pref_count_repeated_symbols">Pasakyti, kiek kartų simbolis kartojasi, kai jis kartojasi 4 ar daugiau kartų</string>
   <string name="learn_more">Sužinokite daugiau</string>
   <string name="title_pref_capital_letters">Didžiosios raidės</string>
   <string name="capital_letters_nothing">Nieko nedaryti</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">Akumuliatoriaus optimizavimas gali sustabdyti SandFly</string>
     <string name="battery_optimization_notification_text">Šiame telefone akumuliatoriaus tausojimo priemonė gali sustabdyti SandFly išsijungus ekranui, tada SandFly nekalba, kol nepaleidžiamas iš naujo. Palieskite, kad atidarytumėte akumuliatoriaus optimizavimą, pasirinkite „Visos programos“, raskite SandFly ir pasirinkite „Neoptimizuoti“.</string>
     <string name="title_pref_mute_speech_while_recording">Įrašymo metu tylu</string>
-    <string name="summary_pref_mute_speech_while_recording">Nors programa įrašo neprijungusi ausinių, SandFly kalba tik atsakydama į jūsų gestus, klavišus ir įvedant tekstą, ir tyli, pavyzdžiui, pranešimus, kad jie nebūtų įrašomi.</string>
+    <string name="summary_pref_mute_speech_while_recording">Kai programa įrašo be prijungtų ausinių, SandFly kalba tik atsakydamas į jūsų gestus, klavišus ir rašymą, o, pavyzdžiui, pranešimų nesako, kad jie nebūtų įrašyti.</string>
     <string name="title_pref_switch_languages">Automatiškai perjungti kalbą</string>
     <string name="title_pref_switch_dialects">Automatiškai perjungti tarmę</string>
     <string name="category_collapsed">Sutrauktas skyrius</string>
@@ -1677,7 +1677,7 @@
     <string name="value_rotor_step_45">45 laipsnių</string>
     <string name="value_rotor_step_60">60 laipsnių</string>
     <string name="title_pref_low_latency_audio">Mažos delsos garsas</string>
-    <string name="summary_pref_low_latency_audio">Leiskite SandFly garsus ir kalbą greičiausiu telefono garso keliu, kad išgirstumėte juos greičiau. Išjunkite, jei kalba ar garsai nutrūksta arba skamba neteisingai.</string>
+    <string name="summary_pref_low_latency_audio">Leidžia SandFly garsus ir kalbą greičiausiu telefono garso keliu, kad juos išgirstumėte anksčiau. Išjunkite, jei kalba ar garsai trūkinėja arba skamba netinkamai.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekundės (numatytasis)</string>
     <string name="value_focus_delay_300ms">0,3 sekundės</string>
     <string name="title_pref_lift_to_activate">Pakelkite, kad suaktyvintumėte</string>

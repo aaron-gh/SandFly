@@ -39,7 +39,7 @@
   <string name="punctuation_most">Lielākā daļa</string>
   <string name="punctuation_some">Dažas</string>
   <string name="title_pref_count_repeated_symbols">Skaitīt atkārtotos simbolus</string>
-  <string name="summary_pref_count_repeated_symbols">Sakiet, cik reižu simbols atkārtojas, ja tas atkārtojas 4 vai vairāk reizes</string>
+  <string name="summary_pref_count_repeated_symbols">Pateikt, cik reižu simbols atkārtojas, ja tas atkārtojas 4 vai vairāk reižu</string>
   <string name="learn_more">Uzzināt vairāk</string>
   <string name="title_pref_capital_letters">Lielie burti</string>
   <string name="capital_letters_nothing">Neveikt nekādas darbības</string>
@@ -1353,7 +1353,7 @@
     <string name="battery_optimization_notification_title">Akumulatora optimizācija var apturēt SandFly</string>
     <string name="battery_optimization_notification_text">Šajā tālrunī akumulatora jaudas taupīšanas režīms var apturēt SandFly pēc ekrāna izslēgšanas, tāpēc tas apklust, līdz tiek restartēts. Pieskarieties, lai atvērtu akumulatora optimizāciju, izvēlieties Visas lietotnes, atrodiet SandFly un izvēlieties Neoptimizēt.</string>
     <string name="title_pref_mute_speech_while_recording">Kluss ierakstīšanas laikā</string>
-    <string name="summary_pref_mute_speech_while_recording">Kamēr lietotne ieraksta, ja nav pievienotas austiņas, SandFly runā tikai, atbildot uz jūsu žestiem, taustiņiem un rakstīšanu, kā arī klusē, piemēram, paziņojumus, lai tie netiktu ierakstīti.</string>
+    <string name="summary_pref_mute_speech_while_recording">Kamēr lietotne ieraksta bez pievienotām austiņām, SandFly runā tikai, reaģējot uz jūsu žestiem, taustiņiem un rakstīšanu, un nenolasa, piemēram, paziņojumus, lai tie netiktu ierakstīti.</string>
     <string name="title_pref_switch_languages">Automātiski pārslēgt valodu</string>
     <string name="title_pref_switch_dialects">Automātiski pārslēgt dialektu</string>
     <string name="category_collapsed">Sakļauta sadaļa</string>
@@ -1674,7 +1674,7 @@
     <string name="value_rotor_step_45">45 grādi</string>
     <string name="value_rotor_step_60">60 grādi</string>
     <string name="title_pref_low_latency_audio">Zema latentuma audio</string>
-    <string name="summary_pref_low_latency_audio">Atskaņojiet SandFly skaņas un runu, izmantojot tālruņa ātrāko audio ceļu, lai jūs tās dzirdētu ātrāk. Izslēdziet to, ja runa vai skaņas pārtrauc vai izklausās nepareizi.</string>
+    <string name="summary_pref_low_latency_audio">Atskaņo SandFly skaņas un runu pa tālruņa ātrāko audio ceļu, lai tās dzirdētu ātrāk. Izslēdziet, ja runa vai skaņas raustās vai skan nepareizi.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekundes (noklusējums)</string>
     <string name="value_focus_delay_300ms">0,3 sekundes</string>
     <string name="title_pref_lift_to_activate">Paceliet, lai aktivizētu</string>

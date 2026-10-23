@@ -39,7 +39,7 @@
   <string name="punctuation_most">अधिकांश</string>
   <string name="punctuation_some">केही</string>
   <string name="title_pref_count_repeated_symbols">दोहोरिएका चिन्हहरू गन्नुहोस्</string>
-  <string name="summary_pref_count_repeated_symbols">4 वा धेरै पटक दोहोर्याउँदा प्रतीक कति पटक दोहोर्याउँछ भन्नुहोस्</string>
+  <string name="summary_pref_count_repeated_symbols">प्रतीक 4 वा बढी पटक दोहोरिँदा, कति पटक दोहोरियो भनेर बताउँछ</string>
   <string name="learn_more">थप जान्नुहोस्</string>
   <string name="title_pref_capital_letters">ठुला अक्षरहरू</string>
   <string name="capital_letters_nothing">केही पनि नगर्नुहोस्</string>
@@ -1670,7 +1670,7 @@
     <string name="value_rotor_step_45">४५ डिग्री</string>
     <string name="value_rotor_step_60">६० डिग्री</string>
     <string name="title_pref_low_latency_audio">कम विलम्बता अडियो</string>
-    <string name="summary_pref_low_latency_audio">फोनको सबैभन्दा छिटो अडियो मार्ग मार्फत SandFly को ध्वनि र बोली बजाउनुहोस्, ताकि तपाईंले तिनीहरूलाई चाँडै सुन्न सक्नुहुन्छ। यदि बोली वा आवाज बिग्रियो वा गलत सुनियो भने यसलाई बन्द गर्नुहोस्।</string>
+    <string name="summary_pref_low_latency_audio">SandFly का ध्वनि र बोली फोनको सबैभन्दा छिटो अडियो मार्गबाट बजाउँछ, जसले गर्दा तपाईं तिनलाई चाँडै सुन्नुहुन्छ। बोली वा ध्वनि टुटफुट भए वा गलत सुनिए यसलाई अफ गर्नुहोस्।</string>
     <string name="value_focus_delay_200ms_default">०.२ सेकेन्ड (पूर्वनिर्धारित)</string>
     <string name="value_focus_delay_300ms">०.३ सेकेन्ड</string>
     <string name="title_pref_lift_to_activate">औँला उठाएर सक्रिय गर्नुहोस्</string>

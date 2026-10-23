@@ -39,7 +39,7 @@
   <string name="punctuation_most">A legtöbb</string>
   <string name="punctuation_some">Néhány</string>
   <string name="title_pref_count_repeated_symbols">Ismétlődő szimbólumok számlálása</string>
-  <string name="summary_pref_count_repeated_symbols">Mondja meg, hányszor ismétlődik egy szimbólum, ha 4 vagy több alkalommal ismétlődik</string>
+  <string name="summary_pref_count_repeated_symbols">Ha egy szimbólum legalább 4-szer ismétlődik, az ismétlések számának bemondása</string>
   <string name="learn_more">További információ</string>
   <string name="title_pref_capital_letters">Nagybetűk</string>
   <string name="capital_letters_nothing">Ne tegyen semmit</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 fok</string>
     <string name="value_rotor_step_60">60 fok</string>
     <string name="title_pref_low_latency_audio">Alacsony késleltetésű hang</string>
-    <string name="summary_pref_low_latency_audio">Játssza le a SandFly hangjait és beszédét a telefon leggyorsabb hangútján, hogy hamarabb hallja őket. Kapcsolja ki, ha a beszéd vagy a hangok megszakadnak vagy rosszul hangzanak.</string>
+    <string name="summary_pref_low_latency_audio">A SandFly hangjait és beszédét a telefon leggyorsabb hangútvonalán játssza le, így hamarabb hallja őket. Kapcsolja ki, ha a beszéd vagy a hangok szaggatnak vagy rosszul szólnak.</string>
     <string name="value_focus_delay_200ms_default">0,2 másodperc (alapértelmezett)</string>
     <string name="value_focus_delay_300ms">0,3 másodperc</string>
     <string name="title_pref_lift_to_activate">Aktiválás az ujj felemelésével</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">Körbeérés</string>
     <string name="summary_pref_wrap_around">Ha az utolsó elem mellett csúsztat, az az elsőre, az első után pedig az utolsóra lép. Ha ki van kapcsolva, egy hang szól a végén.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Elakadt felfedezés érintéssel javítása</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül az SandFly csak azt mondhatja, hogy az érintéssel történő felfedezés elakadt. A javításhoz futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül a SandFly csak azt tudja jelezni, hogy a felfedezés érintéssel elakadhatott. Hogy a SandFly kijavíthassa, futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Érintéses felfedezés javítása</string>
     <string name="stuck_touch_exploration_fixed">Az érintéses felfedezés javítva</string>
     <string name="stuck_touch_exploration_not_fixed">Az érintéssel történő felfedezés továbbra is elakadt. A javításhoz indítsa újra a telefont.</string>

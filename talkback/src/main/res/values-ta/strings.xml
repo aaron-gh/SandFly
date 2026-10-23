@@ -39,7 +39,7 @@
   <string name="punctuation_most">பெரும்பாலானவை</string>
   <string name="punctuation_some">சில</string>
   <string name="title_pref_count_repeated_symbols">ரிப்பீட் குறியீடுகளை எண்ணு</string>
-  <string name="summary_pref_count_repeated_symbols">ஒரு சின்னம் 4 அல்லது அதற்கு மேற்பட்ட முறை திரும்ப திரும்ப எத்தனை முறை திரும்பும் என்று கூறவும்</string>
+  <string name="summary_pref_count_repeated_symbols">ஒரு சின்னம் 4 அல்லது அதற்கு மேல் முறை திரும்ப வரும்போது, எத்தனை முறை வந்தது என்று சொல்லும்</string>
   <string name="learn_more">மேலும் அறிக</string>
   <string name="title_pref_capital_letters">பேரெழுத்துகள்</string>
   <string name="capital_letters_nothing">எதுவும் செய்ய வேண்டாம்</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 டிகிரி</string>
     <string name="value_rotor_step_60">60 டிகிரி</string>
     <string name="title_pref_low_latency_audio">குறைந்த தாமத ஆடியோ</string>
-    <string name="summary_pref_low_latency_audio">ஃபோனின் வேகமான ஆடியோ பாதையில் SandFly இன் ஒலிகளையும் பேச்சையும் இயக்கலாம், எனவே அவற்றை விரைவில் கேட்கலாம். பேச்சு அல்லது ஒலிகள் உடைந்தால் அல்லது தவறாக ஒலித்தால் அதை அணைக்கவும்.</string>
+    <string name="summary_pref_low_latency_audio">SandFly-இன் ஒலிகளையும் பேச்சையும் மொபைலின் வேகமான ஆடியோ பாதை வழியாக இயக்கும், இதனால் அவற்றை விரைவில் கேட்கலாம். பேச்சு அல்லது ஒலிகள் துண்டு துண்டாகக் கேட்டால் அல்லது தவறாக ஒலித்தால் இதை முடக்கவும்.</string>
     <string name="value_focus_delay_200ms_default">0.2 வினாடிகள் (இயல்புநிலை)</string>
     <string name="value_focus_delay_300ms">0.3 வினாடிகள்</string>
     <string name="title_pref_lift_to_activate">விரலை உயர்த்தி இயக்கு</string>

@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">ການປັບແຕ່ງແບັດເຕີຣີອາດຢຸດ SandFly ໄດ້</string>
     <string name="battery_optimization_notification_text">ໃນໂທລະສັບໜ່ວຍນີ້, ຕົວປະຢັດແບັດເຕີຣີສາມາດຢຸດ SandFly ຫຼັງຈາກໜ້າຈໍປິດລົງ, ສະນັ້ນ ມັນຈຶ່ງງຽບໄປຈົນກວ່າມັນຈະຣີສະຕາດ. ແຕະເພື່ອເປີດການປັບແບັດເຕີຣີໃຫ້ເໝາະສົມ, ເລືອກແອັບທັງໝົດ, ຊອກຫາ SandFly ແລະເລືອກ ຢ່າປັບແຕ່ງ.</string>
     <string name="title_pref_mute_speech_while_recording">ງຽບໃນຂະນະທີ່ບັນທຶກ</string>
-    <string name="summary_pref_mute_speech_while_recording">ໃນຂະນະທີ່ແອັບບັນທຶກສຽງໂດຍບໍ່ເຊື່ອມຕໍ່ຫູຟັງ, SandFly ພຽງແຕ່ເວົ້າຄຳຕອບຕໍ່ກັບທ່າທາງ, ກະແຈ ແລະ ການພິມຂອງເຈົ້າ, ແລະຢູ່ງຽບໆສຳລັບສິ່ງຕ່າງໆ ເຊັ່ນ: ການແຈ້ງເຕືອນ, ເພື່ອບໍ່ໃຫ້ພວກມັນຖືກບັນທຶກ.</string>
+    <string name="summary_pref_mute_speech_while_recording">ໃນຂະນະທີ່ແອັບບັນທຶກສຽງໂດຍບໍ່ໄດ້ເຊື່ອມຕໍ່ຫູຟັງ, SandFly ຈະເວົ້າສະເພາະເມື່ອຕອບສະໜອງຕໍ່ທ່າທາງ, ປຸ່ມ ແລະ ການພິມຂອງທ່ານເທົ່ານັ້ນ ແລະ ຈະງຽບສຳລັບສິ່ງຕ່າງໆ ເຊັ່ນ ການແຈ້ງເຕືອນ ເພື່ອບໍ່ໃຫ້ຖືກບັນທຶກ.</string>
     <string name="title_pref_switch_languages">ປ່ຽນພາສາໂດຍອັດຕະໂນມັດ</string>
     <string name="title_pref_switch_dialects">ສະຫຼັບສຳນຽງອັດຕະໂນມັດ</string>
     <string name="category_collapsed">ພາກສ່ວນທີ່ຫຍໍ້ລົງ</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 ອົງສາ</string>
     <string name="value_rotor_step_60">60 ອົງສາ</string>
     <string name="title_pref_low_latency_audio">ສຽງທີ່ມີເວລາຕອບສະໜອງຕໍ່າ</string>
-    <string name="summary_pref_low_latency_audio">ຫຼິ້ນສຽງ ແລະສຽງເວົ້າຂອງ SandFly ຜ່ານເສັ້ນທາງສຽງທີ່ໄວທີ່ສຸດຂອງໂທລະສັບ, ເພື່ອໃຫ້ເຈົ້າໄດ້ຍິນພວກມັນໄວຂຶ້ນ. ປິດມັນຫາກສຽງເວົ້າ ຫຼືສຽງແຕກ ຫຼືສຽງຜິດ.</string>
+    <string name="summary_pref_low_latency_audio">ຫຼິ້ນສຽງ ແລະ ສຽງເວົ້າຂອງ SandFly ຜ່ານເສັ້ນທາງສຽງທີ່ໄວທີ່ສຸດຂອງໂທລະສັບ ເພື່ອໃຫ້ທ່ານໄດ້ຍິນໄວຂຶ້ນ. ປິດໄວ້ຫາກສຽງເວົ້າ ຫຼື ສຽງຂາດໆ ຫຼື ຜິດປົກກະຕິ.</string>
     <string name="value_focus_delay_200ms_default">0.2 ວິນາທີ (ຄ່າເລີ່ມຕົ້ນ)</string>
     <string name="value_focus_delay_300ms">0.3 ວິນາທີ</string>
     <string name="title_pref_lift_to_activate">ຍົກເພື່ອເປີດໃຊ້</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">ວົນກັບໄປຕົ້ນ</string>
     <string name="summary_pref_wrap_around">ການປັດຜ່ານລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດ, ແລະຜ່ານໄປອັນທໍາອິດໄປຫາອັນສຸດທ້າຍ. ເມື່ອປິດ, ສຽງຈະຫຼິ້ນໃນຕອນທ້າຍແທນ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດທີ່ຄ້າງ</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີການອະນຸຍາດ DUMP, SandFly ພຽງແຕ່ເວົ້າໄດ້ວ່າ ການສຳຜັດສຳຜັດອາດຈະຕິດຢູ່. ເພື່ອໃຫ້ມັນແກ້ໄຂ, ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີສິດ DUMP, SandFly ພຽງແຕ່ບອກໄດ້ວ່າການສຳຫຼວດໂດຍການສຳຜັດອາດຄ້າງຢູ່. ເພື່ອໃຫ້ SandFly ແກ້ໄຂໄດ້, ໃຫ້ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ກຳລັງແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດ</string>
     <string name="stuck_touch_exploration_fixed">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດແລ້ວ</string>
     <string name="stuck_touch_exploration_not_fixed">ການສໍາຫຼວດສໍາພັດຍັງຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂມັນ.</string>

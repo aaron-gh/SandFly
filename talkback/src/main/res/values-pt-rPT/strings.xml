@@ -39,7 +39,7 @@
   <string name="punctuation_most">A maioria</string>
   <string name="punctuation_some">Alguns</string>
   <string name="title_pref_count_repeated_symbols">Contar símbolos repetidos</string>
-  <string name="summary_pref_count_repeated_symbols">Diga quantas vezes um símbolo se repete quando se repete 4 ou mais vezes</string>
+  <string name="summary_pref_count_repeated_symbols">Dizer quantas vezes um símbolo se repete quando se repete 4 ou mais vezes</string>
   <string name="learn_more">Saber mais</string>
   <string name="title_pref_capital_letters">Letras maiúsculas</string>
   <string name="capital_letters_nothing">Não fazer nada</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">A otimização da bateria pode parar SandFly</string>
     <string name="battery_optimization_notification_text">Neste telemóvel, a poupança de bateria pode parar o SandFly depois de o ecrã se desligar, e ele fica em silêncio até ser reiniciado. Toque para abrir a otimização da bateria, escolha Todas as apps, encontre o SandFly e escolha Não otimizar.</string>
     <string name="title_pref_mute_speech_while_recording">Silencioso durante a gravação</string>
-    <string name="summary_pref_mute_speech_while_recording">Embora um aplicativo grave sem fones de ouvido conectados, SandFly só fala em resposta aos seus gestos, teclas e digitação, e permanece silencioso para coisas como notificações, para que não sejam gravadas.</string>
+    <string name="summary_pref_mute_speech_while_recording">Enquanto uma app grava sem auscultadores ligados, o SandFly só fala em resposta aos seus gestos, teclas e escrita e fica em silêncio para coisas como notificações, para que não sejam gravadas.</string>
     <string name="title_pref_switch_languages">Alternar idioma automaticamente</string>
     <string name="title_pref_switch_dialects">Mudar de dialeto automaticamente</string>
     <string name="category_collapsed">Seção recolhida</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 graus</string>
     <string name="value_rotor_step_60">60 graus</string>
     <string name="title_pref_low_latency_audio">Áudio de baixa latência</string>
-    <string name="summary_pref_low_latency_audio">Reproduza os sons e a fala de SandFly através do caminho de áudio mais rápido do telefone, para que você os ouça mais cedo. Desligue-o se a fala ou os sons forem interrompidos ou parecerem errados.</string>
+    <string name="summary_pref_low_latency_audio">Reproduz os sons e a fala do SandFly pelo caminho de áudio mais rápido do telemóvel, para que os ouça mais cedo. Desative se a fala ou os sons falharem ou soarem mal.</string>
     <string name="value_focus_delay_200ms_default">0,2 segundos (padrão)</string>
     <string name="value_focus_delay_300ms">0,3 segundos</string>
     <string name="title_pref_lift_to_activate">Levantar o dedo para ativar</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">Navegação circular</string>
     <string name="summary_pref_wrap_around">Passar o último item vai para o primeiro e passar o primeiro vai para o último. Quando desativado, um som é reproduzido no final.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Corrigir exploração pelo toque bloqueada</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, SandFly só pode dizer que a exploração por toque pode travar. Para permitir que isso seja corrigido, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a autorização DUMP, o SandFly só pode avisar que a exploração através do toque pode estar bloqueada. Para que possa corrigir isto, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Corrigindo a exploração de toque</string>
     <string name="stuck_touch_exploration_fixed">Exploração de toque corrigida</string>
     <string name="stuck_touch_exploration_not_fixed">A exploração através do toque continua bloqueada. Reinicie o telemóvel para resolver.</string>

@@ -39,7 +39,7 @@
   <string name="punctuation_most">ほとんど</string>
   <string name="punctuation_some">一部</string>
   <string name="title_pref_count_repeated_symbols">繰り返される記号を数える</string>
-  <string name="summary_pref_count_repeated_symbols">シンボルが 4 回以上繰り返される場合、そのシンボルが何回繰り返されるかを言います</string>
+  <string name="summary_pref_count_repeated_symbols">記号が 4 回以上繰り返されるときに、繰り返しの回数を読み上げる</string>
   <string name="learn_more">詳細</string>
   <string name="title_pref_capital_letters">大文字</string>
   <string name="capital_letters_nothing">何もしない</string>
@@ -1666,7 +1666,7 @@
     <string name="value_rotor_step_45">45度</string>
     <string name="value_rotor_step_60">60度</string>
     <string name="title_pref_low_latency_audio">低遅延オーディオ</string>
-    <string name="summary_pref_low_latency_audio">SandFly の音と音声を電話の最速オーディオ パスで再生すると、より早く聞こえるようになります。音声や音声が途切れたり、間違って聞こえる場合は、オフにしてください。</string>
+    <string name="summary_pref_low_latency_audio">SandFly のサウンドと音声をスマートフォンの最速のオーディオ経路で再生し、早く聞こえるようにします。音声やサウンドが途切れたり、正しく聞こえなかったりする場合はオフにしてください。</string>
     <string name="value_focus_delay_200ms_default">0.2秒(デフォルト)</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
     <string name="title_pref_lift_to_activate">指を離して有効化</string>
@@ -1678,7 +1678,7 @@
     <string name="title_pref_wrap_around">最初に戻る</string>
     <string name="summary_pref_wrap_around">最後の項目を越えてスワイプすると最初の項目に移動し、最初の項目を越えてスワイプすると最後の項目に移動します。オフにすると、代わりに最後にサウンドが再生されます。</string>
     <string name="title_pref_fix_stuck_touch_exploration">停止したタッチ操作ガイドを修正</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 権限がないと、SandFly はタッチガイドが応答しなくなっている可能性を知らせることしかできません。SandFly が修正できるようにするには、次のコマンドを実行してください: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">タッチ探索を修正しています</string>
     <string name="stuck_touch_exploration_fixed">タッチ探索が修正されました</string>
     <string name="stuck_touch_exploration_not_fixed">タッチガイドがまだ応答していません。修正するにはスマートフォンを再起動してください。</string>

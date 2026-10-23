@@ -39,7 +39,7 @@
   <string name="punctuation_most">ច្រើន​បំផុត</string>
   <string name="punctuation_some">មួយ​ចំនួន</string>
   <string name="title_pref_count_repeated_symbols">រាប់និមិត្តសញ្ញាដដែលៗ</string>
-  <string name="summary_pref_count_repeated_symbols">និយាយថាចំនួនដងដែលនិមិត្តសញ្ញាធ្វើម្តងទៀតនៅពេលដែលវាធ្វើម្តងទៀត 4 ដងឬច្រើនជាងនេះ</string>
+  <string name="summary_pref_count_repeated_symbols">និយាយចំនួនដងដែលនិមិត្តសញ្ញាដដែលៗ នៅពេលវាដដែលៗ 4 ដង ឬច្រើនជាងនេះ</string>
   <string name="learn_more">ស្វែងយល់បន្ថែម</string>
   <string name="title_pref_capital_letters">អក្សរធំ</string>
   <string name="capital_letters_nothing">មិន​ធ្វើ​អ្វី​សោះ</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">ការបង្កើនប្រសិទ្ធភាពថ្មអាចបញ្ឈប់ SandFly</string>
     <string name="battery_optimization_notification_text">នៅលើទូរសព្ទនេះ កម្មវិធីសន្សំសំចៃថ្មអាចបញ្ឈប់ SandFly បន្ទាប់ពីអេក្រង់បិទ ដូច្នេះវានៅស្ងៀមរហូតដល់វាចាប់ផ្តើមឡើងវិញ។ ចុចដើម្បីបើកការបង្កើនប្រសិទ្ធភាពថ្ម ជ្រើសរើសកម្មវិធីទាំងអស់ ស្វែងរក SandFly ហើយជ្រើសរើស កុំបង្កើនប្រសិទ្ធភាព។</string>
     <string name="title_pref_mute_speech_while_recording">ស្ងាត់ពេលថត</string>
-    <string name="summary_pref_mute_speech_while_recording">ខណៈពេលដែលកម្មវិធីកត់ត្រាដោយគ្មានកាសបានភ្ជាប់ SandFlyគ្រាន់តែនិយាយជាចម្លើយចំពោះកាយវិការ គ្រាប់ចុច និងការវាយរបស់អ្នក ហើយរក្សាភាពស្ងៀមស្ងាត់សម្រាប់អ្វីៗដូចជាការជូនដំណឹង ដើម្បីកុំឱ្យពួកវាត្រូវបានថតទុក។</string>
+    <string name="summary_pref_mute_speech_while_recording">ខណៈពេលដែលកម្មវិធីកំពុងថតដោយមិនបានភ្ជាប់កាស SandFly និយាយតែជាការឆ្លើយតបនឹងកាយវិការ គ្រាប់ចុច និងការវាយអក្សររបស់អ្នកប៉ុណ្ណោះ ហើយនៅស្ងៀមសម្រាប់អ្វីៗដូចជាការជូនដំណឹង ដើម្បីកុំឱ្យវាត្រូវបានថត។</string>
     <string name="title_pref_switch_languages">ប្តូរភាសាដោយស្វ័យប្រវត្តិ</string>
     <string name="title_pref_switch_dialects">ប្តូរគ្រាមភាសាដោយស្វ័យប្រវត្តិ</string>
     <string name="category_collapsed">ផ្នែកដែលបានបង្រួម</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 ដឺក្រេ</string>
     <string name="value_rotor_step_60">60 ដឺក្រេ</string>
     <string name="title_pref_low_latency_audio">អូឌីយ៉ូដែលមានភាពយឺតយ៉ាវទាប</string>
-    <string name="summary_pref_low_latency_audio">លេងសំឡេង និងការនិយាយរបស់ SandFly តាមរយៈផ្លូវអូឌីយ៉ូលឿនបំផុតរបស់ទូរសព្ទ ដូច្នេះអ្នកឮពួកវាឆាប់ជាង។ បិទវាប្រសិនបើការនិយាយ ឬសំឡេងបែក ឬសំឡេងខុស។</string>
+    <string name="summary_pref_low_latency_audio">ចាក់សំឡេង និងការនិយាយរបស់ SandFly តាមផ្លូវអូឌីយ៉ូលឿនបំផុតរបស់ទូរសព្ទ ដើម្បីឱ្យអ្នកឮវាឆាប់ជាងមុន។ បិទវា ប្រសិនបើការនិយាយ ឬសំឡេងដាច់ៗ ឬឮខុស។</string>
     <string name="value_focus_delay_200ms_default">0.2 វិនាទី (លំនាំដើម)</string>
     <string name="value_focus_delay_300ms">0.3 វិនាទី</string>
     <string name="title_pref_lift_to_activate">លើកដើម្បីបើកដំណើរការ</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">វិលត្រឡប់ទៅដើម</string>
     <string name="summary_pref_wrap_around">ការអូសរំលងធាតុចុងក្រោយទៅទីមួយ ហើយរំលងទីមួយទៅចុងក្រោយ នៅពេលបិទ សំឡេងមួយនឹងចាក់នៅចុងបញ្ចប់ជំនួសវិញ។</string>
     <string name="title_pref_fix_stuck_touch_exploration">ជួសជុលការរុករកដោយប៉ះដែលគាំង</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">បើគ្មានការអនុញ្ញាតពី DUMP ទេ SandFly អាចនិយាយបានថាការរុករកដោយប៉ះអាចជាប់គាំង។ ដើម្បីអោយវាជួសជុល សូមដំណើរការ៖ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">បើគ្មានសិទ្ធិ DUMP ទេ SandFly អាចត្រឹមតែប្រាប់ថាការរុករកដោយប៉ះអាចជាប់គាំង។ ដើម្បីឱ្យ SandFly អាចដោះស្រាយបាន សូមដំណើរការ៖ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ជួសជុលការរុករកដោយប៉ះ</string>
     <string name="stuck_touch_exploration_fixed">ការរុករកប៉ះត្រូវបានជួសជុល</string>
     <string name="stuck_touch_exploration_not_fixed">ការរុករកដោយប៉ះនៅតែជាប់គាំង។ ចាប់ផ្តើមទូរស័ព្ទឡើងវិញដើម្បីជួសជុលវា។</string>

@@ -39,7 +39,7 @@
   <string name="punctuation_most">ଅଧିକାଂଶ</string>
   <string name="punctuation_some">କିଛି</string>
   <string name="title_pref_count_repeated_symbols">ରିପିଟ ହୋଇଥିବା ପ୍ରତୀକର ଗଣନା</string>
-  <string name="summary_pref_count_repeated_symbols">ଏକ ପ୍ରତୀକ 4 କିମ୍ବା ଅଧିକ ଥର ପୁନରାବୃତ୍ତି କଲାବେଳେ କେତେଥର ପୁନରାବୃତ୍ତି କରେ କୁହ</string>
+  <string name="summary_pref_count_repeated_symbols">ଏକ ପ୍ରତୀକ 4 କିମ୍ବା ଅଧିକ ଥର ପୁନରାବୃତ୍ତି ହେଲେ, କେତେଥର ପୁନରାବୃତ୍ତି ହେଲା କହେ</string>
   <string name="learn_more">ଅଧିକ ଜାଣନ୍ତୁ</string>
   <string name="title_pref_capital_letters">ବଡ଼ ଅକ୍ଷର</string>
   <string name="capital_letters_nothing">କିଛି କରନ୍ତୁ ନାହିଁ</string>
@@ -1351,7 +1351,7 @@
     <string name="battery_optimization_notification_title">ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ SandFlyକୁ ବନ୍ଦ କରିପାରେ</string>
     <string name="battery_optimization_notification_text">ଏହି ଫୋନରେ, ସ୍କ୍ରିନ୍ ବନ୍ଦ ହେବା ପରେ ବ୍ୟାଟେରୀ ସେଭର୍ SandFly କୁ ବନ୍ଦ କରିପାରେ, ତେଣୁ ପୁଣି ଆରମ୍ଭ ନହେବା ପର୍ଯ୍ୟନ୍ତ ଏହା କିଛି କହେ ନାହିଁ। ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ ଖୋଲିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ, ସମସ୍ତ ଆପ୍ ବାଛନ୍ତୁ, SandFly ଖୋଜନ୍ତୁ ଏବଂ ଅପ୍ଟିମାଇଜ୍ କରନ୍ତୁ ନାହିଁ ବାଛନ୍ତୁ।</string>
     <string name="title_pref_mute_speech_while_recording">ରେକର୍ଡିଂ କରିବା ସମୟରେ ଶାନ୍ତ</string>
-    <string name="summary_pref_mute_speech_while_recording">ଯେତେବେଳେ ହେଡଫୋନ୍ ସଂଯୁକ୍ତ ବିନା ଏକ ଆପ୍ ରେକର୍ଡ କରେ, SandFly କେବଳ ଆପଣଙ୍କ ଅଙ୍ଗଭଙ୍ଗୀ, ଚାବି ଏବଂ ଟାଇପିଂର ଉତ୍ତରରେ କହିଥାଏ, ଏବଂ ବିଜ୍ଞପ୍ତି ପରି ଜିନିଷ ପାଇଁ ଚୁପ୍ ରହିଥାଏ, ଯାହା ଦ୍ recorded ାରା ସେଗୁଡିକ ରେକର୍ଡ ହୋଇନଥାଏ |</string>
+    <string name="summary_pref_mute_speech_while_recording">ହେଡଫୋନ୍ ସଂଯୋଗ ନଥିବାବେଳେ କୌଣସି ଆପ୍ ରେକର୍ଡ କରୁଥିଲେ, SandFly କେବଳ ଆପଣଙ୍କ ଅଙ୍ଗଭଙ୍ଗୀ, କୀ ଏବଂ ଟାଇପିଂର ଉତ୍ତରରେ କହେ, ଏବଂ ବିଜ୍ଞପ୍ତି ପରି ଜିନିଷ ପାଇଁ ଚୁପ୍ ରହେ, ଯାହାଫଳରେ ସେଗୁଡ଼ିକ ରେକର୍ଡ ହୁଏ ନାହିଁ।</string>
     <string name="title_pref_switch_languages">ଭାଷା ସ୍ୱୟଂଚାଳିତ ଭାବରେ ସୁଇଚ୍ କରନ୍ତୁ</string>
     <string name="title_pref_switch_dialects">ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଉପଭାଷା ସୁଇଚ୍ କରନ୍ତୁ</string>
     <string name="category_collapsed">ସଙ୍କୁଚିତ ବିଭାଗ</string>
@@ -1668,7 +1668,7 @@
     <string name="value_rotor_step_45">45 ଡିଗ୍ରୀ</string>
     <string name="value_rotor_step_60">60 ଡିଗ୍ରୀ</string>
     <string name="title_pref_low_latency_audio">ନିମ୍ନ-ବିଳମ୍ବ ଅଡିଓ</string>
-    <string name="summary_pref_low_latency_audio">ଫୋନର ଦ୍ରୁତତମ ଅଡିଓ ପଥ ମାଧ୍ୟମରେ SandFly ର ଧ୍ୱନି ଏବଂ ବକ୍ତବ୍ୟ ଚଲାନ୍ତୁ, ତେଣୁ ଆପଣ ସେଗୁଡିକ ଶୀଘ୍ର ଶୁଣିବେ | ଯଦି ବକ୍ତବ୍ୟ କିମ୍ବା ଧ୍ୱନି ଭାଙ୍ଗିଯାଏ କିମ୍ବା ଭୁଲ୍ ଶବ୍ଦ ହୁଏ ତେବେ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ |</string>
+    <string name="summary_pref_low_latency_audio">SandFly ର ଧ୍ୱନି ଏବଂ କଥାକୁ ଫୋନର ଦ୍ରୁତତମ ଅଡିଓ ପଥରେ ଚଲାଏ, ଯାହାଫଳରେ ଆପଣ ସେଗୁଡ଼ିକ ଶୀଘ୍ର ଶୁଣିପାରିବେ। କଥା କିମ୍ବା ଧ୍ୱନି ଭାଙ୍ଗିଲେ କିମ୍ବା ଭୁଲ୍ ଶୁଣାଗଲେ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ।</string>
     <string name="value_focus_delay_200ms_default">0.2 ସେକେଣ୍ଡ (ଡିଫଲ୍ଟ)</string>
     <string name="value_focus_delay_300ms">0.3 ସେକେଣ୍ଡ୍</string>
     <string name="title_pref_lift_to_activate">ସକ୍ରିୟ କରିବାକୁ ଉଠାନ୍ତୁ</string>

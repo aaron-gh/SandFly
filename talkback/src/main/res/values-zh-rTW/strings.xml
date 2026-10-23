@@ -39,7 +39,7 @@
   <string name="punctuation_most">大多數</string>
   <string name="punctuation_some">部分</string>
   <string name="title_pref_count_repeated_symbols">計算重複符號</string>
-  <string name="summary_pref_count_repeated_symbols">當某個符號重複 4 次或以上時，請說出符號重複了多少次</string>
+  <string name="summary_pref_count_repeated_symbols">符號連續重複 4 次或以上時，讀出重複次數</string>
   <string name="learn_more">瞭解詳情</string>
   <string name="title_pref_capital_letters">大寫字母</string>
   <string name="capital_letters_nothing">不執行任何動作</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">電池最佳化可能會停止 SandFly</string>
     <string name="battery_optimization_notification_text">在這支手機上，螢幕關閉後省電模式可能會停止 SandFly，導致 SandFly 在重新啟動前不會發出語音。輕觸即可開啟電池最佳化，選擇「所有應用程式」，找到 SandFly 並選擇「不要最佳化」。</string>
     <string name="title_pref_mute_speech_while_recording">錄音時保持安靜</string>
-    <string name="summary_pref_mute_speech_while_recording">當應用程式在未連接耳機的情況下進行錄製時，SandFly僅在回答您的手勢、按鍵和打字時說話，並且在通知等情況下保持安靜，因此不會被記錄。</string>
+    <string name="summary_pref_mute_speech_while_recording">當應用程式在未連接耳機的情況下錄音時，SandFly 只會在回應你的手勢、按鍵和輸入時說話，並在通知等情況下保持靜音，以免被錄下。</string>
     <string name="title_pref_switch_languages">自動切換語言</string>
     <string name="title_pref_switch_dialects">自動切換方言</string>
     <string name="category_collapsed">折疊部分</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45度</string>
     <string name="value_rotor_step_60">60度</string>
     <string name="title_pref_low_latency_audio">低延遲音訊</string>
-    <string name="summary_pref_low_latency_audio">透過手機最快的音訊路徑播放 SandFly 的聲音和語音，以便您更快地聽到它們。如果語音或聲音中斷或聽起來錯誤，請將其關閉。</string>
+    <string name="summary_pref_low_latency_audio">透過手機最快的音訊路徑播放 SandFly 的音效和語音，讓你更早聽到。如果語音或音效斷斷續續或聽起來不正常，請關閉此設定。</string>
     <string name="value_focus_delay_200ms_default">0.2 秒（預設）</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
     <string name="title_pref_lift_to_activate">放開手指即啟用</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">循環瀏覽</string>
     <string name="summary_pref_wrap_around">滑過最後一個項目將轉到第一個項目，滑過第一個項目將轉到最後一個項目。關閉時，最後會播放聲音。</string>
     <string name="title_pref_fix_stuck_touch_exploration">修正觸控探索停止回應的問題</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">沒有DUMP的許可，SandFly只能說觸摸探索可能會卡住。要讓它修復它，請運行： adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">如果沒有 DUMP 權限，SandFly 只能提示輕觸探索可能已停止回應。如要讓 SandFly 修正問題，請執行：adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修復觸摸探索</string>
     <string name="stuck_touch_exploration_fixed">觸摸探索已修復</string>
     <string name="stuck_touch_exploration_not_fixed">輕觸探索仍然沒有回應。請重新啟動手機以修正。</string>

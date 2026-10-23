@@ -39,7 +39,7 @@
   <string name="punctuation_most">အများစု</string>
   <string name="punctuation_some">အချို့</string>
   <string name="title_pref_count_repeated_symbols">ထပ်နေသောသင်္ကေတများ ရေတွက်ရန်</string>
-  <string name="summary_pref_count_repeated_symbols">သင်္ကေတတစ်ခုသည် 4 ကြိမ် သို့မဟုတ် ထို့ထက်ပို၍ ထပ်ခါထပ်ခါလုပ်သည့်အခါ သင်္ကေတတစ်ခု ထပ်ခါထပ်ခါပြောပါ</string>
+  <string name="summary_pref_count_repeated_symbols">သင်္ကေတတစ်ခု 4 ကြိမ် သို့မဟုတ် ထို့ထက်ပို၍ ထပ်လာလျှင် ထပ်သည့်အကြိမ်ရေကို ပြောသည်</string>
   <string name="learn_more">ပိုလေ့လာရန်</string>
   <string name="title_pref_capital_letters">စာလုံးအကြီးများ</string>
   <string name="capital_letters_nothing">ပြောင်းလဲမှု မလုပ်ပါနှင့်</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">ဘက်ထရီ ပိုကောင်းအောင်ပြုလုပ်ခြင်းက SandFly ကို ရပ်စေနိုင်သည်</string>
     <string name="battery_optimization_notification_text">ဤဖုန်းတွင် မျက်နှာပြင်ပိတ်ပြီးနောက် ဘက်ထရီချွေတာစနစ်က SandFly ကို ရပ်တန့်နိုင်သဖြင့် ပြန်လည်စတင်သည်အထိ မည်သည့်အသံမျှ မထွက်ပါ။ ဘက်ထရီ ပိုမိုကောင်းမွန်အောင်ပြုလုပ်ခြင်းကို ဖွင့်ရန် တို့ပါ၊ အက်ပ်အားလုံး ကို ရွေးပါ၊ SandFly ကို ရှာပြီး ပိုကောင်းအောင် မလုပ်ပါနှင့် ကို ရွေးပါ။</string>
     <string name="title_pref_mute_speech_while_recording">အသံသွင်းနေစဉ် တိတ်ဆိတ်နေပါသည်</string>
-    <string name="summary_pref_mute_speech_while_recording">အက်ပ်တစ်ခုသည် နားကြပ်မချိတ်ဘဲ မှတ်တမ်းတင်နေချိန်တွင် SandFly သည် သင့်လက်ဟန်များ၊ သော့များနှင့် စာရိုက်ခြင်းတို့ကိုသာ ဖြေကြားပြီး အကြောင်းကြားချက်များကဲ့သို့သော အရာများအတွက် တိတ်တိတ်ဆိတ်ဆိတ်နေ၍ ၎င်းတို့ကို မှတ်တမ်းတင်ထားမည်မဟုတ်ပေ။</string>
+    <string name="summary_pref_mute_speech_while_recording">အက်ပ်တစ်ခုက နားကြပ်မချိတ်ဘဲ အသံဖမ်းနေစဉ် SandFly သည် သင်၏ လက်ဟန်များ၊ ကီးများနှင့် စာရိုက်ခြင်းကို တုံ့ပြန်ရာတွင်သာ ပြောပြီး အကြောင်းကြားချက်များကဲ့သို့သော အရာများကို အသံမဖမ်းမိစေရန် မပြောပါ။</string>
     <string name="title_pref_switch_languages">ဘာသာစကား အလိုအလျောက်ပြောင်းပါ</string>
     <string name="title_pref_switch_dialects">ဒေသိယစကား အလိုအလျောက်ပြောင်းပါ</string>
     <string name="category_collapsed">ခေါက်ထားသည့်အပိုင်း</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 ဒီဂရီ</string>
     <string name="value_rotor_step_60">60 ဒီဂရီ</string>
     <string name="title_pref_low_latency_audio">နှောင့်နှေးမှုနည်းသော အသံ</string>
-    <string name="summary_pref_low_latency_audio">ဖုန်း၏အမြန်ဆုံးအသံလမ်းကြောင်းမှတဆင့် SandFly ၏အသံများနှင့် စကားများကိုဖွင့်ပါ၊ သို့မှသာ ၎င်းတို့ကို မြန်မြန်ကြားနိုင်သည်။ စကားပြောသံ သို့မဟုတ် အသံကွဲသွားပါက သို့မဟုတ် အသံမှားပါက ပိတ်ပါ။</string>
+    <string name="summary_pref_low_latency_audio">SandFly ၏ အသံများနှင့် စကားပြောသံကို ဖုန်း၏ အမြန်ဆုံး အသံလမ်းကြောင်းဖြင့် ဖွင့်ပေးသဖြင့် ပိုစောစွာ ကြားရသည်။ စကားပြောသံ သို့မဟုတ် အသံများ ပြတ်တောက်ပါက သို့မဟုတ် မှားနေပါက ပိတ်ပါ။</string>
     <string name="value_focus_delay_200ms_default">0.2 စက္ကန့် (မူလ)</string>
     <string name="value_focus_delay_300ms">0.3 စက္ကန့်</string>
     <string name="title_pref_lift_to_activate">လက်ချောင်းကြွ၍ ဖွင့်ပါ</string>

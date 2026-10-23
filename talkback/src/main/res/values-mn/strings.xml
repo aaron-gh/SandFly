@@ -39,7 +39,7 @@
   <string name="punctuation_most">Ихэнх нь</string>
   <string name="punctuation_some">Зарим нь</string>
   <string name="title_pref_count_repeated_symbols">Давтагдсан тэмдгийг тоолох</string>
-  <string name="summary_pref_count_repeated_symbols">Тэмдгийг 4 ба түүнээс дээш удаа давтахад хэдэн удаа давтахыг хэл</string>
+  <string name="summary_pref_count_repeated_symbols">Тэмдэгт 4 ба түүнээс олон удаа давтагдахад хэдэн удаа давтагдсаныг хэлэх</string>
   <string name="learn_more">Нэмэлт мэдээлэл авах</string>
   <string name="title_pref_capital_letters">Том үсэг</string>
   <string name="capital_letters_nothing">Юу ч бүү хий</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">Батерейг оновчлох нь SandFly-г зогсоох боломжтой</string>
     <string name="battery_optimization_notification_text">Энэ утсанд дэлгэц унтарсны дараа батарей хэмнэгч SandFly-г зогсоож болох бөгөөд дахин эхлүүлэх хүртэл юу ч хэлэхгүй. Батарейны оновчлолыг нээхийн тулд товшоод, «Бүх апп»-ыг сонгож, SandFly-г олоод «Оновчлохгүй»-г сонгоно уу.</string>
     <string name="title_pref_mute_speech_while_recording">Бичлэг хийж байхдаа чимээгүй</string>
-    <string name="summary_pref_mute_speech_while_recording">Аппликешн нь чихэвч залгаагүй бичлэг хийх үед SandFly нь зөвхөн таны дохио зангаа, товчлуур болон бичихэд хариу өгөхийн тулд ярьж, мэдэгдэл гэх мэт зүйлийг чимээгүй байлгаснаар тэдгээрийг бичихгүй.</string>
+    <string name="summary_pref_mute_speech_while_recording">Чихэвч холбоогүй үед апп бичлэг хийж байх хооронд SandFly зөвхөн таны дохио, товчлуур, бичихэд хариу болгон ярьж, мэдэгдэл зэргийг бичигдэхгүйн тулд уншихгүй.</string>
     <string name="title_pref_switch_languages">Хэлийг автоматаар солих</string>
     <string name="title_pref_switch_dialects">Аялгууг автоматаар солих</string>
     <string name="category_collapsed">Хураагдсан хэсэг</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 градус</string>
     <string name="value_rotor_step_60">60 градус</string>
     <string name="title_pref_low_latency_audio">Хоцролт багатай аудио</string>
-    <string name="summary_pref_low_latency_audio">SandFly-ийн дуу, яриаг утасны хамгийн хурдан аудио замаар тоглуулаарай, ингэснээр та тэдгээрийг илүү хурдан сонсох болно. Яриа, дуу чимээ тасарсан эсвэл буруу сонсогдож байвал үүнийг унтраа.</string>
+    <string name="summary_pref_low_latency_audio">SandFly-н дуу, яриаг утасны хамгийн хурдан аудио замаар тоглуулж, илүү эрт сонсогдуулна. Яриа эсвэл дуу тасалдах, буруу сонсогдвол үүнийг унтраана уу.</string>
     <string name="value_focus_delay_200ms_default">0.2 секунд (өгөгдмөл)</string>
     <string name="value_focus_delay_300ms">0.3 секунд</string>
     <string name="title_pref_lift_to_activate">Хуруугаа өргөж идэвхжүүлэх</string>

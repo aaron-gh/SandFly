@@ -39,7 +39,7 @@
   <string name="punctuation_most">Көбүнчө</string>
   <string name="punctuation_some">Анча-мынча</string>
   <string name="title_pref_count_repeated_symbols">Кайталанган символдорду эсептөө</string>
-  <string name="summary_pref_count_repeated_symbols">Символ 4 же андан көп жолу кайталанганда канча жолу кайталанарын айтыңыз</string>
+  <string name="summary_pref_count_repeated_symbols">Символ 4 же андан көп жолу кайталанганда, канча жолу кайталанганын айтуу</string>
   <string name="learn_more">Кеңири маалымат</string>
   <string name="title_pref_capital_letters">Баш тамгалар</string>
   <string name="capital_letters_nothing">Эч нерсе кылынбасын</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">Батареяны оптималдаштыруу SandFly\'ды токтотушу мүмкүн</string>
     <string name="battery_optimization_notification_text">Бул телефондо экран өчкөндөн кийин батареяны үнөмдөгүч SandFly’ды токтотуп коюшу мүмкүн, анда ал кайра иштетилмейинче эч нерсе айтпайт. Батареяны оптималдаштырууну ачуу үчүн таптап, «Бардык колдонмолор» дегенди тандап, SandFly’ды таап, «Оптималдаштырбоо» дегенди тандаңыз.</string>
     <string name="title_pref_mute_speech_while_recording">Жазып жатканда тынч</string>
-    <string name="summary_pref_mute_speech_while_recording">Колдонмо кулакчын туташтырбай жазып жатканда, SandFly жаңсооңузга, баскычтарыңызга жана терүүңүзгө жооп катары гана сүйлөйт жана эскертмелер сыяктуу нерселер үчүн унчукпай туруп, алар жаздырылбайт.</string>
+    <string name="summary_pref_mute_speech_while_recording">Колдонмо кулакчынсыз жаздырып жатканда, SandFly жаңсоолоруңузга, баскычтарга жана терүүңүзгө жооп катары гана сүйлөйт, ал эми эскертмелер сыяктуу нерселер жаздырылбашы үчүн аларды айтпайт.</string>
     <string name="title_pref_switch_languages">Тилди автоматтык түрдө которуу</string>
     <string name="title_pref_switch_dialects">Диалекти автоматтык түрдө которуу</string>
     <string name="category_collapsed">Жыйыштырылган бөлүм</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 градус</string>
     <string name="value_rotor_step_60">60 градус</string>
     <string name="title_pref_low_latency_audio">Кечигүүсү аз аудио</string>
-    <string name="summary_pref_low_latency_audio">SandFly үндөрүн жана кептерин телефондун эң ылдам аудио жолу аркылуу ойнотуңуз, аларды тезирээк угуңуз. Сүйлөө же үндөр бузулса же туура эмес угулса, аны өчүрүңүз.</string>
+    <string name="summary_pref_low_latency_audio">SandFly’дын үндөрүн жана кебин телефондун эң ылдам аудио жолу аркылуу ойнотот, ошондо аларды тезирээк угасыз. Кеп же үндөр үзүлүп же туура эмес угулса, өчүрүңүз.</string>
     <string name="value_focus_delay_200ms_default">0,2 секунд (демейки)</string>
     <string name="value_focus_delay_300ms">0,3 секунд</string>
     <string name="title_pref_lift_to_activate">Жандыруу үчүн көтөрүңүз</string>

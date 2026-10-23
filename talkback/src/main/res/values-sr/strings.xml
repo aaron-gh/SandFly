@@ -39,7 +39,7 @@
   <string name="punctuation_most">Већину</string>
   <string name="punctuation_some">Нешто</string>
   <string name="title_pref_count_repeated_symbols">Броји симболе који се понављају</string>
-  <string name="summary_pref_count_repeated_symbols">Реците колико пута се симбол понавља када се понавља 4 или више пута</string>
+  <string name="summary_pref_count_repeated_symbols">Изговарање колико пута се симбол понавља када се понови 4 или више пута</string>
   <string name="learn_more">Сазнајте више</string>
   <string name="title_pref_capital_letters">Велика слова</string>
   <string name="capital_letters_nothing">Не ради ништа</string>
@@ -1673,7 +1673,7 @@
     <string name="value_rotor_step_45">45 степени</string>
     <string name="value_rotor_step_60">60 степени</string>
     <string name="title_pref_low_latency_audio">Звук са малим кашњењем</string>
-    <string name="summary_pref_low_latency_audio">Пустите звукове и говор SandFly кроз најбржу аудио путању телефона, тако да их чујете раније. Искључите га ако се говор или звуци прекину или звуче погрешно.</string>
+    <string name="summary_pref_low_latency_audio">Пушта звукове и говор SandFly-а најбржом аудио путањом телефона да бисте их чули раније. Искључите ако се говор или звуци прекидају или звуче погрешно.</string>
     <string name="value_focus_delay_200ms_default">0,2 секунде (подразумевано)</string>
     <string name="value_focus_delay_300ms">0,3 секунде</string>
     <string name="title_pref_lift_to_activate">Активирање подизањем прста</string>
@@ -1685,7 +1685,7 @@
     <string name="title_pref_wrap_around">Кружно кретање</string>
     <string name="summary_pref_wrap_around">Превлачењем преко последње ставке прелази се на прву, а после прве иде на последњу. Када је искључено, на крају се чује звук.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Поправи заглављено истраживање додиром</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволе DUMP, SandFly може само да каже да је истраживање додиром можда заглављено. Да бисте то поправили, покрените: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> андроид.пермиссион.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволе DUMP, SandFly може само да каже да је истраживање додиром можда заглављено. Да би SandFly могао то да поправи, покрените: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Поправљање истраживања додиром</string>
     <string name="stuck_touch_exploration_fixed">Истраживање додиром је исправљено</string>
     <string name="stuck_touch_exploration_not_fixed">Истраживање додиром је и даље заглављено. Поново покрените телефон да бисте то поправили.</string>

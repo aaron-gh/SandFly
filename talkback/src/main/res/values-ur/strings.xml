@@ -39,7 +39,7 @@
   <string name="punctuation_most">زیادہ تر</string>
   <string name="punctuation_some">کچھ اطلاعات</string>
   <string name="title_pref_count_repeated_symbols">مکرر علامتیں شمار کریں</string>
-  <string name="summary_pref_count_repeated_symbols">بتائیں کہ جب کوئی علامت 4 یا اس سے زیادہ بار دہراتی ہے تو کتنی بار دہرائی جاتی ہے</string>
+  <string name="summary_pref_count_repeated_symbols">جب کوئی علامت 4 یا زیادہ بار دہرائی جائے تو بتاتا ہے کہ کتنی بار دہرائی گئی</string>
   <string name="learn_more">مزید جانیں</string>
   <string name="title_pref_capital_letters">بڑے حروف</string>
   <string name="capital_letters_nothing">کچھ نہ کریں</string>
@@ -1352,7 +1352,7 @@
     <string name="battery_optimization_notification_title">بیٹری کی اصلاح SandFly کو روک سکتی ہے</string>
     <string name="battery_optimization_notification_text">اس فون پر، اسکرین بند ہونے کے بعد بیٹری سیور SandFly بند کر سکتا ہے، اس لیے یہ دوبارہ شروع ہونے تک خاموش ہو جاتا ہے۔ بیٹری کی اصلاح کو کھولنے کے لیے تھپتھپائیں، تمام ایپس کو منتخب کریں، SandFly تلاش کریں اور بہتر نہ کریں کو منتخب کریں۔</string>
     <string name="title_pref_mute_speech_while_recording">ریکارڈنگ کے دوران خاموش</string>
-    <string name="summary_pref_mute_speech_while_recording">جب کہ ایک ایپ بغیر ہیڈ فون کے جڑے ریکارڈ کرتی ہے، SandFly صرف آپ کے اشاروں، کلیدوں اور ٹائپنگ کے جواب میں بولتی ہے، اور اطلاعات جیسی چیزوں کے لیے خاموش رہتی ہے، تاکہ وہ ریکارڈ نہ ہوں۔</string>
+    <string name="summary_pref_mute_speech_while_recording">جب کوئی ایپ ہیڈ فون منسلک کیے بغیر ریکارڈ کر رہی ہو، تو SandFly صرف آپ کے اشاروں، کلیدوں اور ٹائپنگ کے جواب میں بولتا ہے، اور اطلاعات جیسی چیزوں کے لیے خاموش رہتا ہے، تاکہ وہ ریکارڈ نہ ہوں۔</string>
     <string name="title_pref_switch_languages">زبان کو خود بخود تبدیل کریں</string>
     <string name="title_pref_switch_dialects">بولی خود بخود تبدیل کریں</string>
     <string name="category_collapsed">سکیڑا ہوا سیکشن</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 ڈگری</string>
     <string name="value_rotor_step_60">60 ڈگری</string>
     <string name="title_pref_low_latency_audio">کم تاخیر والی آڈیو</string>
-    <string name="summary_pref_low_latency_audio">فون کے تیز ترین آڈیو پاتھ کے ذریعے SandFly کی آوازیں اور تقریر چلائیں، تاکہ آپ انہیں جلد سنیں۔ اگر تقریر یا آوازیں ٹوٹ جائیں یا غلط لگیں تو اسے بند کر دیں۔</string>
+    <string name="summary_pref_low_latency_audio">SandFly کی آوازیں اور بولی فون کے تیز ترین آڈیو راستے سے چلاتا ہے، تاکہ آپ انہیں جلد سنیں۔ اگر بولی یا آوازیں ٹوٹیں یا غلط سنائی دیں تو اسے بند کریں۔</string>
     <string name="value_focus_delay_200ms_default">0.2 سیکنڈ (پہلے سے طے شدہ)</string>
     <string name="value_focus_delay_300ms">0.3 سیکنڈ</string>
     <string name="title_pref_lift_to_activate">انگلی اٹھا کر فعال کریں</string>

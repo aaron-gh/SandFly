@@ -39,7 +39,7 @@
   <string name="punctuation_most">Flest</string>
   <string name="punctuation_some">Sum</string>
   <string name="title_pref_count_repeated_symbols">Telja endurtekin tákn</string>
-  <string name="summary_pref_count_repeated_symbols">Segðu hversu oft tákn endurtekur sig þegar það endurtekur sig 4 sinnum eða oftar</string>
+  <string name="summary_pref_count_repeated_symbols">Segja hversu oft tákn endurtekur sig þegar það kemur 4 sinnum eða oftar í röð</string>
   <string name="learn_more">Nánar</string>
   <string name="title_pref_capital_letters">Hástafir</string>
   <string name="capital_letters_nothing">Ekki aðhafast neitt</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 gráður</string>
     <string name="value_rotor_step_60">60 gráður</string>
     <string name="title_pref_low_latency_audio">Hljóð með litlum biðtíma</string>
-    <string name="summary_pref_low_latency_audio">Spilaðu hljóð og tal SandFly í gegnum hraðasta hljóðleið símans, svo þú heyrir þau fyrr. Slökktu á því ef tal eða hljóð slitna eða hljóma rangt.</string>
+    <string name="summary_pref_low_latency_audio">Spilar hljóð og tal SandFly um hröðustu hljóðleið símans svo þú heyrir þau fyrr. Slökktu á þessu ef tal eða hljóð rofna eða hljóma rangt.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekúndur (sjálfgefið)</string>
     <string name="value_focus_delay_300ms">0,3 sekúndur</string>
     <string name="title_pref_lift_to_activate">Lyftu til að virkja</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">Hringferð</string>
     <string name="summary_pref_wrap_around">Að strjúka framhjá síðasta hlutnum fer í það fyrsta og framhjá því fyrsta fer í það síðasta. Þegar slökkt er á því spilar hljóð í lokin í staðinn.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Laga fasta snertikönnun</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Án DUMP leyfisins getur SandFly aðeins sagt að snerta könnun gæti verið föst. Til að láta það laga það skaltu keyra: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Án DUMP-heimildarinnar getur SandFly aðeins sagt að snertikönnun gæti verið föst. Til að SandFly geti lagað það skaltu keyra: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Lagar snertikönnun</string>
     <string name="stuck_touch_exploration_fixed">Snertakönnun lagfærð</string>
     <string name="stuck_touch_exploration_not_fixed">Snertakönnun er enn föst. Endurræstu símann til að laga það.</string>

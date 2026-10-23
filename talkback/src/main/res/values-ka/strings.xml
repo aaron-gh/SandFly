@@ -39,7 +39,7 @@
   <string name="punctuation_most">უმრავლესობა</string>
   <string name="punctuation_some">ზოგიერთი</string>
   <string name="title_pref_count_repeated_symbols">გამეორებული სიმბოლოების დათვლა</string>
-  <string name="summary_pref_count_repeated_symbols">თქვით რამდენჯერ მეორდება სიმბოლო, როდესაც ის 4 ან მეტჯერ მეორდება</string>
+  <string name="summary_pref_count_repeated_symbols">იმის თქმა, რამდენჯერ მეორდება სიმბოლო, როცა ის 4-ჯერ ან მეტჯერ მეორდება</string>
   <string name="learn_more">შეიტყვეთ მეტი</string>
   <string name="title_pref_capital_letters">მთავრული ასოები</string>
   <string name="capital_letters_nothing">არ შეიცვალოს არაფერი</string>
@@ -1669,7 +1669,7 @@
     <string name="value_rotor_step_45">45 გრადუსი</string>
     <string name="value_rotor_step_60">60 გრადუსი</string>
     <string name="title_pref_low_latency_audio">დაბალი შეყოვნების აუდიო</string>
-    <string name="summary_pref_low_latency_audio">დაუკარით SandFly-ის ხმები და მეტყველება ტელეფონის უსწრაფესი აუდიო ბილიკით, რათა უფრო მალე გაიგოთ ისინი. გამორთეთ, თუ მეტყველება ან ბგერები იშლება ან არასწორად ჟღერს.</string>
+    <string name="summary_pref_low_latency_audio">SandFly-ის ხმებსა და მეტყველებას ტელეფონის უსწრაფესი აუდიო გზით უკრავს, რომ ისინი უფრო ადრე გაიგოთ. გამორთეთ, თუ მეტყველება ან ხმები წყდება ან არასწორად ჟღერს.</string>
     <string name="value_focus_delay_200ms_default">0.2 წამი (ნაგულისხმევი)</string>
     <string name="value_focus_delay_300ms">0.3 წამი</string>
     <string name="title_pref_lift_to_activate">აწიეთ გასააქტიურებლად</string>
@@ -1681,7 +1681,7 @@
     <string name="title_pref_wrap_around">ციკლური გადასვლა</string>
     <string name="summary_pref_wrap_around">ბოლო ერთეულის წინ გადაფურცვლა პირველზე გადადის, ხოლო პირველს ბოლოზე. როდესაც გამორთულია, ამის ნაცვლად, ხმა უკრავს ბოლოს.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ჩარჩენილი შეხებით გამოკვლევის გასწორება</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ნებართვის გარეშე, SandFly შეიძლება მხოლოდ იმის თქმა, რომ შეხებით დათვალიერება შეიძლება შეფერხდეს. გამოსასწორებლად, გაუშვით: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ნებართვის გარეშე SandFly-ს მხოლოდ იმის თქმა შეუძლია, რომ შეხებით დათვალიერება შესაძლოა შეფერხდა. გამოსასწორებლად გაუშვით: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">შეხებით შესწავლის გამოსწორება</string>
     <string name="stuck_touch_exploration_fixed">შეხებით შესწავლა გამოსწორდა</string>
     <string name="stuck_touch_exploration_not_fixed">შეხებით კვლევა ჯერ კიდევ შეჩერებულია. გადატვირთეთ ტელეფონი მის გამოსასწორებლად.</string>
