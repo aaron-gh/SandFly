@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Brailletastatur</string>
   <string name="bd_application_name">Android für Barrierefreiheit</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-Brailletastatur nicht verfügbar</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack-Brailletastatur aktivieren</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-Brailletastatur nicht verfügbar</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly-Brailletastatur aktivieren</string>
   <string name="bd_ime_disabled_dialog_message">Wenn du deine Braillezeile für die Eingabe verwenden möchtest, gehe zu den Eingabeeinstellungen, um sie zu aktivieren</string>
   <string name="bd_ime_disabled_dialog_title_positive">Eingabeeinstellungen</string>
   <string name="bd_ime_not_default_dialog_title">Eingabemethode ändern</string>
-  <string name="bd_ime_not_default_dialog_message">Wenn du die Eingabe fortsetzen möchtest, lege die TalkBack-Brailletastatur als Eingabemethode fest</string>
+  <string name="bd_ime_not_default_dialog_message">Wenn du die Eingabe fortsetzen möchtest, lege die SandFly-Brailletastatur als Eingabemethode fest</string>
   <string name="bd_ime_not_default_dialog_positive">Eingabemethode ändern</string>
   <string name="type_unlabeled">Ohne Label</string>
   <string name="type_unlabeled_edittext">Bearbeitungsfeld ohne Label</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Nach links schwenken</string>
   <string name="overlay_pan_right_button">Nach rechts schwenken</string>
   <string name="bd_preferences_title">Braillezeile</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Wenn du die Braillezeile verwenden möchtest, musst du zuerst TalkBack aktivieren</string>
-  <string name="bd_preferences_banner_talkback_off_button">Zu TalkBack wechseln</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Wenn du die Braillezeile verwenden möchtest, musst du zuerst SandFly aktivieren</string>
+  <string name="bd_preferences_banner_talkback_off_button">Zu SandFly wechseln</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Wenn du die Braillezeile verwenden möchtest, musst du zuerst Bluetooth aktivieren</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth aktivieren</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">%s benötigt Zugriff auf Geräte in der Nähe, um die Braillezeile zu verwenden</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Wenn du den Suchmodus verwenden möchtest, musst du von der Standardtastaturbelegung zur erweiterten Tastaturbelegung wechseln. Durch diese Änderung werden einige Braillezeilenbefehle aktualisiert.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Einstellungen</string>
   <string name="bd_command_change_dialog_title">Einige Befehle wurden aktualisiert</string>
-  <string name="bd_command_change_dialog_message">Folgende Befehle für die Braillezeile wurden in dieser Version von TalkBack aktualisiert:\n\n• Vorheriges Element: Punkte 1 und 7 drücken\n\n• Nächstes Element: Punkte 4 und 8 drücken\n\n• Vorherige Vorleseoption: Punkte 2, 3, 7 und 8 drücken\n\n• Nächste Vorleseoption: Punkte 5, 6, 7 und 8 drücken</string>
+  <string name="bd_command_change_dialog_message">Folgende Befehle für die Braillezeile wurden in dieser Version von SandFly aktualisiert:\n\n• Vorheriges Element: Punkte 1 und 7 drücken\n\n• Nächstes Element: Punkte 4 und 8 drücken\n\n• Vorherige Vorleseoption: Punkte 2, 3, 7 und 8 drücken\n\n• Nächste Vorleseoption: Punkte 5, 6, 7 und 8 drücken</string>
   <string name="bd_preference_braille_contracted">Braille-Kurzschrift</string>
   <string name="bd_preference_braille_uncontracted">Braille-Basisschrift</string>
   <string name="bd_braille_grade_tips">Um auf einer Braillezeile schnell zwischen Braille-Kurzschrift und Braille-Basisschrift zu wechseln, drücke die Leertaste und die Punkte 1, 2, 4 und 5.\n\nDieser Befehl funktioniert, wenn du eine Sprache mit beiden Kürzungsgraden verwendest.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Zwischen Elementen wechseln</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systemaktionen</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Zurück, Startbildschirm, Benachrichtigungen und mehr</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-Funktionen</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack-Menüs und -Einstellungen</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-Funktionen</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-Menüs und -Einstellungen</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Brailleeinstellungen</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braillesprache und -einstellungen</string>
   <string name="bd_commands_bindings_category_text_editing_title">Textbearbeitung</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Alle Apps öffnen</string>
   <string name="bd_cmd_toggle_screen_search">Bildschirmsuche öffnen</string>
   <string name="bd_cmd_edit_custom_label">Benutzerdefiniertes Label bearbeiten</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack-Menü öffnen</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack-Sprachausgabe aktivieren oder deaktivieren</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly-Menü öffnen</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly-Sprachausgabe aktivieren oder deaktivieren</string>
   <string name="bd_cmd_read_stop">Mit dem Vorlesen aufhören</string>
-  <string name="bd_cmd_talkback_settings">TalkBack-Einstellungen öffnen</string>
+  <string name="bd_cmd_talkback_settings">SandFly-Einstellungen öffnen</string>
   <string name="bd_cmd_switch_to_next_input_language">Zur nächsten Eingabesprache wechseln</string>
   <string name="bd_cmd_switch_to_next_output_language">Zur nächsten Lesesprache wechseln</string>
   <string name="bd_cmd_toggle_contracted_mode">Zwischen gekürzt und ungekürzt wechseln</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Du kannst Webseiten schnell bedienen, indem du den Befehl zum Starten des Suchmodus verwendest und dann die folgenden Buchstaben- oder Zahlenkürzel eingibst\n\nDiese Kürzel können auch außerhalb des Suchmodus verwendet werden, aber du musst den „Weiter“-Befehlen Punkt 8 hinzufügen</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigation in Tabellen</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Einstellung für die Braillezeile ausschalten?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Du kannst die Funktion in den TalkBack-Einstellungen jederzeit wieder einschalten</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Du kannst die Funktion in den SandFly-Einstellungen jederzeit wieder einschalten</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Ausschalten</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Einige Befehle sind nicht verfügbar</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigationsbefehle, Braille-Einstellungen und einige TalkBack-Funktionen sind bei Eingabe und Bearbeitung nicht verfügbar.\n\nSchließ die Tastatur, um die Befehle zu nutzen.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigationsbefehle, Braille-Einstellungen und einige SandFly-Funktionen sind bei Eingabe und Bearbeitung nicht verfügbar.\n\nSchließ die Tastatur, um die Befehle zu nutzen.</string>
   <string name="bd_caption_tutorial_dialog_title">Untertitel auf der Braillezeile</string>
   <string name="bd_caption_tutorial_dialog_message">Drücke zum Steuern der Untertitel die Leertaste und die Punkte 1, 4, 7 und 8.\n\nFür automatische Untertitel in unterstützten Medien: Einstellungen &gt; „Untertitel auf der Braillezeile darstellen“.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Diese Meldung immer anzeigen, wenn Untertitel verfügbar sind</string>
   <string name="bd_usb_connect_dialog_title">Braillezeile mit USB-Anschluss verbunden</string>
-  <string name="bd_usb_connect_dialog_message">Der Akku deines %s lädt die Braillezeile.\n\nWenn du zu Bluetooth wechseln möchtest, trenne die Braillezeile vom USB-Anschluss oder -Hub und rufe „TalkBack-Einstellungen“ &gt; „Braillezeile“ auf.</string>
+  <string name="bd_usb_connect_dialog_message">Der Akku deines %s lädt die Braillezeile.\n\nWenn du zu Bluetooth wechseln möchtest, trenne die Braillezeile vom USB-Anschluss oder -Hub und rufe „SandFly-Einstellungen“ &gt; „Braillezeile“ auf.</string>
   <string name="bd_device">Smartphone</string>
   <string name="bd_battery_low_dialog_title">Akku %s schwach</string>
   <string name="bd_battery_low_dialog_message">Der Akku deines %s lädt die Braillezeile.\n\nSo kannst du die Lebensdauer deines Akkus verlängern:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Alle löschen</string>
   <string name="popup_message_history_empty">Leer</string>
   <string name="popup_message_history_consent_dialog_title">Nachrichtenverlauf auf dem Gerät aktivieren?</string>
-  <string name="popup_message_history_consent_dialog_msg">Dadurch werden einige Nachrichten, z. B. Benachrichtigungen und Wecker, in TalkBack gespeichert. Du kannst diese Einstellung jederzeit ändern.</string>
+  <string name="popup_message_history_consent_dialog_msg">Dadurch werden einige Nachrichten, z. B. Benachrichtigungen und Wecker, in SandFly gespeichert. Du kannst diese Einstellung jederzeit ändern.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aktivieren</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nein, danke</string>
+    <string name="external_display_channel">Braillezeilen aus anderen Apps</string>
+    <string name="external_display_ask_title">Darf <xliff:g id="app" example="Notetaker">%1$s</xliff:g> als Braillezeile für SandFly dienen?</string>
+    <string name="external_display_ask_text">SandFly verwendet sie erst, wenn du es erlaubst.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> kann alles lesen, was SandFly in Braille anzeigt. Das können alle Bildschirminhalte sein, einschließlich Nachrichten und deiner Eingaben. Die App kann dein Gerät außerdem wie eine Braillezeile steuern: Text eingeben, Apps öffnen und alle SandFly-Befehle ausführen. Erlaube dies nur Apps, denen du vertraust.</string>
+    <string name="external_display_allow">Erlauben</string>
+    <string name="external_display_deny">Nicht erlauben</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ist deine Braillezeile</string>
+    <string name="external_display_in_use_text">Während SandFly sie verwendet, kann <xliff:g id="app" example="Notetaker">%1$s</xliff:g> den Bildschirm lesen und das Gerät steuern.</string>
+    <string name="external_displays_title">Braillezeilen aus anderen Apps</string>
+    <string name="external_displays_summary">Apps, denen du die Erlaubnis erteilst, können als Braillezeilen für SandFly dienen. Eine solche App kann den Bildschirm lesen und das Gerät steuern.</string>
+    <string name="external_displays_none">Keine App darf als Braillezeile dienen.</string>
 </resources>
