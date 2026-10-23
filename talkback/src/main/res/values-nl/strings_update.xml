@@ -6,7 +6,7 @@
     <string name="summary_pref_auto_update_check">Controleer één keer per dag en laat een melding zien wanneer er een nieuwe build beschikbaar is</string>
     <string name="title_pref_dev_builds">Ontwikkelversies</string>
     <string name="update_notification_title">SandFly-update beschikbaar</string>
-    <string name="update_notification_text">Bouw <xliff:g id="build" example="97">%1$d</xliff:g>. Tik om te installeren.</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Tik om te installeren.</string>
     <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> is beschikbaar</string>
     <string name="update_dialog_install">Installeren</string>
     <string name="update_checking">Controleren op updates</string>
@@ -16,7 +16,7 @@
     <string name="update_already_downloading">De update wordt al gedownload</string>
     <string name="update_ready_title">SandFly-update gedownload</string>
     <string name="update_ready_text">Tik om te installeren.</string>
-    <string name="update_install_failed">Kan de update niet installeren</string>
+    <string name="update_install_failed">Kon de update niet installeren</string>
     <string name="update_install_canceled">Update geannuleerd</string>
     <string name="update_allow_install">Geef SandFly toestemming om apps te installeren en probeer de update vervolgens opnieuw</string>
 </resources>
