@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Daardie lêer is te groot. ’n Klank kan tot 5 MB wees.</string>
     <string name="theme_sound_not_audio">SandFly kan nie daardie lêer speel nie. Kies ’n WAV-, OGG-, MP3- of FLAC-klank.</string>
     <string name="theme_sound_failed">SandFly kon nie daardie lêer lees nie.</string>
+    <string name="title_pref_sound_theme_install_source">Uit \'n bron</string>
+    <string name="summary_pref_sound_theme_install_source">Temalêers in \'n bewaarplek op GitHub, GitLab, Codeberg, Gitea of Bitbucket.</string>
+    <string name="sound_theme_sources">Klank tema bronne</string>
+    <string name="sound_theme_source_empty">Geen klanktemas in hierdie bron nie</string>
+    <string name="sound_theme_source_failed">Kon nie klanktemas laai nie. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Klanktemas wat daaruit geïnstalleer word, bly geïnstalleer.</string>
 </resources>
