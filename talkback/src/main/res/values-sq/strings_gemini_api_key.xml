@@ -3,7 +3,7 @@
     <string name="title_pref_gemini_api_key">Çelësi Gemini API</string>
     <string name="summary_pref_gemini_api_key_built_in">Duke përdorur çelësin e integruar në këtë aplikacion</string>
     <string name="gemini_api_key_dialog_message">Merr një çelës API falas nga Google AI Studio, në aistudio.google.com/apikey dhe ngjite këtu. Për të hequr çelësin, pastroni fushën dhe ruajeni. \n\nImazhet dhe ekranet që përshkruani dërgohen te Google. Në nivelin e lirë, Google mund t\'i përdorë ato për të përmirësuar produktet e saj.</string>
-    <string name="gemini_api_key_hint">Tasti API</string>
+    <string name="gemini_api_key_hint">Çelësi API</string>
     <string name="gemini_api_key_save">Ruaj</string>
     <string name="gemini_api_key_get">Merr një çelës</string>
     <string name="title_pref_gemini_model">Modeli Gemini</string>
@@ -32,13 +32,13 @@
     <string name="ai_provider_none">Asnjë</string>
     <string name="ai_service_not_set_up">Asnjë shërbim AI nuk është në përdorim. Vendosni një ose zgjidhni një te cilësimet e përshkrimeve automatike.</string>
     <string name="ai_provider_none_set_up">Nuk është konfiguruar asnjë shërbim AI. Vendosni një në cilësimet e tij më poshtë.</string>
-    <string name="ai_provider_other">Shërbimi tjetër</string>
+    <string name="ai_provider_other">Shërbim tjetër</string>
     <string name="title_pref_category_ai_services">Shërbimet e AI</string>
     <string name="title_pref_ai_provider">Shërbimi i AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> cilësimet</string>
+    <string name="title_ai_provider_settings">Cilësimet e <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nuk është vendosur</string>
     <string name="ai_provider_in_use">Në përdorim</string>
-    <string name="ai_provider_not_set_up">Nuk është ngritur</string>
+    <string name="ai_provider_not_set_up">Nuk është konfiguruar</string>
     <string name="ai_provider_not_ready">Së pari zgjidhni një model</string>
     <string name="ai_provider_address">Adresa</string>
     <string name="ai_provider_address_message">Adresa e një shërbimi me një API bisede të përputhshme me OpenAI dhe hyrje imazhi, si p.sh. https://example.com/v1.</string>

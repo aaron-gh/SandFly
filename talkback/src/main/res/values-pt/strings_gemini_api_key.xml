@@ -5,7 +5,7 @@
     <string name="gemini_api_key_dialog_message">Obtenha uma chave de API gratuita no Google AI Studio, em aistudio.google.com/apikey, e cole-a aqui. Para remover sua chave, limpe o campo e salve.\n\nAs imagens e telas que você descreve são enviadas para Google. No nível gratuito, Google pode usá-los para melhorar seus produtos.</string>
     <string name="gemini_api_key_hint">Chave de API</string>
     <string name="gemini_api_key_save">Salvar</string>
-    <string name="gemini_api_key_get">Obtenha uma chave</string>
+    <string name="gemini_api_key_get">Obter uma chave</string>
     <string name="title_pref_gemini_model">Modelo Gemini</string>
     <string name="gemini_model_automatic">Automático</string>
     <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash e depois Flash-Lite quando o Flash estiver ocupado</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Outro serviço</string>
     <string name="title_pref_category_ai_services">Serviços de IA</string>
     <string name="title_pref_ai_provider">Serviço de IA</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> configurações</string>
+    <string name="title_ai_provider_settings">Configurações do <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, não configurado</string>
     <string name="ai_provider_in_use">Em uso</string>
     <string name="ai_provider_not_set_up">Não configurado</string>

@@ -5,7 +5,7 @@
     <string name="gemini_api_key_dialog_message">Google AI Studio (aistudio.google.com/apikey) から無料の API キーを取得し、ここに貼り付けます。キーを削除するには、フィールドをクリアして保存します。\n\nあなたが説明した画像と画面はGoogleに送信されます。無料利用枠では、Google は製品を改善するためにそれらを使用できます。</string>
     <string name="gemini_api_key_hint">APIキー</string>
     <string name="gemini_api_key_save">保存</string>
-    <string name="gemini_api_key_get">鍵を入手する</string>
+    <string name="gemini_api_key_get">キーを取得</string>
     <string name="title_pref_gemini_model">Geminiモデル</string>
     <string name="gemini_model_automatic">自動</string>
     <string name="summary_pref_gemini_model_automatic">自動: Gemini フラッシュ、フラッシュがビジー状態の場合は Flash-Lite</string>
@@ -38,15 +38,15 @@
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>設定</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>、セットアップされていません</string>
     <string name="ai_provider_in_use">使用中</string>
-    <string name="ai_provider_not_set_up">セットアップされていません</string>
+    <string name="ai_provider_not_set_up">未設定</string>
     <string name="ai_provider_not_ready">最初にモデルを選択してください</string>
-    <string name="ai_provider_address">住所</string>
+    <string name="ai_provider_address">アドレス</string>
     <string name="ai_provider_address_message">Https://example.com/v1. など、OpenAI 互換のチャット API と画像入力を備えたサービスのアドレス</string>
     <string name="ai_provider_not_set">未設定</string>
     <string name="ai_provider_set">設定済み</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> APIキー</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>モデル</string>
-    <string name="ai_provider_choose_model">選ばれなかった</string>
+    <string name="ai_provider_choose_model">未選択</string>
     <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを貼り付けます。これを削除するには、フィールドをクリアして保存します。あなたが説明した画像や画面は<xliff:g id="service" example="Claude">%1$s</xliff:g>に送信されます。</string>
     <string name="ai_provider_needs_key">最初に<xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを設定します</string>
     <string name="ai_provider_needs_address">最初にアドレスを設定してください</string>

@@ -5,7 +5,7 @@
     <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey дээрээс Google AI Studio-с үнэгүй API түлхүүр авч, энд буулгана уу. Түлхүүрээ арилгахын тулд талбарыг арилгаж хадгална уу.\n\nТаны тодорхойлсон зураг, дэлгэцийг Google руу илгээнэ. Үнэгүй давхарга дээр Google бүтээгдэхүүнээ сайжруулахын тулд тэдгээрийг ашиглах боломжтой.</string>
     <string name="gemini_api_key_hint">API түлхүүр</string>
     <string name="gemini_api_key_save">Хадгалах</string>
-    <string name="gemini_api_key_get">Түлхүүр аваарай</string>
+    <string name="gemini_api_key_get">Түлхүүр авах</string>
     <string name="title_pref_gemini_model">Gemini model</string>
     <string name="gemini_model_automatic">Автомат</string>
     <string name="summary_pref_gemini_model_automatic">Автомат: Gemini Flash, дараа нь Flash завгүй үед Flash-Lite</string>
@@ -32,7 +32,7 @@
     <string name="ai_provider_none">Байхгүй</string>
     <string name="ai_service_not_set_up">No AI service is in use. Нэгийг нь тохируулах эсвэл Автомат тайлбарын тохиргооноос нэгийг нь сонгоно уу.</string>
     <string name="ai_provider_none_set_up">No AI service is set up. Доорх тохиргоондоо нэгийг нь тохируулна уу.</string>
-    <string name="ai_provider_other">Other service</string>
+    <string name="ai_provider_other">Бусад үйлчилгээ</string>
     <string name="title_pref_category_ai_services">AI үйлчилгээ</string>
     <string name="title_pref_ai_provider">AI үйлчилгээ</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> тохиргоо</string>
@@ -46,7 +46,7 @@
     <string name="ai_provider_set">Тохируулсан</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүр</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
-    <string name="ai_provider_choose_model">Not chosen</string>
+    <string name="ai_provider_choose_model">Сонгоогүй</string>
     <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүрээ буулгана уу. Үүнийг арилгахын тулд талбарыг арилгаж хадгална уу. Таны тодорхойлсон зураг, дэлгэцийг <xliff:g id="service" example="Claude">%1$s</xliff:g> руу илгээнэ.</string>
     <string name="ai_provider_needs_key">Эхлээд <xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүрийг тохируулна уу</string>
     <string name="ai_provider_needs_address">Эхлээд хаягаа тохируулна уу</string>

@@ -5,12 +5,12 @@
     <string name="gemini_api_key_dialog_message">Ontvang een gratis API-sleutel van Google AI Studio, op aistudio.google.com/apikey, en plak deze hier. Om uw sleutel te verwijderen, maakt u het veld leeg en slaat u het op.\n\nAfbeeldingen en schermen die u beschrijft, worden verzonden naar Google. Op de gratis laag kan Google ze gebruiken om zijn producten te verbeteren.</string>
     <string name="gemini_api_key_hint">API-sleutel</string>
     <string name="gemini_api_key_save">Opslaan</string>
-    <string name="gemini_api_key_get">Haal een sleutel</string>
+    <string name="gemini_api_key_get">Sleutel ophalen</string>
     <string name="title_pref_gemini_model">Gemini-model</string>
     <string name="gemini_model_automatic">Automatisch</string>
     <string name="summary_pref_gemini_model_automatic">Automatisch: Gemini Flash, dan Flash-Lite als Flash bezig is</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dan Flash-Lite als het bezet is</string>
-    <string name="gemini_model_loading">De modellen ophalen...</string>
+    <string name="gemini_model_loading">Modellen ophalen…</string>
     <string name="gemini_model_list_failed">Kon de modellen niet verkrijgen: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Stel eerst een Gemini API-sleutel in</string>
     <string name="gemini_api_terms_link">Gemini Aanvullende API-servicevoorwaarden</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Andere dienst</string>
     <string name="title_pref_category_ai_services">AI-diensten</string>
     <string name="title_pref_ai_provider">AI-service</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> instellingen</string>
+    <string name="title_ai_provider_settings">Instellingen voor <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, niet ingesteld</string>
     <string name="ai_provider_in_use">In gebruik</string>
     <string name="ai_provider_not_set_up">Niet ingesteld</string>

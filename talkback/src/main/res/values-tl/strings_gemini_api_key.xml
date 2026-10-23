@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Iba pang serbisyo</string>
     <string name="title_pref_category_ai_services">Mga serbisyo ng AI</string>
     <string name="title_pref_ai_provider">Serbisyo ng AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> mga setting</string>
+    <string name="title_ai_provider_settings">Mga setting ng <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, hindi naka-set up</string>
     <string name="ai_provider_in_use">Ginagamit</string>
     <string name="ai_provider_not_set_up">Hindi naka-set up</string>
@@ -46,7 +46,7 @@
     <string name="ai_provider_set">Na-configure</string>
     <string name="title_pref_gemini_api_key_of">API key ng <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modelo</string>
-    <string name="ai_provider_choose_model">Hindi pinili</string>
+    <string name="ai_provider_choose_model">Walang napili</string>
     <string name="ai_provider_key_message">I-paste ang iyong <xliff:g id="service" example="Claude">%1$s</xliff:g> API key. Upang alisin ito, i-clear ang field at i-save. Ang mga larawan at screen na iyong inilalarawan ay ipinapadala sa <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Itakda muna ang <xliff:g id="service" example="Claude">%1$s</xliff:g> API key</string>
     <string name="ai_provider_needs_address">Itakda muna ang address</string>

@@ -5,7 +5,7 @@
     <string name="gemini_api_key_dialog_message">Preuzmite besplatni API ključ iz Google AI Studio-a, na aistudio.google.com/apikey, i nalepite ga ovde. Da biste uklonili svoj ključ, obrišite polje i sačuvajte.\n\nSlike i ekrani koje opisujete se šalju Google-u. Na besplatnom nivou Google ih može koristiti za poboljšanje svojih proizvoda.</string>
     <string name="gemini_api_key_hint">API ključ</string>
     <string name="gemini_api_key_save">Sačuvaj</string>
-    <string name="gemini_api_key_get">Uzmi ključ</string>
+    <string name="gemini_api_key_get">Nabavi ključ</string>
     <string name="title_pref_gemini_model">Gemini model</string>
     <string name="gemini_model_automatic">Automatski</string>
     <string name="summary_pref_gemini_model_automatic">Automatski: Gemini Flash, zatim Flash-Lite kada je Flash zauzet</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Druga usluga</string>
     <string name="title_pref_category_ai_services">AI usluge</string>
     <string name="title_pref_ai_provider">AI usluga</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> podešavanja</string>
+    <string name="title_ai_provider_settings">Podešavanja za <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nije podešeno</string>
     <string name="ai_provider_in_use">U upotrebi</string>
     <string name="ai_provider_not_set_up">Nije postavljeno</string>

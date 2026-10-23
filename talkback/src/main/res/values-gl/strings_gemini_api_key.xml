@@ -11,7 +11,7 @@
     <string name="gemini_model_automatic">Automático</string>
     <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash, despois Flash-Lite cando Flash está ocupado</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, despois Flash-Lite cando estea ocupado</string>
-    <string name="gemini_model_loading">Conseguindo modelos...</string>
+    <string name="gemini_model_loading">Obtendo os modelos…</string>
     <string name="gemini_model_list_failed">Non se puideron obter os modelos: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Establece primeiro unha clave API Gemini</string>
     <string name="ai_service_address_hint">Enderezo, como https://openrouter.ai/api/v1</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Outro servizo</string>
     <string name="title_pref_category_ai_services">Servizos de IA</string>
     <string name="title_pref_ai_provider">Servizo de IA</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> configuración</string>
+    <string name="title_ai_provider_settings">Configuración de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, non configurado</string>
     <string name="ai_provider_in_use">En uso</string>
     <string name="ai_provider_not_set_up">Non configurado</string>

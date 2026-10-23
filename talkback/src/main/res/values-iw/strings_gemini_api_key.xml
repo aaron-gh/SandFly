@@ -5,17 +5,17 @@
     <string name="gemini_api_key_dialog_message">קבל מפתח API בחינם מ-Google AI Studio, בכתובת aistudio.google.com/apikey, והדבק אותו כאן. כדי להסיר את המפתח שלך, נקה את השדה ושמור.\n\nתמונות ומסכים שאתה מתאר נשלחים אל Google. בשכבה החינמית, Google יכול להשתמש בהם כדי לשפר את המוצרים שלה.</string>
     <string name="gemini_api_key_hint">מפתח API</string>
     <string name="gemini_api_key_save">שמירה</string>
-    <string name="gemini_api_key_get">קח מפתח</string>
+    <string name="gemini_api_key_get">קבלת מפתח</string>
     <string name="title_pref_gemini_model">דגם Gemini</string>
     <string name="gemini_model_automatic">אוטומטי</string>
     <string name="summary_pref_gemini_model_automatic">אוטומטי: Gemini פלאש, ואז Flash-Lite כאשר הפלאש תפוס</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ואז Flash-Lite כאשר הוא תפוס</string>
-    <string name="gemini_model_loading">מקבלים את הדגמים...</string>
+    <string name="gemini_model_loading">המודלים מתקבלים…</string>
     <string name="gemini_model_list_failed">לא ניתן היה להשיג את הדגמים: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">תחילה הגדר מפתח API של Gemini</string>
     <string name="gemini_api_terms_link">Gemini תנאים והגבלות נוספים של API</string>
     <string name="ai_service_address_hint">כתובת, כגון https://openrouter.ai/api/v1</string>
-    <string name="ai_service_model_hint">דגם</string>
+    <string name="ai_service_model_hint">מודל</string>
     <string name="ai_service_address_invalid">הכתובת חייבת להתחיל ב-https://. שום דבר לא נשמר.</string>
     <string name="dialog_message_ai_service_consent">תמונות וצילומי מסך נשלחים אל <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> לתיאור, מה שנמשך מספר שניות. התנאים ומדיניות הפרטיות שלו חלים. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות.</string>
     <string name="ai_service_error_api_key">שירות AI לא קיבל את מפתח ה-API. בדוק את ההגדרות שלו בתיאורים אוטומטיים.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">שירות אחר</string>
     <string name="title_pref_category_ai_services">שירותי AI</string>
     <string name="title_pref_ai_provider">שירות AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> הגדרות</string>
+    <string name="title_ai_provider_settings">הגדרות <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, לא מוגדר</string>
     <string name="ai_provider_in_use">בשימוש</string>
     <string name="ai_provider_not_set_up">לא מוגדר</string>

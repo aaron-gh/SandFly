@@ -5,7 +5,7 @@
     <string name="gemini_api_key_dialog_message">Získajte bezplatný kľúč API od Google AI Studio na adrese aistudio.google.com/apikey a vložte ho sem. Ak chcete kľúč odstrániť, vymažte pole a uložte.\n\nObrázky a obrazovky, ktoré popisujete, sa odošlú na adresu Google. Na bezplatnej úrovni ich môže Google použiť na zlepšenie svojich produktov.</string>
     <string name="gemini_api_key_hint">API kľúč</string>
     <string name="gemini_api_key_save">Uložiť</string>
-    <string name="gemini_api_key_get">Získajte kľúč</string>
+    <string name="gemini_api_key_get">Získať kľúč</string>
     <string name="title_pref_gemini_model">Model Gemini</string>
     <string name="gemini_model_automatic">Automaticky</string>
     <string name="summary_pref_gemini_model_automatic">Automaticky: Gemini Flash, potom Flash-Lite, keď je Flash zaneprázdnený</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Iná služba</string>
     <string name="title_pref_category_ai_services">Služby AI</string>
     <string name="title_pref_ai_provider">Služba AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> nastavenia</string>
+    <string name="title_ai_provider_settings">Nastavenia služby <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nie je nastavené</string>
     <string name="ai_provider_in_use">Používa sa</string>
     <string name="ai_provider_not_set_up">Nie je nastavené</string>
@@ -46,7 +46,7 @@
     <string name="ai_provider_set">Nakonfigurované</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kľúč</string>
     <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_choose_model">Nie je zvolený</string>
+    <string name="ai_provider_choose_model">Nevybrané</string>
     <string name="ai_provider_key_message">Prilepte svoj kľúč API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Ak ho chcete odstrániť, vymažte pole a uložte. Obrázky a obrazovky, ktoré popisujete, sa odošlú na adresu <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Najprv nastavte kľúč API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Najprv nastavte adresu</string>

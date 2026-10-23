@@ -5,12 +5,12 @@
     <string name="gemini_api_key_dialog_message">Obțineți o cheie API gratuită de la Google AI Studio, la aistudio.google.com/apikey și inserați-o aici. Pentru a vă elimina cheia, goliți câmpul și salvați.\n\nImaginile și ecranele pe care le descrieți sunt trimise la Google. Pe nivelul gratuit, Google le poate folosi pentru a-și îmbunătăți produsele.</string>
     <string name="gemini_api_key_hint">Cheie API</string>
     <string name="gemini_api_key_save">Salvează</string>
-    <string name="gemini_api_key_get">Ia o cheie</string>
+    <string name="gemini_api_key_get">Obține o cheie</string>
     <string name="title_pref_gemini_model">Gemini model</string>
-    <string name="gemini_model_automatic">Automată</string>
+    <string name="gemini_model_automatic">Automat</string>
     <string name="summary_pref_gemini_model_automatic">Automat: Gemini Flash, apoi Flash-Lite când Flash este ocupat</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, apoi Flash-Lite când este ocupat</string>
-    <string name="gemini_model_loading">Obținerea modelelor...</string>
+    <string name="gemini_model_loading">Se obțin modelele…</string>
     <string name="gemini_model_list_failed">Nu s-au putut obține modelele: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Setați mai întâi o cheie API Gemini</string>
     <string name="gemini_api_terms_link">Gemini API Termeni și condiții suplimentare</string>
@@ -35,18 +35,18 @@
     <string name="ai_provider_other">Alt serviciu</string>
     <string name="title_pref_category_ai_services">Servicii AI</string>
     <string name="title_pref_ai_provider">Serviciu AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> setări</string>
+    <string name="title_ai_provider_settings">Setări <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nu este configurat</string>
     <string name="ai_provider_in_use">În uz</string>
     <string name="ai_provider_not_set_up">Nu este configurat</string>
     <string name="ai_provider_not_ready">Alege mai întâi un model</string>
-    <string name="ai_provider_address">Adresa</string>
+    <string name="ai_provider_address">Adresă</string>
     <string name="ai_provider_address_message">Adresa unui serviciu cu un API de chat compatibil cu OpenAI și intrare de imagine, cum ar fi https://example.com/v1.</string>
-    <string name="ai_provider_not_set">Nu setat</string>
+    <string name="ai_provider_not_set">Nesetat</string>
     <string name="ai_provider_set">Configurat</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> cheie API</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
-    <string name="ai_provider_choose_model">Nu ales</string>
+    <string name="ai_provider_choose_model">Neselectat</string>
     <string name="ai_provider_key_message">Lipiți cheia API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Pentru a o elimina, goliți câmpul și salvați. Imaginile și ecranele pe care le descrieți sunt trimise la <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Setați mai întâi cheia API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Setați mai întâi adresa</string>

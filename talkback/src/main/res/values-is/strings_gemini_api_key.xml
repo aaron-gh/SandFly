@@ -15,7 +15,7 @@
     <string name="gemini_model_needs_key">Stilltu Gemini API lykil fyrst</string>
     <string name="gemini_api_terms_link">Viðbótarþjónustuskilmála Gemini API</string>
     <string name="ai_service_address_hint">Heimilisfang, eins og https://openrouter.ai/api/v1</string>
-    <string name="ai_service_model_hint">Fyrirmynd</string>
+    <string name="ai_service_model_hint">Líkan</string>
     <string name="ai_service_address_invalid">Heimilisfangið verður að byrja á https://. Ekkert var vistað.</string>
     <string name="dialog_message_ai_service_consent">Myndir og skjámyndir eru sendar á <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> til að lýsa, sem tekur nokkrar sekúndur. Eigin skilmálar þess og persónuverndarstefna gilda. Generative AI er tilraunastarfsemi, svo það mun gera mistök.</string>
     <string name="ai_service_error_api_key">AI þjónustan samþykkti ekki API lykilinn. Athugaðu stillingar þess í Sjálfvirkar lýsingar.</string>
@@ -35,12 +35,12 @@
     <string name="ai_provider_other">Önnur þjónusta</string>
     <string name="title_pref_category_ai_services">AI þjónusta</string>
     <string name="title_pref_ai_provider">AI þjónusta</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> stillingar</string>
+    <string name="title_ai_provider_settings">Stillingar <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ekki sett upp</string>
     <string name="ai_provider_in_use">Í notkun</string>
     <string name="ai_provider_not_set_up">Ekki sett upp</string>
     <string name="ai_provider_not_ready">Veldu fyrirmynd fyrst</string>
-    <string name="ai_provider_address">Heimilisfang</string>
+    <string name="ai_provider_address">Vistfang</string>
     <string name="ai_provider_address_message">Heimilisfang þjónustu með OpenAI-samhæft spjall-API og myndinnsláttur, eins og https://example.com/v1.</string>
     <string name="ai_provider_not_set">Ekki stillt</string>
     <string name="ai_provider_set">Stillt</string>

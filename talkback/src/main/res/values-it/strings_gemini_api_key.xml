@@ -10,7 +10,7 @@
     <string name="gemini_model_automatic">Automatico</string>
     <string name="summary_pref_gemini_model_automatic">Automatico: Gemini Flash, quindi Flash-Lite quando Flash è occupato</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, quindi Flash-Lite quando è occupato</string>
-    <string name="gemini_model_loading">Ottenere i modelli...</string>
+    <string name="gemini_model_loading">Recupero dei modelli…</string>
     <string name="gemini_model_list_failed">Impossibile ottenere i modelli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Imposta prima una chiave API Gemini</string>
     <string name="gemini_api_terms_link">Termini di servizio aggiuntivi dell\'API Gemini</string>
@@ -29,13 +29,13 @@
     <string name="ai_provider_groq">Groq</string>
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
-    <string name="ai_provider_none">Nessuna</string>
+    <string name="ai_provider_none">Nessuno</string>
     <string name="ai_service_not_set_up">Nessun servizio AI è in uso. Configurane uno o scegline uno nelle Impostazioni descrizioni automatiche.</string>
     <string name="ai_provider_none_set_up">Nessun servizio AI è impostato. Configurane uno nelle relative impostazioni di seguito.</string>
     <string name="ai_provider_other">Altro servizio</string>
     <string name="title_pref_category_ai_services">Servizi di intelligenza artificiale</string>
     <string name="title_pref_ai_provider">Servizio IA</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> impostazioni</string>
+    <string name="title_ai_provider_settings">Impostazioni di <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, non impostato</string>
     <string name="ai_provider_in_use">In uso</string>
     <string name="ai_provider_not_set_up">Non impostato</string>

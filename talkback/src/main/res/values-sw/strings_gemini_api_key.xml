@@ -3,7 +3,7 @@
     <string name="title_pref_gemini_api_key">Gemini Kitufe cha API</string>
     <string name="summary_pref_gemini_api_key_built_in">Kwa kutumia ufunguo uliojumuishwa kwenye programu hii</string>
     <string name="gemini_api_key_dialog_message">Pata ufunguo wa API bila malipo kutoka Google AI Studio, kwenye aistudio.google.com/apikey, na ubandike hapa. Ili kuondoa ufunguo wako, futa sehemu na uhifadhi.\n\nPicha na skrini unazozielezea hutumwa kwa Google. Kwenye kiwango cha bure, Google inaweza kuzitumia kuboresha bidhaa zake.</string>
-    <string name="gemini_api_key_hint">Kitufe cha API</string>
+    <string name="gemini_api_key_hint">Ufunguo wa API</string>
     <string name="gemini_api_key_save">Hifadhi</string>
     <string name="gemini_api_key_get">Pata ufunguo</string>
     <string name="title_pref_gemini_model">Gemini mfano</string>
@@ -15,7 +15,7 @@
     <string name="gemini_model_needs_key">Weka kitufe cha Gemini API kwanza</string>
     <string name="gemini_api_terms_link">Gemini Sheria na Masharti ya Ziada ya API</string>
     <string name="ai_service_address_hint">Anwani, kama vile https://openrouter.ai/api/v1</string>
-    <string name="ai_service_model_hint">Mfano</string>
+    <string name="ai_service_model_hint">Muundo</string>
     <string name="ai_service_address_invalid">Anwani lazima ianze na https://. Hakuna chochote kilichohifadhiwa.</string>
     <string name="dialog_message_ai_service_consent">Picha na picha za skrini hutumwa kwa <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ili kuelezewa, ambayo huchukua sekunde kadhaa. Masharti na sera yake ya faragha inatumika. AI inayozalisha ni ya majaribio, kwa hivyo itafanya makosa.</string>
     <string name="ai_service_error_api_key">Huduma ya AI haikukubali ufunguo wa API. Angalia mipangilio yake katika maelezo ya Kiotomatiki.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Huduma nyingine</string>
     <string name="title_pref_category_ai_services">Huduma za AI</string>
     <string name="title_pref_ai_provider">Huduma ya AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> mipangilio</string>
+    <string name="title_ai_provider_settings">Mipangilio ya <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, haijasanidiwa</string>
     <string name="ai_provider_in_use">Inatumika</string>
     <string name="ai_provider_not_set_up">Haijawekwa</string>

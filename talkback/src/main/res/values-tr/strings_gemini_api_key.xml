@@ -10,12 +10,12 @@
     <string name="gemini_model_automatic">Otomatik</string>
     <string name="summary_pref_gemini_model_automatic">Otomatik: Gemini Flash, ardından Flash meşgul olduğunda Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ardından meşgul olduğunda Flash-Lite</string>
-    <string name="gemini_model_loading">Modelleri almak…</string>
+    <string name="gemini_model_loading">Modeller alınıyor…</string>
     <string name="gemini_model_list_failed">Modeller alınamadı: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Önce bir Gemini API anahtarı ayarlayın</string>
     <string name="gemini_api_terms_link">Gemini API Ek Hizmet Şartları</string>
     <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 gibi adres</string>
-    <string name="ai_service_model_hint">Modeli</string>
+    <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adres https://. ile başlamalıdır. Hiçbir şey kaydedilmedi.</string>
     <string name="dialog_message_ai_service_consent">Resimler ve ekran görüntüleri açıklanmak üzere <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>\'ye gönderilir ve bu işlem birkaç saniye sürer. Kendi şartları ve gizlilik politikası geçerlidir. Üretken yapay zeka deneysel olduğundan hata yapacaktır.</string>
     <string name="ai_service_error_api_key">AI hizmeti API anahtarını kabul etmedi. Otomatik açıklamalar bölümündeki ayarlarını kontrol edin.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Diğer hizmet</string>
     <string name="title_pref_category_ai_services">Yapay zeka hizmetleri</string>
     <string name="title_pref_ai_provider">Yapay zeka hizmeti</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ayarlar</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ayarları</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, kurulmadı</string>
     <string name="ai_provider_in_use">Kullanımda</string>
     <string name="ai_provider_not_set_up">Kurulmadı</string>
@@ -43,7 +43,7 @@
     <string name="ai_provider_address">Adres</string>
     <string name="ai_provider_address_message">OpenAI uyumlu sohbet API\'sine ve resim girişine sahip bir hizmetin adresi (ör. https://example.com/v1.)</string>
     <string name="ai_provider_not_set">Ayarlanmadı</string>
-    <string name="ai_provider_set">Yapılandırılmış</string>
+    <string name="ai_provider_set">Ayarlandı</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API anahtarı</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
     <string name="ai_provider_choose_model">Seçilmedi</string>

@@ -10,7 +10,7 @@
     <string name="gemini_model_automatic">Automatikus</string>
     <string name="summary_pref_gemini_model_automatic">Automatikus: Gemini Flash, majd Flash-Lite, ha a Flash foglalt</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, majd a Flash-Lite, ha foglalt</string>
-    <string name="gemini_model_loading">A modellek beszerzése…</string>
+    <string name="gemini_model_loading">Modellek lekérése…</string>
     <string name="gemini_model_list_failed">Nem sikerült beszerezni a következő modelleket: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Először állítson be egy Gemini API-kulcsot</string>
     <string name="gemini_api_terms_link">A Gemini API kiegészítő általános szerződési feltételei</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Egyéb szolgáltatás</string>
     <string name="title_pref_category_ai_services">AI szolgáltatások</string>
     <string name="title_pref_ai_provider">AI szolgáltatás</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> beállítások</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> beállításai</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nincs beállítva</string>
     <string name="ai_provider_in_use">Használatban</string>
     <string name="ai_provider_not_set_up">Nincs beállítva</string>
@@ -46,7 +46,7 @@
     <string name="ai_provider_set">Beállítva</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kulcs</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
-    <string name="ai_provider_choose_model">Nem választották</string>
+    <string name="ai_provider_choose_model">Nincs kiválasztva</string>
     <string name="ai_provider_key_message">Illessze be a <xliff:g id="service" example="Claude">%1$s</xliff:g> API-kulcsot. Az eltávolításhoz törölje a mezőt, és mentse. Az Ön által leírt képeket és képernyőket a <xliff:g id="service" example="Claude">%1$s</xliff:g> címre küldjük.</string>
     <string name="ai_provider_needs_key">Először állítsa be a <xliff:g id="service" example="Claude">%1$s</xliff:g> API kulcsot</string>
     <string name="ai_provider_needs_address">Először állítsa be a címet</string>
