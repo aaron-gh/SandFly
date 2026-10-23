@@ -38,12 +38,12 @@
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ကို <xliff:g id="version">%2$s</xliff:g> သို့ အပ်ဒိတ်လုပ်ထားသည်</string>
     <string name="script_import_failed">တင်သွင်းမှု မအောင်မြင်ပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>။ ယုံကြည်ရသော ဇာတ်ညွှန်းများအတွက်သာ ခွင့်ပြုပါ။</string>
-    <string name="script_permission_screen">မျက်နှာပြင်ကိုဖတ်ပါ</string>
+    <string name="script_permission_screen">မျက်နှာပြင်ကို ဖတ်ခြင်း</string>
     <string name="script_permission_actions">နှိပ်ပါ၊ လှိမ့်ပါ၊ ရိုက်ပြီး အာရုံကို ရွှေ့ပါ</string>
     <string name="script_permission_speech">SandFly ၏မိန့်ခွန်းကို နားထောင်ပြီး ပြောင်းလဲပါ</string>
-    <string name="script_permission_passwords">စကားဝှက်အကွက်များကိုဖတ်ပါ</string>
+    <string name="script_permission_passwords">စကားဝှက်အကွက်များကို ဖတ်ခြင်း</string>
     <string name="script_permission_input">လက်ဟန်ခြေဟန်များ၊ သော့များ၊ မီနူးအကြောင်းအရာများနှင့် စာဖတ်ခြင်းထိန်းချုပ်မှုများကို ထည့်ပါ</string>
-    <string name="script_permission_network">အင်တာနက်သုံးပါ</string>
+    <string name="script_permission_network">အင်တာနက် သုံးခြင်း</string>
     <string name="script_permission_clipboard">ကလစ်ဘုတ်ကိုဖတ်ပြီး ပြောင်းလဲပါ</string>
     <string name="script_permission_system">အိမ်ပြန်သွားပါ၊ အကြောင်းကြားချက်များနှင့် အက်ပ်များကိုဖွင့်ပါ</string>
     <string name="script_permission_notifications">စကားပြောသတိပေးချက်များကို ဖတ်ပြီး ပြောင်းလဲပါ</string>
@@ -59,9 +59,9 @@
     <string name="script_button_off">ဇာတ်ညွှန်းကို ဦးစွာဖွင့်ပါ</string>
     <string name="script_permissions_summary">တစ်ချက်ပိတ်လိုက်ခြင်းဖြင့် ၎င်းလိုအပ်သော အစိတ်အပိုင်းများကို ရပ်တန့်စေသည်။</string>
     <string name="script_install_permissions_note">ဒါတွေကို နောက်မှ ပိတ်နိုင်ပါတယ်။</string>
-    <string name="script_manage_category">စီမံပါ</string>
-    <string name="script_move_up">စောစောကပြေး</string>
-    <string name="script_move_down">နောက်မှပြေးပါ</string>
+    <string name="script_manage_category">စီမံခန့်ခွဲမှု</string>
+    <string name="script_move_up">အရင် လုပ်ဆောင်ရန်</string>
+    <string name="script_move_down">နောက်မှ လုပ်ဆောင်ရန်</string>
     <string name="script_order_summary">တူညီသောမိန့်ခွန်းကိုပြောင်းလဲသော script များအတွက်အမိန့်။ အက်ပ်စခရစ်များကို ဦးစွာလုပ်ဆောင်သည်။</string>
     <string name="script_log">မှတ်တမ်း</string>
     <string name="script_log_summary">SandFly စတင်ကတည်းက အထွက်နှင့် အမှားများ</string>
@@ -72,8 +72,8 @@
     <string name="script_remove_message">၎င်း၏ကုဒ်၊ ဒေတာနှင့် ဆက်တင်များကို ဖျက်သည်။</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> ဖယ်ရှားခဲ့သည်</string>
     <string name="script_log_empty">မှတ်တမ်းသည် ဗလာဖြစ်သည်</string>
-    <string name="script_log_clear">မှတ်တမ်းကို ရှင်းလင်းပါ</string>
-    <string name="script_log_copy">မှတ်တမ်းကို ကူးယူပါ</string>
+    <string name="script_log_clear">မှတ်တမ်းကို ရှင်းရန်</string>
+    <string name="script_log_copy">မှတ်တမ်းကို ကူးရန်</string>
     <string name="script_log_copied">မှတ်တမ်းကို ကူးယူထားသည်</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">script API <xliff:g id="needed">%1$d</xliff:g> သို့မဟုတ် နောက်ပိုင်းတွင် လိုအပ်သည်။ ဤ SandFlyတွင် <xliff:g id="current">%2$d</xliff:g> ပါရှိသောကြောင့် အစိတ်အပိုင်းများ အလုပ်မဖြစ်နိုင်ပါ။</string>

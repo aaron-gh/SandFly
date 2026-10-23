@@ -38,12 +38,12 @@
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atualizado para <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Falha na importação. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permitir apenas scripts confiáveis.</string>
-    <string name="script_permission_screen">Leia a tela</string>
+    <string name="script_permission_screen">Ler o ecrã</string>
     <string name="script_permission_actions">Clique, role, digite e mova o foco</string>
     <string name="script_permission_speech">Ouça e mude o discurso de SandFly</string>
-    <string name="script_permission_passwords">Ler campos de senha</string>
+    <string name="script_permission_passwords">Ler campos de palavra-passe</string>
     <string name="script_permission_input">Adicione gestos, teclas, itens de menu e controles de leitura</string>
-    <string name="script_permission_network">Use a internet</string>
+    <string name="script_permission_network">Usar a internet</string>
     <string name="script_permission_clipboard">Ler e alterar a área de transferência</string>
     <string name="script_permission_system">Volte ou para casa, abra notificações e aplicativos</string>
     <string name="script_permission_notifications">Ler e alterar notificações faladas</string>
@@ -59,8 +59,8 @@
     <string name="script_button_off">Ative o script primeiro</string>
     <string name="script_permissions_summary">Desligar um interrompe as peças que precisam dele.</string>
     <string name="script_install_permissions_note">Você pode desativá-los mais tarde.</string>
-    <string name="script_manage_category">Gerenciar</string>
-    <string name="script_move_up">Execute mais cedo</string>
+    <string name="script_manage_category">Gestão</string>
+    <string name="script_move_up">Executar mais cedo</string>
     <string name="script_move_down">Executar mais tarde</string>
     <string name="script_order_summary">Peça scripts que alterem o mesmo discurso. Os scripts do aplicativo são executados primeiro.</string>
     <string name="script_log">Registo</string>
@@ -71,10 +71,10 @@
     <string name="script_remove_title">Remover <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_remove_message">Exclui seu código, dados e configurações.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> removido</string>
-    <string name="script_log_empty">O registro está vazio</string>
-    <string name="script_log_clear">Limpar registro</string>
-    <string name="script_log_copy">Copiar registro</string>
-    <string name="script_log_copied">Registro copiado</string>
+    <string name="script_log_empty">O registo está vazio</string>
+    <string name="script_log_clear">Limpar registo</string>
+    <string name="script_log_copy">Copiar registo</string>
+    <string name="script_log_copied">Registo copiado</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Precisa de API de script <xliff:g id="needed">%1$d</xliff:g> ou posterior. Este SandFly possui <xliff:g id="current">%2$d</xliff:g>, então algumas peças podem não funcionar.</string>
     <string name="script_api_untested">Testado até API de script <xliff:g id="tested">%1$d</xliff:g>. Este SandFly possui <xliff:g id="current">%2$d</xliff:g>, portanto pode não funcionar como esperado.</string>
