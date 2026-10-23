@@ -23,6 +23,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
 import androidx.annotation.NonNull;
@@ -44,7 +46,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
+import com.google.android.accessibility.utils.output.CapitalLetterSpan;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
+import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Joiner;
@@ -88,6 +92,35 @@ public class AccessibilityNodeFeedbackUtils {
   }
 
   /**
+   * Returns {@code text} with "capital" before it when it is a capital letter and the user chose
+   * that. On a keyboard key, a capital letter is marked for the pitch or sound the user chose
+   * instead, which a key's description needs since more is said after the letter, such as "A,
+   * alpha". Pitch applies to all of the speech, so other items, such as a contact list's section
+   * letter followed by its names, aren't marked.
+   */
+  private static CharSequence markCapital(
+      AccessibilityNodeInfoCompat node,
+      CharSequence text,
+      Context context,
+      GlobalVariables globalVariables) {
+    if (globalVariables.getGlobalSayCapital()) {
+      return CompositorUtils.prependCapital(text, context);
+    }
+    int feedback = globalVariables.getCapitalLetterFeedback();
+    if ((feedback == SpeechControllerImpl.CAPITAL_LETTERS_TYPE_PITCH
+            || feedback == SpeechControllerImpl.CAPITAL_LETTERS_TYPE_SOUND_FEEDBACK)
+        && text != null
+        && text.length() == 1
+        && Character.isUpperCase(text.charAt(0))
+        && AccessibilityNodeInfoUtils.isKeyboard(node)) {
+      SpannableString marked = new SpannableString(text);
+      marked.setSpan(new CapitalLetterSpan(), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+      return marked;
+    }
+    return text;
+  }
+
+  /**
    * Returns the node text for description.
    *
    * <p>Note: It returns the node content and supplemental description if it is not empty. Or it
@@ -102,15 +135,11 @@ public class AccessibilityNodeFeedbackUtils {
     CharSequence contentAndSupplementalDescription =
         getNodeContentAndSupplementalDescription(node, context, globalVariables);
     if (!TextUtils.isEmpty(contentAndSupplementalDescription)) {
-      return globalVariables.getGlobalSayCapital()
-          ? CompositorUtils.prependCapital(contentAndSupplementalDescription, context)
-          : contentAndSupplementalDescription;
+      return markCapital(node, contentAndSupplementalDescription, context, globalVariables);
     }
     // Fallbacks to node text.
     CharSequence nodeText = getNodeText(node, context, globalVariables);
-    return globalVariables.getGlobalSayCapital()
-        ? CompositorUtils.prependCapital(nodeText, context)
-        : nodeText;
+    return markCapital(node, nodeText, context, globalVariables);
   }
 
   /**
@@ -132,9 +161,7 @@ public class AccessibilityNodeFeedbackUtils {
     // Fallbacks to node label.
     CharSequence nodeLabelText = getNodeLabelText(node, imageContents);
     if (!TextUtils.isEmpty(nodeLabelText)) {
-      return globalVariables.getGlobalSayCapital()
-          ? CompositorUtils.prependCapital(nodeLabelText, context)
-          : nodeLabelText;
+      return markCapital(node, nodeLabelText, context, globalVariables);
     }
     // Fallbacks to caption text.
     CharSequence nodeCaptionText =
