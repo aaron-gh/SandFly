@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">పాజ్ SandFly</string>
+    <string name="summary_pause_backtalk">మీరు SandFlyని పునఃప్రారంభించే వరకు ప్రసంగం, సంజ్ఞలను ఆఫ్ చేయండి మరియు టచ్ ద్వారా అన్వేషించండి</string>
+    <string name="keycombo_menu_global_pause_backtalk">పాజ్ లేదా పునఃప్రారంభించండి SandFly</string>
+    <string name="backtalk_paused">SandFly పాజ్ చేయబడింది</string>
+    <string name="backtalk_resumed">SandFly పునఃప్రారంభించబడింది</string>
+    <string name="notification_title_backtalk_paused">SandFly పాజ్ చేయబడింది</string>
+    <string name="notification_message_backtalk_paused">పునఃప్రారంభించడానికి నొక్కండి</string>
+    <string name="notification_channel_backtalk_paused">SandFly పాజ్ చేయబడింది</string>
+    <string name="dialog_title_pause_backtalk">పాజ్ SandFly?</string>
+    <string name="dialog_button_pause_backtalk">పాజ్ చేయండి</string>
+    <string name="dialog_message_pause_backtalk">SandFly పాజ్ చేయబడినప్పుడు, అది మాట్లాడదు లేదా సంజ్ఞలకు ప్రతిస్పందించదు మరియు స్క్రీన్ రీడర్ ఆన్‌లో లేనట్లుగా స్క్రీన్ పని చేస్తుంది.</string>
+    <string name="message_resume_keyguard">కొనసాగించడానికి, „SandFly పాజ్ చేయబడింది“ అనే నోటిఫికేషన్‌ను నొక్కండి, వాల్యూమ్ తగ్గించే బటన్‌ను మూడుసార్లు త్వరగా నొక్కండి లేదా లాక్ స్క్రీన్ కనిపించేలా ఫోన్‌ను లాక్ చేసి మేల్కొలపండి.</string>
+    <string name="message_resume_screen_on">పునఃప్రారంభించడానికి, SandFly పాజ్ చేయబడిన నోటిఫికేషన్‌ను నొక్కండి, వాల్యూమ్‌ను 3 సార్లు త్వరగా తగ్గించండి లేదా స్క్రీన్‌ను ఆఫ్ చేసి మళ్లీ ఆన్ చేయండి.</string>
+    <string name="message_resume_manual">పునఃప్రారంభించడానికి, SandFly పాజ్ చేయబడిన నోటిఫికేషన్‌ను నొక్కండి లేదా వాల్యూమ్‌ను 3 సార్లు త్వరగా తగ్గించండి.</string>
+    <string name="message_resume_key_combo">మీరు <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>ని కూడా నొక్కవచ్చు.</string>
+    <string name="title_pref_resume_backtalk">పునఃప్రారంభం SandFly</string>
+    <string name="value_resume_keyguard">లాక్ స్క్రీన్ చూపినప్పుడు</string>
+    <string name="value_resume_screen_on">స్క్రీన్ ఆన్ చేసినప్పుడు</string>
+    <string name="value_resume_manual">నోటిఫికేషన్ లేదా సత్వరమార్గం నుండి మాత్రమే</string>
+</resources>

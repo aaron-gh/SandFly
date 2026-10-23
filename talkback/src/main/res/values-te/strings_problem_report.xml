@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">ఫీడ్‌బ్యాక్‌ను పంపండి</string>
+    <string name="title_pref_problem_report_type">అభిప్రాయం రకం</string>
+    <string name="title_pref_problem_report_area">ప్రాంతం</string>
+    <string name="title_pref_problem_report_title">శీర్షిక</string>
+    <string name="title_pref_problem_report_app">ఇది జరిగే యాప్</string>
+    <string name="title_pref_problem_report_description">వివరణ</string>
+    <string name="dialog_message_problem_report_description">ఏమి జరుగుతుంది మరియు మీరు ఊహించినది.</string>
+    <string name="title_pref_problem_report_steps">సాఫ్ట్‌వేర్ సమస్యను పునరుత్పత్తి చేయడానికి దశలు</string>
+    <string name="title_pref_problem_report_email">ప్రత్యుత్తరాల కోసం ఇమెయిల్</string>
+    <string name="title_pref_problem_report_device">పరికర సమాచారాన్ని చేర్చండి</string>
+    <string name="title_pref_problem_report_log">SandFly లాగ్‌ను చేర్చండి</string>
+    <string name="summary_pref_problem_report_log">స్క్రీన్ నుండి వచనాన్ని కలిగి ఉండవచ్చు</string>
+    <string name="title_pref_problem_report_send">పంపండి</string>
+    <string name="summary_pref_problem_report_sending">పంపుతోంది</string>
+    <string name="problem_report_missing_fields">శీర్షిక మరియు వివరణను నమోదు చేయండి.</string>
+    <string name="problem_report_invalid_email">చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను నమోదు చేయండి.</string>
+    <string name="problem_report_sent">అభిప్రాయం పంపబడింది.</string>
+    <string name="problem_report_rate_limited">చాలా ఎక్కువ అభిప్రాయం పంపబడింది. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
+    <string name="problem_report_no_connection">అభిప్రాయం పంపబడలేదు. ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి.</string>
+    <string name="problem_report_not_sent">అభిప్రాయం పంపబడలేదు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
+    <string-array name="problem_report_type_entries">
+        <item>సరికాని ప్రవర్తన</item>
+        <item>క్రాష్</item>
+        <item>నెమ్మదిగా లేదా స్పందించని</item>
+        <item>సూచన</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>ప్రసంగం</item>
+        <item>సంజ్ఞలు</item>
+        <item>టచ్ అన్వేషణ</item>
+        <item>పఠన నియంత్రణలు మరియు మెనులు</item>
+        <item>టైపింగ్ మరియు కీబోర్డులు</item>
+        <item>బ్రెయిలీ కీబోర్డ్</item>
+        <item>బ్రెయిలీ డిస్‌ప్లే</item>
+        <item>శబ్దాలు మరియు కంపనం</item>
+        <item>నోటిఫికేషన్‌లు</item>
+        <item>వెబ్ కంటెంట్</item>
+        <item>స్క్రిప్ట్‌లు</item>
+        <item>సెట్టింగ్‌లు</item>
+        <item>నవీకరణలు</item>
+        <item>మరిన్ని</item>
+    </string-array>
+    <string name="title_report_new">ఫీడ్‌బ్యాక్‌ను పంపండి</string>
+    <string name="title_report_inbox">ఇన్‌బాక్స్</string>
+    <string name="title_report_drafts">చిత్తుప్రతులు</string>
+    <string name="report_inbox_empty">అభిప్రాయం పంపబడలేదు</string>
+    <string name="report_drafts_empty">చిత్తుప్రతులు లేవు</string>
+    <string name="report_just_now">ఇప్పుడే</string>
+    <string name="report_untitled">శీర్షిక లేని</string>
+    <string name="report_draft_summary">మార్చబడింది <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">పంపబడింది <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> కొత్త ప్రత్యుత్తరం</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> కొత్త ప్రత్యుత్తరాలు</item>
+    </plurals>
+    <string name="report_status_changed">స్థితి మారింది</string>
+    <string name="report_status_open">సమస్యను తెరవండి</string>
+    <string name="report_status_completed">మూసివేయబడింది, పూర్తయింది</string>
+    <string name="report_status_not_planned">మూసివేయబడింది, ప్రణాళిక లేదు</string>
+    <string name="report_status_duplicate">మూసివేయబడింది, నకిలీ</string>
+    <string name="report_status_unknown">తీసివేయబడింది</string>
+    <string name="title_report_status">స్థితి</string>
+    <string name="title_report_your_report">మీ అభిప్రాయం</string>
+    <string name="title_report_messages">సందేశాలు</string>
+    <string name="report_message_from_developer">డెవలపర్, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">మీరు, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">ప్రత్యుత్తరం ఇవ్వండి</string>
+    <string name="title_report_reply_text">మీ సమాధానం</string>
+    <string name="title_report_send_reply">సమాధానం పంపండి</string>
+    <string name="report_reply_sent">ప్రత్యుత్తరం పంపబడింది.</string>
+    <string name="report_reply_not_sent">ప్రత్యుత్తరం పంపబడలేదు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
+    <string name="title_report_remove">ఇన్‌బాక్స్ నుండి తీసివేయండి</string>
+    <string name="dialog_title_report_remove">ఇన్‌బాక్స్ నుండి ఈ అభిప్రాయాన్ని తీసివేయాలా?</string>
+    <string name="dialog_message_report_remove">దీనికి ప్రత్యుత్తరాలు ఇకపై ఈ ఫోన్‌కు చేరవు.</string>
+    <string name="title_report_delete_draft">చిత్తుప్రతిని తొలగించండి</string>
+    <string name="dialog_title_report_delete_draft">ఈ చిత్తుప్రతిని తొలగించాలా?</string>
+    <string name="button_report_delete">తొలగించండి</string>
+    <string name="report_missing">ఈ అభిప్రాయం ఇప్పుడు ఇన్‌బాక్స్‌లో ఉండదు.</string>
+    <string name="notification_channel_problem_reports">ఫీడ్‌బ్యాక్ ప్రత్యుత్తరాలు</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>కి ప్రత్యుత్తరం ఇవ్వండి</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
