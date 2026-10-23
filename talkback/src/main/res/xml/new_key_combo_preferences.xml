@@ -215,6 +215,9 @@
             android:key="@string/keycombo_shortcut_global_refresh"
             android:title="@string/shortcut_refresh" />
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
+            android:key="@string/keycombo_shortcut_other_toggle_browse_mode_extra"
+            android:title="@string/keycombo_menu_other_toggle_browse_mode_extra" />
+        <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
             android:key="@string/keycombo_shortcut_other_toggle_search"
             android:title="@string/keycombo_menu_other_toggle_search" />
         <com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference

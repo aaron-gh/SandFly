@@ -130,6 +130,10 @@ public enum TalkBackPhysicalKeyboardShortcut {
       /* KEYBOARD_SHORTCUT_REFRESH */ 1005,
       R.string.keycombo_shortcut_global_refresh,
       R.string.shortcut_refresh),
+  TOGGLE_BROWSE_MODE_EXTRA(
+      /* KEYBOARD_SHORTCUT_TOGGLE_BROWSE_MODE_EXTRA */ 1006,
+      R.string.keycombo_shortcut_other_toggle_browse_mode_extra,
+      R.string.keycombo_menu_other_toggle_browse_mode_extra),
   SEARCH_SCREEN_FOR_ITEM(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_SEARCH_SCREEN_FOR_ITEM */ 25,
       R.string.keycombo_shortcut_other_toggle_search,

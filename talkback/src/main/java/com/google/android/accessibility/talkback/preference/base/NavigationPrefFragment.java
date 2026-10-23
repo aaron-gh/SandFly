@@ -40,5 +40,9 @@ public class NavigationPrefFragment extends TalkbackBaseFragment {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_smart_browse_mode_key);
     }
+    if (!FeatureFlagReader.enableBrowseMode(getContext())) {
+      PreferenceSettingsUtils.hidePreference(
+          getContext(), getPreferenceScreen(), R.string.pref_browse_mode_per_app_key);
+    }
   }
 }

@@ -381,6 +381,7 @@
     <string name="pref_other_actions_category_key">pref_other_actions_category_key</string>
     <string name="pref_web_navigation_actions_category_key">pref_web_navigation_actions_category_key</string>
     <string name="pref_smart_browse_mode_key">pref_smart_browse_mode_key</string>
+    <string name="pref_browse_mode_per_app_key" translatable="false">pref_browse_mode_per_app</string>
 
   <!-- Verbosity preferences, preset -->
     <string name="pref_verbosity_preset_key">pref_verbosity_preset_key</string>
@@ -1204,6 +1205,7 @@
         <item>@string/shortcut_write_reading_control</item>
         <item>@string/shortcut_selected_setting_previous_action</item>
         <item>@string/shortcut_selected_setting_next_action</item>
+        <item>@string/keycombo_menu_other_toggle_browse_mode</item>
     </string-array>
 
     <!-- Shortcut preference value of menu control -->
@@ -1214,6 +1216,7 @@
         <item>@string/shortcut_value_write_reading_control</item>
         <item>@string/shortcut_value_selected_setting_previous_action</item>
         <item>@string/shortcut_value_selected_setting_next_action</item>
+        <item>@string/shortcut_value_toggle_browse_mode</item>
     </string-array>
 
     <!-- Shortcut preference of text editing -->
@@ -1265,6 +1268,8 @@
   <string name="shortcut_value_scroll_to_top">SCROLL_TO_TOP</string>
   <string name="shortcut_value_scroll_to_bottom">SCROLL_TO_BOTTOM</string>
   <string name="shortcut_value_refresh" translatable="false">REFRESH</string>
+  <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
+  <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="keycombo_shortcut_global_refresh" translatable="false">keycombo_shortcut_global_refresh</string>
   <string name="shortcut_value_scroll_up">SCROLL_UP</string>
@@ -1639,6 +1644,7 @@
     <bool name="pref_gemini_opt_in_default">false</bool>
     <bool name="pref_formatting_inline_default">true</bool>
     <bool name="pref_smart_browse_mode_default">true</bool>
+    <bool name="pref_browse_mode_per_app_default">false</bool>
 
     <!-- Selector preferences default values -->
     <string name="pref_selector_setting_default">@string/selector_granularity_characters</string>
