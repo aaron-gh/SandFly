@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granulált szerkesztés</string>
+    <string name="granular_editing_split_by">Felosztás: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Felosztott</string>
+    <string name="granular_editing_characters">Karakterek</string>
+    <string name="granular_editing_words">Szavak</string>
+    <string name="granular_editing_sentences">Mondatok</string>
+    <string name="granular_editing_lines">Sorok</string>
+    <string name="granular_editing_paragraphs">Bekezdések</string>
+    <string name="granular_editing_space">Szóköz</string>
+    <string name="granular_editing_new_line">Új sor</string>
+    <string name="granular_editing_tab">Tab karakter</string>
+    <string name="granular_editing_empty">Nincs szöveg. Használja a Szöveg hozzáadása a végén, a Továbbiak részben.</string>
+    <string name="granular_editing_edit">Szerkesztés</string>
+    <string name="granular_editing_insert_before">Helyezze be előtte</string>
+    <string name="granular_editing_insert_after">Beszúrás után</string>
+    <string name="granular_editing_delete">Törlés</string>
+    <string name="granular_editing_select">Kijelölés</string>
+    <string name="granular_editing_unselect">Törölje a kijelölést</string>
+    <string name="granular_editing_selected">Kiválasztva</string>
+    <string name="granular_editing_save">Mentés</string>
+    <string name="granular_editing_more">Többet</string>
+    <string name="granular_editing_undo">Visszavonás</string>
+    <string name="granular_editing_redo">Ismételje meg az utolsó visszavont szerkesztést</string>
+    <string name="granular_editing_find">Keresés</string>
+    <string name="granular_editing_find_next">Keresse meg a következőt</string>
+    <string name="granular_editing_replace">Cserélje ki</string>
+    <string name="granular_editing_replace_with">Cserélje ki</string>
+    <string name="granular_editing_replace_all">Cserélje ki az összeset</string>
+    <string name="granular_editing_add_at_end">Szöveg hozzáadása a végéhez</string>
+    <string name="granular_editing_clear_selection">Törölje az összes szöveg kijelölését</string>
+    <string name="granular_editing_cut_selected">Vágja ki a kijelölt szöveget</string>
+    <string name="granular_editing_delete_selected">Kijelölt törlése</string>
+    <string name="granular_editing_copied">Másolva</string>
+    <string name="granular_editing_deleted">Törölve</string>
+    <string name="granular_editing_not_found">Nem található</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> cserélve</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> cserélve</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Menti a változtatásokat?</string>
+    <string name="granular_editing_copy_changes">Másolja a módosított szöveget?</string>
+    <string name="granular_editing_discard">Eldobni</string>
+    <string name="granular_editing_keep_editing">Folytasd a szerkesztést</string>
+    <string name="granular_editing_not_saved">Nincs mentve: a szövegmező eltűnt. A szöveg másolásra kerül.</string>
+    <string name="granular_editing_no_text">Nincs szerkeszthető szöveg</string>
+    <string name="granular_editing_password">Nem érhető el a jelszó mezőkben</string>
+</resources>

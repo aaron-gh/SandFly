@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Ellenőrizze a frissítéseket</string>
+    <string name="summary_pref_check_for_updates_version">Verzió <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Frissítések automatikus keresése</string>
+    <string name="summary_pref_auto_update_check">Nézze meg naponta egyszer, és mutasson értesítést, ha új build elérhető</string>
+    <string name="title_pref_dev_builds">A fejlesztés épít</string>
+    <string name="update_notification_title">SandFly frissítés elérhető</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Érintse meg a telepítéshez.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> elérhető</string>
+    <string name="update_dialog_install">Telepítés</string>
+    <string name="update_checking">Frissítések keresése</string>
+    <string name="update_up_to_date">SandFly naprakész</string>
+    <string name="update_check_failed">Nem sikerült ellenőrizni a frissítéseket</string>
+    <string name="update_downloading">Frissítés letöltése</string>
+    <string name="update_already_downloading">A frissítés már letöltődik</string>
+    <string name="update_ready_title">SandFly frissítés letöltve</string>
+    <string name="update_ready_text">Érintse meg a telepítéshez.</string>
+    <string name="update_install_failed">Nem sikerült telepíteni a frissítést</string>
+    <string name="update_install_canceled">Frissítés megszakítva</string>
+    <string name="update_allow_install">Engedélyezze a SandFly számára az alkalmazások telepítését, majd próbálkozzon újra a frissítéssel</string>
+</resources>
