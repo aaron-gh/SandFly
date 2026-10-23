@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Gemini Chave API</string>
+    <string name="title_pref_gemini_api_key">Chave de API do Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">Usando a chave incorporada neste aplicativo</string>
     <string name="gemini_api_key_dialog_message">Obtenha uma chave de API gratuita no Google AI Studio, em aistudio.google.com/apikey, e cole-a aqui. Para remover sua chave, limpe o campo e salve.\n\nAs imagens e telas que você descreve são enviadas para Google. No nível gratuito, Google pode usá-los para melhorar seus produtos.</string>
     <string name="gemini_api_key_hint">Chave de API</string>
@@ -44,7 +44,7 @@
     <string name="ai_provider_address_message">O endereço de um serviço com uma API de bate-papo compatível com OpenAI e entrada de imagem, como https://example.com/v1.</string>
     <string name="ai_provider_not_set">Não definido</string>
     <string name="ai_provider_set">Configurado</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Chave API</string>
+    <string name="title_pref_gemini_api_key_of">Chave de API do <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Modelo <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Não escolhido</string>
     <string name="ai_provider_key_message">Cole sua chave API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para removê-lo, limpe o campo e salve. As imagens e telas que você descreve são enviadas para <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>

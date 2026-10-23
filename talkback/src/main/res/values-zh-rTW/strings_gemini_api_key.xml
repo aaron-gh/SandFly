@@ -6,7 +6,7 @@
     <string name="gemini_api_key_hint">API金鑰</string>
     <string name="gemini_api_key_save">儲存</string>
     <string name="gemini_api_key_get">取得金鑰</string>
-    <string name="title_pref_gemini_model">Gemini型號</string>
+    <string name="title_pref_gemini_model">Gemini 模型</string>
     <string name="gemini_model_automatic">自動</string>
     <string name="summary_pref_gemini_model_automatic">自動：Gemini Flash，當 Flash 忙時則 Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，忙時則Flash-Lite</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">未設定</string>
     <string name="ai_provider_set">已設定</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>型號</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> 模型</string>
     <string name="ai_provider_choose_model">未選擇</string>
     <string name="ai_provider_key_message">貼上您的 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰。若要刪除它，請清除該欄位並儲存。您描述的圖像和螢幕將發送至 <xliff:g id="service" example="Claude">%1$s</xliff:g>。</string>
     <string name="ai_provider_needs_key">首先設定 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>

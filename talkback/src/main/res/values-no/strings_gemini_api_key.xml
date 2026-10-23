@@ -6,7 +6,7 @@
     <string name="gemini_api_key_hint">API-nøkkel</string>
     <string name="gemini_api_key_save">Lagre</string>
     <string name="gemini_api_key_get">Skaff en nøkkel</string>
-    <string name="title_pref_gemini_model">Gemini modell</string>
+    <string name="title_pref_gemini_model">Gemini-modell</string>
     <string name="gemini_model_automatic">Automatisk</string>
     <string name="summary_pref_gemini_model_automatic">Automatisk: Gemini Flash, deretter Flash-Lite når Flash er opptatt</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, deretter Flash-Lite når den er opptatt</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">Ikke satt</string>
     <string name="ai_provider_set">Konfigurert</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkel</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-modell</string>
     <string name="ai_provider_choose_model">Ikke valgt</string>
     <string name="ai_provider_key_message">Lim inn <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkelen. For å fjerne det, tøm feltet og lagre. Bilder og skjermer som du beskriver sendes til <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Still inn <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkelen først</string>

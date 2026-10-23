@@ -6,7 +6,7 @@
     <string name="gemini_api_key_hint">Kunci API</string>
     <string name="gemini_api_key_save">Simpan</string>
     <string name="gemini_api_key_get">Dapatkan kunci</string>
-    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="title_pref_gemini_model">Model Gemini</string>
     <string name="gemini_model_automatic">Otomatis</string>
     <string name="summary_pref_gemini_model_automatic">Otomatis: Gemini Flash, lalu Flash-Lite saat Flash sibuk</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, lalu Flash-Lite saat sedang sibuk</string>
@@ -44,8 +44,8 @@
     <string name="ai_provider_address_message">Alamat layanan dengan API obrolan dan masukan gambar yang kompatibel dengan OpenAI, seperti https://example.com/v1.</string>
     <string name="ai_provider_not_set">Tidak disetel</string>
     <string name="ai_provider_set">Dikonfigurasi</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Kunci API</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="title_pref_gemini_api_key_of">Kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Tidak dipilih</string>
     <string name="ai_provider_key_message">Tempelkan kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> Anda. Untuk menghapusnya, kosongkan bidang dan simpan. Gambar dan layar yang Anda jelaskan dikirim ke <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Setel kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> terlebih dahulu</string>

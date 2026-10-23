@@ -7,7 +7,7 @@
     <string name="gemini_api_key_save">Gem</string>
     <string name="gemini_api_key_get">Hent en nøgle</string>
     <string name="gemini_api_terms_link">Yderligere servicevilkår for Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="title_pref_gemini_model">Gemini-model</string>
     <string name="gemini_model_automatic">Automatisk</string>
     <string name="summary_pref_gemini_model_automatic">Automatisk: Gemini Flash, derefter Flash-Lite, når Flash er optaget</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, derefter Flash-Lite, når den er optaget</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">Ikke indstillet</string>
     <string name="ai_provider_set">Konfigureret</string>
     <string name="title_pref_gemini_api_key_of">API-nøgle til <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-model</string>
     <string name="ai_provider_choose_model">Ikke valgt</string>
     <string name="ai_provider_key_message">Indsæt din API-nøgle til <xliff:g id="service" example="Claude">%1$s</xliff:g>. Fjern den ved at rydde feltet og gemme. Billeder og skærme, du beder om beskrivelser af, sendes til <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Indstil <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøglen først</string>

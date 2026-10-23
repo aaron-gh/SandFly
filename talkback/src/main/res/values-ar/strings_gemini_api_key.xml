@@ -7,7 +7,7 @@
     <string name="gemini_api_key_save">حفظ</string>
     <string name="gemini_api_key_get">الحصول على مفتاح</string>
     <string name="gemini_api_terms_link">بنود الخدمة الإضافية لواجهة Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini الموديل</string>
+    <string name="title_pref_gemini_model">نموذج Gemini</string>
     <string name="gemini_model_automatic">تلقائي</string>
     <string name="summary_pref_gemini_model_automatic">تلقائي: Gemini فلاش، ثم فلاش لايت عندما يكون الفلاش مشغولاً</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، ثم Flash-Lite عندما يكون مشغولاً</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">لم يتم ضبطه</string>
     <string name="ai_provider_set">تم تكوينه</string>
     <string name="title_pref_gemini_api_key_of">مفتاح API لخدمة <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> الموديل</string>
+    <string name="title_pref_gemini_model_of">نموذج <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">لم يتم اختياره</string>
     <string name="ai_provider_key_message">الصق مفتاح API الخاص بك لخدمة <xliff:g id="service" example="Claude">%1$s</xliff:g>. لإزالته، أفرغ الحقل ثم احفظ. تُرسل الصور والشاشات التي تطلب وصفها إلى <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">قم بتعيين مفتاح <xliff:g id="service" example="Claude">%1$s</xliff:g> API أولاً</string>

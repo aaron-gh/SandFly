@@ -6,7 +6,7 @@
     <string name="gemini_api_key_hint">API-nyckel</string>
     <string name="gemini_api_key_save">Spara</string>
     <string name="gemini_api_key_get">Skaffa nyckel</string>
-    <string name="title_pref_gemini_model">Gemini modell</string>
+    <string name="title_pref_gemini_model">Gemini-modell</string>
     <string name="gemini_model_automatic">Automatisk</string>
     <string name="summary_pref_gemini_model_automatic">Automatiskt: Gemini Flash, sedan Flash-Lite när Flash är upptaget</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, sedan Flash-Lite när den är upptagen</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">Inte inställt</string>
     <string name="ai_provider_set">Konfigurerad</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckel</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-modell</string>
     <string name="ai_provider_choose_model">Inte vald</string>
     <string name="ai_provider_key_message">Klistra in din <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckel. För att ta bort det, rensa fältet och spara. Bilder och skärmar som du beskriver skickas till <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Ställ in <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckeln först</string>

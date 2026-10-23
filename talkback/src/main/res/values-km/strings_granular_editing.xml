@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">ការកែសម្រួលជាក្រឡា</string>
+    <string name="granular_editing_title">ការកែសម្រួលជាផ្នែកៗ</string>
     <string name="granular_editing_split_by">បំបែកដោយ៖ <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
     <string name="granular_editing_split_by_title">បំបែកដោយ</string>
     <string name="granular_editing_characters">តួអក្សរ</string>
     <string name="granular_editing_words">ពាក្យ</string>
     <string name="granular_editing_sentences">ប្រយោគ</string>
-    <string name="granular_editing_lines">ជួរ</string>
+    <string name="granular_editing_lines">បន្ទាត់</string>
     <string name="granular_editing_paragraphs">កថាខណ្ឌ</string>
     <string name="granular_editing_space">ដកឃ្លា</string>
     <string name="granular_editing_new_line">បន្ទាត់ថ្មី</string>
-    <string name="granular_editing_tab">តួអក្សរផ្ទាំង</string>
+    <string name="granular_editing_tab">តួអក្សរ Tab</string>
     <string name="granular_editing_empty">គ្មានអត្ថបទ។ ប្រើបន្ថែមអត្ថបទនៅចុងបញ្ចប់ ក្នុង More</string>
     <string name="granular_editing_edit">កែសម្រួល</string>
     <string name="granular_editing_insert_before">បញ្ចូលមុន</string>
@@ -22,7 +22,7 @@
     <string name="granular_editing_save">រក្សាទុក</string>
     <string name="granular_editing_more">ច្រើនទៀត</string>
     <string name="granular_editing_undo">មិនធ្វើវិញ</string>
-    <string name="granular_editing_redo">ធ្វើការកែប្រែចុងក្រោយដែលមិនធ្វើឡើងវិញ</string>
+    <string name="granular_editing_redo">ធ្វើវិញ</string>
     <string name="granular_editing_find">ស្វែងរក</string>
     <string name="granular_editing_find_next">ស្វែងរកបន្ទាប់</string>
     <string name="granular_editing_replace">ជំនួស</string>
@@ -32,7 +32,7 @@
     <string name="granular_editing_clear_selection">ដកការជ្រើសរើសអត្ថបទទាំងអស់</string>
     <string name="granular_editing_cut_selected">កាត់អត្ថបទដែលបានជ្រើសរើស</string>
     <string name="granular_editing_delete_selected">លុបដែលបានជ្រើសរើស</string>
-    <string name="granular_editing_copied">ចម្លង</string>
+    <string name="granular_editing_copied">បានចម្លង</string>
     <string name="granular_editing_deleted">បានលុប</string>
     <string name="granular_editing_not_found">រកមិនឃើញ</string>
     <plurals name="granular_editing_replaced">

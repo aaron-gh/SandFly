@@ -7,7 +7,7 @@
     <string name="gemini_api_key_save">Αποθήκευση</string>
     <string name="gemini_api_key_get">Λήψη κλειδιού</string>
     <string name="gemini_api_terms_link">Πρόσθετοι Όροι Παροχής Υπηρεσιών του Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini μοντέλο</string>
+    <string name="title_pref_gemini_model">Μοντέλο Gemini</string>
     <string name="gemini_model_automatic">Αυτόματο</string>
     <string name="summary_pref_gemini_model_automatic">Αυτόματο: Gemini Flash, μετά Flash-Lite όταν το Flash είναι απασχολημένο</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> και μετά Flash-Lite όταν είναι απασχολημένο</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">Δεν έχει οριστεί</string>
     <string name="ai_provider_set">Έχει οριστεί</string>
     <string name="title_pref_gemini_api_key_of">Κλειδί API για <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> μοντέλο</string>
+    <string name="title_pref_gemini_model_of">Μοντέλο <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Δεν έχει επιλεγεί</string>
     <string name="ai_provider_key_message">Επικολλήστε το κλειδί API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Για να το αφαιρέσετε, καθαρίστε το πεδίο και αποθηκεύστε το. Οι εικόνες και οι οθόνες που περιγράφετε αποστέλλονται στο <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Ρυθμίστε πρώτα το κλειδί API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>

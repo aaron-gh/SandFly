@@ -7,7 +7,7 @@
     <string name="gemini_api_key_save">Запазване</string>
     <string name="gemini_api_key_get">Вземане на ключ</string>
     <string name="gemini_api_terms_link">Допълнителни общи условия за Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini модел</string>
+    <string name="title_pref_gemini_model">Модел на Gemini</string>
     <string name="gemini_model_automatic">Автоматичен</string>
     <string name="summary_pref_gemini_model_automatic">Автоматично: Gemini Flash, след това Flash-Lite, когато Flash е зает</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, след това Flash-Lite, когато е заето</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">Не е зададено</string>
     <string name="ai_provider_set">Конфигуриран</string>
     <string name="title_pref_gemini_api_key_of">API ключ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модел</string>
+    <string name="title_pref_gemini_model_of">Модел на <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Не е избран</string>
     <string name="ai_provider_key_message">Поставете вашия <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключ. За да го премахнете, изчистете полето и запазете. Изображенията и екраните, които описвате, се изпращат на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Първо задайте <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключа</string>

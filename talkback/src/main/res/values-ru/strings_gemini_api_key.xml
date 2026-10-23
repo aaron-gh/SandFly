@@ -7,7 +7,7 @@
   <string name="gemini_api_key_save">Сохранить</string>
   <string name="gemini_api_key_get">Получить ключ</string>
   <string name="gemini_api_terms_link">Дополнительные условия использования API Gemini</string>
-    <string name="title_pref_gemini_model">Gemini модель</string>
+    <string name="title_pref_gemini_model">Модель Gemini</string>
     <string name="gemini_model_automatic">Автоматический</string>
     <string name="summary_pref_gemini_model_automatic">Автоматически: Gemini Flash, затем Flash-Lite, когда Flash занята.</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, затем Flash-Lite, когда он занят</string>
@@ -44,8 +44,8 @@
     <string name="ai_provider_address_message">Адрес службы с OpenAI-совместимым API чата и вводом изображений, например https://example.com/v1..</string>
     <string name="ai_provider_not_set">Не установлено</string>
     <string name="ai_provider_set">Настроен</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-ключ</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модель</string>
+    <string name="title_pref_gemini_api_key_of">API-ключ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Модель <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Не выбрано</string>
     <string name="ai_provider_key_message">Вставьте свой ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Чтобы удалить его, очистите поле и сохраните. Изображения и экраны, которые вы описываете, отправляются на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Сначала установите ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>

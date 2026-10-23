@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Gemini คีย์ API</string>
+    <string name="title_pref_gemini_api_key">คีย์ API ของ Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">การใช้คีย์ที่มีอยู่ในแอปนี้</string>
     <string name="gemini_api_key_dialog_message">รับคีย์ API ฟรีจาก Google AI Studio ที่ aistudio.google.com/apikey แล้ววางที่นี่ หากต้องการนำกุญแจออก ให้ล้างช่องและบันทึก\n\nภาพและหน้าจอที่คุณอธิบายจะถูกส่งไปยัง Google ในระดับฟรี Google สามารถใช้สิ่งเหล่านี้เพื่อปรับปรุงผลิตภัณฑ์ของตนได้</string>
     <string name="gemini_api_key_hint">คีย์ API</string>
     <string name="gemini_api_key_save">บันทึก</string>
     <string name="gemini_api_key_get">รับคีย์</string>
-    <string name="title_pref_gemini_model">Gemini รุ่น</string>
+    <string name="title_pref_gemini_model">โมเดล Gemini</string>
     <string name="gemini_model_automatic">อัตโนมัติ</string>
     <string name="summary_pref_gemini_model_automatic">อัตโนมัติ: Gemini Flash จากนั้น Flash-Lite เมื่อ Flash ไม่ว่าง</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> ตามด้วย Flash-Lite เมื่องานไม่ว่าง</string>
@@ -44,8 +44,8 @@
     <string name="ai_provider_address_message">ที่อยู่ของบริการที่มี API การแชทที่เข้ากันได้กับ OpenAI และการป้อนรูปภาพ เช่น https://example.com/v1.</string>
     <string name="ai_provider_not_set">ไม่ได้ตั้งค่า</string>
     <string name="ai_provider_set">กำหนดค่าแล้ว</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> คีย์ API</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> รุ่น</string>
+    <string name="title_pref_gemini_api_key_of">คีย์ API ของ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">โมเดล <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">ไม่ได้เลือก</string>
     <string name="ai_provider_key_message">วางคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ของคุณ หากต้องการลบออก ให้ล้างฟิลด์และบันทึก รูปภาพและหน้าจอที่คุณอธิบายจะถูกส่งไปยัง <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_key">ตั้งค่าคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ก่อน</string>

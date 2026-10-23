@@ -6,7 +6,7 @@
     <string name="gemini_api_key_hint">API-lykill</string>
     <string name="gemini_api_key_save">Vista</string>
     <string name="gemini_api_key_get">Fá lykil</string>
-    <string name="title_pref_gemini_model">Gemini líkan</string>
+    <string name="title_pref_gemini_model">Gemini-líkan</string>
     <string name="gemini_model_automatic">Sjálfvirk</string>
     <string name="summary_pref_gemini_model_automatic">Sjálfvirkt: Gemini Flash, síðan Flash-Lite þegar Flash er upptekið</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, svo Flash-Lite þegar það er upptekið</string>
@@ -33,8 +33,8 @@
     <string name="ai_service_not_set_up">Engin gervigreind þjónusta er í notkun. Settu upp einn eða veldu einn í stillingum fyrir sjálfvirkar lýsingar.</string>
     <string name="ai_provider_none_set_up">Engin gervigreind þjónusta er sett upp. Settu einn upp í stillingum þess hér að neðan.</string>
     <string name="ai_provider_other">Önnur þjónusta</string>
-    <string name="title_pref_category_ai_services">AI þjónusta</string>
-    <string name="title_pref_ai_provider">AI þjónusta</string>
+    <string name="title_pref_category_ai_services">AI-þjónustur</string>
+    <string name="title_pref_ai_provider">AI-þjónusta</string>
     <string name="title_ai_provider_settings">Stillingar <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ekki sett upp</string>
     <string name="ai_provider_in_use">Í notkun</string>
@@ -44,8 +44,8 @@
     <string name="ai_provider_address_message">Heimilisfang þjónustu með OpenAI-samhæft spjall-API og myndinnsláttur, eins og https://example.com/v1.</string>
     <string name="ai_provider_not_set">Ekki stillt</string>
     <string name="ai_provider_set">Stillt</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API lykill</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> líkan</string>
+    <string name="title_pref_gemini_api_key_of">API-lykill <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-líkan</string>
     <string name="ai_provider_choose_model">Ekki valið</string>
     <string name="ai_provider_key_message">Límdu <xliff:g id="service" example="Claude">%1$s</xliff:g> API lykilinn þinn. Til að fjarlægja það skaltu hreinsa reitinn og vista. Myndir og skjár sem þú lýsir eru sendar á <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Stilltu <xliff:g id="service" example="Claude">%1$s</xliff:g> API lykilinn fyrst</string>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Geminiລະຫັດ API</string>
+    <string name="title_pref_gemini_api_key">ລະຫັດ API ຂອງ Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">ການນໍາໃຊ້ກະແຈທີ່ສ້າງຂຶ້ນໃນ app ນີ້</string>
     <string name="gemini_api_key_dialog_message">ຮັບລະຫັດ API ຟຣີຈາກ Google AI Studio, ຢູ່ aistudio.google.com/apikey, ແລະວາງມັນໃສ່ບ່ອນນີ້. ເພື່ອເອົາກະແຈຂອງທ່ານອອກ, ລ້າງຊ່ອງຂໍ້ມູນແລະບັນທຶກ.\n\nຮູບພາບແລະຫນ້າຈໍທີ່ທ່ານອະທິບາຍແມ່ນຖືກສົ່ງໄປຫາ Google. ໃນຊັ້ນຟຣີ, Googleສາມາດໃຊ້ພວກມັນເພື່ອປັບປຸງຜະລິດຕະພັນຂອງມັນ.</string>
     <string name="gemini_api_key_hint">ລະຫັດ API</string>
     <string name="gemini_api_key_save">ບັນທຶກ</string>
     <string name="gemini_api_key_get">ຮັບລະຫັດ</string>
-    <string name="title_pref_gemini_model">Gemini ຮູບແບບ</string>
+    <string name="title_pref_gemini_model">ຕົວແບບ Gemini</string>
     <string name="gemini_model_automatic">ອັດຕະໂນມັດ</string>
     <string name="summary_pref_gemini_model_automatic">ອັດຕະໂນມັດ: Gemini Flash, ຈາກນັ້ນ Flash-Lite ເມື່ອ Flash ບໍ່ຫວ່າງ</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ຈາກນັ້ນ Flash-Lite ເມື່ອມັນບໍ່ຫວ່າງ</string>
@@ -44,8 +44,8 @@
     <string name="ai_provider_address_message">ທີ່ຢູ່ຂອງການບໍລິການທີ່ມີ API ສົນທະນາທີ່ເຂົ້າກັນໄດ້ OpenAI ແລະການປ້ອນຂໍ້ມູນຮູບພາບເຊັ່ນ https://example.com/v1.</string>
     <string name="ai_provider_not_set">ບໍ່ໄດ້ຕັ້ງ</string>
     <string name="ai_provider_set">ຕັ້ງຄ່າແລ້ວ</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>ລະຫັດ API</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ຮູບແບບ</string>
+    <string name="title_pref_gemini_api_key_of">ລະຫັດ API ຂອງ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">ຕົວແບບ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">ບໍ່ໄດ້ເລືອກ</string>
     <string name="ai_provider_key_message">ວາງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ຂອງທ່ານ. ເພື່ອເອົາມັນອອກ, ລ້າງຊ່ອງຂໍ້ມູນແລະບັນທຶກ. ຮູບພາບ ແລະໜ້າຈໍທີ່ທ່ານອະທິບາຍແມ່ນຖືກສົ່ງໄປຫາ <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">ຕັ້ງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ກ່ອນ</string>

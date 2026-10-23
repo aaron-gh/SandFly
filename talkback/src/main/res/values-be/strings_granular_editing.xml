@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="granular_editing_title">Дэталёвае рэдагаванне</string>
     <string name="granular_editing_split_by">Падзяліць па: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Разбіць па</string>
+    <string name="granular_editing_split_by_title">Падзяліць па</string>
     <string name="granular_editing_characters">Сімвалы</string>
     <string name="granular_editing_words">Словы</string>
     <string name="granular_editing_sentences">Сказы</string>
@@ -18,12 +18,12 @@
     <string name="granular_editing_delete">Выдаліць</string>
     <string name="granular_editing_select">Выбраць</string>
     <string name="granular_editing_unselect">Адмяніць выбар</string>
-    <string name="granular_editing_selected">Выбранае</string>
+    <string name="granular_editing_selected">Выбрана</string>
     <string name="granular_editing_save">Захаваць</string>
     <string name="granular_editing_more">Яшчэ</string>
     <string name="granular_editing_undo">Адмяніць</string>
-    <string name="granular_editing_redo">Паўтарыць апошнюю адмененую праўку</string>
-    <string name="granular_editing_find">Знайдзі</string>
+    <string name="granular_editing_redo">Паўтарыць</string>
+    <string name="granular_editing_find">Знайсці</string>
     <string name="granular_editing_find_next">Знайсці далей</string>
     <string name="granular_editing_replace">Замяніць</string>
     <string name="granular_editing_replace_with">Замяніць на</string>
@@ -33,7 +33,7 @@
     <string name="granular_editing_cut_selected">Выразаць вылучаны тэкст</string>
     <string name="granular_editing_delete_selected">Выдаліць выбранае</string>
     <string name="granular_editing_copied">Скапіравана</string>
-    <string name="granular_editing_deleted">Выдалены</string>
+    <string name="granular_editing_deleted">Выдалена</string>
     <string name="granular_editing_not_found">Не знойдзена</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> заменены</item>
