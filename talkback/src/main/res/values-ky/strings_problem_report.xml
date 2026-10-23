@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Пикир билдирүү</string>
     <string name="title_pref_problem_report_type">Пикирдин түрү</string>
-    <string name="title_pref_problem_report_area">Район</string>
-    <string name="title_pref_problem_report_title">Title</string>
+    <string name="title_pref_problem_report_area">Бөлүм</string>
+    <string name="title_pref_problem_report_title">Аталышы</string>
     <string name="title_pref_problem_report_app">Колдонмо кайда болот</string>
-    <string name="title_pref_problem_report_description">Description</string>
+    <string name="title_pref_problem_report_description">Сүрөттөмө</string>
     <string name="dialog_message_problem_report_description">Эмне болот жана эмне күттүңүз.</string>
-    <string name="title_pref_problem_report_steps">Программалык камсыздоо маселесин кайра чыгаруу үчүн кадамдар</string>
+    <string name="title_pref_problem_report_steps">Кайталоо кадамдары</string>
     <string name="title_pref_problem_report_email">Жооптор үчүн электрондук почта</string>
-    <string name="title_pref_problem_report_device">Түзмөк маалыматын кошуңуз</string>
-    <string name="title_pref_problem_report_log">SandFly журналын кошуңуз</string>
+    <string name="title_pref_problem_report_device">Түзмөк маалыматын кошуу</string>
+    <string name="title_pref_problem_report_log">SandFly журналын кошуу</string>
     <string name="summary_pref_problem_report_log">Экрандагы текстти камтышы мүмкүн</string>
     <string name="title_pref_problem_report_send">Жөнөтүү</string>
-    <string name="summary_pref_problem_report_sending">Жөнөтүү</string>
+    <string name="summary_pref_problem_report_sending">Жөнөтүлүүдө</string>
     <string name="problem_report_missing_fields">Аталышын жана сүрөттөмөсүн киргизиңиз.</string>
     <string name="problem_report_invalid_email">Жарактуу электрондук почта дарегин киргизиңиз.</string>
     <string name="problem_report_sent">Пикир жөнөтүлдү.</string>
@@ -44,7 +44,7 @@
     </string-array>
     <string name="title_report_new">Пикир билдирүү</string>
     <string name="title_report_inbox">Кирүүчү куту</string>
-    <string name="title_report_drafts">Долбоорлор</string>
+    <string name="title_report_drafts">Черновиктер</string>
     <string name="report_inbox_empty">Пикир жөнөтүлгөн жок</string>
     <string name="report_drafts_empty">Черновиктер жок</string>
     <string name="report_just_now">азыр эле</string>
@@ -74,7 +74,7 @@
     <string name="title_report_remove">Кирүүчү кутудан алып салуу</string>
     <string name="dialog_title_report_remove">Бул пикир кат келген кутудан өчүрүлсүнбү?</string>
     <string name="dialog_message_report_remove">Ага жооптор мындан ары бул телефонго жетпейт.</string>
-    <string name="title_report_delete_draft">Долбоорду жок кылуу</string>
+    <string name="title_report_delete_draft">Черновикти өчүрүү</string>
     <string name="dialog_title_report_delete_draft">Бул черновик өчүрүлсүнбү?</string>
     <string name="button_report_delete">Өчүрүү</string>
     <string name="report_missing">Бул пикир кат кутусунда жок.</string>

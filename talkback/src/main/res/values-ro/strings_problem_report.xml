@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Trimite feedback</string>
     <string name="title_pref_problem_report_type">Tipul de feedback</string>
-    <string name="title_pref_problem_report_area">Zona</string>
+    <string name="title_pref_problem_report_area">Zonă</string>
     <string name="title_pref_problem_report_title">Titlu</string>
     <string name="title_pref_problem_report_app">Aplicația unde se întâmplă</string>
     <string name="title_pref_problem_report_description">Descriere</string>
     <string name="dialog_message_problem_report_description">Ce se întâmplă și la ce te așteptai.</string>
-    <string name="title_pref_problem_report_steps">Pași pentru a reproduce problema software-ului</string>
+    <string name="title_pref_problem_report_steps">Pași de reproducere</string>
     <string name="title_pref_problem_report_email">E-mail pentru răspunsuri</string>
-    <string name="title_pref_problem_report_device">Includeți informații despre dispozitiv</string>
-    <string name="title_pref_problem_report_log">Includeți SandFly jurnal</string>
+    <string name="title_pref_problem_report_device">Include informații despre dispozitiv</string>
+    <string name="title_pref_problem_report_log">Include jurnalul SandFly</string>
     <string name="summary_pref_problem_report_log">Poate conține text de pe ecran</string>
     <string name="title_pref_problem_report_send">Trimite</string>
-    <string name="summary_pref_problem_report_sending">Trimiterea</string>
+    <string name="summary_pref_problem_report_sending">Se trimite</string>
     <string name="problem_report_missing_fields">Introduceți un titlu și o descriere.</string>
     <string name="problem_report_invalid_email">Introduceți o adresă de e-mail validă.</string>
     <string name="problem_report_sent">Feedback trimis.</string>
@@ -43,7 +43,7 @@
         <item>Altul</item>
     </string-array>
     <string name="title_report_new">Trimite feedback</string>
-    <string name="title_report_inbox">Inbox</string>
+    <string name="title_report_inbox">Mesaje primite</string>
     <string name="title_report_drafts">Ciorne</string>
     <string name="report_inbox_empty">Niciun feedback trimis</string>
     <string name="report_drafts_empty">Fără schițe</string>
@@ -75,7 +75,7 @@
     <string name="title_report_remove">Eliminați din inbox</string>
     <string name="dialog_title_report_remove">Eliminați acest feedback din căsuța de e-mail?</string>
     <string name="dialog_message_report_remove">Răspunsurile la acesta nu vor mai ajunge la acest telefon.</string>
-    <string name="title_report_delete_draft">Ștergeți schița</string>
+    <string name="title_report_delete_draft">Șterge schița</string>
     <string name="dialog_title_report_delete_draft">Ștergi această schiță?</string>
     <string name="button_report_delete">Șterge</string>
     <string name="report_missing">Acest feedback nu mai este în căsuța de e-mail.</string>

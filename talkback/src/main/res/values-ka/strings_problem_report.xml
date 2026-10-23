@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_problem_report">გამოხმაურება</string>
+    <string name="title_pref_problem_report">გამოხმაურების გაგზავნა</string>
     <string name="title_pref_problem_report_type">უკუკავშირის ტიპი</string>
-    <string name="title_pref_problem_report_area">ფართობი</string>
+    <string name="title_pref_problem_report_area">სფერო</string>
     <string name="title_pref_problem_report_title">სათაური</string>
     <string name="title_pref_problem_report_app">აპლიკაცია სადაც ხდება</string>
     <string name="title_pref_problem_report_description">აღწერა</string>
     <string name="dialog_message_problem_report_description">რა ხდება და რას ელოდით.</string>
-    <string name="title_pref_problem_report_steps">პროგრამული პრობლემის რეპროდუცირების ნაბიჯები</string>
+    <string name="title_pref_problem_report_steps">რეპროდუცირების ნაბიჯები</string>
     <string name="title_pref_problem_report_email">ელფოსტა პასუხებისთვის</string>
-    <string name="title_pref_problem_report_device">ჩართეთ მოწყობილობის ინფორმაცია</string>
-    <string name="title_pref_problem_report_log">ჩართეთ SandFly ჟურნალი</string>
+    <string name="title_pref_problem_report_device">მოწყობილობის ინფორმაციის დართვა</string>
+    <string name="title_pref_problem_report_log">SandFly-ის ჟურნალის დართვა</string>
     <string name="summary_pref_problem_report_log">შეიძლება შეიცავდეს ტექსტს ეკრანიდან</string>
     <string name="title_pref_problem_report_send">გაგზავნა</string>
-    <string name="summary_pref_problem_report_sending">გაგზავნა</string>
+    <string name="summary_pref_problem_report_sending">იგზავნება</string>
     <string name="problem_report_missing_fields">შეიყვანეთ სათაური და აღწერა.</string>
     <string name="problem_report_invalid_email">შეიყვანეთ სწორი ელფოსტის მისამართი.</string>
     <string name="problem_report_sent">გამოხმაურება გაიგზავნა.</string>
@@ -42,9 +42,9 @@
         <item>განახლებები</item>
         <item>სხვა</item>
     </string-array>
-    <string name="title_report_new">გამოხმაურება</string>
+    <string name="title_report_new">გამოხმაურების გაგზავნა</string>
     <string name="title_report_inbox">შემოსულები</string>
-    <string name="title_report_drafts">ნახაზები</string>
+    <string name="title_report_drafts">მონახაზები</string>
     <string name="report_inbox_empty">გამოხმაურება არ გაგზავნილა</string>
     <string name="report_drafts_empty">მონახაზები არ არის</string>
     <string name="report_just_now">ახლახან</string>

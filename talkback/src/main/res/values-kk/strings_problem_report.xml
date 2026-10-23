@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Пікір жіберу</string>
     <string name="title_pref_problem_report_type">Кері байланыс түрі</string>
-    <string name="title_pref_problem_report_area">Аудан</string>
+    <string name="title_pref_problem_report_area">Бөлім</string>
     <string name="title_pref_problem_report_title">Тақырып</string>
     <string name="title_pref_problem_report_app">Бұл орын алатын қолданба</string>
     <string name="title_pref_problem_report_description">Сипаттама</string>
     <string name="dialog_message_problem_report_description">Не болды және сіз күткен нәрсе.</string>
-    <string name="title_pref_problem_report_steps">Бағдарламалық құрал мәселесін қайта шығару қадамдары</string>
+    <string name="title_pref_problem_report_steps">Қайталау қадамдары</string>
     <string name="title_pref_problem_report_email">Жауаптар үшін электрондық пошта</string>
-    <string name="title_pref_problem_report_device">Құрылғы туралы ақпаратты қосыңыз</string>
-    <string name="title_pref_problem_report_log">SandFly журналын қосыңыз</string>
+    <string name="title_pref_problem_report_device">Құрылғы туралы ақпаратты қосу</string>
+    <string name="title_pref_problem_report_log">SandFly журналын қосу</string>
     <string name="summary_pref_problem_report_log">Экрандағы мәтін болуы мүмкін</string>
     <string name="title_pref_problem_report_send">Жіберу</string>
-    <string name="summary_pref_problem_report_sending">Жіберу</string>
+    <string name="summary_pref_problem_report_sending">Жіберілуде</string>
     <string name="problem_report_missing_fields">Тақырып пен сипаттаманы енгізіңіз.</string>
     <string name="problem_report_invalid_email">Жарамды электрондық пошта мекенжайын енгізіңіз.</string>
     <string name="problem_report_sent">Кері байланыс жіберілді.</string>
@@ -44,7 +44,7 @@
     </string-array>
     <string name="title_report_new">Пікір жіберу</string>
     <string name="title_report_inbox">Кіріс жәшігі</string>
-    <string name="title_report_drafts">Нобайлар</string>
+    <string name="title_report_drafts">Черновиктер</string>
     <string name="report_inbox_empty">Пікір жіберілмеді</string>
     <string name="report_drafts_empty">Черновиктер жоқ</string>
     <string name="report_just_now">дәл қазір</string>
@@ -74,7 +74,7 @@
     <string name="title_report_remove">Кіріс жәшігінен жою</string>
     <string name="dialog_title_report_remove">Бұл пікірді кіріс жәшігінен жою керек пе?</string>
     <string name="dialog_message_report_remove">Оған жауаптар енді бұл телефонға жетпейді.</string>
-    <string name="title_report_delete_draft">Нобайды жою</string>
+    <string name="title_report_delete_draft">Черновикті жою</string>
     <string name="dialog_title_report_delete_draft">Бұл черновикті жою керек пе?</string>
     <string name="button_report_delete">Жою</string>
     <string name="report_missing">Бұл пікір енді кіріс жәшігінде жоқ.</string>
