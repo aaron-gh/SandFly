@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">ጠንካራ</string>
+    <string name="notification_shake_2">መካከለኛ</string>
+    <string name="notification_shake_1">የዋህ</string>
+    <string name="notification_media_skip">ጮክ ብለህ አታነብ</string>
+    <string name="notification_media_pause">በማንበብ ጊዜ ሚዲያውን ለአፍታ ያቁሙ</string>
+    <string name="notification_media_read">ጮክ ብለህ አንብብ</string>
+    <string name="notification_headphones_only_without">ያለ የጆሮ ማዳመጫዎች ብቻ</string>
+    <string name="notification_headphones_only_with">በጆሮ ማዳመጫዎች ብቻ</string>
+    <string name="notification_headphones_always">በጆሮ ማዳመጫዎች ወይም ያለ ማዳመጫዎች ጮክ ብለው ያንብቡ</string>
+    <string name="notification_queue_skip">አዲሱን ማስታወቂያ ጮክ ብለህ አታነብ</string>
+    <string name="notification_queue_interrupt">ጮሆ እየተነበበ ያለውን ማሳወቂያ አቋርጥ</string>
+    <string name="notification_queue_queue">ከአሁኑ ማስታወቂያ በኋላ ጮክ ብለው ያንብቡ</string>
+    <string name="notification_url_omit">ተውት።</string>
+    <string name="notification_url_replace">ከታች ያለውን ጽሑፍ ተናገር</string>
+    <string name="notification_url_domain">ጣቢያውን ብቻ ያንብቡ</string>
+    <string name="notification_url_full">ሙሉውን ሊንክ ያንብቡ</string>
+    <string name="notification_category_title">ማሳወቂያዎች</string>
+    <string name="notification_reading_title">ማሳወቂያዎችን ጮክ ብሎ ማንበብ</string>
+    <string name="notification_apps_title">መተግበሪያዎች</string>
+    <string name="notification_words_title">ቃላት እና ምትክ</string>
+    <string name="notification_kinds_title">የማሳወቂያ ዓይነቶች</string>
+    <string name="notification_when_title">መቼ ማንበብ እንዳለበት</string>
+    <string name="notification_rules_title">ደንቦች</string>
+    <string name="notification_repeats_title">ይደግማል</string>
+    <string name="notification_stop_title">ማንበብ አቁም</string>
+    <string name="notification_schedules_title">ማጠቃለያ እና ጊዜ</string>
+    <string name="notification_history_title">የማሳወቂያ ታሪክ</string>
+    <string name="notification_test_title">የሙከራ ማሳወቂያ ይላኩ።</string>
+    <string name="notification_automation_title">አውቶማቲክ</string>
+    <string name="notification_automation_allowed_title">አውቶማቲክ መተግበሪያዎችን ፍቀድ</string>
+    <string name="notification_category_said">ምን ይባላል</string>
+    <string name="notification_format_title">የንግግር ቅርጸት</string>
+    <string name="notification_format_message">ቦታ ያዢዎች፡ {app}፣ {title}፣ {text}፣ {content} (ሙሉውን ጽሑፍ)፣ {bigtext}፣ {subtext}፣ {ticker}፣ {category} እና {time}</string>
+    <string name="notification_private_format_title">የግል ማሳወቂያዎች ይናገራሉ</string>
+    <string name="notification_private_format_message">በግል ማሳወቂያ ይዘት ምትክ ተነግሯል። ቦታ ያዢዎች፡ {app}፣ {category} እና {time}።</string>
+    <string name="notification_category_voice">ድምፅ</string>
+    <string name="notification_voice_title">ድምፅ</string>
+    <string name="notification_voice_sandfly">SandFlyየድምፅ</string>
+    <string name="notification_detect_language_title">ቋንቋን ፈልግ</string>
+    <string name="notification_detect_language_summary">እያንዳንዱን ማስታወቂያ በተፃፈበት ቋንቋ ይናገሩ። ቋንቋን በራስ-ሰር ከጽሁፍ ወደ ንግግር ቅንብሮች መቀየር ያስፈልገዋል።</string>
+    <string name="notification_sound_before_title">ከማሳወቂያዎች በፊት ድምጽ ይስጡ</string>
+    <string name="notification_category_text">ጽሑፍ</string>
+    <string name="notification_remove_emoji_title">ስሜት ገላጭ ምስሎችን ይተዉት።</string>
+    <string name="notification_lowercase_title">ካፒታልን እንደ ቃላት አንብብ</string>
+    <string name="notification_lowercase_summary">አንዳንድ የንግግር ሞተሮች ቃላትን በካፒታል ፊደል በፊደል ይጽፋሉ</string>
+    <string name="notification_separate_digits_title">ረጅም ቁጥሮችን በዲጂት አንብብ</string>
+    <string name="notification_separate_digits_summary">እንደ ኮዶች እና ስልክ ቁጥሮች</string>
+    <string name="notification_min_digits_title">ዝቅተኛ አሃዞች በረጅም ቁጥር</string>
+    <string name="notification_urls_title">አገናኞች</string>
+    <string name="notification_url_text_title">በአገናኝ ቦታ ተናግሯል።</string>
+    <string name="notification_skip_empty_title">ያለ ጽሑፍ ማሳወቂያዎችን ዝለል</string>
+    <string name="notification_category_length">ርዝመት</string>
+    <string name="notification_max_words_title">ከፍተኛው የቃላት ብዛት</string>
+    <string name="notification_max_sentences_title">ከፍተኛው የአረፍተ ነገር ብዛት</string>
+    <string name="notification_max_characters_title">ከፍተኛው የጽሑፍ ቁምፊዎች ብዛት</string>
+    <string name="notification_max_seconds_title">በኋላ ማንበብ አቁም</string>
+    <string name="notification_category_timing">ጊዜ አጠባበቅ</string>
+    <string name="notification_delay_title">ከማንበብዎ በፊት ይጠብቁ</string>
+    <string name="notification_queue_title">ሌላ ማስታወቂያ ሲነበብ</string>
+    <string name="notification_repeat_minutes_title">ማያ ገጹ እስኪበራ ድረስ እንደገና ያንብቡ</string>
+    <string name="notification_skip_media_title">የሚዲያ ተጫዋቾችን ዝለል</string>
+    <string name="notification_skip_ongoing_title">በመካሄድ ላይ ያሉ ማሳወቂያዎችን ዝለል</string>
+    <string name="notification_skip_ongoing_summary">እንደ አሰሳ እና ሰዓት ቆጣሪዎች ያሉ</string>
+    <string name="notification_skip_foreground_title">የመተግበሪያ ማሳወቂያዎችን ማሄድን ይዝለሉ</string>
+    <string name="notification_skip_foreground_summary">እንደ VPN ወይም መቅጃ</string>
+    <string name="notification_skip_progress_title">የሂደት ማሳወቂያዎችን ዝለል</string>
+    <string name="notification_skip_group_summaries_title">የቡድን ማጠቃለያዎችን ዝለል</string>
+    <string name="notification_skip_group_summaries_summary">እንደ \"3 አዳዲስ መልዕክቶች\"</string>
+    <string name="notification_skip_low_priority_title">ዝቅተኛ ቅድሚያ የሚሰጡ ማሳወቂያዎችን ዝለል</string>
+    <string name="notification_skip_system_title">የስርዓት ማሳወቂያዎችን ዝለል</string>
+    <string name="notification_screen_on_title">ማያ ገጹ በርቶ ሳለ</string>
+    <string name="notification_screen_off_title">ማያ ገጹ ጠፍቶ እያለ</string>
+    <string name="notification_locked_title">ስልኩ ተቆልፎ እያለ</string>
+    <string name="notification_headphones_title">የጆሮ ማዳመጫዎች</string>
+    <string name="notification_media_title">ሚዲያ ሲጫወት</string>
+    <string name="notification_dnd_title">አትረብሽ</string>
+    <string name="notification_dnd_none">ማንኛውንም ማሳወቂያ ጮክ ብለህ አታነብ</string>
+    <string name="notification_dnd_allowed">አትረብሽ ሁነታ የሚፈቀዱ ማሳወቂያዎችን አንብብ</string>
+    <string name="notification_dnd_all">ሁሉንም አንብብ</string>
+    <string name="notification_touch_title">ማያ ገጹ ሲነካ</string>
+    <string name="notification_touch_read">ወዲያው አንብብ</string>
+    <string name="notification_touch_after">ንክኪው ሲያልቅ ያንብቡ</string>
+    <string name="notification_touch_skip">ጮክ ብለህ አታነብ</string>
+    <string name="notification_during_calls_title">በጥሪ ጊዜ</string>
+    <string name="notification_honour_silent_title">በፀጥታ ሁነታ አይደለም</string>
+    <string name="notification_honour_vibrate_title">በንዝረት ሁነታ አይደለም</string>
+    <string name="notification_skip_in_car_title">በመኪና ሁነታ አይደለም</string>
+    <string name="notification_skip_in_car_summary">እንደ Android Auto እራሱ የሚያነብላቸው</string>
+    <string name="notification_category_quiet_hours">ጸጥ ያለ ሰዓቶች</string>
+    <string name="notification_quiet_hours_title">ጸጥ ያለ ሰዓቶች</string>
+    <string name="notification_quiet_start_title">ጀምር</string>
+    <string name="notification_quiet_end_title">መጨረሻ</string>
+    <string name="notification_repeat_seconds_title">ለ ተመሳሳይ ማሳወቂያ ዝለል</string>
+    <string name="notification_numbers_alike_title">የተለያዩ ቁጥሮችን እንደ ተመሳሳይነት ይያዙ</string>
+    <string name="notification_numbers_alike_summary">እንደ የማውረድ መቶኛ</string>
+    <string name="notification_cooldown_title">በመተግበሪያ ማሳወቂያዎች መካከል ያለው ጊዜ</string>
+    <string name="notification_skip_prefix_title">ተደጋጋሚ የጽሑፍ ቅድመ ቅጥያ ተውት።</string>
+    <string name="notification_skip_prefix_summary">በውይይት ውስጥ ያለ የቡድን ስም</string>
+    <string name="notification_prefix_memory_title">የጽሑፍ ቅድመ ቅጥያውን ለማስታወስ ለምን ያህል ጊዜ</string>
+    <string name="notification_access_summary">የተሰናበተ ማስታወቂያ ማንበብ ለማቆም እና ለማጠቃለያ ያስፈልጋል</string>
+    <string name="notification_shake_title">ለማቆም ይንቀጠቀጡ</string>
+    <string name="notification_shake_strength_title">የመንቀጥቀጥ ጥንካሬ</string>
+    <string name="notification_wave_title">ማንበብ ለማቆም እጁን አውርዱ</string>
+    <string name="notification_wave_summary">እጅን በቅርበት ዳሳሽ ላይ በማንቀሳቀስ ላይ</string>
+    <string name="notification_pocket_title">የኪስ ሁነታ</string>
+    <string name="notification_pocket_summary">ማንበብ ሲጀምር የተሸፈነ ዳሳሽ፣ በኪስ ውስጥ እንዳለ፣ አያቆመውም።</string>
+    <string name="notification_volume_keys_title">ሁለቱንም የድምጽ ቁልፎች ተጫን</string>
+    <string name="notification_dismiss_title">ማሳወቂያው ሲሰናበት ማንበብ ያቁሙ</string>
+    <string name="notification_watch_dismiss_title">እንዲሁም ማሳወቂያው በስማርት ሰዓት ላይ ሲሰናበት</string>
+    <string name="notification_app_cancel_title">መተግበሪያው ማሳወቂያውን ሲያስወግድ ማንበብ ያቁሙ</string>
+    <string name="notification_category_summary">ማጠቃለያ</string>
+    <string name="notification_summary_now_title">ማሳወቂያዎችን አሁን ያንብቡ</string>
+    <string name="notification_summary_daily_title">በየቀኑ ማሳወቂያዎችን ያንብቡ</string>
+    <string name="notification_summary_time_title">ሰዓት</string>
+    <string name="notification_summary_newest_first_title">አዲሱ መጀመሪያ</string>
+    <string name="notification_summary_name_title">ስምህ</string>
+    <string name="notification_summary_gap_title">በማሳወቂያዎች መካከል ባለበት አቁም</string>
+    <string name="notification_summary_needs_sandfly">ማሳወቂያዎችን ለማንበብ SandFly ያብሩ</string>
+    <string name="notification_summary_no_access">የማሳወቂያ መዳረሻ ጠፍቷል</string>
+    <string name="notification_summary_morning">እንደምን አደሩ።</string>
+    <string name="notification_summary_afternoon">እንደምን አረፈድክ።</string>
+    <string name="notification_summary_evening">አንደምን አመሸህ።</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">የጊዜ ማስታወቂያዎች</string>
+    <string name="notification_clock_interval_title">ጊዜውን እያንዳንዱን ይናገሩ</string>
+    <string name="notification_clock_format_title">የጊዜ ቅርጸት</string>
+    <string name="notification_clock_format_message">ቦታ ያዢዎች፡ {time}፣ {date} እና {battery} (የባትሪው መቶኛ)።</string>
+    <string name="notification_clock_format_default">{time} ነው</string>
+    <string name="notification_clock_exact_title">ትክክለኛ ጊዜዎች</string>
+    <string name="notification_clock_exact_summary">ማንቂያዎችን እና አስታዋሾችን ይፈልጋል። አለበለዚያ ጊዜው እስከ አንድ ደቂቃ ድረስ ዘግይቷል ሊባል ይችላል.</string>
+    <string name="notification_other_apps_title">ሌሎች መተግበሪያዎች</string>
+    <string name="notification_apps_category">መተግበሪያዎች</string>
+    <string name="notification_apps_loading">መተግበሪያዎችን በመጫን ላይ</string>
+    <string name="notification_app_mode_title">ማሳወቂያዎች</string>
+    <string name="notification_app_mode_default">እንደ ሌሎች መተግበሪያዎች</string>
+    <string name="notification_app_mode_read">ጮክ ብለህ አንብብ</string>
+    <string name="notification_app_mode_private">የመተግበሪያ ስም ብቻ</string>
+    <string name="notification_app_mode_priority">መጀመሪያ አንብብ</string>
+    <string name="notification_app_mode_ignore">ጮክ ብለህ አታነብ</string>
+    <string name="notification_app_name_title">የሚነገር ስም</string>
+    <string name="notification_app_said_as">እንደተናገረው <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">ዳግም አስጀምር</string>
+    <string name="notification_required_title">ማሳወቂያዎችን ብቻ ያንብቡ</string>
+    <string name="notification_blocked_title">ማሳወቂያዎችን አታንብብ</string>
+    <string name="notification_private_title">የመተግበሪያውን ስም ብቻ ያንብቡ</string>
+    <string name="notification_replacements_title">በተለየ መንገድ ይናገሩ</string>
+    <string name="notification_add_word">ቃል ጨምር</string>
+    <string name="notification_add_replacement">ምትክ ያክሉ</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> እንደ <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">ጽሑፍ</string>
+    <string name="notification_replace_with">በሉ እንደ</string>
+    <string name="notification_whole_words">ሙሉ ቃላት ብቻ</string>
+    <string name="notification_regex">መደበኛ አገላለጽ</string>
+    <string name="notification_enter_text">ጽሑፍ ያስገቡ</string>
+    <string name="notification_invalid_regex">ልክ ያልሆነ መደበኛ አገላለጽ</string>
+    <string name="notification_edit">አርትዕ</string>
+    <string name="notification_remove">አስወግድ</string>
+    <string name="notification_history_keep">የማሳወቂያ ታሪክን አስቀምጥ</string>
+    <string name="notification_history_clear">ታሪክን አጽዳ</string>
+    <string name="notification_history_category">ማሳወቂያዎች</string>
+    <string name="notification_history_empty">ምንም ማሳወቂያዎች የሉም</string>
+    <string name="notification_history_ignore_app">አታነብ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">የ<xliff:g id="app" example="Chat">%1$s</xliff:g> ስም ብቻ አንብብ።</string>
+    <string name="notification_history_priority_app">መጀመሪያ ያንብቡ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">እንደዚህ አይነት ማሳወቂያዎችን አታንብብ</string>
+    <string name="notification_history_copy">ቅዳ</string>
+    <string name="notification_saved">ተቀምጧል</string>
+    <string name="notification_copied">ተገልብጧል</string>
+    <string name="notification_outcome_read">በተሳካ ሁኔታ ጮክ ብለህ አንብብ</string>
+    <string name="notification_outcome_stopped">ሲያነብ ቆሟል</string>
+    <string name="notification_outcome_speech_off">ያልተነበበ፡ የማሳወቂያ ንግግር ጠፍቷል</string>
+    <string name="notification_outcome_dnd">ያልተነበበ፡ አትረብሽ</string>
+    <string name="notification_outcome_touching">አልተነበበም: ማያ ገጹ ተነካ</string>
+    <string name="notification_outcome_app">አልተነበበም: መተግበሪያ</string>
+    <string name="notification_outcome_ongoing">ያልተነበበ፡ በመካሄድ ላይ ነው።</string>
+    <string name="notification_outcome_foreground">ያልተነበበ፡ መተግበሪያን በማሄድ ላይ</string>
+    <string name="notification_outcome_low_priority">ያልተነበበ: ዝቅተኛ ቅድሚያ</string>
+    <string name="notification_outcome_system">አልተነበበም: ስርዓት</string>
+    <string name="notification_outcome_media">አልተነበበም: የሚዲያ ማጫወቻ</string>
+    <string name="notification_outcome_group_summary">አልተነበበም: የቡድን ማጠቃለያ</string>
+    <string name="notification_outcome_progress">አልተነበበም: እድገት</string>
+    <string name="notification_outcome_required">ያልተነበበ፡ የሚፈለጉ ቃላት ይጎድላሉ</string>
+    <string name="notification_outcome_blocked">ያልተነበበ፡ የታገደ ቃል</string>
+    <string name="notification_outcome_empty">አልተነበበም: ምንም ጽሑፍ የለም</string>
+    <string name="notification_outcome_repeat">አልተነበበም: ይድገሙት</string>
+    <string name="notification_outcome_cooldown">ጮክ ብሎ ያልተነበበ፡ ሌላ የዚህ መተግበሪያ ማሳወቂያ በጣም በቅርብ ጊዜ ተነቧል</string>
+    <string name="notification_outcome_quiet_hours">አልተነበበም: ጸጥ ያለ ሰዓቶች</string>
+    <string name="notification_outcome_screen_on">ያልተነበበ፡ ስክሪን በርቷል።</string>
+    <string name="notification_outcome_screen_off">ያልተነበበ፡ ስክሪን ጠፍቷል</string>
+    <string name="notification_outcome_locked">አልተነበበም: ተቆልፏል</string>
+    <string name="notification_outcome_headphones">አልተነበበም: የጆሮ ማዳመጫዎች ተገናኝተዋል</string>
+    <string name="notification_outcome_no_headphones">አልተነበበም: ምንም የጆሮ ማዳመጫዎች የሉም</string>
+    <string name="notification_outcome_silent">አልተነበበም: ጸጥታ ሁነታ</string>
+    <string name="notification_outcome_vibrate">አልተነበበም: የንዝረት ሁነታ</string>
+    <string name="notification_outcome_media_playing">አልተነበበም: የሚዲያ በመጫወት ላይ</string>
+    <string name="notification_outcome_car">አልተነበበም: የመኪና ሁነታ</string>
+    <string name="notification_outcome_rule">አልተነበበም: ደንብ</string>
+    <string name="notification_outcome_busy">ያልተነበበ፡ ሌላ ማስታወቂያ ተነቧል</string>
+    <string name="notification_outcome_call">እንደ ገቢ የስልክ ጥሪ አስታወቀ</string>
+    <string name="notification_rule_add">ህግ ጨምር</string>
+    <string name="notification_rule_from_template">ከአብነት ደንብ ያክሉ</string>
+    <string name="notification_rules_category">ደንቦች</string>
+    <string name="notification_rules_empty">ምንም ደንቦች የሉም</string>
+    <string name="notification_rule_name">ስም</string>
+    <string name="notification_rule_untitled">ደንብ</string>
+    <string name="notification_rule_enabled">በርቷል</string>
+    <string name="notification_rule_match">ሁኔታዎች</string>
+    <string name="notification_rule_match_all">ሁሉም ሁኔታዎች መሟላት አለባቸው</string>
+    <string name="notification_rule_match_any">ቢያንስ አንድ ቅድመ ሁኔታ መሟላት አለበት</string>
+    <string name="notification_rule_conditions">መቼ</string>
+    <string name="notification_rule_actions">ከዚያም</string>
+    <string name="notification_rule_add_condition">ሁኔታ ጨምር</string>
+    <string name="notification_rule_add_action">ድርጊት ጨምር</string>
+    <string name="notification_rule_invert">ሁኔታውን ገልብጥ</string>
+    <string name="notification_rule_delete">ደንቡን ሰርዝ</string>
+    <string name="notification_rule_delete_confirm">ይሰረዝ <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">ሁልጊዜ</string>
+    <string name="notification_rule_no_actions">ምንም ነገር አይከሰትም</string>
+    <string name="notification_rule_and">" እና "</string>
+    <string name="notification_rule_or">" ወይም "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">በጆሮ ማዳመጫዎች ብቻ</string>
+    <string name="notification_template_night">በሌሊት ዝም</string>
+    <string name="notification_template_screen_off">ማያ ገጹ ሲጠፋ ብቻ</string>
+    <string name="notification_template_locked_private">ስልኩ ሲቆለፍ የመተግበሪያው ስም ብቻ ነው።</string>
+    <string name="notification_template_short_on_battery">ባትሪ በማይሞላበት ጊዜ በአጭሩ ያንብቡ</string>
+    <string name="notification_type_bluetooth">Bluetooth መሳሪያ</string>
+    <string name="notification_type_wired">ባለገመድ የጆሮ ማዳመጫዎች</string>
+    <string name="notification_type_wifi">Wi-Fi ኔትወርክ</string>
+    <string name="notification_type_time">የቀን ሰዓት</string>
+    <string name="notification_type_screen">ማያ ገፅ በርቷል</string>
+    <string name="notification_type_locked">ስልክ ተቆልፏል</string>
+    <string name="notification_type_from_app">ከአንድ መተግበሪያ ማሳወቂያ</string>
+    <string name="notification_type_foreground">ፊት ለፊት መተግበሪያ</string>
+    <string name="notification_type_contains">ማሳወቂያ ይዟል</string>
+    <string name="notification_type_battery">የባትሪ ደረጃ ከታች</string>
+    <string name="notification_type_charging">በመሙላት ላይ</string>
+    <string name="notification_type_landscape">በወርድ</string>
+    <string name="notification_type_silent">የዝምታ ወይም የንዝረት ሁነታ</string>
+    <string name="notification_type_media">ሚዲያ በመጫወት ላይ</string>
+    <string name="notification_bluetooth_any">ማንኛውም መሣሪያ</string>
+    <string name="notification_wifi_hint">የአውታረ መረብ ስም</string>
+    <string name="notification_choose_app">መተግበሪያ ይምረጡ</string>
+    <string name="notification_time_start">ከ</string>
+    <string name="notification_time_end">ድረስ</string>
+    <string name="notification_time_days">ቀናት</string>
+    <string name="notification_time_range">ከ<xliff:g id="start" example="22:00">%1$s</xliff:g> እስከ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly ለዚህ ሁኔታ ያንን ፍቃድ ያስፈልገዋል</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ተገናኝቷል።</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> አልተገናኘም።</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth የድምጽ መሳሪያ ተገናኝቷል።</string>
+    <string name="notification_cond_bluetooth_any_not">ምንም Bluetooth የድምጽ መሳሪያ አልተገናኘም።</string>
+    <string name="notification_cond_wired">ባለገመድ የጆሮ ማዳመጫዎች ተገናኝተዋል።</string>
+    <string name="notification_cond_wired_not">ባለገመድ የጆሮ ማዳመጫዎች አልተገናኙም።</string>
+    <string name="notification_cond_battery_below">ባትሪው ከ <xliff:g id="percent" example="20">%1$d</xliff:g> በመቶ በታች ነው።</string>
+    <string name="notification_cond_battery_below_not">ባትሪው <xliff:g id="percent" example="20">%1$d</xliff:g> በመቶ ወይም ከዚያ በላይ ነው።</string>
+    <string name="notification_cond_charging">ስልኩ እየሞላ ነው።</string>
+    <string name="notification_cond_charging_not">ስልኩ እየሞላ አይደለም።</string>
+    <string name="notification_cond_locked">ስልኩ ተቆልፏል</string>
+    <string name="notification_cond_locked_not">ስልኩ ተከፍቷል።</string>
+    <string name="notification_cond_screen_on">ስክሪኑ በርቷል።</string>
+    <string name="notification_cond_screen_on_not">ስክሪኑ ጠፍቷል</string>
+    <string name="notification_cond_landscape">ማያ ገጹ በወርድ ላይ ነው።</string>
+    <string name="notification_cond_landscape_not">ስክሪኑ በቁም ነገር ላይ ነው።</string>
+    <string name="notification_cond_time">ጊዜው <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">ጊዜው <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> አይደለም።</string>
+    <string name="notification_cond_wifi">ከ <xliff:g id="network" example="Home">%1$s</xliff:g> ጋር ተገናኝቷል</string>
+    <string name="notification_cond_wifi_not">ከ <xliff:g id="network" example="Home">%1$s</xliff:g> ጋር አልተገናኘም</string>
+    <string name="notification_cond_wifi_any">ከ Wi-Fi ጋር ተገናኝቷል</string>
+    <string name="notification_cond_wifi_any_not">ከ Wi-Fi ጋር አልተገናኘም</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> በፊት ገጽ ላይ ነው</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ፊት ለፊት አይደለም።</string>
+    <string name="notification_cond_from">ማስታወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">ማስታወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g> አይደለም</string>
+    <string name="notification_cond_contains">ማሳወቂያው ይዟል <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">ማሳወቂያው <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">ደዋዩ ጸጥ ይላል ወይም ይንቀጠቀጣል።</string>
+    <string name="notification_cond_silent_not">ደዋዩ ይደውላል</string>
+    <string name="notification_cond_media">ሚዲያ እየተጫወተ ነው።</string>
+    <string name="notification_cond_media_not">ምንም ሚዲያ አይጫወትም።</string>
+    <string name="notification_action_skip">አታንብብ</string>
+    <string name="notification_action_private">የመተግበሪያውን ስም ብቻ ያንብቡ</string>
+    <string name="notification_action_not_private">ሙሉ በሙሉ አንብብ, የግል ቢሆንም</string>
+    <string name="notification_action_format">የንግግር ቅርጸት ይጠቀሙ</string>
+    <string name="notification_action_max_words">እስከ ብዙ ቃላት ያንብቡ</string>
+    <string name="notification_action_no_limit">ያለ ርዝመት ገደብ ያንብቡ</string>
+    <string name="notification_action_keep_emoji">ስሜት ገላጭ ምስሎችን ያስቀምጡ</string>
+    <string name="notification_action_keep_numbers">ቁጥሮችን አንድ ላይ አቆይ</string>
+    <string name="notification_action_priority">መጀመሪያ አንብብ</string>
+    <string name="notification_action_always_read">በጸጥታ ሰአታት ወይም በሌሎች የተከለከሉ ጊዜያት እንኳን ማሳወቂያዎችን ጮክ ብለው ያንብቡ</string>
+    <string name="notification_action_voice">በድምጽ መገለጫ ያንብቡ</string>
+    <string name="notification_action_voice_value">በ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> አንብብ</string>
+    <string name="notification_action_voice_sandfly">በ SandFly ድምፅ አንብብ</string>
+    <string name="notification_voice_removed">የድምጽ መገለጫ ተወግዷል</string>
+    <string name="notification_action_format_value">የንግግር ፎርማትን ይጠቀሙ <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">እስከ <xliff:g id="words" example="10 words">%1$s</xliff:g> አንብብ</string>
+    <string name="notification_off">ጠፍቷል</string>
+    <string name="notification_on">በርቷል</string>
+    <string name="notification_never_again">SandFly እንደገና እስኪጀምር ድረስ</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">ማሳወቂያዎችን ጮክ ብሎ ማንበብ</string>
+    <string name="notification_speech_now_on">ማሳወቂያዎችን ጮክ ብሎ ማንበብ ነቅቷል።</string>
+    <string name="notification_speech_now_off">ማሳወቂያዎችን ጮክ ብሎ ማንበብ ተሰናክሏል።</string>
+    <string name="notification_no_last_notification">ምንም ማሳወቂያ አልተነበበም።</string>
+    <string name="shortcut_read_notifications">ማሳወቂያዎችን ያንብቡ</string>
+    <string name="shortcut_toggle_notification_speech">የማሳወቂያ ንግግር በርቷል ወይም ጠፍቷል</string>
+    <string name="shortcut_read_last_notification">የመጨረሻውን ማስታወቂያ እንደገና ያንብቡ</string>
+    <string name="shortcut_stop_notification">ማሳወቂያውን ማንበብ አቁም</string>
+    <string name="notification_test_posting">የሙከራ ማሳወቂያ በ5 ሰከንድ ውስጥ ይከተላል</string>
+    <string name="notification_test_not_allowed">SandFly መጀመሪያ ማሳወቂያዎችን እንዲያሳይ ፍቀድ</string>
+    <string name="notification_test_content_title">SandFly ፈተና</string>
+    <string name="notification_test_content_text">ይህ የሙከራ ማሳወቂያ ነው፣ ከማሳወቂያ ቅንብሮችዎ ጋር ያንብቡ። 123456 እ.ኤ.አ</string>
+    <string name="notification_automation_on">የንባብ ማሳወቂያዎችን ጮክ ብለህ አንቃ</string>
+    <string name="notification_automation_off">የንባብ ማሳወቂያዎችን ጮክ ብለው ያሰናክሉ።</string>
+    <string name="notification_automation_toggle">የንባብ ማሳወቂያዎችን ጮክ ብለው አንቃ ወይም አሰናክል</string>
+    <string name="notification_automation_stop">ማሳወቂያው መነበቡን ያቁሙ</string>
+    <string name="notification_automation_read_all">ማሳወቂያዎችን ያንብቡ</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ሰከንድ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ሰከንድ</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ደቂቃ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ደቂቃዎች</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ሰዓት</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ሰዓታት</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ቃል</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ቃላት</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ዓረፍተ ነገር</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ዓረፍተ ነገሮች</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> የጽሑፍ ቁምፊ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> የጽሑፍ ቁምፊዎች</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> አሃዝ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> አሃዞች</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ማሳወቂያ አለዎት።</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ማሳወቂያዎች አሉዎት።</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

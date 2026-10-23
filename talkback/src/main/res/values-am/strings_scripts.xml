@@ -138,4 +138,16 @@
     <string name="script_source_remove">ምንጭን አስወግድ</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ይወገድ?</string>
     <string name="script_source_remove_message">ከእሱ የተጫኑ ስክሪፕቶች እንደተጫኑ ይቆያሉ።</string>
+    <string name="scripts_auto_update">ስክሪፕቶችን በራስ-ሰር ያዘምኑ</string>
+    <string name="scripts_check_updates">ዝማኔዎችን ፈትሽ</string>
+    <string name="scripts_checking_updates">ዝማኔዎችን በመፈተሽ ላይ…</string>
+    <string name="scripts_updates_category">ዝማኔዎች</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ስክሪፕት ተዘምኗል፡ <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ስክሪፕቶች ተዘምነዋል፡ <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">ዝማኔዎች በዝማኔዎች ስር ተዘርዝረዋል።</string>
+    <string name="scripts_update_check_failed">አንዳንድ ምንጮች ሊመረመሩ አልቻሉም</string>
+    <string name="scripts_up_to_date">ሁሉም ስክሪፕቶች የተዘመኑ ናቸው።</string>
 </resources>
