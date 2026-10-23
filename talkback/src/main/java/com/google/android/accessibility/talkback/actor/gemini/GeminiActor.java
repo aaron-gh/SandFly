@@ -128,8 +128,12 @@ public class GeminiActor {
       return false;
     }
 
-    /** Sends a prompt without an image. Returns false when the request wasn't sent. */
+    /**
+     * Sends a prompt without an image. Returns false when the request wasn't sent, after telling
+     * the listener.
+     */
     default boolean requestText(String prompt, GeminiResponseListener listener) {
+      listener.onError(ErrorReason.UNSUPPORTED);
       return false;
     }
 

@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.os.Handler
+import android.os.Looper
 import android.speech.SpeechRecognizer
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
@@ -33,6 +35,7 @@ import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelMa
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer.SpeechRecognizerRequester
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
+import com.google.android.accessibility.utils.Role
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
@@ -51,16 +54,29 @@ class AiDictation(
   private val recognizer =
     SpeechRecognizerPerformer(service, MAX_LISTENING_MS, /* partialResultFastFeedback= */ false)
       .also { it.setListener(this) }
+  private val handler = Handler(Looper.getMainLooper())
   private var field: AccessibilityNodeInfoCompat? = null
   private var listening = false
+  /** Counts corrections, so that an answer to one that was given up on is ignored. */
+  private var generation = 0
+  /** Types the recognized text when the correction takes too long, or null when none waits. */
+  private var giveUp: Runnable? = null
 
-  /** Starts listening for text to type into [node], or stops when it is already listening. */
+  /**
+   * Starts listening for text to type into [node], or stops when it is already listening. While a
+   * correction is awaited, types the recognized text at once instead.
+   */
   fun start(node: AccessibilityNodeInfoCompat?): Boolean {
     if (listening) {
       recognizer.stopListening()
       return true
     }
-    if (node == null || !node.isEditable) {
+    giveUp?.let {
+      handler.removeCallbacks(it)
+      it.run()
+      return true
+    }
+    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
       speak(service.getString(R.string.not_editable))
       return false
     }
@@ -74,38 +90,60 @@ class AiDictation(
     field = null
     val heard = command.trim()
     if (heard.isEmpty()) return true
-    val before = textBeforeCursor(target)
-    if (!correctsWithAi()) {
-      type(target, before, heard)
-      return true
-    }
+    // A dictated password stays on the phone.
     val actor = service.geminiActor
-    if (actor == null) {
-      type(target, before, heard)
+    if (target.isPassword || actor == null || !correctsWithAi()) {
+      type(target, heard)
       return true
     }
+    val request = ++generation
+    val fallback = Runnable {
+      if (request != generation) return@Runnable
+      generation++
+      giveUp = null
+      LogUtils.w(TAG, "No correction in time, typing the recognized text")
+      speak(service.getString(R.string.dictation_not_corrected))
+      type(target, heard)
+    }
+    giveUp = fallback
+    handler.postDelayed(fallback, CORRECTION_TIMEOUT_MS)
     actor.requestText(
-      prompt(before, heard),
+      prompt(textBeforeCursor(target), heard),
       object : GeminiResponseListener {
         override fun onResponse(finishReason: FinishReason, response: String?) {
-          if (finishReason == FinishReason.STOP && !response.isNullOrBlank()) {
-            type(target, before, cleanUp(response))
+          if (!takeAnswer(request, fallback)) return
+          val corrected = if (finishReason == FinishReason.STOP) response?.let(::cleanUp) else null
+          if (corrected != null && isCorrection(heard, corrected)) {
+            type(target, corrected)
           } else {
             LogUtils.w(TAG, "No correction (%s), typing the recognized text", finishReason)
-            speak(response ?: service.getString(R.string.dictation_not_corrected))
-            type(target, before, heard)
+            speak(
+              response?.takeIf { finishReason != FinishReason.STOP }
+                ?: service.getString(R.string.dictation_not_corrected)
+            )
+            type(target, heard)
           }
         }
 
         override fun onError(errorReason: ErrorReason) {
+          if (!takeAnswer(request, fallback)) return
           LogUtils.w(TAG, "No correction (%s), typing the recognized text", errorReason)
           if (errorReason != ErrorReason.JOB_CANCELLED) {
             speak(service.getString(R.string.dictation_not_corrected))
           }
-          type(target, before, heard)
+          type(target, heard)
         }
       },
     )
+    return true
+  }
+
+  /** Whether the answer to [request] is still awaited; if so, it is the one used. */
+  private fun takeAnswer(request: Int, fallback: Runnable): Boolean {
+    if (request != generation) return false
+    generation++
+    handler.removeCallbacks(fallback)
+    giveUp = null
     return true
   }
 
@@ -147,6 +185,9 @@ class AiDictation(
   /** Stops listening, as when SandFly turns off. */
   fun shutdown() {
     field = null
+    generation++
+    giveUp?.let { handler.removeCallbacks(it) }
+    giveUp = null
     recognizer.reset()
   }
 
@@ -160,23 +201,24 @@ class AiDictation(
     ) {
       return false
     }
-    return AiProvider.active(prefs) != AiProvider.NONE ||
+    val provider = AiProvider.active(prefs)
+    return (provider != AiProvider.NONE && provider.isReady(prefs)) ||
       LocalModelManager.get(service).answersRequests()
   }
 
-  private fun type(target: AccessibilityNodeInfoCompat, before: String, text: String) {
+  /** Types [text] at the cursor, with the spaces it needs beside the text around it. */
+  private fun type(target: AccessibilityNodeInfoCompat, text: String) {
     if (text.isEmpty()) return
-    if (!target.refresh()) {
+    if (
+      !target.refresh() ||
+        !pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.edit(target, INSERT)
+            .setText(spaced(textBeforeCursor(target), text, textAfterCursor(target))),
+        )
+    ) {
       speak(service.getString(R.string.dictation_field_gone))
-      return
     }
-    val spaced =
-      if (before.isNotEmpty() && !before.last().isWhitespace() && !startsWithPunctuation(text)) {
-        " $text"
-      } else {
-        text
-      }
-    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.edit(target, INSERT).setText(spaced))
   }
 
   private fun speak(text: String) {
@@ -186,7 +228,9 @@ class AiDictation(
         text,
         SpeakOptions.create()
           .setFlags(FeedbackItem.FLAG_NO_HISTORY or FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
-      ),
+      )
+        // After speech is no longer silenced for listening, as voice commands do.
+        .setDelayMs(SPEECH_DELAY_MS),
     )
   }
 
@@ -196,6 +240,9 @@ class AiDictation(
     private const val MAX_LISTENING_MS = 30_000
     /** How much of the text before the cursor the AI service gets, for context. */
     private const val CONTEXT_CHARACTERS = 300
+    /** The recognized text is typed when the correction takes longer than this. */
+    private const val CORRECTION_TIMEOUT_MS = 20_000L
+    private const val SPEECH_DELAY_MS = 100
 
     fun textBeforeCursor(node: AccessibilityNodeInfoCompat): String {
       if (node.isShowingHintText) return ""
@@ -204,6 +251,33 @@ class AiDictation(
       return text.substring(0, cursor)
     }
 
+    fun textAfterCursor(node: AccessibilityNodeInfoCompat): String {
+      if (node.isShowingHintText) return ""
+      val text = node.text?.toString() ?: return ""
+      val cursor = node.textSelectionEnd.takeIf { it in 0..text.length } ?: text.length
+      return text.substring(cursor)
+    }
+
+    /** [text] with a space before it and after it where the text around it needs one. */
+    fun spaced(before: String, text: String, after: String): String {
+      val leading =
+        before.isNotEmpty() &&
+          !before.last().isWhitespace() &&
+          before.last() !in OPENING &&
+          text.first() !in CLOSING
+      val trailing = after.isNotEmpty() && after.first().isLetterOrDigit()
+      return (if (leading) " " else "") + text + (if (trailing) " " else "")
+    }
+
+    /**
+     * Whether [answer] is a correction of [heard], not something else, such as an answer to it or
+     * an explanation, which would be much longer.
+     */
+    fun isCorrection(heard: String, answer: String): Boolean =
+      answer.isNotEmpty() &&
+        answer.length <= heard.length * 2 + 40 &&
+        answer.lines().size <= heard.lines().size * 2 + 1
+
     fun prompt(before: String, heard: String): String =
       "The text below came from speech recognition and will be typed into a text field. " +
         "Correct its punctuation and capital letters, and words that speech recognition " +
@@ -211,8 +285,11 @@ class AiDictation(
         "marks. Keep the speaker's words, wording and language otherwise. Don't answer, add to " +
         "or explain it. Reply with the corrected text only.\n\n" +
         "Text already in the field before the cursor, for context only:\n" +
-        "\"\"\"${before.takeLast(CONTEXT_CHARACTERS)}\"\"\"\n\n" +
-        "Recognized speech:\n\"\"\"$heard\"\"\""
+        "\"\"\"${quoted(before.takeLast(CONTEXT_CHARACTERS))}\"\"\"\n\n" +
+        "Recognized speech:\n\"\"\"${quoted(heard)}\"\"\""
+
+    /** Text that can't end the triple quotes around it. */
+    private fun quoted(text: String): String = text.replace("\"\"\"", "'''")
 
     /** Removes the triple quotes or code fence that a model put around its answer. */
     fun cleanUp(answer: String): String {
@@ -227,7 +304,7 @@ class AiDictation(
       return text
     }
 
-    private fun startsWithPunctuation(text: String): Boolean =
-      text.first() in ".,;:!?)]}…'’" || text.first() == '\n'
+    private const val OPENING = "([{\"“‘«¿¡"
+    private const val CLOSING = ".,;:!?)]}…'’”»\n"
   }
 }

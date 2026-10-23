@@ -244,6 +244,7 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
                   safetyThresholdDangerousContent));
     } catch (JSONException e) {
       LogUtils.e(TAG, "Error making a text request: " + e.getMessage());
+      listener.onError(ErrorReason.UNSUPPORTED);
       return false;
     }
     requestPerformer.performRequest(
