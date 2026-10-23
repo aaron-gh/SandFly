@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Die Datei ist zu groß. Ein Ton darf höchstens 5 MB groß sein.</string>
     <string name="theme_sound_not_audio">SandFly kann diese Datei nicht wiedergeben. Wähle eine WAV-, OGG-, MP3- oder FLAC-Datei aus.</string>
     <string name="theme_sound_failed">SandFly konnte diese Datei nicht lesen.</string>
+    <string name="title_pref_sound_theme_install_source">Aus einer Quelle</string>
+    <string name="summary_pref_sound_theme_install_source">Schema-Dateien in einem Repository auf GitHub, GitLab, Codeberg, Gitea oder Bitbucket.</string>
+    <string name="sound_theme_sources">Quellen für Soundschemas</string>
+    <string name="sound_theme_source_empty">Keine Soundschemas in dieser Quelle</string>
+    <string name="sound_theme_source_failed">Soundschemas konnten nicht geladen werden. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Aus dieser Quelle installierte Soundschemas bleiben installiert.</string>
 </resources>
