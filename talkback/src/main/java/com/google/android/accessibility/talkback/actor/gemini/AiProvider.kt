@@ -129,11 +129,20 @@ enum class AiProvider(
 
     fun of(id: String?): AiProvider? = entries.firstOrNull { it.id == id }
 
-    /** The service in use. */
+    /**
+     * The service in use. A chosen service that isn't set up gives way to one that is, such as
+     * Gemini, the first choice, with no key while Claude has one: before the Use switches were
+     * removed, a service could be set up without being used.
+     */
     @JvmStatic
     fun active(prefs: SharedPreferences): AiProvider {
       migrate(prefs)
-      return of(prefs.getString(PREF_ACTIVE, null)) ?: GEMINI
+      val chosen = of(prefs.getString(PREF_ACTIVE, null)) ?: GEMINI
+      if (chosen == NONE || chosen.isReady(prefs)) return chosen
+      val ready = fallback(prefs)
+      if (ready == NONE) return chosen
+      setActive(prefs, ready)
+      return ready
     }
 
     fun setActive(prefs: SharedPreferences, provider: AiProvider) =

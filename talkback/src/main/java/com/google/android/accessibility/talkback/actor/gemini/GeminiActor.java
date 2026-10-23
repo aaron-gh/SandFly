@@ -455,7 +455,11 @@ public class GeminiActor {
                       TalkBackAnalytics.GEMINI_FAIL_USER_ABORT, /* serverSide= */ true);
             }
             progressTonePlayer.stop();
-            String text = context.getString(R.string.gemini_error_message);
+            String text =
+                context.getString(
+                    errorReason == ErrorReason.UNSUPPORTED
+                        ? R.string.ai_service_not_set_up
+                        : R.string.gemini_error_message);
             speak(text);
             bottomSheetResultOverlay.onImageQnaResponse(text);
           }
@@ -688,7 +692,7 @@ public class GeminiActor {
             TalkBackAnalytics.GEMINI_FAIL_SERVICE_UNAVAILABLE, isServerSideRequest(requestId));
         responseImageCaptionResult(
             requestId,
-            R.string.gemini_error_message,
+            R.string.ai_service_not_set_up,
             /* isSuccess= */ false,
             UNSUPPORTED,
             manualTrigger);
