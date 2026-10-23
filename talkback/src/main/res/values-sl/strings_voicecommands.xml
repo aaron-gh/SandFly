@@ -97,7 +97,7 @@
   <string name="voice_commands_help_title">Pregled glasovnih ukazov</string>
   <string name="voice_commands_help_description">Če želite uporabljati glasovne ukaze, povlecite v desno in nato navzgor. Ta seznam ukazov lahko kadar koli prikažete tako, da izgovorite »%1$s« ali »What can I say?« (Kaj lahko rečem?).</string>
   <string name="voice_commands_help_hint">Za najboljše rezultate izgovorite besede točno tako, kot so navedene na naslednjih zaslonih.</string>
-  <string name="voice_command_screen_locked_hint">Glasovni ukazi niso na voljo, ko je zaslon zaklenjen. Če želite namesto tega uporabiti meni funkcije TalkBack, izvedite potezo »%1$s«.</string>
+  <string name="voice_command_screen_locked_hint">Glasovni ukazi niso na voljo, ko je zaslon zaklenjen. Če želite namesto tega uporabiti meni funkcije SandFly, izvedite potezo »<xliff:g id="gesture" example="Swipe right then up">%1$s</xliff:g>«.</string>
   <string name="voice_commands_during_setup_hint">Glasovni ukazi niso na voljo med nastavitvijo.</string>
   <string name="voice_commands_help_reading_controls_title">@string/shortcut_title_reading_control</string>
   <string name="voice_commands_help_reading_controls_description">Sprememba načina branja vsebine na trenutnem zaslonu</string>
@@ -128,7 +128,7 @@
   <string name="voice_commands_help_overview_description">Ogled nedavnih aplikacij</string>
   <string name="voice_commands_help_assistant_description">Odpiranje Pomočnika Google</string>
   <string name="voice_commands_help_other_commands_title">Drugi ukazi</string>
-  <string name="voice_commands_help_other_commands_description">Pomik na nastavitve funkcije TalkBack, skrivanje zaslona, ogled dejanj, dodajanje oznak po meri in drugo</string>
+  <string name="voice_commands_help_other_commands_description">Pomik na nastavitve funkcije SandFly, skrivanje zaslona, ogled dejanj, dodajanje oznak po meri in drugo</string>
   <string name="voice_commands_help_label">Oznaka [pošlji]</string>
   <string name="voice_commands_help_hide_screen_description">Skrivanje prikaza na zaslonu, da ni viden drugim osebam, ko ste na javnih mestih.</string>
   <string name="voice_commands_help_show_screen_description">Povrnitev zaslona v normalno stanje po skrivanju</string>
