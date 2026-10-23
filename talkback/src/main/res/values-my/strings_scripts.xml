@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">ဇာတ်ညွှန်းများ</string>
     <string name="summary_pref_scripts">အက်ပ်များတွင် SandFly အလုပ်လုပ်ပုံကို ပြောင်းလဲပါ</string>
     <string name="script_import">စခရစ်ကို တင်သွင်းရန်</string>
-    <string name="script_install_label">SandFly ဇာတ်ညွှန်းကို ထည့်သွင်းပါ</string>
+    <string name="script_install_label">SandFly စခရစ် ထည့်သွင်းရန်</string>
     <string name="script_import_nothing">ထည့်သွင်းရန် script ဖိုင်မရှိပါ။</string>
     <string name="script_import_cannot_open">ဖိုင်ကို ဖွင့်၍မရပါ။</string>
     <string name="script_import_repository">ဤလင့်ခ်သည် သိုလှောင်ရုံတစ်ခုလုံးသို့ဖြစ်သည်။ သင်အလိုရှိသော ဇာတ်ညွှန်းကိုဖွင့်ပါ၊ ထို့နောက် ၎င်း၏လင့်ခ်ကို မျှဝေပါ။</string>
@@ -26,9 +26,9 @@
     <string name="script_version">ဗားရှင်း <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">ရေးသူ- <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ထည့်သွင်းမလား။</string>
-    <string name="script_install_can">၎င်းသည်-</string>
+    <string name="script_install_can">လုပ်ဆောင်နိုင်သည်များ-</string>
     <string name="script_install_no_permissions">ခွင့်ပြုချက်မလိုအပ်ပါ။</string>
-    <string name="script_install_button">တပ်ဆင်ပါ</string>
+    <string name="script_install_button">ထည့်သွင်းရန်</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> ကို <xliff:g id="version">%2$s</xliff:g> သို့ အပ်ဒိတ်လုပ်မလား။</string>
     <string name="script_update_new_permissions">ခွင့်ပြုချက်အသစ်များ-</string>
     <string name="script_update_button">အပ်ဒိတ်</string>
@@ -55,7 +55,7 @@
     <string name="script_permissions_title">ခွင့်ပြုချက်များ</string>
     <string name="script_permissions_none">မရှိ</string>
     <string name="script_settings_category">ဆက်တင်များ</string>
-    <string name="script_list_filter">ဇကာ</string>
+    <string name="script_list_filter">စစ်ထုတ်ရန်</string>
     <string name="script_button_off">ဇာတ်ညွှန်းကို ဦးစွာဖွင့်ပါ</string>
     <string name="script_permissions_summary">တစ်ချက်ပိတ်လိုက်ခြင်းဖြင့် ၎င်းလိုအပ်သော အစိတ်အပိုင်းများကို ရပ်တန့်စေသည်။</string>
     <string name="script_install_permissions_note">ဒါတွေကို နောက်မှ ပိတ်နိုင်ပါတယ်။</string>
@@ -63,7 +63,7 @@
     <string name="script_move_up">စောစောကပြေး</string>
     <string name="script_move_down">နောက်မှပြေးပါ</string>
     <string name="script_order_summary">တူညီသောမိန့်ခွန်းကိုပြောင်းလဲသော script များအတွက်အမိန့်။ အက်ပ်စခရစ်များကို ဦးစွာလုပ်ဆောင်သည်။</string>
-    <string name="script_log">အလုံးလိုက်</string>
+    <string name="script_log">မှတ်တမ်း</string>
     <string name="script_log_summary">SandFly စတင်ကတည်းက အထွက်နှင့် အမှားများ</string>
     <string name="script_clear_storage">သိမ်းဆည်းထားသော ဒေတာကို ရှင်းလင်းပါ</string>
     <string name="script_storage_cleared">သိမ်းဆည်းထားသော ဒေတာကို ရှင်းပစ်လိုက်သည်</string>
@@ -90,16 +90,16 @@
     <string name="script_turned_off">ထပ်ခါတလဲလဲ အမှားများပြီးနောက် <xliff:g id="name">%1$s</xliff:g> ပိတ်ထားသည်။ ၎င်း၏ log in Scripts ကိုကြည့်ပါ။</string>
     <string name="shortcut_inspect_item">အာရုံစူးစိုက်ထားသည့်အရာအား စစ်ဆေးပါ</string>
     <string name="script_inspect_no_item">မည်သည့်အရာမျှ အာရုံမစိုက်ပါ</string>
-    <string name="script_inspect_copied">ကူးယူသည်။ <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">ကူးယူပြီးပါပြီ။ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ID မရှိတဲ့အတွက် စည်းကမ်းတွေက နာမည်ပေးလို့မရပါဘူး။ ကူးယူသည်။ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">မျက်နှာပြင်သစ်ပင်ကို ကူးယူပါ</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ပစ္စည်းများကို ကူးယူထားသည်</string>
     <string name="script_tree_none">ကူးယူရန် ဝင်းဒိုးမရှိပါ</string>
     <string name="script_tree_clip_label">မြင်ကွင်းသစ်ပင်</string>
     <string name="summary_copy_screen_tree_menu">ဇာတ်ညွှန်းရေးရန်အတွက် စခရင်ပေါ်ရှိ အရာအားလုံးကို JSON အဖြစ် ကူးယူပါ</string>
-    <string name="script_inspect_clip_label">အကြောင်းအရာအသေးစိတ်</string>
+    <string name="script_inspect_clip_label">အရာ၏ အသေးစိတ်</string>
     <string name="summary_inspect_item_menu">ဇာတ်ညွှန်းရေးရန်အတွက် သင်အသုံးပြုခဲ့သည့် အကြောင်းအရာအသေးစိတ်များကို ပြောပြီး မိတ္တူကူးပါ</string>
-    <string name="script_keys_backtalk_modifier">SandFly မွမ်းမံမှု</string>
+    <string name="script_keys_backtalk_modifier">SandFly မွမ်းမံခလုတ်</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> ထို့နောက် <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ကွန်မန်းများ</string>
     <string name="script_commands_summary">လည်ပတ်နေသော script တစ်ခု၏ လက်ဟန်များနှင့် သော့များသည် SandFly ၏ ရှေ့တွင် ရှိသည်။ SandFly ထားရှိရန် တစ်ခုပိတ်ပါ။</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">ခလုတ်များ ရိုက်ရန်</string>
     <string name="script_binding_type_keys_summary">sf+shift+n, သို့မဟုတ် sf+t, s ကဲ့သို့</string>
     <string name="script_binding_bad_keys">ဤသော့များကို သုံး၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">ထပ်လောင်းသည်-</string>
+    <string name="script_install_adds">ထည့်သွင်းမည့်အရာများ-</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">ဇာတ်ညွှန်းရင်းမြစ်များ</string>
     <string name="script_sources_none">ရင်းမြစ်များ ထည့်မထားပါ</string>

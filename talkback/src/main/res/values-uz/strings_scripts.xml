@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Skriptlar</string>
     <string name="summary_pref_scripts">SandFly ilovalarda qanday ishlashini oʻzgartiring</string>
     <string name="script_import">Skriptni import qilish</string>
-    <string name="script_install_label">SandFly skriptini o\'rnating</string>
+    <string name="script_install_label">SandFly skriptini oʻrnatish</string>
     <string name="script_import_nothing">O\'rnatish uchun skript fayli yo\'q.</string>
     <string name="script_import_cannot_open">Faylni ochib boʻlmadi.</string>
     <string name="script_import_repository">Bu havola butun omborga tegishli. O\'zingiz xohlagan skriptni oching, keyin uning havolasini baham ko\'ring.</string>
@@ -26,7 +26,7 @@
     <string name="script_version">Versiya <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> tomonidan</string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> oʻrnatilsinmi?</string>
-    <string name="script_install_can">Bu mumkin:</string>
+    <string name="script_install_can">U quyidagilarni qila oladi:</string>
     <string name="script_install_no_permissions">Ruxsat kerak emas.</string>
     <string name="script_install_button">O\'rnatish</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> ga yangilansinmi?</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Bu bilan ishlamasligi mumkin SandFly</string>
     <string name="script_api_range">Skript API <xliff:g id="min">%1$d</xliff:g> dan <xliff:g id="tested">%2$d</xliff:g> gacha</string>
     <string name="script_compatibility_title">Moslik</string>
-    <string name="script_install_anyway">Baribir o\'rnating</string>
+    <string name="script_install_anyway">Baribir oʻrnatish</string>
     <string name="script_update_anyway">Baribir yangilang</string>
     <string name="script_homepage">Bosh sahifani ochish</string>
     <string name="script_homepage_confirm_title">Bu manzil ochilsinmi?</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">Skript yozish uchun ekrandagi barcha elementlarni JSON sifatida nusxalash</string>
     <string name="script_inspect_clip_label">Element tafsilotlari</string>
     <string name="summary_inspect_item_menu">Skriptlarni yozish uchun siz bo\'lgan element tafsilotlarini ayting va nusxa ko\'chiring</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikator</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifikator tugmasi</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, keyin <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Buyruqlar</string>
     <string name="script_commands_summary">Ishlayotgan skriptning imo-ishoralari va tugmalari SandFly dan oldin keladi. SandFly-ni saqlab qolish uchun birini o\'chiring.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">Tugmalarni kiritish</string>
     <string name="script_binding_type_keys_summary">sf+shift+n, yoki sf+t, s kabi</string>
     <string name="script_binding_bad_keys">Bu kalitlardan foydalana olmaysiz. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">U qo\'shimcha qiladi:</string>
+    <string name="script_install_adds">Qoʻshadi:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skript manbalari</string>
     <string name="script_sources_none">Hech qanday manba qo\'shilmagan</string>

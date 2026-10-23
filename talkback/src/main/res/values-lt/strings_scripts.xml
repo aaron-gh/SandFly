@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Scenarijai</string>
     <string name="summary_pref_scripts">Pakeiskite, kaip SandFly veikia programose</string>
     <string name="script_import">Importuoti scenarijų</string>
-    <string name="script_install_label">Įdiekite SandFly scenarijų</string>
+    <string name="script_install_label">Įdiegti SandFly scenarijų</string>
     <string name="script_import_nothing">Nėra scenarijaus failo, kurį būtų galima įdiegti.</string>
     <string name="script_import_cannot_open">Failo atidaryti nepavyko.</string>
     <string name="script_import_repository">Ši nuoroda nukreipta į visą saugyklą. Atidarykite norimą scenarijų, tada bendrinkite jo nuorodą.</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Gali neveikti su šiuo SandFly</string>
     <string name="script_api_range">Scenarijaus API nuo <xliff:g id="min">%1$d</xliff:g> iki <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Suderinamumas</string>
-    <string name="script_install_anyway">Vis tiek įdiekite</string>
+    <string name="script_install_anyway">Vis tiek įdiegti</string>
     <string name="script_update_anyway">Vis tiek atnaujinkite</string>
     <string name="script_homepage">Atidaryti pagrindinį puslapį</string>
     <string name="script_homepage_confirm_title">Atidaryti šį adresą?</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">Nėra lango, kurį būtų galima kopijuoti</string>
     <string name="script_tree_clip_label">Ekrano medis</string>
     <string name="summary_copy_screen_tree_menu">Nukopijuokite visus elementus ekrane kaip JSON, kad galėtumėte rašyti scenarijus</string>
-    <string name="script_inspect_clip_label">Prekės detalės</string>
+    <string name="script_inspect_clip_label">Elemento informacija</string>
     <string name="summary_inspect_item_menu">Norėdami rašyti scenarijus, pasakykite ir nukopijuokite informaciją apie elementą, kuriame dalyvavote</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikatorius</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifikavimo klavišas</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, tada <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandos</string>
     <string name="script_commands_summary">Vykdomo scenarijaus gestai ir klavišai yra prieš SandFly. Išjunkite vieną, kad liktų SandFly.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">Įvesti klavišus</string>
     <string name="script_binding_type_keys_summary">Patinka sf+shift+n, arba sf+t, s</string>
     <string name="script_binding_bad_keys">Negalite naudoti šių raktų. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">Jame priduriama:</string>
+    <string name="script_install_adds">Prideda:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Scenarijaus šaltiniai</string>
     <string name="script_sources_none">Jokių šaltinių nepridėta</string>

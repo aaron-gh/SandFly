@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">ສະຄຣິບ</string>
     <string name="summary_pref_scripts">ປ່ຽນວິທີເຮັດວຽກ SandFly ໃນແອັບ</string>
     <string name="script_import">ນຳເຂົ້າສະຄຣິບ</string>
-    <string name="script_install_label">ຕິດຕັ້ງ SandFly script</string>
+    <string name="script_install_label">ຕິດຕັ້ງສະຄຣິບ SandFly</string>
     <string name="script_import_nothing">ບໍ່ມີໄຟລ໌ສະຄຣິບເພື່ອຕິດຕັ້ງ.</string>
     <string name="script_import_cannot_open">ບໍ່ສາມາດເປີດໄຟລ໌ໄດ້.</string>
     <string name="script_import_repository">ລິ້ງນີ້ແມ່ນໄປຫາບ່ອນເກັບມ້ຽນທັງໝົດ. ເປີດສະຄຣິບທີ່ທ່ານຕ້ອງການ, ຈາກນັ້ນແບ່ງປັນລິ້ງຂອງມັນ.</string>
@@ -34,7 +34,7 @@
     <string name="script_update_button">ອັບເດດ</string>
     <string name="script_update_replaces">ນີ້ແທນທີ່ເວີຊັນ <xliff:g id="version">%1$s</xliff:g> ໂດຍ <xliff:g id="author">%2$s</xliff:g>, ແລະຮັກສາຂໍ້ມູນ ແລະການຕັ້ງຄ່າຂອງມັນໄວ້.</string>
     <string name="script_update_other_author">ອັນໃໝ່ແມ່ນໂດຍ <xliff:g id="author">%1$s</xliff:g>, ຜູ້ຂຽນອື່ນ. ອັບເດດພຽງແຕ່ຖ້າທ່ານເຊື່ອມັນ.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>ຕິດຕັ້ງ</string>
+    <string name="script_installed">ຕິດຕັ້ງ <xliff:g id="name">%1$s</xliff:g> ແລ້ວ</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ອັບເດດເປັນ <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">ການນຳເຂົ້າລົ້ມເຫລວ. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. ອະນຸຍາດສະເພາະສະຄຣິບທີ່ເຊື່ອຖືໄດ້ເທົ່ານັ້ນ.</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">ອາດຈະໃຊ້ບໍ່ໄດ້ກັບສິ່ງນີ້SandFly</string>
     <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ຄວາມເຂົ້າກັນໄດ້</string>
-    <string name="script_install_anyway">ຕິດຕັ້ງແນວໃດ</string>
+    <string name="script_install_anyway">ຕິດຕັ້ງຕໍ່</string>
     <string name="script_update_anyway">ແນວໃດກໍ່ອັບເດດ</string>
     <string name="script_homepage">ເປີດຫນ້າທໍາອິດ</string>
     <string name="script_homepage_confirm_title">ເປີດທີ່ຢູ່ນີ້ບໍ?</string>
@@ -99,8 +99,8 @@
     <string name="summary_copy_screen_tree_menu">ສຳເນົາລາຍການທັງໝົດໃນໜ້າຈໍເປັນ JSON, ເພື່ອຂຽນສະຄຣິບ</string>
     <string name="script_inspect_clip_label">ລາຍ​ລະ​ອຽດ​ລາຍ​ການ​</string>
     <string name="summary_inspect_item_menu">ເວົ້າແລະຄັດລອກລາຍລະອຽດຂອງລາຍການທີ່ທ່ານຢູ່, ສໍາລັບການຂຽນສະຄິບ</string>
-    <string name="script_keys_backtalk_modifier">SandFlyຕົວແກ້ໄຂ</string>
-    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ<xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_keys_backtalk_modifier">ປຸ່ມປັບແຕ່ງ SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ຄໍາສັ່ງ</string>
     <string name="script_commands_summary">ທ່າທາງ ແລະກະແຈຂອງສະຄຣິບທີ່ໃຊ້ຢູ່ກ່ອນໜ້າ SandFly. ປິດອັນໜຶ່ງເພື່ອຮັກສາໄວ້ SandFly.</string>
     <string name="script_binding_gesture">ທ່າທາງ: <xliff:g id="gesture">%1$s</xliff:g></string>

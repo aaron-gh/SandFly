@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Скрипти</string>
     <string name="summary_pref_scripts">Променете како функционира SandFly во апликациите</string>
     <string name="script_import">Увези скрипта</string>
-    <string name="script_install_label">Инсталирајте скрипта SandFly</string>
+    <string name="script_install_label">Инсталирај скрипта за SandFly</string>
     <string name="script_import_nothing">Нема датотека со скрипта за инсталирање.</string>
     <string name="script_import_cannot_open">Датотеката не можеше да се отвори.</string>
     <string name="script_import_repository">Оваа врска е до целото складиште. Отворете ја скриптата што ја сакате, а потоа споделете ја нејзината врска.</string>
@@ -28,7 +28,7 @@
     <string name="script_install_title">Да се инсталира <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Тоа може:</string>
     <string name="script_install_no_permissions">Не се потребни дозволи.</string>
-    <string name="script_install_button">Инсталирајте</string>
+    <string name="script_install_button">Инсталирај</string>
     <string name="script_update_title">Да се ажурира <xliff:g id="name">%1$s</xliff:g> до <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Нови дозволи:</string>
     <string name="script_update_button">Ажурирање</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Може да не работи со ова SandFly</string>
     <string name="script_api_range">АПИ на скрипта <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Компатибилност</string>
-    <string name="script_install_anyway">Како и да е, инсталирај</string>
+    <string name="script_install_anyway">Сепак инсталирај</string>
     <string name="script_update_anyway">Во секој случај, ажурирај</string>
     <string name="script_homepage">Отвори ја почетната страница</string>
     <string name="script_homepage_confirm_title">Да се отвори оваа адреса?</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">Копирајте ги сите ставки на екранот како JSON, за пишување скрипти</string>
     <string name="script_inspect_clip_label">Детали за ставката</string>
     <string name="summary_inspect_item_menu">Кажете и копирајте детали за ставката на која бевте, за пишување скрипти</string>
-    <string name="script_keys_backtalk_modifier">SandFly модификатор</string>
+    <string name="script_keys_backtalk_modifier">Модификаторско копче на SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, потоа <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Наредби</string>
     <string name="script_commands_summary">Гестовите и копчињата на скрипта која работи се пред SandFly. Исклучете еден за да ги задржите SandFly.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">Внеси копчиња</string>
     <string name="script_binding_type_keys_summary">Како sf+shift+n, или sf+t, s</string>
     <string name="script_binding_bad_keys">Не може да се користат овие клучеви. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">Во него се додава:</string>
+    <string name="script_install_adds">Додава:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Извори на скрипта</string>
     <string name="script_sources_none">Не се додадени извори</string>

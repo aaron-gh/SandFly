@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Сценарийлер</string>
     <string name="summary_pref_scripts">SandFly қолданбаларда қалай жұмыс істейтінін өзгертіңіз</string>
     <string name="script_import">Скриптті импорттау</string>
-    <string name="script_install_label">SandFly сценарийін орнатыңыз</string>
+    <string name="script_install_label">SandFly скриптін орнату</string>
     <string name="script_import_nothing">Орнатылатын сценарий файлы жоқ.</string>
     <string name="script_import_cannot_open">Файлды ашу мүмкін болмады.</string>
     <string name="script_import_repository">Бұл сілтеме бүкіл репозиторийге арналған. Қалаған сценарийді ашып, оның сілтемесін бөлісіңіз.</string>
@@ -26,7 +26,7 @@
     <string name="script_version">Нұсқа <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Авторы <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> орнату керек пе?</string>
-    <string name="script_install_can">Ол:</string>
+    <string name="script_install_can">Ол мыналарды істей алады:</string>
     <string name="script_install_no_permissions">Рұқсаттар қажет емес.</string>
     <string name="script_install_button">Орнату</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>-ны <xliff:g id="version">%2$s</xliff:g> етіп жаңарту керек пе?</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Мұнымен жұмыс істемеуі мүмкін SandFly</string>
     <string name="script_api_range">Сценарий API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Үйлесімділік</string>
-    <string name="script_install_anyway">Бәрібір орнатыңыз</string>
+    <string name="script_install_anyway">Бәрібір орнату</string>
     <string name="script_update_anyway">Қалай болғанда да жаңартыңыз</string>
     <string name="script_homepage">Негізгі бетті ашу</string>
     <string name="script_homepage_confirm_title">Бұл мекенжайды ашу керек пе?</string>
@@ -90,7 +90,7 @@
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> қайталанатын қателерден кейін өшірілді. Скрипттерде оның журналын қараңыз.</string>
     <string name="shortcut_inspect_item">Фокусталған элементті тексеріңіз</string>
     <string name="script_inspect_no_item">Ешбір элементте фокус жоқ</string>
-    <string name="script_inspect_copied">Көшірілген. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">Көшірілді. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Идентификатор жоқ, сондықтан ережелер оны атай алмайды. Көшірілген. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Экран ағашын көшіру</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> элемент көшірілді</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">Сценарий жазу үшін экрандағы барлық элементтерді JSON ретінде көшіріңіз</string>
     <string name="script_inspect_clip_label">Элемент мәліметтері</string>
     <string name="summary_inspect_item_menu">Сценарий жазу үшін сіз болған элементтің мәліметтерін айтыңыз және көшіріңіз</string>
-    <string name="script_keys_backtalk_modifier">SandFly модификаторы</string>
+    <string name="script_keys_backtalk_modifier">SandFly модификатор пернесі</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, содан кейін <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Командалар</string>
     <string name="script_commands_summary">Іске қосылған сценарийдің қимылдары мен пернелері SandFly символдарынан бұрын келеді. SandFly белгілерін сақтау үшін біреуін өшіріңіз.</string>

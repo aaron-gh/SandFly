@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Komut dosyaları</string>
     <string name="summary_pref_scripts">SandFly\'nin uygulamalarda çalışma şeklini değiştirin</string>
     <string name="script_import">Komut dosyasını içe aktar</string>
-    <string name="script_install_label">SandFly betiğini yükleyin</string>
+    <string name="script_install_label">SandFly betiğini yükle</string>
     <string name="script_import_nothing">Yüklenecek bir komut dosyası yok.</string>
     <string name="script_import_cannot_open">Dosya açılamadı.</string>
     <string name="script_import_repository">Bu bağlantı tüm bir depoya yöneliktir. İstediğiniz betiği açın ve bağlantısını paylaşın.</string>
@@ -34,7 +34,7 @@
     <string name="script_update_button">Güncelleme</string>
     <string name="script_update_replaces">Bu, <xliff:g id="version">%1$s</xliff:g> sürümünü <xliff:g id="author">%2$s</xliff:g> ile değiştirir ve verilerini ve ayarlarını korur.</string>
     <string name="script_update_other_author">Yenisi farklı bir yazar olan <xliff:g id="author">%1$s</xliff:g>\'den. Yalnızca güveniyorsanız güncelleyin.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> yüklü</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> yüklendi</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> olarak güncellendi</string>
     <string name="script_import_failed">İçe aktarma başarısız oldu. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Yalnızca güvenilir komut dosyalarına izin ver.</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">Kopyalanacak pencere yok</string>
     <string name="script_tree_clip_label">Ekran ağacı</string>
     <string name="summary_copy_screen_tree_menu">Komut dosyaları yazmak için ekrandaki tüm öğeleri JSON olarak kopyalayın</string>
-    <string name="script_inspect_clip_label">Ürün ayrıntıları</string>
+    <string name="script_inspect_clip_label">Öğe ayrıntıları</string>
     <string name="summary_inspect_item_menu">Komut dosyası yazmak için üzerinde bulunduğunuz öğenin ayrıntılarını söyleyin ve kopyalayın</string>
-    <string name="script_keys_backtalk_modifier">SandFly değiştirici</string>
+    <string name="script_keys_backtalk_modifier">SandFly değiştirici tuşu</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ardından <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komutlar</string>
     <string name="script_commands_summary">Çalışan bir betiğin jestleri ve tuşları SandFly\'lardan önce gelir. SandFly\'leri korumak için birini kapatın.</string>

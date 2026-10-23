@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Skripti</string>
     <string name="summary_pref_scripts">Mainiet, kā SandFly darbojas lietotnēs</string>
     <string name="script_import">Importēt skriptu</string>
-    <string name="script_install_label">Instalējiet skriptu SandFly</string>
+    <string name="script_install_label">Instalēt SandFly skriptu</string>
     <string name="script_import_nothing">Nav instalējamā skripta faila.</string>
     <string name="script_import_cannot_open">Failu nevarēja atvērt.</string>
     <string name="script_import_repository">Šī saite ir uz visu repozitoriju. Atveriet vajadzīgo skriptu un pēc tam kopīgojiet tā saiti.</string>
@@ -28,7 +28,7 @@
     <string name="script_install_title">Vai instalēt <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Tas var:</string>
     <string name="script_install_no_permissions">Nav nepieciešamas atļaujas.</string>
-    <string name="script_install_button">Instalējiet</string>
+    <string name="script_install_button">Instalēt</string>
     <string name="script_update_title">Vai atjaunināt <xliff:g id="name">%1$s</xliff:g> uz <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Jaunas atļaujas:</string>
     <string name="script_update_button">Atjaunināt</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Var nedarboties ar šo SandFly</string>
     <string name="script_api_range">Skripta API no <xliff:g id="min">%1$d</xliff:g> līdz <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Saderība</string>
-    <string name="script_install_anyway">Instalējiet jebkurā gadījumā</string>
+    <string name="script_install_anyway">Tomēr instalēt</string>
     <string name="script_update_anyway">Atjauniniet jebkurā gadījumā</string>
     <string name="script_homepage">Atvērt mājaslapu</string>
     <string name="script_homepage_confirm_title">Vai atvērt šo adresi?</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">Nav loga, ko kopēt</string>
     <string name="script_tree_clip_label">Ekrāna koks</string>
     <string name="summary_copy_screen_tree_menu">Skriptu rakstīšanai kopējiet visus ekrānā redzamos vienumus kā JSON</string>
-    <string name="script_inspect_clip_label">Preces detaļas</string>
+    <string name="script_inspect_clip_label">Vienuma informācija</string>
     <string name="summary_inspect_item_menu">Lai rakstītu skriptus, pasakiet un kopējiet informāciju par vienumu, kuru izmantojāt</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikators</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifikatora taustiņš</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pēc tam <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandas</string>
     <string name="script_commands_summary">Darbojošā skripta žesti un taustiņi ir pirms SandFly. Izslēdziet vienu, lai saglabātu SandFly.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">Ievadīt taustiņus</string>
     <string name="script_binding_type_keys_summary">Patīk sf+shift+n, vai sf+t, s</string>
     <string name="script_binding_bad_keys">Nevar izmantot šīs atslēgas. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">Tas piebilst:</string>
+    <string name="script_install_adds">Tas pievieno:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skriptu avoti</string>
     <string name="script_sources_none">Nav pievienots neviens avots</string>

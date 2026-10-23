@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Roteiros</string>
     <string name="summary_pref_scripts">Altere a forma como SandFly funciona em aplicativos</string>
     <string name="script_import">Importar script</string>
-    <string name="script_install_label">Instale o script SandFly</string>
+    <string name="script_install_label">Instalar script do SandFly</string>
     <string name="script_import_nothing">Não há arquivo de script para instalar.</string>
     <string name="script_import_cannot_open">O arquivo não pôde ser aberto.</string>
     <string name="script_import_repository">Este link é para um repositório completo. Abra o script desejado e compartilhe seu link.</string>
@@ -63,7 +63,7 @@
     <string name="script_move_up">Execute mais cedo</string>
     <string name="script_move_down">Executar mais tarde</string>
     <string name="script_order_summary">Peça scripts que alterem o mesmo discurso. Os scripts do aplicativo são executados primeiro.</string>
-    <string name="script_log">Registro</string>
+    <string name="script_log">Registo</string>
     <string name="script_log_summary">Saída e erros desde o início de SandFly</string>
     <string name="script_clear_storage">Limpar dados armazenados</string>
     <string name="script_storage_cleared">Dados armazenados apagados</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Pode não funcionar com isso SandFly</string>
     <string name="script_api_range">API de script <xliff:g id="min">%1$d</xliff:g> a <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilidade</string>
-    <string name="script_install_anyway">Instale mesmo assim</string>
+    <string name="script_install_anyway">Instalar mesmo assim</string>
     <string name="script_update_anyway">Atualizar mesmo assim</string>
     <string name="script_homepage">Abrir página inicial</string>
     <string name="script_homepage_confirm_title">Abrir este endereço?</string>
@@ -99,8 +99,8 @@
     <string name="summary_copy_screen_tree_menu">Copie todos os itens na tela como JSON, para escrever scripts</string>
     <string name="script_inspect_clip_label">Detalhes do item</string>
     <string name="summary_inspect_item_menu">Diga e copie detalhes do item em que você estava, para escrever roteiros</string>
-    <string name="script_keys_backtalk_modifier">SandFly modificador</string>
-    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, então <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_keys_backtalk_modifier">Tecla modificadora do SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, depois <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comandos</string>
     <string name="script_commands_summary">Gestos e teclas de um script em execução vêm antes de SandFly. Desligue um para manter SandFly.</string>
     <string name="script_binding_gesture">Gesto: <xliff:g id="gesture">%1$s</xliff:g></string>

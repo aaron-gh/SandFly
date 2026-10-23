@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Scripts</string>
     <string name="summary_pref_scripts">SandFly програмууд дээр хэрхэн ажилладгийг өөрчлөх</string>
     <string name="script_import">Скрипт импортлох</string>
-    <string name="script_install_label">SandFly скрипт суулгана уу</string>
+    <string name="script_install_label">SandFly скрипт суулгах</string>
     <string name="script_import_nothing">Суулгах скрипт файл алга.</string>
     <string name="script_import_cannot_open">Файлыг нээж чадсангүй.</string>
     <string name="script_import_repository">Энэ холбоос нь бүхэл бүтэн агуулах юм. Хүссэн скриптээ нээгээд холбоосыг нь хуваалцаарай.</string>
@@ -26,7 +26,7 @@
     <string name="script_version">Хувилбар <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Зохиогч: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> суулгах уу?</string>
-    <string name="script_install_can">Энэ нь:</string>
+    <string name="script_install_can">Хийж чадах зүйлс:</string>
     <string name="script_install_no_permissions">Зөвшөөрөл шаардлагагүй.</string>
     <string name="script_install_button">Суулгах</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>-г <xliff:g id="version">%2$s</xliff:g> болгож шинэчлэх үү?</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Үүнтэй ажиллахгүй байж магадгүй SandFly</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Тохиромжтой байдал</string>
-    <string name="script_install_anyway">Ямар ч байсан суулгаарай</string>
+    <string name="script_install_anyway">Ямар ч байсан суулгах</string>
     <string name="script_update_anyway">Ямар ч байсан шинэчилнэ үү</string>
     <string name="script_homepage">Нүүр хуудсыг нээх</string>
     <string name="script_homepage_confirm_title">Энэ хаягийг нээх үү?</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">Скрипт бичихийн тулд дэлгэцэн дээрх бүх зүйлийг JSON гэж хуулна уу</string>
     <string name="script_inspect_clip_label">Зүйлийн дэлгэрэнгүй</string>
     <string name="summary_inspect_item_menu">Скрипт бичихийн тулд дээр байсан зүйлийнхээ дэлгэрэнгүйг хэлж, хуулна уу</string>
-    <string name="script_keys_backtalk_modifier">SandFly өөрчлөгч</string>
+    <string name="script_keys_backtalk_modifier">SandFly өөрчлөгч товч</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, дараа нь <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Тушаалууд</string>
     <string name="script_commands_summary">Ажиллаж байгаа скриптийн дохио зангаа болон товчлуурууд SandFly-ийн өмнө ирдэг. SandFly-г хадгалахын тулд нэгийг нь унтраа.</string>

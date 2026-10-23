@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">תסריטים</string>
     <string name="summary_pref_scripts">שנה את אופן הפעולה של SandFly באפליקציות</string>
     <string name="script_import">ייבוא סקריפט</string>
-    <string name="script_install_label">התקן את הסקריפט SandFly</string>
+    <string name="script_install_label">התקנת סקריפט של SandFly</string>
     <string name="script_import_nothing">אין קובץ סקריפט להתקנה.</string>
     <string name="script_import_cannot_open">לא ניתן היה לפתוח את הקובץ.</string>
     <string name="script_import_repository">הקישור הזה הוא למאגר שלם. פתח את הסקריפט הרצוי ולאחר מכן שתף את הקישור שלו.</string>
@@ -28,13 +28,13 @@
     <string name="script_install_title">להתקין את <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">זה יכול:</string>
     <string name="script_install_no_permissions">אין צורך בהרשאות.</string>
-    <string name="script_install_button">התקן</string>
+    <string name="script_install_button">התקנה</string>
     <string name="script_update_title">לעדכן את <xliff:g id="name">%1$s</xliff:g> ל<xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">הרשאות חדשות:</string>
     <string name="script_update_button">עדכון</string>
     <string name="script_update_replaces">זה מחליף את גרסה <xliff:g id="version">%1$s</xliff:g> ב<xliff:g id="author">%2$s</xliff:g>, ושומר על הנתונים וההגדרות שלה.</string>
     <string name="script_update_other_author">החדש הוא מאת <xliff:g id="author">%1$s</xliff:g>, מחבר אחר. עדכן רק אם אתה סומך עליו.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> מותקן</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> הותקן</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> עודכן ל-<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">הייבוא נכשל. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. אפשר רק סקריפטים מהימנים.</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">אולי לא יעבוד עם זה SandFly</string>
     <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> עד <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">תאימות</string>
-    <string name="script_install_anyway">התקן בכל זאת</string>
+    <string name="script_install_anyway">התקנה בכל זאת</string>
     <string name="script_update_anyway">תעדכן בכל מקרה</string>
     <string name="script_homepage">פתיחת דף הבית</string>
     <string name="script_homepage_confirm_title">לפתוח את הכתובת הזו?</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">העתק את כל הפריטים על המסך בתור JSON, לכתיבת סקריפטים</string>
     <string name="script_inspect_clip_label">פרטי פריט</string>
     <string name="summary_inspect_item_menu">אמור והעתיק פרטים של הפריט שהיית בו, לכתיבת תסריטים</string>
-    <string name="script_keys_backtalk_modifier">SandFly משנה</string>
+    <string name="script_keys_backtalk_modifier">מקש השינוי של SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ואז <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">פקודות</string>
     <string name="script_commands_summary">מחוות ומקשים של סקריפט פועל באים לפני SandFly. כבה אחת כדי לשמור על SandFly של.</string>

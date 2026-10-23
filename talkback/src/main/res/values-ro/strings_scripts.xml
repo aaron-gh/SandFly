@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Scripturi</string>
     <string name="summary_pref_scripts">Schimbați modul în care funcționează SandFly în aplicații</string>
     <string name="script_import">Importă un script</string>
-    <string name="script_install_label">Instalați scriptul SandFly</string>
+    <string name="script_install_label">Instalează scriptul SandFly</string>
     <string name="script_import_nothing">Nu există niciun fișier script de instalat.</string>
     <string name="script_import_cannot_open">Fișierul nu a putut fi deschis.</string>
     <string name="script_import_repository">Acest link este către un întreg depozit. Deschideți scriptul dorit, apoi partajați linkul acestuia.</string>
@@ -25,10 +25,10 @@
     <string name="script_runs_everywhere">Se rulează în toate aplicațiile</string>
     <string name="script_version">Versiunea <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">De <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title">Instalați <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_title">Instalezi <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Poate:</string>
     <string name="script_install_no_permissions">Nu sunt necesare permisiuni.</string>
-    <string name="script_install_button">Instalați</string>
+    <string name="script_install_button">Instalează</string>
     <string name="script_update_title">Actualizați <xliff:g id="name">%1$s</xliff:g> la <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Permisiuni noi:</string>
     <string name="script_update_button">Actualizare</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Este posibil să nu funcționeze cu aceasta SandFly</string>
     <string name="script_api_range">Script API de la <xliff:g id="min">%1$d</xliff:g> la <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilitate</string>
-    <string name="script_install_anyway">Instalați oricum</string>
+    <string name="script_install_anyway">Instalează oricum</string>
     <string name="script_update_anyway">Actualizați oricum</string>
     <string name="script_homepage">Deschide pagina principală</string>
     <string name="script_homepage_confirm_title">Deschizi această adresă?</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">Nicio fereastră de copiat</string>
     <string name="script_tree_clip_label">Arborele ecranului</string>
     <string name="summary_copy_screen_tree_menu">Copiați toate elementele de pe ecran ca JSON, pentru a scrie scripturi</string>
-    <string name="script_inspect_clip_label">Detalii articol</string>
+    <string name="script_inspect_clip_label">Detalii element</string>
     <string name="summary_inspect_item_menu">Spuneți și copiați detaliile articolului pe care ați fost, pentru a scrie scenarii</string>
-    <string name="script_keys_backtalk_modifier">SandFly modificator</string>
+    <string name="script_keys_backtalk_modifier">Tasta modificatoare SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, apoi <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comenzi</string>
     <string name="script_commands_summary">Gesturile și tastele unui script care rulează vin înaintea lui SandFly. Opriți unul pentru a păstra SandFly.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">Tastează tastele</string>
     <string name="script_binding_type_keys_summary">Ca sf+shift+n, sau sf+t, s</string>
     <string name="script_binding_bad_keys">Nu pot folosi aceste taste. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">Se adauga:</string>
+    <string name="script_install_adds">Adaugă:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Surse de script</string>
     <string name="script_sources_none">Nu au adăugat surse</string>

@@ -25,18 +25,18 @@
     <string name="script_runs_everywhere">ସମସ୍ତ ଆପରେ ଚାଲିଥାଏ</string>
     <string name="script_version">ସଂସ୍କରଣ <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> ଦ୍ୱାରା</string>
-    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପନ କରନ୍ତୁ?</string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପନ କରିବେ?</string>
     <string name="script_install_can">ଏହା କରିପାରିବ:</string>
-    <string name="script_install_no_permissions">କୌଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ |</string>
+    <string name="script_install_no_permissions">କୌଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ।</string>
     <string name="script_install_button">ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> କୁ <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ କରନ୍ତୁ?</string>
     <string name="script_update_new_permissions">ନୂତନ ଅନୁମତି:</string>
     <string name="script_update_button">ଅଦ୍ୟତନ କରନ୍ତୁ</string>
     <string name="script_update_replaces">ଏହା <xliff:g id="version">%1$s</xliff:g> ସଂସ୍କରଣ <xliff:g id="author">%2$s</xliff:g> ଦ୍ୱାରା ବଦଳାଇଥାଏ, ଏବଂ ଏହାର ତଥ୍ୟ ଏବଂ ସେଟିଙ୍ଗଗୁଡ଼ିକୁ ରଖେ |</string>
     <string name="script_update_other_author">ଏକ ନୂତନ ଲେଖକ <xliff:g id="author">%1$s</xliff:g> ଦ୍ୱାରା | ଯଦି ଆପଣ ଏହାକୁ ବିଶ୍ trust ାସ କରନ୍ତି ତେବେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପିତ</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପିତ ହେଲା</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ ହୋଇଛି</string>
-    <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା | <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। କେବଳ ବିଶ୍ୱସ୍ତ ସ୍କ୍ରିପ୍ଟ ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ |</string>
     <string name="script_permission_screen">ସ୍କ୍ରିନ୍ ପ Read ଼ନ୍ତୁ</string>
     <string name="script_permission_actions">ଫୋକସ୍ କ୍ଲିକ୍, ସ୍କ୍ରୋଲ୍, ଟାଇପ୍ ଏବଂ ଘୁଞ୍ଚାନ୍ତୁ</string>
@@ -63,7 +63,7 @@
     <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ</string>
     <string name="script_move_down">ପରେ ଚଲାନ୍ତୁ</string>
     <string name="script_order_summary">ସମାନ ବକ୍ତବ୍ୟ ପରିବର୍ତ୍ତନ କରୁଥିବା ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପାଇଁ ଅର୍ଡର | ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପ୍ରଥମେ ଚାଲିଥାଏ |</string>
-    <string name="script_log">ଲଗ୍ କରନ୍ତୁ</string>
+    <string name="script_log">ଲଗ୍</string>
     <string name="script_log_summary">SandFly ଆରମ୍ଭରୁ ଆଉଟପୁଟ୍ ଏବଂ ତ୍ରୁଟି</string>
     <string name="script_clear_storage">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା କରନ୍ତୁ</string>
     <string name="script_storage_cleared">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା ହୋଇଛି</string>
@@ -90,7 +90,7 @@
     <string name="script_turned_off">ବାରମ୍ବାର ତ୍ରୁଟି ପରେ <xliff:g id="name">%1$s</xliff:g> ବନ୍ଦ ହୋଇଗଲା | ସ୍କ୍ରିପ୍ଟରେ ଏହାର ଲଗ୍ ଦେଖନ୍ତୁ |</string>
     <string name="shortcut_inspect_item">ଫୋକସ୍ ଆଇଟମ୍ ଯାଞ୍ଚ କରନ୍ତୁ</string>
     <string name="script_inspect_no_item">କୌଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ</string>
-    <string name="script_inspect_copied">କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">କପି କରାଯାଇଛି। <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">କୌଣସି id ନାହିଁ, ତେଣୁ ନିୟମ ଏହାର ନାମ ଦେଇପାରିବ ନାହିଁ | କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଗଛ କପି କରନ୍ତୁ</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ଆଇଟମଗୁଡିକ କପି କରାଯାଇଛି</string>
@@ -99,7 +99,7 @@
     <string name="summary_copy_screen_tree_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ ସ୍କ୍ରିନରେ ଥିବା ସମସ୍ତ ଆଇଟମକୁ JSON ଭାବରେ କପି କରନ୍ତୁ</string>
     <string name="script_inspect_clip_label">ଆଇଟମ୍ ବିବରଣୀ</string>
     <string name="summary_inspect_item_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ, ତୁମେ ଥିବା ଆଇଟମ୍ ର ବିବରଣୀ କୁହ ଏବଂ କପି କର</string>
-    <string name="script_keys_backtalk_modifier">SandFly ରୂପାନ୍ତରକାରୀ</string>
+    <string name="script_keys_backtalk_modifier">SandFly ମୋଡିଫାୟର୍ କି</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ତାପରେ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ନିର୍ଦ୍ଦେଶଗୁଡ଼ିକ</string>
     <string name="script_commands_summary">ଏକ ଚାଲୁଥିବା ସ୍କ୍ରିପ୍ଟର ଅଙ୍ଗଭଙ୍ଗୀ ଏବଂ ଚାବି SandFly ପୂର୍ବରୁ ଆସେ | SandFly ରଖିବା ପାଇଁ ଗୋଟିଏ ବନ୍ଦ କରନ୍ତୁ |</string>

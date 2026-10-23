@@ -25,7 +25,7 @@
     <string name="script_runs_everywhere">모든 앱에서 실행</string>
     <string name="script_version">버전 <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">작성자: <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>를 설치하시겠습니까?</string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>을(를) 설치하시겠습니까?</string>
     <string name="script_install_can">다음을 수행할 수 있습니다.</string>
     <string name="script_install_no_permissions">권한이 필요하지 않습니다.</string>
     <string name="script_install_button">설치</string>
@@ -97,10 +97,10 @@
     <string name="script_tree_none">복사할 창이 없습니다.</string>
     <string name="script_tree_clip_label">스크린 트리</string>
     <string name="summary_copy_screen_tree_menu">스크립트 작성을 위해 화면의 모든 항목을 JSON로 복사합니다.</string>
-    <string name="script_inspect_clip_label">품목 세부정보</string>
+    <string name="script_inspect_clip_label">항목 세부정보</string>
     <string name="summary_inspect_item_menu">스크립트 작성을 위해 해당 항목의 세부정보를 말하고 복사하세요.</string>
-    <string name="script_keys_backtalk_modifier">SandFly 수식어</string>
-    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, 그다음에는 <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_keys_backtalk_modifier">SandFly 보조키</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, 그다음 <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">명령</string>
     <string name="script_commands_summary">실행 중인 스크립트의 제스처와 키는 SandFly 앞에 옵니다. SandFly을 유지하려면 하나를 끄세요.</string>
     <string name="script_binding_gesture">제스처: <xliff:g id="gesture">%1$s</xliff:g></string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">키 입력</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, 또는 sf+t, 과 같은</string>
     <string name="script_binding_bad_keys">이 키를 사용할 수 없습니다. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">그것은 다음을 추가합니다:</string>
+    <string name="script_install_adds">추가 항목:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">스크립트 소스</string>
     <string name="script_sources_none">추가된 소스 없음</string>

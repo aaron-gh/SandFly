@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">腳本</string>
     <string name="summary_pref_scripts">更改 SandFly 在應用程式中的工作方式</string>
     <string name="script_import">匯入指令碼</string>
-    <string name="script_install_label">安裝SandFly腳本</string>
+    <string name="script_install_label">安裝 SandFly 指令碼</string>
     <string name="script_import_nothing">沒有要安裝的腳本檔案。</string>
     <string name="script_import_cannot_open">該文件無法開啟。</string>
     <string name="script_import_repository">此連結指向整個儲存庫。打開所需的腳本，然後分享其連結。</string>
@@ -36,7 +36,7 @@
     <string name="script_update_other_author">新的作者是另一位作者<xliff:g id="author">%1$s</xliff:g>。僅在您信任的情況下更新。</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>已安裝</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>更新為<xliff:g id="version">%2$s</xliff:g></string>
-    <string name="script_import_failed">導入失敗。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_import_failed">匯入失敗。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。僅允許受信任的腳本。</string>
     <string name="script_permission_screen">閱讀螢幕</string>
     <string name="script_permission_actions">點選、捲動、鍵入和移動焦點</string>
@@ -55,7 +55,7 @@
     <string name="script_permissions_title">權限</string>
     <string name="script_permissions_none">無</string>
     <string name="script_settings_category">設定</string>
-    <string name="script_list_filter">過濾器</string>
+    <string name="script_list_filter">篩選</string>
     <string name="script_button_off">首先打開腳本</string>
     <string name="script_permissions_summary">關閉其中一個會停止需要它的部分。</string>
     <string name="script_install_permissions_note">您可以稍後將其關閉。</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">可能不適用於此SandFly</string>
     <string name="script_api_range">腳本 API <xliff:g id="min">%1$d</xliff:g> 到 <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">相容性</string>
-    <string name="script_install_anyway">無論如何安裝</string>
+    <string name="script_install_anyway">仍要安裝</string>
     <string name="script_update_anyway">無論如何都要更新</string>
     <string name="script_homepage">開啟首頁</string>
     <string name="script_homepage_confirm_title">開啟這個網址？</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">沒有可複製的視窗</string>
     <string name="script_tree_clip_label">螢幕樹</string>
     <string name="summary_copy_screen_tree_menu">將螢幕上的所有項目複製為JSON，用於編寫腳本</string>
-    <string name="script_inspect_clip_label">商品詳情</string>
+    <string name="script_inspect_clip_label">項目詳細資料</string>
     <string name="summary_inspect_item_menu">說出並複製您所在項目的詳細信息，以編寫腳本</string>
-    <string name="script_keys_backtalk_modifier">SandFly修飾符</string>
+    <string name="script_keys_backtalk_modifier">SandFly 輔助鍵</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>，然後<xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">命令</string>
     <string name="script_commands_summary">正在執行的腳本的手勢和按鍵位於 SandFly 之前。關閉其中一個以保留 SandFly。</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">鍵入按鍵</string>
     <string name="script_binding_type_keys_summary">就像 sf+shift+n, 或 sf+t, s</string>
     <string name="script_binding_bad_keys">無法使用這些鍵。 <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">它補充道：</string>
+    <string name="script_install_adds">會新增：</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">腳本來源</string>
     <string name="script_sources_none">未添加來源</string>

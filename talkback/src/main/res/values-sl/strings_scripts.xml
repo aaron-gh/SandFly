@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">Skripte</string>
     <string name="summary_pref_scripts">Spremenite način delovanja SandFly v aplikacijah</string>
     <string name="script_import">Uvozi skript</string>
-    <string name="script_install_label">Namestite skript SandFly</string>
+    <string name="script_install_label">Namesti skript SandFly</string>
     <string name="script_import_nothing">Ni skriptne datoteke za namestitev.</string>
     <string name="script_import_cannot_open">Datoteke ni bilo mogoče odpreti.</string>
     <string name="script_import_repository">Ta povezava vodi do celotnega repozitorija. Odprite želeni skript in nato delite njegovo povezavo.</string>
@@ -25,10 +25,10 @@
     <string name="script_runs_everywhere">Deluje v vseh aplikacijah</string>
     <string name="script_version">Različica <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Avtor <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title">Namestite <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_title">Želite namestiti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Lahko:</string>
     <string name="script_install_no_permissions">Dovoljenja niso potrebna.</string>
-    <string name="script_install_button">Namestite</string>
+    <string name="script_install_button">Namesti</string>
     <string name="script_update_title">Posodobiti <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nova dovoljenja:</string>
     <string name="script_update_button">Posodobitev</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Morda ne bo delovalo s tem SandFly</string>
     <string name="script_api_range">API za skripte <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Združljivost</string>
-    <string name="script_install_anyway">Vseeno namestite</string>
+    <string name="script_install_anyway">Vseeno namesti</string>
     <string name="script_update_anyway">Vseeno posodobi</string>
     <string name="script_homepage">Odpri domačo stran</string>
     <string name="script_homepage_confirm_title">Odpreti ta naslov?</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">Ni okna za kopiranje</string>
     <string name="script_tree_clip_label">Zaslonsko drevo</string>
     <string name="summary_copy_screen_tree_menu">Kopirajte vse elemente na zaslonu kot JSON, za pisanje skriptov</string>
-    <string name="script_inspect_clip_label">Podrobnosti artikla</string>
+    <string name="script_inspect_clip_label">Podrobnosti elementa</string>
     <string name="summary_inspect_item_menu">Izgovorite in kopirajte podrobnosti elementa, na katerem ste bili, za pisanje skriptov</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikator</string>
+    <string name="script_keys_backtalk_modifier">Modifikatorska tipka SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, nato <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Ukazi</string>
     <string name="script_commands_summary">Poteze in tipke delujočega skripta so pred SandFly. Izklopite enega, če želite obdržati SandFly.</string>

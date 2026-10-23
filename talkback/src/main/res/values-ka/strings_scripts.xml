@@ -3,7 +3,7 @@
     <string name="title_pref_scripts">სკრიპტები</string>
     <string name="summary_pref_scripts">შეცვალეთ როგორ მუშაობს SandFly აპებში</string>
     <string name="script_import">სკრიპტის იმპორტი</string>
-    <string name="script_install_label">დააინსტალირეთ SandFly სკრიპტი</string>
+    <string name="script_install_label">SandFly სკრიპტის ინსტალაცია</string>
     <string name="script_import_nothing">დასაინსტალირებელი სკრიპტის ფაილი არ არის.</string>
     <string name="script_import_cannot_open">ფაილის გახსნა ვერ მოხერხდა.</string>
     <string name="script_import_repository">ეს ბმული არის მთელი საცავი. გახსენით თქვენთვის სასურველი სკრიპტი, შემდეგ გააზიარეთ მისი ბმული.</string>
@@ -25,16 +25,16 @@
     <string name="script_runs_everywhere">მუშაობს ყველა აპლიკაციაში</string>
     <string name="script_version">ვერსია <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">ავტორი: <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title">დააინსტალირეთ <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_title">დაინსტალირდეს <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">მას შეუძლია:</string>
     <string name="script_install_no_permissions">არ არის საჭირო ნებართვები.</string>
-    <string name="script_install_button">დააინსტალირეთ</string>
+    <string name="script_install_button">ინსტალაცია</string>
     <string name="script_update_title">განაახლეთ <xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g>-მდე?</string>
     <string name="script_update_new_permissions">ახალი ნებართვები:</string>
     <string name="script_update_button">განახლება</string>
     <string name="script_update_replaces">ეს ცვლის <xliff:g id="version">%1$s</xliff:g> ვერსიას <xliff:g id="author">%2$s</xliff:g>-ით და ინახავს მის მონაცემებსა და პარამეტრებს.</string>
     <string name="script_update_other_author">ახალი არის <xliff:g id="author">%1$s</xliff:g>, განსხვავებული ავტორი. განაახლეთ მხოლოდ იმ შემთხვევაში, თუ მას ენდობით.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> დაინსტალირებული</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> დაინსტალირდა</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> განახლებულია <xliff:g id="version">%2$s</xliff:g>-ზე</string>
     <string name="script_import_failed">იმპორტი ვერ მოხერხდა. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. მხოლოდ სანდო სკრიპტების დაშვება.</string>
@@ -63,7 +63,7 @@
     <string name="script_move_up">ადრე გაუშვით</string>
     <string name="script_move_down">გაიქეცი მოგვიანებით</string>
     <string name="script_order_summary">Order for scripts that change the same speech. აპის სკრიპტები პირველ რიგში გაშვებულია.</string>
-    <string name="script_log">შესვლა</string>
+    <string name="script_log">ჟურნალი</string>
     <string name="script_log_summary">გამომავალი და შეცდომები SandFly დაწყებიდან</string>
     <string name="script_clear_storage">შენახული მონაცემების გასუფთავება</string>
     <string name="script_storage_cleared">შენახული მონაცემები გასუფთავებულია</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">შეიძლება არ იმუშაოს ამ SandFly</string>
     <string name="script_api_range">სკრიპტის API <xliff:g id="min">%1$d</xliff:g> <xliff:g id="tested">%2$d</xliff:g>-მდე</string>
     <string name="script_compatibility_title">თავსებადობა</string>
-    <string name="script_install_anyway">დააინსტალირე მაინც</string>
+    <string name="script_install_anyway">მაინც დაინსტალირება</string>
     <string name="script_update_anyway">განაახლეთ მაინც</string>
     <string name="script_homepage">საწყისი გვერდის გახსნა</string>
     <string name="script_homepage_confirm_title">გაიხსნას ეს მისამართი?</string>
@@ -97,9 +97,9 @@
     <string name="script_tree_none">კოპირების ფანჯარა არ არის</string>
     <string name="script_tree_clip_label">ეკრანის ხე</string>
     <string name="summary_copy_screen_tree_menu">დააკოპირეთ ყველა ელემენტი ეკრანზე, როგორც JSON, სკრიპტების დასაწერად</string>
-    <string name="script_inspect_clip_label">ნივთის დეტალები</string>
+    <string name="script_inspect_clip_label">ელემენტის დეტალები</string>
     <string name="summary_inspect_item_menu">თქვით და დააკოპირეთ იმ ელემენტის დეტალები, რომლებზეც იმყოფებოდით სკრიპტების დასაწერად</string>
-    <string name="script_keys_backtalk_modifier">SandFly მოდიფიკატორი</string>
+    <string name="script_keys_backtalk_modifier">SandFly-ის მოდიფიკატორი კლავიში</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, შემდეგ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ბრძანებები</string>
     <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტები და კლავიშები მოდის SandFly-ზე წინ. გამორთეთ ერთი SandFly-ების შესანარჩუნებლად.</string>
@@ -121,7 +121,7 @@
     <string name="script_binding_type_keys">კლავიშების აკრეფა</string>
     <string name="script_binding_type_keys_summary">მოიწონეთ sf+shift+n, ან sf+t, წმ</string>
     <string name="script_binding_bad_keys">ამ გასაღებების გამოყენება შეუძლებელია. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">იგი დასძენს:</string>
+    <string name="script_install_adds">ამატებს:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">სკრიპტის წყაროები</string>
     <string name="script_sources_none">არ არის დამატებული წყაროები</string>

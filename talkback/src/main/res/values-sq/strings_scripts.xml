@@ -28,13 +28,13 @@
     <string name="script_install_title">Të instalohet <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Ajo mund të:</string>
     <string name="script_install_no_permissions">Nuk nevojiten leje.</string>
-    <string name="script_install_button">Instaloni</string>
+    <string name="script_install_button">Instalo</string>
     <string name="script_update_title">Të përditësohet <xliff:g id="name">%1$s</xliff:g> në <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Lejet e reja:</string>
     <string name="script_update_button">Përditëso</string>
     <string name="script_update_replaces">Kjo zëvendëson versionin <xliff:g id="version">%1$s</xliff:g> me <xliff:g id="author">%2$s</xliff:g> dhe ruan të dhënat dhe cilësimet e tij.</string>
     <string name="script_update_other_author">E reja është nga <xliff:g id="author">%1$s</xliff:g>, një autor tjetër. Përditësoni vetëm nëse i besoni.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> i instaluar</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> u instalua</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> përditësuar në <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importi dështoi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Lejo vetëm skriptet e besuara.</string>
@@ -63,7 +63,7 @@
     <string name="script_move_up">Vraponi më herët</string>
     <string name="script_move_down">Vraponi më vonë</string>
     <string name="script_order_summary">Porosit për skriptet që ndryshojnë të njëjtin fjalim. Skriptet e aplikacioneve ekzekutohen së pari.</string>
-    <string name="script_log">Regjistrohu</string>
+    <string name="script_log">Regjistri</string>
     <string name="script_log_summary">Prodhimi dhe gabimet që nga fillimi SandFly</string>
     <string name="script_clear_storage">Pastro të dhënat e ruajtura</string>
     <string name="script_storage_cleared">Të dhënat e ruajtura u pastruan</string>
@@ -81,7 +81,7 @@
     <string name="script_state_incompatible">Mund të mos funksionojë me këtë SandFly</string>
     <string name="script_api_range">API-ja e skriptit <xliff:g id="min">%1$d</xliff:g> në <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Përputhshmëria</string>
-    <string name="script_install_anyway">Instaloni gjithsesi</string>
+    <string name="script_install_anyway">Instalo gjithsesi</string>
     <string name="script_update_anyway">Përditëso gjithsesi</string>
     <string name="script_homepage">Hap faqen kryesore</string>
     <string name="script_homepage_confirm_title">Të hapet kjo adresë?</string>
@@ -90,16 +90,16 @@
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> fiket pas gabimeve të përsëritura. Shih regjistrin e tij në Skriptet.</string>
     <string name="shortcut_inspect_item">Inspektoni artikullin e fokusuar</string>
     <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
-    <string name="script_inspect_copied">E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">U kopjua. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nuk ka id, kështu që rregullat nuk mund ta emërtojnë atë. E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopjoni pemën e ekranit</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> artikuj të kopjuar</string>
     <string name="script_tree_none">Nuk ka dritare për të kopjuar</string>
     <string name="script_tree_clip_label">Pema e ekranit</string>
     <string name="summary_copy_screen_tree_menu">Kopjo të gjithë artikujt në ekran si JSON, për të shkruar skriptet</string>
-    <string name="script_inspect_clip_label">Detajet e artikullit</string>
+    <string name="script_inspect_clip_label">Detajet e elementit</string>
     <string name="summary_inspect_item_menu">Thoni dhe kopjoni detajet e artikullit ku ishit, për të shkruar skriptet</string>
-    <string name="script_keys_backtalk_modifier">Modifikues SandFly</string>
+    <string name="script_keys_backtalk_modifier">Tasti modifikues i SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pastaj <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandat</string>
     <string name="script_commands_summary">Gjestet dhe tastet e një skripti ekzekutues vijnë përpara SandFly. Fike njërën për të mbajtur SandFly.</string>
