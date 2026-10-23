@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBackin pistekirjoitusnäppäimistö</string>
+  <string name="braille_ime_service_name">SandFlyin pistekirjoitusnäppäimistö</string>
   <string name="braille_ime_bd_mode_name">Syöttö pistekirjoitusnäytöllä</string>
   <string name="switch_to_tabletop_announcement">Pöytätila. Aseta laite niin, että latausportti on vasemmalla.</string>
   <string name="calibration_tip_announcement">Jos haluat muuttaa pisteen sijaintia, paina pitkään %d sormella.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Vaihdettiin lyhentämättömään pistekirjoitukseen</string>
   <string name="braille_ime_displayed_name">pistekirjoitusnäppäimistö</string>
   <string name="multiple_languages_braille_ime_displayed_name">pistekirjoitusnäppäimistö, %s</string>
-  <string name="input_view_caption">TalkBackin pistekirjoitusnäppäimistö – saat ohjeita osoitteesta g.co/help/braille</string>
+  <string name="input_view_caption">SandFlyin pistekirjoitusnäppäimistö – saat ohjeita osoitteesta g.co/help/braille</string>
   <string name="perform_action_next">Seuraava</string>
   <string name="perform_action_submitting">Lähetetään tekstiä</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Muutetaan pisteen sijaintia. Tallennetaan ensin %s pisteet.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Jos haluat vaihtaa kieltä kirjoittaessasi pistekirjoitusnäppäimistöllä, avaa valikko pyyhkäisemällä ylös kolmella sormella. Valitse sitten \"Vaihda seuraavaan kieleen\".</string>
   <string name="title_pref_accumulate_presses">Sisällytä kaikki painetut pisteet</string>
   <string name="summary_pref_accumulate_presses">Jokainen painettu piste on syötteen osa, vaikka piste vapautetaan ennen muita pisteitä</string>
-  <string name="title_pref_reverse_dots">Käänteiset pisteet</string>
-  <string name="summary_pref_reverse_dots">Vaihda pisteiden paikkaa siten, että esimerkiksi pisteet 1 ja 4 vaihtavat paikkaa</string>
+  <string name="title_pref_reverse_dots">Vaihda vasemman ja oikean puolen pisteet keskenään</string>
+  <string name="summary_pref_reverse_dots">Pisteet 1, 2 ja 3 vaihtavat paikkaa pisteiden 4, 5 ja 6 kanssa</string>
   <string name="bd_preference_braille_contracted">Lyhennetty pistekirjoitus</string>
   <string name="bd_preference_braille_uncontracted">Lyhentämätön pistekirjoitus</string>
   <string name="context_menu_title">Pistekirjoitusnäppäimistön asetukset</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Näppäimistö</string>
   <string name="not_enough_touch_points_dialog_title">Laitteesi ei tue pistekirjoitusnäppäimistöä.</string>
   <string name="not_enough_touch_points_dialog_message">Laitteesi ei tue riittävää määrää kosketuspisteitä. Saat lisätietoja laitteen valmistajalta.</string>
-  <string name="talkback_off_dialog_title">TalkBackin ottaminen käyttöön pistekirjoitusnäppäimistön käyttöä varten</string>
+  <string name="talkback_off_dialog_title">SandFlyin ottaminen käyttöön pistekirjoitusnäppäimistön käyttöä varten</string>
   <string name="talkback_off_dialog_positive_button">Ota käyttöön esteettömyysasetuksista</string>
-  <string name="talkback_suspend_dialog_title">Jatka TalkBackia käyttääksesi pistekirjoitusnäppäimistöä</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kun TalkBack on käytössä, voit syöttää pistekirjoitusmerkkejä napauttamalla näyttöä.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Laita TalkBack päälle muuttaaksesi elettä</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack on pois päältä. Laita se päälle, jotta voit muuttaa pistekirjoitusnäppäimistön eleitä.</string>
+  <string name="talkback_suspend_dialog_title">Jatka SandFlyia käyttääksesi pistekirjoitusnäppäimistöä</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kun SandFly on käytössä, voit syöttää pistekirjoitusmerkkejä napauttamalla näyttöä.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Laita SandFly päälle muuttaaksesi elettä</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly on pois päältä. Laita se päälle, jotta voit muuttaa pistekirjoitusnäppäimistön eleitä.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Avaa Asetukset</string>
   <string name="reset_gestures_dialog_title">Nollataanko kaikki eleet?</string>
   <string name="reset_gestures_dialog_message">Kaikki pistekirjoitusnäppäimistön eleet palautetaan oletusasetuksiin</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Palauta oletus</string>
   <string name="custom_gestures_dialog_remove_button">Poista ele</string>
   <string name="change_gestures_dialog_message_title">Eleen muuttaminen</string>
-  <string name="change_gestures_dialog_message">Seuraavalla näytöllä avautuu pistekirjoitusnäppäimistö, etkä voit käyttää TalkBack-eleitä.\n\nKun pistekirjoitusnäppäimistö avautuu, tee ele, jota haluat käyttää. Jos haluat sulkea pistekirjoitusnäppäimistön ja perua eleen muutoksen, pyyhkäise alas kahdella sormella.\n\nKatso käytettävissä olevat eleet\n</string>
+  <string name="change_gestures_dialog_message">Seuraavalla näytöllä avautuu pistekirjoitusnäppäimistö, etkä voit käyttää SandFly-eleitä.\n\nKun pistekirjoitusnäppäimistö avautuu, tee ele, jota haluat käyttää. Jos haluat sulkea pistekirjoitusnäppäimistön ja perua eleen muutoksen, pyyhkäise alas kahdella sormella.\n\nKatso käytettävissä olevat eleet\n</string>
   <string name="change_gestures_dialog_message_link">Katso käytettävissä olevat eleet</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Älä näytä tätä viestiä uudelleen</string>
   <string name="change_gestures_dialog_positive_button">Jatka</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Älä käytä</string>
   <string name="next_keyboard">Seuraava näppäimistö</string>
   <string name="braille_tutorial_title">Pistekirjoitusnäppäimistön ohje</string>
-  <string name="tutorial_intro_description">Kun sinulla on pistekirjoitusnäppäimistö, voit syöttää 6 pisteen pistekirjoitusta napauttamalla näyttöä.\n\nKäytät yleistä englanninkielistä pistekirjoitusta. Voit vaihtaa kirjoituskieltä palaamalla TalkBackin asetuksiin.\n\nPistekirjoitusta varten puhelinta on pidettävä ja käytettävä eri tavalla.</string>
+  <string name="tutorial_intro_description">Kun sinulla on pistekirjoitusnäppäimistö, voit syöttää 6 pisteen pistekirjoitusta napauttamalla näyttöä.\n\nKäytät yleistä englanninkielistä pistekirjoitusta. Voit vaihtaa kirjoituskieltä palaamalla SandFlyin asetuksiin.\n\nPistekirjoitusta varten puhelinta on pidettävä ja käytettävä eri tavalla.</string>
   <string name="next_step">Seuraava</string>
   <string name="leave_keyboard">Sulje pistekirjoitusnäppäimistö</string>
-  <string name="hold_six_fingers_description">Et voi käyttää tavallisia TalkBack-eleitä pistekirjoitusnäppäimistöllä.\n\nAloitetaan määrittämällä kirjoittamiseen käyttämiesi kuuden pisteen sijainti.</string>
-  <string name="rotate_orientation_description_1">Tästä alkaen et voi käyttää normaaleja TalkBack-eleitä. TalkBack ei ole käytettävissä pistekirjoitusnäppäimistön käytön aikana.</string>
+  <string name="hold_six_fingers_description">Et voi käyttää tavallisia SandFly-eleitä pistekirjoitusnäppäimistöllä.\n\nAloitetaan määrittämällä kirjoittamiseen käyttämiesi kuuden pisteen sijainti.</string>
+  <string name="rotate_orientation_description_1">Tästä alkaen et voi käyttää normaaleja SandFly-eleitä. SandFly ei ole käytettävissä pistekirjoitusnäppäimistön käytön aikana.</string>
   <string name="rotate_orientation_description_2">Aloita pitämällä puhelinta niin, että sen näyttö on itsestäsi poispäin.</string>
   <string name="tap_to_continue">Jatka kaksoisnapauttamalla näyttöä.</string>
   <string name="instruction_type_letter_a">Kirjoita A napauttamalla pistettä 1 vasemman käden etusormella.</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">SIIRRÄ KOHDISTINTA ETEENPÄIN</string>
   <string name="result_swipe_down_2_fingers">PIILOTA NÄPPÄIMISTÖ</string>
   <string name="result_swipe_down_3_fingers">SEURAAVA NÄPPÄIMISTÖ</string>
-  <string name="rotate_orientation_announcement">Tästä alkaen et voi käyttää normaaleja TalkBack-eleitä. TalkBack ei ole käytettävissä pistekirjoitusnäppäimistön käytön aikana.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Tästä alkaen et voi käyttää normaaleja SandFly-eleitä. SandFly ei ole käytettävissä pistekirjoitusnäppäimistön käytön aikana.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Käännä puhelin ensin siten, että näyttö on poispäin itsestäsi.\n\nKäännä sitten puhelin vaakasuoraan asentoon. Pitele puhelinta sen lyhyistä sivuista. Pitele USB-portin puolta oikealla kädellä. Pidä kolmea keskimmäistä sormeasi näytöllä ja tue puhelinta pikkusormella ja peukalolla.\n\nKun olet valmis, jatka kaksoisnapauttamalla näyttöä.\n\nPoistu pistekirjoitusnäppäimistöstä pyyhkäisemällä alaspäin kolmella sormella. Tämä vaihtaa takaisin alkuperäiseen näppäimistöösi.</string>
   <string name="rotate_orientation_continue_announcement">Puhelimesi on pystyasennossa. Jatka kääntämällä puhelin vaakasuoraan siten, että pitkä sivu on alaspäin. Käännä sitten näyttö itsestäsi poispäin. Kun olet valmis, jatka kaksoisnapauttamalla näyttöä.</string>
   <string name="type_letter_a_announcement">Pidä näyttö itsestäsi poispäin. Pitele puhelinta molemmin käsin sen lyhyistä reunoista siten, että molempien käsien kolme keskimmäistä sormea voivat koskettaa näyttöä.\n\nVasemman käden etusormen tulisi olla pisteen 1 päällä. Kirjoita A napauttamalla pistettä 1.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Vaihda toiseen näppäimistöön pyyhkäisemällä alas kolmella sormella. Kokeile nyt.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Seuraava näppäimistö. Tavallisesti tämä vaihtaa seuraavaan näppäimistöön. Tällä kertaa pysyt pistekirjoitusnäppäimistössä, koska ohje on vielä avoinna.</string>
   <string name="swipe_up_3_fingers_announcement">Voit myös kirjoittaa pöytätilassa asettamalla puhelimen vaakatasoon pöydälle. Sulje ohje pyyhkäisemällä ylös kolmella sormella ja valitsemalla lopettamisvaihtoehto.</string>
-  <string name="open_context_menu_announcement">Asetusvalikko on avoinna. Käännä puhelin ympäri niin, että näyttö on itseesi päin, ja pitele sitä normaalisti. Voit nyt navigoida normaaleilla TalkBack-eleillä. Katso lisää vaihtoehtoja pyyhkäisemällä oikealle.</string>
+  <string name="open_context_menu_announcement">Asetusvalikko on avoinna. Käännä puhelin ympäri niin, että näyttö on itseesi päin, ja pitele sitä normaalisti. Voit nyt navigoida normaaleilla SandFly-eleillä. Katso lisää vaihtoehtoja pyyhkäisemällä oikealle.</string>
   <string name="hold_six_fingers_announcement">%s\nAseta puhelin pöydälle vaakatasossa. Kosketa sitten näyttöä pitkään kummankin käden kolmella keskimmäisellä sormella asennossa, jossa kirjoittaminen tuntuu mukavalta.</string>
   <string name="hold_six_fingers_inactive_announcement">Aseta puhelin pöydälle vaakatasossa. Kosketa sitten näyttöä pitkään kummankin käden kolmella keskimmäisellä sormella asennossa, jossa kirjoittaminen tuntuu mukavalta.</string>
   <string name="finish_tutorial_announcement">Pistekirjoitusnäppäimistö näkyy. Käännä puhelinta ensin niin, että näyttö on poispäin sinusta. Käännä sitten puhelin vaakasuoraan asentoon. Aloita sitten kirjoittaminen.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Elettä käytetään tähän: \"%1$s\". Sitä ei voi muuttaa. Kokeile toista elettä. %2$s</string>
   <string name="custom_gesture_cannot_used">Tätä elettä ei voi käyttää</string>
   <string name="custom_gesture_no_gesture">Eleitä ei tehty</string>
-  <string name="custom_gesture_try_another">Kokeile toista elettä. Jos haluat nähdä kaikki käytettävissä olevat eleet, siirry TalkBackin pistekirjoitusnäppäimistön ohjekeskukseen. %s</string>
+  <string name="custom_gesture_try_another">Kokeile toista elettä. Jos haluat nähdä kaikki käytettävissä olevat eleet, siirry SandFlyin pistekirjoitusnäppäimistön ohjekeskukseen. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Eleet eivät täsmänneet</string>
   <string name="custom_gesture_perform_again">Tee uudelleen ele, jota haluat käyttää. %s</string>
+    <string name="tabletop_port_left_announcement">Pöytätila, latausportti vasemmalla</string>
+    <string name="tabletop_port_right_announcement">Pöytätila, latausportti oikealla</string>
+    <string name="screen_away_port_right_announcement">Näyttö sinusta poispäin, latausportti oikealla</string>
+    <string name="screen_away_port_left_announcement">Näyttö sinusta poispäin, latausportti vasemmalla</string>
+    <string name="screen_toward_announcement">Näyttö sinua kohti</string>
+    <string name="screen_toward_port_left_announcement">Näyttö sinua kohti, latausportti vasemmalla</string>
+    <string name="screen_toward_port_right_announcement">Näyttö sinua kohti, latausportti oikealla</string>
+    <string name="screen_toward_port_down_announcement">Näyttö sinua kohti, latausportti alaspäin</string>
+    <string name="screen_toward_port_up_announcement">Näyttö sinua kohti, latausportti ylöspäin</string>
+    <string name="port_right_announcement">Latausportti oikealla</string>
+    <string name="port_left_announcement">Latausportti vasemmalla</string>
+    <string name="tabletop_port_near_announcement">Pöytätila, latausportti sinua kohti</string>
+    <string name="tabletop_port_far_announcement">Pöytätila, latausportti sinusta poispäin</string>
+    <string name="screen_away_port_down_announcement">Näyttö sinusta poispäin, latausportti alaspäin</string>
+    <string name="screen_away_port_up_announcement">Näyttö sinusta poispäin, latausportti ylöspäin</string>
+    <string name="port_near_announcement">Latausportti sinua kohti</string>
+    <string name="port_far_announcement">Latausportti sinusta poispäin</string>
+    <string name="port_down_announcement">Latausportti alaspäin</string>
+    <string name="port_up_announcement">Latausportti ylöspäin</string>
+    <string name="orientation_locked_announcement">Suunta lukittu</string>
+    <string name="orientation_locked_port_announcement">Suunta lukittu. %1$s</string>
+    <string name="orientation_unlocked_announcement">Suunnan lukitus avattu</string>
+    <string name="switch_to_language_contracted_announcement">%s otettu käyttöön, Lyhennetty pistekirjoitus</string>
+    <string name="switch_to_language_uncontracted_announcement">%s otettu käyttöön, Lyhentämätön pistekirjoitus</string>
+    <string name="title_pref_flip_dots_vertically">Vaihda ylä- ja alapisteet keskenään</string>
+    <string name="summary_pref_flip_dots_vertically">Piste 1 vaihtaa paikkaa pisteen 3 kanssa ja piste 4 pisteen 6 kanssa</string>
+    <string name="title_pref_tablet_held_up_faces_away">Pystyssä pidetyn tabletin näyttö poispäin</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kun pois päältä, pystyssä pidetty tabletti tai avattu taittopuhelin käyttää pöytäasettelua näyttö sinua kohti</string>
+    <string name="title_pref_typing_sounds">Kirjoitusäänet</string>
+    <string name="summary_pref_typing_sounds">Toista näppäinääniä, kun kirjoitat merkin, välilyönnin tai rivinvaihdon tai poistat tekstiä</string>
+    <string name="skip_tutorial">Ohita opastus</string>
 </resources>

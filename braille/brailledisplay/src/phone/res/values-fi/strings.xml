@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Pistekirjoituslaitteiston näppäimistö</string>
   <string name="bd_application_name">Saavutettavuus</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBackin pistekirjoitusnäppäimistö ei käytettävissä</string>
-  <string name="bd_ime_disabled_dialog_title">Laita TalkBackin pistekirjoitusnäppäimistö päälle</string>
+  <string name="bd_ime_unavailable_activity_name">SandFlyin pistekirjoitusnäppäimistö ei käytettävissä</string>
+  <string name="bd_ime_disabled_dialog_title">Laita SandFlyin pistekirjoitusnäppäimistö päälle</string>
   <string name="bd_ime_disabled_dialog_message">Jos haluat kirjoittaa pistekirjoitusnäytön avulla, laita se päälle syöttöasetuksista</string>
   <string name="bd_ime_disabled_dialog_title_positive">Syöttöasetukset</string>
   <string name="bd_ime_not_default_dialog_title">Vaihda syöttötapaa</string>
-  <string name="bd_ime_not_default_dialog_message">Aseta TalkBackin pistekirjoitusnäppäimistö syöttötavaksi, niin voit jatkaa kirjoittamista</string>
+  <string name="bd_ime_not_default_dialog_message">Aseta SandFlyin pistekirjoitusnäppäimistö syöttötavaksi, niin voit jatkaa kirjoittamista</string>
   <string name="bd_ime_not_default_dialog_positive">Vaihda syöttötapaa</string>
   <string name="type_unlabeled">Tunnisteeton</string>
   <string name="type_unlabeled_edittext">Tunnisteeton muokkauskenttä</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Panoroi vasemmalle</string>
   <string name="overlay_pan_right_button">Panoroi oikealle</string>
   <string name="bd_preferences_title">Pistekirjoitusnäyttö</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Jos haluat käyttää pistekirjoitusnäyttöä, laita ensin TalkBack päälle</string>
-  <string name="bd_preferences_banner_talkback_off_button">Avaa TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Jos haluat käyttää pistekirjoitusnäyttöä, laita ensin SandFly päälle</string>
+  <string name="bd_preferences_banner_talkback_off_button">Avaa SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Jos haluat käyttää pistekirjoitusnäyttöä, laita ensin Bluetooth päälle</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Laita Bluetooth päälle</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">%s tarvitsee pääsyn lähellä oleviin laitteisiin, jotta voit käyttää pistekirjoitusnäyttöä</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Jos haluat käyttää selaustilaa, sinun on vaihdettava oletusnäppäinkartta parannettuun näppäinkarttaan. Tämä muutos päivittää joitakin pistekirjoitusnäytön komentoja</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Asetukset</string>
   <string name="bd_command_change_dialog_title">Osa komennoista on päivitetty</string>
-  <string name="bd_command_change_dialog_message">Tässä versiossa päivitetyt komennot:\n\n• Edellinen kohde: Paina 1 ja 7\n\n• Seuraava kohde: Paina 4 ja 8\n\n• Edellinen lukuasetus: Paina 2, 3, 7 ja 8\n\n• Seuraava lukuasetus: Paina 5, 6, 7 ja 8</string>
+  <string name="bd_command_change_dialog_message">Nämä pistenäytön komennot päivitettiin tässä SandFlyn versiossa:\n\n• Edellinen kohde: Paina pisteitä 1 ja 7\n\n• Seuraava kohde: Paina pisteitä 4 ja 8\n\n• Edellinen lukusäädin: Paina pisteitä 2, 3, 7 ja 8\n\n• Seuraava lukusäädin: Paina pisteitä 5, 6, 7 ja 8</string>
   <string name="bd_preference_braille_contracted">Lyhennetty pistekirjoitus</string>
   <string name="bd_preference_braille_uncontracted">Lyhentämätön pistekirjoitus</string>
   <string name="bd_braille_grade_tips">Voit vaihtaa nopeasti lyhennetyn ja lyhentämättömän pistekirjoitustilan välillä painamalla välilyöntiä ja pisteitä 1, 2, 4, 5.\n\nKomento toimii, jos käytät kieltä, jossa on molemmat pistekirjoitustasot.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Kohteiden välillä siirtyminen</string>
   <string name="bd_commands_bindings_category_system_actions_title">Järjestelmätoiminnot</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Esimerkiksi takaisin, etusivu ja ilmoitukset</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBackin ominaisuudet</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBackin valikot ja asetukset</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFlyin ominaisuudet</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFlyn valikot ja asetukset</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Pistekirjoitusasetukset</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Pistekirjoituksen kieli ja asetukset</string>
   <string name="bd_commands_bindings_category_text_editing_title">Tekstin muokkaaminen</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Avaa kaikki sovellukset</string>
   <string name="bd_cmd_toggle_screen_search">Avaa näyttöhaku</string>
   <string name="bd_cmd_edit_custom_label">Muokkaa omaa tunnistetta</string>
-  <string name="bd_cmd_open_talkback_menu">Avaa TalkBack-valikko</string>
-  <string name="bd_cmd_toggle_voice_feedback">Laita TalkBack-puhe päälle tai pois päältä</string>
+  <string name="bd_cmd_open_talkback_menu">Avaa SandFly-valikko</string>
+  <string name="bd_cmd_toggle_voice_feedback">Laita SandFly-puhe päälle tai pois päältä</string>
   <string name="bd_cmd_read_stop">Lopeta lukeminen</string>
-  <string name="bd_cmd_talkback_settings">Avaa TalkBack-asetukset</string>
+  <string name="bd_cmd_talkback_settings">Avaa SandFly-asetukset</string>
   <string name="bd_cmd_switch_to_next_input_language">Vaihda seuraavaan kirjoituskieleen</string>
   <string name="bd_cmd_switch_to_next_output_language">Siirry seuraavaan lukukieleen</string>
   <string name="bd_cmd_toggle_contracted_mode">Vaihda lyhennetyn ja lyhentämättömän tilan välillä</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Siirry verkkosivuilla selaustilaan siirtymiskomennolla ja kirjoittamalla seuraavat kirjain- tai numeropikanäppäimet\n\nNe toimivat myös ilman selaustilaa (lisää piste 8 \"seuraava\"-komentoihin)</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Taulukossa siirtyminen</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Laitetaanko pistekirjoitusnäytön asetus pois päältä?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Voit laittaa sen päälle milloin tahansa TalkBack-asetuksista</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Voit laittaa sen päälle milloin tahansa SandFly-asetuksista</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Laita pois päältä</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Jotkin komennot eivät ole käytettävissä</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigointikomennot, pistekirjoitusasetukset ja jotkin TalkBackin ominaisuudet eivät ole käytettävissä kirjoittamisen tai muokkaamisen aikana.\n\nJos haluat käyttää näitä komentoja, sulje ensin näppäimistö.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigointikomennot, pistekirjoitusasetukset ja jotkin SandFlyin ominaisuudet eivät ole käytettävissä kirjoittamisen tai muokkaamisen aikana.\n\nJos haluat käyttää näitä komentoja, sulje ensin näppäimistö.</string>
   <string name="bd_caption_tutorial_dialog_title">Tekstitykset pistekirjoitusnäytöllä</string>
   <string name="bd_caption_tutorial_dialog_message">Näytä tai piilota tekstitykset painamalla välilyöntiä ja pisteitä 1, 4, 7 ja 8.\n\nNäytä tuetun median tekstitykset automaattisesti: valitse asetuksista \"Näytä tekstitykset pistekirjoitusnäytöllä\".</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Näytä tämä viesti aina, kun tekstitykset ovat saatavilla</string>
   <string name="bd_usb_connect_dialog_title">Pistekirjoitusnäyttö yhdistetty USB:hen</string>
-  <string name="bd_usb_connect_dialog_message">Akku (%s) lataa pistekirjoitusnäyttöä.\n\nJos sinun täytyy vaihtaa käyttöön Bluetooth, katkaise yhteys USB- tai USB-hubiin ja avaa TalkBackin asetukset &gt; Pistekirjoitusnäyttö.</string>
+  <string name="bd_usb_connect_dialog_message">Akku (%s) lataa pistekirjoitusnäyttöä.\n\nJos sinun täytyy vaihtaa käyttöön Bluetooth, katkaise yhteys USB- tai USB-hubiin ja avaa SandFlyin asetukset &gt; Pistekirjoitusnäyttö.</string>
   <string name="bd_device">puhelin</string>
   <string name="bd_battery_low_dialog_title">%s: akku vähissä</string>
   <string name="bd_battery_low_dialog_message">Akku (%s) lataa pistekirjoitusnäyttöä.\n\nNäin voit säästää akkua:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Tyhjennä kaikki</string>
   <string name="popup_message_history_empty">Tyhjä</string>
   <string name="popup_message_history_consent_dialog_title">Laitetaanko laitteen viestihistoria päälle?</string>
-  <string name="popup_message_history_consent_dialog_msg">Tällöin jotkin viestit, esimerkiksi ilmoitukset ja hälytykset, tallennetaan TalkBackiin. Voit muuttaa asetusta milloin tahansa.</string>
+  <string name="popup_message_history_consent_dialog_msg">Tällöin jotkin viestit, esimerkiksi ilmoitukset ja hälytykset, tallennetaan SandFlyiin. Voit muuttaa asetusta milloin tahansa.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Laita päälle</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ei kiitos</string>
+    <string name="external_display_channel">Muiden sovellusten pistenäytöt</string>
+    <string name="external_display_ask_title">Saako <xliff:g id="app" example="Notetaker">%1$s</xliff:g> toimia SandFlyn pistenäyttönä?</string>
+    <string name="external_display_ask_text">SandFly ei käytä sitä ennen kuin annat luvan.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> voi lukea kaiken, mitä SandFly näyttää pistekirjoituksena. Se voi olla mitä tahansa näytön sisältöä, kuten viestejä ja kirjoittamaasi tekstiä. Se voi myös ohjata laitettasi pistenäytön tavoin: kirjoittaa, avata sovelluksia ja suorittaa kaikkia SandFlyn komentoja. Anna lupa vain sovelluksille, joihin luotat.</string>
+    <string name="external_display_allow">Salli</string>
+    <string name="external_display_deny">Älä salli</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> on pistenäyttösi</string>
+    <string name="external_display_in_use_text">Kun SandFly käyttää sitä, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> voi lukea näyttöä ja ohjata laitetta.</string>
+    <string name="external_displays_title">Muiden sovellusten näytöt</string>
+    <string name="external_displays_summary">Sovellukset, joille annat luvan, voivat toimia SandFlyn pistenäyttöinä. Pistenäyttönä toimiva sovellus voi lukea näyttöä ja ohjata laitetta.</string>
+    <string name="external_displays_none">Yksikään sovellus ei saa toimia pistenäyttönä.</string>
 </resources>
