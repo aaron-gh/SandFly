@@ -128,7 +128,31 @@ class VerticalNavigator(
     }
   }
 
+  /**
+   * Focuses [target], first scrolling it wholly into view when part of it is off screen, as a swipe
+   * does: parts that are off screen aren't spoken, so a row half under a toolbar would be read
+   * without its title.
+   */
   private fun focus(eventId: EventId?, target: AccessibilityNodeInfoCompat) {
+    if (hasPartOffScreen(target) &&
+        pipeline.returnFeedback(
+          eventId,
+          Feedback.nodeAction(target, AccessibilityActionCompat.ACTION_SHOW_ON_SCREEN.id),
+        )
+    ) {
+      handler.postDelayed(
+        {
+          target.refresh()
+          focusNow(eventId, target)
+        },
+        SHOW_ON_SCREEN_WAIT_MS,
+      )
+      return
+    }
+    focusNow(eventId, target)
+  }
+
+  private fun focusNow(eventId: EventId?, target: AccessibilityNodeInfoCompat) {
     pipeline.returnFeedback(
       eventId,
       Feedback.focus(
@@ -138,6 +162,9 @@ class VerticalNavigator(
     )
   }
 
+  private fun hasPartOffScreen(node: AccessibilityNodeInfoCompat): Boolean =
+    (0 until node.childCount).any { node.getChild(it)?.isVisibleToUser == false }
+
   private fun contentOf(node: AccessibilityNodeInfoCompat): String =
     TextUtils.concat(node.text ?: "", "\n", node.contentDescription ?: "").toString()
 
@@ -146,6 +173,9 @@ class VerticalNavigator(
 
     /** The time a list takes to scroll a page and lay it out. */
     const val SCROLL_WAIT_MS = 300L
+
+    /** The time a list takes to bring an item wholly into view. */
+    const val SHOW_ON_SCREEN_WAIT_MS = 150L
   }
 }
 
@@ -175,18 +205,40 @@ object VerticalNavigation {
     val direction =
       if (forward) TraversalStrategy.SEARCH_FOCUS_FORWARD
       else TraversalStrategy.SEARCH_FOCUS_BACKWARD
-    val target =
+    val found =
       TraversalStrategyUtils.searchFocus(
         strategy,
         focus,
         direction,
         filter { focusable?.accept(it) == true && isOnOtherRow(bounds(it), from, forward) },
       ) ?: return null
+    val target = wholeItem(found, root, focus, focusable)
     if (forward) {
       return target
     }
     // Going up lands on the start of the row, as going down does.
-    return rowStart(strategy, focusable, target)
+    return rowStart(strategy, focusable, target, root)
+  }
+
+  /**
+   * The item that [node] is part of: its outermost ancestor below [root] that can be focused too,
+   * other than one holding [focus]. Going up reaches a row's parts, such as a setting's summary,
+   * before the row itself, which is what going down focuses.
+   */
+  private fun wholeItem(
+    node: AccessibilityNodeInfoCompat,
+    root: AccessibilityNodeInfoCompat,
+    focus: AccessibilityNodeInfoCompat,
+    focusable: Filter<AccessibilityNodeInfoCompat>?,
+  ): AccessibilityNodeInfoCompat {
+    var item = node
+    var ancestor = node.parent
+    while (ancestor != null && ancestor != root) {
+      if (ancestor == focus || AccessibilityNodeInfoUtils.hasAncestor(focus, ancestor)) break
+      if (focusable?.accept(ancestor) == true) item = ancestor
+      ancestor = ancestor.parent
+    }
+    return item
   }
 
   /** Returns the start of the first or last row of [list] on screen. */
@@ -204,7 +256,9 @@ object VerticalNavigation {
         direction,
         filter { focusable?.accept(it) == true },
       ) ?: return null
-    return if (first) edge else rowStart(strategy, focusable, edge)
+    // Nothing in the list has focus, so the list itself is the node to stay out of.
+    val item = wholeItem(edge, list, list, focusable)
+    return if (first) item else rowStart(strategy, focusable, item, list)
   }
 
   /**
@@ -242,6 +296,7 @@ object VerticalNavigation {
     strategy: OrderedTraversalStrategy,
     focusable: Filter<AccessibilityNodeInfoCompat>?,
     target: AccessibilityNodeInfoCompat,
+    root: AccessibilityNodeInfoCompat,
   ): AccessibilityNodeInfoCompat {
     val row = bounds(target)
     var start: AccessibilityNodeInfoCompat = target
@@ -253,8 +308,9 @@ object VerticalNavigation {
           TraversalStrategy.SEARCH_FOCUS_BACKWARD,
           filter { focusable?.accept(it) == true },
         ) ?: break
-      if (!isOnSameRow(bounds(before), row)) break
-      start = before
+      val item = wholeItem(before, root, start, focusable)
+      if (item == start || !isOnSameRow(bounds(item), row)) break
+      start = item
     }
     return start
   }
