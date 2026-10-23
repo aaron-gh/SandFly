@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Hati</string>
+    <string name="summary_pref_scripts">Badilisha jinsi SandFly inavyofanya kazi katika programu</string>
+    <string name="script_import">Ingiza hati</string>
+    <string name="script_install_label">Sakinisha hati SandFly</string>
+    <string name="script_import_nothing">Hakuna faili ya hati ya kusakinisha.</string>
+    <string name="script_import_cannot_open">Faili haikuweza kufunguliwa.</string>
+    <string name="script_import_repository">Kiungo hiki ni cha hazina nzima. Fungua hati unayotaka, kisha ushiriki kiungo chake.</string>
+    <string name="script_import_summary">.lua faili, au .zip iliyo na main.lua</string>
+    <string name="scripts_category_app">Maandishi ya programu</string>
+    <string name="scripts_category_global">Programu-jalizi za kimataifa</string>
+    <string name="scripts_none">Hakuna hati zilizosakinishwa</string>
+    <string name="scripts_all_off">Zima maandishi yote</string>
+    <string name="scripts_all_off_summary">Hati husalia kusakinishwa na kuweka swichi zao wenyewe. Ishara ya Washa au uzime hati zote hufanya vivyo hivyo.</string>
+    <string name="shortcut_toggle_scripts">Washa au uzime hati zote</string>
+    <string name="scripts_now_off">Hati zimezimwa</string>
+    <string name="scripts_now_on">Maandishi yamewashwa</string>
+    <string name="scripts_unavailable">Hati hazipatikani kwenye kifaa hiki</string>
+    <string name="script_add_example">Ongeza hati ya mfano</string>
+    <string name="script_add_example_summary">Inasema jina la kila programu unayobadilisha. Hati ya kuanzia.</string>
+    <string name="script_state_on">Washa</string>
+    <string name="script_state_off">Zima</string>
+    <string name="script_runs_in">Inaendeshwa kwa <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Huendeshwa katika programu zote</string>
+    <string name="script_version">Toleo <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Na <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Sakinisha <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Inaweza:</string>
+    <string name="script_install_no_permissions">Hakuna ruhusa zinazohitajika.</string>
+    <string name="script_install_button">Sakinisha</string>
+    <string name="script_update_title">Ungependa kusasisha <xliff:g id="name">%1$s</xliff:g> hadi <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Ruhusa mpya:</string>
+    <string name="script_update_button">Sasisha</string>
+    <string name="script_update_replaces">Hii inachukua nafasi ya toleo la <xliff:g id="version">%1$s</xliff:g> kwa <xliff:g id="author">%2$s</xliff:g>, na huhifadhi data na mipangilio yake.</string>
+    <string name="script_update_other_author">Mpya ni <xliff:g id="author">%1$s</xliff:g>, mwandishi tofauti. Sasisha ikiwa tu unaiamini.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> imesakinishwa</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> imesasishwa hadi <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Imeshindwa kuleta. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Ruhusu hati zinazoaminika pekee.</string>
+    <string name="script_permission_screen">Soma skrini</string>
+    <string name="script_permission_actions">Bofya, tembeza, chapa na usogeze umakini</string>
+    <string name="script_permission_speech">Sikia na ubadilishe hotuba ya SandFly</string>
+    <string name="script_permission_passwords">Soma sehemu za nenosiri</string>
+    <string name="script_permission_input">Ongeza ishara, vitufe, vipengee vya menyu na vidhibiti vya kusoma</string>
+    <string name="script_permission_network">Tumia mtandao</string>
+    <string name="script_permission_clipboard">Soma na ubadilishe ubao wa kunakili</string>
+    <string name="script_permission_system">Rudi nyuma au nyumbani, fungua arifa na programu</string>
+    <string name="script_permission_notifications">Soma na ubadilishe arifa zinazotamkwa</string>
+    <string name="script_permission_events">Angalia shughuli zote katika kila programu, ikiwa ni pamoja na kuandika</string>
+    <string name="script_permission_dialogs">Onyesha vidadisi juu ya programu yoyote</string>
+    <string name="script_permission_java">Endesha msimbo wa Java na ufikiaji wote wa SandFly, katika kila programu</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Washa</string>
+    <string name="script_permissions_title">Ruhusa</string>
+    <string name="script_permissions_none">Hamna</string>
+    <string name="script_settings_category">Mipangilio</string>
+    <string name="script_list_filter">Chuja</string>
+    <string name="script_button_off">Washa hati kwanza</string>
+    <string name="script_permissions_summary">Kuzima moja husimamisha sehemu zinazohitaji.</string>
+    <string name="script_install_permissions_note">Unaweza kuzima hizi baadaye.</string>
+    <string name="script_manage_category">Dhibiti</string>
+    <string name="script_move_up">Endesha mapema</string>
+    <string name="script_move_down">Kimbia baadaye</string>
+    <string name="script_order_summary">Agiza kwa hati zinazobadilisha usemi sawa. Hati za programu huendeshwa kwanza.</string>
+    <string name="script_log">Kumbukumbu</string>
+    <string name="script_log_summary">Pato na hitilafu tangu SandFly ianze</string>
+    <string name="script_clear_storage">Futa data iliyohifadhiwa</string>
+    <string name="script_storage_cleared">Data iliyohifadhiwa imefutwa</string>
+    <string name="script_remove">Ondoa</string>
+    <string name="script_remove_title">Ungependa kuondoa <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Hufuta msimbo, data na mipangilio yake.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> imeondolewa</string>
+    <string name="script_log_empty">Kumbukumbu ni tupu</string>
+    <string name="script_log_clear">Futa kumbukumbu</string>
+    <string name="script_log_copy">Nakili logi</string>
+    <string name="script_log_copied">Kumbukumbu imenakiliwa</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Inahitaji API ya hati <xliff:g id="needed">%1$d</xliff:g> au baadaye. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo sehemu zinaweza zisifanye kazi.</string>
+    <string name="script_api_untested">Imejaribiwa hadi API ya hati <xliff:g id="tested">%1$d</xliff:g>. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo inaweza isifanye kazi inavyotarajiwa.</string>
+    <string name="script_state_incompatible">Huenda isifanye kazi na hii SandFly</string>
+    <string name="script_api_range">Hati API <xliff:g id="min">%1$d</xliff:g> hadi <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Utangamano</string>
+    <string name="script_install_anyway">Sakinisha hata hivyo</string>
+    <string name="script_update_anyway">Sasisha hata hivyo</string>
+    <string name="script_homepage">Fungua ukurasa wa nyumbani</string>
+    <string name="script_homepage_confirm_title">Ungependa kufungua anwani hii?</string>
+    <string name="script_homepage_open">Fungua</string>
+    <string name="script_homepage_failed">Hakuna programu inayoweza kufungua <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> imezimwa baada ya hitilafu zinazorudiwa. Tazama kumbukumbu yake katika Hati.</string>
+    <string name="shortcut_inspect_item">Kagua kipengee kilicholengwa</string>
+    <string name="script_inspect_no_item">Hakuna kipengee kinachozingatia</string>
+    <string name="script_inspect_copied">Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Hakuna kitambulisho, kwa hivyo sheria haziwezi kuipa jina. Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Nakili mti wa skrini</string>
+    <string name="script_tree_copied">Imenakili vipengee <xliff:g id="count">%1$d</xliff:g></string>
+    <string name="script_tree_none">Hakuna dirisha la kunakili</string>
+    <string name="script_tree_clip_label">Mti wa skrini</string>
+    <string name="summary_copy_screen_tree_menu">Nakili vipengee vyote kwenye skrini kama JSON, kwa kuandika hati</string>
+    <string name="script_inspect_clip_label">Maelezo ya kipengee</string>
+    <string name="summary_inspect_item_menu">Sema na unakili maelezo ya kipengee ulichokuwa kwenye, kwa ajili ya kuandika hati</string>
+    <string name="script_keys_backtalk_modifier">SandFly kirekebishaji</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, kisha <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Amri</string>
+    <string name="script_commands_summary">Ishara na funguo za hati inayoendeshwa huja kabla ya SandFly\'s. Zima moja ili kuweka SandFly ya.</string>
+    <string name="script_binding_gesture">Ishara: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Funguo: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Menyu ya SandFly</string>
+    <string name="script_binding_control">Vidhibiti vya kusoma</string>
+    <string name="script_binding_none">Hamna</string>
+    <string name="script_binding_turn_on">Washa</string>
+    <string name="script_binding_turn_off">Zima</string>
+    <string name="script_binding_restore">Rejesha chaguomsingi</string>
+    <string name="script_binding_restored">Chaguo-msingi zimerejeshwa</string>
+    <string name="script_binding_perform">Tekeleza ishara au funguo</string>
+    <string name="script_binding_perform_summary">Agiza ishara inayofuata, au vitufe vilivyobonyezwa na kirekebishaji SandFly</string>
+    <string name="script_binding_perform_message">Tengeneza ishara au bonyeza vitufe.</string>
+    <string name="script_binding_assign_title">Je, ungependa kukabidhi <xliff:g id="binding">%1$s</xliff:g> kwa <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Kadiria</string>
+    <string name="script_binding_choose_gesture">Chagua ishara</string>
+    <string name="script_binding_type_keys">Vifunguo vya aina</string>
+    <string name="script_binding_type_keys_summary">Penda sf+shift+n, au sf+t, s</string>
+    <string name="script_binding_bad_keys">Haiwezi kutumia funguo hizi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Inaongeza:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Vyanzo vya hati</string>
+    <string name="script_sources_none">Hakuna vyanzo vilivyoongezwa</string>
+    <string name="script_source_add">Ongeza chanzo</string>
+    <string name="script_source_add_button">Ongeza</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Sio anwani ya hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
+    <string name="script_source_exists">Chanzo hiki tayari kimeongezwa.</string>
+    <string name="script_source_loading">Inapakia</string>
+    <string name="script_source_empty">Hakuna skripti katika chanzo hiki</string>
+    <string name="script_source_failed">Haikuweza kupakia hati. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Jaribu tena</string>
+    <string name="script_source_downloading">Inapakua <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Ondoa chanzo</string>
+    <string name="script_source_remove_title">Ungependa kuondoa <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Hati zilizosakinishwa kutoka humo hukaa kusakinishwa.</string>
+    <string name="scripts_auto_update">Sasisha hati kiotomatiki</string>
+    <string name="scripts_check_updates">Angalia masasisho</string>
+    <string name="scripts_checking_updates">Inatafuta masasisho...</string>
+    <string name="scripts_updates_category">Sasisho</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one">Hati <xliff:g id="count" example="1">%1$d</xliff:g> imesasishwa: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other">Hati <xliff:g id="count" example="2">%1$d</xliff:g> zimesasishwa: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Sasisho zimeorodheshwa chini ya Sasisho</string>
+    <string name="scripts_update_check_failed">Baadhi ya vyanzo havikuweza kuangaliwa</string>
+    <string name="scripts_up_to_date">Hati zote zimesasishwa</string>
+</resources>

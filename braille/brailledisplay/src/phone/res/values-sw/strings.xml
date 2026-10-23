@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Kibodi ya maunzi ya nukta nundu</string>
   <string name="bd_application_name">Zana za Ufikivu za Android</string>
-  <string name="bd_ime_unavailable_activity_name">Kibodi ya nukta nundu ya TalkBack haipatikani</string>
-  <string name="bd_ime_disabled_dialog_title">Washa kibodi ya nukta nundu ya TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Kibodi ya nukta nundu ya SandFly haipatikani</string>
+  <string name="bd_ime_disabled_dialog_title">Washa kibodi ya nukta nundu ya SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Ili utumie skrini yako ya nukta nundu kuandika, nenda kwenye mipangilio ya kuingiza data ili uiwashe</string>
   <string name="bd_ime_disabled_dialog_title_positive">Mipangilio ya kuingiza data</string>
   <string name="bd_ime_not_default_dialog_title">Badilisha mbinu yako ya kuingiza data</string>
-  <string name="bd_ime_not_default_dialog_message">Ili uendelee kuandika, weka kibodi ya nukta nundu ya TalkBack kama mbinu yako ya kuingiza data</string>
+  <string name="bd_ime_not_default_dialog_message">Ili uendelee kuandika, weka kibodi ya nukta nundu ya SandFly kama mbinu yako ya kuingiza data</string>
   <string name="bd_ime_not_default_dialog_positive">Badilisha kiingiza data</string>
   <string name="type_unlabeled">Isiyo na lebo</string>
   <string name="type_unlabeled_edittext">Kisanduku cha Kubadilishia Kisicho na Lebo</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Geuza kushoto</string>
   <string name="overlay_pan_right_button">Geuza kulia</string>
   <string name="bd_preferences_title">Skrini ya nukta nundu</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Ili utumie skrini ya nukta nundu, kwanza washa kipengele cha TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Nenda kwenye kipengele cha TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Ili utumie skrini ya nukta nundu, kwanza washa kipengele cha SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Nenda kwenye kipengele cha SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Ili utumie skrini ya nukta nundu, kwanza washa Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Washa Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Ili utumie skrini ya nukta nundu, %s zinahitaji uwezo wa kufikia vifaa vilivyo karibu</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Ili utumie hali ya kuvinjari, utahitaji kuondoka kwenye ramani chaguomsingi ya vitufe uende kwenye ramani ya vitufe iliyoboreshwa. Mabadiliko haya yatasasisha baadhi ya amri za skrini yako ya nukta nundu</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Mipangilio</string>
   <string name="bd_command_change_dialog_title">Baadhi ya amri zimesasishwa</string>
-  <string name="bd_command_change_dialog_message">Amri hizi za skrini ya nukta nundu zilisasishwa katika toleo hili la TalkBack:\n\n• Kipengee kilichotangulia: Bonyeza nukta za 1, 7\n\n• Kipengee kinachofuata: Bonyeza nukta za 4, 8\n\n• Kidhibiti cha kusoma kilichotangulia: Bonyeza nukta za 2, 3, 7, 8\n\n• Kidhibiti cha kusoma kinachofuata: Bonyeza nukta za 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Amri hizi za skrini ya nukta nundu zilisasishwa katika toleo hili la SandFly:\n\n• Kipengee kilichotangulia: Bonyeza nukta za 1, 7\n\n• Kipengee kinachofuata: Bonyeza nukta za 4, 8\n\n• Kidhibiti cha kusoma kilichotangulia: Bonyeza nukta za 2, 3, 7, 8\n\n• Kidhibiti cha kusoma kinachofuata: Bonyeza nukta za 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Nukta nundu zilizofupishwa</string>
   <string name="bd_preference_braille_uncontracted">Nukta nundu ambazo hazijafupishwa</string>
   <string name="bd_braille_grade_tips">Ili ubadilishe upesi kati ya nukta nundu zilizofupishwa na ambazo hazijafupishwa ukitumia skrini ya nukta nundu, bonyeza kitufe cha kuweka nafasi na nukta 1, 2, 4, 5.\n\nAmri hii hufanya kazi ikiwa unatumia lugha yenye aina zote mbili za nukta nundu.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Kusogeza kati ya vipengee</string>
   <string name="bd_commands_bindings_category_system_actions_title">Vitendo vya mfumo</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Nyuma, mwanzo, arifa na zaidi</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Vipengele vya TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Menyu na mipangilio ya Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Vipengele vya SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menyu na mipangilio</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Mipangilio ya nukta nundu</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Lugha na mipangilio ya nukta nundu</string>
   <string name="bd_commands_bindings_category_text_editing_title">Kuhariri maandishi</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Fungua programu zote</string>
   <string name="bd_cmd_toggle_screen_search">Anzisha utafutaji kwenye skrini</string>
   <string name="bd_cmd_edit_custom_label">Badilisha lebo maalumu</string>
-  <string name="bd_cmd_open_talkback_menu">Fungua menyu ya TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Zima au uwashe matamshi ya TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Fungua menyu ya SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Zima au uwashe matamshi ya SandFly</string>
   <string name="bd_cmd_read_stop">Acha kusoma</string>
-  <string name="bd_cmd_talkback_settings">Fungua mipangilio ya TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Fungua mipangilio ya SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Badilisha utumie lugha inayofuata ya kuandika</string>
   <string name="bd_cmd_switch_to_next_output_language">Badilisha utumie lugha inayofuata ya kusoma</string>
   <string name="bd_cmd_toggle_contracted_mode">Badilisha kati ya nukta nundu ya daraja la pili na nukta nundu ya daraja la kwanza</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Unaweza kusogeza haraka kurasa za wavuti kwa kutumia amri ili kuingia kwenye hali ya kuvinjari, kisha uandike njia za mkato za herufi au namba zifuatazo\n\nNjia hizi za mkato zinaweza pia kutumika bila kuingia katika hali ya kuvinjari, lakini utahitaji kubofya nukta ya 8 pamoja na amri za \"inayofuata\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Usogezaji katika jedwali</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Ungependa kuzima mipangilio ya onyesho la braille?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Unaweza kuiwasha tena kwenye mipangilio ya TalkBack wakati wowote</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Unaweza kuiwasha tena kwenye mipangilio ya SandFly wakati wowote</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Zima</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Baadhi ya amri hazipatikani</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Amri za usogezaji, mipangilio ya nukta nundu na baadhi ya vipengele vya TalkBack hazipatikani unapoandika au kubadilisha.\n\nIli utumie amri hizi, kwanza funga kibodi.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Amri za usogezaji, mipangilio ya nukta nundu na baadhi ya vipengele vya SandFly hazipatikani unapoandika au kubadilisha.\n\nIli utumie amri hizi, kwanza funga kibodi.</string>
   <string name="bd_caption_tutorial_dialog_title">Manukuu kwenye skrini yako ya nukta nundu</string>
   <string name="bd_caption_tutorial_dialog_message">Ili uonyeshe au ufiche manukuu ya video hii, bonyeza kitufe cha nafasi na nukta 1, 4, 7, 8.\n\nIli uonyeshe kiotomatiki manukuu ya maudhui yanayotumika, washa Onyesha manukuu kwenye skrini ya nukta nundu katika Mipangilio.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Onyesha ujumbe huu kila mara manukuu yanapopatikana</string>
   <string name="bd_usb_connect_dialog_title">Skrini ya nukta nundu imeunganishwa kwenye USB</string>
-  <string name="bd_usb_connect_dialog_message">Betri yako ya %s inachaji skrini yako ya nukta nundu.\n\nIkiwa unahitaji kubadilisha ili utumie Bluetooth, tenganisha USB au mlango wa jumla wa USB yako kisha uende katika mipangilio ya TalkBack &gt;Skrini ya nukta nundu</string>
+  <string name="bd_usb_connect_dialog_message">Betri yako ya %s inachaji skrini yako ya nukta nundu.\n\nIkiwa unahitaji kubadilisha ili utumie Bluetooth, tenganisha USB au mlango wa jumla wa USB yako kisha uende katika mipangilio ya SandFly &gt;Skrini ya nukta nundu</string>
   <string name="bd_device">simu</string>
   <string name="bd_battery_low_dialog_title">Chaji ya betri ya %s imepungua</string>
   <string name="bd_battery_low_dialog_message">Betri ya %s yako inachaji skrini yako ya nukta nundu.\n\nIli kuhifadhi betri:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Futa yote</string>
   <string name="popup_message_history_empty">Hamna</string>
   <string name="popup_message_history_consent_dialog_title">Ungependa kuwasha historia ya mazungumzo kwenye kifaa?</string>
-  <string name="popup_message_history_consent_dialog_msg">Hatua hii itafanya baadhi ya ujumbe kama vile arifa na kengele kuhifadhiwa kwenye TalkBack. Unaweza kubadilisha mipangilio hii wakati wowote.</string>
+  <string name="popup_message_history_consent_dialog_msg">Hatua hii itafanya baadhi ya ujumbe kama vile arifa na kengele kuhifadhiwa kwenye SandFly. Unaweza kubadilisha mipangilio hii wakati wowote.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Washa</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Hapana</string>
+    <string name="external_display_channel">Maonyesho ya Braille kutoka kwa programu zingine</string>
+    <string name="external_display_ask_title">Ungependa kuruhusu <xliff:g id="app" example="Notetaker">%1$s</xliff:g> kuwa onyesho la breli kwa SandFly?</string>
+    <string name="external_display_ask_text">SandFly haitaitumia hadi uiruhusu.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> itaweza kusoma kila kitu SandFly maonyesho katika breli, ambayo inaweza kuwa chochote kwenye skrini, ikiwa ni pamoja na ujumbe na unachoandika. Pia itaweza kudhibiti kifaa chako uwezavyo kwa onyesho la nukta nundu: charaza, fungua programu na utekeleze amri yoyote ya SandFly. Ruhusu programu unazoamini pekee.</string>
+    <string name="external_display_allow">Ruhusu</string>
+    <string name="external_display_deny">Usiruhusu</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ni onyesho lako la breli</string>
+    <string name="external_display_in_use_text">Ingawa SandFly inaitumia, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> inaweza kusoma skrini na kudhibiti kifaa.</string>
+    <string name="external_displays_title">Maonyesho kutoka kwa programu zingine</string>
+    <string name="external_displays_summary">Programu unazoruhusu zinaweza kuwa maonyesho ya breli kwa SandFly. Programu ambayo ni onyesho la nukta nundu inaweza kusoma skrini na kudhibiti kifaa.</string>
+    <string name="external_displays_none">Hakuna programu zinazoweza kuwa maonyesho ya breli.</string>
 </resources>

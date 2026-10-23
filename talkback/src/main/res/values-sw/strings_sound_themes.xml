@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Mandhari za sauti</string>
+    <string name="summary_pref_sound_themes">Sakinisha na uchague seti za sauti na mitetemo, badilisha sauti moja na yako mwenyewe, na uwashe sauti za udhibiti na mitetemo na sauti ya 3D.</string>
+    <string name="sound_themes_installed_category">Mandhari yaliyosakinishwa</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly sauti na mitetemo, na sauti zako mwenyewe.</string>
+    <string name="sound_theme_in_use">Inatumika</string>
+    <string name="sound_theme_by">Na <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Leseni: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sauti.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> sauti.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> mtetemo.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> mitetemo.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Huwasha sauti za udhibiti na mitetemo.</string>
+    <string name="sound_theme_control_sounds_off">Huzima sauti za udhibiti na mitetemo.</string>
+    <string name="sound_theme_use">Tumia mada hii</string>
+    <string name="sound_theme_about">Kuhusu mada hii</string>
+    <string name="sound_theme_export">Hifadhi kama faili ya mandhari</string>
+    <string name="sound_theme_remove">Ondoa</string>
+    <string name="sound_theme_remove_confirm">Ungependa kuondoa mandhari <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Ondoa</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Imehifadhi mandhari, yenye sauti <xliff:g id="count" example="1">%d</xliff:g>.</item>
+        <item quantity="other">Imehifadhi mandhari, yenye sauti <xliff:g id="count" example="13">%d</xliff:g>.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly haikuweza kuhifadhi faili ya mandhari.</string>
+    <string name="sound_theme_no_picker">Hakuna programu kwenye kifaa hiki ya kuchagua faili nayo.</string>
+    <string name="sound_theme_settings_category">Mipangilio ya <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Sauti</string>
+    <string name="summary_pref_theme_sounds">Badilisha sauti yoyote ya mada hii na faili ya sauti yako mwenyewe.</string>
+    <string name="sound_themes_install_category">Sakinisha mandhari</string>
+    <string name="title_pref_sound_theme_install_file">Kutoka kwa faili</string>
+    <string name="summary_pref_sound_theme_install_file">Faili ya mandhari ni faili ya ZIP. Unaweza pia kufungua moja, au kuishiriki, na SandFly kutoka kwa programu nyingine.</string>
+    <string name="title_pref_sound_theme_install_link">Kutoka kwa kiungo</string>
+    <string name="summary_pref_sound_theme_install_link">Kiungo cha faili ya mandhari, au kwa hazina ya GitHub yenye mandhari ndani yake. Unaweza pia kushiriki kiungo na SandFly kutoka kwa kivinjari chako.</string>
+    <string name="title_pref_sound_theme_install_source">Kutoka kwa chanzo</string>
+    <string name="summary_pref_sound_theme_install_source">Faili za mandhari kwenye hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
+    <string name="sound_theme_sources">Vyanzo vya mandhari ya sauti</string>
+    <string name="sound_theme_source_empty">Hakuna mandhari ya sauti katika chanzo hiki</string>
+    <string name="sound_theme_source_failed">Haikuweza kupakia mada za sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Mandhari ya sauti yaliyosakinishwa kutoka kwayo hukaa kusakinishwa.</string>
+    <string name="sound_theme_link_message">Ingiza au ubandike kiungo cha faili ya mandhari, au kwenye hazina ya GitHub yenye mandhari ndani yake.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Sakinisha mandhari ya sauti</string>
+    <string name="sound_theme_install_reading">Kusoma mada ya sauti</string>
+    <string name="sound_theme_install_title">Sakinisha <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Sakinisha na utumie</string>
+    <string name="sound_theme_install">Sakinisha</string>
+    <string name="sound_theme_install_replaces">Hii inachukua nafasi ya mandhari iliyosakinishwa ya jina moja.</string>
+    <string name="sound_theme_install_skipped">Imeachwa:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Imesakinishwa <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Imesakinishwa <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Inatumika sasa.</string>
+    <string name="sound_theme_install_nothing">Hakuna mandhari ya sauti ya kusakinisha.</string>
+    <string name="sound_theme_install_not_a_theme">Haya si mandhari yenye sauti SandFly inaweza kutumia: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly haikuweza kusakinisha mandhari ya sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Viungo vya mandhari ya sauti lazima vianze na https.</string>
+    <string name="title_pref_theme_sounds_of">Sauti za <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Tumia sauti za SandFly kwa wote</string>
+    <string name="theme_sounds_reset_confirm">Ondoa sauti zote za mandhari hii na utumie sauti za SandFly?</string>
+    <string name="theme_sounds_reset_button">Ondoa</string>
+    <string name="theme_sounds_category">Sauti</string>
+    <string name="theme_sound_summary_default">SandFly sauti</string>
+    <string name="theme_sound_summary_custom">Sauti ya mada</string>
+    <string name="theme_sound_summary_none">Hakuna sauti. Sauti ya kuzingatia inacheza.</string>
+    <string name="theme_sound_summary_android_keyboard">Android sauti ya kibodi</string>
+    <string name="theme_sound_use_android_keyboard">Tumia sauti ya kibodi ya Android</string>
+    <string name="theme_sound_braille_character">Kibodi ya Breli: kuandika herufi</string>
+    <string name="theme_sound_braille_space">Kibodi ya Braille: nafasi</string>
+    <string name="theme_sound_braille_delete">Kibodi ya Braille: futa</string>
+    <string name="theme_sound_braille_new_line">Kibodi ya Braille: laini mpya</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Chagua faili ya sauti</string>
+    <string name="theme_sound_preview">Onyesho la kukagua</string>
+    <string name="theme_sound_none">Hakuna sauti</string>
+    <string name="theme_sound_summary_no_sound">Hakuna sauti</string>
+    <string name="theme_sound_action_set_none">Weka kuwa hakuna sauti</string>
+    <string name="theme_sound_use_default">Tumia sauti ya SandFly</string>
+    <string name="theme_sound_remove">Ondoa sauti</string>
+    <string name="theme_sound_too_large">Faili hiyo ni kubwa sana. Sauti inaweza kuwa hadi 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly haiwezi kucheza faili hiyo. Chagua sauti ya WAV, OGG, MP3 au FLAC.</string>
+    <string name="theme_sound_failed">SandFly haikuweza kusoma faili hiyo.</string>
+</resources>
