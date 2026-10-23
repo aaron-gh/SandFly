@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Fuerte</string>
+    <string name="notification_shake_2">Medio</string>
+    <string name="notification_shake_1">Suave</string>
+    <string name="notification_media_skip">No leer</string>
+    <string name="notification_media_pause">Pausar la reproducción multimedia durante la lectura</string>
+    <string name="notification_media_read">Leer</string>
+    <string name="notification_headphones_only_without">Solo sin auriculares</string>
+    <string name="notification_headphones_only_with">Sólo con auriculares</string>
+    <string name="notification_headphones_always">Leer con o sin auriculares</string>
+    <string name="notification_queue_skip">No leer la nueva notificación</string>
+    <string name="notification_queue_interrupt">Interrumpir la notificación actual</string>
+    <string name="notification_queue_queue">Leer después</string>
+    <string name="notification_url_omit">Omitir</string>
+    <string name="notification_url_replace">Leer el texto de abajo</string>
+    <string name="notification_url_domain">Leer solo el sitio</string>
+    <string name="notification_url_full">Leer el enlace completo</string>
+    <string name="notification_category_title">Notificaciones</string>
+    <string name="notification_reading_title">Lectura de notificaciones</string>
+    <string name="notification_apps_title">Aplicaciones</string>
+    <string name="notification_words_title">Palabras y reemplazos</string>
+    <string name="notification_kinds_title">Tipos de notificaciones</string>
+    <string name="notification_when_title">Cuándo leer</string>
+    <string name="notification_rules_title">Reglas</string>
+    <string name="notification_repeats_title">Repeticiones</string>
+    <string name="notification_stop_title">Detener la lectura</string>
+    <string name="notification_schedules_title">Resumen y hora</string>
+    <string name="notification_history_title">Historial</string>
+    <string name="notification_test_title">Enviar una notificación de prueba</string>
+    <string name="notification_automation_title">Automatización</string>
+    <string name="notification_automation_allowed_title">Permitir aplicaciones de automatización</string>
+    <string name="notification_category_said">Contenido de la lectura</string>
+    <string name="notification_format_title">Formato de voz</string>
+    <string name="notification_format_message">Marcadores de posición: {app}, {title}, {text}, {content} (el texto completo), {bigtext}, {subtext}, {ticker}, {category} y {time}.</string>
+    <string name="notification_private_format_title">Lectura de notificaciones privadas</string>
+    <string name="notification_private_format_message">Dicho en lugar del contenido de una notificación privada. Marcadores de posición: {app}, {category} y {time}.</string>
+    <string name="notification_category_voice">Voz</string>
+    <string name="notification_voice_title">Voz</string>
+    <string name="notification_voice_sandfly">La voz de SandFly</string>
+    <string name="notification_detect_language_title">Detectar idioma</string>
+    <string name="notification_detect_language_summary">Leer cada notificación en su idioma. Requiere Cambiar de idioma automáticamente en los configuración de Síntesis de voz.</string>
+    <string name="notification_sound_before_title">Sonido antes de las notificaciones</string>
+    <string name="notification_category_text">Texto</string>
+    <string name="notification_remove_emoji_title">Omitir emojis</string>
+    <string name="notification_lowercase_title">Leer mayúsculas como palabras</string>
+    <string name="notification_lowercase_summary">Algunos motores de voz deletrean las palabras escritas en mayúsculas</string>
+    <string name="notification_separate_digits_title">Leer números largos dígito a dígito</string>
+    <string name="notification_separate_digits_summary">Como códigos y números de teléfono.</string>
+    <string name="notification_min_digits_title">Los números largos tienen al menos</string>
+    <string name="notification_urls_title">Enlaces</string>
+    <string name="notification_url_text_title">Dicho en lugar de un enlace.</string>
+    <string name="notification_skip_empty_title">Saltar notificaciones sin texto</string>
+    <string name="notification_category_length">Longitud</string>
+    <string name="notification_max_words_title">Número máximo de palabras</string>
+    <string name="notification_max_sentences_title">Número máximo de frases</string>
+    <string name="notification_max_characters_title">Número máximo de caracteres</string>
+    <string name="notification_max_seconds_title">Detener la lectura después de</string>
+    <string name="notification_category_timing">Tiempos</string>
+    <string name="notification_delay_title">Espera antes de leer</string>
+    <string name="notification_queue_title">Cuando se lee otra notificación</string>
+    <string name="notification_repeat_minutes_title">Leer de nuevo hasta que se encienda la pantalla.</string>
+    <string name="notification_skip_media_title">Saltar reproductores multimedia</string>
+    <string name="notification_skip_ongoing_title">Saltar notificaciones en curso</string>
+    <string name="notification_skip_ongoing_summary">Como navegación y temporizadores.</string>
+    <string name="notification_skip_foreground_title">Saltar notificaciones de aplicaciones en ejecución</string>
+    <string name="notification_skip_foreground_summary">Como un VPN o una grabadora</string>
+    <string name="notification_skip_progress_title">Saltar notificaciones de progreso</string>
+    <string name="notification_skip_group_summaries_title">Saltar resúmenes de grupo</string>
+    <string name="notification_skip_group_summaries_summary">Como por ejemplo “3 mensajes nuevos”</string>
+    <string name="notification_skip_low_priority_title">Saltar notificaciones de baja prioridad</string>
+    <string name="notification_skip_system_title">Saltar notificaciones del sistema</string>
+    <string name="notification_screen_on_title">Mientras la pantalla está encendida</string>
+    <string name="notification_screen_off_title">Mientras la pantalla está apagada</string>
+    <string name="notification_locked_title">Mientras el teléfono está bloqueado</string>
+    <string name="notification_headphones_title">Auriculares</string>
+    <string name="notification_media_title">Mientras se reproducen los medios</string>
+    <string name="notification_dnd_title">No molestar</string>
+    <string name="notification_dnd_none">No leer ninguna</string>
+    <string name="notification_dnd_allowed">Leer las notificaciones permitidas por No molestar</string>
+    <string name="notification_dnd_all">Leer todo</string>
+    <string name="notification_touch_title">Mientras se toca la pantalla</string>
+    <string name="notification_touch_read">Leer de inmediato</string>
+    <string name="notification_touch_after">Leer cuando termina el toque.</string>
+    <string name="notification_touch_skip">No leer</string>
+    <string name="notification_during_calls_title">Durante las llamadas</string>
+    <string name="notification_honour_silent_title">No en modo silencioso</string>
+    <string name="notification_honour_vibrate_title">No en modo vibración</string>
+    <string name="notification_skip_in_car_title">No en modo coche</string>
+    <string name="notification_skip_in_car_summary">Como con Android Auto, que los lee él mismo</string>
+    <string name="notification_category_quiet_hours">Horas tranquilas</string>
+    <string name="notification_quiet_hours_title">Horas tranquilas</string>
+    <string name="notification_quiet_start_title">Inicio</string>
+    <string name="notification_quiet_end_title">Fin</string>
+    <string name="notification_repeat_seconds_title">Omitir la misma notificación durante</string>
+    <string name="notification_numbers_alike_title">Considerar iguales los números diferentes</string>
+    <string name="notification_numbers_alike_summary">Como el porcentaje de descarga.</string>
+    <string name="notification_cooldown_title">Tiempo entre las notificaciones de una aplicación</string>
+    <string name="notification_skip_prefix_title">Omitir el inicio repetido</string>
+    <string name="notification_skip_prefix_summary">Como el nombre de un grupo en un chat.</string>
+    <string name="notification_prefix_memory_title">Recordar el inicio durante</string>
+    <string name="notification_access_summary">Necesario para dejar de leer una notificación descartada y para resúmenes</string>
+    <string name="notification_shake_title">Agitar para parar</string>
+    <string name="notification_shake_strength_title">Intensidad de la sacudida</string>
+    <string name="notification_wave_title">Pasar la mano para detener</string>
+    <string name="notification_wave_summary">Moviendo una mano sobre el sensor de proximidad</string>
+    <string name="notification_pocket_title">Modo bolsillo</string>
+    <string name="notification_pocket_summary">Un sensor que se tapa al iniciar la lectura, como en un bolsillo, no la detiene</string>
+    <string name="notification_volume_keys_title">Presione ambas teclas de volumen</string>
+    <string name="notification_dismiss_title">Detener al descartar la notificación</string>
+    <string name="notification_watch_dismiss_title">También al descartarla en un reloj</string>
+    <string name="notification_app_cancel_title">Detener cuando la aplicación retire la notificación</string>
+    <string name="notification_category_summary">Resumen</string>
+    <string name="notification_summary_now_title">Leer notificaciones ahora</string>
+    <string name="notification_summary_daily_title">Leer notificaciones todos los días.</string>
+    <string name="notification_summary_time_title">Hora</string>
+    <string name="notification_summary_newest_first_title">Lo nuevo primero</string>
+    <string name="notification_summary_name_title">Tu nombre</string>
+    <string name="notification_summary_gap_title">Pausa entre notificaciones</string>
+    <string name="notification_summary_needs_sandfly">Activa SandFly para leer notificaciones</string>
+    <string name="notification_summary_no_access">El acceso a notificaciones está desactivado</string>
+    <string name="notification_summary_morning">Buenos días.</string>
+    <string name="notification_summary_afternoon">Buenas tardes.</string>
+    <string name="notification_summary_evening">Buenas noches.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Anuncios de la hora</string>
+    <string name="notification_clock_interval_title">Anunciar la hora cada</string>
+    <string name="notification_clock_format_title">Formato de hora</string>
+    <string name="notification_clock_format_message">Marcadores de posición: {time}, {date} y {battery} (el porcentaje de batería).</string>
+    <string name="notification_clock_format_default">Hora: {time}</string>
+    <string name="notification_clock_exact_title">Horarios exactos</string>
+    <string name="notification_clock_exact_summary">Requiere el permiso Alarmas y recordatorios. De lo contrario, la hora puede anunciarse con hasta un minuto de retraso.</string>
+    <string name="notification_other_apps_title">Otras aplicaciones</string>
+    <string name="notification_apps_category">Aplicaciones</string>
+    <string name="notification_apps_loading">Cargando aplicaciones</string>
+    <string name="notification_app_mode_title">Notificaciones</string>
+    <string name="notification_app_mode_default">Como otras aplicaciones</string>
+    <string name="notification_app_mode_read">Leer</string>
+    <string name="notification_app_mode_private">Solo nombre de la aplicación</string>
+    <string name="notification_app_mode_priority">Leer primero</string>
+    <string name="notification_app_mode_ignore">No leer</string>
+    <string name="notification_app_name_title">Nombre pronunciado</string>
+    <string name="notification_app_said_as">dicho como <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Restablecer</string>
+    <string name="notification_required_title">Leer solo notificaciones con</string>
+    <string name="notification_blocked_title">No leer notificaciones con</string>
+    <string name="notification_private_title">Leer solo el nombre de la aplicación para</string>
+    <string name="notification_replacements_title">Pronunciar de otra forma</string>
+    <string name="notification_add_word">Añade una palabra</string>
+    <string name="notification_add_replacement">Agregar un reemplazo</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> como <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Texto</string>
+    <string name="notification_replace_with">Pronunciar como</string>
+    <string name="notification_whole_words">Solo palabras completas</string>
+    <string name="notification_regex">Expresión regular</string>
+    <string name="notification_enter_text">Introduce un texto</string>
+    <string name="notification_invalid_regex">No es una expresión regular válida</string>
+    <string name="notification_edit">Editar</string>
+    <string name="notification_remove">Quitar</string>
+    <string name="notification_history_keep">Guardar un historial</string>
+    <string name="notification_history_clear">Borrar el historial</string>
+    <string name="notification_history_category">Notificaciones</string>
+    <string name="notification_history_empty">No hay notificaciones</string>
+    <string name="notification_history_ignore_app">No leer <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Leer solo el nombre de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Leer primero las notificaciones de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">No leas notificaciones como esta</string>
+    <string name="notification_history_copy">Copiar</string>
+    <string name="notification_saved">Guardado</string>
+    <string name="notification_copied">Copiado</string>
+    <string name="notification_outcome_read">Leída</string>
+    <string name="notification_outcome_stopped">Detenido mientras se lee</string>
+    <string name="notification_outcome_speech_off">No leída: la lectura de notificaciones está desactivada</string>
+    <string name="notification_outcome_dnd">No leída: No molestar</string>
+    <string name="notification_outcome_touching">No leída: la pantalla fue tocada</string>
+    <string name="notification_outcome_app">No leída: aplicación</string>
+    <string name="notification_outcome_ongoing">No leída: en curso</string>
+    <string name="notification_outcome_foreground">No leída: aplicación en ejecución</string>
+    <string name="notification_outcome_low_priority">No leída: prioridad baja</string>
+    <string name="notification_outcome_system">No leída: sistema</string>
+    <string name="notification_outcome_media">No leída: reproductor multimedia</string>
+    <string name="notification_outcome_group_summary">No leída: resumen del grupo</string>
+    <string name="notification_outcome_progress">No leída: progreso</string>
+    <string name="notification_outcome_required">No leída: faltan palabras requeridas</string>
+    <string name="notification_outcome_blocked">No leída: palabra bloqueada</string>
+    <string name="notification_outcome_empty">No leída: sin texto</string>
+    <string name="notification_outcome_repeat">No leída: repetición</string>
+    <string name="notification_outcome_cooldown">No leída: se ha leído una notificación de esta aplicación hace poco</string>
+    <string name="notification_outcome_quiet_hours">No leída: horas tranquilas</string>
+    <string name="notification_outcome_screen_on">No leída: pantalla encendida</string>
+    <string name="notification_outcome_screen_off">No leída: pantalla apagada</string>
+    <string name="notification_outcome_locked">No leída: bloqueado</string>
+    <string name="notification_outcome_headphones">No leída: auriculares conectados</string>
+    <string name="notification_outcome_no_headphones">No leída: sin auriculares</string>
+    <string name="notification_outcome_silent">No leída: modo silencioso</string>
+    <string name="notification_outcome_vibrate">No leída: modo vibración</string>
+    <string name="notification_outcome_media_playing">No leída: reproducción multimedia</string>
+    <string name="notification_outcome_car">No leída: modo coche</string>
+    <string name="notification_outcome_rule">No leída: regla</string>
+    <string name="notification_outcome_busy">No leída: se leyó otra notificación</string>
+    <string name="notification_outcome_call">Anunciada como llamada</string>
+    <string name="notification_rule_add">Agregar una regla</string>
+    <string name="notification_rule_from_template">Agregar una regla desde una plantilla</string>
+    <string name="notification_rules_category">Reglas</string>
+    <string name="notification_rules_empty">Sin reglas</string>
+    <string name="notification_rule_name">Nombre</string>
+    <string name="notification_rule_untitled">Regla</string>
+    <string name="notification_rule_enabled">Activada</string>
+    <string name="notification_rule_match">Condiciones</string>
+    <string name="notification_rule_match_all">Deben cumplirse todas</string>
+    <string name="notification_rule_match_any">Debe cumplirse al menos una</string>
+    <string name="notification_rule_conditions">Cuando</string>
+    <string name="notification_rule_actions">Entonces</string>
+    <string name="notification_rule_add_condition">Agregar una condición</string>
+    <string name="notification_rule_add_action">Agregar una acción</string>
+    <string name="notification_rule_invert">Invertir</string>
+    <string name="notification_rule_delete">Eliminar la regla</string>
+    <string name="notification_rule_delete_confirm">¿Eliminar <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Siempre</string>
+    <string name="notification_rule_no_actions">no pasa nada</string>
+    <string name="notification_rule_and">" y "</string>
+    <string name="notification_rule_or">" o "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Sólo con auriculares</string>
+    <string name="notification_template_night">Silencio por la noche</string>
+    <string name="notification_template_screen_off">Solo con la pantalla apagada</string>
+    <string name="notification_template_locked_private">Solo el nombre de la aplicación cuando el teléfono esté bloqueado</string>
+    <string name="notification_template_short_on_battery">Corto cuando no se carga</string>
+    <string name="notification_type_bluetooth">Dispositivo Bluetooth</string>
+    <string name="notification_type_wired">Auriculares con cable</string>
+    <string name="notification_type_wifi">Red Wi-Fi</string>
+    <string name="notification_type_time">Hora del día</string>
+    <string name="notification_type_screen">Pantalla encendida</string>
+    <string name="notification_type_locked">Teléfono bloqueado</string>
+    <string name="notification_type_from_app">Notificación desde una aplicación</string>
+    <string name="notification_type_foreground">Aplicación en primer plano</string>
+    <string name="notification_type_contains">La notificación contiene</string>
+    <string name="notification_type_battery">Nivel de batería inferior a</string>
+    <string name="notification_type_charging">Cargando</string>
+    <string name="notification_type_landscape">Horizontal</string>
+    <string name="notification_type_silent">Modo silencio o vibración</string>
+    <string name="notification_type_media">Reproducción multimedia</string>
+    <string name="notification_bluetooth_any">Cualquier dispositivo</string>
+    <string name="notification_wifi_hint">Nombre de la red</string>
+    <string name="notification_choose_app">Elige una aplicación</string>
+    <string name="notification_time_start">De</string>
+    <string name="notification_time_end">Hasta</string>
+    <string name="notification_time_days">Días</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> a <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly necesita ese permiso para esta condición</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> está conectado</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> no está conectado</string>
+    <string name="notification_cond_bluetooth_any">Hay un dispositivo de audio Bluetooth conectado</string>
+    <string name="notification_cond_bluetooth_any_not">No hay ningún dispositivo de audio Bluetooth conectado</string>
+    <string name="notification_cond_wired">Los auriculares con cable están conectados</string>
+    <string name="notification_cond_wired_not">Los auriculares con cable no están conectados</string>
+    <string name="notification_cond_battery_below">La batería está por debajo del <xliff:g id="percent" example="20">%1$d</xliff:g> por ciento</string>
+    <string name="notification_cond_battery_below_not">La batería está al <xliff:g id="percent" example="20">%1$d</xliff:g> por ciento o más</string>
+    <string name="notification_cond_charging">El teléfono se está cargando</string>
+    <string name="notification_cond_charging_not">El teléfono no carga</string>
+    <string name="notification_cond_locked">El teléfono está bloqueado</string>
+    <string name="notification_cond_locked_not">El teléfono está desbloqueado.</string>
+    <string name="notification_cond_screen_on">La pantalla está encendida</string>
+    <string name="notification_cond_screen_on_not">La pantalla está apagada</string>
+    <string name="notification_cond_landscape">La pantalla está en horizontal</string>
+    <string name="notification_cond_landscape_not">La pantalla está en vertical</string>
+    <string name="notification_cond_time">La hora es <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">La hora no es <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Conectado a <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">No conectado a <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Conectado a Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">No conectado a Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> está en primer plano</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> no está en primer plano</string>
+    <string name="notification_cond_from">La notificación es de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">La notificación no es de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">La notificación contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">La notificación no contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">El timbre está en silencio o vibra.</string>
+    <string name="notification_cond_silent_not">Suena el timbre</string>
+    <string name="notification_cond_media">Los medios se están reproduciendo.</string>
+    <string name="notification_cond_media_not">No se reproduce ningún medio</string>
+    <string name="notification_action_skip">no leer</string>
+    <string name="notification_action_private">leer solo el nombre de la aplicación</string>
+    <string name="notification_action_not_private">leer completo, incluso si es privado</string>
+    <string name="notification_action_format">usar un formato de voz</string>
+    <string name="notification_action_max_words">leer hasta un número de palabras</string>
+    <string name="notification_action_no_limit">leer sin límites de longitud</string>
+    <string name="notification_action_keep_emoji">mantener emoji</string>
+    <string name="notification_action_keep_numbers">mantener los números juntos</string>
+    <string name="notification_action_priority">leer primero</string>
+    <string name="notification_action_always_read">leer incluso en horas tranquilas y en otros momentos en los que normalmente no se leen las notificaciones</string>
+    <string name="notification_action_voice">leer con un perfil de voz</string>
+    <string name="notification_action_voice_value">leer con <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">leer con la voz de SandFly</string>
+    <string name="notification_voice_removed">Perfil de voz eliminado</string>
+    <string name="notification_action_format_value">usa el formato de voz <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">leer hasta <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Desactivado</string>
+    <string name="notification_on">Activado</string>
+    <string name="notification_never_again">Hasta que SandFly se reinicie</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Lectura de notificaciones</string>
+    <string name="notification_speech_now_on">Lectura de notificaciones activada</string>
+    <string name="notification_speech_now_off">Lectura de notificaciones desactivada</string>
+    <string name="notification_no_last_notification">No se leyó ninguna notificación</string>
+    <string name="shortcut_read_notifications">Leer notificaciones</string>
+    <string name="shortcut_toggle_notification_speech">Activar o desactivar la lectura de notificaciones</string>
+    <string name="shortcut_read_last_notification">Leer la última notificación nuevamente.</string>
+    <string name="shortcut_stop_notification">Detener la lectura de la notificación</string>
+    <string name="notification_test_posting">Se enviará una notificación de prueba dentro de 5 segundos</string>
+    <string name="notification_test_not_allowed">Primero permite que SandFly muestre notificaciones</string>
+    <string name="notification_test_content_title">Prueba de SandFly</string>
+    <string name="notification_test_content_text">Esta es una notificación de prueba, leída según tus configuración de notificaciones. 123456</string>
+    <string name="notification_automation_on">Activar la lectura de notificaciones</string>
+    <string name="notification_automation_off">Desactivar la lectura de notificaciones</string>
+    <string name="notification_automation_toggle">Activar o desactivar la lectura de notificaciones</string>
+    <string name="notification_automation_stop">Detener la lectura de la notificación</string>
+    <string name="notification_automation_read_all">Leer notificaciones</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segundo</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> segundos</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> segundos</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuto</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> minutos</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minutos</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> hora</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> horas</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> horas</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> palabra</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> palabras</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> palabras</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> oración</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> oraciones</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> oraciones</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> personaje</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> caracteres</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> caracteres</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dígito</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> dígitos</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> dígitos</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Tienes notificación <xliff:g id="count" example="1">%d</xliff:g>.</item>
+        <item quantity="many">Tienes <xliff:g id="count" example="5">%d</xliff:g> notificaciones.</item>
+        <item quantity="other">Tienes <xliff:g id="count" example="5">%d</xliff:g> notificaciones.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
