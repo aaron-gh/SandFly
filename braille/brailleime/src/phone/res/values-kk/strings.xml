@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack Брайль пернетақтасы</string>
+  <string name="braille_ime_service_name">SandFly Брайль пернетақтасы</string>
   <string name="braille_ime_bd_mode_name">Брайль дисплейінде енгізу</string>
   <string name="switch_to_tabletop_announcement">Экранды жоғары қаратып қою режимі. Құрылғыны зарядтау ұяшығы сол жақта тұратындай қойыңыз.</string>
   <string name="calibration_tip_announcement">Нүктенің орнын өзгерту үшін %d саусақпен басып тұрыңыз.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Қысқартылмаған Брайль пернетақтасына ауыстырылды.</string>
   <string name="braille_ime_displayed_name">Брайль пернетақтасы</string>
   <string name="multiple_languages_braille_ime_displayed_name">Брайль пернетақтасы, %s</string>
-  <string name="input_view_caption">TalkBack Брайль пернетақтасы – анықтама алу үшін g.co/help/braille бетіне өтіңіз.</string>
+  <string name="input_view_caption">SandFly Брайль пернетақтасы – анықтама алу үшін g.co/help/braille бетіне өтіңіз.</string>
   <string name="perform_action_next">Келесі</string>
   <string name="perform_action_submitting">Мәтін жіберу</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Нүкте орны өзгертіліп жатыр. Алдымен %s нүктелерді жазып алайық.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Брайль пернетақтасымен теру кезінде тілді ауыстыру үшін 3 саусағыңызбен жоғары сырғытыңыз. Содан кейін \"келесі тілге ауысу\" тармағын таңдаңыз.</string>
   <string name="title_pref_accumulate_presses">Барлық басылған нүктені қамту</string>
   <string name="summary_pref_accumulate_presses">Нүкте басқа нүктелерден бұрын жіберілсе де, әр басылған нүкте енгiзудің бөлігі болып саналады.</string>
-  <string name="title_pref_reverse_dots">Нүктелердің кері реті</string>
-  <string name="summary_pref_reverse_dots">Нүктелердің, мысалы, 1 мен 4-тің орнын ауыстыру.</string>
+  <string name="title_pref_reverse_dots">Сол және оң нүктелерді ауыстырыңыз</string>
+  <string name="summary_pref_reverse_dots">1, 2 және 3 нүктелері 4, 5 және 6 нүктелерімен сауда орындарын ауыстырады</string>
   <string name="bd_preference_braille_contracted">Қысқартылған Брайль режимі</string>
   <string name="bd_preference_braille_uncontracted">Қысқартылмаған Брайль режимі</string>
   <string name="context_menu_title">Брайль пернетақтасының опциялары</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Пернетақта</string>
   <string name="not_enough_touch_points_dialog_title">Құрылғыңыз Брайль пернетақтасын қолдамайды.</string>
   <string name="not_enough_touch_points_dialog_message">Құрылғыңыз жеткілікті түрту орындарын қолдамайды. Қосымша ақпарат алу үшін құрылғы өндірушісіне хабарласыңыз.</string>
-  <string name="talkback_off_dialog_title">Брайль пернетақтасын пайдалану үшін TalkBack функциясын іске қосыңыз.</string>
+  <string name="talkback_off_dialog_title">Брайль пернетақтасын пайдалану үшін SandFly функциясын іске қосыңыз.</string>
   <string name="talkback_off_dialog_positive_button">\"Арнайы мүмкіндіктер\" параметрлерін іске қосу</string>
-  <string name="talkback_suspend_dialog_title">Брайль пернетақтасын пайдалану үшін TalkBack функциясын қолдана беріңіз.</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack қосылған кезде, Брайль таңбаларын енгізу үшін экранды түртіңіз.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Қимылды өзгерту үшін TalkBack функциясын қосыңыз</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack өшірулі. Брайль пернетақтасының қимылдарын өзгерту үшін оны қосыңыз.</string>
+  <string name="talkback_suspend_dialog_title">Брайль пернетақтасын пайдалану үшін SandFly функциясын қолдана беріңіз.</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly қосылған кезде, Брайль таңбаларын енгізу үшін экранды түртіңіз.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Қимылды өзгерту үшін SandFly функциясын қосыңыз</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly өшірулі. Брайль пернетақтасының қимылдарын өзгерту үшін оны қосыңыз.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Параметрлерге өту</string>
   <string name="reset_gestures_dialog_title">Барлық қимылды бастапқы күйге қайтару қажет пе?</string>
   <string name="reset_gestures_dialog_message">Брайль пернетақтасының қимылдары әдепкі параметрлерге қайтарылады.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Әдепкі күйге қайтару</string>
   <string name="custom_gestures_dialog_remove_button">Қимылды өшіру</string>
   <string name="change_gestures_dialog_message_title">Қимылды өзгерту жолы</string>
-  <string name="change_gestures_dialog_message">Келесі экранда Брайль пернетақтасы ашылады және TalkBack қимылдарын пайдалана алмайсыз.\n\nБрайль пернетақтасы ашылғаннан кейін, қажетті қимылды орындаңыз немесе Брайль пернетақтасын жауып, қимыл өзгерісінен бас тартып, 2 саусақпен төмен сырғытыңыз.\n\nҚолжетімді қимылдарды көру\n</string>
+  <string name="change_gestures_dialog_message">Келесі экранда Брайль пернетақтасы ашылады және SandFly қимылдарын пайдалана алмайсыз.\n\nБрайль пернетақтасы ашылғаннан кейін, қажетті қимылды орындаңыз немесе Брайль пернетақтасын жауып, қимыл өзгерісінен бас тартып, 2 саусақпен төмен сырғытыңыз.\n\nҚолжетімді қимылдарды көру\n</string>
   <string name="change_gestures_dialog_message_link">Қолжетімді қимылдарды көру</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Бұл хабарды қайта көрсетпеу</string>
   <string name="change_gestures_dialog_positive_button">Жалғастыру</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Пайдаланбау</string>
   <string name="next_keyboard">Келесі пернетақта</string>
   <string name="braille_tutorial_title">Брайль пернетақтасы оқулығы</string>
-  <string name="tutorial_intro_description">Брайль пернетақтасының көмегімен 6 нүктелі Брайль қарпін экранды түрту арқылы енгізе аласыз.\n\nUnified English Braille пайдаланудасыз. Теру тілін ауыстыру үшін TalkBack параметрлеріне өтіңіз.\n\nБрайль қарпін теру үшін телефоныңызды басқаша ұстап, пайдалануыңыз қажет.</string>
+  <string name="tutorial_intro_description">Брайль пернетақтасының көмегімен 6 нүктелі Брайль қарпін экранды түрту арқылы енгізе аласыз.\n\nUnified English Braille пайдаланудасыз. Теру тілін ауыстыру үшін SandFly параметрлеріне өтіңіз.\n\nБрайль қарпін теру үшін телефоныңызды басқаша ұстап, пайдалануыңыз қажет.</string>
   <string name="next_step">Келесі</string>
   <string name="leave_keyboard">Брайль пернетақтасын жабу</string>
-  <string name="hold_six_fingers_description">Брайль пернетақтасында әдетте қолданатын TalkBack қимылдарын пайдалана алмайсыз.\n\nБастау үшін теру кезінде пайдаланатын 6 Брайль нүктелерінің орнын белгілеп алайық.</string>
-  <string name="rotate_orientation_description_1">Бұдан былай кәдімгі TalkBack қимылдарын пайдалана алмайсыз. TalkBack функциясы Брайль пернетақтасын пайдалану кезінде қолжетімді болмайды.</string>
+  <string name="hold_six_fingers_description">Брайль пернетақтасында әдетте қолданатын SandFly қимылдарын пайдалана алмайсыз.\n\nБастау үшін теру кезінде пайдаланатын 6 Брайль нүктелерінің орнын белгілеп алайық.</string>
+  <string name="rotate_orientation_description_1">Бұдан былай кәдімгі SandFly қимылдарын пайдалана алмайсыз. SandFly функциясы Брайль пернетақтасын пайдалану кезінде қолжетімді болмайды.</string>
   <string name="rotate_orientation_description_2">Бастау үшін телефоныңыздың экранын әрі қаратып ұстаңыз.</string>
   <string name="tap_to_continue">Жалғастыру үшін кез келген жерді екі рет түртіңіз.</string>
   <string name="instruction_type_letter_a">\"A\" әрпін теру үшін сол сұқ саусағыңызбен 1 нүктесін түртіңіз.</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">КУРСОР АЛҒА ЖЫЛЖЫТЫЛДЫ.</string>
   <string name="result_swipe_down_2_fingers">ПЕРНЕТАҚТАНЫ ЖАСЫРУ</string>
   <string name="result_swipe_down_3_fingers">КЕЛЕСІ ПЕРНЕТАҚТА</string>
-  <string name="rotate_orientation_announcement">Бұдан былай кәдімгі TalkBack қимылдарын пайдалана алмайсыз. TalkBack функциясы Брайль пернетақтасын пайдалану кезінде қолжетімді болмайды.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Бұдан былай кәдімгі SandFly қимылдарын пайдалана алмайсыз. SandFly функциясы Брайль пернетақтасын пайдалану кезінде қолжетімді болмайды.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Алдымен телефонды қосыңыз. Оның экраны әрі қарап тұруы керек.\n\nОдан кейін телефонды көлденеңінен бұрып, альбом қалпына келтіріңіз. Саусақтарыңыз телефонның шетінде болуы керек. Оң қолыңызбен USB портының шетінен ұстаңыз. 3 саусақ экранда, ал шынашақ пен бас бармақ телефонның шетінде.\n\nДайын болған кезде, экранды екі рет түртіңіз.\n\nБрайль пернетақтасын жабу үшін 3 саусақпен төмен қарай сырғытыңыз. Бастапқы пернетақтаға ораласыз.</string>
   <string name="rotate_orientation_continue_announcement">Телефон тік қалыпта. Жалғастыру үшін оны көлденең қалыпта ұстаңыз. Одан кейін экранды әрі қаратып ұстаңыз. Дайын болған кезде, экранды екі рет түртіңіз.</string>
   <string name="type_letter_a_announcement">Экранды әрі қаратып ұстаңыз. Ортаңғы 3 саусағыңыз экранды түрте алатындай етіп, телефонның шетінен екі қолыңызбен ұстаңыз.\n\nСол жақ сұқ саусағыңыз 1-нүктеде болуы керек. \"A\" әрпін теру үшін 1-нүктені түртіңіз.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Басқа пернетақтаға ауысу үшін 3 саусақпен төмен қарай сырғытыңыз. Қазір байқап көріңіз.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Келесі пернетақта. Әдетте бұл пәрмен келесі пернетақтаға ауыстырады. Ал қазір сіз оқулықты ашып отырғандықтан, Брайль пернетақтасы да ашық болады.</string>
   <string name="swipe_up_3_fingers_announcement">Телефоныңызды үстелге жатқызып қою арқылы үстел үсті режимінде тере аласыз. Оқулықты жабу үшін 3 саусақпен жоғары сырғытыңыз және оқулықты жабу опциясын таңдаңыз.</string>
-  <string name="open_context_menu_announcement">Опциялар мәзірі ашық. Телефонды аударып, өзіңізге қаратыңыз да, әдеттегідей ұстаңыз. Телефонды қолдану үшін әдеттегі TalkBack қимылдарын пайдалана беруіңізге болады. Басқа опцияларды көру үшін оңға сырғытыңыз.</string>
+  <string name="open_context_menu_announcement">Опциялар мәзірі ашық. Телефонды аударып, өзіңізге қаратыңыз да, әдеттегідей ұстаңыз. Телефонды қолдану үшін әдеттегі SandFly қимылдарын пайдалана беруіңізге болады. Басқа опцияларды көру үшін оңға сырғытыңыз.</string>
   <string name="hold_six_fingers_announcement">%s\nҚұрылғыңызды үстелге жатқызып қойыңыз. Содан кейін теруге ыңғайлы болатындай әр қолыңыздың ортаңғы 3 саусағын экранға қойыңыз.</string>
   <string name="hold_six_fingers_inactive_announcement">Құрылғыңызды үстелге жатқызып қойыңыз. Содан кейін теруге ыңғайлы болатындай әр қолыңыздың ортаңғы 3 саусағын экранға қойыңыз.</string>
   <string name="finish_tutorial_announcement">Брайль пернетақтасын көрсету. Телефонды аударып, экранын ары қаратыңыз. Телефонды көлденеңінен ұстаңыз. Содан кейін мәтін тере беруіңізге болады.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Бұл қимыл \"%1$s\" үшін қолданылады және оны өзгерту мүмкін емес. Басқа қимылды байқап көріңіз. %2$s</string>
   <string name="custom_gesture_cannot_used">Бұл қимылды пайдалану мүмкін емес</string>
   <string name="custom_gesture_no_gesture">Ешқандай қимыл орындалмады</string>
-  <string name="custom_gesture_try_another">Басқа қимылды байқап көріңіз. Барлық қолжетімді қимыл тізімін көру үшін TalkBack Брайль пернетақтасының Анықтамалық орталығына өтіңіз. %s</string>
+  <string name="custom_gesture_try_another">Басқа қимылды байқап көріңіз. Барлық қолжетімді қимыл тізімін көру үшін SandFly Брайль пернетақтасының Анықтамалық орталығына өтіңіз. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Қимылдар сәйкес келмейді</string>
   <string name="custom_gesture_perform_again">Қайтадан пайдаланғыңыз келген қимылды орындаңыз. %s</string>
+    <string name="tabletop_port_left_announcement">Үстел режимі, зарядтау порты сол жақта</string>
+    <string name="tabletop_port_right_announcement">Үстел үсті режимі, оң жақта зарядтау порты</string>
+    <string name="screen_away_port_right_announcement">Экраннан тыс режим, оң жақта зарядтау порты</string>
+    <string name="screen_away_port_left_announcement">Экранды өшіру режимі, сол жақта зарядтау порты</string>
+    <string name="screen_toward_announcement">Экран сізге қарай</string>
+    <string name="screen_toward_port_left_announcement">Экран сізге қарай, сол жақта зарядтау порты</string>
+    <string name="screen_toward_port_right_announcement">Экран сізге қарай, оң жақта зарядтау порты</string>
+    <string name="screen_toward_port_down_announcement">Экран сізге қарай, зарядтау порты төмен қараған</string>
+    <string name="screen_toward_port_up_announcement">Экран сізге қарай, зарядтау порты жоғары бағытталған</string>
+    <string name="port_right_announcement">Оң жақта зарядтау порты</string>
+    <string name="port_left_announcement">Сол жақта зарядтау порты</string>
+    <string name="tabletop_port_near_announcement">Үстел үсті режимі, зарядтау порты сізге қарай</string>
+    <string name="tabletop_port_far_announcement">Үстел үсті режимі, зарядтау порты сізден алыс</string>
+    <string name="screen_away_port_down_announcement">Экранды өшіру режимі, зарядтау порты төмен қараған</string>
+    <string name="screen_away_port_up_announcement">Экранды өшіру режимі, зарядтау порты жоғары бағытталған</string>
+    <string name="port_near_announcement">Зарядтау порты сізге қарай</string>
+    <string name="port_far_announcement">Зарядтау порты сізден алыс</string>
+    <string name="port_down_announcement">Зарядтау порты төмен бағытталған</string>
+    <string name="port_up_announcement">Зарядтау порты жоғары бағытталған</string>
+    <string name="orientation_locked_announcement">Бағдар құлыпталған</string>
+    <string name="orientation_locked_port_announcement">Бағдар құлыпталған. %1$s</string>
+    <string name="orientation_unlocked_announcement">Бағдар құлпы ашылды</string>
+    <string name="switch_to_language_contracted_announcement">%s тіліне ауысты., Қысқартылған Брайль режимі</string>
+    <string name="switch_to_language_uncontracted_announcement">%s тіліне ауысты., Қысқартылмаған Брайль режимі</string>
+    <string name="title_pref_flip_dots_vertically">Жоғарғы және төменгі нүктелерді ауыстырыңыз</string>
+    <string name="summary_pref_flip_dots_vertically">1-нүкте 3-нүктемен, ал 4-нүктемен 6-нүктемен сауда жасайды</string>
+    <string name="title_pref_tablet_held_up_faces_away">Планшет бетін басқа жаққа қаратты</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Өшірулі кезде планшет немесе ашылған телефон сізге қарап тұрған үстелдің орналасуын пайдаланады</string>
+    <string name="title_pref_typing_sounds">Дыбыстарды теру</string>
+    <string name="summary_pref_typing_sounds">Таңбаны, бос орынды, жаңа жолды немесе жоюды терген кезде пернетақта шертулерін ойнату</string>
+    <string name="skip_tutorial">Оқулықты өткізіп жіберу</string>
 </resources>
