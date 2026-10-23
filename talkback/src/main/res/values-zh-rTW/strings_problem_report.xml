@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">提供意見</string>
+    <string name="title_pref_problem_report_type">回饋類型</string>
+    <string name="title_pref_problem_report_area">面積</string>
+    <string name="title_pref_problem_report_title">標題</string>
+    <string name="title_pref_problem_report_app">應用程式發生的地方</string>
+    <string name="title_pref_problem_report_description">描述</string>
+    <string name="dialog_message_problem_report_description">發生了什麼以及您所期望的。</string>
+    <string name="title_pref_problem_report_steps">重現軟體問題的步驟</string>
+    <string name="title_pref_problem_report_email">回覆電子郵件</string>
+    <string name="title_pref_problem_report_device">包含設備資訊</string>
+    <string name="title_pref_problem_report_log">包括SandFly日誌</string>
+    <string name="summary_pref_problem_report_log">可能包含螢幕上的文字</string>
+    <string name="title_pref_problem_report_send">傳送</string>
+    <string name="summary_pref_problem_report_sending">傳送</string>
+    <string name="problem_report_missing_fields">輸入標題和說明。</string>
+    <string name="problem_report_invalid_email">輸入有效的電子郵件地址。</string>
+    <string name="problem_report_sent">反饋已發送。</string>
+    <string name="problem_report_rate_limited">發送的反饋太多。稍後再試。</string>
+    <string name="problem_report_no_connection">反饋未發送。檢查網路連線。</string>
+    <string name="problem_report_not_sent">反饋未發送。稍後再試。</string>
+    <string-array name="problem_report_type_entries">
+        <item>不正確的行為</item>
+        <item>崩潰</item>
+        <item>反應緩慢或反應遲鈍</item>
+        <item>建議</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>演講</item>
+        <item>手勢</item>
+        <item>觸摸探索</item>
+        <item>讀取控制項和選單</item>
+        <item>打字和鍵盤</item>
+        <item>點字鍵盤</item>
+        <item>點字顯示器</item>
+        <item>聲音和振動</item>
+        <item>通知</item>
+        <item>網頁內容</item>
+        <item>腳本</item>
+        <item>設定</item>
+        <item>更新</item>
+        <item>其他</item>
+    </string-array>
+    <string name="title_report_new">提供意見</string>
+    <string name="title_report_inbox">收件匣</string>
+    <string name="title_report_drafts">草稿</string>
+    <string name="report_inbox_empty">未發送回饋</string>
+    <string name="report_drafts_empty">無草稿</string>
+    <string name="report_just_now">剛才</string>
+    <string name="report_untitled">無題</string>
+    <string name="report_draft_summary">改<xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">已發送<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 新回覆</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 新回覆</item>
+    </plurals>
+    <string name="report_status_changed">狀態改變</string>
+    <string name="report_status_open">開放問題</string>
+    <string name="report_status_completed">已關閉、已完成</string>
+    <string name="report_status_not_planned">已關閉，未計劃</string>
+    <string name="report_status_duplicate">已關閉、重複</string>
+    <string name="report_status_unknown">已刪除</string>
+    <string name="title_report_status">狀態</string>
+    <string name="title_report_your_report">您的回饋</string>
+    <string name="title_report_messages">留言</string>
+    <string name="report_message_from_developer">開發商<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">你<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">回覆</string>
+    <string name="title_report_reply_text">您的回覆</string>
+    <string name="title_report_send_reply">發送回覆</string>
+    <string name="report_reply_sent">回覆已發送。</string>
+    <string name="report_reply_not_sent">回覆未發送。稍後再試。</string>
+    <string name="title_report_remove">從收件匣中刪除</string>
+    <string name="dialog_title_report_remove">從收件匣中刪除此回饋嗎？</string>
+    <string name="dialog_message_report_remove">對此的回覆將不再到達此手機。</string>
+    <string name="title_report_delete_draft">刪除草稿</string>
+    <string name="dialog_title_report_delete_draft">刪除這個草稿嗎？</string>
+    <string name="button_report_delete">刪除</string>
+    <string name="report_missing">此回饋不再出現在收件匣中。</string>
+    <string name="notification_channel_problem_reports">回饋回覆</string>
+    <string name="report_notification_reply">回覆<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
