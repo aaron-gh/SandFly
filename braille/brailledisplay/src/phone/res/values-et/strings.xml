@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braille riistvaraklaviatuur</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBacki Braille klaviatuur pole saadaval</string>
-  <string name="bd_ime_disabled_dialog_title">Lülitage TalkBacki Braille klaviatuur sisse</string>
+  <string name="bd_ime_unavailable_activity_name">SandFlyi Braille klaviatuur pole saadaval</string>
+  <string name="bd_ime_disabled_dialog_title">Lülitage SandFlyi Braille klaviatuur sisse</string>
   <string name="bd_ime_disabled_dialog_message">Braille ekraani kasutamiseks teksti sisestamiseks avage sisendi seaded, et see sisse lülitada</string>
   <string name="bd_ime_disabled_dialog_title_positive">Sisendi seaded</string>
   <string name="bd_ime_not_default_dialog_title">Vahetage oma sisestusmeetodit</string>
-  <string name="bd_ime_not_default_dialog_message">Teksti sisestamise jätkamiseks määrake sisestusmeetodiks TalkBacki Braille klaviatuur</string>
+  <string name="bd_ime_not_default_dialog_message">Teksti sisestamise jätkamiseks määrake sisestusmeetodiks SandFlyi Braille klaviatuur</string>
   <string name="bd_ime_not_default_dialog_positive">Vaheta sisendit</string>
   <string name="type_unlabeled">Sildita</string>
   <string name="type_unlabeled_edittext">Sildita muutmiskast</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Vasakule paanimine</string>
   <string name="overlay_pan_right_button">Paremale paanimine</string>
   <string name="bd_preferences_title">Braille ekraan</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Braille ekraani kasutamiseks lülitage esmalt sisse TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Ava TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Braille ekraani kasutamiseks lülitage esmalt sisse SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Ava SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Braille ekraani kasutamiseks lülitage esmalt sisse Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Lülita Bluetooth sisse</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Braille ekraani kasutamiseks vajab %s juurdepääsu läheduses olevatele seadmetele</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Sirvimisrežiimi kasutamiseks peate vaikeklahvitabelilt lülituma täiustatud klahvitabelile. See muudatus värskendab mõnda teie Braille ekraani käsku.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Seaded</string>
   <string name="bd_command_change_dialog_title">Mõnda käsku on värskendatud</string>
-  <string name="bd_command_change_dialog_message">Selles TalkBacki versioonis värskendati järgmisi Braille ekraani käske.\n\n• Eelmine üksus: vajutage punkte 1, 7\n\n• Järgmine üksus: vajutage punkte 4, 8\n\n• Eelmine lugemise juhtimine: vajutage punkte 2, 3, 7, 8\n\n• Järgmine lugemise juhtimine: vajutage punkte 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Selles SandFlyi versioonis värskendati järgmisi Braille ekraani käske.\n\n• Eelmine üksus: vajutage punkte 1, 7\n\n• Järgmine üksus: vajutage punkte 4, 8\n\n• Eelmine lugemise juhtimine: vajutage punkte 2, 3, 7, 8\n\n• Järgmine lugemise juhtimine: vajutage punkte 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Lühendatud Braille</string>
   <string name="bd_preference_braille_uncontracted">Lühendamata Braille</string>
   <string name="bd_braille_grade_tips">Braille ekraani abil kiiresti lühendatud ja lühendamata Braille vahel vahetamiseks vajutage tühikut ning punkte 1, 2, 4 ja 5.\n\nSee käsk töötab, kui kasutate mõlema Braille klassiga keelt.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Üksuste vahel liikumine</string>
   <string name="bd_commands_bindings_category_system_actions_title">Süsteemitoimingud</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Tagasi, avakuva, märguanded ja muu</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBacki funktsioonid</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkbacki menüüd ja seaded</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFlyi funktsioonid</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menüüd ja seaded</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille seaded</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braille keel ja seaded</string>
   <string name="bd_commands_bindings_category_text_editing_title">Teksti redigeerimine</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Menüü Kõik rakendused avamine</string>
   <string name="bd_cmd_toggle_screen_search">Ekraaniotsingu avamine</string>
   <string name="bd_cmd_edit_custom_label">Kohandatud sildi muutmine</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBacki menüü avamine</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBacki kõne sisse või välja lülitamine</string>
+  <string name="bd_cmd_open_talkback_menu">SandFlyi menüü avamine</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFlyi kõne sisse või välja lülitamine</string>
   <string name="bd_cmd_read_stop">Lugemise lõpetamine</string>
-  <string name="bd_cmd_talkback_settings">TalkBacki seadete avamine</string>
+  <string name="bd_cmd_talkback_settings">SandFlyi seadete avamine</string>
   <string name="bd_cmd_switch_to_next_input_language">Järgmise sisestamiskeele valimine</string>
   <string name="bd_cmd_switch_to_next_output_language">Järgmise juhtkeele valimine</string>
   <string name="bd_cmd_toggle_contracted_mode">Lühendatud ja lühendamata teksti vahel vahetamine</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Saate kiirelt veebilehtede vahel liikuda, kasutades sirvimisrežiimi sisenemise käsku ja sisestades järgmise tähe- või numbriotsetee.\n\nNeid otseteid saab kasutada ka väljaspool sirvimisrežiimi, kuid peate lisama järgmistele käskudele punkt 8.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabelis navigeerimine</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Kas lülitada Braille ekraani seade välja?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Saate selle TalkBacki seadetes alati uuesti sisse lülitada</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Saate selle SandFlyi seadetes alati uuesti sisse lülitada</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Lülita välja</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Mõned käsud ei ole saadaval</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigeerimise, Braille seadete ja teatud TalkBacki funktsioonide käsud ei ole teksti sisestamisel või töötlemisel saadaval.\n\nNende käskude kasutamiseks sulgege esmalt klaviatuur.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigeerimise, Braille seadete ja teatud SandFlyi funktsioonide käsud ei ole teksti sisestamisel või töötlemisel saadaval.\n\nNende käskude kasutamiseks sulgege esmalt klaviatuur.</string>
   <string name="bd_caption_tutorial_dialog_title">Subtiitrid Braille ekraanil</string>
   <string name="bd_caption_tutorial_dialog_message">Video puhul subtiitrite kuvamiseks või peitmiseks vajutage tühikut ja punkte 1, 4, 7, 8.\n\nToetatud meedia puhul subtiitrite automaatseks kuvamiseks lülitage seadetes sisse valik Subtiitrite kuvamine Braille ekraanil.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Kuvage see teade alati, kui subtiitrid on saadaval</string>
   <string name="bd_usb_connect_dialog_title">Braille ekraan on ühendatud USB-ga</string>
-  <string name="bd_usb_connect_dialog_message">Teie seadme %s aku laadib teie Braille ekraani.\n\nKui soovite lülituda Bluetoothile, eemaldage USB-seade või USB-jaotur ja tehke valikud TalkBacki seaded &gt; Braille ekraan.</string>
+  <string name="bd_usb_connect_dialog_message">Teie seadme %s aku laadib teie Braille ekraani.\n\nKui soovite lülituda Bluetoothile, eemaldage USB-seade või USB-jaotur ja tehke valikud SandFlyi seaded &gt; Braille ekraan.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Seadme %s aku on tühjenemas</string>
   <string name="bd_battery_low_dialog_message">Teie seadme %s aku laadib teie Braille ekraani.\n\nAku säästmiseks tehke järgmist.\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Tühjenda kõik</string>
   <string name="popup_message_history_empty">Tühi</string>
   <string name="popup_message_history_consent_dialog_title">Kas lülitada seadme sõnumiajalugu sisse?</string>
-  <string name="popup_message_history_consent_dialog_msg">See talletab mõned sõnumid (nt märguanded ja äratused) TalkBacki. Seda seadet saab igal ajal muuta.</string>
+  <string name="popup_message_history_consent_dialog_msg">See talletab mõned sõnumid (nt märguanded ja äratused) SandFlyi. Seda seadet saab igal ajal muuta.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Lülita sisse</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Tänan, ei</string>
+    <string name="external_display_channel">Teiste rakenduste punktkirjakuvarid</string>
+    <string name="external_display_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Notetaker">%1$s</xliff:g> olla SandFly punktkirjakuvar?</string>
+    <string name="external_display_ask_text">SandFly ei kasuta seda enne, kui annate loa.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> saab lugeda kõike, mida SandFly punktkirjas kuvab. See võib olla mis tahes ekraanil olev sisu, sealhulgas sõnumid ja teie sisestatud tekst. Samuti saab see teie seadet juhtida nagu punktkirjakuvariga: sisestada teksti, avada rakendusi ja käivitada kõiki SandFly käske. Andke luba ainult usaldusväärsetele rakendustele.</string>
+    <string name="external_display_allow">Luba</string>
+    <string name="external_display_deny">Ära luba</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> on teie punktkirjakuvar</string>
+    <string name="external_display_in_use_text">Kui SandFly seda kasutab, saab <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekraani lugeda ja seadet juhtida.</string>
+    <string name="external_displays_title">Teiste rakenduste kuvarid</string>
+    <string name="external_displays_summary">Rakendused, millele annate loa, saavad olla SandFly punktkirjakuvarid. Punktkirjakuvarina toimiv rakendus saab ekraani lugeda ja seadet juhtida.</string>
+    <string name="external_displays_none">Ükski rakendus ei saa olla punktkirjakuvar.</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBacki Braille klaviatuur</string>
+  <string name="braille_ime_service_name">SandFlyi Braille klaviatuur</string>
   <string name="braille_ime_bd_mode_name">Braille ekraani sisestus</string>
   <string name="switch_to_tabletop_announcement">Lauarežiim. Asetage seade nii, et laadimisport jääb vasakule.</string>
   <string name="calibration_tip_announcement">Punkti asendi värskendamiseks hoidke all %d sõrme.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Lühendamata Braille on aktiveeritud</string>
   <string name="braille_ime_displayed_name">Braille klaviatuur</string>
   <string name="multiple_languages_braille_ime_displayed_name">Braille klaviatuur, %s</string>
-  <string name="input_view_caption">TalkBacki Braille klaviatuur – abi saamiseks minge aadressile g.co/help/braille</string>
+  <string name="input_view_caption">SandFlyi Braille klaviatuur – abi saamiseks minge aadressile g.co/help/braille</string>
   <string name="perform_action_next">Järgmine</string>
   <string name="perform_action_submitting">Teksti esitamine</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Punkti asendi värskendamine. Esmalt salvestame teie %s punktid.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Selleks et Braille klaviatuuril sisestamisel keelt muuta, pühkige kolme sõrmega üles. Seejärel tehke valik „Vaheta järgmisele keelele“.</string>
   <string name="title_pref_accumulate_presses">Kaasa kõik vajutatud punktid</string>
   <string name="summary_pref_accumulate_presses">Iga vajutatud punkt on osa sisendist, isegi kui punkt vabastatakse enne teisi punke</string>
-  <string name="title_pref_reverse_dots">Pööra punktid ümber</string>
-  <string name="summary_pref_reverse_dots">Vahetab punktide asukohti, nii et punktid 1 ja 4 vahetavad kohta</string>
+  <string name="title_pref_reverse_dots">Vaheta vasakud ja paremad punktid</string>
+  <string name="summary_pref_reverse_dots">Punktid 1, 2 ja 3 vahetavad kohad punktidega 4, 5 ja 6</string>
   <string name="bd_preference_braille_contracted">Lühendatud Braille</string>
   <string name="bd_preference_braille_uncontracted">Lühendamata Braille</string>
   <string name="context_menu_title">Braille klaviatuuri valikud</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klaviatuur</string>
   <string name="not_enough_touch_points_dialog_title">Teie seade ei toeta Braille klaviatuuri</string>
   <string name="not_enough_touch_points_dialog_message">Teie seade ei toeta piisavalt puutepunkte. Lisateabe saamiseks võtke ühendust seadme tootjaga.</string>
-  <string name="talkback_off_dialog_title">Braille klaviatuuri kasutamiseks lülitage TalkBack sisse</string>
+  <string name="talkback_off_dialog_title">Braille klaviatuuri kasutamiseks lülitage SandFly sisse</string>
   <string name="talkback_off_dialog_positive_button">Lülita see juurdepääsetavuse seadetes sisse</string>
-  <string name="talkback_suspend_dialog_title">Braille klaviatuuri kasutamiseks aktiveerige taas TalkBack</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kui TalkBack on sees, võite puudutada ekraani, et sisestada Braille sümboleid.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Liigutuse muutmiseks lülitage TalkBack sisse</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack on väljas. Braille klaviatuuri liigutuste muutmiseks lülitage see sisse.</string>
+  <string name="talkback_suspend_dialog_title">Braille klaviatuuri kasutamiseks aktiveerige taas SandFly</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kui SandFly on sees, võite puudutada ekraani, et sisestada Braille sümboleid.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Liigutuse muutmiseks lülitage SandFly sisse</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly on väljas. Braille klaviatuuri liigutuste muutmiseks lülitage see sisse.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Ava seaded</string>
   <string name="reset_gestures_dialog_title">Kas lähtestada kõik liigutused?</string>
   <string name="reset_gestures_dialog_message">Kõik Braille klaviatuuri liigutused lähtestatakse vaikevalikutele.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Lähtesta vaikeseadetele</string>
   <string name="custom_gestures_dialog_remove_button">Eemalda liigutus</string>
   <string name="change_gestures_dialog_message_title">Liigutuse muutmine</string>
-  <string name="change_gestures_dialog_message">Järgmisel kuval avaneb Braille klaviatuur ja te ei saa TalkBacki liigutusi kasutada.\n\nKui Braille klaviatuur avaneb, tehke soovitud liigutus või kui soovite Braille klaviatuuri sulgeda ja liigutuse muutmise tühistada, pühkige kahe sõrmega alla.\n\nVaadake saadaolevaid liigutusi.\n</string>
+  <string name="change_gestures_dialog_message">Järgmisel kuval avaneb Braille klaviatuur ja te ei saa SandFlyi liigutusi kasutada.\n\nKui Braille klaviatuur avaneb, tehke soovitud liigutus või kui soovite Braille klaviatuuri sulgeda ja liigutuse muutmise tühistada, pühkige kahe sõrmega alla.\n\nVaadake saadaolevaid liigutusi.\n</string>
   <string name="change_gestures_dialog_message_link">Vaadake saadaolevaid liigutusi.</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ära seda sõnumit enam kuva</string>
   <string name="change_gestures_dialog_positive_button">Jätka</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Ära kasuta</string>
   <string name="next_keyboard">Järgmine klaviatuur</string>
   <string name="braille_tutorial_title">Braille klaviatuuri õpetus</string>
-  <string name="tutorial_intro_description">Braille klaviatuuriga võite puudutada ekraani, et sisestada kuue punktiga Braille kirja.\n\nKasutate ühendatud inglise punktkirja. Sisestuskeele muutmiseks avage TalkBacki seaded.\n\nBraille kirja sisestamiseks peate telefoni hoidma ja kasutama teistmoodi.</string>
+  <string name="tutorial_intro_description">Braille klaviatuuriga võite puudutada ekraani, et sisestada kuue punktiga Braille kirja.\n\nKasutate ühendatud inglise punktkirja. Sisestuskeele muutmiseks avage SandFlyi seaded.\n\nBraille kirja sisestamiseks peate telefoni hoidma ja kasutama teistmoodi.</string>
   <string name="next_step">Edasi</string>
   <string name="leave_keyboard">Sule Braille klaviatuur</string>
-  <string name="hold_six_fingers_description">Braille klaviatuuriga ei saa tavapäraseid TalkBacki liigutusi kasutada.\n\nAlustamiseks seadistame kuue Braille punkti asendi, mille abil saate teksti sisestada.</string>
-  <string name="rotate_orientation_description_1">Nüüdsest ei saa te enam kasutada tavapäraseid TalkBacki liigutusi. TalkBack ei ole Braille klaviatuuri kasutamise ajal saadaval.</string>
+  <string name="hold_six_fingers_description">Braille klaviatuuriga ei saa tavapäraseid SandFlyi liigutusi kasutada.\n\nAlustamiseks seadistame kuue Braille punkti asendi, mille abil saate teksti sisestada.</string>
+  <string name="rotate_orientation_description_1">Nüüdsest ei saa te enam kasutada tavapäraseid SandFlyi liigutusi. SandFly ei ole Braille klaviatuuri kasutamise ajal saadaval.</string>
   <string name="rotate_orientation_description_2">Alustamiseks hoidke telefoni nii, et ekraan oleks suunaga teist eemale.</string>
   <string name="tap_to_continue">Jätkamiseks topeltpuudutage</string>
   <string name="instruction_type_letter_a">Tähe A sisestamiseks puudutage vasaku nimetissõrmega punkti 1</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURSORIT LIIGUTATI EDASI</string>
   <string name="result_swipe_down_2_fingers">PEIDA KLAVIATUUR</string>
   <string name="result_swipe_down_3_fingers">JÄRGMINE KLAVIATUUR</string>
-  <string name="rotate_orientation_announcement">Nüüdsest ei saa te enam kasutada tavapäraseid TalkBacki liigutusi. TalkBack ei ole Braille klaviatuuri kasutamise ajal saadaval.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Nüüdsest ei saa te enam kasutada tavapäraseid SandFlyi liigutusi. SandFly ei ole Braille klaviatuuri kasutamise ajal saadaval.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Esmalt pöörake oma telefoni, nii et ekraan oleks suunaga teist eemal.\n\nSeejärel pöörake telefon horisontaalasendisse. Hoidke telefoni lühematest servadest. Teie parem käsi peab telefoni hoidma otsast, kus asub USB-port. Asetage kolm keskmist sõrme ekraanile ning toetage telefoni pöidla ja väikese sõrmega.\n\nKui olete valmis, puudutage jätkamiseks ekraani.\n\nBraille\' klaviatuuri sulgemiseks pühkige kolme sõrmega allapoole. See aktiveerib taas algse klaviatuuri.</string>
   <string name="rotate_orientation_continue_announcement">Telefon on vertikaalasendis. Jätkamiseks pöörake telefon horisontaalasendisse, nii et pikem serv on all. Seejärel pöörake telefoni, nii et ekraan oleks suunaga teist eemal. Kui olete valmis, topeltpuudutage ekraani, et jätkata.</string>
   <string name="type_letter_a_announcement">Hoidke telefoni nii, et ekraan oleks suunaga teist eemale. Hoidke telefoni mõlema käega lühematest servadest, nii et saaksite mõlema käe kolme keskmise sõrmega ekraani puudutada.\n\nVasak nimetissõrm peaks olema punktil 1. Nüüd puudutage punkti 1, et sisestada täht A.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Teise klaviatuuri aktiveerimiseks pühkige kolme sõrmega alla. Proovige kohe.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Järgmine klaviatuur. Tavaliselt aktiveerib see järgmise klaviatuuri. Praegu jääb Braille klaviatuur aktiivseks, kuna õpetus on veel pooleli.</string>
   <string name="swipe_up_3_fingers_announcement">Režiimis Laual saate teksti sisestada ka siis, kui asetate telefoni lauale. Õpetuse lõpetamiseks pühkige kolme sõrmega üles ja leidke valik Lõpeta õpetus</string>
-  <string name="open_context_menu_announcement">Valikute menüü on avatud. Pöörake telefon uuesti ümber, et selle ekraan oleks suunatud teie poole, ja hoidke seda tavapäraselt. Nüüd saate navigeerimiseks kasutada tavapäraseid TalkBacki liigutusi. Lisavalikute nägemiseks pühkige paremale.</string>
+  <string name="open_context_menu_announcement">Valikute menüü on avatud. Pöörake telefon uuesti ümber, et selle ekraan oleks suunatud teie poole, ja hoidke seda tavapäraselt. Nüüd saate navigeerimiseks kasutada tavapäraseid SandFlyi liigutusi. Lisavalikute nägemiseks pühkige paremale.</string>
   <string name="hold_six_fingers_announcement">%s\nAsetage telefon lauale. Seejärel puudutage mõlema käe kolme keskmise sõrmega pikalt ekraani asendis, milles teil on mugav teksti sisestada.</string>
   <string name="hold_six_fingers_inactive_announcement">Asetage telefon lauale. Seejärel puudutage mõlema käe kolme keskmise sõrmega pikalt ekraani asendis, milles teil on mugav teksti sisestada.</string>
   <string name="finish_tutorial_announcement">Kuvatud on Braille klaviatuur. Pöörake telefon nii, et ekraan oleks teist eemale suunatud. Pöörake telefon horisontaalasendisse. Seejärel alustage sisestamist.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Seda liigutust kasutatakse kohandatud käsu „%1$s” puhul ja seda ei saa muuta. Proovige muud liigutust. %2$s</string>
   <string name="custom_gesture_cannot_used">Seda liigutust ei saa kasutada.</string>
   <string name="custom_gesture_no_gesture">Ühtegi liigutust pole tehtud.</string>
-  <string name="custom_gesture_try_another">Proovige muud liigutust. Kõigi saadaolevate liigutuste loendi vaatamiseks avage TalkBacki Braille klaviatuuri abikeskus. %s</string>
+  <string name="custom_gesture_try_another">Proovige muud liigutust. Kõigi saadaolevate liigutuste loendi vaatamiseks avage SandFlyi Braille klaviatuuri abikeskus. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Liigutused ei ühti.</string>
   <string name="custom_gesture_perform_again">Tehke liigutus, mida soovite uuesti kasutada. %s</string>
+    <string name="tabletop_port_left_announcement">Lauarežiim, laadimispesa vasakul</string>
+    <string name="tabletop_port_right_announcement">Lauarežiim, laadimispesa paremal</string>
+    <string name="screen_away_port_right_announcement">Ekraan teist eemale, laadimispesa paremal</string>
+    <string name="screen_away_port_left_announcement">Ekraan teist eemale, laadimispesa vasakul</string>
+    <string name="screen_toward_announcement">Ekraan teie poole</string>
+    <string name="screen_toward_port_left_announcement">Ekraan teie poole, laadimispesa vasakul</string>
+    <string name="screen_toward_port_right_announcement">Ekraan teie poole, laadimispesa paremal</string>
+    <string name="screen_toward_port_down_announcement">Ekraan teie poole, laadimispesa all</string>
+    <string name="screen_toward_port_up_announcement">Ekraan teie poole, laadimispesa üleval</string>
+    <string name="port_right_announcement">Laadimispesa paremal</string>
+    <string name="port_left_announcement">Laadimispesa vasakul</string>
+    <string name="tabletop_port_near_announcement">Lauarežiim, laadimispesa teie poole</string>
+    <string name="tabletop_port_far_announcement">Lauarežiim, laadimispesa teist eemale</string>
+    <string name="screen_away_port_down_announcement">Ekraan teist eemale, laadimispesa all</string>
+    <string name="screen_away_port_up_announcement">Ekraan teist eemale, laadimispesa üleval</string>
+    <string name="port_near_announcement">Laadimispesa teie poole</string>
+    <string name="port_far_announcement">Laadimispesa teist eemale</string>
+    <string name="port_down_announcement">Laadimispesa all</string>
+    <string name="port_up_announcement">Laadimispesa üleval</string>
+    <string name="orientation_locked_announcement">Suund lukustatud</string>
+    <string name="orientation_locked_port_announcement">Suund lukustatud. %1$s</string>
+    <string name="orientation_unlocked_announcement">Suund lukust vabastatud</string>
+    <string name="switch_to_language_contracted_announcement">Lülituti keelele %s, Lühendatud Braille</string>
+    <string name="switch_to_language_uncontracted_announcement">Lülituti keelele %s, Lühendamata Braille</string>
+    <string name="title_pref_flip_dots_vertically">Vaheta ülemised ja alumised punktid</string>
+    <string name="summary_pref_flip_dots_vertically">Punkt 1 vahetab koha punktiga 3 ning punkt 4 punktiga 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Püsti hoitud tahvelarvuti ekraan on teist eemale</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kui valik on välja lülitatud, kasutab püsti hoitud tahvelarvuti või lahtivolditud telefon teie poole suunatud lauapaigutust</string>
+    <string name="title_pref_typing_sounds">Tippimishelid</string>
+    <string name="summary_pref_typing_sounds">Esita klahviklõpse märgi, tühiku või reavahetuse sisestamisel ning kustutamisel</string>
+    <string name="skip_tutorial">Jäta õpetus vahele</string>
 </resources>
