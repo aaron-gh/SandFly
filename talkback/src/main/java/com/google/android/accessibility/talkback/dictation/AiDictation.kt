@@ -54,10 +54,11 @@ import java.util.concurrent.Executors
 /**
  * Dictate: types what the user says into the focused text field. The gesture starts recording and
  * the same gesture stops it; nothing stops it in between. The speech is then recognized as
- * Dictation settings say: by Rambler (Gemini 3.5 Transcribe), Whisper on the phone, or Android's
- * speech recognition. When Correct dictation with AI is on, the AI service chosen for dictation
- * corrects the text of Whisper and Android speech recognition before it is typed; Rambler's text
- * needs no correction.
+ * Dictation settings say: by Google on-device speech recognition, Rambler (Gemini API), Whisper on
+ * the phone, or Android's speech recognition. When Correct dictation with AI is on, the AI service chosen for dictation
+ * cleans up the text as Gboard's Rambler does before it is typed: filler words, false starts and
+ * self-corrections removed, punctuation and numbers formatted. Rambler (Gemini API) text arrives
+ * cleaned up already.
  */
 class AiDictation(
   private val service: TalkBackService,
@@ -457,12 +458,24 @@ class AiDictation(
         answer.length <= heard.length * 2 + 40 &&
         answer.lines().size <= heard.lines().size * 2 + 1
 
+    /**
+     * Asks for the cleanup that Gboard's Rambler does on Google's servers: filler words and false
+     * starts removed, self-corrections resolved, and punctuation, numbers and lists formatted.
+     */
     fun prompt(before: String, heard: String): String =
       "The text below came from speech recognition and will be typed into a text field. " +
-        "Correct its punctuation and capital letters, and words that speech recognition " +
-        "probably misheard. Turn spoken punctuation, such as \"comma\" or \"new line\", into the " +
-        "marks. Keep the speaker's words, wording and language otherwise. Don't answer, add to " +
-        "or explain it. Reply with the corrected text only.\n\n" +
+        "Clean it up as a careful typist would:\n" +
+        "- Remove filler words (such as \"um\", \"uh\", \"like\", \"you know\"), stutters, " +
+        "repeated words and false starts.\n" +
+        "- Where the speaker corrects themselves, keep only the correction: \"meet at two, no, " +
+        "three\" becomes \"meet at three\".\n" +
+        "- Add punctuation and capital letters, and correct words that speech recognition " +
+        "probably misheard.\n" +
+        "- Turn spoken punctuation, such as \"comma\" or \"new line\", into the marks.\n" +
+        "- Write numbers, times, dates and amounts as digits where that is usual, and a spoken " +
+        "list as a list.\n" +
+        "Keep the speaker's meaning, wording and language otherwise. Don't answer, add to or " +
+        "explain it. Reply with the cleaned-up text only.\n\n" +
         "Text already in the field before the cursor, for context only:\n" +
         "\"\"\"${quoted(before.takeLast(CONTEXT_CHARACTERS))}\"\"\"\n\n" +
         "Recognized speech:\n\"\"\"${quoted(heard)}\"\"\""
