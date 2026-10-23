@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">የTalkBack ብሬይል ቁልፍ ሰሌዳ</string>
+  <string name="braille_ime_service_name">የSandFly ብሬይል ቁልፍ ሰሌዳ</string>
   <string name="braille_ime_bd_mode_name">የብሬይል ማሳያ ግብዓት</string>
   <string name="switch_to_tabletop_announcement">የጠረጴዛ ላይ ሁነታ። መሣሪያዎን ከኃይል መሙያ ወደቡ በስተግራ ያስቀምጡ።</string>
   <string name="calibration_tip_announcement">የነጥብ አቀማመጥን ለማዘመን %d ጣቶችን ተጭነው ይያዙ።</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">ወደ ያልታመቀ ብሬይል ተቀይሯል</string>
   <string name="braille_ime_displayed_name">የብሬይል ቁልፍ ሰሌዳ</string>
   <string name="multiple_languages_braille_ime_displayed_name">የብሬይል ቁልፍ ሰሌዳ፣ %s</string>
-  <string name="input_view_caption">የTalkBack ብሬይል ቁልፍ ሰሌዳ - ለእገዛ g.co/help/brailleን ይጎብኙ</string>
+  <string name="input_view_caption">የSandFly ብሬይል ቁልፍ ሰሌዳ - ለእገዛ g.co/help/brailleን ይጎብኙ</string>
   <string name="perform_action_next">ቀጣይ</string>
   <string name="perform_action_submitting">ጽሑፍን በማስገባት ላይ</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">የነጥብ አቀማመጥን በማዘመን ላይ። መጀመሪያ በእርስዎ %s ላይ ነጥቦቹን እንመዝግብ።</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">በብሬይል ቁልፍ ሰሌዳ እየተየቡ ቋንቋዎን ለመቀየር በ3 ጣቶች ወደ ላይ ያንሸራትቱ። ከዚያ «ወደ ቀጣዩ ቋንቋ ቀይር»ን ይምረጡ።</string>
   <string name="title_pref_accumulate_presses">ሁሉንም የተጫኑ ነጥቦችን ያካትቱ</string>
   <string name="summary_pref_accumulate_presses">እያንዳንዱ የተጫነ ነጥብ የግቤቱ አካል ነው፣ ነጥቡ ከሌሎች ነጥቦች በፊት የተለቀቀ ቢሆንም እንኳ</string>
-  <string name="title_pref_reverse_dots">የተገለበጡ ነጥቦች</string>
-  <string name="summary_pref_reverse_dots">የነጥቦቹን ቦታ ያቀያይሩ፣ በዚህም ለምሳሌ ነጥቦች 1 እና 4 ቦታ ይቀያየራሉ ማለት ነው</string>
+  <string name="title_pref_reverse_dots">የግራ እና የቀኝ ነጥቦችን ይቀያይሩ</string>
+  <string name="summary_pref_reverse_dots">ነጥቦች 1፣ 2 እና 3 የንግድ ቦታዎች በነጥቦች 4፣ 5 እና 6</string>
   <string name="bd_preference_braille_contracted">ውል ያለው ብሬይል</string>
   <string name="bd_preference_braille_uncontracted">ውል የሌለው ብሬይል</string>
   <string name="context_menu_title">የብሬይል ቁልፍ ሰሌዳ አማራጮች</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">የቁልፍ ሰሌዳ</string>
   <string name="not_enough_touch_points_dialog_title">የእርስዎ መሣሪያ የብሬይል ቁልፍ ሰሌዳን አይደግፍም</string>
   <string name="not_enough_touch_points_dialog_message">የእርስዎ መሣሪያ በቂ የንክኪ ነጥቦችን አይደግፍም። ተጨማሪ መረጃ ለማግኜት የመሣሪያዎን አምራች ያነጋግሩ።</string>
-  <string name="talkback_off_dialog_title">የብሬይል ቁልፍ ሰሌዳን ለመጠቀም TalkBackን ያብሩ</string>
+  <string name="talkback_off_dialog_title">የብሬይል ቁልፍ ሰሌዳን ለመጠቀም SandFlyን ያብሩ</string>
   <string name="talkback_off_dialog_positive_button">በተደራሽነት ቅንብሮች ውስጥ ያብሩ</string>
-  <string name="talkback_suspend_dialog_title">የብሬይል ቁልፍ ሰሌዳን ለመጠቀም TalkBack ካቆመበት ይቀጥሉ</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack ሲበራ የብሬይል ምልክቶችን ለማስገባት ማያ ገጽዎን መታ ማድረግ ይችላሉ።</string>
-  <string name="talkback_off_custom_gestures_dialog_title">የእጅ ምልክትን ለመቀየር TalkBack ያብሩ</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ጠፍቷል። የብሬይል ቁልፍ ሰሌዳ ምልክቶችን ለመለወጥ ያብሩት።</string>
+  <string name="talkback_suspend_dialog_title">የብሬይል ቁልፍ ሰሌዳን ለመጠቀም SandFly ካቆመበት ይቀጥሉ</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly ሲበራ የብሬይል ምልክቶችን ለማስገባት ማያ ገጽዎን መታ ማድረግ ይችላሉ።</string>
+  <string name="talkback_off_custom_gestures_dialog_title">የእጅ ምልክትን ለመቀየር SandFly ያብሩ</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ጠፍቷል። የብሬይል ቁልፍ ሰሌዳ ምልክቶችን ለመለወጥ ያብሩት።</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ወደ ቅንብሮች ሂድ</string>
   <string name="reset_gestures_dialog_title">ሁሉም ምልክቶች ዳግም ይጀምሩ?</string>
   <string name="reset_gestures_dialog_message">ሁሉም የብሬይል ቁልፍ ሰሌዳ ምልክቶች ወደ ነባሪ ዳግም ይጀምራሉ</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ወደ ነባሪ ዳግም አስጀምር</string>
   <string name="custom_gestures_dialog_remove_button">ምልክት አስወግድ</string>
   <string name="change_gestures_dialog_message_title">እንዴት ምልክት መለወጥ እንደሚቻል</string>
-  <string name="change_gestures_dialog_message">በቀጣዩ ማያ ገፅ ላይ የብሬይል ቁልፍ ሰሌዳ ይከፈታል እና የTalkBack ምልክቶችን መጠቀም አይችሉም።\n\nየብሬይል ቁልፍ ሰሌዳ ሲከፈት መጠቀም የሚፈልጉትን ምልክት ያከናውኑ ወይም የብሬይል ቁልፍ ሰሌዳ ለመዝጋት እና የምልክት ለውጡን ለመሰረዝ በ2 ጣቶች ያንሸራትቱ።\n\nየሚገኙ ምልክቶችን ይመልከቱ\n</string>
+  <string name="change_gestures_dialog_message">በቀጣዩ ማያ ገፅ ላይ የብሬይል ቁልፍ ሰሌዳ ይከፈታል እና የSandFly ምልክቶችን መጠቀም አይችሉም።\n\nየብሬይል ቁልፍ ሰሌዳ ሲከፈት መጠቀም የሚፈልጉትን ምልክት ያከናውኑ ወይም የብሬይል ቁልፍ ሰሌዳ ለመዝጋት እና የምልክት ለውጡን ለመሰረዝ በ2 ጣቶች ያንሸራትቱ።\n\nየሚገኙ ምልክቶችን ይመልከቱ\n</string>
   <string name="change_gestures_dialog_message_link">የሚገኙ ምልክቶችን ይመልከቱ</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ይህን መልዕክት ዳግም አታሳይ</string>
   <string name="change_gestures_dialog_positive_button">ቀጥል</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">አትጠቀም</string>
   <string name="next_keyboard">ቀጣይ ቁልፍ ሰሌዳ</string>
   <string name="braille_tutorial_title">የብሬይ ቁልፍ ሰሌዳ አጋዥ ስልጠና</string>
-  <string name="tutorial_intro_description">በብሬይል ቁልፍ ሰሌዳ አማካኝነት ባለ6 ነጥብ ብሬይል ለማስገባት ማያ ገጽዎን መታ ማድረግ ይችላሉ።\n\nየተዋሃደ የእንግሊዝኛ ብሬይል እየተጠቀሙ ነው። የመተየቢያ ቋንቋዎን ለመለወጥ ወደ የTalkBack ቅንብሮች ይሂዱ።\n\nብሬይል ለመተየብ ስልክዎን በተለየ መንገድ መያዝና መጠቀም አለብዎት።</string>
+  <string name="tutorial_intro_description">በብሬይል ቁልፍ ሰሌዳ አማካኝነት ባለ6 ነጥብ ብሬይል ለማስገባት ማያ ገጽዎን መታ ማድረግ ይችላሉ።\n\nየተዋሃደ የእንግሊዝኛ ብሬይል እየተጠቀሙ ነው። የመተየቢያ ቋንቋዎን ለመለወጥ ወደ የSandFly ቅንብሮች ይሂዱ።\n\nብሬይል ለመተየብ ስልክዎን በተለየ መንገድ መያዝና መጠቀም አለብዎት።</string>
   <string name="next_step">ቀጣይ</string>
   <string name="leave_keyboard">ከብሬይል ቁልፍ ሰሌዳ ውጣ</string>
-  <string name="hold_six_fingers_description">መደበኛ የTalkBack ጣት ምልክቶችን በብሬይል ቁልፍ ሰሌዳ ላይ መጠቀም አይችሉም።\n\nለመጀመር እርስዎ በሚተይቡበት ጊዜ ያለውን የ6 ብሬይል ነጥቦችን አቀማመጥ እናዋቅር።</string>
-  <string name="rotate_orientation_description_1">ከአሁን ጀምሮ መደበኛ የTalkBack ጣት ምልክቶችን መጠቀም አይችሉም። የብሬይል ቁልፍ ሰሌዳ እየተጠቀሙ ሳለ TalkBack አይገኝም።</string>
+  <string name="hold_six_fingers_description">መደበኛ የSandFly ጣት ምልክቶችን በብሬይል ቁልፍ ሰሌዳ ላይ መጠቀም አይችሉም።\n\nለመጀመር እርስዎ በሚተይቡበት ጊዜ ያለውን የ6 ብሬይል ነጥቦችን አቀማመጥ እናዋቅር።</string>
+  <string name="rotate_orientation_description_1">ከአሁን ጀምሮ መደበኛ የSandFly ጣት ምልክቶችን መጠቀም አይችሉም። የብሬይል ቁልፍ ሰሌዳ እየተጠቀሙ ሳለ SandFly አይገኝም።</string>
   <string name="rotate_orientation_description_2">ለመጀመር ስልክዎን ማያ ገጹ ከእርስዎ ዘወር እንዲል አድርገው እንደዚህ አድርገው ይያዙት።</string>
   <string name="tap_to_continue">ለመቀጠል በማንኛውም ቦታ ላይ ሁለቴ መታ ያድርጉ</string>
   <string name="instruction_type_letter_a">የ«A» ፊደል ለመተየብ በአመልካች ጣትዎ ነጥብ 1ን መታ ያድርጉ</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ጠቋሚ ወደፊት ተወስዷል</string>
   <string name="result_swipe_down_2_fingers">የቁልፍ ሰሌዳን ይደብቁ</string>
   <string name="result_swipe_down_3_fingers">ቀጣይ ቁልፍ ሰሌዳ</string>
-  <string name="rotate_orientation_announcement">ከአሁን ጀምሮ መደበኛ የTalkBack ጣት ምልክቶችን መጠቀም አይችሉም። የብሬይል ቁልፍ ሰሌዳ እየተጠቀሙ ሳለ TalkBack የማይገሕ አይገኝም።\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">ከአሁን ጀምሮ መደበኛ የSandFly ጣት ምልክቶችን መጠቀም አይችሉም። የብሬይል ቁልፍ ሰሌዳ እየተጠቀሙ ሳለ SandFly የማይገሕ አይገኝም።\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">መጀመሪያ ማያ ገጽዎ ከእርስዎ ዞሮ እንደዚህ አድርገው ይያዙት።\n\nቀጥሎም ስልኩን በአግድመት ወደ የወርድ አቀማመጥ ያሽከርክሩት። የእርስዎ እጆች አጭሮቹን የስልኩን ክፍሎች መያዝ አለባቸው። ቀኝ እጅዎ የዩኤስቢ ወደቡ ያለበት ክፍል መያዝ አለበት። 3 የመሃል ጣቶችዎን በማያ ገጹ ላይ ያሳርፉ፣ እና ስልኩን ደግፈው ትንሿ እና አውራ ጣትዎን ይጠቀሙ።\n\nዝግጁ ሲሆኑ ለመቀጠል ማያ ገጹን ሁለቴ መታ ያድርጉት።\n\nከብሬይል ቁልፍ ሰሌዳ ለመውጣት በ3 ጣቶች ታች ወደ መሬት ይጥረጉ። ይህ ወደ የመጀመሪያው ቁልፍ ሰሌዳዎ መልሶ ይቀይራል።</string>
   <string name="rotate_orientation_continue_announcement">የእርስዎ ስልክ በአቀባዊ አቀማመጥ ላይ ነው ያለው። ለመቀጠል የስልኩ ረጅም ክፍል ከታች እንዲሆን ስልክዎን በአግድመት ያሽከርክሩት። ማያ ገጹ ከእርስዎ ዘወር እንዲል ያዙሩት። ዝግጁ ሲሆኑ ለመቀጠል ማያ ገጹን ሁለቴ መታ ያድርጉት።</string>
   <string name="type_letter_a_announcement">ማያ ገጹ ከእርስዎ ዘወር ብሎ እንደዞረ እንዳለ ያቆዩት። በሁለቱም እጆችዎ በስልኩ አጭር ክፍሎች ስልክዎን ይያዙት፣ በዚህም የእያንዳንዱ እጅ 3 የመሃል ጣቶች ማያ ገጹን መንካት ይችላሉ።\n\nየግራ አመልካች ጣትዎ በነጥብ 1 ላይ መሆን አለበት። አሁን የ«A» ፊደሉን ለመተየብ ነጥብ 1 መታ ያድርጉት።</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">ወደ ሌላኛው ቁልፍ ሰሌዳዎ ለመቀየር በ3 ጣቶች ወደ ታች ይጥረጉ። አሁኑኑ ይሞክሩት።</string>
   <string name="swipe_down_3_fingers_completed_announcement">ቀጣይ ቁልፍ ሰሌዳ። ይህ አብዛኛው ጊዜ ወደ ቀጣዩ ቁልፍ ሰሌዳ ይቀይራል። በዚህ ጊዜ እርስዎ አሁንም በአጋዥ ስልጠናው ላይ ስላሉ በብሬይል ቁልፍ ሰሌዳው ላይ ይቆያሉ።</string>
   <string name="swipe_up_3_fingers_announcement">እንዲሁም የእርስዎን ስልክ በጠረጴዛው ላይ ለጥ አድርጎ በማስቀመጥ በቴብልቶፕ ሁነታ መተየብ ይችላሉ። አጋዥ ሥልጠናውን ለመጨረስ በ3 ጣቶች ወደ ላይ ይጥረጉ፣ እና የአጋዥ ሥልጠና አማራጩን አጠናቅቅ የሚለውን ያግኙ</string>
-  <string name="open_context_menu_announcement">የአማራጮች ምናሌው ክፍት ነው። ስልክዎን ወደ እርስዎ እንዲዞር ይገልብጡት እና እንደ መደበኛ ይያዙት። ለመዳሰስ መደበኛ የTalkBack እጅ ምልክቶችን መጠቀም ይችላሉ። ተጨማሪ አማራጮችን ለማየት ወደ ቀኝ ያንሸራትቱ።</string>
+  <string name="open_context_menu_announcement">የአማራጮች ምናሌው ክፍት ነው። ስልክዎን ወደ እርስዎ እንዲዞር ይገልብጡት እና እንደ መደበኛ ይያዙት። ለመዳሰስ መደበኛ የSandFly እጅ ምልክቶችን መጠቀም ይችላሉ። ተጨማሪ አማራጮችን ለማየት ወደ ቀኝ ያንሸራትቱ።</string>
   <string name="hold_six_fingers_announcement">%s\nየእርስዎን መሣሪያ በጠረጴዛው ላይ ለጥ አድርገው ያስቀምጡት። ከዚያ ለእርስዎ መተየብ በሚመችዎት የአያያዝ ሁኔታ ላይ የእያንዳንዱ እጅ 3 የመሃል ጣቶች ማያ ገጹን ይንኩ እና ይያዙ።</string>
   <string name="hold_six_fingers_inactive_announcement">የእርስዎን መሣሪያ በጠረጴዛው ላይ ለጥ አድርገው ያስቀምጡት። ከዚያ ለእርስዎ መተየብ በሚመችዎት የአያያዝ ሁኔታ ላይ የእያንዳንዱ እጅ 3 የመሃል ጣቶች ማያ ገጹን ይንኩ እና ይያዙ።</string>
   <string name="finish_tutorial_announcement">የብሬይል ቁልፍ ሰሌዳን በማሳየት ላይ ማያ ገጽዎ ከእርስዎ ዞሮ እንዲዞር ስልክዎን ያዙሩት። ስልኩን በአግድመት ወደ የወርድ አቀማመጥ ያሽከርክሩት። ከዚያ መተየብ ይጀምሩ።</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ይህ ምልክት ለ«%1$s» ጥቅም ላይ ውሏል እና ሊለወጥ አይችልም። ሌላ ምልክት ይሞክሩ። %2$s</string>
   <string name="custom_gesture_cannot_used">ይህ ምልክት ጥቅም ላይ መዋል አይችልም</string>
   <string name="custom_gesture_no_gesture">ምንም ምልክት አልተከናወነም</string>
-  <string name="custom_gesture_try_another">ሌላ ምልክት ይሞክሩ። ሁሉንም የሚገኙ ምልክቶች ዝርዝር ለማየት ወደ TalkBack የብሬይል ቁልፍ ሰሌዳ የእገዛ ማዕከል ይሂዱ። %s</string>
+  <string name="custom_gesture_try_another">ሌላ ምልክት ይሞክሩ። ሁሉንም የሚገኙ ምልክቶች ዝርዝር ለማየት ወደ SandFly የብሬይል ቁልፍ ሰሌዳ የእገዛ ማዕከል ይሂዱ። <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">ምልክቶች አልተዛመዱም</string>
   <string name="custom_gesture_perform_again">እንደገና መጠቀም የሚፈልጉትን ምልክት ያከናውኑ። %s</string>
+    <string name="tabletop_port_left_announcement">የጠረጴዛ ሁነታ፣ በግራ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="tabletop_port_right_announcement">የጠረጴዛ ሁነታ ፣ በቀኝ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="screen_away_port_right_announcement">የማያ ገጽ መውጣት ሁነታ፣ በስተቀኝ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="screen_away_port_left_announcement">ከማያ ገጽ ውጪ ሁነታ፣ በስተግራ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="screen_toward_announcement">ማያ ገጽ ወደ እርስዎ</string>
+    <string name="screen_toward_port_left_announcement">ማያ ገጽ ወደ እርስዎ፣ በስተግራ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="screen_toward_port_right_announcement">ስክሪን ወደ እርስዎ፣ በቀኝ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="screen_toward_port_down_announcement">ማያ ገጽ ወደ እርስዎ፣ ወደብ እየሞላ ወደ ታች እየጠቆመ</string>
+    <string name="screen_toward_port_up_announcement">ማያ ገጽ ወደ እርስዎ፣ ወደብ እየሞላ ወደ ላይ እየጠቆመ</string>
+    <string name="port_right_announcement">በቀኝ በኩል የኃይል መሙያ ወደብ</string>
+    <string name="port_left_announcement">የኃይል መሙያ ወደብ በግራ በኩል</string>
+    <string name="tabletop_port_near_announcement">የጠረጴዛ ሁነታ፣ ወደ እርስዎ የኃይል መሙያ ወደብ</string>
+    <string name="tabletop_port_far_announcement">የጠረጴዛ ሁነታ፣ የኃይል መሙያ ወደብ ከእርስዎ ይርቃል</string>
+    <string name="screen_away_port_down_announcement">የማያ ገጽ መውጣት ሁነታ፣ ወደብ እየሞላ ወደ ታች በመጠቆም</string>
+    <string name="screen_away_port_up_announcement">ስክሪን ራቅ ሞድ፣ ወደብ እየሞላ ነው።</string>
+    <string name="port_near_announcement">ወደብ በመሙላት ላይ ወደ እርስዎ</string>
+    <string name="port_far_announcement">ወደብ ኃይል መሙላት ከእርስዎ ይርቃል</string>
+    <string name="port_down_announcement">ወደብ እየሞላ ወደ ታች በመጠቆም</string>
+    <string name="port_up_announcement">ወደብ በመሙላት ላይ</string>
+    <string name="orientation_locked_announcement">አቅጣጫ ተቆልፏል</string>
+    <string name="orientation_locked_port_announcement">አቅጣጫ ተቆልፏል። %1$s</string>
+    <string name="orientation_unlocked_announcement">አቀማመጥ ተከፍቷል።</string>
+    <string name="switch_to_language_contracted_announcement">ወደ %s ተቀይሯል, ውል ያለው ብሬይል</string>
+    <string name="switch_to_language_uncontracted_announcement">ወደ %s ተቀይሯል, ውል የሌለው ብሬይል</string>
+    <string name="title_pref_flip_dots_vertically">ከላይ እና ከታች ነጥቦችን ይቀይሩ</string>
+    <string name="summary_pref_flip_dots_vertically">ነጥብ 1 ቦታዎችን በነጥብ 3፣ እና ነጥብ 4 በነጥብ 6 ይገበያያሉ።</string>
+    <string name="title_pref_tablet_held_up_faces_away">ወደ ላይ የተያዘ ጡባዊ ወደ ውጭ ይመለከታል</string>
+    <string name="summary_pref_tablet_held_up_faces_away">ሲጠፋ፣ ታብሌቱ ወይም ያልታጠፈ ስልክ ወደ ላይ የጠረጴዛውን አቀማመጥ ይጠቀማል፣ እርስዎን ይመለከታል</string>
+    <string name="title_pref_typing_sounds">ድምጾችን በመተየብ ላይ</string>
+    <string name="summary_pref_typing_sounds">ቁምፊ ሲተይቡ፣ ቦታ፣ አዲስ መስመር ወይም ሲሰርዙ የቁልፍ ሰሌዳ ጠቅታዎችን ያጫውቱ</string>
+    <string name="skip_tutorial">ትምህርትን ዝለል</string>
 </resources>
