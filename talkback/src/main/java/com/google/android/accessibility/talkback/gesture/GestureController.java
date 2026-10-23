@@ -113,6 +113,7 @@ import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
+import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
@@ -180,6 +181,7 @@ public class GestureController {
   private final ListEdgeScroller listEdgeScroller;
   private final PullToRefresh pullToRefresh;
   private final HandwritingCommand handwritingCommand;
+  private final HandwritingAppLauncher handwritingAppLauncher;
   private final AiDictation dictation;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
@@ -235,6 +237,7 @@ public class GestureController {
     listEdgeScroller = new ListEdgeScroller(service, pipeline, accessibilityFocusMonitor);
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
+    handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
     dictation = new AiDictation(service, pipeline);
   }
 
@@ -243,6 +246,7 @@ public class GestureController {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     handwritingCommand.shutdown();
+    handwritingAppLauncher.shutdown();
     dictation.shutdown();
   }
 
@@ -360,6 +364,9 @@ public class GestureController {
       result = pipeline.returnFeedback(eventId, Feedback.focusBottom(INPUT_MODE_TOUCH));
     } else if (action.equals(service.getString(R.string.shortcut_value_write_reading_control))) {
       handwritingCommand.show();
+      result = true;
+    } else if (action.equals(service.getString(R.string.shortcut_value_write_app_name))) {
+      handwritingAppLauncher.show();
       result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_top))) {
       result = listEdgeScroller.scroll(/* toStart= */ true, eventId);

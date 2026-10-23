@@ -1864,6 +1864,14 @@
     <string name="handwriting_closed">Handwriting closed</string>
     <!-- Spoken when no reading control's name starts with the letter written. [CHAR LIMIT=NONE] -->
     <string name="handwriting_no_match">No reading control starts with <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <!-- Gesture action: the user writes the start of an app's name on the screen, and the app opens. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_write_app_name">Write an app\'s name to open it</string>
+    <!-- Spoken when the screen is ready for handwriting that opens an app. [CHAR LIMIT=NONE] -->
+    <string name="handwriting_app_prompt">Write an app\'s name</string>
+    <!-- Spoken when no app's name starts with the letters written. [CHAR LIMIT=NONE] -->
+    <string name="handwriting_no_app">No app starts with <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
+    <!-- Spoken when the app chosen by handwriting couldn't be opened, such as when it was just uninstalled. [CHAR LIMIT=NONE] -->
+    <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> could not be opened</string>
     <!-- Spoken when handwriting couldn't be recognized as a letter. [CHAR LIMIT=NONE] -->
     <string name="handwriting_not_recognized">Not recognized</string>
     <!-- Spoken the first time handwriting is used, while its model downloads. [CHAR LIMIT=NONE] -->

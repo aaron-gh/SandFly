@@ -16,20 +16,10 @@
 package com.google.android.accessibility.talkback.handwriting
 
 import android.accessibilityservice.AccessibilityService
-import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.PixelFormat
-import android.graphics.Region
-import android.hardware.display.DisplayManager
-import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import android.util.DisplayMetrics
-import android.view.Display
 import android.view.MotionEvent
-import android.view.View
 import android.view.ViewConfiguration
-import android.view.WindowManager
 import com.google.android.accessibility.talkback.ActorState
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
@@ -51,15 +41,14 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 class HandwritingCommand(
   private val service: AccessibilityService,
   private val pipeline: Pipeline.FeedbackReturner,
-  private val actorState: ActorState,
+  actorState: ActorState,
   private val selector: SelectorController,
 ) {
   private val handler = Handler(Looper.getMainLooper())
-  private val windowManager = service.getSystemService(WindowManager::class.java)
   private val touchSlop = ViewConfiguration.get(service).scaledTouchSlop
   private var recognizer: HandwritingRecognizer? = null
-  private var view: View? = null
-  private var passthroughRegionSet = false
+  private val overlay =
+    HandwritingOverlay(service, actorState, service.getString(R.string.shortcut_write_reading_control), ::onTouch)
   private val strokes = mutableListOf<MutableList<InkPoint>>()
   /** Whether the strokes so far move further than a tap. */
   private var moved = false
@@ -69,7 +58,7 @@ class HandwritingCommand(
   private val closeIdle = Runnable { cancel() }
 
   val isShowing: Boolean
-    get() = view != null
+    get() = overlay.isShowing
 
   /** Shows the writing surface, or says why it can't. */
   fun show() {
@@ -85,7 +74,7 @@ class HandwritingCommand(
       speak(service.getString(R.string.handwriting_not_available))
       return
     }
-    if (addView() == null) return
+    if (!overlay.show()) return
     strokes.clear()
     moved = false
     pipeline.returnFeedback(
@@ -115,14 +104,7 @@ class HandwritingCommand(
     handler.removeCallbacks(recognizeNow)
     handler.removeCallbacks(closeIdle)
     strokes.clear()
-    val current = view ?: return
-    view = null
-    clearPassthroughRegion()
-    try {
-      windowManager.removeViewImmediate(current)
-    } catch (e: IllegalArgumentException) {
-      LogUtils.w(TAG, "Handwriting surface was not attached: %s", e)
-    }
+    overlay.remove()
   }
 
   fun shutdown() {
@@ -170,11 +152,11 @@ class HandwritingCommand(
 
   private fun recognize() {
     val recognizer = recognizer ?: return
-    val current = view ?: return
+    if (!isShowing) return
     val written = strokes.map { it.toList() }
     strokes.clear()
     moved = false
-    recognizer.recognize(written, current.width.toFloat(), current.height.toFloat()) { result ->
+    recognizer.recognize(written, overlay.width, overlay.height) { result ->
       if (!isShowing) return@recognize
       when (result) {
         is Result.Candidates -> choose(result.texts)
@@ -227,70 +209,6 @@ class HandwritingCommand(
   private fun restartIdleTimer() {
     handler.removeCallbacks(closeIdle)
     handler.postDelayed(closeIdle, IDLE_CLOSE_MS)
-  }
-
-  @SuppressLint("ClickableViewAccessibility")
-  private fun addView(): View? {
-    val surface =
-      object : View(service as Context) {
-        override fun onTouchEvent(event: MotionEvent): Boolean {
-          onTouch(event)
-          return true
-        }
-      }
-    surface.importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
-    val params =
-      WindowManager.LayoutParams().apply {
-        type = WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
-        format = PixelFormat.TRANSLUCENT
-        flags =
-          WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        width = WindowManager.LayoutParams.MATCH_PARENT
-        height = WindowManager.LayoutParams.MATCH_PARENT
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-          layoutInDisplayCutoutMode =
-            WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
-        }
-        title = service.getString(R.string.shortcut_write_reading_control)
-      }
-    try {
-      windowManager.addView(surface, params)
-    } catch (e: RuntimeException) {
-      LogUtils.e(TAG, "Could not show the handwriting surface: %s", e)
-      return null
-    }
-    view = surface
-    setPassthroughRegion()
-    return surface
-  }
-
-  /** Sends touches on the whole screen straight to the surface, instead of through touch exploration. */
-  private fun setPassthroughRegion() {
-    // Pass-through mode and the braille keyboard use the same region, so leave it alone for them.
-    if (
-      Build.VERSION.SDK_INT < Build.VERSION_CODES.R ||
-        actorState.passThroughModeState.isPassThroughModeActive
-    ) {
-      return
-    }
-    val display =
-      service.getSystemService(DisplayManager::class.java)?.getDisplay(Display.DEFAULT_DISPLAY) ?: return
-    val metrics = DisplayMetrics()
-    @Suppress("DEPRECATION") display.getRealMetrics(metrics)
-    service.setTouchExplorationPassthroughRegion(
-      Display.DEFAULT_DISPLAY,
-      Region(0, 0, metrics.widthPixels, metrics.heightPixels),
-    )
-    passthroughRegionSet = true
-  }
-
-  private fun clearPassthroughRegion() {
-    if (passthroughRegionSet && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-      passthroughRegionSet = false
-      service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, Region())
-    }
   }
 
   private fun speak(text: String) {
