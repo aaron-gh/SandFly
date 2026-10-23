@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Билдирмелердин түрлөрү</string>
     <string name="notification_when_title">Качан окуу керек</string>
     <string name="notification_rules_title">Эрежелер</string>
-    <string name="notification_repeats_title">Кайталанат</string>
+    <string name="notification_repeats_title">Кайталоолор</string>
     <string name="notification_stop_title">Окууну токтот</string>
     <string name="notification_schedules_title">Жыйынтык жана убакыт</string>
     <string name="notification_history_title">Эскертме таржымалы</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Ар бир эскертмени ал жазылган тилде айтыңыз. Тексттен кепке жөндөөлөрүндө тилди автоматтык түрдө которуу керек.</string>
     <string name="notification_sound_before_title">Эскертмелер алдында үн</string>
     <string name="notification_category_text">Текст</string>
-    <string name="notification_remove_emoji_title">Эмодзилерди калтырыңыз</string>
+    <string name="notification_remove_emoji_title">Эмодзилерди өткөрүп жиберүү</string>
     <string name="notification_lowercase_title">Баш тамгаларды сөз катары оку</string>
     <string name="notification_lowercase_summary">Кээ бир сүйлөө кыймылдаткычтары баш тамгалар менен жазылган сөздөрдү тамга-тамга айтып берет.</string>
     <string name="notification_separate_digits_title">Узун сандарды цифра менен оку</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Менен гана эскертмелерди окуу</string>
     <string name="notification_blocked_title">Менен эскертмелерди окубаңыз</string>
     <string name="notification_private_title">Колдонмонун атын гана окуңуз</string>
-    <string name="notification_replacements_title">Башкача айт</string>
+    <string name="notification_replacements_title">Башкача айтуу</string>
     <string name="notification_add_word">Сөз кошуу</string>
     <string name="notification_add_replacement">Алмаштырууну кошуу</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> катары</string>
     <string name="notification_replace_find">Текст</string>
-    <string name="notification_replace_with">Катары айт</string>
+    <string name="notification_replace_with">Мындай айтуу</string>
     <string name="notification_whole_words">Толук сөздөр гана</string>
     <string name="notification_regex">Регулярдуу туюнтма</string>
     <string name="notification_enter_text">Текст киргизиңиз</string>
@@ -204,13 +204,13 @@
     <string name="notification_rule_from_template">Үлгүдөн эреже кошуңуз</string>
     <string name="notification_rules_category">Эрежелер</string>
     <string name="notification_rules_empty">Эрежелер жок</string>
-    <string name="notification_rule_name">Аты</string>
+    <string name="notification_rule_name">Аталышы</string>
     <string name="notification_rule_untitled">Эреже</string>
-    <string name="notification_rule_enabled">Күйгүзүлдү</string>
+    <string name="notification_rule_enabled">Күйүк</string>
     <string name="notification_rule_match">Шарттар</string>
     <string name="notification_rule_match_all">Бардык шарттар аткарылышы керек</string>
     <string name="notification_rule_match_any">Жок дегенде бир шарт аткарылышы керек</string>
-    <string name="notification_rule_conditions">Качан</string>
+    <string name="notification_rule_conditions">Эгер</string>
     <string name="notification_rule_actions">Анда</string>
     <string name="notification_rule_add_condition">Шарт кошуу</string>
     <string name="notification_rule_add_action">Аракет кошуу</string>

@@ -17,13 +17,13 @@
     <string name="notification_url_domain">Leggi solo il sito</string>
     <string name="notification_url_full">Leggi tutto il collegamento</string>
     <string name="notification_category_title">Notifiche</string>
-    <string name="notification_reading_title">Leggere le notifiche ad alta voce</string>
+    <string name="notification_reading_title">Lettura delle notifiche</string>
     <string name="notification_apps_title">App</string>
     <string name="notification_words_title">Parole e sostituzioni</string>
     <string name="notification_kinds_title">Tipi di notifiche</string>
     <string name="notification_when_title">Quando leggere</string>
     <string name="notification_rules_title">Regole</string>
-    <string name="notification_repeats_title">Si ripete</string>
+    <string name="notification_repeats_title">Ripetizioni</string>
     <string name="notification_stop_title">Smetti di leggere</string>
     <string name="notification_schedules_title">Riepilogo e ora</string>
     <string name="notification_history_title">Cronologia delle notifiche</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Pronuncia ogni notifica nella lingua in cui è scritta. È necessario cambiare lingua automaticamente nelle impostazioni di sintesi vocale.</string>
     <string name="notification_sound_before_title">Suono prima delle notifiche</string>
     <string name="notification_category_text">Testo</string>
-    <string name="notification_remove_emoji_title">Lascia fuori le emoji</string>
+    <string name="notification_remove_emoji_title">Ometti le emoji</string>
     <string name="notification_lowercase_title">Leggi le maiuscole come parole</string>
     <string name="notification_lowercase_summary">Alcuni motori vocali pronunciano le parole in maiuscolo lettera per lettera</string>
     <string name="notification_separate_digits_title">Leggere numeri lunghi cifra per cifra</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Leggi solo le notifiche con</string>
     <string name="notification_blocked_title">Non leggere le notifiche con</string>
     <string name="notification_private_title">Leggi solo il nome dell\'app per</string>
-    <string name="notification_replacements_title">Dillo diversamente</string>
+    <string name="notification_replacements_title">Pronuncia diversa</string>
     <string name="notification_add_word">Aggiungi una parola</string>
     <string name="notification_add_replacement">Aggiungi una sostituzione</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> come <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Testo</string>
-    <string name="notification_replace_with">Di\' come</string>
+    <string name="notification_replace_with">Pronuncia come</string>
     <string name="notification_whole_words">Solo parole intere</string>
     <string name="notification_regex">Espressione regolare</string>
     <string name="notification_enter_text">Inserisci un testo</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">Nessuna regola</string>
     <string name="notification_rule_name">Nome</string>
     <string name="notification_rule_untitled">Regola</string>
-    <string name="notification_rule_enabled">Acceso</string>
+    <string name="notification_rule_enabled">Attivata</string>
     <string name="notification_rule_match">Condizioni</string>
     <string name="notification_rule_match_all">Tutte le condizioni devono essere soddisfatte</string>
     <string name="notification_rule_match_any">Almeno una condizione deve essere soddisfatta</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">Poi</string>
     <string name="notification_rule_add_condition">Aggiungi una condizione</string>
     <string name="notification_rule_add_action">Aggiungi un\'azione</string>
-    <string name="notification_rule_invert">Invertire la condizione</string>
+    <string name="notification_rule_invert">Inverti la condizione</string>
     <string name="notification_rule_delete">Elimina la regola</string>
     <string name="notification_rule_delete_confirm">Eliminare <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Sempre</string>

@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">ਸੂਚਨਾਵਾਂ ਦੀਆਂ ਕਿਸਮਾਂ</string>
     <string name="notification_when_title">ਕਦੋਂ ਪੜ੍ਹਨਾ ਹੈ</string>
     <string name="notification_rules_title">ਨਿਯਮ</string>
-    <string name="notification_repeats_title">ਦੁਹਰਾਉਂਦਾ ਹੈ</string>
+    <string name="notification_repeats_title">ਦੁਹਰਾਅ</string>
     <string name="notification_stop_title">ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
     <string name="notification_schedules_title">ਸੰਖੇਪ ਅਤੇ ਸਮਾਂ</string>
     <string name="notification_history_title">ਸੂਚਨਾ ਇਤਿਹਾਸ</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">ਨਾਲ ਸਿਰਫ਼ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
     <string name="notification_blocked_title">ਨਾਲ ਸੂਚਨਾਵਾਂ ਨਾ ਪੜ੍ਹੋ</string>
     <string name="notification_private_title">ਲਈ ਸਿਰਫ਼ ਐਪ ਨਾਮ ਪੜ੍ਹੋ</string>
-    <string name="notification_replacements_title">ਵੱਖਰੇ ਤੌਰ \'ਤੇ ਕਹੋ</string>
+    <string name="notification_replacements_title">ਵੱਖਰਾ ਉਚਾਰਨ</string>
     <string name="notification_add_word">ਕੋਈ ਸ਼ਬਦ ਜੋੜੋ</string>
     <string name="notification_add_replacement">ਇੱਕ ਬਦਲ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> ਦੇ ਰੂਪ ਵਿੱਚ</string>
     <string name="notification_replace_find">ਟੈਕਸਟ</string>
-    <string name="notification_replace_with">ਦੇ ਤੌਰ ਤੇ ਕਹੋ</string>
+    <string name="notification_replace_with">ਇਸ ਤਰ੍ਹਾਂ ਬੋਲੋ</string>
     <string name="notification_whole_words">ਸਿਰਫ਼ ਪੂਰੇ ਸ਼ਬਦ</string>
-    <string name="notification_regex">ਨਿਯਮਤ ਸਮੀਕਰਨ</string>
+    <string name="notification_regex">ਰੈਗੂਲਰ ਐਕਸਪ੍ਰੈਸ਼ਨ</string>
     <string name="notification_enter_text">ਇੱਕ ਟੈਕਸਟ ਦਰਜ ਕਰੋ</string>
     <string name="notification_invalid_regex">ਇੱਕ ਵੈਧ ਨਿਯਮਤ ਸਮੀਕਰਨ ਨਹੀਂ ਹੈ</string>
     <string name="notification_edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
@@ -206,15 +206,15 @@
     <string name="notification_rules_empty">ਕੋਈ ਨਿਯਮ ਨਹੀਂ</string>
     <string name="notification_rule_name">ਨਾਮ</string>
     <string name="notification_rule_untitled">ਨਿਯਮ</string>
-    <string name="notification_rule_enabled">ਚਾਲੂ ਕੀਤਾ</string>
-    <string name="notification_rule_match">ਹਾਲਾਤ</string>
+    <string name="notification_rule_enabled">ਚਾਲੂ</string>
+    <string name="notification_rule_match">ਸ਼ਰਤਾਂ</string>
     <string name="notification_rule_match_all">ਸਾਰੀਆਂ ਸ਼ਰਤਾਂ ਪੂਰੀਆਂ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ</string>
     <string name="notification_rule_match_any">ਘੱਟੋ-ਘੱਟ ਇੱਕ ਸ਼ਰਤ ਪੂਰੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ</string>
     <string name="notification_rule_conditions">ਜਦੋਂ</string>
     <string name="notification_rule_actions">ਫਿਰ</string>
     <string name="notification_rule_add_condition">ਇੱਕ ਸ਼ਰਤ ਜੋੜੋ</string>
     <string name="notification_rule_add_action">ਕੋਈ ਕਾਰਵਾਈ ਸ਼ਾਮਲ ਕਰੋ</string>
-    <string name="notification_rule_invert">ਸਥਿਤੀ ਨੂੰ ਉਲਟਾਓ</string>
+    <string name="notification_rule_invert">ਸ਼ਰਤ ਉਲਟਾਓ</string>
     <string name="notification_rule_delete">ਨਿਯਮ ਮਿਟਾਓ</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?</string>
     <string name="notification_rule_always">ਹਮੇਸ਼ਾ</string>

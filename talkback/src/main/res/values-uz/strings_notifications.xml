@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Bildirishnomalar turlari</string>
     <string name="notification_when_title">Qachon o\'qish kerak</string>
     <string name="notification_rules_title">Qoidalar</string>
-    <string name="notification_repeats_title">Takrorlaydi</string>
+    <string name="notification_repeats_title">Takrorlar</string>
     <string name="notification_stop_title">O\'qishni to\'xtating</string>
     <string name="notification_schedules_title">Xulosa va vaqt</string>
     <string name="notification_history_title">Bildirishnomalar tarixi</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Har bir bildirishnomani u yozilgan tilda ayting. Tilni matndan nutqqa oʻzgartirish sozlamalarida avtomatik ravishda oʻtish kerak.</string>
     <string name="notification_sound_before_title">Bildirishnomalardan oldin ovoz</string>
     <string name="notification_category_text">Matn</string>
-    <string name="notification_remove_emoji_title">Emojidan voz keching</string>
+    <string name="notification_remove_emoji_title">Emojilarni oʻtkazib yuborish</string>
     <string name="notification_lowercase_title">Bosh harflarni so\'z sifatida o\'qing</string>
     <string name="notification_lowercase_summary">Ba\'zi nutq mexanizmlari katta harflar bilan yozilgan so\'zlarni harfma-harf yozadi</string>
     <string name="notification_separate_digits_title">Uzun raqamlarni raqam bo\'yicha o\'qing</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Faqat bildirishnomalarni o\'qing</string>
     <string name="notification_blocked_title">bilan bildirishnomalarni o\'qimang</string>
     <string name="notification_private_title">Faqat ilova nomini oʻqing</string>
-    <string name="notification_replacements_title">Boshqacha ayting</string>
+    <string name="notification_replacements_title">Boshqacha talaffuz</string>
     <string name="notification_add_word">So\'z qo\'shish</string>
     <string name="notification_add_replacement">Almashtirish qo\'shish</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> sifatida</string>
     <string name="notification_replace_find">Matn</string>
-    <string name="notification_replace_with">Sifatida ayting</string>
+    <string name="notification_replace_with">Shunday aytilsin</string>
     <string name="notification_whole_words">Faqat butun so\'zlar</string>
-    <string name="notification_regex">Muntazam ifoda</string>
+    <string name="notification_regex">Regulyar ifoda</string>
     <string name="notification_enter_text">Matn kiriting</string>
     <string name="notification_invalid_regex">Yaroqli oddiy ifoda emas</string>
     <string name="notification_edit">Tahrirlash</string>
@@ -200,21 +200,21 @@
     <string name="notification_outcome_rule">O\'qilmagan: qoida</string>
     <string name="notification_outcome_busy">O\'qilmadi: boshqa bildirishnoma o\'qildi</string>
     <string name="notification_outcome_call">Kiruvchi telefon qo\'ng\'irog\'i sifatida e\'lon qilindi</string>
-    <string name="notification_rule_add">Qoida qo\'shing</string>
+    <string name="notification_rule_add">Qoida qo\'shish</string>
     <string name="notification_rule_from_template">Shablondan qoida qo\'shing</string>
     <string name="notification_rules_category">Qoidalar</string>
     <string name="notification_rules_empty">Qoidalar yo\'q</string>
-    <string name="notification_rule_name">Ism</string>
+    <string name="notification_rule_name">Nom</string>
     <string name="notification_rule_untitled">Qoida</string>
     <string name="notification_rule_enabled">Yoqilgan</string>
     <string name="notification_rule_match">Shartlar</string>
     <string name="notification_rule_match_all">Barcha shartlar bajarilishi kerak</string>
     <string name="notification_rule_match_any">Kamida bitta shart bajarilishi kerak</string>
-    <string name="notification_rule_conditions">Qachon</string>
+    <string name="notification_rule_conditions">Agar</string>
     <string name="notification_rule_actions">Keyin</string>
-    <string name="notification_rule_add_condition">Shart qo\'shing</string>
-    <string name="notification_rule_add_action">Harakat qo\'shing</string>
-    <string name="notification_rule_invert">Shartni o\'zgartiring</string>
+    <string name="notification_rule_add_condition">Shart qo\'shish</string>
+    <string name="notification_rule_add_action">Amal qo\'shish</string>
+    <string name="notification_rule_invert">Shartni teskari qilish</string>
     <string name="notification_rule_delete">Qoidani o\'chirish</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> oʻchirilsinmi?</string>
     <string name="notification_rule_always">Har doim</string>

@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">ಅಧಿಸೂಚನೆಗಳ ವಿಧಗಳು</string>
     <string name="notification_when_title">ಯಾವಾಗ ಓದಬೇಕು</string>
     <string name="notification_rules_title">ನಿಯಮಗಳು</string>
-    <string name="notification_repeats_title">ಪುನರಾವರ್ತನೆಯಾಗುತ್ತದೆ</string>
+    <string name="notification_repeats_title">ಪುನರಾವರ್ತನೆಗಳು</string>
     <string name="notification_stop_title">ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_schedules_title">ಸಾರಾಂಶ ಮತ್ತು ಸಮಯ</string>
     <string name="notification_history_title">ಅಧಿಸೂಚನೆ ಇತಿಹಾಸ</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">ಇದರೊಂದಿಗೆ ಅಧಿಸೂಚನೆಗಳನ್ನು ಮಾತ್ರ ಓದಿ</string>
     <string name="notification_blocked_title">ಇದರೊಂದಿಗೆ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಬೇಡಿ</string>
     <string name="notification_private_title">ಅಪ್ಲಿಕೇಶನ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಓದಿ</string>
-    <string name="notification_replacements_title">ವಿಭಿನ್ನವಾಗಿ ಹೇಳು</string>
+    <string name="notification_replacements_title">ಬೇರೆ ಉಚ್ಚಾರಣೆ</string>
     <string name="notification_add_word">ಒಂದು ಪದವನ್ನು ಸೇರಿಸಿ</string>
     <string name="notification_add_replacement">ಬದಲಿ ಸೇರಿಸಿ</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> ನಂತೆ</string>
     <string name="notification_replace_find">ಪಠ್ಯ</string>
-    <string name="notification_replace_with">ಎಂದು ಹೇಳು</string>
+    <string name="notification_replace_with">ಹೀಗೆ ಓದಿ</string>
     <string name="notification_whole_words">ಸಂಪೂರ್ಣ ಪದಗಳು ಮಾತ್ರ</string>
-    <string name="notification_regex">ನಿಯಮಿತ ಅಭಿವ್ಯಕ್ತಿ</string>
+    <string name="notification_regex">ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್</string>
     <string name="notification_enter_text">ಪಠ್ಯವನ್ನು ನಮೂದಿಸಿ</string>
     <string name="notification_invalid_regex">ಮಾನ್ಯವಾದ ನಿಯಮಿತ ಅಭಿವ್ಯಕ್ತಿ ಅಲ್ಲ</string>
     <string name="notification_edit">ಸಂಪಾದಿಸು</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">ಯಾವುದೇ ನಿಯಮಗಳಿಲ್ಲ</string>
     <string name="notification_rule_name">ಹೆಸರು</string>
     <string name="notification_rule_untitled">ನಿಯಮ</string>
-    <string name="notification_rule_enabled">ಆನ್ ಮಾಡಿದೆ</string>
+    <string name="notification_rule_enabled">ಆನ್</string>
     <string name="notification_rule_match">ಷರತ್ತುಗಳು</string>
     <string name="notification_rule_match_all">ಎಲ್ಲಾ ಷರತ್ತುಗಳನ್ನು ಪೂರೈಸಬೇಕು</string>
     <string name="notification_rule_match_any">ಕನಿಷ್ಠ ಒಂದು ಷರತ್ತು ಪೂರೈಸಬೇಕು</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">ನಂತರ</string>
     <string name="notification_rule_add_condition">ಷರತ್ತು ಸೇರಿಸಿ</string>
     <string name="notification_rule_add_action">ಕ್ರಿಯೆಯನ್ನು ಸೇರಿಸಿ</string>
-    <string name="notification_rule_invert">ಸ್ಥಿತಿಯನ್ನು ತಿರುಗಿಸಿ</string>
+    <string name="notification_rule_invert">ಷರತ್ತನ್ನು ತಿರುಗಿಸಿ</string>
     <string name="notification_rule_delete">ನಿಯಮವನ್ನು ಅಳಿಸಿ</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ಅಳಿಸುವುದೇ?</string>
     <string name="notification_rule_always">ಯಾವಾಗಲೂ</string>

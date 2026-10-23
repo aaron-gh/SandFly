@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">জাননীৰ প্ৰকাৰ</string>
     <string name="notification_when_title">কেতিয়া পঢ়িব লাগে</string>
     <string name="notification_rules_title">নিয়ম</string>
-    <string name="notification_repeats_title">পুনৰাবৃত্তি কৰে</string>
+    <string name="notification_repeats_title">পুনৰাবৃত্তি</string>
     <string name="notification_stop_title">পঢ়া বন্ধ কৰক</string>
     <string name="notification_schedules_title">সাৰাংশ আৰু সময়</string>
     <string name="notification_history_title">অধিসূচনাৰ ইতিহাস</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">কেৱল জাননীসমূহ পঢ়ক</string>
     <string name="notification_blocked_title">ৰ সৈতে জাননী পঢ়িব নালাগে</string>
     <string name="notification_private_title">কেৱল এপৰ নামটো পঢ়ক</string>
-    <string name="notification_replacements_title">বেলেগকৈ কওক</string>
+    <string name="notification_replacements_title">বেলেগ উচ্চাৰণ</string>
     <string name="notification_add_word">এটা শব্দ যোগ কৰক</string>
     <string name="notification_add_replacement">এটা প্ৰতিস্থাপন যোগ কৰক</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> হিচাপে <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">পাঠ</string>
-    <string name="notification_replace_with">কওক যেনে</string>
+    <string name="notification_replace_with">এনেদৰে কওক</string>
     <string name="notification_whole_words">কেৱল গোটেই শব্দ</string>
-    <string name="notification_regex">নিয়মিত প্ৰকাশ</string>
+    <string name="notification_regex">ৰেগুলাৰ এক্সপ্ৰেছন</string>
     <string name="notification_enter_text">এটা লিখনী দিয়ক</string>
     <string name="notification_invalid_regex">বৈধ নিয়মীয়া অভিব্যক্তি নহয়</string>
     <string name="notification_edit">সম্পাদনা কৰক</string>
@@ -206,21 +206,21 @@
     <string name="notification_rules_empty">কোনো নিয়ম নাই</string>
     <string name="notification_rule_name">নাম</string>
     <string name="notification_rule_untitled">নিয়ম</string>
-    <string name="notification_rule_enabled">অন হৈ গ’ল</string>
+    <string name="notification_rule_enabled">অন</string>
     <string name="notification_rule_match">চৰ্তসমূহ</string>
     <string name="notification_rule_match_all">সকলো চৰ্ত পূৰণ কৰিব লাগিব</string>
     <string name="notification_rule_match_any">অন্ততঃ এটা চৰ্ত পূৰণ কৰিব লাগিব</string>
-    <string name="notification_rule_conditions">কেতিয়া</string>
+    <string name="notification_rule_conditions">যেতিয়া</string>
     <string name="notification_rule_actions">তাৰ পিছত</string>
     <string name="notification_rule_add_condition">এটা চৰ্ত যোগ কৰক</string>
     <string name="notification_rule_add_action">এটা কাৰ্য্য যোগ কৰক</string>
     <string name="notification_rule_invert">চৰ্তটো ওলোটা কৰক</string>
     <string name="notification_rule_delete">নিয়মটো মচি পেলাওক</string>
-    <string name="notification_rule_delete_confirm">মচি পেলাওক <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> মচিবনে?</string>
     <string name="notification_rule_always">সদায়</string>
     <string name="notification_rule_no_actions">একো নহয়</string>
     <string name="notification_rule_and">" আৰু "</string>
-    <string name="notification_rule_or">" বা \" \"। "</string>
+    <string name="notification_rule_or">" বা "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">কেৱল হেডফোনৰ সৈতে</string>
     <string name="notification_template_night">ৰাতি নিস্তব্ধ</string>

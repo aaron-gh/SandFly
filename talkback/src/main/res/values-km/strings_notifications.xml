@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">ប្រភេទនៃការជូនដំណឹង</string>
     <string name="notification_when_title">ពេលណាត្រូវអាន</string>
     <string name="notification_rules_title">ច្បាប់</string>
-    <string name="notification_repeats_title">ធ្វើម្តងទៀត</string>
+    <string name="notification_repeats_title">ការធ្វើម្តងទៀត</string>
     <string name="notification_stop_title">ឈប់អាន</string>
     <string name="notification_schedules_title">សង្ខេបនិងពេលវេលា</string>
     <string name="notification_history_title">ប្រវត្តិនៃការជូនដំណឹង</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">និយាយការជូនដំណឹងនីមួយៗជាភាសាដែលវាត្រូវបានសរសេរ។ ត្រូវការប្តូរភាសាដោយស្វ័យប្រវត្តិនៅក្នុងការកំណត់អត្ថបទទៅការនិយាយ។</string>
     <string name="notification_sound_before_title">សំឡេងមុនពេលជូនដំណឹង</string>
     <string name="notification_category_text">អត្ថបទ</string>
-    <string name="notification_remove_emoji_title">ទុក emoji</string>
+    <string name="notification_remove_emoji_title">រំលង emoji</string>
     <string name="notification_lowercase_title">អានអក្សរធំជាពាក្យ</string>
     <string name="notification_lowercase_summary">ម៉ាស៊ីននិយាយមួយចំនួនប្រកបពាក្យជាអក្សរធំតាមអក្សរ</string>
     <string name="notification_separate_digits_title">អានលេខវែងតាមខ្ទង់</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">អានតែការជូនដំណឹងជាមួយ</string>
     <string name="notification_blocked_title">កុំអានការជូនដំណឹងជាមួយ</string>
     <string name="notification_private_title">អានតែឈ្មោះកម្មវិធីសម្រាប់</string>
-    <string name="notification_replacements_title">និយាយខុសគ្នា</string>
+    <string name="notification_replacements_title">ការអានខុសពីដើម</string>
     <string name="notification_add_word">បន្ថែមពាក្យ</string>
     <string name="notification_add_replacement">បន្ថែមការជំនួស</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ដូច <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> អានថា <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">អត្ថបទ</string>
-    <string name="notification_replace_with">និយាយដូច</string>
+    <string name="notification_replace_with">អានថា</string>
     <string name="notification_whole_words">អានតែពាក្យពេញលេញ</string>
-    <string name="notification_regex">ការបញ្ចេញមតិទៀងទាត់</string>
+    <string name="notification_regex">កន្សោមទៀងទាត់</string>
     <string name="notification_enter_text">បញ្ចូលអត្ថបទ</string>
     <string name="notification_invalid_regex">មិនមែនជាកន្សោមធម្មតាត្រឹមត្រូវទេ</string>
     <string name="notification_edit">កែសម្រួល</string>
@@ -210,7 +210,7 @@
     <string name="notification_rule_match">លក្ខខណ្ឌ</string>
     <string name="notification_rule_match_all">លក្ខខណ្ឌទាំងអស់ត្រូវតែពេញចិត្ត</string>
     <string name="notification_rule_match_any">យ៉ាងហោចណាស់លក្ខខណ្ឌមួយត្រូវតែពេញចិត្ត</string>
-    <string name="notification_rule_conditions">ពេលណា</string>
+    <string name="notification_rule_conditions">នៅពេល</string>
     <string name="notification_rule_actions">បន្ទាប់មក</string>
     <string name="notification_rule_add_condition">បន្ថែមលក្ខខណ្ឌ</string>
     <string name="notification_rule_add_action">បន្ថែមសកម្មភាព</string>

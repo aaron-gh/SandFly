@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Pranešimų rūšys</string>
     <string name="notification_when_title">Kada skaityti</string>
     <string name="notification_rules_title">Taisyklės</string>
-    <string name="notification_repeats_title">Pasikartoja</string>
+    <string name="notification_repeats_title">Pasikartojimai</string>
     <string name="notification_stop_title">Nustokite skaityti</string>
     <string name="notification_schedules_title">Santrauka ir laikas</string>
     <string name="notification_history_title">Pranešimų istorija</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Pasakykite kiekvieną pranešimą ta kalba, kuria jis parašytas. Reikia automatiškai perjungti kalbą teksto į kalbą nustatymuose.</string>
     <string name="notification_sound_before_title">Garsas prieš pranešimus</string>
     <string name="notification_category_text">Tekstas</string>
-    <string name="notification_remove_emoji_title">Palikite jaustukus</string>
+    <string name="notification_remove_emoji_title">Praleisti jaustukus</string>
     <string name="notification_lowercase_title">Skaitykite didžiąsias raides kaip žodžius</string>
     <string name="notification_lowercase_summary">Kai kurie kalbos varikliai rašo žodžius didžiosiomis raidėmis po raidės</string>
     <string name="notification_separate_digits_title">Skaitykite ilgus skaičius skaitmuo po skaitmens</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Skaitykite tik pranešimus su</string>
     <string name="notification_blocked_title">Neskaitykite pranešimų su</string>
     <string name="notification_private_title">Skaitykite tik programos pavadinimą</string>
-    <string name="notification_replacements_title">Sakyk kitaip</string>
+    <string name="notification_replacements_title">Kitoks tarimas</string>
     <string name="notification_add_word">Pridėti žodį</string>
     <string name="notification_add_replacement">Pridėti pakaitalą</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kaip <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekstas</string>
-    <string name="notification_replace_with">Sakyk kaip</string>
+    <string name="notification_replace_with">Tarti kaip</string>
     <string name="notification_whole_words">Tik visi žodžiai</string>
     <string name="notification_regex">Reguliari išraiška</string>
     <string name="notification_enter_text">Įveskite tekstą</string>
@@ -200,11 +200,11 @@
     <string name="notification_outcome_rule">Neskaityta: taisyklė</string>
     <string name="notification_outcome_busy">Neskaityta: buvo perskaitytas kitas pranešimas</string>
     <string name="notification_outcome_call">Paskelbta kaip įeinantis telefono skambutis</string>
-    <string name="notification_rule_add">Pridėkite taisyklę</string>
+    <string name="notification_rule_add">Pridėti taisyklę</string>
     <string name="notification_rule_from_template">Pridėkite taisyklę iš šablono</string>
     <string name="notification_rules_category">Taisyklės</string>
     <string name="notification_rules_empty">Jokių taisyklių</string>
-    <string name="notification_rule_name">Vardas</string>
+    <string name="notification_rule_name">Pavadinimas</string>
     <string name="notification_rule_untitled">Taisyklė</string>
     <string name="notification_rule_enabled">Įjungta</string>
     <string name="notification_rule_match">Sąlygos</string>
@@ -212,10 +212,10 @@
     <string name="notification_rule_match_any">Turi būti įvykdyta bent viena sąlyga</string>
     <string name="notification_rule_conditions">Kada</string>
     <string name="notification_rule_actions">Tada</string>
-    <string name="notification_rule_add_condition">Pridėkite sąlygą</string>
+    <string name="notification_rule_add_condition">Pridėti sąlygą</string>
     <string name="notification_rule_add_action">Pridėti veiksmą</string>
-    <string name="notification_rule_invert">Apverskite sąlygą</string>
-    <string name="notification_rule_delete">Ištrinkite taisyklę</string>
+    <string name="notification_rule_invert">Apversti sąlygą</string>
+    <string name="notification_rule_delete">Ištrinti taisyklę</string>
     <string name="notification_rule_delete_confirm">Ištrinti <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Visada</string>
     <string name="notification_rule_no_actions">nieko nevyksta</string>

@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">දැනුම්දීම් වර්ග</string>
     <string name="notification_when_title">කියවන විට</string>
     <string name="notification_rules_title">නීති</string>
-    <string name="notification_repeats_title">නැවත නැවතත්</string>
+    <string name="notification_repeats_title">පුනරාවර්තන</string>
     <string name="notification_stop_title">කියවීම නවත්වන්න</string>
     <string name="notification_schedules_title">සාරාංශය සහ කාලය</string>
     <string name="notification_history_title">දැනුම්දීම් ඉතිහාසය</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">සමඟ දැනුම්දීම් පමණක් කියවන්න</string>
     <string name="notification_blocked_title">සමඟ දැනුම්දීම් කියවන්න එපා</string>
     <string name="notification_private_title">යෙදුමේ නම පමණක් කියවන්න</string>
-    <string name="notification_replacements_title">වෙනස් විදියට කියන්න</string>
+    <string name="notification_replacements_title">වෙනස් උච්චාරණය</string>
     <string name="notification_add_word">වචනයක් එකතු කරන්න</string>
     <string name="notification_add_replacement">ආදේශකයක් එකතු කරන්න</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ලෙස <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">පෙළ</string>
-    <string name="notification_replace_with">ලෙස කියන්න</string>
+    <string name="notification_replace_with">මෙසේ කියවන්න</string>
     <string name="notification_whole_words">සම්පූර්ණ වචන පමණි</string>
-    <string name="notification_regex">නිතිපතා ප්රකාශනය</string>
+    <string name="notification_regex">Regular expression</string>
     <string name="notification_enter_text">පෙළක් ඇතුළත් කරන්න</string>
     <string name="notification_invalid_regex">වලංගු නිත්‍ය ප්‍රකාශනයක් නොවේ</string>
     <string name="notification_edit">සංස්කරණය කරන්න</string>
@@ -206,12 +206,12 @@
     <string name="notification_rules_empty">නීති නැත</string>
     <string name="notification_rule_name">නම</string>
     <string name="notification_rule_untitled">රීතිය</string>
-    <string name="notification_rule_enabled">ඔන් කළා</string>
+    <string name="notification_rule_enabled">ක්‍රියාත්මකයි</string>
     <string name="notification_rule_match">කොන්දේසි</string>
     <string name="notification_rule_match_all">සියලුම කොන්දේසි සපුරාලිය යුතුය</string>
     <string name="notification_rule_match_any">අවම වශයෙන් එක් කොන්දේසියක් සපුරාලිය යුතුය</string>
-    <string name="notification_rule_conditions">කවදාද</string>
-    <string name="notification_rule_actions">එතකොට</string>
+    <string name="notification_rule_conditions">විට</string>
+    <string name="notification_rule_actions">එවිට</string>
     <string name="notification_rule_add_condition">කොන්දේසියක් එකතු කරන්න</string>
     <string name="notification_rule_add_action">ක්‍රියාවක් එක් කරන්න</string>
     <string name="notification_rule_invert">කොන්දේසිය පෙරළන්න</string>

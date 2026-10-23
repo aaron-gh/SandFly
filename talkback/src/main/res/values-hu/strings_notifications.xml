@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Az értesítések fajtái</string>
     <string name="notification_when_title">Mikor kell olvasni</string>
     <string name="notification_rules_title">Szabályok</string>
-    <string name="notification_repeats_title">Ismétlődik</string>
+    <string name="notification_repeats_title">Ismétlődések</string>
     <string name="notification_stop_title">Hagyd abba az olvasást</string>
     <string name="notification_schedules_title">Összegzés és idő</string>
     <string name="notification_history_title">Értesítési előzmények</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Mondjon ki minden értesítést azon a nyelven, amelyen írták. Automatikus nyelvet kell váltani a Szövegfelolvasó beállításoknál.</string>
     <string name="notification_sound_before_title">Hang az értesítések előtt</string>
     <string name="notification_category_text">Szöveg</string>
-    <string name="notification_remove_emoji_title">Hagyd ki az emojit</string>
+    <string name="notification_remove_emoji_title">Emojik kihagyása</string>
     <string name="notification_lowercase_title">Olvasd a nagybetűket szóként</string>
     <string name="notification_lowercase_summary">Egyes beszédmotorok a szavakat nagybetűvel írják betűről betűre</string>
     <string name="notification_separate_digits_title">Olvassa el a hosszú számokat számjegyenként</string>
@@ -146,18 +146,18 @@
     <string name="notification_required_title">Csak az értesítéseket olvassa el</string>
     <string name="notification_blocked_title">Ne olvassa el az értesítéseket</string>
     <string name="notification_private_title">Csak az alkalmazás nevét olvassa el</string>
-    <string name="notification_replacements_title">Mondd másképp</string>
+    <string name="notification_replacements_title">Eltérő kiejtés</string>
     <string name="notification_add_word">Szó hozzáadása</string>
     <string name="notification_add_replacement">Csere hozzáadása</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> mint <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Szöveg</string>
-    <string name="notification_replace_with">Mondjuk úgy</string>
+    <string name="notification_replace_with">Kiejtés</string>
     <string name="notification_whole_words">Csak egész szavak</string>
     <string name="notification_regex">Reguláris kifejezés</string>
     <string name="notification_enter_text">Írjon be egy szöveget</string>
     <string name="notification_invalid_regex">Nem érvényes reguláris kifejezés</string>
     <string name="notification_edit">Szerkesztés</string>
-    <string name="notification_remove">Távolítsa el</string>
+    <string name="notification_remove">Eltávolítás</string>
     <string name="notification_history_keep">Értesítési előzmények mentése</string>
     <string name="notification_history_clear">Előzmények törlése</string>
     <string name="notification_history_category">Értesítések</string>
@@ -210,13 +210,13 @@
     <string name="notification_rule_match">Feltételek</string>
     <string name="notification_rule_match_all">Minden feltételnek teljesülnie kell</string>
     <string name="notification_rule_match_any">Legalább egy feltételnek teljesülnie kell</string>
-    <string name="notification_rule_conditions">Mikor</string>
+    <string name="notification_rule_conditions">Ha</string>
     <string name="notification_rule_actions">Akkor</string>
-    <string name="notification_rule_add_condition">Adjon hozzá egy feltételt</string>
-    <string name="notification_rule_add_action">Adjon hozzá egy műveletet</string>
-    <string name="notification_rule_invert">Fordítsa meg a feltételt</string>
-    <string name="notification_rule_delete">Törölje a szabályt</string>
-    <string name="notification_rule_delete_confirm">Törli a <xliff:g id="rule" example="Night">%1$s</xliff:g>-t?</string>
+    <string name="notification_rule_add_condition">Feltétel hozzáadása</string>
+    <string name="notification_rule_add_action">Művelet hozzáadása</string>
+    <string name="notification_rule_invert">Feltétel megfordítása</string>
+    <string name="notification_rule_delete">Szabály törlése</string>
+    <string name="notification_rule_delete_confirm">Törli: <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Mindig</string>
     <string name="notification_rule_no_actions">nem történik semmi</string>
     <string name="notification_rule_and">" és "</string>

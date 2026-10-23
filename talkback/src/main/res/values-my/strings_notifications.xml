@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">အကြောင်းကြားစာအမျိုးအစားများ</string>
     <string name="notification_when_title">ဘယ်အချိန်ဖတ်ရမလဲ</string>
     <string name="notification_rules_title">စည်းကမ်းများ</string>
-    <string name="notification_repeats_title">ထပ်ခါထပ်ခါ</string>
+    <string name="notification_repeats_title">ထပ်ခါထပ်ခါ ဖြစ်ခြင်း</string>
     <string name="notification_stop_title">စာဖတ်ခြင်းကို ရပ်လိုက်ပါ</string>
     <string name="notification_schedules_title">အကျဉ်းချုပ်နှင့်အချိန်</string>
     <string name="notification_history_title">အကြောင်းကြားချက် မှတ်တမ်း</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">ရေးထားသည့် ဘာသာစကားဖြင့် အသိပေးချက်တစ်ခုစီကို ပြောပါ။ စာသားမှ စကားပြောဆက်တင်များတွင် ဘာသာစကား အလိုအလျောက်ပြောင်းရန် လိုအပ်သည်။</string>
     <string name="notification_sound_before_title">အကြောင်းကြားချက်များမတိုင်မီ အသံ</string>
     <string name="notification_category_text">စာသား</string>
-    <string name="notification_remove_emoji_title">အီမိုဂျီကို ချန်ထားပါ</string>
+    <string name="notification_remove_emoji_title">အီမိုဂျီ ကျော်ရန်</string>
     <string name="notification_lowercase_title">စာလုံးများအဖြစ် စာလုံးကြီးများကို ဖတ်ပါ</string>
     <string name="notification_lowercase_summary">အချို့သော စကားပြောအင်ဂျင်များသည် စာလုံးအကြီးများကို အက္ခရာဖြင့် စာလုံးပေါင်းပါသည်</string>
     <string name="notification_separate_digits_title">ဂဏန်းရှည် ဂဏန်းများကို ဂဏန်းဖြင့်ဖတ်ပါ</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">အသိပေးချက်များကိုသာ ဖတ်ပါ</string>
     <string name="notification_blocked_title">အသိပေးချက်များကို မဖတ်ပါနှင့်</string>
     <string name="notification_private_title">အက်ပ်အမည်ကိုသာ ဖတ်ပါ</string>
-    <string name="notification_replacements_title">ကွဲပြားစွာပြောပါ</string>
+    <string name="notification_replacements_title">ကွဲပြားစွာ ဖတ်ခြင်း</string>
     <string name="notification_add_word">စကားလုံးထည့်ပါ</string>
     <string name="notification_add_replacement">အစားထိုးထည့်ပါ</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> အဖြစ် <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">စာသား</string>
-    <string name="notification_replace_with">အတိုင်းပြောပါ</string>
+    <string name="notification_replace_with">ဤသို့ ဖတ်ရန်</string>
     <string name="notification_whole_words">စကားလုံးတွေချည်းပဲ</string>
-    <string name="notification_regex">ပုံမှန်အသုံးအနှုန်း</string>
+    <string name="notification_regex">Regular expression</string>
     <string name="notification_enter_text">စာသားထည့်ပါ</string>
     <string name="notification_invalid_regex">မှန်ကန်သော ပုံမှန်အသုံးအနှုန်းမဟုတ်ပါ</string>
     <string name="notification_edit">တည်းဖြတ်ပါ</string>
@@ -210,15 +210,15 @@
     <string name="notification_rule_match">အခြေအနေများ</string>
     <string name="notification_rule_match_all">အခြေအနေအားလုံး ကျေနပ်ရမယ်</string>
     <string name="notification_rule_match_any">အနည်းဆုံး အခြေအနေတစ်ခုကို ကျေနပ်ရပေမည်</string>
-    <string name="notification_rule_conditions">ဘယ်တော့လဲ</string>
-    <string name="notification_rule_actions">ပြီးတော့</string>
+    <string name="notification_rule_conditions">အခြေအနေ</string>
+    <string name="notification_rule_actions">ထို့နောက်</string>
     <string name="notification_rule_add_condition">အခြေအနေတစ်ခုထည့်ပါ</string>
     <string name="notification_rule_add_action">လုပ်ဆောင်ချက်တစ်ခုထည့်ပါ</string>
-    <string name="notification_rule_invert">အခြေအနေကို ပြောင်းပြန်</string>
+    <string name="notification_rule_invert">အခြေအနေကို ပြောင်းပြန်လှန်ရန်</string>
     <string name="notification_rule_delete">စည်းကမ်းကိုဖျက်ပါ</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ဖျက်မလား။</string>
     <string name="notification_rule_always">အမြဲတမ်း</string>
-    <string name="notification_rule_no_actions">ဘာမှမဖြစ်ဘူး</string>
+    <string name="notification_rule_no_actions">ဘာမှ မလုပ်ပါ</string>
     <string name="notification_rule_and">" နှင့် "</string>
     <string name="notification_rule_or">" သို့မဟုတ် "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>

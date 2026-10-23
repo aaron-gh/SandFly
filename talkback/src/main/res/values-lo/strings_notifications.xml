@@ -17,7 +17,7 @@
     <string name="notification_url_domain">ອ່ານເວັບໄຊເທົ່ານັ້ນ</string>
     <string name="notification_url_full">ອ່ານການເຊື່ອມຕໍ່ທັງຫມົດ</string>
     <string name="notification_category_title">ການແຈ້ງເຕືອນ</string>
-    <string name="notification_reading_title">ກຳລັງອ່ານການແຈ້ງເຕືອນດັງໆ</string>
+    <string name="notification_reading_title">ການອ່ານການແຈ້ງເຕືອນ</string>
     <string name="notification_apps_title">ແອັບ</string>
     <string name="notification_words_title">ຄໍາສັບແລະການທົດແທນ</string>
     <string name="notification_kinds_title">ປະເພດຂອງການແຈ້ງເຕືອນ</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">ເວົ້າການແຈ້ງເຕືອນແຕ່ລະອັນໃນພາສາທີ່ມັນຖືກຂຽນໄວ້. ຕ້ອງການປ່ຽນພາສາໂດຍອັດຕະໂນມັດໃນການຕັ້ງຄ່າຂໍ້ຄວາມເປັນສຽງເວົ້າ.</string>
     <string name="notification_sound_before_title">ສຽງກ່ອນການແຈ້ງເຕືອນ</string>
     <string name="notification_category_text">ຂໍ້ຄວາມ</string>
-    <string name="notification_remove_emoji_title">ອອກ emoji</string>
+    <string name="notification_remove_emoji_title">ຂ້າມ emoji</string>
     <string name="notification_lowercase_title">ອ່ານຕົວພິມໃຫຍ່ເປັນຄໍາສັບ</string>
     <string name="notification_lowercase_summary">ເຄື່ອງເວົ້າບາງເຄື່ອງສະກົດຄໍາໃນຕົວພິມໃຫຍ່ໂດຍຕົວອັກສອນ</string>
     <string name="notification_separate_digits_title">ອ່ານຕົວເລກຍາວເປັນຕົວເລກ</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">ພຽງແຕ່ອ່ານການແຈ້ງເຕືອນດ້ວຍ</string>
     <string name="notification_blocked_title">ຢ່າອ່ານການແຈ້ງເຕືອນດ້ວຍ</string>
     <string name="notification_private_title">ອ່ານພຽງແຕ່ຊື່ app ສໍາລັບ</string>
-    <string name="notification_replacements_title">ເວົ້າແຕກຕ່າງກັນ</string>
+    <string name="notification_replacements_title">ອ່ານແບບອື່ນ</string>
     <string name="notification_add_word">ເພີ່ມຄໍາ</string>
     <string name="notification_add_replacement">ຕື່ມການທົດແທນ</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ເປັນ <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ອ່ານວ່າ <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">ຂໍ້ຄວາມ</string>
-    <string name="notification_replace_with">ເວົ້າເປັນ</string>
+    <string name="notification_replace_with">ອ່ານວ່າ</string>
     <string name="notification_whole_words">ຄໍາທັງຫມົດເທົ່ານັ້ນ</string>
-    <string name="notification_regex">ການສະແດງອອກເປັນປົກກະຕິ</string>
+    <string name="notification_regex">ນິພົດປົກກະຕິ</string>
     <string name="notification_enter_text">ໃສ່ຂໍ້ຄວາມ</string>
     <string name="notification_invalid_regex">ບໍ່ແມ່ນການສະແດງອອກປົກກະຕິທີ່ຖືກຕ້ອງ</string>
     <string name="notification_edit">ແກ້ໄຂ</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">ຈາກນັ້ນ</string>
     <string name="notification_rule_add_condition">ເພີ່ມເງື່ອນໄຂ</string>
     <string name="notification_rule_add_action">ເພີ່ມການກະທຳ</string>
-    <string name="notification_rule_invert">ປ່ຽນສະພາບ</string>
+    <string name="notification_rule_invert">ປີ້ນເງື່ອນໄຂ</string>
     <string name="notification_rule_delete">ລົບກົດລະບຽບ</string>
     <string name="notification_rule_delete_confirm">ລຶບ <xliff:g id="rule" example="Night">%1$s</xliff:g> ບໍ?</string>
     <string name="notification_rule_always">ສະເໝີ</string>

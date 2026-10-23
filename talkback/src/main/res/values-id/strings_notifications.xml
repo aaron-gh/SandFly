@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Jenis notifikasi</string>
     <string name="notification_when_title">Kapan harus membaca</string>
     <string name="notification_rules_title">Aturan</string>
-    <string name="notification_repeats_title">Berulang</string>
+    <string name="notification_repeats_title">Pengulangan</string>
     <string name="notification_stop_title">Berhenti membaca</string>
     <string name="notification_schedules_title">Ringkasan dan waktu</string>
     <string name="notification_history_title">Riwayat pemberitahuan</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Ucapkan setiap notifikasi dalam bahasa yang tertulis. Perlu Beralih bahasa secara otomatis di pengaturan Text-to-speech.</string>
     <string name="notification_sound_before_title">Suara sebelum notifikasi</string>
     <string name="notification_category_text">Teks</string>
-    <string name="notification_remove_emoji_title">Tinggalkan emoji</string>
+    <string name="notification_remove_emoji_title">Lewati emoji</string>
     <string name="notification_lowercase_title">Baca huruf kapital sebagai kata-kata</string>
     <string name="notification_lowercase_summary">Beberapa mesin ucapan mengeja kata dalam huruf kapital huruf demi huruf</string>
     <string name="notification_separate_digits_title">Membaca angka panjang digit demi digit</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Hanya baca notifikasi dengan</string>
     <string name="notification_blocked_title">Jangan membaca notifikasi dengan</string>
     <string name="notification_private_title">Baca hanya nama aplikasinya</string>
-    <string name="notification_replacements_title">Katakan secara berbeda</string>
+    <string name="notification_replacements_title">Ucapan berbeda</string>
     <string name="notification_add_word">Tambahkan sebuah kata</string>
     <string name="notification_add_replacement">Tambahkan pengganti</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> sebagai <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teks</string>
-    <string name="notification_replace_with">Katakan sebagai</string>
+    <string name="notification_replace_with">Ucapkan sebagai</string>
     <string name="notification_whole_words">Hanya seluruh kata-kata</string>
     <string name="notification_regex">Ekspresi reguler</string>
     <string name="notification_enter_text">Masukkan teks</string>
@@ -210,12 +210,12 @@
     <string name="notification_rule_match">Kondisi</string>
     <string name="notification_rule_match_all">Semua kondisi harus dipenuhi</string>
     <string name="notification_rule_match_any">Setidaknya satu syarat harus dipenuhi</string>
-    <string name="notification_rule_conditions">Kapan</string>
+    <string name="notification_rule_conditions">Ketika</string>
     <string name="notification_rule_actions">Lalu</string>
     <string name="notification_rule_add_condition">Tambahkan kondisi</string>
     <string name="notification_rule_add_action">Tambahkan tindakan</string>
-    <string name="notification_rule_invert">Balikkan kondisinya</string>
-    <string name="notification_rule_delete">Hapus aturannya</string>
+    <string name="notification_rule_invert">Balik kondisi</string>
+    <string name="notification_rule_delete">Hapus aturan</string>
     <string name="notification_rule_delete_confirm">Hapus <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Selalu</string>
     <string name="notification_rule_no_actions">tidak ada yang terjadi</string>

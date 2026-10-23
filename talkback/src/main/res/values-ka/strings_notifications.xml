@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">შეტყობინებების სახეები</string>
     <string name="notification_when_title">როდის წაიკითხოს</string>
     <string name="notification_rules_title">წესები</string>
-    <string name="notification_repeats_title">მეორდება</string>
+    <string name="notification_repeats_title">გამეორებები</string>
     <string name="notification_stop_title">შეწყვიტე კითხვა</string>
     <string name="notification_schedules_title">შეჯამება და დრო</string>
     <string name="notification_history_title">შეტყობინებების ისტორია</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">თქვით თითოეული შეტყობინება იმ ენაზე, რომელზედაც არის დაწერილი. საჭიროებს ენის ავტომატურად გადართვას ტექსტის მეტყველების პარამეტრებში.</string>
     <string name="notification_sound_before_title">ხმა შეტყობინებების წინ</string>
     <string name="notification_category_text">ტექსტი</string>
-    <string name="notification_remove_emoji_title">გამოტოვეთ emoji</string>
+    <string name="notification_remove_emoji_title">emoji-ის გამოტოვება</string>
     <string name="notification_lowercase_title">წაიკითხეთ დიდი ასოები, როგორც სიტყვები</string>
     <string name="notification_lowercase_summary">ზოგი ხმოვანი ძრავა დიდ ასოებად ჩაწერილ სიტყვებს ასო-ასო წარმოთქვამს.</string>
     <string name="notification_separate_digits_title">წაიკითხეთ გრძელი რიცხვები ციფრ-ციფრად</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">მხოლოდ შეტყობინებების წაკითხვა</string>
     <string name="notification_blocked_title">ნუ წაიკითხავთ შეტყობინებებს</string>
     <string name="notification_private_title">წაიკითხეთ მხოლოდ აპლიკაციის სახელი</string>
-    <string name="notification_replacements_title">სხვანაირად თქვი</string>
+    <string name="notification_replacements_title">განსხვავებული წარმოთქმა</string>
     <string name="notification_add_word">სიტყვის დამატება</string>
     <string name="notification_add_replacement">ჩანაცვლების დამატება</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> როგორც <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">ტექსტი</string>
-    <string name="notification_replace_with">თქვი როგორც</string>
+    <string name="notification_replace_with">წარმოთქმა როგორც</string>
     <string name="notification_whole_words">მხოლოდ მთელი სიტყვები</string>
     <string name="notification_regex">რეგულარული გამოხატულება</string>
     <string name="notification_enter_text">შეიყვანეთ ტექსტი</string>
@@ -200,7 +200,7 @@
     <string name="notification_outcome_rule">არ წაკითხულა: წესი</string>
     <string name="notification_outcome_busy">არ არის წაკითხული: წაკითხულია კიდევ ერთი შეტყობინება</string>
     <string name="notification_outcome_call">გამოცხადებულია როგორც შემომავალი სატელეფონო ზარი</string>
-    <string name="notification_rule_add">დაამატე წესი</string>
+    <string name="notification_rule_add">წესის დამატება</string>
     <string name="notification_rule_from_template">დაამატეთ წესი შაბლონიდან</string>
     <string name="notification_rules_category">წესები</string>
     <string name="notification_rules_empty">არანაირი წესები</string>
@@ -212,10 +212,10 @@
     <string name="notification_rule_match_any">ერთი პირობა მაინც უნდა დაკმაყოფილდეს</string>
     <string name="notification_rule_conditions">როცა</string>
     <string name="notification_rule_actions">მერე</string>
-    <string name="notification_rule_add_condition">დაამატე პირობა</string>
-    <string name="notification_rule_add_action">დაამატეთ მოქმედება</string>
-    <string name="notification_rule_invert">შეცვალეთ მდგომარეობა</string>
-    <string name="notification_rule_delete">წაშალე წესი</string>
+    <string name="notification_rule_add_condition">პირობის დამატება</string>
+    <string name="notification_rule_add_action">მოქმედების დამატება</string>
+    <string name="notification_rule_invert">პირობის შებრუნება</string>
+    <string name="notification_rule_delete">წესის წაშლა</string>
     <string name="notification_rule_delete_confirm">წაშალოთ <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">ყოველთვის</string>
     <string name="notification_rule_no_actions">არაფერი ხდება</string>

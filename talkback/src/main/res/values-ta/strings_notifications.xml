@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">அறிவிப்புகளின் வகைகள்</string>
     <string name="notification_when_title">எப்போது படிக்க வேண்டும்</string>
     <string name="notification_rules_title">விதிகள்</string>
-    <string name="notification_repeats_title">மீண்டும் மீண்டும்</string>
+    <string name="notification_repeats_title">மறுநிகழ்வுகள்</string>
     <string name="notification_stop_title">படிப்பதை நிறுத்து</string>
     <string name="notification_schedules_title">சுருக்கம் மற்றும் நேரம்</string>
     <string name="notification_history_title">அறிவிப்பு வரலாறு</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">ஒவ்வொரு அறிவிப்பையும் அது எழுதப்பட்ட மொழியில் கூறவும். உரையிலிருந்து பேச்சு அமைப்புகளில் மொழியை தானாக மாற்ற வேண்டும்.</string>
     <string name="notification_sound_before_title">அறிவிப்புகளுக்கு முன் ஒலி</string>
     <string name="notification_category_text">உரை</string>
-    <string name="notification_remove_emoji_title">ஈமோஜியை விட்டு விடுங்கள்</string>
+    <string name="notification_remove_emoji_title">ஈமோஜியைத் தவிர்</string>
     <string name="notification_lowercase_title">மூலதனங்களை வார்த்தைகளாகப் படியுங்கள்</string>
     <string name="notification_lowercase_summary">சில பேச்சுத் தொகுப்புகள் பெரிய எழுத்துகளில் உள்ள சொற்களை ஒவ்வொரு எழுத்தாக உச்சரிக்கும்.</string>
     <string name="notification_separate_digits_title">நீண்ட எண்களை இலக்கமாகப் படிக்கவும்</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">உடன் அறிவிப்புகளை மட்டும் படிக்கவும்</string>
     <string name="notification_blocked_title">உடன் அறிவிப்புகளைப் படிக்க வேண்டாம்</string>
     <string name="notification_private_title">ஆப்ஸ் பெயரை மட்டும் படிக்கவும்</string>
-    <string name="notification_replacements_title">வித்தியாசமாக சொல்லுங்கள்</string>
+    <string name="notification_replacements_title">வேறு உச்சரிப்பு</string>
     <string name="notification_add_word">ஒரு வார்த்தையைச் சேர்க்கவும்</string>
     <string name="notification_add_replacement">மாற்றீட்டைச் சேர்க்கவும்</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ஆக <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">உரை</string>
-    <string name="notification_replace_with">என கூறுங்கள்</string>
+    <string name="notification_replace_with">இப்படிப் படி</string>
     <string name="notification_whole_words">முழு வார்த்தைகள் மட்டுமே</string>
-    <string name="notification_regex">வழக்கமான வெளிப்பாடு</string>
+    <string name="notification_regex">ரெகுலர் எக்ஸ்பிரஷன்</string>
     <string name="notification_enter_text">உரையை உள்ளிடவும்</string>
     <string name="notification_invalid_regex">சரியான வழக்கமான வெளிப்பாடு அல்ல</string>
     <string name="notification_edit">திருத்தவும்</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">பிறகு</string>
     <string name="notification_rule_add_condition">நிபந்தனையைச் சேர்க்கவும்</string>
     <string name="notification_rule_add_action">ஒரு செயலைச் சேர்க்கவும்</string>
-    <string name="notification_rule_invert">நிலைமையை மாற்றவும்</string>
+    <string name="notification_rule_invert">நிபந்தனையை மாற்று</string>
     <string name="notification_rule_delete">விதியை நீக்கு</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ஐ நீக்கவா?</string>
     <string name="notification_rule_always">எப்போதும்</string>

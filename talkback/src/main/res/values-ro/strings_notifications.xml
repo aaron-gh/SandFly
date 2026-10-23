@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Tipuri de notificări</string>
     <string name="notification_when_title">Când să citești</string>
     <string name="notification_rules_title">Reguli</string>
-    <string name="notification_repeats_title">Se repetă</string>
+    <string name="notification_repeats_title">Repetări</string>
     <string name="notification_stop_title">Nu mai citi</string>
     <string name="notification_schedules_title">Rezumat și timp</string>
     <string name="notification_history_title">Istoricul notificărilor</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Rostiți fiecare notificare în limba în care este scrisă. Necesită Schimbați automat limba în setările Text-to-speech.</string>
     <string name="notification_sound_before_title">Sunet înainte de notificări</string>
     <string name="notification_category_text">Text</string>
-    <string name="notification_remove_emoji_title">Omite emoji-ul</string>
+    <string name="notification_remove_emoji_title">Omite emoji</string>
     <string name="notification_lowercase_title">Citiți majusculele ca cuvinte</string>
     <string name="notification_lowercase_summary">Unele motoare de sinteză vocală rostesc pe litere cuvintele scrise cu majuscule.</string>
     <string name="notification_separate_digits_title">Citiți numere lungi cifră cu cifră</string>
@@ -146,18 +146,18 @@
     <string name="notification_required_title">Citește doar notificările cu</string>
     <string name="notification_blocked_title">Nu citi notificările cu</string>
     <string name="notification_private_title">Citiți numai numele aplicației pentru</string>
-    <string name="notification_replacements_title">Spune altfel</string>
+    <string name="notification_replacements_title">Pronunție diferită</string>
     <string name="notification_add_word">Adaugă un cuvânt</string>
     <string name="notification_add_replacement">Adaugă o înlocuire</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ca <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
-    <string name="notification_replace_with">Spune ca</string>
+    <string name="notification_replace_with">Pronunță ca</string>
     <string name="notification_whole_words">Numai cuvinte întregi</string>
-    <string name="notification_regex">Expresia regulată</string>
+    <string name="notification_regex">Expresie regulată</string>
     <string name="notification_enter_text">Introduceți un text</string>
     <string name="notification_invalid_regex">Nu este o expresie regulată validă</string>
     <string name="notification_edit">Editează</string>
-    <string name="notification_remove">Eliminați</string>
+    <string name="notification_remove">Elimină</string>
     <string name="notification_history_keep">Păstrează istoricul notificărilor</string>
     <string name="notification_history_clear">Șterge istoricul</string>
     <string name="notification_history_category">Notificări</string>
@@ -200,25 +200,25 @@
     <string name="notification_outcome_rule">Necitit: regulă</string>
     <string name="notification_outcome_busy">Nu citit: a fost citită o altă notificare</string>
     <string name="notification_outcome_call">Anunțat ca un apel telefonic primit</string>
-    <string name="notification_rule_add">Adăugați o regulă</string>
+    <string name="notification_rule_add">Adaugă o regulă</string>
     <string name="notification_rule_from_template">Adăugați o regulă dintr-un șablon</string>
     <string name="notification_rules_category">Reguli</string>
     <string name="notification_rules_empty">Fara reguli</string>
     <string name="notification_rule_name">Nume</string>
     <string name="notification_rule_untitled">Regula</string>
-    <string name="notification_rule_enabled">Pornit</string>
+    <string name="notification_rule_enabled">Activată</string>
     <string name="notification_rule_match">Condiții</string>
     <string name="notification_rule_match_all">Toate condițiile trebuie îndeplinite</string>
     <string name="notification_rule_match_any">Trebuie îndeplinită cel puțin o condiție</string>
     <string name="notification_rule_conditions">Când</string>
     <string name="notification_rule_actions">Apoi</string>
-    <string name="notification_rule_add_condition">Adăugați o condiție</string>
-    <string name="notification_rule_add_action">Adăugați o acțiune</string>
-    <string name="notification_rule_invert">Inversați starea</string>
-    <string name="notification_rule_delete">Ștergeți regula</string>
-    <string name="notification_rule_delete_confirm">Ștergeți <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_add_condition">Adaugă o condiție</string>
+    <string name="notification_rule_add_action">Adaugă o acțiune</string>
+    <string name="notification_rule_invert">Inversează condiția</string>
+    <string name="notification_rule_delete">Șterge regula</string>
+    <string name="notification_rule_delete_confirm">Ștergi <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Întotdeauna</string>
-    <string name="notification_rule_no_actions">nu se intampla nimic</string>
+    <string name="notification_rule_no_actions">nu se întâmplă nimic</string>
     <string name="notification_rule_and">" și "</string>
     <string name="notification_rule_or">" sau "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>

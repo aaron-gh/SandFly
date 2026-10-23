@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Vrste obvestil</string>
     <string name="notification_when_title">Kdaj brati</string>
     <string name="notification_rules_title">Pravila</string>
-    <string name="notification_repeats_title">Ponavlja se</string>
+    <string name="notification_repeats_title">Ponovitve</string>
     <string name="notification_stop_title">Nehajte brati</string>
     <string name="notification_schedules_title">Povzetek in čas</string>
     <string name="notification_history_title">Zgodovina obvestil</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Vsako obvestilo izgovorite v jeziku, v katerem je napisano. Potreben je samodejni preklop jezika v nastavitvah pretvorbe besedila v govor.</string>
     <string name="notification_sound_before_title">Zvok pred obvestili</string>
     <string name="notification_category_text">Besedilo</string>
-    <string name="notification_remove_emoji_title">Izpustite emoji</string>
+    <string name="notification_remove_emoji_title">Izpusti emoji</string>
     <string name="notification_lowercase_title">Preberi velike črke kot besede</string>
     <string name="notification_lowercase_summary">Nekateri govorni mehanizmi besede, zapisane z velikimi črkami, izgovarjajo po posameznih črkah.</string>
     <string name="notification_separate_digits_title">Berite dolga števila števko za števko</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Preberi samo obvestila z</string>
     <string name="notification_blocked_title">Ne beri obvestil z</string>
     <string name="notification_private_title">Preberite samo ime aplikacije za</string>
-    <string name="notification_replacements_title">Povej drugače</string>
+    <string name="notification_replacements_title">Drugačna izgovorjava</string>
     <string name="notification_add_word">Dodaj besedo</string>
     <string name="notification_add_replacement">Dodaj zamenjavo</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kot <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Besedilo</string>
-    <string name="notification_replace_with">Reci kot</string>
+    <string name="notification_replace_with">Izgovori kot</string>
     <string name="notification_whole_words">Samo cele besede</string>
     <string name="notification_regex">Regularni izraz</string>
     <string name="notification_enter_text">Vnesite besedilo</string>
@@ -200,7 +200,7 @@
     <string name="notification_outcome_rule">Ni prebrano: pravilo</string>
     <string name="notification_outcome_busy">Ni prebrano: prebrano je bilo drugo obvestilo</string>
     <string name="notification_outcome_call">Napovedano kot dohodni telefonski klic</string>
-    <string name="notification_rule_add">Dodajte pravilo</string>
+    <string name="notification_rule_add">Dodaj pravilo</string>
     <string name="notification_rule_from_template">Dodajte pravilo iz predloge</string>
     <string name="notification_rules_category">Pravila</string>
     <string name="notification_rules_empty">Brez pravil</string>
@@ -210,11 +210,11 @@
     <string name="notification_rule_match">Pogoji</string>
     <string name="notification_rule_match_all">Vsi pogoji morajo biti izpolnjeni</string>
     <string name="notification_rule_match_any">Izpolnjen mora biti vsaj en pogoj</string>
-    <string name="notification_rule_conditions">Kdaj</string>
+    <string name="notification_rule_conditions">Ko</string>
     <string name="notification_rule_actions">Potem</string>
-    <string name="notification_rule_add_condition">Dodajte pogoj</string>
-    <string name="notification_rule_add_action">Dodajte dejanje</string>
-    <string name="notification_rule_invert">Obrnite pogoj</string>
+    <string name="notification_rule_add_condition">Dodaj pogoj</string>
+    <string name="notification_rule_add_action">Dodaj dejanje</string>
+    <string name="notification_rule_invert">Obrni pogoj</string>
     <string name="notification_rule_delete">Izbriši pravilo</string>
     <string name="notification_rule_delete_confirm">Izbrisati <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Vedno</string>

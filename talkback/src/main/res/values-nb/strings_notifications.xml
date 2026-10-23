@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Typer varsler</string>
     <string name="notification_when_title">Når du skal lese</string>
     <string name="notification_rules_title">Regler</string>
-    <string name="notification_repeats_title">Gjentas</string>
+    <string name="notification_repeats_title">Gjentakelser</string>
     <string name="notification_stop_title">Slutt å lese</string>
     <string name="notification_schedules_title">Oppsummering og tid</string>
     <string name="notification_history_title">Varslingshistorikk</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Les kun varsler med</string>
     <string name="notification_blocked_title">Ikke les varsler med</string>
     <string name="notification_private_title">Les kun appnavnet for</string>
-    <string name="notification_replacements_title">Si annerledes</string>
+    <string name="notification_replacements_title">Annen uttale</string>
     <string name="notification_add_word">Legg til et ord</string>
     <string name="notification_add_replacement">Legg til en erstatning</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> som <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
-    <string name="notification_replace_with">Si som</string>
+    <string name="notification_replace_with">Uttal som</string>
     <string name="notification_whole_words">Kun hele ord</string>
-    <string name="notification_regex">Regelmessig uttrykk</string>
+    <string name="notification_regex">Regulært uttrykk</string>
     <string name="notification_enter_text">Skriv inn en tekst</string>
     <string name="notification_invalid_regex">Ikke et gyldig regulært uttrykk</string>
     <string name="notification_edit">Rediger</string>
@@ -206,15 +206,15 @@
     <string name="notification_rules_empty">Ingen regler</string>
     <string name="notification_rule_name">Navn</string>
     <string name="notification_rule_untitled">Regel</string>
-    <string name="notification_rule_enabled">Skrudd på</string>
-    <string name="notification_rule_match">Forhold</string>
+    <string name="notification_rule_enabled">På</string>
+    <string name="notification_rule_match">Betingelser</string>
     <string name="notification_rule_match_all">Alle betingelser må være oppfylt</string>
     <string name="notification_rule_match_any">Minst én betingelse må være oppfylt</string>
     <string name="notification_rule_conditions">Når</string>
     <string name="notification_rule_actions">Så</string>
     <string name="notification_rule_add_condition">Legg til en betingelse</string>
     <string name="notification_rule_add_action">Legg til en handling</string>
-    <string name="notification_rule_invert">Inverter tilstanden</string>
+    <string name="notification_rule_invert">Snu betingelsen</string>
     <string name="notification_rule_delete">Slett regelen</string>
     <string name="notification_rule_delete_confirm">Vil du slette <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Alltid</string>

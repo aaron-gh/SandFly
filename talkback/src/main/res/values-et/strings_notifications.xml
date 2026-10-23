@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Teavituste tüübid</string>
     <string name="notification_when_title">Millal lugeda</string>
     <string name="notification_rules_title">Reeglid</string>
-    <string name="notification_repeats_title">Kordub</string>
+    <string name="notification_repeats_title">Kordused</string>
     <string name="notification_stop_title">Lõpetage lugemine</string>
     <string name="notification_schedules_title">Kokkuvõte ja aeg</string>
     <string name="notification_history_title">Teavituste ajalugu</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Öelge iga märguanne selles keeles, milles see on kirjutatud. Vajab kõnesünteesi seadetes keelt automaatselt vahetada.</string>
     <string name="notification_sound_before_title">Heli enne märguandeid</string>
     <string name="notification_category_text">Tekst</string>
-    <string name="notification_remove_emoji_title">Jätke emotikonid välja</string>
+    <string name="notification_remove_emoji_title">Jäta emotikonid välja</string>
     <string name="notification_lowercase_title">Loe suurtähti sõnadena</string>
     <string name="notification_lowercase_summary">Mõned kõnemootorid kirjutavad sõnu suurtähtedega tähthaaval</string>
     <string name="notification_separate_digits_title">Lugege pikki numbreid numbrite kaupa</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Lugege märguandeid ainult rakendusega</string>
     <string name="notification_blocked_title">Ärge lugege märguandeid</string>
     <string name="notification_private_title">Lugege ainult rakenduse nime</string>
-    <string name="notification_replacements_title">Ütle teisiti</string>
+    <string name="notification_replacements_title">Teistsugune hääldus</string>
     <string name="notification_add_word">Lisa sõna</string>
     <string name="notification_add_replacement">Lisa asendus</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kui <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g>: <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
-    <string name="notification_replace_with">Ütle nagu</string>
+    <string name="notification_replace_with">Hääldus</string>
     <string name="notification_whole_words">Ainult terved sõnad</string>
     <string name="notification_regex">Regulaaravaldis</string>
     <string name="notification_enter_text">Sisestage tekst</string>
@@ -200,7 +200,7 @@
     <string name="notification_outcome_rule">Lugemata: reegel</string>
     <string name="notification_outcome_busy">Lugemata: loeti veel üks teatis</string>
     <string name="notification_outcome_call">Teatatakse sissetuleva telefonikõnena</string>
-    <string name="notification_rule_add">Lisage reegel</string>
+    <string name="notification_rule_add">Lisa reegel</string>
     <string name="notification_rule_from_template">Lisage mallist reegel</string>
     <string name="notification_rules_category">Reeglid</string>
     <string name="notification_rules_empty">Reegleid pole</string>
@@ -210,11 +210,11 @@
     <string name="notification_rule_match">Tingimused</string>
     <string name="notification_rule_match_all">Kõik tingimused peavad olema täidetud</string>
     <string name="notification_rule_match_any">Vähemalt üks tingimus peab olema täidetud</string>
-    <string name="notification_rule_conditions">Millal</string>
+    <string name="notification_rule_conditions">Kui</string>
     <string name="notification_rule_actions">Siis</string>
     <string name="notification_rule_add_condition">Lisa tingimus</string>
-    <string name="notification_rule_add_action">Lisage toiming</string>
-    <string name="notification_rule_invert">Pöörake tingimus ümber</string>
+    <string name="notification_rule_add_action">Lisa toiming</string>
+    <string name="notification_rule_invert">Pööra tingimus ümber</string>
     <string name="notification_rule_delete">Kustuta reegel</string>
     <string name="notification_rule_delete_confirm">Kas kustutada <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Alati</string>

@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Druhy upozornení</string>
     <string name="notification_when_title">Kedy čítať</string>
     <string name="notification_rules_title">Pravidlá</string>
-    <string name="notification_repeats_title">Opakuje sa</string>
+    <string name="notification_repeats_title">Opakovania</string>
     <string name="notification_stop_title">Prestaňte čítať</string>
     <string name="notification_schedules_title">Zhrnutie a čas</string>
     <string name="notification_history_title">História upozornení</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Vyslovte každé upozornenie v jazyku, v ktorom je napísané. Vyžaduje automatické prepínanie jazyka v nastaveniach prevodu textu na reč.</string>
     <string name="notification_sound_before_title">Zvuk pred upozorneniami</string>
     <string name="notification_category_text">Text</string>
-    <string name="notification_remove_emoji_title">Vynechajte emotikony</string>
+    <string name="notification_remove_emoji_title">Vynechať emoji</string>
     <string name="notification_lowercase_title">Čítajte veľké písmená ako slová</string>
     <string name="notification_lowercase_summary">Niektoré syntetizátory reči čítajú slová napísané veľkými písmenami po jednotlivých písmenách.</string>
     <string name="notification_separate_digits_title">Čítajte dlhé čísla číslicu po číslici</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Čítať upozornenia iba pomocou</string>
     <string name="notification_blocked_title">Nečítať upozornenia s</string>
     <string name="notification_private_title">Čítať iba názov aplikácie</string>
-    <string name="notification_replacements_title">Povedz inak</string>
+    <string name="notification_replacements_title">Iná výslovnosť</string>
     <string name="notification_add_word">Pridať slovo</string>
     <string name="notification_add_replacement">Pridať náhradu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ako <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
-    <string name="notification_replace_with">Povedz ako</string>
+    <string name="notification_replace_with">Vysloviť ako</string>
     <string name="notification_whole_words">Iba celé slová</string>
     <string name="notification_regex">Regulárny výraz</string>
     <string name="notification_enter_text">Zadajte text</string>
@@ -200,21 +200,21 @@
     <string name="notification_outcome_rule">Neprečítané: pravidlo</string>
     <string name="notification_outcome_busy">Neprečítané: bolo prečítané ďalšie upozornenie</string>
     <string name="notification_outcome_call">Oznámené ako prichádzajúci telefonát</string>
-    <string name="notification_rule_add">Pridajte pravidlo</string>
+    <string name="notification_rule_add">Pridať pravidlo</string>
     <string name="notification_rule_from_template">Pridajte pravidlo zo šablóny</string>
     <string name="notification_rules_category">Pravidlá</string>
     <string name="notification_rules_empty">Žiadne pravidlá</string>
-    <string name="notification_rule_name">Meno</string>
+    <string name="notification_rule_name">Názov</string>
     <string name="notification_rule_untitled">Pravidlo</string>
     <string name="notification_rule_enabled">Zapnuté</string>
     <string name="notification_rule_match">Podmienky</string>
     <string name="notification_rule_match_all">Musia byť splnené všetky podmienky</string>
     <string name="notification_rule_match_any">Musí byť splnená aspoň jedna podmienka</string>
-    <string name="notification_rule_conditions">Kedy</string>
+    <string name="notification_rule_conditions">Keď</string>
     <string name="notification_rule_actions">Potom</string>
-    <string name="notification_rule_add_condition">Pridajte podmienku</string>
-    <string name="notification_rule_add_action">Pridajte akciu</string>
-    <string name="notification_rule_invert">Obráťte podmienku</string>
+    <string name="notification_rule_add_condition">Pridať podmienku</string>
+    <string name="notification_rule_add_action">Pridať akciu</string>
+    <string name="notification_rule_invert">Obrátiť podmienku</string>
     <string name="notification_rule_delete">Odstrániť pravidlo</string>
     <string name="notification_rule_delete_confirm">Odstrániť <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Vždy</string>

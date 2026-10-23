@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Paziņojumu veidi</string>
     <string name="notification_when_title">Kad lasīt</string>
     <string name="notification_rules_title">Noteikumi</string>
-    <string name="notification_repeats_title">Atkārtojas</string>
+    <string name="notification_repeats_title">Atkārtojumi</string>
     <string name="notification_stop_title">Beidz lasīt</string>
     <string name="notification_schedules_title">Kopsavilkums un laiks</string>
     <string name="notification_history_title">Paziņojumu vēsture</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Izrunājiet katru paziņojumu tajā valodā, kurā tas ir rakstīts. Teksta pārveides runā iestatījumos valoda ir jāmaina automātiski.</string>
     <string name="notification_sound_before_title">Skaņa pirms paziņojumiem</string>
     <string name="notification_category_text">Teksts</string>
-    <string name="notification_remove_emoji_title">Atstājiet emocijzīmes</string>
+    <string name="notification_remove_emoji_title">Izlaist emocijzīmes</string>
     <string name="notification_lowercase_title">Lasiet lielos burtus kā vārdus</string>
     <string name="notification_lowercase_summary">Dažas runas programmas vārdus raksta ar lielajiem burtiem</string>
     <string name="notification_separate_digits_title">Lasiet garus skaitļus pa ciparam</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Lasiet tikai paziņojumus ar</string>
     <string name="notification_blocked_title">Nelasiet paziņojumus ar</string>
     <string name="notification_private_title">Lasiet tikai lietotnes nosaukumu</string>
-    <string name="notification_replacements_title">Say differently</string>
+    <string name="notification_replacements_title">Citāda izruna</string>
     <string name="notification_add_word">Pievienot vārdu</string>
     <string name="notification_add_replacement">Pievienot aizstājēju</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> as <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kā <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teksts</string>
-    <string name="notification_replace_with">Say as</string>
+    <string name="notification_replace_with">Izrunāt kā</string>
     <string name="notification_whole_words">Tikai veselus vārdus</string>
-    <string name="notification_regex">Regular expression</string>
+    <string name="notification_regex">Regulārā izteiksme</string>
     <string name="notification_enter_text">Ievadiet tekstu</string>
     <string name="notification_invalid_regex">Nav derīga regulārā izteiksme</string>
     <string name="notification_edit">Rediģēt</string>
@@ -200,23 +200,23 @@
     <string name="notification_outcome_rule">Nav nolasīts: noteikums</string>
     <string name="notification_outcome_busy">Nav lasīts: tika lasīts cits paziņojums</string>
     <string name="notification_outcome_call">Izziņots kā ienākošs telefona zvans</string>
-    <string name="notification_rule_add">Pievienojiet noteikumu</string>
+    <string name="notification_rule_add">Pievienot noteikumu</string>
     <string name="notification_rule_from_template">Pievienojiet kārtulu no veidnes</string>
     <string name="notification_rules_category">Noteikumi</string>
     <string name="notification_rules_empty">Nav noteikumu</string>
-    <string name="notification_rule_name">Vārds</string>
+    <string name="notification_rule_name">Nosaukums</string>
     <string name="notification_rule_untitled">Noteikums</string>
-    <string name="notification_rule_enabled">Turned on</string>
+    <string name="notification_rule_enabled">Ieslēgts</string>
     <string name="notification_rule_match">Nosacījumi</string>
     <string name="notification_rule_match_all">All conditions must be satisfied</string>
     <string name="notification_rule_match_any">At least one condition must be satisfied</string>
-    <string name="notification_rule_conditions">When</string>
+    <string name="notification_rule_conditions">Kad</string>
     <string name="notification_rule_actions">Tad</string>
-    <string name="notification_rule_add_condition">Add a condition</string>
-    <string name="notification_rule_add_action">Pievienojiet darbību</string>
-    <string name="notification_rule_invert">Apvērsiet nosacījumu</string>
+    <string name="notification_rule_add_condition">Pievienot nosacījumu</string>
+    <string name="notification_rule_add_action">Pievienot darbību</string>
+    <string name="notification_rule_invert">Apvērst nosacījumu</string>
     <string name="notification_rule_delete">Dzēst noteikumu</string>
-    <string name="notification_rule_delete_confirm">Delete <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_delete_confirm">Vai dzēst <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Vienmēr</string>
     <string name="notification_rule_no_actions">nekas nenotiek</string>
     <string name="notification_rule_and">" un "</string>

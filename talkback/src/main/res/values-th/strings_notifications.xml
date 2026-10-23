@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">พูดการแจ้งเตือนแต่ละรายการในภาษาที่ใช้เขียน ต้องการเปลี่ยนภาษาโดยอัตโนมัติในการตั้งค่าการอ่านออกเสียงข้อความ</string>
     <string name="notification_sound_before_title">เสียงก่อนการแจ้งเตือน</string>
     <string name="notification_category_text">ข้อความ</string>
-    <string name="notification_remove_emoji_title">ทิ้งอีโมจิไว้</string>
+    <string name="notification_remove_emoji_title">ข้ามอีโมจิ</string>
     <string name="notification_lowercase_title">อ่านตัวพิมพ์ใหญ่เป็นคำ</string>
     <string name="notification_lowercase_summary">โปรแกรมคำพูดบางตัวสะกดคำด้วยตัวพิมพ์ใหญ่ทีละตัวอักษร</string>
     <string name="notification_separate_digits_title">อ่านตัวเลขยาวทีละหลัก</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">อ่านการแจ้งเตือนด้วยเท่านั้น</string>
     <string name="notification_blocked_title">อย่าอ่านการแจ้งเตือนด้วย</string>
     <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับ</string>
-    <string name="notification_replacements_title">พูดอย่างอื่น</string>
+    <string name="notification_replacements_title">การอ่านแบบอื่น</string>
     <string name="notification_add_word">เพิ่มคำ</string>
     <string name="notification_add_replacement">เพิ่มการทดแทน</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> เป็น <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> อ่านว่า <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">ข้อความ</string>
-    <string name="notification_replace_with">พูดเป็น</string>
+    <string name="notification_replace_with">อ่านว่า</string>
     <string name="notification_whole_words">ทั้งคำเท่านั้น</string>
-    <string name="notification_regex">การแสดงออกปกติ</string>
+    <string name="notification_regex">นิพจน์ทั่วไป</string>
     <string name="notification_enter_text">ป้อนข้อความ</string>
     <string name="notification_invalid_regex">ไม่ใช่นิพจน์ทั่วไปที่ถูกต้อง</string>
     <string name="notification_edit">แก้ไข</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">แล้ว</string>
     <string name="notification_rule_add_condition">เพิ่มเงื่อนไข</string>
     <string name="notification_rule_add_action">เพิ่มการกระทำ</string>
-    <string name="notification_rule_invert">พลิกสภาพ</string>
+    <string name="notification_rule_invert">กลับเงื่อนไข</string>
     <string name="notification_rule_delete">ลบกฎ</string>
     <string name="notification_rule_delete_confirm">ลบ <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">เสมอ</string>

@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Ծանուցումների տեսակները</string>
     <string name="notification_when_title">Երբ կարդալ</string>
     <string name="notification_rules_title">Կանոններ</string>
-    <string name="notification_repeats_title">Կրկնում է</string>
+    <string name="notification_repeats_title">Կրկնություններ</string>
     <string name="notification_stop_title">Դադարեք կարդալ</string>
     <string name="notification_schedules_title">Ամփոփում և ժամանակ</string>
     <string name="notification_history_title">Ծանուցումների պատմություն</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Յուրաքանչյուր ծանուցում ասեք այն լեզվով, որով գրված է: Անհրաժեշտ է ավտոմատ կերպով փոխել լեզուն «Տեքստ-խոսք» կարգավորումներում:</string>
     <string name="notification_sound_before_title">Ձայնը ծանուցումներից առաջ</string>
     <string name="notification_category_text">Տեքստ</string>
-    <string name="notification_remove_emoji_title">Բաց թողեք էմոջիները</string>
+    <string name="notification_remove_emoji_title">Բաց թողնել էմոջիները</string>
     <string name="notification_lowercase_title">Կարդացեք մեծատառերը որպես բառեր</string>
     <string name="notification_lowercase_summary">Խոսքի որոշ շարժիչներ տառ առ տառ բառեր են գրում մեծատառով</string>
     <string name="notification_separate_digits_title">Կարդացեք երկար թվերը թվանշան առ նիշ</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Կարդացեք միայն ծանուցումները</string>
     <string name="notification_blocked_title">Մի կարդացեք ծանուցումները</string>
     <string name="notification_private_title">Կարդացեք միայն հավելվածի անունը</string>
-    <string name="notification_replacements_title">Այլ կերպ ասա</string>
+    <string name="notification_replacements_title">Այլ արտասանություն</string>
     <string name="notification_add_word">Ավելացնել բառ</string>
     <string name="notification_add_replacement">Ավելացնել փոխարինող</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> որպես <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Տեքստ</string>
-    <string name="notification_replace_with">Ասա որպես</string>
+    <string name="notification_replace_with">Արտասանել որպես</string>
     <string name="notification_whole_words">Միայն ամբողջական բառեր</string>
-    <string name="notification_regex">Կանոնավոր արտահայտություն</string>
+    <string name="notification_regex">Ռեգուլյար արտահայտություն</string>
     <string name="notification_enter_text">Մուտքագրեք տեքստ</string>
     <string name="notification_invalid_regex">Վավեր կանոնավոր արտահայտություն չէ</string>
     <string name="notification_edit">Խմբագրել</string>
@@ -212,15 +212,15 @@
     <string name="notification_rule_match_any">Պետք է բավարարվի առնվազն մեկ պայման</string>
     <string name="notification_rule_conditions">Երբ</string>
     <string name="notification_rule_actions">Հետո</string>
-    <string name="notification_rule_add_condition">Ավելացրեք պայման</string>
-    <string name="notification_rule_add_action">Ավելացրեք գործողություն</string>
-    <string name="notification_rule_invert">Շրջեք պայմանը</string>
+    <string name="notification_rule_add_condition">Ավելացնել պայման</string>
+    <string name="notification_rule_add_action">Ավելացնել գործողություն</string>
+    <string name="notification_rule_invert">Շրջել պայմանը</string>
     <string name="notification_rule_delete">Ջնջել կանոնը</string>
     <string name="notification_rule_delete_confirm">Ջնջե՞լ <xliff:g id="rule" example="Night">%1$s</xliff:g></string>
     <string name="notification_rule_always">Միշտ</string>
     <string name="notification_rule_no_actions">ոչինչ չի լինում</string>
-    <string name="notification_rule_and">" «և» "</string>
-    <string name="notification_rule_or">" «կամ» "</string>
+    <string name="notification_rule_and">" և "</string>
+    <string name="notification_rule_or">" կամ "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Միայն ականջակալներով</string>
     <string name="notification_template_night">Գիշերը լուռ</string>

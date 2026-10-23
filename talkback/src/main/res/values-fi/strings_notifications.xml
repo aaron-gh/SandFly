@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Ilmoitustyypit</string>
     <string name="notification_when_title">Milloin lukea</string>
     <string name="notification_rules_title">Säännöt</string>
-    <string name="notification_repeats_title">Toistaa</string>
+    <string name="notification_repeats_title">Toistot</string>
     <string name="notification_stop_title">Lopeta lukeminen</string>
     <string name="notification_schedules_title">Yhteenveto ja aika</string>
     <string name="notification_history_title">Ilmoitushistoria</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Lue vain ilmoitukset</string>
     <string name="notification_blocked_title">Älä lue ilmoituksia</string>
     <string name="notification_private_title">Lue vain sovelluksen nimi</string>
-    <string name="notification_replacements_title">Sano toisin</string>
+    <string name="notification_replacements_title">Toisenlainen ääntäminen</string>
     <string name="notification_add_word">Lisää sana</string>
     <string name="notification_add_replacement">Lisää korvaava</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kuin <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g>: <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teksti</string>
-    <string name="notification_replace_with">Sano kuin</string>
+    <string name="notification_replace_with">Lausu muodossa</string>
     <string name="notification_whole_words">Vain kokonaisia sanoja</string>
     <string name="notification_regex">Säännöllinen lauseke</string>
     <string name="notification_enter_text">Kirjoita teksti</string>
@@ -206,11 +206,11 @@
     <string name="notification_rules_empty">Ei sääntöjä</string>
     <string name="notification_rule_name">Nimi</string>
     <string name="notification_rule_untitled">Sääntö</string>
-    <string name="notification_rule_enabled">Käynnistetty</string>
+    <string name="notification_rule_enabled">Päällä</string>
     <string name="notification_rule_match">Ehdot</string>
     <string name="notification_rule_match_all">Kaikki ehdot on täytettävä</string>
     <string name="notification_rule_match_any">Vähintään yhden ehdon on täytyttävä</string>
-    <string name="notification_rule_conditions">Milloin</string>
+    <string name="notification_rule_conditions">Kun</string>
     <string name="notification_rule_actions">Sitten</string>
     <string name="notification_rule_add_condition">Lisää ehto</string>
     <string name="notification_rule_add_action">Lisää toiminto</string>

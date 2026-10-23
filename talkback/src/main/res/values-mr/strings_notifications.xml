@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">सूचनांचे प्रकार</string>
     <string name="notification_when_title">कधी वाचायचे</string>
     <string name="notification_rules_title">नियम</string>
-    <string name="notification_repeats_title">पुनरावृत्ती होते</string>
+    <string name="notification_repeats_title">पुनरावृत्ती</string>
     <string name="notification_stop_title">वाचन थांबवा</string>
     <string name="notification_schedules_title">सारांश आणि वेळ</string>
     <string name="notification_history_title">सूचना इतिहास</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">सोबत फक्त सूचना वाचा</string>
     <string name="notification_blocked_title">सोबत सूचना वाचू नका</string>
     <string name="notification_private_title">साठी फक्त ॲपचे नाव वाचा</string>
-    <string name="notification_replacements_title">वेगळे म्हणा</string>
+    <string name="notification_replacements_title">वेगळा उच्चार</string>
     <string name="notification_add_word">एक शब्द जोडा</string>
     <string name="notification_add_replacement">बदली जोडा</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> म्हणून</string>
     <string name="notification_replace_find">मजकूर</string>
-    <string name="notification_replace_with">म्हणून म्हणा</string>
+    <string name="notification_replace_with">असे म्हणा</string>
     <string name="notification_whole_words">संपूर्ण शब्द फक्त</string>
-    <string name="notification_regex">नियमित अभिव्यक्ती</string>
+    <string name="notification_regex">रेग्युलर एक्सप्रेशन</string>
     <string name="notification_enter_text">मजकूर प्रविष्ट करा</string>
     <string name="notification_invalid_regex">वैध नियमित अभिव्यक्ती नाही</string>
     <string name="notification_edit">संपादित करा</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">कोणतेही नियम नाहीत</string>
     <string name="notification_rule_name">नाव</string>
     <string name="notification_rule_untitled">नियम</string>
-    <string name="notification_rule_enabled">चालू केले</string>
+    <string name="notification_rule_enabled">चालू</string>
     <string name="notification_rule_match">अटी</string>
     <string name="notification_rule_match_all">सर्व अटी पूर्ण केल्या पाहिजेत</string>
     <string name="notification_rule_match_any">किमान एक अट पूर्ण करणे आवश्यक आहे</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">मग</string>
     <string name="notification_rule_add_condition">एक अट जोडा</string>
     <string name="notification_rule_add_action">कृती जोडा</string>
-    <string name="notification_rule_invert">स्थिती उलटा</string>
+    <string name="notification_rule_invert">अट उलटा</string>
     <string name="notification_rule_delete">नियम हटवा</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> हटवायचे?</string>
     <string name="notification_rule_always">नेहमी</string>

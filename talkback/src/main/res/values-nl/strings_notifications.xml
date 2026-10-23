@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Spreek elke melding uit in de taal waarin deze is geschreven. Behoeften Schakel automatisch van taal in de instellingen voor tekst-naar-spraak.</string>
     <string name="notification_sound_before_title">Geluid vóór meldingen</string>
     <string name="notification_category_text">Tekst</string>
-    <string name="notification_remove_emoji_title">Laat emoji achterwege</string>
+    <string name="notification_remove_emoji_title">Emoji weglaten</string>
     <string name="notification_lowercase_title">Lees hoofdletters als woorden</string>
     <string name="notification_lowercase_summary">Sommige spraakmachines spellen woorden letter voor letter in hoofdletters</string>
     <string name="notification_separate_digits_title">Lees lange getallen cijfer voor cijfer</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Lees alleen meldingen met</string>
     <string name="notification_blocked_title">Lees geen meldingen met</string>
     <string name="notification_private_title">Lees alleen de app-naam voor</string>
-    <string name="notification_replacements_title">Zeg het anders</string>
+    <string name="notification_replacements_title">Andere uitspraak</string>
     <string name="notification_add_word">Woord toevoegen</string>
     <string name="notification_add_replacement">Vervanging toevoegen</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> als <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
-    <string name="notification_replace_with">Zeg als</string>
+    <string name="notification_replace_with">Uitspreken als</string>
     <string name="notification_whole_words">Alleen hele woorden</string>
     <string name="notification_regex">Reguliere expressie</string>
     <string name="notification_enter_text">Voer een tekst in</string>
@@ -200,7 +200,7 @@
     <string name="notification_outcome_rule">Niet gelezen: regel</string>
     <string name="notification_outcome_busy">Niet gelezen: er is nog een melding gelezen</string>
     <string name="notification_outcome_call">Aangekondigd als een inkomend telefoongesprek</string>
-    <string name="notification_rule_add">Voeg een regel toe</string>
+    <string name="notification_rule_add">Regel toevoegen</string>
     <string name="notification_rule_from_template">Voeg een regel toe vanuit een sjabloon</string>
     <string name="notification_rules_category">Regels</string>
     <string name="notification_rules_empty">Geen regels</string>
@@ -212,10 +212,10 @@
     <string name="notification_rule_match_any">Er moet aan minstens één voorwaarde worden voldaan</string>
     <string name="notification_rule_conditions">Wanneer</string>
     <string name="notification_rule_actions">Dan</string>
-    <string name="notification_rule_add_condition">Voeg een voorwaarde toe</string>
-    <string name="notification_rule_add_action">Voeg een actie toe</string>
+    <string name="notification_rule_add_condition">Voorwaarde toevoegen</string>
+    <string name="notification_rule_add_action">Actie toevoegen</string>
     <string name="notification_rule_invert">Keer de voorwaarde om</string>
-    <string name="notification_rule_delete">Verwijder de regel</string>
+    <string name="notification_rule_delete">Regel verwijderen</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> verwijderen?</string>
     <string name="notification_rule_always">Altijd</string>
     <string name="notification_rule_no_actions">er gebeurt niets</string>

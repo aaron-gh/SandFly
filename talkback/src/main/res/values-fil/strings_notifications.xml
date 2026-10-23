@@ -17,13 +17,13 @@
     <string name="notification_url_domain">Basahin lamang ang site</string>
     <string name="notification_url_full">Basahin ang buong link</string>
     <string name="notification_category_title">Mga notification</string>
-    <string name="notification_reading_title">Binabasa nang malakas ang mga notification</string>
+    <string name="notification_reading_title">Pagbasa ng mga notification</string>
     <string name="notification_apps_title">Mga app</string>
     <string name="notification_words_title">Mga salita at kapalit</string>
     <string name="notification_kinds_title">Mga uri ng notification</string>
     <string name="notification_when_title">Kung kailan magbabasa</string>
     <string name="notification_rules_title">Mga tuntunin</string>
-    <string name="notification_repeats_title">Umuulit</string>
+    <string name="notification_repeats_title">Mga pag-ulit</string>
     <string name="notification_stop_title">Itigil ang pagbabasa</string>
     <string name="notification_schedules_title">Buod at oras</string>
     <string name="notification_history_title">Kasaysayan ng notification</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Sabihin ang bawat notification sa wika kung saan ito nakasulat. Kailangang awtomatikong lumipat ng wika sa mga setting ng Text-to-speech.</string>
     <string name="notification_sound_before_title">Tunog bago ang mga notification</string>
     <string name="notification_category_text">Text</string>
-    <string name="notification_remove_emoji_title">Iwanan ang emoji</string>
+    <string name="notification_remove_emoji_title">Laktawan ang emoji</string>
     <string name="notification_lowercase_title">Basahin ang mga malalaking titik bilang mga salita</string>
     <string name="notification_lowercase_summary">Ang ilang mga speech engine ay nagbabaybay ng mga salita sa malalaking titik bawat titik</string>
     <string name="notification_separate_digits_title">Basahin ang mahahabang numero digit sa digit</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Basahin lamang ang mga notification gamit ang</string>
     <string name="notification_blocked_title">Huwag basahin ang mga notification gamit ang</string>
     <string name="notification_private_title">Basahin lamang ang pangalan ng app para sa</string>
-    <string name="notification_replacements_title">Iba ang sabihin</string>
+    <string name="notification_replacements_title">Ibang bigkas</string>
     <string name="notification_add_word">Magdagdag ng salita</string>
     <string name="notification_add_replacement">Magdagdag ng kapalit</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> bilang <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
-    <string name="notification_replace_with">Sabihin bilang</string>
+    <string name="notification_replace_with">Bigkasin bilang</string>
     <string name="notification_whole_words">Buong salita lang</string>
-    <string name="notification_regex">Regular na pagpapahayag</string>
+    <string name="notification_regex">Regular expression</string>
     <string name="notification_enter_text">Maglagay ng text</string>
     <string name="notification_invalid_regex">Hindi wastong regular na expression</string>
     <string name="notification_edit">I-edit</string>
@@ -210,7 +210,7 @@
     <string name="notification_rule_match">Mga kundisyon</string>
     <string name="notification_rule_match_all">Ang lahat ng mga kondisyon ay dapat matugunan</string>
     <string name="notification_rule_match_any">Hindi bababa sa isang kundisyon ang dapat matugunan</string>
-    <string name="notification_rule_conditions">Kailan</string>
+    <string name="notification_rule_conditions">Kapag</string>
     <string name="notification_rule_actions">Pagkatapos</string>
     <string name="notification_rule_add_condition">Magdagdag ng kundisyon</string>
     <string name="notification_rule_add_action">Magdagdag ng aksyon</string>

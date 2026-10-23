@@ -146,12 +146,12 @@
     <string name="notification_required_title">通知のみを読む</string>
     <string name="notification_blocked_title">通知を読まないでください</string>
     <string name="notification_private_title">アプリ名のみを読み取ります</string>
-    <string name="notification_replacements_title">違う言い方をする</string>
+    <string name="notification_replacements_title">読み方の変更</string>
     <string name="notification_add_word">単語を追加</string>
     <string name="notification_add_replacement">置換を追加</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> を <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">テキスト</string>
-    <string name="notification_replace_with">と言う</string>
+    <string name="notification_replace_with">読み方</string>
     <string name="notification_whole_words">単語全体のみ</string>
     <string name="notification_regex">正規表現</string>
     <string name="notification_enter_text">テキストを入力してください</string>
@@ -200,7 +200,7 @@
     <string name="notification_outcome_rule">読み上げなし: ルール</string>
     <string name="notification_outcome_busy">未読: 別の通知が読まれました</string>
     <string name="notification_outcome_call">電話の着信としてアナウンスされる</string>
-    <string name="notification_rule_add">ルールを追加する</string>
+    <string name="notification_rule_add">ルールを追加</string>
     <string name="notification_rule_from_template">テンプレートからルールを追加する</string>
     <string name="notification_rules_category">ルール</string>
     <string name="notification_rules_empty">ルールなし</string>
@@ -210,17 +210,17 @@
     <string name="notification_rule_match">条件</string>
     <string name="notification_rule_match_all">すべての条件を満たさなければなりません</string>
     <string name="notification_rule_match_any">少なくとも 1 つの条件を満たさなければなりません</string>
-    <string name="notification_rule_conditions">いつ</string>
-    <string name="notification_rule_actions">それから</string>
-    <string name="notification_rule_add_condition">条件を追加する</string>
-    <string name="notification_rule_add_action">アクションを追加する</string>
-    <string name="notification_rule_invert">条件を反転する</string>
-    <string name="notification_rule_delete">ルールを削除する</string>
+    <string name="notification_rule_conditions">条件</string>
+    <string name="notification_rule_actions">次を実行</string>
+    <string name="notification_rule_add_condition">条件を追加</string>
+    <string name="notification_rule_add_action">アクションを追加</string>
+    <string name="notification_rule_invert">条件を反転</string>
+    <string name="notification_rule_delete">ルールを削除</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>を削除しますか?</string>
-    <string name="notification_rule_always">いつも</string>
-    <string name="notification_rule_no_actions">何も起こらない</string>
-    <string name="notification_rule_and">" 「と」 "</string>
-    <string name="notification_rule_or">" 「または」 "</string>
+    <string name="notification_rule_always">常に</string>
+    <string name="notification_rule_no_actions">何もしない</string>
+    <string name="notification_rule_and">" かつ "</string>
+    <string name="notification_rule_or">" または "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">ヘッドフォンのみで</string>
     <string name="notification_template_night">夜は静か</string>

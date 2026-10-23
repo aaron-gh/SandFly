@@ -17,13 +17,13 @@
     <string name="notification_url_domain">സൈറ്റ് മാത്രം വായിക്കുക</string>
     <string name="notification_url_full">മുഴുവൻ ലിങ്കും വായിക്കുക</string>
     <string name="notification_category_title">അറിയിപ്പുകൾ</string>
-    <string name="notification_reading_title">അറിയിപ്പുകൾ ഉറക്കെ വായിക്കുന്നു</string>
+    <string name="notification_reading_title">അറിയിപ്പുകൾ വായിക്കൽ</string>
     <string name="notification_apps_title">ആപ്പുകൾ</string>
     <string name="notification_words_title">വാക്കുകളും പകരക്കാരും</string>
     <string name="notification_kinds_title">അറിയിപ്പുകളുടെ തരങ്ങൾ</string>
     <string name="notification_when_title">എപ്പോൾ വായിക്കണം</string>
     <string name="notification_rules_title">നിയമങ്ങൾ</string>
-    <string name="notification_repeats_title">ആവർത്തിക്കുന്നു</string>
+    <string name="notification_repeats_title">ആവർത്തനങ്ങൾ</string>
     <string name="notification_stop_title">വായന നിർത്തുക</string>
     <string name="notification_schedules_title">സംഗ്രഹവും സമയവും</string>
     <string name="notification_history_title">അറിയിപ്പ് ചരിത്രം</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">കൂടെ അറിയിപ്പുകൾ മാത്രം വായിക്കുക</string>
     <string name="notification_blocked_title">കൂടെ അറിയിപ്പുകൾ വായിക്കരുത്</string>
     <string name="notification_private_title">ആപ്പിൻ്റെ പേര് മാത്രം വായിക്കുക</string>
-    <string name="notification_replacements_title">വ്യത്യസ്തമായി പറയുക</string>
+    <string name="notification_replacements_title">വ്യത്യസ്ത ഉച്ചാരണം</string>
     <string name="notification_add_word">ഒരു വാക്ക് ചേർക്കുക</string>
     <string name="notification_add_replacement">പകരം വാക്ക് ചേർക്കുക</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ആയി <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">വാചകം</string>
-    <string name="notification_replace_with">ആയി പറയുക</string>
+    <string name="notification_replace_with">ഇങ്ങനെ വായിക്കുക</string>
     <string name="notification_whole_words">മുഴുവൻ വാക്കുകൾ മാത്രം</string>
     <string name="notification_regex">റെഗുലർ എക്സ്പ്രഷൻ</string>
     <string name="notification_enter_text">ഒരു വാചകം നൽകുക</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">നിയമങ്ങളൊന്നുമില്ല</string>
     <string name="notification_rule_name">പേര്</string>
     <string name="notification_rule_untitled">ഭരണം</string>
-    <string name="notification_rule_enabled">ഓണാക്കി</string>
+    <string name="notification_rule_enabled">ഓണാണ്</string>
     <string name="notification_rule_match">വ്യവസ്ഥകൾ</string>
     <string name="notification_rule_match_all">എല്ലാ വ്യവസ്ഥകളും പാലിക്കണം</string>
     <string name="notification_rule_match_any">ഒരു നിബന്ധനയെങ്കിലും പാലിക്കണം</string>
@@ -214,12 +214,12 @@
     <string name="notification_rule_actions">പിന്നെ</string>
     <string name="notification_rule_add_condition">ഒരു നിബന്ധന ചേർക്കുക</string>
     <string name="notification_rule_add_action">ഒരു പ്രവർത്തനം ചേർക്കുക</string>
-    <string name="notification_rule_invert">അവസ്ഥ വിപരീതമാക്കുക</string>
+    <string name="notification_rule_invert">വ്യവസ്ഥ വിപരീതമാക്കുക</string>
     <string name="notification_rule_delete">നിയമം ഇല്ലാതാക്കുക</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ഇല്ലാതാക്കണോ?</string>
     <string name="notification_rule_always">എപ്പോഴും</string>
     <string name="notification_rule_no_actions">ഒന്നും സംഭവിക്കുന്നില്ല</string>
-    <string name="notification_rule_and">" ഒപ്പം "</string>
+    <string name="notification_rule_and">" കൂടാതെ "</string>
     <string name="notification_rule_or">" അല്ലെങ്കിൽ "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">ഹെഡ്‌ഫോണുകൾ ഉപയോഗിച്ച് മാത്രം</string>

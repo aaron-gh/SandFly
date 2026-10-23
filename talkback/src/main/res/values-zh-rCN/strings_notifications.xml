@@ -146,10 +146,10 @@
     <string name="notification_required_title">只朗读包含以下词语的通知</string>
     <string name="notification_blocked_title">不朗读包含以下词语的通知</string>
     <string name="notification_private_title">包含以下词语时只朗读应用名称</string>
-    <string name="notification_replacements_title">换个说法</string>
+    <string name="notification_replacements_title">其他读法</string>
     <string name="notification_add_word">添加一个词</string>
     <string name="notification_add_replacement">添加替换</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> 为 <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> 读作 <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">文字</string>
     <string name="notification_replace_with">说成</string>
     <string name="notification_whole_words">仅完整单词</string>
@@ -213,12 +213,12 @@
     <string name="notification_rule_conditions">当</string>
     <string name="notification_rule_actions">然后</string>
     <string name="notification_rule_add_condition">添加条件</string>
-    <string name="notification_rule_add_action">添加一个动作</string>
+    <string name="notification_rule_add_action">添加动作</string>
     <string name="notification_rule_invert">反转条件</string>
     <string name="notification_rule_delete">删除规则</string>
     <string name="notification_rule_delete_confirm">删除<xliff:g id="rule" example="Night">%1$s</xliff:g>？</string>
     <string name="notification_rule_always">始终</string>
-    <string name="notification_rule_no_actions">什么也没发生</string>
+    <string name="notification_rule_no_actions">不执行任何操作</string>
     <string name="notification_rule_and">" 并且 "</string>
     <string name="notification_rule_or">" 或者 "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>

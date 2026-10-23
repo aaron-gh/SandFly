@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">నోటిఫికేషన్‌ల రకాలు</string>
     <string name="notification_when_title">ఎప్పుడు చదవాలి</string>
     <string name="notification_rules_title">నియమాలు</string>
-    <string name="notification_repeats_title">పునరావృతమవుతుంది</string>
+    <string name="notification_repeats_title">పునరావృత్తులు</string>
     <string name="notification_stop_title">చదవడం ఆపండి</string>
     <string name="notification_schedules_title">సారాంశం మరియు సమయం</string>
     <string name="notification_history_title">నోటిఫికేషన్ చరిత్ర</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">దీనితో నోటిఫికేషన్‌లను మాత్రమే చదవండి</string>
     <string name="notification_blocked_title">దీనితో నోటిఫికేషన్‌లను చదవవద్దు</string>
     <string name="notification_private_title">దీని కోసం యాప్ పేరు మాత్రమే చదవండి</string>
-    <string name="notification_replacements_title">భిన్నంగా చెప్పండి</string>
+    <string name="notification_replacements_title">వేరే ఉచ్చారణ</string>
     <string name="notification_add_word">ఒక పదాన్ని జోడించండి</string>
     <string name="notification_add_replacement">ప్రత్యామ్నాయాన్ని జోడించండి</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> వలె</string>
     <string name="notification_replace_find">వచనం</string>
-    <string name="notification_replace_with">గా చెప్పండి</string>
+    <string name="notification_replace_with">ఇలా చదవండి</string>
     <string name="notification_whole_words">మొత్తం పదాలు మాత్రమే</string>
-    <string name="notification_regex">రెగ్యులర్ వ్యక్తీకరణ</string>
+    <string name="notification_regex">రెగ్యులర్ ఎక్స్‌ప్రెషన్</string>
     <string name="notification_enter_text">వచనాన్ని నమోదు చేయండి</string>
     <string name="notification_invalid_regex">చెల్లుబాటు అయ్యే సాధారణ వ్యక్తీకరణ కాదు</string>
     <string name="notification_edit">సవరించు</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">నియమాలు లేవు</string>
     <string name="notification_rule_name">పేరు</string>
     <string name="notification_rule_untitled">నియమం</string>
-    <string name="notification_rule_enabled">ఆన్ చేసాడు</string>
+    <string name="notification_rule_enabled">ఆన్</string>
     <string name="notification_rule_match">షరతులు</string>
     <string name="notification_rule_match_all">అన్ని షరతులు సంతృప్తి చెందాలి</string>
     <string name="notification_rule_match_any">కనీసం ఒక షరతును సంతృప్తి పరచాలి</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">అప్పుడు</string>
     <string name="notification_rule_add_condition">ఒక షరతును జోడించండి</string>
     <string name="notification_rule_add_action">చర్యను జోడించండి</string>
-    <string name="notification_rule_invert">పరిస్థితిని విలోమం చేయండి</string>
+    <string name="notification_rule_invert">షరతును విలోమం చేయండి</string>
     <string name="notification_rule_delete">నియమాన్ని తొలగించండి</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>ని తొలగించాలా?</string>
     <string name="notification_rule_always">ఎల్లప్పుడూ</string>

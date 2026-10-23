@@ -17,13 +17,13 @@
     <string name="notification_url_domain">साइट मात्र पढ्नुहोस्</string>
     <string name="notification_url_full">पुरा लिङ्क पढ्नुहोस्</string>
     <string name="notification_category_title">नोटिफिकेसनहरू</string>
-    <string name="notification_reading_title">ठूलो स्वरमा सूचनाहरू पढ्दै</string>
+    <string name="notification_reading_title">सूचनाहरू पढ्ने</string>
     <string name="notification_apps_title">एपहरू</string>
     <string name="notification_words_title">शब्द र प्रतिस्थापन</string>
     <string name="notification_kinds_title">सूचनाहरूको प्रकार</string>
     <string name="notification_when_title">कहिले पढ्ने</string>
     <string name="notification_rules_title">नियमहरू</string>
-    <string name="notification_repeats_title">दोहोरिन्छ</string>
+    <string name="notification_repeats_title">दोहोराइहरू</string>
     <string name="notification_stop_title">पढ्न रोक्नुहोस्</string>
     <string name="notification_schedules_title">सारांश र समय</string>
     <string name="notification_history_title">सूचना इतिहास</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">सूचनाहरू मात्र पढ्नुहोस्</string>
     <string name="notification_blocked_title">सँग सूचनाहरू नपढ्नुहोस्</string>
     <string name="notification_private_title">को लागी एप नाम मात्र पढ्नुहोस्</string>
-    <string name="notification_replacements_title">फरक भन</string>
+    <string name="notification_replacements_title">फरक उच्चारण</string>
     <string name="notification_add_word">एक शब्द थप्नुहोस्</string>
     <string name="notification_add_replacement">प्रतिस्थापन थप्नुहोस्</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> को रूपमा</string>
     <string name="notification_replace_find">पाठ</string>
-    <string name="notification_replace_with">रूपमा भन्नुहोस्</string>
+    <string name="notification_replace_with">यसरी भन्नुहोस्</string>
     <string name="notification_whole_words">सम्पूर्ण शब्दहरू मात्र</string>
-    <string name="notification_regex">नियमित अभिव्यक्ति</string>
+    <string name="notification_regex">रेगुलर एक्सप्रेसन</string>
     <string name="notification_enter_text">पाठ प्रविष्ट गर्नुहोस्</string>
     <string name="notification_invalid_regex">मान्य नियमित अभिव्यक्ति होइन</string>
     <string name="notification_edit">सम्पादन गर्नुहोस्</string>
@@ -206,19 +206,19 @@
     <string name="notification_rules_empty">कुनै नियम छैन</string>
     <string name="notification_rule_name">नाम</string>
     <string name="notification_rule_untitled">नियम</string>
-    <string name="notification_rule_enabled">खोलियो</string>
+    <string name="notification_rule_enabled">अन</string>
     <string name="notification_rule_match">सर्तहरू</string>
     <string name="notification_rule_match_all">सबै सर्तहरू सन्तुष्ट हुनुपर्छ</string>
     <string name="notification_rule_match_any">कम्तिमा एउटा शर्त पूरा गर्नुपर्छ</string>
-    <string name="notification_rule_conditions">कहिले</string>
+    <string name="notification_rule_conditions">जब</string>
     <string name="notification_rule_actions">त्यसपछि</string>
     <string name="notification_rule_add_condition">शर्त थप्नुहोस्</string>
     <string name="notification_rule_add_action">एउटा कार्य थप्नुहोस्</string>
-    <string name="notification_rule_invert">अवस्था उल्टाउनुहोस्</string>
+    <string name="notification_rule_invert">सर्त उल्टाउनुहोस्</string>
     <string name="notification_rule_delete">नियम मेटाउनुहोस्</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> मेट्ने हो?</string>
     <string name="notification_rule_always">सधैं</string>
-    <string name="notification_rule_no_actions">केहि हुदैन</string>
+    <string name="notification_rule_no_actions">केही हुँदैन</string>
     <string name="notification_rule_and">" र "</string>
     <string name="notification_rule_or">" वा "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>

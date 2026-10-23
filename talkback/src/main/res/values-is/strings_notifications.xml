@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">Tegundir tilkynninga</string>
     <string name="notification_when_title">Hvenær á að lesa</string>
     <string name="notification_rules_title">Reglur</string>
-    <string name="notification_repeats_title">Endurtekið</string>
+    <string name="notification_repeats_title">Endurtekningar</string>
     <string name="notification_stop_title">Hættu að lesa</string>
     <string name="notification_schedules_title">Samantekt og tími</string>
     <string name="notification_history_title">Tilkynningasaga</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">Segðu hverja tilkynningu á því tungumáli sem hún er skrifuð á. Þarfir Skiptu um tungumál sjálfkrafa í texta-í-tal stillingum.</string>
     <string name="notification_sound_before_title">Hljóð fyrir tilkynningar</string>
     <string name="notification_category_text">Texti</string>
-    <string name="notification_remove_emoji_title">Slepptu emoji</string>
+    <string name="notification_remove_emoji_title">Sleppa emoji</string>
     <string name="notification_lowercase_title">Lestu hástafi sem orð</string>
     <string name="notification_lowercase_summary">Sumar talvélar stafa orð með hástöfum staf fyrir staf</string>
     <string name="notification_separate_digits_title">Lesið langar tölur tölustaf fyrir tölustaf</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">Lestu aðeins tilkynningar með</string>
     <string name="notification_blocked_title">Ekki lesa tilkynningar með</string>
     <string name="notification_private_title">Lestu aðeins nafn appsins fyrir</string>
-    <string name="notification_replacements_title">Segðu öðruvísi</string>
+    <string name="notification_replacements_title">Annar framburður</string>
     <string name="notification_add_word">Bættu við orði</string>
     <string name="notification_add_replacement">Bæta við útskiptingu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> sem <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Texti</string>
-    <string name="notification_replace_with">Segðu sem</string>
+    <string name="notification_replace_with">Bera fram sem</string>
     <string name="notification_whole_words">Aðeins heil orð</string>
-    <string name="notification_regex">Regluleg tjáning</string>
+    <string name="notification_regex">Reglulegð segð</string>
     <string name="notification_enter_text">Sláðu inn texta</string>
     <string name="notification_invalid_regex">Ekki gild regluleg tjáning</string>
     <string name="notification_edit">Breyta</string>
@@ -200,21 +200,21 @@
     <string name="notification_outcome_rule">Ekki lesið: regla</string>
     <string name="notification_outcome_busy">Ekki lesið: önnur tilkynning var lesin</string>
     <string name="notification_outcome_call">Tilkynnt sem móttekið símtal</string>
-    <string name="notification_rule_add">Bættu við reglu</string>
+    <string name="notification_rule_add">Bæta við reglu</string>
     <string name="notification_rule_from_template">Bættu við reglu úr sniðmáti</string>
     <string name="notification_rules_category">Reglur</string>
     <string name="notification_rules_empty">Engar reglur</string>
     <string name="notification_rule_name">Nafn</string>
     <string name="notification_rule_untitled">Regla</string>
-    <string name="notification_rule_enabled">Kveikt á</string>
+    <string name="notification_rule_enabled">Kveikt</string>
     <string name="notification_rule_match">Skilyrði</string>
     <string name="notification_rule_match_all">Öll skilyrði verða að vera uppfyllt</string>
     <string name="notification_rule_match_any">Að minnsta kosti eitt skilyrði verður að vera uppfyllt</string>
-    <string name="notification_rule_conditions">Hvenær</string>
+    <string name="notification_rule_conditions">Þegar</string>
     <string name="notification_rule_actions">Þá</string>
-    <string name="notification_rule_add_condition">Bættu við skilyrði</string>
-    <string name="notification_rule_add_action">Bættu við aðgerð</string>
-    <string name="notification_rule_invert">Snúið ástandinu við</string>
+    <string name="notification_rule_add_condition">Bæta við skilyrði</string>
+    <string name="notification_rule_add_action">Bæta við aðgerð</string>
+    <string name="notification_rule_invert">Snúa skilyrði við</string>
     <string name="notification_rule_delete">Eyða reglunni</string>
     <string name="notification_rule_delete_confirm">Eyða <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Alltaf</string>

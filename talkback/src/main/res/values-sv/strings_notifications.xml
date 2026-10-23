@@ -17,13 +17,13 @@
     <string name="notification_url_domain">Läs endast webbplatsen</string>
     <string name="notification_url_full">Läs hela länken</string>
     <string name="notification_category_title">Aviseringar</string>
-    <string name="notification_reading_title">Reading notifications aloud</string>
+    <string name="notification_reading_title">Uppläsning av aviseringar</string>
     <string name="notification_apps_title">Appar</string>
     <string name="notification_words_title">Ord och ersättare</string>
     <string name="notification_kinds_title">Typer av aviseringar</string>
     <string name="notification_when_title">När ska man läsa</string>
     <string name="notification_rules_title">Regler</string>
-    <string name="notification_repeats_title">Upprepas</string>
+    <string name="notification_repeats_title">Upprepningar</string>
     <string name="notification_stop_title">Sluta läsa</string>
     <string name="notification_schedules_title">Sammanfattning och tid</string>
     <string name="notification_history_title">Aviseringshistorik</string>
@@ -146,12 +146,12 @@
     <string name="notification_required_title">Läs endast aviseringar med</string>
     <string name="notification_blocked_title">Läs inte aviseringar med</string>
     <string name="notification_private_title">Läs endast appnamnet för</string>
-    <string name="notification_replacements_title">Säg annorlunda</string>
+    <string name="notification_replacements_title">Annat uttal</string>
     <string name="notification_add_word">Lägg till ett ord</string>
     <string name="notification_add_replacement">Lägg till en ersättning</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> som <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
-    <string name="notification_replace_with">Säg som</string>
+    <string name="notification_replace_with">Uttala som</string>
     <string name="notification_whole_words">Endast hela ord</string>
     <string name="notification_regex">Reguljärt uttryck</string>
     <string name="notification_enter_text">Skriv in en text</string>
@@ -206,7 +206,7 @@
     <string name="notification_rules_empty">Inga regler</string>
     <string name="notification_rule_name">Namn</string>
     <string name="notification_rule_untitled">Regel</string>
-    <string name="notification_rule_enabled">Påslagen</string>
+    <string name="notification_rule_enabled">På</string>
     <string name="notification_rule_match">Villkor</string>
     <string name="notification_rule_match_all">Alla villkor måste vara uppfyllda</string>
     <string name="notification_rule_match_any">Minst ett villkor måste vara uppfyllt</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">Sedan</string>
     <string name="notification_rule_add_condition">Lägg till ett villkor</string>
     <string name="notification_rule_add_action">Lägg till en åtgärd</string>
-    <string name="notification_rule_invert">Invertera tillståndet</string>
+    <string name="notification_rule_invert">Invertera villkoret</string>
     <string name="notification_rule_delete">Ta bort regeln</string>
     <string name="notification_rule_delete_confirm">Ta bort <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Alltid</string>

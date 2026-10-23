@@ -23,7 +23,7 @@
     <string name="notification_kinds_title">انواع اعلان ها</string>
     <string name="notification_when_title">چه زمانی بخوانیم</string>
     <string name="notification_rules_title">قوانین</string>
-    <string name="notification_repeats_title">تکرار می کند</string>
+    <string name="notification_repeats_title">تکرارها</string>
     <string name="notification_stop_title">خواندن را متوقف کنید</string>
     <string name="notification_schedules_title">خلاصه و زمان</string>
     <string name="notification_history_title">تاریخچه اعلان</string>
@@ -42,7 +42,7 @@
     <string name="notification_detect_language_summary">هر اعلان را به زبانی که به آن نوشته شده است بگویید. نیاز به تغییر زبان به طور خودکار در تنظیمات تبدیل متن به گفتار دارد.</string>
     <string name="notification_sound_before_title">صدا قبل از اعلان ها</string>
     <string name="notification_category_text">نوشتار</string>
-    <string name="notification_remove_emoji_title">ایموجی را کنار بگذارید</string>
+    <string name="notification_remove_emoji_title">حذف ایموجی</string>
     <string name="notification_lowercase_title">حروف بزرگ را به صورت کلمات بخوانید</string>
     <string name="notification_lowercase_summary">برخی از موتورهای گفتاری کلمات را با حروف بزرگ املا می کنند</string>
     <string name="notification_separate_digits_title">اعداد بلند را رقم به رقم بخوانید</string>
@@ -146,14 +146,14 @@
     <string name="notification_required_title">فقط خواندن اعلان ها با</string>
     <string name="notification_blocked_title">اعلان ها را با</string>
     <string name="notification_private_title">فقط نام برنامه را بخوانید</string>
-    <string name="notification_replacements_title">متفاوت بگو</string>
+    <string name="notification_replacements_title">تلفظ متفاوت</string>
     <string name="notification_add_word">افزودن کلمه</string>
     <string name="notification_add_replacement">افزودن جایگزین</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> به عنوان <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">نوشتار</string>
-    <string name="notification_replace_with">به عنوان بگویید</string>
+    <string name="notification_replace_with">به این صورت گفته شود</string>
     <string name="notification_whole_words">فقط کلمات کامل</string>
-    <string name="notification_regex">بیان منظم</string>
+    <string name="notification_regex">عبارت باقاعده</string>
     <string name="notification_enter_text">یک متن وارد کنید</string>
     <string name="notification_invalid_regex">یک عبارت منظم معتبر نیست</string>
     <string name="notification_edit">ویرایش</string>
@@ -200,22 +200,22 @@
     <string name="notification_outcome_rule">خوانده نشده: قانون</string>
     <string name="notification_outcome_busy">خوانده نشد: اطلاعیه دیگری خوانده شد</string>
     <string name="notification_outcome_call">به عنوان تماس تلفنی دریافتی اعلام شد</string>
-    <string name="notification_rule_add">یک قانون اضافه کنید</string>
+    <string name="notification_rule_add">افزودن قانون</string>
     <string name="notification_rule_from_template">یک قانون از یک الگو اضافه کنید</string>
     <string name="notification_rules_category">قوانین</string>
     <string name="notification_rules_empty">بدون قوانین</string>
     <string name="notification_rule_name">نام</string>
     <string name="notification_rule_untitled">قانون</string>
-    <string name="notification_rule_enabled">روشن شد</string>
+    <string name="notification_rule_enabled">روشن</string>
     <string name="notification_rule_match">شرایط</string>
     <string name="notification_rule_match_all">همه شرایط باید رعایت شود</string>
     <string name="notification_rule_match_any">حداقل یک شرط باید رعایت شود</string>
-    <string name="notification_rule_conditions">چه زمانی</string>
+    <string name="notification_rule_conditions">وقتی</string>
     <string name="notification_rule_actions">سپس</string>
-    <string name="notification_rule_add_condition">یک شرط اضافه کنید</string>
-    <string name="notification_rule_add_action">یک اقدام اضافه کنید</string>
-    <string name="notification_rule_invert">شرایط را برعکس کنید</string>
-    <string name="notification_rule_delete">قانون را حذف کنید</string>
+    <string name="notification_rule_add_condition">افزودن شرط</string>
+    <string name="notification_rule_add_action">افزودن اقدام</string>
+    <string name="notification_rule_invert">معکوس کردن شرط</string>
+    <string name="notification_rule_delete">حذف قانون</string>
     <string name="notification_rule_delete_confirm">حذف <xliff:g id="rule" example="Night">%1$s</xliff:g>؟</string>
     <string name="notification_rule_always">همیشه</string>
     <string name="notification_rule_no_actions">هیچ اتفاقی نمی افتد</string>
