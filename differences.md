@@ -387,7 +387,7 @@ SandFly adds these actions, which you can assign to gestures in gesture settings
 *   **Lock screen** and **Power menu**, in **System actions**.
 *   **Increase media volume** and **Decrease media volume**, in **Special features**, change the media volume a step and say the new volume.
 *   **Scroll to top** and **Scroll to bottom**, in **Basic navigation**, scroll the list that focus is in to its start or end a page at a time, then focus its first or last item. In a list that doesn't scroll, such as a short settings screen, they focus its first or last item. Outside a list, they use the first list on screen, or the first or last item on screen when there is none. A touch, gesture or key while it scrolls stops it. These aren't on watches.
-*   **Turn browse mode on or off**, in **Menu and controls**, does what Action pressed twice does on a keyboard. It is also a keyboard shortcut, **Another shortcut to turn browse mode on or off**, unassigned by default, for keyboards that take Action pressed twice for themselves.
+*   **Turn browse mode on or off**, in **Menu and controls**, does what Action pressed twice does on a keyboard. It is also a keyboard shortcut, **Another shortcut to turn browse mode on or off**, unassigned by default, for keyboards that take Action pressed twice for themselves. Both need the default keymap, not the classic one, and aren't on watches.
 *   **Refresh**, in **Basic navigation** and as a keyboard shortcut, scrolls the list that focus is in to its top and pulls it down, which refreshes it in most apps. **Scroll back** and **Scroll up** pull a list down too when it is already at its top, as scrolling with two fingers does. SandFly sends the pull as a swipe, so it needs Android 11 or later.
 *   **System quick settings** and **System notification shade** open the system's own quick settings and notification shade, when **Use SandFly's quick settings** or **Use SandFly's notification list** is on.
 *   **Write the letter of a reading control**, in **Menu and controls**, opens a writing surface on the whole screen. Write a letter with one finger, and SandFly chooses the next reading control whose name starts with it: H for Headings, L for Lines, and L again for Links. A tap closes the surface, and so do 10 seconds without writing. Handwriting is recognized on the phone by Google's ML Kit, in the phone's language. The first time, SandFly asks whether to download its model for the language, about 20 MB, from Google, and a message shows when it has downloaded. Not on watches.
@@ -506,7 +506,7 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 ### Browse mode in each app
 
-**Navigation > Remember browse mode in each app**, off by default, keeps browse mode as you last turned it on or off in each app. Moving to an app where you haven't turned it on or off leaves browse mode to Smart browse mode.
+**Navigation > Remember browse mode in each app**, off by default, keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless Smart browse mode turns it on in web content.
 
 ### Telegram reply quotes
 

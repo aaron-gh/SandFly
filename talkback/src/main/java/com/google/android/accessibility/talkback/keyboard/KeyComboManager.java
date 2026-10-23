@@ -38,6 +38,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -363,7 +364,7 @@ public class KeyComboManager
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
     if (isBrowseModeSupported()
         && event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
-      applyRememberedBrowseMode(event.getPackageName());
+      applyRememberedBrowseMode(event);
     }
     if (!KeyComboManagerHelper.isSmartBrowseModeEnabled(context) || !isBrowseModeSupported()) {
       LogUtils.d(TAG, "Smart browse mode is not enabled, or browse mode is not supported");
@@ -523,7 +524,7 @@ public class KeyComboManager
   public void setBrowseModeEnabled(boolean enabled) {
     browseModeTurnedOffByUser = !enabled;
     setBrowseModeEnabledInternal(enabled, /* makeSpeechFeedbackInterruptive= */ true);
-    if (focusedPackage != null) {
+    if (focusedPackage != null && isBrowseModeSupported()) {
       BrowseModeApps.remember(context, focusedPackage, enabled);
     }
   }
@@ -537,16 +538,28 @@ public class KeyComboManager
       return false;
     }
     setBrowseModeEnabled(!isBrowseModeEnabled());
+    if (!browseModeEnabled) {
+      recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_USER);
+    }
     return true;
   }
 
   /**
    * When focus moves to another app, sets browse mode as the user last left it there, if
-   * Remember browse mode in each app is on: on, off, or else as smart browse mode decides.
+   * Remember browse mode in each app is on. In an app where the user hasn't turned it on or off,
+   * browse mode is off, unless smart browse mode turns it on in web content. Focus in SandFly's
+   * own windows, the keyboard or the system's windows leaves it as it is.
    */
-  private void applyRememberedBrowseMode(@Nullable CharSequence packageName) {
+  private void applyRememberedBrowseMode(AccessibilityEvent event) {
+    CharSequence packageName = event.getPackageName();
     String app = packageName == null ? null : packageName.toString();
-    if (app == null || app.equals(focusedPackage)) {
+    if (app == null || app.equals(focusedPackage) || app.equals(context.getPackageName())) {
+      return;
+    }
+    AccessibilityNodeInfoCompat source = AccessibilityNodeInfoUtils.toCompat(event.getSource());
+    if (source == null
+        || AccessibilityNodeInfoUtils.getWindowType(source)
+            != AccessibilityWindowInfo.TYPE_APPLICATION) {
       return;
     }
     focusedPackage = app;
@@ -556,6 +569,12 @@ public class KeyComboManager
     Boolean remembered = BrowseModeApps.remembered(context, app);
     LogUtils.i(TAG, "Browse mode remembered in %s: %s", app, remembered);
     browseModeTurnedOffByUser = Boolean.FALSE.equals(remembered);
+    if (remembered == null
+        && KeyComboManagerHelper.isSmartBrowseModeEnabled(context)
+        && AccessibilityNodeInfoUtils.isSelfOrAncestorRoleWebView(source)) {
+      // Smart browse mode turns it on for this web content.
+      return;
+    }
     setBrowseModeEnabledInternal(
         Boolean.TRUE.equals(remembered), /* makeSpeechFeedbackInterruptive= */ false);
   }
