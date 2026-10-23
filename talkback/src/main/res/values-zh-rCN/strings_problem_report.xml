@@ -50,7 +50,7 @@
     <string name="report_just_now">刚才</string>
     <string name="report_untitled">无题</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g>更改</string>
-    <string name="report_sent_at">已发送<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g>发送</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 新回复</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 新回复</item>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">删除</string>
     <string name="report_missing">此反馈不再出现在收件箱中。</string>
     <string name="notification_channel_problem_reports">反馈回复</string>
-    <string name="report_notification_reply">回复<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">对<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>的回复</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

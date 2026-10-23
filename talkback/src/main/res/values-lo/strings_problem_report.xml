@@ -47,16 +47,16 @@
     <string name="title_report_drafts">ຮ່າງ</string>
     <string name="report_inbox_empty">ບໍ່ມີການສົ່ງຄຳຕິຊົມ</string>
     <string name="report_drafts_empty">ບໍ່ມີສະບັບຮ່າງ</string>
-    <string name="report_just_now">ດຽວນີ້</string>
+    <string name="report_just_now">ຫາກໍ່</string>
     <string name="report_untitled">ບໍ່ມີຊື່</string>
     <string name="report_draft_summary">ປ່ຽນແລ້ວ <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">ສົ່ງແລ້ວ<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">ສົ່ງແລ້ວ <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ຕອບໃໝ່</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ຕອບກັບໃໝ່</item>
     </plurals>
     <string name="report_status_changed">ສະ​ຖາ​ນະ​ການ​ປ່ຽນ​ແປງ​</string>
-    <string name="report_status_open">ເປີດບັນຫາ</string>
+    <string name="report_status_open">ເປີດຢູ່</string>
     <string name="report_status_completed">ປິດ, ສໍາເລັດ</string>
     <string name="report_status_not_planned">ປິດ, ບໍ່ໄດ້ວາງແຜນໄວ້</string>
     <string name="report_status_duplicate">ປິດ, ຊໍ້າກັນ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ລຶບ</string>
     <string name="report_missing">ຄຳຕິຊົມນີ້ບໍ່ໄດ້ຢູ່ໃນກ່ອງຈົດໝາຍອີກຕໍ່ໄປ.</string>
     <string name="notification_channel_problem_reports">ການຕອບກັບຄຳຕິຊົມ</string>
-    <string name="report_notification_reply">ຕອບກັບຫາ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">ການຕອບກັບ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

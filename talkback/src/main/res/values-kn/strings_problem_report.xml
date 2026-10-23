@@ -48,15 +48,15 @@
     <string name="report_inbox_empty">ಯಾವುದೇ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಕಳುಹಿಸಲಾಗಿಲ್ಲ</string>
     <string name="report_drafts_empty">ಡ್ರಾಫ್ಟ್‌ಗಳಿಲ್ಲ</string>
     <string name="report_just_now">ಈಗಷ್ಟೇ</string>
-    <string name="report_untitled">ಶೀರ್ಷಿಕೆಯಿಲ್ಲದ</string>
+    <string name="report_untitled">ಶೀರ್ಷಿಕೆ ಇಲ್ಲ</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ಬದಲಾಯಿಸಲಾಗಿದೆ</string>
-    <string name="report_sent_at">ಕಳುಹಿಸಲಾಗಿದೆ <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ಕಳುಹಿಸಲಾಗಿದೆ</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ಹೊಸ ಪ್ರತ್ಯುತ್ತರ</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ಹೊಸ ಪ್ರತ್ಯುತ್ತರಗಳು</item>
     </plurals>
     <string name="report_status_changed">ಸ್ಥಿತಿ ಬದಲಾಗಿದೆ</string>
-    <string name="report_status_open">ಸಮಸ್ಯೆಯನ್ನು ತೆರೆಯಿರಿ</string>
+    <string name="report_status_open">ತೆರೆದಿದೆ</string>
     <string name="report_status_completed">ಮುಚ್ಚಲಾಗಿದೆ, ಪೂರ್ಣಗೊಂಡಿದೆ</string>
     <string name="report_status_not_planned">ಮುಚ್ಚಲಾಗಿದೆ, ಯೋಜಿಸಲಾಗಿಲ್ಲ</string>
     <string name="report_status_duplicate">ಮುಚ್ಚಲಾಗಿದೆ, ನಕಲು</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ಅಳಿಸಿ</string>
     <string name="report_missing">ಈ ಪ್ರತಿಕ್ರಿಯೆ ಇನ್‌ಬಾಕ್ಸ್‌ನಲ್ಲಿ ಇರುವುದಿಲ್ಲ.</string>
     <string name="notification_channel_problem_reports">ಪ್ರತಿಕ್ರಿಯೆ ಪ್ರತ್ಯುತ್ತರಗಳು</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ಗೆ ಪ್ರತ್ಯುತ್ತರ ನೀಡಿ</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ಗೆ ಪ್ರತ್ಯುತ್ತರ</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

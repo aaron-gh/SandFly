@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Melnraksti</string>
     <string name="report_inbox_empty">Atsauksmes nav nosūtītas</string>
     <string name="report_drafts_empty">Nav melnrakstu</string>
-    <string name="report_just_now">tikai tagad</string>
+    <string name="report_just_now">tikko</string>
     <string name="report_untitled">Bez nosaukuma</string>
     <string name="report_draft_summary">Mainīts <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">nosūtīts <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> jaunas atbildes</item>
     </plurals>
     <string name="report_status_changed">statuss mainīts</string>
-    <string name="report_status_open">Atvērts jautājums</string>
+    <string name="report_status_open">Atvērts</string>
     <string name="report_status_completed">Slēgts, pabeigts</string>
     <string name="report_status_not_planned">Slēgts, nav plānots</string>
     <string name="report_status_duplicate">Slēgts, dublēts</string>
@@ -80,6 +80,6 @@
     <string name="button_report_delete">Dzēst</string>
     <string name="report_missing">Šīs atsauksmes vairs nav iesūtnē.</string>
     <string name="notification_channel_problem_reports">Atbildes uz atsauksmēm</string>
-    <string name="report_notification_reply">Atbildēt uz <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Atbilde uz <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

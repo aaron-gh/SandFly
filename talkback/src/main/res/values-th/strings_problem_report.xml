@@ -47,7 +47,7 @@
     <string name="title_report_drafts">ร่างจดหมาย</string>
     <string name="report_inbox_empty">ไม่มีการส่งข้อเสนอแนะ</string>
     <string name="report_drafts_empty">ไม่มีฉบับร่าง</string>
-    <string name="report_just_now">แค่ตอนนี้</string>
+    <string name="report_just_now">เมื่อสักครู่</string>
     <string name="report_untitled">ไม่มีชื่อ</string>
     <string name="report_draft_summary">เปลี่ยนแล้ว <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">ส่งแล้ว <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,10 +56,10 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ตอบกลับใหม่</item>
     </plurals>
     <string name="report_status_changed">สถานะเปลี่ยนไป</string>
-    <string name="report_status_open">เปิดประเด็น</string>
+    <string name="report_status_open">เปิดอยู่</string>
     <string name="report_status_completed">ปิดแล้ว เสร็จเรียบร้อย</string>
-    <string name="report_status_not_planned">ปิดไม่มีการวางแผน</string>
-    <string name="report_status_duplicate">ปิดซ้ำ</string>
+    <string name="report_status_not_planned">ปิดแล้ว ไม่มีแผน</string>
+    <string name="report_status_duplicate">ปิดแล้ว ซ้ำ</string>
     <string name="report_status_unknown">นำออกแล้ว</string>
     <string name="title_report_status">สถานะ</string>
     <string name="title_report_your_report">ความคิดเห็นของคุณ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ลบ</string>
     <string name="report_missing">ความคิดเห็นนี้ไม่ได้อยู่ในกล่องจดหมายอีกต่อไป</string>
     <string name="notification_channel_problem_reports">ตอบกลับข้อเสนอแนะ</string>
-    <string name="report_notification_reply">ตอบกลับ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">การตอบกลับ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

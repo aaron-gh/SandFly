@@ -47,16 +47,16 @@
     <string name="title_report_drafts">කෙටුම්පත්</string>
     <string name="report_inbox_empty">ප්‍රතිපෝෂණ යවා නැත</string>
     <string name="report_drafts_empty">කෙටුම්පත් නැත</string>
-    <string name="report_just_now">දැන්</string>
+    <string name="report_just_now">දැන් ම</string>
     <string name="report_untitled">මාතෘකා රහිත</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> වෙනස් කරන ලදී</string>
-    <string name="report_sent_at">යවා ඇත <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> යවා ඇත</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> නව පිළිතුර</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> නව පිළිතුරු</item>
     </plurals>
     <string name="report_status_changed">තත්ත්වය වෙනස් විය</string>
-    <string name="report_status_open">විවෘත ගැටලුව</string>
+    <string name="report_status_open">විවෘත</string>
     <string name="report_status_completed">වසා ඇත, සම්පූර්ණ කර ඇත</string>
     <string name="report_status_not_planned">වසා ඇත, සැලසුම් කර නැත</string>
     <string name="report_status_duplicate">සංවෘත, අනුපිටපත්</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">මකන්න</string>
     <string name="report_missing">මෙම ප්‍රතිපෝෂණය තවදුරටත් එන ලිපි තුළ නොමැත.</string>
     <string name="notification_channel_problem_reports">ප්‍රතිපෝෂණ පිළිතුරු</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> වෙත පිළිතුරු දෙන්න</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> සඳහා පිළිතුර</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

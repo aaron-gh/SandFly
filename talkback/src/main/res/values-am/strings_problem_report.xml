@@ -50,7 +50,7 @@
     <string name="report_just_now">ልክ አሁን</string>
     <string name="report_untitled">ርዕስ አልባ</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ተቀይሯል</string>
-    <string name="report_sent_at">ተልኳል <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ተልኳል</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> አዲስ ምላሽ</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> አዳዲስ መልሶች</item>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">የእርስዎ አስተያየት</string>
     <string name="title_report_messages">መልዕክቶች</string>
     <string name="report_message_from_developer">ገንቢ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">አንተ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">እርስዎ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">መልስ</string>
     <string name="title_report_reply_text">የእርስዎ ምላሽ</string>
     <string name="title_report_send_reply">ምላሽ ላክ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ሰርዝ</string>
     <string name="report_missing">ይህ ግብረመልስ ከአሁን በኋላ በገቢ መልእክት ሳጥን ውስጥ የለም።</string>
     <string name="notification_channel_problem_reports">የግብረመልስ ምላሾች</string>
-    <string name="report_notification_reply">መልስ ለ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">ለ<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> የተሰጠ መልስ</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

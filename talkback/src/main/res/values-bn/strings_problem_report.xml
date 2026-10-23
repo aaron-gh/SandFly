@@ -46,11 +46,11 @@
     <string name="title_report_inbox">ইনবক্স</string>
     <string name="title_report_drafts">খসড়া</string>
     <string name="report_inbox_empty">কোনো প্রতিক্রিয়া পাঠানো হয়নি</string>
-    <string name="report_drafts_empty">কোন খসড়া</string>
+    <string name="report_drafts_empty">কোনো খসড়া নেই</string>
     <string name="report_just_now">এইমাত্র</string>
     <string name="report_untitled">শিরোনামহীন</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> পরিবর্তিত</string>
-    <string name="report_sent_at">পাঠানো হয়েছে <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> পাঠানো হয়েছে</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>টি নতুন উত্তর</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>টি নতুন উত্তর</item>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">মুছুন</string>
     <string name="report_missing">এই প্রতিক্রিয়া ইনবক্সে আর নেই.</string>
     <string name="notification_channel_problem_reports">প্রতিক্রিয়া উত্তর</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> উত্তর দিন</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-এর উত্তর</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -47,15 +47,15 @@
     <string name="title_report_drafts">Qaralamalar</string>
     <string name="report_inbox_empty">Heç bir rəy göndərilmədi</string>
     <string name="report_drafts_empty">Qaralama yoxdur</string>
-    <string name="report_just_now">indi</string>
+    <string name="report_just_now">indicə</string>
     <string name="report_untitled">Başlıqsız</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> dəyişdirilib</string>
-    <string name="report_sent_at">göndərildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> göndərilib</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yeni cavab</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> yeni cavab</item>
     </plurals>
-    <string name="report_status_changed">statusu dəyişdi</string>
+    <string name="report_status_changed">status dəyişdi</string>
     <string name="report_status_open">Açıq</string>
     <string name="report_status_completed">Bağlandı, tamamlandı</string>
     <string name="report_status_not_planned">Qapalı, planlaşdırılmayıb</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Sil</string>
     <string name="report_missing">Bu rəy artıq gələnlər qutusunda deyil.</string>
     <string name="notification_channel_problem_reports">Rəy cavabları</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-a cavab verin</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> üçün cavab</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

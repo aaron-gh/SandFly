@@ -45,7 +45,7 @@
     <string name="title_report_new">Отправить отзыв</string>
     <string name="title_report_inbox">Входящие</string>
     <string name="title_report_drafts">Черновики</string>
-    <string name="report_inbox_empty">Отзыв не отправлен</string>
+    <string name="report_inbox_empty">Отзывы не отправлялись</string>
     <string name="report_drafts_empty">Нет черновиков</string>
     <string name="report_just_now">только что</string>
     <string name="report_untitled">Без названия</string>
@@ -58,16 +58,16 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> новых ответов</item>
     </plurals>
     <string name="report_status_changed">статус изменен</string>
-    <string name="report_status_open">Открытый вопрос</string>
+    <string name="report_status_open">Открыто</string>
     <string name="report_status_completed">Закрыто, завершено</string>
     <string name="report_status_not_planned">Закрыто, не планируется</string>
     <string name="report_status_duplicate">Закрыто, дубликат</string>
-    <string name="report_status_unknown">Удален</string>
+    <string name="report_status_unknown">Удалено</string>
     <string name="title_report_status">Статус</string>
     <string name="title_report_your_report">Ваш отзыв</string>
     <string name="title_report_messages">Сообщения</string>
     <string name="report_message_from_developer">Разработчик, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Ты, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Вы, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Ответить</string>
     <string name="title_report_reply_text">Ваш ответ</string>
     <string name="title_report_send_reply">Отправить ответ</string>
@@ -81,6 +81,6 @@
     <string name="button_report_delete">Удалить</string>
     <string name="report_missing">Этот отзыв больше не находится во входящих.</string>
     <string name="notification_channel_problem_reports">Ответы на отзывы</string>
-    <string name="report_notification_reply">Ответить на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Ответ на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

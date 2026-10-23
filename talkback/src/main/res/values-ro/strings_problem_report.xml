@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Ciorne</string>
     <string name="report_inbox_empty">Niciun feedback trimis</string>
     <string name="report_drafts_empty">Fără schițe</string>
-    <string name="report_just_now">tocmai acum</string>
+    <string name="report_just_now">chiar acum</string>
     <string name="report_untitled">Fără titlu</string>
     <string name="report_draft_summary">Modificat <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">trimis <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,9 +56,9 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> răspunsuri noi</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> de răspunsuri noi</item>
     </plurals>
-    <string name="report_status_changed">starea schimbată</string>
-    <string name="report_status_open">Problemă deschisă</string>
-    <string name="report_status_completed">Inchis, finalizat</string>
+    <string name="report_status_changed">stare schimbată</string>
+    <string name="report_status_open">Deschis</string>
+    <string name="report_status_completed">Închis, finalizat</string>
     <string name="report_status_not_planned">Închis, neplanificat</string>
     <string name="report_status_duplicate">Închis, duplicat</string>
     <string name="report_status_unknown">Eliminat</string>
@@ -80,6 +80,6 @@
     <string name="button_report_delete">Șterge</string>
     <string name="report_missing">Acest feedback nu mai este în căsuța de e-mail.</string>
     <string name="notification_channel_problem_reports">Răspunsuri la feedback</string>
-    <string name="report_notification_reply">Răspunde la <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Răspuns la <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

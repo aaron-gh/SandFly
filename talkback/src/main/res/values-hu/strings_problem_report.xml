@@ -45,9 +45,9 @@
     <string name="title_report_new">Visszajelzés küldése</string>
     <string name="title_report_inbox">Beérkezett üzenetek</string>
     <string name="title_report_drafts">Piszkozatok</string>
-    <string name="report_inbox_empty">Nem küldtek visszajelzést</string>
-    <string name="report_drafts_empty">Nincs huzat</string>
-    <string name="report_just_now">csak most</string>
+    <string name="report_inbox_empty">Nincs elküldött visszajelzés</string>
+    <string name="report_drafts_empty">Nincsenek piszkozatok</string>
+    <string name="report_just_now">az imént</string>
     <string name="report_untitled">Cím nélkül</string>
     <string name="report_draft_summary">Módosítva: <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">elküldve <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,9 +56,9 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> új válasz</item>
     </plurals>
     <string name="report_status_changed">állapot megváltozott</string>
-    <string name="report_status_open">Nyitott kérdés</string>
+    <string name="report_status_open">Nyitott</string>
     <string name="report_status_completed">Lezárva, elkészült</string>
-    <string name="report_status_not_planned">Zárt, nem tervezett</string>
+    <string name="report_status_not_planned">Lezárva, nem tervezett</string>
     <string name="report_status_duplicate">Lezárva, duplikált</string>
     <string name="report_status_unknown">Eltávolítva</string>
     <string name="title_report_status">Állapot</string>

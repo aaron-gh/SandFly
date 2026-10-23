@@ -46,8 +46,8 @@
     <string name="title_report_inbox">შემოსულები</string>
     <string name="title_report_drafts">ნახაზები</string>
     <string name="report_inbox_empty">გამოხმაურება არ გაგზავნილა</string>
-    <string name="report_drafts_empty">არანაირი მონახაზი</string>
-    <string name="report_just_now">მხოლოდ ახლა</string>
+    <string name="report_drafts_empty">მონახაზები არ არის</string>
+    <string name="report_just_now">ახლახან</string>
     <string name="report_untitled">უსათაურო</string>
     <string name="report_draft_summary">შეიცვალა <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">გაგზავნილი <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ახალი პასუხი</item>
     </plurals>
     <string name="report_status_changed">სტატუსი შეიცვალა</string>
-    <string name="report_status_open">გახსენით საკითხი</string>
+    <string name="report_status_open">ღია</string>
     <string name="report_status_completed">დახურული, დასრულებული</string>
     <string name="report_status_not_planned">დახურულია, არ არის დაგეგმილი</string>
     <string name="report_status_duplicate">დახურული, დუბლიკატი</string>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">თქვენი გამოხმაურება</string>
     <string name="title_report_messages">შეტყობინებები</string>
     <string name="report_message_from_developer">დეველოპერი, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">შენ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">თქვენ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">პასუხი</string>
     <string name="title_report_reply_text">შენი პასუხი</string>
     <string name="title_report_send_reply">პასუხის გაგზავნა</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">წაშლა</string>
     <string name="report_missing">ეს გამოხმაურება აღარ არის შემოსულებში.</string>
     <string name="notification_channel_problem_reports">გამოხმაურების პასუხები</string>
-    <string name="report_notification_reply">უპასუხეთ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">პასუხი: <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

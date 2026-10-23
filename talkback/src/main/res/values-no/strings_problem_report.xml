@@ -56,9 +56,9 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nye svar</item>
     </plurals>
     <string name="report_status_changed">status endret</string>
-    <string name="report_status_open">Åpen sak</string>
-    <string name="report_status_completed">Stengt, fullført</string>
-    <string name="report_status_not_planned">Stengt, ikke planlagt</string>
+    <string name="report_status_open">Åpen</string>
+    <string name="report_status_completed">Lukket, fullført</string>
+    <string name="report_status_not_planned">Lukket, ikke planlagt</string>
     <string name="report_status_duplicate">Lukket, duplikat</string>
     <string name="report_status_unknown">Fjernet</string>
     <string name="title_report_status">Status</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Slett</string>
     <string name="report_missing">Denne tilbakemeldingen er ikke lenger i innboksen.</string>
     <string name="notification_channel_problem_reports">Svar på tilbakemeldinger</string>
-    <string name="report_notification_reply">Svar til <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Svar på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

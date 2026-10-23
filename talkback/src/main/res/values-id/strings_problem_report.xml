@@ -46,8 +46,8 @@
     <string name="title_report_inbox">Kotak masuk</string>
     <string name="title_report_drafts">Draf</string>
     <string name="report_inbox_empty">Tidak ada umpan balik yang dikirim</string>
-    <string name="report_drafts_empty">Tidak ada konsep</string>
-    <string name="report_just_now">sekarang</string>
+    <string name="report_drafts_empty">Tidak ada draf</string>
+    <string name="report_just_now">baru saja</string>
     <string name="report_untitled">Tanpa judul</string>
     <string name="report_draft_summary">Diubah <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">terkirim <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -55,8 +55,8 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> balasan baru</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> balasan baru</item>
     </plurals>
-    <string name="report_status_changed">statusnya berubah</string>
-    <string name="report_status_open">Masalah terbuka</string>
+    <string name="report_status_changed">status berubah</string>
+    <string name="report_status_open">Terbuka</string>
     <string name="report_status_completed">Ditutup, selesai</string>
     <string name="report_status_not_planned">Ditutup, tidak direncanakan</string>
     <string name="report_status_duplicate">Tertutup, duplikat</string>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">Tanggapan Anda</string>
     <string name="title_report_messages">Pesan</string>
     <string name="report_message_from_developer">Pengembang, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Kamu, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Anda, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Membalas</string>
     <string name="title_report_reply_text">Balasan Anda</string>
     <string name="title_report_send_reply">Kirim balasan</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Hapus</string>
     <string name="report_missing">Masukan ini tidak lagi ada di kotak masuk.</string>
     <string name="notification_channel_problem_reports">Balasan umpan balik</string>
-    <string name="report_notification_reply">Balas ke <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Balasan untuk <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

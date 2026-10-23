@@ -47,16 +47,16 @@
     <string name="title_report_drafts">Taslaklar</string>
     <string name="report_inbox_empty">Geri bildirim gönderilmedi</string>
     <string name="report_drafts_empty">Taslak yok</string>
-    <string name="report_just_now">şimdi</string>
-    <string name="report_untitled">İsimsiz</string>
+    <string name="report_just_now">az önce</string>
+    <string name="report_untitled">Başlıksız</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> değiştirildi</string>
-    <string name="report_sent_at">gönderildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> gönderildi</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yeni yanıt</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> yeni yanıt</item>
     </plurals>
     <string name="report_status_changed">durum değişti</string>
-    <string name="report_status_open">Sorunu aç</string>
+    <string name="report_status_open">Açık</string>
     <string name="report_status_completed">Kapatıldı, tamamlandı</string>
     <string name="report_status_not_planned">Kapalı, planlanmamış</string>
     <string name="report_status_duplicate">Kapalı, kopya</string>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">Geri bildiriminiz</string>
     <string name="title_report_messages">Mesajlar</string>
     <string name="report_message_from_developer">Geliştirici, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Sen, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Siz, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Yanıtla</string>
     <string name="title_report_reply_text">Cevabınız</string>
     <string name="title_report_send_reply">Yanıt gönder</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Sil</string>
     <string name="report_missing">Bu geri bildirim artık gelen kutusunda bulunmuyor.</string>
     <string name="notification_channel_problem_reports">Geri bildirim yanıtları</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>\'e yanıt ver</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> için yanıt</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

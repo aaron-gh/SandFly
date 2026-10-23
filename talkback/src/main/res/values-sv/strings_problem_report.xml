@@ -47,16 +47,16 @@
     <string name="title_report_drafts">Utkast</string>
     <string name="report_inbox_empty">Ingen feedback har skickats</string>
     <string name="report_drafts_empty">Inga utkast</string>
-    <string name="report_just_now">just nu</string>
+    <string name="report_just_now">nyss</string>
     <string name="report_untitled">Namnlös</string>
     <string name="report_draft_summary">Ändrades <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">skickade <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">skickad <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nytt svar</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nya svar</item>
     </plurals>
     <string name="report_status_changed">status ändrad</string>
-    <string name="report_status_open">Öppen fråga</string>
+    <string name="report_status_open">Öppen</string>
     <string name="report_status_completed">Stängd, klar</string>
     <string name="report_status_not_planned">Stängt, inte planerat</string>
     <string name="report_status_duplicate">Stängd, dubblett</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Radera</string>
     <string name="report_missing">Denna feedback finns inte längre i inkorgen.</string>
     <string name="notification_channel_problem_reports">Svar på feedback</string>
-    <string name="report_notification_reply">Svara på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Svar på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

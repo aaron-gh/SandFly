@@ -50,13 +50,13 @@
     <string name="report_just_now">ابھی</string>
     <string name="report_untitled">بلا عنوان</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> تبدیل کیا گیا</string>
-    <string name="report_sent_at">بھیجا گیا <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> بھیجا گیا</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> نیا جواب</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> نئے جوابات</item>
     </plurals>
-    <string name="report_status_changed">حیثیت بدل گئی</string>
-    <string name="report_status_open">کھلا مسئلہ</string>
+    <string name="report_status_changed">اسٹیٹس بدل گیا</string>
+    <string name="report_status_open">کھلا</string>
     <string name="report_status_completed">بند، مکمل</string>
     <string name="report_status_not_planned">بند، منصوبہ بند نہیں</string>
     <string name="report_status_duplicate">بند، نقل</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">حذف کریں</string>
     <string name="report_missing">یہ تاثرات اب ان باکس میں نہیں ہے۔</string>
     <string name="notification_channel_problem_reports">تاثرات کے جوابات</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> کو جواب دیں</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> کا جواب</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

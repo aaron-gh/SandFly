@@ -45,9 +45,9 @@
     <string name="title_report_new">Siųsti atsiliepimą</string>
     <string name="title_report_inbox">Gautieji</string>
     <string name="title_report_drafts">Juodraščiai</string>
-    <string name="report_inbox_empty">Atsiliepimai neišsiųsta</string>
-    <string name="report_drafts_empty">Jokių juodraščių</string>
-    <string name="report_just_now">tik dabar</string>
+    <string name="report_inbox_empty">Atsiliepimų neišsiųsta</string>
+    <string name="report_drafts_empty">Juodraščių nėra</string>
+    <string name="report_just_now">ką tik</string>
     <string name="report_untitled">Be pavadinimo</string>
     <string name="report_draft_summary">Pakeistas <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">išsiųsta <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -58,7 +58,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> naujų atsakymų</item>
     </plurals>
     <string name="report_status_changed">statusas pakeistas</string>
-    <string name="report_status_open">Atviras klausimas</string>
+    <string name="report_status_open">Atvira</string>
     <string name="report_status_completed">Uždaryta, baigta</string>
     <string name="report_status_not_planned">Uždaryta, neplanuota</string>
     <string name="report_status_duplicate">Uždaryta, dublikatas</string>
@@ -81,6 +81,6 @@
     <string name="button_report_delete">Ištrinti</string>
     <string name="report_missing">Šio atsiliepimo gautuosiuose nebėra.</string>
     <string name="notification_channel_problem_reports">Atsakymai į atsiliepimus</string>
-    <string name="report_notification_reply">Atsakyti į <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Atsakymas į <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

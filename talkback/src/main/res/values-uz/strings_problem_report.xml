@@ -47,16 +47,16 @@
     <string name="title_report_drafts">Qoralamalar</string>
     <string name="report_inbox_empty">Hech qanday fikr-mulohaza yuborilmadi</string>
     <string name="report_drafts_empty">Hech qanday qoralama yoʻq</string>
-    <string name="report_just_now">hozir</string>
+    <string name="report_just_now">hozirgina</string>
     <string name="report_untitled">Sarlavhasiz</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> oʻzgartirildi</string>
-    <string name="report_sent_at">yuborildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> yuborildi</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yangi javob</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> yangi javoblar</item>
     </plurals>
     <string name="report_status_changed">holati o\'zgardi</string>
-    <string name="report_status_open">Ochiq masala</string>
+    <string name="report_status_open">Ochiq</string>
     <string name="report_status_completed">Yopiq, tugallangan</string>
     <string name="report_status_not_planned">Yopiq, rejalashtirilmagan</string>
     <string name="report_status_duplicate">Yopiq, dublikat</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Oʻchirish</string>
     <string name="report_missing">Bu fikr-mulohaza endi kiruvchi qutida yo‘q.</string>
     <string name="notification_channel_problem_reports">Fikr-mulohaza javoblari</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ga javob berish</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ga javob</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -46,7 +46,7 @@
     <string name="title_report_inbox">Skrzynka odbiorcza</string>
     <string name="title_report_drafts">Szkice</string>
     <string name="report_inbox_empty">Nie wysłano żadnej opinii</string>
-    <string name="report_drafts_empty">Żadnych przeciągów</string>
+    <string name="report_drafts_empty">Brak wersji roboczych</string>
     <string name="report_just_now">właśnie teraz</string>
     <string name="report_untitled">Bez tytułu</string>
     <string name="report_draft_summary">Zmieniono <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
@@ -58,7 +58,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nowe odpowiedzi</item>
     </plurals>
     <string name="report_status_changed">stan uległ zmianie</string>
-    <string name="report_status_open">Otwarty problem</string>
+    <string name="report_status_open">Otwarte</string>
     <string name="report_status_completed">Zamknięte, zakończone</string>
     <string name="report_status_not_planned">Zamknięte, nieplanowane</string>
     <string name="report_status_duplicate">Zamknięte, duplikat</string>
@@ -66,7 +66,7 @@
     <string name="title_report_status">Stan</string>
     <string name="title_report_your_report">Twoja opinia</string>
     <string name="title_report_messages">Wiadomości</string>
-    <string name="report_message_from_developer">Deweloper, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_developer">Programista, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Ty, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Odpowiedz</string>
     <string name="title_report_reply_text">Twoja odpowiedź</string>
@@ -81,6 +81,6 @@
     <string name="button_report_delete">Usuń</string>
     <string name="report_missing">Ta opinia nie znajduje się już w skrzynce odbiorczej.</string>
     <string name="notification_channel_problem_reports">Odpowiedzi na opinie</string>
-    <string name="report_notification_reply">Odpowiedz na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Odpowiedź na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

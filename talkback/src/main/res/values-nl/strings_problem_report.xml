@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nieuwe antwoorden</item>
     </plurals>
     <string name="report_status_changed">status gewijzigd</string>
-    <string name="report_status_open">Open probleem</string>
+    <string name="report_status_open">Open</string>
     <string name="report_status_completed">Gesloten, voltooid</string>
     <string name="report_status_not_planned">Gesloten, niet gepland</string>
     <string name="report_status_duplicate">Gesloten, duplicaat</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Verwijderen</string>
     <string name="report_missing">Deze feedback staat niet meer in de inbox.</string>
     <string name="notification_channel_problem_reports">Feedback-antwoorden</string>
-    <string name="report_notification_reply">Reageer op <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Reactie op <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

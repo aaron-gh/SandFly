@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> նոր պատասխաններ</item>
     </plurals>
     <string name="report_status_changed">կարգավիճակը փոխվել է</string>
-    <string name="report_status_open">Բաց թողարկում</string>
+    <string name="report_status_open">Բաց</string>
     <string name="report_status_completed">Փակված, ավարտված</string>
     <string name="report_status_not_planned">Փակ, պլանավորված չէ</string>
     <string name="report_status_duplicate">Փակ, կրկնօրինակ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Ջնջել</string>
     <string name="report_missing">Այս կարծիքն այլևս մուտքի արկղում չէ:</string>
     <string name="notification_channel_problem_reports">Հետադարձ կապի պատասխաններ</string>
-    <string name="report_notification_reply">Պատասխանել <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-ին</string>
+    <string name="report_notification_reply">Պատասխան <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-ին</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

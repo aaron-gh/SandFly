@@ -46,17 +46,17 @@
     <string name="title_report_inbox">Кирүүчү куту</string>
     <string name="title_report_drafts">Долбоорлор</string>
     <string name="report_inbox_empty">Пикир жөнөтүлгөн жок</string>
-    <string name="report_drafts_empty">Сомолор жок</string>
+    <string name="report_drafts_empty">Черновиктер жок</string>
     <string name="report_just_now">азыр эле</string>
     <string name="report_untitled">Аталышы жок</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> өзгөртүлдү</string>
-    <string name="report_sent_at">жөнөтүлдү <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> жөнөтүлдү</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> жаңы жооп</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> жаңы жооптор</item>
     </plurals>
     <string name="report_status_changed">абалы өзгөрдү</string>
-    <string name="report_status_open">Ачык маселе</string>
+    <string name="report_status_open">Ачык</string>
     <string name="report_status_completed">Жабык, бүттү</string>
     <string name="report_status_not_planned">Жабык, пландалган эмес</string>
     <string name="report_status_duplicate">Жабык, дубликат</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Өчүрүү</string>
     <string name="report_missing">Бул пикир кат кутусунда жок.</string>
     <string name="notification_channel_problem_reports">Пикирлерге жооптор</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> жооп берүү</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> жообу</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

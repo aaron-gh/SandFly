@@ -50,13 +50,13 @@
     <string name="report_just_now">яг одоо</string>
     <string name="report_untitled">Гарчиггүй</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> өөрчлөгдсөн</string>
-    <string name="report_sent_at">илгээсэн <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> илгээсэн</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> шинэ хариулт</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> шинэ хариулт</item>
     </plurals>
     <string name="report_status_changed">статус өөрчлөгдсөн</string>
-    <string name="report_status_open">Нээлттэй асуудал</string>
+    <string name="report_status_open">Нээлттэй</string>
     <string name="report_status_completed">Хаагдсан, дууссан</string>
     <string name="report_status_not_planned">Хаалттай, төлөвлөөгүй</string>
     <string name="report_status_duplicate">Хаалттай, давхардсан</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Устгах</string>
     <string name="report_missing">Энэ санал хүсэлт ирсэн имэйл хайрцагт байхаа больсон.</string>
     <string name="notification_channel_problem_reports">Санал хүсэлтийн хариу</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-д хариулах</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-ийн хариу</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

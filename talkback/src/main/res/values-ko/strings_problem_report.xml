@@ -45,27 +45,27 @@
     <string name="title_report_new">의견 보내기</string>
     <string name="title_report_inbox">받은편지함</string>
     <string name="title_report_drafts">초안</string>
-    <string name="report_inbox_empty">피드백이 전송되지 않았습니다.</string>
+    <string name="report_inbox_empty">보낸 피드백 없음</string>
     <string name="report_drafts_empty">초안 없음</string>
-    <string name="report_just_now">지금 막</string>
+    <string name="report_just_now">방금</string>
     <string name="report_untitled">제목 없음</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> 변경됨</string>
-    <string name="report_sent_at">보냈습니다 <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> 보냄</string>
     <plurals name="report_new_replies">
         <item quantity="one">새로운 답글 <xliff:g id="count" example="1">%1$d</xliff:g>개</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>개의 새로운 답글</item>
     </plurals>
     <string name="report_status_changed">상태가 변경됨</string>
-    <string name="report_status_open">공개 문제</string>
-    <string name="report_status_completed">마감, 완료</string>
-    <string name="report_status_not_planned">휴무, 예정 없음</string>
-    <string name="report_status_duplicate">폐쇄됨, 중복됨</string>
+    <string name="report_status_open">진행 중</string>
+    <string name="report_status_completed">종료됨, 완료</string>
+    <string name="report_status_not_planned">종료됨, 계획 없음</string>
+    <string name="report_status_duplicate">종료됨, 중복</string>
     <string name="report_status_unknown">삭제됨</string>
     <string name="title_report_status">상태</string>
     <string name="title_report_your_report">귀하의 의견</string>
     <string name="title_report_messages">메시지</string>
-    <string name="report_message_from_developer">개발자님, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">당신, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_developer">개발자, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">나, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">답장하다</string>
     <string name="title_report_reply_text">귀하의 답변</string>
     <string name="title_report_send_reply">답장 보내기</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">삭제</string>
     <string name="report_missing">이 피드백은 더 이상 받은 편지함에 없습니다.</string>
     <string name="notification_channel_problem_reports">피드백 답변</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>에 답장하다</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>에 대한 답장</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

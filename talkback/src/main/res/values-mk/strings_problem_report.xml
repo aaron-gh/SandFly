@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Нацртови</string>
     <string name="report_inbox_empty">Нема испратени повратни информации</string>
     <string name="report_drafts_empty">Нема нацрти</string>
-    <string name="report_just_now">само сега</string>
+    <string name="report_just_now">пред малку</string>
     <string name="report_untitled">Без наслов</string>
     <string name="report_draft_summary">Променет <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">испратено <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> нови одговори</item>
     </plurals>
     <string name="report_status_changed">статусот се смени</string>
-    <string name="report_status_open">Отворено прашање</string>
+    <string name="report_status_open">Отворено</string>
     <string name="report_status_completed">Затворено, завршено</string>
     <string name="report_status_not_planned">Затворено, не планирано</string>
     <string name="report_status_duplicate">Затворено, дупликат</string>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">Вашите повратни информации</string>
     <string name="title_report_messages">Пораки</string>
     <string name="report_message_from_developer">Програмер, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Ти, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Вие, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Одговори</string>
     <string name="title_report_reply_text">Вашиот одговор</string>
     <string name="title_report_send_reply">Испрати одговор</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Избриши</string>
     <string name="report_missing">Оваа повратна информација веќе не е во сандачето.</string>
     <string name="notification_channel_problem_reports">Одговори на повратни информации</string>
-    <string name="report_notification_reply">Одговори на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Одговор на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

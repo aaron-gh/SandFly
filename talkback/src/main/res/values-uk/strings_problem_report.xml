@@ -45,9 +45,9 @@
     <string name="title_report_new">Надіслати відгук</string>
     <string name="title_report_inbox">Вхідні</string>
     <string name="title_report_drafts">Чернетки</string>
-    <string name="report_inbox_empty">Відгук не надіслано</string>
-    <string name="report_drafts_empty">Без протягів</string>
-    <string name="report_just_now">тільки зараз</string>
+    <string name="report_inbox_empty">Відгуків не надіслано</string>
+    <string name="report_drafts_empty">Немає чернеток</string>
+    <string name="report_just_now">щойно</string>
     <string name="report_untitled">Без назви</string>
     <string name="report_draft_summary">Змінено <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">надіслано <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -58,7 +58,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> нових відповіді</item>
     </plurals>
     <string name="report_status_changed">статус змінено</string>
-    <string name="report_status_open">Відкрите питання</string>
+    <string name="report_status_open">Відкрито</string>
     <string name="report_status_completed">Закрито, завершено</string>
     <string name="report_status_not_planned">Закрито, не планується</string>
     <string name="report_status_duplicate">Закрито, дублікат</string>
@@ -67,7 +67,7 @@
     <string name="title_report_your_report">Ваш відгук</string>
     <string name="title_report_messages">Повідомлення</string>
     <string name="report_message_from_developer">Розробник, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Ти, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ви, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Відповісти</string>
     <string name="title_report_reply_text">Ваша відповідь</string>
     <string name="title_report_send_reply">Надіслати відповідь</string>
@@ -81,6 +81,6 @@
     <string name="button_report_delete">Видалити</string>
     <string name="report_missing">Цього відгуку більше немає у вхідних.</string>
     <string name="notification_channel_problem_reports">Відповіді на відгуки</string>
-    <string name="report_notification_reply">Відповісти <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Відповідь на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

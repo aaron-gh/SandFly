@@ -50,7 +50,7 @@
     <string name="report_just_now">oraintxe bertan</string>
     <string name="report_untitled">Izenbururik gabe</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> aldatua</string>
-    <string name="report_sent_at">bidali <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> bidalia</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> erantzun berri</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> erantzun berri</item>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">Zure iritzia</string>
     <string name="title_report_messages">Mezuak</string>
     <string name="report_message_from_developer">Garatzailea, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Zuk, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Zu, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Erantzun</string>
     <string name="title_report_reply_text">Zure erantzuna</string>
     <string name="title_report_send_reply">Bidali erantzuna</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Ezabatu</string>
     <string name="report_missing">Iritzi hau jada ez dago sarrera-ontzian.</string>
     <string name="notification_channel_problem_reports">Iritzi-erantzunak</string>
-    <string name="report_notification_reply">Erantzun <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> txostenari erantzuna</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

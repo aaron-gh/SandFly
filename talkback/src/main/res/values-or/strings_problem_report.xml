@@ -47,7 +47,7 @@
     <string name="title_report_drafts">ଡ୍ରାଫ୍ଟଗୁଡିକ</string>
     <string name="report_inbox_empty">କୌଣସି ମତାମତ ପଠାଗଲା ନାହିଁ</string>
     <string name="report_drafts_empty">କୌଣସି ଡ୍ରାଫ୍ଟ ନାହିଁ</string>
-    <string name="report_just_now">ବର୍ତ୍ତମାନ</string>
+    <string name="report_just_now">ଏବେ ଏବେ</string>
     <string name="report_untitled">ଆଖ୍ୟାବିହୀନ</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ପରିବର୍ତ୍ତିତ</string>
     <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ପଠାଯାଇଛି</string>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ନୂତନ ଉତ୍ତର</item>
     </plurals>
     <string name="report_status_changed">ସ୍ଥିତି ବଦଳିଗଲା</string>
-    <string name="report_status_open">ଖୋଲା ଇସ୍ୟୁ</string>
+    <string name="report_status_open">ଖୋଲା</string>
     <string name="report_status_completed">ବନ୍ଦ, ସମାପ୍ତ</string>
     <string name="report_status_not_planned">ବନ୍ଦ, ଯୋଜନା ନୁହେଁ</string>
     <string name="report_status_duplicate">ବନ୍ଦ, ନକଲ</string>
@@ -69,7 +69,7 @@
     <string name="title_report_reply">ଉତ୍ତର ଦିଅ</string>
     <string name="title_report_reply_text">ତୁମର ଉତ୍ତର</string>
     <string name="title_report_send_reply">ଉତ୍ତର ପଠାନ୍ତୁ</string>
-    <string name="report_reply_sent">ଉତ୍ତର ପଠାଯାଇଛି |</string>
+    <string name="report_reply_sent">ଉତ୍ତର ପଠାଯାଇଛି।</string>
     <string name="report_reply_not_sent">ଉତ୍ତର ପଠାଯାଇ ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="title_report_remove">ଇନବକ୍ସରୁ ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="dialog_title_report_remove">ଏହି ମତାମତକୁ ଇନବକ୍ସରୁ ହଟାନ୍ତୁ?</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ଡିଲିଟ କରନ୍ତୁ</string>
     <string name="report_missing">ଏହି ମତାମତ ଆଉ ଇନବକ୍ସରେ ନାହିଁ |</string>
     <string name="notification_channel_problem_reports">ମତାମତ ଉତ୍ତର</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> କୁ ଉତ୍ତର ଦିଅ</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ର ଉତ୍ତର</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

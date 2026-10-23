@@ -59,7 +59,7 @@
     <string name="report_status_open">Avoin</string>
     <string name="report_status_completed">Suljettu, valmis</string>
     <string name="report_status_not_planned">Suljettu, ei suunniteltu</string>
-    <string name="report_status_duplicate">Suljettu, kopio</string>
+    <string name="report_status_duplicate">Suljettu, kaksoiskappale</string>
     <string name="report_status_unknown">Poistettu</string>
     <string name="title_report_status">Tila</string>
     <string name="title_report_your_report">Palautteesi</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Poista</string>
     <string name="report_missing">Tämä palaute ei ole enää postilaatikossa.</string>
     <string name="notification_channel_problem_reports">Palautevastaukset</string>
-    <string name="report_notification_reply">Vastaa numeroon <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Vastaus: <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

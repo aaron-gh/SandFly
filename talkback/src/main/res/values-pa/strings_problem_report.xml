@@ -50,13 +50,13 @@
     <string name="report_just_now">ਹੁਣੇ ਹੀ</string>
     <string name="report_untitled">ਬਿਨਾਂ ਸਿਰਲੇਖ ਵਾਲਾ</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ਬਦਲਿਆ ਗਿਆ</string>
-    <string name="report_sent_at">ਭੇਜਿਆ <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ਭੇਜਿਆ</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ਨਵਾਂ ਜਵਾਬ</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ਨਵੇਂ ਜਵਾਬ</item>
     </plurals>
     <string name="report_status_changed">ਸਥਿਤੀ ਬਦਲ ਗਈ</string>
-    <string name="report_status_open">ਖੁੱਲ੍ਹਾ ਮੁੱਦਾ</string>
+    <string name="report_status_open">ਖੁੱਲ੍ਹਾ</string>
     <string name="report_status_completed">ਬੰਦ, ਪੂਰਾ ਹੋਇਆ</string>
     <string name="report_status_not_planned">ਬੰਦ, ਯੋਜਨਾਬੱਧ ਨਹੀਂ</string>
     <string name="report_status_duplicate">ਬੰਦ, ਡੁਪਲੀਕੇਟ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ਮਿਟਾਓ</string>
     <string name="report_missing">ਇਹ ਫੀਡਬੈਕ ਹੁਣ ਇਨਬਾਕਸ ਵਿੱਚ ਨਹੀਂ ਹੈ।</string>
     <string name="notification_channel_problem_reports">ਫੀਡਬੈਕ ਜਵਾਬ</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ਨੂੰ ਜਵਾਬ ਦਿਓ</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ਦਾ ਜਵਾਬ</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

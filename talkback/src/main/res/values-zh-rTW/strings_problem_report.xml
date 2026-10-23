@@ -50,13 +50,13 @@
     <string name="report_just_now">剛才</string>
     <string name="report_untitled">無題</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g>變更</string>
-    <string name="report_sent_at">已發送<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g>發送</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 新回覆</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 新回覆</item>
     </plurals>
     <string name="report_status_changed">狀態改變</string>
-    <string name="report_status_open">開放問題</string>
+    <string name="report_status_open">未關閉</string>
     <string name="report_status_completed">已關閉、已完成</string>
     <string name="report_status_not_planned">已關閉，未計劃</string>
     <string name="report_status_duplicate">已關閉、重複</string>
@@ -64,8 +64,8 @@
     <string name="title_report_status">狀態</string>
     <string name="title_report_your_report">您的回饋</string>
     <string name="title_report_messages">留言</string>
-    <string name="report_message_from_developer">開發商<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">你<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_developer">開發者，<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">你，<xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">回覆</string>
     <string name="title_report_reply_text">您的回覆</string>
     <string name="title_report_send_reply">發送回覆</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">刪除</string>
     <string name="report_missing">此回饋不再出現在收件匣中。</string>
     <string name="notification_channel_problem_reports">意見回覆</string>
-    <string name="report_notification_reply">回覆<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">對<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>的回覆</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

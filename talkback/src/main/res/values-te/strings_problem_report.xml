@@ -48,15 +48,15 @@
     <string name="report_inbox_empty">అభిప్రాయం పంపబడలేదు</string>
     <string name="report_drafts_empty">చిత్తుప్రతులు లేవు</string>
     <string name="report_just_now">ఇప్పుడే</string>
-    <string name="report_untitled">శీర్షిక లేని</string>
+    <string name="report_untitled">శీర్షిక లేదు</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> మార్చబడింది</string>
-    <string name="report_sent_at">పంపబడింది <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> పంపబడింది</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> కొత్త ప్రత్యుత్తరం</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> కొత్త ప్రత్యుత్తరాలు</item>
     </plurals>
     <string name="report_status_changed">స్థితి మారింది</string>
-    <string name="report_status_open">సమస్యను తెరవండి</string>
+    <string name="report_status_open">తెరిచి ఉంది</string>
     <string name="report_status_completed">మూసివేయబడింది, పూర్తయింది</string>
     <string name="report_status_not_planned">మూసివేయబడింది, ప్రణాళిక లేదు</string>
     <string name="report_status_duplicate">మూసివేయబడింది, నకిలీ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">తొలగించండి</string>
     <string name="report_missing">ఈ అభిప్రాయం ఇప్పుడు ఇన్‌బాక్స్‌లో ఉండదు.</string>
     <string name="notification_channel_problem_reports">ఫీడ్‌బ్యాక్ ప్రత్యుత్తరాలు</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>కి ప్రత్యుత్తరం ఇవ్వండి</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>కి ప్రత్యుత్తరం</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

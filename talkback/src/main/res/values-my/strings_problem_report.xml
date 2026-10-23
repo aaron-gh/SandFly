@@ -45,27 +45,27 @@
     <string name="title_report_new">အကြံပြုချက် ပို့ရန်</string>
     <string name="title_report_inbox">ဝင်စာ</string>
     <string name="title_report_drafts">ကြမ်းတယ်</string>
-    <string name="report_inbox_empty">တုံ့ပြန်ချက်မပို့ပါ</string>
+    <string name="report_inbox_empty">ပို့ထားသော တုံ့ပြန်ချက် မရှိပါ</string>
     <string name="report_drafts_empty">မူကြမ်းမရှိပါ</string>
     <string name="report_just_now">အခုပဲ</string>
     <string name="report_untitled">ခေါင်းစဉ်မဲ့</string>
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ပြောင်းထားသည်</string>
-    <string name="report_sent_at">ပို့လိုက်ပါတယ် <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ပို့ထားသည်</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> အကြောင်းပြန်ချက်အသစ်</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ပြန်စာအသစ်များ</item>
     </plurals>
-    <string name="report_status_changed">အခြေအနေပြောင်းသွားတယ်</string>
-    <string name="report_status_open">အဖွင့်ကိစ္စ</string>
-    <string name="report_status_completed">ပိတ်၊ ပြီးပြီ</string>
-    <string name="report_status_not_planned">မစီစဉ်ထားဘဲ ပိတ်ထားသည်</string>
-    <string name="report_status_duplicate">ပိတ်သည်၊ ပွားသည်</string>
+    <string name="report_status_changed">အခြေအနေ ပြောင်းထားသည်</string>
+    <string name="report_status_open">ဖွင့်ထားသည်</string>
+    <string name="report_status_completed">ပိတ်ထားသည်၊ ပြီးဆုံး</string>
+    <string name="report_status_not_planned">ပိတ်ထားသည်၊ စီစဉ်ထားခြင်းမရှိ</string>
+    <string name="report_status_duplicate">ပိတ်ထားသည်၊ ထပ်နေသည်</string>
     <string name="report_status_unknown">ဖယ်ရှားခဲ့သည်</string>
     <string name="title_report_status">အဆင့်အတန်း</string>
     <string name="title_report_your_report">သင်၏တုံ့ပြန်ချက်</string>
     <string name="title_report_messages">စာတို</string>
     <string name="report_message_from_developer">ပြုစုသူ၊ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">မင်း <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">သင် <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">အကြောင်းပြန်တယ်</string>
     <string name="title_report_reply_text">သင့်အဖြေ</string>
     <string name="title_report_send_reply">စာပြန်ပို့ပါ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ဖျက်ပါ</string>
     <string name="report_missing">ဤအကြံပြုချက်သည် ဝင်စာများတွင် မရှိတော့ပါ။</string>
     <string name="notification_channel_problem_reports">တုံ့ပြန်ချက်များအတွက် အကြောင်းပြန်ချက်များ</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> အကြောင်းပြန်ရန်</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> အတွက် အကြောင်းပြန်ချက်</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

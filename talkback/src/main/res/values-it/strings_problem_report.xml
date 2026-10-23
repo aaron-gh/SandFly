@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Bozze</string>
     <string name="report_inbox_empty">Nessun feedback inviato</string>
     <string name="report_drafts_empty">Nessuna bozza</string>
-    <string name="report_just_now">proprio adesso</string>
+    <string name="report_just_now">poco fa</string>
     <string name="report_untitled">Senza titolo</string>
     <string name="report_draft_summary">Modificato <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">inviato <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nuove risposte</item>
     </plurals>
     <string name="report_status_changed">lo stato è cambiato</string>
-    <string name="report_status_open">Problema aperto</string>
+    <string name="report_status_open">Aperto</string>
     <string name="report_status_completed">Chiuso, completato</string>
     <string name="report_status_not_planned">Chiuso, non pianificato</string>
     <string name="report_status_duplicate">Chiuso, duplicato</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Elimina</string>
     <string name="report_missing">Questo feedback non è più nella posta in arrivo.</string>
     <string name="notification_channel_problem_reports">Risposte al feedback</string>
-    <string name="report_notification_reply">Rispondi a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Risposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>
