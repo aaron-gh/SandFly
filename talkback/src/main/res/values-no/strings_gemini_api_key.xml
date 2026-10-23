@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API-nøkkel</string>
+    <string name="summary_pref_gemini_api_key_built_in">Bruker nøkkelen innebygd i denne appen</string>
+    <string name="gemini_api_key_dialog_message">Få en gratis API-nøkkel fra Google AI Studio, på aistudio.google.com/apikey, og lim den inn her. For å fjerne nøkkelen, tøm feltet og lagre.\n\nBilder og skjermbilder som du beskriver sendes til Google. På gratisnivået kan Google bruke dem til å forbedre produktene sine.</string>
+    <string name="gemini_api_key_hint">API-nøkkel</string>
+    <string name="gemini_api_key_save">Lagre</string>
+    <string name="gemini_api_key_get">Få en nøkkel</string>
+    <string name="title_pref_gemini_model">Gemini modell</string>
+    <string name="gemini_model_automatic">Automatisk</string>
+    <string name="summary_pref_gemini_model_automatic">Automatisk: Gemini Flash, deretter Flash-Lite når Flash er opptatt</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, deretter Flash-Lite når den er opptatt</string>
+    <string name="gemini_model_loading">Henter modellene...</string>
+    <string name="gemini_model_list_failed">Kunne ikke hente modellene: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Angi en Gemini API-nøkkel først</string>
+    <string name="gemini_api_terms_link">Gemini API-tilleggsvilkår for bruk</string>
+    <string name="ai_service_address_hint">Adresse, for eksempel https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Modell</string>
+    <string name="ai_service_address_invalid">Adressen må begynne med https://. Ingenting ble lagret.</string>
+    <string name="dialog_message_ai_service_consent">Bilder og skjermbilder sendes til <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> for å bli beskrevet, noe som tar flere sekunder. Dets egne vilkår og personvernregler gjelder. Generativ AI er eksperimentell, så den vil gjøre feil.</string>
+    <string name="ai_service_error_api_key">AI-tjenesten godtok ikke API-nøkkelen. Sjekk innstillingene i Automatiske beskrivelser.</string>
+    <string name="ai_service_error_quota">Bruksgrensen for AI-tjenesten er nådd. Prøv igjen senere.</string>
+    <string name="ai_service_error_busy">AI-tjenesten er opptatt akkurat nå. Prøv igjen om et øyeblikk.</string>
+    <string name="ai_service_error_timeout">AI-tjenesten tok for lang tid å svare. Prøv igjen.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Ingen</string>
+    <string name="ai_service_not_set_up">Ingen AI-tjeneste er i bruk. Sett opp en eller velg en i innstillingene for Automatiske beskrivelser.</string>
+    <string name="ai_provider_none_set_up">Ingen AI-tjeneste er satt opp. Sett opp en i innstillingene nedenfor.</string>
+    <string name="ai_provider_other">Annen tjeneste</string>
+    <string name="title_pref_category_ai_services">AI-tjenester</string>
+    <string name="title_pref_ai_provider">AI-tjeneste</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> innstillinger</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ikke satt opp</string>
+    <string name="ai_provider_in_use">I bruk</string>
+    <string name="ai_provider_not_set_up">Ikke satt opp</string>
+    <string name="ai_provider_not_ready">Velg en modell først</string>
+    <string name="ai_provider_address">Adresse</string>
+    <string name="ai_provider_address_message">Adressen til en tjeneste med en OpenAI-kompatibel chat-API og bildeinndata, for eksempel https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Ikke satt</string>
+    <string name="ai_provider_set">Konfigurert</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkel</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
+    <string name="ai_provider_choose_model">Ikke valgt</string>
+    <string name="ai_provider_key_message">Lim inn <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkelen. For å fjerne det, tøm feltet og lagre. Bilder og skjermer som du beskriver sendes til <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Still inn <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøkkelen først</string>
+    <string name="ai_provider_needs_address">Angi adressen først</string>
+    <string name="ai_provider_enter_model">Skriv inn et modellnavn</string>
+</resources>
