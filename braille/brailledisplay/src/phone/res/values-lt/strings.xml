@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Aparatinė Brailio rašto klaviatūra</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">„TalkBack“ Brailio rašmenų klaviatūra nepasiekiama</string>
-  <string name="bd_ime_disabled_dialog_title">„TalkBack“ Brailio rašmenų klaviatūros įjungimas</string>
+  <string name="bd_ime_unavailable_activity_name">„SandFly“ Brailio rašmenų klaviatūra nepasiekiama</string>
+  <string name="bd_ime_disabled_dialog_title">„SandFly“ Brailio rašmenų klaviatūros įjungimas</string>
   <string name="bd_ime_disabled_dialog_message">Jei norite vesti tekstą naudodami Brailio rašmenų ekraną, įjunkite jį įvesties nustatymuose</string>
   <string name="bd_ime_disabled_dialog_title_positive">Įvesties nustatymai</string>
   <string name="bd_ime_not_default_dialog_title">Įvesties metodo perjungimas</string>
-  <string name="bd_ime_not_default_dialog_message">Toliau veskite tekstą nustatę „TalkBack“ Brailio rašmenų klaviatūrą kaip įvesties metodą</string>
+  <string name="bd_ime_not_default_dialog_message">Toliau veskite tekstą nustatę „SandFly“ Brailio rašmenų klaviatūrą kaip įvesties metodą</string>
   <string name="bd_ime_not_default_dialog_positive">Perjungti įvestį</string>
   <string name="type_unlabeled">Nepažymėta</string>
   <string name="type_unlabeled_edittext">Etikete nepažymėtas redagavimo laukelis</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Stumti kairėn</string>
   <string name="overlay_pan_right_button">Stumti dešinėn</string>
   <string name="bd_preferences_title">Brailio rašmenų ekranas</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Jei norite naudoti Brailio rašmenų ekraną, pirmiausia įjunkite „TalkBack“</string>
-  <string name="bd_preferences_banner_talkback_off_button">Eiti į „TalkBack“</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Jei norite naudoti Brailio rašmenų ekraną, pirmiausia įjunkite „SandFly“</string>
+  <string name="bd_preferences_banner_talkback_off_button">Eiti į „SandFly“</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Jei norite naudoti Brailio rašmenų ekraną, pirmiausia įjunkite „Bluetooth“</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Įjungti „Bluetooth“</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Norint naudoti Brailio rašmenų ekraną, programai „%s“ reikalinga prieiga prie įrenginių netoliese</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Jei norite naudoti naršymo režimą, turėsite perjungti iš numatytosios klavišų schemos į patobulintą. Šiuo pakeitimu bus atnaujintos kai kurios Brailio rašmenų ekrano komandos</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Nustatymai</string>
   <string name="bd_command_change_dialog_title">Kai kurios komandos atnaujintos</string>
-  <string name="bd_command_change_dialog_message">Toliau nurodytos Brailio rašmenų ekrano komandos buvo atnaujintos šioje „TalkBack“ versijoje.\n\n• Ankstesnis elementas: paspauskite taškus Nr. 1, 7\n\n• Kitas elementas: paspauskite taškus Nr. 4, 8\n\n• Ankstesnis skaitymo valdiklis: paspauskite taškus Nr. 2, 3, 7, 8\n\n• Kitas skaitymo valdiklis: paspauskite taškus Nr. 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Toliau nurodytos Brailio rašmenų ekrano komandos buvo atnaujintos šioje „SandFly“ versijoje.\n\n• Ankstesnis elementas: paspauskite taškus Nr. 1, 7\n\n• Kitas elementas: paspauskite taškus Nr. 4, 8\n\n• Ankstesnis skaitymo valdiklis: paspauskite taškus Nr. 2, 3, 7, 8\n\n• Kitas skaitymo valdiklis: paspauskite taškus Nr. 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Sutraukta Brailio rašmenų forma</string>
   <string name="bd_preference_braille_uncontracted">Nesutraukta Brailio rašmenų forma</string>
   <string name="bd_braille_grade_tips">Jei norite sparčiai perjungti sutrauktą ir nesutrauktą formas naudodami Brailio rašmenų ekraną, paspauskite tarpo klavišą ir 1, 2, 4, 5 taškus.\n\nŠi komanda veikia, jei naudojate kalbą su abiem Brailio rašto laipsniais.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Perėjimas nuo vieno elemento prie kito</string>
   <string name="bd_commands_bindings_category_system_actions_title">Sistemos veiksmai</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Atgal, pagrindinis puslapis, pranešimai ir kt.</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">„TalkBack“ funkcijos</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">„TalkBack“ meniu ir nustatymai</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">„SandFly“ funkcijos</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly meniu ir nustatymai</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Brailio rašto nustatymai</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Brailio rašto kalba ir nustatymai</string>
   <string name="bd_commands_bindings_category_text_editing_title">Teksto redagavimas</string>
@@ -223,10 +223,10 @@
   <string name="bd_cmd_global_all_apps">Atidaryti visas programas</string>
   <string name="bd_cmd_toggle_screen_search">Atidaryti paiešką ekrane</string>
   <string name="bd_cmd_edit_custom_label">Redaguoti tinkintą etiketę</string>
-  <string name="bd_cmd_open_talkback_menu">Atidaryti „TalkBack“ meniu</string>
-  <string name="bd_cmd_toggle_voice_feedback">Įjungti arba išjungti „TalkBack“ kalbą</string>
+  <string name="bd_cmd_open_talkback_menu">Atidaryti „SandFly“ meniu</string>
+  <string name="bd_cmd_toggle_voice_feedback">Įjungti arba išjungti „SandFly“ kalbą</string>
   <string name="bd_cmd_read_stop">Nustoti skaityti</string>
-  <string name="bd_cmd_talkback_settings">Atidaryti „TalkBack“ nustatymus</string>
+  <string name="bd_cmd_talkback_settings">Atidaryti „SandFly“ nustatymus</string>
   <string name="bd_cmd_switch_to_next_input_language">Perjungti į kitą teksto vedimo kalbą</string>
   <string name="bd_cmd_switch_to_next_output_language">Perjungti į kitą skaitymo kalbą</string>
   <string name="bd_cmd_toggle_contracted_mode">Perjungti iš sutraukto į nesutrauktą ir atvirkščiai</string>
@@ -299,15 +299,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Sparčiai naršykite tinklalapius: naudodami komandą įjunkite naršymo režimą, tada įveskite toliau nurodytus raidžių arba skaičių šaukinius.\n\nŠiuos šaukinius taip pat galima naudoti neįjungus naršymo režimo, bet prie komandų „kitas“ turėsite pridėti 8 tašką</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Lentelių naršymas</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Išjungti Brailio rašmenų ekrano nustatymą?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Bet kada galite jį vėl įjungti „TalkBack“ nustatymuose</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Bet kada galite jį vėl įjungti „SandFly“ nustatymuose</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Išjungti</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Kai kurios komandos nepasiekiamos</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Vedant tekstą ar redaguojant naršymas, Brailio rašto nustatymai ir kai kurios „TalkBack“ funkcijos nepasiekiami.\n\nJei norite naudoti šias komandas, pirmiausia uždarykite klaviatūrą.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Vedant tekstą ar redaguojant naršymas, Brailio rašto nustatymai ir kai kurios „SandFly“ funkcijos nepasiekiami.\n\nJei norite naudoti šias komandas, pirmiausia uždarykite klaviatūrą.</string>
   <string name="bd_caption_tutorial_dialog_title">Subtitrai Brailio rašmenų ekrane</string>
   <string name="bd_caption_tutorial_dialog_message">Jei norite rodyti arba slėpti šio vaizdo įrašo subtitrus, paspauskite tarpo klavišą ir 1, 4, 7, 8 taškus.\n\nJei norite automatiškai rodyti palaikomos medijos subtitrus, nustatymuose įjunkite parinktį „Rodyti subtitrus Brailio rašmenų ekrane“.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Visada rodyti šį pranešimą, kai subtitrai pasiekiami</string>
   <string name="bd_usb_connect_dialog_title">Brailio rašmenų ekranas prijungtas prie USB prievado</string>
-  <string name="bd_usb_connect_dialog_message">Įrenginio „%s“ akumuliatorius naudojamas Brailio rašmenų ekranui įkrauti.\n\nJei reikia perjungti į „Bluetooth“, atjunkite USB ar USB šakotuvą ir eikite į „TalkBack“ nustatymus &gt; „Brailio rašmenų ekranas“.</string>
+  <string name="bd_usb_connect_dialog_message">Įrenginio „%s“ akumuliatorius naudojamas Brailio rašmenų ekranui įkrauti.\n\nJei reikia perjungti į „Bluetooth“, atjunkite USB ar USB šakotuvą ir eikite į „SandFly“ nustatymus &gt; „Brailio rašmenų ekranas“.</string>
   <string name="bd_device">telefonas</string>
   <string name="bd_battery_low_dialog_title">%s senka akumuliatorius</string>
   <string name="bd_battery_low_dialog_message">Įrenginio „%s“ akumuliatorius naudojamas Brailio rašmenų ekranui įkrauti.\n\nSiekdami tausoti energiją, atlikite toliau nurodytus veiksmus.\n\n
@@ -319,7 +319,18 @@
   <string name="popup_message_history_clear">Išvalyti viską</string>
   <string name="popup_message_history_empty">Tuščia</string>
   <string name="popup_message_history_consent_dialog_title">Įjungti įrenginio pranešimų istoriją?</string>
-  <string name="popup_message_history_consent_dialog_msg">Kai kurie pranešimai, pvz., įspėjimai ir signalai, bus saugomi „TalkBack“. Galite bet kada pakeisti šį nustatymą.</string>
+  <string name="popup_message_history_consent_dialog_msg">Kai kurie pranešimai, pvz., įspėjimai ir signalai, bus saugomi „SandFly“. Galite bet kada pakeisti šį nustatymą.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Įjungti</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ne, ačiū</string>
+    <string name="external_display_channel">Brailio rašto ekranai iš kitų programų</string>
+    <string name="external_display_ask_title">Leisti <xliff:g id="app" example="Notetaker">%1$s</xliff:g> būti Brailio rašto ekranu SandFly?</string>
+    <string name="external_display_ask_text">SandFly jo nenaudos, kol to neleisite.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> galės skaityti viską, kas SandFly rodoma Brailio raštu. Tai gali būti bet kas ekrane, įskaitant pranešimus ir tai, ką įvedate. Jis taip pat galės valdyti įrenginį taip, kaip galite naudodami Brailio rašto ekraną: įveskite, atidarykite programas ir paleiskite bet kurią SandFly komandą. Leiskite tik tas programas, kuriomis pasitikite.</string>
+    <string name="external_display_allow">Leisti</string>
+    <string name="external_display_deny">Neleisti</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> yra jūsų Brailio rašto ekranas</string>
+    <string name="external_display_in_use_text">Kol SandFly jį naudoja, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> gali skaityti ekraną ir valdyti įrenginį.</string>
+    <string name="external_displays_title">Rodomi iš kitų programų</string>
+    <string name="external_displays_summary">Leidžiamos programos gali būti Brailio rašto ekranai, skirti SandFly. Programėlė, kuri yra Brailio rašto ekranas, gali skaityti ekraną ir valdyti įrenginį.</string>
+    <string name="external_displays_none">Jokia programa negali būti Brailio rašto ekranas.</string>
 </resources>

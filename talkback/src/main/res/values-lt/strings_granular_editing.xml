@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granuliuotas redagavimas</string>
+    <string name="granular_editing_split_by">Padalinta pagal: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Padalinta pagal</string>
+    <string name="granular_editing_characters">Simboliai</string>
+    <string name="granular_editing_words">Žodžiai</string>
+    <string name="granular_editing_sentences">Sakiniai</string>
+    <string name="granular_editing_lines">Eilutės</string>
+    <string name="granular_editing_paragraphs">Paragrafai</string>
+    <string name="granular_editing_space">Tarpo klavišas</string>
+    <string name="granular_editing_new_line">Nauja eilutė</string>
+    <string name="granular_editing_tab">Skirtuko simbolis</string>
+    <string name="granular_editing_empty">Jokio teksto. Naudokite Pridėti tekstą pabaigoje, skiltyje Daugiau.</string>
+    <string name="granular_editing_edit">Redaguoti</string>
+    <string name="granular_editing_insert_before">Įdėkite prieš</string>
+    <string name="granular_editing_insert_after">Įdėkite po</string>
+    <string name="granular_editing_delete">Ištrinti</string>
+    <string name="granular_editing_select">Pasirinkti</string>
+    <string name="granular_editing_unselect">Atšaukti pasirinkimą</string>
+    <string name="granular_editing_selected">Pasirinkta</string>
+    <string name="granular_editing_save">Išsaugoti</string>
+    <string name="granular_editing_more">Daugiau</string>
+    <string name="granular_editing_undo">Anuliuoti</string>
+    <string name="granular_editing_redo">Pakartokite paskutinį anuliuotą redagavimą</string>
+    <string name="granular_editing_find">Ieškoti</string>
+    <string name="granular_editing_find_next">Raskite kitą</string>
+    <string name="granular_editing_replace">Pakeiskite</string>
+    <string name="granular_editing_replace_with">Pakeiskite į</string>
+    <string name="granular_editing_replace_all">Pakeiskite visus</string>
+    <string name="granular_editing_add_at_end">Pabaigoje pridėkite tekstą</string>
+    <string name="granular_editing_clear_selection">Panaikinkite viso teksto pasirinkimą</string>
+    <string name="granular_editing_cut_selected">Iškirpti pasirinktą tekstą</string>
+    <string name="granular_editing_delete_selected">Ištrinti pasirinktus</string>
+    <string name="granular_editing_copied">Nukopijuota</string>
+    <string name="granular_editing_deleted">Ištrinta</string>
+    <string name="granular_editing_not_found">Nerasta</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> pakeista</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Išsaugoti pakeitimus?</string>
+    <string name="granular_editing_copy_changes">Nukopijuoti pakeistą tekstą?</string>
+    <string name="granular_editing_discard">Išmesti</string>
+    <string name="granular_editing_keep_editing">Tęskite redagavimą</string>
+    <string name="granular_editing_not_saved">Neišsaugota: teksto lauko nebėra. Tekstas nukopijuotas.</string>
+    <string name="granular_editing_no_text">Nėra teksto, kurį būtų galima redaguoti</string>
+    <string name="granular_editing_password">Nepasiekiamas slaptažodžių laukuose</string>
+</resources>

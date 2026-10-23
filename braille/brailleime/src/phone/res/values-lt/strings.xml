@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">„TalkBack“ Brailio rašmenų klaviatūra</string>
+  <string name="braille_ime_service_name">„SandFly“ Brailio rašmenų klaviatūra</string>
   <string name="braille_ime_bd_mode_name">Brailio rašmenų ekrano įvestis</string>
   <string name="switch_to_tabletop_announcement">Gulsčiasis režimas. Padėkite įrenginį, kad įkrovimo prievadas būtų kairėje.</string>
   <string name="calibration_tip_announcement">Kad atnaujintumėte taškų padėtį, palieskite %d piršt.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Perjungta į nesutrauktą Brailio rašmenų formą</string>
   <string name="braille_ime_displayed_name">Brailio rašmenų klaviatūra</string>
   <string name="multiple_languages_braille_ime_displayed_name">Brailio rašmenų klaviatūra, %s</string>
-  <string name="input_view_caption">„TalkBack“ Brailio rašmenų klaviatūra – jei reikia pagalbos, apsilankykite adresu g.co/help/braille</string>
+  <string name="input_view_caption">„SandFly“ Brailio rašmenų klaviatūra – jei reikia pagalbos, apsilankykite adresu g.co/help/braille</string>
   <string name="perform_action_next">Kitas</string>
   <string name="perform_action_submitting">Pateikiamas tekstas</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Atnaujinama taškų padėtis. Pirmiausia įrašykime %s taškus.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Jei norite pakeisti kalbą, kai vedate tekstą Brailio rašto klaviatūra, perbraukite aukštyn trimis pirštais. Tada pasirinkite „perjungti į kitą kalbą“.</string>
   <string name="title_pref_accumulate_presses">Visų paspaustų taškų įtraukimas</string>
   <string name="summary_pref_accumulate_presses">Kiekvienas paspaustas taškas yra įvesties dalis, net jei jis atleidžiamas anksčiau nei kiti taškai</string>
-  <string name="title_pref_reverse_dots">Atvirkštiniai taškai</string>
-  <string name="summary_pref_reverse_dots">Sukeiskite taškų pozicijas, kad būtų sukeistos, pvz., 1 ir 4 taškų vietos</string>
+  <string name="title_pref_reverse_dots">Sukeiskite kairįjį ir dešinįjį taškus</string>
+  <string name="summary_pref_reverse_dots">1, 2 ir 3 taškai keičiasi vietomis su 4, 5 ir 6 taškais</string>
   <string name="bd_preference_braille_contracted">Sutraukta Brailio rašmenų forma</string>
   <string name="bd_preference_braille_uncontracted">Nesutraukta Brailio rašmenų forma</string>
   <string name="context_menu_title">Brailio rašmenų klaviatūros parinktys</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klaviatūra</string>
   <string name="not_enough_touch_points_dialog_title">Įrenginyje nepalaikoma Brailio rašmenų klaviatūra</string>
   <string name="not_enough_touch_points_dialog_message">Įrenginyje nepalaikoma pakankamai lietimo taškų. Jei reikia daugiau informacijos, susisiekite su įrenginio gamintoju.</string>
-  <string name="talkback_off_dialog_title">„TalkBack“ įjungimas norint naudoti Brailio rašmenų klaviatūrą</string>
+  <string name="talkback_off_dialog_title">„SandFly“ įjungimas norint naudoti Brailio rašmenų klaviatūrą</string>
   <string name="talkback_off_dialog_positive_button">Įjungti pritaikomumo nustatymuose</string>
-  <string name="talkback_suspend_dialog_title">„TalkBack“ atnaujinimas norint naudoti Brailio rašmenų klaviatūrą</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kai „TalkBack“ įjungta, galite paliesti ekraną, kad įvestumėte Brailio rašmenų simbolius.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Gesto keitimas įjungus „TalkBack“</string>
-  <string name="talkback_off_custom_gestures_dialog_message">„TalkBack“ išjungta. Įjunkite, kad galėtumėte keisti Brailio rašto klaviatūros gestus.</string>
+  <string name="talkback_suspend_dialog_title">„SandFly“ atnaujinimas norint naudoti Brailio rašmenų klaviatūrą</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kai „SandFly“ įjungta, galite paliesti ekraną, kad įvestumėte Brailio rašmenų simbolius.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Gesto keitimas įjungus „SandFly“</string>
+  <string name="talkback_off_custom_gestures_dialog_message">„SandFly“ išjungta. Įjunkite, kad galėtumėte keisti Brailio rašto klaviatūros gestus.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Eiti į nustatymus</string>
   <string name="reset_gestures_dialog_title">Visus gestus nustatyti iš naujo?</string>
   <string name="reset_gestures_dialog_message">Visi Brailio rašto klaviatūros gestai bus nustatyti į numatytuosius</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Nustatyti iš naujo į numatytuosius nustatymus</string>
   <string name="custom_gestures_dialog_remove_button">Pašalinti gestą</string>
   <string name="change_gestures_dialog_message_title">Kaip pakeisti gestą</string>
-  <string name="change_gestures_dialog_message">Kitame ekrane bus atidaryta Brailio rašto klaviatūra ir negalėsite naudoti „TalkBack“ gestų.\n\nKai bus atidaryta Brailio rašto klaviatūra, atlikite norimą naudoti gestą arba, jei norite uždaryti Brailio rašto klaviatūrą ir atšaukti gesto pakeitimą, dviem pirštais perbraukite žemyn.\n\nŽr. pasiekiamus gestus\n</string>
+  <string name="change_gestures_dialog_message">Kitame ekrane bus atidaryta Brailio rašto klaviatūra ir negalėsite naudoti „SandFly“ gestų.\n\nKai bus atidaryta Brailio rašto klaviatūra, atlikite norimą naudoti gestą arba, jei norite uždaryti Brailio rašto klaviatūrą ir atšaukti gesto pakeitimą, dviem pirštais perbraukite žemyn.\n\nŽr. pasiekiamus gestus\n</string>
   <string name="change_gestures_dialog_message_link">Žr. pasiekiamus gestus</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Neberodyti šio pranešimo</string>
   <string name="change_gestures_dialog_positive_button">Tęsti</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nenaudoti</string>
   <string name="next_keyboard">Kita klaviatūra</string>
   <string name="braille_tutorial_title">Brailio rašmenų klaviatūros mokymo programa</string>
-  <string name="tutorial_intro_description">Naudodami Brailio rašmenų klaviatūrą galite vesti 6 taškų Brailio rašmenis paliesdami ekraną.\n\nNaudojate „Unified English Braille“. Jei norite perjungti teksto vedimo kalbą, eikite į „TalkBack“ nustatymus.\n\nJei norite vesti Brailio rašmenis, turite skirtingomis padėtimis laikyti ir naudoti telefoną.</string>
+  <string name="tutorial_intro_description">Naudodami Brailio rašmenų klaviatūrą galite vesti 6 taškų Brailio rašmenis paliesdami ekraną.\n\nNaudojate „Unified English Braille“. Jei norite perjungti teksto vedimo kalbą, eikite į „SandFly“ nustatymus.\n\nJei norite vesti Brailio rašmenis, turite skirtingomis padėtimis laikyti ir naudoti telefoną.</string>
   <string name="next_step">Kitas</string>
   <string name="leave_keyboard">Išeiti iš Brailio rašmenų klaviatūros</string>
-  <string name="hold_six_fingers_description">Negalėsite naudoti įprastų „TalkBack“ gestų naudodami Brailio rašmenų klaviatūrą.\n\nJei norite pradėti, nustatykite šešių Brailio rašmenų taškų, naudojamų vedant tekstą, padėtį.</string>
-  <string name="rotate_orientation_description_1">Nuo dabar nebegalėsite naudoti įprastų „TalkBack“ gestų. „TalkBack“ nepasiekiama naudojant Brailio rašmenų klaviatūrą.</string>
+  <string name="hold_six_fingers_description">Negalėsite naudoti įprastų „SandFly“ gestų naudodami Brailio rašmenų klaviatūrą.\n\nJei norite pradėti, nustatykite šešių Brailio rašmenų taškų, naudojamų vedant tekstą, padėtį.</string>
+  <string name="rotate_orientation_description_1">Nuo dabar nebegalėsite naudoti įprastų „SandFly“ gestų. „SandFly“ nepasiekiama naudojant Brailio rašmenų klaviatūrą.</string>
   <string name="rotate_orientation_description_2">Jei norite pradėti, laikykite telefoną, kaip parodyta, ekraną nukreipę nuo savęs.</string>
   <string name="tap_to_continue">Tęskite dukart palietę bet kurioje vietoje</string>
   <string name="instruction_type_letter_a">Palietę 1 tašką kairės rankos smiliumi įvesite raidę A</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">PERKELTI ŽYMEKLĮ PIRMYN</string>
   <string name="result_swipe_down_2_fingers">SLĖPTI KLAVIATŪRĄ</string>
   <string name="result_swipe_down_3_fingers">KITA KLAVIATŪRA</string>
-  <string name="rotate_orientation_announcement">Nuo dabar nebegalėsite naudoti įprastų „TalkBack“ gestų. „TalkBack“ nepasiekiama naudojant Brailio rašmenų klaviatūrą.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Nuo dabar nebegalėsite naudoti įprastų „SandFly“ gestų. „SandFly“ nepasiekiama naudojant Brailio rašmenų klaviatūrą.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Pirmiausia pasukite telefoną, kad ekranas būtų nukreiptas nuo jūsų.\n\nTada pasukite telefoną horizontaliai į gulsčią padėtį. Rankomis turėtumėte laikyti už trumpesnių telefono kraštų. Dešiniąja ranka laikykite už krašto, kuriame yra USB prievadas. Tris vidurinius pirštus laikykite virš telefono, o mažyliu ir nykščiu prilaikykite telefoną.\n\nKai būsite pasiruošę, tęskite dukart palietę ekraną.\n\nJei norite išeiti iš Brailio rašmenų klaviatūros, trim pirštais perbraukite žemyn iki apačios. Bus vėl įjungta pradinė klaviatūra.</string>
   <string name="rotate_orientation_continue_announcement">Telefonas vertikalioje padėtyje. Jei norite tęsti, pasukite telefoną horizontaliai, kad ilgasis kraštas būtų nukreiptas žemyn. Tada nukreipkite ekraną nuo savęs. Kai būsite pasiruošę, tęskite palietę ekraną du kartus.</string>
   <string name="type_letter_a_announcement">Laikykite ekraną nukreiptą nuo savęs. Laikykite telefoną abiem rankomis už trumpesnių telefono kraštų, kad kiekvienos rankos viduriniais trim pirštais galėtumėte paliesti ekraną.\n\nKairės rankos smilius turėtų būti virš 1 taško. Dabar palieskite 1 tašką, kad įvestumėte raidę A.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Jei norite perjungti į kitą klaviatūrą, perbraukite žemyn trim pirštais. Išbandykite dabar.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Kita klaviatūra. Įprastai perjungiama kita klaviatūra. Šiuo metu vis tiek rodoma Brailio rašmenų klaviatūra, nes vis dar dalyvaujate mokymo programoje.</string>
   <string name="swipe_up_3_fingers_announcement">Taip pat galite vesti tekstą gulsčiuoju režimu padėję telefoną gulsčiai ant stalo. Jei norite užbaigti mokymo programą, perbraukite aukštyn trim pirštais ir suraskite mokymo programos užbaigimo parinktį</string>
-  <string name="open_context_menu_announcement">Parinkčių meniu atidarytas. Vėl apverskite telefoną, kad jis būtų atsuktas į jus, ir laikykite įprastai. Dabar galite naudoti įprastus „TalkBack“ gestus naršydami. Perbraukę dešinėn matysite daugiau parinkčių.</string>
+  <string name="open_context_menu_announcement">Parinkčių meniu atidarytas. Vėl apverskite telefoną, kad jis būtų atsuktas į jus, ir laikykite įprastai. Dabar galite naudoti įprastus „SandFly“ gestus naršydami. Perbraukę dešinėn matysite daugiau parinkčių.</string>
   <string name="hold_six_fingers_announcement">%s\nPadėkite įrenginį gulsčiai ant stalo. Tada palieskite ir palaikykite ekraną trim viduriniais abiejų rankų pirštais tokioje padėtyje, kad būtų patogu vesti tekstą.</string>
   <string name="hold_six_fingers_inactive_announcement">Padėkite įrenginį gulsčiai ant stalo. Tada palieskite ir palaikykite ekraną trim viduriniais abiejų rankų pirštais tokioje padėtyje, kad būtų patogu vesti tekstą.</string>
   <string name="finish_tutorial_announcement">Rodoma Brailio rašmenų klaviatūra. Pasukite telefoną, kad ekranas būtų nukreiptas nuo jūsų. Pasukite telefoną horizontaliai į gulsčią padėtį. Tada pradėkite vesti tekstą.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Šis gestas naudojamas veiksmui „%1$s“ ir jo pakeisti negalima. Išbandykite kitą gestą. %2$s</string>
   <string name="custom_gesture_cannot_used">Šio gesto naudoti negalima</string>
   <string name="custom_gesture_no_gesture">Neatliktas joks gestas</string>
-  <string name="custom_gesture_try_another">Išbandykite kitą gestą. Jei norite peržiūrėti visų pasiekiamų gestų sąrašą, eikite į „TalkBack“ Brailio rašto klaviatūros pagalbos centrą. %s</string>
+  <string name="custom_gesture_try_another">Išbandykite kitą gestą. Jei norite peržiūrėti visų pasiekiamų gestų sąrašą, eikite į „SandFly“ Brailio rašto klaviatūros pagalbos centrą. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gestai nesutampa</string>
   <string name="custom_gesture_perform_again">Atlikite gestą, kurį norite naudoti dar kartą. %s</string>
+    <string name="tabletop_port_left_announcement">Stalo režimas, įkrovimo prievadas kairėje</string>
+    <string name="tabletop_port_right_announcement">Stalo režimas, įkrovimo prievadas dešinėje</string>
+    <string name="screen_away_port_right_announcement">Ekrano režimas, įkrovimo prievadas dešinėje</string>
+    <string name="screen_away_port_left_announcement">Ekrano režimas, įkrovimo prievadas kairėje</string>
+    <string name="screen_toward_announcement">Ekranas link jūsų</string>
+    <string name="screen_toward_port_left_announcement">Ekranas link jūsų, įkrovimo prievadas kairėje</string>
+    <string name="screen_toward_port_right_announcement">Ekranas link jūsų, įkrovimo prievadas dešinėje</string>
+    <string name="screen_toward_port_down_announcement">Ekranas į jus, įkrovimo prievadas nukreiptas žemyn</string>
+    <string name="screen_toward_port_up_announcement">Ekranas link jūsų, įkrovimo prievadas nukreiptas į viršų</string>
+    <string name="port_right_announcement">Įkrovimo prievadas dešinėje</string>
+    <string name="port_left_announcement">Įkrovimo prievadas kairėje</string>
+    <string name="tabletop_port_near_announcement">Stalo režimas, įkrovimo prievadas link jūsų</string>
+    <string name="tabletop_port_far_announcement">Stalo režimas, įkrovimo prievadas toliau nuo jūsų</string>
+    <string name="screen_away_port_down_announcement">Ekrano išjungimo režimas, įkrovimo prievadas nukreiptas žemyn</string>
+    <string name="screen_away_port_up_announcement">Ekrano išjungimo režimas, įkrovimo prievadas nukreiptas į viršų</string>
+    <string name="port_near_announcement">Įkrovimo prievadas link jūsų</string>
+    <string name="port_far_announcement">Įkrovimo prievadas toliau nuo jūsų</string>
+    <string name="port_down_announcement">Įkrovimo prievadas nukreiptas žemyn</string>
+    <string name="port_up_announcement">Įkrovimo prievadas nukreiptas į viršų</string>
+    <string name="orientation_locked_announcement">Orientacija užrakinta</string>
+    <string name="orientation_locked_port_announcement">Orientacija užrakinta. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientacija atrakinta</string>
+    <string name="switch_to_language_contracted_announcement">Perjungta į: %s, Sutraukta Brailio rašmenų forma</string>
+    <string name="switch_to_language_uncontracted_announcement">Perjungta į: %s, Nesutraukta Brailio rašmenų forma</string>
+    <string name="title_pref_flip_dots_vertically">Sukeiskite viršutinius ir apatinius taškus</string>
+    <string name="summary_pref_flip_dots_vertically">Taškas 1 keičiasi vietomis su 3 tašku, o taškas 4 su tašku 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Planšetinis kompiuteris buvo pakeltas veidu</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kai išjungtas, planšetinis kompiuteris arba išskleistas telefonas, pakeltas pakeltas, naudoja stalviršio išdėstymą, nukreiptą į jus</string>
+    <string name="title_pref_typing_sounds">Rašymo garsai</string>
+    <string name="summary_pref_typing_sounds">Paleisti klaviatūros paspaudimai, kai įvedate simbolį, tarpą, naują eilutę arba ištrinate</string>
+    <string name="skip_tutorial">Praleisti mokymo programą</string>
 </resources>
