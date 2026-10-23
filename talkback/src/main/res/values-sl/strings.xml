@@ -1431,7 +1431,7 @@
     <string name="summary_pref_speak_notifications">Preberite nova obvestila na glas, ko prispejo. Dohodni klici se vedno preberejo.</string>
     <string name="title_pref_notification_list">Uporabi seznam obvestil SandFly</string>
     <string name="title_pref_notification_parts">Podrobnosti obvestil</string>
-    <string name="title_pref_play_installer">Videti nameščen iz Google Play</string>
+    <string name="title_pref_play_installer">Prikaži kot nameščeno iz Google Play</string>
     <string name="summary_pref_play_installer">Povejte drugim aplikacijam, da je Google Play nameščen SandFly. Some apps, such as some banking apps, turn off accessibility services that were installed from anywhere else. Needs Shizuku, and changes only what apps are told about where SandFly came from.</string>
     <string name="summary_pref_play_installer_pending">Vklopljeno, vendar Google Play še ni zabeležen kot namestitveni program. SandFly nastavi, ko je na voljo Shizuku.</string>
     <string name="notification_part_title">Naslov</string>
@@ -1461,7 +1461,7 @@
         <item quantity="few">%d obvestila</item>
         <item quantity="other">%d obvestil</item>
     </plurals>
-    <string name="title_pref_quick_settings">Uporabite hitre nastavitve SandFly</string>
+    <string name="title_pref_quick_settings">Uporabi hitre nastavitve SandFly</string>
     <string name="title_pref_quick_settings_items">Plošča za hitre nastavitve</string>
     <string name="quick_settings_title">Hitre nastavitve</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1721,11 +1721,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Odmev rokopisne tipkovnice</string>
     <string name="title_keyboard_echo_braille_display">Odmev Braillovega zaslona</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Prekinjajte govor med tipkanjem</string>
+    <string name="title_pref_interrupt_typing">Prekini govor med tipkanjem</string>
     <string name="pref_interrupt_typing_entry_always">Vedno</string>
     <string name="pref_interrupt_typing_entry_edit_fields">V urejevalnih poljih</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Ob odmevu tipkovnice</string>
-    <string name="title_pref_interrupt_enter">Prekinite govor na Enter</string>
+    <string name="title_pref_interrupt_enter">Prekini govor ob tipki Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Ime, stanje, vrsta</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Vrsta, stanje, ime</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Stanje, vrsta, ime</string>

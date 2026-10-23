@@ -1379,7 +1379,7 @@
     <string name="title_pref_touch_activation">Хүрэлт ба идэвхжүүлэлт</string>
     <string name="title_pref_navigation">Навигац</string>
     <string name="title_pref_category_more">Бусад</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch дохиог нөөцлөх</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch-д зангаа нөөцлөх</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly хоёр хуруугаараа нэг болон давхар товшилтыг зогсоосноор Samsung Vibration Watch ашиглах боломжтой. Цагныхаа хүртээмжийн тохиргоонд Vibration Watch-г идэвхжүүлнэ үү.</string>
     <string name="shortcut_reserved_for_vibration_watch">Нарийвчилсан тохиргоонд Vibration Watch-д нөөцөлсөн</string>
     <string name="title_pref_speakerphone_away_from_ear">Чихнээсээ хол байх үед чанга яригч</string>
@@ -1429,7 +1429,7 @@
     <string name="summary_pref_speak_volume_changes">Дууны түвшний товчлуурыг дарсны дараа шинэ дууг хэлнэ үү</string>
     <string name="title_pref_speak_notifications">Мэдэгдлийг уншиж өгөх</string>
     <string name="summary_pref_speak_notifications">Шинэ мэдэгдлүүдийг ирэхэд чангаар уншаарай. Ирж буй дуудлагыг байнга уншдаг.</string>
-    <string name="title_pref_notification_list">SandFly-н мэдэгдлийн жагсаалтыг ашиглана уу</string>
+    <string name="title_pref_notification_list">SandFly-н мэдэгдлийн жагсаалтыг ашиглах</string>
     <string name="title_pref_notification_parts">Мэдэгдлийн дэлгэрэнгүй</string>
     <string name="title_pref_play_installer">Google Play-ээс суулгасан харагдана</string>
     <string name="summary_pref_play_installer">Google Play-г суулгасан SandFly гэж бусад апп-д хэлээрэй. Зарим банкны програмууд гэх мэт зарим програмууд өөр хаанаас ч суулгасан хандалтын үйлчилгээг унтраадаг. Shizuku хэрэгтэй бөгөөд зөвхөн SandFly хаанаас ирсэн тухай ямар аппликешнүүдэд заасныг өөрчилнө.</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d мэдэгдэл</item>
         <item quantity="other">%d мэдэгдэл</item>
     </plurals>
-    <string name="title_pref_quick_settings">SandFly-н хурдан тохиргоог ашиглана уу</string>
+    <string name="title_pref_quick_settings">SandFly-н хурдан тохиргоог ашиглах</string>
     <string name="title_pref_quick_settings_items">Шуурхай тохиргооны самбар</string>
     <string name="quick_settings_title">Шуурхай тохиргоо</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1695,7 +1695,7 @@
     <string name="title_pref_selector_links_controls_web_only">Зөвхөн вэб контент дахь холбоосууд болон хяналтууд</string>
     <string name="title_pref_selector_auto_switch">Унших хяналтыг автоматаар өөрчлөх</string>
     <string name="title_pref_touch_stops_speech">Дэлгэцэнд хүрэх үед яриагаа зогсоо</string>
-    <string name="title_pref_focus_new_windows">Фокусыг шинэ цонх руу шилжүүлээрэй</string>
+    <string name="title_pref_focus_new_windows">Фокусыг шинэ цонх руу шилжүүлэх</string>
     <string name="title_pref_volume_keys_adjust_sliders">Дууны товчлуурууд нь гулсагчийг тохируулдаг</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Гулсагч нь фокустай үед дууны хэмжээг дээшлүүлж доошлуулснаар дууны түвшний оронд түүний утгыг өөрчилнө</string>
     <string name="title_pref_volume_keys_move_cursor">Дууны түвшний товчлуурууд курсорыг хөдөлгөдөг</string>
@@ -1713,11 +1713,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Гар бичмэлийн гарны цуурай</string>
     <string name="title_keyboard_echo_braille_display">Брайл дэлгэцийн цуурай</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Бичиж байхдаа яриагаа тасал</string>
+    <string name="title_pref_interrupt_typing">Бичих үед яриаг таслах</string>
     <string name="pref_interrupt_typing_entry_always">Үргэлж</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Засварлах талбарт</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Гарын цуурай үед</string>
-    <string name="title_pref_interrupt_enter">Enter дээрх яриаг таслах</string>
+    <string name="title_pref_interrupt_enter">Enter дарахад яриаг таслах</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Нэр, төлөв, төрөл</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Төрөл, төлөв, нэр</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Төлөв, төрөл, нэр</string>

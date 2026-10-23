@@ -1508,9 +1508,9 @@
     <string name="title_pref_navigation">Навигация</string>
     <string name="action_copy_command">Копировать команду</string>
     <string name="command_copied">Команда скопирована</string>
-    <string name="title_pref_notification_list">Используйте список уведомлений SandFly</string>
+    <string name="title_pref_notification_list">Использовать список уведомлений SandFly</string>
     <string name="title_pref_notification_parts">Детали уведомления</string>
-    <string name="title_pref_play_installer">Появляются установленными с Google Играть</string>
+    <string name="title_pref_play_installer">Показывать как установленный из Google Play</string>
     <string name="summary_pref_play_installer">Сообщите другим приложениям, что Google Play установлен SandFly. Некоторые приложения, например некоторые банковские приложения, отключают службы специальных возможностей, которые были установлены откуда-либо еще. Требуется Shizuku, и изменяется только то, что приложениям сообщается о том, откуда взялся SandFly.</string>
     <string name="summary_pref_play_installer_pending">Включено, но Google Play еще не записан как установщик. SandFly устанавливает его, когда Shizuku доступен.</string>
     <string name="notification_part_title">Название</string>
@@ -1540,7 +1540,7 @@
         <item quantity="many">%d уведомлений</item>
         <item quantity="other">%d уведомления</item>
     </plurals>
-    <string name="title_pref_quick_settings">Используйте быстрые настройки SandFly</string>
+    <string name="title_pref_quick_settings">Использовать быстрые настройки SandFly</string>
     <string name="title_pref_quick_settings_items">Панель быстрых настроек</string>
     <string name="quick_settings_title">Быстрые настройки</string>
     <string name="quick_settings_wifi">Wi-Fi</string>

@@ -1648,12 +1648,12 @@
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Långt svep åt vänster från höger kant, nedre halvan</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Håll fingret för att välja valfri tangent och lyft sedan. Dubbeltryck för Enter, Klar eller Skicka.</string>
     <string name="value_type_confirmation_tap_to_type">Tryck på valfri tangent för att skriva den, eller håll fingret för att välja valfri tangent och lyft sedan</string>
-    <string name="title_pref_multi_tap_timeout">Tid mellan ett fingertryck</string>
+    <string name="title_pref_multi_tap_timeout">Tid mellan tryck med ett finger</string>
     <string name="value_multi_tap_timeout_100ms">0,1 sekunder</string>
     <string name="value_multi_tap_timeout_150ms">0,15 sekunder</string>
     <string name="value_multi_tap_timeout_200ms">0,2 sekunder</string>
     <string name="value_multi_tap_timeout_250ms">0,25 sekunder (standard)</string>
-    <string name="title_pref_rotor_step_degrees">Rotorvarv per steg</string>
+    <string name="title_pref_rotor_step_degrees">Rotorvridning per steg</string>
     <string name="title_pref_edge_first_click_mm">Avstånd till första klick</string>
     <string name="title_pref_edge_second_click_mm">Avstånd från första till andra klick</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1713,11 +1713,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Eko för handskriftstangentbord</string>
     <string name="title_keyboard_echo_braille_display">Eko för punktskriftsdisplay</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Avbryt talet när du skriver</string>
+    <string name="title_pref_interrupt_typing">Avbryt tal vid inmatning</string>
     <string name="pref_interrupt_typing_entry_always">Alltid</string>
     <string name="pref_interrupt_typing_entry_edit_fields">I redigeringsfält</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Vid tangentbordseko</string>
-    <string name="title_pref_interrupt_enter">Avbryt talet på Enter</string>
+    <string name="title_pref_interrupt_enter">Avbryt tal vid Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Namn, tillstånd, typ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, tillstånd, namn</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Tillstånd, typ, namn</string>

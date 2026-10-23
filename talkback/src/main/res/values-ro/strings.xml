@@ -1429,7 +1429,7 @@
     <string name="summary_pref_speak_volume_changes">Spuneți noul volum după ce apăsați tastele de volum</string>
     <string name="title_pref_speak_notifications">Rostește notificările</string>
     <string name="summary_pref_speak_notifications">Citiți cu voce tare noile notificări când sosesc. Apelurile primite sunt întotdeauna citite.</string>
-    <string name="title_pref_notification_list">Utilizați lista de notificări a lui SandFly</string>
+    <string name="title_pref_notification_list">Folosește lista de notificări SandFly</string>
     <string name="title_pref_notification_parts">Detaliile notificării</string>
     <string name="title_pref_play_installer">Apare instalat din Google Play</string>
     <string name="summary_pref_play_installer">Spuneți altor aplicații că Google Play instalat SandFly. Unele aplicații, cum ar fi unele aplicații bancare, dezactivează serviciile de accesibilitate care au fost instalate de oriunde altundeva. Necesită Shizuku și modifică numai aplicațiile care li se spune despre unde provine SandFly.</string>
@@ -1460,7 +1460,7 @@
         <item quantity="few">%d notificări</item>
         <item quantity="other">%d de notificări</item>
     </plurals>
-    <string name="title_pref_quick_settings">Utilizați setările rapide ale lui SandFly</string>
+    <string name="title_pref_quick_settings">Folosește setările rapide SandFly</string>
     <string name="title_pref_quick_settings_items">Panou de setări rapide</string>
     <string name="quick_settings_title">Setări rapide</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1657,7 +1657,7 @@
     <string name="value_multi_tap_timeout_150ms">0,15 secunde</string>
     <string name="value_multi_tap_timeout_200ms">0,2 secunde</string>
     <string name="value_multi_tap_timeout_250ms">0,25 secunde (implicit)</string>
-    <string name="title_pref_rotor_step_degrees">Rotor pe pas</string>
+    <string name="title_pref_rotor_step_degrees">Rotirea rotorului pe pas</string>
     <string name="title_pref_edge_first_click_mm">Distanța până la primul clic</string>
     <string name="title_pref_edge_second_click_mm">Distanța de la primul la al doilea clic</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1699,7 +1699,7 @@
     <string name="title_pref_selector_links_controls_web_only">Link-uri și comenzi numai în conținutul web</string>
     <string name="title_pref_selector_auto_switch">Schimbați automat controlul citirii</string>
     <string name="title_pref_touch_stops_speech">Opriți vorbirea când atingeți ecranul</string>
-    <string name="title_pref_focus_new_windows">Mutați focalizarea pe ferestre noi</string>
+    <string name="title_pref_focus_new_windows">Mută focalizarea pe ferestrele noi</string>
     <string name="title_pref_volume_keys_adjust_sliders">Tastele de volum ajustează glisoarele</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Când un cursor are focalizare, volumul în sus și în jos își schimbă valoarea în loc de volum</string>
     <string name="title_pref_volume_keys_move_cursor">Tastele de volum mută cursorul</string>
@@ -1717,11 +1717,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Ecoul tastaturii pentru scris de mână</string>
     <string name="title_keyboard_echo_braille_display">Ecoul afișajului Braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Întrerupeți vorbirea la tastare</string>
+    <string name="title_pref_interrupt_typing">Întrerupe vorbirea la tastare</string>
     <string name="pref_interrupt_typing_entry_always">Întotdeauna</string>
     <string name="pref_interrupt_typing_entry_edit_fields">În câmpurile de editare</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">La ecoul tastaturii</string>
-    <string name="title_pref_interrupt_enter">Întrerupeți vorbirea la Enter</string>
+    <string name="title_pref_interrupt_enter">Întrerupe vorbirea la apăsarea tastei Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Nume, stare, tip</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tip, stare, nume</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Stare, tip, nume</string>

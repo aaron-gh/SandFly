@@ -1379,7 +1379,7 @@
     <string name="title_pref_touch_activation">Dokunma ve etkinleştirme</string>
     <string name="title_pref_navigation">Gezinme</string>
     <string name="title_pref_category_more">Diğer</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch için hareketleri rezerve edin</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Hareketleri Vibration Watch için ayır</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch\'nin bunları kullanabilmesi için iki parmakla tek ve çift dokunma işlemlerini SandFly durdurur. Saatinizin erişilebilirlik ayarlarında Vibration Watch seçeneğini etkinleştirin.</string>
     <string name="shortcut_reserved_for_vibration_watch">Gelişmiş Ayarlar\'da Vibration Watch için ayrılmıştır</string>
     <string name="title_pref_speakerphone_away_from_ear">Hoparlör kulağınızdan uzaktayken</string>
@@ -1429,7 +1429,7 @@
     <string name="summary_pref_speak_volume_changes">Ses seviyesi tuşlarına bastıktan sonra yeni ses seviyesini söyleyin</string>
     <string name="title_pref_speak_notifications">Bildirimleri sesli olarak söyle</string>
     <string name="summary_pref_speak_notifications">Yeni bildirimler geldiğinde yüksek sesle okuyun. Gelen aramalar her zaman okunur.</string>
-    <string name="title_pref_notification_list">SandFly\'in bildirim listesini kullanın</string>
+    <string name="title_pref_notification_list">SandFly\'ın bildirim listesini kullan</string>
     <string name="title_pref_notification_parts">Bildirim ayrıntıları</string>
     <string name="title_pref_play_installer">Google Play\'den yüklenmiş olarak görün</string>
     <string name="summary_pref_play_installer">Diğer uygulamalara Google Play\'in yüklü olduğunu SandFly söyleyin. Bazı bankacılık uygulamaları gibi bazı uygulamalar, başka herhangi bir yerden yüklenen erişilebilirlik hizmetlerini kapatır. Shizuku gerektirir ve yalnızca SandFly\'nin nereden geldiği hakkında söylenen uygulamalara değişiklik yapar.</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d bildirim</item>
         <item quantity="other">%d bildirim</item>
     </plurals>
-    <string name="title_pref_quick_settings">SandFly\'nin hızlı ayarlarını kullanın</string>
+    <string name="title_pref_quick_settings">SandFly\'ın hızlı ayarlarını kullan</string>
     <string name="title_pref_quick_settings_items">Hızlı ayarlar paneli</string>
     <string name="quick_settings_title">Hızlı ayarlar</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1713,11 +1713,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">El yazısı klavye yankısı</string>
     <string name="title_keyboard_echo_braille_display">Braille ekran yankısı</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Yazarken konuşmayı kesme</string>
+    <string name="title_pref_interrupt_typing">Yazarken konuşmayı kes</string>
     <string name="pref_interrupt_typing_entry_always">Her zaman</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Düzenleme alanlarında</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Klavye yankısında</string>
-    <string name="title_pref_interrupt_enter">Enter\'da konuşmayı kesme</string>
+    <string name="title_pref_interrupt_enter">Enter\'a basınca konuşmayı kes</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Ad, durum, tür</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tür, durum, ad</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Durum, tür, ad</string>

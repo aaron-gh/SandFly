@@ -1429,9 +1429,9 @@
     <string name="summary_pref_speak_volume_changes">按音量鍵後說出新音量</string>
     <string name="title_pref_speak_notifications">說出通知</string>
     <string name="summary_pref_speak_notifications">當新通知到達時大聲朗讀。來電始終會被讀取。</string>
-    <string name="title_pref_notification_list">使用SandFly的通知列表</string>
+    <string name="title_pref_notification_list">使用 SandFly 的通知清單</string>
     <string name="title_pref_notification_parts">通知詳情</string>
-    <string name="title_pref_play_installer">看起來是從 Google Play 安裝的</string>
+    <string name="title_pref_play_installer">顯示為從 Google Play 安裝</string>
     <string name="summary_pref_play_installer">告訴其他應用程式Google Play已安裝SandFly。某些應用程式（例如某些銀行應用程式）會關閉從其他地方安裝的輔助服務。需要 Shizuku，並且僅更改應用程式被告知的SandFly 來自何處。</string>
     <string name="summary_pref_play_installer_pending">已打開，但 Google Play 尚未記錄為安裝程式。當 Shizuku 可用時，SandFly 設定它。</string>
     <string name="notification_part_title">標題</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d通知</item>
         <item quantity="other">%d 通知</item>
     </plurals>
-    <string name="title_pref_quick_settings">使用SandFly的快速設定</string>
+    <string name="title_pref_quick_settings">使用 SandFly 的快速設定</string>
     <string name="title_pref_quick_settings_items">快速設定面板</string>
     <string name="quick_settings_title">快速設定</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1653,7 +1653,7 @@
     <string name="value_multi_tap_timeout_150ms">0.15 秒</string>
     <string name="value_multi_tap_timeout_200ms">0.2 秒</string>
     <string name="value_multi_tap_timeout_250ms">0.25 秒（預設）</string>
-    <string name="title_pref_rotor_step_degrees">轉子每步轉數</string>
+    <string name="title_pref_rotor_step_degrees">轉子每步角度</string>
     <string name="title_pref_edge_first_click_mm">到第一次點擊的距離</string>
     <string name="title_pref_edge_second_click_mm">第一次點擊到第二次點擊的距離</string>
     <string name="value_distance_5mm">0.5公分</string>
@@ -1695,7 +1695,7 @@
     <string name="title_pref_selector_links_controls_web_only">僅在網頁內容中的連結和控件</string>
     <string name="title_pref_selector_auto_switch">自動改變閱讀控制</string>
     <string name="title_pref_touch_stops_speech">觸碰螢幕時停止講話</string>
-    <string name="title_pref_focus_new_windows">將對焦移至新視窗</string>
+    <string name="title_pref_focus_new_windows">將焦點移至新視窗</string>
     <string name="title_pref_volume_keys_adjust_sliders">音量鍵調整滑桿</string>
     <string name="summary_pref_volume_keys_adjust_sliders">當滑桿獲得焦點時，音量增加和減少會更改其值而不是音量</string>
     <string name="title_pref_volume_keys_move_cursor">音量鍵移動遊標</string>
@@ -1717,7 +1717,7 @@
     <string name="pref_interrupt_typing_entry_always">總是</string>
     <string name="pref_interrupt_typing_entry_edit_fields">在編輯欄位中</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">鍵盤回應時</string>
-    <string name="title_pref_interrupt_enter">輸入時中斷語音</string>
+    <string name="title_pref_interrupt_enter">按 Enter 時中斷語音</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">名稱、狀態、類型</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">類型、狀態、名稱</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">狀態、類型、名稱</string>

@@ -1429,9 +1429,9 @@
     <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vyslovte novú hlasitosť</string>
     <string name="title_pref_speak_notifications">Vyslovovať upozornenia</string>
     <string name="summary_pref_speak_notifications">Prečítajte si nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa vždy čítajú.</string>
-    <string name="title_pref_notification_list">Použite zoznam upozornení SandFly</string>
+    <string name="title_pref_notification_list">Používať zoznam upozornení SandFly</string>
     <string name="title_pref_notification_parts">Podrobnosti oznámenia</string>
-    <string name="title_pref_play_installer">Zdá sa, že je nainštalovaný z Google Play</string>
+    <string name="title_pref_play_installer">Zobrazovať ako nainštalované z Google Play</string>
     <string name="summary_pref_play_installer">Povedzte ostatným aplikáciám, že Google Play nainštalované SandFly. Niektoré aplikácie, ako napríklad niektoré bankové aplikácie, vypínajú služby dostupnosti, ktoré boli nainštalované odkiaľkoľvek inde. Potrebuje Shizuku a mení iba to, čo sa aplikáciám hovorí o tom, odkiaľ pochádza SandFly.</string>
     <string name="summary_pref_play_installer_pending">Zapnuté, ale Google Play ešte nie je zaznamenané ako inštalátor. SandFly nastaví, keď je k dispozícii Shizuku.</string>
     <string name="notification_part_title">Názov</string>
@@ -1461,7 +1461,7 @@
         <item quantity="many">%d oznámenia</item>
         <item quantity="other">%d upozornení</item>
     </plurals>
-    <string name="title_pref_quick_settings">Použite rýchle nastavenia SandFly</string>
+    <string name="title_pref_quick_settings">Používať rýchle nastavenia SandFly</string>
     <string name="title_pref_quick_settings_items">Panel rýchlych nastavení</string>
     <string name="quick_settings_title">Rýchle nastavenia</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1703,7 +1703,7 @@
     <string name="title_pref_selector_links_controls_web_only">Odkazy a ovládacie prvky iba vo webovom obsahu</string>
     <string name="title_pref_selector_auto_switch">Automaticky zmeniť ovládanie čítania</string>
     <string name="title_pref_touch_stops_speech">Zastavte reč pri dotyku obrazovky</string>
-    <string name="title_pref_focus_new_windows">Presuňte zameranie na nové okná</string>
+    <string name="title_pref_focus_new_windows">Presúvať zameranie do nových okien</string>
     <string name="title_pref_volume_keys_adjust_sliders">Tlačidlá hlasitosti upravujú posúvače</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Keď je posuvník zaostrený, zvýšenie a zníženie hlasitosti zmenia jeho hodnotu namiesto hlasitosti</string>
     <string name="title_pref_volume_keys_move_cursor">Tlačidlá hlasitosti posúvajú kurzor</string>
@@ -1721,11 +1721,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Ozvena klávesnice na písanie rukou</string>
     <string name="title_keyboard_echo_braille_display">Ozvena Braillovho displeja</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Prerušujte reč pri písaní</string>
+    <string name="title_pref_interrupt_typing">Prerušiť reč pri písaní</string>
     <string name="pref_interrupt_typing_entry_always">Vždy</string>
     <string name="pref_interrupt_typing_entry_edit_fields">V poliach úprav</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Pri ozvene klávesnice</string>
-    <string name="title_pref_interrupt_enter">Prerušiť reč na Enter</string>
+    <string name="title_pref_interrupt_enter">Prerušiť reč pri stlačení klávesu Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Názov, stav, typ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, stav, názov</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Stav, typ, názov</string>

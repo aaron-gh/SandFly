@@ -1429,9 +1429,9 @@
     <string name="summary_pref_speak_volume_changes">Промовте нову гучність після натискання клавіш гучності</string>
     <string name="title_pref_speak_notifications">Озвучення сповіщень</string>
     <string name="summary_pref_speak_notifications">Читайте нові сповіщення вголос, коли вони надходять. Вхідні дзвінки завжди читаються.</string>
-    <string name="title_pref_notification_list">Використовуйте список сповіщень SandFly</string>
+    <string name="title_pref_notification_list">Використовувати список сповіщень SandFly</string>
     <string name="title_pref_notification_parts">Деталі сповіщення</string>
-    <string name="title_pref_play_installer">Встановлюється з Google Play</string>
+    <string name="title_pref_play_installer">Показувати як установлений з Google Play</string>
     <string name="summary_pref_play_installer">Повідомте іншим програмам, що Google Play встановлено SandFly. Деякі програми, як-от деякі банківські програми, вимикають служби доступності, які були встановлені з будь-якого іншого місця. Потрібен Shizuku та змінює лише ті програми, які повідомляють про походження SandFly.</string>
     <string name="summary_pref_play_installer_pending">Увімкнено, але Google Play ще не зареєстровано як інсталятор. SandFly встановлює його, коли Shizuku доступний.</string>
     <string name="notification_part_title">Назва</string>
@@ -1461,7 +1461,7 @@
         <item quantity="many">%d повідомлень</item>
         <item quantity="other">%d сповіщення</item>
     </plurals>
-    <string name="title_pref_quick_settings">Використовуйте швидкі налаштування SandFly</string>
+    <string name="title_pref_quick_settings">Використовувати швидкі налаштування SandFly</string>
     <string name="title_pref_quick_settings_items">Панель швидких налаштувань</string>
     <string name="quick_settings_title">Швидкі налаштування</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1721,11 +1721,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Ехо клавіатури рукописного тексту</string>
     <string name="title_keyboard_echo_braille_display">Відлуння дисплея Брайля</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Переривайте мову під час друкування</string>
+    <string name="title_pref_interrupt_typing">Переривати мовлення під час введення</string>
     <string name="pref_interrupt_typing_entry_always">Завжди</string>
     <string name="pref_interrupt_typing_entry_edit_fields">У полях редагування</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Під час відлуння клавіатури</string>
-    <string name="title_pref_interrupt_enter">Переривання мови на Enter</string>
+    <string name="title_pref_interrupt_enter">Переривати мовлення клавішею Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Назва, стан, тип</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Тип, стан, назва</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Стан, тип, назва</string>

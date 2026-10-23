@@ -1429,9 +1429,9 @@
     <string name="summary_pref_speak_volume_changes">Дыбыс деңгейі пернелерін басқаннан кейін жаңа дыбыс деңгейін айтыңыз</string>
     <string name="title_pref_speak_notifications">Хабарландыруларды айту</string>
     <string name="summary_pref_speak_notifications">Жаңа хабарландырулар келгенде дауыстап оқыңыз. Кіріс қоңыраулар әрқашан оқылады.</string>
-    <string name="title_pref_notification_list">SandFly хабарландырулар тізімін пайдаланыңыз</string>
+    <string name="title_pref_notification_list">SandFly хабарландырулар тізімін пайдалану</string>
     <string name="title_pref_notification_parts">Хабарландыру мәліметтері</string>
-    <string name="title_pref_play_installer">Google Play арқылы орнатылған</string>
+    <string name="title_pref_play_installer">Google Play-ден орнатылған болып көріну</string>
     <string name="summary_pref_play_installer">Басқа қолданбаларға Google Play орнатылған SandFly екенін айтыңыз. Кейбір банктік қолданбалар сияқты кейбір қолданбалар басқа жерден орнатылған арнайы мүмкіндіктер қызметтерін өшіреді. Shizuku қажет және SandFly қайдан келгені туралы айтылған қолданбаларды ғана өзгертеді.</string>
     <string name="summary_pref_play_installer_pending">Қосулы, бірақ Google Play әлі орнатушы ретінде жазылмаған. SandFly оны Shizuku қол жетімді болғанда орнатады.</string>
     <string name="notification_part_title">Тақырып</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d хабарландыру</item>
         <item quantity="other">%d хабарландыру</item>
     </plurals>
-    <string name="title_pref_quick_settings">SandFly жылдам параметрлерін пайдаланыңыз</string>
+    <string name="title_pref_quick_settings">SandFly жылдам параметрлерін пайдалану</string>
     <string name="title_pref_quick_settings_items">Жылдам параметрлер тақтасы</string>
     <string name="quick_settings_title">Жылдам параметрлер</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1695,7 +1695,7 @@
     <string name="title_pref_selector_links_controls_web_only">Сілтемелер мен басқару элементтері тек веб-мазмұнда</string>
     <string name="title_pref_selector_auto_switch">Оқуды басқаруды автоматты түрде өзгерту</string>
     <string name="title_pref_touch_stops_speech">Экранды түрткен кезде сөйлеуді тоқтатыңыз</string>
-    <string name="title_pref_focus_new_windows">Фокусты жаңа терезелерге жылжытыңыз</string>
+    <string name="title_pref_focus_new_windows">Фокусты жаңа терезелерге жылжыту</string>
     <string name="title_pref_volume_keys_adjust_sliders">Дыбыс деңгейі пернелері жүгірткілерді реттейді</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Жүгірткіде фокус болғанда, дыбыс деңгейін жоғарылату және азайту оның мәнін дыбыс деңгейінің орнына өзгертеді</string>
     <string name="title_pref_volume_keys_move_cursor">Дыбыс деңгейі пернелері курсорды жылжытады</string>
@@ -1713,11 +1713,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Қолжазба пернетақтасының жаңғырығы</string>
     <string name="title_keyboard_echo_braille_display">Брайль дисплей жаңғырығы</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Теру кезінде сөзді үзіңіз</string>
+    <string name="title_pref_interrupt_typing">Теру кезінде сөйлеуді үзу</string>
     <string name="pref_interrupt_typing_entry_always">Әрқашан</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Өңдеу өрістерінде</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Пернетақта жаңғырығы кезінде</string>
-    <string name="title_pref_interrupt_enter">Enter қолданбасында сөзді үзу</string>
+    <string name="title_pref_interrupt_enter">Enter басылғанда сөйлеуді үзу</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Аты, күйі, түрі</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Түрі, күйі, аты</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Күйі, түрі, аты</string>

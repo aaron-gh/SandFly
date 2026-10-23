@@ -1430,9 +1430,9 @@
     <string name="summary_pref_speak_volume_changes">Pēc skaļuma taustiņu nospiešanas pasakiet jauno skaļumu</string>
     <string name="title_pref_speak_notifications">Izrunāt paziņojumus</string>
     <string name="summary_pref_speak_notifications">Lasiet skaļi jaunus paziņojumus, kad tie tiek saņemti. Ienākošie zvani vienmēr tiek lasīti.</string>
-    <string name="title_pref_notification_list">Izmantojiet SandFly paziņojumu sarakstu</string>
+    <string name="title_pref_notification_list">Izmantot SandFly paziņojumu sarakstu</string>
     <string name="title_pref_notification_parts">Paziņojuma informācija</string>
-    <string name="title_pref_play_installer">Parādās instalēta no Google Play</string>
+    <string name="title_pref_play_installer">Rādīt kā instalētu no Google Play</string>
     <string name="summary_pref_play_installer">Pastāstiet citām lietotnēm, ka Google Play ir instalēta SandFly. Dažas lietotnes, piemēram, dažas banku lietotnes, izslēdz pieejamības pakalpojumus, kas tika instalēti no jebkuras vietas. Nepieciešams Shizuku, un tas maina tikai to, kuras lietotnes tiek informētas par to, no kurienes nāk SandFly.</string>
     <string name="summary_pref_play_installer_pending">Ieslēgts, bet Google atskaņošana vēl nav ierakstīta kā instalēšanas programma. SandFly to iestata, kad ir pieejams Shizuku.</string>
     <string name="notification_part_title">Nosaukums</string>
@@ -1461,7 +1461,7 @@
         <item quantity="one">%d paziņojums</item>
         <item quantity="other">%d paziņojumi</item>
     </plurals>
-    <string name="title_pref_quick_settings">Izmantojiet SandFly ātros iestatījumus</string>
+    <string name="title_pref_quick_settings">Izmantot SandFly ātros iestatījumus</string>
     <string name="title_pref_quick_settings_items">Ātro iestatījumu panelis</string>
     <string name="quick_settings_title">Ātrie iestatījumi</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1653,7 +1653,7 @@
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Gari velciet pa kreisi no labās malas, apakšējās puses</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Turiet pirkstu, lai atlasītu jebkuru taustiņu, pēc tam paceliet. Veiciet dubultskārienu, lai izvēlētos Ievadīt, Gatavs vai Sūtīt.</string>
     <string name="value_type_confirmation_tap_to_type">Pieskarieties jebkuram taustiņam, lai to ierakstītu, vai turiet pirkstu, lai atlasītu jebkuru taustiņu, un pēc tam paceliet</string>
-    <string name="title_pref_multi_tap_timeout">Laiks starp pieskārienu ar vienu pirkstu</string>
+    <string name="title_pref_multi_tap_timeout">Laiks starp pieskārieniem ar vienu pirkstu</string>
     <string name="value_multi_tap_timeout_100ms">0,1 sekunde</string>
     <string name="value_multi_tap_timeout_150ms">0,15 sekundes</string>
     <string name="value_multi_tap_timeout_200ms">0,2 sekundes</string>
@@ -1700,7 +1700,7 @@
     <string name="title_pref_selector_links_controls_web_only">Saites un vadīklas tikai tīmekļa saturā</string>
     <string name="title_pref_selector_auto_switch">Automātiski mainiet lasīšanas vadību</string>
     <string name="title_pref_touch_stops_speech">Pārtrauciet runu, pieskaroties ekrānam</string>
-    <string name="title_pref_focus_new_windows">Pārvietojiet fokusu uz jauniem logiem</string>
+    <string name="title_pref_focus_new_windows">Pārvietot fokusu uz jauniem logiem</string>
     <string name="title_pref_volume_keys_adjust_sliders">Skaļuma taustiņi pielāgo slīdņus</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Ja slīdnim ir fokuss, skaļuma palielināšana un samazināšana maina tā vērtību, nevis skaļumu</string>
     <string name="title_pref_volume_keys_move_cursor">Skaļuma taustiņi pārvieto kursoru</string>
@@ -1718,11 +1718,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">Rokraksta tastatūras atbalss</string>
     <string name="title_keyboard_echo_braille_display">Braila displeja atbalss</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Pārtrauciet runu rakstīšanas laikā</string>
+    <string name="title_pref_interrupt_typing">Pārtraukt runu rakstīšanas laikā</string>
     <string name="pref_interrupt_typing_entry_always">Vienmēr</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Rediģēšanas laukos</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Ar tastatūras atbalsi</string>
-    <string name="title_pref_interrupt_enter">Pārtrauciet runu, izmantojot taustiņu Enter</string>
+    <string name="title_pref_interrupt_enter">Pārtraukt runu, nospiežot Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Nosaukums, stāvoklis, veids</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Veids, stāvoklis, nosaukums</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Stāvoklis, veids, nosaukums</string>

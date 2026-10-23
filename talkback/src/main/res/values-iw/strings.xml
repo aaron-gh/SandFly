@@ -1379,7 +1379,7 @@
     <string name="title_pref_touch_activation">מגע והפעלה</string>
     <string name="title_pref_navigation">ניווט</string>
     <string name="title_pref_category_more">עוד</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">שמור תנועות עבור Vibration Watch</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">שמירת תנועות עבור Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">מפסיק SandFly לטפל בשתי אצבעות בודדות וכפולות כדי שסמסונג Vibration Watch תוכל להשתמש בהן. הפעל את Vibration Watch בהגדרות הנגישות של השעון שלך.</string>
     <string name="shortcut_reserved_for_vibration_watch">שמור עבור Vibration Watch בהגדרות מתקדמות</string>
     <string name="title_pref_speakerphone_away_from_ear">רמקול כשהוא רחוק מהאוזן</string>
@@ -1429,7 +1429,7 @@
     <string name="summary_pref_speak_volume_changes">אמור את עוצמת הקול החדשה לאחר שתלחץ על מקשי עוצמת הקול</string>
     <string name="title_pref_speak_notifications">הקראת התראות</string>
     <string name="summary_pref_speak_notifications">קרא התראות חדשות בקול כשהן מגיעות. שיחות נכנסות נקראות תמיד.</string>
-    <string name="title_pref_notification_list">השתמש ברשימת ההתראות של SandFly</string>
+    <string name="title_pref_notification_list">שימוש ברשימת ההתראות של SandFly</string>
     <string name="title_pref_notification_parts">פרטי הודעה</string>
     <string name="title_pref_play_installer">נראה מותקן מ-Google Play</string>
     <string name="summary_pref_play_installer">ספר לאפליקציות אחרות ש-Google Play מותקנות SandFly. אפליקציות מסוימות, כמו אפליקציות בנקאיות מסוימות, מכבות את שירותי הנגישות שהותקנו מכל מקום אחר. צריך Shizuku, ומשנה רק אילו יישומים מסופר על מהיכן הגיע SandFly.</string>
@@ -1460,7 +1460,7 @@
         <item quantity="two">%d התראות</item>
         <item quantity="other">%d התראות</item>
     </plurals>
-    <string name="title_pref_quick_settings">השתמש בהגדרות המהירות של SandFly</string>
+    <string name="title_pref_quick_settings">שימוש בהגדרות המהירות של SandFly</string>
     <string name="title_pref_quick_settings_items">פאנל הגדרות מהירות</string>
     <string name="quick_settings_title">הגדרות מהירות</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1652,7 +1652,7 @@
     <string name="title_pref_shortcut_edge_right_bottom_long_left">החלקה ארוכה שמאלה מהקצה הימני, החצי התחתון</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">החזק את האצבע כדי לבחור מקש כלשהו, ולאחר מכן הרם. הקש פעמיים עבור Enter, Done או Send.</string>
     <string name="value_type_confirmation_tap_to_type">הקש על מקש כלשהו כדי להקליד אותו, או החזק את האצבע כדי לבחור מקש כלשהו, ולאחר מכן הרם</string>
-    <string name="title_pref_multi_tap_timeout">זמן בין הקשה באצבע אחת</string>
+    <string name="title_pref_multi_tap_timeout">זמן בין הקשות באצבע אחת</string>
     <string name="value_multi_tap_timeout_100ms">0.1 שניות</string>
     <string name="value_multi_tap_timeout_150ms">‫0.15 שניות</string>
     <string name="value_multi_tap_timeout_200ms">‫0.2 שניות</string>
@@ -1699,7 +1699,7 @@
     <string name="title_pref_selector_links_controls_web_only">קישורים ופקדים רק בתוכן אינטרנט</string>
     <string name="title_pref_selector_auto_switch">שנה את בקרת הקריאה באופן אוטומטי</string>
     <string name="title_pref_touch_stops_speech">הפסק את הדיבור בעת נגיעה במסך</string>
-    <string name="title_pref_focus_new_windows">העבר את המיקוד לחלונות חדשים</string>
+    <string name="title_pref_focus_new_windows">העברת המיקוד לחלונות חדשים</string>
     <string name="title_pref_volume_keys_adjust_sliders">מקשי עוצמת הקול מכוונים את המחוונים</string>
     <string name="summary_pref_volume_keys_adjust_sliders">כאשר למחוון יש מיקוד, עוצמת הקול משנים את הערך שלו במקום את עוצמת הקול</string>
     <string name="title_pref_volume_keys_move_cursor">מקשי עוצמת הקול מזיזים את הסמן</string>
@@ -1717,7 +1717,7 @@
     <string name="title_keyboard_echo_handwriting_keyboard">הד מקלדת כתב יד</string>
     <string name="title_keyboard_echo_braille_display">הד של תצוגת ברייל</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">להפריע לדיבור בעת הקלדה</string>
+    <string name="title_pref_interrupt_typing">הפסקת דיבור בעת הקלדה</string>
     <string name="pref_interrupt_typing_entry_always">תמיד</string>
     <string name="pref_interrupt_typing_entry_edit_fields">בשדות עריכה</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">בהד מקלדת</string>

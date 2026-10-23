@@ -1431,7 +1431,7 @@
     <string name="summary_pref_speak_notifications">ਨਵੀਆਂ ਸੂਚਨਾਵਾਂ ਪਹੁੰਚਣ \'ਤੇ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਪੜ੍ਹੋ। ਆਉਣ ਵਾਲੀਆਂ ਕਾਲਾਂ ਹਮੇਸ਼ਾ ਪੜ੍ਹੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।</string>
     <string name="title_pref_notification_list">SandFly ਦੀ ਸੂਚਨਾ ਸੂਚੀ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
     <string name="title_pref_notification_parts">ਸੂਚਨਾ ਵੇਰਵੇ</string>
-    <string name="title_pref_play_installer">Google ਪਲੇ ਤੋਂ ਸਥਾਪਤ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ</string>
+    <string name="title_pref_play_installer">Google Play ਤੋਂ ਸਥਾਪਤ ਹੋਇਆ ਦਿਖਾਓ</string>
     <string name="summary_pref_play_installer">ਹੋਰ ਐਪਾਂ ਨੂੰ ਦੱਸੋ ਜੋ Google Play ਨੇ SandFly ਸਥਾਪਤ ਕੀਤੀ ਹੈ। ਕੁਝ ਐਪਾਂ, ਜਿਵੇਂ ਕਿ ਕੁਝ ਬੈਂਕਿੰਗ ਐਪ, ਪਹੁੰਚਯੋਗਤਾ ਸੇਵਾਵਾਂ ਨੂੰ ਬੰਦ ਕਰ ਦਿੰਦੀਆਂ ਹਨ ਜੋ ਕਿ ਕਿਤੇ ਹੋਰ ਤੋਂ ਸਥਾਪਤ ਕੀਤੀਆਂ ਗਈਆਂ ਸਨ। Shizuku ਦੀ ਲੋੜ ਹੈ, ਅਤੇ ਸਿਰਫ਼ ਉਹਨਾਂ ਐਪਾਂ ਨੂੰ ਬਦਲਦਾ ਹੈ ਜਿਹਨਾਂ ਬਾਰੇ ਦੱਸਿਆ ਗਿਆ ਹੈ ਕਿ SandFly ਕਿੱਥੋਂ ਆਇਆ ਹੈ।</string>
     <string name="summary_pref_play_installer_pending">ਚਾਲੂ ਹੈ, ਪਰ Google ਪਲੇ ਨੂੰ ਅਜੇ ਤੱਕ ਇੰਸਟੌਲਰ ਵਜੋਂ ਰਿਕਾਰਡ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ। SandFly ਇਸਨੂੰ ਸੈੱਟ ਕਰਦਾ ਹੈ ਜਦੋਂ Shizuku ਉਪਲਬਧ ਹੁੰਦਾ ਹੈ।</string>
     <string name="notification_part_title">ਸਿਰਲੇਖ</string>
@@ -1653,7 +1653,7 @@
     <string name="value_multi_tap_timeout_150ms">0.15 ਸਕਿੰਟ</string>
     <string name="value_multi_tap_timeout_200ms">0.2 ਸਕਿੰਟ</string>
     <string name="value_multi_tap_timeout_250ms">0.25 ਸਕਿੰਟ (ਪੂਰਵ-ਨਿਰਧਾਰਤ)</string>
-    <string name="title_pref_rotor_step_degrees">ਰੋਟਰ ਮੋੜ ਪ੍ਰਤੀ ਕਦਮ</string>
+    <string name="title_pref_rotor_step_degrees">ਪ੍ਰਤੀ ਕਦਮ ਰੋਟਰ ਘੁਮਾਅ</string>
     <string name="title_pref_edge_first_click_mm">ਪਹਿਲੇ ਕਲਿੱਕ ਦੀ ਦੂਰੀ</string>
     <string name="title_pref_edge_second_click_mm">ਪਹਿਲੇ ਤੋਂ ਦੂਜੇ ਕਲਿੱਕ ਦੀ ਦੂਰੀ</string>
     <string name="value_distance_5mm">0.5 ਸੈ.ਮੀ</string>
@@ -1713,11 +1713,11 @@
     <string name="title_keyboard_echo_handwriting_keyboard">ਹੈਂਡਰਾਈਟਿੰਗ ਕੀਬੋਰਡ ਈਕੋ</string>
     <string name="title_keyboard_echo_braille_display">ਬਰੇਲ ਡਿਸਪਲੇ ਈਕੋ</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">ਟਾਈਪ ਕਰਨ ਵੇਲੇ ਬੋਲੀ ਵਿੱਚ ਵਿਘਨ ਪਾਓ</string>
+    <string name="title_pref_interrupt_typing">ਟਾਈਪ ਕਰਨ ਵੇਲੇ ਬੋਲਣਾ ਰੋਕੋ</string>
     <string name="pref_interrupt_typing_entry_always">ਹਮੇਸ਼ਾ</string>
     <string name="pref_interrupt_typing_entry_edit_fields">ਸੰਪਾਦਨ ਖੇਤਰਾਂ ਵਿੱਚ</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">ਕੀਬੋਰਡ ਈਕੋ \'ਤੇ</string>
-    <string name="title_pref_interrupt_enter">Enter \'ਤੇ ਭਾਸ਼ਣ ਨੂੰ ਰੋਕੋ</string>
+    <string name="title_pref_interrupt_enter">Enter ਦਬਾਉਣ \'ਤੇ ਬੋਲਣਾ ਰੋਕੋ</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">ਨਾਮ, ਸਥਿਤੀ, ਕਿਸਮ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">ਕਿਸਮ, ਸਥਿਤੀ, ਨਾਮ</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">ਸਥਿਤੀ, ਕਿਸਮ, ਨਾਮ</string>
