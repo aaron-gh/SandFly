@@ -205,6 +205,21 @@ class NotificationDeciderTest {
   }
 
   @Test
+  fun systemUiEstimateUpdatesAreReadOnce() {
+    val decider = NotificationDecider()
+    val battery = message.copy(packageName = "com.android.systemui", title = "Battery 12 percent", text = "2 hours left")
+    assertTrue(decide(info = battery, now = 0, decider = decider).read)
+    val updated = battery.copy(text = "3 hours 40 minutes left")
+    assertEquals(Outcome.REPEAT, decide(info = updated, now = 1000, decider = decider).outcome)
+    assertTrue(decide(info = updated.copy(title = "Battery 11 percent"), now = 2000, decider = decider).read)
+    assertTrue(decide(info = updated, now = 5000, decider = decider).read)
+
+    val chat = NotificationDecider()
+    assertTrue(decide(now = 0, decider = chat).read)
+    assertTrue(decide(info = message.copy(text = "A different message"), now = 1000, decider = chat).read)
+  }
+
+  @Test
   fun aRepeatedStartIsLeftOut() {
     val decider = NotificationDecider()
     val settings = NotificationSettings(format = "{title}: {text}", skipRepeatedPrefix = true)

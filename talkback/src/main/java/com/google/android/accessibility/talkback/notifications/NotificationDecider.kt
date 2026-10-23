@@ -99,6 +99,11 @@ class RepeatMemory {
     trim(lastBody)
   }
 
+  fun noteTitle(key: String, now: Long) {
+    lastPosted[key] = now
+    trim(lastPosted)
+  }
+
   fun seenAt(key: String): Long? = lastText[key]
 
   fun readAt(packageName: String): Long? = lastRead[packageName]
@@ -267,16 +272,34 @@ class NotificationDecider(private val memory: RepeatMemory = RepeatMemory()) {
    */
   private fun isDuplicate(info: NotificationInfo, nowMillis: Long): Boolean {
     val body = NotificationText.textOf(info).trim().lowercase()
-    if (body.isEmpty()) return false
+    // System UI updates some notifications in place while their details change. For example, a
+    // low-battery notification can keep the title "Battery 12 percent" while its estimated time
+    // remaining changes, which otherwise makes each update sound like a separate notification.
+    val systemUiTitleKey =
+      if (info.packageName == SYSTEM_UI_PACKAGE && info.title.isNotBlank()) {
+        SYSTEM_UI_TITLE_PREFIX + info.title.trim().lowercase()
+      } else {
+        null
+      }
+    if (body.isEmpty() && systemUiTitleKey == null) return false
     val bodyKey = info.packageName + "\u0000" + body
     val key = bodyKey + "\u0000" + info.title.trim().lowercase()
     fun recent(at: Long?) = at != null && nowMillis - at in 0 until RepeatMemory.DUPLICATE_MS
-    val sameBody = memory.body(bodyKey)
+    val sameBody = body.takeIf { it.isNotEmpty() }?.let { memory.body(bodyKey) }
     val duplicate =
-      recent(memory.postedAt(key)) ||
-        (sameBody != null && recent(sameBody.first) && (info.groupSummary || sameBody.second))
-    if (!duplicate) memory.notePosted(key, bodyKey, info.groupSummary, nowMillis)
+      (body.isNotEmpty() && recent(memory.postedAt(key))) ||
+        (sameBody != null && recent(sameBody.first) && (info.groupSummary || sameBody.second)) ||
+        (systemUiTitleKey != null && recent(memory.postedAt(systemUiTitleKey)))
+    if (!duplicate) {
+      if (body.isNotEmpty()) memory.notePosted(key, bodyKey, info.groupSummary, nowMillis)
+      if (systemUiTitleKey != null) memory.noteTitle(systemUiTitleKey, nowMillis)
+    }
     return duplicate
+  }
+
+  private companion object {
+    const val SYSTEM_UI_PACKAGE = "com.android.systemui"
+    const val SYSTEM_UI_TITLE_PREFIX = "system-ui-title\u0000"
   }
 
   /** Forgets every notification read, such as when the settings change. */
