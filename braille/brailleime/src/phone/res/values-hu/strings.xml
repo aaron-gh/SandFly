@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack Braille-billentyűzet</string>
+  <string name="braille_ime_service_name">SandFly Braille-billentyűzet</string>
   <string name="braille_ime_bd_mode_name">Braille-kijelzős beviteli mód</string>
   <string name="switch_to_tabletop_announcement">Vízszintes mód. Fordítsa eszközét úgy, hogy a töltőport balra nézzen.</string>
   <string name="calibration_tip_announcement">A pontok helyzetének módosításához tartsa lenyomva %d ujját.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Teljes Braille-re váltott</string>
   <string name="braille_ime_displayed_name">Braille-billentyűzet</string>
   <string name="multiple_languages_braille_ime_displayed_name">Braille-billentyűzet, %s</string>
-  <string name="input_view_caption">TalkBack Braille-billentyűzet – segítségért keresse fel a g.co/help/braille oldalt</string>
+  <string name="input_view_caption">SandFly Braille-billentyűzet – segítségért keresse fel a g.co/help/braille oldalt</string>
   <string name="perform_action_next">Tovább</string>
   <string name="perform_action_submitting">Szöveg küldése</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Folyamatban van a pontok helyzetének módosítása. Először rögzítse a %s kezénél lévő pontokat.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Ha módosítani szeretné a nyelvet a braille-billentyűzeten való gépelés során, gyorsan csúsztassa felfelé három ujját, majd koppintson a „Váltás a következő nyelvre“ lehetőségre.</string>
   <string name="title_pref_accumulate_presses">Az összes lenyomott pontot tartalmazza</string>
   <string name="summary_pref_accumulate_presses">Az összes lenyomott pont része a bevitelnek, akkor is, ha az adott pontot más pontok előtt felengedi</string>
-  <string name="title_pref_reverse_dots">Pontok megfordítása</string>
-  <string name="summary_pref_reverse_dots">A pontok pozíciójának megcserélésére, pl. az 1. és a 4. pont cseréjével</string>
+  <string name="title_pref_reverse_dots">Cserélje fel a bal és jobb pontokat</string>
+  <string name="summary_pref_reverse_dots">Az 1., 2. és 3. pontok helyet cserélnek a 4., 5. és 6. ponttal</string>
   <string name="bd_preference_braille_contracted">Rövidített Braille-írás</string>
   <string name="bd_preference_braille_uncontracted">Rövidítés nélküli Braille-írás</string>
   <string name="context_menu_title">Braille-billentyűzet beállításai</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Billentyűzet</string>
   <string name="not_enough_touch_points_dialog_title">Eszköze nem támogatja a Braille-billentyűzetet</string>
   <string name="not_enough_touch_points_dialog_message">Eszköze nem támogat elegendő érintési pontot. Ha további információt szeretne kapni, lépjen kapcsolatba eszköze gyártójával.</string>
-  <string name="talkback_off_dialog_title">A TalkBack funkció bekapcsolása a Braille-billentyűzet használatához</string>
+  <string name="talkback_off_dialog_title">A SandFly funkció bekapcsolása a Braille-billentyűzet használatához</string>
   <string name="talkback_off_dialog_positive_button">Bekapcsolás a Kisegítő lehetőségek beállításaiban</string>
-  <string name="talkback_suspend_dialog_title">A Braille-billentyűzet használatához folytassa a TalkBack használatát</string>
-  <string name="talkback_off_or_suspend_dialog_message">Amikor be van kapcsolva a TalkBack, a képernyőre koppintva írhat be Braille-szimbólumokat.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">A kézmozdulat módosításához kapcsolja be a TalkBack funkciót</string>
-  <string name="talkback_off_custom_gestures_dialog_message">A TalkBack ki van kapcsolva. Kapcsolja be a Braille-billentyűzet kézmozdulatainak módosításához.</string>
+  <string name="talkback_suspend_dialog_title">A Braille-billentyűzet használatához folytassa a SandFly használatát</string>
+  <string name="talkback_off_or_suspend_dialog_message">Amikor be van kapcsolva a SandFly, a képernyőre koppintva írhat be Braille-szimbólumokat.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">A kézmozdulat módosításához kapcsolja be a SandFly funkciót</string>
+  <string name="talkback_off_custom_gestures_dialog_message">A SandFly ki van kapcsolva. Kapcsolja be a Braille-billentyűzet kézmozdulatainak módosításához.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Ugrás a Beállításokhoz</string>
   <string name="reset_gestures_dialog_title">Visszaállítja az összes kézmozdulatot?</string>
   <string name="reset_gestures_dialog_message">A Braille-billentyűzet összes kézmozdulata visszaáll az alapértelmezett értékre</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Visszaállítás alaphelyzetbe</string>
   <string name="custom_gestures_dialog_remove_button">Kézmozdulat eltávolítása</string>
   <string name="change_gestures_dialog_message_title">Kézmozdulat módosítása</string>
-  <string name="change_gestures_dialog_message">A következő képernyőn megnyílik a Braille-billentyűzet, és nem fogja tudni használni a TalkBack-kézmozdulatokat.\n\nAmikor megnyílik a Braille-billentyűzet, végezze el a használni kívánt kézmozdulatot, vagy ha szeretné bezárni a Braille-billentyűzetet és visszavonni a kézmozdulat módosítását, csúsztassa gyorsan lefelé két ujját a képernyőn.\n\nAz elvégezhető kézmozdulatok megtekintése\n</string>
+  <string name="change_gestures_dialog_message">A következő képernyőn megnyílik a Braille-billentyűzet, és nem fogja tudni használni a SandFly-kézmozdulatokat.\n\nAmikor megnyílik a Braille-billentyűzet, végezze el a használni kívánt kézmozdulatot, vagy ha szeretné bezárni a Braille-billentyűzetet és visszavonni a kézmozdulat módosítását, csúsztassa gyorsan lefelé két ujját a képernyőn.\n\nAz elvégezhető kézmozdulatok megtekintése\n</string>
   <string name="change_gestures_dialog_message_link">Az elvégezhető kézmozdulatok megtekintése</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ne jelenjen meg legközelebb ez az üzenet</string>
   <string name="change_gestures_dialog_positive_button">Tovább</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Ne használja</string>
   <string name="next_keyboard">Következő billentyűzet</string>
   <string name="braille_tutorial_title">Braille-billentyűzet útmutatója</string>
-  <string name="tutorial_intro_description">A Braille-billentyűzettel a képernyőre koppintva írhatja be a hatpontos Braille-szimbólumokat.\n\nÖn egységesített angol Braille-t használ. A gépelés nyelvének módosításához lépjen a TalkBack beállításaiba.\n\nA Braille-íráshoz más helyzetben kell tartania és használnia telefonját.</string>
+  <string name="tutorial_intro_description">A Braille-billentyűzettel a képernyőre koppintva írhatja be a hatpontos Braille-szimbólumokat.\n\nÖn egységesített angol Braille-t használ. A gépelés nyelvének módosításához lépjen a SandFly beállításaiba.\n\nA Braille-íráshoz más helyzetben kell tartania és használnia telefonját.</string>
   <string name="next_step">Tovább</string>
   <string name="leave_keyboard">Kilépés a Braille-billentyűzetből</string>
-  <string name="hold_six_fingers_description">Ön nem tudja majd használni a hagyományos TalkBack-kézmozdulatokat a Braille-billentyűzeten.\n\nElső lépésként állítsa be a hatpontos Braille-szimbólumok helyzetét a gépeléshez.</string>
-  <string name="rotate_orientation_description_1">Mostantól nem tudja használni a hagyományos TalkBack-kézmozdulatokat. A TalkBack nem áll rendelkezésre a Braille-billentyűzet használata közben.</string>
+  <string name="hold_six_fingers_description">Ön nem tudja majd használni a hagyományos SandFly-kézmozdulatokat a Braille-billentyűzeten.\n\nElső lépésként állítsa be a hatpontos Braille-szimbólumok helyzetét a gépeléshez.</string>
+  <string name="rotate_orientation_description_1">Mostantól nem tudja használni a hagyományos SandFly-kézmozdulatokat. A SandFly nem áll rendelkezésre a Braille-billentyűzet használata közben.</string>
   <string name="rotate_orientation_description_2">A kezdéshez tartsa így a telefonját, a telefon hátlapja nézzen Ön felé.</string>
   <string name="tap_to_continue">Koppintson bárhol duplán a folytatáshoz.</string>
   <string name="instruction_type_letter_a">Koppintson az 1. pontra bal mutatóujjával az „A” betű beírásához.</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURZOR ELŐREFELÉ MOZGATVA</string>
   <string name="result_swipe_down_2_fingers">BILLENTYŰZET ELREJTÉSE</string>
   <string name="result_swipe_down_3_fingers">KÖVETKEZŐ BILLENTYŰZET</string>
-  <string name="rotate_orientation_announcement">Mostantól nem tudja használni a hagyományos TalkBack-kézmozdulatokat. A Braille-billentyűzet használatakor a TalkBack funkció nem áll rendelkezésre.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Mostantól nem tudja használni a hagyományos SandFly-kézmozdulatokat. A Braille-billentyűzet használatakor a SandFly funkció nem áll rendelkezésre.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Kezdésként fordítsa úgy a telefonját, hogy a hátlapja nézzen Ön felé.\n\nEzután fordítsa el a telefont fekvő pozícióba. A telefon rövidebb oldalait fogja közben. Jobb keze a telefon USB-csatlakozó felőli végén legyen. A három középső ujját tartsa a képernyőn, kis- és hüvelykujjával pedig tartsa a telefont.\n\nAmikor készen áll, koppintson duplán a képernyőn a folytatáshoz.\n\nA Braille-billentyűzet elhagyásához csúsztasson a talaj felé három ujjal. Ezzel visszavált az eredeti billentyűzetére.</string>
   <string name="rotate_orientation_continue_announcement">Telefonja függőleges pozícióban van. A folytatáshoz fordítsa vízszintes helyzetbe úgy, hogy a hosszabb oldala legyen alul. Ezután fordítsa meg a képernyőt, úgy, hogy a telefon hátlapja nézzen Ön felé. Amikor készen áll, koppintson duplán a képernyőn a folytatáshoz.</string>
   <string name="type_letter_a_announcement">Továbbra is a képernyő hátlapja nézzen Ön felé. Két kezével tartsa a telefon rövid oldalait úgy, hogy mindkét kezének három középső ujjával meg tudja érinteni a képernyőt.\n\nA bal mutatóujjának az 1. ponton kell lennie. Koppintson az 1. pontra az „A” betű beírásához.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">A másik billentyűzetre való váltáshoz csúsztasson lefelé három ujjal. Próbálja ki most.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Következő billentyűzet. Általában ezzel a következő billentyűzetre vált. Most azonban továbbra is a Braille-billentyűzeten marad, mert ez még mindig az útmutató része.</string>
   <string name="swipe_up_3_fingers_announcement">Úgy is gépelhet „Tabletop” módban, hogy asztalra fekteti a telefont. Az útmutató befejezéséhez csúsztasson felfelé három ujjal, és keresse meg az útmutató befejezése lehetőséget.</string>
-  <string name="open_context_menu_announcement">A beállítások menü megnyílt. Fordítsa vissza a telefont a szokásos helyzetbe, hogy Ön felé nézzen a képernyője, és tartsa a megszokott módon. Mostantól a hagyományos TalkBack-kézmozdulatokkal navigálhat. További beállítások megtekintéséhez csúsztasson jobbra.</string>
+  <string name="open_context_menu_announcement">A beállítások menü megnyílt. Fordítsa vissza a telefont a szokásos helyzetbe, hogy Ön felé nézzen a képernyője, és tartsa a megszokott módon. Mostantól a hagyományos SandFly-kézmozdulatokkal navigálhat. További beállítások megtekintéséhez csúsztasson jobbra.</string>
   <string name="hold_six_fingers_announcement">%s\nFektesse az asztalra az eszközt. Ezután mindkét kezének három középső ujjával tartsa lenyomva a képernyőt olyan helyzetben, hogy kényelmesen tudjon gépelni.</string>
   <string name="hold_six_fingers_inactive_announcement">Fektesse az asztalra az eszközt. Ezután mindkét kezének három középső ujjával tartsa lenyomva a képernyőt olyan helyzetben, hogy kényelmesen tudjon gépelni.</string>
   <string name="finish_tutorial_announcement">A Braille-billentyűzet látható. Fordítsa úgy a telefonját, hogy a hátlapja nézzen Ön felé. Fordítsa a telefont fekvő pozícióba. Majd kezdjen el gépelni.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Ez a kézmozdulat a következőhöz van használatban: „%1$s”, és nem módosítható. Próbálkozzon egy másik kézmozdulattal. %2$s</string>
   <string name="custom_gesture_cannot_used">Ez a kézmozdulat nem használható</string>
   <string name="custom_gesture_no_gesture">Nem végeztek kézmozdulatot</string>
-  <string name="custom_gesture_try_another">Próbálkozzon másik kézmozdulattal. Az összes rendelkezésre álló kézmozdulat listáját a TalkBack Braille-billentyűzet súgójában találja. %s</string>
+  <string name="custom_gesture_try_another">Próbálkozzon másik kézmozdulattal. Az összes rendelkezésre álló kézmozdulat listáját a SandFly Braille-billentyűzet súgójában találja. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">A kézmozdulatok nem egyeztek</string>
   <string name="custom_gesture_perform_again">Végezze el újra a használni kívánt kézmozdulatot. %s</string>
+    <string name="tabletop_port_left_announcement">Asztali mód, töltőcsatlakozó a bal oldalon</string>
+    <string name="tabletop_port_right_announcement">Asztali mód, töltőcsatlakozó a jobb oldalon</string>
+    <string name="screen_away_port_right_announcement">Képernyő nélküli mód, töltőcsatlakozó a jobb oldalon</string>
+    <string name="screen_away_port_left_announcement">Képernyő nélküli mód, töltőcsatlakozó a bal oldalon</string>
+    <string name="screen_toward_announcement">Képernyő feléd</string>
+    <string name="screen_toward_port_left_announcement">Képernyő feléd, töltőcsatlakozó a bal oldalon</string>
+    <string name="screen_toward_port_right_announcement">Képernyő Ön felé, töltőcsatlakozó a jobb oldalon</string>
+    <string name="screen_toward_port_down_announcement">A képernyő ön felé, a töltőport lefelé mutat</string>
+    <string name="screen_toward_port_up_announcement">A képernyő ön felé, a töltőport felfelé mutat</string>
+    <string name="port_right_announcement">Töltőcsatlakozó a jobb oldalon</string>
+    <string name="port_left_announcement">Töltőcsatlakozó a bal oldalon</string>
+    <string name="tabletop_port_near_announcement">Asztali mód, töltőcsatlakozó Ön felé</string>
+    <string name="tabletop_port_far_announcement">Asztali mód, a töltőport távol van tőled</string>
+    <string name="screen_away_port_down_announcement">Képernyő nélküli mód, a töltőport lefelé mutat</string>
+    <string name="screen_away_port_up_announcement">Képernyő nélküli mód, a töltőport felfelé mutat</string>
+    <string name="port_near_announcement">Ön felé töltő port</string>
+    <string name="port_far_announcement">Töltőcsatlakozó távol van tőled</string>
+    <string name="port_down_announcement">Lefelé mutató töltőcsatlakozó</string>
+    <string name="port_up_announcement">A töltőport felfelé mutat</string>
+    <string name="orientation_locked_announcement">Tájolás zárva</string>
+    <string name="orientation_locked_port_announcement">Tájolás zárva. %1$s</string>
+    <string name="orientation_unlocked_announcement">Tájolás feloldva</string>
+    <string name="switch_to_language_contracted_announcement">Átváltva %s nyelvre, Rövidített Braille-írás</string>
+    <string name="switch_to_language_uncontracted_announcement">Átváltva %s nyelvre, Rövidítés nélküli Braille-írás</string>
+    <string name="title_pref_flip_dots_vertically">Cserélje fel a felső és alsó pontokat</string>
+    <string name="summary_pref_flip_dots_vertically">Az 1. pont a 3. ponttal, a 4. pont pedig a 6. ponttal cserél helyeket</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet arccal elfelé tartotta</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kikapcsolt állapotban a feltartott táblagép vagy széthajtott telefon az asztali elrendezést használja, és Ön felé néz</string>
+    <string name="title_pref_typing_sounds">Gépelési hangok</string>
+    <string name="summary_pref_typing_sounds">Lejátszási billentyűzet kattintások, amikor beír egy karaktert, szóközt, új sort vagy törlést</string>
+    <string name="skip_tutorial">Az oktatóanyag kihagyása</string>
 </resources>

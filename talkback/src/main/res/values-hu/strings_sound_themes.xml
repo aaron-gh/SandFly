@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Hangtémák</string>
+    <string name="summary_pref_sound_themes">Hang- és rezgéskészletek telepítése és kiválasztása, egyes hangok cseréje saját hangokra, valamint a vezérlőhangok és -rezgések és a 3D hang bekapcsolása.</string>
+    <string name="sound_themes_installed_category">Telepített témák</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">A SandFly saját hangjai és rezgései, valamint az Ön saját hangjai.</string>
+    <string name="sound_theme_in_use">Használatban</string>
+    <string name="sound_theme_by">Készítő: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licenc: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> hang.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> hangok.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> rezgés.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> rezgés.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Bekapcsolja a vezérlőhangokat és -rezgéseket.</string>
+    <string name="sound_theme_control_sounds_off">Kikapcsolja a vezérlőhangokat és -rezgéseket.</string>
+    <string name="sound_theme_use">Téma használata</string>
+    <string name="sound_theme_about">A témáról</string>
+    <string name="sound_theme_export">Mentés témafájlként</string>
+    <string name="sound_theme_remove">Eltávolítás</string>
+    <string name="sound_theme_remove_confirm">Eltávolítja a(z) <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> témát?</string>
+    <string name="sound_theme_remove_button">Eltávolítás</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">A téma elmentve, <xliff:g id="count" example="1">%d</xliff:g> hanggal.</item>
+        <item quantity="other">Mentettük a témát, <xliff:g id="count" example="13">%d</xliff:g> hanggal.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">A SandFly nem tudta menteni a témafájlt.</string>
+    <string name="sound_theme_no_picker">Az eszközön nincs fájlok kiválasztására alkalmas alkalmazás.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> beállításai</string>
+    <string name="title_pref_theme_sounds">Hangok</string>
+    <string name="summary_pref_theme_sounds">A téma bármely hangjának cseréje saját hangfájlra.</string>
+    <string name="sound_themes_install_category">Téma telepítése</string>
+    <string name="title_pref_sound_theme_install_file">Fájlból</string>
+    <string name="summary_pref_sound_theme_install_file">A témafájl egy ZIP-fájl. Más alkalmazásból is megnyithatja vagy megoszthatja a SandFly-jal.</string>
+    <string name="title_pref_sound_theme_install_link">Linkről</string>
+    <string name="summary_pref_sound_theme_install_link">Link egy témafájlra vagy egy témát tartalmazó GitHub-tárolóra. A böngészőből is megoszthat linket a SandFly-jal.</string>
+    <string name="title_pref_sound_theme_install_source">Egy forrásból</string>
+    <string name="summary_pref_sound_theme_install_source">Témafájlok a GitHub, GitLab, Codeberg, Gitea vagy Bitbucket tárolójában.</string>
+    <string name="sound_theme_sources">Hangtéma források</string>
+    <string name="sound_theme_source_empty">Ebben a forrásban nincsenek hangtémák</string>
+    <string name="sound_theme_source_failed">Nem sikerült betölteni a hangtémákat. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">A róla telepített hangtémák telepítve maradnak.</string>
+    <string name="sound_theme_link_message">Írjon be vagy illesszen be egy linket egy témafájlra vagy egy témát tartalmazó GitHub-tárolóra.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Hangtéma telepítése</string>
+    <string name="sound_theme_install_reading">A hangtéma beolvasása</string>
+    <string name="sound_theme_install_title">Telepíti a(z) <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> témát?</string>
+    <string name="sound_theme_install_and_use">Telepítés és használat</string>
+    <string name="sound_theme_install">Telepítés</string>
+    <string name="sound_theme_install_replaces">Ez lecseréli az azonos nevű telepített témát.</string>
+    <string name="sound_theme_install_skipped">Kihagyva:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> telepítve.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> telepítve. Mostantól használatban van.</string>
+    <string name="sound_theme_install_nothing">Nincs telepíthető hangtéma.</string>
+    <string name="sound_theme_install_not_a_theme">Ez nem a SandFly által használható hangtéma: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">A SandFly nem tudta telepíteni a hangtémát. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">A hangtémákra mutató linkeknek https-sel kell kezdődniük.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> hangjai</string>
+    <string name="title_pref_theme_sounds_reset">A SandFly hangjai mindenhez</string>
+    <string name="theme_sounds_reset_confirm">Eltávolítja a téma összes hangját, és a SandFly saját hangjait használja?</string>
+    <string name="theme_sounds_reset_button">Eltávolítás</string>
+    <string name="theme_sounds_category">Hangok</string>
+    <string name="theme_sound_summary_default">A SandFly hangja</string>
+    <string name="theme_sound_summary_custom">A téma hangja</string>
+    <string name="theme_sound_summary_none">Nincs hang. A fókusz hangja szól.</string>
+    <string name="theme_sound_summary_android_keyboard">Az Android billentyűzethangja</string>
+    <string name="theme_sound_use_android_keyboard">Az Android billentyűzethangjának használata</string>
+    <string name="theme_sound_braille_character">Braille-billentyűzet: karakter beírása</string>
+    <string name="theme_sound_braille_space">Braille-billentyűzet: szóköz</string>
+    <string name="theme_sound_braille_delete">Braille-billentyűzet: törlés</string>
+    <string name="theme_sound_braille_new_line">Braille-billentyűzet: új sor</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Hangfájl kiválasztása</string>
+    <string name="theme_sound_preview">Előnézet</string>
+    <string name="theme_sound_none">Nincs hang</string>
+    <string name="theme_sound_summary_no_sound">Nincs hang</string>
+    <string name="theme_sound_action_set_none">Beállítás hang nélkülire</string>
+    <string name="theme_sound_use_default">A SandFly hangjának használata</string>
+    <string name="theme_sound_remove">A hang eltávolítása</string>
+    <string name="theme_sound_too_large">A fájl túl nagy. Egy hang legfeljebb 5 MB lehet.</string>
+    <string name="theme_sound_not_audio">A SandFly nem tudja lejátszani ezt a fájlt. Válasszon WAV, OGG, MP3 vagy FLAC formátumú hangot.</string>
+    <string name="theme_sound_failed">A SandFly nem tudta beolvasni ezt a fájlt.</string>
+</resources>

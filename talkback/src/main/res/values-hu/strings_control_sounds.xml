@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Vezérlőhangok és -rezgések</string>
+    <string name="summary_pref_control_sounds">Minden vezérlőtípus (például gombok, jelölőnégyzetek, szerkesztőmezők és listaelemek) saját hangot és saját rezgést kap a témából a fókusz hangja és rezgése helyett, ahogy az Unspoken teszi az NVDA-ban. A hang a vezérlő képernyőn elfoglalt helye felől szól, és a SandFly nem mondja ki a vezérlő típusát.</string>
+    <string name="title_pref_control_sounds_speak_roles">A vezérlőtípus kimondása továbbra is</string>
+    <string name="summary_pref_control_sounds_speak_roles">Vezérlőhang lejátszásakor a vezérlő típusa (például gomb) továbbra is elhangzik. Minden hangtémára vonatkozik.</string>
+    <string name="title_pref_control_sounds_3d">3D hang</string>
+    <string name="pref_control_sounds_3d_headphones">Fejhallgatóval</string>
+    <string name="pref_control_sounds_3d_always">Mindig</string>
+    <string name="pref_control_sounds_3d_never">Soha, csak bal és jobb</string>
+    <string name="individual_sound_control_button">Vezérlőhang: gomb</string>
+    <string name="individual_sound_control_checkbox">Vezérlőhang: jelölőnégyzet</string>
+    <string name="individual_sound_control_radio_button">Vezérlőhang: választógomb</string>
+    <string name="individual_sound_control_edit_text">Vezérlőhang: szerkesztőmező</string>
+    <string name="individual_sound_control_combo_box">Vezérlőhang: legördülő lista</string>
+    <string name="individual_sound_control_slider">Vezérlőhang: csúszka</string>
+    <string name="individual_sound_control_link">Vezérlőhang: link</string>
+    <string name="individual_sound_control_image">Vezérlőhang: kép</string>
+    <string name="individual_sound_control_clock">Vezérlőhang: óra</string>
+    <string name="individual_sound_control_tab">Vezérlőhang: lap</string>
+    <string name="individual_sound_control_menu_item">Vezérlőhang: menüelem</string>
+    <string name="individual_sound_control_list_item">Vezérlőhang: listaelem</string>
+    <string name="individual_sound_control_tree_item">Vezérlőhang: faelem</string>
+</resources>

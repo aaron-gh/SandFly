@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Hardveres Braille-billentyűzet</string>
   <string name="bd_application_name">Kisegítő csomag Androidhoz</string>
-  <string name="bd_ime_unavailable_activity_name">Nem áll rendelkezésre a TalkBack Braille-billentyűzet</string>
-  <string name="bd_ime_disabled_dialog_title">A TalkBack Braille-billentyűzet bekapcsolása</string>
+  <string name="bd_ime_unavailable_activity_name">Nem áll rendelkezésre a SandFly Braille-billentyűzet</string>
+  <string name="bd_ime_disabled_dialog_title">A SandFly Braille-billentyűzet bekapcsolása</string>
   <string name="bd_ime_disabled_dialog_message">Ha a Braille-kijelzőt szeretné használni gépeléshez, a beviteli beállításokban tudja bekapcsolni</string>
   <string name="bd_ime_disabled_dialog_title_positive">Beviteli beállítások</string>
   <string name="bd_ime_not_default_dialog_title">Beviteli módszer váltása</string>
-  <string name="bd_ime_not_default_dialog_message">A gépelés folytatásához állítsa be a TalkBack Braille-billentyűzetet beviteli módszerként</string>
+  <string name="bd_ime_not_default_dialog_message">A gépelés folytatásához állítsa be a SandFly Braille-billentyűzetet beviteli módszerként</string>
   <string name="bd_ime_not_default_dialog_positive">Beviteli módszer váltása</string>
   <string name="type_unlabeled">Címke nélküli</string>
   <string name="type_unlabeled_edittext">Címke nélküli szerkesztőmező</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Pásztázás balra</string>
   <string name="overlay_pan_right_button">Pásztázás jobbra</string>
   <string name="bd_preferences_title">Braille-kijelző</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">A Braille-kijelző használatához előbb kapcsolja be a TalkBack funkciót</string>
-  <string name="bd_preferences_banner_talkback_off_button">Ugrás a TalkBack funkcióhoz</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">A Braille-kijelző használatához előbb kapcsolja be a SandFly funkciót</string>
+  <string name="bd_preferences_banner_talkback_off_button">Ugrás a SandFly funkcióhoz</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">A Braille-kijelző használatához előbb kapcsolja be a Bluetootht</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth bekapcsolása</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">A Braille-kijelző használatához a(z) %s alkalmazásnak hozzáférésre van szüksége a közeli eszközökhöz</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">A böngészés mód használatához az alapértelmezett billentyűzetkiosztásról a továbbfejlesztett billentyűzetkiosztásra kell váltania. Ez a váltás módosítja a Braille-kijelző egyes parancsait</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Beállítások</string>
   <string name="bd_command_change_dialog_title">Egyes parancsok frissültek</string>
-  <string name="bd_command_change_dialog_message">A TalkBack ezen verziójában frissítettük a következő Braille-kijelzőparancsokat:\n\n• Előző elem: nyomja meg az 1-es és a 7-es pontot\n\n• Következő elem: nyomja meg a 4-es és a 8-as pontot\n\n• Előző felolvasásvezérlő: nyomja meg a 2-es, a 3-as, a 7-es és a 8-as pontot\n\n• Következő felolvasásvezérlő: nyomja meg az 5-ös, a 6-os, a 7-es és a 8-as pontot</string>
+  <string name="bd_command_change_dialog_message">A SandFly ezen verziójában frissítettük a következő Braille-kijelzőparancsokat:\n\n• Előző elem: nyomja meg az 1-es és a 7-es pontot\n\n• Következő elem: nyomja meg a 4-es és a 8-as pontot\n\n• Előző felolvasásvezérlő: nyomja meg a 2-es, a 3-as, a 7-es és a 8-as pontot\n\n• Következő felolvasásvezérlő: nyomja meg az 5-ös, a 6-os, a 7-es és a 8-as pontot</string>
   <string name="bd_preference_braille_contracted">Rövidített Braille-írás</string>
   <string name="bd_preference_braille_uncontracted">Rövidítés nélküli Braille-írás</string>
   <string name="bd_braille_grade_tips">A rövidített és a rövidítés nélküli Braille-írás közötti Braille-kijelzővel történő gyors váltáshoz nyomja meg a szóközt és az 1, 2, 4, 5 pontot.\n\nEz a parancs akkor működik, ha mindkét Braille-fokozatot használó nyelv van beállítva.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Mozgás az elemek között</string>
   <string name="bd_commands_bindings_category_system_actions_title">Rendszerműveletek</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Vissza, kezdőlap, értesítések és egyebek</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-funkciók</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback-menük és -beállítások</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-funkciók</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menük és beállítások</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille-beállítások</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braille-nyelv és -beállítások</string>
   <string name="bd_commands_bindings_category_text_editing_title">Szövegszerkesztés</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Az összes alkalmazás képernyő megnyitása</string>
   <string name="bd_cmd_toggle_screen_search">Közvetlen keresés megnyitása</string>
   <string name="bd_cmd_edit_custom_label">Egyéni címke szerkesztése</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack-menü megnyitása</string>
-  <string name="bd_cmd_toggle_voice_feedback">A TalkBack-beszéd be- vagy kikapcsolása</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly-menü megnyitása</string>
+  <string name="bd_cmd_toggle_voice_feedback">A SandFly-beszéd be- vagy kikapcsolása</string>
   <string name="bd_cmd_read_stop">Olvasás leállítása</string>
-  <string name="bd_cmd_talkback_settings">TalkBack-beállítások megnyitása</string>
+  <string name="bd_cmd_talkback_settings">SandFly-beállítások megnyitása</string>
   <string name="bd_cmd_switch_to_next_input_language">Váltás a következő gépelési nyelvre</string>
   <string name="bd_cmd_switch_to_next_output_language">Váltás a következő olvasási nyelvre</string>
   <string name="bd_cmd_toggle_contracted_mode">Váltás a rövidített és a teljes mód között</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">A böngészési módba való belépésre szolgáló parancs használatával gyorsan navigálhat a weboldalak között, majd beírhatja a következő betű- vagy számparancsokat.\n\nEzek a parancsok böngészési módba való belépés nélkül is használhatók, de a „következő” parancsokhoz hozzá kell adnia a .8-at.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Táblázatban való navigáció</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Kikapcsolja a Braille-kijelző beállításait?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">A TalkBack beállításaiban később bármikor bekapcsolhatja</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">A SandFly beállításaiban később bármikor bekapcsolhatja</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Kikapcsolás</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Néhány parancs nem áll rendelkezésre</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigációs parancsok, Braille-beállítások és egyes TalkBack-funkciók nem használhatók gépeléskor és szerkesztéskor.\n\nEzek használatához zárja be a billentyűzetet.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Navigációs parancsok, Braille-beállítások és egyes SandFly-funkciók nem használhatók gépeléskor és szerkesztéskor.\n\nEzek használatához zárja be a billentyűzetet.</string>
   <string name="bd_caption_tutorial_dialog_title">Feliratok a Braille-kijelzőn</string>
   <string name="bd_caption_tutorial_dialog_message">A videó feliratainak megjelenítéséhez vagy elrejtéséhez nyomja meg a szóközt és az 1-es, 4-es, 7-es és 8-as pontot.\n\nA támogatott médiatartalmak feliratainak automatikus megjelenítéséhez kapcsolja be a Beállításokban a Feliratok megjelenítése Braille-kijelzőn beállítást.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Mindig jelenjen meg ez az üzenet, ha rendelkezésre állnak feliratok</string>
   <string name="bd_usb_connect_dialog_title">USB-hez csatlakoztatott Braille-kijelző</string>
-  <string name="bd_usb_connect_dialog_message">A(z) %s akkumulátora tölti a Braille-kijelzőt.\n\nHa Bluetoothra kell váltania, válassza le az USB-eszközt az vagy USB-hubot, és lépjen A TalkBack beállításai &gt; Braille-kijelző menüponthoz.</string>
+  <string name="bd_usb_connect_dialog_message">A(z) %s akkumulátora tölti a Braille-kijelzőt.\n\nHa Bluetoothra kell váltania, válassza le az USB-eszközt az vagy USB-hubot, és lépjen A SandFly beállításai &gt; Braille-kijelző menüponthoz.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">%s – alacsony töltöttségi szint</string>
   <string name="bd_battery_low_dialog_message">A(z) %s akkumulátora tölti a Braille-kijelzőt.\n\nAz akkumulátor-üzemidő növeléséhez:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Az összes törlése</string>
   <string name="popup_message_history_empty">Üres</string>
   <string name="popup_message_history_consent_dialog_title">Bekapcsolja az eszközalapú üzenetelőzményeket?</string>
-  <string name="popup_message_history_consent_dialog_msg">Ez a beállítás lehetővé teszi bizonyos üzenetek (például értesítések és riasztások) tárolását a TalkBackben. Ezt a beállítást bármikor módosíthatja.</string>
+  <string name="popup_message_history_consent_dialog_msg">Ez a beállítás lehetővé teszi bizonyos üzenetek (például értesítések és riasztások) tárolását a SandFlyben. Ezt a beállítást bármikor módosíthatja.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Bekapcsolás</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Köszönöm, nem</string>
+    <string name="external_display_channel">Braille-kijelzők más alkalmazásokból</string>
+    <string name="external_display_ask_title">Engedélyezi, hogy a <xliff:g id="app" example="Notetaker">%1$s</xliff:g> Braille-kijelző legyen az SandFly számára?</string>
+    <string name="external_display_ask_text">SandFly nem fogja használni, amíg nem engedélyezi.</string>
+    <string name="external_display_warning">A <xliff:g id="app" example="Notetaker">%1$s</xliff:g> mindent el tud majd olvasni, amit SandFly Braille-írással jelenít meg, ami bármi lehet a képernyőn, beleértve az üzeneteket és a begépelt szöveget is. Ezenkívül képes lesz vezérelni eszközét, ahogyan Braille-kijelzővel tudja: írja be, nyissa meg az alkalmazásokat, és futtassa a SandFly parancsot. Csak azokat az alkalmazásokat engedélyezze, amelyekben megbízik.</string>
+    <string name="external_display_allow">Engedélyezze</string>
+    <string name="external_display_deny">Ne engedd</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> az Ön Braille-kijelzője</string>
+    <string name="external_display_in_use_text">Amíg a SandFly használja, az <xliff:g id="app" example="Notetaker">%1$s</xliff:g> képes olvasni a képernyőt és vezérelni az eszközt.</string>
+    <string name="external_displays_title">Megjeleníti más alkalmazásokból</string>
+    <string name="external_displays_summary">Az Ön által engedélyezett alkalmazások Braille-kijelzők lehetnek a SandFly számára. Egy Braille-kijelző alkalmazás képes olvasni a képernyőt és vezérelni az eszközt.</string>
+    <string name="external_displays_none">Egyetlen alkalmazás sem lehet Braille-kijelző.</string>
 </resources>
