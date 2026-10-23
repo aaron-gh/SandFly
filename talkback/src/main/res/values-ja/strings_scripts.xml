@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">スクリプト</string>
     <string name="summary_pref_scripts">アプリでの SandFly の動作を変更する</string>
-    <string name="script_import">インポートスクリプト</string>
+    <string name="script_import">スクリプトをインポート</string>
     <string name="script_install_label">SandFly スクリプトをインストールする</string>
     <string name="script_import_nothing">インストールするスクリプト ファイルはありません。</string>
     <string name="script_import_cannot_open">ファイルを開けませんでした。</string>
@@ -65,7 +65,7 @@
     <string name="script_order_summary">同じスピーチを変更するスクリプトの順序。アプリスクリプトが最初に実行されます。</string>
     <string name="script_log">ログ</string>
     <string name="script_log_summary">SandFly 開始以降の出力とエラー</string>
-    <string name="script_clear_storage">保存されたデータをクリアする</string>
+    <string name="script_clear_storage">保存データを消去</string>
     <string name="script_storage_cleared">保存されたデータが消去されました</string>
     <string name="script_remove">削除</string>
     <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> を削除しますか?</string>
@@ -84,7 +84,7 @@
     <string name="script_install_anyway">とにかくインストールする</string>
     <string name="script_update_anyway">とにかくアップデートする</string>
     <string name="script_homepage">ホームページを開く</string>
-    <string name="script_homepage_confirm_title">このアドレスを開いてください?</string>
+    <string name="script_homepage_confirm_title">このアドレスを開きますか?</string>
     <string name="script_homepage_open">開く</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> 開けないアプリはありません</string>
     <string name="script_turned_off">エラーが繰り返された後、<xliff:g id="name">%1$s</xliff:g> がオフになりました。スクリプトのログを参照してください。</string>
@@ -111,14 +111,14 @@
     <string name="script_binding_turn_on">ON にする</string>
     <string name="script_binding_turn_off">OFF にする</string>
     <string name="script_binding_restore">デフォルトに戻す</string>
-    <string name="script_binding_restored">デフォルトの復元</string>
+    <string name="script_binding_restored">デフォルトに戻しました</string>
     <string name="script_binding_perform">ジェスチャーまたはキーを実行する</string>
     <string name="script_binding_perform_summary">次のジェスチャ、または SandFly 修飾子を使用して押されたキーを割り当てます</string>
     <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押します。</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>を<xliff:g id="command">%2$s</xliff:g>に割り当てますか?</string>
     <string name="script_binding_assign">割り当て</string>
     <string name="script_binding_choose_gesture">ジェスチャーを選択</string>
-    <string name="script_binding_type_keys">キーを入力します</string>
+    <string name="script_binding_type_keys">キーを入力</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, または sf+t, 秒のように</string>
     <string name="script_binding_bad_keys">これらのキーは使用できません。 <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">さらに次のように付け加えます。</string>

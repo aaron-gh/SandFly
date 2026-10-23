@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Scripturi</string>
     <string name="summary_pref_scripts">Schimbați modul în care funcționează SandFly în aplicații</string>
-    <string name="script_import">Import script</string>
+    <string name="script_import">Importă un script</string>
     <string name="script_install_label">Instalați scriptul SandFly</string>
     <string name="script_import_nothing">Nu există niciun fișier script de instalat.</string>
     <string name="script_import_cannot_open">Fișierul nu a putut fi deschis.</string>
@@ -65,7 +65,7 @@
     <string name="script_order_summary">Comanda pentru scripturi care schimbă același discurs. Scripturile de aplicație rulează mai întâi.</string>
     <string name="script_log">Jurnal</string>
     <string name="script_log_summary">Ieșire și erori de la începutul SandFly</string>
-    <string name="script_clear_storage">Ștergeți datele stocate</string>
+    <string name="script_clear_storage">Șterge datele stocate</string>
     <string name="script_storage_cleared">Datele stocate au fost șterse</string>
     <string name="script_remove">Eliminați</string>
     <string name="script_remove_title">Eliminați <xliff:g id="name">%1$s</xliff:g>?</string>
@@ -83,8 +83,8 @@
     <string name="script_compatibility_title">Compatibilitate</string>
     <string name="script_install_anyway">Instalați oricum</string>
     <string name="script_update_anyway">Actualizați oricum</string>
-    <string name="script_homepage">Deschideți pagina de pornire</string>
-    <string name="script_homepage_confirm_title">Deschideți această adresă?</string>
+    <string name="script_homepage">Deschide pagina principală</string>
+    <string name="script_homepage_confirm_title">Deschizi această adresă?</string>
     <string name="script_homepage_open">Deschide</string>
     <string name="script_homepage_failed">Nicio aplicație nu se poate deschide <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dezactivat după erori repetate. Vedeți logul său în Scripturi.</string>
@@ -110,7 +110,7 @@
     <string name="script_binding_none">Fără</string>
     <string name="script_binding_turn_on">Activează</string>
     <string name="script_binding_turn_off">Dezactivează</string>
-    <string name="script_binding_restore">Restabiliți valorile implicite</string>
+    <string name="script_binding_restore">Restabilește valorile implicite</string>
     <string name="script_binding_restored">Valorile implicite au fost restaurate</string>
     <string name="script_binding_perform">Efectuați gesturi sau taste</string>
     <string name="script_binding_perform_summary">Atribuiți următorul gest sau tastele apăsate cu modificatorul SandFly</string>
@@ -118,7 +118,7 @@
     <string name="script_binding_assign_title">Atribuiți <xliff:g id="binding">%1$s</xliff:g> la <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuie</string>
     <string name="script_binding_choose_gesture">Alege gestul</string>
-    <string name="script_binding_type_keys">Tastați cheile</string>
+    <string name="script_binding_type_keys">Tastează tastele</string>
     <string name="script_binding_type_keys_summary">Ca sf+shift+n, sau sf+t, s</string>
     <string name="script_binding_bad_keys">Nu pot folosi aceste taste. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Se adauga:</string>

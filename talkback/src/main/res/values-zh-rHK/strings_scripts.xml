@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">腳本</string>
     <string name="summary_pref_scripts">更改 SandFly 在應用程式中的工作方式</string>
-    <string name="script_import">導入腳本</string>
+    <string name="script_import">匯入指令碼</string>
     <string name="script_install_label">安裝SandFly腳本</string>
     <string name="script_import_nothing">沒有要安裝的腳本檔案。</string>
     <string name="script_import_cannot_open">該文件無法開啟。</string>
@@ -65,7 +65,7 @@
     <string name="script_order_summary">更改相同演講的腳本的順序。應用程式腳本首先運行。</string>
     <string name="script_log">紀錄</string>
     <string name="script_log_summary">自 SandFly 開始以來的輸出與錯誤</string>
-    <string name="script_clear_storage">清除儲存的數據</string>
+    <string name="script_clear_storage">清除儲存的資料</string>
     <string name="script_storage_cleared">儲存的資料被清除</string>
     <string name="script_remove">刪除</string>
     <string name="script_remove_title">刪除<xliff:g id="name">%1$s</xliff:g>？</string>
@@ -83,9 +83,9 @@
     <string name="script_compatibility_title">相容性</string>
     <string name="script_install_anyway">無論如何安裝</string>
     <string name="script_update_anyway">無論如何都要更新</string>
-    <string name="script_homepage">打開主頁</string>
-    <string name="script_homepage_confirm_title">打開這個地址？</string>
-    <string name="script_homepage_open">打開</string>
+    <string name="script_homepage">開啟首頁</string>
+    <string name="script_homepage_confirm_title">開啟這個網址？</string>
+    <string name="script_homepage_open">開啟</string>
     <string name="script_homepage_failed">沒有應用程式可以打開<xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 多次錯誤後關閉。在腳本中查看其日誌。</string>
     <string name="shortcut_inspect_item">檢查重點項目</string>
@@ -105,13 +105,13 @@
     <string name="script_commands_summary">正在執行的腳本的手勢和按鍵位於 SandFly 之前。關閉其中一個以保留 SandFly。</string>
     <string name="script_binding_gesture">手勢：<xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">按鍵：<xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly菜單</string>
+    <string name="script_binding_menu">SandFly 選單</string>
     <string name="script_binding_control">朗讀控制項</string>
     <string name="script_binding_none">無</string>
     <string name="script_binding_turn_on">開啟</string>
     <string name="script_binding_turn_off">關閉</string>
     <string name="script_binding_restore">恢復預設設定</string>
-    <string name="script_binding_restored">恢復預設值</string>
+    <string name="script_binding_restored">已恢復預設值</string>
     <string name="script_binding_perform">執行手勢或按鍵</string>
     <string name="script_binding_perform_summary">指定下一個手勢，或使用 SandFly 修飾符按下的按鍵</string>
     <string name="script_binding_perform_message">做出手勢或按下按鍵。</string>

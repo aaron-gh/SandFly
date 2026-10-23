@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Roteiros</string>
     <string name="summary_pref_scripts">Altere a forma como SandFly funciona em aplicativos</string>
-    <string name="script_import">Script de importação</string>
+    <string name="script_import">Importar script</string>
     <string name="script_install_label">Instale o script SandFly</string>
     <string name="script_import_nothing">Não há arquivo de script para instalar.</string>
     <string name="script_import_cannot_open">O arquivo não pôde ser aberto.</string>
@@ -105,20 +105,20 @@
     <string name="script_commands_summary">Gestos e teclas de um script em execução vêm antes de SandFly. Desligue um para manter SandFly.</string>
     <string name="script_binding_gesture">Gesto: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Teclas: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly cardápio</string>
+    <string name="script_binding_menu">Menu do SandFly</string>
     <string name="script_binding_control">Controlos de leitura</string>
     <string name="script_binding_none">Nenhum</string>
     <string name="script_binding_turn_on">Ativar</string>
     <string name="script_binding_turn_off">Desativar</string>
-    <string name="script_binding_restore">Restaurar padrões</string>
-    <string name="script_binding_restored">Padrões restaurados</string>
+    <string name="script_binding_restore">Repor predefinições</string>
+    <string name="script_binding_restored">Predefinições repostas</string>
     <string name="script_binding_perform">Execute gestos ou teclas</string>
     <string name="script_binding_perform_summary">Atribua o próximo gesto ou teclas pressionadas com o modificador SandFly</string>
     <string name="script_binding_perform_message">Faça o gesto ou pressione as teclas.</string>
     <string name="script_binding_assign_title">Atribuir <xliff:g id="binding">%1$s</xliff:g> a <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuir</string>
     <string name="script_binding_choose_gesture">Escolher gesto</string>
-    <string name="script_binding_type_keys">Digite chaves</string>
+    <string name="script_binding_type_keys">Digitar teclas</string>
     <string name="script_binding_type_keys_summary">Como sf+shift+n, ou sf+t, s</string>
     <string name="script_binding_bad_keys">Não é possível usar essas chaves. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Acrescenta:</string>

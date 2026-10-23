@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skriptlər</string>
     <string name="summary_pref_scripts">SandFly-ın tətbiqlərdə işləməsini dəyişin</string>
-    <string name="script_import">Skripti import edin</string>
+    <string name="script_import">Skripti import et</string>
     <string name="script_install_label">SandFly skriptini quraşdırın</string>
     <string name="script_import_nothing">Quraşdırmaq üçün skript faylı yoxdur.</string>
     <string name="script_import_cannot_open">Faylı açmaq mümkün olmadı.</string>
@@ -51,7 +51,7 @@
     <string name="script_permission_dialogs">İstənilən tətbiqin üzərində dialoqlar göstərmək</string>
     <string name="script_permission_java">Hər tətbiqdə SandFly-ın bütün girişi ilə Java kodu icra etmək</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
-    <string name="script_enabled">Aktiv edin</string>
+    <string name="script_enabled">Aktiv et</string>
     <string name="script_permissions_title">İcazələr</string>
     <string name="script_permissions_none">Yoxdur</string>
     <string name="script_settings_category">Ayarlar</string>
@@ -65,7 +65,7 @@
     <string name="script_order_summary">Eyni nitqi dəyişən skriptlərin sırası. Tətbiq skriptləri birinci icra olunur.</string>
     <string name="script_log">Jurnal</string>
     <string name="script_log_summary">SandFly başladıqdan bəri çıxış və xətalar</string>
-    <string name="script_clear_storage">Saxlanılan datanı silin</string>
+    <string name="script_clear_storage">Saxlanılan datanı sil</string>
     <string name="script_storage_cleared">Saxlanılan data silindi</string>
     <string name="script_remove">Silin</string>
     <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> silinsin?</string>
@@ -83,9 +83,9 @@
     <string name="script_compatibility_title">Uyğunluq</string>
     <string name="script_install_anyway">Yenə də quraşdırın</string>
     <string name="script_update_anyway">Yenə də güncəlləyin</string>
-    <string name="script_homepage">Əsas səhifəni açın</string>
+    <string name="script_homepage">Əsas səhifəni aç</string>
     <string name="script_homepage_confirm_title">Bu ünvan açılsın?</string>
-    <string name="script_homepage_open">Açın</string>
+    <string name="script_homepage_open">Aç</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> ünvanını aça bilən tətbiq yoxdur</string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> təkrarlanan xətalardan sonra deaktiv edildi. Jurnalına Skriptlər bölməsində baxın.</string>
     <string name="shortcut_inspect_item">Fokuslanmış elementi yoxlayın</string>
@@ -108,9 +108,9 @@
     <string name="script_binding_menu">SandFly menyusu</string>
     <string name="script_binding_control">Oxuma kontrolları</string>
     <string name="script_binding_none">Yoxdur</string>
-    <string name="script_binding_turn_on">Aktiv edin</string>
-    <string name="script_binding_turn_off">Deaktiv edin</string>
-    <string name="script_binding_restore">Defolt ayarları bərpa edin</string>
+    <string name="script_binding_turn_on">Aktiv et</string>
+    <string name="script_binding_turn_off">Deaktiv et</string>
+    <string name="script_binding_restore">Defolt ayarları bərpa et</string>
     <string name="script_binding_restored">Defolt ayarlar bərpa edildi</string>
     <string name="script_binding_perform">Jesti edin və ya düymələri basın</string>
     <string name="script_binding_perform_summary">Növbəti jesti və ya SandFly dəyişdirici düyməsi ilə basılan düymələri təyin edin</string>
@@ -118,7 +118,7 @@
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> əmrinə təyin edilsin?</string>
     <string name="script_binding_assign">Təyin et</string>
     <string name="script_binding_choose_gesture">Jest seç</string>
-    <string name="script_binding_type_keys">Düymələri yazın</string>
+    <string name="script_binding_type_keys">Düymələri yaz</string>
     <string name="script_binding_type_keys_summary">Məsələn, sf+shift+n və ya sf+t, s</string>
     <string name="script_binding_bad_keys">Bu düymələrdən istifadə etmək mümkün deyil. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Skript bunları əlavə edir:</string>

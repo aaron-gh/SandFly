@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Сценарії</string>
     <string name="summary_pref_scripts">Змініть роботу SandFly у програмах</string>
-    <string name="script_import">Сценарій імпорту</string>
+    <string name="script_import">Імпортувати скрипт</string>
     <string name="script_install_label">Встановіть скрипт SandFly</string>
     <string name="script_import_nothing">Немає файлу сценарію для встановлення.</string>
     <string name="script_import_cannot_open">Не вдалося відкрити файл.</string>
@@ -85,7 +85,7 @@
     <string name="script_update_anyway">Все одно оновити</string>
     <string name="script_homepage">Відкрити домашню сторінку</string>
     <string name="script_homepage_confirm_title">Відкрити цю адресу?</string>
-    <string name="script_homepage_open">Відкритий</string>
+    <string name="script_homepage_open">Відкрити</string>
     <string name="script_homepage_failed">Жодна програма не може відкрити <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> вимкнено після повторних помилок. Перегляньте його журнал у сценаріях.</string>
     <string name="shortcut_inspect_item">Огляньте виділений елемент</string>
@@ -111,14 +111,14 @@
     <string name="script_binding_turn_on">Увімкнути</string>
     <string name="script_binding_turn_off">Вимкнути</string>
     <string name="script_binding_restore">Відновити налаштування за замовчуванням</string>
-    <string name="script_binding_restored">Стандартні параметри відновлені</string>
+    <string name="script_binding_restored">Стандартні параметри відновлено</string>
     <string name="script_binding_perform">Виконайте жест або клавіші</string>
     <string name="script_binding_perform_summary">Призначте наступний жест або натиснуті клавіші з модифікатором SandFly</string>
     <string name="script_binding_perform_message">Зробіть жест або натисніть клавіші.</string>
     <string name="script_binding_assign_title">Призначити <xliff:g id="binding">%1$s</xliff:g> до <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Призначити</string>
     <string name="script_binding_choose_gesture">Вибрати жест</string>
-    <string name="script_binding_type_keys">Введіть ключі</string>
+    <string name="script_binding_type_keys">Ввести клавіші</string>
     <string name="script_binding_type_keys_summary">Як sf+shift+n, або sf+t, s</string>
     <string name="script_binding_bad_keys">Не можна використовувати ці ключі. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Він додає:</string>
