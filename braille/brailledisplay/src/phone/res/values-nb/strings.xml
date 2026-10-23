@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Maskinvaretastatur for punktskrift</string>
   <string name="bd_application_name">Android Tilgjengelighet</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-punktskrifttastatur er utilgjengelig</string>
-  <string name="bd_ime_disabled_dialog_title">Slå på TalkBack-punktskrifttastatur</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-punktskrifttastatur er utilgjengelig</string>
+  <string name="bd_ime_disabled_dialog_title">Slå på SandFly-punktskrifttastatur</string>
   <string name="bd_ime_disabled_dialog_message">For å skrive med leselisten, gå til innstillingene for innenheter for å slå den på</string>
   <string name="bd_ime_disabled_dialog_title_positive">Innstillinger for innenheter</string>
   <string name="bd_ime_not_default_dialog_title">Bytt inndatametode</string>
-  <string name="bd_ime_not_default_dialog_message">For å fortsette å skrive, angi TalkBack-punktskrifttastaturet som inndatametode</string>
+  <string name="bd_ime_not_default_dialog_message">For å fortsette å skrive, angi SandFly-punktskrifttastaturet som inndatametode</string>
   <string name="bd_ime_not_default_dialog_positive">Bytt innenhet</string>
   <string name="type_unlabeled">Uten etikett</string>
   <string name="type_unlabeled_edittext">Umerket redigeringsfelt</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Panorer mot venstre</string>
   <string name="overlay_pan_right_button">Panorer mot høyre</string>
   <string name="bd_preferences_title">Leselist</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">For å bruke leselist må du først slå på TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Gå til TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">For å bruke leselist må du først slå på SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Gå til SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">For å bruke leselist må du først slå på Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Slå på Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">For å bruke leselist må %s ha tilgang til enheter i nærheten</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">For å bruke surfemodus må du bytte fra standard tastaturoppsett til det utvidede tastaturoppsettet. Denne endringen oppdaterer noen av kommandoene for leselisten</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Innstillinger</string>
   <string name="bd_command_change_dialog_title">Noen kommandoer er oppdatert</string>
-  <string name="bd_command_change_dialog_message">Disse leselistkommandoene er oppdatert i denne TalkBack-versjonen:\n\n• Forrige element: Trykk på punktene 1 og 7\n\n• Neste element: Trykk på punktene 4 og 8\n\n• Forrige lesekontroll: Trykk på punktene 2, 3, 7 og 8\n\n• Neste lesekontroll: Trykk på punktene 5, 6, 7 og 8</string>
+  <string name="bd_command_change_dialog_message">Disse leselistkommandoene er oppdatert i denne SandFly-versjonen:\n\n• Forrige element: Trykk på punktene 1 og 7\n\n• Neste element: Trykk på punktene 4 og 8\n\n• Forrige lesekontroll: Trykk på punktene 2, 3, 7 og 8\n\n• Neste lesekontroll: Trykk på punktene 5, 6, 7 og 8</string>
   <string name="bd_preference_braille_contracted">Forkortet punktskrift</string>
   <string name="bd_preference_braille_uncontracted">Uforkortet punktskrift</string>
   <string name="bd_braille_grade_tips">For å bytte raskt mellom forkortet og uforkortet ved hjelp av en leselist, trykk på mellomrom og punkt 1, 2, 4 og 5.\n\nDenne kommandoen fungerer hvis du bruker et språk med begge punktskriftgradene.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Bevegelse mellom elementer</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systemhandlinger</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Tilbake, startsiden, varsler med mer</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-funksjoner</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack-menyer og -innstillinger</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-funksjoner</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menyer og innstillinger</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Innstillinger for punktskrift</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Språk og innstillinger for punktskrift</string>
   <string name="bd_commands_bindings_category_text_editing_title">Tekstredigering</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Åpne alle apper</string>
   <string name="bd_cmd_toggle_screen_search">Åpne skjermsøk</string>
   <string name="bd_cmd_edit_custom_label">Endre egendefinert etikett</string>
-  <string name="bd_cmd_open_talkback_menu">Åpne TalkBack-menyen</string>
-  <string name="bd_cmd_toggle_voice_feedback">Slå TalkBack-tale av eller på</string>
+  <string name="bd_cmd_open_talkback_menu">Åpne SandFly-menyen</string>
+  <string name="bd_cmd_toggle_voice_feedback">Slå SandFly-tale av eller på</string>
   <string name="bd_cmd_read_stop">Slutt å lese</string>
-  <string name="bd_cmd_talkback_settings">Åpne TalkBack-innstillingene</string>
+  <string name="bd_cmd_talkback_settings">Åpne SandFly-innstillingene</string>
   <string name="bd_cmd_switch_to_next_input_language">Bytt til det neste skriftspråket</string>
   <string name="bd_cmd_switch_to_next_output_language">Bytt til det neste lesespråket</string>
   <string name="bd_cmd_toggle_contracted_mode">Bytt mellom sammentrukket og ikke sammentrukket</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Du kan navigere raskt på nettsider med kommandoen for å gå til lesemodus og deretter skrive inn følgende bokstav- eller tallsnarveier\n\nDisse snarveiene kan også brukes uten å gå til lesemodus, men du må legge til punkt 8 i «neste»-kommandoene</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabellnavigering</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Vil du slå av innstillingen for leselisten?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan når som helst slå den på igjen i TalkBack-innstillingene</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan når som helst slå den på igjen i SandFly-innstillingene</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Slå av</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Noen kommandoer er ikke tilgjengelige</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandoer for navigering, punktskriftinnstillinger og noen TalkBack-funksjoner kan ikke brukes under skriving/redigering.\n\nLukk tastatur for å bruke kommandoene</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandoer for navigering, punktskriftinnstillinger og noen SandFly-funksjoner kan ikke brukes under skriving/redigering.\n\nLukk tastatur for å bruke kommandoene</string>
   <string name="bd_caption_tutorial_dialog_title">Teksting på leselisten</string>
   <string name="bd_caption_tutorial_dialog_message">For å vise eller skjule teksting for videoen, trykk på mellomrom og punkt 1, 4, 7 og 8.\n\nFor å vise teksting automatisk for støttet medieinnhold, slå på Vis teksting på leselisten i innstillingene.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Vis alltid denne meldingen når teksting er tilgjengelig</string>
   <string name="bd_usb_connect_dialog_title">Leselisten er koblet til via USB</string>
-  <string name="bd_usb_connect_dialog_message">Leselisten lades av batteriet i %s.\n\nHvis du må bytte til Bluetooth, kobler du fra USB eller USB-huben og går til TalkBack-innstillinger &gt; Leselist.</string>
+  <string name="bd_usb_connect_dialog_message">Leselisten lades av batteriet i %s.\n\nHvis du må bytte til Bluetooth, kobler du fra USB eller USB-huben og går til SandFly-innstillinger &gt; Leselist.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">%s – lavt batterinivå</string>
   <string name="bd_battery_low_dialog_message">Batteriet til %s lader leselisten.\n\nGjør dette for å spare batteri:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Fjern alt</string>
   <string name="popup_message_history_empty">Tom</string>
   <string name="popup_message_history_consent_dialog_title">Vil du slå på meldingsloggen for enheten?</string>
-  <string name="popup_message_history_consent_dialog_msg">Da lagres noen meldinger, for eksempel varsler og alarmer, i TalkBack. Du kan endre denne innstillingen når som helst.</string>
+  <string name="popup_message_history_consent_dialog_msg">Da lagres noen meldinger, for eksempel varsler og alarmer, i SandFly. Du kan endre denne innstillingen når som helst.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Slå på</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nei takk</string>
+    <string name="external_display_channel">Punktskrift fra andre apper</string>
+    <string name="external_display_ask_title">Vil du tillate at <xliff:g id="app" example="Notetaker">%1$s</xliff:g> er en leselist for SandFly?</string>
+    <string name="external_display_ask_text">SandFly vil ikke bruke det før du tillater det.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> vil kunne lese alt SandFly viser i punktskrift, som kan være hva som helst på skjermen, inkludert meldinger og hva du skriver. Den vil også kunne kontrollere enheten din som du kan med en leselist: skriv, åpne apper og kjør en hvilken som helst SandFly-kommando. Tillat bare apper du stoler på.</string>
+    <string name="external_display_allow">Tillat</string>
+    <string name="external_display_deny">ikke tillat</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> er leselisten din</string>
+    <string name="external_display_in_use_text">Mens SandFly bruker det, kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> lese skjermen og kontrollere enheten.</string>
+    <string name="external_displays_title">Viser fra andre apper</string>
+    <string name="external_displays_summary">Apper som du tillater kan være blindeskrift for SandFly. En app som er en leselist kan lese skjermen og kontrollere enheten.</string>
+    <string name="external_displays_none">Ingen apper kan være leselist.</string>
 </resources>

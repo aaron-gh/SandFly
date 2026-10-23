@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Se etter oppdateringer</string>
+    <string name="summary_pref_check_for_updates_version">Versjon <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Se etter oppdateringer automatisk</string>
+    <string name="summary_pref_auto_update_check">Sjekk en gang om dagen og vis et varsel når et nytt bygg er tilgjengelig</string>
+    <string name="title_pref_dev_builds">Utvikling bygger</string>
+    <string name="update_notification_title">SandFly oppdatering tilgjengelig</string>
+    <string name="update_notification_text">Bygg <xliff:g id="build" example="97">%1$d</xliff:g>. Trykk for å installere.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> er tilgjengelig</string>
+    <string name="update_dialog_install">Installer</string>
+    <string name="update_checking">Ser etter oppdateringer</string>
+    <string name="update_up_to_date">SandFly er oppdatert</string>
+    <string name="update_check_failed">Kunne ikke se etter oppdateringer</string>
+    <string name="update_downloading">Laster ned oppdatering</string>
+    <string name="update_already_downloading">Oppdateringen lastes allerede ned</string>
+    <string name="update_ready_title">SandFly oppdatering lastet ned</string>
+    <string name="update_ready_text">Trykk for å installere.</string>
+    <string name="update_install_failed">Kunne ikke installere oppdateringen</string>
+    <string name="update_install_canceled">Oppdatering avbrutt</string>
+    <string name="update_allow_install">Tillat SandFly å installere apper, og prøv deretter oppdateringen på nytt</string>
+</resources>
