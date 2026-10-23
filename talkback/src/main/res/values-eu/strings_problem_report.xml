@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Bidali oharrak</string>
+    <string name="title_pref_problem_report_type">Iritzi mota</string>
+    <string name="title_pref_problem_report_area">Eremua</string>
+    <string name="title_pref_problem_report_title">Izenburua</string>
+    <string name="title_pref_problem_report_app">Non gertatzen den aplikazioa</string>
+    <string name="title_pref_problem_report_description">Azalpena</string>
+    <string name="dialog_message_problem_report_description">Zer gertatzen den eta zer espero zenuen.</string>
+    <string name="title_pref_problem_report_steps">Erreproduzitzeko urratsak</string>
+    <string name="title_pref_problem_report_email">E-posta erantzuteko</string>
+    <string name="title_pref_problem_report_device">Sartu gailuaren informazioa</string>
+    <string name="title_pref_problem_report_log">Sartu SandFly erregistroa</string>
+    <string name="summary_pref_problem_report_log">Pantailako testua eduki dezake</string>
+    <string name="title_pref_problem_report_send">Bidali</string>
+    <string name="summary_pref_problem_report_sending">Bidaltzen</string>
+    <string name="problem_report_missing_fields">Idatzi izenburu bat eta deskribapen bat.</string>
+    <string name="problem_report_invalid_email">Sartu baliozko helbide elektroniko bat.</string>
+    <string name="problem_report_sent">Iritzia bidali da.</string>
+    <string name="problem_report_rate_limited">Iritzi gehiegi bidali. Saiatu berriro geroago.</string>
+    <string name="problem_report_no_connection">Iritzia ez da bidali. Egiaztatu Interneteko konexioa.</string>
+    <string name="problem_report_not_sent">Iritzia ez da bidali. Saiatu berriro geroago.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Portaera okerra</item>
+        <item>Istripua</item>
+        <item>Motela edo ez du erantzuten</item>
+        <item>Iradokizuna</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Hitzaldia</item>
+        <item>Keinuak</item>
+        <item>Ukitu esplorazioa</item>
+        <item>Irakurketa kontrolak eta menuak</item>
+        <item>Idazketa eta teklatuak</item>
+        <item>Braille-teklatua</item>
+        <item>Braille-pantaila</item>
+        <item>Soinuak eta bibrazioa</item>
+        <item>Jakinarazpenak</item>
+        <item>Web-edukia</item>
+        <item>Scriptak</item>
+        <item>Ezarpenak</item>
+        <item>Eguneraketak</item>
+        <item>Beste batzuk</item>
+    </string-array>
+    <string name="title_report_new">Bidali oharrak</string>
+    <string name="title_report_inbox">Sarrera-ontzia</string>
+    <string name="title_report_drafts">Zirriborroak</string>
+    <string name="report_inbox_empty">Ez da iritzirik bidali</string>
+    <string name="report_drafts_empty">Zirriborrorik ez</string>
+    <string name="report_just_now">oraintxe bertan</string>
+    <string name="report_untitled">Izenbururik gabe</string>
+    <string name="report_draft_summary">Aldatu <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">bidali <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> erantzun berri</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> erantzun berri</item>
+    </plurals>
+    <string name="report_status_changed">egoera aldatu da</string>
+    <string name="report_status_open">Irekita</string>
+    <string name="report_status_completed">Itxita, bukatuta</string>
+    <string name="report_status_not_planned">Itxita, aurreikusi gabe</string>
+    <string name="report_status_duplicate">Itxita, bikoiztua</string>
+    <string name="report_status_unknown">Kendua</string>
+    <string name="title_report_status">Egoera</string>
+    <string name="title_report_your_report">Zure iritzia</string>
+    <string name="title_report_messages">Mezuak</string>
+    <string name="report_message_from_developer">Garatzailea, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Zuk, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Erantzun</string>
+    <string name="title_report_reply_text">Zure erantzuna</string>
+    <string name="title_report_send_reply">Bidali erantzuna</string>
+    <string name="report_reply_sent">Erantzuna bidali da.</string>
+    <string name="report_reply_not_sent">Erantzuna ez da bidali. Saiatu berriro geroago.</string>
+    <string name="title_report_remove">Kendu sarrera-ontzitik</string>
+    <string name="dialog_title_report_remove">Iritzi hau sarrera-ontzitik kendu nahi duzu?</string>
+    <string name="dialog_message_report_remove">Erantzunak ez dira telefono honetara iritsiko.</string>
+    <string name="title_report_delete_draft">Ezabatu zirriborroa</string>
+    <string name="dialog_title_report_delete_draft">Zirriborro hau ezabatu nahi duzu?</string>
+    <string name="button_report_delete">Ezabatu</string>
+    <string name="report_missing">Iritzi hau jada ez dago sarrera-ontzian.</string>
+    <string name="notification_channel_problem_reports">Iritzi-erantzunak</string>
+    <string name="report_notification_reply">Erantzun <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
