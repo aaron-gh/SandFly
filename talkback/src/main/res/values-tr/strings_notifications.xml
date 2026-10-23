@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Güçlü</string>
     <string name="notification_shake_2">Orta</string>
     <string name="notification_shake_1">Nazik</string>
-    <string name="notification_media_skip">Yüksek sesle okumayın</string>
+    <string name="notification_media_skip">Okuma</string>
     <string name="notification_media_pause">Okurken medyayı duraklatın</string>
-    <string name="notification_media_read">Yüksek sesle oku</string>
+    <string name="notification_media_read">Oku</string>
     <string name="notification_headphones_only_without">Yalnızca kulaklık olmadan</string>
     <string name="notification_headphones_only_with">Yalnızca kulaklıkla</string>
     <string name="notification_headphones_always">Kulaklıkla veya kulaklıksız yüksek sesle okuyun</string>
     <string name="notification_queue_skip">Yeni bildirimi yüksek sesle okumayın</string>
-    <string name="notification_queue_interrupt">Bildirimin yüksek sesle okunmasını yarıda kesme</string>
-    <string name="notification_queue_queue">Mevcut bildirimden sonra yüksek sesle oku</string>
+    <string name="notification_queue_interrupt">Yarıda kes</string>
+    <string name="notification_queue_queue">Ardından oku</string>
     <string name="notification_url_omit">Dışarıda bırak</string>
     <string name="notification_url_replace">Aşağıdaki metni söyle</string>
     <string name="notification_url_domain">Yalnızca siteyi okuyun</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Ne okunur</string>
     <string name="notification_format_title">Konuşma formatı</string>
     <string name="notification_format_message">Yer tutucular: {app}, {title}, {text}, {content} (tüm metin), {bigtext}, {subtext}, {ticker}, {category} ve {time}.</string>
-    <string name="notification_private_format_title">Özel bildirimler diyor ki</string>
+    <string name="notification_private_format_title">Özel bildirimlerin okunması</string>
     <string name="notification_private_format_message">Özel bir bildirimin içeriği yerine söylenir. Yer tutucular: {app}, {category} ve {time}.</string>
     <string name="notification_category_voice">Ses</string>
     <string name="notification_voice_title">Ses</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Bunları kendisi okuyan Android Auto gibi</string>
     <string name="notification_category_quiet_hours">Sessiz saatler</string>
     <string name="notification_quiet_hours_title">Sessiz saatler</string>
-    <string name="notification_quiet_start_title">Başlat</string>
+    <string name="notification_quiet_start_title">Başlangıç</string>
     <string name="notification_quiet_end_title">Bitiş</string>
     <string name="notification_repeat_seconds_title">Aynı bildirimi şunun için atla:</string>
     <string name="notification_numbers_alike_title">Farklı sayıları aynıymış gibi ele alın</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopyala</string>
     <string name="notification_saved">Kaydedildi</string>
     <string name="notification_copied">Kopyalandı</string>
-    <string name="notification_outcome_read">Başarılı bir şekilde yüksek sesle okuyun</string>
+    <string name="notification_outcome_read">Okundu</string>
     <string name="notification_outcome_stopped">Okurken durduruldu</string>
     <string name="notification_outcome_speech_off">Okunmadı: bildirim konuşması kapalı</string>
     <string name="notification_outcome_dnd">Okunmadı: Rahatsız Etmeyin</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Okunmadı: gerekli kelimeler eksik</string>
     <string name="notification_outcome_blocked">Okunmadı: engellenen kelime</string>
     <string name="notification_outcome_empty">Okunmadı: metin yok</string>
-    <string name="notification_outcome_repeat">Okunmadı: tekrarla</string>
+    <string name="notification_outcome_repeat">Okunmadı: tekrar</string>
     <string name="notification_outcome_cooldown">Yüksek sesle okunmadı: Bu uygulamadan gelen başka bir bildirim çok yakın zamanda okundu</string>
     <string name="notification_outcome_quiet_hours">Okunmadı: sessiz saatler</string>
     <string name="notification_outcome_screen_on">Okunmadı: ekran açık</string>

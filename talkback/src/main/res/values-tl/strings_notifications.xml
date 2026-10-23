@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Malakas</string>
     <string name="notification_shake_2">Katamtaman</string>
     <string name="notification_shake_1">Malumanay</string>
-    <string name="notification_media_skip">Huwag basahin nang malakas</string>
+    <string name="notification_media_skip">Huwag basahin</string>
     <string name="notification_media_pause">I-pause ang media habang nagbabasa</string>
-    <string name="notification_media_read">Basahin nang malakas</string>
+    <string name="notification_media_read">Basahin</string>
     <string name="notification_headphones_only_without">Kapag walang headphones lang</string>
     <string name="notification_headphones_only_with">Kapag may headphones lang</string>
     <string name="notification_headphones_always">Magbasa nang malakas nang may headphone o walang</string>
     <string name="notification_queue_skip">Huwag basahin nang malakas ang bagong notification</string>
-    <string name="notification_queue_interrupt">Abalahin ang notification na binabasa nang malakas</string>
-    <string name="notification_queue_queue">Basahin nang malakas pagkatapos ng kasalukuyang notification</string>
+    <string name="notification_queue_interrupt">Abalahin</string>
+    <string name="notification_queue_queue">Basahin pagkatapos</string>
     <string name="notification_url_omit">Huwag isama</string>
     <string name="notification_url_replace">Sabihin ang teksto sa ibaba</string>
     <string name="notification_url_domain">Basahin lamang ang site</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Kung ano ang sinasabi</string>
     <string name="notification_format_title">Format ng pagsasalita</string>
     <string name="notification_format_message">Mga Placeholder: {app}, {title}, {text}, {content} (ang buong text), {bigtext}, {subtext}, {ticker}, {category} at {time}.</string>
-    <string name="notification_private_format_title">Sabi ng mga pribadong notification</string>
+    <string name="notification_private_format_title">Pagbasa ng mga pribadong notification</string>
     <string name="notification_private_format_message">Sinabi bilang kapalit ng nilalaman ng pribadong notification. Mga placeholder: {app}, {category} at {time}.</string>
     <string name="notification_category_voice">Boses</string>
     <string name="notification_voice_title">Boses</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Habang naka-off ang screen</string>
     <string name="notification_locked_title">Habang naka lock ang phone</string>
     <string name="notification_headphones_title">Mga headphone</string>
-    <string name="notification_media_title">Habang naglalaro ang media</string>
+    <string name="notification_media_title">Habang nagpe-play ang media</string>
     <string name="notification_dnd_title">Huwag Istorbohin</string>
     <string name="notification_dnd_none">Walang babasahin</string>
     <string name="notification_dnd_allowed">Basahin ang mga notification na pinapayagan ng Do Not Disturb mode</string>
@@ -90,8 +90,8 @@
     <string name="notification_skip_in_car_summary">Gaya ng sa Android Auto, na mismong nagbabasa sa kanila</string>
     <string name="notification_category_quiet_hours">Tahimik na oras</string>
     <string name="notification_quiet_hours_title">Tahimik na oras</string>
-    <string name="notification_quiet_start_title">Magsimula</string>
-    <string name="notification_quiet_end_title">Tapusin</string>
+    <string name="notification_quiet_start_title">Simula</string>
+    <string name="notification_quiet_end_title">Pagtatapos</string>
     <string name="notification_repeat_seconds_title">Laktawan ang parehong notification para sa</string>
     <string name="notification_numbers_alike_title">Tratuhin ang iba\'t ibang mga numero bilang magkapareho</string>
     <string name="notification_numbers_alike_summary">Gaya ng porsyento ng pag-download</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopyahin</string>
     <string name="notification_saved">Nai-save</string>
     <string name="notification_copied">Kinopya</string>
-    <string name="notification_outcome_read">Matagumpay na basahin nang malakas</string>
+    <string name="notification_outcome_read">Nabasa</string>
     <string name="notification_outcome_stopped">Huminto habang nagbabasa</string>
     <string name="notification_outcome_speech_off">Hindi nabasa: naka-off ang notification speech</string>
     <string name="notification_outcome_dnd">Hindi nabasa: Huwag Istorbohin</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Hindi nabasa: kulang ang mga kinakailangang salita</string>
     <string name="notification_outcome_blocked">Hindi nabasa: naka-block na salita</string>
     <string name="notification_outcome_empty">Hindi nabasa: walang text</string>
-    <string name="notification_outcome_repeat">Hindi nabasa: ulitin</string>
+    <string name="notification_outcome_repeat">Hindi nabasa: ulit</string>
     <string name="notification_outcome_cooldown">Hindi binasa nang malakas: kamakailan lang binasa ang isa pang notification mula sa app na ito</string>
     <string name="notification_outcome_quiet_hours">Hindi nabasa: tahimik na oras</string>
     <string name="notification_outcome_screen_on">Hindi nabasa: naka-on ang screen</string>
@@ -197,7 +197,7 @@
     <string name="notification_outcome_vibrate">Hindi nabasa: vibrate mode</string>
     <string name="notification_outcome_media_playing">Hindi nabasa: media playing</string>
     <string name="notification_outcome_car">Hindi nabasa: mode ng kotse</string>
-    <string name="notification_outcome_rule">Hindi nabasa: tuntunin</string>
+    <string name="notification_outcome_rule">Hindi nabasa: patakaran</string>
     <string name="notification_outcome_busy">Hindi nabasa: binasa ang isa pang notification</string>
     <string name="notification_outcome_call">Inanunsyo bilang isang papasok na tawag sa telepono</string>
     <string name="notification_rule_add">Magdagdag ng panuntunan</string>

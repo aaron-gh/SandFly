@@ -3,15 +3,15 @@
     <string name="notification_shake_3">मजबूत</string>
     <string name="notification_shake_2">मध्यम</string>
     <string name="notification_shake_1">सौम्य</string>
-    <string name="notification_media_skip">जोर से मत पढ़ो</string>
+    <string name="notification_media_skip">न पढ़ें</string>
     <string name="notification_media_pause">पढ़ते समय मीडिया को रोकें</string>
-    <string name="notification_media_read">ज़ोर से पढ़ें</string>
+    <string name="notification_media_read">पढ़ें</string>
     <string name="notification_headphones_only_without">केवल हेडफोन के बिना</string>
     <string name="notification_headphones_only_with">केवल हेडफ़ोन के साथ</string>
     <string name="notification_headphones_always">हेडफ़ोन के साथ या उसके बिना ज़ोर से पढ़ें</string>
     <string name="notification_queue_skip">नए नोटिफिकेशन को जोर से न पढ़ें</string>
-    <string name="notification_queue_interrupt">ज़ोर से पढ़ी जा रही अधिसूचना को बाधित करें</string>
-    <string name="notification_queue_queue">वर्तमान अधिसूचना के बाद ज़ोर से पढ़ें</string>
+    <string name="notification_queue_interrupt">बीच में रोकें</string>
+    <string name="notification_queue_queue">उसके बाद पढ़ें</string>
     <string name="notification_url_omit">छोड़ो</string>
     <string name="notification_url_replace">नीचे दिया गया पाठ बोलें</string>
     <string name="notification_url_domain">केवल साइट पढ़ें</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">क्या पढ़ा जाता है</string>
     <string name="notification_format_title">बोलने का फ़ॉर्मैट</string>
     <string name="notification_format_message">प्लेसहोल्डर: {app}, {title}, {text}, {content} (संपूर्ण पाठ), {bigtext}, {subtext}, {ticker}, {category} और {time}।</string>
-    <string name="notification_private_format_title">निजी सूचनाएं कहती हैं</string>
+    <string name="notification_private_format_title">निजी सूचनाओं के लिए क्या बोला जाए</string>
     <string name="notification_private_format_message">एक निजी अधिसूचना की सामग्री के स्थान पर कहा गया। प्लेसहोल्डर: {app}, {category} और {time}।</string>
     <string name="notification_category_voice">वॉइस</string>
     <string name="notification_voice_title">वॉइस</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">जबकि स्क्रीन बंद है</string>
     <string name="notification_locked_title">जबकि फोन लॉक है</string>
     <string name="notification_headphones_title">हेडफोन</string>
-    <string name="notification_media_title">जबकि मीडिया खेलता है</string>
+    <string name="notification_media_title">मीडिया चलने के दौरान</string>
     <string name="notification_dnd_title">परेशान न करें</string>
     <string name="notification_dnd_none">कोई न पढ़ें</string>
     <string name="notification_dnd_allowed">डू नॉट डिस्टर्ब मोड द्वारा अनुमत सूचनाएं पढ़ें</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">जैसे कि Android Auto के साथ, जो उन्हें स्वयं पढ़ता है</string>
     <string name="notification_category_quiet_hours">शांत घंटे</string>
     <string name="notification_quiet_hours_title">शांत घंटे</string>
-    <string name="notification_quiet_start_title">प्रारंभ करें</string>
+    <string name="notification_quiet_start_title">शुरुआत</string>
     <string name="notification_quiet_end_title">ख़त्म</string>
     <string name="notification_repeat_seconds_title">के लिए वही अधिसूचना छोड़ें</string>
     <string name="notification_numbers_alike_title">विभिन्न संख्याओं को समान मानें</string>
@@ -169,8 +169,8 @@
     <string name="notification_history_copy">कॉपी करें</string>
     <string name="notification_saved">सहेजा गया</string>
     <string name="notification_copied">कॉपी किया गया</string>
-    <string name="notification_outcome_read">सफलतापूर्वक ज़ोर से पढ़ें</string>
-    <string name="notification_outcome_stopped">पढ़ते-पढ़ते रुक गया</string>
+    <string name="notification_outcome_read">पढ़ा गया</string>
+    <string name="notification_outcome_stopped">पढ़ते समय रोका गया</string>
     <string name="notification_outcome_speech_off">पढ़ा नहीं गया: अधिसूचना भाषण बंद है</string>
     <string name="notification_outcome_dnd">नहीं पढ़ा गया: परेशान न करें</string>
     <string name="notification_outcome_touching">पढ़ा नहीं गया: स्क्रीन को छुआ गया था</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">पढ़ा नहीं गया: आवश्यक शब्द गायब हैं</string>
     <string name="notification_outcome_blocked">नहीं पढ़ा गया: अवरुद्ध शब्द</string>
     <string name="notification_outcome_empty">पढ़ा नहीं गया: कोई पाठ नहीं</string>
-    <string name="notification_outcome_repeat">नहीं पढ़ा: दोहराएँ</string>
+    <string name="notification_outcome_repeat">नहीं पढ़ा: दोहराव</string>
     <string name="notification_outcome_cooldown">ज़ोर से नहीं पढ़ा गया: इस ऐप से एक और अधिसूचना हाल ही में पढ़ी गई थी</string>
     <string name="notification_outcome_quiet_hours">नहीं पढ़ा: शांत घंटे</string>
     <string name="notification_outcome_screen_on">पढ़ा नहीं गया: स्क्रीन चालू</string>

@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Sterk</string>
     <string name="notification_shake_2">Medium</string>
     <string name="notification_shake_1">Sagmoedig</string>
-    <string name="notification_media_skip">Moenie hardop lees nie</string>
+    <string name="notification_media_skip">Moenie lees nie</string>
     <string name="notification_media_pause">Onderbreek die media terwyl jy lees</string>
-    <string name="notification_media_read">Lees hardop</string>
+    <string name="notification_media_read">Lees</string>
     <string name="notification_headphones_only_without">Slegs sonder oorfone</string>
     <string name="notification_headphones_only_with">Slegs met oorfone</string>
     <string name="notification_headphones_always">Lees hardop met of sonder oorfone</string>
     <string name="notification_queue_skip">Moenie die nuwe kennisgewing hardop lees nie</string>
-    <string name="notification_queue_interrupt">Onderbreek die kennisgewing wat hardop gelees word</string>
-    <string name="notification_queue_queue">Lees hardop na die huidige kennisgewing</string>
+    <string name="notification_queue_interrupt">Onderbreek dit</string>
+    <string name="notification_queue_queue">Lees daarna</string>
     <string name="notification_url_omit">Los uit</string>
     <string name="notification_url_replace">Sê die teks hieronder</string>
     <string name="notification_url_domain">Lees slegs die webwerf</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Wat gesê word</string>
     <string name="notification_format_title">Spraakformaat</string>
     <string name="notification_format_message">Plekhouers: {app}, {title}, {text}, {content} (die hele teks), {bigtext}, {subtext}, {ticker}, {category} en {time}.</string>
-    <string name="notification_private_format_title">Private kennisgewings sê</string>
+    <string name="notification_private_format_title">Teks vir private kennisgewings</string>
     <string name="notification_private_format_message">Gesê in die plek van \'n private kennisgewing se inhoud. Plekhouers: {app}, {category} en {time}.</string>
     <string name="notification_category_voice">Stem</string>
     <string name="notification_voice_title">Stem</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopieer</string>
     <string name="notification_saved">Gestoor</string>
     <string name="notification_copied">Gekopieer</string>
-    <string name="notification_outcome_read">Lees hardop suksesvol</string>
+    <string name="notification_outcome_read">Gelees</string>
     <string name="notification_outcome_stopped">Gestop tydens lees</string>
     <string name="notification_outcome_speech_off">Nie gelees nie: kennisgewingspraak is af</string>
     <string name="notification_outcome_dnd">Nie gelees nie: Moenie Steur Nie</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Nie gelees nie: vereiste woorde ontbreek</string>
     <string name="notification_outcome_blocked">Nie gelees nie: geblokkeerde woord</string>
     <string name="notification_outcome_empty">Nie gelees nie: geen teks</string>
-    <string name="notification_outcome_repeat">Nie gelees nie: herhaal</string>
+    <string name="notification_outcome_repeat">Nie gelees nie: herhaling</string>
     <string name="notification_outcome_cooldown">Nie hardop gelees nie: \'n ander kennisgewing vanaf hierdie toepassing is te onlangs gelees</string>
     <string name="notification_outcome_quiet_hours">Nie gelees nie: stil ure</string>
     <string name="notification_outcome_screen_on">Nie gelees nie: skerm aan</string>

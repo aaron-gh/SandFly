@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Güclü</string>
     <string name="notification_shake_2">Orta</string>
     <string name="notification_shake_1">Zərif</string>
-    <string name="notification_media_skip">Ucadan oxumayın</string>
+    <string name="notification_media_skip">Oxuma</string>
     <string name="notification_media_pause">Oxuyarkən mediaya fasilə verin</string>
-    <string name="notification_media_read">Ucadan oxuyun</string>
+    <string name="notification_media_read">Oxu</string>
     <string name="notification_headphones_only_without">Yalnız qulaqcıqsız</string>
     <string name="notification_headphones_only_with">Yalnız qulaqcıqlarla</string>
     <string name="notification_headphones_always">Qulaqlıq ilə və ya qulaqcıqsız ucadan oxuyun</string>
     <string name="notification_queue_skip">Yeni bildirişi ucadan oxumayın</string>
-    <string name="notification_queue_interrupt">Ucadan oxunan bildirişi kəsin</string>
-    <string name="notification_queue_queue">Cari bildirişdən sonra ucadan oxuyun</string>
+    <string name="notification_queue_interrupt">Kəs</string>
+    <string name="notification_queue_queue">Ondan sonra oxu</string>
     <string name="notification_url_omit">Buraxın</string>
     <string name="notification_url_replace">Aşağıdakı mətni deyin</string>
     <string name="notification_url_domain">Yalnız saytı oxuyun</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Nə deyilir</string>
     <string name="notification_format_title">Nitq formatı</string>
     <string name="notification_format_message">Yer tutanlar: {app}, {title}, {text}, {content} (bütün mətn), {bigtext}, {subtext}, {ticker}, {category} və {time}.</string>
-    <string name="notification_private_format_title">Şəxsi bildirişlər deyir</string>
+    <string name="notification_private_format_title">Şəxsi bildirişlər üçün deyilən</string>
     <string name="notification_private_format_message">Şəxsi bildirişin məzmunu yerinə deyildi. Yer tutanlar: {app}, {category} və {time}.</string>
     <string name="notification_category_voice">Səs</string>
     <string name="notification_voice_title">Səs</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Ekran sönük ikən</string>
     <string name="notification_locked_title">Telefon kilidli olarkən</string>
     <string name="notification_headphones_title">Qulaqlıqlar</string>
-    <string name="notification_media_title">Media oynayarkən</string>
+    <string name="notification_media_title">Media oxudularkən</string>
     <string name="notification_dnd_title">Narahat etməyin</string>
     <string name="notification_dnd_none">Heç birini oxuma</string>
     <string name="notification_dnd_allowed">Narahat Etməyin rejimi tərəfindən icazə verilən bildirişləri oxuyun</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Məsələn, onları özü oxuyan Android Auto ilə</string>
     <string name="notification_category_quiet_hours">Sakit saatlar</string>
     <string name="notification_quiet_hours_title">Sakit saatlar</string>
-    <string name="notification_quiet_start_title">Başlayın</string>
+    <string name="notification_quiet_start_title">Başlanğıc</string>
     <string name="notification_quiet_end_title">Son</string>
     <string name="notification_repeat_seconds_title">Üçün eyni bildirişi keçin</string>
     <string name="notification_numbers_alike_title">Fərqli nömrələri eyni hesab edin</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopyala</string>
     <string name="notification_saved">Saxlandı</string>
     <string name="notification_copied">Kopyalandı</string>
-    <string name="notification_outcome_read">Ucadan uğurla oxuyun</string>
+    <string name="notification_outcome_read">Oxunub</string>
     <string name="notification_outcome_stopped">Oxuyarkən dayandı</string>
     <string name="notification_outcome_speech_off">Oxunmayıb: bildiriş nitqi deaktivdir</string>
     <string name="notification_outcome_dnd">Oxunmur: Narahat Etməyin</string>
@@ -181,7 +181,7 @@
     <string name="notification_outcome_system">Oxunmayıb: sistem</string>
     <string name="notification_outcome_media">Oxunmur: media pleyer</string>
     <string name="notification_outcome_group_summary">Oxunmayıb: qrup xülasəsi</string>
-    <string name="notification_outcome_progress">Oxunmayıb: tərəqqi</string>
+    <string name="notification_outcome_progress">Oxunmayıb: gedişat</string>
     <string name="notification_outcome_required">Oxunmayıb: tələb olunan sözlər yoxdur</string>
     <string name="notification_outcome_blocked">Oxunmayıb: bloklanmış söz</string>
     <string name="notification_outcome_empty">Oxunmayıb: mətn yoxdur</string>
@@ -197,7 +197,7 @@
     <string name="notification_outcome_vibrate">Oxunmur: vibrasiya rejimi</string>
     <string name="notification_outcome_media_playing">Oxunmur: media oynayır</string>
     <string name="notification_outcome_car">Oxunmur: avtomobil rejimi</string>
-    <string name="notification_outcome_rule">Oxumur: qayda</string>
+    <string name="notification_outcome_rule">Oxunmayıb: qayda</string>
     <string name="notification_outcome_busy">Oxunmadı: başqa bildiriş oxundu</string>
     <string name="notification_outcome_call">Gələn telefon zəngi kimi elan edilir</string>
     <string name="notification_rule_add">Qayda əlavə edin</string>

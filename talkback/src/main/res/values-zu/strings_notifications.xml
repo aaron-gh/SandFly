@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Iqinile</string>
     <string name="notification_shake_2">Maphakathi</string>
     <string name="notification_shake_1">Emnene</string>
-    <string name="notification_media_skip">Ungafundi uphimisele</string>
+    <string name="notification_media_skip">Ungafundi</string>
     <string name="notification_media_pause">Misa okwesikhashana imidiya ngenkathi ufunda</string>
-    <string name="notification_media_read">Funda uphimisele</string>
+    <string name="notification_media_read">Funda</string>
     <string name="notification_headphones_only_without">Kuphela ngaphandle kwama-headphone</string>
     <string name="notification_headphones_only_with">Ngama-headphone kuphela</string>
     <string name="notification_headphones_always">Funda ngokuzwakalayo usebenzisa noma ngaphandle kwama-headphone</string>
     <string name="notification_queue_skip">Ungafundi isaziso esisha uphimisele</string>
-    <string name="notification_queue_interrupt">Phakamisa isaziso ukufundwa phezulu</string>
-    <string name="notification_queue_queue">Funda uphimisele ngemva kwesaziso samanje</string>
+    <string name="notification_queue_interrupt">Phazamisa</string>
+    <string name="notification_queue_queue">Funda ngemva kwalokho</string>
     <string name="notification_url_omit">Shiya ngaphandle</string>
     <string name="notification_url_replace">Yisho umbhalo ongezansi</string>
     <string name="notification_url_domain">Funda isayithi kuphela</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Okushiwoyo</string>
     <string name="notification_format_title">Ifomethi yenkulumo</string>
     <string name="notification_format_message">Izimeli: {app}, {title}, {text}, {content} (umbhalo wonke), {bigtext}, {subtext}, {ticker}, {category} kanye {time}.</string>
-    <string name="notification_private_format_title">Izaziso eziyimfihlo zithi</string>
+    <string name="notification_private_format_title">Ukufundwa kwezaziso eziyimfihlo</string>
     <string name="notification_private_format_message">Kusho esikhundleni sokuqukethwe kwesaziso esiyimfihlo. Izimeli: {app}, {category} kanye {time}.</string>
     <string name="notification_category_voice">Izwi</string>
     <string name="notification_voice_title">Izwi</string>
@@ -90,8 +90,8 @@
     <string name="notification_skip_in_car_summary">Njengokuthi Android Auto, ezifundeka ngokwazo</string>
     <string name="notification_category_quiet_hours">Amahora okuthula</string>
     <string name="notification_quiet_hours_title">Amahora okuthula</string>
-    <string name="notification_quiet_start_title">Qala</string>
-    <string name="notification_quiet_end_title">Qeda</string>
+    <string name="notification_quiet_start_title">Ukuqala</string>
+    <string name="notification_quiet_end_title">Ukuphela</string>
     <string name="notification_repeat_seconds_title">Yeqa isaziso esifanayo ukuze</string>
     <string name="notification_numbers_alike_title">Phatha izinombolo ezihlukene njengezifana</string>
     <string name="notification_numbers_alike_summary">Okufana namaphesenti okulanda</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopisha</string>
     <string name="notification_saved">Kulondoloziwe</string>
     <string name="notification_copied">Kukopishiwe</string>
-    <string name="notification_outcome_read">Funda uphimisele ngempumelelo</string>
+    <string name="notification_outcome_read">Kufundiwe</string>
     <string name="notification_outcome_stopped">Kumiswe ngenkathi kufundwa</string>
     <string name="notification_outcome_speech_off">Akufundiwe: inkulumo yesaziso ivaliwe</string>
     <string name="notification_outcome_dnd">Akufundiwe: Ungaphazamisi</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Akufundiwe: amagama adingekayo alahlekile</string>
     <string name="notification_outcome_blocked">Akufundiwe: igama elivinjiwe</string>
     <string name="notification_outcome_empty">Akufundiwe: awukho umbhalo</string>
-    <string name="notification_outcome_repeat">Akufundiwe: phinda</string>
+    <string name="notification_outcome_repeat">Akufundiwe: ukuphindwa</string>
     <string name="notification_outcome_cooldown">Ayifundeki phezulu: esinye isaziso esivela kulolu hlelo lokusebenza sifundwe kamuva nje</string>
     <string name="notification_outcome_quiet_hours">Akufundiwe: amahora athule</string>
     <string name="notification_outcome_screen_on">Akufundiwe: isikrini sivuliwe</string>

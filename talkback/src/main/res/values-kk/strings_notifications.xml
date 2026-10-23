@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Күшті</string>
     <string name="notification_shake_2">Орташа</string>
     <string name="notification_shake_1">Жұмсақ</string>
-    <string name="notification_media_skip">Дауыстап оқымаңыз</string>
+    <string name="notification_media_skip">Оқымау</string>
     <string name="notification_media_pause">Оқу кезінде медианы кідіртіңіз</string>
-    <string name="notification_media_read">Дауыстап оқы</string>
+    <string name="notification_media_read">Оқу</string>
     <string name="notification_headphones_only_without">Тек құлаққапсыз</string>
     <string name="notification_headphones_only_with">Тек құлаққаппен</string>
     <string name="notification_headphones_always">Құлаққаппен немесе құлаққапсыз дауыстап оқыңыз</string>
     <string name="notification_queue_skip">Жаңа хабарландыруды дауыстап оқымаңыз</string>
-    <string name="notification_queue_interrupt">Дауыстап оқылатын хабарландыруды үзіңіз</string>
-    <string name="notification_queue_queue">Ағымдағы хабарландырудан кейін дауыстап оқыңыз</string>
+    <string name="notification_queue_interrupt">Үзу</string>
+    <string name="notification_queue_queue">Одан кейін оқу</string>
     <string name="notification_url_omit">Шығу</string>
     <string name="notification_url_replace">Төмендегі мәтінді айтыңыз</string>
     <string name="notification_url_domain">Тек сайтты оқыңыз</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Оқылатын нәрсе</string>
     <string name="notification_format_title">Сөйлеу пішімі</string>
     <string name="notification_format_message">Толтырғыштар: {app}, {title}, {text}, {content} (барлық мәтін), {bigtext}, {subtext}, {ticker}, {category} және {time}.</string>
-    <string name="notification_private_format_title">Жеке хабарламалар айтады</string>
+    <string name="notification_private_format_title">Жеке хабарландыруларды оқу</string>
     <string name="notification_private_format_message">Жеке хабарландыру мазмұнының орнына айтылған. Толтырғыштар: {app}, {category} және {time}.</string>
     <string name="notification_category_voice">Дауыс</string>
     <string name="notification_voice_title">Дауыс</string>
@@ -90,8 +90,8 @@
     <string name="notification_skip_in_car_summary">Мысалы, оларды өзі оқитын Android Auto сияқты</string>
     <string name="notification_category_quiet_hours">Тыныш сағаттар</string>
     <string name="notification_quiet_hours_title">Тыныш сағаттар</string>
-    <string name="notification_quiet_start_title">Бастау</string>
-    <string name="notification_quiet_end_title">Аяқтау</string>
+    <string name="notification_quiet_start_title">Басталуы</string>
+    <string name="notification_quiet_end_title">Аяқталуы</string>
     <string name="notification_repeat_seconds_title">Үшін бірдей хабарландыруды өткізіп жіберіңіз</string>
     <string name="notification_numbers_alike_title">Әртүрлі сандарды бірдей деп есептеңіз</string>
     <string name="notification_numbers_alike_summary">Жүктеп алу пайызы сияқты</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Көшіру</string>
     <string name="notification_saved">Сақталды</string>
     <string name="notification_copied">Көшірілді</string>
-    <string name="notification_outcome_read">Дауыстап оқыңыз</string>
+    <string name="notification_outcome_read">Оқылды</string>
     <string name="notification_outcome_stopped">Оқу кезінде тоқтады</string>
     <string name="notification_outcome_speech_off">Оқылмаған: хабарландыру сөзі өшірулі</string>
     <string name="notification_outcome_dnd">Оқылмаған: Мазаламау</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Оқылмаған: қажетті сөздер жоқ</string>
     <string name="notification_outcome_blocked">Оқылмаған: блокталған сөз</string>
     <string name="notification_outcome_empty">Оқылмаған: мәтін жоқ</string>
-    <string name="notification_outcome_repeat">Оқылмаған: қайталаңыз</string>
+    <string name="notification_outcome_repeat">Оқылмаған: қайталау</string>
     <string name="notification_outcome_cooldown">Дауыстап оқылмайды: бұл қолданбаның басқа хабарландыруы тым жақында оқылды</string>
     <string name="notification_outcome_quiet_hours">Оқылмаған: тыныш сағаттар</string>
     <string name="notification_outcome_screen_on">Оқылмаған: экран қосулы</string>

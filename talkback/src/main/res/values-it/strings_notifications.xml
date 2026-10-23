@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Forte</string>
     <string name="notification_shake_2">Medio</string>
     <string name="notification_shake_1">Gentile</string>
-    <string name="notification_media_skip">Non leggere ad alta voce</string>
+    <string name="notification_media_skip">Non leggere</string>
     <string name="notification_media_pause">Metti in pausa i contenuti multimediali durante la lettura</string>
-    <string name="notification_media_read">Leggi ad alta voce</string>
+    <string name="notification_media_read">Leggi</string>
     <string name="notification_headphones_only_without">Solo senza cuffie</string>
     <string name="notification_headphones_only_with">Solo con le cuffie</string>
     <string name="notification_headphones_always">Leggi ad alta voce con o senza cuffie</string>
     <string name="notification_queue_skip">Non leggere ad alta voce la nuova notifica</string>
-    <string name="notification_queue_interrupt">Interrompe la lettura della notifica ad alta voce</string>
-    <string name="notification_queue_queue">Leggi ad alta voce dopo la notifica corrente</string>
+    <string name="notification_queue_interrupt">Interrompi</string>
+    <string name="notification_queue_queue">Leggi dopo</string>
     <string name="notification_url_omit">Lascia fuori</string>
     <string name="notification_url_replace">Pronuncia il testo qui sotto</string>
     <string name="notification_url_domain">Leggi solo il sito</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Ciò che viene detto</string>
     <string name="notification_format_title">Formato della lettura</string>
     <string name="notification_format_message">Segnaposto: {app}, {title}, {text}, {content} (l\'intero testo), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
-    <string name="notification_private_format_title">Le notifiche private dicono</string>
+    <string name="notification_private_format_title">Lettura delle notifiche private</string>
     <string name="notification_private_format_message">Detto al posto del contenuto di una notifica privata. Segnaposto: {app}, {category} e {time}.</string>
     <string name="notification_category_voice">Voce</string>
     <string name="notification_voice_title">Voce</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Mentre lo schermo è spento</string>
     <string name="notification_locked_title">Mentre il telefono è bloccato</string>
     <string name="notification_headphones_title">Cuffie</string>
-    <string name="notification_media_title">Mentre i media giocano</string>
+    <string name="notification_media_title">Durante la riproduzione di contenuti multimediali</string>
     <string name="notification_dnd_title">Non disturbare</string>
     <string name="notification_dnd_none">Non leggere nessuna</string>
     <string name="notification_dnd_allowed">Leggi le notifiche consentite dalla modalità Non disturbare</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Come con Android Auto, che li legge da solo</string>
     <string name="notification_category_quiet_hours">Ore tranquille</string>
     <string name="notification_quiet_hours_title">Ore tranquille</string>
-    <string name="notification_quiet_start_title">Inizia</string>
+    <string name="notification_quiet_start_title">Inizio</string>
     <string name="notification_quiet_end_title">Fine</string>
     <string name="notification_repeat_seconds_title">Salta la stessa notifica per</string>
     <string name="notification_numbers_alike_title">Tratta i numeri diversi come identici</string>
@@ -104,7 +104,7 @@
     <string name="notification_shake_strength_title">Intensità tremante</string>
     <string name="notification_wave_title">Agita una mano per interrompere la lettura</string>
     <string name="notification_wave_summary">Passare una mano sul sensore di prossimità</string>
-    <string name="notification_pocket_title">Modalità tascabile</string>
+    <string name="notification_pocket_title">Modalità tasca</string>
     <string name="notification_pocket_summary">Un sensore che viene coperto quando inizia la lettura, come in una tasca, non la ferma</string>
     <string name="notification_volume_keys_title">Premi entrambi i tasti del volume</string>
     <string name="notification_dismiss_title">Interrompi all\'eliminazione</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Copia</string>
     <string name="notification_saved">Salvato</string>
     <string name="notification_copied">Copiato</string>
-    <string name="notification_outcome_read">Leggi ad alta voce con successo</string>
+    <string name="notification_outcome_read">Letta</string>
     <string name="notification_outcome_stopped">Interrotto durante la lettura</string>
     <string name="notification_outcome_speech_off">Non letto: il messaggio di notifica è disattivato</string>
     <string name="notification_outcome_dnd">Non leggere: Non disturbare</string>
@@ -181,11 +181,11 @@
     <string name="notification_outcome_system">Non letto: sistema</string>
     <string name="notification_outcome_media">Non letto: lettore multimediale</string>
     <string name="notification_outcome_group_summary">Non letto: riepilogo del gruppo</string>
-    <string name="notification_outcome_progress">Non letto: progresso</string>
+    <string name="notification_outcome_progress">Non letto: avanzamento</string>
     <string name="notification_outcome_required">Non letto: mancano le parole richieste</string>
     <string name="notification_outcome_blocked">Non letto: parola bloccata</string>
     <string name="notification_outcome_empty">Non letto: nessun testo</string>
-    <string name="notification_outcome_repeat">Non leggere: ripetere</string>
+    <string name="notification_outcome_repeat">Non letto: ripetizione</string>
     <string name="notification_outcome_cooldown">Non leggere ad alta voce: un\'altra notifica di questa app è stata letta troppo di recente</string>
     <string name="notification_outcome_quiet_hours">Non letto: ore tranquille</string>
     <string name="notification_outcome_screen_on">Non letto: schermo acceso</string>
@@ -197,7 +197,7 @@
     <string name="notification_outcome_vibrate">Non letto: modalità vibrazione</string>
     <string name="notification_outcome_media_playing">Non letto: riproduzione multimediale</string>
     <string name="notification_outcome_car">Non letto: modalità auto</string>
-    <string name="notification_outcome_rule">Non leggere: regola</string>
+    <string name="notification_outcome_rule">Non letto: regola</string>
     <string name="notification_outcome_busy">Non letto: è stata letta un\'altra notifica</string>
     <string name="notification_outcome_call">Annunciata come una telefonata in arrivo</string>
     <string name="notification_rule_add">Aggiungi una regola</string>
@@ -299,7 +299,7 @@
     <string name="notification_action_max_words_value">leggi fino a <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Disattivato</string>
     <string name="notification_on">Attivato</string>
-    <string name="notification_never_again">Fino al riavvio del SandFly</string>
+    <string name="notification_never_again">Fino al riavvio di SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">Leggere le notifiche ad alta voce</string>
     <string name="notification_speech_now_on">Lettura delle notifiche ad alta voce abilitata</string>

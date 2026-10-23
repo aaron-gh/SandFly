@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Nguvu</string>
     <string name="notification_shake_2">Kati</string>
     <string name="notification_shake_1">Mpole</string>
-    <string name="notification_media_skip">Usisome kwa sauti</string>
+    <string name="notification_media_skip">Usisome</string>
     <string name="notification_media_pause">Sitisha media unaposoma</string>
-    <string name="notification_media_read">Soma kwa sauti</string>
+    <string name="notification_media_read">Soma</string>
     <string name="notification_headphones_only_without">Bila vipokea sauti vya kichwani pekee</string>
     <string name="notification_headphones_only_with">Na vipokea sauti vinavyobanwa kichwani pekee</string>
     <string name="notification_headphones_always">Soma kwa sauti ukiwa na au bila vipokea sauti vinavyobanwa kichwani</string>
     <string name="notification_queue_skip">Usisome arifa mpya kwa sauti</string>
-    <string name="notification_queue_interrupt">Kataza arifa inayosomwa kwa sauti</string>
-    <string name="notification_queue_queue">Soma kwa sauti baada ya arifa ya sasa</string>
+    <string name="notification_queue_interrupt">Katiza</string>
+    <string name="notification_queue_queue">Soma baadaye</string>
     <string name="notification_url_omit">Ondoka</string>
     <string name="notification_url_replace">Sema maandishi hapa chini</string>
     <string name="notification_url_domain">Soma tovuti pekee</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Kinachosemwa</string>
     <string name="notification_format_title">Umbizo la matamshi</string>
     <string name="notification_format_message">Vishika nafasi: {app}, {title}, {text}, {content} (maandishi yote), {bigtext}, {subtext}, {ticker}, {category} na {time}.</string>
-    <string name="notification_private_format_title">Arifa za kibinafsi zinasema</string>
+    <string name="notification_private_format_title">Usomaji wa arifa za faragha</string>
     <string name="notification_private_format_message">Ilisema badala ya maudhui ya arifa ya kibinafsi. Vishika nafasi: {app}, {category} na {time}.</string>
     <string name="notification_category_voice">Sauti</string>
     <string name="notification_voice_title">Sauti</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Wakati skrini imezimwa</string>
     <string name="notification_locked_title">Wakati simu imefungwa</string>
     <string name="notification_headphones_title">Vipokea sauti vya masikioni</string>
-    <string name="notification_media_title">Wakati vyombo vya habari vinacheza</string>
+    <string name="notification_media_title">Wakati maudhui yanacheza</string>
     <string name="notification_dnd_title">Usinisumbue</string>
     <string name="notification_dnd_none">Usisome yoyote</string>
     <string name="notification_dnd_allowed">Soma arifa zinazoruhusiwa na hali ya Usinisumbue</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Kama vile Android Auto, ambayo huisoma yenyewe</string>
     <string name="notification_category_quiet_hours">Saa za utulivu</string>
     <string name="notification_quiet_hours_title">Saa za utulivu</string>
-    <string name="notification_quiet_start_title">Anza</string>
+    <string name="notification_quiet_start_title">Mwanzo</string>
     <string name="notification_quiet_end_title">Mwisho</string>
     <string name="notification_repeat_seconds_title">Ruka arifa sawa kwa</string>
     <string name="notification_numbers_alike_title">Chukua nambari tofauti kama sawa</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Nakili</string>
     <string name="notification_saved">Imehifadhiwa</string>
     <string name="notification_copied">Imenakiliwa</string>
-    <string name="notification_outcome_read">Soma kwa sauti kwa mafanikio</string>
+    <string name="notification_outcome_read">Imesomwa</string>
     <string name="notification_outcome_stopped">Imesimama wakati wa kusoma</string>
     <string name="notification_outcome_speech_off">Haijasomwa: hotuba ya arifa imezimwa</string>
     <string name="notification_outcome_dnd">Haijasomwa: Usisumbue</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Haijasomwa: maneno yanayohitajika hayapo</string>
     <string name="notification_outcome_blocked">Haijasomwa: neno lililozuiwa</string>
     <string name="notification_outcome_empty">Haijasomwa: hakuna maandishi</string>
-    <string name="notification_outcome_repeat">Haijasomwa: kurudia</string>
+    <string name="notification_outcome_repeat">Haijasomwa: marudio</string>
     <string name="notification_outcome_cooldown">Haijasomwa kwa sauti: arifa nyingine kutoka kwa programu hii ilisomwa hivi majuzi</string>
     <string name="notification_outcome_quiet_hours">Haijasomwa: masaa ya utulivu</string>
     <string name="notification_outcome_screen_on">Haijasomwa: skrini imewashwa</string>

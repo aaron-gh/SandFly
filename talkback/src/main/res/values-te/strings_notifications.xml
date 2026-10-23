@@ -3,15 +3,15 @@
     <string name="notification_shake_3">బలంగా</string>
     <string name="notification_shake_2">మధ్యస్థం</string>
     <string name="notification_shake_1">సౌమ్యుడు</string>
-    <string name="notification_media_skip">బిగ్గరగా చదవవద్దు</string>
+    <string name="notification_media_skip">చదవవద్దు</string>
     <string name="notification_media_pause">చదివేటప్పుడు మీడియాను పాజ్ చేయండి</string>
-    <string name="notification_media_read">బిగ్గరగా చదవండి</string>
+    <string name="notification_media_read">చదవండి</string>
     <string name="notification_headphones_only_without">హెడ్‌ఫోన్స్ లేకుండా మాత్రమే</string>
     <string name="notification_headphones_only_with">హెడ్‌ఫోన్‌లతో మాత్రమే</string>
     <string name="notification_headphones_always">హెడ్‌ఫోన్‌లతో లేదా లేకుండా బిగ్గరగా చదవండి</string>
     <string name="notification_queue_skip">కొత్త నోటిఫికేషన్‌ను బిగ్గరగా చదవవద్దు</string>
-    <string name="notification_queue_interrupt">నోటిఫికేషన్ బిగ్గరగా చదవడానికి అంతరాయం కలిగించండి</string>
-    <string name="notification_queue_queue">ప్రస్తుత నోటిఫికేషన్ తర్వాత బిగ్గరగా చదవండి</string>
+    <string name="notification_queue_interrupt">అంతరాయం కలిగించండి</string>
+    <string name="notification_queue_queue">తర్వాత చదవండి</string>
     <string name="notification_url_omit">వదిలేయండి</string>
     <string name="notification_url_replace">దిగువ వచనాన్ని చెప్పండి</string>
     <string name="notification_url_domain">సైట్‌ను మాత్రమే చదవండి</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">ఏమి చదవబడుతుంది</string>
     <string name="notification_format_title">స్పీచ్ ఫార్మాట్</string>
     <string name="notification_format_message">ప్లేస్‌హోల్డర్‌లు: {app}, {title}, {text}, {content} (మొత్తం వచనం), {bigtext}, {subtext}, {ticker}, {category} మరియు {time}.</string>
-    <string name="notification_private_format_title">ప్రైవేట్ నోటిఫికేషన్లు చెబుతున్నాయి</string>
+    <string name="notification_private_format_title">ప్రైవేట్ నోటిఫికేషన్‌ల కోసం చదివేది</string>
     <string name="notification_private_format_message">ప్రైవేట్ నోటిఫికేషన్ కంటెంట్ స్థానంలో చెప్పబడింది. ప్లేస్‌హోల్డర్‌లు: {app}, {category} మరియు {time}.</string>
     <string name="notification_category_voice">వాయిస్</string>
     <string name="notification_voice_title">వాయిస్</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">స్క్రీన్ ఆఫ్‌లో ఉన్నప్పుడు</string>
     <string name="notification_locked_title">ఫోన్ లాక్‌లో ఉండగా</string>
     <string name="notification_headphones_title">హెడ్‌ఫోన్‌లు</string>
-    <string name="notification_media_title">మీడియా ఆడుతుండగా</string>
+    <string name="notification_media_title">మీడియా ప్లే అవుతున్నప్పుడు</string>
     <string name="notification_dnd_title">డిస్టర్బ్ చేయవద్దు</string>
     <string name="notification_dnd_none">ఏదీ చదవవద్దు</string>
     <string name="notification_dnd_allowed">అంతరాయం కలిగించవద్దు మోడ్ ద్వారా అనుమతించబడిన నోటిఫికేషన్‌లను చదవండి</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Android Autoతో పాటు, వాటిని స్వయంగా చదువుతుంది</string>
     <string name="notification_category_quiet_hours">నిశ్శబ్ద గంటలు</string>
     <string name="notification_quiet_hours_title">నిశ్శబ్ద గంటలు</string>
-    <string name="notification_quiet_start_title">ప్రారంభించండి</string>
+    <string name="notification_quiet_start_title">ప్రారంభం</string>
     <string name="notification_quiet_end_title">ముగింపు</string>
     <string name="notification_repeat_seconds_title">కోసం అదే నోటిఫికేషన్‌ను దాటవేయండి</string>
     <string name="notification_numbers_alike_title">విభిన్న సంఖ్యలను ఒకేలా పరిగణించండి</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">కాపీ చేయండి</string>
     <string name="notification_saved">సేవ్ చేయబడింది</string>
     <string name="notification_copied">కాపీ చేయబడింది</string>
-    <string name="notification_outcome_read">బిగ్గరగా చదవండి</string>
+    <string name="notification_outcome_read">చదవబడింది</string>
     <string name="notification_outcome_stopped">చదివేటప్పుడు ఆగిపోయింది</string>
     <string name="notification_outcome_speech_off">చదవలేదు: నోటిఫికేషన్ ప్రసంగం ఆఫ్‌లో ఉంది</string>
     <string name="notification_outcome_dnd">చదవలేదు: అంతరాయం కలిగించవద్దు</string>

@@ -3,15 +3,15 @@
     <string name="notification_shake_3">મજબૂત</string>
     <string name="notification_shake_2">મધ્યમ</string>
     <string name="notification_shake_1">સૌમ્ય</string>
-    <string name="notification_media_skip">મોટેથી વાંચશો નહીં</string>
+    <string name="notification_media_skip">વાંચશો નહીં</string>
     <string name="notification_media_pause">વાંચતી વખતે મીડિયાને થોભાવો</string>
-    <string name="notification_media_read">મોટેથી વાંચો</string>
+    <string name="notification_media_read">વાંચો</string>
     <string name="notification_headphones_only_without">ફક્ત હેડફોન વિના</string>
     <string name="notification_headphones_only_with">ફક્ત હેડફોન સાથે</string>
     <string name="notification_headphones_always">હેડફોન સાથે અથવા વગર મોટેથી વાંચો</string>
     <string name="notification_queue_skip">નવી સૂચના મોટેથી વાંચશો નહીં</string>
-    <string name="notification_queue_interrupt">મોટેથી વાંચવામાં આવતી સૂચનાને અટકાવો</string>
-    <string name="notification_queue_queue">વર્તમાન સૂચના પછી મોટેથી વાંચો</string>
+    <string name="notification_queue_interrupt">અટકાવો</string>
+    <string name="notification_queue_queue">પછી વાંચો</string>
     <string name="notification_url_omit">છોડો</string>
     <string name="notification_url_replace">નીચેનું લખાણ કહો</string>
     <string name="notification_url_domain">ફક્ત સાઇટ વાંચો</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">શું કહેવાય છે</string>
     <string name="notification_format_title">બોલવાનું ફૉર્મેટ</string>
     <string name="notification_format_message">પ્લેસહોલ્ડર્સ: {app}, {title}, {text}, {content} (સમગ્ર ટેક્સ્ટ), {bigtext}, {subtext}, {ticker}, {category} અને {time}.</string>
-    <string name="notification_private_format_title">ખાનગી સૂચનાઓ કહે છે</string>
+    <string name="notification_private_format_title">ખાનગી સૂચનાઓ માટે શું બોલાય</string>
     <string name="notification_private_format_message">ખાનગી સૂચનાની સામગ્રીના સ્થાને કહ્યું. પ્લેસહોલ્ડર્સ: {app}, {category} અને {time}.</string>
     <string name="notification_category_voice">અવાજ</string>
     <string name="notification_voice_title">અવાજ</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">જેમ કે Android Auto સાથે, જે તેમને પોતે વાંચે છે</string>
     <string name="notification_category_quiet_hours">શાંત કલાકો</string>
     <string name="notification_quiet_hours_title">શાંત કલાકો</string>
-    <string name="notification_quiet_start_title">શરૂ કરો</string>
+    <string name="notification_quiet_start_title">શરૂઆત</string>
     <string name="notification_quiet_end_title">અંત</string>
     <string name="notification_repeat_seconds_title">માટે સમાન સૂચના છોડો</string>
     <string name="notification_numbers_alike_title">વિવિધ સંખ્યાઓને સમાન ગણો</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">કૉપિ કરો</string>
     <string name="notification_saved">સાચવેલ</string>
     <string name="notification_copied">નકલ કરી</string>
-    <string name="notification_outcome_read">સફળતાપૂર્વક મોટેથી વાંચો</string>
+    <string name="notification_outcome_read">વાંચ્યું</string>
     <string name="notification_outcome_stopped">વાંચતી વખતે અટકી ગઈ</string>
     <string name="notification_outcome_speech_off">વાંચ્યું નથી: સૂચના ભાષણ બંધ છે</string>
     <string name="notification_outcome_dnd">વાંચ્યું નથી: ખલેલ પહોંચાડશો નહીં</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">વાંચ્યું નથી: જરૂરી શબ્દો ખૂટે છે</string>
     <string name="notification_outcome_blocked">વાંચ્યું નથી: અવરોધિત શબ્દ</string>
     <string name="notification_outcome_empty">વાંચ્યું નથી: કોઈ ટેક્સ્ટ નથી</string>
-    <string name="notification_outcome_repeat">વાંચ્યું નથી: પુનરાવર્તન કરો</string>
+    <string name="notification_outcome_repeat">વાંચ્યું નથી: પુનરાવર્તન</string>
     <string name="notification_outcome_cooldown">મોટેથી વાંચવું નહીં: આ એપ્લિકેશનની બીજી સૂચના તાજેતરમાં વાંચવામાં આવી હતી</string>
     <string name="notification_outcome_quiet_hours">વાંચ્યું નથી: શાંત કલાકો</string>
     <string name="notification_outcome_screen_on">વાંચ્યું નથી: સ્ક્રીન ચાલુ</string>

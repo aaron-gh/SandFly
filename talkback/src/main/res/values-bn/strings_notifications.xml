@@ -3,15 +3,15 @@
     <string name="notification_shake_3">শক্তিশালী</string>
     <string name="notification_shake_2">মাঝারি</string>
     <string name="notification_shake_1">কোমল</string>
-    <string name="notification_media_skip">জোরে জোরে পড়বেন না</string>
+    <string name="notification_media_skip">পড়বেন না</string>
     <string name="notification_media_pause">পড়ার সময় মিডিয়াকে বিরতি দিন</string>
-    <string name="notification_media_read">জোরে পড়ুন</string>
+    <string name="notification_media_read">পড়ুন</string>
     <string name="notification_headphones_only_without">শুধুমাত্র হেডফোন ছাড়া</string>
     <string name="notification_headphones_only_with">শুধু হেডফোন দিয়ে</string>
     <string name="notification_headphones_always">হেডফোন সহ বা ছাড়াই জোরে পড়ুন</string>
     <string name="notification_queue_skip">নতুন বিজ্ঞপ্তি জোরে জোরে পড়বেন না</string>
-    <string name="notification_queue_interrupt">উচ্চস্বরে পড়া বিজ্ঞপ্তিতে বাধা দিন</string>
-    <string name="notification_queue_queue">বর্তমান বিজ্ঞপ্তির পরে জোরে পড়ুন</string>
+    <string name="notification_queue_interrupt">বাধা দিন</string>
+    <string name="notification_queue_queue">পরে পড়ুন</string>
     <string name="notification_url_omit">ছেড়ে দাও</string>
     <string name="notification_url_replace">নিচের লেখাটি বলুন</string>
     <string name="notification_url_domain">শুধুমাত্র সাইট পড়ুন</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">যা বলা হয়</string>
     <string name="notification_format_title">বলার ফর্ম্যাট</string>
     <string name="notification_format_message">স্থানধারক: {app}, {title}, {text}, {content} (পুরো লেখা), {bigtext}, {subtext}, {ticker}, {category} এবং {time}।</string>
-    <string name="notification_private_format_title">ব্যক্তিগত বিজ্ঞপ্তি বলে</string>
+    <string name="notification_private_format_title">ব্যক্তিগত বিজ্ঞপ্তির জন্য পড়া হয়</string>
     <string name="notification_private_format_message">একটি ব্যক্তিগত বিজ্ঞপ্তি এর বিষয়বস্তুর জায়গায় বলেন. স্থানধারক: {app}, {category} এবং {time}।</string>
     <string name="notification_category_voice">ভয়েস</string>
     <string name="notification_voice_title">ভয়েস</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">যেমন Android Auto সহ, যা সেগুলি নিজেই পড়ে</string>
     <string name="notification_category_quiet_hours">শান্ত ঘন্টা</string>
     <string name="notification_quiet_hours_title">শান্ত ঘন্টা</string>
-    <string name="notification_quiet_start_title">শুরু করুন</string>
+    <string name="notification_quiet_start_title">শুরু</string>
     <string name="notification_quiet_end_title">শেষ</string>
     <string name="notification_repeat_seconds_title">জন্য একই বিজ্ঞপ্তি এড়িয়ে যান</string>
     <string name="notification_numbers_alike_title">বিভিন্ন সংখ্যাকে অভিন্ন হিসাবে বিবেচনা করুন</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">কপি করুন</string>
     <string name="notification_saved">সংরক্ষিত</string>
     <string name="notification_copied">কপি করা হয়েছে</string>
-    <string name="notification_outcome_read">সফলভাবে উচ্চস্বরে পড়ুন</string>
+    <string name="notification_outcome_read">পড়া হয়েছে</string>
     <string name="notification_outcome_stopped">পড়ার সময় থেমে গেল</string>
     <string name="notification_outcome_speech_off">পড়া হয়নি: বিজ্ঞপ্তি বক্তৃতা বন্ধ আছে</string>
     <string name="notification_outcome_dnd">পড়া হয়নি: বিরক্ত করবেন না</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">পড়া হয়নি: প্রয়োজনীয় শব্দ অনুপস্থিত</string>
     <string name="notification_outcome_blocked">পড়া হয়নি: অবরুদ্ধ শব্দ</string>
     <string name="notification_outcome_empty">পড়া হয়নি: কোন লেখা নেই</string>
-    <string name="notification_outcome_repeat">পড়া হয়নি: পুনরাবৃত্তি করুন</string>
+    <string name="notification_outcome_repeat">পড়া হয়নি: পুনরাবৃত্তি</string>
     <string name="notification_outcome_cooldown">জোরে পড়া নয়: এই অ্যাপ থেকে আরেকটি বিজ্ঞপ্তি খুব সম্প্রতি পড়া হয়েছে</string>
     <string name="notification_outcome_quiet_hours">পড়া হয়নি: শান্ত ঘন্টা</string>
     <string name="notification_outcome_screen_on">পড়া হয়নি: স্ক্রিন অন</string>

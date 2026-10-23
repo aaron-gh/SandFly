@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Stiprus</string>
     <string name="notification_shake_2">Vidutinis</string>
     <string name="notification_shake_1">Švelnus</string>
-    <string name="notification_media_skip">Neskaitykite garsiai</string>
+    <string name="notification_media_skip">Neskaityti</string>
     <string name="notification_media_pause">Skaitydami pristabdykite laikmeną</string>
-    <string name="notification_media_read">Skaityti garsiai</string>
+    <string name="notification_media_read">Skaityti</string>
     <string name="notification_headphones_only_without">Tik be ausinių</string>
     <string name="notification_headphones_only_with">Tik su ausinėmis</string>
     <string name="notification_headphones_always">Skaitykite garsiai su ausinėmis arba be jų</string>
     <string name="notification_queue_skip">Neskaitykite naujo pranešimo garsiai</string>
-    <string name="notification_queue_interrupt">Pertraukite garsiai skaitomą pranešimą</string>
-    <string name="notification_queue_queue">Skaitykite garsiai po dabartinio pranešimo</string>
+    <string name="notification_queue_interrupt">Pertraukti</string>
+    <string name="notification_queue_queue">Skaityti po jo</string>
     <string name="notification_url_omit">Palikite lauk</string>
     <string name="notification_url_replace">Pasakykite toliau pateiktą tekstą</string>
     <string name="notification_url_domain">Skaitykite tik svetainę</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Kas skaitoma</string>
     <string name="notification_format_title">Kalbos formatas</string>
     <string name="notification_format_message">Vietos žymos: {app}, {title}, {text}, {content} (visas tekstas), {bigtext}, {subtext}, {ticker}, {category} ir {time}.</string>
-    <string name="notification_private_format_title">Asmeniniuose pranešimuose rašoma</string>
+    <string name="notification_private_format_title">Privačių pranešimų skaitymas</string>
     <string name="notification_private_format_message">Sakyta vietoje privataus pranešimo turinio. Vietos žymos: {app}, {category} ir {time}.</string>
     <string name="notification_category_voice">Balsas</string>
     <string name="notification_voice_title">Balsas</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Kol ekranas išjungtas</string>
     <string name="notification_locked_title">Kol telefonas užrakintas</string>
     <string name="notification_headphones_title">Ausinės</string>
-    <string name="notification_media_title">Kol groja žiniasklaida</string>
+    <string name="notification_media_title">Kai leidžiama medija</string>
     <string name="notification_dnd_title">Netrukdyti</string>
     <string name="notification_dnd_none">Neskaityti jokių</string>
     <string name="notification_dnd_allowed">Skaitykite pranešimus, leidžiamus režimu Netrukdyti</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Pavyzdžiui, su Android Auto, kuris pats juos nuskaito</string>
     <string name="notification_category_quiet_hours">Ramios valandos</string>
     <string name="notification_quiet_hours_title">Ramios valandos</string>
-    <string name="notification_quiet_start_title">Pradėti</string>
+    <string name="notification_quiet_start_title">Pradžia</string>
     <string name="notification_quiet_end_title">Pabaiga</string>
     <string name="notification_repeat_seconds_title">Praleiskite tą patį pranešimą</string>
     <string name="notification_numbers_alike_title">Skirtingus skaičius traktuokite kaip vienodus</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Kopijuoti</string>
     <string name="notification_saved">Išsaugota</string>
     <string name="notification_copied">Nukopijuota</string>
-    <string name="notification_outcome_read">Sėkmingai skaitykite garsiai</string>
+    <string name="notification_outcome_read">Perskaityta</string>
     <string name="notification_outcome_stopped">Skaitant sustojo</string>
     <string name="notification_outcome_speech_off">Neskaityta: pranešimo kalba išjungta</string>
     <string name="notification_outcome_dnd">Neskaityta: Netrukdyti</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Neskaityta: trūksta būtinų žodžių</string>
     <string name="notification_outcome_blocked">Neskaityta: užblokuotas žodis</string>
     <string name="notification_outcome_empty">Neskaityta: nėra teksto</string>
-    <string name="notification_outcome_repeat">Neskaityta: kartoti</string>
+    <string name="notification_outcome_repeat">Neskaityta: pasikartojantis</string>
     <string name="notification_outcome_cooldown">Neskaityta garsiai: kitas šios programos pranešimas buvo perskaitytas per neseniai</string>
     <string name="notification_outcome_quiet_hours">Neskaityta: ramios valandos</string>
     <string name="notification_outcome_screen_on">Neskaityta: ekranas įjungtas</string>

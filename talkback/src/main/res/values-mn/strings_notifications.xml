@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Хүчтэй</string>
     <string name="notification_shake_2">Дунд зэрэг</string>
     <string name="notification_shake_1">Зөөлөн</string>
-    <string name="notification_media_skip">Чанга уншиж болохгүй</string>
+    <string name="notification_media_skip">Уншихгүй</string>
     <string name="notification_media_pause">Уншиж байхдаа хэвлэл мэдээллийн хэрэгслийг түр зогсоо</string>
-    <string name="notification_media_read">Чанга унш</string>
+    <string name="notification_media_read">Унших</string>
     <string name="notification_headphones_only_without">Зөвхөн чихэвчгүй</string>
     <string name="notification_headphones_only_with">Зөвхөн чихэвчтэй</string>
     <string name="notification_headphones_always">Чихэвчтэй эсвэл чихэвчгүй чангаар унш</string>
     <string name="notification_queue_skip">Шинэ мэдэгдлийг чангаар уншиж болохгүй</string>
-    <string name="notification_queue_interrupt">Чанга уншиж буй мэдэгдлийг тасал</string>
-    <string name="notification_queue_queue">Одоогийн мэдэгдлийн дараа чангаар уншина уу</string>
+    <string name="notification_queue_interrupt">Тасалдуулах</string>
+    <string name="notification_queue_queue">Дараа нь унших</string>
     <string name="notification_url_omit">Орхих</string>
     <string name="notification_url_replace">Доорх текстийг хэлнэ үү</string>
     <string name="notification_url_domain">Зөвхөн сайтыг уншина уу</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Юу уншигдах</string>
     <string name="notification_format_title">Ярианы формат</string>
     <string name="notification_format_message">Орлуулагч: {app}, {title}, {text}, {content} (бүх текст), {bigtext}, {subtext}, {ticker}, {category} болон {time}.</string>
-    <string name="notification_private_format_title">Хувийн мэдэгдлүүд ингэж хэлдэг</string>
+    <string name="notification_private_format_title">Хувийн мэдэгдлийг унших</string>
     <string name="notification_private_format_message">Хувийн мэдэгдлийн агуулгын оронд хэлсэн. Орлуулагч: {app}, {category} болон {time}.</string>
     <string name="notification_category_voice">Дуу хоолой</string>
     <string name="notification_voice_title">Дуу хоолой</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Дэлгэц унтарсан үед</string>
     <string name="notification_locked_title">Утас түгжигдсэн байхад</string>
     <string name="notification_headphones_title">Чихэвч</string>
-    <string name="notification_media_title">Медиа тоглож байх үед</string>
+    <string name="notification_media_title">Медиа тоглуулж байх үед</string>
     <string name="notification_dnd_title">Бүү саад бол</string>
     <string name="notification_dnd_none">Алийг нь ч уншихгүй</string>
     <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрөгдсөн мэдэгдлүүдийг уншина уу</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Тэдгээрийг өөрөө уншдаг Android Auto гэх мэт</string>
     <string name="notification_category_quiet_hours">Чимээгүй цаг</string>
     <string name="notification_quiet_hours_title">Чимээгүй цаг</string>
-    <string name="notification_quiet_start_title">Эхлэх</string>
+    <string name="notification_quiet_start_title">Эхлэл</string>
     <string name="notification_quiet_end_title">Төгсгөл</string>
     <string name="notification_repeat_seconds_title">Үүнтэй ижил мэдэгдлийг алгасах</string>
     <string name="notification_numbers_alike_title">Өөр өөр тоонуудыг адилхан гэж үзнэ</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Хуулах</string>
     <string name="notification_saved">Хадгалсан</string>
     <string name="notification_copied">Хуулсан</string>
-    <string name="notification_outcome_read">Амжилттай чангаар уншаарай</string>
+    <string name="notification_outcome_read">Уншсан</string>
     <string name="notification_outcome_stopped">Уншиж байхдаа зогссон</string>
     <string name="notification_outcome_speech_off">Уншаагүй: мэдэгдлийн яриа унтраалттай байна</string>
     <string name="notification_outcome_dnd">Уншаагүй: Бүү саад бол</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Уншаагүй: шаардлагатай үгс дутуу байна</string>
     <string name="notification_outcome_blocked">Уншаагүй: блоклогдсон үг</string>
     <string name="notification_outcome_empty">Уншаагүй: текст байхгүй</string>
-    <string name="notification_outcome_repeat">Уншаагүй: давтана</string>
+    <string name="notification_outcome_repeat">Уншаагүй: давталт</string>
     <string name="notification_outcome_cooldown">Чанга уншихгүй байна: энэ апп-ын өөр мэдэгдлийг хэтэрхий саяхан уншсан</string>
     <string name="notification_outcome_quiet_hours">Уншаагүй: чимээгүй цаг</string>
     <string name="notification_outcome_screen_on">Уншаагүй: дэлгэц асаалттай</string>

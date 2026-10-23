@@ -3,15 +3,15 @@
     <string name="notification_shake_3">ශක්තිමත්</string>
     <string name="notification_shake_2">මධ්යම</string>
     <string name="notification_shake_1">මෘදුයි</string>
-    <string name="notification_media_skip">ශබ්ද නඟා කියවන්න එපා</string>
+    <string name="notification_media_skip">කියවන්න එපා</string>
     <string name="notification_media_pause">කියවන අතරතුර මාධ්‍ය නවත්වන්න</string>
-    <string name="notification_media_read">ශබ්ද නඟා කියවන්න</string>
+    <string name="notification_media_read">කියවන්න</string>
     <string name="notification_headphones_only_without">හෙඩ්ෆෝන් නොමැතිව පමණි</string>
     <string name="notification_headphones_only_with">හෙඩ්ෆෝන් සමඟ පමණි</string>
     <string name="notification_headphones_always">හෙඩ්ෆෝන් සමඟ හෝ නැතිව ශබ්ද නඟා කියවන්න</string>
     <string name="notification_queue_skip">නව දැනුම්දීම ශබ්ද නඟා කියවන්න එපා</string>
-    <string name="notification_queue_interrupt">නිවේදනය ශබ්ද නඟා කියවීමට බාධා කරන්න</string>
-    <string name="notification_queue_queue">වත්මන් දැනුම්දීමෙන් පසුව ශබ්ද නඟා කියවන්න</string>
+    <string name="notification_queue_interrupt">බාධා කරන්න</string>
+    <string name="notification_queue_queue">පසුව කියවන්න</string>
     <string name="notification_url_omit">අතහරින්න</string>
     <string name="notification_url_replace">පහත පාඨය කියන්න</string>
     <string name="notification_url_domain">අඩවිය පමණක් කියවන්න</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">කියන දේ</string>
     <string name="notification_format_title">කථන ආකෘතිය</string>
     <string name="notification_format_message">ස්ථාන දරන්නන්: {app}, {title}, {text}, {content} (සම්පූර්ණ පෙළ), {bigtext}, {subtext}, {ticker}, {category} සහ {time}.</string>
-    <string name="notification_private_format_title">පුද්ගලික නිවේදන කියයි</string>
+    <string name="notification_private_format_title">පුද්ගලික දැනුම්දීම් කියවීම</string>
     <string name="notification_private_format_message">පුද්ගලික දැනුම්දීමක අන්තර්ගතය වෙනුවට කීවේය. ස්ථාන දරන්නන්: {app}, {category} සහ {time}.</string>
     <string name="notification_category_voice">හඬ</string>
     <string name="notification_voice_title">හඬ</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">ඒවාම කියවන Android Auto වැනි</string>
     <string name="notification_category_quiet_hours">නිහඬ පැය</string>
     <string name="notification_quiet_hours_title">නිහඬ පැය</string>
-    <string name="notification_quiet_start_title">ආරම්භ කරන්න</string>
+    <string name="notification_quiet_start_title">ආරම්භය</string>
     <string name="notification_quiet_end_title">අවසානය</string>
     <string name="notification_repeat_seconds_title">සඳහා එකම දැනුම්දීම මඟ හරින්න</string>
     <string name="notification_numbers_alike_title">විවිධ සංඛ්‍යා සමාන ලෙස සලකන්න</string>
@@ -169,8 +169,8 @@
     <string name="notification_history_copy">පිටපත් කරන්න</string>
     <string name="notification_saved">සුරකින ලදී</string>
     <string name="notification_copied">පිටපත් කර ඇත</string>
-    <string name="notification_outcome_read">ශබ්ද නඟා සාර්ථකව කියවන්න</string>
-    <string name="notification_outcome_stopped">කියවනකොට නැවතුනා</string>
+    <string name="notification_outcome_read">කියවන ලදී</string>
+    <string name="notification_outcome_stopped">කියවන අතරතුර නැවැත්විණි</string>
     <string name="notification_outcome_speech_off">කියවා නැත: දැනුම්දීම් කථාව අක්‍රියයි</string>
     <string name="notification_outcome_dnd">කියවා නැත: බාධා නොකරන්න</string>
     <string name="notification_outcome_touching">කියවා නැත: තිරය ස්පර්ශ කරන ලදී</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">කියවා නැත: අවශ්ය වචන අතුරුදහන්</string>
     <string name="notification_outcome_blocked">කියවා නැත: අවහිර කළ වචනය</string>
     <string name="notification_outcome_empty">කියවා නැත: පෙළ නැත</string>
-    <string name="notification_outcome_repeat">කියවා නැත: නැවත</string>
+    <string name="notification_outcome_repeat">කියවා නැත: පුනරාවර්තනය</string>
     <string name="notification_outcome_cooldown">ශබ්ද නඟා කියවා නැත: මෙම යෙදුමෙන් තවත් දැනුම්දීමක් ඉතා මෑතකදී කියවන ලදී</string>
     <string name="notification_outcome_quiet_hours">කියවා නැත: නිහඬ පැය</string>
     <string name="notification_outcome_screen_on">කියවා නැත: තිරය ක්‍රියාත්මකයි</string>

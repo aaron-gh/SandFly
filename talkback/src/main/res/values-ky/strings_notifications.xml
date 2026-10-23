@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Күчтүү</string>
     <string name="notification_shake_2">Орто</string>
     <string name="notification_shake_1">Жумшак</string>
-    <string name="notification_media_skip">Үн чыгарып окуба</string>
+    <string name="notification_media_skip">Окубоо</string>
     <string name="notification_media_pause">Окуу учурунда медианы тындырыңыз</string>
-    <string name="notification_media_read">Үн чыгарып оку</string>
+    <string name="notification_media_read">Окуу</string>
     <string name="notification_headphones_only_without">Наушниксиз гана</string>
     <string name="notification_headphones_only_with">Наушник менен гана</string>
     <string name="notification_headphones_always">Наушник менен же наушниксиз үн чыгарып оку</string>
     <string name="notification_queue_skip">Жаңы эскертмени үн чыгарып окубаңыз</string>
-    <string name="notification_queue_interrupt">Үн чыгарып окулуп жаткан билдирмени үз</string>
-    <string name="notification_queue_queue">Учурдагы эскертмеден кийин үн чыгарып оку</string>
+    <string name="notification_queue_interrupt">Үзүү</string>
+    <string name="notification_queue_queue">Андан кийин окуу</string>
     <string name="notification_url_omit">Чыгыңыз</string>
     <string name="notification_url_replace">Төмөндөгү текстти айт</string>
     <string name="notification_url_domain">Сайтты гана оку</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">Эмне окулат</string>
     <string name="notification_format_title">Сүйлөө форматы</string>
     <string name="notification_format_message">Толтургучтар: {app}, {title}, {text}, {content} (толук текст), {bigtext}, {subtext}, {ticker}, {category} жана {time}.</string>
-    <string name="notification_private_format_title">Жеке билдирүүлөр айтылат</string>
+    <string name="notification_private_format_title">Жеке билдирмелерди окуу</string>
     <string name="notification_private_format_message">Жеке билдирменин мазмунунун ордуна айтылган. Толтургучтар: {app}, {category} жана {time}.</string>
     <string name="notification_category_voice">Үн</string>
     <string name="notification_voice_title">Үн</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Экран өчүк болуп турганда</string>
     <string name="notification_locked_title">Телефон кулпуланып турганда</string>
     <string name="notification_headphones_title">Наушник</string>
-    <string name="notification_media_title">Медиа ойноп жатканда</string>
+    <string name="notification_media_title">Медиа ойнотулуп жатканда</string>
     <string name="notification_dnd_title">\"Тынчымды алба\"</string>
     <string name="notification_dnd_none">Эчбирин окубоо</string>
     <string name="notification_dnd_allowed">\"Тынчымды алба\" режими уруксат берген эскертмелерди окуу</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Мисалы, Android Auto менен, аларды өзү окуйт</string>
     <string name="notification_category_quiet_hours">Тынч сааттар</string>
     <string name="notification_quiet_hours_title">Тынч сааттар</string>
-    <string name="notification_quiet_start_title">Баштоо</string>
+    <string name="notification_quiet_start_title">Башталышы</string>
     <string name="notification_quiet_end_title">Аягы</string>
     <string name="notification_repeat_seconds_title">Ошол эле эскертмени өткөрүп жиберүү</string>
     <string name="notification_numbers_alike_title">Ар кандай сандарды бирдей деп эсептеңиз</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Көчүрүү</string>
     <string name="notification_saved">Сакталган</string>
     <string name="notification_copied">Көчүрүлдү</string>
-    <string name="notification_outcome_read">Ийгиликтүү үн чыгарып оку</string>
+    <string name="notification_outcome_read">Окулду</string>
     <string name="notification_outcome_stopped">Окуп жатканда токтоп калды</string>
     <string name="notification_outcome_speech_off">Окулган жок: эскертме кеп өчүк</string>
     <string name="notification_outcome_dnd">Окулган эмес: Тынчымды алба</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Окулган жок: керектүү сөздөр жок</string>
     <string name="notification_outcome_blocked">Окулган жок: бөгөттөлгөн сөз</string>
     <string name="notification_outcome_empty">Окулган эмес: текст жок</string>
-    <string name="notification_outcome_repeat">Окулган эмес: кайталап</string>
+    <string name="notification_outcome_repeat">Окулган эмес: кайталоо</string>
     <string name="notification_outcome_cooldown">Үн чыгарган жок: бул колдонмонун дагы бир эскертмеси жакында окулду</string>
     <string name="notification_outcome_quiet_hours">Окулган эмес: тынч сааттар</string>
     <string name="notification_outcome_screen_on">Окулган эмес: экран күйүк</string>
@@ -299,7 +299,7 @@
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> чейин окуу</string>
     <string name="notification_off">Өчүк</string>
     <string name="notification_on">Күйүк</string>
-    <string name="notification_never_again">SandFly өчүрүлгөнгө чейин</string>
+    <string name="notification_never_again">SandFly кайра иштетилгенге чейин</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">Билдирмелерди үн чыгарып окуу</string>
     <string name="notification_speech_now_on">Билдирмелерди үн чыгарып окуу иштетилди</string>

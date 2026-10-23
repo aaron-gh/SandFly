@@ -3,15 +3,15 @@
     <string name="notification_shake_3">Forte</string>
     <string name="notification_shake_2">Medio</string>
     <string name="notification_shake_1">Gentil</string>
-    <string name="notification_media_skip">Non leas en voz alta</string>
+    <string name="notification_media_skip">Non ler</string>
     <string name="notification_media_pause">Pausa os medios mentres le</string>
-    <string name="notification_media_read">Le en voz alta</string>
+    <string name="notification_media_read">Ler</string>
     <string name="notification_headphones_only_without">Só sen auriculares</string>
     <string name="notification_headphones_only_with">Só con auriculares</string>
     <string name="notification_headphones_always">Le en voz alta con ou sen auriculares</string>
     <string name="notification_queue_skip">Non leas a nova notificación en voz alta</string>
-    <string name="notification_queue_interrupt">Interrompe a notificación que se le en voz alta</string>
-    <string name="notification_queue_queue">Le en voz alta despois da notificación actual</string>
+    <string name="notification_queue_interrupt">Interrompela</string>
+    <string name="notification_queue_queue">Ler despois</string>
     <string name="notification_url_omit">Deixa fóra</string>
     <string name="notification_url_replace">Di o texto a continuación</string>
     <string name="notification_url_domain">Le só o sitio</string>
@@ -33,7 +33,7 @@
     <string name="notification_category_said">O que se di</string>
     <string name="notification_format_title">Formato de fala</string>
     <string name="notification_format_message">Marcadores de posición: {app}, {title}, {text}, {content} (todo o texto), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
-    <string name="notification_private_format_title">As notificacións privadas din</string>
+    <string name="notification_private_format_title">Lectura das notificacións privadas</string>
     <string name="notification_private_format_message">Dito en lugar do contido dunha notificación privada. Marcadores de posición: {app}, {category} e {time}.</string>
     <string name="notification_category_voice">Voz</string>
     <string name="notification_voice_title">Voz</string>
@@ -74,7 +74,7 @@
     <string name="notification_screen_off_title">Mentres a pantalla está apagada</string>
     <string name="notification_locked_title">Mentres o teléfono está bloqueado</string>
     <string name="notification_headphones_title">Auriculares</string>
-    <string name="notification_media_title">Mentres reproducen medios</string>
+    <string name="notification_media_title">Mentres se reproduce contido multimedia</string>
     <string name="notification_dnd_title">Non molestar</string>
     <string name="notification_dnd_none">Non ler ningunha</string>
     <string name="notification_dnd_allowed">Le as notificacións permitidas polo modo Non molestar</string>
@@ -90,7 +90,7 @@
     <string name="notification_skip_in_car_summary">Como con Android Auto, que os le el mesmo</string>
     <string name="notification_category_quiet_hours">Horas tranquilas</string>
     <string name="notification_quiet_hours_title">Horas tranquilas</string>
-    <string name="notification_quiet_start_title">Comeza</string>
+    <string name="notification_quiet_start_title">Inicio</string>
     <string name="notification_quiet_end_title">Fin</string>
     <string name="notification_repeat_seconds_title">Omita a mesma notificación para</string>
     <string name="notification_numbers_alike_title">Trata números diferentes como idénticos</string>
@@ -104,7 +104,7 @@
     <string name="notification_shake_strength_title">Intensidade de axitación</string>
     <string name="notification_wave_title">Axita a man para deixar de ler</string>
     <string name="notification_wave_summary">Movendo unha man sobre o sensor de proximidade</string>
-    <string name="notification_pocket_title">Modo de peto</string>
+    <string name="notification_pocket_title">Modo peto</string>
     <string name="notification_pocket_summary">Un sensor que se tapa cando comeza a lectura, como nun peto, non o para</string>
     <string name="notification_volume_keys_title">Preme as dúas teclas de volume</string>
     <string name="notification_dismiss_title">Deixar de ler ao descartar a notificación</string>
@@ -169,7 +169,7 @@
     <string name="notification_history_copy">Copiar</string>
     <string name="notification_saved">Gardado</string>
     <string name="notification_copied">Copiouse</string>
-    <string name="notification_outcome_read">Le en voz alta con éxito</string>
+    <string name="notification_outcome_read">Lida</string>
     <string name="notification_outcome_stopped">Detívose durante a lectura</string>
     <string name="notification_outcome_speech_off">Non lido: a voz de notificación está desactivada</string>
     <string name="notification_outcome_dnd">Non ler: Non molestar</string>
@@ -185,7 +185,7 @@
     <string name="notification_outcome_required">Non lido: faltan palabras obrigatorias</string>
     <string name="notification_outcome_blocked">Non lido: palabra bloqueada</string>
     <string name="notification_outcome_empty">Non lido: sen texto</string>
-    <string name="notification_outcome_repeat">Non lido: repetir</string>
+    <string name="notification_outcome_repeat">Non lido: repetida</string>
     <string name="notification_outcome_cooldown">Non lido en voz alta: outra notificación desta aplicación leuse moi recentemente</string>
     <string name="notification_outcome_quiet_hours">Non lido: horas tranquilas</string>
     <string name="notification_outcome_screen_on">Non lido: pantalla activada</string>
