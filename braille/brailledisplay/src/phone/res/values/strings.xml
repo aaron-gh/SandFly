@@ -355,6 +355,10 @@
   <string name="bd_preference_timed_message_duration_title">Message duration</string>
   <!-- Label for the blinking interval preference. [CHAR_LIMIT=45] -->
   <string name="bd_preference_blinking_interval_title">Cursor blinks every</string>
+  <!-- Entry in the blinking interval preference that keeps the cursor steady. [CHAR_LIMIT=30] -->
+  <string name="bd_blinking_interval_never">Never</string>
+  <!-- Label for the preference that shows the cursor on items that aren't editable, such as buttons and text being read. [CHAR_LIMIT=45] -->
+  <string name="bd_preference_cursor_on_non_editable_title">Show cursor on non-editable items</string>
   <!-- Label for the popup announcement preference. [CHAR_LIMIT=45] -->
   <string name="bd_preference_popup_announcement_title">Show device messages</string>
   <!-- Label for the popup announcement preference. [CHAR_LIMIT=200] -->

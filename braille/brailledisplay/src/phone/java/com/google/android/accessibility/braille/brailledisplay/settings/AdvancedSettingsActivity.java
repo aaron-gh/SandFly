@@ -97,7 +97,12 @@ public class AdvancedSettingsActivity extends PreferencesActivity {
       String[] entries = new String[values.length];
       NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.getDefault());
       for (int i = 0; i < values.length; i++) {
-        float second = (float) Integer.parseInt(values[i]) / MILLIS_PER_SECOND;
+        int intervalMs = Integer.parseInt(values[i]);
+        if (intervalMs == 0) {
+          entries[i] = getString(R.string.bd_blinking_interval_never);
+          continue;
+        }
+        float second = (float) intervalMs / MILLIS_PER_SECOND;
         entries[i] =
             getResources()
                 .getQuantityString(

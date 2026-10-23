@@ -86,6 +86,7 @@ public class BrailleUserPreferences {
   private static final boolean POPUP_MESSAGE_HISTORY_DEFAULT = false;
   private static final boolean CAPTION_DEFAULT = false;
   private static final String BLINKING_INTERVAL_MS_DEFAULT = "750";
+  private static final boolean CURSOR_ON_NON_EDITABLE_DEFAULT = true;
   private static final String TIMED_MESSAGE_DURATION_FRACTION_DEFAULT = "1";
 
   private static final int MAX_SWITCH_BRAILLE_GRADE_COUNT = 5;
@@ -942,6 +943,14 @@ public class BrailleUserPreferences {
       return Integer.parseInt(interval);
     }
     return Integer.parseInt(BLINKING_INTERVAL_MS_DEFAULT);
+  }
+
+  /** Reads whether the cursor is shown on items that aren't editable. */
+  public static boolean readCursorOnNonEditable(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_bd_cursor_on_non_editable_key),
+            CURSOR_ON_NON_EDITABLE_DEFAULT);
   }
 
   /** Adds count when switching braille grade. */

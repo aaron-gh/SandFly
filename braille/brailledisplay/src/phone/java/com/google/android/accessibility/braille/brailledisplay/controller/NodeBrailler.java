@@ -44,6 +44,7 @@ import com.google.android.accessibility.braille.brailledisplay.controller.BdCont
 import com.google.android.accessibility.braille.brailledisplay.controller.rule.BrailleRule;
 import com.google.android.accessibility.braille.brailledisplay.controller.rule.DefaultBrailleRule;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.StringUtils;
+import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Role;
@@ -115,7 +116,9 @@ public class NodeBrailler {
     if (TextUtils.isEmpty(result) && event != null) {
       result = new SpannableStringBuilder(AccessibilityEventUtils.getEventTextOrDescription(event));
     }
-    if (node.isAccessibilityFocused() && !TextUtils.isEmpty(result)) {
+    if (node.isAccessibilityFocused()
+        && !TextUtils.isEmpty(result)
+        && (node.isEditable() || BrailleUserPreferences.readCursorOnNonEditable(context))) {
       DisplaySpans.addSelection(result, /* start= */ 0, /* end= */ 0);
     }
     addInlineClickableLabel(node.getRoleDescription(), result);

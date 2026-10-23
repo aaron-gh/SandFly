@@ -385,13 +385,18 @@ public class CellsContentManager implements CellsContentConsumer {
       return;
     }
     cellContentUpdater.cancelAll();
-    pulseUpdate.setOverlay(
-        Arrays.asList(
-            new BrailleWord(displayInfoTarget.displayedBraille().array()),
-            new BrailleWord(displayInfoTarget.displayedOverlaidBraille().array())));
-    if (displayInfoTarget.blink()) {
-      cellContentUpdater.schedule(
-          WHAT_PULSE, pulser, BrailleUserPreferences.readBlinkingIntervalMs(context));
+    BrailleWord overlaidBraille =
+        new BrailleWord(displayInfoTarget.displayedOverlaidBraille().array());
+    int blinkingIntervalMs =
+        displayInfoTarget.blink() ? BrailleUserPreferences.readBlinkingIntervalMs(context) : 0;
+    if (blinkingIntervalMs > 0) {
+      pulseUpdate.setOverlay(
+          Arrays.asList(
+              new BrailleWord(displayInfoTarget.displayedBraille().array()), overlaidBraille));
+      cellContentUpdater.schedule(WHAT_PULSE, pulser, blinkingIntervalMs);
+    } else {
+      // Both frames show the overlay: nothing blinks, or an interval of 0 keeps the cursor steady.
+      pulseUpdate.setOverlay(Arrays.asList(overlaidBraille, overlaidBraille));
     }
     refreshSelf();
   }
@@ -489,8 +494,7 @@ public class CellsContentManager implements CellsContentConsumer {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
           if (context.getString(R.string.pref_bd_blinking_interval_key).equals(key)) {
-            cellContentUpdater.schedule(
-                WHAT_PULSE, pulser, BrailleUserPreferences.readBlinkingIntervalMs(context));
+            refresh();
           } else if (context.getString(R.string.pref_bd_caption_key).equals(key)) {
             if (!BrailleUserPreferences.readCaptionEnabled(context)) {
               timedMessager.clearAllTimedMessage(TimedMessager.Type.CAPTION);

@@ -22,6 +22,11 @@
         android:title="@string/bd_preference_blinking_interval_title" />
 
     <SwitchPreference
+        android:key="@string/pref_bd_cursor_on_non_editable_key"
+        android:defaultValue="true"
+        android:title="@string/bd_preference_cursor_on_non_editable_title" />
+
+    <SwitchPreference
         android:key="@string/pref_bd_popup_announcement_key"
         android:title="@string/bd_preference_popup_announcement_title"
         android:summary="@string/bd_preference_popup_announcement_summary"
