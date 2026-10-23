@@ -138,4 +138,18 @@
     <string name="script_source_remove">Выдаліць крыніцу</string>
     <string name="script_source_remove_title">Выдаліць <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Скрыпты, усталяваныя з яе, застануцца ўсталяванымі.</string>
+    <string name="scripts_auto_update">Аўтаматычнае абнаўленне скрыптоў</string>
+    <string name="scripts_check_updates">Праверыць наяўнасць абнаўленняў</string>
+    <string name="scripts_checking_updates">Праверка абнаўленняў…</string>
+    <string name="scripts_updates_category">Абнаўленні</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one">Абноўлены <xliff:g id="count" example="1">%1$d</xliff:g> скрыпт: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="few">Абноўлены <xliff:g id="count" example="2">%1$d</xliff:g> скрыпты: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many">Абноўлена <xliff:g id="count" example="2">%1$d</xliff:g> скрыптоў: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other">Абноўлена <xliff:g id="count" example="2">%1$d</xliff:g> скрыпта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Абнаўленні пералічаны ў раздзеле \"Абнаўленні\".</string>
+    <string name="scripts_update_check_failed">Некаторыя крыніцы не ўдалося праверыць</string>
+    <string name="scripts_up_to_date">Усе скрыпты актуальныя</string>
 </resources>

@@ -84,4 +84,10 @@
     <string name="theme_sound_too_large">Файл занадта вялікі. Максімальны памер гуку – 5 МБ.</string>
     <string name="theme_sound_not_audio">SandFly не можа прайграць гэты файл. Выберыце гук у фармаце WAV, OGG, MP3 або FLAC.</string>
     <string name="theme_sound_failed">SandFly не ўдалося прачытаць гэты файл.</string>
+    <string name="title_pref_sound_theme_install_source">З крыніцы</string>
+    <string name="summary_pref_sound_theme_install_source">Файлы тэм у рэпазітары на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
+    <string name="sound_theme_sources">Крыніцы гукавой тэмы</string>
+    <string name="sound_theme_source_empty">У гэтай крыніцы няма гукавых тэм</string>
+    <string name="sound_theme_source_failed">Не атрымалася загрузіць гукавыя тэмы. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Усталяваныя з яго гукавыя тэмы застаюцца ўсталяванымі.</string>
 </resources>
