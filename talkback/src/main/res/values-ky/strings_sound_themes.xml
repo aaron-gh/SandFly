@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Үн темалары</string>
+    <string name="summary_pref_sound_themes">Үндөрдүн жана титирөөлөрдүн топтомун орнотуп, тандаңыз, жалгыз үндөрдү өзүңүзгө алмаштырыңыз жана үндөрдү жана титирөөлөрдү жана 3D аудиону күйгүзүңүз.</string>
+    <string name="sound_themes_installed_category">Орнотулган темалар</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly өзүнүн үндөрү жана титирөөлөрү жана өзүңүздүн бардык үнүңүз.</string>
+    <string name="sound_theme_in_use">Колдонууда</string>
+    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> тарабынан</string>
+    <string name="sound_theme_license">Лицензия: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> үн.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> үндөр.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> титирөө.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> титирөө.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Башкаруу үндөрүн жана титирөөнү күйгүзөт.</string>
+    <string name="sound_theme_control_sounds_off">Башкаруу үндөрүн жана титирөөнү өчүрөт.</string>
+    <string name="sound_theme_use">Бул теманы колдонуңуз</string>
+    <string name="sound_theme_about">Бул тема жөнүндө</string>
+    <string name="sound_theme_export">Тема файлы катары сактаңыз</string>
+    <string name="sound_theme_remove">Алып салуу</string>
+    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> темасы алынып салынсынбы?</string>
+    <string name="sound_theme_remove_button">Алып салуу</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Тема сакталды, <xliff:g id="count" example="1">%d</xliff:g> үн менен.</item>
+        <item quantity="other">Тема <xliff:g id="count" example="13">%d</xliff:g> үн менен сакталды.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly тема файлын сактай алган жок.</string>
+    <string name="sound_theme_no_picker">Бул түзмөктө файлдарды тандоо үчүн колдонмо жок.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> орнотуулары</string>
+    <string name="title_pref_theme_sounds">Үндөр</string>
+    <string name="summary_pref_theme_sounds">Бул теманын каалаган үнүн өзүңүздүн үн файлы менен алмаштырыңыз.</string>
+    <string name="sound_themes_install_category">Теманы орнотуу</string>
+    <string name="title_pref_sound_theme_install_file">Файлдан</string>
+    <string name="summary_pref_sound_theme_install_file">Тема файлы ZIP файл болуп саналат. Башка колдонмодон SandFly менен бирөөсүн ачып же бөлүшө аласыз.</string>
+    <string name="title_pref_sound_theme_install_link">Шилтемеден</string>
+    <string name="summary_pref_sound_theme_install_link">Тема файлына же анын ичинде темасы бар GitHub репозиторийине шилтеме. Ошондой эле браузериңизден SandFly менен шилтемени бөлүшө аласыз.</string>
+    <string name="title_pref_sound_theme_install_source">Булактан</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea же Bitbucket репозиторийиндеги тема файлдары.</string>
+    <string name="sound_theme_sources">Үн темасынын булактары</string>
+    <string name="sound_theme_source_empty">Бул булакта үн темалары жок</string>
+    <string name="sound_theme_source_failed">Үн темалары жүктөлгөн жок. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Андан орнотулган үн темалары орнотулган бойдон калат.</string>
+    <string name="sound_theme_link_message">Тема файлына же темасы бар GitHub репозиторийине шилтеме киргизиңиз же чаптаңыз.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Үн темасын орнотуу</string>
+    <string name="sound_theme_install_reading">Үн темасын окуу</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> орнотулсунбу?</string>
+    <string name="sound_theme_install_and_use">Орнотуу жана колдонуу</string>
+    <string name="sound_theme_install">Орнотуу</string>
+    <string name="sound_theme_install_replaces">Бул ошол эле аталыштагы орнотулган теманы алмаштырат.</string>
+    <string name="sound_theme_install_skipped">Чыккан:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Орнотулган <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Орнотулган <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Ал азыр колдонулууда.</string>
+    <string name="sound_theme_install_nothing">Орнотуу үчүн үн темасы жок.</string>
+    <string name="sound_theme_install_not_a_theme">Бул үн темасы эмес SandFly колдоно алат: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly үн темасын орното алган жок. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Үн темаларына шилтемелер https менен башталышы керек.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> үндөрү</string>
+    <string name="title_pref_theme_sounds_reset">SandFly үндөрүн бардыгы үчүн колдонуңуз</string>
+    <string name="theme_sounds_reset_confirm">Бул теманын бардык үндөрүн өчүрүп, SandFly өзү колдонгон үндөрдү колдоносуңбу?</string>
+    <string name="theme_sounds_reset_button">Алып салуу</string>
+    <string name="theme_sounds_category">Үндөр</string>
+    <string name="theme_sound_summary_default">SandFlyнун үнү</string>
+    <string name="theme_sound_summary_custom">Тема үн</string>
+    <string name="theme_sound_summary_none">Үн жок. Фокус үн ойнойт.</string>
+    <string name="theme_sound_summary_android_keyboard">Android баскычтоптун үнү</string>
+    <string name="theme_sound_use_android_keyboard">Android баскычтоптун үнүн колдонуңуз</string>
+    <string name="theme_sound_braille_character">Брайл клавиатурасы: символ терүү</string>
+    <string name="theme_sound_braille_space">Брайл баскычтобу: боштук</string>
+    <string name="theme_sound_braille_delete">Брайл баскычтобу: жок кылуу</string>
+    <string name="theme_sound_braille_new_line">Брайл баскычтобу: жаңы сап</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Үн файлын тандаңыз</string>
+    <string name="theme_sound_preview">Алдын ала көрүү</string>
+    <string name="theme_sound_none">Үн жок</string>
+    <string name="theme_sound_summary_no_sound">Үн жок</string>
+    <string name="theme_sound_action_set_none">Үн жок деп коюу</string>
+    <string name="theme_sound_use_default">SandFly үнүн колдонуңуз</string>
+    <string name="theme_sound_remove">Үндү алып салуу</string>
+    <string name="theme_sound_too_large">Бул файл өтө чоң. Үн 5 МБ чейин болушу мүмкүн.</string>
+    <string name="theme_sound_not_audio">SandFly ал файлды ойнотуу мүмкүн эмес. WAV, OGG, MP3 же FLAC үнүн тандаңыз.</string>
+    <string name="theme_sound_failed">SandFly ал файлды окуй алган жок.</string>
+</resources>

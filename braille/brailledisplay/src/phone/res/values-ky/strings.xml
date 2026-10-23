@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Брайль аппараттык баскычтобу</string>
   <string name="bd_application_name">Атайын мүмкүнчүлүктөр</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack функциясынын брайль баскычтобу жеткиликсиз</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack функциясынын брайль баскычтобун күйгүзүү</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly функциясынын брайль баскычтобу жеткиликсиз</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly функциясынын брайль баскычтобун күйгүзүү</string>
   <string name="bd_ime_disabled_dialog_message">Брайль дисплейи менен терүү үчүн киргизүү параметрлерине өтүп, аны күйгүзүңүз</string>
   <string name="bd_ime_disabled_dialog_title_positive">Киргизүү параметрлери</string>
   <string name="bd_ime_not_default_dialog_title">Киргизүү ыкмасын которуңуз</string>
-  <string name="bd_ime_not_default_dialog_message">Терүүнү улантуу үчүн TalkBack брайль баскычтобун киргизүү ыкмаңыз катары орнотуңуз</string>
+  <string name="bd_ime_not_default_dialog_message">Терүүнү улантуу үчүн SandFly брайль баскычтобун киргизүү ыкмаңыз катары орнотуңуз</string>
   <string name="bd_ime_not_default_dialog_positive">Киргизүү ыкмасын которуу</string>
   <string name="type_unlabeled">Белгиленбеген</string>
   <string name="type_unlabeled_edittext">Белгиленбеген түзөтүү кутучасы</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Солго жылдырып кароо</string>
   <string name="overlay_pan_right_button">Оңго жылдырып кароо</string>
   <string name="bd_preferences_title">Брайль дисплейи</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Брайль дисплейин колдонуу үчүн алгач TalkBack функциясын күйгүзүңүз</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack\'ке өтүү</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Брайль дисплейин колдонуу үчүн алгач SandFly функциясын күйгүзүңүз</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly\'ке өтүү</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Брайль дисплейин колдонуу үчүн алгач Bluetooth\'ду күйгүзүңүз</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth\'ду күйгүзүү</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Брайль дисплейин колдонуу үчүн %s жакын жердеги түзмөктөргө мүмкүнчүлүк алышы керек</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Кароо режимин колдонуу үчүн баскычтардын демейки айкалыш конфигурациясынан жакшыртылган конфигурацияга өтүшүңүщз керек болот. Ушуну менен брайль дисплейинин айрым буйруктары жаңырат</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Параметрлер</string>
   <string name="bd_command_change_dialog_title">Айрым буйруктар жаңыртылды</string>
-  <string name="bd_command_change_dialog_message">TalkBack\'тин ушул версиясында брайль дисплейинин буйруктары жаңыртылды:\n\n• Мурунку нерсе: 1, 7 чекиттерин басыңыз\n\n• Кийинки нерсе: 4, 8 чекиттерин басыңыз\n\n• Мурунку окууну башкаруу элементи: 2, 3, 7, 8 чекиттерин басыңыз\n\n• Кийинки окууну башкаруу элементи: 5, 6, 7, 8 чекиттерин басыңыз</string>
+  <string name="bd_command_change_dialog_message">SandFly\'тин ушул версиясында брайль дисплейинин буйруктары жаңыртылды:\n\n• Мурунку нерсе: 1, 7 чекиттерин басыңыз\n\n• Кийинки нерсе: 4, 8 чекиттерин басыңыз\n\n• Мурунку окууну башкаруу элементи: 2, 3, 7, 8 чекиттерин басыңыз\n\n• Кийинки окууну башкаруу элементи: 5, 6, 7, 8 чекиттерин басыңыз</string>
   <string name="bd_preference_braille_contracted">Стенограммалык брайль</string>
   <string name="bd_preference_braille_uncontracted">Стенограммалык эмес брайль</string>
   <string name="bd_braille_grade_tips">Брайль баскычтобу же дисплей менен кыскартылган режимден кыскартылбаган режимге которулуу үчүн боштукту жана 1, 2, 4, 5 чекиттерин басыңыз.\n\nБул буйрук тилди эки брайль арибинде колдонгонуңузда иштейт.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Элементтерге өтүү</string>
   <string name="bd_commands_bindings_category_system_actions_title">Системанын аракеттери</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Артка, башкы бет, билдирмелер жана башкалар</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack функциялары</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack менюлары жана параметрлери</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly функциялары</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly менюлар жана жөндөөлөр</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Брайль параметрлери</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Брайль тили жана параметрлери</string>
   <string name="bd_commands_bindings_category_text_editing_title">Текстти оңдоо</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Бардык колдонмолорду ачуу</string>
   <string name="bd_cmd_toggle_screen_search">\"Экранда издөө\" функциясын ачуу</string>
   <string name="bd_cmd_edit_custom_label">Жеке энбелгини түзөтүү</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack менюсун ачуу</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack кебин күйгүзүү же өчүрүү</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly менюсун ачуу</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly кебин күйгүзүү же өчүрүү</string>
   <string name="bd_cmd_read_stop">Окууну токтотуу</string>
-  <string name="bd_cmd_talkback_settings">TalkBack параметрлерин ачуу</string>
+  <string name="bd_cmd_talkback_settings">SandFly параметрлерин ачуу</string>
   <string name="bd_cmd_switch_to_next_input_language">Кийинки терүү тилине которулуу</string>
   <string name="bd_cmd_switch_to_next_output_language">Кийинки окуу тилине которулуу</string>
   <string name="bd_cmd_toggle_contracted_mode">Кыскартылган жана кыскартылбаган ариптердин ортосунда которулуу</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Кароо режимине өтүү буйругун колдонуп, төмөнкү тамга же сан ыкчам баскычтарын терип, веб-беттерди тез карай аласыз.\n\nБул ыкчам баскычтарды кароо режимине кирбей да колдонсо болот, бирок \"кийинки\" буйруктарга 8 чекитин кошушуңуз керек болот.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Жадыбалдагы элементтерге өтүү</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Брайль дисплейи параметрин өчүрөсүзбү?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Аны каалаган убакта TalkBack параметрлеринен кайра күйгүзсөңүз болот</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Аны каалаган убакта SandFly параметрлеринен кайра күйгүзсөңүз болот</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Өчүрүү</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Айрым буйруктар жеткиликсиз</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Терүү же түзөтүү учурунда элементтерге өтүү буйруктары, Брайль параметрлери жана айрым TalkBack функциялары иштебейт.\n\nБул буйруктарды колдонуу үчүн, адегенде баскычтопту жабыңыз.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Терүү же түзөтүү учурунда элементтерге өтүү буйруктары, Брайль параметрлери жана айрым SandFly функциялары иштебейт.\n\nБул буйруктарды колдонуу үчүн, адегенде баскычтопту жабыңыз.</string>
   <string name="bd_caption_tutorial_dialog_title">Брайль дисплейиндеги коштомо жазуулар</string>
   <string name="bd_caption_tutorial_dialog_message">Видеонун коштомо жазууларын көрсөтүү же жашыруу үчүн боштукту жана 1, 4, 7, 8 чекиттерин басыңыз.\n\nКолдоого алынган медиада коштомо жазууларды автоматтык түрдө көрсөтүү үчүн Параметрлерден \"Коштомо жазууларды брайль дисплейинде көрсөтүүнү\" күйгүзүңүз.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Коштомо жазуулар жеткиликтүү болгондо, ар дайым бул билдирүүнү көрсөтүү</string>
   <string name="bd_usb_connect_dialog_title">Брайль дисплейи USB\'ге туташты</string>
-  <string name="bd_usb_connect_dialog_message">%s түзмөгүңүздүн батареясы брайль дисплейиңизди кубаттап жатат.\n\nЭгер Bluetooth\'га которулгуңуз келсе, USB же USB түйүнүңүздү ажыратып, TalkBack параметрлери &gt; Брайль дисплейине өтүңүз.</string>
+  <string name="bd_usb_connect_dialog_message">%s түзмөгүңүздүн батареясы брайль дисплейиңизди кубаттап жатат.\n\nЭгер Bluetooth\'га которулгуңуз келсе, USB же USB түйүнүңүздү ажыратып, SandFly параметрлери &gt; Брайль дисплейине өтүңүз.</string>
   <string name="bd_device">телефон</string>
   <string name="bd_battery_low_dialog_title">%s батареясы аз</string>
   <string name="bd_battery_low_dialog_message">%s түзмөгүнүн батареясы брайль дисплейин кубаттайт.\n\nБатареянын кубатын үнөмдөө үчүн:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Баарын тазалоо</string>
   <string name="popup_message_history_empty">Бош</string>
   <string name="popup_message_history_consent_dialog_title">Түзмөктүн жазышуу таржымалы күйгүзүлсүнбү?</string>
-  <string name="popup_message_history_consent_dialog_msg">Бул TalkBack функциясына билдирмелер жана ойготкучтар сыяктуу айрым билдирүүлөрдү сактайт. Бул параметрди каалаган убакта өзгөртө аласыз.</string>
+  <string name="popup_message_history_consent_dialog_msg">Бул SandFly функциясына билдирмелер жана ойготкучтар сыяктуу айрым билдирүүлөрдү сактайт. Бул параметрди каалаган убакта өзгөртө аласыз.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Күйгүзүү</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Жок, рахмат</string>
+    <string name="external_display_channel">Башка колдонмолордон Брайл дисплейлери</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly үчүн Брайль дисплейи болууга уруксат берилсинби?</string>
+    <string name="external_display_ask_text">SandFly сиз уруксат бермейинче аны колдонбойт.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly көрсөтүүлөрүнүн баарын Брайл арибинде окуй алат, алар экранда каалаган нерсе болушу мүмкүн, анын ичинде билдирүүлөр жана сиз терген нерселер. Ал ошондой эле Брайль дисплейи менен түзмөгүңүздү башкара алат: териңиз, колдонмолорду ачыңыз жана каалаган SandFly буйругун аткарыңыз. Сиз ишенген колдонмолорго гана уруксат бериңиз.</string>
+    <string name="external_display_allow">Уруксат берүү</string>
+    <string name="external_display_deny">Уруксат бербе</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> сиздин Брайл дисплейи</string>
+    <string name="external_display_in_use_text">SandFly аны колдонуп жатканда, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> экранды окуп, түзмөктү башкара алат.</string>
+    <string name="external_displays_title">Башка колдонмолордон көрсөтөт</string>
+    <string name="external_displays_summary">Сиз уруксат берген колдонмолор SandFly үчүн брайль дисплейлери болушу мүмкүн. Брайл дисплейи болгон колдонмо экранды окуп, аппаратты башкара алат.</string>
+    <string name="external_displays_none">Эч бир колдонмо Брайл дисплейи боло албайт.</string>
 </resources>

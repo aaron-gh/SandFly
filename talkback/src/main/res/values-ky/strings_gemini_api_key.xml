@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API ачкычы</string>
+    <string name="summary_pref_gemini_api_key_built_in">Бул колдонмого орнотулган ачкычты колдонуу</string>
+    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey дарегинен Google AI Studio\'дон акысыз API ачкычын алып, аны бул жерге чаптаңыз. Ачкычыңызды алып салуу үчүн талааны тазалап, сактаңыз.\n\nСиз сүрөттөгөн сүрөттөр жана экрандар Google дарегине жөнөтүлөт. Акысыз деңгээлде, Google аларды өнүмдөрүн жакшыртуу үчүн колдоно алат.</string>
+    <string name="gemini_api_key_hint">API ачкычы</string>
+    <string name="gemini_api_key_save">Сактоо</string>
+    <string name="gemini_api_key_get">Ачкыч алыңыз</string>
+    <string name="title_pref_gemini_model">Gemini модели</string>
+    <string name="gemini_model_automatic">Автоматтык</string>
+    <string name="summary_pref_gemini_model_automatic">Автоматтык: Gemini Flash, андан кийин Flash бош эмес болгондо Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, андан кийин бош эмес болгондо Flash-Lite</string>
+    <string name="gemini_model_loading">Моделдер алынууда…</string>
+    <string name="gemini_model_list_failed">Моделдерди ала алган жок: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Алгач Gemini API ачкычын коюңуз</string>
+    <string name="gemini_api_terms_link">Gemini API Кошумча Тейлөө шарттары</string>
+    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 сыяктуу дарек</string>
+    <string name="ai_service_model_hint">Модел</string>
+    <string name="ai_service_address_invalid">Дарек https://. менен башталышы керек Эч нерсе сакталган жок.</string>
+    <string name="dialog_message_ai_service_consent">Сүрөттөр жана скриншоттор сүрөттөлүш үчүн <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> жөнөтүлөт, бул бир нече секундду талап кылат. Анын өз шарттары жана купуялык саясаты колдонулат. Генеративдик AI эксперименталдык, ошондуктан ката кетирет.</string>
+    <string name="ai_service_error_api_key">AI кызматы API ачкычын кабыл алган жок. Анын орнотууларын Автоматтык сүрөттөмөлөрдөн текшериңиз.</string>
+    <string name="ai_service_error_quota">AI кызматын колдонуу чегине жетти. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string name="ai_service_error_busy">AI кызматы азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>
+    <string name="ai_service_error_timeout">AI кызматы жооп берүү үчүн өтө көпкө созулду. Кайра аракет кыл.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Жок</string>
+    <string name="ai_service_not_set_up">Эч кандай AI кызматы колдонулбайт. Бирди орнотуңуз же Автоматтык сүрөттөмөлөр жөндөөлөрүнөн бирин тандаңыз.</string>
+    <string name="ai_provider_none_set_up">Эч кандай AI кызматы орнотулган эмес. Төмөнкү жөндөөлөрүнөн бирин орнотуңуз.</string>
+    <string name="ai_provider_other">Башка кызмат</string>
+    <string name="title_pref_category_ai_services">AI кызматтары</string>
+    <string name="title_pref_ai_provider">AI кызматы</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> орнотуулар</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, орнотулган эмес</string>
+    <string name="ai_provider_in_use">Колдонууда</string>
+    <string name="ai_provider_not_set_up">Орнотулбаган</string>
+    <string name="ai_provider_not_ready">Алгач моделди тандаңыз</string>
+    <string name="ai_provider_address">Дарек</string>
+    <string name="ai_provider_address_message">OpenAI-шайкеш чат API жана https://example.com/v1. сыяктуу сүрөт киргизүү менен кызматтын дареги</string>
+    <string name="ai_provider_not_set">Коюлган эмес</string>
+    <string name="ai_provider_set">Конфигурацияланган</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ачкычы</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модели</string>
+    <string name="ai_provider_choose_model">Тандалган эмес</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ачкычыңызды чаптаңыз. Аны алып салуу үчүн талааны тазалап, сактаңыз. Сиз сүрөттөгөн сүрөттөр жана экрандар <xliff:g id="service" example="Claude">%1$s</xliff:g> дарегине жөнөтүлөт.</string>
+    <string name="ai_provider_needs_key">Алгач <xliff:g id="service" example="Claude">%1$s</xliff:g> API ачкычын коюңуз</string>
+    <string name="ai_provider_needs_address">Биринчи даректи коюңуз</string>
+    <string name="ai_provider_enter_model">Модель атын киргизиңиз</string>
+</resources>

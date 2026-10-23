@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Тыныгуу SandFly</string>
+    <string name="summary_pause_backtalk">SandFly уланмайынча кепти, жаңсоолорду өчүрүп, тийүү аркылуу изилдеңиз</string>
+    <string name="keycombo_menu_global_pause_backtalk">Тыныгуу же улантуу SandFly</string>
+    <string name="backtalk_paused">SandFly тындырылды</string>
+    <string name="backtalk_resumed">SandFly уланды</string>
+    <string name="notification_title_backtalk_paused">SandFly тындырылды</string>
+    <string name="notification_message_backtalk_paused">Улантуу үчүн таптаңыз</string>
+    <string name="notification_channel_backtalk_paused">SandFly тындырылды</string>
+    <string name="dialog_title_pause_backtalk">Тыныгуу SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Тындыруу</string>
+    <string name="dialog_message_pause_backtalk">SandFly тындырылып турганда, ал сүйлөбөйт же жаңсоолорго жооп бербейт жана экран эч кандай экранды окугуч күйгүзүлгөндөй иштейт.</string>
+    <string name="message_resume_keyguard">Улантуу үчүн, SandFly тындырылды деген эскертмени басыңыз, үндү басаңдатуу баскычын 3 жолу тез басыңыз же кулпуланган экранды көрсөтүү үчүн телефонду кулпулап, кайра ойготуңуз.</string>
+    <string name="message_resume_screen_on">Улантуу үчүн, SandFly тындырылды эскертмесин таптап, үнүн 3 жолу басаңдатыңыз же экранды өчүрүп кайра күйгүзүңүз.</string>
+    <string name="message_resume_manual">Улантуу үчүн SandFly тындырылды эскертмесин таптап коюңуз же үнүн басаңдатууну 3 жолу тез басыңыз.</string>
+    <string name="message_resume_key_combo">Ошондой эле <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> басыңыз.</string>
+    <string name="title_pref_resume_backtalk">Резюме SandFly</string>
+    <string name="value_resume_keyguard">Кулпу экраны көрсөтүлгөндө</string>
+    <string name="value_resume_screen_on">Экран күйгөндө</string>
+    <string name="value_resume_manual">Эскертмеден же жарлыктан гана</string>
+</resources>
