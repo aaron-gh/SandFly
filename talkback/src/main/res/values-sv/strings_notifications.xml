@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Stark</string>
+    <string name="notification_shake_2">Medium</string>
+    <string name="notification_shake_1">Mild</string>
+    <string name="notification_media_skip">Läs inte högt</string>
+    <string name="notification_media_pause">Pausa media medan du läser</string>
+    <string name="notification_media_read">Läs högt</string>
+    <string name="notification_headphones_only_without">Endast utan hörlurar</string>
+    <string name="notification_headphones_only_with">Endast med hörlurar</string>
+    <string name="notification_headphones_always">Läs högt med eller utan hörlurar</string>
+    <string name="notification_queue_skip">Läs inte den nya aviseringen högt</string>
+    <string name="notification_queue_interrupt">Avbryt meddelandet som läses upp</string>
+    <string name="notification_queue_queue">Läs högt efter det aktuella meddelandet</string>
+    <string name="notification_url_omit">Lämna ute</string>
+    <string name="notification_url_replace">Säg texten nedan</string>
+    <string name="notification_url_domain">Läs endast webbplatsen</string>
+    <string name="notification_url_full">Läs hela länken</string>
+    <string name="notification_category_title">Aviseringar</string>
+    <string name="notification_reading_title">Reading notifications aloud</string>
+    <string name="notification_apps_title">Appar</string>
+    <string name="notification_words_title">Ord och ersättare</string>
+    <string name="notification_kinds_title">Typer av meddelanden</string>
+    <string name="notification_when_title">När ska man läsa</string>
+    <string name="notification_rules_title">Regler</string>
+    <string name="notification_repeats_title">Upprepas</string>
+    <string name="notification_stop_title">Sluta läsa</string>
+    <string name="notification_schedules_title">Sammanfattning och tid</string>
+    <string name="notification_history_title">Aviseringshistorik</string>
+    <string name="notification_test_title">Skicka ett testmeddelande</string>
+    <string name="notification_automation_title">Automation</string>
+    <string name="notification_automation_allowed_title">Tillåt automatiseringsappar</string>
+    <string name="notification_category_said">Vad sägs</string>
+    <string name="notification_format_title">Talformat</string>
+    <string name="notification_format_message">Platshållare: {app}, {title}, {text}, {content} (hela texten), {bigtext}, {subtext}, {ticker}, {category} och {time}.</string>
+    <string name="notification_private_format_title">Privata aviseringar läses upp som</string>
+    <string name="notification_private_format_message">Sagt i stället för innehållet i ett privat meddelande. Placeholders: {app}, {category} and {time}.</string>
+    <string name="notification_category_voice">Röst</string>
+    <string name="notification_voice_title">Röst</string>
+    <string name="notification_voice_sandfly">SandFlys röst</string>
+    <string name="notification_detect_language_title">Upptäck språk</string>
+    <string name="notification_detect_language_summary">Säg varje avisering på språket den är skriven på. Behov Byt språk automatiskt i text-till-tal-inställningarna.</string>
+    <string name="notification_sound_before_title">Ljud före aviseringar</string>
+    <string name="notification_category_text">Text</string>
+    <string name="notification_remove_emoji_title">Utelämna emoji</string>
+    <string name="notification_lowercase_title">Läs versaler som ord</string>
+    <string name="notification_lowercase_summary">Vissa talsynteser läser ord skrivna med versaler bokstav för bokstav.</string>
+    <string name="notification_separate_digits_title">Läs långa tal siffra för siffra</string>
+    <string name="notification_separate_digits_summary">Till exempel koder och telefonnummer</string>
+    <string name="notification_min_digits_title">Minimum digits in a long number</string>
+    <string name="notification_urls_title">Länkar</string>
+    <string name="notification_url_text_title">Sagt i stället för en länk</string>
+    <string name="notification_skip_empty_title">Hoppa över aviseringar utan text</string>
+    <string name="notification_category_length">Längd</string>
+    <string name="notification_max_words_title">Maximalt antal ord</string>
+    <string name="notification_max_sentences_title">Maximalt antal meningar</string>
+    <string name="notification_max_characters_title">Maximalt antal texttecken</string>
+    <string name="notification_max_seconds_title">Sluta läsa efter</string>
+    <string name="notification_category_timing">Timing</string>
+    <string name="notification_delay_title">Vänta innan du läser</string>
+    <string name="notification_queue_title">När ett annat meddelande läses</string>
+    <string name="notification_repeat_minutes_title">Läs igen tills skärmen slås på</string>
+    <string name="notification_skip_media_title">Hoppa över mediaspelare</string>
+    <string name="notification_skip_ongoing_title">Hoppa över pågående aviseringar</string>
+    <string name="notification_skip_ongoing_summary">Såsom navigering och timers</string>
+    <string name="notification_skip_foreground_title">Hoppa över appaviseringar</string>
+    <string name="notification_skip_foreground_summary">Till exempel en VPN eller en ljudinspelare</string>
+    <string name="notification_skip_progress_title">Hoppa över förloppsmeddelanden</string>
+    <string name="notification_skip_group_summaries_title">Hoppa över gruppsammanfattningar</string>
+    <string name="notification_skip_group_summaries_summary">Till exempel \"3 nya meddelanden\"</string>
+    <string name="notification_skip_low_priority_title">Hoppa över lågprioriterade meddelanden</string>
+    <string name="notification_skip_system_title">Hoppa över systemaviseringar</string>
+    <string name="notification_screen_on_title">Medan skärmen är på</string>
+    <string name="notification_screen_off_title">Medan skärmen är avstängd</string>
+    <string name="notification_locked_title">Medan telefonen är låst</string>
+    <string name="notification_headphones_title">Hörlurar</string>
+    <string name="notification_media_title">Medan media spelas</string>
+    <string name="notification_dnd_title">Stör ej</string>
+    <string name="notification_dnd_none">Läs inga aviseringar högt</string>
+    <string name="notification_dnd_allowed">Läs aviseringar som är tillåtna i Stör ej-läget</string>
+    <string name="notification_dnd_all">Läs allt</string>
+    <string name="notification_touch_title">Medan skärmen pekas</string>
+    <string name="notification_touch_read">Läs direkt</string>
+    <string name="notification_touch_after">Läs när beröringen slutar</string>
+    <string name="notification_touch_skip">Läs inte högt</string>
+    <string name="notification_during_calls_title">Under samtal</string>
+    <string name="notification_honour_silent_title">Inte i tyst läge</string>
+    <string name="notification_honour_vibrate_title">Inte i vibrationsläge</string>
+    <string name="notification_skip_in_car_title">Inte i billäge</string>
+    <string name="notification_skip_in_car_summary">Som med Android Auto, som läser dem själv</string>
+    <string name="notification_category_quiet_hours">Tysta timmar</string>
+    <string name="notification_quiet_hours_title">Tysta timmar</string>
+    <string name="notification_quiet_start_title">Starta</string>
+    <string name="notification_quiet_end_title">Slut</string>
+    <string name="notification_repeat_seconds_title">Hoppa över samma avisering för</string>
+    <string name="notification_numbers_alike_title">Behandla olika nummer som identiska</string>
+    <string name="notification_numbers_alike_summary">Till exempel en nedladdningsprocent</string>
+    <string name="notification_cooldown_title">Tid mellan en apps aviseringar</string>
+    <string name="notification_skip_prefix_title">Utelämna ett upprepat textprefix</string>
+    <string name="notification_skip_prefix_summary">Till exempel namnet på en grupp i en chatt</string>
+    <string name="notification_prefix_memory_title">Hur länge ska man komma ihåg textprefixet</string>
+    <string name="notification_access_summary">Behövde sluta läsa en avvisad anmälan och för sammanfattningar</string>
+    <string name="notification_shake_title">Skaka för att stoppa</string>
+    <string name="notification_shake_strength_title">Skakande intensitet</string>
+    <string name="notification_wave_title">Vifta med handen för att sluta läsa</string>
+    <string name="notification_wave_summary">Flytta en hand över närhetssensorn</string>
+    <string name="notification_pocket_title">Fickläge</string>
+    <string name="notification_pocket_summary">En sensor som är täckt när avläsningen startar, som i en ficka, stoppar den inte</string>
+    <string name="notification_volume_keys_title">Tryck på båda volymknapparna</string>
+    <string name="notification_dismiss_title">Sluta läsa när aviseringen stängs</string>
+    <string name="notification_watch_dismiss_title">Även när aviseringen avvisas på en smartklocka</string>
+    <string name="notification_app_cancel_title">Sluta läsa när appen tar bort aviseringen</string>
+    <string name="notification_category_summary">Sammanfattning</string>
+    <string name="notification_summary_now_title">Läs aviseringar nu</string>
+    <string name="notification_summary_daily_title">Läs aviseringar varje dag</string>
+    <string name="notification_summary_time_title">Tid</string>
+    <string name="notification_summary_newest_first_title">Nyaste först</string>
+    <string name="notification_summary_name_title">Ditt namn</string>
+    <string name="notification_summary_gap_title">Pausa mellan aviseringar</string>
+    <string name="notification_summary_needs_sandfly">Slå på SandFly för att läsa aviseringar</string>
+    <string name="notification_summary_no_access">Aviseringsåtkomst är avstängd</string>
+    <string name="notification_summary_morning">God morgon.</string>
+    <string name="notification_summary_afternoon">God eftermiddag.</string>
+    <string name="notification_summary_evening">God afton.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Tidsbesked</string>
+    <string name="notification_clock_interval_title">Säg tid varje</string>
+    <string name="notification_clock_format_title">Tidsformat</string>
+    <string name="notification_clock_format_message">Platshållare: {time}, {date} och {battery} (batteriprocenten).</string>
+    <string name="notification_clock_format_default">Det är {time}</string>
+    <string name="notification_clock_exact_title">Exakta tider</string>
+    <string name="notification_clock_exact_summary">Behöver larm och påminnelser. Annars kan tiden sägas upp till en minut för sent.</string>
+    <string name="notification_other_apps_title">Andra appar</string>
+    <string name="notification_apps_category">Appar</string>
+    <string name="notification_apps_loading">Laddar appar</string>
+    <string name="notification_app_mode_title">Aviseringar</string>
+    <string name="notification_app_mode_default">Som andra appar</string>
+    <string name="notification_app_mode_read">Läs högt</string>
+    <string name="notification_app_mode_private">Endast appnamn</string>
+    <string name="notification_app_mode_priority">Läs först</string>
+    <string name="notification_app_mode_ignore">Läs inte högt</string>
+    <string name="notification_app_name_title">Talat namn</string>
+    <string name="notification_app_said_as">sa som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Återställ</string>
+    <string name="notification_required_title">Läs endast aviseringar med</string>
+    <string name="notification_blocked_title">Läs inte aviseringar med</string>
+    <string name="notification_private_title">Läs endast appnamnet för</string>
+    <string name="notification_replacements_title">Säg annorlunda</string>
+    <string name="notification_add_word">Lägg till ett ord</string>
+    <string name="notification_add_replacement">Lägg till en ersättare</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> som <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Text</string>
+    <string name="notification_replace_with">Säg som</string>
+    <string name="notification_whole_words">Endast hela ord</string>
+    <string name="notification_regex">Reguljärt uttryck</string>
+    <string name="notification_enter_text">Skriv in en text</string>
+    <string name="notification_invalid_regex">Inte ett giltigt reguljärt uttryck</string>
+    <string name="notification_edit">Redigera</string>
+    <string name="notification_remove">Ta bort</string>
+    <string name="notification_history_keep">Spara aviseringshistorik</string>
+    <string name="notification_history_clear">Rensa historiken</string>
+    <string name="notification_history_category">Aviseringar</string>
+    <string name="notification_history_empty">Inga aviseringar</string>
+    <string name="notification_history_ignore_app">Läs inte <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Läs endast namnet på <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Läs <xliff:g id="app" example="Chat">%1$s</xliff:g> först</string>
+    <string name="notification_history_block_similar">Läs inte sådana här meddelanden</string>
+    <string name="notification_history_copy">Kopiera</string>
+    <string name="notification_saved">Sparad</string>
+    <string name="notification_copied">Kopierade</string>
+    <string name="notification_outcome_read">Läs högt framgångsrikt</string>
+    <string name="notification_outcome_stopped">Stoppade under läsning</string>
+    <string name="notification_outcome_speech_off">Ej läst: meddelandetal är avstängt</string>
+    <string name="notification_outcome_dnd">Ej läst: Stör ej</string>
+    <string name="notification_outcome_touching">Ej läst: skärmen berördes</string>
+    <string name="notification_outcome_app">Ej läst: app</string>
+    <string name="notification_outcome_ongoing">Ej läst: pågår</string>
+    <string name="notification_outcome_foreground">Ej läst: kör app</string>
+    <string name="notification_outcome_low_priority">Ej läst: låg prioritet</string>
+    <string name="notification_outcome_system">Ej läst: system</string>
+    <string name="notification_outcome_media">Ej läst: mediaspelare</string>
+    <string name="notification_outcome_group_summary">Ej läst: gruppsammanfattning</string>
+    <string name="notification_outcome_progress">Ej läst: framsteg</string>
+    <string name="notification_outcome_required">Ej läst: obligatoriska ord saknas</string>
+    <string name="notification_outcome_blocked">Ej läst: blockerat ord</string>
+    <string name="notification_outcome_empty">Ej läst: ingen text</string>
+    <string name="notification_outcome_repeat">Ej läst: upprepa</string>
+    <string name="notification_outcome_cooldown">Inte uppläst: ett annat meddelande från den här appen lästes för nyligen</string>
+    <string name="notification_outcome_quiet_hours">Ej läst: tysta timmar</string>
+    <string name="notification_outcome_screen_on">Ej läst: skärmen på</string>
+    <string name="notification_outcome_screen_off">Ej läst: skärm av</string>
+    <string name="notification_outcome_locked">Ej läst: låst</string>
+    <string name="notification_outcome_headphones">Ej läst: hörlurar anslutna</string>
+    <string name="notification_outcome_no_headphones">Ej läst: inga hörlurar</string>
+    <string name="notification_outcome_silent">Ej läst: tyst läge</string>
+    <string name="notification_outcome_vibrate">Ej läst: vibrationsläge</string>
+    <string name="notification_outcome_media_playing">Ej läst: media spelar</string>
+    <string name="notification_outcome_car">Ej läst: billäge</string>
+    <string name="notification_outcome_rule">Ej läst: regel</string>
+    <string name="notification_outcome_busy">Ej läst: ett annat meddelande har lästs</string>
+    <string name="notification_outcome_call">Meddelas som ett inkommande telefonsamtal</string>
+    <string name="notification_rule_add">Lägg till en regel</string>
+    <string name="notification_rule_from_template">Lägg till en regel från en mall</string>
+    <string name="notification_rules_category">Regler</string>
+    <string name="notification_rules_empty">Inga regler</string>
+    <string name="notification_rule_name">Namn</string>
+    <string name="notification_rule_untitled">Regel</string>
+    <string name="notification_rule_enabled">Påslagen</string>
+    <string name="notification_rule_match">Villkor</string>
+    <string name="notification_rule_match_all">Alla villkor måste vara uppfyllda</string>
+    <string name="notification_rule_match_any">Minst ett villkor måste vara uppfyllt</string>
+    <string name="notification_rule_conditions">När</string>
+    <string name="notification_rule_actions">Sedan</string>
+    <string name="notification_rule_add_condition">Lägg till ett villkor</string>
+    <string name="notification_rule_add_action">Lägg till en åtgärd</string>
+    <string name="notification_rule_invert">Invertera tillståndet</string>
+    <string name="notification_rule_delete">Ta bort regeln</string>
+    <string name="notification_rule_delete_confirm">Ta bort <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Alltid</string>
+    <string name="notification_rule_no_actions">ingenting händer</string>
+    <string name="notification_rule_and">" och "</string>
+    <string name="notification_rule_or">" eller "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Endast med hörlurar</string>
+    <string name="notification_template_night">Tyst på natten</string>
+    <string name="notification_template_screen_off">Bara med skärmen avstängd</string>
+    <string name="notification_template_locked_private">Endast appnamnet när telefonen är låst</string>
+    <string name="notification_template_short_on_battery">Läs kort när du inte laddar</string>
+    <string name="notification_type_bluetooth">Bluetooth enhet</string>
+    <string name="notification_type_wired">Trådbundna hörlurar</string>
+    <string name="notification_type_wifi">Wi-Fi nätverk</string>
+    <string name="notification_type_time">Tid på dygnet</string>
+    <string name="notification_type_screen">Skärmen på</string>
+    <string name="notification_type_locked">Telefonen låst</string>
+    <string name="notification_type_from_app">Avisering från en app</string>
+    <string name="notification_type_foreground">App i förgrunden</string>
+    <string name="notification_type_contains">Anmälan innehåller</string>
+    <string name="notification_type_battery">Batterinivå under</string>
+    <string name="notification_type_charging">Laddar</string>
+    <string name="notification_type_landscape">Liggande</string>
+    <string name="notification_type_silent">Tyst eller vibrerande läge</string>
+    <string name="notification_type_media">Media spelar</string>
+    <string name="notification_bluetooth_any">Vilken enhet som helst</string>
+    <string name="notification_wifi_hint">Nätverksnamn</string>
+    <string name="notification_choose_app">Välj en app</string>
+    <string name="notification_time_start">Från</string>
+    <string name="notification_time_end">Tills</string>
+    <string name="notification_time_days">Dagar</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> till <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly behöver det tillståndet för detta tillstånd</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är ansluten</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är inte ansluten</string>
+    <string name="notification_cond_bluetooth_any">En Bluetooth ljudenhet är ansluten</string>
+    <string name="notification_cond_bluetooth_any_not">Ingen Bluetooth ljudenhet är ansluten</string>
+    <string name="notification_cond_wired">Trådbundna hörlurar är anslutna</string>
+    <string name="notification_cond_wired_not">Trådbundna hörlurar är inte anslutna</string>
+    <string name="notification_cond_battery_below">Batteriet är under <xliff:g id="percent" example="20">%1$d</xliff:g> procent</string>
+    <string name="notification_cond_battery_below_not">Batteriet är på <xliff:g id="percent" example="20">%1$d</xliff:g> procent eller mer</string>
+    <string name="notification_cond_charging">Telefonen laddas</string>
+    <string name="notification_cond_charging_not">Telefonen laddas inte</string>
+    <string name="notification_cond_locked">Telefonen är låst</string>
+    <string name="notification_cond_locked_not">Telefonen är upplåst</string>
+    <string name="notification_cond_screen_on">Skärmen är på</string>
+    <string name="notification_cond_screen_on_not">Skärmen är avstängd</string>
+    <string name="notification_cond_landscape">Skärmen är liggande</string>
+    <string name="notification_cond_landscape_not">Skärmen är i porträtt</string>
+    <string name="notification_cond_time">Klockan är <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Klockan är inte <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Ansluten till <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Inte ansluten till <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Ansluten till Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Inte ansluten till Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ligger framför</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> är inte framför</string>
+    <string name="notification_cond_from">Aviseringen är från <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Aviseringen är inte från <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Aviseringen innehåller <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Aviseringen innehåller inte <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Ringsignalen är tyst eller vibrerar</string>
+    <string name="notification_cond_silent_not">Ringaren ringer</string>
+    <string name="notification_cond_media">Media spelas upp</string>
+    <string name="notification_cond_media_not">Ingen media spelas upp</string>
+    <string name="notification_action_skip">läs inte</string>
+    <string name="notification_action_private">läs bara appnamnet</string>
+    <string name="notification_action_not_private">läs i sin helhet, även om det är privat</string>
+    <string name="notification_action_format">använda ett talformat</string>
+    <string name="notification_action_max_words">läs upp till ett antal ord</string>
+    <string name="notification_action_no_limit">läsa utan längdbegränsningar</string>
+    <string name="notification_action_keep_emoji">behåll emoji</string>
+    <string name="notification_action_keep_numbers">hålla ihop siffrorna</string>
+    <string name="notification_action_priority">läs först</string>
+    <string name="notification_action_always_read">Läs aviseringar högt även under tysta timmar eller andra begränsade tider</string>
+    <string name="notification_action_voice">läsa med en röstprofil</string>
+    <string name="notification_action_voice_value">läs med <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">läsa med SandFlys röst</string>
+    <string name="notification_voice_removed">Har tagit bort röstprofilen</string>
+    <string name="notification_action_format_value">använd talformatet <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">läs upp till <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Av</string>
+    <string name="notification_on">På</string>
+    <string name="notification_never_again">Tills SandFly startar om</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Reading notifications aloud</string>
+    <string name="notification_speech_now_on">Högläsning av aviseringar aktiverat</string>
+    <string name="notification_speech_now_off">Högläsning av aviseringar inaktiverad</string>
+    <string name="notification_no_last_notification">Ingen avisering lästes</string>
+    <string name="shortcut_read_notifications">Läs aviseringar</string>
+    <string name="shortcut_toggle_notification_speech">Aviseringstal på eller av</string>
+    <string name="shortcut_read_last_notification">Läs den senaste aviseringen igen</string>
+    <string name="shortcut_stop_notification">Sluta läsa aviseringen</string>
+    <string name="notification_test_posting">Ett testmeddelande följer efter 5 sekunder</string>
+    <string name="notification_test_not_allowed">Tillåt SandFly att visa aviseringar först</string>
+    <string name="notification_test_content_title">SandFly test</string>
+    <string name="notification_test_content_text">Detta är en testavisering, läs med dina aviseringsinställningar. 123456</string>
+    <string name="notification_automation_on">Aktivera högläsningsaviseringar</string>
+    <string name="notification_automation_off">Inaktivera högläsning av meddelanden</string>
+    <string name="notification_automation_toggle">Aktivera eller inaktivera högläsningsaviseringar</string>
+    <string name="notification_automation_stop">Stoppa att meddelandet läses</string>
+    <string name="notification_automation_read_all">Läs aviseringar</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekunder</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minuter</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> timme</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> timmar</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ord</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ord</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> mening</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> meningar</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> texttecken</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> texttecken</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> siffra</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> siffror</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Du har <xliff:g id="count" example="1">%d</xliff:g> avisering.</item>
+        <item quantity="other">Du har <xliff:g id="count" example="5">%d</xliff:g> aviseringar.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

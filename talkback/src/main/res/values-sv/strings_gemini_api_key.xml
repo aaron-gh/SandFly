@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API-nyckel</string>
+    <string name="summary_pref_gemini_api_key_built_in">Använder nyckeln inbyggd i denna app</string>
+    <string name="gemini_api_key_dialog_message">Få en gratis API-nyckel från Google AI Studio på aistudio.google.com/apikey och klistra in den här. För att ta bort din nyckel, rensa fältet och spara.\n\nBilder och skärmar som du beskriver skickas till Google. På den kostnadsfria nivån kan Google använda dem för att förbättra sina produkter.</string>
+    <string name="gemini_api_key_hint">API-nyckel</string>
+    <string name="gemini_api_key_save">Spara</string>
+    <string name="gemini_api_key_get">Få en nyckel</string>
+    <string name="title_pref_gemini_model">Gemini modell</string>
+    <string name="gemini_model_automatic">Automatisk</string>
+    <string name="summary_pref_gemini_model_automatic">Automatiskt: Gemini Flash, sedan Flash-Lite när Flash är upptaget</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, sedan Flash-Lite när den är upptagen</string>
+    <string name="gemini_model_loading">Hämta modellerna...</string>
+    <string name="gemini_model_list_failed">Kunde inte hämta modellerna: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Ställ in en Gemini API-nyckel först</string>
+    <string name="gemini_api_terms_link">Gemini API Ytterligare användarvillkor</string>
+    <string name="ai_service_address_hint">Adress, till exempel https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Modell</string>
+    <string name="ai_service_address_invalid">Adressen måste börja med https://. Ingenting sparades.</string>
+    <string name="dialog_message_ai_service_consent">Bilder och skärmdumpar skickas till <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> för att beskrivas, vilket tar flera sekunder. Dess egna villkor och integritetspolicy gäller. Generativ AI är experimentell, så det kommer att göra misstag.</string>
+    <string name="ai_service_error_api_key">AI-tjänsten accepterade inte API-nyckeln. Kontrollera dess inställningar i Automatiska beskrivningar.</string>
+    <string name="ai_service_error_quota">Användningsgränsen för AI-tjänsten har nåtts. Försök igen senare.</string>
+    <string name="ai_service_error_busy">AI-tjänsten är upptagen just nu. Försök igen om ett ögonblick.</string>
+    <string name="ai_service_error_timeout">AI-tjänsten tog för lång tid att svara. Försök igen.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Inget</string>
+    <string name="ai_service_not_set_up">Ingen AI-tjänst används. Ställ in en eller välj en i inställningarna för Automatiska beskrivningar.</string>
+    <string name="ai_provider_none_set_up">Ingen AI-tjänst är inställd. Ställ in en i dess inställningar nedan.</string>
+    <string name="ai_provider_other">Annan service</string>
+    <string name="title_pref_category_ai_services">AI-tjänster</string>
+    <string name="title_pref_ai_provider">AI-tjänst</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> inställningar</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, inte inställd</string>
+    <string name="ai_provider_in_use">I bruk</string>
+    <string name="ai_provider_not_set_up">Ej inställd</string>
+    <string name="ai_provider_not_ready">Välj en modell först</string>
+    <string name="ai_provider_address">Adress</string>
+    <string name="ai_provider_address_message">Adressen till en tjänst med ett OpenAI-kompatibelt chatt-API och bildinmatning, till exempel https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Inte inställt</string>
+    <string name="ai_provider_set">Konfigurerad</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckel</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
+    <string name="ai_provider_choose_model">Inte vald</string>
+    <string name="ai_provider_key_message">Klistra in din <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckel. För att ta bort det, rensa fältet och spara. Bilder och skärmar som du beskriver skickas till <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Ställ in <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nyckeln först</string>
+    <string name="ai_provider_needs_address">Ställ in adressen först</string>
+    <string name="ai_provider_enter_model">Ange ett modellnamn</string>
+</resources>

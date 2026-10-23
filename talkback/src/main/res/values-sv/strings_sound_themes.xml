@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Ljudteman</string>
+    <string name="summary_pref_sound_themes">Installera och välj uppsättningar av ljud och vibrationer, ersätt enstaka ljud med dina egna och aktivera styrljud och vibrationer och 3D-ljud.</string>
+    <string name="sound_themes_installed_category">Installerade teman</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFlys egna ljud och vibrationer, och alla dina egna ljud.</string>
+    <string name="sound_theme_in_use">I bruk</string>
+    <string name="sound_theme_by">Av <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licens: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ljud.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> låter.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibration.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibrationer.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Slår på kontrollljud och vibrationer.</string>
+    <string name="sound_theme_control_sounds_off">Stänger av kontrollljud och vibrationer.</string>
+    <string name="sound_theme_use">Använd detta tema</string>
+    <string name="sound_theme_about">Om detta tema</string>
+    <string name="sound_theme_export">Spara som en temafil</string>
+    <string name="sound_theme_remove">Ta bort</string>
+    <string name="sound_theme_remove_confirm">Ta bort temat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Ta bort</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Sparade temat, med <xliff:g id="count" example="1">%d</xliff:g> ljud.</item>
+        <item quantity="other">Sparade temat, med <xliff:g id="count" example="13">%d</xliff:g> ljud.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly kunde inte spara temafilen.</string>
+    <string name="sound_theme_no_picker">Det finns ingen app på den här enheten att välja filer med.</string>
+    <string name="sound_theme_settings_category">Inställningar för <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Ljud</string>
+    <string name="summary_pref_theme_sounds">Ersätt alla ljud av detta tema med en egen ljudfil.</string>
+    <string name="sound_themes_install_category">Installera ett tema</string>
+    <string name="title_pref_sound_theme_install_file">Från en fil</string>
+    <string name="summary_pref_sound_theme_install_file">En temafil är en ZIP-fil. Du kan också öppna en, eller dela den, med SandFly från en annan app.</string>
+    <string name="title_pref_sound_theme_install_link">Från en länk</string>
+    <string name="summary_pref_sound_theme_install_link">En länk till en temafil, eller till ett GitHub-förråd med ett tema i. Du kan också dela en länk med SandFly från din webbläsare.</string>
+    <string name="title_pref_sound_theme_install_source">Från en källa</string>
+    <string name="summary_pref_sound_theme_install_source">Temafiler i ett arkiv på GitHub, GitLab, Codeberg, Gitea eller Bitbucket.</string>
+    <string name="sound_theme_sources">Källor för ljudtema</string>
+    <string name="sound_theme_source_empty">Inga ljudteman i den här källan</string>
+    <string name="sound_theme_source_failed">Det gick inte att ladda ljudteman. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Ljudteman som installeras från den förblir installerade.</string>
+    <string name="sound_theme_link_message">Ange eller klistra in en länk till en temafil eller till ett GitHub-förråd med ett tema i.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Installera ljudtema</string>
+    <string name="sound_theme_install_reading">Läser ljudtemat</string>
+    <string name="sound_theme_install_title">Installera <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Installera och använd</string>
+    <string name="sound_theme_install">Installera</string>
+    <string name="sound_theme_install_replaces">Detta ersätter det installerade temat med samma namn.</string>
+    <string name="sound_theme_install_skipped">Utelämnad:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Installerad <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Installerad <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Den är i bruk nu.</string>
+    <string name="sound_theme_install_nothing">Det finns inget ljudtema att installera.</string>
+    <string name="sound_theme_install_not_a_theme">Detta är inte ett ljudtema som SandFly kan använda: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly kunde inte installera ljudtemat. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Länkar till ljudteman måste börja med https.</string>
+    <string name="title_pref_theme_sounds_of">Ljudet av <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Använd SandFlys ljud för alla</string>
+    <string name="theme_sounds_reset_confirm">Ta bort alla ljud från detta tema och använda SandFlys egna?</string>
+    <string name="theme_sounds_reset_button">Ta bort</string>
+    <string name="theme_sounds_category">Ljud</string>
+    <string name="theme_sound_summary_default">SandFlys ljud</string>
+    <string name="theme_sound_summary_custom">Tema ljud</string>
+    <string name="theme_sound_summary_none">Inget ljud. Fokusljudet spelas.</string>
+    <string name="theme_sound_summary_android_keyboard">Androids tangentbordsljud</string>
+    <string name="theme_sound_use_android_keyboard">Använd Androids tangentbordsljud</string>
+    <string name="theme_sound_braille_character">Punktskrifttangentbord: skriva ett tecken</string>
+    <string name="theme_sound_braille_space">Punktskrifttangentbord: mellanslag</string>
+    <string name="theme_sound_braille_delete">Punktskrifttangentbord: radera</string>
+    <string name="theme_sound_braille_new_line">Punktskrifttangentbord: ny linje</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Välj en ljudfil</string>
+    <string name="theme_sound_preview">Förhandsgranska</string>
+    <string name="theme_sound_none">Inget ljud</string>
+    <string name="theme_sound_summary_no_sound">Inget ljud</string>
+    <string name="theme_sound_action_set_none">Ställ in på inget ljud</string>
+    <string name="theme_sound_use_default">Använd SandFlys ljud</string>
+    <string name="theme_sound_remove">Ta bort ljudet</string>
+    <string name="theme_sound_too_large">Den filen är för stor. Ett ljud kan vara upp till 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly kan inte spela upp den filen. Välj ett WAV-, OGG-, MP3- eller FLAC-ljud.</string>
+    <string name="theme_sound_failed">SandFly kunde inte läsa den filen.</string>
+</resources>
