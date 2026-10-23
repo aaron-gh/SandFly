@@ -1767,6 +1767,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     return keyComboManager;
   }
 
+  /** Returns the actor that sends AI requests, or null before initialization. */
+  public @Nullable GeminiActor getGeminiActor() {
+    return geminiActor;
+  }
+
   /** Returns the controller that pauses and resumes Backtalk, or null before initialization. */
   public @Nullable PauseController getPauseController() {
     return pauseController;

@@ -128,6 +128,11 @@ public class GeminiActor {
       return false;
     }
 
+    /** Sends a prompt without an image. Returns false when the request wasn't sent. */
+    default boolean requestText(String prompt, GeminiResponseListener listener) {
+      return false;
+    }
+
     void cancelCommand();
 
     /**
@@ -471,6 +476,31 @@ public class GeminiActor {
         new CommonRequest(action, text, imageBytes, /* manualTrigger= */ true, responseListener))) {
       progressTonePlayer.stop();
       aiCoreEndpoint.cancelCommand();
+      progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
+    }
+  }
+
+  /**
+   * Sends a prompt without an image to the AI service in use, with the progress tones while it
+   * waits. The listener gets the answer, or an error.
+   */
+  public void requestText(String prompt, GeminiResponseListener listener) {
+    GeminiResponseListener stopTones =
+        new GeminiResponseListener() {
+          @Override
+          public void onResponse(FinishReason finishReason, String text) {
+            progressTonePlayer.stop();
+            listener.onResponse(finishReason, text);
+          }
+
+          @Override
+          public void onError(ErrorReason errorReason) {
+            progressTonePlayer.stop();
+            listener.onError(errorReason);
+          }
+        };
+    if (geminiEndpoint.requestText(prompt, stopTones)) {
+      progressTonePlayer.stop();
       progressTonePlayer.play(/* playTone= */ true, /* delayPlayTone= */ false);
     }
   }

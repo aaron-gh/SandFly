@@ -563,7 +563,7 @@ public class TextEditActor implements VoiceDictationDelegate {
             nodeText.subSequence(0, selectionStart),
             nodeText.subSequence(selectionEnd, nodeText.length()));
     Bundle arguments = new Bundle();
-    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textUpdated);
+    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textUpdated.toString());
     boolean result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
     if (!result) {
       return false;
@@ -639,7 +639,7 @@ public class TextEditActor implements VoiceDictationDelegate {
             textToInsert,
             currentText.subSequence(selectionEnd, currentText.length()));
     Bundle arguments = new Bundle();
-    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textUpdated);
+    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textUpdated.toString());
     boolean result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
     if (!result) {
       return false;
@@ -694,7 +694,7 @@ public class TextEditActor implements VoiceDictationDelegate {
                 currentText.subSequence(end, currentText.length()));
     Bundle arguments = new Bundle();
     // Key ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE expects String.
-    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textReplaced);
+    arguments.putCharSequence(ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, textReplaced.toString());
     editTextActionHistory.beforeSetText();
     boolean result = PerformActionUtils.performAction(node, ACTION_SET_TEXT, arguments, eventId);
     editTextActionHistory.afterSetText();

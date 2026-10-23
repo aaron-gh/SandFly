@@ -636,6 +636,12 @@ If you develop a game, add this `<meta-data>` element inside your `<application>
 
 Text that isn't in a text field, such as a message, can be edited and copied but not saved. Password fields can't be opened.
 
+## Dictation
+
+**Dictate**, a gesture action under **Text editing**, types what you say into the focused text field, at the cursor. A chime plays when Android's speech recognition starts and stops; the same gesture again stops it early. When an AI service or on-device AI is in use and **Automatic descriptions > Correct dictation with AI** is on, as it is by default, the recognized text goes to that service first, with up to 300 characters of the text before the cursor, to correct punctuation, capital letters and misheard words. If the service doesn't answer, the text is typed as recognized.
+
+Typing into text fields that only accept plain text, such as in Google Contacts, failed with the voice command "type" too; SandFly now sends plain text.
+
 ## On-screen keyboard
 
 ### Lift to type, except to send
