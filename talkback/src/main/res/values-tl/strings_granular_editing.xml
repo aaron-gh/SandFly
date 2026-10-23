@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Detalyadong pag-edit</string>
+    <string name="granular_editing_split_by">Hatiin ayon sa: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Hatiin sa pamamagitan ng</string>
+    <string name="granular_editing_characters">Mga Character</string>
+    <string name="granular_editing_words">Mga Salita</string>
+    <string name="granular_editing_sentences">Mga pangungusap</string>
+    <string name="granular_editing_lines">Mga Linya</string>
+    <string name="granular_editing_paragraphs">Mga Talata</string>
+    <string name="granular_editing_space">Espasyo</string>
+    <string name="granular_editing_new_line">Bagong linya</string>
+    <string name="granular_editing_tab">Character ng tab</string>
+    <string name="granular_editing_empty">Walang text. Gamitin ang Magdagdag ng teksto sa dulo, sa Higit pa.</string>
+    <string name="granular_editing_edit">I-edit</string>
+    <string name="granular_editing_insert_before">Ipasok bago</string>
+    <string name="granular_editing_insert_after">Ipasok pagkatapos</string>
+    <string name="granular_editing_delete">I-delete</string>
+    <string name="granular_editing_select">Piliin</string>
+    <string name="granular_editing_unselect">Alisin sa pagkakapili</string>
+    <string name="granular_editing_selected">Napili</string>
+    <string name="granular_editing_save">I-save</string>
+    <string name="granular_editing_more">Higit pa</string>
+    <string name="granular_editing_undo">I-undo</string>
+    <string name="granular_editing_redo">Gawin muli ang huling na-undo na pag-edit</string>
+    <string name="granular_editing_find">Maghanap</string>
+    <string name="granular_editing_find_next">Hanapin ang susunod</string>
+    <string name="granular_editing_replace">Palitan</string>
+    <string name="granular_editing_replace_with">Palitan ng</string>
+    <string name="granular_editing_replace_all">Palitan lahat</string>
+    <string name="granular_editing_add_at_end">Magdagdag ng teksto sa dulo</string>
+    <string name="granular_editing_clear_selection">I-clear ang pinili</string>
+    <string name="granular_editing_cut_selected">Gupitin ang napiling teksto</string>
+    <string name="granular_editing_delete_selected">Tanggalin ang napili</string>
+    <string name="granular_editing_copied">Kinopya</string>
+    <string name="granular_editing_deleted">Tinanggal</string>
+    <string name="granular_editing_not_found">Hindi nahanap</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> pinalitan</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> pinalitan</item>
+    </plurals>
+    <string name="granular_editing_save_changes">I-save ang mga pagbabago?</string>
+    <string name="granular_editing_copy_changes">Kopyahin ang binagong teksto?</string>
+    <string name="granular_editing_discard">I-discard</string>
+    <string name="granular_editing_keep_editing">Ituloy ang pag-edit</string>
+    <string name="granular_editing_not_saved">Hindi na-save: wala na ang field ng text. Ang teksto ay kinopya.</string>
+    <string name="granular_editing_no_text">Walang text na ie-edit</string>
+    <string name="granular_editing_password">Hindi available sa mga field ng password</string>
+</resources>

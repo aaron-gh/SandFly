@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Magpadala ng feedback</string>
+    <string name="title_pref_problem_report_type">Uri ng feedback</string>
+    <string name="title_pref_problem_report_area">Lugar</string>
+    <string name="title_pref_problem_report_title">Pamagat</string>
+    <string name="title_pref_problem_report_app">App kung saan ito nangyayari</string>
+    <string name="title_pref_problem_report_description">Paglalarawan</string>
+    <string name="dialog_message_problem_report_description">Ano ang mangyayari at kung ano ang iyong inaasahan.</string>
+    <string name="title_pref_problem_report_steps">Mga hakbang sa pagpaparami</string>
+    <string name="title_pref_problem_report_email">Email para sa mga tugon</string>
+    <string name="title_pref_problem_report_device">Isama ang impormasyon ng device</string>
+    <string name="title_pref_problem_report_log">Isama ang SandFly log</string>
+    <string name="summary_pref_problem_report_log">Maaaring naglalaman ng text mula sa screen</string>
+    <string name="title_pref_problem_report_send">Ipadala</string>
+    <string name="summary_pref_problem_report_sending">Nagpapadala</string>
+    <string name="problem_report_missing_fields">Maglagay ng pamagat at paglalarawan.</string>
+    <string name="problem_report_invalid_email">Maglagay ng wastong email address.</string>
+    <string name="problem_report_sent">Ipinadala ang feedback.</string>
+    <string name="problem_report_rate_limited">Masyadong maraming feedback ang ipinadala. Subukan ulit mamaya.</string>
+    <string name="problem_report_no_connection">Hindi naipadala ang feedback. Suriin ang koneksyon sa internet.</string>
+    <string name="problem_report_not_sent">Hindi naipadala ang feedback. Subukan ulit mamaya.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Maling pag-uugali</item>
+        <item>Bumagsak</item>
+        <item>Mabagal o hindi tumutugon</item>
+        <item>Mungkahi</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Talumpati</item>
+        <item>Mga Galaw</item>
+        <item>Touch exploration</item>
+        <item>Mga kontrol sa pagbabasa at mga menu</item>
+        <item>Pag-type at mga keyboard</item>
+        <item>Braille na keyboard</item>
+        <item>Braille display</item>
+        <item>Mga tunog at vibration</item>
+        <item>Mga Notification</item>
+        <item>Nilalaman sa web</item>
+        <item>Mga script</item>
+        <item>Mga Setting</item>
+        <item>Mga update</item>
+        <item>Iba pa</item>
+    </string-array>
+    <string name="title_report_new">Magpadala ng feedback</string>
+    <string name="title_report_inbox">Inbox</string>
+    <string name="title_report_drafts">Mga draft</string>
+    <string name="report_inbox_empty">Walang ipinadalang feedback</string>
+    <string name="report_drafts_empty">Walang draft</string>
+    <string name="report_just_now">ngayon lang</string>
+    <string name="report_untitled">Walang pamagat</string>
+    <string name="report_draft_summary">Binago <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">ipinadala <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> bagong tugon</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> bagong tugon</item>
+    </plurals>
+    <string name="report_status_changed">nabago ang katayuan</string>
+    <string name="report_status_open">Bukas</string>
+    <string name="report_status_completed">Sarado, natapos</string>
+    <string name="report_status_not_planned">Sarado, hindi planado</string>
+    <string name="report_status_duplicate">Sarado, duplicate</string>
+    <string name="report_status_unknown">Inalis</string>
+    <string name="title_report_status">Katayuan</string>
+    <string name="title_report_your_report">Ang iyong feedback</string>
+    <string name="title_report_messages">Mga mensahe</string>
+    <string name="report_message_from_developer">Developer, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ikaw, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Sumagot</string>
+    <string name="title_report_reply_text">Ang sagot mo</string>
+    <string name="title_report_send_reply">Magpadala ng tugon</string>
+    <string name="report_reply_sent">Ipinadala ang tugon.</string>
+    <string name="report_reply_not_sent">Hindi naipadala ang tugon. Subukan ulit mamaya.</string>
+    <string name="title_report_remove">Alisin sa inbox</string>
+    <string name="dialog_title_report_remove">Alisin ang feedback na ito sa inbox?</string>
+    <string name="dialog_message_report_remove">Hindi na makakarating sa teleponong ito ang mga tugon dito.</string>
+    <string name="title_report_delete_draft">Tanggalin ang draft</string>
+    <string name="dialog_title_report_delete_draft">Tanggalin ang draft na ito?</string>
+    <string name="button_report_delete">I-delete</string>
+    <string name="report_missing">Ang feedback na ito ay wala na sa inbox.</string>
+    <string name="notification_channel_problem_reports">Mga tugon sa feedback</string>
+    <string name="report_notification_reply">Tumugon sa <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

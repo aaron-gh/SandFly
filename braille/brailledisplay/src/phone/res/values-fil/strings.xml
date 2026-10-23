@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braille hardware keyboard</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">Hindi available ang Braille keyboard ng TalkBack</string>
-  <string name="bd_ime_disabled_dialog_title">I-on ang Braille keyboard ng TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Hindi available ang Braille keyboard ng SandFly</string>
+  <string name="bd_ime_disabled_dialog_title">I-on ang Braille keyboard ng SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Para gamitin ang iyong braille display para sa pag-type, pumunta sa mga setting ng input para i-on ito</string>
   <string name="bd_ime_disabled_dialog_title_positive">Mga setting ng input</string>
   <string name="bd_ime_not_default_dialog_title">Palitan ang iyong pamamaraan ng pag-input</string>
-  <string name="bd_ime_not_default_dialog_message">I-set ang Braille keyboard ng TalkBack bilang pamamaraan ng pag-input mo para magpatuloy sa pag-type</string>
+  <string name="bd_ime_not_default_dialog_message">I-set ang Braille keyboard ng SandFly bilang pamamaraan ng pag-input mo para magpatuloy sa pag-type</string>
   <string name="bd_ime_not_default_dialog_positive">Palitan ang input</string>
   <string name="type_unlabeled">Walang label</string>
   <string name="type_unlabeled_edittext">Walang Label na Edit Box</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">I-pan pakaliwa</string>
   <string name="overlay_pan_right_button">I-pan pakanan</string>
   <string name="bd_preferences_title">Braille display</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Para gamitin ang braille display, i-on muna ang TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Pumunta sa TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Para gamitin ang braille display, i-on muna ang SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Pumunta sa SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Para gamitin ang braille display, i-on muna ang Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">I-on ang Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Para gamitin ang braille display, kailangan ng %s ng access sa mga kalapit na device</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Para gamitin ang browse mode, kailangan mong lumipat sa pinahusay na keymap mula sa default na keymap. Maa-update ng pagbabagong ito ang ilan sa iyong mga command sa braille display</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Mga Setting</string>
   <string name="bd_command_change_dialog_title">May ilang command na na-update</string>
-  <string name="bd_command_change_dialog_message">Na-update ang mga command sa braille display na ito sa bersyong ito ng TalkBack:\n\n• Nakaraang item: Pindutin ang dot 1, 7\n\n• Susunod na item: Pindutin ang dot 4, 8\n\n• Nakaraang kontrol sa pagbabasa: Pindutin ang dot 2, 3, 7, 8\n\n• Susunod na kontrol sa pagbabasa: Pindutin ang dot 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Na-update ang mga command sa braille display na ito sa bersyong ito ng SandFly:\n\n• Nakaraang item: Pindutin ang dot 1, 7\n\n• Susunod na item: Pindutin ang dot 4, 8\n\n• Nakaraang kontrol sa pagbabasa: Pindutin ang dot 2, 3, 7, 8\n\n• Susunod na kontrol sa pagbabasa: Pindutin ang dot 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Contracted na braille</string>
   <string name="bd_preference_braille_uncontracted">Uncontracted na braille</string>
   <string name="bd_braille_grade_tips">Para mabilis na magpalipat-lipat sa naka-contrat at hindi naka-contract gamit ang braille display, pindutin ang space at dot 1, 2, 4, at 5.\n\nGumagana ang command na ito kung gumagamit ka ng wikang mayroon ng parehong grade ng braille.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Paglipat-lipat sa mga item</string>
   <string name="bd_commands_bindings_category_system_actions_title">Mga pagkilos ng system</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Bumalik, home, mga notification, at higit pa</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Mga feature ng TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Mga menu at setting ng TalkBack</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Mga feature ng SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Mga menu at setting ng SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Mga setting ng braille</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Wika at mga setting ng braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Pag-edit ng text</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Buksan ang lahat ng app</string>
   <string name="bd_cmd_toggle_screen_search">Buksan ang paghahanap sa screen</string>
   <string name="bd_cmd_edit_custom_label">Mag-edit ng custom na label</string>
-  <string name="bd_cmd_open_talkback_menu">Buksan ang menu ng TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">I-on o i-off ang pagsasalita ng TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Buksan ang menu ng SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">I-on o i-off ang pagsasalita ng SandFly</string>
   <string name="bd_cmd_read_stop">Huminto sa pagbabasa</string>
-  <string name="bd_cmd_talkback_settings">Buksan ang mga setting ng TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Buksan ang mga setting ng SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Lumipat sa susunod na wika sa pag-type</string>
   <string name="bd_cmd_switch_to_next_output_language">Lumipat sa susunod na wika sa pagbabasa</string>
   <string name="bd_cmd_toggle_contracted_mode">Magpalipat-lipat sa contracted at hindi contracted</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Mana-navigate mo ang mga web page gamit ang command para pumasok sa browse mode, at pag-type sa mga shortcut na titik o numero\n\nMagagamit din ang mga shortcut na ito nang hindi pumapasok sa browse mode, pero kailangan ang dot 8 sa mga command na \"next\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Pag-navigate sa talahanayan</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">I-off ang setting ng braille display?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Puwede mo itong i-on ulit anumang oras sa mga setting ng TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Puwede mo itong i-on ulit anumang oras sa mga setting ng SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">I-off</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Hindi available ang ilang command</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Hindi available habang nagta-type o nag-e-edit ang mga command sa pag-navigate, mga setting ng braille, at ilang feature ng TalkBack.\n\nPara magamit ang mga command na ito, isara muna ang keyboard.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Hindi available habang nagta-type o nag-e-edit ang mga command sa pag-navigate, mga setting ng braille, at ilang feature ng SandFly.\n\nPara magamit ang mga command na ito, isara muna ang keyboard.</string>
   <string name="bd_caption_tutorial_dialog_title">Mga caption sa iyong braille display</string>
   <string name="bd_caption_tutorial_dialog_message">Para ipakita o itago ang captions, pindutin ang space at dot 1, 4, 7, 8.\n\nPara awtomatikong mag-caption para sa supported media, i-on ang Ipakita ang mga caption sa braille display sa Mga Setting.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Palaging ipakita ang mensaheng ito kapag available ang mga caption</string>
   <string name="bd_usb_connect_dialog_title">Nakakonekta sa USB ang braille display</string>
-  <string name="bd_usb_connect_dialog_message">China-charge ng baterya ng iyong %s ang braille display mo.\n\nKung kailangan mong lumipat sa Bluetooth, idiskonekta ang iyong USB o USB hub at pumunta sa mga setting ng TalkBack &gt; Braille bisplay.</string>
+  <string name="bd_usb_connect_dialog_message">China-charge ng baterya ng iyong %s ang braille display mo.\n\nKung kailangan mong lumipat sa Bluetooth, idiskonekta ang iyong USB o USB hub at pumunta sa mga setting ng SandFly &gt; Braille bisplay.</string>
   <string name="bd_device">telepono</string>
   <string name="bd_battery_low_dialog_title">Kaunti na lang ang baterya ng %s</string>
   <string name="bd_battery_low_dialog_message">China-charge ng baterya ng iyong %s ang braille display mo.\n\nPara makatipid ng baterya:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">I-clear lahat</string>
   <string name="popup_message_history_empty">Walang laman</string>
   <string name="popup_message_history_consent_dialog_title">I-on ang history ng mensahe ng device?</string>
-  <string name="popup_message_history_consent_dialog_msg">Magso-store ito ng ilang mensahe, tulad ng mga notification at alarm, sa TalkBack. Puwede mong baguhin ang setting na ito anumang oras.</string>
+  <string name="popup_message_history_consent_dialog_msg">Magso-store ito ng ilang mensahe, tulad ng mga notification at alarm, sa SandFly. Puwede mong baguhin ang setting na ito anumang oras.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">I-on</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Hindi, salamat na lang</string>
+    <string name="external_display_channel">Mga braille display mula sa ibang app</string>
+    <string name="external_display_ask_title">Payagan ang <xliff:g id="app" example="Notetaker">%1$s</xliff:g> na maging braille display para sa SandFly?</string>
+    <string name="external_display_ask_text">Hindi ito gagamitin ng SandFly hangga’t hindi mo pinapayagan.</string>
+    <string name="external_display_warning">Mababasa ng <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ang lahat ng ipinapakita ng SandFly sa braille, na maaaring anumang nasa screen, kasama ang mga mensahe at ang tina-type mo. Makokontrol din nito ang device mo gaya ng magagawa mo gamit ang isang braille display: mag-type, magbukas ng mga app, at magpatakbo ng anumang utos ng SandFly. Payagan lang ang mga app na pinagkakatiwalaan mo.</string>
+    <string name="external_display_allow">Payagan</string>
+    <string name="external_display_deny">Huwag payagan</string>
+    <string name="external_display_in_use_title">Ang <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ang iyong braille display</string>
+    <string name="external_display_in_use_text">Habang ginagamit ito ng SandFly, mababasa ng <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ang screen at makokontrol nito ang device.</string>
+    <string name="external_displays_title">Mga display mula sa ibang app</string>
+    <string name="external_displays_summary">Maaaring maging braille display para sa SandFly ang mga app na pinapayagan mo. Ang isang app na braille display ay makakabasa ng screen at makakakontrol ng device.</string>
+    <string name="external_displays_none">Walang app na pinapayagang maging braille display.</string>
 </resources>
