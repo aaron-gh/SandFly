@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack 盲文键盘</string>
+  <string name="braille_ime_service_name">SandFly 盲文键盘</string>
   <string name="braille_ime_bd_mode_name">盲文显示屏输入</string>
   <string name="switch_to_tabletop_announcement">桌上模式。请将设备放在桌面上，保持充电接口朝左。</string>
   <string name="calibration_tip_announcement">如需更新圆点位置，请用 %d 根手指按住屏幕。</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">盲文键盘已切换至非简写模式</string>
   <string name="braille_ime_displayed_name">盲文键盘</string>
   <string name="multiple_languages_braille_ime_displayed_name">盲文键盘，%s</string>
-  <string name="input_view_caption">TalkBack 盲文键盘 - 如需帮助，请访问 g.co/help/braille</string>
+  <string name="input_view_caption">SandFly 盲文键盘 - 如需帮助，请访问 g.co/help/braille</string>
   <string name="perform_action_next">继续</string>
   <string name="perform_action_submitting">正在提交文本</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">正在更新圆点位置。首先，记录%s的圆点位置。</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">若要在使用盲文键盘输入内容时更改语言，请用 3 根手指向上滑动。然后，选择“切换到下一种语言”。</string>
   <string name="title_pref_accumulate_presses">包含所有按下的点</string>
   <string name="summary_pref_accumulate_presses">每个按下的点都会包含在内，即使你先松开其中某些点，也不影响输入</string>
-  <string name="title_pref_reverse_dots">互换点的位置</string>
-  <string name="summary_pref_reverse_dots">互换点的位置，比如将 1 点和 4 点互换位置</string>
+  <string name="title_pref_reverse_dots">交换左右两侧的盲文点</string>
+  <string name="summary_pref_reverse_dots">将点 1、2、3 与点 4、5、6 交换位置</string>
   <string name="bd_preference_braille_contracted">简写盲文</string>
   <string name="bd_preference_braille_uncontracted">非简写盲文</string>
   <string name="context_menu_title">盲文键盘选项</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">键盘</string>
   <string name="not_enough_touch_points_dialog_title">您的设备不支持盲文键盘</string>
   <string name="not_enough_touch_points_dialog_message">您的设备支持的接触点不够多。如需了解详情，请与您的设备制造商联系。</string>
-  <string name="talkback_off_dialog_title">开启 TalkBack 即可使用盲文键盘</string>
+  <string name="talkback_off_dialog_title">开启 SandFly 即可使用盲文键盘</string>
   <string name="talkback_off_dialog_positive_button">在无障碍设置中开启</string>
-  <string name="talkback_suspend_dialog_title">恢复启用 TalkBack 以使用盲文键盘</string>
-  <string name="talkback_off_or_suspend_dialog_message">开启 TalkBack 后，只需点按屏幕即可输入盲文符号。</string>
-  <string name="talkback_off_custom_gestures_dialog_title">开启 TalkBack 即可更改手势</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack 已关闭。必须将其开启，才能更改盲文键盘手势。</string>
+  <string name="talkback_suspend_dialog_title">恢复启用 SandFly 以使用盲文键盘</string>
+  <string name="talkback_off_or_suspend_dialog_message">开启 SandFly 后，只需点按屏幕即可输入盲文符号。</string>
+  <string name="talkback_off_custom_gestures_dialog_title">开启 SandFly 即可更改手势</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly 已关闭。必须将其开启，才能更改盲文键盘手势。</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">进入“设置”</string>
   <string name="reset_gestures_dialog_title">要重置所有手势吗？</string>
   <string name="reset_gestures_dialog_message">所有盲文键盘手势都将重置为默认设置</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">重置为默认设置</string>
   <string name="custom_gestures_dialog_remove_button">移除手势</string>
   <string name="change_gestures_dialog_message_title">如何更改手势</string>
-  <string name="change_gestures_dialog_message">下一个界面将打开盲文键盘，并且您将无法使用常规 TalkBack 手势。\n\n盲文键盘打开后，请做出要使用的手势。如需关闭盲文键盘并取消手势更改，请用两根手指向下滑动。\n\n查看可做出的手势\n</string>
+  <string name="change_gestures_dialog_message">下一个界面将打开盲文键盘，并且您将无法使用常规 SandFly 手势。\n\n盲文键盘打开后，请做出要使用的手势。如需关闭盲文键盘并取消手势更改，请用两根手指向下滑动。\n\n查看可做出的手势\n</string>
   <string name="change_gestures_dialog_message_link">查看可做出的手势</string>
   <string name="change_gestures_dialog_dont_show_checkbox">不再显示此消息</string>
   <string name="change_gestures_dialog_positive_button">继续</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">不使用</string>
   <string name="next_keyboard">下一个键盘</string>
   <string name="braille_tutorial_title">盲文键盘教程</string>
-  <string name="tutorial_intro_description">使用盲文键盘时，您只需点按屏幕即可输入 6 点式盲文。\n\n您目前使用的是通用英语盲文。如需切换输入语言，请转到 TalkBack 设置。\n\n输入盲文时，手机的握持和使用方式会有所不同。</string>
+  <string name="tutorial_intro_description">使用盲文键盘时，您只需点按屏幕即可输入 6 点式盲文。\n\n您目前使用的是通用英语盲文。如需切换输入语言，请转到 SandFly 设置。\n\n输入盲文时，手机的握持和使用方式会有所不同。</string>
   <string name="next_step">下一步</string>
   <string name="leave_keyboard">退出盲文键盘</string>
-  <string name="hold_six_fingers_description">您无法在盲文键盘中使用常规的 TalkBack 手势。\n\n若要开始使用盲文键盘，请先设置 6 个盲文圆点的位置，以便输入盲文。</string>
-  <string name="rotate_orientation_description_1">从现在开始，您将无法使用常规的 TalkBack 手势。使用盲文键盘时，TalkBack 不可用。</string>
+  <string name="hold_six_fingers_description">您无法在盲文键盘中使用常规的 SandFly 手势。\n\n若要开始使用盲文键盘，请先设置 6 个盲文圆点的位置，以便输入盲文。</string>
+  <string name="rotate_orientation_description_1">从现在开始，您将无法使用常规的 SandFly 手势。使用盲文键盘时，SandFly 不可用。</string>
   <string name="rotate_orientation_description_2">首先，按这种方式握持手机并将屏幕背对着您。</string>
   <string name="tap_to_continue">在任意位置点按两次即可继续</string>
   <string name="instruction_type_letter_a">用左手食指点按点 1 即可输入字母“A”</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">已向前移动光标</string>
   <string name="result_swipe_down_2_fingers">隐藏键盘</string>
   <string name="result_swipe_down_3_fingers">下一个键盘</string>
-  <string name="rotate_orientation_announcement">从现在开始，您将无法使用常规的 TalkBack 手势。使用盲文键盘时，TalkBack 不可用。\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">从现在开始，您将无法使用常规的 SandFly 手势。使用盲文键盘时，SandFly 不可用。\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">首先，翻转手机，让屏幕背对着您。\n\n接下来，将手机旋转至水平方向，使其处于横屏模式。您的双手应握紧手机的两个短边。您的右手应握持有 USB 端口的一边。将中间的三根手指放在屏幕上，并使用小指和拇指支撑手机。\n\n当您准备就绪后，点按两次屏幕以继续操作。\n\n要退出盲文键盘，请用三根手指向下滑动。此操作会切换回您原来的键盘。</string>
   <string name="rotate_orientation_continue_announcement">您的手机处于竖屏模式。要继续操作，请将手机旋转至水平方向，使长边位于底部。接下来，翻转手机，让屏幕背对着您。当您准备就绪后，点按两次屏幕以继续操作。</string>
   <string name="type_letter_a_announcement">让手机屏幕背对着您。用双手握持手机的两个短边，让每只手中间的三根手指能触摸到屏幕。\n\n左手食指应放在点 1 上。现在，点按点 1 即可输入字母“A”。</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">要切换至其他键盘，请用三根手指向下滑动。立即尝试。</string>
   <string name="swipe_down_3_fingers_completed_announcement">下一个键盘。通常，此操作将会切换至下一个键盘。此时，系统会继续显示盲文键盘，因为您仍在教程中。</string>
   <string name="swipe_up_3_fingers_announcement">您也可以将手机平放在桌子上，在桌上模式下输入盲文。若要结束本教程，请用 3 根手指向上滑动，找到“完成教程”选项</string>
-  <string name="open_context_menu_announcement">选项菜单已打开。请将手机翻转回来，让屏幕面对着您，并用正常方式握持手机。您现在可以使用常规的 TalkBack 手势进行导航。向右滑动可查看更多选项。</string>
+  <string name="open_context_menu_announcement">选项菜单已打开。请将手机翻转回来，让屏幕面对着您，并用正常方式握持手机。您现在可以使用常规的 SandFly 手势进行导航。向右滑动可查看更多选项。</string>
   <string name="hold_six_fingers_announcement">%s\n将您的设备平放在桌子上。然后，将每只手的中间 3 根手指放在屏幕上，轻触并按住您方便输入盲文的位置。</string>
   <string name="hold_six_fingers_inactive_announcement">将您的设备平放在桌子上。然后，将每只手的中间 3 根手指放在屏幕上，轻触并按住您方便输入盲文的位置。</string>
   <string name="finish_tutorial_announcement">目前显示的是盲文键盘。请翻转手机，让屏幕背对着您。将手机旋转至水平方向，使其处于横屏模式。然后开始输入。</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">此手势用于“%1$s”，无法更改。请试试其他手势。%2$s</string>
   <string name="custom_gesture_cannot_used">无法使用此手势</string>
   <string name="custom_gesture_no_gesture">未做出任何手势</string>
-  <string name="custom_gesture_try_another">请试试其他手势。如需查看所有可用手势的列表，请前往 TalkBack 盲文键盘帮助中心。%s</string>
+  <string name="custom_gesture_try_another">请试试其他手势。如需查看所有可用手势的列表，请前往 SandFly 盲文键盘帮助中心。<xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">手势不符</string>
   <string name="custom_gesture_perform_again">请再次做出您要使用的手势。%s</string>
 
@@ -310,4 +310,6 @@
 
     <!-- Title of a tutorial button that skips the tutorial and opens the braille keyboard. [CHAR_LIMIT=50] -->
     <string name="skip_tutorial">跳过教程</string>
+    <string name="switch_to_language_contracted_announcement">已切换到%s, 简写盲文</string>
+    <string name="switch_to_language_uncontracted_announcement">已切换到%s, 非简写盲文</string>
 </resources>
