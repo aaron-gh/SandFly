@@ -32,5 +32,16 @@ class CapitalLetterSpan {
         text.getSpans(0, text.length, CapitalLetterSpan::class.java).any {
           text.getSpanStart(it) == 0 && text.getSpanEnd(it) == text.length
         }
+
+    /**
+     * Returns whether [text] starts with a capital letter marked as one, as a keyboard key does
+     * when more is said after it, such as "A, alpha".
+     */
+    @JvmStatic
+    fun leads(text: CharSequence): Boolean =
+      text is Spanned &&
+        text.isNotEmpty() &&
+        Character.isUpperCase(text[0]) &&
+        text.getSpans(0, 1, CapitalLetterSpan::class.java).any { text.getSpanStart(it) == 0 }
   }
 }
