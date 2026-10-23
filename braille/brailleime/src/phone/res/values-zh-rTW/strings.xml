@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack 點字鍵盤</string>
+  <string name="braille_ime_service_name">SandFly 點字鍵盤</string>
   <string name="braille_ime_bd_mode_name">點字顯示器輸入</string>
   <string name="switch_to_tabletop_announcement">桌面模式。請將手機充電埠朝左放置。</string>
   <string name="calibration_tip_announcement">如要更新圓點位置，請用 %d 指按住螢幕。</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">已切換為一級點字</string>
   <string name="braille_ime_displayed_name">點字鍵盤</string>
   <string name="multiple_languages_braille_ime_displayed_name">點字鍵盤，%s</string>
-  <string name="input_view_caption">TalkBack 點字鍵盤 - 如需協助，請前往 g.co/help/braille</string>
+  <string name="input_view_caption">SandFly 點字鍵盤 - 如需協助，請前往 g.co/help/braille</string>
   <string name="perform_action_next">下一個</string>
   <string name="perform_action_submitting">送出文字</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">正在更新圓點位置。首先記錄%s的圓點。</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">如要在使用點字鍵盤輸入內容時變更語言，請用 3 指向上滑動，然後選取「切換到下一個輸入語言」。</string>
   <string name="title_pref_accumulate_presses">包括所有已按下的點</string>
   <string name="summary_pref_accumulate_presses">每個你按下的點都是輸入內容的一部分，即使你先放開其中某個點，也不影響拼字</string>
-  <string name="title_pref_reverse_dots">調換點的位置</string>
-  <string name="summary_pref_reverse_dots">舉例來說，你可以交換點的位置，讓 1 點和 4 點交換位置</string>
+  <string name="title_pref_reverse_dots">交換左右點</string>
+  <string name="summary_pref_reverse_dots">點 1、2 和 3 與點 4、5 和 6 交換位置</string>
   <string name="bd_preference_braille_contracted">二級點字</string>
   <string name="bd_preference_braille_uncontracted">一級點字</string>
   <string name="context_menu_title">點字鍵盤選項</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">鍵盤</string>
   <string name="not_enough_touch_points_dialog_title">你的裝置不支援點字鍵盤</string>
   <string name="not_enough_touch_points_dialog_message">你的裝置觸控點不足。如需更多資訊，請與你的裝置製造商聯絡。</string>
-  <string name="talkback_off_dialog_title">必須開啟 TalkBack 才能使用點字鍵盤</string>
+  <string name="talkback_off_dialog_title">必須開啟 SandFly 才能使用點字鍵盤</string>
   <string name="talkback_off_dialog_positive_button">在無障礙設定中開啟</string>
-  <string name="talkback_suspend_dialog_title">必須重新啟用 TalkBack，才能使用點字鍵盤</string>
-  <string name="talkback_off_or_suspend_dialog_message">開啟 TalkBack 後，只要輕觸螢幕即可輸入點字符號。</string>
-  <string name="talkback_off_custom_gestures_dialog_title">開啟 TalkBack 即可變更手勢</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack 已關閉，必須開啟才能變更點字鍵盤手勢。</string>
+  <string name="talkback_suspend_dialog_title">必須重新啟用 SandFly，才能使用點字鍵盤</string>
+  <string name="talkback_off_or_suspend_dialog_message">開啟 SandFly 後，只要輕觸螢幕即可輸入點字符號。</string>
+  <string name="talkback_off_custom_gestures_dialog_title">開啟 SandFly 即可變更手勢</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly 已關閉，必須開啟才能變更點字鍵盤手勢。</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">前往「設定」</string>
   <string name="reset_gestures_dialog_title">要重設所有手勢嗎？</string>
   <string name="reset_gestures_dialog_message">所有點字鍵盤手勢都會重設為預設設定</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">重設為預設值</string>
   <string name="custom_gestures_dialog_remove_button">移除手勢</string>
   <string name="change_gestures_dialog_message_title">如何變更手勢</string>
-  <string name="change_gestures_dialog_message">下一個畫面會開啟點字鍵盤，屆時將無法使用 TalkBack 手勢。\n\n點字鍵盤開啟後，請做出要使用的手勢。如要關閉點字鍵盤並取消變更手勢，請用 2 指向下滑動。\n\n查看可用的手勢\n</string>
+  <string name="change_gestures_dialog_message">下一個畫面會開啟點字鍵盤，屆時將無法使用 SandFly 手勢。\n\n點字鍵盤開啟後，請做出要使用的手勢。如要關閉點字鍵盤並取消變更手勢，請用 2 指向下滑動。\n\n查看可用的手勢\n</string>
   <string name="change_gestures_dialog_message_link">查看可用的手勢</string>
   <string name="change_gestures_dialog_dont_show_checkbox">不要再顯示這則訊息</string>
   <string name="change_gestures_dialog_positive_button">繼續</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">不使用</string>
   <string name="next_keyboard">下一個鍵盤</string>
   <string name="braille_tutorial_title">點字鍵盤教學課程</string>
-  <string name="tutorial_intro_description">有了點字鍵盤，只要輕觸螢幕，就能輸入 6 個點的點字。\n\n你目前使用的是統一英文點字。如要切換輸入語言，請前往 TalkBack 設定。\n\n輸入點字時，手機的拿法及使用方式會與平常不同。</string>
+  <string name="tutorial_intro_description">有了點字鍵盤，只要輕觸螢幕，就能輸入 6 個點的點字。\n\n你目前使用的是統一英文點字。如要切換輸入語言，請前往 SandFly 設定。\n\n輸入點字時，手機的拿法及使用方式會與平常不同。</string>
   <string name="next_step">下一步</string>
   <string name="leave_keyboard">離開點字鍵盤</string>
-  <string name="hold_six_fingers_description">標準的 TalkBack 手勢無法與點字鍵盤搭配使用。\n\n首先，請設定 6 個點字圓點的位置，以便輸入點字。</string>
-  <string name="rotate_orientation_description_1">從現在起，你將無法使用標準的 TalkBack 手勢。TalkBack 功能無法與點字鍵盤搭配使用。</string>
+  <string name="hold_six_fingers_description">標準的 SandFly 手勢無法與點字鍵盤搭配使用。\n\n首先，請設定 6 個點字圓點的位置，以便輸入點字。</string>
+  <string name="rotate_orientation_description_1">從現在起，你將無法使用標準的 SandFly 手勢。SandFly 功能無法與點字鍵盤搭配使用。</string>
   <string name="rotate_orientation_description_2">如要開始使用，請以螢幕朝外的方式握住手機，如下圖所示。</string>
   <string name="tap_to_continue">在任何位置輕觸兩下即可繼續</string>
   <string name="instruction_type_letter_a">以左手食指輕觸 1 點，即可輸入字母「A」</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">已將游標向前移</string>
   <string name="result_swipe_down_2_fingers">隱藏鍵盤</string>
   <string name="result_swipe_down_3_fingers">下一個鍵盤</string>
-  <string name="rotate_orientation_announcement">從現在起，你將無法使用標準的 TalkBack 手勢。TalkBack 功能無法與點字鍵盤搭配使用。\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">從現在起，你將無法使用標準的 SandFly 手勢。SandFly 功能無法與點字鍵盤搭配使用。\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">首先，請將手機轉向，讓螢幕朝外。\n\n接下來，請將手機由直向轉為橫向。你的雙手應該握著手機較短的兩個邊。右手必須握著有 USB 連接埠的那一邊。請將中間 3 隻手指放在螢幕上，並以拇指和小指固定手機。\n\n準備好之後，在螢幕上輕觸兩下，即可繼續進行下一個步驟。\n\n如要退出點字鍵盤，請以 3 指朝地面向下滑動，這樣就會切換回原本使用的鍵盤。</string>
   <string name="rotate_orientation_continue_announcement">你的手機目前為直向。如要繼續操作，請將手機轉為橫向，讓長邊在底部。接著，請將手機轉向，讓螢幕朝外。準備好之後，在螢幕上輕觸兩下，即可繼續進行下一個步驟。</string>
   <string name="type_letter_a_announcement">請將手機螢幕朝外，並以雙手握住手機較短的兩個邊，讓中間 3 隻手指可以觸控螢幕。\n\n左手食指的位置應該在 1 點上。現在，輕觸 1 點即可輸入字母「A」。</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">如要切換到其他鍵盤，請以 3 指向下滑動。現在就試試看吧！</string>
   <string name="swipe_down_3_fingers_completed_announcement">下一個鍵盤。這樣做通常就能切換到下一個鍵盤，不過目前仍在進行教學課程，所以系統這次會繼續顯示點字鍵盤，不會切換到其他鍵盤。</string>
   <string name="swipe_up_3_fingers_announcement">你也可以將手機平放在桌上，在桌面模式下輸入點字。如要結束教學課程，只要用 3 指向上滑動，就會看到 [結束教學課程] 選項</string>
-  <string name="open_context_menu_announcement">選項選單已開啟。請將手機轉回正常使用的方向，讓螢幕朝著你，並以平常的方式拿手機。你現在可以使用標準的 TalkBack 手勢操作手機了。向右滑動可查看更多選項。</string>
+  <string name="open_context_menu_announcement">選項選單已開啟。請將手機轉回正常使用的方向，讓螢幕朝著你，並以平常的方式拿手機。你現在可以使用標準的 SandFly 手勢操作手機了。向右滑動可查看更多選項。</string>
   <string name="hold_six_fingers_announcement">%s\n請將裝置平放在桌上，接著用雙手的中間 3 指在螢幕上按住方便你輸入點字的位置。</string>
   <string name="hold_six_fingers_inactive_announcement">請將裝置平放在桌上，接著用雙手的中間 3 指在螢幕上按住方便你輸入點字的位置。</string>
   <string name="finish_tutorial_announcement">顯示點字鍵盤。將手機轉向，讓螢幕朝外。將手機由直向轉為橫向。然後開始輸入。</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">這個手勢用於「%1$s」，而且無法變更。請試試其他手勢。%2$s</string>
   <string name="custom_gesture_cannot_used">無法使用這個手勢</string>
   <string name="custom_gesture_no_gesture">未做出任何手勢</string>
-  <string name="custom_gesture_try_another">請試試其他手勢。如要查看所有可用手勢的清單，請前往 TalkBack 點字鍵盤的說明中心。%s</string>
+  <string name="custom_gesture_try_another">請試試其他手勢。如要查看所有可用手勢的清單，請前往 SandFly 點字鍵盤的說明中心。<xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">手勢不符</string>
   <string name="custom_gesture_perform_again">請再次做出要使用的手勢。%s</string>
+    <string name="tabletop_port_left_announcement">桌面模式，充電口在左側</string>
+    <string name="tabletop_port_right_announcement">桌面模式，充電口在右側</string>
+    <string name="screen_away_port_right_announcement">熄滅螢幕模式，充電口在右側</string>
+    <string name="screen_away_port_left_announcement">熄屏模式，充電口在左側</string>
+    <string name="screen_toward_announcement">螢幕朝向您</string>
+    <string name="screen_toward_port_left_announcement">螢幕朝向您，充電埠位於左側</string>
+    <string name="screen_toward_port_right_announcement">螢幕朝向您，充電埠位於右側</string>
+    <string name="screen_toward_port_down_announcement">螢幕朝向您，充電埠朝下</string>
+    <string name="screen_toward_port_up_announcement">螢幕朝向您，充電埠朝上</string>
+    <string name="port_right_announcement">右側充電口</string>
+    <string name="port_left_announcement">左側充電口</string>
+    <string name="tabletop_port_near_announcement">桌面模式，充電口朝向您</string>
+    <string name="tabletop_port_far_announcement">桌面模式，充電口遠離你</string>
+    <string name="screen_away_port_down_announcement">熄屏模式，充電口朝下</string>
+    <string name="screen_away_port_up_announcement">熄屏模式，充電口朝上</string>
+    <string name="port_near_announcement">充電口朝向您</string>
+    <string name="port_far_announcement">充電口遠離你</string>
+    <string name="port_down_announcement">充電口朝下</string>
+    <string name="port_up_announcement">充電口朝上</string>
+    <string name="orientation_locked_announcement">方向已鎖定</string>
+    <string name="orientation_locked_port_announcement">方向已鎖定。 %1$s</string>
+    <string name="orientation_unlocked_announcement">方向已解鎖</string>
+    <string name="switch_to_language_contracted_announcement">已切換到%s，二級點字</string>
+    <string name="switch_to_language_uncontracted_announcement">已切換到%s，一級點字</string>
+    <string name="title_pref_flip_dots_vertically">交換頂部和底部的點</string>
+    <string name="summary_pref_flip_dots_vertically">點 1 與點 3 交換位置，點 4 與點 6 交換位置</string>
+    <string name="title_pref_tablet_held_up_faces_away">平板電腦將臉轉向一邊</string>
+    <string name="summary_pref_tablet_held_up_faces_away">關閉時，舉起的平板電腦或展開的手機將使用桌面佈局，面向您</string>
+    <string name="title_pref_typing_sounds">打字聲音</string>
+    <string name="summary_pref_typing_sounds">當您鍵入字元、空白、換行或刪除時播放鍵盤聲音</string>
+    <string name="skip_tutorial">跳過教程</string>
 </resources>

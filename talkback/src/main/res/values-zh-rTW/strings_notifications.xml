@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">強</string>
+    <string name="notification_shake_2">中等</string>
+    <string name="notification_shake_1">溫柔</string>
+    <string name="notification_media_skip">不要大聲朗讀</string>
+    <string name="notification_media_pause">閱讀時暫停媒體</string>
+    <string name="notification_media_read">大聲朗讀</string>
+    <string name="notification_headphones_only_without">僅限耳機</string>
+    <string name="notification_headphones_only_with">僅限耳機</string>
+    <string name="notification_headphones_always">有或沒有耳機大聲朗讀</string>
+    <string name="notification_queue_skip">請勿大聲朗讀新通知</string>
+    <string name="notification_queue_interrupt">中斷大聲朗讀的通知</string>
+    <string name="notification_queue_queue">目前通知後大聲朗讀</string>
+    <string name="notification_url_omit">省略</string>
+    <string name="notification_url_replace">說出下面的文字</string>
+    <string name="notification_url_domain">僅閱讀網站</string>
+    <string name="notification_url_full">閱讀整個鏈接</string>
+    <string name="notification_category_title">通知</string>
+    <string name="notification_reading_title">大聲朗讀通知</string>
+    <string name="notification_apps_title">應用程式</string>
+    <string name="notification_words_title">單字和替換</string>
+    <string name="notification_kinds_title">通知種類</string>
+    <string name="notification_when_title">何時閱讀</string>
+    <string name="notification_rules_title">規則</string>
+    <string name="notification_repeats_title">重複</string>
+    <string name="notification_stop_title">停止閱讀</string>
+    <string name="notification_schedules_title">摘要及時間</string>
+    <string name="notification_history_title">通知歷史記錄</string>
+    <string name="notification_test_title">發送測試通知</string>
+    <string name="notification_automation_title">自動化</string>
+    <string name="notification_automation_allowed_title">允許自動化應用程式</string>
+    <string name="notification_category_said">說什麼</string>
+    <string name="notification_format_title">語音格式</string>
+    <string name="notification_format_message">佔位符：{app}、{title}、{text}、{content}（全文）、{bigtext}、{subtext}、{ticker}、{category} 和 {time}。</string>
+    <string name="notification_private_format_title">私人通知說</string>
+    <string name="notification_private_format_message">表示代替私人通知的內容。佔位符：{app}、{category} 和 {time}。</string>
+    <string name="notification_category_voice">語音</string>
+    <string name="notification_voice_title">語音</string>
+    <string name="notification_voice_sandfly">SandFly的聲音</string>
+    <string name="notification_detect_language_title">檢測語言</string>
+    <string name="notification_detect_language_summary">用其編寫的語言說出每個通知。需要在文字轉語音設定中自動切換語言。</string>
+    <string name="notification_sound_before_title">通知前有聲音</string>
+    <string name="notification_category_text">文字</string>
+    <string name="notification_remove_emoji_title">省略表情符號</string>
+    <string name="notification_lowercase_title">將大寫字母讀作單字</string>
+    <string name="notification_lowercase_summary">有些語音引擎逐個字母拼出大寫字母的單字</string>
+    <string name="notification_separate_digits_title">逐位讀取長數字</string>
+    <string name="notification_separate_digits_summary">例如代碼和電話號碼</string>
+    <string name="notification_min_digits_title">長數中的最小位數</string>
+    <string name="notification_urls_title">連結</string>
+    <string name="notification_url_text_title">代替連結說</string>
+    <string name="notification_skip_empty_title">跳過沒有文字的通知</string>
+    <string name="notification_category_length">長度</string>
+    <string name="notification_max_words_title">最大字數</string>
+    <string name="notification_max_sentences_title">最大句子數</string>
+    <string name="notification_max_characters_title">最大文字字元數</string>
+    <string name="notification_max_seconds_title">之後停止閱讀</string>
+    <string name="notification_category_timing">時機</string>
+    <string name="notification_delay_title">閱讀前請等待</string>
+    <string name="notification_queue_title">當閱讀另一個通知時</string>
+    <string name="notification_repeat_minutes_title">再次閱讀直至螢幕亮起</string>
+    <string name="notification_skip_media_title">跳過媒體播放器</string>
+    <string name="notification_skip_ongoing_title">跳過正在進行的通知</string>
+    <string name="notification_skip_ongoing_summary">例如導航和計時器</string>
+    <string name="notification_skip_foreground_title">跳過正在運行的應用程式通知</string>
+    <string name="notification_skip_foreground_summary">例如VPN或錄音機</string>
+    <string name="notification_skip_progress_title">跳過進度通知</string>
+    <string name="notification_skip_group_summaries_title">跳過組摘要</string>
+    <string name="notification_skip_group_summaries_summary">例如“3條新訊息”</string>
+    <string name="notification_skip_low_priority_title">跳過低優先通知</string>
+    <string name="notification_skip_system_title">跳過系統通知</string>
+    <string name="notification_screen_on_title">當螢幕開啟時</string>
+    <string name="notification_screen_off_title">當螢幕關閉時</string>
+    <string name="notification_locked_title">當手機被鎖定時</string>
+    <string name="notification_headphones_title">耳機</string>
+    <string name="notification_media_title">當媒體播放時</string>
+    <string name="notification_dnd_title">請勿打擾</string>
+    <string name="notification_dnd_none">請勿大聲朗讀任何通知</string>
+    <string name="notification_dnd_allowed">閱讀「請勿打擾」模式允許的通知</string>
+    <string name="notification_dnd_all">閱讀全部</string>
+    <string name="notification_touch_title">當觸摸螢幕時</string>
+    <string name="notification_touch_read">立即閱讀</string>
+    <string name="notification_touch_after">觸摸結束時讀取</string>
+    <string name="notification_touch_skip">不要大聲朗讀</string>
+    <string name="notification_during_calls_title">通話期間</string>
+    <string name="notification_honour_silent_title">不在靜音模式下</string>
+    <string name="notification_honour_vibrate_title">未處於振動模式</string>
+    <string name="notification_skip_in_car_title">未處於汽車模式</string>
+    <string name="notification_skip_in_car_summary">例如 Android Auto，它会自己读取它们</string>
+    <string name="notification_category_quiet_hours">安靜時間</string>
+    <string name="notification_quiet_hours_title">安靜時間</string>
+    <string name="notification_quiet_start_title">開始</string>
+    <string name="notification_quiet_end_title">結束</string>
+    <string name="notification_repeat_seconds_title">跳過相同的通知</string>
+    <string name="notification_numbers_alike_title">将不同的数字视为相同</string>
+    <string name="notification_numbers_alike_summary">例如下載百分比</string>
+    <string name="notification_cooldown_title">应用程序通知之间的时间间隔</string>
+    <string name="notification_skip_prefix_title">省略重复的文本前缀</string>
+    <string name="notification_skip_prefix_summary">例如聊天中的群组名称</string>
+    <string name="notification_prefix_memory_title">记住文本前缀多长时间</string>
+    <string name="notification_access_summary">需要停止阅读已驳回的通知并获取摘要</string>
+    <string name="notification_shake_title">搖晃即可停止</string>
+    <string name="notification_shake_strength_title">震動強度</string>
+    <string name="notification_wave_title">揮手停止閱讀</string>
+    <string name="notification_wave_summary">将手移到接近传感器上</string>
+    <string name="notification_pocket_title">袖珍模式</string>
+    <string name="notification_pocket_summary">读取开始时被覆盖的传感器（如放在口袋中）不会阻止读取</string>
+    <string name="notification_volume_keys_title">按兩個音量鍵</string>
+    <string name="notification_dismiss_title">通知消失后停止阅读</string>
+    <string name="notification_watch_dismiss_title">此外，當智慧手錶上的通知被取消時</string>
+    <string name="notification_app_cancel_title">当应用程序删除通知时停止阅读</string>
+    <string name="notification_category_summary">總結</string>
+    <string name="notification_summary_now_title">立即閱讀通知</string>
+    <string name="notification_summary_daily_title">每天閱讀通知</string>
+    <string name="notification_summary_time_title">時間</string>
+    <string name="notification_summary_newest_first_title">最新的優先</string>
+    <string name="notification_summary_name_title">你的名字</string>
+    <string name="notification_summary_gap_title">通知之間暫停</string>
+    <string name="notification_summary_needs_sandfly">打开 SandFly 即可阅读通知</string>
+    <string name="notification_summary_no_access">通知訪問已關閉</string>
+    <string name="notification_summary_morning">早安。</string>
+    <string name="notification_summary_afternoon">午安.</string>
+    <string name="notification_summary_evening">晚安.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">時間公告</string>
+    <string name="notification_clock_interval_title">說一下每次的時間</string>
+    <string name="notification_clock_format_title">時間格式</string>
+    <string name="notification_clock_format_message">佔位符：{time}、{date} 和 {battery}（電池百分比）。</string>
+    <string name="notification_clock_format_default">是{time}</string>
+    <string name="notification_clock_exact_title">確切時間</string>
+    <string name="notification_clock_exact_summary">需要警報和提醒。否則時間最多可以晚一分鐘。</string>
+    <string name="notification_other_apps_title">其他應用程式</string>
+    <string name="notification_apps_category">應用程式</string>
+    <string name="notification_apps_loading">載入應用程式</string>
+    <string name="notification_app_mode_title">通知</string>
+    <string name="notification_app_mode_default">與其他應用程式一樣</string>
+    <string name="notification_app_mode_read">大聲朗讀</string>
+    <string name="notification_app_mode_private">僅應用程式名稱</string>
+    <string name="notification_app_mode_priority">首先閱讀</string>
+    <string name="notification_app_mode_ignore">不要大聲朗讀</string>
+    <string name="notification_app_name_title">口語姓名</string>
+    <string name="notification_app_said_as">表示為 <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">重設</string>
+    <string name="notification_required_title">僅閱讀通知</string>
+    <string name="notification_blocked_title">不要閱讀通知</string>
+    <string name="notification_private_title">只讀應用程式名稱</string>
+    <string name="notification_replacements_title">換個說法</string>
+    <string name="notification_add_word">添加一個詞</string>
+    <string name="notification_add_replacement">添加替換</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> 為 <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">文字</string>
+    <string name="notification_replace_with">說成</string>
+    <string name="notification_whole_words">僅完整單字</string>
+    <string name="notification_regex">正規表示式</string>
+    <string name="notification_enter_text">輸入文字</string>
+    <string name="notification_invalid_regex">不是有效的正規表示式</string>
+    <string name="notification_edit">編輯</string>
+    <string name="notification_remove">刪除</string>
+    <string name="notification_history_keep">保存通知歷史記錄</string>
+    <string name="notification_history_clear">清除歷史記錄</string>
+    <string name="notification_history_category">通知</string>
+    <string name="notification_history_empty">無通知</string>
+    <string name="notification_history_ignore_app">請勿閱讀<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">只讀<xliff:g id="app" example="Chat">%1$s</xliff:g>的名字</string>
+    <string name="notification_history_priority_app">先讀<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">不要閱讀這樣的通知</string>
+    <string name="notification_history_copy">複製</string>
+    <string name="notification_saved">已儲存</string>
+    <string name="notification_copied">已複製</string>
+    <string name="notification_outcome_read">朗讀成功</string>
+    <string name="notification_outcome_stopped">閱讀時停止</string>
+    <string name="notification_outcome_speech_off">未讀：通知語音已關閉</string>
+    <string name="notification_outcome_dnd">未讀：請勿打擾</string>
+    <string name="notification_outcome_touching">未讀：螢幕被觸摸</string>
+    <string name="notification_outcome_app">未讀：應用程式</string>
+    <string name="notification_outcome_ongoing">未讀：正在進行中</string>
+    <string name="notification_outcome_foreground">未讀：正在運行的應用程式</string>
+    <string name="notification_outcome_low_priority">未讀：低優先級</string>
+    <string name="notification_outcome_system">未讀：系統</string>
+    <string name="notification_outcome_media">未讀：媒體播放器</string>
+    <string name="notification_outcome_group_summary">未讀：小組總結</string>
+    <string name="notification_outcome_progress">未讀：進展</string>
+    <string name="notification_outcome_required">未讀：缺少必填單字</string>
+    <string name="notification_outcome_blocked">未讀：屏蔽字</string>
+    <string name="notification_outcome_empty">未讀：無文字</string>
+    <string name="notification_outcome_repeat">未讀：重複</string>
+    <string name="notification_outcome_cooldown">未大聲朗讀：最近讀取了來自此應用程式的另一條通知</string>
+    <string name="notification_outcome_quiet_hours">未讀：安靜時間</string>
+    <string name="notification_outcome_screen_on">未讀：螢幕亮起</string>
+    <string name="notification_outcome_screen_off">未讀：螢幕關閉</string>
+    <string name="notification_outcome_locked">未讀：已鎖定</string>
+    <string name="notification_outcome_headphones">未讀：已連接耳機</string>
+    <string name="notification_outcome_no_headphones">未讀：沒有耳機</string>
+    <string name="notification_outcome_silent">未讀：靜音模式</string>
+    <string name="notification_outcome_vibrate">未讀：振動模式</string>
+    <string name="notification_outcome_media_playing">未讀：媒體播放</string>
+    <string name="notification_outcome_car">未讀：汽車模式</string>
+    <string name="notification_outcome_rule">未讀：規則</string>
+    <string name="notification_outcome_busy">未讀：已閱讀另一條通知</string>
+    <string name="notification_outcome_call">宣布有來電</string>
+    <string name="notification_rule_add">新增規則</string>
+    <string name="notification_rule_from_template">從範本新增規則</string>
+    <string name="notification_rules_category">規則</string>
+    <string name="notification_rules_empty">沒有規則</string>
+    <string name="notification_rule_name">名稱</string>
+    <string name="notification_rule_untitled">規則</string>
+    <string name="notification_rule_enabled">已開啟</string>
+    <string name="notification_rule_match">條件</string>
+    <string name="notification_rule_match_all">所有條件必須滿足</string>
+    <string name="notification_rule_match_any">必須至少滿足一個條件</string>
+    <string name="notification_rule_conditions">當</string>
+    <string name="notification_rule_actions">然後</string>
+    <string name="notification_rule_add_condition">新增條件</string>
+    <string name="notification_rule_add_action">增加一個動作</string>
+    <string name="notification_rule_invert">反轉條件</string>
+    <string name="notification_rule_delete">刪除規則</string>
+    <string name="notification_rule_delete_confirm">刪除<xliff:g id="rule" example="Night">%1$s</xliff:g>？</string>
+    <string name="notification_rule_always">總是</string>
+    <string name="notification_rule_no_actions">什麼也沒發生</string>
+    <string name="notification_rule_and">" ” 和 “ "</string>
+    <string name="notification_rule_or">" “或” "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">僅限耳機</string>
+    <string name="notification_template_night">夜裡寂靜無聲</string>
+    <string name="notification_template_screen_off">僅在螢幕關閉時</string>
+    <string name="notification_template_locked_private">手機鎖定時僅顯示應用程式名稱</string>
+    <string name="notification_template_short_on_battery">不充電時簡單閱讀</string>
+    <string name="notification_type_bluetooth">Bluetooth設備</string>
+    <string name="notification_type_wired">有線耳機</string>
+    <string name="notification_type_wifi">Wi-Fi網絡</string>
+    <string name="notification_type_time">一天中的時間</string>
+    <string name="notification_type_screen">螢幕開啟</string>
+    <string name="notification_type_locked">手機已鎖定</string>
+    <string name="notification_type_from_app">來自應用程式的通知</string>
+    <string name="notification_type_foreground">應用程式在前台</string>
+    <string name="notification_type_contains">通知包含</string>
+    <string name="notification_type_battery">電池電量低於</string>
+    <string name="notification_type_charging">充電</string>
+    <string name="notification_type_landscape">橫向</string>
+    <string name="notification_type_silent">靜音或振動模式</string>
+    <string name="notification_type_media">媒體播放</string>
+    <string name="notification_bluetooth_any">任何裝置</string>
+    <string name="notification_wifi_hint">網路名稱</string>
+    <string name="notification_choose_app">選擇一個應用程式</string>
+    <string name="notification_time_start">來自</string>
+    <string name="notification_time_end">直到</string>
+    <string name="notification_time_days">天數</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> 至 <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly 需要取得此條件的許可</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>已連接</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 未連接</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth 音訊設備已連接</string>
+    <string name="notification_cond_bluetooth_any_not">未連接Bluetooth音訊設備</string>
+    <string name="notification_cond_wired">有線耳機已連接</string>
+    <string name="notification_cond_wired_not">有線耳機未連接</string>
+    <string name="notification_cond_battery_below">電池電量低於 <xliff:g id="percent" example="20">%1$d</xliff:g>%</string>
+    <string name="notification_cond_battery_below_not">電池電量為 <xliff:g id="percent" example="20">%1$d</xliff:g>% 或更多</string>
+    <string name="notification_cond_charging">手機正在充電</string>
+    <string name="notification_cond_charging_not">手機未充電</string>
+    <string name="notification_cond_locked">手機已鎖定</string>
+    <string name="notification_cond_locked_not">手機已解鎖</string>
+    <string name="notification_cond_screen_on">螢幕亮起</string>
+    <string name="notification_cond_screen_on_not">螢幕關閉</string>
+    <string name="notification_cond_landscape">螢幕為橫向</string>
+    <string name="notification_cond_landscape_not">螢幕為縱向</string>
+    <string name="notification_cond_time">時間是<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">時間不是<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">連接到<xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">未連接至 <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">連接到Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">未連接至 Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>在前面</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>不在前面</string>
+    <string name="notification_cond_from">通知來自<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">通知不是來自<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">通知包含<xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">通知不包含<xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">鈴聲靜音或震動</string>
+    <string name="notification_cond_silent_not">鈴聲響起</string>
+    <string name="notification_cond_media">媒體正在播放</string>
+    <string name="notification_cond_media_not">沒有媒體正在播放</string>
+    <string name="notification_action_skip">不讀</string>
+    <string name="notification_action_private">只讀取應用程式名稱</string>
+    <string name="notification_action_not_private">完整閱讀，即使是私人的</string>
+    <string name="notification_action_format">使用語音格式</string>
+    <string name="notification_action_max_words">最多閱讀幾個單字</string>
+    <string name="notification_action_no_limit">閱讀不受長度限制</string>
+    <string name="notification_action_keep_emoji">保留表情符號</string>
+    <string name="notification_action_keep_numbers">將數字放在一起</string>
+    <string name="notification_action_priority">首先閱讀</string>
+    <string name="notification_action_always_read">即使在安靜時間或其他限制時間也可以大聲朗讀通知</string>
+    <string name="notification_action_voice">使用語音設定檔閱讀</string>
+    <string name="notification_action_voice_value">與 <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> 一起閱讀</string>
+    <string name="notification_action_voice_sandfly">用SandFly的聲音朗讀</string>
+    <string name="notification_voice_removed">刪除了語音配置文件</string>
+    <string name="notification_action_format_value">使用語音格式<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">讀至<xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">關閉</string>
+    <string name="notification_on">開啟</string>
+    <string name="notification_never_again">直到SandFly重新啟動</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">大聲朗讀通知</string>
+    <string name="notification_speech_now_on">已啟用大聲朗讀通知</string>
+    <string name="notification_speech_now_off">大聲朗讀通知已停用</string>
+    <string name="notification_no_last_notification">沒有閱讀任何通知</string>
+    <string name="shortcut_read_notifications">閱讀通知</string>
+    <string name="shortcut_toggle_notification_speech">通知語音開啟或關閉</string>
+    <string name="shortcut_read_last_notification">再次閱讀上次通知</string>
+    <string name="shortcut_stop_notification">停止閱讀通知</string>
+    <string name="notification_test_posting">5 秒後將發出測試通知</string>
+    <string name="notification_test_not_allowed">允許 SandFly 先顯示通知</string>
+    <string name="notification_test_content_title">SandFly測試</string>
+    <string name="notification_test_content_text">這是測試通知，請根據您的通知設定進行閱讀。 123456</string>
+    <string name="notification_automation_on">啟用大聲朗讀通知</string>
+    <string name="notification_automation_off">停用大聲朗讀通知</string>
+    <string name="notification_automation_toggle">啟用或停用朗讀通知</string>
+    <string name="notification_automation_stop">停止閱讀通知</string>
+    <string name="notification_automation_read_all">閱讀通知</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 第二</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>秒</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>分鐘</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>分鐘</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>小時</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>小時</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>字</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 字數</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>句子</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 句子</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 文字字符</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 文字字符</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 數字</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 數字</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">您有 <xliff:g id="count" example="1">%d</xliff:g> 通知。</item>
+        <item quantity="other">您有 <xliff:g id="count" example="5">%d</xliff:g> 條通知。</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

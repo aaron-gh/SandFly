@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">控制聲音和振動</string>
+    <string name="summary_pref_control_sounds">為每個控制項（例如按鈕、複選框、編輯欄位和清單項目）賦予主題自己的聲音和振動，以代替焦點聲音和振動，就像 Unspoken 為 NVDA 所做的那樣。聲音來自螢幕上控制所在的位置，SandFly 沒有說明它是什麼類型的控制。</string>
+    <string name="title_pref_control_sounds_speak_roles">還是說控制的那種</string>
+    <string name="summary_pref_control_sounds_speak_roles">當控制聲音播放時，仍然說出它是什麼類型的控制，例如按鈕。這適用於每個聲音主題。</string>
+    <string name="title_pref_control_sounds_3d">3D音訊</string>
+    <string name="pref_control_sounds_3d_headphones">附耳機</string>
+    <string name="pref_control_sounds_3d_always">總是</string>
+    <string name="pref_control_sounds_3d_never">從來沒有，只有左和右</string>
+    <string name="individual_sound_control_button">控制聲音：按鈕</string>
+    <string name="individual_sound_control_checkbox">控制聲音：複選框</string>
+    <string name="individual_sound_control_radio_button">控制聲音：單選按鈕</string>
+    <string name="individual_sound_control_edit_text">控制聲音：編輯字段</string>
+    <string name="individual_sound_control_combo_box">控制聲音：下拉列表</string>
+    <string name="individual_sound_control_slider">控制聲音：滑桿</string>
+    <string name="individual_sound_control_link">控制聲音：連結</string>
+    <string name="individual_sound_control_image">控制聲音：影像</string>
+    <string name="individual_sound_control_clock">控制聲音：時鐘</string>
+    <string name="individual_sound_control_tab">控制聲音：選項卡</string>
+    <string name="individual_sound_control_menu_item">控制聲音：選單項</string>
+    <string name="individual_sound_control_list_item">控制聲音：列表項</string>
+    <string name="individual_sound_control_tree_item">控制聲音：樹項目</string>
+</resources>
