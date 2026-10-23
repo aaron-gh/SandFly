@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Кідірту SandFly</string>
+    <string name="summary_pause_backtalk">SandFly жалғастырғанша сөйлеуді, қимылдарды өшіріңіз және түрту арқылы зерттеңіз</string>
+    <string name="keycombo_menu_global_pause_backtalk">Кідірту немесе жалғастыру SandFly</string>
+    <string name="backtalk_paused">SandFly кідіртілді</string>
+    <string name="backtalk_resumed">SandFly жалғасты</string>
+    <string name="notification_title_backtalk_paused">SandFly кідіртілді</string>
+    <string name="notification_message_backtalk_paused">Жалғастыру үшін түртіңіз</string>
+    <string name="notification_channel_backtalk_paused">SandFly кідіртілді</string>
+    <string name="dialog_title_pause_backtalk">SandFly кідірту керек пе?</string>
+    <string name="dialog_button_pause_backtalk">Кідірту</string>
+    <string name="dialog_message_pause_backtalk">SandFly кідіртілген кезде ол сөйлемейді немесе қимылдарға жауап бермейді және экран ешбір экранды оқу құралы қосылмаған сияқты жұмыс істейді.</string>
+    <string name="message_resume_keyguard">Жалғастыру үшін SandFly кідіртілді хабарландыруды түртіңіз, дыбыс деңгейін 3 рет жылдам төмендетіңіз немесе құлыптау экраны көрсетілетін етіп телефонды құлыптап, оятыңыз.</string>
+    <string name="message_resume_screen_on">Жалғастыру үшін SandFly кідіртілді хабарландыруды түртіңіз, дыбыс деңгейін 3 рет жылдам төмендетіңіз немесе экранды өшіріп, қайта қосыңыз.</string>
+    <string name="message_resume_manual">Жалғастыру үшін SandFly кідіртілді хабарландыруды түртіңіз немесе дыбыс деңгейін 3 рет жылдам төмендетіңіз.</string>
+    <string name="message_resume_key_combo">Сондай-ақ <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> түймесін басуға болады.</string>
+    <string name="title_pref_resume_backtalk">Түйіндеме SandFly</string>
+    <string name="value_resume_keyguard">Құлыптау экраны көрсетілгенде</string>
+    <string name="value_resume_screen_on">Экран қосылғанда</string>
+    <string name="value_resume_manual">Тек хабарландырудан немесе таңбашадан</string>
+</resources>
