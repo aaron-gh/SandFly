@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Leggi stato</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> tacche su <xliff:g id="max_level" example="4">%2$d</xliff:g></string>
+    <string name="status_wifi_off">Wi-Fi disattivato</string>
+    <string name="status_wifi_not_connected">Wi-Fi non connesso</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Rete mobile</string>
+    <string name="status_mobile_no_service">Nessun servizio mobile</string>
+    <string name="status_do_not_disturb">Non disturbare</string>
+    <string name="status_ringer_vibrate">Vibrazione</string>
+    <string name="status_ringer_silent">Silenzioso</string>
+    <string name="status_airplane_mode">Modalità aereo</string>
+    <string name="title_pref_status_readout">Lettura dello stato</string>
+    <string name="status_item_time">Ora</string>
+    <string name="status_item_time_summary">L\'ora attuale</string>
+    <string name="status_item_battery">Batteria</string>
+    <string name="status_item_battery_summary">Livello della batteria, ricarica e risparmio energetico</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Nome della rete e intensità del segnale</string>
+    <string name="status_item_mobile">Rete mobile</string>
+    <string name="status_item_mobile_summary">Operatore, tipo di rete e intensità del segnale</string>
+    <string name="status_item_ringer">Suoneria e Non disturbare</string>
+    <string name="status_item_ringer_summary">Solo quando la suoneria non è impostata per squillare o quando Non disturbare è attivo</string>
+    <string name="status_item_airplane_mode">Modalità aereo</string>
+    <string name="status_item_airplane_mode_summary">Solo quando la modalità aereo è attiva</string>
+</resources>

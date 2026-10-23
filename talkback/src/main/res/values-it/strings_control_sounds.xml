@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Controlla suoni e vibrazioni</string>
+    <string name="summary_pref_control_sounds">Assegna a ogni tipo di controllo, come pulsanti, caselle di controllo, campi di modifica ed elementi di elenco, il proprio suono e la propria vibrazione dal tema, al posto del suono e della vibrazione del focus, come fa Unspoken per NVDA. Il suono proviene dalla posizione del controllo sullo schermo e SandFly non dice di che tipo di controllo si tratta.</string>
+    <string name="title_pref_control_sounds_speak_roles">Dico ancora il tipo di controllo</string>
+    <string name="summary_pref_control_sounds_speak_roles">Quando viene riprodotto un suono di controllo, dì comunque che tipo di controllo è, ad esempio un pulsante. Questo è per ogni tema sonoro.</string>
+    <string name="title_pref_control_sounds_3d">Audio 3D</string>
+    <string name="pref_control_sounds_3d_headphones">Con le cuffie</string>
+    <string name="pref_control_sounds_3d_always">Sempre</string>
+    <string name="pref_control_sounds_3d_never">Mai, solo destra e sinistra</string>
+    <string name="individual_sound_control_button">Suono di controllo: pulsante</string>
+    <string name="individual_sound_control_checkbox">Suono di controllo: casella di controllo</string>
+    <string name="individual_sound_control_radio_button">Suono di controllo: pulsante di opzione</string>
+    <string name="individual_sound_control_edit_text">Controllo del suono: campo di modifica</string>
+    <string name="individual_sound_control_combo_box">Suono di controllo: elenco a discesa</string>
+    <string name="individual_sound_control_slider">Controllo del suono: cursore</string>
+    <string name="individual_sound_control_link">Controllo del suono: collegamento</string>
+    <string name="individual_sound_control_image">Controllo del suono: immagine</string>
+    <string name="individual_sound_control_clock">Suono di controllo: orologio</string>
+    <string name="individual_sound_control_tab">Suono di controllo: tab</string>
+    <string name="individual_sound_control_menu_item">Suono di controllo: voce di menu</string>
+    <string name="individual_sound_control_list_item">Suono di controllo: voce di elenco</string>
+    <string name="individual_sound_control_tree_item">Suono di controllo: elemento dell\'albero</string>
+</resources>
