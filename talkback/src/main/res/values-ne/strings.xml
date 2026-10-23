@@ -1748,6 +1748,18 @@
     <string name="dictation_nothing_recognized">केही चिनिएन</string>
     <string name="dictation_unavailable">वाक् पहिचान उपलब्ध छैन</string>
     <string name="dictation_field_gone">पाठ क्षेत्र बन्द। केहि टाइप गरिएको छैन।</string>
+    <string name="dictation_transcription_failed">बोलीलाई पाठमा रूपान्तरण गरिएन। केही टाइप गरिएको छैन।</string>
+    <string name="title_pref_dictation">बोलेर लेखाइ</string>
+    <string name="title_pref_dictation_recognition">वाक् पहिचान</string>
+    <string name="dictation_recognition_automatic">स्वचालित</string>
+    <string name="dictation_recognition_android">Android वाक् पहिचान</string>
+    <string name="dictation_recognition_automatic_using">स्वचालित: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API कुञ्जी चाहिन्छ</string>
+    <string name="dictation_whisper_needs_model">Whisper, डाउनलोड गरिएको मोडेल चाहिन्छ</string>
+    <string name="title_pref_whisper_models">Whisper मोडेलहरू</string>
+    <string name="dictation_whisper_use">प्रयोग गर्नुहोस्</string>
+    <string name="title_pref_dictation_ai_service">बोलेर लेखाइका लागि एआई सेवा</string>
+    <string name="dictation_ai_same">स्वतः सिर्जना हुने विवरणहरूकै जस्तो</string>
     <string name="title_pref_browse_mode_per_app">प्रत्येक एपमा ब्राउज मोड सम्झनुहोस्</string>
     <string name="title_pref_export_settings">सेटिङहरू निर्यात गर्नुहोस्</string>
     <string name="title_pref_import_settings">सेटिङ्हरू आयात गर्नुहोस्</string>

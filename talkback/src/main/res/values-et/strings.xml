@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Midagi ei tunnistanud</string>
     <string name="dictation_unavailable">Kõnetuvastus pole saadaval</string>
     <string name="dictation_field_gone">Tekstiväli suletud. Midagi pole trükitud.</string>
+    <string name="dictation_transcription_failed">Kõnet ei transkribeeritud. Midagi pole trükitud.</string>
+    <string name="title_pref_dictation">Dikteerimine</string>
+    <string name="title_pref_dictation_recognition">Kõnetuvastus</string>
+    <string name="dictation_recognition_automatic">Automaatne</string>
+    <string name="dictation_recognition_android">Androidi kõnetuvastus</string>
+    <string name="dictation_recognition_automatic_using">Automaatne: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, vajab Gemini API võtit</string>
+    <string name="dictation_whisper_needs_model">Whisper, vajab allalaaditud mudelit</string>
+    <string name="title_pref_whisper_models">Whisperi mudelid</string>
+    <string name="dictation_whisper_use">Kasuta</string>
+    <string name="title_pref_dictation_ai_service">Tehisintellekti teenus dikteerimiseks</string>
+    <string name="dictation_ai_same">Sama mis automaatsetel kirjeldustel</string>
     <string name="title_pref_browse_mode_per_app">Jäta iga rakenduse sirvimisrežiim meelde</string>
     <string name="title_pref_export_settings">Ekspordi seaded</string>
     <string name="title_pref_import_settings">Impordi seaded</string>

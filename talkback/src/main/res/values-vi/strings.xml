@@ -1749,5 +1749,17 @@
     <string name="dictation_nothing_recognized">Không nhận dạng được nội dung nào</string>
     <string name="dictation_unavailable">Không có tính năng nhận dạng giọng nói</string>
     <string name="dictation_field_gone">Trường văn bản đã đóng. Chưa nhập nội dung nào.</string>
+    <string name="dictation_transcription_failed">Không chuyển được lời nói thành văn bản. Chưa nhập nội dung nào.</string>
+    <string name="title_pref_dictation">Nhập bằng giọng nói</string>
+    <string name="title_pref_dictation_recognition">Nhận dạng giọng nói</string>
+    <string name="dictation_recognition_automatic">Tự động</string>
+    <string name="dictation_recognition_android">Nhận dạng giọng nói của Android</string>
+    <string name="dictation_recognition_automatic_using">Tự động: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, cần khoá API Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, cần mô hình đã tải xuống</string>
+    <string name="title_pref_whisper_models">Mô hình Whisper</string>
+    <string name="dictation_whisper_use">Sử dụng</string>
+    <string name="title_pref_dictation_ai_service">Dịch vụ AI cho tính năng nhập bằng giọng nói</string>
+    <string name="dictation_ai_same">Giống như tính năng tự động mô tả</string>
     <string name="title_pref_browse_mode_per_app">Ghi nhớ chế độ duyệt trong từng ứng dụng</string>
 </resources>

@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Ештеңе танылмады</string>
     <string name="dictation_unavailable">Сөйлеуді тану қолжетімсіз</string>
     <string name="dictation_field_gone">Мәтін өрісі жабылды. Ештеңе терілген жоқ.</string>
+    <string name="dictation_transcription_failed">Сөйлеу мәтінге айналдырылмады. Ештеңе терілген жоқ.</string>
+    <string name="title_pref_dictation">Ауызша айтып жазу</string>
+    <string name="title_pref_dictation_recognition">Сөйлеуді тану</string>
+    <string name="dictation_recognition_automatic">Автоматты</string>
+    <string name="dictation_recognition_android">Android сөйлеуді тануы</string>
+    <string name="dictation_recognition_automatic_using">Автоматты: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API кілті қажет</string>
+    <string name="dictation_whisper_needs_model">Whisper, жүктелген модель қажет</string>
+    <string name="title_pref_whisper_models">Whisper модельдері</string>
+    <string name="dictation_whisper_use">Пайдалану</string>
+    <string name="title_pref_dictation_ai_service">Ауызша айтып жазуға арналған AI қызметі</string>
+    <string name="dictation_ai_same">Автоматты сипаттамалардағыдай</string>
     <string name="title_pref_browse_mode_per_app">Әрбір қолданбадағы шолу режимін есте сақтаңыз</string>
     <string name="title_pref_export_settings">Параметрлерді экспорттау</string>
     <string name="title_pref_import_settings">Параметрлерді импорттау</string>

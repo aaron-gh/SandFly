@@ -2312,6 +2312,18 @@
     <string name="dictation_nothing_recognized">没有任何识别</string>
     <string name="dictation_unavailable">语音识别不可用</string>
     <string name="dictation_field_gone">文本字段已关闭。没有输入任何内容。</string>
+    <string name="dictation_transcription_failed">未能将语音转写为文字。没有输入任何内容。</string>
+    <string name="title_pref_dictation">听写</string>
+    <string name="title_pref_dictation_recognition">语音识别</string>
+    <string name="dictation_recognition_automatic">自动</string>
+    <string name="dictation_recognition_android">Android 语音识别</string>
+    <string name="dictation_recognition_automatic_using">自动：<xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler，需要 Gemini API 密钥</string>
+    <string name="dictation_whisper_needs_model">Whisper，需要已下载的模型</string>
+    <string name="title_pref_whisper_models">Whisper 模型</string>
+    <string name="dictation_whisper_use">使用</string>
+    <string name="title_pref_dictation_ai_service">用于听写的人工智能服务</string>
+    <string name="dictation_ai_same">与自动描述相同</string>
     <string name="title_pref_browse_mode_per_app">记住各应用的浏览模式</string>
     <string name="title_pref_export_settings">导出设置</string>
     <string name="title_pref_import_settings">导入设置</string>

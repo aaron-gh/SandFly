@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Нищо разпознато</string>
     <string name="dictation_unavailable">Разпознаването на говор не е налично</string>
     <string name="dictation_field_gone">Текстовото поле е затворено. Нищо въведено.</string>
+    <string name="dictation_transcription_failed">Речта не е транскрибирана. Нищо не е въведено.</string>
+    <string name="title_pref_dictation">Диктовка</string>
+    <string name="title_pref_dictation_recognition">Разпознаване на говор</string>
+    <string name="dictation_recognition_automatic">Автоматично</string>
+    <string name="dictation_recognition_android">Разпознаване на говор на Android</string>
+    <string name="dictation_recognition_automatic_using">Автоматично: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, изисква API ключ за Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, изисква изтеглен модел</string>
+    <string name="title_pref_whisper_models">Модели на Whisper</string>
+    <string name="dictation_whisper_use">Използване</string>
+    <string name="title_pref_dictation_ai_service">AI услуга за диктовка</string>
+    <string name="dictation_ai_same">Същата като за автоматичните описания</string>
     <string name="title_pref_browse_mode_per_app">Запомнете режима на сърфиране във всяко приложение</string>
     <string name="title_pref_export_settings">Експортиране на настройки</string>
     <string name="title_pref_import_settings">Импортиране на настройки</string>

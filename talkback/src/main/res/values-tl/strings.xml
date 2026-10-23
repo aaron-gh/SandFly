@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Walang nakilala</string>
     <string name="dictation_unavailable">Hindi available ang speech recognition</string>
     <string name="dictation_field_gone">Isinara ang field ng text. Walang nai-type.</string>
+    <string name="dictation_transcription_failed">Hindi na-transcribe ang pananalita. Walang nai-type.</string>
+    <string name="title_pref_dictation">Pagdidikta</string>
+    <string name="title_pref_dictation_recognition">Pagkilala sa pananalita</string>
+    <string name="dictation_recognition_automatic">Awtomatiko</string>
+    <string name="dictation_recognition_android">Pagkilala sa pananalita ng Android</string>
+    <string name="dictation_recognition_automatic_using">Awtomatiko: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, kailangan ng Gemini API key</string>
+    <string name="dictation_whisper_needs_model">Whisper, kailangan ng na-download na model</string>
+    <string name="title_pref_whisper_models">Mga model ng Whisper</string>
+    <string name="dictation_whisper_use">Gamitin</string>
+    <string name="title_pref_dictation_ai_service">Serbisyo ng AI para sa pagdidikta</string>
+    <string name="dictation_ai_same">Kapareho ng mga awtomatikong paglalarawan</string>
     <string name="title_pref_browse_mode_per_app">Tandaan ang browse mode sa bawat app</string>
     <string name="title_pref_export_settings">Mga setting ng pag-export</string>
     <string name="title_pref_import_settings">Mga setting ng pag-import</string>

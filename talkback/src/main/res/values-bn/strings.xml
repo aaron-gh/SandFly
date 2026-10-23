@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">কিছুই চেনা যায় না</string>
     <string name="dictation_unavailable">বক্তৃতা শনাক্তকরণ অনুপলব্ধ৷</string>
     <string name="dictation_field_gone">পাঠ্য ক্ষেত্র বন্ধ। কিছুই টাইপ করা হয়নি.</string>
+    <string name="dictation_transcription_failed">কথা লেখায় রূপান্তর করা যায়নি। কিছুই টাইপ করা হয়নি।</string>
+    <string name="title_pref_dictation">ডিক্টেশন</string>
+    <string name="title_pref_dictation_recognition">বক্তৃতা শনাক্তকরণ</string>
+    <string name="dictation_recognition_automatic">স্বয়ংক্রিয়</string>
+    <string name="dictation_recognition_android">Android বক্তৃতা শনাক্তকরণ</string>
+    <string name="dictation_recognition_automatic_using">স্বয়ংক্রিয়: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API কী প্রয়োজন</string>
+    <string name="dictation_whisper_needs_model">Whisper, ডাউনলোড করা মডেল প্রয়োজন</string>
+    <string name="title_pref_whisper_models">Whisper মডেল</string>
+    <string name="dictation_whisper_use">ব্যবহার করুন</string>
+    <string name="title_pref_dictation_ai_service">ডিক্টেশনের জন্য এআই পরিষেবা</string>
+    <string name="dictation_ai_same">অটোমেটিক বিবরণের মতোই</string>
     <string name="title_pref_browse_mode_per_app">প্রতিটি অ্যাপে ব্রাউজ মোড মনে রাখবেন</string>
     <string name="title_pref_export_settings">রপ্তানি সেটিংস</string>
     <string name="title_pref_import_settings">সেটিংস আমদানি করুন</string>

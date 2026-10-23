@@ -1752,6 +1752,18 @@
     <string name="dictation_nothing_recognized">Nekas netika atpazīts</string>
     <string name="dictation_unavailable">Runas atpazīšana nav pieejama</string>
     <string name="dictation_field_gone">Teksta lauks aizvērts. Nekas nav ierakstīts.</string>
+    <string name="dictation_transcription_failed">Runa netika transkribēta. Nekas nav ierakstīts.</string>
+    <string name="title_pref_dictation">Diktēšana</string>
+    <string name="title_pref_dictation_recognition">Runas atpazīšana</string>
+    <string name="dictation_recognition_automatic">Automātiski</string>
+    <string name="dictation_recognition_android">Android runas atpazīšana</string>
+    <string name="dictation_recognition_automatic_using">Automātiski: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, nepieciešama Gemini API atslēga</string>
+    <string name="dictation_whisper_needs_model">Whisper, nepieciešams lejupielādēts modelis</string>
+    <string name="title_pref_whisper_models">Whisper modeļi</string>
+    <string name="dictation_whisper_use">Izmantot</string>
+    <string name="title_pref_dictation_ai_service">AI pakalpojums diktēšanai</string>
+    <string name="dictation_ai_same">Tāds pats kā automātiskajiem aprakstiem</string>
     <string name="title_pref_browse_mode_per_app">Atcerieties pārlūkošanas režīmu katrā lietotnē</string>
     <string name="title_pref_export_settings">Eksportēt iestatījumus</string>
     <string name="title_pref_import_settings">Importēt iestatījumus</string>

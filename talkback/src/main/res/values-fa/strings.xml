@@ -1748,6 +1748,18 @@
     <string name="dictation_nothing_recognized">هیچ چیز تشخیص داده نشد</string>
     <string name="dictation_unavailable">تشخیص گفتار در دسترس نیست</string>
     <string name="dictation_field_gone">فیلد متن بسته شد. چیزی تایپ نشده</string>
+    <string name="dictation_transcription_failed">گفتار به نوشتار تبدیل نشد. چیزی تایپ نشد.</string>
+    <string name="title_pref_dictation">دیکته</string>
+    <string name="title_pref_dictation_recognition">تشخیص گفتار</string>
+    <string name="dictation_recognition_automatic">خودکار</string>
+    <string name="dictation_recognition_android">تشخیص گفتار Android</string>
+    <string name="dictation_recognition_automatic_using">خودکار: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler، به کلید API ‏Gemini نیاز دارد</string>
+    <string name="dictation_whisper_needs_model">Whisper، به مدل بارگیری‌شده نیاز دارد</string>
+    <string name="title_pref_whisper_models">مدل‌های Whisper</string>
+    <string name="dictation_whisper_use">استفاده</string>
+    <string name="title_pref_dictation_ai_service">سرویس هوش مصنوعی برای دیکته</string>
+    <string name="dictation_ai_same">همان توضیحات خودکار</string>
     <string name="title_pref_browse_mode_per_app">حالت مرور را در هر برنامه به خاطر بسپارید</string>
     <string name="title_pref_export_settings">تنظیمات صادرات</string>
     <string name="title_pref_import_settings">تنظیمات وارد کنید</string>

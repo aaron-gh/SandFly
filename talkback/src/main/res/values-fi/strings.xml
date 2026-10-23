@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Ei tunnistettu mitään</string>
     <string name="dictation_unavailable">Puheentunnistus ei ole käytettävissä</string>
     <string name="dictation_field_gone">Tekstikenttä suljettu. Ei kirjoitettu mitään.</string>
+    <string name="dictation_transcription_failed">Puhetta ei litteroitu. Mitään ei kirjoitettu.</string>
+    <string name="title_pref_dictation">Sanelu</string>
+    <string name="title_pref_dictation_recognition">Puheentunnistus</string>
+    <string name="dictation_recognition_automatic">Automaattinen</string>
+    <string name="dictation_recognition_android">Androidin puheentunnistus</string>
+    <string name="dictation_recognition_automatic_using">Automaattinen: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, tarvitsee Gemini API ‑avaimen</string>
+    <string name="dictation_whisper_needs_model">Whisper, tarvitsee ladatun mallin</string>
+    <string name="title_pref_whisper_models">Whisper-mallit</string>
+    <string name="dictation_whisper_use">Käytä</string>
+    <string name="title_pref_dictation_ai_service">Tekoälypalvelu sanelulle</string>
+    <string name="dictation_ai_same">Sama kuin automaattisissa kuvauksissa</string>
     <string name="title_pref_browse_mode_per_app">Muista kunkin sovelluksen selaustila</string>
     <string name="title_pref_export_settings">Vie asetukset</string>
     <string name="title_pref_import_settings">Tuo asetukset</string>

@@ -1751,6 +1751,18 @@
     <string name="dictation_nothing_recognized">שום דבר לא מזוהה</string>
     <string name="dictation_unavailable">זיהוי דיבור אינו זמין</string>
     <string name="dictation_field_gone">שדה הטקסט נסגר. שום דבר לא מודפס.</string>
+    <string name="dictation_transcription_failed">הדיבור לא תומלל. שום דבר לא הוקלד.</string>
+    <string name="title_pref_dictation">הכתבה</string>
+    <string name="title_pref_dictation_recognition">זיהוי דיבור</string>
+    <string name="dictation_recognition_automatic">אוטומטי</string>
+    <string name="dictation_recognition_android">זיהוי דיבור של Android</string>
+    <string name="dictation_recognition_automatic_using">אוטומטי: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, נדרש מפתח API של Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, נדרש מודל שהורד</string>
+    <string name="title_pref_whisper_models">מודלים של Whisper</string>
+    <string name="dictation_whisper_use">שימוש</string>
+    <string name="title_pref_dictation_ai_service">שירות AI להכתבה</string>
+    <string name="dictation_ai_same">זהה לתיאורים האוטומטיים</string>
     <string name="title_pref_browse_mode_per_app">זכור את מצב הגלישה בכל אפליקציה</string>
     <string name="title_pref_export_settings">ייצוא הגדרות</string>
     <string name="title_pref_import_settings">הגדרות ייבוא</string>

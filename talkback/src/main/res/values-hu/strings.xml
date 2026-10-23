@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Semmit sem ismertek fel</string>
     <string name="dictation_unavailable">A beszédfelismerés nem érhető el</string>
     <string name="dictation_field_gone">Szövegmező zárva. Semmi sem gépelt.</string>
+    <string name="dictation_transcription_failed">A beszéd nem lett átírva. Semmi sem lett begépelve.</string>
+    <string name="title_pref_dictation">Diktálás</string>
+    <string name="title_pref_dictation_recognition">Beszédfelismerés</string>
+    <string name="dictation_recognition_automatic">Automatikus</string>
+    <string name="dictation_recognition_android">Android beszédfelismerés</string>
+    <string name="dictation_recognition_automatic_using">Automatikus: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API-kulcs szükséges</string>
+    <string name="dictation_whisper_needs_model">Whisper, letöltött modell szükséges</string>
+    <string name="title_pref_whisper_models">Whisper-modellek</string>
+    <string name="dictation_whisper_use">Használat</string>
+    <string name="title_pref_dictation_ai_service">AI szolgáltatás diktáláshoz</string>
+    <string name="dictation_ai_same">Ugyanaz, mint az automatikus leírásoknál</string>
     <string name="title_pref_browse_mode_per_app">Emlékezzen a böngészési módra az egyes alkalmazásokban</string>
     <string name="title_pref_export_settings">Beállítások exportálása</string>
     <string name="title_pref_import_settings">Beállítások importálása</string>

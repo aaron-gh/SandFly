@@ -1751,6 +1751,18 @@
     <string name="dictation_nothing_recognized">Rien de reconnu</string>
     <string name="dictation_unavailable">Reconnaissance vocale indisponible</string>
     <string name="dictation_field_gone">Champ de texte fermé. Rien de tapé.</string>
+    <string name="dictation_transcription_failed">Voix non transcrite. Rien de tapé.</string>
+    <string name="title_pref_dictation">Dictée</string>
+    <string name="title_pref_dictation_recognition">Reconnaissance vocale</string>
+    <string name="dictation_recognition_automatic">Automatique</string>
+    <string name="dictation_recognition_android">Reconnaissance vocale d’Android</string>
+    <string name="dictation_recognition_automatic_using">Automatique : <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, nécessite une clé API Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, nécessite un modèle téléchargé</string>
+    <string name="title_pref_whisper_models">Modèles Whisper</string>
+    <string name="dictation_whisper_use">Utiliser</string>
+    <string name="title_pref_dictation_ai_service">Service d’IA pour la dictée</string>
+    <string name="dictation_ai_same">Le même que pour les descriptions automatiques</string>
     <string name="title_pref_browse_mode_per_app">Mémoriser le mode navigation pour chaque application</string>
     <string name="title_pref_export_settings">Exporter les paramètres</string>
     <string name="title_pref_import_settings">Importer les paramètres</string>

@@ -1748,6 +1748,18 @@
     <string name="dictation_nothing_recognized">ไม่มีอะไรได้รับการยอมรับ</string>
     <string name="dictation_unavailable">การรู้จำเสียงไม่พร้อมใช้งาน</string>
     <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่มีอะไรพิมพ์</string>
+    <string name="dictation_transcription_failed">ไม่ได้ถอดเสียงพูดเป็นข้อความ ไม่มีอะไรพิมพ์</string>
+    <string name="title_pref_dictation">การพิมพ์ตามเสียงพูด</string>
+    <string name="title_pref_dictation_recognition">การรู้จำเสียงพูด</string>
+    <string name="dictation_recognition_automatic">อัตโนมัติ</string>
+    <string name="dictation_recognition_android">การรู้จำเสียงพูดของ Android</string>
+    <string name="dictation_recognition_automatic_using">อัตโนมัติ: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler ต้องใช้คีย์ API ของ Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper ต้องใช้โมเดลที่ดาวน์โหลดแล้ว</string>
+    <string name="title_pref_whisper_models">โมเดล Whisper</string>
+    <string name="dictation_whisper_use">ใช้</string>
+    <string name="title_pref_dictation_ai_service">บริการเอไอสำหรับการพิมพ์ตามเสียงพูด</string>
+    <string name="dictation_ai_same">เหมือนกับคำอธิบายอัตโนมัติ</string>
     <string name="title_pref_browse_mode_per_app">จำโหมดเรียกดูในแต่ละแอป</string>
     <string name="title_pref_export_settings">การตั้งค่าการส่งออก</string>
     <string name="title_pref_import_settings">นำเข้าการตั้งค่า</string>

@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">කිසිවක් හඳුනාගෙන නැත</string>
     <string name="dictation_unavailable">කථන හඳුනාගැනීමක් නොමැත</string>
     <string name="dictation_field_gone">පෙළ ක්ෂේත්‍රය වසා ඇත. කිසිවක් ටයිප් කර නැත.</string>
+    <string name="dictation_transcription_failed">කථනය පෙළට පරිවර්තනය නොකෙරිණි. කිසිවක් ටයිප් කර නැත.</string>
+    <string name="title_pref_dictation">කියවා ලිවීම</string>
+    <string name="title_pref_dictation_recognition">කථන හඳුනාගැනීම</string>
+    <string name="dictation_recognition_automatic">ස්වයංක්‍රීය</string>
+    <string name="dictation_recognition_android">Android කථන හඳුනාගැනීම</string>
+    <string name="dictation_recognition_automatic_using">ස්වයංක්‍රීය: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API යතුරක් අවශ්‍යයි</string>
+    <string name="dictation_whisper_needs_model">Whisper, බාගත කළ මාදිලියක් අවශ්‍යයි</string>
+    <string name="title_pref_whisper_models">Whisper මාදිලි</string>
+    <string name="dictation_whisper_use">භාවිත කරන්න</string>
+    <string name="title_pref_dictation_ai_service">කියවා ලිවීම සඳහා AI සේවාව</string>
+    <string name="dictation_ai_same">ස්වයංක්‍රීය විස්තර සඳහා වූ එකම</string>
     <string name="title_pref_browse_mode_per_app">එක් එක් යෙදුම තුළ බ්‍රවුස් මාදිලිය මතක තබා ගන්න</string>
     <string name="title_pref_export_settings">අපනයන සැකසුම්</string>
     <string name="title_pref_import_settings">ආයාත සැකසුම්</string>
