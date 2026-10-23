@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">രണ്ട് വോളിയം കീകളും അമർത്തുക</string>
     <string name="notification_dismiss_title">അടച്ചാൽ നിർത്തുക</string>
     <string name="notification_watch_dismiss_title">ഒരു സ്മാർട്ട് വാച്ചിൽ അറിയിപ്പ് നിരസിക്കപ്പെടുമ്പോൾ</string>
-    <string name="notification_app_cancel_title">ആപ്പ് അറിയിപ്പ് നീക്കം ചെയ്യുമ്പോൾ വായന നിർത്തുക</string>
+    <string name="notification_app_cancel_title">ആപ്പ് അത് നീക്കം ചെയ്യുമ്പോൾ നിർത്തുക</string>
     <string name="notification_category_summary">സംഗ്രഹം</string>
     <string name="notification_summary_now_title">അറിയിപ്പുകൾ ഇപ്പോൾ വായിക്കുക</string>
     <string name="notification_summary_daily_title">എല്ലാ ദിവസവും അറിയിപ്പുകൾ വായിക്കുക</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">സമയ അറിയിപ്പുകൾ</string>
-    <string name="notification_clock_interval_title">ഓരോ സമയവും പറയുക</string>
+    <string name="notification_clock_interval_title">സമയം പറയുന്ന ഇടവേള</string>
     <string name="notification_clock_format_title">സമയ ഫോർമാറ്റ്</string>
     <string name="notification_clock_format_message">പ്ലേസ്‌ഹോൾഡറുകൾ: {time}, {date}, {battery} (ബാറ്ററി ശതമാനം).</string>
     <string name="notification_clock_format_default">ഇപ്പോൾ {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> എന്ന് വായിക്കുന്നു</string>
     <string name="notification_app_reset">പുനഃക്രമീകരിക്കുക</string>
     <string name="notification_required_title">കൂടെ അറിയിപ്പുകൾ മാത്രം വായിക്കുക</string>
-    <string name="notification_blocked_title">കൂടെ അറിയിപ്പുകൾ വായിക്കരുത്</string>
+    <string name="notification_blocked_title">ഇവ അടങ്ങിയ അറിയിപ്പുകൾ വായിക്കരുത്</string>
     <string name="notification_private_title">ആപ്പിൻ്റെ പേര് മാത്രം വായിക്കുക</string>
     <string name="notification_replacements_title">വ്യത്യസ്ത ഉച്ചാരണം</string>
     <string name="notification_add_word">ഒരു വാക്ക് ചേർക്കുക</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">അറിയിപ്പ് വായന ഓഫാണ്</string>
     <string name="notification_no_last_notification">അറിയിപ്പൊന്നും വായിച്ചില്ല</string>
     <string name="shortcut_read_notifications">അറിയിപ്പുകൾ വായിക്കുക</string>
-    <string name="shortcut_toggle_notification_speech">അറിയിപ്പ് പ്രസംഗം ഓൺ അല്ലെങ്കിൽ ഓഫ്</string>
+    <string name="shortcut_toggle_notification_speech">അറിയിപ്പ് വായന ഓൺ അല്ലെങ്കിൽ ഓഫ്</string>
     <string name="shortcut_read_last_notification">അവസാന അറിയിപ്പ് വീണ്ടും വായിക്കുക</string>
     <string name="shortcut_stop_notification">അറിയിപ്പ് വായിക്കുന്നത് നിർത്തുക</string>
     <string name="notification_test_posting">ഒരു ടെസ്റ്റ് അറിയിപ്പ് 5 സെക്കൻഡിനുള്ളിൽ വരുന്നു</string>
     <string name="notification_test_not_allowed">ആദ്യം അറിയിപ്പുകൾ കാണിക്കാൻ SandFly-നെ അനുവദിക്കുക</string>
     <string name="notification_test_content_title">SandFly ടെസ്റ്റ്</string>
     <string name="notification_test_content_text">ഇതൊരു പരീക്ഷണ അറിയിപ്പാണ്, നിങ്ങളുടെ അറിയിപ്പ് ക്രമീകരണങ്ങൾക്കൊപ്പം വായിക്കുക. 123456</string>
-    <string name="notification_automation_on">ഉറക്കെ വായിക്കുന്ന അറിയിപ്പുകൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
-    <string name="notification_automation_off">ഉറക്കെ വായിക്കുന്ന അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാക്കുക</string>
-    <string name="notification_automation_toggle">ഉറക്കെ വായിക്കുന്ന അറിയിപ്പുകൾ പ്രവർത്തനക്ഷമമാക്കുക അല്ലെങ്കിൽ പ്രവർത്തനരഹിതമാക്കുക</string>
-    <string name="notification_automation_stop">അറിയിപ്പ് വായിക്കുന്നത് നിർത്തുക</string>
+    <string name="notification_automation_on">അറിയിപ്പ് വായന ഓണാക്കുക</string>
+    <string name="notification_automation_off">അറിയിപ്പ് വായന ഓഫാക്കുക</string>
+    <string name="notification_automation_toggle">അറിയിപ്പ് വായന ഓണാക്കുക അല്ലെങ്കിൽ ഓഫാക്കുക</string>
+    <string name="notification_automation_stop">വായിക്കുന്ന അറിയിപ്പ് നിർത്തുക</string>
     <string name="notification_automation_read_all">അറിയിപ്പുകൾ വായിക്കുക</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> സെക്കൻഡ്</item>

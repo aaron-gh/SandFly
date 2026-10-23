@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">উভয় ভলিউম কী টিপুন</string>
     <string name="notification_dismiss_title">খারিজ করলে বন্ধ করুন</string>
     <string name="notification_watch_dismiss_title">এছাড়াও যখন একটি স্মার্টওয়াচে বিজ্ঞপ্তিটি খারিজ করা হয়</string>
-    <string name="notification_app_cancel_title">অ্যাপটি বিজ্ঞপ্তিটি সরিয়ে দিলে পড়া বন্ধ করুন</string>
+    <string name="notification_app_cancel_title">অ্যাপ সরিয়ে দিলে থামান</string>
     <string name="notification_category_summary">সারাংশ</string>
     <string name="notification_summary_now_title">এখন বিজ্ঞপ্তি পড়ুন</string>
     <string name="notification_summary_daily_title">প্রতিদিন বিজ্ঞপ্তি পড়ুন</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">সময় ঘোষণা</string>
-    <string name="notification_clock_interval_title">প্রতিবার সময় বলুন</string>
+    <string name="notification_clock_interval_title">সময় বলার ব্যবধান</string>
     <string name="notification_clock_format_title">সময়ের ফর্ম্যাট</string>
     <string name="notification_clock_format_message">স্থানধারক: {time}, {date} এবং {battery} (ব্যাটারি শতাংশ)।</string>
     <string name="notification_clock_format_default">এখন {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> হিসাবে বলা হয়েছে</string>
     <string name="notification_app_reset">আবার সেট করুন</string>
     <string name="notification_required_title">শুধুমাত্র সঙ্গে বিজ্ঞপ্তি পড়ুন</string>
-    <string name="notification_blocked_title">সঙ্গে বিজ্ঞপ্তি পড়ুন না</string>
+    <string name="notification_blocked_title">এগুলি থাকা বিজ্ঞপ্তি পড়বেন না</string>
     <string name="notification_private_title">শুধুমাত্র অ্যাপের নাম পড়ুন</string>
     <string name="notification_replacements_title">ভিন্ন উচ্চারণ</string>
     <string name="notification_add_word">একটি শব্দ যোগ করুন</string>
@@ -252,7 +252,7 @@
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযুক্ত</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযুক্ত নেই</string>
     <string name="notification_cond_bluetooth_any">একটি Bluetooth অডিও ডিভাইস সংযুক্ত আছে</string>
-    <string name="notification_cond_bluetooth_any_not">কোনো Bluetooth অডিও ডিভাইস সংযুক্ত নেই৷</string>
+    <string name="notification_cond_bluetooth_any_not">কোনো Bluetooth অডিও ডিভাইস সংযুক্ত নেই</string>
     <string name="notification_cond_wired">তারযুক্ত হেডফোন সংযুক্ত আছে</string>
     <string name="notification_cond_wired_not">তারযুক্ত হেডফোন সংযুক্ত নেই</string>
     <string name="notification_cond_battery_below">ব্যাটারি <xliff:g id="percent" example="20">%1$d</xliff:g> শতাংশের নিচে</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">উচ্চস্বরে বিজ্ঞপ্তি পড়া অক্ষম</string>
     <string name="notification_no_last_notification">কোনো বিজ্ঞপ্তি পড়া হয়নি</string>
     <string name="shortcut_read_notifications">বিজ্ঞপ্তি পড়ুন</string>
-    <string name="shortcut_toggle_notification_speech">বিজ্ঞপ্তি বক্তৃতা চালু বা বন্ধ</string>
+    <string name="shortcut_toggle_notification_speech">বিজ্ঞপ্তি পড়া চালু বা বন্ধ</string>
     <string name="shortcut_read_last_notification">শেষ বিজ্ঞপ্তিটি আবার পড়ুন</string>
     <string name="shortcut_stop_notification">বিজ্ঞপ্তি পড়া বন্ধ করুন</string>
     <string name="notification_test_posting">একটি পরীক্ষার বিজ্ঞপ্তি 5 সেকেন্ডের মধ্যে অনুসরণ করে</string>
     <string name="notification_test_not_allowed">SandFly কে প্রথমে বিজ্ঞপ্তি দেখানোর অনুমতি দিন</string>
     <string name="notification_test_content_title">SandFly পরীক্ষা</string>
     <string name="notification_test_content_text">এটি একটি পরীক্ষার বিজ্ঞপ্তি, আপনার বিজ্ঞপ্তি সেটিংস সহ পড়ুন। 123456</string>
-    <string name="notification_automation_on">উচ্চস্বরে বিজ্ঞপ্তি পড়া সক্ষম করুন</string>
-    <string name="notification_automation_off">উচ্চস্বরে বিজ্ঞপ্তি পড়া অক্ষম করুন</string>
-    <string name="notification_automation_toggle">জোরে জোরে পড়ার বিজ্ঞপ্তিগুলি সক্ষম বা অক্ষম করুন</string>
-    <string name="notification_automation_stop">বিজ্ঞপ্তি পড়া বন্ধ করুন</string>
+    <string name="notification_automation_on">বিজ্ঞপ্তি পড়া চালু করুন</string>
+    <string name="notification_automation_off">বিজ্ঞপ্তি পড়া বন্ধ করুন</string>
+    <string name="notification_automation_toggle">বিজ্ঞপ্তি পড়া চালু বা বন্ধ করুন</string>
+    <string name="notification_automation_stop">যে বিজ্ঞপ্তি পড়া হচ্ছে তা থামান</string>
     <string name="notification_automation_read_all">বিজ্ঞপ্তি পড়ুন</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> সেকেন্ড</item>

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Pressione ambas as teclas de volume</string>
     <string name="notification_dismiss_title">Parar ao dispensar</string>
     <string name="notification_watch_dismiss_title">Além disso, quando a notificação é dispensada em um smartwatch</string>
-    <string name="notification_app_cancel_title">Pare de ler quando o aplicativo remover a notificação</string>
+    <string name="notification_app_cancel_title">Parar quando o app remover a notificação</string>
     <string name="notification_category_summary">Resumo</string>
     <string name="notification_summary_now_title">Ler as notificações agora</string>
     <string name="notification_summary_daily_title">Leia notificações todos os dias</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Anúncios de horário</string>
-    <string name="notification_clock_interval_title">Diga a hora toda</string>
+    <string name="notification_clock_interval_title">Falar a hora a cada</string>
     <string name="notification_clock_format_title">Formato de hora</string>
     <string name="notification_clock_format_message">Espaços reservados: {time}, {date} e {battery} (a porcentagem da bateria).</string>
     <string name="notification_clock_format_default">São {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">dito como <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Redefinir</string>
     <string name="notification_required_title">Leia apenas notificações com</string>
-    <string name="notification_blocked_title">Não leia notificações com</string>
+    <string name="notification_blocked_title">Não ler notificações que contêm</string>
     <string name="notification_private_title">Leia apenas o nome do aplicativo para</string>
     <string name="notification_replacements_title">Pronúncia diferente</string>
     <string name="notification_add_word">Adicionar uma palavra</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Leitura de notificações desativada</string>
     <string name="notification_no_last_notification">Nenhuma notificação foi lida</string>
     <string name="shortcut_read_notifications">Ler notificações</string>
-    <string name="shortcut_toggle_notification_speech">Fala de notificação ativada ou desativada</string>
+    <string name="shortcut_toggle_notification_speech">Ativar ou desativar a leitura de notificações</string>
     <string name="shortcut_read_last_notification">Leia a última notificação novamente</string>
     <string name="shortcut_stop_notification">Pare de ler a notificação</string>
     <string name="notification_test_posting">Uma notificação de teste segue em 5 segundos</string>
     <string name="notification_test_not_allowed">Permitir que SandFly mostre notificações primeiro</string>
     <string name="notification_test_content_title">Teste do SandFly</string>
     <string name="notification_test_content_text">Esta é uma notificação de teste, leia com suas configurações de notificação. 123456</string>
-    <string name="notification_automation_on">Habilite a leitura de notificações em voz alta</string>
-    <string name="notification_automation_off">Desativar notificações de leitura em voz alta</string>
-    <string name="notification_automation_toggle">Habilite ou desabilite a leitura de notificações em voz alta</string>
+    <string name="notification_automation_on">Ativar a leitura de notificações</string>
+    <string name="notification_automation_off">Desativar a leitura de notificações</string>
+    <string name="notification_automation_toggle">Ativar ou desativar a leitura de notificações</string>
     <string name="notification_automation_stop">Interromper a leitura da notificação</string>
     <string name="notification_automation_read_all">Ler notificações</string>
     <plurals name="notification_seconds">

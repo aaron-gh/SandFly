@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">กดปุ่มปรับระดับเสียงทั้งสองปุ่ม</string>
     <string name="notification_dismiss_title">หยุดอ่านเมื่อปิดการแจ้งเตือน</string>
     <string name="notification_watch_dismiss_title">นอกจากนี้เมื่อการแจ้งเตือนบนสมาร์ทวอทช์ถูกปิด</string>
-    <string name="notification_app_cancel_title">หยุดอ่านเมื่อแอปลบการแจ้งเตือน</string>
+    <string name="notification_app_cancel_title">หยุดเมื่อแอปนำการแจ้งเตือนออก</string>
     <string name="notification_category_summary">สรุป</string>
     <string name="notification_summary_now_title">อ่านการแจ้งเตือนตอนนี้</string>
     <string name="notification_summary_daily_title">อ่านการแจ้งเตือนทุกวัน</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ประกาศเวลา</string>
-    <string name="notification_clock_interval_title">บอกเวลาทุกครั้ง</string>
+    <string name="notification_clock_interval_title">ช่วงเวลาบอกเวลา</string>
     <string name="notification_clock_format_title">รูปแบบเวลา</string>
     <string name="notification_clock_format_message">ตัวยึด: {time}, {date} และ {battery} (เปอร์เซ็นต์แบตเตอรี่)</string>
     <string name="notification_clock_format_default">ขณะนี้เวลา {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">อ่านว่า <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">รีเซ็ต</string>
     <string name="notification_required_title">อ่านการแจ้งเตือนด้วยเท่านั้น</string>
-    <string name="notification_blocked_title">อย่าอ่านการแจ้งเตือนด้วย</string>
+    <string name="notification_blocked_title">ไม่อ่านการแจ้งเตือนที่มี</string>
     <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับ</string>
     <string name="notification_replacements_title">การอ่านแบบอื่น</string>
     <string name="notification_add_word">เพิ่มคำ</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ปิดการอ่านออกเสียงการแจ้งเตือนแล้ว</string>
     <string name="notification_no_last_notification">ไม่มีการอ่านการแจ้งเตือน</string>
     <string name="shortcut_read_notifications">อ่านการแจ้งเตือน</string>
-    <string name="shortcut_toggle_notification_speech">เปิดหรือปิดคำพูดแจ้งเตือน</string>
+    <string name="shortcut_toggle_notification_speech">เปิดหรือปิดการอ่านการแจ้งเตือน</string>
     <string name="shortcut_read_last_notification">อ่านการแจ้งเตือนครั้งล่าสุดอีกครั้ง</string>
     <string name="shortcut_stop_notification">หยุดอ่านการแจ้งเตือน</string>
     <string name="notification_test_posting">การแจ้งเตือนการทดสอบจะตามมาใน 5 วินาที</string>
     <string name="notification_test_not_allowed">อนุญาตให้ SandFly แสดงการแจ้งเตือนก่อน</string>
     <string name="notification_test_content_title">การทดสอบ SandFly</string>
     <string name="notification_test_content_text">นี่คือการแจ้งเตือนทดสอบ โปรดอ่านการตั้งค่าการแจ้งเตือนของคุณ 123456</string>
-    <string name="notification_automation_on">เปิดใช้งานการแจ้งเตือนการอ่านออกเสียง</string>
-    <string name="notification_automation_off">ปิดการอ่านออกเสียงการแจ้งเตือน</string>
-    <string name="notification_automation_toggle">เปิดหรือปิดการแจ้งเตือนการอ่านออกเสียง</string>
-    <string name="notification_automation_stop">หยุดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_on">เปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_off">ปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_toggle">เปิดหรือปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_stop">หยุดอ่านการแจ้งเตือนที่กำลังอ่าน</string>
     <string name="notification_automation_read_all">อ่านการแจ้งเตือน</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> วินาที</item>

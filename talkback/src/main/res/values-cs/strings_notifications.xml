@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Stiskněte obě tlačítka hlasitosti</string>
     <string name="notification_dismiss_title">Zastavit po zavření</string>
     <string name="notification_watch_dismiss_title">Také když je oznámení na chytrých hodinkách zrušeno</string>
-    <string name="notification_app_cancel_title">Přestaňte číst, když aplikace odstraní oznámení</string>
+    <string name="notification_app_cancel_title">Zastavit, když ho aplikace odstraní</string>
     <string name="notification_category_summary">Shrnutí</string>
     <string name="notification_summary_now_title">Přečíst oznámení nyní</string>
     <string name="notification_summary_daily_title">Přečtěte si oznámení každý den</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Hlášení času</string>
-    <string name="notification_clock_interval_title">Pokaždé řekni čas</string>
+    <string name="notification_clock_interval_title">Oznamovat čas každých</string>
     <string name="notification_clock_format_title">Formát času</string>
     <string name="notification_clock_format_message">Zástupné symboly: {time}, {date} a {battery} (procento baterie).</string>
     <string name="notification_clock_format_default">Je {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">řečeno jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetovat</string>
     <string name="notification_required_title">Oznámení číst pouze pomocí</string>
-    <string name="notification_blocked_title">Nečíst oznámení pomocí</string>
+    <string name="notification_blocked_title">Nečíst oznámení obsahující</string>
     <string name="notification_private_title">Číst pouze název aplikace</string>
     <string name="notification_replacements_title">Jiná výslovnost</string>
     <string name="notification_add_word">Přidat slovo</string>
@@ -255,8 +255,8 @@
     <string name="notification_cond_bluetooth_any_not">Není připojeno žádné zvukové zařízení Bluetooth</string>
     <string name="notification_cond_wired">Jsou připojena kabelová sluchátka</string>
     <string name="notification_cond_wired_not">Kabelová sluchátka nejsou připojena</string>
-    <string name="notification_cond_battery_below">Baterie je pod <xliff:g id="percent" example="20">%1$d</xliff:g> procent</string>
-    <string name="notification_cond_battery_below_not">Baterie je na <xliff:g id="percent" example="20">%1$d</xliff:g> procent nebo více</string>
+    <string name="notification_cond_battery_below">Stav baterie je nižší než <xliff:g id="percent" example="20">%1$d</xliff:g> %%</string>
+    <string name="notification_cond_battery_below_not">Stav baterie je <xliff:g id="percent" example="20">%1$d</xliff:g> %% nebo více</string>
     <string name="notification_cond_charging">Telefon se nabíjí</string>
     <string name="notification_cond_charging_not">Telefon se nenabíjí</string>
     <string name="notification_cond_locked">Telefon je uzamčen</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Čtení oznámení nahlas zakázáno</string>
     <string name="notification_no_last_notification">Nebylo přečteno žádné oznámení</string>
     <string name="shortcut_read_notifications">Přečíst oznámení</string>
-    <string name="shortcut_toggle_notification_speech">Zapnutí nebo vypnutí řeči oznámení</string>
+    <string name="shortcut_toggle_notification_speech">Zapnutí nebo vypnutí čtení oznámení</string>
     <string name="shortcut_read_last_notification">Přečtěte si znovu poslední oznámení</string>
     <string name="shortcut_stop_notification">Přestaňte číst oznámení</string>
     <string name="notification_test_posting">Za 5 sekund následuje testovací oznámení</string>
     <string name="notification_test_not_allowed">Povolte SandFly, aby nejprve zobrazovala oznámení</string>
     <string name="notification_test_content_title">SandFly test</string>
     <string name="notification_test_content_text">Toto je testovací oznámení, přečtěte si jej s nastavením oznámení. 123456</string>
-    <string name="notification_automation_on">Povolit čtení oznámení nahlas</string>
-    <string name="notification_automation_off">Zakázat čtení oznámení nahlas</string>
-    <string name="notification_automation_toggle">Povolit nebo zakázat čtení oznámení nahlas</string>
-    <string name="notification_automation_stop">Zastavte čtení oznámení</string>
+    <string name="notification_automation_on">Zapnout čtení oznámení</string>
+    <string name="notification_automation_off">Vypnout čtení oznámení</string>
+    <string name="notification_automation_toggle">Zapnout nebo vypnout čtení oznámení</string>
+    <string name="notification_automation_stop">Zastavit čtení oznámení</string>
     <string name="notification_automation_read_all">Přečíst oznámení</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekunda</item>

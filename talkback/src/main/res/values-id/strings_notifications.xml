@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Tekan kedua tombol volume</string>
     <string name="notification_dismiss_title">Berhenti saat ditutup</string>
     <string name="notification_watch_dismiss_title">Juga ketika notifikasi ditutup di jam tangan pintar</string>
-    <string name="notification_app_cancel_title">Berhenti membaca ketika aplikasi menghapus notifikasi</string>
+    <string name="notification_app_cancel_title">Berhenti saat aplikasi menghapusnya</string>
     <string name="notification_category_summary">Ringkasan</string>
     <string name="notification_summary_now_title">Baca notifikasi sekarang</string>
     <string name="notification_summary_daily_title">Baca notifikasi setiap hari</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">dikatakan sebagai <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Setel ulang</string>
     <string name="notification_required_title">Hanya baca notifikasi dengan</string>
-    <string name="notification_blocked_title">Jangan membaca notifikasi dengan</string>
+    <string name="notification_blocked_title">Jangan bacakan notifikasi yang berisi</string>
     <string name="notification_private_title">Baca hanya nama aplikasinya</string>
     <string name="notification_replacements_title">Ucapan berbeda</string>
     <string name="notification_add_word">Tambahkan sebuah kata</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Pembacaan notifikasi dinonaktifkan</string>
     <string name="notification_no_last_notification">Tidak ada pemberitahuan yang dibaca</string>
     <string name="shortcut_read_notifications">Baca notifikasi</string>
-    <string name="shortcut_toggle_notification_speech">Ucapan notifikasi aktif atau nonaktif</string>
+    <string name="shortcut_toggle_notification_speech">Pembacaan notifikasi aktif atau nonaktif</string>
     <string name="shortcut_read_last_notification">Baca lagi notifikasi terakhir</string>
     <string name="shortcut_stop_notification">Berhenti membaca notifikasi</string>
     <string name="notification_test_posting">Pemberitahuan pengujian menyusul dalam 5 detik</string>
     <string name="notification_test_not_allowed">Izinkan SandFly menampilkan notifikasi terlebih dahulu</string>
     <string name="notification_test_content_title">Tes SandFly</string>
     <string name="notification_test_content_text">Ini adalah notifikasi percobaan, baca dengan pengaturan notifikasi Anda. 123456</string>
-    <string name="notification_automation_on">Aktifkan pemberitahuan membaca dengan keras</string>
-    <string name="notification_automation_off">Nonaktifkan notifikasi membaca dengan keras</string>
-    <string name="notification_automation_toggle">Mengaktifkan atau menonaktifkan notifikasi membaca dengan keras</string>
-    <string name="notification_automation_stop">Hentikan notifikasi yang sedang dibaca</string>
+    <string name="notification_automation_on">Aktifkan pembacaan notifikasi</string>
+    <string name="notification_automation_off">Nonaktifkan pembacaan notifikasi</string>
+    <string name="notification_automation_toggle">Aktifkan atau nonaktifkan pembacaan notifikasi</string>
+    <string name="notification_automation_stop">Hentikan pembacaan notifikasi</string>
     <string name="notification_automation_read_all">Baca notifikasi</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> detik</item>

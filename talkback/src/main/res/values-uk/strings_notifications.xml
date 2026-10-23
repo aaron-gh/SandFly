@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Натисніть обидві клавіші гучності</string>
     <string name="notification_dismiss_title">Припинити читання, коли сповіщення закрито</string>
     <string name="notification_watch_dismiss_title">Також коли сповіщення відхилено на смарт-годиннику</string>
-    <string name="notification_app_cancel_title">Припиніть читати, коли програма видалить сповіщення</string>
+    <string name="notification_app_cancel_title">Припиняти, коли програма видаляє сповіщення</string>
     <string name="notification_category_summary">Зведення</string>
     <string name="notification_summary_now_title">Прочитати сповіщення зараз</string>
     <string name="notification_summary_daily_title">Читайте сповіщення щодня</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Оголошення часу</string>
-    <string name="notification_clock_interval_title">Кожен раз називайте час</string>
+    <string name="notification_clock_interval_title">Називати час кожні</string>
     <string name="notification_clock_format_title">Формат часу</string>
     <string name="notification_clock_format_message">Заповнювачі: {time}, {date} та {battery} (відсоток батареї).</string>
     <string name="notification_clock_format_default">Зараз {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">вимовляється як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Скинути</string>
     <string name="notification_required_title">Лише читати сповіщення за допомогою</string>
-    <string name="notification_blocked_title">Не читайте сповіщення за допомогою</string>
+    <string name="notification_blocked_title">Не читати сповіщення, що містять</string>
     <string name="notification_private_title">Прочитайте лише назву програми для</string>
     <string name="notification_replacements_title">Інша вимова</string>
     <string name="notification_add_word">Додати слово</string>
@@ -255,8 +255,8 @@
     <string name="notification_cond_bluetooth_any_not">Жодного аудіопристрою Bluetooth не підключено</string>
     <string name="notification_cond_wired">Підключено дротові навушники</string>
     <string name="notification_cond_wired_not">Дротові навушники не підключені</string>
-    <string name="notification_cond_battery_below">Батарея нижче <xliff:g id="percent" example="20">%1$d</xliff:g> відсотків</string>
-    <string name="notification_cond_battery_below_not">Акумулятор <xliff:g id="percent" example="20">%1$d</xliff:g> відсотків або більше</string>
+    <string name="notification_cond_battery_below">Заряд батареї нижче <xliff:g id="percent" example="20">%1$d</xliff:g> відсотків</string>
+    <string name="notification_cond_battery_below_not">Заряд батареї <xliff:g id="percent" example="20">%1$d</xliff:g> відсотків або більше</string>
     <string name="notification_cond_charging">Телефон заряджається</string>
     <string name="notification_cond_charging_not">Телефон не заряджається</string>
     <string name="notification_cond_locked">Телефон заблокований</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Читання сповіщень вголос вимкнено</string>
     <string name="notification_no_last_notification">Жодне сповіщення не було прочитано</string>
     <string name="shortcut_read_notifications">Читати сповіщення</string>
-    <string name="shortcut_toggle_notification_speech">Увімкнути або вимкнути мовлення сповіщень</string>
+    <string name="shortcut_toggle_notification_speech">Увімкнення або вимкнення читання сповіщень</string>
     <string name="shortcut_read_last_notification">Прочитайте останнє сповіщення ще раз</string>
     <string name="shortcut_stop_notification">Припиніть читати сповіщення</string>
     <string name="notification_test_posting">Через 5 секунд приходить тестове сповіщення</string>
     <string name="notification_test_not_allowed">Дозвольте SandFly спочатку показувати сповіщення</string>
     <string name="notification_test_content_title">Тест SandFly</string>
     <string name="notification_test_content_text">Це тестове сповіщення, читайте в налаштуваннях сповіщень. 123456</string>
-    <string name="notification_automation_on">Увімкнути читання сповіщень вголос</string>
-    <string name="notification_automation_off">Вимкнути читання сповіщень вголос</string>
-    <string name="notification_automation_toggle">Увімкніть або вимкніть читання сповіщень вголос</string>
-    <string name="notification_automation_stop">Зупиніть читання сповіщення</string>
+    <string name="notification_automation_on">Увімкнути читання сповіщень</string>
+    <string name="notification_automation_off">Вимкнути читання сповіщень</string>
+    <string name="notification_automation_toggle">Увімкнути або вимкнути читання сповіщень</string>
+    <string name="notification_automation_stop">Зупинити читання сповіщення</string>
     <string name="notification_automation_read_all">Читати сповіщення</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>

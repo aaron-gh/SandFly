@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">दुबै भोल्युम कुञ्जीहरू थिच्नुहोस्</string>
     <string name="notification_dismiss_title">खारेज गर्दा रोक्नुहोस्</string>
     <string name="notification_watch_dismiss_title">साथै स्मार्टवाचमा सूचना खारेज हुँदा</string>
-    <string name="notification_app_cancel_title">एपले सूचना हटाउँदा पढ्न रोक्नुहोस्</string>
+    <string name="notification_app_cancel_title">एपले हटाएपछि रोक्नुहोस्</string>
     <string name="notification_category_summary">सारांश</string>
     <string name="notification_summary_now_title">अब सूचनाहरू पढ्नुहोस्</string>
     <string name="notification_summary_daily_title">हरेक दिन सूचनाहरू पढ्नुहोस्</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">समय घोषणाहरू</string>
-    <string name="notification_clock_interval_title">प्रत्येक समय भन्नुहोस्</string>
+    <string name="notification_clock_interval_title">समय भन्ने अन्तराल</string>
     <string name="notification_clock_format_title">समयको फर्म्याट</string>
     <string name="notification_clock_format_message">प्लेसहोल्डरहरू: {time}, {date} र {battery} (ब्याट्री प्रतिशत)।</string>
     <string name="notification_clock_format_default">अहिले {time} भयो</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> भनियो</string>
     <string name="notification_app_reset">रिसेट गर्नुहोस्</string>
     <string name="notification_required_title">सूचनाहरू मात्र पढ्नुहोस्</string>
-    <string name="notification_blocked_title">सँग सूचनाहरू नपढ्नुहोस्</string>
+    <string name="notification_blocked_title">यी भएका सूचनाहरू नपढ्नुहोस्</string>
     <string name="notification_private_title">को लागी एप नाम मात्र पढ्नुहोस्</string>
     <string name="notification_replacements_title">फरक उच्चारण</string>
     <string name="notification_add_word">एक शब्द थप्नुहोस्</string>
@@ -251,14 +251,14 @@
     <string name="notification_permission_needed">SandFly लाई यो अवस्थाको लागि अनुमति चाहिन्छ</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> जडान गरिएको छ</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> जडान गरिएको छैन</string>
-    <string name="notification_cond_bluetooth_any">A Bluetooth अडियो यन्त्र जडान गरिएको छ</string>
+    <string name="notification_cond_bluetooth_any">एउटा Bluetooth अडियो यन्त्र जडान गरिएको छ</string>
     <string name="notification_cond_bluetooth_any_not">कुनै Bluetooth अडियो यन्त्र जडान गरिएको छैन</string>
     <string name="notification_cond_wired">तारयुक्त हेडफोनहरू जोडिएका छन्</string>
     <string name="notification_cond_wired_not">तार भएका हेडफोनहरू जडान भएका छैनन्</string>
     <string name="notification_cond_battery_below">ब्याट्री <xliff:g id="percent" example="20">%1$d</xliff:g> प्रतिशत भन्दा कम छ</string>
     <string name="notification_cond_battery_below_not">ब्याट्री <xliff:g id="percent" example="20">%1$d</xliff:g> प्रतिशत वा सोभन्दा बढी छ</string>
     <string name="notification_cond_charging">फोन चार्ज भइरहेको छ</string>
-    <string name="notification_cond_charging_not">फोन चार्ज छैन</string>
+    <string name="notification_cond_charging_not">फोन चार्ज भइरहेको छैन</string>
     <string name="notification_cond_locked">फोन लक छ</string>
     <string name="notification_cond_locked_not">फोन अनलक छ</string>
     <string name="notification_cond_screen_on">स्क्रिन अन छ</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">सूचना पढ्ने सुविधा अफ</string>
     <string name="notification_no_last_notification">कुनै सूचना पढिएन</string>
     <string name="shortcut_read_notifications">सूचनाहरू पढ्नुहोस्</string>
-    <string name="shortcut_toggle_notification_speech">सूचना भाषण सक्रिय वा बन्द</string>
+    <string name="shortcut_toggle_notification_speech">सूचना पढ्ने सुविधा अन वा अफ</string>
     <string name="shortcut_read_last_notification">पछिल्लो सूचना फेरि पढ्नुहोस्</string>
     <string name="shortcut_stop_notification">सूचना पढ्न रोक्नुहोस्</string>
     <string name="notification_test_posting">एक परीक्षण सूचना 5 सेकेन्डमा पछ्याउँछ</string>
     <string name="notification_test_not_allowed">SandFly लाई पहिले सूचनाहरू देखाउन अनुमति दिनुहोस्</string>
     <string name="notification_test_content_title">SandFly परीक्षण</string>
     <string name="notification_test_content_text">यो एक परीक्षण सूचना हो, तपाईंको सूचना सेटिङहरू पढ्नुहोस्। १२३४५६</string>
-    <string name="notification_automation_on">ठूलो स्वरमा पढ्ने सूचनाहरू सक्षम गर्नुहोस्</string>
-    <string name="notification_automation_off">ठूलो स्वरमा पढ्ने सूचनाहरू असक्षम गर्नुहोस्</string>
-    <string name="notification_automation_toggle">ठूलो स्वरमा पढ्ने सूचनाहरू सक्षम वा असक्षम गर्नुहोस्</string>
-    <string name="notification_automation_stop">सूचना पढ्न रोक्नुहोस्</string>
+    <string name="notification_automation_on">सूचना पढ्ने सुविधा अन गर्नुहोस्</string>
+    <string name="notification_automation_off">सूचना पढ्ने सुविधा अफ गर्नुहोस्</string>
+    <string name="notification_automation_toggle">सूचना पढ्ने सुविधा अन वा अफ गर्नुहोस्</string>
+    <string name="notification_automation_stop">पढिँदै गरेको सूचना रोक्नुहोस्</string>
     <string name="notification_automation_read_all">सूचनाहरू पढ्नुहोस्</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> सेकेन्ड</item>

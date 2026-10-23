@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">დააჭირეთ ხმის ორივე ღილაკს</string>
     <string name="notification_dismiss_title">შეწყვეტა დახურვისას</string>
     <string name="notification_watch_dismiss_title">ასევე, როდესაც შეტყობინება გაუქმებულია სმარტ საათზე</string>
-    <string name="notification_app_cancel_title">შეწყვიტე კითხვა, როდესაც აპი წაშლის შეტყობინებას</string>
+    <string name="notification_app_cancel_title">შეწყვეტა, როცა აპი მას წაშლის</string>
     <string name="notification_category_summary">შეჯამება</string>
     <string name="notification_summary_now_title">შეტყობინებების ახლავე წაკითხვა</string>
     <string name="notification_summary_daily_title">წაიკითხეთ შეტყობინებები ყოველდღე</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">დროის გამოცხადება</string>
-    <string name="notification_clock_interval_title">თქვით დრო ყოველ ჯერზე</string>
+    <string name="notification_clock_interval_title">დროის თქმის ინტერვალი</string>
     <string name="notification_clock_format_title">დროის ფორმატი</string>
     <string name="notification_clock_format_message">ჩანაცვლების ადგილები: {time}, {date} და {battery} (ბატარეის პროცენტი).</string>
     <string name="notification_clock_format_default">ახლა {time}-ია</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">ნათქვამია როგორც <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">გადაყენება</string>
     <string name="notification_required_title">მხოლოდ შეტყობინებების წაკითხვა</string>
-    <string name="notification_blocked_title">ნუ წაიკითხავთ შეტყობინებებს</string>
+    <string name="notification_blocked_title">არ წაიკითხოს შეტყობინებები, რომლებიც შეიცავს</string>
     <string name="notification_private_title">წაიკითხეთ მხოლოდ აპლიკაციის სახელი</string>
     <string name="notification_replacements_title">განსხვავებული წარმოთქმა</string>
     <string name="notification_add_word">სიტყვის დამატება</string>
@@ -256,7 +256,7 @@
     <string name="notification_cond_wired">სადენიანი ყურსასმენები დაკავშირებულია</string>
     <string name="notification_cond_wired_not">სადენიანი ყურსასმენები არ არის დაკავშირებული</string>
     <string name="notification_cond_battery_below">ბატარეა <xliff:g id="percent" example="20">%1$d</xliff:g> პროცენტზე დაბალია</string>
-    <string name="notification_cond_battery_below_not">ბატარეა არის <xliff:g id="percent" example="20">%1$d</xliff:g> პროცენტი ან მეტი</string>
+    <string name="notification_cond_battery_below_not">ბატარეის დონე <xliff:g id="percent" example="20">%1$d</xliff:g> პროცენტი ან მეტია</string>
     <string name="notification_cond_charging">ტელეფონი იტენება</string>
     <string name="notification_cond_charging_not">ტელეფონი არ იტენება</string>
     <string name="notification_cond_locked">ტელეფონი დაკეტილია</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">შეტყობინებების ხმამაღლა წაკითხვა გამორთულია</string>
     <string name="notification_no_last_notification">შეტყობინება არ წაკითხულა</string>
     <string name="shortcut_read_notifications">შეტყობინებების წაკითხვა</string>
-    <string name="shortcut_toggle_notification_speech">შეტყობინების გამოსვლა ჩართულია ან გამორთულია</string>
+    <string name="shortcut_toggle_notification_speech">შეტყობინებების წაკითხვის ჩართვა ან გამორთვა</string>
     <string name="shortcut_read_last_notification">კიდევ ერთხელ წაიკითხეთ ბოლო შეტყობინება</string>
     <string name="shortcut_stop_notification">შეწყვიტე შეტყობინების კითხვა</string>
     <string name="notification_test_posting">ტესტის შეტყობინება მოდის 5 წამში</string>
     <string name="notification_test_not_allowed">მიეცით საშუალება SandFly-ს, ჯერ აჩვენოს შეტყობინებები</string>
     <string name="notification_test_content_title">SandFly ტესტი</string>
     <string name="notification_test_content_text">ეს არის სატესტო შეტყობინება, წაიკითხეთ თქვენი შეტყობინებების პარამეტრებით. 123456</string>
-    <string name="notification_automation_on">ჩართეთ შეტყობინებების ხმამაღლა წაკითხვა</string>
-    <string name="notification_automation_off">გამორთეთ შეტყობინებების ხმამაღლა წაკითხვა</string>
-    <string name="notification_automation_toggle">ჩართეთ ან გამორთეთ შეტყობინებების ხმამაღლა წაკითხვა</string>
-    <string name="notification_automation_stop">შეაჩერე შეტყობინების წაკითხვა</string>
+    <string name="notification_automation_on">შეტყობინებების წაკითხვის ჩართვა</string>
+    <string name="notification_automation_off">შეტყობინებების წაკითხვის გამორთვა</string>
+    <string name="notification_automation_toggle">შეტყობინებების წაკითხვის ჩართვა ან გამორთვა</string>
+    <string name="notification_automation_stop">შეტყობინების წაკითხვის შეწყვეტა</string>
     <string name="notification_automation_read_all">შეტყობინებების წაკითხვა</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> წამი</item>

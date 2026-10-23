@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">ಎರಡೂ ವಾಲ್ಯೂಮ್ ಕೀಗಳನ್ನು ಒತ್ತಿರಿ</string>
     <string name="notification_dismiss_title">ವಜಾಗೊಳಿಸಿದಾಗ ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_watch_dismiss_title">ಸ್ಮಾರ್ಟ್ ವಾಚ್‌ನಲ್ಲಿ ಅಧಿಸೂಚನೆಯನ್ನು ವಜಾಗೊಳಿಸಿದಾಗ</string>
-    <string name="notification_app_cancel_title">ಅಪ್ಲಿಕೇಶನ್ ಅಧಿಸೂಚನೆಯನ್ನು ತೆಗೆದುಹಾಕಿದಾಗ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
+    <string name="notification_app_cancel_title">ಆ್ಯಪ್ ಅದನ್ನು ತೆಗೆದುಹಾಕಿದಾಗ ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_category_summary">ಸಾರಾಂಶ</string>
     <string name="notification_summary_now_title">ಈಗ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
     <string name="notification_summary_daily_title">ಪ್ರತಿದಿನ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ಸಮಯದ ಪ್ರಕಟಣೆಗಳು</string>
-    <string name="notification_clock_interval_title">ಪ್ರತಿ ಸಮಯವನ್ನು ಹೇಳಿ</string>
+    <string name="notification_clock_interval_title">ಸಮಯ ಹೇಳುವ ಅಂತರ</string>
     <string name="notification_clock_format_title">ಸಮಯದ ಫಾರ್ಮ್ಯಾಟ್</string>
     <string name="notification_clock_format_message">ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು: {time}, {date} ಮತ್ತು {battery} (ಬ್ಯಾಟರಿ ಶೇಕಡಾವಾರು).</string>
     <string name="notification_clock_format_default">ಈಗ {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ಎಂದು ಓದಲಾಗುತ್ತದೆ</string>
     <string name="notification_app_reset">ಮರುಹೊಂದಿಸಿ</string>
     <string name="notification_required_title">ಇದರೊಂದಿಗೆ ಅಧಿಸೂಚನೆಗಳನ್ನು ಮಾತ್ರ ಓದಿ</string>
-    <string name="notification_blocked_title">ಇದರೊಂದಿಗೆ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಬೇಡಿ</string>
+    <string name="notification_blocked_title">ಇವುಗಳನ್ನು ಒಳಗೊಂಡ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಬೇಡಿ</string>
     <string name="notification_private_title">ಅಪ್ಲಿಕೇಶನ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಓದಿ</string>
     <string name="notification_replacements_title">ಬೇರೆ ಉಚ್ಚಾರಣೆ</string>
     <string name="notification_add_word">ಒಂದು ಪದವನ್ನು ಸೇರಿಸಿ</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ಅಧಿಸೂಚನೆಗಳನ್ನು ಜೋರಾಗಿ ಓದುವುದನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
     <string name="notification_no_last_notification">ಯಾವುದೇ ಅಧಿಸೂಚನೆಯನ್ನು ಓದಲಾಗಿಲ್ಲ</string>
     <string name="shortcut_read_notifications">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
-    <string name="shortcut_toggle_notification_speech">ಅಧಿಸೂಚನೆ ಭಾಷಣ ಆನ್ ಅಥವಾ ಆಫ್</string>
+    <string name="shortcut_toggle_notification_speech">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದುವುದು ಆನ್ ಅಥವಾ ಆಫ್</string>
     <string name="shortcut_read_last_notification">ಕೊನೆಯ ಅಧಿಸೂಚನೆಯನ್ನು ಮತ್ತೊಮ್ಮೆ ಓದಿ</string>
     <string name="shortcut_stop_notification">ಅಧಿಸೂಚನೆಯನ್ನು ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_test_posting">ಪರೀಕ್ಷಾ ಅಧಿಸೂಚನೆಯು 5 ಸೆಕೆಂಡುಗಳಲ್ಲಿ ಅನುಸರಿಸುತ್ತದೆ</string>
     <string name="notification_test_not_allowed">ಮೊದಲು ಅಧಿಸೂಚನೆಗಳನ್ನು ತೋರಿಸಲು SandFly ಗೆ ಅನುಮತಿಸಿ</string>
     <string name="notification_test_content_title">SandFly ಪರೀಕ್ಷೆ</string>
     <string name="notification_test_content_text">ಇದು ಪರೀಕ್ಷಾ ಅಧಿಸೂಚನೆಯಾಗಿದೆ, ನಿಮ್ಮ ಅಧಿಸೂಚನೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳೊಂದಿಗೆ ಓದಿ. 123456</string>
-    <string name="notification_automation_on">ಗಟ್ಟಿಯಾಗಿ ಓದುವ ಅಧಿಸೂಚನೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="notification_automation_off">ಗಟ್ಟಿಯಾಗಿ ಓದುವ ಅಧಿಸೂಚನೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="notification_automation_toggle">ಗಟ್ಟಿಯಾಗಿ ಓದುವ ಅಧಿಸೂಚನೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ ಅಥವಾ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ</string>
-    <string name="notification_automation_stop">ಅಧಿಸೂಚನೆಯನ್ನು ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
+    <string name="notification_automation_on">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದುವುದನ್ನು ಆನ್ ಮಾಡಿ</string>
+    <string name="notification_automation_off">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದುವುದನ್ನು ಆಫ್ ಮಾಡಿ</string>
+    <string name="notification_automation_toggle">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದುವುದನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಿ</string>
+    <string name="notification_automation_stop">ಓದಲಾಗುತ್ತಿರುವ ಅಧಿಸೂಚನೆಯನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_automation_read_all">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಸೆಕೆಂಡ್</item>

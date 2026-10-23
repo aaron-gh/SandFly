@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Притисните оба тастера за јачину звука</string>
     <string name="notification_dismiss_title">Заустави при затварању</string>
     <string name="notification_watch_dismiss_title">Такође када је обавештење одбачено на паметном сату</string>
-    <string name="notification_app_cancel_title">Престаните да читате када апликација уклони обавештење</string>
+    <string name="notification_app_cancel_title">Заустави када га апликација уклони</string>
     <string name="notification_category_summary">Резиме</string>
     <string name="notification_summary_now_title">Прочитај обавештења сада</string>
     <string name="notification_summary_daily_title">Читајте обавештења сваки дан</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Најава времена</string>
-    <string name="notification_clock_interval_title">Реци време сваки</string>
+    <string name="notification_clock_interval_title">Изговарај време на сваких</string>
     <string name="notification_clock_format_title">Формат времена</string>
     <string name="notification_clock_format_message">Чувари места: {time}, {date} и {battery} (проценат батерије).</string>
     <string name="notification_clock_format_default">Сада је {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">речено као <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Ресетуј</string>
     <string name="notification_required_title">Читајте само обавештења са</string>
-    <string name="notification_blocked_title">Не читајте обавештења са</string>
+    <string name="notification_blocked_title">Не читати обавештења која садрже</string>
     <string name="notification_private_title">Прочитајте само назив апликације за</string>
     <string name="notification_replacements_title">Другачији изговор</string>
     <string name="notification_add_word">Додај реч</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Читање обавештења наглас је онемогућено</string>
     <string name="notification_no_last_notification">Није прочитано ниједно обавештење</string>
     <string name="shortcut_read_notifications">Прочитај обавештења</string>
-    <string name="shortcut_toggle_notification_speech">Говор обавештења укључен или искључен</string>
+    <string name="shortcut_toggle_notification_speech">Укључивање или искључивање читања обавештења</string>
     <string name="shortcut_read_last_notification">Прочитајте последње обавештење поново</string>
     <string name="shortcut_stop_notification">Престаните да читате обавештење</string>
     <string name="notification_test_posting">Обавештење о тесту следи за 5 секунди</string>
     <string name="notification_test_not_allowed">Дозволите SandFly да прво прикаже обавештења</string>
     <string name="notification_test_content_title">SandFly тест</string>
     <string name="notification_test_content_text">Ово је пробно обавештење, читајте га са подешавањима обавештења. 123456</string>
-    <string name="notification_automation_on">Омогућите читање обавештења наглас</string>
-    <string name="notification_automation_off">Онемогућите читање обавештења наглас</string>
-    <string name="notification_automation_toggle">Омогућите или онемогућите читање обавештења наглас</string>
-    <string name="notification_automation_stop">Зауставите читање обавештења</string>
+    <string name="notification_automation_on">Укључи читање обавештења</string>
+    <string name="notification_automation_off">Искључи читање обавештења</string>
+    <string name="notification_automation_toggle">Укључи или искључи читање обавештења</string>
+    <string name="notification_automation_stop">Заустави читање обавештења</string>
     <string name="notification_automation_read_all">Прочитај обавештења</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>

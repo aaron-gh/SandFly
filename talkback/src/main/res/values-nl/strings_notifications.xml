@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Druk op beide volumetoetsen</string>
     <string name="notification_dismiss_title">Stoppen bij sluiten</string>
     <string name="notification_watch_dismiss_title">Ook wanneer de melding op een smartwatch wordt afgewezen</string>
-    <string name="notification_app_cancel_title">Stop met lezen wanneer de app de melding verwijdert</string>
+    <string name="notification_app_cancel_title">Stoppen wanneer de app de melding verwijdert</string>
     <string name="notification_category_summary">Samenvatting</string>
     <string name="notification_summary_now_title">Meldingen nu voorlezen</string>
     <string name="notification_summary_daily_title">Lees elke dag meldingen</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Tijdaankondigingen</string>
-    <string name="notification_clock_interval_title">Zeg elke keer de tijd</string>
+    <string name="notification_clock_interval_title">Zeg de tijd elke</string>
     <string name="notification_clock_format_title">Tijdnotatie</string>
     <string name="notification_clock_format_message">Tijdelijke aanduidingen: {time}, {date} en {battery} (het batterijpercentage).</string>
     <string name="notification_clock_format_default">Het is {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">uitgesproken als <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetten</string>
     <string name="notification_required_title">Lees alleen meldingen met</string>
-    <string name="notification_blocked_title">Lees geen meldingen met</string>
+    <string name="notification_blocked_title">Geen meldingen voorlezen met</string>
     <string name="notification_private_title">Lees alleen de app-naam voor</string>
     <string name="notification_replacements_title">Andere uitspraak</string>
     <string name="notification_add_word">Woord toevoegen</string>
@@ -251,8 +251,8 @@
     <string name="notification_permission_needed">SandFly heeft die toestemming nodig voor deze voorwaarde</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> is verbonden</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> is niet verbonden</string>
-    <string name="notification_cond_bluetooth_any">Er is een Bluetooth audioapparaat aangesloten</string>
-    <string name="notification_cond_bluetooth_any_not">Er is geen Bluetooth audioapparaat aangesloten</string>
+    <string name="notification_cond_bluetooth_any">Er is een Bluetooth-audioapparaat verbonden</string>
+    <string name="notification_cond_bluetooth_any_not">Er is geen Bluetooth-audioapparaat verbonden</string>
     <string name="notification_cond_wired">Er is een bedrade hoofdtelefoon aangesloten</string>
     <string name="notification_cond_wired_not">Er is geen bedrade hoofdtelefoon aangesloten</string>
     <string name="notification_cond_battery_below">De batterij is minder dan <xliff:g id="percent" example="20">%1$d</xliff:g> procent</string>
@@ -306,7 +306,7 @@
     <string name="notification_speech_now_off">Meldingen voorlezen uitgeschakeld</string>
     <string name="notification_no_last_notification">Er is geen melding gelezen</string>
     <string name="shortcut_read_notifications">Meldingen lezen</string>
-    <string name="shortcut_toggle_notification_speech">Meldingsspraak aan of uit</string>
+    <string name="shortcut_toggle_notification_speech">Meldingen voorlezen aan of uit</string>
     <string name="shortcut_read_last_notification">Lees de laatste melding nog eens</string>
     <string name="shortcut_stop_notification">Stop met het lezen van de melding</string>
     <string name="notification_test_posting">Binnen 5 seconden volgt een testmelding</string>
@@ -316,7 +316,7 @@
     <string name="notification_automation_on">Schakel het voorlezen van meldingen in</string>
     <string name="notification_automation_off">Schakel het voorlezen van meldingen uit</string>
     <string name="notification_automation_toggle">Schakel het voorlezen van meldingen in of uit</string>
-    <string name="notification_automation_stop">Stop met het lezen van de melding</string>
+    <string name="notification_automation_stop">Voorlezen van de melding stoppen</string>
     <string name="notification_automation_read_all">Meldingen lezen</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> seconde</item>

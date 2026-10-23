@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Үн баскычтарын тең басыңыз</string>
     <string name="notification_dismiss_title">Жабылганда токтотуу</string>
     <string name="notification_watch_dismiss_title">Ошондой эле эскертүү акылдуу саатта өчүрүлгөндө</string>
-    <string name="notification_app_cancel_title">Колдонмо эскертмени алып салганда окууну токтотуңуз</string>
+    <string name="notification_app_cancel_title">Колдонмо аны өчүргөндө токтотуу</string>
     <string name="notification_category_summary">Жыйынтык</string>
     <string name="notification_summary_now_title">Билдирмелерди азыр окуу</string>
     <string name="notification_summary_daily_title">Эскертмелерди күн сайын окуу</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Убакыт жарыялары</string>
-    <string name="notification_clock_interval_title">Ар бир убакытты айт</string>
+    <string name="notification_clock_interval_title">Убакытты айтуу аралыгы</string>
     <string name="notification_clock_format_title">Убакыт форматы</string>
     <string name="notification_clock_format_message">Толтургучтар: {time}, {date} жана {battery} (батареянын пайызы).</string>
     <string name="notification_clock_format_default">Азыр {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> катары айтылды</string>
     <string name="notification_app_reset">Баштапкы абалга келтирүү</string>
     <string name="notification_required_title">Менен гана эскертмелерди окуу</string>
-    <string name="notification_blocked_title">Менен эскертмелерди окубаңыз</string>
+    <string name="notification_blocked_title">Булар бар билдирмелерди окубоо</string>
     <string name="notification_private_title">Колдонмонун атын гана окуңуз</string>
     <string name="notification_replacements_title">Башкача айтуу</string>
     <string name="notification_add_word">Сөз кошуу</string>
@@ -251,14 +251,14 @@
     <string name="notification_permission_needed">SandFly бул шарт үчүн ошол уруксат керек</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> туташкан</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> туташкан эмес</string>
-    <string name="notification_cond_bluetooth_any">Bluetooth аудио түзмөгү туташты</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth аудио түзмөгү туташкан</string>
     <string name="notification_cond_bluetooth_any_not">Bluetooth аудио түзмөгү туташкан эмес</string>
     <string name="notification_cond_wired">Зымдуу кулакчындар туташтырылган</string>
     <string name="notification_cond_wired_not">Зымдуу гарнитуралар туташкан эмес</string>
     <string name="notification_cond_battery_below">Батарея <xliff:g id="percent" example="20">%1$d</xliff:g> пайыздан төмөн</string>
     <string name="notification_cond_battery_below_not">Батарея <xliff:g id="percent" example="20">%1$d</xliff:g> пайыз же андан жогору</string>
     <string name="notification_cond_charging">Телефон кубатталып жатат</string>
-    <string name="notification_cond_charging_not">Телефон заряддалбай жатат</string>
+    <string name="notification_cond_charging_not">Телефон кубатталбай жатат</string>
     <string name="notification_cond_locked">Телефон кулпуланган</string>
     <string name="notification_cond_locked_not">Телефондун кулпусу ачылган</string>
     <string name="notification_cond_screen_on">Экран күйүк</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Эскертмелерди үн чыгарып окуу өчүрүлгөн</string>
     <string name="notification_no_last_notification">Эч кандай билдирүү окулган жок</string>
     <string name="shortcut_read_notifications">Билдирмелерди окуу</string>
-    <string name="shortcut_toggle_notification_speech">Эскертме сүйлөө күйгүзүлгөн же өчүрүлгөн</string>
+    <string name="shortcut_toggle_notification_speech">Билдирмелерди окууну күйгүзүү же өчүрүү</string>
     <string name="shortcut_read_last_notification">Акыркы эскертмени кайра окуңуз</string>
     <string name="shortcut_stop_notification">Билдирмени окууну токтотуңуз</string>
     <string name="notification_test_posting">Сыноо жөнүндө эскертме 5 секунддан кийин келет</string>
     <string name="notification_test_not_allowed">Алгач SandFlyга эскертмелерди көрсөтүүгө уруксат бериңиз</string>
     <string name="notification_test_content_title">SandFly тест</string>
     <string name="notification_test_content_text">Бул сыноо эскертмеси, эскертме жөндөөлөрүңүз менен окуңуз. 123456</string>
-    <string name="notification_automation_on">Үн чыгарып окуу эскертмелерин иштетүү</string>
-    <string name="notification_automation_off">Үн чыгарып окуу эскертмелерин өчүрүңүз</string>
-    <string name="notification_automation_toggle">Үн чыгарып окуу эскертмелерин иштетүү же өчүрүү</string>
-    <string name="notification_automation_stop">Билдирменин окулушун токтотуу</string>
+    <string name="notification_automation_on">Билдирмелерди окууну күйгүзүү</string>
+    <string name="notification_automation_off">Билдирмелерди окууну өчүрүү</string>
+    <string name="notification_automation_toggle">Билдирмелерди окууну күйгүзүү же өчүрүү</string>
+    <string name="notification_automation_stop">Окулуп жаткан билдирмени токтотуу</string>
     <string name="notification_automation_read_all">Билдирмелерди окуу</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунд</item>

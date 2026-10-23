@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">ចុចគ្រាប់ចុចកម្រិតសំឡេងទាំងពីរ</string>
     <string name="notification_dismiss_title">ឈប់ពេលច្រានចោល</string>
     <string name="notification_watch_dismiss_title">ផងដែរនៅពេលដែលការជូនដំណឹងត្រូវបានច្រានចោលនៅលើនាឡិកាឆ្លាតវៃ</string>
-    <string name="notification_app_cancel_title">ឈប់អាននៅពេលដែលកម្មវិធីលុបការជូនដំណឹង</string>
+    <string name="notification_app_cancel_title">បញ្ឈប់នៅពេលកម្មវិធីលុបវា</string>
     <string name="notification_category_summary">សង្ខេប</string>
     <string name="notification_summary_now_title">អានការជូនដំណឹងឥឡូវនេះ</string>
     <string name="notification_summary_daily_title">អានការជូនដំណឹងជារៀងរាល់ថ្ងៃ</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">សេចក្តីប្រកាសអំពីពេលវេលា</string>
-    <string name="notification_clock_interval_title">និយាយរាល់ពេល</string>
+    <string name="notification_clock_interval_title">ចន្លោះពេលនិយាយម៉ោង</string>
     <string name="notification_clock_format_title">ទម្រង់ម៉ោង</string>
     <string name="notification_clock_format_message">កន្លែងដាក់៖ {time}, {date} និង {battery} (ភាគរយថ្ម)។</string>
     <string name="notification_clock_format_default">ឥឡូវម៉ោង {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">អានថា <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">កំណត់ឡើងវិញ</string>
     <string name="notification_required_title">អានតែការជូនដំណឹងជាមួយ</string>
-    <string name="notification_blocked_title">កុំអានការជូនដំណឹងជាមួយ</string>
+    <string name="notification_blocked_title">កុំអានការជូនដំណឹងដែលមាន</string>
     <string name="notification_private_title">អានតែឈ្មោះកម្មវិធីសម្រាប់</string>
     <string name="notification_replacements_title">ការអានខុសពីដើម</string>
     <string name="notification_add_word">បន្ថែមពាក្យ</string>
@@ -250,13 +250,13 @@
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ដល់<xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly ត្រូវការការអនុញ្ញាតនោះសម្រាប់លក្ខខណ្ឌនេះ</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>ត្រូវបានភ្ជាប់</string>
-    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>មិនត្រូវបានភ្ជាប់ទេ</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> មិនត្រូវបានភ្ជាប់ទេ</string>
     <string name="notification_cond_bluetooth_any">ឧបករណ៍អូឌីយ៉ូ Bluetooth ត្រូវបានភ្ជាប់</string>
     <string name="notification_cond_bluetooth_any_not">មិនមានឧបករណ៍អូឌីយ៉ូ Bluetooth ត្រូវបានភ្ជាប់ទេ</string>
     <string name="notification_cond_wired">កាសមានខ្សែត្រូវបានភ្ជាប់</string>
     <string name="notification_cond_wired_not">កាសមានខ្សែមិនត្រូវបានភ្ជាប់ទេ</string>
-    <string name="notification_cond_battery_below">ថ្មគឺទាបជាង <xliff:g id="percent" example="20">%1$d</xliff:g> ភាគរយ</string>
-    <string name="notification_cond_battery_below_not">ថ្មគឺនៅ <xliff:g id="percent" example="20">%1$d</xliff:g> ភាគរយ ឬច្រើនជាងនេះ</string>
+    <string name="notification_cond_battery_below">កម្រិតថ្មទាបជាង <xliff:g id="percent" example="20">%1$d</xliff:g> ភាគរយ</string>
+    <string name="notification_cond_battery_below_not">កម្រិតថ្ម <xliff:g id="percent" example="20">%1$d</xliff:g> ភាគរយ ឬច្រើនជាងនេះ</string>
     <string name="notification_cond_charging">ទូរស័ព្ទកំពុងសាកថ្ម</string>
     <string name="notification_cond_charging_not">ទូរស័ព្ទមិនសាកថ្មទេ</string>
     <string name="notification_cond_locked">ទូរស័ព្ទត្រូវបានចាក់សោ</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">បានបិទការអានការជូនដំណឹងឮៗ</string>
     <string name="notification_no_last_notification">គ្មានការជូនដំណឹងត្រូវបានអានទេ</string>
     <string name="shortcut_read_notifications">អានការជូនដំណឹង</string>
-    <string name="shortcut_toggle_notification_speech">បើកឬបិទសុន្ទរកថាជូនដំណឹង</string>
+    <string name="shortcut_toggle_notification_speech">បើក ឬបិទការអានការជូនដំណឹង</string>
     <string name="shortcut_read_last_notification">អានការជូនដំណឹងចុងក្រោយម្តងទៀត</string>
     <string name="shortcut_stop_notification">ឈប់អានការជូនដំណឹង</string>
     <string name="notification_test_posting">ការជូនដំណឹងអំពីការសាកល្បងធ្វើឡើងក្នុងរយៈពេល 5 វិនាទី</string>
     <string name="notification_test_not_allowed">អនុញ្ញាតឱ្យ SandFly បង្ហាញការជូនដំណឹងជាមុន</string>
     <string name="notification_test_content_title">តេស្ត SandFly</string>
     <string name="notification_test_content_text">នេះគឺជាការជូនដំណឹងសាកល្បង អានជាមួយការកំណត់ការជូនដំណឹងរបស់អ្នក។ ១២៣៤៥៦</string>
-    <string name="notification_automation_on">បើកការអានការជូនដំណឹងឮៗ</string>
-    <string name="notification_automation_off">បិទការអានការជូនដំណឹងឱ្យឮៗ</string>
-    <string name="notification_automation_toggle">បើក ឬបិទការជូនដំណឹងអានឱ្យឮៗ</string>
-    <string name="notification_automation_stop">បញ្ឈប់ការជូនដំណឹងដែលកំពុងអាន</string>
+    <string name="notification_automation_on">បើកការអានការជូនដំណឹង</string>
+    <string name="notification_automation_off">បិទការអានការជូនដំណឹង</string>
+    <string name="notification_automation_toggle">បើក ឬបិទការអានការជូនដំណឹង</string>
+    <string name="notification_automation_stop">បញ្ឈប់ការអានការជូនដំណឹង</string>
     <string name="notification_automation_read_all">អានការជូនដំណឹង</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> វិនាទី</item>

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Нажмите обе клавиши громкости</string>
     <string name="notification_dismiss_title">Останавливать при закрытии</string>
     <string name="notification_watch_dismiss_title">Также, когда уведомление закрывается на умных часах</string>
-    <string name="notification_app_cancel_title">Прекратите читать, когда приложение удалит уведомление</string>
+    <string name="notification_app_cancel_title">Прекращать, когда приложение удаляет уведомление</string>
     <string name="notification_category_summary">Сводка</string>
     <string name="notification_summary_now_title">Читать уведомления сейчас</string>
     <string name="notification_summary_daily_title">Читайте уведомления каждый день</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Объявления времени</string>
-    <string name="notification_clock_interval_title">Произносите время каждый</string>
+    <string name="notification_clock_interval_title">Произносить время каждые</string>
     <string name="notification_clock_format_title">Формат времени</string>
     <string name="notification_clock_format_message">Заполнители: {time}, {date} и {battery} (процент заряда батареи).</string>
     <string name="notification_clock_format_default">Сейчас {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">сказано как <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Сбросить</string>
     <string name="notification_required_title">Читать уведомления только с</string>
-    <string name="notification_blocked_title">Не читать уведомления с</string>
+    <string name="notification_blocked_title">Не читать уведомления, содержащие</string>
     <string name="notification_private_title">Прочитайте только название приложения для</string>
     <string name="notification_replacements_title">Другое произношение</string>
     <string name="notification_add_word">Добавить слово</string>
@@ -251,12 +251,12 @@
     <string name="notification_permission_needed">SandFly требуется это разрешение для этого условия</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> подключено</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> не подключено</string>
-    <string name="notification_cond_bluetooth_any">Аудиоустройство Bluetooth подключено.</string>
-    <string name="notification_cond_bluetooth_any_not">Нет Bluetooth аудиоустройства подключено</string>
+    <string name="notification_cond_bluetooth_any">Аудиоустройство Bluetooth подключено</string>
+    <string name="notification_cond_bluetooth_any_not">Аудиоустройство Bluetooth не подключено</string>
     <string name="notification_cond_wired">Проводные наушники подключены</string>
     <string name="notification_cond_wired_not">Проводные наушники не подключены</string>
     <string name="notification_cond_battery_below">Уровень заряда батареи ниже <xliff:g id="percent" example="20">%1$d</xliff:g> процентов</string>
-    <string name="notification_cond_battery_below_not">Уровень заряда батареи составляет <xliff:g id="percent" example="20">%1$d</xliff:g> процентов или более.</string>
+    <string name="notification_cond_battery_below_not">Уровень заряда батареи составляет <xliff:g id="percent" example="20">%1$d</xliff:g> процентов или более</string>
     <string name="notification_cond_charging">Телефон заряжается</string>
     <string name="notification_cond_charging_not">Телефон не заряжается</string>
     <string name="notification_cond_locked">Телефон заблокирован</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Чтение уведомлений вслух отключено</string>
     <string name="notification_no_last_notification">Ни одно уведомление не было прочитано</string>
     <string name="shortcut_read_notifications">Чтение уведомлений</string>
-    <string name="shortcut_toggle_notification_speech">Голосовое уведомление включено или выключено</string>
+    <string name="shortcut_toggle_notification_speech">Включение или выключение чтения уведомлений</string>
     <string name="shortcut_read_last_notification">Прочтите последнее уведомление еще раз</string>
     <string name="shortcut_stop_notification">Хватит читать уведомление</string>
     <string name="notification_test_posting">Уведомление о тестировании следует через 5 секунд.</string>
     <string name="notification_test_not_allowed">Разрешить SandFly показывать уведомления первыми</string>
     <string name="notification_test_content_title">Тест SandFly</string>
     <string name="notification_test_content_text">Это тестовое уведомление, ознакомьтесь с настройками уведомлений. 123456</string>
-    <string name="notification_automation_on">Включить уведомления о чтении вслух</string>
-    <string name="notification_automation_off">Отключить уведомления о прочтении вслух</string>
-    <string name="notification_automation_toggle">Включить или отключить уведомления о чтении вслух</string>
+    <string name="notification_automation_on">Включить чтение уведомлений</string>
+    <string name="notification_automation_off">Выключить чтение уведомлений</string>
+    <string name="notification_automation_toggle">Включить или выключить чтение уведомлений</string>
     <string name="notification_automation_stop">Остановить чтение уведомления</string>
     <string name="notification_automation_read_all">Чтение уведомлений</string>
     <plurals name="notification_seconds">

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">दोन्ही व्हॉल्यूम की दाबा</string>
     <string name="notification_dismiss_title">डिसमिस केल्यावर थांबवा</string>
     <string name="notification_watch_dismiss_title">तसेच जेव्हा स्मार्टवॉचवर सूचना डिसमिस केली जाते</string>
-    <string name="notification_app_cancel_title">ॲपने सूचना काढून टाकल्यावर वाचन थांबवा</string>
+    <string name="notification_app_cancel_title">ॲपने ती काढल्यावर थांबवा</string>
     <string name="notification_category_summary">सारांश</string>
     <string name="notification_summary_now_title">आता सूचना वाचा</string>
     <string name="notification_summary_daily_title">दररोज सूचना वाचा</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">वेळेच्या घोषणा</string>
-    <string name="notification_clock_interval_title">प्रत्येक वेळी वेळ सांगा</string>
+    <string name="notification_clock_interval_title">वेळ सांगण्याचा अंतराल</string>
     <string name="notification_clock_format_title">वेळेचा फॉरमॅट</string>
     <string name="notification_clock_format_message">प्लेसहोल्डर: {time}, {date} आणि {battery} (बॅटरीची टक्केवारी).</string>
     <string name="notification_clock_format_default">आता {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> असे वाचले जाते</string>
     <string name="notification_app_reset">रीसेट करा</string>
     <string name="notification_required_title">सोबत फक्त सूचना वाचा</string>
-    <string name="notification_blocked_title">सोबत सूचना वाचू नका</string>
+    <string name="notification_blocked_title">हे असलेल्या सूचना वाचू नका</string>
     <string name="notification_private_title">साठी फक्त ॲपचे नाव वाचा</string>
     <string name="notification_replacements_title">वेगळा उच्चार</string>
     <string name="notification_add_word">एक शब्द जोडा</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">मोठ्याने सूचना वाचणे अक्षम केले आहे</string>
     <string name="notification_no_last_notification">कोणतीही सूचना वाचली नाही</string>
     <string name="shortcut_read_notifications">सूचना वाचा</string>
-    <string name="shortcut_toggle_notification_speech">सूचना भाषण चालू किंवा बंद</string>
+    <string name="shortcut_toggle_notification_speech">सूचना वाचणे चालू किंवा बंद</string>
     <string name="shortcut_read_last_notification">शेवटची सूचना पुन्हा वाचा</string>
     <string name="shortcut_stop_notification">सूचना वाचणे थांबवा</string>
     <string name="notification_test_posting">5 सेकंदांनंतर चाचणी सूचना येते</string>
     <string name="notification_test_not_allowed">प्रथम सूचना दर्शविण्यासाठी SandFly ला अनुमती द्या</string>
     <string name="notification_test_content_title">SandFly चाचणी</string>
     <string name="notification_test_content_text">ही एक चाचणी सूचना आहे, तुमच्या सूचना सेटिंग्जसह वाचा. १२३४५६</string>
-    <string name="notification_automation_on">मोठ्याने सूचना वाचणे सक्षम करा</string>
-    <string name="notification_automation_off">मोठ्याने सूचना वाचणे अक्षम करा</string>
-    <string name="notification_automation_toggle">मोठ्याने वाचन सूचना सक्षम किंवा अक्षम करा</string>
-    <string name="notification_automation_stop">सूचना वाचणे थांबवा</string>
+    <string name="notification_automation_on">सूचना वाचणे चालू करा</string>
+    <string name="notification_automation_off">सूचना वाचणे बंद करा</string>
+    <string name="notification_automation_toggle">सूचना वाचणे चालू किंवा बंद करा</string>
+    <string name="notification_automation_stop">वाचली जात असलेली सूचना थांबवा</string>
     <string name="notification_automation_read_all">सूचना वाचा</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> सेकंद</item>

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Nyomja meg mindkét hangerőgombot</string>
     <string name="notification_dismiss_title">Leállítás elvetéskor</string>
     <string name="notification_watch_dismiss_title">Akkor is, ha az értesítést elvetik egy okosórán</string>
-    <string name="notification_app_cancel_title">Ha az alkalmazás eltávolítja az értesítést, állítsa le az olvasást</string>
+    <string name="notification_app_cancel_title">Leállítás, ha az alkalmazás eltávolítja</string>
     <string name="notification_category_summary">Összegzés</string>
     <string name="notification_summary_now_title">Értesítések felolvasása most</string>
     <string name="notification_summary_daily_title">Olvassa el az értesítéseket minden nap</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Időbemondás</string>
-    <string name="notification_clock_interval_title">Minden alkalommal mondja ki az időt</string>
+    <string name="notification_clock_interval_title">Időbemondás gyakorisága</string>
     <string name="notification_clock_format_title">Időformátum</string>
     <string name="notification_clock_format_message">Helyőrzők: {time}, {date} és {battery} (az akkumulátor százalékos aránya).</string>
     <string name="notification_clock_format_default">{time} van</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">kimondva: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Visszaállítás</string>
     <string name="notification_required_title">Csak az értesítéseket olvassa el</string>
-    <string name="notification_blocked_title">Ne olvassa el az értesítéseket</string>
+    <string name="notification_blocked_title">Ne olvassa fel az ezeket tartalmazó értesítéseket</string>
     <string name="notification_private_title">Csak az alkalmazás nevét olvassa el</string>
     <string name="notification_replacements_title">Eltérő kiejtés</string>
     <string name="notification_add_word">Szó hozzáadása</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Az értesítések hangos felolvasása letiltva</string>
     <string name="notification_no_last_notification">Nem olvasták el az értesítést</string>
     <string name="shortcut_read_notifications">Értesítések olvasása</string>
-    <string name="shortcut_toggle_notification_speech">Értesítési beszéd be- vagy kikapcsolása</string>
+    <string name="shortcut_toggle_notification_speech">Értesítések felolvasásának be- vagy kikapcsolása</string>
     <string name="shortcut_read_last_notification">Olvassa el újra az utolsó értesítést</string>
     <string name="shortcut_stop_notification">Hagyja abba az értesítés olvasását</string>
     <string name="notification_test_posting">5 másodpercen belül tesztértesítés érkezik</string>
     <string name="notification_test_not_allowed">Engedélyezze a SandFly számára, hogy először az értesítéseket jelenítse meg</string>
     <string name="notification_test_content_title">SandFly-teszt</string>
     <string name="notification_test_content_text">Ez egy tesztértesítés, olvassa el az értesítési beállításait. 123456</string>
-    <string name="notification_automation_on">Az értesítések hangos felolvasásának engedélyezése</string>
-    <string name="notification_automation_off">Az értesítések hangos felolvasásának letiltása</string>
-    <string name="notification_automation_toggle">Az értesítések hangos felolvasásának engedélyezése vagy letiltása</string>
-    <string name="notification_automation_stop">Állítsa le az értesítés olvasását</string>
+    <string name="notification_automation_on">Értesítések felolvasásának bekapcsolása</string>
+    <string name="notification_automation_off">Értesítések felolvasásának kikapcsolása</string>
+    <string name="notification_automation_toggle">Értesítések felolvasásának be- vagy kikapcsolása</string>
+    <string name="notification_automation_stop">Az értesítés felolvasásának leállítása</string>
     <string name="notification_automation_read_all">Értesítések olvasása</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> másodperc</item>

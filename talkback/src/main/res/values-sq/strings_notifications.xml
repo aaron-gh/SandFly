@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Shtypni të dy tastet e volumit</string>
     <string name="notification_dismiss_title">Ndalo leximin kur njoftimi mbyllet</string>
     <string name="notification_watch_dismiss_title">Gjithashtu kur njoftimi hidhet në një orë inteligjente</string>
-    <string name="notification_app_cancel_title">Ndalo leximin kur aplikacioni heq njoftimin</string>
+    <string name="notification_app_cancel_title">Ndalo kur aplikacioni e heq</string>
     <string name="notification_category_summary">Përmbledhje</string>
     <string name="notification_summary_now_title">Lexo njoftimet tani</string>
     <string name="notification_summary_daily_title">Lexoni njoftimet çdo ditë</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Njoftimet e kohës</string>
-    <string name="notification_clock_interval_title">Thuaj kohën çdo</string>
+    <string name="notification_clock_interval_title">Thuaj orën çdo</string>
     <string name="notification_clock_format_title">Formati i orës</string>
     <string name="notification_clock_format_message">Vendmbajtësit: {time}, {date} dhe {battery} (përqindja e baterisë).</string>
     <string name="notification_clock_format_default">Ora është {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">e thënë si <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Rivendos</string>
     <string name="notification_required_title">Lexoni vetëm njoftimet me</string>
-    <string name="notification_blocked_title">Mos i lexoni njoftimet me</string>
+    <string name="notification_blocked_title">Mos lexo njoftimet që përmbajnë</string>
     <string name="notification_private_title">Lexoni vetëm emrin e aplikacionit për</string>
     <string name="notification_replacements_title">Shqiptim ndryshe</string>
     <string name="notification_add_word">Shto një fjalë</string>
@@ -258,7 +258,7 @@
     <string name="notification_cond_battery_below">Bateria është nën <xliff:g id="percent" example="20">%1$d</xliff:g> përqind</string>
     <string name="notification_cond_battery_below_not">Bateria është në <xliff:g id="percent" example="20">%1$d</xliff:g> përqind ose më shumë</string>
     <string name="notification_cond_charging">Telefoni është duke u ngarkuar</string>
-    <string name="notification_cond_charging_not">Telefoni nuk po karikohet</string>
+    <string name="notification_cond_charging_not">Telefoni nuk po ngarkohet</string>
     <string name="notification_cond_locked">Telefoni është i kyçur</string>
     <string name="notification_cond_locked_not">Telefoni është i shkyçur</string>
     <string name="notification_cond_screen_on">Ekrani është i ndezur</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Leximi i njoftimeve me zë është i çaktivizuar</string>
     <string name="notification_no_last_notification">Nuk u lexua asnjë njoftim</string>
     <string name="shortcut_read_notifications">Lexo njoftimet</string>
-    <string name="shortcut_toggle_notification_speech">Aktivizimi ose çaktivizimi i fjalimit të njoftimit</string>
+    <string name="shortcut_toggle_notification_speech">Aktivizimi ose çaktivizimi i leximit të njoftimeve</string>
     <string name="shortcut_read_last_notification">Lexoni sërish njoftimin e fundit</string>
     <string name="shortcut_stop_notification">Ndalo leximin e njoftimit</string>
     <string name="notification_test_posting">Pas 5 sekondash vjen një njoftim testimi</string>
     <string name="notification_test_not_allowed">Lejo që SandFly të shfaqë njoftimet në fillim</string>
     <string name="notification_test_content_title">Test SandFly</string>
     <string name="notification_test_content_text">Ky është një njoftim provë, lexo me cilësimet e njoftimit. 123456</string>
-    <string name="notification_automation_on">Aktivizo leximin e njoftimeve me zë të lartë</string>
-    <string name="notification_automation_off">Çaktivizo leximin e njoftimeve me zë të lartë</string>
-    <string name="notification_automation_toggle">Aktivizo ose çaktivizo leximin e njoftimeve me zë të lartë</string>
+    <string name="notification_automation_on">Aktivizo leximin e njoftimeve</string>
+    <string name="notification_automation_off">Çaktivizo leximin e njoftimeve</string>
+    <string name="notification_automation_toggle">Aktivizo ose çaktivizo leximin e njoftimeve</string>
     <string name="notification_automation_stop">Ndalo leximin e njoftimit</string>
     <string name="notification_automation_read_all">Lexo njoftimet</string>
     <plurals name="notification_seconds">

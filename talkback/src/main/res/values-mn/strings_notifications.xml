@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Дууны түвшний товчлуурыг хоёуланг нь дар</string>
     <string name="notification_dismiss_title">Хаахад зогсоох</string>
     <string name="notification_watch_dismiss_title">Мөн ухаалаг цаг дээр мэдэгдэл хаагдах үед</string>
-    <string name="notification_app_cancel_title">Апп мэдэгдлийг устгах үед уншихаа зогсоо</string>
+    <string name="notification_app_cancel_title">Апп үүнийг устгахад зогсоох</string>
     <string name="notification_category_summary">Хураангуй</string>
     <string name="notification_summary_now_title">Мэдэгдлийг одоо унших</string>
     <string name="notification_summary_daily_title">Өдөр бүр мэдэгдлүүдийг уншина уу</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Цагийн мэдэгдэл</string>
-    <string name="notification_clock_interval_title">Цаг бүрийг хэлээрэй</string>
+    <string name="notification_clock_interval_title">Цаг хэлэх давтамж</string>
     <string name="notification_clock_format_title">Цагийн формат</string>
     <string name="notification_clock_format_message">Орлуулагч: {time}, {date} болон {battery} (батарейны хувь).</string>
     <string name="notification_clock_format_default">Одоо {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлнэ</string>
     <string name="notification_app_reset">Дахин тохируулах</string>
     <string name="notification_required_title">Зөвхөн мэдэгдлийг уншина уу</string>
-    <string name="notification_blocked_title">Мэдэгдлүүдийг бүү унш</string>
+    <string name="notification_blocked_title">Эдгээрийг агуулсан мэдэгдлийг уншихгүй</string>
     <string name="notification_private_title">Зөвхөн програмын нэрийг уншина уу</string>
     <string name="notification_replacements_title">Өөрөөр хэлэх</string>
     <string name="notification_add_word">Үг нэмэх</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Мэдэгдлийг чанга уншихыг идэвхгүй болгосон</string>
     <string name="notification_no_last_notification">Мэдэгдэл уншаагүй</string>
     <string name="shortcut_read_notifications">Мэдэгдэл унших</string>
-    <string name="shortcut_toggle_notification_speech">Мэдэгдлийн яриа асаах эсвэл унтраах</string>
+    <string name="shortcut_toggle_notification_speech">Мэдэгдэл уншихыг асаах эсвэл унтраах</string>
     <string name="shortcut_read_last_notification">Сүүлийн мэдэгдлийг дахин уншина уу</string>
     <string name="shortcut_stop_notification">Мэдэгдэл уншихаа боль</string>
     <string name="notification_test_posting">5 секундын дараа туршилтын мэдэгдэл ирнэ</string>
     <string name="notification_test_not_allowed">SandFly-д эхлээд мэдэгдлийг харуулахыг зөвшөөрнө үү</string>
     <string name="notification_test_content_title">SandFly тест</string>
     <string name="notification_test_content_text">Энэ бол туршилтын мэдэгдэл бөгөөд мэдэгдлийн тохиргоогоо уншина уу. 123456</string>
-    <string name="notification_automation_on">Чанга унших мэдэгдлийг идэвхжүүл</string>
-    <string name="notification_automation_off">Чанга унших мэдэгдлийг идэвхгүй болгох</string>
-    <string name="notification_automation_toggle">Чанга унших мэдэгдлийг идэвхжүүлэх эсвэл идэвхгүй болгох</string>
-    <string name="notification_automation_stop">Мэдэгдэл уншихыг зогсоо</string>
+    <string name="notification_automation_on">Мэдэгдэл уншихыг асаах</string>
+    <string name="notification_automation_off">Мэдэгдэл уншихыг унтраах</string>
+    <string name="notification_automation_toggle">Мэдэгдэл уншихыг асаах эсвэл унтраах</string>
+    <string name="notification_automation_stop">Уншиж буй мэдэгдлийг зогсоох</string>
     <string name="notification_automation_read_all">Мэдэгдэл унших</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунд</item>

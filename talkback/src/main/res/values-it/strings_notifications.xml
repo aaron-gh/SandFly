@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Premi entrambi i tasti del volume</string>
     <string name="notification_dismiss_title">Interrompi all\'eliminazione</string>
     <string name="notification_watch_dismiss_title">Anche quando la notifica viene respinta su uno smartwatch</string>
-    <string name="notification_app_cancel_title">Smetti di leggere quando l\'app rimuove la notifica</string>
+    <string name="notification_app_cancel_title">Interrompi quando l\'app la rimuove</string>
     <string name="notification_category_summary">Riepilogo</string>
     <string name="notification_summary_now_title">Leggi le notifiche adesso</string>
     <string name="notification_summary_daily_title">Leggi le notifiche ogni giorno</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Annunci orari</string>
-    <string name="notification_clock_interval_title">Di\' l\'ora ogni</string>
+    <string name="notification_clock_interval_title">Annuncia l\'ora ogni</string>
     <string name="notification_clock_format_title">Formato ora</string>
     <string name="notification_clock_format_message">Segnaposto: {time}, {date} e {battery} (la percentuale della batteria).</string>
     <string name="notification_clock_format_default">Sono le {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">detto come <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Reimposta</string>
     <string name="notification_required_title">Leggi solo le notifiche con</string>
-    <string name="notification_blocked_title">Non leggere le notifiche con</string>
+    <string name="notification_blocked_title">Non leggere le notifiche contenenti</string>
     <string name="notification_private_title">Leggi solo il nome dell\'app per</string>
     <string name="notification_replacements_title">Pronuncia diversa</string>
     <string name="notification_add_word">Aggiungi una parola</string>
@@ -255,10 +255,10 @@
     <string name="notification_cond_bluetooth_any_not">Nessun dispositivo audio Bluetooth collegato</string>
     <string name="notification_cond_wired">Le cuffie cablate sono collegate</string>
     <string name="notification_cond_wired_not">Le cuffie cablate non sono collegate</string>
-    <string name="notification_cond_battery_below">La batteria è al di sotto dello <xliff:g id="percent" example="20">%1$d</xliff:g> percento</string>
-    <string name="notification_cond_battery_below_not">La batteria è al <xliff:g id="percent" example="20">%1$d</xliff:g> percento o più</string>
+    <string name="notification_cond_battery_below">Il livello della batteria è inferiore al <xliff:g id="percent" example="20">%1$d</xliff:g> percento</string>
+    <string name="notification_cond_battery_below_not">Il livello della batteria è pari o superiore al <xliff:g id="percent" example="20">%1$d</xliff:g> percento</string>
     <string name="notification_cond_charging">Il telefono è in carica</string>
-    <string name="notification_cond_charging_not">Il telefono non si carica</string>
+    <string name="notification_cond_charging_not">Il telefono non è in carica</string>
     <string name="notification_cond_locked">Il telefono è bloccato</string>
     <string name="notification_cond_locked_not">Il telefono è sbloccato</string>
     <string name="notification_cond_screen_on">Lo schermo è acceso</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Lettura delle notifiche ad alta voce disabilitata</string>
     <string name="notification_no_last_notification">Nessuna notifica è stata letta</string>
     <string name="shortcut_read_notifications">Leggi le notifiche</string>
-    <string name="shortcut_toggle_notification_speech">Attivazione o disattivazione del messaggio di notifica</string>
+    <string name="shortcut_toggle_notification_speech">Attiva o disattiva la lettura delle notifiche</string>
     <string name="shortcut_read_last_notification">Leggi di nuovo l\'ultima notifica</string>
     <string name="shortcut_stop_notification">Smetti di leggere la notifica</string>
     <string name="notification_test_posting">Una notifica di prova segue entro 5 secondi</string>
     <string name="notification_test_not_allowed">Consenti a SandFly di mostrare prima le notifiche</string>
     <string name="notification_test_content_title">Prova SandFly</string>
     <string name="notification_test_content_text">Questa è una notifica di prova, leggi con le tue impostazioni di notifica. 123456</string>
-    <string name="notification_automation_on">Abilita la lettura ad alta voce delle notifiche</string>
-    <string name="notification_automation_off">Disabilita la lettura ad alta voce delle notifiche</string>
-    <string name="notification_automation_toggle">Abilita o disabilita la lettura ad alta voce delle notifiche</string>
-    <string name="notification_automation_stop">Interrompe la lettura della notifica</string>
+    <string name="notification_automation_on">Attiva la lettura delle notifiche</string>
+    <string name="notification_automation_off">Disattiva la lettura delle notifiche</string>
+    <string name="notification_automation_toggle">Attiva o disattiva la lettura delle notifiche</string>
+    <string name="notification_automation_stop">Interrompi la lettura della notifica</string>
     <string name="notification_automation_read_all">Leggi le notifiche</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> secondo</item>

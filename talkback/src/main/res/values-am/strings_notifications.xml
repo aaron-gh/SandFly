@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">ሁለቱንም የድምጽ ቁልፎች ተጫን</string>
     <string name="notification_dismiss_title">ሲሰናበት አቁም</string>
     <string name="notification_watch_dismiss_title">እንዲሁም ማሳወቂያው በስማርት ሰዓት ላይ ሲሰናበት</string>
-    <string name="notification_app_cancel_title">መተግበሪያው ማሳወቂያውን ሲያስወግድ ማንበብ ያቁሙ</string>
+    <string name="notification_app_cancel_title">መተግበሪያው ሲያስወግደው አቁም</string>
     <string name="notification_category_summary">ማጠቃለያ</string>
     <string name="notification_summary_now_title">ማሳወቂያዎችን አሁን ያንብቡ</string>
     <string name="notification_summary_daily_title">በየቀኑ ማሳወቂያዎችን ያንብቡ</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">የጊዜ ማስታወቂያዎች</string>
-    <string name="notification_clock_interval_title">ጊዜውን እያንዳንዱን ይናገሩ</string>
+    <string name="notification_clock_interval_title">ጊዜውን የሚናገርበት ክፍተት</string>
     <string name="notification_clock_format_title">የጊዜ ቅርጸት</string>
     <string name="notification_clock_format_message">ቦታ ያዢዎች፡ {time}፣ {date} እና {battery} (የባትሪው መቶኛ)።</string>
     <string name="notification_clock_format_default">አሁን {time} ነው</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">እንደ <xliff:g id="name" example="Twitter">%1$s</xliff:g> ይነገራል</string>
     <string name="notification_app_reset">ዳግም አስጀምር</string>
     <string name="notification_required_title">ማሳወቂያዎችን ብቻ ያንብቡ</string>
-    <string name="notification_blocked_title">ማሳወቂያዎችን አታንብብ</string>
+    <string name="notification_blocked_title">የሚከተሉትን የያዙ ማሳወቂያዎችን አታንብብ</string>
     <string name="notification_private_title">የመተግበሪያውን ስም ብቻ ያንብቡ</string>
     <string name="notification_replacements_title">የተለየ አነባበብ</string>
     <string name="notification_add_word">ቃል ጨምር</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ማሳወቂያዎችን ጮክ ብሎ ማንበብ ተሰናክሏል</string>
     <string name="notification_no_last_notification">ምንም ማሳወቂያ አልተነበበም</string>
     <string name="shortcut_read_notifications">ማሳወቂያዎችን ያንብቡ</string>
-    <string name="shortcut_toggle_notification_speech">የማሳወቂያ ንግግር በርቷል ወይም ጠፍቷል</string>
+    <string name="shortcut_toggle_notification_speech">ማሳወቂያዎችን ጮክ ብሎ ማንበብ፦ አብራ ወይም አጥፋ</string>
     <string name="shortcut_read_last_notification">የመጨረሻውን ማስታወቂያ እንደገና ያንብቡ</string>
     <string name="shortcut_stop_notification">ማሳወቂያውን ማንበብ አቁም</string>
     <string name="notification_test_posting">የሙከራ ማሳወቂያ በ5 ሰከንድ ውስጥ ይከተላል</string>
     <string name="notification_test_not_allowed">SandFly መጀመሪያ ማሳወቂያዎችን እንዲያሳይ ፍቀድ</string>
     <string name="notification_test_content_title">SandFly ፈተና</string>
     <string name="notification_test_content_text">ይህ የሙከራ ማሳወቂያ ነው፣ ከማሳወቂያ ቅንብሮችዎ ጋር ያንብቡ። 123456 እ.ኤ.አ</string>
-    <string name="notification_automation_on">የንባብ ማሳወቂያዎችን ጮክ ብለህ አንቃ</string>
-    <string name="notification_automation_off">የንባብ ማሳወቂያዎችን ጮክ ብለው ያሰናክሉ</string>
-    <string name="notification_automation_toggle">የንባብ ማሳወቂያዎችን ጮክ ብለው አንቃ ወይም አሰናክል</string>
-    <string name="notification_automation_stop">ማሳወቂያው መነበቡን ያቁሙ</string>
+    <string name="notification_automation_on">ማሳወቂያዎችን ጮክ ብሎ ማንበብን አብራ</string>
+    <string name="notification_automation_off">ማሳወቂያዎችን ጮክ ብሎ ማንበብን አጥፋ</string>
+    <string name="notification_automation_toggle">ማሳወቂያዎችን ጮክ ብሎ ማንበብን አብራ ወይም አጥፋ</string>
+    <string name="notification_automation_stop">እየተነበበ ያለውን ማሳወቂያ አቁም</string>
     <string name="notification_automation_read_all">ማሳወቂያዎችን ያንብቡ</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ሰከንድ</item>

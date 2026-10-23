@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Tryck på båda volymknapparna</string>
     <string name="notification_dismiss_title">Sluta läsa när aviseringen stängs</string>
     <string name="notification_watch_dismiss_title">Även när aviseringen avvisas på en smartklocka</string>
-    <string name="notification_app_cancel_title">Sluta läsa när appen tar bort aviseringen</string>
+    <string name="notification_app_cancel_title">Stoppa när appen tar bort den</string>
     <string name="notification_category_summary">Sammanfattning</string>
     <string name="notification_summary_now_title">Läs aviseringar nu</string>
     <string name="notification_summary_daily_title">Läs aviseringar varje dag</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Tidsbesked</string>
-    <string name="notification_clock_interval_title">Säg tid varje</string>
+    <string name="notification_clock_interval_title">Säg tiden var</string>
     <string name="notification_clock_format_title">Tidsformat</string>
     <string name="notification_clock_format_message">Platshållare: {time}, {date} och {battery} (batteriprocenten).</string>
     <string name="notification_clock_format_default">Klockan är {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">sägs som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Återställ</string>
     <string name="notification_required_title">Läs endast aviseringar med</string>
-    <string name="notification_blocked_title">Läs inte aviseringar med</string>
+    <string name="notification_blocked_title">Läs inte aviseringar som innehåller</string>
     <string name="notification_private_title">Läs endast appnamnet för</string>
     <string name="notification_replacements_title">Annat uttal</string>
     <string name="notification_add_word">Lägg till ett ord</string>
@@ -251,8 +251,8 @@
     <string name="notification_permission_needed">SandFly behöver det tillståndet för detta tillstånd</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är ansluten</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> är inte ansluten</string>
-    <string name="notification_cond_bluetooth_any">En Bluetooth ljudenhet är ansluten</string>
-    <string name="notification_cond_bluetooth_any_not">Ingen Bluetooth ljudenhet är ansluten</string>
+    <string name="notification_cond_bluetooth_any">En Bluetooth-ljudenhet är ansluten</string>
+    <string name="notification_cond_bluetooth_any_not">Ingen Bluetooth-ljudenhet är ansluten</string>
     <string name="notification_cond_wired">Trådbundna hörlurar är anslutna</string>
     <string name="notification_cond_wired_not">Trådbundna hörlurar är inte anslutna</string>
     <string name="notification_cond_battery_below">Batteriet är under <xliff:g id="percent" example="20">%1$d</xliff:g> procent</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Högläsning av aviseringar inaktiverad</string>
     <string name="notification_no_last_notification">Ingen avisering lästes</string>
     <string name="shortcut_read_notifications">Läs aviseringar</string>
-    <string name="shortcut_toggle_notification_speech">Aviseringstal på eller av</string>
+    <string name="shortcut_toggle_notification_speech">Uppläsning av aviseringar på eller av</string>
     <string name="shortcut_read_last_notification">Läs den senaste aviseringen igen</string>
     <string name="shortcut_stop_notification">Sluta läsa aviseringen</string>
     <string name="notification_test_posting">Ett testmeddelande följer efter 5 sekunder</string>
     <string name="notification_test_not_allowed">Tillåt SandFly att visa aviseringar först</string>
     <string name="notification_test_content_title">SandFly-test</string>
     <string name="notification_test_content_text">Detta är en testavisering, läs med dina aviseringsinställningar. 123456</string>
-    <string name="notification_automation_on">Aktivera högläsningsaviseringar</string>
-    <string name="notification_automation_off">Inaktivera högläsning av meddelanden</string>
-    <string name="notification_automation_toggle">Aktivera eller inaktivera högläsningsaviseringar</string>
-    <string name="notification_automation_stop">Stoppa att meddelandet läses</string>
+    <string name="notification_automation_on">Slå på uppläsning av aviseringar</string>
+    <string name="notification_automation_off">Stäng av uppläsning av aviseringar</string>
+    <string name="notification_automation_toggle">Slå på eller stäng av uppläsning av aviseringar</string>
+    <string name="notification_automation_stop">Stoppa uppläsningen av aviseringen</string>
     <string name="notification_automation_read_all">Läs aviseringar</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekund</item>

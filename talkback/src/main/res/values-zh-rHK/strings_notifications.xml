@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">按兩個音量鍵</string>
     <string name="notification_dismiss_title">清除通知時停止</string>
     <string name="notification_watch_dismiss_title">此外，當智慧手錶上的通知被取消時</string>
-    <string name="notification_app_cancel_title">当应用程序删除通知时停止阅读</string>
+    <string name="notification_app_cancel_title">應用程式移除通知時停止</string>
     <string name="notification_category_summary">摘要</string>
     <string name="notification_summary_now_title">立即朗讀通知</string>
     <string name="notification_summary_daily_title">每天閱讀通知</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">報時</string>
-    <string name="notification_clock_interval_title">說一下每次的時間</string>
+    <string name="notification_clock_interval_title">報時間隔</string>
     <string name="notification_clock_format_title">時間格式</string>
     <string name="notification_clock_format_message">佔位符：{time}、{date} 和 {battery}（電池百分比）。</string>
     <string name="notification_clock_format_default">現在是{time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">讀作 <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">重設</string>
     <string name="notification_required_title">僅閱讀通知</string>
-    <string name="notification_blocked_title">不要閱讀通知</string>
+    <string name="notification_blocked_title">不朗讀包含以下字詞的通知</string>
     <string name="notification_private_title">只讀應用程式名稱</string>
     <string name="notification_replacements_title">其他讀法</string>
     <string name="notification_add_word">添加一個詞</string>
@@ -251,12 +251,12 @@
     <string name="notification_permission_needed">SandFly 需要取得此條件的許可</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>已連接</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 未連接</string>
-    <string name="notification_cond_bluetooth_any">Bluetooth 音訊設備已連接</string>
-    <string name="notification_cond_bluetooth_any_not">未連接Bluetooth音訊設備</string>
+    <string name="notification_cond_bluetooth_any">已連接 Bluetooth 音訊裝置</string>
+    <string name="notification_cond_bluetooth_any_not">未連接 Bluetooth 音訊裝置</string>
     <string name="notification_cond_wired">有線耳機已連接</string>
     <string name="notification_cond_wired_not">有線耳機未連接</string>
-    <string name="notification_cond_battery_below">電池電量低於 <xliff:g id="percent" example="20">%1$d</xliff:g>%</string>
-    <string name="notification_cond_battery_below_not">電池電量為 <xliff:g id="percent" example="20">%1$d</xliff:g>% 或更多</string>
+    <string name="notification_cond_battery_below">電池電量低於 <xliff:g id="percent" example="20">%1$d</xliff:g>%%</string>
+    <string name="notification_cond_battery_below_not">電池電量為 <xliff:g id="percent" example="20">%1$d</xliff:g>%% 或以上</string>
     <string name="notification_cond_charging">手機正在充電</string>
     <string name="notification_cond_charging_not">手機未充電</string>
     <string name="notification_cond_locked">手機已鎖定</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">通知朗讀已關閉</string>
     <string name="notification_no_last_notification">沒有閱讀任何通知</string>
     <string name="shortcut_read_notifications">朗讀通知</string>
-    <string name="shortcut_toggle_notification_speech">通知語音開啟或關閉</string>
+    <string name="shortcut_toggle_notification_speech">開啟或關閉通知朗讀</string>
     <string name="shortcut_read_last_notification">再次閱讀上次通知</string>
     <string name="shortcut_stop_notification">停止閱讀通知</string>
     <string name="notification_test_posting">5 秒後將發出測試通知</string>
     <string name="notification_test_not_allowed">允許 SandFly 先顯示通知</string>
     <string name="notification_test_content_title">SandFly測試</string>
     <string name="notification_test_content_text">這是測試通知，請根據您的通知設定進行閱讀。 123456</string>
-    <string name="notification_automation_on">啟用大聲朗讀通知</string>
-    <string name="notification_automation_off">停用大聲朗讀通知</string>
-    <string name="notification_automation_toggle">啟用或停用朗讀通知</string>
-    <string name="notification_automation_stop">停止閱讀通知</string>
+    <string name="notification_automation_on">開啟通知朗讀</string>
+    <string name="notification_automation_off">關閉通知朗讀</string>
+    <string name="notification_automation_toggle">開啟或關閉通知朗讀</string>
+    <string name="notification_automation_stop">停止朗讀目前的通知</string>
     <string name="notification_automation_read_all">朗讀通知</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 第二</item>

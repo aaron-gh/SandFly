@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Nospiediet abus skaļuma taustiņus</string>
     <string name="notification_dismiss_title">Apturēt, kad noraidīts</string>
     <string name="notification_watch_dismiss_title">Arī tad, kad paziņojums tiek noraidīts viedpulkstenī</string>
-    <string name="notification_app_cancel_title">Pārtrauciet lasīšanu, kad lietotne noņem paziņojumu</string>
+    <string name="notification_app_cancel_title">Apturēt, kad lietotne to noņem</string>
     <string name="notification_category_summary">Kopsavilkums</string>
     <string name="notification_summary_now_title">Lasīt paziņojumus tūlīt</string>
     <string name="notification_summary_daily_title">Lasiet paziņojumus katru dienu</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">izrunā kā <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Atiestatīt</string>
     <string name="notification_required_title">Lasiet tikai paziņojumus ar</string>
-    <string name="notification_blocked_title">Nelasiet paziņojumus ar</string>
+    <string name="notification_blocked_title">Nelasīt paziņojumus, kuros ir</string>
     <string name="notification_private_title">Lasiet tikai lietotnes nosaukumu</string>
     <string name="notification_replacements_title">Citāda izruna</string>
     <string name="notification_add_word">Pievienot vārdu</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Paziņojumu skaļa lasīšana ir atspējota</string>
     <string name="notification_no_last_notification">Neviens paziņojums netika lasīts</string>
     <string name="shortcut_read_notifications">Lasīt paziņojumus</string>
-    <string name="shortcut_toggle_notification_speech">Paziņojuma runa ir ieslēgta vai izslēgta</string>
+    <string name="shortcut_toggle_notification_speech">Paziņojumu lasīšanas ieslēgšana vai izslēgšana</string>
     <string name="shortcut_read_last_notification">Vēlreiz izlasiet pēdējo paziņojumu</string>
     <string name="shortcut_stop_notification">Pārtrauciet lasīt paziņojumu</string>
     <string name="notification_test_posting">Pēc 5 sekundēm tiek parādīts testa paziņojums</string>
     <string name="notification_test_not_allowed">Ļaujiet SandFly vispirms parādīt paziņojumus</string>
     <string name="notification_test_content_title">SandFly tests</string>
     <string name="notification_test_content_text">Šis ir testa paziņojums, izlasiet kopā ar paziņojumu iestatījumiem. 123456</string>
-    <string name="notification_automation_on">Iespējot paziņojumu lasīšanu skaļi</string>
-    <string name="notification_automation_off">Atspējot paziņojumu lasīšanu skaļi</string>
-    <string name="notification_automation_toggle">Iespējot vai atspējot paziņojumu lasīšanu skaļi</string>
-    <string name="notification_automation_stop">Pārtrauciet paziņojuma lasīšanu</string>
+    <string name="notification_automation_on">Ieslēgt paziņojumu lasīšanu</string>
+    <string name="notification_automation_off">Izslēgt paziņojumu lasīšanu</string>
+    <string name="notification_automation_toggle">Ieslēgt vai izslēgt paziņojumu lasīšanu</string>
+    <string name="notification_automation_stop">Apturēt paziņojuma lasīšanu</string>
     <string name="notification_automation_read_all">Lasīt paziņojumus</string>
     <plurals name="notification_seconds">
         <item quantity="zero"><xliff:g id="count" example="5">%d</xliff:g> sekundes</item>

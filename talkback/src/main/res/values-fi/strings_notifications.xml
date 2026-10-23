@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Paina molempia äänenvoimakkuusnäppäimiä</string>
     <string name="notification_dismiss_title">Lopeta, kun ohitetaan</string>
     <string name="notification_watch_dismiss_title">Myös silloin, kun ilmoitus hylätään älykellossa</string>
-    <string name="notification_app_cancel_title">Lopeta lukeminen, kun sovellus poistaa ilmoituksen</string>
+    <string name="notification_app_cancel_title">Lopeta, kun sovellus poistaa sen</string>
     <string name="notification_category_summary">Yhteenveto</string>
     <string name="notification_summary_now_title">Lue ilmoitukset nyt</string>
     <string name="notification_summary_daily_title">Lue ilmoitukset joka päivä</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Aika-ilmoitukset</string>
-    <string name="notification_clock_interval_title">Sano aika joka kerta</string>
+    <string name="notification_clock_interval_title">Ajan ilmoitusväli</string>
     <string name="notification_clock_format_title">Ajan esitystapa</string>
     <string name="notification_clock_format_message">Paikkamerkit: {time}, {date} ja {battery} (akun prosenttiosuus).</string>
     <string name="notification_clock_format_default">Kello on {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">sanotaan <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nollaa</string>
     <string name="notification_required_title">Lue vain ilmoitukset</string>
-    <string name="notification_blocked_title">Älä lue ilmoituksia</string>
+    <string name="notification_blocked_title">Älä lue ilmoituksia, joissa on</string>
     <string name="notification_private_title">Lue vain sovelluksen nimi</string>
     <string name="notification_replacements_title">Toisenlainen ääntäminen</string>
     <string name="notification_add_word">Lisää sana</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Ilmoitusten ääneen lukeminen poistettu käytöstä</string>
     <string name="notification_no_last_notification">Ilmoitusta ei luettu</string>
     <string name="shortcut_read_notifications">Lue ilmoitukset</string>
-    <string name="shortcut_toggle_notification_speech">Ilmoituspuhe päälle tai pois päältä</string>
+    <string name="shortcut_toggle_notification_speech">Ilmoitusten lukeminen päälle tai pois</string>
     <string name="shortcut_read_last_notification">Lue viimeisin ilmoitus uudelleen</string>
     <string name="shortcut_stop_notification">Lopeta ilmoituksen lukeminen</string>
     <string name="notification_test_posting">Testiilmoitus tulee 5 sekunnin kuluttua</string>
     <string name="notification_test_not_allowed">Salli SandFly näyttää ilmoitukset ensin</string>
     <string name="notification_test_content_title">SandFly-testi</string>
     <string name="notification_test_content_text">Tämä on testiilmoitus, lue ilmoitusasetuksistasi. 123456</string>
-    <string name="notification_automation_on">Ota käyttöön ilmoitusten lukeminen ääneen</string>
-    <string name="notification_automation_off">Poista ilmoitusten ääneen lukeminen käytöstä</string>
-    <string name="notification_automation_toggle">Ota käyttöön tai poista käytöstä ilmoitusten lukeminen ääneen</string>
+    <string name="notification_automation_on">Laita ilmoitusten lukeminen päälle</string>
+    <string name="notification_automation_off">Laita ilmoitusten lukeminen pois päältä</string>
+    <string name="notification_automation_toggle">Laita ilmoitusten lukeminen päälle tai pois</string>
     <string name="notification_automation_stop">Lopeta ilmoituksen lukeminen</string>
     <string name="notification_automation_read_all">Lue ilmoitukset</string>
     <plurals name="notification_seconds">

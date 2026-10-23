@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Naciśnij oba klawisze głośności</string>
     <string name="notification_dismiss_title">Zatrzymaj po odrzuceniu</string>
     <string name="notification_watch_dismiss_title">Również wtedy, gdy powiadomienie zostanie odrzucone na smartwatchu</string>
-    <string name="notification_app_cancel_title">Przestań czytać, gdy aplikacja usunie powiadomienie</string>
+    <string name="notification_app_cancel_title">Zatrzymaj, gdy aplikacja je usunie</string>
     <string name="notification_category_summary">Podsumowanie</string>
     <string name="notification_summary_now_title">Przeczytaj powiadomienia teraz</string>
     <string name="notification_summary_daily_title">Czytaj powiadomienia codziennie</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Ogłaszanie godziny</string>
-    <string name="notification_clock_interval_title">Powiedz godzinę za każdym razem</string>
+    <string name="notification_clock_interval_title">Podawaj godzinę co</string>
     <string name="notification_clock_format_title">Format godziny</string>
     <string name="notification_clock_format_message">Elementy zastępcze: {time}, {date} i {battery} (procent baterii).</string>
     <string name="notification_clock_format_default">Jest godzina {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">wymawiane jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetuj</string>
     <string name="notification_required_title">Czytaj tylko powiadomienia za pomocą</string>
-    <string name="notification_blocked_title">Nie czytaj powiadomień za pomocą</string>
+    <string name="notification_blocked_title">Nie czytaj powiadomień zawierających</string>
     <string name="notification_private_title">Przeczytaj tylko nazwę aplikacji</string>
     <string name="notification_replacements_title">Inna wymowa</string>
     <string name="notification_add_word">Dodaj słowo</string>
@@ -306,7 +306,7 @@
     <string name="notification_speech_now_off">Czytanie powiadomień na głos wyłączone</string>
     <string name="notification_no_last_notification">Żadne powiadomienie nie zostało odczytane</string>
     <string name="shortcut_read_notifications">Czytaj powiadomienia</string>
-    <string name="shortcut_toggle_notification_speech">Włączanie i wyłączanie mowy powiadomień</string>
+    <string name="shortcut_toggle_notification_speech">Włączanie i wyłączanie czytania powiadomień</string>
     <string name="shortcut_read_last_notification">Przeczytaj jeszcze raz ostatnie powiadomienie</string>
     <string name="shortcut_stop_notification">Przestań czytać powiadomienie</string>
     <string name="notification_test_posting">Powiadomienie testowe następuje w ciągu 5 sekund</string>

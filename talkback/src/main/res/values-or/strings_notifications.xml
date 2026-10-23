@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">ଉଭୟ ଭଲ୍ୟୁମ୍ କୀ ଦବାନ୍ତୁ</string>
     <string name="notification_dismiss_title">ଖାରଜ ହେଲେ ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_watch_dismiss_title">ଏକ ସ୍ମାର୍ଟ ୱାଚ୍ ଉପରେ ମଧ୍ୟ ବିଜ୍ଞପ୍ତି ଖାରଜ ହୋଇଯାଏ</string>
-    <string name="notification_app_cancel_title">ଯେତେବେଳେ ଆପ୍ ବିଜ୍ଞପ୍ତିକୁ ଅପସାରଣ କରେ ପ reading ିବା ବନ୍ଦ କର</string>
+    <string name="notification_app_cancel_title">ଆପ୍ ଏହାକୁ ହଟାଇଲେ ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_category_summary">ସାରାଂଶ</string>
     <string name="notification_summary_now_title">ବର୍ତ୍ତମାନ ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ</string>
     <string name="notification_summary_daily_title">ପ୍ରତିଦିନ ବିଜ୍ଞପ୍ତି ପ Read ନ୍ତୁ</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ସମୟ ଘୋଷଣା</string>
-    <string name="notification_clock_interval_title">ପ୍ରତ୍ୟେକ ସମୟ କୁହନ୍ତୁ</string>
+    <string name="notification_clock_interval_title">ସମୟ କହିବାର ବ୍ୟବଧାନ</string>
     <string name="notification_clock_format_title">ସମୟ ଫର୍ମାଟ</string>
     <string name="notification_clock_format_message">ସ୍ଥାନଧାରୀ: {time}, {date} ଏବଂ {battery} (ବ୍ୟାଟେରୀ ପ୍ରତିଶତ) |</string>
     <string name="notification_clock_format_default">ଏବେ {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ଭାବରେ ପଢ଼ାଯାଏ</string>
     <string name="notification_app_reset">ରିସେଟ୍‍ କରନ୍ତୁ</string>
     <string name="notification_required_title">ସହିତ କେବଳ ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ</string>
-    <string name="notification_blocked_title">ସହିତ ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_blocked_title">ଏଗୁଡ଼ିକ ଥିବା ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_private_title">କେବଳ ଆପ୍ ନାମ ପ Read ନ୍ତୁ</string>
     <string name="notification_replacements_title">ଭିନ୍ନ ଉଚ୍ଚାରଣ</string>
     <string name="notification_add_word">ଏକ ଶବ୍ଦ ଯୋଡନ୍ତୁ</string>
@@ -257,8 +257,8 @@
     <string name="notification_cond_wired_not">ତାରଯୁକ୍ତ ହେଡଫୋନ୍ ସଂଯୋଗ ହୋଇନାହିଁ</string>
     <string name="notification_cond_battery_below">ବ୍ୟାଟେରୀ <xliff:g id="percent" example="20">%1$d</xliff:g> ପ୍ରତିଶତ ତଳେ</string>
     <string name="notification_cond_battery_below_not">ବ୍ୟାଟେରୀ <xliff:g id="percent" example="20">%1$d</xliff:g> ପ୍ରତିଶତ କିମ୍ବା ଅଧିକ ଅଟେ</string>
-    <string name="notification_cond_charging">ଫୋନ୍ ଚାର୍ଜ କରୁଛି</string>
-    <string name="notification_cond_charging_not">ଫୋନ୍ ଚାର୍ଜ କରୁନାହିଁ</string>
+    <string name="notification_cond_charging">ଫୋନ୍ ଚାର୍ଜ ହେଉଛି</string>
+    <string name="notification_cond_charging_not">ଫୋନ୍ ଚାର୍ଜ ହେଉନାହିଁ</string>
     <string name="notification_cond_locked">ଫୋନ୍ ଲକ୍ ହୋଇଛି</string>
     <string name="notification_cond_locked_not">ଫୋନ୍ ଅନଲକ୍ ହୋଇଛି</string>
     <string name="notification_cond_screen_on">ସ୍କ୍ରିନ୍ ଅନ୍ ଅଛି</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ବନ୍ଦ</string>
     <string name="notification_no_last_notification">କୌଣସି ବିଜ୍ଞପ୍ତି ପ read ାଗଲା ନାହିଁ</string>
     <string name="shortcut_read_notifications">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ପଢ଼ନ୍ତୁ</string>
-    <string name="shortcut_toggle_notification_speech">ଅନ କିମ୍ବା ଅଫ୍ ବିଜ୍ଞପ୍ତି ବକ୍ତବ୍ୟ</string>
+    <string name="shortcut_toggle_notification_speech">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଚାଲୁ କିମ୍ବା ବନ୍ଦ</string>
     <string name="shortcut_read_last_notification">ଶେଷ ବିଜ୍ଞପ୍ତିକୁ ପୁନର୍ବାର ପ .଼ନ୍ତୁ</string>
     <string name="shortcut_stop_notification">ବିଜ୍ଞପ୍ତି ପ reading ିବା ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_test_posting">ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି 5 ସେକେଣ୍ଡରେ ଅନୁସରଣ ହୁଏ</string>
     <string name="notification_test_not_allowed">ପ୍ରଥମେ ବିଜ୍ଞପ୍ତି ଦେଖାଇବାକୁ SandFly କୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="notification_test_content_title">SandFly ପରୀକ୍ଷା</string>
     <string name="notification_test_content_text">ଏହା ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି, ତୁମର ବିଜ୍ଞପ୍ତି ସେଟିଂସମୂହ ସହିତ ପ read | 123456</string>
-    <string name="notification_automation_on">ଉଚ୍ଚ ସ୍ୱରରେ ପଠନ ବିଜ୍ଞପ୍ତିକୁ ସକ୍ଷମ କରନ୍ତୁ</string>
-    <string name="notification_automation_off">ଉଚ୍ଚ ସ୍ୱରରେ ପଠନ ବିଜ୍ଞପ୍ତିକୁ ଅକ୍ଷମ କରନ୍ତୁ</string>
-    <string name="notification_automation_toggle">ଉଚ୍ଚ ସ୍ୱରରେ ପଠନ ବିଜ୍ଞପ୍ତିକୁ ସକ୍ଷମ କିମ୍ବା ଅକ୍ଷମ କରନ୍ତୁ</string>
-    <string name="notification_automation_stop">ପଠନ କରାଯାଉଥିବା ବିଜ୍ଞପ୍ତିକୁ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_automation_on">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଚାଲୁ କରନ୍ତୁ</string>
+    <string name="notification_automation_off">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_automation_toggle">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_automation_stop">ପଢ଼ାଯାଉଥିବା ବିଜ୍ଞପ୍ତି ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_automation_read_all">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ପଢ଼ନ୍ତୁ</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ଦ୍ୱିତୀୟ</item>

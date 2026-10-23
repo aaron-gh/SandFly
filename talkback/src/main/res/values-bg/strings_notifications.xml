@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Натиснете двата бутона за сила на звука</string>
     <string name="notification_dismiss_title">Спиране при отхвърляне</string>
     <string name="notification_watch_dismiss_title">Също така, когато известието е отхвърлено на смарт часовник</string>
-    <string name="notification_app_cancel_title">Спрете да четете, когато приложението премахне известието</string>
+    <string name="notification_app_cancel_title">Спиране, когато приложението премахне известието</string>
     <string name="notification_category_summary">Резюме</string>
     <string name="notification_summary_now_title">Прочитане на известията сега</string>
     <string name="notification_summary_daily_title">Четете известията всеки ден</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Съобщаване на часа</string>
-    <string name="notification_clock_interval_title">Кажете часа всеки път</string>
+    <string name="notification_clock_interval_title">Казване на часа на всеки</string>
     <string name="notification_clock_format_title">Формат за часа</string>
     <string name="notification_clock_format_message">Заместители: {time}, {date} и {battery} (процентът на батерията).</string>
     <string name="notification_clock_format_default">Часът е {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">изговаря се като <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Нулиране</string>
     <string name="notification_required_title">Четете само известия с</string>
-    <string name="notification_blocked_title">Не четете известия с</string>
+    <string name="notification_blocked_title">Без четене на известия, съдържащи</string>
     <string name="notification_private_title">Прочетете само името на приложението за</string>
     <string name="notification_replacements_title">Различно произношение</string>
     <string name="notification_add_word">Добавяне на дума</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Четенето на известия на глас е деактивирано</string>
     <string name="notification_no_last_notification">Не е прочетено известие</string>
     <string name="shortcut_read_notifications">Прочитане на известията</string>
-    <string name="shortcut_toggle_notification_speech">Включване или изключване на речта за известяване</string>
+    <string name="shortcut_toggle_notification_speech">Включване или изключване на четенето на известия</string>
     <string name="shortcut_read_last_notification">Прочетете отново последното известие</string>
     <string name="shortcut_stop_notification">Спрете да четете известието</string>
     <string name="notification_test_posting">След 5 секунди следва тестово известие</string>
     <string name="notification_test_not_allowed">Разрешете на SandFly първо да показва известия</string>
     <string name="notification_test_content_title">Тест на SandFly</string>
     <string name="notification_test_content_text">Това е тестово известие, прочетете с вашите настройки за известяване. 123456</string>
-    <string name="notification_automation_on">Разрешете четенето на известия на глас</string>
-    <string name="notification_automation_off">Деактивирайте четенето на известия на глас</string>
-    <string name="notification_automation_toggle">Активирайте или деактивирайте четенето на известия на глас</string>
-    <string name="notification_automation_stop">Спрете четенето на известието</string>
+    <string name="notification_automation_on">Включване на четенето на известия</string>
+    <string name="notification_automation_off">Изключване на четенето на известия</string>
+    <string name="notification_automation_toggle">Включване или изключване на четенето на известия</string>
+    <string name="notification_automation_stop">Спиране на четенето на известието</string>
     <string name="notification_automation_read_all">Прочитане на известията</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>

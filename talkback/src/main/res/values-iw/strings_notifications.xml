@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">לחץ על שני מקשי עוצמת הקול</string>
     <string name="notification_dismiss_title">עצירה כשההתראה נסגרת</string>
     <string name="notification_watch_dismiss_title">גם כאשר ההודעה נמחקת בשעון חכם</string>
-    <string name="notification_app_cancel_title">הפסק לקרוא כאשר האפליקציה מסירה את ההודעה</string>
+    <string name="notification_app_cancel_title">עצירה כשהאפליקציה מסירה אותה</string>
     <string name="notification_category_summary">סיכום</string>
     <string name="notification_summary_now_title">הקראת ההתראות עכשיו</string>
     <string name="notification_summary_daily_title">קרא התראות כל יום</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">הודעות זמן</string>
-    <string name="notification_clock_interval_title">תגיד את השעה כל פעם</string>
+    <string name="notification_clock_interval_title">הקראת השעה כל</string>
     <string name="notification_clock_format_title">פורמט השעה</string>
     <string name="notification_clock_format_message">מצייני מיקום: {time}, {date} ו-{battery} (אחוז הסוללה).</string>
     <string name="notification_clock_format_default">השעה {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">נאמר כ-<xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">איפוס</string>
     <string name="notification_required_title">קרא רק התראות עם</string>
-    <string name="notification_blocked_title">אל תקראו הודעות עם</string>
+    <string name="notification_blocked_title">לא להקריא התראות שמכילות</string>
     <string name="notification_private_title">קרא רק את שם האפליקציה עבור</string>
     <string name="notification_replacements_title">הגייה אחרת</string>
     <string name="notification_add_word">הוספת מילה</string>
@@ -255,8 +255,8 @@
     <string name="notification_cond_bluetooth_any_not">לא מחובר התקן שמע Bluetooth</string>
     <string name="notification_cond_wired">אוזניות חוטיות מחוברות</string>
     <string name="notification_cond_wired_not">אוזניות חוטיות אינן מחוברות</string>
-    <string name="notification_cond_battery_below">הסוללה נמוכה מ-<xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים</string>
-    <string name="notification_cond_battery_below_not">הסוללה היא ב-<xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים או יותר</string>
+    <string name="notification_cond_battery_below">רמת הסוללה נמוכה מ-<xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים</string>
+    <string name="notification_cond_battery_below_not">רמת הסוללה היא <xliff:g id="percent" example="20">%1$d</xliff:g> אחוזים או יותר</string>
     <string name="notification_cond_charging">הטלפון בטעינה</string>
     <string name="notification_cond_charging_not">הטלפון לא נטען</string>
     <string name="notification_cond_locked">הטלפון נעול</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">קריאת התראות בקול מושבתת</string>
     <string name="notification_no_last_notification">לא נקראה הודעה</string>
     <string name="shortcut_read_notifications">הקראת התראות</string>
-    <string name="shortcut_toggle_notification_speech">דיבור הודעה מופעל או כבוי</string>
+    <string name="shortcut_toggle_notification_speech">הפעלה או כיבוי של הקראת התראות</string>
     <string name="shortcut_read_last_notification">קרא שוב את ההודעה האחרונה</string>
     <string name="shortcut_stop_notification">תפסיק לקרוא את ההודעה</string>
     <string name="notification_test_posting">הודעת בדיקה מגיעה תוך 5 שניות</string>
     <string name="notification_test_not_allowed">אפשר ל-SandFly להציג הודעות תחילה</string>
     <string name="notification_test_content_title">מבחן SandFly</string>
     <string name="notification_test_content_text">זו הודעת בדיקה, קרא עם הגדרות ההתראות שלך. 123456</string>
-    <string name="notification_automation_on">אפשר קריאת התראות בקול</string>
-    <string name="notification_automation_off">השבת קריאת התראות בקול</string>
-    <string name="notification_automation_toggle">הפעל או השבת קריאת התראות בקול</string>
-    <string name="notification_automation_stop">עצור את קריאת ההודעה</string>
+    <string name="notification_automation_on">הפעלת הקראת התראות</string>
+    <string name="notification_automation_off">כיבוי הקראת התראות</string>
+    <string name="notification_automation_toggle">הפעלה או כיבוי של הקראת התראות</string>
+    <string name="notification_automation_stop">עצירת ההקראה של ההתראה</string>
     <string name="notification_automation_read_all">הקראת התראות</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> שנייה</item>

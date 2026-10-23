@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">အသံအတိုးအကျယ်ခလုတ်နှစ်ခုလုံးကို နှိပ်ပါ</string>
     <string name="notification_dismiss_title">ပယ်လိုက်သောအခါ ရပ်ရန်</string>
     <string name="notification_watch_dismiss_title">စမတ်နာရီပေါ်တွင် အကြောင်းကြားချက်ကို ပယ်လိုက်သည့်အခါလည်း ဖြစ်သည်</string>
-    <string name="notification_app_cancel_title">အက်ပ်က အသိပေးချက်ကို ဖယ်ရှားသည့်အခါ စာဖတ်ခြင်းကို ရပ်ပါ</string>
+    <string name="notification_app_cancel_title">အက်ပ်က ဖယ်ရှားသည့်အခါ ရပ်ရန်</string>
     <string name="notification_category_summary">အကျဉ်းချုပ်</string>
     <string name="notification_summary_now_title">အကြောင်းကြားချက်များကို ယခု ဖတ်ရန်</string>
     <string name="notification_summary_daily_title">သတိပေးချက်များကို နေ့တိုင်းဖတ်ပါ</string>
@@ -125,9 +125,9 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">အချိန်ကြေငြာချက်များ</string>
-    <string name="notification_clock_interval_title">အချိန်တိုင်းပြောပါ</string>
+    <string name="notification_clock_interval_title">အချိန်ပြောသည့် ကြားကာလ</string>
     <string name="notification_clock_format_title">အချိန်ဖော်မက်</string>
-    <string name="notification_clock_format_message">နေရာထိုင်ခင်း- {time}၊ {date} နှင့် {battery} (ဘက်ထရီရာခိုင်နှုန်း)။</string>
+    <string name="notification_clock_format_message">နေရာယူ စာသားများ- {time}၊ {date} နှင့် {battery} (ဘက်ထရီ ရာခိုင်နှုန်း)။</string>
     <string name="notification_clock_format_default">အခု {time}</string>
     <string name="notification_clock_exact_title">အချိန်အတိအကျ</string>
     <string name="notification_clock_exact_summary">နှိုးစက်များနှင့် သတိပေးချက်များ လိုအပ်သည်။ မဟုတ်ရင် အချိန်က တစ်မိနစ်လောက် နောက်ကျသွားနိုင်တယ်။</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ဟု ဆိုသည်</string>
     <string name="notification_app_reset">ပြန်လည်သတ်မှတ်ပါ</string>
     <string name="notification_required_title">အသိပေးချက်များကိုသာ ဖတ်ပါ</string>
-    <string name="notification_blocked_title">အသိပေးချက်များကို မဖတ်ပါနှင့်</string>
+    <string name="notification_blocked_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များကို မဖတ်ရန်</string>
     <string name="notification_private_title">အက်ပ်အမည်ကိုသာ ဖတ်ပါ</string>
     <string name="notification_replacements_title">ကွဲပြားစွာ ဖတ်ခြင်း</string>
     <string name="notification_add_word">စကားလုံးထည့်ပါ</string>
@@ -251,8 +251,8 @@
     <string name="notification_permission_needed">SandFly ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ချိတ်ဆက်ထားသည်</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> မချိတ်ဆက်ပါ</string>
-    <string name="notification_cond_bluetooth_any">Bluetooth အသံစက်ကို ချိတ်ဆက်ထားသည်</string>
-    <string name="notification_cond_bluetooth_any_not">Bluetooth အသံစက်ကို ချိတ်ဆက်ထားခြင်းမရှိပါ</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth အသံ စက်ပစ္စည်း ချိတ်ဆက်ထားသည်</string>
+    <string name="notification_cond_bluetooth_any_not">Bluetooth အသံ စက်ပစ္စည်း ချိတ်ဆက်ထားခြင်း မရှိပါ</string>
     <string name="notification_cond_wired">ကြိုးတပ်နားကြပ်များကို ချိတ်ဆက်ထားသည်</string>
     <string name="notification_cond_wired_not">ကြိုးတပ်နားကြပ်များကို မချိတ်ဆက်ပါ</string>
     <string name="notification_cond_battery_below">ဘက်ထရီသည် <xliff:g id="percent" example="20">%1$d</xliff:g> ရာခိုင်နှုန်းအောက်တွင်ရှိသည်</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">အကြောင်းကြားချက် ဖတ်ခြင်း ပိတ်ထားသည်</string>
     <string name="notification_no_last_notification">အကြောင်းကြားစာကို မဖတ်ခဲ့ပါ</string>
     <string name="shortcut_read_notifications">အကြောင်းကြားချက်များကို ဖတ်ရန်</string>
-    <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် မိန့်ခွန်းကို အဖွင့် သို့မဟုတ် ပိတ်ပါ</string>
+    <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် ဖတ်ခြင်း ဖွင့်/ပိတ်</string>
     <string name="shortcut_read_last_notification">နောက်ဆုံးသတိပေးချက်ကို ထပ်ဖတ်ပါ</string>
     <string name="shortcut_stop_notification">အကြောင်းကြားစာကို ဖတ်ခြင်းကို ရပ်ပါ</string>
     <string name="notification_test_posting">စမ်းသပ်မှုသတိပေးချက်သည် ၅ စက္ကန့်အတွင်း ထွက်ပေါ်လာသည်</string>
     <string name="notification_test_not_allowed">အကြောင်းကြားချက်များကို ဦးစွာပြသရန် SandFlyအား ခွင့်ပြုပါ</string>
     <string name="notification_test_content_title">SandFly စမ်းသပ်မှု</string>
     <string name="notification_test_content_text">ဤသည်မှာ စမ်းသပ်မှုသတိပေးချက်ဖြစ်ပြီး၊ သင်၏သတိပေးချက်ဆက်တင်များဖြင့် ဖတ်ပါ။ ၁၂၃၄၅၆</string>
-    <string name="notification_automation_on">အကြောင်းကြားချက်များကို ကျယ်လောင်စွာဖတ်ခြင်းကို ဖွင့်ပါ</string>
-    <string name="notification_automation_off">ကျယ်လောင်စွာဖတ်ခြင်း အသိပေးချက်များကို ပိတ်ပါ</string>
-    <string name="notification_automation_toggle">ကျယ်လောင်စွာ ဖတ်ရှုခြင်း အသိပေးချက်များကို ဖွင့်ပါ သို့မဟုတ် ပိတ်ပါ</string>
-    <string name="notification_automation_stop">အကြောင်းကြားချက်ကို ဖတ်နေခြင်းကို ရပ်ပါ</string>
+    <string name="notification_automation_on">အကြောင်းကြားချက် ဖတ်ခြင်းကို ဖွင့်ရန်</string>
+    <string name="notification_automation_off">အကြောင်းကြားချက် ဖတ်ခြင်းကို ပိတ်ရန်</string>
+    <string name="notification_automation_toggle">အကြောင်းကြားချက် ဖတ်ခြင်းကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန်</string>
+    <string name="notification_automation_stop">ဖတ်နေသော အကြောင်းကြားချက်ကို ရပ်ရန်</string>
     <string name="notification_automation_read_all">အကြောင်းကြားချက်များကို ဖတ်ရန်</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ဒုတိယ</item>

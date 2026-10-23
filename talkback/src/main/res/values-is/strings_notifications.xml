@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Ýttu á báða hljóðstyrkstakkana</string>
     <string name="notification_dismiss_title">Stöðva þegar hunsað</string>
     <string name="notification_watch_dismiss_title">Einnig þegar tilkynningunni er vísað frá á snjallúri</string>
-    <string name="notification_app_cancel_title">Hættu að lesa þegar appið fjarlægir tilkynninguna</string>
+    <string name="notification_app_cancel_title">Stöðva þegar forritið fjarlægir hana</string>
     <string name="notification_category_summary">Samantekt</string>
     <string name="notification_summary_now_title">Lesa tilkynningar núna</string>
     <string name="notification_summary_daily_title">Lestu tilkynningar á hverjum degi</string>
@@ -125,9 +125,9 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Tímatilkynningar</string>
-    <string name="notification_clock_interval_title">Segðu tímann á hverjum tíma</string>
+    <string name="notification_clock_interval_title">Bil milli tímatilkynninga</string>
     <string name="notification_clock_format_title">Tímasnið</string>
-    <string name="notification_clock_format_message">Staðfestar: {time}, {date} og {battery} (rafhlöðuprósentan).</string>
+    <string name="notification_clock_format_message">Staðgenglar: {time}, {date} og {battery} (hleðsla rafhlöðu í prósentum).</string>
     <string name="notification_clock_format_default">Það er {time}</string>
     <string name="notification_clock_exact_title">Nákvæmir tímar</string>
     <string name="notification_clock_exact_summary">Þarfnast viðvörunar og áminningar. Annars má segja að tíminn sé allt að mínútu of seint.</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">sagt sem <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Endurstilla</string>
     <string name="notification_required_title">Lestu aðeins tilkynningar með</string>
-    <string name="notification_blocked_title">Ekki lesa tilkynningar með</string>
+    <string name="notification_blocked_title">Ekki lesa tilkynningar sem innihalda</string>
     <string name="notification_private_title">Lestu aðeins nafn appsins fyrir</string>
     <string name="notification_replacements_title">Annar framburður</string>
     <string name="notification_add_word">Bættu við orði</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Óvirkt að lesa tilkynningar upphátt</string>
     <string name="notification_no_last_notification">Engin tilkynning var lesin</string>
     <string name="shortcut_read_notifications">Lesa tilkynningar</string>
-    <string name="shortcut_toggle_notification_speech">Kveikt eða slökkt á tilkynningatali</string>
+    <string name="shortcut_toggle_notification_speech">Kveikja eða slökkva á upplestri tilkynninga</string>
     <string name="shortcut_read_last_notification">Lestu síðustu tilkynninguna aftur</string>
     <string name="shortcut_stop_notification">Hættu að lesa tilkynninguna</string>
     <string name="notification_test_posting">Tilkynning um próf fylgir eftir 5 sekúndur</string>
     <string name="notification_test_not_allowed">Leyfa SandFly að sýna tilkynningar fyrst</string>
     <string name="notification_test_content_title">SandFly-próf</string>
     <string name="notification_test_content_text">Þetta er prufutilkynning, lesið með tilkynningastillingunum þínum. 123456</string>
-    <string name="notification_automation_on">Virkjaðu lestur tilkynninga upphátt</string>
-    <string name="notification_automation_off">Slökktu á því að lesa tilkynningar upphátt</string>
-    <string name="notification_automation_toggle">Virkja eða slökkva á lestristilkynningum upphátt</string>
-    <string name="notification_automation_stop">Hætta að lesa tilkynninguna</string>
+    <string name="notification_automation_on">Kveikja á upplestri tilkynninga</string>
+    <string name="notification_automation_off">Slökkva á upplestri tilkynninga</string>
+    <string name="notification_automation_toggle">Kveikja eða slökkva á upplestri tilkynninga</string>
+    <string name="notification_automation_stop">Stöðva upplestur tilkynningarinnar</string>
     <string name="notification_automation_read_all">Lesa tilkynningar</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekúndu</item>

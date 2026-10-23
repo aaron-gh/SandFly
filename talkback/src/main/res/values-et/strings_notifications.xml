@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Vajutage mõlemat helitugevusklahvi</string>
     <string name="notification_dismiss_title">Peata loobumisel</string>
     <string name="notification_watch_dismiss_title">Ka siis, kui nutikellas teatisest loobutakse</string>
-    <string name="notification_app_cancel_title">Lõpetage lugemine, kui rakendus teatise eemaldab</string>
+    <string name="notification_app_cancel_title">Peata, kui rakendus selle eemaldab</string>
     <string name="notification_category_summary">Kokkuvõte</string>
     <string name="notification_summary_now_title">Loe märguanded kohe</string>
     <string name="notification_summary_daily_title">Lugege teatisi iga päev</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Ajakuulutused</string>
-    <string name="notification_clock_interval_title">Ütle iga kord kellaaeg</string>
+    <string name="notification_clock_interval_title">Ütle kellaaeg iga</string>
     <string name="notification_clock_format_title">Ajavorming</string>
     <string name="notification_clock_format_message">Kohatäitjad: {time}, {date} ja {battery} (aku protsent).</string>
     <string name="notification_clock_format_default">Kell on {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">öeldud kui <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Lähtesta</string>
     <string name="notification_required_title">Lugege märguandeid ainult rakendusega</string>
-    <string name="notification_blocked_title">Ärge lugege märguandeid</string>
+    <string name="notification_blocked_title">Ära loe märguandeid, mis sisaldavad</string>
     <string name="notification_private_title">Lugege ainult rakenduse nime</string>
     <string name="notification_replacements_title">Teistsugune hääldus</string>
     <string name="notification_add_word">Lisa sõna</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Märguannete ettelugemine on keelatud</string>
     <string name="notification_no_last_notification">Ühtegi teatist ei loetud</string>
     <string name="shortcut_read_notifications">Loe märguandeid</string>
-    <string name="shortcut_toggle_notification_speech">Märguandekõne sisse või välja lülitada</string>
+    <string name="shortcut_toggle_notification_speech">Märguannete ettelugemine sisse või välja</string>
     <string name="shortcut_read_last_notification">Lugege viimast teadet uuesti</string>
     <string name="shortcut_stop_notification">Lõpetage teatise lugemine</string>
     <string name="notification_test_posting">5 sekundi pärast järgneb testiteade</string>
     <string name="notification_test_not_allowed">Lubage SandFly esmalt märguandeid kuvada</string>
     <string name="notification_test_content_title">SandFly test</string>
     <string name="notification_test_content_text">See on testteatis, lugege koos oma teavitusseadetega. 123456</string>
-    <string name="notification_automation_on">Lubage märguannete ettelugemine</string>
-    <string name="notification_automation_off">Keela märguannete ettelugemine</string>
-    <string name="notification_automation_toggle">Lubage või keelake märguannete ettelugemine</string>
-    <string name="notification_automation_stop">Peatage teatise lugemine</string>
+    <string name="notification_automation_on">Lülita märguannete ettelugemine sisse</string>
+    <string name="notification_automation_off">Lülita märguannete ettelugemine välja</string>
+    <string name="notification_automation_toggle">Lülita märguannete ettelugemine sisse või välja</string>
+    <string name="notification_automation_stop">Peata märguande lugemine</string>
     <string name="notification_automation_read_all">Loe märguandeid</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekund</item>

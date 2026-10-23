@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Trykk på begge volumtastene</string>
     <string name="notification_dismiss_title">Stopp når det avvises</string>
     <string name="notification_watch_dismiss_title">Også når varselet avvises på en smartklokke</string>
-    <string name="notification_app_cancel_title">Slutt å lese når appen fjerner varselet</string>
+    <string name="notification_app_cancel_title">Stopp når appen fjerner det</string>
     <string name="notification_category_summary">Sammendrag</string>
     <string name="notification_summary_now_title">Les varsler nå</string>
     <string name="notification_summary_daily_title">Les varsler hver dag</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">sagt som <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Tilbakestill</string>
     <string name="notification_required_title">Les kun varsler med</string>
-    <string name="notification_blocked_title">Ikke les varsler med</string>
+    <string name="notification_blocked_title">Ikke les varsler som inneholder</string>
     <string name="notification_private_title">Les kun appnavnet for</string>
     <string name="notification_replacements_title">Annen uttale</string>
     <string name="notification_add_word">Legg til et ord</string>
@@ -251,8 +251,8 @@
     <string name="notification_permission_needed">SandFly trenger den tillatelsen for denne tilstanden</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er tilkoblet</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> er ikke tilkoblet</string>
-    <string name="notification_cond_bluetooth_any">En Bluetooth lydenhet er tilkoblet</string>
-    <string name="notification_cond_bluetooth_any_not">Ingen Bluetooth lydenhet er tilkoblet</string>
+    <string name="notification_cond_bluetooth_any">En Bluetooth-lydenhet er tilkoblet</string>
+    <string name="notification_cond_bluetooth_any_not">Ingen Bluetooth-lydenhet er tilkoblet</string>
     <string name="notification_cond_wired">Kablede hodetelefoner er tilkoblet</string>
     <string name="notification_cond_wired_not">Kablede hodetelefoner er ikke tilkoblet</string>
     <string name="notification_cond_battery_below">Batteriet er under <xliff:g id="percent" example="20">%1$d</xliff:g> prosent</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Høytlesing av varsler deaktivert</string>
     <string name="notification_no_last_notification">Ingen melding ble lest</string>
     <string name="shortcut_read_notifications">Les varsler</string>
-    <string name="shortcut_toggle_notification_speech">Varslingstale på eller av</string>
+    <string name="shortcut_toggle_notification_speech">Høytlesing av varsler på eller av</string>
     <string name="shortcut_read_last_notification">Les den siste varslingen på nytt</string>
     <string name="shortcut_stop_notification">Slutt å lese varselet</string>
     <string name="notification_test_posting">Et testvarsel følger etter 5 sekunder</string>
     <string name="notification_test_not_allowed">Tillat SandFly å vise varsler først</string>
     <string name="notification_test_content_title">SandFly-test</string>
     <string name="notification_test_content_text">Dette er et testvarsel, les med varslingsinnstillingene dine. 123456</string>
-    <string name="notification_automation_on">Aktiver høytlesingsvarsler</string>
-    <string name="notification_automation_off">Deaktiver lesing av varsler høyt</string>
-    <string name="notification_automation_toggle">Aktiver eller deaktiver lesevarsler høyt</string>
-    <string name="notification_automation_stop">Stopp varselet som blir lest</string>
+    <string name="notification_automation_on">Slå på høytlesing av varsler</string>
+    <string name="notification_automation_off">Slå av høytlesing av varsler</string>
+    <string name="notification_automation_toggle">Slå høytlesing av varsler på eller av</string>
+    <string name="notification_automation_stop">Stopp høytlesingen av varselet</string>
     <string name="notification_automation_read_all">Les varsler</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekund</item>

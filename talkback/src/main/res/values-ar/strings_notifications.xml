@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">اضغط على كلا مفتاحي الصوت</string>
     <string name="notification_dismiss_title">الإيقاف عند إزالة الإشعار</string>
     <string name="notification_watch_dismiss_title">أيضًا عند إزالة الإشعار من ساعة ذكية</string>
-    <string name="notification_app_cancel_title">توقف عن القراءة عندما يزيل التطبيق الإشعار</string>
+    <string name="notification_app_cancel_title">التوقف عندما يزيل التطبيق الإشعار</string>
     <string name="notification_category_summary">ملخص</string>
     <string name="notification_summary_now_title">قراءة الإخطارات الآن</string>
     <string name="notification_summary_daily_title">قراءة الإخطارات كل يوم</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">إعلانات الوقت</string>
-    <string name="notification_clock_interval_title">قل الوقت كل</string>
+    <string name="notification_clock_interval_title">نطق الوقت كل</string>
     <string name="notification_clock_format_title">تنسيق الوقت</string>
     <string name="notification_clock_format_message">العناصر النائبة: {time} و{date} و{battery} (نسبة البطارية).</string>
     <string name="notification_clock_format_default">الساعة الآن {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">يُنطق <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">إعادة الضبط</string>
     <string name="notification_required_title">قراءة الإخطارات فقط مع</string>
-    <string name="notification_blocked_title">لا تقرأ الإخطارات مع</string>
+    <string name="notification_blocked_title">عدم قراءة الإشعارات التي تحتوي على</string>
     <string name="notification_private_title">اقرأ فقط اسم التطبيق لـ</string>
     <string name="notification_replacements_title">نطق مختلف</string>
     <string name="notification_add_word">إضافة كلمة</string>
@@ -252,7 +252,7 @@
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> متصل</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> غير متصل</string>
     <string name="notification_cond_bluetooth_any">تم توصيل جهاز صوت Bluetooth</string>
-    <string name="notification_cond_bluetooth_any_not">لا يوجد جهاز صوت متصل Bluetooth</string>
+    <string name="notification_cond_bluetooth_any_not">لا يوجد جهاز صوت Bluetooth متصل</string>
     <string name="notification_cond_wired">سماعات الرأس السلكية متصلة</string>
     <string name="notification_cond_wired_not">سماعات الرأس السلكية غير متصلة</string>
     <string name="notification_cond_battery_below">البطارية أقل من <xliff:g id="percent" example="20">%1$d</xliff:g> بالمائة</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">تم إيقاف قراءة الإشعارات</string>
     <string name="notification_no_last_notification">لم تتم قراءة أي إشعار</string>
     <string name="shortcut_read_notifications">قراءة الإشعارات</string>
-    <string name="shortcut_toggle_notification_speech">خطاب الإخطار أو إيقاف تشغيله</string>
+    <string name="shortcut_toggle_notification_speech">تفعيل قراءة الإشعارات أو إيقافها</string>
     <string name="shortcut_read_last_notification">اقرأ الإخطار الأخير مرة أخرى</string>
     <string name="shortcut_stop_notification">توقف عن قراءة الإشعار</string>
     <string name="notification_test_posting">يأتي إشعار الاختبار بعد 5 ثوانٍ</string>
     <string name="notification_test_not_allowed">اسمح لـ SandFly بإظهار الإشعارات أولاً</string>
     <string name="notification_test_content_title">اختبار SandFly</string>
     <string name="notification_test_content_text">هذا إشعار اختباري، يمكنك قراءته باستخدام إعدادات الإشعارات لديك. 123456</string>
-    <string name="notification_automation_on">تمكين قراءة الإخطارات بصوت عال</string>
-    <string name="notification_automation_off">تعطيل قراءة الإخطارات بصوت عال</string>
-    <string name="notification_automation_toggle">تمكين أو تعطيل قراءة الإخطارات بصوت عال</string>
+    <string name="notification_automation_on">تفعيل قراءة الإشعارات</string>
+    <string name="notification_automation_off">إيقاف قراءة الإشعارات</string>
+    <string name="notification_automation_toggle">تفعيل قراءة الإشعارات أو إيقافها</string>
     <string name="notification_automation_stop">إيقاف قراءة الإشعار</string>
     <string name="notification_automation_read_all">قراءة الإشعارات</string>
     <plurals name="notification_seconds">

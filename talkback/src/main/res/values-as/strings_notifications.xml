@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">দুয়োটা আয়তন কি\' টিপক</string>
     <string name="notification_dismiss_title">খাৰিজ কৰিলে বন্ধ কৰক</string>
     <string name="notification_watch_dismiss_title">লগতে যেতিয়া স্মাৰ্টৱাচত জাননীখন খাৰিজ কৰা হয়</string>
-    <string name="notification_app_cancel_title">এপটোৱে জাননীটো আঁতৰাই দিলে পঢ়া বন্ধ কৰক</string>
+    <string name="notification_app_cancel_title">এপে আঁতৰালে বন্ধ কৰক</string>
     <string name="notification_category_summary">সাৰাংশ</string>
     <string name="notification_summary_now_title">এতিয়াই জাননী পঢ়ক</string>
     <string name="notification_summary_daily_title">প্ৰতিদিনে জাননী পঢ়ক</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">সময়ৰ ঘোষণা</string>
-    <string name="notification_clock_interval_title">সময় কওক প্ৰতি</string>
+    <string name="notification_clock_interval_title">সময় কোৱাৰ ব্যৱধান</string>
     <string name="notification_clock_format_title">সময়ৰ ফৰ্মেট</string>
     <string name="notification_clock_format_message">প্লেচহোল্ডাৰ: {time}, {date} আৰু {battery} (বেটাৰীৰ শতাংশ)।</string>
     <string name="notification_clock_format_default">এতিয়া {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> বুলি কোৱা হৈছে</string>
     <string name="notification_app_reset">ৰিছেট কৰক</string>
     <string name="notification_required_title">কেৱল জাননীসমূহ পঢ়ক</string>
-    <string name="notification_blocked_title">ৰ সৈতে জাননী পঢ়িব নালাগে</string>
+    <string name="notification_blocked_title">এইবোৰ থকা জাননী নপঢ়িব</string>
     <string name="notification_private_title">কেৱল এপৰ নামটো পঢ়ক</string>
     <string name="notification_replacements_title">বেলেগ উচ্চাৰণ</string>
     <string name="notification_add_word">এটা শব্দ যোগ কৰক</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">জাননীসমূহ উচ্চস্বৰে পঢ়া নিষ্ক্ৰিয় কৰা হৈছে</string>
     <string name="notification_no_last_notification">কোনো জাননী পঢ়া নহ’ল</string>
     <string name="shortcut_read_notifications">জাননীসমূহ পঢ়ক</string>
-    <string name="shortcut_toggle_notification_speech">অধিসূচনা ভাষণ অন বা অফ</string>
+    <string name="shortcut_toggle_notification_speech">জাননী পঢ়া অন বা অফ</string>
     <string name="shortcut_read_last_notification">শেষৰ জাননীটো আকৌ পঢ়ক</string>
     <string name="shortcut_stop_notification">জাননী পঢ়া বন্ধ কৰক</string>
     <string name="notification_test_posting">৫ ছেকেণ্ডৰ পিছত এটা পৰীক্ষাৰ অধিসূচনা আহিব</string>
     <string name="notification_test_not_allowed">প্ৰথমে SandFly ক জাননী দেখুৱাবলৈ অনুমতি দিয়ক</string>
     <string name="notification_test_content_title">SandFly পৰীক্ষা</string>
     <string name="notification_test_content_text">এইটো এটা পৰীক্ষামূলক অধিসূচনা, আপোনাৰ অধিসূচনা সংহতিসমূহৰ সৈতে পঢ়ক। ১২৩৪৫৬ নম্বৰত</string>
-    <string name="notification_automation_on">জাননীসমূহ উচ্চস্বৰে পঢ়া সামৰ্থবান কৰক</string>
-    <string name="notification_automation_off">উচ্চস্বৰে পঢ়া জাননীসমূহ নিষ্ক্ৰিয় কৰক</string>
-    <string name="notification_automation_toggle">জাননীসমূহ উচ্চস্বৰে পঢ়া সামৰ্থবান বা নিষ্ক্ৰিয় কৰক</string>
-    <string name="notification_automation_stop">জাননী পঢ়া বন্ধ কৰক</string>
+    <string name="notification_automation_on">জাননী পঢ়া অন কৰক</string>
+    <string name="notification_automation_off">জাননী পঢ়া অফ কৰক</string>
+    <string name="notification_automation_toggle">জাননী পঢ়া অন বা অফ কৰক</string>
+    <string name="notification_automation_stop">পঢ়ি থকা জাননীটো বন্ধ কৰক</string>
     <string name="notification_automation_read_all">জাননীসমূহ পঢ়ক</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ছেকেণ্ড</item>

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">هر دو کلید صدا را فشار دهید</string>
     <string name="notification_dismiss_title">توقف هنگام رد کردن</string>
     <string name="notification_watch_dismiss_title">همچنین هنگامی که اعلان در ساعت هوشمند رد می شود</string>
-    <string name="notification_app_cancel_title">وقتی برنامه اعلان را حذف کرد، خواندن را متوقف کنید</string>
+    <string name="notification_app_cancel_title">توقف وقتی برنامه آن را حذف کند</string>
     <string name="notification_category_summary">خلاصه</string>
     <string name="notification_summary_now_title">خواندن اعلان‌ها اکنون</string>
     <string name="notification_summary_daily_title">هر روز نوتیفیکیشن ها را بخوانید</string>
@@ -125,9 +125,9 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">اعلام زمان</string>
-    <string name="notification_clock_interval_title">هر بار بگو</string>
+    <string name="notification_clock_interval_title">فاصله اعلام زمان</string>
     <string name="notification_clock_format_title">قالب زمان</string>
-    <string name="notification_clock_format_message">متغیرهایی: {time}، {date} و {battery} (درصد باتری).</string>
+    <string name="notification_clock_format_message">متغیرها: {time}، {date} و {battery} (درصد باتری).</string>
     <string name="notification_clock_format_default">ساعت {time} است</string>
     <string name="notification_clock_exact_title">زمان های دقیق</string>
     <string name="notification_clock_exact_summary">به هشدار و یادآوری نیاز دارد. در غیر این صورت می توان زمان را تا یک دقیقه تاخیر گفت.</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">گفته شده به عنوان <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">بازنشانی</string>
     <string name="notification_required_title">فقط خواندن اعلان ها با</string>
-    <string name="notification_blocked_title">اعلان ها را با</string>
+    <string name="notification_blocked_title">اعلان‌های حاوی این موارد خوانده نشوند</string>
     <string name="notification_private_title">فقط نام برنامه را بخوانید</string>
     <string name="notification_replacements_title">تلفظ متفاوت</string>
     <string name="notification_add_word">افزودن کلمه</string>
@@ -258,7 +258,7 @@
     <string name="notification_cond_battery_below">باتری زیر <xliff:g id="percent" example="20">%1$d</xliff:g> درصد است</string>
     <string name="notification_cond_battery_below_not">باتری <xliff:g id="percent" example="20">%1$d</xliff:g> درصد یا بیشتر است</string>
     <string name="notification_cond_charging">گوشی در حال شارژ شدن است</string>
-    <string name="notification_cond_charging_not">گوشی شارژ نمیشه</string>
+    <string name="notification_cond_charging_not">گوشی در حال شارژ نیست</string>
     <string name="notification_cond_locked">گوشی قفل است</string>
     <string name="notification_cond_locked_not">گوشی آنلاک است</string>
     <string name="notification_cond_screen_on">صفحه نمایش روشن است</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">خواندن اعلان‌ها با صدای بلند غیرفعال است</string>
     <string name="notification_no_last_notification">هیچ اطلاعیه ای خوانده نشد</string>
     <string name="shortcut_read_notifications">خواندن اعلان‌ها</string>
-    <string name="shortcut_toggle_notification_speech">گفتار اعلان روشن یا خاموش است</string>
+    <string name="shortcut_toggle_notification_speech">روشن یا خاموش کردن خواندن اعلان‌ها</string>
     <string name="shortcut_read_last_notification">آخرین اطلاعیه را دوباره بخوانید</string>
     <string name="shortcut_stop_notification">خواندن اعلان را متوقف کنید</string>
     <string name="notification_test_posting">یک اعلان آزمایشی در 5 ثانیه دنبال می شود</string>
     <string name="notification_test_not_allowed">به SandFly اجازه دهید ابتدا اعلان‌ها را نشان دهد</string>
     <string name="notification_test_content_title">آزمایش SandFly</string>
     <string name="notification_test_content_text">این یک اعلان آزمایشی است، با تنظیمات اعلان خود بخوانید. 123456</string>
-    <string name="notification_automation_on">خواندن اعلان‌ها را با صدای بلند فعال کنید</string>
-    <string name="notification_automation_off">خواندن اعلان‌ها را با صدای بلند غیرفعال کنید</string>
-    <string name="notification_automation_toggle">خواندن اعلان‌ها را با صدای بلند فعال یا غیرفعال کنید</string>
-    <string name="notification_automation_stop">خواندن اعلان را متوقف کنید</string>
+    <string name="notification_automation_on">روشن کردن خواندن اعلان‌ها</string>
+    <string name="notification_automation_off">خاموش کردن خواندن اعلان‌ها</string>
+    <string name="notification_automation_toggle">روشن یا خاموش کردن خواندن اعلان‌ها</string>
+    <string name="notification_automation_stop">توقف خواندن اعلان</string>
     <string name="notification_automation_read_all">خواندن اعلان‌ها</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ثانیه</item>

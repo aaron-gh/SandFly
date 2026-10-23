@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Притиснете ги двете копчиња за јачина на звук</string>
     <string name="notification_dismiss_title">Запри при отфрлање</string>
     <string name="notification_watch_dismiss_title">Исто така, кога известувањето е отфрлено на паметен часовник</string>
-    <string name="notification_app_cancel_title">Престанете да читате кога апликацијата ќе го отстрани известувањето</string>
+    <string name="notification_app_cancel_title">Запри кога апликацијата ќе го отстрани</string>
     <string name="notification_category_summary">Резиме</string>
     <string name="notification_summary_now_title">Прочитај ги известувањата сега</string>
     <string name="notification_summary_daily_title">Читајте известувања секој ден</string>
@@ -125,9 +125,9 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Најава на времето</string>
-    <string name="notification_clock_interval_title">Кажете го времето секој</string>
+    <string name="notification_clock_interval_title">Кажувај го времето на секои</string>
     <string name="notification_clock_format_title">Формат за време</string>
-    <string name="notification_clock_format_message">Места: {time}, {date} и {battery} (процентот на батеријата).</string>
+    <string name="notification_clock_format_message">Резервирани места: {time}, {date} и {battery} (процентот на батеријата).</string>
     <string name="notification_clock_format_default">Сега е {time}</string>
     <string name="notification_clock_exact_title">Точни времиња</string>
     <string name="notification_clock_exact_summary">Потребни се аларми и потсетници. Во спротивно времето може да се каже до една минута доцна.</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">речено како <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Ресетирај</string>
     <string name="notification_required_title">Само читајте известувања со</string>
-    <string name="notification_blocked_title">Не читајте известувања со</string>
+    <string name="notification_blocked_title">Без читање на известувања што содржат</string>
     <string name="notification_private_title">Прочитајте го само името на апликацијата за</string>
     <string name="notification_replacements_title">Поинаков изговор</string>
     <string name="notification_add_word">Додај збор</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Читањето на известувањата на глас е оневозможено</string>
     <string name="notification_no_last_notification">Не беше прочитано известување</string>
     <string name="shortcut_read_notifications">Читај известувања</string>
-    <string name="shortcut_toggle_notification_speech">Говорот за известување е вклучен или исклучен</string>
+    <string name="shortcut_toggle_notification_speech">Вклучување или исклучување на читањето известувања</string>
     <string name="shortcut_read_last_notification">Прочитајте го последното известување повторно</string>
     <string name="shortcut_stop_notification">Престанете да го читате известувањето</string>
     <string name="notification_test_posting">Следува известување за тест за 5 секунди</string>
     <string name="notification_test_not_allowed">Дозволете SandFly прво да прикажува известувања</string>
     <string name="notification_test_content_title">Тест на SandFly</string>
     <string name="notification_test_content_text">Ова е тест известување, прочитајте со вашите поставки за известување. 123456</string>
-    <string name="notification_automation_on">Овозможете ги известувањата за читање на глас</string>
-    <string name="notification_automation_off">Оневозможете ги известувањата за читање на глас</string>
-    <string name="notification_automation_toggle">Овозможете или оневозможете ги известувањата за читање на глас</string>
-    <string name="notification_automation_stop">Запрете го читањето на известувањето</string>
+    <string name="notification_automation_on">Вклучи го читањето известувања</string>
+    <string name="notification_automation_off">Исклучи го читањето известувања</string>
+    <string name="notification_automation_toggle">Вклучи или исклучи го читањето известувања</string>
+    <string name="notification_automation_stop">Запри го читањето на известувањето</string>
     <string name="notification_automation_read_all">Читај известувања</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>

@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Tyd aankondigings</string>
-    <string name="notification_clock_interval_title">Sê elke keer die tyd</string>
+    <string name="notification_clock_interval_title">Sê die tyd elke</string>
     <string name="notification_clock_format_title">Tydformaat</string>
     <string name="notification_clock_format_message">Plekhouers: {time}, {date} en {battery} (die batterypersentasie).</string>
     <string name="notification_clock_format_default">Dit is {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">gesê as <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Stel terug</string>
     <string name="notification_required_title">Lees slegs kennisgewings met</string>
-    <string name="notification_blocked_title">Moenie kennisgewings lees met</string>
+    <string name="notification_blocked_title">Moenie kennisgewings lees wat die volgende bevat nie</string>
     <string name="notification_private_title">Lees slegs die programnaam vir</string>
     <string name="notification_replacements_title">Ander uitspraak</string>
     <string name="notification_add_word">Voeg \'n woord by</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Voorlees van kennisgewings afgeskakel</string>
     <string name="notification_no_last_notification">Geen kennisgewing is gelees nie</string>
     <string name="shortcut_read_notifications">Lees kennisgewings</string>
-    <string name="shortcut_toggle_notification_speech">Kennisgewingspraak aan of af</string>
+    <string name="shortcut_toggle_notification_speech">Kennisgewings voorlees aan of af</string>
     <string name="shortcut_read_last_notification">Lees die laaste kennisgewing weer</string>
     <string name="shortcut_stop_notification">Hou op om die kennisgewing te lees</string>
     <string name="notification_test_posting">\'n Toetskennisgewing volg binne 5 sekondes</string>
     <string name="notification_test_not_allowed">Laat SandFly toe om eers kennisgewings te wys</string>
     <string name="notification_test_content_title">SandFly toets</string>
     <string name="notification_test_content_text">Dit is \'n toetskennisgewing, lees saam met jou kennisgewinginstellings. 123456</string>
-    <string name="notification_automation_on">Aktiveer leeskennisgewings hardop</string>
-    <string name="notification_automation_off">Deaktiveer hardop leeskennisgewings</string>
-    <string name="notification_automation_toggle">Aktiveer of deaktiveer hardop leeskennisgewings</string>
+    <string name="notification_automation_on">Skakel kennisgewings voorlees aan</string>
+    <string name="notification_automation_off">Skakel kennisgewings voorlees af</string>
+    <string name="notification_automation_toggle">Skakel kennisgewings voorlees aan of af</string>
     <string name="notification_automation_stop">Stop die kennisgewing wat gelees word</string>
     <string name="notification_automation_read_all">Lees kennisgewings</string>
     <plurals name="notification_seconds">

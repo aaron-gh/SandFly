@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Preme as dúas teclas de volume</string>
     <string name="notification_dismiss_title">Deixar de ler ao descartar a notificación</string>
     <string name="notification_watch_dismiss_title">Tamén cando se descarta a notificación nun reloxo intelixente</string>
-    <string name="notification_app_cancel_title">Deixa de ler cando a aplicación elimine a notificación</string>
+    <string name="notification_app_cancel_title">Deter cando a aplicación a elimine</string>
     <string name="notification_category_summary">Resumo</string>
     <string name="notification_summary_now_title">Ler as notificacións agora</string>
     <string name="notification_summary_daily_title">Le as notificacións todos os días</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">dito como <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Restablecer</string>
     <string name="notification_required_title">Le só as notificacións con</string>
-    <string name="notification_blocked_title">Non leas notificacións con</string>
+    <string name="notification_blocked_title">Non ler notificacións que conteñan</string>
     <string name="notification_private_title">Le só o nome da aplicación para</string>
     <string name="notification_replacements_title">Pronuncia diferente</string>
     <string name="notification_add_word">Engadir unha palabra</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Desactivouse a lectura de notificacións en voz alta</string>
     <string name="notification_no_last_notification">Non se leu ningunha notificación</string>
     <string name="shortcut_read_notifications">Ler as notificacións</string>
-    <string name="shortcut_toggle_notification_speech">Discurso de notificación activado ou desactivado</string>
+    <string name="shortcut_toggle_notification_speech">Activar ou desactivar a lectura de notificacións</string>
     <string name="shortcut_read_last_notification">Le a última notificación de novo</string>
     <string name="shortcut_stop_notification">Deixa de ler a notificación</string>
     <string name="notification_test_posting">En 5 segundos aparece unha notificación de proba</string>
     <string name="notification_test_not_allowed">Permitir que SandFly mostre as notificacións primeiro</string>
     <string name="notification_test_content_title">Proba de SandFly</string>
     <string name="notification_test_content_text">Esta é unha notificación de proba, lida coa súa configuración de notificación. 123456</string>
-    <string name="notification_automation_on">Activa as notificacións de lectura en voz alta</string>
-    <string name="notification_automation_off">Desactiva as notificacións de lectura en voz alta</string>
-    <string name="notification_automation_toggle">Activa ou desactiva as notificacións de lectura en voz alta</string>
-    <string name="notification_automation_stop">Deixa de ler a notificación</string>
+    <string name="notification_automation_on">Activar a lectura de notificacións</string>
+    <string name="notification_automation_off">Desactivar a lectura de notificacións</string>
+    <string name="notification_automation_toggle">Activar ou desactivar a lectura de notificacións</string>
+    <string name="notification_automation_stop">Deter a lectura da notificación</string>
     <string name="notification_automation_read_all">Ler as notificacións</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segundo</item>

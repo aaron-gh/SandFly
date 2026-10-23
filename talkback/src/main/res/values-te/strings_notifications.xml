@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">రెండు వాల్యూమ్ కీలను నొక్కండి</string>
     <string name="notification_dismiss_title">నోటిఫికేషన్ మూసివేసినప్పుడు చదవడం ఆపండి</string>
     <string name="notification_watch_dismiss_title">స్మార్ట్ వాచ్‌లో నోటిఫికేషన్ తీసివేయబడినప్పుడు కూడా</string>
-    <string name="notification_app_cancel_title">యాప్ నోటిఫికేషన్‌ను తీసివేసినప్పుడు చదవడం ఆపివేయండి</string>
+    <string name="notification_app_cancel_title">యాప్ దాన్ని తీసివేసినప్పుడు ఆపండి</string>
     <string name="notification_category_summary">సారాంశం</string>
     <string name="notification_summary_now_title">నోటిఫికేషన్‌లను ఇప్పుడే చదవండి</string>
     <string name="notification_summary_daily_title">నోటిఫికేషన్‌లను ప్రతిరోజూ చదవండి</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">సమయ ప్రకటనలు</string>
-    <string name="notification_clock_interval_title">ప్రతి సమయం చెప్పండి</string>
+    <string name="notification_clock_interval_title">సమయం చెప్పే వ్యవధి</string>
     <string name="notification_clock_format_title">టైమ్ ఫార్మాట్</string>
     <string name="notification_clock_format_message">ప్లేస్‌హోల్డర్‌లు: {time}, {date} మరియు {battery} (బ్యాటరీ శాతం).</string>
     <string name="notification_clock_format_default">ఇప్పుడు {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> గా చెప్పబడింది</string>
     <string name="notification_app_reset">రీసెట్ చేయండి</string>
     <string name="notification_required_title">దీనితో నోటిఫికేషన్‌లను మాత్రమే చదవండి</string>
-    <string name="notification_blocked_title">దీనితో నోటిఫికేషన్‌లను చదవవద్దు</string>
+    <string name="notification_blocked_title">వీటిని కలిగిన నోటిఫికేషన్‌లను చదవవద్దు</string>
     <string name="notification_private_title">దీని కోసం యాప్ పేరు మాత్రమే చదవండి</string>
     <string name="notification_replacements_title">వేరే ఉచ్చారణ</string>
     <string name="notification_add_word">ఒక పదాన్ని జోడించండి</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">నోటిఫికేషన్‌లను బిగ్గరగా చదవడం నిలిపివేయబడింది</string>
     <string name="notification_no_last_notification">నోటిఫికేషన్ చదవలేదు</string>
     <string name="shortcut_read_notifications">నోటిఫికేషన్‌లను చదవండి</string>
-    <string name="shortcut_toggle_notification_speech">నోటిఫికేషన్ ప్రసంగం ఆన్ లేదా ఆఫ్</string>
+    <string name="shortcut_toggle_notification_speech">నోటిఫికేషన్‌లను చదవడం ఆన్ లేదా ఆఫ్</string>
     <string name="shortcut_read_last_notification">చివరి నోటిఫికేషన్‌ని మళ్లీ చదవండి</string>
     <string name="shortcut_stop_notification">నోటిఫికేషన్ చదవడం ఆపివేయండి</string>
     <string name="notification_test_posting">5 సెకన్లలో పరీక్ష నోటిఫికేషన్ వస్తుంది</string>
     <string name="notification_test_not_allowed">ముందుగా నోటిఫికేషన్‌లను చూపడానికి SandFlyని అనుమతించండి</string>
     <string name="notification_test_content_title">SandFly పరీక్ష</string>
     <string name="notification_test_content_text">ఇది పరీక్ష నోటిఫికేషన్, మీ నోటిఫికేషన్ సెట్టింగ్‌లతో చదవండి. 123456</string>
-    <string name="notification_automation_on">నోటిఫికేషన్‌లను బిగ్గరగా చదవడాన్ని ప్రారంభించండి</string>
-    <string name="notification_automation_off">బిగ్గరగా చదవడం నోటిఫికేషన్‌లను నిలిపివేయండి</string>
-    <string name="notification_automation_toggle">బిగ్గరగా చదవడం నోటిఫికేషన్‌లను ప్రారంభించండి లేదా నిలిపివేయండి</string>
-    <string name="notification_automation_stop">నోటిఫికేషన్ చదవడం ఆపివేయండి</string>
+    <string name="notification_automation_on">నోటిఫికేషన్‌లను చదవడం ఆన్ చేయండి</string>
+    <string name="notification_automation_off">నోటిఫికేషన్‌లను చదవడం ఆఫ్ చేయండి</string>
+    <string name="notification_automation_toggle">నోటిఫికేషన్‌లను చదవడం ఆన్ లేదా ఆఫ్ చేయండి</string>
+    <string name="notification_automation_stop">చదువుతున్న నోటిఫికేషన్‌ను ఆపండి</string>
     <string name="notification_automation_read_all">నోటిఫికేషన్‌లను చదవండి</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> సెకను</item>

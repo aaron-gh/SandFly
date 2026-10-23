@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">両方の音量キーを押します</string>
     <string name="notification_dismiss_title">通知が閉じられたら読むのをやめる</string>
     <string name="notification_watch_dismiss_title">スマートウォッチで通知を閉じた場合も</string>
-    <string name="notification_app_cancel_title">アプリが通知を削除したら読書を中止する</string>
+    <string name="notification_app_cancel_title">アプリが削除したら停止</string>
     <string name="notification_category_summary">概要</string>
     <string name="notification_summary_now_title">今すぐ通知を読み上げる</string>
     <string name="notification_summary_daily_title">毎日通知を読む</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">時刻の読み上げ</string>
-    <string name="notification_clock_interval_title">毎回時間を言います</string>
+    <string name="notification_clock_interval_title">時刻を読み上げる間隔</string>
     <string name="notification_clock_format_title">時刻の表示形式</string>
     <string name="notification_clock_format_message">プレースホルダー: {time}、{date}、{battery} (バッテリーの割合)。</string>
     <string name="notification_clock_format_default">{time}です</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">読み上げ名: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">リセット</string>
     <string name="notification_required_title">通知のみを読む</string>
-    <string name="notification_blocked_title">通知を読まないでください</string>
+    <string name="notification_blocked_title">次を含む通知を読み上げない</string>
     <string name="notification_private_title">アプリ名のみを読み取ります</string>
     <string name="notification_replacements_title">読み方の変更</string>
     <string name="notification_add_word">単語を追加</string>
@@ -257,8 +257,8 @@
     <string name="notification_cond_wired_not">有線ヘッドフォンが接続されていません</string>
     <string name="notification_cond_battery_below">バッテリー残量が <xliff:g id="percent" example="20">%1$d</xliff:g> パーセント未満です</string>
     <string name="notification_cond_battery_below_not">バッテリー残量が<xliff:g id="percent" example="20">%1$d</xliff:g>パーセント以上です</string>
-    <string name="notification_cond_charging">携帯電話は充電中です</string>
-    <string name="notification_cond_charging_not">携帯電話が充電されていません</string>
+    <string name="notification_cond_charging">スマートフォンが充電中です</string>
+    <string name="notification_cond_charging_not">スマートフォンが充電中ではありません</string>
     <string name="notification_cond_locked">電話はロックされています</string>
     <string name="notification_cond_locked_not">携帯電話のロックが解除されています</string>
     <string name="notification_cond_screen_on">画面がオンになっています</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">通知の読み上げ: オフ</string>
     <string name="notification_no_last_notification">通知は読まれませんでした</string>
     <string name="shortcut_read_notifications">通知を読む</string>
-    <string name="shortcut_toggle_notification_speech">通知音声のオンまたはオフ</string>
+    <string name="shortcut_toggle_notification_speech">通知の読み上げのオン/オフ</string>
     <string name="shortcut_read_last_notification">最後の通知をもう一度読んでください</string>
     <string name="shortcut_stop_notification">通知を読むのをやめる</string>
     <string name="notification_test_posting">5 秒後にテスト通知が表示されます</string>
     <string name="notification_test_not_allowed">SandFly が最初に通知を表示できるようにします</string>
     <string name="notification_test_content_title">SandFly テスト</string>
     <string name="notification_test_content_text">これはテスト通知です。通知設定とともにお読みください。 123456</string>
-    <string name="notification_automation_on">通知の読み上げを有効にする</string>
-    <string name="notification_automation_off">通知の読み上げを無効にする</string>
-    <string name="notification_automation_toggle">通知の読み上げを有効または無効にする</string>
-    <string name="notification_automation_stop">通知の読み取りを停止します</string>
+    <string name="notification_automation_on">通知の読み上げをオンにする</string>
+    <string name="notification_automation_off">通知の読み上げをオフにする</string>
+    <string name="notification_automation_toggle">通知の読み上げのオン/オフを切り替える</string>
+    <string name="notification_automation_stop">読み上げ中の通知を停止する</string>
     <string name="notification_automation_read_all">通知を読む</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>秒</item>

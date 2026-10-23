@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Cindezela bobabili okhiye bevolumu</string>
     <string name="notification_dismiss_title">Yeka lapho ichithwa</string>
     <string name="notification_watch_dismiss_title">Futhi lapho isaziso sichithwa ku-smartwatch</string>
-    <string name="notification_app_cancel_title">Yeka ukufunda uma uhlelo lokusebenza lususa isaziso</string>
+    <string name="notification_app_cancel_title">Misa lapho uhlelo lokusebenza lusisusa</string>
     <string name="notification_category_summary">Isifinyezo</string>
     <string name="notification_summary_now_title">Funda izaziso manje</string>
     <string name="notification_summary_daily_title">Funda izaziso nsuku zonke</string>
@@ -125,9 +125,9 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Izimemezelo zesikhathi</string>
-    <string name="notification_clock_interval_title">Isho isikhathi njalo</string>
+    <string name="notification_clock_interval_title">Isikhawu sokusho isikhathi</string>
     <string name="notification_clock_format_title">Ifomethi yesikhathi</string>
-    <string name="notification_clock_format_message">Izimeli: {time}, {date} kanye {battery} (iphesenti lebhethri).</string>
+    <string name="notification_clock_format_message">Okokubamba indawo: {time}, {date} kanye no-{battery} (iphesenti lebhethri).</string>
     <string name="notification_clock_format_default">Yisikhathi {time}</string>
     <string name="notification_clock_exact_title">Izikhathi eziqondile</string>
     <string name="notification_clock_exact_summary">Idinga Ama-alamu nezikhumbuzi. Uma kungenjalo isikhathi singashiwo kuze kufike umzuzu sekwephuzile.</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">kuthiwa <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Setha kabusha</string>
     <string name="notification_required_title">Funda kuphela izaziso nge</string>
-    <string name="notification_blocked_title">Ungafundi izaziso nge</string>
+    <string name="notification_blocked_title">Ungafundi izaziso eziqukethe</string>
     <string name="notification_private_title">Funda kuphela igama lohlelo lokusebenza</string>
     <string name="notification_replacements_title">Ukuphimisa okuhlukile</string>
     <string name="notification_add_word">Faka igama</string>
@@ -251,8 +251,8 @@
     <string name="notification_permission_needed">SandFly idinga leyo mvume kulesi simo</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ixhunyiwe</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ayixhunyiwe</string>
-    <string name="notification_cond_bluetooth_any">Idivayisi yomsindo engu-Bluetooth ixhunyiwe</string>
-    <string name="notification_cond_bluetooth_any_not">Cha Bluetooth idivayisi yomsindo ixhunyiwe</string>
+    <string name="notification_cond_bluetooth_any">Idivayisi yomsindo ye-Bluetooth ixhunyiwe</string>
+    <string name="notification_cond_bluetooth_any_not">Ayikho idivayisi yomsindo ye-Bluetooth exhunyiwe</string>
     <string name="notification_cond_wired">Ama-headphone anentambo axhunyiwe</string>
     <string name="notification_cond_wired_not">Ama-headphone anentambo awaxhunyiwe</string>
     <string name="notification_cond_battery_below">Ibhethri lingaphansi kwamaphesenti angu-<xliff:g id="percent" example="20">%1$d</xliff:g></string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Ukufundwa kwezaziso kuvaliwe</string>
     <string name="notification_no_last_notification">Asikho isaziso esifundiwe</string>
     <string name="shortcut_read_notifications">Funda izaziso</string>
-    <string name="shortcut_toggle_notification_speech">Inkulumo yesaziso ivuliwe noma ivaliwe</string>
+    <string name="shortcut_toggle_notification_speech">Vula noma vala ukufundwa kwezaziso</string>
     <string name="shortcut_read_last_notification">Funda isaziso sokugcina futhi</string>
     <string name="shortcut_stop_notification">Yeka ukufunda isaziso</string>
     <string name="notification_test_posting">Isaziso sokuhlolwa siyalandela emizuzwaneni emi-5</string>
     <string name="notification_test_not_allowed">Vumela SandFly ukuthi ibonise izaziso kuqala</string>
     <string name="notification_test_content_title">Ukuhlola kwe-SandFly</string>
     <string name="notification_test_content_text">Lesi isaziso sokuhlola, esifundwa nezilungiselelo zakho zezaziso. 123456</string>
-    <string name="notification_automation_on">Nika amandla ukufunda ngokuzwakalayo izaziso</string>
-    <string name="notification_automation_off">Khubaza ukufundela phezulu izaziso</string>
-    <string name="notification_automation_toggle">Nika amandla noma khubaza izaziso zokufunda ngokuzwakalayo</string>
+    <string name="notification_automation_on">Vula ukufundwa kwezaziso</string>
+    <string name="notification_automation_off">Vala ukufundwa kwezaziso</string>
+    <string name="notification_automation_toggle">Vula noma vala ukufundwa kwezaziso</string>
     <string name="notification_automation_stop">Misa ukufundwa kwesaziso</string>
     <string name="notification_automation_read_all">Funda izaziso</string>
     <plurals name="notification_seconds">

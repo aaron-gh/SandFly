@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Дыбыс деңгейі пернелерінің екеуін де басыңыз</string>
     <string name="notification_dismiss_title">Хабарландыру жабылғанда оқуды тоқтату</string>
     <string name="notification_watch_dismiss_title">Сондай-ақ смарт сағатта хабарландыру жабылған кезде</string>
-    <string name="notification_app_cancel_title">Қолданба хабарландыруды жойғанда оқуды тоқтатыңыз</string>
+    <string name="notification_app_cancel_title">Қолданба оны жойғанда тоқтату</string>
     <string name="notification_category_summary">Жиынтық</string>
     <string name="notification_summary_now_title">Хабарландыруларды қазір оқу</string>
     <string name="notification_summary_daily_title">Күн сайын хабарландыруларды оқыңыз</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Уақыт туралы хабарландырулар</string>
-    <string name="notification_clock_interval_title">Әр уақытты айтыңыз</string>
+    <string name="notification_clock_interval_title">Уақытты айту аралығы</string>
     <string name="notification_clock_format_title">Уақыт форматы</string>
     <string name="notification_clock_format_message">Толтырғыштар: {time}, {date} және {battery} (батарея пайызы).</string>
     <string name="notification_clock_format_default">Қазір {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ретінде айтылды</string>
     <string name="notification_app_reset">Қалпына келтіру</string>
     <string name="notification_required_title">Хабарландыруларды тек көмегімен оқыңыз</string>
-    <string name="notification_blocked_title">Арқылы хабарландыруларды оқымаңыз</string>
+    <string name="notification_blocked_title">Мыналар бар хабарландыруларды оқымау</string>
     <string name="notification_private_title">Қолданбаның атын ғана оқыңыз</string>
     <string name="notification_replacements_title">Басқаша айту</string>
     <string name="notification_add_word">Сөз қосу</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Хабарландыруларды дауыстап оқу өшірілген</string>
     <string name="notification_no_last_notification">Хабарлама оқылмады</string>
     <string name="shortcut_read_notifications">Хабарландыруларды оқу</string>
-    <string name="shortcut_toggle_notification_speech">Хабарландыру сөзі қосулы немесе өшірулі</string>
+    <string name="shortcut_toggle_notification_speech">Хабарландыруларды оқуды қосу немесе өшіру</string>
     <string name="shortcut_read_last_notification">Соңғы хабарландыруды қайта оқыңыз</string>
     <string name="shortcut_stop_notification">Хабарландыруды оқуды тоқтатыңыз</string>
     <string name="notification_test_posting">Сынақ туралы хабарландыру 5 секундтан кейін келеді</string>
     <string name="notification_test_not_allowed">Алдымен хабарландыруларды көрсету үшін SandFly рұқсат беріңіз</string>
     <string name="notification_test_content_title">SandFly сынақ</string>
     <string name="notification_test_content_text">Бұл сынақ хабарландыруы, хабарландыру параметрлерімен бірге оқыңыз. 123456</string>
-    <string name="notification_automation_on">Хабарландыруларды дауыстап оқуды қосыңыз</string>
-    <string name="notification_automation_off">Хабарландыруларды дауыстап оқуды өшіріңіз</string>
-    <string name="notification_automation_toggle">Хабарландыруларды дауыстап оқуды қосыңыз немесе өшіріңіз</string>
-    <string name="notification_automation_stop">Хабарландыруды оқуды тоқтатыңыз</string>
+    <string name="notification_automation_on">Хабарландыруларды оқуды қосу</string>
+    <string name="notification_automation_off">Хабарландыруларды оқуды өшіру</string>
+    <string name="notification_automation_toggle">Хабарландыруларды оқуды қосу немесе өшіру</string>
+    <string name="notification_automation_stop">Оқылып жатқан хабарландыруды тоқтату</string>
     <string name="notification_automation_read_all">Хабарландыруларды оқу</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунд</item>

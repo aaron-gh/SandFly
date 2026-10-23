@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Premeu les dues tecles de volum</string>
     <string name="notification_dismiss_title">Atura en descartar</string>
     <string name="notification_watch_dismiss_title">També quan la notificació es descarta en un rellotge intel·ligent</string>
-    <string name="notification_app_cancel_title">Deixeu de llegir quan l\'aplicació suprimi la notificació</string>
+    <string name="notification_app_cancel_title">Atura quan l\'aplicació la suprimeixi</string>
     <string name="notification_category_summary">Resum</string>
     <string name="notification_summary_now_title">Llegeix les notificacions ara</string>
     <string name="notification_summary_daily_title">Llegeix les notificacions cada dia</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Anuncis de l\'hora</string>
-    <string name="notification_clock_interval_title">Digues l\'hora cada cop</string>
+    <string name="notification_clock_interval_title">Digues l\'hora cada</string>
     <string name="notification_clock_format_title">Format d\'hora</string>
     <string name="notification_clock_format_message">Marcadors de posició: {time}, {date} i {battery} (el percentatge de la bateria).</string>
     <string name="notification_clock_format_default">Són les {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">dit com <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Restableix</string>
     <string name="notification_required_title">Només llegiu notificacions amb</string>
-    <string name="notification_blocked_title">No llegiu les notificacions amb</string>
+    <string name="notification_blocked_title">No llegir les notificacions que continguin</string>
     <string name="notification_private_title">Llegiu només el nom de l\'aplicació</string>
     <string name="notification_replacements_title">Pronúncia diferent</string>
     <string name="notification_add_word">Afegeix una paraula</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">S\'ha desactivat la lectura de notificacions en veu alta</string>
     <string name="notification_no_last_notification">No s\'ha llegit cap notificació</string>
     <string name="shortcut_read_notifications">Llegeix les notificacions</string>
-    <string name="shortcut_toggle_notification_speech">Discurs de notificació activat o desactivat</string>
+    <string name="shortcut_toggle_notification_speech">Activa o desactiva la lectura de notificacions</string>
     <string name="shortcut_read_last_notification">Torna a llegir l\'última notificació</string>
     <string name="shortcut_stop_notification">Deixa de llegir la notificació</string>
     <string name="notification_test_posting">Al cap de 5 segons, apareix una notificació de prova</string>
     <string name="notification_test_not_allowed">Permet que SandFly mostri primer les notificacions</string>
     <string name="notification_test_content_title">Prova de SandFly</string>
     <string name="notification_test_content_text">Aquesta és una notificació de prova, llegiu-la amb la configuració de notificació. 123456</string>
-    <string name="notification_automation_on">Activa les notificacions de lectura en veu alta</string>
-    <string name="notification_automation_off">Desactiva les notificacions de lectura en veu alta</string>
-    <string name="notification_automation_toggle">Activa o desactiva les notificacions de lectura en veu alta</string>
-    <string name="notification_automation_stop">Deixeu de llegir la notificació</string>
+    <string name="notification_automation_on">Activa la lectura de notificacions</string>
+    <string name="notification_automation_off">Desactiva la lectura de notificacions</string>
+    <string name="notification_automation_toggle">Activa o desactiva la lectura de notificacions</string>
+    <string name="notification_automation_stop">Atura la lectura de la notificació</string>
     <string name="notification_automation_read_all">Llegeix les notificacions</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segon</item>

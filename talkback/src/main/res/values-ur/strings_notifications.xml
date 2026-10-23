@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">دونوں والیوم کیز کو دبائیں</string>
     <string name="notification_dismiss_title">نوٹیفکیشن خارج ہونے پر پڑھنا بند کریں</string>
     <string name="notification_watch_dismiss_title">نیز جب سمارٹ واچ پر نوٹیفکیشن کو مسترد کر دیا جاتا ہے</string>
-    <string name="notification_app_cancel_title">جب ایپ نوٹیفکیشن کو ہٹاتی ہے تو پڑھنا بند کریں</string>
+    <string name="notification_app_cancel_title">ایپ کے ہٹانے پر روکیں</string>
     <string name="notification_category_summary">خلاصہ</string>
     <string name="notification_summary_now_title">ابھی اطلاعات پڑھیں</string>
     <string name="notification_summary_daily_title">ہر روز اطلاعات پڑھیں</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">وقت کے اعلانات</string>
-    <string name="notification_clock_interval_title">ہر وقت کہو</string>
+    <string name="notification_clock_interval_title">وقت بتانے کا وقفہ</string>
     <string name="notification_clock_format_title">ٹائم فارمیٹ</string>
     <string name="notification_clock_format_message">پلیس ہولڈرز: {time}، {date} اور {battery} (بیٹری کا فیصد)۔</string>
     <string name="notification_clock_format_default">اس وقت {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> کے طور پر بولا جاتا ہے</string>
     <string name="notification_app_reset">ری سیٹ کریں</string>
     <string name="notification_required_title">کے ساتھ صرف اطلاعات پڑھیں</string>
-    <string name="notification_blocked_title">کے ساتھ اطلاعات نہ پڑھیں</string>
+    <string name="notification_blocked_title">ان پر مشتمل اطلاعات نہ پڑھیں</string>
     <string name="notification_private_title">صرف ایپ کا نام پڑھیں</string>
     <string name="notification_replacements_title">مختلف تلفظ</string>
     <string name="notification_add_word">ایک لفظ شامل کریں</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">اطلاعات کو بلند آواز سے پڑھنا غیر فعال ہے</string>
     <string name="notification_no_last_notification">کوئی اطلاع نہیں پڑھی گئی</string>
     <string name="shortcut_read_notifications">اطلاعات پڑھیں</string>
-    <string name="shortcut_toggle_notification_speech">اطلاع کی تقریر آن یا آف</string>
+    <string name="shortcut_toggle_notification_speech">اطلاعات پڑھنا آن یا آف</string>
     <string name="shortcut_read_last_notification">آخری اطلاع دوبارہ پڑھیں</string>
     <string name="shortcut_stop_notification">نوٹیفکیشن پڑھنا بند کریں</string>
     <string name="notification_test_posting">ٹیسٹ کی اطلاع 5 سیکنڈ میں آتی ہے</string>
     <string name="notification_test_not_allowed">SandFly کو پہلے اطلاعات دکھانے کی اجازت دیں</string>
     <string name="notification_test_content_title">SandFly ٹیسٹ</string>
     <string name="notification_test_content_text">یہ ایک امتحانی اطلاع ہے، اپنی اطلاع کی ترتیبات کے ساتھ پڑھیں۔ 123456</string>
-    <string name="notification_automation_on">بلند آواز میں اطلاعات پڑھنے کو فعال کریں</string>
-    <string name="notification_automation_off">بلند آواز سے اطلاعات پڑھنے کو غیر فعال کریں</string>
-    <string name="notification_automation_toggle">اونچی آواز میں پڑھنے کی اطلاعات کو فعال یا غیر فعال کریں</string>
-    <string name="notification_automation_stop">نوٹیفکیشن پڑھنا بند کریں</string>
+    <string name="notification_automation_on">اطلاعات پڑھنا آن کریں</string>
+    <string name="notification_automation_off">اطلاعات پڑھنا بند کریں</string>
+    <string name="notification_automation_toggle">اطلاعات پڑھنا آن یا آف کریں</string>
+    <string name="notification_automation_stop">پڑھی جا رہی اطلاع روکیں</string>
     <string name="notification_automation_read_all">اطلاعات پڑھیں</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> سیکنڈ</item>

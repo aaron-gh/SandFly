@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">ਦੋਵੇਂ ਵਾਲੀਅਮ ਕੁੰਜੀਆਂ ਦਬਾਓ</string>
     <string name="notification_dismiss_title">ਖਾਰਜ ਕਰਨ \'ਤੇ ਰੋਕੋ</string>
     <string name="notification_watch_dismiss_title">ਨਾਲ ਹੀ ਜਦੋਂ ਸਮਾਰਟਵਾਚ \'ਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨੂੰ ਖਾਰਜ ਕੀਤਾ ਜਾਂਦਾ ਹੈ</string>
-    <string name="notification_app_cancel_title">ਜਦੋਂ ਐਪ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨੂੰ ਹਟਾ ਦਿੰਦਾ ਹੈ ਤਾਂ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_app_cancel_title">ਐਪ ਵੱਲੋਂ ਹਟਾਏ ਜਾਣ \'ਤੇ ਰੋਕੋ</string>
     <string name="notification_category_summary">ਸੰਖੇਪ</string>
     <string name="notification_summary_now_title">ਹੁਣੇ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
     <string name="notification_summary_daily_title">ਹਰ ਰੋਜ਼ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ਸਮੇਂ ਦੀਆਂ ਘੋਸ਼ਣਾਵਾਂ</string>
-    <string name="notification_clock_interval_title">ਹਰ ਵਾਰ ਵਾਰ ਕਹੋ</string>
+    <string name="notification_clock_interval_title">ਸਮਾਂ ਦੱਸਣ ਦਾ ਅੰਤਰਾਲ</string>
     <string name="notification_clock_format_title">ਸਮਾਂ ਫਾਰਮੈਟ</string>
     <string name="notification_clock_format_message">ਪਲੇਸਹੋਲਡਰ: {time}, {date} ਅਤੇ {battery} (ਬੈਟਰੀ ਪ੍ਰਤੀਸ਼ਤ)।</string>
     <string name="notification_clock_format_default">ਸਮਾਂ {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ਵਜੋਂ ਬੋਲਿਆ ਜਾਂਦਾ ਹੈ</string>
     <string name="notification_app_reset">ਰੀਸੈੱਟ ਕਰੋ</string>
     <string name="notification_required_title">ਨਾਲ ਸਿਰਫ਼ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
-    <string name="notification_blocked_title">ਨਾਲ ਸੂਚਨਾਵਾਂ ਨਾ ਪੜ੍ਹੋ</string>
+    <string name="notification_blocked_title">ਇਹਨਾਂ ਵਾਲੀਆਂ ਸੂਚਨਾਵਾਂ ਨਾ ਪੜ੍ਹੋ</string>
     <string name="notification_private_title">ਲਈ ਸਿਰਫ਼ ਐਪ ਨਾਮ ਪੜ੍ਹੋ</string>
     <string name="notification_replacements_title">ਵੱਖਰਾ ਉਚਾਰਨ</string>
     <string name="notification_add_word">ਕੋਈ ਸ਼ਬਦ ਜੋੜੋ</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਅਯੋਗ ਹੈ</string>
     <string name="notification_no_last_notification">ਕੋਈ ਸੂਚਨਾ ਨਹੀਂ ਪੜ੍ਹੀ ਗਈ</string>
     <string name="shortcut_read_notifications">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
-    <string name="shortcut_toggle_notification_speech">ਸੂਚਨਾ ਭਾਸ਼ਣ ਚਾਲੂ ਜਾਂ ਬੰਦ</string>
+    <string name="shortcut_toggle_notification_speech">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਚਾਲੂ ਜਾਂ ਬੰਦ</string>
     <string name="shortcut_read_last_notification">ਆਖਰੀ ਸੂਚਨਾ ਨੂੰ ਦੁਬਾਰਾ ਪੜ੍ਹੋ</string>
     <string name="shortcut_stop_notification">ਨੋਟੀਫਿਕੇਸ਼ਨ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
     <string name="notification_test_posting">ਇੱਕ ਟੈਸਟ ਸੂਚਨਾ 5 ਸਕਿੰਟਾਂ ਵਿੱਚ ਆਉਂਦੀ ਹੈ</string>
     <string name="notification_test_not_allowed">SandFly ਨੂੰ ਪਹਿਲਾਂ ਸੂਚਨਾਵਾਂ ਦਿਖਾਉਣ ਦਿਓ</string>
     <string name="notification_test_content_title">SandFly ਟੈਸਟ</string>
     <string name="notification_test_content_text">ਇਹ ਇੱਕ ਜਾਂਚ ਸੂਚਨਾ ਹੈ, ਤੁਹਾਡੀਆਂ ਸੂਚਨਾ ਸੈਟਿੰਗਾਂ ਨਾਲ ਪੜ੍ਹੋ। 123456 ਹੈ</string>
-    <string name="notification_automation_on">ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਪੜ੍ਹਨ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਨੂੰ ਸਮਰੱਥ ਬਣਾਓ</string>
-    <string name="notification_automation_off">ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਪੜ੍ਹਨ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਨੂੰ ਅਸਮਰੱਥ ਬਣਾਓ</string>
-    <string name="notification_automation_toggle">ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਪੜ੍ਹਨ ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਨੂੰ ਸਮਰੱਥ ਜਾਂ ਅਯੋਗ ਕਰੋ</string>
-    <string name="notification_automation_stop">ਨੋਟੀਫਿਕੇਸ਼ਨ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_automation_on">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਚਾਲੂ ਕਰੋ</string>
+    <string name="notification_automation_off">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_automation_toggle">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_automation_stop">ਪੜ੍ਹੀ ਜਾ ਰਹੀ ਸੂਚਨਾ ਰੋਕੋ</string>
     <string name="notification_automation_read_all">ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਸਕਿੰਟ</item>

@@ -109,7 +109,7 @@
     <string name="notification_volume_keys_title">Paspauskite abu garsumo klavišus</string>
     <string name="notification_dismiss_title">Sustabdyti atsisakius</string>
     <string name="notification_watch_dismiss_title">Taip pat kai pranešimas atmetamas išmaniajame laikrodyje</string>
-    <string name="notification_app_cancel_title">Nustokite skaityti, kai programa pašalins pranešimą</string>
+    <string name="notification_app_cancel_title">Sustabdyti, kai programa jį pašalina</string>
     <string name="notification_category_summary">Santrauka</string>
     <string name="notification_summary_now_title">Skaityti pranešimus dabar</string>
     <string name="notification_summary_daily_title">Skaitykite pranešimus kiekvieną dieną</string>
@@ -125,7 +125,7 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Laiko pranešimai</string>
-    <string name="notification_clock_interval_title">Kaskart sakyk laiką</string>
+    <string name="notification_clock_interval_title">Laiko pranešimo intervalas</string>
     <string name="notification_clock_format_title">Laiko formatas</string>
     <string name="notification_clock_format_message">Vietos žymos: {time}, {date} ir {battery} (akumuliatoriaus procentas).</string>
     <string name="notification_clock_format_default">Dabar {time}</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">tariama kaip <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nustatyti iš naujo</string>
     <string name="notification_required_title">Skaitykite tik pranešimus su</string>
-    <string name="notification_blocked_title">Neskaitykite pranešimų su</string>
+    <string name="notification_blocked_title">Neskaityti pranešimų, kuriuose yra</string>
     <string name="notification_private_title">Skaitykite tik programos pavadinimą</string>
     <string name="notification_replacements_title">Kitoks tarimas</string>
     <string name="notification_add_word">Pridėti žodį</string>
@@ -255,10 +255,10 @@
     <string name="notification_cond_bluetooth_any_not">Neprijungtas joks Bluetooth garso įrenginys</string>
     <string name="notification_cond_wired">Prijungtos laidinės ausinės</string>
     <string name="notification_cond_wired_not">Laidinės ausinės neprijungtos</string>
-    <string name="notification_cond_battery_below">Akumuliatoriaus įkrova yra mažesnė nei <xliff:g id="percent" example="20">%1$d</xliff:g> proc</string>
+    <string name="notification_cond_battery_below">Akumuliatoriaus įkrova yra mažesnė nei <xliff:g id="percent" example="20">%1$d</xliff:g> procentų</string>
     <string name="notification_cond_battery_below_not">Akumuliatoriaus įkrova yra <xliff:g id="percent" example="20">%1$d</xliff:g> procentų ar daugiau</string>
     <string name="notification_cond_charging">Telefonas kraunasi</string>
-    <string name="notification_cond_charging_not">Telefonas neįkraunamas</string>
+    <string name="notification_cond_charging_not">Telefonas nesikrauna</string>
     <string name="notification_cond_locked">Telefonas užrakintas</string>
     <string name="notification_cond_locked_not">Telefonas atrakintas</string>
     <string name="notification_cond_screen_on">Ekranas įjungtas</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Pranešimų skaitymas garsiai išjungtas</string>
     <string name="notification_no_last_notification">Pranešimas nebuvo perskaitytas</string>
     <string name="shortcut_read_notifications">Skaityti pranešimus</string>
-    <string name="shortcut_toggle_notification_speech">Pranešimo kalba įjungta arba išjungta</string>
+    <string name="shortcut_toggle_notification_speech">Pranešimų skaitymo įjungimas arba išjungimas</string>
     <string name="shortcut_read_last_notification">Dar kartą perskaitykite paskutinį pranešimą</string>
     <string name="shortcut_stop_notification">Nustokite skaityti pranešimą</string>
     <string name="notification_test_posting">Po 5 sekundžių pasirodo bandymo pranešimas</string>
     <string name="notification_test_not_allowed">Leiskite SandFly pirmiausia rodyti pranešimus</string>
     <string name="notification_test_content_title">SandFly testas</string>
     <string name="notification_test_content_text">Tai bandomasis pranešimas, perskaitykite su pranešimų nustatymais. 123456</string>
-    <string name="notification_automation_on">Įgalinkite pranešimų skaitymą garsiai</string>
-    <string name="notification_automation_off">Išjungti pranešimų skaitymą garsiai</string>
-    <string name="notification_automation_toggle">Įgalinkite arba išjunkite pranešimų skaitymą garsiai</string>
-    <string name="notification_automation_stop">Sustabdykite pranešimo skaitymą</string>
+    <string name="notification_automation_on">Įjungti pranešimų skaitymą</string>
+    <string name="notification_automation_off">Išjungti pranešimų skaitymą</string>
+    <string name="notification_automation_toggle">Įjungti arba išjungti pranešimų skaitymą</string>
+    <string name="notification_automation_stop">Sustabdyti pranešimo skaitymą</string>
     <string name="notification_automation_read_all">Skaityti pranešimus</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekundės</item>
