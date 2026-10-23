@@ -1070,7 +1070,7 @@
   <string name="image_description_playground_title">이미지 설명 사용해 보기</string>
   <string name="image_description_playground_content_one">이미지에 포커스 시 SandFly 메뉴를 열고 \'이미지 설명\'을 선택합니다.\n\n아래에 사진 한 장이 있습니다. 이미지의 설명을 확인해 보세요.</string>
   <string name="image_description_playground_content_two">SandFly 설정 &gt; 자동 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
-  <string name="image_description_playground_content_two_tts">SandFly 설정과 자동 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
+  <string name="image_description_playground_content_two_tts">SandFly 설정에서 자동 설명으로 이동하면 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
   <string name="image_description_sample_image_content_description">샘플 이미지: 세 손가락으로 탭하여 SandFly 메뉴를 연 후 \'이미지 설명\'을 선택하여 설명을 들으세요.</string>
   <string name="practice_gestures_title">동작 연습</string>
   <string name="practice_keyboard_gestures_title">단축키 연습</string>
@@ -1729,7 +1729,7 @@
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>개 중 <xliff:g id="position" example="2">%1$d</xliff:g>번째 위치</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> 항목을 들어 올림. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly는 해당 주문의 항목 세부정보를 나타냅니다. 변경하려면 세부정보를 길게 터치한 후 위나 아래로 드래그하세요. SandFly를 켠 상태에서 두 번 탭하고 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
+    <string name="item_details_order_footer">SandFly는 항목의 세부정보를 이 순서대로 말합니다. 순서를 변경하려면 세부정보를 길게 터치한 다음 위나 아래로 드래그하세요. SandFly가 켜져 있으면 두 번 탭하고 길게 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
     <string name="title_pref_speak_items_before_scroll">스크롤되어 표시되기 전에 항목 말하기</string>
     <string name="gemini_error_api_key">Gemini에서 API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
     <string name="gemini_error_quota">Gemini API 키의 사용 제한에 도달했습니다. 나중에 다시 시도하세요.</string>

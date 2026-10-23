@@ -1070,7 +1070,7 @@
   <string name="image_description_playground_title">பட விளக்கங்களைப் பெற முயலுங்கள்</string>
   <string name="image_description_playground_content_one">நீங்கள் ஒரு படத்தை மையப்படுத்தும்போது, SandFly மெனுவைத் திறந்து \"படத்தை விளக்கு\" என்பதைத் தேர்ந்தெடுக்கவும்.\n\nகீழே ஒரு படம் உள்ளது. அதற்கான விளக்கத்தைப் பெற முயலவும்.</string>
   <string name="image_description_playground_content_two">SandFly அமைப்புகள் &gt; தானியங்கு விளக்கங்கள் என்பதில் எப்போது வேண்டுமானாலும் பட விளக்க அமைப்புகளை மாற்றலாம்.</string>
-  <string name="image_description_playground_content_two_tts">பட விளக்க அமைப்புகளை எப்போது வேண்டுமானாலும் SandFly அமைப்புகளுக்குச் சென்று தானியங்கு விளக்கங்களை மாற்றலாம்.</string>
+  <string name="image_description_playground_content_two_tts">பட விளக்க அமைப்புகளை எப்போது வேண்டுமானாலும் SandFly அமைப்புகள், பிறகு தானியங்கு விளக்கங்கள் என்பதில் மாற்றலாம்.</string>
   <string name="image_description_sample_image_content_description">மாதிரிப் படம்; 3 விரல்களால் தட்டி SandFly மெனுவைத் திறந்து, விளக்கத்தைக் கேட்க “படத்தை விளக்கு” என்பதைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="practice_gestures_title">சைகைகள் பயிற்சி</string>
   <string name="practice_keyboard_gestures_title">கீபோர்டு ஷார்ட்கட்களைப் பயிற்சி செய்யுங்கள்</string>
@@ -1729,7 +1729,7 @@
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> இல் <xliff:g id="position" example="2">%1$d</xliff:g>வது நிலை</string>
     <string name="template_item_details_order_picked_up">எடுக்கப்பட்டது <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> விடப்பட்டது. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly இந்த வரிசையில் ஒரு பொருளின் விவரங்களைக் கூறுகிறது. அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடிக்கவும், பின்னர் அதை மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில், இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மூவ் அப் மற்றும் மூவ் டவுன் செயல்களையும் பயன்படுத்தலாம்.</string>
+    <string name="item_details_order_footer">SandFly ஒரு பொருளின் விவரங்களை இந்த வரிசையில் சொல்லும். அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடித்து, மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில் இருக்கும்போது, இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மேலே நகர்த்தவும், கீழே நகர்த்தவும் ஆகிய செயல்களையும் பயன்படுத்தலாம்.</string>
     <string name="title_pref_speak_items_before_scroll">உருப்படிகள் உருட்டப்பட்டுத் தெரியும் முன் அவற்றைச் சொல்</string>
     <string name="gemini_error_api_key">Gemini API விசையை ஏற்கவில்லை. தானியங்கு விளக்க அமைப்புகளில் விசையைச் சரிபார்க்கவும்.</string>
     <string name="gemini_error_quota">உங்கள் Gemini API விசைக்கான பயன்பாட்டு வரம்பை அடைந்து விட்டது. பிறகு முயற்சிக்கவும்.</string>

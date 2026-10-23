@@ -1069,7 +1069,7 @@
   <string name="image_description_playground_title">画像の説明を聞いてみる</string>
   <string name="image_description_playground_content_one">画像にフォーカスを合わせたら、SandFly メニューを開いて [画像の説明] を選択します。\n\n下の写真を例に、説明を取得してみましょう。</string>
   <string name="image_description_playground_content_two">画像の説明の設定は [SandFly の設定] &gt; [説明の自動読み上げ] でいつでも変更できます。</string>
-  <string name="image_description_playground_content_two_tts">画像の説明設定は、「SandFly」設定から「自動説明」でいつでも変更できます。</string>
+  <string name="image_description_playground_content_two_tts">画像の説明の設定は、SandFly の設定、説明の自動読み上げの順に開いていつでも変更できます。</string>
   <string name="image_description_sample_image_content_description">サンプル画像: 3 本の指でタップして SandFly メニューを開き、[画像の説明] を選択すると、説明が読み上げられます。</string>
   <string name="practice_gestures_title">ジェスチャーの練習</string>
   <string name="practice_keyboard_gestures_title">キーボード ショートカットの練習</string>
@@ -1726,7 +1726,7 @@
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 中 <xliff:g id="position" example="2">%1$d</xliff:g> 番目</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> を持ち上げました。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly は、この注文の商品の詳細を示します。変更するには、詳細をタッチしたまま上下にドラッグします。 SandFly がオンの状態で、ダブルタップして押したままドラッグします。 「上に移動」および「下に移動」アクションを使用することもできます。</string>
+    <string name="item_details_order_footer">SandFly は項目の詳細をこの順序で読み上げます。順序を変更するには、詳細を長押しして上下にドラッグします。SandFly がオンの場合は、ダブルタップして長押ししてからドラッグします。[上に移動] と [下に移動] の操作も使用できます。</string>
     <string name="title_pref_speak_items_before_scroll">スクロールして表示される前に項目を読み上げる</string>
     <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。自動説明設定でキーを確認してください。</string>
     <string name="gemini_error_quota">Gemini API キーの使用制限に達しました。後でもう一度試してください。</string>

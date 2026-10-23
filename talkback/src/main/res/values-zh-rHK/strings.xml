@@ -1069,7 +1069,7 @@
   <string name="image_description_playground_title">嘗試取得圖片描述</string>
   <string name="image_description_playground_content_one">將焦點放在圖片上時，開啟 SandFly 選單。接著，選取 [描述圖片]。\n\n下方有一張相片，嘗試取得描述。</string>
   <string name="image_description_playground_content_two">您可以隨時在「SandFly 設定」&gt;「自動描述」中變更圖片描述設定。</string>
-  <string name="image_description_playground_content_two_tts">您可以隨時在SandFly設置中更改圖像描述設置，然後在自動描述中更改圖像描述設置。</string>
+  <string name="image_description_playground_content_two_tts">您可以隨時依次前往 SandFly 設定、自動描述，變更圖片描述設定。</string>
   <string name="image_description_sample_image_content_description">樣本圖片；用 3 隻手指輕按即可開啟 SandFly 選單。接著，選取 [描述圖片] 即可聽取描述。</string>
   <string name="practice_gestures_title">練習手勢</string>
   <string name="practice_keyboard_gestures_title">練習使用鍵盤快速鍵</string>
@@ -1724,11 +1724,11 @@
     <string name="item_detail_type">類型</string>
     <string name="item_detail_state">狀態</string>
     <string name="action_move_up">向上移動</string>
-    <string name="action_move_down">下移</string>
+    <string name="action_move_down">向下移動</string>
     <string name="template_list_position">第 <xliff:g id="position" example="2">%1$d</xliff:g> 項，共 <xliff:g id="count" example="3">%2$d</xliff:g> 項</string>
     <string name="template_item_details_order_picked_up">已拿起<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
+    <string name="item_details_order_footer">SandFly 會按此順序讀出項目的詳細資料。如要變更順序，請按住某項詳細資料，然後向上或向下拖曳。SandFly 開啟時，請輕按兩下並按住，然後拖曳。您亦可使用「向上移動」和「向下移動」操作。</string>
     <string name="title_pref_speak_items_before_scroll">在項目捲動到畫面中之前先讀出</string>
     <string name="gemini_error_api_key">Gemini 不接受此 API 金鑰。請在自動描述設定中檢查金鑰。</string>
     <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。請稍後再試。</string>

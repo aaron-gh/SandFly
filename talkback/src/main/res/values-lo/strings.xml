@@ -1070,7 +1070,7 @@
   <string name="image_description_playground_title">ລອງຮັບຄຳອະທິບາຍຮູບ</string>
   <string name="image_description_playground_content_one">ເມື່ອທ່ານໂຟກັສຮູບພາບໃດໜຶ່ງ, ໃຫ້ເປີດເມນູ SandFly ແລະ ເລືອກ “ອະທິບາຍຮູບ”.\n\nມີໜຶ່ງຮູບຢູ່ລຸ່ມນີ້. ລອງໃສ່ຄຳອະທິບາຍໃຫ້ມັນ.</string>
   <string name="image_description_playground_content_two">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄໍາອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly &gt; ຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
-  <string name="image_description_playground_content_two_tts">ທ່ານ​ສາ​ມາດ​ປ່ຽນ​ແປງ​ການ​ຕັ້ງ​ຄ່າ​ຄໍາ​ອະ​ທິ​ບາຍ​ຮູບ​ພາບ​ໄດ້​ທຸກ​ເວ​ລາ​ໃນ​ການ​ຕັ້ງ​ຄ່າ SandFly ຫຼັງ​ຈາກ​ນັ້ນ​ຄໍາ​ອະ​ທິ​ບາຍ​ອັດ​ຕະ​ໂນ​ມັດ​.</string>
+  <string name="image_description_playground_content_two_tts">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄຳອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ຄຳອະທິບາຍອັດຕະໂນມັດ.</string>
   <string name="image_description_sample_image_content_description">ຮູບຕົວຢ່າງ; ແຕະດ້ວຍມື 3 ນິ້ວເພື່ອເປີດເມນູ SandFly ແລ້ວເລືອກ \"ອະທິບາຍຮູບ\" ເພື່ອຟັງຄຳອະທິບາຍ.</string>
   <string name="practice_gestures_title">ເຝິກແອບທ່າທາງ</string>
   <string name="practice_keyboard_gestures_title">ຝຶກໃຊ້ຄີລັດ</string>
@@ -1729,7 +1729,7 @@
     <string name="template_list_position">ຕຳແໜ່ງ <xliff:g id="position" example="2">%1$d</xliff:g> ຈາກ <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">ຍົກ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ວາງ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly ບອກລາຍລະອຽດຂອງສິນຄ້າໃນຄໍາສັ່ງນີ້. ເພື່ອປ່ຽນມັນ, ແຕະລາຍລະອຽດຄ້າງໄວ້, ຈາກນັ້ນລາກມັນຂຶ້ນ ຫຼື ລົງ. ເມື່ອເປີດ SandFly, ແຕະສອງເທື່ອຄ້າງໄວ້, ຈາກນັ້ນລາກ. ທ່ານຍັງສາມາດໃຊ້ການເຄື່ອນໄຫວຂຶ້ນແລະເລື່ອນລົງໄດ້.</string>
+    <string name="item_details_order_footer">SandFly ອ່ານລາຍລະອຽດຂອງລາຍການຕາມລຳດັບນີ້. ເພື່ອປ່ຽນ, ໃຫ້ແຕະລາຍລະອຽດຄ້າງໄວ້ ຈາກນັ້ນລາກຂຶ້ນ ຫຼື ລົງ. ເມື່ອເປີດ SandFly ຢູ່, ໃຫ້ແຕະສອງເທື່ອຄ້າງໄວ້ ຈາກນັ້ນລາກ. ທ່ານຍັງສາມາດໃຊ້ຄຳສັ່ງ ຍ້າຍຂຶ້ນ ແລະ ຍ້າຍລົງ ໄດ້.</string>
     <string name="title_pref_speak_items_before_scroll">ອ່ານລາຍການກ່ອນທີ່ຈະເລື່ອນເຂົ້າມາໃນມຸມມອງ</string>
     <string name="gemini_error_api_key">Gemini ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງລະຫັດໃນການຕັ້ງຄ່າຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
     <string name="gemini_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ສຳລັບລະຫັດ API Gemini ຂອງທ່ານແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
