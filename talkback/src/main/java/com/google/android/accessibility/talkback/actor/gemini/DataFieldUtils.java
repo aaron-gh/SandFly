@@ -159,6 +159,18 @@ public class DataFieldUtils {
     return postData;
   }
 
+  /** Creates a JSON object for the data body of a Gemini request with text only. */
+  public static JSONObject createTextPostDataJson(String command, JSONArray safetySettings)
+      throws JSONException {
+    JSONArray parts = new JSONArray().put(0, new JSONObject().put(TEXT, command));
+    JSONObject postData = new JSONObject();
+    postData.put(
+        CONTENTS, new JSONArray().put(0, new JSONObject().put(ROLE, USER).put(PARTS, parts)));
+    postData.put(SAFETY_SETTINGS, safetySettings);
+    postData.put(GENERATION_CONFIG, createGenerationConfig(/* temperature= */ 0.0));
+    return postData;
+  }
+
   private static JSONObject createGenerationConfig(double temperature) throws JSONException {
     return new JSONObject().put("temperature", temperature).put("topP", 0.85).put("topK", 1);
   }

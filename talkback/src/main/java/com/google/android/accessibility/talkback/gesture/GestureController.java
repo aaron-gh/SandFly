@@ -111,6 +111,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeCha
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
+import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
@@ -179,6 +180,7 @@ public class GestureController {
   private final ListEdgeScroller listEdgeScroller;
   private final PullToRefresh pullToRefresh;
   private final HandwritingCommand handwritingCommand;
+  private final AiDictation dictation;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
   private final @NonNull Map<Integer, Integer> captureFingerprintGestureIdToAnnouncements =
@@ -233,6 +235,7 @@ public class GestureController {
     listEdgeScroller = new ListEdgeScroller(service, pipeline, accessibilityFocusMonitor);
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
+    dictation = new AiDictation(service, pipeline);
   }
 
   /** Stops what gestures started that is still going on. */
@@ -240,6 +243,7 @@ public class GestureController {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     handwritingCommand.shutdown();
+    dictation.shutdown();
   }
 
   /** Stops scrolling to the top or bottom when the user touches the screen or presses a key. */
@@ -620,6 +624,12 @@ public class GestureController {
       AccessibilityNodeInfoCompat editing =
           accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
       result = GranularEditing.open(service, editing != null ? editing : focus);
+    } else if (action.equals(service.getString(R.string.shortcut_value_dictate))) {
+      AccessibilityNodeInfoCompat focus =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      AccessibilityNodeInfoCompat editing =
+          accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(focus);
+      result = dictation.start(editing != null ? editing : focus);
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);

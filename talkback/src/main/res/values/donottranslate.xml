@@ -1231,6 +1231,7 @@
         <item>@android:string/paste</item>
         <item>@string/title_copy_last_spoken_phrase</item>
         <item>@string/granular_editing_title</item>
+        <item>@string/shortcut_dictate</item>
     </string-array>
 
     <!-- Shortcut preference value of text editing -->
@@ -1245,6 +1246,7 @@
         <item>@string/shortcut_value_paste</item>
         <item>@string/shortcut_value_copy_last_spoken_phrase</item>
         <item>@string/shortcut_value_granular_editing</item>
+        <item>@string/shortcut_value_dictate</item>
     </string-array>
 
   <!-- The shortcut of unsupported gestures -->
@@ -1271,6 +1273,9 @@
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
+  <string name="shortcut_value_dictate" translatable="false">DICTATE</string>
+  <string name="pref_ai_dictation_key" translatable="false">pref_ai_dictation</string>
+  <bool name="pref_ai_dictation_default">true</bool>
   <string name="keycombo_shortcut_global_refresh" translatable="false">keycombo_shortcut_global_refresh</string>
   <string name="shortcut_value_scroll_up">SCROLL_UP</string>
   <string name="shortcut_value_scroll_down">SCROLL_DOWN</string>

@@ -4401,6 +4401,18 @@
   <string name="browse_mode_double_trigger_modifier"><xliff:g example="Action" id="trigger_modifier">%1$s</xliff:g> <xliff:g example="Action" id="trigger_modifier2">%1$s</xliff:g></string>
   <!-- Smart Browse Mode toggle's title in the settings. [CHAR_LIMIT=60] -->
   <string name="title_smart_browse_mode">Smart browse mode</string>
+  <!-- Gesture action that types what the user says into the focused text field. [CHAR_LIMIT=NONE] -->
+  <string name="shortcut_dictate">Dictate</string>
+  <!-- Switch in Automatic descriptions: the AI service in use corrects dictated text before it is typed. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_ai_dictation">Correct dictation with AI</string>
+  <!-- Spoken when the AI service didn't correct dictated text, which is typed as recognized. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_not_corrected">Not corrected. Typed as recognized.</string>
+  <!-- Spoken when speech recognition recognized nothing for dictation. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_nothing_recognized">Nothing recognized</string>
+  <!-- Spoken when speech recognition isn't available for dictation. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_unavailable">Speech recognition unavailable</string>
+  <!-- Spoken when the text field for dictation closed before the text was typed. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_field_gone">Text field closed. Nothing typed.</string>
   <!-- Switch that keeps browse mode on or off in each app as the user last left it there. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
   <!-- Smart Browse Mode toggle's summary in the settings. [CHAR_LIMIT=NONE] -->

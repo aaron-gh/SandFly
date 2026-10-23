@@ -221,6 +221,66 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
     return true;
   }
 
+  @Override
+  public boolean requestText(String prompt, GeminiResponseListener listener) {
+    if (!isSupported()) {
+      listener.onError(ErrorReason.UNSUPPORTED);
+      return false;
+    }
+    if (!LocalModelManager.Companion.get(context).answersRequests()
+        && !NetworkUtils.isNetworkConnected(context)) {
+      listener.onError(ErrorReason.NETWORK_ERROR);
+      return false;
+    }
+    JSONObject postData;
+    try {
+      postData =
+          DataFieldUtils.createTextPostDataJson(
+              prompt,
+              DataFieldUtils.createSafetySettingsJson(
+                  safetyThresholdHarassment,
+                  safetyThresholdHateSpeech,
+                  safetyThresholdSexuallyExplicit,
+                  safetyThresholdDangerousContent));
+    } catch (JSONException e) {
+      LogUtils.e(TAG, "Error making a text request: " + e.getMessage());
+      listener.onError(ErrorReason.UNSUPPORTED);
+      return false;
+    }
+    requestPerformer.performRequest(
+        urls(),
+        apiKey(),
+        postData,
+        new GeminiRestResponseCallback() {
+          @Override
+          public void onResponse(GeminiResponse response) {
+            if (FINISH_REASON_STOP.equals(response.finishReason())
+                && !TextUtils.isEmpty(response.text())) {
+              listener.onResponse(FinishReason.STOP, response.text());
+            } else {
+              LogUtils.e(
+                  TAG,
+                  "No answer to a text request, finish or block reason: %s",
+                  response.blockReason() != null
+                      ? response.blockReason()
+                      : response.finishReason());
+              listener.onResponse(FinishReason.ERROR_BLOCKED, /* response= */ null);
+            }
+          }
+
+          @Override
+          public void onFailure(GeminiFailure failure) {
+            listener.onResponse(FinishReason.ERROR_RESPONSE, failure.userMessage(context));
+          }
+
+          @Override
+          public void onCancelled() {
+            listener.onError(ErrorReason.JOB_CANCELLED);
+          }
+        });
+    return true;
+  }
+
   private boolean requestScreenOverviewOrQuery(GeminiCommand command) {
     GeminiResponseCallback<OverviewResponse> listener =
         command instanceof GeminiCommand.ScreenOverview overview

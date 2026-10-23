@@ -41,9 +41,11 @@ class ReadingControlLettersFragment : TalkbackBaseFragment() {
     // Built in code, so the device-protected settings are set here, as an XML screen does.
     preferenceManager.setStorageDeviceProtected()
     val context = requireContext()
+    // The Reading controls screen has each control's name, keyed by its switch's key. It is shown
+    // only until this screen replaces it below.
+    addPreferencesFromResource(R.xml.selector_menu_preferences)
+    val controls = preferenceScreen
     val screen = preferenceManager.createPreferenceScreen(context)
-    // The Reading controls screen has each control's name, keyed by its switch's key.
-    val controls = preferenceManager.inflateFromResource(context, R.xml.selector_menu_preferences, null)
     // Without the controls that the Reading controls screen hides on this device.
     TalkBackPreferenceFilter(context).filterPreferences(controls)
     val settings = SelectorController.SELECTOR_SETTINGS.associateBy { getString(it.prefKeyResId) }

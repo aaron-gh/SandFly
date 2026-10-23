@@ -31,5 +31,9 @@
       android:key="@string/pref_on_device_ai_key"
       android:summary="@string/summary_pref_on_device_ai"
       android:title="@string/title_pref_on_device_ai" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_ai_dictation_default"
+      android:key="@string/pref_ai_dictation_key"
+      android:title="@string/title_pref_ai_dictation" />
 
 </PreferenceScreen>
