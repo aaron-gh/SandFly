@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">सेव करें</string>
     <string name="gemini_api_key_get">कुंजी पाएं</string>
     <string name="gemini_api_terms_link">Gemini API की सेवा की अतिरिक्त शर्तें</string>
+    <string name="title_pref_gemini_model">Gemini मॉडल</string>
+    <string name="gemini_model_automatic">स्वचालित</string>
+    <string name="summary_pref_gemini_model_automatic">स्वचालित: पहले Gemini Flash, और व्यस्त होने पर Flash-Lite।</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, फिर व्यस्त होने पर फ्लैश-लाइट</string>
+    <string name="gemini_model_loading">मॉडल मिल रहे हैं...</string>
+    <string name="gemini_model_list_failed">मॉडल नहीं मिल सके: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">पहले Gemini एपीआई कुंजी सेट करें</string>
+    <string name="ai_service_address_hint">पता, जैसे https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">मॉडल</string>
+    <string name="ai_service_address_invalid">पता https:// से शुरू होना चाहिए। कुछ भी सहेजा नहीं गया।</string>
+    <string name="dialog_message_ai_service_consent">Images and screenshots are sent to <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> to be described, which takes several seconds. इसकी अपनी शर्तें और गोपनीयता नीति लागू होती है। Generative AI is experimental, so it will make mistakes.</string>
+    <string name="ai_service_error_api_key">एआई सेवा ने एपीआई कुंजी स्वीकार नहीं की। स्वचालित विवरण में इसकी सेटिंग्स जांचें।</string>
+    <string name="ai_service_error_quota">The usage limit of the AI service has been reached. बाद में पुन: प्रयास।</string>
+    <string name="ai_service_error_busy">AI सेवा अभी व्यस्त है. थोड़ी देर में पुनः प्रयास करें.</string>
+    <string name="ai_service_error_timeout">AI सेवा को उत्तर देने में बहुत अधिक समय लगा। पुनः प्रयास करें।</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">कोई नहीं</string>
+    <string name="ai_service_not_set_up">कोई AI सेवा उपयोग में नहीं है. Set one up or choose one in Automatic descriptions settings.</string>
+    <string name="ai_provider_none_set_up">कोई AI सेवा स्थापित नहीं है. नीचे इसकी सेटिंग में एक सेट अप करें।</string>
+    <string name="ai_provider_other">अन्य सेवा</string>
+    <string name="title_pref_category_ai_services">एआई सेवाएं</string>
+    <string name="title_pref_ai_provider">एआई सेवा</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> सेटिंग्स</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, सेट अप नहीं</string>
+    <string name="ai_provider_in_use">इस्तेमाल में है</string>
+    <string name="ai_provider_not_set_up">सेट अप नहीं</string>
+    <string name="ai_provider_not_ready">पहले एक मॉडल चुनें</string>
+    <string name="ai_provider_address">पता</string>
+    <string name="ai_provider_address_message">OpenAI-संगत चैट एपीआई और छवि इनपुट वाली सेवा का पता, जैसे https://example.com/v1.</string>
+    <string name="ai_provider_not_set">सेट नहीं</string>
+    <string name="ai_provider_set">विन्यस्त</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> एपीआई कुंजी</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> मॉडल</string>
+    <string name="ai_provider_choose_model">नहीं चुना गया</string>
+    <string name="ai_provider_key_message">अपनी <xliff:g id="service" example="Claude">%1$s</xliff:g> एपीआई कुंजी चिपकाएँ। इसे हटाने के लिए, फ़ील्ड साफ़ करें और सहेजें। आपके द्वारा वर्णित छवियाँ और स्क्रीन <xliff:g id="service" example="Claude">%1$s</xliff:g> पर भेजी जाती हैं।</string>
+    <string name="ai_provider_needs_key">पहले <xliff:g id="service" example="Claude">%1$s</xliff:g> एपीआई कुंजी सेट करें</string>
+    <string name="ai_provider_needs_address">पहले पता सेट करें</string>
+    <string name="ai_provider_enter_model">एक मॉडल नाम दर्ज करें</string>
 </resources>
