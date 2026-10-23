@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini APIキー</string>
+    <string name="summary_pref_gemini_api_key_built_in">このアプリに組み込まれているキーを使用する</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio (aistudio.google.com/apikey) から無料の API キーを取得し、ここに貼り付けます。キーを削除するには、フィールドをクリアして保存します。\n\nあなたが説明した画像と画面はGoogleに送信されます。無料利用枠では、Google は製品を改善するためにそれらを使用できます。</string>
+    <string name="gemini_api_key_hint">APIキー</string>
+    <string name="gemini_api_key_save">保存</string>
+    <string name="gemini_api_key_get">鍵を入手する</string>
+    <string name="title_pref_gemini_model">Geminiモデル</string>
+    <string name="gemini_model_automatic">自動</string>
+    <string name="summary_pref_gemini_model_automatic">自動: Gemini フラッシュ、フラッシュがビジー状態の場合は Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>、ビジー時は Flash-Lite</string>
+    <string name="gemini_model_loading">モデルを取得中…</string>
+    <string name="gemini_model_list_failed">モデルを取得できませんでした: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">最初に Gemini API キーを設定します</string>
+    <string name="gemini_api_terms_link">Gemini API追加利用規約</string>
+    <string name="ai_service_address_hint">アドレス（https://openrouter.ai/api/v1 など）</string>
+    <string name="ai_service_model_hint">モデル</string>
+    <string name="ai_service_address_invalid">アドレスは https://. で始まる必要があります。何も保存されませんでした。</string>
+    <string name="dialog_message_ai_service_consent">画像とスクリーンショットは説明のために <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> に送信されます。これには数秒かかります。独自の規約とプライバシー ポリシーが適用されます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。</string>
+    <string name="ai_service_error_api_key">AI サービスは API キーを受け入れませんでした。自動の説明で設定を確認してください。</string>
+    <string name="ai_service_error_quota">AIサービスの利用制限に達しました。後でもう一度試してください。</string>
+    <string name="ai_service_error_busy">AI サービスは現在ビジー状態です。しばらくしてからもう一度試してください。</string>
+    <string name="ai_service_error_timeout">AI サービスの応答に時間がかかりすぎました。もう一度やり直してください。</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">なし</string>
+    <string name="ai_service_not_set_up">AI サービスは使用されていません。セットアップするか、自動説明設定でいずれかを選択します。</string>
+    <string name="ai_provider_none_set_up">AI サービスが設定されていません。以下の設定で設定してください。</string>
+    <string name="ai_provider_other">その他のサービス</string>
+    <string name="title_pref_category_ai_services">AIサービス</string>
+    <string name="title_pref_ai_provider">AIサービス</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>設定</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>、セットアップされていません</string>
+    <string name="ai_provider_in_use">使用中</string>
+    <string name="ai_provider_not_set_up">セットアップされていません</string>
+    <string name="ai_provider_not_ready">最初にモデルを選択してください</string>
+    <string name="ai_provider_address">住所</string>
+    <string name="ai_provider_address_message">Https://example.com/v1. など、OpenAI 互換のチャット API と画像入力を備えたサービスのアドレス</string>
+    <string name="ai_provider_not_set">未設定</string>
+    <string name="ai_provider_set">設定済み</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> APIキー</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>モデル</string>
+    <string name="ai_provider_choose_model">選ばれなかった</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを貼り付けます。これを削除するには、フィールドをクリアして保存します。あなたが説明した画像や画面は<xliff:g id="service" example="Claude">%1$s</xliff:g>に送信されます。</string>
+    <string name="ai_provider_needs_key">最初に<xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを設定します</string>
+    <string name="ai_provider_needs_address">最初にアドレスを設定してください</string>
+    <string name="ai_provider_enter_model">モデル名を入力してください</string>
+</resources>
