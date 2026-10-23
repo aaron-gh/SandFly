@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Зборувај статус</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> од <xliff:g id="max_level" example="4">%2$d</xliff:g> барови</string>
+    <string name="status_wifi_off">Wi-Fi попуст</string>
+    <string name="status_wifi_not_connected">Wi-Fi не е поврзан</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Мобилен</string>
+    <string name="status_mobile_no_service">Нема мобилна услуга</string>
+    <string name="status_do_not_disturb">Не вознемирувај</string>
+    <string name="status_ringer_vibrate">Вибрирајте</string>
+    <string name="status_ringer_silent">Тивко</string>
+    <string name="status_airplane_mode">Авионски режим</string>
+    <string name="title_pref_status_readout">Исчитување на статусот</string>
+    <string name="status_item_time">Време</string>
+    <string name="status_item_time_summary">Тековното време</string>
+    <string name="status_item_battery">Батерија</string>
+    <string name="status_item_battery_summary">Ниво на батерија, полнење и заштеда на батерија</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Име на мрежата и јачина на сигналот</string>
+    <string name="status_item_mobile">Мобилна мрежа</string>
+    <string name="status_item_mobile_summary">Носач, тип на мрежа и јачина на сигналот</string>
+    <string name="status_item_ringer">Ringer и Не вознемирувај</string>
+    <string name="status_item_ringer_summary">Само кога ѕвонењето не е поставено да ѕвони или кога е вклучено Не вознемирувај</string>
+    <string name="status_item_airplane_mode">Авионски режим</string>
+    <string name="status_item_airplane_mode_summary">Само кога е вклучен авионскиот режим</string>
+</resources>
