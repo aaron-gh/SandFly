@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">聲音主題</string>
+    <string name="summary_pref_sound_themes">安裝並選擇聲音和振動組，用您自己的聲音替換單個聲音，然後打開控制聲音和振動以及 3D 音訊。</string>
+    <string name="sound_themes_installed_category">已安裝的主題</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly自己的聲音和振動，以及你自己的任何聲音。</string>
+    <string name="sound_theme_in_use">使用中</string>
+    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">許可證：<xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>聲音。</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> 的聲音。</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>振動。</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> 振動。</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">打開控制聲音和振動。</string>
+    <string name="sound_theme_control_sounds_off">關閉控制聲音和振動。</string>
+    <string name="sound_theme_use">使用這個主題</string>
+    <string name="sound_theme_about">關於這個主題</string>
+    <string name="sound_theme_export">另存為主題文件</string>
+    <string name="sound_theme_remove">刪除</string>
+    <string name="sound_theme_remove_confirm">刪除主題<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
+    <string name="sound_theme_remove_button">刪除</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">保存了主題，有<xliff:g id="count" example="1">%d</xliff:g>聲音。</item>
+        <item quantity="other">儲存主題，帶有<xliff:g id="count" example="13">%d</xliff:g>聲音。</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly 無法儲存主題檔案。</string>
+    <string name="sound_theme_no_picker">此裝置上沒有可用於選擇檔案的應用程式。</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的設定</string>
+    <string name="title_pref_theme_sounds">音效</string>
+    <string name="summary_pref_theme_sounds">用您自己的聲音檔案替換該主題的任何聲音。</string>
+    <string name="sound_themes_install_category">安裝主題</string>
+    <string name="title_pref_sound_theme_install_file">來自文件</string>
+    <string name="summary_pref_sound_theme_install_file">主題檔案是一個 ZIP 檔案。您也可以從另一個應用程式使用 SandFly 開啟或共用它。</string>
+    <string name="title_pref_sound_theme_install_link">來自連結</string>
+    <string name="summary_pref_sound_theme_install_link">指向主題檔案或包含主題的 GitHub 儲存庫的連結。您也可以透過瀏覽器與 SandFly 分享連結。</string>
+    <string name="title_pref_sound_theme_install_source">來自來源</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上儲存庫中的主題檔案。</string>
+    <string name="sound_theme_sources">聲音主題來源</string>
+    <string name="sound_theme_source_empty">此來源中沒有聲音主題</string>
+    <string name="sound_theme_source_failed">無法載入聲音主題。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">從它安裝的聲音主題保持安裝狀態。</string>
+    <string name="sound_theme_link_message">輸入或貼上指向主題檔案或其中包含主題的 GitHub 儲存庫的連結。</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">安裝聲音主題</string>
+    <string name="sound_theme_install_reading">讀聲音主題</string>
+    <string name="sound_theme_install_title">安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
+    <string name="sound_theme_install_and_use">安裝與使用</string>
+    <string name="sound_theme_install">安裝</string>
+    <string name="sound_theme_install_replaces">這將替換已安裝的同名主題。</string>
+    <string name="sound_theme_install_skipped">省略：\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">已安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。</string>
+    <string name="sound_theme_installed_in_use">已安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。現在正在使用中。</string>
+    <string name="sound_theme_install_nothing">沒有要安裝的聲音主題。</string>
+    <string name="sound_theme_install_not_a_theme">這不是聲音主題SandFly可以使用：<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>。</string>
+    <string name="sound_theme_install_failed">SandFly 無法安裝聲音主題。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">聲音主題的連結必須以 https 開頭。</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的聲音</string>
+    <string name="title_pref_theme_sounds_reset">為所有人使用 SandFly 的聲音</string>
+    <string name="theme_sounds_reset_confirm">把這個主題的所有聲音都去掉，用SandFly自己的？</string>
+    <string name="theme_sounds_reset_button">刪除</string>
+    <string name="theme_sounds_category">音效</string>
+    <string name="theme_sound_summary_default">SandFly的聲音</string>
+    <string name="theme_sound_summary_custom">主題音效</string>
+    <string name="theme_sound_summary_none">沒有聲音。播放焦點聲音。</string>
+    <string name="theme_sound_summary_android_keyboard">Android的鍵盤聲</string>
+    <string name="theme_sound_use_android_keyboard">使用Android的鍵盤聲音</string>
+    <string name="theme_sound_braille_character">點字鍵盤：輸入字符</string>
+    <string name="theme_sound_braille_space">點字鍵盤：空格</string>
+    <string name="theme_sound_braille_delete">點字鍵盤：刪除</string>
+    <string name="theme_sound_braille_new_line">點字鍵盤：新系列</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">選擇聲音文件</string>
+    <string name="theme_sound_preview">預覽</string>
+    <string name="theme_sound_none">沒有聲音</string>
+    <string name="theme_sound_summary_no_sound">沒有聲音</string>
+    <string name="theme_sound_action_set_none">設定為無聲音</string>
+    <string name="theme_sound_use_default">使用SandFly的聲音</string>
+    <string name="theme_sound_remove">消除聲音</string>
+    <string name="theme_sound_too_large">該文件太大了。聲音最大可達 5 MB。</string>
+    <string name="theme_sound_not_audio">SandFly 無法播放該檔案。選擇 WAV、OGG、MP3 或 FLAC 聲音。</string>
+    <string name="theme_sound_failed">SandFly 無法讀取該檔案。</string>
+</resources>

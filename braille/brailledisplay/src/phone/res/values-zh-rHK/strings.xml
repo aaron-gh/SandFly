@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">實體點字鍵盤</string>
   <string name="bd_application_name">Android 無障礙套件</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack 點字鍵盤無法使用</string>
-  <string name="bd_ime_disabled_dialog_title">開啟 TalkBack 點字鍵盤</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly 點字鍵盤無法使用</string>
+  <string name="bd_ime_disabled_dialog_title">開啟 SandFly 點字鍵盤</string>
   <string name="bd_ime_disabled_dialog_message">如要使用點字顯示器輸入，請前往輸入設定開啟此功能</string>
   <string name="bd_ime_disabled_dialog_title_positive">輸入設定</string>
   <string name="bd_ime_not_default_dialog_title">切換輸入方法</string>
-  <string name="bd_ime_not_default_dialog_message">如要繼續輸入，請將 TalkBack 點字鍵盤設定為輸入方法</string>
+  <string name="bd_ime_not_default_dialog_message">如要繼續輸入，請將 SandFly 點字鍵盤設定為輸入方法</string>
   <string name="bd_ime_not_default_dialog_positive">切換輸入方法</string>
   <string name="type_unlabeled">未標示</string>
   <string name="type_unlabeled_edittext">未標示的編輯框</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">向左平移</string>
   <string name="overlay_pan_right_button">向右平移</string>
   <string name="bd_preferences_title">點字顯示器</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">如要使用點字顯示器，請先開啟 TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">前往 TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">如要使用點字顯示器，請先開啟 SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">前往 SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">如要使用點字顯示器，請先開啟藍牙</string>
   <string name="bd_preferences_banner_bluetooth_off_button">開啟藍牙</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">如要使用點字顯示器，必須允許「%s」存取附近的裝置</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">如要使用瀏覽模式，你需要從預設按鍵配置切換至強化按鍵配置。此變更會更新部分點字顯示器指令</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">設定</string>
   <string name="bd_command_change_dialog_title">部分指令已更新</string>
-  <string name="bd_command_change_dialog_message">此版本的 TalkBack 已更新以下點字顯示器指令：\n\n• 上一個項目：按下第 1、7 點\n\n• 下一個項目：按下第 4、8 點\n\n• 上一個朗讀控制項：按下第 2、3、7、8 點\n\n• 下一個朗讀控制項：按下第 5、6、7、8 點</string>
+  <string name="bd_command_change_dialog_message">此版本的 SandFly 已更新以下點字顯示器指令：\n\n• 上一個項目：按下第 1、7 點\n\n• 下一個項目：按下第 4、8 點\n\n• 上一個朗讀控制項：按下第 2、3、7、8 點\n\n• 下一個朗讀控制項：按下第 5、6、7、8 點</string>
   <string name="bd_preference_braille_contracted">縮寫點字</string>
   <string name="bd_preference_braille_uncontracted">未縮寫點字</string>
   <string name="bd_braille_grade_tips">如要透過點字顯示器在縮寫及未縮寫點字模式之間快速切換，請按下空白鍵和第 1、2、4 及 5 點。\n\n如果使用具有這兩種點字級別的語言，就能使用此指令。</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">在項目間移動</string>
   <string name="bd_commands_bindings_category_system_actions_title">系統操作</string>
   <string name="bd_commands_bindings_category_system_actions_summary">返回、前往主畫面、查看通知等等</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack 功能</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback 選單和設定</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly 功能</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly 選單與設定</string>
   <string name="bd_commands_bindings_category_braille_settings_title">點字設定</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">點字語言和設定</string>
   <string name="bd_commands_bindings_category_text_editing_title">文字編輯</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">開啟所有應用程式</string>
   <string name="bd_cmd_toggle_screen_search">開啟螢幕搜尋</string>
   <string name="bd_cmd_edit_custom_label">修改自訂標籤</string>
-  <string name="bd_cmd_open_talkback_menu">開啟 TalkBack 選單</string>
-  <string name="bd_cmd_toggle_voice_feedback">開啟或關閉 TalkBack 語音</string>
+  <string name="bd_cmd_open_talkback_menu">開啟 SandFly 選單</string>
+  <string name="bd_cmd_toggle_voice_feedback">開啟或關閉 SandFly 語音</string>
   <string name="bd_cmd_read_stop">停止朗讀</string>
-  <string name="bd_cmd_talkback_settings">開啟 TalkBack 設定</string>
+  <string name="bd_cmd_talkback_settings">開啟 SandFly 設定</string>
   <string name="bd_cmd_switch_to_next_input_language">切換至下一種輸入語言</string>
   <string name="bd_cmd_switch_to_next_output_language">切換至下一種朗讀語言</string>
   <string name="bd_cmd_toggle_contracted_mode">在一級點字和二級點字之間切換</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">使用指令進入瀏覽模式後，輸入下列字母或數字快速鍵便可快速瀏覽網頁\n\n你無需進入瀏覽模式也可以使用這些快速鍵，但必須在「下一個」指令中加入 8 點</string>
   <string name="bd_cmd_subcategory_title_web_navigation">表格導覽</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">要關閉點字顯示器設定嗎？</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">你隨時可前往 TalkBack 設定重新開啟</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">你隨時可前往 SandFly 設定重新開啟</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">關閉</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">部分指令無法使用</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">當你輸入或編輯時，瀏覽、點字設定和部分 TalkBack 功能的指令將無法使用。\n\n如要使用這些指令，請先關閉鍵盤。</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">當你輸入或編輯時，瀏覽、點字設定和部分 SandFly 功能的指令將無法使用。\n\n如要使用這些指令，請先關閉鍵盤。</string>
   <string name="bd_caption_tutorial_dialog_title">字幕將在點字顯示器上顯示</string>
   <string name="bd_caption_tutorial_dialog_message">如要顯示或隱藏此影片的字幕，請按下空白鍵和第 1、4、7、8 點。\n\n如要自動顯示支援媒體的字幕，請前往「設定」開啟「在點字顯示器上顯示字幕」。</string>
   <string name="bd_caption_tutorial_dialog_checkbox">有字幕時一律顯示此訊息</string>
   <string name="bd_usb_connect_dialog_title">點字顯示器已連接 USB</string>
-  <string name="bd_usb_connect_dialog_message">點字顯示器正在使用「%s」的電池充電。\n\n如要改用藍牙，請將顯示器與 USB 或 USB 集線器解除連線，然後前往 TalkBack 設定 &gt; [點字顯示器]。</string>
+  <string name="bd_usb_connect_dialog_message">點字顯示器正在使用「%s」的電池充電。\n\n如要改用藍牙，請將顯示器與 USB 或 USB 集線器解除連線，然後前往 SandFly 設定 &gt; [點字顯示器]。</string>
   <string name="bd_device">手機</string>
   <string name="bd_battery_low_dialog_title">「%s」電量不足</string>
   <string name="bd_battery_low_dialog_message">點字顯示器正在使用「%s」的電池充電。\n\n如要節省電力：\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">全部清除</string>
   <string name="popup_message_history_empty">空白</string>
   <string name="popup_message_history_consent_dialog_title">要啟用裝置訊息記錄嗎？</string>
-  <string name="popup_message_history_consent_dialog_msg">此設定會將通知和鬧鐘等訊息儲存在 TalkBack，你可隨時變更此設定。</string>
+  <string name="popup_message_history_consent_dialog_msg">此設定會將通知和鬧鐘等訊息儲存在 SandFly，你可隨時變更此設定。</string>
   <string name="popup_message_history_consent_dialog_positive_btn">啟用</string>
   <string name="popup_message_history_consent_dialog_negative_btn">不用了，謝謝</string>
+    <string name="external_display_channel">其他應用程式的點字顯示器</string>
+    <string name="external_display_ask_title">允許 <xliff:g id="app" example="Notetaker">%1$s</xliff:g> 成為 SandFly 的點字顯示器嗎？</string>
+    <string name="external_display_ask_text">在您允許之前，SandFly不會使用它。</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 將能夠閱讀 SandFly 以點字顯示的所有內容，可以是螢幕上的任何內容，包括訊息和您鍵入的內容。它還能夠像使用點字顯示器一樣控制您的裝置：鍵入、開啟應用程式並執行任何 SandFly 命令。僅允許您信任的應用程式。</string>
+    <string name="external_display_allow">允許</string>
+    <string name="external_display_deny">不允許</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 是您的點字顯示器</string>
+    <string name="external_display_in_use_text">當SandFly使用它時，<xliff:g id="app" example="Notetaker">%1$s</xliff:g>可以讀取螢幕並控制裝置。</string>
+    <string name="external_displays_title">從其他應用程式顯示</string>
+    <string name="external_displays_summary">您允許的應用程式可以作為 SandFly 的點字顯示器。點字顯示器應用程式可以讀取螢幕並控制裝置。</string>
+    <string name="external_displays_none">任何應用程式都不能是點字顯示器。</string>
 </resources>
