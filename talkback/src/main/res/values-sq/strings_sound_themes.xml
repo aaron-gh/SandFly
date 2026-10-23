@@ -41,9 +41,9 @@
     <string name="title_pref_sound_theme_install_source">Nga një burim</string>
     <string name="summary_pref_sound_theme_install_source">Skedarët e temave në një depo në GitHub, GitLab, Codeberg, Gitea ose Bitbucket.</string>
     <string name="sound_theme_sources">Burimet e temave të zërit</string>
-    <string name="sound_theme_source_empty">Nuk ka tema zanore në këtë burim</string>
+    <string name="sound_theme_source_empty">Nuk ka tema zëri në këtë burim</string>
     <string name="sound_theme_source_failed">Temat e zërit nuk mund të ngarkoheshin. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Temat zanore të instaluara prej tij qëndrojnë të instaluara.</string>
+    <string name="sound_theme_source_remove_message">Temat e zërit të instaluara prej tij mbeten të instaluara.</string>
     <string name="sound_theme_link_message">Futni ose ngjisni një lidhje në një skedar teme ose në një depo GitHub me një temë në të.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Instalo temën e tingujve</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Kjo zëvendëson temën e instaluar me të njëjtin emër.</string>
     <string name="sound_theme_install_skipped">Të lëna jashtë:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> u instalua.</string>
-    <string name="sound_theme_installed_in_use">I instaluar <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Është në përdorim tani.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> u instalua. Tani është në përdorim.</string>
     <string name="sound_theme_install_nothing">Nuk ka asnjë temë zëri për t\'u instaluar.</string>
     <string name="sound_theme_install_not_a_theme">Kjo nuk është një temë zanore SandFly mund të përdoret: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly nuk mund ta instalonte temën e zërit. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,19 +66,19 @@
     <string name="theme_sounds_category">Tingujt</string>
     <string name="theme_sound_summary_default">Tingulli i SandFly</string>
     <string name="theme_sound_summary_custom">Tingulli i temës</string>
-    <string name="theme_sound_summary_none">Asnjë zë. Tingulli i fokusit luhet.</string>
+    <string name="theme_sound_summary_none">Asnjë zë. Luhet tingulli i fokusit.</string>
     <string name="theme_sound_summary_android_keyboard">Tingulli i tastierës së Android</string>
-    <string name="theme_sound_use_android_keyboard">Përdorni tingullin e tastierës Android</string>
+    <string name="theme_sound_use_android_keyboard">Përdor tingullin e tastierës së Android</string>
     <string name="theme_sound_braille_character">Tastiera Braille: shtypja e një karakteri</string>
     <string name="theme_sound_braille_space">Tastiera Braille: hapësirë</string>
     <string name="theme_sound_braille_delete">Tastiera Braille: fshirje</string>
     <string name="theme_sound_braille_new_line">Tastiera Braille: linjë e re</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Zgjidhni një skedar zanor</string>
+    <string name="theme_sound_choose">Zgjidh një skedar zëri</string>
     <string name="theme_sound_preview">Dëgjo</string>
     <string name="theme_sound_none">Pa tingull</string>
     <string name="theme_sound_summary_no_sound">Pa tingull</string>
-    <string name="theme_sound_action_set_none">Vendosur në pa zë</string>
+    <string name="theme_sound_action_set_none">Cakto pa zë</string>
     <string name="theme_sound_use_default">Përdor tingullin e SandFly</string>
     <string name="theme_sound_remove">Hiq tingullin</string>
     <string name="theme_sound_too_large">Ai skedar është shumë i madh. Një zë mund të jetë deri në 5 MB.</string>

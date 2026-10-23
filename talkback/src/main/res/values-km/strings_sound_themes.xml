@@ -22,7 +22,7 @@
     <string name="sound_theme_about">អំពីរចនាប័ទ្មនេះ</string>
     <string name="sound_theme_export">រក្សាទុកជាឯកសាររចនាប័ទ្ម</string>
     <string name="sound_theme_remove">ដកចេញ</string>
-    <string name="sound_theme_remove_confirm">លុបប្រធានបទ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_confirm">លុបរចនាប័ទ្ម <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">ដកចេញ</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">បានរក្សាទុកប្រធានបទដោយមាន <xliff:g id="count" example="1">%d</xliff:g> សំឡេង។</item>
@@ -41,9 +41,9 @@
     <string name="title_pref_sound_theme_install_source">ពីប្រភពមួយ</string>
     <string name="summary_pref_sound_theme_install_source">ឯកសារស្បែកនៅក្នុងឃ្លាំងនៅលើ GitHub, GitLab, Codeberg, Gitea ឬ Bitbucket ។</string>
     <string name="sound_theme_sources">ប្រភពរចនាប័ទ្មសំឡេង</string>
-    <string name="sound_theme_source_empty">មិនមានប្រធានបទសំឡេងនៅក្នុងប្រភពនេះទេ</string>
-    <string name="sound_theme_source_failed">មិនអាចផ្ទុករូបរាងសំឡេង។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">រូបរាងសំឡេងដែលបានដំឡើងពីវាបន្តដំឡើង។</string>
+    <string name="sound_theme_source_empty">មិនមានរចនាប័ទ្មសំឡេងនៅក្នុងប្រភពនេះទេ</string>
+    <string name="sound_theme_source_failed">មិនអាចផ្ទុករចនាប័ទ្មសំឡេងបានទេ។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">រចនាប័ទ្មសំឡេងដែលបានដំឡើងពីប្រភពនេះនៅតែត្រូវបានដំឡើង។</string>
     <string name="sound_theme_link_message">បញ្ចូល ឬបិទភ្ជាប់តំណទៅឯកសារប្រធានបទ ឬទៅកាន់ឃ្លាំង GitHub ដែលមានរូបរាងនៅក្នុងវា។</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ដំឡើងរចនាប័ទ្មសំឡេង</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">វាជំនួសប្រធានបទដែលបានដំឡើងដែលមានឈ្មោះដូចគ្នា។</string>
     <string name="sound_theme_install_skipped">បានរំលង៖\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។</string>
-    <string name="sound_theme_installed_in_use">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។ វាត្រូវបានប្រើឥឡូវនេះ។</string>
+    <string name="sound_theme_installed_in_use">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។ ឥឡូវនេះកំពុងប្រើ។</string>
     <string name="sound_theme_install_nothing">មិនមានរចនាប័ទ្មសំឡេងសម្រាប់ដំឡើងទេ។</string>
     <string name="sound_theme_install_not_a_theme">នេះមិនមែនជាប្រធានបទសំឡេងទេ SandFlyអាចប្រើ៖ <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>។</string>
     <string name="sound_theme_install_failed">SandFly មិនអាចដំឡើងរចនាប័ទ្មសំឡេងបានទេ។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="theme_sounds_category">សំឡេង</string>
     <string name="theme_sound_summary_default">សំឡេង SandFly</string>
     <string name="theme_sound_summary_custom">សំឡេងរចនាប័ទ្ម</string>
-    <string name="theme_sound_summary_none">គ្មានសំឡេង។ សំឡេងផ្តោតអារម្មណ៍លេង។</string>
+    <string name="theme_sound_summary_none">គ្មានសំឡេង។ សំឡេងហ្វូកឹសត្រូវបានចាក់។</string>
     <string name="theme_sound_summary_android_keyboard">សំឡេងក្តារចុចរបស់ Android</string>
     <string name="theme_sound_use_android_keyboard">ប្រើសំឡេងក្តារចុចរបស់ Android</string>
     <string name="theme_sound_braille_character">ក្ដារចុចអក្សរស្ទាប៖ វាយតួអក្សរ</string>

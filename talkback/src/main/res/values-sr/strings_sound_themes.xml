@@ -24,7 +24,7 @@
     <string name="sound_theme_about">О овој теми</string>
     <string name="sound_theme_export">Сачувај као датотеку теме</string>
     <string name="sound_theme_remove">Уклони</string>
-    <string name="sound_theme_remove_confirm">Уклоните тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_confirm">Уклонити тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">Уклони</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">Тема је сачувана, са <xliff:g id="count" example="1">%d</xliff:g> звуком.</item>
@@ -57,7 +57,7 @@
     <string name="sound_theme_install_replaces">Ово замењује инсталирану тему истог имена.</string>
     <string name="sound_theme_install_skipped">Изостављено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Тема <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> је инсталирана.</string>
-    <string name="sound_theme_installed_in_use">Инсталирано <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Сада је у употреби.</string>
+    <string name="sound_theme_installed_in_use">Тема <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> је инсталирана и сада се користи.</string>
     <string name="sound_theme_install_nothing">Не постоји звучна тема за инсталирање.</string>
     <string name="sound_theme_install_not_a_theme">Ово није звучна тема SandFly може да користи: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly није могао да инсталира звучну тему. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -71,17 +71,17 @@
     <string name="theme_sound_summary_custom">Звук теме</string>
     <string name="theme_sound_summary_none">Нема звука. Звук фокуса се репродукује.</string>
     <string name="theme_sound_summary_android_keyboard">Звук тастатуре Android</string>
-    <string name="theme_sound_use_android_keyboard">Користите звук тастатуре Android</string>
+    <string name="theme_sound_use_android_keyboard">Користи звук тастатуре Android-а</string>
     <string name="theme_sound_braille_character">Брајева тастатура: куцање знака</string>
     <string name="theme_sound_braille_space">Брајева тастатура: размак</string>
     <string name="theme_sound_braille_delete">Брајева тастатура: брисање</string>
-    <string name="theme_sound_braille_new_line">Брајева тастатура: нова линија</string>
+    <string name="theme_sound_braille_new_line">Брајева тастатура: нови ред</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Изаберите звучну датотеку</string>
+    <string name="theme_sound_choose">Изабери звучну датотеку</string>
     <string name="theme_sound_preview">Преслушај</string>
     <string name="theme_sound_none">Без звука</string>
     <string name="theme_sound_summary_no_sound">Без звука</string>
-    <string name="theme_sound_action_set_none">Подесите на без звука</string>
+    <string name="theme_sound_action_set_none">Подеси без звука</string>
     <string name="theme_sound_use_default">Користи звук SandFly</string>
     <string name="theme_sound_remove">Уклони звук</string>
     <string name="theme_sound_too_large">Тај фајл је превелик. Звук може бити до 5 МБ.</string>

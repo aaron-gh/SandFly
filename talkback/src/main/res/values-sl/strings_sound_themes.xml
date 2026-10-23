@@ -60,7 +60,7 @@
     <string name="sound_theme_install_replaces">To nadomesti nameščeno temo z istim imenom.</string>
     <string name="sound_theme_install_skipped">Izpuščeno:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> je nameščena.</string>
-    <string name="sound_theme_installed_in_use">Nameščeno <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Sedaj je v uporabi.</string>
+    <string name="sound_theme_installed_in_use">Tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> je nameščena in je zdaj v uporabi.</string>
     <string name="sound_theme_install_nothing">Ni zvočne teme za namestitev.</string>
     <string name="sound_theme_install_not_a_theme">To ni zvočna tema, ki jo SandFly lahko uporablja: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly ni mogel namestiti zvočne teme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -80,11 +80,11 @@
     <string name="theme_sound_braille_delete">Braillova tipkovnica: brisanje</string>
     <string name="theme_sound_braille_new_line">Braillova tipkovnica: nova vrstica</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Izberite zvočno datoteko</string>
+    <string name="theme_sound_choose">Izberi zvočno datoteko</string>
     <string name="theme_sound_preview">Predvajaj</string>
     <string name="theme_sound_none">Brez zvoka</string>
     <string name="theme_sound_summary_no_sound">Brez zvoka</string>
-    <string name="theme_sound_action_set_none">Nastavite brez zvoka</string>
+    <string name="theme_sound_action_set_none">Nastavi brez zvoka</string>
     <string name="theme_sound_use_default">Uporabi zvok SandFly</string>
     <string name="theme_sound_remove">Odstrani zvok</string>
     <string name="theme_sound_too_large">Ta datoteka je prevelika. Zvok je lahko velik do 5 MB.</string>

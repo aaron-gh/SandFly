@@ -43,7 +43,7 @@
     <string name="sound_theme_sources">Fontes de temas sonoros</string>
     <string name="sound_theme_source_empty">Não há temas sonoros nesta fonte</string>
     <string name="sound_theme_source_failed">Não foi possível carregar temas de som. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Os temas de som instalados a partir dele permanecem instalados.</string>
+    <string name="sound_theme_source_remove_message">Os temas de som instalados a partir dela permanecem instalados.</string>
     <string name="sound_theme_link_message">Insira ou cole um link para um arquivo de tema ou para um repositório GitHub com um tema nele.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Instalar tema de som</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Isso substitui o tema instalado com o mesmo nome.</string>
     <string name="sound_theme_install_skipped">Omitidos:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> instalado.</string>
-    <string name="sound_theme_installed_in_use">Instalado <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Está em uso agora.</string>
+    <string name="sound_theme_installed_in_use">Tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> instalado. Está agora em utilização.</string>
     <string name="sound_theme_install_nothing">Não há tema de som para instalar.</string>
     <string name="sound_theme_install_not_a_theme">Este não é um tema sonoro SandFly pode usar: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">O SandFly não conseguiu instalar o tema de som. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -68,13 +68,13 @@
     <string name="theme_sound_summary_custom">Som do tema</string>
     <string name="theme_sound_summary_none">Nenhum som. O som de foco é reproduzido.</string>
     <string name="theme_sound_summary_android_keyboard">Som do teclado do Android</string>
-    <string name="theme_sound_use_android_keyboard">Use o som do teclado de Android</string>
-    <string name="theme_sound_braille_character">Teclado Braille: digitando um caractere</string>
+    <string name="theme_sound_use_android_keyboard">Usar o som do teclado do Android</string>
+    <string name="theme_sound_braille_character">Teclado braille: escrever um caráter</string>
     <string name="theme_sound_braille_space">Teclado braille: espaço</string>
     <string name="theme_sound_braille_delete">Teclado braille: eliminação</string>
-    <string name="theme_sound_braille_new_line">Teclado Braille: nova linha</string>
+    <string name="theme_sound_braille_new_line">Teclado braille: nova linha</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Escolha um arquivo de som</string>
+    <string name="theme_sound_choose">Escolher um ficheiro de som</string>
     <string name="theme_sound_preview">Ouvir</string>
     <string name="theme_sound_none">Sem som</string>
     <string name="theme_sound_summary_no_sound">Sem som</string>
@@ -83,5 +83,5 @@
     <string name="theme_sound_remove">Remover o som</string>
     <string name="theme_sound_too_large">Esse arquivo é muito grande. Um som pode ter até 5 MB.</string>
     <string name="theme_sound_not_audio">SandFly não é possível reproduzir esse arquivo. Escolha um som WAV, OGG, MP3 ou FLAC.</string>
-    <string name="theme_sound_failed">SandFly não conseguiu ler esse arquivo.</string>
+    <string name="theme_sound_failed">O SandFly não conseguiu ler esse ficheiro.</string>
 </resources>

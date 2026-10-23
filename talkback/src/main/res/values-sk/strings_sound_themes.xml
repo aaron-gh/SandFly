@@ -47,9 +47,9 @@
     <string name="title_pref_sound_theme_install_source">Zo zdroja</string>
     <string name="summary_pref_sound_theme_install_source">Súbory tém v úložisku na GitHub, GitLab, Codeberg, Gitea alebo Bitbucket.</string>
     <string name="sound_theme_sources">Zdroje zvukových tém</string>
-    <string name="sound_theme_source_empty">V tomto zdroji nie sú žiadne zvukové motívy</string>
-    <string name="sound_theme_source_failed">Nepodarilo sa načítať zvukové motívy. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Zvukové motívy nainštalované z neho zostanú nainštalované.</string>
+    <string name="sound_theme_source_empty">V tomto zdroji nie sú žiadne zvukové témy</string>
+    <string name="sound_theme_source_failed">Nepodarilo sa načítať zvukové témy. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Zvukové témy nainštalované z neho zostanú nainštalované.</string>
     <string name="sound_theme_link_message">Zadajte alebo prilepte odkaz na súbor témy alebo na úložisko GitHub s témou.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Nainštalovať zvukovú tému</string>
@@ -60,7 +60,7 @@
     <string name="sound_theme_install_replaces">Toto nahradí nainštalovanú tému s rovnakým názvom.</string>
     <string name="sound_theme_install_skipped">Vynechané:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Téma <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> je nainštalovaná.</string>
-    <string name="sound_theme_installed_in_use">Nainštalované <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Teraz sa používa.</string>
+    <string name="sound_theme_installed_in_use">Téma <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> je nainštalovaná a práve sa používa.</string>
     <string name="sound_theme_install_nothing">Nie je k dispozícii žiadna zvuková téma na inštaláciu.</string>
     <string name="sound_theme_install_not_a_theme">Toto nie je zvuková téma SandFly môže použiť: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly nemohol nainštalovať zvukovú tému. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -72,15 +72,15 @@
     <string name="theme_sounds_category">Zvuky</string>
     <string name="theme_sound_summary_default">Zvuk SandFly</string>
     <string name="theme_sound_summary_custom">Zvuk témy</string>
-    <string name="theme_sound_summary_none">Žiadny zvuk. Prehrá sa zvuk zaostrenia.</string>
+    <string name="theme_sound_summary_none">Žiadny zvuk. Prehrá sa zvuk zamerania.</string>
     <string name="theme_sound_summary_android_keyboard">Zvuk klávesnice Android</string>
-    <string name="theme_sound_use_android_keyboard">Použite zvuk klávesnice Android</string>
+    <string name="theme_sound_use_android_keyboard">Použiť zvuk klávesnice Androidu</string>
     <string name="theme_sound_braille_character">Braillova klávesnica: písanie znaku</string>
     <string name="theme_sound_braille_space">Braillova klávesnica: medzerník</string>
     <string name="theme_sound_braille_delete">Braillova klávesnica: odstránenie</string>
     <string name="theme_sound_braille_new_line">Braillova klávesnica: nový riadok</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Vyberte zvukový súbor</string>
+    <string name="theme_sound_choose">Vybrať zvukový súbor</string>
     <string name="theme_sound_preview">Prehrať ukážku</string>
     <string name="theme_sound_none">Žiadny zvuk</string>
     <string name="theme_sound_summary_no_sound">Žiadny zvuk</string>

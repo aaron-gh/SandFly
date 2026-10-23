@@ -57,7 +57,7 @@
     <string name="sound_theme_install_replaces">Aceasta înlocuiește tema instalată cu același nume.</string>
     <string name="sound_theme_install_skipped">Omise:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> instalată.</string>
-    <string name="sound_theme_installed_in_use">Instalat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Este în uz acum.</string>
+    <string name="sound_theme_installed_in_use">Tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> a fost instalată și este acum folosită.</string>
     <string name="sound_theme_install_nothing">Nu există nicio temă de sunet de instalat.</string>
     <string name="sound_theme_install_not_a_theme">Aceasta nu este o temă sonoră SandFly poate folosi: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly nu a putut instala tema de sunet. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -69,19 +69,19 @@
     <string name="theme_sounds_category">Sunete</string>
     <string name="theme_sound_summary_default">Sunetul SandFly</string>
     <string name="theme_sound_summary_custom">Sunetul temei</string>
-    <string name="theme_sound_summary_none">Nici un sunet. Se aude sunetul de focalizare.</string>
+    <string name="theme_sound_summary_none">Niciun sunet. Se redă sunetul de focalizare.</string>
     <string name="theme_sound_summary_android_keyboard">Sunetul tastaturii Android</string>
-    <string name="theme_sound_use_android_keyboard">Folosiți sunetul tastaturii lui Android</string>
+    <string name="theme_sound_use_android_keyboard">Folosește sunetul tastaturii Android</string>
     <string name="theme_sound_braille_character">Tastatură Braille: introducerea unui caracter</string>
     <string name="theme_sound_braille_space">Tastatură Braille: spațiu</string>
     <string name="theme_sound_braille_delete">Tastatură Braille: ștergere</string>
     <string name="theme_sound_braille_new_line">Tastatură Braille: linie nouă</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Alegeți un fișier de sunet</string>
+    <string name="theme_sound_choose">Alege un fișier de sunet</string>
     <string name="theme_sound_preview">Ascultă</string>
     <string name="theme_sound_none">Fără sunet</string>
     <string name="theme_sound_summary_no_sound">Fără sunet</string>
-    <string name="theme_sound_action_set_none">Setați la nici un sunet</string>
+    <string name="theme_sound_action_set_none">Setează la niciun sunet</string>
     <string name="theme_sound_use_default">Folosește sunetul SandFly</string>
     <string name="theme_sound_remove">Elimină sunetul</string>
     <string name="theme_sound_too_large">Fișierul este prea mare. Un sunet poate avea până la 5 MB.</string>

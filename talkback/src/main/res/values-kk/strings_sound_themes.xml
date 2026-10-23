@@ -41,7 +41,7 @@
     <string name="title_pref_sound_theme_install_source">Көзден</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийіндегі тақырыптық файлдар.</string>
     <string name="sound_theme_sources">Дыбыстық тақырып көздері</string>
-    <string name="sound_theme_source_empty">Бұл көзде дыбыс тақырыптары жоқ</string>
+    <string name="sound_theme_source_empty">Бұл дереккөзде дыбыс тақырыптары жоқ</string>
     <string name="sound_theme_source_failed">Дыбыс тақырыптары жүктелмеді. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Одан орнатылған дыбыстық тақырыптар орнатылған күйінде қалады.</string>
     <string name="sound_theme_link_message">Тақырып файлына немесе тақырыбы бар GitHub репозиторийіне сілтемені енгізіңіз немесе қойыңыз.</string>
@@ -66,19 +66,19 @@
     <string name="theme_sounds_category">Дыбыстар</string>
     <string name="theme_sound_summary_default">SandFly дыбысы</string>
     <string name="theme_sound_summary_custom">Тақырып дыбысы</string>
-    <string name="theme_sound_summary_none">Дыбыс жоқ. Фокус дыбысы ойнайды.</string>
+    <string name="theme_sound_summary_none">Дыбыс жоқ. Фокус дыбысы ойнатылады.</string>
     <string name="theme_sound_summary_android_keyboard">Android пернетақта дыбысы</string>
-    <string name="theme_sound_use_android_keyboard">Android пернетақта дыбысын пайдаланыңыз</string>
+    <string name="theme_sound_use_android_keyboard">Android пернетақта дыбысын пайдалану</string>
     <string name="theme_sound_braille_character">Брайль пернетақтасы: таңбаны теру</string>
     <string name="theme_sound_braille_space">Брайль пернетақтасы: бос орын</string>
     <string name="theme_sound_braille_delete">Брайль пернетақтасы: жою</string>
     <string name="theme_sound_braille_new_line">Брайль пернетақтасы: жаңа жол</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Дыбыстық файлды таңдаңыз</string>
+    <string name="theme_sound_choose">Дыбыс файлын таңдау</string>
     <string name="theme_sound_preview">Тыңдап көру</string>
     <string name="theme_sound_none">Дыбыссыз</string>
     <string name="theme_sound_summary_no_sound">Дыбыссыз</string>
-    <string name="theme_sound_action_set_none">Дыбыссыз күйге қойыңыз</string>
+    <string name="theme_sound_action_set_none">Дыбыссыз ету</string>
     <string name="theme_sound_use_default">SandFly дыбысын пайдалану</string>
     <string name="theme_sound_remove">Дыбысты алып тастау</string>
     <string name="theme_sound_too_large">Бұл файл тым үлкен. Дыбыс 5 МБ дейін болуы мүмкін.</string>

@@ -41,9 +41,9 @@
     <string name="title_pref_sound_theme_install_source">소스에서</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea 또는 Bitbucket의 저장소에 있는 테마 파일입니다.</string>
     <string name="sound_theme_sources">사운드 테마 소스</string>
-    <string name="sound_theme_source_empty">이 소스에는 사운드 테마가 없습니다.</string>
+    <string name="sound_theme_source_empty">이 소스에는 사운드 테마가 없습니다</string>
     <string name="sound_theme_source_failed">사운드 테마를 로드할 수 없습니다. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">설치된 사운드 테마는 설치된 상태로 유지됩니다.</string>
+    <string name="sound_theme_source_remove_message">이 소스에서 설치한 사운드 테마는 설치된 상태로 유지됩니다.</string>
     <string name="sound_theme_link_message">테마 파일이나 테마가 포함된 GitHub 저장소에 대한 링크를 입력하거나 붙여넣으세요.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">사운드 테마 설치</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">이는 동일한 이름의 설치된 테마를 대체합니다.</string>
     <string name="sound_theme_install_skipped">제외:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨.</string>
-    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨. 현재 사용되고 있습니다.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨. 현재 사용 중입니다.</string>
     <string name="sound_theme_install_nothing">설치할 사운드 테마가 없습니다.</string>
     <string name="sound_theme_install_not_a_theme">이것은 사운드 테마가 아닙니다. SandFly는 다음을 사용할 수 있습니다: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly에서 사운드 테마를 설치하지 못했습니다. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="theme_sounds_category">소리</string>
     <string name="theme_sound_summary_default">SandFly의 소리</string>
     <string name="theme_sound_summary_custom">테마 사운드</string>
-    <string name="theme_sound_summary_none">소리가 나지 않습니다. 초점 소리가 재생됩니다.</string>
+    <string name="theme_sound_summary_none">소리 없음. 초점 소리가 재생됩니다.</string>
     <string name="theme_sound_summary_android_keyboard">Android의 키보드 소리</string>
     <string name="theme_sound_use_android_keyboard">Android 키보드 사운드 사용</string>
     <string name="theme_sound_braille_character">점자 키보드: 문자 입력</string>
@@ -74,7 +74,7 @@
     <string name="theme_sound_braille_delete">점자 키보드: 삭제</string>
     <string name="theme_sound_braille_new_line">점자 키보드: 새 줄</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">사운드 파일을 선택하세요</string>
+    <string name="theme_sound_choose">사운드 파일 선택</string>
     <string name="theme_sound_preview">미리 듣기</string>
     <string name="theme_sound_none">소리 없음</string>
     <string name="theme_sound_summary_no_sound">소리 없음</string>
@@ -83,5 +83,5 @@
     <string name="theme_sound_remove">소리 제거</string>
     <string name="theme_sound_too_large">파일이 너무 큽니다. 사운드는 최대 5MB까지 가능합니다.</string>
     <string name="theme_sound_not_audio">SandFly 해당 파일을 재생할 수 없습니다. WAV, OGG, MP3 또는 FLAC 사운드를 선택하세요.</string>
-    <string name="theme_sound_failed">SandFly 해당 파일을 읽을 수 없습니다.</string>
+    <string name="theme_sound_failed">SandFly에서 해당 파일을 읽지 못했습니다.</string>
 </resources>

@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Dit vervangt het geïnstalleerde thema met dezelfde naam.</string>
     <string name="sound_theme_install_skipped">Weggelaten:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> geïnstalleerd.</string>
-    <string name="sound_theme_installed_in_use">Geïnstalleerd <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Het is nu in gebruik.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> geïnstalleerd. Het wordt nu gebruikt.</string>
     <string name="sound_theme_install_nothing">Er is geen geluidsthema om te installeren.</string>
     <string name="sound_theme_install_not_a_theme">Dit is geen goed thema dat SandFly kan gebruiken: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly kon het geluidsthema niet installeren. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -68,17 +68,17 @@
     <string name="theme_sound_summary_custom">Themageluid</string>
     <string name="theme_sound_summary_none">Geen geluid. Het focusgeluid wordt afgespeeld.</string>
     <string name="theme_sound_summary_android_keyboard">Toetsenbordgeluid van Android</string>
-    <string name="theme_sound_use_android_keyboard">Gebruik het toetsenbordgeluid van Android</string>
+    <string name="theme_sound_use_android_keyboard">Toetsenbordgeluid van Android gebruiken</string>
     <string name="theme_sound_braille_character">Brailletoetsenbord: een teken typen</string>
     <string name="theme_sound_braille_space">Brailletoetsenbord: spatie</string>
     <string name="theme_sound_braille_delete">Brailletoetsenbord: verwijderen</string>
     <string name="theme_sound_braille_new_line">Brailletoetsenbord: nieuwe regel</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Kies een geluidsbestand</string>
+    <string name="theme_sound_choose">Een geluidsbestand kiezen</string>
     <string name="theme_sound_preview">Beluisteren</string>
     <string name="theme_sound_none">Geen geluid</string>
     <string name="theme_sound_summary_no_sound">Geen geluid</string>
-    <string name="theme_sound_action_set_none">Ingesteld op geen geluid</string>
+    <string name="theme_sound_action_set_none">Instellen op geen geluid</string>
     <string name="theme_sound_use_default">Geluid van SandFly gebruiken</string>
     <string name="theme_sound_remove">Geluid verwijderen</string>
     <string name="theme_sound_too_large">Dat bestand is te groot. Een geluid kan maximaal 5 MB groot zijn.</string>

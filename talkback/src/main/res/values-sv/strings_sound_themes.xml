@@ -43,7 +43,7 @@
     <string name="sound_theme_sources">Källor för ljudteman</string>
     <string name="sound_theme_source_empty">Inga ljudteman i den här källan</string>
     <string name="sound_theme_source_failed">Det gick inte att ladda ljudteman. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Ljudteman som installeras från den förblir installerade.</string>
+    <string name="sound_theme_source_remove_message">Ljudteman som har installerats från den förblir installerade.</string>
     <string name="sound_theme_link_message">Ange eller klistra in en länk till en temafil eller till ett GitHub-förråd med ett tema i.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Installera ljudtema</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Detta ersätter det installerade temat med samma namn.</string>
     <string name="sound_theme_install_skipped">Utelämnade:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> har installerats.</string>
-    <string name="sound_theme_installed_in_use">Installerad <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Den är i bruk nu.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> har installerats och används nu.</string>
     <string name="sound_theme_install_nothing">Det finns inget ljudtema att installera.</string>
     <string name="sound_theme_install_not_a_theme">Detta är inte ett ljudtema som SandFly kan använda: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly kunde inte installera ljudtemat. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -72,7 +72,7 @@
     <string name="theme_sound_braille_character">Punktskrifttangentbord: skriva ett tecken</string>
     <string name="theme_sound_braille_space">Punktskrifttangentbord: mellanslag</string>
     <string name="theme_sound_braille_delete">Punktskrifttangentbord: radering</string>
-    <string name="theme_sound_braille_new_line">Punktskrifttangentbord: ny linje</string>
+    <string name="theme_sound_braille_new_line">Punktskrifttangentbord: ny rad</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Välj en ljudfil</string>
     <string name="theme_sound_preview">Lyssna</string>

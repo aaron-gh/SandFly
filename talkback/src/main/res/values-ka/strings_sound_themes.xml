@@ -22,7 +22,7 @@
     <string name="sound_theme_about">ამ თემის შესახებ</string>
     <string name="sound_theme_export">თემის ფაილად შენახვა</string>
     <string name="sound_theme_remove">ამოღება</string>
-    <string name="sound_theme_remove_confirm">წაშალოთ თემა <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_confirm">წაიშალოს თემა <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">ამოღება</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">შენახულია თემა <xliff:g id="count" example="1">%d</xliff:g> ხმით.</item>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">ეს ცვლის ამავე სახელწოდების დაინსტალირებულ თემას.</string>
     <string name="sound_theme_install_skipped">გამოტოვებული:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> დაინსტალირდა.</string>
-    <string name="sound_theme_installed_in_use">დაყენებულია <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. ის ახლა გამოიყენება.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> დაყენდა და ახლა გამოიყენება.</string>
     <string name="sound_theme_install_nothing">არ არის დასაყენებელი ხმის თემა.</string>
     <string name="sound_theme_install_not_a_theme">ეს არ არის ხმოვანი თემა SandFly შეგიძლიათ გამოიყენოთ: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly ხმის თემის დაყენება ვერ მოხერხდა. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,22 +66,22 @@
     <string name="theme_sounds_category">ხმები</string>
     <string name="theme_sound_summary_default">SandFly-ის ხმა</string>
     <string name="theme_sound_summary_custom">თემის ხმა</string>
-    <string name="theme_sound_summary_none">ხმა არ არის. ფოკუსის ხმა უკრავს.</string>
+    <string name="theme_sound_summary_none">ხმა არ არის. ისმის ფოკუსის ხმა.</string>
     <string name="theme_sound_summary_android_keyboard">Android კლავიატურის ხმა</string>
-    <string name="theme_sound_use_android_keyboard">გამოიყენეთ Android კლავიატურის ხმა</string>
+    <string name="theme_sound_use_android_keyboard">Android-ის კლავიატურის ხმის გამოყენება</string>
     <string name="theme_sound_braille_character">ბრაილის კლავიატურა: სიმბოლოს აკრეფა</string>
     <string name="theme_sound_braille_space">ბრაილის კლავიატურა: ჰარი</string>
     <string name="theme_sound_braille_delete">ბრაილის კლავიატურა: წაშლა</string>
-    <string name="theme_sound_braille_new_line">ბრაილის კლავიატურა: ახალი ხაზი</string>
+    <string name="theme_sound_braille_new_line">ბრაილის კლავიატურა: ახალი სტრიქონი</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">აირჩიეთ ხმის ფაილი</string>
+    <string name="theme_sound_choose">ხმის ფაილის არჩევა</string>
     <string name="theme_sound_preview">მოსმენა</string>
     <string name="theme_sound_none">ხმის გარეშე</string>
     <string name="theme_sound_summary_no_sound">ხმის გარეშე</string>
-    <string name="theme_sound_action_set_none">დაყენებულია უხმოდ</string>
+    <string name="theme_sound_action_set_none">უხმოდ დაყენება</string>
     <string name="theme_sound_use_default">SandFly-ის ხმის გამოყენება</string>
     <string name="theme_sound_remove">ხმის ამოღება</string>
     <string name="theme_sound_too_large">ეს ფაილი ძალიან დიდია. ხმა შეიძლება იყოს 5 მბ-მდე.</string>
     <string name="theme_sound_not_audio">SandFly ამ ფაილის დაკვრა შეუძლებელია. აირჩიეთ WAV, OGG, MP3 ან FLAC ხმა.</string>
-    <string name="theme_sound_failed">SandFly ვერ წაიკითხა ეს ფაილი.</string>
+    <string name="theme_sound_failed">SandFly-მ ვერ წაიკითხა ეს ფაილი.</string>
 </resources>

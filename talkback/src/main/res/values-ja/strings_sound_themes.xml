@@ -42,8 +42,8 @@
     <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea、または Bitbucket のリポジトリ内のテーマ ファイル。</string>
     <string name="sound_theme_sources">サウンドテーマのソース</string>
     <string name="sound_theme_source_empty">このソースにはサウンドテーマがありません</string>
-    <string name="sound_theme_source_failed">サウンドテーマを読み込めませんでした。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">そこからインストールされたサウンドテーマはインストールされたままになります。</string>
+    <string name="sound_theme_source_failed">サウンドテーマを読み込めませんでした。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">このソースからインストールしたサウンドテーマはインストールされたまま残ります。</string>
     <string name="sound_theme_link_message">テーマ ファイル、またはテーマが含まれる GitHub リポジトリへのリンクを入力または貼り付けます。</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">サウンドテーマをインストール</string>
@@ -66,19 +66,19 @@
     <string name="theme_sounds_category">サウンド</string>
     <string name="theme_sound_summary_default">SandFlyの音</string>
     <string name="theme_sound_summary_custom">テーマサウンド</string>
-    <string name="theme_sound_summary_none">音が出ない。フォーカス音が鳴ります。</string>
+    <string name="theme_sound_summary_none">サウンドなし。フォーカス音が鳴ります。</string>
     <string name="theme_sound_summary_android_keyboard">Androidのキーボード音</string>
-    <string name="theme_sound_use_android_keyboard">Androidのキーボードサウンドを使用する</string>
-    <string name="theme_sound_braille_character">点字キーボード:文字を入力する</string>
+    <string name="theme_sound_use_android_keyboard">Android のキーボード音を使用</string>
+    <string name="theme_sound_braille_character">点字キーボード: 文字の入力</string>
     <string name="theme_sound_braille_space">点字キーボード: スペース</string>
     <string name="theme_sound_braille_delete">点字キーボード: 削除</string>
-    <string name="theme_sound_braille_new_line">点字キーボード: 新しい行</string>
+    <string name="theme_sound_braille_new_line">点字キーボード: 改行</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">サウンドファイルを選択してください</string>
+    <string name="theme_sound_choose">サウンドファイルを選択</string>
     <string name="theme_sound_preview">試聴</string>
     <string name="theme_sound_none">音なし</string>
     <string name="theme_sound_summary_no_sound">音なし</string>
-    <string name="theme_sound_action_set_none">無音に設定する</string>
+    <string name="theme_sound_action_set_none">無音に設定</string>
     <string name="theme_sound_use_default">SandFly のサウンドを使用</string>
     <string name="theme_sound_remove">音を削除</string>
     <string name="theme_sound_too_large">そのファイルは大きすぎます。サウンドは最大 5 MB まで可能です。</string>

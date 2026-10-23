@@ -42,8 +42,8 @@
     <string name="summary_pref_sound_theme_install_source">Faili za mandhari kwenye hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
     <string name="sound_theme_sources">Vyanzo vya mandhari ya sauti</string>
     <string name="sound_theme_source_empty">Hakuna mandhari ya sauti katika chanzo hiki</string>
-    <string name="sound_theme_source_failed">Haikuweza kupakia mada za sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Mandhari ya sauti yaliyosakinishwa kutoka kwayo hukaa kusakinishwa.</string>
+    <string name="sound_theme_source_failed">Imeshindwa kupakia mandhari ya sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Mandhari ya sauti yaliyosakinishwa kutoka humo yatabaki yamesakinishwa.</string>
     <string name="sound_theme_link_message">Ingiza au ubandike kiungo cha faili ya mandhari, au kwenye hazina ya GitHub yenye mandhari ndani yake.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Sakinisha mandhari ya sauti</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Hii inachukua nafasi ya mandhari iliyosakinishwa ya jina moja.</string>
     <string name="sound_theme_install_skipped">Imeachwa:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> imesakinishwa.</string>
-    <string name="sound_theme_installed_in_use">Imesakinishwa <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Inatumika sasa.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> imesakinishwa. Inatumika sasa.</string>
     <string name="sound_theme_install_nothing">Hakuna mandhari ya sauti ya kusakinisha.</string>
     <string name="sound_theme_install_not_a_theme">Haya si mandhari yenye sauti SandFly inaweza kutumia: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly haikuweza kusakinisha mandhari ya sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,13 +66,13 @@
     <string name="theme_sounds_category">Sauti</string>
     <string name="theme_sound_summary_default">Sauti ya SandFly</string>
     <string name="theme_sound_summary_custom">Sauti ya mandhari</string>
-    <string name="theme_sound_summary_none">Hakuna sauti. Sauti ya kuzingatia inacheza.</string>
+    <string name="theme_sound_summary_none">Hakuna sauti. Sauti ya fokasi inachezwa.</string>
     <string name="theme_sound_summary_android_keyboard">Sauti ya kibodi ya Android</string>
     <string name="theme_sound_use_android_keyboard">Tumia sauti ya kibodi ya Android</string>
     <string name="theme_sound_braille_character">Kibodi ya Breli: kuandika herufi</string>
     <string name="theme_sound_braille_space">Kibodi ya Braille: nafasi</string>
     <string name="theme_sound_braille_delete">Kibodi ya Braille: kufuta</string>
-    <string name="theme_sound_braille_new_line">Kibodi ya Braille: laini mpya</string>
+    <string name="theme_sound_braille_new_line">Kibodi ya Breli: mstari mpya</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Chagua faili ya sauti</string>
     <string name="theme_sound_preview">Sikiliza</string>

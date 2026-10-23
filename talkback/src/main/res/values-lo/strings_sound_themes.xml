@@ -22,7 +22,7 @@
     <string name="sound_theme_about">ກ່ຽວກັບຮູບແບບນີ້</string>
     <string name="sound_theme_export">ບັນທຶກເປັນໄຟລ໌ຮູບແບບ</string>
     <string name="sound_theme_remove">ເອົາອອກ</string>
-    <string name="sound_theme_remove_confirm">ລຶບຮູບແບບສີສັນ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ອອກບໍ?</string>
+    <string name="sound_theme_remove_confirm">ລຶບຮູບແບບ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ອອກບໍ?</string>
     <string name="sound_theme_remove_button">ເອົາອອກ</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">ບັນທຶກຫົວຂໍ້, ດ້ວຍສຽງ <xliff:g id="count" example="1">%d</xliff:g>.</item>
@@ -41,9 +41,9 @@
     <string name="title_pref_sound_theme_install_source">ຈາກແຫຼ່ງ</string>
     <string name="summary_pref_sound_theme_install_source">ໄຟລ໌ຫົວຂໍ້ຢູ່ໃນບ່ອນເກັບມ້ຽນໃນ GitHub, GitLab, Codeberg, Gitea ຫຼື Bitbucket.</string>
     <string name="sound_theme_sources">ແຫຼ່ງຮູບແບບສຽງ</string>
-    <string name="sound_theme_source_empty">ບໍ່ມີຫົວຂໍ້ສຽງໃນແຫຼ່ງນີ້</string>
-    <string name="sound_theme_source_failed">ບໍ່ສາມາດໂຫຼດຮູບແບບສີສັນສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">ຫົວຂໍ້ສຽງທີ່ຕິດຕັ້ງຈາກມັນຍັງຄົງຕິດຕັ້ງຢູ່.</string>
+    <string name="sound_theme_source_empty">ບໍ່ມີຮູບແບບສຽງໃນແຫຼ່ງນີ້</string>
+    <string name="sound_theme_source_failed">ບໍ່ສາມາດໂຫຼດຮູບແບບສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">ຮູບແບບສຽງທີ່ຕິດຕັ້ງຈາກແຫຼ່ງນີ້ຈະຍັງຄົງຕິດຕັ້ງຢູ່.</string>
     <string name="sound_theme_link_message">ໃສ່ ຫຼືວາງລິ້ງໄປຫາໄຟລ໌ຮູບແບບສີສັນ ຫຼືໃສ່ບ່ອນເກັບຂໍ້ມູນ GitHub ທີ່ມີຮູບແບບສີສັນຢູ່ໃນນັ້ນ.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ຕິດຕັ້ງຮູບແບບສຽງ</string>
@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">ນີ້ແທນທີ່ຫົວຂໍ້ທີ່ຕິດຕັ້ງຂອງຊື່ດຽວກັນ.</string>
     <string name="sound_theme_install_skipped">ຂ້າມໄປ:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ແລ້ວ.</string>
-    <string name="sound_theme_installed_in_use">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. ມັນຖືກນໍາໃຊ້ໃນປັດຈຸບັນ.</string>
+    <string name="sound_theme_installed_in_use">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ແລ້ວ. ຕອນນີ້ກຳລັງໃຊ້ຢູ່.</string>
     <string name="sound_theme_install_nothing">ບໍ່ມີຮູບແບບສຽງທີ່ຈະຕິດຕັ້ງ.</string>
     <string name="sound_theme_install_not_a_theme">ນີ້ບໍ່ແມ່ນຫົວຂໍ້ສຽງ SandFly ສາມາດໃຊ້: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly ບໍ່ສາມາດຕິດຕັ້ງຮູບແບບສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="theme_sounds_category">ສຽງ</string>
     <string name="theme_sound_summary_default">ສຽງຂອງ SandFly</string>
     <string name="theme_sound_summary_custom">ສຽງຮູບແບບ</string>
-    <string name="theme_sound_summary_none">ບໍ່ມີສຽງ. ສຽງທີ່ເນັ້ນໃສ່.</string>
+    <string name="theme_sound_summary_none">ບໍ່ມີສຽງ. ສຽງໂຟກັສຈະຫຼິ້ນ.</string>
     <string name="theme_sound_summary_android_keyboard">ສຽງແປ້ນພິມຂອງ Android</string>
     <string name="theme_sound_use_android_keyboard">ໃຊ້ສຽງແປ້ນພິມຂອງ Android</string>
     <string name="theme_sound_braille_character">ແປ້ນພິມອັກສອນນູນ: ພິມຕົວອັກສອນ</string>

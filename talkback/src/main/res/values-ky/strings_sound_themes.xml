@@ -54,7 +54,7 @@
     <string name="sound_theme_install_replaces">Бул ошол эле аталыштагы орнотулган теманы алмаштырат.</string>
     <string name="sound_theme_install_skipped">Калтырылды:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> орнотулду.</string>
-    <string name="sound_theme_installed_in_use">Орнотулган <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Ал азыр колдонулууда.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> орнотулду. Азыр колдонулууда.</string>
     <string name="sound_theme_install_nothing">Орнотуу үчүн үн темасы жок.</string>
     <string name="sound_theme_install_not_a_theme">Бул үн темасы эмес SandFly колдоно алат: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly үн темасын орното алган жок. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -66,15 +66,15 @@
     <string name="theme_sounds_category">Үндөр</string>
     <string name="theme_sound_summary_default">SandFlyнун үнү</string>
     <string name="theme_sound_summary_custom">Теманын үнү</string>
-    <string name="theme_sound_summary_none">Үн жок. Фокус үн ойнойт.</string>
+    <string name="theme_sound_summary_none">Үн жок. Фокус үнү ойнотулат.</string>
     <string name="theme_sound_summary_android_keyboard">Android баскычтобунун үнү</string>
-    <string name="theme_sound_use_android_keyboard">Android баскычтоптун үнүн колдонуңуз</string>
-    <string name="theme_sound_braille_character">Брайл клавиатурасы: символ терүү</string>
+    <string name="theme_sound_use_android_keyboard">Android баскычтобунун үнүн колдонуу</string>
+    <string name="theme_sound_braille_character">Брайл баскычтобу: символ терүү</string>
     <string name="theme_sound_braille_space">Брайл баскычтобу: боштук</string>
     <string name="theme_sound_braille_delete">Брайл баскычтобу: жок кылуу</string>
     <string name="theme_sound_braille_new_line">Брайл баскычтобу: жаңы сап</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Үн файлын тандаңыз</string>
+    <string name="theme_sound_choose">Үн файлын тандоо</string>
     <string name="theme_sound_preview">Угуп көрүү</string>
     <string name="theme_sound_none">Үнсүз</string>
     <string name="theme_sound_summary_no_sound">Үнсүз</string>

@@ -60,7 +60,7 @@
     <string name="sound_theme_install_replaces">Це замінює встановлену тему з такою ж назвою.</string>
     <string name="sound_theme_install_skipped">Пропущено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> встановлено.</string>
-    <string name="sound_theme_installed_in_use">Встановлено <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Зараз використовується.</string>
+    <string name="sound_theme_installed_in_use">Тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> встановлено. Вона зараз використовується.</string>
     <string name="sound_theme_install_nothing">Немає звукової теми для встановлення.</string>
     <string name="sound_theme_install_not_a_theme">Це не звукова тема, яку SandFly може використовувати: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly не вдалося встановити звукову тему. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -72,15 +72,15 @@
     <string name="theme_sounds_category">Звуки</string>
     <string name="theme_sound_summary_default">Звук SandFly</string>
     <string name="theme_sound_summary_custom">Звук теми</string>
-    <string name="theme_sound_summary_none">Ні звуку. Відтворюється звук фокусування.</string>
+    <string name="theme_sound_summary_none">Без звуку. Відтворюється звук фокуса.</string>
     <string name="theme_sound_summary_android_keyboard">Звук клавіатури Android</string>
-    <string name="theme_sound_use_android_keyboard">Використовуйте звук клавіатури Android</string>
+    <string name="theme_sound_use_android_keyboard">Використовувати звук клавіатури Android</string>
     <string name="theme_sound_braille_character">Клавіатура Брайля: введення символу</string>
     <string name="theme_sound_braille_space">Клавіатура Брайля: пробіл</string>
     <string name="theme_sound_braille_delete">Клавіатура Брайля: видалення</string>
     <string name="theme_sound_braille_new_line">Клавіатура Брайля: новий рядок</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Виберіть звуковий файл</string>
+    <string name="theme_sound_choose">Вибрати звуковий файл</string>
     <string name="theme_sound_preview">Прослухати</string>
     <string name="theme_sound_none">Без звуку</string>
     <string name="theme_sound_summary_no_sound">Без звуку</string>

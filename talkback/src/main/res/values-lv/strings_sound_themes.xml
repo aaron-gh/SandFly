@@ -44,7 +44,7 @@
     <string name="title_pref_sound_theme_install_source">No avota</string>
     <string name="summary_pref_sound_theme_install_source">Motīvu faili repozitorijā uz GitHub, GitLab, Codeberg, Gitea vai Bitbucket.</string>
     <string name="sound_theme_sources">Skaņu motīvu avoti</string>
-    <string name="sound_theme_source_empty">Šajā avotā nav skaņas tēmu</string>
+    <string name="sound_theme_source_empty">Šajā avotā nav skaņas motīvu</string>
     <string name="sound_theme_source_failed">Nevarēja ielādēt skaņas motīvus. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">No tā instalētie skaņas motīvi paliek instalēti.</string>
     <string name="sound_theme_link_message">Ievadiet vai ielīmējiet saiti uz motīva failu vai GitHub repozitoriju ar motīvu.</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_install_replaces">Tas aizstāj instalēto motīvu ar tādu pašu nosaukumu.</string>
     <string name="sound_theme_install_skipped">Izlaisti:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> instalēta.</string>
-    <string name="sound_theme_installed_in_use">Instalēta <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Tas tiek izmantots tagad.</string>
+    <string name="sound_theme_installed_in_use">Motīvs <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ir instalēts un tiek izmantots.</string>
     <string name="sound_theme_install_nothing">Nav skaņas motīva, ko instalēt.</string>
     <string name="sound_theme_install_not_a_theme">Šis nav skaņas motīvs, ko SandFly var izmantot: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly nevarēja instalēt skaņas motīvu. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -71,13 +71,13 @@
     <string name="theme_sound_summary_custom">Motīva skaņa</string>
     <string name="theme_sound_summary_none">Nav skaņas. Tiek atskaņota fokusa skaņa.</string>
     <string name="theme_sound_summary_android_keyboard">Android tastatūras skaņa</string>
-    <string name="theme_sound_use_android_keyboard">Izmantojiet Android tastatūras skaņu</string>
+    <string name="theme_sound_use_android_keyboard">Izmantot Android tastatūras skaņu</string>
     <string name="theme_sound_braille_character">Braila tastatūra: rakstzīmes rakstīšana</string>
     <string name="theme_sound_braille_space">Braila tastatūra: atstarpe</string>
     <string name="theme_sound_braille_delete">Braila tastatūra: dzēšana</string>
     <string name="theme_sound_braille_new_line">Braila tastatūra: jauna rinda</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Izvēlieties skaņas failu</string>
+    <string name="theme_sound_choose">Izvēlēties skaņas failu</string>
     <string name="theme_sound_preview">Noklausīties</string>
     <string name="theme_sound_none">Bez skaņas</string>
     <string name="theme_sound_summary_no_sound">Bez skaņas</string>
