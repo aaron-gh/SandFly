@@ -95,7 +95,7 @@ object OnDeviceAiSettings {
     CPU("cpu"),
     /** The GPU, through OpenCL. */
     GPU("gpu"),
-    /** The NPU of a Google Tensor chip, with the model built for it. */
+    /** The NPU of a Google Tensor or Snapdragon chip, with the model built for it. */
     NPU("npu"),
   }
 
@@ -121,7 +121,7 @@ object OnDeviceAiSettings {
 
   /** The model built for this phone's NPU, or null when it has none that a model is built for. */
   fun npuModel(): LocalModel? =
-    Accelerators.googleTensorNpu?.let { chip -> LocalModel.entries.firstOrNull { it.npuChip == chip } }
+    Accelerators.npuChip?.let { chip -> LocalModel.entries.firstOrNull { it.npuChip == chip } }
 
   /** Whether Describe screen asks for less detail, to answer sooner. Off keeps the full prompt. */
   fun shortPrompts(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SHORT_PROMPTS, false)

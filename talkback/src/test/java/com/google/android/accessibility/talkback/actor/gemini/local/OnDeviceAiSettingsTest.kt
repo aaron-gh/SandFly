@@ -168,6 +168,6 @@ class OnDeviceAiSettingsTest {
   @Test
   fun npuModelsAreNotChoices() {
     assertTrue(LocalModel.choices.none { it.npuChip != null })
-    assertEquals(2, LocalModel.entries.count { it.npuChip != null })
+    assertEquals(4, LocalModel.entries.count { it.npuChip != null })
   }
 }

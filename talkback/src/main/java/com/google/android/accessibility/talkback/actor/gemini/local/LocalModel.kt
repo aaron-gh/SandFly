@@ -355,6 +355,32 @@ data class LocalModel(
       experimental = true,
       npuChip = Accelerators.TENSOR_G6,
     ),
+    LocalModel(
+      id = "fastvlm-0.5b-sm8750",
+      name = "FastVLM 0.5B (Snapdragon 8 Elite NPU)",
+      repo = "litert-community/FastVLM-0.5B",
+      fileName = "FastVLM-0.5B.qualcomm.sm8750.litertlm",
+      sizeBytes = 943_226_880L,
+      sha256 = "bb3625f0d887927b01a6f8a3444580514b6165e09a8eb1af276cc14ed22d783e",
+      minTotalRamGib = 4,
+      note = "FastVLM 0.5B built for the NPU of Snapdragon 8 Elite. Apple research licence.",
+      license = "Apple research licence",
+      experimental = true,
+      npuChip = Accelerators.SNAPDRAGON_8_ELITE,
+    ),
+    LocalModel(
+      id = "fastvlm-0.5b-sm8850",
+      name = "FastVLM 0.5B (Snapdragon 8 Elite Gen 5 NPU)",
+      repo = "litert-community/FastVLM-0.5B",
+      fileName = "FastVLM-0.5B.qualcomm.sm8850.litertlm",
+      sizeBytes = 942_374_912L,
+      sha256 = "0eb6860d5c3800dc02c86515a54387f0d8289e5096db291ff6e4a993e312b482",
+      minTotalRamGib = 4,
+      note = "FastVLM 0.5B built for the NPU of Snapdragon 8 Elite Gen 5. Apple research licence.",
+      license = "Apple research licence",
+      experimental = true,
+      npuChip = Accelerators.SNAPDRAGON_8_ELITE_GEN_5,
+    ),
     )
 
     /** The models the user can choose: those that run on the CPU and GPU. */
