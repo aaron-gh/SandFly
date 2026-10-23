@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">አስቀምጥ</string>
     <string name="gemini_api_key_get">ቁልፍ ያግኙ</string>
     <string name="gemini_api_terms_link">የGemini API ተጨማሪ የአገልግሎት ውል</string>
+    <string name="title_pref_gemini_model">Geminiሞዴል</string>
+    <string name="gemini_model_automatic">አውቶማቲክ</string>
+    <string name="summary_pref_gemini_model_automatic">አውቶማቲክ፡ Gemini ፍላሽ፣ ከዚያም ፍላሽ ስራ ሲበዛ ፍላሽ-ላይት።</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>፣ ከዚያም ፍላሽ-ላይት ስራ ሲበዛበት</string>
+    <string name="gemini_model_loading">ሞዴሎቹን በማግኘት ላይ…</string>
+    <string name="gemini_model_list_failed">ሞዴሎቹን ማግኘት አልተቻለም: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">መጀመሪያ Gemini API ቁልፍ ያዘጋጁ</string>
+    <string name="ai_service_address_hint">አድራሻ፣ እንደ https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">ሞዴል</string>
+    <string name="ai_service_address_invalid">አድራሻው በ https://. መጀመር አለበት ምንም ነገር አልተቀመጠም።</string>
+    <string name="dialog_message_ai_service_consent">ምስሎች እና ቅጽበታዊ ገጽ እይታዎች ለመግለፅ ወደ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ይላካሉ፣ ይህም በርካታ ሰከንዶች ይወስዳል። የራሱ ውሎች እና የግላዊነት ፖሊሲ ይተገበራል። Generative AI የሙከራ ነው, ስለዚህ ስህተቶችን ያደርጋል.</string>
+    <string name="ai_service_error_api_key">የ AI አገልግሎቱ የኤፒአይ ቁልፍን አልተቀበለም። ቅንብሮቹን በራስ-ሰር መግለጫዎች ውስጥ ያረጋግጡ።</string>
+    <string name="ai_service_error_quota">የ AI አገልግሎት የአጠቃቀም ገደብ ላይ ደርሷል። ቆይተው እንደገና ይሞክሩ።</string>
+    <string name="ai_service_error_busy">የ AI አገልግሎት አሁን ስራ በዝቶበታል። ከአፍታ በኋላ እንደገና ይሞክሩ።</string>
+    <string name="ai_service_error_timeout">የ AI አገልግሎት መልስ ለመስጠት በጣም ረጅም ጊዜ ወስዷል። እንደገና ይሞክሩ።</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">ምንም</string>
+    <string name="ai_service_not_set_up">ምንም የ AI አገልግሎት ጥቅም ላይ አልዋለም። በራስ-ሰር መግለጫዎች ውስጥ አንዱን ያቀናብሩ ወይም አንዱን ይምረጡ።</string>
+    <string name="ai_provider_none_set_up">ምንም የ AI አገልግሎት አልተዘጋጀም። ከታች ባለው ቅንጅቶቹ ውስጥ አንዱን ያዘጋጁ።</string>
+    <string name="ai_provider_other">ሌላ አገልግሎት</string>
+    <string name="title_pref_category_ai_services">AI አገልግሎቶች</string>
+    <string name="title_pref_ai_provider">AI አገልግሎት</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> መቼቶች</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> እንጂ አልተዋቀረም።</string>
+    <string name="ai_provider_in_use">ጥቅም ላይ ነው</string>
+    <string name="ai_provider_not_set_up">አልተዋቀረም።</string>
+    <string name="ai_provider_not_ready">መጀመሪያ ሞዴል ይምረጡ</string>
+    <string name="ai_provider_address">አድራሻ</string>
+    <string name="ai_provider_address_message">የአገልግሎት አድራሻ ከOpenAI ጋር ተኳሃኝ የሆነ የውይይት ኤፒአይ እና የምስል ግብአት፣ ለምሳሌ https://example.com/v1.</string>
+    <string name="ai_provider_not_set">አልተዘጋጀም።</string>
+    <string name="ai_provider_set">የተዋቀረ</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> የኤፒአይ ቁልፍ</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>ሞዴል</string>
+    <string name="ai_provider_choose_model">አልተመረጠም።</string>
+    <string name="ai_provider_key_message">የእርስዎን <xliff:g id="service" example="Claude">%1$s</xliff:g> API ቁልፍ ለጥፍ። እሱን ለማስወገድ መስኩን ያጽዱ እና ያስቀምጡ። እርስዎ የሚገልጹዋቸው ምስሎች እና ስክሪኖች ወደ <xliff:g id="service" example="Claude">%1$s</xliff:g> ይላካሉ።</string>
+    <string name="ai_provider_needs_key">መጀመሪያ የ<xliff:g id="service" example="Claude">%1$s</xliff:g> ኤፒአይ ቁልፍ ያዘጋጁ</string>
+    <string name="ai_provider_needs_address">መጀመሪያ አድራሻውን ያዘጋጁ</string>
+    <string name="ai_provider_enter_model">የሞዴል ስም ያስገቡ</string>
 </resources>
