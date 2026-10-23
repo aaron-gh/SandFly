@@ -278,7 +278,9 @@ public class AccessibilityNodeInfoUtils {
   private static final Pattern BAR_VIEW_ID =
       Pattern.compile(
           "(?:^|_)(?:toolbar|action_bar|app_bar|appbar|tab_bar|tab_layout|tabs|bottom_nav"
-              + "|bottom_navigation|navigation_bar|nav_bar)$");
+              + "|bottom_navigation|navigation_bar|nav_bar)$"
+              + "|(?<=[a-z])(?:Toolbar|ActionBar|AppBar|TabBar|TabLayout|Tabs|BottomNav"
+              + "|BottomNavigation|NavigationBar|NavBar)$");
 
   /** Filter for container. */
   public static final Filter<AccessibilityNodeInfoCompat> FILTER_CONTAINER =
@@ -293,11 +295,30 @@ public class AccessibilityNodeInfoUtils {
         }
       };
 
+  /** Filter for bars: toolbars, tab bars, navigation bars and search bars. */
+  public static final Filter<AccessibilityNodeInfoCompat> FILTER_BAR =
+      new Filter<AccessibilityNodeInfoCompat>() {
+        @Override
+        public boolean accept(AccessibilityNodeInfoCompat node) {
+          if (node == null) {
+            return false;
+          }
+          int role = Role.getRole(node);
+          return role == ROLE_TAB_BAR
+              || role == ROLE_NAVIGATION
+              || role == ROLE_SEARCH
+              || isBar(node);
+        }
+      };
+
   /** Whether the node is a toolbar, or a bar that its view ID names. */
   private static boolean isBar(AccessibilityNodeInfoCompat node) {
     CharSequence className = node.getClassName();
-    if (className != null && className.toString().endsWith("Toolbar")) {
-      return true;
+    if (className != null) {
+      String name = className.toString();
+      if (name.endsWith("Toolbar") || name.endsWith("BottomAppBar") || name.endsWith("SearchBar")) {
+        return true;
+      }
     }
     String id = node.getViewIdResourceName();
     if (id == null) {

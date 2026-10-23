@@ -875,9 +875,11 @@ public class FocusProcessorForLogicalNavigation {
                             n, traversalStrategy.getSpeakingNodesCache())));
     // SandFly: the previous container is entered at its start, as the next one is, rather than at
     // its last item.
+    // Web content keeps the old landing; stepping through a whole page would take long.
     if (target != null
         && direction == TraversalStrategy.SEARCH_FOCUS_BACKWARD
-        && navigationAction.targetType == TARGET_CONTAINER) {
+        && navigationAction.targetType == TARGET_CONTAINER
+        && !WebInterfaceUtils.supportsWebActions(target)) {
       @Nullable AccessibilityNodeInfoCompat containerNew = currentContainer(target);
       for (int step = 0; step < MAX_CONTAINER_START_STEPS; step++) {
         @Nullable AccessibilityNodeInfoCompat previous =
@@ -912,6 +914,18 @@ public class FocusProcessorForLogicalNavigation {
     // Search up from start-node.
     @Nullable AccessibilityNodeInfoCompat container =
         AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(start, FILTER_CONTAINER);
+    // SandFly: a bar inside a bar, such as a search bar in a toolbar, is one stop: the outer bar.
+    if (container != null && AccessibilityNodeInfoUtils.FILTER_BAR.accept(container)) {
+      @Nullable AccessibilityNodeInfoCompat outer =
+          AccessibilityNodeInfoUtils.getMatchingAncestor(
+              container, AccessibilityNodeInfoUtils.FILTER_BAR);
+      while (outer != null) {
+        container = outer;
+        outer =
+            AccessibilityNodeInfoUtils.getMatchingAncestor(
+                outer, AccessibilityNodeInfoUtils.FILTER_BAR);
+      }
+    }
     return container;
   }
 

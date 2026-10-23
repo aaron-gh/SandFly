@@ -505,7 +505,7 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 ### Container navigation
 
-Next container and Previous container (Action + Control + Alt + Right or Left arrow, or a four-finger swipe right or left) also stop at toolbars, tab bars, navigation bars, search bars and panes, besides lists, grids and scroll views. Previous container moves to the first item of the container, as Next container does, not its last item.
+Next container and Previous container (Action + Control + Alt + Right or Left arrow, or a four-finger swipe right or left) also stop at toolbars, tab bars, navigation bars, search bars and panes, besides lists, grids and scroll views. A bar inside a bar, such as a search bar in a toolbar, is one stop. Previous container moves to the start of the container, as Next container does, not its last item, except in web content.
 
 ### Telegram reply quotes
 
