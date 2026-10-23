@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Braillovská klávesnica TalkBack</string>
+  <string name="braille_ime_service_name">Braillovská klávesnica SandFly</string>
   <string name="braille_ime_bd_mode_name">Vstup Braillovho displeja</string>
   <string name="switch_to_tabletop_announcement">Stolový režim. Umiestnite zariadenie tak, aby bol nabíjací port vľavo.</string>
   <string name="calibration_tip_announcement">Umiestnenie bodiek aktualizujete pridržaním %d prstov na obrazovke.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Braillova klávesnica bola prepnutá na neskrátenú verziu</string>
   <string name="braille_ime_displayed_name">braillovská klávesnica</string>
   <string name="multiple_languages_braille_ime_displayed_name">Braillova klávesnica, %s</string>
-  <string name="input_view_caption">Braillovská klávesnica TalkBack – pomocníka nájdete na g.co/help/braille</string>
+  <string name="input_view_caption">Braillovská klávesnica SandFly – pomocníka nájdete na g.co/help/braille</string>
   <string name="perform_action_next">Ďalej</string>
   <string name="perform_action_submitting">Odosiela sa text.</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Umiestnenie bodov sa aktualizuje. Najprv zaznamenajme body %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Ak chcete zmeniť jazyk počas písania na Braillovej klávesnici, potiahnite troma prstami nahor. Potom vyberte Prepnúť na ďalší jazyk.</string>
   <string name="title_pref_accumulate_presses">Zahrnúť všetky stlačené body</string>
   <string name="summary_pref_accumulate_presses">Každý stlačený bod je súčasťou vstupu, aj keď ho pred ostatnými bodmi uvoľníte</string>
-  <string name="title_pref_reverse_dots">Obrátené body</string>
-  <string name="summary_pref_reverse_dots">Výmena pozícií bodov, takže 1. a 4. bod si napríklad vymenia miesta</string>
+  <string name="title_pref_reverse_dots">Vymeňte ľavé a pravé bodky</string>
+  <string name="summary_pref_reverse_dots">Bodky 1, 2 a 3 vymenia miesta za bodky 4, 5 a 6</string>
   <string name="bd_preference_braille_contracted">Skrátená forma</string>
   <string name="bd_preference_braille_uncontracted">Neskrátená forma</string>
   <string name="context_menu_title">Možnosti Braillovej klávesnice</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klávesnica</string>
   <string name="not_enough_touch_points_dialog_title">Vaše zariadenie nepodporuje Braillovu klávesnicu</string>
   <string name="not_enough_touch_points_dialog_message">Vaše zariadenie nepodporuje dostatočné množstvo dotykových bodov. Viac sa dozviete od výrobcu svojho zariadenia.</string>
-  <string name="talkback_off_dialog_title">Ak chcete používať Braillovu klávesnicu, zapnite aplikáciu TalkBack</string>
+  <string name="talkback_off_dialog_title">Ak chcete používať Braillovu klávesnicu, zapnite aplikáciu SandFly</string>
   <string name="talkback_off_dialog_positive_button">Zapnúť v nastaveniach dostupnosti</string>
-  <string name="talkback_suspend_dialog_title">Ak chcete použiť Braillovu klávesnicu, obnovte aplikáciu TalkBack</string>
-  <string name="talkback_off_or_suspend_dialog_message">Keď je aplikácia TalkBack zapnutá, môžete zadávať Braillove symboly klepaním na obrazovku.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Ak chcete zmeniť gesto, zapnite TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Funkcia TalkBack je vypnutá. Ak chcete zmeniť gestá braillovskej klávesnice, zapnite ju.</string>
+  <string name="talkback_suspend_dialog_title">Ak chcete použiť Braillovu klávesnicu, obnovte aplikáciu SandFly</string>
+  <string name="talkback_off_or_suspend_dialog_message">Keď je aplikácia SandFly zapnutá, môžete zadávať Braillove symboly klepaním na obrazovku.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Ak chcete zmeniť gesto, zapnite SandFly</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Funkcia SandFly je vypnutá. Ak chcete zmeniť gestá braillovskej klávesnice, zapnite ju.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Prejsť do Nastavení</string>
   <string name="reset_gestures_dialog_title">Chcete resetovať všetky gestá?</string>
   <string name="reset_gestures_dialog_message">Všetky gestá braillovskej klávesnice budú resetované na predvolené nastavenia</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Obnoviť predvolené</string>
   <string name="custom_gestures_dialog_remove_button">Odstrániť gesto</string>
   <string name="change_gestures_dialog_message_title">Ako zmeniť gesto</string>
-  <string name="change_gestures_dialog_message">Na ďalšej obrazovke sa otvorí braillovská klávesnica a nebudete môcť používať gestá aplikácie TalkBack.\n\nPo jej otvorení vykonajte gesto, ktoré chcete použiť, alebo potiahnite dvoma prstami nadol, čím klávesnicu zavriete a zmenu gesta zrušíte.\n\nZobraziť dostupné gestá.\n</string>
+  <string name="change_gestures_dialog_message">Na ďalšej obrazovke sa otvorí braillovská klávesnica a nebudete môcť používať gestá aplikácie SandFly.\n\nPo jej otvorení vykonajte gesto, ktoré chcete použiť, alebo potiahnite dvoma prstami nadol, čím klávesnicu zavriete a zmenu gesta zrušíte.\n\nZobraziť dostupné gestá.\n</string>
   <string name="change_gestures_dialog_message_link">Zobraziť dostupné gestá</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Túto správu už nezobrazovať</string>
   <string name="change_gestures_dialog_positive_button">Pokračovať</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nepoužiť</string>
   <string name="next_keyboard">Ďalšia klávesnica</string>
   <string name="braille_tutorial_title">Návod k Braillovej klávesnici</string>
-  <string name="tutorial_intro_description">Braillova klávesnica umožňuje zadávať šesťbodové Braillovo písmo klepaním na obrazovku.\n\nPoužívate jednotné anglické Braillovo písmo. Jazyk písania môžete prepnúť v nastaveniach aplikácie.\n\nPri písaní Braillovým písmom je potrebné telefón držať a používať inak.</string>
+  <string name="tutorial_intro_description">Pomocou Braillovej klávesnice môžete klepnutím na obrazovku zadať 6-bodové Braillovo písmo.\n\nPoužívate Unified English Braillovo písmo. Ak chcete zmeniť jazyk písania, prejdite do nastavení SandFly.\n\nAk chcete písať Braillovým písmom, musíte telefón držať a používať inak.</string>
   <string name="next_step">Ďalej</string>
   <string name="leave_keyboard">Opustiť Braillovu klávesnicu</string>
-  <string name="hold_six_fingers_description">Na Braillovej klávesnici nebudete môcť používať bežné gestá aplikácie TalkBack.\n\nZačnime nastavením umiestnenia šiestich braillových bodiek používaných pri písaní.</string>
-  <string name="rotate_orientation_description_1">Odteraz už nebudete môcť používať bežné gestá aplikácie TalkBack. TalkBack nebude počas používania Braillovej klávesnice k dispozícii.</string>
+  <string name="hold_six_fingers_description">Na Braillovej klávesnici nebudete môcť používať bežné gestá aplikácie SandFly.\n\nZačnime nastavením umiestnenia šiestich braillových bodiek používaných pri písaní.</string>
+  <string name="rotate_orientation_description_1">Odteraz už nebudete môcť používať bežné gestá aplikácie SandFly. SandFly nebude počas používania Braillovej klávesnice k dispozícii.</string>
   <string name="rotate_orientation_description_2">Začnite uchopením telefónu týmto spôsobom, aby obrazovka smerovala od vás.</string>
   <string name="tap_to_continue">Pokračujte dvojitým klepnutím na ľubovoľné miesto na obrazovke</string>
   <string name="instruction_type_letter_a">Napíšte písmeno A klepnutím na 1. bod ľavým ukazovákom</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURZOR BOL POSUNUTÝ DOPREDU</string>
   <string name="result_swipe_down_2_fingers">SKRYŤ KLÁVESNICU</string>
   <string name="result_swipe_down_3_fingers">ĎALŠIA KLÁVESNICA</string>
-  <string name="rotate_orientation_announcement">Odteraz už nebudete môcť používať bežné gestá aplikácie TalkBack. TalkBack nebude počas používania Braillovej klávesnice k dispozícii.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Odteraz už nebudete môcť používať bežné gestá aplikácie SandFly. SandFly nebude počas používania Braillovej klávesnice k dispozícii.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Najprv obráťte telefón, aby obrazovka smerovala od vás.\n\nPotom ho vodorovne otočte na šírku. Rukami by ste mali držať krátke strany telefónu. Pravou rukou by ste mali držať stranu s portom USB. Položte tri prostredné prsty na obrazovku a malíčkom a palcom telefón podopierajte.\n\nPotom pokračujte dvojitým klepnutím na obrazovku.\n\nAk chcete Braillovu klávesnicu ukončiť, potiahnite troma prstami nadol smerom k zemi. Týmto prepnete na pôvodnú klávesnicu.</string>
   <string name="rotate_orientation_continue_announcement">Váš telefón je vo zvislej polohe. Ak chcete pokračovať, otočte ho vodorovne dlhým okrajom nadol. Potom obrazovku od seba odvráťte. Následne pokračujte dvojitým klepnutím na obrazovku.</string>
   <string name="type_letter_a_announcement">Držte telefón tak, aby bola obrazovka od vás odvrátená. Uchopte ho dvoma rukami za krátke kraje, aby ste sa mohli troma prostrednými prstami každej ruky dotknúť obrazovky.\n\nĽavý ukazovák by mal byť na 1. bode. Klepnutím na 1. bod napíšte písmeno A.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Ak chcete prepnúť na inú klávesnicu, potiahnite troma prstami nadol. Vyskúšajte to.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Ďalšia klávesnica. Týmto postupom zvyčajne prepnete na ďalšiu klávesnicu. Braillova klávesnica zostane tentokrát otvorená, pretože máte stále otvorený návod.</string>
   <string name="swipe_up_3_fingers_announcement">V stolovom režime môžete tiež písať tak, že telefón položíte vodorovne na stôl. Návod ukončíte potiahnutím troma prstami nahor a nájdením možnosti ukončenia návodu</string>
-  <string name="open_context_menu_announcement">Ponuka možností je otvorená. Otočte telefón späť, aby obrazovka smerovala na vás, a držte ho ako obvykle. Teraz môžete navigovať bežnými gestami aplikácie TalkBack. Potiahnutím doprava zobrazíte ďalšie možnosti.</string>
+  <string name="open_context_menu_announcement">Ponuka možností je otvorená. Otočte telefón späť, aby obrazovka smerovala na vás, a držte ho ako obvykle. Teraz môžete navigovať bežnými gestami aplikácie SandFly. Potiahnutím doprava zobrazíte ďalšie možnosti.</string>
   <string name="hold_six_fingers_announcement">%s\nPoložte zariadenie vodorovne na stôl. Potom pridržte stredné tri prsty oboch rúk na obrazovke v pozícii, v ktorej sa vám pohodlne píše.</string>
   <string name="hold_six_fingers_inactive_announcement">Položte zariadenie vodorovne na stôl. Potom pridržte stredné tri prsty oboch rúk na obrazovke v pozícii, v ktorej sa vám pohodlne píše.</string>
   <string name="finish_tutorial_announcement">Je zobrazená Braillova klávesnica. Obráťte telefón, aby obrazovka smerovala od vás. Otočte ho vodorovne na šírku. Potom začnite písať.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Toto gesto sa používa pre akciu %1$s a nedá sa zmeniť. Skúste iné. %2$s</string>
   <string name="custom_gesture_cannot_used">Toto gesto sa nedá použiť</string>
   <string name="custom_gesture_no_gesture">Nebolo vykonané žiadne gesto</string>
-  <string name="custom_gesture_try_another">Skúste iné gesto. Ak si chcete zobraziť zoznam všetkých dostupných gest, prejdite do centra pomoci pre braillovskú klávesnicu aplikácie TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Skúste iné gesto. Ak si chcete zobraziť zoznam všetkých dostupných gest, prejdite do centra pomoci pre braillovskú klávesnicu aplikácie SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gestá sa nezhodujú</string>
   <string name="custom_gesture_perform_again">Vykonajte gesto, ktoré chcete znova použiť. %s</string>
+    <string name="tabletop_port_left_announcement">Stolný režim, nabíjací port vľavo</string>
+    <string name="tabletop_port_right_announcement">Stolový režim, nabíjací port vpravo</string>
+    <string name="screen_away_port_right_announcement">Režim preč z obrazovky, nabíjací port vpravo</string>
+    <string name="screen_away_port_left_announcement">Režim preč z obrazovky, nabíjací port vľavo</string>
+    <string name="screen_toward_announcement">Obrazovka smerom k vám</string>
+    <string name="screen_toward_port_left_announcement">Obrazovka smerom k vám, nabíjací port vľavo</string>
+    <string name="screen_toward_port_right_announcement">Obrazovka smerom k vám, nabíjací port vpravo</string>
+    <string name="screen_toward_port_down_announcement">Obrazovka smerom k vám, nabíjací port smerujúci nadol</string>
+    <string name="screen_toward_port_up_announcement">Obrazovka smerom k vám, nabíjací port smerujúci nahor</string>
+    <string name="port_right_announcement">Nabíjací port vpravo</string>
+    <string name="port_left_announcement">Nabíjací port vľavo</string>
+    <string name="tabletop_port_near_announcement">Stolný režim, nabíjací port smerom k vám</string>
+    <string name="tabletop_port_far_announcement">Stolný režim, nabíjací port ďaleko od vás</string>
+    <string name="screen_away_port_down_announcement">Režim vzdialenej obrazovky, nabíjací port smeruje nadol</string>
+    <string name="screen_away_port_up_announcement">Režim vzdialenej obrazovky, nabíjací port smeruje nahor</string>
+    <string name="port_near_announcement">Nabíjací port smerom k vám</string>
+    <string name="port_far_announcement">Nabíjací port ďaleko od vás</string>
+    <string name="port_down_announcement">Nabíjací port smerujúci nadol</string>
+    <string name="port_up_announcement">Nabíjací port smerujúci nahor</string>
+    <string name="orientation_locked_announcement">Orientácia uzamknutá</string>
+    <string name="orientation_locked_port_announcement">Orientácia uzamknutá. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientácia odblokovaná</string>
+    <string name="switch_to_language_contracted_announcement">Prepnuté na jazyk %s, Skrátená forma</string>
+    <string name="switch_to_language_uncontracted_announcement">Prepnuté na jazyk %s, Neskrátená forma</string>
+    <string name="title_pref_flip_dots_vertically">Vymeňte horné a spodné bodky</string>
+    <string name="summary_pref_flip_dots_vertically">Bod 1 zamieňa miesta s bodkou 3 a bod 4 s bodkou 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet zdvihol tváre preč</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Keď je tablet alebo rozložený telefón vypnutý, používa rozloženie stola otočené k vám</string>
+    <string name="title_pref_typing_sounds">Zvuky písania</string>
+    <string name="summary_pref_typing_sounds">Prehrať kliknutia na klávesnici, keď zadáte znak, medzeru, nový riadok alebo odstránite</string>
+    <string name="skip_tutorial">Preskočiť návod</string>
 </resources>
