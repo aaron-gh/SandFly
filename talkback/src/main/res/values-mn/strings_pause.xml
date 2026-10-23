@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Түр зогсоох SandFly</string>
+    <string name="summary_pause_backtalk">SandFly-г үргэлжлүүлэх хүртлээ яриа, дохио зангаагаа унтрааж, мэдрэгчээр судлаарай</string>
+    <string name="keycombo_menu_global_pause_backtalk">Түр зогсоох эсвэл үргэлжлүүлэх SandFly</string>
+    <string name="backtalk_paused">SandFly түр зогсоосон</string>
+    <string name="backtalk_resumed">SandFly үргэлжлүүлэв</string>
+    <string name="notification_title_backtalk_paused">SandFly түр зогссон</string>
+    <string name="notification_message_backtalk_paused">Үргэлжлүүлэхийн тулд товшино уу</string>
+    <string name="notification_channel_backtalk_paused">SandFly түр зогсоосон</string>
+    <string name="dialog_title_pause_backtalk">SandFly түр зогсоох уу?</string>
+    <string name="dialog_button_pause_backtalk">Түр зогсоох</string>
+    <string name="dialog_message_pause_backtalk">SandFly-г түр зогсоосон үед энэ нь ярихгүй, дохио зангаагаар хариу үйлдэл үзүүлэхгүй бөгөөд дэлгэц нь ямар ч дэлгэц уншигч асаагүй мэт ажилладаг.</string>
+    <string name="message_resume_keyguard">Үргэлжлүүлэхийн тулд SandFly түр зогсоосон тухай мэдэгдлийг товшоод дууны түвшнийг 3 удаа хурдан дарах эсвэл утсаа түгжиж, сэрээснээр дэлгэцийн түгжээ гарч ирнэ.</string>
+    <string name="message_resume_screen_on">Үргэлжлүүлэхийн тулд SandFly түр зогсоосон тухай мэдэгдлийг товшоод дууны түвшнийг 3 удаа хурдан дарах эсвэл дэлгэцийг унтраагаад дахин асаана уу.</string>
+    <string name="message_resume_manual">Үргэлжлүүлэхийн тулд SandFly түр зогссон тухай мэдэгдлийг товших эсвэл дууны түвшнийг 3 удаа хурдан дарна уу.</string>
+    <string name="message_resume_key_combo">Та мөн <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> дарж болно.</string>
+    <string name="title_pref_resume_backtalk">Үргэлжлэл SandFly</string>
+    <string name="value_resume_keyguard">Түгжих дэлгэц гарч ирэх үед</string>
+    <string name="value_resume_screen_on">Дэлгэц асах үед</string>
+    <string name="value_resume_manual">Зөвхөн мэдэгдэл эсвэл товчлолоос</string>
+</resources>

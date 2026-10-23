@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Шилэн засварлах</string>
+    <string name="granular_editing_split_by">Хуваах: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Хуваах</string>
+    <string name="granular_editing_characters">Тэмдэгт</string>
+    <string name="granular_editing_words">Үг</string>
+    <string name="granular_editing_sentences">Өгүүлбэрүүд</string>
+    <string name="granular_editing_lines">Мөр</string>
+    <string name="granular_editing_paragraphs">Параграф</string>
+    <string name="granular_editing_space">Хоосон зай</string>
+    <string name="granular_editing_new_line">Шинэ мөр</string>
+    <string name="granular_editing_tab">Таб тэмдэг</string>
+    <string name="granular_editing_empty">Текст байхгүй. Төгсгөлд нь \"Дэлгэрэнгүй\" хэсэгт Текст нэмэхийг ашиглана уу.</string>
+    <string name="granular_editing_edit">Засварлах</string>
+    <string name="granular_editing_insert_before">Өмнө нь оруулах</string>
+    <string name="granular_editing_insert_after">Дараа нь оруулах</string>
+    <string name="granular_editing_delete">Устгах</string>
+    <string name="granular_editing_select">Сонгох</string>
+    <string name="granular_editing_unselect">Сонголтыг болиулах</string>
+    <string name="granular_editing_selected">Сонгосон</string>
+    <string name="granular_editing_save">Хадгалах</string>
+    <string name="granular_editing_more">Илүү</string>
+    <string name="granular_editing_undo">Буцаах</string>
+    <string name="granular_editing_redo">Сүүлийн буцаагдсан засварыг дахин хийнэ үү</string>
+    <string name="granular_editing_find">Олох</string>
+    <string name="granular_editing_find_next">Дараагийнх нь хай</string>
+    <string name="granular_editing_replace">Солих</string>
+    <string name="granular_editing_replace_with">-ээр солино</string>
+    <string name="granular_editing_replace_all">Бүгдийг солих</string>
+    <string name="granular_editing_add_at_end">Төгсгөлд нь текст нэмнэ үү</string>
+    <string name="granular_editing_clear_selection">Бүх текстийн сонголтыг цуцлах</string>
+    <string name="granular_editing_cut_selected">Сонгосон текстийг хайчилж ав</string>
+    <string name="granular_editing_delete_selected">Сонгосон устгах</string>
+    <string name="granular_editing_copied">Хуулсан</string>
+    <string name="granular_editing_deleted">Устгасан</string>
+    <string name="granular_editing_not_found">Олдсонгүй</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> сольсон</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> солигдсон</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Өөрчлөлтүүдийг хадгалах уу?</string>
+    <string name="granular_editing_copy_changes">Өөрчлөгдсөн текстийг хуулах уу?</string>
+    <string name="granular_editing_discard">Хая</string>
+    <string name="granular_editing_keep_editing">Үргэлжлүүлэн засварлана</string>
+    <string name="granular_editing_not_saved">Хадгалагдаагүй: текст талбар алга болсон. Текстийг хуулбарласан.</string>
+    <string name="granular_editing_no_text">Засах текст байхгүй</string>
+    <string name="granular_editing_password">Нууц үгийн талбарт байхгүй</string>
+</resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="dont_show_again">Үүнийг дахиж бүү харуул</string>
   <string name="number_announcement">Дугаар</string>
   <string name="capitalize_announcement">Хамгийн дээд хэмжээ</string>
@@ -148,4 +148,7 @@
   <string name="bk_gesture_next_suggestion">Дараагийн зөвлөмжийг сонсох</string>
   <string name="bk_gesture_confirm_spelling_suggestion">Зөвлөмжийг баталгаажуулах</string>
   <string name="bk_gesture_undo_spelling_suggestion">Зөвлөмжийг болих</string>
+    <string name="code_user_facing_name_mongolian">Монгол</string>
+    <string name="bk_gesture_toggle_orientation_lock">Баримтлалыг түгжих эсвэл нээх</string>
+    <string name="bk_gesture_next_braille_table">Дараагийн брайл хүснэгт рүү шилжих</string>
 </resources>

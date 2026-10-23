@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack брайл гар</string>
+  <string name="braille_ime_service_name">SandFly брайл гар</string>
   <string name="braille_ime_bd_mode_name">Брайл дэлгэцийн оролт</string>
   <string name="switch_to_tabletop_announcement">Ширээн дээр тавих горим. Цэнэглэх порттой төхөөрөмжөө зүүн тийш байрлуулна уу.</string>
   <string name="calibration_tip_announcement">Цэгийн байрлалыг шинэчлэхийн тулд %d хуруугаараа удаан дарна уу.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Товчлоогүй брайл руу сэлгэлээ</string>
   <string name="braille_ime_displayed_name">брайл гар</string>
   <string name="multiple_languages_braille_ime_displayed_name">брайл гар, %s</string>
-  <string name="input_view_caption">TalkBack брайл гар - тусламж хэрэгтэй бол g.co/help/braille холбоосоор зочилно уу</string>
+  <string name="input_view_caption">SandFly брайл гар - тусламж хэрэгтэй бол g.co/help/braille холбоосоор зочилно уу</string>
   <string name="perform_action_next">Дараах</string>
   <string name="perform_action_submitting">Текстийг илгээх</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Цэгийн байрлалыг шинэчилж байна. Эхлээд таны %s дээрх цэгүүдийг бичицгээе.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Брайлаар бичиж байхдаа хэлээ өөрчлөхийн тулд 3 хуруугаараа дээш шударна уу. Тэгээд \"дараагийн хэл рүү сэлгэх\" гэснийг сонгоно уу.</string>
   <string name="title_pref_accumulate_presses">Дарсан бүх цэгийг оролцуулах</string>
   <string name="summary_pref_accumulate_presses">Бусад цэгийн өмнө цэгийг дарахаа больсон ч дарсан цэг тус бүр нь оролтын нэг хэсэг юм</string>
-  <string name="title_pref_reverse_dots">Цэгүүдийг солих</string>
-  <string name="summary_pref_reverse_dots">Жишээлбэл, 1 болон 4 цэгүүд байраа сольж байхаар цэгүүдийн байрлалыг солино уу</string>
+  <string name="title_pref_reverse_dots">Зүүн ба баруун цэгүүдийг соль</string>
+  <string name="summary_pref_reverse_dots">1, 2, 3-р цэгүүд нь 4, 5, 6-р цэгүүдийг арилгадаг</string>
   <string name="bd_preference_braille_contracted">Бичиглэлтэй брайл</string>
   <string name="bd_preference_braille_uncontracted">Бичиглэлгүй брайл</string>
   <string name="context_menu_title">Брайл гарын сонголт</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Гар</string>
   <string name="not_enough_touch_points_dialog_title">Таны төхөөрөмж брайл гарыг дэмждэггүй</string>
   <string name="not_enough_touch_points_dialog_message">Таны төхөөрөмж хангалттай хүрэх цэгийг дэмждэггүй. Нэмэлт мэдээлэл авахын тулд төхөөрөмжийнхөө үйлдвэрлэгчтэй холбогдоно уу.</string>
-  <string name="talkback_off_dialog_title">Брайл гарыг ашиглахын тулд TalkBack-г асаах</string>
+  <string name="talkback_off_dialog_title">Брайл гарыг ашиглахын тулд SandFly-г асаах</string>
   <string name="talkback_off_dialog_positive_button">Хандалтын тохиргоонд асаах</string>
-  <string name="talkback_suspend_dialog_title">Брайл гарыг ашиглахын тулд TalkBack-г үргэлжлүүлэх</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack асаалттай үед та брайл тэмдэгтийг оруулахын тулд дэлгэц дээрээ товших боломжтой.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Зангааг өөрчлөхийн тулд TalkBack-г асаана уу</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack унтраалттай байна. Брайл гарын зангааг өөрчлөхийн тулд үүнийг асаана уу.</string>
+  <string name="talkback_suspend_dialog_title">Брайл гарыг ашиглахын тулд SandFly-г үргэлжлүүлэх</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly асаалттай үед та брайл тэмдэгтийг оруулахын тулд дэлгэц дээрээ товших боломжтой.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Зангааг өөрчлөхийн тулд SandFly-г асаана уу</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly унтраалттай байна. Брайл гарын зангааг өөрчлөхийн тулд үүнийг асаана уу.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Тохиргоо руу очих</string>
   <string name="reset_gestures_dialog_title">Бүх зангааг шинэчлэх үү?</string>
   <string name="reset_gestures_dialog_message">Брайл гарын бүх зангааг өгөгдмөл тохиргоо руу шинэчилнэ</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Өгөгдмөл болгож шинэчлэх</string>
   <string name="custom_gestures_dialog_remove_button">Зангааг хасах</string>
   <string name="change_gestures_dialog_message_title">Зангааг хэрхэн өөрчлөх вэ?</string>
-  <string name="change_gestures_dialog_message">Дараагийн дэлгэц дээр брайл гар нээгдэх бөгөөд та TalkBack-н зангааг ашиглах боломжгүй болно.\n\nБрайл гар нээгдсэн үед ашигламаар байгаа зангаагаа гүйцэтгэх эсвэл брайл гарыг хааж, зангааг өөрчлөх үйлдлийг цуцлахын тулд 2 хуруугаараа доош шударна уу.\n\nАшиглах боломжтой зангааг харна уу\n</string>
+  <string name="change_gestures_dialog_message">Дараагийн дэлгэц дээр брайл гар нээгдэх бөгөөд та SandFly-н зангааг ашиглах боломжгүй болно.\n\nБрайл гар нээгдсэн үед ашигламаар байгаа зангаагаа гүйцэтгэх эсвэл брайл гарыг хааж, зангааг өөрчлөх үйлдлийг цуцлахын тулд 2 хуруугаараа доош шударна уу.\n\nАшиглах боломжтой зангааг харна уу\n</string>
   <string name="change_gestures_dialog_message_link">Ашиглах боломжтой зангааг харна уу</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Энэ мессежийг дахин бүү харуул</string>
   <string name="change_gestures_dialog_positive_button">Үргэлжлүүлэх</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Бүү ашигла</string>
   <string name="next_keyboard">Дараагийн гар</string>
   <string name="braille_tutorial_title">Брайл гарын практик хичээл</string>
-  <string name="tutorial_intro_description">Та брайл гарын тусламжтай 6 цэгт брайлыг оруулахын тулд дэлгэцээ товшиж болно.\n\nТа англи хэлний нэгтгэсэн брайлыг ашиглаж байна. Та бичих хэлээ сэлгэхийн тулд TalkBack-н тохиргоо руу очно уу.\n\nБрайлаар бичихийн тулд утсаа өөрөөр барьж, ашиглах шаардлагатай.</string>
+  <string name="tutorial_intro_description">Та брайл гарын тусламжтай 6 цэгт брайлыг оруулахын тулд дэлгэцээ товшиж болно.\n\nТа англи хэлний нэгтгэсэн брайлыг ашиглаж байна. Та бичих хэлээ сэлгэхийн тулд SandFly-н тохиргоо руу очно уу.\n\nБрайлаар бичихийн тулд утсаа өөрөөр барьж, ашиглах шаардлагатай.</string>
   <string name="next_step">Дараах</string>
   <string name="leave_keyboard">Брайл гарыг орхих</string>
-  <string name="hold_six_fingers_description">Та брайл гар дээр энгийн TalkBack зангаа ашиглах боломжгүй болно.\n\nЭхлүүлэхийн тулд 6 брайлын байрлалыг таныг бичих үед тохируулцгаая.</string>
-  <string name="rotate_orientation_description_1">Одооноос та TalkBack-н энгийн зангааг ашиглах боломжгүй болно. TalkBack нь брайл гарыг ашиглах үед боломжгүй байна.</string>
+  <string name="hold_six_fingers_description">Та брайл гар дээр энгийн SandFly зангаа ашиглах боломжгүй болно.\n\nЭхлүүлэхийн тулд 6 брайлын байрлалыг таныг бичих үед тохируулцгаая.</string>
+  <string name="rotate_orientation_description_1">Одооноос та SandFly-н энгийн зангааг ашиглах боломжгүй болно. SandFly нь брайл гарыг ашиглах үед боломжгүй байна.</string>
   <string name="rotate_orientation_description_2">Эхлүүлэхийн тулд дэлгэцийг нь цааш харуулж, утсаа ингэж барина уу.</string>
   <string name="tap_to_continue">Үргэлжлүүлэхийн тулд аль нэг хэсэгт хоёр товшино уу</string>
   <string name="instruction_type_letter_a">\"A\" үсэг бичихийн тулд зүүн гарын долоовор хуруугаараа цэг 1-г товшино уу</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">КУРСОРЫГ УРАГШ ЗӨӨВ</string>
   <string name="result_swipe_down_2_fingers">ГАРЫГ НУУХ</string>
   <string name="result_swipe_down_3_fingers">ДАРААГИЙН ГАР</string>
-  <string name="rotate_orientation_announcement">Одооноос та TalkBack-н энгийн зангааг ашиглах боломжгүй болно. TalkBack нь брайл гарыг ашиглах үед боломжгүй байна.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Одооноос та SandFly-н энгийн зангааг ашиглах боломжгүй болно. SandFly нь брайл гарыг ашиглах үед боломжгүй байна.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Эхлээд дэлгэцийг нь цааш харуулж, утсаа эргүүлнэ үү.\n\nДараа нь утсыг хэвтээ чигт эргүүлж, хөндлөн байрлалд оруулна уу. Таны гар утасны богино ирмэгийг атгаж байх ёстой. Таны баруун гар USB порттой ирмэгийг барьж байх ёстой. Дундах 3 хуруугаа дэлгэц дээр тавьж, утас барихдаа чигчий болон эрхий хуруугаа ашиглана уу.\n\nТа бэлэн болсон үедээ үргэлжлүүлэхийн тулд дэлгэц дээр хоёр товшино уу.\n\nБрайл гараас гарахын тулд 3 хуруугаар газар луу доош шударна уу. Энэ нь таны анхны гар луу буцааж сэлгэдэг.</string>
   <string name="rotate_orientation_continue_announcement">Таны утас босоо байрлалд байна. Үргэлжлүүлэхийн тулд урт тал нь доор байхаар утсаа хэвтээ чигт эргүүлнэ үү. Дараа нь дэлгэцийг нь цааш харуулж эргүүлнэ үү. Та бэлэн болсон үедээ үргэлжлүүлэхийн тулд дэлгэц дээр хоёр товшино уу.</string>
   <string name="type_letter_a_announcement">Дэлгэцийг нь цааш харуулж барина уу. Хоёр гарын дундах 3 хуруу дэлгэцэд хүрэх боломжтой байхаар богино талаар нь утсаа хоёр гартаа барина уу.\n\nТаны зүүн гарын долоовор хуруу цэг 1 дээр байх ёстой. Одоо \"A\" үсэг бичихийн тулд цэг 1-г товшино уу.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Өөр гар луугаа сэлгэхийн тулд 3 хуруугаар доош шударна уу. Одоо туршиж үзээрэй.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Дараагийн гар Энэ нь ихэвчлэн дараагийн гар луу сэлгэнэ. Та практик хичээл дээр байсаар байгаа тул энэ удаад брайл гар дээр байна.</string>
   <string name="swipe_up_3_fingers_announcement">Та түүнчлэн утсаа ширээн дээр тэгшхэн байрлуулан ширээн дээр тавих горимд бичих боломжтой. Практик хичээлийг дуусгахын тулд 3 хуруугаар дээш шударч, практик хичээлийг дуусгах сонголтыг олно уу</string>
-  <string name="open_context_menu_announcement">Сонголтын цэс нээлттэй байна. Утсаа буцааж хөнтөрч, өөр лүүгээ харуулаад ердийнхөөр барина уу. Та одоо шилжихийн тулд TalkBack-н энгийн зангааг ашиглах боломжтой. Бусад сонголтыг харахын тулд баруун тийш шударна уу.</string>
+  <string name="open_context_menu_announcement">Сонголтын цэс нээлттэй байна. Утсаа буцааж хөнтөрч, өөр лүүгээ харуулаад ердийнхөөр барина уу. Та одоо шилжихийн тулд SandFly-н энгийн зангааг ашиглах боломжтой. Бусад сонголтыг харахын тулд баруун тийш шударна уу.</string>
   <string name="hold_six_fingers_announcement">%s\nТөхөөрөмжөө ширээн дээр тэгшхэн байрлуулна уу. Дараа нь бичихэд эвтэйхэн байрлалдаа хоёр гарын дундах 3 хуруугаараа дэлгэцэд хүрээд удаан дарна уу.</string>
   <string name="hold_six_fingers_inactive_announcement">Төхөөрөмжөө ширээн дээр тэгшхэн байрлуулна уу. Дараа нь бичихэд эвтэйхэн байрлалдаа хоёр гарын дундах 3 хуруугаараа дэлгэцэд хүрээд удаан дарна уу.</string>
   <string name="finish_tutorial_announcement">Брайл гарыг харуулж байна. Утсаа эргүүлж, дэлгэцийг нь цааш харуулна уу. Хөндлөн байрлалд оруулахын тулд утсаа хэвтээ байдлаар эргүүлнэ үү. Дараа нь бичиж эхэлнэ үү.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Энэ зангааг \"%1$s\"-д ашигладаг бөгөөд өөрчлөх боломжгүй. Өөр зангаа туршиж үзнэ үү. %2$s</string>
   <string name="custom_gesture_cannot_used">Энэ зангааг ашиглах боломжгүй</string>
   <string name="custom_gesture_no_gesture">Ямар ч зангаа гүйцэтгээгүй</string>
-  <string name="custom_gesture_try_another">Өөр зангаа туршиж үзнэ үү. Ашиглах боломжтой бүх зангааны жагсаалтыг харахын тулд TalkBack-н брайл гарын тусламжийн төв рүү очно уу. %s</string>
+  <string name="custom_gesture_try_another">Өөр зангаа туршиж үзнэ үү. Ашиглах боломжтой бүх зангааны жагсаалтыг харахын тулд SandFly-н брайл гарын тусламжийн төв рүү очно уу. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Зангаанууд таарахгүй байна</string>
   <string name="custom_gesture_perform_again">Та дахин ашигламаар байгаа зангаагаа гүйцэтгэнэ үү. %s</string>
+    <string name="tabletop_port_left_announcement">Ширээний горим, зүүн талд цэнэглэх порт</string>
+    <string name="tabletop_port_right_announcement">Ширээний горим, баруун талд цэнэглэх порт</string>
+    <string name="screen_away_port_right_announcement">Дэлгэц холдуулах горим, баруун талд цэнэглэх порт</string>
+    <string name="screen_away_port_left_announcement">Дэлгэц холдуулах горим, зүүн талд цэнэглэх порт</string>
+    <string name="screen_toward_announcement">Дэлгэц тан руу чиглэнэ</string>
+    <string name="screen_toward_port_left_announcement">Дэлгэц өөр рүүгээ чиглүүлж, зүүн талд байгаа цэнэглэгч порт</string>
+    <string name="screen_toward_port_right_announcement">Дэлгэцийг өөр рүү чиглүүлж, баруун талд байгаа цэнэглэгч порт</string>
+    <string name="screen_toward_port_down_announcement">Дэлгэц өөр рүүгээ чиглүүлж, цэнэглэгч портыг доош харуулж байна</string>
+    <string name="screen_toward_port_up_announcement">Дэлгэц өөр рүүгээ чиглүүлж, цэнэглэгч портыг дээш харуулж байна</string>
+    <string name="port_right_announcement">Баруун талд цэнэглэх порт</string>
+    <string name="port_left_announcement">Зүүн талд цэнэглэх порт</string>
+    <string name="tabletop_port_near_announcement">Ширээний горим, цэнэглэгч порт танд чиглэнэ</string>
+    <string name="tabletop_port_far_announcement">Ширээний горим, цэнэглэгч порт чамаас хол байна</string>
+    <string name="screen_away_port_down_announcement">Дэлгэц холдуулах горим, цэнэглэх портыг доош харуулж байна</string>
+    <string name="screen_away_port_up_announcement">Дэлгэц холдуулах горим, цэнэглэх портыг дээш харуулж байна</string>
+    <string name="port_near_announcement">Цэнэглэх порт танд чиглэж байна</string>
+    <string name="port_far_announcement">Цэнэглэх порт чамаас хол байна</string>
+    <string name="port_down_announcement">Цэнэглэх портыг доош харуулж байна</string>
+    <string name="port_up_announcement">Цэнэглэх порт дээшээ харуулж байна</string>
+    <string name="orientation_locked_announcement">Чиглэл түгжигдсэн</string>
+    <string name="orientation_locked_port_announcement">Чиглэл түгжигдсэн. %1$s</string>
+    <string name="orientation_unlocked_announcement">Зориулалтын түгжээг тайлсан</string>
+    <string name="switch_to_language_contracted_announcement">%s руу сэлгэсэн, Бичиглэлтэй брайл</string>
+    <string name="switch_to_language_uncontracted_announcement">%s руу сэлгэсэн, Бичиглэлгүй брайл</string>
+    <string name="title_pref_flip_dots_vertically">Дээд ба доод цэгүүдийг соль</string>
+    <string name="summary_pref_flip_dots_vertically">1-р цэг нь 3-р цэгээр, 4-р цэг нь 6-р цэгээр арилжаа хийдэг</string>
+    <string name="title_pref_tablet_held_up_faces_away">Таблет нүүрээ дээш харуулав</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Унтраах үед дээш өргөгдсөн таблет эсвэл эвхээгүй гар утас нь ширээний тавцанг ашиглан тан руу харна</string>
+    <string name="title_pref_typing_sounds">Бичих чимээ</string>
+    <string name="summary_pref_typing_sounds">Тэмдэгт, хоосон зай, шинэ мөр бичих эсвэл устгах үед гар товшилтыг тоглуулна</string>
+    <string name="skip_tutorial">Хичээлийг алгасах</string>
 </resources>
