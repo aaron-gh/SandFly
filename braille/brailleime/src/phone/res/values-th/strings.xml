@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">แป้นพิมพ์อักษรเบรลล์ของ TalkBack</string>
+  <string name="braille_ime_service_name">แป้นพิมพ์อักษรเบรลล์ของ SandFly</string>
   <string name="braille_ime_bd_mode_name">การป้อนข้อมูลด้วยจอแสดงผลอักษรเบรลล์</string>
   <string name="switch_to_tabletop_announcement">โหมดบนโต๊ะ วางอุปกรณ์โดยหันพอร์ตชาร์จไปทางซ้าย</string>
   <string name="calibration_tip_announcement">ใช้ %d นิ้วกดหน้าจอไว้เพื่ออัปเดตตำแหน่งของจุด</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">เปลี่ยนไปใช้อักษรเบรลล์แบบไม่ย่อแล้ว</string>
   <string name="braille_ime_displayed_name">แป้นพิมพ์อักษรเบรลล์</string>
   <string name="multiple_languages_braille_ime_displayed_name">แป้นพิมพ์อักษรเบรลล์ %s</string>
-  <string name="input_view_caption">แป้นพิมพ์อักษรเบรลล์ของ TalkBack ดูความช่วยเหลือได้ที่ g.co/help/braille</string>
+  <string name="input_view_caption">แป้นพิมพ์อักษรเบรลล์ของ SandFly ดูความช่วยเหลือได้ที่ g.co/help/braille</string>
   <string name="perform_action_next">ถัดไป</string>
   <string name="perform_action_submitting">กำลังส่งข้อความ</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">การอัปเดตตำแหน่งของจุด ก่อนอื่นให้เริ่มด้วยการบันทึกจุดของ%s</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">หากต้องการเปลี่ยนภาษาขณะพิมพ์ด้วยแป้นพิมพ์อักษรเบรลล์ ให้ใช้ 3 นิ้วปัดขึ้น แล้วเลือก \"เปลี่ยนเป็นภาษาถัดไป\"</string>
   <string name="title_pref_accumulate_presses">รวมจุดที่กดไว้ทั้งหมด</string>
   <string name="summary_pref_accumulate_presses">แต่ละจุดที่กดเป็นส่วนหนึ่งของอินพุต แม้ว่าจะปล่อยจุดนั้นก่อนจุดอื่นๆ</string>
-  <string name="title_pref_reverse_dots">จุดแบบย้อนกลับ</string>
-  <string name="summary_pref_reverse_dots">สลับตำแหน่งจุด เช่น เพื่อให้จุด 1 และจุด 4 สลับที่กัน</string>
+  <string name="title_pref_reverse_dots">สลับจุดซ้ายและขวา</string>
+  <string name="summary_pref_reverse_dots">จุดที่ 1, 2 และ 3 แลกเปลี่ยนกับจุด 4, 5 และ 6</string>
   <string name="bd_preference_braille_contracted">อักษรเบรลล์แบบย่อ</string>
   <string name="bd_preference_braille_uncontracted">อักษรเบรลล์แบบไม่ย่อ</string>
   <string name="context_menu_title">ตัวเลือกแป้นพิมพ์อักษรเบรลล์</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">แป้นพิมพ์</string>
   <string name="not_enough_touch_points_dialog_title">อุปกรณ์ของคุณไม่รองรับแป้นพิมพ์อักษรเบรลล์</string>
   <string name="not_enough_touch_points_dialog_message">อุปกรณ์ของคุณไม่รองรับจุดที่สัมผัสจำนวนมากพอ โปรดติดต่อผู้ผลิตอุปกรณ์เพื่อสอบถามข้อมูลเพิ่มเติม</string>
-  <string name="talkback_off_dialog_title">เปิด TalkBack เพื่อใช้แป้นพิมพ์อักษรเบรลล์</string>
+  <string name="talkback_off_dialog_title">เปิด SandFly เพื่อใช้แป้นพิมพ์อักษรเบรลล์</string>
   <string name="talkback_off_dialog_positive_button">เปิดในการตั้งค่าการช่วยเหลือพิเศษ</string>
-  <string name="talkback_suspend_dialog_title">ใช้ TalkBack ต่อเพื่อใช้งานแป้นพิมพ์อักษรเบรลล์</string>
-  <string name="talkback_off_or_suspend_dialog_message">เมื่อ TalkBack เปิดอยู่ คุณจะแตะหน้าจอเพื่อป้อนสัญลักษณ์อักษรเบรลล์ได้</string>
-  <string name="talkback_off_custom_gestures_dialog_title">เปิด TalkBack เพื่อเปลี่ยนท่าทางสัมผัส</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ปิดอยู่ โปรดเปิดเพื่อเปลี่ยนท่าทางสัมผัสแป้นพิมพ์อักษรเบรลล์</string>
+  <string name="talkback_suspend_dialog_title">ใช้ SandFly ต่อเพื่อใช้งานแป้นพิมพ์อักษรเบรลล์</string>
+  <string name="talkback_off_or_suspend_dialog_message">เมื่อ SandFly เปิดอยู่ คุณจะแตะหน้าจอเพื่อป้อนสัญลักษณ์อักษรเบรลล์ได้</string>
+  <string name="talkback_off_custom_gestures_dialog_title">เปิด SandFly เพื่อเปลี่ยนท่าทางสัมผัส</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ปิดอยู่ โปรดเปิดเพื่อเปลี่ยนท่าทางสัมผัสแป้นพิมพ์อักษรเบรลล์</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ไปที่การตั้งค่า</string>
   <string name="reset_gestures_dialog_title">รีเซ็ตท่าทางสัมผัสทั้งหมดไหม</string>
   <string name="reset_gestures_dialog_message">ระบบจะรีเซ็ตท่าทางสัมผัสแป้นพิมพ์อักษรเบรลล์ทั้งหมดเป็นค่าเริ่มต้น</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">รีเซ็ตเป็นค่าเริ่มต้น</string>
   <string name="custom_gestures_dialog_remove_button">นำท่าทางสัมผัสออก</string>
   <string name="change_gestures_dialog_message_title">วิธีเปลี่ยนท่าทางสัมผัส</string>
-  <string name="change_gestures_dialog_message">ในหน้าจอถัดไป แป้นพิมพ์อักษรเบรลล์จะเปิดขึ้น และคุณจะใช้ท่าทางสัมผัสของ TalkBack ไม่ได้\n\nเมื่อแป้นพิมพ์อักษรเบรลล์เปิดขึ้น ให้ทำท่าทางสัมผัสที่ต้องการใช้ หรือหากต้องการปิดแป้นพิมพ์อักษรเบรลล์และยกเลิกการเปลี่ยนท่าทางสัมผัส ให้ใช้ 2 นิ้วปัดลง\n\nดูท่าทางสัมผัสที่ใช้ได้\n</string>
+  <string name="change_gestures_dialog_message">ในหน้าจอถัดไป แป้นพิมพ์อักษรเบรลล์จะเปิดขึ้น และคุณจะใช้ท่าทางสัมผัสของ SandFly ไม่ได้\n\nเมื่อแป้นพิมพ์อักษรเบรลล์เปิดขึ้น ให้ทำท่าทางสัมผัสที่ต้องการใช้ หรือหากต้องการปิดแป้นพิมพ์อักษรเบรลล์และยกเลิกการเปลี่ยนท่าทางสัมผัส ให้ใช้ 2 นิ้วปัดลง\n\nดูท่าทางสัมผัสที่ใช้ได้\n</string>
   <string name="change_gestures_dialog_message_link">ดูท่าทางสัมผัสที่ใช้ได้</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ไม่ต้องแสดงข้อความนี้อีก</string>
   <string name="change_gestures_dialog_positive_button">ดำเนินการต่อ</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">ไม่ใช้</string>
   <string name="next_keyboard">แป้นพิมพ์ถัดไป</string>
   <string name="braille_tutorial_title">บทแนะนำแป้นพิมพ์อักษรเบรลล์</string>
-  <string name="tutorial_intro_description">แป้นพิมพ์อักษรเบรลล์ให้คุณแตะหน้าจอเพื่อป้อนอักษรเบรลล์แบบ 6 จุดได้\n\nคุณกำลังใช้ Unified English Braille หากต้องการเปลี่ยนภาษาที่พิมพ์ ให้ไปที่การตั้งค่า TalkBack\n\nคุณต้องถือและใช้โทรศัพท์ด้วยวิธีที่ต่างออกไปเพื่อพิมพ์อักษรเบรลล์</string>
+  <string name="tutorial_intro_description">แป้นพิมพ์อักษรเบรลล์ให้คุณแตะหน้าจอเพื่อป้อนอักษรเบรลล์แบบ 6 จุดได้\n\nคุณกำลังใช้ Unified English Braille หากต้องการเปลี่ยนภาษาที่พิมพ์ ให้ไปที่การตั้งค่า SandFly\n\nคุณต้องถือและใช้โทรศัพท์ด้วยวิธีที่ต่างออกไปเพื่อพิมพ์อักษรเบรลล์</string>
   <string name="next_step">ถัดไป</string>
   <string name="leave_keyboard">ออกจากแป้นพิมพ์อักษรเบรลล์</string>
-  <string name="hold_six_fingers_description">คุณจะใช้ท่าทางสัมผัส TalkBack ตามปกติกับแป้นพิมพ์อักษรเบรลล์ไม่ได้\n\nเริ่มต้นใช้งานด้วยการตั้งค่าตำแหน่งของจุดอักษรเบรลล์ 6 จุดเมื่อคุณพิมพ์</string>
-  <string name="rotate_orientation_description_1">เริ่มแล้ว คุณจะใช้ท่าทางสัมผัส TalkBack ตามปกติไม่ได้ TalkBack จะใช้ไม่ได้ขณะใช้แป้นพิมพ์อักษรเบรลล์</string>
+  <string name="hold_six_fingers_description">คุณจะใช้ท่าทางสัมผัส SandFly ตามปกติกับแป้นพิมพ์อักษรเบรลล์ไม่ได้\n\nเริ่มต้นใช้งานด้วยการตั้งค่าตำแหน่งของจุดอักษรเบรลล์ 6 จุดเมื่อคุณพิมพ์</string>
+  <string name="rotate_orientation_description_1">เริ่มแล้ว คุณจะใช้ท่าทางสัมผัส SandFly ตามปกติไม่ได้ SandFly จะใช้ไม่ได้ขณะใช้แป้นพิมพ์อักษรเบรลล์</string>
   <string name="rotate_orientation_description_2">ในการเริ่มต้น ให้ถือโทรศัพท์แบบนี้โดยหันหน้าจอออกจากตัวคุณ</string>
   <string name="tap_to_continue">แตะสองครั้งที่ใดก็ได้เพื่อดำเนินการต่อ</string>
   <string name="instruction_type_letter_a">ใช้นิ้วชี้ซ้ายแตะจุด 1 เพื่อพิมพ์ตัวอักษร \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ย้ายเคอร์เซอร์ไปข้างหน้าแล้ว</string>
   <string name="result_swipe_down_2_fingers">ซ่อนแป้นพิมพ์</string>
   <string name="result_swipe_down_3_fingers">แป้นพิมพ์ถัดไป</string>
-  <string name="rotate_orientation_announcement">เริ่มแล้ว คุณจะใช้ท่าทางสัมผัส TalkBack ตามปกติไม่ได้ TalkBack จะใช้ไม่ได้ขณะใช้แป้นพิมพ์อักษรเบรลล์\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">เริ่มแล้ว คุณจะใช้ท่าทางสัมผัส SandFly ตามปกติไม่ได้ SandFly จะใช้ไม่ได้ขณะใช้แป้นพิมพ์อักษรเบรลล์\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">ก่อนอื่น ให้ถือโทรศัพท์โดยหันหน้าจอออกจากตัว\n\nแล้วเอียงโทรศัพท์ให้อยู่ในแนวนอน ควรใช้ทั้งสองมือจับปลายด้านซ้ายและขวาของโทรศัพท์ให้มั่นคง ควรใช้มือขวาจับปลายด้านที่มีพอร์ต USB วางนิ้วชี้ นิ้วกลาง และนิ้วนางทั้ง 3 นิ้วบนหน้าจอและใช้นิ้วก้อยและนิ้วโป้งประคองโทรศัพท์ไว้\n\nเมื่อพร้อมแล้ว ให้แตะหน้าจอสองครั้งเพื่อดำเนินการต่อ\n\nหากต้องการออกจากแป้นพิมพ์อักษรเบรลล์ ให้ใช้ 3 นิ้วเลื่อนลงไปทางพื้นด้านล่าง วิธีนี้เป็นการเปลี่ยนกลับไปใช้แป้นพิมพ์เดิมของคุณ</string>
   <string name="rotate_orientation_continue_announcement">โทรศัพท์อยู่ในแนวตั้ง ดำเนินการต่อด้วยการเอียงโทรศัพท์ให้อยู่ในแนวนอนโดยที่ด้านยาวอยู่ด้านล่าง แล้วหันหน้าจอออกจากตัวคุณ เมื่อพร้อมแล้ว ให้แตะหน้าจอสองครั้งเพื่อดำเนินการต่อ</string>
   <string name="type_letter_a_announcement">ให้หน้าจอหันออกจากตัว ใช้มือทั้งสองจับปลายด้านซ้ายและขวาของโทรศัพท์โดยให้นิ้วชี้ นิ้วกลาง และนิ้วนางของมือแต่ละข้างแตะหน้าจอได้\n\nนิ้วชี้ซ้ายควรอยู่ที่จุด 1 ตอนนี้ให้แตะจุด 1 เพื่อพิมพ์ตัวอักษร “A”</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">หากต้องการเปลี่ยนไปใช้แป้นพิมพ์อื่น ให้ใช้ 3 นิ้วเลื่อนลง ลองเลย</string>
   <string name="swipe_down_3_fingers_completed_announcement">แป้นพิมพ์ถัดไป โดยปกติวิธีนี้จะเป็นการเปลี่ยนไปใช้แป้นพิมพ์ถัดไป คราวนี้คุณอยู่ในแป้นพิมพ์อักษรเบรลล์เพราะคุณยังอยู่ในบทแนะนำ</string>
   <string name="swipe_up_3_fingers_announcement">คุณพิมพ์ในโหมดบนโต๊ะโดยวางโทรศัพท์ราบลงบนโต๊ะได้ด้วย หากต้องการจบบทแนะนำ ให้ใช้ 3 นิ้วเลื่อนขึ้นแล้วหาตัวเลือกจบบทแนะนำ</string>
-  <string name="open_context_menu_announcement">เมนูตัวเลือกเปิดอยู่ พลิกโทรศัพท์กลับมาโดยให้หันเข้าหาตัวและถือไว้ตามปกติ ตอนนี้คุณจะใช้ท่าทางสัมผัสของ TalkBack เพื่อไปยังส่วนต่างๆ ได้ตามปกติ เลื่อนไปทางขวาเพื่อดูตัวเลือกเพิ่มเติม</string>
+  <string name="open_context_menu_announcement">เมนูตัวเลือกเปิดอยู่ พลิกโทรศัพท์กลับมาโดยให้หันเข้าหาตัวและถือไว้ตามปกติ ตอนนี้คุณจะใช้ท่าทางสัมผัสของ SandFly เพื่อไปยังส่วนต่างๆ ได้ตามปกติ เลื่อนไปทางขวาเพื่อดูตัวเลือกเพิ่มเติม</string>
   <string name="hold_six_fingers_announcement">%s\nวางอุปกรณ์ราบลงบนโต๊ะ จากนั้นใช้นิ้วชี้ นิ้วกลาง และนิ้วนางของมือแต่ละข้างแตะหน้าจอค้างไว้ในตำแหน่งที่คุณพิมพ์ได้ถนัด</string>
   <string name="hold_six_fingers_inactive_announcement">วางอุปกรณ์ราบลงบนโต๊ะ จากนั้นใช้นิ้วชี้ นิ้วกลาง และนิ้วนางของมือแต่ละข้างแตะหน้าจอค้างไว้ในตำแหน่งที่คุณพิมพ์ได้ถนัด</string>
   <string name="finish_tutorial_announcement">การแสดงแป้นพิมพ์อักษรเบรลล์ ถือโทรศัพท์โดยหันหน้าจอออกจากตัว เอียงโทรศัพท์ให้อยู่ในแนวนอน แล้วเริ่มพิมพ์</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ท่าทางสัมผัสนี้ใช้สำหรับ \"%1$s\" และเปลี่ยนแปลงไม่ได้ ลองใช้ท่าทางสัมผัสอื่น %2$s</string>
   <string name="custom_gesture_cannot_used">ใช้ท่าทางสัมผัสนี้ไม่ได้</string>
   <string name="custom_gesture_no_gesture">ไม่ได้ทำท่าทางสัมผัส</string>
-  <string name="custom_gesture_try_another">ลองใช้ท่าทางสัมผัสอื่น หากต้องการดูรายการท่าทางสัมผัสทั้งหมดที่ใช้ได้ ให้ไปที่ศูนย์ช่วยเหลือแป้นพิมพ์อักษรเบรลล์ของ TalkBack %s</string>
+  <string name="custom_gesture_try_another">ลองใช้ท่าทางสัมผัสอื่น หากต้องการดูรายการท่าทางสัมผัสทั้งหมดที่ใช้ได้ ให้ไปที่ศูนย์ช่วยเหลือแป้นพิมพ์อักษรเบรลล์ของ SandFly <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">ท่าทางสัมผัสไม่ตรงกัน</string>
   <string name="custom_gesture_perform_again">ทำท่าทางสัมผัสที่ต้องการใช้อีกครั้ง %s</string>
+    <string name="tabletop_port_left_announcement">โหมดตั้งโต๊ะ พอร์ตชาร์จอยู่ด้านซ้าย</string>
+    <string name="tabletop_port_right_announcement">โหมดตั้งโต๊ะ พอร์ตชาร์จทางด้านขวา</string>
+    <string name="screen_away_port_right_announcement">โหมด Screen Away พอร์ตชาร์จอยู่ทางด้านขวา</string>
+    <string name="screen_away_port_left_announcement">โหมด Screen Away พอร์ตชาร์จอยู่ด้านซ้าย</string>
+    <string name="screen_toward_announcement">หน้าจอเข้าหาคุณ</string>
+    <string name="screen_toward_port_left_announcement">หน้าจอเข้าหาตัวคุณ พอร์ตชาร์จอยู่ด้านซ้าย</string>
+    <string name="screen_toward_port_right_announcement">หน้าจอเข้าหาตัวคุณ พอร์ตชาร์จอยู่ทางด้านขวา</string>
+    <string name="screen_toward_port_down_announcement">หน้าจอเข้าหาตัวคุณ โดยพอร์ตชาร์จชี้ลง</string>
+    <string name="screen_toward_port_up_announcement">หน้าจอหันไปหาคุณ โดยพอร์ตชาร์จชี้ขึ้น</string>
+    <string name="port_right_announcement">พอร์ตชาร์จอยู่ทางด้านขวา</string>
+    <string name="port_left_announcement">พอร์ตชาร์จอยู่ด้านซ้าย</string>
+    <string name="tabletop_port_near_announcement">โหมดโต๊ะ ชาร์จพอร์ตเข้าหาคุณ</string>
+    <string name="tabletop_port_far_announcement">โหมดตั้งโต๊ะ พอร์ตชาร์จอยู่ห่างจากคุณ</string>
+    <string name="screen_away_port_down_announcement">โหมดไม่อยู่หน้าจอ พอร์ตชาร์จชี้ลง</string>
+    <string name="screen_away_port_up_announcement">โหมดไม่อยู่หน้าจอ พอร์ตการชาร์จชี้ขึ้น</string>
+    <string name="port_near_announcement">พอร์ตชาร์จเข้าหาคุณ</string>
+    <string name="port_far_announcement">พอร์ตชาร์จอยู่ห่างจากคุณ</string>
+    <string name="port_down_announcement">พอร์ตชาร์จชี้ลง</string>
+    <string name="port_up_announcement">พอร์ตชาร์จชี้ขึ้น</string>
+    <string name="orientation_locked_announcement">การวางแนวถูกล็อค</string>
+    <string name="orientation_locked_port_announcement">การวางแนวถูกล็อค %1$s</string>
+    <string name="orientation_unlocked_announcement">ปลดล็อคการวางแนวแล้ว</string>
+    <string name="switch_to_language_contracted_announcement">เปลี่ยนไปใช้ %s แล้ว, อักษรเบรลล์แบบย่อ</string>
+    <string name="switch_to_language_uncontracted_announcement">เปลี่ยนไปใช้ %s แล้ว, อักษรเบรลล์แบบไม่ย่อ</string>
+    <string name="title_pref_flip_dots_vertically">สลับจุดบนและล่าง</string>
+    <string name="summary_pref_flip_dots_vertically">จุด 1 แลกตำแหน่งกับจุด 3 และจุด 4 กับจุด 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">แท็บเล็ตเงยหน้าขึ้น</string>
+    <string name="summary_pref_tablet_held_up_faces_away">เมื่อปิดเครื่อง แท็บเล็ตหรือโทรศัพท์ที่กางออกจะใช้เค้าโครงโต๊ะหันเข้าหาคุณ</string>
+    <string name="title_pref_typing_sounds">เสียงการพิมพ์</string>
+    <string name="summary_pref_typing_sounds">เล่นการคลิกแป้นพิมพ์เมื่อคุณพิมพ์อักขระ ช่องว่าง ขึ้นบรรทัดใหม่ หรือลบ</string>
+    <string name="skip_tutorial">ข้ามบทช่วยสอน</string>
 </resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini คีย์ API</string>
+    <string name="summary_pref_gemini_api_key_built_in">การใช้คีย์ที่มีอยู่ในแอปนี้</string>
+    <string name="gemini_api_key_dialog_message">รับคีย์ API ฟรีจาก Google AI Studio ที่ aistudio.google.com/apikey แล้ววางที่นี่ หากต้องการนำกุญแจออก ให้ล้างช่องและบันทึก\n\nภาพและหน้าจอที่คุณอธิบายจะถูกส่งไปยัง Google ในระดับฟรี Google สามารถใช้สิ่งเหล่านี้เพื่อปรับปรุงผลิตภัณฑ์ของตนได้</string>
+    <string name="gemini_api_key_hint">คีย์เอพีไอ</string>
+    <string name="gemini_api_key_save">บันทึก</string>
+    <string name="gemini_api_key_get">รับกุญแจ</string>
+    <string name="title_pref_gemini_model">Gemini รุ่น</string>
+    <string name="gemini_model_automatic">อัตโนมัติ</string>
+    <string name="summary_pref_gemini_model_automatic">อัตโนมัติ: Gemini Flash จากนั้น Flash-Lite เมื่อ Flash ไม่ว่าง</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> ตามด้วย Flash-Lite เมื่องานไม่ว่าง</string>
+    <string name="gemini_model_loading">กำลังรับโมเดล...</string>
+    <string name="gemini_model_list_failed">ไม่สามารถรับโมเดลได้: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">ตั้งค่าคีย์ API Gemini ก่อน</string>
+    <string name="gemini_api_terms_link">Gemini ข้อกำหนดในการให้บริการเพิ่มเติมของ API</string>
+    <string name="ai_service_address_hint">ที่อยู่ เช่น https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">รุ่น</string>
+    <string name="ai_service_address_invalid">ที่อยู่ต้องขึ้นต้นด้วย https://. ไม่มีการบันทึกอะไรเลย</string>
+    <string name="dialog_message_ai_service_consent">รูปภาพและภาพหน้าจอจะถูกส่งไปยัง <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> เพื่ออธิบาย ซึ่งใช้เวลาหลายวินาที เป็นไปตามข้อกำหนดและนโยบายความเป็นส่วนตัวของตนเอง Generative AI อยู่ระหว่างการทดลอง ดังนั้นมันจะเกิดข้อผิดพลาด</string>
+    <string name="ai_service_error_api_key">บริการ AI ไม่ยอมรับคีย์ API ตรวจสอบการตั้งค่าในคำอธิบายอัตโนมัติ</string>
+    <string name="ai_service_error_quota">ถึงขีดจำกัดการใช้งานบริการ AI แล้ว ลองอีกครั้งในภายหลัง</string>
+    <string name="ai_service_error_busy">บริการ AI ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>
+    <string name="ai_service_error_timeout">บริการ AI ใช้เวลาตอบนานเกินไป ลองอีกครั้ง</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">ไม่มี</string>
+    <string name="ai_service_not_set_up">ไม่มีการใช้บริการ AI ตั้งค่าหนึ่งหรือเลือกหนึ่งรายการในการตั้งค่าคำอธิบายอัตโนมัติ</string>
+    <string name="ai_provider_none_set_up">ไม่มีการตั้งค่าบริการ AI ตั้งค่าหนึ่งในการตั้งค่าด้านล่าง</string>
+    <string name="ai_provider_other">บริการอื่นๆ</string>
+    <string name="title_pref_category_ai_services">บริการเอไอ</string>
+    <string name="title_pref_ai_provider">บริการเอไอ</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> การตั้งค่า</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> ไม่ได้ตั้งค่า</string>
+    <string name="ai_provider_in_use">ในการใช้งาน</string>
+    <string name="ai_provider_not_set_up">ไม่ได้ตั้งค่า</string>
+    <string name="ai_provider_not_ready">เลือกรุ่นก่อน</string>
+    <string name="ai_provider_address">ที่อยู่</string>
+    <string name="ai_provider_address_message">ที่อยู่ของบริการที่มี API การแชทที่เข้ากันได้กับ OpenAI และการป้อนรูปภาพ เช่น https://example.com/v1.</string>
+    <string name="ai_provider_not_set">ไม่ได้ตั้งค่า</string>
+    <string name="ai_provider_set">กำหนดค่าแล้ว</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> คีย์ API</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> รุ่น</string>
+    <string name="ai_provider_choose_model">ไม่ได้ถูกเลือก</string>
+    <string name="ai_provider_key_message">วางคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ของคุณ หากต้องการลบออก ให้ล้างฟิลด์และบันทึก รูปภาพและหน้าจอที่คุณอธิบายจะถูกส่งไปยัง <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_key">ตั้งค่าคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ก่อน</string>
+    <string name="ai_provider_needs_address">ตั้งค่าที่อยู่ก่อน</string>
+    <string name="ai_provider_enter_model">ป้อนชื่อรุ่น</string>
+</resources>
