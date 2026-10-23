@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ</string>
+  <string name="braille_ime_service_name">SandFly ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ</string>
   <string name="braille_ime_bd_mode_name">ਬਰੇਲ ਡਿਸਪਲੇ ਇਨਪੁੱਟ</string>
   <string name="switch_to_tabletop_announcement">ਟੇਬਲਟਾਪ ਮੋਡ। ਆਪਣੇ ਡੀਵਾਈਸ ਨੂੰ ਚਾਰਜਿੰਗ ਪੋਰਟ ਦੇ ਖੱਬੇ ਪਾਸੇ ਵੱਲ ਰੱਖੋ।</string>
   <string name="calibration_tip_announcement">ਬਿੰਦੂ ਦੀ ਸਥਿਤੀ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਲਈ, %d ਉਂਗਲਾਂ ਨੂੰ ਸਕ੍ਰੀਨ \'ਤੇ ਰੱਖੋ।</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">ਵਿਸਤ੍ਰਿਤ ਬਰੇਲ ਲਿਪੀ \'ਤੇ ਬਦਲਿਆ ਗਿਆ</string>
   <string name="braille_ime_displayed_name">ਬਰੇਲ ਕੀ-ਬੋਰਡ</string>
   <string name="multiple_languages_braille_ime_displayed_name">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ, %s</string>
-  <string name="input_view_caption">TalkBack ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ - ਮਦਦ ਲਈ, g.co/help/braille \'ਤੇ ਜਾਓ</string>
+  <string name="input_view_caption">SandFly ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ - ਮਦਦ ਲਈ, g.co/help/braille \'ਤੇ ਜਾਓ</string>
   <string name="perform_action_next">ਅੱਗੇ</string>
   <string name="perform_action_submitting">ਲਿਖਤ ਸਪੁਰਦ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ਬਿੰਦੂ ਦੀ ਸਥਿਤੀ ਨੂੰ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ। ਸਭ ਤੋਂ ਪਹਿਲਾਂ, ਚੱਲੋਂ ਤੁਹਾਡੇ %s ਦੇ ਬਿੰਦੂਆਂ ਨੂੰ ਕੈਲੀਬਰੇਟ ਕਰੀਏ।</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨਾਲ ਟਾਈਪ ਕਰਦੇ ਸਮੇਂ ਭਾਸ਼ਾ ਬਦਲਣ ਵਾਸਤੇ, 3 ਉਂਗਲਾਂ ਨਾਲ ਉੱਪਰ ਵੱਲ ਸਵਾਈਪ ਕਰੋ। ਫਿਰ \"ਅਗਲੀ ਭਾਸ਼ਾ \'ਤੇ ਸਵਿੱਚ ਕਰੋ\" ਨੂੰ ਚੁਣੋ।</string>
   <string name="title_pref_accumulate_presses">ਸਾਰੀਆਂ ਦੱਬੀਆਂ ਹੋਈਆਂ ਬਿੰਦੀਆਂ ਸ਼ਾਮਲ ਕਰੋ</string>
   <string name="summary_pref_accumulate_presses">ਹਰੇਕ ਦੱਬੀ ਹੋਈ ਬਿੰਦੀ ਇਨਪੁੱਟ ਦਾ ਹਿੱਸਾ ਹੁੰਦੀ ਹੈ, ਭਾਵੇਂ ਬਿੰਦੀ ਨੂੰ ਹੋਰ ਬਿੰਦੀਆਂ ਤੋਂ ਪਹਿਲਾਂ ਰਿਲੀਜ਼ ਕੀਤਾ ਜਾਵੇ</string>
-  <string name="title_pref_reverse_dots">ਬਿੰਦੀਆਂ ਉਲਟ ਕਰੋ</string>
-  <string name="summary_pref_reverse_dots">ਬਿੰਦੀ ਦੀਆਂ ਸਥਿਤੀਆਂ ਦੀ ਅਦਲਾ-ਬਦਲੀ ਕਰੋ, ਉਦਾਹਰਨ ਲਈ, ਬਿੰਦੀਆਂ 1 ਅਤੇ 4 ਦਾ ਆਪਸ ਵਿੱਚ ਜਗ੍ਹਾ ਬਦਲਣਾ</string>
+  <string name="title_pref_reverse_dots">ਖੱਬੇ ਅਤੇ ਸੱਜੇ ਬਿੰਦੀਆਂ ਨੂੰ ਸਵੈਪ ਕਰੋ</string>
+  <string name="summary_pref_reverse_dots">ਬਿੰਦੀਆਂ 1, 2, ਅਤੇ 3 ਬਿੰਦੀਆਂ 4, 5, ਅਤੇ 6 ਦੇ ਨਾਲ ਵਪਾਰਕ ਸਥਾਨ</string>
   <string name="bd_preference_braille_contracted">ਸੰਕੁਚਿਤ ਬਰੇਲ</string>
   <string name="bd_preference_braille_uncontracted">ਅਸੰਕੁਚਿਤ ਬਰੇਲ</string>
   <string name="context_menu_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਵਿਕਲਪ</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">ਕੀ-ਬੋਰਡ</string>
   <string name="not_enough_touch_points_dialog_title">ਤੁਹਾਡਾ ਡੀਵਾਈਸ ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ</string>
   <string name="not_enough_touch_points_dialog_message">ਤੁਹਾਡਾ ਡੀਵਾਈਸ ਲੋੜੀਂਦੇ ਸਪਰਸ਼ ਪੁਆਇੰਟਾਂ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ, ਆਪਣੇ ਡੀਵਾਈਸ ਨਿਰਮਾਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</string>
-  <string name="talkback_off_dialog_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਲਈ TalkBack ਚਾਲੂ ਕਰੋ</string>
+  <string name="talkback_off_dialog_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਲਈ SandFly ਚਾਲੂ ਕਰੋ</string>
   <string name="talkback_off_dialog_positive_button">ਪਹੁੰਚਯੋਗਤਾ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਚਾਲੂ ਕਰੋ</string>
-  <string name="talkback_suspend_dialog_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਲਈ TalkBack ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੋ</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack ਚਾਲੂ ਹੋਣ \'ਤੇ, ਤੁਸੀਂ ਬਰੇਲ ਲਿਪੀ ਚਿੰਨ੍ਹਾਂ ਨੂੰ ਦਾਖਲ ਕਰਨ ਲਈ ਆਪਣੀ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰ ਸਕਦੇ ਹੋ।</string>
-  <string name="talkback_off_custom_gestures_dialog_title">ਇਸ਼ਾਰਾ ਬਦਲਣ ਲਈ TalkBack ਚਾਲੂ ਕਰੋ</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ਬੰਦ ਹੈ। ਬਰੇਲ ਕੀ-ਬੋਰਡ ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਬਦਲਣ ਲਈ ਇਸਨੂੰ ਚਾਲੂ ਕਰੋ।</string>
+  <string name="talkback_suspend_dialog_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਲਈ SandFly ਨੂੰ ਮੁੜ-ਚਾਲੂ ਕਰੋ</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly ਚਾਲੂ ਹੋਣ \'ਤੇ, ਤੁਸੀਂ ਬਰੇਲ ਲਿਪੀ ਚਿੰਨ੍ਹਾਂ ਨੂੰ ਦਾਖਲ ਕਰਨ ਲਈ ਆਪਣੀ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰ ਸਕਦੇ ਹੋ।</string>
+  <string name="talkback_off_custom_gestures_dialog_title">ਇਸ਼ਾਰਾ ਬਦਲਣ ਲਈ SandFly ਚਾਲੂ ਕਰੋ</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ਬੰਦ ਹੈ। ਬਰੇਲ ਕੀ-ਬੋਰਡ ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਬਦਲਣ ਲਈ ਇਸਨੂੰ ਚਾਲੂ ਕਰੋ।</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾਓ</string>
   <string name="reset_gestures_dialog_title">ਕੀ ਸਾਰੇ ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਰੀਸੈੱਟ ਕਰਨਾ ਹੈ?</string>
   <string name="reset_gestures_dialog_message">ਸਾਰੇ ਬਰੇਲ ਕੀ-ਬੋਰਡ ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਪੂਰਵ-ਨਿਰਧਾਰਿਤ \'ਤੇ ਰੀਸੈੱਟ ਕੀਤਾ ਜਾਵੇਗਾ</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ਪੂਰਵ-ਨਿਰਧਾਰਿਤ \'ਤੇ ਰੀਸੈੱਟ ਕਰੋ</string>
   <string name="custom_gestures_dialog_remove_button">ਇਸ਼ਾਰਾ ਹਟਾਓ</string>
   <string name="change_gestures_dialog_message_title">ਇਸ਼ਾਰੇ ਨੂੰ ਬਦਲਣ ਦਾ ਤਰੀਕਾ</string>
-  <string name="change_gestures_dialog_message">ਅਗਲੀ ਸਕ੍ਰੀਨ \'ਤੇ, ਬਰੇਲ ਕੀ-ਬੋਰਡ ਖੁੱਲ੍ਹ ਜਾਵੇਗਾ ਅਤੇ ਤੁਸੀਂ TalkBack ਇਸ਼ਾਰਿਆਂ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਸਕੋਗੇ।\n\nਬਰੇਲ ਕੀ-ਬੋਰਡ ਖੁੱਲ੍ਹਣ \'ਤੇ, ਉਹ ਇਸ਼ਾਰਾ ਕਰੋ ਜੋ ਤੁਸੀਂ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਬਰੇਲ ਕੀ-ਬੋਰਡ ਨੂੰ ਬੰਦ ਕਰਨ ਅਤੇ ਇਸ਼ਾਰਾ ਬਦਲਣ ਦੀ ਪ੍ਰਕਿਰਿਆ ਰੱਦ ਕਰਨ ਲਈ, 2 ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।\n\nਉਪਲਬਧ ਇਸ਼ਾਰੇ ਦੇਖੋ\n</string>
+  <string name="change_gestures_dialog_message">ਅਗਲੀ ਸਕ੍ਰੀਨ \'ਤੇ, ਬਰੇਲ ਕੀ-ਬੋਰਡ ਖੁੱਲ੍ਹ ਜਾਵੇਗਾ ਅਤੇ ਤੁਸੀਂ SandFly ਇਸ਼ਾਰਿਆਂ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰ ਸਕੋਗੇ।\n\nਬਰੇਲ ਕੀ-ਬੋਰਡ ਖੁੱਲ੍ਹਣ \'ਤੇ, ਉਹ ਇਸ਼ਾਰਾ ਕਰੋ ਜੋ ਤੁਸੀਂ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਬਰੇਲ ਕੀ-ਬੋਰਡ ਨੂੰ ਬੰਦ ਕਰਨ ਅਤੇ ਇਸ਼ਾਰਾ ਬਦਲਣ ਦੀ ਪ੍ਰਕਿਰਿਆ ਰੱਦ ਕਰਨ ਲਈ, 2 ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।\n\nਉਪਲਬਧ ਇਸ਼ਾਰੇ ਦੇਖੋ\n</string>
   <string name="change_gestures_dialog_message_link">ਉਪਲਬਧ ਇਸ਼ਾਰੇ ਦੇਖੋ</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ਇਹ ਸੁਨੇਹਾ ਦੁਬਾਰਾ ਨਾ ਦਿਖਾਓ</string>
   <string name="change_gestures_dialog_positive_button">ਜਾਰੀ ਰੱਖੋ</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">ਵਰਤੋਂ ਨਾ ਕਰੋ</string>
   <string name="next_keyboard">ਅਗਲਾ ਕੀ-ਬੋਰਡ</string>
   <string name="braille_tutorial_title">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਟਿਊਟੋਰੀਅਲ</string>
-  <string name="tutorial_intro_description">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨਾਲ, 6-ਬਿੰਦੂਆਂ ਵਾਲੀ ਬਰੇਲ ਲਿਪੀ ਦਾਖਲ ਕਰਨ ਲਈ ਤੁਸੀਂ ਆਪਣੀ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰ ਸਕਦੇ ਹੋ।\n\nਤੁਸੀਂ ਏਕੀਕ੍ਰਿਤ ਅੰਗਰੇਜ਼ੀ ਬਰੇਲ ਲਿਪੀ ਵਰਤ ਰਹੇ ਹੋ। ਆਪਣੀ ਟਾਈਪ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਭਾਸ਼ਾ ਬਦਲਣ ਲਈ, TalkBack ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾਓ।\n\nਬਰੇਲ ਲਿਪੀ ਟਾਈਪ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਵੱਖਰੇ ਢੰਗ ਨਾਲ ਫੜਨਾ ਅਤੇ ਵਰਤਣਾ ਪਵੇਗਾ।</string>
+  <string name="tutorial_intro_description">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨਾਲ, 6-ਬਿੰਦੂਆਂ ਵਾਲੀ ਬਰੇਲ ਲਿਪੀ ਦਾਖਲ ਕਰਨ ਲਈ ਤੁਸੀਂ ਆਪਣੀ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰ ਸਕਦੇ ਹੋ।\n\nਤੁਸੀਂ ਏਕੀਕ੍ਰਿਤ ਅੰਗਰੇਜ਼ੀ ਬਰੇਲ ਲਿਪੀ ਵਰਤ ਰਹੇ ਹੋ। ਆਪਣੀ ਟਾਈਪ ਕੀਤੀ ਜਾਣ ਵਾਲੀ ਭਾਸ਼ਾ ਬਦਲਣ ਲਈ, SandFly ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾਓ।\n\nਬਰੇਲ ਲਿਪੀ ਟਾਈਪ ਕਰਨ ਲਈ, ਤੁਹਾਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਵੱਖਰੇ ਢੰਗ ਨਾਲ ਫੜਨਾ ਅਤੇ ਵਰਤਣਾ ਪਵੇਗਾ।</string>
   <string name="next_step">ਅੱਗੇ</string>
   <string name="leave_keyboard">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਛੱਡੋ</string>
-  <string name="hold_six_fingers_description">ਤੁਸੀਂ ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਵਿੱਚ ਆਮ TalkBack ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ।\n\nਸ਼ੁਰੂ ਕਰਨ ਲਈ, ਚਲੋ ਤੁਹਾਡੇ ਵੱਲੋਂ ਟਾਈਪ ਕਰਨ ਵੇਲੇ 6 ਬਰੇਲ ਲਿਪੀ ਬਿੰਦੂਆਂ ਦੀ ਸਥਿਤੀਆਂ ਦਾ ਸੈੱਟਅੱਪ ਕਰੀਏ।</string>
-  <string name="rotate_orientation_description_1">ਹੁਣ ਤੋਂ, ਤੁਸੀਂ ਆਮ TalkBack ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ। ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਵੇਲੇ TalkBack ਉਪਲਬਧ ਨਹੀਂ ਹੁੰਦਾ।</string>
+  <string name="hold_six_fingers_description">ਤੁਸੀਂ ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਵਿੱਚ ਆਮ SandFly ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ।\n\nਸ਼ੁਰੂ ਕਰਨ ਲਈ, ਚਲੋ ਤੁਹਾਡੇ ਵੱਲੋਂ ਟਾਈਪ ਕਰਨ ਵੇਲੇ 6 ਬਰੇਲ ਲਿਪੀ ਬਿੰਦੂਆਂ ਦੀ ਸਥਿਤੀਆਂ ਦਾ ਸੈੱਟਅੱਪ ਕਰੀਏ।</string>
+  <string name="rotate_orientation_description_1">ਹੁਣ ਤੋਂ, ਤੁਸੀਂ ਆਮ SandFly ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ। ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਵੇਲੇ SandFly ਉਪਲਬਧ ਨਹੀਂ ਹੁੰਦਾ।</string>
   <string name="rotate_orientation_description_2">ਸ਼ੁਰੂ ਕਰਨ ਲਈ, ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਫੜੋ ਕਿ ਸਕ੍ਰੀਨ ਤੁਹਾਡੇ ਤੋਂ ਪਰ੍ਹਾਂ ਹੋਵੇ।</string>
   <string name="tap_to_continue">ਜਾਰੀ ਰੱਖਣ ਲਈ ਕਿਤੇ ਵੀ ਡਬਲ ਟੈਪ ਕਰੋ</string>
   <string name="instruction_type_letter_a">ਆਪਣੀ ਖੱਬੀ ਤਰਜਨੀ ਉਂਗਲ ਨਾਲ \"A\" ਅੱਖਰ ਟਾਈਪ ਕਰਨ ਲਈ ਬਿੰਦੂ 1 \'ਤੇ ਟੈਪ ਕਰੋ</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ਕਰਸਰ ਨੂੰ ਅੱਗੇ ਵੱਲ ਲਿਜਾਇਆ ਗਿਆ</string>
   <string name="result_swipe_down_2_fingers">ਕੀ-ਬੋਰਡ ਲੁਕਾਓ</string>
   <string name="result_swipe_down_3_fingers">ਅਗਲਾ ਕੀ-ਬੋਰਡ</string>
-  <string name="rotate_orientation_announcement">ਹੁਣ ਤੋਂ, ਤੁਸੀਂ ਆਮ TalkBack ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ। ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਵੇਲੇ TalkBack ਉਪਲਬਧ ਨਹੀਂ ਹੁੰਦਾ।\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">ਹੁਣ ਤੋਂ, ਤੁਸੀਂ ਆਮ SandFly ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਨਹੀਂ ਸਕੋਗੇ। ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਨੂੰ ਵਰਤਣ ਵੇਲੇ SandFly ਉਪਲਬਧ ਨਹੀਂ ਹੁੰਦਾ।\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">ਪਹਿਲਾਂ, ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਘੁਮਾਓ ਕਿ ਸਕ੍ਰੀਨ ਤੁਹਾਡੇ ਤੋਂ ਪਰ੍ਹਾਂ ਹੋਵੇ।\n\nਇਸ ਤੋਂ ਬਾਅਦ, ਫ਼ੋਨ ਨੂੰ ਲੇਟਵੀਂ ਤੋਂ ਲੈਂਡਸਕੇਪ ਸਥਿਤੀ ਵਿੱਚ ਘੁਮਾਓ। ਫ਼ੋਨ ਨੂੰ ਆਪਣੀਆਂ ਉਂਗਲਾਂ ਨਾਲ ਕਿਨਾਰਿਆਂ ਤੋਂ ਫੜ ਕੇ ਰੱਖੋ। USB ਪੋਰਟ ਵਾਲੀ ਜਗ੍ਹਾ ਦੇ ਕਿਨਾਰੇ ਨੂੰ ਆਪਣੇ ਸੱਜੇ ਹੱਥ ਨਾਲ ਫੜ ਕੇ ਰੱਖੋ। ਬਾਕੀ ਦੀਆਂ 3 ਉਂਗਲਾਂ ਸਕ੍ਰੀਨ \'ਤੇ ਰੱਖੋ, ਅਤੇ ਆਪਣੀ ਛੋਟੀ ਉਂਗਲੀ ਅਤੇ ਅੰਗੂਠੇ ਨਾਲ ਫ਼ੋਨ ਨੂੰ ਫੜ ਕੇ ਰੱਖੋ।\n\nਜਦੋਂ ਤੁਸੀਂ ਤਿਆਰ ਹੋਵੋ, ਤਾਂ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਕ੍ਰੀਨ \'ਤੇ ਡਬਲ ਟੈਪ ਕਰੋ।\n\nਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਤੋਂ ਬਾਹਰ ਜਾਣ ਲਈ, 3 ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ। ਇੰਝ ਤੁਸੀਂ ਆਪਣੇ ਮੂਲ ਕੀ-ਬੋਰਡ \'ਤੇ ਵਾਪਸ ਆ ਜਾਵੋਗੇ।</string>
   <string name="rotate_orientation_continue_announcement">ਤੁਹਾਡਾ ਫ਼ੋਨ ਖੜ੍ਹਵੀਂ ਸਥਿਤੀ ਵਿੱਚ ਹੈ। ਜਾਰੀ ਰੱਖਣ ਲਈ, ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਲੇਟਵੀਂ ਸਥਿਤੀ ਵਿੱਚ ਘੁਮਾਓ ਤਾਂ ਜੋ ਲੰਬਾ ਪਾਸਾ ਹੇਠਾਂ ਵੱਲ ਹੋਵੇ। ਫਿਰ ਫ਼ੋਨ ਨੂੰ ਘੁਮਾਓ ਕਿ ਸਕ੍ਰੀਨ ਤੁਹਾਡੇ ਤੋਂ ਪਰ੍ਹਾਂ ਹੋਵੇ। ਜਦੋਂ ਤੁਸੀਂ ਤਿਆਰ ਹੋਵੋ, ਤਾਂ ਜਾਰੀ ਰੱਖਣ ਲਈ ਸਕ੍ਰੀਨ \'ਤੇ ਡਬਲ ਟੈਪ ਕਰੋ।</string>
   <string name="type_letter_a_announcement">ਸਕ੍ਰੀਨ ਨੂੰ ਖੁਦ ਤੋਂ ਪਰ੍ਹਾਂ ਰੱਖੋ। ਫ਼ੋਨ ਦੇ ਛੋਟੇ ਕਿਨਾਰਿਆਂ ਤੋਂ, ਫ਼ੋਨ ਨੂੰ ਦੋਵਾਂ ਹੱਥਾਂ ਵਿੱਚ ਫੜ ਕੇ ਰੱਖੋ, ਤਾਂ ਕਿ ਦੋਵਾਂ ਹੱਥਾਂ ਦੀਆਂ ਵਿਚਕਾਰਲੀਆਂ ਉਂਗਲਾਂ ਸਕ੍ਰੀਨ \'ਤੇ ਸਪਰਸ਼ ਕਰ ਸਕਣ\n\nਤੁਹਾਡੀ ਖੱਬੀ ਤਰਜਨੀ ਉਂਗਲ ਬਿੰਦੂ 1 \'ਤੇ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ। ਹੁਣ, “A” ਅੱਖਰ ਟਾਈਪ ਕਰਨ ਲਈ ਬਿੰਦੂ 1 \'ਤੇ ਟੈਪ ਕਰੋ।</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">ਤੁਹਾਡੇ ਦੂਜੇ ਕੀ-ਬੋਰਡ \'ਤੇ ਜਾਣ ਲਈ, 3 ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ। ਹੁਣੇ ਵਰਤ ਕੇ ਦੇਖੋ।</string>
   <string name="swipe_down_3_fingers_completed_announcement">ਅਗਲਾ ਕੀ-ਬੋਰਡ। ਆਮ ਤੌਰ \'ਤੇ, ਇੰਝ ਕਰਨ ਤੁਸੀਂ ਅਗਲੇ ਕੀ-ਬੋਰਡ \'ਤੇ ਚਲੇ ਜਾਵੋਗੇ। ਇਸ ਸਮੇਂ, ਤੁਸੀਂ ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਵਿੱਚ ਰਹਿੰਦੇ ਹੋ ਕਿਉਂਕਿ ਤੁਸੀਂ ਹਾਲੇ ਵੀ ਟਿਊਟੋਰੀਅਲ ਵਿੱਚ ਹੋ।</string>
   <string name="swipe_up_3_fingers_announcement">ਤੁਸੀਂ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਮੇਜ਼ \'ਤੇ ਸਿੱਧਾ ਰੱਖ ਕੇ ਵੀ ਟੇਬਲਟੌਪ ਮੋਡ ਵਿੱਚ ਟਾਈਪ ਕਰ ਸਕਦੇ ਹੋ। ਟਿਊਟੋਰੀਅਲ ਪੂਰਾ ਕਰਨ ਲਈ, 3 ਉਂਗਲਾਂ ਨਾਲ ਉੱਤੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ ਅਤੇ \'ਟਿਊਟੋਰੀਅਲ ਪੂਰਾ ਕਰੋ\' ਵਾਲਾ ਵਿਕਲਪ ਲੱਭੋ</string>
-  <string name="open_context_menu_announcement">ਵਿਕਲਪ ਮੀਨੂ ਖੁੱਲ੍ਹਾ ਹੈ। ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਪਲਟਾਓ ਤਾਂ ਕਿ ਇਹ ਤੁਹਾਡੇ ਸਾਹਮਣੇ ਹੋਵੇ ਅਤੇ ਇਸਨੂੰ ਆਮ ਵਾਂਗ ਫੜੋ। ਹੁਣ ਤੁਸੀਂ ਨੈਵੀਗੇਟ ਕਰਨ ਲਈ ਆਮ TalkBack ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਸਕਦੇ ਹੋ। ਹੋਰ ਵਿਕਲਪ ਦੇਖਣ ਲਈ ਸੱਜੇ ਪਾਸੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।</string>
+  <string name="open_context_menu_announcement">ਵਿਕਲਪ ਮੀਨੂ ਖੁੱਲ੍ਹਾ ਹੈ। ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਪਲਟਾਓ ਤਾਂ ਕਿ ਇਹ ਤੁਹਾਡੇ ਸਾਹਮਣੇ ਹੋਵੇ ਅਤੇ ਇਸਨੂੰ ਆਮ ਵਾਂਗ ਫੜੋ। ਹੁਣ ਤੁਸੀਂ ਨੈਵੀਗੇਟ ਕਰਨ ਲਈ ਆਮ SandFly ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਵਰਤ ਸਕਦੇ ਹੋ। ਹੋਰ ਵਿਕਲਪ ਦੇਖਣ ਲਈ ਸੱਜੇ ਪਾਸੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।</string>
   <string name="hold_six_fingers_announcement">%s\nਆਪਣੇ ਡੀਵਾਈਸ ਨੂੰ ਮੇਜ਼ \'ਤੇ ਸਿੱਧਾ ਰੱਖੋ। ਫਿਰ, ਹਰੇਕ ਹੱਥ ਦੀਆਂ ਵਿਚਕਾਰਲੀਆਂ 3 ਉਂਗਲਾਂ ਨਾਲ ਸਕ੍ਰੀਨ ਨੂੰ ਅਜਿਹੀ ਸਥਿਤੀ ਵਿੱਚ ਸਪਰਸ਼ ਕਰਕੇ ਦਬਾਈ ਰੱਖੋ ਜੋ ਤੁਹਾਡੇ ਲਈ ਟਾਈਪ ਕਰਨ ਵਾਸਤੇ ਆਰਾਮਦੇਹ ਹੋਵੇ।</string>
   <string name="hold_six_fingers_inactive_announcement">ਆਪਣੇ ਡੀਵਾਈਸ ਨੂੰ ਮੇਜ਼ \'ਤੇ ਸਿੱਧਾ ਰੱਖੋ। ਫਿਰ, ਹਰੇਕ ਹੱਥ ਦੀਆਂ ਵਿਚਕਾਰਲੀਆਂ 3 ਉਂਗਲਾਂ ਨਾਲ ਸਕ੍ਰੀਨ ਨੂੰ ਅਜਿਹੀ ਸਥਿਤੀ ਵਿੱਚ ਸਪਰਸ਼ ਕਰਕੇ ਦਬਾਈ ਰੱਖੋ ਜੋ ਤੁਹਾਡੇ ਲਈ ਟਾਈਪ ਕਰਨ ਵਾਸਤੇ ਆਰਾਮਦੇਹ ਹੋਵੇ।</string>
   <string name="finish_tutorial_announcement">ਬਰੇਲ ਲਿਪੀ ਕੀ-ਬੋਰਡ ਦਿਖਾਇਆ ਜਾ ਰਿਹਾ ਹੈ। ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਇਸ ਤਰ੍ਹਾਂ ਘੁਮਾਓ ਕਿ ਸਕ੍ਰੀਨ ਤੁਹਾਡੇ ਤੋਂ ਪਰ੍ਹਾਂ ਹੋਵੇ। ਫ਼ੋਨ ਨੂੰ ਲੇਟਵੇਂ ਰੂਪ ਵਿੱਚ ਲੈਂਡਸਕੇਪ ਸਥਿਤੀ ਵਿੱਚ ਘੁਮਾਓ। ਫਿਰ ਟਾਈਪ ਕਰਨਾ ਸ਼ੁਰੂ ਕਰੋ।</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ਇਹ ਇਸ਼ਾਰਾ \"%1$s\" ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ ਅਤੇ ਇਸਨੂੰ ਬਦਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ। ਕੋਈ ਹੋਰ ਇਸ਼ਾਰਾ ਅਜ਼ਮਾਓ। %2$s</string>
   <string name="custom_gesture_cannot_used">ਇਸ ਇਸ਼ਾਰੇ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕਦੀ</string>
   <string name="custom_gesture_no_gesture">ਕਿਸੇ ਇਸ਼ਾਰੇ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਗਈ</string>
-  <string name="custom_gesture_try_another">ਕੋਈ ਹੋਰ ਇਸ਼ਾਰਾ ਅਜ਼ਮਾਓ। ਸਾਰੇ ਉਪਲਬਧ ਇਸ਼ਾਰਿਆਂ ਦੀ ਸੂਚੀ ਦੇਖਣ ਲਈ, TalkBack ਬਰੇਲ ਕੀ-ਬੋਰਡ ਦੇ ਮਦਦ ਕੇਂਦਰ \'ਤੇ ਜਾਓ। %s</string>
+  <string name="custom_gesture_try_another">ਕੋਈ ਹੋਰ ਇਸ਼ਾਰਾ ਅਜ਼ਮਾਓ। ਸਾਰੇ ਉਪਲਬਧ ਇਸ਼ਾਰਿਆਂ ਦੀ ਸੂਚੀ ਦੇਖਣ ਲਈ, SandFly ਬਰੇਲ ਕੀ-ਬੋਰਡ ਦੇ ਮਦਦ ਕੇਂਦਰ \'ਤੇ ਜਾਓ। <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">ਇਸ਼ਾਰੇ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ</string>
   <string name="custom_gesture_perform_again">ਉਹ ਇਸ਼ਾਰਾ ਕਰੋ, ਜਿਸਨੂੰ ਤੁਸੀਂ ਦੁਬਾਰਾ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ। %s</string>
+    <string name="tabletop_port_left_announcement">ਟੈਬਲੇਟ ਮੋਡ, ਖੱਬੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="tabletop_port_right_announcement">ਟੈਬਲੇਟ ਮੋਡ, ਸੱਜੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="screen_away_port_right_announcement">ਸਕ੍ਰੀਨ-ਅਵੇ ਮੋਡ, ਸੱਜੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="screen_away_port_left_announcement">ਸਕ੍ਰੀਨ-ਅਵੇ ਮੋਡ, ਖੱਬੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="screen_toward_announcement">ਤੁਹਾਡੇ ਵੱਲ ਸਕ੍ਰੀਨ</string>
+    <string name="screen_toward_port_left_announcement">ਤੁਹਾਡੇ ਵੱਲ ਸਕ੍ਰੀਨ, ਖੱਬੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="screen_toward_port_right_announcement">ਤੁਹਾਡੇ ਵੱਲ ਸਕ੍ਰੀਨ, ਸੱਜੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="screen_toward_port_down_announcement">ਤੁਹਾਡੇ ਵੱਲ ਸਕ੍ਰੀਨ, ਚਾਰਜਿੰਗ ਪੋਰਟ ਹੇਠਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ</string>
+    <string name="screen_toward_port_up_announcement">ਤੁਹਾਡੇ ਵੱਲ ਸਕਰੀਨ, ਚਾਰਜਿੰਗ ਪੋਰਟ ਵੱਲ ਪੁਆਇੰਟਿੰਗ</string>
+    <string name="port_right_announcement">ਸੱਜੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="port_left_announcement">ਖੱਬੇ ਪਾਸੇ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="tabletop_port_near_announcement">ਟੈਬਲੇਟ ਮੋਡ, ਤੁਹਾਡੇ ਵੱਲ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="tabletop_port_far_announcement">ਟੈਬਲੇਟ ਮੋਡ, ਚਾਰਜਿੰਗ ਪੋਰਟ ਤੁਹਾਡੇ ਤੋਂ ਦੂਰ ਹੈ</string>
+    <string name="screen_away_port_down_announcement">ਸਕ੍ਰੀਨ-ਅਵੇ ਮੋਡ, ਚਾਰਜਿੰਗ ਪੋਰਟ ਹੇਠਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ</string>
+    <string name="screen_away_port_up_announcement">ਸਕ੍ਰੀਨ-ਅਵੇ ਮੋਡ, ਚਾਰਜਿੰਗ ਪੋਰਟ ਪੁਆਇੰਟਿੰਗ ਅੱਪ</string>
+    <string name="port_near_announcement">ਤੁਹਾਡੇ ਵੱਲ ਚਾਰਜਿੰਗ ਪੋਰਟ</string>
+    <string name="port_far_announcement">ਚਾਰਜਿੰਗ ਪੋਰਟ ਤੁਹਾਡੇ ਤੋਂ ਦੂਰ ਹੈ</string>
+    <string name="port_down_announcement">ਚਾਰਜਿੰਗ ਪੋਰਟ ਹੇਠਾਂ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ</string>
+    <string name="port_up_announcement">ਚਾਰਜਿੰਗ ਪੋਰਟ ਉੱਪਰ ਵੱਲ ਪੁਆਇੰਟ ਕਰ ਰਿਹਾ ਹੈ</string>
+    <string name="orientation_locked_announcement">ਸਥਿਤੀ ਲਾਕ ਹੈ</string>
+    <string name="orientation_locked_port_announcement">ਸਥਿਤੀ ਲਾਕ ਹੈ। %1$s</string>
+    <string name="orientation_unlocked_announcement">ਸਥਿਤੀ ਅਨਲੌਕ ਕੀਤੀ ਗਈ</string>
+    <string name="switch_to_language_contracted_announcement">%s \'ਤੇ ਸਵਿੱਚ ਕੀਤਾ ਗਿਆ, ਸੰਕੁਚਿਤ ਬਰੇਲ</string>
+    <string name="switch_to_language_uncontracted_announcement">%s \'ਤੇ ਸਵਿੱਚ ਕੀਤਾ ਗਿਆ, ਅਸੰਕੁਚਿਤ ਬਰੇਲ</string>
+    <string name="title_pref_flip_dots_vertically">ਸਿਖਰ ਅਤੇ ਹੇਠਲੇ ਬਿੰਦੀਆਂ ਨੂੰ ਸਵੈਪ ਕਰੋ</string>
+    <string name="summary_pref_flip_dots_vertically">ਡੌਟ 1 ਬਿੰਦੀ 3 ਨਾਲ ਸਥਾਨਾਂ ਦਾ ਵਪਾਰ ਕਰਦਾ ਹੈ, ਅਤੇ ਬਿੰਦੀ 4 ਬਿੰਦੀ 6 ਨਾਲ</string>
+    <string name="title_pref_tablet_held_up_faces_away">ਟੈਬਲੈੱਟ ਚਿਹਰੇ ਨੂੰ ਦੂਰ ਰੱਖਿਆ</string>
+    <string name="summary_pref_tablet_held_up_faces_away">ਬੰਦ ਹੋਣ \'ਤੇ, ਇੱਕ ਟੈਬਲੈੱਟ ਜਾਂ ਖੋਲ੍ਹਿਆ ਹੋਇਆ ਫ਼ੋਨ ਤੁਹਾਡੇ ਸਾਹਮਣੇ, ਟੇਬਲਟੌਪ ਲੇਆਉਟ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ</string>
+    <string name="title_pref_typing_sounds">ਟਾਈਪਿੰਗ ਆਵਾਜ਼ਾਂ</string>
+    <string name="summary_pref_typing_sounds">ਜਦੋਂ ਤੁਸੀਂ ਕੋਈ ਅੱਖਰ, ਸਪੇਸ, ਨਵੀਂ ਲਾਈਨ ਜਾਂ ਮਿਟਾਉਂਦੇ ਹੋ ਤਾਂ ਕੀਬੋਰਡ ਕਲਿੱਕ ਚਲਾਓ</string>
+    <string name="skip_tutorial">ਟਿਊਟੋਰਿਅਲ ਛੱਡੋ</string>
 </resources>

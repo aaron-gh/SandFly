@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">ਵਿਚਾਰ ਭੇਜੋ</string>
+    <string name="title_pref_problem_report_type">ਫੀਡਬੈਕ ਦੀ ਕਿਸਮ</string>
+    <string name="title_pref_problem_report_area">ਖੇਤਰ</string>
+    <string name="title_pref_problem_report_title">ਸਿਰਲੇਖ</string>
+    <string name="title_pref_problem_report_app">ਐਪ ਜਿੱਥੇ ਇਹ ਵਾਪਰਦਾ ਹੈ</string>
+    <string name="title_pref_problem_report_description">ਵਰਣਨ</string>
+    <string name="dialog_message_problem_report_description">ਕੀ ਹੁੰਦਾ ਹੈ ਅਤੇ ਤੁਸੀਂ ਕੀ ਉਮੀਦ ਕਰਦੇ ਹੋ।</string>
+    <string name="title_pref_problem_report_steps">ਸਾਫਟਵੇਅਰ ਸਮੱਸਿਆ ਨੂੰ ਮੁੜ ਪੈਦਾ ਕਰਨ ਲਈ ਕਦਮ</string>
+    <string name="title_pref_problem_report_email">ਜਵਾਬਾਂ ਲਈ ਈਮੇਲ ਕਰੋ</string>
+    <string name="title_pref_problem_report_device">ਡਿਵਾਈਸ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="title_pref_problem_report_log">SandFly ਲੌਗ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="summary_pref_problem_report_log">ਸਕ੍ਰੀਨ ਤੋਂ ਟੈਕਸਟ ਸ਼ਾਮਲ ਹੋ ਸਕਦਾ ਹੈ</string>
+    <string name="title_pref_problem_report_send">ਭੇਜੋ</string>
+    <string name="summary_pref_problem_report_sending">ਭੇਜ ਰਿਹਾ ਹੈ</string>
+    <string name="problem_report_missing_fields">ਇੱਕ ਸਿਰਲੇਖ ਅਤੇ ਵੇਰਵਾ ਦਰਜ ਕਰੋ।</string>
+    <string name="problem_report_invalid_email">ਇੱਕ ਵੈਧ ਈਮੇਲ ਪਤਾ ਦਰਜ ਕਰੋ।</string>
+    <string name="problem_report_sent">ਫੀਡਬੈਕ ਭੇਜਿਆ ਗਿਆ।</string>
+    <string name="problem_report_rate_limited">ਬਹੁਤ ਜ਼ਿਆਦਾ ਫੀਡਬੈਕ ਭੇਜਿਆ ਗਿਆ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="problem_report_no_connection">ਫੀਡਬੈਕ ਨਹੀਂ ਭੇਜਿਆ ਗਿਆ। ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
+    <string name="problem_report_not_sent">ਫੀਡਬੈਕ ਨਹੀਂ ਭੇਜਿਆ ਗਿਆ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string-array name="problem_report_type_entries">
+        <item>ਗਲਤ ਵਿਵਹਾਰ</item>
+        <item>ਕਰੈਸ਼</item>
+        <item>ਹੌਲੀ ਜਾਂ ਗੈਰ-ਜਵਾਬਦੇਹ</item>
+        <item>ਸੁਝਾਅ</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>ਭਾਸ਼ਣ</item>
+        <item>ਇਸ਼ਾਰੇ</item>
+        <item>ਸਪਰਸ਼ ਖੋਜ</item>
+        <item>ਰੀਡਿੰਗ ਕੰਟਰੋਲ ਅਤੇ ਮੀਨੂ</item>
+        <item>ਟਾਈਪਿੰਗ ਅਤੇ ਕੀਬੋਰਡ</item>
+        <item>ਬਰੇਲ ਕੀ-ਬੋਰਡ</item>
+        <item>ਬਰੇਲ ਡਿਸਪਲੇ</item>
+        <item>ਧੁਨੀਆਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨ</item>
+        <item>ਸੂਚਨਾਵਾਂ</item>
+        <item>ਵੈੱਬ ਸਮੱਗਰੀ</item>
+        <item>ਸਕ੍ਰਿਪਟਾਂ</item>
+        <item>ਸੈਟਿੰਗਾਂ</item>
+        <item>ਅੱਪਡੇਟ</item>
+        <item>ਹੋਰ</item>
+    </string-array>
+    <string name="title_report_new">ਵਿਚਾਰ ਭੇਜੋ</string>
+    <string name="title_report_inbox">ਇਨਬਾਕਸ</string>
+    <string name="title_report_drafts">ਡਰਾਫਟ</string>
+    <string name="report_inbox_empty">ਕੋਈ ਫੀਡਬੈਕ ਨਹੀਂ ਭੇਜਿਆ ਗਿਆ</string>
+    <string name="report_drafts_empty">ਕੋਈ ਡਰਾਫਟ ਨਹੀਂ</string>
+    <string name="report_just_now">ਹੁਣੇ ਹੀ</string>
+    <string name="report_untitled">ਬਿਨਾਂ ਸਿਰਲੇਖ ਵਾਲਾ</string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ਬਦਲਿਆ ਗਿਆ</string>
+    <string name="report_sent_at">ਭੇਜਿਆ <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ਨਵਾਂ ਜਵਾਬ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ਨਵੇਂ ਜਵਾਬ</item>
+    </plurals>
+    <string name="report_status_changed">ਸਥਿਤੀ ਬਦਲ ਗਈ</string>
+    <string name="report_status_open">ਖੁੱਲ੍ਹਾ ਮੁੱਦਾ</string>
+    <string name="report_status_completed">ਬੰਦ, ਪੂਰਾ ਹੋਇਆ</string>
+    <string name="report_status_not_planned">ਬੰਦ, ਯੋਜਨਾਬੱਧ ਨਹੀਂ</string>
+    <string name="report_status_duplicate">ਬੰਦ, ਡੁਪਲੀਕੇਟ</string>
+    <string name="report_status_unknown">ਹਟਾਇਆ ਗਿਆ</string>
+    <string name="title_report_status">ਸਥਿਤੀ</string>
+    <string name="title_report_your_report">ਤੁਹਾਡਾ ਫੀਡਬੈਕ</string>
+    <string name="title_report_messages">ਸੁਨੇਹੇ</string>
+    <string name="report_message_from_developer">ਵਿਕਾਸਕਾਰ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">ਤੁਸੀਂ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">ਜਵਾਬ</string>
+    <string name="title_report_reply_text">ਤੁਹਾਡਾ ਜਵਾਬ</string>
+    <string name="title_report_send_reply">ਜਵਾਬ ਭੇਜੋ</string>
+    <string name="report_reply_sent">ਜਵਾਬ ਭੇਜਿਆ ਗਿਆ।</string>
+    <string name="report_reply_not_sent">ਜਵਾਬ ਨਹੀਂ ਭੇਜਿਆ ਗਿਆ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="title_report_remove">ਇਨਬਾਕਸ ਤੋਂ ਹਟਾਓ</string>
+    <string name="dialog_title_report_remove">ਕੀ ਇਸ ਫੀਡਬੈਕ ਨੂੰ ਇਨਬਾਕਸ ਤੋਂ ਹਟਾਉਣਾ ਹੈ?</string>
+    <string name="dialog_message_report_remove">ਇਸ ਦੇ ਜਵਾਬ ਹੁਣ ਇਸ ਫ਼ੋਨ ਤੱਕ ਨਹੀਂ ਪਹੁੰਚਣਗੇ।</string>
+    <string name="title_report_delete_draft">ਡਰਾਫਟ ਮਿਟਾਓ</string>
+    <string name="dialog_title_report_delete_draft">ਕੀ ਇਸ ਡਰਾਫਟ ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?</string>
+    <string name="button_report_delete">ਮਿਟਾਓ</string>
+    <string name="report_missing">ਇਹ ਫੀਡਬੈਕ ਹੁਣ ਇਨਬਾਕਸ ਵਿੱਚ ਨਹੀਂ ਹੈ।</string>
+    <string name="notification_channel_problem_reports">ਫੀਡਬੈਕ ਜਵਾਬ</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ਨੂੰ ਜਵਾਬ ਦਿਓ</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

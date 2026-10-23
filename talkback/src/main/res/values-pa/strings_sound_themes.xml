@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">ਸਾਊਂਡ ਥੀਮ</string>
+    <string name="summary_pref_sound_themes">ਧੁਨੀਆਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨਾਂ ਦੇ ਸੈੱਟ ਸਥਾਪਤ ਕਰੋ ਅਤੇ ਚੁਣੋ, ਇਕੱਲੀਆਂ ਧੁਨੀਆਂ ਨੂੰ ਆਪਣੀ ਖੁਦ ਦੀ ਆਵਾਜ਼ ਨਾਲ ਬਦਲੋ, ਅਤੇ ਕੰਟਰੋਲ ਧੁਨੀਆਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨਾਂ ਅਤੇ 3D ਆਡੀਓ ਨੂੰ ਚਾਲੂ ਕਰੋ।</string>
+    <string name="sound_themes_installed_category">ਸਥਾਪਤ ਥੀਮ</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly ਦੀਆਂ ਆਪਣੀਆਂ ਆਵਾਜ਼ਾਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨਾਂ, ਅਤੇ ਤੁਹਾਡੀਆਂ ਕੋਈ ਵੀ ਆਵਾਜ਼ਾਂ।</string>
+    <string name="sound_theme_in_use">ਵਰਤੋਂ ਵਿੱਚ ਹੈ</string>
+    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> ਦੁਆਰਾ</string>
+    <string name="sound_theme_license">ਲਾਇਸੰਸ: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਧੁਨੀ।</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ਆਵਾਜ਼ਾਂ।</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਵਾਈਬ੍ਰੇਸ਼ਨ।</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ਵਾਈਬ੍ਰੇਸ਼ਨ।</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">ਕੰਟਰੋਲ ਧੁਨੀਆਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨਾਂ ਨੂੰ ਚਾਲੂ ਕਰਦਾ ਹੈ।</string>
+    <string name="sound_theme_control_sounds_off">ਕੰਟਰੋਲ ਧੁਨੀਆਂ ਅਤੇ ਵਾਈਬ੍ਰੇਸ਼ਨਾਂ ਨੂੰ ਬੰਦ ਕਰਦਾ ਹੈ।</string>
+    <string name="sound_theme_use">ਇਸ ਥੀਮ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="sound_theme_about">ਇਸ ਥੀਮ ਬਾਰੇ</string>
+    <string name="sound_theme_export">ਇੱਕ ਥੀਮ ਫਾਇਲ ਦੇ ਤੌਰ ਤੇ ਸੰਭਾਲੋ</string>
+    <string name="sound_theme_remove">ਹਟਾਓ</string>
+    <string name="sound_theme_remove_confirm">ਥੀਮ ਨੂੰ ਹਟਾਉਣਾ ਹੈ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">ਹਟਾਓ</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਧੁਨੀ ਦੇ ਨਾਲ, ਥੀਮ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ।</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ਧੁਨੀਆਂ ਦੇ ਨਾਲ, ਥੀਮ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਗਿਆ।</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly ਥੀਮ ਫਾਈਲ ਨੂੰ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਕਰ ਸਕਿਆ।</string>
+    <string name="sound_theme_no_picker">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਫਾਈਲਾਂ ਦੀ ਚੋਣ ਕਰਨ ਲਈ ਕੋਈ ਐਪ ਨਹੀਂ ਹੈ।</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ਦੀਆਂ ਸੈਟਿੰਗਾਂ</string>
+    <string name="title_pref_theme_sounds">ਧੁਨੀਆਂ</string>
+    <string name="summary_pref_theme_sounds">ਇਸ ਥੀਮ ਦੀ ਕਿਸੇ ਵੀ ਆਵਾਜ਼ ਨੂੰ ਆਪਣੀ ਖੁਦ ਦੀ ਧੁਨੀ ਫਾਈਲ ਨਾਲ ਬਦਲੋ।</string>
+    <string name="sound_themes_install_category">ਇੱਕ ਥੀਮ ਸਥਾਪਤ ਕਰੋ</string>
+    <string name="title_pref_sound_theme_install_file">ਇੱਕ ਫਾਈਲ ਤੋਂ</string>
+    <string name="summary_pref_sound_theme_install_file">ਇੱਕ ਥੀਮ ਫਾਈਲ ਇੱਕ ਜ਼ਿਪ ਫਾਈਲ ਹੈ। ਤੁਸੀਂ ਕਿਸੇ ਹੋਰ ਐਪ ਤੋਂ SandFly ਨਾਲ ਇੱਕ ਖੋਲ੍ਹ ਸਕਦੇ ਹੋ, ਜਾਂ ਇਸਨੂੰ ਸਾਂਝਾ ਕਰ ਸਕਦੇ ਹੋ।</string>
+    <string name="title_pref_sound_theme_install_link">ਇੱਕ ਲਿੰਕ ਤੋਂ</string>
+    <string name="summary_pref_sound_theme_install_link">ਇੱਕ ਥੀਮ ਫਾਈਲ ਦਾ ਲਿੰਕ, ਜਾਂ ਇਸ ਵਿੱਚ ਇੱਕ ਥੀਮ ਵਾਲੀ GitHub ਰਿਪੋਜ਼ਟਰੀ ਲਈ। ਤੁਸੀਂ ਆਪਣੇ ਬ੍ਰਾਊਜ਼ਰ ਤੋਂ SandFly ਨਾਲ ਲਿੰਕ ਵੀ ਸਾਂਝਾ ਕਰ ਸਕਦੇ ਹੋ।</string>
+    <string name="title_pref_sound_theme_install_source">ਇੱਕ ਸਰੋਤ ਤੋਂ</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea ਜਾਂ Bitbucket \'ਤੇ ਇੱਕ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਥੀਮ ਫ਼ਾਈਲਾਂ।</string>
+    <string name="sound_theme_sources">ਸਾਊਂਡ ਥੀਮ ਸਰੋਤ</string>
+    <string name="sound_theme_source_empty">ਇਸ ਸਰੋਤ ਵਿੱਚ ਕੋਈ ਧੁਨੀ ਥੀਮ ਨਹੀਂ ਹੈ</string>
+    <string name="sound_theme_source_failed">ਸਾਊਂਡ ਥੀਮ ਲੋਡ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕੇ। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">ਇਸ ਤੋਂ ਸਥਾਪਿਤ ਸਾਊਂਡ ਥੀਮ ਸਥਾਪਿਤ ਰਹਿੰਦੇ ਹਨ।</string>
+    <string name="sound_theme_link_message">ਇੱਕ ਥੀਮ ਫਾਈਲ, ਜਾਂ ਇਸ ਵਿੱਚ ਇੱਕ ਥੀਮ ਵਾਲੀ ਇੱਕ GitHub ਰਿਪੋਜ਼ਟਰੀ ਲਈ ਇੱਕ ਲਿੰਕ ਦਾਖਲ ਕਰੋ ਜਾਂ ਪੇਸਟ ਕਰੋ।</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">ਸਾਊਂਡ ਥੀਮ ਸਥਾਪਤ ਕਰੋ</string>
+    <string name="sound_theme_install_reading">ਧੁਨੀ ਥੀਮ ਨੂੰ ਪੜ੍ਹਨਾ</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ਇੰਸਟਾਲ ਕਰਨਾ ਹੈ?</string>
+    <string name="sound_theme_install_and_use">ਇੰਸਟਾਲ ਕਰੋ ਅਤੇ ਵਰਤੋ</string>
+    <string name="sound_theme_install">ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="sound_theme_install_replaces">ਇਹ ਉਸੇ ਨਾਮ ਦੇ ਸਥਾਪਿਤ ਥੀਮ ਨੂੰ ਬਦਲਦਾ ਹੈ।</string>
+    <string name="sound_theme_install_skipped">ਛੱਡਿਆ ਗਿਆ:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ਸਥਾਪਤ ਕੀਤਾ ਗਿਆ।</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ਸਥਾਪਤ ਕੀਤਾ ਗਿਆ। ਇਹ ਹੁਣ ਵਰਤੋਂ ਵਿੱਚ ਹੈ।</string>
+    <string name="sound_theme_install_nothing">ਸਥਾਪਤ ਕਰਨ ਲਈ ਕੋਈ ਸਾਊਂਡ ਥੀਮ ਨਹੀਂ ਹੈ।</string>
+    <string name="sound_theme_install_not_a_theme">ਇਹ ਕੋਈ ਧੁਨੀ ਥੀਮ ਨਹੀਂ ਹੈ SandFly ਇਸਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦਾ ਹੈ: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>।</string>
+    <string name="sound_theme_install_failed">SandFly ਧੁਨੀ ਥੀਮ ਨੂੰ ਸਥਾਪਿਤ ਨਹੀਂ ਕਰ ਸਕਿਆ। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ਸਾਊਂਡ ਥੀਮਾਂ ਦੇ ਲਿੰਕ https ਨਾਲ ਸ਼ੁਰੂ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ਦੀਆਂ ਆਵਾਜ਼ਾਂ</string>
+    <string name="title_pref_theme_sounds_reset">ਸਾਰਿਆਂ ਲਈ SandFly ਦੀਆਂ ਧੁਨੀਆਂ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
+    <string name="theme_sounds_reset_confirm">ਇਸ ਥੀਮ ਦੀਆਂ ਸਾਰੀਆਂ ਧੁਨੀਆਂ ਨੂੰ ਹਟਾਓ ਅਤੇ SandFly ਦੀ ਆਪਣੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ?</string>
+    <string name="theme_sounds_reset_button">ਹਟਾਓ</string>
+    <string name="theme_sounds_category">ਧੁਨੀਆਂ</string>
+    <string name="theme_sound_summary_default">SandFly ਦੀ ਆਵਾਜ਼</string>
+    <string name="theme_sound_summary_custom">ਥੀਮ ਦੀ ਆਵਾਜ਼</string>
+    <string name="theme_sound_summary_none">ਕੋਈ ਆਵਾਜ਼ ਨਹੀਂ। ਫੋਕਸ ਧੁਨੀ ਚਲਦੀ ਹੈ।</string>
+    <string name="theme_sound_summary_android_keyboard">Android ਦੀ ਕੀਬੋਰਡ ਧੁਨੀ</string>
+    <string name="theme_sound_use_android_keyboard">Android ਦੀ ਕੀਬੋਰਡ ਧੁਨੀ ਵਰਤੋ</string>
+    <string name="theme_sound_braille_character">ਬਰੇਲ ਕੀਬੋਰਡ: ਇੱਕ ਅੱਖਰ ਟਾਈਪ ਕਰਨਾ</string>
+    <string name="theme_sound_braille_space">ਬਰੇਲ ਕੀਬੋਰਡ: ਸਪੇਸ</string>
+    <string name="theme_sound_braille_delete">ਬਰੇਲ ਕੀਬੋਰਡ: ਮਿਟਾਓ</string>
+    <string name="theme_sound_braille_new_line">ਬਰੇਲ ਕੀਬੋਰਡ: ਨਵੀਂ ਲਾਈਨ</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">ਇੱਕ ਸਾਊਂਡ ਫਾਈਲ ਚੁਣੋ</string>
+    <string name="theme_sound_preview">ਪੂਰਵ-ਝਲਕ</string>
+    <string name="theme_sound_none">ਕੋਈ ਆਵਾਜ਼ ਨਹੀਂ</string>
+    <string name="theme_sound_summary_no_sound">ਕੋਈ ਆਵਾਜ਼ ਨਹੀਂ</string>
+    <string name="theme_sound_action_set_none">ਬਿਨਾਂ ਆਵਾਜ਼ \'ਤੇ ਸੈੱਟ ਕਰੋ</string>
+    <string name="theme_sound_use_default">SandFly ਦੀ ਧੁਨੀ ਵਰਤੋ</string>
+    <string name="theme_sound_remove">ਆਵਾਜ਼ ਨੂੰ ਹਟਾਓ</string>
+    <string name="theme_sound_too_large">ਉਹ ਫ਼ਾਈਲ ਬਹੁਤ ਵੱਡੀ ਹੈ। ਇੱਕ ਆਵਾਜ਼ 5 MB ਤੱਕ ਹੋ ਸਕਦੀ ਹੈ।</string>
+    <string name="theme_sound_not_audio">SandFly ਉਸ ਫ਼ਾਈਲ ਨੂੰ ਨਹੀਂ ਚਲਾ ਸਕਦਾ। ਇੱਕ WAV, OGG, MP3 ਜਾਂ FLAC ਧੁਨੀ ਚੁਣੋ।</string>
+    <string name="theme_sound_failed">SandFly ਉਸ ਫ਼ਾਈਲ ਨੂੰ ਪੜ੍ਹ ਨਹੀਂ ਸਕਿਆ।</string>
+</resources>

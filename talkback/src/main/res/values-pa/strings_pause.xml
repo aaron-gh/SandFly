@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">ਵਿਰਾਮ SandFly</string>
+    <string name="summary_pause_backtalk">ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ SandFly ਮੁੜ ਸ਼ੁਰੂ ਨਹੀਂ ਕਰਦੇ ਉਦੋਂ ਤੱਕ ਬੋਲਣ, ਇਸ਼ਾਰਿਆਂ ਨੂੰ ਬੰਦ ਕਰੋ ਅਤੇ ਛੋਹ ਕੇ ਪੜਚੋਲ ਕਰੋ</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly ਰੋਕੋ ਜਾਂ ਮੁੜ-ਚਾਲੂ ਕਰੋ</string>
+    <string name="backtalk_paused">SandFly ਰੋਕਿਆ ਗਿਆ</string>
+    <string name="backtalk_resumed">SandFly ਮੁੜ-ਚਾਲੂ</string>
+    <string name="notification_title_backtalk_paused">SandFly ਰੋਕਿਆ ਗਿਆ ਹੈ</string>
+    <string name="notification_message_backtalk_paused">ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="notification_channel_backtalk_paused">SandFly ਰੋਕਿਆ ਗਿਆ</string>
+    <string name="dialog_title_pause_backtalk">SandFly ਨੂੰ ਰੋਕਣਾ ਹੈ?</string>
+    <string name="dialog_button_pause_backtalk">ਰੋਕੋ</string>
+    <string name="dialog_message_pause_backtalk">ਜਦੋਂ SandFly ਰੋਕਿਆ ਗਿਆ ਹੈ, ਇਹ ਇਸ਼ਾਰਿਆਂ \'ਤੇ ਬੋਲਦਾ ਜਾਂ ਜਵਾਬ ਨਹੀਂ ਦਿੰਦਾ, ਅਤੇ ਸਕ੍ਰੀਨ ਇਸ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਦੀ ਹੈ ਜਿਵੇਂ ਕੋਈ ਸਕ੍ਰੀਨ ਰੀਡਰ ਚਾਲੂ ਨਹੀਂ ਹੈ।</string>
+    <string name="message_resume_keyguard">ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ, SandFly ਰੋਕੀ ਗਈ ਸੂਚਨਾ \'ਤੇ ਟੈਪ ਕਰੋ, ਵੌਲਯੂਮ ਨੂੰ 3 ਵਾਰ ਤੇਜ਼ੀ ਨਾਲ ਦਬਾਓ, ਜਾਂ ਫ਼ੋਨ ਨੂੰ ਲੌਕ ਅਤੇ ਵੇਕ ਕਰੋ ਤਾਂ ਕਿ ਲੌਕ ਸਕ੍ਰੀਨ ਦਿਖਾਈ ਦੇਵੇ।</string>
+    <string name="message_resume_screen_on">ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ, SandFly ਰੋਕੀ ਗਈ ਸੂਚਨਾ \'ਤੇ ਟੈਪ ਕਰੋ, ਵੌਲਯੂਮ ਨੂੰ 3 ਵਾਰ ਤੇਜ਼ੀ ਨਾਲ ਦਬਾਓ, ਜਾਂ ਸਕ੍ਰੀਨ ਨੂੰ ਬੰਦ ਅਤੇ ਦੁਬਾਰਾ ਚਾਲੂ ਕਰੋ।</string>
+    <string name="message_resume_manual">ਮੁੜ-ਚਾਲੂ ਕਰਨ ਲਈ, SandFly ਰੋਕੀ ਗਈ ਸੂਚਨਾ \'ਤੇ ਟੈਪ ਕਰੋ ਜਾਂ ਵੌਲਯੂਮ ਨੂੰ 3 ਵਾਰ ਤੇਜ਼ੀ ਨਾਲ ਦਬਾਓ।</string>
+    <string name="message_resume_key_combo">ਤੁਸੀਂ <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ਵੀ ਦਬਾ ਸਕਦੇ ਹੋ।</string>
+    <string name="title_pref_resume_backtalk">ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ SandFly</string>
+    <string name="value_resume_keyguard">ਜਦੋਂ ਲੌਕ ਸਕ੍ਰੀਨ ਦਿਖਾਈ ਦਿੰਦੀ ਹੈ</string>
+    <string name="value_resume_screen_on">ਜਦੋਂ ਸਕ੍ਰੀਨ ਚਾਲੂ ਹੁੰਦੀ ਹੈ</string>
+    <string name="value_resume_manual">ਸਿਰਫ਼ ਨੋਟੀਫਿਕੇਸ਼ਨ ਜਾਂ ਸ਼ਾਰਟਕੱਟ ਤੋਂ</string>
+</resources>
