@@ -30,7 +30,7 @@
     <string name="notification_test_title">Nosūtiet testa paziņojumu</string>
     <string name="notification_automation_title">Automatizācija</string>
     <string name="notification_automation_allowed_title">Atļaut automatizācijas lietotnes</string>
-    <string name="notification_category_said">Kas teikts</string>
+    <string name="notification_category_said">Kas tiek nolasīts</string>
     <string name="notification_format_title">Runas formāts</string>
     <string name="notification_format_message">Vietturi: {app}, {title}, {text}, {content} (viss teksts), {bigtext}, {subtext}, {ticker}, {category} un {time}.</string>
     <string name="notification_private_format_title">Privātos paziņojumos teikts</string>
@@ -133,22 +133,22 @@
     <string name="notification_clock_exact_summary">Nepieciešami trauksmes signāli un atgādinājumi. Citādi laiks var tikt norādīts pat minūti vēlu.</string>
     <string name="notification_other_apps_title">Other apps</string>
     <string name="notification_apps_category">Lietotnes</string>
-    <string name="notification_apps_loading">Loading apps</string>
+    <string name="notification_apps_loading">Ielādē lietotnes</string>
     <string name="notification_app_mode_title">Paziņojumi</string>
     <string name="notification_app_mode_default">Tāpat kā citās lietotnēs</string>
-    <string name="notification_app_mode_read">Lasīt skaļi</string>
-    <string name="notification_app_mode_private">Tikai lietotnes nosaukumu</string>
-    <string name="notification_app_mode_priority">Read first</string>
-    <string name="notification_app_mode_ignore">Nelasi skaļi</string>
-    <string name="notification_app_name_title">Spoken name</string>
-    <string name="notification_app_said_as">said as <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_mode_read">Lasīt</string>
+    <string name="notification_app_mode_private">Tikai lietotnes nosaukums</string>
+    <string name="notification_app_mode_priority">Lasīt vispirms</string>
+    <string name="notification_app_mode_ignore">Nelasīt</string>
+    <string name="notification_app_name_title">Izrunātais nosaukums</string>
+    <string name="notification_app_said_as">izrunā kā <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Atiestatīt</string>
     <string name="notification_required_title">Lasiet tikai paziņojumus ar</string>
     <string name="notification_blocked_title">Nelasiet paziņojumus ar</string>
     <string name="notification_private_title">Lasiet tikai lietotnes nosaukumu</string>
     <string name="notification_replacements_title">Say differently</string>
-    <string name="notification_add_word">Add a word</string>
-    <string name="notification_add_replacement">Add a replacement</string>
+    <string name="notification_add_word">Pievienot vārdu</string>
+    <string name="notification_add_replacement">Pievienot aizstājēju</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> as <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teksts</string>
     <string name="notification_replace_with">Say as</string>

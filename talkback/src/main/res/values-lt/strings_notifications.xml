@@ -30,7 +30,7 @@
     <string name="notification_test_title">Siųsti pranešimą apie bandymą</string>
     <string name="notification_automation_title">Automatika</string>
     <string name="notification_automation_allowed_title">Leisti automatizavimo programas</string>
-    <string name="notification_category_said">Kas pasakyta</string>
+    <string name="notification_category_said">Kas skaitoma</string>
     <string name="notification_format_title">Kalbos formatas</string>
     <string name="notification_format_message">Vietos žymos: {app}, {title}, {text}, {content} (visas tekstas), {bigtext}, {subtext}, {ticker}, {category} ir {time}.</string>
     <string name="notification_private_format_title">Asmeniniuose pranešimuose rašoma</string>
@@ -136,18 +136,18 @@
     <string name="notification_apps_loading">Įkeliamos programos</string>
     <string name="notification_app_mode_title">Pranešimai</string>
     <string name="notification_app_mode_default">Kaip ir kitos programos</string>
-    <string name="notification_app_mode_read">Skaityti garsiai</string>
+    <string name="notification_app_mode_read">Skaityti</string>
     <string name="notification_app_mode_private">Tik programos pavadinimas</string>
-    <string name="notification_app_mode_priority">Pirmiausia skaitykite</string>
-    <string name="notification_app_mode_ignore">Neskaitykite garsiai</string>
+    <string name="notification_app_mode_priority">Skaityti pirmiausia</string>
+    <string name="notification_app_mode_ignore">Neskaityti</string>
     <string name="notification_app_name_title">Ištartas vardas</string>
-    <string name="notification_app_said_as">pasakė kaip <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">tariama kaip <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nustatyti iš naujo</string>
     <string name="notification_required_title">Skaitykite tik pranešimus su</string>
     <string name="notification_blocked_title">Neskaitykite pranešimų su</string>
     <string name="notification_private_title">Skaitykite tik programos pavadinimą</string>
     <string name="notification_replacements_title">Sakyk kitaip</string>
-    <string name="notification_add_word">Pridėkite žodį</string>
+    <string name="notification_add_word">Pridėti žodį</string>
     <string name="notification_add_replacement">Pridėti pakaitalą</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kaip <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekstas</string>
@@ -288,7 +288,7 @@
     <string name="notification_action_max_words">perskaityti iki kelių žodžių</string>
     <string name="notification_action_no_limit">skaityti be ilgio apribojimų</string>
     <string name="notification_action_keep_emoji">išlaikyti jaustukus</string>
-    <string name="notification_action_keep_numbers">laikykite skaičius kartu</string>
+    <string name="notification_action_keep_numbers">laikyti skaičius kartu</string>
     <string name="notification_action_priority">pirma skaityk</string>
     <string name="notification_action_always_read">Skaitykite pranešimus garsiai net tyliomis valandomis ar kitu ribotu laiku</string>
     <string name="notification_action_voice">skaityti naudojant balso profilį</string>

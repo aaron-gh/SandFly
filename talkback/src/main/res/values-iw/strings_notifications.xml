@@ -30,7 +30,7 @@
     <string name="notification_test_title">שלח הודעת בדיקה</string>
     <string name="notification_automation_title">אוטומציה</string>
     <string name="notification_automation_allowed_title">אפשר אפליקציות אוטומציה</string>
-    <string name="notification_category_said">מה נאמר</string>
+    <string name="notification_category_said">מה מוקרא</string>
     <string name="notification_format_title">פורמט דיבור</string>
     <string name="notification_format_message">מצייני מיקום: {app}, {title}, {text}, {content} (כל הטקסט), {bigtext}, {subtext}, {ticker}, {category} ו-{time}.</string>
     <string name="notification_private_format_title">הודעות פרטיות אומרות</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">טוען אפליקציות</string>
     <string name="notification_app_mode_title">התראות</string>
     <string name="notification_app_mode_default">כמו אפליקציות אחרות</string>
-    <string name="notification_app_mode_read">קרא בקול רם</string>
+    <string name="notification_app_mode_read">הקראה</string>
     <string name="notification_app_mode_private">שם האפליקציה בלבד</string>
-    <string name="notification_app_mode_priority">תקרא קודם</string>
-    <string name="notification_app_mode_ignore">אל תקראו בקול רם</string>
-    <string name="notification_app_name_title">שם מדובר</string>
+    <string name="notification_app_mode_priority">הקראה ראשונה</string>
+    <string name="notification_app_mode_ignore">לא להקריא</string>
+    <string name="notification_app_name_title">שם מוקרא</string>
     <string name="notification_app_said_as">נאמר כ-<xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">איפוס</string>
     <string name="notification_required_title">קרא רק התראות עם</string>
     <string name="notification_blocked_title">אל תקראו הודעות עם</string>
     <string name="notification_private_title">קרא רק את שם האפליקציה עבור</string>
     <string name="notification_replacements_title">תגיד אחרת</string>
-    <string name="notification_add_word">הוסף מילה</string>
-    <string name="notification_add_replacement">הוסף תחליף</string>
+    <string name="notification_add_word">הוספת מילה</string>
+    <string name="notification_add_replacement">הוספת תחליף</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> כמו <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">טקסט</string>
     <string name="notification_replace_with">אמור כמו</string>
@@ -292,7 +292,7 @@
     <string name="notification_action_priority">לקרוא קודם</string>
     <string name="notification_action_always_read">קרא התראות בקול אפילו בשעות שקטות או בשעות מוגבלות אחרות</string>
     <string name="notification_action_voice">לקרוא עם פרופיל קולי</string>
-    <string name="notification_action_voice_value">קרא עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">הקראה עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">קרא בקול של SandFly</string>
     <string name="notification_voice_removed">הפרופיל הקולי הוסר</string>
     <string name="notification_action_format_value">השתמש בפורמט הדיבור <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">השבת קריאת התראות בקול</string>
     <string name="notification_automation_toggle">הפעל או השבת קריאת התראות בקול</string>
     <string name="notification_automation_stop">עצור את קריאת ההודעה</string>
-    <string name="notification_automation_read_all">קרא הודעות</string>
+    <string name="notification_automation_read_all">הקראת התראות</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> שנייה</item>
         <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> שניות</item>

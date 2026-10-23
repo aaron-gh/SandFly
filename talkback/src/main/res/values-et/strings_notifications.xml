@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Rakenduste laadimine</string>
     <string name="notification_app_mode_title">Märguanded</string>
     <string name="notification_app_mode_default">Nagu teisedki rakendused</string>
-    <string name="notification_app_mode_read">Lugege ette</string>
+    <string name="notification_app_mode_read">Loe</string>
     <string name="notification_app_mode_private">Ainult rakenduse nimi</string>
-    <string name="notification_app_mode_priority">Lugege kõigepealt</string>
-    <string name="notification_app_mode_ignore">Ärge lugege ette</string>
-    <string name="notification_app_name_title">Räägitud nimi</string>
+    <string name="notification_app_mode_priority">Loe esimesena</string>
+    <string name="notification_app_mode_ignore">Ära loe</string>
+    <string name="notification_app_name_title">Ettelöetav nimi</string>
     <string name="notification_app_said_as">öeldud kui <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Lähtesta</string>
     <string name="notification_required_title">Lugege märguandeid ainult rakendusega</string>
     <string name="notification_blocked_title">Ärge lugege märguandeid</string>
     <string name="notification_private_title">Lugege ainult rakenduse nime</string>
     <string name="notification_replacements_title">Ütle teisiti</string>
-    <string name="notification_add_word">Lisage sõna</string>
-    <string name="notification_add_replacement">Lisage asendus</string>
+    <string name="notification_add_word">Lisa sõna</string>
+    <string name="notification_add_replacement">Lisa asendus</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kui <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
     <string name="notification_replace_with">Ütle nagu</string>
@@ -292,7 +292,7 @@
     <string name="notification_action_priority">loe kõigepealt</string>
     <string name="notification_action_always_read">Lugege märguandeid valjusti isegi vaiksetel tundidel või muudel piiratud aegadel</string>
     <string name="notification_action_voice">lugeda hääleprofiiliga</string>
-    <string name="notification_action_voice_value">loe koos <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">loe profiiliga <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">loe SandFly häälega</string>
     <string name="notification_voice_removed">Häälprofiil eemaldati</string>
     <string name="notification_action_format_value">kasutage kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Keela märguannete ettelugemine</string>
     <string name="notification_automation_toggle">Lubage või keelake märguannete ettelugemine</string>
     <string name="notification_automation_stop">Peatage teatise lugemine</string>
-    <string name="notification_automation_read_all">Lugege märguandeid</string>
+    <string name="notification_automation_read_all">Loe märguandeid</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekund</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekundit</item>

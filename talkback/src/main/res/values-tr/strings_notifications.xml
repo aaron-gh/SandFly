@@ -30,7 +30,7 @@
     <string name="notification_test_title">Test bildirimi gönder</string>
     <string name="notification_automation_title">Otomasyon</string>
     <string name="notification_automation_allowed_title">Otomasyon uygulamalarına izin ver</string>
-    <string name="notification_category_said">Ne söylendi</string>
+    <string name="notification_category_said">Ne okunur</string>
     <string name="notification_format_title">Konuşma formatı</string>
     <string name="notification_format_message">Yer tutucular: {app}, {title}, {text}, {content} (tüm metin), {bigtext}, {subtext}, {ticker}, {category} ve {time}.</string>
     <string name="notification_private_format_title">Özel bildirimler diyor ki</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">İyi akşamlar.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Zaman duyuruları</string>
+    <string name="notification_category_clock">Saat bildirimi</string>
     <string name="notification_clock_interval_title">Her seferinde saati söyle</string>
     <string name="notification_clock_format_title">Saat biçimi</string>
     <string name="notification_clock_format_message">Yer tutucular: {time}, {date} ve {battery} (pil yüzdesi).</string>
@@ -136,11 +136,11 @@
     <string name="notification_apps_loading">Uygulamalar yükleniyor</string>
     <string name="notification_app_mode_title">Bildirimler</string>
     <string name="notification_app_mode_default">Diğer uygulamalar gibi</string>
-    <string name="notification_app_mode_read">Yüksek sesle oku</string>
+    <string name="notification_app_mode_read">Oku</string>
     <string name="notification_app_mode_private">Yalnızca uygulama adı</string>
     <string name="notification_app_mode_priority">Önce oku</string>
-    <string name="notification_app_mode_ignore">Yüksek sesle okumayın</string>
-    <string name="notification_app_name_title">Sözlü ad</string>
+    <string name="notification_app_mode_ignore">Okuma</string>
+    <string name="notification_app_name_title">Okunan ad</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> olarak söylendi</string>
     <string name="notification_app_reset">Sıfırla</string>
     <string name="notification_required_title">Yalnızca şununla bildirimleri oku:</string>
@@ -148,7 +148,7 @@
     <string name="notification_private_title">Yalnızca uygulama adını okuyun</string>
     <string name="notification_replacements_title">Farklı söyle</string>
     <string name="notification_add_word">Bir kelime ekle</string>
-    <string name="notification_add_replacement">Yenisini ekle</string>
+    <string name="notification_add_replacement">Değiştirme ekle</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> olarak</string>
     <string name="notification_replace_find">Metin</string>
     <string name="notification_replace_with">Şöyle söyle</string>

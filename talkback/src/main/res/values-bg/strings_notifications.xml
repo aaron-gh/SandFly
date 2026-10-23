@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Добър вечер</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Съобщения за времето</string>
+    <string name="notification_category_clock">Съобщаване на часа</string>
     <string name="notification_clock_interval_title">Кажете часа всеки път</string>
     <string name="notification_clock_format_title">Формат за часа</string>
     <string name="notification_clock_format_message">Заместители: {time}, {date} и {battery} (процентът на батерията).</string>
@@ -136,18 +136,18 @@
     <string name="notification_apps_loading">Зареждат се приложения</string>
     <string name="notification_app_mode_title">Известия</string>
     <string name="notification_app_mode_default">Като други приложения</string>
-    <string name="notification_app_mode_read">Прочетете на глас</string>
+    <string name="notification_app_mode_read">Четене</string>
     <string name="notification_app_mode_private">Само име на приложението</string>
-    <string name="notification_app_mode_priority">Прочетете първо</string>
-    <string name="notification_app_mode_ignore">Не четете на глас</string>
+    <string name="notification_app_mode_priority">Чети първо</string>
+    <string name="notification_app_mode_ignore">Без четене</string>
     <string name="notification_app_name_title">Изговорено име</string>
-    <string name="notification_app_said_as">каза като <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">изговаря се като <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Нулиране</string>
     <string name="notification_required_title">Четете само известия с</string>
     <string name="notification_blocked_title">Не четете известия с</string>
     <string name="notification_private_title">Прочетете само името на приложението за</string>
     <string name="notification_replacements_title">Кажете различно</string>
-    <string name="notification_add_word">Добавете дума</string>
+    <string name="notification_add_word">Добавяне на дума</string>
     <string name="notification_add_replacement">Добавяне на заместител</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> като <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Текст</string>
@@ -288,11 +288,11 @@
     <string name="notification_action_max_words">прочетете до определен брой думи</string>
     <string name="notification_action_no_limit">четете без ограничения на дължината</string>
     <string name="notification_action_keep_emoji">запази емотикони</string>
-    <string name="notification_action_keep_numbers">дръжте числата заедно</string>
-    <string name="notification_action_priority">прочетете първо</string>
+    <string name="notification_action_keep_numbers">запазване на числата заедно</string>
+    <string name="notification_action_priority">чети първо</string>
     <string name="notification_action_always_read">Четете известия на глас дори в тихи часове или други ограничени времена</string>
     <string name="notification_action_voice">четете с гласов профил</string>
-    <string name="notification_action_voice_value">чете с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">четене с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">прочетете с гласа на SandFly</string>
     <string name="notification_voice_removed">Премахнат гласов профил</string>
     <string name="notification_action_format_value">използвайте формата за реч <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Деактивирайте четенето на известия на глас</string>
     <string name="notification_automation_toggle">Активирайте или деактивирайте четенето на известия на глас</string>
     <string name="notification_automation_stop">Спрете четенето на известието</string>
-    <string name="notification_automation_read_all">Прочетете известията</string>
+    <string name="notification_automation_read_all">Прочитане на известията</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> секунди</item>

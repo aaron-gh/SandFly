@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Dobrý večer.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Časová oznámení</string>
+    <string name="notification_category_clock">Hlášení času</string>
     <string name="notification_clock_interval_title">Pokaždé řekni čas</string>
     <string name="notification_clock_format_title">Formát času</string>
     <string name="notification_clock_format_message">Zástupné symboly: {time}, {date} a {battery} (procento baterie).</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Načítání aplikací</string>
     <string name="notification_app_mode_title">Oznámení</string>
     <string name="notification_app_mode_default">Stejně jako ostatní aplikace</string>
-    <string name="notification_app_mode_read">Čtěte nahlas</string>
+    <string name="notification_app_mode_read">Číst</string>
     <string name="notification_app_mode_private">Pouze název aplikace</string>
-    <string name="notification_app_mode_priority">Nejprve čtěte</string>
-    <string name="notification_app_mode_ignore">Nečtěte nahlas</string>
-    <string name="notification_app_name_title">Vyřčené jméno</string>
+    <string name="notification_app_mode_priority">Číst jako první</string>
+    <string name="notification_app_mode_ignore">Nečíst</string>
+    <string name="notification_app_name_title">Vyslovovaný název</string>
     <string name="notification_app_said_as">řečeno jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetovat</string>
     <string name="notification_required_title">Oznámení číst pouze pomocí</string>
     <string name="notification_blocked_title">Nečíst oznámení pomocí</string>
     <string name="notification_private_title">Číst pouze název aplikace</string>
     <string name="notification_replacements_title">Řekněte jinak</string>
-    <string name="notification_add_word">Přidejte slovo</string>
-    <string name="notification_add_replacement">Přidejte náhradu</string>
+    <string name="notification_add_word">Přidat slovo</string>
+    <string name="notification_add_replacement">Přidat náhradu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> jako <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
     <string name="notification_replace_with">Řekni jako</string>
@@ -289,7 +289,7 @@
     <string name="notification_action_no_limit">číst bez omezení délky</string>
     <string name="notification_action_keep_emoji">zachovat emotikony</string>
     <string name="notification_action_keep_numbers">držet čísla pohromadě</string>
-    <string name="notification_action_priority">čtěte nejdříve</string>
+    <string name="notification_action_priority">číst jako první</string>
     <string name="notification_action_always_read">Čtěte oznámení nahlas i v klidových hodinách nebo v jiných omezených časech</string>
     <string name="notification_action_voice">číst pomocí hlasového profilu</string>
     <string name="notification_action_voice_value">číst s <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Zakázat čtení oznámení nahlas</string>
     <string name="notification_automation_toggle">Povolit nebo zakázat čtení oznámení nahlas</string>
     <string name="notification_automation_stop">Zastavte čtení oznámení</string>
-    <string name="notification_automation_read_all">Přečtěte si upozornění</string>
+    <string name="notification_automation_read_all">Přečíst oznámení</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekunda</item>
         <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sekundy</item>

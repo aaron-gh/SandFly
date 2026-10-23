@@ -30,7 +30,7 @@
     <string name="notification_test_title">Pošaljite testnu obavijest</string>
     <string name="notification_automation_title">Automatizacija</string>
     <string name="notification_automation_allowed_title">Dopusti aplikacije za automatizaciju</string>
-    <string name="notification_category_said">Što je rečeno</string>
+    <string name="notification_category_said">Što se čita</string>
     <string name="notification_format_title">Format govora</string>
     <string name="notification_format_message">Rezervirana mjesta: {app}, {title}, {text}, {content} (cijeli tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Privatne obavijesti kažu</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Učitavanje aplikacija</string>
     <string name="notification_app_mode_title">Obavijesti</string>
     <string name="notification_app_mode_default">Kao i druge aplikacije</string>
-    <string name="notification_app_mode_read">Čitaj naglas</string>
+    <string name="notification_app_mode_read">Čitaj</string>
     <string name="notification_app_mode_private">Samo naziv aplikacije</string>
-    <string name="notification_app_mode_priority">Prvo pročitajte</string>
-    <string name="notification_app_mode_ignore">Nemojte čitati naglas</string>
+    <string name="notification_app_mode_priority">Čitaj prvo</string>
+    <string name="notification_app_mode_ignore">Ne čitaj</string>
     <string name="notification_app_name_title">Izgovoreno ime</string>
-    <string name="notification_app_said_as">rekao kao <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">izgovara se kao <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Vrati na zadano</string>
     <string name="notification_required_title">Čitajte samo obavijesti s</string>
     <string name="notification_blocked_title">Nemojte čitati obavijesti s</string>
     <string name="notification_private_title">Pročitajte samo naziv aplikacije za</string>
     <string name="notification_replacements_title">Reci drugačije</string>
-    <string name="notification_add_word">Dodajte riječ</string>
-    <string name="notification_add_replacement">Dodajte zamjenu</string>
+    <string name="notification_add_word">Dodaj riječ</string>
+    <string name="notification_add_replacement">Dodaj zamjenu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kao <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
     <string name="notification_replace_with">Reci kao</string>

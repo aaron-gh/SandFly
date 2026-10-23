@@ -30,7 +30,7 @@
     <string name="notification_test_title">Wyślij powiadomienie testowe</string>
     <string name="notification_automation_title">Automatyzacja</string>
     <string name="notification_automation_allowed_title">Zezwól aplikacjom do automatyzacji</string>
-    <string name="notification_category_said">Co się mówi</string>
+    <string name="notification_category_said">Co jest czytane</string>
     <string name="notification_format_title">Speech format</string>
     <string name="notification_format_message">Symbole zastępcze: {app}, {title}, {text}, {content} (cały tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Prywatne powiadomienia mówią</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Dobry wieczór.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Ogłoszenia czasowe</string>
+    <string name="notification_category_clock">Ogłaszanie godziny</string>
     <string name="notification_clock_interval_title">Powiedz godzinę za każdym razem</string>
     <string name="notification_clock_format_title">Format godziny</string>
     <string name="notification_clock_format_message">Elementy zastępcze: {time}, {date} i {battery} (procent baterii).</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">Ładowanie aplikacji</string>
     <string name="notification_app_mode_title">Powiadomienia</string>
     <string name="notification_app_mode_default">Jak inne aplikacje</string>
-    <string name="notification_app_mode_read">Przeczytaj na głos</string>
+    <string name="notification_app_mode_read">Czytaj</string>
     <string name="notification_app_mode_private">Tylko nazwa aplikacji</string>
     <string name="notification_app_mode_priority">Najpierw przeczytaj</string>
-    <string name="notification_app_mode_ignore">Nie czytaj na głos</string>
-    <string name="notification_app_name_title">Wypowiedziane imię</string>
-    <string name="notification_app_said_as">powiedział jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_mode_ignore">Nie czytaj</string>
+    <string name="notification_app_name_title">Wypowiadana nazwa</string>
+    <string name="notification_app_said_as">wymawiane jako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetuj</string>
     <string name="notification_required_title">Czytaj tylko powiadomienia za pomocą</string>
     <string name="notification_blocked_title">Nie czytaj powiadomień za pomocą</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Wyłącz czytanie powiadomień na głos</string>
     <string name="notification_automation_toggle">Włącz lub wyłącz czytanie powiadomień na głos</string>
     <string name="notification_automation_stop">Zatrzymaj czytanie powiadomienia</string>
-    <string name="notification_automation_read_all">Przeczytaj powiadomienia</string>
+    <string name="notification_automation_read_all">Czytaj powiadomienia</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekunda</item>
         <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sekundy</item>

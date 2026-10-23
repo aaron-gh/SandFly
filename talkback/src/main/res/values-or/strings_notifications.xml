@@ -28,7 +28,7 @@
     <string name="notification_schedules_title">ସାରାଂଶ ଏବଂ ସମୟ</string>
     <string name="notification_history_title">ବିଜ୍ଞପ୍ତି ଇତିହାସ</string>
     <string name="notification_test_title">ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି ପଠାନ୍ତୁ</string>
-    <string name="notification_automation_title">ସ୍ୱୟଂଚାଳିତ</string>
+    <string name="notification_automation_title">ସ୍ୱୟଂଚାଳନ</string>
     <string name="notification_automation_allowed_title">ସ୍ୱୟଂଚାଳିତ ଆପ୍ସକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="notification_category_said">କ’ଣ କୁହାଯାଏ</string>
     <string name="notification_format_title">ବକ୍ତବ୍ୟ ଫର୍ମାଟ୍</string>
@@ -51,7 +51,7 @@
     <string name="notification_urls_title">ଲିଙ୍କ</string>
     <string name="notification_url_text_title">ଏକ ଲିଙ୍କ୍ ସ୍ଥାନରେ କହିଲା</string>
     <string name="notification_skip_empty_title">କୌଣସି ପାଠ୍ୟ ସହିତ ବିଜ୍ଞପ୍ତିକୁ ଏଡ଼ାଇଦିଅ</string>
-    <string name="notification_category_length">ଦ Length ର୍ଘ୍ୟ</string>
+    <string name="notification_category_length">ଦୈର୍ଘ୍ୟ</string>
     <string name="notification_max_words_title">ଶବ୍ଦର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
     <string name="notification_max_sentences_title">ବାକ୍ୟର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
     <string name="notification_max_characters_title">ପାଠ୍ୟ ଅକ୍ଷରର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
@@ -135,20 +135,20 @@
     <string name="notification_apps_category">ଆପଗୁଡ଼ିକ</string>
     <string name="notification_apps_loading">ଆପ୍ସ ଲୋଡ୍ କରୁଛି</string>
     <string name="notification_app_mode_title">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ</string>
-    <string name="notification_app_mode_default">ଅନ୍ୟାନ୍ୟ ଆପ୍ ଭାବରେ</string>
-    <string name="notification_app_mode_read">ଉଚ୍ଚ ସ୍ୱରରେ ପ Read ଼ନ୍ତୁ</string>
+    <string name="notification_app_mode_default">ଅନ୍ୟ ଆପ୍ ପରି</string>
+    <string name="notification_app_mode_read">ପଢ଼ନ୍ତୁ</string>
     <string name="notification_app_mode_private">କେବଳ ଆପ୍ ନାମ</string>
-    <string name="notification_app_mode_priority">ପ୍ରଥମେ ପ Read ଼ନ୍ତୁ</string>
-    <string name="notification_app_mode_ignore">ଉଚ୍ଚ ସ୍ୱରରେ ପ read ଼ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_app_mode_priority">ପ୍ରଥମେ ପଢ଼ନ୍ତୁ</string>
+    <string name="notification_app_mode_ignore">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_app_name_title">କଥିତ ନାମ</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> as ଭାବରେ କହିଲା</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ଭାବରେ ପଢ଼ାଯାଏ</string>
     <string name="notification_app_reset">ରିସେଟ୍‍ କରନ୍ତୁ</string>
     <string name="notification_required_title">ସହିତ କେବଳ ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ</string>
     <string name="notification_blocked_title">ସହିତ ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_private_title">କେବଳ ଆପ୍ ନାମ ପ Read ନ୍ତୁ</string>
     <string name="notification_replacements_title">ଭିନ୍ନ ଭାବରେ କୁହ</string>
     <string name="notification_add_word">ଏକ ଶବ୍ଦ ଯୋଡନ୍ତୁ</string>
-    <string name="notification_add_replacement">ଏକ ସ୍ଥାନାନ୍ତର ଯୋଡନ୍ତୁ</string>
+    <string name="notification_add_replacement">ଏକ ବଦଳ ଯୋଡନ୍ତୁ</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> ଭାବରେ</string>
     <string name="notification_replace_find">ପାଠ</string>
     <string name="notification_replace_with">ଯେପରି କୁହ</string>
@@ -281,7 +281,7 @@
     <string name="notification_cond_silent_not">ରିଙ୍ଗର୍ ବାଜୁଛି</string>
     <string name="notification_cond_media">ମିଡିଆ ଖେଳୁଛି</string>
     <string name="notification_cond_media_not">କୌଣସି ମିଡିଆ ଖେଳୁନାହିଁ</string>
-    <string name="notification_action_skip">ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_action_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_action_private">କେବଳ ଆପ୍ ନାମ ପ read ଼ନ୍ତୁ</string>
     <string name="notification_action_not_private">ବ୍ୟକ୍ତିଗତ ହୋଇଥିଲେ ମଧ୍ୟ ପୁରା ପ read ଼ନ୍ତୁ</string>
     <string name="notification_action_format">ଏକ ବକ୍ତବ୍ୟ ଫର୍ମାଟ୍ ବ୍ୟବହାର କରନ୍ତୁ</string>
@@ -289,10 +289,10 @@
     <string name="notification_action_no_limit">ଦ length ର୍ଘ୍ୟ ସୀମା ବିନା ପ read ନ୍ତୁ</string>
     <string name="notification_action_keep_emoji">ଇମୋଜି ରଖନ୍ତୁ</string>
     <string name="notification_action_keep_numbers">ସଂଖ୍ୟାଗୁଡ଼ିକୁ ଏକତ୍ର ରଖନ୍ତୁ</string>
-    <string name="notification_action_priority">ପ୍ରଥମେ ପ read ଼</string>
+    <string name="notification_action_priority">ପ୍ରଥମେ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_action_always_read">ଶାନ୍ତ ଘଣ୍ଟା କିମ୍ବା ଅନ୍ୟାନ୍ୟ ପ୍ରତିବନ୍ଧିତ ସମୟରେ ମଧ୍ୟ ଉଚ୍ଚ ସ୍ୱରରେ ବିଜ୍ଞପ୍ତି ପ Read ନ୍ତୁ</string>
     <string name="notification_action_voice">ଏକ ସ୍ୱର ପ୍ରୋଫାଇଲ୍ ସହିତ ପ read ଼ନ୍ତୁ</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ସହିତ ପ read ଼ନ୍ତୁ</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ସହିତ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_action_voice_sandfly">SandFly ର ସ୍ୱର ସହିତ ପ read ଼</string>
     <string name="notification_voice_removed">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ଅପସାରିତ ହୋଇଛି</string>
     <string name="notification_action_format_value">ବକ୍ତବ୍ୟ ଫର୍ମାଟ୍ <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ବ୍ୟବହାର କରନ୍ତୁ</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">ଉଚ୍ଚ ସ୍ୱରରେ ପଠନ ବିଜ୍ଞପ୍ତିକୁ ଅକ୍ଷମ କରନ୍ତୁ</string>
     <string name="notification_automation_toggle">ଉଚ୍ଚ ସ୍ୱରରେ ପଠନ ବିଜ୍ଞପ୍ତିକୁ ସକ୍ଷମ କିମ୍ବା ଅକ୍ଷମ କରନ୍ତୁ</string>
     <string name="notification_automation_stop">ପଠନ କରାଯାଉଥିବା ବିଜ୍ଞପ୍ତିକୁ ବନ୍ଦ କରନ୍ତୁ</string>
-    <string name="notification_automation_read_all">ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ନ୍ତୁ</string>
+    <string name="notification_automation_read_all">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ପଢ଼ନ୍ତୁ</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ଦ୍ୱିତୀୟ</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ସେକେଣ୍ଡ୍</item>

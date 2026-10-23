@@ -29,7 +29,7 @@
     <string name="notification_history_title">تاریخچه اعلان</string>
     <string name="notification_test_title">یک اعلان آزمایشی ارسال کنید</string>
     <string name="notification_automation_title">اتوماسیون</string>
-    <string name="notification_automation_allowed_title">به برنامه های اتوماسیون اجازه دهید</string>
+    <string name="notification_automation_allowed_title">اجازه به برنامه‌های خودکارسازی</string>
     <string name="notification_category_said">آنچه گفته می شود</string>
     <string name="notification_format_title">قالب گفتار</string>
     <string name="notification_format_message">متغیرهای مکان: {app}، {title}، {text}، {content} (کل متن)، {bigtext}، {subtext}، {ticker}، {category} و {time}.</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">عصر بخیر</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">اطلاعیه های زمان</string>
+    <string name="notification_category_clock">اعلام زمان</string>
     <string name="notification_clock_interval_title">هر بار بگو</string>
     <string name="notification_clock_format_title">قالب زمان</string>
     <string name="notification_clock_format_message">متغیرهایی: {time}، {date} و {battery} (درصد باتری).</string>
@@ -136,10 +136,10 @@
     <string name="notification_apps_loading">در حال بارگیری برنامه ها</string>
     <string name="notification_app_mode_title">اعلان‌ها</string>
     <string name="notification_app_mode_default">مانند سایر برنامه ها</string>
-    <string name="notification_app_mode_read">با صدای بلند بخوانید</string>
+    <string name="notification_app_mode_read">خوانده شود</string>
     <string name="notification_app_mode_private">فقط نام برنامه</string>
-    <string name="notification_app_mode_priority">ابتدا بخوانید</string>
-    <string name="notification_app_mode_ignore">با صدای بلند نخوانید</string>
+    <string name="notification_app_mode_priority">اول خوانده شود</string>
+    <string name="notification_app_mode_ignore">خوانده نشود</string>
     <string name="notification_app_name_title">نام گفتاری</string>
     <string name="notification_app_said_as">گفته شده به عنوان <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">بازنشانی</string>
@@ -147,8 +147,8 @@
     <string name="notification_blocked_title">اعلان ها را با</string>
     <string name="notification_private_title">فقط نام برنامه را بخوانید</string>
     <string name="notification_replacements_title">متفاوت بگو</string>
-    <string name="notification_add_word">یک کلمه اضافه کنید</string>
-    <string name="notification_add_replacement">جایگزینی اضافه کنید</string>
+    <string name="notification_add_word">افزودن کلمه</string>
+    <string name="notification_add_replacement">افزودن جایگزین</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> به عنوان <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">نوشتار</string>
     <string name="notification_replace_with">به عنوان بگویید</string>
@@ -241,7 +241,7 @@
     <string name="notification_type_landscape">افقی</string>
     <string name="notification_type_silent">حالت بی صدا یا ارتعاشی</string>
     <string name="notification_type_media">پخش رسانه</string>
-    <string name="notification_bluetooth_any">هر وسیله ای</string>
+    <string name="notification_bluetooth_any">هر دستگاهی</string>
     <string name="notification_wifi_hint">نام شبکه</string>
     <string name="notification_choose_app">یک برنامه را انتخاب کنید</string>
     <string name="notification_time_start">از</string>
@@ -289,7 +289,7 @@
     <string name="notification_action_no_limit">بدون محدودیت طول بخوانید</string>
     <string name="notification_action_keep_emoji">ایموجی را نگه دارید</string>
     <string name="notification_action_keep_numbers">اعداد را با هم نگه دارید</string>
-    <string name="notification_action_priority">ابتدا بخوانید</string>
+    <string name="notification_action_priority">اول خوانده شود</string>
     <string name="notification_action_always_read">خواندن حتی در ساعات سکوت و زمان‌های دیگری که اعلان‌ها خوانده نمی‌شوند</string>
     <string name="notification_action_voice">با نمایه صوتی بخوانید</string>
     <string name="notification_action_voice_value">با <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> بخوانید</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">خواندن اعلان‌ها را با صدای بلند غیرفعال کنید</string>
     <string name="notification_automation_toggle">خواندن اعلان‌ها را با صدای بلند فعال یا غیرفعال کنید</string>
     <string name="notification_automation_stop">خواندن اعلان را متوقف کنید</string>
-    <string name="notification_automation_read_all">اعلان ها را بخوانید</string>
+    <string name="notification_automation_read_all">خواندن اعلان‌ها</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ثانیه</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ثانیه</item>

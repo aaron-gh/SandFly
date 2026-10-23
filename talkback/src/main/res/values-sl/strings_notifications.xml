@@ -30,7 +30,7 @@
     <string name="notification_test_title">Pošlji testno obvestilo</string>
     <string name="notification_automation_title">Avtomatizacija</string>
     <string name="notification_automation_allowed_title">Dovoli aplikacije za avtomatizacijo</string>
-    <string name="notification_category_said">Kar je rečeno</string>
+    <string name="notification_category_said">Kaj se prebere</string>
     <string name="notification_format_title">Oblika govora</string>
     <string name="notification_format_message">Oznake mesta: {app}, {title}, {text}, {content} (celotno besedilo), {bigtext}, {subtext}, {ticker}, {category} in {time}.</string>
     <string name="notification_private_format_title">Zasebna obvestila pravijo</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Dober večer</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Časovne objave</string>
+    <string name="notification_category_clock">Napovedovanje časa</string>
     <string name="notification_clock_interval_title">Vsakič povejte čas</string>
     <string name="notification_clock_format_title">Oblika zapisa ure</string>
     <string name="notification_clock_format_message">Oznake mesta: {time}, {date} in {battery} (odstotek baterije).</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Nalaganje aplikacij</string>
     <string name="notification_app_mode_title">Obvestila</string>
     <string name="notification_app_mode_default">Kot druge aplikacije</string>
-    <string name="notification_app_mode_read">Berite na glas</string>
+    <string name="notification_app_mode_read">Beri</string>
     <string name="notification_app_mode_private">Samo ime aplikacije</string>
     <string name="notification_app_mode_priority">Najprej preberi</string>
-    <string name="notification_app_mode_ignore">Ne berite na glas</string>
+    <string name="notification_app_mode_ignore">Ne beri</string>
     <string name="notification_app_name_title">Izgovorjeno ime</string>
-    <string name="notification_app_said_as">rekel kot <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">izgovorjeno kot <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Ponastavi</string>
     <string name="notification_required_title">Preberi samo obvestila z</string>
     <string name="notification_blocked_title">Ne beri obvestil z</string>
     <string name="notification_private_title">Preberite samo ime aplikacije za</string>
     <string name="notification_replacements_title">Povej drugače</string>
-    <string name="notification_add_word">Dodajte besedo</string>
-    <string name="notification_add_replacement">Dodajte zamenjavo</string>
+    <string name="notification_add_word">Dodaj besedo</string>
+    <string name="notification_add_replacement">Dodaj zamenjavo</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kot <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Besedilo</string>
     <string name="notification_replace_with">Reci kot</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Onemogoči branje obvestil na glas</string>
     <string name="notification_automation_toggle">Omogočite ali onemogočite branje obvestil na glas</string>
     <string name="notification_automation_stop">Ustavite branje obvestila</string>
-    <string name="notification_automation_read_all">Preberite obvestila</string>
+    <string name="notification_automation_read_all">Preberi obvestila</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekundo</item>
         <item quantity="two"><xliff:g id="count" example="5">%d</xliff:g> sekundi</item>

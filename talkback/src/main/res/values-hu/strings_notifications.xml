@@ -30,7 +30,7 @@
     <string name="notification_test_title">Tesztértesítés küldése</string>
     <string name="notification_automation_title">Automatizálás</string>
     <string name="notification_automation_allowed_title">Automatizálási alkalmazások engedélyezése</string>
-    <string name="notification_category_said">Amit mondanak</string>
+    <string name="notification_category_said">Mit olvas fel</string>
     <string name="notification_format_title">Beszédformátum</string>
     <string name="notification_format_message">Helyőrzők: {app}, {title}, {text}, {content} (a teljes szöveg), {bigtext}, {subtext}, {ticker}, {category} és {time}.</string>
     <string name="notification_private_format_title">A privát értesítések szerint</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Jó estét.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Időbeli bejelentések</string>
+    <string name="notification_category_clock">Időbemondás</string>
     <string name="notification_clock_interval_title">Minden alkalommal mondja ki az időt</string>
     <string name="notification_clock_format_title">Időformátum</string>
     <string name="notification_clock_format_message">Helyőrzők: {time}, {date} és {battery} (az akkumulátor százalékos aránya).</string>
@@ -136,18 +136,18 @@
     <string name="notification_apps_loading">Alkalmazások betöltése</string>
     <string name="notification_app_mode_title">Értesítések</string>
     <string name="notification_app_mode_default">Más alkalmazásokhoz hasonlóan</string>
-    <string name="notification_app_mode_read">Olvass fel hangosan</string>
+    <string name="notification_app_mode_read">Felolvasás</string>
     <string name="notification_app_mode_private">Csak az alkalmazás neve</string>
-    <string name="notification_app_mode_priority">Először olvassa el</string>
-    <string name="notification_app_mode_ignore">Ne olvass fel hangosan</string>
+    <string name="notification_app_mode_priority">Olvasás elsőként</string>
+    <string name="notification_app_mode_ignore">Ne olvassa fel</string>
     <string name="notification_app_name_title">Kimondott név</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>ként mondta</string>
+    <string name="notification_app_said_as">kimondva: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Visszaállítás</string>
     <string name="notification_required_title">Csak az értesítéseket olvassa el</string>
     <string name="notification_blocked_title">Ne olvassa el az értesítéseket</string>
     <string name="notification_private_title">Csak az alkalmazás nevét olvassa el</string>
     <string name="notification_replacements_title">Mondd másképp</string>
-    <string name="notification_add_word">Adjon hozzá egy szót</string>
+    <string name="notification_add_word">Szó hozzáadása</string>
     <string name="notification_add_replacement">Csere hozzáadása</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> mint <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Szöveg</string>
@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">Megszólal a csengő</string>
     <string name="notification_cond_media">A média lejátszása folyamatban van</string>
     <string name="notification_cond_media_not">Nincs médialejátszás</string>
-    <string name="notification_action_skip">ne olvass</string>
+    <string name="notification_action_skip">ne olvassa fel</string>
     <string name="notification_action_private">csak az alkalmazás nevét olvassa el</string>
     <string name="notification_action_not_private">olvassa el teljesen, még ha privát is</string>
     <string name="notification_action_format">használjon beszédformátumot</string>
     <string name="notification_action_max_words">olvass el akár több szót is</string>
     <string name="notification_action_no_limit">terjedelem korlátok nélkül olvasható</string>
-    <string name="notification_action_keep_emoji">tartsd meg az emojit</string>
-    <string name="notification_action_keep_numbers">tartsa együtt a számokat</string>
-    <string name="notification_action_priority">először olvassa el</string>
+    <string name="notification_action_keep_emoji">emojik megtartása</string>
+    <string name="notification_action_keep_numbers">számok együtt tartása</string>
+    <string name="notification_action_priority">olvasás elsőként</string>
     <string name="notification_action_always_read">Hangosan olvassa fel az értesítéseket még csendes órákban vagy más korlátozott időszakokban is</string>
     <string name="notification_action_voice">hangprofillal olvasni</string>
-    <string name="notification_action_voice_value">olvasni <xliff:g id="profile" example="DECtalk">%1$s</xliff:g>-vel</string>
+    <string name="notification_action_voice_value">felolvasás ezzel: <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">olvasni SandFly hangjával</string>
     <string name="notification_voice_removed">Hangprofil eltávolítva</string>
     <string name="notification_action_format_value">használja a <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> beszédformátumot</string>

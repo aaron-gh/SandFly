@@ -29,7 +29,7 @@
     <string name="notification_history_title">Хабарландыру тарихы</string>
     <string name="notification_test_title">Сынақ туралы хабарландыру жіберіңіз</string>
     <string name="notification_automation_title">Автоматтандыру</string>
-    <string name="notification_automation_allowed_title">Автоматтандыру қолданбаларына рұқсат беріңіз</string>
+    <string name="notification_automation_allowed_title">Автоматтандыру қолданбаларына рұқсат беру</string>
     <string name="notification_category_said">Оқылатын нәрсе</string>
     <string name="notification_format_title">Сөйлеу пішімі</string>
     <string name="notification_format_message">Толтырғыштар: {app}, {title}, {text}, {content} (барлық мәтін), {bigtext}, {subtext}, {ticker}, {category} және {time}.</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Хабарландыру жабылғанда оқуды тоқтату</string>
     <string name="notification_watch_dismiss_title">Сондай-ақ смарт сағатта хабарландыру жабылған кезде</string>
     <string name="notification_app_cancel_title">Қолданба хабарландыруды жойғанда оқуды тоқтатыңыз</string>
-    <string name="notification_category_summary">Түйіндеме</string>
+    <string name="notification_category_summary">Жиынтық</string>
     <string name="notification_summary_now_title">Хабарландыруларды қазір оқыңыз</string>
     <string name="notification_summary_daily_title">Күн сайын хабарландыруларды оқыңыз</string>
     <string name="notification_summary_time_title">Уақыт</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Қолданбалар жүктелуде</string>
     <string name="notification_app_mode_title">Хабарландырулар</string>
     <string name="notification_app_mode_default">Басқа қолданбалар сияқты</string>
-    <string name="notification_app_mode_read">Дауыстап оқы</string>
+    <string name="notification_app_mode_read">Оқу</string>
     <string name="notification_app_mode_private">Тек қолданба атауы</string>
     <string name="notification_app_mode_priority">Алдымен оқы</string>
-    <string name="notification_app_mode_ignore">Дауыстап оқымаңыз</string>
-    <string name="notification_app_name_title">Аты-жөні</string>
+    <string name="notification_app_mode_ignore">Оқымау</string>
+    <string name="notification_app_name_title">Айтылатын атау</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ретінде айтылды</string>
     <string name="notification_app_reset">Қалпына келтіру</string>
     <string name="notification_required_title">Хабарландыруларды тек көмегімен оқыңыз</string>
     <string name="notification_blocked_title">Арқылы хабарландыруларды оқымаңыз</string>
     <string name="notification_private_title">Қолданбаның атын ғана оқыңыз</string>
     <string name="notification_replacements_title">Басқаша айт</string>
-    <string name="notification_add_word">Сөз қосыңыз</string>
-    <string name="notification_add_replacement">Ауыстыруды қосыңыз</string>
+    <string name="notification_add_word">Сөз қосу</string>
+    <string name="notification_add_replacement">Ауыстыру қосу</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> ретінде</string>
     <string name="notification_replace_find">Мәтін</string>
     <string name="notification_replace_with">Ретінде айтыңыз</string>
@@ -287,8 +287,8 @@
     <string name="notification_action_format">сөйлеу пішімін пайдаланыңыз</string>
     <string name="notification_action_max_words">бірнеше сөзге дейін оқыңыз</string>
     <string name="notification_action_no_limit">ұзындықты шектеусіз оқу</string>
-    <string name="notification_action_keep_emoji">эмодзиді сақтаңыз</string>
-    <string name="notification_action_keep_numbers">сандарды бірге ұстаңыз</string>
+    <string name="notification_action_keep_emoji">эмодзиді сақтау</string>
+    <string name="notification_action_keep_numbers">сандарды бірге ұстау</string>
     <string name="notification_action_priority">алдымен оқы</string>
     <string name="notification_action_always_read">Тыныш сағаттарда немесе басқа шектеулі уақытта да хабарландыруларды дауыстап оқыңыз</string>
     <string name="notification_action_voice">дауыс профилімен оқыңыз</string>

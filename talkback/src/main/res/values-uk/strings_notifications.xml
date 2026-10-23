@@ -30,7 +30,7 @@
     <string name="notification_test_title">Надіслати тестове сповіщення</string>
     <string name="notification_automation_title">Автоматизація</string>
     <string name="notification_automation_allowed_title">Дозволити програми автоматизації</string>
-    <string name="notification_category_said">Що сказано</string>
+    <string name="notification_category_said">Що читається</string>
     <string name="notification_format_title">Формат мовлення</string>
     <string name="notification_format_message">Заповнювачі: {app}, {title}, {text}, {content} (весь текст), {bigtext}, {subtext}, {ticker}, {category} та {time}.</string>
     <string name="notification_private_format_title">Приватні сповіщення кажуть</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Припинити читання, коли сповіщення закрито</string>
     <string name="notification_watch_dismiss_title">Також коли сповіщення відхилено на смарт-годиннику</string>
     <string name="notification_app_cancel_title">Припиніть читати, коли програма видалить сповіщення</string>
-    <string name="notification_category_summary">Резюме</string>
+    <string name="notification_category_summary">Зведення</string>
     <string name="notification_summary_now_title">Прочитайте сповіщення зараз</string>
     <string name="notification_summary_daily_title">Читайте сповіщення щодня</string>
     <string name="notification_summary_time_title">Час</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Завантаження програм</string>
     <string name="notification_app_mode_title">Сповіщення</string>
     <string name="notification_app_mode_default">Як і інші програми</string>
-    <string name="notification_app_mode_read">Прочитайте вголос</string>
+    <string name="notification_app_mode_read">Читати</string>
     <string name="notification_app_mode_private">Лише назва програми</string>
-    <string name="notification_app_mode_priority">Прочитай спочатку</string>
-    <string name="notification_app_mode_ignore">Не читайте вголос</string>
-    <string name="notification_app_name_title">Розмовне ім\'я</string>
-    <string name="notification_app_said_as">сказав як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_mode_priority">Читати першим</string>
+    <string name="notification_app_mode_ignore">Не читати</string>
+    <string name="notification_app_name_title">Вимовна назва</string>
+    <string name="notification_app_said_as">вимовляється як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Скинути</string>
     <string name="notification_required_title">Лише читати сповіщення за допомогою</string>
     <string name="notification_blocked_title">Не читайте сповіщення за допомогою</string>
     <string name="notification_private_title">Прочитайте лише назву програми для</string>
     <string name="notification_replacements_title">Скажи інакше</string>
-    <string name="notification_add_word">Додайте слово</string>
-    <string name="notification_add_replacement">Додайте заміну</string>
+    <string name="notification_add_word">Додати слово</string>
+    <string name="notification_add_replacement">Додати заміну</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> як <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Текст</string>
     <string name="notification_replace_with">Скажи як</string>
@@ -288,8 +288,8 @@
     <string name="notification_action_max_words">читати до певної кількості слів</string>
     <string name="notification_action_no_limit">читати без обмеження довжини</string>
     <string name="notification_action_keep_emoji">зберегти емодзі</string>
-    <string name="notification_action_keep_numbers">зберігайте цифри разом</string>
-    <string name="notification_action_priority">читай спочатку</string>
+    <string name="notification_action_keep_numbers">не розбивати числа</string>
+    <string name="notification_action_priority">читати першим</string>
     <string name="notification_action_always_read">Читайте сповіщення вголос навіть у години тиші чи в інший час з обмеженнями</string>
     <string name="notification_action_voice">читати за допомогою голосового профілю</string>
     <string name="notification_action_voice_value">читати з <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Вимкнути читання сповіщень вголос</string>
     <string name="notification_automation_toggle">Увімкніть або вимкніть читання сповіщень вголос</string>
     <string name="notification_automation_stop">Зупиніть читання сповіщення</string>
-    <string name="notification_automation_read_all">Читати повідомлення</string>
+    <string name="notification_automation_read_all">Читати сповіщення</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>
         <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> секунди</item>

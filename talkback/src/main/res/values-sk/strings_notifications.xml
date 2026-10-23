@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Dobrý večer.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Časové oznámenia</string>
+    <string name="notification_category_clock">Hlásenie času</string>
     <string name="notification_clock_interval_title">Vždy povedzte čas</string>
     <string name="notification_clock_format_title">Formát času</string>
     <string name="notification_clock_format_message">Zástupné symboly: {time}, {date} a {battery} (percento batérie).</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Načítavajú sa aplikácie</string>
     <string name="notification_app_mode_title">Upozornenia</string>
     <string name="notification_app_mode_default">Ako ostatné aplikácie</string>
-    <string name="notification_app_mode_read">Čítajte nahlas</string>
+    <string name="notification_app_mode_read">Čítať</string>
     <string name="notification_app_mode_private">Iba názov aplikácie</string>
-    <string name="notification_app_mode_priority">Najprv si prečítajte</string>
-    <string name="notification_app_mode_ignore">Nečítajte nahlas</string>
-    <string name="notification_app_name_title">Hovorené meno</string>
+    <string name="notification_app_mode_priority">Čítať ako prvé</string>
+    <string name="notification_app_mode_ignore">Nečítať</string>
+    <string name="notification_app_name_title">Vyslovovaný názov</string>
     <string name="notification_app_said_as">povedané ako <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetovať</string>
     <string name="notification_required_title">Čítať upozornenia iba pomocou</string>
     <string name="notification_blocked_title">Nečítať upozornenia s</string>
     <string name="notification_private_title">Čítať iba názov aplikácie</string>
     <string name="notification_replacements_title">Povedz inak</string>
-    <string name="notification_add_word">Pridajte slovo</string>
-    <string name="notification_add_replacement">Pridajte náhradu</string>
+    <string name="notification_add_word">Pridať slovo</string>
+    <string name="notification_add_replacement">Pridať náhradu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ako <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Text</string>
     <string name="notification_replace_with">Povedz ako</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Zakázať čítanie upozornení nahlas</string>
     <string name="notification_automation_toggle">Povoliť alebo zakázať čítanie upozornení nahlas</string>
     <string name="notification_automation_stop">Zastavte čítanie upozornenia</string>
-    <string name="notification_automation_read_all">Prečítajte si upozornenia</string>
+    <string name="notification_automation_read_all">Prečítať upozornenia</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekunda</item>
         <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sekundy</item>

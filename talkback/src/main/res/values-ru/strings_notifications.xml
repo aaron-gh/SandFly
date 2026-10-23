@@ -30,7 +30,7 @@
     <string name="notification_test_title">Отправить тестовое уведомление</string>
     <string name="notification_automation_title">Автоматизация</string>
     <string name="notification_automation_allowed_title">Разрешить приложения для автоматизации</string>
-    <string name="notification_category_said">Что сказано</string>
+    <string name="notification_category_said">Что читается</string>
     <string name="notification_format_title">Формат речи</string>
     <string name="notification_format_message">Заполнители: {app}, {title}, {text}, {content} (весь текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">В личных уведомлениях говорится</string>
@@ -56,7 +56,7 @@
     <string name="notification_max_sentences_title">Максимальное количество предложений</string>
     <string name="notification_max_characters_title">Максимальное количество текстовых символов</string>
     <string name="notification_max_seconds_title">Перестаньте читать после</string>
-    <string name="notification_category_timing">Тайминг</string>
+    <string name="notification_category_timing">Время</string>
     <string name="notification_delay_title">Подождите, прежде чем читать</string>
     <string name="notification_queue_title">Когда прочитано другое уведомление</string>
     <string name="notification_repeat_minutes_title">Читать еще раз, пока экран не включится</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Прекратите чтение, когда уведомление будет закрыто</string>
     <string name="notification_watch_dismiss_title">Также, когда уведомление закрывается на умных часах</string>
     <string name="notification_app_cancel_title">Прекратите читать, когда приложение удалит уведомление</string>
-    <string name="notification_category_summary">Резюме</string>
+    <string name="notification_category_summary">Сводка</string>
     <string name="notification_summary_now_title">Читать уведомления сейчас</string>
     <string name="notification_summary_daily_title">Читайте уведомления каждый день</string>
     <string name="notification_summary_time_title">Время</string>
@@ -136,11 +136,11 @@
     <string name="notification_apps_loading">Загрузка приложений</string>
     <string name="notification_app_mode_title">Уведомления</string>
     <string name="notification_app_mode_default">Как и другие приложения</string>
-    <string name="notification_app_mode_read">Читать вслух</string>
+    <string name="notification_app_mode_read">Читать</string>
     <string name="notification_app_mode_private">Только название приложения</string>
-    <string name="notification_app_mode_priority">Прочтите сначала</string>
-    <string name="notification_app_mode_ignore">Не читайте вслух</string>
-    <string name="notification_app_name_title">Произносимое имя</string>
+    <string name="notification_app_mode_priority">Читать первым</string>
+    <string name="notification_app_mode_ignore">Не читать</string>
+    <string name="notification_app_name_title">Произносимое название</string>
     <string name="notification_app_said_as">сказано как <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Сбросить</string>
     <string name="notification_required_title">Читать уведомления только с</string>
@@ -287,9 +287,9 @@
     <string name="notification_action_format">использовать речевой формат</string>
     <string name="notification_action_max_words">прочитать до нескольких слов</string>
     <string name="notification_action_no_limit">читать без ограничений по длине</string>
-    <string name="notification_action_keep_emoji">сохраняй смайлики</string>
-    <string name="notification_action_keep_numbers">держите числа вместе</string>
-    <string name="notification_action_priority">прочитай сначала</string>
+    <string name="notification_action_keep_emoji">сохранять эмодзи</string>
+    <string name="notification_action_keep_numbers">не разбивать числа</string>
+    <string name="notification_action_priority">читать первым</string>
     <string name="notification_action_always_read">Читайте уведомления вслух даже в тихие часы или в другое время с ограничениями.</string>
     <string name="notification_action_voice">читать с голосовым профилем</string>
     <string name="notification_action_voice_value">читать с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>

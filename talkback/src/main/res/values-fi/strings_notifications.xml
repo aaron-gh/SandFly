@@ -88,7 +88,7 @@
     <string name="notification_honour_vibrate_title">Ei värinätilassa</string>
     <string name="notification_skip_in_car_title">Ei autotilassa</string>
     <string name="notification_skip_in_car_summary">Kuten Android Auto, joka lukee ne itse</string>
-    <string name="notification_category_quiet_hours">Hiljaisia tunteja</string>
+    <string name="notification_category_quiet_hours">Hiljaiset tunnit</string>
     <string name="notification_quiet_hours_title">Hiljaisia tunteja</string>
     <string name="notification_quiet_start_title">Aloita</string>
     <string name="notification_quiet_end_title">Loppu</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">Ladataan sovelluksia</string>
     <string name="notification_app_mode_title">Ilmoitukset</string>
     <string name="notification_app_mode_default">Kuten muutkin sovellukset</string>
-    <string name="notification_app_mode_read">Lue ääneen</string>
+    <string name="notification_app_mode_read">Lue</string>
     <string name="notification_app_mode_private">Vain sovelluksen nimi</string>
     <string name="notification_app_mode_priority">Lue ensin</string>
-    <string name="notification_app_mode_ignore">Älä lue ääneen</string>
+    <string name="notification_app_mode_ignore">Älä lue</string>
     <string name="notification_app_name_title">Puhuttu nimi</string>
-    <string name="notification_app_said_as">sanoi <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">sanotaan <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nollaa</string>
     <string name="notification_required_title">Lue vain ilmoitukset</string>
     <string name="notification_blocked_title">Älä lue ilmoituksia</string>
@@ -292,7 +292,7 @@
     <string name="notification_action_priority">lue ensin</string>
     <string name="notification_action_always_read">Lue ilmoitukset ääneen myös hiljaisina aikoina tai muina rajoitettuina aikoina</string>
     <string name="notification_action_voice">lukea ääniprofiililla</string>
-    <string name="notification_action_voice_value">lue <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">lue profiililla <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">lukea SandFly äänellä</string>
     <string name="notification_voice_removed">Ääniprofiili poistettu</string>
     <string name="notification_action_format_value">käytä puhemuotoa <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>

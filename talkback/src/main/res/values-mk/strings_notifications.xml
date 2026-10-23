@@ -29,8 +29,8 @@
     <string name="notification_history_title">Историја на известувања</string>
     <string name="notification_test_title">Испратете известување за тест</string>
     <string name="notification_automation_title">Автоматизација</string>
-    <string name="notification_automation_allowed_title">Дозволете апликации за автоматизација</string>
-    <string name="notification_category_said">Што е кажано</string>
+    <string name="notification_automation_allowed_title">Дозволи апликации за автоматизација</string>
+    <string name="notification_category_said">Што се чита</string>
     <string name="notification_format_title">Формат на говор</string>
     <string name="notification_format_message">Места: {app}, {title}, {text}, {content} (целиот текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Се вели во приватните известувања</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">Добра вечер.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Временски соопштенија</string>
+    <string name="notification_category_clock">Најава на времето</string>
     <string name="notification_clock_interval_title">Кажете го времето секој</string>
     <string name="notification_clock_format_title">Формат за време</string>
     <string name="notification_clock_format_message">Места: {time}, {date} и {battery} (процентот на батеријата).</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Се вчитуваат апликации</string>
     <string name="notification_app_mode_title">Известувања</string>
     <string name="notification_app_mode_default">Како и другите апликации</string>
-    <string name="notification_app_mode_read">Читајте гласно</string>
+    <string name="notification_app_mode_read">Читај</string>
     <string name="notification_app_mode_private">Само име на апликација</string>
-    <string name="notification_app_mode_priority">Прочитајте прво</string>
-    <string name="notification_app_mode_ignore">Не читајте на глас</string>
-    <string name="notification_app_name_title">Говорно име</string>
+    <string name="notification_app_mode_priority">Прочитај прво</string>
+    <string name="notification_app_mode_ignore">Не читај</string>
+    <string name="notification_app_name_title">Изговорено име</string>
     <string name="notification_app_said_as">речено како <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Ресетирај</string>
     <string name="notification_required_title">Само читајте известувања со</string>
     <string name="notification_blocked_title">Не читајте известувања со</string>
     <string name="notification_private_title">Прочитајте го само името на апликацијата за</string>
     <string name="notification_replacements_title">Кажи поинаку</string>
-    <string name="notification_add_word">Додадете збор</string>
-    <string name="notification_add_replacement">Додадете замена</string>
+    <string name="notification_add_word">Додај збор</string>
+    <string name="notification_add_replacement">Додај замена</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> како <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Текст</string>
     <string name="notification_replace_with">Кажи како</string>
@@ -288,7 +288,7 @@
     <string name="notification_action_max_words">прочитајте до одреден број зборови</string>
     <string name="notification_action_no_limit">читање без ограничувања на должината</string>
     <string name="notification_action_keep_emoji">задржи емотикони</string>
-    <string name="notification_action_keep_numbers">чувајте ги броевите заедно</string>
+    <string name="notification_action_keep_numbers">чувај ги броевите заедно</string>
     <string name="notification_action_priority">прочитај прво</string>
     <string name="notification_action_always_read">Читајте ги известувањата на глас дури и за време на мирни часови или други ограничени времиња</string>
     <string name="notification_action_voice">читајте со гласовен профил</string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Оневозможете ги известувањата за читање на глас</string>
     <string name="notification_automation_toggle">Овозможете или оневозможете ги известувањата за читање на глас</string>
     <string name="notification_automation_stop">Запрете го читањето на известувањето</string>
-    <string name="notification_automation_read_all">Читајте известувања</string>
+    <string name="notification_automation_read_all">Читај известувања</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунда</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> секунди</item>

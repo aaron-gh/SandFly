@@ -30,7 +30,7 @@
     <string name="notification_test_title">एक परीक्षण अधिसूचना भेजें</string>
     <string name="notification_automation_title">स्वचालन</string>
     <string name="notification_automation_allowed_title">स्वचालन ऐप्स को अनुमति दें</string>
-    <string name="notification_category_said">क्या कहा गया है</string>
+    <string name="notification_category_said">क्या पढ़ा जाता है</string>
     <string name="notification_format_title">भाषण प्रारूप</string>
     <string name="notification_format_message">प्लेसहोल्डर: {app}, {title}, {text}, {content} (संपूर्ण पाठ), {bigtext}, {subtext}, {ticker}, {category} और {time}।</string>
     <string name="notification_private_format_title">निजी सूचनाएं कहती हैं</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">ऐप्स लोड हो रहे हैं</string>
     <string name="notification_app_mode_title">सूचनाएं</string>
     <string name="notification_app_mode_default">अन्य ऐप्स की तरह</string>
-    <string name="notification_app_mode_read">ज़ोर से पढ़ें</string>
+    <string name="notification_app_mode_read">पढ़ें</string>
     <string name="notification_app_mode_private">केवल ऐप का नाम</string>
     <string name="notification_app_mode_priority">पहले पढ़ें</string>
-    <string name="notification_app_mode_ignore">जोर से मत पढ़ो</string>
+    <string name="notification_app_mode_ignore">न पढ़ें</string>
     <string name="notification_app_name_title">बोला गया नाम</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> के रूप में कहा</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> बोला जाता है</string>
     <string name="notification_app_reset">रीसेट करें</string>
     <string name="notification_required_title">केवल नोटिफिकेशन पढ़ें</string>
     <string name="notification_blocked_title">के साथ नोटिफिकेशन न पढ़ें</string>
@@ -241,7 +241,7 @@
     <string name="notification_type_landscape">लैंडस्केप</string>
     <string name="notification_type_silent">मौन या कंपन मोड</string>
     <string name="notification_type_media">मीडिया चल रहा है</string>
-    <string name="notification_bluetooth_any">कोई भी उपकरण</string>
+    <string name="notification_bluetooth_any">कोई भी डिवाइस</string>
     <string name="notification_wifi_hint">नेटवर्क का नाम</string>
     <string name="notification_choose_app">एक ऐप चुनें</string>
     <string name="notification_time_start">से</string>
@@ -281,7 +281,7 @@
     <string name="notification_cond_silent_not">घंटी बजती है</string>
     <string name="notification_cond_media">मीडिया खेल रहा है</string>
     <string name="notification_cond_media_not">कोई मीडिया नहीं चल रहा</string>
-    <string name="notification_action_skip">मत पढ़ो</string>
+    <string name="notification_action_skip">न पढ़ें</string>
     <string name="notification_action_private">केवल ऐप का नाम पढ़ें</string>
     <string name="notification_action_not_private">पूरा पढ़ें, भले ही निजी हो</string>
     <string name="notification_action_format">भाषण प्रारूप का उपयोग करें</string>

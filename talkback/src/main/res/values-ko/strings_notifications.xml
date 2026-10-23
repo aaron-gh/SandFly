@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">좋은 저녁이에요.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">시간 공지</string>
+    <string name="notification_category_clock">시간 알림</string>
     <string name="notification_clock_interval_title">시간을 말해 보세요.</string>
     <string name="notification_clock_format_title">시간 형식</string>
     <string name="notification_clock_format_message">자리 표시자: {time}, {date} 및 {battery}(배터리 비율).</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">앱 로드 중</string>
     <string name="notification_app_mode_title">알림</string>
     <string name="notification_app_mode_default">다른 앱과 마찬가지로</string>
-    <string name="notification_app_mode_read">소리내어 읽기</string>
+    <string name="notification_app_mode_read">읽기</string>
     <string name="notification_app_mode_private">앱 이름만</string>
-    <string name="notification_app_mode_priority">먼저 읽어보세요</string>
-    <string name="notification_app_mode_ignore">큰 소리로 읽지 마세요</string>
+    <string name="notification_app_mode_priority">먼저 읽기</string>
+    <string name="notification_app_mode_ignore">읽지 않음</string>
     <string name="notification_app_name_title">음성 이름</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>라고 말함</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>(으)로 읽음</string>
     <string name="notification_app_reset">재설정</string>
     <string name="notification_required_title">다음이 포함된 알림만 읽습니다.</string>
     <string name="notification_blocked_title">알림을 읽지 마세요</string>
@@ -281,7 +281,7 @@
     <string name="notification_cond_silent_not">벨소리가 울린다</string>
     <string name="notification_cond_media">미디어가 재생 중입니다.</string>
     <string name="notification_cond_media_not">재생 중인 미디어가 없습니다.</string>
-    <string name="notification_action_skip">읽지 마세요</string>
+    <string name="notification_action_skip">읽지 않음</string>
     <string name="notification_action_private">앱 이름만 읽기</string>
     <string name="notification_action_not_private">비공개라도 전체 내용을 읽으세요.</string>
     <string name="notification_action_format">음성 형식을 사용하다</string>
@@ -289,7 +289,7 @@
     <string name="notification_action_no_limit">길이 제한 없이 읽기</string>
     <string name="notification_action_keep_emoji">이모티콘 유지</string>
     <string name="notification_action_keep_numbers">숫자를 함께 유지</string>
-    <string name="notification_action_priority">먼저 읽어보세요</string>
+    <string name="notification_action_priority">먼저 읽기</string>
     <string name="notification_action_always_read">조용한 시간이나 기타 제한된 시간에도 알림을 소리내어 읽어보세요.</string>
     <string name="notification_action_voice">음성 프로필로 읽기</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>로 읽기</string>

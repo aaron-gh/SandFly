@@ -29,13 +29,13 @@
     <string name="notification_history_title">通知履歴</string>
     <string name="notification_test_title">テスト通知を送信する</string>
     <string name="notification_automation_title">自動化</string>
-    <string name="notification_automation_allowed_title">自動化アプリを許可する</string>
+    <string name="notification_automation_allowed_title">自動化アプリを許可</string>
     <string name="notification_category_said">読み上げ内容</string>
     <string name="notification_format_title">音声フォーマット</string>
     <string name="notification_format_message">プレースホルダー: {app}、{title}、{text}、{content} (全文)、{bigtext}、{subtext}、{ticker}、{category}、{time}。</string>
     <string name="notification_private_format_title">プライベート通知には次のように書かれています</string>
     <string name="notification_private_format_message">非公開通知の内容の代わりに述べられます。プレースホルダー: {app}、{category}、{time}。</string>
-    <string name="notification_category_voice">声</string>
+    <string name="notification_category_voice">音声</string>
     <string name="notification_voice_title">声</string>
     <string name="notification_voice_sandfly">SandFlyの声</string>
     <string name="notification_detect_language_title">言語の検出</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">こんばんは。</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">時間のアナウンス</string>
+    <string name="notification_category_clock">時刻の読み上げ</string>
     <string name="notification_clock_interval_title">毎回時間を言います</string>
     <string name="notification_clock_format_title">時刻の表示形式</string>
     <string name="notification_clock_format_message">プレースホルダー: {time}、{date}、{battery} (バッテリーの割合)。</string>
@@ -133,22 +133,22 @@
     <string name="notification_clock_exact_summary">アラームとリマインダーが必要です。そうしないと、時刻が最大 1 分遅れる可能性があります。</string>
     <string name="notification_other_apps_title">その他のアプリ</string>
     <string name="notification_apps_category">アプリ</string>
-    <string name="notification_apps_loading">アプリをロードしています</string>
+    <string name="notification_apps_loading">アプリを読み込んでいます</string>
     <string name="notification_app_mode_title">通知</string>
-    <string name="notification_app_mode_default">他のアプリとして</string>
-    <string name="notification_app_mode_read">声に出して読む</string>
+    <string name="notification_app_mode_default">他のアプリと同じ</string>
+    <string name="notification_app_mode_read">読み上げる</string>
     <string name="notification_app_mode_private">アプリ名のみ</string>
-    <string name="notification_app_mode_priority">最初にお読みください</string>
-    <string name="notification_app_mode_ignore">声に出して読まないでください</string>
-    <string name="notification_app_name_title">口名</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>と言いました</string>
+    <string name="notification_app_mode_priority">最初に読み上げる</string>
+    <string name="notification_app_mode_ignore">読み上げない</string>
+    <string name="notification_app_name_title">読み上げ名</string>
+    <string name="notification_app_said_as">読み上げ名: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">リセット</string>
     <string name="notification_required_title">通知のみを読む</string>
     <string name="notification_blocked_title">通知を読まないでください</string>
     <string name="notification_private_title">アプリ名のみを読み取ります</string>
     <string name="notification_replacements_title">違う言い方をする</string>
-    <string name="notification_add_word">一言追加</string>
-    <string name="notification_add_replacement">代替品を追加する</string>
+    <string name="notification_add_word">単語を追加</string>
+    <string name="notification_add_replacement">置換を追加</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> を <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">テキスト</string>
     <string name="notification_replace_with">と言う</string>
@@ -241,7 +241,7 @@
     <string name="notification_type_landscape">横向き</string>
     <string name="notification_type_silent">サイレントモードまたはバイブレーションモード</string>
     <string name="notification_type_media">メディアの再生</string>
-    <string name="notification_bluetooth_any">あらゆるデバイス</string>
+    <string name="notification_bluetooth_any">すべてのデバイス</string>
     <string name="notification_wifi_hint">ネットワーク名</string>
     <string name="notification_choose_app">アプリを選択してください</string>
     <string name="notification_time_start">から</string>
@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">着信音が鳴る</string>
     <string name="notification_cond_media">メディアが再生中です</string>
     <string name="notification_cond_media_not">再生中のメディアがありません</string>
-    <string name="notification_action_skip">読まないでください</string>
+    <string name="notification_action_skip">読み上げない</string>
     <string name="notification_action_private">アプリ名のみを読み取ります</string>
     <string name="notification_action_not_private">非公開であっても全文を読む</string>
     <string name="notification_action_format">音声形式を使用する</string>
     <string name="notification_action_max_words">いくつかの単語まで読む</string>
     <string name="notification_action_no_limit">長さ制限なしで読む</string>
-    <string name="notification_action_keep_emoji">絵文字を維持する</string>
-    <string name="notification_action_keep_numbers">数字をまとめておく</string>
-    <string name="notification_action_priority">最初に読んでください</string>
+    <string name="notification_action_keep_emoji">絵文字を残す</string>
+    <string name="notification_action_keep_numbers">数字をまとめて読む</string>
+    <string name="notification_action_priority">最初に読み上げる</string>
     <string name="notification_action_always_read">静かな時間帯やその他の制限された時間帯でも通知を読み上げます</string>
     <string name="notification_action_voice">音声プロファイルで読む</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読んでください</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読み上げる</string>
     <string name="notification_action_voice_sandfly">SandFlyの声で読みます</string>
     <string name="notification_voice_removed">音声プロファイルが削除されました</string>
     <string name="notification_action_format_value">音声形式 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> を使用してください</string>

@@ -30,7 +30,7 @@
     <string name="notification_test_title">Ուղարկեք թեստի ծանուցում</string>
     <string name="notification_automation_title">Ավտոմատացում</string>
     <string name="notification_automation_allowed_title">Թույլատրել ավտոմատացման հավելվածները</string>
-    <string name="notification_category_said">Ինչ է ասված</string>
+    <string name="notification_category_said">Ինչ է կարդացվում</string>
     <string name="notification_format_title">Խոսքի ձևաչափ</string>
     <string name="notification_format_message">Տեղապահներ՝ {app}, {title}, {text}, {content} (ամբողջ տեքստը), {bigtext}, {subtext}, {ticker}, {category} և {time}:</string>
     <string name="notification_private_format_title">Մասնավոր ծանուցումներում ասվում է</string>
@@ -56,7 +56,7 @@
     <string name="notification_max_sentences_title">Նախադասությունների առավելագույն քանակը</string>
     <string name="notification_max_characters_title">Տեքստի նիշերի առավելագույն քանակը</string>
     <string name="notification_max_seconds_title">Դադարեցրեք կարդալ հետո</string>
-    <string name="notification_category_timing">Ժամկետավորում</string>
+    <string name="notification_category_timing">Ժամանակ</string>
     <string name="notification_delay_title">Սպասեք կարդալուց առաջ</string>
     <string name="notification_queue_title">Երբ կարդացվում է մեկ այլ ծանուցում</string>
     <string name="notification_repeat_minutes_title">Կրկին կարդացեք, մինչև էկրանը միանա</string>
@@ -136,11 +136,11 @@
     <string name="notification_apps_loading">Հավելվածների բեռնում</string>
     <string name="notification_app_mode_title">Ծանուցումներ</string>
     <string name="notification_app_mode_default">Ինչպես այլ հավելվածներ</string>
-    <string name="notification_app_mode_read">Բարձրաձայն կարդացեք</string>
+    <string name="notification_app_mode_read">Կարդալ</string>
     <string name="notification_app_mode_private">Միայն հավելվածի անունը</string>
-    <string name="notification_app_mode_priority">Նախ կարդացեք</string>
-    <string name="notification_app_mode_ignore">Մի կարդացեք բարձրաձայն</string>
-    <string name="notification_app_name_title">Խոսակցական անուն</string>
+    <string name="notification_app_mode_priority">Կարդալ առաջինը</string>
+    <string name="notification_app_mode_ignore">Չկարդալ</string>
+    <string name="notification_app_name_title">Արտասանվող անուն</string>
     <string name="notification_app_said_as">ասված է որպես <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Վերակայել</string>
     <string name="notification_required_title">Կարդացեք միայն ծանուցումները</string>
@@ -289,10 +289,10 @@
     <string name="notification_action_no_limit">կարդալ առանց երկարության սահմանափակման</string>
     <string name="notification_action_keep_emoji">պահել էմոջիները</string>
     <string name="notification_action_keep_numbers">պահել թվերը միասին</string>
-    <string name="notification_action_priority">նախ կարդացեք</string>
+    <string name="notification_action_priority">կարդալ առաջինը</string>
     <string name="notification_action_always_read">Կարդացեք ծանուցումները բարձրաձայն նույնիսկ հանգիստ ժամերին կամ այլ սահմանափակ ժամանակներում</string>
     <string name="notification_action_voice">կարդալ ձայնային պրոֆիլով</string>
-    <string name="notification_action_voice_value">կարդալ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> հետ</string>
+    <string name="notification_action_voice_value">կարդալ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> պրոֆիլով</string>
     <string name="notification_action_voice_sandfly">կարդալ SandFly-ի ձայնով</string>
     <string name="notification_voice_removed">Ձայնային պրոֆիլը հեռացվեց</string>
     <string name="notification_action_format_value">օգտագործել խոսքի ձևաչափը <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Անջատել բարձրաձայն կարդալու ծանուցումները</string>
     <string name="notification_automation_toggle">Միացնել կամ անջատել ծանուցումները բարձրաձայն կարդալը</string>
     <string name="notification_automation_stop">Դադարեցրեք ծանուցման ընթերցումը</string>
-    <string name="notification_automation_read_all">Կարդացեք ծանուցումները</string>
+    <string name="notification_automation_read_all">Կարդալ ծանուցումները</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> վայրկյան</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> վայրկյան</item>

@@ -30,7 +30,7 @@
     <string name="notification_test_title">Адправіць тэставае апавяшчэнне</string>
     <string name="notification_automation_title">Аўтаматызацыя</string>
     <string name="notification_automation_allowed_title">Дазволіць праграмы аўтаматызацыі</string>
-    <string name="notification_category_said">Што сказана</string>
+    <string name="notification_category_said">Што чытаецца</string>
     <string name="notification_format_title">Фармат маўлення</string>
     <string name="notification_format_message">Запаўняльнікі: {app}, {title}, {text}, {content} (увесь тэкст), {bigtext}, {subtext}, {ticker}, {category} і {time}.</string>
     <string name="notification_private_format_title">Прыватныя апавяшчэнні кажуць</string>
@@ -56,7 +56,7 @@
     <string name="notification_max_sentences_title">Максімальная колькасць прапаноў</string>
     <string name="notification_max_characters_title">Максімальная колькасць сімвалаў тэксту</string>
     <string name="notification_max_seconds_title">Перастаньце чытаць пасля</string>
-    <string name="notification_category_timing">Тэрміны</string>
+    <string name="notification_category_timing">Час</string>
     <string name="notification_delay_title">Пачакайце перад чытаннем</string>
     <string name="notification_queue_title">Калі чытаецца іншае апавяшчэнне</string>
     <string name="notification_repeat_minutes_title">Прачытайце яшчэ раз, пакуль экран не ўключыцца</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Спыніце чытанне, калі апавяшчэнне будзе адхілена</string>
     <string name="notification_watch_dismiss_title">Таксама калі апавяшчэнне адхілена на разумным гадзінніку</string>
     <string name="notification_app_cancel_title">Спыніце чытанне, калі праграма выдаліць апавяшчэнне</string>
-    <string name="notification_category_summary">Рэзюмэ</string>
+    <string name="notification_category_summary">Зводка</string>
     <string name="notification_summary_now_title">Прачытайце апавяшчэнні</string>
     <string name="notification_summary_daily_title">Чытайце апавяшчэнні кожны дзень</string>
     <string name="notification_summary_time_title">Час</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Загрузка праграм</string>
     <string name="notification_app_mode_title">Апавяшчэнні</string>
     <string name="notification_app_mode_default">Як і іншыя праграмы</string>
-    <string name="notification_app_mode_read">Прачытайце ўслых</string>
+    <string name="notification_app_mode_read">Чытаць</string>
     <string name="notification_app_mode_private">Толькі назва праграмы</string>
-    <string name="notification_app_mode_priority">Прачытайце спачатку</string>
-    <string name="notification_app_mode_ignore">Не чытайце ўслых</string>
-    <string name="notification_app_name_title">Гутарковае імя</string>
-    <string name="notification_app_said_as">сказаў як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_mode_priority">Чытаць першым</string>
+    <string name="notification_app_mode_ignore">Не чытаць</string>
+    <string name="notification_app_name_title">Вымаўляная назва</string>
+    <string name="notification_app_said_as">вымаўляецца як <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Скінуць</string>
     <string name="notification_required_title">Толькі чытаць апавяшчэнні з</string>
     <string name="notification_blocked_title">Не чытайце апавяшчэнні з дапамогай</string>
     <string name="notification_private_title">Чытайце толькі назву праграмы для</string>
     <string name="notification_replacements_title">Скажы інакш</string>
-    <string name="notification_add_word">Дадайце слова</string>
-    <string name="notification_add_replacement">Дадайце замену</string>
+    <string name="notification_add_word">Дадаць слова</string>
+    <string name="notification_add_replacement">Дадаць замену</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> як <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Тэкст</string>
     <string name="notification_replace_with">Скажы як</string>
@@ -289,7 +289,7 @@
     <string name="notification_action_no_limit">чытаць без абмежаванняў па даўжыні</string>
     <string name="notification_action_keep_emoji">захаваць эмодзі</string>
     <string name="notification_action_keep_numbers">трымаць лічбы разам</string>
-    <string name="notification_action_priority">прачытайце спачатку</string>
+    <string name="notification_action_priority">чытаць першым</string>
     <string name="notification_action_always_read">Чытайце апавяшчэнні ўслых нават у цішыню або ў іншы час з абмежаваннямі</string>
     <string name="notification_action_voice">чытаць з галасавым профілем</string>
     <string name="notification_action_voice_value">чытаць з <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>

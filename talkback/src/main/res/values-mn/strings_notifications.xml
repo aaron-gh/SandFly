@@ -30,7 +30,7 @@
     <string name="notification_test_title">Туршилтын мэдэгдэл илгээнэ үү</string>
     <string name="notification_automation_title">Автоматжуулалт</string>
     <string name="notification_automation_allowed_title">Автоматжуулалтын програмуудыг зөвшөөрөх</string>
-    <string name="notification_category_said">Юу гэж хэлсэн</string>
+    <string name="notification_category_said">Юу уншигдах</string>
     <string name="notification_format_title">Ярианы формат</string>
     <string name="notification_format_message">Орлуулагч: {app}, {title}, {text}, {content} (бүх текст), {bigtext}, {subtext}, {ticker}, {category} болон {time}.</string>
     <string name="notification_private_format_title">Хувийн мэдэгдлүүд ингэж хэлдэг</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Мэдэгдэл хаагдсан үед уншихаа зогсоо</string>
     <string name="notification_watch_dismiss_title">Мөн ухаалаг цаг дээр мэдэгдэл хаагдах үед</string>
     <string name="notification_app_cancel_title">Апп мэдэгдлийг устгах үед уншихаа зогсоо</string>
-    <string name="notification_category_summary">Дүгнэлт</string>
+    <string name="notification_category_summary">Хураангуй</string>
     <string name="notification_summary_now_title">Мэдэгдэлүүдийг одоо уншина уу</string>
     <string name="notification_summary_daily_title">Өдөр бүр мэдэгдлүүдийг уншина уу</string>
     <string name="notification_summary_time_title">Цаг хугацаа</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Апп-уудыг ачаалж байна</string>
     <string name="notification_app_mode_title">Мэдэгдлүүд</string>
     <string name="notification_app_mode_default">Бусад програмуудын адил</string>
-    <string name="notification_app_mode_read">Чанга унш</string>
+    <string name="notification_app_mode_read">Унших</string>
     <string name="notification_app_mode_private">Зөвхөн програмын нэр</string>
     <string name="notification_app_mode_priority">Эхлээд унш</string>
-    <string name="notification_app_mode_ignore">Чанга уншиж болохгүй</string>
+    <string name="notification_app_mode_ignore">Уншихгүй</string>
     <string name="notification_app_name_title">Хэлсэн нэр</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлсэн</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлнэ</string>
     <string name="notification_app_reset">Дахин тохируулах</string>
     <string name="notification_required_title">Зөвхөн мэдэгдлийг уншина уу</string>
     <string name="notification_blocked_title">Мэдэгдлүүдийг бүү унш</string>
     <string name="notification_private_title">Зөвхөн програмын нэрийг уншина уу</string>
     <string name="notification_replacements_title">Өөрөөр хэлбэл</string>
-    <string name="notification_add_word">Үг нэмнэ үү</string>
-    <string name="notification_add_replacement">Орлуулах зүйл нэмнэ үү</string>
+    <string name="notification_add_word">Үг нэмэх</string>
+    <string name="notification_add_replacement">Орлуулга нэмэх</string>
     <string name="notification_replacement_item"><xliff:g id="replace" example="laughing">%2$s</xliff:g>-р <xliff:g id="find" example="lol">%1$s</xliff:g></string>
     <string name="notification_replace_find">Текст</string>
     <string name="notification_replace_with">Гэж хэл</string>
@@ -292,7 +292,7 @@
     <string name="notification_action_priority">эхлээд унш</string>
     <string name="notification_action_always_read">Чимээгүй цаг эсвэл бусад хязгаарлалттай үед ч мэдэгдлийг чангаар уншаарай</string>
     <string name="notification_action_voice">дуут профайл ашиглан уншина уу</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>-тай унших</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> профайлаар унших</string>
     <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор уншина уу</string>
     <string name="notification_voice_removed">Дуут профайлыг устгасан</string>
     <string name="notification_action_format_value">ярианы форматыг ашиглах <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>

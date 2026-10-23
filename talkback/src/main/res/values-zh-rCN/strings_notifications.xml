@@ -30,7 +30,7 @@
     <string name="notification_test_title">发送测试通知</string>
     <string name="notification_automation_title">自动化</string>
     <string name="notification_automation_allowed_title">允许自动化应用程序</string>
-    <string name="notification_category_said">说什么</string>
+    <string name="notification_category_said">朗读内容</string>
     <string name="notification_format_title">语音格式</string>
     <string name="notification_format_message">占位符：{app}、{title}、{text}、{content}（全文）、{bigtext}、{subtext}、{ticker}、{category} 和 {time}。</string>
     <string name="notification_private_format_title">私密通知的朗读内容</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">清除通知时停止</string>
     <string name="notification_watch_dismiss_title">在手表上清除时也停止</string>
     <string name="notification_app_cancel_title">应用移除通知时停止</string>
-    <string name="notification_category_summary">总结</string>
+    <string name="notification_category_summary">摘要</string>
     <string name="notification_summary_now_title">立即朗读通知</string>
     <string name="notification_summary_daily_title">每天朗读通知</string>
     <string name="notification_summary_time_title">时间</string>
@@ -133,7 +133,7 @@
     <string name="notification_clock_exact_summary">需要闹钟和提醒权限。否则，报时最多可能延迟一分钟。</string>
     <string name="notification_other_apps_title">其他应用程序</string>
     <string name="notification_apps_category">应用</string>
-    <string name="notification_apps_loading">加载应用程序</string>
+    <string name="notification_apps_loading">正在加载应用</string>
     <string name="notification_app_mode_title">通知</string>
     <string name="notification_app_mode_default">与其他应用程序一样</string>
     <string name="notification_app_mode_read">朗读</string>
@@ -288,7 +288,7 @@
     <string name="notification_action_max_words">限制朗读的单词数</string>
     <string name="notification_action_no_limit">不限制朗读长度</string>
     <string name="notification_action_keep_emoji">保留表情符号</string>
-    <string name="notification_action_keep_numbers">将数字放在一起</string>
+    <string name="notification_action_keep_numbers">数字连读</string>
     <string name="notification_action_priority">优先朗读</string>
     <string name="notification_action_always_read">即使在安静时间或其他通常不朗读通知的时段，也要朗读</string>
     <string name="notification_action_voice">使用语音配置朗读</string>

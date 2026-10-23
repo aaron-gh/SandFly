@@ -29,7 +29,7 @@
     <string name="notification_history_title">ប្រវត្តិនៃការជូនដំណឹង</string>
     <string name="notification_test_title">ផ្ញើការជូនដំណឹងអំពីការសាកល្បង</string>
     <string name="notification_automation_title">ស្វ័យប្រវត្តិកម្ម</string>
-    <string name="notification_automation_allowed_title">អនុញ្ញាតឱ្យកម្មវិធីស្វ័យប្រវត្តិកម្ម</string>
+    <string name="notification_automation_allowed_title">អនុញ្ញាតកម្មវិធីស្វ័យប្រវត្តិកម្ម</string>
     <string name="notification_category_said">អ្វីដែលត្រូវបាននិយាយ</string>
     <string name="notification_format_title">ទម្រង់នៃការនិយាយ</string>
     <string name="notification_format_message">កន្លែងដាក់៖ {app}, {title}, {text}, {content} (អត្ថបទទាំងមូល), {bigtext}, {subtext}, {ticker}, {category} និង {time}។</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">កំពុងផ្ទុកកម្មវិធី</string>
     <string name="notification_app_mode_title">ការជូនដំណឹង</string>
     <string name="notification_app_mode_default">ដូចជាកម្មវិធីផ្សេងទៀត</string>
-    <string name="notification_app_mode_read">អានឮៗ</string>
+    <string name="notification_app_mode_read">អាន</string>
     <string name="notification_app_mode_private">ឈ្មោះកម្មវិធីតែប៉ុណ្ណោះ</string>
-    <string name="notification_app_mode_priority">Read first</string>
-    <string name="notification_app_mode_ignore">កុំអានឱ្យខ្លាំង</string>
+    <string name="notification_app_mode_priority">អានមុនគេ</string>
+    <string name="notification_app_mode_ignore">កុំអាន</string>
     <string name="notification_app_name_title">ឈ្មោះនិយាយ</string>
-    <string name="notification_app_said_as">បាននិយាយថា <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">អានថា <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">កំណត់ឡើងវិញ</string>
     <string name="notification_required_title">អានតែការជូនដំណឹងជាមួយ</string>
     <string name="notification_blocked_title">កុំអានការជូនដំណឹងជាមួយ</string>

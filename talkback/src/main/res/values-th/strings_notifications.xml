@@ -88,7 +88,7 @@
     <string name="notification_honour_vibrate_title">ไม่ได้อยู่ในโหมดสั่น</string>
     <string name="notification_skip_in_car_title">ไม่อยู่ในโหมดรถยนต์</string>
     <string name="notification_skip_in_car_summary">เช่นกับ Android Auto ซึ่งอ่านได้เอง</string>
-    <string name="notification_category_quiet_hours">ชั่วโมงที่เงียบสงบ</string>
+    <string name="notification_category_quiet_hours">ช่วงเวลาเงียบ</string>
     <string name="notification_quiet_hours_title">ชั่วโมงที่เงียบสงบ</string>
     <string name="notification_quiet_start_title">เริ่ม</string>
     <string name="notification_quiet_end_title">สิ้นสุด</string>
@@ -136,12 +136,12 @@
     <string name="notification_apps_loading">กำลังโหลดแอป</string>
     <string name="notification_app_mode_title">การแจ้งเตือน</string>
     <string name="notification_app_mode_default">เช่นเดียวกับแอพอื่นๆ</string>
-    <string name="notification_app_mode_read">อ่านออกเสียง</string>
+    <string name="notification_app_mode_read">อ่าน</string>
     <string name="notification_app_mode_private">ชื่อแอปเท่านั้น</string>
     <string name="notification_app_mode_priority">อ่านก่อน</string>
-    <string name="notification_app_mode_ignore">อย่าอ่านออกเสียง</string>
+    <string name="notification_app_mode_ignore">ไม่อ่าน</string>
     <string name="notification_app_name_title">ชื่อที่พูด</string>
-    <string name="notification_app_said_as">บอกว่าเป็น <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">อ่านว่า <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">รีเซ็ต</string>
     <string name="notification_required_title">อ่านการแจ้งเตือนด้วยเท่านั้น</string>
     <string name="notification_blocked_title">อย่าอ่านการแจ้งเตือนด้วย</string>
@@ -241,7 +241,7 @@
     <string name="notification_type_landscape">แนวนอน</string>
     <string name="notification_type_silent">โหมดเงียบหรือสั่น</string>
     <string name="notification_type_media">กำลังเล่นสื่อ</string>
-    <string name="notification_bluetooth_any">อุปกรณ์อะไรก็ได้</string>
+    <string name="notification_bluetooth_any">อุปกรณ์ใดก็ได้</string>
     <string name="notification_wifi_hint">ชื่อเครือข่าย</string>
     <string name="notification_choose_app">เลือกแอป</string>
     <string name="notification_time_start">จาก</string>

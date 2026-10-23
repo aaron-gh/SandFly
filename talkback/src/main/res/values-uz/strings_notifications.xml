@@ -29,7 +29,7 @@
     <string name="notification_history_title">Bildirishnomalar tarixi</string>
     <string name="notification_test_title">Sinov xabarnomasini yuboring</string>
     <string name="notification_automation_title">Avtomatlashtirish</string>
-    <string name="notification_automation_allowed_title">Avtomatlashtirish ilovalariga ruxsat bering</string>
+    <string name="notification_automation_allowed_title">Avtomatlashtirish ilovalariga ruxsat berish</string>
     <string name="notification_category_said">Nima deyiladi</string>
     <string name="notification_format_title">Nutq formati</string>
     <string name="notification_format_message">Oʻrin egalari: {app}, {title}, {text}, {content} (butun matn), {bigtext}, {subtext}, {ticker}, {category} va {time}.</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">Bildirishnoma o\'chirilganda o\'qishni to\'xtating</string>
     <string name="notification_watch_dismiss_title">Bundan tashqari, aqlli soatda bildirishnoma o\'chirilganda</string>
     <string name="notification_app_cancel_title">Ilova bildirishnomani olib tashlaganida o\'qishni to\'xtating</string>
-    <string name="notification_category_summary">Xulosa</string>
+    <string name="notification_category_summary">Jamlanma</string>
     <string name="notification_summary_now_title">Bildirishnomalarni hozir o‘qing</string>
     <string name="notification_summary_daily_title">Har kuni bildirishnomalarni o\'qing</string>
     <string name="notification_summary_time_title">Vaqt</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">Ilovalar yuklanmoqda</string>
     <string name="notification_app_mode_title">Bildirishnomalar</string>
     <string name="notification_app_mode_default">Boshqa ilovalar kabi</string>
-    <string name="notification_app_mode_read">Ovoz chiqarib o\'qing</string>
+    <string name="notification_app_mode_read">Oʻqish</string>
     <string name="notification_app_mode_private">Faqat ilova nomi</string>
-    <string name="notification_app_mode_priority">Avval o\'qing</string>
-    <string name="notification_app_mode_ignore">Ovoz chiqarib o\'qimang</string>
-    <string name="notification_app_name_title">Og\'zaki ism</string>
+    <string name="notification_app_mode_priority">Birinchi oʻqish</string>
+    <string name="notification_app_mode_ignore">Oʻqimaslik</string>
+    <string name="notification_app_name_title">Aytiladigan nom</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> deb aytildi</string>
     <string name="notification_app_reset">Asliga qaytarish</string>
     <string name="notification_required_title">Faqat bildirishnomalarni o\'qing</string>
     <string name="notification_blocked_title">bilan bildirishnomalarni o\'qimang</string>
     <string name="notification_private_title">Faqat ilova nomini oʻqing</string>
     <string name="notification_replacements_title">Boshqacha ayting</string>
-    <string name="notification_add_word">Bir so\'z qo\'shing</string>
-    <string name="notification_add_replacement">O\'rniga qo\'shing</string>
+    <string name="notification_add_word">So\'z qo\'shish</string>
+    <string name="notification_add_replacement">Almashtirish qo\'shish</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> sifatida</string>
     <string name="notification_replace_find">Matn</string>
     <string name="notification_replace_with">Sifatida ayting</string>
@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">Qo\'ng\'iroq jiringlaydi</string>
     <string name="notification_cond_media">Media oʻynayapti</string>
     <string name="notification_cond_media_not">Hech qanday media o\'ynamaydi</string>
-    <string name="notification_action_skip">o\'qimang</string>
+    <string name="notification_action_skip">oʻqimaslik</string>
     <string name="notification_action_private">faqat ilova nomini oʻqing</string>
     <string name="notification_action_not_private">shaxsiy bo\'lsa ham to\'liq o\'qing</string>
     <string name="notification_action_format">nutq formatidan foydalaning</string>
     <string name="notification_action_max_words">bir necha so\'zgacha o\'qing</string>
     <string name="notification_action_no_limit">uzunlik chegaralarisiz o\'qing</string>
-    <string name="notification_action_keep_emoji">emojini saqlang</string>
-    <string name="notification_action_keep_numbers">raqamlarni birga saqlang</string>
-    <string name="notification_action_priority">birinchi o\'qing</string>
+    <string name="notification_action_keep_emoji">emojini saqlash</string>
+    <string name="notification_action_keep_numbers">raqamlarni birga saqlash</string>
+    <string name="notification_action_priority">birinchi oʻqish</string>
     <string name="notification_action_always_read">Sokin soatlarda yoki boshqa cheklangan vaqtlarda ham bildirishnomalarni ovoz chiqarib o\'qing</string>
     <string name="notification_action_voice">ovozli profil bilan o\'qing</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> bilan o\'qing</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> bilan oʻqish</string>
     <string name="notification_action_voice_sandfly">SandFly ovozi bilan o\'qing</string>
     <string name="notification_voice_removed">Ovozli profil olib tashlandi</string>
     <string name="notification_action_format_value">nutq formatidan foydalaning <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>

@@ -136,10 +136,10 @@
     <string name="notification_apps_loading">Po ngarkon aplikacionet</string>
     <string name="notification_app_mode_title">Njoftimet</string>
     <string name="notification_app_mode_default">Si aplikacionet e tjera</string>
-    <string name="notification_app_mode_read">Lexoni me zë të lartë</string>
+    <string name="notification_app_mode_read">Lexo</string>
     <string name="notification_app_mode_private">Vetëm emri i aplikacionit</string>
-    <string name="notification_app_mode_priority">Lexoni së pari</string>
-    <string name="notification_app_mode_ignore">Mos lexoni me zë</string>
+    <string name="notification_app_mode_priority">Lexo së pari</string>
+    <string name="notification_app_mode_ignore">Mos lexo</string>
     <string name="notification_app_name_title">Emri i folur</string>
     <string name="notification_app_said_as">e thënë si <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Rivendos</string>
@@ -147,7 +147,7 @@
     <string name="notification_blocked_title">Mos i lexoni njoftimet me</string>
     <string name="notification_private_title">Lexoni vetëm emrin e aplikacionit për</string>
     <string name="notification_replacements_title">Thuaj ndryshe</string>
-    <string name="notification_add_word">Shtoni një fjalë</string>
+    <string name="notification_add_word">Shto një fjalë</string>
     <string name="notification_add_replacement">Shto një zëvendësim</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> si <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teksti</string>
@@ -288,8 +288,8 @@
     <string name="notification_action_max_words">lexoni deri në një numër fjalësh</string>
     <string name="notification_action_no_limit">lexoni pa kufij gjatësie</string>
     <string name="notification_action_keep_emoji">mbaj emoji</string>
-    <string name="notification_action_keep_numbers">mbani numrat së bashku</string>
-    <string name="notification_action_priority">lexoni së pari</string>
+    <string name="notification_action_keep_numbers">mbaj numrat bashkë</string>
+    <string name="notification_action_priority">lexo së pari</string>
     <string name="notification_action_always_read">Lexoni me zë të lartë njoftimet edhe gjatë orëve të qetësisë ose në kohë të tjera të kufizuara</string>
     <string name="notification_action_voice">lexoni me një profil zanor</string>
     <string name="notification_action_voice_value">lexo me <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">Çaktivizo leximin e njoftimeve me zë të lartë</string>
     <string name="notification_automation_toggle">Aktivizo ose çaktivizo leximin e njoftimeve me zë të lartë</string>
     <string name="notification_automation_stop">Ndalo leximin e njoftimit</string>
-    <string name="notification_automation_read_all">Lexoni njoftimet</string>
+    <string name="notification_automation_read_all">Lexo njoftimet</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekondë</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekonda</item>

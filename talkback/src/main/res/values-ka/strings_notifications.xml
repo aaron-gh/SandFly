@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">შეწყვიტე კითხვა, როდესაც შეტყობინება გაუქმებულია</string>
     <string name="notification_watch_dismiss_title">ასევე, როდესაც შეტყობინება გაუქმებულია სმარტ საათზე</string>
     <string name="notification_app_cancel_title">შეწყვიტე კითხვა, როდესაც აპი წაშლის შეტყობინებას</string>
-    <string name="notification_category_summary">რეზიუმე</string>
+    <string name="notification_category_summary">შეჯამება</string>
     <string name="notification_summary_now_title">წაიკითხეთ შეტყობინებები ახლა</string>
     <string name="notification_summary_daily_title">წაიკითხეთ შეტყობინებები ყოველდღე</string>
     <string name="notification_summary_time_title">დრო</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">საღამო მშვიდობისა.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">დროის განცხადებები</string>
+    <string name="notification_category_clock">დროის გამოცხადება</string>
     <string name="notification_clock_interval_title">თქვით დრო ყოველ ჯერზე</string>
     <string name="notification_clock_format_title">დროის ფორმატი</string>
     <string name="notification_clock_format_message">ჩანაცვლების ადგილები: {time}, {date} და {battery} (ბატარეის პროცენტი).</string>
@@ -136,19 +136,19 @@
     <string name="notification_apps_loading">აპლიკაციების ჩატვირთვა</string>
     <string name="notification_app_mode_title">შეტყობინებები</string>
     <string name="notification_app_mode_default">როგორც სხვა აპლიკაციები</string>
-    <string name="notification_app_mode_read">წაიკითხეთ ხმამაღლა</string>
+    <string name="notification_app_mode_read">წაკითხვა</string>
     <string name="notification_app_mode_private">მხოლოდ აპის სახელი</string>
-    <string name="notification_app_mode_priority">ჯერ წაიკითხე</string>
-    <string name="notification_app_mode_ignore">არ წაიკითხოთ ხმამაღლა</string>
-    <string name="notification_app_name_title">სალაპარაკო სახელი</string>
+    <string name="notification_app_mode_priority">პირველად წაკითხვა</string>
+    <string name="notification_app_mode_ignore">არ წაიკითხოს</string>
+    <string name="notification_app_name_title">წარმოთქმული სახელი</string>
     <string name="notification_app_said_as">ნათქვამია როგორც <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">გადაყენება</string>
     <string name="notification_required_title">მხოლოდ შეტყობინებების წაკითხვა</string>
     <string name="notification_blocked_title">ნუ წაიკითხავთ შეტყობინებებს</string>
     <string name="notification_private_title">წაიკითხეთ მხოლოდ აპლიკაციის სახელი</string>
     <string name="notification_replacements_title">სხვანაირად თქვი</string>
-    <string name="notification_add_word">დაამატეთ სიტყვა</string>
-    <string name="notification_add_replacement">დაამატეთ ჩანაცვლება</string>
+    <string name="notification_add_word">სიტყვის დამატება</string>
+    <string name="notification_add_replacement">ჩანაცვლების დამატება</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> როგორც <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">ტექსტი</string>
     <string name="notification_replace_with">თქვი როგორც</string>
@@ -287,12 +287,12 @@
     <string name="notification_action_format">გამოიყენეთ მეტყველების ფორმატი</string>
     <string name="notification_action_max_words">წაიკითხეთ სიტყვის რაოდენობამდე</string>
     <string name="notification_action_no_limit">წაიკითხეთ სიგრძის შეზღუდვის გარეშე</string>
-    <string name="notification_action_keep_emoji">შეინახეთ emoji</string>
-    <string name="notification_action_keep_numbers">შეინახეთ რიცხვები ერთად</string>
-    <string name="notification_action_priority">ჯერ წაიკითხე</string>
+    <string name="notification_action_keep_emoji">emoji-ის შენარჩუნება</string>
+    <string name="notification_action_keep_numbers">რიცხვების ერთად შენარჩუნება</string>
+    <string name="notification_action_priority">პირველად წაკითხვა</string>
     <string name="notification_action_always_read">წაიკითხეთ შეტყობინებები ხმამაღლა, თუნდაც წყნარ საათებში ან სხვა შეზღუდულ დროს</string>
     <string name="notification_action_voice">წაიკითხეთ ხმოვანი პროფილით</string>
-    <string name="notification_action_voice_value">წაიკითხეთ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g>-ით</string>
+    <string name="notification_action_voice_value">წაკითხვა <xliff:g id="profile" example="DECtalk">%1$s</xliff:g>-ით</string>
     <string name="notification_action_voice_sandfly">წაიკითხეთ SandFly ხმით</string>
     <string name="notification_voice_removed">ამოღებულია ხმოვანი პროფილი</string>
     <string name="notification_action_format_value">გამოიყენეთ მეტყველების ფორმატი <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">გამორთეთ შეტყობინებების ხმამაღლა წაკითხვა</string>
     <string name="notification_automation_toggle">ჩართეთ ან გამორთეთ შეტყობინებების ხმამაღლა წაკითხვა</string>
     <string name="notification_automation_stop">შეაჩერე შეტყობინების წაკითხვა</string>
-    <string name="notification_automation_read_all">წაიკითხეთ შეტყობინებები</string>
+    <string name="notification_automation_read_all">შეტყობინებების წაკითხვა</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> წამი</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> წამი</item>

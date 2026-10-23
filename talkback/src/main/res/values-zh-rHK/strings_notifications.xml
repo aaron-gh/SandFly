@@ -30,7 +30,7 @@
     <string name="notification_test_title">發送測試通知</string>
     <string name="notification_automation_title">自動化</string>
     <string name="notification_automation_allowed_title">允許自動化應用程式</string>
-    <string name="notification_category_said">說什麼</string>
+    <string name="notification_category_said">朗讀內容</string>
     <string name="notification_format_title">語音格式</string>
     <string name="notification_format_message">佔位符：{app}、{title}、{text}、{content}（全文）、{bigtext}、{subtext}、{ticker}、{category} 和 {time}。</string>
     <string name="notification_private_format_title">私人通知說</string>
@@ -110,7 +110,7 @@
     <string name="notification_dismiss_title">通知消失后停止阅读</string>
     <string name="notification_watch_dismiss_title">此外，當智慧手錶上的通知被取消時</string>
     <string name="notification_app_cancel_title">当应用程序删除通知时停止阅读</string>
-    <string name="notification_category_summary">總結</string>
+    <string name="notification_category_summary">摘要</string>
     <string name="notification_summary_now_title">立即閱讀通知</string>
     <string name="notification_summary_daily_title">每天閱讀通知</string>
     <string name="notification_summary_time_title">時間</string>
@@ -124,7 +124,7 @@
     <string name="notification_summary_evening">晚安.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">時間公告</string>
+    <string name="notification_category_clock">報時</string>
     <string name="notification_clock_interval_title">說一下每次的時間</string>
     <string name="notification_clock_format_title">時間格式</string>
     <string name="notification_clock_format_message">佔位符：{time}、{date} 和 {battery}（電池百分比）。</string>
@@ -133,15 +133,15 @@
     <string name="notification_clock_exact_summary">需要警報和提醒。否則時間最多可以晚一分鐘。</string>
     <string name="notification_other_apps_title">其他應用程式</string>
     <string name="notification_apps_category">應用程式</string>
-    <string name="notification_apps_loading">載入應用程式</string>
+    <string name="notification_apps_loading">正在載入應用程式</string>
     <string name="notification_app_mode_title">通知</string>
     <string name="notification_app_mode_default">與其他應用程式一樣</string>
-    <string name="notification_app_mode_read">大聲朗讀</string>
+    <string name="notification_app_mode_read">朗讀</string>
     <string name="notification_app_mode_private">僅應用程式名稱</string>
-    <string name="notification_app_mode_priority">首先閱讀</string>
-    <string name="notification_app_mode_ignore">不要大聲朗讀</string>
-    <string name="notification_app_name_title">口語姓名</string>
-    <string name="notification_app_said_as">表示為 <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_mode_priority">優先朗讀</string>
+    <string name="notification_app_mode_ignore">不朗讀</string>
+    <string name="notification_app_name_title">朗讀名稱</string>
+    <string name="notification_app_said_as">讀作 <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">重設</string>
     <string name="notification_required_title">僅閱讀通知</string>
     <string name="notification_blocked_title">不要閱讀通知</string>
@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">鈴聲響起</string>
     <string name="notification_cond_media">媒體正在播放</string>
     <string name="notification_cond_media_not">沒有媒體正在播放</string>
-    <string name="notification_action_skip">不讀</string>
+    <string name="notification_action_skip">不朗讀</string>
     <string name="notification_action_private">只讀取應用程式名稱</string>
     <string name="notification_action_not_private">完整閱讀，即使是私人的</string>
     <string name="notification_action_format">使用語音格式</string>
     <string name="notification_action_max_words">最多閱讀幾個單字</string>
     <string name="notification_action_no_limit">閱讀不受長度限制</string>
     <string name="notification_action_keep_emoji">保留表情符號</string>
-    <string name="notification_action_keep_numbers">將數字放在一起</string>
-    <string name="notification_action_priority">首先閱讀</string>
+    <string name="notification_action_keep_numbers">數字連讀</string>
+    <string name="notification_action_priority">優先朗讀</string>
     <string name="notification_action_always_read">即使在安靜時間或其他限制時間也可以大聲朗讀通知</string>
     <string name="notification_action_voice">使用語音設定檔閱讀</string>
-    <string name="notification_action_voice_value">與 <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> 一起閱讀</string>
+    <string name="notification_action_voice_value">使用 <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> 朗讀</string>
     <string name="notification_action_voice_sandfly">用SandFly的聲音朗讀</string>
     <string name="notification_voice_removed">刪除了語音配置文件</string>
     <string name="notification_action_format_value">使用語音格式<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
@@ -317,7 +317,7 @@
     <string name="notification_automation_off">停用大聲朗讀通知</string>
     <string name="notification_automation_toggle">啟用或停用朗讀通知</string>
     <string name="notification_automation_stop">停止閱讀通知</string>
-    <string name="notification_automation_read_all">閱讀通知</string>
+    <string name="notification_automation_read_all">朗讀通知</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 第二</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>秒</item>
