@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">შეამოწმეთ განახლებები</string>
+    <string name="title_pref_check_for_updates">განახლებების შემოწმება</string>
     <string name="summary_pref_check_for_updates_version">ვერსია <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">ავტომატურად შეამოწმეთ განახლებები</string>
     <string name="summary_pref_auto_update_check">შეამოწმეთ დღეში ერთხელ და აჩვენეთ შეტყობინება, როდესაც ახალი კონსტრუქცია ხელმისაწვდომია</string>
-    <string name="title_pref_dev_builds">განვითარება აშენებს</string>
+    <string name="title_pref_dev_builds">განვითარების ვერსიები</string>
     <string name="update_notification_title">SandFly განახლება ხელმისაწვდომია</string>
     <string name="update_notification_text">აშენება <xliff:g id="build" example="97">%1$d</xliff:g>. შეეხეთ დასაყენებლად.</string>
     <string name="update_dialog_title">SandFly აშენება <xliff:g id="build" example="97">%1$d</xliff:g> ხელმისაწვდომია</string>
-    <string name="update_dialog_install">დააინსტალირეთ</string>
+    <string name="update_dialog_install">ინსტალაცია</string>
     <string name="update_checking">მიმდინარეობს განახლებების შემოწმება</string>
     <string name="update_up_to_date">SandFly განახლებულია</string>
     <string name="update_check_failed">განახლებების შემოწმება ვერ მოხერხდა</string>

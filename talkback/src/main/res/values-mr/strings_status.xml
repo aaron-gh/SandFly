@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">स्थिती बोला</string>
     <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g> बारपैकी <xliff:g id="level" example="3">%1$d</xliff:g></string>
-    <string name="status_wifi_off">Wi-Fi सूट</string>
+    <string name="status_wifi_off">Wi-Fi बंद</string>
     <string name="status_wifi_not_connected">Wi-Fi कनेक्ट केलेले नाही</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
@@ -11,7 +11,7 @@
     <string name="status_mobile_no_service">मोबाईल सेवा नाही</string>
     <string name="status_do_not_disturb">व्यत्यय आणू नका</string>
     <string name="status_ringer_vibrate">कंपन</string>
-    <string name="status_ringer_silent">मूक</string>
+    <string name="status_ringer_silent">सायलंट</string>
     <string name="status_airplane_mode">विमान मोड</string>
     <string name="title_pref_status_readout">स्थिती वाचन</string>
     <string name="status_item_time">वेळ</string>
