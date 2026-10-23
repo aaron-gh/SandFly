@@ -1654,7 +1654,7 @@
     <string name="value_multi_tap_timeout_200ms">0.2 வினாடிகள்</string>
     <string name="value_multi_tap_timeout_250ms">0.25 வினாடிகள் (இயல்புநிலை)</string>
     <string name="title_pref_rotor_step_degrees">ஒரு படிக்கு ரோட்டார் திருப்பம்</string>
-    <string name="title_pref_edge_first_click_mm">முதல் கிளிக் செய்வதற்கான தூரம்</string>
+    <string name="title_pref_edge_first_click_mm">முதல் கிளிக் வரையிலான தூரம்</string>
     <string name="title_pref_edge_second_click_mm">முதல் கிளிக் முதல் இரண்டாவது கிளிக் தூரம்</string>
     <string name="value_distance_5mm">0.5 செ.மீ</string>
     <string name="value_distance_10mm">1 செ.மீ</string>
@@ -1677,10 +1677,10 @@
     <string name="value_lift_to_activate_disabled">முடக்கப்பட்டது</string>
     <string name="value_lift_to_activate_navigation_bar">வழிசெலுத்தல் பட்டியில் மட்டுமே</string>
     <string name="value_lift_to_activate_entire_screen">முழு திரை</string>
-    <string name="template_lift_to_activate_changed">செயல்படுத்த லிஃப்ட்: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">விரலை உயர்த்திச் செயல்படுத்து: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">தொடக்கத்திற்குத் திரும்பு</string>
     <string name="summary_pref_wrap_around">கடைசி உருப்படியைக் கடந்ததை ஸ்வைப் செய்வது முதல் உருப்படிக்கும், முதல் உருப்படியைக் கடந்ததற்கும் செல்கிறது. ஆஃப் செய்யும்போது, அதற்குப் பதிலாக ஒரு ஒலி இறுதியில் ஒலிக்கும்.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">சிக்கிய தொடு ஆய்வுகளை சரிசெய்யவும்</string>
+    <string name="title_pref_fix_stuck_touch_exploration">சிக்கிய தொடுதல் மூலம் ஆராய்வதைச் சரிசெய்</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP அனுமதி இல்லாமல், SandFly ஆல் தொடு ஆய்வு சிக்கியிருக்கலாம் என்று மட்டுமே கூற முடியும். அதை சரிசெய்ய அனுமதிக்க, இயக்கவும்: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">தொடு ஆய்வுகளை சரிசெய்தல்</string>
     <string name="stuck_touch_exploration_fixed">தொடு ஆய்வு சரி செய்யப்பட்டது</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">நிலை</string>
     <string name="action_move_up">மேலே நகர்த்தவும்</string>
     <string name="action_move_down">கீழே நகர்த்தவும்</string>
-    <string name="template_list_position">நிலை <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> இல் <xliff:g id="position" example="2">%1$d</xliff:g>வது நிலை</string>
     <string name="template_item_details_order_picked_up">எடுக்கப்பட்டது <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> விடப்பட்டது. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly இந்த வரிசையில் ஒரு பொருளின் விவரங்களைக் கூறுகிறது. அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடிக்கவும், பின்னர் அதை மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில், இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மூவ் அப் மற்றும் மூவ் டவுன் செயல்களையும் பயன்படுத்தலாம்.</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">கேட்பதை நிறுத்து</string>
     <string name="image_qna_type_question">கேள்வியைத் தட்டச்சு செய்யவும்</string>
     <string name="shortcut_dictate">சொல்லி எழுதவும்</string>
-    <string name="title_pref_ai_dictation">AI உடன் சரியான டிக்டேஷன்</string>
+    <string name="title_pref_ai_dictation">AI மூலம் டிக்டேஷனைத் திருத்து</string>
     <string name="dictation_not_corrected">திருத்தப்படவில்லை. அடையாளம் காணப்பட்டபடியே தட்டச்சு செய்யப்பட்டது.</string>
     <string name="dictation_nothing_recognized">எதுவும் கண்டறியப்படவில்லை</string>
     <string name="dictation_unavailable">பேச்சு அறிதல் கிடைக்கவில்லை</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">பயன்படுத்து</string>
     <string name="title_pref_dictation_ai_service">சொல்வதை எழுதுவதற்கான AI சேவை</string>
     <string name="dictation_ai_same">தானியங்கு விளக்கங்களுக்கானதே</string>
-    <string name="title_pref_browse_mode_per_app">ஒவ்வொரு பயன்பாட்டிலும் உலாவல் பயன்முறையை நினைவில் கொள்க</string>
+    <string name="title_pref_browse_mode_per_app">ஒவ்வொரு ஆப்ஸிலும் உலாவல் பயன்முறையை நினைவில் வை</string>
     <string name="title_pref_export_settings">அமைப்புகளை ஏற்றுமதி செய்</string>
     <string name="title_pref_import_settings">அமைப்புகளை இறக்குமதி செய்</string>
     <string name="settings_export_done">அமைப்புகள் ஏற்றுமதி செய்யப்பட்டன. API விசைகள் சேர்க்கப்படவில்லை</string>

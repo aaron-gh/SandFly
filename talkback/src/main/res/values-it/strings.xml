@@ -1654,7 +1654,7 @@
     <string name="value_multi_tap_timeout_200ms">0,2 secondi</string>
     <string name="value_multi_tap_timeout_250ms">0,25 secondi (predefinito)</string>
     <string name="title_pref_rotor_step_degrees">Giro del rotore per passo</string>
-    <string name="title_pref_edge_first_click_mm">Distanza dal primo clic</string>
+    <string name="title_pref_edge_first_click_mm">Distanza fino al primo clic</string>
     <string name="title_pref_edge_second_click_mm">Distanza dal primo al secondo clic</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Sollevare per attivare: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Navigazione circolare</string>
     <string name="summary_pref_wrap_around">Se si scorre oltre l\'ultimo elemento si arriva al primo, mentre oltre il primo si arriva all\'ultimo. Quando è disattivato, viene riprodotto un suono alla fine.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Risolto il problema con l\'esplorazione touch bloccata</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Correggi l\'esplorazione al tocco bloccata</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Senza l\'autorizzazione DUMP, SandFly può solo dire che l\'esplorazione tramite tocco potrebbe essere bloccata. Per lasciare che lo risolva, esegui: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Correzione dell\'esplorazione tattile</string>
     <string name="stuck_touch_exploration_fixed">Risolto il problema relativo all\'esplorazione tramite tocco</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Smetti di ascoltare</string>
     <string name="image_qna_type_question">Digita una domanda</string>
     <string name="shortcut_dictate">Detta</string>
-    <string name="title_pref_ai_dictation">Dettatura corretta con l\'intelligenza artificiale</string>
+    <string name="title_pref_ai_dictation">Correggi la dettatura con l\'IA</string>
     <string name="dictation_not_corrected">Non corretto. Digitato come riconosciuto.</string>
     <string name="dictation_nothing_recognized">Non è stato riconosciuto nulla</string>
     <string name="dictation_unavailable">Riconoscimento vocale non disponibile</string>

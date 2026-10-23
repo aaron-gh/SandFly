@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Faollashtirish uchun ko\'taring: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Boshiga qaytish</string>
     <string name="summary_pref_wrap_around">Oxirgi elementni surish birinchisiga o\'tadi va birinchisidan o\'tib oxirgisiga o\'tadi. O\'chiq bo\'lsa, uning o\'rniga oxirida ovoz eshitiladi.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Qopqoq teginish tekshiruvini tuzating</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Qotib qolgan teginib oʻrganishni tuzatish</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ruxsatisiz SandFly faqat teginish orqali oʻrganish toʻxtab qolishi mumkinligini aytishi mumkin. Uni tuzatish uchun quyidagi amalni bajaring: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Teginib oʻrganishni tuzatish</string>
     <string name="stuck_touch_exploration_fixed">Teginib oʻrganish tuzatildi</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Tinglashni toʻxtatish</string>
     <string name="image_qna_type_question">Savol yozing</string>
     <string name="shortcut_dictate">Ovoz bilan yozish</string>
-    <string name="title_pref_ai_dictation">AI bilan to\'g\'ri diktant</string>
+    <string name="title_pref_ai_dictation">Diktovkani AI bilan tuzatish</string>
     <string name="dictation_not_corrected">Tuzatilmadi. Qanday aniqlangan boʻlsa, shunday kiritildi.</string>
     <string name="dictation_nothing_recognized">Hech narsa aniqlanmadi</string>
     <string name="dictation_unavailable">Nutqni tanish funksiyasi mavjud emas</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Foydalanish</string>
     <string name="title_pref_dictation_ai_service">Diktovka uchun AI xizmati</string>
     <string name="dictation_ai_same">Avtomatik tavsiflardagi bilan bir xil</string>
-    <string name="title_pref_browse_mode_per_app">Har bir ilovada koʻrish rejimini eslab qoling</string>
+    <string name="title_pref_browse_mode_per_app">Har bir ilovada koʻrish rejimini eslab qolish</string>
     <string name="title_pref_export_settings">Sozlamalarni eksport qilish</string>
     <string name="title_pref_import_settings">Sozlamalarni import qilish</string>
     <string name="settings_export_done">Sozlamalar eksport qilindi. API kalitlari kiritilmagan</string>

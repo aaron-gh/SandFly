@@ -1684,7 +1684,7 @@
     <string name="template_lift_to_activate_changed">הרם להפעלה: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ניווט מעגלי</string>
     <string name="summary_pref_wrap_around">החלקה על פני הפריט האחרון עוברת אל הראשון, ומעבר הראשון עובר אל האחרון. במצב כבוי, במקום מתנגן צליל בסוף.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">תקן חקר מגע תקוע</string>
+    <string name="title_pref_fix_stuck_touch_exploration">תיקון גילוי באמצעות מגע שנתקע</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ללא הרשאת DUMP, SandFly יכול רק לומר שחקר המגע עשוי להיות תקוע. כדי לתקן את זה, הפעל: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">מתקן את גילוי באמצעות מגע</string>
     <string name="stuck_touch_exploration_fixed">חקירת המגע תוקנה</string>
@@ -1746,7 +1746,7 @@
     <string name="image_qna_stop_listening">הפסקת האזנה</string>
     <string name="image_qna_type_question">הקלד שאלה</string>
     <string name="shortcut_dictate">הכתבה</string>
-    <string name="title_pref_ai_dictation">הכתבה נכונה עם AI</string>
+    <string name="title_pref_ai_dictation">תיקון הכתבה באמצעות AI</string>
     <string name="dictation_not_corrected">לא תוקן. הוקלד כפי שזוהה.</string>
     <string name="dictation_nothing_recognized">לא זוהה דבר</string>
     <string name="dictation_unavailable">זיהוי דיבור אינו זמין</string>
@@ -1767,7 +1767,7 @@
     <string name="dictation_whisper_use">שימוש</string>
     <string name="title_pref_dictation_ai_service">שירות AI להכתבה</string>
     <string name="dictation_ai_same">זהה לתיאורים האוטומטיים</string>
-    <string name="title_pref_browse_mode_per_app">זכור את מצב הגלישה בכל אפליקציה</string>
+    <string name="title_pref_browse_mode_per_app">שמירת מצב הגלישה בכל אפליקציה</string>
     <string name="title_pref_export_settings">ייצוא הגדרות</string>
     <string name="title_pref_import_settings">ייבוא הגדרות</string>
     <string name="settings_export_done">הגדרות יוצאו. מפתחות API אינם כלולים</string>

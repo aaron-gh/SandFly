@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Подигнете за активирање: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Циклично движење</string>
     <string name="summary_pref_wrap_around">Поминувањето покрај последната ставка оди до првата, а покрај првата оди до последната. Кога е исклучено, наместо тоа, на крајот се репродуцира звук.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Поправете го истражувањето на заглавениот допир</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Поправи заглавено истражување со допир</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволата DUMP, SandFly може само да каже дека истражувањето со допир може да е заглавено. За да дозволите да го поправи, стартувајте: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Поправање на истражувањето со допир</string>
     <string name="stuck_touch_exploration_fixed">Истражувањето со допир е поправено</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Запри слушање</string>
     <string name="image_qna_type_question">Напишете прашање</string>
     <string name="shortcut_dictate">Диктирај</string>
-    <string name="title_pref_ai_dictation">Правилен диктат со вештачка интелигенција</string>
+    <string name="title_pref_ai_dictation">Поправај го диктирањето со вештачка интелигенција</string>
     <string name="dictation_not_corrected">Не е поправено. Внесено како што е препознаено.</string>
     <string name="dictation_nothing_recognized">Ништо не се препозна</string>
     <string name="dictation_unavailable">Недостапно е препознавање говор</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Користи</string>
     <string name="title_pref_dictation_ai_service">Услуга за вештачка интелигенција за диктирање</string>
     <string name="dictation_ai_same">Иста како за автоматските описи</string>
-    <string name="title_pref_browse_mode_per_app">Запомнете го режимот на прелистување во секоја апликација</string>
+    <string name="title_pref_browse_mode_per_app">Запомни го режимот на прелистување во секоја апликација</string>
     <string name="title_pref_export_settings">Извези поставки</string>
     <string name="title_pref_import_settings">Увези поставки</string>
     <string name="settings_export_done">Поставките се извезени. Клучевите за API не се вклучени</string>

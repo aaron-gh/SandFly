@@ -1655,7 +1655,7 @@
     <string name="value_multi_tap_timeout_250ms">0.25 ວິນາທີ (ຄ່າເລີ່ມຕົ້ນ)</string>
     <string name="title_pref_rotor_step_degrees">rotor turn ຕໍ່​ຂັ້ນ​ຕອນ​</string>
     <string name="title_pref_edge_first_click_mm">ໄລຍະຫ່າງໃນການຄລິກທໍາອິດ</string>
-    <string name="title_pref_edge_second_click_mm">ໄລ​ຍະ​ຫ່າງ​ຈາກ​ການ​ຄລິກ​ຄັ້ງ​ທໍາ​ອິດ​ຫາ​ຄັ້ງ​ທີ​ສອງ​</string>
+    <string name="title_pref_edge_second_click_mm">ໄລຍະຫ່າງຈາກການຄລິກຄັ້ງທຳອິດຫາຄັ້ງທີສອງ</string>
     <string name="value_distance_5mm">0.5 ຊມ</string>
     <string name="value_distance_10mm">1 ຊມ</string>
     <string name="value_distance_15mm">1.5ຊມ</string>
@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">ຍົກເພື່ອເປີດໃຊ້: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ວົນກັບໄປຕົ້ນ</string>
     <string name="summary_pref_wrap_around">ການປັດຜ່ານລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດ, ແລະຜ່ານໄປອັນທໍາອິດໄປຫາອັນສຸດທ້າຍ. ເມື່ອປິດ, ສຽງຈະຫຼິ້ນໃນຕອນທ້າຍແທນ.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສໍາຜັດທີ່ຕິດຄ້າງ</string>
+    <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດທີ່ຄ້າງ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີການອະນຸຍາດ DUMP, SandFly ພຽງແຕ່ເວົ້າໄດ້ວ່າ ການສຳຜັດສຳຜັດອາດຈະຕິດຢູ່. ເພື່ອໃຫ້ມັນແກ້ໄຂ, ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ກຳລັງແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດ</string>
     <string name="stuck_touch_exploration_fixed">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດແລ້ວ</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">ສະຖານະ</string>
     <string name="action_move_up">ຍ້າຍຂຶ້ນ</string>
     <string name="action_move_down">ຍ້າຍລົງ</string>
-    <string name="template_list_position">ຕຳແໜ່ງ <xliff:g id="position" example="2">%1$d</xliff:g> ຂອງ<xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_list_position">ຕຳແໜ່ງ <xliff:g id="position" example="2">%1$d</xliff:g> ຈາກ <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">ຍົກ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ວາງ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ບອກລາຍລະອຽດຂອງສິນຄ້າໃນຄໍາສັ່ງນີ້. ເພື່ອປ່ຽນມັນ, ແຕະລາຍລະອຽດຄ້າງໄວ້, ຈາກນັ້ນລາກມັນຂຶ້ນ ຫຼື ລົງ. ເມື່ອເປີດ SandFly, ແຕະສອງເທື່ອຄ້າງໄວ້, ຈາກນັ້ນລາກ. ທ່ານຍັງສາມາດໃຊ້ການເຄື່ອນໄຫວຂຶ້ນແລະເລື່ອນລົງໄດ້.</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">ຢຸດຟັງ</string>
     <string name="image_qna_type_question">ພິມຄຳຖາມ</string>
     <string name="shortcut_dictate">ພິມດ້ວຍສຽງ</string>
-    <string name="title_pref_ai_dictation">ການສັ່ງໃຫ້ຖືກຕ້ອງດ້ວຍ AI</string>
+    <string name="title_pref_ai_dictation">ແກ້ໄຂການພິມດ້ວຍສຽງດ້ວຍ AI</string>
     <string name="dictation_not_corrected">ບໍ່ໄດ້ແກ້ໄຂ. ພິມຕາມທີ່ຮັບຮູ້ໄດ້.</string>
     <string name="dictation_nothing_recognized">ບໍ່ສາມາດຈຳແນກຫຍັງໄດ້</string>
     <string name="dictation_unavailable">ການຮັບຮູ້ສຽງເວົ້າບໍ່ສາມາດໃຊ້ໄດ້</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">ໃຊ້</string>
     <string name="title_pref_dictation_ai_service">ບໍລິການ AI ສຳລັບການພິມດ້ວຍສຽງ</string>
     <string name="dictation_ai_same">ຄືກັນກັບຄຳອະທິບາຍອັດຕະໂນມັດ</string>
-    <string name="title_pref_browse_mode_per_app">ຈື່ຮູບແບບການທ່ອງເວັບໃນແຕ່ລະແອັບ</string>
+    <string name="title_pref_browse_mode_per_app">ຈື່ໂໝດທ່ອງເບິ່ງໃນແຕ່ລະແອັບ</string>
     <string name="title_pref_export_settings">ສົ່ງອອກການຕັ້ງຄ່າ</string>
     <string name="title_pref_import_settings">ນໍາເຂົ້າການຕັ້ງຄ່າ</string>
     <string name="settings_export_done">ສົ່ງອອກການຕັ້ງຄ່າແລ້ວ. ຄີ API ບໍ່ລວມ</string>

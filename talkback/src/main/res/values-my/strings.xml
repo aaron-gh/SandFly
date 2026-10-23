@@ -1654,8 +1654,8 @@
     <string name="value_multi_tap_timeout_200ms">၀.၂ စက္ကန့်</string>
     <string name="value_multi_tap_timeout_250ms">0.25 စက္ကန့် (မူလ)</string>
     <string name="title_pref_rotor_step_degrees">ရဟတ်ကို ခြေလှမ်းအလိုက်လှည့်ပါ</string>
-    <string name="title_pref_edge_first_click_mm">ပထမဆုံးနှိပ်ရန်အကွာအဝေး</string>
-    <string name="title_pref_edge_second_click_mm">ပထမမှစက္ကန့်အကွာအဝေးကိုနှိပ်ပါ</string>
+    <string name="title_pref_edge_first_click_mm">ပထမ ကလစ်အထိ အကွာအဝေး</string>
+    <string name="title_pref_edge_second_click_mm">ပထမမှ ဒုတိယ ကလစ်အထိ အကွာအဝေး</string>
     <string name="value_distance_5mm">0.5 စင်တီမီတာ</string>
     <string name="value_distance_10mm">1 စင်တီမီတာ</string>
     <string name="value_distance_15mm">1.5 စင်တီမီတာ</string>
@@ -1677,10 +1677,10 @@
     <string name="value_lift_to_activate_disabled">ပိတ်ထားသည်</string>
     <string name="value_lift_to_activate_navigation_bar">လမ်းညွှန်ဘားပေါ်တွင်သာ</string>
     <string name="value_lift_to_activate_entire_screen">မျက်နှာပြင်တစ်ခုလုံး</string>
-    <string name="template_lift_to_activate_changed">စဖွင့်ရန် ဓါတ်လှေကား- <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">လက်ချောင်းကြွ၍ ဖွင့်ရန်- <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">အစသို့ ပြန်ပတ်ပါ</string>
     <string name="summary_pref_wrap_around">နောက်ဆုံးသောအရာကို ကျော်ပြီး ပွတ်ဆွဲခြင်းက ပထမဆီသို့ သွားပြီး ပထမတစ်ခုကို ကျော်သွားပါက နောက်ဆုံးသို့ ရောက်သွားမည်ဖြစ်သည်။ ပိတ်ထားသည့်အခါတွင် အသံအစား အဆုံးတွင် ဖွင့်သည်။</string>
-    <string name="title_pref_fix_stuck_touch_exploration">ထိတွေ့မှု စူးစမ်းရှာဖွေမှုကို ပြုပြင်ပါ</string>
+    <string name="title_pref_fix_stuck_touch_exploration">ရပ်တန့်နေသော ထိ၍ရှာဖွေခြင်းကို ပြင်ရန်</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMPခွင့်ပြုချက်မရှိဘဲ၊ SandFly ထိတွေ့စူးစမ်းမှုမှာ ပိတ်မိနေနိုင်သည်ဟုသာ ပြောနိုင်သည်။ ၎င်းကို ပြုပြင်နိုင်စေရန်၊ လုပ်ဆောင်ရန်- adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ထိတွေ့စူးစမ်းမှုကို ပြုပြင်ခြင်း</string>
     <string name="stuck_touch_exploration_fixed">ထိတွေ့စူးစမ်းမှုကို ပြင်ဆင်ပြီးပါပြီ</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">အခြေအနေ</string>
     <string name="action_move_up">အပေါ်ကိုရွှေ့ပါ</string>
     <string name="action_move_down">အောက်သို့ရွှေ့ပါ</string>
-    <string name="template_list_position"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g> ၏ ရာထူး</string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ခုအနက် နေရာ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကောက်ယူခဲ့သည်။ <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကို ချထားသည်။ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ဤမှာယူမှုတွင် ပစ္စည်းတစ်ခု၏အသေးစိတ်အချက်အလက်များကို ပြောပါသည်။ ၎င်းကိုပြောင်းလဲရန်၊ အသေးစိတ်ကိုထိ၍ ဖိထားပါ၊ ထို့နောက် ၎င်းကို အပေါ် သို့မဟုတ် အောက်သို့ ဆွဲချပါ။ SandFly ဖွင့်ထားခြင်းဖြင့် နှစ်ချက်တို့ပြီး ဖိထားပါ၊ ထို့နောက် ဆွဲယူပါ။ Move up and Move down လုပ်ဆောင်ချက်များကိုလည်း သုံးနိုင်သည်။</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">နားထောင်တာကို ရပ်လိုက်ပါ</string>
     <string name="image_qna_type_question">မေးခွန်းတစ်ခုရိုက်ပါ</string>
     <string name="shortcut_dictate">နှုတ်တိုက်ချပေးရန်</string>
-    <string name="title_pref_ai_dictation">AI ဖြင့်မှန်ကန်သောသတ်ပုံ</string>
+    <string name="title_pref_ai_dictation">AI ဖြင့် အသံဖြင့်စာရိုက်ခြင်းကို ပြင်ရန်</string>
     <string name="dictation_not_corrected">မပြင်ထားပါ။ မှတ်မိသည့်အတိုင်း ရိုက်ထည့်ထားသည်။</string>
     <string name="dictation_nothing_recognized">ဘာမှ မမှတ်သားနိုင်ပါ</string>
     <string name="dictation_unavailable">စကားပြောမှတ်သားမှု မရရှိနိုင်ပါ</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">သုံးရန်</string>
     <string name="title_pref_dictation_ai_service">နှုတ်တိုက်ချရေးခြင်းအတွက် AI ဝန်ဆောင်မှု</string>
     <string name="dictation_ai_same">အလိုအလျောက် ရှင်းလင်းချက်များနှင့် အတူတူ</string>
-    <string name="title_pref_browse_mode_per_app">အပလီကေးရှင်းတစ်ခုစီတွင် ဘရောင်ဇာမုဒ်ကို သတိရပါ</string>
+    <string name="title_pref_browse_mode_per_app">အက်ပ်တစ်ခုစီတွင် ကြည့်ရှုမုဒ်ကို မှတ်ထားရန်</string>
     <string name="title_pref_export_settings">ဆက်တင်များကို ထုတ်ယူပါ</string>
     <string name="title_pref_import_settings">ဆက်တင်များကို တင်သွင်းပါ</string>
     <string name="settings_export_done">ဆက်တင်များကို ထုတ်ယူပြီးပါပြီ။ API ကီးများ မပါဝင်ပါ</string>

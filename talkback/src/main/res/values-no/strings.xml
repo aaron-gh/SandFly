@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Løft for å aktivere: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Gå rundt</string>
     <string name="summary_pref_wrap_around">Sveiping forbi det siste elementet går til det første, og forbi det første går til det siste. Når den er av, spilles en lyd på slutten i stedet.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Fiks fast berøringsutforskning</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Fiks berøringsutforskning som har stoppet</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Uten DUMP-tillatelsen kan SandFly bare si at berøringsutforskning kan sitte fast. For å la det fikse det, kjør: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Fikser berøringsutforskning</string>
     <string name="stuck_touch_exploration_fixed">Berøringsutforskning fikset</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Slutt å lytte</string>
     <string name="image_qna_type_question">Skriv inn et spørsmål</string>
     <string name="shortcut_dictate">Diktér</string>
-    <string name="title_pref_ai_dictation">Riktig diktering med AI</string>
+    <string name="title_pref_ai_dictation">Rett diktering med KI</string>
     <string name="dictation_not_corrected">Ikke rettet. Skrevet slik det ble gjenkjent.</string>
     <string name="dictation_nothing_recognized">Ingenting gjenkjent</string>
     <string name="dictation_unavailable">Talegjenkjenning utilgjengelig</string>

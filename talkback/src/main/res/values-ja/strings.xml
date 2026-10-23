@@ -1674,10 +1674,10 @@
     <string name="value_lift_to_activate_disabled">無効</string>
     <string name="value_lift_to_activate_navigation_bar">ナビゲーションバーのみ</string>
     <string name="value_lift_to_activate_entire_screen">画面全体</string>
-    <string name="template_lift_to_activate_changed">持ち上げてアクティブにします: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">指を離して有効化: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">最初に戻る</string>
     <string name="summary_pref_wrap_around">最後の項目を越えてスワイプすると最初の項目に移動し、最初の項目を越えてスワイプすると最後の項目に移動します。オフにすると、代わりに最後にサウンドが再生されます。</string>
-    <string name="title_pref_fix_stuck_touch_exploration">タッチ探索のスタックを修正</string>
+    <string name="title_pref_fix_stuck_touch_exploration">停止したタッチ操作ガイドを修正</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">タッチ探索を修正しています</string>
     <string name="stuck_touch_exploration_fixed">タッチ探索が修正されました</string>
@@ -1723,7 +1723,7 @@
     <string name="item_detail_state">状態</string>
     <string name="action_move_up">上に移動</string>
     <string name="action_move_down">下に移動</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>中<xliff:g id="position" example="2">%1$d</xliff:g>の位置</string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 中 <xliff:g id="position" example="2">%1$d</xliff:g> 番目</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> を持ち上げました。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly は、この注文の商品の詳細を示します。変更するには、詳細をタッチしたまま上下にドラッグします。 SandFly がオンの状態で、ダブルタップして押したままドラッグします。 「上に移動」および「下に移動」アクションを使用することもできます。</string>
@@ -1739,7 +1739,7 @@
     <string name="image_qna_stop_listening">聞くのをやめる</string>
     <string name="image_qna_type_question">質問を入力してください</string>
     <string name="shortcut_dictate">音声入力</string>
-    <string name="title_pref_ai_dictation">AI による正しいディクテーション</string>
+    <string name="title_pref_ai_dictation">AI で音声入力を修正</string>
     <string name="dictation_not_corrected">修正されていません。認識されたとおりに入力されました。</string>
     <string name="dictation_nothing_recognized">何も認識されませんでした</string>
     <string name="dictation_unavailable">音声認識は利用できません</string>

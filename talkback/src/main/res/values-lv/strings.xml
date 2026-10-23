@@ -1685,7 +1685,7 @@
     <string name="template_lift_to_activate_changed">Paceliet, lai aktivizētu: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Cikliska pārvietošanās</string>
     <string name="summary_pref_wrap_around">Velkot garām pēdējam vienumam, tiek pāriets uz pirmo, bet garām pirmajam — uz pēdējo. Kad tas ir izslēgts, beigās tiek atskaņota skaņa.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Labojiet iestrēgušu pieskārienu izpēti</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Labot iestrēgušu izpēti pieskaroties</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez DUMP atļaujas SandFly var tikai teikt, ka izpēte pieskaroties var būt iestrēgusi. Lai to labotu, palaidiet: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Pieskāriena izpētes labošana</string>
     <string name="stuck_touch_exploration_fixed">Izpēte ar pieskārienu ir labota</string>
@@ -1747,7 +1747,7 @@
     <string name="image_qna_stop_listening">Pārtraukt klausīšanos</string>
     <string name="image_qna_type_question">Ierakstiet jautājumu</string>
     <string name="shortcut_dictate">Diktēt</string>
-    <string name="title_pref_ai_dictation">Pareizs diktāts ar AI</string>
+    <string name="title_pref_ai_dictation">Labot diktēšanu ar MI</string>
     <string name="dictation_not_corrected">Nav labots. Ierakstīts tā, kā atpazīts.</string>
     <string name="dictation_nothing_recognized">Nekas netika atpazīts</string>
     <string name="dictation_unavailable">Runas atpazīšana nav pieejama</string>
@@ -1768,7 +1768,7 @@
     <string name="dictation_whisper_use">Izmantot</string>
     <string name="title_pref_dictation_ai_service">AI pakalpojums diktēšanai</string>
     <string name="dictation_ai_same">Tāds pats kā automātiskajiem aprakstiem</string>
-    <string name="title_pref_browse_mode_per_app">Atcerieties pārlūkošanas režīmu katrā lietotnē</string>
+    <string name="title_pref_browse_mode_per_app">Atcerēties pārlūkošanas režīmu katrā lietotnē</string>
     <string name="title_pref_export_settings">Eksportēt iestatījumus</string>
     <string name="title_pref_import_settings">Importēt iestatījumus</string>
     <string name="settings_export_done">Iestatījumi eksportēti. API atslēgas nav iekļautas</string>

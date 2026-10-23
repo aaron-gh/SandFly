@@ -1655,7 +1655,7 @@
     <string name="value_multi_tap_timeout_250ms">0,25 sekonda (e parazgjedhur)</string>
     <string name="title_pref_rotor_step_degrees">Rrotullimi i rotorit për hap</string>
     <string name="title_pref_edge_first_click_mm">Distanca deri në klikimin e parë</string>
-    <string name="title_pref_edge_second_click_mm">Distanca nga klikimi i parë në të dytën</string>
+    <string name="title_pref_edge_second_click_mm">Distanca nga klikimi i parë te i dyti</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
     <string name="value_distance_15mm">1.5 cm</string>
@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Ngrini për të aktivizuar: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Navigim rrethor</string>
     <string name="summary_pref_wrap_around">Duke rrëshqitur përpara artikullit të fundit shkon tek i pari dhe tejkalimi i të parit shkon tek i fundit. Kur fiket, në vend të kësaj luhet një tingull në fund.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Rregulloni eksplorimin me prekje të mbërthyer</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Rregullo eksplorimin me prekje të bllokuar</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Pa lejen DUMP, SandFly mund të thotë vetëm se eksplorimi me prekje mund të jetë i bllokuar. Për ta rregulluar, ekzekutoni: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Rregullimi i eksplorimit me prekje</string>
     <string name="stuck_touch_exploration_fixed">Eksplorimi me prekje u rregullua</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Ndalo dëgjimin</string>
     <string name="image_qna_type_question">Shkruani një pyetje</string>
     <string name="shortcut_dictate">Dikto</string>
-    <string name="title_pref_ai_dictation">Diktimin e saktë me AI</string>
+    <string name="title_pref_ai_dictation">Korrigjo diktimin me IA</string>
     <string name="dictation_not_corrected">Nuk u korrigjua. U shkrua siç u njoh.</string>
     <string name="dictation_nothing_recognized">Asgjë nuk u njoh</string>
     <string name="dictation_unavailable">Njohja e të folurit nuk ofrohet</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Përdor</string>
     <string name="title_pref_dictation_ai_service">Shërbimi i AI për diktimin</string>
     <string name="dictation_ai_same">I njëjti si për përshkrimet automatike</string>
-    <string name="title_pref_browse_mode_per_app">Mos harroni mënyrën e shfletimit në çdo aplikacion</string>
+    <string name="title_pref_browse_mode_per_app">Mbaj mend mënyrën e shfletimit në çdo aplikacion</string>
     <string name="title_pref_export_settings">Eksporto cilësimet</string>
     <string name="title_pref_import_settings">Importo cilësimet</string>
     <string name="settings_export_done">Cilësimet u eksportuan. Nuk përfshihen çelësat API</string>

@@ -1655,7 +1655,7 @@
     <string name="value_multi_tap_timeout_250ms">0,25 sekúndur (sjálfgefið)</string>
     <string name="title_pref_rotor_step_degrees">Snúningur í hverju skrefi</string>
     <string name="title_pref_edge_first_click_mm">Fjarlægð að fyrsta smelli</string>
-    <string name="title_pref_edge_second_click_mm">Fjarlægð frá fyrsta til annars smelli</string>
+    <string name="title_pref_edge_second_click_mm">Fjarlægð frá fyrsta til annars smells</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
     <string name="value_distance_15mm">1,5 cm</string>
@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Lyftu til að virkja: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Hringferð</string>
     <string name="summary_pref_wrap_around">Að strjúka framhjá síðasta hlutnum fer í það fyrsta og framhjá því fyrsta fer í það síðasta. Þegar slökkt er á því spilar hljóð í lokin í staðinn.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Lagaðu fasta snertirannsókn</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Laga fasta snertikönnun</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Án DUMP leyfisins getur SandFly aðeins sagt að snerta könnun gæti verið föst. Til að láta það laga það skaltu keyra: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Lagar snertikönnun</string>
     <string name="stuck_touch_exploration_fixed">Snertakönnun lagfærð</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Hættu að hlusta</string>
     <string name="image_qna_type_question">Sláðu inn spurningu</string>
     <string name="shortcut_dictate">Lesa fyrir</string>
-    <string name="title_pref_ai_dictation">Rétt fyrirmæli með gervigreind</string>
+    <string name="title_pref_ai_dictation">Leiðrétta innlestur með gervigreind</string>
     <string name="dictation_not_corrected">Ekki leiðrétt. Slegið inn eins og það var greint.</string>
     <string name="dictation_nothing_recognized">Ekkert greindist</string>
     <string name="dictation_unavailable">Talgreining ekki tiltæk</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Nota</string>
     <string name="title_pref_dictation_ai_service">Gervigreindarþjónusta fyrir talinnslátt</string>
     <string name="dictation_ai_same">Sama og fyrir sjálfvirkar lýsingar</string>
-    <string name="title_pref_browse_mode_per_app">Mundu að vafrastillingu í hverju forriti</string>
+    <string name="title_pref_browse_mode_per_app">Muna vafrastillingu í hverju forriti</string>
     <string name="title_pref_export_settings">Flytja út stillingar</string>
     <string name="title_pref_import_settings">Flytja inn stillingar</string>
     <string name="settings_export_done">Stillingar fluttar út. API-lyklar fylgja ekki</string>

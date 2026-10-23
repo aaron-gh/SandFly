@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Іске қосу үшін көтеріңіз: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Циклдік өту</string>
     <string name="summary_pref_wrap_around">Соңғы элементті жылжыту біріншіге, ал біріншіден өткен соң соңғыға өтеді. Өшірулі кезде оның орнына дыбыс соңында ойнайды.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Кептеліп қалған сенсорлық барлауды түзетіңіз</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Кептеліп қалған түртіп зерттеуді түзету</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP рұқсатынсыз SandFly тек сенсорлық барлау тоқтап қалуы мүмкін деп айта алады. Оны түзету үшін мынаны іске қосыңыз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Сенсорлық барлауды түзету</string>
     <string name="stuck_touch_exploration_fixed">Түрту арқылы зерттеу түзетілді</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Тыңдауды тоқтату</string>
     <string name="image_qna_type_question">Сұрақты теріңіз</string>
     <string name="shortcut_dictate">Ауызша айту</string>
-    <string name="title_pref_ai_dictation">AI көмегімен дұрыс диктант жазу</string>
+    <string name="title_pref_ai_dictation">Диктовканы AI көмегімен түзету</string>
     <string name="dictation_not_corrected">Түзетілмеген. Танылғандай терілді.</string>
     <string name="dictation_nothing_recognized">Ештеңе танылмады</string>
     <string name="dictation_unavailable">Сөйлеуді тану қолжетімсіз</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Пайдалану</string>
     <string name="title_pref_dictation_ai_service">Ауызша айтып жазуға арналған AI қызметі</string>
     <string name="dictation_ai_same">Автоматты сипаттамалардағыдай</string>
-    <string name="title_pref_browse_mode_per_app">Әрбір қолданбадағы шолу режимін есте сақтаңыз</string>
+    <string name="title_pref_browse_mode_per_app">Әр қолданбадағы шолу режимін есте сақтау</string>
     <string name="title_pref_export_settings">Параметрлерді экспорттау</string>
     <string name="title_pref_import_settings">Параметрлерді импорттау</string>
     <string name="settings_export_done">Параметрлер экспортталды. API кілттері кірмейді</string>

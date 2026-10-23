@@ -1688,7 +1688,7 @@
     <string name="template_lift_to_activate_changed">Pakelkite, kad suaktyvintumėte: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Ciklinis naršymas</string>
     <string name="summary_pref_wrap_around">Perbraukus per paskutinį elementą pereinama prie pirmojo, o už pirmojo – į paskutinį. Kai išjungta, pabaigoje skamba garsas.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Pataisykite įstrigusį tyrinėjimą</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Taisyti įstrigusį tyrinėjimą liečiant</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Be leidimo DUMP SandFly gali tik pasakyti, kad tyrinėjimas liečiant gali užstrigti. Jei norite leisti tai išspręsti, paleiskite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Taisomas naršymas liečiant</string>
     <string name="stuck_touch_exploration_fixed">Naršymas liečiant ištaisytas</string>
@@ -1750,7 +1750,7 @@
     <string name="image_qna_stop_listening">Nebeklausyti</string>
     <string name="image_qna_type_question">Įveskite klausimą</string>
     <string name="shortcut_dictate">Diktuoti</string>
-    <string name="title_pref_ai_dictation">Teisingas diktavimas naudojant AI</string>
+    <string name="title_pref_ai_dictation">Taisyti diktavimą naudojant DI</string>
     <string name="dictation_not_corrected">Neištaisyta. Įrašyta taip, kaip atpažinta.</string>
     <string name="dictation_nothing_recognized">Nieko neatpažinta</string>
     <string name="dictation_unavailable">Kalbos atpažinimas nepasiekiamas</string>
@@ -1771,7 +1771,7 @@
     <string name="dictation_whisper_use">Naudoti</string>
     <string name="title_pref_dictation_ai_service">AI paslauga diktavimui</string>
     <string name="dictation_ai_same">Ta pati kaip automatiniams aprašams</string>
-    <string name="title_pref_browse_mode_per_app">Prisiminkite naršymo režimą kiekvienoje programoje</string>
+    <string name="title_pref_browse_mode_per_app">Įsiminti naršymo režimą kiekvienoje programoje</string>
     <string name="title_pref_export_settings">Eksportuoti nustatymus</string>
     <string name="title_pref_import_settings">Importuoti nustatymus</string>
     <string name="settings_export_done">Nustatymai eksportuoti. API raktai neįtraukti</string>

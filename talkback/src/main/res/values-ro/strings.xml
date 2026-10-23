@@ -1684,7 +1684,7 @@
     <string name="template_lift_to_activate_changed">Ridicați pentru a activa: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Navigare circulară</string>
     <string name="summary_pref_wrap_around">Trecerea cu degetul peste ultimul element duce la primul, iar peste primul trece la ultimul. Când este oprit, se redă un sunet la sfârșit.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Remediați explorarea tactilă blocată</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Remediază explorarea prin atingere blocată</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Fără permisiunea DUMP, SandFly poate spune doar că explorarea tactilă poate fi blocată. Pentru a-l lăsa să remedieze, rulați: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Remedierea explorării tactile</string>
     <string name="stuck_touch_exploration_fixed">Explorarea atingerii a fost remediată</string>
@@ -1746,7 +1746,7 @@
     <string name="image_qna_stop_listening">Oprește ascultarea</string>
     <string name="image_qna_type_question">Introduceți o întrebare</string>
     <string name="shortcut_dictate">Dictează</string>
-    <string name="title_pref_ai_dictation">Dictarea corectă cu AI</string>
+    <string name="title_pref_ai_dictation">Corectează dictarea cu AI</string>
     <string name="dictation_not_corrected">Necorectat. Scris așa cum a fost recunoscut.</string>
     <string name="dictation_nothing_recognized">Nu s-a recunoscut nimic</string>
     <string name="dictation_unavailable">Recunoașterea vorbirii nu este disponibilă</string>
@@ -1767,7 +1767,7 @@
     <string name="dictation_whisper_use">Folosește</string>
     <string name="title_pref_dictation_ai_service">Serviciu AI pentru dictare</string>
     <string name="dictation_ai_same">Același ca pentru descrierile automate</string>
-    <string name="title_pref_browse_mode_per_app">Amintiți-vă modul de navigare în fiecare aplicație</string>
+    <string name="title_pref_browse_mode_per_app">Reține modul de navigare în fiecare aplicație</string>
     <string name="title_pref_export_settings">Exportă setările</string>
     <string name="title_pref_import_settings">Importă setările</string>
     <string name="settings_export_done">Setările au fost exportate. Cheile API nu sunt incluse</string>

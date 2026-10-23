@@ -1678,10 +1678,10 @@
     <string name="value_lift_to_activate_disabled">ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ</string>
     <string name="value_lift_to_activate_navigation_bar">ನ್ಯಾವಿಗೇಷನ್ ಬಾರ್‌ನಲ್ಲಿ ಮಾತ್ರ</string>
     <string name="value_lift_to_activate_entire_screen">ಸಂಪೂರ್ಣ ಪರದೆ</string>
-    <string name="template_lift_to_activate_changed">ಸಕ್ರಿಯಗೊಳಿಸಲು ಲಿಫ್ಟ್: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">ಬೆರಳು ಎತ್ತಿ ಸಕ್ರಿಯಗೊಳಿಸಿ: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ಆರಂಭಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
     <string name="summary_pref_wrap_around">ಕೊನೆಯ ಐಟಂನ ಹಿಂದೆ ಸ್ವೈಪ್ ಮಾಡುವುದು ಮೊದಲನೆಯದಕ್ಕೆ ಹೋಗುತ್ತದೆ ಮತ್ತು ಮೊದಲನೆಯದನ್ನು ಹಿಂದಿನದಕ್ಕೆ ಹೋಗುತ್ತದೆ. ಆಫ್ ಆಗಿರುವಾಗ, ಧ್ವನಿಯ ಬದಲಿಗೆ ಕೊನೆಯಲ್ಲಿ ಪ್ಲೇ ಆಗುತ್ತದೆ.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">ಸ್ಟಕ್ ಟಚ್ ಅನ್ವೇಷಣೆಯನ್ನು ಸರಿಪಡಿಸಿ</string>
+    <string name="title_pref_fix_stuck_touch_exploration">ಸಿಲುಕಿದ ಸ್ಪರ್ಶ ಅನ್ವೇಷಣೆಯನ್ನು ಸರಿಪಡಿಸಿ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ಅನುಮತಿಯಿಲ್ಲದೆ, SandFly ಮಾತ್ರ ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯು ಅಂಟಿಕೊಂಡಿರಬಹುದು ಎಂದು ಹೇಳಬಹುದು. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಅನುಮತಿಸಲು, ರನ್ ಮಾಡಿ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯನ್ನು ಸರಿಪಡಿಸುವುದು</string>
     <string name="stuck_touch_exploration_fixed">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆ ನಿವಾರಿಸಲಾಗಿದೆ</string>
@@ -1743,7 +1743,7 @@
     <string name="image_qna_stop_listening">ಕೇಳುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="image_qna_type_question">ಪ್ರಶ್ನೆಯನ್ನು ಟೈಪ್ ಮಾಡಿ</string>
     <string name="shortcut_dictate">ಹೇಳಿ ಬರೆಸಿ</string>
-    <string name="title_pref_ai_dictation">AI ನೊಂದಿಗೆ ಸರಿಯಾದ ಡಿಕ್ಟೇಷನ್</string>
+    <string name="title_pref_ai_dictation">AI ಬಳಸಿ ಡಿಕ್ಟೇಷನ್ ಸರಿಪಡಿಸಿ</string>
     <string name="dictation_not_corrected">ಸರಿಪಡಿಸಿಲ್ಲ. ಗುರುತಿಸಿದಂತೆಯೇ ಟೈಪ್ ಮಾಡಲಾಗಿದೆ.</string>
     <string name="dictation_nothing_recognized">ಯಾವುದನ್ನೂ ಗುರುತಿಸಲಿಲ್ಲ</string>
     <string name="dictation_unavailable">ಧ್ವನಿ ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ</string>

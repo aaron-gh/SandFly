@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">Абалы</string>
     <string name="action_move_up">Өйдө жылдыруу</string>
     <string name="action_move_down">Төмөн жылдыруу</string>
-    <string name="template_list_position">Позициясы <xliff:g id="position" example="2">%1$d</xliff:g> ичинен <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ичинен <xliff:g id="position" example="2">%1$d</xliff:g>-орун</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> көтөрүлдү. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> коюлду. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly буюмдун чоо-жайын ушул тартипте айтат. Аны өзгөртүү үчүн деталга тийип, кармап туруңуз, андан кийин аны өйдө же ылдый сүйрөңүз. SandFly күйгүзүлгөндө, эки жолу таптап, кармап туруңуз, анан сүйрөңүз. Сиз ошондой эле өйдө жана ылдый жылдыруу аракеттерин колдоно аласыз.</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Угууну токтотуу</string>
     <string name="image_qna_type_question">Суроо жазыңыз</string>
     <string name="shortcut_dictate">Айтып жаздыруу</string>
-    <string name="title_pref_ai_dictation">AI менен туура диктант</string>
+    <string name="title_pref_ai_dictation">Айтып жазууну AI менен оңдоо</string>
     <string name="dictation_not_corrected">Оңдолгон жок. Таанылгандай терилди.</string>
     <string name="dictation_nothing_recognized">Эч нерсе таанылган жок</string>
     <string name="dictation_unavailable">Кепти таануу жеткиликсиз</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Колдонуу</string>
     <string name="title_pref_dictation_ai_service">Айтып жаздыруу үчүн AI кызматы</string>
     <string name="dictation_ai_same">Автоматтык учкай маалыматтардагыдай</string>
-    <string name="title_pref_browse_mode_per_app">Ар бир колдонмодо серептөө режимин унутпаңыз</string>
+    <string name="title_pref_browse_mode_per_app">Ар бир колдонмодо серептөө режимин эстеп калуу</string>
     <string name="title_pref_export_settings">Жөндөөлөрдү экспорттоо</string>
     <string name="title_pref_import_settings">Жөндөөлөрдү импорттоо</string>
     <string name="settings_export_done">Жөндөөлөр экспорттолду. API ачкычтары камтылган эмес</string>

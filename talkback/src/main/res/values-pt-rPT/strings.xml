@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Levante para ativar: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Navegação circular</string>
     <string name="summary_pref_wrap_around">Passar o último item vai para o primeiro e passar o primeiro vai para o último. Quando desativado, um som é reproduzido no final.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Corrigir exploração de toque travada</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Corrigir exploração pelo toque bloqueada</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, SandFly só pode dizer que a exploração por toque pode travar. Para permitir que isso seja corrigido, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Corrigindo a exploração de toque</string>
     <string name="stuck_touch_exploration_fixed">Exploração de toque corrigida</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Parar de ouvir</string>
     <string name="image_qna_type_question">Digite uma pergunta</string>
     <string name="shortcut_dictate">Ditar</string>
-    <string name="title_pref_ai_dictation">Ditado correto com IA</string>
+    <string name="title_pref_ai_dictation">Corrigir ditado com IA</string>
     <string name="dictation_not_corrected">Não corrigido. Escrito tal como foi reconhecido.</string>
     <string name="dictation_nothing_recognized">Nada foi reconhecido</string>
     <string name="dictation_unavailable">Reconhecimento de fala indisponível</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Utilizar</string>
     <string name="title_pref_dictation_ai_service">Serviço de IA para ditado</string>
     <string name="dictation_ai_same">O mesmo das descrições automáticas</string>
-    <string name="title_pref_browse_mode_per_app">Lembre-se do modo de navegação em cada aplicativo</string>
+    <string name="title_pref_browse_mode_per_app">Memorizar o modo de navegação em cada aplicação</string>
     <string name="title_pref_export_settings">Exportar configurações</string>
     <string name="title_pref_import_settings">Importar configurações</string>
     <string name="settings_export_done">Definições exportadas. As chaves de API não estão incluídas</string>

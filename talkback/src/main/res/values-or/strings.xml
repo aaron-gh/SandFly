@@ -1653,7 +1653,7 @@
     <string name="value_multi_tap_timeout_200ms">0.2 ସେକେଣ୍ଡ</string>
     <string name="value_multi_tap_timeout_250ms">0.25 ସେକେଣ୍ଡ (ଡିଫଲ୍ଟ)</string>
     <string name="title_pref_rotor_step_degrees">ପ୍ରତି ପଦକ୍ଷେପରେ ରୋଟର୍ ଟର୍ନ୍</string>
-    <string name="title_pref_edge_first_click_mm">ପ୍ରଥମେ କ୍ଲିକ୍ କରିବାକୁ ଦୂରତା</string>
+    <string name="title_pref_edge_first_click_mm">ପ୍ରଥମ କ୍ଲିକ୍ ପର୍ଯ୍ୟନ୍ତ ଦୂରତା</string>
     <string name="title_pref_edge_second_click_mm">ପ୍ରଥମରୁ ଦ୍ୱିତୀୟ କ୍ଲିକ୍ ପର୍ଯ୍ୟନ୍ତ ଦୂରତା</string>
     <string name="value_distance_5mm">0.5 ସେମି</string>
     <string name="value_distance_10mm">1 ସେ.ମି.</string>
@@ -1725,7 +1725,7 @@
     <string name="item_detail_state">ସ୍ଥିତି</string>
     <string name="action_move_up">ଉପରକୁ ଘୁଞ୍ଚାନ୍ତୁ</string>
     <string name="action_move_down">ତଳକୁ ଘୁଞ୍ଚାନ୍ତୁ</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ର ଅବସ୍ଥାନ <xliff:g id="position" example="2">%1$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ମଧ୍ୟରୁ ସ୍ଥାନ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ଉଠାଗଲା। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ଛାଡ଼ି ଦିଆଗଲା। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ଏହି କ୍ରମରେ ଏକ ଆଇଟମ୍ ର ବିବରଣୀ କହିଥାଏ | ଏହାକୁ ପରିବର୍ତ୍ତନ କରିବାକୁ, ଏକ ସବିଶେଷ ସ୍ପର୍ଶ ଏବଂ ଧରି ରଖ, ତାପରେ ଏହାକୁ ଉପରକୁ କିମ୍ବା ତଳକୁ ଟାଣ | SandFly ଅନ୍ ସହିତ, ଦୁଇଥର ଟ୍ୟାପ୍ କରନ୍ତୁ ଏବଂ ଧରି ରଖନ୍ତୁ, ତାପରେ ଡ୍ରାଗ୍ କରନ୍ତୁ | ଆପଣ ମୁଭ୍ ଅପ୍ ଏବଂ ମୁଭ୍ ଡାଉନ୍ କ୍ରିୟା ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ |</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_stop_listening">ଶୁଣିବା ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="image_qna_type_question">ଏକ ପ୍ରଶ୍ନ ଟାଇପ୍ କରନ୍ତୁ</string>
     <string name="shortcut_dictate">କହି ଲେଖାନ୍ତୁ</string>
-    <string name="title_pref_ai_dictation">AI ସହିତ ସଠିକ୍ ନିର୍ଦ୍ଦେଶନା</string>
+    <string name="title_pref_ai_dictation">AI ସହିତ ଡିକ୍ଟେସନ୍ ସଂଶୋଧନ କରନ୍ତୁ</string>
     <string name="dictation_not_corrected">ସଂଶୋଧିତ ହୋଇନାହିଁ। ଚିହ୍ନଟ ହେବା ଅନୁସାରେ ଟାଇପ୍ ହୋଇଛି।</string>
     <string name="dictation_nothing_recognized">କିଛି ଚିହ୍ନିତ ହେଲା ନାହିଁ</string>
     <string name="dictation_unavailable">ସ୍ପିଚ୍ ରିକଗ୍ନିସନ୍ ଉପଲବ୍ଧ ନାହିଁ</string>
@@ -1762,7 +1762,7 @@
     <string name="dictation_whisper_use">ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="title_pref_dictation_ai_service">ଡିକ୍ଟେସନ୍ ପାଇଁ AI ସେବା</string>
     <string name="dictation_ai_same">ସ୍ୱତଃ ବର୍ଣ୍ଣନା ପରି ସମାନ</string>
-    <string name="title_pref_browse_mode_per_app">ପ୍ରତ୍ୟେକ ଆପରେ ବ୍ରାଉଜ୍ ମୋଡ୍ ମନେରଖ</string>
+    <string name="title_pref_browse_mode_per_app">ପ୍ରତ୍ୟେକ ଆପରେ ବ୍ରାଉଜ୍ ମୋଡ୍ ମନେରଖନ୍ତୁ</string>
     <string name="title_pref_export_settings">ସେଟିଂସ ଏକ୍ସପୋର୍ଟ କରନ୍ତୁ</string>
     <string name="title_pref_import_settings">ସେଟିଂସମୂହ ଆମଦାନୀ କରନ୍ତୁ</string>
     <string name="settings_export_done">ସେଟିଂସ ରପ୍ତାନି ହେଲା। API କି ଅନ୍ତର୍ଭୁକ୍ତ ନୁହେଁ</string>

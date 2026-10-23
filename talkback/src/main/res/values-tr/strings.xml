@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Etkinleştirmek için kaldırın: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Başa dön</string>
     <string name="summary_pref_wrap_around">Son öğeyi geçmek ilk öğeye, ilk öğeyi geçmek ise son öğeye gider. Kapalıyken bunun yerine sonunda bir ses çalınır.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Sıkışmış dokunma keşfini düzeltin</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Takılan dokunarak keşfetmeyi düzelt</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP izni olmadan, SandFly yalnızca dokunarak keşfetmenin takılıp kalabileceğini söyleyebilir. Düzeltmesine izin vermek için şunu çalıştırın: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Dokunarak keşfetmeyi düzeltme</string>
     <string name="stuck_touch_exploration_fixed">Dokunarak keşfetme düzeltildi</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Dinlemeyi bırak</string>
     <string name="image_qna_type_question">Bir soru yazın</string>
     <string name="shortcut_dictate">Sesle yaz</string>
-    <string name="title_pref_ai_dictation">Yapay zeka ile doğru dikte</string>
+    <string name="title_pref_ai_dictation">Dikteyi yapay zekâyla düzelt</string>
     <string name="dictation_not_corrected">Düzeltilmedi. Tanındığı gibi yazıldı.</string>
     <string name="dictation_nothing_recognized">Hiçbir şey tanınmadı</string>
     <string name="dictation_unavailable">Konuşma tanıma kullanılamıyor</string>

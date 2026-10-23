@@ -1654,7 +1654,7 @@
     <string name="value_multi_tap_timeout_200ms">0.2 វិនាទី</string>
     <string name="value_multi_tap_timeout_250ms">0.25 វិនាទី (លំនាំដើម)</string>
     <string name="title_pref_rotor_step_degrees">បង្វិល Rotor ក្នុងមួយជំហាន</string>
-    <string name="title_pref_edge_first_click_mm">ចម្ងាយដើម្បីចុចដំបូង</string>
+    <string name="title_pref_edge_first_click_mm">ចម្ងាយដល់ការចុចដំបូង</string>
     <string name="title_pref_edge_second_click_mm">ចម្ងាយពីការចុចទីមួយទៅទីពីរ</string>
     <string name="value_distance_5mm">0.5 សង់ទីម៉ែត្រ</string>
     <string name="value_distance_10mm">1 សង់ទីម៉ែត្រ</string>
@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">លើកដើម្បីដំណើរការ៖ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">វិលត្រឡប់ទៅដើម</string>
     <string name="summary_pref_wrap_around">ការអូសរំលងធាតុចុងក្រោយទៅទីមួយ ហើយរំលងទីមួយទៅចុងក្រោយ នៅពេលបិទ សំឡេងមួយនឹងចាក់នៅចុងបញ្ចប់ជំនួសវិញ។</string>
-    <string name="title_pref_fix_stuck_touch_exploration">ជួសជុលការរុករកការប៉ះជាប់គាំង</string>
+    <string name="title_pref_fix_stuck_touch_exploration">ជួសជុលការរុករកដោយប៉ះដែលគាំង</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">បើគ្មានការអនុញ្ញាតពី DUMP ទេ SandFly អាចនិយាយបានថាការរុករកដោយប៉ះអាចជាប់គាំង។ ដើម្បីអោយវាជួសជុល សូមដំណើរការ៖ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ជួសជុលការរុករកដោយប៉ះ</string>
     <string name="stuck_touch_exploration_fixed">ការរុករកប៉ះត្រូវបានជួសជុល</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">ស្ថានភាព</string>
     <string name="action_move_up">ផ្លាស់ទីឡើងលើ</string>
     <string name="action_move_down">ផ្លាស់ទីចុះក្រោម</string>
-    <string name="template_list_position">ទីតាំង<xliff:g id="position" example="2">%1$d</xliff:g>នៃ<xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_list_position">ទីតាំង <xliff:g id="position" example="2">%1$d</xliff:g> នៃ <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">រើសបាន <xliff:g id="detail" example="Name">%1$s</xliff:g>។ <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ទម្លាក់ <xliff:g id="detail" example="Name">%1$s</xliff:g>។ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly និយាយព័ត៌មានលម្អិតរបស់ធាតុនៅក្នុងលំដាប់នេះ។ ដើម្បីផ្លាស់ប្តូរវា សូមប៉ះព័ត៌មានលម្អិតមួយឱ្យជាប់ បន្ទាប់មកអូសវាឡើងលើ ឬចុះក្រោម។ ជាមួយនឹងការបើក SandFly ចុចពីរដងឱ្យជាប់ រួចអូស។ អ្នកក៏អាចប្រើសកម្មភាពផ្លាស់ទីឡើងលើ និងផ្លាស់ទីចុះក្រោមផងដែរ។</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">ឈប់ស្តាប់</string>
     <string name="image_qna_type_question">វាយសំណួរ</string>
     <string name="shortcut_dictate">សរសេរតាមការប្រាប់</string>
-    <string name="title_pref_ai_dictation">ការសរសេរតាមអានត្រឹមត្រូវជាមួយ AI</string>
+    <string name="title_pref_ai_dictation">កែការសរសេរតាមសំឡេងដោយប្រើ AI</string>
     <string name="dictation_not_corrected">មិនបានកែ។ បានវាយបញ្ចូលតាមការស្គាល់។</string>
     <string name="dictation_nothing_recognized">មិនបានសម្គាល់អ្វីទេ</string>
     <string name="dictation_unavailable">ការសម្គាល់សំឡេងមិនអាចប្រើបានទេ</string>

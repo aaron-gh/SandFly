@@ -1656,7 +1656,7 @@
     <string name="value_multi_tap_timeout_250ms">०.२५ सेकेन्ड (पूर्वनिर्धारित)</string>
     <string name="title_pref_rotor_step_degrees">प्रति चरण रोटर घुमाउनुहोस्</string>
     <string name="title_pref_edge_first_click_mm">पहिलो क्लिकको दूरी</string>
-    <string name="title_pref_edge_second_click_mm">पहिलो देखि दोस्रो क्लिक को दूरी</string>
+    <string name="title_pref_edge_second_click_mm">पहिलोदेखि दोस्रो क्लिकसम्मको दूरी</string>
     <string name="value_distance_5mm">०.५ सेमी</string>
     <string name="value_distance_10mm">1 सेमी</string>
     <string name="value_distance_15mm">1.5 सेमी</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_disabled">असक्षम</string>
     <string name="value_lift_to_activate_navigation_bar">नेभिगेसन पट्टीमा मात्र</string>
     <string name="value_lift_to_activate_entire_screen">सम्पूर्ण स्क्रिन</string>
-    <string name="template_lift_to_activate_changed">सक्रिय गर्न लिफ्ट: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">औंला उठाएर सक्रिय गर्नुहोस्: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">सुरुमा फर्कनुहोस्</string>
     <string name="summary_pref_wrap_around">अन्तिम वस्तुलाई स्वाइप गर्दा पहिलोमा जान्छ, र पहिलेको विगत अन्तिममा जान्छ। बन्द हुँदा, यसको सट्टा अन्तमा ध्वनि बज्छ।</string>
     <string name="title_pref_fix_stuck_touch_exploration">अड्किएको टच अन्वेषण फिक्स गर्नुहोस्</string>
@@ -1727,7 +1727,7 @@
     <string name="item_detail_state">अवस्था</string>
     <string name="action_move_up">माथि सार्नुहोस्</string>
     <string name="action_move_down">तल सार्नुहोस्</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> को स्थिति <xliff:g id="position" example="2">%1$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> मध्ये स्थान <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> उठाइयो। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> छोडियो। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ले यस क्रममा वस्तुको विवरणहरू बताउँछ। यसलाई परिवर्तन गर्न, कुनै विवरण छुनुहोस् र होल्ड गर्नुहोस्, त्यसपछि यसलाई माथि वा तल तान्नुहोस्। SandFly अन गरी, डबल-ट्याप गर्नुहोस् र होल्ड गर्नुहोस्, त्यसपछि तान्नुहोस्। तपाईं पनि माथि सार्नुहोस् र तल सार्नुहोस् कार्यहरू प्रयोग गर्न सक्नुहुन्छ।</string>
@@ -1743,7 +1743,7 @@
     <string name="image_qna_stop_listening">सुन्न बन्द गर्नुहोस्</string>
     <string name="image_qna_type_question">एउटा प्रश्न टाइप गर्नुहोस्</string>
     <string name="shortcut_dictate">बोलेर लेख्नुहोस्</string>
-    <string name="title_pref_ai_dictation">AI को साथ सही श्रुतिलेख</string>
+    <string name="title_pref_ai_dictation">AI ले डिक्टेसन सच्याउनुहोस्</string>
     <string name="dictation_not_corrected">सच्याइएको छैन। पहिचान भएअनुसार टाइप गरियो।</string>
     <string name="dictation_nothing_recognized">केही चिनिएन</string>
     <string name="dictation_unavailable">वाक् पहिचान उपलब्ध छैन</string>

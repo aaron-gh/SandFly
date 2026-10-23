@@ -1662,7 +1662,7 @@
     <string name="value_multi_tap_timeout_200ms">0,2 sekundy</string>
     <string name="value_multi_tap_timeout_250ms">0,25 sekundy (predvolené)</string>
     <string name="title_pref_rotor_step_degrees">Otočenie rotora na krok</string>
-    <string name="title_pref_edge_first_click_mm">Vzdialenosť od prvého kliknutia</string>
+    <string name="title_pref_edge_first_click_mm">Vzdialenosť k prvému kliknutiu</string>
     <string name="title_pref_edge_second_click_mm">Vzdialenosť od prvého po druhé kliknutie</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
@@ -1688,7 +1688,7 @@
     <string name="template_lift_to_activate_changed">Zdvihnite pre aktiváciu: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Cyklický pohyb</string>
     <string name="summary_pref_wrap_around">Potiahnutím za poslednú položku prejdete na prvú a za prvú položku na poslednú. Keď je vypnutý, na konci sa namiesto toho prehrá zvuk.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Opravte zaseknuté skúmanie dotykom</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Opravovať zaseknuté skúmanie dotykom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez povolenia DUMP môže SandFly povedať len to, že prieskum dotykom môže byť zaseknutý. Ak to chcete opraviť, spustite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Oprava dotykového prieskumu</string>
     <string name="stuck_touch_exploration_fixed">Dotykové skúmanie opravené</string>
@@ -1750,7 +1750,7 @@
     <string name="image_qna_stop_listening">Zastaviť počúvanie</string>
     <string name="image_qna_type_question">Napíšte otázku</string>
     <string name="shortcut_dictate">Diktovať</string>
-    <string name="title_pref_ai_dictation">Správny diktát s AI</string>
+    <string name="title_pref_ai_dictation">Opravovať diktovanie pomocou AI</string>
     <string name="dictation_not_corrected">Neopravené. Zadané tak, ako bolo rozpoznané.</string>
     <string name="dictation_nothing_recognized">Nič sa nerozpoznalo</string>
     <string name="dictation_unavailable">Rozpoznávanie reči nie je k dispozícii</string>
@@ -1771,7 +1771,7 @@
     <string name="dictation_whisper_use">Použiť</string>
     <string name="title_pref_dictation_ai_service">Služba AI na diktovanie</string>
     <string name="dictation_ai_same">Rovnaká ako pre automatické opisy</string>
-    <string name="title_pref_browse_mode_per_app">Pamätajte na režim prehliadania v každej aplikácii</string>
+    <string name="title_pref_browse_mode_per_app">Pamätať si režim prehliadania v každej aplikácii</string>
     <string name="title_pref_export_settings">Exportovať nastavenia</string>
     <string name="title_pref_import_settings">Importovať nastavenia</string>
     <string name="settings_export_done">Nastavenia boli exportované. Kľúče API nie sú zahrnuté</string>

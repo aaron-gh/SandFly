@@ -1677,10 +1677,10 @@
     <string name="value_lift_to_activate_disabled">ਬੰਦ</string>
     <string name="value_lift_to_activate_navigation_bar">ਸਿਰਫ਼ ਨੈਵੀਗੇਸ਼ਨ ਪੱਟੀ \'ਤੇ</string>
     <string name="value_lift_to_activate_entire_screen">ਪੂਰੀ ਸਕ੍ਰੀਨ</string>
-    <string name="template_lift_to_activate_changed">ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਲਿਫਟ: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">ਉਂਗਲ ਚੁੱਕ ਕੇ ਕਿਰਿਆਸ਼ੀਲ ਕਰੋ: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ਸ਼ੁਰੂ ਵਿੱਚ ਵਾਪਸ ਜਾਓ</string>
     <string name="summary_pref_wrap_around">ਪਿਛਲੀ ਆਈਟਮ ਨੂੰ ਸਵਾਈਪ ਕਰਨਾ ਪਹਿਲੀ \'ਤੇ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਪਹਿਲੀ ਨੂੰ ਪਿਛਲਾ ਕਰਨ ਨਾਲ ਆਖਰੀ \'ਤੇ ਜਾਂਦਾ ਹੈ। ਬੰਦ ਹੋਣ \'ਤੇ, ਇਸਦੀ ਬਜਾਏ ਇੱਕ ਧੁਨੀ ਅੰਤ ਵਿੱਚ ਵੱਜਦੀ ਹੈ।</string>
-    <string name="title_pref_fix_stuck_touch_exploration">ਫਸੇ ਟੱਚ ਖੋਜ ਨੂੰ ਠੀਕ ਕਰੋ</string>
+    <string name="title_pref_fix_stuck_touch_exploration">ਫਸੀ ਛੋਹ ਕੇ ਪੜਚੋਲ ਨੂੰ ਠੀਕ ਕਰੋ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ਅਨੁਮਤੀ ਤੋਂ ਬਿਨਾਂ, SandFly ਸਿਰਫ਼ ਇਹ ਕਹਿ ਸਕਦਾ ਹੈ ਕਿ ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸਨੂੰ ਠੀਕ ਕਰਨ ਦੇਣ ਲਈ, ਚਲਾਓ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ਸਪਰਸ਼ ਖੋਜ ਨੂੰ ਫਿਕਸ ਕਰਨਾ</string>
     <string name="stuck_touch_exploration_fixed">ਟਚ ਐਕਸਪਲੋਰੇਸ਼ਨ ਠੀਕ ਕੀਤਾ ਗਿਆ</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">ਸਥਿਤੀ</string>
     <string name="action_move_up">ਉੱਪਰ ਲਿਜਾਓ</string>
     <string name="action_move_down">ਹੇਠਾਂ ਲਿਜਾਓ</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ਦੀ ਸਥਿਤੀ <xliff:g id="position" example="2">%1$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ਵਿੱਚੋਂ ਸਥਾਨ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਚੁੱਕਿਆ ਗਿਆ। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਛੱਡਿਆ ਗਿਆ। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ਇਸ ਕ੍ਰਮ ਵਿੱਚ ਆਈਟਮ ਦੇ ਵੇਰਵੇ ਦੱਸਦਾ ਹੈ। ਇਸਨੂੰ ਬਦਲਣ ਲਈ, ਕਿਸੇ ਵੇਰਵੇ ਨੂੰ ਛੋਹਵੋ ਅਤੇ ਹੋਲਡ ਕਰੋ, ਫਿਰ ਇਸਨੂੰ ਉੱਪਰ ਜਾਂ ਹੇਠਾਂ ਘਸੀਟੋ। SandFly ਚਾਲੂ ਕਰਕੇ, ਡਬਲ-ਟੈਪ ਕਰੋ ਅਤੇ ਹੋਲਡ ਕਰੋ, ਫਿਰ ਘਸੀਟੋ। ਤੁਸੀਂ ਮੂਵ ਅੱਪ ਅਤੇ ਮੂਵ ਡਾਊਨ ਐਕਸ਼ਨ ਵੀ ਵਰਤ ਸਕਦੇ ਹੋ।</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">ਸੁਣਨਾ ਬੰਦ ਕਰੋ</string>
     <string name="image_qna_type_question">ਇੱਕ ਸਵਾਲ ਟਾਈਪ ਕਰੋ</string>
     <string name="shortcut_dictate">ਬੋਲ ਕੇ ਲਿਖਣਾ</string>
-    <string name="title_pref_ai_dictation">AI ਨਾਲ ਸਹੀ ਡਿਕਸ਼ਨ</string>
+    <string name="title_pref_ai_dictation">AI ਨਾਲ ਡਿਕਟੇਸ਼ਨ ਠੀਕ ਕਰੋ</string>
     <string name="dictation_not_corrected">ਠੀਕ ਨਹੀਂ ਕੀਤਾ। ਜਿਵੇਂ ਪਛਾਣਿਆ ਗਿਆ, ਉਵੇਂ ਟਾਈਪ ਕੀਤਾ।</string>
     <string name="dictation_nothing_recognized">ਕੁਝ ਵੀ ਪਛਾਣਿਆ ਨਹੀਂ ਗਿਆ</string>
     <string name="dictation_unavailable">ਬੋਲੀ ਪਛਾਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>

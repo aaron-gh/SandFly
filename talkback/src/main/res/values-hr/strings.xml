@@ -1684,7 +1684,7 @@
     <string name="template_lift_to_activate_changed">Podignite za aktiviranje: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Kružno kretanje</string>
     <string name="summary_pref_wrap_around">Prelaskom preko zadnje stavke prelazite na prvu, a nakon prve prelazite na posljednju. Kada je isključeno, umjesto toga svira zvuk na kraju.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Popravite zaglavljeno istraživanje dodirom</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Popravi zaglavljeno istraživanje dodirom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez dopuštenja DUMP, SandFly može samo reći da je istraživanje dodirom možda zapelo. Da biste ga popravili, pokrenite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Popravak istraživanja dodirom</string>
     <string name="stuck_touch_exploration_fixed">Ispravljeno istraživanje dodirom</string>
@@ -1746,7 +1746,7 @@
     <string name="image_qna_stop_listening">Prestani slušati</string>
     <string name="image_qna_type_question">Upišite pitanje</string>
     <string name="shortcut_dictate">Diktiranje</string>
-    <string name="title_pref_ai_dictation">Ispravite diktat s AI</string>
+    <string name="title_pref_ai_dictation">Ispravljanje diktata pomoću AI-ja</string>
     <string name="dictation_not_corrected">Nije ispravljeno. Upisano kako je prepoznato.</string>
     <string name="dictation_nothing_recognized">Ništa nije prepoznato</string>
     <string name="dictation_unavailable">Prepoznavanje govora nije dostupno</string>
@@ -1767,7 +1767,7 @@
     <string name="dictation_whisper_use">Upotrijebi</string>
     <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
     <string name="dictation_ai_same">Isto kao za automatske opise</string>
-    <string name="title_pref_browse_mode_per_app">Upamtite način pregledavanja u svakoj aplikaciji</string>
+    <string name="title_pref_browse_mode_per_app">Zapamti način pregledavanja u svakoj aplikaciji</string>
     <string name="title_pref_export_settings">Izvoz postavki</string>
     <string name="title_pref_import_settings">Uvoz postavki</string>
     <string name="settings_export_done">Postavke su izvezene. API ključevi nisu uključeni</string>

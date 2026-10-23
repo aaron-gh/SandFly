@@ -1677,7 +1677,7 @@
     <string name="value_lift_to_activate_disabled">අක්‍රියයි</string>
     <string name="value_lift_to_activate_navigation_bar">සංචාලන තීරුවේ පමණි</string>
     <string name="value_lift_to_activate_entire_screen">මුළු තිරය</string>
-    <string name="template_lift_to_activate_changed">සක්‍රිය කිරීමට එසවීම: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">ඇඟිල්ල එසවීමෙන් සක්‍රිය කිරීම: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ආරම්භයට ආපසු යන්න</string>
     <string name="summary_pref_wrap_around">අවසාන අයිතමය පසුකර ස්වයිප් කිරීම පළමුවැන්නට යන අතර පළමුවැන්න පසුකර අන්තිමයට යයි. අක්‍රිය වූ විට, ඒ වෙනුවට ශබ්දයක් අවසානයේ වාදනය වේ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">සිරවී ඇති ස්පර්ශ ගවේෂණය නිවැරදි කරන්න</string>
@@ -1726,7 +1726,7 @@
     <string name="item_detail_state">තත්ත්වය</string>
     <string name="action_move_up">ඉහළට ගෙන යන්න</string>
     <string name="action_move_down">පහළට ගෙන යන්න</string>
-    <string name="template_list_position">ස්ථානය <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> න් <xliff:g id="position" example="2">%1$d</xliff:g> වන ස්ථානය</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ඔසවන ලදී. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> අතහැරියා. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly මෙම අනුපිළිවෙලෙහි අයිතමයක විස්තර පවසයි. එය වෙනස් කිරීමට, විස්තරයක් ස්පර්ශ කර අල්ලාගෙන, පසුව එය ඉහළට හෝ පහළට අදින්න. SandFly සක්‍රීයව, දෙවරක් තට්ටු කර අල්ලාගෙන, පසුව අදින්න. ඔබට Move up සහ Move down යන ක්‍රියා ද භාවිතා කළ හැක.</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">සවන් දීම නවත්වන්න</string>
     <string name="image_qna_type_question">ප්‍රශ්නයක් ටයිප් කරන්න</string>
     <string name="shortcut_dictate">කියමින් ලියවන්න</string>
-    <string name="title_pref_ai_dictation">AI සමඟ නිවැරදි උපදෙස්</string>
+    <string name="title_pref_ai_dictation">AI මඟින් හඬ ටයිප් කිරීම නිවැරදි කරන්න</string>
     <string name="dictation_not_corrected">නිවැරදි කර නැත. හඳුනාගත් ලෙස ටයිප් කර ඇත.</string>
     <string name="dictation_nothing_recognized">කිසිවක් හඳුනාගෙන නැත</string>
     <string name="dictation_unavailable">කථන හඳුනාගැනීමක් නොමැත</string>

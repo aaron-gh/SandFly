@@ -1668,10 +1668,10 @@
     <string name="value_lift_to_activate_disabled">నిలిపివేయబడింది</string>
     <string name="value_lift_to_activate_navigation_bar">నావిగేషన్ బార్‌లో మాత్రమే</string>
     <string name="value_lift_to_activate_entire_screen">మొత్తం స్క్రీన్</string>
-    <string name="template_lift_to_activate_changed">సక్రియం చేయడానికి లిఫ్ట్: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">వేలు ఎత్తి యాక్టివేట్ చేయి: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ప్రారంభానికి తిరిగి వెళ్లు</string>
     <string name="summary_pref_wrap_around">చివరి ఐటెమ్‌ను స్వైప్ చేయడం మొదటిదానికి వెళుతుంది మరియు మొదటిది చివరిదానికి వెళుతుంది. ఆఫ్ చేసినప్పుడు, బదులుగా ఒక ధ్వని చివర ప్లే అవుతుంది.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">అంటుకున్న టచ్ అన్వేషణను పరిష్కరించండి</string>
+    <string name="title_pref_fix_stuck_touch_exploration">నిలిచిపోయిన టచ్ ద్వారా అన్వేషణను పరిష్కరించు</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP అనుమతి లేకుండా, SandFly స్పర్శ అన్వేషణ నిలిచిపోవచ్చని మాత్రమే చెప్పగలదు. దీన్ని పరిష్కరించడానికి అనుమతించడానికి, అమలు చేయండి: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">టచ్ అన్వేషణను పరిష్కరించడం</string>
     <string name="stuck_touch_exploration_fixed">టచ్ అన్వేషణ పరిష్కరించబడింది</string>
@@ -1733,7 +1733,7 @@
     <string name="image_qna_stop_listening">వినడం ఆపు</string>
     <string name="image_qna_type_question">ప్రశ్నను టైప్ చేయండి</string>
     <string name="shortcut_dictate">మాట్లాడి టైప్ చేయండి</string>
-    <string name="title_pref_ai_dictation">AIతో సరైన డిక్టేషన్</string>
+    <string name="title_pref_ai_dictation">AIతో డిక్టేషన్‌ను సరిచేయి</string>
     <string name="dictation_not_corrected">సరిదిద్దలేదు. గుర్తించినట్లే టైప్ చేయబడింది.</string>
     <string name="dictation_nothing_recognized">ఏదీ గుర్తించబడలేదు</string>
     <string name="dictation_unavailable">ప్రసంగ గుర్తింపు అందుబాటులో లేదు</string>
@@ -1754,7 +1754,7 @@
     <string name="dictation_whisper_use">ఉపయోగించండి</string>
     <string name="title_pref_dictation_ai_service">డిక్టేషన్ కోసం AI సేవ</string>
     <string name="dictation_ai_same">ఆటోమేటిక్ వివరణలకు ఉన్నదే</string>
-    <string name="title_pref_browse_mode_per_app">ప్రతి యాప్‌లో బ్రౌజ్ మోడ్‌ను గుర్తుంచుకోండి</string>
+    <string name="title_pref_browse_mode_per_app">ప్రతి యాప్‌లో బ్రౌజ్ మోడ్‌ను గుర్తుంచుకో</string>
     <string name="title_pref_export_settings">సెట్టింగ్‌లను ఎగుమతి చేయండి</string>
     <string name="title_pref_import_settings">సెట్టింగ్‌లను దిగుమతి చేయండి</string>
     <string name="settings_export_done">సెట్టింగ్‌లు ఎగుమతి చేయబడ్డాయి. API కీలు చేర్చబడలేదు</string>

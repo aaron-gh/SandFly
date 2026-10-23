@@ -1676,10 +1676,10 @@
     <string name="value_lift_to_activate_disabled">已停用</string>
     <string name="value_lift_to_activate_navigation_bar">僅在導覽列上</string>
     <string name="value_lift_to_activate_entire_screen">全螢幕</string>
-    <string name="template_lift_to_activate_changed">抬起激活：<xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">抬起手指啟動：<xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">循環瀏覽</string>
     <string name="summary_pref_wrap_around">滑過最後一個項目將轉到第一個項目，滑過第一個項目將轉到最後一個項目。關閉時，最後會播放聲音。</string>
-    <string name="title_pref_fix_stuck_touch_exploration">修復觸摸探索卡住的問題</string>
+    <string name="title_pref_fix_stuck_touch_exploration">修正觸控探索停止回應的問題</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">沒有DUMP的許可，SandFly只能說觸摸探索可能會卡住。要讓它修復它，請運行： adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修復觸摸探索</string>
     <string name="stuck_touch_exploration_fixed">觸摸探索已修復</string>
@@ -1725,7 +1725,7 @@
     <string name="item_detail_state">狀態</string>
     <string name="action_move_up">向上移動</string>
     <string name="action_move_down">下移</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 的位置 <xliff:g id="position" example="2">%1$d</xliff:g></string>
+    <string name="template_list_position">第 <xliff:g id="position" example="2">%1$d</xliff:g> 項，共 <xliff:g id="count" example="3">%2$d</xliff:g> 項</string>
     <string name="template_item_details_order_picked_up">已拿起<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_stop_listening">停止聆聽</string>
     <string name="image_qna_type_question">輸入問題</string>
     <string name="shortcut_dictate">口述</string>
-    <string name="title_pref_ai_dictation">AI 正確聽寫</string>
+    <string name="title_pref_ai_dictation">使用 AI 修正語音輸入</string>
     <string name="dictation_not_corrected">未修正。已按辨識結果輸入。</string>
     <string name="dictation_nothing_recognized">未辨識到任何內容</string>
     <string name="dictation_unavailable">語音辨識不可用</string>

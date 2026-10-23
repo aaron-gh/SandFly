@@ -1688,7 +1688,7 @@
     <string name="template_lift_to_activate_changed">Dvignite za aktiviranje: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Krožno premikanje</string>
     <string name="summary_pref_wrap_around">Če povlečete mimo zadnjega elementa, pridete do prvega, mimo prvega pa do zadnjega. Ko je izklopljen, se na koncu predvaja zvok.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Odpravite zataknjeno raziskovanje z dotikom</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Odpravi zataknjeno raziskovanje z dotikom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Brez dovoljenja DUMP lahko SandFly samo pove, da je raziskovanje z dotikom morda obstalo. Če ga želite popraviti, zaženite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Popravljanje raziskovanja z dotikom</string>
     <string name="stuck_touch_exploration_fixed">Raziskovanje z dotikom popravljeno</string>
@@ -1750,7 +1750,7 @@
     <string name="image_qna_stop_listening">Ustavi poslušanje</string>
     <string name="image_qna_type_question">Vnesite vprašanje</string>
     <string name="shortcut_dictate">Narekuj</string>
-    <string name="title_pref_ai_dictation">Pravilni narek z AI</string>
+    <string name="title_pref_ai_dictation">Popravljanje nareka z UI</string>
     <string name="dictation_not_corrected">Ni popravljeno. Vneseno je bilo tako, kot je bilo prepoznano.</string>
     <string name="dictation_nothing_recognized">Nič ni bilo prepoznano</string>
     <string name="dictation_unavailable">Prepoznavanje govora ni na voljo</string>

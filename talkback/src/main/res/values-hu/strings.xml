@@ -1680,7 +1680,7 @@
     <string name="template_lift_to_activate_changed">Emelje fel az aktiváláshoz: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Körbeérés</string>
     <string name="summary_pref_wrap_around">Ha az utolsó elem mellett csúsztat, az az elsőre, az első után pedig az utolsóra lép. Ha ki van kapcsolva, egy hang szól a végén.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Az elakadt érintéssel kapcsolatos felfedezés javítása</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Elakadt felfedezés érintéssel javítása</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül az SandFly csak azt mondhatja, hogy az érintéssel történő felfedezés elakadt. A javításhoz futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Érintéses felfedezés javítása</string>
     <string name="stuck_touch_exploration_fixed">Az érintéses felfedezés javítva</string>
@@ -1742,7 +1742,7 @@
     <string name="image_qna_stop_listening">Hallgatás leállítása</string>
     <string name="image_qna_type_question">Írjon be egy kérdést</string>
     <string name="shortcut_dictate">Diktálás</string>
-    <string name="title_pref_ai_dictation">Helyes diktálás AI-val</string>
+    <string name="title_pref_ai_dictation">Diktálás javítása AI-jal</string>
     <string name="dictation_not_corrected">Nincs javítva. A felismert szöveg lett beírva.</string>
     <string name="dictation_nothing_recognized">Nem sikerült semmit felismerni</string>
     <string name="dictation_unavailable">A beszédfelismerés nem érhető el</string>
@@ -1763,7 +1763,7 @@
     <string name="dictation_whisper_use">Használat</string>
     <string name="title_pref_dictation_ai_service">AI szolgáltatás diktáláshoz</string>
     <string name="dictation_ai_same">Ugyanaz, mint az automatikus leírásoknál</string>
-    <string name="title_pref_browse_mode_per_app">Emlékezzen a böngészési módra az egyes alkalmazásokban</string>
+    <string name="title_pref_browse_mode_per_app">Böngészési mód megjegyzése alkalmazásonként</string>
     <string name="title_pref_export_settings">Beállítások exportálása</string>
     <string name="title_pref_import_settings">Beállítások importálása</string>
     <string name="settings_export_done">Beállítások exportálva. Az API-kulcsok nincsenek benne</string>
