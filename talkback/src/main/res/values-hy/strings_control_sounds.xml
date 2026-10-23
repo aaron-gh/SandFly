@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">Կառավարման տարրերի ձայներ և թրթռոցներ</string>
+    <string name="summary_pref_control_sounds">Կառավարման տարրերի յուրաքանչյուր տեսակին (կոճակներ, նշավանդակներ, խմբագրման դաշտեր, ցանկի կետեր և այլն) տալ թեմայից իր սեփական ձայնն ու թրթռոցը՝ ընտրման ձայնի և թրթռոցի փոխարեն, ինչպես Unspoken-ն է անում NVDA-ի համար։ Ձայնը հնչում է էկրանի այն կետից, որտեղ գտնվում է տարրը, և SandFly-ը չի հնչեցնում տարրի տեսակը։</string>
+    <string name="title_pref_control_sounds_speak_roles">Միևնույն է հնչեցնել տարրի տեսակը</string>
+    <string name="summary_pref_control_sounds_speak_roles">Երբ կառավարման տարրի ձայնը հնչում է, միևնույն է հնչեցնել տարրի տեսակը, օրինակ՝ կոճակ։ Սա վերաբերում է բոլոր ձայնային թեմաներին։</string>
+    <string name="title_pref_control_sounds_3d">3D աուդիո</string>
+    <string name="pref_control_sounds_3d_headphones">Ականջակալներով</string>
+    <string name="pref_control_sounds_3d_always">Միշտ</string>
+    <string name="pref_control_sounds_3d_never">Երբեք, միայն ձախ և աջ</string>
+    <string name="individual_sound_control_button">Կառավարման տարրի ձայն՝ կոճակ</string>
+    <string name="individual_sound_control_checkbox">Կառավարման տարրի ձայն՝ նշավանդակ</string>
+    <string name="individual_sound_control_radio_button">Կառավարման տարրի ձայն՝ կետակոճակ</string>
+    <string name="individual_sound_control_edit_text">Կառավարման տարրի ձայն՝ խմբագրման դաշտ</string>
+    <string name="individual_sound_control_combo_box">Կառավարման տարրի ձայն՝ իջնող ցանկ</string>
+    <string name="individual_sound_control_slider">Կառավարման տարրի ձայն՝ սահիչ</string>
+    <string name="individual_sound_control_link">Կառավարման տարրի ձայն՝ հղում</string>
+    <string name="individual_sound_control_image">Կառավարման տարրի ձայն՝ պատկեր</string>
+    <string name="individual_sound_control_clock">Կառավարման տարրի ձայն՝ ժամացույց</string>
+    <string name="individual_sound_control_tab">Կառավարման տարրի ձայն՝ ներդիր</string>
+    <string name="individual_sound_control_menu_item">Կառավարման տարրի ձայն՝ ընտրացանկի տարր</string>
+    <string name="individual_sound_control_list_item">Կառավարման տարրի ձայն՝ ցանկի կետ</string>
+    <string name="individual_sound_control_tree_item">Կառավարման տարրի ձայն՝ ծառի տարր</string>
+</resources>
