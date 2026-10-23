@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack se braille-sleutelbord</string>
+  <string name="braille_ime_service_name">SandFly se braille-sleutelbord</string>
   <string name="braille_ime_bd_mode_name">Brailleskerm-invoer</string>
   <string name="switch_to_tabletop_announcement">Tafelbladmodus. Plaas jou toestel met die laaipoort na links.</string>
   <string name="calibration_tip_announcement">Hou die puntposisie met %d vingers in om dit op te dateer.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Het na nie-verkorte braille toe oorgeskakel</string>
   <string name="braille_ime_displayed_name">braille-sleutelbord</string>
   <string name="multiple_languages_braille_ime_displayed_name">braille-sleutelbord, %s</string>
-  <string name="input_view_caption">TalkBack se braille-sleutelbord – besoek g.co/help/braille vir hulp</string>
+  <string name="input_view_caption">SandFly se braille-sleutelbord – besoek g.co/help/braille vir hulp</string>
   <string name="perform_action_next">Volgende</string>
   <string name="perform_action_submitting">Dien tans teks in</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Dateer tans puntposisie op. Kom ons teken eers die punte op jou %s aan.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Om jou taal te verander terwyl jy met die braillesleutelbord tik, kan jy met 3 vingers opswiep. Kies dan \"skakel oor na volgende taal\".</string>
   <string name="title_pref_accumulate_presses">Sluit alle punte wat gedruk is, in</string>
   <string name="summary_pref_accumulate_presses">Elke punt wat gedruk word, is deel van die invoer, selfs al word die punt voor die ander punte gelos</string>
-  <string name="title_pref_reverse_dots">Keer punte om</string>
-  <string name="summary_pref_reverse_dots">Ruil die puntposisies om sodat punt 1 en punt 4 plekke ruil, byvoorbeeld</string>
+  <string name="title_pref_reverse_dots">Ruil linker- en regterpunte om</string>
+  <string name="summary_pref_reverse_dots">Punte 1, 2 en 3 ruil plekke met punte 4, 5 en 6</string>
   <string name="bd_preference_braille_contracted">Verkorte braille</string>
   <string name="bd_preference_braille_uncontracted">Onverkorte braille</string>
   <string name="context_menu_title">Braille-sleutelbordopsies</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Sleutelbord</string>
   <string name="not_enough_touch_points_dialog_title">Jou toestel steun nie braille-sleutelbord nie</string>
   <string name="not_enough_touch_points_dialog_message">Jou toestel steun nie genoeg raakpunte nie. Kontak jou toestelvervaardiger vir meer inligting.</string>
-  <string name="talkback_off_dialog_title">Skakel TalkBack aan om braille-sleutelbord te gebruik</string>
+  <string name="talkback_off_dialog_title">Skakel SandFly aan om braille-sleutelbord te gebruik</string>
   <string name="talkback_off_dialog_positive_button">Skakel in toeganklikheidinstellings aan</string>
-  <string name="talkback_suspend_dialog_title">Hervat TalkBack om braillesleutelbord te gebruik</string>
-  <string name="talkback_off_or_suspend_dialog_message">Wanneer Talkback aan is, kan jy op jou skerm tik om braillesimbole in te voer.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Skakel TalkBack aan om gebaar te verander</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack is af. Skakel dit aan om gebare op die braillesleutelbord te verander.</string>
+  <string name="talkback_suspend_dialog_title">Hervat SandFly om braillesleutelbord te gebruik</string>
+  <string name="talkback_off_or_suspend_dialog_message">Wanneer SandFly aan is, kan jy op jou skerm tik om braillesimbole in te voer.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Skakel SandFly aan om gebaar te verander</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly is af. Skakel dit aan om gebare op die braillesleutelbord te verander.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Gaan na Instellings</string>
   <string name="reset_gestures_dialog_title">Stel alle gebare terug?</string>
   <string name="reset_gestures_dialog_message">Alle gebare op die braillesleutelbord sal na verstek teruggestel word</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Stel terug na verstek</string>
   <string name="custom_gestures_dialog_remove_button">Verwyder gebaar</string>
   <string name="change_gestures_dialog_message_title">Hoe om ’n gebaar te verander</string>
-  <string name="change_gestures_dialog_message">Braillesleutelbord sal op die volgende skerm oopmaak en jy sal nie TalkBack-gebare kan gebruik nie.\n\nWanneer die braillesleutelbord oopmaak, moet jy die gebaar uitvoer wat jy wil gebruik of jy moet met 2 vingers afswiep om die braillesleutelbord toe te maak en gebaarverandering te kanselleer.\n\nSien beskikbare gebare wat jy kan uitvoer\n</string>
+  <string name="change_gestures_dialog_message">Braillesleutelbord sal op die volgende skerm oopmaak en jy sal nie SandFly-gebare kan gebruik nie.\n\nWanneer die braillesleutelbord oopmaak, moet jy die gebaar uitvoer wat jy wil gebruik of jy moet met 2 vingers afswiep om die braillesleutelbord toe te maak en gebaarverandering te kanselleer.\n\nSien beskikbare gebare wat jy kan uitvoer\n</string>
   <string name="change_gestures_dialog_message_link">Sien beskikbare gebare</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Moenie weer hierdie boodskap wys nie</string>
   <string name="change_gestures_dialog_positive_button">Gaan voort</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Moenie gebruik nie</string>
   <string name="next_keyboard">Volgende sleutelbord</string>
   <string name="braille_tutorial_title">Braille-sleutelbordtutoriaal</string>
-  <string name="tutorial_intro_description">Met die braillesleutelbord kan jy op jou skerm tik om 6-knoppiebraille in te voer.\n\nJy gebruik tans Verenigde Engelse Braille. Gaan na TalkBack-instellings om jou tiktaal te wissel.\n\nJy moet jou foon anders vashou en gebruik om braille te tik.</string>
+  <string name="tutorial_intro_description">Met die braillesleutelbord kan jy op jou skerm tik om 6-puntbraille in te voer.\n\nJy gebruik tans Verenigde Engelse Braille. Gaan na SandFly-instellings om jou tiktaal te wissel.\n\nJy moet jou foon anders vashou en gebruik om braille te tik.</string>
   <string name="next_step">Volgende</string>
   <string name="leave_keyboard">Verlaat braille-sleutelbord</string>
-  <string name="hold_six_fingers_description">Jy sal nie gewone TalkBack-gebare in the braillesleutelbord kan gebruik nie.\n\nOm aan die gang te kom, kan ons die posisie opstel van die 6 braillepunte wanneer jy tik.</string>
-  <string name="rotate_orientation_description_1">Jy sal van nou af nie meer gewone TalkBack-gebare kan gebruik nie. TalkBack is nie beskikbaar terwyl jy die braille-sleutelbord gebruik nie.</string>
+  <string name="hold_six_fingers_description">Jy sal nie gewone SandFly-gebare in die braillesleutelbord kan gebruik nie.\n\nOm aan die gang te kom, kan ons die posisie opstel van die 6 braillepunte wanneer jy tik.</string>
+  <string name="rotate_orientation_description_1">Jy sal van nou af nie meer gewone SandFly-gebare kan gebruik nie. SandFly is nie beskikbaar terwyl jy die braille-sleutelbord gebruik nie.</string>
   <string name="rotate_orientation_description_2">Om te begin, moet jy jou foon só vashou met die skerm wat weg van jou af wys.</string>
   <string name="tap_to_continue">Dubbeltik enige plek om voort te gaan</string>
   <string name="instruction_type_letter_a">Tik op punt 1 met jou linkerwysvinger om die letter \"A\" te tik</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">SKERMPYLTJIE VORENTOE GESKUIF</string>
   <string name="result_swipe_down_2_fingers">VERSTEEK SLEUTELBORD</string>
   <string name="result_swipe_down_3_fingers">VOLGENDE SLEUTELBORD</string>
-  <string name="rotate_orientation_announcement">Jy sal van nou af nie meer gewone TalkBack-gebare kan gebruik nie. TalkBack is nie beskikbaar terwyl jy die braillesleutelbord gebruik nie.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Jy sal van nou af nie meer gewone SandFly-gebare kan gebruik nie. SandFly is nie beskikbaar terwyl jy die braillesleutelbord gebruik nie.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Draai eers jou foon sodat die skerm weg van jou af wys.\n\nDraai die foon dan horisontaal sodat dit in landskapposisie is. Jou hande moet die kort kante van die foon vashou. Jou regterhand moet die kant met die USB-poort vashou. Rus jou 3 middelvingers op die skerm en gebruik jou pinkie en duim om die foon vas te hou.\n\nDubbeltik wanneer jy gereed is op die skerm om voort te gaan.\n\nSwiep met 3 vingers af na die grond toe om die braillesleutelbord te verlaat. Jy sal dan na jou oorspronklike sleutelbord toe terugkeer.</string>
   <string name="rotate_orientation_continue_announcement">Jou foon is in \'n vertikale posisie. Om voort te gaan, draai jou foon horisontaal sodat die lang kant onder is. Draai die skerm dan só dat dit weg van jou af wys. Dubbeltik wanneer jy gereed is op die skerm om voort te gaan.</string>
   <string name="type_letter_a_announcement">Hou die skerm só vas dat dit weg van jou af wys. Hou jou foon in albei hande vas, op die kort kante van die foon, sodat die middelste 3 vingers van elke hand die skerm kan raak.\n\nJou linkerwysvinger moet op punt 1 wees. Tik nou op punt 1 om die letter “A” te tik.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Swiep af met 3 vingers om na jou ander sleutelbord toe oor te skakel. Probeer dit nou.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Volgende sleutelbord. Dit sal gewoonlik na die volgende sleutelbord toe oorskakel. Hierdie keer sal jy in die braille-sleutelbord bly omdat jy steeds in die tutoriaal is.</string>
   <string name="swipe_up_3_fingers_announcement">Jy kan ook in tafelbladmodus tik deur jou foon plat op \'n tafel te plaas. Om die tutoriaal te voltooi, moet jy met 3 vingers opswiep en die \"voltooi tutoriaal\"-opsie kry</string>
-  <string name="open_context_menu_announcement">Die opsieskieslys is oop. Keer jou foon om sodat dit na jou toe wys en hou dit normaal vas. Jy kan nou die gewone TalkBack-gebare gebruik om te navigeer. Swiep regs om meer opsies te sien.</string>
+  <string name="open_context_menu_announcement">Die opsieskieslys is oop. Keer jou foon om sodat dit na jou toe wys en hou dit normaal vas. Jy kan nou die gewone SandFly-gebare gebruik om te navigeer. Swiep regs om meer opsies te sien.</string>
   <string name="hold_six_fingers_announcement">%s\nSit jou toestel plat op \'n tafel neer. Raak en hou dan die skerm met die middelste 3 vingers van elke hand in \'n posisie waarin dit vir jou gemaklik is om te tik.</string>
   <string name="hold_six_fingers_inactive_announcement">Sit jou toestel plat op \'n tafel neer. Raak en hou dan die skerm met die middelste 3 vingers van elke hand in \'n posisie waarin dit vir jou gemaklik is om te tik.</string>
   <string name="finish_tutorial_announcement">Wys tans braillesleutelbord. Draai jou foon sodat die skerm weg van jou af wys. Draai die foon dan horisontaal sodat dit in landskapposisie is. Begin dan tik.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Hierdie gebaar word vir “%1$s” gebruik en kan nie verander word nie. Probeer ’n ander gebaar. %2$s</string>
   <string name="custom_gesture_cannot_used">Hierdie gebaar kan nie gebruik word nie</string>
   <string name="custom_gesture_no_gesture">Geen gebaar uitgevoer nie</string>
-  <string name="custom_gesture_try_another">Probeer ’n ander gebaar. Besoek die TalkBack-hulpsentrum vir braillesleutelbord om ’n lys van al die beskikbare gebare te sien. %s</string>
+  <string name="custom_gesture_try_another">Probeer ’n ander gebaar. Besoek die SandFly-hulpsentrum vir braillesleutelbord om ’n lys van al die beskikbare gebare te sien. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gebare het nie gepas nie</string>
   <string name="custom_gesture_perform_again">Voer die gebaar uit wat jy weer wil gebruik. %s</string>
+    <string name="tabletop_port_left_announcement">Tafelmodus, laaipoort aan die linkerkant</string>
+    <string name="tabletop_port_right_announcement">Tafelmodus, laaipoort aan die regterkant</string>
+    <string name="screen_away_port_right_announcement">Skerm van jou af gerig, laaipoort aan die regterkant</string>
+    <string name="screen_away_port_left_announcement">Skerm van jou af gerig, laaipoort aan die linkerkant</string>
+    <string name="screen_toward_announcement">Skerm na jou toe gerig</string>
+    <string name="screen_toward_port_left_announcement">Skerm na jou toe gerig, laaipoort aan die linkerkant</string>
+    <string name="screen_toward_port_right_announcement">Skerm na jou toe gerig, laaipoort aan die regterkant</string>
+    <string name="screen_toward_port_down_announcement">Skerm na jou toe gerig, laaipoort wys af</string>
+    <string name="screen_toward_port_up_announcement">Skerm na jou toe gerig, laaipoort wys op</string>
+    <string name="port_right_announcement">Laaipoort aan die regterkant</string>
+    <string name="port_left_announcement">Laaipoort aan die linkerkant</string>
+    <string name="tabletop_port_near_announcement">Tafelmodus, laaipoort na jou toe gerig</string>
+    <string name="tabletop_port_far_announcement">Tafelmodus, laaipoort van jou af gerig</string>
+    <string name="screen_away_port_down_announcement">Skerm van jou af gerig, laaipoort wys af</string>
+    <string name="screen_away_port_up_announcement">Skerm van jou af gerig, laaipoort wys op</string>
+    <string name="port_near_announcement">Laaipoort na jou toe gerig</string>
+    <string name="port_far_announcement">Laaipoort van jou af gerig</string>
+    <string name="port_down_announcement">Laaipoort wys af</string>
+    <string name="port_up_announcement">Laaipoort wys op</string>
+    <string name="orientation_locked_announcement">Oriëntasie gesluit</string>
+    <string name="orientation_locked_port_announcement">Oriëntasie gesluit. %1$s</string>
+    <string name="orientation_unlocked_announcement">Oriëntasie ontsluit</string>
+    <string name="switch_to_language_contracted_announcement">Oorgeskakel na %s, Verkorte braille</string>
+    <string name="switch_to_language_uncontracted_announcement">Oorgeskakel na %s, Onverkorte braille</string>
+    <string name="title_pref_flip_dots_vertically">Ruil boonste en onderste punte om</string>
+    <string name="summary_pref_flip_dots_vertically">Punt 1 ruil plek met punt 3, en punt 4 met punt 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tabletskerm wys weg wanneer dit regop gehou word</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Wanneer af, gebruik ’n tablet of oopgevoude foon wat regop gehou word die tafeluitleg, met die skerm na jou toe</string>
+    <string name="title_pref_typing_sounds">Tikklanke</string>
+    <string name="summary_pref_typing_sounds">Speel sleutelbordklikke wanneer jy ’n karakter, spasie of nuwe reël invoer of iets uitvee</string>
+    <string name="skip_tutorial">Slaan tutoriaal oor</string>
 </resources>

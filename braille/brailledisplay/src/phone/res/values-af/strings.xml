@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braillehardewaresleutelbord</string>
   <string name="bd_application_name">Android Toeganklikheidstel</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-braillesleutelbord is nie beskikbaar nie</string>
-  <string name="bd_ime_disabled_dialog_title">Skakel TalkBack-braillesleutelbord aan</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-braillesleutelbord is nie beskikbaar nie</string>
+  <string name="bd_ime_disabled_dialog_title">Skakel SandFly-braillesleutelbord aan</string>
   <string name="bd_ime_disabled_dialog_message">Gaan na invoerinstellings om jou brailleskerm aan te skakel om dit vir tik te gebruik</string>
   <string name="bd_ime_disabled_dialog_title_positive">Invoerinstellings</string>
   <string name="bd_ime_not_default_dialog_title">Wissel jou invoermetode</string>
-  <string name="bd_ime_not_default_dialog_message">Stel die TalkBack-braillesleutelbord as jou invoermetode om aan te hou tik</string>
+  <string name="bd_ime_not_default_dialog_message">Stel die SandFly-braillesleutelbord as jou invoermetode om aan te hou tik</string>
   <string name="bd_ime_not_default_dialog_positive">Wissel invoer</string>
   <string name="type_unlabeled">Etiketloos</string>
   <string name="type_unlabeled_edittext">Etiketlose redigeerkassie</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Beeldrol na links</string>
   <string name="overlay_pan_right_button">Beeldrol na regs</string>
   <string name="bd_preferences_title">Brailleskerm</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Om brailleskerm te gebruik, moet jy eers TalkBack aanskakel</string>
-  <string name="bd_preferences_banner_talkback_off_button">Gaan na TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Om brailleskerm te gebruik, moet jy eers SandFly aanskakel</string>
+  <string name="bd_preferences_banner_talkback_off_button">Gaan na SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Om brailleskerm te gebruik, moet jy eers Bluetooth aanskakel</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Skakel Bluetooth aan</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Om brailleskerm te gebruik, moet %s toegang tot toestelle in die omtrek hê</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Jy sal van die versteksleutelkaart na die verbeterde sleutelkaart moet oorskakel om blaaimodus te gebruik. Hierdie verandering sal sommige van jou brailleskermopdragte verander</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Instellings</string>
   <string name="bd_command_change_dialog_title">Sommige opdragte is opgedateer</string>
-  <string name="bd_command_change_dialog_message">Hierdie brailleskermopdragte is in dié weergawe van TalkBack opgedateer:\n\n• Vorige item: Druk knoppie 1, 7\n\n• Volgende item: Druk knoppie 4, 8\n\n• Vorige leesbeheer: Druk knoppie 2, 3, 7, 8\n\n• Volgende leesbeheer: Druk knoppie 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Hierdie brailleskermopdragte is in dié weergawe van SandFly opgedateer:\n\n• Vorige item: Druk punte 1, 7\n\n• Volgende item: Druk punte 4, 8\n\n• Vorige leesbeheer: Druk punte 2, 3, 7, 8\n\n• Volgende leesbeheer: Druk punte 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Verkorte braille</string>
   <string name="bd_preference_braille_uncontracted">Onverkorte braille</string>
   <string name="bd_braille_grade_tips">Wissel vinnig tussen die gebruik van verkorte en onverkorte brailleskerm: Druk spasie en knoppies 1, 2, 4 en 5.\n\nHierdie opdrag werk as jy ’n taal met albei braillegrade gebruik.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Beweging tussen items</string>
   <string name="bd_commands_bindings_category_system_actions_title">Stelselhandelinge</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Terug, tuis, kennisgewings en meer</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-kenmerke</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback-kieslyste en -instellings</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-kenmerke</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-kieslyste en -instellings</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille-instellings</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Brailletaal en -instellings</string>
   <string name="bd_commands_bindings_category_text_editing_title">Teksredigering</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Maak alle programme oop</string>
   <string name="bd_cmd_toggle_screen_search">Maak kitsskermsoek oop</string>
   <string name="bd_cmd_edit_custom_label">Wysig gepasmaakte etiket</string>
-  <string name="bd_cmd_open_talkback_menu">Maak TalkBack-kieslys oop</string>
-  <string name="bd_cmd_toggle_voice_feedback">Skakel TalkBack-spraak aan of af</string>
+  <string name="bd_cmd_open_talkback_menu">Maak SandFly-kieslys oop</string>
+  <string name="bd_cmd_toggle_voice_feedback">Skakel SandFly-spraak aan of af</string>
   <string name="bd_cmd_read_stop">Hou op lees</string>
-  <string name="bd_cmd_talkback_settings">Maak TalkBack-instellings oop</string>
+  <string name="bd_cmd_talkback_settings">Maak SandFly-instellings oop</string>
   <string name="bd_cmd_switch_to_next_input_language">Skakel oor na die volgende tiktaal</string>
   <string name="bd_cmd_switch_to_next_output_language">Skakel oor na die volgende leestaal</string>
   <string name="bd_cmd_toggle_contracted_mode">Wissel tussen saamgetrekte en niesaamgetrekte</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Navigeer webbladsye vinnig met die opdrag om in blaaimodus te gaan. Tik dan die volgende letter- of syferkortpaaie\n\nDié kortpaaie kan ook gebruik word sonder om in blaaimodus te gaan, maar jy sal punt 8 by die “Volgende”-opdragte moet voeg</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabelnavigasie</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Skakel brailleskerminstelling af?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Jy kan dit enige tyd weer aanskakel in TalkBack-instellings</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Jy kan dit enige tyd weer aanskakel in SandFly-instellings</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Skakel af</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Sommige opdragte is nie beskikbaar nie</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Opdragte vir navigasie, braille-instellings, en sommige TalkBack-kenmerke is nie beskikbaar terwyl jy tik of wysig nie.\n\nMaak eers die sleutelbord toe as jy hierdie opdragte wil gebruik.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Opdragte vir navigasie, braille-instellings, en sommige SandFly-kenmerke is nie beskikbaar terwyl jy tik of wysig nie.\n\nMaak eers die sleutelbord toe as jy hierdie opdragte wil gebruik.</string>
   <string name="bd_caption_tutorial_dialog_title">Onderskrifte op jou brailleskerm</string>
   <string name="bd_caption_tutorial_dialog_message">Druk spasiebalk en knoppies 1, 4, 7, 8 om onderskrifte vir hierdie video te wys of te versteek.\n\nSkakel Wys onderskrifte op brailleskerm in Instellings aan om outomaties onderskrifte vir gesteunde media te wys.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Wys altyd hierdie boodskap wanneer onderskrifte beskikbaar is</string>
   <string name="bd_usb_connect_dialog_title">Brailleskerm is aan USB gekoppel</string>
-  <string name="bd_usb_connect_dialog_message">Jou %s se battery laai tans jou brailleskerm.\n\nAs jy na Bluetooth toe moet oorskakel, moet jy jou USB of USB-uitbreider ontkoppel en gaan na TalkBack-instellings &gt; Brailleskerm.</string>
+  <string name="bd_usb_connect_dialog_message">Jou %s se battery laai tans jou brailleskerm.\n\nAs jy na Bluetooth toe moet oorskakel, moet jy jou USB of USB-uitbreider ontkoppel en gaan na SandFly-instellings &gt; Brailleskerm.</string>
   <string name="bd_device">foon</string>
   <string name="bd_battery_low_dialog_title">%s-battery is amper pap</string>
   <string name="bd_battery_low_dialog_message">Jou %s se battery laai tans jou brailleskerm.\n\nOm battery te bespaar:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Vee alles uit</string>
   <string name="popup_message_history_empty">Leeg</string>
   <string name="popup_message_history_consent_dialog_title">Skakel toestel se boodskapgeskiedenis aan?</string>
-  <string name="popup_message_history_consent_dialog_msg">Dit sal sommige boodskappe, soos kennisgewings en alarms, in TalkBack stoor. Jy kan hierdie instelling enige tyd verander.</string>
+  <string name="popup_message_history_consent_dialog_msg">Dit sal sommige boodskappe, soos kennisgewings en alarms, in SandFly stoor. Jy kan hierdie instelling enige tyd verander.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Skakel aan</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nee, dankie</string>
+    <string name="external_display_channel">Brailleskerms van ander programme</string>
+    <string name="external_display_ask_title">Laat <xliff:g id="app" example="Notetaker">%1$s</xliff:g> toe om ’n brailleskerm vir SandFly te wees?</string>
+    <string name="external_display_ask_text">SandFly sal dit nie gebruik voordat jy dit toelaat nie.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> sal alles kan lees wat SandFly in braille wys. Dit kan enigiets op die skerm wees, insluitend boodskappe en wat jy tik. Dit sal ook jou toestel soos ’n brailleskerm kan beheer: tik, programme oopmaak en enige SandFly-opdrag uitvoer. Laat slegs programme toe wat jy vertrou.</string>
+    <string name="external_display_allow">Laat toe</string>
+    <string name="external_display_deny">Moenie toelaat nie</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is jou brailleskerm</string>
+    <string name="external_display_in_use_text">Terwyl SandFly dit gebruik, kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> die skerm lees en die toestel beheer.</string>
+    <string name="external_displays_title">Skerms van ander programme</string>
+    <string name="external_displays_summary">Programme wat jy toelaat, kan brailleskerms vir SandFly wees. ’n Program wat ’n brailleskerm is, kan die skerm lees en die toestel beheer.</string>
+    <string name="external_displays_none">Geen programme mag brailleskerms wees nie.</string>
 </resources>
