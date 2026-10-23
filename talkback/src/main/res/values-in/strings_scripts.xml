@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Skrip</string>
+    <string name="summary_pref_scripts">Ubah cara kerja SandFly di aplikasi</string>
+    <string name="script_import">Impor skrip</string>
+    <string name="script_install_label">Instal skrip SandFly</string>
+    <string name="script_import_nothing">Tidak ada file skrip untuk diinstal.</string>
+    <string name="script_import_cannot_open">File tidak dapat dibuka.</string>
+    <string name="script_import_repository">Link ini mengarah ke seluruh repositori. Buka skrip yang diinginkan, lalu bagikan link-nya.</string>
+    <string name="script_import_summary">File .lua, atau .zip dengan main.lua</string>
+    <string name="scripts_category_app">Skrip aplikasi</string>
+    <string name="scripts_category_global">Plugin global</string>
+    <string name="scripts_none">Tidak ada skrip yang diinstal</string>
+    <string name="scripts_all_off">Nonaktifkan semua skrip</string>
+    <string name="scripts_all_off_summary">Skrip tetap terinstal dan mempertahankan tombol masing-masing. Gestur Aktifkan atau nonaktifkan semua skrip memiliki fungsi yang sama.</string>
+    <string name="shortcut_toggle_scripts">Aktifkan atau nonaktifkan semua skrip</string>
+    <string name="scripts_now_off">Skrip nonaktif</string>
+    <string name="scripts_now_on">Skrip aktif</string>
+    <string name="scripts_unavailable">Skrip tidak tersedia di perangkat ini</string>
+    <string name="script_add_example">Tambahkan contoh skrip</string>
+    <string name="script_add_example_summary">Mengucapkan nama setiap aplikasi yang Anda buka. Skrip untuk titik awal.</string>
+    <string name="script_state_on">Aktif</string>
+    <string name="script_state_off">Nonaktif</string>
+    <string name="script_runs_in">Berjalan di <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Berjalan di semua aplikasi</string>
+    <string name="script_version">Versi <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Oleh <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Instal <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Skrip ini dapat:</string>
+    <string name="script_install_no_permissions">Tidak memerlukan izin.</string>
+    <string name="script_install_button">Instal</string>
+    <string name="script_update_title">Perbarui <xliff:g id="name">%1$s</xliff:g> ke <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Izin baru:</string>
+    <string name="script_update_button">Perbarui</string>
+    <string name="script_update_replaces">Ini menggantikan versi <xliff:g id="version">%1$s</xliff:g> oleh <xliff:g id="author">%2$s</xliff:g>, serta mempertahankan data dan setelannya.</string>
+    <string name="script_update_other_author">Versi baru dibuat oleh <xliff:g id="author">%1$s</xliff:g>, penulis yang berbeda. Perbarui hanya jika Anda memercayainya.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> diinstal</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> diperbarui ke <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Impor gagal. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Izinkan hanya untuk skrip tepercaya.</string>
+    <string name="script_permission_screen">Membaca layar</string>
+    <string name="script_permission_actions">Mengklik, men-scroll, mengetik, dan memindahkan fokus</string>
+    <string name="script_permission_speech">Menerima dan mengubah ucapan SandFly</string>
+    <string name="script_permission_passwords">Membaca kolom sandi</string>
+    <string name="script_permission_input">Menambahkan gestur, tombol, item menu, dan kontrol pembacaan</string>
+    <string name="script_permission_network">Menggunakan internet</string>
+    <string name="script_permission_clipboard">Membaca dan mengubah papan klip</string>
+    <string name="script_permission_system">Kembali atau ke layar utama, membuka notifikasi dan aplikasi</string>
+    <string name="script_permission_notifications">Membaca dan mengubah notifikasi yang diucapkan</string>
+    <string name="script_permission_events">Melihat semua aktivitas di setiap aplikasi, termasuk pengetikan</string>
+    <string name="script_permission_dialogs">Menampilkan dialog di atas aplikasi apa pun</string>
+    <string name="script_permission_java">Menjalankan kode Java dengan semua akses SandFly, di setiap aplikasi</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Aktifkan</string>
+    <string name="script_permissions_title">Izin</string>
+    <string name="script_permissions_none">Tidak ada</string>
+    <string name="script_settings_category">Setelan</string>
+    <string name="script_list_filter">Filter</string>
+    <string name="script_button_off">Aktifkan skrip terlebih dahulu</string>
+    <string name="script_permissions_summary">Menonaktifkan izin akan menghentikan bagian yang memerlukannya.</string>
+    <string name="script_install_permissions_note">Anda dapat menonaktifkannya nanti.</string>
+    <string name="script_manage_category">Kelola</string>
+    <string name="script_move_up">Jalankan lebih awal</string>
+    <string name="script_move_down">Jalankan lebih akhir</string>
+    <string name="script_order_summary">Urutan untuk skrip yang mengubah ucapan yang sama. Skrip aplikasi berjalan lebih dulu.</string>
+    <string name="script_log">Log</string>
+    <string name="script_log_summary">Output dan error sejak SandFly dimulai</string>
+    <string name="script_clear_storage">Hapus data tersimpan</string>
+    <string name="script_storage_cleared">Data tersimpan dihapus</string>
+    <string name="script_remove">Hapus</string>
+    <string name="script_remove_title">Hapus <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Menghapus kode, data, dan setelannya.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> dihapus</string>
+    <string name="script_log_empty">Log kosong</string>
+    <string name="script_log_clear">Hapus log</string>
+    <string name="script_log_copy">Salin log</string>
+    <string name="script_log_copied">Log disalin</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Memerlukan API skrip <xliff:g id="needed">%1$d</xliff:g> atau yang lebih baru. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi sebagian fungsi mungkin tidak berjalan.</string>
+    <string name="script_api_untested">Diuji hingga API skrip <xliff:g id="tested">%1$d</xliff:g>. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi skrip mungkin tidak berfungsi seperti yang diharapkan.</string>
+    <string name="script_state_incompatible">Mungkin tidak berfungsi dengan SandFly ini</string>
+    <string name="script_api_range">API skrip <xliff:g id="min">%1$d</xliff:g> hingga <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Kompatibilitas</string>
+    <string name="script_install_anyway">Tetap instal</string>
+    <string name="script_update_anyway">Tetap perbarui</string>
+    <string name="script_homepage">Buka halaman beranda</string>
+    <string name="script_homepage_confirm_title">Buka alamat ini?</string>
+    <string name="script_homepage_open">Buka</string>
+    <string name="script_homepage_failed">Tidak ada aplikasi yang dapat membuka <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dinonaktifkan setelah error berulang. Lihat log-nya di Skrip.</string>
+    <string name="shortcut_inspect_item">Periksa item yang difokuskan</string>
+    <string name="script_inspect_no_item">Tidak ada item yang difokuskan</string>
+    <string name="script_inspect_copied">Disalin. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Tidak ada ID, jadi aturan tidak dapat menyebutnya. Disalin. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Salin hierarki layar</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> item disalin</string>
+    <string name="script_tree_none">Tidak ada jendela untuk disalin</string>
+    <string name="script_tree_clip_label">Hierarki layar</string>
+    <string name="summary_copy_screen_tree_menu">Salin semua item di layar sebagai JSON, untuk menulis skrip</string>
+    <string name="script_inspect_clip_label">Detail item</string>
+    <string name="summary_inspect_item_menu">Ucapkan dan salin detail item terakhir yang difokuskan, untuk menulis skrip</string>
+    <string name="script_keys_backtalk_modifier">Tombol pengubah SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, lalu <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Perintah</string>
+    <string name="script_commands_summary">Gestur dan tombol skrip yang berjalan didahulukan dari milik SandFly. Nonaktifkan salah satunya untuk mempertahankan milik SandFly.</string>
+    <string name="script_binding_gesture">Gestur: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Tombol: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Menu SandFly</string>
+    <string name="script_binding_control">Kontrol pembacaan</string>
+    <string name="script_binding_none">Tidak ada</string>
+    <string name="script_binding_turn_on">Aktifkan</string>
+    <string name="script_binding_turn_off">Nonaktifkan</string>
+    <string name="script_binding_restore">Pulihkan default</string>
+    <string name="script_binding_restored">Default dipulihkan</string>
+    <string name="script_binding_perform">Lakukan gestur atau tekan tombol</string>
+    <string name="script_binding_perform_summary">Tetapkan gestur berikutnya, atau tombol yang ditekan dengan tombol pengubah SandFly</string>
+    <string name="script_binding_perform_message">Lakukan gestur atau tekan tombol.</string>
+    <string name="script_binding_assign_title">Tetapkan <xliff:g id="binding">%1$s</xliff:g> untuk <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Tetapkan</string>
+    <string name="script_binding_choose_gesture">Pilih gestur</string>
+    <string name="script_binding_type_keys">Ketik tombol</string>
+    <string name="script_binding_type_keys_summary">Seperti sf+shift+n, atau sf+t, s</string>
+    <string name="script_binding_bad_keys">Tombol ini tidak dapat digunakan. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Skrip ini menambahkan:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Sumber skrip</string>
+    <string name="script_sources_none">Tidak ada sumber yang ditambahkan</string>
+    <string name="script_source_add">Tambahkan sumber</string>
+    <string name="script_source_add_button">Tambahkan</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Bukan alamat repositori di GitHub, GitLab, Codeberg, Gitea, atau Bitbucket.</string>
+    <string name="script_source_exists">Sumber ini sudah ditambahkan.</string>
+    <string name="script_source_loading">Memuat</string>
+    <string name="script_source_empty">Tidak ada skrip di sumber ini</string>
+    <string name="script_source_failed">Tidak dapat memuat skrip. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Coba lagi</string>
+    <string name="script_source_downloading">Mendownload <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Hapus sumber</string>
+    <string name="script_source_remove_title">Hapus <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Skrip yang diinstal dari sumber ini tetap terinstal.</string>
+    <string name="scripts_auto_update">Perbarui skrip secara otomatis</string>
+    <string name="scripts_check_updates">Periksa pembaruan</string>
+    <string name="scripts_checking_updates">Memeriksa pembaruan…</string>
+    <string name="scripts_updates_category">Pembaruan</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skrip diperbarui: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skrip diperbarui: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Pembaruan tercantum di bawah Pembaruan</string>
+    <string name="scripts_update_check_failed">Beberapa sumber tidak dapat diperiksa</string>
+    <string name="scripts_up_to_date">Semua skrip mutakhir</string>
+</resources>

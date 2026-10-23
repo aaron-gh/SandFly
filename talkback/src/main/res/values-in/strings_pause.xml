@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Jeda SandFly</string>
+    <string name="summary_pause_backtalk">Nonaktifkan ucapan, gestur, dan Jelajahi dengan sentuhan hingga SandFly dilanjutkan</string>
+    <string name="keycombo_menu_global_pause_backtalk">Jeda atau lanjutkan SandFly</string>
+    <string name="backtalk_paused">SandFly dijeda</string>
+    <string name="backtalk_resumed">SandFly dilanjutkan</string>
+    <string name="notification_title_backtalk_paused">SandFly dijeda</string>
+    <string name="notification_message_backtalk_paused">Ketuk untuk melanjutkan</string>
+    <string name="notification_channel_backtalk_paused">SandFly dijeda</string>
+    <string name="dialog_title_pause_backtalk">Jeda SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Jeda</string>
+    <string name="dialog_message_pause_backtalk">Saat SandFly dijeda, tidak ada ucapan, gestur tidak diproses, dan layar berfungsi seperti tanpa pembaca layar.</string>
+    <string name="message_resume_keyguard">Untuk melanjutkan, ketuk notifikasi bahwa SandFly dijeda, tekan tombol volume turun tiga kali dengan cepat, atau kunci lalu bangunkan ponsel agar layar kunci muncul.</string>
+    <string name="message_resume_screen_on">Untuk melanjutkan, ketuk notifikasi SandFly dijeda, tekan tombol turunkan volume 3 kali dengan cepat, atau nonaktifkan lalu aktifkan kembali layar.</string>
+    <string name="message_resume_manual">Untuk melanjutkan, ketuk notifikasi SandFly dijeda atau tekan tombol turunkan volume 3 kali dengan cepat.</string>
+    <string name="message_resume_key_combo">Anda juga dapat menekan <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">Lanjutkan SandFly</string>
+    <string name="value_resume_keyguard">Saat layar kunci ditampilkan</string>
+    <string name="value_resume_screen_on">Saat layar diaktifkan</string>
+    <string name="value_resume_manual">Hanya dari notifikasi atau pintasan</string>
+</resources>

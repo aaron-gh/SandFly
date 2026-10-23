@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Keyboard braille TalkBack</string>
+  <string name="braille_ime_service_name">Keyboard braille SandFly</string>
   <string name="braille_ime_bd_mode_name">Input penampil braille</string>
   <string name="switch_to_tabletop_announcement">Mode di atas meja. Letakkan perangkat dengan posisi port pengisi daya di sebelah kiri.</string>
   <string name="calibration_tip_announcement">Untuk memperbarui posisi titik, tekan lama dengan %d jari.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Dialihkan ke braille tidak singkat</string>
   <string name="braille_ime_displayed_name">keyboard braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">keyboard braille, %s</string>
-  <string name="input_view_caption">Keyboard braille TalkBack - untuk mendapatkan bantuan, buka g.co/help/braille</string>
+  <string name="input_view_caption">Keyboard braille SandFly - untuk mendapatkan bantuan, buka g.co/help/braille</string>
   <string name="perform_action_next">Berikutnya</string>
   <string name="perform_action_submitting">Mengirim teks</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Memperbarui posisi titik. Pertama, mari rekam titik di %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Untuk mengubah bahasa saat mengetik dengan keyboard braille, geser ke atas dengan 3 jari. Lalu pilih \"beralih ke bahasa berikutnya\".</string>
   <string name="title_pref_accumulate_presses">Sertakan semua titik yang ditekan</string>
   <string name="summary_pref_accumulate_presses">Setiap titik yang ditekan adalah bagian dari input, meskipun titik itu dilepaskan sebelum titik lain</string>
-  <string name="title_pref_reverse_dots">Titik terbalik</string>
-  <string name="summary_pref_reverse_dots">Tukar posisi titik, misalnya tukar posisi titik 1 dan 4</string>
+  <string name="title_pref_reverse_dots">Tukar titik kiri dan kanan</string>
+  <string name="summary_pref_reverse_dots">Titik 1, 2, dan 3 bertukar tempat dengan titik 4, 5, dan 6</string>
   <string name="bd_preference_braille_contracted">Braille singkat</string>
   <string name="bd_preference_braille_uncontracted">Braille tidak singkat</string>
   <string name="context_menu_title">Opsi keyboard braille</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Keyboard</string>
   <string name="not_enough_touch_points_dialog_title">Perangkat Anda tidak mendukung keyboard braille</string>
   <string name="not_enough_touch_points_dialog_message">Perangkat Anda tidak mendukung titik sentuh yang cukup. Untuk informasi selengkapnya, hubungi produsen perangkat Anda.</string>
-  <string name="talkback_off_dialog_title">Mengaktifkan TalkBack untuk menggunakan keyboard braille</string>
+  <string name="talkback_off_dialog_title">Mengaktifkan SandFly untuk menggunakan keyboard braille</string>
   <string name="talkback_off_dialog_positive_button">Aktifkan di setelan aksesibilitas</string>
-  <string name="talkback_suspend_dialog_title">Melanjutkan TalkBack untuk menggunakan keyboard braille</string>
-  <string name="talkback_off_or_suspend_dialog_message">Jika TalkBack aktif, Anda dapat mengetuk layar untuk memasukkan simbol braille.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Aktifkan TalkBack untuk mengubah gestur</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack nonaktif. Aktifkan Talkback untuk mengubah gestur keyboard braille.</string>
+  <string name="talkback_suspend_dialog_title">Melanjutkan SandFly untuk menggunakan keyboard braille</string>
+  <string name="talkback_off_or_suspend_dialog_message">Jika SandFly aktif, Anda dapat mengetuk layar untuk memasukkan simbol braille.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Aktifkan SandFly untuk mengubah gestur</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly nonaktif. Aktifkan SandFly untuk mengubah gestur keyboard braille.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Buka Setelan</string>
   <string name="reset_gestures_dialog_title">Reset semua gestur?</string>
   <string name="reset_gestures_dialog_message">Semua gestur keyboard braille akan direset ke default</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Reset ke default</string>
   <string name="custom_gestures_dialog_remove_button">Hapus gestur</string>
   <string name="change_gestures_dialog_message_title">Cara mengubah gestur</string>
-  <string name="change_gestures_dialog_message">Di layar berikutnya, keyboard braille akan terbuka, dan Anda tidak akan dapat menggunakan gestur TalkBack.\n\nSaat keyboard braille terbuka, lakukan gestur yang ingin Anda gunakan, atau, untuk menutup keyboard braille dan membatalkan perubahan gestur, geser ke bawah dengan 2 jari.\n\nLihat gestur yang tersedia\n</string>
+  <string name="change_gestures_dialog_message">Di layar berikutnya, keyboard braille akan terbuka, dan Anda tidak akan dapat menggunakan gestur SandFly.\n\nSaat keyboard braille terbuka, lakukan gestur yang ingin Anda gunakan, atau, untuk menutup keyboard braille dan membatalkan perubahan gestur, geser ke bawah dengan 2 jari.\n\nLihat gestur yang tersedia\n</string>
   <string name="change_gestures_dialog_message_link">Lihat gestur yang tersedia</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Jangan tampilkan pesan ini lagi</string>
   <string name="change_gestures_dialog_positive_button">Lanjutkan</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Jangan gunakan</string>
   <string name="next_keyboard">Keyboard berikutnya</string>
   <string name="braille_tutorial_title">Tutorial keyboard braille</string>
-  <string name="tutorial_intro_description">Dengan keyboard braille, Anda dapat mengetuk layar untuk memasukkan braille 6 titik.\n\nAnda menggunakan Unified English Braille. Untuk beralih bahasa pengetikan, buka setelan TalkBack.\n\nUntuk mengetik braille, Anda harus menggenggam dan menggunakan ponsel dengan cara yang berbeda.</string>
+  <string name="tutorial_intro_description">Dengan keyboard braille, Anda dapat mengetuk layar untuk memasukkan braille 6 titik.\n\nAnda menggunakan Unified English Braille. Untuk beralih bahasa pengetikan, buka setelan SandFly.\n\nUntuk mengetik braille, Anda harus menggenggam dan menggunakan ponsel dengan cara yang berbeda.</string>
   <string name="next_step">Berikutnya</string>
   <string name="leave_keyboard">Keluar dari keyboard braille</string>
-  <string name="hold_six_fingers_description">Anda tidak dapat menggunakan gestur TalkBack reguler di keyboard braille.\n\nUntuk memulai, mari siapkan posisi 6 titik braille saat Anda mengetik.</string>
-  <string name="rotate_orientation_description_1">Mulai sekarang, Anda tidak akan dapat menggunakan gestur TalkBack reguler. TalkBack tidak tersedia saat menggunakan keyboard braille.</string>
+  <string name="hold_six_fingers_description">Anda tidak dapat menggunakan gestur SandFly reguler di keyboard braille.\n\nUntuk memulai, mari siapkan posisi 6 titik braille saat Anda mengetik.</string>
+  <string name="rotate_orientation_description_1">Mulai sekarang, Anda tidak akan dapat menggunakan gestur SandFly reguler. SandFly tidak tersedia saat menggunakan keyboard braille.</string>
   <string name="rotate_orientation_description_2">Untuk memulai, genggam ponsel dengan posisi layar yang membelakangi Anda.</string>
   <string name="tap_to_continue">Ketuk dua kali di mana saja untuk melanjutkan</string>
   <string name="instruction_type_letter_a">Ketuk titik 1 dengan jari telunjuk kiri Anda untuk mengetik huruf \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">MEMAJUKAN KURSOR</string>
   <string name="result_swipe_down_2_fingers">SEMBUNYIKAN KEYBOARD</string>
   <string name="result_swipe_down_3_fingers">KEYBOARD BERIKUTNYA</string>
-  <string name="rotate_orientation_announcement">Mulai sekarang, Anda tidak akan dapat menggunakan gestur TalkBack reguler. TalkBack tidak tersedia saat menggunakan keyboard braille.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Mulai sekarang, Anda tidak akan dapat menggunakan gestur SandFly reguler. SandFly tidak tersedia saat menggunakan keyboard braille.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Pertama, balik ponsel sehingga layarnya membelakangi Anda.\n\nSelanjutnya, putar ponsel secara horizontal ke posisi lanskap. Tangan Anda harus menggenggam bagian sisi pendek ponsel. Tangan kanan Anda harus menggenggam ujung dengan port USB. Letakkan 3 jari tengah pada layar, lalu gunakan jari kelingking dan jempol untuk menggenggam ponsel.\n\nSetelah siap, ketuk layar dua kali untuk melanjutkan.\n\nUntuk keluar dari keyboard braille, geser ke bawah dengan 3 jari. Tindakan ini akan mengalihkan Anda kembali ke keyboard asal.</string>
   <string name="rotate_orientation_continue_announcement">Ponsel Anda sedang dalam posisi vertikal. Untuk melanjutkan, putar ponsel Anda ke posisi horizontal sehingga sisi panjangnya berada di bagian bawah. Lalu balik layarnya sehingga membelakangi Anda. Setelah siap, ketuk layar dua kali untuk melanjutkan.</string>
   <string name="type_letter_a_announcement">Buat layar tetap membelakangi Anda. Genggam ponsel dengan kedua tangan pada sisi pendeknya, sehingga 3 jari tengah setiap tangan dapat menyentuh layar.\n\nJari telunjuk kiri Anda seharusnya berada pada titik 1. Sekarang, ketuk titik 1 untuk mengetik huruf “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Untuk beralih ke keyboard lain, geser ke bawah dengan 3 jari. Coba sekarang.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Keyboard berikutnya. Biasanya, tindakan ini akan mengalihkan Anda ke keyboard berikutnya. Untuk saat ini, Anda tetap menggunakan keyboard braille karena Anda masih dalam tutorial.</string>
   <string name="swipe_up_3_fingers_announcement">Anda juga dapat mengetik menggunakan mode di atas meja dengan meletakkan ponsel di atas meja dalam posisi datar. Untuk menyelesaikan tutorial, geser ke atas dengan 3 jari dan cari opsi selesaikan tutorial</string>
-  <string name="open_context_menu_announcement">Menu opsi terbuka. Balik posisi ponsel agar menghadap Anda dan genggam seperti biasa. Sekarang Anda dapat menggunakan gestur TalkBack reguler untuk menavigasi. Geser ke kanan untuk melihat opsi lainnya.</string>
+  <string name="open_context_menu_announcement">Menu opsi terbuka. Balik posisi ponsel agar menghadap Anda dan genggam seperti biasa. Sekarang Anda dapat menggunakan gestur SandFly reguler untuk menavigasi. Geser ke kanan untuk melihat opsi lainnya.</string>
   <string name="hold_six_fingers_announcement">%s\nLetakkan perangkat di atas meja dalam posisi datar. Lalu, sentuh lama layar dengan jari telunjuk, jari tengah, dan jari manis kedua tangan dalam posisi yang nyaman untuk mengetik.</string>
   <string name="hold_six_fingers_inactive_announcement">Letakkan perangkat di atas meja dalam posisi datar. Lalu, sentuh lama layar dengan jari telunjuk, jari tengah, dan jari manis kedua tangan dalam posisi yang nyaman untuk mengetik.</string>
   <string name="finish_tutorial_announcement">Menampilkan keyboard braille. Balik ponsel sehingga layarnya membelakangi Anda. Putar ponsel secara horizontal ke posisi lanskap. Mulailah mengetik.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Gestur ini digunakan untuk \"%1$s\" dan tidak dapat diubah. Coba gestur lain. %2$s</string>
   <string name="custom_gesture_cannot_used">Gestur ini tidak dapat digunakan</string>
   <string name="custom_gesture_no_gesture">Tidak ada gestur yang dilakukan</string>
-  <string name="custom_gesture_try_another">Coba gestur lain. Untuk melihat daftar semua gestur yang tersedia, buka pusat bantuan keyboard braille TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Coba gestur lain. Untuk melihat daftar semua gestur yang tersedia, buka pusat bantuan keyboard braille SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gestur tidak cocok</string>
   <string name="custom_gesture_perform_again">Lakukan lagi gestur yang ingin Anda gunakan. %s</string>
+    <string name="tabletop_port_left_announcement">Mode meja, port pengisian daya di sebelah kiri</string>
+    <string name="tabletop_port_right_announcement">Mode meja, port pengisian daya di sebelah kanan</string>
+    <string name="screen_away_port_right_announcement">Mode layar jauh, port pengisian daya di sebelah kanan</string>
+    <string name="screen_away_port_left_announcement">Mode layar jauh, port pengisian daya di sebelah kiri</string>
+    <string name="screen_toward_announcement">Layar ke arah Anda</string>
+    <string name="screen_toward_port_left_announcement">Layar ke arah Anda, port pengisian daya di sebelah kiri</string>
+    <string name="screen_toward_port_right_announcement">Layar ke arah Anda, port pengisian daya di sebelah kanan</string>
+    <string name="screen_toward_port_down_announcement">Layar menghadap Anda, port pengisian daya mengarah ke bawah</string>
+    <string name="screen_toward_port_up_announcement">Layar menghadap Anda, port pengisian daya mengarah ke atas</string>
+    <string name="port_right_announcement">Port pengisian daya di sebelah kanan</string>
+    <string name="port_left_announcement">Port pengisian daya di sebelah kiri</string>
+    <string name="tabletop_port_near_announcement">Mode meja, port pengisian daya ke arah Anda</string>
+    <string name="tabletop_port_far_announcement">Mode meja, port pengisian daya jauh dari Anda</string>
+    <string name="screen_away_port_down_announcement">Mode layar jauh, port pengisian daya mengarah ke bawah</string>
+    <string name="screen_away_port_up_announcement">Mode screen-away, port pengisian daya mengarah ke atas</string>
+    <string name="port_near_announcement">Port pengisian daya ke arah Anda</string>
+    <string name="port_far_announcement">Port pengisian daya jauh dari Anda</string>
+    <string name="port_down_announcement">Port pengisian daya mengarah ke bawah</string>
+    <string name="port_up_announcement">Port pengisian daya mengarah ke atas</string>
+    <string name="orientation_locked_announcement">Orientasi terkunci</string>
+    <string name="orientation_locked_port_announcement">Orientasi terkunci. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientasi tidak terkunci</string>
+    <string name="switch_to_language_contracted_announcement">Beralih ke %s, Braille singkat</string>
+    <string name="switch_to_language_uncontracted_announcement">Beralih ke %s, Braille tidak singkat</string>
+    <string name="title_pref_flip_dots_vertically">Tukar titik atas dan bawah</string>
+    <string name="summary_pref_flip_dots_vertically">Titik 1 bertukar tempat dengan titik 3, dan titik 4 dengan titik 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet terangkat menghadap ke arah lain</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Saat mati, tablet atau ponsel dalam keadaan terbuka menggunakan tata letak meja, menghadap Anda</string>
+    <string name="title_pref_typing_sounds">Mengetik suara</string>
+    <string name="summary_pref_typing_sounds">Mainkan klik keyboard saat Anda mengetik karakter, spasi, baris baru, atau menghapus</string>
+    <string name="skip_tutorial">Lewati tutorial</string>
 </resources>
