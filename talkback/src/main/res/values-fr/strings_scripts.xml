@@ -138,4 +138,17 @@
     <string name="script_source_remove">Supprimer la source</string>
     <string name="script_source_remove_title">Supprimer <xliff:g id="name">%1$s</xliff:g> ?</string>
     <string name="script_source_remove_message">Les scripts installés depuis cette source restent installés.</string>
+    <string name="scripts_auto_update">Mettre à jour automatiquement les scripts</string>
+    <string name="scripts_check_updates">Rechercher des mises à jour</string>
+    <string name="scripts_checking_updates">Vérification des mises à jour…</string>
+    <string name="scripts_updates_category">Mises à jour</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script mis à jour : <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scripts mis à jour : <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts mis à jour : <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Les mises à jour sont répertoriées sous Mises à jour</string>
+    <string name="scripts_update_check_failed">Certaines sources n\'ont pas pu être vérifiées</string>
+    <string name="scripts_up_to_date">Tous les scripts sont à jour</string>
 </resources>

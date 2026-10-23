@@ -81,4 +81,10 @@
     <string name="theme_sound_too_large">Ce fichier est trop volumineux. Un son peut faire jusqu\'à 5 Mo.</string>
     <string name="theme_sound_not_audio">SandFly ne peut pas lire ce fichier. Choisissez un son WAV, OGG, MP3 ou FLAC.</string>
     <string name="theme_sound_failed">SandFly n\'a pas pu lire ce fichier.</string>
+    <string name="title_pref_sound_theme_install_source">D\'une source</string>
+    <string name="summary_pref_sound_theme_install_source">Fichiers de thèmes dans un dépôt GitHub, GitLab, Codeberg, Gitea ou Bitbucket.</string>
+    <string name="sound_theme_sources">Sources de thèmes sonores</string>
+    <string name="sound_theme_source_empty">Aucun thème sonore dans cette source</string>
+    <string name="sound_theme_source_failed">Impossible de charger les thèmes sonores. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Les thèmes sonores installés à partir de celui-ci restent installés.</string>
 </resources>
