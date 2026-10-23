@@ -23,6 +23,7 @@ import android.os.Looper;
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
@@ -82,9 +83,11 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
     return useOnDevice() || AiService.isSetUp(prefs);
   }
 
+  // The list of models is what every request comes through, the single address included, so this
+  // is the one to override; overriding only the single address let requests go to Gemini.
   @Override
   public void performRequest(
-      String url, String apiKey, JSONObject postData, GeminiRestResponseCallback callback) {
+      List<String> urls, String apiKey, JSONObject postData, GeminiRestResponseCallback callback) {
     if (useOnDevice()) {
       runner.run(postData, loggingFailures(callback));
     } else if (AiService.isSetUp(prefs)) {
@@ -95,7 +98,7 @@ public class LocalGemmaRequestPerformer extends GeminiRestRequestPerformer {
           postData,
           loggingFailures(callback));
     } else {
-      super.performRequest(url, apiKey, postData, callback);
+      super.performRequest(urls, apiKey, postData, callback);
     }
   }
 

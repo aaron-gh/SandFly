@@ -17,12 +17,11 @@
 package com.google.android.accessibility.talkback.actor.gemini
 
 import android.os.Bundle
-import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
-/** Gemini settings in Automatic descriptions: whether to use Gemini, its API key and its model. */
+/** Gemini settings in Automatic descriptions: its API key and its model. */
 class GeminiSettingsFragment : TalkbackBaseFragment(R.xml.gemini_settings_preferences) {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(requireContext()) }
 
@@ -31,38 +30,7 @@ class GeminiSettingsFragment : TalkbackBaseFragment(R.xml.gemini_settings_prefer
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     super.onCreatePreferences(savedInstanceState, rootKey)
-    findPreference<TwoStatePreference>(KEY_USE)?.setOnPreferenceChangeListener { _, value ->
-      AiProvider.setActive(prefs, if (value as Boolean) AiProvider.GEMINI else AiProvider.NONE)
-      true
-    }
-    GeminiApiKeyPreference.setUp(this) {
-      // Without a key, Gemini can't be asked, so it is no longer the service in use.
-      if (AiProvider.active(prefs) == AiProvider.GEMINI && !AiProvider.GEMINI.isReady(prefs)) {
-        AiProvider.setActive(prefs, AiProvider.NONE)
-      }
-      updateUse()
-    }
+    GeminiApiKeyPreference.setUp(this) { AiProvider.afterSetUpChanged(prefs, AiProvider.GEMINI) }
     GeminiModelPreference.setUp(this)
-    updateUse()
-  }
-
-  override fun onResume() {
-    super.onResume()
-    updateUse()
-  }
-
-  /** Only Gemini with a key can be turned on. */
-  private fun updateUse() {
-    val use = findPreference<TwoStatePreference>(KEY_USE) ?: return
-    val ready = AiProvider.GEMINI.isReady(prefs)
-    use.isChecked = ready && AiProvider.active(prefs) == AiProvider.GEMINI
-    use.isEnabled = ready
-    use.summary =
-      if (ready) null
-      else getString(R.string.ai_provider_needs_key, getString(R.string.ai_provider_gemini))
-  }
-
-  private companion object {
-    const val KEY_USE = "pref_gemini_use"
   }
 }

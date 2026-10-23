@@ -738,7 +738,7 @@ SandFly only uses a display from an app once you allow it, after a warning that 
 
 ### AI services
 
-Google's source release doesn't include working Gemini support, so **Describe image** only reads text in images and **Describe screen** doesn't work. SandFly adds its own Describe screen with follow-up questions, and sends both to an AI service with your own API key. **Automatic descriptions** > **AI service** chooses Gemini, Claude, OpenAI (ChatGPT), Mistral, Groq, OpenRouter, Ollama Cloud, another service with an OpenAI-compatible API, or **None**. Each service has its own settings screen with its API key and model. For more information, see [AI services](README.md#ai-services).
+Google's source release doesn't include working Gemini support, so **Describe image** only reads text in images and **Describe screen** doesn't work. SandFly adds its own Describe screen with follow-up questions, and sends both to an AI service with your own API key. The services are Gemini, Claude, OpenAI (ChatGPT), Mistral, Groq, OpenRouter, Ollama Cloud and any other service with an OpenAI-compatible API. Each has its own settings screen in **Automatic descriptions**, with its API key and model. **AI service** chooses among the services that are set up, or **None**. A service that has just been set up is used when no other is, and when the service in use loses its key or model, the next one that is set up takes over. Questions about an image or screen, spoken or typed, go to the same service. For more information, see [AI services](README.md#ai-services).
 
 With Gemini, SandFly asks the model to think as little as it can, and asks Gemini Flash-Lite when the chosen model is busy or takes more than 15 seconds.
 

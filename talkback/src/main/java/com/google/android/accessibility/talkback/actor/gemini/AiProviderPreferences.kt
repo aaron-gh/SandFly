@@ -85,26 +85,20 @@ object AiProviderPreferences {
   private fun choose(fragment: PreferenceFragmentCompat) {
     val context = fragment.requireContext()
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
-    val providers = AiProvider.entries
+    // Only services that are set up are listed; their settings rows below say what each needs.
+    val providers = AiProvider.choices(prefs)
+    if (providers.size == 1) {
+      Toast.makeText(context, R.string.ai_provider_none_set_up, Toast.LENGTH_LONG).show()
+      return
+    }
     AlertDialog.Builder(context)
       .setTitle(R.string.title_pref_ai_provider)
       .setSingleChoiceItems(
         providers.map { context.getString(it.label) }.toTypedArray(),
         providers.indexOf(AiProvider.active(prefs)),
       ) { dialog, which ->
-        val provider = providers[which]
         dialog.dismiss()
-        // Only a service that is set up can be used; its settings say what it still needs.
-        if (!provider.isReady(prefs)) {
-          Toast.makeText(
-              context,
-              context.getString(R.string.ai_provider_set_up_first, context.getString(provider.label)),
-              Toast.LENGTH_LONG,
-            )
-            .show()
-          return@setSingleChoiceItems
-        }
-        AiProvider.setActive(prefs, provider)
+        AiProvider.setActive(prefs, providers[which])
         refresh(fragment)
       }
       .setNegativeButton(android.R.string.cancel, null)

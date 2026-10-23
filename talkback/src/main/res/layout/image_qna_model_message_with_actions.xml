@@ -13,7 +13,7 @@
       android:paddingBottom="@dimen/image_caption_bottom_sheet_padding"
       android:layout_gravity="start"
       android:src="@drawable/ic_gemini_spark"
-      android:contentDescription="@string/image_qna_button_text"
+      android:contentDescription="@null"
       android:importantForAccessibility="no"/>
 
   <androidx.constraintlayout.motion.widget.MotionLayout

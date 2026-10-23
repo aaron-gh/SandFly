@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Automatic descriptions > Gemini settings. -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:key="pref_gemini_use"
-      android:persistent="false"
-      android:title="@string/ai_provider_use_gemini" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:key="pref_gemini_api_key"
       android:title="@string/title_pref_gemini_api_key" />

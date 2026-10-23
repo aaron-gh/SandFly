@@ -64,9 +64,9 @@ With [Shizuku](https://shizuku.rikka.app) installed and running, SandFly grants 
 2.  Under **AI services**, open the settings of a service: Gemini, Claude, OpenAI (ChatGPT), Mistral, Groq, OpenRouter, Ollama Cloud, or **Other service** for another service with an OpenAI-compatible API, whose address you enter.
 3.  Choose **Get a key**, where the service has one, to open its website and create a key. Paste the key into the API key field, and choose **Save**.
 4.  Choose a model from the list that the service gives for your key, or enter its name.
-5.  Turn on the service's switch, such as **Use Gemini**. **AI service** in **Automatic descriptions** shows the service in use, and switches between services that are set up. **None** turns AI descriptions off.
+5.  If no other service is in use, SandFly uses this one as soon as it is set up. **AI service** in **Automatic descriptions** shows the service in use and lists the services that are set up, to switch between them. **None** turns AI descriptions off.
 
-A service can't be used until it has an address, a key and a model. When you clear the key of the service in use, SandFly goes back to Gemini if it is set up, or to **None**.
+A service can't be used until it has an address, a key and a model. When you clear the key or model of the service in use, SandFly uses the next service that is set up, or **None**. Questions about an image or screen, spoken or typed, go to the service in use.
 
 Images and screenshots that you describe are sent to the service. On Gemini's free tier, Google can use this data to improve its products. With Gemini, when the chosen model is busy or takes more than 15 seconds, SandFly asks Gemini Flash-Lite instead.
 
