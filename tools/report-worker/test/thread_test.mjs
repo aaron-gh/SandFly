@@ -10,7 +10,7 @@ import {
   threadOf,
   userComment,
 } from '../src/thread.js';
-import { issueBody, logComment, parseReport } from '../src/report.js';
+import { issueBody, logComments, parseReport } from '../src/report.js';
 
 let failures = 0;
 function check(name, condition) {
@@ -51,8 +51,8 @@ check('developer message', fromDeveloper.from === 'developer' && fromDeveloper.b
 check('private note hidden', messageOf({ id: 3, body: '[Private] cause is X' }) === null);
 check('old log hidden', messageOf({ id: 4, body: 'SandFly log\n\n```text\nx\n```\n' }) === null);
 const report = parseReport({ type: 'Crash', title: 't', description: 'd', log: 'x' });
-check('new log hidden', messageOf({ id: 5, body: logComment(report) }) === null);
-check('log has marker', logComment(report).startsWith(LOG_MARKER));
+check('new log hidden', messageOf({ id: 5, body: logComments(report)[0] }) === null);
+check('log has marker', logComments(report)[0].startsWith(LOG_MARKER));
 check('report id hidden in body', issueBody(report, 'ab12').startsWith('<!-- sandfly-report: ab12 -->\n'));
 check('no id without one', issueBody(report).startsWith('**Type:**'));
 
@@ -62,7 +62,7 @@ check('completed', statusOf({ state: 'closed', state_reason: 'completed' }) === 
 check('not planned', statusOf({ state: 'closed', state_reason: 'not_planned' }) === 'not_planned');
 check('duplicate', statusOf({ state: 'closed', state_reason: 'duplicate' }) === 'duplicate');
 const thread = threadOf(token, { state: 'open', updated_at: 'u' }, [
-  { id: 1, body: logComment(report) },
+  { id: 1, body: logComments(report)[0] },
   { id: 2, body: 'Can you send a log?' },
 ]);
 check('thread messages', thread.messages.length === 1 && thread.messages[0].id === 2);

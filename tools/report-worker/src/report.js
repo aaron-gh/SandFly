@@ -29,7 +29,7 @@ const LIMITS = {
   version: 100,
   deviceLine: 200,
   deviceLines: 10,
-  log: 60000,
+  log: 400000,
 };
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -107,7 +107,7 @@ export function issueBody(report, id) {
     if (report.version) body += `- ${inline(report.version)}\n`;
     for (const line of report.device) body += `- ${inline(line)}\n`;
   }
-  if (report.log) body += '\nThe SandFly log is in the first comment.\n';
+  if (report.log) body += '\nThe SandFly log is in the first comment, or the first few when it is long.\n';
   return body;
 }
 
@@ -116,11 +116,32 @@ export function issueTitle(report) {
   return report.title;
 }
 
-/** The comment with the SandFly log, in a code block that no line of the log can close. */
-export function logComment(report) {
-  const longestRun = Math.max(2, ...(report.log.match(/`+/g) || []).map((run) => run.length));
-  const fence = '`'.repeat(longestRun + 1);
-  return `${LOG_MARKER}\nSandFly log\n\n${fence}text\n${report.log.replace(/\s+$/, '')}\n${fence}\n`;
+/** The most of the log in one comment. GitHub takes 65,536 characters, with the heading. */
+export const LOG_PART = 60000;
+
+/**
+ * The comments with the SandFly log, in order, each holding at most LOG_PART characters of it, cut
+ * between lines where it can be, in a code block that no line of the log can close.
+ */
+export function logComments(report) {
+  const log = report.log.replace(/\s+$/, '');
+  const parts = [];
+  let start = 0;
+  while (start < log.length) {
+    let end = Math.min(start + LOG_PART, log.length);
+    if (end < log.length) {
+      const newline = log.lastIndexOf('\n', end - 1);
+      if (newline > start) end = newline + 1;
+    }
+    parts.push(log.slice(start, end).replace(/\n$/, ''));
+    start = end;
+  }
+  return parts.map((part, i) => {
+    const longestRun = Math.max(2, ...(part.match(/`+/g) || []).map((run) => run.length));
+    const fence = '`'.repeat(longestRun + 1);
+    const heading = parts.length > 1 ? `SandFly log, part ${i + 1} of ${parts.length}` : 'SandFly log';
+    return `${LOG_MARKER}\n${heading}\n\n${fence}text\n${part}\n${fence}\n`;
+  });
 }
 
 // Stops @names in the reporter's text from notifying GitHub users.

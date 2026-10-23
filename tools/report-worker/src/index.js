@@ -5,11 +5,12 @@
 // Each report gets a secret token that only the reporter's SandFly holds. The Worker keeps the
 // SHA-256 of each token in KV, with the issue number, so the token itself is stored nowhere else.
 
-import { issueBody, issueTitle, labels, logComment, parseReport } from './report.js';
+import { issueBody, issueTitle, labels, logComments, parseReport } from './report.js';
 import { parseReply, parseTokens, threadOf, userComment } from './thread.js';
 
 // Twice the largest report: every field at its limit, with JSON escaping.
-const MAX_REQUEST_BYTES = 200_000;
+// A log of 400,000 characters, escaped as JSON, with room for the rest of the report.
+const MAX_REQUEST_BYTES = 1_000_000;
 const MAX_SMALL_REQUEST_BYTES = 40_000;
 const PER_ADDRESS_PER_DAY = 10;
 const ALL_PER_DAY = 100;
@@ -69,10 +70,16 @@ async function createReport(json, request, env) {
   }
   const { number } = await issue.json();
   if (report.log) {
-    const comment = await github(env, 'POST', `/repos/${env.REPO}/issues/${number}/comments`, {
-      body: logComment(report),
-    });
-    if (!comment.ok) console.error('Log comment not added', comment.status, await comment.text());
+    // One at a time, so that the parts are in order.
+    for (const body of logComments(report)) {
+      const comment = await github(env, 'POST', `/repos/${env.REPO}/issues/${number}/comments`, {
+        body,
+      });
+      if (!comment.ok) {
+        console.error('Log comment not added', comment.status, await comment.text());
+        break;
+      }
+    }
   }
   const token = randomToken();
   await env.THREADS.put(`token:${await sha256(token)}`, JSON.stringify({ number, id }));

@@ -10,7 +10,7 @@ SandFly posts JSON to `https://<worker>/report`. The Worker:
   for a field that fails;
 - allows 2 reports a minute and 10 a day from one address, and 100 a day in total (429 when over);
 - creates the issue with the labels `bug` or `enhancement`, plus `user report`;
-- adds the SandFly log, when included, as the first comment;
+- adds the SandFly log, when included, as the first comment, or as several in order when it is longer than one comment holds;
 - breaks `@name` mentions in the reporter's text so that they notify nobody.
 
 Responses: 201 sent, 400 bad field, 413 too large, 415 not JSON, 429 rate limited, 502 GitHub

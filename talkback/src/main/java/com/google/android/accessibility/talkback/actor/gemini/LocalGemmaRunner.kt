@@ -20,6 +20,7 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestP
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlm
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmCancelledException
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalLlmMemoryException
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Base64
 import java.util.concurrent.Executor
 import java.util.concurrent.ExecutorService
@@ -120,6 +121,7 @@ internal class LocalGemmaRunner(
         callback.onCancelled()
       }
     } catch (e: Exception) {
+      LogUtils.w(TAG, "On-device AI failed: %s", e)
       report(job) { callback.onFailure(GeminiFailure.other(e.toString())) }
     } finally {
       // Already cleared when a result was reported, unless something unexpected was thrown.
@@ -155,6 +157,8 @@ internal class LocalGemmaRunner(
   }
 
   companion object {
+    private const val TAG = "LocalGemmaRunner"
+
     /**
      * Models often wrap JSON in a markdown fence or add a sentence around it, which the parser does
      * not accept. Keeps the text from the first "{" to the last "}".
