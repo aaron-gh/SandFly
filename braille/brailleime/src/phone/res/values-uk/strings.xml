@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Брайлівська клавіатура TalkBack</string>
+  <string name="braille_ime_service_name">Брайлівська клавіатура SandFly</string>
   <string name="braille_ime_bd_mode_name">Введення тексту на брайлівському дисплеї</string>
   <string name="switch_to_tabletop_announcement">Настільний режим. Поверніть пристрій зарядним портом ліворуч.</string>
   <string name="calibration_tip_announcement">Щоб оновити положення крапок, утримуйте екран %d пальцями.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Ви перейшли на розширену брайлівську розкладку клавіатури</string>
   <string name="braille_ime_displayed_name">брайлівська клавіатура</string>
   <string name="multiple_languages_braille_ime_displayed_name">брайлівська клавіатура, %s</string>
-  <string name="input_view_caption">Брайлівська клавіатура TalkBack. Щоб дізнатися більше, відвідайте сторінку g.co/help/braille</string>
+  <string name="input_view_caption">Брайлівська клавіатура SandFly. Щоб дізнатися більше, відвідайте сторінку g.co/help/braille</string>
   <string name="perform_action_next">Далі</string>
   <string name="perform_action_submitting">Надсилання тексту</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Почнімо оновлювати положення крапок. Спершу запишемо крапки для %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Щоб змінити мову під час введення тексту на брайлівській клавіатурі, проведіть угору по екрану 3 пальцями. Потім виберіть наступну мову.</string>
   <string name="title_pref_accumulate_presses">Включати всі натиснуті крапки</string>
   <string name="summary_pref_accumulate_presses">Кожна натиснута крапка є частиною вводу, навіть якщо її відпустили перед іншими крапками</string>
-  <string name="title_pref_reverse_dots">Зворотний порядок крапок</string>
-  <string name="summary_pref_reverse_dots">Змінити положення крапок, наприклад, поміняти крапки 1 і 4 місцями</string>
+  <string name="title_pref_reverse_dots">Поміняйте ліву та праву точки</string>
+  <string name="summary_pref_reverse_dots">Точки 1, 2 і 3 міняються місцями з крапками 4, 5 і 6</string>
   <string name="bd_preference_braille_contracted">Скорочена брайлівська розкладка</string>
   <string name="bd_preference_braille_uncontracted">Розширена брайлівська розкладка</string>
   <string name="context_menu_title">Параметри брайлівської клавіатури</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Клавіатура</string>
   <string name="not_enough_touch_points_dialog_title">Ваш пристрій не підтримує брайлівську клавіатуру</string>
   <string name="not_enough_touch_points_dialog_message">Ваш пристрій підтримує недостатню кількість точок взаємодії. Щоб дізнатися більше, зв\'яжіться з виробником вашого пристрою.</string>
-  <string name="talkback_off_dialog_title">Увімкніть TalkBack, щоб використовувати брайлівську клавіатуру</string>
+  <string name="talkback_off_dialog_title">Увімкніть SandFly, щоб використовувати брайлівську клавіатуру</string>
   <string name="talkback_off_dialog_positive_button">Увімкнути в налаштуваннях спеціальних можливостей</string>
-  <string name="talkback_suspend_dialog_title">Активувати TalkBack для використання брайлівської клавіатури</string>
-  <string name="talkback_off_or_suspend_dialog_message">Коли ввімкнено TalkBack, можна вводити брайлівські символи, торкаючись екрана.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Щоб змінити жест, увімкніть TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Функцію TalkBack вимкнено. Увімкніть її, щоб змінити жести для клавіатури Брайля.</string>
+  <string name="talkback_suspend_dialog_title">Активувати SandFly для використання брайлівської клавіатури</string>
+  <string name="talkback_off_or_suspend_dialog_message">Коли ввімкнено SandFly, можна вводити брайлівські символи, торкаючись екрана.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Щоб змінити жест, увімкніть SandFly</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Функцію SandFly вимкнено. Увімкніть її, щоб змінити жести для клавіатури Брайля.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Відкрити налаштування</string>
   <string name="reset_gestures_dialog_title">Скинути всі жести?</string>
   <string name="reset_gestures_dialog_message">Для всіх жестів для клавіатури Брайля буде відновлено значення за умовчанням</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Відновити значення за умовчанням</string>
   <string name="custom_gestures_dialog_remove_button">Вилучити жест</string>
   <string name="change_gestures_dialog_message_title">Як змінити жест</string>
-  <string name="change_gestures_dialog_message">На наступному екрані відкриється клавіатура Брайля, і ви не зможете використовувати жести TalkBack.\n\nКоли ця клавіатура відкриється, виконайте потрібний жест або проведіть двома пальцями вниз, щоб її закрити й скасувати зміну жесту.\n\nПереглянути доступні жести\n</string>
+  <string name="change_gestures_dialog_message">На наступному екрані відкриється клавіатура Брайля, і ви не зможете використовувати жести SandFly.\n\nКоли ця клавіатура відкриється, виконайте потрібний жест або проведіть двома пальцями вниз, щоб її закрити й скасувати зміну жесту.\n\nПереглянути доступні жести\n</string>
   <string name="change_gestures_dialog_message_link">Переглянути доступні жести</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Більше не показувати це повідомлення</string>
   <string name="change_gestures_dialog_positive_button">Продовжити</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Не використовувати</string>
   <string name="next_keyboard">Наступна клавіатура</string>
   <string name="braille_tutorial_title">Навчальний посібник до брайлівської клавіатури</string>
-  <string name="tutorial_intro_description">Коли ввімкнено брайлівську розкладку клавіатури, ви можете вводити шестикрапкові брайлівські символи, торкаючись екрана.\n\nЗараз використовується уніфікований англійський шрифт Брайля. Щоб змінити мову введення, перейдіть у налаштування TalkBack.\n\nЩоб вводити брайлівські символи, потрібно тримати й використовувати телефон по-іншому.</string>
+  <string name="tutorial_intro_description">Коли ввімкнено брайлівську розкладку клавіатури, ви можете вводити шестикрапкові брайлівські символи, торкаючись екрана.\n\nЗараз використовується уніфікований англійський шрифт Брайля. Щоб змінити мову введення, перейдіть у налаштування SandFly.\n\nЩоб вводити брайлівські символи, потрібно тримати й використовувати телефон по-іншому.</string>
   <string name="next_step">Далі</string>
   <string name="leave_keyboard">Закрити брайлівську клавіатуру</string>
-  <string name="hold_six_fingers_description">Ви не зможете використовувати звичайні жести TalkBack із брайлівською клавіатурою.\n\nЩоб почати, налаштуємо положення шести брайлівських крапок для введення.</string>
-  <string name="rotate_orientation_description_1">Ви більше не зможете використовувати звичайні жести TalkBack. Функція TalkBack недоступна, коли використовується брайлівська клавіатура.</string>
+  <string name="hold_six_fingers_description">Ви не зможете використовувати звичайні жести SandFly із брайлівською клавіатурою.\n\nЩоб почати, налаштуємо положення шести брайлівських крапок для введення.</string>
+  <string name="rotate_orientation_description_1">Ви більше не зможете використовувати звичайні жести SandFly. Функція SandFly недоступна, коли використовується брайлівська клавіатура.</string>
   <string name="rotate_orientation_description_2">Щоб розпочати, тримайте телефон екраном від себе.</string>
   <string name="tap_to_continue">Двічі торкніться екрана, щоб продовжити</string>
   <string name="instruction_type_letter_a">Натисніть крапку 1 лівим вказівним пальцем, щоб ввести букву \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">КУРСОР ПЕРЕМІЩЕНО ВПЕРЕД</string>
   <string name="result_swipe_down_2_fingers">СХОВАТИ КЛАВІАТУРУ</string>
   <string name="result_swipe_down_3_fingers">НАСТУПНА КЛАВІАТУРА</string>
-  <string name="rotate_orientation_announcement">Ви більше не зможете використовувати звичайні жести TalkBack. Функція TalkBack недоступна, коли використовується брайлівська клавіатура.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Ви більше не зможете використовувати звичайні жести SandFly. Функція SandFly недоступна, коли використовується брайлівська клавіатура.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Щоб розпочати, візьміть телефон екраном від себе.\n\nТепер поверніть його в горизонтальне положення та візьміть за коротші сторони корпусу. Сторона з USB-портом має бути в правій руці. Покладіть вказівний, середній і безіменний пальці кожної руки на екран. Підтримуйте телефон мізинцями й великими пальцями.\n\nКоли будете готові, двічі торкніться екрана, щоб продовжити.\n\nЩоб закрити брайлівську клавіатуру, проведіть трьома пальцями вниз. Ви перейдете до звичайної клавіатури.</string>
   <string name="rotate_orientation_continue_announcement">Ваш телефон у вертикальному положенні. Поверніть його в горизонтальне положення, довшим ребром донизу. Потім поверніть телефон екраном від себе. Коли будете готові, двічі торкніться екрана, щоб продовжити.</string>
   <string name="type_letter_a_announcement">Поверніть екран від себе. Тримайте телефон обома руками за торці, щоб вказівний, середній і безіменний пальці кожної руки могли торкатися екрана.\n\nЛівий вказівний палець має лежати на крапці 1. Тепер натисніть крапку 1, щоб ввести букву \"A\"</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Щоб перейти до іншої клавіатури, проведіть трьома пальцями вниз. Спробуйте зараз.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Наступна клавіатура. Зазвичай ця команда вмикає наступну клавіатуру, але зараз брайлівська клавіатура залишиться відкритою, оскільки ви ще не завершили навчання.</string>
   <string name="swipe_up_3_fingers_announcement">Ви також можете вводити текст у настільному режимі, поклавши телефон на стіл. Щоб завершити навчання, проведіть трьома пальцями вгору та знайдіть відповідний варіант</string>
-  <string name="open_context_menu_announcement">Відкрито меню параметрів. Переверніть телефон екраном до себе й тримайте його як зазвичай. Тепер ви можете використовувати звичайні жести TalkBack для навігації. Проведіть пальцем праворуч, щоб переглянути інші варіанти.</string>
+  <string name="open_context_menu_announcement">Відкрито меню параметрів. Переверніть телефон екраном до себе й тримайте його як зазвичай. Тепер ви можете використовувати звичайні жести SandFly для навігації. Проведіть пальцем праворуч, щоб переглянути інші варіанти.</string>
   <string name="hold_six_fingers_announcement">%s\nПокладіть пристрій на стіл. Натисніть і втримуйте екран безіменним, середнім та вказівним пальцями кожної руки в тому положенні, у якому вам зручно вводити текст.</string>
   <string name="hold_six_fingers_inactive_announcement">Покладіть пристрій на стіл. Натисніть і втримуйте екран безіменним, середнім та вказівним пальцями кожної руки в тому положенні, у якому вам зручно вводити текст.</string>
   <string name="finish_tutorial_announcement">Показ брайлівської клавіатури. Тримайте телефон екраном від себе. Потім поверніть його горизонтально. Почніть вводити текст.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Цей жест використовується для дії \"%1$s\", і його не можна змінити. Спробуйте інший жест. %2$s</string>
   <string name="custom_gesture_cannot_used">Цей жест не можна використовувати</string>
   <string name="custom_gesture_no_gesture">Жест не виконано</string>
-  <string name="custom_gesture_try_another">Спробуйте інший жест. Щоб переглянути список усіх доступних жестів, перейдіть у Довідковий центр клавіатури Брайля в TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Спробуйте інший жест. Щоб переглянути список усіх доступних жестів, перейдіть у Довідковий центр клавіатури Брайля в SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Жести не збігаються</string>
   <string name="custom_gesture_perform_again">Знову виконайте жест, який хочете використовувати. %s</string>
+    <string name="tabletop_port_left_announcement">Настільний режим, зарядний порт зліва</string>
+    <string name="tabletop_port_right_announcement">Настільний режим, зарядний порт праворуч</string>
+    <string name="screen_away_port_right_announcement">Режим відсторонення від екрану, зарядний порт праворуч</string>
+    <string name="screen_away_port_left_announcement">Режим відсторонення від екрану, зарядний порт ліворуч</string>
+    <string name="screen_toward_announcement">Екран до вас</string>
+    <string name="screen_toward_port_left_announcement">Екран до вас, зарядний порт ліворуч</string>
+    <string name="screen_toward_port_right_announcement">Екран на вас, зарядний порт праворуч</string>
+    <string name="screen_toward_port_down_announcement">Екран на себе, зарядний порт спрямований униз</string>
+    <string name="screen_toward_port_up_announcement">Екран на себе, зарядний порт спрямований угору</string>
+    <string name="port_right_announcement">Порт зарядки праворуч</string>
+    <string name="port_left_announcement">Порт зарядки зліва</string>
+    <string name="tabletop_port_near_announcement">Настільний режим, зарядний порт до вас</string>
+    <string name="tabletop_port_far_announcement">Настільний режим, зарядний порт подалі від вас</string>
+    <string name="screen_away_port_down_announcement">Режим відсторонення від екрану, зарядний порт спрямований вниз</string>
+    <string name="screen_away_port_up_announcement">Режим відсторонення від екрану, зарядний порт направлено вгору</string>
+    <string name="port_near_announcement">Зарядний порт до вас</string>
+    <string name="port_far_announcement">Зарядний порт подалі від вас</string>
+    <string name="port_down_announcement">Порт зарядки спрямований вниз</string>
+    <string name="port_up_announcement">Порт для заряджання спрямований угору</string>
+    <string name="orientation_locked_announcement">Орієнтація заблокована</string>
+    <string name="orientation_locked_port_announcement">Орієнтація заблокована. %1$s</string>
+    <string name="orientation_unlocked_announcement">Орієнтація розблокована</string>
+    <string name="switch_to_language_contracted_announcement">Ви вибрали таку мову: %s, Скорочена брайлівська розкладка</string>
+    <string name="switch_to_language_uncontracted_announcement">Ви вибрали таку мову: %s, Розширена брайлівська розкладка</string>
+    <string name="title_pref_flip_dots_vertically">Поміняйте місцями верхню та нижню крапки</string>
+    <string name="summary_pref_flip_dots_vertically">Крапка 1 міняється місцями з крапкою 3, а крапка 4 з крапкою 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Планшет підняли лицьовою стороною</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Коли планшет або телефон у розкладеному стані вимкнено, він розміщується на столі обличчям до вас</string>
+    <string name="title_pref_typing_sounds">Звуки друку</string>
+    <string name="summary_pref_typing_sounds">Відтворюйте клацання клавіатури, коли ви вводите символ, пробіл, новий рядок або видаляєте</string>
+    <string name="skip_tutorial">Пропустити підручник</string>
 </resources>

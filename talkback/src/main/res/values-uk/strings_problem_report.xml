@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Надіслати відгук</string>
+    <string name="title_pref_problem_report_type">Тип зворотного зв\'язку</string>
+    <string name="title_pref_problem_report_area">Площа</string>
+    <string name="title_pref_problem_report_title">Назва</string>
+    <string name="title_pref_problem_report_app">Додаток, де це відбувається</string>
+    <string name="title_pref_problem_report_description">Опис</string>
+    <string name="dialog_message_problem_report_description">Що відбувається і що ви очікували.</string>
+    <string name="title_pref_problem_report_steps">Дії для відтворення проблеми програмного забезпечення</string>
+    <string name="title_pref_problem_report_email">Надсилайте відповіді електронною поштою</string>
+    <string name="title_pref_problem_report_device">Додайте інформацію про пристрій</string>
+    <string name="title_pref_problem_report_log">Включити журнал SandFly</string>
+    <string name="summary_pref_problem_report_log">Може містити текст з екрана</string>
+    <string name="title_pref_problem_report_send">Надіслати</string>
+    <string name="summary_pref_problem_report_sending">Відправка</string>
+    <string name="problem_report_missing_fields">Введіть назву та опис.</string>
+    <string name="problem_report_invalid_email">Введіть дійсну адресу електронної пошти.</string>
+    <string name="problem_report_sent">Відгук надіслано.</string>
+    <string name="problem_report_rate_limited">Надіслано забагато відгуків. Повторіть спробу пізніше.</string>
+    <string name="problem_report_no_connection">Відгук не надіслано. Перевірте підключення до Інтернету.</string>
+    <string name="problem_report_not_sent">Відгук не надіслано. Повторіть спробу пізніше.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Некоректна поведінка</item>
+        <item>Збій</item>
+        <item>Повільно або не реагує</item>
+        <item>Пропозиція</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Виступ</item>
+        <item>Жести</item>
+        <item>Розвідка дотиком</item>
+        <item>Елементи керування читанням і меню</item>
+        <item>Друкування та клавіатури</item>
+        <item>Брайлівська клавіатура</item>
+        <item>Брайлівський дисплей</item>
+        <item>Звуки та вібрація</item>
+        <item>Сповіщення</item>
+        <item>Веб-вміст</item>
+        <item>Сценарії</item>
+        <item>Налаштування</item>
+        <item>Оновлення</item>
+        <item>Інше</item>
+    </string-array>
+    <string name="title_report_new">Надіслати відгук</string>
+    <string name="title_report_inbox">Вхідні</string>
+    <string name="title_report_drafts">Чернетки</string>
+    <string name="report_inbox_empty">Відгук не надіслано</string>
+    <string name="report_drafts_empty">Без протягів</string>
+    <string name="report_just_now">тільки зараз</string>
+    <string name="report_untitled">Без назви</string>
+    <string name="report_draft_summary">Змінено <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">надіслано <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> нова відповідь</item>
+        <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> нові відповіді</item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> нових відповідей</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> нових відповіді</item>
+    </plurals>
+    <string name="report_status_changed">статус змінено</string>
+    <string name="report_status_open">Відкрите питання</string>
+    <string name="report_status_completed">Закрито, завершено</string>
+    <string name="report_status_not_planned">Закрито, не планується</string>
+    <string name="report_status_duplicate">Закрито, дублікат</string>
+    <string name="report_status_unknown">Видалено</string>
+    <string name="title_report_status">Статус</string>
+    <string name="title_report_your_report">Ваш відгук</string>
+    <string name="title_report_messages">Повідомлення</string>
+    <string name="report_message_from_developer">Розробник, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ти, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Відповісти</string>
+    <string name="title_report_reply_text">Ваша відповідь</string>
+    <string name="title_report_send_reply">Надіслати відповідь</string>
+    <string name="report_reply_sent">Відповідь надіслано.</string>
+    <string name="report_reply_not_sent">Відповідь не надіслано. Повторіть спробу пізніше.</string>
+    <string name="title_report_remove">Видалити з папки \"Вхідні\".</string>
+    <string name="dialog_title_report_remove">Видалити цей відгук із папки \"Вхідні\"?</string>
+    <string name="dialog_message_report_remove">Відповіді на нього більше не надходитимуть на цей телефон.</string>
+    <string name="title_report_delete_draft">Видалити чернетку</string>
+    <string name="dialog_title_report_delete_draft">Видалити цю чернетку?</string>
+    <string name="button_report_delete">Видалити</string>
+    <string name="report_missing">Цього відгуку більше немає у вхідних.</string>
+    <string name="notification_channel_problem_reports">Відповіді на відгуки</string>
+    <string name="report_notification_reply">Відповісти <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
