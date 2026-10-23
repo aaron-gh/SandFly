@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack இயக்கத்தில்</string>
-  <string name="talkback_disabled">TalkBack ஆஃப் செய்யப்பட்டுள்ளது</string>
+  <string name="talkback_on">SandFly இயக்கத்தில்</string>
+  <string name="talkback_disabled">SandFly ஆஃப் செய்யப்பட்டுள்ளது</string>
   <string name="notification_type_beginning_of_field">புலத்தின் தொடக்கம்</string>
   <string name="notification_type_end_of_field">புலத்தின் முடிவு</string>
   <string name="notification_type_selection_mode_on">தேர்ந்தெடுத்தல் பயன்முறை இயக்கப்பட்டுள்ளது</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">இழுத்தல் தொடங்கியது</string>
   <string name="drag_dropped">இழுக்கப்பட்ட உறுப்பு விடுவிக்கப்பட்டது</string>
   <string name="drag_cancelled">இழுத்தல் ரத்துசெய்யப்பட்டது</string>
+    <string name="template_brightness_changed">பிரகாசம் <xliff:g id="percent">%1$d</xliff:g> சதவீதம்.</string>
+    <string name="brightness_needs_permission">பிரகாசத்தை மாற்ற கணினி அமைப்புகளை மாற்ற அனுமதிக்கவும்.</string>
+    <string name="brightness_adaptive_on">பிரகாசத்தை மாற்ற அடாப்டிவ் பிரகாசத்தை அணைக்கவும்.</string>
+    <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g> க்கு பதில்: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

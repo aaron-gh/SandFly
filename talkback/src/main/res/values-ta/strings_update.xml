@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">புதுப்பிப்புகளைச் சரிபார்க்கவும்</string>
+    <string name="summary_pref_check_for_updates_version">பதிப்பு <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, உருவாக்கம் <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">புதுப்பிப்புகளைத் தானாகச் சரிபார்க்கவும்</string>
+    <string name="summary_pref_auto_update_check">ஒரு நாளுக்கு ஒருமுறை சரிபார்த்து, புதிய உருவாக்கம் கிடைக்கும்போது அறிவிப்பைக் காட்டவும்</string>
+    <string name="title_pref_dev_builds">வளர்ச்சி உருவாகிறது</string>
+    <string name="update_notification_title">SandFly புதுப்பிப்பு உள்ளது</string>
+    <string name="update_notification_text">உருவாக்கு <xliff:g id="build" example="97">%1$d</xliff:g>. நிறுவ தட்டவும்.</string>
+    <string name="update_dialog_title">SandFly பில்ட் <xliff:g id="build" example="97">%1$d</xliff:g> கிடைக்கிறது</string>
+    <string name="update_dialog_install">நிறுவவும்</string>
+    <string name="update_checking">புதுப்பிப்புகளைச் சரிபார்க்கிறது</string>
+    <string name="update_up_to_date">SandFly புதுப்பித்த நிலையில் உள்ளது</string>
+    <string name="update_check_failed">புதுப்பிப்புகளைச் சரிபார்க்க முடியவில்லை</string>
+    <string name="update_downloading">புதுப்பிப்பைப் பதிவிறக்குகிறது</string>
+    <string name="update_already_downloading">புதுப்பிப்பு ஏற்கனவே பதிவிறக்கம் செய்யப்படுகிறது</string>
+    <string name="update_ready_title">SandFly புதுப்பிப்பு பதிவிறக்கப்பட்டது</string>
+    <string name="update_ready_text">நிறுவ தட்டவும்.</string>
+    <string name="update_install_failed">புதுப்பிப்பை நிறுவ முடியவில்லை</string>
+    <string name="update_install_canceled">புதுப்பிப்பு ரத்து செய்யப்பட்டது</string>
+    <string name="update_allow_install">ஆப்ஸை நிறுவ SandFlyஐ அனுமதித்து, புதுப்பிப்பை மீண்டும் முயற்சிக்கவும்</string>
+</resources>

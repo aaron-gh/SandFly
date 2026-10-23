@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">ஸ்கிரிப்டுகள்</string>
+    <string name="summary_pref_scripts">பயன்பாடுகளில் SandFly எவ்வாறு செயல்படுகிறது என்பதை மாற்றவும்</string>
+    <string name="script_import">ஸ்கிரிப்டை இறக்குமதி செய்யவும்</string>
+    <string name="script_install_label">SandFly ஸ்கிரிப்டை நிறுவவும்</string>
+    <string name="script_import_nothing">நிறுவுவதற்கு ஸ்கிரிப்ட் கோப்பு எதுவும் இல்லை.</string>
+    <string name="script_import_cannot_open">கோப்பை திறக்க முடியவில்லை.</string>
+    <string name="script_import_repository">இந்த இணைப்பு முழு களஞ்சியத்திற்கும் உள்ளது. நீங்கள் விரும்பும் ஸ்கிரிப்டைத் திறந்து, அதன் இணைப்பைப் பகிரவும்.</string>
+    <string name="script_import_summary">.lua கோப்பு, அல்லது main.lua உடன் .zip</string>
+    <string name="scripts_category_app">பயன்பாட்டு ஸ்கிரிப்டுகள்</string>
+    <string name="scripts_category_global">உலகளாவிய செருகுநிரல்கள்</string>
+    <string name="scripts_none">ஸ்கிரிப்டுகள் எதுவும் நிறுவப்படவில்லை</string>
+    <string name="scripts_all_off">அனைத்து ஸ்கிரிப்ட்களையும் அணைக்கவும்</string>
+    <string name="scripts_all_off_summary">ஸ்கிரிப்டுகள் நிறுவப்பட்டிருக்கும் மற்றும் அவற்றின் சொந்த சுவிட்சுகளை வைத்திருக்கும். அனைத்து ஸ்கிரிப்ட்களையும் ஆன் அல்லது ஆஃப் செய்யும் சைகை அதையே செய்கிறது.</string>
+    <string name="shortcut_toggle_scripts">அனைத்து ஸ்கிரிப்ட்களையும் ஆன் அல்லது ஆஃப் செய்யவும்</string>
+    <string name="scripts_now_off">ஸ்கிரிப்ட்கள் முடக்கப்பட்டுள்ளன</string>
+    <string name="scripts_now_on">ஸ்கிரிப்ட்கள் இயக்கப்படுகின்றன</string>
+    <string name="scripts_unavailable">இந்தச் சாதனத்தில் ஸ்கிரிப்ட்கள் இல்லை</string>
+    <string name="script_add_example">எடுத்துக்காட்டு ஸ்கிரிப்டைச் சேர்க்கவும்</string>
+    <string name="script_add_example_summary">நீங்கள் மாற்றும் ஒவ்வொரு ஆப்ஸின் பெயரையும் கூறுகிறது. தொடங்குவதற்கு ஒரு ஸ்கிரிப்ட்.</string>
+    <string name="script_state_on">இயக்கப்பட்டுள்ளது</string>
+    <string name="script_state_off">முடக்கப்பட்டுள்ளது</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> இல் இயங்கும்</string>
+    <string name="script_runs_everywhere">எல்லா பயன்பாடுகளிலும் இயங்குகிறது</string>
+    <string name="script_version">பதிப்பு <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">மூலம் <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ஐ நிறுவவா?</string>
+    <string name="script_install_can">இது முடியும்:</string>
+    <string name="script_install_no_permissions">அனுமதிகள் தேவையில்லை.</string>
+    <string name="script_install_button">நிறுவவும்</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> ஐ <xliff:g id="version">%2$s</xliff:g> க்கு புதுப்பிக்கவா?</string>
+    <string name="script_update_new_permissions">புதிய அனுமதிகள்:</string>
+    <string name="script_update_button">புதுப்பிக்கவும்</string>
+    <string name="script_update_replaces">இது பதிப்பு <xliff:g id="version">%1$s</xliff:g> ஐ <xliff:g id="author">%2$s</xliff:g> ஆல் மாற்றுகிறது, மேலும் அதன் தரவு மற்றும் அமைப்புகளை வைத்திருக்கும்.</string>
+    <string name="script_update_other_author">புதியது வேறு ஆசிரியரான <xliff:g id="author">%1$s</xliff:g> என்பவரால் எழுதப்பட்டது. நீங்கள் நம்பினால் மட்டுமே புதுப்பிக்கவும்.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> நிறுவப்பட்டது</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> க்கு புதுப்பிக்கப்பட்டது</string>
+    <string name="script_import_failed">இறக்குமதி தோல்வியடைந்தது. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. நம்பகமான ஸ்கிரிப்ட்களை மட்டும் அனுமதிக்கவும்.</string>
+    <string name="script_permission_screen">திரையைப் படியுங்கள்</string>
+    <string name="script_permission_actions">கிளிக் செய்யவும், ஸ்க்ரோல் செய்யவும், தட்டச்சு செய்யவும் மற்றும் கவனத்தை நகர்த்தவும்</string>
+    <string name="script_permission_speech">SandFly இன் பேச்சைக் கேட்டு மாற்றவும்</string>
+    <string name="script_permission_passwords">கடவுச்சொல் புலங்களைப் படிக்கவும்</string>
+    <string name="script_permission_input">சைகைகள், விசைகள், மெனு உருப்படிகள் மற்றும் வாசிப்பு கட்டுப்பாடுகளைச் சேர்க்கவும்</string>
+    <string name="script_permission_network">இணையத்தைப் பயன்படுத்தவும்</string>
+    <string name="script_permission_clipboard">கிளிப்போர்டைப் படித்து மாற்றவும்</string>
+    <string name="script_permission_system">திரும்பியோ அல்லது வீட்டிற்குயோ சென்று, அறிவிப்புகளையும் ஆப்ஸையும் திறக்கவும்</string>
+    <string name="script_permission_notifications">பேசும் அறிவிப்புகளைப் படித்து மாற்றவும்</string>
+    <string name="script_permission_events">தட்டச்சு செய்தல் உட்பட, ஒவ்வொரு பயன்பாட்டிலும் உள்ள அனைத்து செயல்பாடுகளையும் பார்க்கவும்</string>
+    <string name="script_permission_dialogs">எந்த பயன்பாட்டிலும் உரையாடல்களைக் காட்டு</string>
+    <string name="script_permission_java">ஒவ்வொரு பயன்பாட்டிலும் SandFly இன் அனைத்து அணுகலுடனும் ஜாவா குறியீட்டை இயக்கவும்</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">ஆன் செய்</string>
+    <string name="script_permissions_title">அனுமதிகள்</string>
+    <string name="script_permissions_none">எதுவுமில்லை</string>
+    <string name="script_settings_category">அமைப்புகள்</string>
+    <string name="script_list_filter">வடிகட்டி</string>
+    <string name="script_button_off">முதலில் ஸ்கிரிப்டை இயக்கவும்</string>
+    <string name="script_permissions_summary">ஒன்றை அணைப்பது தேவையான பகுதிகளை நிறுத்துகிறது.</string>
+    <string name="script_install_permissions_note">இவற்றை நீங்கள் பின்னர் முடக்கலாம்.</string>
+    <string name="script_manage_category">நிர்வகிக்கவும்</string>
+    <string name="script_move_up">முன்னதாக இயக்கவும்</string>
+    <string name="script_move_down">பிறகு ஓடு</string>
+    <string name="script_order_summary">அதே பேச்சை மாற்றும் ஸ்கிரிப்ட்களுக்கான ஆர்டர். ஆப்ஸ் ஸ்கிரிப்டுகள் முதலில் இயங்கும்.</string>
+    <string name="script_log">பதிவு</string>
+    <string name="script_log_summary">SandFly தொடங்கியதிலிருந்து வெளியீடு மற்றும் பிழைகள்</string>
+    <string name="script_clear_storage">சேமிக்கப்பட்ட தரவை அழிக்கவும்</string>
+    <string name="script_storage_cleared">சேமிக்கப்பட்ட தரவு அழிக்கப்பட்டது</string>
+    <string name="script_remove">அகற்று</string>
+    <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g>ஐ அகற்றவா?</string>
+    <string name="script_remove_message">அதன் குறியீடு, தரவு மற்றும் அமைப்புகளை நீக்குகிறது.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> அகற்றப்பட்டது</string>
+    <string name="script_log_empty">பதிவு காலியாக உள்ளது</string>
+    <string name="script_log_clear">பதிவை அழி</string>
+    <string name="script_log_copy">பதிவை நகலெடுக்கவும்</string>
+    <string name="script_log_copied">பதிவு நகலெடுக்கப்பட்டது</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">ஸ்கிரிப்ட் API <xliff:g id="needed">%1$d</xliff:g> அல்லது அதற்குப் பிறகு தேவை. இந்த SandFly இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே பாகங்கள் வேலை செய்யாமல் போகலாம்.</string>
+    <string name="script_api_untested">ஸ்கிரிப்ட் API <xliff:g id="tested">%1$d</xliff:g> வரை சோதிக்கப்பட்டது. இந்த SandFly இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே இது எதிர்பார்த்தபடி வேலை செய்யாமல் போகலாம்.</string>
+    <string name="script_state_incompatible">இதனுடன் வேலை செய்யாமல் போகலாம் SandFly</string>
+    <string name="script_api_range">ஸ்கிரிப்ட் API <xliff:g id="min">%1$d</xliff:g> முதல் <xliff:g id="tested">%2$d</xliff:g> வரை</string>
+    <string name="script_compatibility_title">இணக்கத்தன்மை</string>
+    <string name="script_install_anyway">எப்படியும் நிறுவவும்</string>
+    <string name="script_update_anyway">எப்படியும் புதுப்பிக்கவும்</string>
+    <string name="script_homepage">முகப்புப் பக்கத்தைத் திறக்கவும்</string>
+    <string name="script_homepage_confirm_title">இந்த முகவரியைத் திறக்கவா?</string>
+    <string name="script_homepage_open">திற</string>
+    <string name="script_homepage_failed">எந்த ஆப்ஸும் திறக்க முடியாது <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off">மீண்டும் மீண்டும் பிழைகளுக்குப் பிறகு <xliff:g id="name">%1$s</xliff:g> முடக்கப்பட்டது. அதன் லாக் இன் ஸ்கிரிப்ட்களைப் பார்க்கவும்.</string>
+    <string name="shortcut_inspect_item">கவனம் செலுத்திய பொருளைச் சரிபார்க்கவும்</string>
+    <string name="script_inspect_no_item">எந்த பொருளுக்கும் கவனம் இல்லை</string>
+    <string name="script_inspect_copied">நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">ஐடி இல்லை, எனவே விதிகளால் பெயரிட முடியாது. நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">நகல் திரை மரம்</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> உருப்படிகள் நகலெடுக்கப்பட்டன</string>
+    <string name="script_tree_none">நகலெடுக்க சாளரம் இல்லை</string>
+    <string name="script_tree_clip_label">திரை மரம்</string>
+    <string name="summary_copy_screen_tree_menu">ஸ்கிரிப்ட்களை எழுத, திரையில் உள்ள அனைத்து பொருட்களையும் JSON ஆக நகலெடுக்கவும்</string>
+    <string name="script_inspect_clip_label">பொருள் விவரங்கள்</string>
+    <string name="summary_inspect_item_menu">ஸ்கிரிப்ட்களை எழுத, நீங்கள் வைத்திருந்த உருப்படியின் விவரங்களைச் சொல்லி நகலெடுக்கவும்</string>
+    <string name="script_keys_backtalk_modifier">SandFly மாற்றி</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, பிறகு <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">கட்டளைகள்</string>
+    <string name="script_commands_summary">இயங்கும் ஸ்கிரிப்ட்டின் சைகைகள் மற்றும் விசைகள் SandFlyக்கு முன் வரும். SandFly ஐ வைத்திருக்க, ஒன்றை அணைக்கவும்.</string>
+    <string name="script_binding_gesture">சைகை: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">விசைகள்: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly மெனு</string>
+    <string name="script_binding_control">வாசிப்புக் கட்டுப்பாடுகள்</string>
+    <string name="script_binding_none">எதுவுமில்லை</string>
+    <string name="script_binding_turn_on">ஆன் செய்</string>
+    <string name="script_binding_turn_off">ஆஃப் செய்</string>
+    <string name="script_binding_restore">இயல்புநிலைகளை மீட்டமை</string>
+    <string name="script_binding_restored">இயல்புநிலை மீட்டமைக்கப்பட்டது</string>
+    <string name="script_binding_perform">சைகை அல்லது விசைகளைச் செய்யவும்</string>
+    <string name="script_binding_perform_summary">அடுத்த சைகையை ஒதுக்கவும் அல்லது SandFly மாற்றியை அழுத்தும் விசைகள்</string>
+    <string name="script_binding_perform_message">சைகை செய்யவும் அல்லது விசைகளை அழுத்தவும்.</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> க்கு <xliff:g id="command">%2$s</xliff:g>ஐ ஒதுக்கவா?</string>
+    <string name="script_binding_assign">ஒதுக்கு</string>
+    <string name="script_binding_choose_gesture">சைகையைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="script_binding_type_keys">தட்டச்சு விசைகள்</string>
+    <string name="script_binding_type_keys_summary">Sf+shift+n, அல்லது sf+t, s போன்றவை</string>
+    <string name="script_binding_bad_keys">இந்த விசைகளைப் பயன்படுத்த முடியாது. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">இது சேர்க்கிறது:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">ஸ்கிரிப்ட் ஆதாரங்கள்</string>
+    <string name="script_sources_none">ஆதாரங்கள் எதுவும் சேர்க்கப்படவில்லை</string>
+    <string name="script_source_add">மூலத்தைச் சேர்க்கவும்</string>
+    <string name="script_source_add_button">சேர்</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea அல்லது Bitbucket இல் உள்ள களஞ்சியத்தின் முகவரி அல்ல.</string>
+    <string name="script_source_exists">இந்த ஆதாரம் ஏற்கனவே சேர்க்கப்பட்டுள்ளது.</string>
+    <string name="script_source_loading">ஏற்றுகிறது</string>
+    <string name="script_source_empty">இந்த மூலத்தில் ஸ்கிரிப்டுகள் இல்லை</string>
+    <string name="script_source_failed">ஸ்கிரிப்ட்களை ஏற்ற முடியவில்லை. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">மீண்டும் முயற்சிக்கவும்</string>
+    <string name="script_source_downloading">பதிவிறக்குகிறது <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">மூலத்தை அகற்று</string>
+    <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>ஐ அகற்றவா?</string>
+    <string name="script_source_remove_message">அதிலிருந்து நிறுவப்பட்ட ஸ்கிரிப்டுகள் நிறுவப்பட்டிருக்கும்.</string>
+    <string name="scripts_auto_update">ஸ்கிரிப்ட்களை தானாக புதுப்பிக்கவும்</string>
+    <string name="scripts_check_updates">புதுப்பிப்புகளைச் சரிபார்க்கவும்</string>
+    <string name="scripts_checking_updates">புதுப்பிப்புகளைச் சரிபார்க்கிறது…</string>
+    <string name="scripts_updates_category">புதுப்பிப்புகள்</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ஸ்கிரிப்ட் புதுப்பிக்கப்பட்டது: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ஸ்கிரிப்டுகள் புதுப்பிக்கப்பட்டன: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">புதுப்பிப்புகளின் கீழ் புதுப்பிப்புகள் பட்டியலிடப்பட்டுள்ளன</string>
+    <string name="scripts_update_check_failed">சில ஆதாரங்களைச் சரிபார்க்க முடியவில்லை</string>
+    <string name="scripts_up_to_date">அனைத்து ஸ்கிரிப்ட்களும் புதுப்பித்த நிலையில் உள்ளன</string>
+</resources>

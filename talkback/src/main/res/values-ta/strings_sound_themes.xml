@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">ஒலி தீம்கள்</string>
+    <string name="summary_pref_sound_themes">ஒலிகள் மற்றும் அதிர்வுகளின் தொகுப்புகளை நிறுவி தேர்வு செய்யவும், ஒற்றை ஒலிகளை உங்கள் சொந்த ஒலியுடன் மாற்றவும், மேலும் கட்டுப்பாட்டு ஒலிகள் மற்றும் அதிர்வுகள் மற்றும் 3D ஆடியோவை இயக்கவும்.</string>
+    <string name="sound_themes_installed_category">நிறுவப்பட்ட தீம்கள்</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly இன் சொந்த ஒலிகள் மற்றும் அதிர்வுகள் மற்றும் உங்கள் சொந்த ஒலிகள்.</string>
+    <string name="sound_theme_in_use">பயன்பாட்டில் உள்ளது</string>
+    <string name="sound_theme_by">மூலம் <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">உரிமம்: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ஒலி.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ஒலிகள்.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> அதிர்வு.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> அதிர்வுகள்.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">கட்டுப்பாட்டு ஒலிகள் மற்றும் அதிர்வுகளை இயக்குகிறது.</string>
+    <string name="sound_theme_control_sounds_off">கட்டுப்பாட்டு ஒலிகள் மற்றும் அதிர்வுகளை முடக்குகிறது.</string>
+    <string name="sound_theme_use">இந்த தீம் பயன்படுத்தவும்</string>
+    <string name="sound_theme_about">இந்த தீம் பற்றி</string>
+    <string name="sound_theme_export">தீம் கோப்பாக சேமிக்கவும்</string>
+    <string name="sound_theme_remove">அகற்று</string>
+    <string name="sound_theme_remove_confirm">தீம் <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>ஐ அகற்றவா?</string>
+    <string name="sound_theme_remove_button">அகற்று</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ஒலியுடன் தீம் சேமிக்கப்பட்டது.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ஒலிகளுடன் தீம் சேமிக்கப்பட்டது.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly ஆல் தீம் கோப்பைச் சேமிக்க முடியவில்லை.</string>
+    <string name="sound_theme_no_picker">கோப்புகளைத் தேர்வுசெய்ய இந்தச் சாதனத்தில் எந்தப் பயன்பாடும் இல்லை.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> இன் அமைப்புகள்</string>
+    <string name="title_pref_theme_sounds">ஒலிகள்</string>
+    <string name="summary_pref_theme_sounds">இந்த தீமின் எந்த ஒலியையும் உங்கள் சொந்த ஒலிக் கோப்புடன் மாற்றவும்.</string>
+    <string name="sound_themes_install_category">ஒரு தீம் நிறுவவும்</string>
+    <string name="title_pref_sound_theme_install_file">ஒரு கோப்பிலிருந்து</string>
+    <string name="summary_pref_sound_theme_install_file">தீம் கோப்பு ஒரு ZIP கோப்பு. நீங்கள் ஒன்றைத் திறக்கலாம் அல்லது மற்றொரு பயன்பாட்டிலிருந்து SandFly உடன் பகிரலாம்.</string>
+    <string name="title_pref_sound_theme_install_link">ஒரு இணைப்பிலிருந்து</string>
+    <string name="summary_pref_sound_theme_install_link">தீம் கோப்பிற்கான இணைப்பு அல்லது தீம் உள்ள GitHub களஞ்சியத்திற்கான இணைப்பு. உங்கள் உலாவியில் இருந்து SandFly உடன் இணைப்பையும் பகிரலாம்.</string>
+    <string name="title_pref_sound_theme_install_source">ஒரு மூலத்திலிருந்து</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea அல்லது Bitbucket இல் உள்ள களஞ்சியத்தில் உள்ள தீம் கோப்புகள்.</string>
+    <string name="sound_theme_sources">ஒலி தீம் ஆதாரங்கள்</string>
+    <string name="sound_theme_source_empty">இந்த மூலத்தில் ஒலி தீம்கள் இல்லை</string>
+    <string name="sound_theme_source_failed">ஒலி தீம்களை ஏற்ற முடியவில்லை. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">அதிலிருந்து நிறுவப்பட்ட ஒலி தீம்கள் நிறுவப்பட்டிருக்கும்.</string>
+    <string name="sound_theme_link_message">தீம் கோப்பு அல்லது தீம் உள்ள GitHub களஞ்சியத்தில் இணைப்பை உள்ளிடவும் அல்லது ஒட்டவும்.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">ஒலி தீம் நிறுவவும்</string>
+    <string name="sound_theme_install_reading">ஒலி தீம் படித்தல்</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ஐ நிறுவவா?</string>
+    <string name="sound_theme_install_and_use">நிறுவி பயன்படுத்தவும்</string>
+    <string name="sound_theme_install">நிறுவவும்</string>
+    <string name="sound_theme_install_replaces">இது அதே பெயரில் நிறுவப்பட்ட கருப்பொருளை மாற்றுகிறது.</string>
+    <string name="sound_theme_install_skipped">விடுபட்டது:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> நிறுவப்பட்டது.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> நிறுவப்பட்டது. அது இப்போது பயன்பாட்டில் உள்ளது.</string>
+    <string name="sound_theme_install_nothing">நிறுவ ஒலி தீம் இல்லை.</string>
+    <string name="sound_theme_install_not_a_theme">இது SandFly பயன்படுத்தக்கூடிய ஒலி தீம் அல்ல: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly ஒலி தீம் நிறுவ முடியவில்லை. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ஒலி தீம்களுக்கான இணைப்புகள் https உடன் தொடங்க வேண்டும்.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ஒலிகள்</string>
+    <string name="title_pref_theme_sounds_reset">அனைவருக்கும் SandFly இன் ஒலிகளைப் பயன்படுத்தவும்</string>
+    <string name="theme_sounds_reset_confirm">இந்தத் தீமின் ஒலிகள் அனைத்தையும் நீக்கிவிட்டு SandFly-யின் சொந்த ஒலிகளைப் பயன்படுத்தவா?</string>
+    <string name="theme_sounds_reset_button">அகற்று</string>
+    <string name="theme_sounds_category">ஒலிகள்</string>
+    <string name="theme_sound_summary_default">SandFly இன் ஒலி</string>
+    <string name="theme_sound_summary_custom">தீம் ஒலி</string>
+    <string name="theme_sound_summary_none">ஒலி இல்லை. கவனம் ஒலி விளையாடுகிறது.</string>
+    <string name="theme_sound_summary_android_keyboard">Android இன் விசைப்பலகை ஒலி</string>
+    <string name="theme_sound_use_android_keyboard">Android இன் விசைப்பலகை ஒலியைப் பயன்படுத்தவும்</string>
+    <string name="theme_sound_braille_character">பிரெய்லி விசைப்பலகை: எழுத்தை தட்டச்சு செய்தல்</string>
+    <string name="theme_sound_braille_space">பிரெய்லி விசைப்பலகை: இடம்</string>
+    <string name="theme_sound_braille_delete">பிரெய்லி விசைப்பலகை: நீக்கு</string>
+    <string name="theme_sound_braille_new_line">பிரெய்லி விசைப்பலகை: புதிய வரி</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">ஒலி கோப்பைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="theme_sound_preview">மாதிரிக்காட்சி</string>
+    <string name="theme_sound_none">ஒலி இல்லை</string>
+    <string name="theme_sound_summary_no_sound">ஒலி இல்லை</string>
+    <string name="theme_sound_action_set_none">ஒலி இல்லாமல் அமைக்கவும்</string>
+    <string name="theme_sound_use_default">SandFly இன் ஒலியைப் பயன்படுத்தவும்</string>
+    <string name="theme_sound_remove">ஒலியை அகற்று</string>
+    <string name="theme_sound_too_large">அந்தக் கோப்பு மிகப் பெரியது. ஒரு ஒலி 5 எம்பி வரை இருக்கலாம்.</string>
+    <string name="theme_sound_not_audio">SandFly அந்த கோப்பை இயக்க முடியாது. WAV, OGG, MP3 அல்லது FLAC ஒலியைத் தேர்வு செய்யவும்.</string>
+    <string name="theme_sound_failed">SandFly ஆல் அந்தக் கோப்பைப் படிக்க முடியவில்லை.</string>
+</resources>
