@@ -1388,7 +1388,7 @@
     <string name="summary_pref_speech_control">許可したアプリは、SandFly の声でテキストを話すことができます。デバイスがロックされている間は何も言われません。</string>
     <string name="title_pref_speech_control_sound">他のアプリが話す前にサウンドを再生する</string>
     <string name="speech_control_apps_category">アプリ</string>
-    <string name="speech_control_no_apps">まだ発言を要求したアプリはありません。</string>
+    <string name="speech_control_no_apps">まだ読み上げをリクエストしたアプリはありません。</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
     <string name="speech_control_ask_text">あなたのSandFlyの声でテキストを言うことができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
@@ -1564,7 +1564,7 @@
     <string name="shortcut_title_open_app">アプリを開く</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> を開く</string>
     <string name="shortcut_scroll_to_top">一番上までスクロール</string>
-    <string name="shortcut_write_reading_control">読み取りコントロールの文字を書く</string>
+    <string name="shortcut_write_reading_control">読み上げコントロールの文字を書く</string>
     <string name="title_pref_reading_control_letters">手書きのアルファベット文字</string>
     <string name="reading_control_letter_none">なし</string>
     <string name="handwriting_prompt">文字を書いてください</string>
@@ -1763,7 +1763,7 @@
     <string name="title_pref_browse_mode_per_app">各アプリのブラウズモードを記憶する</string>
     <string name="title_pref_export_settings">設定のエクスポート</string>
     <string name="title_pref_import_settings">設定のインポート</string>
-    <string name="settings_export_done">設定がエクスポートされました。 APIキーは含まれていません</string>
+    <string name="settings_export_done">設定をエクスポートしました。API キーは含まれていません</string>
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
     <string name="settings_import_done">設定をインポートしました</string>
     <string name="settings_import_failed">このファイルはSandFly または Backtalk 設定ファイルではないか、読み取れませんでした</string>

@@ -1381,7 +1381,7 @@
     <string name="title_pref_category_more">Više</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezerviraj pokrete za sat s vibracijom</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly više ne obrađuje jednostruki i dvostruki dodir s dva prsta kako bi ih mogao upotrebljavati Samsungov sat s vibracijom (Vibration Watch). Uključite sat s vibracijom u postavkama pristupačnosti na satu.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za sat s vibracijom u naprednim postavkama</string>
+    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za Vibration Watch u naprednim postavkama</string>
     <string name="title_pref_speakerphone_away_from_ear">Zvučnik kad telefon nije uz uho</string>
     <string name="summary_pref_speakerphone_away_from_ear">Tijekom poziva prebacuje na zvučnik kad odmaknete telefon od uha, a natrag na slušalicu telefona kad ga ponovno prinesete uhu.</string>
     <string name="summary_pref_speakerphone_needs_permission">Potrebno je dopuštenje koje Android ne daje čitačima zaslona. Da biste ga dodijelili, pokrenite ovu naredbu putem adb-a ili Shizukua, a zatim se vratite na ovaj zaslon: %1$s</string>
@@ -1571,7 +1571,7 @@
     <string name="shortcut_title_open_app">Otvori aplikaciju</string>
     <string name="shortcut_open_app">Otvori <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Pomakni na vrh</string>
-    <string name="shortcut_write_reading_control">Napišite slovo kontrole čitanja</string>
+    <string name="shortcut_write_reading_control">Napiši slovo kontrole za čitanje</string>
     <string name="title_pref_reading_control_letters">Rukom pisana slova abecede</string>
     <string name="reading_control_letter_none">Ništa</string>
     <string name="handwriting_prompt">Napiši slovo abecede</string>
@@ -1771,7 +1771,7 @@
     <string name="title_pref_export_settings">Izvoz postavki</string>
     <string name="title_pref_import_settings">Uvoz postavki</string>
     <string name="settings_export_done">Postavke su izvezene. API ključevi nisu uključeni</string>
-    <string name="settings_export_failed">Postavke se ne mogu izvesti</string>
+    <string name="settings_export_failed">Postavke nije bilo moguće izvesti</string>
     <string name="settings_import_done">Postavke su uvezene</string>
     <string name="settings_import_failed">Ova datoteka nije datoteka postavki SandFly ili Backtalk ili se ne može pročitati</string>
 </resources>

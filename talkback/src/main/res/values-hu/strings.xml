@@ -1391,8 +1391,8 @@
     <string name="summary_pref_speech_control">Az engedélyezett alkalmazások szöveget mondhatnak ki az Ön SandFly-hangján. Az eszköz zárolt állapotában nincs beszéd.</string>
     <string name="title_pref_speech_control_sound">Hang lejátszása más alkalmazások beszéde előtt</string>
     <string name="speech_control_apps_category">Alkalmazások</string>
-    <string name="speech_control_no_apps">Egyetlen alkalmazás sem kért még felszólalást.</string>
-    <string name="speech_control_ask_title">Engedélyezi a <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy az SandFly-n keresztül beszéljen?</string>
+    <string name="speech_control_no_apps">Még egyetlen alkalmazás sem kért engedélyt a beszédre.</string>
+    <string name="speech_control_ask_title">Engedélyezi a(z) <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy a SandFlyon keresztül beszéljen?</string>
     <string name="speech_control_ask_text">Szöveget tud mondani az Ön SandFly hangján. Ezt a Speciális beállításokban módosíthatja.</string>
     <string name="speech_control_allow">Engedélyezés</string>
     <string name="speech_control_deny">Tiltás</string>
@@ -1567,7 +1567,7 @@
     <string name="shortcut_title_open_app">Alkalmazás megnyitása</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> megnyitása</string>
     <string name="shortcut_scroll_to_top">Görgetés a tetejére</string>
-    <string name="shortcut_write_reading_control">Írja be az olvasási vezérlő betűjét!</string>
+    <string name="shortcut_write_reading_control">Felolvasásvezérlés betűjének írása</string>
     <string name="title_pref_reading_control_letters">Kézzel írt ábécé betűi</string>
     <string name="reading_control_letter_none">Nincs</string>
     <string name="handwriting_prompt">Írj egy ábécé betűt</string>
@@ -1766,7 +1766,7 @@
     <string name="title_pref_browse_mode_per_app">Emlékezzen a böngészési módra az egyes alkalmazásokban</string>
     <string name="title_pref_export_settings">Beállítások exportálása</string>
     <string name="title_pref_import_settings">Beállítások importálása</string>
-    <string name="settings_export_done">Beállítások exportálva. Az API kulcsokat nem tartalmazza</string>
+    <string name="settings_export_done">Beállítások exportálva. Az API-kulcsok nincsenek benne</string>
     <string name="settings_export_failed">A beállításokat nem sikerült exportálni</string>
     <string name="settings_import_done">Beállítások importálva</string>
     <string name="settings_import_failed">Ez a fájl nem SandFly vagy Backtalk beállításfájl, vagy nem olvasható</string>

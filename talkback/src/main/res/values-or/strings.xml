@@ -1390,8 +1390,8 @@
     <string name="summary_pref_speech_control">ଆପଣ ଅନୁମତି ଦେଇଥିବା ଆପଗୁଡ଼ିକ ଆପଣଙ୍କ SandFly ସ୍ୱରରେ ପାଠ କହିପାରେ | ଡିଭାଇସ୍ ଲକ୍ ହୋଇଥିବାବେଳେ କିଛି କୁହାଯାଏ ନାହିଁ |</string>
     <string name="title_pref_speech_control_sound">ଅନ୍ୟ ଆପ୍ସ କହିବା ପୂର୍ବରୁ ଏକ ଧ୍ୱନି ବଜାନ୍ତୁ</string>
     <string name="speech_control_apps_category">ଆପଗୁଡ଼ିକ</string>
-    <string name="speech_control_no_apps">କୌଣସି ଆପ୍ ଏପର୍ଯ୍ୟନ୍ତ କହିବାକୁ କହିନାହାଁନ୍ତି |</string>
-    <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> କୁ SandFly ମାଧ୍ୟମରେ କହିବାକୁ ଅନୁମତି ଦିଅନ୍ତୁ?</string>
+    <string name="speech_control_no_apps">କୌଣସି ଆପ୍ ଏପର୍ଯ୍ୟନ୍ତ କହିବାକୁ ଅନୁରୋଧ କରିନାହିଁ।</string>
+    <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> କୁ SandFly ମାଧ୍ୟମରେ କହିବାକୁ ଅନୁମତି ଦେବେ?</string>
     <string name="speech_control_ask_text">ଏହା ତୁମର SandFly ସ୍ୱରରେ ପାଠ କହିପାରେ | ଉନ୍ନତ ସେଟିଙ୍ଗରେ ଆପଣ ଏହାକୁ ପରିବର୍ତ୍ତନ କରିପାରିବେ |</string>
     <string name="speech_control_allow">ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="speech_control_deny">ଅନୁମତି ଦିଅନ୍ତୁ ନାହିଁ</string>
@@ -1566,7 +1566,7 @@
     <string name="shortcut_title_open_app">ଆପ୍ ଖୋଲନ୍ତୁ</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ଖୋଲନ୍ତୁ</string>
     <string name="shortcut_scroll_to_top">ଶୀର୍ଷକୁ ସ୍କ୍ରୋଲ୍ କରନ୍ତୁ</string>
-    <string name="shortcut_write_reading_control">ଏକ ପଠନ ନିୟନ୍ତ୍ରଣର ଅକ୍ଷର ଲେଖ</string>
+    <string name="shortcut_write_reading_control">ଏକ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣର ଅକ୍ଷର ଲେଖନ୍ତୁ</string>
     <string name="title_pref_reading_control_letters">ହସ୍ତଲିଖନ ବର୍ଣ୍ଣମାଳା ଅକ୍ଷର</string>
     <string name="reading_control_letter_none">କିଛି ନାହିଁ</string>
     <string name="handwriting_prompt">ଏକ ବର୍ଣ୍ଣମାଳା ଅକ୍ଷର ଲେଖ</string>
@@ -1765,7 +1765,7 @@
     <string name="title_pref_browse_mode_per_app">ପ୍ରତ୍ୟେକ ଆପରେ ବ୍ରାଉଜ୍ ମୋଡ୍ ମନେରଖ</string>
     <string name="title_pref_export_settings">ସେଟିଂସ ଏକ୍ସପୋର୍ଟ କରନ୍ତୁ</string>
     <string name="title_pref_import_settings">ସେଟିଂସମୂହ ଆମଦାନୀ କରନ୍ତୁ</string>
-    <string name="settings_export_done">ରପ୍ତାନି ହୋଇଥିବା ସେଟିଂସମୂହ | API କିଗୁଡ଼ିକ ଅନ୍ତର୍ଭୂକ୍ତ ନୁହେଁ</string>
+    <string name="settings_export_done">ସେଟିଂସ ରପ୍ତାନି ହେଲା। API କି ଅନ୍ତର୍ଭୁକ୍ତ ନୁହେଁ</string>
     <string name="settings_export_failed">ସେଟିଂସମୂହ ରପ୍ତାନି ହୋଇପାରିଲା ନାହିଁ</string>
     <string name="settings_import_done">ସେଟିଂସମୂହ ଆମଦାନୀ ହୋଇଛି</string>
     <string name="settings_import_failed">ଏହି ଫାଇଲ୍ SandFly କିମ୍ବା Backtalk ସେଟିଙ୍ଗ୍ ଫାଇଲ୍ ନୁହେଁ, କିମ୍ବା ପ read ିହେବ ନାହିଁ</string>

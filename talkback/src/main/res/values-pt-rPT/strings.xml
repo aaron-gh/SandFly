@@ -1381,7 +1381,7 @@
     <string name="title_pref_category_more">Mais</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestos para Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Pára SandFly de manipular toques simples e duplos com dois dedos para que Samsung Vibration Watch possa usá-los. Ative Vibration Watch nas configurações de acessibilidade do seu relógio.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Configurações Avançadas</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Definições avançadas</string>
     <string name="title_pref_speakerphone_away_from_ear">Alto-falante quando longe do ouvido</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durante uma chamada, muda para o alto-falante quando você afasta o telefone do ouvido e volta para o fone de ouvido quando você o segura novamente.</string>
     <string name="summary_pref_speakerphone_needs_permission">Precisa de uma permissão que Android não concede aos leitores de tela. Para concedê-lo, execute este comando com adb or Shizuku, then come back to this screen: %1$s</string>
@@ -1391,8 +1391,8 @@
     <string name="summary_pref_speech_control">Os aplicativos que você permite podem dizer texto em sua voz SandFly. Nada é dito enquanto o dispositivo está bloqueado.</string>
     <string name="title_pref_speech_control_sound">Reproduzir um som antes que outros aplicativos falem</string>
     <string name="speech_control_apps_category">Aplicativos</string>
-    <string name="speech_control_no_apps">Nenhum aplicativo pediu para falar ainda.</string>
-    <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através de SandFly?</string>
+    <string name="speech_control_no_apps">Nenhuma aplicação pediu para falar ainda.</string>
+    <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através do SandFly?</string>
     <string name="speech_control_ask_text">Ele pode dizer texto na sua voz SandFly. Você pode alterar isso nas configurações avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">Não permitir</string>
@@ -1567,7 +1567,7 @@
     <string name="shortcut_title_open_app">Abrir aplicação</string>
     <string name="shortcut_open_app">Abrir <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Deslocar para o início</string>
-    <string name="shortcut_write_reading_control">Escreva a letra de um controle de leitura</string>
+    <string name="shortcut_write_reading_control">Escrever a letra de um controlo de leitura</string>
     <string name="title_pref_reading_control_letters">Letras do alfabeto manuscritas</string>
     <string name="reading_control_letter_none">Nenhum</string>
     <string name="handwriting_prompt">Escreva uma letra do alfabeto</string>
@@ -1766,8 +1766,8 @@
     <string name="title_pref_browse_mode_per_app">Lembre-se do modo de navegação em cada aplicativo</string>
     <string name="title_pref_export_settings">Exportar configurações</string>
     <string name="title_pref_import_settings">Importar configurações</string>
-    <string name="settings_export_done">Configurações exportadas. As chaves de API não estão incluídas</string>
-    <string name="settings_export_failed">Não foi possível exportar as configurações</string>
+    <string name="settings_export_done">Definições exportadas. As chaves de API não estão incluídas</string>
+    <string name="settings_export_failed">Não foi possível exportar as definições</string>
     <string name="settings_import_done">Definições importadas</string>
     <string name="settings_import_failed">Este arquivo não é um arquivo de configurações SandFly ou Backtalk ou não pôde ser lido</string>
 </resources>
