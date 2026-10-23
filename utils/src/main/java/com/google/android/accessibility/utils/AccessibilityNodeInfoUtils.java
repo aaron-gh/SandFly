@@ -27,8 +27,11 @@ import static com.google.android.accessibility.utils.DiagnosticOverlayUtils.NONE
 import static com.google.android.accessibility.utils.Role.ROLE_GRID;
 import static com.google.android.accessibility.utils.Role.ROLE_HORIZONTAL_SCROLL_VIEW;
 import static com.google.android.accessibility.utils.Role.ROLE_LIST;
+import static com.google.android.accessibility.utils.Role.ROLE_NAVIGATION;
 import static com.google.android.accessibility.utils.Role.ROLE_PAGER;
 import static com.google.android.accessibility.utils.Role.ROLE_SCROLL_VIEW;
+import static com.google.android.accessibility.utils.Role.ROLE_SEARCH;
+import static com.google.android.accessibility.utils.Role.ROLE_TAB_BAR;
 import static com.google.android.accessibility.utils.Role.ROLE_WEB_VIEW;
 
 import android.content.Context;
@@ -262,7 +265,22 @@ public class AccessibilityNodeInfoUtils {
           ROLE_PAGER,
           ROLE_SCROLL_VIEW,
           ROLE_HORIZONTAL_SCROLL_VIEW,
-          ROLE_WEB_VIEW);
+          ROLE_WEB_VIEW,
+          // SandFly: areas of an app, so container navigation stops at its bars too.
+          ROLE_TAB_BAR,
+          ROLE_NAVIGATION,
+          ROLE_SEARCH);
+
+  /**
+   * Views that are a toolbar, an app bar or a tab bar by their ID, for the apps whose bars are
+   * plain view groups, such as YouTube's.
+   */
+  private static final Pattern BAR_VIEW_ID =
+      Pattern.compile(
+          "(?:^|_)(?:toolbar|action_bar|app_bar|appbar|tab_bar|tab_layout|tabs|bottom_nav"
+              + "|bottom_navigation|navigation_bar|nav_bar)$"
+              + "|(?<=[a-z])(?:Toolbar|ActionBar|AppBar|TabBar|TabLayout|Tabs|BottomNav"
+              + "|BottomNavigation|NavigationBar|NavBar)$");
 
   /** Filter for container. */
   public static final Filter<AccessibilityNodeInfoCompat> FILTER_CONTAINER =
@@ -271,9 +289,44 @@ public class AccessibilityNodeInfoUtils {
         public boolean accept(AccessibilityNodeInfoCompat node) {
           return node != null
               && (CONTAINER_ROLES.contains(Role.getRole(node))
-                  || !TextUtils.isEmpty(node.getContainerTitle()));
+                  || !TextUtils.isEmpty(node.getContainerTitle())
+                  || !TextUtils.isEmpty(node.getPaneTitle())
+                  || isBar(node));
         }
       };
+
+  /** Filter for bars: toolbars, tab bars, navigation bars and search bars. */
+  public static final Filter<AccessibilityNodeInfoCompat> FILTER_BAR =
+      new Filter<AccessibilityNodeInfoCompat>() {
+        @Override
+        public boolean accept(AccessibilityNodeInfoCompat node) {
+          if (node == null) {
+            return false;
+          }
+          int role = Role.getRole(node);
+          return role == ROLE_TAB_BAR
+              || role == ROLE_NAVIGATION
+              || role == ROLE_SEARCH
+              || isBar(node);
+        }
+      };
+
+  /** Whether the node is a toolbar, or a bar that its view ID names. */
+  private static boolean isBar(AccessibilityNodeInfoCompat node) {
+    CharSequence className = node.getClassName();
+    if (className != null) {
+      String name = className.toString();
+      if (name.endsWith("Toolbar") || name.endsWith("BottomAppBar") || name.endsWith("SearchBar")) {
+        return true;
+      }
+    }
+    String id = node.getViewIdResourceName();
+    if (id == null) {
+      return false;
+    }
+    int slash = id.indexOf('/');
+    return BAR_VIEW_ID.matcher(slash < 0 ? id : id.substring(slash + 1)).find();
+  }
 
   /**
    * Filter for focusable containers with a descendant that is an unfocusable heading. This filter

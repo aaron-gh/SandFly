@@ -508,6 +508,10 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 **Navigation > Remember browse mode in each app**, off by default, keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless Smart browse mode turns it on in web content.
 
+### Container navigation
+
+Next container and Previous container (Action + Control + Alt + Right or Left arrow, or a four-finger swipe right or left) also stop at toolbars, tab bars, navigation bars, search bars and panes, besides lists, grids and scroll views. A bar inside a bar, such as a search bar in a toolbar, is one stop. Previous container moves to the start of the container, as Next container does, not its last item, except in web content.
+
 ### Telegram reply quotes
 
 In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own, so the quoted message can't be opened from it.

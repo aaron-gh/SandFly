@@ -186,6 +186,9 @@ public class FocusProcessorForLogicalNavigation {
   private static final long EARLY_SCROLL_RETRY_MS = 16;
   private static final int EARLY_SCROLL_RETRIES = 6;
 
+  /** Most items that previous container steps back over to reach the start of a container. */
+  private static final int MAX_CONTAINER_START_STEPS = 500;
+
   // Checks whether a page scroll has already moved the list, before its scroll event arrives.
   private final Handler earlyScrollCheckHandler = new Handler(Looper.getMainLooper());
 
@@ -870,6 +873,30 @@ public class FocusProcessorForLogicalNavigation {
                     !Objects.equals(containerOld, currentContainer(n))
                         && AccessibilityNodeInfoUtils.shouldFocusNode(
                             n, traversalStrategy.getSpeakingNodesCache())));
+    // SandFly: the previous container is entered at its start, as the next one is, rather than at
+    // its last item.
+    // Web content keeps the old landing; stepping through a whole page would take long.
+    if (target != null
+        && direction == TraversalStrategy.SEARCH_FOCUS_BACKWARD
+        && navigationAction.targetType == TARGET_CONTAINER
+        && !WebInterfaceUtils.supportsWebActions(target)) {
+      @Nullable AccessibilityNodeInfoCompat containerNew = currentContainer(target);
+      for (int step = 0; step < MAX_CONTAINER_START_STEPS; step++) {
+        @Nullable AccessibilityNodeInfoCompat previous =
+            TraversalStrategyUtils.searchFocus(
+                traversalStrategy,
+                target,
+                direction,
+                Filter.node(
+                    n ->
+                        AccessibilityNodeInfoUtils.shouldFocusNode(
+                            n, traversalStrategy.getSpeakingNodesCache())));
+        if (previous == null || !Objects.equals(containerNew, currentContainer(previous))) {
+          break;
+        }
+        target = previous;
+      }
+    }
     LogUtils.v(
         TAG,
         "FocusProcessorForLogicalNavigation.findContainerTarget() target container=%s",
@@ -887,6 +914,18 @@ public class FocusProcessorForLogicalNavigation {
     // Search up from start-node.
     @Nullable AccessibilityNodeInfoCompat container =
         AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(start, FILTER_CONTAINER);
+    // SandFly: a bar inside a bar, such as a search bar in a toolbar, is one stop: the outer bar.
+    if (container != null && AccessibilityNodeInfoUtils.FILTER_BAR.accept(container)) {
+      @Nullable AccessibilityNodeInfoCompat outer =
+          AccessibilityNodeInfoUtils.getMatchingAncestor(
+              container, AccessibilityNodeInfoUtils.FILTER_BAR);
+      while (outer != null) {
+        container = outer;
+        outer =
+            AccessibilityNodeInfoUtils.getMatchingAncestor(
+                outer, AccessibilityNodeInfoUtils.FILTER_BAR);
+      }
+    }
     return container;
   }
 
