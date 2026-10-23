@@ -12,7 +12,7 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">i shkarkuar</string>
     <string name="on_device_ai_tag_experimental">eksperimentale</string>
-    <string name="on_device_ai_tag_needs_memory">Nevojë për rreth %1$d GB memorie.</string>
+    <string name="on_device_ai_tag_needs_memory">Kërkon rreth %1$d GB memorie.</string>
     <string name="on_device_ai_tag_not_enough_memory">Nuk ka memorie të mjaftueshme në këtë telefon.</string>
     <string name="on_device_ai_choose_model">Zgjidhni një model</string>
     <string name="on_device_ai_model_too_big">Ky telefon nuk ka memorie të mjaftueshme për atë model.</string>
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">Kjo çliron %1$s. Mund ta shkarkoni sërish më vonë.</string>
     <string name="manage_models_delete">Fshi</string>
     <string name="manage_models_deleted">%1$s u fshi</string>
-    <string name="pref_on_device_ai_import">Përdorni një skedar modeli nga ruajtja</string>
+    <string name="pref_on_device_ai_import">Përdor një skedar modeli nga hapësira ruajtëse</string>
     <string name="pref_on_device_ai_import_summary">Zgjidhni një skedar Gemma 4 litertlm që keni shkarkuar tashmë.</string>
     <string name="on_device_ai_import_done">Modeli u instalua</string>
     <string name="on_device_ai_import_failed">Ai skedar nuk është një skedar modeli Gemma 4 i mbështetur.</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">Modeli ka madhësi disa gigabajt. Është më mirë të përdoret Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Shkarko</string>
     <string name="on_device_ai_cancel">Anulo</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Injoroni kufijtë e kujtesës së AI në pajisje</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Injoro kufijtë e memories së AI në pajisje</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Të lejon të zgjedhësh një model që ka nevojë për më shumë memorie sesa ka ky telefon dhe e ngarkon atë pa kontrolluar për memorie të lirë, për të testuar se çfarë ndodh kur Android e ndalon atë.</string>
     <string name="on_device_ai_not_enough_memory">Nuk ka memorie të mjaftueshme të lirë për %1$s. Mbyllni disa aplikacione ose zgjidhni një model më të vogël te cilësimet e AI në pajisje.</string>
     <string name="on_device_ai_stopped">%1$s ndaloi, ndoshta sepse telefonit i mbaroi memoria. Zgjidhni një model më të vogël në cilësimet e AI në pajisje.</string>

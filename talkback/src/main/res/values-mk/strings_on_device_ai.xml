@@ -44,11 +44,11 @@
     <string name="manage_models_delete_message">Ова ослободува %1$s. Можете да го преземете повторно подоцна.</string>
     <string name="manage_models_delete">Избриши</string>
     <string name="manage_models_deleted">%1$s избришано</string>
-    <string name="pref_on_device_ai_import">Користете модел на датотека од складирање</string>
+    <string name="pref_on_device_ai_import">Користи датотека со модел од меморијата</string>
     <string name="pref_on_device_ai_import_summary">Изберете датотека Gemma 4 litertlm што веќе сте ја преземале.</string>
     <string name="on_device_ai_import_done">Моделот е инсталиран</string>
     <string name="on_device_ai_import_failed">Таа датотека не е поддржана датотека на моделот Gemma 4.</string>
-    <string name="pref_on_device_ai_timeout">Временски рок за одговори</string>
+    <string name="pref_on_device_ai_timeout">Временско ограничување за одговори</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly престанува да чека по толку време. Екранот за опишување трае подолго од описот на сликата.</string>
     <string name="on_device_ai_choose_timeout">Временско ограничување за одговори</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">Моделот е голем неколку гигабајти. Подобро е Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Преземи</string>
     <string name="on_device_ai_cancel">Откажи</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Игнорирајте ги ограничувањата на меморијата со вештачка интелигенција на уредот</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Игнорирај ги ограничувањата на меморијата за AI на уредот</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Ви овозможува да изберете модел на кој му треба повеќе меморија отколку што има овој телефон, и да го вчита без да провери дали има слободна меморија, за да тестирате што се случува кога Android ќе го запре.</string>
     <string name="on_device_ai_not_enough_memory">Нема доволно слободна меморија за %1$s. Затворете некои апликации или изберете помал модел во поставките за вештачка интелигенција на уредот.</string>
     <string name="on_device_ai_stopped">%1$s престана, веројатно затоа што телефонот остана без меморија. Изберете помал модел во поставките за вештачка интелигенција на уредот.</string>

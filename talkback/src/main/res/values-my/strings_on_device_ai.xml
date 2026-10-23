@@ -12,7 +12,7 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">ဒေါင်းလုဒ်လုပ်ထားသည်</string>
     <string name="on_device_ai_tag_experimental">စမ်းသပ်ဆဲ</string>
-    <string name="on_device_ai_tag_needs_memory">မမ်မိုရီ %1$d GB ခန့် လိုအပ်ပါသည်။</string>
+    <string name="on_device_ai_tag_needs_memory">မန်မိုရီ %1$d GB ခန့် လိုအပ်သည်။</string>
     <string name="on_device_ai_tag_not_enough_memory">ဤဖုန်းတွင် မန်မိုရီမလုံလောက်ပါ။</string>
     <string name="on_device_ai_choose_model">မော်ဒယ်ကိုရွေးချယ်ပါ</string>
     <string name="on_device_ai_model_too_big">ဤဖုန်းသည် ထိုမော်ဒယ်အတွက် လုံလောက်သော memory မရှိပါ။</string>
@@ -29,7 +29,7 @@
     <string name="on_device_ai_notification_done">မော်ဒယ်ကို ဒေါင်းလုဒ်လုပ်ထားသည်။ ဆက်တင်များတွင် စက်ပစ္စည်းပေါ်တွင် AI ကိုဖွင့်ပါ။</string>
     <string name="on_device_ai_notification_failed">ဒေါင်းလုဒ် မအောင်မြင်ပါ။ ထပ်စမ်းကြည့်ရန် ဆက်တင်များကိုဖွင့်ပါ။</string>
     <string name="on_device_ai_notification_paused">Android ဒေါင်းလုဒ်ကို ခေတ္တရပ်ထားသည်။ ဆက်တင်များကိုဖွင့်ပါ။</string>
-    <string name="pref_on_device_ai_importing">မော်ဒယ်ဖိုင်ကို စစ်ဆေးခြင်း</string>
+    <string name="pref_on_device_ai_importing">မော်ဒယ်ဖိုင်ကို စစ်ဆေးနေသည်</string>
     <string name="pref_on_device_ai_manage">မော်ဒယ်များကို စီမံပါ</string>
     <string name="pref_on_device_ai_manage_none">မော်ဒယ်များကို ဒေါင်းလုဒ်လုပ်ထားခြင်းမရှိပါ</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">၎င်းသည် %1$s လွတ်မြောက်သည်။ ၎င်းကို နောက်မှ ထပ်မံဒေါင်းလုဒ်လုပ်နိုင်ပါသည်။</string>
     <string name="manage_models_delete">ဖျက်ပါ</string>
     <string name="manage_models_deleted">%1$s ဖျက်လိုက်ပါပြီ</string>
-    <string name="pref_on_device_ai_import">သိုလှောင်မှုမှ မော်ဒယ်ဖိုင်ကို အသုံးပြုပါ</string>
+    <string name="pref_on_device_ai_import">သိုလှောင်ခန်းမှ မော်ဒယ်ဖိုင်ကို သုံးရန်</string>
     <string name="pref_on_device_ai_import_summary">သင်ဒေါင်းလုဒ်လုပ်ပြီးသား Gemma 4 litertlm ဖိုင်ကို ရွေးပါ။</string>
     <string name="on_device_ai_import_done">မော်ဒယ်တပ်ဆင်ထားသည်</string>
     <string name="on_device_ai_import_failed">ထိုဖိုင်သည် ပံ့ပိုးထားသော Gemma 4 မော်ဒယ်ဖိုင်မဟုတ်ပါ။</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">မော်ဒယ်သည် ဂစ်ဂါဘိုက် အများအပြား ရှိသည်။ Wi-Fi သုံးခြင်းက ပိုကောင်းသည်။</string>
     <string name="on_device_ai_metered_download">ဒေါင်းလုဒ်လုပ်ရန်</string>
     <string name="on_device_ai_cancel">မလုပ်တော့</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">စက်ပေါ်ရှိ AI မှတ်ဉာဏ်ကန့်သတ်ချက်များကို လျစ်လျူရှုပါ</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">စက်ပေါ်ရှိ AI မန်မိုရီ ကန့်သတ်ချက်များကို လျစ်လျူရှုရန်</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">သင့်အား ဤဖုန်းတွင် မန်မိုရီထက် ပိုလိုအပ်သည့် မော်ဒယ်ကို ရွေးချယ်နိုင်ပြီး Android ရပ်တန့်သွားသည့်အခါ ဘာဖြစ်မည်ကို စမ်းသပ်ရန် အခမဲ့ မမ်မိုရီကို မစစ်ဆေးဘဲ ၎င်းကို တင်နိုင်သည်။</string>
     <string name="on_device_ai_not_enough_memory">%1$sအတွက် အခမဲ့မှတ်ဉာဏ် မလုံလောက်ပါ။ အချို့အက်ပ်များကိုပိတ်ပါ သို့မဟုတ် စက်ပေါ်ရှိ AI ဆက်တင်များတွင် သေးငယ်သောမော်ဒယ်ကို ရွေးချယ်ပါ။</string>
     <string name="on_device_ai_stopped">%1$s ရပ်တန့်သွားသည်၊ ဖုန်းမှတ်ဉာဏ်ကုန်သွားသောကြောင့် ဖြစ်နိုင်သည်။ On-device AI ဆက်တင်များတွင် သေးငယ်သောမော်ဒယ်ကို ရွေးပါ။</string>

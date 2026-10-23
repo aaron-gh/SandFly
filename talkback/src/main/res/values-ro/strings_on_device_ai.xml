@@ -12,7 +12,7 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">descărcat</string>
     <string name="on_device_ai_tag_experimental">experimental</string>
-    <string name="on_device_ai_tag_needs_memory">Necesita aproximativ %1$d GB de memorie.</string>
+    <string name="on_device_ai_tag_needs_memory">Necesită aproximativ %1$d GB de memorie.</string>
     <string name="on_device_ai_tag_not_enough_memory">Nu este suficientă memorie pe acest telefon.</string>
     <string name="on_device_ai_choose_model">Alege un model</string>
     <string name="on_device_ai_model_too_big">Acest telefon nu are suficientă memorie pentru modelul respectiv.</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">Se descarcă, %1$d la sută</string>
     <string name="on_device_ai_announce_done">Model descărcat</string>
     <string name="on_device_ai_notification_channel">Descărcare AI pe dispozitiv</string>
-    <string name="on_device_ai_notification_downloading">Descărcarea modelului, %1$d%%</string>
+    <string name="on_device_ai_notification_downloading">Se descarcă modelul, %1$d%%</string>
     <string name="on_device_ai_notification_done">Model descărcat. Activați AI pe dispozitiv în setări.</string>
     <string name="on_device_ai_notification_failed">Descărcarea a eșuat. Deschide setările pentru a încerca din nou.</string>
     <string name="on_device_ai_notification_paused">Android a întrerupt descărcarea. Deschideți setările pentru a continua.</string>
-    <string name="pref_on_device_ai_importing">Verificarea fișierului model</string>
+    <string name="pref_on_device_ai_importing">Se verifică fișierul de model</string>
     <string name="pref_on_device_ai_manage">Gestionează modelele</string>
     <string name="pref_on_device_ai_manage_none">Nu au fost descărcate modele</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -45,7 +45,7 @@
     <string name="manage_models_delete_message">Acest lucru eliberează %1$s. Îl puteți descărca din nou mai târziu.</string>
     <string name="manage_models_delete">Șterge</string>
     <string name="manage_models_deleted">%1$s șters</string>
-    <string name="pref_on_device_ai_import">Utilizați un fișier model din stocare</string>
+    <string name="pref_on_device_ai_import">Folosește un fișier de model din spațiul de stocare</string>
     <string name="pref_on_device_ai_import_summary">Alegeți un fișier Gemma 4 litertlm pe care l-ați descărcat deja.</string>
     <string name="on_device_ai_import_done">Model instalat</string>
     <string name="on_device_ai_import_failed">Fișierul respectiv nu este un fișier model Gemma 4 acceptat.</string>
@@ -70,7 +70,7 @@
     <string name="on_device_ai_metered_message">Modelul are câțiva gigaocteți. Este preferabil Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Descarcă</string>
     <string name="on_device_ai_cancel">Anulează</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorați limitele memoriei AI de pe dispozitiv</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignoră limitele de memorie ale AI de pe dispozitiv</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Vă permite să alegeți un model care are nevoie de mai multă memorie decât are acest telefon și să îl încarce fără a verifica dacă există memorie liberă, pentru a testa ce se întâmplă când Android îl oprește.</string>
     <string name="on_device_ai_not_enough_memory">Nu este suficientă memorie liberă pentru %1$s. Închideți unele aplicații sau alegeți un model mai mic în setările AI pe dispozitiv.</string>
     <string name="on_device_ai_stopped">%1$s sa oprit, probabil pentru că telefonul a rămas fără memorie. Alegeți un model mai mic în setările AI pe dispozitiv.</string>

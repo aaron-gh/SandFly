@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">ອະທິບາຍຮູບພາບ ແລະອະທິບາຍໜ້າຈໍດ້ວຍຕົວແບບຢູ່ໃນໂທລະສັບນີ້, ໂດຍບໍ່ມີລະຫັດ API</string>
     <string name="pref_on_device_ai_enable">ໃຊ້ AI ໃນອຸປະກອນ</string>
     <string name="pref_on_device_ai_enable_summary">ຮູບພາບ ແລະຮູບໜ້າຈໍຖືກອະທິບາຍໄວ້ໃນໂທລະສັບໜ່ວຍນີ້ ແລະຈະບໍ່ຖືກສົ່ງໄປຫາ Google. ມັນຊ້າກວ່າຄລາວ ແລະໃຊ້ແບັດເຕີຣີຫຼາຍກວ່າ.</string>
-    <string name="pref_on_device_ai_enable_needs_model">ດາວໂຫຼດ ຫຼືນຳເຂົ້າຕົວແບບກ່ອນ.</string>
+    <string name="pref_on_device_ai_enable_needs_model">ດາວໂຫຼດ ຫຼື ນຳເຂົ້າໂມເດວກ່ອນ.</string>
     <string name="pref_on_device_ai_unsupported_cpu">ບໍ່ມີໃຫ້. ໂທລະສັບນີ້ບໍ່ມີໂປເຊດເຊີ ARM 64-bit.</string>
     <string name="pref_on_device_ai_not_enough_ram">ບໍ່ສາມາດໃຊ້ໄດ້ກັບຮູບແບບນີ້. ໂທລະສັບໜ່ວຍນີ້ບໍ່ມີໜ່ວຍຄວາມຈຳພຽງພໍ.</string>
     <string name="pref_on_device_ai_model">ຕົວແບບ</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">ກຳລັງດາວໂຫຼດ, %1$d ເປີເຊັນ</string>
     <string name="on_device_ai_announce_done">ດາວໂຫຼດຕົວແບບແລ້ວ</string>
     <string name="on_device_ai_notification_channel">ດາວໂຫຼດ AI ໃນອຸປະກອນ</string>
-    <string name="on_device_ai_notification_downloading">ກຳລັງດາວໂຫຼດແບບ, %1$d%%</string>
-    <string name="on_device_ai_notification_done">ດາວໂຫຼດຕົວແບບແລ້ວ. ເປີດອຸປະກອນ AI ໃນການຕັ້ງຄ່າ.</string>
+    <string name="on_device_ai_notification_downloading">ກຳລັງດາວໂຫຼດໂມເດວ, %1$d%%</string>
+    <string name="on_device_ai_notification_done">ດາວໂຫຼດໂມເດວແລ້ວ. ເປີດ AI ໃນອຸປະກອນໃນການຕັ້ງຄ່າ.</string>
     <string name="on_device_ai_notification_failed">ການດາວໂຫຼດລົ້ມເຫລວ. ເປີດການຕັ້ງຄ່າເພື່ອລອງອີກຄັ້ງ.</string>
     <string name="on_device_ai_notification_paused">Android ຢຸດການດາວໂຫຼດໄວ້ຊົ່ວຄາວ. ເປີດການຕັ້ງຄ່າເພື່ອສືບຕໍ່.</string>
-    <string name="pref_on_device_ai_importing">ການກວດສອບໄຟລ໌ຕົວແບບ</string>
+    <string name="pref_on_device_ai_importing">ກຳລັງກວດສອບໄຟລ໌ໂມເດວ</string>
     <string name="pref_on_device_ai_manage">ຈັດການແບບຈໍາລອງ</string>
     <string name="pref_on_device_ai_manage_none">ບໍ່ມີການດາວໂຫຼດແບບຈໍາລອງ</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">ນີ້ເຮັດໃຫ້ຟຣີ %1$s. ທ່ານສາມາດດາວໂຫລດມັນໄດ້ໃນພາຍຫຼັງ.</string>
     <string name="manage_models_delete">ລຶບ</string>
     <string name="manage_models_deleted">%1$s ຖືກລຶບແລ້ວ</string>
-    <string name="pref_on_device_ai_import">ໃຊ້ໄຟລ໌ຕົວແບບຈາກບ່ອນເກັບຂໍ້ມູນ</string>
+    <string name="pref_on_device_ai_import">ໃຊ້ໄຟລ໌ໂມເດວຈາກບ່ອນຈັດເກັບ</string>
     <string name="pref_on_device_ai_import_summary">ເລືອກໄຟລ໌ Gemma 4 litertlm ທີ່ທ່ານດາວໂຫຼດມາແລ້ວ.</string>
     <string name="on_device_ai_import_done">ຕິດຕັ້ງຕົວແບບແລ້ວ</string>
     <string name="on_device_ai_import_failed">ໄຟລ໌ນັ້ນບໍ່ແມ່ນໄຟລ໌ຮູບແບບ Gemma 4 ທີ່ຮອງຮັບ.</string>

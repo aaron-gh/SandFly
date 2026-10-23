@@ -45,11 +45,11 @@
     <string name="manage_models_delete_message">Tas atbrīvo %1$s. Vēlāk to varēsit lejupielādēt vēlreiz.</string>
     <string name="manage_models_delete">Dzēst</string>
     <string name="manage_models_deleted">%1$s izdzēsts</string>
-    <string name="pref_on_device_ai_import">Izmantojiet modeļa failu no krātuves</string>
+    <string name="pref_on_device_ai_import">Izmantot modeļa failu no krātuves</string>
     <string name="pref_on_device_ai_import_summary">Izvēlieties jau lejupielādēto Gemma 4 litertlm failu.</string>
     <string name="on_device_ai_import_done">Modelis uzstādīts</string>
     <string name="on_device_ai_import_failed">Šis fails nav atbalstīts Gemma 4 modeļa fails.</string>
-    <string name="pref_on_device_ai_timeout">Atbilžu termiņš</string>
+    <string name="pref_on_device_ai_timeout">Atbilžu laika ierobežojums</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly pārstāj gaidīt pēc tik ilga laika. Ekrāna aprakstīšana aizņem vairāk laika nekā attēla aprakstīšana.</string>
     <string name="on_device_ai_choose_timeout">Atbilžu laika ierobežojums</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -70,7 +70,7 @@
     <string name="on_device_ai_metered_message">Modelis aizņem vairākus gigabaitus. Ieteicams Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Lejupielādēt</string>
     <string name="on_device_ai_cancel">Atcelt</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorējiet ierīces AI atmiņas ierobežojumus</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorēt ierīces AI atmiņas ierobežojumus</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Ļauj izvēlēties modeli, kuram nepieciešams vairāk atmiņas nekā šim tālrunim, un ielādē to, nepārbaudot brīvas atmiņas pieejamību, lai pārbaudītu, kas notiek, kad Android to aptur.</string>
     <string name="on_device_ai_not_enough_memory">Nepietiek brīvas atmiņas %1$s. Aizveriet dažas lietotnes vai izvēlieties mazāku modeli Ierīces AI iestatījumos.</string>
     <string name="on_device_ai_stopped">%1$s apstājās, iespējams, tāpēc, ka tālrunī pietrūka atmiņas. Ierīces AI iestatījumos izvēlieties mazāku modeli.</string>

@@ -25,7 +25,7 @@
     <string name="on_device_ai_announce_progress">Downloaden, %1$d procent</string>
     <string name="on_device_ai_announce_done">Model gedownload</string>
     <string name="on_device_ai_notification_channel">AI-download op het apparaat</string>
-    <string name="on_device_ai_notification_downloading">Het model downloaden, %1$d%%</string>
+    <string name="on_device_ai_notification_downloading">Model downloaden, %1$d%%</string>
     <string name="on_device_ai_notification_done">Model gedownload. Schakel AI op het apparaat in via de instellingen.</string>
     <string name="on_device_ai_notification_failed">Het downloaden is mislukt. Open de instellingen om het opnieuw te proberen.</string>
     <string name="on_device_ai_notification_paused">Android heeft de download gepauzeerd. Open instellingen om door te gaan.</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">Het model is enkele gigabytes groot. Wi-Fi wordt aanbevolen.</string>
     <string name="on_device_ai_metered_download">Downloaden</string>
     <string name="on_device_ai_cancel">Annuleren</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Negeer AI-geheugenlimieten op het apparaat</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">AI-geheugenlimieten op het apparaat negeren</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Hiermee kunt u een model kiezen dat meer geheugen nodig heeft dan deze telefoon, en dit laden zonder te controleren op vrij geheugen, om te testen wat er gebeurt als Android het stopt.</string>
     <string name="on_device_ai_not_enough_memory">Niet genoeg vrij geheugen voor %1$s. Sluit enkele apps of kies een kleiner model in de AI-instellingen op het apparaat.</string>
     <string name="on_device_ai_stopped">%1$s gestopt, waarschijnlijk omdat de telefoon onvoldoende geheugen had. Kies een kleiner model in AI-instellingen op het apparaat.</string>

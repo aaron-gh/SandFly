@@ -12,8 +12,8 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">indirildi</string>
     <string name="on_device_ai_tag_experimental">deneysel</string>
-    <string name="on_device_ai_tag_needs_memory">Yaklaşık %1$d GB belleğe ihtiyaç duyar.</string>
-    <string name="on_device_ai_tag_not_enough_memory">Bu telefonda yeterli hafıza yok.</string>
+    <string name="on_device_ai_tag_needs_memory">Yaklaşık %1$d GB bellek gerektirir.</string>
+    <string name="on_device_ai_tag_not_enough_memory">Bu telefonda yeterli bellek yok.</string>
     <string name="on_device_ai_choose_model">Bir model seçin</string>
     <string name="on_device_ai_model_too_big">Bu telefonun söz konusu model için yeterli hafızası yok.</string>
     <string name="pref_on_device_ai_download">Modeli indir (%1$s)</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">İndiriliyor, yüzde %1$d</string>
     <string name="on_device_ai_announce_done">Model indirildi</string>
     <string name="on_device_ai_notification_channel">Cihazda AI indirme</string>
-    <string name="on_device_ai_notification_downloading">Modeli indiriyorum, %1$d%%</string>
-    <string name="on_device_ai_notification_done">Modeli indirildi. Ayarlarda cihazdaki yapay zekayı açın.</string>
+    <string name="on_device_ai_notification_downloading">Model indiriliyor, %1$d%%</string>
+    <string name="on_device_ai_notification_done">Model indirildi. Ayarlarda cihaz üzerinde yapay zekâyı açın.</string>
     <string name="on_device_ai_notification_failed">İndirme başarısız oldu. Tekrar denemek için ayarları açın.</string>
     <string name="on_device_ai_notification_paused">Android indirmeyi duraklattı. Devam etmek için ayarları açın.</string>
-    <string name="pref_on_device_ai_importing">Model dosyasını kontrol etme</string>
+    <string name="pref_on_device_ai_importing">Model dosyası kontrol ediliyor</string>
     <string name="pref_on_device_ai_manage">Modelleri yönet</string>
     <string name="pref_on_device_ai_manage_none">İndirilen model yok</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">Bu %1$s\'yi serbest bırakır. Daha sonra tekrar indirebilirsiniz.</string>
     <string name="manage_models_delete">Sil</string>
     <string name="manage_models_deleted">%1$s silindi</string>
-    <string name="pref_on_device_ai_import">Depolamadan bir model dosyası kullanın</string>
+    <string name="pref_on_device_ai_import">Depolamadaki bir model dosyasını kullan</string>
     <string name="pref_on_device_ai_import_summary">Daha önce indirmiş olduğunuz bir Gemma 4 litrelik dosya seçin.</string>
     <string name="on_device_ai_import_done">Model yüklendi</string>
     <string name="on_device_ai_import_failed">Bu dosya desteklenen bir Gemma 4 model dosyası değil.</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">Model birkaç gigabayt boyutunda. Wi-Fi önerilir.</string>
     <string name="on_device_ai_metered_download">İndir</string>
     <string name="on_device_ai_cancel">İptal</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Cihazdaki AI bellek sınırlarını göz ardı edin</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Cihazdaki yapay zekâ bellek sınırlarını yok say</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Bu telefonun sahip olduğundan daha fazla belleğe ihtiyaç duyan bir model seçmenizi ve Android onu durdurduğunda ne olacağını test etmek için boş belleği kontrol etmeden yüklemenizi sağlar.</string>
     <string name="on_device_ai_not_enough_memory">%1$s için yeterli boş hafıza yok. Bazı uygulamaları kapatın veya Cihazdaki yapay zeka ayarlarında daha küçük bir model seçin.</string>
     <string name="on_device_ai_stopped">%1$s muhtemelen telefonun hafızasının dolması nedeniyle durdu. Cihazdaki AI ayarlarında daha küçük bir model seçin.</string>

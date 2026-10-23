@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">ពិពណ៌នារូបភាព និងពណ៌នាអេក្រង់ជាមួយម៉ូដែលនៅលើទូរសព្ទនេះ ដោយគ្មានលេខកូដ API</string>
     <string name="pref_on_device_ai_enable">ប្រើ AI នៅលើឧបករណ៍</string>
     <string name="pref_on_device_ai_enable_summary">រូបភាព និងរូបថតអេក្រង់ត្រូវបានពិពណ៌នានៅលើទូរសព្ទនេះ ហើយមិនត្រូវបានផ្ញើទៅកាន់ Google ឡើយ។ វាយឺតជាងពពក ហើយប្រើថ្មច្រើនជាង។</string>
-    <string name="pref_on_device_ai_enable_needs_model">ទាញយក ឬនាំចូលគំរូជាមុនសិន។</string>
+    <string name="pref_on_device_ai_enable_needs_model">ទាញយក ឬនាំចូលម៉ូដែលជាមុនសិន។</string>
     <string name="pref_on_device_ai_unsupported_cpu">មិនអាចប្រើបានទេ។ ទូរស័ព្ទនេះមិនមានប្រព័ន្ធដំណើរការ ARM 64 ប៊ីតទេ។</string>
     <string name="pref_on_device_ai_not_enough_ram">មិនមានសម្រាប់ម៉ូដែលនេះទេ។ ទូរស័ព្ទនេះមិនមានអង្គចងចាំគ្រប់គ្រាន់ទេ។</string>
     <string name="pref_on_device_ai_model">ម៉ូដែល</string>
@@ -12,7 +12,7 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">បានទាញយក</string>
     <string name="on_device_ai_tag_experimental">ពិសោធន៍</string>
-    <string name="on_device_ai_tag_needs_memory">ត្រូវការអង្គចងចាំប្រហែល %1$d GB ។</string>
+    <string name="on_device_ai_tag_needs_memory">ត្រូវការអង្គចងចាំប្រហែល %1$d GB។</string>
     <string name="on_device_ai_tag_not_enough_memory">មិនមានអង្គចងចាំគ្រប់គ្រាន់នៅលើទូរសព្ទនេះទេ។</string>
     <string name="on_device_ai_choose_model">ជ្រើសរើសម៉ូដែល</string>
     <string name="on_device_ai_model_too_big">ទូរសព្ទនេះមិនមានអង្គចងចាំគ្រប់គ្រាន់សម្រាប់ម៉ូដែលនោះទេ។</string>
@@ -29,7 +29,7 @@
     <string name="on_device_ai_notification_done">ម៉ូដែលត្រូវបានទាញយក។ បើក AI នៅលើឧបករណ៍នៅក្នុងការកំណត់។</string>
     <string name="on_device_ai_notification_failed">ការទាញយកបានបរាជ័យ។ បើកការកំណត់ដើម្បីព្យាយាមម្តងទៀត។</string>
     <string name="on_device_ai_notification_paused">Androidបានផ្អាកការទាញយក។ បើកការកំណត់ដើម្បីបន្ត។</string>
-    <string name="pref_on_device_ai_importing">ពិនិត្យឯកសារគំរូ</string>
+    <string name="pref_on_device_ai_importing">កំពុងពិនិត្យឯកសារម៉ូដែល</string>
     <string name="pref_on_device_ai_manage">គ្រប់គ្រងម៉ូដែល</string>
     <string name="pref_on_device_ai_manage_none">មិនមានម៉ូដែលដែលបានទាញយកទេ</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">នេះធ្វើឲ្យ %1$s ទំនេរ។ អ្នកអាចទាញយកវាម្តងទៀតនៅពេលក្រោយ។</string>
     <string name="manage_models_delete">លុប</string>
     <string name="manage_models_deleted">%1$s បានលុប</string>
-    <string name="pref_on_device_ai_import">ប្រើឯកសារគំរូពីកន្លែងផ្ទុក</string>
+    <string name="pref_on_device_ai_import">ប្រើឯកសារម៉ូដែលពីទំហំផ្ទុក</string>
     <string name="pref_on_device_ai_import_summary">ជ្រើសរើសឯកសារ Gemma 4 litertlm ដែលអ្នកបានទាញយករួចហើយ។</string>
     <string name="on_device_ai_import_done">បានដំឡើងម៉ូដែល</string>
     <string name="on_device_ai_import_failed">ឯកសារនោះមិនមែនជាឯកសារគំរូ Gemma 4 ដែលគាំទ្រទេ។</string>

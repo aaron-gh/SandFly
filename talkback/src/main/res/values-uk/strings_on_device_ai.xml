@@ -46,11 +46,11 @@
     <string name="manage_models_delete_message">Це звільняє %1$s. Ви можете завантажити його пізніше.</string>
     <string name="manage_models_delete">Видалити</string>
     <string name="manage_models_deleted">%1$s видалено</string>
-    <string name="pref_on_device_ai_import">Використовуйте файл моделі зі сховища</string>
+    <string name="pref_on_device_ai_import">Використати файл моделі зі сховища</string>
     <string name="pref_on_device_ai_import_summary">Виберіть файл Gemma 4 litertlm, який ви вже завантажили.</string>
     <string name="on_device_ai_import_done">Модель встановлено</string>
     <string name="on_device_ai_import_failed">Цей файл не підтримується файлом моделі Gemma 4.</string>
-    <string name="pref_on_device_ai_timeout">Термін для відповідей</string>
+    <string name="pref_on_device_ai_timeout">Ліміт часу для відповідей</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly перестає чекати після цього часу. Опис екрана займає більше часу, ніж опис зображення.</string>
     <string name="on_device_ai_choose_timeout">Ліміт часу для відповідей</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -72,7 +72,7 @@
     <string name="on_device_ai_metered_message">Модель займає кілька гігабайт. Краще використовувати Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Завантажити</string>
     <string name="on_device_ai_cancel">Скасувати</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Ігноруйте обмеження пам’яті ШІ на пристрої</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ігнорувати обмеження пам’яті для ШІ на пристрої</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Дозволяє вибрати модель, якій потрібно більше пам’яті, ніж має цей телефон, і завантажувати її без перевірки вільної пам’яті, щоб перевірити, що станеться, коли Android зупинить його.</string>
     <string name="on_device_ai_not_enough_memory">Недостатньо вільної пам\'яті для %1$s. Закрийте деякі програми або виберіть меншу модель у налаштуваннях ШІ на пристрої.</string>
     <string name="on_device_ai_stopped">%1$s зупинився, ймовірно, через брак пам’яті телефону. Виберіть меншу модель у налаштуваннях ШІ на пристрої.</string>

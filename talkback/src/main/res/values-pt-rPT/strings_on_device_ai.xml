@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">Descreva a imagem e descreva a tela com um modelo deste telefone, sem chave de API</string>
     <string name="pref_on_device_ai_enable">Usar IA no dispositivo</string>
     <string name="pref_on_device_ai_enable_summary">Imagens e capturas de tela são descritas neste telefone e nunca são enviadas para Google. É mais lento que a nuvem e consome mais bateria.</string>
-    <string name="pref_on_device_ai_enable_needs_model">Baixe ou importe um modelo primeiro.</string>
+    <string name="pref_on_device_ai_enable_needs_model">Transfira ou importe primeiro um modelo.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Não disponível. Este telefone não possui um processador ARM de 64 bits.</string>
     <string name="pref_on_device_ai_not_enough_ram">Não disponível para este modelo. Este telefone não tem memória suficiente.</string>
     <string name="pref_on_device_ai_model">Modelo</string>
@@ -13,7 +13,7 @@
     <string name="on_device_ai_tag_downloaded">transferido</string>
     <string name="on_device_ai_tag_experimental">experimental</string>
     <string name="on_device_ai_tag_needs_memory">Precisa de cerca de %1$d GB de memória.</string>
-    <string name="on_device_ai_tag_not_enough_memory">Não há memória suficiente neste telefone.</string>
+    <string name="on_device_ai_tag_not_enough_memory">Não há memória suficiente neste telemóvel.</string>
     <string name="on_device_ai_choose_model">Escolha um modelo</string>
     <string name="on_device_ai_model_too_big">Este telefone não possui memória suficiente para esse modelo.</string>
     <string name="pref_on_device_ai_download">Transferir modelo (%1$s)</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">A transferir, %1$d por cento</string>
     <string name="on_device_ai_announce_done">Modelo transferido</string>
     <string name="on_device_ai_notification_channel">Download de IA no dispositivo</string>
-    <string name="on_device_ai_notification_downloading">Baixando o modelo, %1$d%%</string>
-    <string name="on_device_ai_notification_done">Modelo baixado. Ative a IA no dispositivo nas configurações.</string>
-    <string name="on_device_ai_notification_failed">O download falhou. Abra as configurações para tentar novamente.</string>
+    <string name="on_device_ai_notification_downloading">A transferir o modelo, %1$d%%</string>
+    <string name="on_device_ai_notification_done">Modelo transferido. Ative a IA no dispositivo nas definições.</string>
+    <string name="on_device_ai_notification_failed">A transferência falhou. Abra as definições para tentar novamente.</string>
     <string name="on_device_ai_notification_paused">Android pausou o download. Abra as configurações para continuar.</string>
-    <string name="pref_on_device_ai_importing">Verificando o arquivo do modelo</string>
+    <string name="pref_on_device_ai_importing">A verificar o ficheiro do modelo</string>
     <string name="pref_on_device_ai_manage">Gerir modelos</string>
     <string name="pref_on_device_ai_manage_none">Nenhum modelo transferido</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,11 +44,11 @@
     <string name="manage_models_delete_message">Isso libera %1$s. Você pode baixá-lo novamente mais tarde.</string>
     <string name="manage_models_delete">Eliminar</string>
     <string name="manage_models_deleted">%1$s eliminado</string>
-    <string name="pref_on_device_ai_import">Use um arquivo de modelo do armazenamento</string>
+    <string name="pref_on_device_ai_import">Usar um ficheiro de modelo do armazenamento</string>
     <string name="pref_on_device_ai_import_summary">Escolha um arquivo Gemma 4 litrtlm que você já baixou.</string>
     <string name="on_device_ai_import_done">Modelo instalado</string>
     <string name="on_device_ai_import_failed">Esse arquivo não é um arquivo de modelo Gemma 4 compatível.</string>
-    <string name="pref_on_device_ai_timeout">Prazo para respostas</string>
+    <string name="pref_on_device_ai_timeout">Tempo limite para respostas</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly para de esperar depois de tanto tempo. A descrição da tela leva mais tempo do que a descrição da imagem.</string>
     <string name="on_device_ai_choose_timeout">Tempo limite para respostas</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">O modelo tem vários gigabytes. É preferível usar Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Transferir</string>
     <string name="on_device_ai_cancel">Cancelar</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignore os limites de memória da IA no dispositivo</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorar os limites de memória da IA no dispositivo</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Permite escolher um modelo que precisa de mais memória do que este telefone e carrega-o sem verificar a memória livre, para testar o que acontece quando Android o interrompe.</string>
     <string name="on_device_ai_not_enough_memory">Não há memória livre suficiente para %1$s. Feche alguns aplicativos ou escolha um modelo menor nas configurações de IA no dispositivo.</string>
     <string name="on_device_ai_stopped">%1$s parou, provavelmente porque o telefone ficou sem memória. Escolha um modelo menor nas configurações de IA no dispositivo.</string>

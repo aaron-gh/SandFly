@@ -26,7 +26,7 @@
     <string name="on_device_ai_announce_done">Модел је преузет</string>
     <string name="on_device_ai_notification_channel">Преузимање AI на уређају</string>
     <string name="on_device_ai_notification_downloading">Преузимање модела, %1$d%%</string>
-    <string name="on_device_ai_notification_done">Модел је преузет. Укључите АИ на уређају у подешавањима.</string>
+    <string name="on_device_ai_notification_done">Модел је преузет. Укључите AI на уређају у подешавањима.</string>
     <string name="on_device_ai_notification_failed">Преузимање није успело. Отворите подешавања да бисте покушали поново.</string>
     <string name="on_device_ai_notification_paused">Android је паузирао преузимање. Отворите подешавања да наставите.</string>
     <string name="pref_on_device_ai_importing">Провера датотеке модела</string>
@@ -45,7 +45,7 @@
     <string name="manage_models_delete_message">Ово ослобађа %1$s. Касније га можете поново преузети.</string>
     <string name="manage_models_delete">Избриши</string>
     <string name="manage_models_deleted">%1$s избрисано</string>
-    <string name="pref_on_device_ai_import">Користите датотеку модела из складишта</string>
+    <string name="pref_on_device_ai_import">Користи датотеку модела из меморије</string>
     <string name="pref_on_device_ai_import_summary">Изаберите Гемма 4 литертлм датотеку коју сте већ преузели.</string>
     <string name="on_device_ai_import_done">Модел инсталиран</string>
     <string name="on_device_ai_import_failed">Та датотека није подржана датотека модела Гемма 4.</string>
@@ -70,7 +70,7 @@
     <string name="on_device_ai_metered_message">Модел има неколико гигабајта. Боље је користити Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Преузми</string>
     <string name="on_device_ai_cancel">Откажи</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Занемарите ограничења АИ меморије на уређају</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Занемари ограничења меморије за AI на уређају</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Омогућава вам да изаберете модел коме је потребно више меморије него што овај телефон има и учитава га без провере слободне меморије да бисте тестирали шта се дешава када га Android заустави.</string>
     <string name="on_device_ai_not_enough_memory">Нема довољно слободне меморије за %1$s. Затворите неке апликације или изаберите мањи модел у подешавањима АИ на уређају.</string>
     <string name="on_device_ai_stopped">%1$s се зауставио, вероватно зато што је телефону понестало меморије. Изаберите мањи модел у подешавањима АИ на уређају.</string>

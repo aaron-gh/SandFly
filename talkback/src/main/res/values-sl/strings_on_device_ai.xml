@@ -46,11 +46,11 @@
     <string name="manage_models_delete_message">To sprosti %1$s. Pozneje ga lahko ponovno prenesete.</string>
     <string name="manage_models_delete">Izbriši</string>
     <string name="manage_models_deleted">%1$s izbrisano</string>
-    <string name="pref_on_device_ai_import">Uporabite datoteko modela iz pomnilnika</string>
+    <string name="pref_on_device_ai_import">Uporabi datoteko modela iz shrambe</string>
     <string name="pref_on_device_ai_import_summary">Izberite datoteko Gemma 4 litertlm, ki ste jo že prenesli.</string>
     <string name="on_device_ai_import_done">Model nameščen</string>
     <string name="on_device_ai_import_failed">Ta datoteka ni podprta datoteka modela Gemma 4.</string>
-    <string name="pref_on_device_ai_timeout">Rok za odgovore</string>
+    <string name="pref_on_device_ai_timeout">Časovna omejitev za odgovore</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly po tem času neha čakati. Opis zaslona traja dlje kot opis slike.</string>
     <string name="on_device_ai_choose_timeout">Časovna omejitev za odgovore</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -72,7 +72,7 @@
     <string name="on_device_ai_metered_message">Model obsega več gigabajtov. Bolje je uporabiti Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Prenesi</string>
     <string name="on_device_ai_cancel">Prekliči</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Prezrite omejitve pomnilnika AI v napravi</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Prezri omejitve pomnilnika za AI v napravi</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Omogoča vam, da izberete model, ki potrebuje več pomnilnika, kot ga ima ta telefon, in ga naložite brez preverjanja prostega pomnilnika, da preizkusite, kaj se zgodi, ko ga Android ustavi.</string>
     <string name="on_device_ai_not_enough_memory">Ni dovolj prostega pomnilnika za %1$s. Zaprite nekatere aplikacije ali izberite manjši model v nastavitvah umetne inteligence v napravi.</string>
     <string name="on_device_ai_stopped">%1$s se je ustavilo, verjetno zato, ker je telefonu zmanjkalo pomnilnika. Izberite manjši model v nastavitvah AI v napravi.</string>

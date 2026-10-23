@@ -13,7 +13,7 @@
     <string name="on_device_ai_tag_downloaded">გადმოწერილი</string>
     <string name="on_device_ai_tag_experimental">ექსპერიმენტული</string>
     <string name="on_device_ai_tag_needs_memory">სჭირდება დაახლოებით %1$d GB მეხსიერება.</string>
-    <string name="on_device_ai_tag_not_enough_memory">არ არის საკმარისი მეხსიერება ამ ტელეფონზე.</string>
+    <string name="on_device_ai_tag_not_enough_memory">ამ ტელეფონზე მეხსიერება საკმარისი არ არის.</string>
     <string name="on_device_ai_choose_model">აირჩიეთ მოდელი</string>
     <string name="on_device_ai_model_too_big">ამ ტელეფონს არ აქვს საკმარისი მეხსიერება ამ მოდელისთვის.</string>
     <string name="pref_on_device_ai_download">მოდელის ჩამოტვირთვა (%1$s)</string>
@@ -27,7 +27,7 @@
     <string name="on_device_ai_notification_channel">მოწყობილობაზე AI ჩამოტვირთვა</string>
     <string name="on_device_ai_notification_downloading">მოდელის ჩამოტვირთვა, %1$d%%</string>
     <string name="on_device_ai_notification_done">მოდელი გადმოწერილია. ჩართეთ მოწყობილობაზე AI პარამეტრებში.</string>
-    <string name="on_device_ai_notification_failed">ჩამოტვირთვა ვერ მოხერხდა. გახსენით პარამეტრები ხელახლა საცდელად.</string>
+    <string name="on_device_ai_notification_failed">ჩამოტვირთვა ვერ მოხერხდა. ხელახლა საცდელად გახსენით პარამეტრები.</string>
     <string name="on_device_ai_notification_paused">Android შეაჩერა ჩამოტვირთვა. გასაგრძელებლად გახსენით პარამეტრები.</string>
     <string name="pref_on_device_ai_importing">მოდელის ფაილის შემოწმება</string>
     <string name="pref_on_device_ai_manage">მოდელების მართვა</string>
@@ -44,11 +44,11 @@
     <string name="manage_models_delete_message">ეს ათავისუფლებს %1$s. შეგიძლიათ მოგვიანებით გადმოწეროთ.</string>
     <string name="manage_models_delete">წაშლა</string>
     <string name="manage_models_deleted">%1$s წაშლილია</string>
-    <string name="pref_on_device_ai_import">გამოიყენეთ მოდელის ფაილი საცავიდან</string>
+    <string name="pref_on_device_ai_import">საცავიდან მოდელის ფაილის გამოყენება</string>
     <string name="pref_on_device_ai_import_summary">აირჩიეთ Gemma 4 litterlm ფაილი, რომელიც უკვე გადმოწერეთ.</string>
     <string name="on_device_ai_import_done">მოდელი დაინსტალირებულია</string>
     <string name="on_device_ai_import_failed">ეს ფაილი არ არის Gemma 4 მოდელის მხარდაჭერილი ფაილი.</string>
-    <string name="pref_on_device_ai_timeout">პასუხების ვადა</string>
+    <string name="pref_on_device_ai_timeout">პასუხების დროის ლიმიტი</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly წყვეტს ლოდინს ამ ხნის შემდეგ. აღწერის ეკრანს უფრო მეტი დრო სჭირდება, ვიდრე სურათის აღწერას.</string>
     <string name="on_device_ai_choose_timeout">პასუხების დროის ლიმიტი</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">მოდელი რამდენიმე გიგაბაიტია. სჯობს Wi-Fi-ის გამოყენება.</string>
     <string name="on_device_ai_metered_download">ჩამოტვირთვა</string>
     <string name="on_device_ai_cancel">გაუქმება</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">დააიგნორეთ მოწყობილობაზე AI მეხსიერების ლიმიტები</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">მოწყობილობაზე AI-ის მეხსიერების ლიმიტების იგნორირება</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">საშუალებას გაძლევთ აირჩიოთ მოდელი, რომელსაც სჭირდება მეტი მეხსიერება, ვიდრე ამ ტელეფონს აქვს და ჩატვირთავს მას თავისუფალი მეხსიერების შემოწმების გარეშე, რათა შეამოწმოს რა მოხდება, როდესაც Android შეწყვეტს მას.</string>
     <string name="on_device_ai_not_enough_memory">არ არის საკმარისი თავისუფალი მეხსიერება %1$s-ისთვის. დახურეთ ზოგიერთი აპი ან აირჩიეთ უფრო პატარა მოდელი მოწყობილობაზე AI პარამეტრებში.</string>
     <string name="on_device_ai_stopped">%1$s გაჩერდა, ალბათ იმის გამო, რომ ტელეფონს მეხსიერება ამოეწურა. აირჩიეთ უფრო პატარა მოდელი მოწყობილობაზე AI პარამეტრებში.</string>

@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">תאר תמונה ותאר מסך עם דגם בטלפון זה, ללא מפתח API</string>
     <string name="pref_on_device_ai_enable">שימוש ב-AI במכשיר</string>
     <string name="pref_on_device_ai_enable_summary">תמונות וצילומי מסך מתוארים בטלפון זה ואינם נשלחים לעולם אל Google. הוא איטי יותר מהענן וצורך יותר סוללה.</string>
-    <string name="pref_on_device_ai_enable_needs_model">הורד או ייבא תחילה דגם.</string>
+    <string name="pref_on_device_ai_enable_needs_model">יש להוריד או לייבא מודל תחילה.</string>
     <string name="pref_on_device_ai_unsupported_cpu">לא זמין. לטלפון הזה אין מעבד ARM של 64 סיביות.</string>
     <string name="pref_on_device_ai_not_enough_ram">לא זמין עבור דגם זה. לטלפון הזה אין מספיק זיכרון.</string>
     <string name="pref_on_device_ai_model">מודל</string>
@@ -12,7 +12,7 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">הורד</string>
     <string name="on_device_ai_tag_experimental">ניסיוני</string>
-    <string name="on_device_ai_tag_needs_memory">זקוק לזיכרון של כ-%1$d GB.</string>
+    <string name="on_device_ai_tag_needs_memory">דורש כ-%1$d GB זיכרון.</string>
     <string name="on_device_ai_tag_not_enough_memory">אין מספיק זיכרון בטלפון הזה.</string>
     <string name="on_device_ai_choose_model">בחירת מודל</string>
     <string name="on_device_ai_model_too_big">לטלפון הזה אין מספיק זיכרון עבור הדגם הזה.</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">מוריד, %1$d אחוז</string>
     <string name="on_device_ai_announce_done">המודל הורד</string>
     <string name="on_device_ai_notification_channel">הורדת AI במכשיר</string>
-    <string name="on_device_ai_notification_downloading">הורדת הדגם, %1$d%%</string>
-    <string name="on_device_ai_notification_done">הדגם הורד. הפעל AI במכשיר בהגדרות.</string>
-    <string name="on_device_ai_notification_failed">ההורדה נכשלה. פתח את ההגדרות כדי לנסות שוב.</string>
+    <string name="on_device_ai_notification_downloading">המודל בהורדה, %1$d%%</string>
+    <string name="on_device_ai_notification_done">המודל הורד. יש להפעיל את \'AI במכשיר\' בהגדרות.</string>
+    <string name="on_device_ai_notification_failed">ההורדה נכשלה. יש לפתוח את ההגדרות כדי לנסות שוב.</string>
     <string name="on_device_ai_notification_paused">Android השהה את ההורדה. פתח את ההגדרות כדי להמשיך.</string>
-    <string name="pref_on_device_ai_importing">בדיקת קובץ הדגם</string>
+    <string name="pref_on_device_ai_importing">בודק את קובץ המודל</string>
     <string name="pref_on_device_ai_manage">ניהול מודלים</string>
     <string name="pref_on_device_ai_manage_none">לא הורדו מודלים</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -45,7 +45,7 @@
     <string name="manage_models_delete_message">זה משחרר %1$s. תוכל להוריד אותו שוב מאוחר יותר.</string>
     <string name="manage_models_delete">מחיקה</string>
     <string name="manage_models_deleted">%1$s נמחק</string>
-    <string name="pref_on_device_ai_import">השתמש בקובץ דגם מהאחסון</string>
+    <string name="pref_on_device_ai_import">שימוש בקובץ מודל מהאחסון</string>
     <string name="pref_on_device_ai_import_summary">בחר קובץ Gemma 4 litertlm שכבר הורדת.</string>
     <string name="on_device_ai_import_done">המודל הותקן</string>
     <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ דגם Gemma 4 נתמך.</string>
@@ -70,7 +70,7 @@
     <string name="on_device_ai_metered_message">המודל בגודל של כמה ג\'יגה-בייט. עדיף להשתמש ב-Wi-Fi.</string>
     <string name="on_device_ai_metered_download">הורדה</string>
     <string name="on_device_ai_cancel">ביטול</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">התעלם ממגבלות זיכרון AI במכשיר</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">התעלמות ממגבלות זיכרון של AI במכשיר</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">מאפשר לך לבחור דגם שזקוק ליותר זיכרון ממה שיש לטלפון הזה, וטוען אותו מבלי לבדוק זיכרון פנוי, כדי לבדוק מה קורה כאשר Android עוצר אותו.</string>
     <string name="on_device_ai_not_enough_memory">אין מספיק זיכרון פנוי עבור %1$s. סגור אפליקציות מסוימות, או בחר דגם קטן יותר בהגדרות AI במכשיר.</string>
     <string name="on_device_ai_stopped">%1$s הפסיק, כנראה בגלל שנגמר הזיכרון לטלפון. בחר דגם קטן יותר בהגדרות AI במכשיר.</string>

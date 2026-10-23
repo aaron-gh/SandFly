@@ -44,11 +44,11 @@
     <string name="manage_models_delete_message">Isso libera %1$s. Você pode baixá-lo novamente mais tarde.</string>
     <string name="manage_models_delete">Excluir</string>
     <string name="manage_models_deleted">%1$s excluído</string>
-    <string name="pref_on_device_ai_import">Use um arquivo de modelo do armazenamento</string>
+    <string name="pref_on_device_ai_import">Usar um arquivo de modelo do armazenamento</string>
     <string name="pref_on_device_ai_import_summary">Escolha um arquivo Gemma 4 litrtlm que você já baixou.</string>
     <string name="on_device_ai_import_done">Modelo instalado</string>
     <string name="on_device_ai_import_failed">Esse arquivo não é um arquivo de modelo Gemma 4 compatível.</string>
-    <string name="pref_on_device_ai_timeout">Prazo para respostas</string>
+    <string name="pref_on_device_ai_timeout">Tempo limite para respostas</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly para de esperar depois de tanto tempo. A descrição da tela leva mais tempo do que a descrição da imagem.</string>
     <string name="on_device_ai_choose_timeout">Tempo limite para respostas</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">O modelo tem vários gigabytes. É melhor usar Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Fazer o download</string>
     <string name="on_device_ai_cancel">Cancelar</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignore os limites de memória da IA no dispositivo</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorar os limites de memória da IA no dispositivo</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Permite escolher um modelo que precisa de mais memória do que este telefone e carrega-o sem verificar a memória livre, para testar o que acontece quando Android o interrompe.</string>
     <string name="on_device_ai_not_enough_memory">Não há memória livre suficiente para %1$s. Feche alguns aplicativos ou escolha um modelo menor nas configurações de IA no dispositivo.</string>
     <string name="on_device_ai_stopped">%1$s parou, provavelmente porque o telefone ficou sem memória. Escolha um modelo menor nas configurações de IA no dispositivo.</string>

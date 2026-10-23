@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">ಯಾವುದೇ API ಕೀ ಇಲ್ಲದೆ, ಈ ಫೋನ್‌ನಲ್ಲಿ ಮಾದರಿಯೊಂದಿಗೆ ಚಿತ್ರವನ್ನು ವಿವರಿಸಿ ಮತ್ತು ಪರದೆಯನ್ನು ವಿವರಿಸಿ</string>
     <string name="pref_on_device_ai_enable">ಸಾಧನದಲ್ಲಿ AI ಬಳಸಿ</string>
     <string name="pref_on_device_ai_enable_summary">ಚಿತ್ರಗಳು ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಈ ಫೋನ್‌ನಲ್ಲಿ ವಿವರಿಸಲಾಗಿದೆ ಮತ್ತು Google ಗೆ ಎಂದಿಗೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಇದು ಮೋಡಕ್ಕಿಂತ ನಿಧಾನವಾಗಿರುತ್ತದೆ ಮತ್ತು ಹೆಚ್ಚು ಬ್ಯಾಟರಿಯನ್ನು ಬಳಸುತ್ತದೆ.</string>
-    <string name="pref_on_device_ai_enable_needs_model">ಮೊದಲು ಮಾದರಿಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ಆಮದು ಮಾಡಿಕೊಳ್ಳಿ.</string>
+    <string name="pref_on_device_ai_enable_needs_model">ಮೊದಲು ಮಾಡೆಲ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ ಅಥವಾ ಆಮದು ಮಾಡಿ.</string>
     <string name="pref_on_device_ai_unsupported_cpu">ಲಭ್ಯವಿಲ್ಲ. ಈ ಫೋನ್ 64-ಬಿಟ್ ARM ಪ್ರೊಸೆಸರ್ ಅನ್ನು ಹೊಂದಿಲ್ಲ.</string>
     <string name="pref_on_device_ai_not_enough_ram">ಈ ಮಾದರಿಗೆ ಲಭ್ಯವಿಲ್ಲ. ಈ ಫೋನ್ ಸಾಕಷ್ಟು ಮೆಮೊರಿಯನ್ನು ಹೊಂದಿಲ್ಲ.</string>
     <string name="pref_on_device_ai_model">ಮಾಡೆಲ್</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ, %1$d ಶೇಕಡಾ</string>
     <string name="on_device_ai_announce_done">ಮಾಡೆಲ್ ಡೌನ್‌ಲೋಡ್ ಆಗಿದೆ</string>
     <string name="on_device_ai_notification_channel">ಸಾಧನದಲ್ಲಿ AI ಡೌನ್‌ಲೋಡ್</string>
-    <string name="on_device_ai_notification_downloading">ಮಾದರಿಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ, %1$d%%</string>
-    <string name="on_device_ai_notification_done">ಮಾದರಿಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ. ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಾಧನದ AI ಅನ್ನು ಆನ್ ಮಾಡಿ.</string>
+    <string name="on_device_ai_notification_downloading">ಮಾಡೆಲ್ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ, %1$d%%</string>
+    <string name="on_device_ai_notification_done">ಮಾಡೆಲ್ ಡೌನ್‌ಲೋಡ್ ಆಗಿದೆ. ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಾಧನದ AI ಆನ್ ಮಾಡಿ.</string>
     <string name="on_device_ai_notification_failed">ಡೌನ್‌ಲೋಡ್ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಲು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ.</string>
     <string name="on_device_ai_notification_paused">Android ಡೌನ್‌ಲೋಡ್ ಅನ್ನು ವಿರಾಮಗೊಳಿಸಿದೆ. ಮುಂದುವರಿಸಲು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ತೆರೆಯಿರಿ.</string>
-    <string name="pref_on_device_ai_importing">ಮಾದರಿ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="pref_on_device_ai_importing">ಮಾಡೆಲ್ ಫೈಲ್ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="pref_on_device_ai_manage">ಮಾಡೆಲ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಿ</string>
     <string name="pref_on_device_ai_manage_none">ಯಾವುದೇ ಮಾಡೆಲ್ ಡೌನ್‌ಲೋಡ್ ಆಗಿಲ್ಲ</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">ಇದು %1$s ಅನ್ನು ಮುಕ್ತಗೊಳಿಸುತ್ತದೆ. ನೀವು ಅದನ್ನು ನಂತರ ಮತ್ತೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು.</string>
     <string name="manage_models_delete">ಅಳಿಸಿ</string>
     <string name="manage_models_deleted">%1$s ಅಳಿಸಲಾಗಿದೆ</string>
-    <string name="pref_on_device_ai_import">ಸಂಗ್ರಹಣೆಯಿಂದ ಮಾದರಿ ಫೈಲ್ ಅನ್ನು ಬಳಸಿ</string>
+    <string name="pref_on_device_ai_import">ಸಂಗ್ರಹಣೆಯಿಂದ ಮಾಡೆಲ್ ಫೈಲ್ ಬಳಸಿ</string>
     <string name="pref_on_device_ai_import_summary">ನೀವು ಈಗಾಗಲೇ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿರುವ Gemma 4litlm ಫೈಲ್ ಅನ್ನು ಆರಿಸಿ.</string>
     <string name="on_device_ai_import_done">ಮಾಡೆಲ್ ಇನ್‌ಸ್ಟಾಲ್ ಆಗಿದೆ</string>
     <string name="on_device_ai_import_failed">ಆ ಫೈಲ್ ಬೆಂಬಲಿತ Gemma 4 ಮಾದರಿ ಫೈಲ್ ಅಲ್ಲ.</string>

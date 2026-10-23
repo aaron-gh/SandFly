@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">କୌଣସି API ଚାବି ବିନା ଏହି ଫୋନରେ ଏକ ମଡେଲ ସହିତ ପ୍ରତିଛବି ବର୍ଣ୍ଣନା କରନ୍ତୁ ଏବଂ ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_enable">ଅନ୍-ଡିଭାଇସ୍ AI ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_enable_summary">ପ୍ରତିଛବି ଏବଂ ସ୍କ୍ରିନସଟଗୁଡିକ ଏହି ଫୋନରେ ବର୍ଣ୍ଣନା କରାଯାଇଛି ଏବଂ Google କୁ କେବେବି ପଠାଯାଏ ନାହିଁ | ଏହା କ୍ଲାଉଡ୍ ଠାରୁ ଧୀର ଏବଂ ଅଧିକ ବ୍ୟାଟେରୀ ବ୍ୟବହାର କରେ |</string>
-    <string name="pref_on_device_ai_enable_needs_model">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ଡାଉନଲୋଡ୍ କିମ୍ବା ଆମଦାନୀ କରନ୍ତୁ |</string>
+    <string name="pref_on_device_ai_enable_needs_model">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ଡାଉନଲୋଡ୍ କିମ୍ବା ଆମଦାନୀ କରନ୍ତୁ।</string>
     <string name="pref_on_device_ai_unsupported_cpu">ଉପଲବ୍ଧ ନାହିଁ | ଏହି ଫୋନରେ 64-ବିଟ୍ ARM ସଞ୍ଚାଳକ ନାହିଁ |</string>
     <string name="pref_on_device_ai_not_enough_ram">ଏହି ମଡେଲ୍ ପାଇଁ ଉପଲବ୍ଧ ନୁହେଁ | ଏହି ଫୋନରେ ପର୍ଯ୍ୟାପ୍ତ ସ୍ମୃତି ନାହିଁ |</string>
     <string name="pref_on_device_ai_model">ମଡେଲ୍</string>
@@ -12,8 +12,8 @@
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">ଡାଉନଲୋଡ୍ ହୋଇଛି</string>
     <string name="on_device_ai_tag_experimental">ପରୀକ୍ଷାମୂଳକ</string>
-    <string name="on_device_ai_tag_needs_memory">ପ୍ରାୟ %1$d GB ସ୍ମୃତିର ଆବଶ୍ୟକତା |</string>
-    <string name="on_device_ai_tag_not_enough_memory">ଏହି ଫୋନରେ ପର୍ଯ୍ୟାପ୍ତ ସ୍ମୃତି ନାହିଁ |</string>
+    <string name="on_device_ai_tag_needs_memory">ପ୍ରାୟ %1$d GB ମେମୋରୀ ଆବଶ୍ୟକ।</string>
+    <string name="on_device_ai_tag_not_enough_memory">ଏହି ଫୋନରେ ଯଥେଷ୍ଟ ମେମୋରୀ ନାହିଁ।</string>
     <string name="on_device_ai_choose_model">ଏକ ମଡେଲ୍ ବାଛନ୍ତୁ</string>
     <string name="on_device_ai_model_too_big">ଏହି ଫୋନ୍ ପାଇଁ ସେହି ଫୋନ୍ ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ସ୍ମୃତି ନାହିଁ |</string>
     <string name="pref_on_device_ai_download">ମଡେଲ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ (%1$s)</string>
@@ -26,8 +26,8 @@
     <string name="on_device_ai_announce_done">ମଡେଲ୍ ଡାଉନଲୋଡ୍ ହୋଇଛି</string>
     <string name="on_device_ai_notification_channel">ଅନ୍-ଡିଭାଇସ୍ AI ଡାଉନଲୋଡ୍</string>
     <string name="on_device_ai_notification_downloading">ମଡେଲ୍ ଡାଉନଲୋଡ୍ କରୁଛି, %1$d%%</string>
-    <string name="on_device_ai_notification_done">ମଡେଲ୍ ଡାଉନଲୋଡ୍ ହୋଇଛି | ସେଟିଂସମୂହରେ ଅନ୍-ଡିଭାଇସ୍ AI ଟର୍ନ୍ ଅନ୍ କରନ୍ତୁ |</string>
-    <string name="on_device_ai_notification_failed">ଡାଉନଲୋଡ୍ ବିଫଳ ହେଲା | ପୁନର୍ବାର ଚେଷ୍ଟା କରିବାକୁ ସେଟିଂସମୂହ ଖୋଲନ୍ତୁ |</string>
+    <string name="on_device_ai_notification_done">ମଡେଲ୍ ଡାଉନଲୋଡ୍ ହୋଇଛି। ସେଟିଂସରେ ଅନ୍-ଡିଭାଇସ୍ AI ଚାଲୁ କରନ୍ତୁ।</string>
+    <string name="on_device_ai_notification_failed">ଡାଉନଲୋଡ୍ ବିଫଳ ହେଲା। ପୁଣି ଚେଷ୍ଟା କରିବାକୁ ସେଟିଂସ ଖୋଲନ୍ତୁ।</string>
     <string name="on_device_ai_notification_paused">Android ଡାଉନଲୋଡ୍ କୁ ବିରତ କଲା | ଜାରି ରଖିବାକୁ ସେଟିଂସମୂହ ଖୋଲନ୍ତୁ |</string>
     <string name="pref_on_device_ai_importing">ମଡେଲ୍ ଫାଇଲ୍ ଯାଞ୍ଚ କରୁଛି</string>
     <string name="pref_on_device_ai_manage">ମଡେଲଗୁଡିକ ପରିଚାଳନା କରନ୍ତୁ</string>

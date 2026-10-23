@@ -26,8 +26,8 @@
     <string name="on_device_ai_announce_done">Modelis atsisiųstas</string>
     <string name="on_device_ai_notification_channel">Įrenginio AI atsisiuntimas</string>
     <string name="on_device_ai_notification_downloading">Atsisiunčiamas modelis: %1$d%%</string>
-    <string name="on_device_ai_notification_done">Modelis atsisiųstas. Turn on on-device AI in settings.</string>
-    <string name="on_device_ai_notification_failed">Atsisiuntimas nepavyko. Open settings to try again.</string>
+    <string name="on_device_ai_notification_done">Modelis atsisiųstas. Nustatymuose įjunkite įrenginio AI.</string>
+    <string name="on_device_ai_notification_failed">Atsisiuntimas nepavyko. Atidarykite nustatymus ir bandykite dar kartą.</string>
     <string name="on_device_ai_notification_paused">Android paused the download. Norėdami tęsti, atidarykite nustatymus.</string>
     <string name="pref_on_device_ai_importing">Modelio failo tikrinimas</string>
     <string name="pref_on_device_ai_manage">Tvarkyti modelius</string>
@@ -46,11 +46,11 @@
     <string name="manage_models_delete_message">Tai atlaisvina %1$s. You can download it again later.</string>
     <string name="manage_models_delete">Ištrinti</string>
     <string name="manage_models_deleted">%1$s ištrinta</string>
-    <string name="pref_on_device_ai_import">Naudokite modelio failą iš saugyklos</string>
+    <string name="pref_on_device_ai_import">Naudoti modelio failą iš saugyklos</string>
     <string name="pref_on_device_ai_import_summary">Pasirinkite Gemma 4 litertlm failą, kurį jau atsisiuntėte.</string>
     <string name="on_device_ai_import_done">Modelis įdiegtas</string>
     <string name="on_device_ai_import_failed">Šis failas nėra palaikomas Gemma 4 modelio failas.</string>
-    <string name="pref_on_device_ai_timeout">Atsakymų terminas</string>
+    <string name="pref_on_device_ai_timeout">Atsakymų laiko riba</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly nustoja laukti po tiek laiko. Apibūdinti ekraną užtrunka ilgiau nei aprašyti vaizdą.</string>
     <string name="on_device_ai_choose_timeout">Atsakymų laiko riba</string>
     <plurals name="on_device_ai_timeout_minutes">
@@ -72,7 +72,7 @@
     <string name="on_device_ai_metered_message">Modelis užima kelis gigabaitus. Geriau naudoti Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Atsisiųsti</string>
     <string name="on_device_ai_cancel">Atšaukti</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">Nepaisykite įrenginio AI atminties apribojimų</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">Nepaisyti įrenginio AI atminties apribojimų</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Leidžia pasirinkti modelį, kuriam reikia daugiau atminties nei turi šis telefonas, ir įkelti jį netikrindami, ar yra laisvos atminties, kad patikrintumėte, kas nutinka, kai Android jį sustabdo.</string>
     <string name="on_device_ai_not_enough_memory">Nepakanka laisvos atminties %1$s. Uždarykite kai kurias programas arba pasirinkite mažesnį modelį įrenginio AI nustatymuose.</string>
     <string name="on_device_ai_stopped">%1$s sustojo, tikriausiai todėl, kad pritrūko telefono atminties. Įrenginio AI nustatymuose pasirinkite mažesnį modelį.</string>

@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">API යතුරක් නොමැතිව මෙම දුරකථනයේ ආකෘතියක් සහිත රූපය විස්තර කර තිරය විස්තර කරන්න</string>
     <string name="pref_on_device_ai_enable">උපාංගයේ AI භාවිතා කරන්න</string>
     <string name="pref_on_device_ai_enable_summary">පින්තූර සහ තිරපිටපත් මෙම දුරකථනයේ විස්තර කර ඇති අතර කිසි විටෙක Google වෙත යවනු නොලැබේ. එය වලාකුළට වඩා මන්දගාමී වන අතර වැඩි බැටරියක් භාවිතා කරයි.</string>
-    <string name="pref_on_device_ai_enable_needs_model">මුලින්ම ආකෘතියක් බාගත කරන්න හෝ ආනයනය කරන්න.</string>
+    <string name="pref_on_device_ai_enable_needs_model">මුලින්ම මොඩලයක් බාගත කරන්න හෝ ආයාත කරන්න.</string>
     <string name="pref_on_device_ai_unsupported_cpu">ලද නොහැක. මෙම දුරකථනයේ 64-bit ARM ප්‍රොසෙසරයක් නොමැත.</string>
     <string name="pref_on_device_ai_not_enough_ram">මෙම ආකෘතිය සඳහා ලබා ගත නොහැක. මෙම දුරකථනයට ප්‍රමාණවත් මතකයක් නොමැත.</string>
     <string name="pref_on_device_ai_model">ආකෘතිය</string>
@@ -25,11 +25,11 @@
     <string name="on_device_ai_announce_progress">බාගත කරමින්, සියයට %1$d</string>
     <string name="on_device_ai_announce_done">ආකෘතිය බාගත කර ඇත</string>
     <string name="on_device_ai_notification_channel">උපාංගයේ AI බාගැනීම</string>
-    <string name="on_device_ai_notification_downloading">ආකෘතිය බාගත කරමින්, %1$d%%</string>
-    <string name="on_device_ai_notification_done">ආකෘතිය බාගත කර ඇත. සැකසීම් තුළ උපාංගයේ AI ක්‍රියාත්මක කරන්න.</string>
+    <string name="on_device_ai_notification_downloading">මොඩලය බාගත කරමින්, %1$d%%</string>
+    <string name="on_device_ai_notification_done">මොඩලය බාගත විය. සැකසීම් තුළ උපාංගයේ AI ක්‍රියාත්මක කරන්න.</string>
     <string name="on_device_ai_notification_failed">බාගැනීම අසාර්ථක විය. නැවත උත්සාහ කිරීමට සැකසීම් විවෘත කරන්න.</string>
     <string name="on_device_ai_notification_paused">Android බාගැනීම විරාම කරන ලදී. කරගෙන යාමට සැකසුම් විවෘත කරන්න.</string>
-    <string name="pref_on_device_ai_importing">ආකෘති ගොනුව පරීක්ෂා කිරීම</string>
+    <string name="pref_on_device_ai_importing">මොඩල ගොනුව පරීක්ෂා කරමින්</string>
     <string name="pref_on_device_ai_manage">ආකෘති කළමනාකරණය කරන්න</string>
     <string name="pref_on_device_ai_manage_none">ආකෘති කිසිවක් බාගත කර නැත</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">මෙය %1$s නිදහස් කරයි. ඔබට එය පසුව බාගත කළ හැක.</string>
     <string name="manage_models_delete">මකන්න</string>
     <string name="manage_models_deleted">%1$s මකන ලදී</string>
-    <string name="pref_on_device_ai_import">ගබඩාවෙන් ආදර්ශ ගොනුවක් භාවිතා කරන්න</string>
+    <string name="pref_on_device_ai_import">ගබඩාවෙන් මොඩල ගොනුවක් භාවිත කරන්න</string>
     <string name="pref_on_device_ai_import_summary">ඔබ දැනටමත් බාගත කර ඇති Gemma 4 ලීටර්lm ගොනුවක් තෝරන්න.</string>
     <string name="on_device_ai_import_done">ආකෘතිය ස්ථාපනය කර ඇත</string>
     <string name="on_device_ai_import_failed">එම ගොනුව සහය දක්වන Gemma 4 මාදිලි ගොනුවක් නොවේ.</string>

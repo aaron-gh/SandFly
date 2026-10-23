@@ -4,7 +4,7 @@
     <string name="summary_pref_on_device_ai">API キーなしで、この携帯電話のモデルで画像と画面の説明を記述します</string>
     <string name="pref_on_device_ai_enable">オンデバイス AI を使用</string>
     <string name="pref_on_device_ai_enable_summary">画像やスクリーンショットはこの携帯電話に記載されており、Google に送信されることはありません。クラウドよりも遅く、バッテリーの消費量も多くなります。</string>
-    <string name="pref_on_device_ai_enable_needs_model">まずモデルをダウンロードまたはインポートします。</string>
+    <string name="pref_on_device_ai_enable_needs_model">まずモデルをダウンロードまたはインポートしてください。</string>
     <string name="pref_on_device_ai_unsupported_cpu">利用不可。この携帯電話には 64 ビット ARM プロセッサが搭載されていません。</string>
     <string name="pref_on_device_ai_not_enough_ram">このモデルでは使用できません。この携帯電話には十分なメモリがありません。</string>
     <string name="pref_on_device_ai_model">モデル</string>
@@ -13,7 +13,7 @@
     <string name="on_device_ai_tag_downloaded">ダウンロード済み</string>
     <string name="on_device_ai_tag_experimental">試験運用</string>
     <string name="on_device_ai_tag_needs_memory">約 %1$d GB のメモリが必要です。</string>
-    <string name="on_device_ai_tag_not_enough_memory">この携帯電話にはメモリが不足しています。</string>
+    <string name="on_device_ai_tag_not_enough_memory">このスマートフォンはメモリが不足しています。</string>
     <string name="on_device_ai_choose_model">モデルを選択</string>
     <string name="on_device_ai_model_too_big">この携帯電話にはそのモデルに対して十分なメモリがありません。</string>
     <string name="pref_on_device_ai_download">モデルをダウンロード (%1$s)</string>
@@ -26,10 +26,10 @@
     <string name="on_device_ai_announce_done">モデルをダウンロードしました</string>
     <string name="on_device_ai_notification_channel">オンデバイス AI ダウンロード</string>
     <string name="on_device_ai_notification_downloading">モデルをダウンロード中、%1$d%%</string>
-    <string name="on_device_ai_notification_done">モデルがダウンロードされました。設定でデバイス上の AI をオンにします。</string>
+    <string name="on_device_ai_notification_done">モデルをダウンロードしました。設定でデバイス上の AI をオンにしてください。</string>
     <string name="on_device_ai_notification_failed">ダウンロードに失敗しました。設定を開いてもう一度試してください。</string>
     <string name="on_device_ai_notification_paused">Android はダウンロードを一時停止しました。続行するには設定を開いてください。</string>
-    <string name="pref_on_device_ai_importing">モデルファイルの確認</string>
+    <string name="pref_on_device_ai_importing">モデル ファイルを確認中</string>
     <string name="pref_on_device_ai_manage">モデルの管理</string>
     <string name="pref_on_device_ai_manage_none">モデルがダウンロードされていません</string>
     <plurals name="on_device_ai_models_downloaded">
@@ -44,7 +44,7 @@
     <string name="manage_models_delete_message">これにより %1$s が解放されます。後で再度ダウンロードできます。</string>
     <string name="manage_models_delete">削除</string>
     <string name="manage_models_deleted">%1$s を削除しました</string>
-    <string name="pref_on_device_ai_import">ストレージからのモデル ファイルを使用する</string>
+    <string name="pref_on_device_ai_import">ストレージのモデル ファイルを使用</string>
     <string name="pref_on_device_ai_import_summary">すでにダウンロードした Gemma 4 litertlm ファイルを選択します。</string>
     <string name="on_device_ai_import_done">モデルをインストールしました</string>
     <string name="on_device_ai_import_failed">そのファイルはサポートされている Gemma 4 モデル ファイルではありません。</string>
