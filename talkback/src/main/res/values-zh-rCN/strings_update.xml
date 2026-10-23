@@ -31,4 +31,9 @@
     <string name="update_install_canceled">更新已取消</string>
     <!-- Toast shown with the settings screen where the user allows SandFly to install apps. [CHAR LIMIT=NONE] -->
     <string name="update_allow_install">请允许 SandFly 安装应用，然后重试更新</string>
+    <string name="summary_pref_check_for_updates_version">版本<xliff:g id="version" example="0.1.0">%1$s</xliff:g>，构建<xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_dev_builds">开发构建</string>
+    <string name="update_already_downloading">更新已经在下载</string>
+    <string name="update_ready_title">SandFly 更新已下载</string>
+    <string name="update_ready_text">点击即可安装。</string>
 </resources>

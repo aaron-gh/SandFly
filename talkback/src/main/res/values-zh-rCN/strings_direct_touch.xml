@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Spoken when direct touch turns on: touches now go straight to the app in front. [CHAR LIMIT=40] -->
     <string name="direct_touch_on">直接触摸已开启</string>
     <!-- Spoken when direct touch turns off: touches go back to the screen reader. [CHAR LIMIT=40] -->
@@ -32,4 +32,10 @@
     <!-- Direct touch settings: shown when the settings could not be saved. [CHAR LIMIT=40] -->
     <!-- Direct touch settings: shown after the settings were loaded from a file. [CHAR LIMIT=40] -->
     <!-- Direct touch settings: shown when the chosen file is not a direct touch backup. [CHAR LIMIT=40] -->
+    <string name="pref_direct_touch_backup">备份设置</string>
+    <string name="pref_direct_touch_restore">恢复设置</string>
+    <string name="direct_touch_backup_done">设置已保存</string>
+    <string name="direct_touch_backup_failed">无法保存设置</string>
+    <string name="direct_touch_restore_done">设置已恢复</string>
+    <string name="direct_touch_restore_failed">无法读取该文件</string>
 </resources>

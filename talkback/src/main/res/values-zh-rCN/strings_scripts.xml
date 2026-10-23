@@ -280,4 +280,19 @@
     <string name="script_source_remove_title">移除 <xliff:g id="name">%1$s</xliff:g>？</string>
     <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
     <string name="script_source_remove_message">从它安装的脚本会保持安装状态。</string>
+    <string name="script_import_summary">.lua 文件，或带有 main.lua 的 .zip</string>
+    <string name="script_permission_java">在每个应用程序中使用所有 SandFly 的访问权限运行 Java 代码</string>
+    <string name="script_binding_type_keys_summary">就像 sf+shift+n, 或 sf+t, s</string>
+    <string name="scripts_auto_update">自动更新脚本</string>
+    <string name="scripts_check_updates">检查更新</string>
+    <string name="scripts_checking_updates">正在检查更新...</string>
+    <string name="scripts_updates_category">更新</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 脚本更新：<xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 脚本更新：<xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">更新列在更新下</string>
+    <string name="scripts_update_check_failed">有些来源无法检查</string>
+    <string name="scripts_up_to_date">所有脚本都是最新的</string>
 </resources>
