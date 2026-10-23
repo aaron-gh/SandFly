@@ -72,7 +72,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     val category =
       AccessibilitySuitePreferenceCategory(context).apply {
         key = "pref_dictation_whisper_models"
-        order = 2
+        order = 3
         setTitle(R.string.title_pref_whisper_models)
       }
     preferenceScreen.addPreference(category)
@@ -136,6 +136,9 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     recognitionPref.summary = recognitionSummary(context)
     googleDownloadPref.title =
       getString(R.string.dictation_google_download, Locale.getDefault().displayLanguage)
+    // Only with a Gemini API key, which Rambler needs.
+    findPreference<Preference>(DictationSettings.PREF_RAMBLER_LIVE)?.isVisible =
+      DictationSettings.ramblerKey(prefs).isNotEmpty()
     googleDownloadPref.isVisible =
       Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
         DictationSettings.googleInstalled(context) &&

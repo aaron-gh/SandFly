@@ -59,6 +59,8 @@ litertlm = "com.google.ai.edge.litertlm:litertlm-android:0.18.0"
 
 # Cloud services
 volley = "com.android.volley:volley:1.2.1"
+# WebSockets, for Rambler live transcription. 3.12 is the line ML Kit uses.
+okhttp = "com.squareup.okhttp3:okhttp:3.12.13"
 
 # Compose
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
