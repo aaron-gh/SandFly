@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini សោ API</string>
+    <string name="summary_pref_gemini_api_key_built_in">ដោយប្រើសោដែលបានបង្កើតឡើងនៅក្នុងកម្មវិធីនេះ</string>
+    <string name="gemini_api_key_dialog_message">ទទួលបានសោ API ឥតគិតថ្លៃពី Google AI Studio នៅ aistudio.google.com/apikey ហើយបិទភ្ជាប់វានៅទីនេះ។ ដើម្បីដកសោរបស់អ្នក សម្អាតវាល ហើយរក្សាទុក។\n\nរូបភាព និងអេក្រង់ដែលអ្នកពណ៌នាត្រូវបានផ្ញើទៅ Google។ នៅលើកម្រិតឥតគិតថ្លៃ Googleអាចប្រើពួកវាដើម្បីកែលម្អផលិតផលរបស់វា។</string>
+    <string name="gemini_api_key_hint">សោ API</string>
+    <string name="gemini_api_key_save">រក្សាទុក</string>
+    <string name="gemini_api_key_get">ទទួលបានកូនសោមួយ។</string>
+    <string name="title_pref_gemini_model">Gemini ម៉ូដែល</string>
+    <string name="gemini_model_automatic">ស្វ័យប្រវត្តិ</string>
+    <string name="summary_pref_gemini_model_automatic">ស្វ័យប្រវត្តិ៖ Gemini Flash បន្ទាប់មក Flash-Lite នៅពេល Flash រវល់</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> បន្ទាប់មក Flash-Lite នៅពេលដែលវារវល់</string>
+    <string name="gemini_model_loading">ទទួលបានម៉ូដែល…</string>
+    <string name="gemini_model_list_failed">មិនអាចទទួលបានម៉ូដែល៖ <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">កំណត់សោ API Geminiជាមុនសិន</string>
+    <string name="gemini_api_terms_link">Gemini លក្ខខណ្ឌប្រើប្រាស់បន្ថែម API</string>
+    <string name="ai_service_address_hint">អាស័យដ្ឋានដូចជា https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">គំរូ</string>
+    <string name="ai_service_address_invalid">អាសយដ្ឋានត្រូវតែចាប់ផ្តើមដោយ https://. គ្មានអ្វីត្រូវបានរក្សាទុកទេ។</string>
+    <string name="dialog_message_ai_service_consent">រូបភាព និងរូបថតអេក្រង់ត្រូវបានផ្ញើទៅ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ដើម្បីពិពណ៌នា ដែលចំណាយពេលច្រើនវិនាទី។ លក្ខខណ្ឌផ្ទាល់ខ្លួន និងគោលការណ៍ឯកជនភាពត្រូវបានអនុវត្ត។ Generative AI គឺជាការពិសោធន៍ ដូច្នេះវានឹងធ្វើឱ្យមានកំហុស។</string>
+    <string name="ai_service_error_api_key">សេវាកម្ម AI មិនទទួលយកសោ API ទេ។ ពិនិត្យការកំណត់របស់វានៅក្នុងការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
+    <string name="ai_service_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សេវាកម្ម AI ត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
+    <string name="ai_service_error_busy">សេវា AI រវល់នៅពេលនេះ។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>
+    <string name="ai_service_error_timeout">សេវាកម្ម AI ចំណាយពេលយូរពេកក្នុងការឆ្លើយ។ ព្យាយាមម្តងទៀត។</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">គ្មាន</string>
+    <string name="ai_service_not_set_up">គ្មានសេវា AI កំពុងប្រើប្រាស់ទេ។ ដំឡើងមួយ ឬជ្រើសរើសមួយនៅក្នុងការកំណត់ការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
+    <string name="ai_provider_none_set_up">មិនមានសេវាកម្ម AI ត្រូវបានតំឡើងទេ។ ដំឡើងមួយនៅក្នុងការកំណត់របស់វាខាងក្រោម។</string>
+    <string name="ai_provider_other">សេវាកម្មផ្សេងទៀត។</string>
+    <string name="title_pref_category_ai_services">សេវាកម្ម AI</string>
+    <string name="title_pref_ai_provider">សេវាកម្ម AI</string>
+    <string name="title_ai_provider_settings">ការកំណត់<xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> មិនបានដំឡើង</string>
+    <string name="ai_provider_in_use">កំពុងប្រើ</string>
+    <string name="ai_provider_not_set_up">មិនបានដំឡើង</string>
+    <string name="ai_provider_not_ready">ជ្រើសរើសម៉ូដែលជាមុនសិន</string>
+    <string name="ai_provider_address">អាស័យដ្ឋាន</string>
+    <string name="ai_provider_address_message">អាសយដ្ឋាននៃសេវាកម្មដែលមាន OpenAI ឆបគ្នា API ជជែក និងការបញ្ចូលរូបភាព ដូចជា https://example.com/v1.</string>
+    <string name="ai_provider_not_set">មិនបានកំណត់</string>
+    <string name="ai_provider_set">បានកំណត់រចនាសម្ព័ន្ធ</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> សោ API</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ម៉ូដែល</string>
+    <string name="ai_provider_choose_model">មិនត្រូវបានជ្រើសរើស</string>
+    <string name="ai_provider_key_message">បិទភ្ជាប់ <xliff:g id="service" example="Claude">%1$s</xliff:g> សោ API របស់អ្នក។ ដើម្បីលុបវាចេញ សូមសម្អាតវាល ហើយរក្សាទុក។ រូបភាព និងអេក្រង់ដែលអ្នកពណ៌នាត្រូវបានផ្ញើទៅ <xliff:g id="service" example="Claude">%1$s</xliff:g>។</string>
+    <string name="ai_provider_needs_key">កំណត់សោ API <xliff:g id="service" example="Claude">%1$s</xliff:g>ជាមុនសិន</string>
+    <string name="ai_provider_needs_address">កំណត់អាសយដ្ឋានជាមុន</string>
+    <string name="ai_provider_enter_model">បញ្ចូលឈ្មោះម៉ូដែល</string>
+</resources>

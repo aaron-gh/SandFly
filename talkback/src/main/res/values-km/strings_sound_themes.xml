@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">ប្រធានបទសំឡេង</string>
+    <string name="summary_pref_sound_themes">ដំឡើង និងជ្រើសរើសសំណុំសំឡេង និងរំញ័រ ជំនួសសំឡេងតែមួយដោយខ្លួនអ្នក ហើយបើកសំឡេងបញ្ជា និងរំញ័រ និងអូឌីយ៉ូ 3D។</string>
+    <string name="sound_themes_installed_category">ស្បែកដែលបានដំឡើង</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">សំឡេង និងរំញ័រផ្ទាល់ខ្លួនរបស់ SandFly និងសំឡេងណាមួយរបស់អ្នកផ្ទាល់។</string>
+    <string name="sound_theme_in_use">កំពុងប្រើ</string>
+    <string name="sound_theme_by">ដោយ <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">អាជ្ញាប័ណ្ណ៖ <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> សំឡេង។</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> សំឡេង។</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> រំញ័រ។</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> រំញ័រ។</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">បើកការបញ្ជាសំឡេង និងរំញ័រ។</string>
+    <string name="sound_theme_control_sounds_off">បិទសំឡេងបញ្ជា និងរំញ័រ។</string>
+    <string name="sound_theme_use">ប្រើប្រធានបទនេះ។</string>
+    <string name="sound_theme_about">អំពីប្រធានបទនេះ។</string>
+    <string name="sound_theme_export">រក្សាទុកជាឯកសារប្រធានបទ</string>
+    <string name="sound_theme_remove">ដកចេញ</string>
+    <string name="sound_theme_remove_confirm">លុបប្រធានបទ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">ដកចេញ</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">បានរក្សាទុកប្រធានបទដោយមាន <xliff:g id="count" example="1">%d</xliff:g> សំឡេង។</item>
+        <item quantity="other">បានរក្សាទុកប្រធានបទដោយមាន <xliff:g id="count" example="13">%d</xliff:g> សំឡេង។</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly មិនអាចរក្សាទុកឯកសារស្បែកបានទេ។</string>
+    <string name="sound_theme_no_picker">មិនមានកម្មវិធីនៅលើឧបករណ៍នេះដើម្បីជ្រើសរើសឯកសារជាមួយទេ។</string>
+    <string name="sound_theme_settings_category">ការកំណត់ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">សំឡេង</string>
+    <string name="summary_pref_theme_sounds">ជំនួសសំឡេងណាមួយនៃប្រធានបទនេះជាមួយនឹងឯកសារសំឡេងផ្ទាល់ខ្លួនរបស់អ្នក។</string>
+    <string name="sound_themes_install_category">ដំឡើងប្រធានបទ</string>
+    <string name="title_pref_sound_theme_install_file">ពីឯកសារមួយ។</string>
+    <string name="summary_pref_sound_theme_install_file">ឯកសារប្រធានបទគឺជាឯកសារ ZIP ។ អ្នកក៏អាចបើកមួយ ឬចែករំលែកវាជាមួយ SandFly ពីកម្មវិធីមួយផ្សេងទៀត។</string>
+    <string name="title_pref_sound_theme_install_link">ពីតំណ</string>
+    <string name="summary_pref_sound_theme_install_link">តំណភ្ជាប់ទៅកាន់ឯកសារប្រធានបទ ឬទៅកាន់ឃ្លាំង GitHub ដែលមានរូបរាងនៅក្នុងនោះ។ អ្នកក៏អាចចែករំលែកតំណជាមួយ SandFly ពីកម្មវិធីរុករករបស់អ្នកផងដែរ។</string>
+    <string name="title_pref_sound_theme_install_source">ពីប្រភពមួយ។</string>
+    <string name="summary_pref_sound_theme_install_source">ឯកសារស្បែកនៅក្នុងឃ្លាំងនៅលើ GitHub, GitLab, Codeberg, Gitea ឬ Bitbucket ។</string>
+    <string name="sound_theme_sources">ប្រភពប្រធានបទសំឡេង</string>
+    <string name="sound_theme_source_empty">មិនមានប្រធានបទសំឡេងនៅក្នុងប្រភពនេះទេ។</string>
+    <string name="sound_theme_source_failed">មិនអាចផ្ទុករូបរាងសំឡេង។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">រូបរាងសំឡេងដែលបានដំឡើងពីវាបន្តដំឡើង។</string>
+    <string name="sound_theme_link_message">បញ្ចូល ឬបិទភ្ជាប់តំណទៅឯកសារប្រធានបទ ឬទៅកាន់ឃ្លាំង GitHub ដែលមានរូបរាងនៅក្នុងវា។</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">ដំឡើងប្រធានបទសំឡេង</string>
+    <string name="sound_theme_install_reading">ការអានប្រធានបទសំឡេង</string>
+    <string name="sound_theme_install_title">ដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">ដំឡើងនិងប្រើប្រាស់</string>
+    <string name="sound_theme_install">ដំឡើង</string>
+    <string name="sound_theme_install_replaces">វាជំនួសប្រធានបទដែលបានដំឡើងដែលមានឈ្មោះដូចគ្នា។</string>
+    <string name="sound_theme_install_skipped">នៅសល់៖\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។</string>
+    <string name="sound_theme_installed_in_use">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។ វាត្រូវបានប្រើឥឡូវនេះ។</string>
+    <string name="sound_theme_install_nothing">មិនមានរូបរាងសំឡេងដើម្បីដំឡើងទេ។</string>
+    <string name="sound_theme_install_not_a_theme">នេះមិនមែនជាប្រធានបទសំឡេងទេ SandFlyអាចប្រើ៖ <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>។</string>
+    <string name="sound_theme_install_failed">SandFly មិនអាចដំឡើងរូបរាងសំឡេងបានទេ។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">តំណភ្ជាប់ទៅកាន់ស្បែកសំឡេងត្រូវតែចាប់ផ្តើមដោយ https ។</string>
+    <string name="title_pref_theme_sounds_of">សំឡេង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">ប្រើសំឡេងរបស់ SandFly សម្រាប់ទាំងអស់គ្នា</string>
+    <string name="theme_sounds_reset_confirm">លុបសំឡេងទាំងអស់នៃរចនាប័ទ្មនេះ ហើយប្រើ SandFly ផ្ទាល់ខ្លួនមែនទេ?</string>
+    <string name="theme_sounds_reset_button">ដកចេញ</string>
+    <string name="theme_sounds_category">សំឡេង</string>
+    <string name="theme_sound_summary_default">សំឡេង SandFly</string>
+    <string name="theme_sound_summary_custom">សំឡេងប្រធានបទ</string>
+    <string name="theme_sound_summary_none">គ្មានសំឡេង។ សំឡេងផ្តោតអារម្មណ៍លេង។</string>
+    <string name="theme_sound_summary_android_keyboard">សំឡេងក្តារចុចរបស់ Android</string>
+    <string name="theme_sound_use_android_keyboard">ប្រើសំឡេងក្តារចុចរបស់ Android</string>
+    <string name="theme_sound_braille_character">ក្ដារចុចអក្សរស្ទាប៖ វាយតួអក្សរ</string>
+    <string name="theme_sound_braille_space">ក្ដារចុចអក្សរស្ទាប៖ ចន្លោះ</string>
+    <string name="theme_sound_braille_delete">ក្ដារចុចអក្សរស្ទាប៖ លុប</string>
+    <string name="theme_sound_braille_new_line">ក្ដារចុចអក្សរស្ទាប៖ បន្ទាត់ថ្មី។</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">ជ្រើសរើសឯកសារសំឡេង</string>
+    <string name="theme_sound_preview">មើលសាក</string>
+    <string name="theme_sound_none">គ្មានសំឡេង</string>
+    <string name="theme_sound_summary_no_sound">គ្មានសំឡេង</string>
+    <string name="theme_sound_action_set_none">កំណត់ទៅគ្មានសំឡេង</string>
+    <string name="theme_sound_use_default">ប្រើសំឡេងរបស់ SandFly</string>
+    <string name="theme_sound_remove">ដកសំឡេងចេញ</string>
+    <string name="theme_sound_too_large">ឯកសារនោះធំពេក។ សំឡេងអាចមានទំហំរហូតដល់ 5 MB។</string>
+    <string name="theme_sound_not_audio">SandFly មិនអាចលេងឯកសារនោះបានទេ។ ជ្រើសរើសសំឡេង WAV, OGG, MP3 ឬ FLAC ។</string>
+    <string name="theme_sound_failed">SandFly មិនអាចអានឯកសារនោះបានទេ។</string>
+</resources>
