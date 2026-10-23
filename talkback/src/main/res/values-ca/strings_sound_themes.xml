@@ -81,4 +81,10 @@
     <string name="theme_sound_too_large">El fitxer és massa gran. Un so pot ocupar 5 MB com a màxim.</string>
     <string name="theme_sound_not_audio">SandFly no pot reproduir aquest fitxer. Tria un so WAV, OGG, MP3 o FLAC.</string>
     <string name="theme_sound_failed">SandFly no ha pogut llegir aquest fitxer.</string>
+    <string name="title_pref_sound_theme_install_source">D\'una font</string>
+    <string name="summary_pref_sound_theme_install_source">Fitxers de tema en un dipòsit a GitHub, GitLab, Codeberg, Gitea o Bitbucket.</string>
+    <string name="sound_theme_sources">Fonts de temes sonors</string>
+    <string name="sound_theme_source_empty">No hi ha temes sonors en aquesta font</string>
+    <string name="sound_theme_source_failed">No s\'han pogut carregar els temes de so. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Els temes de so instal·lats des d\'ell es mantenen instal·lats.</string>
 </resources>

@@ -138,4 +138,17 @@
     <string name="script_source_remove">Suprimeix la font</string>
     <string name="script_source_remove_title">Vols suprimir <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Els scripts instal·lats des d\'aquesta font continuen instal·lats.</string>
+    <string name="scripts_auto_update">Actualitza els scripts automàticament</string>
+    <string name="scripts_check_updates">Cerca actualitzacions</string>
+    <string name="scripts_checking_updates">S\'estan buscant actualitzacions...</string>
+    <string name="scripts_updates_category">Actualitzacions</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script actualitzat: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scripts actualitzats: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts actualitzats: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Les actualitzacions es mostren a Actualitzacions</string>
+    <string name="scripts_update_check_failed">Algunes fonts no s\'han pogut comprovar</string>
+    <string name="scripts_up_to_date">Tots els guions estan actualitzats</string>
 </resources>
