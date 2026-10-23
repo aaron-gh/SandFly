@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granulär redigering</string>
+    <string name="granular_editing_split_by">Dela upp efter: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Dela av</string>
+    <string name="granular_editing_characters">Tecken</string>
+    <string name="granular_editing_words">Ord</string>
+    <string name="granular_editing_sentences">Meningar</string>
+    <string name="granular_editing_lines">Rader</string>
+    <string name="granular_editing_paragraphs">Stycken</string>
+    <string name="granular_editing_space">Blanksteg</string>
+    <string name="granular_editing_new_line">Ny rad</string>
+    <string name="granular_editing_tab">Tab-tecken</string>
+    <string name="granular_editing_empty">Ingen text. Använd Lägg till text i slutet, i Mer.</string>
+    <string name="granular_editing_edit">Redigera</string>
+    <string name="granular_editing_insert_before">Sätt in före</string>
+    <string name="granular_editing_insert_after">Sätt in efter</string>
+    <string name="granular_editing_delete">Radera</string>
+    <string name="granular_editing_select">Markera</string>
+    <string name="granular_editing_unselect">Avmarkera</string>
+    <string name="granular_editing_selected">Vald</string>
+    <string name="granular_editing_save">Spara</string>
+    <string name="granular_editing_more">Mer</string>
+    <string name="granular_editing_undo">Ångra</string>
+    <string name="granular_editing_redo">Gör om den senaste ångrade redigeringen</string>
+    <string name="granular_editing_find">Sök</string>
+    <string name="granular_editing_find_next">Hitta nästa</string>
+    <string name="granular_editing_replace">Byt ut</string>
+    <string name="granular_editing_replace_with">Byt ut med</string>
+    <string name="granular_editing_replace_all">Byt ut alla</string>
+    <string name="granular_editing_add_at_end">Lägg till text i slutet</string>
+    <string name="granular_editing_clear_selection">Avmarkera all text</string>
+    <string name="granular_editing_cut_selected">Klipp ut den markerade texten</string>
+    <string name="granular_editing_delete_selected">Ta bort markerade</string>
+    <string name="granular_editing_copied">Kopierade</string>
+    <string name="granular_editing_deleted">Raderad</string>
+    <string name="granular_editing_not_found">Hittade inte</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ersatt</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ersatt</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Spara ändringar?</string>
+    <string name="granular_editing_copy_changes">Vill du kopiera den ändrade texten?</string>
+    <string name="granular_editing_discard">Släng</string>
+    <string name="granular_editing_keep_editing">Fortsätt redigera</string>
+    <string name="granular_editing_not_saved">Ej sparad: textfältet är borta. Texten är kopierad.</string>
+    <string name="granular_editing_no_text">Ingen text att redigera</string>
+    <string name="granular_editing_password">Ej tillgängligt i lösenordsfälten</string>
+</resources>

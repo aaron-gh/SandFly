@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Punktskriftstangentbord</string>
   <string name="bd_application_name">Android Tillgänglighet</string>
-  <string name="bd_ime_unavailable_activity_name">Punktskriftstangentbord för TalkBack är inte tillgängligt</string>
-  <string name="bd_ime_disabled_dialog_title">Aktivera punktskriftstangentbord för TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Punktskriftstangentbord för SandFly är inte tillgängligt</string>
+  <string name="bd_ime_disabled_dialog_title">Aktivera punktskriftstangentbord för SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Om du vill skriva med punktskriftsskärmen aktiverar du den i inmatningsinställningarna</string>
   <string name="bd_ime_disabled_dialog_title_positive">Inmatningsinställningar</string>
   <string name="bd_ime_not_default_dialog_title">Byt inmatningsmetod</string>
-  <string name="bd_ime_not_default_dialog_message">Ange punktskriftstangentbordet för TalkBack som inmatningsmetod om du vill fortsätta skriva</string>
+  <string name="bd_ime_not_default_dialog_message">Ange punktskriftstangentbordet för SandFly som inmatningsmetod om du vill fortsätta skriva</string>
   <string name="bd_ime_not_default_dialog_positive">Byt inmatning</string>
   <string name="type_unlabeled">Saknar etikett</string>
   <string name="type_unlabeled_edittext">Namnlös redigeringsruta</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Panorera åt vänster</string>
   <string name="overlay_pan_right_button">Panorera åt höger</string>
   <string name="bd_preferences_title">Punktskriftsskärm</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Aktivera först TalkBack om du vill använda en punktskriftsskärm</string>
-  <string name="bd_preferences_banner_talkback_off_button">Öppna TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Aktivera först SandFly om du vill använda en punktskriftsskärm</string>
+  <string name="bd_preferences_banner_talkback_off_button">Öppna SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Aktivera först Bluetooth om du vill använda en punktskriftsskärm</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Aktivera Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">%s kräver åtkomst till enheter i närheten innan du kan använda en punktskriftsskärm</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Om du vill använda läsläget måste du byta från standardlistan över kortkommandon till den förbättrade listan. Den här ändringen uppdaterar några av kommandona för punktskriftsskärmen.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Inställningar</string>
   <string name="bd_command_change_dialog_title">Vissa kommandon har uppdaterats</string>
-  <string name="bd_command_change_dialog_message">Uppdaterade kommandon i TalkBack:\n\n• Föregående objekt: Tryck på punkterna 1 och 7\n\n• Nästa objekt: Punkterna 4 och 8\n\n• Föregående läsinställning: Punkterna 2, 3, 7 och 8\n\n• Nästa läsinställning: Punkterna 5, 6, 7 och 8</string>
+  <string name="bd_command_change_dialog_message">Uppdaterade kommandon i SandFly:\n\n• Föregående objekt: Tryck på punkterna 1 och 7\n\n• Nästa objekt: Punkterna 4 och 8\n\n• Föregående läsinställning: Punkterna 2, 3, 7 och 8\n\n• Nästa läsinställning: Punkterna 5, 6, 7 och 8</string>
   <string name="bd_preference_braille_contracted">Sammandragen punktskrift</string>
   <string name="bd_preference_braille_uncontracted">Icke-sammandragen punktskrift</string>
   <string name="bd_braille_grade_tips">Om du snabbt vill byta mellan sammandragen och icke-sammandragen på ett punktskriftstangentbord trycker du på blanksteg och punkterna 1, 2, 4 och 5.\n\nKortkommandot fungerar om båda punktskriftsgraderna används i ditt aktuella språk.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Flytta mellan objekt</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systemåtgärder</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Tillbaka, startskärm, aviseringar och annat</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-funktioner</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack-menyer och -inställningar</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-funktioner</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menyer och inställningar</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Punktskriftsinställningar</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Punktskriftsspråk och -inställningar</string>
   <string name="bd_commands_bindings_category_text_editing_title">Textredigering</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Öppna alla appar</string>
   <string name="bd_cmd_toggle_screen_search">Öppna skärmsökning</string>
   <string name="bd_cmd_edit_custom_label">Redigera en anpassad etikett</string>
-  <string name="bd_cmd_open_talkback_menu">Öppna TalkBack-menyn</string>
-  <string name="bd_cmd_toggle_voice_feedback">Aktivera eller inaktivera TalkBack-tal</string>
+  <string name="bd_cmd_open_talkback_menu">Öppna SandFly-menyn</string>
+  <string name="bd_cmd_toggle_voice_feedback">Aktivera eller inaktivera SandFly-tal</string>
   <string name="bd_cmd_read_stop">Sluta läsa</string>
-  <string name="bd_cmd_talkback_settings">Öppna inställningarna för TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Öppna inställningarna för SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Byt till nästa språk för inmatning</string>
   <string name="bd_cmd_switch_to_next_output_language">Byt till nästa språk för utmatning</string>
   <string name="bd_cmd_toggle_contracted_mode">Växla mellan kortskrift och fullskrift</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Du kan snabbt navigera på webbsidor med kommandot för att aktivera läsläget och sedan skriva följande bokstavs- eller siffergenvägar\n\nDu kan även använda genvägarna utan läsläget, men då måste du lägga till punkt 8 i kommandona för nästa</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabellnavigering</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Vill du inaktivera inställningen för punktskriftsskärmen?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan aktivera den igen när du vill i inställningarna för TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Du kan aktivera den igen när du vill i inställningarna för SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Inaktivera</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Vissa kommandon är inte tillgängliga</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandon för navigering, punktskriftsinställningar och vissa TalkBack-funktioner är inte tillgängliga när du skriver eller redigerar.\n\nStäng tangentbordet för att använda dem.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Kommandon för navigering, punktskriftsinställningar och vissa SandFly-funktioner är inte tillgängliga när du skriver eller redigerar.\n\nStäng tangentbordet för att använda dem.</string>
   <string name="bd_caption_tutorial_dialog_title">Textning på punktskriftsskärmen</string>
   <string name="bd_caption_tutorial_dialog_message">Se eller dölj textning för videon genom att trycka på mellanslag och punkterna 1, 4, 7, 8.\n\nOm du vill se textning automatiskt aktiverar du Visa textning på punktskriftsskärmen i inställningarna.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Visa alltid det här meddelandet när textning är tillgänglig</string>
   <string name="bd_usb_connect_dialog_title">Punktskriftsskärmen har anslutits till USB</string>
-  <string name="bd_usb_connect_dialog_message">Punktskriftsskärmen laddas med batteriet på %s.\n\nOm du vill byta till Bluetooth kopplar du från USB-enheten eller USB-hubben och öppnar inställningarna för TalkBack &gt; Punktskriftsskärm.</string>
+  <string name="bd_usb_connect_dialog_message">Punktskriftsskärmen laddas med batteriet på %s.\n\nOm du vill byta till Bluetooth kopplar du från USB-enheten eller USB-hubben och öppnar inställningarna för SandFly &gt; Punktskriftsskärm.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Låg batterinivå på %s</string>
   <string name="bd_battery_low_dialog_message">Punktskriftsskärmen laddas med batteriet på %s.\n\nGör så här för att spara batteri:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Rensa alla</string>
   <string name="popup_message_history_empty">Tom</string>
   <string name="popup_message_history_consent_dialog_title">Vill du aktivera enhetens meddelandehistorik?</string>
-  <string name="popup_message_history_consent_dialog_msg">Detta lagrar vissa meddelanden, som aviseringar och larm, i TalkBack. Du kan ändra den här inställningen när som helst.</string>
+  <string name="popup_message_history_consent_dialog_msg">Detta lagrar vissa meddelanden, som aviseringar och larm, i SandFly. Du kan ändra den här inställningen när som helst.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aktivera</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nej tack</string>
+    <string name="external_display_channel">Punktskriftsskärmar från andra appar</string>
+    <string name="external_display_ask_title">Vill du tillåta att <xliff:g id="app" example="Notetaker">%1$s</xliff:g> är en punktskriftsskärm för SandFly?</string>
+    <string name="external_display_ask_text">SandFly kommer inte att använda det förrän du tillåter det.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> kommer att kunna läsa allt SandFly visas i punktskrift, vilket kan vara vad som helst på skärmen, inklusive meddelanden och vad du skriver. Den kommer också att kunna styra din enhet som du kan med en punktskriftsskärm: skriv, öppna appar och kör valfritt SandFly-kommando. Tillåt bara appar du litar på.</string>
+    <string name="external_display_allow">Tillåt</string>
+    <string name="external_display_deny">Tillåt inte</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> är din punktskriftsskärm</string>
+    <string name="external_display_in_use_text">Medan SandFly använder det kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> läsa skärmen och styra enheten.</string>
+    <string name="external_displays_title">Visar från andra appar</string>
+    <string name="external_displays_summary">Appar som du tillåter kan vara punktskriftsskärmar för SandFly. En app som är en punktskriftsskärm kan läsa skärmen och styra enheten.</string>
+    <string name="external_displays_none">Inga appar kan vara punktskriftsskärmar.</string>
 </resources>

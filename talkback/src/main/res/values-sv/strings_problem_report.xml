@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Skicka feedback</string>
+    <string name="title_pref_problem_report_type">Typ av feedback</string>
+    <string name="title_pref_problem_report_area">Område</string>
+    <string name="title_pref_problem_report_title">Titel</string>
+    <string name="title_pref_problem_report_app">App där det händer</string>
+    <string name="title_pref_problem_report_description">Beskrivning</string>
+    <string name="dialog_message_problem_report_description">Vad händer och vad du förväntade dig.</string>
+    <string name="title_pref_problem_report_steps">Steg för att återskapa mjukvaruproblemet</string>
+    <string name="title_pref_problem_report_email">Maila för svar</string>
+    <string name="title_pref_problem_report_device">Inkludera enhetsinformation</string>
+    <string name="title_pref_problem_report_log">Inkludera SandFly-logg</string>
+    <string name="summary_pref_problem_report_log">Kan innehålla text från skärmen</string>
+    <string name="title_pref_problem_report_send">Skicka</string>
+    <string name="summary_pref_problem_report_sending">Skickar</string>
+    <string name="problem_report_missing_fields">Ange en titel och en beskrivning.</string>
+    <string name="problem_report_invalid_email">Ange en giltig e-postadress.</string>
+    <string name="problem_report_sent">Feedback har skickats.</string>
+    <string name="problem_report_rate_limited">För mycket feedback har skickats. Försök igen senare.</string>
+    <string name="problem_report_no_connection">Feedback har inte skickats. Kontrollera internetanslutningen.</string>
+    <string name="problem_report_not_sent">Feedback har inte skickats. Försök igen senare.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Felaktigt beteende</item>
+        <item>Krasch</item>
+        <item>Långsamt eller svarar inte</item>
+        <item>Förslag</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Tal</item>
+        <item>Rörelser</item>
+        <item>Beröringsutforskning</item>
+        <item>Läskontroller och menyer</item>
+        <item>Skrivning och tangentbord</item>
+        <item>Punktskriftstangentbord</item>
+        <item>Punktskriftsskärm</item>
+        <item>Ljud och vibrationer</item>
+        <item>Aviseringar</item>
+        <item>Webbinnehåll</item>
+        <item>Manus</item>
+        <item>Inställningar</item>
+        <item>Uppdateringar</item>
+        <item>Annat</item>
+    </string-array>
+    <string name="title_report_new">Skicka feedback</string>
+    <string name="title_report_inbox">Inkorg</string>
+    <string name="title_report_drafts">Utkast</string>
+    <string name="report_inbox_empty">Ingen feedback har skickats</string>
+    <string name="report_drafts_empty">Inga utkast</string>
+    <string name="report_just_now">just nu</string>
+    <string name="report_untitled">Namnlös</string>
+    <string name="report_draft_summary">Ändrade <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">skickade <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nytt svar</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nya svar</item>
+    </plurals>
+    <string name="report_status_changed">status ändrad</string>
+    <string name="report_status_open">Öppen fråga</string>
+    <string name="report_status_completed">Stängd, klar</string>
+    <string name="report_status_not_planned">Stängt, inte planerat</string>
+    <string name="report_status_duplicate">Stängd, dubblett</string>
+    <string name="report_status_unknown">Borttagen</string>
+    <string name="title_report_status">Status</string>
+    <string name="title_report_your_report">Din feedback</string>
+    <string name="title_report_messages">Meddelanden</string>
+    <string name="report_message_from_developer">Utvecklare, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Du, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Svara</string>
+    <string name="title_report_reply_text">Ditt svar</string>
+    <string name="title_report_send_reply">Skicka svar</string>
+    <string name="report_reply_sent">Svar skickat.</string>
+    <string name="report_reply_not_sent">Svar ej skickat. Försök igen senare.</string>
+    <string name="title_report_remove">Ta bort från inkorgen</string>
+    <string name="dialog_title_report_remove">Vill du ta bort denna feedback från inkorgen?</string>
+    <string name="dialog_message_report_remove">Svar på den kommer inte längre att nå den här telefonen.</string>
+    <string name="title_report_delete_draft">Ta bort utkast</string>
+    <string name="dialog_title_report_delete_draft">Vill du ta bort det här utkastet?</string>
+    <string name="button_report_delete">Radera</string>
+    <string name="report_missing">Denna feedback finns inte längre i inkorgen.</string>
+    <string name="notification_channel_problem_reports">Feedback svarar</string>
+    <string name="report_notification_reply">Svara på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

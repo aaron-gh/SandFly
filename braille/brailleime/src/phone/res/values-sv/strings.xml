@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Punktskriftstangentbord för TalkBack</string>
+  <string name="braille_ime_service_name">Punktskriftstangentbord för SandFly</string>
   <string name="braille_ime_bd_mode_name">Inmatning via punktskriftsskärm</string>
   <string name="switch_to_tabletop_announcement">Bordsläge. Placera enheten med laddningsporten till vänster.</string>
   <string name="calibration_tip_announcement">Håll ned %d fingrar för att uppdatera punktpositionerna.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Du har bytt till icke-sammandragen punktskrift</string>
   <string name="braille_ime_displayed_name">punktskriftstangentbord</string>
   <string name="multiple_languages_braille_ime_displayed_name">punktskriftstangentbord för %s</string>
-  <string name="input_view_caption">Punktskriftstangentbord för TalkBack – besök g.co/help/braille om du behöver hjälp</string>
+  <string name="input_view_caption">Punktskriftstangentbord för SandFly – besök g.co/help/braille om du behöver hjälp</string>
   <string name="perform_action_next">Nästa</string>
   <string name="perform_action_submitting">Texten skickas</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Uppdaterar punktpositionerna. Börja med att registrera punkterna på %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Du kan byta språk när du skriver på punktskriftstangentbordet genom att svepa uppåt med tre fingrar. Välj sedan Byt till nästa språk.</string>
   <string name="title_pref_accumulate_presses">Inkludera alla nedtryckta punkter</string>
   <string name="summary_pref_accumulate_presses">Alla nedtryckta punkter är en del av inmatningen, även om punkten släpps upp före andra punkter</string>
-  <string name="title_pref_reverse_dots">Omvända punkter</string>
-  <string name="summary_pref_reverse_dots">Byt plats på punkterna så att exempelvis punkt 1 och punkt 4 byter plats med varandra</string>
+  <string name="title_pref_reverse_dots">Byt vänster och höger prickar</string>
+  <string name="summary_pref_reverse_dots">Punkterna 1, 2 och 3 byter plats med punkterna 4, 5 och 6</string>
   <string name="bd_preference_braille_contracted">Sammandragen punktskrift</string>
   <string name="bd_preference_braille_uncontracted">Icke-sammandragen punktskrift</string>
   <string name="context_menu_title">Alternativ för 
@@ -102,12 +102,12 @@ punktskrifts-skärmen</string>
   <string name="bk_pref_category_title_keyboard">Tangentbord</string>
   <string name="not_enough_touch_points_dialog_title">Enheten har inte stöd för punktskriftstangentbord</string>
   <string name="not_enough_touch_points_dialog_message">Enheten har inte stöd för tryckpunkter. Kontakta enhetens tillverkare om du vill veta mer.</string>
-  <string name="talkback_off_dialog_title">Aktivera TalkBack för att använda punktskriftstangentbordet</string>
+  <string name="talkback_off_dialog_title">Aktivera SandFly för att använda punktskriftstangentbordet</string>
   <string name="talkback_off_dialog_positive_button">Aktivera tillgänglighetsinställningarna</string>
-  <string name="talkback_suspend_dialog_title">Återuppta TalkBack om du vill använda punktskriftstangentbordet</string>
-  <string name="talkback_off_or_suspend_dialog_message">När TalkBack är på kan du skriva punktskriftstecken genom att trycka på skärmen.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Aktivera TalkBack för att ändra rörelsen</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack är inaktiverat. Aktivera det så ändras rörelserna för punktskriftstangentbordet.</string>
+  <string name="talkback_suspend_dialog_title">Återuppta SandFly om du vill använda punktskriftstangentbordet</string>
+  <string name="talkback_off_or_suspend_dialog_message">När SandFly är på kan du skriva punktskriftstecken genom att trycka på skärmen.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Aktivera SandFly för att ändra rörelsen</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly är inaktiverat. Aktivera det så ändras rörelserna för punktskriftstangentbordet.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Öppna Inställningar</string>
   <string name="reset_gestures_dialog_title">Vill du återställa alla rörelser?</string>
   <string name="reset_gestures_dialog_message">Alla rörelser för punktskriftstangentbordet återställs till standardinställningarna</string>
@@ -122,7 +122,7 @@ punktskrifts-skärmen</string>
   <string name="custom_gestures_dialog_reset_to_default_button">Återställ standardinställningarna</string>
   <string name="custom_gestures_dialog_remove_button">Ta bort rörelse</string>
   <string name="change_gestures_dialog_message_title">Så här ändrar du en rörelse</string>
-  <string name="change_gestures_dialog_message">På nästa skärm öppnas punktskriftstangentbordet och då kan du inte använda TalkBack-rörelser.\n\nNär punktskriftstangentbordet öppnas utför du avsedd rörelse. Om du vill stänga punktskriftstangentbordet och avbryta ändringen av rörelsen sveper du nedåt med två fingrar.\n\nSe tillgängliga rörelser\n</string>
+  <string name="change_gestures_dialog_message">På nästa skärm öppnas punktskriftstangentbordet och då kan du inte använda SandFly-rörelser.\n\nNär punktskriftstangentbordet öppnas utför du avsedd rörelse. Om du vill stänga punktskriftstangentbordet och avbryta ändringen av rörelsen sveper du nedåt med två fingrar.\n\nSe tillgängliga rörelser\n</string>
   <string name="change_gestures_dialog_message_link">Se tillgängliga rörelser</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Visa inte det här meddelandet igen</string>
   <string name="change_gestures_dialog_positive_button">Fortsätt</string>
@@ -134,11 +134,11 @@ punktskrifts-skärmen</string>
   <string name="mirrored_gesture_dialog_conflict_negative_button">Använd inte</string>
   <string name="next_keyboard">Nästa tangentbord</string>
   <string name="braille_tutorial_title">Självstudier för punktskriftstangentbord</string>
-  <string name="tutorial_intro_description">Med punktskriftstangentbordet kan du skriva med sexpunkters punktskrift genom att trycka på skärmen.\n\nDu använder Unified English Braille. Om du vill ändra skrivspråk öppnar du TalkBack-inställningarna.\n\nDu måste hålla och använda telefonen på ett annat sätt när du skriver med punktskrift.</string>
+  <string name="tutorial_intro_description">Med punktskriftstangentbordet kan du skriva med sexpunkters punktskrift genom att trycka på skärmen.\n\nDu använder Unified English Braille. Om du vill ändra skrivspråk öppnar du SandFly-inställningarna.\n\nDu måste hålla och använda telefonen på ett annat sätt när du skriver med punktskrift.</string>
   <string name="next_step">Nästa</string>
   <string name="leave_keyboard">Lämna punktskriftstangentbordet</string>
-  <string name="hold_six_fingers_description">Du kan inte använda vanliga TalkBack-rörelser med punktskriftstangentbordet.\n\nKom igång genom att konfigurera positionen för de sex punkterna du använder för att skriva.</string>
-  <string name="rotate_orientation_description_1">Från och med nu kan du inte längre använda de vanliga TalkBack-rörelserna. TalkBack är inte tillgängligt när du använder punktskriftstangentbordet.</string>
+  <string name="hold_six_fingers_description">Du kan inte använda vanliga SandFly-rörelser med punktskriftstangentbordet.\n\nKom igång genom att konfigurera positionen för de sex punkterna du använder för att skriva.</string>
+  <string name="rotate_orientation_description_1">Från och med nu kan du inte längre använda de vanliga SandFly-rörelserna. SandFly är inte tillgängligt när du använder punktskriftstangentbordet.</string>
   <string name="rotate_orientation_description_2">Börja genom att hålla telefonen så här, med skärmen vänd bort från dig.</string>
   <string name="tap_to_continue">Dubbeltryck var som helst för att fortsätta</string>
   <string name="instruction_type_letter_a">Tryck på punkt 1 med vänster pekfinger för att skriva bokstaven A</string>
@@ -156,7 +156,7 @@ punktskrifts-skärmen</string>
   <string name="result_swipe_down">MARKÖREN FLYTTADES FRAMÅT</string>
   <string name="result_swipe_down_2_fingers">DÖLJ TANGENTBORDET</string>
   <string name="result_swipe_down_3_fingers">NÄSTA TANGENTBORD</string>
-  <string name="rotate_orientation_announcement">Från och med nu kan du inte längre använda de vanliga TalkBack-rörelserna. TalkBack är inte tillgängligt när punktskriftstangentbordet används.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Från och med nu kan du inte längre använda de vanliga SandFly-rörelserna. SandFly är inte tillgängligt när punktskriftstangentbordet används.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Först vänder du på telefonen så att skärmen är vänd bort från dig.\n\nSedan roterar du telefonen från stående till liggande läge. Du ska hålla händerna på telefonens kortändar. Håll änden där USB-porten sitter i höger hand. Ha de tre mellersta fingrarna på skärmen och använd lillfingret och tummen som stöd för telefonen.\n\nNär du är redo dubbeltrycker du på skärmen för att fortsätta.\n\nOm du vill stänga punktskriftstangentbordet sveper du ned mot marken med tre fingrar. På så sätt får du tillbaka det ursprungliga tangentbordet.</string>
   <string name="rotate_orientation_continue_announcement">Telefonen är i stående läge. Om du vill fortsätta roterar du telefonen till liggande läge, så att den långa sidan är vänd nedåt. Vänd sedan skärmen bort från dig. När du är redo dubbeltrycker du på skärmen för att fortsätta.</string>
   <string name="type_letter_a_announcement">Håll skärmen bortvänd. Håll i telefonen med båda händerna på kortsidorna, så att de mellersta tre fingrarna på varje hand kan trycka på skärmen.\n\nVänster pekfinger ska vara på punkt 1. Nu trycker du på punkt 1 för att skriva bokstaven A.</string>
@@ -172,7 +172,7 @@ punktskrifts-skärmen</string>
   <string name="swipe_down_3_fingers_announcement">Svep nedåt med tre fingrar om du vill byta till ditt andra tangentbord Testa nu.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Nästa tangentbord. Detta byter vanligtvis till nästa tangentbord. Den här gången har du kvar punktskriftstangentbordet eftersom självstudiematerialet används.</string>
   <string name="swipe_up_3_fingers_announcement">Du kan även skriva i bordsläget genom att lägga telefonen på ett bord. Om du vill avsluta självstudierna sveper du uppåt med tre fingrar och hittar alternativet</string>
-  <string name="open_context_menu_announcement">Alternativmenyn är öppen. Vänd på telefonen igen så att du har skärmen mot dig och håll telefonen som vanligt. Du kan nu använda vanliga TalkBack-rörelser för att navigera. Om du sveper åt höger visas fler alternativ.</string>
+  <string name="open_context_menu_announcement">Alternativmenyn är öppen. Vänd på telefonen igen så att du har skärmen mot dig och håll telefonen som vanligt. Du kan nu använda vanliga SandFly-rörelser för att navigera. Om du sveper åt höger visas fler alternativ.</string>
   <string name="hold_six_fingers_announcement">%s\nLägg enheten på ett bord. Sedan trycker du länge på skärmen med de mellersta tre fingrarna på varje hand i en behaglig skrivposition.</string>
   <string name="hold_six_fingers_inactive_announcement">Lägg enheten på ett bord. Sedan trycker du länge på skärmen med de mellersta tre fingrarna på varje hand i en behaglig skrivposition.</string>
   <string name="finish_tutorial_announcement">Visa punktskriftstangentbordet. Vänd på telefonen så att du har skärmen vänd bort från dig. Rotera telefonen från stående till liggande läge. Börja sedan skriva.</string>
@@ -204,7 +204,38 @@ punktskrifts-skärmen</string>
   <string name="custom_gesture_conflict_try_another">Den här rörelsen används för %1$s och kan inte ändras. Testa en annan rörelse. %2$s</string>
   <string name="custom_gesture_cannot_used">Den här rörelsen kan inte användas</string>
   <string name="custom_gesture_no_gesture">Ingen rörelse utfördes</string>
-  <string name="custom_gesture_try_another">Testa en annan rörelse. Du hittar en lista över alla tillgängliga rörelser i hjälpcentret för TalkBacks punktskriftstangentbord. %s</string>
+  <string name="custom_gesture_try_another">Testa en annan rörelse. Du hittar en lista över alla tillgängliga rörelser i hjälpcentret för SandFlys punktskriftstangentbord. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Rörelserna matchade inte</string>
   <string name="custom_gesture_perform_again">Gör rörelsen du vill använda igen. %s</string>
+    <string name="tabletop_port_left_announcement">Bordsläge, laddningsport till vänster</string>
+    <string name="tabletop_port_right_announcement">Bordsläge, laddningsport till höger</string>
+    <string name="screen_away_port_right_announcement">Skärmbortläge, laddningsport till höger</string>
+    <string name="screen_away_port_left_announcement">Skärmbortläge, laddningsport till vänster</string>
+    <string name="screen_toward_announcement">Skärm mot dig</string>
+    <string name="screen_toward_port_left_announcement">Skärmen mot dig, laddningsporten till vänster</string>
+    <string name="screen_toward_port_right_announcement">Skärmen mot dig, laddningsporten till höger</string>
+    <string name="screen_toward_port_down_announcement">Skärmen mot dig, laddningsporten pekar nedåt</string>
+    <string name="screen_toward_port_up_announcement">Skärmen mot dig, laddningsporten pekar uppåt</string>
+    <string name="port_right_announcement">Laddningsport till höger</string>
+    <string name="port_left_announcement">Laddningsport till vänster</string>
+    <string name="tabletop_port_near_announcement">Bordsläge, laddningsport mot dig</string>
+    <string name="tabletop_port_far_announcement">Bordsläge, laddningsport borta från dig</string>
+    <string name="screen_away_port_down_announcement">Skärmbortläge, laddningsporten pekar nedåt</string>
+    <string name="screen_away_port_up_announcement">Skärmbortläge, laddningsporten pekar uppåt</string>
+    <string name="port_near_announcement">Laddningsport mot dig</string>
+    <string name="port_far_announcement">Laddningsport bort från dig</string>
+    <string name="port_down_announcement">Laddningsporten pekar nedåt</string>
+    <string name="port_up_announcement">Laddningsporten pekar uppåt</string>
+    <string name="orientation_locked_announcement">Orientering låst</string>
+    <string name="orientation_locked_port_announcement">Orientering låst. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientering upplåst</string>
+    <string name="switch_to_language_contracted_announcement">Du har bytt till %s, Sammandragen punktskrift</string>
+    <string name="switch_to_language_uncontracted_announcement">Du har bytt till %s, Icke-sammandragen punktskrift</string>
+    <string name="title_pref_flip_dots_vertically">Byt översta och nedre prickar</string>
+    <string name="summary_pref_flip_dots_vertically">Punkt 1 byter plats med punkt 3 och punkt 4 med punkt 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tabletten höll upp ansiktena bort</string>
+    <string name="summary_pref_tablet_held_up_faces_away">När den är avstängd använder en surfplatta eller utfälld telefon som hålls upp bordsskivans layout, vänd mot dig</string>
+    <string name="title_pref_typing_sounds">Skrivljud</string>
+    <string name="summary_pref_typing_sounds">Spela tangentbordsklick när du skriver ett tecken, ett mellanslag, en ny rad eller raderar</string>
+    <string name="skip_tutorial">Hoppa över tutorial</string>
 </resources>

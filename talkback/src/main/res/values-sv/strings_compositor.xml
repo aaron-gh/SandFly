@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack på</string>
-  <string name="talkback_disabled">TalkBack av</string>
+  <string name="talkback_on">SandFly på</string>
+  <string name="talkback_disabled">SandFly av</string>
   <string name="notification_type_beginning_of_field">Början av fältet</string>
   <string name="notification_type_end_of_field">Slutet av fältet</string>
   <string name="notification_type_selection_mode_on">Markeringsläget har aktiverats</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">Åtgärden att dra har påbörjats</string>
   <string name="drag_dropped">Objektet har dragits och släppts</string>
   <string name="drag_cancelled">Åtgärden att dra avbröts</string>
+    <string name="template_brightness_changed">Ljusstyrka <xliff:g id="percent">%1$d</xliff:g> procent.</string>
+    <string name="brightness_needs_permission">Tillåt modifiera systeminställningar för att ändra ljusstyrkan.</string>
+    <string name="brightness_adaptive_on">Stäng av adaptiv ljusstyrka för att ändra ljusstyrkan.</string>
+    <string name="telegram_replying_to">svarar på <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
