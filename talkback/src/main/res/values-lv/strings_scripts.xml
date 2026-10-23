@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Skripti</string>
+    <string name="summary_pref_scripts">Mainiet, kā SandFly darbojas lietotnēs</string>
+    <string name="script_import">Importēt skriptu</string>
+    <string name="script_install_label">Instalējiet skriptu SandFly</string>
+    <string name="script_import_nothing">Nav instalējamā skripta faila.</string>
+    <string name="script_import_cannot_open">Failu nevarēja atvērt.</string>
+    <string name="script_import_repository">Šī saite ir uz visu repozitoriju. Atveriet vajadzīgo skriptu un pēc tam kopīgojiet tā saiti.</string>
+    <string name="script_import_summary">.lua fails vai .zip ar main.lua</string>
+    <string name="scripts_category_app">Lietotņu skripti</string>
+    <string name="scripts_category_global">Globālie spraudņi</string>
+    <string name="scripts_none">Nav instalēts neviens skripts</string>
+    <string name="scripts_all_off">Izslēdziet visus skriptus</string>
+    <string name="scripts_all_off_summary">Skripti paliek instalēti un saglabā savus slēdžus. Žests Ieslēgt vai izslēgt visus skriptus dara to pašu.</string>
+    <string name="shortcut_toggle_scripts">Ieslēdziet vai izslēdziet visus skriptus</string>
+    <string name="scripts_now_off">Skripti izslēgti</string>
+    <string name="scripts_now_on">Skripti ieslēgti</string>
+    <string name="scripts_unavailable">Skripti šajā ierīcē nav pieejami</string>
+    <string name="script_add_example">Pievienojiet skripta piemēru</string>
+    <string name="script_add_example_summary">Saka katras lietotnes nosaukumu, uz kuru pārslēdzaties. Skripts, no kura sākt.</string>
+    <string name="script_state_on">Ieslēgt</string>
+    <string name="script_state_off">Izslēgt</string>
+    <string name="script_runs_in">Darbojas <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Darbojas visās lietotnēs</string>
+    <string name="script_version">Versija <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Autors <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Vai instalēt <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Tas var:</string>
+    <string name="script_install_no_permissions">Nav nepieciešamas atļaujas.</string>
+    <string name="script_install_button">Instalējiet</string>
+    <string name="script_update_title">Vai atjaunināt <xliff:g id="name">%1$s</xliff:g> uz <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Jaunas atļaujas:</string>
+    <string name="script_update_button">Atjaunināt</string>
+    <string name="script_update_replaces">Tas aizstāj versiju <xliff:g id="version">%1$s</xliff:g> ar <xliff:g id="author">%2$s</xliff:g> un saglabā tās datus un iestatījumus.</string>
+    <string name="script_update_other_author">Jauno autoru ir <xliff:g id="author">%1$s</xliff:g>, cits autors. Atjauniniet tikai tad, ja tam uzticaties.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> instalēta</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atjaunināts uz <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Importēšana neizdevās. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Atļaut tikai uzticamiem skriptiem.</string>
+    <string name="script_permission_screen">Izlasiet ekrānu</string>
+    <string name="script_permission_actions">Noklikšķiniet, ritiniet, ierakstiet un pārvietojiet fokusu</string>
+    <string name="script_permission_speech">Klausieties un mainiet lietotāja SandFly runu</string>
+    <string name="script_permission_passwords">Lasīt paroles laukus</string>
+    <string name="script_permission_input">Pievienojiet žestus, taustiņus, izvēlnes vienumus un lasīšanas vadīklas</string>
+    <string name="script_permission_network">Izmantojiet internetu</string>
+    <string name="script_permission_clipboard">Lasiet un mainiet starpliktuvi</string>
+    <string name="script_permission_system">Dodieties atpakaļ vai mājās, atveriet paziņojumus un lietotnes</string>
+    <string name="script_permission_notifications">Lasiet un mainiet izrunātos paziņojumus</string>
+    <string name="script_permission_events">Skatiet visas darbības katrā lietotnē, tostarp rakstīšanu</string>
+    <string name="script_permission_dialogs">Rādīt dialoglodziņus jebkurā lietotnē</string>
+    <string name="script_permission_java">Palaidiet Java kodu ar visu SandFly piekļuvi katrā lietotnē</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Ieslēgt</string>
+    <string name="script_permissions_title">Atļaujas</string>
+    <string name="script_permissions_none">Nav</string>
+    <string name="script_settings_category">Iestatījumi</string>
+    <string name="script_list_filter">Filtrs</string>
+    <string name="script_button_off">Vispirms ieslēdziet skriptu</string>
+    <string name="script_permissions_summary">Izslēdzot vienu, tiek apturētas daļas, kurām tas ir nepieciešams.</string>
+    <string name="script_install_permissions_note">Varat tos izslēgt vēlāk.</string>
+    <string name="script_manage_category">Pārvaldīt</string>
+    <string name="script_move_up">Skrien agrāk</string>
+    <string name="script_move_down">Skrien vēlāk</string>
+    <string name="script_order_summary">Pasūtiet skriptus, kas maina vienu un to pašu runu. Vispirms tiek palaisti lietotņu skripti.</string>
+    <string name="script_log">Žurnāls</string>
+    <string name="script_log_summary">Izvade un kļūdas kopš SandFly sākuma</string>
+    <string name="script_clear_storage">Notīrīt saglabātos datus</string>
+    <string name="script_storage_cleared">Saglabātie dati ir notīrīti</string>
+    <string name="script_remove">Noņemt</string>
+    <string name="script_remove_title">Vai noņemt <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Dzēš tā kodu, datus un iestatījumus.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> noņemts</string>
+    <string name="script_log_empty">Žurnāls ir tukšs</string>
+    <string name="script_log_clear">Notīrīt žurnālu</string>
+    <string name="script_log_copy">Kopēt žurnālu</string>
+    <string name="script_log_copied">Žurnāls nokopēts</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Nepieciešama skripta API <xliff:g id="needed">%1$d</xliff:g> vai jaunāka versija. Šim SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc daļas var nedarboties.</string>
+    <string name="script_api_untested">Pārbaudīts līdz skripta API <xliff:g id="tested">%1$d</xliff:g>. Šim SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc tas var nedarboties, kā paredzēts.</string>
+    <string name="script_state_incompatible">Var nedarboties ar šo SandFly</string>
+    <string name="script_api_range">Skripta API no <xliff:g id="min">%1$d</xliff:g> līdz <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Saderība</string>
+    <string name="script_install_anyway">Instalējiet jebkurā gadījumā</string>
+    <string name="script_update_anyway">Atjauniniet jebkurā gadījumā</string>
+    <string name="script_homepage">Atvērt mājaslapu</string>
+    <string name="script_homepage_confirm_title">Vai atvērt šo adresi?</string>
+    <string name="script_homepage_open">Atvērt</string>
+    <string name="script_homepage_failed">Neviena lietotne nevar atvērt <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> izslēgts pēc atkārtotām kļūdām. Skatiet tās pieteikšanos skriptos.</string>
+    <string name="shortcut_inspect_item">Pārbaudiet fokusēto vienumu</string>
+    <string name="script_inspect_no_item">Nevienam vienumam nav fokusa</string>
+    <string name="script_inspect_copied">Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nav id, tāpēc noteikumi to nevar nosaukt. Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopēt ekrāna koku</string>
+    <string name="script_tree_copied">Kopēti <xliff:g id="count">%1$d</xliff:g> vienumi</string>
+    <string name="script_tree_none">Nav loga, ko kopēt</string>
+    <string name="script_tree_clip_label">Ekrāna koks</string>
+    <string name="summary_copy_screen_tree_menu">Skriptu rakstīšanai kopējiet visus ekrānā redzamos vienumus kā JSON</string>
+    <string name="script_inspect_clip_label">Preces detaļas</string>
+    <string name="summary_inspect_item_menu">Lai rakstītu skriptus, pasakiet un kopējiet informāciju par vienumu, kuru izmantojāt</string>
+    <string name="script_keys_backtalk_modifier">SandFly modifikators</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pēc tam <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Komandas</string>
+    <string name="script_commands_summary">Darbojošā skripta žesti un taustiņi ir pirms SandFly. Izslēdziet vienu, lai saglabātu SandFly.</string>
+    <string name="script_binding_gesture">Žests: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Taustiņi: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly izvēlne</string>
+    <string name="script_binding_control">Lasīšanas vadīklas</string>
+    <string name="script_binding_none">Nav</string>
+    <string name="script_binding_turn_on">Ieslēgt</string>
+    <string name="script_binding_turn_off">Izslēgt</string>
+    <string name="script_binding_restore">Atjaunot noklusējuma iestatījumus</string>
+    <string name="script_binding_restored">Atjaunoti noklusējuma iestatījumi</string>
+    <string name="script_binding_perform">Veiciet žestu vai taustiņus</string>
+    <string name="script_binding_perform_summary">Piešķiriet nākamo žestu vai nospiestus taustiņus, izmantojot modifikatoru SandFly</string>
+    <string name="script_binding_perform_message">Veiciet žestu vai nospiediet taustiņus.</string>
+    <string name="script_binding_assign_title">Vai piešķirt <xliff:g id="binding">%1$s</xliff:g> ar <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Piešķirt</string>
+    <string name="script_binding_choose_gesture">Izvēlieties žestu</string>
+    <string name="script_binding_type_keys">Ievadiet taustiņus</string>
+    <string name="script_binding_type_keys_summary">Patīk sf+shift+n, vai sf+t, s</string>
+    <string name="script_binding_bad_keys">Nevar izmantot šīs atslēgas. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Tas piebilst:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Skriptu avoti</string>
+    <string name="script_sources_none">Nav pievienots neviens avots</string>
+    <string name="script_source_add">Pievienojiet avotu</string>
+    <string name="script_source_add_button">Pievienot</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Nevis repozitorija adrese GitHub, GitLab, Codeberg, Gitea vai Bitbucket.</string>
+    <string name="script_source_exists">Šis avots jau ir pievienots.</string>
+    <string name="script_source_loading">Notiek ielāde</string>
+    <string name="script_source_empty">Šajā avotā nav skriptu</string>
+    <string name="script_source_failed">Nevarēja ielādēt skriptus. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Mēģiniet vēlreiz</string>
+    <string name="script_source_downloading">Notiek <xliff:g id="name">%1$s</xliff:g> lejupielāde</string>
+    <string name="script_source_remove">Noņemt avotu</string>
+    <string name="script_source_remove_title">Vai noņemt <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">No tā instalētie skripti paliek instalēti.</string>
+    <string name="scripts_auto_update">Automātiski atjauniniet skriptus</string>
+    <string name="scripts_check_updates">Pārbaudiet, vai nav atjauninājumu</string>
+    <string name="scripts_checking_updates">Notiek atjauninājumu pārbaude…</string>
+    <string name="scripts_updates_category">Atjauninājumi</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="zero"><xliff:g id="count" example="2">%1$d</xliff:g> skripti atjaunināti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skripts atjaunināts: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skripti atjaunināti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Atjauninājumi ir norādīti sadaļā Atjauninājumi</string>
+    <string name="scripts_update_check_failed">Dažus avotus nevarēja pārbaudīt</string>
+    <string name="scripts_up_to_date">Visi skripti ir atjaunināti</string>
+</resources>

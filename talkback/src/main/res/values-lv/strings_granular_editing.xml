@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granulēta rediģēšana</string>
+    <string name="granular_editing_split_by">Sadalīts pēc: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Sadalīts ar</string>
+    <string name="granular_editing_characters">Rakstzīmes</string>
+    <string name="granular_editing_words">Vārdi</string>
+    <string name="granular_editing_sentences">Teikumi</string>
+    <string name="granular_editing_lines">Rindiņas</string>
+    <string name="granular_editing_paragraphs">Rindkopas</string>
+    <string name="granular_editing_space">Atstarpe</string>
+    <string name="granular_editing_new_line">Jauna rindiņa</string>
+    <string name="granular_editing_tab">Tabulēšanas rakstzīme</string>
+    <string name="granular_editing_empty">Nav teksta. Izmantojiet Pievienot tekstu beigās sadaļā Vēl.</string>
+    <string name="granular_editing_edit">Rediģēt</string>
+    <string name="granular_editing_insert_before">Ievietojiet pirms</string>
+    <string name="granular_editing_insert_after">Ievietojiet pēc</string>
+    <string name="granular_editing_delete">Dzēst</string>
+    <string name="granular_editing_select">Atlasīt</string>
+    <string name="granular_editing_unselect">Noņemiet atlasi</string>
+    <string name="granular_editing_selected">Atlasīts</string>
+    <string name="granular_editing_save">Saglabāt</string>
+    <string name="granular_editing_more">Vairāk</string>
+    <string name="granular_editing_undo">Atsaukt</string>
+    <string name="granular_editing_redo">Atkārtojiet pēdējo atsaukto labojumu</string>
+    <string name="granular_editing_find">Atrast</string>
+    <string name="granular_editing_find_next">Atrodi nākamo</string>
+    <string name="granular_editing_replace">Aizstāt</string>
+    <string name="granular_editing_replace_with">Aizstāt ar</string>
+    <string name="granular_editing_replace_all">Aizstāt visu</string>
+    <string name="granular_editing_add_at_end">Pievienojiet tekstu beigās</string>
+    <string name="granular_editing_clear_selection">Noņemiet visa teksta atlasi</string>
+    <string name="granular_editing_cut_selected">Izgrieziet atlasīto tekstu</string>
+    <string name="granular_editing_delete_selected">Dzēst atlasīto</string>
+    <string name="granular_editing_copied">Kopēts</string>
+    <string name="granular_editing_deleted">Izdzēsts</string>
+    <string name="granular_editing_not_found">Nav atrasts</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> aizstāts</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> aizstāts</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> aizstāts</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Vai saglabāt izmaiņas?</string>
+    <string name="granular_editing_copy_changes">Vai kopēt mainīto tekstu?</string>
+    <string name="granular_editing_discard">Izmest</string>
+    <string name="granular_editing_keep_editing">Turpiniet rediģēt</string>
+    <string name="granular_editing_not_saved">Nav saglabāts: teksta lauks ir pazudis. Teksts tiek kopēts.</string>
+    <string name="granular_editing_no_text">Nav teksta, ko rediģēt</string>
+    <string name="granular_editing_password">Nav pieejams paroles laukos</string>
+</resources>

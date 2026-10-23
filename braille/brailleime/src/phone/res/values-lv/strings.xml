@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack Braila tastatūra</string>
+  <string name="braille_ime_service_name">SandFly Braila tastatūra</string>
   <string name="braille_ime_bd_mode_name">Ievade ar Braila displeju</string>
   <string name="switch_to_tabletop_announcement">Galda režīms. Novietojiet ierīci tā, lai uzlādes pieslēgvieta būtu vērsta pa kreisi.</string>
   <string name="calibration_tip_announcement">Lai mainītu punktu pozīciju, piespiediet %d pirkstus un turiet.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Veikta pārslēgšanās uz nesaīsināto Braila rakstu</string>
   <string name="braille_ime_displayed_name">Braila tastatūra</string>
   <string name="multiple_languages_braille_ime_displayed_name">Braila tastatūra, %s</string>
-  <string name="input_view_caption">TalkBack Braila tastatūra. Lai saņemtu palīdzību, apmeklējiet vietni g.co/help/braille.</string>
+  <string name="input_view_caption">SandFly Braila tastatūra. Lai saņemtu palīdzību, apmeklējiet vietni g.co/help/braille.</string>
   <string name="perform_action_next">Tālāk</string>
   <string name="perform_action_submitting">Teksta iesniegšana</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Notiek punktu pozīcijas atjaunināšana. Vispirms reģistrējiet %s punktus.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Lai mainītu valodu, kad rakstīšanai izmantojat Braila tastatūru, velciet augšup ar 3 pirkstiem. Pēc tam atlasiet opciju “Pārslēgt uz nākamo valodu”.</string>
   <string name="title_pref_accumulate_presses">Visu nospiesto punktu iekļaušana</string>
   <string name="summary_pref_accumulate_presses">Katrs nospiestais punkts ir ievades daļa, pat ja punkts tiek atlaists pirms citu punktu nospiešanas.</string>
-  <string name="title_pref_reverse_dots">Punktu atpakaļvērstais režīms</string>
-  <string name="summary_pref_reverse_dots">Mainīt punktu pozīciju, lai, piemēram, 1. punkts un 4. punkts mainītos vietām</string>
+  <string name="title_pref_reverse_dots">Mainiet kreiso un labo punktu</string>
+  <string name="summary_pref_reverse_dots">1., 2. un 3. punkts apmaina vietas ar 4., 5. un 6. punktu</string>
   <string name="bd_preference_braille_contracted">Saīsinātais Braila raksts</string>
   <string name="bd_preference_braille_uncontracted">Nesaīsinātais Braila raksts</string>
   <string name="context_menu_title">Braila tastatūras opcijas</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tastatūra</string>
   <string name="not_enough_touch_points_dialog_title">Jūsu ierīcē netiek atbalstīta Braila tastatūra.</string>
   <string name="not_enough_touch_points_dialog_message">Jūsu ierīcē netiek atbalstīts pietiekami daudz skāriena punktu. Lai iegūtu plašāku informāciju, sazinieties ar ierīces ražotāju.</string>
-  <string name="talkback_off_dialog_title">TalkBack ieslēgšana, lai izmantotu Braila tastatūru</string>
+  <string name="talkback_off_dialog_title">SandFly ieslēgšana, lai izmantotu Braila tastatūru</string>
   <string name="talkback_off_dialog_positive_button">Ieslēgt pieejamības iestatījumos</string>
-  <string name="talkback_suspend_dialog_title">TalkBack darbības atsākšana, lai izmantotu Braila tastatūru</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kad funkcija TalkBack ir ieslēgta, varat pieskarties ekrānam, lai ievadītu Braila raksta simbolus.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Ieslēdziet TalkBack, lai mainītu žestu</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Funkcija TalkBack ir izslēgta. Ieslēdziet to, lai mainītu Braila tastatūras žestus.</string>
+  <string name="talkback_suspend_dialog_title">SandFly darbības atsākšana, lai izmantotu Braila tastatūru</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kad funkcija SandFly ir ieslēgta, varat pieskarties ekrānam, lai ievadītu Braila raksta simbolus.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Ieslēdziet SandFly, lai mainītu žestu</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Funkcija SandFly ir izslēgta. Ieslēdziet to, lai mainītu Braila tastatūras žestus.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Pāriet uz iestatījumiem</string>
   <string name="reset_gestures_dialog_title">Vai atiestatīt visus žestus?</string>
   <string name="reset_gestures_dialog_message">Visi Braila tastatūras žesti tiks atiestatīti uz noklusējuma vērtībām.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Atiestatīt uz noklusējumu</string>
   <string name="custom_gestures_dialog_remove_button">Noņemt žestu</string>
   <string name="change_gestures_dialog_message_title">Kā mainīt žestu</string>
-  <string name="change_gestures_dialog_message">Nākamajā ekrānā tiks atvērta Braila tastatūra, un jūs nevarēsiet izmantot TalkBack žestus.\n\nKad Braila tastatūra būs atvērta, izpildiet žestu, ko vēlaties izmantot, vai velciet lejup ar diviem pirkstiem, lai aizvērtu Braila tastatūru un atceltu žesta maiņu.\n\nSkatiet pieejamos žestus.\n</string>
+  <string name="change_gestures_dialog_message">Nākamajā ekrānā tiks atvērta Braila tastatūra, un jūs nevarēsiet izmantot SandFly žestus.\n\nKad Braila tastatūra būs atvērta, izpildiet žestu, ko vēlaties izmantot, vai velciet lejup ar diviem pirkstiem, lai aizvērtu Braila tastatūru un atceltu žesta maiņu.\n\nSkatiet pieejamos žestus.\n</string>
   <string name="change_gestures_dialog_message_link">Skatīt pieejamos žestus</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Vairs nerādīt šo ziņojumu</string>
   <string name="change_gestures_dialog_positive_button">Turpināt</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Neizmantot</string>
   <string name="next_keyboard">Nākamā tastatūra</string>
   <string name="braille_tutorial_title">Braila tastatūras pamācība</string>
-  <string name="tutorial_intro_description">Izmantojot Braila tastatūru, varat pieskarties ekrānam, lai ievadītu Braila raksta sešu punktu simbolus.\n\nJūs izmantojat vienoto angļu valodas Braila rakstu. Lai pārslēgtos uz savu rakstīšanas valodu, pārejiet uz TalkBack iestatījumiem.\n\nLai rakstītu Braila rakstā, tālrunis ir jātur un jāizmanto citādi.</string>
+  <string name="tutorial_intro_description">Izmantojot Braila tastatūru, varat pieskarties ekrānam, lai ievadītu Braila raksta sešu punktu simbolus.\n\nJūs izmantojat vienoto angļu valodas Braila rakstu. Lai pārslēgtos uz savu rakstīšanas valodu, pārejiet uz SandFly iestatījumiem.\n\nLai rakstītu Braila rakstā, tālrunis ir jātur un jāizmanto citādi.</string>
   <string name="next_step">Tālāk</string>
   <string name="leave_keyboard">Braila tastatūras aizvēršana</string>
-  <string name="hold_six_fingers_description">Braila tastatūrā nevarēsiet izmantot parastos TalkBack žestus.\n\nLai sāktu darbu, rakstīšanai jāiestata Braila raksta sešu punktu pozīcija.</string>
-  <string name="rotate_orientation_description_1">No šī brīža jūs nevarēsiet izmantot parastos TalkBack žestus. Funkcija TalkBack nav pieejama, kamēr izmantojat Braila tastatūru.</string>
+  <string name="hold_six_fingers_description">Braila tastatūrā nevarēsiet izmantot parastos SandFly žestus.\n\nLai sāktu darbu, rakstīšanai jāiestata Braila raksta sešu punktu pozīcija.</string>
+  <string name="rotate_orientation_description_1">No šī brīža jūs nevarēsiet izmantot parastos SandFly žestus. Funkcija SandFly nav pieejama, kamēr izmantojat Braila tastatūru.</string>
   <string name="rotate_orientation_description_2">Lai sāktu darbu, turiet tālruni, kā norādīts, ar ekrānu prom no sevis.</string>
   <string name="tap_to_continue">Lai turpinātu, jebkurā vietā veiciet dubultskārienu.</string>
   <string name="instruction_type_letter_a">Lai ievadītu burtu “A”, ar kreiso rādītājpirkstu pieskarieties 1. punktam.</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURSORS PĀRVIETOTS UZ PRIEKŠU</string>
   <string name="result_swipe_down_2_fingers">PASLĒPT TASTATŪRU</string>
   <string name="result_swipe_down_3_fingers">NĀKAMĀ TASTATŪRA</string>
-  <string name="rotate_orientation_announcement">No šī brīža jūs nevarēsiet izmantot parastos TalkBack žestus. Funkcija TalkBack nav pieejama, kamēr izmantojat Braila tastatūru.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">No šī brīža jūs nevarēsiet izmantot parastos SandFly žestus. Funkcija SandFly nav pieejama, kamēr izmantojat Braila tastatūru.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Vispirms pavērsiet tālruni ar ekrānu prom no sevis.\n\nPēc tam pagrieziet tālruni horizontāli ainavas pozīcijā. Rokām ir jāsatver tālruņa īsākās malas. Labajai rokai ir jātur mala, kurā ir USB pieslēgvieta. Turiet 3 vidējos pirkstus uz ekrāna, un pieturiet tālruni ar mazo pirkstiņu un īkšķi.\n\nKad esat gatavs, ekrānā veiciet dubultskārienu, lai turpinātu.\n\nLai aizvērtu Braila tastatūru, ar 3 pirkstiem velciet lejup uz zemi. Notiek pāreja uz sākotnējo tastatūru.</string>
   <string name="rotate_orientation_continue_announcement">Tālrunis ir vertikālā pozīcijā. Lai turpinātu, pagrieziet tālruni horizontāli ar garo malu apakšdaļā. Pēc tam pagrieziet ekrānu prom no sevis. Kad esat gatavs, ekrānā veiciet dubultskārienu, lai turpinātu.</string>
   <string name="type_letter_a_announcement">Pavērsiet ekrānu prom no sevis. Turiet tālruni abās rokās aiz tā īsākajām malām, lai katras rokas 3 vidējie pirksti pieskartos ekrānam.\n\nKreisajam rādītājpirkstam ir jāatrodas uz 1. punkta. Pēc tam pieskarieties 1. punktam, lai ievadītu burtu “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Lai pārietu uz citu tastatūru, velciet lejup ar 3 pirkstiem. Izmēģiniet tūlīt!</string>
   <string name="swipe_down_3_fingers_completed_announcement">Nākamā tastatūra. Parasti ar šo darbību notiek pāreja uz nākamo tastatūru. Šoreiz joprojām tiek rādīta Braila tastatūra, jo izmantojat pamācību.</string>
   <string name="swipe_up_3_fingers_announcement">Varat rakstīt galda režīmā, novietojot tālruni plakaniski uz galda. Lai pabeigtu mācības, velciet augšup ar trim pirkstiem un atrodiet opciju Pabeigt pamācību.</string>
-  <string name="open_context_menu_announcement">Opciju izvēlne ir atvērta. Apvērsiet tālruni otrādi, lai tas būtu vērsts pret jums, un turiet to kā parasti. Tagad navigācijai varat izmantot parastus TalkBack žestus. Velciet pa labi, lai skatītu citas opcijas.</string>
+  <string name="open_context_menu_announcement">Opciju izvēlne ir atvērta. Apvērsiet tālruni otrādi, lai tas būtu vērsts pret jums, un turiet to kā parasti. Tagad navigācijai varat izmantot parastus SandFly žestus. Velciet pa labi, lai skatītu citas opcijas.</string>
   <string name="hold_six_fingers_announcement">%s\nNovietojiet ierīci plakaniski uz galda. Pēc tam pieskarieties ekrānam ar abu roku trim vidējiem pirkstiem un turiet tos pozīcijā, kurā jums ir ērti rakstīt.</string>
   <string name="hold_six_fingers_inactive_announcement">Novietojiet ierīci plakaniski uz galda. Pēc tam pieskarieties ekrānam ar abu roku trim vidējiem pirkstiem un turiet tos pozīcijā, kurā jums ir ērti rakstīt.</string>
   <string name="finish_tutorial_announcement">Tiek rādīta Braila tastatūra. Pavērsiet tālruni ar ekrānu prom no sevis. Pagrieziet tālruni horizontāli ainavas pozīcijā. Pēc tam sāciet rakstīt.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Šis žests tiek izmantots darbībai “%1$s”, un to nevar mainīt. Izmēģiniet citu žestu. %2$s</string>
   <string name="custom_gesture_cannot_used">Šo žestu nevar izmantot.</string>
   <string name="custom_gesture_no_gesture">Nav izpildīts neviens žests.</string>
-  <string name="custom_gesture_try_another">Izmēģiniet citu žestu. Lai skatītu visu pieejamo žestu sarakstu, pārejiet uz TalkBack Braila tastatūras palīdzības centru. %s</string>
+  <string name="custom_gesture_try_another">Izmēģiniet citu žestu. Lai skatītu visu pieejamo žestu sarakstu, pārejiet uz SandFly Braila tastatūras palīdzības centru. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Žesti neatbilda.</string>
   <string name="custom_gesture_perform_again">Vēlreiz izpildiet žestu, ko vēlaties izmantot. %s</string>
+    <string name="tabletop_port_left_announcement">Galda režīms, uzlādes ports kreisajā pusē</string>
+    <string name="tabletop_port_right_announcement">Galda režīms, uzlādes ports labajā pusē</string>
+    <string name="screen_away_port_right_announcement">Ekrāna prombūtnes režīms, uzlādes ports labajā pusē</string>
+    <string name="screen_away_port_left_announcement">Ekrāna prombūtnes režīms, uzlādes ports kreisajā pusē</string>
+    <string name="screen_toward_announcement">Ekrāns pret jums</string>
+    <string name="screen_toward_port_left_announcement">Ekrāns pret jums, uzlādes ports kreisajā pusē</string>
+    <string name="screen_toward_port_right_announcement">Ekrāns pret jums, uzlādes ports labajā pusē</string>
+    <string name="screen_toward_port_down_announcement">Ekrāns pret jums, uzlādes ports vērsts uz leju</string>
+    <string name="screen_toward_port_up_announcement">Ekrāns pret jums, uzlādes ports ir vērsts uz augšu</string>
+    <string name="port_right_announcement">Uzlādes ports labajā pusē</string>
+    <string name="port_left_announcement">Uzlādes ports kreisajā pusē</string>
+    <string name="tabletop_port_near_announcement">Galda režīms, uzlādes ports pret jums</string>
+    <string name="tabletop_port_far_announcement">Galda režīms, uzlādes ports prom no jums</string>
+    <string name="screen_away_port_down_announcement">Ekrāna prombūtnes režīms, uzlādes ports ir vērsts uz leju</string>
+    <string name="screen_away_port_up_announcement">Ekrāna prombūtnes režīms, uzlādes ports ir vērsts uz augšu</string>
+    <string name="port_near_announcement">Uzlādes ports pret jums</string>
+    <string name="port_far_announcement">Uzlādes ports prom no jums</string>
+    <string name="port_down_announcement">Uzlādes ports vērsts uz leju</string>
+    <string name="port_up_announcement">Uzlādes ports vērsts uz augšu</string>
+    <string name="orientation_locked_announcement">Orientācija bloķēta</string>
+    <string name="orientation_locked_port_announcement">Orientācija bloķēta. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientācija ir atbloķēta</string>
+    <string name="switch_to_language_contracted_announcement">Pārslēgta uz: %s, Saīsinātais Braila raksts</string>
+    <string name="switch_to_language_uncontracted_announcement">Pārslēgta uz: %s, Nesaīsinātais Braila raksts</string>
+    <string name="title_pref_flip_dots_vertically">Apmainiet augšējos un apakšējos punktus</string>
+    <string name="summary_pref_flip_dots_vertically">1. punkts maina vietas ar 3. punktu, bet 4. punkts ar 6. punktu</string>
+    <string name="title_pref_tablet_held_up_faces_away">Planšetdators pacēla seju prom</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kad tas ir izslēgts, planšetdators vai nesalocīts tālrunis, kas tiek turēts uz augšu, izmanto galda izkārtojumu, kas ir vērsts pret jums</string>
+    <string name="title_pref_typing_sounds">Rakstīšanas skaņas</string>
+    <string name="summary_pref_typing_sounds">Atskaņot tastatūras klikšķi, kad ierakstāt rakstzīmi, atstarpi, jaunu rindiņu vai dzēšat</string>
+    <string name="skip_tutorial">Izlaist apmācību</string>
 </resources>

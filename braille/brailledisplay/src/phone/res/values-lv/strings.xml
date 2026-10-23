@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Fiziskā Braila tastatūra</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack Braila tastatūra nav pieejama</string>
-  <string name="bd_ime_disabled_dialog_title">Ieslēdziet TalkBack Braila tastatūru</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly Braila tastatūra nav pieejama</string>
+  <string name="bd_ime_disabled_dialog_title">Ieslēdziet SandFly Braila tastatūru</string>
   <string name="bd_ime_disabled_dialog_message">Lai varētu izmantot Braila displeju rakstīšanai, pārejiet uz ievades iestatījumiem un ieslēdziet to</string>
   <string name="bd_ime_disabled_dialog_title_positive">Ievades iestatījumi</string>
   <string name="bd_ime_not_default_dialog_title">Mainiet ievades metodi</string>
-  <string name="bd_ime_not_default_dialog_message">Lai turpinātu rakstīšanu, iestatiet TalkBack Braila tastatūru kā ievades metodi</string>
+  <string name="bd_ime_not_default_dialog_message">Lai turpinātu rakstīšanu, iestatiet SandFly Braila tastatūru kā ievades metodi</string>
   <string name="bd_ime_not_default_dialog_positive">Pārslēgt ievades metodi</string>
   <string name="type_unlabeled">Bez iezīmēm</string>
   <string name="type_unlabeled_edittext">Rediģēšanas lodziņš bez iezīmes</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Pārvietot pa kreisi</string>
   <string name="overlay_pan_right_button">Pārvietot pa labi</string>
   <string name="bd_preferences_title">Braila displejs</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Lai varētu izmantot Braila tastatūru, vispirms ieslēdziet TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Atvērt funkciju TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Lai varētu izmantot Braila tastatūru, vispirms ieslēdziet SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Atvērt funkciju SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Lai varētu izmantot Braila tastatūru, vispirms ieslēdziet tehnoloģiju Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Ieslēgt Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Lai jūs varētu izmantot Braila tastatūru, lietotnei %s ir nepieciešama piekļuve tuvumā esošām ierīcēm</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Lai izmantotu pārlūkošanas režīmu, jums būs jāpārslēdzas no noklusējuma taustiņu piesaistes uz uzlaboto taustiņu piesaisti. Veicot šīs izmaiņas, tiks atjauninātas dažas jūsu Braila displeja komandas.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Iestatījumi</string>
   <string name="bd_command_change_dialog_title">Dažas komandas ir atjauninātas</string>
-  <string name="bd_command_change_dialog_message">Šajā TalkBack versijā tika atjauninātas tālāk norādītās Braila displeja komandas.\n\n• Iepriekšējais vienums: nospiediet 1., 7. punktu.\n\n• Nākamais vienums: nospiediet 4., 8. punktu.\n\n• Iepriekšējā lasīšanas vadīkla: nospiediet 2., 3., 7., 8. punktu.\n\n• Nākamā lasīšanas vadīkla: nospiediet 5., 6., 7., 8. punktu.</string>
+  <string name="bd_command_change_dialog_message">Šajā SandFly versijā tika atjauninātas tālāk norādītās Braila displeja komandas.\n\n• Iepriekšējais vienums: nospiediet 1., 7. punktu.\n\n• Nākamais vienums: nospiediet 4., 8. punktu.\n\n• Iepriekšējā lasīšanas vadīkla: nospiediet 2., 3., 7., 8. punktu.\n\n• Nākamā lasīšanas vadīkla: nospiediet 5., 6., 7., 8. punktu.</string>
   <string name="bd_preference_braille_contracted">Saīsinātais Braila raksts</string>
   <string name="bd_preference_braille_uncontracted">Nesaīsinātais Braila raksts</string>
   <string name="bd_braille_grade_tips">Lai ātri pārietu no saīsināta raksta uz nesaīsinātu vai otrādi, izmantojot Braila displeju, nospiediet atstarpes taustiņu un pirmo, otro, ceturto un piekto punktu.\n\nŠī komanda darbojas, ja izmantojat valodu, kurā ir pieejamas abas Braila raksta pakāpes.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Pārvietošanās pa vienumiem</string>
   <string name="bd_commands_bindings_category_system_actions_title">Sistēmas darbības</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Pārvietošanās atpakaļ, uz sākumu, paziņojumi u.c.</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack funkcijas</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback izvēlnes un iestatījumi</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly funkcijas</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly izvēlnes un iestatījumi</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braila raksta iestatījumi</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braille raksta valoda un iestatījumi</string>
   <string name="bd_commands_bindings_category_text_editing_title">Teksta rediģēšana</string>
@@ -221,10 +221,10 @@
   <string name="bd_cmd_global_all_apps">Atvērt sadaļu Visas lietotnes</string>
   <string name="bd_cmd_toggle_screen_search">Atvērt meklēšanu ekrānā</string>
   <string name="bd_cmd_edit_custom_label">Rediģēt pielāgotu iezīmi</string>
-  <string name="bd_cmd_open_talkback_menu">Atvērt TalkBack izvēlni</string>
-  <string name="bd_cmd_toggle_voice_feedback">Ieslēgt vai izslēgt TalkBack balss komentārus</string>
+  <string name="bd_cmd_open_talkback_menu">Atvērt SandFly izvēlni</string>
+  <string name="bd_cmd_toggle_voice_feedback">Ieslēgt vai izslēgt SandFly balss komentārus</string>
   <string name="bd_cmd_read_stop">Pārtraukt lasīšanu</string>
-  <string name="bd_cmd_talkback_settings">Atvērt TalkBack iestatījumus</string>
+  <string name="bd_cmd_talkback_settings">Atvērt SandFly iestatījumus</string>
   <string name="bd_cmd_switch_to_next_input_language">Pāriet uz nākamo rakstīšanas valodu</string>
   <string name="bd_cmd_switch_to_next_output_language">Pāriet uz nākamo lasīšanas valodu</string>
   <string name="bd_cmd_toggle_contracted_mode">Pārslēgt saīsināto un nesaīsināto režīmu</string>
@@ -297,15 +297,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Tīmekļa lapās varat ātri pārvietoties starp vienumiem, izmantojot komandu pāriešanai pārlūkošanas režīmā un pēc tam ievadot tālāk norādītās burtu vai ciparu saīsnes.\n\nŠīs saīsnes var izmantot arī bez pāriešanas pārlūkošanas režīmā, taču komandām pāriešanai uz priekšu būs jāpievieno 8. punkts.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigācija tabulā</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Vai vēlaties izslēgt Braila displeja iestatīšanas dialogu?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Jebkurā laikā varēsiet to atkal ieslēgt TalkBack iestatījumos</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Jebkurā laikā varēsiet to atkal ieslēgt SandFly iestatījumos</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Izslēgt</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Dažas komandas nav pieejamas.</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Rakstīšanas vai rediģēšanas laikā nav pieejamas navigācijas komandas, Braila raksta iestatījumi un dažas TalkBack funkcijas.\n\nLai izmantotu šīs komandas, aizveriet tastatūru.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Rakstīšanas vai rediģēšanas laikā nav pieejamas navigācijas komandas, Braila raksta iestatījumi un dažas SandFly funkcijas.\n\nLai izmantotu šīs komandas, aizveriet tastatūru.</string>
   <string name="bd_caption_tutorial_dialog_title">Subtitri Braila displejā</string>
   <string name="bd_caption_tutorial_dialog_message">Lai rādītu vai paslēptu šī video subtitrus, nospiediet atstarpi un 1., 4., 7. un 8. punktu.\n\nLai automātiski rādītu subtitrus atbalstītam multivides saturam, iestatījumos ieslēdziet “Rādīt subtitrus Braila displejā”.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Vienmēr attēlot šo ziņojumu, kad ir pieejami subtitri</string>
   <string name="bd_usb_connect_dialog_title">Braila displejs ir savienots ar USB pieslēgvietu</string>
-  <string name="bd_usb_connect_dialog_message">Braila displeja uzlādei tiek izmantots jūsu ierīces (%s) akumulators.\n\nJa nepieciešams izveidot Bluetooth savienojumu, atvienojiet USB vai USB centrmezglu un atveriet TalkBack iestatījumus &gt; Braila displejs.</string>
+  <string name="bd_usb_connect_dialog_message">Braila displeja uzlādei tiek izmantots jūsu ierīces (%s) akumulators.\n\nJa nepieciešams izveidot Bluetooth savienojumu, atvienojiet USB vai USB centrmezglu un atveriet SandFly iestatījumus &gt; Braila displejs.</string>
   <string name="bd_device">tālruņa</string>
   <string name="bd_battery_low_dialog_title">Zems %s akumulatora uzlādes līmenis</string>
   <string name="bd_battery_low_dialog_message">Braila displeja uzlādei tiek izmantots jūsu ierīces (%s) akumulators.\n\nLai taupītu akumulatora enerģiju, veiciet tālāk norādītās darbības.\n\n
@@ -317,7 +317,18 @@
   <string name="popup_message_history_clear">Notīrīt visu</string>
   <string name="popup_message_history_empty">Tukša</string>
   <string name="popup_message_history_consent_dialog_title">Vai ieslēgt ierīces ziņojumu vēsturi?</string>
-  <string name="popup_message_history_consent_dialog_msg">Tādējādi daži ziņojumi, piemēram, paziņojumi un signāli, tiks glabāti funkcijā TalkBack. Jebkurā laikā varat mainīt šo iestatījumu.</string>
+  <string name="popup_message_history_consent_dialog_msg">Tādējādi daži ziņojumi, piemēram, paziņojumi un signāli, tiks glabāti funkcijā SandFly. Jebkurā laikā varat mainīt šo iestatījumu.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Ieslēgt</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nē, paldies</string>
+    <string name="external_display_channel">Braila displeji no citām lietotnēm</string>
+    <string name="external_display_ask_title">Vai atļaut <xliff:g id="app" example="Notetaker">%1$s</xliff:g> kā Braila displeju SandFly?</string>
+    <string name="external_display_ask_text">SandFly to neizmantos, kamēr jūs to neatļausiet.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> varēs lasīt visu, kas SandFly tiek rādīts Braila rakstā, kas var būt jebkas ekrānā, tostarp ziņojumi un jūsu rakstītais. Tas arī varēs kontrolēt jūsu ierīci, kā jūs varat ar Braila displeju: ierakstiet, atveriet lietotnes un izpildiet jebkuru SandFly komandu. Atļaujiet tikai tās lietotnes, kurām uzticaties.</string>
+    <string name="external_display_allow">Atļaut</string>
+    <string name="external_display_deny">Neļauj</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ir jūsu Braila displejs</string>
+    <string name="external_display_in_use_text">Kamēr SandFly to izmanto, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> var lasīt ekrānu un vadīt ierīci.</string>
+    <string name="external_displays_title">Displeji no citām lietotnēm</string>
+    <string name="external_displays_summary">Atļautās lietotnes var būt Braila displeji SandFly. Lietojumprogramma, kas ir Braila displejs, var lasīt ekrānu un vadīt ierīci.</string>
+    <string name="external_displays_none">Neviena lietotne nevar būt Braila displejs.</string>
 </resources>
