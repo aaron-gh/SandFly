@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Teclado braille de TalkBack</string>
+  <string name="braille_ime_service_name">Teclado braille de SandFly</string>
   <string name="braille_ime_bd_mode_name">Entrada de pantalla braille</string>
   <string name="switch_to_tabletop_announcement">Modo de mesa. Sostén el dispositivo con el puerto de carga hacia la izquierda.</string>
   <string name="calibration_tip_announcement">Para actualizar la posición de los puntos, presiona la pantalla con %d dedos.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Se cambió al teclado braille sin contraer</string>
   <string name="braille_ime_displayed_name">teclado braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">teclado braille, %s</string>
-  <string name="input_view_caption">Teclado braille de TalkBack: Visita g.co/help/braille para obtener ayuda</string>
+  <string name="input_view_caption">Teclado braille de SandFly: Visita g.co/help/braille para obtener ayuda</string>
   <string name="perform_action_next">Siguiente</string>
   <string name="perform_action_submitting">Enviando texto</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Se está actualizando la posición de los puntos. Primero, grabemos los puntos en tu %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Para cambiar el idioma mientras escribes con el teclado braille, desliza 3 dedos hacia arriba. Luego, selecciona \"Cambiar al próximo idioma\".</string>
   <string name="title_pref_accumulate_presses">Incluir todos los puntos presionados</string>
   <string name="summary_pref_accumulate_presses">Se incluyen todos los puntos pulsados como parte de la entrada, incluso si un punto se suelta antes que otros</string>
-  <string name="title_pref_reverse_dots">Puntos invertidos</string>
-  <string name="summary_pref_reverse_dots">Cambia las posiciones de los puntos de manera que el 1 y el 4 intercambien su lugar, por ejemplo</string>
+  <string name="title_pref_reverse_dots">Intercambiar los puntos de la izquierda y la derecha</string>
+  <string name="summary_pref_reverse_dots">Los puntos 1, 2 y 3 intercambian su posición con los puntos 4, 5 y 6</string>
   <string name="bd_preference_braille_contracted">Braille contraído</string>
   <string name="bd_preference_braille_uncontracted">Braille no contraído</string>
   <string name="context_menu_title">Opciones del teclado braille</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Teclado</string>
   <string name="not_enough_touch_points_dialog_title">Tu dispositivo no admite teclado braille</string>
   <string name="not_enough_touch_points_dialog_message">Tu dispositivo no admite suficientes puntos táctiles. Para obtener más información, comunícate con el fabricante.</string>
-  <string name="talkback_off_dialog_title">Activa TalkBack para usar el teclado braille</string>
+  <string name="talkback_off_dialog_title">Activa SandFly para usar el teclado braille</string>
   <string name="talkback_off_dialog_positive_button">Activar en configuración de accesibilidad</string>
-  <string name="talkback_suspend_dialog_title">Reanuda TalkBack para usar el teclado braille</string>
-  <string name="talkback_off_or_suspend_dialog_message">Cuando TalkBack está activado, puedes presionar la pantalla para ingresar símbolos braille.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Activa TalkBack para cambiar el gesto</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack está desactivado. Actívalo para cambiar los gestos del teclado braille.</string>
+  <string name="talkback_suspend_dialog_title">Reanuda SandFly para usar el teclado braille</string>
+  <string name="talkback_off_or_suspend_dialog_message">Cuando SandFly está activado, puedes presionar la pantalla para ingresar símbolos braille.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Activa SandFly para cambiar el gesto</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly está desactivado. Actívalo para cambiar los gestos del teclado braille.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Ir a Configuración</string>
   <string name="reset_gestures_dialog_title">¿Quieres restablecer todos los gestos?</string>
   <string name="reset_gestures_dialog_message">Se restablecerán todos los gestos del teclado braille a la configuración predeterminada</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Restablecer a predeterminados</string>
   <string name="custom_gestures_dialog_remove_button">Quitar gesto</string>
   <string name="change_gestures_dialog_message_title">Cómo cambiar un gesto</string>
-  <string name="change_gestures_dialog_message">En la siguiente pantalla, se abrirá el teclado braille y no podrás usar los gestos de TalkBack.\n\nCuando se abra el teclado braille, realiza el gesto que quieras usar o desliza 2 dedos hacia abajo para cerrar el teclado braille y cancelar el cambio de gesto.\n\nConsulta los gestos disponibles\n</string>
+  <string name="change_gestures_dialog_message">En la siguiente pantalla, se abrirá el teclado braille y no podrás usar los gestos de SandFly.\n\nCuando se abra el teclado braille, realiza el gesto que quieras usar o desliza 2 dedos hacia abajo para cerrar el teclado braille y cancelar el cambio de gesto.\n\nConsulta los gestos disponibles\n</string>
   <string name="change_gestures_dialog_message_link">Consulta los gestos disponibles</string>
   <string name="change_gestures_dialog_dont_show_checkbox">No volver a mostrar este mensaje</string>
   <string name="change_gestures_dialog_positive_button">Continuar</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">No usar</string>
   <string name="next_keyboard">Siguiente teclado</string>
   <string name="braille_tutorial_title">Instructivo de teclado braille</string>
-  <string name="tutorial_intro_description">Con el teclado braille, puedes presionar la pantalla para escribir en alfabeto braille de 6 puntos.\n\nEstás usando código braille en inglés unificado. Para cambiar el sistema de escritura, ve a la configuración de TalkBack.\n\nSi quieres escribir en braille, debes sostener y usar el teléfono de manera diferente a la habitual.</string>
+  <string name="tutorial_intro_description">Con el teclado braille, puedes presionar la pantalla para escribir en alfabeto braille de 6 puntos.\n\nEstás usando código braille en inglés unificado. Para cambiar el sistema de escritura, ve a la configuración de SandFly.\n\nSi quieres escribir en braille, debes sostener y usar el teléfono de manera diferente a la habitual.</string>
   <string name="next_step">Siguiente</string>
   <string name="leave_keyboard">Salir del teclado braille</string>
-  <string name="hold_six_fingers_description">No podrás usar gestos normales de TalkBack en el teclado braille.\n\nPrimero, configuremos la posición de los 6 puntos en braille que usarás para escribir.</string>
-  <string name="rotate_orientation_description_1">A partir de ahora, no podrás usar los gestos normales de TalkBack. TalkBack no está disponible mientras usas el teclado braille.</string>
+  <string name="hold_six_fingers_description">No podrás usar gestos normales de SandFly en el teclado braille.\n\nPrimero, configuremos la posición de los 6 puntos en braille que usarás para escribir.</string>
+  <string name="rotate_orientation_description_1">A partir de ahora, no podrás usar los gestos normales de SandFly. SandFly no está disponible mientras usas el teclado braille.</string>
   <string name="rotate_orientation_description_2">Para comenzar, sostén el teléfono de manera que la pantalla quede hacia afuera.</string>
   <string name="tap_to_continue">Presiona dos veces en cualquier lado para continuar</string>
   <string name="instruction_type_letter_a">Presiona el punto 1 con el dedo índice izquierdo para escribir la letra \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">SE MOVIÓ EL CURSOR HACIA ADELANTE</string>
   <string name="result_swipe_down_2_fingers">OCULTAR TECLADO</string>
   <string name="result_swipe_down_3_fingers">SIGUIENTE TECLADO</string>
-  <string name="rotate_orientation_announcement">A partir de ahora, no podrás usar los gestos normales de TalkBack. TalkBack no está disponible mientras usas el teclado braille.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">A partir de ahora, no podrás usar los gestos normales de SandFly. SandFly no está disponible mientras usas el teclado braille.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Primero, gira el teléfono de manera que la pantalla quede hacia afuera.\n\nLuego, rótalo para que quede en posición horizontal. Usa las manos para sostener los extremos más cortos del teléfono. Con la mano derecha, debes sostener el extremo donde se encuentra el puerto USB. Coloca los 3 dedos del medio en la pantalla y usa el meñique y el pulgar para sostener el teléfono.\n\nCuando esté todo listo, presiona dos veces la pantalla para continuar.\n\nPara salir del teclado braille, desliza 3 dedos hacia abajo, en dirección al suelo. Con esta acción, regresarás al teclado original.</string>
   <string name="rotate_orientation_continue_announcement">Tu teléfono está en posición vertical. Para continuar, rótalo a la posición horizontal para que la parte más larga se encuentre abajo. Luego, gira la pantalla hacia afuera. Cuando esté todo listo, presiona dos veces la pantalla para continuar.</string>
   <string name="type_letter_a_announcement">Sostén la pantalla de manera que quede hacia afuera. Sostén el teléfono con ambas manos, por los bordes más pequeños, de manera que los 3 dedos del medio de cada mano puedan tocar la pantalla.\n\nTu dedo índice izquierdo debería estar en el punto 1. Ahora, presiona el punto 1 para escribir la letra \"A\".</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Para cambiar al otro teclado, desliza 3 dedos hacia abajo. Pruébalo ahora.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Siguiente teclado. Por lo general, esta acción cambiará al siguiente teclado. Esta vez, permanecerás en el teclado braille porque sigues en el instructivo.</string>
   <string name="swipe_up_3_fingers_announcement">También puedes apoyar el teléfono sobre una mesa para escribir en ese modo. Para finalizar el instructivo, desliza 3 dedos hacia arriba y busca la opción Finalizar instructivo.</string>
-  <string name="open_context_menu_announcement">Se abrió el menú de opciones. Gira el teléfono para que la pantalla apunte hacia ti y sostenlo como de costumbre. Ahora puedes usar los gestos normales de TalkBack para navegar. Desliza el dedo hacia la derecha para ver más opciones.</string>
+  <string name="open_context_menu_announcement">Se abrió el menú de opciones. Gira el teléfono para que la pantalla apunte hacia ti y sostenlo como de costumbre. Ahora puedes usar los gestos normales de SandFly para navegar. Desliza el dedo hacia la derecha para ver más opciones.</string>
   <string name="hold_six_fingers_announcement">%s\nApoya el dispositivo sobre una mesa. Luego, mantén presionada la pantalla con los 3 dedos del medio de cada mano en una posición que te resulte cómoda para escribir.</string>
   <string name="hold_six_fingers_inactive_announcement">Apoya el dispositivo sobre una mesa. Luego, mantén presionada la pantalla con los 3 dedos del medio de cada mano en una posición que te resulte cómoda para escribir.</string>
   <string name="finish_tutorial_announcement">Se está mostrando el teclado braille. Gira el teléfono para que la pantalla quede hacia afuera. Rota el teléfono a la posición horizontal. Luego, comienza a escribir.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Este gesto se usa para \"%1$s\" y no se puede cambiar. Prueba con otro gesto. %2$s</string>
   <string name="custom_gesture_cannot_used">No se puede usar este gesto</string>
   <string name="custom_gesture_no_gesture">No se realizó ningún gesto</string>
-  <string name="custom_gesture_try_another">Prueba con otro gesto. Para ver la lista de todos los gestos disponibles, ve al Centro de ayuda del teclado braille de TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Prueba con otro gesto. Para ver la lista de todos los gestos disponibles, ve al Centro de ayuda del teclado braille de SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Los gestos no coinciden</string>
   <string name="custom_gesture_perform_again">Vuelve a realizar el gesto que quieres usar. %s</string>
+    <string name="tabletop_port_left_announcement">Modo sobre la mesa, puerto de carga a la izquierda</string>
+    <string name="tabletop_port_right_announcement">Modo sobre la mesa, puerto de carga a la derecha</string>
+    <string name="screen_away_port_right_announcement">Pantalla orientada en dirección contraria a ti, puerto de carga a la derecha</string>
+    <string name="screen_away_port_left_announcement">Pantalla orientada en dirección contraria a ti, puerto de carga a la izquierda</string>
+    <string name="screen_toward_announcement">Pantalla orientada hacia ti</string>
+    <string name="screen_toward_port_left_announcement">Pantalla orientada hacia ti, puerto de carga a la izquierda</string>
+    <string name="screen_toward_port_right_announcement">Pantalla orientada hacia ti, puerto de carga a la derecha</string>
+    <string name="screen_toward_port_down_announcement">Pantalla orientada hacia ti, puerto de carga hacia abajo</string>
+    <string name="screen_toward_port_up_announcement">Pantalla orientada hacia ti, puerto de carga hacia arriba</string>
+    <string name="port_right_announcement">Puerto de carga a la derecha</string>
+    <string name="port_left_announcement">Puerto de carga a la izquierda</string>
+    <string name="tabletop_port_near_announcement">Modo sobre la mesa, puerto de carga hacia ti</string>
+    <string name="tabletop_port_far_announcement">Modo sobre la mesa, puerto de carga en dirección contraria a ti</string>
+    <string name="screen_away_port_down_announcement">Pantalla orientada en dirección contraria a ti, puerto de carga hacia abajo</string>
+    <string name="screen_away_port_up_announcement">Pantalla orientada en dirección contraria a ti, puerto de carga hacia arriba</string>
+    <string name="port_near_announcement">Puerto de carga hacia ti</string>
+    <string name="port_far_announcement">Puerto de carga en dirección contraria a ti</string>
+    <string name="port_down_announcement">Puerto de carga hacia abajo</string>
+    <string name="port_up_announcement">Puerto de carga hacia arriba</string>
+    <string name="orientation_locked_announcement">Orientación bloqueada</string>
+    <string name="orientation_locked_port_announcement">Orientación bloqueada. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientación desbloqueada</string>
+    <string name="switch_to_language_contracted_announcement">Se cambió a %s, Braille contraído</string>
+    <string name="switch_to_language_uncontracted_announcement">Se cambió a %s, Braille no contraído</string>
+    <string name="title_pref_flip_dots_vertically">Intercambiar los puntos superiores e inferiores</string>
+    <string name="summary_pref_flip_dots_vertically">El punto 1 intercambia su posición con el punto 3, y el punto 4 con el punto 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Pantalla de la tablet en posición vertical orientada en dirección contraria a ti</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Si se desactiva, una tablet o un teléfono desplegado que se sostenga en posición vertical usa la distribución sobre la mesa, con la pantalla orientada hacia ti</string>
+    <string name="title_pref_typing_sounds">Sonidos al escribir</string>
+    <string name="summary_pref_typing_sounds">Reproducir clics del teclado al introducir caracteres, espacios o saltos de línea, o al borrar</string>
+    <string name="skip_tutorial">Omitir tutorial</string>
 </resources>
