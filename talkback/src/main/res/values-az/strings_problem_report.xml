@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Rəy göndərin</string>
+    <string name="title_pref_problem_report_type">Əlaqə növü</string>
+    <string name="title_pref_problem_report_area">Ərazi</string>
+    <string name="title_pref_problem_report_title">Başlıq</string>
+    <string name="title_pref_problem_report_app">Bunun baş verdiyi proqram</string>
+    <string name="title_pref_problem_report_description">Təsvir</string>
+    <string name="dialog_message_problem_report_description">Nə baş verir və nə gözlədiyiniz.</string>
+    <string name="title_pref_problem_report_steps">Problemi təkrarlamaq üçün addımlar</string>
+    <string name="title_pref_problem_report_email">Cavablar üçün e-poçt</string>
+    <string name="title_pref_problem_report_device">Cihaz məlumatlarını daxil edin</string>
+    <string name="title_pref_problem_report_log">SandFly jurnalını daxil edin</string>
+    <string name="summary_pref_problem_report_log">Ekrandan mətn ola bilər</string>
+    <string name="title_pref_problem_report_send">Göndərin</string>
+    <string name="summary_pref_problem_report_sending">Göndərilir</string>
+    <string name="problem_report_missing_fields">Başlıq və təsviri daxil edin.</string>
+    <string name="problem_report_invalid_email">Etibarlı e-poçt ünvanı daxil edin.</string>
+    <string name="problem_report_sent">Rəy göndərildi.</string>
+    <string name="problem_report_rate_limited">Həddindən artıq rəy göndərildi. Daha sonra yenidən cəhd edin.</string>
+    <string name="problem_report_no_connection">Rəy göndərilmədi. İnternet bağlantısını yoxlayın.</string>
+    <string name="problem_report_not_sent">Rəy göndərilmədi. Daha sonra yenidən cəhd edin.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Yanlış davranış</item>
+        <item>Qəza</item>
+        <item>Yavaş və ya cavabsız</item>
+        <item>Təklif</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Nitq</item>
+        <item>Jestlər</item>
+        <item>Kəşfiyyata toxunun</item>
+        <item>Nəzarət və menyuların oxunması</item>
+        <item>Yazı və klaviatura</item>
+        <item>Brayl klaviaturası</item>
+        <item>Brayl displeyi</item>
+        <item>Səslər və vibrasiya</item>
+        <item>Bildirişlər</item>
+        <item>Veb məzmunu</item>
+        <item>Skriptlər</item>
+        <item>Ayarlar</item>
+        <item>Yeniləmələr</item>
+        <item>Digər</item>
+    </string-array>
+    <string name="title_report_new">Rəy göndərin</string>
+    <string name="title_report_inbox">Gələnlər qutusu</string>
+    <string name="title_report_drafts">Qaralamalar</string>
+    <string name="report_inbox_empty">Heç bir rəy göndərilmədi</string>
+    <string name="report_drafts_empty">Qaralama yoxdur</string>
+    <string name="report_just_now">indi</string>
+    <string name="report_untitled">Başlıqsız</string>
+    <string name="report_draft_summary">Dəyişdi <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">göndərildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yeni cavab</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> yeni cavab</item>
+    </plurals>
+    <string name="report_status_changed">statusu dəyişdi</string>
+    <string name="report_status_open">Açıq</string>
+    <string name="report_status_completed">Bağlandı, tamamlandı</string>
+    <string name="report_status_not_planned">Qapalı, planlaşdırılmayıb</string>
+    <string name="report_status_duplicate">Qapalı, dublikat</string>
+    <string name="report_status_unknown">Silindi</string>
+    <string name="title_report_status">Vəziyyət</string>
+    <string name="title_report_your_report">Rəyiniz</string>
+    <string name="title_report_messages">Mesajlar</string>
+    <string name="report_message_from_developer">Tərtibatçı, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Siz, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Cavab verin</string>
+    <string name="title_report_reply_text">Cavabınız</string>
+    <string name="title_report_send_reply">Cavab göndərin</string>
+    <string name="report_reply_sent">Cavab göndərildi.</string>
+    <string name="report_reply_not_sent">Cavab göndərilmədi. Daha sonra yenidən cəhd edin.</string>
+    <string name="title_report_remove">Gələnlər qutusundan silin</string>
+    <string name="dialog_title_report_remove">Bu rəy gələnlər qutusundan silinsin?</string>
+    <string name="dialog_message_report_remove">Ona verilən cavablar daha bu telefona çatmayacaq.</string>
+    <string name="title_report_delete_draft">Qaralamanı silin</string>
+    <string name="dialog_title_report_delete_draft">Bu qaralama silinsin?</string>
+    <string name="button_report_delete">Silin</string>
+    <string name="report_missing">Bu rəy artıq gələnlər qutusunda deyil.</string>
+    <string name="notification_channel_problem_reports">Rəy cavabları</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-a cavab verin</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
