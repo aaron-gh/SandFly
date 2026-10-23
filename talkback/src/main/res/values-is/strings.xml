@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Talinnsláttur</string>
     <string name="title_pref_dictation_recognition">Talgreining</string>
     <string name="dictation_recognition_automatic">Sjálfvirkt</string>
+    <string name="dictation_recognition_google">Talgreining Google í tækinu</string>
+    <string name="dictation_google_unavailable">Talgreining Google í tækinu, ekki í boði fyrir þetta tungumál</string>
+    <string name="dictation_google_download">Sækja <xliff:g id="language" example="English">%1$s</xliff:g> fyrir greiningu í tækinu</string>
     <string name="dictation_recognition_android">Talgreining Android</string>
     <string name="dictation_recognition_automatic_using">Sjálfvirkt: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, þarf API-lykil Gemini</string>

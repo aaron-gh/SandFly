@@ -1755,6 +1755,9 @@
     <string name="title_pref_dictation">Dictée</string>
     <string name="title_pref_dictation_recognition">Reconnaissance vocale</string>
     <string name="dictation_recognition_automatic">Automatique</string>
+    <string name="dictation_recognition_google">Reconnaissance vocale Google sur l’appareil</string>
+    <string name="dictation_google_unavailable">Reconnaissance vocale Google sur l’appareil, non disponible pour cette langue</string>
+    <string name="dictation_google_download">Télécharger <xliff:g id="language" example="English">%1$s</xliff:g> pour la reconnaissance sur l’appareil</string>
     <string name="dictation_recognition_android">Reconnaissance vocale d’Android</string>
     <string name="dictation_recognition_automatic_using">Automatique : <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, nécessite une clé API Gemini</string>

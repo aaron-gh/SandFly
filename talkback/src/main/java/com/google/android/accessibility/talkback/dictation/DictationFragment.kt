@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.dictation
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.ConnectivityManager
+import android.os.Build
 import android.os.Bundle
 import android.text.format.Formatter
 import androidx.appcompat.app.AlertDialog
@@ -34,6 +35,7 @@ import com.google.android.accessibility.talkback.dictation.WhisperModels.Model
 import com.google.android.accessibility.talkback.dictation.WhisperModels.State
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import java.util.Locale
 
 /**
  * Dictation settings: how speech is recognized, the Whisper models for recognition on the phone,
@@ -44,6 +46,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
   private lateinit var models: WhisperModels
   private lateinit var recognitionPref: Preference
   private lateinit var aiServicePref: Preference
+  private lateinit var googleDownloadPref: Preference
   private val modelPrefs = mutableMapOf<Model, Preference>()
   private var announcedMilestone = -1
   private var downloading: Model? = null
@@ -59,12 +62,16 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     models = WhisperModels.get(context)
     recognitionPref = onClick("pref_dictation_recognition_choice") { chooseRecognition() }
     aiServicePref = onClick("pref_dictation_ai_service_choice") { chooseAiService() }
+    googleDownloadPref =
+      onClick("pref_dictation_google_download") {
+        GoogleSpeechLanguages.download(requireContext())
+      }
     if (!WhisperEngines.isAvailable()) return
     // Made here, since the settings filter removes categories that are empty in the XML.
     val category =
       AccessibilitySuitePreferenceCategory(context).apply {
         key = "pref_dictation_whisper_models"
-        order = 1
+        order = 2
         setTitle(R.string.title_pref_whisper_models)
       }
     preferenceScreen.addPreference(category)
@@ -88,6 +95,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     super.onStart()
     models.addListener(listener)
     refresh()
+    GoogleSpeechLanguages.refresh(requireContext()) { if (isAdded) refresh() }
   }
 
   override fun onStop() {
@@ -98,6 +106,12 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
   private fun refresh() {
     val context = requireContext()
     recognitionPref.summary = recognitionSummary(context)
+    googleDownloadPref.title =
+      getString(R.string.dictation_google_download, Locale.getDefault().displayLanguage)
+    googleDownloadPref.isVisible =
+      Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+        DictationSettings.googleInstalled(context) &&
+        GoogleSpeechLanguages.hasPhoneLanguage() == false
     val active = models.activeModel()
     val state = models.state
     for ((model, row) in modelPrefs) {
@@ -123,6 +137,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
       chosen == Recognition.AUTOMATIC ->
         getString(R.string.dictation_recognition_automatic_using, recognitionLabel(effective))
       chosen == effective -> recognitionLabel(chosen)
+      chosen == Recognition.GOOGLE -> getString(R.string.dictation_google_unavailable)
       chosen == Recognition.RAMBLER -> getString(R.string.dictation_rambler_needs_key)
       else -> getString(R.string.dictation_whisper_needs_model)
     }
@@ -132,6 +147,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     getString(
       when (recognition) {
         Recognition.AUTOMATIC -> R.string.dictation_recognition_automatic
+        Recognition.GOOGLE -> R.string.dictation_recognition_google
         Recognition.RAMBLER -> R.string.dictation_recognition_rambler
         Recognition.WHISPER -> R.string.dictation_recognition_whisper
         Recognition.ANDROID -> R.string.dictation_recognition_android

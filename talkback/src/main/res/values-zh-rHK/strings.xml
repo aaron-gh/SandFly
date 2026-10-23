@@ -1750,6 +1750,9 @@
     <string name="title_pref_dictation">口述</string>
     <string name="title_pref_dictation_recognition">語音辨識</string>
     <string name="dictation_recognition_automatic">自動</string>
+    <string name="dictation_recognition_google">Google 裝置端語音辨識</string>
+    <string name="dictation_google_unavailable">Google 裝置端語音辨識，不支援這個語言</string>
+    <string name="dictation_google_download">下載<xliff:g id="language" example="English">%1$s</xliff:g>以在裝置上辨識</string>
     <string name="dictation_recognition_android">Android 語音辨識</string>
     <string name="dictation_recognition_automatic_using">自動：<xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler，需要 Gemini API 金鑰</string>

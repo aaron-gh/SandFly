@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">받아쓰기</string>
     <string name="title_pref_dictation_recognition">음성 인식</string>
     <string name="dictation_recognition_automatic">자동</string>
+    <string name="dictation_recognition_google">Google 온디바이스 음성 인식</string>
+    <string name="dictation_google_unavailable">Google 온디바이스 음성 인식, 이 언어에서는 사용할 수 없음</string>
+    <string name="dictation_google_download">온디바이스 인식용 <xliff:g id="language" example="English">%1$s</xliff:g> 다운로드</string>
     <string name="dictation_recognition_android">Android 음성 인식</string>
     <string name="dictation_recognition_automatic_using">자동: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, Gemini API 키 필요</string>

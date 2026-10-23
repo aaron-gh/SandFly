@@ -16,8 +16,10 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -25,6 +27,7 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.Locale
 
 /**
  * Android speech recognition that goes on until [stop]: each time the recognizer ends after a
@@ -33,6 +36,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  */
 internal class ContinuousRecognition(
   private val context: Context,
+  /** The recognition service to use, or null for the one chosen in Android's settings. */
+  private val service: ComponentName?,
   private val onDone: (String) -> Unit,
   private val onFailed: (Int) -> Unit,
 ) : RecognitionListener {
@@ -47,8 +52,14 @@ internal class ContinuousRecognition(
 
   /** Starts recognizing. Returns false when Android has no speech recognition. */
   fun start(): Boolean {
-    if (!SpeechRecognizer.isRecognitionAvailable(context)) return false
-    recognizer = SpeechRecognizer.createSpeechRecognizer(context).also { it.setRecognitionListener(this) }
+    if (service == null && !SpeechRecognizer.isRecognitionAvailable(context)) return false
+    recognizer =
+      try {
+        SpeechRecognizer.createSpeechRecognizer(context, service)
+      } catch (e: RuntimeException) {
+        LogUtils.w(TAG, "No speech recognizer: %s", e)
+        return false
+      }.also { it.setRecognitionListener(this) }
     listen()
     return true
   }
@@ -62,6 +73,18 @@ internal class ContinuousRecognition(
         // Asks for long pauses before the recognizer ends; not every recognizer follows it.
         .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, PAUSE_MS)
         .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, PAUSE_MS)
+    if (service != null) {
+      // On the phone, with punctuation and capital letters where the recognizer can add them.
+      intent
+        .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
+        .putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toLanguageTag())
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        intent.putExtra(
+          RecognizerIntent.EXTRA_ENABLE_FORMATTING,
+          RecognizerIntent.FORMATTING_OPTIMIZE_QUALITY,
+        )
+      }
+    }
     recognizer?.startListening(intent)
   }
 

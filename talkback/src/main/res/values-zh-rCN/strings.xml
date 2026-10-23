@@ -2316,6 +2316,9 @@
     <string name="title_pref_dictation">听写</string>
     <string name="title_pref_dictation_recognition">语音识别</string>
     <string name="dictation_recognition_automatic">自动</string>
+    <string name="dictation_recognition_google">Google 端侧语音识别</string>
+    <string name="dictation_google_unavailable">Google 端侧语音识别，不支持此语言</string>
+    <string name="dictation_google_download">下载<xliff:g id="language" example="English">%1$s</xliff:g>以在设备上识别</string>
     <string name="dictation_recognition_android">Android 语音识别</string>
     <string name="dictation_recognition_automatic_using">自动：<xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler，需要 Gemini API 密钥</string>
