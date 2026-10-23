@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Cakap status</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> daripada <xliff:g id="max_level" example="4">%2$d</xliff:g> bar</string>
+    <string name="status_wifi_off">Potongan Wi-Fi</string>
+    <string name="status_wifi_not_connected">Wi-Fi tidak disambungkan</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mudah alih</string>
+    <string name="status_mobile_no_service">Tiada perkhidmatan mudah alih</string>
+    <string name="status_do_not_disturb">Jangan Ganggu</string>
+    <string name="status_ringer_vibrate">Bergetar</string>
+    <string name="status_ringer_silent">Senyap</string>
+    <string name="status_airplane_mode">Mod kapal terbang</string>
+    <string name="title_pref_status_readout">Bacaan status</string>
+    <string name="status_item_time">Masa</string>
+    <string name="status_item_time_summary">Masa semasa</string>
+    <string name="status_item_battery">Bateri</string>
+    <string name="status_item_battery_summary">Tahap bateri, pengecasan dan penjimat bateri</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Nama rangkaian dan kekuatan isyarat</string>
+    <string name="status_item_mobile">Rangkaian mudah alih</string>
+    <string name="status_item_mobile_summary">Pembawa, jenis rangkaian dan kekuatan isyarat</string>
+    <string name="status_item_ringer">Dering dan Jangan Ganggu</string>
+    <string name="status_item_ringer_summary">Hanya apabila dering tidak ditetapkan untuk berdering, atau Jangan Ganggu dihidupkan</string>
+    <string name="status_item_airplane_mode">Mod kapal terbang</string>
+    <string name="status_item_airplane_mode_summary">Hanya apabila mod kapal terbang dihidupkan</string>
+</resources>

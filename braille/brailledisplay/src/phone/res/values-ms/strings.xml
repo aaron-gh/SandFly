@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Papan kekunci perkakasan braille</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">Papan kekunci braille TalkBack tidak tersedia</string>
-  <string name="bd_ime_disabled_dialog_title">Hidupkan papan kekunci braille TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Papan kekunci braille SandFly tidak tersedia</string>
+  <string name="bd_ime_disabled_dialog_title">Hidupkan papan kekunci braille SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Untuk menggunakan paparan braille bagi penaipan, pergi ke tetapan masukan untuk menghidupkan ciri</string>
   <string name="bd_ime_disabled_dialog_title_positive">Tetapan masukan</string>
   <string name="bd_ime_not_default_dialog_title">Tukar kaedah masukan anda</string>
-  <string name="bd_ime_not_default_dialog_message">Untuk terus menaip, tetapkan papan kekunci braille TalkBack sebagai kaedah masukan anda</string>
+  <string name="bd_ime_not_default_dialog_message">Untuk terus menaip, tetapkan papan kekunci braille SandFly sebagai kaedah masukan anda</string>
   <string name="bd_ime_not_default_dialog_positive">Tukar masukan</string>
   <string name="type_unlabeled">Tidak berlabel</string>
   <string name="type_unlabeled_edittext">Kotak Edit Tidak Berlabel</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Sorot ke kiri</string>
   <string name="overlay_pan_right_button">Sorot ke kanan</string>
   <string name="bd_preferences_title">Paparan braille</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Untuk menggunakan paparan braille, hidupkan TalkBack dahulu</string>
-  <string name="bd_preferences_banner_talkback_off_button">Pergi ke TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Untuk menggunakan paparan braille, hidupkan SandFly dahulu</string>
+  <string name="bd_preferences_banner_talkback_off_button">Pergi ke SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Untuk menggunakan paparan braille, hidupkan Bluetooth dahulu</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Hidupkan Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Untuk menggunakan paparan braille, %s perlu mengakses peranti berdekatan</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Untuk menggunakan mod semak imbas, anda perlu menukar daripada peta kekunci lalai kepada peta kekunci dipertingkatkan. Perubahan ini akan mengemaskinikan beberapa perintah pada paparan braille anda</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Tetapan</string>
   <string name="bd_command_change_dialog_title">Beberapa perintah telah dikemaskinikan</string>
-  <string name="bd_command_change_dialog_message">Perintah paparan braille ini telah dikemaskinikan dalam versi TalkBack ini:\n\n• Item sebelumnya: Tekan titik 1, 7\n\n• Item seterusnya: Tekan titik 4, 8\n\n• Kawalan bacaan sebelumnya: Tekan titik 2, 3, 7, 8\n\n• Kawalan bacaan seterusnya: Tekan titik 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Perintah paparan braille ini telah dikemaskinikan dalam versi SandFly ini:\n\n• Item sebelumnya: Tekan titik 1, 7\n\n• Item seterusnya: Tekan titik 4, 8\n\n• Kawalan bacaan sebelumnya: Tekan titik 2, 3, 7, 8\n\n• Kawalan bacaan seterusnya: Tekan titik 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Braille singkat</string>
   <string name="bd_preference_braille_uncontracted">Braille tidak singkat</string>
   <string name="bd_braille_grade_tips">Untuk segera beralih antara mod singkat dengan mod tidak singkat menggunakan paparan braille, tekan jarak dan titik 1, 2, 4, 5.\n\nPerintah ini berhasil jika anda menggunakan bahasa dengan kedua-dua gred braille.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Bergerak antara item</string>
   <string name="bd_commands_bindings_category_system_actions_title">Tindakan sistem</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Kembali, laman utama, pemberitahuan dan banyak lagi</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Ciri TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Menu dan tetapan Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Ciri SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menu dan tetapan</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Tetapan Braille</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Bahasa dan tetapan Braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Pengeditan teks</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Buka semua apl</string>
   <string name="bd_cmd_toggle_screen_search">Buka carian skrin</string>
   <string name="bd_cmd_edit_custom_label">Edit label tersuai</string>
-  <string name="bd_cmd_open_talkback_menu">Buka menu TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Hidupkan atau matikan pertuturan TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Buka menu SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Hidupkan atau matikan pertuturan SandFly</string>
   <string name="bd_cmd_read_stop">Berhenti membaca</string>
-  <string name="bd_cmd_talkback_settings">Buka tetapan TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Buka tetapan SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Beralih kepada bahasa penaipan yang seterusnya</string>
   <string name="bd_cmd_switch_to_next_output_language">Beralih kepada bahasa membaca yang seterusnya</string>
   <string name="bd_cmd_toggle_contracted_mode">Bertukar antara singkatan dengan ejaan penuh</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Utk navigasi pantas kpd halaman web, masuki mod semak imbas dgn perintah, taip huruf atau nombor pintasan ini\n\nPintasan boleh digunakan tanpa memasuki mod semak imbas. Hanya tambah 8 titik pd perintah \"seterusnya\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigasi jadual</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Matikan tetapan paparan braille?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Anda boleh menghidupkan ciri lagi pada bila-bila masa dalam tetapan TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Anda boleh menghidupkan ciri lagi pada bila-bila masa dalam tetapan SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Matikan</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Sesetengah perintah tidak tersedia</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Perintah untuk navigasi, tetapan braille dan sesetengah ciri TalkBack tidak tersedia ketika menaip atau mengedit.\n\nTutup papan kekunci dahulu untuk menggunakan perintah ini.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Perintah untuk navigasi, tetapan braille dan sesetengah ciri SandFly tidak tersedia ketika menaip atau mengedit.\n\nTutup papan kekunci dahulu untuk menggunakan perintah ini.</string>
   <string name="bd_caption_tutorial_dialog_title">Sari kata pada paparan braille anda</string>
   <string name="bd_caption_tutorial_dialog_message">Untuk memaparkan atau menyembunyikan sari kata bagi video ini, tekan ruang dan titik 1, 4, 7, 8.\n\nUntuk memaparkan sari kata bagi media disokong, hidupkan Paparkan sari kata pada paparan braille dalam Tetapan.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Sentiasa paparkan mesej ini apabila sari kata tersedia</string>
   <string name="bd_usb_connect_dialog_title">Paparan braille disambungkan kepada port USB</string>
-  <string name="bd_usb_connect_dialog_message">Bateri %s anda sedang mengecas paparan braille anda.\n\nJika anda perlu beralih kepada Bluetooth, cabut USB atau hab USB anda dan pergi ke tetapan TalkBack &gt; Paparan Braille.</string>
+  <string name="bd_usb_connect_dialog_message">Bateri %s anda sedang mengecas paparan braille anda.\n\nJika anda perlu beralih kepada Bluetooth, cabut USB atau hab USB anda dan pergi ke tetapan SandFly &gt; Paparan Braille.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Bateri %s lemah</string>
   <string name="bd_battery_low_dialog_message">Bateri %s anda sedang mengecas paparan braille anda.\n\nUntuk menjimatkan bateri:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Kosongkan semua</string>
   <string name="popup_message_history_empty">Kosong</string>
   <string name="popup_message_history_consent_dialog_title">Hidupkan sejarah mesej peranti?</string>
-  <string name="popup_message_history_consent_dialog_msg">Tindakan ini akan menyimpan beberapa mesej, seperti pemberitahuan dan penggera, dalam TalkBack. Anda boleh mengubah tetapan ini pada bila-bila masa.</string>
+  <string name="popup_message_history_consent_dialog_msg">Tindakan ini akan menyimpan beberapa mesej, seperti pemberitahuan dan penggera, dalam SandFly. Anda boleh mengubah tetapan ini pada bila-bila masa.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Hidupkan</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Tidak perlu</string>
+    <string name="external_display_channel">Paparan Braille daripada apl lain</string>
+    <string name="external_display_ask_title">Benarkan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> menjadi paparan braille untuk SandFly?</string>
+    <string name="external_display_ask_text">SandFly tidak akan menggunakannya sehingga anda membenarkannya.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> akan dapat membaca semua SandFly yang ditunjukkan dalam braille, yang boleh berupa apa sahaja pada skrin, termasuk mesej dan apa yang anda taip. Ia juga akan dapat mengawal peranti anda seperti yang anda boleh dengan paparan braille: taip, buka apl dan jalankan sebarang perintah SandFly. Hanya benarkan apl yang anda percayai.</string>
+    <string name="external_display_allow">Benarkan</string>
+    <string name="external_display_deny">Jangan benarkan</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ialah paparan braille anda</string>
+    <string name="external_display_in_use_text">Semasa SandFly menggunakannya, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> boleh membaca skrin dan mengawal peranti.</string>
+    <string name="external_displays_title">Paparan daripada apl lain</string>
+    <string name="external_displays_summary">Apl yang anda benarkan boleh menjadi paparan braille untuk SandFly. Apl yang merupakan paparan braille boleh membaca skrin dan mengawal peranti.</string>
+    <string name="external_displays_none">Tiada apl boleh menjadi paparan braille.</string>
 </resources>

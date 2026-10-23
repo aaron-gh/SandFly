@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Hantar maklum balas</string>
+    <string name="title_pref_problem_report_type">Jenis maklum balas</string>
+    <string name="title_pref_problem_report_area">Kawasan</string>
+    <string name="title_pref_problem_report_title">Tajuk</string>
+    <string name="title_pref_problem_report_app">Apl di mana ia berlaku</string>
+    <string name="title_pref_problem_report_description">Penerangan</string>
+    <string name="dialog_message_problem_report_description">Apa yang berlaku dan apa yang anda jangkakan.</string>
+    <string name="title_pref_problem_report_steps">Langkah-langkah untuk menghasilkan semula masalah perisian</string>
+    <string name="title_pref_problem_report_email">E-mel untuk balasan</string>
+    <string name="title_pref_problem_report_device">Sertakan maklumat peranti</string>
+    <string name="title_pref_problem_report_log">Sertakan SandFly log</string>
+    <string name="summary_pref_problem_report_log">Mungkin mengandungi teks daripada skrin</string>
+    <string name="title_pref_problem_report_send">Hantar</string>
+    <string name="summary_pref_problem_report_sending">Menghantar</string>
+    <string name="problem_report_missing_fields">Masukkan tajuk dan penerangan.</string>
+    <string name="problem_report_invalid_email">Masukkan alamat e-mel yang sah.</string>
+    <string name="problem_report_sent">Maklum balas dihantar.</string>
+    <string name="problem_report_rate_limited">Terlalu banyak maklum balas yang dihantar. Cuba lagi nanti.</string>
+    <string name="problem_report_no_connection">Maklum balas tidak dihantar. Semak sambungan internet.</string>
+    <string name="problem_report_not_sent">Maklum balas tidak dihantar. Cuba lagi nanti.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Tingkah laku yang tidak betul</item>
+        <item>Ranap</item>
+        <item>Lambat atau tidak bertindak balas</item>
+        <item>Cadangan</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Ucapan</item>
+        <item>Gerak isyarat</item>
+        <item>Penerokaan sentuh</item>
+        <item>Kawalan membaca dan menu</item>
+        <item>Menaip dan papan kekunci</item>
+        <item>Papan kekunci braille</item>
+        <item>Paparan braille</item>
+        <item>Bunyi dan getaran</item>
+        <item>Pemberitahuan</item>
+        <item>Kandungan web</item>
+        <item>Skrip</item>
+        <item>Tetapan</item>
+        <item>Kemas kini</item>
+        <item>Lain-lain</item>
+    </string-array>
+    <string name="title_report_new">Hantar maklum balas</string>
+    <string name="title_report_inbox">Peti masuk</string>
+    <string name="title_report_drafts">Draf</string>
+    <string name="report_inbox_empty">Tiada maklum balas dihantar</string>
+    <string name="report_drafts_empty">Tiada draf</string>
+    <string name="report_just_now">tadi</string>
+    <string name="report_untitled">Tidak bertajuk</string>
+    <string name="report_draft_summary">Berubah <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">dihantar <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> balasan baharu</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> balasan baharu</item>
+    </plurals>
+    <string name="report_status_changed">status berubah</string>
+    <string name="report_status_open">Isu terbuka</string>
+    <string name="report_status_completed">Ditutup, selesai</string>
+    <string name="report_status_not_planned">Ditutup, tidak dirancang</string>
+    <string name="report_status_duplicate">Ditutup, pendua</string>
+    <string name="report_status_unknown">Dialih keluar</string>
+    <string name="title_report_status">Status</string>
+    <string name="title_report_your_report">Maklum balas anda</string>
+    <string name="title_report_messages">Mesej</string>
+    <string name="report_message_from_developer">Pembangun, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Awak, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Balas</string>
+    <string name="title_report_reply_text">Balasan awak</string>
+    <string name="title_report_send_reply">Hantar balasan</string>
+    <string name="report_reply_sent">Balasan dihantar.</string>
+    <string name="report_reply_not_sent">Balasan tidak dihantar. Cuba lagi nanti.</string>
+    <string name="title_report_remove">Alih keluar dari peti masuk</string>
+    <string name="dialog_title_report_remove">Alih keluar maklum balas ini daripada peti masuk?</string>
+    <string name="dialog_message_report_remove">Balasan kepadanya tidak akan sampai ke telefon ini lagi.</string>
+    <string name="title_report_delete_draft">Padamkan draf</string>
+    <string name="dialog_title_report_delete_draft">Padamkan draf ini?</string>
+    <string name="button_report_delete">Padam</string>
+    <string name="report_missing">Maklum balas ini tiada lagi dalam peti masuk.</string>
+    <string name="notification_channel_problem_reports">Balasan maklum balas</string>
+    <string name="report_notification_reply">Balas kepada <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
