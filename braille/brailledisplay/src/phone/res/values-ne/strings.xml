@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ब्रेल हार्डवेयर किबोर्ड</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack ब्रेल किबोर्ड उपलब्ध छैन</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack ब्रेल किबोर्ड अन गर्नुहोस्</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly ब्रेल किबोर्ड उपलब्ध छैन</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly ब्रेल किबोर्ड अन गर्नुहोस्</string>
   <string name="bd_ime_disabled_dialog_message">टाइपिङ गर्नका तपाईंको डिभाइसको ब्रेल डिस्प्ले प्रयोग गर्नका लागि उक्त डिस्प्ले अन गर्न इनपुटसम्बन्धी सेटिङमा जानुहोस्</string>
   <string name="bd_ime_disabled_dialog_title_positive">इनपुटसम्बन्धी सेटिङ</string>
   <string name="bd_ime_not_default_dialog_title">इनपुट विधि बदल्नुहोस्</string>
-  <string name="bd_ime_not_default_dialog_message">टाइपिङ गरिरहनका लागि, इनपुट विधिका रूपमा TalkBack ब्रेल किबोर्ड सेट गर्नुहोस्</string>
+  <string name="bd_ime_not_default_dialog_message">टाइपिङ गरिरहनका लागि, इनपुट विधिका रूपमा SandFly ब्रेल किबोर्ड सेट गर्नुहोस्</string>
   <string name="bd_ime_not_default_dialog_positive">इनपुट विधि बदल्नुहोस्</string>
   <string name="type_unlabeled">लेबल नहालिएको</string>
   <string name="type_unlabeled_edittext">लेबल नहालिएको सम्पादन बाकस</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">बायाँतिर प्यान गर्नु…</string>
   <string name="overlay_pan_right_button">दायाँतिर प्यान गर्नु…</string>
   <string name="bd_preferences_title">ब्रेल डिस्प्ले</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ब्रेल डिस्प्ले प्रयोग गर्नका लागि सर्वप्रथम TalkBack अन गर्नुहोस्</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack मा जानुहोस्</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ब्रेल डिस्प्ले प्रयोग गर्नका लागि सर्वप्रथम SandFly अन गर्नुहोस्</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly मा जानुहोस्</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">तपाईं ब्रेल डिस्प्ले प्रयोग गर्न चाहनुहुन्छ भने सुरुमा ब्लुटुथ अन गर्नुहोस्</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ब्लुटुथ अन गर्नुहोस्</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ब्रेल डिस्प्ले प्रयोग गर्ने प्रयोजनका लागि %s लाई नजिकैका डिभाइसहरू प्रयोग गर्ने अनुमति दिनु पर्ने हुन्छ</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ब्राउज मोड प्रयोग गर्न तपाईंले डिफल्ट किम्यापको साटो परिष्कार गरिएको किम्याप प्रयोग गर्नु पर्ने हुन्छ। यो परिवर्तन गरियो भने तपाईंका ब्रेल डिस्प्लेमा उपलब्ध केही कमान्डहरू अपडेट गरिने छन्।</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">सेटिङ</string>
   <string name="bd_command_change_dialog_title">केही कमान्डहरू अपडेट गरिएका छन्</string>
-  <string name="bd_command_change_dialog_message">TalkBack को यो संस्करणमा ब्रेल डिस्प्लेका यी कमान्डहरू अपडेट गरिएका छन्:\n\n• अघिल्लो वस्तु: डटहरू १, ७ थिच्नुहोस्\n\n• अर्को वस्तु: डटहरू ४, ८ थिच्नुहोस्\n\n• अघिल्लो रिडिङ कन्ट्रोल: डटहरू २, ३, ७, ८ थिच्नुहोस्\n\n• अर्को रिडिङ कन्ट्रोल: डटहरू ५, ६, ७, ८ थिच्नुहोस्</string>
+  <string name="bd_command_change_dialog_message">SandFly को यो संस्करणमा ब्रेल डिस्प्लेका यी कमान्डहरू अपडेट गरिएका छन्:\n\n• अघिल्लो वस्तु: डटहरू १, ७ थिच्नुहोस्\n\n• अर्को वस्तु: डटहरू ४, ८ थिच्नुहोस्\n\n• अघिल्लो रिडिङ कन्ट्रोल: डटहरू २, ३, ७, ८ थिच्नुहोस्\n\n• अर्को रिडिङ कन्ट्रोल: डटहरू ५, ६, ७, ८ थिच्नुहोस्</string>
   <string name="bd_preference_braille_contracted">कन्ट्र्याक्टेड ब्रेल</string>
   <string name="bd_preference_braille_uncontracted">अनकन्ट्र्याक्टेड ब्रेल</string>
   <string name="bd_braille_grade_tips">ब्रेल डिस्प्ले प्रयोग गर्ने कन्ट्र्याक्टेड र अनकन्ट्र्याक्टेड ब्रेलका बिचमा द्रुत रूपमा अदल बदल गर्न स्पेस र डट १, २, ४ र ५ थिच्नुहोस्।\n\nतपाईं दुवै खालका ब्रेल ग्रेड प्रयोग गर्दै हुनुहुन्छ भने यो कमान्डले काम गर्छ।</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">एउटा कन्टेन्टबाट अर्को कन्टेन्टमा जानुहोस्</string>
   <string name="bd_commands_bindings_category_system_actions_title">सिस्टमसम्बन्धी कारबाहीहरू</string>
   <string name="bd_commands_bindings_category_system_actions_summary">पछाडि, होम स्क्रिन, सूचना र अन्य कुराहरू</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack का सुविधाहरू</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback का मेनु र सेटिङ</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly का सुविधाहरू</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly मेनु र सेटिङहरू</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ब्रेलसम्बन्धी सेटिङ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ब्रेलको भाषा र सेटिङ</string>
   <string name="bd_commands_bindings_category_text_editing_title">टेक्स्ट सम्पादन</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">सबै एप खोल्नुहोस्</string>
   <string name="bd_cmd_toggle_screen_search">\"स्क्रिन खोज\" खोल्नुहोस्</string>
   <string name="bd_cmd_edit_custom_label">कस्टम लेबल सम्पादन गर्नुहोस्</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack मेनु खोल्नुहोस्</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack स्पिच अन वा अफ गर्नुहोस्</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly मेनु खोल्नुहोस्</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly स्पिच अन वा अफ गर्नुहोस्</string>
   <string name="bd_cmd_read_stop">पढ्न छाड्नुहोस्</string>
-  <string name="bd_cmd_talkback_settings">TalkBack सम्बन्धी सेटिङ खोल्नुहोस्</string>
+  <string name="bd_cmd_talkback_settings">SandFly सम्बन्धी सेटिङ खोल्नुहोस्</string>
   <string name="bd_cmd_switch_to_next_input_language">टाइप गर्ने अर्को भाषा प्रयोग गर्नुहोस्</string>
   <string name="bd_cmd_switch_to_next_output_language">पढ्ने अर्को भाषा प्रयोग गर्नुहोस्</string>
   <string name="bd_cmd_toggle_contracted_mode">कन्ट्र्याक्टेड र अनकन्ट्र्याक्टेड मोडहरू अदलबदल गर्नुहोस्</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">तपाईं ब्राउज मोडमा जाने कमान्ड प्रयोग गरेर अनि निम्न अक्षर वा अङ्कका सर्टकटहरू टाइप गरेर वेबपेजहरू तुरुन्तै नेभिगेट गर्न सक्नुहुन्छ\n\nयी सर्टकटहरू ब्राउज मोडमा नगइकन पनि प्रयोग गर्न सकिन्छ तर तपाईंले \"अर्का\" कमान्डहरूमा डट ८ हाल्नु पर्ने हुन्छ</string>
   <string name="bd_cmd_subcategory_title_web_navigation">तालिकाको नेभिगेसन</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ब्रेल डिस्प्लेको सेटिङ अफ गर्ने हो?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">तपाईं TalkBack सेटिङमा गई जुनसुकै बेला यो सेटिङ अन गर्न सक्नुहुन्छ</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">तपाईं SandFly सेटिङमा गई जुनसुकै बेला यो सेटिङ अन गर्न सक्नुहुन्छ</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">अफ गर्नुहोस्</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">केही कमान्डहरू उपलब्ध छैनन्</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">टाइप वा सम्पादन गर्दै गर्दा नेभिगेसनसम्बन्धी कमान्ड, ब्रेलसम्बन्धी सेटिङ र TalkBack का केही सुविधाहरू उपलब्ध हुँदैनन्।\n\nतपाईं यी कमान्डहरू प्रयोग गर्न चाहनुहुन्छ भने पहिले किबोर्ड बन्द गर्नुहोस्।</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">टाइप वा सम्पादन गर्दै गर्दा नेभिगेसनसम्बन्धी कमान्ड, ब्रेलसम्बन्धी सेटिङ र SandFly का केही सुविधाहरू उपलब्ध हुँदैनन्।\n\nतपाईं यी कमान्डहरू प्रयोग गर्न चाहनुहुन्छ भने पहिले किबोर्ड बन्द गर्नुहोस्।</string>
   <string name="bd_caption_tutorial_dialog_title">क्याप्सनहरू ब्रेल डिस्प्लेमा देखाइने छन्</string>
   <string name="bd_caption_tutorial_dialog_message">यो भिडियोको क्याप्सन देखाउन वा लुकाउन स्पेस र डट १, ४, ७, ८ थिच्नुहोस्।\n\nक्याप्सन देखाउन मिल्ने मिडियाको क्याप्सन स्वतः देखाउन सेटिङमा गई ब्रेल डिस्प्लेमा क्याप्सनहरू देखाउने सुविधा अन गर्नुहोस्।</string>
   <string name="bd_caption_tutorial_dialog_checkbox">क्याप्सनहरू उपलब्ध हुँदा यो म्यासेज सधैँ देखाउनुहोस्</string>
   <string name="bd_usb_connect_dialog_title">ब्रेल डिस्प्ले USB मा कनेक्ट भएको छ</string>
-  <string name="bd_usb_connect_dialog_message">तपाईंको %s को ब्याट्रीबाट तपाईंको ब्रेल डिस्प्ले चार्ज हुँदै छ।\n\nतपाईंले ब्लुटुथ प्रयोग गर्नु परेका खण्डमा आफ्नो USB वा USB हब डिस्कनेक्ट गर्नुहोस् र \"TalkBack का सेटिङ &gt; ब्रेल डिस्प्ले\" मा जानुहोस्।</string>
+  <string name="bd_usb_connect_dialog_message">तपाईंको %s को ब्याट्रीबाट तपाईंको ब्रेल डिस्प्ले चार्ज हुँदै छ।\n\nतपाईंले ब्लुटुथ प्रयोग गर्नु परेका खण्डमा आफ्नो USB वा USB हब डिस्कनेक्ट गर्नुहोस् र \"SandFly का सेटिङ &gt; ब्रेल डिस्प्ले\" मा जानुहोस्।</string>
   <string name="bd_device">फोन</string>
   <string name="bd_battery_low_dialog_title">%s ब्याट्री कम छ</string>
   <string name="bd_battery_low_dialog_message">तपाईंको %s को ब्याट्रीबाट तपाईंको ब्रेल डिस्प्ले चार्ज हुँदै छ।\n\nब्याट्री जोगाउन:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">सबै हटाउनुहोस्</string>
   <string name="popup_message_history_empty">खाली छ</string>
   <string name="popup_message_history_consent_dialog_title">डिभाइसमा म्यासेज हिस्ट्री अन गर्ने हो?</string>
-  <string name="popup_message_history_consent_dialog_msg">तपाईंले यसो गर्नुभयो भने नोटिफिकेसन र अलार्मलगायतका केही म्यासेज TalkBack मा भण्डारण गरिने छन्। तपाईं जुनसुकै बेला यो सेटिङ परिवर्तन गर्न सक्नुहुन्छ।</string>
+  <string name="popup_message_history_consent_dialog_msg">तपाईंले यसो गर्नुभयो भने नोटिफिकेसन र अलार्मलगायतका केही म्यासेज SandFly मा भण्डारण गरिने छन्। तपाईं जुनसुकै बेला यो सेटिङ परिवर्तन गर्न सक्नुहुन्छ।</string>
   <string name="popup_message_history_consent_dialog_positive_btn">अन गर्नुहोस्</string>
   <string name="popup_message_history_consent_dialog_negative_btn">पर्दैन, धन्यवाद</string>
+    <string name="external_display_channel">अन्य एपहरूबाट ब्रेल डिस्प्ले</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> लाई SandFly को लागि ब्रेल डिस्प्ले हुन दिने हो?</string>
+    <string name="external_display_ask_text">SandFly तपाईंले यसलाई अनुमति नदिएसम्म यसलाई प्रयोग गर्ने छैन।</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ले SandFly ब्रेलमा देखाइएका सबै कुराहरू पढ्न सक्षम हुनेछ, जुन सन्देशहरू र तपाईंले टाइप गर्ने लगायत स्क्रिनमा जुनसुकै कुरा हुन सक्छ। यसले ब्रेल डिस्प्लेको साथ तपाईँको यन्त्रलाई नियन्त्रण गर्न पनि सक्षम हुनेछ: टाइप गर्नुहोस्, एपहरू खोल्नुहोस् र कुनै पनि SandFly आदेश चलाउनुहोस्। तपाईंले विश्वास गर्ने एपहरूलाई मात्र अनुमति दिनुहोस्।</string>
+    <string name="external_display_allow">अनुमति दिनुहोस्</string>
+    <string name="external_display_deny">अनुमति नदिनुहोस्</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> तपाईको ब्रेल डिस्प्ले हो</string>
+    <string name="external_display_in_use_text">SandFly ले यसलाई प्रयोग गर्दा, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ले स्क्रिन पढ्न र यन्त्रलाई नियन्त्रण गर्न सक्छ।</string>
+    <string name="external_displays_title">अन्य अनुप्रयोगहरूबाट प्रदर्शन</string>
+    <string name="external_displays_summary">तपाईंले अनुमति दिनुभएको एपहरू SandFly को लागि ब्रेल डिस्प्ले हुन सक्छन्। एउटा ब्रेल डिस्प्ले भएको एपले स्क्रिन पढ्न र यन्त्रलाई नियन्त्रण गर्न सक्छ।</string>
+    <string name="external_displays_none">कुनै पनि एप ब्रेल डिस्प्ले हुन सक्दैनन्।</string>
 </resources>
