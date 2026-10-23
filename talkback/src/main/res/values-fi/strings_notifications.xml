@@ -283,20 +283,20 @@
     <string name="notification_cond_media_not">Mediaa ei toisteta</string>
     <string name="notification_action_skip">älä lue</string>
     <string name="notification_action_private">lue vain sovelluksen nimi</string>
-    <string name="notification_action_not_private">lue kokonaan, vaikka yksityisestikin</string>
+    <string name="notification_action_not_private">lue kokonaan, vaikka se olisi yksityinen</string>
     <string name="notification_action_format">käytä puhemuotoa</string>
-    <string name="notification_action_max_words">lukea jopa useita sanoja</string>
-    <string name="notification_action_no_limit">lue ilman pituusrajoituksia</string>
-    <string name="notification_action_keep_emoji">säilytä emoji</string>
-    <string name="notification_action_keep_numbers">pitää numerot yhdessä</string>
+    <string name="notification_action_max_words">lue tiettyyn sanamäärään asti</string>
+    <string name="notification_action_no_limit">lue ilman pituusrajoitusta</string>
+    <string name="notification_action_keep_emoji">säilytä emojit</string>
+    <string name="notification_action_keep_numbers">pidä numerot yhdessä</string>
     <string name="notification_action_priority">lue ensin</string>
-    <string name="notification_action_always_read">Lue ilmoitukset ääneen myös hiljaisina aikoina tai muina rajoitettuina aikoina</string>
-    <string name="notification_action_voice">lukea ääniprofiililla</string>
+    <string name="notification_action_always_read">lue myös hiljaisina tunteina ja muina aikoina, joina ilmoituksia ei lueta</string>
+    <string name="notification_action_voice">lue ääniprofiililla</string>
     <string name="notification_action_voice_value">lue profiililla <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">lukea SandFly äänellä</string>
+    <string name="notification_action_voice_sandfly">lue SandFlyn äänellä</string>
     <string name="notification_voice_removed">Poistettu ääniprofiili</string>
     <string name="notification_action_format_value">käytä puhemuotoa <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">lue <xliff:g id="words" example="10 words">%1$s</xliff:g> asti</string>
+    <string name="notification_action_max_words_value">lue enintään <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Pois päältä</string>
     <string name="notification_on">Päällä</string>
     <string name="notification_never_again">Kunnes SandFly käynnistyy uudelleen</string>

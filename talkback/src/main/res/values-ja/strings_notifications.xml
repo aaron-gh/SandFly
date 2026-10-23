@@ -282,21 +282,21 @@
     <string name="notification_cond_media">メディアの再生中</string>
     <string name="notification_cond_media_not">再生中のメディアがありません</string>
     <string name="notification_action_skip">読み上げない</string>
-    <string name="notification_action_private">アプリ名のみを読み取ります</string>
-    <string name="notification_action_not_private">非公開であっても全文を読む</string>
-    <string name="notification_action_format">音声形式を使用する</string>
-    <string name="notification_action_max_words">いくつかの単語まで読む</string>
-    <string name="notification_action_no_limit">長さ制限なしで読む</string>
+    <string name="notification_action_private">アプリ名のみ読み上げる</string>
+    <string name="notification_action_not_private">非公開でも全文を読み上げる</string>
+    <string name="notification_action_format">読み上げ形式を使う</string>
+    <string name="notification_action_max_words">指定した語数まで読み上げる</string>
+    <string name="notification_action_no_limit">長さを制限せずに読み上げる</string>
     <string name="notification_action_keep_emoji">絵文字を残す</string>
-    <string name="notification_action_keep_numbers">数字をまとめて読む</string>
+    <string name="notification_action_keep_numbers">数字を区切らずに読む</string>
     <string name="notification_action_priority">最初に読み上げる</string>
-    <string name="notification_action_always_read">静かな時間帯やその他の制限された時間帯でも通知を読み上げます</string>
-    <string name="notification_action_voice">音声プロファイルで読む</string>
+    <string name="notification_action_always_read">静かな時間帯や通知を読み上げないその他の時間帯でも読み上げる</string>
+    <string name="notification_action_voice">音声プロファイルで読み上げる</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読み上げる</string>
-    <string name="notification_action_voice_sandfly">SandFlyの声で読みます</string>
+    <string name="notification_action_voice_sandfly">SandFly の音声で読み上げる</string>
     <string name="notification_voice_removed">削除された音声プロファイル</string>
-    <string name="notification_action_format_value">音声形式 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> を使用してください</string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>まで読んでください</string>
+    <string name="notification_action_format_value">読み上げ形式「<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g>」を使う</string>
+    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>まで読み上げる</string>
     <string name="notification_off">オフ</string>
     <string name="notification_on">オン</string>
     <string name="notification_never_again">SandFlyが再起動するまで</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API түлхүүр</string>
-    <string name="summary_pref_gemini_api_key_built_in">Энэ програмд суулгасан түлхүүрийг ашиглана уу</string>
+    <string name="summary_pref_gemini_api_key_built_in">Энэ аппд суулгасан түлхүүрийг ашиглаж байна</string>
     <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey дээрээс Google AI Studio-с үнэгүй API түлхүүр авч, энд буулгана уу. Түлхүүрээ арилгахын тулд талбарыг арилгаж хадгална уу.\n\nТаны тодорхойлсон зураг, дэлгэцийг Google руу илгээнэ. Үнэгүй давхарга дээр Google бүтээгдэхүүнээ сайжруулахын тулд тэдгээрийг ашиглах боломжтой.</string>
     <string name="gemini_api_key_hint">API түлхүүр</string>
     <string name="gemini_api_key_save">Хадгалах</string>
@@ -39,7 +39,7 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> үйлчилгээг тохируулаагүй байна</string>
     <string name="ai_provider_in_use">Ашиглаж байна</string>
     <string name="ai_provider_not_set_up">Тохируулаагүй байна</string>
-    <string name="ai_provider_not_ready">Эхлээд загвараа сонго</string>
+    <string name="ai_provider_not_ready">Эхлээд загвар сонгоно уу</string>
     <string name="ai_provider_address">Хаяг</string>
     <string name="ai_provider_address_message">Https://example.com/v1. гэх мэт OpenAI-тай нийцтэй чатын API болон дүрс оруулах үйлчилгээний хаяг</string>
     <string name="ai_provider_not_set">Тохируулаагүй</string>

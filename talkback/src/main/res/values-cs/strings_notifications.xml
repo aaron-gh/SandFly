@@ -283,20 +283,20 @@
     <string name="notification_cond_media_not">Nepřehrává se žádné médium</string>
     <string name="notification_action_skip">nečíst</string>
     <string name="notification_action_private">číst pouze název aplikace</string>
-    <string name="notification_action_not_private">přečíst celé, i když soukromé</string>
+    <string name="notification_action_not_private">číst celé, i když je soukromé</string>
     <string name="notification_action_format">použít formát řeči</string>
-    <string name="notification_action_max_words">přečíst až několik slov</string>
+    <string name="notification_action_max_words">číst až do určitého počtu slov</string>
     <string name="notification_action_no_limit">číst bez omezení délky</string>
-    <string name="notification_action_keep_emoji">zachovat emotikony</string>
-    <string name="notification_action_keep_numbers">držet čísla pohromadě</string>
+    <string name="notification_action_keep_emoji">zachovat emoji</string>
+    <string name="notification_action_keep_numbers">nerozdělovat čísla</string>
     <string name="notification_action_priority">číst jako první</string>
-    <string name="notification_action_always_read">Čtěte oznámení nahlas i v klidových hodinách nebo v jiných omezených časech</string>
-    <string name="notification_action_voice">číst pomocí hlasového profilu</string>
-    <string name="notification_action_voice_value">číst s <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">čtěte hlasem SandFly</string>
+    <string name="notification_action_always_read">číst i v tichých hodinách a dalších dobách, kdy se oznámení nečtou</string>
+    <string name="notification_action_voice">číst hlasovým profilem</string>
+    <string name="notification_action_voice_value">číst profilem <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">číst hlasem SandFly</string>
     <string name="notification_voice_removed">Odstraněný hlasový profil</string>
-    <string name="notification_action_format_value">použijte formát řeči <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">přečíst do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">použít formát řeči <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">číst až <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Vypnuto</string>
     <string name="notification_on">Zapnuto</string>
     <string name="notification_never_again">Dokud se SandFly nerestartuje</string>

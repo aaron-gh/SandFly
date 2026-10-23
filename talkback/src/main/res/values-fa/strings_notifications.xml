@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">زنگ روشن است</string>
     <string name="notification_cond_media">رسانه در حال پخش است</string>
     <string name="notification_cond_media_not">هیچ رسانه ای پخش نمی شود</string>
-    <string name="notification_action_skip">نخوان</string>
-    <string name="notification_action_private">فقط نام برنامه را بخوانید</string>
-    <string name="notification_action_not_private">به طور کامل بخوانید، حتی اگر خصوصی باشد</string>
-    <string name="notification_action_format">از قالب گفتاری استفاده کنید</string>
-    <string name="notification_action_max_words">تا تعدادی کلمه بخوانید</string>
-    <string name="notification_action_no_limit">بدون محدودیت طول بخوانید</string>
-    <string name="notification_action_keep_emoji">ایموجی را نگه دارید</string>
-    <string name="notification_action_keep_numbers">اعداد را با هم نگه دارید</string>
+    <string name="notification_action_skip">خوانده نشود</string>
+    <string name="notification_action_private">فقط نام برنامه خوانده شود</string>
+    <string name="notification_action_not_private">کامل خوانده شود، حتی اگر خصوصی باشد</string>
+    <string name="notification_action_format">از یک قالب گفتار استفاده شود</string>
+    <string name="notification_action_max_words">تا تعداد مشخصی کلمه خوانده شود</string>
+    <string name="notification_action_no_limit">بدون محدودیت طول خوانده شود</string>
+    <string name="notification_action_keep_emoji">ایموجی حفظ شود</string>
+    <string name="notification_action_keep_numbers">اعداد با هم نگه داشته شوند</string>
     <string name="notification_action_priority">اول خوانده شود</string>
-    <string name="notification_action_always_read">خواندن حتی در ساعات سکوت و زمان‌های دیگری که اعلان‌ها خوانده نمی‌شوند</string>
-    <string name="notification_action_voice">با نمایه صوتی بخوانید</string>
-    <string name="notification_action_voice_value">با <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> بخوانید</string>
-    <string name="notification_action_voice_sandfly">با صدای SandFly بخوانید</string>
+    <string name="notification_action_always_read">حتی در ساعات خلوت و دیگر زمان‌هایی که اعلان‌ها خوانده نمی‌شوند خوانده شود</string>
+    <string name="notification_action_voice">با نمایه صوتی خوانده شود</string>
+    <string name="notification_action_voice_value">با <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> خوانده شود</string>
+    <string name="notification_action_voice_sandfly">با صدای SandFly خوانده شود</string>
     <string name="notification_voice_removed">نمایه صوتی حذف‌شده</string>
-    <string name="notification_action_format_value">از قالب گفتار استفاده کنید <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">تا <xliff:g id="words" example="10 words">%1$s</xliff:g> بخوانید</string>
+    <string name="notification_action_format_value">از قالب گفتار <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> استفاده شود</string>
+    <string name="notification_action_max_words_value">تا <xliff:g id="words" example="10 words">%1$s</xliff:g> خوانده شود</string>
     <string name="notification_off">خاموش</string>
     <string name="notification_on">روشن</string>
     <string name="notification_never_again">تا زمانی که SandFly راه اندازی مجدد شود</string>

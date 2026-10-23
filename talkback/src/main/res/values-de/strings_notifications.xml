@@ -281,12 +281,12 @@
     <string name="notification_cond_silent_not">Der Klingelton ist eingeschaltet</string>
     <string name="notification_cond_media">Medien werden abgespielt</string>
     <string name="notification_cond_media_not">Es werden keine Medien abgespielt</string>
-    <string name="notification_action_skip">nicht lesen</string>
+    <string name="notification_action_skip">nicht vorlesen</string>
     <string name="notification_action_private">nur den App-Namen vorlesen</string>
     <string name="notification_action_not_private">vollständig vorlesen, auch private Inhalte</string>
     <string name="notification_action_format">ein Sprachausgabeformat verwenden</string>
-    <string name="notification_action_max_words">bis zu einer Anzahl von Wörtern lesen</string>
-    <string name="notification_action_no_limit">ohne Längenbegrenzung lesen</string>
+    <string name="notification_action_max_words">bis zu einer Anzahl von Wörtern vorlesen</string>
+    <string name="notification_action_no_limit">ohne Längenbegrenzung vorlesen</string>
     <string name="notification_action_keep_emoji">Emoji behalten</string>
     <string name="notification_action_keep_numbers">Zahlen zusammenhalten</string>
     <string name="notification_action_priority">zuerst vorlesen</string>
@@ -296,7 +296,7 @@
     <string name="notification_action_voice_sandfly">mit der Stimme von SandFly vorlesen</string>
     <string name="notification_voice_removed">Entferntes Stimmprofil</string>
     <string name="notification_action_format_value">das Sprachausgabeformat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> verwenden</string>
-    <string name="notification_action_max_words_value">bis <xliff:g id="words" example="10 words">%1$s</xliff:g> lesen</string>
+    <string name="notification_action_max_words_value">bis zu <xliff:g id="words" example="10 words">%1$s</xliff:g> vorlesen</string>
     <string name="notification_off">Aus</string>
     <string name="notification_on">An</string>
     <string name="notification_never_again">Bis SandFly neu startet</string>

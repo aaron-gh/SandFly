@@ -281,21 +281,21 @@
     <string name="notification_cond_silent_not">Zvono je uključeno</string>
     <string name="notification_cond_media">Mediji se reprodukuju</string>
     <string name="notification_cond_media_not">Nijedan medij se ne reproducira</string>
-    <string name="notification_action_skip">nemoj čitati</string>
-    <string name="notification_action_private">pročitajte samo naziv aplikacije</string>
-    <string name="notification_action_not_private">pročitajte u cijelosti, čak i privatno</string>
-    <string name="notification_action_format">koristiti govorni format</string>
+    <string name="notification_action_skip">ne čitati</string>
+    <string name="notification_action_private">čitati samo naziv aplikacije</string>
+    <string name="notification_action_not_private">čitati u cijelosti, čak i ako je privatno</string>
+    <string name="notification_action_format">koristiti format govora</string>
     <string name="notification_action_max_words">čitati do određenog broja riječi</string>
     <string name="notification_action_no_limit">čitati bez ograničenja duljine</string>
-    <string name="notification_action_keep_emoji">zadrži emoji</string>
+    <string name="notification_action_keep_emoji">zadržati emoji</string>
     <string name="notification_action_keep_numbers">držati brojeve zajedno</string>
-    <string name="notification_action_priority">prvo pročitaj</string>
-    <string name="notification_action_always_read">Čitajte obavijesti naglas čak i tijekom mirnih sati ili u drugim ograničenim vremenima</string>
-    <string name="notification_action_voice">čitati s glasovnim profilom</string>
-    <string name="notification_action_voice_value">čitaj sa <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">čitaj glasom SandFly</string>
+    <string name="notification_action_priority">čitati prvo</string>
+    <string name="notification_action_always_read">čitati čak i tijekom tihih sati i u drugim razdobljima kada se obavijesti ne čitaju</string>
+    <string name="notification_action_voice">čitati glasovnim profilom</string>
+    <string name="notification_action_voice_value">čitati profilom <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">čitati glasom SandFlyja</string>
     <string name="notification_voice_removed">Uklonjen glasovni profil</string>
-    <string name="notification_action_format_value">koristi govorni format <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">koristiti format govora <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">čitati do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Isključeno</string>
     <string name="notification_on">Uključeno</string>

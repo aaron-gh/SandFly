@@ -281,21 +281,21 @@
     <string name="notification_cond_silent_not">Хонхны дуу асаалттай</string>
     <string name="notification_cond_media">Медиа тоглуулж байна</string>
     <string name="notification_cond_media_not">Ямар ч медиа тоглуулахгүй байна</string>
-    <string name="notification_action_skip">битгий унш</string>
-    <string name="notification_action_private">зөвхөн програмын нэрийг уншина уу</string>
-    <string name="notification_action_not_private">хувийн байсан ч бүрэн эхээр нь уншина уу</string>
-    <string name="notification_action_format">ярианы форматыг ашиглах</string>
-    <string name="notification_action_max_words">хэд хэдэн үг хүртэл унших</string>
-    <string name="notification_action_no_limit">уртын хязгаарлалтгүйгээр унших</string>
+    <string name="notification_action_skip">уншихгүй</string>
+    <string name="notification_action_private">зөвхөн аппын нэрийг унших</string>
+    <string name="notification_action_not_private">хувийн байсан ч бүтнээр нь унших</string>
+    <string name="notification_action_format">ярианы формат ашиглах</string>
+    <string name="notification_action_max_words">тодорхой тооны үг хүртэл унших</string>
+    <string name="notification_action_no_limit">уртын хязгааргүй унших</string>
     <string name="notification_action_keep_emoji">эможи хадгалах</string>
-    <string name="notification_action_keep_numbers">тоонуудыг хамтад нь байлгах</string>
-    <string name="notification_action_priority">эхлээд унш</string>
-    <string name="notification_action_always_read">Чимээгүй цаг эсвэл бусад хязгаарлалттай үед ч мэдэгдлийг чангаар уншаарай</string>
-    <string name="notification_action_voice">дуут профайл ашиглан уншина уу</string>
+    <string name="notification_action_keep_numbers">тоог хамт байлгах</string>
+    <string name="notification_action_priority">эхэлж унших</string>
+    <string name="notification_action_always_read">чимээгүй цаг болон мэдэгдэл уншдаггүй бусад үед ч унших</string>
+    <string name="notification_action_voice">дуу хоолойн профайлаар унших</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> профайлаар унших</string>
-    <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор уншина уу</string>
+    <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор унших</string>
     <string name="notification_voice_removed">Устгагдсан дуут профайл</string>
-    <string name="notification_action_format_value">ярианы форматыг ашиглах <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_format_value"><xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ярианы формат ашиглах</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> хүртэл унших</string>
     <string name="notification_off">Унтраалттай</string>
     <string name="notification_on">Асаалттай</string>

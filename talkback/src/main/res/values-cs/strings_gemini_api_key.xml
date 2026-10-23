@@ -9,9 +9,9 @@
     <string name="title_pref_gemini_model">Model Gemini</string>
     <string name="gemini_model_automatic">Automaticky</string>
     <string name="summary_pref_gemini_model_automatic">Automaticky: Gemini Flash, poté Flash-Lite, když je Flash zaneprázdněn</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, poté Flash-Lite, když je zaneprázdněn</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, poté Flash-Lite, když je přetížený</string>
     <string name="gemini_model_loading">Získávání modelů…</string>
-    <string name="gemini_model_list_failed">Nelze získat modely: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">Modely nelze získat: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Nejprve nastavte klíč API Gemini</string>
     <string name="ai_service_address_hint">Adresa, například https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>

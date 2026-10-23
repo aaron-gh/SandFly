@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API కీ</string>
-    <string name="summary_pref_gemini_api_key_built_in">ఈ యాప్‌లో అంతర్నిర్మిత కీని ఉపయోగించడం</string>
+    <string name="summary_pref_gemini_api_key_built_in">ఈ యాప్‌లో అంతర్నిర్మితమైన కీ ఉపయోగించబడుతోంది</string>
     <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikeyలో Google AI స్టూడియో నుండి ఉచిత API కీని పొందండి మరియు దానిని ఇక్కడ అతికించండి. మీ కీని తీసివేయడానికి, ఫీల్డ్‌ను క్లియర్ చేసి, సేవ్ చేయండి.\n\nమీరు వివరించే చిత్రాలు మరియు స్క్రీన్‌లు Googleకి పంపబడతాయి. ఉచిత శ్రేణిలో, Google తన ఉత్పత్తులను మెరుగుపరచడానికి వాటిని ఉపయోగించవచ్చు.</string>
     <string name="gemini_api_key_hint">API కీ</string>
     <string name="gemini_api_key_save">సేవ్ చేయండి</string>
@@ -9,12 +9,12 @@
     <string name="title_pref_gemini_model">Gemini మోడల్</string>
     <string name="gemini_model_automatic">ఆటోమేటిక్</string>
     <string name="summary_pref_gemini_model_automatic">ఆటోమేటిక్: Gemini ఫ్లాష్, ఆపై ఫ్లాష్ బిజీగా ఉన్నప్పుడు ఫ్లాష్-లైట్</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ఆపై బిజీగా ఉన్నప్పుడు ఫ్లాష్-లైట్</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, బిజీగా ఉన్నప్పుడు Flash-Lite</string>
     <string name="gemini_model_loading">మోడల్‌లను పొందుతోంది…</string>
     <string name="gemini_model_list_failed">మోడల్‌లను పొందడం సాధ్యపడలేదు: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">ముందుగా Gemini API కీని సెట్ చేయండి</string>
     <string name="gemini_api_terms_link">Gemini API అదనపు సేవా నిబంధనలు</string>
-    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 వంటి చిరునామా</string>
+    <string name="ai_service_address_hint">చిరునామా, ఉదాహరణకు https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">మోడల్</string>
     <string name="ai_service_address_invalid">చిరునామా తప్పనిసరిగా https://.తో ప్రారంభం కావాలి ఏదీ సేవ్ చేయబడలేదు.</string>
     <string name="dialog_message_ai_service_consent">చిత్రాలు మరియు స్క్రీన్‌షాట్‌లు వివరించడానికి <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>కి పంపబడతాయి, దీనికి చాలా సెకన్ల సమయం పడుతుంది. దాని స్వంత నిబంధనలు మరియు గోప్యతా విధానం వర్తిస్తాయి. ఉత్పాదక AI ప్రయోగాత్మకమైనది, కాబట్టి ఇది తప్పులు చేస్తుంది.</string>

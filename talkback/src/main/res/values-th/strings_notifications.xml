@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">เปิดเสียงเรียกเข้าอยู่</string>
     <string name="notification_cond_media">กำลังเล่นสื่อ</string>
     <string name="notification_cond_media_not">ไม่มีสื่อกำลังเล่น</string>
-    <string name="notification_action_skip">อย่าอ่าน</string>
+    <string name="notification_action_skip">ไม่อ่าน</string>
     <string name="notification_action_private">อ่านเฉพาะชื่อแอป</string>
-    <string name="notification_action_not_private">อ่านเต็มๆ แม้จะเป็นเรื่องส่วนตัวก็ตาม</string>
-    <string name="notification_action_format">ใช้รูปแบบคำพูด</string>
-    <string name="notification_action_max_words">อ่านได้หลายคำ</string>
-    <string name="notification_action_no_limit">อ่านได้ไม่จำกัดความยาว</string>
-    <string name="notification_action_keep_emoji">เก็บอิโมจิไว้</string>
-    <string name="notification_action_keep_numbers">เก็บตัวเลขไว้ด้วยกัน</string>
+    <string name="notification_action_not_private">อ่านทั้งหมด แม้เป็นข้อมูลส่วนตัว</string>
+    <string name="notification_action_format">ใช้รูปแบบเสียงพูด</string>
+    <string name="notification_action_max_words">อ่านไม่เกินจำนวนคำที่กำหนด</string>
+    <string name="notification_action_no_limit">อ่านโดยไม่จำกัดความยาว</string>
+    <string name="notification_action_keep_emoji">เก็บอีโมจิไว้</string>
+    <string name="notification_action_keep_numbers">อ่านตัวเลขรวมกัน</string>
     <string name="notification_action_priority">อ่านก่อน</string>
-    <string name="notification_action_always_read">อ่านออกเสียงการแจ้งเตือนแม้ในช่วงเวลาที่เงียบสงบหรือเวลาที่จำกัดอื่นๆ</string>
+    <string name="notification_action_always_read">อ่านแม้ในช่วงเวลาเงียบและเวลาอื่นที่ไม่อ่านการแจ้งเตือน</string>
     <string name="notification_action_voice">อ่านด้วยโปรไฟล์เสียง</string>
     <string name="notification_action_voice_value">อ่านด้วย <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">อ่านด้วยเสียงของ SandFly</string>
     <string name="notification_voice_removed">โปรไฟล์เสียงที่ถูกลบออก</string>
-    <string name="notification_action_format_value">ใช้รูปแบบคำพูด <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">อ่านได้ถึง <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">ใช้รูปแบบเสียงพูด <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">อ่านไม่เกิน <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">ปิด</string>
     <string name="notification_on">เปิด</string>
     <string name="notification_never_again">จนกระทั่ง SandFly รีสตาร์ท</string>

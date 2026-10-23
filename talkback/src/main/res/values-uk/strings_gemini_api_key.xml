@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Ключ API Gemini</string>
-    <string name="summary_pref_gemini_api_key_built_in">За допомогою ключа, вбудованого в цю програму</string>
+    <string name="summary_pref_gemini_api_key_built_in">Використовується ключ, вбудований у цю програму</string>
     <string name="gemini_api_key_dialog_message">Отримайте безкоштовний ключ API від Google AI Studio за адресою aistudio.google.com/apikey і вставте його сюди. Щоб видалити свій ключ, очистіть поле та збережіть.\n\nЗображення та екрани, які ви описуєте, надсилаються на Google. На безкоштовному рівні Google може використовувати їх для покращення своїх продуктів.</string>
     <string name="gemini_api_key_hint">Ключ API</string>
     <string name="gemini_api_key_save">Зберегти</string>
@@ -13,7 +13,7 @@
     <string name="gemini_model_loading">Отримання моделей…</string>
     <string name="gemini_model_list_failed">Не вдалося отримати моделі: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Спочатку встановіть ключ API Gemini</string>
-    <string name="gemini_api_terms_link">Gemini Додаткові умови використання API</string>
+    <string name="gemini_api_terms_link">Додаткові умови використання Gemini API</string>
     <string name="ai_service_address_hint">Адреса, наприклад https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адреса має починатися з https://. Нічого не збережено.</string>

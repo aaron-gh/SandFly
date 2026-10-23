@@ -281,21 +281,21 @@
     <string name="notification_cond_silent_not">Звонок включён</string>
     <string name="notification_cond_media">Воспроизводится медиаконтент</string>
     <string name="notification_cond_media_not">Ни один носитель не воспроизводится</string>
-    <string name="notification_action_skip">не читай</string>
+    <string name="notification_action_skip">не читать</string>
     <string name="notification_action_private">читать только название приложения</string>
-    <string name="notification_action_not_private">читать полностью, даже если приватно</string>
-    <string name="notification_action_format">использовать речевой формат</string>
-    <string name="notification_action_max_words">прочитать до нескольких слов</string>
-    <string name="notification_action_no_limit">читать без ограничений по длине</string>
+    <string name="notification_action_not_private">читать полностью, даже если оно личное</string>
+    <string name="notification_action_format">использовать формат речи</string>
+    <string name="notification_action_max_words">читать до определённого числа слов</string>
+    <string name="notification_action_no_limit">читать без ограничения длины</string>
     <string name="notification_action_keep_emoji">сохранять эмодзи</string>
     <string name="notification_action_keep_numbers">не разбивать числа</string>
     <string name="notification_action_priority">читать первым</string>
-    <string name="notification_action_always_read">Читайте уведомления вслух даже в тихие часы или в другое время с ограничениями.</string>
+    <string name="notification_action_always_read">читать даже в тихие часы и в другое время, когда уведомления не читаются</string>
     <string name="notification_action_voice">читать с голосовым профилем</string>
-    <string name="notification_action_voice_value">читать с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">читать с профилем <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">читать голосом SandFly</string>
     <string name="notification_voice_removed">Удалённый голосовой профиль</string>
-    <string name="notification_action_format_value">используйте формат речи <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">использовать формат речи <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">читать до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Отключён</string>
     <string name="notification_on">Включён</string>

@@ -12,7 +12,7 @@
     <string name="summary_pref_gemini_model_automatic">خودکار: Gemini Flash، سپس Flash-Lite وقتی Flash مشغول است</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، سپس Flash-Lite وقتی مشغول است</string>
     <string name="gemini_model_loading">در حال دریافت مدل‌ها…</string>
-    <string name="gemini_model_list_failed">نمی توان مدل ها را دریافت کرد: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">مدل‌ها دریافت نشد: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">ابتدا یک کلید API Gemini تنظیم کنید</string>
     <string name="ai_service_address_hint">آدرس، مانند https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">مدل</string>

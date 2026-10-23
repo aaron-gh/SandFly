@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Dering aktif</string>
     <string name="notification_cond_media">Media sedang diputar</string>
     <string name="notification_cond_media_not">Tidak ada media yang diputar</string>
-    <string name="notification_action_skip">jangan membaca</string>
-    <string name="notification_action_private">hanya membaca nama aplikasi</string>
-    <string name="notification_action_not_private">baca selengkapnya, meskipun pribadi</string>
-    <string name="notification_action_format">menggunakan format ucapan</string>
-    <string name="notification_action_max_words">membaca hingga beberapa kata</string>
-    <string name="notification_action_no_limit">membaca tanpa batas panjang</string>
-    <string name="notification_action_keep_emoji">simpan emoji</string>
-    <string name="notification_action_keep_numbers">menyatukan angka-angka</string>
-    <string name="notification_action_priority">baca dulu</string>
-    <string name="notification_action_always_read">Baca notifikasi dengan keras bahkan selama jam tenang atau waktu terbatas lainnya</string>
-    <string name="notification_action_voice">membaca dengan profil suara</string>
-    <string name="notification_action_voice_value">baca dengan <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">membaca dengan suara SandFly</string>
+    <string name="notification_action_skip">jangan bacakan</string>
+    <string name="notification_action_private">bacakan nama aplikasi saja</string>
+    <string name="notification_action_not_private">bacakan seluruhnya, meskipun pribadi</string>
+    <string name="notification_action_format">gunakan format ucapan</string>
+    <string name="notification_action_max_words">bacakan hingga sejumlah kata</string>
+    <string name="notification_action_no_limit">bacakan tanpa batas panjang</string>
+    <string name="notification_action_keep_emoji">pertahankan emoji</string>
+    <string name="notification_action_keep_numbers">satukan angka</string>
+    <string name="notification_action_priority">bacakan lebih dulu</string>
+    <string name="notification_action_always_read">bacakan bahkan saat jam tenang dan waktu lain ketika notifikasi tidak dibacakan</string>
+    <string name="notification_action_voice">bacakan dengan profil suara</string>
+    <string name="notification_action_voice_value">bacakan dengan <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">bacakan dengan suara SandFly</string>
     <string name="notification_voice_removed">Profil suara yang dihapus</string>
     <string name="notification_action_format_value">gunakan format ucapan <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">baca hingga <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">bacakan hingga <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Nonaktif</string>
     <string name="notification_on">Aktif</string>
     <string name="notification_never_again">Hingga SandFly dimulai ulang</string>

@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">الرنين مفعّل</string>
     <string name="notification_cond_media">الوسائط قيد التشغيل</string>
     <string name="notification_cond_media_not">لا توجد وسائط قيد التشغيل</string>
-    <string name="notification_action_skip">لا تقرأ</string>
+    <string name="notification_action_skip">عدم القراءة</string>
     <string name="notification_action_private">قراءة اسم التطبيق فقط</string>
-    <string name="notification_action_not_private">قراءة كاملة، حتى لو خاصة</string>
-    <string name="notification_action_format">استخدام تنسيق الكلام</string>
-    <string name="notification_action_max_words">قراءة ما يصل إلى عدد من الكلمات</string>
-    <string name="notification_action_no_limit">قراءة دون حدود الطول</string>
-    <string name="notification_action_keep_emoji">احتفظ بالرموز التعبيرية</string>
-    <string name="notification_action_keep_numbers">احتفظ بالأرقام معًا</string>
-    <string name="notification_action_priority">اقرأ أولاً</string>
-    <string name="notification_action_always_read">اقرأ الإشعارات بصوت عالٍ حتى أثناء ساعات الهدوء أو الأوقات المقيدة الأخرى</string>
-    <string name="notification_action_voice">قراءة مع ملف تعريف صوتي</string>
+    <string name="notification_action_not_private">القراءة كاملةً حتى لو كانت خاصة</string>
+    <string name="notification_action_format">استخدام تنسيق كلام</string>
+    <string name="notification_action_max_words">القراءة حتى عدد معيّن من الكلمات</string>
+    <string name="notification_action_no_limit">القراءة دون حدود للطول</string>
+    <string name="notification_action_keep_emoji">الإبقاء على الرموز التعبيرية</string>
+    <string name="notification_action_keep_numbers">إبقاء الأرقام متصلة</string>
+    <string name="notification_action_priority">القراءة أولاً</string>
+    <string name="notification_action_always_read">القراءة حتى في الساعات الهادئة والأوقات الأخرى التي لا تُقرأ فيها الإشعارات</string>
+    <string name="notification_action_voice">القراءة بملف تعريف صوتي</string>
     <string name="notification_action_voice_value">القراءة باستخدام <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">اقرأ بصوت SandFly</string>
+    <string name="notification_action_voice_sandfly">القراءة بصوت SandFly</string>
     <string name="notification_voice_removed">ملف صوتي محذوف</string>
-    <string name="notification_action_format_value">استخدم تنسيق الكلام <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">اقرأ حتى <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">استخدام تنسيق الكلام <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">القراءة حتى <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">غير مفعَّل</string>
     <string name="notification_on">مفعَّل</string>
     <string name="notification_never_again">حتى يتم إعادة تشغيل SandFly</string>

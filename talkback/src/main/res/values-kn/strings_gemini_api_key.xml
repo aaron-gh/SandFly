@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API ಕೀ</string>
-    <string name="summary_pref_gemini_api_key_built_in">ಈ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ನಿರ್ಮಿಸಲಾದ ಕೀಲಿಯನ್ನು ಬಳಸುವುದು</string>
+    <string name="summary_pref_gemini_api_key_built_in">ಈ ಆ್ಯಪ್‌ನಲ್ಲಿ ಅಂತರ್ಗತವಾಗಿರುವ ಕೀ ಬಳಸಲಾಗುತ್ತಿದೆ</string>
     <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey ನಲ್ಲಿ Google AI ಸ್ಟುಡಿಯೋದಿಂದ ಉಚಿತ API ಕೀಯನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು ಅದನ್ನು ಇಲ್ಲಿ ಅಂಟಿಸಿ. ನಿಮ್ಮ ಕೀಲಿಯನ್ನು ತೆಗೆದುಹಾಕಲು, ಕ್ಷೇತ್ರವನ್ನು ತೆರವುಗೊಳಿಸಿ ಮತ್ತು ಉಳಿಸಿ.\n\nನೀವು ವಿವರಿಸುವ ಚಿತ್ರಗಳು ಮತ್ತು ಪರದೆಗಳನ್ನು Google ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಉಚಿತ ಶ್ರೇಣಿಯಲ್ಲಿ, Google ತನ್ನ ಉತ್ಪನ್ನಗಳನ್ನು ಸುಧಾರಿಸಲು ಅವುಗಳನ್ನು ಬಳಸಬಹುದು.</string>
     <string name="gemini_api_key_hint">API ಕೀ</string>
     <string name="gemini_api_key_save">ಸೇವ್ ಮಾಡಿ</string>
@@ -9,9 +9,9 @@
     <string name="title_pref_gemini_model">Gemini ಮಾದರಿ</string>
     <string name="gemini_model_automatic">ಸ್ವಯಂಚಾಲಿತ</string>
     <string name="summary_pref_gemini_model_automatic">ಸ್ವಯಂಚಾಲಿತ: Gemini ಫ್ಲ್ಯಾಶ್, ನಂತರ ಫ್ಲ್ಯಾಶ್ ಕಾರ್ಯನಿರತವಾಗಿರುವಾಗ ಫ್ಲ್ಯಾಶ್-ಲೈಟ್</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ನಂತರ ಅದು ಕಾರ್ಯನಿರತವಾಗಿರುವಾಗ ಫ್ಲ್ಯಾಶ್-ಲೈಟ್</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ಕಾರ್ಯನಿರತವಾಗಿದ್ದಾಗ Flash-Lite</string>
     <string name="gemini_model_loading">ಮಾದರಿಗಳನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...</string>
-    <string name="gemini_model_list_failed">ಮಾದರಿಗಳನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">ಮಾಡೆಲ್‌ಗಳನ್ನು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">ಮೊದಲು Gemini API ಕೀಯನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="gemini_api_terms_link">Gemini API ಹೆಚ್ಚುವರಿ ಸೇವಾ ನಿಯಮಗಳು</string>
     <string name="ai_service_address_hint">ವಿಳಾಸ, ಉದಾಹರಣೆಗೆ https://openrouter.ai/api/v1</string>
@@ -39,7 +39,7 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
     <string name="ai_provider_in_use">ಬಳಕೆಯಲ್ಲಿದೆ</string>
     <string name="ai_provider_not_set_up">ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
-    <string name="ai_provider_not_ready">ಮೊದಲು ಮಾದರಿಯನ್ನು ಆರಿಸಿ</string>
+    <string name="ai_provider_not_ready">ಮೊದಲು ಮಾಡೆಲ್ ಆರಿಸಿ</string>
     <string name="ai_provider_address">ವಿಳಾಸ</string>
     <string name="ai_provider_address_message">OpenAI-ಹೊಂದಾಣಿಕೆಯ ಚಾಟ್ API ಮತ್ತು ಇಮೇಜ್ ಇನ್‌ಪುಟ್‌ನೊಂದಿಗೆ ಸೇವೆಯ ವಿಳಾಸ, ಉದಾಹರಣೆಗೆ https://example.com/v1.</string>
     <string name="ai_provider_not_set">ಹೊಂದಿಸಿಲ್ಲ</string>

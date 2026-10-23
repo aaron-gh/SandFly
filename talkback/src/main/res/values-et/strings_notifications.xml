@@ -283,19 +283,19 @@
     <string name="notification_cond_media_not">Ühtegi meediat ei esitata</string>
     <string name="notification_action_skip">ära loe</string>
     <string name="notification_action_private">loe ainult rakenduse nime</string>
-    <string name="notification_action_not_private">lugeda täielikult, isegi kui privaatne</string>
-    <string name="notification_action_format">kasutage kõnevormingut</string>
-    <string name="notification_action_max_words">loe kuni mitu sõna</string>
-    <string name="notification_action_no_limit">lugeda ilma pikkusepiiranguteta</string>
-    <string name="notification_action_keep_emoji">hoia emotikone</string>
-    <string name="notification_action_keep_numbers">hoia numbreid koos</string>
-    <string name="notification_action_priority">loe kõigepealt</string>
-    <string name="notification_action_always_read">Lugege märguandeid valjusti isegi vaiksetel tundidel või muudel piiratud aegadel</string>
-    <string name="notification_action_voice">lugeda hääleprofiiliga</string>
+    <string name="notification_action_not_private">loe täielikult, isegi kui see on privaatne</string>
+    <string name="notification_action_format">kasuta kõnevormingut</string>
+    <string name="notification_action_max_words">loe kuni teatud arvu sõnadeni</string>
+    <string name="notification_action_no_limit">loe ilma pikkusepiiranguta</string>
+    <string name="notification_action_keep_emoji">säilita emotikonid</string>
+    <string name="notification_action_keep_numbers">hoia numbrid koos</string>
+    <string name="notification_action_priority">loe esimesena</string>
+    <string name="notification_action_always_read">loe ka vaiksetel tundidel ja muul ajal, kui märguandeid ei loeta</string>
+    <string name="notification_action_voice">loe hääleprofiiliga</string>
     <string name="notification_action_voice_value">loe profiiliga <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">loe SandFly häälega</string>
     <string name="notification_voice_removed">Eemaldatud häälprofiil</string>
-    <string name="notification_action_format_value">kasutage kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">kasuta kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">loe kuni <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Väljas</string>
     <string name="notification_on">Sees</string>

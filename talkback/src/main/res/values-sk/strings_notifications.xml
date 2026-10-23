@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Zvonenie je zapnuté</string>
     <string name="notification_cond_media">Prehrávajú sa médiá</string>
     <string name="notification_cond_media_not">Neprehrávajú sa žiadne médiá</string>
-    <string name="notification_action_skip">nečítaj</string>
+    <string name="notification_action_skip">nečítať</string>
     <string name="notification_action_private">čítať iba názov aplikácie</string>
-    <string name="notification_action_not_private">prečítať celé, aj keď súkromné</string>
+    <string name="notification_action_not_private">čítať celé, aj keď je súkromné</string>
     <string name="notification_action_format">použiť formát reči</string>
-    <string name="notification_action_max_words">prečítať až počet slov</string>
+    <string name="notification_action_max_words">čítať do určitého počtu slov</string>
     <string name="notification_action_no_limit">čítať bez obmedzenia dĺžky</string>
-    <string name="notification_action_keep_emoji">ponechať emotikony</string>
-    <string name="notification_action_keep_numbers">držať čísla spolu</string>
-    <string name="notification_action_priority">najprv čítaj</string>
-    <string name="notification_action_always_read">Čítajte upozornenia nahlas aj počas tichých hodín alebo iných obmedzených časov</string>
-    <string name="notification_action_voice">čítať pomocou hlasového profilu</string>
-    <string name="notification_action_voice_value">čítať s <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">čítajte hlasom SandFly</string>
+    <string name="notification_action_keep_emoji">ponechať emoji</string>
+    <string name="notification_action_keep_numbers">nerozdeľovať čísla</string>
+    <string name="notification_action_priority">čítať ako prvé</string>
+    <string name="notification_action_always_read">čítať aj počas tichých hodín a v iných časoch, keď sa upozornenia nečítajú</string>
+    <string name="notification_action_voice">čítať hlasovým profilom</string>
+    <string name="notification_action_voice_value">čítať profilom <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">čítať hlasom SandFly</string>
     <string name="notification_voice_removed">Odstránený hlasový profil</string>
-    <string name="notification_action_format_value">použite formát reči <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">prečítať do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">použiť formát reči <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">čítať do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Vypnuté</string>
     <string name="notification_on">Zapnuté</string>
     <string name="notification_never_again">Kým sa reštartuje SandFly</string>

@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Звоно је укључено</string>
     <string name="notification_cond_media">Репродукује се медијски садржај</string>
     <string name="notification_cond_media_not">Нема медија</string>
-    <string name="notification_action_skip">не читај</string>
-    <string name="notification_action_private">прочитајте само назив апликације</string>
-    <string name="notification_action_not_private">прочитајте у целости, чак и приватно</string>
-    <string name="notification_action_format">користите говорни формат</string>
-    <string name="notification_action_max_words">прочитајте до одређеног броја речи</string>
+    <string name="notification_action_skip">не читати</string>
+    <string name="notification_action_private">читати само назив апликације</string>
+    <string name="notification_action_not_private">читати у целости, чак и ако је приватно</string>
+    <string name="notification_action_format">користити формат говора</string>
+    <string name="notification_action_max_words">читати до одређеног броја речи</string>
     <string name="notification_action_no_limit">читати без ограничења дужине</string>
-    <string name="notification_action_keep_emoji">задржати емоји</string>
+    <string name="notification_action_keep_emoji">задржати емоџије</string>
     <string name="notification_action_keep_numbers">држати бројеве заједно</string>
-    <string name="notification_action_priority">прво прочитај</string>
-    <string name="notification_action_always_read">Читајте обавештења наглас чак и током тихих сати или у другим ограниченим временима</string>
-    <string name="notification_action_voice">читати са гласовним профилом</string>
-    <string name="notification_action_voice_value">читај са <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">читајте гласом SandFly</string>
+    <string name="notification_action_priority">читати прво</string>
+    <string name="notification_action_always_read">читати чак и током тихих сати и у другим периодима када се обавештења не читају</string>
+    <string name="notification_action_voice">читати гласовним профилом</string>
+    <string name="notification_action_voice_value">читати профилом <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">читати гласом SandFly-а</string>
     <string name="notification_voice_removed">Уклоњени гласовни профил</string>
-    <string name="notification_action_format_value">користите формат говора <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">прочитај до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">користити формат говора <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">читати до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Искључено</string>
     <string name="notification_on">Укључено</string>
     <string name="notification_never_again">Док се SandFly поново не покрене</string>

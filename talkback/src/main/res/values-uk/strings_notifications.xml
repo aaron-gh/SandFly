@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">Дзвінок увімкнено</string>
     <string name="notification_cond_media">Медіа відтворюється</string>
     <string name="notification_cond_media_not">Медіа не відтворюється</string>
-    <string name="notification_action_skip">не читай</string>
-    <string name="notification_action_private">читайте лише назву програми</string>
-    <string name="notification_action_not_private">читати повністю, навіть якщо приватно</string>
+    <string name="notification_action_skip">не читати</string>
+    <string name="notification_action_private">читати лише назву програми</string>
+    <string name="notification_action_not_private">читати повністю, навіть якщо воно приватне</string>
     <string name="notification_action_format">використовувати формат мовлення</string>
     <string name="notification_action_max_words">читати до певної кількості слів</string>
     <string name="notification_action_no_limit">читати без обмеження довжини</string>
-    <string name="notification_action_keep_emoji">зберегти емодзі</string>
+    <string name="notification_action_keep_emoji">зберігати емодзі</string>
     <string name="notification_action_keep_numbers">не розбивати числа</string>
     <string name="notification_action_priority">читати першим</string>
-    <string name="notification_action_always_read">Читайте сповіщення вголос навіть у години тиші чи в інший час з обмеженнями</string>
-    <string name="notification_action_voice">читати за допомогою голосового профілю</string>
-    <string name="notification_action_voice_value">читати з <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_always_read">читати навіть у тихі години та в інший час, коли сповіщення не читаються</string>
+    <string name="notification_action_voice">читати з голосовим профілем</string>
+    <string name="notification_action_voice_value">читати з профілем <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">читати голосом SandFly</string>
     <string name="notification_voice_removed">Видалений голосовий профіль</string>
     <string name="notification_action_format_value">використовувати формат мовлення <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>

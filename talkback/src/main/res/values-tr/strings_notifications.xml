@@ -283,20 +283,20 @@
     <string name="notification_cond_media_not">Hiçbir medya oynatılmıyor</string>
     <string name="notification_action_skip">okuma</string>
     <string name="notification_action_private">yalnızca uygulama adını oku</string>
-    <string name="notification_action_not_private">özel olsa bile tamamını okuyun</string>
-    <string name="notification_action_format">konuşma formatı kullan</string>
-    <string name="notification_action_max_words">birkaç kelimeye kadar okuyun</string>
+    <string name="notification_action_not_private">gizli olsa bile tamamını oku</string>
+    <string name="notification_action_format">bir konuşma biçimi kullan</string>
+    <string name="notification_action_max_words">belirli sayıda kelimeye kadar oku</string>
     <string name="notification_action_no_limit">uzunluk sınırı olmadan oku</string>
-    <string name="notification_action_keep_emoji">emojiyi sakla</string>
-    <string name="notification_action_keep_numbers">sayıları bir arada tut</string>
+    <string name="notification_action_keep_emoji">emojileri koru</string>
+    <string name="notification_action_keep_numbers">sayıları bölme</string>
     <string name="notification_action_priority">önce oku</string>
-    <string name="notification_action_always_read">Sessiz saatlerde veya diğer kısıtlı zamanlarda bile bildirimleri yüksek sesle okuyun</string>
-    <string name="notification_action_voice">sesli profille oku</string>
+    <string name="notification_action_always_read">sessiz saatlerde ve bildirimlerin okunmadığı diğer zamanlarda da oku</string>
+    <string name="notification_action_voice">bir ses profiliyle oku</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ile oku</string>
-    <string name="notification_action_voice_sandfly">SandFly\'nin sesiyle okuyun</string>
+    <string name="notification_action_voice_sandfly">SandFly\'ın sesiyle oku</string>
     <string name="notification_voice_removed">Kaldırılan ses profili</string>
-    <string name="notification_action_format_value">konuşma biçimini kullanın <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>\'a kadar okuyun</string>
+    <string name="notification_action_format_value"><xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> konuşma biçimini kullan</string>
+    <string name="notification_action_max_words_value">en fazla <xliff:g id="words" example="10 words">%1$s</xliff:g> oku</string>
     <string name="notification_off">Kapalı</string>
     <string name="notification_on">Açık</string>
     <string name="notification_never_again">SandFly yeniden başlatılana kadar</string>

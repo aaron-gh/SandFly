@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API કી</string>
-    <string name="summary_pref_gemini_api_key_built_in">આ ઍપમાં બિલ્ટ-ઇન કીનો ઉપયોગ કરી રહ્યાં છીએ</string>
+    <string name="summary_pref_gemini_api_key_built_in">આ ઍપમાં બિલ્ટ-ઇન કીનો ઉપયોગ થઈ રહ્યો છે</string>
     <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey પર Google AI Studioમાંથી મફત API કી મેળવો અને તેને અહીં પેસ્ટ કરો. તમારી કી કાઢી નાખવા માટે, ફીલ્ડ ખાલી કરો અને સાચવો.\n\nતમે જે છબીઓ અને સ્ક્રીનનું વર્ણન કરો છો તે Googleને મોકલવામાં આવે છે. મફત ટાયર પર, Google તેનો ઉપયોગ તેના પ્રોડક્ટને બહેતર બનાવવા માટે કરી શકે છે.</string>
     <string name="gemini_api_key_hint">API કી</string>
     <string name="gemini_api_key_save">સાચવો</string>
@@ -11,7 +11,7 @@
     <string name="summary_pref_gemini_model_automatic">સ્વચાલિત: Gemini ફ્લેશ, પછી જ્યારે ફ્લેશ વ્યસ્ત હોય ત્યારે ફ્લેશ-લાઇટ</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, પછી જ્યારે તે વ્યસ્ત હોય ત્યારે Flash-Lite</string>
     <string name="gemini_model_loading">મૉડલ મેળવી રહ્યાં છીએ…</string>
-    <string name="gemini_model_list_failed">મોડેલો મેળવી શક્યા નથી: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">મોડેલ મેળવી શકાયા નથી: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">પહેલા Gemini API કી સેટ કરો</string>
     <string name="gemini_api_terms_link">Gemini APIની સેવાની વધારાની શરતો</string>
     <string name="ai_service_address_hint">સરનામું, જેમ કે https://openrouter.ai/api/v1</string>

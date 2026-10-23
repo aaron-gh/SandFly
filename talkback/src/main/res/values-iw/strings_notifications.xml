@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">הצלצול מופעל</string>
     <string name="notification_cond_media">המדיה מתנגנת</string>
     <string name="notification_cond_media_not">שום מדיה לא מתנגנת</string>
-    <string name="notification_action_skip">לא לקרוא</string>
-    <string name="notification_action_private">קרא רק את שם האפליקציה</string>
-    <string name="notification_action_not_private">קרא במלואו, גם אם פרטי</string>
-    <string name="notification_action_format">השתמש בפורמט דיבור</string>
-    <string name="notification_action_max_words">לקרוא עד מספר מילים</string>
-    <string name="notification_action_no_limit">לקרוא ללא הגבלת אורך</string>
-    <string name="notification_action_keep_emoji">לשמור אימוג\'י</string>
-    <string name="notification_action_keep_numbers">לשמור מספרים ביחד</string>
-    <string name="notification_action_priority">לקרוא קודם</string>
-    <string name="notification_action_always_read">קרא התראות בקול אפילו בשעות שקטות או בשעות מוגבלות אחרות</string>
-    <string name="notification_action_voice">לקרוא עם פרופיל קולי</string>
-    <string name="notification_action_voice_value">הקראה עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">קרא בקול של SandFly</string>
+    <string name="notification_action_skip">לא להקריא</string>
+    <string name="notification_action_private">להקריא רק את שם האפליקציה</string>
+    <string name="notification_action_not_private">להקריא במלואה, גם אם היא פרטית</string>
+    <string name="notification_action_format">להשתמש בפורמט הקראה</string>
+    <string name="notification_action_max_words">להקריא עד מספר מילים מסוים</string>
+    <string name="notification_action_no_limit">להקריא ללא הגבלת אורך</string>
+    <string name="notification_action_keep_emoji">לשמור אמוג\'י</string>
+    <string name="notification_action_keep_numbers">לא לפצל מספרים</string>
+    <string name="notification_action_priority">להקריא ראשונה</string>
+    <string name="notification_action_always_read">להקריא גם בשעות השקטות ובזמנים אחרים שבהם התראות לא מוקראות</string>
+    <string name="notification_action_voice">להקריא עם פרופיל קולי</string>
+    <string name="notification_action_voice_value">להקריא עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">להקריא בקול של SandFly</string>
     <string name="notification_voice_removed">פרופיל קולי שהוסר</string>
-    <string name="notification_action_format_value">השתמש בפורמט הדיבור <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">קרא עד <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">להשתמש בפורמט ההקראה <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">להקריא עד <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">מצב מושבת</string>
     <string name="notification_on">מצב פעיל</string>
     <string name="notification_never_again">עד להפעלה מחדש של SandFly</string>

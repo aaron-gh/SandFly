@@ -11,9 +11,9 @@
     <string name="summary_pref_gemini_model_automatic">אוטומטי: Gemini פלאש, ואז Flash-Lite כאשר הפלאש תפוס</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ואז Flash-Lite כאשר הוא תפוס</string>
     <string name="gemini_model_loading">המודלים מתקבלים…</string>
-    <string name="gemini_model_list_failed">לא ניתן היה להשיג את הדגמים: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">תחילה הגדר מפתח API של Gemini</string>
-    <string name="gemini_api_terms_link">Gemini תנאים והגבלות נוספים של API</string>
+    <string name="gemini_model_list_failed">לא ניתן היה לקבל את המודלים: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">יש להגדיר תחילה מפתח API של Gemini</string>
+    <string name="gemini_api_terms_link">תנאים והגבלות נוספים של Gemini API</string>
     <string name="ai_service_address_hint">כתובת, כגון https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">מודל</string>
     <string name="ai_service_address_invalid">הכתובת חייבת להתחיל ב-https://. שום דבר לא נשמר.</string>
@@ -39,7 +39,7 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, לא מוגדר</string>
     <string name="ai_provider_in_use">בשימוש</string>
     <string name="ai_provider_not_set_up">לא מוגדר</string>
-    <string name="ai_provider_not_ready">תחילה בחר דגם</string>
+    <string name="ai_provider_not_ready">יש לבחור מודל תחילה</string>
     <string name="ai_provider_address">כתובת</string>
     <string name="ai_provider_address_message">כתובת של שירות עם ממשק API של צ\'אט וקלט תמונה תואם OpenAI, כגון https://example.com/v1.</string>
     <string name="ai_provider_not_set">לא מוגדר</string>

@@ -282,21 +282,21 @@
     <string name="notification_cond_media">媒體正在播放</string>
     <string name="notification_cond_media_not">沒有媒體正在播放</string>
     <string name="notification_action_skip">不朗讀</string>
-    <string name="notification_action_private">只讀取應用程式名稱</string>
-    <string name="notification_action_not_private">完整閱讀，即使是私人的</string>
+    <string name="notification_action_private">只朗讀應用程式名稱</string>
+    <string name="notification_action_not_private">完整朗讀，包括私人內容</string>
     <string name="notification_action_format">使用語音格式</string>
-    <string name="notification_action_max_words">最多閱讀幾個單字</string>
-    <string name="notification_action_no_limit">閱讀不受長度限制</string>
+    <string name="notification_action_max_words">朗讀至指定字數</string>
+    <string name="notification_action_no_limit">不限制朗讀長度</string>
     <string name="notification_action_keep_emoji">保留表情符號</string>
     <string name="notification_action_keep_numbers">數字連讀</string>
     <string name="notification_action_priority">優先朗讀</string>
-    <string name="notification_action_always_read">即使在安靜時間或其他限制時間也可以大聲朗讀通知</string>
-    <string name="notification_action_voice">使用語音設定檔閱讀</string>
+    <string name="notification_action_always_read">即使在安靜時間或其他通常不朗讀通知的時段也朗讀</string>
+    <string name="notification_action_voice">使用語音設定檔朗讀</string>
     <string name="notification_action_voice_value">使用 <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> 朗讀</string>
-    <string name="notification_action_voice_sandfly">用SandFly的聲音朗讀</string>
+    <string name="notification_action_voice_sandfly">使用 SandFly 的語音朗讀</string>
     <string name="notification_voice_removed">已刪除的語音設定檔</string>
-    <string name="notification_action_format_value">使用語音格式<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">讀至<xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">使用語音格式 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">朗讀至 <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">關閉</string>
     <string name="notification_on">開啟</string>
     <string name="notification_never_again">直到SandFly重新啟動</string>

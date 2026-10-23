@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">សោ API របស់ Gemini</string>
-    <string name="summary_pref_gemini_api_key_built_in">ដោយប្រើសោដែលបានបង្កើតឡើងនៅក្នុងកម្មវិធីនេះ</string>
+    <string name="summary_pref_gemini_api_key_built_in">កំពុងប្រើសោដែលភ្ជាប់មកជាមួយកម្មវិធីនេះ</string>
     <string name="gemini_api_key_dialog_message">ទទួលបានសោ API ឥតគិតថ្លៃពី Google AI Studio នៅ aistudio.google.com/apikey ហើយបិទភ្ជាប់វានៅទីនេះ។ ដើម្បីដកសោរបស់អ្នក សម្អាតវាល ហើយរក្សាទុក។\n\nរូបភាព និងអេក្រង់ដែលអ្នកពណ៌នាត្រូវបានផ្ញើទៅ Google។ នៅលើកម្រិតឥតគិតថ្លៃ Googleអាចប្រើពួកវាដើម្បីកែលម្អផលិតផលរបស់វា។</string>
     <string name="gemini_api_key_hint">សោ API</string>
     <string name="gemini_api_key_save">រក្សាទុក</string>
@@ -12,9 +12,9 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> បន្ទាប់មក Flash-Lite នៅពេលដែលវារវល់</string>
     <string name="gemini_model_loading">កំពុងទទួលម៉ូដែល…</string>
     <string name="gemini_model_list_failed">មិនអាចទទួលបានម៉ូដែល៖ <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">កំណត់សោ API Geminiជាមុនសិន</string>
-    <string name="gemini_api_terms_link">Gemini លក្ខខណ្ឌប្រើប្រាស់បន្ថែម API</string>
-    <string name="ai_service_address_hint">អាស័យដ្ឋានដូចជា https://openrouter.ai/api/v1</string>
+    <string name="gemini_model_needs_key">កំណត់សោ API Gemini ជាមុនសិន</string>
+    <string name="gemini_api_terms_link">លក្ខខណ្ឌប្រើប្រាស់បន្ថែមរបស់ Gemini API</string>
+    <string name="ai_service_address_hint">អាសយដ្ឋាន ដូចជា https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ម៉ូដែល</string>
     <string name="ai_service_address_invalid">អាសយដ្ឋានត្រូវតែចាប់ផ្តើមដោយ https://. គ្មានអ្វីត្រូវបានរក្សាទុកទេ។</string>
     <string name="dialog_message_ai_service_consent">រូបភាព និងរូបថតអេក្រង់ត្រូវបានផ្ញើទៅ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ដើម្បីពិពណ៌នា ដែលចំណាយពេលច្រើនវិនាទី។ លក្ខខណ្ឌផ្ទាល់ខ្លួន និងគោលការណ៍ឯកជនភាពត្រូវបានអនុវត្ត។ Generative AI គឺជាការពិសោធន៍ ដូច្នេះវានឹងធ្វើឱ្យមានកំហុស។</string>

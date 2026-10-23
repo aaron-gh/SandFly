@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Zvonjenje je vklopljeno</string>
     <string name="notification_cond_media">Mediji se predvajajo</string>
     <string name="notification_cond_media_not">Noben medij se ne predvaja</string>
-    <string name="notification_action_skip">ne beri</string>
-    <string name="notification_action_private">preberite samo ime aplikacije</string>
-    <string name="notification_action_not_private">preberite v celoti, čeprav zasebno</string>
-    <string name="notification_action_format">uporabite govorno obliko</string>
-    <string name="notification_action_max_words">prebrati do določenega števila besed</string>
-    <string name="notification_action_no_limit">branje brez omejitev dolžine</string>
-    <string name="notification_action_keep_emoji">obdrži emoji</string>
-    <string name="notification_action_keep_numbers">drži številke skupaj</string>
-    <string name="notification_action_priority">najprej preberi</string>
-    <string name="notification_action_always_read">Preberite obvestila na glas tudi v tihih urah ali drugih omejenih časih</string>
-    <string name="notification_action_voice">branje z glasovnim profilom</string>
-    <string name="notification_action_voice_value">preberi z <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">preberi z glasom SandFly</string>
+    <string name="notification_action_skip">ne brati</string>
+    <string name="notification_action_private">brati samo ime aplikacije</string>
+    <string name="notification_action_not_private">brati v celoti, tudi če je zasebno</string>
+    <string name="notification_action_format">uporabiti obliko govora</string>
+    <string name="notification_action_max_words">brati do določenega števila besed</string>
+    <string name="notification_action_no_limit">brati brez omejitve dolžine</string>
+    <string name="notification_action_keep_emoji">ohraniti emodžije</string>
+    <string name="notification_action_keep_numbers">ne deliti števil</string>
+    <string name="notification_action_priority">brati prvo</string>
+    <string name="notification_action_always_read">brati tudi v mirnih urah in drugih časih, ko se obvestila ne berejo</string>
+    <string name="notification_action_voice">brati z glasovnim profilom</string>
+    <string name="notification_action_voice_value">brati s profilom <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">brati z glasom SandFly</string>
     <string name="notification_voice_removed">Odstranjen glasovni profil</string>
-    <string name="notification_action_format_value">uporabi govorno obliko <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">preberi do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">uporabiti obliko govora <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">brati do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Izklopljeno</string>
     <string name="notification_on">Vklopljeno</string>
     <string name="notification_never_again">Dokler se SandFly ne zažene znova</string>

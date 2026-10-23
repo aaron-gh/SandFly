@@ -17,11 +17,11 @@
     <string name="title_pref_gemini_model">Gemini 模型</string>
     <string name="gemini_model_automatic">自动</string>
     <string name="summary_pref_gemini_model_automatic">自动：Gemini Flash，当 Flash 忙时则 Flash-Lite</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，忙时则Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，繁忙时改用 Flash-Lite</string>
     <string name="gemini_model_loading">正在获取模型列表…</string>
     <string name="gemini_model_list_failed">无法获取模型：<xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">请先设置 Gemini API 密钥</string>
-    <string name="ai_service_address_hint">地址，如https://openrouter.ai/api/v1</string>
+    <string name="ai_service_address_hint">地址，例如 https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">模型</string>
     <string name="ai_service_address_invalid">地址必须以 https:// 开头。未保存任何内容。</string>
     <string name="dialog_message_ai_service_consent">图片和截图被发送到<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>进行描述，这需要几秒钟的时间。适用其自己的条款和隐私政策。生成式人工智能是实验性的，所以它会犯错误。</string>

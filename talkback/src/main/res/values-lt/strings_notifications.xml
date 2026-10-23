@@ -281,18 +281,18 @@
     <string name="notification_cond_silent_not">Skambutis įjungtas</string>
     <string name="notification_cond_media">Groja medija</string>
     <string name="notification_cond_media_not">Neleidžiama jokia medija</string>
-    <string name="notification_action_skip">neskaityk</string>
+    <string name="notification_action_skip">neskaityti</string>
     <string name="notification_action_private">skaityti tik programos pavadinimą</string>
-    <string name="notification_action_not_private">perskaityti iki galo, net jei privačiai</string>
+    <string name="notification_action_not_private">skaityti visą, net jei privatu</string>
     <string name="notification_action_format">naudoti kalbos formatą</string>
-    <string name="notification_action_max_words">perskaityti iki kelių žodžių</string>
+    <string name="notification_action_max_words">skaityti iki tam tikro žodžių skaičiaus</string>
     <string name="notification_action_no_limit">skaityti be ilgio apribojimų</string>
-    <string name="notification_action_keep_emoji">išlaikyti jaustukus</string>
-    <string name="notification_action_keep_numbers">laikyti skaičius kartu</string>
-    <string name="notification_action_priority">pirma skaityk</string>
-    <string name="notification_action_always_read">Skaitykite pranešimus garsiai net tyliomis valandomis ar kitu ribotu laiku</string>
-    <string name="notification_action_voice">skaityti naudojant balso profilį</string>
-    <string name="notification_action_voice_value">skaityti su <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_keep_emoji">palikti jaustukus</string>
+    <string name="notification_action_keep_numbers">neskaidyti skaičių</string>
+    <string name="notification_action_priority">skaityti pirmą</string>
+    <string name="notification_action_always_read">skaityti net ramiomis valandomis ir kitu metu, kai pranešimai neskaitomi</string>
+    <string name="notification_action_voice">skaityti balso profiliu</string>
+    <string name="notification_action_voice_value">skaityti profiliu <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">skaityti SandFly balsu</string>
     <string name="notification_voice_removed">Pašalintas balso profilis</string>
     <string name="notification_action_format_value">naudoti kalbos formatą <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>

@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Звъненето е включено</string>
     <string name="notification_cond_media">Мултимедията се възпроизвежда</string>
     <string name="notification_cond_media_not">Не се възпроизвежда медия</string>
-    <string name="notification_action_skip">не чети</string>
-    <string name="notification_action_private">прочетете само името на приложението</string>
-    <string name="notification_action_not_private">прочетете изцяло, дори и на лични</string>
-    <string name="notification_action_format">използвайте говорен формат</string>
-    <string name="notification_action_max_words">прочетете до определен брой думи</string>
-    <string name="notification_action_no_limit">четете без ограничения на дължината</string>
-    <string name="notification_action_keep_emoji">запази емотикони</string>
-    <string name="notification_action_keep_numbers">запазване на числата заедно</string>
-    <string name="notification_action_priority">чети първо</string>
-    <string name="notification_action_always_read">Четете известия на глас дори в тихи часове или други ограничени времена</string>
-    <string name="notification_action_voice">четете с гласов профил</string>
+    <string name="notification_action_skip">без четене</string>
+    <string name="notification_action_private">четене само на името на приложението</string>
+    <string name="notification_action_not_private">четене изцяло, дори ако е лично</string>
+    <string name="notification_action_format">използване на формат за говор</string>
+    <string name="notification_action_max_words">четене до определен брой думи</string>
+    <string name="notification_action_no_limit">четене без ограничение на дължината</string>
+    <string name="notification_action_keep_emoji">запазване на емоджитата</string>
+    <string name="notification_action_keep_numbers">запазване на числата цели</string>
+    <string name="notification_action_priority">четене първо</string>
+    <string name="notification_action_always_read">четене дори в тихите часове и в другите периоди, когато известията не се четат</string>
+    <string name="notification_action_voice">четене с гласов профил</string>
     <string name="notification_action_voice_value">четене с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">прочетете с гласа на SandFly</string>
+    <string name="notification_action_voice_sandfly">четене с гласа на SandFly</string>
     <string name="notification_voice_removed">Премахнат гласов профил</string>
-    <string name="notification_action_format_value">използвайте формата за реч <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">прочетете до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">използване на формата за говор <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">четене до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Изкл.</string>
     <string name="notification_on">Вкл.</string>
     <string name="notification_never_again">До рестартиране на SandFly</string>

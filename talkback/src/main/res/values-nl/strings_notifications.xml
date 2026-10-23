@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">Belgeluid staat aan</string>
     <string name="notification_cond_media">Media worden afgespeeld</string>
     <string name="notification_cond_media_not">Er worden geen media afgespeeld</string>
-    <string name="notification_action_skip">niet lezen</string>
-    <string name="notification_action_private">lees alleen de app-naam</string>
-    <string name="notification_action_not_private">volledig lezen, zelfs als het privé is</string>
-    <string name="notification_action_format">gebruik een spraakformaat</string>
-    <string name="notification_action_max_words">lees een aantal woorden voor</string>
-    <string name="notification_action_no_limit">lezen zonder lengtebeperkingen</string>
+    <string name="notification_action_skip">niet voorlezen</string>
+    <string name="notification_action_private">alleen de app-naam voorlezen</string>
+    <string name="notification_action_not_private">volledig voorlezen, ook als het privé is</string>
+    <string name="notification_action_format">een spraakformaat gebruiken</string>
+    <string name="notification_action_max_words">tot een aantal woorden voorlezen</string>
+    <string name="notification_action_no_limit">zonder lengtelimiet voorlezen</string>
     <string name="notification_action_keep_emoji">emoji behouden</string>
     <string name="notification_action_keep_numbers">getallen bij elkaar houden</string>
-    <string name="notification_action_priority">lees eerst</string>
-    <string name="notification_action_always_read">Lees meldingen hardop, zelfs tijdens rustige uren of andere beperkte tijden</string>
-    <string name="notification_action_voice">lezen met een stemprofiel</string>
-    <string name="notification_action_voice_value">lees met <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">lees met de stem van SandFly</string>
+    <string name="notification_action_priority">eerst voorlezen</string>
+    <string name="notification_action_always_read">ook voorlezen tijdens rustige uren en andere momenten waarop meldingen niet worden voorgelezen</string>
+    <string name="notification_action_voice">met een stemprofiel voorlezen</string>
+    <string name="notification_action_voice_value">met <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> voorlezen</string>
+    <string name="notification_action_voice_sandfly">met de stem van SandFly voorlezen</string>
     <string name="notification_voice_removed">Verwijderd stemprofiel</string>
-    <string name="notification_action_format_value">gebruik het spraakformaat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">lees tot <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">het spraakformaat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> gebruiken</string>
+    <string name="notification_action_max_words_value">tot <xliff:g id="words" example="10 words">%1$s</xliff:g> voorlezen</string>
     <string name="notification_off">Uit</string>
     <string name="notification_on">Aan</string>
     <string name="notification_never_again">Totdat SandFly opnieuw start</string>

@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">벨소리 켜짐</string>
     <string name="notification_cond_media">미디어 재생 중</string>
     <string name="notification_cond_media_not">재생 중인 미디어가 없습니다.</string>
-    <string name="notification_action_skip">읽지 않음</string>
+    <string name="notification_action_skip">읽지 않기</string>
     <string name="notification_action_private">앱 이름만 읽기</string>
-    <string name="notification_action_not_private">비공개라도 전체 내용을 읽으세요.</string>
-    <string name="notification_action_format">음성 형식을 사용하다</string>
-    <string name="notification_action_max_words">여러 단어까지 읽어 보세요</string>
+    <string name="notification_action_not_private">비공개라도 전체 읽기</string>
+    <string name="notification_action_format">음성 형식 사용</string>
+    <string name="notification_action_max_words">일정 단어 수까지 읽기</string>
     <string name="notification_action_no_limit">길이 제한 없이 읽기</string>
     <string name="notification_action_keep_emoji">이모티콘 유지</string>
-    <string name="notification_action_keep_numbers">숫자를 함께 유지</string>
+    <string name="notification_action_keep_numbers">숫자 붙여 읽기</string>
     <string name="notification_action_priority">먼저 읽기</string>
-    <string name="notification_action_always_read">조용한 시간이나 기타 제한된 시간에도 알림을 소리내어 읽어보세요.</string>
+    <string name="notification_action_always_read">조용한 시간 및 알림을 읽지 않는 기타 시간에도 읽기</string>
     <string name="notification_action_voice">음성 프로필로 읽기</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>로 읽기</string>
-    <string name="notification_action_voice_sandfly">SandFly 목소리로 읽어주세요</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>(으)로 읽기</string>
+    <string name="notification_action_voice_sandfly">SandFly 음성으로 읽기</string>
     <string name="notification_voice_removed">삭제된 음성 프로필</string>
-    <string name="notification_action_format_value">음성 형식을 사용하세요 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>까지 읽어보세요</string>
+    <string name="notification_action_format_value">음성 형식 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> 사용</string>
+    <string name="notification_action_max_words_value">최대 <xliff:g id="words" example="10 words">%1$s</xliff:g>까지 읽기</string>
     <string name="notification_off">사용 안함</string>
     <string name="notification_on">사용</string>
     <string name="notification_never_again">SandFly가 다시 시작될 때까지</string>

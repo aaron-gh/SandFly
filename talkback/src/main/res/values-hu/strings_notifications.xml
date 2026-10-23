@@ -281,22 +281,22 @@
     <string name="notification_cond_silent_not">A csengő be van kapcsolva</string>
     <string name="notification_cond_media">A média lejátszása folyamatban van</string>
     <string name="notification_cond_media_not">Nincs médialejátszás</string>
-    <string name="notification_action_skip">ne olvassa fel</string>
-    <string name="notification_action_private">csak az alkalmazás nevét olvassa el</string>
-    <string name="notification_action_not_private">olvassa el teljesen, még ha privát is</string>
-    <string name="notification_action_format">használjon beszédformátumot</string>
-    <string name="notification_action_max_words">olvass el akár több szót is</string>
-    <string name="notification_action_no_limit">terjedelem korlátok nélkül olvasható</string>
+    <string name="notification_action_skip">nincs felolvasás</string>
+    <string name="notification_action_private">csak az alkalmazás nevének felolvasása</string>
+    <string name="notification_action_not_private">teljes felolvasás, akkor is, ha privát</string>
+    <string name="notification_action_format">beszédformátum használata</string>
+    <string name="notification_action_max_words">felolvasás adott számú szóig</string>
+    <string name="notification_action_no_limit">felolvasás hosszkorlát nélkül</string>
     <string name="notification_action_keep_emoji">emojik megtartása</string>
     <string name="notification_action_keep_numbers">számok együtt tartása</string>
-    <string name="notification_action_priority">olvasás elsőként</string>
-    <string name="notification_action_always_read">Hangosan olvassa fel az értesítéseket még csendes órákban vagy más korlátozott időszakokban is</string>
-    <string name="notification_action_voice">hangprofillal olvasni</string>
+    <string name="notification_action_priority">felolvasás elsőként</string>
+    <string name="notification_action_always_read">felolvasás csendes órákban és más olyan időszakokban is, amikor egyébként nincs felolvasás</string>
+    <string name="notification_action_voice">felolvasás hangprofillal</string>
     <string name="notification_action_voice_value">felolvasás ezzel: <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">olvasni SandFly hangjával</string>
+    <string name="notification_action_voice_sandfly">felolvasás a SandFly hangján</string>
     <string name="notification_voice_removed">Eltávolított hangprofil</string>
-    <string name="notification_action_format_value">használja a <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> beszédformátumot</string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>-ig olvassa el</string>
+    <string name="notification_action_format_value">beszédformátum használata: <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">legfeljebb <xliff:g id="words" example="10 words">%1$s</xliff:g> felolvasása</string>
     <string name="notification_off">Ki</string>
     <string name="notification_on">Be</string>
     <string name="notification_never_again">Amíg a SandFly újra nem indul</string>

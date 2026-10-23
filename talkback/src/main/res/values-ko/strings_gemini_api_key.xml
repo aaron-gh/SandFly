@@ -9,10 +9,10 @@
     <string name="title_pref_gemini_model">Gemini 모델</string>
     <string name="gemini_model_automatic">자동</string>
     <string name="summary_pref_gemini_model_automatic">자동: Gemini 플래시, 플래시가 사용 중이면 Flash-Lite</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, 그리고 바쁠 때 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, 사용량이 많을 때는 Flash-Lite</string>
     <string name="gemini_model_loading">모델을 가져오는 중…</string>
     <string name="gemini_model_list_failed">모델을 가져올 수 없습니다: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Gemini API 키를 먼저 설정하세요.</string>
+    <string name="gemini_model_needs_key">Gemini API 키를 먼저 설정하세요</string>
     <string name="gemini_api_terms_link">Gemini API 추가 서비스 약관</string>
     <string name="ai_service_address_hint">주소(예: https://openrouter.ai/api/v1)</string>
     <string name="ai_service_model_hint">모델</string>

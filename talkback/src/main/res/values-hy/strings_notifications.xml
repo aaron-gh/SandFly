@@ -281,21 +281,21 @@
     <string name="notification_cond_silent_not">Զանգը միացված է</string>
     <string name="notification_cond_media">Մեդիան նվագարկվում է</string>
     <string name="notification_cond_media_not">Ոչ մի մեդիա չի խաղում</string>
-    <string name="notification_action_skip">մի կարդա</string>
+    <string name="notification_action_skip">չկարդալ</string>
     <string name="notification_action_private">կարդալ միայն հավելվածի անունը</string>
-    <string name="notification_action_not_private">կարդալ ամբողջությամբ, նույնիսկ եթե մասնավոր</string>
+    <string name="notification_action_not_private">կարդալ ամբողջությամբ, նույնիսկ եթե անձնական է</string>
     <string name="notification_action_format">օգտագործել խոսքի ձևաչափ</string>
-    <string name="notification_action_max_words">կարդալ մինչև մի քանի բառ</string>
+    <string name="notification_action_max_words">կարդալ մինչև որոշակի քանակությամբ բառ</string>
     <string name="notification_action_no_limit">կարդալ առանց երկարության սահմանափակման</string>
     <string name="notification_action_keep_emoji">պահել էմոջիները</string>
     <string name="notification_action_keep_numbers">պահել թվերը միասին</string>
     <string name="notification_action_priority">կարդալ առաջինը</string>
-    <string name="notification_action_always_read">Կարդացեք ծանուցումները բարձրաձայն նույնիսկ հանգիստ ժամերին կամ այլ սահմանափակ ժամանակներում</string>
+    <string name="notification_action_always_read">կարդալ նույնիսկ հանգիստ ժամերին և այլ ժամանակ, երբ ծանուցումները չեն կարդացվում</string>
     <string name="notification_action_voice">կարդալ ձայնային պրոֆիլով</string>
     <string name="notification_action_voice_value">կարդալ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> պրոֆիլով</string>
     <string name="notification_action_voice_sandfly">կարդալ SandFly-ի ձայնով</string>
     <string name="notification_voice_removed">Հեռացված ձայնային պրոֆիլ</string>
-    <string name="notification_action_format_value">օգտագործել խոսքի ձևաչափը <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">օգտագործել <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> խոսքի ձևաչափը</string>
     <string name="notification_action_max_words_value">կարդալ մինչև <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Անջատված</string>
     <string name="notification_on">Միացված</string>

@@ -11,7 +11,7 @@
     <string name="summary_pref_gemini_model_automatic">Otomatis: Gemini Flash, lalu Flash-Lite saat Flash sibuk</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, lalu Flash-Lite saat sedang sibuk</string>
     <string name="gemini_model_loading">Mendapatkan model…</string>
-    <string name="gemini_model_list_failed">Tidak bisa mendapatkan modelnya: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">Tidak dapat mengambil model: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Tetapkan kunci API Gemini terlebih dahulu</string>
     <string name="gemini_api_terms_link">Persyaratan Layanan Tambahan Gemini API</string>
     <string name="ai_service_address_hint">Alamat, seperti https://openrouter.ai/api/v1</string>

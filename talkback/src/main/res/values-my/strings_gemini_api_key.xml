@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API သော့</string>
-    <string name="summary_pref_gemini_api_key_built_in">ဤအက်ပ်တွင်ထည့်သွင်းထားသောသော့ကိုအသုံးပြုခြင်း</string>
+    <string name="summary_pref_gemini_api_key_built_in">ဤအက်ပ်တွင် ပါဝင်သော သော့ကို အသုံးပြုနေသည်</string>
     <string name="gemini_api_key_dialog_message">AI Studio.google.com/apikey တွင် Google AI Studio မှ အခမဲ့ API ကီးတစ်ခုကို ရယူပြီး ၎င်းကို ဤနေရာတွင် ကူးထည့်ပါ။ သင့်သော့ကို ဖယ်ရှားရန်၊ အကွက်ကို ရှင်းလင်းပြီး သိမ်းဆည်းပါ။\n\n သင်ဖော်ပြသော ပုံများနှင့် မျက်နှာပြင်များကို Google သို့ ပေးပို့ပါသည်။ အခမဲ့အဆင့်တွင်၊ Google သည် ၎င်း၏ထုတ်ကုန်များကို တိုးတက်ကောင်းမွန်စေရန် ၎င်းတို့ကို အသုံးပြုနိုင်သည်။</string>
     <string name="gemini_api_key_hint">API သော့</string>
     <string name="gemini_api_key_save">သိမ်းရန်</string>
@@ -9,9 +9,9 @@
     <string name="title_pref_gemini_model">Gemini မော်ဒယ်</string>
     <string name="gemini_model_automatic">အလိုအလျောက်</string>
     <string name="summary_pref_gemini_model_automatic">အလိုအလျောက်- Gemini ဖလက်ရှ်၊ ထို့နောက် Flash အလုပ်ရှုပ်နေချိန်တွင် Flash-Lite</string>
-    <string name="summary_pref_gemini_model_chosen">အလုပ်များနေချိန်တွင် <xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>၊ ထို့နောက် Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>၊ အလုပ်များနေချိန်တွင် Flash-Lite</string>
     <string name="gemini_model_loading">မော်ဒယ်များကို ရယူနေသည်…</string>
-    <string name="gemini_model_list_failed">မော်ဒယ်များ မရရှိနိုင်ပါ- <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_list_failed">မော်ဒယ်များကို ရယူ၍မရပါ- <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Gemini API ကီးကို ဦးစွာ သတ်မှတ်ပါ</string>
     <string name="gemini_api_terms_link">Gemini API ၏ နောက်ထပ်ဝန်ဆောင်မှုစည်းမျဉ်းများ</string>
     <string name="ai_service_address_hint">လိပ်စာ၊ ဥပမာ https://openrouter.ai/api/v1</string>
