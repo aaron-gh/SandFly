@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">점자 키보드를 사용해 입력할 수도 있습니다. SandFly 설정에서 찾아보세요.</string>
   <string name="other_ways_to_type_title">다른 입력 방법</string>
   <string name="other_ways_to_type_text">SandFly에서 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 글자를 입력할 수 있습니다.</string>
-  <string name="basic_other_ways_to_type_text">SandFly를 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정 &gt; 화면 키보드 &gt; 입력 방법에서 변경할 수 있습니다.</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly를 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정, 화면 키보드, 입력 방법에서 이를 변경할 수 있습니다.</string>
+  <string name="basic_other_ways_to_type_text">SandFly에서 입력하는 다른 방법도 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정 &gt; 터치 키보드 &gt; 타이핑 방법에서 변경할 수 있습니다.</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly에서 입력하는 다른 방법도 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정, 터치 키보드, 타이핑 방법에서 변경할 수 있습니다.</string>
   <string name="change_typing_preference_text">입력 환경설정 변경</string>
   <string name="moving_cursor_title">커서 이동하기</string>
   <string name="moving_cursor_text">텍스트 상자를 활성화하면 위로 또는 아래로 스와이프하여 글자 간에 커서를 이동할 수 있습니다.\n\n아래의 텍스트 상자에서 커서를 이동해 보세요.</string>
@@ -1350,7 +1350,7 @@
     <string name="title_pref_speak_in_phrases">긴 텍스트를 한 문장씩 보내기</string>
     <string name="summary_pref_speak_in_phrases">Gryphon과 같이 중지 속도가 느린 음성 엔진의 경우 스와이프하면 긴 텍스트가 한 번에 중지됩니다. 많은 엔진이 별도로 전송된 문장 사이에 더 오랫동안 일시 중지하므로 문장이 빠르게 중지되는 경우 이 기능을 해제해 두세요.</string>
     <string name="battery_optimization_notification_title">배터리 최적화로 SandFly가 중지될 수 있음</string>
-    <string name="battery_optimization_notification_text">이 휴대전화에서는 화면이 꺼진 후 배터리 절약 모드가 SandFly 중지될 수 있으므로 다시 시작할 때까지 무음으로 유지됩니다. 탭하여 배터리 최적화를 열고 모든 앱을 선택한 다음 SandFly를 찾아 최적화하지 않음을 선택하세요.</string>
+    <string name="battery_optimization_notification_text">이 휴대전화에서는 화면이 꺼진 후 배터리 절약 모드가 SandFly를 중지할 수 있으며, 그러면 다시 시작할 때까지 음성이 나오지 않습니다. 탭하여 배터리 최적화를 열고 모든 앱을 선택한 다음 SandFly를 찾아 최적화하지 않음을 선택하세요.</string>
     <string name="title_pref_mute_speech_while_recording">녹음하는 동안 조용히</string>
     <string name="summary_pref_mute_speech_while_recording">헤드폰이 연결되지 않은 상태에서 앱이 녹음하는 동안 SandFly는 제스처, 키 및 입력에만 응답하고 알림 등의 내용은 녹음되지 않도록 조용히 유지됩니다.</string>
     <string name="title_pref_switch_languages">자동으로 언어 전환</string>

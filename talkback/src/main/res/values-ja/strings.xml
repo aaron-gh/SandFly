@@ -981,8 +981,8 @@
   <string name="typing_text_with_braille_keyboard_text">点字キーボードを使って入力することもできます。点字キーボードは SandFly の設定にあります。</string>
   <string name="other_ways_to_type_title">その他の入力方法</string>
   <string name="other_ways_to_type_text">SandFly で入力する方法は他にもあります。たとえば、ダブルタップして文字を入力することもできます。</string>
-  <string name="basic_other_ways_to_type_text">SandFly を入力する他の方法もあります。たとえば、ダブルタップして文字を入力できます。これは、後で「SandFly 設定」&gt;「スクリーンキーボード」&gt;「入力方法」で変更できます。</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly を入力する他の方法もあります。たとえば、ダブルタップして文字を入力できます。これは、後で「SandFly」設定、「スクリーンキーボード」、「入力方法」で変更できます。</string>
+  <string name="basic_other_ways_to_type_text">SandFly では他の方法でも入力できます。たとえば、ダブルタップで文字を入力できます。これは後で [SandFly の設定] &gt; [画面キーボード] &gt; [入力方法] で変更できます。</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly では他の方法でも入力できます。たとえば、ダブルタップで文字を入力できます。これは後で SandFly の設定、画面キーボード、入力方法の順に開いて変更できます。</string>
   <string name="change_typing_preference_text">入力の設定を変更</string>
   <string name="moving_cursor_title">カーソルの移動</string>
   <string name="moving_cursor_text">テキスト ボックスを有効にしたら、上または下にスワイプして文字から文字にカーソルを移動できます。\n\n下のテキスト ボックスで行ってみましょう。</string>
@@ -1347,7 +1347,7 @@
     <string name="title_pref_speak_in_phrases">長いテキストを 1 文ずつ送信</string>
     <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
     <string name="battery_optimization_notification_title">バッテリーの最適化によって SandFly が停止することがあります</string>
-    <string name="battery_optimization_notification_text">この携帯電話では、画面がオフになった後にバッテリー セーバーによって SandFly が停止されるため、再起動されるまで静かになります。タップしてバッテリーの最適化を開き、[すべてのアプリ] を選択して、SandFly を見つけて、[最適化しない] を選択します。</string>
+    <string name="battery_optimization_notification_text">このスマートフォンでは、画面がオフになった後にバッテリー セーバーが SandFly を停止することがあり、再起動するまで読み上げが行われません。タップして [電池の最適化] を開き、[すべてのアプリ] を選択して SandFly を探し、[最適化しない] を選択してください。</string>
     <string name="title_pref_mute_speech_while_recording">録音中は読み上げない</string>
     <string name="summary_pref_mute_speech_while_recording">ヘッドフォンが接続されていない状態でアプリが録音している間、SandFly はジェスチャー、キー、入力に応じて話すだけで、通知などの場合は沈黙を保つため、録音されません。</string>
     <string name="title_pref_switch_languages">言語を自動的に切り替える</string>

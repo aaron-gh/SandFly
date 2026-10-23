@@ -981,8 +981,8 @@
   <string name="typing_text_with_braille_keyboard_text">你亦可以使用點字鍵盤輸入文字。請在 SandFly 設定頁面尋找此設定。</string>
   <string name="other_ways_to_type_title">其他輸入方式</string>
   <string name="other_ways_to_type_text">使用 SandFly 時，還有其他輸入方式。例如，輕按兩下字母即可輸入。</string>
-  <string name="basic_other_ways_to_type_text">還有其他方法可以輸入 SandFly。例如，您可以使用雙擊來輸入字母。您可以稍後在 SandFly 設定 &gt; 螢幕鍵盤 &gt; 鍵入方法中變更此設定。</string>
-  <string name="basic_other_ways_to_type_text_tts">還有其他方法可以輸入 SandFly。例如，您可以使用雙擊來輸入字母。您可以稍後在 SandFly 設定中更改此設置，然後在螢幕鍵盤和打字方法中進行更改。</string>
+  <string name="basic_other_ways_to_type_text">使用 SandFly 時還有其他輸入方法。例如，您可以輕按兩下輸入字母。您稍後可以在「SandFly 設定」&gt;「屏幕鍵盤」&gt;「打字方法」中變更此設定。</string>
+  <string name="basic_other_ways_to_type_text_tts">使用 SandFly 時還有其他輸入方法。例如，您可以輕按兩下輸入字母。您稍後可以依次前往 SandFly 設定、屏幕鍵盤、打字方法變更此設定。</string>
   <string name="change_typing_preference_text">變更輸入偏好設定</string>
   <string name="moving_cursor_title">移動游標</string>
   <string name="moving_cursor_text">啟用文字框後，你可以向上或向下滑動來控制游標在字母之間移動。\n\n現在試試在下方的文字框中移動游標。</string>
@@ -1349,7 +1349,7 @@
     <string name="title_pref_speak_in_phrases">長文字逐句傳送</string>
     <string name="summary_pref_speak_in_phrases">對於停止速度較慢的語音引擎（例如 Gryphon），因此向遠處滑動會立即停止長文字。許多引擎在單獨發送的句子之間暫停時間較長，因此如果您的引擎停止得很快，請將其關閉。</string>
     <string name="battery_optimization_notification_title">電池優化可能會停止 SandFly</string>
-    <string name="battery_optimization_notification_text">在這款手機上，省電模式可以在螢幕關閉後停止SandFly，因此在重新啟動之前會保持沉默。點擊開啟電池優化，選擇所有應用，找到 SandFly 並選擇不優化。</string>
+    <string name="battery_optimization_notification_text">在這部手機上，螢幕關閉後省電模式可能會停止 SandFly，令 SandFly 在重新啟動前不會發聲。輕按即可開啟電池優化，選擇「所有應用程式」，找到 SandFly 並選擇「不要優化」。</string>
     <string name="title_pref_mute_speech_while_recording">錄音時保持安靜</string>
     <string name="summary_pref_mute_speech_while_recording">當應用程式在未連接耳機的情況下進行錄製時，SandFly僅在回答您的手勢、按鍵和打字時說話，並且在通知等情況下保持安靜，因此不會被記錄。</string>
     <string name="title_pref_switch_languages">自動切換語言</string>
