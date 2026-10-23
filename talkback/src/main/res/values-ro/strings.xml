@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Indicator de focalizare</string>
   <string name="title_pref_category_manage_gestures">Gesturi</string>
   <string name="title_pref_manage_labels">Etichete personalizate</string>
-  <string name="title_pref_category_context_menu">SandFly meniu</string>
+  <string name="title_pref_category_context_menu">Meniul SandFly</string>
   <string name="title_pref_category_selector_menu">Comenzi pentru citire</string>
   <string name="title_pref_category_navigation_menu">Editează opțiunile de navigare</string>
   <string name="title_pref_manage_keyboard_shortcuts">Comenzi rapide de la tastatură</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Dezactivează, apoi reactivează SandFly pentru a activa setarea.</string>
   <string name="title_pref_auto_image_captioning">Descrieri automate</string>
   <string name="title_pref_gemini_settings">Setări pentru Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini comenzi vocale</string>
+  <string name="title_pref_gemini_enabled">Comenzi vocale Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Obține descrieri detaliate ale imaginilor AI când selectezi Descrie imaginea din meniul SandFly.\n\nPoți obține descrieri automate și când focalizezi pe o imagine sau o pictogramă. Descrierile automate funcționează fără conexiune la internet.</string>
   <string name="title_pref_icon_detection">Descrieri automate ale pictogramelor</string>
   <string name="title_pref_image_description">Descrieri automate ale imaginilor</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Profilul vocal anterior</string>
     <string name="shortcut_next_voice_profile">Următorul profil vocal</string>
     <string name="title_pref_voice_profile_in_use">Profil vocal în uz</string>
-    <string name="title_pref_add_voice_profile">Adăugați un profil vocal</string>
+    <string name="title_pref_add_voice_profile">Adaugă un profil vocal</string>
     <string name="voice_profile_new_name">Profil vocal <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Un profil vocal este deja numit <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nume</string>
@@ -1330,7 +1330,7 @@
     <string name="voice_profile_moved_above">Mutat deasupra <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Mutat sub <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> șters</string>
-    <string name="title_pref_delete_voice_profile">Ștergeți profilul vocal</string>
+    <string name="title_pref_delete_voice_profile">Șterge profilul vocal</string>
     <string name="voice_profile_delete_confirm">Ștergeți <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Șterge</string>
     <string name="summary_pref_tts_engine_default">Implicit de sistem</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Când telefonul este deblocat</string>
     <string name="title_pref_say_screen_off">Spune „Ecran oprit”</string>
     <string name="title_pref_say_device_unlocked">Spuneți „Dispozitiv deblocat”</string>
-    <string name="title_pref_announce_time">Timpul</string>
+    <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modul sonerie</string>
     <string name="summary_pref_announce_ringer_mode">Spuneți când soneria este setată să vibreze sau să fie silențioasă</string>
     <string name="title_pref_category_feedback">Feedback</string>
@@ -1378,7 +1378,7 @@
     <string name="title_pref_category_apps">Aplicații</string>
     <string name="title_pref_touch_activation">Atingere și activare</string>
     <string name="title_pref_navigation">Navigare</string>
-    <string name="title_pref_category_more">Mai mult</string>
+    <string name="title_pref_category_more">Mai multe</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervă gesturi pentru Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Oprește SandFly manipularea atingerilor simple și duble cu două degete, astfel încât Samsung Vibration Watch să le poată folosi. Activați Vibration Watch în setările de accesibilitate ale ceasului dvs.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervat pentru Vibration Watch în Setări avansate</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Fără</string>
     <string name="summary_selector_menu_emoji">Schimbați modul în care sunt citite emoji</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Numărați emoji-urile repetate</string>
+    <string name="title_pref_emoji_repeat_count">Numără emoji-urile repetate</string>
     <string name="emoji_repeat_count_off">Dezactivată</string>
     <string name="emoji_repeat_count_2">2 sau mai multe</string>
     <string name="emoji_repeat_count_3">3 sau mai multe</string>
@@ -1587,7 +1587,7 @@
     <string name="handwriting_unsupported_language">Recunoașterea scrisului de mână nu este disponibilă în această limbă</string>
     <string name="title_pref_handwriting_keyboard">Tastatură pentru scris de mână</string>
     <string name="summary_pref_handwriting_keyboard">Activați scrierea de mână SandFly în setările tastaturii lui Android</string>
-    <string name="title_pref_handwriting_wait">Așteptați după ce ați scris</string>
+    <string name="title_pref_handwriting_wait">Așteptare după scriere</string>
     <string name="value_handwriting_wait_200">0,2 secunde</string>
     <string name="value_handwriting_wait_300">0,3 secunde</string>
     <string name="value_handwriting_wait_400">0,4 secunde</string>
@@ -1623,7 +1623,7 @@
     <string name="shortcut_power_menu">Meniul de pornire</string>
     <string name="shortcut_increase_media_volume">Mărește volumul media</string>
     <string name="shortcut_decrease_media_volume">Redu volumul media</string>
-    <string name="title_clear_selection">Ștergeți selecția</string>
+    <string name="title_clear_selection">Șterge selecția</string>
     <string name="title_pref_brightness">Luminozitate</string>
     <string name="summary_support_change_brightness">Măriți sau micșorați luminozitatea ecranului, chiar și atunci când ecranul este ascuns</string>
     <string name="title_pref_shortcut_3finger_4tap">Atingeți de patru ori cu 3 degete</string>
@@ -1712,9 +1712,9 @@
     <string name="tablet_held_up_faces_away_on">Tableta ținea cu fețele în spate</string>
     <string name="tablet_held_up_faces_away_off">Tableta ținea fețele în sus</string>
     <string name="title_keyboard_echo_on_screen">Ecoul tastaturii de pe ecran</string>
-    <string name="title_keyboard_echo_physical">Ecoul fizic al tastaturii</string>
+    <string name="title_keyboard_echo_physical">Ecoul tastaturii fizice</string>
     <string name="title_keyboard_echo_braille_keyboard">Ecoul tastaturii Braille</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Ecou tastatură scris de mână</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Ecoul tastaturii pentru scris de mână</string>
     <string name="title_keyboard_echo_braille_display">Ecoul afișajului Braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Întrerupeți vorbirea la tastare</string>
@@ -1732,7 +1732,7 @@
     <string name="action_move_down">Mută în jos</string>
     <string name="template_list_position">Poziția <xliff:g id="position" example="2">%1$d</xliff:g> din <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Ridicat <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">A scăzut <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Plasat: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly spune detaliile unui articol în această ordine. Pentru a-l schimba, atingeți lung un detaliu, apoi trageți-l în sus sau în jos. Cu SandFly activat, atingeți de două ori și mențineți apăsat, apoi trageți. De asemenea, puteți utiliza acțiunile Mutare în sus și Mutare în jos.</string>
     <string name="title_pref_speak_items_before_scroll">Rostiți elementele înainte ca acestea să defileze la vedere</string>
     <string name="gemini_error_api_key">Gemini nu a acceptat cheia API. Verificați cheia în setările descrierilor automate.</string>
@@ -1768,8 +1768,8 @@
     <string name="title_pref_dictation_ai_service">Serviciu AI pentru dictare</string>
     <string name="dictation_ai_same">Același ca pentru descrierile automate</string>
     <string name="title_pref_browse_mode_per_app">Amintiți-vă modul de navigare în fiecare aplicație</string>
-    <string name="title_pref_export_settings">Exportați setările</string>
-    <string name="title_pref_import_settings">Import setări</string>
+    <string name="title_pref_export_settings">Exportă setările</string>
+    <string name="title_pref_import_settings">Importă setările</string>
     <string name="settings_export_done">Setările au fost exportate. Cheile API nu sunt incluse</string>
     <string name="settings_export_failed">Setările nu au putut fi exportate</string>
     <string name="settings_import_done">Setări importate</string>

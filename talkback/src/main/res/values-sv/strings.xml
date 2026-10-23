@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusindikator</string>
   <string name="title_pref_category_manage_gestures">Rörelser</string>
   <string name="title_pref_manage_labels">Anpassade etiketter</string>
-  <string name="title_pref_category_context_menu">SandFly meny</string>
+  <string name="title_pref_category_context_menu">SandFly-menyn</string>
   <string name="title_pref_category_selector_menu">Läsinställningar</string>
   <string name="title_pref_category_navigation_menu">Redigera navigerings­alternativ</string>
   <string name="title_pref_manage_keyboard_shortcuts">Kortkommandon</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Inaktivera och återaktivera SandFly för att aktivera den här inställningen.</string>
   <string name="title_pref_auto_image_captioning">Automatiska beskrivningar</string>
   <string name="title_pref_gemini_settings">Gemini-inställningar</string>
-  <string name="title_pref_gemini_enabled">Gemini röstkommandon</string>
+  <string name="title_pref_gemini_enabled">Röstkommandon för Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Få detaljerade bildbeskrivningar med hjälp av AI när du väljer ”Beskriv bild” i SandFly-menyn.\n\nDu kan även få automatiska beskrivningar när du fokuserar på bilder eller ikoner. Automatiska beskrivningar fungerar utan internetanslutning.</string>
   <string name="title_pref_icon_detection">Automatiska ikonbeskrivningar</string>
   <string name="title_pref_image_description">Automatiska bildbeskrivningar</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">När telefonen är upplåst</string>
     <string name="title_pref_say_screen_off">Säg \"Skärm av\"</string>
     <string name="title_pref_say_device_unlocked">Säg \"Enhet olåst\"</string>
-    <string name="title_pref_announce_time">Tid</string>
+    <string name="title_pref_announce_time">Klockslag</string>
     <string name="title_pref_announce_ringer_mode">Ringsignalläge</string>
     <string name="summary_pref_announce_ringer_mode">Säg när ringsignalen är inställd på att vibrera eller tyst</string>
     <string name="title_pref_category_feedback">Feedback</string>
@@ -1581,9 +1581,9 @@
     <string name="handwriting_downloaded">Handskriftsigenkänning har laddats ned</string>
     <string name="handwriting_download_failed">Det gick inte att ladda ned handskriftsigenkänning. Kontrollera internetanslutningen.</string>
     <string name="handwriting_unsupported_language">Handskriftsigenkänning är inte tillgängligt på detta språk</string>
-    <string name="title_pref_handwriting_keyboard">Handstil tangentbord</string>
+    <string name="title_pref_handwriting_keyboard">Handskriftstangentbord</string>
     <string name="summary_pref_handwriting_keyboard">Aktivera SandFly handskrift i Androids tangentbordsinställningar</string>
-    <string name="title_pref_handwriting_wait">Vänta efter att ha skrivit</string>
+    <string name="title_pref_handwriting_wait">Väntetid efter skrivning</string>
     <string name="value_handwriting_wait_200">0,2 sekunder</string>
     <string name="value_handwriting_wait_300">0,3 sekunder</string>
     <string name="value_handwriting_wait_400">0,4 sekunder</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">Svep förbi det sista objektet går till det första och förbi det första går till det sista. When off, a sound plays at the end instead.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Åtgärda beröringsutforskning som fastnat</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Utan DUMP-tillståndet kan SandFly bara säga att beröringsutforskning kan ha fastnat. För att låta det fixa det, kör: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Fixing touch utforskning</string>
-    <string name="stuck_touch_exploration_fixed">Beröringsutforskning fast</string>
+    <string name="stuck_touch_exploration_fixing">Åtgärdar beröringsutforskning</string>
+    <string name="stuck_touch_exploration_fixed">Beröringsutforskning har åtgärdats</string>
     <string name="stuck_touch_exploration_not_fixed">Pekutforskningen har fastnat. Starta om telefonen för att lösa problemet.</string>
     <string name="stuck_touch_exploration_restart">Pekutforskningen kan ha fastnat. Starta om telefonen för att lösa problemet.</string>
     <string name="stuck_touch_exploration_grant_dump">Beröringsutforskning kan ha fastnat. Starta om telefonen för att fixa det, eller ge SandFly behörigheten DUMP med ADB så att den kan fixa det.</string>
@@ -1707,11 +1707,11 @@
     <string name="summary_support_tablet_held_up_faces_away">För punktskrifttangentbordet på en surfplatta eller uppfälld telefon</string>
     <string name="tablet_held_up_faces_away_on">Tabletten höll upp ansiktena bort på</string>
     <string name="tablet_held_up_faces_away_off">Tabletten höll upp ansiktena bort</string>
-    <string name="title_keyboard_echo_on_screen">Tangentbordeko på skärmen</string>
-    <string name="title_keyboard_echo_physical">Fysiskt tangentbordseko</string>
-    <string name="title_keyboard_echo_braille_keyboard">Eko av blindskriftstangentbord</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Handstil tangentbord eko</string>
-    <string name="title_keyboard_echo_braille_display">Punktdisplay eko</string>
+    <string name="title_keyboard_echo_on_screen">Eko för skärmtangentbord</string>
+    <string name="title_keyboard_echo_physical">Eko för fysiskt tangentbord</string>
+    <string name="title_keyboard_echo_braille_keyboard">Eko för punktskriftstangentbord</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Eko för handskriftstangentbord</string>
+    <string name="title_keyboard_echo_braille_display">Eko för punktskriftsdisplay</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Avbryt talet när du skriver</string>
     <string name="pref_interrupt_typing_entry_always">Alltid</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Flytta ner</string>
     <string name="template_list_position">Position <xliff:g id="position" example="2">%1$d</xliff:g> av <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Plockade upp <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Tappade <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Släppte <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly säger en varas detaljer i denna ordning. Om du vill ändra den trycker du länge på en detalj och drar den sedan uppåt eller nedåt. Med SandFly på, dubbeltryck och håll ned och dra sedan. Du kan också använda funktionerna Flytta upp och Flytta ner.</string>
     <string name="title_pref_speak_items_before_scroll">Tala upp objekt innan de rullar fram</string>
     <string name="gemini_error_api_key">Gemini accepterade inte API-nyckeln. Kontrollera nyckeln i inställningarna för automatiska beskrivningar.</string>

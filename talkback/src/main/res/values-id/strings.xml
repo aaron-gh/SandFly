@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Indikator fokus</string>
   <string name="title_pref_category_manage_gestures">Gestur</string>
   <string name="title_pref_manage_labels">Label khusus</string>
-  <string name="title_pref_category_context_menu">SandFly menu</string>
+  <string name="title_pref_category_context_menu">Menu SandFly</string>
   <string name="title_pref_category_selector_menu">Kontrol pembacaan</string>
   <string name="title_pref_category_navigation_menu">Edit opsi navigasi</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan keyboard</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Nonaktifkan SandFly lalu aktifkan lagi untuk mengaktifkan setelan.</string>
   <string name="title_pref_auto_image_captioning">Deskripsi otomatis</string>
   <string name="title_pref_gemini_settings">Setelan Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini perintah suara</string>
+  <string name="title_pref_gemini_enabled">Perintah suara Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Dapatkan deskripsi gambar AI yang mendetail saat Anda memilih \“Deskripsikan gambar\” dari menu SandFly.\n\nAnda juga bisa mendapatkan deskripsi otomatis saat berfokus pada gambar atau ikon. Deskripsi otomatis berfungsi tanpa koneksi internet.</string>
   <string name="title_pref_icon_detection">Deskripsi ikon otomatis</string>
   <string name="title_pref_image_description">Deskripsi gambar otomatis</string>
@@ -1711,7 +1711,7 @@
     <string name="title_keyboard_echo_physical">Gema keyboard fisik</string>
     <string name="title_keyboard_echo_braille_keyboard">Gema keyboard braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Gema keyboard tulisan tangan</string>
-    <string name="title_keyboard_echo_braille_display">Tampilan braille bergema</string>
+    <string name="title_keyboard_echo_braille_display">Gema layar braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Interupsi ucapan saat mengetik</string>
     <string name="pref_interrupt_typing_entry_always">Selalu</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Pindahkan ke bawah</string>
     <string name="template_list_position">Posisi <xliff:g id="position" example="2">%1$d</xliff:g> dari <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Diambil <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Menjatuhkan <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepas. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly menyatakan detail item dalam urutan ini. Untuk mengubahnya, sentuh dan tahan suatu detail, lalu seret ke atas atau ke bawah. Dengan SandFly aktif, ketuk dua kali dan tahan, lalu seret. Anda juga dapat menggunakan tindakan Pindah ke atas dan Pindah ke bawah.</string>
     <string name="title_pref_speak_items_before_scroll">Ucapkan item sebelum digulir hingga terlihat</string>
     <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Periksa kunci di Pengaturan deskripsi otomatis.</string>

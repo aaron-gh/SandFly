@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">O\'zgarishlar kuchga kirishi uchun SandFly funksiyasini qayta ishga tushiring.</string>
   <string name="title_pref_auto_image_captioning">Avtomatik tavsiflar</string>
   <string name="title_pref_gemini_settings">Gemini sozlamalari</string>
-  <string name="title_pref_gemini_enabled">Gemini ovozli buyruqlar</string>
+  <string name="title_pref_gemini_enabled">Gemini ovozli buyruqlari</string>
   <string name="title_pref_category_automatic_description_summary">SandFly menyusidagi \“Rasmni tavsiflash\” bandini tanlab, AI yordamida batafsil rasm tavsiflarini oling.\n\nShuningdek, rasm yoki belgini fokuslab, avtomatik tavsiflarni olish mumkin. Avtomatik tavsiflar ishlashida internet aloqasi kerak emas.</string>
   <string name="title_pref_icon_detection">Avtomatik belgi tavsiflari</string>
   <string name="title_pref_image_description">Avtomatik rasm tavsiflari</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Oldingi ovozli profil</string>
     <string name="shortcut_next_voice_profile">Keyingi ovozli profil</string>
     <string name="title_pref_voice_profile_in_use">Amaldagi ovozli profil</string>
-    <string name="title_pref_add_voice_profile">Ovozli profil qo\'shing</string>
+    <string name="title_pref_add_voice_profile">Ovozli profil qoʻshish</string>
     <string name="voice_profile_new_name">Ovozli profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Ovozli profil allaqachon <xliff:g id="name" example="Reading">%1$s</xliff:g> deb nomlangan</string>
     <string name="title_pref_voice_profile_name">Ism</string>
@@ -1373,12 +1373,12 @@
     <string name="title_pref_announce_time">Vaqt</string>
     <string name="title_pref_announce_ringer_mode">Qo\'ng\'iroq rejimi</string>
     <string name="summary_pref_announce_ringer_mode">Qo\'ng\'iroq tovushi tebranish yoki jim bo\'lganda ayting</string>
-    <string name="title_pref_category_feedback">Fikr-mulohaza</string>
+    <string name="title_pref_category_feedback">Javob signallari</string>
     <string name="title_pref_category_typing_and_braille">Matn yozish va brayl</string>
     <string name="title_pref_category_apps">Ilovalar</string>
     <string name="title_pref_touch_activation">Tegish va faollashtirish</string>
     <string name="title_pref_navigation">Navigatsiya</string>
-    <string name="title_pref_category_more">Batafsil</string>
+    <string name="title_pref_category_more">Boshqa</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch uchun imo-ishoralarni zaxiralash</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ulardan foydalanishi uchun SandFly ikki barmoq bilan bir va ikki marta teginishni toʻxtatadi. Soatingizning maxsus imkoniyatlar sozlamalarida Vibration Watch ni yoqing.</string>
     <string name="shortcut_reserved_for_vibration_watch">Kengaytirilgan sozlamalarda Vibration Watch uchun band qilingan</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Hech qanday</string>
     <string name="summary_selector_menu_emoji">Emoji o‘qilishini o‘zgartiring</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Takrorlangan kulgichlarni hisoblang</string>
+    <string name="title_pref_emoji_repeat_count">Takrorlangan kulgichlarni sanash</string>
     <string name="emoji_repeat_count_off">Oʻchiq</string>
     <string name="emoji_repeat_count_2">2 yoki undan ortiq</string>
     <string name="emoji_repeat_count_3">3 yoki undan ko\'p</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">Oxirgi elementni surish birinchisiga o\'tadi va birinchisidan o\'tib oxirgisiga o\'tadi. O\'chiq bo\'lsa, uning o\'rniga oxirida ovoz eshitiladi.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Qopqoq teginish tekshiruvini tuzating</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ruxsatisiz SandFly faqat teginish orqali oʻrganish toʻxtab qolishi mumkinligini aytishi mumkin. Uni tuzatish uchun quyidagi amalni bajaring: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Sensorli qidiruvni tuzatish</string>
-    <string name="stuck_touch_exploration_fixed">Tegishli qidiruv tuzatildi</string>
+    <string name="stuck_touch_exploration_fixing">Teginib oʻrganishni tuzatish</string>
+    <string name="stuck_touch_exploration_fixed">Teginib oʻrganish tuzatildi</string>
     <string name="stuck_touch_exploration_not_fixed">Sensorli qidiruv hali ham tiqilib qolgan. Uni tuzatish uchun telefonni qayta ishga tushiring.</string>
     <string name="stuck_touch_exploration_restart">Tegishli qidiruv tiqilib qolishi mumkin. Uni tuzatish uchun telefonni qayta ishga tushiring.</string>
     <string name="stuck_touch_exploration_grant_dump">Tegishli qidiruv tiqilib qolishi mumkin. Uni tuzatish uchun telefonni qayta ishga tushiring yoki SandFly ga DUMP ruxsatini bering, shunda u tuzatishi mumkin.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Pastga surish</string>
     <string name="template_list_position">Joylashuv <xliff:g id="position" example="2">%1$d</xliff:g> / <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> oldi. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> tushdi. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> qoʻyildi. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly bu tartibda element tafsilotlarini aytadi. Uni oʻzgartirish uchun tafsilotni bosing va ushlab turing, soʻng uni yuqoriga yoki pastga torting. SandFly yoqilgan boʻlsa, ikki marta bosing va ushlab turing, soʻngra sudrab turing. Yuqoriga siljitish va pastga siljitish amallaridan ham foydalanishingiz mumkin.</string>
     <string name="title_pref_speak_items_before_scroll">Koʻrinishga oʻtishdan oldin elementlarni gapiring</string>
     <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. Avtomatik tavsiflar sozlamalarida kalitni tekshiring.</string>
@@ -1765,7 +1765,7 @@
     <string name="dictation_ai_same">Avtomatik tavsiflardagi bilan bir xil</string>
     <string name="title_pref_browse_mode_per_app">Har bir ilovada koʻrish rejimini eslab qoling</string>
     <string name="title_pref_export_settings">Sozlamalarni eksport qilish</string>
-    <string name="title_pref_import_settings">Import sozlamalari</string>
+    <string name="title_pref_import_settings">Sozlamalarni import qilish</string>
     <string name="settings_export_done">Sozlamalar eksport qilindi. API kalitlari kiritilmagan</string>
     <string name="settings_export_failed">Sozlamalarni eksport qilib bo‘lmadi</string>
     <string name="settings_import_done">Sozlamalar import qilindi</string>

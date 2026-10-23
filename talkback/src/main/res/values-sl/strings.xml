@@ -75,10 +75,10 @@
   <string name="summary_pref_single_tap">Za aktiviranje se enkrat dotaknite elementa v fokusu. Hitrejše premikanje kot z dvakratnim dotikom.</string>
   <string name="pref_verbosity_title">Raven podrobnosti</string>
   <string name="pref_punctuation_title">Izgovarjanje ločil in simbolov</string>
-  <string name="title_pref_category_manage_focus_indicator">Focus indicator</string>
+  <string name="title_pref_category_manage_focus_indicator">Indikator fokusa</string>
   <string name="title_pref_category_manage_gestures">Poteze</string>
   <string name="title_pref_manage_labels">Oznake po meri</string>
-  <string name="title_pref_category_context_menu">SandFly meni</string>
+  <string name="title_pref_category_context_menu">Meni SandFly</string>
   <string name="title_pref_category_selector_menu">Kontrolniki za branje</string>
   <string name="title_pref_category_navigation_menu">Urejanje možnosti pomikanja</string>
   <string name="title_pref_manage_keyboard_shortcuts">Bližnjične tipke</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Nastavitev aktivirate tako, da funkcijo SandFly izklopite in jo znova vklopite.</string>
   <string name="title_pref_auto_image_captioning">Samodejni opisi</string>
   <string name="title_pref_gemini_settings">Nastavitve Geminija</string>
-  <string name="title_pref_gemini_enabled">Gemini glasovni ukazi</string>
+  <string name="title_pref_gemini_enabled">Glasovni ukazi Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Ko v meniju funkcije SandFly izberete »Opis slike«, si lahko ogledate podrobne opise slik, generirane z umetno inteligenco.\n\nKo fokus premaknete na sliko ali ikono, si lahko ogledate tudi samodejne opise. Samodejni opisi delujejo brez internetne povezave.</string>
   <string name="title_pref_icon_detection">Samodejni opisi ikon</string>
   <string name="title_pref_image_description">Samodejni opisi slik</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Prejšnji glasovni profil</string>
     <string name="shortcut_next_voice_profile">Naslednji glasovni profil</string>
     <string name="title_pref_voice_profile_in_use">Glasovni profil v uporabi</string>
-    <string name="title_pref_add_voice_profile">Dodajte glasovni profil</string>
+    <string name="title_pref_add_voice_profile">Dodaj glasovni profil</string>
     <string name="voice_profile_new_name">Glasovni profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Glasovni profil se že imenuje <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Ime</string>
@@ -1736,7 +1736,7 @@
     <string name="action_move_down">Premakni navzdol</string>
     <string name="template_list_position">Položaj <xliff:g id="position" example="2">%1$d</xliff:g> od <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Prevzeto <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Padel <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Spuščeno: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly pove podrobnosti o predmetu v tem vrstnem redu. Če ga želite spremeniti, se dotaknite podrobnosti in jo pridržite, nato pa jo povlecite navzgor ali navzdol. Ko je SandFly vklopljen, se dvakrat dotaknite in pridržite ter nato povlecite. Uporabite lahko tudi dejanji Premakni gor in Premakni navzdol.</string>
     <string name="title_pref_speak_items_before_scroll">Izgovorite elemente, preden se pomaknejo v pogled</string>
     <string name="gemini_error_api_key">Gemini ni sprejel ključa API. Preverite ključ v nastavitvah samodejnih opisov.</string>
@@ -1772,8 +1772,8 @@
     <string name="title_pref_dictation_ai_service">Storitev AI za narekovanje</string>
     <string name="dictation_ai_same">Enako kot za samodejne opise</string>
     <string name="title_pref_browse_mode_per_app">Zapomni si način brskanja za vsako aplikacijo</string>
-    <string name="title_pref_export_settings">Export settings</string>
-    <string name="title_pref_import_settings">Import settings</string>
+    <string name="title_pref_export_settings">Izvozi nastavitve</string>
+    <string name="title_pref_import_settings">Uvozi nastavitve</string>
     <string name="settings_export_done">Nastavitve izvožene. API keys are not included</string>
     <string name="settings_export_failed">Nastavitev ni bilo mogoče izvoziti</string>
     <string name="settings_import_done">Nastavitve so uvožene</string>

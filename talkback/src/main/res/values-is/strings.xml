@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fókusvísir</string>
   <string name="title_pref_category_manage_gestures">Bendingar</string>
   <string name="title_pref_manage_labels">Sérsniðnir flokkar</string>
-  <string name="title_pref_category_context_menu">SandFly valmynd</string>
+  <string name="title_pref_category_context_menu">SandFly-valmynd</string>
   <string name="title_pref_category_selector_menu">Lesstýringar</string>
   <string name="title_pref_category_navigation_menu">Breyta flettivalkostum</string>
   <string name="title_pref_manage_keyboard_shortcuts">Flýtilyklar</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Slökktu á SandFly og kveiktu svo aftur til að virkja stillinguna.</string>
   <string name="title_pref_auto_image_captioning">Sjálfvirkar lýsingar</string>
   <string name="title_pref_gemini_settings">Gemini-stillingar</string>
-  <string name="title_pref_gemini_enabled">Gemini raddskipanir</string>
+  <string name="title_pref_gemini_enabled">Raddskipanir Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Fáðu ítarlegar lýsingar á gervigreindarmyndum þegar þú velur \„Lýsa mynd\“ í valmynd SandFly.\n\nÞú getur einnig fengið sjálfvirkar lýsingar þegar þú setur mynd eða tákn í fókus. Sjálfvirkar lýsingar virka án nettengingar.</string>
   <string name="title_pref_icon_detection">Sjálfvirkar lýsingar á táknum</string>
   <string name="title_pref_image_description">Sjálfvirkar lýsingar á myndum</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Þegar síminn er tekinn úr lás</string>
     <string name="title_pref_say_screen_off">Lesa upp „Slökkt á skjánum“</string>
     <string name="title_pref_say_device_unlocked">Lesa upp „Tæki tekið úr lás“</string>
-    <string name="title_pref_announce_time">Tími</string>
+    <string name="title_pref_announce_time">Klukkan</string>
     <string name="title_pref_announce_ringer_mode">Hringistilling</string>
     <string name="summary_pref_announce_ringer_mode">Lesa upp þegar hringing er stillt á titring eða hljóðlaust</string>
     <string name="title_pref_category_feedback">Svörun</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Engin</string>
     <string name="summary_selector_menu_emoji">Breyttu því hvernig emoji eru lesin</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Teldu endurtekið emoji</string>
+    <string name="title_pref_emoji_repeat_count">Telja endurtekin emoji</string>
     <string name="emoji_repeat_count_off">Slökkt</string>
     <string name="emoji_repeat_count_2">2 eða fleiri</string>
     <string name="emoji_repeat_count_3">3 eða fleiri</string>
@@ -1581,7 +1581,7 @@
     <string name="handwriting_downloaded">Rithandargreining hlaðið niður</string>
     <string name="handwriting_download_failed">Ekki var hægt að hlaða niður rithandargreiningu. Athugaðu nettenginguna.</string>
     <string name="handwriting_unsupported_language">Rithandargreining er ekki í boði á þessu tungumáli</string>
-    <string name="title_pref_handwriting_keyboard">Rithönd lyklaborð</string>
+    <string name="title_pref_handwriting_keyboard">Rithandarlyklaborð</string>
     <string name="summary_pref_handwriting_keyboard">Kveikja á rithendi SandFly í lyklaborðsstillingum Android.</string>
     <string name="title_pref_handwriting_wait">Bíddu eftir að hafa skrifað</string>
     <string name="value_handwriting_wait_200">0,2 sekúndur</string>
@@ -1682,7 +1682,7 @@
     <string name="summary_pref_wrap_around">Að strjúka framhjá síðasta hlutnum fer í það fyrsta og framhjá því fyrsta fer í það síðasta. Þegar slökkt er á því spilar hljóð í lokin í staðinn.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Lagaðu fasta snertirannsókn</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Án DUMP leyfisins getur SandFly aðeins sagt að snerta könnun gæti verið föst. Til að láta það laga það skaltu keyra: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Laga snertirannsóknir</string>
+    <string name="stuck_touch_exploration_fixing">Lagar snertikönnun</string>
     <string name="stuck_touch_exploration_fixed">Snertakönnun lagfærð</string>
     <string name="stuck_touch_exploration_not_fixed">Snertakönnun er enn föst. Endurræstu símann til að laga það.</string>
     <string name="stuck_touch_exploration_restart">Snertakönnun gæti verið föst. Endurræstu símann til að laga það.</string>
@@ -1708,10 +1708,10 @@
     <string name="tablet_held_up_faces_away_on">Spjaldtölvan hélt uppi andlitunum frá sér</string>
     <string name="tablet_held_up_faces_away_off">Spjaldtölvan hélt upp andlitunum frá</string>
     <string name="title_keyboard_echo_on_screen">Ómun á skjályklaborði</string>
-    <string name="title_keyboard_echo_physical">Líkamlegt hljómborðs bergmál</string>
-    <string name="title_keyboard_echo_braille_keyboard">Braille lyklaborðs bergmál</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Rithönd lyklaborðs bergmál</string>
-    <string name="title_keyboard_echo_braille_display">Braille skjár bergmál</string>
+    <string name="title_keyboard_echo_physical">Bergmál vélbúnaðarlyklaborðs</string>
+    <string name="title_keyboard_echo_braille_keyboard">Bergmál blindraleturslyklaborðs</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Bergmál rithandarlyklaborðs</string>
+    <string name="title_keyboard_echo_braille_display">Bergmál blindraleturskjás</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Truflaðu tal þegar þú skrifar</string>
     <string name="pref_interrupt_typing_entry_always">Alltaf</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Færa niður</string>
     <string name="template_list_position">Staða <xliff:g id="position" example="2">%1$d</xliff:g> af <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Sótt <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Fallið <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Sleppt: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly segir upplýsingar um hlut í þessari röð. Til að breyta því skaltu halda inni smáatriði og draga það síðan upp eða niður. Með kveikt á SandFly, tvísmelltu og haltu inni og dragðu síðan. Þú getur líka notað Færa upp og Færa niður aðgerðirnar.</string>
     <string name="title_pref_speak_items_before_scroll">Talaðu hluti áður en þeir fletta í sýn</string>
     <string name="gemini_error_api_key">Gemini samþykkti ekki API lykilinn. Athugaðu lykilinn í stillingum fyrir sjálfvirkar lýsingar.</string>

@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Isključite, pa ponovo uključite SandFly da biste aktivirali ovo podešavanje.</string>
   <string name="title_pref_auto_image_captioning">Automatski opisi</string>
   <string name="title_pref_gemini_settings">Gemini podešavanja</string>
-  <string name="title_pref_gemini_enabled">Gemini glasovne komande</string>
+  <string name="title_pref_gemini_enabled">Glasovne komande za Gemini</string>
   <string name="title_pref_category_automatic_description_summary">U SandFly meniju izaberite Opis slike da biste dobijali detaljne opise slika koje pruža veštačka inteligencija.\n\nAutomatske opise možete da dobijate i kada fokusirate sliku ili ikonu. Automatski opisi rade bez internet veze.</string>
   <string name="title_pref_icon_detection">Automatski opisi ikona</string>
   <string name="title_pref_image_description">Automatski opisi slika</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Prethodni glasovni profil</string>
     <string name="shortcut_next_voice_profile">Sledeći glasovni profil</string>
     <string name="title_pref_voice_profile_in_use">Glasovni profil je u upotrebi</string>
-    <string name="title_pref_add_voice_profile">Dodajte glasovni profil</string>
+    <string name="title_pref_add_voice_profile">Dodaj glasovni profil</string>
     <string name="voice_profile_new_name">Glasovni profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Glasovni profil se već zove <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Ime</string>
@@ -1330,10 +1330,10 @@
     <string name="voice_profile_moved_above">Premešteno iznad <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Premešteno ispod <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> izbrisano</string>
-    <string name="title_pref_delete_voice_profile">Izbrišite glasovni profil</string>
+    <string name="title_pref_delete_voice_profile">Izbriši glasovni profil</string>
     <string name="voice_profile_delete_confirm">Izbrisati <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Izbriši</string>
-    <string name="summary_pref_tts_engine_default">Sistem podrazumevano</string>
+    <string name="summary_pref_tts_engine_default">Podrazumevano za sistem</string>
     <string name="title_pref_speech_pitch">Visina govora</string>
     <string name="title_pref_speech_stream">Jačina zvuka govora</string>
     <string name="summary_selector_speech_stream">Prebacivanje između pristupačnosti, medija, zvona i jačine zvuka poziva</string>
@@ -1405,13 +1405,13 @@
     <string name="phonetic_letters_mode_after_letter_delay">Posle pisma, odloženo, kao \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Posle pisma, bez odlaganja, kao \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, kao \"hotel\"</string>
-    <string name="title_pref_emoji_speech">Emoji</string>
+    <string name="title_pref_emoji_speech">Emodži</string>
     <string name="emoji_speech_engine">Čitanje pomoću govornog mehanizma</string>
     <string name="emoji_speech_names">Čita SandFly</string>
     <string name="emoji_speech_none">Ništa</string>
     <string name="summary_selector_menu_emoji">Promenite način čitanja emodžija</string>
     <string name="emoji_speech_state">Emodži: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Brojite ponovljene emodžije</string>
+    <string name="title_pref_emoji_repeat_count">Brojanje ponovljenih emodžija</string>
     <string name="emoji_repeat_count_off">Isključeno</string>
     <string name="emoji_repeat_count_2">2 ili više</string>
     <string name="emoji_repeat_count_3">3 ili više</string>
@@ -1672,11 +1672,11 @@
     <string name="value_rotor_step_30">30 stepeni (podrazumevano)</string>
     <string name="value_rotor_step_45">45 stepeni</string>
     <string name="value_rotor_step_60">60 stepeni</string>
-    <string name="title_pref_low_latency_audio">Nisko kašnjenje zvuka</string>
+    <string name="title_pref_low_latency_audio">Zvuk sa malim kašnjenjem</string>
     <string name="summary_pref_low_latency_audio">Pustite zvukove i govor SandFly kroz najbržu audio putanju telefona, tako da ih čujete ranije. Isključite ga ako se govor ili zvuci prekinu ili zvuče pogrešno.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekunde (podrazumevano)</string>
     <string name="value_focus_delay_300ms">0,3 sekunde</string>
-    <string name="title_pref_lift_to_activate">Podignite da biste aktivirali</string>
+    <string name="title_pref_lift_to_activate">Aktiviranje podizanjem prsta</string>
     <string name="summary_support_change_lift_to_activate">Promenite gde podizanje prsta aktivira stavku</string>
     <string name="value_lift_to_activate_disabled">Onemogućeno</string>
     <string name="value_lift_to_activate_navigation_bar">Samo na traci za navigaciju</string>
@@ -1768,8 +1768,8 @@
     <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
     <string name="dictation_ai_same">Isto kao za automatske opise</string>
     <string name="title_pref_browse_mode_per_app">Zapamtite režim pregledanja u svakoj aplikaciji</string>
-    <string name="title_pref_export_settings">Izvezite podešavanja</string>
-    <string name="title_pref_import_settings">Uvezite podešavanja</string>
+    <string name="title_pref_export_settings">Izvezi podešavanja</string>
+    <string name="title_pref_import_settings">Uvezi podešavanja</string>
     <string name="settings_export_done">Podešavanja su izvezena. API ključevi nisu uključeni</string>
     <string name="settings_export_failed">Podešavanja nisu mogla da se izvezu</string>
     <string name="settings_import_done">Podešavanja su uvezena</string>

@@ -1373,8 +1373,8 @@
     <string name="title_pref_announce_time">කාලය</string>
     <string name="title_pref_announce_ringer_mode">නාද කිරීමේ මාදිලිය</string>
     <string name="summary_pref_announce_ringer_mode">නාද කිරීම කම්පනය වීමට හෝ නිශ්ශබ්ද වීමට සකසා ඇති විට කියන්න</string>
-    <string name="title_pref_category_feedback">ප්රතිපෝෂණ</string>
-    <string name="title_pref_category_typing_and_braille">ටයිප් කිරීම සහ බ්රේල්</string>
+    <string name="title_pref_category_feedback">ප්‍රතිපෝෂණ</string>
+    <string name="title_pref_category_typing_and_braille">ටයිප් කිරීම සහ බ්‍රේල්</string>
     <string name="title_pref_category_apps">යෙදුම්</string>
     <string name="title_pref_touch_activation">ස්පර්ශ කිරීම සහ සක්රිය කිරීම</string>
     <string name="title_pref_navigation">සංචාලනය</string>
@@ -1546,7 +1546,7 @@
     <string name="edge_gestures_title">දාර</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">බ්‍රවුස් ප්‍රකාරය සක්‍රිය හෝ අක්‍රිය කිරීමට තවත් කෙටි මගක්</string>
     <string name="title_pref_vibration_strength">කම්පන ශක්තිය</string>
-    <string name="title_pref_audio_output_device">ශ්රව්ය ප්රතිදාන උපාංගය</string>
+    <string name="title_pref_audio_output_device">ශ්‍රව්‍ය ප්‍රතිදාන උපාංගය</string>
     <string name="dialog_title_audio_output_device">SandFly ශබ්දය වාදනය කළ යුතු ස්ථානය තෝරන්න</string>
     <string name="value_audio_output_device_default">පද්ධති පෙරනිමිය</string>
     <string name="value_audio_output_device_speaker">දුරකථන ස්පීකරය</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">අත් අකුරු හඳුනාගැනීම මෙම භාෂාවෙන් නොමැත</string>
     <string name="title_pref_handwriting_keyboard">අත් අකුරු යතුරු පුවරුව</string>
     <string name="summary_pref_handwriting_keyboard">Android හි යතුරුපුවරු සැකසුම් තුළ SandFly අත් අකුරු ක්‍රියාත්මක කරන්න</string>
-    <string name="title_pref_handwriting_wait">ලිව්වට පස්සේ ඉන්න</string>
+    <string name="title_pref_handwriting_wait">ලිවීමෙන් පසු රැඳී සිටීම</string>
     <string name="value_handwriting_wait_200">තත්පර 0.2</string>
     <string name="value_handwriting_wait_300">තත්පර 0.3 යි</string>
     <string name="value_handwriting_wait_400">තත්පර 0.4 යි</string>
@@ -1619,7 +1619,7 @@
     <string name="shortcut_power_menu">බල මෙනුව</string>
     <string name="shortcut_increase_media_volume">මාධ්‍ය පරිමාව වැඩි කරන්න</string>
     <string name="shortcut_decrease_media_volume">මාධ්‍ය පරිමාව අඩු කරන්න</string>
-    <string name="title_clear_selection">පැහැදිලි තේරීම</string>
+    <string name="title_clear_selection">තේරීම ඉවත් කරන්න</string>
     <string name="title_pref_brightness">දීප්තිය</string>
     <string name="summary_support_change_brightness">තිරය සැඟවී ඇති විට පවා තිරයේ දීප්තිය වැඩි කිරීම හෝ අඩු කිරීම</string>
     <string name="title_pref_shortcut_3finger_4tap">ඇඟිලි 3කින් හතර වතාවක් තට්ටු කරන්න</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">දුරකථනයේ වේගවත්ම ශ්‍රව්‍ය මාර්ගය හරහා SandFly හි ශබ්ද සහ කථනය වාදනය කරන්න, එවිට ඔබට ඒවා ඉක්මනින් ඇසේ. කථනය හෝ ශබ්දය කැඩී ගියහොත් හෝ වැරදි ලෙස ඇසෙන්නේ නම් එය ක්‍රියා විරහිත කරන්න.</string>
     <string name="value_focus_delay_200ms_default">තත්පර 0.2 (පෙරනිමිය)</string>
     <string name="value_focus_delay_300ms">තත්පර 0.3 යි</string>
-    <string name="title_pref_lift_to_activate">සක්රිය කිරීමට ඔසවන්න</string>
+    <string name="title_pref_lift_to_activate">සක්‍රිය කිරීමට ඔසවන්න</string>
     <string name="summary_support_change_lift_to_activate">ඔබේ ඇඟිල්ල එසවීමෙන් අයිතමයක් සක්රිය කරන ස්ථානය වෙනස් කරන්න</string>
     <string name="value_lift_to_activate_disabled">ආබාධිතයි</string>
     <string name="value_lift_to_activate_navigation_bar">සංචාලන තීරුවේ පමණි</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">අවසාන අයිතමය පසුකර ස්වයිප් කිරීම පළමුවැන්නට යන අතර පළමුවැන්න පසුකර අන්තිමයට යයි. අක්‍රිය වූ විට, ඒ වෙනුවට ශබ්දයක් අවසානයේ වාදනය වේ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">සිරවී ඇති ස්පර්ශ ගවේෂණය නිවැරදි කරන්න</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP අවසරයකින් තොරව, SandFly හට පැවසිය හැක්කේ ස්පර්ශ ගවේෂණය ඇණහිටිය හැකි බව පමණි. එය නිවැරදි කිරීමට ඉඩ දීමට, ධාවනය කරන්න: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">ස්පර්ශ ගවේෂණය සවි කිරීම</string>
-    <string name="stuck_touch_exploration_fixed">ස්පර්ශ ගවේෂණය ස්ථාවරයි</string>
+    <string name="stuck_touch_exploration_fixing">ස්පර්ශ ගවේෂණය නිවැරදි කරමින්</string>
+    <string name="stuck_touch_exploration_fixed">ස්පර්ශ ගවේෂණය නිවැරදි කළා</string>
     <string name="stuck_touch_exploration_not_fixed">ස්පර්ශ ගවේෂණය තවමත් හිර වී ඇත. එය නිවැරදි කිරීමට දුරකථනය නැවත ආරම්භ කරන්න.</string>
     <string name="stuck_touch_exploration_restart">ස්පර්ශ ගවේෂණය ඇණහිටිය හැක. එය නිවැරදි කිරීමට දුරකථනය නැවත ආරම්භ කරන්න.</string>
     <string name="stuck_touch_exploration_grant_dump">ස්පර්ශ ගවේෂණය ඇණහිටිය හැක. එය නිවැරදි කිරීමට දුරකථනය නැවත අරඹන්න, නැතහොත් එය නිවැරදි කිරීමට හැකි වන පරිදි SandFly ADB සමඟ DUMP අවසරය ලබා දෙන්න.</string>
@@ -1709,9 +1709,9 @@
     <string name="tablet_held_up_faces_away_off">ටැබ්ලට් එක මුහුණ ඉවතට තබා ඇත</string>
     <string name="title_keyboard_echo_on_screen">තිරයේ යතුරු පුවරුව දෝංකාරය</string>
     <string name="title_keyboard_echo_physical">භෞතික යතුරුපුවරු දෝංකාරය</string>
-    <string name="title_keyboard_echo_braille_keyboard">බ්රේල් යතුරු පුවරුව දෝංකාරය</string>
+    <string name="title_keyboard_echo_braille_keyboard">බ්‍රේල් යතුරු පුවරු දෝංකාරය</string>
     <string name="title_keyboard_echo_handwriting_keyboard">අත් අකුරු යතුරු පුවරුව දෝංකාරය</string>
-    <string name="title_keyboard_echo_braille_display">බ්රේල් සංදර්ශක දෝංකාරය</string>
+    <string name="title_keyboard_echo_braille_display">බ්‍රේල් සංදර්ශක දෝංකාරය</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">ටයිප් කිරීමේදී කතාවට බාධා කරන්න</string>
     <string name="pref_interrupt_typing_entry_always">සෑම විටම</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">පහළට ගෙන යන්න</string>
     <string name="template_list_position">ස්ථානය <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ලබා ගන්නා ලදී. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> පහත වැටුණි. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> අතහැරියා. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly මෙම අනුපිළිවෙලෙහි අයිතමයක විස්තර පවසයි. එය වෙනස් කිරීමට, විස්තරයක් ස්පර්ශ කර අල්ලාගෙන, පසුව එය ඉහළට හෝ පහළට අදින්න. SandFly සක්‍රීයව, දෙවරක් තට්ටු කර අල්ලාගෙන, පසුව අදින්න. ඔබට Move up සහ Move down යන ක්‍රියා ද භාවිතා කළ හැක.</string>
     <string name="title_pref_speak_items_before_scroll">අයිතම බැලීමට පෙර ඒවා කථා කරන්න</string>
     <string name="gemini_error_api_key">Gemini API යතුර පිළිගත්තේ නැත. ස්වයංක්‍රීය විස්තර සැකසුම් තුළ යතුර පරීක්ෂා කරන්න.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">කියවා ලිවීම සඳහා AI සේවාව</string>
     <string name="dictation_ai_same">ස්වයංක්‍රීය විස්තර සඳහා වූ එකම</string>
     <string name="title_pref_browse_mode_per_app">එක් එක් යෙදුම තුළ බ්‍රවුස් මාදිලිය මතක තබා ගන්න</string>
-    <string name="title_pref_export_settings">අපනයන සැකසුම්</string>
-    <string name="title_pref_import_settings">ආයාත සැකසුම්</string>
+    <string name="title_pref_export_settings">සැකසීම් නිර්යාත කරන්න</string>
+    <string name="title_pref_import_settings">සැකසීම් ආයාත කරන්න</string>
     <string name="settings_export_done">සැකසුම් අපනයනය කරන ලදී. API යතුරු ඇතුළත් නොවේ</string>
     <string name="settings_export_failed">සැකසීම් නිර්යාත කළ නොහැකි විය</string>
     <string name="settings_import_done">සැකසීම් ආනයනය කරන ලදී</string>

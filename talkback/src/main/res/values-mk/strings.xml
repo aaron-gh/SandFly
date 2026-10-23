@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Исклучете го, па вклучете го SandFly повторно за да ја активирате поставката.</string>
   <string name="title_pref_auto_image_captioning">Автоматски описи</string>
   <string name="title_pref_gemini_settings">Поставки за Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini гласовни команди</string>
+  <string name="title_pref_gemini_enabled">Гласовни команди за Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Добивајте детални описи на слики со AI кога ќе изберете „Опиши слика“ од менито SandFly.\n\nМоже да добивате и автоматски описи кога ќе се фокусирате на слика или икона. Автоматските описи функционираат без интернет-врска.</string>
   <string name="title_pref_icon_detection">Автоматски описи на иконите</string>
   <string name="title_pref_image_description">Автоматски описи на сликите</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Претходен гласовен профил</string>
     <string name="shortcut_next_voice_profile">Следен гласовен профил</string>
     <string name="title_pref_voice_profile_in_use">Гласовен профил во употреба</string>
-    <string name="title_pref_add_voice_profile">Додајте гласовен профил</string>
+    <string name="title_pref_add_voice_profile">Додај гласовен профил</string>
     <string name="voice_profile_new_name">Гласовен профил <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Гласовниот профил веќе се нарекува <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Име</string>
@@ -1330,7 +1330,7 @@
     <string name="voice_profile_moved_above">Преместено над <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Преместено подолу <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> избришано</string>
-    <string name="title_pref_delete_voice_profile">Избришете го гласовниот профил</string>
+    <string name="title_pref_delete_voice_profile">Избриши го гласовниот профил</string>
     <string name="voice_profile_delete_confirm">Да се избрише <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Избриши</string>
     <string name="summary_pref_tts_engine_default">Стандардно на системот</string>
@@ -1351,7 +1351,7 @@
     <string name="summary_pref_speak_in_phrases">За говорните мотори кои бавно запираат, како што е Gryphon, така што со лизгање настрана се запира долгиот текст одеднаш. Многу мотори паузираат подолго помеѓу речениците испратени одделно, затоа исклучете го ова ако вашата брзо престане.</string>
     <string name="battery_optimization_notification_title">Оптимизацијата на батеријата може да запре SandFly</string>
     <string name="battery_optimization_notification_text">На овој телефон, заштедата на батеријата може да престане SandFly откако екранот ќе се исклучи, така што тивко се додека не се рестартира. Допрете за да ја отворите оптимизацијата на батеријата, изберете Сите апликации, пронајдете SandFly и изберете Не оптимизирај.</string>
-    <string name="title_pref_mute_speech_while_recording">Тивко додека снимате</string>
+    <string name="title_pref_mute_speech_while_recording">Тивко за време на снимање</string>
     <string name="summary_pref_mute_speech_while_recording">Додека апликацијата снима без поврзани слушалки, SandFly зборува само како одговор на вашите гестови, копчиња и пишување и останува тивка за работи како што се известувања, за да не се снимаат.</string>
     <string name="title_pref_switch_languages">Автоматски сменете го јазикот</string>
     <string name="title_pref_switch_dialects">Променете го дијалектот автоматски</string>
@@ -1619,7 +1619,7 @@
     <string name="shortcut_power_menu">Мени за напојување</string>
     <string name="shortcut_increase_media_volume">Зголеми ја јачината на звукот на медиумите</string>
     <string name="shortcut_decrease_media_volume">Намали ја јачината на звукот на медиумите</string>
-    <string name="title_clear_selection">Исчистете го изборот</string>
+    <string name="title_clear_selection">Исчисти го изборот</string>
     <string name="title_pref_brightness">Осветленост</string>
     <string name="summary_support_change_brightness">Зголемете или намалете ја осветленоста на екранот, дури и кога екранот е скриен</string>
     <string name="title_pref_shortcut_3finger_4tap">Четирикратно допрете со 3 прста</string>
@@ -1682,7 +1682,7 @@
     <string name="summary_pref_wrap_around">Поминувањето покрај последната ставка оди до првата, а покрај првата оди до последната. Кога е исклучено, наместо тоа, на крајот се репродуцира звук.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Поправете го истражувањето на заглавениот допир</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволата DUMP, SandFly може само да каже дека истражувањето со допир може да е заглавено. За да дозволите да го поправи, стартувајте: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Поправање на истражување на допир</string>
+    <string name="stuck_touch_exploration_fixing">Поправање на истражувањето со допир</string>
     <string name="stuck_touch_exploration_fixed">Истражувањето со допир е поправено</string>
     <string name="stuck_touch_exploration_not_fixed">Истражувањето со допир сè уште е заглавено. Рестартирајте го телефонот за да го поправите.</string>
     <string name="stuck_touch_exploration_restart">Истражувањето со допир може да е заглавено. Рестартирајте го телефонот за да го поправите.</string>
@@ -1708,7 +1708,7 @@
     <string name="tablet_held_up_faces_away_on">Таблетот го држеше лицето настрана</string>
     <string name="tablet_held_up_faces_away_off">Таблетот се кренати со свртени лица</string>
     <string name="title_keyboard_echo_on_screen">Ехо на тастатурата на екранот</string>
-    <string name="title_keyboard_echo_physical">Физичко ехо на тастатурата</string>
+    <string name="title_keyboard_echo_physical">Ехо на физичката тастатура</string>
     <string name="title_keyboard_echo_braille_keyboard">Ехо на тастатурата на Брајово писмо</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ехо на тастатурата за ракопис</string>
     <string name="title_keyboard_echo_braille_display">Ехо на екранот на Брајово писмо</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Премести надолу</string>
     <string name="template_list_position">Позиција <xliff:g id="position" example="2">%1$d</xliff:g> од <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Собрано <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Падна <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Пуштено: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ги кажува деталите за ставката по овој редослед. За да го промените, допрете и задржете некој детал, па повлечете го нагоре или надолу. Со вклучено SandFly, допрете двапати и задржете, па повлечете. Можете исто така да ги користите дејствата Премести нагоре и Премести надолу.</string>
     <string name="title_pref_speak_items_before_scroll">Зборувајте ставки пред да се прелистат во поглед</string>
     <string name="gemini_error_api_key">Gemini не го прифати клучот API. Проверете го клучот во поставките за автоматски описи.</string>
@@ -1765,7 +1765,7 @@
     <string name="dictation_ai_same">Иста како за автоматските описи</string>
     <string name="title_pref_browse_mode_per_app">Запомнете го режимот на прелистување во секоја апликација</string>
     <string name="title_pref_export_settings">Извези поставки</string>
-    <string name="title_pref_import_settings">Увезете поставки</string>
+    <string name="title_pref_import_settings">Увези поставки</string>
     <string name="settings_export_done">Поставките се извезени. АПИ клучевите не се вклучени</string>
     <string name="settings_export_failed">Поставките не може да се извезат</string>
     <string name="settings_import_done">Поставките се увезени</string>

@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Ֆոկուսի ցուցիչ</string>
   <string name="title_pref_category_manage_gestures">Ժեստեր</string>
   <string name="title_pref_manage_labels">Հատուկ պիտակներ</string>
-  <string name="title_pref_category_context_menu">SandFly մենյու</string>
+  <string name="title_pref_category_context_menu">SandFly-ի ընտրացանկ</string>
   <string name="title_pref_category_selector_menu">Ընթերցման կառավարման տարրեր</string>
   <string name="title_pref_category_navigation_menu">Փոփոխել նավիգացիայի պարամետրերը</string>
   <string name="title_pref_manage_keyboard_shortcuts">Ստեղնային դյուրանցումներ</string>
@@ -1370,8 +1370,8 @@
     <string name="title_screen_announcements_unlock">Երբ հեռախոսն ապակողպվում է</string>
     <string name="title_pref_say_screen_off">Հնչեցնել «Էկրանն անջատված է»</string>
     <string name="title_pref_say_device_unlocked">Հնչեցնել «Սարքն ապակողպված է»</string>
-    <string name="title_pref_announce_time">Ժամանակ</string>
-    <string name="title_pref_announce_ringer_mode">Զանգակի ռեժիմ</string>
+    <string name="title_pref_announce_time">Ժամը</string>
+    <string name="title_pref_announce_ringer_mode">Զանգի ռեժիմ</string>
     <string name="summary_pref_announce_ringer_mode">Հնչեցնել, երբ զանգակը թրթռոցի կամ անձայն ռեժիմում է</string>
     <string name="title_pref_category_feedback">Արձագանք</string>
     <string name="title_pref_category_typing_and_braille">Մուտքագրում և Բրայլ</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Ոչ մեկը</string>
     <string name="summary_selector_menu_emoji">Փոխեք էմոջիների ընթերցման եղանակը</string>
     <string name="emoji_speech_state">Էմոջի՝ <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Հաշվեք կրկնվող էմոջիները</string>
+    <string name="title_pref_emoji_repeat_count">Կրկնվող էմոջիների հաշվում</string>
     <string name="emoji_repeat_count_off">Անջատված</string>
     <string name="emoji_repeat_count_2">2 կամ ավելի</string>
     <string name="emoji_repeat_count_3">3 կամ ավելի</string>
@@ -1558,7 +1558,7 @@
     <string name="value_audio_output_device_usb_headset">USB ականջակալ</string>
     <string name="value_audio_output_device_usb_device">USB աուդիո սարք</string>
     <string name="title_pref_speaker_devices">Հեռախոսի բարձրախոս այս սարքերով</string>
-    <string name="summary_pref_speaker_devices_none">Միացված չէ</string>
+    <string name="summary_pref_speaker_devices_none">Ոչ մեկը</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth կամ լարային սարքեր դեռ միացված չեն</string>
     <string name="pref_reduce_window_delay_summary">SandFly ավելի արագ է կարդում նոր էկրանները, երբ անիմացիաներն անջատված են: Սա անջատում է անիմացիաները ամբողջ հեռախոսի համար:</string>
     <string name="dialog_message_detailed_ai_description">Ընտրված պատկերներն ուղարկվում են Google-ի Gemini API՝ նկարագրվելու համար: Երբ սարքում AI-ն միացված է, դրանք նկարագրված են այս հեռախոսում և չեն ուղարկվում:\n\nԱնվճար API բանալիով Google կարող է պահել այն, ինչ ստանում է, օգտագործել այն իր արտադրանքը բարելավելու համար և մարդկանց առաջարկել վերանայել այն: Generative AI-ն փորձնական է, ուստի սխալներ թույլ կտա: Կիրառվում է <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>:</string>
@@ -1581,7 +1581,7 @@
     <string name="handwriting_downloaded">Ձեռագրի ճանաչումը ներբեռնվել է</string>
     <string name="handwriting_download_failed">Չհաջողվեց ներբեռնել ձեռագրի ճանաչումը: Ստուգեք ինտերնետ կապը:</string>
     <string name="handwriting_unsupported_language">Ձեռագրի ճանաչումն այս լեզվով հասանելի չէ</string>
-    <string name="title_pref_handwriting_keyboard">Ձեռագիր ստեղնաշար</string>
+    <string name="title_pref_handwriting_keyboard">Ձեռագրի ստեղնաշար</string>
     <string name="summary_pref_handwriting_keyboard">Միացրեք SandFly ձեռագիրը Android ստեղնաշարի կարգավորումներում</string>
     <string name="title_pref_handwriting_wait">Սպասեք գրելուց հետո</string>
     <string name="value_handwriting_wait_200">0,2 վայրկյան</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">Վերջին տարրի կողքով սահեցնելը գնում է առաջինին, իսկ առաջինից անցնելը գնում է վերջինին: Երբ անջատված է, փոխարենը վերջում հնչում է ձայն:</string>
     <string name="title_pref_fix_stuck_touch_exploration">Ուղղել խրված հպման հետախուզումը</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Առանց DUMP թույլտվության, SandFly կարող է միայն ասել, որ հպման հետախուզումը կարող է խրված լինել: Որպեսզի դա շտկվի, գործարկեք՝ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission:DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Հպման հետախուզման ուղղում</string>
-    <string name="stuck_touch_exploration_fixed">Հպման հետախուզումը ամրագրված է</string>
+    <string name="stuck_touch_exploration_fixing">Հպումով ուսումնասիրության շտկում</string>
+    <string name="stuck_touch_exploration_fixed">Հպումով ուսումնասիրությունը շտկվեց</string>
     <string name="stuck_touch_exploration_not_fixed">Հպման հետախուզումը դեռ խրված է: Վերագործարկեք հեռախոսը՝ այն շտկելու համար:</string>
     <string name="stuck_touch_exploration_restart">Հպման հետախուզումը կարող է խրված լինել: Վերագործարկեք հեռախոսը՝ այն շտկելու համար:</string>
     <string name="stuck_touch_exploration_grant_dump">Հպման հետախուզումը կարող է խրված լինել: Վերագործարկեք հեռախոսը՝ այն շտկելու համար կամ SandFly տրամադրեք DUMP թույլտվությունը ԱԶԲ-ի հետ, որպեսզի այն կարողանա շտկել այն:</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Տեղափոխել ներքև</string>
     <string name="template_list_position">Պաշտոն <xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g>-ից</string>
     <string name="template_item_details_order_picked_up">Վերցվել է <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Իջել է <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Թողնված է՝ <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ասում է ապրանքի մանրամասները այս հերթականությամբ: Այն փոխելու համար հպեք և պահեք որևէ դետալ, ապա քաշեք այն վեր կամ վար: Միացված SandFly-ի դեպքում կրկնակի հպեք և պահեք, ապա քաշեք: Կարող եք նաև օգտագործել «Տեղափոխել վեր» և «Տեղափոխել վար» գործողությունները:</string>
     <string name="title_pref_speak_items_before_scroll">Խոսեք տարրերը, նախքան դրանք ոլորել դեպի տեսադաշտ</string>
     <string name="gemini_error_api_key">Gemini չի ընդունել API ստեղնը: Ստուգեք բանալին ավտոմատ նկարագրությունների կարգավորումներում:</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">AI ծառայություն թելադրության համար</string>
     <string name="dictation_ai_same">Նույնը, ինչ ավտոմատ նկարագրությունների համար</string>
     <string name="title_pref_browse_mode_per_app">Հիշեք զննարկման ռեժիմը յուրաքանչյուր հավելվածում</string>
-    <string name="title_pref_export_settings">Արտահանման կարգավորումներ</string>
-    <string name="title_pref_import_settings">Ներմուծման կարգավորումներ</string>
+    <string name="title_pref_export_settings">Արտահանել կարգավորումները</string>
+    <string name="title_pref_import_settings">Ներմուծել կարգավորումները</string>
     <string name="settings_export_done">Կարգավորումները արտահանվեցին: API ստեղները ներառված չեն</string>
     <string name="settings_export_failed">Կարգավորումները չհաջողվեց արտահանել</string>
     <string name="settings_import_done">Կարգավորումները ներմուծված են</string>

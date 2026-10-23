@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">წინა ხმის პროფილი</string>
     <string name="shortcut_next_voice_profile">შემდეგი ხმის პროფილი</string>
     <string name="title_pref_voice_profile_in_use">ხმოვანი პროფილი გამოიყენება</string>
-    <string name="title_pref_add_voice_profile">დაამატეთ ხმოვანი პროფილი</string>
+    <string name="title_pref_add_voice_profile">ხმოვანი პროფილის დამატება</string>
     <string name="voice_profile_new_name">ხმოვანი პროფილი <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">ხმოვან პროფილს უკვე ჰქვია <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">სახელი</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">დრო</string>
     <string name="title_pref_announce_ringer_mode">ზარის რეჟიმი</string>
     <string name="summary_pref_announce_ringer_mode">თქვით, როდესაც ზარის ხმა დაყენებულია ვიბრაციაზე ან ჩუმად</string>
-    <string name="title_pref_category_feedback">კავშირი</string>
+    <string name="title_pref_category_feedback">უკუკავშირი</string>
     <string name="title_pref_category_typing_and_braille">აკრეფა და ბრაილი</string>
     <string name="title_pref_category_apps">აპები</string>
     <string name="title_pref_touch_activation">შეხება და გააქტიურება</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">არცერთი</string>
     <string name="summary_selector_menu_emoji">შეცვალეთ როგორ იკითხება emoji</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">დაითვალეთ განმეორებითი emoji</string>
+    <string name="title_pref_emoji_repeat_count">განმეორებადი emoji-ების დათვლა</string>
     <string name="emoji_repeat_count_off">გამორთული</string>
     <string name="emoji_repeat_count_2">2 ან მეტი</string>
     <string name="emoji_repeat_count_3">3 ან მეტი</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">ბოლო ერთეულის წინ გადაფურცვლა პირველზე გადადის, ხოლო პირველს ბოლოზე. როდესაც გამორთულია, ამის ნაცვლად, ხმა უკრავს ბოლოს.</string>
     <string name="title_pref_fix_stuck_touch_exploration">შეასწორეთ ჩარჩენილი შეხებით გამოკვლევა</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ნებართვის გარეშე, SandFly შეიძლება მხოლოდ იმის თქმა, რომ შეხებით დათვალიერება შეიძლება შეფერხდეს. გამოსასწორებლად, გაუშვით: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">შეხებით ძიების დაფიქსირება</string>
-    <string name="stuck_touch_exploration_fixed">შეხებით შესწავლა დაფიქსირდა</string>
+    <string name="stuck_touch_exploration_fixing">შეხებით შესწავლის გამოსწორება</string>
+    <string name="stuck_touch_exploration_fixed">შეხებით შესწავლა გამოსწორდა</string>
     <string name="stuck_touch_exploration_not_fixed">შეხებით კვლევა ჯერ კიდევ შეჩერებულია. გადატვირთეთ ტელეფონი მის გამოსასწორებლად.</string>
     <string name="stuck_touch_exploration_restart">შეხებით დათვალიერება შეიძლება შეფერხდეს. გადატვირთეთ ტელეფონი მის გამოსასწორებლად.</string>
     <string name="stuck_touch_exploration_grant_dump">შეხებით დათვალიერება შეიძლება შეფერხდეს. გადატვირთეთ ტელეფონი მის გამოსასწორებლად, ან მიეცით SandFly DUMP ნებართვა ADB-ით, რათა შეძლოს მისი გამოსწორება.</string>
@@ -1710,7 +1710,7 @@
     <string name="title_keyboard_echo_on_screen">ეკრანის კლავიატურის ექო</string>
     <string name="title_keyboard_echo_physical">ფიზიკური კლავიატურის ექო</string>
     <string name="title_keyboard_echo_braille_keyboard">ბრაილის კლავიატურის ექო</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">ხელნაწერი კლავიატურის ექო</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">ხელით წერის კლავიატურის ექო</string>
     <string name="title_keyboard_echo_braille_display">ბრაილის ეკრანის ექო</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">აკრეფისას მეტყველების შეწყვეტა</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">ქვევით გადატანა</string>
     <string name="template_list_position">პოზიცია <xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g>-დან</string>
     <string name="template_item_details_order_picked_up">აიყვანეს <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">დაეცა <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">ჩაგდებულია: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ამბობს ნივთის დეტალებს ამ თანმიმდევრობით. მის შესაცვლელად, ხანგრძლივად შეეხეთ დეტალს, შემდეგ გადაიტანეთ ზემოთ ან ქვემოთ. თუ SandFly ჩართულია, ორმაგად შეეხეთ და ხანგრძლივად, შემდეგ გადაიტანეთ. თქვენ ასევე შეგიძლიათ გამოიყენოთ მოქმედებები გადაადგილება ზემოთ და გადაადგილება ქვემოთ.</string>
     <string name="title_pref_speak_items_before_scroll">თქვით ერთეულები, სანამ ხედში გადაინაცვლებენ</string>
     <string name="gemini_error_api_key">Gemini არ მიიღო API გასაღები. შეამოწმეთ გასაღები ავტომატური აღწერილობების პარამეტრებში.</string>
@@ -1764,7 +1764,7 @@
     <string name="title_pref_dictation_ai_service">AI სერვისი კარნახისთვის</string>
     <string name="dictation_ai_same">იგივე, რაც ავტომატური აღწერილობებისთვის</string>
     <string name="title_pref_browse_mode_per_app">გახსოვდეთ დათვალიერების რეჟიმი თითოეულ აპლიკაციაში</string>
-    <string name="title_pref_export_settings">ექსპორტის პარამეტრები</string>
+    <string name="title_pref_export_settings">პარამეტრების ექსპორტი</string>
     <string name="title_pref_import_settings">პარამეტრების იმპორტი</string>
     <string name="settings_export_done">პარამეტრები ექსპორტირებულია. API კლავიშები არ შედის</string>
     <string name="settings_export_failed">პარამეტრების ექსპორტი ვერ მოხერხდა</string>

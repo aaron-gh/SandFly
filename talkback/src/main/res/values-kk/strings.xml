@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Алдыңғы дауыс профилі</string>
     <string name="shortcut_next_voice_profile">Келесі дауыс профилі</string>
     <string name="title_pref_voice_profile_in_use">Дауыс профилі қолданылуда</string>
-    <string name="title_pref_add_voice_profile">Дауыс профилін қосыңыз</string>
+    <string name="title_pref_add_voice_profile">Дауыс профилін қосу</string>
     <string name="voice_profile_new_name">Дауыс профилі <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Дауыс профилі әлдеқашан <xliff:g id="name" example="Reading">%1$s</xliff:g> деп аталады</string>
     <string name="title_pref_voice_profile_name">Аты</string>
@@ -1333,7 +1333,7 @@
     <string name="title_pref_delete_voice_profile">Дауыс профилін жою</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> жою керек пе?</string>
     <string name="voice_profile_delete">Жою</string>
-    <string name="summary_pref_tts_engine_default">Жүйе әдепкі</string>
+    <string name="summary_pref_tts_engine_default">Жүйенің әдепкі мәні</string>
     <string name="title_pref_speech_pitch">Сөйлеу биіктігі</string>
     <string name="title_pref_speech_stream">Сөздің дыбыс деңгейі</string>
     <string name="summary_selector_speech_stream">Арнайы мүмкіндіктер, медиа, қоңырау және қоңырау дыбыстары арасында ауысыңыз</string>
@@ -1378,7 +1378,7 @@
     <string name="title_pref_category_apps">Қолданбалар</string>
     <string name="title_pref_touch_activation">Түртіп, белсендіру</string>
     <string name="title_pref_navigation">Навигация</string>
-    <string name="title_pref_category_more">Көбірек</string>
+    <string name="title_pref_category_more">Басқа</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch үшін қимылдарды резервтеу</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly екі саусақпен бір және екі рет түртуді тоқтатады, осылайша Samsung Vibration Watch оларды пайдалана алады. Сағатыңыздың арнайы мүмкіндіктер параметрлерінде Vibration Watch қосыңыз.</string>
     <string name="shortcut_reserved_for_vibration_watch">Қосымша параметрлерде Vibration Watch үшін сақталған</string>
@@ -1683,7 +1683,7 @@
     <string name="title_pref_fix_stuck_touch_exploration">Кептеліп қалған сенсорлық барлауды түзетіңіз</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP рұқсатынсыз SandFly тек сенсорлық барлау тоқтап қалуы мүмкін деп айта алады. Оны түзету үшін мынаны іске қосыңыз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Сенсорлық барлауды түзету</string>
-    <string name="stuck_touch_exploration_fixed">Түртуді зерттеу бекітілді</string>
+    <string name="stuck_touch_exploration_fixed">Түрту арқылы зерттеу түзетілді</string>
     <string name="stuck_touch_exploration_not_fixed">Сенсорлық барлау әлі де тоқтап тұр. Оны түзету үшін телефонды қайта іске қосыңыз.</string>
     <string name="stuck_touch_exploration_restart">Түрту барлауы тоқтап қалуы мүмкін. Оны түзету үшін телефонды қайта іске қосыңыз.</string>
     <string name="stuck_touch_exploration_grant_dump">Түрту барлауы тоқтап қалуы мүмкін. Түзету үшін телефонды қайта іске қосыңыз немесе SandFly DUMP рұқсатын АДБ оны түзете алатындай етіп беріңіз.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Төмен жылжыту</string>
     <string name="template_list_position">Орны <xliff:g id="position" example="2">%1$d</xliff:g>/<xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> алынды. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> төмендеді. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> қойылды. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly элемент мәліметтерін осы ретпен айтады. Оны өзгерту үшін детальді түртіп, ұстап тұрыңыз, содан кейін оны жоғары немесе төмен сүйреңіз. SandFly қосулы кезде екі рет түртіп, ұстап тұрыңыз, содан кейін сүйреңіз. Сондай-ақ, жоғары жылжыту және төмен жылжыту әрекеттерін пайдалануға болады.</string>
     <string name="title_pref_speak_items_before_scroll">Элементтерді көрініске айналдырмас бұрын сөйлеңіз</string>
     <string name="gemini_error_api_key">Gemini API кілтін қабылдамады. Автоматты сипаттамалар параметрлеріндегі пернені тексеріңіз.</string>

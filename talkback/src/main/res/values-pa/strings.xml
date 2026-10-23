@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">ਫ਼ੋਨ ਦੇ ਸਭ ਤੋਂ ਤੇਜ਼ ਆਡੀਓ ਮਾਰਗ ਰਾਹੀਂ SandFly ਦੀਆਂ ਧੁਨੀਆਂ ਅਤੇ ਬੋਲੀ ਚਲਾਓ, ਤਾਂ ਜੋ ਤੁਸੀਂ ਉਹਨਾਂ ਨੂੰ ਜਲਦੀ ਸੁਣ ਸਕੋ। ਜੇਕਰ ਬੋਲਣ ਜਾਂ ਆਵਾਜ਼ਾਂ ਟੁੱਟਣ ਜਾਂ ਗਲਤ ਲੱਗਦੀਆਂ ਹਨ ਤਾਂ ਇਸਨੂੰ ਬੰਦ ਕਰੋ।</string>
     <string name="value_focus_delay_200ms_default">0.2 ਸਕਿੰਟ (ਪੂਰਵ-ਨਿਰਧਾਰਤ)</string>
     <string name="value_focus_delay_300ms">0.3 ਸਕਿੰਟ</string>
-    <string name="title_pref_lift_to_activate">ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਲਿਫਟ ਕਰੋ</string>
+    <string name="title_pref_lift_to_activate">ਉਂਗਲ ਚੁੱਕ ਕੇ ਕਿਰਿਆਸ਼ੀਲ ਕਰੋ</string>
     <string name="summary_support_change_lift_to_activate">ਬਦਲੋ ਜਿੱਥੇ ਤੁਹਾਡੀ ਉਂਗਲ ਚੁੱਕਣਾ ਇੱਕ ਆਈਟਮ ਨੂੰ ਸਰਗਰਮ ਕਰਦਾ ਹੈ</string>
     <string name="value_lift_to_activate_disabled">ਅਯੋਗ</string>
     <string name="value_lift_to_activate_navigation_bar">ਸਿਰਫ਼ ਨੈਵੀਗੇਸ਼ਨ ਪੱਟੀ \'ਤੇ</string>
@@ -1683,7 +1683,7 @@
     <string name="title_pref_fix_stuck_touch_exploration">ਫਸੇ ਟੱਚ ਖੋਜ ਨੂੰ ਠੀਕ ਕਰੋ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ਅਨੁਮਤੀ ਤੋਂ ਬਿਨਾਂ, SandFly ਸਿਰਫ਼ ਇਹ ਕਹਿ ਸਕਦਾ ਹੈ ਕਿ ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸਨੂੰ ਠੀਕ ਕਰਨ ਦੇਣ ਲਈ, ਚਲਾਓ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ਸਪਰਸ਼ ਖੋਜ ਨੂੰ ਫਿਕਸ ਕਰਨਾ</string>
-    <string name="stuck_touch_exploration_fixed">ਟਚ ਐਕਸਪਲੋਰੇਸ਼ਨ ਫਿਕਸਡ</string>
+    <string name="stuck_touch_exploration_fixed">ਟਚ ਐਕਸਪਲੋਰੇਸ਼ਨ ਠੀਕ ਕੀਤਾ ਗਿਆ</string>
     <string name="stuck_touch_exploration_not_fixed">ਸਪਰਸ਼ ਖੋਜ ਅਜੇ ਵੀ ਰੁਕੀ ਹੋਈ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਰੀਸਟਾਰਟ ਕਰੋ।</string>
     <string name="stuck_touch_exploration_restart">ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਰੀਸਟਾਰਟ ਕਰੋ।</string>
     <string name="stuck_touch_exploration_grant_dump">ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ, ਜਾਂ ADB ਨਾਲ SandFly DUMP ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ ਇਹ ਇਸਨੂੰ ਠੀਕ ਕਰ ਸਕੇ।</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">ਹੇਠਾਂ ਲਿਜਾਓ</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ਦੀ ਸਥਿਤੀ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਚੁੱਕਿਆ ਗਿਆ। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਡਿੱਗਿਆ। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਛੱਡਿਆ ਗਿਆ। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ਇਸ ਕ੍ਰਮ ਵਿੱਚ ਆਈਟਮ ਦੇ ਵੇਰਵੇ ਦੱਸਦਾ ਹੈ। ਇਸਨੂੰ ਬਦਲਣ ਲਈ, ਕਿਸੇ ਵੇਰਵੇ ਨੂੰ ਛੋਹਵੋ ਅਤੇ ਹੋਲਡ ਕਰੋ, ਫਿਰ ਇਸਨੂੰ ਉੱਪਰ ਜਾਂ ਹੇਠਾਂ ਘਸੀਟੋ। SandFly ਚਾਲੂ ਕਰਕੇ, ਡਬਲ-ਟੈਪ ਕਰੋ ਅਤੇ ਹੋਲਡ ਕਰੋ, ਫਿਰ ਘਸੀਟੋ। ਤੁਸੀਂ ਮੂਵ ਅੱਪ ਅਤੇ ਮੂਵ ਡਾਊਨ ਐਕਸ਼ਨ ਵੀ ਵਰਤ ਸਕਦੇ ਹੋ।</string>
     <string name="title_pref_speak_items_before_scroll">ਆਈਟਮਾਂ ਨੂੰ ਦ੍ਰਿਸ਼ ਵਿੱਚ ਸਕ੍ਰੋਲ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਬੋਲੋ</string>
     <string name="gemini_error_api_key">Gemini ਨੇ API ਕੁੰਜੀ ਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ। ਆਟੋਮੈਟਿਕ ਵਰਣਨ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਕੁੰਜੀ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
@@ -1764,7 +1764,7 @@
     <string name="title_pref_dictation_ai_service">ਬੋਲ ਕੇ ਲਿਖਣ ਲਈ ਏਆਈ ਸੇਵਾ</string>
     <string name="dictation_ai_same">ਸਵੈਚਲਿਤ ਵਰਣਨਾਂ ਵਾਲੀ ਹੀ</string>
     <string name="title_pref_browse_mode_per_app">ਹਰੇਕ ਐਪ ਵਿੱਚ ਬ੍ਰਾਊਜ਼ ਮੋਡ ਨੂੰ ਯਾਦ ਰੱਖੋ</string>
-    <string name="title_pref_export_settings">ਨਿਰਯਾਤ ਸੈਟਿੰਗ</string>
+    <string name="title_pref_export_settings">ਸੈਟਿੰਗਾਂ ਐਕਸਪੋਰਟ ਕਰੋ</string>
     <string name="title_pref_import_settings">ਸੈਟਿੰਗਾਂ ਆਯਾਤ ਕਰੋ</string>
     <string name="settings_export_done">ਸੈਟਿੰਗਾਂ ਨਿਰਯਾਤ ਕੀਤੀਆਂ ਗਈਆਂ। API ਕੁੰਜੀਆਂ ਸ਼ਾਮਲ ਨਹੀਂ ਹਨ</string>
     <string name="settings_export_failed">ਸੈਟਿੰਗਾਂ ਨੂੰ ਨਿਰਯਾਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>

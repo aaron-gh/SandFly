@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">휴대폰이 잠금 해제된 경우</string>
     <string name="title_pref_say_screen_off">\"화면 꺼짐\"이라고 말하세요</string>
     <string name="title_pref_say_device_unlocked">\"기기 잠금 해제됨\"이라고 말하세요.</string>
-    <string name="title_pref_announce_time">시간</string>
+    <string name="title_pref_announce_time">시각</string>
     <string name="title_pref_announce_ringer_mode">벨소리 모드</string>
     <string name="summary_pref_announce_ringer_mode">벨소리가 진동 또는 무음으로 설정되어 있을 때 말하기</string>
     <string name="title_pref_category_feedback">피드백</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">없음</string>
     <string name="summary_selector_menu_emoji">이모티콘을 읽는 방법 변경</string>
     <string name="emoji_speech_state">이모티콘: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">반복되는 이모티콘 개수 계산</string>
+    <string name="title_pref_emoji_repeat_count">반복되는 이모티콘 개수 세기</string>
     <string name="emoji_repeat_count_off">사용 안함</string>
     <string name="emoji_repeat_count_2">2개 이상</string>
     <string name="emoji_repeat_count_3">3개 이상</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">이 언어에서는 필기 인식을 사용할 수 없습니다.</string>
     <string name="title_pref_handwriting_keyboard">필기 키보드</string>
     <string name="summary_pref_handwriting_keyboard">Android 키보드 설정에서 SandFly 필기 기능을 켜세요</string>
-    <string name="title_pref_handwriting_wait">작성 후 기다려주세요</string>
+    <string name="title_pref_handwriting_wait">필기 후 대기 시간</string>
     <string name="value_handwriting_wait_200">0.2초</string>
     <string name="value_handwriting_wait_300">0.3초</string>
     <string name="value_handwriting_wait_400">0.4초</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">휴대전화의 가장 빠른 오디오 경로를 통해 SandFly의 소리와 음성을 재생하여 더 빨리 들을 수 있습니다. 말이나 소리가 끊기거나 잘못된 소리가 들리면 끄십시오.</string>
     <string name="value_focus_delay_200ms_default">0.2초(기본값)</string>
     <string name="value_focus_delay_300ms">0.3초</string>
-    <string name="title_pref_lift_to_activate">활성화하려면 들어 올리세요.</string>
+    <string name="title_pref_lift_to_activate">손가락을 떼서 활성화</string>
     <string name="summary_support_change_lift_to_activate">손가락을 떼면 항목이 활성화되는 위치 변경</string>
     <string name="value_lift_to_activate_disabled">장애인</string>
     <string name="value_lift_to_activate_navigation_bar">네비게이션 바에서만</string>
@@ -1682,7 +1682,7 @@
     <string name="summary_pref_wrap_around">마지막 항목을 스와이프하면 첫 번째 항목으로 이동하고, 첫 번째 항목을 지나면 마지막 항목으로 이동합니다. 끄면 대신 소리가 마지막에 재생됩니다.</string>
     <string name="title_pref_fix_stuck_touch_exploration">멈춘 터치 탐색 문제 해결</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 권한이 없으면 SandFly는 터치 탐색이 중단될 수 있다고만 말할 수 있습니다. 문제를 해결하려면 다음을 실행하세요: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">터치 탐색 수정</string>
+    <string name="stuck_touch_exploration_fixing">터치 탐색 수정 중</string>
     <string name="stuck_touch_exploration_fixed">터치 탐색이 수정되었습니다.</string>
     <string name="stuck_touch_exploration_not_fixed">터치 탐색이 여전히 중단되었습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
     <string name="stuck_touch_exploration_restart">터치 탐색이 중단될 수 있습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">아래로 이동</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 중 <xliff:g id="position" example="2">%1$d</xliff:g> 위치</string>
     <string name="template_item_details_order_picked_up">픽업 <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 삭제되었습니다. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly는 해당 주문의 항목 세부정보를 나타냅니다. 변경하려면 세부정보를 길게 터치한 후 위나 아래로 드래그하세요. SandFly를 켠 상태에서 두 번 탭하고 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
     <string name="title_pref_speak_items_before_scroll">스크롤하여 보기 전에 항목을 말하세요.</string>
     <string name="gemini_error_api_key">Gemini API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
@@ -1765,7 +1765,7 @@
     <string name="dictation_ai_same">자동 설명과 동일</string>
     <string name="title_pref_browse_mode_per_app">각 앱의 탐색 모드 기억</string>
     <string name="title_pref_export_settings">설정 내보내기</string>
-    <string name="title_pref_import_settings">가져오기 설정</string>
+    <string name="title_pref_import_settings">설정 가져오기</string>
     <string name="settings_export_done">설정을 내보냈습니다. API 키는 포함되지 않습니다.</string>
     <string name="settings_export_failed">설정을 내보낼 수 없습니다.</string>
     <string name="settings_import_done">설정을 가져왔습니다</string>

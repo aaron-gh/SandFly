@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Чтобы изменения вступили в силу, перезагрузите SandFly.</string>
   <string name="title_pref_auto_image_captioning">Автоматические описания</string>
   <string name="title_pref_gemini_settings">Настройки Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini голосовые команды</string>
+  <string name="title_pref_gemini_enabled">Голосовые команды Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Прослушайте подробное описание изображения, сгенерированное ИИ, выбрав \\"Описать изображение\\" в меню SandFly.\n\nВы также сможете получать автоматические описания при переходе к изображению или значку. Эта функция работает без подключения к интернету.</string>
   <string name="title_pref_icon_detection">Автоматические описания значков</string>
   <string name="title_pref_image_description">Автоматические описания изображений</string>
@@ -1332,7 +1332,7 @@
   <string name="title_pref_speech_pitch">Высота тона речи</string>
   <string name="title_pref_speak_in_phrases">Передавать длинный текст по одному предложению</string>
   <string name="summary_pref_speak_in_phrases">Для синтезаторов, которые медленно останавливают речь, например Gryphon: при переходе к другому элементу чтение длинного текста прекращается сразу. Многие синтезаторы делают более длинные паузы между предложениями, переданными по отдельности. Если ваш синтезатор быстро останавливает речь, оставьте этот параметр отключённым.</string>
-  <string name="title_pref_mute_speech_while_recording">Молчать во время записи</string>
+  <string name="title_pref_mute_speech_while_recording">Без речи во время записи</string>
   <string name="summary_pref_mute_speech_while_recording">Когда приложение ведёт запись без подключённых наушников, SandFly озвучивает только отклики на ваши жесты, нажатия клавиш и ввод текста. Уведомления и другие события не озвучиваются, чтобы они не попали в запись.</string>
   <string name="title_pref_switch_languages">Автоматически переключать язык</string>
   <string name="title_pref_switch_dialects">Автоматически переключать диалект</string>
@@ -1654,7 +1654,7 @@
     <string name="handwriting_unsupported_language">Распознавание рукописного ввода недоступно на этом языке.</string>
     <string name="title_pref_handwriting_keyboard">Рукописная клавиатура</string>
     <string name="summary_pref_handwriting_keyboard">Включите рукописный ввод SandFly в настройках клавиатуры Android.</string>
-    <string name="title_pref_handwriting_wait">Подождите после написания</string>
+    <string name="title_pref_handwriting_wait">Ожидание после написания</string>
     <string name="value_handwriting_wait_200">0,2 секунды</string>
     <string name="value_handwriting_wait_300">0,3 секунды</string>
     <string name="value_handwriting_wait_400">0,4 секунды</string>
@@ -1723,8 +1723,8 @@
     <string name="value_distance_50mm">5 см</string>
     <string name="title_pref_fix_stuck_touch_exploration">Исправление зависания сенсорного исследования</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без разрешения DUMP SandFly может только сказать, что сенсорное исследование может зависнуть. Чтобы это исправить, запустите: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Исправление сенсорного исследования</string>
-    <string name="stuck_touch_exploration_fixed">Исправлено сенсорное исследование.</string>
+    <string name="stuck_touch_exploration_fixing">Восстановление изучения касанием</string>
+    <string name="stuck_touch_exploration_fixed">Изучение касанием восстановлено</string>
     <string name="stuck_touch_exploration_not_fixed">Сенсорное исследование по-прежнему зависло. Перезагрузите телефон, чтобы исправить это.</string>
     <string name="stuck_touch_exploration_restart">Сенсорное исследование может зависнуть. Перезагрузите телефон, чтобы исправить это.</string>
     <string name="stuck_touch_exploration_grant_dump">Сенсорное исследование может зависнуть. Перезагрузите телефон, чтобы исправить это, или предоставьте SandFly разрешение DUMP с помощью ADB, чтобы он мог это исправить.</string>
@@ -1742,7 +1742,7 @@
     <string name="title_pref_volume_keys_move_cursor">Клавиши громкости перемещают курсор</string>
     <string name="summary_pref_volume_keys_move_cursor">Когда текстовое поле находится в фокусе, увеличение громкости перемещает курсор назад на символ, а уменьшение громкости перемещает его дальше.</string>
     <string name="title_keyboard_echo_on_screen">Эхо экранной клавиатуры</string>
-    <string name="title_keyboard_echo_physical">Физическое эхо клавиатуры</string>
+    <string name="title_keyboard_echo_physical">Эхо физической клавиатуры</string>
     <string name="title_keyboard_echo_braille_keyboard">Эхо клавиатуры Брайля</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Эхо клавиатуры при рукописном вводе</string>
     <string name="title_keyboard_echo_braille_display">Эхо дисплея Брайля</string>

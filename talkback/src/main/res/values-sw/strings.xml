@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Kiashiria cha umakini</string>
   <string name="title_pref_category_manage_gestures">Ishara</string>
   <string name="title_pref_manage_labels">Lebo maalum</string>
-  <string name="title_pref_category_context_menu">SandFly menyu</string>
+  <string name="title_pref_category_context_menu">Menyu ya SandFly</string>
   <string name="title_pref_category_selector_menu">Vidhibiti vya kusoma</string>
   <string name="title_pref_category_navigation_menu">Badilisha chaguo za kusogeza</string>
   <string name="title_pref_manage_keyboard_shortcuts">Mikato ya kibodi</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Zima kisha uwashe tena SandFly ili kuweka mipangilio.</string>
   <string name="title_pref_auto_image_captioning">Maelezo ya kiotomatiki</string>
   <string name="title_pref_gemini_settings">Mipangilio ya Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini amri za sauti</string>
+  <string name="title_pref_gemini_enabled">Amri za sauti za Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Pata maelezo ya kina ya picha ya AI unapochagua \“Fafanua picha\” kwenye menyu ya SandFly.\n\nUnaweza pia kupata maelezo ya kiotomatiki ukiangazia picha au aikoni. Kipengele cha maelezo ya kiotomatiki hufanya kazi bila muunganisho wa intaneti.</string>
   <string name="title_pref_icon_detection">Maelezo ya aikoni yanayowekwa kiotomatiki</string>
   <string name="title_pref_image_description">Maelezo ya picha yanayowekwa kiotomatiki</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">Muda</string>
     <string name="title_pref_announce_ringer_mode">Hali ya mlio</string>
     <string name="summary_pref_announce_ringer_mode">Sema wakati mlio umewekwa ili kutetema au kunyamaza</string>
-    <string name="title_pref_category_feedback">Maoni</string>
+    <string name="title_pref_category_feedback">Mwitikio</string>
     <string name="title_pref_category_typing_and_braille">Kuandika na braille</string>
     <string name="title_pref_category_apps">Programu</string>
     <string name="title_pref_touch_activation">Kugusa na kuwezesha</string>
@@ -1668,7 +1668,7 @@
     <string name="value_rotor_step_30">digrii 30 (chaguo-msingi)</string>
     <string name="value_rotor_step_45">digrii 45</string>
     <string name="value_rotor_step_60">digrii 60</string>
-    <string name="title_pref_low_latency_audio">Sauti ya utulivu wa chini</string>
+    <string name="title_pref_low_latency_audio">Sauti yenye muda mfupi wa kusubiri</string>
     <string name="summary_pref_low_latency_audio">Cheza sauti na matamshi SandFly kupitia njia ya sauti ya haraka zaidi ya simu, ili uisikie mapema. Zima ikiwa matamshi au sauti zitavunjika au zinasikika vibaya.</string>
     <string name="value_focus_delay_200ms_default">Sekunde 0.2 (chaguo-msingi)</string>
     <string name="value_focus_delay_300ms">Sekunde 0.3</string>
@@ -1683,7 +1683,7 @@
     <string name="title_pref_fix_stuck_touch_exploration">Rekebisha uchunguzi wa mguso uliokwama</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bila ruhusa ya DUMP, SandFly inaweza tu kusema kwamba uchunguzi wa kugusa unaweza kukwama. Ili kuiruhusu kuirekebisha, endesha: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Inarekebisha uchunguzi wa kugusa</string>
-    <string name="stuck_touch_exploration_fixed">Ugunduzi wa kugusa umewekwa</string>
+    <string name="stuck_touch_exploration_fixed">Ugunduzi kwa kugusa umerekebishwa</string>
     <string name="stuck_touch_exploration_not_fixed">Ugunduzi wa kugusa bado umekwama. Anzisha tena simu ili kuirekebisha.</string>
     <string name="stuck_touch_exploration_restart">Ugunduzi wa kugusa unaweza kukwama. Anzisha tena simu ili kuirekebisha.</string>
     <string name="stuck_touch_exploration_grant_dump">Ugunduzi wa kugusa unaweza kukwama. Zima kisha uwashe simu ili kuirekebisha, au toa SandFly ruhusa ya DUMP na ADB ili iweze kuirekebisha.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Sogeza chini</string>
     <string name="template_list_position">Nafasi <xliff:g id="position" example="2">%1$d</xliff:g> ya <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Imechukuliwa <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Imeshuka <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Imeachiliwa <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly inasema maelezo ya kipengee kwa mpangilio huu. Ili kuibadilisha, gusa na ushikilie maelezo, kisha yaburute juu au chini. Ukiwasha SandFly, gusa mara mbili na ushikilie, kisha uburute. Unaweza pia kutumia vitendo vya Sogeza juu na Sogeza chini.</string>
     <string name="title_pref_speak_items_before_scroll">Zungumza vipengee kabla ya kusogeza kwenye mwonekano</string>
     <string name="gemini_error_api_key">Gemini haikukubali ufunguo wa API. Angalia ufunguo katika mipangilio ya maelezo ya Kiotomatiki.</string>

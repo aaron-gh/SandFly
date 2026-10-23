@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">ફોનના સૌથી ઝડપી ઓડિયો પાથ દ્વારા SandFly ના અવાજો અને વાણી વગાડો, જેથી તમે તેમને વહેલા સાંભળી શકો. જો વાણી અથવા અવાજ તૂટી જાય અથવા ખોટો લાગે તો તેને બંધ કરો.</string>
     <string name="value_focus_delay_200ms_default">0.2 સેકન્ડ (ડિફૉલ્ટ)</string>
     <string name="value_focus_delay_300ms">0.3 સેકન્ડ</string>
-    <string name="title_pref_lift_to_activate">સક્રિય કરવા માટે લિફ્ટ કરો</string>
+    <string name="title_pref_lift_to_activate">આંગળી ઉઠાવીને સક્રિય કરો</string>
     <string name="summary_support_change_lift_to_activate">જ્યાં તમારી આંગળી ઉપાડવાથી આઇટમ સક્રિય થાય છે તે બદલો</string>
     <string name="value_lift_to_activate_disabled">અક્ષમ</string>
     <string name="value_lift_to_activate_navigation_bar">માત્ર નેવિગેશન બાર પર</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">છેલ્લી આઇટમને ભૂતકાળમાં સ્વાઇપ કરવાથી પ્રથમ પર જાય છે, અને પ્રથમને ભૂતકાળથી છેલ્લામાં જાય છે. જ્યારે બંધ હોય, ત્યારે તેના બદલે છેડે અવાજ વાગે છે.</string>
     <string name="title_pref_fix_stuck_touch_exploration">અટવાયેલા ટચ એક્સપ્લોરેશનને ઠીક કરો</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP પરવાનગી વિના, SandFly માત્ર એટલું જ કહી શકે છે કે ટચ એક્સપ્લોરેશન અટકી શકે છે. તેને ઠીક કરવા દેવા માટે, ચલાવો: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">ફિક્સિંગ ટચ એક્સપ્લોરેશન</string>
-    <string name="stuck_touch_exploration_fixed">ટચ એક્સપ્લોરેશન નિશ્ચિત</string>
+    <string name="stuck_touch_exploration_fixing">ટચ એક્સપ્લોરેશન ઠીક કરી રહ્યાં છીએ</string>
+    <string name="stuck_touch_exploration_fixed">ટચ એક્સપ્લોરેશન ઠીક કર્યું</string>
     <string name="stuck_touch_exploration_not_fixed">સ્પર્શની શોધખોળ હજુ અટકેલી છે. તેને ઠીક કરવા માટે ફોનને રીસ્ટાર્ટ કરો.</string>
     <string name="stuck_touch_exploration_restart">ટચ એક્સપ્લોરેશન અટકી શકે છે. તેને ઠીક કરવા માટે ફોનને રીસ્ટાર્ટ કરો.</string>
     <string name="stuck_touch_exploration_grant_dump">ટચ એક્સપ્લોરેશન અટકી શકે છે. ફોનને ઠીક કરવા માટે તેને પુનઃપ્રારંભ કરો અથવા ADB સાથે SandFly DUMP પરવાનગી આપો જેથી તે તેને ઠીક કરી શકે.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">નીચે ખસેડો</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> માંથી <xliff:g id="position" example="2">%1$d</xliff:g> સ્થિતિ</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ઉપાડ્યું. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ઘટાડો થયો. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> મૂક્યું. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly આ ક્રમમાં આઇટમની વિગતો કહે છે. તેને બદલવા માટે, વિગતને ટચ કરો અને પકડી રાખો, પછી તેને ઉપર અથવા નીચે ખેંચો. SandFly ચાલુ રાખીને, બે વાર ટેપ કરો અને પકડી રાખો, પછી ખેંચો. તમે ઉપર ખસેડો અને નીચે ખસેડો ક્રિયાઓનો પણ ઉપયોગ કરી શકો છો.</string>
     <string name="title_pref_speak_items_before_scroll">આઇટમ્સ દૃશ્યમાં સ્ક્રોલ થાય તે પહેલાં બોલો</string>
     <string name="gemini_error_api_key">Gemini એ API કી સ્વીકારી નથી. સ્વચાલિત વર્ણન સેટિંગ્સમાં કી તપાસો.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">ડિક્ટેશન માટે AI સેવા</string>
     <string name="dictation_ai_same">ઑટોમૅટિક વર્ણનો જેવી જ</string>
     <string name="title_pref_browse_mode_per_app">દરેક એપ્લિકેશનમાં બ્રાઉઝ મોડ યાદ રાખો</string>
-    <string name="title_pref_export_settings">નિકાસ સેટિંગ્સ</string>
-    <string name="title_pref_import_settings">આયાત સેટિંગ્સ</string>
+    <string name="title_pref_export_settings">સેટિંગ નિકાસ કરો</string>
+    <string name="title_pref_import_settings">સેટિંગ આયાત કરો</string>
     <string name="settings_export_done">સેટિંગ્સ નિકાસ કરી. API કીઓ શામેલ નથી</string>
     <string name="settings_export_failed">સેટિંગ્સ નિકાસ કરી શકાઈ નથી</string>
     <string name="settings_import_done">સેટિંગ્સ આયાત કરી</string>

@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fókuszjelző</string>
   <string name="title_pref_category_manage_gestures">Kézmozdulatok</string>
   <string name="title_pref_manage_labels">Egyéni címkék</string>
-  <string name="title_pref_category_context_menu">SandFly menü</string>
+  <string name="title_pref_category_context_menu">SandFly-menü</string>
   <string name="title_pref_category_selector_menu">Felolvasásvezérlés</string>
   <string name="title_pref_category_navigation_menu">Navigációs beállítások szerkesztése</string>
   <string name="title_pref_manage_keyboard_shortcuts">Billentyűparancsok</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">A beállítás aktiválásához kapcsolja ki, majd újra be a SandFly funkciót.</string>
   <string name="title_pref_auto_image_captioning">Automatikus leírások</string>
   <string name="title_pref_gemini_settings">Gemini-beállítások</string>
-  <string name="title_pref_gemini_enabled">Gemini hangutasítások</string>
+  <string name="title_pref_gemini_enabled">Gemini-hangutasítások</string>
   <string name="title_pref_category_automatic_description_summary">Részletes AI-képleírásokat kaphat, ha a SandFly-menüben a „Képleírás” lehetőséget választja.\n\nAutomatikus leírásokat is kaphat, ha egy képre vagy ikonra fókuszál. Az automatikus leírások internetkapcsolat nélkül is működnek.</string>
   <string name="title_pref_icon_detection">Automatikus ikonleírások</string>
   <string name="title_pref_image_description">Automatikus képleírások</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Amikor feloldja a telefont</string>
     <string name="title_pref_say_screen_off">„Képernyő kikapcsolva” kimondása</string>
     <string name="title_pref_say_device_unlocked">„Eszköz feloldva” kimondása</string>
-    <string name="title_pref_announce_time">Idő</string>
+    <string name="title_pref_announce_time">Pontos idő</string>
     <string name="title_pref_announce_ringer_mode">Csengési mód</string>
     <string name="summary_pref_announce_ringer_mode">Kimondja, ha a csengő rezgésre vagy némára van állítva</string>
     <string name="title_pref_category_feedback">Visszajelzés</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Nincs</string>
     <string name="summary_selector_menu_emoji">Módosítsa a hangulatjelek olvasásának módját</string>
     <string name="emoji_speech_state">Hangulatjel: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Számolja meg az ismétlődő hangulatjeleket</string>
+    <string name="title_pref_emoji_repeat_count">Ismétlődő hangulatjelek számolása</string>
     <string name="emoji_repeat_count_off">Ki</string>
     <string name="emoji_repeat_count_2">2 vagy több</string>
     <string name="emoji_repeat_count_3">3 vagy több</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">A kézírás-felismerés nem érhető el ezen a nyelven</string>
     <string name="title_pref_handwriting_keyboard">Kézírásos billentyűzet</string>
     <string name="summary_pref_handwriting_keyboard">Kapcsolja be a SandFly kézírást az Android billentyűzetbeállításaiban</string>
-    <string name="title_pref_handwriting_wait">Írás után várj</string>
+    <string name="title_pref_handwriting_wait">Várakozás írás után</string>
     <string name="value_handwriting_wait_200">0,2 másodperc</string>
     <string name="value_handwriting_wait_300">0,3 másodperc</string>
     <string name="value_handwriting_wait_400">0,4 másodperc</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">Játssza le a SandFly hangjait és beszédét a telefon leggyorsabb hangútján, hogy hamarabb hallja őket. Kapcsolja ki, ha a beszéd vagy a hangok megszakadnak vagy rosszul hangzanak.</string>
     <string name="value_focus_delay_200ms_default">0,2 másodperc (alapértelmezett)</string>
     <string name="value_focus_delay_300ms">0,3 másodperc</string>
-    <string name="title_pref_lift_to_activate">Emelje fel az aktiváláshoz</string>
+    <string name="title_pref_lift_to_activate">Aktiválás az ujj felemelésével</string>
     <string name="summary_support_change_lift_to_activate">Módosíthatja, hogy az ujj felemelésével hol aktiváljon egy elemet</string>
     <string name="value_lift_to_activate_disabled">Letiltva</string>
     <string name="value_lift_to_activate_navigation_bar">Csak a navigációs sávon</string>
@@ -1682,7 +1682,7 @@
     <string name="summary_pref_wrap_around">Ha az utolsó elem mellett csúsztat, az az elsőre, az első után pedig az utolsóra lép. Ha ki van kapcsolva, egy hang szól a végén.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Az elakadt érintéssel kapcsolatos felfedezés javítása</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül az SandFly csak azt mondhatja, hogy az érintéssel történő felfedezés elakadt. A javításhoz futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Az érintéssel történő felfedezés rögzítése</string>
+    <string name="stuck_touch_exploration_fixing">Érintéses felfedezés javítása</string>
     <string name="stuck_touch_exploration_fixed">Az érintéses felfedezés javítva</string>
     <string name="stuck_touch_exploration_not_fixed">Az érintéssel történő felfedezés továbbra is elakadt. A javításhoz indítsa újra a telefont.</string>
     <string name="stuck_touch_exploration_restart">Előfordulhat, hogy az érintéssel történő felfedezés elakadt. A javításhoz indítsa újra a telefont.</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Mozgatás lefelé</string>
     <string name="template_list_position"><xliff:g id="position" example="2">%1$d</xliff:g>/<xliff:g id="count" example="3">%2$d</xliff:g> pozíció</string>
     <string name="template_item_details_order_picked_up">Felvette <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Eldobva <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Elengedve: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">A SandFly az elem részleteit ebben a sorrendben jelzi. A módosításhoz érintsen meg hosszan egy részletet, majd húzza fel vagy le. Ha az SandFly be van kapcsolva, koppintson duplán és tartsa lenyomva, majd húzza. Használhatja a Felfelé és Lefelé műveleteket is.</string>
     <string name="title_pref_speak_items_before_scroll">Mondja ki az elemeket, mielőtt megjelennek a nézetben</string>
     <string name="gemini_error_api_key">Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításainál.</string>

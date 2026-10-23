@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">焦點指示器</string>
   <string name="title_pref_category_manage_gestures">手勢</string>
   <string name="title_pref_manage_labels">自訂標籤</string>
-  <string name="title_pref_category_context_menu">SandFly菜單</string>
+  <string name="title_pref_category_context_menu">SandFly 選單</string>
   <string name="title_pref_category_selector_menu">朗讀控制項</string>
   <string name="title_pref_category_navigation_menu">編輯導覽選項</string>
   <string name="title_pref_manage_keyboard_shortcuts">鍵盤快速鍵</string>
@@ -1329,7 +1329,7 @@
     <string name="voice_profile_moved_above">移至<xliff:g id="name" example="Reading">%1$s</xliff:g>上方</string>
     <string name="voice_profile_moved_below">移至<xliff:g id="name" example="Reading">%1$s</xliff:g>以下</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 已刪除</string>
-    <string name="title_pref_delete_voice_profile">刪除語音設定文件</string>
+    <string name="title_pref_delete_voice_profile">刪除語音設定檔</string>
     <string name="voice_profile_delete_confirm">刪除<xliff:g id="name" example="Reading">%1$s</xliff:g>？</string>
     <string name="voice_profile_delete">刪除</string>
     <string name="summary_pref_tts_engine_default">系統預設</string>
@@ -1359,7 +1359,7 @@
     <string name="title_pref_speak_nav_bar_buttons">說出導覽列按鈕</string>
     <string name="summary_pref_speak_nav_bar_buttons">在導覽列上啟動抬起按鈕後，說出點擊按下的按鈕，例如「返回」或「首頁」。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
-    <string name="template_battery_level">電量<xliff:g id="battery_level" example="73">%1$s</xliff:g>百分比</string>
+    <string name="template_battery_level">電量為百分之<xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
     <string name="template_battery_level_unknown">電池電量未知</string>
     <string name="value_charger_connected">充電器已連接</string>
     <string name="title_pref_screen_announcements">螢幕開啟和關閉</string>
@@ -1370,7 +1370,7 @@
     <string name="title_pref_say_screen_off">說“螢幕關閉”</string>
     <string name="title_pref_say_device_unlocked">說“設備已解鎖”</string>
     <string name="title_pref_announce_time">時間</string>
-    <string name="title_pref_announce_ringer_mode">振鈴模式</string>
+    <string name="title_pref_announce_ringer_mode">鈴聲模式</string>
     <string name="summary_pref_announce_ringer_mode">當鈴聲設定為振動或靜音時說出</string>
     <string name="title_pref_category_feedback">回饋意見</string>
     <string name="title_pref_category_typing_and_braille">打字和點字</string>
@@ -1545,7 +1545,7 @@
     <string name="edge_gestures_title">邊緣</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">開啟或關閉瀏覽模式的另一個捷徑</string>
     <string name="title_pref_vibration_strength">振動強度</string>
-    <string name="title_pref_audio_output_device">音訊輸出設備</string>
+    <string name="title_pref_audio_output_device">音訊輸出裝置</string>
     <string name="dialog_title_audio_output_device">選擇播放SandFly聲音的位置</string>
     <string name="value_audio_output_device_default">系統預設</string>
     <string name="value_audio_output_device_speaker">手機揚聲器</string>
@@ -1671,7 +1671,7 @@
     <string name="summary_pref_low_latency_audio">透過手機最快的音訊路徑播放 SandFly 的聲音和語音，以便您更快地聽到它們。如果語音或聲音中斷或聽起來錯誤，請將其關閉。</string>
     <string name="value_focus_delay_200ms_default">0.2 秒（預設）</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
-    <string name="title_pref_lift_to_activate">提起即可激活</string>
+    <string name="title_pref_lift_to_activate">放開手指即啟用</string>
     <string name="summary_support_change_lift_to_activate">更改抬起手指以啟動項目的位置</string>
     <string name="value_lift_to_activate_disabled">殘障人士</string>
     <string name="value_lift_to_activate_navigation_bar">僅在導覽列上</string>
@@ -1727,7 +1727,7 @@
     <string name="action_move_down">下移</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 的位置 <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">撿到了<xliff:g id="detail" example="Name">%1$s</xliff:g>。 <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">掉落<xliff:g id="detail" example="Name">%1$s</xliff:g>。 <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
     <string name="title_pref_speak_items_before_scroll">在項目滾動到視圖中之前先說出它們</string>
     <string name="gemini_error_api_key">Gemini 不接受 API 金鑰。檢查自動描述設定中的鍵。</string>
@@ -1764,7 +1764,7 @@
     <string name="dictation_ai_same">與自動描述相同</string>
     <string name="title_pref_browse_mode_per_app">記住每個應用程式中的瀏覽模式</string>
     <string name="title_pref_export_settings">匯出設定</string>
-    <string name="title_pref_import_settings">導入設定</string>
+    <string name="title_pref_import_settings">匯入設定</string>
     <string name="settings_export_done">導出設定。不包括 API 金鑰</string>
     <string name="settings_export_failed">無法匯出設定</string>
     <string name="settings_import_done">已匯入設定</string>

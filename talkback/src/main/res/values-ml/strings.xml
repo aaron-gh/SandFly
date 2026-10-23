@@ -1581,7 +1581,7 @@
     <string name="handwriting_downloaded">കൈയക്ഷരം തിരിച്ചറിയൽ ഡൗൺലോഡ് ചെയ്തു</string>
     <string name="handwriting_download_failed">കൈയക്ഷരം തിരിച്ചറിയൽ ഡൗൺലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല. ഇൻ്റർനെറ്റ് കണക്ഷൻ പരിശോധിക്കുക.</string>
     <string name="handwriting_unsupported_language">കൈയക്ഷരം തിരിച്ചറിയൽ ഈ ഭാഷയിൽ ലഭ്യമല്ല</string>
-    <string name="title_pref_handwriting_keyboard">കൈയക്ഷരം കീബോർഡ്</string>
+    <string name="title_pref_handwriting_keyboard">കൈയക്ഷര കീബോർഡ്</string>
     <string name="summary_pref_handwriting_keyboard">Android-ൻ്റെ കീബോർഡ് ക്രമീകരണങ്ങളിൽ SandFly കൈയക്ഷരം ഓണാക്കുക</string>
     <string name="title_pref_handwriting_wait">എഴുതിയതിന് ശേഷം കാത്തിരിക്കുക</string>
     <string name="value_handwriting_wait_200">0.2 സെക്കൻഡ്</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">ഫോണിൻ്റെ ഏറ്റവും വേഗതയേറിയ ഓഡിയോ പാതയിലൂടെ SandFly ൻ്റെ ശബ്ദങ്ങളും സംസാരവും പ്ലേ ചെയ്യുക, അതിനാൽ നിങ്ങൾ അവ വേഗത്തിൽ കേൾക്കും. സംസാരമോ ശബ്‌ദമോ തകരുകയോ തെറ്റായി തോന്നുകയോ ചെയ്‌താൽ അത് ഓഫാക്കുക.</string>
     <string name="value_focus_delay_200ms_default">0.2 സെക്കൻഡ് (സ്ഥിരസ്ഥിതി)</string>
     <string name="value_focus_delay_300ms">0.3 സെക്കൻഡ്</string>
-    <string name="title_pref_lift_to_activate">സജീവമാക്കാൻ ലിഫ്റ്റ്</string>
+    <string name="title_pref_lift_to_activate">വിരൽ ഉയർത്തി സജീവമാക്കുക</string>
     <string name="summary_support_change_lift_to_activate">നിങ്ങളുടെ വിരൽ ഉയർത്തുന്നത് ഒരു ഇനം സജീവമാക്കുന്നത് എവിടെയാണെന്ന് മാറ്റുക</string>
     <string name="value_lift_to_activate_disabled">അപ്രാപ്തമാക്കി</string>
     <string name="value_lift_to_activate_navigation_bar">നാവിഗേഷൻ ബാറിൽ മാത്രം</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">താഴേക്ക് നീക്കുക</string>
     <string name="template_list_position">സ്ഥാനം <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">എടുത്തത് <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> കുറഞ്ഞു. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ഇട്ടു. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ഈ ക്രമത്തിൽ ഒരു ഇനത്തിൻ്റെ വിശദാംശങ്ങൾ പറയുന്നു. ഇത് മാറ്റാൻ, ഒരു വിശദാംശം സ്‌പർശിച്ച് പിടിക്കുക, തുടർന്ന് അത് മുകളിലേക്കോ താഴേക്കോ വലിച്ചിടുക. SandFly ഓണാക്കി, രണ്ടുതവണ ടാപ്പുചെയ്‌ത് പിടിക്കുക, തുടർന്ന് വലിച്ചിടുക. നിങ്ങൾക്ക് മൂവ് അപ്പ്, മൂവ് ഡൗൺ എന്നീ പ്രവർത്തനങ്ങളും ഉപയോഗിക്കാം.</string>
     <string name="title_pref_speak_items_before_scroll">കാഴ്ചയിലേക്ക് സ്ക്രോൾ ചെയ്യുന്നതിന് മുമ്പ് ഇനങ്ങൾ പറയുക</string>
     <string name="gemini_error_api_key">Gemini API കീ സ്വീകരിച്ചില്ല. സ്വയമേവയുള്ള വിവരണ ക്രമീകരണങ്ങളിലെ കീ പരിശോധിക്കുക.</string>
@@ -1764,7 +1764,7 @@
     <string name="title_pref_dictation_ai_service">ഡിക്റ്റേഷനുള്ള AI സേവനം</string>
     <string name="dictation_ai_same">സ്വയമേവയുള്ള വിവരണങ്ങൾക്കുള്ളത് തന്നെ</string>
     <string name="title_pref_browse_mode_per_app">ഓരോ ആപ്പിലും ബ്രൗസ് മോഡ് ഓർക്കുക</string>
-    <string name="title_pref_export_settings">കയറ്റുമതി ക്രമീകരണങ്ങൾ</string>
+    <string name="title_pref_export_settings">ക്രമീകരണങ്ങൾ എക്‌സ്‌പോർട്ട് ചെയ്യുക</string>
     <string name="title_pref_import_settings">ക്രമീകരണങ്ങൾ ഇറക്കുമതി ചെയ്യുക</string>
     <string name="settings_export_done">ക്രമീകരണങ്ങൾ കയറ്റുമതി ചെയ്തു. API കീകൾ ഉൾപ്പെടുത്തിയിട്ടില്ല</string>
     <string name="settings_export_failed">ക്രമീകരണങ്ങൾ കയറ്റുമതി ചെയ്യാൻ കഴിഞ്ഞില്ല</string>

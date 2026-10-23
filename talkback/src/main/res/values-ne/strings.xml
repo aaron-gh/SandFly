@@ -1673,7 +1673,7 @@
     <string name="summary_pref_low_latency_audio">फोनको सबैभन्दा छिटो अडियो मार्ग मार्फत SandFly को ध्वनि र बोली बजाउनुहोस्, ताकि तपाईंले तिनीहरूलाई चाँडै सुन्न सक्नुहुन्छ। यदि बोली वा आवाज बिग्रियो वा गलत सुनियो भने यसलाई बन्द गर्नुहोस्।</string>
     <string name="value_focus_delay_200ms_default">०.२ सेकेन्ड (पूर्वनिर्धारित)</string>
     <string name="value_focus_delay_300ms">०.३ सेकेन्ड</string>
-    <string name="title_pref_lift_to_activate">सक्रिय गर्न लिफ्ट गर्नुहोस्</string>
+    <string name="title_pref_lift_to_activate">औँला उठाएर सक्रिय गर्नुहोस्</string>
     <string name="summary_support_change_lift_to_activate">आफ्नो औंला उठाउँदा वस्तु सक्रिय हुने ठाउँ परिवर्तन गर्नुहोस्</string>
     <string name="value_lift_to_activate_disabled">असक्षम</string>
     <string name="value_lift_to_activate_navigation_bar">नेभिगेसन पट्टीमा मात्र</string>
@@ -1683,8 +1683,8 @@
     <string name="summary_pref_wrap_around">अन्तिम वस्तुलाई स्वाइप गर्दा पहिलोमा जान्छ, र पहिलेको विगत अन्तिममा जान्छ। बन्द हुँदा, यसको सट्टा अन्तमा ध्वनि बज्छ।</string>
     <string name="title_pref_fix_stuck_touch_exploration">अड्किएको टच अन्वेषण फिक्स गर्नुहोस्</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP अनुमति बिना, SandFly ले टच अन्वेषण अड्किएको हुन सक्छ भनेर मात्र भन्न सक्छ। यसलाई ठीक गर्न, चलाउनुहोस्: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">टच अन्वेषण फिक्सिङ</string>
-    <string name="stuck_touch_exploration_fixed">टच अन्वेषण निश्चित</string>
+    <string name="stuck_touch_exploration_fixing">टच अन्वेषण ठीक गर्दै</string>
+    <string name="stuck_touch_exploration_fixed">टच अन्वेषण ठीक भयो</string>
     <string name="stuck_touch_exploration_not_fixed">स्पर्श अन्वेषण अझै रोकिएको छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
     <string name="stuck_touch_exploration_restart">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
     <string name="stuck_touch_exploration_grant_dump">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा ADB लाई SandFly DUMP अनुमति दिनुहोस् ताकि यसले यसलाई ठीक गर्न सक्छ।</string>
@@ -1729,7 +1729,7 @@
     <string name="action_move_down">तल सार्नुहोस्</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> को स्थिति <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> उठाइयो। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> खस्यो। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> छोडियो। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ले यस क्रममा वस्तुको विवरणहरू बताउँछ। यसलाई परिवर्तन गर्न, कुनै विवरण छुनुहोस् र होल्ड गर्नुहोस्, त्यसपछि यसलाई माथि वा तल तान्नुहोस्। SandFly अन गरी, डबल-ट्याप गर्नुहोस् र होल्ड गर्नुहोस्, त्यसपछि तान्नुहोस्। तपाईं पनि माथि सार्नुहोस् र तल सार्नुहोस् कार्यहरू प्रयोग गर्न सक्नुहुन्छ।</string>
     <string name="title_pref_speak_items_before_scroll">तिनीहरू दृश्यमा स्क्रोल गर्नु अघि वस्तुहरू बोल्नुहोस्</string>
     <string name="gemini_error_api_key">Gemini ले API कुञ्जी स्वीकार गरेन। स्वचालित विवरण सेटिङहरूमा कुञ्जी जाँच गर्नुहोस्।</string>

@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Zet SandFly uit en weer aan om de instelling te activeren.</string>
   <string name="title_pref_auto_image_captioning">Automatische beschrijvingen</string>
   <string name="title_pref_gemini_settings">Gemini-instellingen</string>
-  <string name="title_pref_gemini_enabled">Gemini spraakopdrachten</string>
+  <string name="title_pref_gemini_enabled">Gemini-spraakopdrachten</string>
   <string name="title_pref_category_automatic_description_summary">Krijg gedetailleerde AI-afbeeldingsbeschrijvingen als je Afbeelding beschrijven selecteert in het SandFly-menu.\n\nJe kunt ook automatische beschrijvingen krijgen als je de focus op een afbeelding of icoon plaatst. Automatische beschrijvingen werken zonder internetverbinding.</string>
   <string name="title_pref_icon_detection">Automatische icoonbeschrijvingen</string>
   <string name="title_pref_image_description">Automatische afbeeldingsbeschrijvingen</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">Vorig stemprofiel</string>
     <string name="shortcut_next_voice_profile">Volgende stemprofiel</string>
     <string name="title_pref_voice_profile_in_use">Spraakprofiel in gebruik</string>
-    <string name="title_pref_add_voice_profile">Voeg stemprofiel toe</string>
+    <string name="title_pref_add_voice_profile">Stemprofiel toevoegen</string>
     <string name="voice_profile_new_name">Spraakprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Een stemprofiel heet al <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Naam</string>
@@ -1330,7 +1330,7 @@
     <string name="voice_profile_moved_above">Verplaatst naar boven <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Verplaatst naar beneden <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderd</string>
-    <string name="title_pref_delete_voice_profile">Spraakprofiel verwijderen</string>
+    <string name="title_pref_delete_voice_profile">Stemprofiel verwijderen</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderen?</string>
     <string name="voice_profile_delete">Verwijderen</string>
     <string name="summary_pref_tts_engine_default">Systeemstandaard</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Wanneer de telefoon is ontgrendeld</string>
     <string name="title_pref_say_screen_off">Zeg \'Scherm uit\'</string>
     <string name="title_pref_say_device_unlocked">Zeg \'Apparaat ontgrendeld\'</string>
-    <string name="title_pref_announce_time">Tijd</string>
+    <string name="title_pref_announce_time">Tijdstip</string>
     <string name="title_pref_announce_ringer_mode">Belmodus</string>
     <string name="summary_pref_announce_ringer_mode">Zeg wanneer het belsignaal is ingesteld op trillen of stil</string>
     <string name="title_pref_category_feedback">Feedback</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">Handschriftherkenning is niet beschikbaar in deze taal</string>
     <string name="title_pref_handwriting_keyboard">Handschrifttoetsenbord</string>
     <string name="summary_pref_handwriting_keyboard">Schakel handschrift SandFly in de toetsenbordinstellingen van Android in</string>
-    <string name="title_pref_handwriting_wait">Wacht na het schrijven</string>
+    <string name="title_pref_handwriting_wait">Wachttijd na schrijven</string>
     <string name="value_handwriting_wait_200">0,2 seconden</string>
     <string name="value_handwriting_wait_300">0,3 seconden</string>
     <string name="value_handwriting_wait_400">0,4 seconden</string>
@@ -1619,7 +1619,7 @@
     <string name="shortcut_power_menu">Aan/uit-menu</string>
     <string name="shortcut_increase_media_volume">Mediavolume verhogen</string>
     <string name="shortcut_decrease_media_volume">Mediavolume verlagen</string>
-    <string name="title_clear_selection">Duidelijke selectie</string>
+    <string name="title_clear_selection">Selectie wissen</string>
     <string name="title_pref_brightness">Helderheid</string>
     <string name="summary_support_change_brightness">Verhoog of verlaag de helderheid van het scherm, zelfs als het scherm verborgen is</string>
     <string name="title_pref_shortcut_3finger_4tap">Viervoudig tikken met 3 vingers</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">Speel de geluiden en spraak van SandFly af via het snelste audiopad van de telefoon, zodat u ze eerder hoort. Schakel het uit als spraak of geluiden wegvallen of verkeerd klinken.</string>
     <string name="value_focus_delay_200ms_default">0,2 seconden (standaard)</string>
     <string name="value_focus_delay_300ms">0,3 seconden</string>
-    <string name="title_pref_lift_to_activate">Til op om te activeren</string>
+    <string name="title_pref_lift_to_activate">Optillen om te activeren</string>
     <string name="summary_support_change_lift_to_activate">Wijzig waar het optillen van uw vinger een item activeert</string>
     <string name="value_lift_to_activate_disabled">Uitgeschakeld</string>
     <string name="value_lift_to_activate_navigation_bar">Alleen op de navigatiebalk</string>
@@ -1708,7 +1708,7 @@
     <string name="tablet_held_up_faces_away_on">Tablet omhoog gehouden, gezichten weg</string>
     <string name="tablet_held_up_faces_away_off">Tablet omhoog gehouden, gezichten weg</string>
     <string name="title_keyboard_echo_on_screen">Toetsenbordecho op het scherm</string>
-    <string name="title_keyboard_echo_physical">Fysieke toetsenbordecho</string>
+    <string name="title_keyboard_echo_physical">Echo van fysiek toetsenbord</string>
     <string name="title_keyboard_echo_braille_keyboard">Echo van brailletoetsenbord</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Echo van handschrifttoetsenbord</string>
     <string name="title_keyboard_echo_braille_display">Echo van brailleleesregel</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Omlaag verplaatsen</string>
     <string name="template_list_position">Positie <xliff:g id="position" example="2">%1$d</xliff:g> van <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Opgehaald <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> gedaald. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> neergezet. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly zegt de details van een item in deze volgorde. Als u dit wilt wijzigen, houdt u uw vinger op een detail en sleept u het vervolgens omhoog of omlaag. Terwijl SandFly is ingeschakeld, dubbeltikt u, houdt u vast en sleept u vervolgens. U kunt ook de acties Omhoog en Omlaag gebruiken.</string>
     <string name="title_pref_speak_items_before_scroll">Spreek items uit voordat ze in beeld verschijnen</string>
     <string name="gemini_error_api_key">Gemini heeft de API-sleutel niet geaccepteerd. Controleer de sleutel in Instellingen voor automatische beschrijvingen.</string>

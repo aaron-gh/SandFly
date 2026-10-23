@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Inkomba yokugxila</string>
   <string name="title_pref_category_manage_gestures">Okwenziwayo</string>
   <string name="title_pref_manage_labels">Amalebula angokwezifiso</string>
-  <string name="title_pref_category_context_menu">SandFly imenyu</string>
+  <string name="title_pref_category_context_menu">Imenyu ye-SandFly</string>
   <string name="title_pref_category_selector_menu">Izilawuli zokufunda</string>
   <string name="title_pref_category_navigation_menu">Hlela izinketho zokuzulazula</string>
   <string name="title_pref_manage_keyboard_shortcuts">Izinqamuleli zekhibhodi</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Vala i-SandFly off bese uphinde uyivule ukuze usebenzise isethingi.</string>
   <string name="title_pref_auto_image_captioning">Izincazelo ezizenzekelayo</string>
   <string name="title_pref_gemini_settings">Amasethingi e-Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini imiyalo yezwi</string>
+  <string name="title_pref_gemini_enabled">Imiyalo yezwi ye-Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Thola izincazelo zesithombe se-AI eziningiliziwe uma ukhetha okuthi \“Chaza isithombe\” kumenyu yeSandFly.\n\nUngathola nezincazelo ezizenzakalelayo uma ugxila esithombeni noma isithonjana. Izincazelo ezizenzakalelayo zisebenza ngaphandle koxhumano lwe-inthanethi.</string>
   <string name="title_pref_icon_detection">Izincazelo zesithonjana ezizenzekelayo</string>
   <string name="title_pref_image_description">Izincazelo zomfanekiso ezizenzekelayo</string>
@@ -1668,7 +1668,7 @@
     <string name="value_rotor_step_30">30 degrees (okuzenzakalelayo)</string>
     <string name="value_rotor_step_45">45 degrees</string>
     <string name="value_rotor_step_60">60 degrees</string>
-    <string name="title_pref_low_latency_audio">Ukubambezeleka okuphansi komsindo</string>
+    <string name="title_pref_low_latency_audio">Umsindo wokubambezeleka okuphansi</string>
     <string name="summary_pref_low_latency_audio">Dlala imisindo nenkulumo SandFly ngokusebenzisa indlela yomsindo eshesha kakhulu yefoni, ukuze uyizwe ngokushesha. Yivale uma inkulumo noma imisindo iphuka noma izwakala ingalungile.</string>
     <string name="value_focus_delay_200ms_default">0.2 amasekhondi (okuzenzakalelayo)</string>
     <string name="value_focus_delay_300ms">0.3 imizuzwana</string>
@@ -1711,7 +1711,7 @@
     <string name="title_keyboard_echo_physical">I-echo yekhibhodi ebonakalayo</string>
     <string name="title_keyboard_echo_braille_keyboard">I-echo yekhibhodi ye-Braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">I-echo yekhibhodi yokubhala ngesandla</string>
-    <string name="title_keyboard_echo_braille_display">I-Braille ibonisa i-echo</string>
+    <string name="title_keyboard_echo_braille_display">I-echo yesibonisi se-braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Phakamisa inkulumo lapho uthayipha</string>
     <string name="pref_interrupt_typing_entry_always">Njalo</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Hambisa phansi</string>
     <string name="template_list_position">Isikhundla <xliff:g id="position" example="2">%1$d</xliff:g> kokungu-<xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Ithathiwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Iwisiwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Kuyekelwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly isho imininingwane yento ngalolu hlelo. Ukuze uyishintshe, thinta futhi ubambe imininingwane, bese uyihudulela phezulu noma phansi. Ngokuvula okuthi SandFly, thepha kabili bese ubamba, bese uyahudula. Ungasebenzisa futhi izenzo zokuthi Hambisa phezulu futhi Hambisa phansi.</string>
     <string name="title_pref_speak_items_before_scroll">Khuluma izinto ngaphambi kokuthi ziskrole ekubukeni</string>
     <string name="gemini_error_api_key">Gemini ayizange yamukele ukhiye we-API. Hlola ukhiye kuzilungiselelo zezincazelo ezizenzakalelayo.</string>

@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Çaktivizo SandFly dhe aktivizoje atë sërish për të aktivizuar këtë cilësim.</string>
   <string name="title_pref_auto_image_captioning">Përshkrimet automatike</string>
   <string name="title_pref_gemini_settings">Cilësimet e Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini komandat zanore</string>
+  <string name="title_pref_gemini_enabled">Komandat zanore të Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Merr përshkrime të detajuara të imazheve nga IA-ja kur zgjedh \“Përshkruaj imazhin\” nga menyja e SandFly.\n\nMund të marrësh gjithashtu përshkrime automatike kur fokusohesh te një imazh në një ikonë. Përshkrimet automatike funksionojnë pa lidhje interneti.</string>
   <string name="title_pref_icon_detection">Përshkrimet automatike të ikonave</string>
   <string name="title_pref_image_description">Përshkrimet automatike të imazheve</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Kur telefoni është i shkyçur</string>
     <string name="title_pref_say_screen_off">Thuaj \"Ekrani fikur\"</string>
     <string name="title_pref_say_device_unlocked">Thuaj \"Pajisja u shkyç\"</string>
-    <string name="title_pref_announce_time">Koha</string>
+    <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modaliteti i ziles</string>
     <string name="summary_pref_announce_ringer_mode">Thuaj kur zilja është vendosur në dridhje ose në heshtje</string>
     <string name="title_pref_category_feedback">Feedback</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Asnjë</string>
     <string name="summary_selector_menu_emoji">Ndrysho mënyrën se si lexohen emoji</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Numëroni emoji të përsëritura</string>
+    <string name="title_pref_emoji_repeat_count">Numëro emoji të përsëritura</string>
     <string name="emoji_repeat_count_off">Joaktive</string>
     <string name="emoji_repeat_count_2">2 ose më shumë</string>
     <string name="emoji_repeat_count_3">3 ose më shumë</string>
@@ -1708,7 +1708,7 @@
     <string name="tablet_held_up_faces_away_on">Tableti mbajti lart fytyrat larg</string>
     <string name="tablet_held_up_faces_away_off">Tableti mbajti lart fytyrat larg</string>
     <string name="title_keyboard_echo_on_screen">Jehona e tastierës në ekran</string>
-    <string name="title_keyboard_echo_physical">Jehona fizike e tastierës</string>
+    <string name="title_keyboard_echo_physical">Jehona e tastierës fizike</string>
     <string name="title_keyboard_echo_braille_keyboard">Jehona e tastierës Braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Jehonë e tastierës së shkrimit të dorës</string>
     <string name="title_keyboard_echo_braille_display">Jehona e ekranit Braille</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Zhvendos poshtë</string>
     <string name="template_list_position">Pozicioni <xliff:g id="position" example="2">%1$d</xliff:g> nga <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Marrë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Ka rënë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">U lëshua <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly thotë detajet e një artikulli në këtë renditje. Për ta ndryshuar, prekni dhe mbani një detaj dhe më pas tërhiqeni lart ose poshtë. Me SandFly të aktivizuar, prekni dy herë dhe mbani, më pas zvarriteni. Mund të përdorni gjithashtu veprimet Lëviz lart dhe Lëviz poshtë.</string>
     <string name="title_pref_speak_items_before_scroll">Flisni artikujt përpara se të lëvizin në pamje</string>
     <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve automatike.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">Shërbimi i AI për diktimin</string>
     <string name="dictation_ai_same">I njëjti si për përshkrimet automatike</string>
     <string name="title_pref_browse_mode_per_app">Mos harroni mënyrën e shfletimit në çdo aplikacion</string>
-    <string name="title_pref_export_settings">Cilësimet e eksportit</string>
-    <string name="title_pref_import_settings">Cilësimet e importit</string>
+    <string name="title_pref_export_settings">Eksporto cilësimet</string>
+    <string name="title_pref_import_settings">Importo cilësimet</string>
     <string name="settings_export_done">Cilësimet u eksportuan. Nuk përfshihen çelësat API</string>
     <string name="settings_export_failed">Cilësimet nuk mund të eksportoheshin</string>
     <string name="settings_import_done">Cilësimet u importuan</string>

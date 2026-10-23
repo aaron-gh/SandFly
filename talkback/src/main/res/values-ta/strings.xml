@@ -75,7 +75,7 @@
   <string name="summary_pref_single_tap">செயல்படுத்த, ஃபோகஸ் செய்யப்பட்டிருப்பதை ஒருமுறை தட்டவும். இருமுறை தட்டுவதைவிட வேகமான வழிசெலுத்தல்.</string>
   <string name="pref_verbosity_title">மிகைச்சொற்கள்</string>
   <string name="pref_punctuation_title">நிறுத்தற்குறிகளையும் குறியீடுகளையும் படி</string>
-  <string name="title_pref_category_manage_focus_indicator">கவனம் காட்டி</string>
+  <string name="title_pref_category_manage_focus_indicator">ஃபோகஸ் குறிகாட்டி</string>
   <string name="title_pref_category_manage_gestures">சைகைகள்</string>
   <string name="title_pref_manage_labels">பிரத்தியேக லேபிள்கள்</string>
   <string name="title_pref_category_context_menu">SandFly மெனு</string>
@@ -1619,7 +1619,7 @@
     <string name="shortcut_power_menu">பவர் மெனு</string>
     <string name="shortcut_increase_media_volume">மீடியா ஒலியளவை அதிகரிக்கவும்</string>
     <string name="shortcut_decrease_media_volume">மீடியா ஒலியளவைக் குறைக்கவும்</string>
-    <string name="title_clear_selection">தெளிவான தேர்வு</string>
+    <string name="title_clear_selection">தேர்வை அழி</string>
     <string name="title_pref_brightness">பிரகாசம்</string>
     <string name="summary_support_change_brightness">திரை மறைந்திருந்தாலும் கூட, திரையின் பிரகாசத்தை அதிகரிக்கவும் அல்லது குறைக்கவும்</string>
     <string name="title_pref_shortcut_3finger_4tap">3 விரல்களால் நான்கு முறை தட்டவும்</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">ஃபோனின் வேகமான ஆடியோ பாதையில் SandFly இன் ஒலிகளையும் பேச்சையும் இயக்கலாம், எனவே அவற்றை விரைவில் கேட்கலாம். பேச்சு அல்லது ஒலிகள் உடைந்தால் அல்லது தவறாக ஒலித்தால் அதை அணைக்கவும்.</string>
     <string name="value_focus_delay_200ms_default">0.2 வினாடிகள் (இயல்புநிலை)</string>
     <string name="value_focus_delay_300ms">0.3 வினாடிகள்</string>
-    <string name="title_pref_lift_to_activate">செயல்படுத்த லிஃப்ட்</string>
+    <string name="title_pref_lift_to_activate">விரலை உயர்த்தி இயக்கு</string>
     <string name="summary_support_change_lift_to_activate">உங்கள் விரலைத் தூக்குவது ஒரு பொருளைச் செயல்படுத்தும் இடத்தை மாற்றவும்</string>
     <string name="value_lift_to_activate_disabled">முடக்கப்பட்டது</string>
     <string name="value_lift_to_activate_navigation_bar">வழிசெலுத்தல் பட்டியில் மட்டுமே</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">கீழே நகர்த்தவும்</string>
     <string name="template_list_position">நிலை <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">எடுக்கப்பட்டது <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">கைவிடப்பட்டது <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> விடப்பட்டது. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly இந்த வரிசையில் ஒரு பொருளின் விவரங்களைக் கூறுகிறது. அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடிக்கவும், பின்னர் அதை மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில், இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மூவ் அப் மற்றும் மூவ் டவுன் செயல்களையும் பயன்படுத்தலாம்.</string>
     <string name="title_pref_speak_items_before_scroll">உருப்படிகள் பார்வைக்கு உருட்டும் முன் அவற்றைப் பேசவும்</string>
     <string name="gemini_error_api_key">Gemini API விசையை ஏற்கவில்லை. தானியங்கு விளக்க அமைப்புகளில் விசையைச் சரிபார்க்கவும்.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">சொல்வதை எழுதுவதற்கான AI சேவை</string>
     <string name="dictation_ai_same">தானியங்கு விளக்கங்களுக்கானதே</string>
     <string name="title_pref_browse_mode_per_app">ஒவ்வொரு பயன்பாட்டிலும் உலாவல் பயன்முறையை நினைவில் கொள்க</string>
-    <string name="title_pref_export_settings">ஏற்றுமதி அமைப்புகள்</string>
-    <string name="title_pref_import_settings">இறக்குமதி அமைப்புகள்</string>
+    <string name="title_pref_export_settings">அமைப்புகளை ஏற்றுமதி செய்</string>
+    <string name="title_pref_import_settings">அமைப்புகளை இறக்குமதி செய்</string>
     <string name="settings_export_done">அமைப்புகள் ஏற்றுமதி செய்யப்பட்டன. API விசைகள் சேர்க்கப்படவில்லை</string>
     <string name="settings_export_failed">அமைப்புகளை ஏற்றுமதி செய்ய முடியவில்லை</string>
     <string name="settings_import_done">அமைப்புகள் இறக்குமதி செய்யப்பட்டன</string>

@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">‏יש להשבית ולהפעיל מחדש את SandFly כדי להפעיל את ההגדרה.</string>
   <string name="title_pref_auto_image_captioning">תיאורים אוטומטיים</string>
   <string name="title_pref_gemini_settings">‏הגדרות Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini פקודות קוליות</string>
+  <string name="title_pref_gemini_enabled">פקודות קוליות של Gemini</string>
   <string name="title_pref_category_automatic_description_summary">‏בוחרים באפשרות \'תיאור התמונה\' בתפריט SandFly ומקבלים תיאורים מפורטים של תוכן ויזואלי באמצעות AI.‏\n\nאפשר גם לקבל תיאורים אוטומטיים כשמתמקדים בתמונה או בסמל. התיאורים האוטומטיים פועלים גם בלי חיבור לאינטרנט.</string>
   <string name="title_pref_icon_detection">תיאורים אוטומטיים של סמלים</string>
   <string name="title_pref_image_description">תיאורי תמונות אוטומטיים</string>
@@ -1314,7 +1314,7 @@
     <string name="shortcut_previous_voice_profile">פרופיל קול קודם</string>
     <string name="shortcut_next_voice_profile">פרופיל הקול הבא</string>
     <string name="title_pref_voice_profile_in_use">פרופיל קול בשימוש</string>
-    <string name="title_pref_add_voice_profile">הוסף פרופיל קולי</string>
+    <string name="title_pref_add_voice_profile">הוספת פרופיל קולי</string>
     <string name="voice_profile_new_name">פרופיל קולי <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">פרופיל קולי כבר נקרא <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">שם</string>
@@ -1330,7 +1330,7 @@
     <string name="voice_profile_moved_above">עבר מעל <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">הועבר למטה <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> נמחק</string>
-    <string name="title_pref_delete_voice_profile">מחק פרופיל קולי</string>
+    <string name="title_pref_delete_voice_profile">מחיקת פרופיל קולי</string>
     <string name="voice_profile_delete_confirm">למחוק את <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">מחיקה</string>
     <string name="summary_pref_tts_engine_default">ברירת המחדל של המערכת</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">ללא</string>
     <string name="summary_selector_menu_emoji">שנה את אופן קריאת האמוג\'י</string>
     <string name="emoji_speech_state">אמוג\'י: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">ספור אמוג\'י חוזר</string>
+    <string name="title_pref_emoji_repeat_count">ספירת אמוג\'י חוזרים</string>
     <string name="emoji_repeat_count_off">מצב מושבת</string>
     <string name="emoji_repeat_count_2">2 או יותר</string>
     <string name="emoji_repeat_count_3">3 או יותר</string>
@@ -1585,9 +1585,9 @@
     <string name="handwriting_downloaded">זיהוי כתב יד הורד</string>
     <string name="handwriting_download_failed">לא ניתן היה להוריד את זיהוי כתב היד. בדוק את החיבור לאינטרנט.</string>
     <string name="handwriting_unsupported_language">זיהוי כתב יד אינו זמין בשפה זו</string>
-    <string name="title_pref_handwriting_keyboard">מקלדת בכתב יד</string>
+    <string name="title_pref_handwriting_keyboard">מקלדת כתב יד</string>
     <string name="summary_pref_handwriting_keyboard">הפעל את כתב יד SandFly בהגדרות המקלדת של Android</string>
-    <string name="title_pref_handwriting_wait">חכה אחרי הכתיבה</string>
+    <string name="title_pref_handwriting_wait">המתנה אחרי כתיבה</string>
     <string name="value_handwriting_wait_200">‫0.2 שניות</string>
     <string name="value_handwriting_wait_300">0.3 שניות</string>
     <string name="value_handwriting_wait_400">0.4 שניות</string>
@@ -1676,7 +1676,7 @@
     <string name="summary_pref_low_latency_audio">הפעל את הצלילים והדיבור של SandFly דרך נתיב האודיו המהיר ביותר של הטלפון, כך שתשמע אותם מוקדם יותר. כבה אותו אם דיבור או צלילים מתפרקים או נשמעים שגויים.</string>
     <string name="value_focus_delay_200ms_default">0.2 שניות (ברירת מחדל)</string>
     <string name="value_focus_delay_300ms">0.3 שניות</string>
-    <string name="title_pref_lift_to_activate">הרם להפעלה</string>
+    <string name="title_pref_lift_to_activate">הפעלה בהרמת האצבע</string>
     <string name="summary_support_change_lift_to_activate">שנה את המקום שבו הרמת האצבע מפעילה פריט</string>
     <string name="value_lift_to_activate_disabled">מושבת</string>
     <string name="value_lift_to_activate_navigation_bar">רק בסרגל הניווט</string>
@@ -1686,7 +1686,7 @@
     <string name="summary_pref_wrap_around">החלקה על פני הפריט האחרון עוברת אל הראשון, ומעבר הראשון עובר אל האחרון. במצב כבוי, במקום מתנגן צליל בסוף.</string>
     <string name="title_pref_fix_stuck_touch_exploration">תקן חקר מגע תקוע</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ללא הרשאת DUMP, SandFly יכול רק לומר שחקר המגע עשוי להיות תקוע. כדי לתקן את זה, הפעל: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">תיקון מגע חקר</string>
+    <string name="stuck_touch_exploration_fixing">מתקן את גילוי באמצעות מגע</string>
     <string name="stuck_touch_exploration_fixed">חקירת המגע תוקנה</string>
     <string name="stuck_touch_exploration_not_fixed">חקר המגע עדיין תקוע. הפעל מחדש את הטלפון כדי לתקן את זה.</string>
     <string name="stuck_touch_exploration_restart">חקר המגע עשוי להיות תקוע. הפעל מחדש את הטלפון כדי לתקן את זה.</string>
@@ -1732,7 +1732,7 @@
     <string name="action_move_down">העברה למטה</string>
     <string name="template_list_position">מיקום <xliff:g id="position" example="2">%1$d</xliff:g> מתוך <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">נאסף <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ירד <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">שוחרר: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly אומר פרטי פריט בהזמנה זו. כדי לשנות אותו, גע והחזק בפרט ולאחר מכן גרור אותו למעלה או למטה. עם SandFly מופעל, הקש פעמיים והחזק ואז גרור. אתה יכול גם להשתמש בפעולות העבר למעלה והזז למטה.</string>
     <string name="title_pref_speak_items_before_scroll">אמור פריטים לפני שהם גוללים לתצוגה</string>
     <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. סמן את המפתח בהגדרות תיאורים אוטומטיים.</string>
@@ -1769,7 +1769,7 @@
     <string name="dictation_ai_same">זהה לתיאורים האוטומטיים</string>
     <string name="title_pref_browse_mode_per_app">זכור את מצב הגלישה בכל אפליקציה</string>
     <string name="title_pref_export_settings">ייצוא הגדרות</string>
-    <string name="title_pref_import_settings">הגדרות ייבוא</string>
+    <string name="title_pref_import_settings">ייבוא הגדרות</string>
     <string name="settings_export_done">הגדרות יוצאו. מפתחות API אינם כלולים</string>
     <string name="settings_export_failed">לא ניתן לייצא את ההגדרות</string>
     <string name="settings_import_done">הגדרות יובאו</string>

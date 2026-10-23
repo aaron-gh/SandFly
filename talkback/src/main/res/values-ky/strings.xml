@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Фокус көрсөткүчү</string>
   <string name="title_pref_category_manage_gestures">Жаңсоолор</string>
   <string name="title_pref_manage_labels">Жеке энбелгилер</string>
-  <string name="title_pref_category_context_menu">SandFly меню</string>
+  <string name="title_pref_category_context_menu">SandFly менюсу</string>
   <string name="title_pref_category_selector_menu">Окууну башкаруу элементтери</string>
   <string name="title_pref_category_navigation_menu">Чабыттоо параметрлерин түзөтүү</string>
   <string name="title_pref_manage_keyboard_shortcuts">Ыкчам баскычтар</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Экраныңызды жашырасыз. Жаныңыздагы адамдарга андагы нерселер көрүнбөй калат. Баса, аны кайра кадимки абалга кайтарганды унутпаңыз.</string>
   <string name="summary_control_speak_time">Экранды күйгүзгөнүңүздө убакыт айтылып же айтылбай турганын өзгөртүңүз</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Ыкчам баскычтардын тизмесин ач</string>
-  <string name="summary_talkback_preferences">SandFly параметрлерин ачасыз</string>
+  <string name="summary_talkback_preferences">SandFly параметрлерин ачуу</string>
   <string name="summary_braile_display_preferences">Брайль дисплейинин параметрлерин ачуу</string>
   <string name="summary_system_actions">Бардык колдонмолорго жана ыкчам параметрлерге өтүү</string>
   <string name="summary_tts_settings">Кеп синтезаторунун параметрлерин ачасыз</string>
@@ -1333,7 +1333,7 @@
     <string name="title_pref_delete_voice_profile">Үн профилин жок кылуу</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> жок кылынсынбы?</string>
     <string name="voice_profile_delete">Өчүрүү</string>
-    <string name="summary_pref_tts_engine_default">Системанын демейки</string>
+    <string name="summary_pref_tts_engine_default">Системанын демейкиси</string>
     <string name="title_pref_speech_pitch">Сүйлөө бийиктиги</string>
     <string name="title_pref_speech_stream">Кептин катуулугу</string>
     <string name="summary_selector_speech_stream">Атайын мүмкүнчүлүктөр, медиа, шыңгыроо жана чалуу көлөмүнүн ортосунда которуштуруу</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">Убакыт</string>
     <string name="title_pref_announce_ringer_mode">Коңгуроо режими</string>
     <string name="summary_pref_announce_ringer_mode">Коңгуроо титирөө же унчукпай коюуга качан коюлганын айтыңыз</string>
-    <string name="title_pref_category_feedback">Пикир</string>
+    <string name="title_pref_category_feedback">Кайтарым байланыш</string>
     <string name="title_pref_category_typing_and_braille">Терүү жана брайль</string>
     <string name="title_pref_category_apps">Колдонмолор</string>
     <string name="title_pref_touch_activation">Тийип жана активдештирүү</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Жок</string>
     <string name="summary_selector_menu_emoji">Быйтыкчаларды окуу ыкмасын өзгөртүңүз</string>
     <string name="emoji_speech_state">Эмодзи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Кайталанган эмодзилерди санаңыз</string>
+    <string name="title_pref_emoji_repeat_count">Кайталанган эмодзилерди саноо</string>
     <string name="emoji_repeat_count_off">Өчүк</string>
     <string name="emoji_repeat_count_2">2 же андан көп</string>
     <string name="emoji_repeat_count_3">3 же андан көп</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">Колжазманы таануу бул тилде жеткиликтүү эмес</string>
     <string name="title_pref_handwriting_keyboard">Колжазма клавиатурасы</string>
     <string name="summary_pref_handwriting_keyboard">Android баскычтоп жөндөөлөрүндө SandFly колжазманы күйгүзүңүз</string>
-    <string name="title_pref_handwriting_wait">Жазгандан кийин күтө тур</string>
+    <string name="title_pref_handwriting_wait">Жазгандан кийин күтүү</string>
     <string name="value_handwriting_wait_200">0,2 секунд</string>
     <string name="value_handwriting_wait_300">0,3 секунд</string>
     <string name="value_handwriting_wait_400">0,4 секунд</string>
@@ -1668,7 +1668,7 @@
     <string name="value_rotor_step_30">30 градус (демейки)</string>
     <string name="value_rotor_step_45">45 градус</string>
     <string name="value_rotor_step_60">60 градус</string>
-    <string name="title_pref_low_latency_audio">Аз күтүүдөгү аудио</string>
+    <string name="title_pref_low_latency_audio">Кечигүүсү аз аудио</string>
     <string name="summary_pref_low_latency_audio">SandFly үндөрүн жана кептерин телефондун эң ылдам аудио жолу аркылуу ойнотуңуз, аларды тезирээк угуңуз. Сүйлөө же үндөр бузулса же туура эмес угулса, аны өчүрүңүз.</string>
     <string name="value_focus_delay_200ms_default">0,2 секунд (демейки)</string>
     <string name="value_focus_delay_300ms">0,3 секунд</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Төмөн жылдыруу</string>
     <string name="template_list_position">Позициясы <xliff:g id="position" example="2">%1$d</xliff:g> ичинен <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> алды. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> түшүп калды. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> коюлду. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly буюмдун чоо-жайын ушул тартипте айтат. Аны өзгөртүү үчүн деталга тийип, кармап туруңуз, андан кийин аны өйдө же ылдый сүйрөңүз. SandFly күйгүзүлгөндө, эки жолу таптап, кармап туруңуз, анан сүйрөңүз. Сиз ошондой эле өйдө жана ылдый жылдыруу аракеттерин колдоно аласыз.</string>
     <string name="title_pref_speak_items_before_scroll">Элементтер көрүнүшкө жылардан мурун сүйлөңүз</string>
     <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. Автоматтык сүрөттөмөлөр жөндөөлөрүндөгү ачкычты текшериңиз.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">Айтып жаздыруу үчүн AI кызматы</string>
     <string name="dictation_ai_same">Автоматтык учкай маалыматтардагыдай</string>
     <string name="title_pref_browse_mode_per_app">Ар бир колдонмодо серептөө режимин унутпаңыз</string>
-    <string name="title_pref_export_settings">Экспорт жөндөөлөрү</string>
-    <string name="title_pref_import_settings">Импорт жөндөөлөрү</string>
+    <string name="title_pref_export_settings">Жөндөөлөрдү экспорттоо</string>
+    <string name="title_pref_import_settings">Жөндөөлөрдү импорттоо</string>
     <string name="settings_export_done">Жөндөөлөр экспорттолду. API ачкычтары камтылган эмес</string>
     <string name="settings_export_failed">Жөндөөлөр экспорттолбой койду</string>
     <string name="settings_import_done">Орнотуулар импорттолду</string>

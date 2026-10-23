@@ -1311,7 +1311,7 @@
     <string name="shortcut_previous_voice_profile">前の音声プロファイル</string>
     <string name="shortcut_next_voice_profile">次の音声プロファイル</string>
     <string name="title_pref_voice_profile_in_use">使用中の音声プロファイル</string>
-    <string name="title_pref_add_voice_profile">音声プロファイルを追加する</string>
+    <string name="title_pref_add_voice_profile">音声プロファイルを追加</string>
     <string name="voice_profile_new_name">音声プロフィール <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">音声プロファイルはすでに <xliff:g id="name" example="Reading">%1$s</xliff:g> と呼ばれています</string>
     <string name="title_pref_voice_profile_name">名前</string>
@@ -1327,7 +1327,7 @@
     <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> 上に移動しました</string>
     <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> の下に移動しました</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 削除されました</string>
-    <string name="title_pref_delete_voice_profile">音声プロファイルを削除する</string>
+    <string name="title_pref_delete_voice_profile">音声プロファイルを削除</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g>を削除しますか?</string>
     <string name="voice_profile_delete">削除</string>
     <string name="summary_pref_tts_engine_default">システムのデフォルト</string>
@@ -1348,7 +1348,7 @@
     <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
     <string name="battery_optimization_notification_title">バッテリーの最適化が停止する可能性があります SandFly</string>
     <string name="battery_optimization_notification_text">この携帯電話では、画面がオフになった後にバッテリー セーバーによって SandFly が停止されるため、再起動されるまで静かになります。タップしてバッテリーの最適化を開き、[すべてのアプリ] を選択して、SandFly を見つけて、[最適化しない] を選択します。</string>
-    <string name="title_pref_mute_speech_while_recording">録音中は静かに</string>
+    <string name="title_pref_mute_speech_while_recording">録音中は読み上げない</string>
     <string name="summary_pref_mute_speech_while_recording">ヘッドフォンが接続されていない状態でアプリが録音している間、SandFly はジェスチャー、キー、入力に応じて話すだけで、通知などの場合は沈黙を保つため、録音されません。</string>
     <string name="title_pref_switch_languages">言語を自動的に切り替える</string>
     <string name="title_pref_switch_dialects">自動的に方言を切り替える</string>
@@ -1367,7 +1367,7 @@
     <string name="title_screen_announcements_unlock">電話機のロックが解除されているとき</string>
     <string name="title_pref_say_screen_off">「画面をオフにして」と言います</string>
     <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と言います</string>
-    <string name="title_pref_announce_time">時間</string>
+    <string name="title_pref_announce_time">時刻</string>
     <string name="title_pref_announce_ringer_mode">着信音モード</string>
     <string name="summary_pref_announce_ringer_mode">着信音が振動またはサイレントに設定されているときに言ってください</string>
     <string name="title_pref_category_feedback">フィードバック</string>
@@ -1375,7 +1375,7 @@
     <string name="title_pref_category_apps">アプリ</string>
     <string name="title_pref_touch_activation">タッチとアクティベーション</string>
     <string name="title_pref_navigation">ナビゲーション</string>
-    <string name="title_pref_category_more">もっと見る</string>
+    <string name="title_pref_category_more">その他</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch のジェスチャーを予約</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly による 2 本指のシングルタップとダブルタップの処理を停止し、Samsung Vibration Watch が使用できるようにします。ウォッチのアクセシビリティ設定で Vibration Watch を有効にします。</string>
     <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
@@ -1543,7 +1543,7 @@
     <string name="edge_gestures_title">エッジ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ブラウズ モードをオンまたはオフにする別のショートカット</string>
     <string name="title_pref_vibration_strength">振動強度</string>
-    <string name="title_pref_audio_output_device">音声出力装置</string>
+    <string name="title_pref_audio_output_device">音声出力デバイス</string>
     <string name="dialog_title_audio_output_device">SandFly サウンドを再生する場所を選択してください</string>
     <string name="value_audio_output_device_default">システムのデフォルト</string>
     <string name="value_audio_output_device_speaker">電話スピーカー</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_unsupported_language">この言語では手書き認識は利用できません</string>
     <string name="title_pref_handwriting_keyboard">手書きキーボード</string>
     <string name="summary_pref_handwriting_keyboard">Android のキーボード設定で SandFly 手書きをオンにします</string>
-    <string name="title_pref_handwriting_wait">書いてから待つ</string>
+    <string name="title_pref_handwriting_wait">書いた後の待機時間</string>
     <string name="value_handwriting_wait_200">0.2 秒</string>
     <string name="value_handwriting_wait_300">0.3秒</string>
     <string name="value_handwriting_wait_400">0.4秒</string>
@@ -1669,7 +1669,7 @@
     <string name="summary_pref_low_latency_audio">SandFly の音と音声を電話の最速オーディオ パスで再生すると、より早く聞こえるようになります。音声や音声が途切れたり、間違って聞こえる場合は、オフにしてください。</string>
     <string name="value_focus_delay_200ms_default">0.2秒(デフォルト)</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
-    <string name="title_pref_lift_to_activate">持ち上げてアクティブにします</string>
+    <string name="title_pref_lift_to_activate">指を離して有効化</string>
     <string name="summary_support_change_lift_to_activate">指を離すとアイテムがアクティブになる場所を変更する</string>
     <string name="value_lift_to_activate_disabled">障害者</string>
     <string name="value_lift_to_activate_navigation_bar">ナビゲーションバーのみ</string>
@@ -1679,7 +1679,7 @@
     <string name="summary_pref_wrap_around">最後の項目を越えてスワイプすると最初の項目に移動し、最初の項目を越えてスワイプすると最後の項目に移動します。オフにすると、代わりに最後にサウンドが再生されます。</string>
     <string name="title_pref_fix_stuck_touch_exploration">タッチ探索のスタックを修正</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">タッチ探索の修正</string>
+    <string name="stuck_touch_exploration_fixing">タッチ探索を修正しています</string>
     <string name="stuck_touch_exploration_fixed">タッチ探索が修正されました</string>
     <string name="stuck_touch_exploration_not_fixed">タッチ探索はまだスタックしています。電話機を再起動して問題を解決します。</string>
     <string name="stuck_touch_exploration_restart">タッチ探索がスタックする可能性があります。電話機を再起動して問題を解決します。</string>
@@ -1725,7 +1725,7 @@
     <string name="action_move_down">下に移動</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>中<xliff:g id="position" example="2">%1$d</xliff:g>の位置</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g>を拾いました。 <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> を落としました。 <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly は、この注文の商品の詳細を示します。変更するには、詳細をタッチしたまま上下にドラッグします。 SandFly がオンの状態で、ダブルタップして押したままドラッグします。 「上に移動」および「下に移動」アクションを使用することもできます。</string>
     <string name="title_pref_speak_items_before_scroll">スクロールして表示される前に項目を読み上げる</string>
     <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。自動説明設定でキーを確認してください。</string>
@@ -1762,7 +1762,7 @@
     <string name="dictation_ai_same">説明の自動読み上げと同じ</string>
     <string name="title_pref_browse_mode_per_app">各アプリのブラウズモードを記憶する</string>
     <string name="title_pref_export_settings">設定のエクスポート</string>
-    <string name="title_pref_import_settings">インポート設定</string>
+    <string name="title_pref_import_settings">設定のインポート</string>
     <string name="settings_export_done">設定がエクスポートされました。 APIキーは含まれていません</string>
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
     <string name="settings_import_done">設定をインポートしました</string>

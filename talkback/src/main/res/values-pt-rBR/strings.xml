@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Indicador de foco</string>
   <string name="title_pref_category_manage_gestures">Gestos</string>
   <string name="title_pref_manage_labels">Rótulos personalizados</string>
-  <string name="title_pref_category_context_menu">SandFly cardápio</string>
+  <string name="title_pref_category_context_menu">Menu do SandFly</string>
   <string name="title_pref_category_selector_menu">Controles de leitura</string>
   <string name="title_pref_category_navigation_menu">Editar opções de navegação</string>
   <string name="title_pref_manage_keyboard_shortcuts">Atalhos do teclado</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Feche o SandFly e o abra novamente para ativar a configuração.</string>
   <string name="title_pref_auto_image_captioning">Descrições automáticas</string>
   <string name="title_pref_gemini_settings">Configurações do Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini comandos de voz</string>
+  <string name="title_pref_gemini_enabled">Comandos de voz do Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Receba descrições detalhadas feitas por IA para imagens ao selecionar \“Descrever imagem\” no menu do SandFly.\n\nTambém é possível receber descrições automáticas ao focar em uma imagem ou um ícone. As descrições automáticas funcionam sem uma conexão de Internet.</string>
   <string name="title_pref_icon_detection">Descrições automáticas de ícones</string>
   <string name="title_pref_image_description">Descrições automáticas de imagens</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">Hora</string>
     <string name="title_pref_announce_ringer_mode">Modo de campainha</string>
     <string name="summary_pref_announce_ringer_mode">Diga quando a campainha está definida para vibrar ou silenciar</string>
-    <string name="title_pref_category_feedback">Comentários</string>
+    <string name="title_pref_category_feedback">Retorno</string>
     <string name="title_pref_category_typing_and_braille">Digitação e braille</string>
     <string name="title_pref_category_apps">Aplicativos</string>
     <string name="title_pref_touch_activation">Toque e ativação</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">O reconhecimento de escrita não está disponível neste idioma</string>
     <string name="title_pref_handwriting_keyboard">Teclado de escrita manual</string>
     <string name="summary_pref_handwriting_keyboard">Ative a escrita manual SandFly nas configurações do teclado de Android</string>
-    <string name="title_pref_handwriting_wait">Espere depois de escrever</string>
+    <string name="title_pref_handwriting_wait">Espera após escrever</string>
     <string name="value_handwriting_wait_200">0,2 segundos</string>
     <string name="value_handwriting_wait_300">0,3 segundos</string>
     <string name="value_handwriting_wait_400">0,4 segundos</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">Reproduza os sons e a fala de SandFly através do caminho de áudio mais rápido do telefone, para que você os ouça mais cedo. Desligue-o se a fala ou os sons forem interrompidos ou parecerem errados.</string>
     <string name="value_focus_delay_200ms_default">0,2 segundos (padrão)</string>
     <string name="value_focus_delay_300ms">0,3 segundos</string>
-    <string name="title_pref_lift_to_activate">Levante para ativar</string>
+    <string name="title_pref_lift_to_activate">Levantar o dedo para ativar</string>
     <string name="summary_support_change_lift_to_activate">Alterar onde levantar o dedo ativa um item</string>
     <string name="value_lift_to_activate_disabled">Desativado</string>
     <string name="value_lift_to_activate_navigation_bar">Somente na barra de navegação</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Mover para baixo</string>
     <string name="template_list_position">Posição <xliff:g id="position" example="2">%1$d</xliff:g> de <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Apanhado <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Caiu <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> solto. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly indica os detalhes de um item nesta ordem. Para alterá-lo, toque e segure um detalhe e arraste-o para cima ou para baixo. Com SandFly ativado, toque duas vezes e segure e arraste. Você também pode usar as ações Mover para cima e Mover para baixo.</string>
     <string name="title_pref_speak_items_before_scroll">Fale os itens antes que eles apareçam</string>
     <string name="gemini_error_api_key">Gemini não aceitou a chave API. Verifique a chave nas configurações de descrições automáticas.</string>

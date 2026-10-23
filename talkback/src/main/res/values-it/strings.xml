@@ -75,7 +75,7 @@
   <string name="summary_pref_single_tap">Tocca una volta un elemento selezionato per attivarlo. Navigazione più rapida rispetto al doppio tocco.</string>
   <string name="pref_verbosity_title">Preferenze di lettura</string>
   <string name="pref_punctuation_title">Leggi punteggiatura e simboli</string>
-  <string name="title_pref_category_manage_focus_indicator">Indicatore di messa a fuoco</string>
+  <string name="title_pref_category_manage_focus_indicator">Indicatore dello stato attivo</string>
   <string name="title_pref_category_manage_gestures">Gesti</string>
   <string name="title_pref_manage_labels">Etichette personalizzate</string>
   <string name="title_pref_category_context_menu">Menù SandFly</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Disattiva e riattiva SandFly per attivare l\'impostazione.</string>
   <string name="title_pref_auto_image_captioning">Descrizioni automatiche</string>
   <string name="title_pref_gemini_settings">Impostazioni di Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini comandi vocali</string>
+  <string name="title_pref_gemini_enabled">Comandi vocali Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Ricevi descrizioni dettagliate delle immagini create dall\'AI selezionando \"Descrivi immagine\" dal menu di SandFly.\n\nPuoi anche ricevere descrizioni automatiche quando selezioni un\'immagine o un\'icona. Le descrizioni automatiche funzionano senza connessione a internet.</string>
   <string name="title_pref_icon_detection">Descrizioni automatiche delle icone</string>
   <string name="title_pref_image_description">Descrizioni automatiche delle immagini</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Quando il telefono è sbloccato</string>
     <string name="title_pref_say_screen_off">Di\' \"Schermo spento\"</string>
     <string name="title_pref_say_device_unlocked">Di\' \"Dispositivo sbloccato\"</string>
-    <string name="title_pref_announce_time">Tempo</string>
+    <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modalità suoneria</string>
     <string name="summary_pref_announce_ringer_mode">Di\' quando la suoneria è impostata su vibrazione o silenziosa</string>
     <string name="title_pref_category_feedback">Feedback</string>
@@ -1378,7 +1378,7 @@
     <string name="title_pref_category_apps">App</string>
     <string name="title_pref_touch_activation">Tocco e attivazione</string>
     <string name="title_pref_navigation">Navigazione</string>
-    <string name="title_pref_category_more">Di più</string>
+    <string name="title_pref_category_more">Altro</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Prenota gesti per Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Interrompe SandFly la gestione dei tocchi singoli e doppi con due dita in modo che Samsung Vibration Watch possa utilizzarli. Abilita Vibration Watch nelle impostazioni di accessibilità del tuo orologio.</string>
     <string name="shortcut_reserved_for_vibration_watch">Riservato per Vibration Watch nelle Impostazioni avanzate</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_unsupported_language">Il riconoscimento della grafia non è disponibile in questa lingua</string>
     <string name="title_pref_handwriting_keyboard">Tastiera per la scrittura a mano</string>
     <string name="summary_pref_handwriting_keyboard">Attiva la scrittura a mano SandFly nelle impostazioni della tastiera di Android</string>
-    <string name="title_pref_handwriting_wait">Aspetta dopo aver scritto</string>
+    <string name="title_pref_handwriting_wait">Attesa dopo la scrittura</string>
     <string name="value_handwriting_wait_200">0,2 secondi</string>
     <string name="value_handwriting_wait_300">0,3 secondi</string>
     <string name="value_handwriting_wait_400">0,4 secondi</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">Riproduci i suoni e i discorsi di SandFly attraverso il percorso audio più veloce del telefono, così li sentirai prima. Spegnilo se il parlato o i suoni si interrompono o sembrano errati.</string>
     <string name="value_focus_delay_200ms_default">0,2 secondi (predefinito)</string>
     <string name="value_focus_delay_300ms">0,3 secondi</string>
-    <string name="title_pref_lift_to_activate">Sollevare per attivare</string>
+    <string name="title_pref_lift_to_activate">Solleva il dito per attivare</string>
     <string name="summary_support_change_lift_to_activate">Cambia il punto in cui sollevando il dito si attiva un elemento</string>
     <string name="value_lift_to_activate_disabled">Disabilitato</string>
     <string name="value_lift_to_activate_navigation_bar">Solo sulla barra di navigazione</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Sposta giù</string>
     <string name="template_list_position">Posizione <xliff:g id="position" example="2">%1$d</xliff:g> di <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Ritirato <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Eliminato <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Rilasciato: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly dice i dettagli di un articolo in questo ordine. Per modificarlo, tocca e tieni premuto un dettaglio, quindi trascinalo verso l\'alto o verso il basso. Con SandFly attivo, tocca due volte e tieni premuto, quindi trascina. Puoi anche utilizzare le azioni Sposta su e Sposta giù.</string>
     <string name="title_pref_speak_items_before_scroll">Pronuncia gli elementi prima che vengano visualizzati</string>
     <string name="gemini_error_api_key">Gemini non ha accettato la chiave API. Controlla la chiave in Impostazioni descrizioni automatiche.</string>
@@ -1764,7 +1764,7 @@
     <string name="title_pref_dictation_ai_service">Servizio IA per la dettatura</string>
     <string name="dictation_ai_same">Lo stesso delle descrizioni automatiche</string>
     <string name="title_pref_browse_mode_per_app">Ricorda la modalità di navigazione in ciascuna app</string>
-    <string name="title_pref_export_settings">Impostazioni di esportazione</string>
+    <string name="title_pref_export_settings">Esporta impostazioni</string>
     <string name="title_pref_import_settings">Importa impostazioni</string>
     <string name="settings_export_done">Impostazioni esportate. Le chiavi API non sono incluse</string>
     <string name="settings_export_failed">Impossibile esportare le impostazioni</string>

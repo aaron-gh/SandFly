@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusavimo indikatorius</string>
   <string name="title_pref_category_manage_gestures">Gestai</string>
   <string name="title_pref_manage_labels">Tinkintos etiketės</string>
-  <string name="title_pref_category_context_menu">SandFly meniu</string>
+  <string name="title_pref_category_context_menu">„SandFly“ meniu</string>
   <string name="title_pref_category_selector_menu">Skaitymo valdikliai</string>
   <string name="title_pref_category_navigation_menu">Redaguoti naršymo parinktis</string>
   <string name="title_pref_manage_keyboard_shortcuts">Spartieji klavišai</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">Laikas</string>
     <string name="title_pref_announce_ringer_mode">Skambučio režimas</string>
     <string name="summary_pref_announce_ringer_mode">Pasakykite, kai skambutis nustatytas vibruoti arba nutildyti</string>
-    <string name="title_pref_category_feedback">Atsiliepimai</string>
+    <string name="title_pref_category_feedback">Grįžtamasis ryšys</string>
     <string name="title_pref_category_typing_and_braille">Rašymas ir Brailio raštas</string>
     <string name="title_pref_category_apps">Programos</string>
     <string name="title_pref_touch_activation">Palietimas ir aktyvinimas</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Nėra</string>
     <string name="summary_selector_menu_emoji">Pakeiskite jaustukų skaitymo būdą</string>
     <string name="emoji_speech_state">Jaustukai: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Suskaičiuokite pasikartojančius jaustukus</string>
+    <string name="title_pref_emoji_repeat_count">Skaičiuoti pasikartojančius jaustukus</string>
     <string name="emoji_repeat_count_off">Išjungta</string>
     <string name="emoji_repeat_count_2">2 ar daugiau</string>
     <string name="emoji_repeat_count_3">3 ar daugiau</string>
@@ -1591,7 +1591,7 @@
     <string name="handwriting_unsupported_language">Rašysenos atpažinimo funkcija šia kalba nepasiekiama</string>
     <string name="title_pref_handwriting_keyboard">Rašymo ranka klaviatūra</string>
     <string name="summary_pref_handwriting_keyboard">Įjunkite SandFly rašymą ranka Android klaviatūros nustatymuose</string>
-    <string name="title_pref_handwriting_wait">Palauk parašęs</string>
+    <string name="title_pref_handwriting_wait">Laukimas po rašymo</string>
     <string name="value_handwriting_wait_200">0,2 sek.</string>
     <string name="value_handwriting_wait_300">0,3 sekundės</string>
     <string name="value_handwriting_wait_400">0,4 sekundės</string>
@@ -1690,7 +1690,7 @@
     <string name="summary_pref_wrap_around">Perbraukus per paskutinį elementą pereinama prie pirmojo, o už pirmojo – į paskutinį. Kai išjungta, pabaigoje skamba garsas.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Pataisykite įstrigusį tyrinėjimą</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Be leidimo DUMP SandFly gali tik pasakyti, kad tyrinėjimas liečiant gali užstrigti. Jei norite leisti tai išspręsti, paleiskite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Patikslinamas tyrinėjimas prisilietimu</string>
+    <string name="stuck_touch_exploration_fixing">Taisomas naršymas liečiant</string>
     <string name="stuck_touch_exploration_fixed">Naršymas liečiant ištaisytas</string>
     <string name="stuck_touch_exploration_not_fixed">Naršymas liečiant vis dar įstrigo. Iš naujo paleiskite telefoną, kad tai ištaisytumėte.</string>
     <string name="stuck_touch_exploration_restart">Naršymas liečiant gali užstrigti. Iš naujo paleiskite telefoną, kad tai ištaisytumėte.</string>
@@ -1716,7 +1716,7 @@
     <string name="tablet_held_up_faces_away_on">Planšetinis kompiuteris buvo pakeltas veidais</string>
     <string name="tablet_held_up_faces_away_off">Planšetinis kompiuteris buvo pakeltas veidu</string>
     <string name="title_keyboard_echo_on_screen">Ekrano klaviatūros aidas</string>
-    <string name="title_keyboard_echo_physical">Fizinis klaviatūros aidas</string>
+    <string name="title_keyboard_echo_physical">Fizinės klaviatūros aidas</string>
     <string name="title_keyboard_echo_braille_keyboard">Brailio rašto klaviatūros aidas</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Rašymo ranka klaviatūros aidas</string>
     <string name="title_keyboard_echo_braille_display">Brailio rašto ekrano aidas</string>
@@ -1736,7 +1736,7 @@
     <string name="action_move_down">Perkelti žemyn</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> iš <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Paėmė <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Numesta <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Paleista: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly nurodo išsamią prekės informaciją šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite detalę, tada vilkite ją aukštyn arba žemyn. Įjungę SandFly dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus Perkelti aukštyn ir Perkelti žemyn.</string>
     <string name="title_pref_speak_items_before_scroll">Ištarkite elementus prieš jiems pasirodant</string>
     <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą automatinių aprašų nustatymuose.</string>

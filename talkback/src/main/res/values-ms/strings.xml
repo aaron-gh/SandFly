@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Penunjuk fokus</string>
   <string name="title_pref_category_manage_gestures">Gerak isyarat</string>
   <string name="title_pref_manage_labels">Label tersuai</string>
-  <string name="title_pref_category_context_menu">SandFly menu</string>
+  <string name="title_pref_category_context_menu">Menu SandFly</string>
   <string name="title_pref_category_selector_menu">Kawalan bacaan</string>
   <string name="title_pref_category_navigation_menu">Edit pilihan navigasi</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan papan kekunci</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Matikan SandFly kemudian hidupkan sekali lagi untuk mengaktifkan tetapan.</string>
   <string name="title_pref_auto_image_captioning">Perihalan automatik</string>
   <string name="title_pref_gemini_settings">Tetapan Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini arahan suara</string>
+  <string name="title_pref_gemini_enabled">Arahan suara Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Dapatkan perihalan imej AI yang terperinci apabila anda memilih \“Perihalkan imej\” daripada menu SandFly.\n\nAnda juga boleh mendapatkan perihalan automatik apabila anda memfokuskan imej atau ikon. Perihalan automatik berfungsi tanpa sambungan Internet.</string>
   <string name="title_pref_icon_detection">Perihalan ikon automatik</string>
   <string name="title_pref_image_description">Perihalan imej automatik</string>
@@ -1333,7 +1333,7 @@
     <string name="title_pref_delete_voice_profile">Padamkan profil suara</string>
     <string name="voice_profile_delete_confirm">Padamkan <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Padam</string>
-    <string name="summary_pref_tts_engine_default">Sistem lalai</string>
+    <string name="summary_pref_tts_engine_default">Lalai sistem</string>
     <string name="title_pref_speech_pitch">Pic pertuturan</string>
     <string name="title_pref_speech_stream">Kelantangan pertuturan</string>
     <string name="summary_selector_speech_stream">Beralih antara kebolehaksesan, media, deringan dan volum panggilan</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Alihkan ke bawah</string>
     <string name="template_list_position">Kedudukan <xliff:g id="position" example="2">%1$d</xliff:g> daripada <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Diambil <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Digugurkan <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepaskan. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly menyatakan butiran item dalam pesanan ini. Untuk menukarnya, sentuh dan tahan butiran, kemudian seretnya ke atas atau ke bawah. Dengan SandFly dihidupkan, dwiketik dan tahan, kemudian seret. Anda juga boleh menggunakan tindakan Bergerak ke atas dan Bergerak ke bawah.</string>
     <string name="title_pref_speak_items_before_scroll">Sebut item sebelum ia menatal ke paparan</string>
     <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Semak kekunci dalam tetapan Perihalan automatik.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">Perkhidmatan AI untuk imlak</string>
     <string name="dictation_ai_same">Sama seperti perihalan automatik</string>
     <string name="title_pref_browse_mode_per_app">Ingat mod semak imbas dalam setiap apl</string>
-    <string name="title_pref_export_settings">Tetapan eksport</string>
-    <string name="title_pref_import_settings">Tetapan import</string>
+    <string name="title_pref_export_settings">Eksport tetapan</string>
+    <string name="title_pref_import_settings">Import tetapan</string>
     <string name="settings_export_done">Tetapan dieksport. Kunci API tidak disertakan</string>
     <string name="settings_export_failed">Tetapan tidak dapat dieksport</string>
     <string name="settings_import_done">Tetapan diimport</string>

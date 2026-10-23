@@ -75,10 +75,10 @@
   <string name="summary_pref_single_tap">Kliknij zaznaczony element raz, aby go uaktywnić. Jest to szybsza metoda niż dwukrotne kliknięcie.</string>
   <string name="pref_verbosity_title">Szczegółowość</string>
   <string name="pref_punctuation_title">Odczytuj znaki interpunkcyjne i symbole</string>
-  <string name="title_pref_category_manage_focus_indicator">Wskaźnik ostrości</string>
+  <string name="title_pref_category_manage_focus_indicator">Wskaźnik zaznaczenia</string>
   <string name="title_pref_category_manage_gestures">Gesty</string>
   <string name="title_pref_manage_labels">Etykiety niestandardowe</string>
-  <string name="title_pref_category_context_menu">Dostosuj menu SandFly</string>
+  <string name="title_pref_category_context_menu">Menu SandFly</string>
   <string name="title_pref_category_selector_menu">Sterowanie czytaniem</string>
   <string name="title_pref_category_navigation_menu">Edytuj opcje nawigacji</string>
   <string name="title_pref_manage_keyboard_shortcuts">Skróty klawiszowe</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Aby uruchomić to ustawienie, wyłącz, a następnie włącz SandFly.</string>
   <string name="title_pref_auto_image_captioning">Automatyczne opisy</string>
   <string name="title_pref_gemini_settings">Ustawienia Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini polecenia głosowe</string>
+  <string name="title_pref_gemini_enabled">Polecenia głosowe Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Otrzymuj szczegółowe opisy obrazów dzięki AI, wybierając „Opisz obraz” w menu SandFly.\n\nMożesz też otrzymywać automatyczne opisy, gdy zaznaczysz obraz lub ikonę. Automatyczne opisy działają bez połączenia z internetem.</string>
   <string name="title_pref_icon_detection">Automatyczne opisy ikon</string>
   <string name="title_pref_image_description">Automatyczne opisy obrazów</string>
@@ -1475,7 +1475,7 @@
     <string name="handwriting_unsupported_language">Rozpoznawanie pisma ręcznego nie jest dostępne w tym języku</string>
     <string name="title_pref_handwriting_keyboard">Klawiatura pisma ręcznego</string>
     <string name="summary_pref_handwriting_keyboard">Włącz pismo odręczne SandFly w ustawieniach klawiatury Android</string>
-    <string name="title_pref_handwriting_wait">Poczekaj po napisaniu</string>
+    <string name="title_pref_handwriting_wait">Oczekiwanie po napisaniu</string>
     <string name="value_handwriting_wait_200">0,2 sekundy</string>
     <string name="value_handwriting_wait_300">0,3 sekundy</string>
     <string name="value_handwriting_wait_400">0,4 sekundy</string>

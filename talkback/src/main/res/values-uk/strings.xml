@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Індикатор фокусування</string>
   <string name="title_pref_category_manage_gestures">Жести</string>
   <string name="title_pref_manage_labels">Спеціальні мітки</string>
-  <string name="title_pref_category_context_menu">SandFly меню</string>
+  <string name="title_pref_category_context_menu">Меню SandFly</string>
   <string name="title_pref_category_selector_menu">Елементи керування читанням</string>
   <string name="title_pref_category_navigation_menu">Редагувати елементи навігації</string>
   <string name="title_pref_manage_keyboard_shortcuts">Комбінації клавіш</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Щоб активувати це налаштування, вимкніть і знову ввімкніть SandFly.</string>
   <string name="title_pref_auto_image_captioning">Автоматичні описи</string>
   <string name="title_pref_gemini_settings">Налаштування Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini голосові команди</string>
+  <string name="title_pref_gemini_enabled">Голосові команди Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Отримуйте детальні описи зображень, створені за допомогою ШІ, коли вибираєте опцію \"Опис зображення\" в меню SandFly.\n\nВи також можете отримувати автоматичні описи, коли виділяєте зображення чи значок. Автоматичні описи працюють без інтернет-з’єднання.</string>
   <string name="title_pref_icon_detection">Автоматичні описи значків</string>
   <string name="title_pref_image_description">Автоматичні описи зображень</string>
@@ -1333,7 +1333,7 @@
     <string name="title_pref_delete_voice_profile">Видалити голосовий профіль</string>
     <string name="voice_profile_delete_confirm">Видалити <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Видалити</string>
-    <string name="summary_pref_tts_engine_default">Система за умовчанням</string>
+    <string name="summary_pref_tts_engine_default">Системний за умовчанням</string>
     <string name="title_pref_speech_pitch">Висота мовлення</string>
     <string name="title_pref_speech_stream">Гучність мовлення</string>
     <string name="summary_selector_speech_stream">Перемикання між доступністю, медіа, гучністю дзвінка та виклику</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">Час</string>
     <string name="title_pref_announce_ringer_mode">Режим дзвінка</string>
     <string name="summary_pref_announce_ringer_mode">Скажіть, коли дзвінок налаштовано на вібрацію або без звуку</string>
-    <string name="title_pref_category_feedback">Зворотній зв\'язок</string>
+    <string name="title_pref_category_feedback">Зворотний зв\'язок</string>
     <string name="title_pref_category_typing_and_braille">Введення та шрифт Брайля</string>
     <string name="title_pref_category_apps">Додатки</string>
     <string name="title_pref_touch_activation">Дотик і активація</string>
@@ -1405,13 +1405,13 @@
     <string name="phonetic_letters_mode_after_letter_delay">Після листа, затриманого, як \"ч, готель\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Після листа без затримки, як \"ч готель\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Замість літери, як \"готель\"</string>
-    <string name="title_pref_emoji_speech">Emoji</string>
+    <string name="title_pref_emoji_speech">Емодзі</string>
     <string name="emoji_speech_engine">Читання мовним механізмом</string>
     <string name="emoji_speech_names">Читає SandFly</string>
     <string name="emoji_speech_none">Немає</string>
     <string name="summary_selector_menu_emoji">Змініть спосіб читання емодзі</string>
     <string name="emoji_speech_state">Емодзі: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Підрахуйте повторювані емодзі</string>
+    <string name="title_pref_emoji_repeat_count">Підраховувати повторювані емодзі</string>
     <string name="emoji_repeat_count_off">Вимкнено</string>
     <string name="emoji_repeat_count_2">2 або більше</string>
     <string name="emoji_repeat_count_3">3 або більше</string>
@@ -1591,7 +1591,7 @@
     <string name="handwriting_unsupported_language">Розпізнавання рукописного тексту недоступне цією мовою</string>
     <string name="title_pref_handwriting_keyboard">Рукописна клавіатура</string>
     <string name="summary_pref_handwriting_keyboard">Увімкніть рукописне введення SandFly у налаштуваннях клавіатури Android</string>
-    <string name="title_pref_handwriting_wait">Зачекайте після написання</string>
+    <string name="title_pref_handwriting_wait">Очікування після написання</string>
     <string name="value_handwriting_wait_200">0,2 секунди</string>
     <string name="value_handwriting_wait_300">0,3 секунди</string>
     <string name="value_handwriting_wait_400">0,4 секунди</string>
@@ -1680,7 +1680,7 @@
     <string name="summary_pref_low_latency_audio">Відтворюйте звуки та мову SandFly через найшвидший звуковий шлях телефону, щоб ви почули їх швидше. Вимкніть його, якщо мова чи звуки перериваються або звучать неправильно.</string>
     <string name="value_focus_delay_200ms_default">0,2 секунди (за замовчуванням)</string>
     <string name="value_focus_delay_300ms">0,3 секунди</string>
-    <string name="title_pref_lift_to_activate">Підніміть, щоб активувати</string>
+    <string name="title_pref_lift_to_activate">Активація після підняття пальця</string>
     <string name="summary_support_change_lift_to_activate">Змініть, де підняття пальця активує елемент</string>
     <string name="value_lift_to_activate_disabled">Вимкнено</string>
     <string name="value_lift_to_activate_navigation_bar">Тільки на панелі навігації</string>
@@ -1690,7 +1690,7 @@
     <string name="summary_pref_wrap_around">Проведення повз останнього елемента переходить до першого, а повз першого – до останнього. Якщо вимкнено, наприкінці відтворюється звук.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Виправити зависання сенсорного дослідження</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволу DUMP SandFly може лише сказати, що дослідження дотиком може зависнути. Щоб виправити це, запустіть: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Виправлення сенсорного дослідження</string>
+    <string name="stuck_touch_exploration_fixing">Виправлення дослідження дотиком</string>
     <string name="stuck_touch_exploration_fixed">Дослідження дотиком виправлено</string>
     <string name="stuck_touch_exploration_not_fixed">Дослідження дотиком все ще застрягло. Перезапустіть телефон, щоб виправити це.</string>
     <string name="stuck_touch_exploration_restart">Дослідження дотиком може зависнути. Перезапустіть телефон, щоб виправити це.</string>
@@ -1736,7 +1736,7 @@
     <string name="action_move_down">Перемістити вниз</string>
     <string name="template_list_position">Позиція <xliff:g id="position" example="2">%1$d</xliff:g> з <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Взяв <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Випав <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Відпущено: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly говорить деталі елемента в цьому порядку. Щоб змінити його, натисніть і утримуйте деталь, а потім перетягніть її вгору або вниз. Коли SandFly увімкнено, двічі торкніться й утримуйте, а потім перетягніть. Ви також можете використовувати дії «Перемістити вгору» та «Перемістити вниз».</string>
     <string name="title_pref_speak_items_before_scroll">Продиктуйте елементи, перш ніж вони прокрутяться до поля зору</string>
     <string name="gemini_error_api_key">Gemini не прийняв ключ API. Перевірте ключ у налаштуваннях автоматичних описів.</string>

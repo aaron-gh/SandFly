@@ -1342,7 +1342,7 @@
     <string name="summary_pref_speak_in_phrases">Gryphon వంటి స్పీచ్ ఇంజిన్‌ల కోసం నెమ్మదిగా ఆగిపోతుంది, కాబట్టి దూరంగా స్వైప్ చేయడం వల్ల పొడవైన వచనం ఒకేసారి ఆగిపోతుంది. చాలా ఇంజిన్‌లు విడిగా పంపిన వాక్యాల మధ్య ఎక్కువసేపు పాజ్ చేస్తాయి, కాబట్టి మీది త్వరగా ఆగిపోతే దీన్ని నిలిపివేయండి.</string>
     <string name="battery_optimization_notification_title">బ్యాటరీ ఆప్టిమైజేషన్ SandFly ఆగిపోతుంది</string>
     <string name="battery_optimization_notification_text">ఈ ఫోన్‌లో, స్క్రీన్ ఆఫ్ అయిన తర్వాత బ్యాటరీ సేవర్ SandFlyని ఆపివేయగలదు, కనుక ఇది రీస్టార్ట్ అయ్యే వరకు నిశ్శబ్దంగా ఉంటుంది. బ్యాటరీ ఆప్టిమైజేషన్‌ని తెరవడానికి నొక్కండి, అన్ని యాప్‌లను ఎంచుకోండి, SandFlyని కనుగొని, ఆప్టిమైజ్ చేయవద్దు ఎంచుకోండి.</string>
-    <string name="title_pref_mute_speech_while_recording">రికార్డింగ్ చేస్తున్నప్పుడు నిశ్శబ్దంగా ఉండండి</string>
+    <string name="title_pref_mute_speech_while_recording">రికార్డింగ్ సమయంలో నిశ్శబ్దం</string>
     <string name="summary_pref_mute_speech_while_recording">హెడ్‌ఫోన్‌లు కనెక్ట్ చేయకుండా యాప్ రికార్డ్ చేస్తున్నప్పుడు, SandFly మీ సంజ్ఞలు, కీలు మరియు టైపింగ్‌లకు సమాధానంగా మాత్రమే మాట్లాడుతుంది మరియు నోటిఫికేషన్‌ల వంటి వాటి కోసం నిశ్శబ్దంగా ఉంటుంది, తద్వారా అవి రికార్డ్ చేయబడవు.</string>
     <string name="title_pref_switch_languages">స్వయంచాలకంగా భాషను మార్చండి</string>
     <string name="title_pref_switch_dialects">మాండలికాన్ని స్వయంచాలకంగా మార్చండి</string>
@@ -1364,7 +1364,7 @@
     <string name="title_pref_announce_time">సమయం</string>
     <string name="title_pref_announce_ringer_mode">రింగర్ మోడ్</string>
     <string name="summary_pref_announce_ringer_mode">రింగర్ వైబ్రేట్ లేదా నిశ్శబ్దంగా సెట్ చేయబడినప్పుడు చెప్పండి</string>
-    <string name="title_pref_category_feedback">అభిప్రాయం</string>
+    <string name="title_pref_category_feedback">ఫీడ్‌బ్యాక్</string>
     <string name="title_pref_category_typing_and_braille">టైపింగ్ మరియు బ్రెయిలీ</string>
     <string name="title_pref_category_apps">యాప్‌లు</string>
     <string name="title_pref_touch_activation">టచ్ మరియు యాక్టివేషన్</string>
@@ -1702,7 +1702,7 @@
     <string name="title_keyboard_echo_physical">భౌతిక కీబోర్డ్ ప్రతిధ్వని</string>
     <string name="title_keyboard_echo_braille_keyboard">బ్రెయిలీ కీబోర్డ్ ప్రతిధ్వని</string>
     <string name="title_keyboard_echo_handwriting_keyboard">చేతివ్రాత కీబోర్డ్ ప్రతిధ్వని</string>
-    <string name="title_keyboard_echo_braille_display">బ్రెయిలీ ప్రదర్శన ప్రతిధ్వని</string>
+    <string name="title_keyboard_echo_braille_display">బ్రెయిలీ డిస్‌ప్లే ప్రతిధ్వని</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">టైప్ చేసేటప్పుడు ప్రసంగానికి అంతరాయం కలిగించండి</string>
     <string name="pref_interrupt_typing_entry_always">ఎల్లప్పుడూ</string>
@@ -1719,7 +1719,7 @@
     <string name="action_move_down">క్రిందికి తరలించు</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>లో <xliff:g id="position" example="2">%1$d</xliff:g> స్థానం</string>
     <string name="template_item_details_order_picked_up">పికప్ చేయబడింది <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">పడిపోయింది <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> వదిలివేయబడింది. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ఈ క్రమంలో ఒక వస్తువు వివరాలను చెబుతుంది. దాన్ని మార్చడానికి, ఒక వివరాలను నొక్కి పట్టుకోండి, ఆపై దాన్ని పైకి లేదా క్రిందికి లాగండి. SandFly ఆన్‌తో, రెండుసార్లు నొక్కి పట్టుకోండి, ఆపై లాగండి. మీరు మూవ్ అప్ మరియు మూవ్ డౌన్ చర్యలను కూడా ఉపయోగించవచ్చు.</string>
     <string name="title_pref_speak_items_before_scroll">అంశాలు వీక్షణలోకి స్క్రోల్ చేయడానికి ముందు వాటిని మాట్లాడండి</string>
     <string name="gemini_error_api_key">Gemini API కీని అంగీకరించలేదు. స్వయంచాలక వివరణల సెట్టింగ్‌లలో కీని తనిఖీ చేయండి.</string>
@@ -1755,7 +1755,7 @@
     <string name="title_pref_dictation_ai_service">డిక్టేషన్ కోసం AI సేవ</string>
     <string name="dictation_ai_same">ఆటోమేటిక్ వివరణలకు ఉన్నదే</string>
     <string name="title_pref_browse_mode_per_app">ప్రతి యాప్‌లో బ్రౌజ్ మోడ్‌ను గుర్తుంచుకోండి</string>
-    <string name="title_pref_export_settings">ఎగుమతి సెట్టింగులు</string>
+    <string name="title_pref_export_settings">సెట్టింగ్‌లను ఎగుమతి చేయండి</string>
     <string name="title_pref_import_settings">సెట్టింగ్‌లను దిగుమతి చేయండి</string>
     <string name="settings_export_done">సెట్టింగ్‌లు ఎగుమతి చేయబడ్డాయి. API కీలు చేర్చబడలేదు</string>
     <string name="settings_export_failed">సెట్టింగ్‌లను ఎగుమతి చేయడం సాధ్యపడలేదు</string>

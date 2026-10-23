@@ -75,10 +75,10 @@
   <string name="summary_pref_single_tap">Označenú položku aktivujete jedným klepnutím. Rýchlejšie prechádzanie ako dvojité klepnutie.</string>
   <string name="pref_verbosity_title">Podrobnosť</string>
   <string name="pref_punctuation_title">Vyslovovanie interpunkcie a symbolov</string>
-  <string name="title_pref_category_manage_focus_indicator">Indikátor zaostrenia</string>
+  <string name="title_pref_category_manage_focus_indicator">Indikátor výberu</string>
   <string name="title_pref_category_manage_gestures">Gestá</string>
   <string name="title_pref_manage_labels">Vlastné štítky</string>
-  <string name="title_pref_category_context_menu">SandFly menu</string>
+  <string name="title_pref_category_context_menu">Ponuka SandFly</string>
   <string name="title_pref_category_selector_menu">Ovládanie čítania</string>
   <string name="title_pref_category_navigation_menu">Upraviť možnosti navigácie</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klávesové skratky</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Ak chcete dané nastavenie aktivovať, vypnite a znova zapnite SandFly.</string>
   <string name="title_pref_auto_image_captioning">Automatické opisy</string>
   <string name="title_pref_gemini_settings">Nastavenia Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini hlasové príkazy</string>
+  <string name="title_pref_gemini_enabled">Hlasové príkazy Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Keď v ponuke čítačky SandFly vyberiete Opísať obrázok, získate podrobné opisy obrázkov pomocou umelej inteligencie.\n\nAutomatické opisy môžete získať aj tak, že označíte obrázok alebo ikonu. Automatické opisy fungujú aj bez internetového pripojenia.</string>
   <string name="title_pref_icon_detection">Automatické opisy ikon</string>
   <string name="title_pref_image_description">Automatické opisy obrázkov</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Žiadne</string>
     <string name="summary_selector_menu_emoji">Zmeňte spôsob čítania emodži</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Počítajte opakované emotikony</string>
+    <string name="title_pref_emoji_repeat_count">Počítať opakované emotikony</string>
     <string name="emoji_repeat_count_off">Vypnuté</string>
     <string name="emoji_repeat_count_2">2 alebo viac</string>
     <string name="emoji_repeat_count_3">3 alebo viac</string>
@@ -1591,7 +1591,7 @@
     <string name="handwriting_unsupported_language">Rozpoznávanie rukou písaného textu nie je v tomto jazyku dostupné</string>
     <string name="title_pref_handwriting_keyboard">Klávesnica na písanie rukou</string>
     <string name="summary_pref_handwriting_keyboard">Zapnite ručné písanie SandFly v nastaveniach klávesnice Android</string>
-    <string name="title_pref_handwriting_wait">Po napísaní počkajte</string>
+    <string name="title_pref_handwriting_wait">Čakanie po napísaní</string>
     <string name="value_handwriting_wait_200">0,2 sekundy</string>
     <string name="value_handwriting_wait_300">0,3 sekundy</string>
     <string name="value_handwriting_wait_400">0,4 sekundy</string>
@@ -1680,7 +1680,7 @@
     <string name="summary_pref_low_latency_audio">Prehrávajte zvuky a reč SandFly prostredníctvom najrýchlejšej zvukovej cesty telefónu, aby ste ich počuli skôr. Vypnite ho, ak sa reč alebo zvuky rozpadnú alebo znejú zle.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekundy (predvolené)</string>
     <string name="value_focus_delay_300ms">0,3 sekundy</string>
-    <string name="title_pref_lift_to_activate">Aktivujte zdvihnutím</string>
+    <string name="title_pref_lift_to_activate">Aktivovať zdvihnutím prsta</string>
     <string name="summary_support_change_lift_to_activate">Zmeňte miesto, kde sa položka aktivuje zdvihnutím prsta</string>
     <string name="value_lift_to_activate_disabled">Zakázané</string>
     <string name="value_lift_to_activate_navigation_bar">Iba na navigačnom paneli</string>
@@ -1716,7 +1716,7 @@
     <string name="tablet_held_up_faces_away_on">Tablet zdvihnutý tvárami preč</string>
     <string name="tablet_held_up_faces_away_off">Tablet zdvihol tvár preč</string>
     <string name="title_keyboard_echo_on_screen">Ozvena klávesnice na obrazovke</string>
-    <string name="title_keyboard_echo_physical">Fyzická ozvena klávesnice</string>
+    <string name="title_keyboard_echo_physical">Ozvena fyzickej klávesnice</string>
     <string name="title_keyboard_echo_braille_keyboard">Ozvena Braillovej klávesnice</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ozvena klávesnice na písanie rukou</string>
     <string name="title_keyboard_echo_braille_display">Ozvena Braillovho displeja</string>
@@ -1736,7 +1736,7 @@
     <string name="action_move_down">Presunúť nadol</string>
     <string name="template_list_position">Pozícia <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Vyzdvihnuté <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Klesla <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Pustené: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly hovorí o detailoch položky v tejto objednávke. Ak ho chcete zmeniť, dotknite sa a podržte detail a potom ho potiahnite nahor alebo nadol. So zapnutým SandFly dvakrát ťuknite a podržte, potom potiahnite. Môžete tiež použiť akcie Posunúť nahor a Posunúť nadol.</string>
     <string name="title_pref_speak_items_before_scroll">Vyslovte položky predtým, ako sa posunú do zobrazenia</string>
     <string name="gemini_error_api_key">Gemini neakceptoval API kľúč. Skontrolujte kľúč v nastaveniach automatických popisov.</string>

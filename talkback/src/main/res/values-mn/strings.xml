@@ -1370,15 +1370,15 @@
     <string name="title_screen_announcements_unlock">Утасны түгжээг тайлсан үед</string>
     <string name="title_pref_say_screen_off">\"Дэлгэц унтраах\" гэж хэлээрэй</string>
     <string name="title_pref_say_device_unlocked">\"Төхөөрөмжийн түгжээг тайлсан\" гэж хэлээрэй</string>
-    <string name="title_pref_announce_time">Цаг хугацаа</string>
+    <string name="title_pref_announce_time">Цаг</string>
     <string name="title_pref_announce_ringer_mode">Хонхны горим</string>
     <string name="summary_pref_announce_ringer_mode">Хонхны дуу чичиргээ эсвэл чимээгүй болсныг хэлнэ үү</string>
-    <string name="title_pref_category_feedback">Санал хүсэлт</string>
+    <string name="title_pref_category_feedback">Хариу үйлдэл</string>
     <string name="title_pref_category_typing_and_braille">Шивэх болон брайль</string>
     <string name="title_pref_category_apps">Аппууд</string>
     <string name="title_pref_touch_activation">Хүрч, идэвхжүүлнэ үү</string>
     <string name="title_pref_navigation">Навигац</string>
-    <string name="title_pref_category_more">Илүү</string>
+    <string name="title_pref_category_more">Бусад</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch дохиог нөөцлөх</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly хоёр хуруугаараа нэг болон давхар товшилтыг зогсоосноор Samsung Vibration Watch ашиглах боломжтой. Цагныхаа хүртээмжийн тохиргоонд Vibration Watch-г идэвхжүүлнэ үү.</string>
     <string name="shortcut_reserved_for_vibration_watch">Нарийвчилсан тохиргоонд Vibration Watch-д нөөцөлсөн</string>
@@ -1411,7 +1411,7 @@
     <string name="emoji_speech_none">Уншихгүй</string>
     <string name="summary_selector_menu_emoji">Эможи хэрхэн уншихыг өөрчил</string>
     <string name="emoji_speech_state">Эможи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Давтагдсан эможийг тоол</string>
+    <string name="title_pref_emoji_repeat_count">Давтагдсан эможи тоолох</string>
     <string name="emoji_repeat_count_off">Унтраалттай</string>
     <string name="emoji_repeat_count_2">2 ба түүнээс дээш</string>
     <string name="emoji_repeat_count_3">3 ба түүнээс дээш</string>
@@ -1558,7 +1558,7 @@
     <string name="value_audio_output_device_usb_headset">USB чихэвч</string>
     <string name="value_audio_output_device_usb_device">USB аудио төхөөрөмж</string>
     <string name="title_pref_speaker_devices">Эдгээр төхөөрөмжтэй утасны чанга яригч</string>
-    <string name="summary_pref_speaker_devices_none">Хоосон</string>
+    <string name="summary_pref_speaker_devices_none">Байхгүй</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth эсвэл утастай төхөөрөмж хараахан холбогдоогүй байна</string>
     <string name="pref_reduce_window_delay_summary">SandFly нь хөдөлгөөнт дүрс унтраалттай үед шинэ дэлгэцийг илүү хурдан уншдаг. Энэ нь утасны хөдөлгөөнт дүрсийг бүхэлд нь унтраадаг.</string>
     <string name="dialog_message_detailed_ai_description">Сонгосон зургуудыг тайлбарлахын тулд Google-ийн Gemini API руу илгээдэг. Төхөөрөмж дээрх AI-г асаасан үед тэдгээрийг энэ утсан дээр тайлбарласан бөгөөд илгээгдэхгүй.\n\nҮнэгүй API түлхүүрээр Google нь хүлээн авсан зүйлээ хадгалж, бүтээгдэхүүнээ сайжруулахад ашиглаж, хүмүүсээр хянуулж болно. Generative AI нь туршилтын шинж чанартай тул алдаа гаргах болно. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> хамаарна.</string>
@@ -1672,7 +1672,7 @@
     <string name="summary_pref_low_latency_audio">SandFly-ийн дуу, яриаг утасны хамгийн хурдан аудио замаар тоглуулаарай, ингэснээр та тэдгээрийг илүү хурдан сонсох болно. Яриа, дуу чимээ тасарсан эсвэл буруу сонсогдож байвал үүнийг унтраа.</string>
     <string name="value_focus_delay_200ms_default">0.2 секунд (өгөгдмөл)</string>
     <string name="value_focus_delay_300ms">0.3 секунд</string>
-    <string name="title_pref_lift_to_activate">Идэвхжүүлэхийн тулд өргө</string>
+    <string name="title_pref_lift_to_activate">Хуруугаа өргөж идэвхжүүлэх</string>
     <string name="summary_support_change_lift_to_activate">Хуруугаа өргөснөөр тухайн зүйлийг идэвхжүүлдэг газрыг өөрчлөх</string>
     <string name="value_lift_to_activate_disabled">Идэвхгүй</string>
     <string name="value_lift_to_activate_navigation_bar">Зөвхөн навигацийн талбар дээр</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">Доош зөөх</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>-ийн <xliff:g id="position" example="2">%1$d</xliff:g> байрлал</string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> авсан. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> буурсан. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> тавигдсан. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly нь тухайн зүйлийн дэлгэрэнгүйг энэ дарааллаар заана. Үүнийг өөрчлөхийн тулд тодорхой зүйлийг удаан дарж, дээш эсвэл доош чирнэ үү. SandFly асаалттай үед давхар товшоод удаан дараад чирнэ үү. Та мөн дээш, доош зөөх үйлдлүүдийг ашиглаж болно.</string>
     <string name="title_pref_speak_items_before_scroll">Зүйлүүдийг харагдуулахын өмнө ярина уу</string>
     <string name="gemini_error_api_key">Gemini API түлхүүрийг хүлээн аваагүй. Автомат тайлбарын тохиргооны товчлуурыг шалгана уу.</string>
@@ -1764,8 +1764,8 @@
     <string name="title_pref_dictation_ai_service">Хэлж бичүүлэхэд зориулсан AI үйлчилгээ</string>
     <string name="dictation_ai_same">Автомат тайлбаруудынхтай ижил</string>
     <string name="title_pref_browse_mode_per_app">Апп тус бүрийн хайлтын горимыг санаарай</string>
-    <string name="title_pref_export_settings">Экспортын тохиргоо</string>
-    <string name="title_pref_import_settings">Импортын тохиргоо</string>
+    <string name="title_pref_export_settings">Тохиргоог экспортлох</string>
+    <string name="title_pref_import_settings">Тохиргоог импортлох</string>
     <string name="settings_export_done">Тохиргоог экспортолсон. API түлхүүрүүдийг оруулаагүй болно</string>
     <string name="settings_export_failed">Тохиргоог экспорт хийж чадсангүй</string>
     <string name="settings_import_done">Тохиргоог импортолсон</string>

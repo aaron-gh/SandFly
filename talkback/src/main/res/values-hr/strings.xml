@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Isključite SandFly, a zatim ga ponovo uključite da biste uključili postavku.</string>
   <string name="title_pref_auto_image_captioning">Automatski opisi</string>
   <string name="title_pref_gemini_settings">Postavke za Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini glasovne naredbe</string>
+  <string name="title_pref_gemini_enabled">Glasovne naredbe za Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Primajte detaljne opise AI slika kad odaberete opciju \\"Opiši sliku\\" s SandFlyovog izbornika.\n\nMožete dobiti i automatske opise kad fokusirate sliku ili ikonu. Automatski opisi funkcioniraju bez internetske veze.</string>
   <string name="title_pref_icon_detection">Automatski opisi ikona</string>
   <string name="title_pref_image_description">Automatski opisi slika</string>
@@ -1676,7 +1676,7 @@
     <string name="summary_pref_low_latency_audio">Reproducirajte zvukove i govor SandFly putem najbržeg zvučnog puta telefona kako biste ih čuli prije. Isključite ga ako se govor ili zvukovi prekidaju ili zvuče pogrešno.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekunde (zadano)</string>
     <string name="value_focus_delay_300ms">0,3 sekunde</string>
-    <string name="title_pref_lift_to_activate">Podignite za aktiviranje</string>
+    <string name="title_pref_lift_to_activate">Aktiviranje podizanjem prsta</string>
     <string name="summary_support_change_lift_to_activate">Promijenite gdje podizanjem prsta aktivirate stavku</string>
     <string name="value_lift_to_activate_disabled">Onesposobljeno</string>
     <string name="value_lift_to_activate_navigation_bar">Samo na navigacijskoj traci</string>
@@ -1732,7 +1732,7 @@
     <string name="action_move_down">Pomakni dolje</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> od <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Preuzeto <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Pao <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Ispušteno: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly kaže pojedinosti stavke u ovom redoslijedu. Da biste ga promijenili, dodirnite i držite detalj, zatim ga povucite gore ili dolje. S uključenim SandFly dvaput dodirnite i držite, a zatim povucite. Također možete koristiti akcije Pomakni gore i Pomakni dolje.</string>
     <string name="title_pref_speak_items_before_scroll">Izgovorite stavke prije nego što se pomaknu u prikaz</string>
     <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Provjerite ključ u postavkama automatskih opisa.</string>
@@ -1769,7 +1769,7 @@
     <string name="dictation_ai_same">Isto kao za automatske opise</string>
     <string name="title_pref_browse_mode_per_app">Upamtite način pregledavanja u svakoj aplikaciji</string>
     <string name="title_pref_export_settings">Izvoz postavki</string>
-    <string name="title_pref_import_settings">Postavke uvoza</string>
+    <string name="title_pref_import_settings">Uvoz postavki</string>
     <string name="settings_export_done">Postavke su izvezene. API ključevi nisu uključeni</string>
     <string name="settings_export_failed">Postavke se ne mogu izvesti</string>
     <string name="settings_import_done">Postavke su uvezene</string>

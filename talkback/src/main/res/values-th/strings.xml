@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">สัญลักษณ์แสดงโฟกัส</string>
   <string name="title_pref_category_manage_gestures">ท่าทางสัมผัส</string>
   <string name="title_pref_manage_labels">ป้ายกำกับที่กำหนดเอง</string>
-  <string name="title_pref_category_context_menu">SandFly เมนู</string>
+  <string name="title_pref_category_context_menu">เมนู SandFly</string>
   <string name="title_pref_category_selector_menu">การควบคุมการอ่าน</string>
   <string name="title_pref_category_navigation_menu">แก้ไขตัวเลือกการนําทาง</string>
   <string name="title_pref_manage_keyboard_shortcuts">แป้นพิมพ์ลัด</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">ปิดและเปิด SandFly ขึ้นมาใหม่เพื่อเปิดใช้การตั้งค่า</string>
   <string name="title_pref_auto_image_captioning">คำอธิบายอัตโนมัติ</string>
   <string name="title_pref_gemini_settings">การตั้งค่า Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini คำสั่งเสียง</string>
+  <string name="title_pref_gemini_enabled">คำสั่งเสียง Gemini</string>
   <string name="title_pref_category_automatic_description_summary">ดูคำอธิบายรูปภาพ AI โดยละเอียดเมื่อเลือก \\"อธิบายรูปภาพ\\" จากเมนู SandFly\n\nรวมถึงยังดูคำอธิบายอัตโนมัติเมื่อโฟกัสที่รูปภาพหรือไอคอนหนึ่งๆ ได้ด้วย คำอธิบายอัตโนมัติสามารถทำงานได้โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</string>
   <string name="title_pref_icon_detection">คำอธิบายไอคอนอัตโนมัติ</string>
   <string name="title_pref_image_description">คำอธิบายรูปภาพอัตโนมัติ</string>
@@ -1374,7 +1374,7 @@
     <string name="title_pref_announce_time">เวลา</string>
     <string name="title_pref_announce_ringer_mode">โหมดเสียงเรียกเข้า</string>
     <string name="summary_pref_announce_ringer_mode">พูดเมื่อตั้งค่าเสียงเรียกเข้าเป็นสั่นหรือปิดเสียง</string>
-    <string name="title_pref_category_feedback">ข้อเสนอแนะ</string>
+    <string name="title_pref_category_feedback">การตอบสนอง</string>
     <string name="title_pref_category_typing_and_braille">การพิมพ์และอักษรเบรลล์</string>
     <string name="title_pref_category_apps">แอป</string>
     <string name="title_pref_touch_activation">สัมผัสและเปิดใช้งาน</string>
@@ -1584,7 +1584,7 @@
     <string name="handwriting_unsupported_language">การรู้จำลายมือไม่พร้อมใช้งานในภาษานี้</string>
     <string name="title_pref_handwriting_keyboard">แป้นพิมพ์เขียนด้วยลายมือ</string>
     <string name="summary_pref_handwriting_keyboard">เปิด SandFly การเขียนด้วยลายมือในการตั้งค่าแป้นพิมพ์ของ Android</string>
-    <string name="title_pref_handwriting_wait">รอหลังเขียนครับ</string>
+    <string name="title_pref_handwriting_wait">เวลารอหลังเขียน</string>
     <string name="value_handwriting_wait_200">0.2 วินาที</string>
     <string name="value_handwriting_wait_300">0.3 วินาที</string>
     <string name="value_handwriting_wait_400">0.4 วินาที</string>
@@ -1729,7 +1729,7 @@
     <string name="action_move_down">เลื่อนลง</string>
     <string name="template_list_position">ตำแหน่ง <xliff:g id="position" example="2">%1$d</xliff:g> จาก <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">หยิบขึ้นมา <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ลดลง <xliff:g id="detail" example="Name">%1$s</xliff:g> <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">วาง <xliff:g id="detail" example="Name">%1$s</xliff:g> แล้ว <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ระบุรายละเอียดของรายการในคำสั่งซื้อนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ จากนั้นลากขึ้นหรือลง เมื่อเปิด SandFly ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังสามารถใช้การกระทำเลื่อนขึ้นและเลื่อนลงได้</string>
     <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้าสู่มุมมอง</string>
     <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบกุญแจในการตั้งค่าคำอธิบายอัตโนมัติ</string>
@@ -1765,7 +1765,7 @@
     <string name="title_pref_dictation_ai_service">บริการเอไอสำหรับการพิมพ์ตามเสียงพูด</string>
     <string name="dictation_ai_same">เหมือนกับคำอธิบายอัตโนมัติ</string>
     <string name="title_pref_browse_mode_per_app">จำโหมดเรียกดูในแต่ละแอป</string>
-    <string name="title_pref_export_settings">การตั้งค่าการส่งออก</string>
+    <string name="title_pref_export_settings">ส่งออกการตั้งค่า</string>
     <string name="title_pref_import_settings">นำเข้าการตั้งค่า</string>
     <string name="settings_export_done">ส่งออกการตั้งค่าแล้ว ไม่รวมคีย์ API</string>
     <string name="settings_export_failed">ไม่สามารถส่งออกการตั้งค่าได้</string>

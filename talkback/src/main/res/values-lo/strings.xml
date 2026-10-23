@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">ຕົວຊີ້ວັດຈຸດສຸມ</string>
   <string name="title_pref_category_manage_gestures">ທ່າທາງ</string>
   <string name="title_pref_manage_labels">ປ້າຍກຳກັບແບບກຳນົດເອງ</string>
-  <string name="title_pref_category_context_menu">SandFly ເມນູ</string>
+  <string name="title_pref_category_context_menu">ເມນູ SandFly</string>
   <string name="title_pref_category_selector_menu">ຕົວຄວບຄຸມການອ່ານ</string>
   <string name="title_pref_category_navigation_menu">ແກ້ໄຂຕົວເລືອກການນຳທາງ</string>
   <string name="title_pref_manage_keyboard_shortcuts">ປຸ່ມລັດແປ້ນພິມ</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">ປິດ SandFly ແລ້ວເປີດຄືນໃໝ່ເພື່ອເປີດໃຊ້ການຕັ້ງຄ່າ.</string>
   <string name="title_pref_auto_image_captioning">ຄຳອະທິບາຍອັດຕະໂນມັດ</string>
   <string name="title_pref_gemini_settings">ການຕັ້ງຄ່າ Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini ຄຳສັ່ງສຽງ</string>
+  <string name="title_pref_gemini_enabled">ຄຳສັ່ງສຽງ Gemini</string>
   <string name="title_pref_category_automatic_description_summary">ຮັບຄຳອະທິບາຍຮູບ AI ແບບລະອຽດເມື່ອທ່ານເລືອກ \“ອະທິບາຍຮູບ\” ຈາກເມນູ SandFly.\n\nທ່ານຍັງສາມາດຮັບຄຳອະທິບາຍອັດຕະໂນມັດໄດ້ນຳເມື່ອທ່ານໂຟກັສຢູ່ທີ່ຮູບ ຫຼື ໄອຄອນ. ຄໍາອະທິບາຍອັດຕະໂນມັດເຮັດວຽກໂດຍບໍ່ມີການເຊື່ອມຕໍ່ອິນເຕີເນັດ.</string>
   <string name="title_pref_icon_detection">ຄຳອະທິບາຍໄອຄອນອັດຕະໂນມັດ</string>
   <string name="title_pref_image_description">ຄຳອະທິບາຍຮູບອັດຕະໂນມັດ</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_announce_time">ເວລາ</string>
     <string name="title_pref_announce_ringer_mode">ໂໝດສຽງ</string>
     <string name="summary_pref_announce_ringer_mode">ເວົ້າເມື່ອສຽງດັງຖືກຕັ້ງໃຫ້ສັ່ນ ຫຼືງຽບ</string>
-    <string name="title_pref_category_feedback">ຄໍາຕິຊົມ</string>
+    <string name="title_pref_category_feedback">ການຕອບສະໜອງ</string>
     <string name="title_pref_category_typing_and_braille">ການພິມ ແລະອັກສອນນູນ</string>
     <string name="title_pref_category_apps">ແອັບ</string>
     <string name="title_pref_touch_activation">ແຕະ ແລະເປີດໃຊ້ງານ</string>
@@ -1682,8 +1682,8 @@
     <string name="summary_pref_wrap_around">ການປັດຜ່ານລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດ, ແລະຜ່ານໄປອັນທໍາອິດໄປຫາອັນສຸດທ້າຍ. ເມື່ອປິດ, ສຽງຈະຫຼິ້ນໃນຕອນທ້າຍແທນ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສໍາຜັດທີ່ຕິດຄ້າງ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີການອະນຸຍາດ DUMP, SandFly ພຽງແຕ່ເວົ້າໄດ້ວ່າ ການສຳຜັດສຳຜັດອາດຈະຕິດຢູ່. ເພື່ອໃຫ້ມັນແກ້ໄຂ, ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">ການແກ້ໄຂສໍາຫຼວດສໍາພັດ</string>
-    <string name="stuck_touch_exploration_fixed">ການສໍາພັດສໍາຫຼວດແກ້ໄຂ</string>
+    <string name="stuck_touch_exploration_fixing">ກຳລັງແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດ</string>
+    <string name="stuck_touch_exploration_fixed">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດແລ້ວ</string>
     <string name="stuck_touch_exploration_not_fixed">ການສໍາຫຼວດສໍາພັດຍັງຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂມັນ.</string>
     <string name="stuck_touch_exploration_restart">ການສໍາຫຼວດສໍາຜັດອາດຈະຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂມັນ.</string>
     <string name="stuck_touch_exploration_grant_dump">ການສໍາຫຼວດສໍາຜັດອາດຈະຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂ, ຫຼືໃຫ້ SandFly DUMP ອະນຸຍາດກັບ ADB ເພື່ອໃຫ້ມັນສາມາດແກ້ໄຂໄດ້.</string>
@@ -1707,11 +1707,11 @@
     <string name="summary_support_tablet_held_up_faces_away">ສຳລັບແປ້ນພິມອັກສອນນູນໃນແທັບເລັດ ຫຼືໂທລະສັບທີ່ເປີດອອກ</string>
     <string name="tablet_held_up_faces_away_on">ແທັບເລັດຖືຂຶ້ນໜ້າຫ່າງໆ</string>
     <string name="tablet_held_up_faces_away_off">ແທັບເລັດຍົກຂຶ້ນໜ້າອອກ</string>
-    <string name="title_keyboard_echo_on_screen">ສຽງແປ້ນແປ້ນພິມໃນໜ້າຈໍ</string>
-    <string name="title_keyboard_echo_physical">ສຽງແປ້ນພິມທາງກາຍ</string>
+    <string name="title_keyboard_echo_on_screen">ສຽງສະທ້ອນແປ້ນພິມໃນໜ້າຈໍ</string>
+    <string name="title_keyboard_echo_physical">ສຽງສະທ້ອນແປ້ນພິມພາຍນອກ</string>
     <string name="title_keyboard_echo_braille_keyboard">ສຽງແປ້ນພິມອັກສອນນູນ</string>
     <string name="title_keyboard_echo_handwriting_keyboard">ສຽງແປ້ນພິມລາຍມື</string>
-    <string name="title_keyboard_echo_braille_display">ຈໍສະແດງຜົນອັກສອນນູນ</string>
+    <string name="title_keyboard_echo_braille_display">ສຽງສະທ້ອນຈໍສະແດງຜົນອັກສອນນູນ</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">ຂັດຈັງຫວະສຽງເວົ້າໃນເວລາພິມ</string>
     <string name="pref_interrupt_typing_entry_always">ສະເໝີ</string>
@@ -1728,7 +1728,7 @@
     <string name="action_move_down">ຍ້າຍລົງ</string>
     <string name="template_list_position">ຕຳແໜ່ງ <xliff:g id="position" example="2">%1$d</xliff:g> ຂອງ<xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">ຮັບແລ້ວ<xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ຕົກ <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">ວາງ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ບອກລາຍລະອຽດຂອງສິນຄ້າໃນຄໍາສັ່ງນີ້. ເພື່ອປ່ຽນມັນ, ແຕະລາຍລະອຽດຄ້າງໄວ້, ຈາກນັ້ນລາກມັນຂຶ້ນ ຫຼື ລົງ. ເມື່ອເປີດ SandFly, ແຕະສອງເທື່ອຄ້າງໄວ້, ຈາກນັ້ນລາກ. ທ່ານຍັງສາມາດໃຊ້ການເຄື່ອນໄຫວຂຶ້ນແລະເລື່ອນລົງໄດ້.</string>
     <string name="title_pref_speak_items_before_scroll">ເວົ້າລາຍການກ່ອນທີ່ຈະເລື່ອນເຂົ້າໄປເບິ່ງ</string>
     <string name="gemini_error_api_key">Gemini ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງລະຫັດໃນການຕັ້ງຄ່າຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>

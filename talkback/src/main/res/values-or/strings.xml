@@ -1372,7 +1372,7 @@
     <string name="title_pref_announce_time">ସମୟ</string>
     <string name="title_pref_announce_ringer_mode">ରିଙ୍ଗର୍ ମୋଡ୍</string>
     <string name="summary_pref_announce_ringer_mode">ଯେତେବେଳେ ରିଙ୍ଗର କମ୍ପିବା କିମ୍ବା ନୀରବ ହେବାକୁ ସେଟ୍ ହୋଇଛି କୁହନ୍ତୁ</string>
-    <string name="title_pref_category_feedback">ମତାମତ</string>
+    <string name="title_pref_category_feedback">ଫିଡବ୍ୟାକ୍</string>
     <string name="title_pref_category_typing_and_braille">ଟାଇପିଂ ଏବଂ ବ୍ରେଲି</string>
     <string name="title_pref_category_apps">ଆପଗୁଡ଼ିକ</string>
     <string name="title_pref_touch_activation">ସ୍ପର୍ଶ ଏବଂ ସକ୍ରିୟକରଣ</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_unsupported_language">ଏହି ଭାଷାରେ ହସ୍ତଲିଖନ ସ୍ୱୀକୃତି ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="title_pref_handwriting_keyboard">ହସ୍ତଲିଖନ କୀବୋର୍ଡ୍</string>
     <string name="summary_pref_handwriting_keyboard">Android ର କୀବୋର୍ଡ୍ ସେଟିଙ୍ଗରେ SandFly ହସ୍ତଲିଖନ ଟର୍ନ୍ ଅନ୍ କରନ୍ତୁ</string>
-    <string name="title_pref_handwriting_wait">ଲେଖିବା ପରେ ଅପେକ୍ଷା କର</string>
+    <string name="title_pref_handwriting_wait">ଲେଖିବା ପରେ ଅପେକ୍ଷା</string>
     <string name="value_handwriting_wait_200">0.2 ସେକେଣ୍ଡ</string>
     <string name="value_handwriting_wait_300">0.3। Seconds ସେକେଣ୍ଡ୍</string>
     <string name="value_handwriting_wait_400">0.4 ସେକେଣ୍ଡ୍</string>
@@ -1681,8 +1681,8 @@
     <string name="summary_pref_wrap_around">ଶେଷ ଆଇଟମ୍ ଅତୀତକୁ ସ୍ୱିପ୍ କରିବା ପ୍ରଥମକୁ ଯାଏ, ଏବଂ ପ୍ରଥମଟି ଶେଷକୁ ଯାଏ | ବନ୍ଦ ହୋଇଗଲେ, ଏହା ବଦଳରେ ଶେଷରେ ଏକ ଧ୍ୱନି ଖେଳେ |</string>
     <string name="title_pref_fix_stuck_touch_exploration">ଅଟକି ରହିଥିବା ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନକୁ ଠିକ କରନ୍ତୁ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ଅନୁମତି ବିନା, SandFly କେବଳ କହିପାରେ ଯେ ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ୍ କରିବାକୁ, ଚଲାନ୍ତୁ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ସ୍ଥିର କରିବା</string>
-    <string name="stuck_touch_exploration_fixed">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ସ୍ଥିର ହୋଇଛି</string>
+    <string name="stuck_touch_exploration_fixing">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଠିକ୍ କରାଯାଉଛି</string>
+    <string name="stuck_touch_exploration_fixed">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଠିକ୍ ହୋଇଛି</string>
     <string name="stuck_touch_exploration_not_fixed">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଏପର୍ଯ୍ୟନ୍ତ ଅଟକି ରହିଛି | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ |</string>
     <string name="stuck_touch_exploration_restart">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ |</string>
     <string name="stuck_touch_exploration_grant_dump">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ, କିମ୍ବା SandFly କୁ ADB ସହିତ DUMP ଅନୁମତି ଦିଅନ୍ତୁ ଯାହା ଦ୍ it ାରା ଏହା ଠିକ ହୋଇପାରିବ |</string>
@@ -1707,10 +1707,10 @@
     <string name="tablet_held_up_faces_away_on">ଟାବଲେଟ୍ ମୁହଁକୁ ଧରି ରଖିଛି</string>
     <string name="tablet_held_up_faces_away_off">ଟାବଲେଟ୍ ମୁହଁ ବନ୍ଦ କରି ରଖିଛି</string>
     <string name="title_keyboard_echo_on_screen">ଅନ୍-ସ୍କ୍ରିନ୍ କୀବୋର୍ଡ୍ ଇକୋ</string>
-    <string name="title_keyboard_echo_physical">ଶାରୀରିକ କୀବୋର୍ଡ୍ ଇକୋ</string>
+    <string name="title_keyboard_echo_physical">ଫିଜିକାଲ୍ କୀବୋର୍ଡ୍ ଇକୋ</string>
     <string name="title_keyboard_echo_braille_keyboard">ବ୍ରେଲି କୀବୋର୍ଡ୍ ଇକୋ</string>
     <string name="title_keyboard_echo_handwriting_keyboard">ହସ୍ତଲିଖନ କୀବୋର୍ଡ୍ ଇକୋ</string>
-    <string name="title_keyboard_echo_braille_display">ବ୍ରେଲି ପ୍ରଦର୍ଶନ ଇକୋ</string>
+    <string name="title_keyboard_echo_braille_display">ବ୍ରେଲି ଡିସପ୍ଲେ ଇକୋ</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">ଟାଇପ୍ କରିବା ସମୟରେ ବାଣୀ ବାଧା ଦିଅନ୍ତୁ</string>
     <string name="pref_interrupt_typing_entry_always">ସର୍ବଦା</string>
@@ -1727,7 +1727,7 @@
     <string name="action_move_down">ତଳକୁ ଘୁଞ୍ଚାନ୍ତୁ</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ର ଅବସ୍ଥାନ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ଉଠାଇଲେ | <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ଡ୍ରପ୍ <xliff:g id="detail" example="Name">%1$s</xliff:g> | <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ଛାଡ଼ି ଦିଆଗଲା। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ଏହି କ୍ରମରେ ଏକ ଆଇଟମ୍ ର ବିବରଣୀ କହିଥାଏ | ଏହାକୁ ପରିବର୍ତ୍ତନ କରିବାକୁ, ଏକ ସବିଶେଷ ସ୍ପର୍ଶ ଏବଂ ଧରି ରଖ, ତାପରେ ଏହାକୁ ଉପରକୁ କିମ୍ବା ତଳକୁ ଟାଣ | SandFly ଅନ୍ ସହିତ, ଦୁଇଥର ଟ୍ୟାପ୍ କରନ୍ତୁ ଏବଂ ଧରି ରଖନ୍ତୁ, ତାପରେ ଡ୍ରାଗ୍ କରନ୍ତୁ | ଆପଣ ମୁଭ୍ ଅପ୍ ଏବଂ ମୁଭ୍ ଡାଉନ୍ କ୍ରିୟା ମଧ୍ୟ ବ୍ୟବହାର କରିପାରିବେ |</string>
     <string name="title_pref_speak_items_before_scroll">ଆଇଟମ୍ ଗୁଡିକ ଦେଖିବା ପୂର୍ବରୁ କୁହନ୍ତୁ</string>
     <string name="gemini_error_api_key">Gemini API ଚାବିକୁ ଗ୍ରହଣ କଲା ନାହିଁ | ସ୍ୱୟଂଚାଳିତ ବର୍ଣ୍ଣନା ସେଟିଂସମୂହରେ ଚାବି ଯାଞ୍ଚ କରନ୍ତୁ |</string>
@@ -1763,7 +1763,7 @@
     <string name="title_pref_dictation_ai_service">ଡିକ୍ଟେସନ୍ ପାଇଁ AI ସେବା</string>
     <string name="dictation_ai_same">ସ୍ୱତଃ ବର୍ଣ୍ଣନା ପରି ସମାନ</string>
     <string name="title_pref_browse_mode_per_app">ପ୍ରତ୍ୟେକ ଆପରେ ବ୍ରାଉଜ୍ ମୋଡ୍ ମନେରଖ</string>
-    <string name="title_pref_export_settings">ରପ୍ତାନି ସେଟିଂସମୂହ</string>
+    <string name="title_pref_export_settings">ସେଟିଂସ ଏକ୍ସପୋର୍ଟ କରନ୍ତୁ</string>
     <string name="title_pref_import_settings">ସେଟିଂସମୂହ ଆମଦାନୀ କରନ୍ତୁ</string>
     <string name="settings_export_done">ରପ୍ତାନି ହୋଇଥିବା ସେଟିଂସମୂହ | API କିଗୁଡ଼ିକ ଅନ୍ତର୍ଭୂକ୍ତ ନୁହେଁ</string>
     <string name="settings_export_failed">ସେଟିଂସମୂହ ରପ୍ତାନି ହୋଇପାରିଲା ନାହିଁ</string>
