@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granular editing</string>
+    <string name="granular_editing_split_by">Split by: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Split by</string>
+    <string name="granular_editing_characters">Characters</string>
+    <string name="granular_editing_words">Words</string>
+    <string name="granular_editing_sentences">Sentences</string>
+    <string name="granular_editing_lines">Lines</string>
+    <string name="granular_editing_paragraphs">Paragraphs</string>
+    <string name="granular_editing_space">Space</string>
+    <string name="granular_editing_new_line">New line</string>
+    <string name="granular_editing_tab">Tab</string>
+    <string name="granular_editing_empty">No text. Use Add text at end, in More.</string>
+    <string name="granular_editing_edit">Edit</string>
+    <string name="granular_editing_insert_before">Insert before</string>
+    <string name="granular_editing_insert_after">Insert after</string>
+    <string name="granular_editing_delete">Delete</string>
+    <string name="granular_editing_select">Select</string>
+    <string name="granular_editing_unselect">Unselect</string>
+    <string name="granular_editing_selected">Selected</string>
+    <string name="granular_editing_save">Save</string>
+    <string name="granular_editing_more">More</string>
+    <string name="granular_editing_undo">Undo</string>
+    <string name="granular_editing_redo">Redo</string>
+    <string name="granular_editing_find">Find</string>
+    <string name="granular_editing_find_next">Find next</string>
+    <string name="granular_editing_replace">Replace</string>
+    <string name="granular_editing_replace_with">Replace with</string>
+    <string name="granular_editing_replace_all">Replace all</string>
+    <string name="granular_editing_add_at_end">Add text at end</string>
+    <string name="granular_editing_clear_selection">Clear selection</string>
+    <string name="granular_editing_cut_selected">Cut selected</string>
+    <string name="granular_editing_delete_selected">Delete selected</string>
+    <string name="granular_editing_copied">Copied</string>
+    <string name="granular_editing_deleted">Deleted</string>
+    <string name="granular_editing_not_found">Not found</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> replaced</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> replaced</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Save changes?</string>
+    <string name="granular_editing_copy_changes">Copy the changed text?</string>
+    <string name="granular_editing_discard">Discard</string>
+    <string name="granular_editing_keep_editing">Keep editing</string>
+    <string name="granular_editing_not_saved">Not saved: the text field is gone. The text is copied.</string>
+    <string name="granular_editing_no_text">No text to edit</string>
+    <string name="granular_editing_password">Not available in password fields</string>
+</resources>
