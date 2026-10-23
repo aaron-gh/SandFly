@@ -36,7 +36,7 @@
     <string name="title_pref_category_ai_services">AIサービス</string>
     <string name="title_pref_ai_provider">AIサービス</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>設定</string>
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>、セットアップされていません</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>、未設定</string>
     <string name="ai_provider_in_use">使用中</string>
     <string name="ai_provider_not_set_up">未設定</string>
     <string name="ai_provider_not_ready">最初にモデルを選択してください</string>
@@ -48,7 +48,7 @@
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>モデル</string>
     <string name="ai_provider_choose_model">未選択</string>
     <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを貼り付けます。これを削除するには、フィールドをクリアして保存します。あなたが説明した画像や画面は<xliff:g id="service" example="Claude">%1$s</xliff:g>に送信されます。</string>
-    <string name="ai_provider_needs_key">最初に<xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを設定します</string>
+    <string name="ai_provider_needs_key">最初に <xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを設定してください</string>
     <string name="ai_provider_needs_address">最初にアドレスを設定してください</string>
     <string name="ai_provider_enter_model">モデル名を入力してください</string>
 </resources>
