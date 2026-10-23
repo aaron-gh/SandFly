@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">బ్రెయిలీ హార్డ్‌వేర్ కీబోర్డ్</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack బ్రెయిలీ కీబోర్డ్ అందుబాటులో లేదు</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack బ్రెయిలీ కీబోర్డ్‌ను ఆన్ చేయండి</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly బ్రెయిలీ కీబోర్డ్ అందుబాటులో లేదు</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly బ్రెయిలీ కీబోర్డ్‌ను ఆన్ చేయండి</string>
   <string name="bd_ime_disabled_dialog_message">టైపింగ్ కోసం మీ బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించడానికి, దాన్ని ఆన్ చేయడానికి ఇన్‌పుట్ సెట్టింగ్‌లకు వెళ్లండి</string>
   <string name="bd_ime_disabled_dialog_title_positive">ఇన్‌పుట్ సెట్టింగ్‌లు</string>
   <string name="bd_ime_not_default_dialog_title">మీ ఇన్‌పుట్ విధానాన్ని మార్చండి</string>
-  <string name="bd_ime_not_default_dialog_message">టైపింగ్ చేయడం కొనసాగించడానికి, TalkBack బ్రెయిలీ కీబోర్డ్‌ను మీ ఇన్‌పుట్ విధానంగా సెట్ చేయండి</string>
+  <string name="bd_ime_not_default_dialog_message">టైపింగ్ చేయడం కొనసాగించడానికి, SandFly బ్రెయిలీ కీబోర్డ్‌ను మీ ఇన్‌పుట్ విధానంగా సెట్ చేయండి</string>
   <string name="bd_ime_not_default_dialog_positive">ఇన్‌పుట్ స్విచ్ బటన్</string>
   <string name="type_unlabeled">లేబుల్ చేయనిది</string>
   <string name="type_unlabeled_edittext">లేబుల్ లేని ఎడిట్ బాక్స్</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ఎడమ వైపునకు ప్యాన్</string>
   <string name="overlay_pan_right_button">కుడి వైపునకు ప్యాన్</string>
   <string name="bd_preferences_title">బ్రెయిలీ డిస్‌ప్లే</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించడానికి, ముందుగా TalkBackను ఆన్ చేయండి</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBackకు వెళ్లండి</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించడానికి, ముందుగా SandFlyను ఆన్ చేయండి</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFlyకు వెళ్లండి</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించడానికి, ముందుగా బ్లూటూత్‌ను ఆన్ చేయండి</string>
   <string name="bd_preferences_banner_bluetooth_off_button">బ్లూటూత్‌ను ఆన్ చేయండి</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">బ్రెయిలీ డిస్‌ప్లే‌ను ఉపయోగించడానికి, %sకి సమీపంలోని పరికరాలకు యాక్సెస్ అవసరం</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">బ్రౌజింగ్ మోడ్‌ను ఉపయోగించడానికి, మీరు ఆటోమేటిక్‌గా సెట్ చేయబడిన కీ-మ్యాప్ నుండి మెరుగుపరచబడిన కీ-మ్యాప్‌కు స్విచ్ అవ్వాలి. ఈ మార్పు మీ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లలో కొన్నింటిని అప్‌డేట్ చేస్తుంది</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">సెట్టింగ్‌లు</string>
   <string name="bd_command_change_dialog_title">కొన్ని కమాండ్‌లు అప్‌డేట్ అయ్యాయి</string>
-  <string name="bd_command_change_dialog_message">TalkBack ఈ వెర్షన్‌లో ఈ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లు అప్‌డేట్ చేయబడ్డాయి:\n\n• మునుపటి ఐటెమ్: డాట్స్ 1, 7ను నొక్కండి\n\n• తర్వాతి ఐటెమ్: డాట్స్ 4, 8ను నొక్కండి\n\n• మునుపటి రీడింగ్ కంట్రోల్: డాట్స్ 2, 3, 7, 8ను నొక్కండి\n\n• తర్వాతి రీడింగ్ కంట్రోల్: డాట్స్ 5, 6, 7, 8ను నొక్కండి</string>
+  <string name="bd_command_change_dialog_message">SandFly ఈ వెర్షన్‌లో ఈ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లు అప్‌డేట్ చేయబడ్డాయి:\n\n• మునుపటి ఐటెమ్: డాట్స్ 1, 7ను నొక్కండి\n\n• తర్వాతి ఐటెమ్: డాట్స్ 4, 8ను నొక్కండి\n\n• మునుపటి రీడింగ్ కంట్రోల్: డాట్స్ 2, 3, 7, 8ను నొక్కండి\n\n• తర్వాతి రీడింగ్ కంట్రోల్: డాట్స్ 5, 6, 7, 8ను నొక్కండి</string>
   <string name="bd_preference_braille_contracted">కాంట్రాక్టెడ్ బ్రెయిలీ</string>
   <string name="bd_preference_braille_uncontracted">అన్‌కాంట్రాక్టెడ్ బ్రెయిలీ</string>
   <string name="bd_braille_grade_tips">బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించి కాంట్రాక్టెడ్, అన్‌కాంట్రాక్టెడ్ మధ్య త్వరగా మారడానికి, spaceను, 1, 2, 4, 5 డాట్‌లను నొక్కండి.\n\nమీరు రెండూ బ్రెయిలీ గ్రేడ్‌లు ఉన్న భాషను ఉపయోగిస్తుంటే, ఈ కమాండ్ పని చేస్తుంది.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ఒక ఐటెమ్ నుండి మరొక ఐటెమ్‌కు మారడం</string>
   <string name="bd_commands_bindings_category_system_actions_title">సిస్టమ్ చర్యలు</string>
   <string name="bd_commands_bindings_category_system_actions_summary">వెనుకకు, మొదటి స్క్రీన్, నోటిఫికేషన్‌లు, ఇంకా మరిన్ని</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack ఫీచర్‌లు</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback మెనూలు, సెట్టింగ్‌లు</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly ఫీచర్‌లు</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly మెనూలు మరియు సెట్టింగ్‌లు</string>
   <string name="bd_commands_bindings_category_braille_settings_title">బ్రెయిలీ సెట్టింగ్‌లు</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">బ్రెయిలీ భాష, సెట్టింగ్‌లు</string>
   <string name="bd_commands_bindings_category_text_editing_title">టెక్స్ట్‌ను ఎడిట్ చేయడం</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">అన్ని యాప్‌లను తెరవండి</string>
   <string name="bd_cmd_toggle_screen_search">స్క్రీన్ కంటెంట్ సెర్చ్‌ను తెరవండి</string>
   <string name="bd_cmd_edit_custom_label">అనుకూల లేబుల్‌ను ఎడిట్ చేయండి</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack మెనూను తెరవండి</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack స్పీచ్‌ను ఆన్ లేదా ఆఫ్ చేయండి</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly మెనూను తెరవండి</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly స్పీచ్‌ను ఆన్ లేదా ఆఫ్ చేయండి</string>
   <string name="bd_cmd_read_stop">చదవడం స్టాప్ చేయండి</string>
-  <string name="bd_cmd_talkback_settings">TalkBack సెట్టింగ్‌లను తెరవండి</string>
+  <string name="bd_cmd_talkback_settings">SandFly సెట్టింగ్‌లను తెరవండి</string>
   <string name="bd_cmd_switch_to_next_input_language">తర్వాతి టైపింగ్ భాషకు మారండి</string>
   <string name="bd_cmd_switch_to_next_output_language">తర్వాతి రీడింగ్ భాషకు మారండి</string>
   <string name="bd_cmd_toggle_contracted_mode">కుదించబడిన మోడ్, కుదించబడని మోడ్‌ల మధ్య స్విచ్ అవ్వండి</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">బ్రౌజ్ మోడ్‌లోకి ఎంటర్ కావడానికి, కమాండ్‌ను ఉపయోగించి, కింది అక్షరం లేదా నంబర్ షార్ట్‌కట్‌లను టైప్ చేయడం ద్వారా మీరు వెబ్ పేజీలను త్వరగా నావిగేట్ చేయవచ్చు\n\nఈ షార్ట్‌కట్‌లను బ్రౌజ్ మోడ్‌లోకి ప్రవేశించకుండా కూడా ఉపయోగించవచ్చు, కానీ మీరు \"తదుపరి\" కమాండ్‌లకు డాట్ 8 జోడించాలి</string>
   <string name="bd_cmd_subcategory_title_web_navigation">టేబుల్ నావిగేషన్</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">బ్రెయిలీ డిస్‌ప్లే సెట్టింగ్‌ను ఆఫ్ చేయాలా?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">మీరు TalkBack సెట్టింగ్‌లలో ఎప్పుడైనా దాన్ని మళ్లీ ఆన్ చేయవచ్చు</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">మీరు SandFly సెట్టింగ్‌లలో ఎప్పుడైనా దాన్ని మళ్లీ ఆన్ చేయవచ్చు</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ఆఫ్ చేయండి</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">కొన్ని కమాండ్‌లు అందుబాటులో లేవు</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">టైప్ చేస్తున్నప్పుడు లేదా ఎడిట్ చేస్తున్నప్పుడు నావిగేషన్, బ్రెయిలీ సెట్టింగ్‌లు, ఇంకా కొన్ని TalkBack ఫీచర్‌ల కోసం కమాండ్‌లు అందుబాటులో ఉండవు.\n\nఈ కమాండ్‌లను ఉపయోగించడానికి, ముందుగా కీబోర్డ్‌ను మూసివేయండి.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">టైప్ చేస్తున్నప్పుడు లేదా ఎడిట్ చేస్తున్నప్పుడు నావిగేషన్, బ్రెయిలీ సెట్టింగ్‌లు, ఇంకా కొన్ని SandFly ఫీచర్‌ల కోసం కమాండ్‌లు అందుబాటులో ఉండవు.\n\nఈ కమాండ్‌లను ఉపయోగించడానికి, ముందుగా కీబోర్డ్‌ను మూసివేయండి.</string>
   <string name="bd_caption_tutorial_dialog_title">మీ బ్రెయిలీ డిస్‌ప్లేలో క్యాప్షన్‌లు కనిపిస్తాయి</string>
   <string name="bd_caption_tutorial_dialog_message">ఈ వీడియోకు క్యాప్షన్‌లు చాపడానికి లేదా దాచడానికి, స్పేస్, 1, 4, 7, 8 డాట్స్ నొక్కండి.\n\nసపోర్ట్ చేసే మీడియాకు ఆటోమేటిక్‌గా క్యాప్షన్‌లు చూపడానికి, సెట్టింగ్‌లలో బ్రెయిలీ డిస్‌ప్లేలో క్యాప్షన్‌లు ఆన్.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">క్యాప్షన్‌లు అందుబాటులో ఉన్నప్పుడు ఎల్లప్పుడూ ఈ మెసేజ్‌ను చూడండి</string>
   <string name="bd_usb_connect_dialog_title">బ్రెయిలీ డిస్‌ప్లే USBకి కనెక్ట్ చేయబడింది</string>
-  <string name="bd_usb_connect_dialog_message">మీ %s బ్యాటరీ మీ బ్రెయిలీ డిస్‌ప్లేను ఛార్జ్ చేస్తోంది.\n\nమీరు బ్లూటూత్‌కు స్విచ్ అవ్వాలనుకుంటే, మీ USB లేదా USB హబ్‌ని డిస్‌కనెక్ట్ చేసి, TalkBack సెట్టింగ్‌లు&gt; బ్రెయిలీ డిస్‌ప్లేకి వెళ్లండి.</string>
+  <string name="bd_usb_connect_dialog_message">మీ %s బ్యాటరీ మీ బ్రెయిలీ డిస్‌ప్లేను ఛార్జ్ చేస్తోంది.\n\nమీరు బ్లూటూత్‌కు స్విచ్ అవ్వాలనుకుంటే, మీ USB లేదా USB హబ్‌ని డిస్‌కనెక్ట్ చేసి, SandFly సెట్టింగ్‌లు&gt; బ్రెయిలీ డిస్‌ప్లేకి వెళ్లండి.</string>
   <string name="bd_device">ఫోన్</string>
   <string name="bd_battery_low_dialog_title">%s బ్యాటరీ స్థాయి తక్కువగా ఉంది</string>
   <string name="bd_battery_low_dialog_message">మీ %s బ్యాటరీ మీ బ్రెయిలీ డిస్‌ప్లేను ఛార్జ్ చేస్తోంది.\n\nబ్యాటరీని సేవ్ చేయడానికి ఈ కింది వాటిని చేయండి:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">అన్నింటినీ క్లియర్ చేయండి</string>
   <string name="popup_message_history_empty">ఖాళీ</string>
   <string name="popup_message_history_consent_dialog_title">డివైజ్ మెసేజ్ హిస్టరీని ఆన్ చేయాలా?</string>
-  <string name="popup_message_history_consent_dialog_msg">ఇది నోటిఫికేషన్‌లు, అలారాల వంటి కొన్ని మెసేజ్‌లను TalkBackలో స్టోర్ చేస్తుంది. మీరు ఈ సెట్టింగ్‌ను ఎప్పుడు కావాలంటే అప్పుడు మార్చవచ్చు.</string>
+  <string name="popup_message_history_consent_dialog_msg">ఇది నోటిఫికేషన్‌లు, అలారాల వంటి కొన్ని మెసేజ్‌లను SandFlyలో స్టోర్ చేస్తుంది. మీరు ఈ సెట్టింగ్‌ను ఎప్పుడు కావాలంటే అప్పుడు మార్చవచ్చు.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ఆన్ చేయండి</string>
   <string name="popup_message_history_consent_dialog_negative_btn">వద్దు, ధన్యవాదాలు</string>
+    <string name="external_display_channel">ఇతర యాప్‌ల నుండి బ్రెయిలీ డిస్‌ప్లేలు</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>ని SandFlyకి బ్రెయిలీ డిస్‌ప్లేగా అనుమతించాలా?</string>
+    <string name="external_display_ask_text">మీరు అనుమతించే వరకు SandFly దాన్ని ఉపయోగించదు.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> బ్రెయిలీలో చూపే ప్రతిదాన్ని SandFly చదవగలుగుతుంది, సందేశాలు మరియు మీరు టైప్ చేసే వాటితో సహా స్క్రీన్‌పై ఏదైనా కావచ్చు. ఇది బ్రెయిలీ డిస్‌ప్లేతో మీరు చేయగలిగిన విధంగా మీ పరికరాన్ని నియంత్రించగలదు: టైప్ చేయండి, యాప్‌లను తెరవండి మరియు ఏదైనా SandFly ఆదేశాన్ని అమలు చేయండి. మీరు విశ్వసించే యాప్‌లను మాత్రమే అనుమతించండి.</string>
+    <string name="external_display_allow">అనుమతించు</string>
+    <string name="external_display_deny">అనుమతించవద్దు</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> అనేది మీ బ్రెయిలీ డిస్‌ప్లే</string>
+    <string name="external_display_in_use_text">SandFly దీన్ని ఉపయోగిస్తున్నప్పుడు, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> స్క్రీన్‌ని చదవగలదు మరియు పరికరాన్ని నియంత్రించగలదు.</string>
+    <string name="external_displays_title">ఇతర యాప్‌ల నుండి డిస్‌ప్లేలు</string>
+    <string name="external_displays_summary">మీరు అనుమతించే యాప్‌లు SandFly కోసం బ్రెయిలీ డిస్‌ప్లేలు కావచ్చు. బ్రెయిలీ డిస్‌ప్లే అయిన యాప్ స్క్రీన్‌ని చదవగలదు మరియు పరికరాన్ని నియంత్రించగలదు.</string>
+    <string name="external_displays_none">ఏ యాప్‌లు బ్రెయిలీ డిస్‌ప్లేలు కాకూడదు.</string>
 </resources>

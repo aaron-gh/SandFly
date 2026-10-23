@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">గ్రాన్యులర్ ఎడిటింగ్</string>
+    <string name="granular_editing_split_by">దీని ద్వారా విభజించబడింది: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">ద్వారా విభజించబడింది</string>
+    <string name="granular_editing_characters">అక్షరాలు</string>
+    <string name="granular_editing_words">పదాలు</string>
+    <string name="granular_editing_sentences">వాక్యాలు</string>
+    <string name="granular_editing_lines">లైన్‌లు</string>
+    <string name="granular_editing_paragraphs">పేరాలు</string>
+    <string name="granular_editing_space">అంతరం</string>
+    <string name="granular_editing_new_line">కొత్త పంక్తి</string>
+    <string name="granular_editing_tab">ట్యాబ్ అక్షరం</string>
+    <string name="granular_editing_empty">వచనం లేదు. మరిన్నిలో చివర వచనాన్ని జోడించు ఉపయోగించండి.</string>
+    <string name="granular_editing_edit">సవరించు</string>
+    <string name="granular_editing_insert_before">ముందు చొప్పించండి</string>
+    <string name="granular_editing_insert_after">తర్వాత చొప్పించండి</string>
+    <string name="granular_editing_delete">తొలగించండి</string>
+    <string name="granular_editing_select">ఎంచుకోండి</string>
+    <string name="granular_editing_unselect">ఎంపికను తీసివేయండి</string>
+    <string name="granular_editing_selected">ఎంపిక చేయబడింది</string>
+    <string name="granular_editing_save">సేవ్ చేయండి</string>
+    <string name="granular_editing_more">మరిన్ని</string>
+    <string name="granular_editing_undo">అన్డు</string>
+    <string name="granular_editing_redo">చివరిగా రద్దు చేసిన సవరణను మళ్లీ చేయండి</string>
+    <string name="granular_editing_find">కనుగొనండి</string>
+    <string name="granular_editing_find_next">తదుపరి కనుగొనండి</string>
+    <string name="granular_editing_replace">భర్తీ చేయండి</string>
+    <string name="granular_editing_replace_with">తో భర్తీ చేయండి</string>
+    <string name="granular_editing_replace_all">అన్నింటినీ భర్తీ చేయండి</string>
+    <string name="granular_editing_add_at_end">చివర వచనాన్ని జోడించండి</string>
+    <string name="granular_editing_clear_selection">మొత్తం టెక్స్ట్ ఎంపికను తీసివేయండి</string>
+    <string name="granular_editing_cut_selected">ఎంచుకున్న వచనాన్ని కత్తిరించండి</string>
+    <string name="granular_editing_delete_selected">ఎంచుకున్న వాటిని తొలగించండి</string>
+    <string name="granular_editing_copied">కాపీ చేయబడింది</string>
+    <string name="granular_editing_deleted">తొలగించబడింది</string>
+    <string name="granular_editing_not_found">దొరకలేదు</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> భర్తీ చేయబడింది</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> భర్తీ చేయబడింది</item>
+    </plurals>
+    <string name="granular_editing_save_changes">మార్పులను సేవ్ చేయాలా?</string>
+    <string name="granular_editing_copy_changes">మార్చిన వచనాన్ని కాపీ చేయాలా?</string>
+    <string name="granular_editing_discard">విస్మరించండి</string>
+    <string name="granular_editing_keep_editing">ఎడిట్ చేస్తూ ఉండండి</string>
+    <string name="granular_editing_not_saved">సేవ్ చేయబడలేదు: టెక్స్ట్ ఫీల్డ్ పోయింది. వచనం కాపీ చేయబడింది.</string>
+    <string name="granular_editing_no_text">సవరించడానికి టెక్స్ట్ లేదు</string>
+    <string name="granular_editing_password">పాస్‌వర్డ్ ఫీల్డ్‌లలో అందుబాటులో లేదు</string>
+</resources>
