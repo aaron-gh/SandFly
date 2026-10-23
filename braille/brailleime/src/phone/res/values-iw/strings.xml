@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">‏מקלדת הברייל של TalkBack</string>
+  <string name="braille_ime_service_name">‏מקלדת הברייל של SandFly</string>
   <string name="braille_ime_bd_mode_name">קלט מתוך צג הברייל</string>
   <string name="switch_to_tabletop_announcement">מצב \'על משטח, מסך למעלה\'. יש להציב את המכשיר כך שיציאת הטעינה משמאל.</string>
   <string name="calibration_tip_announcement">כדי לעדכן את מיקום הנקודות, עליך ללחוץ לחיצה ארוכה עם %d אצבעות.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">הוחלפה לברייל לא מקוצר</string>
   <string name="braille_ime_displayed_name">מקלדת ברייל</string>
   <string name="multiple_languages_braille_ime_displayed_name">מקלדת ברייל, %s</string>
-  <string name="input_view_caption">‏מקלדת ברייל ל-TalkBack - לעזרה, יש להיכנס אל g.co/help/braille</string>
+  <string name="input_view_caption">‏מקלדת ברייל ל-SandFly - לעזרה, יש להיכנס אל g.co/help/braille</string>
   <string name="perform_action_next">הבא</string>
   <string name="perform_action_submitting">שליחת הטקסט מתבצעת</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">מתבצע עדכון של מיקום הנקודות. קודם כול צריך לתעד את הנקודות של %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">כדי לשנות את השפה בזמן ההקלדה במקלדת הברייל, מחליקים למעלה בעזרת שלוש אצבעות. אחר כך בוחרים \'מעבר לשפה הבאה\'.</string>
   <string name="title_pref_accumulate_presses">הכללת כל הנקודות שנלחצו</string>
   <string name="summary_pref_accumulate_presses">כל נקודה שנלחצה היא חלק מהקלט, גם אם מרפים מנקודה מסוימת לפני שמרפים משאר הנקודות</string>
-  <string name="title_pref_reverse_dots">הפיכת הנקודות</string>
-  <string name="summary_pref_reverse_dots">החלפה בין מיקומי הנקודות (למשל: החלפה בין נקודות 1 ו-4)</string>
+  <string name="title_pref_reverse_dots">החלף נקודות שמאלה וימין</string>
+  <string name="summary_pref_reverse_dots">נקודות 1, 2 ו-3 מתחלפות עם נקודות 4, 5 ו-6</string>
   <string name="bd_preference_braille_contracted">ברייל מכווץ</string>
   <string name="bd_preference_braille_uncontracted">ברייל לא מכווץ</string>
   <string name="context_menu_title">אפשרויות למקלדת ברייל</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">מקלדת</string>
   <string name="not_enough_touch_points_dialog_title">המכשיר שברשותך לא תומך במקלדת ברייל</string>
   <string name="not_enough_touch_points_dialog_message">המכשיר שברשותך לא תומך במספיק נקודות נגיעה. לקבלת מידע נוסף, יש לפנות ליצרן המכשיר.</string>
-  <string name="talkback_off_dialog_title">‏יש להפעיל את TalkBack כדי להשתמש במקלדת ברייל</string>
+  <string name="talkback_off_dialog_title">‏יש להפעיל את SandFly כדי להשתמש במקלדת ברייל</string>
   <string name="talkback_off_dialog_positive_button">הפעלה בהגדרות הנגישות</string>
-  <string name="talkback_suspend_dialog_title">‏חזרה ל-TalkBack כדי להשתמש במקלדת ברייל</string>
-  <string name="talkback_off_or_suspend_dialog_message">‏כשהתכונה TalkBack מופעלת, ניתן להזין סמלי ברייל בלחיצה על המסך.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">‏כדי לשנות תנועה, צריך להפעיל את TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">‏התכונה TalkBack מושבתת. צריך להפעיל אותה כדי לשנות תנועות במקלדת הברייל.</string>
+  <string name="talkback_suspend_dialog_title">‏חזרה ל-SandFly כדי להשתמש במקלדת ברייל</string>
+  <string name="talkback_off_or_suspend_dialog_message">‏כשהתכונה SandFly מופעלת, ניתן להזין סמלי ברייל בלחיצה על המסך.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">‏כדי לשנות תנועה, צריך להפעיל את SandFly</string>
+  <string name="talkback_off_custom_gestures_dialog_message">‏התכונה SandFly מושבתת. צריך להפעיל אותה כדי לשנות תנועות במקלדת הברייל.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">להגדרות</string>
   <string name="reset_gestures_dialog_title">לאפס את כל התנועות?</string>
   <string name="reset_gestures_dialog_message">כל התנועות במקלדת הברייל יאופסו לברירת המחדל</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">איפוס לברירת המחדל</string>
   <string name="custom_gestures_dialog_remove_button">הסרת התנועה</string>
   <string name="change_gestures_dialog_message_title">איך משנים תנועה</string>
-  <string name="change_gestures_dialog_message">‏במסך הבא תיפתח מקלדת ברייל, ולא תהיה אפשרות להשתמש בתנועות ב-TalkBack.‏\n\nכשמקלדת הברייל נפתחת, עושים את התנועה שבה רוצים להשתמש. כדי לסגור את מקלדת הברייל ולבטל את שינוי התנועה, מחליקים כלפי מטה עם 2 אצבעות.\n\nהתנועות שאפשר להשתמש בהן\n</string>
+  <string name="change_gestures_dialog_message">‏במסך הבא תיפתח מקלדת ברייל, ולא תהיה אפשרות להשתמש בתנועות ב-SandFly.‏\n\nכשמקלדת הברייל נפתחת, עושים את התנועה שבה רוצים להשתמש. כדי לסגור את מקלדת הברייל ולבטל את שינוי התנועה, מחליקים כלפי מטה עם 2 אצבעות.\n\nהתנועות שאפשר להשתמש בהן\n</string>
   <string name="change_gestures_dialog_message_link">התנועות שאפשר להשתמש בהן</string>
   <string name="change_gestures_dialog_dont_show_checkbox">לא צריך להציג את ההודעה הזו שוב</string>
   <string name="change_gestures_dialog_positive_button">המשך</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">לא להשתמש</string>
   <string name="next_keyboard">המקלדת הבאה</string>
   <string name="braille_tutorial_title">מדריך למקלדת ברייל</string>
-  <string name="tutorial_intro_description">‏באמצעות מקלדת הברייל אפשר ללחוץ על המסך כדי להזין ברייל של 6 נקודות.\n\nבמכשיר שלך נעשה שימוש במקלדת אנגלית אחידה לברייל. כדי להחליף שפת הקלדה, יש לעבור להגדרות TalkBack.‏\n\nכדי להקליד בברייל, יש להחזיק את הטלפון ולהשתמש בו בצורה שונה.</string>
+  <string name="tutorial_intro_description">‏באמצעות מקלדת הברייל אפשר ללחוץ על המסך כדי להזין ברייל של 6 נקודות.\n\nבמכשיר שלך נעשה שימוש במקלדת אנגלית אחידה לברייל. כדי להחליף שפת הקלדה, יש לעבור להגדרות SandFly.‏\n\nכדי להקליד בברייל, יש להחזיק את הטלפון ולהשתמש בו בצורה שונה.</string>
   <string name="next_step">הבא</string>
   <string name="leave_keyboard">יציאה ממקלדת הברייל</string>
-  <string name="hold_six_fingers_description">‏אם משתמשים במקלדת ברייל, אין אפשרות להשתמש בתנועות רגילות של TalkBack‏.\n\nכדי להתחיל, עליך להגדיר את המיקום של 6 נקודות הברייל להקלדה.</string>
-  <string name="rotate_orientation_description_1">‏החל מעכשיו, לא ניתן יהיה להשתמש בתנועות הרגילות של TalkBack. תכונת TalkBack לא זמינה כשמשתמשים במקלדת הברייל.</string>
+  <string name="hold_six_fingers_description">‏אם משתמשים במקלדת ברייל, אין אפשרות להשתמש בתנועות רגילות של SandFly‏.\n\nכדי להתחיל, עליך להגדיר את המיקום של 6 נקודות הברייל להקלדה.</string>
+  <string name="rotate_orientation_description_1">‏החל מעכשיו, לא ניתן יהיה להשתמש בתנועות הרגילות של SandFly. תכונת SandFly לא זמינה כשמשתמשים במקלדת הברייל.</string>
   <string name="rotate_orientation_description_2">כדי להתחיל, יש להחזיק את הטלפון כך, כשהמסך יפנה כלפי חוץ.</string>
   <string name="tap_to_continue">יש ללחוץ פעמיים במקום כלשהו כדי להמשיך</string>
   <string name="instruction_type_letter_a">‏לוחצים על נקודה 1 עם האצבע המורה השמאלית כדי להקליד את האות \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">הסמן הוזז קדימה</string>
   <string name="result_swipe_down_2_fingers">הסתרת מקלדת</string>
   <string name="result_swipe_down_3_fingers">המקלדת הבאה</string>
-  <string name="rotate_orientation_announcement">‏החל מעכשיו, לא ניתן יהיה להשתמש בתנועות הרגילות של TalkBack. תכונת TalkBack לא זמינה כשמשתמשים במקלדת הברייל.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">‏החל מעכשיו, לא ניתן יהיה להשתמש בתנועות הרגילות של SandFly. תכונת SandFly לא זמינה כשמשתמשים במקלדת הברייל.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">‏ראשית, מסובבים את הטלפון כך שהמסך יפנה כלפי חוץ.\n\nלאחר מכן, מסובבים את הטלפון למצב רוחבי (הקצוות הארוכים מקבילים לרצפה). יש להחזיק את הטלפון בידיים בקצוות הקצרים. על יד ימין להחזיק בקצה עם יציאת ה-USB. מניחים את 3 האצבעות האמצעיות על המסך, ומשתמשים בזרת ובאגודל כדי להחזיק את הטלפון.\n\nכשמוכנים, לוחצים פעמיים על המסך כדי להמשיך.\n\nליציאה ממקלדת הברייל, מחליקים למטה לכיוון הקרקע באמצעות 3 אצבעות. תנועה זו מחליפה בחזרה למקלדת המקורית.</string>
   <string name="rotate_orientation_continue_announcement">הטלפון ממוקם אנכית. כדי להמשיך, יש לסובב את הטלפון למצב רוחבי (הקצוות הארוכים מקבילים לרצפה). לאחר מכן, מסובבים את הטלפון כך שהמסך יפנה כלפי חוץ. כשמוכנים, לוחצים פעמיים על המסך כדי להמשיך.</string>
   <string name="type_letter_a_announcement">‏שומרים שהמסך יפנה כלפי חוץ. מחזיקים את הטלפון בשתי הידיים, בקצוות הקצרים של הטלפון, כך ששלוש האצבעות האמצעיות של כל יד יוכלו לגעת במסך.\n\nהאצבע המורה השמאלית צריכה להיות על נקודה 1. עכשיו, לוחצים על נקודה 1 כדי להקליד את האות “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">כדי להחליף למקלדת השנייה, מחליקים למטה באמצעות 3 אצבעות. כדאי לנסות עכשיו.</string>
   <string name="swipe_down_3_fingers_completed_announcement">המקלדת הבאה. בדרך כלל, תנועה זו תחליף למקלדת הבאה. הפעם, העבודה במקלדת הברייל תימשך מפני שהמדריך עדיין לא הסתיים.</string>
   <string name="swipe_up_3_fingers_announcement">אפשר גם להקליד במצב \'על פני שולחן\' על ידי הנחת הטלפון במצב שטוח על שולחן. כדי לסיים את המדריך, עליך להחליק כלפי מעלה באמצעות 3 אצבעות כדי למצוא את האפשרות \'סיום המדריך‘</string>
-  <string name="open_context_menu_announcement">‏תפריט האפשרויות פתוח. יש להפוך את הטלפון כך שהמסך יפנה אליך ולהחזיק אותו באופן רגיל. עכשיו ניתן להשתמש בתנועות TalkBack רגילות כדי לנווט. יש להחליק ימינה כדי לראות אפשרויות נוספות.</string>
+  <string name="open_context_menu_announcement">‏תפריט האפשרויות פתוח. יש להפוך את הטלפון כך שהמסך יפנה אליך ולהחזיק אותו באופן רגיל. עכשיו ניתן להשתמש בתנועות SandFly רגילות כדי לנווט. יש להחליק ימינה כדי לראות אפשרויות נוספות.</string>
   <string name="hold_six_fingers_announcement">‏%s\nעליך להניח את המכשיר במצב שטוח על שולחן. לאחר מכן, יש ללחוץ לחיצה ארוכה על המסך באמצעות 3 האצבעות האמצעיות של כל יד במיקום שיהיה לך נוח להקליד בו.</string>
   <string name="hold_six_fingers_inactive_announcement">עליך להניח את המכשיר במצב שטוח על שולחן. לאחר מכן, יש ללחוץ לחיצה ארוכה על המסך באמצעות 3 האצבעות האמצעיות של כל יד במיקום שיהיה לך נוח להקליד בו.</string>
   <string name="finish_tutorial_announcement">מקלדת הברייל מוצגת. מסובבים את הטלפון כך שהמסך יפנה כלפי חוץ. מסובבים את הטלפון למצב רוחבי. לאחר מכן מתחילים להקליד.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">התנועה הזו כבר משויכת לפעולה \"%1$s\" ואי אפשר לשנות את השיוך שלה. אפשר לנסות תנועה אחרת. %2$s</string>
   <string name="custom_gesture_cannot_used">לא ניתן להשתמש בתנועה הזו</string>
   <string name="custom_gesture_no_gesture">לא בוצעה תנועה</string>
-  <string name="custom_gesture_try_another">‏אפשר לנסות תנועה אחרת. כדי לקבל רשימה של כל התנועות הזמינות, אפשר להיכנס למרכז העזרה למקלדת הברייל של TalkBack. %s</string>
+  <string name="custom_gesture_try_another">‏אפשר לנסות תנועה אחרת. כדי לקבל רשימה של כל התנועות הזמינות, אפשר להיכנס למרכז העזרה למקלדת הברייל של SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">התנועות לא תואמות</string>
   <string name="custom_gesture_perform_again">צריך לבצע שוב את התנועה הרצויה. %s</string>
+    <string name="tabletop_port_left_announcement">מצב שולחני, יציאת טעינה משמאל</string>
+    <string name="tabletop_port_right_announcement">מצב שולחני, יציאת טעינה מימין</string>
+    <string name="screen_away_port_right_announcement">מצב הרחקת מסך, יציאת טעינה מימין</string>
+    <string name="screen_away_port_left_announcement">מצב הרחקת מסך, יציאת טעינה משמאל</string>
+    <string name="screen_toward_announcement">מסך אליך</string>
+    <string name="screen_toward_port_left_announcement">מסך אליך, יציאת טעינה בצד שמאל</string>
+    <string name="screen_toward_port_right_announcement">מסך אליך, יציאת טעינה בצד ימין</string>
+    <string name="screen_toward_port_down_announcement">המסך כלפיך, יציאת הטעינה פונה כלפי מטה</string>
+    <string name="screen_toward_port_up_announcement">המסך כלפיך, יציאת הטעינה מופנית כלפי מעלה</string>
+    <string name="port_right_announcement">יציאת טעינה מימין</string>
+    <string name="port_left_announcement">יציאת טעינה משמאל</string>
+    <string name="tabletop_port_near_announcement">מצב שולחני, יציאת טעינה כלפיך</string>
+    <string name="tabletop_port_far_announcement">מצב שולחני, יציאת טעינה הרחק ממך</string>
+    <string name="screen_away_port_down_announcement">מצב הרחקת מסך, יציאת טעינה פונה כלפי מטה</string>
+    <string name="screen_away_port_up_announcement">מצב הרחקת מסך, יציאת טעינה פונה כלפי מעלה</string>
+    <string name="port_near_announcement">יציאת טעינה לקראתך</string>
+    <string name="port_far_announcement">יציאת טעינה הרחק ממך</string>
+    <string name="port_down_announcement">יציאת טעינה מכוונת כלפי מטה</string>
+    <string name="port_up_announcement">יציאת טעינה פונה כלפי מעלה</string>
+    <string name="orientation_locked_announcement">הכיוון נעול</string>
+    <string name="orientation_locked_port_announcement">הכיוון נעול. %1$s</string>
+    <string name="orientation_unlocked_announcement">הכיוון לא נעול</string>
+    <string name="switch_to_language_contracted_announcement">עברת אל %s, ברייל מכווץ</string>
+    <string name="switch_to_language_uncontracted_announcement">עברת אל %s, ברייל לא מכווץ</string>
+    <string name="title_pref_flip_dots_vertically">החלף נקודות עליונות ותחתונות</string>
+    <string name="summary_pref_flip_dots_vertically">נקודה 1 מחליפה מקומות עם נקודה 3, ונקודה 4 עם נקודה 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">הטאבלט הרים את פניו</string>
+    <string name="summary_pref_tablet_held_up_faces_away">כשהוא כבוי, טאבלט או טלפון פתוח המוחזקים למעלה משתמשים בפריסת השולחן, מולך</string>
+    <string name="title_pref_typing_sounds">הקלדה קולות</string>
+    <string name="summary_pref_typing_sounds">הפעל קליקים במקלדת בעת הקלדת תו, רווח, שורה חדשה או מחיקה</string>
+    <string name="skip_tutorial">דלג על הדרכה</string>
 </resources>

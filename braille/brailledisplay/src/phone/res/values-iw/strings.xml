@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">מקלדת חומרה בכתב ברייל</string>
   <string name="bd_application_name">‏תכונות הנגישות של Android</string>
-  <string name="bd_ime_unavailable_activity_name">‏מקלדת הברייל של TalkBack לא זמינה</string>
-  <string name="bd_ime_disabled_dialog_title">‏ניתן להפעיל את מקלדת הברייל של TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">‏מקלדת הברייל של SandFly לא זמינה</string>
+  <string name="bd_ime_disabled_dialog_title">‏ניתן להפעיל את מקלדת הברייל של SandFly</string>
   <string name="bd_ime_disabled_dialog_message">כדי להקליד באמצעות צג הברייל, עליך להפעיל אותו דרך הגדרות הקלט</string>
   <string name="bd_ime_disabled_dialog_title_positive">הגדרות הקלט</string>
   <string name="bd_ime_not_default_dialog_title">החלפת שיטת הקלט</string>
-  <string name="bd_ime_not_default_dialog_message">‏כדי להמשיך בהקלדה, עליך להגדיר את מקלדת הברייל של TalkBack בתור שיטת הקלט</string>
+  <string name="bd_ime_not_default_dialog_message">‏כדי להמשיך בהקלדה, עליך להגדיר את מקלדת הברייל של SandFly בתור שיטת הקלט</string>
   <string name="bd_ime_not_default_dialog_positive">החלפת קלט</string>
   <string name="type_unlabeled">ללא תווית</string>
   <string name="type_unlabeled_edittext">תיבת עריכה ללא תווית</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">הזזה שמאלה</string>
   <string name="overlay_pan_right_button">הזזה ימינה</string>
   <string name="bd_preferences_title">צג ברייל</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">‏כדי להשתמש בצג הברייל, קודם צריך להפעיל את TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">‏מעבר אל TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">‏כדי להשתמש בצג הברייל, קודם צריך להפעיל את SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">‏מעבר אל SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">‏כדי להשתמש בצג הברייל, קודם צריך להפעיל Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">‏הפעלת Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">כדי להשתמש בצג הברייל, ל%s נדרשת גישה אל מכשירים בקרבת מקום</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">כדי להשתמש במצב סמן, צריך להחליף את מפת המקשים שמוגדרת כברירת מחדל במפת המקשים המשופרת. השינוי הזה יעדכן חלק מהפקודות של צג הברייל</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">הגדרות</string>
   <string name="bd_command_change_dialog_title">חלק מהפקודות עודכנו</string>
-  <string name="bd_command_change_dialog_message">‏הפקודות של צג הברייל שעודכנו בגרסה הזו של TalkBack:‏\n\n• הפריט הקודם: לוחצים על הנקודות 1 ו-7\n\n• הפריט הבא: לוחצים על הנקודות 4 ו-8\n\n• הממשק הקודם לשליטה בהקראה: לוחצים על הנקודות 2, 3, 7 ו-8\n\n• הממשק הבא לשליטה בהקראה: לוחצים על הנקודות 5, 6, 7 ו-8</string>
+  <string name="bd_command_change_dialog_message">‏הפקודות של צג הברייל שעודכנו בגרסה הזו של SandFly:‏\n\n• הפריט הקודם: לוחצים על הנקודות 1 ו-7\n\n• הפריט הבא: לוחצים על הנקודות 4 ו-8\n\n• הממשק הקודם לשליטה בהקראה: לוחצים על הנקודות 2, 3, 7 ו-8\n\n• הממשק הבא לשליטה בהקראה: לוחצים על הנקודות 5, 6, 7 ו-8</string>
   <string name="bd_preference_braille_contracted">ברייל מכווץ</string>
   <string name="bd_preference_braille_uncontracted">ברייל לא מכווץ</string>
   <string name="bd_braille_grade_tips">‏כדי לעבור במהירות בין מצב ברייל מכווץ למצב ברייל לא מכווץ באמצעות צג ברייל, לוחצים על מקש הרווח ועל הנקודות 1, 2, 4 ו-5.\n\nהפקודה הזו פועלת כשמשתמשים בשפה עם שתי רמות ברייל.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">מעבר בין פריטים</string>
   <string name="bd_commands_bindings_category_system_actions_title">פעולות מערכת</string>
   <string name="bd_commands_bindings_category_system_actions_summary">חזרה למסך הקודם, דף הבית, התראות ועוד</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">‏התכונות של TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">‏התפריטים וההגדרות של Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">‏התכונות של SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly תפריטים והגדרות</string>
   <string name="bd_commands_bindings_category_braille_settings_title">הגדרות ברייל</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">שפת ברייל והגדרות</string>
   <string name="bd_commands_bindings_category_text_editing_title">עריכת טקסט</string>
@@ -221,10 +221,10 @@
   <string name="bd_cmd_global_all_apps">פתיחת כל האפליקציות</string>
   <string name="bd_cmd_toggle_screen_search">פתיחה של חיפוש מהמסך</string>
   <string name="bd_cmd_edit_custom_label">עריכת תווית מותאמת אישית</string>
-  <string name="bd_cmd_open_talkback_menu">‏פתיחה של תפריט TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">‏הפעלה או השבתה של הדיבור ב-TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">‏פתיחה של תפריט SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">‏הפעלה או השבתה של הדיבור ב-SandFly</string>
   <string name="bd_cmd_read_stop">הפסקת הקריאה</string>
-  <string name="bd_cmd_talkback_settings">‏פתיחה של הגדרות TalkBack</string>
+  <string name="bd_cmd_talkback_settings">‏פתיחה של הגדרות SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">מעבר לשפת ההקלדה הבאה</string>
   <string name="bd_cmd_switch_to_next_output_language">מעבר לשפת ההקראה הבאה</string>
   <string name="bd_cmd_toggle_contracted_mode">מעבר בין מצב מקוצר ומצב לא מקוצר</string>
@@ -297,15 +297,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">‏אפשר לנווט בדפי אינטרנט במהירות באמצעות הפקודה למעבר למצב סמן, ואז להקליד את קיצורי הדרך הבאים של אותיות או מספרים\n\nאפשר להשתמש בקיצורי הדרך האלה גם בלי להיכנס למצב סמן אם מוסיפים נקודה ואחריה את הספרה 8 לפקודות \"next\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ניווט בטבלאות</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">לכבות את ההגדרה של צג הברייל?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">‏תמיד אפשר להפעיל אותו בהגדרות של TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">‏תמיד אפשר להפעיל אותו בהגדרות של SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">כיבוי</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">חלק מהפקודות לא זמינות</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏הפקודות לניווט, הגדרות הברייל וחלק מהתכונות של TalkBack לא זמינות בזמן הקלדה או עריכה.\n\nכדי להשתמש בפקודות האלה, יש לסגור קודם את המקלדת.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏הפקודות לניווט, הגדרות הברייל וחלק מהתכונות של SandFly לא זמינות בזמן הקלדה או עריכה.\n\nכדי להשתמש בפקודות האלה, יש לסגור קודם את המקלדת.</string>
   <string name="bd_caption_tutorial_dialog_title">כתוביות בצג הברייל</string>
   <string name="bd_caption_tutorial_dialog_message">‏כדי להפעיל או להשבית את הכתוביות בסרטון הזה, מקישים על מקש הרווח ועל הנקודות 1, 4, 7 ו-8.\n\nכדי שכתוביות תמיד יופעלו בסוגי מדיה שנתמכים, מפעילים את \"הפעלת כתוביות בצג הברייל\" בהגדרות.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ההודעה הזו מוצגת בכל פעם שיש כתוביות</string>
   <string name="bd_usb_connect_dialog_title">‏צג הברייל מחובר ל-USB</string>
-  <string name="bd_usb_connect_dialog_message">‏הסוללה של %s טוענת את צג הברייל.\n\nאם צריך לעבור ל-Bluetooth, יש לנתק את ה-USB או את מפצל ה-USB ולעבור להגדרות של TalkBack &gt; \'צג ברייל\'.</string>
+  <string name="bd_usb_connect_dialog_message">‏הסוללה של %s טוענת את צג הברייל.\n\nאם צריך לעבור ל-Bluetooth, יש לנתק את ה-USB או את מפצל ה-USB ולעבור להגדרות של SandFly &gt; \'צג ברייל\'.</string>
   <string name="bd_device">טלפון</string>
   <string name="bd_battery_low_dialog_title">%s הסוללה חלשה</string>
   <string name="bd_battery_low_dialog_message">‏הסוללה של %s טוענת את צג הברייל.\n\nכדי לחסוך בצריכת הסוללה:\n\n
@@ -317,7 +317,18 @@
   <string name="popup_message_history_clear">ניקוי הכול</string>
   <string name="popup_message_history_empty">ריק</string>
   <string name="popup_message_history_consent_dialog_title">להפעיל את היסטוריית ההודעות במכשיר?</string>
-  <string name="popup_message_history_consent_dialog_msg">‏ההגדרה הזאת תשמור ב-TalkBack חלק מההודעות, למשל את ההתראות. אפשר לשנות את ההגדרה הזו בכל שלב.</string>
+  <string name="popup_message_history_consent_dialog_msg">‏ההגדרה הזאת תשמור ב-SandFly חלק מההודעות, למשל את ההתראות. אפשר לשנות את ההגדרה הזו בכל שלב.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">הפעלה</string>
   <string name="popup_message_history_consent_dialog_negative_btn">לא תודה</string>
+    <string name="external_display_channel">צגי ברייל מאפליקציות אחרות</string>
+    <string name="external_display_ask_title">האם לאפשר ל-<xliff:g id="app" example="Notetaker">%1$s</xliff:g> להיות צג ברייל עבור SandFly?</string>
+    <string name="external_display_ask_text">SandFly לא ישתמש בו עד שתאפשר זאת.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> יוכל לקרוא את כל מה ש-SandFly מופיע בברייל, שיכול להיות כל דבר על המסך, כולל הודעות ומה שאתה מקליד. זה גם יוכל לשלוט במכשיר שלך כפי שאתה יכול עם צג ברייל: הקלד, פתח אפליקציות והפעל כל פקודת SandFly. אפשר רק אפליקציות שאתה סומך עליהן.</string>
+    <string name="external_display_allow">אפשר</string>
+    <string name="external_display_deny">אל תאפשר</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> הוא צג הברייל שלך</string>
+    <string name="external_display_in_use_text">בעוד SandFly משתמש בו, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> יכול לקרוא את המסך ולשלוט במכשיר.</string>
+    <string name="external_displays_title">מציג מאפליקציות אחרות</string>
+    <string name="external_displays_summary">אפליקציות שאתה מתיר יכולות להיות מצגי ברייל עבור SandFly. אפליקציה שהיא תצוגת ברייל יכולה לקרוא את המסך ולשלוט במכשיר.</string>
+    <string name="external_displays_none">אף אפליקציה לא יכולה להיות מצגי ברייל.</string>
 </resources>

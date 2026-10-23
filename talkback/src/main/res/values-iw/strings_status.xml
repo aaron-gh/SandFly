@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">דבר סטטוס</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> מתוך <xliff:g id="max_level" example="4">%2$d</xliff:g> תיבות</string>
+    <string name="status_wifi_off">Wi-Fi כבוי</string>
+    <string name="status_wifi_not_connected">Wi-Fi לא מחובר</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">נייד</string>
+    <string name="status_mobile_no_service">אין שירות סלולרי</string>
+    <string name="status_do_not_disturb">אל תפריע</string>
+    <string name="status_ringer_vibrate">רטט</string>
+    <string name="status_ringer_silent">שקט</string>
+    <string name="status_airplane_mode">מצב מטוס</string>
+    <string name="title_pref_status_readout">קריאת סטטוס</string>
+    <string name="status_item_time">זמן</string>
+    <string name="status_item_time_summary">השעה הנוכחית</string>
+    <string name="status_item_battery">סוללה</string>
+    <string name="status_item_battery_summary">רמת סוללה, טעינה וחיסכון בסוללה</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">שם הרשת ועוצמת האות</string>
+    <string name="status_item_mobile">רשת סלולרית</string>
+    <string name="status_item_mobile_summary">ספק, סוג רשת ועוצמת אות</string>
+    <string name="status_item_ringer">צלצול ואסור להפריע</string>
+    <string name="status_item_ringer_summary">רק כאשר הצלצול אינו מוגדר לצלצול, או \'נא לא להפריע\' מופעל</string>
+    <string name="status_item_airplane_mode">מצב מטוס</string>
+    <string name="status_item_airplane_mode_summary">רק כאשר מצב טיסה מופעל</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">בדוק אם יש עדכונים</string>
+    <string name="summary_pref_check_for_updates_version">גרסה <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">בדוק אוטומטית אם יש עדכונים</string>
+    <string name="summary_pref_auto_update_check">בדוק פעם ביום והצג הודעה כאשר גרסה חדשה זמינה</string>
+    <string name="title_pref_dev_builds">פיתוח בונה</string>
+    <string name="update_notification_title">עדכון SandFly זמין</string>
+    <string name="update_notification_text">בנה <xliff:g id="build" example="97">%1$d</xliff:g>. הקש כדי להתקין.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> זמין</string>
+    <string name="update_dialog_install">התקן</string>
+    <string name="update_checking">מחפש עדכונים</string>
+    <string name="update_up_to_date">SandFly מעודכן</string>
+    <string name="update_check_failed">לא ניתן היה לחפש עדכונים</string>
+    <string name="update_downloading">מוריד עדכון</string>
+    <string name="update_already_downloading">העדכון כבר מוריד</string>
+    <string name="update_ready_title">עדכון SandFly הורד</string>
+    <string name="update_ready_text">הקש כדי להתקין.</string>
+    <string name="update_install_failed">לא ניתן היה להתקין את העדכון</string>
+    <string name="update_install_canceled">העדכון בוטל</string>
+    <string name="update_allow_install">אפשר ל-SandFly להתקין אפליקציות, ולאחר מכן נסה את העדכון שוב</string>
+</resources>
