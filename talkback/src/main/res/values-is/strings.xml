@@ -1447,14 +1447,14 @@
     <string name="notification_list_dismiss">Hunsa</string>
     <string name="notification_list_show_all">Sýna allt</string>
     <string name="notification_list_show_less">Sýna minna</string>
-    <string name="notification_list_clear_all">Hreinsaðu allt</string>
+    <string name="notification_list_clear_all">Hreinsa allt</string>
     <string name="notification_list_send">Senda</string>
-    <string name="notification_list_playing">Að spila</string>
+    <string name="notification_list_playing">Í spilun</string>
     <string name="notification_list_paused">Gert hlé</string>
     <string name="notification_list_play">Spila</string>
     <string name="notification_list_pause">Gera hlé</string>
     <string name="notification_list_previous">Fyrri</string>
-    <string name="notification_list_next">Áfram</string>
+    <string name="notification_list_next">Næsta</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">%d tilkynningu</item>
         <item quantity="other">%d tilkynningar</item>
@@ -1597,7 +1597,7 @@
     <string name="handwriting_tutorial_intro">Kennsla um rithönd á lyklaborði. Skrifaðu með einum fingri hvar sem er á skjánum. What you write is typed when you stop for a moment. To end the tutorial, swipe down with three fingers.</string>
     <string name="handwriting_tutorial_write_letter">Skrifaðu stafrófsstafinn a.</string>
     <string name="handwriting_tutorial_write_word">Skrifaðu nú orðið hi (h á eftir í).</string>
-    <string name="handwriting_tutorial_typed">Skrifaði <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Skrifað <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Strjúktu til hægri með tveimur fingrum til að slá inn bil.</string>
     <string name="handwriting_tutorial_delete">Strjúktu til vinstri með tveimur fingrum til að eyða stafnum fyrir framan bendilinn.</string>
     <string name="handwriting_tutorial_deleted">Eytt.</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">Ríki, tegund, nafn</string>
     <string name="item_detail_name">Nafn</string>
     <string name="item_detail_type">Tegund</string>
-    <string name="item_detail_state">Ríki</string>
-    <string name="action_move_up">Færðu þig upp</string>
-    <string name="action_move_down">Færðu þig niður</string>
+    <string name="item_detail_state">Staða</string>
+    <string name="action_move_up">Færa upp</string>
+    <string name="action_move_down">Færa niður</string>
     <string name="template_list_position">Staða <xliff:g id="position" example="2">%1$d</xliff:g> af <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Sótt <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Fallið <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">Lesa upp</string>
     <string name="title_pref_ai_dictation">Rétt fyrirmæli með gervigreind</string>
     <string name="dictation_not_corrected">Ekki leiðrétt. Skrifað sem viðurkennt.</string>
-    <string name="dictation_nothing_recognized">Ekkert þekkt</string>
+    <string name="dictation_nothing_recognized">Ekkert greindist</string>
     <string name="dictation_unavailable">Talgreining ekki tiltæk</string>
     <string name="dictation_field_gone">Textareiturinn lokaður. Ekkert vélritað.</string>
     <string name="dictation_transcription_failed">Tal var ekki umritað. Ekkert vélritað.</string>

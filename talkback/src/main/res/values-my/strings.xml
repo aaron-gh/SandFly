@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">အက်ပ်တစ်ခုသည် နားကြပ်မချိတ်ဘဲ မှတ်တမ်းတင်နေချိန်တွင် SandFly သည် သင့်လက်ဟန်များ၊ သော့များနှင့် စာရိုက်ခြင်းတို့ကိုသာ ဖြေကြားပြီး အကြောင်းကြားချက်များကဲ့သို့သော အရာများအတွက် တိတ်တိတ်ဆိတ်ဆိတ်နေ၍ ၎င်းတို့ကို မှတ်တမ်းတင်ထားမည်မဟုတ်ပေ။</string>
     <string name="title_pref_switch_languages">ဘာသာစကား အလိုအလျောက်ပြောင်းပါ</string>
     <string name="title_pref_switch_dialects">ဒေသိယစကား အလိုအလျောက်ပြောင်းပါ</string>
-    <string name="category_collapsed">ပြိုကျသည့်အပိုင်း</string>
+    <string name="category_collapsed">ခေါက်ထားသည့်အပိုင်း</string>
     <string name="category_expanded">အပိုင်းကို တိုးချဲ့ထားသည်</string>
     <string name="title_pref_speak_nav_bar_buttons">လမ်းကြောင်းပြဘားခလုတ်များကို ပြောပါ</string>
     <string name="summary_pref_speak_nav_bar_buttons">လမ်းညွှန်ဘားတွင် အသက်သွင်းရန် lift ဖြင့် Back သို့မဟုတ် Home ကဲ့သို့ နှိပ်လိုက်သည့်ခလုတ်ကို ပြောပါ။</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">၎င်းသည် သင်၏ SandFly အသံဖြင့် စာသားကို ပြောနိုင်သည်။ ၎င်းကို အဆင့်မြင့်ဆက်တင်များတွင် သင်ပြောင်းနိုင်သည်။</string>
     <string name="speech_control_allow">ခွင့်ပြုပါ</string>
     <string name="speech_control_deny">ခွင့်မပြုပါနှင့်</string>
-    <string name="permission_speak_label">SandFly မှတဆင့်ပြောပါ</string>
+    <string name="permission_speak_label">SandFly မှတစ်ဆင့် ပြောဆိုခြင်း</string>
     <string name="permission_speak_description">အက်ပ်အား သင်၏ SandFly အသံဖြင့် စာသားပြောခိုင်းစေပါ။ SandFly အက်ပ်က စကားမပြောမီ သင့်ကိုမေးသည်။</string>
     <string name="permission_braille_display_label">SandFly အတွက် မျက်မမြင်စာအဖြစ် ပြသရန် တောင်းဆိုပါ</string>
     <string name="permission_braille_display_description">အက်ပ်အား SandFlyအတွက် မျက်မမြင်စာအဖြစ် ပြသခွင့်ပြုပါ။ ၎င်းကို SandFly ဖြင့် ခွင့်ပြုပါက၊ ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။ SandFly မင်းကို အရင်မေးတယ်။</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">အက္ခရာအစား “ဟိုတယ်” ကဲ့သို့၊</string>
     <string name="title_pref_emoji_speech">အီမိုဂျီ</string>
     <string name="emoji_speech_engine">စကားပြောအင်ဂျင်ဖြင့်ဖတ်ပါ</string>
-    <string name="emoji_speech_names">ဖတ်ရန် SandFly</string>
+    <string name="emoji_speech_names">SandFly က ဖတ်သည်</string>
     <string name="emoji_speech_none">မရှိ</string>
     <string name="summary_selector_menu_emoji">အီမိုဂျီဖတ်ပုံကို ပြောင်းပါ</string>
     <string name="emoji_speech_state">အီမိုဂျီ- <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1438,7 +1438,7 @@
     <string name="notification_part_text">စာသား</string>
     <string name="notification_part_app">အက်ပ်အမည်</string>
     <string name="notification_part_time">အချိန်</string>
-    <string name="notification_part_playback">ကစားနေသည် သို့မဟုတ် ခေတ္တရပ်ထားသည်</string>
+    <string name="notification_part_playback">ဖွင့်နေသည် သို့မဟုတ် ခေတ္တရပ်ထားသည်</string>
     <string name="notification_list_title">အကြောင်းကြားချက်များ</string>
     <string name="notification_list_empty">အကြောင်းကြားချက်များမရှိပါ</string>
     <string name="notification_list_no_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည်</string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">လျှော့ပြပါ</string>
     <string name="notification_list_clear_all">အားလုံးကိုရှင်းပါ</string>
     <string name="notification_list_send">ပို့ပါ</string>
-    <string name="notification_list_playing">ကစားခြင်း</string>
+    <string name="notification_list_playing">ဖွင့်နေသည်</string>
     <string name="notification_list_paused">ရပ်ထားသည်</string>
-    <string name="notification_list_play">ကစားပါ</string>
+    <string name="notification_list_play">ဖွင့်ပါ</string>
     <string name="notification_list_pause">ခဏရပ်ပါ</string>
     <string name="notification_list_previous">ယခင်</string>
     <string name="notification_list_next">ရှေ့သို့</string>
@@ -1570,12 +1570,12 @@
     <string name="shortcut_write_reading_control">စာကို ရေးချပြီး စာဖတ်ခြင်းကို ထိန်းချုပ်ပါ</string>
     <string name="title_pref_reading_control_letters">လက်ရေး အက္ခရာ စာလုံးများ</string>
     <string name="reading_control_letter_none">မရှိ</string>
-    <string name="handwriting_prompt">အက္ခရာအက္ခရာတစ်ခုရေးပါ</string>
-    <string name="handwriting_closed">လက်ရေးပိတ်</string>
+    <string name="handwriting_prompt">အက္ခရာတစ်လုံး ရေးပါ</string>
+    <string name="handwriting_closed">လက်ရေးကို ပိတ်လိုက်သည်</string>
     <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ဖြင့် စတင်သော စာဖတ်ခြင်း ထိန်းချုပ်မှု မရှိပါ</string>
-    <string name="handwriting_not_recognized">လက်ရေးမူကို အသိအမှတ်မပြုပါ</string>
+    <string name="handwriting_not_recognized">လက်ရေးကို မမှတ်သားနိုင်ပါ</string>
     <string name="handwriting_downloading">လက်ရေးအသိအမှတ်ပြုမှုကို ဒေါင်းလုဒ်လုပ်နေပါသည်</string>
-    <string name="handwriting_download_title">လက်ရေးအသိအမှတ်ပြုမှုကို ဒေါင်းလုဒ်လုပ်မလား။</string>
+    <string name="handwriting_download_title">လက်ရေးမှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်မလား</string>
     <string name="handwriting_download_message">လက်ရေးမူကို ဤဖုန်းတွင် အသိအမှတ်ပြုသည်။ ဤဘာသာစကားအတွက် ၎င်း၏မော်ဒယ်လ် 20 MB ခန့်ကို Google တစ်ကြိမ်မှ ဒေါင်းလုဒ်လုပ်ထားသည်။ ဒေါင်းလုဒ်လုပ်သည့်အခါ မက်ဆေ့ချ်တစ်ခုပြသည်။</string>
     <string name="handwriting_download_button">ဒေါင်းလုဒ်လုပ်ရန်</string>
     <string name="handwriting_downloaded">လက်ရေးမှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်ထားသည်</string>
@@ -1722,8 +1722,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">အမျိုးအစား၊ ပြည်နယ်၊ အမည်</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">ပြည်နယ်၊ အမျိုးအစား၊ အမည်</string>
     <string name="item_detail_name">နာမည်</string>
-    <string name="item_detail_type">စာရိုက်ပါ</string>
-    <string name="item_detail_state">ပြည်နယ်</string>
+    <string name="item_detail_type">အမျိုးအစား</string>
+    <string name="item_detail_state">အခြေအနေ</string>
     <string name="action_move_up">အပေါ်ကိုရွှေ့ပါ</string>
     <string name="action_move_down">အောက်သို့ရွှေ့ပါ</string>
     <string name="template_list_position"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g> ၏ ရာထူး</string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">နှုတ်တိုက်ချပေးရန်</string>
     <string name="title_pref_ai_dictation">AI ဖြင့်မှန်ကန်သောသတ်ပုံ</string>
     <string name="dictation_not_corrected">မပြင်ဘူး။ အသိအမှတ်ပြုထားသည့်အတိုင်း ရိုက်ထည့်သည်။</string>
-    <string name="dictation_nothing_recognized">ဘာကိုမှ အသိအမှတ်မပြုဘူး</string>
+    <string name="dictation_nothing_recognized">ဘာမှ မမှတ်သားနိုင်ပါ</string>
     <string name="dictation_unavailable">စကားပြောမှတ်သားမှု မရရှိနိုင်ပါ</string>
     <string name="dictation_field_gone">စာသားအကွက်ပိတ်။ ဘာမှမရိုက်ပါဘူး။</string>
     <string name="dictation_transcription_failed">စကားပြောကို စာသားအဖြစ် မပြောင်းနိုင်ပါ။ ဘာမှ မရိုက်ထည့်ရသေးပါ။</string>

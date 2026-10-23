@@ -1371,8 +1371,8 @@
     <string name="title_pref_speakerphone_away_from_ear">कान से दूर होने पर स्पीकर</string>
     <string name="summary_pref_speakerphone_away_from_ear">कॉल के दौरान, फ़ोन को कान से दूर करने पर स्पीकर पर स्विच करता है, और फिर से कान के पास लाने पर ईयरपीस पर वापस जाता है.</string>
     <string name="summary_pref_speakerphone_needs_permission">एक ऐसी अनुमति ज़रूरी है जो Android, स्क्रीन रीडर को नहीं देता. अनुमति देने के लिए, adb या Shizuku से यह निर्देश चलाएं, फिर इस स्क्रीन पर वापस आएं: %1$s</string>
-    <string name="action_copy_command">निर्देश कॉपी करें</string>
-    <string name="command_copied">निर्देश कॉपी किया गया</string>
+    <string name="action_copy_command">कमांड कॉपी करें</string>
+    <string name="command_copied">कमांड कॉपी किया गया</string>
     <string name="title_pref_speech_control">दूसरे ऐप्लिकेशन को बोलने दें</string>
     <string name="summary_pref_speech_control">जिन ऐप्लिकेशन को आप अनुमति देते हैं वे आपकी SandFly वॉइस में टेक्स्ट बोल सकते हैं. डिवाइस लॉक होने पर कुछ नहीं बोला जाता.</string>
     <string name="title_pref_speech_control_sound">दूसरे ऐप्लिकेशन के बोलने से पहले आवाज़ चलाएं</string>
@@ -1541,7 +1541,7 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">टाइप, स्थिति, नाम</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">स्थिति, टाइप, नाम</string>
     <string name="item_detail_name">नाम</string>
-    <string name="item_detail_type">टाइप</string>
+    <string name="item_detail_type">प्रकार</string>
     <string name="item_detail_state">स्थिति</string>
     <string name="action_move_up">ऊपर ले जाएं</string>
     <string name="action_move_down">नीचे ले जाएं</string>
@@ -1574,8 +1574,8 @@
     <string name="title_pref_play_installer">Google प्ले से इंस्टॉल दिखाई देगा</string>
     <string name="summary_pref_play_installer">अन्य ऐप्स को बताएं कि Google Play ने SandFly इंस्टॉल किया है। कुछ ऐप्स, जैसे कि कुछ बैंकिंग ऐप्स, उन एक्सेसिबिलिटी सेवाओं को बंद कर देते हैं जो कहीं और से इंस्टॉल की गई थीं। Shizuku की आवश्यकता है, और केवल उन्हीं ऐप्स को बदलता है जिनके बारे में बताया जाता है कि SandFly कहां से आया है।</string>
     <string name="summary_pref_play_installer_pending">चालू है, लेकिन Google प्ले अभी तक इंस्टॉलर के रूप में रिकॉर्ड नहीं किया गया है। Shizuku उपलब्ध होने पर SandFly इसे सेट करता है।</string>
-    <string name="notification_list_show_all">सब दिखाओ</string>
-    <string name="notification_list_show_less">कम दिखाओ</string>
+    <string name="notification_list_show_all">सभी दिखाएं</string>
+    <string name="notification_list_show_less">कम दिखाएं</string>
     <string name="title_pref_quick_settings">SandFly की त्वरित सेटिंग्स का उपयोग करें</string>
     <string name="title_pref_quick_settings_items">त्वरित सेटिंग्स पैनल</string>
     <string name="quick_settings_title">फटाफट सेटिंग</string>
@@ -1665,7 +1665,7 @@
     <string name="shortcut_write_reading_control">रीडिंग कंट्रोल का अक्षर लिखें</string>
     <string name="title_pref_reading_control_letters">हस्तलिखित वर्णमाला के अक्षर</string>
     <string name="reading_control_letter_none">कोई नहीं</string>
-    <string name="handwriting_prompt">एक वर्णमाला पत्र लिखें</string>
+    <string name="handwriting_prompt">वर्णमाला का एक अक्षर लिखें</string>
     <string name="handwriting_closed">लिखावट बंद</string>
     <string name="handwriting_no_match">कोई पठन नियंत्रण <xliff:g id="letter" example="Q">%1$s</xliff:g> से प्रारंभ नहीं होता</string>
     <string name="handwriting_not_recognized">लिखावट पहचानी नहीं गई</string>
@@ -1739,12 +1739,12 @@
     <string name="summary_pref_volume_keys_move_cursor">जब किसी टेक्स्ट फ़ील्ड पर फ़ोकस होता है, तो वॉल्यूम तेज़ कर्सर को एक वर्ण के पीछे ले जाता है और वॉल्यूम कम करने पर कर्सर आगे बढ़ता है</string>
     <string name="title_keyboard_echo_handwriting_keyboard">लिखावट कीबोर्ड प्रतिध्वनि</string>
     <string name="image_qna_ask_by_voice">आवाज़ देकर पूछें</string>
-    <string name="image_qna_stop_listening">सुनना बंद करो</string>
+    <string name="image_qna_stop_listening">सुनना बंद करें</string>
     <string name="image_qna_type_question">एक प्रश्न टाइप करें</string>
     <string name="shortcut_dictate">बोलकर लिखें</string>
     <string name="title_pref_ai_dictation">एआई के साथ सही श्रुतलेख</string>
     <string name="dictation_not_corrected">ठीक नहीं किया गया. मान्यता प्राप्त के रूप में टाइप किया गया।</string>
-    <string name="dictation_nothing_recognized">कुछ भी नहीं पहचाना</string>
+    <string name="dictation_nothing_recognized">कुछ भी पहचाना नहीं गया</string>
     <string name="dictation_unavailable">वाक् पहचान अनुपलब्ध</string>
     <string name="dictation_field_gone">पाठ फ़ील्ड बंद है. कुछ भी टाइप नहीं हुआ.</string>
     <string name="dictation_transcription_failed">बोली को टेक्स्ट में नहीं बदला जा सका. कुछ भी टाइप नहीं हुआ.</string>

@@ -1575,7 +1575,7 @@
     <string name="summary_pref_play_installer">Πείτε σε άλλες εφαρμογές ότι έχουν εγκατασταθεί Google Αναπαραγωγή SandFly. Ορισμένες εφαρμογές, όπως ορισμένες τραπεζικές εφαρμογές, απενεργοποιούν τις υπηρεσίες προσβασιμότητας που έχουν εγκατασταθεί από οπουδήποτε αλλού. Χρειάζεται Shizuku και αλλάζει μόνο τις εφαρμογές που ενημερώνονται σχετικά με την προέλευση του SandFly.</string>
     <string name="summary_pref_play_installer_pending">Ενεργό, αλλά το Google Η αναπαραγωγή δεν έχει εγγραφεί ακόμα ως πρόγραμμα εγκατάστασης. Το SandFly το ορίζει όταν είναι διαθέσιμο το Shizuku.</string>
     <string name="notification_list_show_all">Εμφάνιση όλων</string>
-    <string name="notification_list_show_less">Δείξτε λιγότερα</string>
+    <string name="notification_list_show_less">Εμφάνιση λιγότερων</string>
     <string name="title_pref_quick_settings">Χρησιμοποιήστε τις γρήγορες ρυθμίσεις του SandFly</string>
     <string name="title_pref_quick_settings_items">Πίνακας γρήγορων ρυθμίσεων</string>
     <string name="quick_settings_title">Γρήγορες ρυθμίσεις</string>
@@ -1668,7 +1668,7 @@
     <string name="handwriting_prompt">Γράψτε ένα γράμμα αλφαβήτου</string>
     <string name="handwriting_closed">Το χειρόγραφο έκλεισε</string>
     <string name="handwriting_no_match">Κανένας έλεγχος ανάγνωσης δεν ξεκινά με <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Το χειρόγραφο δεν αναγνωρίζεται</string>
+    <string name="handwriting_not_recognized">Το χειρόγραφο δεν αναγνωρίστηκε</string>
     <string name="handwriting_downloading">Γίνεται λήψη της αναγνώρισης γραφής</string>
     <string name="handwriting_download_title">Λήψη αναγνώρισης χειρογράφου;</string>
     <string name="handwriting_download_message">Ο χειρόγραφος αναγνωρίζεται σε αυτό το τηλέφωνο. Το μοντέλο της για αυτήν τη γλώσσα, περίπου 20 MB, γίνεται λήψη από το Google μία φορά. Εμφανίζεται ένα μήνυμα όταν έχει γίνει λήψη.</string>
@@ -1739,12 +1739,12 @@
     <string name="summary_pref_volume_keys_move_cursor">Όταν ένα πεδίο κειμένου έχει εστίαση, η αύξηση της έντασης του ήχου μετακινεί τον κέρσορα πίσω σε έναν χαρακτήρα και η ένταση προς τα κάτω τον μετακινεί</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ηχώ πληκτρολογίου χειρογράφου</string>
     <string name="image_qna_ask_by_voice">Ρωτήστε φωνητικά</string>
-    <string name="image_qna_stop_listening">Σταμάτα να ακούς</string>
+    <string name="image_qna_stop_listening">Διακοπή ακρόασης</string>
     <string name="image_qna_type_question">Πληκτρολογήστε μια ερώτηση</string>
     <string name="shortcut_dictate">Υπαγόρευση</string>
     <string name="title_pref_ai_dictation">Σωστή υπαγόρευση με AI</string>
     <string name="dictation_not_corrected">Δεν διορθώθηκε. Δακτυλογραφήθηκε ως αναγνωρισμένο.</string>
-    <string name="dictation_nothing_recognized">Τίποτα δεν αναγνωρίζεται</string>
+    <string name="dictation_nothing_recognized">Δεν αναγνωρίστηκε τίποτα</string>
     <string name="dictation_unavailable">Η αναγνώριση ομιλίας δεν είναι διαθέσιμη</string>
     <string name="dictation_field_gone">Το πεδίο κειμένου έκλεισε. Τίποτα πληκτρολογημένο.</string>
     <string name="dictation_transcription_failed">Η ομιλία δεν μεταγράφηκε. Δεν πληκτρολογήθηκε τίποτα.</string>

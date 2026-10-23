@@ -1385,7 +1385,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Altoparlanti kur është larg veshit tuaj</string>
     <string name="summary_pref_speakerphone_away_from_ear">Gjatë një telefonate, kalon në altoparlant kur e hiqni telefonin nga veshi dhe kthehet në kufje kur e mbani përsëri lart.</string>
     <string name="summary_pref_speakerphone_needs_permission">Nevojë për një leje që Android nuk ua jep lexuesve të ekranit. Për ta dhënë atë, ekzekutoni këtë komandë me adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Komandën e kopjimit</string>
+    <string name="action_copy_command">Kopjo komandën</string>
     <string name="command_copied">Komanda u kopjua</string>
     <string name="title_pref_speech_control">Lërini aplikacionet e tjera të flasin</string>
     <string name="summary_pref_speech_control">Aplikacionet që ju lejoni mund të thonë tekst me zërin tuaj SandFly. Asgjë nuk thuhet ndërsa pajisja është e kyçur.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Mund të thotë tekst me zërin tuaj SandFly. Këtë mund ta ndryshoni te Cilësimet e avancuara.</string>
     <string name="speech_control_allow">Lejo</string>
     <string name="speech_control_deny">Mos lejoni</string>
-    <string name="permission_speak_label">fol përmes SandFly</string>
+    <string name="permission_speak_label">të folurit përmes SandFly</string>
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
     <string name="permission_braille_display_label">kërkoni të jetë një ekran braille për SandFly</string>
     <string name="permission_braille_display_description">Lejon që aplikacioni të kërkojë të jetë një ekran braille për SandFly. Nëse e lejoni në SandFly, ai mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet ju së pari.</string>
@@ -1438,7 +1438,7 @@
     <string name="notification_part_text">Teksti</string>
     <string name="notification_part_app">Emri i aplikacionit</string>
     <string name="notification_part_time">Koha</string>
-    <string name="notification_part_playback">Duke luajtur ose në pauzë</string>
+    <string name="notification_part_playback">Po luhet ose në pauzë</string>
     <string name="notification_list_title">Njoftimet</string>
     <string name="notification_list_empty">Nuk ka njoftime</string>
     <string name="notification_list_no_access">Qasja në njoftim është joaktiv</string>
@@ -1449,12 +1449,12 @@
     <string name="notification_list_show_less">Trego më pak</string>
     <string name="notification_list_clear_all">Pastro të gjitha</string>
     <string name="notification_list_send">Dërgo</string>
-    <string name="notification_list_playing">Duke luajtur</string>
+    <string name="notification_list_playing">Po luhet</string>
     <string name="notification_list_paused">Në pauzë</string>
     <string name="notification_list_play">Luaj</string>
     <string name="notification_list_pause">Vendos në pauzë</string>
     <string name="notification_list_previous">Prapa</string>
-    <string name="notification_list_next">Para</string>
+    <string name="notification_list_next">Tjetra</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">%d njoftim</item>
         <item quantity="other">%d njoftime</item>
@@ -1573,7 +1573,7 @@
     <string name="handwriting_prompt">Shkruani një shkronjë alfabeti</string>
     <string name="handwriting_closed">Shkrimi i dorës i mbyllur</string>
     <string name="handwriting_no_match">Asnjë kontroll leximi nuk fillon me <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Shkrimi i dorës nuk njihet</string>
+    <string name="handwriting_not_recognized">Shkrimi i dorës nuk u njoh</string>
     <string name="handwriting_downloading">Njohja e shkrimit të dorës po shkarkohet</string>
     <string name="handwriting_download_title">Të shkarkohet njohja e shkrimit të dorës?</string>
     <string name="handwriting_download_message">Shkrimi i dorës njihet në këtë telefon. Modeli i tij për këtë gjuhë, rreth 20 MB, shkarkohet nga Google një herë. Një mesazh shfaqet kur është shkarkuar.</string>
@@ -1597,7 +1597,7 @@
     <string name="handwriting_tutorial_intro">Udhëzues për tastierën e shkrimit të dorës. Shkruani me një gisht kudo në ekran. Ajo që shkruani shtypet kur ndaloni për një moment. Për të përfunduar tutorialin, rrëshqitni poshtë me tre gishta.</string>
     <string name="handwriting_tutorial_write_letter">Shkruani shkronjën e alfabetit a.</string>
     <string name="handwriting_tutorial_write_word">Tani shkruani fjalën hi (h e ndjekur nga i).</string>
-    <string name="handwriting_tutorial_typed">Shkruani <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">U shkrua <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Rrëshqitni djathtas me dy gishta për të shkruar një hapësirë.</string>
     <string name="handwriting_tutorial_delete">Rrëshqitni majtas me dy gishta për të fshirë karakterin përpara kursorit.</string>
     <string name="handwriting_tutorial_deleted">Fshirë.</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Lloji, shteti, emri</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Shteti, lloji, emri</string>
     <string name="item_detail_name">Emri</string>
-    <string name="item_detail_type">Shkruaj</string>
-    <string name="item_detail_state">Shtetit</string>
-    <string name="action_move_up">Lëvizni lart</string>
-    <string name="action_move_down">Lëvizni poshtë</string>
+    <string name="item_detail_type">Lloji</string>
+    <string name="item_detail_state">Gjendja</string>
+    <string name="action_move_up">Zhvendos lart</string>
+    <string name="action_move_down">Zhvendos poshtë</string>
     <string name="template_list_position">Pozicioni <xliff:g id="position" example="2">%1$d</xliff:g> nga <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Marrë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Ka rënë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,7 +1739,7 @@
     <string name="gemini_error_with_details">Gemini nuk mund të përgjigjem, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nuk mund të marr një përshkrim më të detajuar të imazhit: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pyet me zë</string>
-    <string name="image_qna_stop_listening">Ndaloni së dëgjuari</string>
+    <string name="image_qna_stop_listening">Ndalo dëgjimin</string>
     <string name="image_qna_type_question">Shkruani një pyetje</string>
     <string name="shortcut_dictate">Dikto</string>
     <string name="title_pref_ai_dictation">Diktimin e saktë me AI</string>

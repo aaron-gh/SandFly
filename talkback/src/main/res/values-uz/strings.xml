@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">Ilova quloqchinlar ulanmagan holda yozib olsa, SandFly faqat imo-ishoralar, tugmalar va matn terishingizga javoban gapiradi va bildirishnomalar yozilmasligi uchun jim turadi.</string>
     <string name="title_pref_switch_languages">Tilni avtomatik almashtirish</string>
     <string name="title_pref_switch_dialects">Dialektni avtomatik almashtirish</string>
-    <string name="category_collapsed">Yiqilgan qism</string>
+    <string name="category_collapsed">Yigʻilgan boʻlim</string>
     <string name="category_expanded">Kengaytirilgan bo\'lim</string>
     <string name="title_pref_speak_nav_bar_buttons">Navigatsiya paneli tugmalarini gapiring</string>
     <string name="summary_pref_speak_nav_bar_buttons">Navigatsiya panelida faollashtirish uchun ko‘targich bilan “Orqaga” yoki “Uyga” kabi bosgan tugmani ayting.</string>
@@ -1385,7 +1385,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Qulog\'ingizdan uzoqda bo\'lganda karnay</string>
     <string name="summary_pref_speakerphone_away_from_ear">Qo\'ng\'iroq paytida telefonni qulog\'ingizdan olib qo\'yganingizda karnayga, yana ushlab turganingizda esa eshitish vositasiga qaytadi.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android ekranni oʻqiydiganlarga ruxsat bermaydi. Uni berish uchun ushbu buyruqni adb or Shizuku, then come back to this screen: %1$s bilan bajaring</string>
-    <string name="action_copy_command">Nusxa ko\'chirish buyrug\'i</string>
+    <string name="action_copy_command">Buyruqni nusxalash</string>
     <string name="command_copied">Buyruq nusxalandi</string>
     <string name="title_pref_speech_control">Boshqa ilovalarga gapirishga ruxsat bering</string>
     <string name="summary_pref_speech_control">Siz ruxsat bergan ilovalar SandFly ovozingiz bilan matn aytishi mumkin. Qurilma qulflanganda hech narsa aytilmaydi.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">Harf o\'rniga \"mehmonxona\" kabi</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Nutq mexanizmi orqali o\'qing</string>
-    <string name="emoji_speech_names">SandFly tomonidan o\'qilgan</string>
+    <string name="emoji_speech_names">SandFly oʻqiydi</string>
     <string name="emoji_speech_none">Hech qanday</string>
     <string name="summary_selector_menu_emoji">Emoji o‘qilishini o‘zgartiring</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1446,12 +1446,12 @@
     <string name="notification_list_quick_settings">Tez sozlamalar</string>
     <string name="notification_list_dismiss">Yopish</string>
     <string name="notification_list_show_all">Hammasini ko\'rsatish</string>
-    <string name="notification_list_show_less">Kamroq ko\'rsating</string>
-    <string name="notification_list_clear_all">Hammasini tozalang</string>
+    <string name="notification_list_show_less">Kamroq koʻrsatish</string>
+    <string name="notification_list_clear_all">Hammasini tozalash</string>
     <string name="notification_list_send">Yuborish</string>
-    <string name="notification_list_playing">Oʻynamoqda</string>
+    <string name="notification_list_playing">Ijro etilmoqda</string>
     <string name="notification_list_paused">Pauza qilingan</string>
-    <string name="notification_list_play">O\'ynang</string>
+    <string name="notification_list_play">Ijro etish</string>
     <string name="notification_list_pause">Pauza</string>
     <string name="notification_list_previous">Avvalgisi</string>
     <string name="notification_list_next">Keyingisi</string>
@@ -1543,7 +1543,7 @@
     <string name="quick_settings_added">%1$s qo\'shildi</string>
     <string name="quick_settings_removed">%1$s olib tashlandi</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly yoqilgan. Oʻchirish uchun 2 barmogʻingizni ekranda 5 soniya ushlab turing. Bu xabarni koʻrsatishni toʻxtatish uchun SandFly sozlamalari &gt; Qoʻshimcha sozlamalar &gt; SandFly oʻchirish boʻyicha koʻrsatmalarni koʻrsatish-ni oʻchiring.</string>
-    <string name="edge_gestures_title">Qirralar</string>
+    <string name="edge_gestures_title">Chetlar</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Ko\'rib chiqish rejimini yoqish yoki o\'chirish uchun yana bir yorliq</string>
     <string name="title_pref_vibration_strength">Tebranish kuchi</string>
     <string name="title_pref_audio_output_device">Ovoz chiqarish qurilmasi</string>
@@ -1571,9 +1571,9 @@
     <string name="title_pref_reading_control_letters">Qo\'lda yozilgan alifbo harflari</string>
     <string name="reading_control_letter_none">Hech qanday</string>
     <string name="handwriting_prompt">Alfavit harfini yozing</string>
-    <string name="handwriting_closed">Qo\'l yozuvi yopiq</string>
+    <string name="handwriting_closed">Qoʻlda yozish yopildi</string>
     <string name="handwriting_no_match">Hech qanday o\'qishni boshqarish <xliff:g id="letter" example="Q">%1$s</xliff:g> bilan boshlanmaydi</string>
-    <string name="handwriting_not_recognized">Qo‘l yozuvi tan olinmadi</string>
+    <string name="handwriting_not_recognized">Qoʻl yozuvi aniqlanmadi</string>
     <string name="handwriting_downloading">Qo‘l yozuvini tanish yuklab olinmoqda</string>
     <string name="handwriting_download_title">Qo‘l yozuvini tanish yuklab olinsinmi?</string>
     <string name="handwriting_download_message">Ushbu telefonda qo\'l yozuvi tanilgan. Uning ushbu til uchun modeli, taxminan 20 MB, Google dan bir marta yuklab olinadi. Xabar qachon yuklab olinganligini ko\'rsatadi.</string>
@@ -1593,7 +1593,7 @@
     <string name="value_handwriting_wait_1000">1 soniya</string>
     <string name="handwriting_keyboard_name">SandFly qo\'l yozuvi</string>
     <string name="handwriting_space">Probel</string>
-    <string name="handwriting_new_line">Yangi chiziq</string>
+    <string name="handwriting_new_line">Yangi qator</string>
     <string name="handwriting_tutorial_intro">Qo\'l yozuvi klaviatura bo\'yicha qo\'llanma. Bir barmoq bilan ekranning istalgan joyiga yozing. Siz yozgan narsa bir zum to\'xtaganingizda yoziladi. Qo‘llanmani tugatish uchun uchta barmoq bilan pastga suring.</string>
     <string name="handwriting_tutorial_write_letter">A alifbo harfini yozing.</string>
     <string name="handwriting_tutorial_write_word">Endi hi so\'zini yozing (h keyin i).</string>
@@ -1721,11 +1721,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Ism, davlat, tur</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Turi, davlati, nomi</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Davlat, tur, ism</string>
-    <string name="item_detail_name">Ism</string>
+    <string name="item_detail_name">Nomi</string>
     <string name="item_detail_type">Turi</string>
-    <string name="item_detail_state">Davlat</string>
-    <string name="action_move_up">Yuqoriga siljiting</string>
-    <string name="action_move_down">Pastga siljiting</string>
+    <string name="item_detail_state">Holati</string>
+    <string name="action_move_up">Yuqoriga surish</string>
+    <string name="action_move_down">Pastga surish</string>
     <string name="template_list_position">Joylashuv <xliff:g id="position" example="2">%1$d</xliff:g> / <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> oldi. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> tushdi. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,12 +1739,12 @@
     <string name="gemini_error_with_details">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Batafsilroq rasm tavsifini ololmadim: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Ovoz bilan so\'rang</string>
-    <string name="image_qna_stop_listening">Eshitishni to\'xtating</string>
+    <string name="image_qna_stop_listening">Tinglashni toʻxtatish</string>
     <string name="image_qna_type_question">Savol yozing</string>
     <string name="shortcut_dictate">Oʻqib berish</string>
     <string name="title_pref_ai_dictation">AI bilan to\'g\'ri diktant</string>
     <string name="dictation_not_corrected">Tuzatilmagan. Taniqli sifatida kiritildi.</string>
-    <string name="dictation_nothing_recognized">Hech narsa tan olinmadi</string>
+    <string name="dictation_nothing_recognized">Hech narsa aniqlanmadi</string>
     <string name="dictation_unavailable">Nutqni tanish funksiyasi mavjud emas</string>
     <string name="dictation_field_gone">Matn maydoni yopildi. Hech narsa yozilmagan.</string>
     <string name="dictation_transcription_failed">Nutq matnga aylantirilmadi. Hech narsa yozilmagan.</string>

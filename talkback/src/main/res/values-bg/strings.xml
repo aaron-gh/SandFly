@@ -1427,7 +1427,7 @@
     <string name="notification_list_no_access">Достъпът до известията е изключен</string>
     <string name="notification_list_grant_access">Включване на достъпа до известията</string>
     <string name="notification_list_quick_settings">Бързи настройки</string>
-    <string name="notification_list_dismiss">Отхвърляне</string>
+    <string name="notification_list_dismiss">Затваряне</string>
     <string name="notification_list_clear_all">Изчистване на всички</string>
     <string name="notification_list_send">Изпращане</string>
     <string name="notification_list_playing">Възпроизвежда се</string>
@@ -1666,9 +1666,9 @@
     <string name="title_pref_reading_control_letters">Ръкописни букви</string>
     <string name="reading_control_letter_none">Няма</string>
     <string name="handwriting_prompt">Напишете буква от азбуката</string>
-    <string name="handwriting_closed">Почеркът е затворен</string>
+    <string name="handwriting_closed">Ръкописното въвеждане е затворено</string>
     <string name="handwriting_no_match">Нито един контрол за четене не започва с <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Почеркът не е разпознат</string>
+    <string name="handwriting_not_recognized">Ръкописният текст не е разпознат</string>
     <string name="handwriting_downloading">Разпознаването на ръкописен текст се изтегля</string>
     <string name="handwriting_download_title">Изтегляне на разпознаване на ръкописен текст?</string>
     <string name="handwriting_download_message">Ръкописът се разпознава на този телефон. Неговият модел за този език, около 20 MB, се изтегля от Google веднъж. Показва се съобщение, когато е изтеглено.</string>
@@ -1686,7 +1686,7 @@
     <string name="value_handwriting_wait_600">0,6 секунди</string>
     <string name="value_handwriting_wait_800">0,8 секунди</string>
     <string name="value_handwriting_wait_1000">1 секунда</string>
-    <string name="handwriting_keyboard_name">SandFly почерк</string>
+    <string name="handwriting_keyboard_name">Ръкописно въвеждане SandFly</string>
     <string name="handwriting_space">Интервал</string>
     <string name="handwriting_new_line">Нов ред</string>
     <string name="handwriting_tutorial_intro">Урок за ръкописна клавиатура. Пишете с един пръст навсякъде по екрана. Това, което пишете, се пише, когато спрете за момент. За да приключите урока, плъзнете надолу с три пръста.</string>
@@ -1739,12 +1739,12 @@
     <string name="summary_pref_volume_keys_move_cursor">Когато текстово поле има фокус, увеличаването на силата на звука премества курсора със знак назад, а намаляването на звука го премества</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ехо на ръкописната клавиатура</string>
     <string name="image_qna_ask_by_voice">Попитайте с глас</string>
-    <string name="image_qna_stop_listening">Спрете да слушате</string>
+    <string name="image_qna_stop_listening">Спиране на слушането</string>
     <string name="image_qna_type_question">Въведете въпрос</string>
     <string name="shortcut_dictate">Диктуване</string>
     <string name="title_pref_ai_dictation">Правилна диктовка с AI</string>
     <string name="dictation_not_corrected">Не е коригирано. Написано като разпознато.</string>
-    <string name="dictation_nothing_recognized">Нищо разпознато</string>
+    <string name="dictation_nothing_recognized">Нищо не е разпознато</string>
     <string name="dictation_unavailable">Разпознаването на говор не е налично</string>
     <string name="dictation_field_gone">Текстовото поле е затворено. Нищо въведено.</string>
     <string name="dictation_transcription_failed">Речта не е транскрибирана. Нищо не е въведено.</string>

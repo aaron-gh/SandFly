@@ -843,7 +843,7 @@
   <string name="tv_training_remote_step_title">Fernbedienung verwenden</string>
   <string name="tv_training_remote_step_summary">Mit der kreisförmigen Richtungstaste oben auf der Fernbedienung kannst du auf dem Bildschirm die verschiedenen Optionen auswählen. Wenn du etwas auswählen möchtest, drücke die Mitte der Richtungstaste.\n\nIn der zweiten Zeile findest du links den Button „Zurück“. Rechts befindet sich die Taste für den Sprachassistenten.\n\nIn der dritten Zeile findest du links die Startbildschirmtaste. Rechts befindet sich die Taste „Stummschalten“.\n\nIn der vierten Zeile findest du links die YouTube-Verknüpfung. Rechts befindet sich die Netflix-Verknüpfung.\n\nIn der untersten Zeile findest du zwei kleine Tasten. Die linke ist die Ein-/Aus-Taste. Mit der rechten lässt sich das Eingabemenü des Fernsehers öffnen.\n\nDie Lautstärketasten befinden sich an der rechten Seite der Fernbedienung.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="tv_training_shortcut_step_title">SandFly-Verknüpfung</string>
-  <string name="tv_training_shortcut_step_summary">Wenn du auf den TalkBack-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Tasten „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird TalkBack aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
+  <string name="tv_training_shortcut_step_summary">Wenn du auf den SandFly-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Tasten „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird SandFly aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="new_feature_in_talkback_title">Neue Funktionen in SandFly</string>
   <string name="exit_tutorial_title">Du bist fertig?</string>
   <string name="exit_tutorial_content">Du kannst jederzeit zum Tutorial zurückkehren – du findest es in den SandFly-Einstellungen.</string>
@@ -1341,8 +1341,8 @@
     <string name="summary_pref_mute_speech_while_recording">Während eine App ohne verbundene Kopfhörer aufnimmt, spricht SandFly nur als Reaktion auf deine Gesten, Tasten und Eingaben und bleibt bei Dingen wie Benachrichtigungen stumm, damit sie nicht aufgenommen werden.</string>
     <string name="title_pref_switch_languages">Sprache automatisch wechseln</string>
     <string name="title_pref_switch_dialects">Dialekt automatisch wechseln</string>
-    <string name="category_collapsed">Minimiert</string>
-    <string name="category_expanded">Maximiert</string>
+    <string name="category_collapsed">Eingeklappt</string>
+    <string name="category_expanded">Ausgeklappt</string>
     <string name="title_pref_speak_nav_bar_buttons">Schaltflächen der Navigationsleiste ansagen</string>
     <string name="summary_pref_speak_nav_bar_buttons">Bei „Zum Aktivieren anheben“ in der Navigationsleiste die Schaltfläche ansagen, die durch Tippen gedrückt wird, zum Beispiel „Zurück“ oder „Startbildschirm“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>

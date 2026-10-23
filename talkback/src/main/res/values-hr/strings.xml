@@ -1448,10 +1448,10 @@
     <string name="notification_list_show_all">Prikaži sve</string>
     <string name="notification_list_show_less">Prikaži manje</string>
     <string name="notification_list_clear_all">Obriši sve</string>
-    <string name="notification_list_send">Poslati</string>
-    <string name="notification_list_playing">Igranje</string>
+    <string name="notification_list_send">Pošalji</string>
+    <string name="notification_list_playing">Reproducira se</string>
     <string name="notification_list_paused">Pauzirano</string>
-    <string name="notification_list_play">Igrati</string>
+    <string name="notification_list_play">Reproduciraj</string>
     <string name="notification_list_pause">Pauziraj</string>
     <string name="notification_list_previous">Prethodno</string>
     <string name="notification_list_next">Dalje</string>
@@ -1725,11 +1725,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Naziv, država, vrsta</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tip, država, naziv</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Država, vrsta, naziv</string>
-    <string name="item_detail_name">Ime</string>
-    <string name="item_detail_type">Pisanje</string>
-    <string name="item_detail_state">Država</string>
-    <string name="action_move_up">Pomakni se gore</string>
-    <string name="action_move_down">Pomakni se dolje</string>
+    <string name="item_detail_name">Naziv</string>
+    <string name="item_detail_type">Vrsta</string>
+    <string name="item_detail_state">Stanje</string>
+    <string name="action_move_up">Pomakni gore</string>
+    <string name="action_move_down">Pomakni dolje</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> od <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Preuzeto <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Pao <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1748,7 +1748,7 @@
     <string name="shortcut_dictate">Diktiranje</string>
     <string name="title_pref_ai_dictation">Ispravite diktat s AI</string>
     <string name="dictation_not_corrected">Nije ispravljeno. Upisano kao prepoznato.</string>
-    <string name="dictation_nothing_recognized">Ništa prepoznato</string>
+    <string name="dictation_nothing_recognized">Ništa nije prepoznato</string>
     <string name="dictation_unavailable">Prepoznavanje govora nije dostupno</string>
     <string name="dictation_field_gone">Polje za tekst zatvoreno. Ništa upisano.</string>
     <string name="dictation_transcription_failed">Govor nije pretvoren u tekst. Ništa upisano.</string>

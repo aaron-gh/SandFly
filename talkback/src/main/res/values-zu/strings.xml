@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Ingasho umbhalo ngezwi lakho SandFly. Ungashintsha lokhu kokuthi Izilungiselelo Ezithuthukile.</string>
     <string name="speech_control_allow">Vumela</string>
     <string name="speech_control_deny">Ungavumeli</string>
-    <string name="permission_speak_label">khuluma ngakho SandFly</string>
+    <string name="permission_speak_label">ukukhuluma nge-SandFly</string>
     <string name="permission_speak_description">Ivumela uhlelo lokusebenza ukusho umbhalo ngezwi lakho SandFly. SandFly ikubuza ngaphambi kokuthi uhlelo lokusebenza lukhulume.</string>
     <string name="permission_braille_display_label">cela ukuba isibonisi se-braille se-SandFly</string>
     <string name="permission_braille_display_description">Ivumela uhlelo lokusebenza ukuthi lucele ukuba isibonisi se-braille SandFly. Uma uyivumela kokuthi SandFly, ingafunda yonke into esikrinini futhi ilawule idivayisi yakho. SandFly ikubuza kuqala.</string>
@@ -1452,7 +1452,7 @@
     <string name="notification_list_playing">Iyadlala</string>
     <string name="notification_list_paused">Kumisiwe okwesikhashana</string>
     <string name="notification_list_play">Dlala</string>
-    <string name="notification_list_pause">Phumula</string>
+    <string name="notification_list_pause">Misa</string>
     <string name="notification_list_previous">Okwangaphambilini</string>
     <string name="notification_list_next">Okulandelayo</string>
     <plurals name="notification_list_group_count">
@@ -1573,7 +1573,7 @@
     <string name="handwriting_prompt">Bhala uhlamvu lwezinhlamvu</string>
     <string name="handwriting_closed">Ukubhala ngesandla kuvaliwe</string>
     <string name="handwriting_no_match">Alukho ulawulo lokufunda oluqala ngokuthi <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Ukubhala ngesandla akwaziwa</string>
+    <string name="handwriting_not_recognized">Ukubhala ngesandla akuqashelwanga</string>
     <string name="handwriting_downloading">Ukuqaphela ukubhala ngesandla kuyalanda</string>
     <string name="handwriting_download_title">Landa ukuqaphela kokubhala ngesandla?</string>
     <string name="handwriting_download_message">Ukubhala ngesandla kuyabonakala kule foni. Imodeli yayo yalolu limi, cishe engu-20 MB, ilandwa isuka kokuthi Google kanye. Umlayezo ukhombisa uma ulandiwe.</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">Isimo, uhlobo, igama</string>
     <string name="item_detail_name">Igama</string>
     <string name="item_detail_type">Uhlobo</string>
-    <string name="item_detail_state">Izwe</string>
+    <string name="item_detail_state">Isimo</string>
     <string name="action_move_up">Hambisa phezulu</string>
-    <string name="action_move_down">Hamba phansi</string>
+    <string name="action_move_down">Hambisa phansi</string>
     <string name="template_list_position">Isikhundla <xliff:g id="position" example="2">%1$d</xliff:g> kokungu-<xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Ithathiwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Iwisiwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">Ukuphoqa</string>
     <string name="title_pref_ai_dictation">Ukubizela okulungile nge-AI</string>
     <string name="dictation_not_corrected">Akulungisiwe. Kuthayishwe njengokuqashelwayo.</string>
-    <string name="dictation_nothing_recognized">Akukho okubonwayo</string>
+    <string name="dictation_nothing_recognized">Akukho okuqashelwe</string>
     <string name="dictation_unavailable">Ukunakwa kwenkulumo akutholakali</string>
     <string name="dictation_field_gone">Inkambu yombhalo ivaliwe. Akukho okuthayiphiwe.</string>
     <string name="dictation_transcription_failed">Inkulumo ayibhalwanga. Akukho okuthayiphiwe.</string>

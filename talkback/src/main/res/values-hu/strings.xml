@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Szöveget tud mondani az Ön SandFly hangján. Ezt a Speciális beállításokban módosíthatja.</string>
     <string name="speech_control_allow">Engedélyezze</string>
     <string name="speech_control_deny">Ne engedd</string>
-    <string name="permission_speak_label">beszéljen keresztül SandFly</string>
+    <string name="permission_speak_label">beszéd a SandFly segítségével</string>
     <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás szöveget mondjon az Ön SandFly hangján. SandFly megkérdezi, mielőtt az alkalmazás beszélni tudna.</string>
     <string name="permission_braille_display_label">kérje, hogy legyen Braille-kijelző a SandFly számára</string>
     <string name="permission_braille_display_description">Lehetővé teszi, hogy az alkalmazás Braille-kijelzőként kérje a SandFly-t. Ha engedélyezi az SandFly-ben, akkor mindent elolvashat a képernyőn, és vezérelheti az eszközt. SandFly kérdezi meg először.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">A betű helyett például \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Olvasás beszédmotorral</string>
-    <string name="emoji_speech_names">Olvasó: SandFly</string>
+    <string name="emoji_speech_names">A SandFly olvassa fel</string>
     <string name="emoji_speech_none">Nincs</string>
     <string name="summary_selector_menu_emoji">Módosítsa a hangulatjelek olvasásának módját</string>
     <string name="emoji_speech_state">Hangulatjel: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1446,12 +1446,12 @@
     <string name="notification_list_quick_settings">Gyors beállítások</string>
     <string name="notification_list_dismiss">Elvetés</string>
     <string name="notification_list_show_all">Összes megjelenítése</string>
-    <string name="notification_list_show_less">Mutass kevesebbet</string>
+    <string name="notification_list_show_less">Kevesebb megjelenítése</string>
     <string name="notification_list_clear_all">Minden törlése</string>
     <string name="notification_list_send">Küldés</string>
-    <string name="notification_list_playing">Játék</string>
+    <string name="notification_list_playing">Lejátszás folyamatban</string>
     <string name="notification_list_paused">Szüneteltetve</string>
-    <string name="notification_list_play">Játssz</string>
+    <string name="notification_list_play">Lejátszás</string>
     <string name="notification_list_pause">Szüneteltetés</string>
     <string name="notification_list_previous">Vissza</string>
     <string name="notification_list_next">Tovább</string>
@@ -1543,7 +1543,7 @@
     <string name="quick_settings_added">%1$s hozzáadva</string>
     <string name="quick_settings_removed">%1$s eltávolítva</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly bekapcsolva. A kikapcsoláshoz tartsa két ujját a képernyőn 5 másodpercig. Az üzenet megjelenítésének leállításához kapcsolja ki a SandFly beállítások &gt; Speciális beállítások &gt; Útmutató a SandFly kikapcsolásához.</string>
-    <string name="edge_gestures_title">Élek</string>
+    <string name="edge_gestures_title">Szélek</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Egy másik parancsikon a böngészési mód be- és kikapcsolásához</string>
     <string name="title_pref_vibration_strength">Rezgés erőssége</string>
     <string name="title_pref_audio_output_device">Hangkimeneti eszköz</string>
@@ -1571,7 +1571,7 @@
     <string name="title_pref_reading_control_letters">Kézzel írt ábécé betűi</string>
     <string name="reading_control_letter_none">Nincs</string>
     <string name="handwriting_prompt">Írj egy ábécé betűt</string>
-    <string name="handwriting_closed">Kézírás zárva</string>
+    <string name="handwriting_closed">Kézírás bezárva</string>
     <string name="handwriting_no_match">Egyetlen olvasásvezérlő sem <xliff:g id="letter" example="Q">%1$s</xliff:g>-val kezdődik</string>
     <string name="handwriting_not_recognized">A kézírás nem ismerhető fel</string>
     <string name="handwriting_downloading">A kézírás-felismerés letöltése folyamatban van</string>
@@ -1597,7 +1597,7 @@
     <string name="handwriting_tutorial_intro">Kézírás billentyűzet oktatóanyag. Írjon egy ujjal bárhol a képernyőn. Amit írsz, az be van gépelve, ha megállsz egy pillanatra. Az oktatóprogram befejezéséhez húzza lefelé három ujját.</string>
     <string name="handwriting_tutorial_write_letter">Írd le az ábécé a betűjét!</string>
     <string name="handwriting_tutorial_write_word">Most írja be a hi szót (h, majd i).</string>
-    <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> beírása.</string>
+    <string name="handwriting_tutorial_typed">Beírva: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Szóköz beírásához csúsztassa jobbra két ujját.</string>
     <string name="handwriting_tutorial_delete">Csúsztassa két ujját balra a kurzor előtti karakter törléséhez.</string>
     <string name="handwriting_tutorial_deleted">Törölve.</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Típus, állapot, név</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Állam, típus, név</string>
     <string name="item_detail_name">Név</string>
-    <string name="item_detail_type">Gépelés</string>
-    <string name="item_detail_state">Állam</string>
-    <string name="action_move_up">Lépj felfelé</string>
-    <string name="action_move_down">Mozgás lefelé</string>
+    <string name="item_detail_type">Típus</string>
+    <string name="item_detail_state">Állapot</string>
+    <string name="action_move_up">Mozgatás felfelé</string>
+    <string name="action_move_down">Mozgatás lefelé</string>
     <string name="template_list_position"><xliff:g id="position" example="2">%1$d</xliff:g>/<xliff:g id="count" example="3">%2$d</xliff:g> pozíció</string>
     <string name="template_item_details_order_picked_up">Felvette <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Eldobva <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1738,13 +1738,13 @@
     <string name="gemini_error_with_code">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nem tudok részletesebb képleírást kapni: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="image_qna_ask_by_voice">Kérdezz hangon</string>
-    <string name="image_qna_stop_listening">Ne hallgasson</string>
+    <string name="image_qna_ask_by_voice">Kérdezés hanggal</string>
+    <string name="image_qna_stop_listening">Hallgatás leállítása</string>
     <string name="image_qna_type_question">Írjon be egy kérdést</string>
     <string name="shortcut_dictate">Diktálás</string>
     <string name="title_pref_ai_dictation">Helyes diktálás AI-val</string>
     <string name="dictation_not_corrected">Nem javítva. Felismertként gépelve.</string>
-    <string name="dictation_nothing_recognized">Semmit sem ismertek fel</string>
+    <string name="dictation_nothing_recognized">Nem sikerült semmit felismerni</string>
     <string name="dictation_unavailable">A beszédfelismerés nem érhető el</string>
     <string name="dictation_field_gone">Szövegmező zárva. Semmi sem gépelt.</string>
     <string name="dictation_transcription_failed">A beszéd nem lett átírva. Semmi sem lett begépelve.</string>

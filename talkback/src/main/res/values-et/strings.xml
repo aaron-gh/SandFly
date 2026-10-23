@@ -1427,7 +1427,7 @@
     <string name="notification_list_no_access">Juurdepääs märguannetele on väljas</string>
     <string name="notification_list_grant_access">Lülita juurdepääs märguannetele sisse</string>
     <string name="notification_list_quick_settings">Kiirseaded</string>
-    <string name="notification_list_dismiss">Loobu</string>
+    <string name="notification_list_dismiss">Sulge</string>
     <string name="notification_list_clear_all">Kustuta kõik</string>
     <string name="notification_list_send">Saada</string>
     <string name="notification_list_playing">Esitamine</string>
@@ -1668,12 +1668,12 @@
     <string name="handwriting_prompt">Kirjutage täht</string>
     <string name="handwriting_closed">Käekiri suletud</string>
     <string name="handwriting_no_match">Ükski lugemise juhtelement ei alga tähega <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Käekirja ei tuvastata</string>
+    <string name="handwriting_not_recognized">Käekirja ei tuvastatud</string>
     <string name="handwriting_downloading">Käsikirjatuvastus on allalaadimisel</string>
     <string name="handwriting_download_title">Kas laadida alla käekirjatuvastus?</string>
     <string name="handwriting_download_message">Selles telefonis tuvastatakse käekiri. Selle keele mudel, umbes 20 MB, laaditakse alla aadressilt Google üks kord. Kui see on alla laaditud, kuvatakse teade.</string>
     <string name="handwriting_download_button">Laadi alla</string>
-    <string name="handwriting_downloaded">Käsikirjatuvastus on alla laaditud</string>
+    <string name="handwriting_downloaded">Käekirjatuvastus on alla laaditud</string>
     <string name="handwriting_download_failed">Käsikirjatuvastust ei saanud alla laadida. Kontrollige Interneti-ühendust.</string>
     <string name="handwriting_unsupported_language">Käsikirjatuvastus pole selles keeles saadaval</string>
     <string name="title_pref_handwriting_keyboard">Käsitsi kirjutav klaviatuur</string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">Dikteeri</string>
     <string name="title_pref_ai_dictation">Õige dikteerimine AI-ga</string>
     <string name="dictation_not_corrected">Ei parandatud. Trükitud tunnustatuna.</string>
-    <string name="dictation_nothing_recognized">Midagi ei tunnistanud</string>
+    <string name="dictation_nothing_recognized">Midagi ei tuvastatud</string>
     <string name="dictation_unavailable">Kõnetuvastus pole saadaval</string>
     <string name="dictation_field_gone">Tekstiväli suletud. Midagi pole trükitud.</string>
     <string name="dictation_transcription_failed">Kõnet ei transkribeeritud. Midagi pole trükitud.</string>

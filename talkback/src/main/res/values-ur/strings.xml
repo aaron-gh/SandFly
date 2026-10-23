@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">یہ آپ کی SandFly آواز میں متن کہہ سکتا ہے۔ آپ اسے اعلیٰ ترتیبات میں تبدیل کر سکتے ہیں۔</string>
     <string name="speech_control_allow">اجازت دیں</string>
     <string name="speech_control_deny">اجازت نہ دیں</string>
-    <string name="permission_speak_label">SandFly کے ذریعے بولیں</string>
+    <string name="permission_speak_label">SandFly کے ذریعے بولنا</string>
     <string name="permission_speak_description">ایپ کو آپ کی SandFly آواز میں متن کہنے کو کہنے دیتا ہے۔ ایپ کے بولنے سے پہلے SandFly آپ سے پوچھتا ہے۔</string>
     <string name="permission_braille_display_label">SandFly کے لیے بریل ڈسپلے بننے کو کہو</string>
     <string name="permission_braille_display_description">ایپ کو SandFly کے لیے بریل ڈسپلے بننے کی اجازت دیتا ہے۔ اگر آپ اسے SandFly میں اجازت دیتے ہیں، تو یہ اسکرین پر موجود ہر چیز کو پڑھ سکتا ہے اور آپ کے آلے کو کنٹرول کر سکتا ہے۔ SandFly پہلے آپ سے پوچھتا ہے۔</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">خط کے بجائے، جیسے \"ہوٹل\"</string>
     <string name="title_pref_emoji_speech">ایموجی</string>
     <string name="emoji_speech_engine">اسپیچ انجن کے ذریعے پڑھیں</string>
-    <string name="emoji_speech_names">SandFly تک پڑھیں</string>
+    <string name="emoji_speech_names">SandFly پڑھتا ہے</string>
     <string name="emoji_speech_none">کوئی نہیں</string>
     <string name="summary_selector_menu_emoji">ایموجی کو پڑھنے کا طریقہ تبدیل کریں</string>
     <string name="emoji_speech_state">ایموجی: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1444,14 +1444,14 @@
     <string name="notification_list_no_access">اطلاع تک رسائی بند ہے</string>
     <string name="notification_list_grant_access">اطلاع تک رسائی کو آن کریں</string>
     <string name="notification_list_quick_settings">فوری ترتیبات</string>
-    <string name="notification_list_dismiss">برخاست کریں</string>
+    <string name="notification_list_dismiss">ہٹائیں</string>
     <string name="notification_list_show_all">سب دکھائیں</string>
     <string name="notification_list_show_less">کم دکھائیں</string>
     <string name="notification_list_clear_all">سب صاف کریں</string>
     <string name="notification_list_send">بھیجیں</string>
-    <string name="notification_list_playing">کھیل رہا ہے</string>
+    <string name="notification_list_playing">چل رہا ہے</string>
     <string name="notification_list_paused">روک دیا گیا</string>
-    <string name="notification_list_play">کھیلیں</string>
+    <string name="notification_list_play">چلائیں</string>
     <string name="notification_list_pause">موقوف کریں</string>
     <string name="notification_list_previous">پیچھے</string>
     <string name="notification_list_next">آگے</string>
@@ -1543,7 +1543,7 @@
     <string name="quick_settings_added">%1$s شامل کر دیا گیا</string>
     <string name="quick_settings_removed">%1$s ہٹا دیا گیا</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly آن۔ آف کرنے کے لیے 2 انگلیاں اسکرین پر 5 سیکنڈ کے لیے دبائے رکھیں۔ اس پیغام کو دکھانا بند کرنے کے لیے، SandFly سیٹنگز کو آف کریں &gt; ایڈوانسڈ سیٹنگز &gt; SandFly کو آف کرنے کے لیے ہدایات دکھائیں۔</string>
-    <string name="edge_gestures_title">کناروں</string>
+    <string name="edge_gestures_title">کنارے</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">براؤز موڈ کو آن یا آف کرنے کے لیے ایک اور شارٹ کٹ</string>
     <string name="title_pref_vibration_strength">کمپن کی طاقت</string>
     <string name="title_pref_audio_output_device">آڈیو آؤٹ پٹ ڈیوائس</string>
@@ -1570,7 +1570,7 @@
     <string name="shortcut_write_reading_control">ریڈنگ کنٹرول کا خط لکھیں</string>
     <string name="title_pref_reading_control_letters">ہاتھ سے لکھے ہوئے حروف تہجی کے حروف</string>
     <string name="reading_control_letter_none">کوئی نہیں</string>
-    <string name="handwriting_prompt">حروف تہجی کا خط لکھیں</string>
+    <string name="handwriting_prompt">حروف تہجی کا ایک حرف لکھیں</string>
     <string name="handwriting_closed">ہینڈ رائٹنگ بند</string>
     <string name="handwriting_no_match">پڑھنے کا کوئی کنٹرول <xliff:g id="letter" example="Q">%1$s</xliff:g> سے شروع نہیں ہوتا</string>
     <string name="handwriting_not_recognized">ہینڈ رائٹنگ کی شناخت نہیں ہوئی</string>
@@ -1593,7 +1593,7 @@
     <string name="value_handwriting_wait_1000">1 سیکنڈ</string>
     <string name="handwriting_keyboard_name">SandFly ہینڈ رائٹنگ</string>
     <string name="handwriting_space">اسپیس</string>
-    <string name="handwriting_new_line">نئی لکیر</string>
+    <string name="handwriting_new_line">نئی لائن</string>
     <string name="handwriting_tutorial_intro">ہینڈ رائٹنگ کی بورڈ ٹیوٹوریل۔ اسکرین پر کہیں بھی ایک انگلی سے لکھیں۔ آپ جو لکھتے ہیں وہ اس وقت ٹائپ ہوتا ہے جب آپ ایک لمحے کے لیے رک جاتے ہیں۔ ٹیوٹوریل کو ختم کرنے کے لیے، تین انگلیوں سے نیچے کی طرف سوائپ کریں۔</string>
     <string name="handwriting_tutorial_write_letter">حروف تہجی کا حرف لکھیں۔</string>
     <string name="handwriting_tutorial_write_word">اب لفظ hi (h کے بعد i) لکھیں۔</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">ریاست، قسم، نام</string>
     <string name="item_detail_name">نام</string>
     <string name="item_detail_type">قسم</string>
-    <string name="item_detail_state">ریاست</string>
-    <string name="action_move_up">اوپر بڑھیں</string>
-    <string name="action_move_down">نیچے کی طرف بڑھیں</string>
+    <string name="item_detail_state">حالت</string>
+    <string name="action_move_up">اوپر منتقل کریں</string>
+    <string name="action_move_down">نیچے منتقل کریں</string>
     <string name="template_list_position">پوزیشن <xliff:g id="position" example="2">%1$d</xliff:g> از <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> اٹھایا گیا۔ <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">گرا دیا گیا <xliff:g id="detail" example="Name">%1$s</xliff:g> <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,12 +1739,12 @@
     <string name="gemini_error_with_details">Gemini جواب نہیں دے سکا، غلطی <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g> تصویر کی مزید تفصیلی وضاحت حاصل نہیں کر سکتے: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">آواز سے پوچھیں</string>
-    <string name="image_qna_stop_listening">سننا بند کرو</string>
+    <string name="image_qna_stop_listening">سننا بند کریں</string>
     <string name="image_qna_type_question">ایک سوال ٹائپ کریں</string>
     <string name="shortcut_dictate">لکھوائیں</string>
     <string name="title_pref_ai_dictation">AI کے ساتھ درست ڈکٹیشن</string>
     <string name="dictation_not_corrected">درست نہیں کیا گیا۔ تسلیم شدہ کے طور پر ٹائپ کیا گیا۔</string>
-    <string name="dictation_nothing_recognized">کچھ نہیں پہچانا</string>
+    <string name="dictation_nothing_recognized">کچھ بھی شناخت نہیں ہوا</string>
     <string name="dictation_unavailable">تقریر کی شناخت دستیاب نہیں ہے</string>
     <string name="dictation_field_gone">ٹیکسٹ فیلڈ بند ہے۔ کچھ بھی نہیں لکھا۔</string>
     <string name="dictation_transcription_failed">تقریر کو متن میں تبدیل نہیں کیا گیا۔ کچھ بھی نہیں لکھا۔</string>

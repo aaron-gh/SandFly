@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">Перемикати мову автоматично</string>
     <string name="title_pref_switch_dialects">Автоматичне перемикання діалекту</string>
     <string name="category_collapsed">Згорнутий розділ</string>
-    <string name="category_expanded">Розширений розділ</string>
+    <string name="category_expanded">Розгорнутий розділ</string>
     <string name="title_pref_speak_nav_bar_buttons">Озвучення кнопок панелі навігації</string>
     <string name="summary_pref_speak_nav_bar_buttons">За допомогою підйому для активації на панелі навігації промовте кнопку, яку натискає торк, наприклад «Назад» або «Додому».</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1401,7 +1401,7 @@
     <string name="permission_braille_display_label">попросіть стати дисплеєм Брайля за SandFly</string>
     <string name="permission_braille_display_description">Дозволяє додатку запитувати як дисплей Брайля для SandFly. Якщо ви дозволите це в SandFly, він зможе читати все на екрані та керувати вашим пристроєм. SandFly запитує вас першим.</string>
     <string name="title_pref_phonetic_letters_mode">Промовляйте букви фонетично</string>
-    <string name="phonetic_letters_mode_off">Вимкнути</string>
+    <string name="phonetic_letters_mode_off">Вимкнено</string>
     <string name="phonetic_letters_mode_after_letter_delay">Після листа, затриманого, як \"ч, готель\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Після листа без затримки, як \"ч готель\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Замість літери, як \"готель\"</string>
@@ -1412,7 +1412,7 @@
     <string name="summary_selector_menu_emoji">Змініть спосіб читання емодзі</string>
     <string name="emoji_speech_state">Емодзі: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Підрахуйте повторювані емодзі</string>
-    <string name="emoji_repeat_count_off">Вимкнути</string>
+    <string name="emoji_repeat_count_off">Вимкнено</string>
     <string name="emoji_repeat_count_2">2 або більше</string>
     <string name="emoji_repeat_count_3">3 або більше</string>
     <string name="emoji_repeat_count_4">4 або більше</string>
@@ -1446,12 +1446,12 @@
     <string name="notification_list_quick_settings">Швидкі налаштування</string>
     <string name="notification_list_dismiss">Закрити</string>
     <string name="notification_list_show_all">Показати все</string>
-    <string name="notification_list_show_less">Показувати менше</string>
+    <string name="notification_list_show_less">Показати менше</string>
     <string name="notification_list_clear_all">Очистити все</string>
     <string name="notification_list_send">Надіслати</string>
-    <string name="notification_list_playing">Граючи</string>
+    <string name="notification_list_playing">Відтворюється</string>
     <string name="notification_list_paused">Призупинено</string>
-    <string name="notification_list_play">Грати</string>
+    <string name="notification_list_play">Відтворити</string>
     <string name="notification_list_pause">Пауза</string>
     <string name="notification_list_previous">Назад</string>
     <string name="notification_list_next">Далі</string>
@@ -1527,7 +1527,7 @@
     <string name="quick_settings_vibrate">Вібрувати</string>
     <string name="quick_settings_mute">Вимкнути звук</string>
     <string name="quick_settings_on">Увімкнути</string>
-    <string name="quick_settings_off">Вимкнути</string>
+    <string name="quick_settings_off">Вимкнено</string>
     <string name="quick_settings_unavailable">Недоступний</string>
     <string name="quick_settings_edit">Редагувати</string>
     <string name="quick_settings_system">Швидкі налаштування системи</string>
@@ -1579,9 +1579,9 @@
     <string name="title_pref_reading_control_letters">Рукописні букви алфавіту</string>
     <string name="reading_control_letter_none">Немає</string>
     <string name="handwriting_prompt">Напишіть букву алфавіту</string>
-    <string name="handwriting_closed">Почерк закритий</string>
+    <string name="handwriting_closed">Рукописне введення закрито</string>
     <string name="handwriting_no_match">Контроль читання не починається з <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Почерк не розпізнається</string>
+    <string name="handwriting_not_recognized">Рукописний текст не розпізнано</string>
     <string name="handwriting_downloading">Розпізнавання рукописного тексту завантажується</string>
     <string name="handwriting_download_title">Завантажити розпізнавання рукописного тексту?</string>
     <string name="handwriting_download_message">Цей телефон розпізнає рукописний текст. Його модель для цієї мови, близько 20 Мб, завантажується з Google один раз. Після завантаження з’явиться повідомлення.</string>
@@ -1599,13 +1599,13 @@
     <string name="value_handwriting_wait_600">0,6 секунди</string>
     <string name="value_handwriting_wait_800">0,8 секунди</string>
     <string name="value_handwriting_wait_1000">1 секунда</string>
-    <string name="handwriting_keyboard_name">SandFly почерк</string>
+    <string name="handwriting_keyboard_name">Рукописне введення SandFly</string>
     <string name="handwriting_space">Пробіл</string>
     <string name="handwriting_new_line">Новий рядок</string>
     <string name="handwriting_tutorial_intro">Підручник з клавіатури рукописного тексту. Пишіть одним пальцем будь-де на екрані. Те, що ви пишете, друкується, коли ви зупиняєтеся на мить. Щоб завершити підручник, проведіть трьома пальцями вниз.</string>
     <string name="handwriting_tutorial_write_letter">Напишіть букву алфавіту а.</string>
     <string name="handwriting_tutorial_write_word">Тепер напишіть слово hi (h, а потім i).</string>
-    <string name="handwriting_tutorial_typed">Набрав <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Введено <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Проведіть двома пальцями вправо, щоб ввести пробіл.</string>
     <string name="handwriting_tutorial_delete">Проведіть двома пальцями вліво, щоб видалити символ перед курсором.</string>
     <string name="handwriting_tutorial_deleted">Видалено.</string>
@@ -1729,11 +1729,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Назва, стан, тип</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Тип, стан, назва</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Штат, тип, назва</string>
-    <string name="item_detail_name">Ім\'я</string>
-    <string name="item_detail_type">Ввести</string>
-    <string name="item_detail_state">Держава</string>
-    <string name="action_move_up">Рухатися вгору</string>
-    <string name="action_move_down">Рухатися вниз</string>
+    <string name="item_detail_name">Назва</string>
+    <string name="item_detail_type">Тип</string>
+    <string name="item_detail_state">Стан</string>
+    <string name="action_move_up">Перемістити вгору</string>
+    <string name="action_move_down">Перемістити вниз</string>
     <string name="template_list_position">Позиція <xliff:g id="position" example="2">%1$d</xliff:g> з <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Взяв <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Випав <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1747,7 +1747,7 @@
     <string name="gemini_error_with_details">Gemini не зміг відповісти, помилка <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Неможливо отримати детальніший опис зображення: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Запитайте голосом</string>
-    <string name="image_qna_stop_listening">Припиніть слухати</string>
+    <string name="image_qna_stop_listening">Зупинити прослуховування</string>
     <string name="image_qna_type_question">Введіть запитання</string>
     <string name="shortcut_dictate">Диктувати</string>
     <string name="title_pref_ai_dictation">Правильний диктант з ШІ</string>

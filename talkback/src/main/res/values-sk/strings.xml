@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">Automaticky prepínať jazyk</string>
     <string name="title_pref_switch_dialects">Automaticky prepínať dialekt</string>
     <string name="category_collapsed">Zbalená sekcia</string>
-    <string name="category_expanded">Rozšírená sekcia</string>
+    <string name="category_expanded">Rozbalená sekcia</string>
     <string name="title_pref_speak_nav_bar_buttons">Vysloviť tlačidlá navigačnej lišty</string>
     <string name="summary_pref_speak_nav_bar_buttons">Zdvihnutím aktivujte navigačnú lištu a povedzte tlačidlo, ktoré stlačí ťuknutie, napríklad Späť alebo Domov.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Môže povedať text vaším hlasom SandFly. Môžete to zmeniť v rozšírených nastaveniach.</string>
     <string name="speech_control_allow">Povoliť</string>
     <string name="speech_control_deny">Nedovoľte</string>
-    <string name="permission_speak_label">hovor cez SandFly</string>
+    <string name="permission_speak_label">hovorenie cez SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
     <string name="permission_braille_display_label">požiadať o zobrazenie Braillovho písma pre SandFly</string>
     <string name="permission_braille_display_description">Umožňuje aplikácii požiadať o zobrazenie Braillovho písma pre SandFly. Ak to povolíte v SandFly, môže čítať všetko na obrazovke a ovládať vaše zariadenie. SandFly sa vás pýta ako prvý.</string>
@@ -1444,14 +1444,14 @@
     <string name="notification_list_no_access">Prístup k upozorneniam je vypnutý</string>
     <string name="notification_list_grant_access">Zapnite prístup k upozorneniam</string>
     <string name="notification_list_quick_settings">Rýchle nastavenia</string>
-    <string name="notification_list_dismiss">Odmietnuť</string>
+    <string name="notification_list_dismiss">Zavrieť</string>
     <string name="notification_list_show_all">Zobraziť všetky</string>
-    <string name="notification_list_show_less">Ukážte menej</string>
+    <string name="notification_list_show_less">Zobraziť menej</string>
     <string name="notification_list_clear_all">Vymazať všetko</string>
     <string name="notification_list_send">Odoslať</string>
     <string name="notification_list_playing">Prehrávanie</string>
     <string name="notification_list_paused">Pozastavené</string>
-    <string name="notification_list_play">Hrať</string>
+    <string name="notification_list_play">Prehrať</string>
     <string name="notification_list_pause">Pozastaviť</string>
     <string name="notification_list_previous">Naspäť</string>
     <string name="notification_list_next">Ďalej</string>
@@ -1551,7 +1551,7 @@
     <string name="quick_settings_added">%1$s pridané</string>
     <string name="quick_settings_removed">%1$s odstránené</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly zapnuté. Pre vypnutie podržte 2 prsty na obrazovke na 5 sekúnd. Ak chcete zastaviť zobrazovanie tejto správy, vypnite nastavenia SandFly &gt; Rozšírené nastavenia &gt; Zobraziť pokyny na vypnutie SandFly.</string>
-    <string name="edge_gestures_title">Hrany</string>
+    <string name="edge_gestures_title">Okraje</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Ďalšia skratka na zapnutie alebo vypnutie režimu prehliadania</string>
     <string name="title_pref_vibration_strength">Sila vibrácií</string>
     <string name="title_pref_audio_output_device">Výstupné zvukové zariadenie</string>
@@ -1729,11 +1729,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Názov, štát, typ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, štát, názov</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Štát, typ, názov</string>
-    <string name="item_detail_name">Meno</string>
-    <string name="item_detail_type">Písať</string>
-    <string name="item_detail_state">Štátu</string>
-    <string name="action_move_up">Posunúť sa hore</string>
-    <string name="action_move_down">Presuňte sa nadol</string>
+    <string name="item_detail_name">Názov</string>
+    <string name="item_detail_type">Typ</string>
+    <string name="item_detail_state">Stav</string>
+    <string name="action_move_up">Presunúť nahor</string>
+    <string name="action_move_down">Presunúť nadol</string>
     <string name="template_list_position">Pozícia <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Vyzdvihnuté <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Klesla <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1747,12 +1747,12 @@
     <string name="gemini_error_with_details">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nie je možné získať podrobnejší popis obrázka: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Opýtajte sa hlasom</string>
-    <string name="image_qna_stop_listening">Prestaň počúvať</string>
+    <string name="image_qna_stop_listening">Zastaviť počúvanie</string>
     <string name="image_qna_type_question">Napíšte otázku</string>
     <string name="shortcut_dictate">Diktovať</string>
     <string name="title_pref_ai_dictation">Správny diktát s AI</string>
     <string name="dictation_not_corrected">Neopravené. Zadané ako rozpoznané.</string>
-    <string name="dictation_nothing_recognized">Nič rozpoznané</string>
+    <string name="dictation_nothing_recognized">Nič sa nerozpoznalo</string>
     <string name="dictation_unavailable">Rozpoznávanie reči nie je k dispozícii</string>
     <string name="dictation_field_gone">Textové pole je zatvorené. Nič nebolo napísané.</string>
     <string name="dictation_transcription_failed">Reč nebola prepísaná. Nič nebolo napísané.</string>

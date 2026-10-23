@@ -1386,7 +1386,7 @@
     <string name="title_pref_speakerphone_away_from_ear">ลำโพงเมื่ออยู่ห่างจากหูของคุณ</string>
     <string name="summary_pref_speakerphone_away_from_ear">ในระหว่างการโทร ให้สลับไปที่ลำโพงเมื่อคุณยกโทรศัพท์ออกจากหู และกลับไปที่หูฟังเมื่อคุณยกขึ้นอีกครั้ง</string>
     <string name="summary_pref_speakerphone_needs_permission">ต้องการการอนุญาตที่ Android ไม่ได้มอบให้กับโปรแกรมอ่านหน้าจอ หากต้องการอนุญาต ให้รันคำสั่งนี้ด้วย adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">คำสั่งคัดลอก</string>
+    <string name="action_copy_command">คัดลอกคำสั่ง</string>
     <string name="command_copied">คัดลอกคำสั่งแล้ว</string>
     <string name="title_pref_speech_control">ให้แอปอื่นๆ พูด</string>
     <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียง SandFly ของคุณได้ ไม่มีการพูดอะไรในขณะที่อุปกรณ์ถูกล็อค</string>
@@ -1723,8 +1723,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">ประเภท รัฐ ชื่อ</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">รัฐ ประเภท ชื่อ</string>
     <string name="item_detail_name">ชื่อ</string>
-    <string name="item_detail_type">พิมพ์</string>
-    <string name="item_detail_state">รัฐ</string>
+    <string name="item_detail_type">ประเภท</string>
+    <string name="item_detail_state">สถานะ</string>
     <string name="action_move_up">เลื่อนขึ้น</string>
     <string name="action_move_down">เลื่อนลง</string>
     <string name="template_list_position">ตำแหน่ง <xliff:g id="position" example="2">%1$d</xliff:g> จาก <xliff:g id="count" example="3">%2$d</xliff:g></string>
@@ -1745,7 +1745,7 @@
     <string name="shortcut_dictate">พิมพ์ตามเสียงอ่าน</string>
     <string name="title_pref_ai_dictation">การเขียนตามคำบอกที่ถูกต้องด้วย AI</string>
     <string name="dictation_not_corrected">ไม่ได้รับการแก้ไข. พิมพ์ว่าได้รับการยอมรับแล้ว</string>
-    <string name="dictation_nothing_recognized">ไม่มีอะไรได้รับการยอมรับ</string>
+    <string name="dictation_nothing_recognized">ไม่รู้จำอะไรเลย</string>
     <string name="dictation_unavailable">การรู้จำเสียงไม่พร้อมใช้งาน</string>
     <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่มีอะไรพิมพ์</string>
     <string name="dictation_transcription_failed">ไม่ได้ถอดเสียงพูดเป็นข้อความ ไม่มีอะไรพิมพ์</string>

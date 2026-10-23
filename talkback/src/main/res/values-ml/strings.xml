@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">ഹെഡ്‌ഫോണുകൾ കണക്റ്റ് ചെയ്യാതെ ഒരു ആപ്പ് റെക്കോർഡ് ചെയ്യുമ്പോൾ, SandFly നിങ്ങളുടെ ആംഗ്യങ്ങൾ, കീകൾ, ടൈപ്പിംഗ് എന്നിവയ്‌ക്ക് മറുപടിയായി മാത്രമേ സംസാരിക്കൂ, അറിയിപ്പുകൾ പോലുള്ള കാര്യങ്ങൾക്കായി നിശ്ശബ്ദത പാലിക്കുന്നു, അങ്ങനെ അവ റെക്കോർഡ് ചെയ്യപ്പെടില്ല.</string>
     <string name="title_pref_switch_languages">ഭാഷ സ്വയമേവ മാറ്റുക</string>
     <string name="title_pref_switch_dialects">പ്രാദേശിക ഭാഷ സ്വയമേവ മാറ്റുക</string>
-    <string name="category_collapsed">തകർന്ന ഭാഗം</string>
+    <string name="category_collapsed">ചുരുക്കിയ വിഭാഗം</string>
     <string name="category_expanded">വിപുലീകരിച്ച വിഭാഗം</string>
     <string name="title_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാർ ബട്ടണുകൾ സംസാരിക്കുക</string>
     <string name="summary_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാറിൽ സജീവമാക്കാൻ ലിഫ്റ്റ് ഉപയോഗിച്ച്, ബാക്ക് അല്ലെങ്കിൽ ഹോം പോലുള്ള ഒരു ടാപ്പ് അമർത്തുന്ന ബട്ടൺ പറയുക.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">ഇതിന് നിങ്ങളുടെ SandFly ശബ്ദത്തിൽ വാചകം പറയാൻ കഴിയും. വിപുലമായ ക്രമീകരണങ്ങളിൽ നിങ്ങൾക്ക് ഇത് മാറ്റാവുന്നതാണ്.</string>
     <string name="speech_control_allow">അനുവദിക്കുക</string>
     <string name="speech_control_deny">അനുവദിക്കരുത്</string>
-    <string name="permission_speak_label">SandFly വഴി സംസാരിക്കുക</string>
+    <string name="permission_speak_label">SandFly വഴി സംസാരിക്കൽ</string>
     <string name="permission_speak_description">നിങ്ങളുടെ SandFly ശബ്ദത്തിൽ വാചകം പറയാൻ ആപ്പിനെ അനുവദിക്കുന്നു. ആപ്പ് സംസാരിക്കുന്നതിന് മുമ്പ് SandFly നിങ്ങളോട് ചോദിക്കുന്നു.</string>
     <string name="permission_braille_display_label">SandFly-ന് ഒരു ബ്രെയിൽ ഡിസ്പ്ലേ ആകാൻ ആവശ്യപ്പെടുക</string>
     <string name="permission_braille_display_description">SandFly-ന് ബ്രെയിൽ ഡിസ്‌പ്ലേ ആകാൻ ആപ്പിനെ അനുവദിക്കുന്നു. നിങ്ങൾ ഇത് SandFly-ൽ അനുവദിക്കുകയാണെങ്കിൽ, അതിന് സ്ക്രീനിലെ എല്ലാം വായിക്കാനും നിങ്ങളുടെ ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും. SandFly നിങ്ങളോട് ആദ്യം ചോദിക്കുന്നു.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">അക്ഷരത്തിന് പകരം \"ഹോട്ടൽ\" പോലെ</string>
     <string name="title_pref_emoji_speech">ഇമോജി</string>
     <string name="emoji_speech_engine">സംഭാഷണ എഞ്ചിൻ ഉപയോഗിച്ച് വായിക്കുക</string>
-    <string name="emoji_speech_names">വായിച്ചത് SandFly</string>
+    <string name="emoji_speech_names">SandFly വായിക്കുന്നു</string>
     <string name="emoji_speech_none">ഒന്നുമില്ല</string>
     <string name="summary_selector_menu_emoji">ഇമോജി വായിക്കുന്ന രീതി മാറ്റുക</string>
     <string name="emoji_speech_state">ഇമോജി: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1444,14 +1444,14 @@
     <string name="notification_list_no_access">അറിയിപ്പ് ആക്സസ് ഓഫാണ്</string>
     <string name="notification_list_grant_access">അറിയിപ്പ് ആക്സസ് ഓണാക്കുക</string>
     <string name="notification_list_quick_settings">ദ്രുത ക്രമീകരണങ്ങൾ</string>
-    <string name="notification_list_dismiss">നിരസിക്കുക</string>
+    <string name="notification_list_dismiss">ഒഴിവാക്കുക</string>
     <string name="notification_list_show_all">എല്ലാം കാണിക്കുക</string>
     <string name="notification_list_show_less">കുറവ് കാണിക്കുക</string>
     <string name="notification_list_clear_all">എല്ലാം മായ്‌ക്കുക</string>
     <string name="notification_list_send">അയക്കുക</string>
-    <string name="notification_list_playing">കളിക്കുന്നു</string>
+    <string name="notification_list_playing">പ്ലേ ചെയ്യുന്നു</string>
     <string name="notification_list_paused">താൽക്കാലികമായി നിർത്തി</string>
-    <string name="notification_list_play">കളിക്കുക</string>
+    <string name="notification_list_play">പ്ലേ ചെയ്യുക</string>
     <string name="notification_list_pause">താൽക്കാലികമായി നിർത്തുക</string>
     <string name="notification_list_previous">മുമ്പത്തേത്</string>
     <string name="notification_list_next">അടുത്തത്</string>
@@ -1570,7 +1570,7 @@
     <string name="shortcut_write_reading_control">ഒരു വായനാ നിയന്ത്രണത്തിൻ്റെ കത്ത് എഴുതുക</string>
     <string name="title_pref_reading_control_letters">കൈയക്ഷര അക്ഷരങ്ങൾ</string>
     <string name="reading_control_letter_none">ഒന്നുമില്ല</string>
-    <string name="handwriting_prompt">ഒരു അക്ഷരമാല എഴുതുക</string>
+    <string name="handwriting_prompt">ഒരു അക്ഷരം എഴുതുക</string>
     <string name="handwriting_closed">കൈയക്ഷരം അടച്ചു</string>
     <string name="handwriting_no_match">വായനാ നിയന്ത്രണമൊന്നും <xliff:g id="letter" example="Q">%1$s</xliff:g>-ൽ ആരംഭിക്കുന്നില്ല</string>
     <string name="handwriting_not_recognized">കൈയക്ഷരം തിരിച്ചറിഞ്ഞില്ല</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">സംസ്ഥാനം, തരം, പേര്</string>
     <string name="item_detail_name">പേര്</string>
     <string name="item_detail_type">തരം</string>
-    <string name="item_detail_state">സംസ്ഥാനം</string>
-    <string name="action_move_up">മുകളിലേക്ക് നീങ്ങുക</string>
-    <string name="action_move_down">താഴേക്ക് നീങ്ങുക</string>
+    <string name="item_detail_state">നില</string>
+    <string name="action_move_up">മുകളിലേക്ക് നീക്കുക</string>
+    <string name="action_move_down">താഴേക്ക് നീക്കുക</string>
     <string name="template_list_position">സ്ഥാനം <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">എടുത്തത് <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> കുറഞ്ഞു. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>

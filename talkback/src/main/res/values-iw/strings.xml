@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">זה יכול להגיד טקסט בקולך SandFly. אתה יכול לשנות זאת בהגדרות מתקדמות.</string>
     <string name="speech_control_allow">אפשר</string>
     <string name="speech_control_deny">אל תאפשר</string>
-    <string name="permission_speak_label">דבר דרך SandFly</string>
+    <string name="permission_speak_label">דיבור דרך SandFly</string>
     <string name="permission_speak_description">מאפשר לאפליקציה לבקש לומר טקסט בקולך SandFly. SandFly שואל אותך לפני שהאפליקציה יכולה לדבר.</string>
     <string name="permission_braille_display_label">בקש להיות צג ברייל עבור SandFly</string>
     <string name="permission_braille_display_description">מאפשר לאפליקציה לבקש להיות צג ברייל עבור SandFly. אם תאפשר את זה ב-SandFly, זה יכול לקרוא הכל על המסך ולשלוט במכשיר שלך. SandFly שואל אותך קודם.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">במקום האות, כמו \"מלון\"</string>
     <string name="title_pref_emoji_speech">אימוג\'י</string>
     <string name="emoji_speech_engine">קריאה באמצעות מנוע דיבור</string>
-    <string name="emoji_speech_names">קרא על ידי SandFly</string>
+    <string name="emoji_speech_names">הקראה על ידי SandFly</string>
     <string name="emoji_speech_none">ללא</string>
     <string name="summary_selector_menu_emoji">שנה את אופן קריאת האמוג\'י</string>
     <string name="emoji_speech_state">אמוג\'י: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1438,7 +1438,7 @@
     <string name="notification_part_text">טקסט</string>
     <string name="notification_part_app">שם האפליקציה</string>
     <string name="notification_part_time">זמן</string>
-    <string name="notification_part_playback">משחק או מושהה</string>
+    <string name="notification_part_playback">מתנגן או מושהה</string>
     <string name="notification_list_title">התראות</string>
     <string name="notification_list_empty">אין הודעות</string>
     <string name="notification_list_no_access">הגישה להתראות מושבתת</string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">הצג פחות</string>
     <string name="notification_list_clear_all">נקה הכל</string>
     <string name="notification_list_send">שלח</string>
-    <string name="notification_list_playing">משחק</string>
+    <string name="notification_list_playing">מתנגן</string>
     <string name="notification_list_paused">מושהה</string>
-    <string name="notification_list_play">שחק</string>
+    <string name="notification_list_play">הפעלה</string>
     <string name="notification_list_pause">השהיה</string>
     <string name="notification_list_previous">הקודם</string>
     <string name="notification_list_next">הבא</string>
@@ -1577,7 +1577,7 @@
     <string name="handwriting_prompt">כתוב אות אלפבית</string>
     <string name="handwriting_closed">כתב יד סגור</string>
     <string name="handwriting_no_match">אין בקרת קריאה מתחילה ב-<xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">כתב היד לא מזוהה</string>
+    <string name="handwriting_not_recognized">כתב היד לא זוהה</string>
     <string name="handwriting_downloading">זיהוי כתב יד מוריד</string>
     <string name="handwriting_download_title">להוריד זיהוי כתב יד?</string>
     <string name="handwriting_download_message">כתב היד מזוהה בטלפון זה. המודל שלו לשפה זו, כ-20 מגה-בייט, מורידים מ-Google פעם אחת. הודעה מופיעה כאשר הוא הורד.</string>
@@ -1601,7 +1601,7 @@
     <string name="handwriting_tutorial_intro">הדרכה למקלדת כתב יד. כתוב באצבע אחת בכל מקום על המסך. מה שאתה כותב מוקלד כשאתה עוצר לרגע. כדי לסיים את המדריך, החלק מטה בשלוש אצבעות.</string>
     <string name="handwriting_tutorial_write_letter">כתוב את אות האלפבית א.</string>
     <string name="handwriting_tutorial_write_word">כעת כתוב את המילה hi (h ואחריו i).</string>
-    <string name="handwriting_tutorial_typed">הקלד <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">הוקלד <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">החלק ימינה בשתי אצבעות כדי להקליד רווח.</string>
     <string name="handwriting_tutorial_delete">החלק שמאלה בשתי אצבעות כדי למחוק את התו לפני הסמן.</string>
     <string name="handwriting_tutorial_deleted">נמחק.</string>
@@ -1726,10 +1726,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">סוג, מדינה, שם</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">מדינה, סוג, שם</string>
     <string name="item_detail_name">שם</string>
-    <string name="item_detail_type">הקלדה</string>
-    <string name="item_detail_state">מדינה</string>
-    <string name="action_move_up">לזוז למעלה</string>
-    <string name="action_move_down">לזוז למטה</string>
+    <string name="item_detail_type">סוג</string>
+    <string name="item_detail_state">מצב</string>
+    <string name="action_move_up">העברה למעלה</string>
+    <string name="action_move_down">העברה למטה</string>
     <string name="template_list_position">מיקום <xliff:g id="position" example="2">%1$d</xliff:g> מתוך <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">נאסף <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ירד <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1743,12 +1743,12 @@
     <string name="gemini_error_with_details">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. לא ניתן לקבל תיאור תמונה מפורט יותר: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">שאל בקול</string>
-    <string name="image_qna_stop_listening">תפסיק להקשיב</string>
+    <string name="image_qna_stop_listening">הפסקת האזנה</string>
     <string name="image_qna_type_question">הקלד שאלה</string>
     <string name="shortcut_dictate">הכתבה</string>
     <string name="title_pref_ai_dictation">הכתבה נכונה עם AI</string>
     <string name="dictation_not_corrected">לא תוקן. הוקלדו כמוהו.</string>
-    <string name="dictation_nothing_recognized">שום דבר לא מזוהה</string>
+    <string name="dictation_nothing_recognized">לא זוהה דבר</string>
     <string name="dictation_unavailable">זיהוי דיבור אינו זמין</string>
     <string name="dictation_field_gone">שדה הטקסט נסגר. שום דבר לא מודפס.</string>
     <string name="dictation_transcription_failed">הדיבור לא תומלל. שום דבר לא הוקלד.</string>

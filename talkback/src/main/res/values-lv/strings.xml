@@ -1386,7 +1386,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Skaļrunis, atrodoties prom no auss</string>
     <string name="summary_pref_speakerphone_away_from_ear">Sarunas laikā pārslēdzas uz skaļruni, kad noņemat tālruni no auss, un atpakaļ uz klausuli, kad to atkal turat.</string>
     <string name="summary_pref_speakerphone_needs_permission">Nepieciešama atļauja, ko Android nedod ekrāna lasītājiem. Lai to piešķirtu, palaidiet šo komandu ar adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Kopēšanas komanda</string>
+    <string name="action_copy_command">Kopēt komandu</string>
     <string name="command_copied">Komanda ir nokopēta</string>
     <string name="title_pref_speech_control">Ļaujiet citām lietotnēm runāt</string>
     <string name="summary_pref_speech_control">Atļautās lietotnes var teikt tekstu jūsu SandFly balsī. Kamēr ierīce ir bloķēta, nekas netiek teikts.</string>
@@ -1402,18 +1402,18 @@
     <string name="permission_braille_display_label">lūgt Braila displeju SandFly</string>
     <string name="permission_braille_display_description">Ļauj lietotnei pieprasīt Braila displeju SandFly. Ja to atļaujat SandFly, tas var lasīt visu ekrānā un vadīt jūsu ierīci. SandFly vispirms jautā jums.</string>
     <string name="title_pref_phonetic_letters_mode">Runājiet burtus fonētiski</string>
-    <string name="phonetic_letters_mode_off">Izslēgt</string>
+    <string name="phonetic_letters_mode_off">Izslēgts</string>
     <string name="phonetic_letters_mode_after_letter_delay">Pēc vēstules aizkavēta, piemēram, \"h, viesnīca\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Pēc vēstules bez kavēšanās, piemēram, \"h hotel\"</string>
     <string name="phonetic_letters_mode_instead_of_letter">Burta vietā, piemēram, \"viesnīca\"</string>
     <string name="title_pref_emoji_speech">Emocijzīme</string>
     <string name="emoji_speech_engine">Lasīt ar runas dzinēju</string>
-    <string name="emoji_speech_names">Lasīja SandFly</string>
+    <string name="emoji_speech_names">Lasa SandFly</string>
     <string name="emoji_speech_none">Nav</string>
     <string name="summary_selector_menu_emoji">Mainiet emocijzīmju lasīšanas veidu</string>
     <string name="emoji_speech_state">Emocijzīme: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Skaitīt atkārtotās emocijzīmes</string>
-    <string name="emoji_repeat_count_off">Izslēgt</string>
+    <string name="emoji_repeat_count_off">Izslēgts</string>
     <string name="emoji_repeat_count_2">2 vai vairāk</string>
     <string name="emoji_repeat_count_3">3 vai vairāk</string>
     <string name="emoji_repeat_count_4">4 vai vairāk</string>
@@ -1450,10 +1450,10 @@
     <string name="notification_list_show_less">Rādīt mazāk</string>
     <string name="notification_list_clear_all">Notīrīt visu</string>
     <string name="notification_list_send">Sūtīt</string>
-    <string name="notification_list_playing">Spēlē</string>
+    <string name="notification_list_playing">Atskaņo</string>
     <string name="notification_list_paused">Pauzēts</string>
-    <string name="notification_list_play">Spēlēt</string>
-    <string name="notification_list_pause">Pārtraukt</string>
+    <string name="notification_list_play">Atskaņot</string>
+    <string name="notification_list_pause">Pauzēt</string>
     <string name="notification_list_previous">Iepriekšējā</string>
     <string name="notification_list_next">Tālāk</string>
     <plurals name="notification_list_group_count">
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_vibrate">Vibrēt</string>
     <string name="quick_settings_mute">Izslēgt skaņu</string>
     <string name="quick_settings_on">Ieslēgt</string>
-    <string name="quick_settings_off">Izslēgt</string>
+    <string name="quick_settings_off">Izslēgts</string>
     <string name="quick_settings_unavailable">Nav pieejams</string>
     <string name="quick_settings_edit">Rediģēt</string>
     <string name="quick_settings_system">Sistēmas ātrie iestatījumi</string>
@@ -1602,7 +1602,7 @@
     <string name="handwriting_tutorial_intro">Rokraksta tastatūras apmācība. Rakstiet ar vienu pirkstu jebkurā ekrāna vietā. Jūsu rakstītais tiek ierakstīts, kad uz brīdi apstājaties. Lai beigtu apmācību, velciet uz leju ar trim pirkstiem.</string>
     <string name="handwriting_tutorial_write_letter">Uzrakstiet alfabēta burtu a.</string>
     <string name="handwriting_tutorial_write_word">Tagad ierakstiet vārdu hi (h, kam seko i).</string>
-    <string name="handwriting_tutorial_typed">Ievadīja <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Ievadīts <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Velciet pa labi ar diviem pirkstiem, lai ierakstītu atstarpi.</string>
     <string name="handwriting_tutorial_delete">Velciet pa kreisi ar diviem pirkstiem, lai dzēstu rakstzīmi pirms kursora.</string>
     <string name="handwriting_tutorial_deleted">Izdzēsts.</string>
@@ -1726,11 +1726,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Vārds, valsts, veids</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tips, valsts, nosaukums</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Valsts, veids, nosaukums</string>
-    <string name="item_detail_name">Vārds</string>
-    <string name="item_detail_type">Ievadīt</string>
-    <string name="item_detail_state">valsts</string>
-    <string name="action_move_up">Pārvietojieties uz augšu</string>
-    <string name="action_move_down">Pārvietojieties uz leju</string>
+    <string name="item_detail_name">Nosaukums</string>
+    <string name="item_detail_type">Tips</string>
+    <string name="item_detail_state">Stāvoklis</string>
+    <string name="action_move_up">Pārvietot uz augšu</string>
+    <string name="action_move_down">Pārvietot uz leju</string>
     <string name="template_list_position">Pozīcija <xliff:g id="position" example="2">%1$d</xliff:g> no <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Paņēma <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Atmests <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1744,7 +1744,7 @@
     <string name="gemini_error_with_details">Gemini nevarēja atbildēt, kļūda <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nevar iegūt detalizētāku attēla aprakstu: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Jautājiet ar balsi</string>
-    <string name="image_qna_stop_listening">Beidz klausīties</string>
+    <string name="image_qna_stop_listening">Pārtraukt klausīšanos</string>
     <string name="image_qna_type_question">Ierakstiet jautājumu</string>
     <string name="shortcut_dictate">Diktēt</string>
     <string name="title_pref_ai_dictation">Pareizs diktāts ar AI</string>

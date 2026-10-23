@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">লিঙ্কের তালিকা দেখুন</string>
   <string name="keycombo_menu_other_show_control_list">কন্ট্রোলের তালিকা দেখুন</string>
   <string name="keycombo_menu_other_show_table_list">টেবিলের তালিকা দেখুন</string>
-  <string name="keycombo_menu_other_talkback_context_menu">SandFly মেনু দেখুন</string>
+  <string name="keycombo_menu_other_talkback_context_menu">SandFly মেনু দেখান</string>
   <string name="keycombo_menu_other_custom_actions">অ্যাকশনগুলি দেখুন</string>
   <string name="keycombo_menu_other_language_options">ইনস্টল করা ভাষাগুলি দেখুন</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">আপনার বলা শেষ কথাটি কপি করুন</string>
@@ -1668,12 +1668,12 @@
     <string name="handwriting_prompt">একটি অক্ষর লিখুন</string>
     <string name="handwriting_closed">হাতের লেখা বন্ধ</string>
     <string name="handwriting_no_match">কোনো রিডিং কন্ট্রোল <xliff:g id="letter" example="Q">%1$s</xliff:g> দিয়ে শুরু হয় না</string>
-    <string name="handwriting_not_recognized">হাতের লেখা স্বীকৃত নয়</string>
+    <string name="handwriting_not_recognized">হাতের লেখা শনাক্ত করা যায়নি</string>
     <string name="handwriting_downloading">হাতের লেখার স্বীকৃতি ডাউনলোড হচ্ছে</string>
-    <string name="handwriting_download_title">হাতের লেখার স্বীকৃতি ডাউনলোড করুন?</string>
+    <string name="handwriting_download_title">হাতের লেখা শনাক্তকরণ ডাউনলোড করবেন?</string>
     <string name="handwriting_download_message">এই ফোনে হাতের লেখা স্বীকৃত। এই ভাষার জন্য এর মডেল, প্রায় 20 MB, Google থেকে একবার ডাউনলোড করা হয়। এটি ডাউনলোড করা হলে একটি বার্তা দেখায়।</string>
     <string name="handwriting_download_button">ডাউনলোড করুন</string>
-    <string name="handwriting_downloaded">হাতের লেখার স্বীকৃতি ডাউনলোড করা হয়েছে</string>
+    <string name="handwriting_downloaded">হাতের লেখা শনাক্তকরণ ডাউনলোড করা হয়েছে</string>
     <string name="handwriting_download_failed">হাতের লেখার স্বীকৃতি ডাউনলোড করা যায়নি। ইন্টারনেট সংযোগ পরীক্ষা করুন।</string>
     <string name="handwriting_unsupported_language">এই ভাষায় হাতের লেখার স্বীকৃতি পাওয়া যায় না</string>
     <string name="title_pref_handwriting_keyboard">হাতের লেখা কীবোর্ড</string>
@@ -1687,7 +1687,7 @@
     <string name="value_handwriting_wait_800">0.8 সেকেন্ড</string>
     <string name="value_handwriting_wait_1000">১ সেকেন্ড</string>
     <string name="handwriting_keyboard_name">SandFly হাতের লেখা</string>
-    <string name="handwriting_space">ব্যবধান</string>
+    <string name="handwriting_space">স্পেস</string>
     <string name="handwriting_new_line">নতুন লাইন</string>
     <string name="handwriting_tutorial_intro">হস্তাক্ষর কীবোর্ড টিউটোরিয়াল। স্ক্রিনের যেকোনো জায়গায় এক আঙুল দিয়ে লিখুন। আপনি যা লিখছেন তা টাইপ করা হয় যখন আপনি কিছুক্ষণের জন্য থামেন। টিউটোরিয়ালটি শেষ করতে, তিনটি আঙ্গুল দিয়ে নিচের দিকে সোয়াইপ করুন।</string>
     <string name="handwriting_tutorial_write_letter">বর্ণমালা অক্ষর লিখুন a.</string>
@@ -1744,8 +1744,8 @@
     <string name="shortcut_dictate">নির্দেশ</string>
     <string name="title_pref_ai_dictation">AI এর সাথে সঠিক ডিকশন</string>
     <string name="dictation_not_corrected">সংশোধন করা হয়নি। স্বীকৃত হিসাবে টাইপ করুন.</string>
-    <string name="dictation_nothing_recognized">কিছুই চেনা যায় না</string>
-    <string name="dictation_unavailable">বক্তৃতা শনাক্তকরণ অনুপলব্ধ৷</string>
+    <string name="dictation_nothing_recognized">কিছুই শনাক্ত হয়নি</string>
+    <string name="dictation_unavailable">স্পিচ রেকগনিশন উপলভ্য নয়</string>
     <string name="dictation_field_gone">পাঠ্য ক্ষেত্র বন্ধ। কিছুই টাইপ করা হয়নি.</string>
     <string name="dictation_transcription_failed">কথা লেখায় রূপান্তর করা যায়নি। কিছুই টাইপ করা হয়নি।</string>
     <string name="title_pref_dictation">ডিক্টেশন</string>

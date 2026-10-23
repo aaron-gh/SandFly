@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Орнотулган тилдерди көрсөтүү</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Акыркы айтылган сүйлөмдү көчүрүү</string>
   <string name="keycombo_menu_other_open_tts_settings">Кеп синтезаторунун параметрлерин ачыңыз</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly параметрлерин ачасыз</string>
+  <string name="keycombo_menu_other_open_talkback_settings">SandFly параметрлерин ачуу</string>
   <string name="keycombo_menu_other_report_issue">Пикир билдирүү</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Терүү жаңырыгынын мерчими</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Ыкчам баскычтардын тизмесин айтып бер</string>
@@ -1385,7 +1385,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Кулагыңыздан алыс болгондо сүйлөңүз</string>
     <string name="summary_pref_speakerphone_away_from_ear">Чалуу учурунда телефонду кулагыңыздан алганыңызда динамикке, кайра көтөргөнүңүздө кайра наушникке өтөт.</string>
     <string name="summary_pref_speakerphone_needs_permission">Экрандагы окурмандарга Android бербеген уруксат керек. Аны берүү үчүн, бул буйрукту adb or Shizuku, then come back to this screen: %1$s менен иштетиңиз</string>
-    <string name="action_copy_command">Көчүрүү буйругу</string>
+    <string name="action_copy_command">Буйрукту көчүрүү</string>
     <string name="command_copied">Буйрук көчүрүлдү</string>
     <string name="title_pref_speech_control">Башка колдонмолорго сүйлөөгө уруксат бериңиз</string>
     <string name="summary_pref_speech_control">Сиз уруксат берген колдонмолор текстти SandFly үнүңүз менен айта алышат. Түзмөк кулпуланып турганда эч нерсе айтылбайт.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Ал текстти SandFly үнүңүз менен айта алат. Муну Өркүндөтүлгөн жөндөөлөрдөн өзгөртө аласыз.</string>
     <string name="speech_control_allow">Уруксат берүү</string>
     <string name="speech_control_deny">Уруксат бербе</string>
-    <string name="permission_speak_label">SandFly аркылуу сүйлө</string>
+    <string name="permission_speak_label">SandFly аркылуу сүйлөө</string>
     <string name="permission_speak_description">Колдонмого текстти SandFly үнүңүз менен айтууга уруксат берет. SandFly колдонмо сүйлөй электе сизден сурайт.</string>
     <string name="permission_braille_display_label">SandFly үчүн брайл дисплейи болууну сурануу</string>
     <string name="permission_braille_display_description">Колдонмого SandFly үчүн Брайл дисплейи болууга уруксат берүү. Эгер ага SandFly ичинде уруксат берсеңиз, ал экрандагы баарын окуп, түзмөгүңүздү башкара алат. SandFly биринчи сизден сурайт.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">Каттын ордуна, \"мейманкана\" сыяктуу</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
     <string name="emoji_speech_engine">Кеп кыймылдаткычы менен окуу</string>
-    <string name="emoji_speech_names">Окуган: SandFly</string>
+    <string name="emoji_speech_names">SandFly окуйт</string>
     <string name="emoji_speech_none">Жок</string>
     <string name="summary_selector_menu_emoji">Быйтыкчаларды окуу ыкмасын өзгөртүңүз</string>
     <string name="emoji_speech_state">Эмодзи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1434,24 +1434,24 @@
     <string name="title_pref_play_installer">Google Play\'ден орнотулган көрүнөт</string>
     <string name="summary_pref_play_installer">Google Play орнотулган SandFly башка колдонмолорго айтыңыз. Кээ бир колдонмолор, мисалы, банктык колдонмолор, башка жерден орнотулган атайын мүмкүнчүлүктөр кызматтарын өчүрүшөт. Shizuku керек жана SandFly кайдан келгени жөнүндө айтылган колдонмолорду гана өзгөртөт.</string>
     <string name="summary_pref_play_installer_pending">Күйүк, бирок Google Play орнотуучу катары жазыла элек. SandFly аны Shizuku жеткиликтүү болгондо орнотот.</string>
-    <string name="notification_part_title">Title</string>
+    <string name="notification_part_title">Аталышы</string>
     <string name="notification_part_text">Текст</string>
     <string name="notification_part_app">Колдонмонун аты</string>
     <string name="notification_part_time">Убакыт</string>
-    <string name="notification_part_playback">Ойнотуу же тындырылды</string>
+    <string name="notification_part_playback">Ойнотулууда же тындырылган</string>
     <string name="notification_list_title">Билдирмелер</string>
     <string name="notification_list_empty">Билдирмелер жок</string>
     <string name="notification_list_no_access">Эскертмеге кирүү өчүк</string>
     <string name="notification_list_grant_access">Билдирүү мүмкүнчүлүгүн күйгүзүңүз</string>
     <string name="notification_list_quick_settings">Ыкчам орнотуулар</string>
-    <string name="notification_list_dismiss">Этибарга албоо</string>
+    <string name="notification_list_dismiss">Жабуу</string>
     <string name="notification_list_show_all">Баарын көрсөтүү</string>
     <string name="notification_list_show_less">Азыраак көрсөтүү</string>
     <string name="notification_list_clear_all">Баарын тазалоо</string>
     <string name="notification_list_send">Жөнөтүү</string>
-    <string name="notification_list_playing">Ойнотуу</string>
+    <string name="notification_list_playing">Ойнотулууда</string>
     <string name="notification_list_paused">Тындырылды</string>
-    <string name="notification_list_play">Play</string>
+    <string name="notification_list_play">Ойнотуу</string>
     <string name="notification_list_pause">Тындыруу</string>
     <string name="notification_list_previous">Мурунку</string>
     <string name="notification_list_next">Кийинки</string>
@@ -1543,7 +1543,7 @@
     <string name="quick_settings_added">%1$s кошулду</string>
     <string name="quick_settings_removed">%1$s алынып салынды</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly күйүк. Өчүрүү үчүн 2 манжаңызды экранда 5 секунд кармап туруңуз. Бул билдирүүнү көрсөтүүнү токтотуу үчүн, SandFly орнотуулар &gt; Өркүндөтүлгөн орнотуулар &gt; SandFly өчүрүү нускамаларын көрсөтүүнү өчүрүңүз.</string>
-    <string name="edge_gestures_title">Edges</string>
+    <string name="edge_gestures_title">Четтер</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Серептөө режимин күйгүзүү же өчүрүү үчүн дагы бир жарлык</string>
     <string name="title_pref_vibration_strength">Вибрация күчү</string>
     <string name="title_pref_audio_output_device">Аудио чыгаруу аспабы</string>
@@ -1723,7 +1723,7 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">Мамлекет, түрү, аты</string>
     <string name="item_detail_name">Аты</string>
     <string name="item_detail_type">Түрү</string>
-    <string name="item_detail_state">Мамлекет</string>
+    <string name="item_detail_state">Абалы</string>
     <string name="action_move_up">Өйдө жылдыруу</string>
     <string name="action_move_down">Төмөн жылдыруу</string>
     <string name="template_list_position">Позициясы <xliff:g id="position" example="2">%1$d</xliff:g> ичинен <xliff:g id="count" example="3">%2$d</xliff:g></string>
@@ -1739,7 +1739,7 @@
     <string name="gemini_error_with_details">Gemini жооп бере алган жок, ката <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Сүрөттүн кеңири сүрөттөмөсүн алуу мүмкүн эмес: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Үн менен суроо</string>
-    <string name="image_qna_stop_listening">Укканды токтот</string>
+    <string name="image_qna_stop_listening">Угууну токтотуу</string>
     <string name="image_qna_type_question">Суроо жазыңыз</string>
     <string name="shortcut_dictate">Айтып жаздыруу</string>
     <string name="title_pref_ai_dictation">AI менен туура диктант</string>

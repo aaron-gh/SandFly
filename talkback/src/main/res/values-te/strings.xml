@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">ఇన్‌స్టాల్ చేసిన భాషలు చూపించు</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">చివరిగా పలికిన పదబంధాన్ని కాపీ చేయండి</string>
   <string name="keycombo_menu_other_open_tts_settings">టెక్స్ట్-టు-స్పీచ్ సెట్టింగ్‌లను తెరవండి</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly సెట్టింగ్‌లను తెరవడానికి</string>
+  <string name="keycombo_menu_other_open_talkback_settings">SandFly సెట్టింగ్‌లను తెరవండి</string>
   <string name="keycombo_menu_other_report_issue">ఫీడ్‌బ్యాక్‌ను పంపండి</string>
   <string name="keycombo_menu_other_cycle_typing_echo">టైపింగ్ ఎకోను టోగుల్ చేయండి</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">కీబోర్డ్ షార్ట్‌కట్‌ల లిస్ట్‌ను చూడండి</string>
@@ -1387,7 +1387,7 @@
     <string name="speech_control_ask_text">ఇది మీ SandFly వాయిస్‌లో వచనాన్ని చెప్పగలదు. మీరు దీన్ని అధునాతన సెట్టింగ్‌లలో మార్చవచ్చు.</string>
     <string name="speech_control_allow">అనుమతించు</string>
     <string name="speech_control_deny">అనుమతించవద్దు</string>
-    <string name="permission_speak_label">SandFly ద్వారా మాట్లాడండి</string>
+    <string name="permission_speak_label">SandFly ద్వారా మాట్లాడటం</string>
     <string name="permission_speak_description">మీ SandFly వాయిస్‌లో వచనం చెప్పమని యాప్‌ని అడుగుతుంది. యాప్ మాట్లాడే ముందు SandFly మిమ్మల్ని అడుగుతుంది.</string>
     <string name="permission_braille_display_label">SandFly కోసం బ్రెయిలీ ప్రదర్శనగా ఉండమని అడగండి</string>
     <string name="permission_braille_display_description">SandFly కోసం బ్రెయిలీ డిస్‌ప్లే కావాలని యాప్‌ని అడుగుతుంది. మీరు దీన్ని SandFlyలో అనుమతిస్తే, అది స్క్రీన్‌పై ఉన్న ప్రతిదాన్ని చదవగలదు మరియు మీ పరికరాన్ని నియంత్రించగలదు. SandFly ముందుగా మిమ్మల్ని అడుగుతుంది.</string>
@@ -1398,7 +1398,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">అక్షరానికి బదులుగా, \"హోటల్\" లాగా</string>
     <string name="title_pref_emoji_speech">ఎమోజి</string>
     <string name="emoji_speech_engine">స్పీచ్ ఇంజిన్ ద్వారా చదవండి</string>
-    <string name="emoji_speech_names">SandFly ద్వారా చదవండి</string>
+    <string name="emoji_speech_names">SandFly చదువుతుంది</string>
     <string name="emoji_speech_none">ఏదీ లేదు</string>
     <string name="summary_selector_menu_emoji">ఎమోజీని ఎలా చదవాలో మార్చండి</string>
     <string name="emoji_speech_state">ఎమోజి: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1429,7 +1429,7 @@
     <string name="notification_part_text">వచనం</string>
     <string name="notification_part_app">యాప్ పేరు</string>
     <string name="notification_part_time">సమయం</string>
-    <string name="notification_part_playback">ఆడుతోంది లేదా పాజ్ చేయబడింది</string>
+    <string name="notification_part_playback">ప్లే అవుతోంది లేదా పాజ్ చేయబడింది</string>
     <string name="notification_list_title">నోటిఫికేషన్‌లు</string>
     <string name="notification_list_empty">నోటిఫికేషన్‌లు లేవు</string>
     <string name="notification_list_no_access">నోటిఫికేషన్ యాక్సెస్ ఆఫ్ చేయబడింది</string>
@@ -1440,9 +1440,9 @@
     <string name="notification_list_show_less">తక్కువ చూపించు</string>
     <string name="notification_list_clear_all">అన్నీ క్లియర్ చేయండి</string>
     <string name="notification_list_send">పంపండి</string>
-    <string name="notification_list_playing">ఆడుతున్నారు</string>
+    <string name="notification_list_playing">ప్లే అవుతోంది</string>
     <string name="notification_list_paused">పాజ్ చేయబడింది</string>
-    <string name="notification_list_play">ఆడండి</string>
+    <string name="notification_list_play">ప్లే చేయండి</string>
     <string name="notification_list_pause">పాజ్ చేయండి</string>
     <string name="notification_list_previous">మునుపటి</string>
     <string name="notification_list_next">తర్వాత</string>
@@ -1583,7 +1583,7 @@
     <string name="value_handwriting_wait_800">0.8 సెకన్లు</string>
     <string name="value_handwriting_wait_1000">1 సెకను</string>
     <string name="handwriting_keyboard_name">SandFly చేతివ్రాత</string>
-    <string name="handwriting_space">అంతరం</string>
+    <string name="handwriting_space">స్పేస్</string>
     <string name="handwriting_new_line">కొత్త పంక్తి</string>
     <string name="handwriting_tutorial_intro">చేతివ్రాత కీబోర్డ్ ట్యుటోరియల్. స్క్రీన్‌పై ఎక్కడైనా ఒక వేలితో రాయండి. మీరు రాసేది ఒక్క క్షణం ఆగినప్పుడు టైప్ అవుతుంది. ట్యుటోరియల్‌ని ముగించడానికి, మూడు వేళ్లతో క్రిందికి స్వైప్ చేయండి.</string>
     <string name="handwriting_tutorial_write_letter">A అనే వర్ణమాల అక్షరాన్ని వ్రాయండి.</string>
@@ -1714,8 +1714,8 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">రాష్ట్రం, రకం, పేరు</string>
     <string name="item_detail_name">పేరు</string>
     <string name="item_detail_type">రకం</string>
-    <string name="item_detail_state">రాష్ట్రం</string>
-    <string name="action_move_up">పైకి కదలండి</string>
+    <string name="item_detail_state">స్థితి</string>
+    <string name="action_move_up">పైకి తరలించు</string>
     <string name="action_move_down">క్రిందికి తరలించు</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>లో <xliff:g id="position" example="2">%1$d</xliff:g> స్థానం</string>
     <string name="template_item_details_order_picked_up">పికప్ చేయబడింది <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>

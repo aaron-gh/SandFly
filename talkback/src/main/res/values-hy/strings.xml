@@ -1396,23 +1396,23 @@
     <string name="speech_control_ask_text">Այն կարող է տեքստ ասել ձեր SandFly ձայնով: Դուք կարող եք սա փոխել Ընդլայնված կարգավորումներում:</string>
     <string name="speech_control_allow">Թույլատրել</string>
     <string name="speech_control_deny">Թույլ մի տվեք</string>
-    <string name="permission_speak_label">խոսիր SandFly միջոցով</string>
+    <string name="permission_speak_label">խոսել SandFly-ի միջոցով</string>
     <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով: SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել:</string>
     <string name="permission_braille_display_label">խնդրեք լինել բրայլյան էկրան SandFly համար</string>
     <string name="permission_braille_display_description">Թույլ է տալիս հավելվածին խնդրել, որ լինի բրայլյան էկրան SandFly համար: Եթե ​​թույլ տաք SandFly, այն կարող է կարդալ էկրանի ամեն ինչ և կառավարել ձեր սարքը: SandFly նախ հարցնում է ձեզ:</string>
     <string name="title_pref_phonetic_letters_mode">Խոսեք տառերը հնչյունական</string>
-    <string name="phonetic_letters_mode_off">Անջատել</string>
+    <string name="phonetic_letters_mode_off">Անջատված</string>
     <string name="phonetic_letters_mode_after_letter_delay">Նամակից հետո՝ ուշացած, ինչպես «հ, հյուրանոց»</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Նամակից հետո առանց ուշացման, ինչպես «h hotel»</string>
     <string name="phonetic_letters_mode_instead_of_letter">Նամակի փոխարեն, ինչպես «հյուրանոց»</string>
     <string name="title_pref_emoji_speech">Էմոջի</string>
     <string name="emoji_speech_engine">Կարդացեք խոսքի շարժիչով</string>
-    <string name="emoji_speech_names">Կարդացել է SandFly կողմից</string>
-    <string name="emoji_speech_none">Միացված չէ</string>
+    <string name="emoji_speech_names">Կարդում է SandFly-ը</string>
+    <string name="emoji_speech_none">Ոչ մեկը</string>
     <string name="summary_selector_menu_emoji">Փոխեք էմոջիների ընթերցման եղանակը</string>
     <string name="emoji_speech_state">Էմոջի՝ <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Հաշվեք կրկնվող էմոջիները</string>
-    <string name="emoji_repeat_count_off">Անջատել</string>
+    <string name="emoji_repeat_count_off">Անջատված</string>
     <string name="emoji_repeat_count_2">2 կամ ավելի</string>
     <string name="emoji_repeat_count_3">3 կամ ավելի</string>
     <string name="emoji_repeat_count_4">4 կամ ավելի</string>
@@ -1437,7 +1437,7 @@
     <string name="notification_part_title">Վերնագիր</string>
     <string name="notification_part_text">Տեքստ</string>
     <string name="notification_part_app">Հավելվածի անունը</string>
-    <string name="notification_part_time">Ժամանակը</string>
+    <string name="notification_part_time">Ժամը</string>
     <string name="notification_part_playback">Նվագարկում կամ դադարեցված է</string>
     <string name="notification_list_title">Ծանուցումներ</string>
     <string name="notification_list_empty">Ծանուցումներ չկան</string>
@@ -1449,12 +1449,12 @@
     <string name="notification_list_show_less">Ցույց տալ ավելի քիչ</string>
     <string name="notification_list_clear_all">Մաքրել բոլորը</string>
     <string name="notification_list_send">Ուղարկել</string>
-    <string name="notification_list_playing">Խաղում</string>
+    <string name="notification_list_playing">Նվագարկվում է</string>
     <string name="notification_list_paused">Դադարեցված է</string>
-    <string name="notification_list_play">Խաղալ</string>
+    <string name="notification_list_play">Նվագարկել</string>
     <string name="notification_list_pause">Դադարեցնել</string>
     <string name="notification_list_previous">Հետ</string>
-    <string name="notification_list_next">Առաջ</string>
+    <string name="notification_list_next">Հաջորդը</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">%d ծանուցում</item>
         <item quantity="other">%d ծանուցումներ</item>
@@ -1521,7 +1521,7 @@
     <string name="quick_settings_vibrate">Թրթռալ</string>
     <string name="quick_settings_mute">Խլացնել</string>
     <string name="quick_settings_on">Միացնել</string>
-    <string name="quick_settings_off">Անջատել</string>
+    <string name="quick_settings_off">Անջատված</string>
     <string name="quick_settings_unavailable">Անհասանելի է</string>
     <string name="quick_settings_edit">Խմբագրել</string>
     <string name="quick_settings_system">Համակարգի արագ կարգավորումներ</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">Պետությունը, տեսակը, անվանումը</string>
     <string name="item_detail_name">Անուն</string>
     <string name="item_detail_type">Տեսակ</string>
-    <string name="item_detail_state">Պետություն</string>
-    <string name="action_move_up">Շարժվեք վերև</string>
-    <string name="action_move_down">Տեղափոխեք ներքև</string>
+    <string name="item_detail_state">Վիճակ</string>
+    <string name="action_move_up">Տեղափոխել վերև</string>
+    <string name="action_move_down">Տեղափոխել ներքև</string>
     <string name="template_list_position">Պաշտոն <xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g>-ից</string>
     <string name="template_item_details_order_picked_up">Վերցվել է <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Իջել է <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,7 +1739,7 @@
     <string name="gemini_error_with_details">Gemini չկարողացա պատասխանել, սխալ <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Պատկերի ավելի մանրամասն նկարագրություն հնարավոր չէ ստանալ՝ <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Հարցրեք ձայնով</string>
-    <string name="image_qna_stop_listening">Դադարեք լսել</string>
+    <string name="image_qna_stop_listening">Դադարեցնել լսելը</string>
     <string name="image_qna_type_question">Մուտքագրեք հարց</string>
     <string name="shortcut_dictate">Թելադրել</string>
     <string name="title_pref_ai_dictation">Ճիշտ թելադրանք AI-ով</string>

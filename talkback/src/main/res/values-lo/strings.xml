@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">ປ່ຽນພາສາໂດຍອັດຕະໂນມັດ</string>
     <string name="title_pref_switch_dialects">ສະຫຼັບພາສາອັດຕະໂນມັດ</string>
     <string name="category_collapsed">ພາກສ່ວນທີ່ຫຍໍ້ລົງ</string>
-    <string name="category_expanded">ຂະຫຍາຍພາກສ່ວນ</string>
+    <string name="category_expanded">ພາກສ່ວນທີ່ຂະຫຍາຍແລ້ວ</string>
     <string name="title_pref_speak_nav_bar_buttons">ເວົ້າປຸ່ມແຖບນໍາທາງ</string>
     <string name="summary_pref_speak_nav_bar_buttons">ດ້ວຍ​ການ​ຍົກ​ຂຶ້ນ​ເພື່ອ​ເປີດ​ນຳ​ໃຊ້​ຢູ່​ໃນ​ແຖບ​ນຳ​ທາງ, ໃຫ້​ເວົ້າ​ວ່າ​ປຸ່ມ​ທີ່​ແຕະ​ທີ່​ກົດ, ເຊັ່ນ: ກັບ​ຄືນ​ໄປ​ບ່ອນ ຫຼື Home.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">ມັນສາມາດເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງເຈົ້າ. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າຂັ້ນສູງ.</string>
     <string name="speech_control_allow">ອະນຸຍາດ</string>
     <string name="speech_control_deny">ບໍ່ອະນຸຍາດໃຫ້</string>
-    <string name="permission_speak_label">ເວົ້າຜ່ານSandFly</string>
+    <string name="permission_speak_label">ເວົ້າຜ່ານ SandFly</string>
     <string name="permission_speak_description">ໃຫ້ແອັບຯຮ້ອງຂໍໃຫ້ເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງທ່ານ. SandFly ຖາມເຈົ້າກ່ອນທີ່ແອັບຈະເວົ້າໄດ້.</string>
     <string name="permission_braille_display_label">ຂໍໃຫ້ເປັນການສະແດງຕົວອັກສອນນູນສໍາລັບ SandFly</string>
     <string name="permission_braille_display_description">ໃຫ້ແອັບຯຮ້ອງຂໍໃຫ້ເປັນການສະແດງຕົວອັກສອນນູນສໍາລັບ SandFly. ຖ້າທ່ານອະນຸຍາດໃຫ້ມັນຢູ່ໃນ SandFly, ມັນສາມາດອ່ານທຸກສິ່ງທຸກຢ່າງໃນຫນ້າຈໍແລະຄວບຄຸມອຸປະກອນຂອງທ່ານ. SandFly ຖາມກ່ອນ.</string>
@@ -1449,7 +1449,7 @@
     <string name="notification_list_show_less">ສະແດງໜ້ອຍລົງ</string>
     <string name="notification_list_clear_all">ລຶບລ້າງທັງໝົດ</string>
     <string name="notification_list_send">ສົ່ງ</string>
-    <string name="notification_list_playing">ຫຼີ້ນ</string>
+    <string name="notification_list_playing">ກຳລັງຫຼິ້ນ</string>
     <string name="notification_list_paused">ຢຸດຊົ່ວຄາວ</string>
     <string name="notification_list_play">ຫຼິ້ນ</string>
     <string name="notification_list_pause">ຢຸດຊົ່ວຄາວ</string>
@@ -1570,15 +1570,15 @@
     <string name="shortcut_write_reading_control">ຂຽນຈົດຫມາຍຂອງການຄວບຄຸມການອ່ານ</string>
     <string name="title_pref_reading_control_letters">ຕົວອັກສອນທີ່ຂຽນດ້ວຍມື</string>
     <string name="reading_control_letter_none">ບໍ່ມີ</string>
-    <string name="handwriting_prompt">ຂຽນຈົດຫມາຍສະບັບ</string>
+    <string name="handwriting_prompt">ຂຽນຕົວອັກສອນ</string>
     <string name="handwriting_closed">ປິດການຂຽນດ້ວຍມື</string>
     <string name="handwriting_no_match">ບໍ່ມີການຄວບຄຸມການອ່ານເລີ່ມຕົ້ນດ້ວຍ <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">ບໍ່ຮັບຮູ້ການຂຽນດ້ວຍມື</string>
+    <string name="handwriting_not_recognized">ບໍ່ສາມາດຈຳແນກລາຍມືໄດ້</string>
     <string name="handwriting_downloading">ກຳລັງດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມື</string>
-    <string name="handwriting_download_title">ດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມືບໍ?</string>
+    <string name="handwriting_download_title">ດາວໂຫຼດການຈຳແນກລາຍມືບໍ?</string>
     <string name="handwriting_download_message">ການຂຽນດ້ວຍມືຖືກຮັບຮູ້ຢູ່ໃນໂທລະສັບນີ້. ຮູບແບບຂອງມັນສໍາລັບພາສານີ້, ປະມານ 20 MB, ແມ່ນດາວໂຫຼດຈາກ Google ຄັ້ງດຽວ. ຂໍ້ຄວາມສະແດງເມື່ອມັນດາວໂຫຼດແລ້ວ.</string>
     <string name="handwriting_download_button">ດາວໂຫຼດ</string>
-    <string name="handwriting_downloaded">ດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມືແລ້ວ</string>
+    <string name="handwriting_downloaded">ດາວໂຫຼດການຈຳແນກລາຍມືແລ້ວ</string>
     <string name="handwriting_download_failed">ບໍ່ສາມາດດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມືໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ອິນເຕີເນັດ.</string>
     <string name="handwriting_unsupported_language">ການຮັບຮູ້ການຂຽນດ້ວຍມືແມ່ນບໍ່ມີຢູ່ໃນພາສານີ້</string>
     <string name="title_pref_handwriting_keyboard">ແປ້ນພິມຂຽນດ້ວຍມື</string>
@@ -1722,8 +1722,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">ປະເພດ, ລັດ, ຊື່</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">ລັດ, ປະເພດ, ຊື່</string>
     <string name="item_detail_name">ຊື່</string>
-    <string name="item_detail_type">ພິມ</string>
-    <string name="item_detail_state">ລັດ</string>
+    <string name="item_detail_type">ປະເພດ</string>
+    <string name="item_detail_state">ສະຖານະ</string>
     <string name="action_move_up">ຍ້າຍຂຶ້ນ</string>
     <string name="action_move_down">ຍ້າຍລົງ</string>
     <string name="template_list_position">ຕຳແໜ່ງ <xliff:g id="position" example="2">%1$d</xliff:g> ຂອງ<xliff:g id="count" example="3">%2$d</xliff:g></string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">ສັ່ງດ້ວຍສຽງ</string>
     <string name="title_pref_ai_dictation">ການສັ່ງໃຫ້ຖືກຕ້ອງດ້ວຍ AI</string>
     <string name="dictation_not_corrected">ບໍ່ໄດ້ແກ້ໄຂ. ພິມເປັນທີ່ຮັບຮູ້.</string>
-    <string name="dictation_nothing_recognized">ບໍ່ມີຫຍັງຮັບຮູ້</string>
+    <string name="dictation_nothing_recognized">ບໍ່ສາມາດຈຳແນກຫຍັງໄດ້</string>
     <string name="dictation_unavailable">ການຮັບຮູ້ສຽງເວົ້າບໍ່ສາມາດໃຊ້ໄດ້</string>
     <string name="dictation_field_gone">ປິດຊ່ອງຂໍ້ຄວາມ. ບໍ່ມີຫຍັງພິມ.</string>
     <string name="dictation_transcription_failed">ບໍ່ສາມາດປ່ຽນສຽງເວົ້າເປັນຂໍ້ຄວາມໄດ້. ບໍ່ມີຫຍັງພິມ.</string>

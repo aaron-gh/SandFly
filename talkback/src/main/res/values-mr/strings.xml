@@ -1399,7 +1399,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="speech_control_ask_text">ते तुमच्या SandFly आवाजात मजकूर म्हणू शकते. तुम्ही हे प्रगत सेटिंग्जमध्ये बदलू शकता.</string>
     <string name="speech_control_allow">परवानगी द्या</string>
     <string name="speech_control_deny">परवानगी देऊ नका</string>
-    <string name="permission_speak_label">SandFly द्वारे बोला</string>
+    <string name="permission_speak_label">SandFly द्वारे बोलणे</string>
     <string name="permission_speak_description">ॲपला तुमच्या SandFly आवाजात मजकूर बोलण्यास सांगू द्या. ॲप बोलू शकण्यापूर्वी SandFly तुम्हाला विचारतो.</string>
     <string name="permission_braille_display_label">SandFly साठी ब्रेल डिस्प्ले असण्यास सांगा</string>
     <string name="permission_braille_display_description">ॲपला SandFly साठी ब्रेल डिस्प्ले होण्यास सांगू द्या. तुम्ही त्यास SandFly मध्ये अनुमती दिल्यास, ते स्क्रीनवरील सर्व काही वाचू शकते आणि तुमचे डिव्हाइस नियंत्रित करू शकते. SandFly तुम्हाला आधी विचारतो.</string>
@@ -1410,7 +1410,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="phonetic_letters_mode_instead_of_letter">अक्षराऐवजी, \"हॉटेल\" सारखे</string>
     <string name="title_pref_emoji_speech">इमोजी</string>
     <string name="emoji_speech_engine">स्पीच इंजिनद्वारे वाचा</string>
-    <string name="emoji_speech_names">SandFly ने वाचा</string>
+    <string name="emoji_speech_names">SandFly वाचते</string>
     <string name="emoji_speech_none">कोणतेही नाही</string>
     <string name="summary_selector_menu_emoji">इमोजी कसे वाचले जातात ते बदला</string>
     <string name="emoji_speech_state">इमोजी: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1441,7 +1441,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="notification_part_text">मजकूर</string>
     <string name="notification_part_app">ॲपचे नाव</string>
     <string name="notification_part_time">वेळ</string>
-    <string name="notification_part_playback">खेळणे किंवा विराम दिला</string>
+    <string name="notification_part_playback">प्ले होत आहे किंवा थांबवले आहे</string>
     <string name="notification_list_title">सूचना</string>
     <string name="notification_list_empty">कोणत्याही सूचना नाहीत</string>
     <string name="notification_list_no_access">सूचना प्रवेश बंद आहे</string>
@@ -1452,9 +1452,9 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="notification_list_show_less">कमी दाखवा</string>
     <string name="notification_list_clear_all">सर्व साफ करा</string>
     <string name="notification_list_send">पाठवा</string>
-    <string name="notification_list_playing">खेळत आहे</string>
+    <string name="notification_list_playing">प्ले होत आहे</string>
     <string name="notification_list_paused">विराम दिला</string>
-    <string name="notification_list_play">खेळा</string>
+    <string name="notification_list_play">प्ले करा</string>
     <string name="notification_list_pause">थांबवा</string>
     <string name="notification_list_previous">मागील</string>
     <string name="notification_list_next">पुढील</string>
@@ -1595,8 +1595,8 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="value_handwriting_wait_800">0.8 सेकंद</string>
     <string name="value_handwriting_wait_1000">एक सेकंद</string>
     <string name="handwriting_keyboard_name">SandFly हस्ताक्षर</string>
-    <string name="handwriting_space">जागा</string>
-    <string name="handwriting_new_line">नवीन रेखा</string>
+    <string name="handwriting_space">स्पेस</string>
+    <string name="handwriting_new_line">नवीन ओळ</string>
     <string name="handwriting_tutorial_intro">हस्तलेखन कीबोर्ड ट्यूटोरियल. स्क्रीनवर कुठेही एका बोटाने लिहा. तुम्ही जे लिहिता ते तुम्ही क्षणभर थांबल्यावर टाईप केले जाते. ट्यूटोरियल समाप्त करण्यासाठी, तीन बोटांनी खाली स्वाइप करा.</string>
     <string name="handwriting_tutorial_write_letter">वर्णमाला अक्षर लिहा a.</string>
     <string name="handwriting_tutorial_write_word">आता hi (h त्यानंतर i) हा शब्द लिहा.</string>
@@ -1726,7 +1726,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="pref_node_desc_order_entry_state_role_name_pos">राज्य, प्रकार, नाव</string>
     <string name="item_detail_name">नाव</string>
     <string name="item_detail_type">प्रकार</string>
-    <string name="item_detail_state">राज्य</string>
+    <string name="item_detail_state">स्थिती</string>
     <string name="action_move_up">वर हलवा</string>
     <string name="action_move_down">खाली हलवा</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> पैकी <xliff:g id="position" example="2">%1$d</xliff:g> स्थिती</string>

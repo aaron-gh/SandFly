@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">Semasa apl merakam tanpa fon kepala disambungkan, SandFly hanya bercakap sebagai jawapan kepada gerak isyarat, kekunci dan menaip anda dan kekal senyap untuk perkara seperti pemberitahuan, supaya ia tidak dirakam.</string>
     <string name="title_pref_switch_languages">Tukar bahasa secara automatik</string>
     <string name="title_pref_switch_dialects">Tukar dialek secara automatik</string>
-    <string name="category_collapsed">Bahagian runtuh</string>
+    <string name="category_collapsed">Bahagian dikuncupkan</string>
     <string name="category_expanded">Bahagian dikembangkan</string>
     <string name="title_pref_speak_nav_bar_buttons">Sebut butang bar navigasi</string>
     <string name="summary_pref_speak_nav_bar_buttons">Dengan lif untuk mengaktifkan pada bar navigasi, sebut butang yang ditekan oleh ketikan, seperti Kembali atau Laman Utama.</string>
@@ -1438,7 +1438,7 @@
     <string name="notification_part_text">Teks</string>
     <string name="notification_part_app">Nama apl</string>
     <string name="notification_part_time">Masa</string>
-    <string name="notification_part_playback">Bermain atau dijeda</string>
+    <string name="notification_part_playback">Dimainkan atau dijeda</string>
     <string name="notification_list_title">Pemberitahuan</string>
     <string name="notification_list_empty">Tiada pemberitahuan</string>
     <string name="notification_list_no_access">Akses pemberitahuan dimatikan</string>
@@ -1449,7 +1449,7 @@
     <string name="notification_list_show_less">Tunjukkan lebih sedikit</string>
     <string name="notification_list_clear_all">Kosongkan semua</string>
     <string name="notification_list_send">Hantar</string>
-    <string name="notification_list_playing">Bermain</string>
+    <string name="notification_list_playing">Sedang dimainkan</string>
     <string name="notification_list_paused">Dijeda</string>
     <string name="notification_list_play">Main</string>
     <string name="notification_list_pause">Jeda</string>
@@ -1592,7 +1592,7 @@
     <string name="value_handwriting_wait_800">0.8 saat</string>
     <string name="value_handwriting_wait_1000">1 saat</string>
     <string name="handwriting_keyboard_name">SandFly tulisan tangan</string>
-    <string name="handwriting_space">Ruang</string>
+    <string name="handwriting_space">Jarak</string>
     <string name="handwriting_new_line">Baris baharu</string>
     <string name="handwriting_tutorial_intro">Tutorial papan kekunci tulisan tangan. Tulis dengan satu jari di mana-mana pada skrin. Apa yang anda tulis ditaip apabila anda berhenti seketika. Untuk menamatkan tutorial, leret ke bawah dengan tiga jari.</string>
     <string name="handwriting_tutorial_write_letter">Tulis huruf abjad a.</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Jenis, negeri, nama</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Negeri, jenis, nama</string>
     <string name="item_detail_name">Nama</string>
-    <string name="item_detail_type">Taip</string>
-    <string name="item_detail_state">Negeri</string>
-    <string name="action_move_up">Bergerak ke atas</string>
-    <string name="action_move_down">Bergerak ke bawah</string>
+    <string name="item_detail_type">Jenis</string>
+    <string name="item_detail_state">Keadaan</string>
+    <string name="action_move_up">Alihkan ke atas</string>
+    <string name="action_move_down">Alihkan ke bawah</string>
     <string name="template_list_position">Kedudukan <xliff:g id="position" example="2">%1$d</xliff:g> daripada <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Diambil <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Digugurkan <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">Imlakkan</string>
     <string name="title_pref_ai_dictation">Imlak yang betul dengan AI</string>
     <string name="dictation_not_corrected">Tidak diperbetulkan. Ditaip sebagai diiktiraf.</string>
-    <string name="dictation_nothing_recognized">Tiada yang diiktiraf</string>
+    <string name="dictation_nothing_recognized">Tiada apa-apa yang dikenal pasti</string>
     <string name="dictation_unavailable">Pengecaman pertuturan tidak tersedia</string>
     <string name="dictation_field_gone">Medan teks ditutup. Tiada apa-apa yang ditaip.</string>
     <string name="dictation_transcription_failed">Pertuturan tidak ditranskripsikan. Tiada apa-apa yang ditaip.</string>

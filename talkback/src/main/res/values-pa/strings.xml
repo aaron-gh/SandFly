@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">ਇਹ ਤੁਹਾਡੀ SandFly ਆਵਾਜ਼ ਵਿੱਚ ਟੈਕਸਟ ਕਹਿ ਸਕਦਾ ਹੈ। ਤੁਸੀਂ ਇਸ ਨੂੰ ਉੱਨਤ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਬਦਲ ਸਕਦੇ ਹੋ।</string>
     <string name="speech_control_allow">ਇਜਾਜ਼ਤ ਦਿਓ</string>
     <string name="speech_control_deny">ਇਜਾਜ਼ਤ ਨਾ ਦਿਓ</string>
-    <string name="permission_speak_label">SandFly ਰਾਹੀਂ ਬੋਲੋ</string>
+    <string name="permission_speak_label">SandFly ਰਾਹੀਂ ਬੋਲਣਾ</string>
     <string name="permission_speak_description">ਐਪ ਨੂੰ ਤੁਹਾਡੀ SandFly ਅਵਾਜ਼ ਵਿੱਚ ਟੈਕਸਟ ਕਹਿਣ ਲਈ ਕਹਿਣ ਦਿਓ। SandFly ਐਪ ਦੇ ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਪੁੱਛਦਾ ਹੈ।</string>
     <string name="permission_braille_display_label">SandFly ਲਈ ਇੱਕ ਬਰੇਲ ਡਿਸਪਲੇ ਹੋਣ ਲਈ ਪੁੱਛੋ</string>
     <string name="permission_braille_display_description">ਐਪ ਨੂੰ SandFly ਲਈ ਇੱਕ ਬਰੇਲ ਡਿਸਪਲੇ ਹੋਣ ਲਈ ਕਹਿਣ ਦਿਓ। ਜੇਕਰ ਤੁਸੀਂ ਇਸਨੂੰ SandFly ਵਿੱਚ ਇਜਾਜ਼ਤ ਦਿੰਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਕ੍ਰੀਨ \'ਤੇ ਸਭ ਕੁਝ ਪੜ੍ਹ ਸਕਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡੀ ਡੀਵਾਈਸ ਨੂੰ ਕੰਟਰੋਲ ਕਰ ਸਕਦਾ ਹੈ। SandFly ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਪੁੱਛਦਾ ਹੈ।</string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">ਘੱਟ ਦਿਖਾਓ</string>
     <string name="notification_list_clear_all">ਸਭ ਸਾਫ਼ ਕਰੋ</string>
     <string name="notification_list_send">ਭੇਜੋ</string>
-    <string name="notification_list_playing">ਖੇਡ ਰਿਹਾ ਹੈ</string>
+    <string name="notification_list_playing">ਚੱਲ ਰਿਹਾ ਹੈ</string>
     <string name="notification_list_paused">ਰੋਕਿਆ ਗਿਆ</string>
-    <string name="notification_list_play">ਖੇਡੋ</string>
+    <string name="notification_list_play">ਚਲਾਓ</string>
     <string name="notification_list_pause">ਰੋਕੋ</string>
     <string name="notification_list_previous">ਪਿੱਛੇ</string>
     <string name="notification_list_next">ਅੱਗੇ</string>
@@ -1575,10 +1575,10 @@
     <string name="handwriting_no_match">ਕੋਈ ਰੀਡਿੰਗ ਕੰਟਰੋਲ <xliff:g id="letter" example="Q">%1$s</xliff:g> ਨਾਲ ਸ਼ੁਰੂ ਨਹੀਂ ਹੁੰਦਾ</string>
     <string name="handwriting_not_recognized">ਹੱਥ ਲਿਖਤ ਪਛਾਣਿਆ ਨਹੀਂ ਗਿਆ</string>
     <string name="handwriting_downloading">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਡਾਊਨਲੋਡ ਹੋ ਰਹੀ ਹੈ</string>
-    <string name="handwriting_download_title">ਹੈਂਡਰਾਈਟਿੰਗ ਮਾਨਤਾ ਡਾਊਨਲੋਡ ਕਰੋ?</string>
+    <string name="handwriting_download_title">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਡਾਊਨਲੋਡ ਕਰਨੀ ਹੈ?</string>
     <string name="handwriting_download_message">ਇਸ ਫੋਨ \'ਤੇ ਹੈਂਡਰਾਈਟਿੰਗ ਦੀ ਪਛਾਣ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਭਾਸ਼ਾ ਲਈ ਇਸਦਾ ਮਾਡਲ, ਲਗਭਗ 20 MB, ਇੱਕ ਵਾਰ Google ਤੋਂ ਡਾਊਨਲੋਡ ਕੀਤਾ ਗਿਆ ਹੈ। ਇੱਕ ਸੁਨੇਹਾ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਇਹ ਕਦੋਂ ਡਾਊਨਲੋਡ ਹੋਇਆ ਹੈ।</string>
     <string name="handwriting_download_button">ਡਾਊਨਲੋਡ ਕਰੋ</string>
-    <string name="handwriting_downloaded">ਹੈਂਡਰਾਈਟਿੰਗ ਮਾਨਤਾ ਡਾਊਨਲੋਡ ਕੀਤੀ ਗਈ</string>
+    <string name="handwriting_downloaded">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਡਾਊਨਲੋਡ ਹੋ ਗਈ</string>
     <string name="handwriting_download_failed">ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਨੂੰ ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਇੰਟਰਨੈਟ ਕਨੈਕਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
     <string name="handwriting_unsupported_language">ਇਸ ਭਾਸ਼ਾ ਵਿੱਚ ਹੱਥ ਲਿਖਤ ਪਛਾਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
     <string name="title_pref_handwriting_keyboard">ਹੈਂਡਰਾਈਟਿੰਗ ਕੀਬੋਰਡ</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">ਕਿਸਮ, ਰਾਜ, ਨਾਮ</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">ਰਾਜ, ਕਿਸਮ, ਨਾਮ</string>
     <string name="item_detail_name">ਨਾਮ</string>
-    <string name="item_detail_type">ਟਾਈਪ ਕਰੋ</string>
-    <string name="item_detail_state">ਰਾਜ</string>
-    <string name="action_move_up">ਉੱਪਰ ਜਾਓ</string>
-    <string name="action_move_down">ਹੇਠਾਂ ਚਲੇ ਜਾਓ</string>
+    <string name="item_detail_type">ਕਿਸਮ</string>
+    <string name="item_detail_state">ਸਥਿਤੀ</string>
+    <string name="action_move_up">ਉੱਪਰ ਲਿਜਾਓ</string>
+    <string name="action_move_down">ਹੇਠਾਂ ਲਿਜਾਓ</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ਦੀ ਸਥਿਤੀ <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਚੁੱਕਿਆ ਗਿਆ। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ਡਿੱਗਿਆ। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>

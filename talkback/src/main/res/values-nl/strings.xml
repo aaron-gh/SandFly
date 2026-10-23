@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">Automatisch van taal wisselen</string>
     <string name="title_pref_switch_dialects">Automatisch van dialect wisselen</string>
     <string name="category_collapsed">Samengevouwen sectie</string>
-    <string name="category_expanded">Uitgebreide sectie</string>
+    <string name="category_expanded">Uitgevouwen sectie</string>
     <string name="title_pref_speak_nav_bar_buttons">Spreek navigatiebalkknoppen uit</string>
     <string name="summary_pref_speak_nav_bar_buttons">Met lift om te activeren op de navigatiebalk, zegt u de knop waarop u tikt, zoals Terug of Thuis.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1385,7 +1385,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Luidspreker wanneer deze niet bij uw oor is</string>
     <string name="summary_pref_speakerphone_away_from_ear">Schakelt tijdens een gesprek over naar de luidspreker als u de telefoon van uw oor haalt, en terug naar het oorstuk als u hem weer omhoog houdt.</string>
     <string name="summary_pref_speakerphone_needs_permission">Heeft toestemming nodig die Android niet aan schermlezers geeft. Om het toe te staan, voert u dit commando uit met adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Kopieer opdracht</string>
+    <string name="action_copy_command">Opdracht kopiëren</string>
     <string name="command_copied">Commando gekopieerd</string>
     <string name="title_pref_speech_control">Laat andere apps spreken</string>
     <string name="summary_pref_speech_control">Apps die u toestaat, kunnen tekst zeggen met uw SandFly-stem. Er wordt niets gezegd terwijl het apparaat is vergrendeld.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Het kan tekst zeggen met uw SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
     <string name="speech_control_allow">Toestaan</string>
     <string name="speech_control_deny">Niet toestaan</string>
-    <string name="permission_speak_label">spreek via SandFly</string>
+    <string name="permission_speak_label">spreken via SandFly</string>
     <string name="permission_speak_description">Laat de app vragen om tekst in te spreken met uw SandFly-stem. SandFly vraagt ​​je voordat de app kan spreken.</string>
     <string name="permission_braille_display_label">vraag om een brailleleesregel te zijn voor SandFly</string>
     <string name="permission_braille_display_description">Laat de app vragen om een brailleleesregel te zijn voor SandFly. Als u hem in SandFly toestaat, kan hij alles op het scherm lezen en uw apparaat bedienen. SandFly vraagt ​​je eerst.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">In plaats van de letter, zoals \'hotel\'</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Gelezen door spraakengine</string>
-    <string name="emoji_speech_names">Gelezen door SandFly</string>
+    <string name="emoji_speech_names">Voorgelezen door SandFly</string>
     <string name="emoji_speech_none">Geen</string>
     <string name="summary_selector_menu_emoji">Verander hoe emoji worden gelezen</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1437,7 +1437,7 @@
     <string name="notification_part_title">Titel</string>
     <string name="notification_part_text">Tekst</string>
     <string name="notification_part_app">App-naam</string>
-    <string name="notification_part_time">Tijd</string>
+    <string name="notification_part_time">Tijdstip</string>
     <string name="notification_part_playback">Afspelen of pauzeren</string>
     <string name="notification_list_title">Meldingen</string>
     <string name="notification_list_empty">Geen meldingen</string>
@@ -1446,12 +1446,12 @@
     <string name="notification_list_quick_settings">Snelle instellingen</string>
     <string name="notification_list_dismiss">Sluiten</string>
     <string name="notification_list_show_all">Toon alles</string>
-    <string name="notification_list_show_less">Laat minder zien</string>
+    <string name="notification_list_show_less">Minder tonen</string>
     <string name="notification_list_clear_all">Alles wissen</string>
     <string name="notification_list_send">Verzenden</string>
-    <string name="notification_list_playing">Spelen</string>
+    <string name="notification_list_playing">Wordt afgespeeld</string>
     <string name="notification_list_paused">Gepauzeerd</string>
-    <string name="notification_list_play">Spelen</string>
+    <string name="notification_list_play">Afspelen</string>
     <string name="notification_list_pause">Onderbreken</string>
     <string name="notification_list_previous">Vorige</string>
     <string name="notification_list_next">Volgende</string>
@@ -1570,7 +1570,7 @@
     <string name="shortcut_write_reading_control">Schrijf de letter van een leescontrole</string>
     <string name="title_pref_reading_control_letters">Handgeschreven Alfabetletters</string>
     <string name="reading_control_letter_none">Geen</string>
-    <string name="handwriting_prompt">Schrijf een alfabetbrief</string>
+    <string name="handwriting_prompt">Schrijf een letter</string>
     <string name="handwriting_closed">Handschrift gesloten</string>
     <string name="handwriting_no_match">Geen leescontrole begint met <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Handschrift niet herkend</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Type, staat, naam</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Staat, type, naam</string>
     <string name="item_detail_name">Naam</string>
-    <string name="item_detail_type">Typen</string>
-    <string name="item_detail_state">Staat</string>
-    <string name="action_move_up">Ga omhoog</string>
-    <string name="action_move_down">Ga naar beneden</string>
+    <string name="item_detail_type">Type</string>
+    <string name="item_detail_state">Status</string>
+    <string name="action_move_up">Omhoog verplaatsen</string>
+    <string name="action_move_down">Omlaag verplaatsen</string>
     <string name="template_list_position">Positie <xliff:g id="position" example="2">%1$d</xliff:g> van <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Opgehaald <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> gedaald. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1738,7 +1738,7 @@
     <string name="gemini_error_with_code">Gemini kon niet antwoorden, fout <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini kon niet antwoorden, fout <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Kan geen gedetailleerdere afbeeldingsbeschrijving krijgen: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="image_qna_ask_by_voice">Vraag het met uw stem</string>
+    <string name="image_qna_ask_by_voice">Vragen met spraak</string>
     <string name="image_qna_stop_listening">Stop met luisteren</string>
     <string name="image_qna_type_question">Typ een vraag</string>
     <string name="shortcut_dictate">Dicteren</string>

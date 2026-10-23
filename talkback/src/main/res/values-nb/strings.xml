@@ -1437,21 +1437,21 @@
     <string name="notification_part_title">Tittel</string>
     <string name="notification_part_text">Tekst</string>
     <string name="notification_part_app">Appnavn</string>
-    <string name="notification_part_time">Tid</string>
+    <string name="notification_part_time">Tidspunkt</string>
     <string name="notification_part_playback">Spiller av eller satt på pause</string>
     <string name="notification_list_title">Varsler</string>
     <string name="notification_list_empty">Ingen varsler</string>
     <string name="notification_list_no_access">Varslingstilgang er av</string>
     <string name="notification_list_grant_access">Slå på varslingstilgang</string>
-    <string name="notification_list_quick_settings">Raske innstillinger</string>
+    <string name="notification_list_quick_settings">Hurtiginnstillinger</string>
     <string name="notification_list_dismiss">Avvis</string>
     <string name="notification_list_show_all">Vis alle</string>
     <string name="notification_list_show_less">Vis mindre</string>
     <string name="notification_list_clear_all">Fjern alle</string>
     <string name="notification_list_send">Send</string>
-    <string name="notification_list_playing">Spiller</string>
-    <string name="notification_list_paused">Pause</string>
-    <string name="notification_list_play">Spill</string>
+    <string name="notification_list_playing">Spiller av</string>
+    <string name="notification_list_paused">Satt på pause</string>
+    <string name="notification_list_play">Spill av</string>
     <string name="notification_list_pause">Sett på pause</string>
     <string name="notification_list_previous">Forrige</string>
     <string name="notification_list_next">Neste</string>
@@ -1573,7 +1573,7 @@
     <string name="handwriting_prompt">Skriv en alfabetbokstav</string>
     <string name="handwriting_closed">Håndskrift lukket</string>
     <string name="handwriting_no_match">Ingen lesekontroll starter med <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Håndskrift gjenkjennes ikke</string>
+    <string name="handwriting_not_recognized">Håndskrift ble ikke gjenkjent</string>
     <string name="handwriting_downloading">Håndskriftgjenkjenning lastes ned</string>
     <string name="handwriting_download_title">Last ned håndskriftgjenkjenning?</string>
     <string name="handwriting_download_message">Håndskrift gjenkjennes på denne telefonen. Modellen for dette språket, omtrent 20 MB, lastes ned fra Google én gang. En melding viser når den er lastet ned.</string>
@@ -1597,7 +1597,7 @@
     <string name="handwriting_tutorial_intro">Håndskrifttastaturopplæring. Skriv med én finger hvor som helst på skjermen. Det du skriver skrives når du stopper opp et øyeblikk. For å avslutte opplæringen, sveip ned med tre fingre.</string>
     <string name="handwriting_tutorial_write_letter">Skriv alfabetbokstaven a.</string>
     <string name="handwriting_tutorial_write_word">Skriv nå ordet hi (h etterfulgt av i).</string>
-    <string name="handwriting_tutorial_typed">Skrev <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Skrevet: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Sveip til høyre med to fingre for å skrive et mellomrom.</string>
     <string name="handwriting_tutorial_delete">Sveip til venstre med to fingre for å slette tegnet før markøren.</string>
     <string name="handwriting_tutorial_deleted">Slettet.</string>
@@ -1722,8 +1722,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Type, tilstand, navn</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Tilstand, type, navn</string>
     <string name="item_detail_name">Navn</string>
-    <string name="item_detail_type">Skriv</string>
-    <string name="item_detail_state">stat</string>
+    <string name="item_detail_type">Type</string>
+    <string name="item_detail_state">Tilstand</string>
     <string name="action_move_up">Flytt opp</string>
     <string name="action_move_down">Flytt ned</string>
     <string name="template_list_position">Posisjon <xliff:g id="position" example="2">%1$d</xliff:g> av <xliff:g id="count" example="3">%2$d</xliff:g></string>

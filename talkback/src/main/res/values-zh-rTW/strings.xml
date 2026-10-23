@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">自動切換語言</string>
     <string name="title_pref_switch_dialects">自動切換方言</string>
     <string name="category_collapsed">折疊部分</string>
-    <string name="category_expanded">擴充部分</string>
+    <string name="category_expanded">展開部分</string>
     <string name="title_pref_speak_nav_bar_buttons">說出導覽列按鈕</string>
     <string name="summary_pref_speak_nav_bar_buttons">在導覽列上啟動抬起按鈕後，說出點擊按下的按鈕，例如「返回」或「首頁」。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">它可以用您的 SandFly 聲音說出文字。您可以在進階設定中變更此設定。</string>
     <string name="speech_control_allow">允許</string>
     <string name="speech_control_deny">不允許</string>
-    <string name="permission_speak_label">透過SandFly說話</string>
+    <string name="permission_speak_label">透過 SandFly 朗讀</string>
     <string name="permission_speak_description">讓應用程式要求用您的 SandFly 聲音說出文字。 SandFly 在應用程式說話之前詢問您。</string>
     <string name="permission_braille_display_label">要求成為 SandFly 的點字顯示器</string>
     <string name="permission_braille_display_description">讓應用程式請求成為 SandFly 的點字顯示器。如果您在 SandFly 中允許它，它可以讀取螢幕上的所有內容並控制您的裝置。 SandFly先問你。</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“酒店”</string>
     <string name="title_pref_emoji_speech">表情符號</string>
     <string name="emoji_speech_engine">由語音引擎讀取</string>
-    <string name="emoji_speech_names">閱讀者SandFly</string>
+    <string name="emoji_speech_names">由 SandFly 朗讀</string>
     <string name="emoji_speech_none">無</string>
     <string name="summary_selector_menu_emoji">更改表情符號的讀取方式</string>
     <string name="emoji_speech_state">表情符號：<xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1449,12 +1449,12 @@
     <string name="notification_list_show_less">顯示較少</string>
     <string name="notification_list_clear_all">全部清除</string>
     <string name="notification_list_send">傳送</string>
-    <string name="notification_list_playing">演奏</string>
+    <string name="notification_list_playing">播放中</string>
     <string name="notification_list_paused">已暫停</string>
-    <string name="notification_list_play">玩</string>
+    <string name="notification_list_play">播放</string>
     <string name="notification_list_pause">暫停</string>
-    <string name="notification_list_previous">返回</string>
-    <string name="notification_list_next">繼續</string>
+    <string name="notification_list_previous">上一首</string>
+    <string name="notification_list_next">下一首</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">%d通知</item>
         <item quantity="other">%d 通知</item>
@@ -1571,7 +1571,7 @@
     <string name="title_pref_reading_control_letters">手寫字母</string>
     <string name="reading_control_letter_none">無</string>
     <string name="handwriting_prompt">寫一個字母</string>
-    <string name="handwriting_closed">手寫關閉</string>
+    <string name="handwriting_closed">手寫已關閉</string>
     <string name="handwriting_no_match">無讀取控制以<xliff:g id="letter" example="Q">%1$s</xliff:g>開頭</string>
     <string name="handwriting_not_recognized">手寫體無法辨識</string>
     <string name="handwriting_downloading">手寫辨識正在下載</string>
@@ -1722,7 +1722,7 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">類型、狀態、名稱</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">狀態、類型、名稱</string>
     <string name="item_detail_name">名稱</string>
-    <string name="item_detail_type">輸入</string>
+    <string name="item_detail_type">類型</string>
     <string name="item_detail_state">狀態</string>
     <string name="action_move_up">向上移動</string>
     <string name="action_move_down">下移</string>
@@ -1744,7 +1744,7 @@
     <string name="shortcut_dictate">語音輸入</string>
     <string name="title_pref_ai_dictation">AI 正確聽寫</string>
     <string name="dictation_not_corrected">未糾正。按已識別的方式鍵入。</string>
-    <string name="dictation_nothing_recognized">沒有任何識別</string>
+    <string name="dictation_nothing_recognized">未辨識到任何內容</string>
     <string name="dictation_unavailable">語音辨識不可用</string>
     <string name="dictation_field_gone">文字欄位已關閉。沒有輸入任何內容。</string>
     <string name="dictation_transcription_failed">無法將語音轉為文字。沒有輸入任何內容。</string>

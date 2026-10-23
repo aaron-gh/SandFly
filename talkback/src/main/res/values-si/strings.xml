@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">යෙදුමක් හෙඩ්ෆෝන් සම්බන්ධ නොවී පටිගත කරන අතර, SandFly ඔබේ අභිනයන්, යතුරු සහ ටයිප් කිරීම සඳහා පිළිතුරු පමණක් කථා කරයි, සහ ඒවා පටිගත නොවන පරිදි දැනුම්දීම් වැනි දේවල් සඳහා නිහඬව සිටියි.</string>
     <string name="title_pref_switch_languages">භාෂාව ස්වයංක්‍රීයව මාරු කරන්න</string>
     <string name="title_pref_switch_dialects">උපභාෂාව ස්වයංක්‍රීයව මාරු කරන්න</string>
-    <string name="category_collapsed">කඩා වැටුණු කොටස</string>
+    <string name="category_collapsed">හකුළන ලද කොටස</string>
     <string name="category_expanded">පුළුල් කරන ලද කොටස</string>
     <string name="title_pref_speak_nav_bar_buttons">සංචාලන තීරු බොත්තම් කථා කරන්න</string>
     <string name="summary_pref_speak_nav_bar_buttons">සංචාලන තීරුව මත සක්‍රිය කිරීමට සෝපානය සමඟින්, ආපසු හෝ නිවස වැනි ටැප් එකක් එබූ බොත්තම කියන්න.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">එයට ඔබේ SandFly කටහඬින් පෙළ පැවසිය හැක. ඔබට මෙය උසස් සැකසුම් තුළ වෙනස් කළ හැක.</string>
     <string name="speech_control_allow">ඉඩ දෙන්න</string>
     <string name="speech_control_deny">ඉඩ දෙන්න එපා</string>
-    <string name="permission_speak_label">SandFly හරහා කතා කරන්න</string>
+    <string name="permission_speak_label">SandFly හරහා කතා කිරීම</string>
     <string name="permission_speak_description">ඔබගේ SandFly කටහඬින් පෙළ කීමට යෙදුමට ඉඩ දෙන්න. යෙදුමට කථා කිරීමට හැකි වීමට පෙර SandFly ඔබෙන් අසයි.</string>
     <string name="permission_braille_display_label">SandFly සඳහා බ්‍රේල් සංදර්ශකයක් වීමට අසන්න</string>
     <string name="permission_braille_display_description">SandFly සඳහා බ්‍රේල් සංදර්ශකයක් වීමට යෙදුමට ඉඩ දෙන්න. ඔබ එයට SandFly හි ඉඩ දෙන්නේ නම්, එයට තිරයේ ඇති සියල්ල කියවා ඔබගේ උපාංගය පාලනය කළ හැක. SandFly මුලින්ම ඔබෙන් අසයි.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">ලිපිය වෙනුවට, \"හෝටල්\" වැනි</string>
     <string name="title_pref_emoji_speech">ඉමොජි</string>
     <string name="emoji_speech_engine">කථන එන්ජිමෙන් කියවන්න</string>
-    <string name="emoji_speech_names">SandFly විසින් කියවන්න</string>
+    <string name="emoji_speech_names">SandFly විසින් කියවයි</string>
     <string name="emoji_speech_none">කිසිවක් නැත</string>
     <string name="summary_selector_menu_emoji">ඉමොජි කියවන ආකාරය වෙනස් කරන්න</string>
     <string name="emoji_speech_state">ඉමොජි: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">අඩුවෙන් පෙන්වන්න</string>
     <string name="notification_list_clear_all">සියල්ල හිස් කරන්න</string>
     <string name="notification_list_send">යවන්න</string>
-    <string name="notification_list_playing">සෙල්ලම් කරනවා</string>
+    <string name="notification_list_playing">වාදනය වෙමින්</string>
     <string name="notification_list_paused">විරාම කළා</string>
-    <string name="notification_list_play">සෙල්ලම් කරන්න</string>
+    <string name="notification_list_play">වාදනය කරන්න</string>
     <string name="notification_list_pause">විරාම කරන්න</string>
     <string name="notification_list_previous">පෙර</string>
     <string name="notification_list_next">ඊළඟ</string>
@@ -1592,7 +1592,7 @@
     <string name="value_handwriting_wait_800">තත්පර 0.8</string>
     <string name="value_handwriting_wait_1000">තත්පර 1</string>
     <string name="handwriting_keyboard_name">SandFly අත් අකුරු</string>
-    <string name="handwriting_space">අවකාශය</string>
+    <string name="handwriting_space">හිස්තැන</string>
     <string name="handwriting_new_line">නව පේළිය</string>
     <string name="handwriting_tutorial_intro">අත් අකුරු යතුරුපුවරු නිබන්ධනය. තිරයේ ඕනෑම තැනක එක් ඇඟිල්ලකින් ලියන්න. ඔබ ලියන දේ ඔබ මොහොතකට නතර වූ විට ටයිප් වේ. නිබන්ධනය අවසන් කිරීමට, ඇඟිලි තුනකින් පහළට ස්වයිප් කරන්න.</string>
     <string name="handwriting_tutorial_write_letter">හෝඩියේ අකුර ලියන්න a.</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">වර්ගය, තත්වය, නම</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">රාජ්යය, වර්ගය, නම</string>
     <string name="item_detail_name">නම</string>
-    <string name="item_detail_type">පිටපත් කරන්න</string>
-    <string name="item_detail_state">රාජ්ය</string>
-    <string name="action_move_up">ඉහළට ගමන් කරන්න</string>
-    <string name="action_move_down">පහළට ගමන් කරන්න</string>
+    <string name="item_detail_type">වර්ගය</string>
+    <string name="item_detail_state">තත්ත්වය</string>
+    <string name="action_move_up">ඉහළට ගෙන යන්න</string>
+    <string name="action_move_down">පහළට ගෙන යන්න</string>
     <string name="template_list_position">ස්ථානය <xliff:g id="position" example="2">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ලබා ගන්නා ලදී. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> පහත වැටුණි. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>

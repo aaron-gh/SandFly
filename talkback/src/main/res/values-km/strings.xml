@@ -1355,7 +1355,7 @@
     <string name="summary_pref_mute_speech_while_recording">ខណៈពេលដែលកម្មវិធីកត់ត្រាដោយគ្មានកាសបានភ្ជាប់ SandFlyគ្រាន់តែនិយាយជាចម្លើយចំពោះកាយវិការ គ្រាប់ចុច និងការវាយរបស់អ្នក ហើយរក្សាភាពស្ងៀមស្ងាត់សម្រាប់អ្វីៗដូចជាការជូនដំណឹង ដើម្បីកុំឱ្យពួកវាត្រូវបានថតទុក។</string>
     <string name="title_pref_switch_languages">ប្តូរភាសាដោយស្វ័យប្រវត្តិ</string>
     <string name="title_pref_switch_dialects">ប្តូរគ្រាមភាសាដោយស្វ័យប្រវត្តិ</string>
-    <string name="category_collapsed">ផ្នែកដែលដួលរលំ</string>
+    <string name="category_collapsed">ផ្នែកដែលបានបង្រួម</string>
     <string name="category_expanded">ផ្នែកដែលបានពង្រីក</string>
     <string name="title_pref_speak_nav_bar_buttons">និយាយប៊ូតុងរបាររុករក</string>
     <string name="summary_pref_speak_nav_bar_buttons">ជាមួយនឹងការលើកដើម្បីធ្វើឱ្យសកម្មនៅលើរបាររុករក សូមនិយាយប៊ូតុងដែលចុចដូចជា ថយក្រោយ ឬទំព័រដើម។</string>
@@ -1444,7 +1444,7 @@
     <string name="notification_list_no_access">ការចូលប្រើការជូនដំណឹងត្រូវបានបិទ</string>
     <string name="notification_list_grant_access">បើកការចូលប្រើការជូនដំណឹង</string>
     <string name="notification_list_quick_settings">ការកំណត់រហ័ស</string>
-    <string name="notification_list_dismiss">ច្រានចោល</string>
+    <string name="notification_list_dismiss">បិទ</string>
     <string name="notification_list_show_all">បង្ហាញទាំងអស់</string>
     <string name="notification_list_show_less">បង្ហាញតិច</string>
     <string name="notification_list_clear_all">ជម្រះទាំងអស់</string>
@@ -1573,12 +1573,12 @@
     <string name="handwriting_prompt">សរសេរអក្សរអក្ខរក្រម</string>
     <string name="handwriting_closed">បិទការសរសេរដោយដៃ</string>
     <string name="handwriting_no_match">គ្មានការគ្រប់គ្រងការអានចាប់ផ្តើមដោយ <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">មិនទទួលស្គាល់ការសរសេរដោយដៃ</string>
+    <string name="handwriting_not_recognized">មិនបានសម្គាល់ការសរសេរដោយដៃទេ</string>
     <string name="handwriting_downloading">ការទទួលស្គាល់ការសរសេរដោយដៃកំពុងទាញយក</string>
-    <string name="handwriting_download_title">ទាញយកការទទួលស្គាល់ការសរសេរដោយដៃ?</string>
+    <string name="handwriting_download_title">ទាញយកការសម្គាល់ការសរសេរដោយដៃឬ?</string>
     <string name="handwriting_download_message">ការសរសេរដោយដៃត្រូវបានទទួលស្គាល់នៅលើទូរសព្ទនេះ។ គំរូរបស់វាសម្រាប់ភាសានេះប្រហែល 20 MB ត្រូវបានទាញយកពី Google ម្តង។ សារបង្ហាញនៅពេលដែលវាបានទាញយក។</string>
     <string name="handwriting_download_button">ទាញយក</string>
-    <string name="handwriting_downloaded">បានទាញយកការទទួលស្គាល់ការសរសេរដោយដៃ</string>
+    <string name="handwriting_downloaded">បានទាញយកការសម្គាល់ការសរសេរដោយដៃ</string>
     <string name="handwriting_download_failed">មិនអាចទាញយកការទទួលស្គាល់ការសរសេរដោយដៃបានទេ។ ពិនិត្យការតភ្ជាប់អ៊ីនធឺណិត។</string>
     <string name="handwriting_unsupported_language">ការទទួលស្គាល់ការសរសេរដោយដៃមិនមាននៅក្នុងភាសានេះទេ</string>
     <string name="title_pref_handwriting_keyboard">ក្តារចុចសរសេរដោយដៃ</string>
@@ -1722,8 +1722,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">ប្រភេទ, រដ្ឋ, ឈ្មោះ</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">រដ្ឋ, ប្រភេទ, ឈ្មោះ</string>
     <string name="item_detail_name">ឈ្មោះ</string>
-    <string name="item_detail_type">វាយបញ្ចូល</string>
-    <string name="item_detail_state">រដ្ឋ</string>
+    <string name="item_detail_type">ប្រភេទ</string>
+    <string name="item_detail_state">ស្ថានភាព</string>
     <string name="action_move_up">ផ្លាស់ទីឡើងលើ</string>
     <string name="action_move_down">ផ្លាស់ទីចុះក្រោម</string>
     <string name="template_list_position">ទីតាំង<xliff:g id="position" example="2">%1$d</xliff:g>នៃ<xliff:g id="count" example="3">%2$d</xliff:g></string>
@@ -1744,8 +1744,8 @@
     <string name="shortcut_dictate">សរសេរតាមការប្រាប់</string>
     <string name="title_pref_ai_dictation">ការសរសេរតាមអានត្រឹមត្រូវជាមួយ AI</string>
     <string name="dictation_not_corrected">មិនបានកែ។ វាយបញ្ចូលជាការទទួលស្គាល់។</string>
-    <string name="dictation_nothing_recognized">គ្មានអ្វីត្រូវបានទទួលស្គាល់</string>
-    <string name="dictation_unavailable">ការទទួលស្គាល់ការនិយាយមិនអាចប្រើបានទេ</string>
+    <string name="dictation_nothing_recognized">មិនបានសម្គាល់អ្វីទេ</string>
+    <string name="dictation_unavailable">ការសម្គាល់សំឡេងមិនអាចប្រើបានទេ</string>
     <string name="dictation_field_gone">វាលអត្ថបទត្រូវបានបិទ។ គ្មានអ្វីវាយបញ្ចូលទេ។</string>
     <string name="dictation_transcription_failed">មិនអាចបម្លែងការនិយាយទៅជាអត្ថបទបានទេ។ គ្មានអ្វីវាយបញ្ចូលទេ។</string>
     <string name="title_pref_dictation">ការសរសេរតាមការប្រាប់</string>

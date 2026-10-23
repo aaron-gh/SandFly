@@ -1425,7 +1425,7 @@
     <string name="notification_list_no_access">Доступ да апавяшчэнняў выключаны</string>
     <string name="notification_list_grant_access">Уключыць доступ да апавяшчэнняў</string>
     <string name="notification_list_quick_settings">Хуткія налады</string>
-    <string name="notification_list_dismiss">Адхіліць</string>
+    <string name="notification_list_dismiss">Закрыць</string>
     <string name="notification_list_clear_all">Ачысціць усё</string>
     <string name="notification_list_send">Адправіць</string>
     <string name="notification_list_playing">Прайграецца</string>
@@ -1540,7 +1540,7 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Імя, стан, тып</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Тып, стан, імя</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Стан, тып, імя</string>
-    <string name="item_detail_name">Імя</string>
+    <string name="item_detail_name">Назва</string>
     <string name="item_detail_type">Тып</string>
     <string name="item_detail_state">Стан</string>
     <string name="action_move_up">Перамясціць вышэй</string>
@@ -1575,7 +1575,7 @@
     <string name="summary_pref_play_installer">Паведаміце іншым праграмам, што Google Play усталяваны SandFly. Некаторыя прыкладанні, напрыклад некаторыя банкаўскія праграмы, адключаюць службы даступнасці, якія былі ўсталяваны з любога месца. Патрабуецца Shizuku, і змяняецца толькі тое, што прыкладанні паведамляюць пра тое, адкуль узялося SandFly.</string>
     <string name="summary_pref_play_installer_pending">Уключана, але Google Play яшчэ не запісана як праграма ўстаноўкі. SandFly усталёўвае яго, калі Shizuku даступны.</string>
     <string name="notification_list_show_all">Паказаць усё</string>
-    <string name="notification_list_show_less">Паказваць менш</string>
+    <string name="notification_list_show_less">Паказаць менш</string>
     <string name="title_pref_quick_settings">Выкарыстоўвайце хуткія налады SandFly</string>
     <string name="title_pref_quick_settings_items">Панэль хуткіх налад</string>
     <string name="quick_settings_title">Хуткія налады</string>
@@ -1672,9 +1672,9 @@
     <string name="title_pref_reading_control_letters">Рукапісныя літары</string>
     <string name="reading_control_letter_none">Няма</string>
     <string name="handwriting_prompt">Напісаць літару алфавіту</string>
-    <string name="handwriting_closed">Почырк закрыты</string>
+    <string name="handwriting_closed">Рукапісны ўвод закрыты</string>
     <string name="handwriting_no_match">Ні адзін кантроль чытання не пачынаецца з <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Почырк не распазнаны</string>
+    <string name="handwriting_not_recognized">Рукапісны тэкст не распазнаны</string>
     <string name="handwriting_downloading">Спампоўваецца праграма распазнання рукапіснага ўводу</string>
     <string name="handwriting_download_title">Спампаваць распазнаванне рукапіснага ўводу?</string>
     <string name="handwriting_download_message">На гэтым тэлефоне распазнаецца почырк. Яе мадэль для гэтай мовы, каля 20 МБ, спампоўваецца з Google адзін раз. Пасля загрузкі з\'явіцца паведамленне.</string>
@@ -1692,13 +1692,13 @@
     <string name="value_handwriting_wait_600">0,6 секунды</string>
     <string name="value_handwriting_wait_800">0,8 секунды</string>
     <string name="value_handwriting_wait_1000">1 секунда</string>
-    <string name="handwriting_keyboard_name">SandFly почырк</string>
+    <string name="handwriting_keyboard_name">Рукапісны ўвод SandFly</string>
     <string name="handwriting_space">Прабел</string>
     <string name="handwriting_new_line">Новы радок</string>
     <string name="handwriting_tutorial_intro">Падручнік рукапіснага ўводу на клавіятуры. Пішыце адным пальцам у любым месцы экрана. Тое, што вы пішаце, набіраецца, калі вы спыняецеся на імгненне. Каб завяршыць навучанне, правядзіце трыма пальцамі ўніз.</string>
     <string name="handwriting_tutorial_write_letter">Напішыце літару алфавіту а.</string>
     <string name="handwriting_tutorial_write_word">Цяпер напішыце слова hi.</string>
-    <string name="handwriting_tutorial_typed">Набраў <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Уведзена <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Каб увесці прабел, правядзіце двума пальцамі ўправа.</string>
     <string name="handwriting_tutorial_delete">Правядзіце двума пальцамі ўлева, каб выдаліць сімвал перад курсорам.</string>
     <string name="handwriting_tutorial_deleted">Выдалены.</string>
@@ -1745,7 +1745,7 @@
     <string name="summary_pref_volume_keys_move_cursor">Калі тэкставае поле мае фокус, павелічэнне гучнасці перамяшчае курсор на сімвал назад, а памяншэнне гучнасці - далей</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Рэха клавіятуры рукапіснага ўводу</string>
     <string name="image_qna_ask_by_voice">Спытаць голасам</string>
-    <string name="image_qna_stop_listening">Хопіць слухаць</string>
+    <string name="image_qna_stop_listening">Спыніць праслухоўванне</string>
     <string name="image_qna_type_question">Увядзіце пытанне</string>
     <string name="shortcut_dictate">Дыктаваць</string>
     <string name="title_pref_ai_dictation">Правільны дыктант з ІІ</string>

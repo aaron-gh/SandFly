@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">SandFly sesinizle metin söyleyebilir. Bunu Gelişmiş ayarlarda değiştirebilirsiniz.</string>
     <string name="speech_control_allow">İzin ver</string>
     <string name="speech_control_deny">İzin verme</string>
-    <string name="permission_speak_label">aracılığıyla konuş SandFly</string>
+    <string name="permission_speak_label">SandFly aracılığıyla konuşma</string>
     <string name="permission_speak_description">Uygulamanın metni sizin SandFly sesinizle söylemesini istemesine izin verir. SandFly uygulamanın konuşabilmesi için size sorar.</string>
     <string name="permission_braille_display_label">SandFly için braille ekranı olmasını isteyin</string>
     <string name="permission_braille_display_description">Uygulamanın SandFly için braille ekranı olmasını istemesine izin verir. SandFly izin verirseniz ekrandaki her şeyi okuyabilir ve cihazınızı kontrol edebilir. SandFly önce size sorar.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">\"Otel\" gibi bir harf yerine</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Konuşma motoruyla okuma</string>
-    <string name="emoji_speech_names">SandFly tarafından okundu</string>
+    <string name="emoji_speech_names">SandFly okur</string>
     <string name="emoji_speech_none">Yok</string>
     <string name="summary_selector_menu_emoji">Emojilerin okunma şeklini değiştirme</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1437,7 +1437,7 @@
     <string name="notification_part_title">Başlık</string>
     <string name="notification_part_text">Metin</string>
     <string name="notification_part_app">Uygulama adı</string>
-    <string name="notification_part_time">Zaman</string>
+    <string name="notification_part_time">Saat</string>
     <string name="notification_part_playback">Oynatılıyor veya duraklatıldı</string>
     <string name="notification_list_title">Bildirimler</string>
     <string name="notification_list_empty">Bildirim yok</string>
@@ -1451,7 +1451,7 @@
     <string name="notification_list_send">Gönder</string>
     <string name="notification_list_playing">Oynanıyor</string>
     <string name="notification_list_paused">Duraklatıldı</string>
-    <string name="notification_list_play">Oyna</string>
+    <string name="notification_list_play">Oynat</string>
     <string name="notification_list_pause">Duraklat</string>
     <string name="notification_list_previous">Önceki</string>
     <string name="notification_list_next">Sonraki</string>
@@ -1573,7 +1573,7 @@
     <string name="handwriting_prompt">Bir alfabe harfi yaz</string>
     <string name="handwriting_closed">El yazısı kapatıldı</string>
     <string name="handwriting_no_match">Hiçbir okuma kontrolü <xliff:g id="letter" example="Q">%1$s</xliff:g> ile başlamaz</string>
-    <string name="handwriting_not_recognized">El yazısı tanınmıyor</string>
+    <string name="handwriting_not_recognized">El yazısı tanınmadı</string>
     <string name="handwriting_downloading">El yazısı tanıma indiriliyor</string>
     <string name="handwriting_download_title">El yazısı tanıma indirilsin mi?</string>
     <string name="handwriting_download_message">Bu telefonda el yazısı tanınıyor. Bu dil için yaklaşık 20 MB\'lık modeli Google\'dan bir kez indirilir. İndirildiğinde bir mesaj görüntülenir.</string>
@@ -1721,9 +1721,9 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Ad, eyalet, tür</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tür, eyalet, ad</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Durum, tür, ad</string>
-    <string name="item_detail_name">İsim</string>
-    <string name="item_detail_type">Yaz</string>
-    <string name="item_detail_state">Eyalet</string>
+    <string name="item_detail_name">Ad</string>
+    <string name="item_detail_type">Tür</string>
+    <string name="item_detail_state">Durum</string>
     <string name="action_move_up">Yukarı taşı</string>
     <string name="action_move_down">Aşağı taşı</string>
     <string name="template_list_position">Konum <xliff:g id="position" example="2">%1$d</xliff:g> / <xliff:g id="count" example="3">%2$d</xliff:g></string>

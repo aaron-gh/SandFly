@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Може да каже текст со вашиот глас SandFly. Ова може да го промените во Напредни поставки.</string>
     <string name="speech_control_allow">Дозволи</string>
     <string name="speech_control_deny">Не дозволувај</string>
-    <string name="permission_speak_label">зборувај преку SandFly</string>
+    <string name="permission_speak_label">зборување преку SandFly</string>
     <string name="permission_speak_description">Дозволува апликацијата да побара да каже текст со вашиот глас SandFly. SandFly ве прашува пред апликацијата да може да зборува.</string>
     <string name="permission_braille_display_label">побарајте да биде брајовиот екран за SandFly</string>
     <string name="permission_braille_display_description">Дозволува апликацијата да побара да биде приказ на брајово писмо за SandFly. Ако дозволите во SandFly, може да чита сè на екранот и да го контролира вашиот уред. SandFly прво ве прашува.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">Наместо писмото, како „хотел“</string>
     <string name="title_pref_emoji_speech">Емоџи</string>
     <string name="emoji_speech_engine">Читање со говорен мотор</string>
-    <string name="emoji_speech_names">Прочитано од SandFly</string>
+    <string name="emoji_speech_names">Чита SandFly</string>
     <string name="emoji_speech_none">Нема</string>
     <string name="summary_selector_menu_emoji">Променете како се читаат емотиконите</string>
     <string name="emoji_speech_state">Емоџи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1446,12 +1446,12 @@
     <string name="notification_list_quick_settings">Брзи поставки</string>
     <string name="notification_list_dismiss">Отфрли</string>
     <string name="notification_list_show_all">Прикажи ги сите</string>
-    <string name="notification_list_show_less">Покажете помалку</string>
-    <string name="notification_list_clear_all">Исчистете ги сите</string>
+    <string name="notification_list_show_less">Прикажи помалку</string>
+    <string name="notification_list_clear_all">Исчисти ги сите</string>
     <string name="notification_list_send">Испрати</string>
-    <string name="notification_list_playing">Играње</string>
+    <string name="notification_list_playing">Се пушта</string>
     <string name="notification_list_paused">Паузирано</string>
-    <string name="notification_list_play">Играј</string>
+    <string name="notification_list_play">Пушти</string>
     <string name="notification_list_pause">Пауза</string>
     <string name="notification_list_previous">Претходно</string>
     <string name="notification_list_next">Следно</string>
@@ -1721,11 +1721,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Име, држава, тип</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Тип, држава, име</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Состојба, тип, име</string>
-    <string name="item_detail_name">Име</string>
-    <string name="item_detail_type">Пишувај</string>
-    <string name="item_detail_state">Држава</string>
-    <string name="action_move_up">Движете се нагоре</string>
-    <string name="action_move_down">Движете се надолу</string>
+    <string name="item_detail_name">Назив</string>
+    <string name="item_detail_type">Тип</string>
+    <string name="item_detail_state">Состојба</string>
+    <string name="action_move_up">Премести нагоре</string>
+    <string name="action_move_down">Премести надолу</string>
     <string name="template_list_position">Позиција <xliff:g id="position" example="2">%1$d</xliff:g> од <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Собрано <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Падна <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,7 +1739,7 @@
     <string name="gemini_error_with_details">Gemini не можев да одговори, грешка <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Не можам да добијам подетален опис на сликата: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Прашај со глас</string>
-    <string name="image_qna_stop_listening">Престанете да слушате</string>
+    <string name="image_qna_stop_listening">Запри слушање</string>
     <string name="image_qna_type_question">Напишете прашање</string>
     <string name="shortcut_dictate">Диктирај</string>
     <string name="title_pref_ai_dictation">Правилен диктат со вештачка интелигенција</string>

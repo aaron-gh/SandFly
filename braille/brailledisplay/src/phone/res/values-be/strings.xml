@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Апаратная клавіятура Брайля</string>
   <string name="bd_application_name">Спецыяльныя магчымасці Android</string>
-  <string name="bd_ime_unavailable_activity_name">Брайлеўская клавіятура TalkBack недаступная</string>
-  <string name="bd_ime_disabled_dialog_title">Уключыць брайлеўскую клавіятуру TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Брайлеўская клавіятура SandFly недаступная</string>
+  <string name="bd_ime_disabled_dialog_title">Уключыць брайлеўскую клавіятуру SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Каб выкарыстоўваць для ўводу тэксту брайлеўскі дысплэй, уключыце яго ў наладах уводу</string>
   <string name="bd_ime_disabled_dialog_title_positive">Налады ўводу</string>
   <string name="bd_ime_not_default_dialog_title">Змяніце спосаб уводу</string>
-  <string name="bd_ime_not_default_dialog_message">Каб працягнуць увод тэксту, задайце ў якасці спосабу ўводу брайлеўскую клавіятуру TalkBack</string>
+  <string name="bd_ime_not_default_dialog_message">Каб працягнуць увод тэксту, задайце ў якасці спосабу ўводу брайлеўскую клавіятуру SandFly</string>
   <string name="bd_ime_not_default_dialog_positive">Змяніць спосаб уводу</string>
   <string name="type_unlabeled">Не пазначана</string>
   <string name="type_unlabeled_edittext">Поле рэдагавання без меткі</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Зрушыць улева</string>
   <string name="overlay_pan_right_button">Зрушыць управа</string>
   <string name="bd_preferences_title">Брайлеўскі дысплэй</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Каб выкарыстоўваць брайлеўскі дысплэй, спачатку ўключыце TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Перайсці ў TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Каб выкарыстоўваць брайлеўскі дысплэй, спачатку ўключыце SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Перайсці ў SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Каб выкарыстоўваць брайлеўскі дысплэй, спачатку ўключыце Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Уключыць Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Каб выкарыстоўваць брайлеўскі дысплэй, дайце праграме \"%s\" доступ да прылад паблізу</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Каб выкарыстоўваць рэжым прагляду, трэба пераключыцца са стандартнай раскладкі спалучэнняў клавіш на пашыраную. Гэта прывядзе да змянення некаторых каманд для брайлеўскага дысплэя.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Налады</string>
   <string name="bd_command_change_dialog_title">Некаторыя каманды абноўлены</string>
-  <string name="bd_command_change_dialog_message">У гэтай версіі TalkBack абноўлены наступныя каманды для брайлеўскага дысплэя:\n\n• Папярэдні элемент – націсніце кропкі 1, 7.\n\n• Наступны элемент – націсніце кропкі 4, 8.\n\n• Папярэдні элемент кіравання чытаннем – націсніце кропкі 2, 3, 7, 8.\n\n• Наступны элемент кіравання чытаннем – націсніце кропкі 5, 6, 7, 8.</string>
+  <string name="bd_command_change_dialog_message">У гэтай версіі SandFly абноўлены наступныя каманды для брайлеўскага дысплэя:\n\n• Папярэдні элемент – націсніце кропкі 1, 7.\n\n• Наступны элемент – націсніце кропкі 4, 8.\n\n• Папярэдні элемент кіравання чытаннем – націсніце кропкі 2, 3, 7, 8.\n\n• Наступны элемент кіравання чытаннем – націсніце кропкі 5, 6, 7, 8.</string>
   <string name="bd_preference_braille_contracted">Скарочаная версія</string>
   <string name="bd_preference_braille_uncontracted">Поўная версія</string>
   <string name="bd_braille_grade_tips">Для хуткага пераключэння паміж скарочанай і поўнай версіямі брайлеўскага дысплэя трэба націснуць прабел і кропкі 1, 2, 4 і 5.\n\nГэта каманда дзейнічае, калі выкарыстоўваецца мова з дзвюма версіямі шрыфту.</string>
@@ -71,7 +71,7 @@
   <string name="bd_commands_bindings_category_navigation_summary">Пераход паміж аб’ектамі</string>
   <string name="bd_commands_bindings_category_system_actions_title">Дзеянні ў сістэме</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Назад, на галоўны экран, апавяшчэнні і іншае</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Функцыі TalkBack</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Функцыі SandFly</string>
   <string name="bd_commands_bindings_category_talkback_features_summary">Меню і налады Talkback</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Налады шрыфту Брайля</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Мова і налады шрыфту Брайля</string>
@@ -225,10 +225,10 @@
   <string name="bd_cmd_global_all_apps">Адкрыць усе праграмы</string>
   <string name="bd_cmd_toggle_screen_search">Адкрыць пошук на экране</string>
   <string name="bd_cmd_edit_custom_label">Змяніць карыстальніцкую метку</string>
-  <string name="bd_cmd_open_talkback_menu">Адкрыць меню TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Уключыць ці выключыць маўленне ў TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Адкрыць меню SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Уключыць ці выключыць маўленне ў SandFly</string>
   <string name="bd_cmd_read_stop">Спыніць чытанне</string>
-  <string name="bd_cmd_talkback_settings">Адкрыць налады TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Адкрыць налады SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Перайсці да наступнай мовы набору тэксту</string>
   <string name="bd_cmd_switch_to_next_output_language">Перайсці да наступнай мовы чытання</string>
   <string name="bd_cmd_toggle_contracted_mode">Пераключэнне паміж скарочанай і поўнай версіяй</string>
@@ -301,15 +301,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Вы можаце хутка перамяшчацца па вэб-старонках, увайшоўшы з дапамогай каманды ў рэжым прагляду і ўвёўшы наступныя літарныя або лічбавыя спалучэнні клавіш\n\nГэтыя спалучэнні клавіш можна выкарыстоўваць без уваходу ў рэжым прагляду, але вам трэба будзе дадаць кропку 8 да каманд \"далей\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Навігацыя па табліцы</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Выключыць функцыю брайлеўскага дысплэя?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Вы можаце зноў уключыць гэту функцыю ў наладах TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Вы можаце зноў уключыць гэту функцыю ў наладах SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Выключыць</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Некаторыя каманды недаступныя</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Падчас уводу ці змянення тэксту каманды для навігацыі, брайлеўскіх налад і некаторых функцый TalkBack недаступныя.\n\nСпачатку закрыйце клавіятуру.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Падчас уводу ці змянення тэксту каманды для навігацыі, брайлеўскіх налад і некаторых функцый SandFly недаступныя.\n\nСпачатку закрыйце клавіятуру.</string>
   <string name="bd_caption_tutorial_dialog_title">Субцітры на брайлеўскім дысплэі</string>
   <string name="bd_caption_tutorial_dialog_message">Каб паказаць ці схаваць субцітры для гэтага відэа, націсніце прабел разам з кропкамі 1, 4, 7, 8.\n\nДля аўтаматычнага паказу субцітраў уключыце ў наладах \"Паказваць субцітры на брайлеўскім дысплэі\".</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Заўсёды паказваць гэта паведамленне, калі субцітры даступныя</string>
   <string name="bd_usb_connect_dialog_title">Праз USB падключаны брайлеўскі дысплэй</string>
-  <string name="bd_usb_connect_dialog_message">Акумулятар вашай прылады \"%s\" зараджае брайлеўскі дысплэй.\n\nКалі вам трэба падключыць гэты дысплэй праз Bluetooth, адключыце яго ад USB ці ад USB-канцэнтратара і перайдзіце ў \"Налады TalkBack &gt; Брайлеўскі дысплэй\".</string>
+  <string name="bd_usb_connect_dialog_message">Акумулятар вашай прылады \"%s\" зараджае брайлеўскі дысплэй.\n\nКалі вам трэба падключыць гэты дысплэй праз Bluetooth, адключыце яго ад USB ці ад USB-канцэнтратара і перайдзіце ў \"Налады SandFly &gt; Брайлеўскі дысплэй\".</string>
   <string name="bd_device">тэлефон</string>
   <string name="bd_battery_low_dialog_title">Нізкі зарад акумулятара прылады \"%s\"</string>
   <string name="bd_battery_low_dialog_message">Акумулятар вашай прылады \"%s\" зараджае брайлеўскі дысплэй.\n\nКаб захаваць зарад, выканайце наступныя дзеянні:\n\n
@@ -321,7 +321,7 @@
   <string name="popup_message_history_clear">Ачысціць усё</string>
   <string name="popup_message_history_empty">Змесціва няма</string>
   <string name="popup_message_history_consent_dialog_title">Уключыць гісторыю паведамленняў на прыладзе?</string>
-  <string name="popup_message_history_consent_dialog_msg">Будуць захоўвацца некаторыя паведамленні, у прыватнасці апавяшчэнні і будзільнікі, у TalkBack. Гэту наладу можна змяніць у любы час.</string>
+  <string name="popup_message_history_consent_dialog_msg">Будуць захоўвацца некаторыя паведамленні, у прыватнасці апавяшчэнні і будзільнікі, у SandFly. Гэту наладу можна змяніць у любы час.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Уключыць</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Не, дзякуй</string>
 </resources>

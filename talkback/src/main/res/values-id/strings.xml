@@ -1570,7 +1570,7 @@
     <string name="shortcut_write_reading_control">Tulis surat kontrol membaca</string>
     <string name="title_pref_reading_control_letters">Huruf alfabet tulisan tangan</string>
     <string name="reading_control_letter_none">Tidak ada</string>
-    <string name="handwriting_prompt">Menulis huruf alfabet</string>
+    <string name="handwriting_prompt">Tulis huruf alfabet</string>
     <string name="handwriting_closed">Tulisan tangan ditutup</string>
     <string name="handwriting_no_match">Tidak ada kontrol pembacaan yang dimulai dengan <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Tulisan tangan tidak dikenali</string>
@@ -1593,11 +1593,11 @@
     <string name="value_handwriting_wait_1000">1 detik</string>
     <string name="handwriting_keyboard_name">SandFly tulisan tangan</string>
     <string name="handwriting_space">Spasi</string>
-    <string name="handwriting_new_line">Garis baru</string>
+    <string name="handwriting_new_line">Baris baru</string>
     <string name="handwriting_tutorial_intro">Tutorial keyboard tulisan tangan. Menulis dengan satu jari di mana saja pada layar. Apa yang Anda tulis diketik ketika Anda berhenti sejenak. Untuk mengakhiri tutorial, geser ke bawah dengan tiga jari.</string>
     <string name="handwriting_tutorial_write_letter">Tuliskan huruf abjad a.</string>
     <string name="handwriting_tutorial_write_word">Sekarang tuliskan kata hi (h diikuti i).</string>
-    <string name="handwriting_tutorial_typed">Ketik <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Diketik <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Gesek ke kanan dengan dua jari untuk mengetik spasi.</string>
     <string name="handwriting_tutorial_delete">Gesek ke kiri dengan dua jari untuk menghapus karakter sebelum kursor.</string>
     <string name="handwriting_tutorial_deleted">Dihapus.</string>
@@ -1722,10 +1722,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Ketik, negara bagian, nama</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Sebutkan, ketik, nama</string>
     <string name="item_detail_name">Nama</string>
-    <string name="item_detail_type">Ketik</string>
-    <string name="item_detail_state">Negara</string>
-    <string name="action_move_up">Naik</string>
-    <string name="action_move_down">Pindah ke bawah</string>
+    <string name="item_detail_type">Jenis</string>
+    <string name="item_detail_state">Status</string>
+    <string name="action_move_up">Pindahkan ke atas</string>
+    <string name="action_move_down">Pindahkan ke bawah</string>
     <string name="template_list_position">Posisi <xliff:g id="position" example="2">%1$d</xliff:g> dari <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Diambil <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Menjatuhkan <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>

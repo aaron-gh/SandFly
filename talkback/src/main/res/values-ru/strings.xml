@@ -1502,7 +1502,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="category_collapsed">Свернутый раздел</string>
-    <string name="category_expanded">Расширенный раздел</string>
+    <string name="category_expanded">Развернутый раздел</string>
     <string name="title_pref_category_apps">Приложения</string>
     <string name="title_pref_touch_activation">Касание и активация</string>
     <string name="title_pref_navigation">Навигация</string>
@@ -1528,9 +1528,9 @@
     <string name="notification_list_show_less">Показать меньше</string>
     <string name="notification_list_clear_all">Очистить все</string>
     <string name="notification_list_send">Отправить</string>
-    <string name="notification_list_playing">Играя</string>
+    <string name="notification_list_playing">Воспроизводится</string>
     <string name="notification_list_paused">Приостановлено</string>
-    <string name="notification_list_play">Играть</string>
+    <string name="notification_list_play">Воспроизвести</string>
     <string name="notification_list_pause">Пауза</string>
     <string name="notification_list_previous">Назад</string>
     <string name="notification_list_next">Далее</string>
@@ -1642,14 +1642,14 @@
     <string name="title_pref_reading_control_letters">Рукописные буквы алфавита</string>
     <string name="reading_control_letter_none">Нет</string>
     <string name="handwriting_prompt">Напишите букву алфавита</string>
-    <string name="handwriting_closed">Почерк закрыт</string>
+    <string name="handwriting_closed">Рукописный ввод закрыт</string>
     <string name="handwriting_no_match">Отсутствие контроля чтения начинается с <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Почерк не распознается</string>
+    <string name="handwriting_not_recognized">Рукописный ввод не распознан</string>
     <string name="handwriting_downloading">Распознавание рукописного ввода загружается</string>
     <string name="handwriting_download_title">Скачать распознавание рукописного ввода?</string>
     <string name="handwriting_download_message">Этот телефон распознает рукописный ввод. Его модель для этого языка, около 20 МБ, скачивается с Google один раз. Сообщение появится, когда оно будет загружено.</string>
     <string name="handwriting_download_button">Скачать</string>
-    <string name="handwriting_downloaded">Распознавание рукописного ввода загружено.</string>
+    <string name="handwriting_downloaded">Распознавание рукописного ввода загружено</string>
     <string name="handwriting_download_failed">Распознавание рукописного ввода не удалось загрузить. Проверьте подключение к Интернету.</string>
     <string name="handwriting_unsupported_language">Распознавание рукописного ввода недоступно на этом языке.</string>
     <string name="title_pref_handwriting_keyboard">Рукописная клавиатура</string>
@@ -1662,23 +1662,23 @@
     <string name="value_handwriting_wait_600">0,6 секунды</string>
     <string name="value_handwriting_wait_800">0,8 секунды</string>
     <string name="value_handwriting_wait_1000">1 сек.</string>
-    <string name="handwriting_keyboard_name">SandFly почерк</string>
-    <string name="handwriting_space">Пробел.</string>
-    <string name="handwriting_new_line">Перевод строки.</string>
+    <string name="handwriting_keyboard_name">Рукописный ввод SandFly</string>
+    <string name="handwriting_space">Пробел</string>
+    <string name="handwriting_new_line">Новая строка</string>
     <string name="handwriting_tutorial_intro">Учебное пособие по рукописному вводу на клавиатуре. Пишите одним пальцем в любом месте экрана. То, что вы пишете, печатается, когда вы останавливаетесь на мгновение. Чтобы завершить обучение, проведите тремя пальцами вниз.</string>
     <string name="handwriting_tutorial_write_letter">Напишите букву алфавита а.</string>
     <string name="handwriting_tutorial_write_word">Теперь напишите слово hi (h, за которым следует i).</string>
-    <string name="handwriting_tutorial_typed">Набрал <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Введено <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Проведите двумя пальцами вправо, чтобы ввести пробел.</string>
     <string name="handwriting_tutorial_delete">Проведите двумя пальцами влево, чтобы удалить символ перед курсором.</string>
-    <string name="handwriting_tutorial_deleted">Удален.</string>
+    <string name="handwriting_tutorial_deleted">Удалено.</string>
     <string name="handwriting_tutorial_next_reading">Если рукописный текст распознается как другой символ, например заглавная буква, проведите двумя пальцами вверх, чтобы выбрать следующий вариант распознавания. Попробуйте сейчас.</string>
     <string name="handwriting_tutorial_read_back">Коснитесь двумя пальцами, чтобы прочитать текст перед курсором.</string>
     <string name="handwriting_tutorial_new_line">Проведите двумя пальцами вниз, чтобы вставить новую строку или выполнить действие над текстовым полем, например «Отправить».</string>
     <string name="handwriting_tutorial_not_that">Это был еще один жест.</string>
     <string name="handwriting_tutorial_done">Новая линия. Учебник закончен. Проведите тремя пальцами вниз, чтобы скрыть клавиатуру, и тремя пальцами вправо или влево, чтобы переключить клавиатуру. Чтобы снова открыть учебник, коснитесь экрана тремя пальцами.</string>
     <string name="handwriting_tutorial_finished">Учебник окончен. Чтобы открыть его снова, коснитесь тремя пальцами.</string>
-    <string name="handwriting_no_alternatives">Никаких других предложений</string>
+    <string name="handwriting_no_alternatives">Других вариантов нет</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> из <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Пустой текст</string>
     <string name="handwriting_not_available">Распознавание рукописного ввода недоступно на этом устройстве.</string>
@@ -1748,7 +1748,7 @@
     <string name="title_keyboard_echo_braille_display">Эхо дисплея Брайля</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Спросить голосом</string>
-    <string name="image_qna_stop_listening">Хватит слушать</string>
+    <string name="image_qna_stop_listening">Остановить прослушивание</string>
     <string name="image_qna_type_question">Введите вопрос</string>
     <string name="shortcut_dictate">Начать диктовку</string>
     <string name="title_pref_ai_dictation">Правильный диктант с ИИ</string>

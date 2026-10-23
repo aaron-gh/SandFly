@@ -1385,7 +1385,7 @@
     <string name="title_pref_speakerphone_away_from_ear">Difuzor când este departe de urechea ta</string>
     <string name="summary_pref_speakerphone_away_from_ear">În timpul unui apel, comută la difuzor când scoateți telefonul de la ureche și înapoi la cască când îl țineți din nou sus.</string>
     <string name="summary_pref_speakerphone_needs_permission">Are nevoie de o permisiune pe care Android nu o acordă cititorilor de ecran. Pentru a o acorda, rulați această comandă cu adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Comanda de copiere</string>
+    <string name="action_copy_command">Copiază comanda</string>
     <string name="command_copied">Comanda a fost copiată</string>
     <string name="title_pref_speech_control">Lasă alte aplicații să vorbească</string>
     <string name="summary_pref_speech_control">Aplicațiile pe care le permiteți pot spune text cu vocea dvs. SandFly. Nu se spune nimic în timp ce dispozitivul este blocat.</string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Poate spune text cu vocea ta SandFly. Puteți modifica acest lucru în Setări avansate.</string>
     <string name="speech_control_allow">Permite</string>
     <string name="speech_control_deny">Nu permite</string>
-    <string name="permission_speak_label">vorbește prin SandFly</string>
+    <string name="permission_speak_label">vorbire prin SandFly</string>
     <string name="permission_speak_description">Permite aplicației să solicite rostirea textului cu vocea ta SandFly. SandFly vă întreabă înainte ca aplicația să poată vorbi.</string>
     <string name="permission_braille_display_label">cereți să fiți un afișaj braille pentru SandFly</string>
     <string name="permission_braille_display_description">Permite aplicației să solicite un afișaj braille pentru SandFly. Dacă îl permiteți în SandFly, poate citi totul pe ecran și vă poate controla dispozitivul. SandFly te întreabă mai întâi.</string>
@@ -1437,7 +1437,7 @@
     <string name="notification_part_title">Titlu</string>
     <string name="notification_part_text">Text</string>
     <string name="notification_part_app">Numele aplicației</string>
-    <string name="notification_part_time">Timpul</string>
+    <string name="notification_part_time">Ora</string>
     <string name="notification_part_playback">Redare sau întreruptă</string>
     <string name="notification_list_title">Notificări</string>
     <string name="notification_list_empty">Fără notificări</string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">Arată mai puțin</string>
     <string name="notification_list_clear_all">Ștergeți totul</string>
     <string name="notification_list_send">Trimite</string>
-    <string name="notification_list_playing">Jucând</string>
+    <string name="notification_list_playing">Se redă</string>
     <string name="notification_list_paused">Întrerupt</string>
-    <string name="notification_list_play">Joacă</string>
+    <string name="notification_list_play">Redă</string>
     <string name="notification_list_pause">Întrerupe</string>
     <string name="notification_list_previous">Înapoi</string>
     <string name="notification_list_next">Înainte</string>
@@ -1575,9 +1575,9 @@
     <string name="title_pref_reading_control_letters">Litere alfabetului scris de mână</string>
     <string name="reading_control_letter_none">Fără</string>
     <string name="handwriting_prompt">Scrieți o literă din alfabet</string>
-    <string name="handwriting_closed">Scrisul de mână închis</string>
+    <string name="handwriting_closed">Scrierea de mână a fost închisă</string>
     <string name="handwriting_no_match">Niciun control de citire nu începe cu <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Scrisul de mână nu este recunoscut</string>
+    <string name="handwriting_not_recognized">Scrisul de mână nu a fost recunoscut</string>
     <string name="handwriting_downloading">Recunoașterea scrisului de mână se descarcă</string>
     <string name="handwriting_download_title">Descărcați recunoașterea scrisului de mână?</string>
     <string name="handwriting_download_message">Scrisul de mână este recunoscut pe acest telefon. Modelul său pentru această limbă, aproximativ 20 MB, este descărcat de la Google o dată. Un mesaj afișează când a fost descărcat.</string>
@@ -1601,7 +1601,7 @@
     <string name="handwriting_tutorial_intro">Tutorial de scriere de mână pentru tastatură. Scrieți cu un deget oriunde pe ecran. Ceea ce scrii este tastat atunci când te oprești pentru o clipă. Pentru a încheia tutorialul, glisați în jos cu trei degete.</string>
     <string name="handwriting_tutorial_write_letter">Scrieți litera a din alfabet.</string>
     <string name="handwriting_tutorial_write_word">Acum scrieți cuvântul hi (h urmat de i).</string>
-    <string name="handwriting_tutorial_typed">Tastați <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">S-a tastat <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Glisați spre dreapta cu două degete pentru a introduce un spațiu.</string>
     <string name="handwriting_tutorial_delete">Glisați spre stânga cu două degete pentru a șterge caracterul dinaintea cursorului.</string>
     <string name="handwriting_tutorial_deleted">Șters.</string>
@@ -1611,7 +1611,7 @@
     <string name="handwriting_tutorial_not_that">Acesta a fost un alt gest.</string>
     <string name="handwriting_tutorial_done">Linie nouă. Tutorial terminat. Glisați în jos cu trei degete pentru a ascunde tastatura și la dreapta sau la stânga cu trei degete pentru a comuta tastatura. Pentru a deschide din nou tutorialul, atingeți cu trei degete.</string>
     <string name="handwriting_tutorial_finished">Tutorialul s-a încheiat. Pentru a-l deschide din nou, atingeți cu trei degete.</string>
-    <string name="handwriting_no_alternatives">Fara alte sugestii</string>
+    <string name="handwriting_no_alternatives">Nu există alte sugestii</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> din <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Text gol</string>
     <string name="handwriting_not_available">Recunoașterea scrisului de mână nu este disponibilă pe acest dispozitiv</string>
@@ -1726,10 +1726,10 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tip, stare, nume</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Stare, tip, nume</string>
     <string name="item_detail_name">Nume</string>
-    <string name="item_detail_type">Tastare</string>
-    <string name="item_detail_state">De stat</string>
-    <string name="action_move_up">Mișcă-te în sus</string>
-    <string name="action_move_down">Deplasați-vă în jos</string>
+    <string name="item_detail_type">Tip</string>
+    <string name="item_detail_state">Stare</string>
+    <string name="action_move_up">Mută în sus</string>
+    <string name="action_move_down">Mută în jos</string>
     <string name="template_list_position">Poziția <xliff:g id="position" example="2">%1$d</xliff:g> din <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Ridicat <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">A scăzut <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1743,12 +1743,12 @@
     <string name="gemini_error_with_details">Gemini nu a putut răspunde, eroare <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nu pot obține o descriere mai detaliată a imaginii: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Întrebați prin voce</string>
-    <string name="image_qna_stop_listening">Nu mai asculta</string>
+    <string name="image_qna_stop_listening">Oprește ascultarea</string>
     <string name="image_qna_type_question">Introduceți o întrebare</string>
     <string name="shortcut_dictate">Dictează</string>
     <string name="title_pref_ai_dictation">Dictarea corectă cu AI</string>
     <string name="dictation_not_corrected">Nu corectat. Tastat ca fiind recunoscut.</string>
-    <string name="dictation_nothing_recognized">Nimic recunoscut</string>
+    <string name="dictation_nothing_recognized">Nu s-a recunoscut nimic</string>
     <string name="dictation_unavailable">Recunoașterea vorbirii nu este disponibilă</string>
     <string name="dictation_field_gone">Câmp de text închis. Nimic scris.</string>
     <string name="dictation_transcription_failed">Vorbirea nu a fost transcrisă. Nimic scris.</string>

@@ -1352,8 +1352,8 @@
     <string name="summary_pref_mute_speech_while_recording">ヘッドフォンが接続されていない状態でアプリが録音している間、SandFly はジェスチャー、キー、入力に応じて話すだけで、通知などの場合は沈黙を保つため、録音されません。</string>
     <string name="title_pref_switch_languages">言語を自動的に切り替える</string>
     <string name="title_pref_switch_dialects">自動的に方言を切り替える</string>
-    <string name="category_collapsed">折りたたまれたセクション</string>
-    <string name="category_expanded">拡大セクション</string>
+    <string name="category_collapsed">折りたたみ済み</string>
+    <string name="category_expanded">展開済み</string>
     <string name="title_pref_speak_nav_bar_buttons">ナビゲーション バーのボタンを読み上げる</string>
     <string name="summary_pref_speak_nav_bar_buttons">ナビゲーション バーでリフトを有効にすると、「戻る」や「ホーム」など、タップで押すボタンを言います。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1382,7 +1382,7 @@
     <string name="title_pref_speakerphone_away_from_ear">スピーカーを耳から離したとき</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
     <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します</string>
-    <string name="action_copy_command">コピーコマンド</string>
+    <string name="action_copy_command">コマンドをコピー</string>
     <string name="command_copied">コマンドがコピーされました</string>
     <string name="title_pref_speech_control">他のアプリに話しかけてもらう</string>
     <string name="summary_pref_speech_control">許可したアプリは、SandFly の声でテキストを話すことができます。デバイスがロックされている間は何も言われません。</string>
@@ -1393,12 +1393,12 @@
     <string name="speech_control_ask_text">あなたのSandFlyの声でテキストを言うことができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
     <string name="speech_control_deny">許可しないでください</string>
-    <string name="permission_speak_label">SandFlyを通して話す</string>
+    <string name="permission_speak_label">SandFly を通して読み上げる</string>
     <string name="permission_speak_description">アプリにあなたのSandFlyの声でテキストを言うように要求させます。アプリが話す前に、SandFly が質問します。</string>
     <string name="permission_braille_display_label">SandFly の点字ディスプレイになるよう依頼してください</string>
     <string name="permission_braille_display_description">アプリに SandFly の点字ディスプレイになるように要求させます。 SandFly で許可すると、画面上のすべてを読み取り、デバイスを制御できます。 SandFly が最初に尋ねます。</string>
     <string name="title_pref_phonetic_letters_mode">文字を音声的に話す</string>
-    <string name="phonetic_letters_mode_off">OFF</string>
+    <string name="phonetic_letters_mode_off">オフ</string>
     <string name="phonetic_letters_mode_after_letter_delay">手紙の後で、「えー、ホテル」のように遅れて</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">手紙の後は、「h ホテル」のように遅延はありません</string>
     <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに「ホテル」みたいに</string>
@@ -1409,7 +1409,7 @@
     <string name="summary_selector_menu_emoji">絵文字の読み方を変更する</string>
     <string name="emoji_speech_state">絵文字: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">繰り返される絵文字を数える</string>
-    <string name="emoji_repeat_count_off">OFF</string>
+    <string name="emoji_repeat_count_off">オフ</string>
     <string name="emoji_repeat_count_2">2つ以上</string>
     <string name="emoji_repeat_count_3">3つ以上</string>
     <string name="emoji_repeat_count_4">4つ以上</string>
@@ -1434,7 +1434,7 @@
     <string name="notification_part_title">タイトル</string>
     <string name="notification_part_text">テキスト</string>
     <string name="notification_part_app">アプリ名</string>
-    <string name="notification_part_time">時間</string>
+    <string name="notification_part_time">時刻</string>
     <string name="notification_part_playback">再生中または一時停止中</string>
     <string name="notification_list_title">通知</string>
     <string name="notification_list_empty">通知はありません</string>
@@ -1443,12 +1443,12 @@
     <string name="notification_list_quick_settings">クイック設定</string>
     <string name="notification_list_dismiss">表示しない</string>
     <string name="notification_list_show_all">すべて表示</string>
-    <string name="notification_list_show_less">表示を少なくする</string>
+    <string name="notification_list_show_less">表示を減らす</string>
     <string name="notification_list_clear_all">すべてクリア</string>
     <string name="notification_list_send">送信</string>
-    <string name="notification_list_playing">遊ぶ</string>
+    <string name="notification_list_playing">再生中</string>
     <string name="notification_list_paused">一時停止中</string>
-    <string name="notification_list_play">遊ぶ</string>
+    <string name="notification_list_play">再生</string>
     <string name="notification_list_pause">一時停止</string>
     <string name="notification_list_previous">前へ</string>
     <string name="notification_list_next">次へ</string>
@@ -1518,7 +1518,7 @@
     <string name="quick_settings_vibrate">振動する</string>
     <string name="quick_settings_mute">ミュート</string>
     <string name="quick_settings_on">ON</string>
-    <string name="quick_settings_off">OFF</string>
+    <string name="quick_settings_off">オフ</string>
     <string name="quick_settings_unavailable">利用不可</string>
     <string name="quick_settings_edit">編集</string>
     <string name="quick_settings_system">システムクイック設定</string>
@@ -1567,10 +1567,10 @@
     <string name="shortcut_write_reading_control">読み取りコントロールの文字を書く</string>
     <string name="title_pref_reading_control_letters">手書きのアルファベット文字</string>
     <string name="reading_control_letter_none">なし</string>
-    <string name="handwriting_prompt">アルファベット文字を書きます</string>
+    <string name="handwriting_prompt">文字を書いてください</string>
     <string name="handwriting_closed">手書き終了</string>
     <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> で始まる読み取り制御はありません</string>
-    <string name="handwriting_not_recognized">手書きが認識されない</string>
+    <string name="handwriting_not_recognized">手書きを認識できませんでした</string>
     <string name="handwriting_downloading">手書き認識をダウンロード中です</string>
     <string name="handwriting_download_title">手書き認識をダウンロードしますか?</string>
     <string name="handwriting_download_message">この携帯電話では手書きが認識されます。この言語のモデル (約 20 MB) は、Google から 1 回ダウンロードされます。ダウンロードが完了するとメッセージが表示されます。</string>
@@ -1711,7 +1711,7 @@
     <string name="title_keyboard_echo_braille_display">点字表示エコー</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">入力中に音声を中断する</string>
-    <string name="pref_interrupt_typing_entry_always">いつも</string>
+    <string name="pref_interrupt_typing_entry_always">常に</string>
     <string name="pref_interrupt_typing_entry_edit_fields">編集フィールド内</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">キーボードエコー時</string>
     <string name="title_pref_interrupt_enter">Enter でスピーチを中断する</string>
@@ -1719,8 +1719,8 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">タイプ、状態、名前</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">状態、タイプ、名前</string>
     <string name="item_detail_name">名前</string>
-    <string name="item_detail_type">入力</string>
-    <string name="item_detail_state">州</string>
+    <string name="item_detail_type">種類</string>
+    <string name="item_detail_state">状態</string>
     <string name="action_move_up">上に移動</string>
     <string name="action_move_down">下に移動</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>中<xliff:g id="position" example="2">%1$d</xliff:g>の位置</string>

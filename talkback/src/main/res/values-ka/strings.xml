@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">მას შეუძლია თქვას ტექსტი თქვენი SandFly ხმით. ამის შეცვლა შეგიძლიათ გაფართოებულ პარამეტრებში.</string>
     <string name="speech_control_allow">დაშვება</string>
     <string name="speech_control_deny">არ დაუშვა</string>
-    <string name="permission_speak_label">ისაუბრეთ SandFly მეშვეობით</string>
+    <string name="permission_speak_label">SandFly-ის მეშვეობით საუბარი</string>
     <string name="permission_speak_description">აპს აძლევს უფლებას, ითხოვოს ტექსტის თქმა თქვენი SandFly ხმით. SandFly გკითხავთ, სანამ აპი ლაპარაკს შეძლებს.</string>
     <string name="permission_braille_display_label">მოითხოვეთ იყოს ბრაილის ეკრანი SandFly</string>
     <string name="permission_braille_display_description">აპს აძლევს უფლებას მოითხოვოს ბრაილის ეკრანი SandFly-ისთვის. თუ დაუშვებთ SandFly, მას შეუძლია წაიკითხოს ყველაფერი ეკრანზე და გააკონტროლოს თქვენი მოწყობილობა. SandFly ჯერ გეკითხება.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">წერილის ნაცვლად, როგორიცაა \"სასტუმრო\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">წაიკითხეთ მეტყველების ძრავით</string>
-    <string name="emoji_speech_names">წაიკითხეთ SandFly</string>
+    <string name="emoji_speech_names">კითხულობს SandFly</string>
     <string name="emoji_speech_none">არცერთი</string>
     <string name="summary_selector_menu_emoji">შეცვალეთ როგორ იკითხება emoji</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1447,11 +1447,11 @@
     <string name="notification_list_dismiss">დახურვა</string>
     <string name="notification_list_show_all">ყველას ჩვენება</string>
     <string name="notification_list_show_less">ნაკლების ჩვენება</string>
-    <string name="notification_list_clear_all">გაასუფთავე ყველა</string>
+    <string name="notification_list_clear_all">ყველას გასუფთავება</string>
     <string name="notification_list_send">გაგზავნა</string>
     <string name="notification_list_playing">უკრავს</string>
     <string name="notification_list_paused">შეჩერდა</string>
-    <string name="notification_list_play">ითამაშეთ</string>
+    <string name="notification_list_play">დაკვრა</string>
     <string name="notification_list_pause">პაუზა</string>
     <string name="notification_list_previous">წინა</string>
     <string name="notification_list_next">შემდეგი</string>
@@ -1573,9 +1573,9 @@
     <string name="handwriting_prompt">დაწერეთ ანბანის ასო</string>
     <string name="handwriting_closed">ხელწერა დაიხურა</string>
     <string name="handwriting_no_match">კითხვის კონტროლი არ იწყება <xliff:g id="letter" example="Q">%1$s</xliff:g>-ით</string>
-    <string name="handwriting_not_recognized">ხელწერა არ არის აღიარებული</string>
+    <string name="handwriting_not_recognized">ხელნაწერი ვერ ამოიცნო</string>
     <string name="handwriting_downloading">მიმდინარეობს ხელნაწერის ამოცნობის ჩამოტვირთვა</string>
-    <string name="handwriting_download_title">ჩამოტვირთეთ ხელნაწერის ამოცნობა?</string>
+    <string name="handwriting_download_title">ჩამოიტვირთოს ხელნაწერის ამოცნობა?</string>
     <string name="handwriting_download_message">ამ ტელეფონზე ხელნაწერი აღიარებულია. მისი მოდელი ამ ენისთვის, დაახლოებით 20 მბ, ჩამოიტვირთება Google-დან ერთხელ. შეტყობინება გამოჩნდება, როდესაც ის ჩამოტვირთულია.</string>
     <string name="handwriting_download_button">ჩამოტვირთვა</string>
     <string name="handwriting_downloaded">ჩამოტვირთულია ხელნაწერის ამოცნობა</string>
@@ -1592,7 +1592,7 @@
     <string name="value_handwriting_wait_800">0.8 წამი</string>
     <string name="value_handwriting_wait_1000">1 წამი</string>
     <string name="handwriting_keyboard_name">SandFly ხელწერა</string>
-    <string name="handwriting_space">შორისი</string>
+    <string name="handwriting_space">ჰარი</string>
     <string name="handwriting_new_line">ახალი ხაზი</string>
     <string name="handwriting_tutorial_intro">კლავიატურის ხელნაწერის გაკვეთილი. დაწერეთ ერთი თითით ეკრანის ნებისმიერ ადგილას. რასაც წერ, იწერება, როცა ცოტა ხნით ჩერდები. გაკვეთილის დასასრულებლად გადაფურცლეთ ქვემოთ სამი თითით.</string>
     <string name="handwriting_tutorial_write_letter">დაწერეთ ანბანის ასო ა.</string>
@@ -1723,9 +1723,9 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">მდგომარეობა, ტიპი, სახელი</string>
     <string name="item_detail_name">სახელი</string>
     <string name="item_detail_type">ტიპი</string>
-    <string name="item_detail_state">სახელმწიფო</string>
-    <string name="action_move_up">ზევით გადაადგილება</string>
-    <string name="action_move_down">ქვევით გადაადგილება</string>
+    <string name="item_detail_state">მდგომარეობა</string>
+    <string name="action_move_up">ზევით გადატანა</string>
+    <string name="action_move_down">ქვევით გადატანა</string>
     <string name="template_list_position">პოზიცია <xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="count" example="3">%2$d</xliff:g>-დან</string>
     <string name="template_item_details_order_picked_up">აიყვანეს <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">დაეცა <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1739,12 +1739,12 @@
     <string name="gemini_error_with_details">Gemini ვერ ვუპასუხე, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. სურათის უფრო დეტალური აღწერა ვერ მივიღე: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">იკითხეთ ხმით</string>
-    <string name="image_qna_stop_listening">შეწყვიტე მოსმენა</string>
+    <string name="image_qna_stop_listening">მოსმენის შეწყვეტა</string>
     <string name="image_qna_type_question">ჩაწერეთ შეკითხვა</string>
     <string name="shortcut_dictate">კარნახი</string>
     <string name="title_pref_ai_dictation">სწორი კარნახი AI-ით</string>
     <string name="dictation_not_corrected">არ არის გასწორებული. აკრეფილი როგორც აღიარებული.</string>
-    <string name="dictation_nothing_recognized">არაფერი აღიარებული</string>
+    <string name="dictation_nothing_recognized">ვერაფერი ამოიცნო</string>
     <string name="dictation_unavailable">მეტყველების ამოცნობა მიუწვდომელია</string>
     <string name="dictation_field_gone">ტექსტის ველი დახურულია. არაფერი აკრეფილი.</string>
     <string name="dictation_transcription_failed">მეტყველება ტექსტად არ გარდაიქმნა. არაფერი აკრეფილა.</string>

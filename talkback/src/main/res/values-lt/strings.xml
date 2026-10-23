@@ -1401,18 +1401,18 @@
     <string name="permission_braille_display_label">prašyti rodyti Brailio rašto ekraną SandFly</string>
     <string name="permission_braille_display_description">Leidžia programai prašyti rodyti Brailio rašto ekraną SandFly. Jei leisite SandFly, jis galės skaityti viską, kas rodoma ekrane, ir valdyti jūsų įrenginį. SandFly pirmiausia klausia jūsų.</string>
     <string name="title_pref_phonetic_letters_mode">Kalbėkite raides fonetiškai</string>
-    <string name="phonetic_letters_mode_off">Išjungti</string>
+    <string name="phonetic_letters_mode_off">Išjungta</string>
     <string name="phonetic_letters_mode_after_letter_delay">Po laiško, atidėtas, pvz., \"h, viešbutis\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Po laiško nedelskite, pavyzdžiui, „h viešbutis“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Vietoj raidės, pvz., „viešbutis“</string>
     <string name="title_pref_emoji_speech">Jaustukai</string>
     <string name="emoji_speech_engine">Skaityti kalbos varikliu</string>
-    <string name="emoji_speech_names">Perskaitė SandFly</string>
+    <string name="emoji_speech_names">Skaito „SandFly“</string>
     <string name="emoji_speech_none">Nėra</string>
     <string name="summary_selector_menu_emoji">Pakeiskite jaustukų skaitymo būdą</string>
     <string name="emoji_speech_state">Jaustukai: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Suskaičiuokite pasikartojančius jaustukus</string>
-    <string name="emoji_repeat_count_off">Išjungti</string>
+    <string name="emoji_repeat_count_off">Išjungta</string>
     <string name="emoji_repeat_count_2">2 ar daugiau</string>
     <string name="emoji_repeat_count_3">3 ar daugiau</string>
     <string name="emoji_repeat_count_4">4 ar daugiau</string>
@@ -1449,9 +1449,9 @@
     <string name="notification_list_show_less">Rodyti mažiau</string>
     <string name="notification_list_clear_all">Išvalyti viską</string>
     <string name="notification_list_send">Siųsti</string>
-    <string name="notification_list_playing">Žaidžia</string>
+    <string name="notification_list_playing">Leidžiama</string>
     <string name="notification_list_paused">Pristabdyta</string>
-    <string name="notification_list_play">Žaisti</string>
+    <string name="notification_list_play">Leisti</string>
     <string name="notification_list_pause">Pristabdyti</string>
     <string name="notification_list_previous">Ankstesnis</string>
     <string name="notification_list_next">Kitas</string>
@@ -1527,7 +1527,7 @@
     <string name="quick_settings_vibrate">Vibruoti</string>
     <string name="quick_settings_mute">Nutildyti</string>
     <string name="quick_settings_on">Įjungti</string>
-    <string name="quick_settings_off">Išjungti</string>
+    <string name="quick_settings_off">Išjungta</string>
     <string name="quick_settings_unavailable">Nepasiekiamas</string>
     <string name="quick_settings_edit">Redaguoti</string>
     <string name="quick_settings_system">Greiti sistemos nustatymai</string>
@@ -1605,7 +1605,7 @@
     <string name="handwriting_tutorial_intro">Rašymo ranka klaviatūros pamoka. Rašykite vienu pirštu bet kurioje ekrano vietoje. Tai, ką rašai, įvedama, kai trumpam sustoji. Norėdami baigti mokymo programą, trimis pirštais braukite žemyn.</string>
     <string name="handwriting_tutorial_write_letter">Parašykite abėcėlės raidę a.</string>
     <string name="handwriting_tutorial_write_word">Dabar parašykite žodį hi (h ir i).</string>
-    <string name="handwriting_tutorial_typed">Įvedė <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Įvesta <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Braukite dešinėn dviem pirštais, kad įvestumėte tarpą.</string>
     <string name="handwriting_tutorial_delete">Dviem pirštais braukite kairėn, kad ištrintumėte prieš žymeklį esantį simbolį.</string>
     <string name="handwriting_tutorial_deleted">Ištrinta.</string>
@@ -1729,11 +1729,11 @@
     <string name="pref_node_desc_order_entry_name_state_role_pos">Pavadinimas, valstybė, tipas</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tipas, valstybė, pavadinimas</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Valstybė, tipas, pavadinimas</string>
-    <string name="item_detail_name">Vardas</string>
+    <string name="item_detail_name">Pavadinimas</string>
     <string name="item_detail_type">Tipas</string>
-    <string name="item_detail_state">valstybė</string>
-    <string name="action_move_up">Judėti aukštyn</string>
-    <string name="action_move_down">Judėti žemyn</string>
+    <string name="item_detail_state">Būsena</string>
+    <string name="action_move_up">Perkelti aukštyn</string>
+    <string name="action_move_down">Perkelti žemyn</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> iš <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Paėmė <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Numesta <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
@@ -1747,12 +1747,12 @@
     <string name="gemini_error_with_details">Gemini nepavyko atsakyti, klaida <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Negaliu gauti išsamesnio vaizdo aprašymo: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Klauskite balsu</string>
-    <string name="image_qna_stop_listening">Nustokite klausytis</string>
+    <string name="image_qna_stop_listening">Nebeklausyti</string>
     <string name="image_qna_type_question">Įveskite klausimą</string>
     <string name="shortcut_dictate">Diktuoti</string>
     <string name="title_pref_ai_dictation">Teisingas diktavimas naudojant AI</string>
     <string name="dictation_not_corrected">Netaisyta. Įrašyta kaip atpažinta.</string>
-    <string name="dictation_nothing_recognized">Nieko nepripažino</string>
+    <string name="dictation_nothing_recognized">Nieko neatpažinta</string>
     <string name="dictation_unavailable">Kalbos atpažinimas nepasiekiamas</string>
     <string name="dictation_field_gone">Teksto laukas uždarytas. Nieko neįrašyta.</string>
     <string name="dictation_transcription_failed">Kalba nebuvo transkribuota. Nieko neįrašyta.</string>

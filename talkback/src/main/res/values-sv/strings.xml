@@ -1356,7 +1356,7 @@
     <string name="title_pref_switch_languages">Byt språk automatiskt</string>
     <string name="title_pref_switch_dialects">Byt dialekt automatiskt</string>
     <string name="category_collapsed">Komprimerat avsnitt</string>
-    <string name="category_expanded">Utökat avsnitt</string>
+    <string name="category_expanded">Expanderat avsnitt</string>
     <string name="title_pref_speak_nav_bar_buttons">Tala navigeringsfältets knappar</string>
     <string name="summary_pref_speak_nav_bar_buttons">Med lyft för att aktivera på navigeringsfältet, säg knappen som ett tryck trycker på, till exempel Tillbaka eller Hem.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_text">Det kan säga text med din SandFly röst. Du kan ändra detta i Avancerade inställningar.</string>
     <string name="speech_control_allow">Tillåt</string>
     <string name="speech_control_deny">Tillåt inte</string>
-    <string name="permission_speak_label">tala igenom SandFly</string>
+    <string name="permission_speak_label">tala genom SandFly</string>
     <string name="permission_speak_description">Låter appen be att få säga text med din SandFly röst. SandFly frågar dig innan appen kan tala.</string>
     <string name="permission_braille_display_label">be om att vara en punktskriftsskärm för SandFly</string>
     <string name="permission_braille_display_description">Låter appen begära att vara en punktskriftsskärm för SandFly. Om du tillåter det i SandFly kan det läsa allt på skärmen och styra din enhet. SandFly frågar dig först.</string>
@@ -1407,7 +1407,7 @@
     <string name="phonetic_letters_mode_instead_of_letter">Istället för bokstaven, som \"hotell\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Läs med talmotor</string>
-    <string name="emoji_speech_names">Läst av SandFly</string>
+    <string name="emoji_speech_names">Läses av SandFly</string>
     <string name="emoji_speech_none">Inget</string>
     <string name="summary_selector_menu_emoji">Ändra hur emoji läses</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1437,7 +1437,7 @@
     <string name="notification_part_title">Titel</string>
     <string name="notification_part_text">Text</string>
     <string name="notification_part_app">Appens namn</string>
-    <string name="notification_part_time">Tid</string>
+    <string name="notification_part_time">Tidpunkt</string>
     <string name="notification_part_playback">Spelar eller pausas</string>
     <string name="notification_list_title">Aviseringar</string>
     <string name="notification_list_empty">Inga aviseringar</string>
@@ -1451,7 +1451,7 @@
     <string name="notification_list_send">Skicka</string>
     <string name="notification_list_playing">Spelar</string>
     <string name="notification_list_paused">Pausad</string>
-    <string name="notification_list_play">Spela</string>
+    <string name="notification_list_play">Spela upp</string>
     <string name="notification_list_pause">Pausa</string>
     <string name="notification_list_previous">Föregående</string>
     <string name="notification_list_next">Nästa</string>
@@ -1571,9 +1571,9 @@
     <string name="title_pref_reading_control_letters">Handskrivna bokstäver i alfabetet</string>
     <string name="reading_control_letter_none">Inget</string>
     <string name="handwriting_prompt">Skriv en bokstav i alfabetet</string>
-    <string name="handwriting_closed">Handstil stängd</string>
+    <string name="handwriting_closed">Handskrift stängd</string>
     <string name="handwriting_no_match">Ingen läskontroll börjar med <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Handstilen känns inte igen</string>
+    <string name="handwriting_not_recognized">Handskriften kändes inte igen</string>
     <string name="handwriting_downloading">Handskriftsigenkänning laddas ned</string>
     <string name="handwriting_download_title">Ladda ner handskriftsigenkänning?</string>
     <string name="handwriting_download_message">Handstil känns igen på den här telefonen. Dess modell för detta språk, cirka 20 MB, laddas ner från Google en gång. Ett meddelande visar när den har laddats ner.</string>
@@ -1591,13 +1591,13 @@
     <string name="value_handwriting_wait_600">0,6 sekunder</string>
     <string name="value_handwriting_wait_800">0,8 sekunder</string>
     <string name="value_handwriting_wait_1000">1 sekund</string>
-    <string name="handwriting_keyboard_name">SandFly handstil</string>
+    <string name="handwriting_keyboard_name">SandFly handskrift</string>
     <string name="handwriting_space">Blanksteg</string>
     <string name="handwriting_new_line">Ny rad</string>
     <string name="handwriting_tutorial_intro">Handskriftsguide för tangentbord. Skriv med ett finger var som helst på skärmen. Det du skriver skrivs när du stannar upp en stund. För att avsluta handledningen sveper du nedåt med tre fingrar.</string>
     <string name="handwriting_tutorial_write_letter">Skriv bokstaven a.</string>
     <string name="handwriting_tutorial_write_word">Skriv nu ordet hi (h följt av i).</string>
-    <string name="handwriting_tutorial_typed">Skrev <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Skrivet: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Svep åt höger med två fingrar för att skriva ett mellanslag.</string>
     <string name="handwriting_tutorial_delete">Svep åt vänster med två fingrar för att ta bort tecknet före markören.</string>
     <string name="handwriting_tutorial_deleted">Raderad.</string>
@@ -1723,7 +1723,7 @@
     <string name="pref_node_desc_order_entry_state_role_name_pos">Tillstånd, typ, namn</string>
     <string name="item_detail_name">Namn</string>
     <string name="item_detail_type">Typ</string>
-    <string name="item_detail_state">Staten</string>
+    <string name="item_detail_state">Tillstånd</string>
     <string name="action_move_up">Flytta uppåt</string>
     <string name="action_move_down">Flytta ner</string>
     <string name="template_list_position">Position <xliff:g id="position" example="2">%1$d</xliff:g> av <xliff:g id="count" example="3">%2$d</xliff:g></string>
