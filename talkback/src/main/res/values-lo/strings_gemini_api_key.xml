@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Geminiລະຫັດ API</string>
+    <string name="summary_pref_gemini_api_key_built_in">ການນໍາໃຊ້ກະແຈທີ່ສ້າງຂຶ້ນໃນ app ນີ້</string>
+    <string name="gemini_api_key_dialog_message">ຮັບລະຫັດ API ຟຣີຈາກ Google AI Studio, ຢູ່ aistudio.google.com/apikey, ແລະວາງມັນໃສ່ບ່ອນນີ້. ເພື່ອເອົາກະແຈຂອງທ່ານອອກ, ລ້າງຊ່ອງຂໍ້ມູນແລະບັນທຶກ.\n\nຮູບພາບແລະຫນ້າຈໍທີ່ທ່ານອະທິບາຍແມ່ນຖືກສົ່ງໄປຫາ Google. ໃນຊັ້ນຟຣີ, Googleສາມາດໃຊ້ພວກມັນເພື່ອປັບປຸງຜະລິດຕະພັນຂອງມັນ.</string>
+    <string name="gemini_api_key_hint">ລະຫັດ API</string>
+    <string name="gemini_api_key_save">ບັນທຶກ</string>
+    <string name="gemini_api_key_get">ເອົາກະແຈ</string>
+    <string name="title_pref_gemini_model">Gemini ຮູບແບບ</string>
+    <string name="gemini_model_automatic">ອັດຕະໂນມັດ</string>
+    <string name="summary_pref_gemini_model_automatic">ອັດຕະໂນມັດ: Gemini Flash, ຈາກນັ້ນ Flash-Lite ເມື່ອ Flash ບໍ່ຫວ່າງ</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ຈາກນັ້ນ Flash-Lite ເມື່ອມັນບໍ່ຫວ່າງ</string>
+    <string name="gemini_model_loading">ກຳລັງເອົາຕົວແບບ...</string>
+    <string name="gemini_model_list_failed">ບໍ່ສາມາດຮັບແບບໄດ້: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">ຕັ້ງລະຫັດ API Gemini ກ່ອນ</string>
+    <string name="gemini_api_terms_link">Gemini ເງື່ອນໄຂການໃຫ້ບໍລິການເພີ່ມເຕີມຂອງ API</string>
+    <string name="ai_service_address_hint">ທີ່ຢູ່ ເຊັ່ນ: https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">ຕົວແບບ</string>
+    <string name="ai_service_address_invalid">ທີ່ຢູ່ຕ້ອງເລີ່ມຕົ້ນດ້ວຍ https://. ບໍ່ມີຫຍັງຖືກບັນທຶກໄວ້.</string>
+    <string name="dialog_message_ai_service_consent">ຮູບພາບ ແລະຮູບໜ້າຈໍຖືກສົ່ງໄປໃຫ້ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ເພື່ອອະທິບາຍ, ເຊິ່ງໃຊ້ເວລາຫຼາຍວິນາທີ. ຂໍ້ກຳນົດຂອງຕົນເອງ ແລະນະໂຍບາຍຄວາມເປັນສ່ວນຕົວນຳໃຊ້. Generative AI ແມ່ນການທົດລອງ, ດັ່ງນັ້ນມັນຈະເຮັດຜິດພາດ.</string>
+    <string name="ai_service_error_api_key">ບໍລິການ AI ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງການຕັ້ງຄ່າຂອງມັນຢູ່ໃນຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
+    <string name="ai_service_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ບໍລິການ AI ແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
+    <string name="ai_service_error_busy">ການບໍລິການ AI ບໍ່ຫວ່າງໃນຂະນະນີ້. ກະລຸນາລອງໃໝ່ໃນອີກຈັກໜ່ອຍ.</string>
+    <string name="ai_service_error_timeout">ບໍລິການ AI ໃຊ້ເວລາດົນເກີນໄປທີ່ຈະຕອບ. ລອງອີກຄັ້ງ.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">ບໍ່ມີ</string>
+    <string name="ai_service_not_set_up">ບໍ່ມີບໍລິການ AI ທີ່ໃຊ້ຢູ່. ຕັ້ງຄ່າອັນໜຶ່ງ ຫຼືເລືອກອັນໜຶ່ງໃນການຕັ້ງຄ່າຄຳອະທິບາຍອັດຕະໂນມັດ.</string>
+    <string name="ai_provider_none_set_up">ບໍ່ມີການບໍລິການ AI ຖືກຕັ້ງຄ່າ. ຕັ້ງຄ່າອັນນຶ່ງໃນການຕັ້ງຄ່າຂອງມັນຂ້າງລຸ່ມນີ້.</string>
+    <string name="ai_provider_other">ບໍລິການອື່ນໆ</string>
+    <string name="title_pref_category_ai_services">ບໍລິການ AI</string>
+    <string name="title_pref_ai_provider">ບໍລິການ AI</string>
+    <string name="title_ai_provider_settings">ການຕັ້ງຄ່າ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ບໍ່ໄດ້ຕັ້ງ</string>
+    <string name="ai_provider_in_use">ໃຊ້ຢູ່</string>
+    <string name="ai_provider_not_set_up">ບໍ່ໄດ້ຕັ້ງ</string>
+    <string name="ai_provider_not_ready">ເລືອກຕົວແບບກ່ອນ</string>
+    <string name="ai_provider_address">ທີ່ຢູ່</string>
+    <string name="ai_provider_address_message">ທີ່ຢູ່ຂອງການບໍລິການທີ່ມີ API ສົນທະນາທີ່ເຂົ້າກັນໄດ້ OpenAI ແລະການປ້ອນຂໍ້ມູນຮູບພາບເຊັ່ນ https://example.com/v1.</string>
+    <string name="ai_provider_not_set">ບໍ່ໄດ້ຕັ້ງ</string>
+    <string name="ai_provider_set">ຕັ້ງຄ່າແລ້ວ</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>ລະຫັດ API</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ຮູບແບບ</string>
+    <string name="ai_provider_choose_model">ບໍ່ໄດ້ເລືອກ</string>
+    <string name="ai_provider_key_message">ວາງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ຂອງທ່ານ. ເພື່ອເອົາມັນອອກ, ລ້າງຊ່ອງຂໍ້ມູນແລະບັນທຶກ. ຮູບພາບ ແລະໜ້າຈໍທີ່ທ່ານອະທິບາຍແມ່ນຖືກສົ່ງໄປຫາ <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">ຕັ້ງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ກ່ອນ</string>
+    <string name="ai_provider_needs_address">ຕັ້ງທີ່ຢູ່ກ່ອນ</string>
+    <string name="ai_provider_enter_model">ໃສ່ຊື່ຕົວແບບ</string>
+</resources>

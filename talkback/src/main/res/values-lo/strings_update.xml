@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">ກວດສອບການອັບເດດ</string>
+    <string name="summary_pref_check_for_updates_version">ລຸ້ນ <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, ສ້າງ<xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">ກວດສອບການອັບເດດໂດຍອັດຕະໂນມັດ</string>
+    <string name="summary_pref_auto_update_check">ກວດເບິ່ງຫນຶ່ງຄັ້ງຕໍ່ມື້ແລະສະແດງການແຈ້ງເຕືອນເມື່ອມີການກໍ່ສ້າງໃຫມ່</string>
+    <string name="title_pref_dev_builds">ການພັດທະນາກໍ່ສ້າງ</string>
+    <string name="update_notification_title">SandFly ມີອັບເດດ</string>
+    <string name="update_notification_text">ກໍ່ສ້າງ<xliff:g id="build" example="97">%1$d</xliff:g>. ແຕະເພື່ອຕິດຕັ້ງ.</string>
+    <string name="update_dialog_title">SandFly ກໍ່ສ້າງ<xliff:g id="build" example="97">%1$d</xliff:g> ມີໃຫ້</string>
+    <string name="update_dialog_install">ຕິດຕັ້ງ</string>
+    <string name="update_checking">ກຳລັງກວດສອບການອັບເດດ</string>
+    <string name="update_up_to_date">SandFly ອັບເດດແລ້ວ</string>
+    <string name="update_check_failed">ບໍ່ສາມາດກວດສອບການອັບເດດໄດ້</string>
+    <string name="update_downloading">ກຳລັງດາວໂຫລດອັບເດດ</string>
+    <string name="update_already_downloading">ການອັບເດດກຳລັງດາວໂຫຼດຢູ່ແລ້ວ</string>
+    <string name="update_ready_title">ດາວໂຫລດອັບເດດ SandFly ແລ້ວ</string>
+    <string name="update_ready_text">ແຕະເພື່ອຕິດຕັ້ງ.</string>
+    <string name="update_install_failed">ບໍ່ສາມາດຕິດຕັ້ງການອັບເດດໄດ້</string>
+    <string name="update_install_canceled">ຍົກເລີກການອັບເດດແລ້ວ</string>
+    <string name="update_allow_install">ອະນຸຍາດໃຫ້ SandFly ຕິດຕັ້ງແອັບ, ຈາກນັ້ນລອງອັບເດດອີກຄັ້ງ</string>
+</resources>

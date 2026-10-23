@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack ເປີດ</string>
-  <string name="talkback_disabled">TalkBack ປິດ</string>
+  <string name="talkback_on">SandFly ເປີດ</string>
+  <string name="talkback_disabled">SandFly ປິດ</string>
   <string name="notification_type_beginning_of_field">ຈຸດເລີ່ມຕົ້ນຂອງຊ່ອງຂໍ້ມູນ</string>
   <string name="notification_type_end_of_field">ຈຸດສິ້ນສຸດຂອງຊ່ອງຂໍ້ມູນ</string>
   <string name="notification_type_selection_mode_on">ເປີດໂໝດການເລືອກແລ້ວ</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">ເລີ່ມລາກແລ້ວ</string>
   <string name="drag_dropped">ວາງລາຍການທີ່ລາກມາແລ້ວ</string>
   <string name="drag_cancelled">ຍົກເລີກການລາກແລ້ວ</string>
+    <string name="template_brightness_changed">ຄວາມສະຫວ່າງ <xliff:g id="percent">%1$d</xliff:g> ເປີເຊັນ.</string>
+    <string name="brightness_needs_permission">ອະນຸຍາດໃຫ້ແກ້ໄຂການຕັ້ງຄ່າລະບົບເພື່ອປ່ຽນຄວາມສະຫວ່າງ.</string>
+    <string name="brightness_adaptive_on">ປິດການປັບຄວາມສະຫວ່າງເພື່ອປ່ຽນຄວາມສະຫວ່າງ.</string>
+    <string name="telegram_replying_to">ຕອບກັບຫາ <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
