@@ -32,6 +32,7 @@ import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
 import com.google.android.accessibility.utils.Performance.EventId
 import com.google.android.accessibility.utils.Role
+import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter.ScrollTimeout
 import com.google.android.accessibility.utils.output.ScrollActionRecord
 import com.google.android.accessibility.utils.traversal.OrderedTraversalStrategy
@@ -134,16 +135,19 @@ class VerticalNavigator(
    * without its title.
    */
   private fun focus(eventId: EventId?, target: AccessibilityNodeInfoCompat) {
-    if (hasPartOffScreen(target) &&
-        pipeline.returnFeedback(
-          eventId,
-          Feedback.nodeAction(target, AccessibilityActionCompat.ACTION_SHOW_ON_SCREEN.id),
-        )
+    val list = VerticalNavigation.listOf(target)
+    if (list != null &&
+        hasPartOffScreen(target) &&
+        // Recorded as SandFly's own scroll, so it isn't taken for the user's and focus stays.
+        pipeline.returnFeedback(eventId, Feedback.scrollEnsureOnScreen(list, target))
     ) {
       handler.postDelayed(
         {
-          target.refresh()
-          focusNow(eventId, target)
+          if (target.refresh() && target.isVisibleToUser) {
+            focusNow(eventId, target)
+          } else {
+            pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete))
+          }
         },
         SHOW_ON_SCREEN_WAIT_MS,
       )
@@ -162,8 +166,12 @@ class VerticalNavigator(
     )
   }
 
-  private fun hasPartOffScreen(node: AccessibilityNodeInfoCompat): Boolean =
-    (0 until node.childCount).any { node.getChild(it)?.isVisibleToUser == false }
+  /** Whether the screen cuts off part of [node]: it is shown smaller than it is laid out. */
+  private fun hasPartOffScreen(node: AccessibilityNodeInfoCompat): Boolean {
+    val onScreen = Rect().also { node.getBoundsInScreen(it) }
+    val laidOut = Rect().also { node.getBoundsInParent(it) }
+    return onScreen.height() < laidOut.height() || onScreen.width() < laidOut.width()
+  }
 
   private fun contentOf(node: AccessibilityNodeInfoCompat): String =
     TextUtils.concat(node.text ?: "", "\n", node.contentDescription ?: "").toString()
@@ -210,9 +218,14 @@ object VerticalNavigation {
         strategy,
         focus,
         direction,
-        filter { focusable?.accept(it) == true && isOnOtherRow(bounds(it), from, forward) },
+        filter {
+          focusable?.accept(it) == true &&
+            isOnOtherRow(bounds(it), from, forward) &&
+            // Going up reaches a card before the button in it that has focus.
+            !AccessibilityNodeInfoUtils.hasAncestor(focus, it)
+        },
       ) ?: return null
-    val target = wholeItem(found, root, focus, focusable)
+    val target = wholeItem(found, root, focus, focusable) { isOnOtherRow(bounds(it), from, forward) }
     if (forward) {
       return target
     }
@@ -230,12 +243,15 @@ object VerticalNavigation {
     root: AccessibilityNodeInfoCompat,
     focus: AccessibilityNodeInfoCompat,
     focusable: Filter<AccessibilityNodeInfoCompat>?,
+    fits: (AccessibilityNodeInfoCompat) -> Boolean = { true },
   ): AccessibilityNodeInfoCompat {
+    // In web content every container can be focused, so climbing would reach the whole page.
+    if (WebInterfaceUtils.supportsWebActions(node)) return node
     var item = node
     var ancestor = node.parent
     while (ancestor != null && ancestor != root) {
       if (ancestor == focus || AccessibilityNodeInfoUtils.hasAncestor(focus, ancestor)) break
-      if (focusable?.accept(ancestor) == true) item = ancestor
+      if (focusable?.accept(ancestor) == true && fits(ancestor)) item = ancestor
       ancestor = ancestor.parent
     }
     return item
