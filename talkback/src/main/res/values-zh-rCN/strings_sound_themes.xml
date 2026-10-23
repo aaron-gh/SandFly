@@ -136,4 +136,14 @@
     <string name="theme_sound_not_audio">SandFly 无法播放该文件。请选择 WAV、OGG、MP3 或 FLAC 声音。</string>
     <!-- Theme sounds: message when the chosen file cannot be read. [CHAR LIMIT=NONE] -->
     <string name="theme_sound_failed">SandFly 无法读取该文件。</string>
+    <string name="sound_theme_use">使用这个主题</string>
+    <string name="title_pref_sound_theme_install_source">来自来源</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上存储库中的主题文件。</string>
+    <string name="sound_theme_sources">声音主题来源</string>
+    <string name="sound_theme_source_empty">此源中没有声音主题</string>
+    <string name="sound_theme_source_failed">无法加载声音主题。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">从它安装的声音主题保持安装状态。</string>
+    <string name="theme_sound_none">没有声音</string>
+    <string name="theme_sound_summary_no_sound">没有声音</string>
+    <string name="theme_sound_action_set_none">设置为无声音</string>
 </resources>
