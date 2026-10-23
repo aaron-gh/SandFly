@@ -34,11 +34,11 @@
     <string name="title_pref_theme_sounds">音效</string>
     <string name="summary_pref_theme_sounds">用您自己的聲音檔案替換該主題的任何聲音。</string>
     <string name="sound_themes_install_category">安裝主題</string>
-    <string name="title_pref_sound_theme_install_file">來自文件</string>
+    <string name="title_pref_sound_theme_install_file">從檔案</string>
     <string name="summary_pref_sound_theme_install_file">主題檔案是一個 ZIP 檔案。您也可以從另一個應用程式使用 SandFly 開啟或共用它。</string>
-    <string name="title_pref_sound_theme_install_link">來自連結</string>
+    <string name="title_pref_sound_theme_install_link">從連結</string>
     <string name="summary_pref_sound_theme_install_link">指向主題檔案或包含主題的 GitHub 儲存庫的連結。您也可以透過瀏覽器與 SandFly 分享連結。</string>
-    <string name="title_pref_sound_theme_install_source">來自來源</string>
+    <string name="title_pref_sound_theme_install_source">從來源</string>
     <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上儲存庫中的主題檔案。</string>
     <string name="sound_theme_sources">聲音主題來源</string>
     <string name="sound_theme_source_empty">此來源中沒有聲音主題</string>
@@ -62,7 +62,7 @@
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的聲音</string>
     <string name="title_pref_theme_sounds_reset">為所有人使用 SandFly 的聲音</string>
     <string name="theme_sounds_reset_confirm">把這個主題的所有聲音都去掉，用SandFly自己的？</string>
-    <string name="theme_sounds_reset_button">刪除</string>
+    <string name="theme_sounds_reset_button">移除</string>
     <string name="theme_sounds_category">音效</string>
     <string name="theme_sound_summary_default">SandFly的聲音</string>
     <string name="theme_sound_summary_custom">主題音效</string>
