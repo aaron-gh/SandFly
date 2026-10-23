@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">स्क्रिप्ट API <xliff:g id="needed">%1$d</xliff:g> किंवा नंतरची आवश्यकता आहे. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे भाग कदाचित काम करणार नाहीत.</string>
     <string name="script_api_untested">स्क्रिप्ट API <xliff:g id="tested">%1$d</xliff:g> पर्यंत चाचणी केली. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे ते अपेक्षेप्रमाणे कार्य करू शकत नाही.</string>
-    <string name="script_state_incompatible">यासह कार्य करू शकत नाही SandFly</string>
+    <string name="script_state_incompatible">SandFly च्या या आवृत्तीसह कदाचित काम करणार नाही</string>
     <string name="script_api_range">स्क्रिप्ट API <xliff:g id="min">%1$d</xliff:g> ते <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">सुसंगतता</string>
     <string name="script_install_anyway">तरीही स्थापित करा</string>
@@ -132,7 +132,7 @@
     <string name="script_source_exists">हा स्रोत आधीच जोडलेला आहे.</string>
     <string name="script_source_loading">लोड होत आहे</string>
     <string name="script_source_empty">या स्त्रोतामध्ये स्क्रिप्ट नाहीत</string>
-    <string name="script_source_failed">स्क्रिप्ट लोड करू शकलो नाही. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">स्क्रिप्ट लोड करता आल्या नाहीत. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">पुन्हा प्रयत्न करा</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> डाउनलोड करत आहे</string>
     <string name="script_source_remove">स्रोत काढा</string>

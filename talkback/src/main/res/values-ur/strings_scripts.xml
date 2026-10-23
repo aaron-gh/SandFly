@@ -35,7 +35,7 @@
     <string name="script_update_replaces">یہ ورژن <xliff:g id="version">%1$s</xliff:g> کو <xliff:g id="author">%2$s</xliff:g> سے بدل دیتا ہے، اور اپنے ڈیٹا اور ترتیبات کو رکھتا ہے۔</string>
     <string name="script_update_other_author">نیا <xliff:g id="author">%1$s</xliff:g>، ایک مختلف مصنف کا ہے۔ صرف اس صورت میں اپ ڈیٹ کریں جب آپ کو اس پر بھروسہ ہو۔</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> انسٹال ہو گیا</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> اپ ڈیٹ کر کے <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> کو <xliff:g id="version">%2$s</xliff:g> پر اپ ڈیٹ کر دیا گیا</string>
     <string name="script_import_failed">درآمد ناکام ہو گیا۔ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>۔ صرف قابل اعتماد اسکرپٹس کو اجازت دیں۔</string>
     <string name="script_permission_screen">اسکرین پڑھنا</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">اسکرپٹ API <xliff:g id="needed">%1$d</xliff:g> یا بعد کی ضرورت ہے۔ اس SandFly میں <xliff:g id="current">%2$d</xliff:g> ہے، اس لیے ہو سکتا ہے پرزے کام نہ کریں۔</string>
     <string name="script_api_untested">اسکرپٹ API <xliff:g id="tested">%1$d</xliff:g> تک تجربہ کیا گیا۔ اس SandFly میں <xliff:g id="current">%2$d</xliff:g> ہے، اس لیے ہو سکتا ہے کہ یہ توقع کے مطابق کام نہ کرے۔</string>
-    <string name="script_state_incompatible">ہو سکتا ہے اس کے ساتھ کام نہ کرے SandFly</string>
+    <string name="script_state_incompatible">ہو سکتا ہے SandFly کے اس ورژن کے ساتھ کام نہ کرے</string>
     <string name="script_api_range">اسکرپٹ API <xliff:g id="min">%1$d</xliff:g> سے <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">مطابقت</string>
     <string name="script_install_anyway">بہرحال انسٹال کریں</string>
@@ -132,7 +132,7 @@
     <string name="script_source_exists">یہ ماخذ پہلے ہی شامل ہے۔</string>
     <string name="script_source_loading">لوڈ ہو رہا ہے</string>
     <string name="script_source_empty">اس سورس میں کوئی اسکرپٹ نہیں ہے</string>
-    <string name="script_source_failed">اسکرپٹس لوڈ نہیں کر سکے۔ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">اسکرپٹس لوڈ نہیں ہو سکیں۔ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">دوبارہ کوشش کریں</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> ڈاؤن لوڈ ہو رہا ہے</string>
     <string name="script_source_remove">ماخذ کو ہٹا دیں</string>

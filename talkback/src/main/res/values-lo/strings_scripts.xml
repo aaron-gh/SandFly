@@ -22,7 +22,7 @@
     <string name="script_state_on">ເປີດ</string>
     <string name="script_state_off">ປິດ</string>
     <string name="script_runs_in">ເຮັດວຽກໃນ <xliff:g id="apps">%1$s</xliff:g></string>
-    <string name="script_runs_everywhere">ແລ່ນໃນທຸກແອັບ</string>
+    <string name="script_runs_everywhere">ເຮັດວຽກໃນທຸກແອັບ</string>
     <string name="script_version">ລຸ້ນ <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">ໂດຍ <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">ຕິດຕັ້ງ <xliff:g id="name">%1$s</xliff:g> ບໍ?</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">ຕ້ອງການ script API <xliff:g id="needed">%1$d</xliff:g> ຫຼືຫຼັງຈາກນັ້ນ. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ດັ່ງນັ້ນບາງສ່ວນອາດຈະບໍ່ເຮັດວຽກ.</string>
     <string name="script_api_untested">ທົດສອບເຖິງ script API <xliff:g id="tested">%1$d</xliff:g>. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ສະນັ້ນມັນອາດຈະບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້.</string>
-    <string name="script_state_incompatible">ອາດຈະໃຊ້ບໍ່ໄດ້ກັບສິ່ງນີ້SandFly</string>
+    <string name="script_state_incompatible">ອາດໃຊ້ບໍ່ໄດ້ກັບ SandFly ເວີຊັນນີ້</string>
     <string name="script_api_range">API ສະຄຣິບ <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ຄວາມເຂົ້າກັນໄດ້</string>
     <string name="script_install_anyway">ຕິດຕັ້ງຕໍ່</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading">ກຳລັງດາວໂຫຼດ <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">ລຶບແຫຼ່ງ</string>
     <string name="script_source_remove_title">ລຶບ <xliff:g id="name">%1$s</xliff:g> ອອກບໍ?</string>
-    <string name="script_source_remove_message">ສະຄຣິບທີ່ຕິດຕັ້ງຈາກມັນຄົງຖືກຕິດຕັ້ງ.</string>
+    <string name="script_source_remove_message">ສະຄຣິບທີ່ຕິດຕັ້ງຈາກແຫຼ່ງນີ້ຈະຍັງຄົງຕິດຕັ້ງຢູ່.</string>
     <string name="scripts_auto_update">ອັບເດດສະຄຣິບອັດຕະໂນມັດ</string>
     <string name="scripts_check_updates">ກວດສອບການອັບເດດ</string>
     <string name="scripts_checking_updates">ກຳລັງກວດສອບການອັບເດດ...</string>

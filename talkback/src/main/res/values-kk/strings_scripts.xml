@@ -11,12 +11,12 @@
     <string name="scripts_category_app">Қолданба скрипттері</string>
     <string name="scripts_category_global">Жалпы плагиндер</string>
     <string name="scripts_none">Ешбір скрипт орнатылмаған</string>
-    <string name="scripts_all_off">Барлық сценарийлерді өшіріңіз</string>
+    <string name="scripts_all_off">Барлық скрипттерді өшіру</string>
     <string name="scripts_all_off_summary">Сценарийлер орнатылған күйде қалады және өз қосқыштарын сақтайды. Барлық сценарийлерді қосу немесе өшіру қимылы дәл осылай жасайды.</string>
     <string name="shortcut_toggle_scripts">Барлық сценарийлерді қосыңыз немесе өшіріңіз</string>
     <string name="scripts_now_off">Скрипттер өшірулі</string>
     <string name="scripts_now_on">Скрипттер қосулы</string>
-    <string name="scripts_unavailable">Бұл құрылғыда сценарийлер қолжетімді емес</string>
+    <string name="scripts_unavailable">Бұл құрылғыда скрипттер қолжетімді емес</string>
     <string name="script_add_example">Мысал скриптін қосу</string>
     <string name="script_add_example_summary">Сіз ауысатын әрбір қолданбаның атын айтады. Бастау үшін сценарий.</string>
     <string name="script_state_on">Қосулы</string>
@@ -29,13 +29,13 @@
     <string name="script_install_can">Ол мыналарды істей алады:</string>
     <string name="script_install_no_permissions">Рұқсаттар қажет емес.</string>
     <string name="script_install_button">Орнату</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>-ны <xliff:g id="version">%2$s</xliff:g> етіп жаңарту керек пе?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> нұсқасына жаңартылсын ба?</string>
     <string name="script_update_new_permissions">Жаңа рұқсаттар:</string>
     <string name="script_update_button">Жаңарту</string>
     <string name="script_update_replaces">Бұл <xliff:g id="version">%1$s</xliff:g> нұсқасын <xliff:g id="author">%2$s</xliff:g> нұсқасына ауыстырады және оның деректері мен параметрлерін сақтайды.</string>
     <string name="script_update_other_author">Жаңасы <xliff:g id="author">%1$s</xliff:g> авторы, басқа автор. Тек сенсеңіз ғана жаңартыңыз.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> орнатылды</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> болып жаңартылды</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> нұсқасына жаңартылды</string>
     <string name="script_import_failed">Импорттау сәтсіз аяқталды. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Тек сенімді скрипттерге рұқсат етіңіз.</string>
     <string name="script_permission_screen">Экранды оқу</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> немесе одан кейінгі нұсқасы қажет. Бұл SandFly ішінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан бөліктер жұмыс істемеуі мүмкін.</string>
     <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> сценарийіне дейін сыналған. Бұл SandFly параметрінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан ол күткендей жұмыс істемеуі мүмкін.</string>
-    <string name="script_state_incompatible">Мұнымен жұмыс істемеуі мүмкін SandFly</string>
+    <string name="script_state_incompatible">SandFly-дың осы нұсқасымен жұмыс істемеуі мүмкін</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> – <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Үйлесімділік</string>
     <string name="script_install_anyway">Бәрібір орнату</string>
@@ -129,15 +129,15 @@
     <string name="script_source_add_button">Қосу</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийінің мекенжайы емес.</string>
-    <string name="script_source_exists">Бұл дереккөз қосылған.</string>
+    <string name="script_source_exists">Бұл дереккөз әлдеқашан қосылған.</string>
     <string name="script_source_loading">Жүктелуде</string>
-    <string name="script_source_empty">Бұл дереккөзде сценарийлер жоқ</string>
+    <string name="script_source_empty">Бұл дереккөзде скрипттер жоқ</string>
     <string name="script_source_failed">Скрипттерді жүктеу мүмкін болмады. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Қайталау</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> жүктеп алынуда</string>
     <string name="script_source_remove">Дереккөзді жою</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> жою керек пе?</string>
-    <string name="script_source_remove_message">Одан орнатылған сценарийлер орнатылған күйінде қалады.</string>
+    <string name="script_source_remove_message">Одан орнатылған скрипттер орнатылған күйінде қалады.</string>
     <string name="scripts_auto_update">Скрипттерді автоматты жаңарту</string>
     <string name="scripts_check_updates">Жаңартуларды тексеру</string>
     <string name="scripts_checking_updates">Жаңартулар тексерілуде…</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">Жаңартулар Жаңартулар астында тізімделген</string>
     <string name="scripts_update_check_failed">Кейбір дереккөздерді тексеру мүмкін болмады</string>
-    <string name="scripts_up_to_date">Барлық сценарийлер жаңартылған</string>
+    <string name="scripts_up_to_date">Барлық скрипттер жаңартылған</string>
 </resources>

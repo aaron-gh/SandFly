@@ -11,7 +11,7 @@
     <string name="scripts_category_app">Скрипте апликације</string>
     <string name="scripts_category_global">Глобални додаци</string>
     <string name="scripts_none">Нема инсталираних скрипти</string>
-    <string name="scripts_all_off">Искључите све скрипте</string>
+    <string name="scripts_all_off">Искључи све скрипте</string>
     <string name="scripts_all_off_summary">Скрипте остају инсталиране и задржавају сопствене прекидаче. Гест Укључи или искључи све скрипте ради исто.</string>
     <string name="shortcut_toggle_scripts">Укључите или искључите све скрипте</string>
     <string name="scripts_now_off">Скрипте искључене</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Потребан је АПИ за скрипте <xliff:g id="needed">%1$d</xliff:g> или новији. Овај SandFly има <xliff:g id="current">%2$d</xliff:g>, тако да делови можда неће радити.</string>
     <string name="script_api_untested">Тестирано до АПИ-ја скрипте <xliff:g id="tested">%1$d</xliff:g>. Овај SandFly има <xliff:g id="current">%2$d</xliff:g>, тако да можда неће радити како се очекивало.</string>
-    <string name="script_state_incompatible">Можда не ради са овим SandFly</string>
+    <string name="script_state_incompatible">Можда неће радити са овом верзијом SandFly-а</string>
     <string name="script_api_range">API за скрипте од <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Компатибилност</string>
     <string name="script_install_anyway">Инсталирај свеједно</string>

@@ -35,7 +35,7 @@
     <string name="script_update_replaces">វាជំនួសកំណែ <xliff:g id="version">%1$s</xliff:g> ដោយ <xliff:g id="author">%2$s</xliff:g> ហើយរក្សាទិន្នន័យ និងការកំណត់របស់វា។</string>
     <string name="script_update_other_author">អត្ថបទថ្មីគឺដោយ <xliff:g id="author">%1$s</xliff:g> ដែលជាអ្នកនិពន្ធផ្សេង។ ធ្វើបច្ចុប្បន្នភាពលុះត្រាតែអ្នកជឿជាក់។</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> បានដំឡើង</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>បានធ្វើបច្ចុប្បន្នភាពទៅ<xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> បានធ្វើបច្ចុប្បន្នភាពទៅ <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">ការនាំចូលបានបរាជ័យ។ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>។ អនុញ្ញាតសម្រាប់តែស្គ្រីបដែលទុកចិត្តប៉ុណ្ណោះ។</string>
     <string name="script_permission_screen">អានអេក្រង់</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">ត្រូវការស្គ្រីប API <xliff:g id="needed">%1$d</xliff:g> ឬក្រោយ។ នេះ SandFly មាន <xliff:g id="current">%2$d</xliff:g> ដូច្នេះផ្នែកខ្លះប្រហែលជាមិនដំណើរការទេ។</string>
     <string name="script_api_untested">បានសាកល្បងរហូតដល់ script API <xliff:g id="tested">%1$d</xliff:g>។ SandFly មាន <xliff:g id="current">%2$d</xliff:g> ដូច្នេះវាប្រហែលជាមិនដំណើរការដូចការរំពឹងទុកទេ។</string>
-    <string name="script_state_incompatible">ប្រហែលជាមិនដំណើរការជាមួយនេះទេSandFly</string>
+    <string name="script_state_incompatible">ប្រហែលជាមិនដំណើរការជាមួយកំណែ SandFly នេះទេ</string>
     <string name="script_api_range">API ស្គ្រីប <xliff:g id="min">%1$d</xliff:g> ដល់ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ភាពឆបគ្នា</string>
     <string name="script_install_anyway">ដំឡើងយ៉ាងណាក៏ដោយ</string>

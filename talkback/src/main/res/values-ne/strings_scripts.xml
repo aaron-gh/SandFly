@@ -16,7 +16,7 @@
     <string name="shortcut_toggle_scripts">सबै स्क्रिप्टहरू खोल्नुहोस् वा बन्द गर्नुहोस्</string>
     <string name="scripts_now_off">स्क्रिप्ट बन्द</string>
     <string name="scripts_now_on">स्क्रिप्टहरू सक्रिय छन्</string>
-    <string name="scripts_unavailable">यस यन्त्रमा लिपिहरू उपलब्ध छैनन्</string>
+    <string name="scripts_unavailable">यस डिभाइसमा स्क्रिप्टहरू उपलब्ध छैनन्</string>
     <string name="script_add_example">उदाहरण स्क्रिप्ट थप्नुहोस्</string>
     <string name="script_add_example_summary">तपाईंले स्विच गर्नुहुने प्रत्येक एपको नाम भन्नुहुन्छ। बाट सुरु गर्न को लागी एक स्क्रिप्ट।</string>
     <string name="script_state_on">अन</string>
@@ -131,13 +131,13 @@
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea वा Bitbucket मा भण्डारको ठेगाना होइन।</string>
     <string name="script_source_exists">यो स्रोत पहिले नै थपिएको छ।</string>
     <string name="script_source_loading">लोड हुँदै छ</string>
-    <string name="script_source_empty">यस स्रोतमा कुनै लिपिहरू छैनन्</string>
-    <string name="script_source_failed">लिपिहरू लोड गर्न सकिएन। <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">यस स्रोतमा कुनै स्क्रिप्ट छैन</string>
+    <string name="script_source_failed">स्क्रिप्टहरू लोड गर्न सकिएन। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">पुन: प्रयास गर्नुहोस्</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> डाउनलोड हुँदैछ</string>
     <string name="script_source_remove">स्रोत हटाउनुहोस्</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> हटाउने हो?</string>
-    <string name="script_source_remove_message">यसबाट स्थापित लिपिहरू स्थापित रहन्छन्।</string>
+    <string name="script_source_remove_message">यसबाट स्थापित स्क्रिप्टहरू स्थापित रहन्छन्।</string>
     <string name="scripts_auto_update">स्क्रिप्टहरू स्वचालित रूपमा अपडेट गर्नुहोस्</string>
     <string name="scripts_check_updates">अपडेटहरूको लागि जाँच गर्नुहोस्</string>
     <string name="scripts_checking_updates">अद्यावधिकहरूको लागि जाँच गर्दै...</string>

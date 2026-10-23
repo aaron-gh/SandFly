@@ -11,7 +11,7 @@
     <string name="scripts_category_app">Ilova skriptlari</string>
     <string name="scripts_category_global">Global plaginlar</string>
     <string name="scripts_none">Hech qanday skript o\'rnatilmagan</string>
-    <string name="scripts_all_off">Barcha skriptlarni o\'chirib qo\'ying</string>
+    <string name="scripts_all_off">Barcha skriptlarni oʻchirish</string>
     <string name="scripts_all_off_summary">Skriptlar o\'rnatilgan bo\'lib qoladi va o\'z kalitlarini saqlaydi. Barcha skriptlarni yoqish yoki o‘chirish ishorasi xuddi shunday qiladi.</string>
     <string name="shortcut_toggle_scripts">Barcha skriptlarni yoqing yoki o\'chiring</string>
     <string name="scripts_now_off">Skriptlar o\'chirilgan</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Skript API <xliff:g id="needed">%1$d</xliff:g> yoki undan keyingi versiyasi kerak. Bu SandFly <xliff:g id="current">%2$d</xliff:g>ga ega, shuning uchun uning qismlari ishlamasligi mumkin.</string>
     <string name="script_api_untested">Skript API <xliff:g id="tested">%1$d</xliff:g>gacha sinovdan o\'tgan. Bu SandFly <xliff:g id="current">%2$d</xliff:g>ga ega, shuning uchun u kutilganidek ishlamasligi mumkin.</string>
-    <string name="script_state_incompatible">Bu bilan ishlamasligi mumkin SandFly</string>
+    <string name="script_state_incompatible">SandFlyning ushbu versiyasi bilan ishlamasligi mumkin</string>
     <string name="script_api_range">Skript API <xliff:g id="min">%1$d</xliff:g> dan <xliff:g id="tested">%2$d</xliff:g> gacha</string>
     <string name="script_compatibility_title">Moslik</string>
     <string name="script_install_anyway">Baribir oʻrnatish</string>
@@ -129,15 +129,15 @@
     <string name="script_source_add_button">Qo\'shish</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea yoki Bitbucketdagi ombor manzili emas.</string>
-    <string name="script_source_exists">Bu manba allaqachon qo\'shilgan.</string>
+    <string name="script_source_exists">Bu manba allaqachon qoʻshilgan.</string>
     <string name="script_source_loading">Yuklanmoqda</string>
-    <string name="script_source_empty">Ushbu manbada skriptlar yo\'q</string>
+    <string name="script_source_empty">Ushbu manbada skriptlar yoʻq</string>
     <string name="script_source_failed">Skriptlarni yuklab bo‘lmadi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Qayta urinish</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> yuklab olinmoqda</string>
     <string name="script_source_remove">Manbani olib tashlash</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> olib tashlansinmi?</string>
-    <string name="script_source_remove_message">Undan o\'rnatilgan skriptlar o\'rnatilgan bo\'lib qoladi.</string>
+    <string name="script_source_remove_message">Undan oʻrnatilgan skriptlar oʻrnatilgan boʻlib qoladi.</string>
     <string name="scripts_auto_update">Skriptlarni avtomatik yangilash</string>
     <string name="scripts_check_updates">Yangilanishlarni tekshirish</string>
     <string name="scripts_checking_updates">Yangilanishlar tekshirilmoqda…</string>

@@ -11,12 +11,12 @@
     <string name="scripts_category_app">အက်ပ် စခရစ်များ</string>
     <string name="scripts_category_global">အထွေထွေ ပလပ်အင်များ</string>
     <string name="scripts_none">စခရစ်များ ထည့်သွင်းထားခြင်းမရှိပါ</string>
-    <string name="scripts_all_off">Script အားလုံးကို ပိတ်ပါ</string>
+    <string name="scripts_all_off">စခရစ်အားလုံး ပိတ်ရန်</string>
     <string name="scripts_all_off_summary">Script များသည် ထည့်သွင်းပြီး ၎င်းတို့၏ ကိုယ်ပိုင်ခလုတ်များကို ထားရှိပါ။ ဇာတ်ညွှန်းအားလုံးကို အဖွင့်အပိတ်လုပ်သည့် အမူအရာသည် အတူတူပင်ဖြစ်သည်။</string>
     <string name="shortcut_toggle_scripts">Script အားလုံးကို အဖွင့်အပိတ်လုပ်ပါ</string>
     <string name="scripts_now_off">စခရစ်များ ပိတ်ထားသည်</string>
     <string name="scripts_now_on">စခရစ်များ ဖွင့်ထားသည်</string>
-    <string name="scripts_unavailable">Script များကို ဤစက်ပစ္စည်းတွင် မရရှိနိုင်ပါ</string>
+    <string name="scripts_unavailable">ဤစက်ပစ္စည်းတွင် စခရစ်များ မရနိုင်ပါ</string>
     <string name="script_add_example">ဥပမာ စခရစ်ကို ထည့်ရန်</string>
     <string name="script_add_example_summary">သင်ပြောင်းထားသော အက်ပ်တစ်ခုစီ၏ အမည်ကို ပြောပါ။ စတင်ရန် ဇာတ်ညွှန်းတစ်ခု။</string>
     <string name="script_state_on">ဖွင့်</string>
@@ -131,13 +131,13 @@
     <string name="script_source_invalid">GitHub၊ GitLab၊ Codeberg၊ Gitea သို့မဟုတ် Bitbucket ရှိ သိုလှောင်မှု၏လိပ်စာမဟုတ်ပါ။</string>
     <string name="script_source_exists">ဤအရင်းအမြစ်ကို ထည့်သွင်းပြီးဖြစ်သည်။</string>
     <string name="script_source_loading">တင်နေသည်</string>
-    <string name="script_source_empty">ဤအရင်းအမြစ်တွင် script များမရှိပါ</string>
-    <string name="script_source_failed">ဇာတ်ညွှန်းများကို တင်၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">ဤရင်းမြစ်တွင် စခရစ်များ မရှိပါ</string>
+    <string name="script_source_failed">စခရစ်များကို ဖွင့်၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">ထပ်ကြိုးစားပါ</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> ဒေါင်းလုဒ်လုပ်နေသည်</string>
     <string name="script_source_remove">အရင်းအမြစ်ကို ဖယ်ရှားပါ</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ကို ဖယ်ရှားမလား။</string>
-    <string name="script_source_remove_message">၎င်းမှထည့်သွင်းထားသော Script များသည် ဆက်လက်ထည့်သွင်းထားသည်။</string>
+    <string name="script_source_remove_message">၎င်းမှ ထည့်သွင်းထားသော စခရစ်များ ဆက်လက် ထည့်သွင်းထားမည်။</string>
     <string name="scripts_auto_update">စခရစ်များကို အလိုအလျောက် အပ်ဒိတ်လုပ်ရန်</string>
     <string name="scripts_check_updates">အပ်ဒိတ်များ စစ်ဆေးရန်</string>
     <string name="scripts_checking_updates">အပ်ဒိတ်များအတွက် စစ်ဆေးနေသည်...</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">အပ်ဒိတ်များကို အပ်ဒိတ်များအောက်တွင် ဖော်ပြထားပါသည်</string>
     <string name="scripts_update_check_failed">အချို့သောရင်းမြစ်များကို စစ်ဆေး၍မရပါ</string>
-    <string name="scripts_up_to_date">Script များအားလုံးသည် ခေတ်မီပါသည်</string>
+    <string name="scripts_up_to_date">စခရစ်အားလုံး နောက်ဆုံးဗားရှင်း ဖြစ်ပါသည်</string>
 </resources>

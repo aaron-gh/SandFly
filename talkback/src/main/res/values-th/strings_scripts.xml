@@ -22,7 +22,7 @@
     <string name="script_state_on">เปิด</string>
     <string name="script_state_off">ปิด</string>
     <string name="script_runs_in">ทำงานใน <xliff:g id="apps">%1$s</xliff:g></string>
-    <string name="script_runs_everywhere">ทำงานได้ในทุกแอพ</string>
+    <string name="script_runs_everywhere">ทำงานในทุกแอป</string>
     <string name="script_version">เวอร์ชัน <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">โดย <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">ติดตั้ง <xliff:g id="name">%1$s</xliff:g> ไหม</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">ต้องการสคริปต์ API <xliff:g id="needed">%1$d</xliff:g> หรือใหม่กว่า SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นบางส่วนอาจไม่ทำงาน</string>
     <string name="script_api_untested">ทดสอบจนถึงสคริปต์ API <xliff:g id="tested">%1$d</xliff:g> SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นจึงอาจไม่ทำงานตามที่คาดไว้</string>
-    <string name="script_state_incompatible">อาจไม่ทำงานกับสิ่งนี้ SandFly</string>
+    <string name="script_state_incompatible">อาจใช้งานไม่ได้กับ SandFly เวอร์ชันนี้</string>
     <string name="script_api_range">API สคริปต์ <xliff:g id="min">%1$d</xliff:g> ถึง <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ความเข้ากันได้</string>
     <string name="script_install_anyway">ติดตั้งต่อไป</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading">กำลังดาวน์โหลด <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">ลบแหล่งที่มา</string>
     <string name="script_source_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออกไหม</string>
-    <string name="script_source_remove_message">สคริปต์ที่ติดตั้งจากนั้นจะยังคงติดตั้งอยู่</string>
+    <string name="script_source_remove_message">สคริปต์ที่ติดตั้งจากแหล่งที่มานี้จะยังคงติดตั้งอยู่</string>
     <string name="scripts_auto_update">อัปเดตสคริปต์โดยอัตโนมัติ</string>
     <string name="scripts_check_updates">ตรวจสอบการอัปเดต</string>
     <string name="scripts_checking_updates">กำลังตรวจสอบการอัปเดต...</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">การอัปเดตจะแสดงอยู่ภายใต้การอัปเดต</string>
     <string name="scripts_update_check_failed">ไม่สามารถตรวจสอบแหล่งที่มาบางแห่งได้</string>
-    <string name="scripts_up_to_date">สคริปต์ทั้งหมดเป็นข้อมูลล่าสุด</string>
+    <string name="scripts_up_to_date">สคริปต์ทั้งหมดเป็นเวอร์ชันล่าสุด</string>
 </resources>

@@ -16,7 +16,7 @@
     <string name="shortcut_toggle_scripts">모든 스크립트 켜기 또는 끄기</string>
     <string name="scripts_now_off">스크립트 꺼짐</string>
     <string name="scripts_now_on">스크립트 켜짐</string>
-    <string name="scripts_unavailable">이 기기에서는 스크립트를 사용할 수 없습니다.</string>
+    <string name="scripts_unavailable">이 기기에서는 스크립트를 사용할 수 없습니다</string>
     <string name="script_add_example">예제 스크립트 추가</string>
     <string name="script_add_example_summary">전환하는 각 앱의 이름을 말합니다. 시작할 스크립트입니다.</string>
     <string name="script_state_on">사용</string>
@@ -35,7 +35,7 @@
     <string name="script_update_replaces">이는 버전 <xliff:g id="version">%1$s</xliff:g>을 <xliff:g id="author">%2$s</xliff:g>로 대체하고 해당 데이터와 설정을 유지합니다.</string>
     <string name="script_update_other_author">새로운 작품은 다른 작가 <xliff:g id="author">%1$s</xliff:g>의 작품입니다. 신뢰할 수 있는 경우에만 업데이트하세요.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> 설치됨</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>가 <xliff:g id="version">%2$s</xliff:g>로 업데이트되었습니다.</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>가 <xliff:g id="version">%2$s</xliff:g>로 업데이트됨</string>
     <string name="script_import_failed">가져오기에 실패했습니다. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. 신뢰할 수 있는 스크립트에만 허용하세요.</string>
     <string name="script_permission_screen">화면 읽기</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">스크립트 API <xliff:g id="needed">%1$d</xliff:g> 이상이 필요합니다. 이 SandFly에는 <xliff:g id="current">%2$d</xliff:g>가 있으므로 일부가 작동하지 않을 수 있습니다.</string>
     <string name="script_api_untested">스크립트 API <xliff:g id="tested">%1$d</xliff:g>까지 테스트되었습니다. 이 SandFly에는 <xliff:g id="current">%2$d</xliff:g>가 있으므로 예상대로 작동하지 않을 수 있습니다.</string>
-    <string name="script_state_incompatible">이것으로는 작동하지 않을 수 있습니다 SandFly</string>
+    <string name="script_state_incompatible">이 버전의 SandFly에서는 작동하지 않을 수 있음</string>
     <string name="script_api_range">스크립트 API <xliff:g id="min">%1$d</xliff:g> ~ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">호환성</string>
     <string name="script_install_anyway">무시하고 설치</string>
@@ -94,7 +94,7 @@
     <string name="script_inspect_no_id">ID가 없으므로 규칙에 따라 이름을 지정할 수 없습니다. 복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">화면 트리 복사</string>
     <string name="script_tree_copied">항목 <xliff:g id="count">%1$d</xliff:g>개를 복사했습니다</string>
-    <string name="script_tree_none">복사할 창이 없습니다.</string>
+    <string name="script_tree_none">복사할 창이 없습니다</string>
     <string name="script_tree_clip_label">스크린 트리</string>
     <string name="summary_copy_screen_tree_menu">스크립트 작성을 위해 화면의 모든 항목을 JSON로 복사합니다.</string>
     <string name="script_inspect_clip_label">항목 세부정보</string>
@@ -131,13 +131,13 @@
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea 또는 Bitbucket의 저장소 주소가 아닙니다.</string>
     <string name="script_source_exists">이 소스는 이미 추가되었습니다.</string>
     <string name="script_source_loading">로드 중</string>
-    <string name="script_source_empty">이 소스에는 스크립트가 없습니다.</string>
+    <string name="script_source_empty">이 소스에는 스크립트가 없습니다</string>
     <string name="script_source_failed">스크립트를 로드할 수 없습니다. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">다시 시도</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> 다운로드 중</string>
     <string name="script_source_remove">소스 삭제</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
-    <string name="script_source_remove_message">설치된 스크립트는 설치된 상태로 유지됩니다.</string>
+    <string name="script_source_remove_message">이 소스에서 설치한 스크립트는 설치된 상태로 유지됩니다.</string>
     <string name="scripts_auto_update">자동으로 스크립트 업데이트</string>
     <string name="scripts_check_updates">업데이트 확인</string>
     <string name="scripts_checking_updates">업데이트 확인 중…</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">업데이트는 업데이트 아래에 나열됩니다.</string>
     <string name="scripts_update_check_failed">일부 소스를 확인할 수 없습니다.</string>
-    <string name="scripts_up_to_date">모든 스크립트가 최신 상태입니다.</string>
+    <string name="scripts_up_to_date">모든 스크립트가 최신 상태입니다</string>
 </resources>

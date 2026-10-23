@@ -11,7 +11,7 @@
     <string name="scripts_category_app">סקריפטים של אפליקציות</string>
     <string name="scripts_category_global">תוספים גלובליים</string>
     <string name="scripts_none">לא מותקנים סקריפטים</string>
-    <string name="scripts_all_off">כבה את כל התסריטים</string>
+    <string name="scripts_all_off">כיבוי כל הסקריפטים</string>
     <string name="scripts_all_off_summary">סקריפטים נשארים מותקנים ושומרים על המתגים שלהם. המחוות הפעלה או כיבוי של כל הסקריפטים עושה את אותו הדבר.</string>
     <string name="shortcut_toggle_scripts">הפעל או כבה את כל הסקריפטים</string>
     <string name="scripts_now_off">סקריפטים כבויים</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">צריך script API <xliff:g id="needed">%1$d</xliff:g> ואילך. ל-SandFly הזה יש <xliff:g id="current">%2$d</xliff:g>, כך שחלקים עשויים שלא לעבוד.</string>
     <string name="script_api_untested">נבדק עד לסקריפט API <xliff:g id="tested">%1$d</xliff:g>. ל-SandFly הזה יש <xliff:g id="current">%2$d</xliff:g>, אז ייתכן שהוא לא יעבוד כמצופה.</string>
-    <string name="script_state_incompatible">אולי לא יעבוד עם זה SandFly</string>
+    <string name="script_state_incompatible">ייתכן שלא יעבוד עם גרסה זו של SandFly</string>
     <string name="script_api_range">API של סקריפטים מ-<xliff:g id="min">%1$d</xliff:g> עד <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">תאימות</string>
     <string name="script_install_anyway">התקנה בכל זאת</string>
@@ -150,5 +150,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">עדכונים מפורטים תחת עדכונים</string>
     <string name="scripts_update_check_failed">לא ניתן היה לבדוק חלק מהמקורות</string>
-    <string name="scripts_up_to_date">כל התסריטים מעודכנים</string>
+    <string name="scripts_up_to_date">כל הסקריפטים מעודכנים</string>
 </resources>

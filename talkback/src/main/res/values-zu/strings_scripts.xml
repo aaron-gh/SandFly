@@ -16,7 +16,7 @@
     <string name="shortcut_toggle_scripts">Vula noma uvale zonke izikripthi</string>
     <string name="scripts_now_off">Iziskripthi zivaliwe</string>
     <string name="scripts_now_on">Iziskripthi zivuliwe</string>
-    <string name="scripts_unavailable">Imibhalo ayitholakali kule divayisi</string>
+    <string name="scripts_unavailable">Iziskripthi azitholakali kule divayisi</string>
     <string name="script_add_example">Engeza iskripthi esiyisibonelo</string>
     <string name="script_add_example_summary">Isho igama lohlelo lokusebenza ngalunye oshintshela kulo. Iskripthi esizoqala kuso.</string>
     <string name="script_state_on">Kuvuliwe</string>
@@ -29,7 +29,7 @@
     <string name="script_install_can">Ingakwazi:</string>
     <string name="script_install_no_permissions">Azikho izimvume ezidingekayo.</string>
     <string name="script_install_button">Faka</string>
-    <string name="script_update_title">Buyekeza <xliff:g id="name">%1$s</xliff:g> uye kokuthi <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_title">Buyekeza i-<xliff:g id="name">%1$s</xliff:g> ibe ngu-<xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Izimvume ezintsha:</string>
     <string name="script_update_button">Buyekeza</string>
     <string name="script_update_replaces">Lokhu kungena esikhundleni senguqulo <xliff:g id="version">%1$s</xliff:g> ngokuthi <xliff:g id="author">%2$s</xliff:g>, futhi igcina idatha yayo nezilungiselelo.</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Idinga i-API yombhalo <xliff:g id="needed">%1$d</xliff:g> noma kamuva. Lokhu SandFly kuno-<xliff:g id="current">%2$d</xliff:g>, ngakho izingxenye zingase zingasebenzi.</string>
     <string name="script_api_untested">Ihlolwe kuze kufike ku-script API <xliff:g id="tested">%1$d</xliff:g>. Le SandFly ino-<xliff:g id="current">%2$d</xliff:g>, ngakho-ke ingase ingasebenzi njengoba bekulindelekile.</string>
-    <string name="script_state_incompatible">Ngeke isebenze ngalokhu SandFly</string>
+    <string name="script_state_incompatible">Ingase ingasebenzi nale nguqulo ye-SandFly</string>
     <string name="script_api_range">I-API yeskripthi <xliff:g id="min">%1$d</xliff:g> kuya ku-<xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Ukuhambisana</string>
     <string name="script_install_anyway">Faka noma kunjalo</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading">Iyalanda <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Susa umthombo</string>
     <string name="script_source_remove_title">Susa <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_source_remove_message">Imibhalo efakwe kuyo ihlala ifakiwe.</string>
+    <string name="script_source_remove_message">Iziskripthi ezifakwe kuwo zihlala zifakiwe.</string>
     <string name="scripts_auto_update">Buyekeza iziskripthi ngokuzenzakalelayo</string>
     <string name="scripts_check_updates">Hlola izibuyekezo</string>
     <string name="scripts_checking_updates">Kuhlolwa izibuyekezo…</string>

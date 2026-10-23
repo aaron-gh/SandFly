@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Behöver script API <xliff:g id="needed">%1$d</xliff:g> eller senare. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så delar kanske inte fungerar.</string>
     <string name="script_api_untested">Testat upp till script API <xliff:g id="tested">%1$d</xliff:g>. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så den kanske inte fungerar som förväntat.</string>
-    <string name="script_state_incompatible">Fungerar kanske inte med denna SandFly</string>
+    <string name="script_state_incompatible">Fungerar kanske inte med den här versionen av SandFly</string>
     <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> till <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
     <string name="script_install_anyway">Installera ändå</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading">Laddar ner <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Ta bort källan</string>
     <string name="script_source_remove_title">Ta bort <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_source_remove_message">Skript som installeras från den förblir installerade.</string>
+    <string name="script_source_remove_message">Skript som har installerats från den förblir installerade.</string>
     <string name="scripts_auto_update">Uppdatera skript automatiskt</string>
     <string name="scripts_check_updates">Sök efter uppdateringar</string>
     <string name="scripts_checking_updates">Söker efter uppdateringar...</string>

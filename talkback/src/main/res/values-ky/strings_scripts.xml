@@ -35,7 +35,7 @@
     <string name="script_update_replaces">Бул <xliff:g id="version">%1$s</xliff:g> версиясын <xliff:g id="author">%2$s</xliff:g> менен алмаштырып, анын дайындарын жана жөндөөлөрүн сактайт.</string>
     <string name="script_update_other_author">Жаңысы <xliff:g id="author">%1$s</xliff:g>, башка автор. Ишенсеңиз гана жаңыртыңыз.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> орнотулду</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> болуп жаңырды</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> версиясына жаңыртылды</string>
     <string name="script_import_failed">Импорттолбой калды. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Ишенимдүү скрипттерге гана уруксат бериңиз.</string>
     <string name="script_permission_screen">Экранды окуу</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> же андан кийинкиси керек. Бул SandFlyде <xliff:g id="current">%2$d</xliff:g> бар, андыктан бөлүктөрү иштебей калышы мүмкүн.</string>
     <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> чейин сыналган. Бул SandFlyде <xliff:g id="current">%2$d</xliff:g> бар, андыктан ал күтүлгөндөй иштебей калышы мүмкүн.</string>
-    <string name="script_state_incompatible">Бул менен иштебеши мүмкүн SandFly</string>
+    <string name="script_state_incompatible">SandFly’дын бул версиясы менен иштебеши мүмкүн</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> – <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Шайкештик</string>
     <string name="script_install_anyway">Баары бир орнотуу</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">Жаңыртуулар Жаңыртуулар астында тизмеленген</string>
     <string name="scripts_update_check_failed">Кээ бир булактарды текшерүү мүмкүн болгон жок</string>
-    <string name="scripts_up_to_date">Бардык сценарийлер жаңыртылган</string>
+    <string name="scripts_up_to_date">Бардык скрипттер жаңыртылган</string>
 </resources>

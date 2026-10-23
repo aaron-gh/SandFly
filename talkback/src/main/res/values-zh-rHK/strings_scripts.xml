@@ -16,26 +16,26 @@
     <string name="shortcut_toggle_scripts">開啟或關閉所有腳本</string>
     <string name="scripts_now_off">腳本已關閉</string>
     <string name="scripts_now_on">腳本已開啟</string>
-    <string name="scripts_unavailable">腳本在此裝置上不可用</string>
+    <string name="scripts_unavailable">此裝置不支援腳本</string>
     <string name="script_add_example">新增範例腳本</string>
     <string name="script_add_example_summary">說出您切換到的每個應用程式的名稱。從一個腳本開始。</string>
     <string name="script_state_on">開啟</string>
     <string name="script_state_off">關閉</string>
     <string name="script_runs_in">在 <xliff:g id="apps">%1$s</xliff:g> 中執行</string>
-    <string name="script_runs_everywhere">在所有應用程式中運行</string>
+    <string name="script_runs_everywhere">在所有應用程式中執行</string>
     <string name="script_version">版本<xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">作者：<xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">安裝<xliff:g id="name">%1$s</xliff:g>？</string>
     <string name="script_install_can">它可以：</string>
     <string name="script_install_no_permissions">無需任何權限。</string>
     <string name="script_install_button">安裝</string>
-    <string name="script_update_title">將<xliff:g id="name">%1$s</xliff:g>更新為<xliff:g id="version">%2$s</xliff:g>？</string>
+    <string name="script_update_title">將 <xliff:g id="name">%1$s</xliff:g> 更新為 <xliff:g id="version">%2$s</xliff:g>？</string>
     <string name="script_update_new_permissions">新權限：</string>
     <string name="script_update_button">更新</string>
     <string name="script_update_replaces">這會將版本 <xliff:g id="version">%1$s</xliff:g> 替換為 <xliff:g id="author">%2$s</xliff:g>，並保留其資料和設定。</string>
     <string name="script_update_other_author">新的作者是另一位作者<xliff:g id="author">%1$s</xliff:g>。僅在您信任的情況下更新。</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>已安裝</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>更新為<xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> 已更新為 <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">匯入失敗。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。僅限受信任的腳本使用。</string>
     <string name="script_permission_screen">讀取螢幕</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">需要腳本 API <xliff:g id="needed">%1$d</xliff:g> 或更高版本。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以零件可能无法工作。</string>
     <string name="script_api_untested">已測試腳本 API <xliff:g id="tested">%1$d</xliff:g>。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以它可能无法按预期工作。</string>
-    <string name="script_state_incompatible">可能不適用於此SandFly</string>
+    <string name="script_state_incompatible">可能不適用於此版本的 SandFly</string>
     <string name="script_api_range">腳本 API <xliff:g id="min">%1$d</xliff:g> 至 <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">相容性</string>
     <string name="script_install_anyway">仍要安裝</string>
@@ -129,15 +129,15 @@
     <string name="script_source_add_button">新增</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">不是 GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上的儲存庫位址。</string>
-    <string name="script_source_exists">該來源已新增。</string>
+    <string name="script_source_exists">已新增這個來源。</string>
     <string name="script_source_loading">正在載入</string>
-    <string name="script_source_empty">此來源中沒有腳本</string>
-    <string name="script_source_failed">無法載入腳本。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">這個來源中沒有腳本</string>
+    <string name="script_source_failed">無法載入腳本。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">再試一次</string>
     <string name="script_source_downloading">正在下載<xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">刪除來源</string>
     <string name="script_source_remove_title">刪除<xliff:g id="name">%1$s</xliff:g>？</string>
-    <string name="script_source_remove_message">從它安裝的腳本保持安裝狀態。</string>
+    <string name="script_source_remove_message">從這個來源安裝的腳本會保持安裝狀態。</string>
     <string name="scripts_auto_update">自動更新腳本</string>
     <string name="scripts_check_updates">檢查更新</string>
     <string name="scripts_checking_updates">正在檢查更新...</string>

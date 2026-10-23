@@ -11,12 +11,12 @@
     <string name="scripts_category_app">Skripti za programu</string>
     <string name="scripts_category_global">Programu-jalizi za jumla</string>
     <string name="scripts_none">Hakuna skripti zilizosakinishwa</string>
-    <string name="scripts_all_off">Zima maandishi yote</string>
+    <string name="scripts_all_off">Zima skripti zote</string>
     <string name="scripts_all_off_summary">Hati husalia kusakinishwa na kuweka swichi zao wenyewe. Ishara ya Washa au uzime hati zote hufanya vivyo hivyo.</string>
     <string name="shortcut_toggle_scripts">Washa au uzime hati zote</string>
     <string name="scripts_now_off">Skripti zimezimwa</string>
     <string name="scripts_now_on">Skripti zimewashwa</string>
-    <string name="scripts_unavailable">Hati hazipatikani kwenye kifaa hiki</string>
+    <string name="scripts_unavailable">Skripti hazipatikani kwenye kifaa hiki</string>
     <string name="script_add_example">Ongeza skripti ya mfano</string>
     <string name="script_add_example_summary">Inasema jina la kila programu unayobadilisha. Hati ya kuanzia.</string>
     <string name="script_state_on">Imewashwa</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Inahitaji API ya hati <xliff:g id="needed">%1$d</xliff:g> au baadaye. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo sehemu zinaweza zisifanye kazi.</string>
     <string name="script_api_untested">Imejaribiwa hadi API ya hati <xliff:g id="tested">%1$d</xliff:g>. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo inaweza isifanye kazi inavyotarajiwa.</string>
-    <string name="script_state_incompatible">Huenda isifanye kazi na hii SandFly</string>
+    <string name="script_state_incompatible">Huenda isifanye kazi na toleo hili la SandFly</string>
     <string name="script_api_range">API ya skripti <xliff:g id="min">%1$d</xliff:g> hadi <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Utangamano</string>
     <string name="script_install_anyway">Sakinisha hata hivyo</string>
@@ -132,12 +132,12 @@
     <string name="script_source_exists">Chanzo hiki tayari kimeongezwa.</string>
     <string name="script_source_loading">Inapakia</string>
     <string name="script_source_empty">Hakuna skripti katika chanzo hiki</string>
-    <string name="script_source_failed">Haikuweza kupakia hati. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">Imeshindwa kupakia skripti. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Jaribu tena</string>
     <string name="script_source_downloading">Inapakua <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Ondoa chanzo</string>
     <string name="script_source_remove_title">Ungependa kuondoa <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_source_remove_message">Hati zilizosakinishwa kutoka humo hukaa kusakinishwa.</string>
+    <string name="script_source_remove_message">Skripti zilizosakinishwa kutoka humo zitabaki zimesakinishwa.</string>
     <string name="scripts_auto_update">Sasisha skripti kiotomatiki</string>
     <string name="scripts_check_updates">Angalia masasisho</string>
     <string name="scripts_checking_updates">Inatafuta masasisho...</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">Sasisho zimeorodheshwa chini ya Sasisho</string>
     <string name="scripts_update_check_failed">Baadhi ya vyanzo havikuweza kuangaliwa</string>
-    <string name="scripts_up_to_date">Hati zote zimesasishwa</string>
+    <string name="scripts_up_to_date">Skripti zote zimesasishwa</string>
 </resources>

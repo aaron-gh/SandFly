@@ -11,12 +11,12 @@
     <string name="scripts_category_app">Uygulama komut dosyaları</string>
     <string name="scripts_category_global">Genel eklentiler</string>
     <string name="scripts_none">Hiçbir komut dosyası yüklü değil</string>
-    <string name="scripts_all_off">Tüm komut dosyalarını kapat</string>
+    <string name="scripts_all_off">Tüm betikleri kapat</string>
     <string name="scripts_all_off_summary">Komut dosyaları yüklü kalır ve kendi anahtarlarını korur. Tüm komut dosyalarını aç veya kapat hareketi de aynısını yapar.</string>
     <string name="shortcut_toggle_scripts">Tüm komut dosyalarını açma veya kapatma</string>
     <string name="scripts_now_off">Komut dosyaları kapalı</string>
     <string name="scripts_now_on">Komut dosyaları açık</string>
-    <string name="scripts_unavailable">Komut dosyaları bu cihazda mevcut değil</string>
+    <string name="scripts_unavailable">Betikler bu cihazda kullanılamıyor</string>
     <string name="script_add_example">Örnek betiği ekle</string>
     <string name="script_add_example_summary">Geçiş yaptığınız her uygulamanın adını söyler. Başlamak için bir komut dosyası.</string>
     <string name="script_state_on">Açık</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Komut dosyası API\'si <xliff:g id="needed">%1$d</xliff:g> veya üzeri gerekiyor. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla parçalar çalışmayabilir.</string>
     <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> komut dosyasına kadar test edildi. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla beklendiği gibi çalışmayabilir.</string>
-    <string name="script_state_incompatible">Bununla çalışmayabilir SandFly</string>
+    <string name="script_state_incompatible">SandFly\'ın bu sürümüyle çalışmayabilir</string>
     <string name="script_api_range">Betik API\'si <xliff:g id="min">%1$d</xliff:g> ile <xliff:g id="tested">%2$d</xliff:g> arası</string>
     <string name="script_compatibility_title">Uyumluluk</string>
     <string name="script_install_anyway">Yine de yükle</string>
@@ -131,13 +131,13 @@
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea veya Bitbucket\'teki bir havuzun adresi değil.</string>
     <string name="script_source_exists">Bu kaynak zaten eklenmiş.</string>
     <string name="script_source_loading">Yükleniyor</string>
-    <string name="script_source_empty">Bu kaynakta komut dosyası yok</string>
-    <string name="script_source_failed">Komut dosyaları yüklenemedi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">Bu kaynakta betik yok</string>
+    <string name="script_source_failed">Betikler yüklenemedi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Tekrar dene</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> indiriliyor</string>
     <string name="script_source_remove">Kaynağı kaldır</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> kaldırılsın mı?</string>
-    <string name="script_source_remove_message">Buradan yüklenen komut dosyaları yüklü kalır.</string>
+    <string name="script_source_remove_message">Buradan yüklenen betikler yüklü kalır.</string>
     <string name="scripts_auto_update">Komut dosyalarını otomatik olarak güncelle</string>
     <string name="scripts_check_updates">Güncellemeleri denetle</string>
     <string name="scripts_checking_updates">Güncellemeler kontrol ediliyor…</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">Güncellemeler Güncellemeler altında listelenir</string>
     <string name="scripts_update_check_failed">Bazı kaynaklar kontrol edilemedi</string>
-    <string name="scripts_up_to_date">Tüm scriptler güncel</string>
+    <string name="scripts_up_to_date">Tüm betikler güncel</string>
 </resources>

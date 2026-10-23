@@ -29,7 +29,7 @@
     <string name="script_install_can">ഇതിന് കഴിയും:</string>
     <string name="script_install_no_permissions">അനുമതികൾ ആവശ്യമില്ല.</string>
     <string name="script_install_button">ഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> മുതൽ <xliff:g id="version">%2$s</xliff:g> വരെ അപ്‌ഡേറ്റ് ചെയ്യണോ?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യണോ?</string>
     <string name="script_update_new_permissions">പുതിയ അനുമതികൾ:</string>
     <string name="script_update_button">അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="script_update_replaces">ഇത് <xliff:g id="version">%1$s</xliff:g> പതിപ്പിനെ <xliff:g id="author">%2$s</xliff:g> ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കുകയും അതിൻ്റെ ഡാറ്റയും ക്രമീകരണങ്ങളും നിലനിർത്തുകയും ചെയ്യുന്നു.</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">സ്ക്രിപ്റ്റ് API <xliff:g id="needed">%1$d</xliff:g> അല്ലെങ്കിൽ അതിനുശേഷമുള്ളത് ആവശ്യമാണ്. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഭാഗങ്ങൾ പ്രവർത്തിച്ചേക്കില്ല.</string>
     <string name="script_api_untested">സ്ക്രിപ്റ്റ് API <xliff:g id="tested">%1$d</xliff:g> വരെ പരീക്ഷിച്ചു. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഇത് പ്രതീക്ഷിച്ച പോലെ പ്രവർത്തിച്ചേക്കില്ല.</string>
-    <string name="script_state_incompatible">ഇത് SandFly ഉപയോഗിച്ച് പ്രവർത്തിച്ചേക്കില്ല</string>
+    <string name="script_state_incompatible">SandFly-യുടെ ഈ പതിപ്പിൽ പ്രവർത്തിച്ചേക്കില്ല</string>
     <string name="script_api_range">സ്ക്രിപ്റ്റ് API <xliff:g id="min">%1$d</xliff:g> മുതൽ <xliff:g id="tested">%2$d</xliff:g> വരെ</string>
     <string name="script_compatibility_title">അനുയോജ്യത</string>
     <string name="script_install_anyway">എന്തായാലും ഇൻസ്റ്റാൾ ചെയ്യുക</string>

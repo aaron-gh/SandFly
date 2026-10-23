@@ -11,7 +11,7 @@
     <string name="scripts_category_app">Апп скриптүүд</string>
     <string name="scripts_category_global">Глобал залгаасууд</string>
     <string name="scripts_none">Суулгасан скрипт байхгүй байна</string>
-    <string name="scripts_all_off">Бүх скриптийг унтраа</string>
+    <string name="scripts_all_off">Бүх скриптийг унтраах</string>
     <string name="scripts_all_off_summary">Скриптүүд суурилагдсан хэвээр байх бөгөөд өөрийн шилжүүлэгчийг хадгалдаг. Бүх скриптийг асаах, унтраах дохио нь мөн адил үйлчилнэ.</string>
     <string name="shortcut_toggle_scripts">Бүх скриптийг асаах эсвэл унтраах</string>
     <string name="scripts_now_off">Скриптүүд унтраалттай</string>
@@ -22,7 +22,7 @@
     <string name="script_state_on">Асаалттай</string>
     <string name="script_state_off">Унтраалттай</string>
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>-д ажиллана</string>
-    <string name="script_runs_everywhere">Бүх программ дээр ажилладаг</string>
+    <string name="script_runs_everywhere">Бүх апп дээр ажиллана</string>
     <string name="script_version">Хувилбар <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Зохиогч: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> суулгах уу?</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> буюу түүнээс дээш хувилбар хэрэгтэй. Энэ SandFly-д <xliff:g id="current">%2$d</xliff:g> байгаа тул хэсгүүд ажиллахгүй байж магадгүй.</string>
     <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> хүртэл туршсан. Энэ SandFly нь <xliff:g id="current">%2$d</xliff:g>-тэй тул санаснаар ажиллахгүй байж магадгүй.</string>
-    <string name="script_state_incompatible">Үүнтэй ажиллахгүй байж магадгүй SandFly</string>
+    <string name="script_state_incompatible">SandFly-н энэ хувилбартай ажиллахгүй байж магадгүй</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Тохиромжтой байдал</string>
     <string name="script_install_anyway">Ямар ч байсан суулгах</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g>-г татаж байна</string>
     <string name="script_source_remove">Эх сурвалжийг устгах</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>-г устгах уу?</string>
-    <string name="script_source_remove_message">Үүнээс суулгасан скриптүүд суусан хэвээр байна.</string>
+    <string name="script_source_remove_message">Үүнээс суулгасан скриптүүд суулгасан хэвээр үлдэнэ.</string>
     <string name="scripts_auto_update">Скриптүүдийг автоматаар шинэчлэх</string>
     <string name="scripts_check_updates">Шинэчлэлт шалгах</string>
     <string name="scripts_checking_updates">Шинэчлэлтүүдийг шалгаж байна...</string>

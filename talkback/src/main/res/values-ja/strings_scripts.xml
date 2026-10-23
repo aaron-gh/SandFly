@@ -22,7 +22,7 @@
     <string name="script_state_on">オン</string>
     <string name="script_state_off">オフ</string>
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>で実行</string>
-    <string name="script_runs_everywhere">すべてのアプリで実行</string>
+    <string name="script_runs_everywhere">すべてのアプリで実行されます</string>
     <string name="script_version">バージョン <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">作成者: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>をインストールしますか?</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">スクリプト API <xliff:g id="needed">%1$d</xliff:g> 以降が必要です。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、部品が動作しない可能性があります。</string>
     <string name="script_api_untested">スクリプト API <xliff:g id="tested">%1$d</xliff:g> までテスト済み。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、期待どおりに動作しない可能性があります。</string>
-    <string name="script_state_incompatible">これでは動作しない可能性があります SandFly</string>
+    <string name="script_state_incompatible">このバージョンの SandFly では動作しない可能性があります</string>
     <string name="script_api_range">スクリプト API <xliff:g id="min">%1$d</xliff:g> ～ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">互換性</string>
     <string name="script_install_anyway">このままインストール</string>
@@ -132,12 +132,12 @@
     <string name="script_source_exists">このソースはすでに追加されています。</string>
     <string name="script_source_loading">読み込み中</string>
     <string name="script_source_empty">このソースにはスクリプトがありません</string>
-    <string name="script_source_failed">スクリプトをロードできませんでした。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">スクリプトを読み込めませんでした。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">再試行</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> をダウンロード中</string>
     <string name="script_source_remove">ソースを削除</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> を削除しますか?</string>
-    <string name="script_source_remove_message">そこからインストールされたスクリプトはインストールされたままになります。</string>
+    <string name="script_source_remove_message">このソースからインストールしたスクリプトはインストールされたまま残ります。</string>
     <string name="scripts_auto_update">スクリプトを自動更新</string>
     <string name="scripts_check_updates">アップデートを確認</string>
     <string name="scripts_checking_updates">アップデートをチェック中…</string>

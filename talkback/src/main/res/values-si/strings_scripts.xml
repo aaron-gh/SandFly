@@ -29,13 +29,13 @@
     <string name="script_install_can">එය කළ හැක්කේ:</string>
     <string name="script_install_no_permissions">අවසර අවශ්‍ය නැත.</string>
     <string name="script_install_button">ස්ථාපනය කරන්න</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> සිට <xliff:g id="version">%2$s</xliff:g> දක්වා යාවත්කාලීන කරන්නද?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන්නද?</string>
     <string name="script_update_new_permissions">නව අවසර:</string>
     <string name="script_update_button">යාවත්කාලීන කරන්න</string>
     <string name="script_update_replaces">මෙය <xliff:g id="version">%1$s</xliff:g> අනුවාදය <xliff:g id="author">%2$s</xliff:g> මගින් ප්‍රතිස්ථාපනය කරයි, සහ එහි දත්ත සහ සැකසීම් තබා ගනී.</string>
     <string name="script_update_other_author">අලුත් එක වෙනස් කර්තෘවරයෙකු වන <xliff:g id="author">%1$s</xliff:g> විසිනි. ඔබ එය විශ්වාස කරන්නේ නම් පමණක් යාවත්කාලීන කරන්න.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ස්ථාපනය කර ඇත</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන ලදී</string>
     <string name="script_import_failed">ආයාත කිරීම අසාර්ථක විය. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. විශ්වාසදායී ස්ක්‍රිප්ට් සඳහා පමණක් ඉඩ දෙන්න.</string>
     <string name="script_permission_screen">තිරය කියවීම</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">ස්ක්‍රිප්ට් API <xliff:g id="needed">%1$d</xliff:g> හෝ පසුව අවශ්‍යයි. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් කොටස් ක්‍රියා නොකරනු ඇත.</string>
     <string name="script_api_untested">ස්ක්‍රිප්ට් API <xliff:g id="tested">%1$d</xliff:g> දක්වා පරීක්ෂා කර ඇත. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් එය අපේක්ෂා කළ පරිදි ක්‍රියා නොකරනු ඇත.</string>
-    <string name="script_state_incompatible">මෙය සමඟ වැඩ නොකළ හැකිය SandFly</string>
+    <string name="script_state_incompatible">SandFly හි මෙම අනුවාදය සමඟ ක්‍රියා නොකළ හැකිය</string>
     <string name="script_api_range">ස්ක්‍රිප්ට් API <xliff:g id="min">%1$d</xliff:g> සිට <xliff:g id="tested">%2$d</xliff:g> දක්වා</string>
     <string name="script_compatibility_title">ගැළපුම</string>
     <string name="script_install_anyway">කෙසේ හෝ ස්ථාපනය කරන්න</string>
@@ -137,7 +137,7 @@
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> බාගත වෙමින්</string>
     <string name="script_source_remove">මූලාශ්‍රය ඉවත් කරන්න</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ඉවත් කරන්නද?</string>
-    <string name="script_source_remove_message">එයින් ස්ථාපනය කර ඇති ස්ක්‍රිප්ට් ස්ථාපනය කර ඇත.</string>
+    <string name="script_source_remove_message">එයින් ස්ථාපනය කළ ස්ක්‍රිප්ට් ස්ථාපිතව පවතී.</string>
     <string name="scripts_auto_update">ස්ක්‍රිප්ට් ස්වයංක්‍රීයව යාවත්කාලීන කරන්න</string>
     <string name="scripts_check_updates">යාවත්කාලීන සඳහා පරීක්ෂා කරන්න</string>
     <string name="scripts_checking_updates">යාවත්කාලීන සඳහා පරීක්ෂා කරමින්...</string>

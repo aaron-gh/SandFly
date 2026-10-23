@@ -158,7 +158,7 @@
     <!-- Warning for a script that was not tested with this SandFly. [CHAR LIMIT=NONE] -->
     <string name="script_api_untested">仅在脚本 API <xliff:g id="tested">%1$d</xliff:g> 上测试过。此 SandFly 为 <xliff:g id="current">%2$d</xliff:g>，因此可能无法按预期工作。</string>
     <!-- In the list of scripts, for a script that may not work with this SandFly. [CHAR LIMIT=NONE] -->
-    <string name="script_state_incompatible">可能与此 SandFly 不兼容</string>
+    <string name="script_state_incompatible">可能与此版本的 SandFly 不兼容</string>
     <!-- The script API versions a script was tested with. [CHAR LIMIT=NONE] -->
     <string name="script_api_range">脚本 API <xliff:g id="min">%1$d</xliff:g> 至 <xliff:g id="tested">%2$d</xliff:g></string>
     <!-- Heading of the warning on a script's page that it may not work. [CHAR LIMIT=40] -->
@@ -279,7 +279,7 @@
     <!-- Title of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
     <string name="script_source_remove_title">移除 <xliff:g id="name">%1$s</xliff:g>？</string>
     <!-- Message of the dialog that asks to remove a script source. [CHAR LIMIT=NONE] -->
-    <string name="script_source_remove_message">从它安装的脚本会保持安装状态。</string>
+    <string name="script_source_remove_message">从此来源安装的脚本会保持安装状态。</string>
     <string name="script_import_summary">.lua 文件，或包含 main.lua 的 .zip</string>
     <string name="script_permission_java">在每个应用程序中使用所有 SandFly 的访问权限运行 Java 代码</string>
     <string name="script_binding_type_keys_summary">例如 sf+shift+n 或 sf+t, s</string>

@@ -29,7 +29,7 @@
     <string name="script_install_can">ఇది చేయగలదు:</string>
     <string name="script_install_no_permissions">అనుమతులు అవసరం లేదు.</string>
     <string name="script_install_button">ఇన్‌స్టాల్ చేయండి</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> నుండి <xliff:g id="version">%2$s</xliff:g>కి అప్‌డేట్ చేయాలా?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>‌ను <xliff:g id="version">%2$s</xliff:g>‌కి అప్‌డేట్ చేయాలా?</string>
     <string name="script_update_new_permissions">కొత్త అనుమతులు:</string>
     <string name="script_update_button">అప్‌డేట్ చేయి</string>
     <string name="script_update_replaces">ఇది వెర్షన్ <xliff:g id="version">%1$s</xliff:g>ని <xliff:g id="author">%2$s</xliff:g> ద్వారా భర్తీ చేస్తుంది మరియు దాని డేటా మరియు సెట్టింగ్‌లను ఉంచుతుంది.</string>
@@ -78,7 +78,7 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">స్క్రిప్ట్ API <xliff:g id="needed">%1$d</xliff:g> లేదా తదుపరిది అవసరం. ఈ SandFly <xliff:g id="current">%2$d</xliff:g>ని కలిగి ఉంది, కాబట్టి భాగాలు పని చేయకపోవచ్చు.</string>
     <string name="script_api_untested">స్క్రిప్ట్ API <xliff:g id="tested">%1$d</xliff:g> వరకు పరీక్షించబడింది. ఈ SandFly <xliff:g id="current">%2$d</xliff:g>ని కలిగి ఉంది, కనుక ఇది ఊహించిన విధంగా పని చేయకపోవచ్చు.</string>
-    <string name="script_state_incompatible">దీనితో పని చేయకపోవచ్చు SandFly</string>
+    <string name="script_state_incompatible">SandFly యొక్క ఈ వెర్షన్‌తో పని చేయకపోవచ్చు</string>
     <string name="script_api_range">స్క్రిప్ట్ API <xliff:g id="min">%1$d</xliff:g> నుండి <xliff:g id="tested">%2$d</xliff:g> వరకు</string>
     <string name="script_compatibility_title">అనుకూలత</string>
     <string name="script_install_anyway">ఎలాగైనా ఇన్‌స్టాల్ చేయండి</string>
