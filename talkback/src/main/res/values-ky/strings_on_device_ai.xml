@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">Моделдерди башкаруу</string>
     <string name="manage_models_storage_used">Моделдер %1$s сактагычты колдонууда.</string>
-    <string name="manage_models_empty">Эч кандай моделдер жүктөлүп алынган эмес.</string>
+    <string name="manage_models_empty">Эч бир модель жүктөлгөн эмес.</string>
     <string name="manage_models_unfinished">%1$s, бүтө элек жүктөө</string>
     <string name="manage_models_delete_title">%1$s жок кылынсынбы?</string>
     <string name="manage_models_delete_message">Бул %1$s бошотот. Аны кийинчерээк кайра жүктөп алсаңыз болот.</string>
@@ -64,8 +64,8 @@
     <string name="on_device_ai_error_storage">Файл сакталган жок.</string>
     <string name="on_device_ai_error_low_space">Бул модель үчүн бош орун жетишсиз.</string>
     <string name="on_device_ai_error_time_limit">Android фондо бир нече сааттан кийин жүктөп алууну тындырды. Ал токтогон жерден улантуу үчүн таптап коюңуз.</string>
-    <string name="on_device_ai_metered_title">Мобилдик Интернетке жүктөп алабы?</string>
-    <string name="on_device_ai_metered_message">Модель бир нече гигабайт болуп саналат. Wi-Fi жакшыраак.</string>
+    <string name="on_device_ai_metered_title">Мобилдик интернет аркылуу жүктөп алынсынбы?</string>
+    <string name="on_device_ai_metered_message">Модель бир нече гигабайт. Wi-Fi колдонгон жакшы.</string>
     <string name="on_device_ai_metered_download">Жүктөп алуу</string>
     <string name="on_device_ai_cancel">Жокко чыгаруу</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Түзмөктөгү AI эстутум чектөөлөрүн этибарга албаңыз</string>

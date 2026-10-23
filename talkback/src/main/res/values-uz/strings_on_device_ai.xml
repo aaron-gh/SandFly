@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">Modellarni boshqarish</string>
     <string name="manage_models_storage_used">Modellar xotiradan %1$s foydalanmoqda.</string>
-    <string name="manage_models_empty">Hech qanday model yuklab olinmaydi.</string>
+    <string name="manage_models_empty">Hech qanday model yuklab olinmagan.</string>
     <string name="manage_models_unfinished">%1$s, tugallanmagan yuklab olish</string>
     <string name="manage_models_delete_title">%1$s oʻchirilsinmi?</string>
     <string name="manage_models_delete_message">Bu %1$sni ozod qiladi. Siz uni keyinroq qayta yuklab olishingiz mumkin.</string>
@@ -61,11 +61,11 @@
     <string name="on_device_ai_error_network">Yuklab olish toʻxtatildi. Ulanishingizni tekshiring va qaytadan urining. U to\'xtagan joyida davom etadi.</string>
     <string name="on_device_ai_error_http">Yuklab olish serveri so‘rovni qabul qilmadi. Keyinroq qayta urinib ko‘ring yoki uning o‘rniga faylni import qiling.</string>
     <string name="on_device_ai_error_corrupt">Fayl kutilgan modelga mos kelmadi va oʻchirildi. Qayta urinib ko\'ring.</string>
-    <string name="on_device_ai_error_storage">Fayl saqlanmadi.</string>
+    <string name="on_device_ai_error_storage">Faylni saqlab boʻlmadi.</string>
     <string name="on_device_ai_error_low_space">Bu model uchun boʻsh joy yetarli emas.</string>
     <string name="on_device_ai_error_time_limit">Android fonda bir necha soatdan keyin yuklab olishni to\'xtatdi. Toʻxtagan joyda davom etish uchun bosing.</string>
-    <string name="on_device_ai_metered_title">Mobil internetga yuklab olingmi?</string>
-    <string name="on_device_ai_metered_message">Model bir necha gigabaytni tashkil qiladi. Wi-Fi yaxshiroq.</string>
+    <string name="on_device_ai_metered_title">Mobil internet orqali yuklab olinsinmi?</string>
+    <string name="on_device_ai_metered_message">Model bir necha gigabayt hajmda. Wi-Fi’dan foydalangan maʼqul.</string>
     <string name="on_device_ai_metered_download">Yuklab olish</string>
     <string name="on_device_ai_cancel">Bekor qilish</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Qurilmadagi AI xotira cheklovlariga e\'tibor bermang</string>

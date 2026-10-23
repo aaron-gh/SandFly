@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">Модельдерді басқару</string>
     <string name="manage_models_storage_used">Модельдер %1$s жадты пайдалануда.</string>
-    <string name="manage_models_empty">Ешбір үлгілер жүктелмейді.</string>
+    <string name="manage_models_empty">Ешбір модель жүктелмеген.</string>
     <string name="manage_models_unfinished">%1$s, аяқталмаған жүктеп алу</string>
     <string name="manage_models_delete_title">%1$s жою керек пе?</string>
     <string name="manage_models_delete_message">Бұл %1$s босайды. Оны кейінірек қайта жүктеп алуға болады.</string>
@@ -64,8 +64,8 @@
     <string name="on_device_ai_error_storage">Файлды сақтау мүмкін болмады.</string>
     <string name="on_device_ai_error_low_space">Бұл үлгі үшін бос жад жеткіліксіз.</string>
     <string name="on_device_ai_error_time_limit">Android фондық режимде бірнеше сағаттан кейін жүктеп алуды тоқтатты. Тоқтаған жерінен жалғастыру үшін түртіңіз.</string>
-    <string name="on_device_ai_metered_title">Мобильді деректерге жүктеп алу керек пе?</string>
-    <string name="on_device_ai_metered_message">Модель бірнеше гигабайтты құрайды. Wi-Fi жақсырақ.</string>
+    <string name="on_device_ai_metered_title">Мобильдік интернет арқылы жүктеп алу керек пе?</string>
+    <string name="on_device_ai_metered_message">Модель бірнеше гигабайт. Wi-Fi пайдаланған жөн.</string>
     <string name="on_device_ai_metered_download">Жүктеп алу</string>
     <string name="on_device_ai_cancel">Бас тарту</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Құрылғыдағы AI жады шектеулерін елемеңіз</string>

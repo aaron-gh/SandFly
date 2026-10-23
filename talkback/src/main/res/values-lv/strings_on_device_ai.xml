@@ -51,7 +51,7 @@
     <string name="on_device_ai_import_failed">Šis fails nav atbalstīts Gemma 4 modeļa fails.</string>
     <string name="pref_on_device_ai_timeout">Atbilžu termiņš</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly pārstāj gaidīt pēc tik ilga laika. Ekrāna aprakstīšana aizņem vairāk laika nekā attēla aprakstīšana.</string>
-    <string name="on_device_ai_choose_timeout">Atbilžu termiņš</string>
+    <string name="on_device_ai_choose_timeout">Atbilžu laika ierobežojums</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="zero">%1$d minūtes</item>
         <item quantity="one">%1$d minūte</item>
@@ -67,7 +67,7 @@
     <string name="on_device_ai_error_low_space">Šim modelim nav pietiekami daudz bezmaksas krātuves.</string>
     <string name="on_device_ai_error_time_limit">Android apturēja lejupielādi pēc vairākām stundām fonā. Pieskarieties, lai turpinātu tur, kur tas apstājās.</string>
     <string name="on_device_ai_metered_title">Lejupielādēt, izmantojot mobilos datus?</string>
-    <string name="on_device_ai_metered_message">Modelis ir vairāki gigabaiti. Wi-Fi ir labāks.</string>
+    <string name="on_device_ai_metered_message">Modelis aizņem vairākus gigabaitus. Ieteicams Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Lejupielādēt</string>
     <string name="on_device_ai_cancel">Atcelt</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorējiet ierīces AI atmiņas ierobežojumus</string>

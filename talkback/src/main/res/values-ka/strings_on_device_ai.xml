@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_failed">ეს ფაილი არ არის Gemma 4 მოდელის მხარდაჭერილი ფაილი.</string>
     <string name="pref_on_device_ai_timeout">პასუხების ვადა</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly წყვეტს ლოდინს ამ ხნის შემდეგ. აღწერის ეკრანს უფრო მეტი დრო სჭირდება, ვიდრე სურათის აღწერას.</string>
-    <string name="on_device_ai_choose_timeout">პასუხების ვადა</string>
+    <string name="on_device_ai_choose_timeout">პასუხების დროის ლიმიტი</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d წუთი</item>
         <item quantity="other">%1$d წუთი</item>
@@ -64,8 +64,8 @@
     <string name="on_device_ai_error_storage">ფაილის შენახვა ვერ მოხერხდა.</string>
     <string name="on_device_ai_error_low_space">ამ მოდელისთვის არ არის საკმარისი თავისუფალი მეხსიერება.</string>
     <string name="on_device_ai_error_time_limit">Android შეაჩერა ჩამოტვირთვა რამდენიმე საათის შემდეგ ფონზე. შეეხეთ გასაგრძელებლად იქ, სადაც გაჩერდა.</string>
-    <string name="on_device_ai_metered_title">ჩამოტვირთეთ მობილური ინტერნეტით?</string>
-    <string name="on_device_ai_metered_message">მოდელი რამდენიმე გიგაბაიტია. Wi-Fi უკეთესია.</string>
+    <string name="on_device_ai_metered_title">ჩამოიტვირთოს მობილური ინტერნეტით?</string>
+    <string name="on_device_ai_metered_message">მოდელი რამდენიმე გიგაბაიტია. სჯობს Wi-Fi-ის გამოყენება.</string>
     <string name="on_device_ai_metered_download">ჩამოტვირთვა</string>
     <string name="on_device_ai_cancel">გაუქმება</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">დააიგნორეთ მოწყობილობაზე AI მეხსიერების ლიმიტები</string>

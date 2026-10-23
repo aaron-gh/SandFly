@@ -37,8 +37,8 @@
         <item quantity="other">%1$d ମଡେଲଗୁଡିକ ଡାଉନଲୋଡ୍ ହୋଇଛି</item>
     </plurals>
     <string name="title_pref_manage_models">ମଡେଲଗୁଡିକ ପରିଚାଳନା କରନ୍ତୁ</string>
-    <string name="manage_models_storage_used">ମଡେଲଗୁଡିକ %1$s ଷ୍ଟୋରେଜ୍ ବ୍ୟବହାର କରୁଛନ୍ତି |</string>
-    <string name="manage_models_empty">କୌଣସି ମଡେଲ ଡାଉନଲୋଡ୍ ହୋଇନାହିଁ |</string>
+    <string name="manage_models_storage_used">ମଡେଲଗୁଡ଼ିକ %1$s ଷ୍ଟୋରେଜ୍ ବ୍ୟବହାର କରୁଛନ୍ତି।</string>
+    <string name="manage_models_empty">କୌଣସି ମଡେଲ ଡାଉନଲୋଡ୍ ହୋଇନାହିଁ।</string>
     <string name="manage_models_unfinished">%1$s, ଅସମାପ୍ତ ଡାଉନଲୋଡ୍</string>
     <string name="manage_models_delete_title">%1$s ବିଲୋପ କରିବେ କି?</string>
     <string name="manage_models_delete_message">ଏହା %1$s ମୁକ୍ତ କରେ | ଆପଣ ଏହାକୁ ପରେ ପରେ ଡାଉନଲୋଡ୍ କରିପାରିବେ |</string>
@@ -61,11 +61,11 @@
     <string name="on_device_ai_error_network">ଡାଉନଲୋଡ୍ ବନ୍ଦ ହେଲା | ଆପଣଙ୍କର ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ | ଏହା କେଉଁଠାରେ ଅଟକି ଗଲା ତାହା ଜାରି ରଖିବ |</string>
     <string name="on_device_ai_error_http">ଡାଉନଲୋଡ୍ ସର୍ଭର ଅନୁରୋଧ ଗ୍ରହଣ କଲା ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ, କିମ୍ବା ଏହା ପରିବର୍ତ୍ତେ ଏକ ଫାଇଲ ଆମଦାନି କରନ୍ତୁ |</string>
     <string name="on_device_ai_error_corrupt">ଫାଇଲଟି ଆଶା କରାଯାଉଥିବା ମଡେଲ ସହିତ ମେଳ ଖାଉ ନଥିଲା ଏବଂ ଡିଲିଟ ହୋଇଯାଇଥିଲା | ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
-    <string name="on_device_ai_error_storage">ଫାଇଲ୍ ସେଭ୍ କରିପାରିଲା ନାହିଁ |</string>
+    <string name="on_device_ai_error_storage">ଫାଇଲ୍ ସେଭ୍ କରିହେଲା ନାହିଁ।</string>
     <string name="on_device_ai_error_low_space">ଏହି ମଡେଲ୍ ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ମାଗଣା ଷ୍ଟୋରେଜ୍ ନାହିଁ |</string>
     <string name="on_device_ai_error_time_limit">Android ପୃଷ୍ଠଭୂମିରେ ଅନେକ ଘଣ୍ଟା ପରେ ଡାଉନଲୋଡ୍ ବନ୍ଦ କରିଦେଲା | ଏହା କେଉଁଠାରେ ଅଟକି ଗଲା ତାହା ଉପରେ ଟ୍ୟାପ୍ କରନ୍ତୁ |</string>
-    <string name="on_device_ai_metered_title">ମୋବାଇଲ୍ ଡାଟା ଉପରେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ?</string>
-    <string name="on_device_ai_metered_message">ମଡେଲ୍ ହେଉଛି ଅନେକ ଗିଗାବାଇଟ୍ | Wi-Fi ଭଲ ଅଟେ |</string>
+    <string name="on_device_ai_metered_title">ମୋବାଇଲ୍ ଡାଟାରେ ଡାଉନଲୋଡ୍ କରିବେ?</string>
+    <string name="on_device_ai_metered_message">ମଡେଲଟି ଅନେକ ଗିଗାବାଇଟ୍‌ର। Wi-Fi ବ୍ୟବହାର କରିବା ଭଲ।</string>
     <string name="on_device_ai_metered_download">ଡାଉନଲୋଡ କରନ୍ତୁ</string>
     <string name="on_device_ai_cancel">ବାତିଲ କରନ୍ତୁ</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ଅନ୍-ଡିଭାଇସ୍ AI ମେମୋରୀ ସୀମାକୁ ଅଣଦେଖା କରନ୍ତୁ</string>

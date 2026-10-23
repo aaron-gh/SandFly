@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">Управување со модели</string>
     <string name="manage_models_storage_used">Моделите користат %1$s простор за складирање.</string>
-    <string name="manage_models_empty">Не се преземаат модели.</string>
+    <string name="manage_models_empty">Нема преземени модели.</string>
     <string name="manage_models_unfinished">%1$s, незавршено преземање</string>
     <string name="manage_models_delete_title">Да се избрише %1$s?</string>
     <string name="manage_models_delete_message">Ова ослободува %1$s. Можете да го преземете повторно подоцна.</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_failed">Таа датотека не е поддржана датотека на моделот Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Временски рок за одговори</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly престанува да чека по толку време. Екранот за опишување трае подолго од описот на сликата.</string>
-    <string name="on_device_ai_choose_timeout">Временски рок за одговори</string>
+    <string name="on_device_ai_choose_timeout">Временско ограничување за одговори</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минута</item>
         <item quantity="other">%1$d минути</item>
@@ -65,7 +65,7 @@
     <string name="on_device_ai_error_low_space">Нема доволно слободен простор за овој модел.</string>
     <string name="on_device_ai_error_time_limit">Android го паузираше преземањето по неколку часа во заднина. Допрете за да продолжите таму каде што застана.</string>
     <string name="on_device_ai_metered_title">Да се преземе на мобилни податоци?</string>
-    <string name="on_device_ai_metered_message">Моделот е неколку гигабајти. Wi-Fi е подобро.</string>
+    <string name="on_device_ai_metered_message">Моделот е голем неколку гигабајти. Подобро е Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Преземи</string>
     <string name="on_device_ai_cancel">Откажи</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Игнорирајте ги ограничувањата на меморијата со вештачка интелигенција на уредот</string>

@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">จัดการโมเดล</string>
     <string name="manage_models_storage_used">โมเดลใช้พื้นที่เก็บข้อมูล %1$s</string>
-    <string name="manage_models_empty">ไม่มีการดาวน์โหลดโมเดล</string>
+    <string name="manage_models_empty">ยังไม่ได้ดาวน์โหลดโมเดล</string>
     <string name="manage_models_unfinished">%1$s ดาวน์โหลดไม่เสร็จ</string>
     <string name="manage_models_delete_title">ลบ %1$s?</string>
     <string name="manage_models_delete_message">สิ่งนี้ทำให้ %1$s เป็นอิสระ คุณสามารถดาวน์โหลดได้อีกครั้งในภายหลัง</string>
@@ -64,8 +64,8 @@
     <string name="on_device_ai_error_storage">ไม่สามารถบันทึกไฟล์ได้</string>
     <string name="on_device_ai_error_low_space">พื้นที่เก็บข้อมูลว่างไม่เพียงพอสำหรับรุ่นนี้</string>
     <string name="on_device_ai_error_time_limit">Android หยุดการดาวน์โหลดชั่วคราวหลังจากทำงานเบื้องหลังไปหลายชั่วโมง แตะเพื่อดำเนินการต่อไปยังตำแหน่งที่หยุด</string>
-    <string name="on_device_ai_metered_title">ดาวน์โหลดบนข้อมูลมือถือ?</string>
-    <string name="on_device_ai_metered_message">โมเดลนี้มีหลายกิกะไบต์ Wi-Fi ดีกว่า</string>
+    <string name="on_device_ai_metered_title">ดาวน์โหลดด้วยอินเทอร์เน็ตมือถือไหม</string>
+    <string name="on_device_ai_metered_message">โมเดลมีขนาดหลายกิกะไบต์ ควรใช้ Wi-Fi</string>
     <string name="on_device_ai_metered_download">ดาวน์โหลด</string>
     <string name="on_device_ai_cancel">ยกเลิก</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ละเว้นขีดจำกัดหน่วยความจำ AI บนอุปกรณ์</string>

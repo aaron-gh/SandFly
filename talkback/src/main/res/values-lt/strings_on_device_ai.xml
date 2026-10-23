@@ -40,7 +40,7 @@
     </plurals>
     <string name="title_pref_manage_models">Tvarkyti modelius</string>
     <string name="manage_models_storage_used">Modeliai naudoja %1$s saugyklos vietos.</string>
-    <string name="manage_models_empty">Neatsisiunčiami jokie modeliai.</string>
+    <string name="manage_models_empty">Neatsisiųsta jokių modelių.</string>
     <string name="manage_models_unfinished">%1$s, nebaigtas atsisiuntimas</string>
     <string name="manage_models_delete_title">Ištrinti %1$s?</string>
     <string name="manage_models_delete_message">Tai atlaisvina %1$s. You can download it again later.</string>
@@ -52,7 +52,7 @@
     <string name="on_device_ai_import_failed">Šis failas nėra palaikomas Gemma 4 modelio failas.</string>
     <string name="pref_on_device_ai_timeout">Atsakymų terminas</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly nustoja laukti po tiek laiko. Apibūdinti ekraną užtrunka ilgiau nei aprašyti vaizdą.</string>
-    <string name="on_device_ai_choose_timeout">Atsakymų terminas</string>
+    <string name="on_device_ai_choose_timeout">Atsakymų laiko riba</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minutę</item>
         <item quantity="few">%1$d minučių</item>
@@ -68,8 +68,8 @@
     <string name="on_device_ai_error_storage">Nepavyko išsaugoti failo.</string>
     <string name="on_device_ai_error_low_space">Šiam modeliui nepakanka laisvos saugyklos vietos.</string>
     <string name="on_device_ai_error_time_limit">Android pristabdė atsisiuntimą po kelių valandų fone. Bakstelėkite, kad tęstumėte ten, kur sustojo.</string>
-    <string name="on_device_ai_metered_title">Parsisiųsti per mobiliuosius duomenis?</string>
-    <string name="on_device_ai_metered_message">Modelis yra kelių gigabaitų. Wi-Fi yra geriau.</string>
+    <string name="on_device_ai_metered_title">Atsisiųsti naudojant mobiliojo ryšio duomenis?</string>
+    <string name="on_device_ai_metered_message">Modelis užima kelis gigabaitus. Geriau naudoti Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Atsisiųsti</string>
     <string name="on_device_ai_cancel">Atšaukti</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Nepaisykite įrenginio AI atminties apribojimų</string>

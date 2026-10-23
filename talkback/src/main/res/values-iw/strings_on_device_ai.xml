@@ -38,8 +38,8 @@
         <item quantity="other">%1$d models downloaded</item>
     </plurals>
     <string name="title_pref_manage_models">ניהול מודלים</string>
-    <string name="manage_models_storage_used">דגמים משתמשים באחסון של %1$s.</string>
-    <string name="manage_models_empty">לא מורידים דגמים.</string>
+    <string name="manage_models_storage_used">מודלים משתמשים ב-%1$s של שטח אחסון.</string>
+    <string name="manage_models_empty">לא הורדו מודלים.</string>
     <string name="manage_models_unfinished">%1$s, הורדה לא הסתיימה</string>
     <string name="manage_models_delete_title">למחוק את %1$s?</string>
     <string name="manage_models_delete_message">זה משחרר %1$s. תוכל להוריד אותו שוב מאוחר יותר.</string>
@@ -67,7 +67,7 @@
     <string name="on_device_ai_error_low_space">אין מספיק שטח אחסון בחינם עבור הדגם הזה.</string>
     <string name="on_device_ai_error_time_limit">Android השהה את ההורדה לאחר מספר שעות ברקע. הקש כדי להמשיך במקום שבו זה עצר.</string>
     <string name="on_device_ai_metered_title">להוריד בנתונים ניידים?</string>
-    <string name="on_device_ai_metered_message">הדגם הוא מספר גיגה-בייט. Wi-Fi עדיף.</string>
+    <string name="on_device_ai_metered_message">המודל בגודל של כמה ג\'יגה-בייט. עדיף להשתמש ב-Wi-Fi.</string>
     <string name="on_device_ai_metered_download">הורדה</string>
     <string name="on_device_ai_cancel">ביטול</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">התעלם ממגבלות זיכרון AI במכשיר</string>

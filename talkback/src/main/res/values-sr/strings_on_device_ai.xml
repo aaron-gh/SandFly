@@ -39,7 +39,7 @@
     </plurals>
     <string name="title_pref_manage_models">Управљање моделима</string>
     <string name="manage_models_storage_used">Модели користе %1$s складишта.</string>
-    <string name="manage_models_empty">Ниједан модел се не преузима.</string>
+    <string name="manage_models_empty">Нема преузетих модела.</string>
     <string name="manage_models_unfinished">%1$s, недовршено преузимање</string>
     <string name="manage_models_delete_title">Избрисати %1$s?</string>
     <string name="manage_models_delete_message">Ово ослобађа %1$s. Касније га можете поново преузети.</string>
@@ -67,7 +67,7 @@
     <string name="on_device_ai_error_low_space">Нема довољно слободног простора за складиштење за овај модел.</string>
     <string name="on_device_ai_error_time_limit">Android је паузирао преузимање након неколико сати у позадини. Додирните да бисте наставили тамо где је стало.</string>
     <string name="on_device_ai_metered_title">Преузети путем мобилних података?</string>
-    <string name="on_device_ai_metered_message">Модел је неколико гигабајта. Wi-Fi је боље.</string>
+    <string name="on_device_ai_metered_message">Модел има неколико гигабајта. Боље је користити Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Преузми</string>
     <string name="on_device_ai_cancel">Откажи</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Занемарите ограничења АИ меморије на уређају</string>

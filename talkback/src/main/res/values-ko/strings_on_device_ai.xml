@@ -37,7 +37,7 @@
         <item quantity="other">%1$d개 모델 다운로드됨</item>
     </plurals>
     <string name="title_pref_manage_models">모델 관리</string>
-    <string name="manage_models_storage_used">모델은 %1$s의 저장용량을 사용하고 있습니다.</string>
+    <string name="manage_models_storage_used">모델이 저장용량 %1$s을(를) 사용 중입니다.</string>
     <string name="manage_models_empty">다운로드된 모델이 없습니다.</string>
     <string name="manage_models_unfinished">%1$s, 완료되지 않은 다운로드</string>
     <string name="manage_models_delete_title">%1$s을(를) 삭제하시겠습니까?</string>
@@ -65,7 +65,7 @@
     <string name="on_device_ai_error_low_space">이 모델에는 여유 저장공간이 충분하지 않습니다.</string>
     <string name="on_device_ai_error_time_limit">Android 백그라운드에서 몇 시간 후에 다운로드가 일시 중지되었습니다. 중지된 부분을 계속하려면 탭하세요.</string>
     <string name="on_device_ai_metered_title">모바일 데이터로 다운로드하시겠습니까?</string>
-    <string name="on_device_ai_metered_message">모델은 수 기가바이트입니다. Wi-Fi가 더 좋습니다.</string>
+    <string name="on_device_ai_metered_message">모델 크기는 몇 기가바이트입니다. Wi-Fi 사용을 권장합니다.</string>
     <string name="on_device_ai_metered_download">다운로드</string>
     <string name="on_device_ai_cancel">취소</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">기기 내 AI 메모리 제한 무시</string>

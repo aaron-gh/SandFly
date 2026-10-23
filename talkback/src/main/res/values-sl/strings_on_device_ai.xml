@@ -52,7 +52,7 @@
     <string name="on_device_ai_import_failed">Ta datoteka ni podprta datoteka modela Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Rok za odgovore</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly po tem času neha čakati. Opis zaslona traja dlje kot opis slike.</string>
-    <string name="on_device_ai_choose_timeout">Rok za odgovore</string>
+    <string name="on_device_ai_choose_timeout">Časovna omejitev za odgovore</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuta</item>
         <item quantity="two">%1$d minuti</item>
@@ -68,8 +68,8 @@
     <string name="on_device_ai_error_storage">Datoteke ni bilo mogoče shraniti.</string>
     <string name="on_device_ai_error_low_space">Za ta model ni dovolj brezplačnega prostora za shranjevanje.</string>
     <string name="on_device_ai_error_time_limit">Android je začasno ustavil prenos po več urah v ozadju. Tapnite, če želite nadaljevati, kjer se je ustavilo.</string>
-    <string name="on_device_ai_metered_title">Prenos z mobilnimi podatki?</string>
-    <string name="on_device_ai_metered_message">The model is several gigabytes. Wi-Fi je boljši.</string>
+    <string name="on_device_ai_metered_title">Želite prenesti prek mobilnih podatkov?</string>
+    <string name="on_device_ai_metered_message">Model obsega več gigabajtov. Bolje je uporabiti Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Prenesi</string>
     <string name="on_device_ai_cancel">Prekliči</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Prezrite omejitve pomnilnika AI v napravi</string>

@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">Gerenciar modelos</string>
     <string name="manage_models_storage_used">Os modelos estão usando %1$s de armazenamento.</string>
-    <string name="manage_models_empty">Nenhum modelo é baixado.</string>
+    <string name="manage_models_empty">Nenhum modelo foi baixado.</string>
     <string name="manage_models_unfinished">%1$s, download inacabado</string>
     <string name="manage_models_delete_title">Excluir %1$s?</string>
     <string name="manage_models_delete_message">Isso libera %1$s. Você pode baixá-lo novamente mais tarde.</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_failed">Esse arquivo não é um arquivo de modelo Gemma 4 compatível.</string>
     <string name="pref_on_device_ai_timeout">Prazo para respostas</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly para de esperar depois de tanto tempo. A descrição da tela leva mais tempo do que a descrição da imagem.</string>
-    <string name="on_device_ai_choose_timeout">Prazo para respostas</string>
+    <string name="on_device_ai_choose_timeout">Tempo limite para respostas</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuto</item>
         <item quantity="other">%1$d minutos</item>
@@ -64,8 +64,8 @@
     <string name="on_device_ai_error_storage">Não foi possível salvar o arquivo.</string>
     <string name="on_device_ai_error_low_space">Não há armazenamento gratuito suficiente para este modelo.</string>
     <string name="on_device_ai_error_time_limit">Android pausou o download após várias horas em segundo plano. Toque para continuar de onde parou.</string>
-    <string name="on_device_ai_metered_title">Baixar em dados móveis?</string>
-    <string name="on_device_ai_metered_message">O modelo tem vários gigabytes. Wi-Fi é melhor.</string>
+    <string name="on_device_ai_metered_title">Baixar usando dados móveis?</string>
+    <string name="on_device_ai_metered_message">O modelo tem vários gigabytes. É melhor usar Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Fazer o download</string>
     <string name="on_device_ai_cancel">Cancelar</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Ignore os limites de memória da IA no dispositivo</string>

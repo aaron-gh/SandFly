@@ -38,7 +38,7 @@
     </plurals>
     <string name="title_pref_manage_models">モデルの管理</string>
     <string name="manage_models_storage_used">モデルは %1$s のストレージを使用しています。</string>
-    <string name="manage_models_empty">モデルはダウンロードされません。</string>
+    <string name="manage_models_empty">ダウンロード済みのモデルはありません。</string>
     <string name="manage_models_unfinished">%1$s、ダウンロード未完了</string>
     <string name="manage_models_delete_title">%1$sを削除しますか?</string>
     <string name="manage_models_delete_message">これにより %1$s が解放されます。後で再度ダウンロードできます。</string>
@@ -65,7 +65,7 @@
     <string name="on_device_ai_error_low_space">このモデルには十分な空きストレージがありません。</string>
     <string name="on_device_ai_error_time_limit">Android はバックグラウンドで数時間後にダウンロードを一時停止しました。タップすると、停止したところから続行します。</string>
     <string name="on_device_ai_metered_title">モバイルデータ通信でダウンロードしますか?</string>
-    <string name="on_device_ai_metered_message">モデルは数ギガバイトです。 Wi-Fiの方が良いです。</string>
+    <string name="on_device_ai_metered_message">モデルは数 GB あります。Wi-Fi の使用をおすすめします。</string>
     <string name="on_device_ai_metered_download">ダウンロード</string>
     <string name="on_device_ai_cancel">キャンセル</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">デバイス上の AI メモリ制限を無視する</string>
