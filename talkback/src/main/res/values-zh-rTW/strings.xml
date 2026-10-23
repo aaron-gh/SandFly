@@ -868,7 +868,7 @@
   <string name="new_shortcut_gesture_reading_menu_text">如要使用朗讀控制項，請用 3 指向左或向右滑動，或是用 3 指向上或向下滑動。</string>
   <string name="new_shortcut_gesture_note">注意：由於你自訂了某些手勢，因此這些資訊可能不準確。如要查看手勢，請前往 SandFly 設定。</string>
   <string name="welcome_to_android11_text">SandFly 現在支援新的手勢，使用起來更加便捷。\n\n你可以在這個畫面中試用這些新手勢。日後也隨時可在 SandFly 設定頁面中查看這些資訊。</string>
-  <string name="new_gesture_notification_title">SandFly 支援新的手勢</string>
+  <string name="new_gesture_notification_title">SandFly 的新手勢</string>
   <string name="new_gesture_notification_content">輕觸即可瞭解如何透過新手勢讓 SandFly 使用起來更加便捷。</string>
   <string name="dump_node_tree_description">系統已將節點樹狀結構印到記錄中。</string>
   <string name="report_gesture_description">這些是你最近做過的手勢，請回報發生錯誤的手勢和該手勢應執行的操作。</string>
@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">讓應用程式請求成為 SandFly 的點字顯示器。如果您在 SandFly 中允許它，它可以讀取螢幕上的所有內容並控制您的裝置。 SandFly先問你。</string>
     <string name="title_pref_phonetic_letters_mode">以拼讀單字讀出字母</string>
     <string name="phonetic_letters_mode_off">關閉</string>
-    <string name="phonetic_letters_mode_after_letter_delay">信後，延遲，如“h，旅館”</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">信完後，毫不拖延，就像“H酒店”</string>
+    <string name="phonetic_letters_mode_after_letter_delay">字母後，有停頓，例如「h，hotel」</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">字母後，無停頓，例如「h hotel」</string>
     <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“酒店”</string>
     <string name="title_pref_emoji_speech">表情符號</string>
     <string name="emoji_speech_engine">由語音引擎朗讀</string>
@@ -1441,8 +1441,8 @@
     <string name="notification_part_playback">播放或暫停</string>
     <string name="notification_list_title">通知</string>
     <string name="notification_list_empty">無通知</string>
-    <string name="notification_list_no_access">通知訪問已關閉</string>
-    <string name="notification_list_grant_access">開啟通知訪問</string>
+    <string name="notification_list_no_access">通知存取權已關閉</string>
+    <string name="notification_list_grant_access">開啟通知存取權</string>
     <string name="notification_list_quick_settings">快速設定</string>
     <string name="notification_list_dismiss">關閉</string>
     <string name="notification_list_show_all">顯示全部</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_download_button">下載</string>
     <string name="handwriting_downloaded">手寫辨識已下載</string>
     <string name="handwriting_download_failed">無法下載手寫辨識。檢查網路連線。</string>
-    <string name="handwriting_unsupported_language">該語言不支援手寫識別</string>
+    <string name="handwriting_unsupported_language">此語言不支援手寫辨識</string>
     <string name="title_pref_handwriting_keyboard">手寫鍵盤</string>
     <string name="summary_pref_handwriting_keyboard">在Android的鍵盤設定中開啟SandFly手寫</string>
     <string name="title_pref_handwriting_wait">寫完後等待</string>

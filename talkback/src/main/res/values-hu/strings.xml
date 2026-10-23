@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Írja be az elem címkéjeként használni kívánt szöveget\nBelső nézet neve: %1$s</string>
   <string name="label_dialog_edit_hint">Címkeszöveg</string>
   <string name="label_import">Egyéni címkék importálása</string>
-  <string name="label_import_dialog_title">Egyéni címkék importálása a SandFly szolgáltatásba</string>
+  <string name="label_import_dialog_title">Egyéni címkék importálása a SandFlyba</string>
   <string name="label_import_dialog_message">Eldöntheti, hogy ütközés esetén felülbírálja vagy kihagyja a meglévő címkéket</string>
   <string name="label_import_dialog_skip">Kihagyás</string>
   <string name="label_import_dialog_override">Felülírás</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Tiltás</string>
     <string name="permission_speak_label">beszéd a SandFly segítségével</string>
     <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás szöveget mondjon az Ön SandFly hangján. SandFly megkérdezi, mielőtt az alkalmazás beszélni tudna.</string>
-    <string name="permission_braille_display_label">kérje, hogy legyen Braille-kijelző a SandFly számára</string>
+    <string name="permission_braille_display_label">Braille-kijelzőként való működés kérése a SandFly számára</string>
     <string name="permission_braille_display_description">Lehetővé teszi, hogy az alkalmazás Braille-kijelzőként kérje a SandFly-t. Ha engedélyezi az SandFly-ben, akkor mindent elolvashat a képernyőn, és vezérelheti az eszközt. SandFly kérdezi meg először.</string>
     <string name="title_pref_phonetic_letters_mode">Betűk fonetikus kimondása</string>
     <string name="phonetic_letters_mode_off">Ki</string>
-    <string name="phonetic_letters_mode_after_letter_delay">A levél után késleltetett, például \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">A levél után nincs késés, például \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">A betű után, szünettel, például „h, Huba”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">A betű után, szünet nélkül, például „h Huba”</string>
     <string name="phonetic_letters_mode_instead_of_letter">A betű helyett például \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">A beszédmotor olvassa fel</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Értesítések</string>
     <string name="notification_list_empty">Nincsenek értesítések</string>
     <string name="notification_list_no_access">Az értesítésekhez való hozzáférés ki van kapcsolva</string>
-    <string name="notification_list_grant_access">Kapcsolja be az értesítésekhez való hozzáférést</string>
+    <string name="notification_list_grant_access">Értesítési hozzáférés bekapcsolása</string>
     <string name="notification_list_quick_settings">Gyors beállítások</string>
     <string name="notification_list_dismiss">Elvetés</string>
     <string name="notification_list_show_all">Összes megjelenítése</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Szóköz</string>
     <string name="handwriting_new_line">Új sor</string>
     <string name="handwriting_tutorial_intro">Kézírás billentyűzet oktatóanyag. Írjon egy ujjal bárhol a képernyőn. Amit írsz, az be van gépelve, ha megállsz egy pillanatra. Az oktatóprogram befejezéséhez húzza lefelé három ujját.</string>
-    <string name="handwriting_tutorial_write_letter">Írd le az ábécé a betűjét!</string>
+    <string name="handwriting_tutorial_write_letter">Írja le az a betűt.</string>
     <string name="handwriting_tutorial_write_word">Most írja be a hi szót (h, majd i).</string>
     <string name="handwriting_tutorial_typed">Beírva: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Szóköz beírásához csúsztassa jobbra két ujját.</string>

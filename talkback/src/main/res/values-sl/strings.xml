@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Ne dovoli</string>
     <string name="permission_speak_label">govorjenje prek SandFlya</string>
     <string name="permission_speak_description">Omogoča, da aplikacija zahteva izgovor besedila z vašim glasom SandFly. SandFly vas vpraša, preden lahko aplikacija spregovori.</string>
-    <string name="permission_braille_display_label">zahtevaj, da postaneš Braillov zaslon za SandFly</string>
+    <string name="permission_braille_display_label">zahteva za delovanje kot brajev zaslon za SandFly</string>
     <string name="permission_braille_display_description">Omogoča, da aplikacija zahteva, da je Braillov zaslon za SandFly. Če mu dovolite v SandFly, lahko prebere vse na zaslonu in upravlja vašo napravo. SandFly vas najprej vpraša.</string>
     <string name="title_pref_phonetic_letters_mode">Fonetično izgovarjanje črk</string>
     <string name="phonetic_letters_mode_off">Izklopljeno</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po pismu z zamudo, kot \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po pismu, brez zamude, kot \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po črki, s premorom, npr. »h, Helena«</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po črki, brez premora, npr. »h Helena«</string>
     <string name="phonetic_letters_mode_instead_of_letter">Namesto črke, kot \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Prebere govorni mehanizem</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Obvestila</string>
     <string name="notification_list_empty">Brez obvestil</string>
     <string name="notification_list_no_access">Dostop do obvestil je izklopljen</string>
-    <string name="notification_list_grant_access">Vklopite dostop do obvestil</string>
+    <string name="notification_list_grant_access">Vklopi dostop do obvestil</string>
     <string name="notification_list_quick_settings">Hitre nastavitve</string>
     <string name="notification_list_dismiss">Opusti</string>
     <string name="notification_list_show_all">Prikaži vse</string>
@@ -1603,7 +1603,7 @@
     <string name="handwriting_space">Preslednica</string>
     <string name="handwriting_new_line">Nova vrstica</string>
     <string name="handwriting_tutorial_intro">Vadnica za tipkovnico za rokopis. Pišite z enim prstom kjer koli na zaslonu. Kar napišete, se natipka, ko se za trenutek ustavite. Če želite končati vadnico, povlecite navzdol s tremi prsti.</string>
-    <string name="handwriting_tutorial_write_letter">Napišite abecedno črko a.</string>
+    <string name="handwriting_tutorial_write_letter">Napišite črko a.</string>
     <string name="handwriting_tutorial_write_word">Zdaj napišite besedo hi (h, ki mu sledi i).</string>
     <string name="handwriting_tutorial_typed">Vtipkano <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Z dvema prstoma povlecite desno, da vnesete presledek.</string>

@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Не дозволяти</string>
     <string name="permission_speak_label">говорити через SandFly</string>
     <string name="permission_speak_description">Дозволяє програмі запитувати текст вашим голосом SandFly. SandFly запитує вас, перш ніж програма зможе говорити.</string>
-    <string name="permission_braille_display_label">попросіть стати дисплеєм Брайля за SandFly</string>
+    <string name="permission_braille_display_label">запит на роль дисплея Брайля для SandFly</string>
     <string name="permission_braille_display_description">Дозволяє додатку запитувати як дисплей Брайля для SandFly. Якщо ви дозволите це в SandFly, він зможе читати все на екрані та керувати вашим пристроєм. SandFly запитує вас першим.</string>
     <string name="title_pref_phonetic_letters_mode">Промовляти букви фонетично</string>
     <string name="phonetic_letters_mode_off">Вимкнено</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Після листа, затриманого, як \"ч, готель\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Після листа без затримки, як \"ч готель\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Після літери, з паузою, наприклад «г, Галина»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Після літери, без паузи, наприклад «г Галина»</string>
     <string name="phonetic_letters_mode_instead_of_letter">Замість літери, як \"готель\"</string>
     <string name="title_pref_emoji_speech">Емодзі</string>
     <string name="emoji_speech_engine">Читає синтезатор мовлення</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Сповіщення</string>
     <string name="notification_list_empty">Немає повідомлень</string>
     <string name="notification_list_no_access">Доступ до сповіщень вимкнено</string>
-    <string name="notification_list_grant_access">Увімкніть доступ до сповіщень</string>
+    <string name="notification_list_grant_access">Увімкнути доступ до сповіщень</string>
     <string name="notification_list_quick_settings">Швидкі налаштування</string>
     <string name="notification_list_dismiss">Закрити</string>
     <string name="notification_list_show_all">Показати все</string>
@@ -1603,7 +1603,7 @@
     <string name="handwriting_space">Пробіл</string>
     <string name="handwriting_new_line">Новий рядок</string>
     <string name="handwriting_tutorial_intro">Підручник з клавіатури рукописного тексту. Пишіть одним пальцем будь-де на екрані. Те, що ви пишете, друкується, коли ви зупиняєтеся на мить. Щоб завершити підручник, проведіть трьома пальцями вниз.</string>
-    <string name="handwriting_tutorial_write_letter">Напишіть букву алфавіту а.</string>
+    <string name="handwriting_tutorial_write_letter">Напишіть літеру a.</string>
     <string name="handwriting_tutorial_write_word">Тепер напишіть слово hi (h, а потім i).</string>
     <string name="handwriting_tutorial_typed">Введено <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Проведіть двома пальцями вправо, щоб ввести пробіл.</string>

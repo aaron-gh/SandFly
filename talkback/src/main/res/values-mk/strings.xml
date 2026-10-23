@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Не дозволувај</string>
     <string name="permission_speak_label">зборување преку SandFly</string>
     <string name="permission_speak_description">Дозволува апликацијата да побара да каже текст со вашиот глас SandFly. SandFly ве прашува пред апликацијата да може да зборува.</string>
-    <string name="permission_braille_display_label">побарајте да биде брајовиот екран за SandFly</string>
+    <string name="permission_braille_display_label">барање да биде брајов дисплеј за SandFly</string>
     <string name="permission_braille_display_description">Дозволува апликацијата да побара да биде приказ на брајово писмо за SandFly. Ако дозволите во SandFly, може да чита сè на екранот и да го контролира вашиот уред. SandFly прво ве прашува.</string>
     <string name="title_pref_phonetic_letters_mode">Изговарај букви фонетски</string>
     <string name="phonetic_letters_mode_off">Исклучено</string>
-    <string name="phonetic_letters_mode_after_letter_delay">По писмото, одложено, како „ч, хотел“</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">По писмото, без доцнење, како „h хотел“</string>
+    <string name="phonetic_letters_mode_after_letter_delay">По буквата, со пауза, на пр. „х, Христо“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">По буквата, без пауза, на пр. „х Христо“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Наместо писмото, како „хотел“</string>
     <string name="title_pref_emoji_speech">Емоџи</string>
     <string name="emoji_speech_engine">Чита говорниот мотор</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Известувања</string>
     <string name="notification_list_empty">Нема известувања</string>
     <string name="notification_list_no_access">Пристапот до известувањата е исклучен</string>
-    <string name="notification_list_grant_access">Вклучете пристап до известувања</string>
+    <string name="notification_list_grant_access">Вклучи пристап до известувања</string>
     <string name="notification_list_quick_settings">Брзи поставки</string>
     <string name="notification_list_dismiss">Отфрли</string>
     <string name="notification_list_show_all">Прикажи ги сите</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Празно место</string>
     <string name="handwriting_new_line">Нов ред</string>
     <string name="handwriting_tutorial_intro">Упатство за тастатура за ракопис. Пишувајте со еден прст каде било на екранот. Тоа што го пишуваш се пишува кога ќе застанеш за момент. За да го завршите упатството, повлечете надолу со три прста.</string>
-    <string name="handwriting_tutorial_write_letter">Напишете ја азбучната буква a.</string>
+    <string name="handwriting_tutorial_write_letter">Напишете ја буквата a.</string>
     <string name="handwriting_tutorial_write_word">Сега напишете го зборот hi (h проследено со i).</string>
     <string name="handwriting_tutorial_typed">Внесено <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Повлечете надесно со два прста за да напишете празно место.</string>

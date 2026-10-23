@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Neleisti</string>
     <string name="permission_speak_label">kalbėti per SandFly</string>
     <string name="permission_speak_description">Leidžia programai paprašyti pasakyti tekstą jūsų SandFly balsu. SandFly klausia jūsų prieš programai galint kalbėti.</string>
-    <string name="permission_braille_display_label">prašyti rodyti Brailio rašto ekraną SandFly</string>
+    <string name="permission_braille_display_label">prašyti būti SandFly Brailio rašto ekranu</string>
     <string name="permission_braille_display_description">Leidžia programai prašyti rodyti Brailio rašto ekraną SandFly. Jei leisite SandFly, jis galės skaityti viską, kas rodoma ekrane, ir valdyti jūsų įrenginį. SandFly pirmiausia klausia jūsų.</string>
     <string name="title_pref_phonetic_letters_mode">Tarti raides fonetiškai</string>
     <string name="phonetic_letters_mode_off">Išjungta</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po laiško, atidėtas, pvz., \"h, viešbutis\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po laiško nedelskite, pavyzdžiui, „h viešbutis“</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po raidės, su pauze, pvz., „h, Henrikas“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po raidės, be pauzės, pvz., „h Henrikas“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Vietoj raidės, pvz., „viešbutis“</string>
     <string name="title_pref_emoji_speech">Jaustukai</string>
     <string name="emoji_speech_engine">Skaito kalbos variklis</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Pranešimai</string>
     <string name="notification_list_empty">Jokių pranešimų</string>
     <string name="notification_list_no_access">Prieiga prie pranešimų išjungta</string>
-    <string name="notification_list_grant_access">Įjunkite prieigą prie pranešimų</string>
+    <string name="notification_list_grant_access">Įjungti prieigą prie pranešimų</string>
     <string name="notification_list_quick_settings">Greiti nustatymai</string>
     <string name="notification_list_dismiss">Atsisakyti</string>
     <string name="notification_list_show_all">Rodyti viską</string>
@@ -1603,7 +1603,7 @@
     <string name="handwriting_space">Tarpo klavišas</string>
     <string name="handwriting_new_line">Nauja eilutė</string>
     <string name="handwriting_tutorial_intro">Rašymo ranka klaviatūros pamoka. Rašykite vienu pirštu bet kurioje ekrano vietoje. Tai, ką rašai, įvedama, kai trumpam sustoji. Norėdami baigti mokymo programą, trimis pirštais braukite žemyn.</string>
-    <string name="handwriting_tutorial_write_letter">Parašykite abėcėlės raidę a.</string>
+    <string name="handwriting_tutorial_write_letter">Parašykite raidę a.</string>
     <string name="handwriting_tutorial_write_word">Dabar parašykite žodį hi (h ir i).</string>
     <string name="handwriting_tutorial_typed">Įvesta <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Braukite dešinėn dviem pirštais, kad įvestumėte tarpą.</string>

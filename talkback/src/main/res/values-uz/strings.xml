@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Ruxsat bermaslik</string>
     <string name="permission_speak_label">SandFly orqali gapirish</string>
     <string name="permission_speak_description">Ilovaga SandFly ovozingiz bilan matn aytishni soʻrashiga ruxsat beradi. SandFly ilova gapirishdan oldin sizdan soʻraydi.</string>
-    <string name="permission_braille_display_label">SandFly uchun brayl displey bo\'lishni so\'rang</string>
+    <string name="permission_braille_display_label">SandFly uchun brayl displeyi boʻlishni soʻrash</string>
     <string name="permission_braille_display_description">Ilovaga SandFly uchun brayl displeyi boʻlishni soʻrashiga ruxsat beradi. Agar siz SandFly da ruxsat bersangiz, u ekrandagi hamma narsani oʻqiy oladi va qurilmangizni boshqara oladi. SandFly sizdan birinchi boʻlib soʻraydi.</string>
     <string name="title_pref_phonetic_letters_mode">Harflarni fonetik aytish</string>
     <string name="phonetic_letters_mode_off">Oʻchiq</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Maktubdan keyin, \"h, mehmonxona\" kabi kechiktirildi</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Maktubdan keyin \"h hotel\" kabi kechikish yo\'q</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Harfdan keyin, pauza bilan, masalan “h, hovli”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Harfdan keyin, pauzasiz, masalan “h hovli”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Harf o\'rniga \"mehmonxona\" kabi</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Nutq sintezatori oʻqiydi</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Bildirishnomalar</string>
     <string name="notification_list_empty">Bildirishnomalar yo‘q</string>
     <string name="notification_list_no_access">Bildirishnomaga kirish o‘chirilgan</string>
-    <string name="notification_list_grant_access">Bildirishnomaga kirishni yoqing</string>
+    <string name="notification_list_grant_access">Bildirishnomalarga ruxsatni yoqish</string>
     <string name="notification_list_quick_settings">Tez sozlamalar</string>
     <string name="notification_list_dismiss">Yopish</string>
     <string name="notification_list_show_all">Hammasini ko\'rsatish</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Probel</string>
     <string name="handwriting_new_line">Yangi qator</string>
     <string name="handwriting_tutorial_intro">Qo\'l yozuvi klaviatura bo\'yicha qo\'llanma. Bir barmoq bilan ekranning istalgan joyiga yozing. Siz yozgan narsa bir zum to\'xtaganingizda yoziladi. Qo‘llanmani tugatish uchun uchta barmoq bilan pastga suring.</string>
-    <string name="handwriting_tutorial_write_letter">A alifbo harfini yozing.</string>
+    <string name="handwriting_tutorial_write_letter">a harfini yozing.</string>
     <string name="handwriting_tutorial_write_word">Endi hi so\'zini yozing (h keyin i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> yozildi.</string>
     <string name="handwriting_tutorial_space">Boʻsh joy kiritish uchun ikki barmoq bilan oʻngga suring.</string>

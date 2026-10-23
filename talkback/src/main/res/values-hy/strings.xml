@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Մուտքագրեք տեքստ ընտրված տարրի պիտակի համար\nՆերքին անվանումը՝ %1$s</string>
   <string name="label_dialog_edit_hint">Պիտակի տեքստը</string>
   <string name="label_import">Ներմուծել հատուկ պիտակներ</string>
-  <string name="label_import_dialog_title">SandFly ներմուծել անհատականացված պիտակներ</string>
+  <string name="label_import_dialog_title">Անհատականացված պիտակների ներմուծում SandFly</string>
   <string name="label_import_dialog_message">Ընտրեք՝ հակասության դեպքում փոխարինել, թե պահպանել առկա պիտակները</string>
   <string name="label_import_dialog_skip">Պահպանել</string>
   <string name="label_import_dialog_override">Վրագրել</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Չթույլատրել</string>
     <string name="permission_speak_label">խոսել SandFly-ի միջոցով</string>
     <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով: SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել:</string>
-    <string name="permission_braille_display_label">խնդրեք լինել բրայլյան էկրան SandFly համար</string>
+    <string name="permission_braille_display_label">SandFly-ի համար բրայլյան էկրան լինելու հարցում</string>
     <string name="permission_braille_display_description">Թույլ է տալիս հավելվածին խնդրել, որ լինի բրայլյան էկրան SandFly համար: Եթե ​​թույլ տաք SandFly, այն կարող է կարդալ էկրանի ամեն ինչ և կառավարել ձեր սարքը: SandFly նախ հարցնում է ձեզ:</string>
     <string name="title_pref_phonetic_letters_mode">Տառերի հնչյունական արտասանություն</string>
     <string name="phonetic_letters_mode_off">Անջատված</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Նամակից հետո՝ ուշացած, ինչպես «հ, հյուրանոց»</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Նամակից հետո առանց ուշացման, ինչպես «h hotel»</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Տառից հետո, դադարով, օրինակ՝ «հ, հյուրանոց»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Տառից հետո, առանց դադարի, օրինակ՝ «հ հյուրանոց»</string>
     <string name="phonetic_letters_mode_instead_of_letter">Նամակի փոխարեն, ինչպես «հյուրանոց»</string>
     <string name="title_pref_emoji_speech">Էմոջի</string>
     <string name="emoji_speech_engine">Կարդացվում է խոսքի սինթեզիչով</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Ծանուցումներ</string>
     <string name="notification_list_empty">Ծանուցումներ չկան</string>
     <string name="notification_list_no_access">Ծանուցումների հասանելիությունն անջատված է</string>
-    <string name="notification_list_grant_access">Միացրեք ծանուցումների հասանելիությունը</string>
+    <string name="notification_list_grant_access">Միացնել ծանուցումների հասանելիությունը</string>
     <string name="notification_list_quick_settings">Արագ կարգավորումներ</string>
     <string name="notification_list_dismiss">Փակել</string>
     <string name="notification_list_show_all">Ցույց տալ բոլորը</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Բացատ</string>
     <string name="handwriting_new_line">Նոր տող</string>
     <string name="handwriting_tutorial_intro">Ձեռագիր ստեղնաշարի ուսուցում: Գրեք մեկ մատով էկրանի ցանկացած կետում: Գրածդ տպվում է, երբ մի պահ կանգ ես առնում։ Ուսուցումն ավարտելու համար երեք մատով սահեցրեք ներքև:</string>
-    <string name="handwriting_tutorial_write_letter">Գրի՛ր այբուբենի տառը:</string>
+    <string name="handwriting_tutorial_write_letter">Գրեք a տառը։</string>
     <string name="handwriting_tutorial_write_word">Այժմ գրեք hi բառը (h որին հաջորդում է i):</string>
     <string name="handwriting_tutorial_typed">Մուտքագրված <xliff:g id="text" example="a">%1$s</xliff:g>:</string>
     <string name="handwriting_tutorial_space">Բացատ մուտքագրելու համար երկու մատով սահեցրեք աջ:</string>

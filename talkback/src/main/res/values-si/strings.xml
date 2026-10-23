@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">SandFly සඳහා බ්‍රේල් සංදර්ශකයක් වීමට යෙදුමට ඉඩ දෙන්න. ඔබ එයට SandFly හි ඉඩ දෙන්නේ නම්, එයට තිරයේ ඇති සියල්ල කියවා ඔබගේ උපාංගය පාලනය කළ හැක. SandFly මුලින්ම ඔබෙන් අසයි.</string>
     <string name="title_pref_phonetic_letters_mode">අක්ෂර උච්චාරණ ලෙස කතා කරන්න</string>
     <string name="phonetic_letters_mode_off">ක්‍රියාවිරහිතයි</string>
-    <string name="phonetic_letters_mode_after_letter_delay">ලිපියෙන් පසුව, \"h, hotel\" වැනි ප්‍රමාද විය</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">ලිපියෙන් පසුව, \"h හෝටලය\" වැනි ප්‍රමාදයක් නැත</string>
+    <string name="phonetic_letters_mode_after_letter_delay">අකුරට පසුව, විරාමයක් සමඟ, උදා. “හ, හාවා”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">අකුරට පසුව, විරාමයක් නොමැතිව, උදා. “හ හාවා”</string>
     <string name="phonetic_letters_mode_instead_of_letter">ලිපිය වෙනුවට, \"හෝටල්\" වැනි</string>
     <string name="title_pref_emoji_speech">ඉමොජි</string>
     <string name="emoji_speech_engine">කථන එන්ජිම කියවයි</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">දැනුම්දීම්</string>
     <string name="notification_list_empty">දැනුම්දීම් නැත</string>
     <string name="notification_list_no_access">දැනුම්දීම් ප්‍රවේශය අක්‍රියයි</string>
-    <string name="notification_list_grant_access">දැනුම්දීම් ප්රවේශය සක්රිය කරන්න</string>
+    <string name="notification_list_grant_access">දැනුම්දීම් ප්‍රවේශය සක්‍රිය කරන්න</string>
     <string name="notification_list_quick_settings">ඉක්මන් සැකසුම්</string>
     <string name="notification_list_dismiss">ඉවත ලන්න</string>
     <string name="notification_list_show_all">සියල්ල පෙන්වන්න</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_download_button">බාගන්න</string>
     <string name="handwriting_downloaded">අත් අකුරු හඳුනාගැනීම බාගත කර ඇත</string>
     <string name="handwriting_download_failed">අත් අකුරු හඳුනාගැනීම බාගැනීමට නොහැකි විය. අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කරන්න.</string>
-    <string name="handwriting_unsupported_language">අත් අකුරු හඳුනාගැනීම මෙම භාෂාවෙන් නොමැත</string>
+    <string name="handwriting_unsupported_language">මෙම භාෂාවෙන් අත් අකුරු හඳුනාගැනීම ලබා ගත නොහැක</string>
     <string name="title_pref_handwriting_keyboard">අත් අකුරු යතුරු පුවරුව</string>
     <string name="summary_pref_handwriting_keyboard">Android හි යතුරුපුවරු සැකසුම් තුළ SandFly අත් අකුරු ක්‍රියාත්මක කරන්න</string>
     <string name="title_pref_handwriting_wait">ලිවීමෙන් පසු රැඳී සිටීම</string>
@@ -1595,8 +1595,8 @@
     <string name="handwriting_space">හිස්තැන</string>
     <string name="handwriting_new_line">නව පේළිය</string>
     <string name="handwriting_tutorial_intro">අත් අකුරු යතුරුපුවරු නිබන්ධනය. තිරයේ ඕනෑම තැනක එක් ඇඟිල්ලකින් ලියන්න. ඔබ ලියන දේ ඔබ මොහොතකට නතර වූ විට ටයිප් වේ. නිබන්ධනය අවසන් කිරීමට, ඇඟිලි තුනකින් පහළට ස්වයිප් කරන්න.</string>
-    <string name="handwriting_tutorial_write_letter">හෝඩියේ අකුර ලියන්න a.</string>
-    <string name="handwriting_tutorial_write_word">දැන් hi (h පසුව i) යන ​​වචනය ලියන්න.</string>
+    <string name="handwriting_tutorial_write_letter">a අකුර ලියන්න.</string>
+    <string name="handwriting_tutorial_write_word">දැන් hi (h පසුව i) යන වචනය ලියන්න.</string>
     <string name="handwriting_tutorial_typed">ටයිප් කළේ <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">ඉඩක් ටයිප් කිරීමට ඇඟිලි දෙකකින් දකුණට ස්වයිප් කරන්න.</string>
     <string name="handwriting_tutorial_delete">කර්සරයට පෙර අක්ෂරය මැකීමට ඇඟිලි දෙකකින් වමට ස්වයිප් කරන්න.</string>

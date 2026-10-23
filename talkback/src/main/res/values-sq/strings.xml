@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Mos lejo</string>
     <string name="permission_speak_label">të folurit përmes SandFly</string>
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
-    <string name="permission_braille_display_label">kërkoni të jetë një ekran braille për SandFly</string>
+    <string name="permission_braille_display_label">kërkesë për të qenë ekran braille për SandFly</string>
     <string name="permission_braille_display_description">Lejon që aplikacioni të kërkojë të jetë një ekran braille për SandFly. Nëse e lejoni në SandFly, ai mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet ju së pari.</string>
     <string name="title_pref_phonetic_letters_mode">Fol shkronjat fonetikisht</string>
     <string name="phonetic_letters_mode_off">Joaktive</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Pas letrës, me vonesë, si \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Pas letrës, pa vonesë, si \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Pas shkronjës, me pauzë, si “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Pas shkronjës, pa pauzë, si “h hotel”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Në vend të letrës, si \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">I lexon motori i të folurit</string>
@@ -1441,7 +1441,7 @@
     <string name="notification_part_playback">Po luhet ose në pauzë</string>
     <string name="notification_list_title">Njoftimet</string>
     <string name="notification_list_empty">Nuk ka njoftime</string>
-    <string name="notification_list_no_access">Qasja në njoftim është joaktiv</string>
+    <string name="notification_list_no_access">Qasja në njoftime është joaktive</string>
     <string name="notification_list_grant_access">Aktivizo qasjen në njoftim</string>
     <string name="notification_list_quick_settings">Cilësimet e shpejta</string>
     <string name="notification_list_dismiss">Hiqe</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Hapësirë</string>
     <string name="handwriting_new_line">Rresht i ri</string>
     <string name="handwriting_tutorial_intro">Udhëzues për tastierën e shkrimit të dorës. Shkruani me një gisht kudo në ekran. Ajo që shkruani shtypet kur ndaloni për një moment. Për të përfunduar tutorialin, rrëshqitni poshtë me tre gishta.</string>
-    <string name="handwriting_tutorial_write_letter">Shkruani shkronjën e alfabetit a.</string>
+    <string name="handwriting_tutorial_write_letter">Shkruani shkronjën a.</string>
     <string name="handwriting_tutorial_write_word">Tani shkruani fjalën hi (h e ndjekur nga i).</string>
     <string name="handwriting_tutorial_typed">U shkrua <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Rrëshqitni djathtas me dy gishta për të shkruar një hapësirë.</string>

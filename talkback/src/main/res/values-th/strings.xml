@@ -1403,8 +1403,8 @@
     <string name="permission_braille_display_description">ให้แอปขอเป็นจอแสดงผลอักษรเบรลล์สำหรับ SandFly หากคุณอนุญาตใน SandFly จะสามารถอ่านทุกอย่างบนหน้าจอและควบคุมอุปกรณ์ของคุณได้ SandFly ถามคุณก่อน</string>
     <string name="title_pref_phonetic_letters_mode">พูดตัวอักษรตามสัทศาสตร์</string>
     <string name="phonetic_letters_mode_off">ปิด</string>
-    <string name="phonetic_letters_mode_after_letter_delay">หลังจากจดหมายล่าช้าเช่น \"h โรงแรม\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">หลังจดหมายไม่รอช้าเหมือน “โรงแรมเอช”</string>
+    <string name="phonetic_letters_mode_after_letter_delay">หลังตัวอักษร เว้นช่วง เช่น “ห, หีบ”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">หลังตัวอักษร ไม่เว้นช่วง เช่น “ห หีบ”</string>
     <string name="phonetic_letters_mode_instead_of_letter">แทนที่จะเป็นตัวอักษร เช่น \"โรงแรม\"</string>
     <string name="title_pref_emoji_speech">อิโมจิ</string>
     <string name="emoji_speech_engine">เอนจินเสียงพูดอ่าน</string>
@@ -1596,7 +1596,7 @@
     <string name="handwriting_space">วรรค</string>
     <string name="handwriting_new_line">บรรทัดใหม่</string>
     <string name="handwriting_tutorial_intro">บทช่วยสอนแป้นพิมพ์เขียนด้วยลายมือ เขียนด้วยนิ้วเดียวได้ทุกที่บนหน้าจอ สิ่งที่คุณเขียนจะถูกพิมพ์เมื่อคุณหยุดสักครู่ หากต้องการสิ้นสุดบทช่วยสอน ให้ใช้สามนิ้วปัดลง</string>
-    <string name="handwriting_tutorial_write_letter">เขียนตัวอักษรตัวอักษรก</string>
+    <string name="handwriting_tutorial_write_letter">เขียนตัวอักษร a</string>
     <string name="handwriting_tutorial_write_word">ตอนนี้เขียนคำว่า hi (h ตามด้วย i)</string>
     <string name="handwriting_tutorial_typed">พิมพ์ <xliff:g id="text" example="a">%1$s</xliff:g></string>
     <string name="handwriting_tutorial_space">ปัดไปทางขวาด้วยสองนิ้วเพื่อพิมพ์ช่องว่าง</string>

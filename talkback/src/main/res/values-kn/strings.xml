@@ -1399,12 +1399,12 @@
     <string name="speech_control_deny">ಅನುಮತಿಸಬೇಡ</string>
     <string name="permission_speak_label">SandFly ಮೂಲಕ ಮಾತನಾಡುವುದು</string>
     <string name="permission_speak_description">ನಿಮ್ಮ SandFly ಧ್ವನಿಯಲ್ಲಿ ಪಠ್ಯವನ್ನು ಹೇಳಲು ಅಪ್ಲಿಕೇಶನ್ ಕೇಳಲು ಅನುಮತಿಸುತ್ತದೆ. ಅಪ್ಲಿಕೇಶನ್ ಮಾತನಾಡುವ ಮೊದಲು SandFly ನಿಮ್ಮನ್ನು ಕೇಳುತ್ತದೆ.</string>
-    <string name="permission_braille_display_label">SandFly ಗಾಗಿ ಬ್ರೈಲ್ ಪ್ರದರ್ಶನವಾಗಲು ಕೇಳಿ</string>
+    <string name="permission_braille_display_label">SandFly ಗಾಗಿ ಬ್ರೈಲ್ ಡಿಸ್‌ಪ್ಲೇ ಆಗಲು ಕೇಳುವುದು</string>
     <string name="permission_braille_display_description">SandFly ಗಾಗಿ ಬ್ರೈಲ್ ಡಿಸ್‌ಪ್ಲೇ ಆಗಲು ಅಪ್ಲಿಕೇಶನ್ ಕೇಳಲು ಅನುಮತಿಸುತ್ತದೆ. ನೀವು ಅದನ್ನು SandFly ನಲ್ಲಿ ಅನುಮತಿಸಿದರೆ, ಅದು ಪರದೆಯ ಮೇಲಿನ ಎಲ್ಲವನ್ನೂ ಓದಬಹುದು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನವನ್ನು ನಿಯಂತ್ರಿಸಬಹುದು. SandFly ಮೊದಲು ನಿಮ್ಮನ್ನು ಕೇಳುತ್ತದೆ.</string>
     <string name="title_pref_phonetic_letters_mode">ಅಕ್ಷರಗಳನ್ನು ಫೋನೆಟಿಕ್ ಆಗಿ ಓದಿ</string>
     <string name="phonetic_letters_mode_off">ಆಫ್</string>
-    <string name="phonetic_letters_mode_after_letter_delay">ಪತ್ರದ ನಂತರ, \"h, ಹೋಟೆಲ್\" ನಂತಹ ವಿಳಂಬವಾಗಿದೆ</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">ಪತ್ರದ ನಂತರ, ಯಾವುದೇ ವಿಳಂಬವಿಲ್ಲ, \"h ಹೋಟೆಲ್\" ನಂತೆ</string>
+    <string name="phonetic_letters_mode_after_letter_delay">ಅಕ್ಷರದ ನಂತರ, ವಿರಾಮದೊಂದಿಗೆ, ಉದಾ. “ಹ, ಹಸು”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">ಅಕ್ಷರದ ನಂತರ, ವಿರಾಮವಿಲ್ಲದೆ, ಉದಾ. “ಹ ಹಸು”</string>
     <string name="phonetic_letters_mode_instead_of_letter">ಅಕ್ಷರದ ಬದಲಿಗೆ, \"ಹೋಟೆಲ್\" ನಂತೆ</string>
     <string name="title_pref_emoji_speech">ಎಮೋಜಿ</string>
     <string name="emoji_speech_engine">ಸ್ಪೀಚ್ ಎಂಜಿನ್ ಓದುತ್ತದೆ</string>
@@ -1596,7 +1596,7 @@
     <string name="handwriting_space">ಸ್ಪೇಸ್</string>
     <string name="handwriting_new_line">ಹೊಸ ಸಾಲು</string>
     <string name="handwriting_tutorial_intro">ಕೈಬರಹ ಕೀಬೋರ್ಡ್ ಟ್ಯುಟೋರಿಯಲ್. ಪರದೆಯ ಮೇಲೆ ಎಲ್ಲಿಯಾದರೂ ಒಂದು ಬೆರಳಿನಿಂದ ಬರೆಯಿರಿ. ನೀವು ಒಂದು ಕ್ಷಣ ನಿಲ್ಲಿಸಿದಾಗ ನೀವು ಬರೆಯುವುದನ್ನು ಟೈಪ್ ಮಾಡಲಾಗುತ್ತದೆ. ಟ್ಯುಟೋರಿಯಲ್ ಅನ್ನು ಕೊನೆಗೊಳಿಸಲು, ಮೂರು ಬೆರಳುಗಳಿಂದ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ.</string>
-    <string name="handwriting_tutorial_write_letter">ವರ್ಣಮಾಲೆಯ ಅಕ್ಷರವನ್ನು ಬರೆಯಿರಿ a.</string>
+    <string name="handwriting_tutorial_write_letter">a ಅಕ್ಷರವನ್ನು ಬರೆಯಿರಿ.</string>
     <string name="handwriting_tutorial_write_word">ಈಗ hi ಪದವನ್ನು ಬರೆಯಿರಿ (h ನಂತರ i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> ಎಂದು ಟೈಪ್ ಮಾಡಲಾಗಿದೆ.</string>
     <string name="handwriting_tutorial_space">ಸ್ಪೇಸ್ ಟೈಪ್ ಮಾಡಲು ಎರಡು ಬೆರಳುಗಳಿಂದ ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ.</string>

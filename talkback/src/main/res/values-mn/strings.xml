@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">Апп нь SandFly-ийн брайл дэлгэц байхыг хүсэх боломжийг олгоно. Хэрэв та үүнийг SandFly-д зөвшөөрвөл дэлгэц дээрх бүх зүйлийг уншиж, таны төхөөрөмжийг удирдах боломжтой. SandFly эхлээд танаас асууж байна.</string>
     <string name="title_pref_phonetic_letters_mode">Үсгийг авиа зүйн дагуу хэлэх</string>
     <string name="phonetic_letters_mode_off">Унтраалттай</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Захидлын дараа \"h, зочид буудал\" гэх мэт саатсан.</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Захидлын дараа \"h hotel\" гэх мэт сааталгүй</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Үсгийн дараа, завсарлагатай, жишээ нь «х, хонь»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Үсгийн дараа, завсарлагагүй, жишээ нь «х хонь»</string>
     <string name="phonetic_letters_mode_instead_of_letter">\"Зочид буудал\" гэх мэт үсгийн оронд</string>
     <string name="title_pref_emoji_speech">Эможи</string>
     <string name="emoji_speech_engine">Ярианы хөдөлгүүр уншина</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Мэдэгдлүүд</string>
     <string name="notification_list_empty">Мэдэгдэл алга</string>
     <string name="notification_list_no_access">Мэдэгдлийн хандалт идэвхгүй байна</string>
-    <string name="notification_list_grant_access">Мэдэгдлийн хандалтыг асаана уу</string>
+    <string name="notification_list_grant_access">Мэдэгдлийн хандалтыг асаах</string>
     <string name="notification_list_quick_settings">Шуурхай тохиргоо</string>
     <string name="notification_list_dismiss">Хаах</string>
     <string name="notification_list_show_all">Бүгдийг харуулах</string>
@@ -1595,8 +1595,8 @@
     <string name="handwriting_space">Хоосон зай</string>
     <string name="handwriting_new_line">Шинэ мөр</string>
     <string name="handwriting_tutorial_intro">Гараар бичих гарын заавар. Дэлгэцийн аль ч хэсэгт нэг хуруугаараа бичээрэй. Хэсэг зуур зогсоход таны бичсэн зүйл бичдэг. Хичээлийг дуусгахын тулд гурван хуруугаараа доош шударна уу.</string>
-    <string name="handwriting_tutorial_write_letter">Цагаан толгойн үсгийг бичнэ үү.</string>
-    <string name="handwriting_tutorial_write_word">Одоо hi (h араас нь i) гэсэн үгийг бич.</string>
+    <string name="handwriting_tutorial_write_letter">a үсгийг бичнэ үү.</string>
+    <string name="handwriting_tutorial_write_word">Одоо hi (h араас нь i) гэсэн үгийг бичнэ үү.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> гэж бичсэн.</string>
     <string name="handwriting_tutorial_space">Хоосон зай бичихийн тулд хоёр хуруугаараа баруун тийш шударна уу.</string>
     <string name="handwriting_tutorial_delete">Курсорын өмнөх тэмдэгтийг устгахын тулд хоёр хуруугаараа зүүн тийш шударна уу.</string>

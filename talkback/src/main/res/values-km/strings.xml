@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">មិនអនុញ្ញាត</string>
     <string name="permission_speak_label">និយាយតាមរយៈSandFly</string>
     <string name="permission_speak_description">អនុញ្ញាតឱ្យកម្មវិធីសុំនិយាយអត្ថបទជាសំឡេង SandFly របស់អ្នក។ SandFly សួរអ្នកមុនពេលកម្មវិធីអាចនិយាយបាន។</string>
-    <string name="permission_braille_display_label">សុំធ្វើជាការបង្ហាញអក្សរស្ទាបសម្រាប់ SandFly</string>
+    <string name="permission_braille_display_label">សុំធ្វើជាឧបករណ៍បង្ហាញអក្សរស្ទាបសម្រាប់ SandFly</string>
     <string name="permission_braille_display_description">អនុញ្ញាតឱ្យកម្មវិធីស្នើសុំឱ្យបង្ហាញជាអក្សរស្ទាបសម្រាប់ SandFly។ ប្រសិនបើអ្នកអនុញ្ញាតវានៅក្នុង SandFly វាអាចអានអ្វីគ្រប់យ៉ាងនៅលើអេក្រង់ និងគ្រប់គ្រងឧបករណ៍របស់អ្នក។ SandFly សួរអ្នកមុនគេ។</string>
     <string name="title_pref_phonetic_letters_mode">និយាយអក្សរតាមសូរសព្ទ</string>
     <string name="phonetic_letters_mode_off">បិទ</string>
-    <string name="phonetic_letters_mode_after_letter_delay">បន្ទាប់ពីលិខិតនោះ ពន្យារពេលដូចជា \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">បន្ទាប់ពីសំបុត្រមិនបង្អង់យូរ ដូចជា \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">បន្ទាប់ពីអក្សរ មានផ្អាក ដូចជា “ក, កង់”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">បន្ទាប់ពីអក្សរ គ្មានផ្អាក ដូចជា “ក កង់”</string>
     <string name="phonetic_letters_mode_instead_of_letter">ជំនួសឱ្យអក្សរដូចជា \"សណ្ឋាគារ\"</string>
     <string name="title_pref_emoji_speech">សញ្ញាអារម្មណ៍</string>
     <string name="emoji_speech_engine">ម៉ាស៊ីននិយាយអាន</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">ដកឃ្លា</string>
     <string name="handwriting_new_line">បន្ទាត់ថ្មី</string>
     <string name="handwriting_tutorial_intro">ការបង្រៀនក្តារចុចសរសេរដោយដៃ។ សរសេរដោយប្រើម្រាមដៃមួយកន្លែងណាក៏ដោយនៅលើអេក្រង់។ អ្វីដែលអ្នកសរសេរត្រូវបានវាយនៅពេលអ្នកឈប់មួយភ្លែត។ ដើម្បីបញ្ចប់ការបង្រៀន សូមអូសចុះក្រោមដោយប្រើម្រាមដៃបី។</string>
-    <string name="handwriting_tutorial_write_letter">សរសេរអក្សរអក្ខរក្រម ក.</string>
+    <string name="handwriting_tutorial_write_letter">សរសេរអក្សរ a។</string>
     <string name="handwriting_tutorial_write_word">ឥឡូវសរសេរពាក្យ hi (h តាមដោយ i) ។</string>
     <string name="handwriting_tutorial_typed">វាយ <xliff:g id="text" example="a">%1$s</xliff:g>។</string>
     <string name="handwriting_tutorial_space">អូសទៅស្តាំដោយប្រើម្រាមដៃពីរដើម្បីវាយដកឃ្លា។</string>

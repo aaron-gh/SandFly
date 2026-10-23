@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Unesite tekst koji će se koristiti kao oznaka za ovaj element\nNaziv internog prikaza: %1$s</string>
   <string name="label_dialog_edit_hint">Tekst oznake</string>
   <string name="label_import">Uvezi prilagođene oznake</string>
-  <string name="label_import_dialog_title">Uvezite prilagođene oznake u SandFly</string>
+  <string name="label_import_dialog_title">Uvoz prilagođenih oznaka u SandFly</string>
   <string name="label_import_dialog_message">Odaberite da li želite da zamenite ili preskočite postojeće oznake u slučaju neusklađenosti</string>
   <string name="label_import_dialog_skip">Preskoči</string>
   <string name="label_import_dialog_override">Zameni</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Ne dozvoli</string>
     <string name="permission_speak_label">govor preko SandFly-a</string>
     <string name="permission_speak_description">Dozvoljava aplikaciji da traži da kaže tekst vašim glasom SandFly. SandFly vas pita pre nego što aplikacija može da govori.</string>
-    <string name="permission_braille_display_label">traži da bude Brajev ekran za SandFly</string>
+    <string name="permission_braille_display_label">zahtev da bude Brajev ekran za SandFly</string>
     <string name="permission_braille_display_description">Dozvoljava aplikaciji da traži da bude prikazan na Brajevom azbuku za SandFly. Ako to dozvolite u SandFly, može da čita sve na ekranu i kontroliše vaš uređaj. SandFly vas prvo pita.</string>
     <string name="title_pref_phonetic_letters_mode">Izgovaraj slova fonetski</string>
     <string name="phonetic_letters_mode_off">Isključeno</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Posle pisma, odloženo, kao \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Posle pisma, bez odlaganja, kao \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Posle slova, sa pauzom, npr. „h, Hristina“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Posle slova, bez pauze, npr. „h Hristina“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, kao \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emodži</string>
     <string name="emoji_speech_engine">Čita govorni mehanizam</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Obaveštenja</string>
     <string name="notification_list_empty">Nema obaveštenja</string>
     <string name="notification_list_no_access">Pristup obaveštenjima je isključen</string>
-    <string name="notification_list_grant_access">Uključite pristup obaveštenjima</string>
+    <string name="notification_list_grant_access">Uključi pristup obaveštenjima</string>
     <string name="notification_list_quick_settings">Brza podešavanja</string>
     <string name="notification_list_dismiss">Odbaci</string>
     <string name="notification_list_show_all">Prikaži sve</string>
@@ -1599,8 +1599,8 @@
     <string name="handwriting_space">Razmak</string>
     <string name="handwriting_new_line">Novi red</string>
     <string name="handwriting_tutorial_intro">Vodič za tastaturu rukopisa. Pišite jednim prstom bilo gde na ekranu. Ono što napišete se otkucava kada zastanete na trenutak. Da biste završili vodič, prevucite nadole sa tri prsta.</string>
-    <string name="handwriting_tutorial_write_letter">Napiši slovo abecede a.</string>
-    <string name="handwriting_tutorial_write_word">Sada napišite reč hi (h praćeno i).</string>
+    <string name="handwriting_tutorial_write_letter">Napišite slovo a.</string>
+    <string name="handwriting_tutorial_write_word">Sada napišite reč hi (h, pa i).</string>
     <string name="handwriting_tutorial_typed">Otkucano <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Prevucite udesno sa dva prsta da biste uneli razmak.</string>
     <string name="handwriting_tutorial_delete">Prevucite nalevo sa dva prsta da biste izbrisali znak ispred kursora.</string>

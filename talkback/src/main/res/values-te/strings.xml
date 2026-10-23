@@ -1389,12 +1389,12 @@
     <string name="speech_control_deny">అనుమతించవద్దు</string>
     <string name="permission_speak_label">SandFly ద్వారా మాట్లాడటం</string>
     <string name="permission_speak_description">మీ SandFly వాయిస్‌లో వచనం చెప్పమని యాప్‌ని అడుగుతుంది. యాప్ మాట్లాడే ముందు SandFly మిమ్మల్ని అడుగుతుంది.</string>
-    <string name="permission_braille_display_label">SandFly కోసం బ్రెయిలీ ప్రదర్శనగా ఉండమని అడగండి</string>
+    <string name="permission_braille_display_label">SandFly కోసం బ్రెయిలీ డిస్‌ప్లేగా ఉండేందుకు అభ్యర్థించడం</string>
     <string name="permission_braille_display_description">SandFly కోసం బ్రెయిలీ డిస్‌ప్లే కావాలని యాప్‌ని అడుగుతుంది. మీరు దీన్ని SandFlyలో అనుమతిస్తే, అది స్క్రీన్‌పై ఉన్న ప్రతిదాన్ని చదవగలదు మరియు మీ పరికరాన్ని నియంత్రించగలదు. SandFly ముందుగా మిమ్మల్ని అడుగుతుంది.</string>
     <string name="title_pref_phonetic_letters_mode">అక్షరాలను ఫొనెటిక్‌గా మాట్లాడండి</string>
     <string name="phonetic_letters_mode_off">ఆఫ్‌లో ఉంది</string>
-    <string name="phonetic_letters_mode_after_letter_delay">లేఖ తర్వాత, \"h, hotel\" వంటి ఆలస్యం</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">లేఖ తర్వాత, \"h హోటల్\" వంటి ఆలస్యం లేదు</string>
+    <string name="phonetic_letters_mode_after_letter_delay">అక్షరం తర్వాత, విరామంతో, ఉదా. “హ, హంస”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">అక్షరం తర్వాత, విరామం లేకుండా, ఉదా. “హ హంస”</string>
     <string name="phonetic_letters_mode_instead_of_letter">అక్షరానికి బదులుగా, \"హోటల్\" లాగా</string>
     <string name="title_pref_emoji_speech">ఎమోజి</string>
     <string name="emoji_speech_engine">స్పీచ్ ఇంజిన్ చదువుతుంది</string>
@@ -1433,7 +1433,7 @@
     <string name="notification_list_title">నోటిఫికేషన్‌లు</string>
     <string name="notification_list_empty">నోటిఫికేషన్‌లు లేవు</string>
     <string name="notification_list_no_access">నోటిఫికేషన్ యాక్సెస్ ఆఫ్ చేయబడింది</string>
-    <string name="notification_list_grant_access">నోటిఫికేషన్ యాక్సెస్‌ని ఆన్ చేయండి</string>
+    <string name="notification_list_grant_access">నోటిఫికేషన్ యాక్సెస్‌ను ఆన్ చేయి</string>
     <string name="notification_list_quick_settings">త్వరిత సెట్టింగ్‌లు</string>
     <string name="notification_list_dismiss">తీసివేయండి</string>
     <string name="notification_list_show_all">అన్నీ చూపించు</string>
@@ -1586,7 +1586,7 @@
     <string name="handwriting_space">స్పేస్</string>
     <string name="handwriting_new_line">కొత్త పంక్తి</string>
     <string name="handwriting_tutorial_intro">చేతివ్రాత కీబోర్డ్ ట్యుటోరియల్. స్క్రీన్‌పై ఎక్కడైనా ఒక వేలితో రాయండి. మీరు రాసేది ఒక్క క్షణం ఆగినప్పుడు టైప్ అవుతుంది. ట్యుటోరియల్‌ని ముగించడానికి, మూడు వేళ్లతో క్రిందికి స్వైప్ చేయండి.</string>
-    <string name="handwriting_tutorial_write_letter">A అనే వర్ణమాల అక్షరాన్ని వ్రాయండి.</string>
+    <string name="handwriting_tutorial_write_letter">a అనే అక్షరాన్ని వ్రాయండి.</string>
     <string name="handwriting_tutorial_write_word">ఇప్పుడు hi (h తరువాత i) అనే పదాన్ని వ్రాయండి.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> అని టైప్ చేసారు.</string>
     <string name="handwriting_tutorial_space">ఖాళీని టైప్ చేయడానికి రెండు వేళ్లతో కుడివైపుకు స్వైప్ చేయండి.</string>

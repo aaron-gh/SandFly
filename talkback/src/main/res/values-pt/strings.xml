@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
     <string name="permission_speak_description">Permite que o aplicativo peça para dizer o texto na sua voz SandFly. SandFly pergunta antes que o aplicativo possa falar.</string>
-    <string name="permission_braille_display_label">peça para ser um display braille para SandFly</string>
+    <string name="permission_braille_display_label">pedir para ser uma linha braille do SandFly</string>
     <string name="permission_braille_display_description">Permite que o aplicativo solicite um display braille para SandFly. Se você permitir a entrada SandFly, ele poderá ler tudo na tela e controlar seu dispositivo. SandFly pergunta primeiro.</string>
     <string name="title_pref_phonetic_letters_mode">Falar letras foneticamente</string>
     <string name="phonetic_letters_mode_off">Desativado</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Depois da carta, atrasada, tipo \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Depois da carta, sem demora, como \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Depois da letra, com pausa, como “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Depois da letra, sem pausa, como “h hotel”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Em vez da letra, como \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Lidos pelo mecanismo de voz</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Notificações</string>
     <string name="notification_list_empty">Sem notificações</string>
     <string name="notification_list_no_access">O acesso às notificações está desativado</string>
-    <string name="notification_list_grant_access">Ative o acesso às notificações</string>
+    <string name="notification_list_grant_access">Ativar acesso às notificações</string>
     <string name="notification_list_quick_settings">Configurações rápidas</string>
     <string name="notification_list_dismiss">Dispensar</string>
     <string name="notification_list_show_all">Mostrar tudo</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Espaço</string>
     <string name="handwriting_new_line">Nova linha</string>
     <string name="handwriting_tutorial_intro">Tutorial de teclado de escrita manual. Escreva com um dedo em qualquer lugar da tela. O que você escreve é ​​digitado quando você para por um momento. Para finalizar o tutorial, deslize três dedos para baixo.</string>
-    <string name="handwriting_tutorial_write_letter">Escreva a letra do alfabeto a.</string>
+    <string name="handwriting_tutorial_write_letter">Escreva a letra a.</string>
     <string name="handwriting_tutorial_write_word">Agora escreva a palavra hi (h seguido de i).</string>
     <string name="handwriting_tutorial_typed">Digitado <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Deslize para a direita com dois dedos para digitar um espaço.</string>

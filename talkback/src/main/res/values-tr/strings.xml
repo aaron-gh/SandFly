@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Bu öğe için etiket olarak kullanılacak metni girin\nDahili görünüm adı: %1$s</string>
   <string name="label_dialog_edit_hint">Etiket metni</string>
   <string name="label_import">Özel etiketleri içe aktar</string>
-  <string name="label_import_dialog_title">Özel etiketleri SandFly\'e içe aktarın</string>
+  <string name="label_import_dialog_title">Özel etiketleri SandFly\'a aktar</string>
   <string name="label_import_dialog_message">Çakışma durumunda mevcut etiketlerin geçersiz kılınmasını mı yoksa atlanmasını mı istediğinizi seçin</string>
   <string name="label_import_dialog_skip">Atla</string>
   <string name="label_import_dialog_override">Geçersiz kıl</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">İzin verme</string>
     <string name="permission_speak_label">SandFly aracılığıyla konuşma</string>
     <string name="permission_speak_description">Uygulamanın metni sizin SandFly sesinizle söylemesini istemesine izin verir. SandFly uygulamanın konuşabilmesi için size sorar.</string>
-    <string name="permission_braille_display_label">SandFly için braille ekranı olmasını isteyin</string>
+    <string name="permission_braille_display_label">SandFly için braille ekranı olmayı isteme</string>
     <string name="permission_braille_display_description">Uygulamanın SandFly için braille ekranı olmasını istemesine izin verir. SandFly izin verirseniz ekrandaki her şeyi okuyabilir ve cihazınızı kontrol edebilir. SandFly önce size sorar.</string>
     <string name="title_pref_phonetic_letters_mode">Harfleri fonetik olarak söyle</string>
     <string name="phonetic_letters_mode_off">Kapalı</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Mektuptan sonra \"h, otel\" gibi gecikti</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Mektuptan sonra \"h hotel\" gibi gecikme yok</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Harften sonra, duraklamalı, örneğin “h, Hasan”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Harften sonra, duraklamasız, örneğin “h Hasan”</string>
     <string name="phonetic_letters_mode_instead_of_letter">\"Otel\" gibi bir harf yerine</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Konuşma motoru okur</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Bildirimler</string>
     <string name="notification_list_empty">Bildirim yok</string>
     <string name="notification_list_no_access">Bildirim erişimi kapalı</string>
-    <string name="notification_list_grant_access">Bildirim erişimini açın</string>
+    <string name="notification_list_grant_access">Bildirim erişimini aç</string>
     <string name="notification_list_quick_settings">Hızlı ayarlar</string>
     <string name="notification_list_dismiss">Kapat</string>
     <string name="notification_list_show_all">Tümünü göster</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Boşluk</string>
     <string name="handwriting_new_line">Yeni satır</string>
     <string name="handwriting_tutorial_intro">El yazısı klavye öğreticisi. Tek parmağınızla ekranın herhangi bir yerine yazın. Bir an durduğunuzda yazdıklarınız yazılır. Öğreticiyi sonlandırmak için üç parmağınızla aşağı kaydırın.</string>
-    <string name="handwriting_tutorial_write_letter">Alfabenin a harfini yazın.</string>
+    <string name="handwriting_tutorial_write_letter">a harfini yazın.</string>
     <string name="handwriting_tutorial_write_word">Şimdi hi kelimesini yazın (h ve ardından i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> yazıldı.</string>
     <string name="handwriting_tutorial_space">Boşluk yazmak için iki parmağınızla sağa doğru kaydırın.</string>

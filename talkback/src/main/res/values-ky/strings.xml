@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">Колдонмого SandFly үчүн Брайл дисплейи болууга уруксат берүү. Эгер ага SandFly ичинде уруксат берсеңиз, ал экрандагы баарын окуп, түзмөгүңүздү башкара алат. SandFly биринчи сизден сурайт.</string>
     <string name="title_pref_phonetic_letters_mode">Тамгаларды фонетикалык жактан сүйлөө</string>
     <string name="phonetic_letters_mode_off">Өчүк</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Каттан кийин кечигип, \"ч, мейманкана\" сыяктуу</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Каттан кийин, \"h hotel\" сыяктуу кечигүү жок</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Тамгадан кийин, тыным менен, мисалы «а, Алма»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Тамгадан кийин, тынымсыз, мисалы «а Алма»</string>
     <string name="phonetic_letters_mode_instead_of_letter">Каттын ордуна, \"мейманкана\" сыяктуу</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
     <string name="emoji_speech_engine">Кеп кыймылдаткычы окуйт</string>
@@ -1441,8 +1441,8 @@
     <string name="notification_part_playback">Ойнотулууда же тындырылган</string>
     <string name="notification_list_title">Билдирмелер</string>
     <string name="notification_list_empty">Билдирмелер жок</string>
-    <string name="notification_list_no_access">Эскертмеге кирүү өчүк</string>
-    <string name="notification_list_grant_access">Билдирүү мүмкүнчүлүгүн күйгүзүңүз</string>
+    <string name="notification_list_no_access">Билдирмелерге кирүү өчүк</string>
+    <string name="notification_list_grant_access">Билдирмелерге кирүүнү күйгүзүү</string>
     <string name="notification_list_quick_settings">Ыкчам орнотуулар</string>
     <string name="notification_list_dismiss">Жабуу</string>
     <string name="notification_list_show_all">Баарын көрсөтүү</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Боштук</string>
     <string name="handwriting_new_line">Жаңы сап</string>
     <string name="handwriting_tutorial_intro">Колжазма клавиатура окуу куралы. Экрандын каалаган жерине бир манжаңыз менен жазыңыз. Жазганыңыз бир аз токтоп калганда терилип калат. Үйрөткүчтү бүтүрүү үчүн үч манжаңыз менен ылдый сүрүңүз.</string>
-    <string name="handwriting_tutorial_write_letter">Алфавиттин а тамгасын жаз.</string>
+    <string name="handwriting_tutorial_write_letter">a тамгасын жазыңыз.</string>
     <string name="handwriting_tutorial_write_word">Эми hi деген сөздү жазыңыз (h андан кийин i).</string>
     <string name="handwriting_tutorial_typed">Терилген <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Боштук терүү үчүн эки манжаңыз менен оңго сүрүңүз.</string>

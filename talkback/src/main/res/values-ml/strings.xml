@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">അനുവദിക്കരുത്</string>
     <string name="permission_speak_label">SandFly വഴി സംസാരിക്കൽ</string>
     <string name="permission_speak_description">നിങ്ങളുടെ SandFly ശബ്ദത്തിൽ വാചകം പറയാൻ ആപ്പിനെ അനുവദിക്കുന്നു. ആപ്പ് സംസാരിക്കുന്നതിന് മുമ്പ് SandFly നിങ്ങളോട് ചോദിക്കുന്നു.</string>
-    <string name="permission_braille_display_label">SandFly-ന് ഒരു ബ്രെയിൽ ഡിസ്പ്ലേ ആകാൻ ആവശ്യപ്പെടുക</string>
+    <string name="permission_braille_display_label">SandFly-ന്റെ ബ്രെയിൽ ഡിസ്‌പ്ലേ ആകാനുള്ള അഭ്യർത്ഥന</string>
     <string name="permission_braille_display_description">SandFly-ന് ബ്രെയിൽ ഡിസ്‌പ്ലേ ആകാൻ ആപ്പിനെ അനുവദിക്കുന്നു. നിങ്ങൾ ഇത് SandFly-ൽ അനുവദിക്കുകയാണെങ്കിൽ, അതിന് സ്ക്രീനിലെ എല്ലാം വായിക്കാനും നിങ്ങളുടെ ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും. SandFly നിങ്ങളോട് ആദ്യം ചോദിക്കുന്നു.</string>
     <string name="title_pref_phonetic_letters_mode">അക്ഷരങ്ങൾ സ്വരസൂചകമായി സംസാരിക്കുക</string>
     <string name="phonetic_letters_mode_off">ഓഫാണ്</string>
-    <string name="phonetic_letters_mode_after_letter_delay">കത്തിന് ശേഷം, \"h, ഹോട്ടൽ\" പോലെ വൈകി.</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">കത്തിന് ശേഷം, \"h ഹോട്ടൽ\" പോലെ കാലതാമസമില്ല</string>
+    <string name="phonetic_letters_mode_after_letter_delay">അക്ഷരത്തിന് ശേഷം, ഇടവേളയോടെ, ഉദാ. “ഹ, ഹംസം”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">അക്ഷരത്തിന് ശേഷം, ഇടവേളയില്ലാതെ, ഉദാ. “ഹ ഹംസം”</string>
     <string name="phonetic_letters_mode_instead_of_letter">അക്ഷരത്തിന് പകരം \"ഹോട്ടൽ\" പോലെ</string>
     <string name="title_pref_emoji_speech">ഇമോജി</string>
     <string name="emoji_speech_engine">സംഭാഷണ എഞ്ചിൻ വായിക്കുന്നു</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">സ്പെയ്സ്</string>
     <string name="handwriting_new_line">പുതിയ വരി</string>
     <string name="handwriting_tutorial_intro">കൈയക്ഷരം കീബോർഡ് ട്യൂട്ടോറിയൽ. സ്ക്രീനിൽ എവിടെയും ഒരു വിരൽ കൊണ്ട് എഴുതുക. നിങ്ങൾ എഴുതുന്നത് ഒരു നിമിഷം നിർത്തുമ്പോൾ ടൈപ്പ് ചെയ്യുന്നു. ട്യൂട്ടോറിയൽ അവസാനിപ്പിക്കാൻ, മൂന്ന് വിരലുകൾ ഉപയോഗിച്ച് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>
-    <string name="handwriting_tutorial_write_letter">A എന്ന അക്ഷരമാല എഴുതുക.</string>
+    <string name="handwriting_tutorial_write_letter">a എന്ന അക്ഷരം എഴുതുക.</string>
     <string name="handwriting_tutorial_write_word">ഇപ്പോൾ hi എന്ന വാക്ക് എഴുതുക (h തുടർന്ന് i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> എന്ന് ടൈപ്പ് ചെയ്തു.</string>
     <string name="handwriting_tutorial_space">ഒരു സ്‌പെയ്‌സ് ടൈപ്പുചെയ്യാൻ രണ്ട് വിരലുകൾ ഉപയോഗിച്ച് വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക.</string>

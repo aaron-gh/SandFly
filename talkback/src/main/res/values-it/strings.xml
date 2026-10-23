@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Non permettere</string>
     <string name="permission_speak_label">parlare attraverso SandFly</string>
     <string name="permission_speak_description">Consente all\'app di chiedere di pronunciare il testo con la tua voce SandFly. SandFly te lo chiede prima che l\'app possa parlare.</string>
-    <string name="permission_braille_display_label">chiedi di essere un display braille per SandFly</string>
+    <string name="permission_braille_display_label">chiedere di essere un display braille per SandFly</string>
     <string name="permission_braille_display_description">Consente all\'app di chiedere di essere un display Braille per SandFly. Se lo consenti in SandFly, può leggere tutto sullo schermo e controllare il tuo dispositivo. SandFly te lo chiede per primo.</string>
     <string name="title_pref_phonetic_letters_mode">Pronuncia le lettere foneticamente</string>
     <string name="phonetic_letters_mode_off">Disattivato</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Dopo la lettera, in ritardo, come \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Dopo la lettera, nessun ritardo, come \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Dopo la lettera, con pausa, come “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Dopo la lettera, senza pausa, come “h hotel”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Invece della lettera, come \"hotel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Letto dal motore vocale</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Spazio</string>
     <string name="handwriting_new_line">Nuova riga</string>
     <string name="handwriting_tutorial_intro">Tutorial sulla tastiera per la scrittura a mano. Scrivi con un dito ovunque sullo schermo. Ciò che scrivi viene digitato quando ti fermi un attimo. Per terminare il tutorial, scorri verso il basso con tre dita.</string>
-    <string name="handwriting_tutorial_write_letter">Scrivi la lettera a dell\'alfabeto.</string>
+    <string name="handwriting_tutorial_write_letter">Scrivi la lettera a.</string>
     <string name="handwriting_tutorial_write_word">Ora scrivi la parola hi (h seguita da i).</string>
     <string name="handwriting_tutorial_typed">Digitato <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Scorri verso destra con due dita per digitare uno spazio.</string>

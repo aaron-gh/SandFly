@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">Қолданбаға SandFly үшін брайль дисплейі болуды сұрауға мүмкіндік береді. SandFly ішінде рұқсат етсеңіз, ол экрандағы барлығын оқи алады және құрылғыңызды басқара алады. SandFly сізден бірінші сұрайды.</string>
     <string name="title_pref_phonetic_letters_mode">Әріптерді фонетикалық түрде айту</string>
     <string name="phonetic_letters_mode_off">Өшірулі</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Хаттан кейін кешіктірілді, «h, қонақүй» сияқты</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Хаттан кейін кідіріс жоқ, «h hotel» сияқты</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Әріптен кейін, кідіріспен, мысалы «а, Алма»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Әріптен кейін, кідіріссіз, мысалы «а Алма»</string>
     <string name="phonetic_letters_mode_instead_of_letter">Әріптің орнына «қонақүй» сияқты</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
     <string name="emoji_speech_engine">Сөйлеу механизмі оқиды</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Хабарландырулар</string>
     <string name="notification_list_empty">Хабарландырулар жоқ</string>
     <string name="notification_list_no_access">Хабарландыруға қол жеткізу өшірулі</string>
-    <string name="notification_list_grant_access">Хабарландыруға қол жеткізуді қосыңыз</string>
+    <string name="notification_list_grant_access">Хабарландыруларға кіруді қосу</string>
     <string name="notification_list_quick_settings">Жылдам параметрлер</string>
     <string name="notification_list_dismiss">Жабу</string>
     <string name="notification_list_show_all">Барлығын көрсету</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Бос орын</string>
     <string name="handwriting_new_line">Жаңа жол</string>
     <string name="handwriting_tutorial_intro">Қолжазба пернетақта оқулығы. Экранның кез келген жерінде бір саусақпен жазыңыз. Жазғандарың бір сәтке тоқтағанда теріледі. Оқулықты аяқтау үшін үш саусақпен төмен сырғытыңыз.</string>
-    <string name="handwriting_tutorial_write_letter">Алфавиттің а әрпін жаз.</string>
+    <string name="handwriting_tutorial_write_letter">a әрпін жазыңыз.</string>
     <string name="handwriting_tutorial_write_word">Енді hi сөзін жазыңыз (h артынан i).</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> терілді.</string>
     <string name="handwriting_tutorial_space">Бос орын енгізу үшін екі саусақпен оңға сырғытыңыз.</string>

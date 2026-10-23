@@ -1399,12 +1399,12 @@
     <string name="speech_control_deny">Neatļaut</string>
     <string name="permission_speak_label">runāt caur SandFly</string>
     <string name="permission_speak_description">Ļauj lietotnei lūgt pateikt tekstu jūsu SandFly balsī. SandFly jautā, pirms lietotne var runāt.</string>
-    <string name="permission_braille_display_label">lūgt Braila displeju SandFly</string>
+    <string name="permission_braille_display_label">lūgt būt par SandFly Braila displeju</string>
     <string name="permission_braille_display_description">Ļauj lietotnei pieprasīt Braila displeju SandFly. Ja to atļaujat SandFly, tas var lasīt visu ekrānā un vadīt jūsu ierīci. SandFly vispirms jautā jums.</string>
     <string name="title_pref_phonetic_letters_mode">Izrunāt burtus fonētiski</string>
     <string name="phonetic_letters_mode_off">Izslēgts</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Pēc vēstules aizkavēta, piemēram, \"h, viesnīca\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Pēc vēstules bez kavēšanās, piemēram, \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Pēc burta, ar pauzi, piemēram, „h, Hugo“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Pēc burta, bez pauzes, piemēram, „h Hugo“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Burta vietā, piemēram, \"viesnīca\"</string>
     <string name="title_pref_emoji_speech">Emocijzīme</string>
     <string name="emoji_speech_engine">Lasa runas dzinējs</string>
@@ -1443,7 +1443,7 @@
     <string name="notification_list_title">Paziņojumi</string>
     <string name="notification_list_empty">Nav paziņojumu</string>
     <string name="notification_list_no_access">Piekļuve paziņojumiem ir izslēgta</string>
-    <string name="notification_list_grant_access">Ieslēdziet piekļuvi paziņojumiem</string>
+    <string name="notification_list_grant_access">Ieslēgt piekļuvi paziņojumiem</string>
     <string name="notification_list_quick_settings">Ātrie iestatījumi</string>
     <string name="notification_list_dismiss">Nerādīt</string>
     <string name="notification_list_show_all">Rādīt visu</string>
@@ -1600,7 +1600,7 @@
     <string name="handwriting_space">Atstarpe</string>
     <string name="handwriting_new_line">Jauna rindiņa</string>
     <string name="handwriting_tutorial_intro">Rokraksta tastatūras apmācība. Rakstiet ar vienu pirkstu jebkurā ekrāna vietā. Jūsu rakstītais tiek ierakstīts, kad uz brīdi apstājaties. Lai beigtu apmācību, velciet uz leju ar trim pirkstiem.</string>
-    <string name="handwriting_tutorial_write_letter">Uzrakstiet alfabēta burtu a.</string>
+    <string name="handwriting_tutorial_write_letter">Uzrakstiet burtu a.</string>
     <string name="handwriting_tutorial_write_word">Tagad ierakstiet vārdu hi (h, kam seko i).</string>
     <string name="handwriting_tutorial_typed">Ievadīts <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Velciet pa labi ar diviem pirkstiem, lai ierakstītu atstarpi.</string>

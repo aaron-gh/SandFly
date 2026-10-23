@@ -668,7 +668,7 @@
   <string name="label_dialog_text">ဤအရာအတွက် အသုံးပြုမည့် အညွှန်းစာသားကို ထည့်ပါ\nစက်ပစ္စည်းအတွင်း မြင်ရသောအမည်− %1$s</string>
   <string name="label_dialog_edit_hint">အညွှန်းစာသား</string>
   <string name="label_import">စိတ်ကြိုက်အညွှန်းများ သွင်းရန်</string>
-  <string name="label_import_dialog_title">SandFly သို့ စိတ်ကြိုက် တံဆိပ်များကို တင်သွင်းပါ</string>
+  <string name="label_import_dialog_title">SandFly သို့ စိတ်ကြိုက် တံဆိပ်များ တင်သွင်းရန်</string>
   <string name="label_import_dialog_message">နှစ်ခုထပ်လာပါက လက်ရှိအမည်များကို အသစ်ပြောင်းရန် သို့မဟုတ် ယခင်အတိုင်းထားရန်တို့ကို ဆုံးဖြတ်ပါ</string>
   <string name="label_import_dialog_skip">ကျော်ရန်</string>
   <string name="label_import_dialog_override">အပေါ်မှထပ်ရေးမည်</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">ခွင့်မပြုပါ</string>
     <string name="permission_speak_label">SandFly မှတစ်ဆင့် ပြောဆိုခြင်း</string>
     <string name="permission_speak_description">အက်ပ်အား သင်၏ SandFly အသံဖြင့် စာသားပြောခိုင်းစေပါ။ SandFly အက်ပ်က စကားမပြောမီ သင့်ကိုမေးသည်။</string>
-    <string name="permission_braille_display_label">SandFly အတွက် မျက်မမြင်စာအဖြစ် ပြသရန် တောင်းဆိုပါ</string>
+    <string name="permission_braille_display_label">SandFly အတွက် ဘရေးလ် ဖန်သားပြင်ဖြစ်ရန် တောင်းဆိုခြင်း</string>
     <string name="permission_braille_display_description">အက်ပ်အား SandFlyအတွက် မျက်မမြင်စာအဖြစ် ပြသခွင့်ပြုပါ။ ၎င်းကို SandFly ဖြင့် ခွင့်ပြုပါက၊ ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။ SandFly မင်းကို အရင်မေးတယ်။</string>
     <string name="title_pref_phonetic_letters_mode">စာလုံးများကို အသံထွက်ဥပမာဖြင့် ဖတ်ပါ</string>
     <string name="phonetic_letters_mode_off">ပိတ်</string>
-    <string name="phonetic_letters_mode_after_letter_delay">စာကို နောက်ကျပြီးမှ \"ဇ၊ ဟို\" ၊</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">စာအပြီးမှာ နှောင့်နှေးမနေပါနဲ့ \"ဇဟို\" ၊</string>
+    <string name="phonetic_letters_mode_after_letter_delay">အက္ခရာနောက်တွင် ခဏရပ်၍ ဥပမာ “က၊ ကြက်”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">အက္ခရာနောက်တွင် မရပ်ဘဲ ဥပမာ “က ကြက်”</string>
     <string name="phonetic_letters_mode_instead_of_letter">အက္ခရာအစား “ဟိုတယ်” ကဲ့သို့၊</string>
     <string name="title_pref_emoji_speech">အီမိုဂျီ</string>
     <string name="emoji_speech_engine">စကားပြောအင်ဂျင်က ဖတ်သည်</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">အကြောင်းကြားချက်များ</string>
     <string name="notification_list_empty">အကြောင်းကြားချက်များမရှိပါ</string>
     <string name="notification_list_no_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည်</string>
-    <string name="notification_list_grant_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ဖွင့်ပါ</string>
+    <string name="notification_list_grant_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ဖွင့်ရန်</string>
     <string name="notification_list_quick_settings">အမြန်ဆက်တင်များ</string>
     <string name="notification_list_dismiss">ပယ်ရန်</string>
     <string name="notification_list_show_all">အားလုံးပြပါ</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_download_button">ဒေါင်းလုဒ်လုပ်ရန်</string>
     <string name="handwriting_downloaded">လက်ရေးမှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်ထားသည်</string>
     <string name="handwriting_download_failed">လက်ရေးအသိအမှတ်ပြုမှုကို ဒေါင်းလုဒ်လုပ်၍မရပါ။ အင်တာနက်ချိတ်ဆက်မှုကို စစ်ဆေးပါ။</string>
-    <string name="handwriting_unsupported_language">လက်ရေးဖြင့် အသိအမှတ်ပြုခြင်းကို ဤဘာသာစကားဖြင့် မရရှိနိုင်ပါ</string>
+    <string name="handwriting_unsupported_language">ဤဘာသာစကားတွင် လက်ရေး မှတ်သားမှု မရနိုင်ပါ</string>
     <string name="title_pref_handwriting_keyboard">လက်ရေးကီးဘုတ်</string>
     <string name="summary_pref_handwriting_keyboard">Android ၏ ကီးဘုတ်ဆက်တင်များတွင် SandFly လက်ရေးခြင်းကို ဖွင့်ပါ</string>
     <string name="title_pref_handwriting_wait">စာရေးပြီးရင် စောင့်ပါ</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">စပေ့စ်ကီး</string>
     <string name="handwriting_new_line">လိုင်း အသစ်</string>
     <string name="handwriting_tutorial_intro">လက်ရေးကီးဘုတ်သင်ခန်းစာ။ မျက်နှာပြင်ပေါ်ရှိ မည်သည့်နေရာတွင်မဆို လက်တစ်ချောင်းဖြင့် ရေးပါ။ ခဏရပ်လိုက်တဲ့အခါ မင်းရေးတဲ့စာက စာရိုက်တယ်။ သင်ခန်းစာကိုအဆုံးသတ်ရန် လက်သုံးချောင်းဖြင့် အောက်သို့ပွတ်ဆွဲပါ။</string>
-    <string name="handwriting_tutorial_write_letter">အက္ခရာအက္ခရာ a ကိုရေးပါ။</string>
+    <string name="handwriting_tutorial_write_letter">a စာလုံးကို ရေးပါ။</string>
     <string name="handwriting_tutorial_write_word">ပြီးရင် hi (h နဲ့ i) ဆိုတဲ့ စကားလုံးကို ရေးပါ။</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> ဟု ရိုက်ထည့်သည်။</string>
     <string name="handwriting_tutorial_space">နေရာလွတ်တစ်ခုရိုက်ရန် လက်နှစ်ချောင်းဖြင့် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>

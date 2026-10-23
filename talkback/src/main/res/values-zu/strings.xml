@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Ungavumeli</string>
     <string name="permission_speak_label">ukukhuluma nge-SandFly</string>
     <string name="permission_speak_description">Ivumela uhlelo lokusebenza ukusho umbhalo ngezwi lakho SandFly. SandFly ikubuza ngaphambi kokuthi uhlelo lokusebenza lukhulume.</string>
-    <string name="permission_braille_display_label">cela ukuba isibonisi se-braille se-SandFly</string>
+    <string name="permission_braille_display_label">ukucela ukuba yisibonisi se-braille se-SandFly</string>
     <string name="permission_braille_display_description">Ivumela uhlelo lokusebenza ukuthi lucele ukuba isibonisi se-braille SandFly. Uma uyivumela kokuthi SandFly, ingafunda yonke into esikrinini futhi ilawule idivayisi yakho. SandFly ikubuza kuqala.</string>
     <string name="title_pref_phonetic_letters_mode">Khuluma izinhlamvu ngefonetiki</string>
     <string name="phonetic_letters_mode_off">Kuvaliwe</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Ngemuva kwencwadi, ibambezelekile, njengokuthi \"h, ihhotela\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Ngemva kwencwadi, akukho ukubambezeleka, njengokuthi \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Ngemva kohlamvu, ngokuma kancane, njengokuthi “h, ihhotela”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Ngemva kohlamvu, ngaphandle kokuma, njengokuthi “h ihhotela”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Esikhundleni sencwadi, njengokuthi \"ihhotela\"</string>
     <string name="title_pref_emoji_speech">I-Emoji</string>
     <string name="emoji_speech_engine">Kufundwa yinjini yokukhuluma</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Izaziso</string>
     <string name="notification_list_empty">Azikho izaziso</string>
     <string name="notification_list_no_access">Ukufinyelela kwesaziso kuvaliwe</string>
-    <string name="notification_list_grant_access">Vula ukufinyelela kwesaziso</string>
+    <string name="notification_list_grant_access">Vula ukufinyelela kwezaziso</string>
     <string name="notification_list_quick_settings">Izilungiselelo ezisheshayo</string>
     <string name="notification_list_dismiss">Susa</string>
     <string name="notification_list_show_all">Bonisa konke</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_download_button">Dawuniloda</string>
     <string name="handwriting_downloaded">Ukuqaphela ukubhala ngesandla kulandiwe</string>
     <string name="handwriting_download_failed">Ukuqaphela ukubhala ngesandla akukwazanga ukudawuniloda. Hlola ukuxhumeka kwe-inthanethi.</string>
-    <string name="handwriting_unsupported_language">Ukunaka kokubhala ngesandla akutholakali ngalolu limi</string>
+    <string name="handwriting_unsupported_language">Ukuqaphela ukubhala ngesandla akutholakali ngalolu limi</string>
     <string name="title_pref_handwriting_keyboard">Ikhibhodi yokubhala ngesandla</string>
     <string name="summary_pref_handwriting_keyboard">Vula SandFly ukubhala ngesandla kuzilungiselelo zekhibhodi Android</string>
     <string name="title_pref_handwriting_wait">Linda ngemva kokubhala</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Isikhala</string>
     <string name="handwriting_new_line">Umugqa omusha</string>
     <string name="handwriting_tutorial_intro">Isifundo sekhibhodi yokubhala ngesandla. Bhala ngomunwe owodwa noma yikuphi esikrinini. Okubhalayo kuyabhalwa uma ume isikhashana. Ukuze uqedele okokufundisa, swayiphela phansi ngeminwe emithathu.</string>
-    <string name="handwriting_tutorial_write_letter">Bhala uhlamvu lwezinhlamvu a.</string>
+    <string name="handwriting_tutorial_write_letter">Bhala uhlamvu a.</string>
     <string name="handwriting_tutorial_write_word">Manje bhala igama elithi hi (h lilandelwe ngu-i).</string>
     <string name="handwriting_tutorial_typed">Kuthayishwe <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Swayiphela kwesokudla ngeminwe emibili ukuze uthayiphe isikhala.</string>

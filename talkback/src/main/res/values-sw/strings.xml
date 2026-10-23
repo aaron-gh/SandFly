@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Weka maandishi yatakayotumika kama lebo ya kipengele hiki\nJina la mwonekano wa ndani: %1$s</string>
   <string name="label_dialog_edit_hint">Weka maandishi ya lebo</string>
   <string name="label_import">Ingiza lebo maalum</string>
-  <string name="label_import_dialog_title">Ingiza lebo maalum kwenye SandFly</string>
+  <string name="label_import_dialog_title">Leta lebo maalum kwenye SandFly</string>
   <string name="label_import_dialog_message">Chagua ikiwa unataka kubatilisha au kuacha kutumia lebo zilizopo ikiwa zinakinzana</string>
   <string name="label_import_dialog_skip">Ruka</string>
   <string name="label_import_dialog_override">Batilisha</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Usiruhusu</string>
     <string name="permission_speak_label">zungumza kupitia SandFly</string>
     <string name="permission_speak_description">Huruhusu programu kuuliza kusema maandishi kwa sauti yako SandFly. SandFly hukuuliza kabla ya programu kuzungumza.</string>
-    <string name="permission_braille_display_label">omba kuwe na onyesho la nukta nundu kwa SandFly</string>
+    <string name="permission_braille_display_label">kuomba kuwa skrini ya nukta nundu ya SandFly</string>
     <string name="permission_braille_display_description">Huruhusu programu kuuliza kuwa onyesho la breli kwa SandFly. Ukiiruhusu SandFly, inaweza kusoma kila kitu kwenye skrini na kudhibiti kifaa chako. SandFly hukuuliza kwanza.</string>
     <string name="title_pref_phonetic_letters_mode">Zungumza herufi kwa fonetiki</string>
     <string name="phonetic_letters_mode_off">Zima</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Baada ya barua, kuchelewa, kama \"h, hoteli\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Baada ya barua, hakuna kuchelewa, kama \"h hoteli\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Baada ya herufi, kwa kusita, kama “h, hoteli”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Baada ya herufi, bila kusita, kama “h hoteli”</string>
     <string name="phonetic_letters_mode_instead_of_letter">Badala ya barua, kama \"hoteli\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Husomwa na injini ya matamshi</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Nafasi</string>
     <string name="handwriting_new_line">Mstari mpya</string>
     <string name="handwriting_tutorial_intro">Mafunzo ya kibodi ya kuandika kwa mkono. Andika kwa kidole kimoja popote kwenye skrini. Unachoandika huandikwa unaposimama kwa muda. Ili kukatisha mafunzo, telezesha vidole vitatu chini.</string>
-    <string name="handwriting_tutorial_write_letter">Andika herufi ya alfabeti a.</string>
+    <string name="handwriting_tutorial_write_letter">Andika herufi a.</string>
     <string name="handwriting_tutorial_write_word">Sasa andika neno hi (h ikifuatiwa na i).</string>
     <string name="handwriting_tutorial_typed">Imeandikwa <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Telezesha vidole viwili kulia ili kuandika nafasi.</string>

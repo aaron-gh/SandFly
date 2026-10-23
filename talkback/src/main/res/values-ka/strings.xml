@@ -868,7 +868,7 @@
   <string name="new_shortcut_gesture_reading_menu_text">წაკითხვის მართვის საშუალებების გამოსაყენებლად გადაფურცლეთ მარცხნივ ან მარჯვნივ 3 თითით. ასევე, შეგიძლიათ ზემოთ ან ქვემოთ გადაფურცვლა 3 თითით.</string>
   <string name="new_shortcut_gesture_note">შენიშვნა: თქვენ დააყენეთ ზოგიერთი ჟესტი, ამიტომ ეს ინფორმაცია შეიძლება არ იყოს ზუსტი. თქვენი ჟესტების გადასახედად გადადით SandFly-ის პარამეტრებზე.</string>
   <string name="welcome_to_android11_text">SandFly-ის ასაჩქარებლად და მისი გამოყენების გასამარტივებლად ახალი ჟესტები დავამატეთ.\n\nამ ეკრანზე შეგიძლიათ ახალი ჟესტების შემოწმება. ამ ინფორმაციის გადახედვა ნებისმიერ დროს შეგიძლიათ SandFly-ის პარამეტრებიდან.</string>
-  <string name="new_gesture_notification_title">ახალი ჟესტებიSandFly-ში</string>
+  <string name="new_gesture_notification_title">ახალი ჟესტები SandFly-ში</string>
   <string name="new_gesture_notification_content">შეეხეთ და შეიყტყვეთ მეტი SandFly-ის ახალი ჟესტების გამოყენების შესახებ.</string>
   <string name="dump_node_tree_description">კვანძების იერარქია დაიბეჭდა ჟურნალებში.</string>
   <string name="report_gesture_description">აქ ნაჩვენებია ახლახან შესრულებული ჟესტები. გთხოვთ, მოხსენებაში მიუთითოთ, თუ რომელი ჟესტია არასწორი და რა უნდა იყოს მის ნაცვლად.</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">არ დაუშვა</string>
     <string name="permission_speak_label">SandFly-ის მეშვეობით საუბარი</string>
     <string name="permission_speak_description">აპს აძლევს უფლებას, ითხოვოს ტექსტის თქმა თქვენი SandFly ხმით. SandFly გკითხავთ, სანამ აპი ლაპარაკს შეძლებს.</string>
-    <string name="permission_braille_display_label">მოითხოვეთ იყოს ბრაილის ეკრანი SandFly</string>
+    <string name="permission_braille_display_label">SandFly-ისთვის ბრაილის ეკრანად ყოფნის მოთხოვნა</string>
     <string name="permission_braille_display_description">აპს აძლევს უფლებას მოითხოვოს ბრაილის ეკრანი SandFly-ისთვის. თუ დაუშვებთ SandFly, მას შეუძლია წაიკითხოს ყველაფერი ეკრანზე და გააკონტროლოს თქვენი მოწყობილობა. SandFly ჯერ გეკითხება.</string>
     <string name="title_pref_phonetic_letters_mode">ასოების ფონეტიკურად წარმოთქმა</string>
     <string name="phonetic_letters_mode_off">გამორთული</string>
-    <string name="phonetic_letters_mode_after_letter_delay">წერილის შემდეგ, დაგვიანებული, როგორიცაა \"h, სასტუმრო\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">წერილის შემდეგ, არ დაგვიანებით, როგორიცაა \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">ასოს შემდეგ, პაუზით, მაგ. „ჰ, ჰაერი“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">ასოს შემდეგ, პაუზის გარეშე, მაგ. „ჰ ჰაერი“</string>
     <string name="phonetic_letters_mode_instead_of_letter">წერილის ნაცვლად, როგორიცაა \"სასტუმრო\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">კითხულობს მეტყველების ძრავა</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">შეტყობინებები</string>
     <string name="notification_list_empty">არ არის შეტყობინებები</string>
     <string name="notification_list_no_access">შეტყობინებებზე წვდომა გამორთულია</string>
-    <string name="notification_list_grant_access">ჩართეთ შეტყობინებებზე წვდომა</string>
+    <string name="notification_list_grant_access">შეტყობინებებზე წვდომის ჩართვა</string>
     <string name="notification_list_quick_settings">სწრაფი პარამეტრები</string>
     <string name="notification_list_dismiss">დახურვა</string>
     <string name="notification_list_show_all">ყველას ჩვენება</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">ჰარი</string>
     <string name="handwriting_new_line">ახალი ხაზი</string>
     <string name="handwriting_tutorial_intro">კლავიატურის ხელნაწერის გაკვეთილი. დაწერეთ ერთი თითით ეკრანის ნებისმიერ ადგილას. რასაც წერ, იწერება, როცა ცოტა ხნით ჩერდები. გაკვეთილის დასასრულებლად გადაფურცლეთ ქვემოთ სამი თითით.</string>
-    <string name="handwriting_tutorial_write_letter">დაწერეთ ანბანის ასო ა.</string>
+    <string name="handwriting_tutorial_write_letter">დაწერეთ ასო a.</string>
     <string name="handwriting_tutorial_write_word">ახლა ჩაწერეთ სიტყვა hi (h შემდეგ i).</string>
     <string name="handwriting_tutorial_typed">აკრეფილი <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">გადაფურცლეთ მარჯვნივ ორი თითით, რომ აკრიფოთ სივრცე.</string>

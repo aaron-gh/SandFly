@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Niet toestaan</string>
     <string name="permission_speak_label">spreken via SandFly</string>
     <string name="permission_speak_description">Laat de app vragen om tekst in te spreken met uw SandFly-stem. SandFly vraagt ​​je voordat de app kan spreken.</string>
-    <string name="permission_braille_display_label">vraag om een brailleleesregel te zijn voor SandFly</string>
+    <string name="permission_braille_display_label">vragen om brailleleesregel voor SandFly te zijn</string>
     <string name="permission_braille_display_description">Laat de app vragen om een brailleleesregel te zijn voor SandFly. Als u hem in SandFly toestaat, kan hij alles op het scherm lezen en uw apparaat bedienen. SandFly vraagt ​​je eerst.</string>
     <string name="title_pref_phonetic_letters_mode">Letters fonetisch uitspreken</string>
     <string name="phonetic_letters_mode_off">Uit</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Na de brief, vertraagd, zoals \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Na de brief geen vertraging, zoals \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Na de letter, met pauze, zoals ‘h, Hendrik’</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Na de letter, zonder pauze, zoals ‘h Hendrik’</string>
     <string name="phonetic_letters_mode_instead_of_letter">In plaats van de letter, zoals \'hotel\'</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Gelezen door spraakengine</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Meldingen</string>
     <string name="notification_list_empty">Geen meldingen</string>
     <string name="notification_list_no_access">Toegang tot meldingen is uitgeschakeld</string>
-    <string name="notification_list_grant_access">Schakel toegang tot meldingen in</string>
+    <string name="notification_list_grant_access">Toegang tot meldingen aanzetten</string>
     <string name="notification_list_quick_settings">Snelle instellingen</string>
     <string name="notification_list_dismiss">Sluiten</string>
     <string name="notification_list_show_all">Toon alles</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Spatiebalk</string>
     <string name="handwriting_new_line">Nieuwe regel</string>
     <string name="handwriting_tutorial_intro">Handschrifttoetsenbord-tutorial. Schrijf met één vinger waar dan ook op het scherm. Wat je schrijft, wordt getypt als je even stopt. Veeg met drie vingers naar beneden om de tutorial te beëindigen.</string>
-    <string name="handwriting_tutorial_write_letter">Schrijf de alfabetletter a.</string>
+    <string name="handwriting_tutorial_write_letter">Schrijf de letter a.</string>
     <string name="handwriting_tutorial_write_word">Schrijf nu het woord hi (h gevolgd door i).</string>
     <string name="handwriting_tutorial_typed">Getypt <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Veeg met twee vingers naar rechts om een ​​spatie te typen.</string>

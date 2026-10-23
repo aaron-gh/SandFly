@@ -668,7 +668,7 @@
   <string name="label_dialog_text">‏יש להזין את הטקסט שישמש כתווית של האלמנט הזה\nשם פנימי למטרות תצוגה: %1$s</string>
   <string name="label_dialog_edit_hint">טקסט תווית</string>
   <string name="label_import">ייבוא תוויות מותאמות אישית</string>
-  <string name="label_import_dialog_title">‏יבא תוויות מותאמות אישית אל SandFly</string>
+  <string name="label_import_dialog_title">ייבוא תוויות מותאמות אישית אל SandFly</string>
   <string name="label_import_dialog_message">האם ברצונך לבטל תוויות קיימות או לדלג עליהן במקרה של התנגשות?</string>
   <string name="label_import_dialog_skip">דילוג</string>
   <string name="label_import_dialog_override">ביטול</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">אל תאפשר</string>
     <string name="permission_speak_label">דיבור דרך SandFly</string>
     <string name="permission_speak_description">מאפשר לאפליקציה לבקש לומר טקסט בקולך SandFly. SandFly שואל אותך לפני שהאפליקציה יכולה לדבר.</string>
-    <string name="permission_braille_display_label">בקש להיות צג ברייל עבור SandFly</string>
+    <string name="permission_braille_display_label">בקשה לשמש כצג ברייל עבור SandFly</string>
     <string name="permission_braille_display_description">מאפשר לאפליקציה לבקש להיות צג ברייל עבור SandFly. אם תאפשר את זה ב-SandFly, זה יכול לקרוא הכל על המסך ולשלוט במכשיר שלך. SandFly שואל אותך קודם.</string>
     <string name="title_pref_phonetic_letters_mode">הקראת אותיות באופן פונטי</string>
     <string name="phonetic_letters_mode_off">מצב מושבת</string>
-    <string name="phonetic_letters_mode_after_letter_delay">אחרי המכתב, מתעכב, כמו \"ח, מלון\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">אחרי המכתב, ללא עיכוב, כמו \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">אחרי האות, בהשהיה, כמו “ה, הדס”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">אחרי האות, בלי השהיה, כמו “ה הדס”</string>
     <string name="phonetic_letters_mode_instead_of_letter">במקום האות, כמו \"מלון\"</string>
     <string name="title_pref_emoji_speech">אימוג\'י</string>
     <string name="emoji_speech_engine">מנוע הדיבור מקריא</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">התראות</string>
     <string name="notification_list_empty">אין הודעות</string>
     <string name="notification_list_no_access">הגישה להתראות מושבתת</string>
-    <string name="notification_list_grant_access">הפעל את הגישה להתראות</string>
+    <string name="notification_list_grant_access">הפעלת הגישה להתראות</string>
     <string name="notification_list_quick_settings">הגדרות מהירות</string>
     <string name="notification_list_dismiss">ביטול</string>
     <string name="notification_list_show_all">הצג הכל</string>
@@ -1599,8 +1599,8 @@
     <string name="handwriting_space">רווח</string>
     <string name="handwriting_new_line">שורה חדשה</string>
     <string name="handwriting_tutorial_intro">הדרכה למקלדת כתב יד. כתוב באצבע אחת בכל מקום על המסך. מה שאתה כותב מוקלד כשאתה עוצר לרגע. כדי לסיים את המדריך, החלק מטה בשלוש אצבעות.</string>
-    <string name="handwriting_tutorial_write_letter">כתוב את אות האלפבית א.</string>
-    <string name="handwriting_tutorial_write_word">כעת כתוב את המילה hi (h ואחריו i).</string>
+    <string name="handwriting_tutorial_write_letter">יש לכתוב את האות a.</string>
+    <string name="handwriting_tutorial_write_word">עכשיו יש לכתוב את המילה hi (h ואחריה i).</string>
     <string name="handwriting_tutorial_typed">הוקלד <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">החלק ימינה בשתי אצבעות כדי להקליד רווח.</string>
     <string name="handwriting_tutorial_delete">החלק שמאלה בשתי אצבעות כדי למחוק את התו לפני הסמן.</string>

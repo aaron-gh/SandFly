@@ -1399,12 +1399,12 @@
     <string name="speech_control_deny">अनुमति नदिनुहोस्</string>
     <string name="permission_speak_label">SandFly मार्फत बोल्ने</string>
     <string name="permission_speak_description">एपलाई तपाईंको SandFly आवाजमा पाठ भन्न सोध्न दिनुहोस्। SandFly एपले बोल्न अघि तपाईंलाई सोध्छ।</string>
-    <string name="permission_braille_display_label">SandFly को लागि ब्रेल डिस्प्ले हुन सोध्नुहोस्</string>
+    <string name="permission_braille_display_label">SandFly को ब्रेल डिस्प्ले बन्न अनुरोध गर्ने</string>
     <string name="permission_braille_display_description">एपलाई SandFly को लागि ब्रेल डिस्प्ले हुन सोध्न दिनुहोस्। यदि तपाईंले यसलाई SandFly मा अनुमति दिनुभयो भने, यसले स्क्रिनमा भएका सबै कुराहरू पढ्न र तपाईंको यन्त्रलाई नियन्त्रण गर्न सक्छ। SandFly तपाईंलाई पहिले सोध्छ।</string>
     <string name="title_pref_phonetic_letters_mode">फोनेटिक रूपमा अक्षरहरू बोल्नुहोस्</string>
     <string name="phonetic_letters_mode_off">अफ</string>
-    <string name="phonetic_letters_mode_after_letter_delay">पत्र पछि, ढिलाइ, जस्तै \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">पत्र पछि, कुनै ढिलाइ छैन, जस्तै \"h होटल\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">अक्षरपछि, रोकेर, जस्तै “ह, हात्ती”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">अक्षरपछि, नरोकी, जस्तै “ह हात्ती”</string>
     <string name="phonetic_letters_mode_instead_of_letter">अक्षरको सट्टा, \"होटल\" जस्तै</string>
     <string name="title_pref_emoji_speech">इमोजी</string>
     <string name="emoji_speech_engine">स्पिच इन्जिनले पढ्छ</string>
@@ -1443,7 +1443,7 @@
     <string name="notification_list_title">नोटिफिकेसनहरू</string>
     <string name="notification_list_empty">कुनै सूचना छैन</string>
     <string name="notification_list_no_access">सूचना पहुँच बन्द छ</string>
-    <string name="notification_list_grant_access">सूचना पहुँच खोल्नुहोस्</string>
+    <string name="notification_list_grant_access">सूचना पहुँच अन गर्नुहोस्</string>
     <string name="notification_list_quick_settings">द्रुत सेटिङहरू</string>
     <string name="notification_list_dismiss">खारेज गर्नुहोस्</string>
     <string name="notification_list_show_all">सबै देखाउनुहोस्</string>
@@ -1596,7 +1596,7 @@
     <string name="handwriting_space">स्पेस</string>
     <string name="handwriting_new_line">नयाँ लाइन</string>
     <string name="handwriting_tutorial_intro">हस्तलेखन किबोर्ड ट्यूटोरियल। स्क्रिनमा जहाँ पनि एउटा औंलाले लेख्नुहोस्। तपाईले लेख्नु भएको कुरा तपाईले एक क्षणको लागि रोकिँदा टाइप गरिन्छ। ट्यूटोरियल समाप्त गर्न, तीन औंलाहरूले तल स्वाइप गर्नुहोस्।</string>
-    <string name="handwriting_tutorial_write_letter">वर्णमाला अक्षर a लेख्नुहोस्।</string>
+    <string name="handwriting_tutorial_write_letter">a अक्षर लेख्नुहोस्।</string>
     <string name="handwriting_tutorial_write_word">अब hi (h पछि i) शब्द लेख्नुहोस्।</string>
     <string name="handwriting_tutorial_typed">टाइप गरिएको <xliff:g id="text" example="a">%1$s</xliff:g>।</string>
     <string name="handwriting_tutorial_space">स्पेस टाइप गर्न दुई औंलाहरूले दायाँ स्वाइप गर्नुहोस्।</string>

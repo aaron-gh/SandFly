@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Nu permite</string>
     <string name="permission_speak_label">vorbire prin SandFly</string>
     <string name="permission_speak_description">Permite aplicației să solicite rostirea textului cu vocea ta SandFly. SandFly vă întreabă înainte ca aplicația să poată vorbi.</string>
-    <string name="permission_braille_display_label">cereți să fiți un afișaj braille pentru SandFly</string>
+    <string name="permission_braille_display_label">solicitarea de a fi afișaj braille pentru SandFly</string>
     <string name="permission_braille_display_description">Permite aplicației să solicite un afișaj braille pentru SandFly. Dacă îl permiteți în SandFly, poate citi totul pe ecran și vă poate controla dispozitivul. SandFly te întreabă mai întâi.</string>
     <string name="title_pref_phonetic_letters_mode">Rostește literele fonetic</string>
     <string name="phonetic_letters_mode_off">Dezactivată</string>
-    <string name="phonetic_letters_mode_after_letter_delay">După scrisoare, întârziată, ca „h, hotel”</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">După scrisoare, fără întârziere, ca „h hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_delay">După literă, cu pauză, ca „h, Horia”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">După literă, fără pauză, ca „h Horia”</string>
     <string name="phonetic_letters_mode_instead_of_letter">În loc de scrisoare, cum ar fi „hotel”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Citite de motorul de vorbire</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Notificări</string>
     <string name="notification_list_empty">Fără notificări</string>
     <string name="notification_list_no_access">Accesul la notificări este dezactivat</string>
-    <string name="notification_list_grant_access">Activați accesul la notificări</string>
+    <string name="notification_list_grant_access">Activează accesul la notificări</string>
     <string name="notification_list_quick_settings">Setări rapide</string>
     <string name="notification_list_dismiss">Închide</string>
     <string name="notification_list_show_all">Arată tot</string>
@@ -1599,7 +1599,7 @@
     <string name="handwriting_space">Spațiu</string>
     <string name="handwriting_new_line">Rând nou</string>
     <string name="handwriting_tutorial_intro">Tutorial de scriere de mână pentru tastatură. Scrieți cu un deget oriunde pe ecran. Ceea ce scrii este tastat atunci când te oprești pentru o clipă. Pentru a încheia tutorialul, glisați în jos cu trei degete.</string>
-    <string name="handwriting_tutorial_write_letter">Scrieți litera a din alfabet.</string>
+    <string name="handwriting_tutorial_write_letter">Scrie litera a.</string>
     <string name="handwriting_tutorial_write_word">Acum scrieți cuvântul hi (h urmat de i).</string>
     <string name="handwriting_tutorial_typed">S-a tastat <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Glisați spre dreapta cu două degete pentru a introduce un spațiu.</string>

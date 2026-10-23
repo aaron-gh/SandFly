@@ -668,7 +668,7 @@
   <string name="label_dialog_text">ໃສ່ຂໍ້ຄວາມສຳລັບໃຊ້ເປັນປ້າຍກຳກັບຂອງອົງປະກອບນີ້\nຊື່ມຸມມອງພາຍໃນ: %1$s</string>
   <string name="label_dialog_edit_hint">​ຂໍ້​ຄວາມ​ປ້າຍ​ກຳ​ກັບ</string>
   <string name="label_import">ນຳເຂົ້າປ້າຍກຳກັບແບບກຳນົດເອງ</string>
-  <string name="label_import_dialog_title">ນຳ​ປ້າຍ​ກຳ​ກັບ​ກຳ​ນົດ​ເອງ​ເຂົ້າ​ໃສ່ SandFly</string>
+  <string name="label_import_dialog_title">ນຳປ້າຍກຳກັບທີ່ກຳນົດເອງເຂົ້າ SandFly</string>
   <string name="label_import_dialog_message">ເລືອກວ່າ​ທ່ານ​ຕ້ອງ​ການ​ລົບ​ລ້າງ ຫຼື ຂ້າມ​ປ້າຍ​ກຳ​ກັບ​ທີ່​ມີ​ຢູ່​ບໍ ໃນ​ກໍ​ລະ​ນີ​ມີ​ການ​ຂັດ​ກັນ</string>
   <string name="label_import_dialog_skip">ຂ້າມ</string>
   <string name="label_import_dialog_override">ລົບ​ລ້າງ</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">ບໍ່ອະນຸຍາດ</string>
     <string name="permission_speak_label">ເວົ້າຜ່ານ SandFly</string>
     <string name="permission_speak_description">ໃຫ້ແອັບຯຮ້ອງຂໍໃຫ້ເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງທ່ານ. SandFly ຖາມເຈົ້າກ່ອນທີ່ແອັບຈະເວົ້າໄດ້.</string>
-    <string name="permission_braille_display_label">ຂໍໃຫ້ເປັນການສະແດງຕົວອັກສອນນູນສໍາລັບ SandFly</string>
+    <string name="permission_braille_display_label">ຂໍເປັນຈໍສະແດງຜົນອັກສອນນູນສຳລັບ SandFly</string>
     <string name="permission_braille_display_description">ໃຫ້ແອັບຯຮ້ອງຂໍໃຫ້ເປັນການສະແດງຕົວອັກສອນນູນສໍາລັບ SandFly. ຖ້າທ່ານອະນຸຍາດໃຫ້ມັນຢູ່ໃນ SandFly, ມັນສາມາດອ່ານທຸກສິ່ງທຸກຢ່າງໃນຫນ້າຈໍແລະຄວບຄຸມອຸປະກອນຂອງທ່ານ. SandFly ຖາມກ່ອນ.</string>
     <string name="title_pref_phonetic_letters_mode">ເວົ້າຕົວອັກສອນຕາມສຽງ</string>
     <string name="phonetic_letters_mode_off">ປິດ</string>
-    <string name="phonetic_letters_mode_after_letter_delay">ຫຼັງຈາກຈົດຫມາຍ, ຊັກຊ້າ, ເຊັ່ນ \"h, ໂຮງແຮມ\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">ຫຼັງຈາກຈົດຫມາຍ, ບໍ່ມີການຊັກຊ້າ, ເຊັ່ນ \"h ໂຮງແຮມ\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">ຫຼັງຕົວອັກສອນ, ມີຢຸດ, ເຊັ່ນ “ກ, ໄກ່”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">ຫຼັງຕົວອັກສອນ, ບໍ່ມີຢຸດ, ເຊັ່ນ “ກ ໄກ່”</string>
     <string name="phonetic_letters_mode_instead_of_letter">ແທນທີ່ຈະເປັນຕົວອັກສອນເຊັ່ນ \"ໂຮງແຮມ\"</string>
     <string name="title_pref_emoji_speech">ອີໂມຈິ</string>
     <string name="emoji_speech_engine">ເຄື່ອງມືສັງເຄາະສຽງອ່ານ</string>
@@ -1580,7 +1580,7 @@
     <string name="handwriting_download_button">ດາວໂຫຼດ</string>
     <string name="handwriting_downloaded">ດາວໂຫຼດການຈຳແນກລາຍມືແລ້ວ</string>
     <string name="handwriting_download_failed">ບໍ່ສາມາດດາວໂຫຼດການຮັບຮູ້ການຂຽນດ້ວຍມືໄດ້. ກວດເບິ່ງການເຊື່ອມຕໍ່ອິນເຕີເນັດ.</string>
-    <string name="handwriting_unsupported_language">ການຮັບຮູ້ການຂຽນດ້ວຍມືແມ່ນບໍ່ມີຢູ່ໃນພາສານີ້</string>
+    <string name="handwriting_unsupported_language">ການຮັບຮູ້ລາຍມືບໍ່ມີໃນພາສານີ້</string>
     <string name="title_pref_handwriting_keyboard">ແປ້ນພິມຂຽນດ້ວຍມື</string>
     <string name="summary_pref_handwriting_keyboard">ເປີດໃຊ້ການຂຽນດ້ວຍມື SandFly ໃນການຕັ້ງຄ່າແປ້ນພິມຂອງ Android</string>
     <string name="title_pref_handwriting_wait">ລໍຖ້າຫຼັງຈາກຂຽນ</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">ຍະຫວ່າງ</string>
     <string name="handwriting_new_line">ເຄື່ອງໝາຍ​ແຖວໃໝ່</string>
     <string name="handwriting_tutorial_intro">ການສອນແປ້ນພິມການຂຽນດ້ວຍມື. ຂຽນດ້ວຍນິ້ວມືໃດນຶ່ງໃນໜ້າຈໍ. ສິ່ງທີ່ທ່ານຂຽນແມ່ນພິມເມື່ອທ່ານຢຸດຊົ່ວຄາວ. ເພື່ອສິ້ນສຸດການສອນ, ປັດລົງດ້ວຍສາມນິ້ວ.</string>
-    <string name="handwriting_tutorial_write_letter">ຂຽນຕົວອັກສອນ ກ.</string>
+    <string name="handwriting_tutorial_write_letter">ຂຽນຕົວອັກສອນ a.</string>
     <string name="handwriting_tutorial_write_word">ຕອນນີ້ຂຽນຄຳວ່າ hi (h ຕາມດ້ວຍ i).</string>
     <string name="handwriting_tutorial_typed">ພິມ <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">ປັດຂວາດ້ວຍສອງນິ້ວເພື່ອພິມຍະຫວ່າງ.</string>

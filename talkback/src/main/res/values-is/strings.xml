@@ -1402,8 +1402,8 @@
     <string name="permission_braille_display_description">Leyfir appinu að biðja um að vera blindraletursskjár fyrir SandFly. Ef þú leyfir það í SandFly getur það lesið allt á skjánum og stjórnað tækinu þínu. SandFly spyr þig fyrst.</string>
     <string name="title_pref_phonetic_letters_mode">Lesa stafi með stafrófsorðum</string>
     <string name="phonetic_letters_mode_off">Slökkt</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Eftir bréfið, seinkað, eins og \"h, hótel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Eftir bréfið, engin töf, eins og \"h hótel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Á eftir stafnum, með töf, t.d. „h, hótel“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Á eftir stafnum, án tafar, t.d. „h hótel“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Í stað bréfsins, eins og \"hótel\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Talvélin les</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Tilkynningar</string>
     <string name="notification_list_empty">Engar tilkynningar</string>
     <string name="notification_list_no_access">Slökkt er á tilkynningaaðgangi</string>
-    <string name="notification_list_grant_access">Kveiktu á tilkynningaaðgangi</string>
+    <string name="notification_list_grant_access">Kveikja á tilkynningaaðgangi</string>
     <string name="notification_list_quick_settings">Flýtistillingar</string>
     <string name="notification_list_dismiss">Hunsa</string>
     <string name="notification_list_show_all">Sýna allt</string>
@@ -1595,8 +1595,8 @@
     <string name="handwriting_space">Bil</string>
     <string name="handwriting_new_line">Ný lína</string>
     <string name="handwriting_tutorial_intro">Kennsla um rithönd á lyklaborði. Skrifaðu með einum fingri hvar sem er á skjánum. What you write is typed when you stop for a moment. To end the tutorial, swipe down with three fingers.</string>
-    <string name="handwriting_tutorial_write_letter">Skrifaðu stafrófsstafinn a.</string>
-    <string name="handwriting_tutorial_write_word">Skrifaðu nú orðið hi (h á eftir í).</string>
+    <string name="handwriting_tutorial_write_letter">Skrifaðu stafinn a.</string>
+    <string name="handwriting_tutorial_write_word">Skrifaðu nú orðið hi (h og svo i).</string>
     <string name="handwriting_tutorial_typed">Skrifað <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Strjúktu til hægri með tveimur fingrum til að slá inn bil.</string>
     <string name="handwriting_tutorial_delete">Strjúktu til vinstri með tveimur fingrum til að eyða stafnum fyrir framan bendilinn.</string>

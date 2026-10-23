@@ -668,7 +668,7 @@
   <string name="label_dialog_text">ਇਸ ਅੰਸ਼ ਲਈ ਇੱਕ ਲੇਬਲ ਵਜੋਂ ਵਰਤੀ ਜਾਣ ਵਾਲੀ ਲਿਖਤ ਦਾਖਲ ਕਰੋ\nਅੰਦਰੂਨੀ ਦ੍ਰਿਸ਼ ਨਾਮ: %1$s</string>
   <string name="label_dialog_edit_hint">ਲੇਬਲ ਲਿਖਤ</string>
   <string name="label_import">ਵਿਉਂਤਬੱਧ ਲੇਬਲ ਆਯਾਤ ਕਰੋ</string>
-  <string name="label_import_dialog_title">SandFly ਤੋਂ ਵਿਉਂਤੀ ਲੇਬਲ ਆਯਾਤ ਕਰੋ</string>
+  <string name="label_import_dialog_title">SandFly ਵਿੱਚ ਵਿਉਂਤੀ ਲੇਬਲ ਆਯਾਤ ਕਰੋ</string>
   <string name="label_import_dialog_message">ਵਿਵਾਦ ਦੀ ਸੂਰਤ ਵਿੱਚ ਚੁਣੋ ਕਿ ਤੁਸੀਂ ਮੌਜੂਦਾ ਲੇਬਲਾਂ ਨੂੰ ਓਵਰਰਾਈਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਛੱਡਣਾ ਚਾਹੁੰਦੇ ਹੋ</string>
   <string name="label_import_dialog_skip">ਛੱਡੋ</string>
   <string name="label_import_dialog_override">ਓਵਰਰਾਈਡ ਕਰੋ</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">ਇਜਾਜ਼ਤ ਨਾ ਦਿਓ</string>
     <string name="permission_speak_label">SandFly ਰਾਹੀਂ ਬੋਲਣਾ</string>
     <string name="permission_speak_description">ਐਪ ਨੂੰ ਤੁਹਾਡੀ SandFly ਅਵਾਜ਼ ਵਿੱਚ ਟੈਕਸਟ ਕਹਿਣ ਲਈ ਕਹਿਣ ਦਿਓ। SandFly ਐਪ ਦੇ ਬੋਲਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਪੁੱਛਦਾ ਹੈ।</string>
-    <string name="permission_braille_display_label">SandFly ਲਈ ਇੱਕ ਬਰੇਲ ਡਿਸਪਲੇ ਹੋਣ ਲਈ ਪੁੱਛੋ</string>
+    <string name="permission_braille_display_label">SandFly ਲਈ ਬਰੇਲ ਡਿਸਪਲੇ ਬਣਨ ਦੀ ਬੇਨਤੀ ਕਰਨਾ</string>
     <string name="permission_braille_display_description">ਐਪ ਨੂੰ SandFly ਲਈ ਇੱਕ ਬਰੇਲ ਡਿਸਪਲੇ ਹੋਣ ਲਈ ਕਹਿਣ ਦਿਓ। ਜੇਕਰ ਤੁਸੀਂ ਇਸਨੂੰ SandFly ਵਿੱਚ ਇਜਾਜ਼ਤ ਦਿੰਦੇ ਹੋ, ਤਾਂ ਇਹ ਸਕ੍ਰੀਨ \'ਤੇ ਸਭ ਕੁਝ ਪੜ੍ਹ ਸਕਦਾ ਹੈ ਅਤੇ ਤੁਹਾਡੀ ਡੀਵਾਈਸ ਨੂੰ ਕੰਟਰੋਲ ਕਰ ਸਕਦਾ ਹੈ। SandFly ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਪੁੱਛਦਾ ਹੈ।</string>
     <string name="title_pref_phonetic_letters_mode">ਅੱਖਰਾਂ ਨੂੰ ਧੁਨੀ ਰੂਪ ਵਿੱਚ ਬੋਲੋ</string>
     <string name="phonetic_letters_mode_off">ਬੰਦ ਹੈ</string>
-    <string name="phonetic_letters_mode_after_letter_delay">ਚਿੱਠੀ ਤੋਂ ਬਾਅਦ, ਦੇਰੀ ਨਾਲ, ਜਿਵੇਂ \"ਹ, ਹੋਟਲ\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">ਚਿੱਠੀ ਤੋਂ ਬਾਅਦ, ਕੋਈ ਦੇਰੀ ਨਹੀਂ, ਜਿਵੇਂ \"h ਹੋਟਲ\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">ਅੱਖਰ ਤੋਂ ਬਾਅਦ, ਰੁਕ ਕੇ, ਜਿਵੇਂ “ਹ, ਹਾਥੀ”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">ਅੱਖਰ ਤੋਂ ਬਾਅਦ, ਬਿਨਾਂ ਰੁਕੇ, ਜਿਵੇਂ “ਹ ਹਾਥੀ”</string>
     <string name="phonetic_letters_mode_instead_of_letter">ਅੱਖਰ ਦੀ ਬਜਾਏ, ਜਿਵੇਂ \"ਹੋਟਲ\"</string>
     <string name="title_pref_emoji_speech">ਇਮੋਜੀ</string>
     <string name="emoji_speech_engine">ਸਪੀਚ ਇੰਜਣ ਪੜ੍ਹਦਾ ਹੈ</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">ਸਪੇਸ</string>
     <string name="handwriting_new_line">ਨਵੀਂ ਲਾਈਨ</string>
     <string name="handwriting_tutorial_intro">ਹੈਂਡਰਾਈਟਿੰਗ ਕੀਬੋਰਡ ਟਿਊਟੋਰਿਅਲ। ਸਕ੍ਰੀਨ \'ਤੇ ਕਿਤੇ ਵੀ ਇੱਕ ਉਂਗਲ ਨਾਲ ਲਿਖੋ। ਤੁਸੀਂ ਜੋ ਲਿਖਦੇ ਹੋ ਉਹ ਟਾਈਪ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਇੱਕ ਪਲ ਲਈ ਰੁਕ ਜਾਂਦੇ ਹੋ। ਟਿਊਟੋਰਿਅਲ ਨੂੰ ਖਤਮ ਕਰਨ ਲਈ, ਤਿੰਨ ਉਂਗਲਾਂ ਨਾਲ ਹੇਠਾਂ ਵੱਲ ਸਵਾਈਪ ਕਰੋ।</string>
-    <string name="handwriting_tutorial_write_letter">ਵਰਣਮਾਲਾ ਅੱਖਰ a ਲਿਖੋ।</string>
+    <string name="handwriting_tutorial_write_letter">ਅੱਖਰ a ਲਿਖੋ।</string>
     <string name="handwriting_tutorial_write_word">ਹੁਣ hi (h ਤੋਂ ਬਾਅਦ i) ਸ਼ਬਦ ਲਿਖੋ।</string>
     <string name="handwriting_tutorial_typed">ਟਾਈਪ ਕੀਤਾ <xliff:g id="text" example="a">%1$s</xliff:g>।</string>
     <string name="handwriting_tutorial_space">ਸਪੇਸ ਟਾਈਪ ਕਰਨ ਲਈ ਦੋ ਉਂਗਲਾਂ ਨਾਲ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ।</string>

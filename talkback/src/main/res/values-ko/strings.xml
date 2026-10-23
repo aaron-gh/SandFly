@@ -668,7 +668,7 @@
   <string name="label_dialog_text">이 요소의 라벨로 사용할 텍스트를 입력하세요.\n내부 뷰 이름: %1$s</string>
   <string name="label_dialog_edit_hint">라벨 텍스트</string>
   <string name="label_import">맞춤 라벨 가져오기</string>
-  <string name="label_import_dialog_title">맞춤 라벨을 SandFly으로 가져옵니다.</string>
+  <string name="label_import_dialog_title">맞춤 라벨을 SandFly로 가져오기</string>
   <string name="label_import_dialog_message">충돌이 발생할 경우 기존 라벨을 재정의할지 건너뛸지 선택하세요.</string>
   <string name="label_import_dialog_skip">건너뛰기</string>
   <string name="label_import_dialog_override">재정의</string>
@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">허용하지 않음</string>
     <string name="permission_speak_label">SandFly를 통해 말하기</string>
     <string name="permission_speak_description">앱이 SandFly 음성으로 텍스트를 말하도록 요청합니다. SandFly 앱이 말하기 전에 묻습니다.</string>
-    <string name="permission_braille_display_label">SandFly의 점자 디스플레이가 되어 달라고 요청하세요</string>
+    <string name="permission_braille_display_label">SandFly의 점자 디스플레이 역할 요청</string>
     <string name="permission_braille_display_description">앱이 SandFly에 대한 점자 디스플레이가 되도록 요청할 수 있습니다. SandFly에서 허용하면 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly 먼저 물어보세요.</string>
     <string name="title_pref_phonetic_letters_mode">글자를 음성 기호로 읽기</string>
     <string name="phonetic_letters_mode_off">사용 안함</string>
-    <string name="phonetic_letters_mode_after_letter_delay">편지 뒤에는 \'h, 호텔\'처럼 지연돼</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">편지 뒤에는 \"h 호텔\"처럼 지체 없이</string>
+    <string name="phonetic_letters_mode_after_letter_delay">글자 다음에 잠시 쉬고, 예: “ㅎ, 하늘”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">글자 다음에 바로, 예: “ㅎ 하늘”</string>
     <string name="phonetic_letters_mode_instead_of_letter">\"호텔\"이라는 글자 대신</string>
     <string name="title_pref_emoji_speech">이모티콘</string>
     <string name="emoji_speech_engine">음성 엔진이 읽음</string>
@@ -1441,7 +1441,7 @@
     <string name="notification_part_playback">재생 또는 일시중지됨</string>
     <string name="notification_list_title">알림</string>
     <string name="notification_list_empty">알림 없음</string>
-    <string name="notification_list_no_access">알림 액세스가 사용 중지되었습니다.</string>
+    <string name="notification_list_no_access">알림 액세스가 꺼져 있습니다</string>
     <string name="notification_list_grant_access">알림 액세스 켜기</string>
     <string name="notification_list_quick_settings">빠른 설정</string>
     <string name="notification_list_dismiss">닫기</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">띄어쓰기</string>
     <string name="handwriting_new_line">줄바꿈</string>
     <string name="handwriting_tutorial_intro">필기 키보드 튜토리얼. 한 손가락으로 화면 아무 곳에나 쓸 수 있습니다. 당신이 쓴 내용은 잠시 멈추면 입력됩니다. 튜토리얼을 종료하려면 세 손가락을 사용하여 아래로 스와이프합니다.</string>
-    <string name="handwriting_tutorial_write_letter">알파벳 문자 a를 쓰세요.</string>
+    <string name="handwriting_tutorial_write_letter">글자 a를 쓰세요.</string>
     <string name="handwriting_tutorial_write_word">이제 hi(h 다음에 i)라는 단어를 쓰세요.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g>를 입력했습니다.</string>
     <string name="handwriting_tutorial_space">공백을 입력하려면 두 손가락으로 오른쪽으로 스와이프하세요.</string>

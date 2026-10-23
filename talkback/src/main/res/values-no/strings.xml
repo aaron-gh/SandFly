@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Ikke tillat</string>
     <string name="permission_speak_label">snakke gjennom SandFly</string>
     <string name="permission_speak_description">Lar appen be om å si tekst med SandFly stemmen din. SandFly spør deg før appen kan snakke.</string>
-    <string name="permission_braille_display_label">be om å være en leselist for SandFly</string>
+    <string name="permission_braille_display_label">be om å være leselist for SandFly</string>
     <string name="permission_braille_display_description">Lar appen be om å være en leselist for SandFly. Hvis du tillater det i SandFly, kan det lese alt på skjermen og kontrollere enheten din. SandFly spør deg først.</string>
     <string name="title_pref_phonetic_letters_mode">Les bokstaver fonetisk</string>
     <string name="phonetic_letters_mode_off">Av</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Etter brevet, forsinket, som \"h, hotell\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Etter brevet, ingen forsinkelse, som \"h hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Etter bokstaven, med pause, f.eks. «h, Harald»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Etter bokstaven, uten pause, f.eks. «h Harald»</string>
     <string name="phonetic_letters_mode_instead_of_letter">I stedet for bokstaven, som \"hotell\"</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Leses av talemotoren</string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_space">Mellomrom</string>
     <string name="handwriting_new_line">Ny linje</string>
     <string name="handwriting_tutorial_intro">Håndskrifttastaturopplæring. Skriv med én finger hvor som helst på skjermen. Det du skriver skrives når du stopper opp et øyeblikk. For å avslutte opplæringen, sveip ned med tre fingre.</string>
-    <string name="handwriting_tutorial_write_letter">Skriv alfabetbokstaven a.</string>
+    <string name="handwriting_tutorial_write_letter">Skriv bokstaven a.</string>
     <string name="handwriting_tutorial_write_word">Skriv nå ordet hi (h etterfulgt av i).</string>
     <string name="handwriting_tutorial_typed">Skrevet: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Sveip til høyre med to fingre for å skrive et mellomrom.</string>

@@ -1398,12 +1398,12 @@
     <string name="speech_control_deny">Nepovoliť</string>
     <string name="permission_speak_label">hovorenie cez SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
-    <string name="permission_braille_display_label">požiadať o zobrazenie Braillovho písma pre SandFly</string>
+    <string name="permission_braille_display_label">žiadať o funkciu Braillovho displeja pre SandFly</string>
     <string name="permission_braille_display_description">Umožňuje aplikácii požiadať o zobrazenie Braillovho písma pre SandFly. Ak to povolíte v SandFly, môže čítať všetko na obrazovke a ovládať vaše zariadenie. SandFly sa vás pýta ako prvý.</string>
     <string name="title_pref_phonetic_letters_mode">Vyslovovať písmená foneticky</string>
     <string name="phonetic_letters_mode_off">Vypnuté</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po liste, oneskorený, napríklad \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po liste bez meškania, napríklad „h hotel“</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po písmene, s pauzou, napríklad „h, Helena“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po písmene, bez pauzy, napríklad „h Helena“</string>
     <string name="phonetic_letters_mode_instead_of_letter">Namiesto písmena ako „hotel“</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Číta rečový nástroj</string>
@@ -1442,7 +1442,7 @@
     <string name="notification_list_title">Upozornenia</string>
     <string name="notification_list_empty">Žiadne upozornenia</string>
     <string name="notification_list_no_access">Prístup k upozorneniam je vypnutý</string>
-    <string name="notification_list_grant_access">Zapnite prístup k upozorneniam</string>
+    <string name="notification_list_grant_access">Zapnúť prístup k upozorneniam</string>
     <string name="notification_list_quick_settings">Rýchle nastavenia</string>
     <string name="notification_list_dismiss">Zavrieť</string>
     <string name="notification_list_show_all">Zobraziť všetky</string>
@@ -1603,7 +1603,7 @@
     <string name="handwriting_space">Medzerník</string>
     <string name="handwriting_new_line">Nový riadok</string>
     <string name="handwriting_tutorial_intro">Kurz klávesnice na písanie rukou. Píšte jedným prstom kdekoľvek na obrazovke. To, čo píšete, sa píše, keď sa na chvíľu zastavíte. Ak chcete ukončiť návod, potiahnite troma prstami nadol.</string>
-    <string name="handwriting_tutorial_write_letter">Napíšte písmeno abecedy a.</string>
+    <string name="handwriting_tutorial_write_letter">Napíšte písmeno a.</string>
     <string name="handwriting_tutorial_write_word">Teraz napíšte slovo hi (h, za ktorým nasleduje i).</string>
     <string name="handwriting_tutorial_typed">Zadali ste <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Medzeru zadajte potiahnutím dvoma prstami doprava.</string>
