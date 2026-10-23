@@ -1475,7 +1475,7 @@
     <string name="quick_settings_location">स्थान</string>
     <string name="quick_settings_auto_rotate">स्वतः घुमाउनुहोस्</string>
     <string name="quick_settings_battery_saver">ब्याट्री सेभर</string>
-    <string name="quick_settings_dark_theme">गाढा विषयवस्तु</string>
+    <string name="quick_settings_dark_theme">गाढा थिम</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">चमक</string>
     <string name="quick_settings_adaptive_brightness">अनुकूली चमक</string>
@@ -1486,7 +1486,7 @@
     <string name="quick_settings_alarm_volume">अलार्म भोल्युम</string>
     <string name="quick_settings_accessibility_volume">सर्वसुलभता सेवाको भोल्युम</string>
     <string name="quick_settings_system_volume">प्रणाली अडियो भोल्युम</string>
-    <string name="quick_settings_data_saver">डाटा बचतकर्ता</string>
+    <string name="quick_settings_data_saver">डेटा सेभर</string>
     <string name="quick_settings_night_light">नाइट लाइट</string>
     <string name="quick_settings_extra_dim">अतिरिक्त मधुरो</string>
     <string name="quick_settings_color_inversion">रङ उल्टो</string>
@@ -1505,7 +1505,7 @@
     <string name="quick_settings_add_system_tile">प्रणाली टाइल थप्नुहोस्</string>
     <string name="quick_settings_no_system_tiles">थप्नको लागि कुनै प्रणाली टाइलहरू छैनन्</string>
     <string name="quick_settings_tile_not_found">%1$s प्रणालीको द्रुत सेटिङहरूमा छैन</string>
-    <string name="quick_settings_never">कहिल्यै</string>
+    <string name="quick_settings_never">कहिल्यै होइन</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d सेकेन्ड</item>
         <item quantity="other">%d सेकेन्ड</item>
@@ -1517,7 +1517,7 @@
     <string name="quick_settings_connected">जडान भयो</string>
     <string name="quick_settings_battery">ब्याट्री</string>
     <string name="quick_settings_battery_charging">%1$s, चार्ज गर्दै</string>
-    <string name="quick_settings_battery_full">%1$s, चार्ज</string>
+    <string name="quick_settings_battery_full">%1$s, चार्ज भयो</string>
     <string name="quick_settings_sound">साउन्ड</string>
     <string name="quick_settings_vibrate">कम्पन</string>
     <string name="quick_settings_mute">मौन</string>
@@ -1532,7 +1532,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">स्तम्भहरूको संख्या</string>
     <string name="quick_settings_move">सार्नुहोस्</string>
-    <string name="quick_settings_move_title">सार्नुहोस् %1$s</string>
+    <string name="quick_settings_move_title">%1$s सार्नुहोस्</string>
     <string name="quick_settings_cell">पङ्क्ति %1$d, स्तम्भ %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1541,7 +1541,7 @@
         <item quantity="other">%d अन्य वस्तुहरू सारियो</item>
     </plurals>
     <string name="quick_settings_remove">हटाउनुहोस्</string>
-    <string name="quick_settings_added">%1$s थप्नुभयो</string>
+    <string name="quick_settings_added">%1$s थपियो</string>
     <string name="quick_settings_removed">%1$s हटाइयो</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly अन। बन्द गर्न 5 सेकेन्डको लागि स्क्रिनमा 2 औंलाहरू समात्नुहोस्। यो सन्देश देखाउन रोक्न, बन्द गर्नुहोस् SandFly सेटिङहरू &gt; उन्नत सेटिङहरू &gt; SandFly बन्द गर्न निर्देशनहरू देखाउनुहोस्।</string>
     <string name="edge_gestures_title">किनारहरू</string>
@@ -1692,7 +1692,7 @@
     <string name="window_names_always">सधैं</string>
     <string name="window_names_until_first_item">सधैं, पहिलो वस्तु द्वारा काट्नुहोस्</string>
     <string name="window_names_window_opens">सञ्झ्याल खुल्दा मात्र</string>
-    <string name="window_names_never">कहिल्यै</string>
+    <string name="window_names_never">कहिल्यै होइन</string>
     <string name="title_pref_selector_links_controls_web_only">वेब सामग्रीमा मात्र लिङ्क र नियन्त्रणहरू</string>
     <string name="title_pref_selector_auto_switch">पढ्ने नियन्त्रण स्वतः परिवर्तन गर्नुहोस्</string>
     <string name="title_pref_touch_stops_speech">स्क्रिन छुँदा भाषण रोक्नुहोस्</string>
@@ -1716,12 +1716,12 @@
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">टाइप गर्दा भाषण अवरोध गर्नुहोस्</string>
     <string name="pref_interrupt_typing_entry_always">सधैं</string>
-    <string name="pref_interrupt_typing_entry_edit_fields">सम्पादन क्षेत्रहरूमा</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">सम्पादन फिल्डहरूमा</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">किबोर्ड इकोमा</string>
     <string name="title_pref_interrupt_enter">Enter मा भाषण अवरोध गर्नुहोस्</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">नाम, राज्य, प्रकार</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">प्रकार, राज्य, नाम</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">राज्य, प्रकार, नाम</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">नाम, अवस्था, प्रकार</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">प्रकार, अवस्था, नाम</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">अवस्था, प्रकार, नाम</string>
     <string name="item_detail_name">नाम</string>
     <string name="item_detail_type">प्रकार</string>
     <string name="item_detail_state">अवस्था</string>

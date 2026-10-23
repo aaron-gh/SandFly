@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Cilësimet e zhvilluesit</string>
   <string name="title_activity_dump_a11y_event">Zgjidh ngjarjet për regjistrimin</string>
   <string name="title_pref_dump_a11y_event">Filtro regjistrimin e ngjarjeve të qasshmërisë</string>
-  <string name="pref_reduce_window_delay_title">Fikni animacionet</string>
+  <string name="pref_reduce_window_delay_title">Fik animacionet</string>
   <string name="title_pref_log_level">Niveli i daljes së regjistrit</string>
   <string name="title_pref_diagnosis_mode">Modaliteti i diagnostikimit</string>
   <string name="title_pref_tts_overlay">Shfaq daljen e ligjërimit</string>
@@ -1419,10 +1419,10 @@
     <string name="emoji_repeat_count_5">5 ose më shumë</string>
     <string name="emoji_repeat_count_6">6 ose më shumë</string>
     <string name="pref_table_headers_category_title">Leximi i tabelës</string>
-    <string name="pref_table_column_headers_title">Lexoni titujt e kolonave</string>
+    <string name="pref_table_column_headers_title">Lexo titujt e kolonave</string>
     <string name="pref_table_column_headers_entry_after">Pas të dhënave të qelizave</string>
     <string name="pref_table_column_headers_entry_before">Përpara të dhënave të qelizave</string>
-    <string name="pref_table_column_headers_entry_off">Mos lexoni</string>
+    <string name="pref_table_column_headers_entry_off">Mos lexo</string>
     <string name="pref_table_speak_row_column_numbers_title">Flisni numrat e rreshtave dhe kolonave</string>
     <string name="pref_table_speak_row_column_numbers_summary">Njoftoni numrat e rreshtave dhe kolonave për qelizat e tabelës</string>
     <string name="title_pref_speak_volume_changes">Ndryshimet e volumit të të folurit</string>
@@ -1479,10 +1479,10 @@
     <string name="quick_settings_brightness">Shkëlqimi</string>
     <string name="quick_settings_adaptive_brightness">Shkëlqim përshtatës</string>
     <string name="quick_settings_media_volume">Volumi i medias</string>
-    <string name="quick_settings_call_volume">Vëllimi i thirrjes</string>
+    <string name="quick_settings_call_volume">Volumi i thirrjes</string>
     <string name="quick_settings_ring_volume">Vëllimi i unazës</string>
     <string name="quick_settings_notification_volume">Vëllimi i njoftimit</string>
-    <string name="quick_settings_alarm_volume">Vëllimi i alarmit</string>
+    <string name="quick_settings_alarm_volume">Volumi i alarmit</string>
     <string name="quick_settings_accessibility_volume">Volumi i qasshmërisë</string>
     <string name="quick_settings_system_volume">Volumi i zërit të sistemit</string>
     <string name="quick_settings_data_saver">Kursuesi i të dhënave</string>
@@ -1496,7 +1496,7 @@
     <string name="quick_settings_font_size">Madhësia e shkronjave</string>
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Asnjë media</string>
-    <string name="quick_settings_media_output">Prodhimi mediatik</string>
+    <string name="quick_settings_media_output">Dalja e medias</string>
     <string name="quick_settings_next_alarm">Alarmi i radhës</string>
     <string name="quick_settings_no_alarm">Asnjë alarm</string>
     <string name="quick_settings_settings">Cilësimet</string>
@@ -1515,7 +1515,7 @@
     </plurals>
     <string name="quick_settings_connected">Lidhur</string>
     <string name="quick_settings_battery">Bateria</string>
-    <string name="quick_settings_battery_charging">%1$s, karikimi</string>
+    <string name="quick_settings_battery_charging">%1$s, po karikohet</string>
     <string name="quick_settings_battery_full">%1$s, i ngarkuar</string>
     <string name="quick_settings_sound">Tingulli</string>
     <string name="quick_settings_vibrate">Dridhja</string>
@@ -1530,7 +1530,7 @@
     <string name="quick_settings_add_tile">Shto pllakën e aplikacionit</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Numri i kolonave</string>
-    <string name="quick_settings_move">Lëvizni</string>
+    <string name="quick_settings_move">Zhvendos</string>
     <string name="quick_settings_move_title">Lëviz %1$s</string>
     <string name="quick_settings_cell">Rreshti %1$d, kolona %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1718,9 +1718,9 @@
     <string name="pref_interrupt_typing_entry_edit_fields">Në fushat e redaktimit</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Në jehonën e tastierës</string>
     <string name="title_pref_interrupt_enter">Ndërpreni fjalimin në Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Emri, shteti, lloji</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Lloji, shteti, emri</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Shteti, lloji, emri</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Emri, gjendja, lloji</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Lloji, gjendja, emri</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Gjendja, lloji, emri</string>
     <string name="item_detail_name">Emri</string>
     <string name="item_detail_type">Lloji</string>
     <string name="item_detail_state">Gjendja</string>

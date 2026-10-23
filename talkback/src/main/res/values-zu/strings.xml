@@ -61,7 +61,7 @@
   <string name="message_reset_gesture_settings_confirm_dialog">Lokhu kuzosetha kabusha konke ukuthintwa kubuyele kulokho obekwenzeka ngokuzenzakalela kwasekuqaleni.\n\nUzolahlekelwa yinoma yiziphi izinguquko osuzenzile.</string>
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Setha kabusha</string>
   <string name="gestures_announce_reset_gesture_settings">Amasethingi wokuthinta asethwe kabusha.</string>
-  <string name="pref_speak_roles_title">Uhlobo lwento yokukhuluma</string>
+  <string name="pref_speak_roles_title">Khuluma uhlobo lwento</string>
   <string name="pref_speak_roles_summary">Inkinobho yokuthanda noma ibhokisi lokuhlola</string>
   <string name="title_pref_speak_element_ids">Khuluma ama-ID ento</string>
   <string name="summary_pref_speak_element_ids">Isho i-ID yezinkinobho ezingenayo ilebula</string>
@@ -1418,9 +1418,9 @@
     <string name="emoji_repeat_count_4">4 noma ngaphezulu</string>
     <string name="emoji_repeat_count_5">5 noma ngaphezulu</string>
     <string name="emoji_repeat_count_6">6 noma ngaphezulu</string>
-    <string name="pref_table_headers_category_title">Ukufundwa kwetafula</string>
+    <string name="pref_table_headers_category_title">Ukufundwa kwamathebula</string>
     <string name="pref_table_column_headers_title">Funda izihloko zekholomu</string>
-    <string name="pref_table_column_headers_entry_after">Ngemva kwedatha yeselula</string>
+    <string name="pref_table_column_headers_entry_after">Ngemva kwedatha yeseli</string>
     <string name="pref_table_column_headers_entry_before">Ngaphambi kwedatha yeseli</string>
     <string name="pref_table_column_headers_entry_off">Ungafundi</string>
     <string name="pref_table_speak_row_column_numbers_title">Khuluma izinombolo zomugqa nekholomu</string>
@@ -1504,7 +1504,7 @@
     <string name="quick_settings_add_system_tile">Engeza ithayela lesistimu</string>
     <string name="quick_settings_no_system_tiles">Awekho amathayela esistimu azokwengezwa</string>
     <string name="quick_settings_tile_not_found">%1$s ayikho kuzilungiselelo ezisheshayo zesistimu</string>
-    <string name="quick_settings_never">Ungalokothi</string>
+    <string name="quick_settings_never">Neze</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d isekhondi</item>
         <item quantity="other">%d imizuzwana</item>
@@ -1691,7 +1691,7 @@
     <string name="window_names_always">Njalo</string>
     <string name="window_names_until_first_item">Njalo, nqamula into yokuqala</string>
     <string name="window_names_window_opens">Kuphela uma iwindi livuleka</string>
-    <string name="window_names_never">Ungalokothi</string>
+    <string name="window_names_never">Neze</string>
     <string name="title_pref_selector_links_controls_web_only">Izixhumanisi nezilawuli kuphela kokuqukethwe kwewebhu</string>
     <string name="title_pref_selector_auto_switch">Shintsha ukulawula ukufunda ngokuzenzakalelayo</string>
     <string name="title_pref_touch_stops_speech">Misa inkulumo lapho uthinta isikrini</string>
@@ -1718,7 +1718,7 @@
     <string name="pref_interrupt_typing_entry_edit_fields">Ezinkambu zokuhlela</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Ku-echo yekhibhodi</string>
     <string name="title_pref_interrupt_enter">Phakamisa inkulumo ku-Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Igama, izwe, uhlobo</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Igama, isimo, uhlobo</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Uhlobo, isimo, igama</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Isimo, uhlobo, igama</string>
     <string name="item_detail_name">Igama</string>

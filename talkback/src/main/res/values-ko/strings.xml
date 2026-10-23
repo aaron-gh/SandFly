@@ -1418,11 +1418,11 @@
     <string name="emoji_repeat_count_4">4개 이상</string>
     <string name="emoji_repeat_count_5">5개 이상</string>
     <string name="emoji_repeat_count_6">6개 이상</string>
-    <string name="pref_table_headers_category_title">테이블 리딩</string>
+    <string name="pref_table_headers_category_title">표 읽기</string>
     <string name="pref_table_column_headers_title">열 헤더 읽기</string>
     <string name="pref_table_column_headers_entry_after">셀 데이터 이후</string>
     <string name="pref_table_column_headers_entry_before">셀 데이터 이전</string>
-    <string name="pref_table_column_headers_entry_off">읽지 마세요</string>
+    <string name="pref_table_column_headers_entry_off">읽지 않음</string>
     <string name="pref_table_speak_row_column_numbers_title">행 및 열 번호 말하기</string>
     <string name="pref_table_speak_row_column_numbers_summary">표 셀의 행 및 열 번호 알리기</string>
     <string name="title_pref_speak_volume_changes">볼륨 변경 말하기</string>
@@ -1467,7 +1467,7 @@
     <string name="quick_settings_mobile_data">모바일 데이터</string>
     <string name="quick_settings_hotspot">핫스팟</string>
     <string name="quick_settings_airplane_mode">비행기 모드</string>
-    <string name="quick_settings_do_not_disturb">방해하지 마세요</string>
+    <string name="quick_settings_do_not_disturb">방해 금지 모드</string>
     <string name="quick_settings_sound_mode">사운드 모드</string>
     <string name="quick_settings_flashlight">손전등</string>
     <string name="quick_settings_flashlight_brightness">손전등 밝기</string>
@@ -1479,7 +1479,7 @@
     <string name="quick_settings_brightness">밝기</string>
     <string name="quick_settings_adaptive_brightness">적응형 밝기</string>
     <string name="quick_settings_media_volume">미디어 볼륨</string>
-    <string name="quick_settings_call_volume">통화량</string>
+    <string name="quick_settings_call_volume">통화 음량</string>
     <string name="quick_settings_ring_volume">벨소리 볼륨</string>
     <string name="quick_settings_notification_volume">알림 볼륨</string>
     <string name="quick_settings_alarm_volume">알람 볼륨</string>
@@ -1489,7 +1489,7 @@
     <string name="quick_settings_night_light">야간 조명</string>
     <string name="quick_settings_extra_dim">매우 어두움</string>
     <string name="quick_settings_color_inversion">색상 반전</string>
-    <string name="quick_settings_color_correction">색상보정</string>
+    <string name="quick_settings_color_correction">색상 보정</string>
     <string name="quick_settings_microphone_access">마이크 액세스</string>
     <string name="quick_settings_camera_access">카메라 액세스</string>
     <string name="quick_settings_screen_timeout">화면 시간 초과</string>
@@ -1504,7 +1504,7 @@
     <string name="quick_settings_add_system_tile">시스템 타일 추가</string>
     <string name="quick_settings_no_system_tiles">추가할 시스템 타일이 없습니다.</string>
     <string name="quick_settings_tile_not_found">%1$s는 시스템의 빠른 설정에 없습니다</string>
-    <string name="quick_settings_never">절대로</string>
+    <string name="quick_settings_never">안 함</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d초</item>
         <item quantity="other">%d초</item>
@@ -1531,7 +1531,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">열 수</string>
     <string name="quick_settings_move">이동</string>
-    <string name="quick_settings_move_title">이동 %1$s</string>
+    <string name="quick_settings_move_title">%1$s 이동</string>
     <string name="quick_settings_cell">행 %1$d, 열 %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1691,7 +1691,7 @@
     <string name="window_names_always">항상</string>
     <string name="window_names_until_first_item">항상 첫 번째 항목에서 잘림</string>
     <string name="window_names_window_opens">창이 열릴 때만</string>
-    <string name="window_names_never">절대로</string>
+    <string name="window_names_never">안 함</string>
     <string name="title_pref_selector_links_controls_web_only">웹 콘텐츠에만 있는 링크 및 컨트롤</string>
     <string name="title_pref_selector_auto_switch">읽기 제어 자동 변경</string>
     <string name="title_pref_touch_stops_speech">화면 터치 시 음성 중지</string>
@@ -1719,7 +1719,7 @@
     <string name="pref_interrupt_typing_entry_keyboard_echo">키보드 에코에서</string>
     <string name="title_pref_interrupt_enter">Enter 키에서 음성 중단</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">이름, 상태, 유형</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">유형, 주, 이름</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">유형, 상태, 이름</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">상태, 유형, 이름</string>
     <string name="item_detail_name">이름</string>
     <string name="item_detail_type">유형</string>

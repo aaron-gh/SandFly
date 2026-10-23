@@ -61,7 +61,7 @@
   <string name="message_reset_gesture_settings_confirm_dialog">ນີ້ຈະເປັນການຣີເຊັດທ່າທາງທັງໝົດໄປເປັນຄຳສັ່ງເລີມຕົ້ນຂອງພວກມັນ.\n\nທ່ານຈະສູນເສຍການປ່ຽນແປງໃດກໍຕາມທີ່ທ່ານສ້າງຂຶ້ນ.</string>
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">ຣີເຊັດ</string>
   <string name="gestures_announce_reset_gesture_settings">ຣີເຊັດການຕັ້ງຄ່າທ່າທາງແລ້ວ.</string>
-  <string name="pref_speak_roles_title">ປະເພດອົງປະກອບການເວົ້າ</string>
+  <string name="pref_speak_roles_title">ອ່ານປະເພດລາຍການ</string>
   <string name="pref_speak_roles_summary">ປຸ່ມມັກ ຫຼື checkbox</string>
   <string name="title_pref_speak_element_ids">ໄອດີອົງປະກອບການເວົ້າ</string>
   <string name="summary_pref_speak_element_ids">ເວົ້າ ID ຂອງປຸ່ມທີ່ບໍ່ມີປ້າຍຊື່</string>
@@ -1422,7 +1422,7 @@
     <string name="pref_table_column_headers_title">ອ່ານສ່ວນຫົວຖັນ</string>
     <string name="pref_table_column_headers_entry_after">ຫຼັງຈາກຂໍ້ມູນເຊລ</string>
     <string name="pref_table_column_headers_entry_before">ກ່ອນຂໍ້ມູນເຊລ</string>
-    <string name="pref_table_column_headers_entry_off">ຢ່າອ່ານ</string>
+    <string name="pref_table_column_headers_entry_off">ບໍ່ອ່ານ</string>
     <string name="pref_table_speak_row_column_numbers_title">ເວົ້າເລກແຖວ ແລະຖັນ</string>
     <string name="pref_table_speak_row_column_numbers_summary">ປະກາດຕົວເລກແຖວ ແລະຖັນສຳລັບຕາລາງຕາຕະລາງ</string>
     <string name="title_pref_speak_volume_changes">ເວົ້າການປ່ຽນແປງລະດັບສຽງ</string>
@@ -1478,8 +1478,8 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">ຄວາມສະຫວ່າງ</string>
     <string name="quick_settings_adaptive_brightness">ຄວາມສະຫວ່າງແບບປັບຕົວໄດ້</string>
-    <string name="quick_settings_media_volume">ປະລິມານສື່</string>
-    <string name="quick_settings_call_volume">ປະລິມານການໂທ</string>
+    <string name="quick_settings_media_volume">ລະດັບສຽງມີເດຍ</string>
+    <string name="quick_settings_call_volume">ລະດັບສຽງການໂທ</string>
     <string name="quick_settings_ring_volume">ລະດັບສຽງຂອງວົງແຫວນ</string>
     <string name="quick_settings_notification_volume">ປະລິມານການແຈ້ງເຕືອນ</string>
     <string name="quick_settings_alarm_volume">ລະດັບສຽງປຸກ</string>
@@ -1494,14 +1494,14 @@
     <string name="quick_settings_camera_access">ການເຂົ້າເຖິງກ້ອງຖ່າຍຮູບ</string>
     <string name="quick_settings_screen_timeout">ໝົດເວລາໜ້າຈໍ</string>
     <string name="quick_settings_font_size">ຂະຫນາດຕົວອັກສອນ</string>
-    <string name="quick_settings_media">ສື່ມວນຊົນ</string>
+    <string name="quick_settings_media">ມີເດຍ</string>
     <string name="quick_settings_no_media">ບໍ່ມີສື່</string>
-    <string name="quick_settings_media_output">ຜົນຜະລິດສື່ມວນຊົນ</string>
+    <string name="quick_settings_media_output">ເອົາພຸດມີເດຍ</string>
     <string name="quick_settings_next_alarm">ປຸກຕໍ່ໄປ</string>
     <string name="quick_settings_no_alarm">ບໍ່ມີສັນຍານເຕືອນ</string>
     <string name="quick_settings_settings">ການຕັ້ງຄ່າ</string>
     <string name="quick_settings_power_menu">ເມນູພະລັງງານ</string>
-    <string name="quick_settings_add_system_tile">ເພີ່ມກະເບື້ອງລະບົບ</string>
+    <string name="quick_settings_add_system_tile">ເພີ່ມປຸ່ມລະບົບ</string>
     <string name="quick_settings_no_system_tiles">ບໍ່ມີແຜ່ນລະບົບໃຫ້ເພີ່ມ</string>
     <string name="quick_settings_tile_not_found">%1$s ບໍ່ຢູ່ໃນການຕັ້ງຄ່າດ່ວນຂອງລະບົບ</string>
     <string name="quick_settings_never">ບໍ່ເຄີຍ</string>
@@ -1516,7 +1516,7 @@
     <string name="quick_settings_connected">ເຊື່ອມຕໍ່</string>
     <string name="quick_settings_battery">ແບັດເຕີຣີ</string>
     <string name="quick_settings_battery_charging">%1$s, ກຳລັງສາກ</string>
-    <string name="quick_settings_battery_full">%1$s, ຖືກຄິດຄ່າ</string>
+    <string name="quick_settings_battery_full">%1$s, ສາກເຕັມແລ້ວ</string>
     <string name="quick_settings_sound">ສຽງ</string>
     <string name="quick_settings_vibrate">ສັ່ນ</string>
     <string name="quick_settings_mute">ປິດສຽງ</string>
@@ -1527,7 +1527,7 @@
     <string name="quick_settings_system">ການຕັ້ງຄ່າດ່ວນຂອງລະບົບ</string>
     <string name="quick_settings_open_settings">ເປີດການຕັ້ງຄ່າ</string>
     <string name="quick_settings_add_control">ເພີ່ມການຄວບຄຸມ</string>
-    <string name="quick_settings_add_tile">ເພີ່ມແຜ່ນ app</string>
+    <string name="quick_settings_add_tile">ເພີ່ມປຸ່ມແອັບ</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">ຈຳນວນຖັນ</string>
     <string name="quick_settings_move">ຍ້າຍ</string>
@@ -1540,7 +1540,7 @@
         <item quantity="other">%d ຍ້າຍລາຍການອື່ນແລ້ວ</item>
     </plurals>
     <string name="quick_settings_remove">ເອົາອອກ</string>
-    <string name="quick_settings_added">%1$s ເພີ່ມ</string>
+    <string name="quick_settings_added">ເພີ່ມ %1$s ແລ້ວ</string>
     <string name="quick_settings_removed">%1$sເອົາອອກ</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ເປີດ. ຖື 2 ນິ້ວເທິງໜ້າຈໍເປັນເວລາ 5 ວິນາທີເພື່ອປິດ. ເພື່ອຢຸດການສະແດງຂໍ້ຄວາມນີ້, ປິດການຕັ້ງຄ່າ SandFly &gt; ການຕັ້ງຄ່າຂັ້ນສູງ &gt; ສະແດງຄໍາແນະນໍາສໍາລັບການປິດ SandFly.</string>
     <string name="edge_gestures_title">ຂອບ</string>
@@ -1716,11 +1716,11 @@
     <string name="title_pref_interrupt_typing">ຂັດຈັງຫວະສຽງເວົ້າໃນເວລາພິມ</string>
     <string name="pref_interrupt_typing_entry_always">ສະເໝີ</string>
     <string name="pref_interrupt_typing_entry_edit_fields">ຢູ່ໃນຊ່ອງດັດແກ້</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">ຢູ່ເທິງແປ້ນພິມ</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">ເມື່ອແປ້ນພິມອ່ານຊ້ຳ</string>
     <string name="title_pref_interrupt_enter">ຂັດຂວາງການເວົ້າໃນ Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">ຊື່, ລັດ, ປະເພດ</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">ປະເພດ, ລັດ, ຊື່</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">ລັດ, ປະເພດ, ຊື່</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">ຊື່, ສະຖານະ, ປະເພດ</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">ປະເພດ, ສະຖານະ, ຊື່</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">ສະຖານະ, ປະເພດ, ຊື່</string>
     <string name="item_detail_name">ຊື່</string>
     <string name="item_detail_type">ປະເພດ</string>
     <string name="item_detail_state">ສະຖານະ</string>

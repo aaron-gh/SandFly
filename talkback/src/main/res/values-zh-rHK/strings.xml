@@ -1417,8 +1417,8 @@
     <string name="emoji_repeat_count_4">4個或更多</string>
     <string name="emoji_repeat_count_5">5個或更多</string>
     <string name="emoji_repeat_count_6">6個或更多</string>
-    <string name="pref_table_headers_category_title">表格讀</string>
-    <string name="pref_table_column_headers_title">讀取列標題</string>
+    <string name="pref_table_headers_category_title">表格朗讀</string>
+    <string name="pref_table_column_headers_title">讀出欄標題</string>
     <string name="pref_table_column_headers_entry_after">單元格資料後</string>
     <string name="pref_table_column_headers_entry_before">單元格資料之前</string>
     <string name="pref_table_column_headers_entry_off">不讀</string>
@@ -1462,7 +1462,7 @@
     <string name="title_pref_quick_settings_items">快速設定面板</string>
     <string name="quick_settings_title">快速設定</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
-    <string name="quick_settings_bluetooth">Bluetooth</string>
+    <string name="quick_settings_bluetooth">藍牙</string>
     <string name="quick_settings_mobile_data">行動數據</string>
     <string name="quick_settings_hotspot">熱點</string>
     <string name="quick_settings_airplane_mode">飛航模式</string>
@@ -1470,7 +1470,7 @@
     <string name="quick_settings_sound_mode">聲音模式</string>
     <string name="quick_settings_flashlight">手電筒</string>
     <string name="quick_settings_flashlight_brightness">手電筒亮度</string>
-    <string name="quick_settings_location">地點</string>
+    <string name="quick_settings_location">位置</string>
     <string name="quick_settings_auto_rotate">自動旋轉</string>
     <string name="quick_settings_battery_saver">省電</string>
     <string name="quick_settings_dark_theme">深色主題</string>
@@ -1481,16 +1481,16 @@
     <string name="quick_settings_call_volume">通話音量</string>
     <string name="quick_settings_ring_volume">鈴聲音量</string>
     <string name="quick_settings_notification_volume">通知音量</string>
-    <string name="quick_settings_alarm_volume">警報音量</string>
+    <string name="quick_settings_alarm_volume">鬧鐘音量</string>
     <string name="quick_settings_accessibility_volume">無障礙功能音量</string>
     <string name="quick_settings_system_volume">系統音量</string>
-    <string name="quick_settings_data_saver">資料保護程式</string>
+    <string name="quick_settings_data_saver">數據節省模式</string>
     <string name="quick_settings_night_light">夜燈</string>
-    <string name="quick_settings_extra_dim">額外昏暗</string>
+    <string name="quick_settings_extra_dim">超暗</string>
     <string name="quick_settings_color_inversion">顏色反轉</string>
     <string name="quick_settings_color_correction">色彩校正</string>
-    <string name="quick_settings_microphone_access">麥克風訪問</string>
-    <string name="quick_settings_camera_access">相機訪問</string>
+    <string name="quick_settings_microphone_access">麥克風存取權</string>
+    <string name="quick_settings_camera_access">相機存取權</string>
     <string name="quick_settings_screen_timeout">螢幕超時</string>
     <string name="quick_settings_font_size">字體大小</string>
     <string name="quick_settings_media">媒體</string>
@@ -1503,7 +1503,7 @@
     <string name="quick_settings_add_system_tile">新增系統磁貼</string>
     <string name="quick_settings_no_system_tiles">無需新增系統圖塊</string>
     <string name="quick_settings_tile_not_found">系统快捷设置中没有%1$s</string>
-    <string name="quick_settings_never">從來沒有</string>
+    <string name="quick_settings_never">永不</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d 第二</item>
         <item quantity="other">%d秒</item>
@@ -1525,10 +1525,10 @@
     <string name="quick_settings_edit">編輯</string>
     <string name="quick_settings_system">系統快速設定</string>
     <string name="quick_settings_open_settings">開啟設定</string>
-    <string name="quick_settings_add_control">新增控件</string>
+    <string name="quick_settings_add_control">新增控制項</string>
     <string name="quick_settings_add_tile">新增應用程式磁貼</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
-    <string name="quick_settings_columns">列數</string>
+    <string name="quick_settings_columns">欄數</string>
     <string name="quick_settings_move">移動</string>
     <string name="quick_settings_move_title">移動%1$s</string>
     <string name="quick_settings_cell">第 %1$d 行，第 %2$d 列</string>
@@ -1690,7 +1690,7 @@
     <string name="window_names_always">總是</string>
     <string name="window_names_until_first_item">總是被第一個項目切斷</string>
     <string name="window_names_window_opens">僅當視窗開啟時</string>
-    <string name="window_names_never">從來沒有</string>
+    <string name="window_names_never">永不</string>
     <string name="title_pref_selector_links_controls_web_only">僅在網頁內容中的連結和控件</string>
     <string name="title_pref_selector_auto_switch">自動改變閱讀控制</string>
     <string name="title_pref_touch_stops_speech">觸碰螢幕時停止講話</string>
@@ -1714,8 +1714,8 @@
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">打字時打斷語音</string>
     <string name="pref_interrupt_typing_entry_always">總是</string>
-    <string name="pref_interrupt_typing_entry_edit_fields">在編輯字段中</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">鍵盤迴聲</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">在編輯欄位中</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">鍵盤回應時</string>
     <string name="title_pref_interrupt_enter">輸入時中斷語音</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">名稱、狀態、類型</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">類型、狀態、名稱</string>

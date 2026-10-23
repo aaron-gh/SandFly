@@ -1418,11 +1418,11 @@
     <string name="emoji_repeat_count_4">4 یا اس سے زیادہ</string>
     <string name="emoji_repeat_count_5">5 یا اس سے زیادہ</string>
     <string name="emoji_repeat_count_6">6 یا اس سے زیادہ</string>
-    <string name="pref_table_headers_category_title">ٹیبل ریڈنگ</string>
+    <string name="pref_table_headers_category_title">ٹیبل پڑھنا</string>
     <string name="pref_table_column_headers_title">کالم ہیڈر پڑھیں</string>
     <string name="pref_table_column_headers_entry_after">سیل ڈیٹا کے بعد</string>
     <string name="pref_table_column_headers_entry_before">سیل ڈیٹا سے پہلے</string>
-    <string name="pref_table_column_headers_entry_off">نہیں پڑھنا</string>
+    <string name="pref_table_column_headers_entry_off">نہ پڑھیں</string>
     <string name="pref_table_speak_row_column_numbers_title">قطار اور کالم نمبر بولیں</string>
     <string name="pref_table_speak_row_column_numbers_summary">ٹیبل سیلز کے لیے قطار اور کالم نمبروں کا اعلان کریں</string>
     <string name="title_pref_speak_volume_changes">والیوم کی تبدیلیاں بولیں</string>
@@ -1488,7 +1488,7 @@
     <string name="quick_settings_data_saver">ڈیٹا سیور</string>
     <string name="quick_settings_night_light">نائٹ لائٹ</string>
     <string name="quick_settings_extra_dim">اضافی مدھم</string>
-    <string name="quick_settings_color_inversion">رنگ کا الٹا</string>
+    <string name="quick_settings_color_inversion">رنگوں کی تقلیب</string>
     <string name="quick_settings_color_correction">رنگ کی اصلاح</string>
     <string name="quick_settings_microphone_access">مائیکروفون تک رسائی</string>
     <string name="quick_settings_camera_access">کیمرے تک رسائی</string>
@@ -1530,8 +1530,8 @@
     <string name="quick_settings_add_tile">ایپ ٹائل شامل کریں</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">کالموں کی تعداد</string>
-    <string name="quick_settings_move">منتقل</string>
-    <string name="quick_settings_move_title">منتقل کریں %1$s</string>
+    <string name="quick_settings_move">منتقل کریں</string>
+    <string name="quick_settings_move_title">%1$s منتقل کریں</string>
     <string name="quick_settings_cell">قطار %1$d، کالم %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1715,12 +1715,12 @@
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">ٹائپ کرتے وقت تقریر میں خلل ڈالیں</string>
     <string name="pref_interrupt_typing_entry_always">ہمیشہ</string>
-    <string name="pref_interrupt_typing_entry_edit_fields">ترمیم کے شعبوں میں</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">ترمیمی فیلڈز میں</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">کی بورڈ ایکو پر</string>
     <string name="title_pref_interrupt_enter">انٹر پر تقریر میں خلل ڈالیں</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">نام، ریاست، قسم</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">قسم، ریاست، نام</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">ریاست، قسم، نام</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">نام، حالت، قسم</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">قسم، حالت، نام</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">حالت، قسم، نام</string>
     <string name="item_detail_name">نام</string>
     <string name="item_detail_type">قسم</string>
     <string name="item_detail_state">حالت</string>

@@ -1465,7 +1465,7 @@
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">ទិន្នន័យចល័ត</string>
-    <string name="quick_settings_hotspot">ចំណុចក្តៅ</string>
+    <string name="quick_settings_hotspot">ហតស្ប៉ត</string>
     <string name="quick_settings_airplane_mode">របៀបជិះយន្តហោះ</string>
     <string name="quick_settings_do_not_disturb">កុំរំខាន</string>
     <string name="quick_settings_sound_mode">របៀបសំឡេង</string>
@@ -1473,12 +1473,12 @@
     <string name="quick_settings_flashlight_brightness">ពន្លឺពិល</string>
     <string name="quick_settings_location">ទីតាំង</string>
     <string name="quick_settings_auto_rotate">បង្វិលដោយស្វ័យប្រវត្តិ</string>
-    <string name="quick_settings_battery_saver">ឧបករណ៍សន្សំសំចៃថ្ម</string>
-    <string name="quick_settings_dark_theme">ប្រធានបទងងឹត</string>
+    <string name="quick_settings_battery_saver">កម្មវិធីសន្សំថ្ម</string>
+    <string name="quick_settings_dark_theme">រចនាប័ទ្មងងឹត</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">ពន្លឺ</string>
     <string name="quick_settings_adaptive_brightness">ពន្លឺប្រែប្រួល</string>
-    <string name="quick_settings_media_volume">បរិមាណប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="quick_settings_media_volume">កម្រិតសំឡេងមេឌៀ</string>
     <string name="quick_settings_call_volume">កម្រិតសំឡេងហៅ</string>
     <string name="quick_settings_ring_volume">កម្រិតសំឡេងរោទ៍</string>
     <string name="quick_settings_notification_volume">កម្រិតសំឡេងជូនដំណឹង</string>
@@ -1494,14 +1494,14 @@
     <string name="quick_settings_camera_access">ការចូលប្រើកាមេរ៉ា</string>
     <string name="quick_settings_screen_timeout">អស់ពេលអេក្រង់</string>
     <string name="quick_settings_font_size">ទំហំពុម្ពអក្សរ</string>
-    <string name="quick_settings_media">ប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="quick_settings_media">មេឌៀ</string>
     <string name="quick_settings_no_media">គ្មានប្រព័ន្ធផ្សព្វផ្សាយទេ</string>
-    <string name="quick_settings_media_output">លទ្ធផលប្រព័ន្ធផ្សព្វផ្សាយ</string>
-    <string name="quick_settings_next_alarm">ការជូនដំណឹងបន្ទាប់</string>
+    <string name="quick_settings_media_output">លទ្ធផលមេឌៀ</string>
+    <string name="quick_settings_next_alarm">ម៉ោងរោទ៍បន្ទាប់</string>
     <string name="quick_settings_no_alarm">គ្មានសំឡេងរោទិ៍</string>
     <string name="quick_settings_settings">ការកំណត់</string>
     <string name="quick_settings_power_menu">ម៉ឺនុយថាមពល</string>
-    <string name="quick_settings_add_system_tile">បន្ថែមក្បឿងប្រព័ន្ធ</string>
+    <string name="quick_settings_add_system_tile">បន្ថែមប្រអប់ប្រព័ន្ធ</string>
     <string name="quick_settings_no_system_tiles">មិនមានក្រឡាប្រព័ន្ធដែលត្រូវបន្ថែមទេ</string>
     <string name="quick_settings_tile_not_found">%1$s មិនស្ថិតនៅក្នុងការកំណត់រហ័សរបស់ប្រព័ន្ធទេ</string>
     <string name="quick_settings_never">មិនដែល</string>
@@ -1516,7 +1516,7 @@
     <string name="quick_settings_connected">បានភ្ជាប់</string>
     <string name="quick_settings_battery">ថ្ម</string>
     <string name="quick_settings_battery_charging">%1$s សាកថ្ម</string>
-    <string name="quick_settings_battery_full">%1$s គិតថ្លៃ</string>
+    <string name="quick_settings_battery_full">%1$s សាកពេញ</string>
     <string name="quick_settings_sound">សំឡេង</string>
     <string name="quick_settings_vibrate">ញ័រ</string>
     <string name="quick_settings_mute">បិទសំឡេង</string>
@@ -1540,7 +1540,7 @@
         <item quantity="other">%d ធាតុផ្សេងទៀតត្រូវបានផ្លាស់ទី</item>
     </plurals>
     <string name="quick_settings_remove">ដកចេញ</string>
-    <string name="quick_settings_added">%1$s បានបន្ថែម</string>
+    <string name="quick_settings_added">បានបន្ថែម %1$s</string>
     <string name="quick_settings_removed">%1$s ដកចេញ</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly បើក។ សង្កត់ម្រាមដៃ 2 នៅលើអេក្រង់រយៈពេល 5 វិនាទីដើម្បីបិទ។ ដើម្បីបញ្ឈប់ការបង្ហាញសារនេះ សូមបិទ SandFly ការកំណត់ &gt; ការកំណត់កម្រិតខ្ពស់ &gt; បង្ហាញការណែនាំសម្រាប់ការបិទ SandFly។</string>
     <string name="edge_gestures_title">គែម</string>
@@ -1716,11 +1716,11 @@
     <string name="title_pref_interrupt_typing">រំខានការនិយាយនៅពេលវាយ</string>
     <string name="pref_interrupt_typing_entry_always">ជានិច្ច</string>
     <string name="pref_interrupt_typing_entry_edit_fields">នៅក្នុងវាលកែសម្រួល</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">នៅលើក្តារចុចអេកូ</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">ពេលក្ដារចុចអានឡើងវិញ</string>
     <string name="title_pref_interrupt_enter">រំខានការនិយាយនៅលើ Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">ឈ្មោះ, រដ្ឋ, ប្រភេទ</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">ប្រភេទ, រដ្ឋ, ឈ្មោះ</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">រដ្ឋ, ប្រភេទ, ឈ្មោះ</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">ឈ្មោះ, ស្ថានភាព, ប្រភេទ</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">ប្រភេទ, ស្ថានភាព, ឈ្មោះ</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">ស្ថានភាព, ប្រភេទ, ឈ្មោះ</string>
     <string name="item_detail_name">ឈ្មោះ</string>
     <string name="item_detail_type">ប្រភេទ</string>
     <string name="item_detail_state">ស្ថានភាព</string>

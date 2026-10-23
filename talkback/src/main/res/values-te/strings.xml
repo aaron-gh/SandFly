@@ -1462,10 +1462,10 @@
     <string name="quick_settings_sound_mode">సౌండ్ మోడ్</string>
     <string name="quick_settings_flashlight">ఫ్లాష్లైట్</string>
     <string name="quick_settings_flashlight_brightness">ఫ్లాష్‌లైట్ ప్రకాశం</string>
-    <string name="quick_settings_location">స్థానం</string>
+    <string name="quick_settings_location">లొకేషన్</string>
     <string name="quick_settings_auto_rotate">ఆటో-రొటేట్</string>
     <string name="quick_settings_battery_saver">బ్యాటరీ సేవర్</string>
-    <string name="quick_settings_dark_theme">చీకటి థీమ్</string>
+    <string name="quick_settings_dark_theme">ముదురు రంగు థీమ్</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">ప్రకాశం</string>
     <string name="quick_settings_adaptive_brightness">అనుకూల ప్రకాశం</string>
@@ -1492,10 +1492,10 @@
     <string name="quick_settings_no_alarm">అలారం లేదు</string>
     <string name="quick_settings_settings">సెట్టింగ్‌లు</string>
     <string name="quick_settings_power_menu">పవర్ మెను</string>
-    <string name="quick_settings_add_system_tile">సిస్టమ్ టైల్ను జోడించండి</string>
+    <string name="quick_settings_add_system_tile">సిస్టమ్ టైల్‌ను జోడించండి</string>
     <string name="quick_settings_no_system_tiles">జోడించడానికి సిస్టమ్ టైల్స్ ఏవీ లేవు</string>
     <string name="quick_settings_tile_not_found">%1$s సిస్టమ్ శీఘ్ర సెట్టింగ్‌లలో లేదు</string>
-    <string name="quick_settings_never">ఎప్పుడూ</string>
+    <string name="quick_settings_never">ఎప్పటికీ వద్దు</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d సెకను</item>
         <item quantity="other">%d సెకన్లు</item>
@@ -1522,7 +1522,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">నిలువు వరుసల సంఖ్య</string>
     <string name="quick_settings_move">తరలించు</string>
-    <string name="quick_settings_move_title">తరలించు %1$s</string>
+    <string name="quick_settings_move_title">%1$s ను తరలించు</string>
     <string name="quick_settings_cell">అడ్డు వరుస %1$d, నిలువు వరుస %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1682,7 +1682,7 @@
     <string name="window_names_always">ఎల్లప్పుడూ</string>
     <string name="window_names_until_first_item">ఎల్లప్పుడూ, మొదటి అంశంతో కత్తిరించండి</string>
     <string name="window_names_window_opens">ఒక విండో తెరిచినప్పుడు మాత్రమే</string>
-    <string name="window_names_never">ఎప్పుడూ</string>
+    <string name="window_names_never">ఎప్పటికీ వద్దు</string>
     <string name="title_pref_selector_links_controls_web_only">వెబ్ కంటెంట్‌లో మాత్రమే లింక్‌లు మరియు నియంత్రణలు</string>
     <string name="title_pref_selector_auto_switch">పఠన నియంత్రణను స్వయంచాలకంగా మార్చండి</string>
     <string name="title_pref_touch_stops_speech">స్క్రీన్‌ను తాకినప్పుడు ప్రసంగాన్ని ఆపివేయండి</string>
@@ -1709,9 +1709,9 @@
     <string name="pref_interrupt_typing_entry_edit_fields">సవరణ ఫీల్డ్‌లలో</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">కీబోర్డ్ ప్రతిధ్వనిలో</string>
     <string name="title_pref_interrupt_enter">Enterలో ప్రసంగానికి అంతరాయం కలిగించండి</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">పేరు, రాష్ట్రం, రకం</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">రకం, రాష్ట్రం, పేరు</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">రాష్ట్రం, రకం, పేరు</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">పేరు, స్థితి, రకం</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">రకం, స్థితి, పేరు</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">స్థితి, రకం, పేరు</string>
     <string name="item_detail_name">పేరు</string>
     <string name="item_detail_type">రకం</string>
     <string name="item_detail_state">స్థితి</string>

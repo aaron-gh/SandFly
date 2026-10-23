@@ -1419,7 +1419,7 @@
     <string name="pref_table_column_headers_title">列ヘッダーを読む</string>
     <string name="pref_table_column_headers_entry_after">セルデータ後</string>
     <string name="pref_table_column_headers_entry_before">セルデータの前</string>
-    <string name="pref_table_column_headers_entry_off">読まないでください</string>
+    <string name="pref_table_column_headers_entry_off">読まない</string>
     <string name="pref_table_speak_row_column_numbers_title">行番号と列番号を読み上げる</string>
     <string name="pref_table_speak_row_column_numbers_summary">表のセルの行番号と列番号を発表する</string>
     <string name="title_pref_speak_volume_changes">発話音量の変更</string>
@@ -1464,19 +1464,19 @@
     <string name="quick_settings_mobile_data">モバイルデータ</string>
     <string name="quick_settings_hotspot">ホットスポット</string>
     <string name="quick_settings_airplane_mode">機内モード</string>
-    <string name="quick_settings_do_not_disturb">邪魔しないでください</string>
+    <string name="quick_settings_do_not_disturb">サイレント モード</string>
     <string name="quick_settings_sound_mode">サウンドモード</string>
     <string name="quick_settings_flashlight">懐中電灯</string>
     <string name="quick_settings_flashlight_brightness">懐中電灯の明るさ</string>
-    <string name="quick_settings_location">場所</string>
+    <string name="quick_settings_location">位置情報</string>
     <string name="quick_settings_auto_rotate">自動回転</string>
     <string name="quick_settings_battery_saver">バッテリーセーバー</string>
     <string name="quick_settings_dark_theme">ダークテーマ</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">明るさ</string>
     <string name="quick_settings_adaptive_brightness">適応型明るさ</string>
-    <string name="quick_settings_media_volume">メディアのボリューム</string>
-    <string name="quick_settings_call_volume">通話量</string>
+    <string name="quick_settings_media_volume">メディアの音量</string>
+    <string name="quick_settings_call_volume">通話音量</string>
     <string name="quick_settings_ring_volume">着信音量</string>
     <string name="quick_settings_notification_volume">通知量</string>
     <string name="quick_settings_alarm_volume">アラーム音量</string>
@@ -1484,7 +1484,7 @@
     <string name="quick_settings_system_volume">システムオーディオの音量</string>
     <string name="quick_settings_data_saver">データセーバー</string>
     <string name="quick_settings_night_light">ナイトライト</string>
-    <string name="quick_settings_extra_dim">非常に暗い</string>
+    <string name="quick_settings_extra_dim">画面をさらに暗くする</string>
     <string name="quick_settings_color_inversion">色の反転</string>
     <string name="quick_settings_color_correction">色補正</string>
     <string name="quick_settings_microphone_access">マイクへのアクセス</string>
@@ -1501,7 +1501,7 @@
     <string name="quick_settings_add_system_tile">システムタイルを追加</string>
     <string name="quick_settings_no_system_tiles">追加するシステム タイルはありません</string>
     <string name="quick_settings_tile_not_found">%1$s はシステムのクイック設定にありません</string>
-    <string name="quick_settings_never">決してしない</string>
+    <string name="quick_settings_never">なし</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d秒</item>
         <item quantity="other">%d秒</item>
@@ -1528,7 +1528,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">列数</string>
     <string name="quick_settings_move">移動</string>
-    <string name="quick_settings_move_title">%1$s 移動</string>
+    <string name="quick_settings_move_title">%1$s を移動</string>
     <string name="quick_settings_cell">行%1$d、列%2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1537,7 +1537,7 @@
         <item quantity="other">他に %d 個のアイテムが移動されました</item>
     </plurals>
     <string name="quick_settings_remove">削除</string>
-    <string name="quick_settings_added">%1$s 追加しました</string>
+    <string name="quick_settings_added">%1$s を追加しました</string>
     <string name="quick_settings_removed">%1$s が削除されました</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly オン。 2 本の指を画面上で 5 秒間押し続けると、電源がオフになります。このメッセージの表示を停止するには、「SandFly 設定」&gt;「詳細設定」&gt;「SandFly をオフにする手順を表示」をオフにします。</string>
     <string name="edge_gestures_title">エッジ</string>
@@ -1688,7 +1688,7 @@
     <string name="window_names_always">いつも</string>
     <string name="window_names_until_first_item">常に最初の項目で切り取る</string>
     <string name="window_names_window_opens">窓が開いているときのみ</string>
-    <string name="window_names_never">決してしない</string>
+    <string name="window_names_never">なし</string>
     <string name="title_pref_selector_links_controls_web_only">Web コンテンツのみのリンクとコントロール</string>
     <string name="title_pref_selector_auto_switch">読み取り制御を自動的に変更する</string>
     <string name="title_pref_touch_stops_speech">画面に触れると発話を停止する</string>

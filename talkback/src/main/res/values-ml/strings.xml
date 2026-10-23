@@ -1418,7 +1418,7 @@
     <string name="emoji_repeat_count_4">4 അല്ലെങ്കിൽ കൂടുതൽ</string>
     <string name="emoji_repeat_count_5">5 അല്ലെങ്കിൽ കൂടുതൽ</string>
     <string name="emoji_repeat_count_6">6 അല്ലെങ്കിൽ കൂടുതൽ</string>
-    <string name="pref_table_headers_category_title">മേശ വായന</string>
+    <string name="pref_table_headers_category_title">പട്ടിക വായന</string>
     <string name="pref_table_column_headers_title">കോളം തലക്കെട്ടുകൾ വായിക്കുക</string>
     <string name="pref_table_column_headers_entry_after">സെൽ ഡാറ്റയ്ക്ക് ശേഷം</string>
     <string name="pref_table_column_headers_entry_before">സെൽ ഡാറ്റയ്ക്ക് മുമ്പ്</string>
@@ -1471,7 +1471,7 @@
     <string name="quick_settings_sound_mode">ശബ്ദ മോഡ്</string>
     <string name="quick_settings_flashlight">ഫ്ലാഷ്ലൈറ്റ്</string>
     <string name="quick_settings_flashlight_brightness">ഫ്ലാഷ്ലൈറ്റ് തെളിച്ചം</string>
-    <string name="quick_settings_location">സ്ഥാനം</string>
+    <string name="quick_settings_location">ലൊക്കേഷൻ</string>
     <string name="quick_settings_auto_rotate">യാന്ത്രികമായി തിരിക്കുക</string>
     <string name="quick_settings_battery_saver">ബാറ്ററി സേവർ</string>
     <string name="quick_settings_dark_theme">ഇരുണ്ട തീം</string>
@@ -1487,14 +1487,14 @@
     <string name="quick_settings_system_volume">സിസ്റ്റം ഓഡിയോ വോളിയം</string>
     <string name="quick_settings_data_saver">ഡാറ്റ സേവർ</string>
     <string name="quick_settings_night_light">രാത്രി വെളിച്ചം</string>
-    <string name="quick_settings_extra_dim">എക്സ്ട്രാ ഡിം</string>
+    <string name="quick_settings_extra_dim">കൂടുതൽ മങ്ങിക്കൽ</string>
     <string name="quick_settings_color_inversion">വർണ്ണ വിപരീതം</string>
     <string name="quick_settings_color_correction">വർണ്ണ തിരുത്തൽ</string>
     <string name="quick_settings_microphone_access">മൈക്രോഫോൺ ആക്സസ്</string>
     <string name="quick_settings_camera_access">ക്യാമറ ആക്സസ്</string>
     <string name="quick_settings_screen_timeout">സ്‌ക്രീൻ കാലഹരണപ്പെട്ടു</string>
     <string name="quick_settings_font_size">ഫോണ്ട് വലിപ്പം</string>
-    <string name="quick_settings_media">മാധ്യമങ്ങൾ</string>
+    <string name="quick_settings_media">മീഡിയ</string>
     <string name="quick_settings_no_media">മാധ്യമങ്ങളില്ല</string>
     <string name="quick_settings_media_output">മീഡിയ ഔട്ട്പുട്ട്</string>
     <string name="quick_settings_next_alarm">അടുത്ത അലാറം</string>
@@ -1531,7 +1531,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">നിരകളുടെ എണ്ണം</string>
     <string name="quick_settings_move">നീക്കുക</string>
-    <string name="quick_settings_move_title">നീക്കുക %1$s</string>
+    <string name="quick_settings_move_title">%1$s നീക്കുക</string>
     <string name="quick_settings_cell">വരി %1$d, കോളം %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1718,9 +1718,9 @@
     <string name="pref_interrupt_typing_entry_edit_fields">എഡിറ്റ് ഫീൽഡുകളിൽ</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">കീബോർഡ് എക്കോയിൽ</string>
     <string name="title_pref_interrupt_enter">എൻ്ററിൽ സംഭാഷണം തടസ്സപ്പെടുത്തുക</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">പേര്, സംസ്ഥാനം, തരം</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">തരം, സംസ്ഥാനം, പേര്</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">സംസ്ഥാനം, തരം, പേര്</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">പേര്, നില, തരം</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">തരം, നില, പേര്</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">നില, തരം, പേര്</string>
     <string name="item_detail_name">പേര്</string>
     <string name="item_detail_type">തരം</string>
     <string name="item_detail_state">നില</string>

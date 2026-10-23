@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Izstrādātāja iestatījumi</string>
   <string name="title_activity_dump_a11y_event">Atlasīt notikumus reģistrēšanai</string>
   <string name="title_pref_dump_a11y_event">Filtrēt pieejamības notikuma reģistrēšanu</string>
-  <string name="pref_reduce_window_delay_title">Izslēdziet animācijas</string>
+  <string name="pref_reduce_window_delay_title">Izslēgt animācijas</string>
   <string name="title_pref_log_level">Žurnāla izvades līmenis</string>
   <string name="title_pref_diagnosis_mode">Diagnostikas režīms</string>
   <string name="title_pref_tts_overlay">Runas izvades rādīšana</string>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Spilgtums</string>
     <string name="quick_settings_adaptive_brightness">Adaptīvs spilgtums</string>
-    <string name="quick_settings_media_volume">Multivides apjoms</string>
+    <string name="quick_settings_media_volume">Multivides skaļums</string>
     <string name="quick_settings_call_volume">Zvana skaļums</string>
     <string name="quick_settings_ring_volume">Zvana skaļums</string>
     <string name="quick_settings_notification_volume">Paziņojumu apjoms</string>
-    <string name="quick_settings_alarm_volume">Signalizācijas skaļums</string>
+    <string name="quick_settings_alarm_volume">Modinātāja skaļums</string>
     <string name="quick_settings_accessibility_volume">Pieejamības paziņojumu skaļums</string>
     <string name="quick_settings_system_volume">Sistēmas audio skaļums</string>
     <string name="quick_settings_data_saver">Datu taupītājs</string>
@@ -1496,14 +1496,14 @@
     <string name="quick_settings_camera_access">Piekļuve kamerai</string>
     <string name="quick_settings_screen_timeout">Ekrāna taimauts</string>
     <string name="quick_settings_font_size">Fonta lielums</string>
-    <string name="quick_settings_media">Plašsaziņas līdzekļi</string>
+    <string name="quick_settings_media">Multivide</string>
     <string name="quick_settings_no_media">Nav mediju</string>
     <string name="quick_settings_media_output">Multivides izvade</string>
     <string name="quick_settings_next_alarm">Nākamais modinātājs</string>
     <string name="quick_settings_no_alarm">Nav modinātāja</string>
     <string name="quick_settings_settings">Iestatījumi</string>
     <string name="quick_settings_power_menu">Barošanas izvēlne</string>
-    <string name="quick_settings_add_system_tile">Pievienojiet sistēmas elementu</string>
+    <string name="quick_settings_add_system_tile">Pievienot sistēmas elementu</string>
     <string name="quick_settings_no_system_tiles">Nav sistēmas elementu, ko pievienot</string>
     <string name="quick_settings_tile_not_found">%1$s nav sistēmas ātrajos iestatījumos</string>
     <string name="quick_settings_never">Nekad</string>
@@ -1519,7 +1519,7 @@
     </plurals>
     <string name="quick_settings_connected">Savienots</string>
     <string name="quick_settings_battery">Akumulators</string>
-    <string name="quick_settings_battery_charging">%1$s, uzlāde</string>
+    <string name="quick_settings_battery_charging">%1$s, notiek uzlāde</string>
     <string name="quick_settings_battery_full">%1$s, uzlādēts</string>
     <string name="quick_settings_sound">Skaņa</string>
     <string name="quick_settings_vibrate">Vibrēt</string>
@@ -1530,7 +1530,7 @@
     <string name="quick_settings_edit">Rediģēt</string>
     <string name="quick_settings_system">Sistēmas ātrie iestatījumi</string>
     <string name="quick_settings_open_settings">Atveriet iestatījumus</string>
-    <string name="quick_settings_add_control">Pievienojiet kontroli</string>
+    <string name="quick_settings_add_control">Pievienot vadīklu</string>
     <string name="quick_settings_add_tile">Pievienojiet lietotnes elementu</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Kolonnu skaits</string>
@@ -1721,11 +1721,11 @@
     <string name="title_pref_interrupt_typing">Pārtrauciet runu rakstīšanas laikā</string>
     <string name="pref_interrupt_typing_entry_always">Vienmēr</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Rediģēšanas laukos</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Uz tastatūras atbalss</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Ar tastatūras atbalsi</string>
     <string name="title_pref_interrupt_enter">Pārtrauciet runu, izmantojot taustiņu Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Vārds, valsts, veids</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Tips, valsts, nosaukums</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Valsts, veids, nosaukums</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Nosaukums, stāvoklis, veids</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Veids, stāvoklis, nosaukums</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Stāvoklis, veids, nosaukums</string>
     <string name="item_detail_name">Nosaukums</string>
     <string name="item_detail_type">Tips</string>
     <string name="item_detail_state">Stāvoklis</string>

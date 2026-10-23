@@ -1465,7 +1465,7 @@
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Data seluler</string>
-    <string name="quick_settings_hotspot">Titik panas</string>
+    <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Mode pesawat</string>
     <string name="quick_settings_do_not_disturb">Jangan Ganggu</string>
     <string name="quick_settings_sound_mode">Modus suara</string>
@@ -1501,7 +1501,7 @@
     <string name="quick_settings_no_alarm">Tidak ada alarm</string>
     <string name="quick_settings_settings">Setelan</string>
     <string name="quick_settings_power_menu">Menu daya</string>
-    <string name="quick_settings_add_system_tile">Tambahkan ubin sistem</string>
+    <string name="quick_settings_add_system_tile">Tambahkan kotak sistem</string>
     <string name="quick_settings_no_system_tiles">Tidak ada ubin sistem untuk ditambahkan</string>
     <string name="quick_settings_tile_not_found">%1$s tidak ada dalam pengaturan cepat sistem</string>
     <string name="quick_settings_never">Tidak pernah</string>
@@ -1516,7 +1516,7 @@
     <string name="quick_settings_connected">Terhubung</string>
     <string name="quick_settings_battery">Baterai</string>
     <string name="quick_settings_battery_charging">%1$s, mengisi daya</string>
-    <string name="quick_settings_battery_full">%1$s, dikenakan biaya</string>
+    <string name="quick_settings_battery_full">%1$s, terisi penuh</string>
     <string name="quick_settings_sound">Suara</string>
     <string name="quick_settings_vibrate">Bergetar</string>
     <string name="quick_settings_mute">Bisu</string>
@@ -1527,10 +1527,10 @@
     <string name="quick_settings_system">Pengaturan cepat sistem</string>
     <string name="quick_settings_open_settings">Buka pengaturan</string>
     <string name="quick_settings_add_control">Tambahkan kontrol</string>
-    <string name="quick_settings_add_tile">Tambahkan ubin aplikasi</string>
+    <string name="quick_settings_add_tile">Tambahkan kotak aplikasi</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Jumlah kolom</string>
-    <string name="quick_settings_move">Pindah</string>
+    <string name="quick_settings_move">Pindahkan</string>
     <string name="quick_settings_move_title">Pindahkan %1$s</string>
     <string name="quick_settings_cell">Baris %1$d, kolom %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1718,9 +1718,9 @@
     <string name="pref_interrupt_typing_entry_edit_fields">Di bidang edit</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Pada gema keyboard</string>
     <string name="title_pref_interrupt_enter">Interupsi ucapan saat Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Nama, negara bagian, jenis</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Ketik, negara bagian, nama</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Sebutkan, ketik, nama</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Nama, status, jenis</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Jenis, status, nama</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Status, jenis, nama</string>
     <string name="item_detail_name">Nama</string>
     <string name="item_detail_type">Jenis</string>
     <string name="item_detail_state">Status</string>

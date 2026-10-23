@@ -1422,7 +1422,7 @@
     <string name="pref_table_column_headers_title">Sütun başlıklarını oku</string>
     <string name="pref_table_column_headers_entry_after">Hücre verisinden sonra</string>
     <string name="pref_table_column_headers_entry_before">Hücre verisinden önce</string>
-    <string name="pref_table_column_headers_entry_off">Okuma</string>
+    <string name="pref_table_column_headers_entry_off">Okunmasın</string>
     <string name="pref_table_speak_row_column_numbers_title">Satır ve sütun numaralarını söyle</string>
     <string name="pref_table_speak_row_column_numbers_summary">Tablo hücreleri için satır ve sütun numaralarını duyurun</string>
     <string name="title_pref_speak_volume_changes">Ses seviyesi değişikliklerini konuşun</string>
@@ -1465,7 +1465,7 @@
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Mobil veri</string>
-    <string name="quick_settings_hotspot">Sıcak nokta</string>
+    <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Uçak modu</string>
     <string name="quick_settings_do_not_disturb">Rahatsız Etmeyin</string>
     <string name="quick_settings_sound_mode">Ses modu</string>
@@ -1478,8 +1478,8 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Parlaklık</string>
     <string name="quick_settings_adaptive_brightness">Uyarlanabilir parlaklık</string>
-    <string name="quick_settings_media_volume">Medya hacmi</string>
-    <string name="quick_settings_call_volume">Çağrı hacmi</string>
+    <string name="quick_settings_media_volume">Medya ses düzeyi</string>
+    <string name="quick_settings_call_volume">Arama ses düzeyi</string>
     <string name="quick_settings_ring_volume">Zil sesi seviyesi</string>
     <string name="quick_settings_notification_volume">Bildirim hacmi</string>
     <string name="quick_settings_alarm_volume">Alarm sesi</string>
@@ -1531,7 +1531,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Sütun sayısı</string>
     <string name="quick_settings_move">Taşı</string>
-    <string name="quick_settings_move_title">Hareket %1$s</string>
+    <string name="quick_settings_move_title">%1$s öğesini taşı</string>
     <string name="quick_settings_cell">Satır %1$d, sütun %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1718,8 +1718,8 @@
     <string name="pref_interrupt_typing_entry_edit_fields">Düzenleme alanlarında</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Klavye yankısında</string>
     <string name="title_pref_interrupt_enter">Enter\'da konuşmayı kesme</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Ad, eyalet, tür</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Tür, eyalet, ad</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Ad, durum, tür</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Tür, durum, ad</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Durum, tür, ad</string>
     <string name="item_detail_name">Ad</string>
     <string name="item_detail_type">Tür</string>

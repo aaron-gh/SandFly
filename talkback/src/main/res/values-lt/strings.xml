@@ -1420,8 +1420,8 @@
     <string name="emoji_repeat_count_6">6 ar daugiau</string>
     <string name="pref_table_headers_category_title">Lentelės skaitymas</string>
     <string name="pref_table_column_headers_title">Skaityti stulpelių antraštes</string>
-    <string name="pref_table_column_headers_entry_after">Po ląstelių duomenų</string>
-    <string name="pref_table_column_headers_entry_before">Prieš ląstelių duomenis</string>
+    <string name="pref_table_column_headers_entry_after">Po langelio duomenų</string>
+    <string name="pref_table_column_headers_entry_before">Prieš langelio duomenis</string>
     <string name="pref_table_column_headers_entry_off">Neskaityti</string>
     <string name="pref_table_speak_row_column_numbers_title">Kalbėkite eilučių ir stulpelių numerius</string>
     <string name="pref_table_speak_row_column_numbers_summary">Paskelbkite lentelės langelių eilučių ir stulpelių numerius</string>
@@ -1484,7 +1484,7 @@
     <string name="quick_settings_call_volume">Skambučio garsumas</string>
     <string name="quick_settings_ring_volume">Skambučio garsumas</string>
     <string name="quick_settings_notification_volume">Pranešimų apimtis</string>
-    <string name="quick_settings_alarm_volume">Signalizacijos garsumas</string>
+    <string name="quick_settings_alarm_volume">Žadintuvo garsumas</string>
     <string name="quick_settings_accessibility_volume">Pritaikomumo garsumas</string>
     <string name="quick_settings_system_volume">Sistemos garso garsumas</string>
     <string name="quick_settings_data_saver">Duomenų taupymo priemonė</string>
@@ -1496,10 +1496,10 @@
     <string name="quick_settings_camera_access">Prieiga prie fotoaparato</string>
     <string name="quick_settings_screen_timeout">Ekrano skirtasis laikas</string>
     <string name="quick_settings_font_size">Šrifto dydis</string>
-    <string name="quick_settings_media">Žiniasklaida</string>
+    <string name="quick_settings_media">Medija</string>
     <string name="quick_settings_no_media">Nėra žiniasklaidos</string>
     <string name="quick_settings_media_output">Medijos išvestis</string>
-    <string name="quick_settings_next_alarm">Kitas signalas</string>
+    <string name="quick_settings_next_alarm">Kitas žadintuvas</string>
     <string name="quick_settings_no_alarm">Nėra signalizacijos</string>
     <string name="quick_settings_settings">Nustatymai</string>
     <string name="quick_settings_power_menu">Maitinimo meniu</string>
@@ -1536,7 +1536,7 @@
     <string name="quick_settings_add_tile">Pridėti programos plytelę</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Stulpelių skaičius</string>
-    <string name="quick_settings_move">Judėti</string>
+    <string name="quick_settings_move">Perkelti</string>
     <string name="quick_settings_move_title">Perkelti %1$s</string>
     <string name="quick_settings_cell">%1$d eilutė, %2$d stulpelis</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1724,11 +1724,11 @@
     <string name="title_pref_interrupt_typing">Pertraukite kalbą spausdindami</string>
     <string name="pref_interrupt_typing_entry_always">Visada</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Redagavimo laukuose</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Klaviatūros aidas</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Kai klaviatūros aidas</string>
     <string name="title_pref_interrupt_enter">Pertraukite kalbą Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Pavadinimas, valstybė, tipas</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Tipas, valstybė, pavadinimas</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Valstybė, tipas, pavadinimas</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Pavadinimas, būsena, tipas</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Tipas, būsena, pavadinimas</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Būsena, tipas, pavadinimas</string>
     <string name="item_detail_name">Pavadinimas</string>
     <string name="item_detail_type">Tipas</string>
     <string name="item_detail_state">Būsena</string>
