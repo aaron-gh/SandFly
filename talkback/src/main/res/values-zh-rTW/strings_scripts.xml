@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>已安裝</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>更新為<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">匯入失敗。<xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。僅允許受信任的腳本。</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。僅限受信任的指令碼使用。</string>
     <string name="script_permission_screen">讀取螢幕</string>
     <string name="script_permission_actions">點選、捲動、鍵入和移動焦點</string>
-    <string name="script_permission_speech">聽到並改變SandFly的講話</string>
+    <string name="script_permission_speech">取得並更改 SandFly 的語音</string>
     <string name="script_permission_passwords">讀取密碼欄位</string>
-    <string name="script_permission_input">新增手勢、按鍵、選單項目和閱讀控件</string>
+    <string name="script_permission_input">新增手勢、按鍵、選單項目和朗讀控制項</string>
     <string name="script_permission_network">使用網際網路</string>
     <string name="script_permission_clipboard">讀取和更改剪貼簿</string>
-    <string name="script_permission_system">返回或回家，打開通知和應用程式</string>
-    <string name="script_permission_notifications">閱讀和更改語音通知</string>
-    <string name="script_permission_events">查看每个应用程序中的所有活动，包括打字</string>
-    <string name="script_permission_dialogs">在任何應用程式上顯示對話框</string>
+    <string name="script_permission_system">返回或前往主畫面，開啟通知和應用程式</string>
+    <string name="script_permission_notifications">讀取和更改朗讀的通知</string>
+    <string name="script_permission_events">查看每個應用程式中的所有活動，包括輸入內容</string>
+    <string name="script_permission_dialogs">在任何應用程式上層顯示對話框</string>
     <string name="script_permission_java">在每个应用程序中使用所有 SandFly 的访问权限运行 Java 代码</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">啟用</string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">已清除儲存的資料</string>
     <string name="script_remove">刪除</string>
     <string name="script_remove_title">刪除<xliff:g id="name">%1$s</xliff:g>？</string>
-    <string name="script_remove_message">刪除其代碼、資料和設定。</string>
+    <string name="script_remove_message">會刪除指令碼的程式碼、資料和設定。</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> 已刪除</string>
     <string name="script_log_empty">日誌為空</string>
     <string name="script_log_clear">清除日誌</string>

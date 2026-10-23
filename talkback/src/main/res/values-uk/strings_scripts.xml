@@ -37,17 +37,17 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> встановлено</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> оновлено до <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Помилка імпорту. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Дозволити лише надійні сценарії.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Дозволяйте лише надійним скриптам.</string>
     <string name="script_permission_screen">Читати екран</string>
     <string name="script_permission_actions">Натискати, прокручувати, вводити текст і переміщати фокус</string>
-    <string name="script_permission_speech">Слухайте та змінюйте мову SandFly</string>
+    <string name="script_permission_speech">Отримувати та змінювати мовлення SandFly</string>
     <string name="script_permission_passwords">Читати поля паролів</string>
-    <string name="script_permission_input">Додайте жести, клавіші, пункти меню та елементи керування читанням</string>
+    <string name="script_permission_input">Додавати жести, клавіші, пункти меню та елементи керування читанням</string>
     <string name="script_permission_network">Використовувати інтернет</string>
     <string name="script_permission_clipboard">Читати та змінювати буфер обміну</string>
-    <string name="script_permission_system">Поверніться назад або додому, відкрийте сповіщення та програми</string>
+    <string name="script_permission_system">Переходити назад або на головний екран, відкривати сповіщення та програми</string>
     <string name="script_permission_notifications">Читати та змінювати голосові сповіщення</string>
-    <string name="script_permission_events">Переглядайте всю активність у кожній програмі, зокрема введення тексту</string>
+    <string name="script_permission_events">Бачити всі дії в кожній програмі, зокрема введення тексту</string>
     <string name="script_permission_dialogs">Показувати діалогові вікна над будь-якою програмою</string>
     <string name="script_permission_java">Запускайте код Java з усім доступом SandFly у кожній програмі</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">Збережені дані видалено</string>
     <string name="script_remove">Видалити</string>
     <string name="script_remove_title">Видалити <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_remove_message">Видаляє свій код, дані та налаштування.</string>
+    <string name="script_remove_message">Видаляє код, дані та налаштування скрипту.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> видалено</string>
     <string name="script_log_empty">Журнал порожній</string>
     <string name="script_log_clear">Очистити журнал</string>

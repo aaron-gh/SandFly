@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> הותקן</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> עודכן ל-<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">הייבוא נכשל. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. אפשר רק סקריפטים מהימנים.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. יש לאפשר רק לסקריפטים מהימנים.</string>
     <string name="script_permission_screen">קריאת המסך</string>
     <string name="script_permission_actions">לחיצה, גלילה, הקלדה והזזת המיקוד</string>
-    <string name="script_permission_speech">שמע ושנה את הנאום של SandFly</string>
+    <string name="script_permission_speech">קבלה ושינוי של הדיבור של SandFly</string>
     <string name="script_permission_passwords">קריאת שדות סיסמה</string>
-    <string name="script_permission_input">הוסף מחוות, מקשים, פריטי תפריט ופקדי קריאה</string>
+    <string name="script_permission_input">הוספת תנועות, מקשים, פריטי תפריט ופקדי קריאה</string>
     <string name="script_permission_network">שימוש באינטרנט</string>
     <string name="script_permission_clipboard">קריאה ושינוי של הלוח</string>
-    <string name="script_permission_system">חזור או הביתה, פתח הודעות ואפליקציות</string>
-    <string name="script_permission_notifications">קרא ושנה התראות מדוברות</string>
-    <string name="script_permission_events">ראה את כל הפעילות בכל אפליקציה, כולל הקלדה</string>
-    <string name="script_permission_dialogs">הצג דיאלוגים מעל כל אפליקציה</string>
+    <string name="script_permission_system">חזרה אחורה או למסך הבית, פתיחת התראות ואפליקציות</string>
+    <string name="script_permission_notifications">קריאה ושינוי של התראות מוקראות</string>
+    <string name="script_permission_events">צפייה בכל הפעילות בכל אפליקציה, כולל הקלדה</string>
+    <string name="script_permission_dialogs">הצגת תיבות דו-שיח מעל כל אפליקציה</string>
     <string name="script_permission_java">הפעל קוד Java עם כל הגישה של SandFly, בכל אפליקציה</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">הפעלה</string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">הנתונים המאוחסנים נוקו</string>
     <string name="script_remove">הסרה</string>
     <string name="script_remove_title">להסיר את <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_remove_message">מוחק את הקוד, הנתונים וההגדרות שלו.</string>
+    <string name="script_remove_message">מוחק את הקוד, הנתונים וההגדרות של הסקריפט.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> הוסר</string>
     <string name="script_log_empty">היומן ריק</string>
     <string name="script_log_clear">ניקוי היומן</string>

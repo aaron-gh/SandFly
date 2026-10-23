@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> инсталиран</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ажурирано на <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Увоз није успео. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Дозволи само за поуздане скрипте.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Дозволите само поузданим скриптама.</string>
     <string name="script_permission_screen">Читање екрана</string>
     <string name="script_permission_actions">Кликтање, померање, куцање и премештање фокуса</string>
-    <string name="script_permission_speech">Слушајте и промените говор SandFly</string>
+    <string name="script_permission_speech">Примање и мењање говора SandFly-а</string>
     <string name="script_permission_passwords">Читање поља за лозинку</string>
-    <string name="script_permission_input">Додајте покрете, тастере, ставке менија и контроле за читање</string>
+    <string name="script_permission_input">Додавање покрета, тастера, ставки менија и контрола за читање</string>
     <string name="script_permission_network">Коришћење интернета</string>
     <string name="script_permission_clipboard">Читање и мењање привремене меморије</string>
-    <string name="script_permission_system">Вратите се или кући, отворите обавештења и апликације</string>
-    <string name="script_permission_notifications">Читајте и мењајте изговорена обавештења</string>
-    <string name="script_permission_events">Погледајте све активности у свакој апликацији, укључујући куцање</string>
-    <string name="script_permission_dialogs">Прикажите дијалоге преко било које апликације</string>
+    <string name="script_permission_system">Повратак назад или на почетни екран, отварање обавештења и апликација</string>
+    <string name="script_permission_notifications">Читање и мењање изговорених обавештења</string>
+    <string name="script_permission_events">Увид у све активности у свакој апликацији, укључујући куцање</string>
+    <string name="script_permission_dialogs">Приказивање дијалога преко било које апликације</string>
     <string name="script_permission_java">Покрените Јава код са свим приступима SandFly, у свакој апликацији</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Укључи</string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">Сачувани подаци су обрисани</string>
     <string name="script_remove">Уклони</string>
     <string name="script_remove_title">Уклонити <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_remove_message">Брише свој код, податке и подешавања.</string>
+    <string name="script_remove_message">Брише код, податке и подешавања скрипте.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> је уклоњен</string>
     <string name="script_log_empty">Дневник је празан</string>
     <string name="script_log_clear">Обриши дневник</string>

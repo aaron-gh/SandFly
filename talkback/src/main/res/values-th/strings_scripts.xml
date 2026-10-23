@@ -40,14 +40,14 @@
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. อนุญาตเฉพาะสคริปต์ที่เชื่อถือได้เท่านั้น</string>
     <string name="script_permission_screen">อ่านหน้าจอ</string>
     <string name="script_permission_actions">คลิก เลื่อน พิมพ์ และย้ายโฟกัส</string>
-    <string name="script_permission_speech">ได้ยินและเปลี่ยนคำพูดของ SandFly</string>
+    <string name="script_permission_speech">รับและเปลี่ยนเสียงพูดของ SandFly</string>
     <string name="script_permission_passwords">อ่านฟิลด์รหัสผ่าน</string>
     <string name="script_permission_input">เพิ่มท่าทาง ปุ่ม รายการเมนู และตัวควบคุมการอ่าน</string>
     <string name="script_permission_network">ใช้อินเตอร์เน็ต</string>
     <string name="script_permission_clipboard">อ่านและเปลี่ยนคลิปบอร์ด</string>
-    <string name="script_permission_system">กลับบ้านหรือกลับบ้าน เปิดการแจ้งเตือนและแอป</string>
-    <string name="script_permission_notifications">อ่านและเปลี่ยนแปลงการแจ้งเตือนด้วยเสียง</string>
-    <string name="script_permission_events">ดูกิจกรรมทั้งหมดในทุกแอปรวมถึงการพิมพ์</string>
+    <string name="script_permission_system">ย้อนกลับหรือไปที่หน้าแรก เปิดการแจ้งเตือนและแอป</string>
+    <string name="script_permission_notifications">อ่านและเปลี่ยนการแจ้งเตือนที่อ่านออกเสียง</string>
+    <string name="script_permission_events">เห็นกิจกรรมทั้งหมดในทุกแอป รวมถึงการพิมพ์</string>
     <string name="script_permission_dialogs">แสดงกล่องโต้ตอบบนแอปใดก็ได้</string>
     <string name="script_permission_java">เรียกใช้โค้ด Java ด้วยการเข้าถึงทั้งหมดของ SandFly ในทุกแอป</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">ล้างข้อมูลที่เก็บไว้แล้ว</string>
     <string name="script_remove">ลบ</string>
     <string name="script_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออกไหม</string>
-    <string name="script_remove_message">ลบรหัส ข้อมูล และการตั้งค่า</string>
+    <string name="script_remove_message">ลบโค้ด ข้อมูล และการตั้งค่าของสคริปต์</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> ลบแล้ว</string>
     <string name="script_log_empty">บันทึกว่างเปล่า</string>
     <string name="script_log_clear">ล้างบันทึก</string>

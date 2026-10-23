@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> 설치됨</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>가 <xliff:g id="version">%2$s</xliff:g>로 업데이트되었습니다.</string>
     <string name="script_import_failed">가져오기에 실패했습니다. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. 신뢰할 수 있는 스크립트만 허용합니다.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. 신뢰할 수 있는 스크립트에만 허용하세요.</string>
     <string name="script_permission_screen">화면 읽기</string>
     <string name="script_permission_actions">클릭, 스크롤, 입력 및 포커스 이동</string>
-    <string name="script_permission_speech">SandFly의 음성을 듣고 변경하기</string>
+    <string name="script_permission_speech">SandFly 음성 출력 확인 및 변경</string>
     <string name="script_permission_passwords">비밀번호 필드 읽기</string>
-    <string name="script_permission_input">제스처, 키, 메뉴 항목 및 읽기 제어 기능 추가</string>
+    <string name="script_permission_input">제스처, 키, 메뉴 항목 및 읽기 컨트롤 추가</string>
     <string name="script_permission_network">인터넷 사용</string>
     <string name="script_permission_clipboard">클립보드 읽기 및 변경</string>
-    <string name="script_permission_system">돌아가거나 집으로 돌아가 알림 및 앱 열기</string>
-    <string name="script_permission_notifications">음성 알림 읽기 및 변경</string>
-    <string name="script_permission_events">입력을 포함하여 모든 앱의 모든 활동을 확인하세요.</string>
-    <string name="script_permission_dialogs">모든 앱에 대화상자 표시</string>
+    <string name="script_permission_system">뒤로 또는 홈으로 이동, 알림 및 앱 열기</string>
+    <string name="script_permission_notifications">음성으로 읽는 알림 읽기 및 변경</string>
+    <string name="script_permission_events">입력을 포함한 모든 앱의 모든 활동 보기</string>
+    <string name="script_permission_dialogs">모든 앱 위에 대화상자 표시</string>
     <string name="script_permission_java">모든 앱에서 SandFly의 모든 액세스 권한으로 Java 코드를 실행하세요.</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">사용 설정</string>

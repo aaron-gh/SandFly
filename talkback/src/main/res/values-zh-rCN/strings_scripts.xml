@@ -75,7 +75,7 @@
     <!-- Shown when a script file cannot be imported. [CHAR LIMIT=NONE] -->
     <string name="script_import_failed">导入失败。<xliff:g id="reason">%1$s</xliff:g></string>
     <!-- Marks a permission that gives a script a lot of access. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。仅对可信脚本允许。</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。仅限可信脚本使用。</string>
 
     <!-- What the screen permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_screen">读取屏幕</string>

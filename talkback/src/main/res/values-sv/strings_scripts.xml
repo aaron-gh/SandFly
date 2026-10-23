@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installerat</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> uppdaterad till <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importen misslyckades. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillåt endast betrodda skript.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillåt bara för betrodda skript.</string>
     <string name="script_permission_screen">Läsa skärmen</string>
     <string name="script_permission_actions">Klicka, rulla, skriva och flytta fokus</string>
-    <string name="script_permission_speech">Hör och ändra SandFlys tal</string>
+    <string name="script_permission_speech">Ta emot och ändra SandFlys tal</string>
     <string name="script_permission_passwords">Läsa lösenordsfält</string>
-    <string name="script_permission_input">Lägg till gester, nycklar, menyalternativ och läskontroller</string>
+    <string name="script_permission_input">Lägga till gester, tangenter, menyalternativ och läskontroller</string>
     <string name="script_permission_network">Använda internet</string>
     <string name="script_permission_clipboard">Läsa och ändra urklipp</string>
-    <string name="script_permission_system">Gå tillbaka eller hem, öppna aviseringar och appar</string>
-    <string name="script_permission_notifications">Läs och ändra talade meddelanden</string>
-    <string name="script_permission_events">Se all aktivitet i varje app, inklusive att skriva</string>
-    <string name="script_permission_dialogs">Visa dialogrutor över valfri app</string>
+    <string name="script_permission_system">Gå tillbaka eller till startskärmen, öppna aviseringar och appar</string>
+    <string name="script_permission_notifications">Läsa och ändra aviseringar som läses upp</string>
+    <string name="script_permission_events">Se all aktivitet i alla appar, inklusive inskrivning</string>
+    <string name="script_permission_dialogs">Visa dialogrutor ovanpå alla appar</string>
     <string name="script_permission_java">Kör Java-kod med alla SandFlys åtkomst, i varje app</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aktivera</string>

@@ -37,18 +37,18 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> instalado</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atualizado para <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Falha na importação. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permitir apenas scripts confiáveis.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permita apenas para scripts confiáveis.</string>
     <string name="script_permission_screen">Ler a tela</string>
     <string name="script_permission_actions">Clicar, rolar, digitar e mover o foco</string>
-    <string name="script_permission_speech">Ouça e mude o discurso de SandFly</string>
+    <string name="script_permission_speech">Receber e alterar a fala do SandFly</string>
     <string name="script_permission_passwords">Ler campos de senha</string>
-    <string name="script_permission_input">Adicione gestos, teclas, itens de menu e controles de leitura</string>
+    <string name="script_permission_input">Adicionar gestos, teclas, itens de menu e controles de leitura</string>
     <string name="script_permission_network">Usar a internet</string>
     <string name="script_permission_clipboard">Ler e alterar a área de transferência</string>
-    <string name="script_permission_system">Volte ou para casa, abra notificações e aplicativos</string>
-    <string name="script_permission_notifications">Ler e alterar notificações faladas</string>
-    <string name="script_permission_events">Veja todas as atividades em todos os aplicativos, incluindo digitação</string>
-    <string name="script_permission_dialogs">Mostrar caixas de diálogo em qualquer aplicativo</string>
+    <string name="script_permission_system">Voltar ou ir para a tela inicial, abrir notificações e apps</string>
+    <string name="script_permission_notifications">Ler e alterar notificações lidas em voz alta</string>
+    <string name="script_permission_events">Ver todas as atividades em todos os apps, incluindo a digitação</string>
+    <string name="script_permission_dialogs">Mostrar caixas de diálogo sobre qualquer app</string>
     <string name="script_permission_java">Execute o código Java com todo o acesso do SandFly, em todos os aplicativos</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Ativar</string>
@@ -69,7 +69,7 @@
     <string name="script_storage_cleared">Dados armazenados apagados</string>
     <string name="script_remove">Remover</string>
     <string name="script_remove_title">Remover <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_remove_message">Exclui seu código, dados e configurações.</string>
+    <string name="script_remove_message">Exclui o código, os dados e as configurações do script.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> removido</string>
     <string name="script_log_empty">O registro está vazio</string>
     <string name="script_log_clear">Limpar registro</string>
