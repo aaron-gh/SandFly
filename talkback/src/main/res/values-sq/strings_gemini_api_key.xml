@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Çelësi Gemini API</string>
+    <string name="summary_pref_gemini_api_key_built_in">Duke përdorur çelësin e integruar në këtë aplikacion</string>
+    <string name="gemini_api_key_dialog_message">Merr një çelës API falas nga Google AI Studio, në aistudio.google.com/apikey dhe ngjite këtu. Për të hequr çelësin, pastroni fushën dhe ruajeni. \n\nImazhet dhe ekranet që përshkruani dërgohen te Google. Në nivelin e lirë, Google mund t\'i përdorë ato për të përmirësuar produktet e saj.</string>
+    <string name="gemini_api_key_hint">Tasti API</string>
+    <string name="gemini_api_key_save">Ruaj</string>
+    <string name="gemini_api_key_get">Merr një çelës</string>
+    <string name="title_pref_gemini_model">Modeli Gemini</string>
+    <string name="gemini_model_automatic">Automatik</string>
+    <string name="summary_pref_gemini_model_automatic">Automatik: Gemini Flash, pastaj Flash-Lite kur Flash është i zënë</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, pastaj Flash-Lite kur është i zënë</string>
+    <string name="gemini_model_loading">Marrja e modeleve…</string>
+    <string name="gemini_model_list_failed">Modelet nuk mund të merren: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Vendosni fillimisht një çelës API Gemini</string>
+    <string name="gemini_api_terms_link">Gemini Kushtet shtesë të shërbimit të API</string>
+    <string name="ai_service_address_hint">Adresa, si p.sh. https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Adresa duhet të fillojë me https://. Asgjë nuk u ruajt.</string>
+    <string name="dialog_message_ai_service_consent">Imazhet dhe pamjet e ekranit dërgohen në <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> për t\'u përshkruar, gjë që zgjat disa sekonda. Zbatohen kushtet e tij dhe politika e privatësisë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime.</string>
+    <string name="ai_service_error_api_key">Shërbimi i AI nuk e pranoi çelësin API. Kontrolloni cilësimet e tij te Përshkrimet automatike.</string>
+    <string name="ai_service_error_quota">Është arritur kufiri i përdorimit të shërbimit AI. Provo sërish më vonë.</string>
+    <string name="ai_service_error_busy">Shërbimi i AI është i zënë tani. Provo sërish pas një momenti.</string>
+    <string name="ai_service_error_timeout">Shërbimit të AI iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Asnjë</string>
+    <string name="ai_service_not_set_up">Asnjë shërbim AI nuk është në përdorim. Vendosni një ose zgjidhni një te cilësimet e përshkrimeve automatike.</string>
+    <string name="ai_provider_none_set_up">Nuk është konfiguruar asnjë shërbim AI. Vendosni një në cilësimet e tij më poshtë.</string>
+    <string name="ai_provider_other">Shërbimi tjetër</string>
+    <string name="title_pref_category_ai_services">Shërbimet e AI</string>
+    <string name="title_pref_ai_provider">Shërbimi i AI</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> cilësimet</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nuk është vendosur</string>
+    <string name="ai_provider_in_use">Në përdorim</string>
+    <string name="ai_provider_not_set_up">Nuk është ngritur</string>
+    <string name="ai_provider_not_ready">Së pari zgjidhni një model</string>
+    <string name="ai_provider_address">Adresa</string>
+    <string name="ai_provider_address_message">Adresa e një shërbimi me një API bisede të përputhshme me OpenAI dhe hyrje imazhi, si p.sh. https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Nuk është vendosur</string>
+    <string name="ai_provider_set">Konfiguruar</string>
+    <string name="title_pref_gemini_api_key_of">Çelësi <xliff:g id="service" example="Claude">%1$s</xliff:g> API</string>
+    <string name="title_pref_gemini_model_of">Modeli <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">Nuk është zgjedhur</string>
+    <string name="ai_provider_key_message">Ngjit çelësin tuaj API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Për ta hequr, pastroni fushën dhe ruani. Imazhet dhe ekranet që përshkruani dërgohen te <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Vendosni në fillim tastin <xliff:g id="service" example="Claude">%1$s</xliff:g> API</string>
+    <string name="ai_provider_needs_address">Vendosni adresën së pari</string>
+    <string name="ai_provider_enter_model">Futni një emër modeli</string>
+</resources>

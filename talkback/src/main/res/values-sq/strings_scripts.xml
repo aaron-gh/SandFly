@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Skriptet</string>
+    <string name="summary_pref_scripts">Ndrysho mënyrën se si funksionon SandFly në aplikacione</string>
+    <string name="script_import">Importo skriptin</string>
+    <string name="script_install_label">Instalo skriptin SandFly</string>
+    <string name="script_import_nothing">Nuk ka asnjë skedar skripti për të instaluar.</string>
+    <string name="script_import_cannot_open">Skedari nuk mund të hapej.</string>
+    <string name="script_import_repository">Kjo lidhje është në një depo të tërë. Hapni skriptin që dëshironi, më pas ndajeni lidhjen e tij.</string>
+    <string name="script_import_summary">skedar .lua, ose .zip me main.lua</string>
+    <string name="scripts_category_app">Skriptet e aplikacioneve</string>
+    <string name="scripts_category_global">Shtojcat globale</string>
+    <string name="scripts_none">Asnjë skript i instaluar</string>
+    <string name="scripts_all_off">Fikni të gjitha skriptet</string>
+    <string name="scripts_all_off_summary">Skriptet qëndrojnë të instaluara dhe mbajnë çelësat e tyre. Gjesti Aktivizo ose çaktivizo të gjitha skriptet bën të njëjtën gjë.</string>
+    <string name="shortcut_toggle_scripts">Aktivizo ose çaktivizo të gjitha skriptet</string>
+    <string name="scripts_now_off">Scripts off</string>
+    <string name="scripts_now_on">Skriptet në</string>
+    <string name="scripts_unavailable">Skriptet nuk ofrohen në këtë pajisje</string>
+    <string name="script_add_example">Shtoni shembullin e skenarit</string>
+    <string name="script_add_example_summary">Thotë emrin e çdo aplikacioni ku kaloni. Një skenar për të filluar.</string>
+    <string name="script_state_on">Aktive</string>
+    <string name="script_state_off">Joaktive</string>
+    <string name="script_runs_in">Vrapon në <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Punon në të gjitha aplikacionet</string>
+    <string name="script_version">Versioni <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Nga <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Të instalohet <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_can">Ajo mund të:</string>
+    <string name="script_install_no_permissions">Nuk nevojiten leje.</string>
+    <string name="script_install_button">Instaloni</string>
+    <string name="script_update_title">Të përditësohet <xliff:g id="name">%1$s</xliff:g> në <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_new_permissions">Lejet e reja:</string>
+    <string name="script_update_button">Përditëso</string>
+    <string name="script_update_replaces">Kjo zëvendëson versionin <xliff:g id="version">%1$s</xliff:g> me <xliff:g id="author">%2$s</xliff:g> dhe ruan të dhënat dhe cilësimet e tij.</string>
+    <string name="script_update_other_author">E reja është nga <xliff:g id="author">%1$s</xliff:g>, një autor tjetër. Përditësoni vetëm nëse i besoni.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> i instaluar</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> përditësuar në <xliff:g id="version">%2$s</xliff:g></string>
+    <string name="script_import_failed">Importi dështoi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Lejo vetëm skriptet e besuara.</string>
+    <string name="script_permission_screen">Lexoni ekranin</string>
+    <string name="script_permission_actions">Klikoni, lëvizni, shkruani dhe lëvizni fokusin</string>
+    <string name="script_permission_speech">Dëgjoni dhe ndryshoni fjalimin e SandFly</string>
+    <string name="script_permission_passwords">Lexoni fushat e fjalëkalimit</string>
+    <string name="script_permission_input">Shtoni gjestet, tastet, artikujt e menysë dhe kontrollet e leximit</string>
+    <string name="script_permission_network">Përdorni internetin</string>
+    <string name="script_permission_clipboard">Lexoni dhe ndryshoni clipboard</string>
+    <string name="script_permission_system">Kthehu prapa ose në shtëpi, hap njoftimet dhe aplikacionet</string>
+    <string name="script_permission_notifications">Lexoni dhe ndryshoni njoftimet e folura</string>
+    <string name="script_permission_events">Shikoni të gjithë aktivitetin në çdo aplikacion, duke përfshirë shkrimin</string>
+    <string name="script_permission_dialogs">Shfaq dialogët mbi çdo aplikacion</string>
+    <string name="script_permission_java">Ekzekutoni kodin Java me të gjithë aksesin e SandFly, në çdo aplikacion</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Aktivizo</string>
+    <string name="script_permissions_title">Lejet</string>
+    <string name="script_permissions_none">Asnjë</string>
+    <string name="script_settings_category">Cilësimet</string>
+    <string name="script_list_filter">Filtro</string>
+    <string name="script_button_off">Fillimisht ndizni skenarin</string>
+    <string name="script_permissions_summary">Fikja e njërës ndalon pjesët që kanë nevojë për të.</string>
+    <string name="script_install_permissions_note">Mund t\'i çaktivizoni më vonë.</string>
+    <string name="script_manage_category">Menaxhoni</string>
+    <string name="script_move_up">Vraponi më herët</string>
+    <string name="script_move_down">Vraponi më vonë</string>
+    <string name="script_order_summary">Porosit për skriptet që ndryshojnë të njëjtin fjalim. Skriptet e aplikacioneve ekzekutohen së pari.</string>
+    <string name="script_log">Regjistrohu</string>
+    <string name="script_log_summary">Prodhimi dhe gabimet që nga fillimi SandFly</string>
+    <string name="script_clear_storage">Pastro të dhënat e ruajtura</string>
+    <string name="script_storage_cleared">Të dhënat e ruajtura u pastruan</string>
+    <string name="script_remove">Hiq</string>
+    <string name="script_remove_title">Të hiqet <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_remove_message">Fshin kodin, të dhënat dhe cilësimet e tij.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> hequr</string>
+    <string name="script_log_empty">Regjistri është bosh</string>
+    <string name="script_log_clear">Pastro regjistrin</string>
+    <string name="script_log_copy">Kopjo regjistrin</string>
+    <string name="script_log_copied">Regjistri u kopjua</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Ka nevojë për API të skriptit <xliff:g id="needed">%1$d</xliff:g> ose më vonë. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që pjesët mund të mos funksionojnë.</string>
+    <string name="script_api_untested">Testuar deri në API të skriptit <xliff:g id="tested">%1$d</xliff:g>. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që mund të mos funksionojë siç pritej.</string>
+    <string name="script_state_incompatible">Mund të mos funksionojë me këtë SandFly</string>
+    <string name="script_api_range">API-ja e skriptit <xliff:g id="min">%1$d</xliff:g> në <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Përputhshmëria</string>
+    <string name="script_install_anyway">Instaloni gjithsesi</string>
+    <string name="script_update_anyway">Përditëso gjithsesi</string>
+    <string name="script_homepage">Hap faqen kryesore</string>
+    <string name="script_homepage_confirm_title">Të hapet kjo adresë?</string>
+    <string name="script_homepage_open">Hapur</string>
+    <string name="script_homepage_failed">Asnjë aplikacion nuk mund të hapet <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> fiket pas gabimeve të përsëritura. Shih regjistrin e tij në Skriptet.</string>
+    <string name="shortcut_inspect_item">Inspektoni artikullin e fokusuar</string>
+    <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
+    <string name="script_inspect_copied">E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nuk ka id, kështu që rregullat nuk mund ta emërtojnë atë. E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopjoni pemën e ekranit</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> artikuj të kopjuar</string>
+    <string name="script_tree_none">Nuk ka dritare për të kopjuar</string>
+    <string name="script_tree_clip_label">Pema e ekranit</string>
+    <string name="summary_copy_screen_tree_menu">Kopjo të gjithë artikujt në ekran si JSON, për të shkruar skriptet</string>
+    <string name="script_inspect_clip_label">Detajet e artikullit</string>
+    <string name="summary_inspect_item_menu">Thoni dhe kopjoni detajet e artikullit ku ishit, për të shkruar skriptet</string>
+    <string name="script_keys_backtalk_modifier">Modifikues SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pastaj <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Komandat</string>
+    <string name="script_commands_summary">Gjestet dhe tastet e një skripti ekzekutues vijnë përpara SandFly. Fike njërën për të mbajtur SandFly.</string>
+    <string name="script_binding_gesture">Gjest: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Çelësat: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">Menuja SandFly</string>
+    <string name="script_binding_control">Kontrollet e leximit</string>
+    <string name="script_binding_none">Asnjë</string>
+    <string name="script_binding_turn_on">Aktivizo</string>
+    <string name="script_binding_turn_off">Çaktivizo</string>
+    <string name="script_binding_restore">Rikthe standardet</string>
+    <string name="script_binding_restored">Parazgjedhjet u rivendosën</string>
+    <string name="script_binding_perform">Kryeni gjeste ose çelësa</string>
+    <string name="script_binding_perform_summary">Caktoni gjestin ose butonat e ardhshëm të shtypur me modifikuesin SandFly</string>
+    <string name="script_binding_perform_message">Bëni gjestin ose shtypni tastet.</string>
+    <string name="script_binding_assign_title">Cakto <xliff:g id="binding">%1$s</xliff:g> në <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Cakto</string>
+    <string name="script_binding_choose_gesture">Zgjidhni gjestin</string>
+    <string name="script_binding_type_keys">Shkruani çelësat</string>
+    <string name="script_binding_type_keys_summary">Pëlqejeni sf+shift+n, ose sf+t, s</string>
+    <string name="script_binding_bad_keys">Nuk mund të përdoren këta çelësa. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Ai shton:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Burimet e skriptit</string>
+    <string name="script_sources_none">Asnjë burim i shtuar</string>
+    <string name="script_source_add">Shto burim</string>
+    <string name="script_source_add_button">Shtoni</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Jo adresa e një depoje në GitHub, GitLab, Codeberg, Gitea ose Bitbucket.</string>
+    <string name="script_source_exists">Ky burim është shtuar tashmë.</string>
+    <string name="script_source_loading">Po ngarkohet</string>
+    <string name="script_source_empty">Nuk ka skripta në këtë burim</string>
+    <string name="script_source_failed">Skriptet nuk mund të ngarkoheshin. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Provo sërish</string>
+    <string name="script_source_downloading">Po shkarkohet <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Hiq burimin</string>
+    <string name="script_source_remove_title">Të hiqet <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_message">Skriptet e instaluara prej tij mbeten të instaluara.</string>
+    <string name="scripts_auto_update">Përditësoni automatikisht skriptet</string>
+    <string name="scripts_check_updates">Kontrolloni për përditësime</string>
+    <string name="scripts_checking_updates">Po kontrollon për përditësime…</string>
+    <string name="scripts_updates_category">Përditësimet</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skenar i përditësuar: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skripta të përditësuara: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Përditësimet janë të listuara nën Përditësimet</string>
+    <string name="scripts_update_check_failed">Disa burime nuk mund të kontrolloheshin</string>
+    <string name="scripts_up_to_date">Të gjitha skriptet janë të përditësuara</string>
+</resources>

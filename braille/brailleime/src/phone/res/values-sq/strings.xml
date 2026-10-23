@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Tastiera breil e TalkBack</string>
+  <string name="braille_ime_service_name">Tastiera breil e SandFly</string>
   <string name="braille_ime_bd_mode_name">Hyrja e ekranit breil</string>
   <string name="switch_to_tabletop_announcement">Modaliteti \"Në tavolinë\". Vendose pajisjen me portën e karikimit në të majtë.</string>
   <string name="calibration_tip_announcement">Për të përditësuar pozicionin e pikës, mbaj shtypur %d gishta.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Kalove te modaliteti i pashkurtuar i gjuhës breil</string>
   <string name="braille_ime_displayed_name">tastiera breil</string>
   <string name="multiple_languages_braille_ime_displayed_name">tastiera breil, %s</string>
-  <string name="input_view_caption">Tastiera breil e TalkBack - për ndihmë, vizito g.co/help/braille</string>
+  <string name="input_view_caption">Tastiera breil e SandFly - për ndihmë, vizito g.co/help/braille</string>
   <string name="perform_action_next">Para</string>
   <string name="perform_action_submitting">Po dërgon tekst</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Pozicioni i pikës po përditësohet. Fillimisht, le të regjistrojmë pikat te %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Për të ndryshuar gjuhën ndërkohë që shkruan me tastierën breil, rrëshqit shpejt lart me 3 gishta. Më pas zgjidh \"kalo te gjuha tjetër\".</string>
   <string name="title_pref_accumulate_presses">Përfshi të gjitha pikat e shtypura</string>
   <string name="summary_pref_accumulate_presses">Çdo pikë e shtypur është pjesë e hyrjes, edhe nëse pika lëshohet përpara pikave të tjera</string>
-  <string name="title_pref_reverse_dots">Pikat në të kundërt</string>
-  <string name="summary_pref_reverse_dots">Ndërro pozicionet e pikave në mënyrë që p.sh. pikat 1 dhe 4 të ndërrojnë vendet</string>
+  <string name="title_pref_reverse_dots">Ndërroni pikat majtas dhe djathtas</string>
+  <string name="summary_pref_reverse_dots">Pikat 1, 2 dhe 3 shkëmbejnë vendet me pikat 4, 5 dhe 6</string>
   <string name="bd_preference_braille_contracted">Forma e shkurtuar e shkrimit breil</string>
   <string name="bd_preference_braille_uncontracted">Forma e pashkurtuar e shkrimit breil</string>
   <string name="context_menu_title">Opsionet e tastierës breil</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tastierë</string>
   <string name="not_enough_touch_points_dialog_title">Pajisja jote nuk e mbështet tastierën breil</string>
   <string name="not_enough_touch_points_dialog_message">Pajisja jote nuk mbështet pika të mjaftueshme të prekjes. Për më shumë informacione, kontakto me prodhuesin e pajisjes sate.</string>
-  <string name="talkback_off_dialog_title">Aktivizo TalkBack për të përdorur tastierën breil</string>
+  <string name="talkback_off_dialog_title">Aktivizo SandFly për të përdorur tastierën breil</string>
   <string name="talkback_off_dialog_positive_button">Aktivizo cilësimet e qasshmërisë</string>
-  <string name="talkback_suspend_dialog_title">Vazhdo TalkBack për të përdorur tastierën breil</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kur TalkBack është aktiv, mund të trokasësh në ekran për të futur simbole breil.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Aktivizo TalkBack për të ndryshuar gjestin</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack është joaktiv. Aktivizoje për të ndryshuar gjestet e tastierës breil.</string>
+  <string name="talkback_suspend_dialog_title">Vazhdo SandFly për të përdorur tastierën breil</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kur SandFly është aktiv, mund të trokasësh në ekran për të futur simbole breil.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Aktivizo SandFly për të ndryshuar gjestin</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly është joaktiv. Aktivizoje për të ndryshuar gjestet e tastierës breil.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Shko te \"Cilësimet\"</string>
   <string name="reset_gestures_dialog_title">Të rivendosen të gjitha gjestet?</string>
   <string name="reset_gestures_dialog_message">Të gjitha gjestet e tastierës breil do të rivendosen te parazgjedhja</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Rivendos te parazgjedhja</string>
   <string name="custom_gestures_dialog_remove_button">Hiq gjestin</string>
   <string name="change_gestures_dialog_message_title">Si të ndryshosh një gjest</string>
-  <string name="change_gestures_dialog_message">Në ekranin tjetër, do të hapet tastiera breil dhe nuk do të mund të përdorësh gjestet e zakonshme të TalkBack.\n\nKur të hapet tastiera breil, kryej gjestin që dëshiron të përdorësh ose, për të mbyllur tastierën breil dhe për të anuluar ndryshimin e gjestit, rrëshqit shpejt poshtë me 2 gishta.\n\nShiko gjestet e disponueshme\n</string>
+  <string name="change_gestures_dialog_message">Në ekranin tjetër, do të hapet tastiera breil dhe nuk do të mund të përdorësh gjestet e zakonshme të SandFly.\n\nKur të hapet tastiera breil, kryej gjestin që dëshiron të përdorësh ose, për të mbyllur tastierën breil dhe për të anuluar ndryshimin e gjestit, rrëshqit shpejt poshtë me 2 gishta.\n\nShiko gjestet e disponueshme\n</string>
   <string name="change_gestures_dialog_message_link">Shiko gjestet e disponueshme</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Mos e shfaq më këtë mesazh</string>
   <string name="change_gestures_dialog_positive_button">Vazhdo</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Mos e përdor</string>
   <string name="next_keyboard">Tastiera tjetër</string>
   <string name="braille_tutorial_title">Udhëzuesi i tastierës breil</string>
-  <string name="tutorial_intro_description">Me tastierën breil, mund të trokasësh në ekran për të futur breil me 6 pika.\n\nPo përdor Unified English Braille. Për të ndryshuar gjuhën e shkrimit, shko te cilësimet e TalkBack.\n\nPër të shkruar në gjuhën breil, duhet ta mbash dhe ta përdorësh telefonin tënd ndryshe.</string>
+  <string name="tutorial_intro_description">Me tastierën breil, mund të trokasësh në ekran për të futur breil me 6 pika.\n\nPo përdor Unified English Braille. Për të ndryshuar gjuhën e shkrimit, shko te cilësimet e SandFly.\n\nPër të shkruar në gjuhën breil, duhet ta mbash dhe ta përdorësh telefonin tënd ndryshe.</string>
   <string name="next_step">Para</string>
   <string name="leave_keyboard">Largohu nga tastiera breil</string>
-  <string name="hold_six_fingers_description">Nuk do të mund të përdorësh gjestet normale të TalkBack në tastierën breil.\n\nPër të filluar, le të konfigurojmë pozicionin e 6 pikave breil kur shkruan.</string>
-  <string name="rotate_orientation_description_1">Duke filluar nga tani, nuk do të mund të përdorësh gjestet e zakonshme të TalkBack. TalkBack nuk ofrohet kur përdor tastierën breil.</string>
+  <string name="hold_six_fingers_description">Nuk do të mund të përdorësh gjestet normale të SandFly në tastierën breil.\n\nPër të filluar, le të konfigurojmë pozicionin e 6 pikave breil kur shkruan.</string>
+  <string name="rotate_orientation_description_1">Duke filluar nga tani, nuk do të mund të përdorësh gjestet e zakonshme të SandFly. SandFly nuk ofrohet kur përdor tastierën breil.</string>
   <string name="rotate_orientation_description_2">Për të filluar, mbaje telefonin në këtë mënyrë, me telefonin të drejtuar larg nga vetja jote.</string>
   <string name="tap_to_continue">Trokit dy herë diku për të vazhduar</string>
   <string name="instruction_type_letter_a">Trokit te pika 1 me gishtin tregues të dorës së majtë për të shkruar shkronjën \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURSORI U LËVIZ PARA</string>
   <string name="result_swipe_down_2_fingers">FSHIH TASTIERËN</string>
   <string name="result_swipe_down_3_fingers">TASTIERA TJETËR</string>
-  <string name="rotate_orientation_announcement">Duke filluar nga tani, nuk do të mund të përdorësh gjestet e zakonshme të TalkBack. TalkBack nuk ofrohet kur përdor tastierën breil.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Duke filluar nga tani, nuk do të mund të përdorësh gjestet e zakonshme të SandFly. SandFly nuk ofrohet kur përdor tastierën breil.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Në fillim ktheje telefonin në mënyrë të tillë që ekrani të jetë drejtuar larg vetes sate.\n\nMë pas rrotulloje telefonin horizontalisht në pozicionin e peizazhit. Duart e tua duhet të kapin anët e shkurtra të telefonit. Dora jote e djathtë duhet të mbajë fundin me portën USB. Vendos 3 gishtat e mesit në ekran dhe përdor gishtin e vogël dhe gishtin e madh për të mbështetur telefonin.\n\nKur të jesh gati, trokit dy herë në ekran për të vazhduar.\n\nPër të dalë nga tastiera breil, rrëshqit shpejt poshtë drejt dyshemesë me 3 gishta. Kjo të kthen përsëri te tastiera jote fillestare.</string>
   <string name="rotate_orientation_continue_announcement">Telefoni yt është në pozicionin vertikal. Për të vazhduar, rrotulloje telefonin horizontalisht në mënyrë që ana e gjatë të jetë poshtë. Më pas ktheje ekranin të drejtuar larg vetes sate. Kur të jesh gati, trokit dy herë në ekran për të vazhduar.</string>
   <string name="type_letter_a_announcement">Mbaje ekranin të drejtuar larg vetes sate. Mbaje telefonin me të dyja duart, në anët e shkurtra të telefonit, në mënyrë që 3 gishtat e mesit të secilës dorë të mund të prekin ekranin.\n\nGishti tregues i dorës së majtë duhet të jetë në pikën 1. Tani trokit te pika 1 për të shkruar shkronjën “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Për të kaluar te tastiera tjetër, rrëshqit shpejt poshtë me 3 gishta. Provoje tani.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Tastiera tjetër. Zakonisht me këtë do të kalohet te tastiera tjetër. Këtë herë po qëndron në tastierën breil pasi je ende brenda udhëzuesit.</string>
   <string name="swipe_up_3_fingers_announcement">Mund të shkruash gjithashtu në modalitetin \"Në tavolinë\" duke e vendosur telefonin rrafsh në tavolinë. Për të përfunduar udhëzuesin, rrëshqit shpejt lart me 3 gishta dhe gjej opsionin \"përfundo udhëzuesin\"</string>
-  <string name="open_context_menu_announcement">Menyja e opsioneve është e hapur. Përmbyse telefonin përsëri që ta kesh përballë dhe mbaje normalisht. Tani mund të përdorësh gjestet e zakonshme të TalkBack për të naviguar. Rrëshqit djathtas për të parë më shumë opsione.</string>
+  <string name="open_context_menu_announcement">Menyja e opsioneve është e hapur. Përmbyse telefonin përsëri që ta kesh përballë dhe mbaje normalisht. Tani mund të përdorësh gjestet e zakonshme të SandFly për të naviguar. Rrëshqit djathtas për të parë më shumë opsione.</string>
   <string name="hold_six_fingers_announcement">%s\nVendose pajisjen rrafsh në tavolinë. Më pas, prek dhe mbaj ekranin me 3 gishtat e mesit të secilës dorë në një pozicion ku mund të shkruash në mënyrë komode.</string>
   <string name="hold_six_fingers_inactive_announcement">Vendose pajisjen rrafsh në tavolinë. Më pas, prek dhe mbaj ekranin me 3 gishtat e mesit të secilës dorë në një pozicion ku mund të shkruash në mënyrë komode.</string>
   <string name="finish_tutorial_announcement">Po shfaq tastierën breil. Ktheje telefonin në mënyrë të tillë që ekrani të jetë drejtuar larg vetes sate. Rrotulloje telefonin horizontalisht në pozicionin e peizazhit. Më pas fillo të shkruash.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Ky gjest po përdoret për \"%1$s\" dhe nuk mund të ndryshohet. Provo një gjest tjetër. %2$s</string>
   <string name="custom_gesture_cannot_used">Ky gjest nuk mund të përdoret</string>
   <string name="custom_gesture_no_gesture">Nuk u krye asnjë gjest</string>
-  <string name="custom_gesture_try_another">Provo një gjest tjetër. Për të parë një listë të të gjitha gjesteve të disponueshme, shko te qendra e ndihmës së tastierës breil të TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Provo një gjest tjetër. Për të parë një listë të të gjitha gjesteve të disponueshme, shko te qendra e ndihmës së tastierës breil të SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gjestet nuk përputheshin‏</string>
   <string name="custom_gesture_perform_again">Kryej gjestin që dëshiron të përdorësh përsëri. %s</string>
+    <string name="tabletop_port_left_announcement">Modaliteti i tavolinës, porta e karikimit në të majtë</string>
+    <string name="tabletop_port_right_announcement">Modaliteti i tavolinës, porta e karikimit në të djathtë</string>
+    <string name="screen_away_port_right_announcement">Modaliteti i largimit nga ekrani, porta e karikimit në të djathtë</string>
+    <string name="screen_away_port_left_announcement">Modaliteti i largimit nga ekrani, porta e karikimit në të majtë</string>
+    <string name="screen_toward_announcement">Ekrani drejt jush</string>
+    <string name="screen_toward_port_left_announcement">Ekrani drejt jush, porta e karikimit në të majtë</string>
+    <string name="screen_toward_port_right_announcement">Ekrani drejt jush, porta e karikimit në të djathtë</string>
+    <string name="screen_toward_port_down_announcement">Ekrani drejt jush, porta e karikimit e drejtuar poshtë</string>
+    <string name="screen_toward_port_up_announcement">Ekrani drejt jush, porta e karikimit drejtohet lart</string>
+    <string name="port_right_announcement">Porta e karikimit në të djathtë</string>
+    <string name="port_left_announcement">Porta e karikimit në të majtë</string>
+    <string name="tabletop_port_near_announcement">Modaliteti i tavolinës, porta e karikimit drejt jush</string>
+    <string name="tabletop_port_far_announcement">Modaliteti i tavolinës, porta e karikimit larg jush</string>
+    <string name="screen_away_port_down_announcement">Modaliteti i largimit nga ekrani, porta e karikimit e drejtuar poshtë</string>
+    <string name="screen_away_port_up_announcement">Modaliteti i largimit nga ekrani, porta e karikimit drejtohet lart</string>
+    <string name="port_near_announcement">Porta e karikimit drejt jush</string>
+    <string name="port_far_announcement">Porta e karikimit larg jush</string>
+    <string name="port_down_announcement">Porta e karikimit e drejtuar poshtë</string>
+    <string name="port_up_announcement">Porta e karikimit drejtohet lart</string>
+    <string name="orientation_locked_announcement">Orientimi i kyçur</string>
+    <string name="orientation_locked_port_announcement">Orientimi i kyçur. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientimi u shkyç</string>
+    <string name="switch_to_language_contracted_announcement">Kaloi te %s, Forma e shkurtuar e shkrimit breil</string>
+    <string name="switch_to_language_uncontracted_announcement">Kaloi te %s, Forma e pashkurtuar e shkrimit breil</string>
+    <string name="title_pref_flip_dots_vertically">Ndërroni pikat e sipërme dhe të poshtme</string>
+    <string name="summary_pref_flip_dots_vertically">Pika 1 tregton vendet me pikën 3 dhe pika 4 me pikën 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tableti mbajti lart fytyrat larg</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kur është i fikur, një tablet ose një telefon i shpalosur i mbajtur lart përdor strukturën e tavolinës përballë jush</string>
+    <string name="title_pref_typing_sounds">Tingujt e shtypjes</string>
+    <string name="summary_pref_typing_sounds">Luaj klikimet e tastierës kur shkruani një karakter, një hapësirë, një rresht të ri ose fshini</string>
+    <string name="skip_tutorial">Kapërceje tutorialin</string>
 </resources>
