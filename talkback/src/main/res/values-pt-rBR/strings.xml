@@ -1576,7 +1576,7 @@
     <string name="handwriting_not_recognized">Escrita à mão não reconhecida</string>
     <string name="handwriting_downloading">O reconhecimento de escrita está sendo baixado</string>
     <string name="handwriting_download_title">Baixar reconhecimento de escrita?</string>
-    <string name="handwriting_download_message">A escrita manual é reconhecida neste telefone. Seu modelo para esta linguagem, com cerca de 20 MB, é baixado de Google uma vez. Uma mensagem mostra quando o download foi feito.</string>
+    <string name="handwriting_download_message">A escrita à mão é reconhecida neste telefone. O modelo para este idioma, com cerca de 20 MB, é baixado do Google uma vez. Uma mensagem aparece quando o download termina.</string>
     <string name="handwriting_download_button">Fazer o download</string>
     <string name="handwriting_downloaded">Reconhecimento de escrita baixado</string>
     <string name="handwriting_download_failed">Não foi possível fazer o download do reconhecimento de escrita manual. Verifique a conexão com a internet.</string>
@@ -1731,8 +1731,8 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> solto. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly indica os detalhes de um item nesta ordem. Para alterá-lo, toque e segure um detalhe e arraste-o para cima ou para baixo. Com SandFly ativado, toque duas vezes e segure e arraste. Você também pode usar as ações Mover para cima e Mover para baixo.</string>
     <string name="title_pref_speak_items_before_scroll">Falar itens antes que apareçam ao rolar</string>
-    <string name="gemini_error_api_key">Gemini não aceitou a chave API. Verifique a chave nas configurações de descrições automáticas.</string>
-    <string name="gemini_error_quota">O limite de uso da sua chave API Gemini foi atingido. Tente novamente mais tarde.</string>
+    <string name="gemini_error_api_key">O Gemini não aceitou a chave de API. Verifique a chave nas configurações de descrições automáticas.</string>
+    <string name="gemini_error_quota">O limite de uso da sua chave de API do Gemini foi atingido. Tente novamente mais tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora. Tente novamente em alguns instantes.</string>
     <string name="gemini_error_timeout">O Gemini demorou muito para responder. Tente novamente.</string>
     <string name="gemini_error_with_code">O Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>

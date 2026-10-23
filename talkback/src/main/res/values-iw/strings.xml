@@ -1580,7 +1580,7 @@
     <string name="handwriting_not_recognized">כתב היד לא זוהה</string>
     <string name="handwriting_downloading">זיהוי כתב היד בהורדה</string>
     <string name="handwriting_download_title">להוריד זיהוי כתב יד?</string>
-    <string name="handwriting_download_message">כתב היד מזוהה בטלפון זה. המודל שלו לשפה זו, כ-20 מגה-בייט, מורידים מ-Google פעם אחת. הודעה מופיעה כאשר הוא הורד.</string>
+    <string name="handwriting_download_message">כתב היד מזוהה בטלפון הזה. המודל שלו לשפה הזו, כ-20 MB, מורד מ-Google פעם אחת. בסיום ההורדה מוצגת הודעה.</string>
     <string name="handwriting_download_button">הורדה</string>
     <string name="handwriting_downloaded">זיהוי כתב יד הורד</string>
     <string name="handwriting_download_failed">לא ניתן היה להוריד את זיהוי כתב היד. בדוק את החיבור לאינטרנט.</string>
@@ -1735,8 +1735,8 @@
     <string name="template_item_details_order_dropped">שוחרר: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly אומר פרטי פריט בהזמנה זו. כדי לשנות אותו, גע והחזק בפרט ולאחר מכן גרור אותו למעלה או למטה. עם SandFly מופעל, הקש פעמיים והחזק ואז גרור. אתה יכול גם להשתמש בפעולות העבר למעלה והזז למטה.</string>
     <string name="title_pref_speak_items_before_scroll">הקראת פריטים לפני שהם נגללים לתצוגה</string>
-    <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. סמן את המפתח בהגדרות תיאורים אוטומטיים.</string>
-    <string name="gemini_error_quota">הגעת למגבלת השימוש עבור מפתח ה-API שלך Gemini. נסה שוב מאוחר יותר.</string>
+    <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. יש לבדוק את המפתח בהגדרות של תיאורים אוטומטיים.</string>
+    <string name="gemini_error_quota">הגעת למגבלת השימוש של מפתח Gemini API שלך. אפשר לנסות שוב מאוחר יותר.</string>
     <string name="gemini_error_busy">Gemini עסוק כרגע. נסה שוב בעוד רגע.</string>
     <string name="gemini_error_timeout">Gemini לא ענה בזמן. יש לנסות שוב.</string>
     <string name="gemini_error_with_code">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>

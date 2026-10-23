@@ -1575,10 +1575,10 @@
     <string name="handwriting_not_recognized">手寫體無法辨識</string>
     <string name="handwriting_downloading">手寫辨識正在下載</string>
     <string name="handwriting_download_title">下載手寫辨識？</string>
-    <string name="handwriting_download_message">這款手機可以辨識手寫內容。語言的模型大約 20 MB，從 Google 下載一次。下載完畢後會顯示一則訊息。</string>
+    <string name="handwriting_download_message">這部手機可以辨識手寫內容。此語言的模型大約 20 MB，會從 Google 下載一次。下載完畢後會顯示訊息。</string>
     <string name="handwriting_download_button">下載</string>
     <string name="handwriting_downloaded">手寫辨識已下載</string>
-    <string name="handwriting_download_failed">無法下載手寫辨識。檢查網路連線。</string>
+    <string name="handwriting_download_failed">無法下載手寫辨識功能。請檢查網絡連線。</string>
     <string name="handwriting_unsupported_language">此語言不支援手寫辨識</string>
     <string name="title_pref_handwriting_keyboard">手寫鍵盤</string>
     <string name="summary_pref_handwriting_keyboard">在Android的鍵盤設定中開啟SandFly手寫</string>
@@ -1730,9 +1730,9 @@
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
     <string name="title_pref_speak_items_before_scroll">在項目捲動到畫面中之前先讀出</string>
-    <string name="gemini_error_api_key">Gemini 不接受 API 金鑰。檢查自動描述設定中的鍵。</string>
-    <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。稍後再試。</string>
-    <string name="gemini_error_busy">Gemini現在很忙。稍後再試一次。</string>
+    <string name="gemini_error_api_key">Gemini 不接受此 API 金鑰。請在自動描述設定中檢查金鑰。</string>
+    <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。請稍後再試。</string>
+    <string name="gemini_error_busy">Gemini 目前繁忙，請稍後再試。</string>
     <string name="gemini_error_timeout">Gemini 回應時間過長。請再試一次。</string>
     <string name="gemini_error_with_code">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
     <string name="gemini_error_with_details">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>：<xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

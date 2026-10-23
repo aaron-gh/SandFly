@@ -1576,7 +1576,7 @@
     <string name="handwriting_not_recognized">ხელნაწერი ვერ ამოიცნო</string>
     <string name="handwriting_downloading">მიმდინარეობს ხელნაწერის ამოცნობის ჩამოტვირთვა</string>
     <string name="handwriting_download_title">ჩამოიტვირთოს ხელნაწერის ამოცნობა?</string>
-    <string name="handwriting_download_message">ამ ტელეფონზე ხელნაწერი აღიარებულია. მისი მოდელი ამ ენისთვის, დაახლოებით 20 მბ, ჩამოიტვირთება Google-დან ერთხელ. შეტყობინება გამოჩნდება, როდესაც ის ჩამოტვირთულია.</string>
+    <string name="handwriting_download_message">ამ ტელეფონზე ხელნაწერის ამოცნობა ხდება. ამ ენის მოდელი, დაახლოებით 20 მბ, Google-დან ერთხელ ჩამოიტვირთება. ჩამოტვირთვის შემდეგ გამოჩნდება შეტყობინება.</string>
     <string name="handwriting_download_button">ჩამოტვირთვა</string>
     <string name="handwriting_downloaded">ჩამოტვირთულია ხელნაწერის ამოცნობა</string>
     <string name="handwriting_download_failed">ხელნაწერის ამოცნობა ვერ ჩამოიტვირთა. შეამოწმეთ ინტერნეტ კავშირი.</string>
@@ -1731,9 +1731,9 @@
     <string name="template_item_details_order_dropped">ჩაგდებულია: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ამბობს ნივთის დეტალებს ამ თანმიმდევრობით. მის შესაცვლელად, ხანგრძლივად შეეხეთ დეტალს, შემდეგ გადაიტანეთ ზემოთ ან ქვემოთ. თუ SandFly ჩართულია, ორმაგად შეეხეთ და ხანგრძლივად, შემდეგ გადაიტანეთ. თქვენ ასევე შეგიძლიათ გამოიყენოთ მოქმედებები გადაადგილება ზემოთ და გადაადგილება ქვემოთ.</string>
     <string name="title_pref_speak_items_before_scroll">ელემენტების წარმოთქმა, სანამ ხედში გადაინაცვლებენ</string>
-    <string name="gemini_error_api_key">Gemini არ მიიღო API გასაღები. შეამოწმეთ გასაღები ავტომატური აღწერილობების პარამეტრებში.</string>
+    <string name="gemini_error_api_key">Gemini-მ არ მიიღო API გასაღები. შეამოწმეთ გასაღები ავტომატური აღწერების პარამეტრებში.</string>
     <string name="gemini_error_quota">თქვენი Gemini API გასაღების გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
-    <string name="gemini_error_busy">Gemini ახლა დაკავებულია. სცადეთ ხელახლა რამდენიმე წუთში.</string>
+    <string name="gemini_error_busy">Gemini ახლა დაკავებულია. სცადეთ ხელახლა ცოტა ხანში.</string>
     <string name="gemini_error_timeout">Gemini პასუხის გაცემას ძალიან დიდი დრო დასჭირდა. სცადეთ ხელახლა.</string>
     <string name="gemini_error_with_code">Gemini-მ ვერ უპასუხა, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini-მ ვერ უპასუხა, შეცდომა <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

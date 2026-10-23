@@ -1576,7 +1576,7 @@
     <string name="handwriting_not_recognized">Ձեռագիրը չի ճանաչվել</string>
     <string name="handwriting_downloading">Ձեռագրի ճանաչումը ներբեռնվում է</string>
     <string name="handwriting_download_title">Ներբեռնե՞լ ձեռագրի ճանաչումը:</string>
-    <string name="handwriting_download_message">Այս հեռախոսում ձեռագիրը ճանաչվում է: Դրա մոդելն այս լեզվի համար՝ մոտ 20 ՄԲ, ներբեռնվում է Google-ից մեկ անգամ: Հաղորդագրություն ցույց է տալիս, երբ այն ներբեռնվել է:</string>
+    <string name="handwriting_download_message">Ձեռագիրը ճանաչվում է այս հեռախոսում։ Այս լեզվի մոդելը՝ մոտ 20 ՄԲ, մեկ անգամ ներբեռնվում է Google-ից։ Ներբեռնելուց հետո հաղորդագրություն է ցուցադրվում։</string>
     <string name="handwriting_download_button">Ներբեռնել</string>
     <string name="handwriting_downloaded">Ձեռագրի ճանաչումը ներբեռնվել է</string>
     <string name="handwriting_download_failed">Չհաջողվեց ներբեռնել ձեռագրի ճանաչումը: Ստուգեք ինտերնետ կապը:</string>
@@ -1731,9 +1731,9 @@
     <string name="template_item_details_order_dropped">Թողնված է՝ <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ասում է ապրանքի մանրամասները այս հերթականությամբ: Այն փոխելու համար հպեք և պահեք որևէ դետալ, ապա քաշեք այն վեր կամ վար: Միացված SandFly-ի դեպքում կրկնակի հպեք և պահեք, ապա քաշեք: Կարող եք նաև օգտագործել «Տեղափոխել վեր» և «Տեղափոխել վար» գործողությունները:</string>
     <string name="title_pref_speak_items_before_scroll">Հնչեցնել տարրերը մինչև դրանց ոլորվելը տեսադաշտ</string>
-    <string name="gemini_error_api_key">Gemini չի ընդունել API ստեղնը: Ստուգեք բանալին ավտոմատ նկարագրությունների կարգավորումներում:</string>
+    <string name="gemini_error_api_key">Gemini-ը չընդունեց API բանալին։ Ստուգեք բանալին ավտոմատ նկարագրությունների կարգավորումներում։</string>
     <string name="gemini_error_quota">Ձեր Gemini API բանալիի օգտագործման սահմանաչափը հասել է: Փորձեք ավելի ուշ:</string>
-    <string name="gemini_error_busy">Gemini զբաղված է հենց հիմա: Մի պահ նորից փորձեք:</string>
+    <string name="gemini_error_busy">Gemini-ը այս պահին զբաղված է։ Մի փոքր անց նորից փորձեք։</string>
     <string name="gemini_error_timeout">Gemini-ն շատ երկար պատասխանեց։ Նորից փորձեք։</string>
     <string name="gemini_error_with_code">Gemini-ն չկարողացավ պատասխանել, սխալ <xliff:g id="http_status" example="400">%1$d</xliff:g>։</string>
     <string name="gemini_error_with_details">Gemini-ն չկարողացավ պատասխանել, սխալ <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

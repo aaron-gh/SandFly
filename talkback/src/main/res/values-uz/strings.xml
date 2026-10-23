@@ -1576,10 +1576,10 @@
     <string name="handwriting_not_recognized">Qoʻl yozuvi aniqlanmadi</string>
     <string name="handwriting_downloading">Qo‘l yozuvini tanish yuklab olinmoqda</string>
     <string name="handwriting_download_title">Qo‘l yozuvini tanish yuklab olinsinmi?</string>
-    <string name="handwriting_download_message">Ushbu telefonda qo\'l yozuvi tanilgan. Uning ushbu til uchun modeli, taxminan 20 MB, Google dan bir marta yuklab olinadi. Xabar qachon yuklab olinganligini ko\'rsatadi.</string>
+    <string name="handwriting_download_message">Qoʻl yozuvi shu telefonning oʻzida aniqlanadi. Bu til uchun taxminan 20 MB hajmli model Google’dan bir marta yuklab olinadi. Yuklab olingach, xabar chiqadi.</string>
     <string name="handwriting_download_button">Yuklab olish</string>
     <string name="handwriting_downloaded">Qo‘l yozuvini tanish yuklab olindi</string>
-    <string name="handwriting_download_failed">Qo‘l yozuvini tanishni yuklab bo‘lmadi. Internetga ulanishni tekshiring.</string>
+    <string name="handwriting_download_failed">Qoʻl yozuvini tanish funksiyasini yuklab boʻlmadi. Internetga ulanishni tekshiring.</string>
     <string name="handwriting_unsupported_language">Bu tilda qo‘l yozuvini tanib bo‘lmaydi</string>
     <string name="title_pref_handwriting_keyboard">Qo\'lda yozish klaviaturasi</string>
     <string name="summary_pref_handwriting_keyboard">Android klaviatura sozlamalarida SandFly qoʻl yozuvini yoqing</string>
@@ -1732,8 +1732,8 @@
     <string name="item_details_order_footer">SandFly bu tartibda element tafsilotlarini aytadi. Uni oʻzgartirish uchun tafsilotni bosing va ushlab turing, soʻng uni yuqoriga yoki pastga torting. SandFly yoqilgan boʻlsa, ikki marta bosing va ushlab turing, soʻngra sudrab turing. Yuqoriga siljitish va pastga siljitish amallaridan ham foydalanishingiz mumkin.</string>
     <string name="title_pref_speak_items_before_scroll">Elementlarni koʻrinishga aylantirilishidan oldin aytish</string>
     <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. Avtomatik tavsiflar sozlamalarida kalitni tekshiring.</string>
-    <string name="gemini_error_quota">Gemini API kalitingizdan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
-    <string name="gemini_error_busy">Gemini hozir band. Birozdan keyin qayta urinib ko‘ring.</string>
+    <string name="gemini_error_quota">Gemini API kalitingizning foydalanish chegarasiga yetildi. Keyinroq qayta urinib koʻring.</string>
+    <string name="gemini_error_busy">Gemini hozir band. Birozdan keyin qayta urinib koʻring.</string>
     <string name="gemini_error_timeout">Gemini juda uzoq javob bermadi. Qayta urinib koʻring.</string>
     <string name="gemini_error_with_code">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini javob bera olmadi, xato <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

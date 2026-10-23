@@ -1576,7 +1576,7 @@
     <string name="handwriting_not_recognized">လက်ရေးကို မမှတ်သားနိုင်ပါ</string>
     <string name="handwriting_downloading">လက်ရေး မှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်နေသည်</string>
     <string name="handwriting_download_title">လက်ရေးမှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်မလား</string>
-    <string name="handwriting_download_message">လက်ရေးမူကို ဤဖုန်းတွင် အသိအမှတ်ပြုသည်။ ဤဘာသာစကားအတွက် ၎င်း၏မော်ဒယ်လ် 20 MB ခန့်ကို Google တစ်ကြိမ်မှ ဒေါင်းလုဒ်လုပ်ထားသည်။ ဒေါင်းလုဒ်လုပ်သည့်အခါ မက်ဆေ့ချ်တစ်ခုပြသည်။</string>
+    <string name="handwriting_download_message">ဤဖုန်းပေါ်တွင် လက်ရေးကို မှတ်သားသည်။ ဤဘာသာစကားအတွက် မော်ဒယ် (20 MB ခန့်) ကို Google မှ တစ်ကြိမ် ဒေါင်းလုဒ်လုပ်သည်။ ဒေါင်းလုဒ်ပြီးသည့်အခါ မက်ဆေ့ချ်တစ်ခု ပြသည်။</string>
     <string name="handwriting_download_button">ဒေါင်းလုဒ်လုပ်ရန်</string>
     <string name="handwriting_downloaded">လက်ရေးမှတ်သားမှုကို ဒေါင်းလုဒ်လုပ်ထားသည်</string>
     <string name="handwriting_download_failed">လက်ရေးအသိအမှတ်ပြုမှုကို ဒေါင်းလုဒ်လုပ်၍မရပါ။ အင်တာနက်ချိတ်ဆက်မှုကို စစ်ဆေးပါ။</string>
@@ -1731,9 +1731,9 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကို ချထားသည်။ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ဤမှာယူမှုတွင် ပစ္စည်းတစ်ခု၏အသေးစိတ်အချက်အလက်များကို ပြောပါသည်။ ၎င်းကိုပြောင်းလဲရန်၊ အသေးစိတ်ကိုထိ၍ ဖိထားပါ၊ ထို့နောက် ၎င်းကို အပေါ် သို့မဟုတ် အောက်သို့ ဆွဲချပါ။ SandFly ဖွင့်ထားခြင်းဖြင့် နှစ်ချက်တို့ပြီး ဖိထားပါ၊ ထို့နောက် ဆွဲယူပါ။ Move up and Move down လုပ်ဆောင်ချက်များကိုလည်း သုံးနိုင်သည်။</string>
     <string name="title_pref_speak_items_before_scroll">မြင်ကွင်းထဲ မရွေ့မီ အရာများကို ပြောရန်</string>
-    <string name="gemini_error_api_key">Gemini API ကီးကို လက်မခံပါ။ အလိုအလျောက်ဖော်ပြချက်ဆက်တင်များတွင် သော့ကိုစစ်ဆေးပါ။</string>
+    <string name="gemini_error_api_key">Gemini က API ကီးကို လက်မခံပါ။ အလိုအလျောက်ဖော်ပြချက် ဆက်တင်များတွင် ကီးကို စစ်ဆေးပါ။</string>
     <string name="gemini_error_quota">သင်၏ Gemini API သော့အတွက် အသုံးပြုမှုကန့်သတ်ချက် ပြည့်သွားပါပြီ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။</string>
-    <string name="gemini_error_busy">Gemini အခု အလုပ်ရှုပ်နေတယ်။ ခဏအကြာတွင် ထပ်စမ်းကြည့်ပါ။</string>
+    <string name="gemini_error_busy">Gemini သည် ယခု အလုပ်များနေသည်။ ခဏနေမှ ထပ်စမ်းကြည့်ပါ။</string>
     <string name="gemini_error_timeout">Gemini ဖြေရန် အချိန်အလွန်ကြာသွားသည်။ ထပ်စမ်းကြည့်ပါ။</string>
     <string name="gemini_error_with_code">Gemini မဖြေနိုင်၊ အမှား <xliff:g id="http_status" example="400">%1$d</xliff:g>။</string>
     <string name="gemini_error_with_details">Gemini မဖြေနိုင်၊ အမှား <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

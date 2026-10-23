@@ -1577,7 +1577,7 @@
     <string name="handwriting_not_recognized">ไม่รู้จักลายมือ</string>
     <string name="handwriting_downloading">กำลังดาวน์โหลดการรู้จำลายมือ</string>
     <string name="handwriting_download_title">ดาวน์โหลดการรู้จำลายมือ?</string>
-    <string name="handwriting_download_message">จดจำลายมือบนโทรศัพท์เครื่องนี้ โมเดลสำหรับภาษานี้มีขนาดประมาณ 20 MB ดาวน์โหลดจาก Google หนึ่งครั้ง ข้อความจะแสดงเมื่อมีการดาวน์โหลด</string>
+    <string name="handwriting_download_message">ระบบจดจำลายมือบนโทรศัพท์เครื่องนี้ โมเดลสำหรับภาษานี้มีขนาดประมาณ 20 MB และจะดาวน์โหลดจาก Google ครั้งเดียว เมื่อดาวน์โหลดเสร็จ จะมีข้อความแสดงขึ้น</string>
     <string name="handwriting_download_button">ดาวน์โหลด</string>
     <string name="handwriting_downloaded">ดาวน์โหลดการรู้จำลายมือแล้ว</string>
     <string name="handwriting_download_failed">ไม่สามารถดาวน์โหลดการรู้จำลายมือได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต</string>
@@ -1732,7 +1732,7 @@
     <string name="template_item_details_order_dropped">วาง <xliff:g id="detail" example="Name">%1$s</xliff:g> แล้ว <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ระบุรายละเอียดของรายการในคำสั่งซื้อนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ จากนั้นลากขึ้นหรือลง เมื่อเปิด SandFly ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังสามารถใช้การกระทำเลื่อนขึ้นและเลื่อนลงได้</string>
     <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้ามาในมุมมอง</string>
-    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบกุญแจในการตั้งค่าคำอธิบายอัตโนมัติ</string>
+    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบคีย์ในการตั้งค่าคำอธิบายอัตโนมัติ</string>
     <string name="gemini_error_quota">ถึงขีดจำกัดการใช้งานสำหรับคีย์ Gemini API ของคุณแล้ว ลองอีกครั้งในภายหลัง</string>
     <string name="gemini_error_busy">Gemini ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>
     <string name="gemini_error_timeout">Gemini ใช้เวลาตอบนานเกินไป ลองอีกครั้ง</string>

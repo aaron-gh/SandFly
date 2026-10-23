@@ -1731,9 +1731,9 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly는 해당 주문의 항목 세부정보를 나타냅니다. 변경하려면 세부정보를 길게 터치한 후 위나 아래로 드래그하세요. SandFly를 켠 상태에서 두 번 탭하고 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
     <string name="title_pref_speak_items_before_scroll">스크롤되어 표시되기 전에 항목 말하기</string>
-    <string name="gemini_error_api_key">Gemini API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
+    <string name="gemini_error_api_key">Gemini에서 API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
     <string name="gemini_error_quota">Gemini API 키의 사용 제한에 도달했습니다. 나중에 다시 시도하세요.</string>
-    <string name="gemini_error_busy">Gemini 지금은 바빠요. 잠시 후에 다시 시도해 보세요.</string>
+    <string name="gemini_error_busy">현재 Gemini 사용량이 많습니다. 잠시 후 다시 시도하세요.</string>
     <string name="gemini_error_timeout">Gemini의 답변 시간이 너무 오래 걸렸습니다. 다시 시도해 보세요.</string>
     <string name="gemini_error_with_code">Gemini가 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini가 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>

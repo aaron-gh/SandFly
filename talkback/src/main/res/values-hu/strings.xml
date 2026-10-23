@@ -1576,7 +1576,7 @@
     <string name="handwriting_not_recognized">A kézírás nem ismerhető fel</string>
     <string name="handwriting_downloading">A kézírás-felismerés letöltése folyamatban van</string>
     <string name="handwriting_download_title">Letölti a kézírás-felismerést?</string>
-    <string name="handwriting_download_message">A telefon felismeri a kézírást. Ennek a nyelvnek a körülbelül 20 MB-os modellje egyszer letöltődik a Google címről. Egy üzenet jelenik meg, amikor letöltötte.</string>
+    <string name="handwriting_download_message">A telefon felismeri a kézírást. Az ehhez a nyelvhez tartozó, körülbelül 20 MB-os modell egyszer töltődik le a Google-tól. A letöltés befejezésekor üzenet jelenik meg.</string>
     <string name="handwriting_download_button">Letöltés</string>
     <string name="handwriting_downloaded">Kézírás-felismerés letöltve</string>
     <string name="handwriting_download_failed">A kézírás-felismerést nem sikerült letölteni. Ellenőrizze az internetkapcsolatot.</string>
@@ -1731,9 +1731,9 @@
     <string name="template_item_details_order_dropped">Elengedve: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">A SandFly az elem részleteit ebben a sorrendben jelzi. A módosításhoz érintsen meg hosszan egy részletet, majd húzza fel vagy le. Ha az SandFly be van kapcsolva, koppintson duplán és tartsa lenyomva, majd húzza. Használhatja a Felfelé és Lefelé műveleteket is.</string>
     <string name="title_pref_speak_items_before_scroll">Elemek kimondása, mielőtt görgetéssel megjelennek</string>
-    <string name="gemini_error_api_key">Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításainál.</string>
+    <string name="gemini_error_api_key">A Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításaiban.</string>
     <string name="gemini_error_quota">Elérte a Gemini API-kulcs használati korlátját. Próbálja újra később.</string>
-    <string name="gemini_error_busy">Gemini jelenleg elfoglalt. Próbálja újra egy pillanat múlva.</string>
+    <string name="gemini_error_busy">A Gemini jelenleg túlterhelt. Próbálja újra egy kis idő múlva.</string>
     <string name="gemini_error_timeout">A Gemini túl sokáig nem válaszolt. Próbálja újra.</string>
     <string name="gemini_error_with_code">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
