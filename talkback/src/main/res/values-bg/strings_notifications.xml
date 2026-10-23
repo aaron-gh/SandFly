@@ -77,7 +77,7 @@
     <string name="notification_media_title">Докато медията се възпроизвежда</string>
     <string name="notification_dnd_title">Не безпокойте</string>
     <string name="notification_dnd_none">Без четене</string>
-    <string name="notification_dnd_allowed">Прочетете известията, разрешени от режима „Не безпокойте“.</string>
+    <string name="notification_dnd_allowed">Четене на позволеното от „Не безпокойте“</string>
     <string name="notification_dnd_all">Четене на всички</string>
     <string name="notification_touch_title">Докато екранът е докоснат</string>
     <string name="notification_touch_read">Четене веднага</string>
@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">Пропуснете същото известие за</string>
     <string name="notification_numbers_alike_title">Третирайте различните числа като идентични</string>
     <string name="notification_numbers_alike_summary">Като например процент на изтегляне</string>
-    <string name="notification_cooldown_title">Времето между известията на приложението</string>
+    <string name="notification_cooldown_title">Време между известията на едно приложение</string>
     <string name="notification_skip_prefix_title">Пропуснете повтарящ се текстов префикс</string>
     <string name="notification_skip_prefix_summary">Като например името на група в чат</string>
     <string name="notification_prefix_memory_title">Колко дълго да запомните текстовия префикс</string>
@@ -263,8 +263,8 @@
     <string name="notification_cond_locked_not">Телефонът е отключен</string>
     <string name="notification_cond_screen_on">Екранът е включен</string>
     <string name="notification_cond_screen_on_not">Екранът е изключен</string>
-    <string name="notification_cond_landscape">Екранът е пейзажен</string>
-    <string name="notification_cond_landscape_not">Екранът е в портрет</string>
+    <string name="notification_cond_landscape">Екранът е в хоризонтално положение</string>
+    <string name="notification_cond_landscape_not">Екранът е във вертикално положение</string>
     <string name="notification_cond_time">Часът е <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Часът не е <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Свързан с <xliff:g id="network" example="Home">%1$s</xliff:g></string>
@@ -272,12 +272,12 @@
     <string name="notification_cond_wifi_any">Свързан с Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Не е свързан с Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> е на преден план</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не е отпред</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не е на преден план</string>
     <string name="notification_cond_from">Известието е от <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Известието не е от <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Известието съдържа <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Известието не съдържа <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Звъненето е тихо или вибрира</string>
+    <string name="notification_cond_silent">Звъненето е без звук или на вибрация</string>
     <string name="notification_cond_silent_not">Звъненето е включено</string>
     <string name="notification_cond_media">Мултимедията се възпроизвежда</string>
     <string name="notification_cond_media_not">Не се възпроизвежда медия</string>

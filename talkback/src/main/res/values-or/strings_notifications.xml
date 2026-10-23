@@ -8,7 +8,7 @@
     <string name="notification_media_read">ପଢ଼ନ୍ତୁ</string>
     <string name="notification_headphones_only_without">କେବଳ ହେଡଫୋନ୍ ବିନା</string>
     <string name="notification_headphones_only_with">କେବଳ ହେଡଫୋନ୍ ସହିତ</string>
-    <string name="notification_headphones_always">ହେଡଫୋନ୍ ସହିତ କିମ୍ବା ବିନା ଉଚ୍ଚ ସ୍ୱରରେ ପ Read ନ୍ତୁ</string>
+    <string name="notification_headphones_always">ହେଡଫୋନ୍ ସହିତ କିମ୍ବା ବିନା ପଢ଼ନ୍ତୁ</string>
     <string name="notification_queue_skip">ନୂତନ ବିଜ୍ଞପ୍ତିକୁ ଉଚ୍ଚ ସ୍ୱରରେ ପ read ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_queue_interrupt">ବାଧା ଦିଅନ୍ତୁ</string>
     <string name="notification_queue_queue">ପରେ ପଢ଼ନ୍ତୁ</string>
@@ -77,7 +77,7 @@
     <string name="notification_media_title">ମିଡିଆ ଚାଲୁଥିବା ବେଳେ</string>
     <string name="notification_dnd_title">ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ</string>
     <string name="notification_dnd_none">କିଛି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
-    <string name="notification_dnd_allowed">ବିଭ୍ରାନ୍ତିକର ମୋଡ୍ ଦ୍ୱାରା ଅନୁମୋଦିତ ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ନ୍ତୁ</string>
+    <string name="notification_dnd_allowed">ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ ଯାହା ଅନୁମତି ଦିଏ ତାହା ପଢ଼ନ୍ତୁ</string>
     <string name="notification_dnd_all">ସବୁ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_touch_title">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ସ୍ପର୍ଶ ହୁଏ</string>
     <string name="notification_touch_read">ତୁରନ୍ତ ପଢ଼ନ୍ତୁ</string>
@@ -163,9 +163,9 @@
     <string name="notification_history_category">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ</string>
     <string name="notification_history_empty">କୌଣସି ବିଜ୍ଞପ୍ତି ନାହିଁ</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> ପଢ଼ନ୍ତୁ ନାହିଁ</string>
-    <string name="notification_history_private_app">କେବଳ <xliff:g id="app" example="Chat">%1$s</xliff:g> ର ନାମ ପ Read ନ୍ତୁ</string>
+    <string name="notification_history_private_app">କେବଳ <xliff:g id="app" example="Chat">%1$s</xliff:g> ର ନାମ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_history_priority_app">ପ୍ରଥମେ <xliff:g id="app" example="Chat">%1$s</xliff:g> ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_history_block_similar">ଏହିପରି ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_history_block_similar">ଏହିପରି ବିଜ୍ଞପ୍ତି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_history_copy">କପି କରନ୍ତୁ</string>
     <string name="notification_saved">ସଞ୍ଚୟ ହୋଇଛି</string>
     <string name="notification_copied">କପି କରାଯାଇଛି</string>
@@ -253,7 +253,7 @@
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ସଂଯୋଗ ହୋଇନାହିଁ</string>
     <string name="notification_cond_bluetooth_any">ଏକ Bluetooth ଅଡିଓ ଉପକରଣ ସଂଯୁକ୍ତ</string>
     <string name="notification_cond_bluetooth_any_not">କୌଣସି Bluetooth ଅଡିଓ ଉପକରଣ ସଂଯୋଗ ହୋଇନାହିଁ</string>
-    <string name="notification_cond_wired">ତାରଯୁକ୍ତ ହେଡଫୋନ୍ ଗୁଡିକ ସଂଯୁକ୍ତ</string>
+    <string name="notification_cond_wired">ତାରଯୁକ୍ତ ହେଡଫୋନ୍ ସଂଯୁକ୍ତ ଅଛି</string>
     <string name="notification_cond_wired_not">ତାରଯୁକ୍ତ ହେଡଫୋନ୍ ସଂଯୋଗ ହୋଇନାହିଁ</string>
     <string name="notification_cond_battery_below">ବ୍ୟାଟେରୀ <xliff:g id="percent" example="20">%1$d</xliff:g> ପ୍ରତିଶତ ତଳେ</string>
     <string name="notification_cond_battery_below_not">ବ୍ୟାଟେରୀ <xliff:g id="percent" example="20">%1$d</xliff:g> ପ୍ରତିଶତ କିମ୍ବା ଅଧିକ ଅଟେ</string>
@@ -264,23 +264,23 @@
     <string name="notification_cond_screen_on">ସ୍କ୍ରିନ୍ ଅନ୍ ଅଛି</string>
     <string name="notification_cond_screen_on_not">ସ୍କ୍ରିନ୍ ବନ୍ଦ ଅଛି</string>
     <string name="notification_cond_landscape">ସ୍କ୍ରିନ୍ ଲ୍ୟାଣ୍ଡସ୍କେପରେ ଅଛି</string>
-    <string name="notification_cond_landscape_not">ପରଦା ଚିତ୍ରରେ ଅଛି</string>
+    <string name="notification_cond_landscape_not">ସ୍କ୍ରିନ୍ ପୋର୍ଟ୍ରେଟରେ ଅଛି</string>
     <string name="notification_cond_time">ସମୟ ହେଉଛି <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">ସମୟ <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> ନୁହେଁ</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> ସହିତ ସଂଯୁକ୍ତ</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> ସହିତ ସଂଯୁକ୍ତ ନୁହେଁ</string>
     <string name="notification_cond_wifi_any">Wi-Fi ସହିତ ସଂଯୁକ୍ତ</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi ସହିତ ସଂଯୁକ୍ତ ନୁହେଁ</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ସାମ୍ନାରେ ଅଛି</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ସାମ୍ନାରେ ନାହିଁ</string>
-    <string name="notification_cond_from">ବିଜ୍ଞପ୍ତି <xliff:g id="app" example="Chat">%1$s</xliff:g> ରୁ</string>
-    <string name="notification_cond_from_not">ବିଜ୍ଞପ୍ତି <xliff:g id="app" example="Chat">%1$s</xliff:g> ରୁ ନୁହେଁ</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ସ୍କ୍ରିନରେ ଖୋଲା ଅଛି</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ସ୍କ୍ରିନରେ ଖୋଲା ନାହିଁ</string>
+    <string name="notification_cond_from">ବିଜ୍ଞପ୍ତି <xliff:g id="app" example="Chat">%1$s</xliff:g> ରୁ ଆସିଛି</string>
+    <string name="notification_cond_from_not">ବିଜ୍ଞପ୍ତି <xliff:g id="app" example="Chat">%1$s</xliff:g> ରୁ ଆସିନାହିଁ</string>
     <string name="notification_cond_contains">ବିଜ୍ଞପ୍ତିରେ <xliff:g id="text" example="urgent">%1$s</xliff:g> ଅଛି</string>
-    <string name="notification_cond_contains_not">ବିଜ୍ଞପ୍ତିରେ <xliff:g id="text" example="urgent">%1$s</xliff:g> contain ନାହିଁ</string>
-    <string name="notification_cond_silent">ରିଙ୍ଗର୍ ନୀରବ କିମ୍ବା କମ୍ପିତ</string>
+    <string name="notification_cond_contains_not">ବିଜ୍ଞପ୍ତିରେ <xliff:g id="text" example="urgent">%1$s</xliff:g> ନାହିଁ</string>
+    <string name="notification_cond_silent">ରିଙ୍ଗର୍ ସାଇଲେଣ୍ଟ କିମ୍ବା ଭାଇବ୍ରେଟରେ ଅଛି</string>
     <string name="notification_cond_silent_not">ରିଙ୍ଗର୍ ଚାଲୁ ଅଛି</string>
     <string name="notification_cond_media">ମିଡିଆ ଚାଲୁଛି</string>
-    <string name="notification_cond_media_not">କୌଣସି ମିଡିଆ ଖେଳୁନାହିଁ</string>
+    <string name="notification_cond_media_not">କୌଣସି ମିଡିଆ ପ୍ଲେ ହେଉନାହିଁ</string>
     <string name="notification_action_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_action_private">କେବଳ ଆପ୍‌ର ନାମ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_action_not_private">ବ୍ୟକ୍ତିଗତ ହୋଇଥିଲେ ମଧ୍ୟ ସମ୍ପୂର୍ଣ୍ଣ ପଢ଼ନ୍ତୁ</string>

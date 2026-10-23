@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">Läs inte <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Läs endast namnet på <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Läs <xliff:g id="app" example="Chat">%1$s</xliff:g> först</string>
-    <string name="notification_history_block_similar">Läs inte sådana här meddelanden</string>
+    <string name="notification_history_block_similar">Läs inte aviseringar som den här</string>
     <string name="notification_history_copy">Kopiera</string>
     <string name="notification_saved">Sparat</string>
     <string name="notification_copied">Kopierat</string>
@@ -264,20 +264,20 @@
     <string name="notification_cond_screen_on">Skärmen är på</string>
     <string name="notification_cond_screen_on_not">Skärmen är avstängd</string>
     <string name="notification_cond_landscape">Skärmen är liggande</string>
-    <string name="notification_cond_landscape_not">Skärmen är i porträtt</string>
+    <string name="notification_cond_landscape_not">Skärmen är stående</string>
     <string name="notification_cond_time">Klockan är <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Klockan är inte <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Ansluten till <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Inte ansluten till <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Ansluten till Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Inte ansluten till Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ligger framför</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> är inte framför</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> är i förgrunden</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> är inte i förgrunden</string>
     <string name="notification_cond_from">Aviseringen är från <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Aviseringen är inte från <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Aviseringen innehåller <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Aviseringen innehåller inte <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Ringsignalen är tyst eller vibrerar</string>
+    <string name="notification_cond_silent">Ringsignalen är tyst eller på vibration</string>
     <string name="notification_cond_silent_not">Ringsignalen är på</string>
     <string name="notification_cond_media">Media spelas upp</string>
     <string name="notification_cond_media_not">Ingen media spelas upp</string>

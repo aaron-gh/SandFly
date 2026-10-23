@@ -77,7 +77,7 @@
     <string name="notification_media_title">Dok se mediji reprodukuju</string>
     <string name="notification_dnd_title">Ne uznemiravaj</string>
     <string name="notification_dnd_none">Ne čitaj nijedno</string>
-    <string name="notification_dnd_allowed">Pročitajte obaveštenja koja dozvoljava režim Ne uznemiravaj</string>
+    <string name="notification_dnd_allowed">Čitaj ono što dozvoljava režim Ne uznemiravaj</string>
     <string name="notification_dnd_all">Čitaj sve</string>
     <string name="notification_touch_title">Dok se dodiruje ekran</string>
     <string name="notification_touch_read">Čitaj odmah</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Obaveštenja</string>
     <string name="notification_history_empty">Nema obaveštenja</string>
     <string name="notification_history_ignore_app">Ne čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Pročitaj samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Čitaj samo naziv aplikacije <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g> prvo</string>
     <string name="notification_history_block_similar">Ne čitajte ovakva obaveštenja</string>
     <string name="notification_history_copy">Kopiraj</string>
@@ -264,23 +264,23 @@
     <string name="notification_cond_screen_on">Ekran je uključen</string>
     <string name="notification_cond_screen_on_not">Ekran je isključen</string>
     <string name="notification_cond_landscape">Ekran je u vodoravnom položaju</string>
-    <string name="notification_cond_landscape_not">Ekran je u portretu</string>
+    <string name="notification_cond_landscape_not">Ekran je u uspravnom položaju</string>
     <string name="notification_cond_time">Vreme je <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Vreme nije <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Povezano sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Nije povezan sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Povezano sa Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nije povezan sa Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je ispred</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije ispred</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je u prvom planu</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije u prvom planu</string>
     <string name="notification_cond_from">Obaveštenje je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Obaveštenje nije od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Obaveštenje sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obaveštenje ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvono je tiho ili vibrira</string>
+    <string name="notification_cond_silent">Zvono je utišano ili na vibraciji</string>
     <string name="notification_cond_silent_not">Zvono je uključeno</string>
     <string name="notification_cond_media">Reprodukuje se medijski sadržaj</string>
-    <string name="notification_cond_media_not">Nema medija</string>
+    <string name="notification_cond_media_not">Ne reprodukuje se nijedan medij</string>
     <string name="notification_action_skip">ne čitati</string>
     <string name="notification_action_private">čitati samo naziv aplikacije</string>
     <string name="notification_action_not_private">čitati u celosti, čak i ako je privatno</string>

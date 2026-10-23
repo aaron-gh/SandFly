@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">Ne pas lire les notifications de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Lire uniquement le nom de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Lire les notifications de <xliff:g id="app" example="Chat">%1$s</xliff:g> en premier</string>
-    <string name="notification_history_block_similar">Ne lisez pas les notifications comme celle-ci</string>
+    <string name="notification_history_block_similar">Ne pas lire les notifications de ce type</string>
     <string name="notification_history_copy">Copier</string>
     <string name="notification_saved">Enregistré</string>
     <string name="notification_copied">Copié</string>
@@ -265,8 +265,8 @@
     <string name="notification_cond_screen_on_not">L\'écran est éteint</string>
     <string name="notification_cond_landscape">L\'écran est en paysage</string>
     <string name="notification_cond_landscape_not">L\'écran est en portrait</string>
-    <string name="notification_cond_time">Il est <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">L\'heure n\'est pas <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time">L\'heure est dans la plage <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">L\'heure n\'est pas dans la plage <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Connecté à <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Non connecté à <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Connecté à Wi-Fi</string>
@@ -277,7 +277,7 @@
     <string name="notification_cond_from_not">La notification ne provient pas de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">La notification contient <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">La notification ne contient pas <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">La sonnerie est silencieuse ou vibre</string>
+    <string name="notification_cond_silent">La sonnerie est en mode silencieux ou vibreur</string>
     <string name="notification_cond_silent_not">La sonnerie est activée</string>
     <string name="notification_cond_media">Un contenu multimédia est en cours de lecture</string>
     <string name="notification_cond_media_not">Aucun média n\'est lu</string>

@@ -263,7 +263,7 @@
     <string name="notification_cond_locked_not">फ़ोन अनलॉक है</string>
     <string name="notification_cond_screen_on">स्क्रीन चालू है</string>
     <string name="notification_cond_screen_on_not">स्क्रीन बंद है</string>
-    <string name="notification_cond_landscape">स्क्रीन लैंडस्केप में है</string>
+    <string name="notification_cond_landscape">स्क्रीन लैंडस्केप मोड में है</string>
     <string name="notification_cond_landscape_not">स्क्रीन पोर्ट्रेट में है</string>
     <string name="notification_cond_time">समय <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> है</string>
     <string name="notification_cond_time_not">समय <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> नहीं है</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> से कनेक्ट नहीं है</string>
     <string name="notification_cond_wifi_any">Wi-Fi से जुड़ा हुआ</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi से कनेक्ट नहीं है</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> सामने है</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> सामने नहीं है</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> स्क्रीन पर खुला है</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> स्क्रीन पर खुला नहीं है</string>
     <string name="notification_cond_from">अधिसूचना <xliff:g id="app" example="Chat">%1$s</xliff:g> से है</string>
     <string name="notification_cond_from_not">अधिसूचना <xliff:g id="app" example="Chat">%1$s</xliff:g> से नहीं है</string>
-    <string name="notification_cond_contains">अधिसूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> शामिल है</string>
-    <string name="notification_cond_contains_not">अधिसूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> शामिल नहीं है</string>
-    <string name="notification_cond_silent">घंटी बजाने वाला शांत है या कंपन करता है</string>
+    <string name="notification_cond_contains">सूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> है</string>
+    <string name="notification_cond_contains_not">सूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> नहीं है</string>
+    <string name="notification_cond_silent">रिंगर साइलेंट या वाइब्रेट पर है</string>
     <string name="notification_cond_silent_not">रिंगर चालू है</string>
     <string name="notification_cond_media">मीडिया चल रहा है</string>
     <string name="notification_cond_media_not">कोई मीडिया नहीं चल रहा</string>

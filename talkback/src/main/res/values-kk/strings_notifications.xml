@@ -8,7 +8,7 @@
     <string name="notification_media_read">Оқу</string>
     <string name="notification_headphones_only_without">Тек құлаққапсыз</string>
     <string name="notification_headphones_only_with">Тек құлаққаппен</string>
-    <string name="notification_headphones_always">Құлаққаппен немесе құлаққапсыз дауыстап оқыңыз</string>
+    <string name="notification_headphones_always">Құлақаспаппен немесе онсыз оқу</string>
     <string name="notification_queue_skip">Жаңа хабарландыруды дауыстап оқымаңыз</string>
     <string name="notification_queue_interrupt">Үзу</string>
     <string name="notification_queue_queue">Одан кейін оқу</string>
@@ -263,21 +263,21 @@
     <string name="notification_cond_locked_not">Телефон құлпы ашылған</string>
     <string name="notification_cond_screen_on">Экран қосулы</string>
     <string name="notification_cond_screen_on_not">Экран өшірулі</string>
-    <string name="notification_cond_landscape">Экран пейзажда</string>
-    <string name="notification_cond_landscape_not">Экран портреттік күйде</string>
+    <string name="notification_cond_landscape">Экран көлденең күйде</string>
+    <string name="notification_cond_landscape_not">Экран тік күйде</string>
     <string name="notification_cond_time">Уақыт <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Уақыт <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> емес</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> желісіне қосылған</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> желісіне қосылмаған</string>
     <string name="notification_cond_wifi_any">Wi-Fi желісіне қосылған</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi желісіне қосылмаған</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> алда</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдында емес</string>
-    <string name="notification_cond_from">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> емес</string>
-    <string name="notification_cond_contains">Хабарламада <xliff:g id="text" example="urgent">%1$s</xliff:g> бар</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдыңғы планда</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдыңғы планда емес</string>
+    <string name="notification_cond_from">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> қолданбасынан</string>
+    <string name="notification_cond_from_not">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> қолданбасынан емес</string>
+    <string name="notification_cond_contains">Хабарландыруда <xliff:g id="text" example="urgent">%1$s</xliff:g> бар</string>
     <string name="notification_cond_contains_not">Хабарландыруда <xliff:g id="text" example="urgent">%1$s</xliff:g> жоқ</string>
-    <string name="notification_cond_silent">Қоңырау үнсіз немесе дірілдейді</string>
+    <string name="notification_cond_silent">Қоңырау үнсіз немесе діріл режимінде</string>
     <string name="notification_cond_silent_not">Қоңырау дыбысы қосулы</string>
     <string name="notification_cond_media">Медиа ойнатуда</string>
     <string name="notification_cond_media_not">Ешбір медиа ойнатылмайды</string>

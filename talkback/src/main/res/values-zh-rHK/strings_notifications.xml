@@ -8,7 +8,7 @@
     <string name="notification_media_read">朗讀</string>
     <string name="notification_headphones_only_without">僅在未使用耳機時</string>
     <string name="notification_headphones_only_with">僅在使用耳機時</string>
-    <string name="notification_headphones_always">有或沒有耳機大聲朗讀</string>
+    <string name="notification_headphones_always">無論有否耳機都朗讀</string>
     <string name="notification_queue_skip">請勿大聲朗讀新通知</string>
     <string name="notification_queue_interrupt">中斷</string>
     <string name="notification_queue_queue">之後朗讀</string>
@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">跳過相同的通知</string>
     <string name="notification_numbers_alike_title">将不同的数字视为相同</string>
     <string name="notification_numbers_alike_summary">例如下載百分比</string>
-    <string name="notification_cooldown_title">应用程序通知之间的时间间隔</string>
+    <string name="notification_cooldown_title">應用程式通知之間的間隔</string>
     <string name="notification_skip_prefix_title">省略重复的文本前缀</string>
     <string name="notification_skip_prefix_summary">例如聊天中的群组名称</string>
     <string name="notification_prefix_memory_title">记住文本前缀多长时间</string>
@@ -163,9 +163,9 @@
     <string name="notification_history_category">通知</string>
     <string name="notification_history_empty">無通知</string>
     <string name="notification_history_ignore_app">不朗讀 <xliff:g id="app" example="Chat">%1$s</xliff:g> 的通知</string>
-    <string name="notification_history_private_app">只讀<xliff:g id="app" example="Chat">%1$s</xliff:g>的名字</string>
+    <string name="notification_history_private_app">只朗讀 <xliff:g id="app" example="Chat">%1$s</xliff:g> 的名稱</string>
     <string name="notification_history_priority_app">優先朗讀 <xliff:g id="app" example="Chat">%1$s</xliff:g> 的通知</string>
-    <string name="notification_history_block_similar">不要閱讀這樣的通知</string>
+    <string name="notification_history_block_similar">不要朗讀這類通知</string>
     <string name="notification_history_copy">複製</string>
     <string name="notification_saved">已儲存</string>
     <string name="notification_copied">已複製</string>
@@ -271,8 +271,8 @@
     <string name="notification_cond_wifi_not">未連接至 <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">已連接到 Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">未連接至 Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>在前面</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>不在前面</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> 正在前景執行</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> 未在前景執行</string>
     <string name="notification_cond_from">通知來自<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">通知不是來自<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">通知包含<xliff:g id="text" example="urgent">%1$s</xliff:g></string>

@@ -77,7 +77,7 @@
     <string name="notification_media_title">Медиа тоглуулж байх үед</string>
     <string name="notification_dnd_title">Бүү саад бол</string>
     <string name="notification_dnd_none">Алийг нь ч уншихгүй</string>
-    <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрөгдсөн мэдэгдлүүдийг уншина уу</string>
+    <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрснийг унших</string>
     <string name="notification_dnd_all">Бүгдийг унш</string>
     <string name="notification_touch_title">Дэлгэцэнд хүрч байхад</string>
     <string name="notification_touch_read">Шууд унших</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Мэдэгдлүүд</string>
     <string name="notification_history_empty">Мэдэгдэл алга</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г бүү унш</string>
-    <string name="notification_history_private_app">Зөвхөн <xliff:g id="app" example="Chat">%1$s</xliff:g>-н нэрийг уншина уу</string>
+    <string name="notification_history_private_app">Зөвхөн <xliff:g id="app" example="Chat">%1$s</xliff:g>-ын нэрийг унших</string>
     <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г эхэлж унших</string>
     <string name="notification_history_block_similar">Ийм мэдэгдлийг бүү унш</string>
     <string name="notification_history_copy">Хуулах</string>
@@ -263,24 +263,24 @@
     <string name="notification_cond_locked_not">Утасны түгжээг тайлсан байна</string>
     <string name="notification_cond_screen_on">Дэлгэц асаалттай байна</string>
     <string name="notification_cond_screen_on_not">Дэлгэц унтарсан байна</string>
-    <string name="notification_cond_landscape">Дэлгэц нь ландшафт байна</string>
-    <string name="notification_cond_landscape_not">Дэлгэц нь хөрөг зураг дээр байна</string>
+    <string name="notification_cond_landscape">Дэлгэц хэвтээ байрлалтай байна</string>
+    <string name="notification_cond_landscape_not">Дэлгэц босоо байрлалтай байна</string>
     <string name="notification_cond_time">Цаг нь <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Цаг нь <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> биш байна</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>-д холбогдсон</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g>-д холбогдоогүй байна</string>
     <string name="notification_cond_wifi_any">Wi-Fi-д холбогдсон</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi-д холбогдоогүй байна</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> урд байна</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> урд биш байна</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> дэлгэц дээр нээлттэй байна</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> дэлгэц дээр нээлттэй биш байна</string>
     <string name="notification_cond_from">Мэдэгдэл <xliff:g id="app" example="Chat">%1$s</xliff:g>-с ирсэн</string>
     <string name="notification_cond_from_not">Мэдэгдэл <xliff:g id="app" example="Chat">%1$s</xliff:g>-ээс ирээгүй байна</string>
     <string name="notification_cond_contains">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> орсон байна</string>
     <string name="notification_cond_contains_not">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> байхгүй байна</string>
-    <string name="notification_cond_silent">Хонхны дуу чимээгүй эсвэл чичирч байна</string>
+    <string name="notification_cond_silent">Хонхны дуу чимээгүй эсвэл чичиргээний горимд байна</string>
     <string name="notification_cond_silent_not">Хонхны дуу асаалттай</string>
     <string name="notification_cond_media">Медиа тоглуулж байна</string>
-    <string name="notification_cond_media_not">Ямар ч медиа тоглуулахгүй байна</string>
+    <string name="notification_cond_media_not">Медиа тоглуулж байхгүй</string>
     <string name="notification_action_skip">уншихгүй</string>
     <string name="notification_action_private">зөвхөн аппын нэрийг унших</string>
     <string name="notification_action_not_private">хувийн байсан ч бүтнээр нь унших</string>

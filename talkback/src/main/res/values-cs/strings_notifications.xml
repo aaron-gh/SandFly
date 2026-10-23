@@ -163,7 +163,7 @@
     <string name="notification_history_category">Oznámení</string>
     <string name="notification_history_empty">Žádná oznámení</string>
     <string name="notification_history_ignore_app">Nečíst <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Číst pouze jméno <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Číst pouze název aplikace <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Číst <xliff:g id="app" example="Chat">%1$s</xliff:g> jako první</string>
     <string name="notification_history_block_similar">Taková upozornění nečtěte</string>
     <string name="notification_history_copy">Kopírovat</string>
@@ -272,12 +272,12 @@
     <string name="notification_cond_wifi_any">Připojeno k Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Není připojeno k Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je v popředí</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> není vpředu</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> není v popředí</string>
     <string name="notification_cond_from">Oznámení je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Oznámení není od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Oznámení obsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Oznámení neobsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Vyzvánění je tiché nebo vibruje</string>
+    <string name="notification_cond_silent">Vyzvánění je ztlumené nebo v režimu vibrací</string>
     <string name="notification_cond_silent_not">Vyzvánění je zapnuté</string>
     <string name="notification_cond_media">Média se přehrávají</string>
     <string name="notification_cond_media_not">Nepřehrává se žádné médium</string>

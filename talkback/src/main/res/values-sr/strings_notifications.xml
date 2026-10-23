@@ -77,7 +77,7 @@
     <string name="notification_media_title">Док се медији репродукују</string>
     <string name="notification_dnd_title">Не узнемиравај</string>
     <string name="notification_dnd_none">Не читај ниједно</string>
-    <string name="notification_dnd_allowed">Прочитајте обавештења која дозвољава режим Не узнемиравај</string>
+    <string name="notification_dnd_allowed">Читај оно што дозвољава режим Не узнемиравај</string>
     <string name="notification_dnd_all">Читај све</string>
     <string name="notification_touch_title">Док се додирује екран</string>
     <string name="notification_touch_read">Читај одмах</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Обавештења</string>
     <string name="notification_history_empty">Нема обавештења</string>
     <string name="notification_history_ignore_app">Не читај <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Прочитај само име <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Читај само назив апликације <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Читај <xliff:g id="app" example="Chat">%1$s</xliff:g> прво</string>
     <string name="notification_history_block_similar">Не читајте оваква обавештења</string>
     <string name="notification_history_copy">Копирај</string>
@@ -264,23 +264,23 @@
     <string name="notification_cond_screen_on">Екран је укључен</string>
     <string name="notification_cond_screen_on_not">Екран је искључен</string>
     <string name="notification_cond_landscape">Екран је у водоравном положају</string>
-    <string name="notification_cond_landscape_not">Екран је у портрету</string>
+    <string name="notification_cond_landscape_not">Екран је у усправном положају</string>
     <string name="notification_cond_time">Време је <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Време није <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Повезано са <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Није повезан са <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Повезано са Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Није повезан са Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> је испред</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> није испред</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> је у првом плану</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> није у првом плану</string>
     <string name="notification_cond_from">Обавештење је од <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Обавештење није од <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Обавештење садржи <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Обавештење не садржи <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Звоно је тихо или вибрира</string>
+    <string name="notification_cond_silent">Звоно је утишано или на вибрацији</string>
     <string name="notification_cond_silent_not">Звоно је укључено</string>
     <string name="notification_cond_media">Репродукује се медијски садржај</string>
-    <string name="notification_cond_media_not">Нема медија</string>
+    <string name="notification_cond_media_not">Не репродукује се ниједан медиј</string>
     <string name="notification_action_skip">не читати</string>
     <string name="notification_action_private">читати само назив апликације</string>
     <string name="notification_action_not_private">читати у целости, чак и ако је приватно</string>

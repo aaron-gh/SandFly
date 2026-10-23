@@ -77,7 +77,7 @@
     <string name="notification_media_title">Gjatë luajtjes së medias</string>
     <string name="notification_dnd_title">Mos shqetëso</string>
     <string name="notification_dnd_none">Mos lexo asnjë</string>
-    <string name="notification_dnd_allowed">Lexoni njoftimet e lejuara nga modaliteti \"Mos shqetëso\".</string>
+    <string name="notification_dnd_allowed">Lexo atë që lejon „Mos shqetëso“</string>
     <string name="notification_dnd_all">Lexo të gjitha</string>
     <string name="notification_touch_title">Ndërsa ekrani preket</string>
     <string name="notification_touch_read">Lexo menjëherë</string>
@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">Mos lexo <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Lexo vetëm emrin e <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Lexo së pari <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_block_similar">Mos lexoni njoftime si ky</string>
+    <string name="notification_history_block_similar">Mos lexo njoftime si ky</string>
     <string name="notification_history_copy">Kopjo</string>
     <string name="notification_saved">U ruajt</string>
     <string name="notification_copied">U kopjua</string>
@@ -263,21 +263,21 @@
     <string name="notification_cond_locked_not">Telefoni është i shkyçur</string>
     <string name="notification_cond_screen_on">Ekrani është i ndezur</string>
     <string name="notification_cond_screen_on_not">Ekrani është i fikur</string>
-    <string name="notification_cond_landscape">Ekrani është në peizazh</string>
-    <string name="notification_cond_landscape_not">Ekrani është në portret</string>
+    <string name="notification_cond_landscape">Ekrani është horizontal</string>
+    <string name="notification_cond_landscape_not">Ekrani është vertikal</string>
     <string name="notification_cond_time">Ora është <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Ora nuk është <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Lidhur me <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Nuk është i lidhur me <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Lidhur me Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nuk është i lidhur me Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> është përpara</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nuk është përpara</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> është në plan të parë</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nuk është në plan të parë</string>
     <string name="notification_cond_from">Njoftimi është nga <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Njoftimi nuk është nga <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Njoftimi përmban <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Njoftimi nuk përmban <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zilja është e heshtur ose dridhet</string>
+    <string name="notification_cond_silent">Zilja është e heshtur ose me dridhje</string>
     <string name="notification_cond_silent_not">Zilja është aktive</string>
     <string name="notification_cond_media">Po luhet media</string>
     <string name="notification_cond_media_not">Asnjë media nuk po luhet</string>

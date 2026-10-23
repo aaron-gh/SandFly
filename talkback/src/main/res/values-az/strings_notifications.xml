@@ -77,7 +77,7 @@
     <string name="notification_media_title">Media oxudularkən</string>
     <string name="notification_dnd_title">Narahat etməyin</string>
     <string name="notification_dnd_none">Heç birini oxuma</string>
-    <string name="notification_dnd_allowed">Narahat Etməyin rejimi tərəfindən icazə verilən bildirişləri oxuyun</string>
+    <string name="notification_dnd_allowed">Narahat etməyin rejiminin icazə verdiklərini oxu</string>
     <string name="notification_dnd_all">Hamısını oxu</string>
     <string name="notification_touch_title">Ekrana toxunduqda</string>
     <string name="notification_touch_read">Dərhal oxu</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Bildirişlər</string>
     <string name="notification_history_empty">Bildiriş yoxdur</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> oxunmasın</string>
-    <string name="notification_history_private_app">Yalnız <xliff:g id="app" example="Chat">%1$s</xliff:g> adını oxuyun</string>
+    <string name="notification_history_private_app">Yalnız <xliff:g id="app" example="Chat">%1$s</xliff:g> tətbiqinin adını oxu</string>
     <string name="notification_history_priority_app">Əvvəlcə <xliff:g id="app" example="Chat">%1$s</xliff:g> oxunsun</string>
     <string name="notification_history_block_similar">Bu kimi bildirişləri oxumayın</string>
     <string name="notification_history_copy">Kopyala</string>
@@ -263,8 +263,8 @@
     <string name="notification_cond_locked_not">Telefonun kilidi açılıb</string>
     <string name="notification_cond_screen_on">Ekran aktivdir</string>
     <string name="notification_cond_screen_on_not">Ekran sönükdür</string>
-    <string name="notification_cond_landscape">Ekran landşaftdadır</string>
-    <string name="notification_cond_landscape_not">Ekran portretdir</string>
+    <string name="notification_cond_landscape">Ekran üfüqi vəziyyətdədir</string>
+    <string name="notification_cond_landscape_not">Ekran şaquli vəziyyətdədir</string>
     <string name="notification_cond_time">Saat <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Saat <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> deyil</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> ilə qoşulub</string>
@@ -272,15 +272,15 @@
     <string name="notification_cond_wifi_any">Wi-Fi ilə qoşulub</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi ilə bağlı deyil</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ön plandadır</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> qabaqda deyil</string>
-    <string name="notification_cond_from">Bildiriş <xliff:g id="app" example="Chat">%1$s</xliff:g> tarixindəndir</string>
-    <string name="notification_cond_from_not">Bildiriş <xliff:g id="app" example="Chat">%1$s</xliff:g> tarixindən deyil</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ön planda deyil</string>
+    <string name="notification_cond_from">Bildiriş <xliff:g id="app" example="Chat">%1$s</xliff:g> tətbiqindəndir</string>
+    <string name="notification_cond_from_not">Bildiriş <xliff:g id="app" example="Chat">%1$s</xliff:g> tətbiqindən deyil</string>
     <string name="notification_cond_contains">Bildirişdə <xliff:g id="text" example="urgent">%1$s</xliff:g> var</string>
     <string name="notification_cond_contains_not">Bildirişdə <xliff:g id="text" example="urgent">%1$s</xliff:g> yoxdur</string>
-    <string name="notification_cond_silent">Zəng səssizdir və ya titrəyir</string>
+    <string name="notification_cond_silent">Zəng səssiz və ya vibrasiya rejimindədir</string>
     <string name="notification_cond_silent_not">Zəng səsi aktivdir</string>
     <string name="notification_cond_media">Media oxudulur</string>
-    <string name="notification_cond_media_not">Heç bir media oynamır</string>
+    <string name="notification_cond_media_not">Heç bir media oxudulmur</string>
     <string name="notification_action_skip">oxumamaq</string>
     <string name="notification_action_private">yalnız tətbiqin adını oxumaq</string>
     <string name="notification_action_not_private">şəxsi olsa belə tam oxumaq</string>

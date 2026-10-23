@@ -163,7 +163,7 @@
     <string name="notification_history_category">Izaziso</string>
     <string name="notification_history_empty">Azikho izaziso</string>
     <string name="notification_history_ignore_app">Ungafundi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Funda kuphela igama elithi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Funda igama le-<xliff:g id="app" example="Chat">%1$s</xliff:g> kuphela</string>
     <string name="notification_history_priority_app">Funda <xliff:g id="app" example="Chat">%1$s</xliff:g> kuqala</string>
     <string name="notification_history_block_similar">Ungafundi izaziso ezinjengalezi</string>
     <string name="notification_history_copy">Kopisha</string>
@@ -259,20 +259,20 @@
     <string name="notification_cond_battery_below_not">Ibhethri likumaphesenti angu-<xliff:g id="percent" example="20">%1$d</xliff:g> noma ngaphezulu</string>
     <string name="notification_cond_charging">Ifoni iyashaja</string>
     <string name="notification_cond_charging_not">Ifoni ayishaji</string>
-    <string name="notification_cond_locked">Ifoni ivaliwe</string>
-    <string name="notification_cond_locked_not">Ifoni ivuliwe</string>
+    <string name="notification_cond_locked">Ifoni ikhiyiwe</string>
+    <string name="notification_cond_locked_not">Ifoni ayikhiyiwe</string>
     <string name="notification_cond_screen_on">Isikrini sivuliwe</string>
     <string name="notification_cond_screen_on_not">Isikrini sicinyiwe</string>
-    <string name="notification_cond_landscape">Isikrini sisesimweni</string>
-    <string name="notification_cond_landscape_not">Isikrini siku-portrait</string>
-    <string name="notification_cond_time">Isikhathi ngu <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">Isikhathi asikho <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_landscape">Isikrini sime ngokuvundlile</string>
+    <string name="notification_cond_landscape_not">Isikrini sime ngokuqondile</string>
+    <string name="notification_cond_time">Isikhathi singu-<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Isikhathi asisona u-<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Ixhumeke ku-<xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Ayixhunyiwe ku-<xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Ixhumeke ku-Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Ayixhunyiwe ku-Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ingaphambili</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ayikho ngaphambili</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ivuliwe esikrinini</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ayivuliwe esikrinini</string>
     <string name="notification_cond_from">Isaziso sivela ku-<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Isaziso asiveli ku-<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Isaziso siqukethe <xliff:g id="text" example="urgent">%1$s</xliff:g></string>

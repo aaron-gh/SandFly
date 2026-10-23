@@ -253,34 +253,34 @@
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결되지 않음</string>
     <string name="notification_cond_bluetooth_any">Bluetooth 오디오 장치가 연결되어 있습니다</string>
     <string name="notification_cond_bluetooth_any_not">Bluetooth 오디오 장치가 연결되어 있지 않습니다</string>
-    <string name="notification_cond_wired">유선 헤드폰이 연결되었습니다.</string>
-    <string name="notification_cond_wired_not">유선 헤드폰이 연결되지 않았습니다.</string>
+    <string name="notification_cond_wired">유선 헤드폰이 연결되어 있습니다</string>
+    <string name="notification_cond_wired_not">유선 헤드폰이 연결되어 있지 않습니다</string>
     <string name="notification_cond_battery_below">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 미만입니다</string>
     <string name="notification_cond_battery_below_not">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 이상입니다</string>
     <string name="notification_cond_charging">휴대전화가 충전 중입니다</string>
     <string name="notification_cond_charging_not">휴대전화가 충전 중이 아닙니다</string>
-    <string name="notification_cond_locked">전화기가 잠겨 있습니다.</string>
-    <string name="notification_cond_locked_not">전화기가 잠금 해제되었습니다.</string>
-    <string name="notification_cond_screen_on">화면이 켜져 있습니다.</string>
-    <string name="notification_cond_screen_on_not">화면이 꺼져 있어요</string>
-    <string name="notification_cond_landscape">화면이 가로 모드입니다.</string>
-    <string name="notification_cond_landscape_not">화면이 세로 모드입니다.</string>
-    <string name="notification_cond_time">시간은 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">시간은 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>가 아닙니다</string>
+    <string name="notification_cond_locked">휴대전화가 잠겨 있습니다</string>
+    <string name="notification_cond_locked_not">휴대전화 잠금이 해제되어 있습니다</string>
+    <string name="notification_cond_screen_on">화면이 켜져 있습니다</string>
+    <string name="notification_cond_screen_on_not">화면이 꺼져 있습니다</string>
+    <string name="notification_cond_landscape">화면이 가로 모드입니다</string>
+    <string name="notification_cond_landscape_not">화면이 세로 모드입니다</string>
+    <string name="notification_cond_time">시간이 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> 사이임</string>
+    <string name="notification_cond_time_not">시간이 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> 사이가 아님</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>에 연결됨</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g>에 연결되지 않음</string>
     <string name="notification_cond_wifi_any">Wi-Fi에 연결됨</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi에 연결되지 않음</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>이 앞에 있습니다</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>이 앞에 있지 않습니다.</string>
-    <string name="notification_cond_from">알림은 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 왔습니다.</string>
-    <string name="notification_cond_from_not">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 온 것이 아닙니다.</string>
-    <string name="notification_cond_contains">알림에는 <xliff:g id="text" example="urgent">%1$s</xliff:g>이 포함되어 있습니다.</string>
-    <string name="notification_cond_contains_not">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>가 포함되어 있지 않습니다.</string>
-    <string name="notification_cond_silent">벨소리가 조용하거나 진동합니다.</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>이(가) 화면에 열려 있음</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>이(가) 화면에 열려 있지 않음</string>
+    <string name="notification_cond_from">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 왔음</string>
+    <string name="notification_cond_from_not">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 오지 않았음</string>
+    <string name="notification_cond_contains">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>이(가) 포함되어 있습니다</string>
+    <string name="notification_cond_contains_not">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>이(가) 포함되어 있지 않습니다</string>
+    <string name="notification_cond_silent">벨소리가 무음 또는 진동임</string>
     <string name="notification_cond_silent_not">벨소리 켜짐</string>
     <string name="notification_cond_media">미디어 재생 중</string>
-    <string name="notification_cond_media_not">재생 중인 미디어가 없습니다.</string>
+    <string name="notification_cond_media_not">재생 중인 미디어가 없습니다</string>
     <string name="notification_action_skip">읽지 않기</string>
     <string name="notification_action_private">앱 이름만 읽기</string>
     <string name="notification_action_not_private">비공개라도 전체 읽기</string>

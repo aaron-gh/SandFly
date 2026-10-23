@@ -163,7 +163,7 @@
     <string name="notification_history_category">Obavijesti</string>
     <string name="notification_history_empty">Nema obavijesti</string>
     <string name="notification_history_ignore_app">Ne čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Pročitaj samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Čitaj samo naziv aplikacije <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g> prvo</string>
     <string name="notification_history_block_similar">Ne čitajte ovakve obavijesti</string>
     <string name="notification_history_copy">Kopiraj</string>
@@ -263,7 +263,7 @@
     <string name="notification_cond_locked_not">Telefon je otključan</string>
     <string name="notification_cond_screen_on">Ekran je uključen</string>
     <string name="notification_cond_screen_on_not">Ekran je isključen</string>
-    <string name="notification_cond_landscape">Zaslon je u pejzažu</string>
+    <string name="notification_cond_landscape">Zaslon je u vodoravnom položaju</string>
     <string name="notification_cond_landscape_not">Zaslon je u portretnom položaju</string>
     <string name="notification_cond_time">Vrijeme je <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Vrijeme nije <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not">Nije povezan na <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Povezan na Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nije povezan na Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je ispred</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije ispred</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je u prvom planu</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije u prvom planu</string>
     <string name="notification_cond_from">Obavijest je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Obavijest nije od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Obavijest sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obavijest ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvono je tiho ili vibrira</string>
+    <string name="notification_cond_silent">Zvono je utišano ili na vibraciji</string>
     <string name="notification_cond_silent_not">Zvono je uključeno</string>
     <string name="notification_cond_media">Mediji se reprodukuju</string>
     <string name="notification_cond_media_not">Nijedan medij se ne reproducira</string>

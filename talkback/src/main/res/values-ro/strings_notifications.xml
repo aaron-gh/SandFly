@@ -77,7 +77,7 @@
     <string name="notification_media_title">În timpul redării media</string>
     <string name="notification_dnd_title">Nu deranja</string>
     <string name="notification_dnd_none">Nu citi niciuna</string>
-    <string name="notification_dnd_allowed">Citiți notificările permise de modul Nu deranja</string>
+    <string name="notification_dnd_allowed">Citește ce permite modul Nu deranja</string>
     <string name="notification_dnd_all">Citește tot</string>
     <string name="notification_touch_title">În timp ce ecranul este atins</string>
     <string name="notification_touch_read">Citește imediat</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Notificări</string>
     <string name="notification_history_empty">Fără notificări</string>
     <string name="notification_history_ignore_app">Nu citi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Citiți numai numele lui <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Citește doar numele aplicației <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Citește întâi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Nu citi notificări de genul acesta</string>
     <string name="notification_history_copy">Copiază</string>
@@ -263,21 +263,21 @@
     <string name="notification_cond_locked_not">Telefonul este deblocat</string>
     <string name="notification_cond_screen_on">Ecranul este pornit</string>
     <string name="notification_cond_screen_on_not">Ecranul este oprit</string>
-    <string name="notification_cond_landscape">Ecranul este peisaj</string>
-    <string name="notification_cond_landscape_not">Ecranul este portret</string>
+    <string name="notification_cond_landscape">Ecranul este în modul peisaj</string>
+    <string name="notification_cond_landscape_not">Ecranul este în modul portret</string>
     <string name="notification_cond_time">Ora este <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Ora nu este <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Conectat la <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Nu este conectat la <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Conectat la Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nu este conectat la Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> este în față</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nu este în față</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> este în prim-plan</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nu este în prim-plan</string>
     <string name="notification_cond_from">Notificarea este de la <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Notificarea nu este de la <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Notificarea conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Notificarea nu conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Soneria este silențioasă sau vibrează</string>
+    <string name="notification_cond_silent">Soneria este pe silențios sau vibrații</string>
     <string name="notification_cond_silent_not">Soneria este activată</string>
     <string name="notification_cond_media">Media rulează</string>
     <string name="notification_cond_media_not">Nu se redă niciun conținut media</string>

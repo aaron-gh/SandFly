@@ -163,7 +163,7 @@
     <string name="notification_history_category">Ilmoitukset</string>
     <string name="notification_history_empty">Ei ilmoituksia</string>
     <string name="notification_history_ignore_app">Älä lue <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Lue vain nimi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Lue vain sovelluksen <xliff:g id="app" example="Chat">%1$s</xliff:g> nimi</string>
     <string name="notification_history_priority_app">Lue <xliff:g id="app" example="Chat">%1$s</xliff:g> ensin</string>
     <string name="notification_history_block_similar">Älä lue tällaisia ilmoituksia</string>
     <string name="notification_history_copy">Kopioi</string>
@@ -272,12 +272,12 @@
     <string name="notification_cond_wifi_any">Yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_wifi_any_not">Ei yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> on etualalla</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole edessä</string>
-    <string name="notification_cond_from">Ilmoitus on osoitteesta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Ilmoitus ei ole osoitteesta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_contains">Ilmoitus sisältää <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Ilmoitus ei sisällä <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Soittoääni on äänetön tai värisee</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole etualalla</string>
+    <string name="notification_cond_from">Ilmoitus on sovellukselta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Ilmoitus ei ole sovellukselta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Ilmoituksessa on <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Ilmoituksessa ei ole <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Soittoääni on äänettömällä tai värinällä</string>
     <string name="notification_cond_silent_not">Soittoääni on päällä</string>
     <string name="notification_cond_media">Mediaa toistetaan</string>
     <string name="notification_cond_media_not">Mediaa ei toisteta</string>

@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">Spring den samme notifikation over for</string>
     <string name="notification_numbers_alike_title">Behandl forskellige tal som identiske</string>
     <string name="notification_numbers_alike_summary">Såsom en downloads procentdel</string>
-    <string name="notification_cooldown_title">Tid mellem en apps meddelelser</string>
+    <string name="notification_cooldown_title">Tid mellem en apps notifikationer</string>
     <string name="notification_skip_prefix_title">Udelad et gentaget tekstpræfiks</string>
     <string name="notification_skip_prefix_summary">Som f.eks. navnet på en gruppe i en chat</string>
     <string name="notification_prefix_memory_title">Hvor længe skal man huske tekstpræfikset</string>
@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">Læs ikke <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Læs kun navnet på <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Læs <xliff:g id="app" example="Chat">%1$s</xliff:g> først</string>
-    <string name="notification_history_block_similar">Læs ikke meddelelser som denne</string>
+    <string name="notification_history_block_similar">Læs ikke notifikationer som denne</string>
     <string name="notification_history_copy">Kopiér</string>
     <string name="notification_saved">Gemt</string>
     <string name="notification_copied">Kopieret</string>
@@ -263,8 +263,8 @@
     <string name="notification_cond_locked_not">Telefonen er låst op</string>
     <string name="notification_cond_screen_on">Skærmen er tændt</string>
     <string name="notification_cond_screen_on_not">Skærmen er slukket</string>
-    <string name="notification_cond_landscape">Skærmen er i landskab</string>
-    <string name="notification_cond_landscape_not">Skærmen er i portræt</string>
+    <string name="notification_cond_landscape">Skærmen er liggende</string>
+    <string name="notification_cond_landscape_not">Skærmen er stående</string>
     <string name="notification_cond_time">Klokken er <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Klokken er ikke <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Forbundet til <xliff:g id="network" example="Home">%1$s</xliff:g></string>
@@ -272,12 +272,12 @@
     <string name="notification_cond_wifi_any">Forbundet til Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Ikke forbundet til Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> er i forgrunden</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> er ikke foran</string>
-    <string name="notification_cond_from">Meddelelsen er fra <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Meddelelsen er ikke fra <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_contains">Meddelelsen indeholder <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Meddelelsen indeholder ikke <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Ringeren er tavs eller vibrerer</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> er ikke i forgrunden</string>
+    <string name="notification_cond_from">Notifikationen er fra <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Notifikationen er ikke fra <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Notifikationen indeholder <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Notifikationen indeholder ikke <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Ringetonen er slået fra eller på vibration</string>
     <string name="notification_cond_silent_not">Ringetonen er slået til</string>
     <string name="notification_cond_media">Medier afspilles</string>
     <string name="notification_cond_media_not">Der afspilles ingen medier</string>

@@ -163,7 +163,7 @@
     <string name="notification_history_category">Obvestila</string>
     <string name="notification_history_empty">Brez obvestil</string>
     <string name="notification_history_ignore_app">Ne beri <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Preberi samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Beri samo ime aplikacije <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Najprej preberi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Ne berite takšnih obvestil</string>
     <string name="notification_history_copy">Kopiraj</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not">Ni povezan z <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Povezan z Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Ni povezan z Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je spredaj</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ni spredaj</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je v ospredju</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ni v ospredju</string>
     <string name="notification_cond_from">Obvestilo je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Obvestilo ni od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Obvestilo vsebuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obvestilo ne vsebuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvonjenje je tiho ali vibrira</string>
+    <string name="notification_cond_silent">Zvonjenje je utišano ali na vibriranju</string>
     <string name="notification_cond_silent_not">Zvonjenje je vklopljeno</string>
     <string name="notification_cond_media">Mediji se predvajajo</string>
     <string name="notification_cond_media_not">Noben medij se ne predvaja</string>

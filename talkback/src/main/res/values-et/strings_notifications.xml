@@ -77,7 +77,7 @@
     <string name="notification_media_title">Meedia esitamise ajal</string>
     <string name="notification_dnd_title">Mitte segada</string>
     <string name="notification_dnd_none">Ära loe ühtegi</string>
-    <string name="notification_dnd_allowed">Lugege režiimis Mitte segada lubatud märguandeid</string>
+    <string name="notification_dnd_allowed">Loe seda, mida režiim Mitte segada lubab</string>
     <string name="notification_dnd_all">Loe kõik</string>
     <string name="notification_touch_title">Ekraani puudutamise ajal</string>
     <string name="notification_touch_read">Loe kohe</string>
@@ -163,9 +163,9 @@
     <string name="notification_history_category">Märguanded</string>
     <string name="notification_history_empty">Märguandeid pole</string>
     <string name="notification_history_ignore_app">Ära loe <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Lugege ainult <xliff:g id="app" example="Chat">%1$s</xliff:g> nime</string>
+    <string name="notification_history_private_app">Loe ainult rakenduse <xliff:g id="app" example="Chat">%1$s</xliff:g> nime</string>
     <string name="notification_history_priority_app">Loe <xliff:g id="app" example="Chat">%1$s</xliff:g> esimesena</string>
-    <string name="notification_history_block_similar">Ärge lugege selliseid teateid</string>
+    <string name="notification_history_block_similar">Ära loe selliseid märguandeid</string>
     <string name="notification_history_copy">Kopeeri</string>
     <string name="notification_saved">Salvestatud</string>
     <string name="notification_copied">Kopeeritud</string>
@@ -264,20 +264,20 @@
     <string name="notification_cond_screen_on">Ekraan on sisse lülitatud</string>
     <string name="notification_cond_screen_on_not">Ekraan on välja lülitatud</string>
     <string name="notification_cond_landscape">Ekraan on horisontaalasendis</string>
-    <string name="notification_cond_landscape_not">Ekraan on portrees</string>
+    <string name="notification_cond_landscape_not">Ekraan on vertikaalasendis</string>
     <string name="notification_cond_time">Kell on <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Kell ei ole <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Ühendatud võrguga <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Pole ühendatud võrguga <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Ühendatud WiFi-võrguga</string>
-    <string name="notification_cond_wifi_any_not">Pole ühendatud võrguga Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> töötab esiplaanil</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole ees</string>
-    <string name="notification_cond_from">Teade pärineb <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Teade ei pärine <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_contains">Teatis sisaldab <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Teatis ei sisalda <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Helin on vaikne või vibreerib</string>
+    <string name="notification_cond_wifi_any_not">Pole ühendatud WiFi-võrguga</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> on esiplaanil</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole esiplaanil</string>
+    <string name="notification_cond_from">Märguanne on rakendusest <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Märguanne ei ole rakendusest <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Märguanne sisaldab <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Märguanne ei sisalda <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Helin on vaigistatud või vibreerimisel</string>
     <string name="notification_cond_silent_not">Helin on sees</string>
     <string name="notification_cond_media">Meedia mängib</string>
     <string name="notification_cond_media_not">Ühtegi meediat ei esitata</string>

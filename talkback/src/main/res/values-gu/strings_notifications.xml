@@ -163,7 +163,7 @@
     <string name="notification_history_category">નોટિફિકેશન</string>
     <string name="notification_history_empty">કોઈ સૂચનાઓ નથી</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> વાંચશો નહીં</string>
-    <string name="notification_history_private_app">માત્ર <xliff:g id="app" example="Chat">%1$s</xliff:g> નામ વાંચો</string>
+    <string name="notification_history_private_app">માત્ર <xliff:g id="app" example="Chat">%1$s</xliff:g>નું નામ વાંચો</string>
     <string name="notification_history_priority_app">પહેલા <xliff:g id="app" example="Chat">%1$s</xliff:g> વાંચો</string>
     <string name="notification_history_block_similar">આવી સૂચનાઓ વાંચશો નહીં</string>
     <string name="notification_history_copy">કૉપિ કરો</string>
@@ -265,19 +265,19 @@
     <string name="notification_cond_screen_on_not">સ્ક્રીન બંધ છે</string>
     <string name="notification_cond_landscape">સ્ક્રીન લેન્ડસ્કેપમાં છે</string>
     <string name="notification_cond_landscape_not">સ્ક્રીન પોટ્રેટમાં છે</string>
-    <string name="notification_cond_time">સમય છે <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time">સમય <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> છે</string>
     <string name="notification_cond_time_not">સમય <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> નથી</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> થી કનેક્ટેડ</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> થી કનેક્ટ થયેલ નથી</string>
     <string name="notification_cond_wifi_any">Wi-Fi થી કનેક્ટેડ</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi થી કનેક્ટ થયેલ નથી</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> સામે છે</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> સામે નથી</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> સ્ક્રીન પર ખુલ્લી છે</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> સ્ક્રીન પર ખુલ્લી નથી</string>
     <string name="notification_cond_from">સૂચના <xliff:g id="app" example="Chat">%1$s</xliff:g> તરફથી છે</string>
     <string name="notification_cond_from_not">સૂચના <xliff:g id="app" example="Chat">%1$s</xliff:g> તરફથી નથી</string>
     <string name="notification_cond_contains">સૂચનામાં <xliff:g id="text" example="urgent">%1$s</xliff:g> છે</string>
     <string name="notification_cond_contains_not">સૂચનામાં <xliff:g id="text" example="urgent">%1$s</xliff:g> શામેલ નથી</string>
-    <string name="notification_cond_silent">રિંગર શાંત છે અથવા વાઇબ્રેટ કરે છે</string>
+    <string name="notification_cond_silent">રિંગર સાયલન્ટ કે વાઇબ્રેટ પર છે</string>
     <string name="notification_cond_silent_not">રિંગર ચાલુ છે</string>
     <string name="notification_cond_media">મીડિયા ચાલી રહ્યું છે</string>
     <string name="notification_cond_media_not">કોઈ મીડિયા ચાલતું નથી</string>

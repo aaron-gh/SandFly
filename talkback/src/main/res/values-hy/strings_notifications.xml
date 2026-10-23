@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">Բաց թողնել նույն ծանուցումը</string>
     <string name="notification_numbers_alike_title">Տարբեր թվեր համարեք նույնական</string>
     <string name="notification_numbers_alike_summary">Օրինակ՝ ներբեռնման տոկոսը</string>
-    <string name="notification_cooldown_title">Հավելվածի ծանուցումների միջև ընկած ժամանակահատվածը</string>
+    <string name="notification_cooldown_title">Հավելվածի ծանուցումների միջև ընկած ժամանակը</string>
     <string name="notification_skip_prefix_title">Բաց թողեք կրկնվող տեքստի նախածանցը</string>
     <string name="notification_skip_prefix_summary">Օրինակ՝ խմբի անունը չաթում</string>
     <string name="notification_prefix_memory_title">Որքա՞ն ժամանակ պետք է հիշել տեքստի նախածանցը</string>
@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">Չկարդալ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Կարդացեք միայն <xliff:g id="app" example="Chat">%1$s</xliff:g> անունը</string>
     <string name="notification_history_priority_app">Կարդալ <xliff:g id="app" example="Chat">%1$s</xliff:g> առաջինը</string>
-    <string name="notification_history_block_similar">Մի կարդա նման ծանուցումները</string>
+    <string name="notification_history_block_similar">Չկարդալ նման ծանուցումներ</string>
     <string name="notification_history_copy">Պատճենել</string>
     <string name="notification_saved">Պահպանված է</string>
     <string name="notification_copied">Պատճենվել է</string>
@@ -263,24 +263,24 @@
     <string name="notification_cond_locked_not">Հեռախոսն ապակողպված է</string>
     <string name="notification_cond_screen_on">Էկրանը միացված է</string>
     <string name="notification_cond_screen_on_not">Էկրանը անջատված է</string>
-    <string name="notification_cond_landscape">Էկրանը լանդշաֆտային է</string>
-    <string name="notification_cond_landscape_not">Էկրանը դիմանկարային է</string>
+    <string name="notification_cond_landscape">Էկրանը հորիզոնական դիրքում է</string>
+    <string name="notification_cond_landscape_not">Էկրանը ուղղահայաց դիրքում է</string>
     <string name="notification_cond_time">Ժամը <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> է</string>
     <string name="notification_cond_time_not">Ժամանակը <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> չէ</string>
     <string name="notification_cond_wifi">Միացված է <xliff:g id="network" example="Home">%1$s</xliff:g>-ին</string>
     <string name="notification_cond_wifi_not">Միացված չէ <xliff:g id="network" example="Home">%1$s</xliff:g>-ին</string>
     <string name="notification_cond_wifi_any">Միացված է Wi-Fi-ին</string>
     <string name="notification_cond_wifi_any_not">Միացված չէ Wi-Fi-ին</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> դիմացն է</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> դիմացը չէ</string>
-    <string name="notification_cond_from">Ծանուցումը <xliff:g id="app" example="Chat">%1$s</xliff:g>-ից է</string>
-    <string name="notification_cond_from_not">Ծանուցումը <xliff:g id="app" example="Chat">%1$s</xliff:g>-ից չէ</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> հավելվածը առաջին պլանում է</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> հավելվածը առաջին պլանում չէ</string>
+    <string name="notification_cond_from">Ծանուցումը <xliff:g id="app" example="Chat">%1$s</xliff:g> հավելվածից է</string>
+    <string name="notification_cond_from_not">Ծանուցումը <xliff:g id="app" example="Chat">%1$s</xliff:g> հավելվածից չէ</string>
     <string name="notification_cond_contains">Ծանուցումը պարունակում է <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Ծանուցումը չի պարունակում <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Զանգը լուռ է կամ թրթռում է</string>
+    <string name="notification_cond_silent">Զանգը լուռ կամ թրթռման ռեժիմում է</string>
     <string name="notification_cond_silent_not">Զանգը միացված է</string>
     <string name="notification_cond_media">Մեդիան նվագարկվում է</string>
-    <string name="notification_cond_media_not">Ոչ մի մեդիա չի խաղում</string>
+    <string name="notification_cond_media_not">Ոչ մի մեդիա չի նվագարկվում</string>
     <string name="notification_action_skip">չկարդալ</string>
     <string name="notification_action_private">կարդալ միայն հավելվածի անունը</string>
     <string name="notification_action_not_private">կարդալ ամբողջությամբ, նույնիսկ եթե անձնական է</string>

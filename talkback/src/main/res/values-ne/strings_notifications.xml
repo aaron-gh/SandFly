@@ -77,7 +77,7 @@
     <string name="notification_media_title">मिडिया चलिरहेको बेला</string>
     <string name="notification_dnd_title">डिस्टर्ब नगर्नुहोस्</string>
     <string name="notification_dnd_none">कुनै नपढ्नुहोस्</string>
-    <string name="notification_dnd_allowed">डिस्टर्ब नगर्ने मोडद्वारा अनुमति दिइएको सूचनाहरू पढ्नुहोस्</string>
+    <string name="notification_dnd_allowed">बाधा नदिनुहोस् मोडले अनुमति दिएका सूचनाहरू पढ्नुहोस्</string>
     <string name="notification_dnd_all">सबै पढ्नुहोस्</string>
     <string name="notification_touch_title">जब स्क्रिन छोएको छ</string>
     <string name="notification_touch_read">तुरुन्तै पढ्नुहोस्</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> मा जोडिएको छैन</string>
     <string name="notification_cond_wifi_any">Wi-Fi मा जडान छ</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi मा जोडिएको छैन</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> अगाडि छ</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> अगाडि छैन</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> स्क्रिनमा खुला छ</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> स्क्रिनमा खुला छैन</string>
     <string name="notification_cond_from">सूचना <xliff:g id="app" example="Chat">%1$s</xliff:g> बाट आएको हो</string>
     <string name="notification_cond_from_not">सूचना <xliff:g id="app" example="Chat">%1$s</xliff:g> बाट होइन</string>
     <string name="notification_cond_contains">सूचनामा <xliff:g id="text" example="urgent">%1$s</xliff:g> समावेश छ</string>
     <string name="notification_cond_contains_not">सूचनामा <xliff:g id="text" example="urgent">%1$s</xliff:g> समावेश छैन</string>
-    <string name="notification_cond_silent">घण्टी मौन छ वा कम्पन हुन्छ</string>
+    <string name="notification_cond_silent">रिङ्गर साइलेन्ट वा भाइब्रेटमा छ</string>
     <string name="notification_cond_silent_not">रिङ्गर अन छ</string>
     <string name="notification_cond_media">मिडिया चलिरहेको छ</string>
     <string name="notification_cond_media_not">कुनै मिडिया चलिरहेको छैन</string>

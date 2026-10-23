@@ -163,7 +163,7 @@
     <string name="notification_history_category">Obavještenja</string>
     <string name="notification_history_empty">Nema obavještenja</string>
     <string name="notification_history_ignore_app">Ne čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Pročitaj samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Čitaj samo naziv aplikacije <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g> prvo</string>
     <string name="notification_history_block_similar">Ne čitajte ovakva obavještenja</string>
     <string name="notification_history_copy">Kopiraj</string>
@@ -272,15 +272,15 @@
     <string name="notification_cond_wifi_any">Povezano na Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nije povezano sa Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je u prvom planu</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije ispred</string>
-    <string name="notification_cond_from">Obavijest je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Obavijest nije od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_contains">Obavijest sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Obavijest ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvono je tiho ili vibrira</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije u prvom planu</string>
+    <string name="notification_cond_from">Obavještenje je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Obavještenje nije od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Obavještenje sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Obavještenje ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Zvono je utišano ili na vibraciji</string>
     <string name="notification_cond_silent_not">Zvono je uključeno</string>
     <string name="notification_cond_media">Reprodukcija medija je u toku</string>
-    <string name="notification_cond_media_not">Nema medija</string>
+    <string name="notification_cond_media_not">Ne reproducira se nijedan medij</string>
     <string name="notification_action_skip">ne čitati</string>
     <string name="notification_action_private">čitati samo naziv aplikacije</string>
     <string name="notification_action_not_private">čitati u cijelosti, čak i ako je privatno</string>

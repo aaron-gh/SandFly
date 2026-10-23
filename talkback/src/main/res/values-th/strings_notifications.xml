@@ -266,13 +266,13 @@
     <string name="notification_cond_landscape">หน้าจออยู่ในแนวนอน</string>
     <string name="notification_cond_landscape_not">หน้าจออยู่ในแนวตั้ง</string>
     <string name="notification_cond_time">เวลาคือ <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">เวลาไม่ <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">เวลาไม่อยู่ในช่วง <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">เชื่อมต่อกับ <xliff:g id="network" example="Home">%1$s</xliff:g> แล้ว</string>
     <string name="notification_cond_wifi_not">ไม่ได้เชื่อมต่อกับ <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">เชื่อมต่อกับ Wi-Fi แล้ว</string>
     <string name="notification_cond_wifi_any_not">ไม่ได้เชื่อมต่อกับ Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> อยู่ข้างหน้า</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ไม่ได้อยู่ข้างหน้า</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> เปิดอยู่บนหน้าจอ</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ไม่ได้เปิดอยู่บนหน้าจอ</string>
     <string name="notification_cond_from">การแจ้งเตือนมาจาก <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">การแจ้งเตือนไม่ได้มาจาก <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">การแจ้งเตือนมี <xliff:g id="text" example="urgent">%1$s</xliff:g></string>

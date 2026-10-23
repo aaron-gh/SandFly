@@ -163,7 +163,7 @@
     <string name="notification_history_category">Upozornenia</string>
     <string name="notification_history_empty">Žiadne upozornenia</string>
     <string name="notification_history_ignore_app">Nečítať <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Čítať iba meno <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Čítať iba názov aplikácie <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Čítať <xliff:g id="app" example="Chat">%1$s</xliff:g> ako prvé</string>
     <string name="notification_history_block_similar">Takéto upozornenia nečítajte</string>
     <string name="notification_history_copy">Skopírovať</string>
@@ -254,7 +254,7 @@
     <string name="notification_cond_bluetooth_any">Je pripojené zvukové zariadenie Bluetooth</string>
     <string name="notification_cond_bluetooth_any_not">Nie je pripojené žiadne zvukové zariadenie Bluetooth</string>
     <string name="notification_cond_wired">Sú pripojené káblové slúchadlá</string>
-    <string name="notification_cond_wired_not">Nie sú pripojené káblové slúchadlá</string>
+    <string name="notification_cond_wired_not">Káblové slúchadlá nie sú pripojené</string>
     <string name="notification_cond_battery_below">Stav batérie je nižší ako <xliff:g id="percent" example="20">%1$d</xliff:g> %%</string>
     <string name="notification_cond_battery_below_not">Stav batérie je <xliff:g id="percent" example="20">%1$d</xliff:g> %% alebo viac</string>
     <string name="notification_cond_charging">Telefón sa nabíja</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not">Nie je pripojený k <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Pripojené k Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nie je pripojený k Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je vpredu</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nie je vpredu</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je v popredí</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nie je v popredí</string>
     <string name="notification_cond_from">Oznámenie je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Oznámenie nie je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Oznámenie obsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Oznámenie neobsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvonenie je tiché alebo vibruje</string>
+    <string name="notification_cond_silent">Zvonenie je stlmené alebo v režime vibrovania</string>
     <string name="notification_cond_silent_not">Zvonenie je zapnuté</string>
     <string name="notification_cond_media">Prehrávajú sa médiá</string>
     <string name="notification_cond_media_not">Neprehrávajú sa žiadne médiá</string>

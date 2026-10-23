@@ -163,7 +163,7 @@
     <string name="notification_history_category">Jakinarazpenak</string>
     <string name="notification_history_empty">Ez dago jakinarazpenik</string>
     <string name="notification_history_ignore_app">Ez irakurri <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Irakurri bakarrik <xliff:g id="app" example="Chat">%1$s</xliff:g> izena</string>
+    <string name="notification_history_private_app">Irakurri <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikazioaren izena soilik</string>
     <string name="notification_history_priority_app">Irakurri lehenik <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Ez irakurri honelako jakinarazpenak</string>
     <string name="notification_history_copy">Kopiatu</string>
@@ -263,24 +263,24 @@
     <string name="notification_cond_locked_not">Telefonoa desblokeatuta dago</string>
     <string name="notification_cond_screen_on">Pantaila piztuta dago</string>
     <string name="notification_cond_screen_on_not">Pantaila itzalita dago</string>
-    <string name="notification_cond_landscape">Pantaila paisaian dago</string>
-    <string name="notification_cond_landscape_not">Pantaila erretratuan dago</string>
+    <string name="notification_cond_landscape">Pantaila horizontalean dago</string>
+    <string name="notification_cond_landscape_not">Pantaila bertikalean dago</string>
     <string name="notification_cond_time">Ordua <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> da</string>
     <string name="notification_cond_time_not">Ordua ez da <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>-rekin konektatuta</string>
-    <string name="notification_cond_wifi_not">Ez dago konektatuta <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Ez dago <xliff:g id="network" example="Home">%1$s</xliff:g> sarera konektatuta</string>
     <string name="notification_cond_wifi_any">Wi-Fi-rekin konektatuta</string>
     <string name="notification_cond_wifi_any_not">Ez dago Wi-Fi sarera konektatuta</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> lehen planoan dago</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ez dago aurrean</string>
-    <string name="notification_cond_from">Jakinarazpena <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Jakinarazpena ez da <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ez dago lehen planoan</string>
+    <string name="notification_cond_from">Jakinarazpena <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikaziokoa da</string>
+    <string name="notification_cond_from_not">Jakinarazpena ez da <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikaziokoa</string>
     <string name="notification_cond_contains">Jakinarazpenak <xliff:g id="text" example="urgent">%1$s</xliff:g> dauka</string>
-    <string name="notification_cond_contains_not">Jakinarazpenak ez du <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Jakinarazpenak ez dauka <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Txirrina isilik edo bibrazio moduan dago</string>
     <string name="notification_cond_silent_not">Tonua aktibatuta dago</string>
     <string name="notification_cond_media">Media jotzen ari da</string>
-    <string name="notification_cond_media_not">Ez da komunikabiderik erreproduzitzen</string>
+    <string name="notification_cond_media_not">Ez da multimediarik erreproduzitzen</string>
     <string name="notification_action_skip">ez irakurri</string>
     <string name="notification_action_private">irakurri aplikazioaren izena soilik</string>
     <string name="notification_action_not_private">irakurri osorik, pribatua bada ere</string>

@@ -77,7 +77,7 @@
     <string name="notification_media_title">যখন মিডিয়া বাজছে</string>
     <string name="notification_dnd_title">বিরক্ত করবে না</string>
     <string name="notification_dnd_none">কোনোটিই পড়বেন না</string>
-    <string name="notification_dnd_allowed">বিরক্ত করবেন না মোড দ্বারা অনুমোদিত বিজ্ঞপ্তিগুলি পড়ুন৷</string>
+    <string name="notification_dnd_allowed">বিরক্ত করবেন না মোড যা অনুমতি দেয় তা পড়ুন</string>
     <string name="notification_dnd_all">সব পড়ুন</string>
     <string name="notification_touch_title">যখন পর্দা স্পর্শ করা হয়</string>
     <string name="notification_touch_read">এখুনি পড়ুন</string>
@@ -263,21 +263,21 @@
     <string name="notification_cond_locked_not">ফোনটি আনলক করা আছে</string>
     <string name="notification_cond_screen_on">পর্দা চালু আছে</string>
     <string name="notification_cond_screen_on_not">পর্দা বন্ধ</string>
-    <string name="notification_cond_landscape">পর্দা ল্যান্ডস্কেপ মধ্যে আছে</string>
-    <string name="notification_cond_landscape_not">পর্দাটি প্রতিকৃতিতে রয়েছে</string>
+    <string name="notification_cond_landscape">স্ক্রিন ল্যান্ডস্কেপ মোডে আছে</string>
+    <string name="notification_cond_landscape_not">স্ক্রিন পোর্ট্রেট মোডে আছে</string>
     <string name="notification_cond_time">সময় হল <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">সময় <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> নয়</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> এর সাথে সংযুক্ত</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> এর সাথে সংযুক্ত নয়</string>
     <string name="notification_cond_wifi_any">Wi-Fi এর সাথে সংযুক্ত</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi এর সাথে সংযুক্ত নয়</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> সামনে চলছে</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> সামনে নেই</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> স্ক্রিনে খোলা আছে</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> স্ক্রিনে খোলা নেই</string>
     <string name="notification_cond_from">বিজ্ঞপ্তিটি <xliff:g id="app" example="Chat">%1$s</xliff:g> থেকে</string>
     <string name="notification_cond_from_not">বিজ্ঞপ্তিটি <xliff:g id="app" example="Chat">%1$s</xliff:g> থেকে নয়</string>
     <string name="notification_cond_contains">বিজ্ঞপ্তিতে রয়েছে <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">বিজ্ঞপ্তিতে <xliff:g id="text" example="urgent">%1$s</xliff:g> নেই</string>
-    <string name="notification_cond_silent">রিংগার নীরব বা কম্পিত হয়</string>
+    <string name="notification_cond_silent">রিংগার নীরব বা ভাইব্রেট মোডে আছে</string>
     <string name="notification_cond_silent_not">রিংগার চালু আছে</string>
     <string name="notification_cond_media">মিডিয়া বাজছে</string>
     <string name="notification_cond_media_not">কোনো মিডিয়া চলছে না</string>

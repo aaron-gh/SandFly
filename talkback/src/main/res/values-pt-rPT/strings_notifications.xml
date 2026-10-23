@@ -253,8 +253,8 @@
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> não está conectado</string>
     <string name="notification_cond_bluetooth_any">Um dispositivo de áudio Bluetooth está conectado</string>
     <string name="notification_cond_bluetooth_any_not">Nenhum dispositivo de áudio Bluetooth está conectado</string>
-    <string name="notification_cond_wired">Fones de ouvido com fio estão conectados</string>
-    <string name="notification_cond_wired_not">Fones de ouvido com fio não estão conectados</string>
+    <string name="notification_cond_wired">Auscultadores com fios estão ligados</string>
+    <string name="notification_cond_wired_not">Auscultadores com fios não estão ligados</string>
     <string name="notification_cond_battery_below">A bateria está abaixo de <xliff:g id="percent" example="20">%1$d</xliff:g> por cento</string>
     <string name="notification_cond_battery_below_not">A bateria está em <xliff:g id="percent" example="20">%1$d</xliff:g> por cento ou mais</string>
     <string name="notification_cond_charging">O telefone está a carregar</string>
@@ -263,24 +263,24 @@
     <string name="notification_cond_locked_not">O telefone está desbloqueado</string>
     <string name="notification_cond_screen_on">A tela está ligada</string>
     <string name="notification_cond_screen_on_not">A tela está desligada</string>
-    <string name="notification_cond_landscape">A tela está em paisagem</string>
-    <string name="notification_cond_landscape_not">A tela está em retrato</string>
+    <string name="notification_cond_landscape">O ecrã está na horizontal</string>
+    <string name="notification_cond_landscape_not">O ecrã está na vertical</string>
     <string name="notification_cond_time">A hora é <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">A hora não é <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Conectado a <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Não conectado a <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Conectado a Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Não conectado a Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> está na frente</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> não está na frente</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> está em primeiro plano</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> não está em primeiro plano</string>
     <string name="notification_cond_from">A notificação é de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">A notificação não é de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">A notificação contém <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">A notificação não contém <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">A campainha está silenciosa ou vibra</string>
+    <string name="notification_cond_silent">O toque está em silêncio ou vibração</string>
     <string name="notification_cond_silent_not">O toque está ativado</string>
     <string name="notification_cond_media">Está a ser reproduzido conteúdo multimédia</string>
-    <string name="notification_cond_media_not">Nenhuma mídia está sendo reproduzida</string>
+    <string name="notification_cond_media_not">Não está a ser reproduzido nenhum conteúdo multimédia</string>
     <string name="notification_action_skip">não ler</string>
     <string name="notification_action_private">ler apenas o nome da aplicação</string>
     <string name="notification_action_not_private">ler tudo, mesmo que seja privado</string>

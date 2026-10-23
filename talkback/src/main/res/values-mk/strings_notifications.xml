@@ -77,7 +77,7 @@
     <string name="notification_media_title">Додека се репродуцираат медиумите</string>
     <string name="notification_dnd_title">Не вознемирувај</string>
     <string name="notification_dnd_none">Не читај ниту едно</string>
-    <string name="notification_dnd_allowed">Читајте ги известувањата дозволени со режимот „Не вознемирувај“.</string>
+    <string name="notification_dnd_allowed">Читај го она што го дозволува „Не вознемирувај“</string>
     <string name="notification_dnd_all">Читај ги сите</string>
     <string name="notification_touch_title">Додека екранот е допрен</string>
     <string name="notification_touch_read">Читај веднаш</string>
@@ -263,24 +263,24 @@
     <string name="notification_cond_locked_not">Телефонот е отклучен</string>
     <string name="notification_cond_screen_on">Екранот е вклучен</string>
     <string name="notification_cond_screen_on_not">Екранот е исклучен</string>
-    <string name="notification_cond_landscape">Екранот е во пејзаж</string>
-    <string name="notification_cond_landscape_not">Екранот е во портрет</string>
+    <string name="notification_cond_landscape">Екранот е хоризонтален</string>
+    <string name="notification_cond_landscape_not">Екранот е вертикален</string>
     <string name="notification_cond_time">Времето е <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Времето не е <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Поврзано со <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Не е поврзан со <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Поврзано со Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Не е поврзан со Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> е напред</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не е напред</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> е во преден план</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не е во преден план</string>
     <string name="notification_cond_from">Известувањето е од <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Известувањето не е од <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Известувањето содржи <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Известувањето не содржи <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Ѕвонењето е тивко или вибрира</string>
+    <string name="notification_cond_silent">Ѕвонењето е исклучено или на вибрации</string>
     <string name="notification_cond_silent_not">Ѕвонењето е вклучено</string>
     <string name="notification_cond_media">Медиумите се репродуцираат</string>
-    <string name="notification_cond_media_not">Ниту еден медиум не се репродуцира</string>
+    <string name="notification_cond_media_not">Не се репродуцира медиумска содржина</string>
     <string name="notification_action_skip">без читање</string>
     <string name="notification_action_private">читање само на името на апликацијата</string>
     <string name="notification_action_not_private">целосно читање, дури и ако е приватно</string>

@@ -77,7 +77,7 @@
     <string name="notification_media_title">Κατά την αναπαραγωγή πολυμέσων</string>
     <string name="notification_dnd_title">Μην ενοχλείτε</string>
     <string name="notification_dnd_none">Καμία ανάγνωση</string>
-    <string name="notification_dnd_allowed">Διαβάστε τις ειδοποιήσεις που επιτρέπονται από τη λειτουργία Μην ενοχλείτε</string>
+    <string name="notification_dnd_allowed">Ανάγνωση όσων επιτρέπει η λειτουργία Μην ενοχλείτε</string>
     <string name="notification_dnd_all">Ανάγνωση όλων</string>
     <string name="notification_touch_title">Ενώ αγγίζεται η οθόνη</string>
     <string name="notification_touch_read">Άμεση ανάγνωση</string>
@@ -264,7 +264,7 @@
     <string name="notification_cond_screen_on">Η οθόνη είναι ενεργοποιημένη</string>
     <string name="notification_cond_screen_on_not">Η οθόνη είναι σβηστή</string>
     <string name="notification_cond_landscape">Η οθόνη είναι οριζόντια</string>
-    <string name="notification_cond_landscape_not">Η οθόνη είναι πορτραίτο</string>
+    <string name="notification_cond_landscape_not">Η οθόνη είναι κατακόρυφη</string>
     <string name="notification_cond_time">Η ώρα είναι <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Η ώρα δεν είναι <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Συνδεδεμένο στο <xliff:g id="network" example="Home">%1$s</xliff:g></string>
@@ -272,12 +272,12 @@
     <string name="notification_cond_wifi_any">Συνδεδεμένο στο Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Δεν είναι συνδεδεμένο στο Wi-Fi</string>
     <string name="notification_cond_foreground">Η εφαρμογή <xliff:g id="app" example="Maps">%1$s</xliff:g> είναι στο προσκήνιο</string>
-    <string name="notification_cond_foreground_not">Το <xliff:g id="app" example="Maps">%1$s</xliff:g> δεν είναι μπροστά</string>
+    <string name="notification_cond_foreground_not">Η εφαρμογή <xliff:g id="app" example="Maps">%1$s</xliff:g> δεν είναι στο προσκήνιο</string>
     <string name="notification_cond_from">Η ειδοποίηση είναι από <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Η ειδοποίηση δεν είναι από <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Η ειδοποίηση περιέχει <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Η ειδοποίηση δεν περιέχει <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Το κουδούνισμα είναι αθόρυβο ή δονείται</string>
+    <string name="notification_cond_silent">Ο ήχος κλήσης είναι σε σίγαση ή δόνηση</string>
     <string name="notification_cond_silent_not">Ο ήχος κλήσης είναι ενεργός</string>
     <string name="notification_cond_media">Γίνεται αναπαραγωγή πολυμέσων</string>
     <string name="notification_cond_media_not">Δεν παίζει κανένα μέσο</string>

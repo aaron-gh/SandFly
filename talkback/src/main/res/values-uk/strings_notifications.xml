@@ -8,7 +8,7 @@
     <string name="notification_media_read">Читати</string>
     <string name="notification_headphones_only_without">Тільки без навушників</string>
     <string name="notification_headphones_only_with">Тільки в навушниках</string>
-    <string name="notification_headphones_always">Читайте вголос у навушниках або без них</string>
+    <string name="notification_headphones_always">Читати в навушниках і без них</string>
     <string name="notification_queue_skip">Не читайте нове сповіщення вголос</string>
     <string name="notification_queue_interrupt">Перервати</string>
     <string name="notification_queue_queue">Читати після нього</string>
@@ -77,7 +77,7 @@
     <string name="notification_media_title">Під час відтворення медіа</string>
     <string name="notification_dnd_title">Не турбувати</string>
     <string name="notification_dnd_none">Не читати жодного</string>
-    <string name="notification_dnd_allowed">Читати сповіщення, дозволені в режимі «Не турбувати».</string>
+    <string name="notification_dnd_allowed">Читати те, що дозволяє режим «Не турбувати»</string>
     <string name="notification_dnd_all">Читати все</string>
     <string name="notification_touch_title">Під час торкання екрана</string>
     <string name="notification_touch_read">Читати відразу</string>
@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">Пропустити те саме сповіщення для</string>
     <string name="notification_numbers_alike_title">Розглядайте різні числа як однакові</string>
     <string name="notification_numbers_alike_summary">Наприклад, відсоток завантаження</string>
-    <string name="notification_cooldown_title">Час між повідомленнями програми</string>
+    <string name="notification_cooldown_title">Час між сповіщеннями програми</string>
     <string name="notification_skip_prefix_title">Пропустіть префікс, що повторюється</string>
     <string name="notification_skip_prefix_summary">Наприклад, назва групи в чаті</string>
     <string name="notification_prefix_memory_title">Як довго запам\'ятовувати префікс тексту</string>
@@ -163,9 +163,9 @@
     <string name="notification_history_category">Сповіщення</string>
     <string name="notification_history_empty">Немає сповіщень</string>
     <string name="notification_history_ignore_app">Не читати <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Читайте лише ім\'я <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Читати лише назву <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Читати <xliff:g id="app" example="Chat">%1$s</xliff:g> першим</string>
-    <string name="notification_history_block_similar">Не читайте подібні повідомлення</string>
+    <string name="notification_history_block_similar">Не читати подібні сповіщення</string>
     <string name="notification_history_copy">Копіювати</string>
     <string name="notification_saved">Збережено</string>
     <string name="notification_copied">Скопійовано</string>
@@ -261,7 +261,7 @@
     <string name="notification_cond_charging_not">Телефон не заряджається</string>
     <string name="notification_cond_locked">Телефон заблокований</string>
     <string name="notification_cond_locked_not">Телефон розблокований</string>
-    <string name="notification_cond_screen_on">Екран включений</string>
+    <string name="notification_cond_screen_on">Екран увімкнений</string>
     <string name="notification_cond_screen_on_not">Екран вимкнений</string>
     <string name="notification_cond_landscape">Екран горизонтальний</string>
     <string name="notification_cond_landscape_not">Екран знаходиться в портретній орієнтації</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not">Не підключено до <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Підключено до Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Не підключено до Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> попереду</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не стоїть попереду</string>
-    <string name="notification_cond_from">Повідомлення від <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> на передньому плані</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не на передньому плані</string>
+    <string name="notification_cond_from">Сповіщення від <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Сповіщення не від <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Сповіщення містить <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Сповіщення не містить <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Дзвінок мовчить або вібрує</string>
+    <string name="notification_cond_silent">Дзвінок у беззвучному режимі або на вібрації</string>
     <string name="notification_cond_silent_not">Дзвінок увімкнено</string>
     <string name="notification_cond_media">Медіа відтворюється</string>
     <string name="notification_cond_media_not">Медіа не відтворюється</string>

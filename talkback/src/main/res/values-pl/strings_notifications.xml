@@ -163,7 +163,7 @@
     <string name="notification_history_category">Powiadomienia</string>
     <string name="notification_history_empty">Brak powiadomień</string>
     <string name="notification_history_ignore_app">Nie czytaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Przeczytaj tylko nazwę <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Czytaj tylko nazwę aplikacji <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Najpierw przeczytaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Nie czytaj takich powiadomień</string>
     <string name="notification_history_copy">Kopiuj</string>
@@ -271,13 +271,13 @@
     <string name="notification_cond_wifi_not">Brak połączenia z <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Połączono z Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Brak połączenia z Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> jest z przodu</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nie jest z przodu</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> jest na pierwszym planie</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nie jest na pierwszym planie</string>
     <string name="notification_cond_from">Powiadomienie pochodzi z <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Powiadomienie nie pochodzi z <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Powiadomienie zawiera <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Powiadomienie nie zawiera <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Dzwonek jest cichy lub wibruje</string>
+    <string name="notification_cond_silent">Dzwonek jest wyciszony lub w trybie wibracji</string>
     <string name="notification_cond_silent_not">Dzwonek jest włączony</string>
     <string name="notification_cond_media">Odtwarzane są multimedia</string>
     <string name="notification_cond_media_not">Żadne multimedia nie są odtwarzane</string>

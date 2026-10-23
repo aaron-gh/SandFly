@@ -165,7 +165,7 @@
     <string name="notification_history_ignore_app">لا تقرأ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">اقرأ فقط اسم <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">اقرأ <xliff:g id="app" example="Chat">%1$s</xliff:g> أولاً</string>
-    <string name="notification_history_block_similar">لا تقرأ الإخطارات مثل هذا</string>
+    <string name="notification_history_block_similar">لا تقرأ الإشعارات المشابهة لهذا</string>
     <string name="notification_history_copy">نسخ</string>
     <string name="notification_saved">تم الحفظ</string>
     <string name="notification_copied">تم النسخ</string>
@@ -260,11 +260,11 @@
     <string name="notification_cond_charging">الهاتف يشحن</string>
     <string name="notification_cond_charging_not">الهاتف لا يشحن</string>
     <string name="notification_cond_locked">الهاتف مغلق</string>
-    <string name="notification_cond_locked_not">الهاتف مفتوح</string>
+    <string name="notification_cond_locked_not">قفل الهاتف مفتوح</string>
     <string name="notification_cond_screen_on">الشاشة قيد التشغيل</string>
-    <string name="notification_cond_screen_on_not">الشاشة معطلة</string>
+    <string name="notification_cond_screen_on_not">الشاشة مطفأة</string>
     <string name="notification_cond_landscape">الشاشة في الوضع الأفقي</string>
-    <string name="notification_cond_landscape_not">الشاشة في صورة</string>
+    <string name="notification_cond_landscape_not">الشاشة في الوضع العمودي</string>
     <string name="notification_cond_time">الوقت <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">الوقت ليس <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">متصل بـ <xliff:g id="network" example="Home">%1$s</xliff:g></string>
@@ -277,7 +277,7 @@
     <string name="notification_cond_from_not">الإشعار ليس من <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">يحتوي الإشعار على <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">الإشعار لا يحتوي على <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">الجرس صامت أو يهتز</string>
+    <string name="notification_cond_silent">الرنين صامت أو على الاهتزاز</string>
     <string name="notification_cond_silent_not">الرنين مفعّل</string>
     <string name="notification_cond_media">الوسائط قيد التشغيل</string>
     <string name="notification_cond_media_not">لا توجد وسائط قيد التشغيل</string>

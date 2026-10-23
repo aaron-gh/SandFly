@@ -263,21 +263,21 @@
     <string name="notification_cond_locked_not">ስልኩ ተከፍቷል</string>
     <string name="notification_cond_screen_on">ስክሪኑ በርቷል</string>
     <string name="notification_cond_screen_on_not">ስክሪኑ ጠፍቷል</string>
-    <string name="notification_cond_landscape">ማያ ገጹ በወርድ ላይ ነው</string>
-    <string name="notification_cond_landscape_not">ስክሪኑ በቁም ነገር ላይ ነው</string>
+    <string name="notification_cond_landscape">ማያ ገጹ በአግድም አቀማመጥ ላይ ነው</string>
+    <string name="notification_cond_landscape_not">ማያ ገጹ በቁመት አቀማመጥ ላይ ነው</string>
     <string name="notification_cond_time">ጊዜው <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">ጊዜው <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> አይደለም</string>
     <string name="notification_cond_wifi">ከ <xliff:g id="network" example="Home">%1$s</xliff:g> ጋር ተገናኝቷል</string>
     <string name="notification_cond_wifi_not">ከ <xliff:g id="network" example="Home">%1$s</xliff:g> ጋር አልተገናኘም</string>
     <string name="notification_cond_wifi_any">ከ Wi-Fi ጋር ተገናኝቷል</string>
     <string name="notification_cond_wifi_any_not">ከ Wi-Fi ጋር አልተገናኘም</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> በፊት ገጽ ላይ ነው</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ፊት ለፊት አይደለም</string>
-    <string name="notification_cond_from">ማስታወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">ማስታወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g> አይደለም</string>
-    <string name="notification_cond_contains">ማሳወቂያው ይዟል <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">ማሳወቂያው <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">ደዋዩ ጸጥ ይላል ወይም ይንቀጠቀጣል</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> በስክሪኑ ላይ ክፍት ነው</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> በስክሪኑ ላይ ክፍት አይደለም</string>
+    <string name="notification_cond_from">ማሳወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g> ነው</string>
+    <string name="notification_cond_from_not">ማሳወቂያው ከ<xliff:g id="app" example="Chat">%1$s</xliff:g> አይደለም</string>
+    <string name="notification_cond_contains">ማሳወቂያው <xliff:g id="text" example="urgent">%1$s</xliff:g> ይዟል</string>
+    <string name="notification_cond_contains_not">ማሳወቂያው <xliff:g id="text" example="urgent">%1$s</xliff:g> አልያዘም</string>
+    <string name="notification_cond_silent">የስልክ ጥሪ ድምፅ ጸጥ ወይም ንዝረት ላይ ነው</string>
     <string name="notification_cond_silent_not">ደዋዩ በርቷል</string>
     <string name="notification_cond_media">ሚዲያ እየተጫወተ ነው</string>
     <string name="notification_cond_media_not">ምንም ሚዲያ አይጫወትም</string>

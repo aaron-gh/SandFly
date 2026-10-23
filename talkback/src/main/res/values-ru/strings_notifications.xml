@@ -8,7 +8,7 @@
     <string name="notification_media_read">Читать</string>
     <string name="notification_headphones_only_without">Только без наушников</string>
     <string name="notification_headphones_only_with">Только в наушниках</string>
-    <string name="notification_headphones_always">Читайте вслух в наушниках или без них.</string>
+    <string name="notification_headphones_always">Читать в наушниках и без них</string>
     <string name="notification_queue_skip">Не читайте новое уведомление вслух</string>
     <string name="notification_queue_interrupt">Прервать</string>
     <string name="notification_queue_queue">Читать после него</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Уведомления</string>
     <string name="notification_history_empty">Нет уведомлений</string>
     <string name="notification_history_ignore_app">Не читать <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Читать только имя <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Читать только название <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Читать <xliff:g id="app" example="Chat">%1$s</xliff:g> первым</string>
     <string name="notification_history_block_similar">Не читайте такие уведомления</string>
     <string name="notification_history_copy">Скопировать</string>
@@ -271,16 +271,16 @@
     <string name="notification_cond_wifi_not">Не подключен к <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Подключено к Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Не подключен к Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> впереди</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не впереди</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> на переднем плане</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> не на переднем плане</string>
     <string name="notification_cond_from">Уведомление от <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Уведомление не от <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Уведомление содержит <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Уведомление не содержит <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Звонок молчит или вибрирует</string>
+    <string name="notification_cond_silent">Звонок в беззвучном режиме или на вибрации</string>
     <string name="notification_cond_silent_not">Звонок включён</string>
     <string name="notification_cond_media">Воспроизводится медиаконтент</string>
-    <string name="notification_cond_media_not">Ни один носитель не воспроизводится</string>
+    <string name="notification_cond_media_not">Медиа не воспроизводится</string>
     <string name="notification_action_skip">не читать</string>
     <string name="notification_action_private">читать только название приложения</string>
     <string name="notification_action_not_private">читать полностью, даже если оно личное</string>
