@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="dont_show_again">不要再显示</string>
   <string name="number_announcement">数字</string>
   <string name="capitalize_announcement">大写</string>
@@ -155,4 +155,5 @@
 
     <!-- Braille keyboard gesture that keeps the dots facing the way they are now, or lets them follow how the device is held again. [CHAR_LIMIT=50] -->
     <string name="bk_gesture_toggle_orientation_lock">锁定或解锁方向</string>
+    <string name="bk_gesture_next_braille_table">切换到下一个盲文码表</string>
 </resources>
