@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Quando a tela desliga</string>
     <string name="title_screen_announcements_screen_on">Quando a tela liga</string>
     <string name="title_screen_announcements_unlock">Quando o telefone está desbloqueado</string>
-    <string name="title_pref_say_screen_off">Diga \"Tela desligada\"</string>
-    <string name="title_pref_say_device_unlocked">Diga \"Dispositivo desbloqueado\"</string>
+    <string name="title_pref_say_screen_off">Falar \"Tela desligada\"</string>
+    <string name="title_pref_say_device_unlocked">Falar \"Dispositivo desbloqueado\"</string>
     <string name="title_pref_announce_time">Hora</string>
     <string name="title_pref_announce_ringer_mode">Modo de campainha</string>
     <string name="summary_pref_announce_ringer_mode">Diga quando a campainha está definida para vibrar ou silenciar</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Permite que o aplicativo peça para dizer o texto na sua voz SandFly. SandFly pergunta antes que o aplicativo possa falar.</string>
     <string name="permission_braille_display_label">peça para ser um display braille para SandFly</string>
     <string name="permission_braille_display_description">Permite que o aplicativo solicite um display braille para SandFly. Se você permitir a entrada SandFly, ele poderá ler tudo na tela e controlar seu dispositivo. SandFly pergunta primeiro.</string>
-    <string name="title_pref_phonetic_letters_mode">Fale letras foneticamente</string>
+    <string name="title_pref_phonetic_letters_mode">Falar letras foneticamente</string>
     <string name="phonetic_letters_mode_off">Desativado</string>
     <string name="phonetic_letters_mode_after_letter_delay">Depois da carta, atrasada, tipo \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Depois da carta, sem demora, como \"h hotel\"</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Somente na barra de navegação</string>
     <string name="value_lift_to_activate_entire_screen">Tela inteira</string>
     <string name="template_lift_to_activate_changed">Levante para ativar: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Enrole</string>
+    <string name="title_pref_wrap_around">Navegação circular</string>
     <string name="summary_pref_wrap_around">Passar o último item vai para o primeiro e passar o primeiro vai para o último. Quando desativado, um som é reproduzido no final.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Corrigir exploração de toque travada</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, SandFly só pode dizer que a exploração por toque pode travar. Para permitir que isso seja corrigido, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

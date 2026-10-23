@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Descrie formatarea textului</string>
   <string name="summary_text_formatting_menu">Pentru modificări precum aldin, cursiv, subliniat și altele</string>
   <string name="title_text_formatting_inline">Formatarea textului pentru rostire</string>
-  <string name="title_switch_text_formatting">Formatarea textului pentru rostire</string>
+  <string name="title_switch_text_formatting">Rostește formatarea textului</string>
   <string name="summary_text_formatting_verbosity">Pentru modificări precum aldin și cursiv</string>
   <string name="summary_text_formatting_selector">Schimbă opțiunea de citire a formatării, cum ar fi caracterele aldine și cursive</string>
   <string name="title_text_formatting_verbosity_options">Opțiuni de formatare a textului</string>
@@ -1297,7 +1297,7 @@
   <string name="close_string">Închide</string>
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">Motor de transformare text în vorbire</string>
-    <string name="title_pref_system_tts_settings">Setările sistemului text-to-speech</string>
+    <string name="title_pref_system_tts_settings">Setările sistemului pentru redarea vocală a textului</string>
     <string name="title_selector_vertical_navigation">Navigare pe verticală</string>
     <string name="summary_selector_vertical_navigation">Treceți la elementul de mai jos sau de mai sus, depășind celelalte elemente ale rândului</string>
     <string name="title_selector_switch_tts_engine">Motor de vorbire</string>
@@ -1353,8 +1353,8 @@
     <string name="battery_optimization_notification_text">Pe acest telefon, economizorul bateriei se poate opri SandFly după ce ecranul se stinge, așa că tace până când este repornit. Atingeți pentru a deschide Optimizarea bateriei, alegeți Toate aplicațiile, găsiți SandFly și alegeți Nu optimizați.</string>
     <string name="title_pref_mute_speech_while_recording">Silențios în timpul înregistrării</string>
     <string name="summary_pref_mute_speech_while_recording">În timp ce o aplicație înregistrează fără căștile conectate, SandFly vorbește doar ca răspuns la gesturile, tastele și tastarea dvs. și rămâne tăcută pentru lucruri precum notificări, astfel încât acestea să nu fie înregistrate.</string>
-    <string name="title_pref_switch_languages">Schimbați automat limba</string>
-    <string name="title_pref_switch_dialects">Schimbați automat dialectul</string>
+    <string name="title_pref_switch_languages">Schimbă automat limba</string>
+    <string name="title_pref_switch_dialects">Schimbă automat dialectul</string>
     <string name="category_collapsed">Secțiune restrânsă</string>
     <string name="category_expanded">Secțiune extinsă</string>
     <string name="title_pref_speak_nav_bar_buttons">Rostiți butoanele barei de navigare</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Când ecranul se stinge</string>
     <string name="title_screen_announcements_screen_on">Când ecranul se aprinde</string>
     <string name="title_screen_announcements_unlock">Când telefonul este deblocat</string>
-    <string name="title_pref_say_screen_off">Spune „Ecran oprit”</string>
-    <string name="title_pref_say_device_unlocked">Spuneți „Dispozitiv deblocat”</string>
+    <string name="title_pref_say_screen_off">Rostește „Ecran oprit”</string>
+    <string name="title_pref_say_device_unlocked">Rostește „Dispozitiv deblocat”</string>
     <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modul sonerie</string>
     <string name="summary_pref_announce_ringer_mode">Spuneți când soneria este setată să vibreze sau să fie silențioasă</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Permite aplicației să solicite rostirea textului cu vocea ta SandFly. SandFly vă întreabă înainte ca aplicația să poată vorbi.</string>
     <string name="permission_braille_display_label">cereți să fiți un afișaj braille pentru SandFly</string>
     <string name="permission_braille_display_description">Permite aplicației să solicite un afișaj braille pentru SandFly. Dacă îl permiteți în SandFly, poate citi totul pe ecran și vă poate controla dispozitivul. SandFly te întreabă mai întâi.</string>
-    <string name="title_pref_phonetic_letters_mode">Rostiți litere fonetic</string>
+    <string name="title_pref_phonetic_letters_mode">Rostește literele fonetic</string>
     <string name="phonetic_letters_mode_off">Dezactivată</string>
     <string name="phonetic_letters_mode_after_letter_delay">După scrisoare, întârziată, ca „h, hotel”</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">După scrisoare, fără întârziere, ca „h hotel”</string>
@@ -1425,12 +1425,12 @@
     <string name="pref_table_column_headers_entry_off">Nu citi</string>
     <string name="pref_table_speak_row_column_numbers_title">Rostiți numerele rândurilor și coloanelor</string>
     <string name="pref_table_speak_row_column_numbers_summary">Anunțați numerele rândurilor și coloanelor pentru celulele tabelului</string>
-    <string name="title_pref_speak_volume_changes">Modificări ale volumului vorbirii</string>
+    <string name="title_pref_speak_volume_changes">Rostește modificările volumului</string>
     <string name="summary_pref_speak_volume_changes">Spuneți noul volum după ce apăsați tastele de volum</string>
-    <string name="title_pref_speak_notifications">Rostiți notificări</string>
+    <string name="title_pref_speak_notifications">Rostește notificările</string>
     <string name="summary_pref_speak_notifications">Citiți cu voce tare noile notificări când sosesc. Apelurile primite sunt întotdeauna citite.</string>
     <string name="title_pref_notification_list">Utilizați lista de notificări a lui SandFly</string>
-    <string name="title_pref_notification_parts">Detalii de notificare</string>
+    <string name="title_pref_notification_parts">Detaliile notificării</string>
     <string name="title_pref_play_installer">Apare instalat din Google Play</string>
     <string name="summary_pref_play_installer">Spuneți altor aplicații că Google Play instalat SandFly. Unele aplicații, cum ar fi unele aplicații bancare, dezactivează serviciile de accesibilitate care au fost instalate de oriunde altundeva. Necesită Shizuku și modifică numai aplicațiile care li se spune despre unde provine SandFly.</string>
     <string name="summary_pref_play_installer_pending">Activată, dar Google Redarea nu este încă înregistrată ca program de instalare. SandFly îl setează atunci când Shizuku este disponibil.</string>
@@ -1549,7 +1549,7 @@
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activat. Țineți 2 degete pe ecran timp de 5 secunde pentru a opri. Pentru a nu mai afișa acest mesaj, dezactivați SandFly setări &gt; Setări avansate &gt; Afișați instrucțiuni pentru dezactivarea SandFly.</string>
     <string name="edge_gestures_title">Margini</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">O altă comandă rapidă pentru a activa sau dezactiva modul de navigare</string>
-    <string name="title_pref_vibration_strength">Forța la vibrație</string>
+    <string name="title_pref_vibration_strength">Intensitatea vibrațiilor</string>
     <string name="title_pref_audio_output_device">Dispozitiv de ieșire audio</string>
     <string name="dialog_title_audio_output_device">Alegeți unde să redați sunetul SandFly</string>
     <string name="value_audio_output_device_default">Implicit de sistem</string>
@@ -1572,7 +1572,7 @@
     <string name="shortcut_open_app">Deschide <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Derulează la început</string>
     <string name="shortcut_write_reading_control">Scrieți litera unui control de citire</string>
-    <string name="title_pref_reading_control_letters">Litere alfabetului scris de mână</string>
+    <string name="title_pref_reading_control_letters">Litere scrise de mână</string>
     <string name="reading_control_letter_none">Fără</string>
     <string name="handwriting_prompt">Scrieți o literă din alfabet</string>
     <string name="handwriting_closed">Scrierea de mână a fost închisă</string>
@@ -1682,7 +1682,7 @@
     <string name="value_lift_to_activate_navigation_bar">Doar pe bara de navigare</string>
     <string name="value_lift_to_activate_entire_screen">Întregul ecran</string>
     <string name="template_lift_to_activate_changed">Ridicați pentru a activa: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Înfășurați</string>
+    <string name="title_pref_wrap_around">Navigare circulară</string>
     <string name="summary_pref_wrap_around">Trecerea cu degetul peste ultimul element duce la primul, iar peste primul trece la ultimul. Când este oprit, se redă un sunet la sfârșit.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Remediați explorarea tactilă blocată</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Fără permisiunea DUMP, SandFly poate spune doar că explorarea tactilă poate fi blocată. Pentru a-l lăsa să remedieze, rulați: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

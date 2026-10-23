@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">စာသားဖော်မက်လုပ်ခြင်း ဖော်ပြရန်</string>
   <string name="summary_text_formatting_menu">စာလုံးထူ၊ စာလုံးစောင်း၊ မျဉ်းသားခြင်း စသည်တို့ကဲ့သို့သော ပြောင်းလဲမှုများအတွက်</string>
   <string name="title_text_formatting_inline">စကားပြော စာသား ဖော်မက်လုပ်ခြင်း</string>
-  <string name="title_switch_text_formatting">စကားပြော စာသား ဖော်မက်လုပ်ခြင်း</string>
+  <string name="title_switch_text_formatting">စာသား ဖော်မတ်ကို ဖတ်ပါ</string>
   <string name="summary_text_formatting_verbosity">စာလုံးထူနှင့် စာလုံးစောင်းကဲ့သို့ ပြောင်းလဲမှုများအတွက်</string>
   <string name="summary_text_formatting_selector">စာလုံးထူနှင့် စာလုံးစောင်းတို့ကဲ့သို့ ဖော်မက်လုပ်ခြင်းများကို အသံထွက် ဖတ်မဖတ် ပြောင်းနိုင်သည်</string>
   <string name="title_text_formatting_verbosity_options">စာသားဖော်မက်လုပ်ခြင်းဆိုင်ရာ ရွေးစရာများ</string>
@@ -1298,11 +1298,11 @@
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">စာသားမှ စကားပြောအင်ဂျင်</string>
     <string name="title_pref_system_tts_settings">စနစ် စာသားမှ စကားပြော ဆက်တင်များ</string>
-    <string name="title_selector_vertical_navigation">ဒေါင်လိုက်အညွှန်း</string>
+    <string name="title_selector_vertical_navigation">ဒေါင်လိုက် လမ်းကြောင်းပြ</string>
     <string name="summary_selector_vertical_navigation">အောက် သို့မဟုတ် အထက်ရှိ အရာသို့ ရွှေ့ပါ၊ အတန်း၏ အခြားအရာများကို ကျော်ပါ</string>
     <string name="title_selector_switch_tts_engine">စကားပြောအင်ဂျင်</string>
     <string name="summary_selector_switch_tts_engine">ထည့်သွင်းထားသော စကားပြောအင်ဂျင်များအကြား ပြောင်းပါ</string>
-    <string name="title_selector_voice_profile">အသံနော်</string>
+    <string name="title_selector_voice_profile">အသံပရိုဖိုင်</string>
     <string name="title_pref_voice_profiles">အသံပရိုဖိုင်များ</string>
     <string name="voice_profile_default">SandFly မူရင်း</string>
     <string name="voice_profile_in_use">အသုံးပြုနေသည်- <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> ဖျက်မလား။</string>
     <string name="voice_profile_delete">ဖျက်ပါ</string>
     <string name="summary_pref_tts_engine_default">စနစ် ပုံသေ</string>
-    <string name="title_pref_speech_pitch">မိန့်ခွန်းသံပေါက်</string>
+    <string name="title_pref_speech_pitch">အသံ အနိမ့်အမြင့်</string>
     <string name="title_pref_speech_stream">အသံအတိုးအကျယ်</string>
     <string name="summary_selector_speech_stream">အများသုံးစွဲနိုင်မှု၊ မီဒီယာ၊ ဖုန်းမြည်သံနှင့် ခေါ်ဆိုမှုပမာဏများအကြား ပြောင်းပါ</string>
     <string name="speech_stream_accessibility">အများသုံးနိုင်မှု အသံ</string>
@@ -1368,7 +1368,7 @@
     <string name="title_screen_announcements_screen_off">မျက်နှာပြင်ပိတ်သွားသောအခါ</string>
     <string name="title_screen_announcements_screen_on">မျက်နှာပြင်ဖွင့်သောအခါ</string>
     <string name="title_screen_announcements_unlock">ဖုန်းကို လော့ခ်ဖွင့်သောအခါ</string>
-    <string name="title_pref_say_screen_off">\"Screen off\" ဟုပြောပါ</string>
+    <string name="title_pref_say_screen_off">\"မျက်နှာပြင် ပိတ်ထားသည်\" ဟု ပြောပါ</string>
     <string name="title_pref_say_device_unlocked">\"စက်ပစ္စည်း လော့ခ်ဖွင့်ထားသည်\" ဟုပြောပါ</string>
     <string name="title_pref_announce_time">အချိန်</string>
     <string name="title_pref_announce_ringer_mode">ဖုန်းမြည်သံမုဒ်</string>
@@ -1376,7 +1376,7 @@
     <string name="title_pref_category_feedback">တုံ့ပြန်ချက်</string>
     <string name="title_pref_category_typing_and_braille">စာရိုက်ခြင်းနှင့် မျက်မမြင်စာ</string>
     <string name="title_pref_category_apps">အက်ပ်များ</string>
-    <string name="title_pref_touch_activation">ထိပြီး အသက်သွင်းပါ</string>
+    <string name="title_pref_touch_activation">ထိတွေ့မှုနှင့် အသက်သွင်းမှု</string>
     <string name="title_pref_navigation">လမ်းညွှန်မှု</string>
     <string name="title_pref_category_more">နောက်ထပ်</string>
     <string name="title_pref_reserve_vibration_watch_gestures">လက်ဟန်ခြေဟန်များကို Vibration Watch တွင် သိမ်းဆည်းပါ</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">အက်ပ်အား သင်၏ SandFly အသံဖြင့် စာသားပြောခိုင်းစေပါ။ SandFly အက်ပ်က စကားမပြောမီ သင့်ကိုမေးသည်။</string>
     <string name="permission_braille_display_label">SandFly အတွက် မျက်မမြင်စာအဖြစ် ပြသရန် တောင်းဆိုပါ</string>
     <string name="permission_braille_display_description">အက်ပ်အား SandFlyအတွက် မျက်မမြင်စာအဖြစ် ပြသခွင့်ပြုပါ။ ၎င်းကို SandFly ဖြင့် ခွင့်ပြုပါက၊ ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။ SandFly မင်းကို အရင်မေးတယ်။</string>
-    <string name="title_pref_phonetic_letters_mode">စာလုံးတွေကို အသံနဲ့ပြောပါ</string>
+    <string name="title_pref_phonetic_letters_mode">စာလုံးများကို အသံထွက်ဥပမာဖြင့် ဖတ်ပါ</string>
     <string name="phonetic_letters_mode_off">ပိတ်</string>
     <string name="phonetic_letters_mode_after_letter_delay">စာကို နောက်ကျပြီးမှ \"ဇ၊ ဟို\" ၊</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">စာအပြီးမှာ နှောင့်နှေးမနေပါနဲ့ \"ဇဟို\" ၊</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">လမ်းညွှန်ဘားပေါ်တွင်သာ</string>
     <string name="value_lift_to_activate_entire_screen">မျက်နှာပြင်တစ်ခုလုံး</string>
     <string name="template_lift_to_activate_changed">စဖွင့်ရန် ဓါတ်လှေကား- <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ပတ်ရစ်</string>
+    <string name="title_pref_wrap_around">အစသို့ ပြန်ပတ်ပါ</string>
     <string name="summary_pref_wrap_around">နောက်ဆုံးသောအရာကို ကျော်ပြီး ပွတ်ဆွဲခြင်းက ပထမဆီသို့ သွားပြီး ပထမတစ်ခုကို ကျော်သွားပါက နောက်ဆုံးသို့ ရောက်သွားမည်ဖြစ်သည်။ ပိတ်ထားသည့်အခါတွင် အသံအစား အဆုံးတွင် ဖွင့်သည်။</string>
     <string name="title_pref_fix_stuck_touch_exploration">ထိတွေ့မှု စူးစမ်းရှာဖွေမှုကို ပြုပြင်ပါ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMPခွင့်ပြုချက်မရှိဘဲ၊ SandFly ထိတွေ့စူးစမ်းမှုမှာ ပိတ်မိနေနိုင်သည်ဟုသာ ပြောနိုင်သည်။ ၎င်းကို ပြုပြင်နိုင်စေရန်၊ လုပ်ဆောင်ရန်- adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
@@ -1687,7 +1687,7 @@
     <string name="stuck_touch_exploration_not_fixed">ထိတွေ့စူးစမ်းမှုမှာ ရပ်တန့်နေဆဲဖြစ်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ။</string>
     <string name="stuck_touch_exploration_restart">ထိတွေ့စူးစမ်းမှု ရပ်တန့်သွားနိုင်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ။</string>
     <string name="stuck_touch_exploration_grant_dump">ထိတွေ့စူးစမ်းမှု ရပ်တန့်သွားနိုင်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ သို့မဟုတ် ပြုပြင်နိုင်စေရန် ADB ထံ SandFly ခွင့်ပြုချက် DUMP ခွင့်ပြုပါ။</string>
-    <string name="title_pref_window_names">Window နာမည်များ</string>
+    <string name="title_pref_window_names">ဝင်းဒိုး အမည်များ</string>
     <string name="window_names_always">အမြဲတမ်း</string>
     <string name="window_names_until_first_item">အမြဲတမ်း ပထမအချက်ကို ဖြတ်လိုက်ပါ</string>
     <string name="window_names_window_opens">ပြတင်းပေါက်ဖွင့်သည့်အခါမှသာ</string>

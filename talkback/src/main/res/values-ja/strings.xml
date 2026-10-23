@@ -1316,7 +1316,7 @@
     <string name="voice_profile_name_taken">音声プロファイルはすでに <xliff:g id="name" example="Reading">%1$s</xliff:g> と呼ばれています</string>
     <string name="title_pref_voice_profile_name">名前</string>
     <string name="title_pref_voice_profile_language">言語</string>
-    <string name="title_pref_voice_profile_voice">声</string>
+    <string name="title_pref_voice_profile_voice">音声</string>
     <string name="voice_profile_engine_default">デフォルト</string>
     <string name="voice_profile_loading">読み込み中</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>、インストールされていません</string>
@@ -1331,7 +1331,7 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g>を削除しますか?</string>
     <string name="voice_profile_delete">削除</string>
     <string name="summary_pref_tts_engine_default">システムのデフォルト</string>
-    <string name="title_pref_speech_pitch">スピーチのピッチ</string>
+    <string name="title_pref_speech_pitch">音声の高さ</string>
     <string name="title_pref_speech_stream">読み上げの音量</string>
     <string name="summary_selector_speech_stream">アクセシビリティ、メディア、着信音、通話音量を切り替える</string>
     <string name="speech_stream_accessibility">ユーザー補助機能の音量</string>
@@ -1365,15 +1365,15 @@
     <string name="title_screen_announcements_screen_off">画面がオフになるとき</string>
     <string name="title_screen_announcements_screen_on">画面がオンになると</string>
     <string name="title_screen_announcements_unlock">電話機のロックが解除されているとき</string>
-    <string name="title_pref_say_screen_off">「画面をオフにして」と言います</string>
-    <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と言います</string>
+    <string name="title_pref_say_screen_off">「画面オフ」と読み上げる</string>
+    <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と読み上げる</string>
     <string name="title_pref_announce_time">時刻</string>
     <string name="title_pref_announce_ringer_mode">着信音モード</string>
     <string name="summary_pref_announce_ringer_mode">着信音が振動またはサイレントに設定されているときに言ってください</string>
     <string name="title_pref_category_feedback">フィードバック</string>
     <string name="title_pref_category_typing_and_braille">タイピングと点字</string>
     <string name="title_pref_category_apps">アプリ</string>
-    <string name="title_pref_touch_activation">タッチとアクティベーション</string>
+    <string name="title_pref_touch_activation">タップと有効化</string>
     <string name="title_pref_navigation">ナビゲーション</string>
     <string name="title_pref_category_more">その他</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch のジェスチャーを予約</string>
@@ -1397,7 +1397,7 @@
     <string name="permission_speak_description">アプリにあなたのSandFlyの声でテキストを言うように要求させます。アプリが話す前に、SandFly が質問します。</string>
     <string name="permission_braille_display_label">SandFly の点字ディスプレイになるよう依頼してください</string>
     <string name="permission_braille_display_description">アプリに SandFly の点字ディスプレイになるように要求させます。 SandFly で許可すると、画面上のすべてを読み取り、デバイスを制御できます。 SandFly が最初に尋ねます。</string>
-    <string name="title_pref_phonetic_letters_mode">文字を音声的に話す</string>
+    <string name="title_pref_phonetic_letters_mode">文字をフォネティックで読み上げる</string>
     <string name="phonetic_letters_mode_off">オフ</string>
     <string name="phonetic_letters_mode_after_letter_delay">手紙の後で、「えー、ホテル」のように遅れて</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">手紙の後は、「h ホテル」のように遅延はありません</string>
@@ -1422,9 +1422,9 @@
     <string name="pref_table_column_headers_entry_off">読まない</string>
     <string name="pref_table_speak_row_column_numbers_title">行番号と列番号を読み上げる</string>
     <string name="pref_table_speak_row_column_numbers_summary">表のセルの行番号と列番号を発表する</string>
-    <string name="title_pref_speak_volume_changes">発話音量の変更</string>
+    <string name="title_pref_speak_volume_changes">音量の変更を読み上げる</string>
     <string name="summary_pref_speak_volume_changes">音量キーを押した後、新しい音量を言います</string>
-    <string name="title_pref_speak_notifications">音声通知</string>
+    <string name="title_pref_speak_notifications">通知を読み上げる</string>
     <string name="summary_pref_speak_notifications">新しい通知が到着したら読み上げます。着信通話は常に読み取られます。</string>
     <string name="title_pref_notification_list">SandFly の通知リストを使用する</string>
     <string name="title_pref_notification_parts">通知内容</string>
@@ -1675,7 +1675,7 @@
     <string name="value_lift_to_activate_navigation_bar">ナビゲーションバーのみ</string>
     <string name="value_lift_to_activate_entire_screen">画面全体</string>
     <string name="template_lift_to_activate_changed">持ち上げてアクティブにします: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ラップアラウンド</string>
+    <string name="title_pref_wrap_around">最初に戻る</string>
     <string name="summary_pref_wrap_around">最後の項目を越えてスワイプすると最初の項目に移動し、最初の項目を越えてスワイプすると最後の項目に移動します。オフにすると、代わりに最後にサウンドが再生されます。</string>
     <string name="title_pref_fix_stuck_touch_exploration">タッチ探索のスタックを修正</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

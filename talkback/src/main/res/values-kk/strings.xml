@@ -1296,11 +1296,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Жабу</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">Мәтіннен сөйлеуге арналған қозғалтқыш</string>
+    <string name="title_pref_tts_engine">Мәтінді дыбыстау механизмі</string>
     <string name="title_pref_system_tts_settings">Жүйенің мәтінді дыбысқа ауыстыру параметрлері</string>
     <string name="title_selector_vertical_navigation">Тік навигация</string>
     <string name="summary_selector_vertical_navigation">Төмендегі немесе жоғарыдағы элементке өтіп, жолдың басқа элементтерінен өтіңіз</string>
-    <string name="title_selector_switch_tts_engine">Сөйлеу қозғалтқышы</string>
+    <string name="title_selector_switch_tts_engine">Сөйлеу механизмі</string>
     <string name="summary_selector_switch_tts_engine">Орнатылған сөйлеу қозғалтқыштары арасында ауысу</string>
     <string name="title_selector_voice_profile">Дауыс профилі</string>
     <string name="title_pref_voice_profiles">Дауыс профильдері</string>
@@ -1353,8 +1353,8 @@
     <string name="battery_optimization_notification_text">Бұл телефонда батарея үнемдегіш экран өшкеннен кейін SandFly тоқтауы мүмкін, сондықтан ол қайта іске қосылғанша үнсіз қалады. Батареяны оңтайландыруды ашу үшін түртіңіз, Барлық қолданбалар таңдаңыз, SandFly тармағын тауып, Оңтайландырмау опциясын таңдаңыз.</string>
     <string name="title_pref_mute_speech_while_recording">Жазу кезінде тыныш</string>
     <string name="summary_pref_mute_speech_while_recording">Қолданба құлаққап қосылмай жазып жатқанда, SandFly тек қимылдарыңызға, пернелеріңізге және теруіңізге жауап ретінде сөйлейді және олар жазылмауы үшін хабарландырулар сияқты нәрселер үшін үнсіз қалады.</string>
-    <string name="title_pref_switch_languages">Тілді автоматты түрде ауыстырыңыз</string>
-    <string name="title_pref_switch_dialects">Диалекті автоматты түрде ауыстырыңыз</string>
+    <string name="title_pref_switch_languages">Тілді автоматты ауыстыру</string>
+    <string name="title_pref_switch_dialects">Диалектіні автоматты ауыстыру</string>
     <string name="category_collapsed">Жиырылған бөлім</string>
     <string name="category_expanded">Кеңейтілген бөлім</string>
     <string name="title_pref_speak_nav_bar_buttons">Шарлау жолағы түймелерін сөйлеңіз</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Экран өшкенде</string>
     <string name="title_screen_announcements_screen_on">Экран қосылғанда</string>
     <string name="title_screen_announcements_unlock">Телефон құлпы ашылған кезде</string>
-    <string name="title_pref_say_screen_off">\"Экран өшірулі\" деңіз</string>
-    <string name="title_pref_say_device_unlocked">\"Құрылғы құлпы ашылды\" деңіз</string>
+    <string name="title_pref_say_screen_off">\"Экран өшірулі\" деп айту</string>
+    <string name="title_pref_say_device_unlocked">\"Құрылғы құлпы ашылды\" деп айту</string>
     <string name="title_pref_announce_time">Уақыт</string>
     <string name="title_pref_announce_ringer_mode">Қоңырау режимі</string>
     <string name="summary_pref_announce_ringer_mode">Қоңырау діріл немесе дыбыссыз күйге орнатылғанын айтыңыз</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_column_headers_entry_off">Оқымау</string>
     <string name="pref_table_speak_row_column_numbers_title">Жол және баған сандарын айту</string>
     <string name="pref_table_speak_row_column_numbers_summary">Кесте ұяшықтары үшін жол және баған нөмірлерін хабарлау</string>
-    <string name="title_pref_speak_volume_changes">Сөйлеу дыбысының өзгеруі</string>
+    <string name="title_pref_speak_volume_changes">Дыбыс деңгейінің өзгерісін айту</string>
     <string name="summary_pref_speak_volume_changes">Дыбыс деңгейі пернелерін басқаннан кейін жаңа дыбыс деңгейін айтыңыз</string>
     <string name="title_pref_speak_notifications">Хабарландыруларды айту</string>
     <string name="summary_pref_speak_notifications">Жаңа хабарландырулар келгенде дауыстап оқыңыз. Кіріс қоңыраулар әрқашан оқылады.</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Тек шарлау жолағында</string>
     <string name="value_lift_to_activate_entire_screen">Бүкіл экран</string>
     <string name="template_lift_to_activate_changed">Іске қосу үшін көтеріңіз: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Айналаңыз</string>
+    <string name="title_pref_wrap_around">Циклдік өту</string>
     <string name="summary_pref_wrap_around">Соңғы элементті жылжыту біріншіге, ал біріншіден өткен соң соңғыға өтеді. Өшірулі кезде оның орнына дыбыс соңында ойнайды.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Кептеліп қалған сенсорлық барлауды түзетіңіз</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP рұқсатынсыз SandFly тек сенсорлық барлау тоқтап қалуы мүмкін деп айта алады. Оны түзету үшін мынаны іске қосыңыз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

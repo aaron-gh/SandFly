@@ -1297,12 +1297,12 @@
   <string name="close_string">Sluiten</string>
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">Tekst-naar-spraak-engine</string>
-    <string name="title_pref_system_tts_settings">Systeem tekst-naar-spraak-instellingen</string>
+    <string name="title_pref_system_tts_settings">Tekst-naar-spraak-instellingen van systeem</string>
     <string name="title_selector_vertical_navigation">Verticale navigatie</string>
     <string name="summary_selector_vertical_navigation">Ga naar het item onder of boven, voorbij de andere items in de rij</string>
     <string name="title_selector_switch_tts_engine">Spraakmotor</string>
     <string name="summary_selector_switch_tts_engine">Schakel tussen geïnstalleerde spraakengines</string>
-    <string name="title_selector_voice_profile">Spraakprofiel</string>
+    <string name="title_selector_voice_profile">Stemprofiel</string>
     <string name="title_pref_voice_profiles">Stemprofielen</string>
     <string name="voice_profile_default">SandFly standaard</string>
     <string name="voice_profile_in_use">In gebruik: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderen?</string>
     <string name="voice_profile_delete">Verwijderen</string>
     <string name="summary_pref_tts_engine_default">Systeemstandaard</string>
-    <string name="title_pref_speech_pitch">Spraak toonhoogte</string>
+    <string name="title_pref_speech_pitch">Toonhoogte van spraak</string>
     <string name="title_pref_speech_stream">Spraakvolume</string>
     <string name="summary_selector_speech_stream">Schakel tussen de bereikbaarheids-, media-, bel- en belvolumes</string>
     <string name="speech_stream_accessibility">Toegankelijkheidsvolume</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Wanneer het scherm wordt uitgeschakeld</string>
     <string name="title_screen_announcements_screen_on">Wanneer het scherm wordt ingeschakeld</string>
     <string name="title_screen_announcements_unlock">Wanneer de telefoon is ontgrendeld</string>
-    <string name="title_pref_say_screen_off">Zeg \'Scherm uit\'</string>
-    <string name="title_pref_say_device_unlocked">Zeg \'Apparaat ontgrendeld\'</string>
+    <string name="title_pref_say_screen_off">\'Scherm uit\' uitspreken</string>
+    <string name="title_pref_say_device_unlocked">\'Apparaat ontgrendeld\' uitspreken</string>
     <string name="title_pref_announce_time">Tijdstip</string>
     <string name="title_pref_announce_ringer_mode">Belmodus</string>
     <string name="summary_pref_announce_ringer_mode">Zeg wanneer het belsignaal is ingesteld op trillen of stil</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Laat de app vragen om tekst in te spreken met uw SandFly-stem. SandFly vraagt ​​je voordat de app kan spreken.</string>
     <string name="permission_braille_display_label">vraag om een brailleleesregel te zijn voor SandFly</string>
     <string name="permission_braille_display_description">Laat de app vragen om een brailleleesregel te zijn voor SandFly. Als u hem in SandFly toestaat, kan hij alles op het scherm lezen en uw apparaat bedienen. SandFly vraagt ​​je eerst.</string>
-    <string name="title_pref_phonetic_letters_mode">Spreek letters fonetisch uit</string>
+    <string name="title_pref_phonetic_letters_mode">Letters fonetisch uitspreken</string>
     <string name="phonetic_letters_mode_off">Uit</string>
     <string name="phonetic_letters_mode_after_letter_delay">Na de brief, vertraagd, zoals \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Na de brief geen vertraging, zoals \"h hotel\"</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Niet voorlezen</string>
     <string name="pref_table_speak_row_column_numbers_title">Spreek rij- en kolomnummers uit</string>
     <string name="pref_table_speak_row_column_numbers_summary">Kondig rij- en kolomnummers aan voor tabelcellen</string>
-    <string name="title_pref_speak_volume_changes">Spreek volumeveranderingen</string>
+    <string name="title_pref_speak_volume_changes">Volumewijzigingen uitspreken</string>
     <string name="summary_pref_speak_volume_changes">Zeg het nieuwe volume nadat u op de volumetoetsen hebt gedrukt</string>
-    <string name="title_pref_speak_notifications">Spreek meldingen uit</string>
+    <string name="title_pref_speak_notifications">Meldingen uitspreken</string>
     <string name="summary_pref_speak_notifications">Lees nieuwe meldingen hardop wanneer ze binnenkomen. Inkomende oproepen worden altijd gelezen.</string>
     <string name="title_pref_notification_list">Gebruik de notificatielijst van SandFly</string>
     <string name="title_pref_notification_parts">Meldingsdetails</string>
@@ -1568,7 +1568,7 @@
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> openen</string>
     <string name="shortcut_scroll_to_top">Naar boven scrollen</string>
     <string name="shortcut_write_reading_control">Schrijf de letter van een leescontrole</string>
-    <string name="title_pref_reading_control_letters">Handgeschreven Alfabetletters</string>
+    <string name="title_pref_reading_control_letters">Handgeschreven letters</string>
     <string name="reading_control_letter_none">Geen</string>
     <string name="handwriting_prompt">Schrijf een letter</string>
     <string name="handwriting_closed">Handschrift gesloten</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Alleen op de navigatiebalk</string>
     <string name="value_lift_to_activate_entire_screen">Hele scherm</string>
     <string name="template_lift_to_activate_changed">Optillen om te activeren: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Wikkel rond</string>
+    <string name="title_pref_wrap_around">Rondgaan</string>
     <string name="summary_pref_wrap_around">Als u voorbij het laatste item veegt, gaat u naar het eerste, en voorbij het eerste item gaat u naar het laatste. Wanneer uitgeschakeld, wordt aan het einde een geluid afgespeeld.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Vastgelopen aanraakverkenning repareren</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Zonder de toestemming DUMP kan SandFly alleen zeggen dat verkenning via aanraking mogelijk vastloopt. Om het probleem te laten oplossen, voer je het volgende uit: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

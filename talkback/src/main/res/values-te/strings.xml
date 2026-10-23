@@ -1416,9 +1416,9 @@
     <string name="pref_table_column_headers_entry_off">చదవవద్దు</string>
     <string name="pref_table_speak_row_column_numbers_title">అడ్డు వరుస మరియు నిలువు వరుస సంఖ్యలను మాట్లాడండి</string>
     <string name="pref_table_speak_row_column_numbers_summary">పట్టిక సెల్‌ల కోసం అడ్డు వరుస మరియు నిలువు వరుస సంఖ్యలను ప్రకటించండి</string>
-    <string name="title_pref_speak_volume_changes">స్పీచ్ వాల్యూమ్ మార్పులు</string>
+    <string name="title_pref_speak_volume_changes">వాల్యూమ్ మార్పులను చదవండి</string>
     <string name="summary_pref_speak_volume_changes">మీరు వాల్యూమ్ కీలను నొక్కిన తర్వాత కొత్త వాల్యూమ్ చెప్పండి</string>
-    <string name="title_pref_speak_notifications">నోటిఫికేషన్‌లను మాట్లాడండి</string>
+    <string name="title_pref_speak_notifications">నోటిఫికేషన్‌లను చదవండి</string>
     <string name="summary_pref_speak_notifications">కొత్త నోటిఫికేషన్‌లు వచ్చినప్పుడు వాటిని బిగ్గరగా చదవండి. ఇన్‌కమింగ్ కాల్‌లు ఎల్లప్పుడూ చదవబడతాయి.</string>
     <string name="title_pref_notification_list">SandFly నోటిఫికేషన్ జాబితాను ఉపయోగించండి</string>
     <string name="title_pref_notification_parts">నోటిఫికేషన్ వివరాలు</string>
@@ -1669,7 +1669,7 @@
     <string name="value_lift_to_activate_navigation_bar">నావిగేషన్ బార్‌లో మాత్రమే</string>
     <string name="value_lift_to_activate_entire_screen">మొత్తం స్క్రీన్</string>
     <string name="template_lift_to_activate_changed">సక్రియం చేయడానికి లిఫ్ట్: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">చుట్టూ చుట్టండి</string>
+    <string name="title_pref_wrap_around">ప్రారంభానికి తిరిగి వెళ్లు</string>
     <string name="summary_pref_wrap_around">చివరి ఐటెమ్‌ను స్వైప్ చేయడం మొదటిదానికి వెళుతుంది మరియు మొదటిది చివరిదానికి వెళుతుంది. ఆఫ్ చేసినప్పుడు, బదులుగా ఒక ధ్వని చివర ప్లే అవుతుంది.</string>
     <string name="title_pref_fix_stuck_touch_exploration">అంటుకున్న టచ్ అన్వేషణను పరిష్కరించండి</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP అనుమతి లేకుండా, SandFly స్పర్శ అన్వేషణ నిలిచిపోవచ్చని మాత్రమే చెప్పగలదు. దీన్ని పరిష్కరించడానికి అనుమతించడానికి, అమలు చేయండి: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

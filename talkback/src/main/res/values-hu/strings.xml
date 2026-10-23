@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás szöveget mondjon az Ön SandFly hangján. SandFly megkérdezi, mielőtt az alkalmazás beszélni tudna.</string>
     <string name="permission_braille_display_label">kérje, hogy legyen Braille-kijelző a SandFly számára</string>
     <string name="permission_braille_display_description">Lehetővé teszi, hogy az alkalmazás Braille-kijelzőként kérje a SandFly-t. Ha engedélyezi az SandFly-ben, akkor mindent elolvashat a képernyőn, és vezérelheti az eszközt. SandFly kérdezi meg először.</string>
-    <string name="title_pref_phonetic_letters_mode">A betűket fonetikusan beszélje</string>
+    <string name="title_pref_phonetic_letters_mode">Betűk fonetikus kimondása</string>
     <string name="phonetic_letters_mode_off">Ki</string>
     <string name="phonetic_letters_mode_after_letter_delay">A levél után késleltetett, például \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">A levél után nincs késés, például \"h hotel\"</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_column_headers_entry_off">Nincs felolvasás</string>
     <string name="pref_table_speak_row_column_numbers_title">Mondja ki a sorok és oszlopok számát</string>
     <string name="pref_table_speak_row_column_numbers_summary">A táblázatcellák sor- és oszlopszámainak bejelentése</string>
-    <string name="title_pref_speak_volume_changes">Beszédhangerő-változások</string>
+    <string name="title_pref_speak_volume_changes">Hangerő-változások kimondása</string>
     <string name="summary_pref_speak_volume_changes">A hangerőszabályzó gombok megnyomása után mondja ki az új hangerőt</string>
     <string name="title_pref_speak_notifications">Értesítések kimondása</string>
     <string name="summary_pref_speak_notifications">Olvassa fel az új értesítéseket, amikor megérkeznek. A bejövő hívások mindig beolvasásra kerülnek.</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Csak a navigációs sávon</string>
     <string name="value_lift_to_activate_entire_screen">A teljes képernyő</string>
     <string name="template_lift_to_activate_changed">Emelje fel az aktiváláshoz: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Tekerje körbe</string>
+    <string name="title_pref_wrap_around">Körbeérés</string>
     <string name="summary_pref_wrap_around">Ha az utolsó elem mellett csúsztat, az az elsőre, az első után pedig az utolsóra lép. Ha ki van kapcsolva, egy hang szól a végén.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Az elakadt érintéssel kapcsolatos felfedezés javítása</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül az SandFly csak azt mondhatja, hogy az érintéssel történő felfedezés elakadt. A javításhoz futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm">Ta bort <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Radera</string>
     <string name="summary_pref_tts_engine_default">Systemstandard</string>
-    <string name="title_pref_speech_pitch">Tal tonhöjd</string>
+    <string name="title_pref_speech_pitch">Tonhöjd för tal</string>
     <string name="title_pref_speech_stream">Talvolym</string>
     <string name="summary_selector_speech_stream">Växla mellan volymer för tillgänglighet, media, ringsignal och samtal</string>
     <string name="speech_stream_accessibility">Volym för tillgänglighetsfunktionerna</string>
@@ -1376,7 +1376,7 @@
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Skrivning och punktskrift</string>
     <string name="title_pref_category_apps">Appar</string>
-    <string name="title_pref_touch_activation">Tryck och aktivering</string>
+    <string name="title_pref_touch_activation">Beröring och aktivering</string>
     <string name="title_pref_navigation">Navigering</string>
     <string name="title_pref_category_more">Mer</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservera gester för Vibration Watch</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Låter appen be att få säga text med din SandFly röst. SandFly frågar dig innan appen kan tala.</string>
     <string name="permission_braille_display_label">be om att vara en punktskriftsskärm för SandFly</string>
     <string name="permission_braille_display_description">Låter appen begära att vara en punktskriftsskärm för SandFly. Om du tillåter det i SandFly kan det läsa allt på skärmen och styra din enhet. SandFly frågar dig först.</string>
-    <string name="title_pref_phonetic_letters_mode">Tala bokstäver fonetiskt</string>
+    <string name="title_pref_phonetic_letters_mode">Läs upp bokstäver fonetiskt</string>
     <string name="phonetic_letters_mode_off">Av</string>
     <string name="phonetic_letters_mode_after_letter_delay">Efter brevet, försenat, som \"h, hotell\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Efter brevet, ingen fördröjning, som \"h hotel\"</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Endast på navigeringsfältet</string>
     <string name="value_lift_to_activate_entire_screen">Hela skärmen</string>
     <string name="template_lift_to_activate_changed">Lyft för att aktivera: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Linda runt</string>
+    <string name="title_pref_wrap_around">Börja om från början</string>
     <string name="summary_pref_wrap_around">Svep förbi det sista objektet går till det första och förbi det första går till det sista. When off, a sound plays at the end instead.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Åtgärda beröringsutforskning som fastnat</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Utan DUMP-tillståndet kan SandFly bara säga att beröringsutforskning kan ha fastnat. För att låta det fixa det, kör: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

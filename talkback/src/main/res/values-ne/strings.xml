@@ -1301,7 +1301,7 @@
     <string name="title_pref_system_tts_settings">प्रणाली पाठ-देखि-वाक् सेटिङहरू</string>
     <string name="title_selector_vertical_navigation">ठाडो नेभिगेसन</string>
     <string name="summary_selector_vertical_navigation">तल वा माथिको वस्तुमा सार्नुहोस्, पङ्क्तिका अन्य वस्तुहरू पछि</string>
-    <string name="title_selector_switch_tts_engine">भाषण इन्जिन</string>
+    <string name="title_selector_switch_tts_engine">स्पिच इन्जिन</string>
     <string name="summary_selector_switch_tts_engine">स्थापित स्पीच इन्जिनहरू बीच स्विच गर्नुहोस्</string>
     <string name="title_selector_voice_profile">आवाज प्रोफाइल</string>
     <string name="title_pref_voice_profiles">आवाज प्रोफाइलहरू</string>
@@ -1335,8 +1335,8 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> मेट्ने हो?</string>
     <string name="voice_profile_delete">मेटाऊ</string>
     <string name="summary_pref_tts_engine_default">प्रणाली पूर्वनिर्धारित</string>
-    <string name="title_pref_speech_pitch">भाषण पिच</string>
-    <string name="title_pref_speech_stream">बोलीको मात्रा</string>
+    <string name="title_pref_speech_pitch">बोलीको पिच</string>
+    <string name="title_pref_speech_stream">बोलीको भोल्युम</string>
     <string name="summary_selector_speech_stream">पहुँच, मिडिया, घण्टी र कल भोल्युमहरू बीच स्विच गर्नुहोस्</string>
     <string name="speech_stream_accessibility">सर्वसुलभता सेवाको भोल्युम</string>
     <string name="speech_stream_media">मिडिया भोल्युम</string>
@@ -1377,7 +1377,7 @@
     <string name="title_pref_category_feedback">प्रतिक्रिया</string>
     <string name="title_pref_category_typing_and_braille">टाइपिङ र ब्रेल</string>
     <string name="title_pref_category_apps">एपहरू</string>
-    <string name="title_pref_touch_activation">छुनुहोस् र सक्रियता</string>
+    <string name="title_pref_touch_activation">स्पर्श र सक्रियता</string>
     <string name="title_pref_navigation">नेभिगेसन</string>
     <string name="title_pref_category_more">थप</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch को लागि इशाराहरू आरक्षित गर्नुहोस्</string>
@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_navigation_bar">नेभिगेसन पट्टीमा मात्र</string>
     <string name="value_lift_to_activate_entire_screen">सम्पूर्ण स्क्रिन</string>
     <string name="template_lift_to_activate_changed">सक्रिय गर्न लिफ्ट: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">वरिपरि लपेट्नुहोस्</string>
+    <string name="title_pref_wrap_around">सुरुमा फर्कनुहोस्</string>
     <string name="summary_pref_wrap_around">अन्तिम वस्तुलाई स्वाइप गर्दा पहिलोमा जान्छ, र पहिलेको विगत अन्तिममा जान्छ। बन्द हुँदा, यसको सट्टा अन्तमा ध्वनि बज्छ।</string>
     <string name="title_pref_fix_stuck_touch_exploration">अड्किएको टच अन्वेषण फिक्स गर्नुहोस्</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP अनुमति बिना, SandFly ले टच अन्वेषण अड्किएको हुन सक्छ भनेर मात्र भन्न सक्छ। यसलाई ठीक गर्न, चलाउनुहोस्: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">ٹیکسٹ فارمیٹنگ کی وضاحت کریں</string>
   <string name="summary_text_formatting_menu">بولڈ، ترچھا، خط کشیدہ اور مزید جیسی تبدیلیوں کے لیے</string>
   <string name="title_text_formatting_inline">بولے گئے ٹیکسٹ سے متعلق فارمیٹنگ</string>
-  <string name="title_switch_text_formatting">بولے گئے ٹیکسٹ سے متعلق فارمیٹنگ</string>
+  <string name="title_switch_text_formatting">ٹیکسٹ کی فارمیٹنگ بولیں</string>
   <string name="summary_text_formatting_verbosity">بولڈ اور ترچھا جیسی تبدیلیوں کے لیے</string>
   <string name="summary_text_formatting_selector">تبدیل کریں کہ آیا فارمیٹنگ، جیسے بولڈ اور ترچھا کو بلند آواز میں سننا ہے یا نہیں</string>
   <string name="title_text_formatting_verbosity_options">ٹیکسٹ سے متعلق فارمیٹنگ کے اختیارات</string>
@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> حذف کریں؟</string>
     <string name="voice_profile_delete">حذف کریں</string>
     <string name="summary_pref_tts_engine_default">سسٹم ڈیفالٹ</string>
-    <string name="title_pref_speech_pitch">تقریر کی پچ</string>
+    <string name="title_pref_speech_pitch">بولنے کی پچ</string>
     <string name="title_pref_speech_stream">اسپیچ کا والیوم</string>
     <string name="summary_selector_speech_stream">رسائی، میڈیا، رنگ اور کال والیوم کے درمیان سوئچ کریں</string>
     <string name="speech_stream_accessibility">ایکسیسبیلٹی والیوم</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">صرف نیویگیشن بار پر</string>
     <string name="value_lift_to_activate_entire_screen">پوری اسکرین</string>
     <string name="template_lift_to_activate_changed">چالو کرنے کے لیے لفٹ: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">کے ارد گرد لپیٹ</string>
+    <string name="title_pref_wrap_around">شروع پر واپس جائیں</string>
     <string name="summary_pref_wrap_around">آخری آئٹم کے پاس سے سوائپ کرنے سے پہلے کی طرف جاتا ہے، اور پہلے سے گزرنا آخری پر جاتا ہے۔ آف ہونے پر، اس کے بجائے آخر میں ایک آواز بجتی ہے۔</string>
     <string name="title_pref_fix_stuck_touch_exploration">پھنسے ہوئے ٹچ ایکسپلوریشن کو درست کریں</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP اجازت کے بغیر، SandFly صرف یہ کہہ سکتا ہے کہ ٹچ ایکسپلوریشن پھنس سکتی ہے۔ اسے ٹھیک کرنے کے لیے چلائیں: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

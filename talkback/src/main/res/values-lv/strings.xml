@@ -1297,11 +1297,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Aizvērt</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">Teksta pārvēršanas runā dzinējs</string>
+    <string name="title_pref_tts_engine">Teksta pārvēršanas runā programma</string>
     <string name="title_pref_system_tts_settings">Sistēmas teksta pārvēršanas runā iestatījumi</string>
     <string name="title_selector_vertical_navigation">Vertikālā navigācija</string>
     <string name="summary_selector_vertical_navigation">Pārejiet uz vienumu zemāk vai augstāk, garām pārējiem rindas vienumiem</string>
-    <string name="title_selector_switch_tts_engine">Runas dzinējs</string>
+    <string name="title_selector_switch_tts_engine">Runas programma</string>
     <string name="summary_selector_switch_tts_engine">Pārslēgties starp instalētajiem runas dzinējiem</string>
     <string name="title_selector_voice_profile">Balss profils</string>
     <string name="title_pref_voice_profiles">Balss profili</string>
@@ -1318,7 +1318,7 @@
     <string name="title_pref_add_voice_profile">Pievienot balss profilu</string>
     <string name="voice_profile_new_name">Balss profils <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Balss profils jau tiek saukts <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Vārds</string>
+    <string name="title_pref_voice_profile_name">Nosaukums</string>
     <string name="title_pref_voice_profile_language">Valoda</string>
     <string name="title_pref_voice_profile_voice">Balss</string>
     <string name="voice_profile_engine_default">Noklusējuma</string>
@@ -1354,8 +1354,8 @@
     <string name="battery_optimization_notification_text">Šajā tālrunī akumulatora jaudas taupīšanas režīms var apturēt SandFly pēc ekrāna izslēgšanas, tāpēc tas apklust, līdz tiek restartēts. Pieskarieties, lai atvērtu akumulatora optimizāciju, izvēlieties Visas lietotnes, atrodiet SandFly un izvēlieties Neoptimizēt.</string>
     <string name="title_pref_mute_speech_while_recording">Kluss ierakstīšanas laikā</string>
     <string name="summary_pref_mute_speech_while_recording">Kamēr lietotne ieraksta, ja nav pievienotas austiņas, SandFly runā tikai, atbildot uz jūsu žestiem, taustiņiem un rakstīšanu, kā arī klusē, piemēram, paziņojumus, lai tie netiktu ierakstīti.</string>
-    <string name="title_pref_switch_languages">Automātiski pārslēdziet valodu</string>
-    <string name="title_pref_switch_dialects">Automātiski pārslēdziet dialektu</string>
+    <string name="title_pref_switch_languages">Automātiski pārslēgt valodu</string>
+    <string name="title_pref_switch_dialects">Automātiski pārslēgt dialektu</string>
     <string name="category_collapsed">Sakļauta sadaļa</string>
     <string name="category_expanded">Izvērsta sadaļa</string>
     <string name="title_pref_speak_nav_bar_buttons">Izrunājiet navigācijas joslas pogas</string>
@@ -1369,8 +1369,8 @@
     <string name="title_screen_announcements_screen_off">Kad ekrāns izslēdzas</string>
     <string name="title_screen_announcements_screen_on">Kad ekrāns ieslēdzas</string>
     <string name="title_screen_announcements_unlock">Kad tālrunis ir atbloķēts</string>
-    <string name="title_pref_say_screen_off">Sakiet \"Screen off\"</string>
-    <string name="title_pref_say_device_unlocked">Sakiet “Ierīce atbloķēta”</string>
+    <string name="title_pref_say_screen_off">Teikt \"Ekrāns izslēgts\"</string>
+    <string name="title_pref_say_device_unlocked">Teikt “Ierīce atbloķēta”</string>
     <string name="title_pref_announce_time">Laiks</string>
     <string name="title_pref_announce_ringer_mode">Zvana režīms</string>
     <string name="summary_pref_announce_ringer_mode">Sakiet, kad zvana signāls ir iestatīts uz vibrāciju vai klusumu</string>
@@ -1401,7 +1401,7 @@
     <string name="permission_speak_description">Ļauj lietotnei lūgt pateikt tekstu jūsu SandFly balsī. SandFly jautā, pirms lietotne var runāt.</string>
     <string name="permission_braille_display_label">lūgt Braila displeju SandFly</string>
     <string name="permission_braille_display_description">Ļauj lietotnei pieprasīt Braila displeju SandFly. Ja to atļaujat SandFly, tas var lasīt visu ekrānā un vadīt jūsu ierīci. SandFly vispirms jautā jums.</string>
-    <string name="title_pref_phonetic_letters_mode">Runājiet burtus fonētiski</string>
+    <string name="title_pref_phonetic_letters_mode">Izrunāt burtus fonētiski</string>
     <string name="phonetic_letters_mode_off">Izslēgts</string>
     <string name="phonetic_letters_mode_after_letter_delay">Pēc vēstules aizkavēta, piemēram, \"h, viesnīca\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Pēc vēstules bez kavēšanās, piemēram, \"h hotel\"</string>
@@ -1426,9 +1426,9 @@
     <string name="pref_table_column_headers_entry_off">Nelasīt</string>
     <string name="pref_table_speak_row_column_numbers_title">Izrunājiet rindu un kolonnu numurus</string>
     <string name="pref_table_speak_row_column_numbers_summary">Paziņojiet tabulas šūnu rindu un kolonnu numurus</string>
-    <string name="title_pref_speak_volume_changes">Runāt skaļuma izmaiņas</string>
+    <string name="title_pref_speak_volume_changes">Izrunāt skaļuma izmaiņas</string>
     <string name="summary_pref_speak_volume_changes">Pēc skaļuma taustiņu nospiešanas pasakiet jauno skaļumu</string>
-    <string name="title_pref_speak_notifications">Izrunājiet paziņojumus</string>
+    <string name="title_pref_speak_notifications">Izrunāt paziņojumus</string>
     <string name="summary_pref_speak_notifications">Lasiet skaļi jaunus paziņojumus, kad tie tiek saņemti. Ienākošie zvani vienmēr tiek lasīti.</string>
     <string name="title_pref_notification_list">Izmantojiet SandFly paziņojumu sarakstu</string>
     <string name="title_pref_notification_parts">Paziņojuma informācija</string>
@@ -1683,7 +1683,7 @@
     <string name="value_lift_to_activate_navigation_bar">Tikai navigācijas joslā</string>
     <string name="value_lift_to_activate_entire_screen">Viss ekrāns</string>
     <string name="template_lift_to_activate_changed">Paceliet, lai aktivizētu: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Aptiniet apkārt</string>
+    <string name="title_pref_wrap_around">Cikliska pārvietošanās</string>
     <string name="summary_pref_wrap_around">Velkot garām pēdējam vienumam, tiek pāriets uz pirmo, bet garām pirmajam — uz pēdējo. Kad tas ir izslēgts, beigās tiek atskaņota skaņa.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Labojiet iestrēgušu pieskārienu izpēti</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez DUMP atļaujas SandFly var tikai teikt, ka izpēte pieskaroties var būt iestrēgusi. Lai to labotu, palaidiet: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

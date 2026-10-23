@@ -1337,7 +1337,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> हटवायचे?</string>
     <string name="voice_profile_delete">हटवा</string>
     <string name="summary_pref_tts_engine_default">सिस्टम डीफॉल्ट</string>
-    <string name="title_pref_speech_pitch">भाषण खेळपट्टी</string>
+    <string name="title_pref_speech_pitch">बोलण्याची पिच</string>
     <string name="title_pref_speech_stream">उच्चारण व्‍हॉल्‍यूम</string>
     <string name="summary_selector_speech_stream">प्रवेशयोग्यता, मीडिया, रिंग आणि कॉल व्हॉल्यूम दरम्यान स्विच करा</string>
     <string name="speech_stream_accessibility">अ‍ॅक्सेसिबिलिटी व्हॉल्यूम</string>
@@ -1379,7 +1379,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_category_feedback">प्रतिसाद</string>
     <string name="title_pref_category_typing_and_braille">टायपिंग आणि ब्रेल</string>
     <string name="title_pref_category_apps">ॲप्स</string>
-    <string name="title_pref_touch_activation">स्पर्श करा आणि सक्रिय करा</string>
+    <string name="title_pref_touch_activation">स्पर्श आणि सक्रियकरण</string>
     <string name="title_pref_navigation">नेव्हिगेशन</string>
     <string name="title_pref_category_more">अधिक</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch साठी जेश्चर राखून ठेवा</string>
@@ -1428,7 +1428,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="pref_table_column_headers_entry_off">वाचू नका</string>
     <string name="pref_table_speak_row_column_numbers_title">पंक्ती आणि स्तंभ क्रमांक बोला</string>
     <string name="pref_table_speak_row_column_numbers_summary">टेबल सेलसाठी पंक्ती आणि स्तंभ क्रमांक घोषित करा</string>
-    <string name="title_pref_speak_volume_changes">आवाज बदल बोला</string>
+    <string name="title_pref_speak_volume_changes">व्हॉल्यूममधील बदल बोला</string>
     <string name="summary_pref_speak_volume_changes">तुम्ही व्हॉल्यूम की दाबल्यानंतर नवीन व्हॉल्यूम म्हणा</string>
     <string name="title_pref_speak_notifications">सूचना बोला</string>
     <string name="summary_pref_speak_notifications">नवीन सूचना आल्यावर मोठ्याने वाचा. येणारे कॉल नेहमी वाचले जातात.</string>
@@ -1681,7 +1681,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="value_lift_to_activate_navigation_bar">फक्त नेव्हिगेशन बारवर</string>
     <string name="value_lift_to_activate_entire_screen">संपूर्ण स्क्रीन</string>
     <string name="template_lift_to_activate_changed">सक्रिय करण्यासाठी लिफ्ट: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">सुमारे गुंडाळणे</string>
+    <string name="title_pref_wrap_around">सुरुवातीला परत जा</string>
     <string name="summary_pref_wrap_around">शेवटच्या आयटमवरून स्वाइप केल्यास पहिल्याकडे जाते आणि पहिल्याला गेल्याने शेवटच्याकडे जाते. बंद असताना, त्याऐवजी शेवटी एक आवाज वाजतो.</string>
     <string name="title_pref_fix_stuck_touch_exploration">अडकलेल्या स्पर्श अन्वेषणाचे निराकरण करा</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP परवानगीशिवाय, SandFly फक्त असे म्हणू शकते की स्पर्श अन्वेषण कदाचित अडकले आहे. त्याचे निराकरण करू देण्यासाठी, चालवा: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

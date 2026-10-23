@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm">លុប <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">លុប</string>
     <string name="summary_pref_tts_engine_default">លំនាំដើមប្រព័ន្ធ</string>
-    <string name="title_pref_speech_pitch">សុន្ទរកថា</string>
+    <string name="title_pref_speech_pitch">កម្ពស់សំឡេងនិយាយ</string>
     <string name="title_pref_speech_stream">កម្រិតសំឡេងការនិយាយ</string>
     <string name="summary_selector_speech_stream">ប្តូររវាងលទ្ធភាពប្រើប្រាស់ ប្រព័ន្ធផ្សព្វផ្សាយ សំឡេងរោទ៍ និងកម្រិតសំឡេងហៅទូរសព្ទ</string>
     <string name="speech_stream_accessibility">កម្រិតសំឡេងភាពងាយស្រួល</string>
@@ -1368,7 +1368,7 @@
     <string name="title_screen_announcements_screen_off">នៅពេលអេក្រង់បិទ</string>
     <string name="title_screen_announcements_screen_on">នៅពេលអេក្រង់បើក</string>
     <string name="title_screen_announcements_unlock">នៅពេលដែលទូរស័ព្ទត្រូវបានដោះសោ</string>
-    <string name="title_pref_say_screen_off">និយាយថា \"បិទអេក្រង់\"</string>
+    <string name="title_pref_say_screen_off">និយាយថា \"អេក្រង់បានបិទ\"</string>
     <string name="title_pref_say_device_unlocked">និយាយថា \"ឧបករណ៍ត្រូវបានដោះសោ\"</string>
     <string name="title_pref_announce_time">ពេលវេលា</string>
     <string name="title_pref_announce_ringer_mode">របៀបរោទ៍</string>
@@ -1430,7 +1430,7 @@
     <string name="title_pref_speak_notifications">និយាយការជូនដំណឹង</string>
     <string name="summary_pref_speak_notifications">អានការជូនដំណឹងថ្មីឱ្យឮៗនៅពេលពួកគេមកដល់។ ការហៅចូលត្រូវបានអានជានិច្ច។</string>
     <string name="title_pref_notification_list">ប្រើបញ្ជីជូនដំណឹងរបស់ SandFly</string>
-    <string name="title_pref_notification_parts">សេចក្តីជូនដំណឹងលម្អិត</string>
+    <string name="title_pref_notification_parts">ព័ត៌មានលម្អិតនៃការជូនដំណឹង</string>
     <string name="title_pref_play_installer">លេចឡើងដែលបានដំឡើងពី Google Play</string>
     <string name="summary_pref_play_installer">ប្រាប់កម្មវិធីផ្សេងទៀតថា Google Play បានដំឡើង SandFly។ កម្មវិធីមួយចំនួន ដូចជាកម្មវិធីធនាគារមួយចំនួន បិទសេវាកម្មភាពងាយស្រួលដែលត្រូវបានដំឡើងពីកន្លែងផ្សេង។ ត្រូវការ Shizuku ហើយផ្លាស់ប្តូរតែអ្វីដែលកម្មវិធីត្រូវបានប្រាប់អំពីកន្លែងដែល SandFly មកពី។</string>
     <string name="summary_pref_play_installer_pending">បើក ប៉ុន្តែ Google Play មិនទាន់បានកត់ត្រាជាកម្មវិធីដំឡើងនៅឡើយទេ។ SandFlyកំណត់វានៅពេលដែលShizukuមាន។</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">មានតែនៅលើរបាររុករកប៉ុណ្ណោះ</string>
     <string name="value_lift_to_activate_entire_screen">អេក្រង់ទាំងមូល</string>
     <string name="template_lift_to_activate_changed">លើកដើម្បីដំណើរការ៖ <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">រុំជុំវិញ</string>
+    <string name="title_pref_wrap_around">វិលត្រឡប់ទៅដើម</string>
     <string name="summary_pref_wrap_around">ការអូសរំលងធាតុចុងក្រោយទៅទីមួយ ហើយរំលងទីមួយទៅចុងក្រោយ នៅពេលបិទ សំឡេងមួយនឹងចាក់នៅចុងបញ្ចប់ជំនួសវិញ។</string>
     <string name="title_pref_fix_stuck_touch_exploration">ជួសជុលការរុករកការប៉ះជាប់គាំង</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">បើគ្មានការអនុញ្ញាតពី DUMP ទេ SandFly អាចនិយាយបានថាការរុករកដោយប៉ះអាចជាប់គាំង។ ដើម្បីអោយវាជួសជុល សូមដំណើរការ៖ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

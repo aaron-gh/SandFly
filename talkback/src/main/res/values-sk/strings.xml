@@ -1300,7 +1300,7 @@
     <string name="title_pref_system_tts_settings">Systémové nastavenia prevodu textu na reč</string>
     <string name="title_selector_vertical_navigation">Vertikálna navigácia</string>
     <string name="summary_selector_vertical_navigation">Prejdite na položku pod alebo nad, za ostatné položky v riadku</string>
-    <string name="title_selector_switch_tts_engine">Rečový motor</string>
+    <string name="title_selector_switch_tts_engine">Hlasový modul</string>
     <string name="summary_selector_switch_tts_engine">Prepínajte medzi nainštalovanými rečovými nástrojmi</string>
     <string name="title_selector_voice_profile">Hlasový profil</string>
     <string name="title_pref_voice_profiles">Hlasové profily</string>
@@ -1317,7 +1317,7 @@
     <string name="title_pref_add_voice_profile">Pridať hlasový profil</string>
     <string name="voice_profile_new_name">Hlasový profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Hlasový profil sa už volá <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Meno</string>
+    <string name="title_pref_voice_profile_name">Názov</string>
     <string name="title_pref_voice_profile_language">Jazyk</string>
     <string name="title_pref_voice_profile_voice">Hlas</string>
     <string name="voice_profile_engine_default">Predvolené</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Keď sa obrazovka vypne</string>
     <string name="title_screen_announcements_screen_on">Keď sa obrazovka zapne</string>
     <string name="title_screen_announcements_unlock">Keď je telefón odomknutý</string>
-    <string name="title_pref_say_screen_off">Povedzte „Vypnúť obrazovku“</string>
-    <string name="title_pref_say_device_unlocked">Povedzte „Zariadenie odomknuté“</string>
+    <string name="title_pref_say_screen_off">Vyslovovať „Obrazovka vypnutá“</string>
+    <string name="title_pref_say_device_unlocked">Vyslovovať „Zariadenie odomknuté“</string>
     <string name="title_pref_announce_time">Čas</string>
     <string name="title_pref_announce_ringer_mode">Režim zvonenia</string>
     <string name="summary_pref_announce_ringer_mode">Povedzte, keď je zvonenie nastavené na vibrovanie alebo ticho</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
     <string name="permission_braille_display_label">požiadať o zobrazenie Braillovho písma pre SandFly</string>
     <string name="permission_braille_display_description">Umožňuje aplikácii požiadať o zobrazenie Braillovho písma pre SandFly. Ak to povolíte v SandFly, môže čítať všetko na obrazovke a ovládať vaše zariadenie. SandFly sa vás pýta ako prvý.</string>
-    <string name="title_pref_phonetic_letters_mode">Hovorte písmená foneticky</string>
+    <string name="title_pref_phonetic_letters_mode">Vyslovovať písmená foneticky</string>
     <string name="phonetic_letters_mode_off">Vypnuté</string>
     <string name="phonetic_letters_mode_after_letter_delay">Po liste, oneskorený, napríklad \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Po liste bez meškania, napríklad „h hotel“</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Nečítať</string>
     <string name="pref_table_speak_row_column_numbers_title">Vysloviť čísla riadkov a stĺpcov</string>
     <string name="pref_table_speak_row_column_numbers_summary">Oznámte čísla riadkov a stĺpcov pre bunky tabuľky</string>
-    <string name="title_pref_speak_volume_changes">Hlasitosť hovoru sa mení</string>
+    <string name="title_pref_speak_volume_changes">Vyslovovať zmeny hlasitosti</string>
     <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vyslovte novú hlasitosť</string>
-    <string name="title_pref_speak_notifications">Vysloviť upozornenia</string>
+    <string name="title_pref_speak_notifications">Vyslovovať upozornenia</string>
     <string name="summary_pref_speak_notifications">Prečítajte si nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa vždy čítajú.</string>
     <string name="title_pref_notification_list">Použite zoznam upozornení SandFly</string>
     <string name="title_pref_notification_parts">Podrobnosti oznámenia</string>
@@ -1686,7 +1686,7 @@
     <string name="value_lift_to_activate_navigation_bar">Iba na navigačnom paneli</string>
     <string name="value_lift_to_activate_entire_screen">Celá obrazovka</string>
     <string name="template_lift_to_activate_changed">Zdvihnite pre aktiváciu: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Omotajte sa</string>
+    <string name="title_pref_wrap_around">Cyklický pohyb</string>
     <string name="summary_pref_wrap_around">Potiahnutím za poslednú položku prejdete na prvú a za prvú položku na poslednú. Keď je vypnutý, na konci sa namiesto toho prehrá zvuk.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Opravte zaseknuté skúmanie dotykom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez povolenia DUMP môže SandFly povedať len to, že prieskum dotykom môže byť zaseknutý. Ak to chcete opraviť, spustite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

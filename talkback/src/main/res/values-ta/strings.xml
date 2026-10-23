@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">படிக்க வேண்டாம்</string>
     <string name="pref_table_speak_row_column_numbers_title">வரிசை மற்றும் நெடுவரிசை எண்களைப் பேசுங்கள்</string>
     <string name="pref_table_speak_row_column_numbers_summary">அட்டவணை கலங்களுக்கான வரிசை மற்றும் நெடுவரிசை எண்களை அறிவிக்கவும்</string>
-    <string name="title_pref_speak_volume_changes">பேசும் ஒலியளவு மாற்றங்கள்</string>
+    <string name="title_pref_speak_volume_changes">ஒலியளவு மாற்றங்களைச் சொல்</string>
     <string name="summary_pref_speak_volume_changes">வால்யூம் கீகளை அழுத்திய பிறகு புதிய வால்யூமைக் கூறவும்</string>
-    <string name="title_pref_speak_notifications">அறிவிப்புகளைப் பேசுங்கள்</string>
+    <string name="title_pref_speak_notifications">அறிவிப்புகளைப் படி</string>
     <string name="summary_pref_speak_notifications">புதிய அறிவிப்புகள் வரும்போது சத்தமாகப் படிக்கவும். உள்வரும் அழைப்புகள் எப்போதும் படிக்கப்படுகின்றன.</string>
     <string name="title_pref_notification_list">SandFly இன் அறிவிப்புப் பட்டியலைப் பயன்படுத்தவும்</string>
     <string name="title_pref_notification_parts">அறிவிப்பு விவரங்கள்</string>
@@ -1460,7 +1460,7 @@
         <item quantity="other">%d அறிவிப்புகள்</item>
     </plurals>
     <string name="title_pref_quick_settings">SandFly இன் விரைவு அமைப்புகளைப் பயன்படுத்தவும்</string>
-    <string name="title_pref_quick_settings_items">விரைவு அமைப்புகள் குழு</string>
+    <string name="title_pref_quick_settings_items">விரைவு அமைப்புகள் பேனல்</string>
     <string name="quick_settings_title">விரைவான அமைப்புகள்</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">வழிசெலுத்தல் பட்டியில் மட்டுமே</string>
     <string name="value_lift_to_activate_entire_screen">முழு திரை</string>
     <string name="template_lift_to_activate_changed">செயல்படுத்த லிஃப்ட்: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">சுற்றி வளைக்கவும்</string>
+    <string name="title_pref_wrap_around">தொடக்கத்திற்குத் திரும்பு</string>
     <string name="summary_pref_wrap_around">கடைசி உருப்படியைக் கடந்ததை ஸ்வைப் செய்வது முதல் உருப்படிக்கும், முதல் உருப்படியைக் கடந்ததற்கும் செல்கிறது. ஆஃப் செய்யும்போது, அதற்குப் பதிலாக ஒரு ஒலி இறுதியில் ஒலிக்கும்.</string>
     <string name="title_pref_fix_stuck_touch_exploration">சிக்கிய தொடு ஆய்வுகளை சரிசெய்யவும்</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP அனுமதி இல்லாமல், SandFly ஆல் தொடு ஆய்வு சிக்கியிருக்கலாம் என்று மட்டுமே கூற முடியும். அதை சரிசெய்ய அனுமதிக்க, இயக்கவும்: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

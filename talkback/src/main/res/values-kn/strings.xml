@@ -758,7 +758,7 @@
   <string name="message_pref_touch_focus_latency">ಕಡಿಮೆ ವಿಳಂಬವು SandFly ನೀವು ಪರದೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿದ ನಂತರ ಬೇಗ ಮಾತನಾಡುವಂತೆ ಮಾಡುತ್ತದೆ</string>
   <string name="message_pref_typing_method_prefix">ಟೈಪ್ ಮಾಡುವಾಗ ಕನಿಷ್ಠ ವಿಳಂಬಕ್ಕಾಗಿ, \"ಯಾವುದೇ ಕೀ ಆರಿಸಲು ಬೆರಳನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ, ನಂತರ ಮೇಲಕ್ಕೆತ್ತಿ\" ಎಂಬುದನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="message_pref_typing_method_postfix">ನೀವು ಯಾವುದೇ ಸಮಯದಲ್ಲಿ ಟೈಪ್ ಮಾಡಲು ಸ್ಪ್ಲಿಟ್ ಟ್ಯಾಪ್ ಅನ್ನು ಸಹ ಬಳಸಬಹುದು. ಇದನ್ನು ಮಾಡಲು, ಯಾವುದೇ ಕೀಯನ್ನು ಆರಿಸಲು ಒಂದು ಬೆರಳನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ ಹಾಗೂ ಸ್ಕ್ರೀನ್ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಲು ಇನ್ನೊಂದು ಬೆರಳನ್ನು ಬಳಸಿ.</string>
-  <string name="title_pref_talkback_speech_rate">ಧ್ವನಿಯ ಪ್ರಮಾಣ</string>
+  <string name="title_pref_talkback_speech_rate">ಮಾತಿನ ವೇಗ</string>
   <string name="title_pref_selector_adjustable_widget_slider">ಸ್ಲೈಡರ್ ಅನ್ನು ಅಡ್ಜಸ್ಟ್ ಮಾಡಿ</string>
   <string name="title_pref_selector_typo_granularity">ಪ್ರೂಫ್‌ರೀಡ್</string>
   <string name="hint_no_typo_found">ಯಾವುದೇ ಟೈಪಿಂಗ್ ದೋಷ ಕಂಡುಬಂದಿಲ್ಲ.</string>
@@ -1259,7 +1259,7 @@
   <string name="title_text_formatting_menu">ಪಠ್ಯ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಅನ್ನು ವಿವರಿಸಿ</string>
   <string name="summary_text_formatting_menu">ಬೋಲ್ಡ್, ಇಟಾಲಿಕ್, ಅಂಡರ್‌ಲೈನ್ ಮತ್ತು ಇತರ ಬದಲಾವಣೆಗಳಿಗಾಗಿ</string>
   <string name="title_text_formatting_inline">ಮಾತನಾಡುವ ಪಠ್ಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಫಾರ್ಮ್ಯಾಟಿಂಗ್</string>
-  <string name="title_switch_text_formatting">ಮಾತನಾಡುವ ಪಠ್ಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಫಾರ್ಮ್ಯಾಟಿಂಗ್</string>
+  <string name="title_switch_text_formatting">ಪಠ್ಯ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಓದಿ</string>
   <string name="summary_text_formatting_verbosity">ಬೋಲ್ಡ್ ಮತ್ತು ಇಟಾಲಿಕ್‌ನಂತಹ ಬದಲಾವಣೆಗಳಿಗಾಗಿ</string>
   <string name="summary_text_formatting_selector">ಬೋಲ್ಡ್ ಮತ್ತು ಇಟಾಲಿಕ್‌ನಂತಹ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಅನ್ನು ಗಟ್ಟಿಯಾಗಿ ಓದಿ ಎಂಬುದಾಗಿ ಬದಲಾಯಿಸಿ</string>
   <string name="title_text_formatting_verbosity_options">ಪಠ್ಯ ಫಾರ್ಮ್ಯಾಟಿಂಗ್ ಆಯ್ಕೆಗಳು</string>
@@ -1401,7 +1401,7 @@
     <string name="permission_speak_description">ನಿಮ್ಮ SandFly ಧ್ವನಿಯಲ್ಲಿ ಪಠ್ಯವನ್ನು ಹೇಳಲು ಅಪ್ಲಿಕೇಶನ್ ಕೇಳಲು ಅನುಮತಿಸುತ್ತದೆ. ಅಪ್ಲಿಕೇಶನ್ ಮಾತನಾಡುವ ಮೊದಲು SandFly ನಿಮ್ಮನ್ನು ಕೇಳುತ್ತದೆ.</string>
     <string name="permission_braille_display_label">SandFly ಗಾಗಿ ಬ್ರೈಲ್ ಪ್ರದರ್ಶನವಾಗಲು ಕೇಳಿ</string>
     <string name="permission_braille_display_description">SandFly ಗಾಗಿ ಬ್ರೈಲ್ ಡಿಸ್‌ಪ್ಲೇ ಆಗಲು ಅಪ್ಲಿಕೇಶನ್ ಕೇಳಲು ಅನುಮತಿಸುತ್ತದೆ. ನೀವು ಅದನ್ನು SandFly ನಲ್ಲಿ ಅನುಮತಿಸಿದರೆ, ಅದು ಪರದೆಯ ಮೇಲಿನ ಎಲ್ಲವನ್ನೂ ಓದಬಹುದು ಮತ್ತು ನಿಮ್ಮ ಸಾಧನವನ್ನು ನಿಯಂತ್ರಿಸಬಹುದು. SandFly ಮೊದಲು ನಿಮ್ಮನ್ನು ಕೇಳುತ್ತದೆ.</string>
-    <string name="title_pref_phonetic_letters_mode">ಅಕ್ಷರಗಳನ್ನು ಫೋನೆಟಿಕ್ ಆಗಿ ಮಾತನಾಡಿ</string>
+    <string name="title_pref_phonetic_letters_mode">ಅಕ್ಷರಗಳನ್ನು ಫೋನೆಟಿಕ್ ಆಗಿ ಓದಿ</string>
     <string name="phonetic_letters_mode_off">ಆಫ್</string>
     <string name="phonetic_letters_mode_after_letter_delay">ಪತ್ರದ ನಂತರ, \"h, ಹೋಟೆಲ್\" ನಂತಹ ವಿಳಂಬವಾಗಿದೆ</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">ಪತ್ರದ ನಂತರ, ಯಾವುದೇ ವಿಳಂಬವಿಲ್ಲ, \"h ಹೋಟೆಲ್\" ನಂತೆ</string>
@@ -1426,9 +1426,9 @@
     <string name="pref_table_column_headers_entry_off">ಓದಬೇಡ</string>
     <string name="pref_table_speak_row_column_numbers_title">ಸಾಲು ಮತ್ತು ಕಾಲಮ್ ಸಂಖ್ಯೆಗಳನ್ನು ಮಾತನಾಡಿ</string>
     <string name="pref_table_speak_row_column_numbers_summary">ಟೇಬಲ್ ಕೋಶಗಳಿಗೆ ಸಾಲು ಮತ್ತು ಕಾಲಮ್ ಸಂಖ್ಯೆಗಳನ್ನು ಪ್ರಕಟಿಸಿ</string>
-    <string name="title_pref_speak_volume_changes">ಧ್ವನಿ ಬದಲಾವಣೆಗಳನ್ನು ಮಾತನಾಡಿ</string>
+    <string name="title_pref_speak_volume_changes">ವಾಲ್ಯೂಮ್ ಬದಲಾವಣೆಗಳನ್ನು ಓದಿ</string>
     <string name="summary_pref_speak_volume_changes">ನೀವು ವಾಲ್ಯೂಮ್ ಕೀಗಳನ್ನು ಒತ್ತಿದ ನಂತರ ಹೊಸ ಪರಿಮಾಣವನ್ನು ಹೇಳಿ</string>
-    <string name="title_pref_speak_notifications">ಅಧಿಸೂಚನೆಗಳನ್ನು ಮಾತನಾಡಿ</string>
+    <string name="title_pref_speak_notifications">ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
     <string name="summary_pref_speak_notifications">ಹೊಸ ಅಧಿಸೂಚನೆಗಳು ಬಂದಾಗ ಅವುಗಳನ್ನು ಜೋರಾಗಿ ಓದಿ. ಒಳಬರುವ ಕರೆಗಳನ್ನು ಯಾವಾಗಲೂ ಓದಲಾಗುತ್ತದೆ.</string>
     <string name="title_pref_notification_list">SandFly ನ ಅಧಿಸೂಚನೆ ಪಟ್ಟಿಯನ್ನು ಬಳಸಿ</string>
     <string name="title_pref_notification_parts">ಅಧಿಸೂಚನೆ ವಿವರಗಳು</string>
@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_navigation_bar">ನ್ಯಾವಿಗೇಷನ್ ಬಾರ್‌ನಲ್ಲಿ ಮಾತ್ರ</string>
     <string name="value_lift_to_activate_entire_screen">ಸಂಪೂರ್ಣ ಪರದೆ</string>
     <string name="template_lift_to_activate_changed">ಸಕ್ರಿಯಗೊಳಿಸಲು ಲಿಫ್ಟ್: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ಸುತ್ತಲೂ ಸುತ್ತು</string>
+    <string name="title_pref_wrap_around">ಆರಂಭಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
     <string name="summary_pref_wrap_around">ಕೊನೆಯ ಐಟಂನ ಹಿಂದೆ ಸ್ವೈಪ್ ಮಾಡುವುದು ಮೊದಲನೆಯದಕ್ಕೆ ಹೋಗುತ್ತದೆ ಮತ್ತು ಮೊದಲನೆಯದನ್ನು ಹಿಂದಿನದಕ್ಕೆ ಹೋಗುತ್ತದೆ. ಆಫ್ ಆಗಿರುವಾಗ, ಧ್ವನಿಯ ಬದಲಿಗೆ ಕೊನೆಯಲ್ಲಿ ಪ್ಲೇ ಆಗುತ್ತದೆ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ಸ್ಟಕ್ ಟಚ್ ಅನ್ವೇಷಣೆಯನ್ನು ಸರಿಪಡಿಸಿ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ಅನುಮತಿಯಿಲ್ಲದೆ, SandFly ಮಾತ್ರ ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯು ಅಂಟಿಕೊಂಡಿರಬಹುದು ಎಂದು ಹೇಳಬಹುದು. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಅನುಮತಿಸಲು, ರನ್ ಮಾಡಿ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

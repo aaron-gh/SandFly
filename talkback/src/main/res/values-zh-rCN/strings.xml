@@ -1256,7 +1256,7 @@
   <string name="title_text_formatting_menu">描述文字格式</string>
   <string name="summary_text_formatting_menu">读出不同的文字格式，例如粗体、斜体、下划线等</string>
   <string name="title_text_formatting_inline">读出文字格式信息</string>
-  <string name="title_switch_text_formatting">开启或关闭文本格式播报</string>
+  <string name="title_switch_text_formatting">朗读文本格式</string>
   <string name="summary_text_formatting_verbosity">读出不同的文字样式，例如粗体和斜体</string>
   <string name="summary_text_formatting_selector">是否朗读粗体和斜体等格式</string>
   <string name="title_text_formatting_verbosity_options">文字格式选项</string>
@@ -1387,7 +1387,7 @@
     <string name="title_pref_voice_profile_language">语言</string>
 
     <!-- Title for the setting with a voice profile's voice. [CHAR LIMIT=NONE] -->
-    <string name="title_pref_voice_profile_voice">声音</string>
+    <string name="title_pref_voice_profile_voice">语音</string>
 
     <!--
       Choice of language or voice for a voice profile that uses the speech engine's own default.
@@ -1618,7 +1618,7 @@
     <string name="permission_braille_display_description">允许应用请求成为 SandFly 的盲文显示器。如果你在 SandFly 中允许，它就能读取屏幕上的全部内容并控制你的设备。SandFly 会先询问你。</string>
 
     <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
-    <string name="title_pref_phonetic_letters_mode">用音标朗读字母</string>
+    <string name="title_pref_phonetic_letters_mode">以拼读单词朗读字母</string>
 
     <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
     <string name="phonetic_letters_mode_off">关闭</string>

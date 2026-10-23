@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Matnni formatlashni tavsiflash</string>
   <string name="summary_text_formatting_menu">Qalin, qiya, tagchiziq va boshqalar kabi oʻzgarishlar uchun</string>
   <string name="title_text_formatting_inline">Oʻqiladigan matn formati</string>
-  <string name="title_switch_text_formatting">Oʻqiladigan matn formati</string>
+  <string name="title_switch_text_formatting">Matn formatini aytish</string>
   <string name="summary_text_formatting_verbosity">Qalin va qiya kabi oʻzgarishlar uchun</string>
   <string name="summary_text_formatting_selector">Qalin va qiya kabi formatlash, oʻqib eshittirish-eshittirmaslikni oʻzgartirish</string>
   <string name="title_text_formatting_verbosity_options">Matnni formatlash parametrlari</string>
@@ -1317,7 +1317,7 @@
     <string name="title_pref_add_voice_profile">Ovozli profil qoʻshish</string>
     <string name="voice_profile_new_name">Ovozli profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Ovozli profil allaqachon <xliff:g id="name" example="Reading">%1$s</xliff:g> deb nomlangan</string>
-    <string name="title_pref_voice_profile_name">Ism</string>
+    <string name="title_pref_voice_profile_name">Nomi</string>
     <string name="title_pref_voice_profile_language">Til</string>
     <string name="title_pref_voice_profile_voice">Ovoz</string>
     <string name="voice_profile_engine_default">Standart</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Ekran o\'chganda</string>
     <string name="title_screen_announcements_screen_on">Ekran yoqilganda</string>
     <string name="title_screen_announcements_unlock">Telefon qulfdan chiqarilganda</string>
-    <string name="title_pref_say_screen_off">“Ekran o‘chirilgan” deng</string>
-    <string name="title_pref_say_device_unlocked">“Qurilma qulfdan chiqarilgan” deb ayting</string>
+    <string name="title_pref_say_screen_off">“Ekran oʻchirildi” deb aytish</string>
+    <string name="title_pref_say_device_unlocked">“Qurilma qulfdan chiqarildi” deb aytish</string>
     <string name="title_pref_announce_time">Vaqt</string>
     <string name="title_pref_announce_ringer_mode">Qo\'ng\'iroq rejimi</string>
     <string name="summary_pref_announce_ringer_mode">Qo\'ng\'iroq tovushi tebranish yoki jim bo\'lganda ayting</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Ilovaga SandFly ovozingiz bilan matn aytishni soʻrashiga ruxsat beradi. SandFly ilova gapirishdan oldin sizdan soʻraydi.</string>
     <string name="permission_braille_display_label">SandFly uchun brayl displey bo\'lishni so\'rang</string>
     <string name="permission_braille_display_description">Ilovaga SandFly uchun brayl displeyi boʻlishni soʻrashiga ruxsat beradi. Agar siz SandFly da ruxsat bersangiz, u ekrandagi hamma narsani oʻqiy oladi va qurilmangizni boshqara oladi. SandFly sizdan birinchi boʻlib soʻraydi.</string>
-    <string name="title_pref_phonetic_letters_mode">Harflarni fonetik tarzda gapiring</string>
+    <string name="title_pref_phonetic_letters_mode">Harflarni fonetik aytish</string>
     <string name="phonetic_letters_mode_off">Oʻchiq</string>
     <string name="phonetic_letters_mode_after_letter_delay">Maktubdan keyin, \"h, mehmonxona\" kabi kechiktirildi</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Maktubdan keyin \"h hotel\" kabi kechikish yo\'q</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Oʻqilmasin</string>
     <string name="pref_table_speak_row_column_numbers_title">Qator va ustun raqamlarini ayting</string>
     <string name="pref_table_speak_row_column_numbers_summary">Jadval kataklari uchun satr va ustun raqamlarini e\'lon qiling</string>
-    <string name="title_pref_speak_volume_changes">Ovoz balandligi o\'zgaradi</string>
+    <string name="title_pref_speak_volume_changes">Ovoz balandligi oʻzgarishlarini aytish</string>
     <string name="summary_pref_speak_volume_changes">Ovoz balandligi tugmachalarini bosganingizdan keyin yangi ovoz balandligini ayting</string>
-    <string name="title_pref_speak_notifications">Bildirishnomalarni gapiring</string>
+    <string name="title_pref_speak_notifications">Bildirishnomalarni oʻqib berish</string>
     <string name="summary_pref_speak_notifications">Yangi bildirishnomalar kelganda ularni ovoz chiqarib oʻqing. Kiruvchi qo\'ng\'iroqlar doimo o\'qiladi.</string>
     <string name="title_pref_notification_list">SandFly bildirishnomalari roʻyxatidan foydalaning</string>
     <string name="title_pref_notification_parts">Bildirishnoma tafsilotlari</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Faqat navigatsiya panelida</string>
     <string name="value_lift_to_activate_entire_screen">Butun ekran</string>
     <string name="template_lift_to_activate_changed">Faollashtirish uchun ko\'taring: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Atrofga o\'rang</string>
+    <string name="title_pref_wrap_around">Boshiga qaytish</string>
     <string name="summary_pref_wrap_around">Oxirgi elementni surish birinchisiga o\'tadi va birinchisidan o\'tib oxirgisiga o\'tadi. O\'chiq bo\'lsa, uning o\'rniga oxirida ovoz eshitiladi.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Qopqoq teginish tekshiruvini tuzating</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ruxsatisiz SandFly faqat teginish orqali oʻrganish toʻxtab qolishi mumkinligini aytishi mumkin. Uni tuzatish uchun quyidagi amalni bajaring: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

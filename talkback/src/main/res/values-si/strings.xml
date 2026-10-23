@@ -1368,7 +1368,7 @@
     <string name="title_screen_announcements_screen_off">තිරය නිවා දැමූ විට</string>
     <string name="title_screen_announcements_screen_on">තිරය හැරෙන විට</string>
     <string name="title_screen_announcements_unlock">දුරකථනය අගුළු හැර ඇති විට</string>
-    <string name="title_pref_say_screen_off">\"තිරය ක්‍රියාවිරහිත කරන්න\" කියන්න</string>
+    <string name="title_pref_say_screen_off">\"තිරය අක්‍රියයි\" කියන්න</string>
     <string name="title_pref_say_device_unlocked">\"උපාංගය අගුළු හරින ලදී\" යැයි පවසන්න</string>
     <string name="title_pref_announce_time">කාලය</string>
     <string name="title_pref_announce_ringer_mode">නාද කිරීමේ මාදිලිය</string>
@@ -1376,7 +1376,7 @@
     <string name="title_pref_category_feedback">ප්‍රතිපෝෂණ</string>
     <string name="title_pref_category_typing_and_braille">ටයිප් කිරීම සහ බ්‍රේල්</string>
     <string name="title_pref_category_apps">යෙදුම්</string>
-    <string name="title_pref_touch_activation">ස්පර්ශ කිරීම සහ සක්රිය කිරීම</string>
+    <string name="title_pref_touch_activation">ස්පර්ශ කිරීම සහ සක්‍රිය කිරීම</string>
     <string name="title_pref_navigation">සංචාලනය</string>
     <string name="title_pref_category_more">තවත්</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch සඳහා අභිනයන් වෙන් කරන්න</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">කියවන්න එපා</string>
     <string name="pref_table_speak_row_column_numbers_title">පේළි සහ තීරු අංක කථා කරන්න</string>
     <string name="pref_table_speak_row_column_numbers_summary">වගු කොටු සඳහා පේළි සහ තීරු අංක නිවේදනය කරන්න</string>
-    <string name="title_pref_speak_volume_changes">කථන ශබ්දය වෙනස් කිරීම</string>
+    <string name="title_pref_speak_volume_changes">හඬ පරිමා වෙනස්කම් කියන්න</string>
     <string name="summary_pref_speak_volume_changes">ඔබ වෙළුම් යතුරු එබීමෙන් පසු නව පරිමාව කියන්න</string>
-    <string name="title_pref_speak_notifications">කථන දැනුම්දීම්</string>
+    <string name="title_pref_speak_notifications">දැනුම්දීම් කියවන්න</string>
     <string name="summary_pref_speak_notifications">නව දැනුම්දීම් පැමිණෙන විට ශබ්ද නඟා කියවන්න. එන ඇමතුම් සෑම විටම කියවනු ලැබේ.</string>
     <string name="title_pref_notification_list">SandFly හි දැනුම්දීම් ලැයිස්තුව භාවිතා කරන්න</string>
     <string name="title_pref_notification_parts">දැනුම්දීම් විස්තර</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">සංචාලන තීරුවේ පමණි</string>
     <string name="value_lift_to_activate_entire_screen">මුළු තිරය</string>
     <string name="template_lift_to_activate_changed">සක්‍රිය කිරීමට එසවීම: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">වටා එති</string>
+    <string name="title_pref_wrap_around">ආරම්භයට ආපසු යන්න</string>
     <string name="summary_pref_wrap_around">අවසාන අයිතමය පසුකර ස්වයිප් කිරීම පළමුවැන්නට යන අතර පළමුවැන්න පසුකර අන්තිමයට යයි. අක්‍රිය වූ විට, ඒ වෙනුවට ශබ්දයක් අවසානයේ වාදනය වේ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">සිරවී ඇති ස්පර්ශ ගවේෂණය නිවැරදි කරන්න</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP අවසරයකින් තොරව, SandFly හට පැවසිය හැක්කේ ස්පර්ශ ගවේෂණය ඇණහිටිය හැකි බව පමණි. එය නිවැරදි කිරීමට ඉඩ දීමට, ධාවනය කරන්න: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

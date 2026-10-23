@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm">Eliminare <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Elimina</string>
     <string name="summary_pref_tts_engine_default">Predefinito del sistema</string>
-    <string name="title_pref_speech_pitch">Intonazione del discorso</string>
+    <string name="title_pref_speech_pitch">Tono della voce</string>
     <string name="title_pref_speech_stream">Volume voce</string>
     <string name="summary_selector_speech_stream">Passa tra i volumi di accessibilità, media, suoneria e chiamata</string>
     <string name="speech_stream_accessibility">Volume Accessibilità</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Quando lo schermo si spegne</string>
     <string name="title_screen_announcements_screen_on">Quando lo schermo si accende</string>
     <string name="title_screen_announcements_unlock">Quando il telefono è sbloccato</string>
-    <string name="title_pref_say_screen_off">Di\' \"Schermo spento\"</string>
-    <string name="title_pref_say_device_unlocked">Di\' \"Dispositivo sbloccato\"</string>
+    <string name="title_pref_say_screen_off">Leggi \"Schermo spento\"</string>
+    <string name="title_pref_say_device_unlocked">Leggi \"Dispositivo sbloccato\"</string>
     <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modalità suoneria</string>
     <string name="summary_pref_announce_ringer_mode">Di\' quando la suoneria è impostata su vibrazione o silenziosa</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_column_headers_entry_off">Non leggere</string>
     <string name="pref_table_speak_row_column_numbers_title">Pronuncia i numeri di riga e di colonna</string>
     <string name="pref_table_speak_row_column_numbers_summary">Annuncia i numeri di riga e di colonna per le celle della tabella</string>
-    <string name="title_pref_speak_volume_changes">Parlare cambiamenti di volume</string>
+    <string name="title_pref_speak_volume_changes">Leggi le variazioni di volume</string>
     <string name="summary_pref_speak_volume_changes">Pronuncia il nuovo volume dopo aver premuto i tasti del volume</string>
     <string name="title_pref_speak_notifications">Pronuncia le notifiche</string>
     <string name="summary_pref_speak_notifications">Leggi ad alta voce le nuove notifiche quando arrivano. Le chiamate in arrivo vengono sempre lette.</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Solo sulla barra di navigazione</string>
     <string name="value_lift_to_activate_entire_screen">Schermo intero</string>
     <string name="template_lift_to_activate_changed">Sollevare per attivare: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Avvolgiti</string>
+    <string name="title_pref_wrap_around">Navigazione circolare</string>
     <string name="summary_pref_wrap_around">Se si scorre oltre l\'ultimo elemento si arriva al primo, mentre oltre il primo si arriva all\'ultimo. Quando è disattivato, viene riprodotto un suono alla fine.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Risolto il problema con l\'esplorazione touch bloccata</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Senza l\'autorizzazione DUMP, SandFly può solo dire che l\'esplorazione tramite tocco potrebbe essere bloccata. Per lasciare che lo risolva, esegui: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

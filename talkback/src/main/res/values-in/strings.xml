@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Hanya di bilah navigasi</string>
     <string name="value_lift_to_activate_entire_screen">Seluruh layar</string>
     <string name="template_lift_to_activate_changed">Angkat untuk mengaktifkan: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Bungkus</string>
+    <string name="title_pref_wrap_around">Kembali ke awal</string>
     <string name="summary_pref_wrap_around">Menggesek melewati item terakhir akan menuju ke item pertama, dan melewati item pertama akan menuju ke item terakhir. Saat mati, suara akan diputar di bagian akhir.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Perbaiki eksplorasi sentuhan yang macet</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Tanpa izin DUMP, SandFly hanya dapat mengatakan bahwa eksplorasi sentuh mungkin terhenti. Untuk memperbaikinya, jalankan: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

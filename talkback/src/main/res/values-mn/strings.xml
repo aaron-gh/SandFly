@@ -1368,15 +1368,15 @@
     <string name="title_screen_announcements_screen_off">Дэлгэц унтрах үед</string>
     <string name="title_screen_announcements_screen_on">Дэлгэц асах үед</string>
     <string name="title_screen_announcements_unlock">Утасны түгжээг тайлсан үед</string>
-    <string name="title_pref_say_screen_off">\"Дэлгэц унтраах\" гэж хэлээрэй</string>
-    <string name="title_pref_say_device_unlocked">\"Төхөөрөмжийн түгжээг тайлсан\" гэж хэлээрэй</string>
+    <string name="title_pref_say_screen_off">\"Дэлгэц унтарсан\" гэж хэлэх</string>
+    <string name="title_pref_say_device_unlocked">\"Төхөөрөмжийн түгжээг тайлсан\" гэж хэлэх</string>
     <string name="title_pref_announce_time">Цаг</string>
     <string name="title_pref_announce_ringer_mode">Хонхны горим</string>
     <string name="summary_pref_announce_ringer_mode">Хонхны дуу чичиргээ эсвэл чимээгүй болсныг хэлнэ үү</string>
     <string name="title_pref_category_feedback">Хариу үйлдэл</string>
     <string name="title_pref_category_typing_and_braille">Шивэх болон брайль</string>
     <string name="title_pref_category_apps">Аппууд</string>
-    <string name="title_pref_touch_activation">Хүрч, идэвхжүүлнэ үү</string>
+    <string name="title_pref_touch_activation">Хүрэлт ба идэвхжүүлэлт</string>
     <string name="title_pref_navigation">Навигац</string>
     <string name="title_pref_category_more">Бусад</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch дохиог нөөцлөх</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Апп нь таны SandFly хоолойгоор текст хэлэхийг хүсэх боломжийг олгоно. SandFly програмыг ярихаас өмнө танаас асууна.</string>
     <string name="permission_braille_display_label">SandFly-ийн брайл дэлгэц байхыг хүсэх</string>
     <string name="permission_braille_display_description">Апп нь SandFly-ийн брайл дэлгэц байхыг хүсэх боломжийг олгоно. Хэрэв та үүнийг SandFly-д зөвшөөрвөл дэлгэц дээрх бүх зүйлийг уншиж, таны төхөөрөмжийг удирдах боломжтой. SandFly эхлээд танаас асууж байна.</string>
-    <string name="title_pref_phonetic_letters_mode">Үсгийг дуудлагын дагуу ярина</string>
+    <string name="title_pref_phonetic_letters_mode">Үсгийг авиа зүйн дагуу хэлэх</string>
     <string name="phonetic_letters_mode_off">Унтраалттай</string>
     <string name="phonetic_letters_mode_after_letter_delay">Захидлын дараа \"h, зочид буудал\" гэх мэт саатсан.</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Захидлын дараа \"h hotel\" гэх мэт сааталгүй</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Уншихгүй</string>
     <string name="pref_table_speak_row_column_numbers_title">Мөр, баганын дугаарыг хэл</string>
     <string name="pref_table_speak_row_column_numbers_summary">Хүснэгтийн нүднүүдийн мөр, баганын дугаарыг зарлана</string>
-    <string name="title_pref_speak_volume_changes">Дууны түвшний өөрчлөлт</string>
+    <string name="title_pref_speak_volume_changes">Дууны түвшний өөрчлөлтийг хэлэх</string>
     <string name="summary_pref_speak_volume_changes">Дууны түвшний товчлуурыг дарсны дараа шинэ дууг хэлнэ үү</string>
-    <string name="title_pref_speak_notifications">Мэдэгдэл ярих</string>
+    <string name="title_pref_speak_notifications">Мэдэгдлийг уншиж өгөх</string>
     <string name="summary_pref_speak_notifications">Шинэ мэдэгдлүүдийг ирэхэд чангаар уншаарай. Ирж буй дуудлагыг байнга уншдаг.</string>
     <string name="title_pref_notification_list">SandFly-н мэдэгдлийн жагсаалтыг ашиглана уу</string>
     <string name="title_pref_notification_parts">Мэдэгдлийн дэлгэрэнгүй</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Зөвхөн навигацийн талбар дээр</string>
     <string name="value_lift_to_activate_entire_screen">Бүхэл бүтэн дэлгэц</string>
     <string name="template_lift_to_activate_changed">Идэвхжүүлэхийн тулд өргө: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Эргэн тойронд нь ороох</string>
+    <string name="title_pref_wrap_around">Эхэнд нь буцах</string>
     <string name="summary_pref_wrap_around">Сүүлийн зүйлийн хажуугаар шударвал эхнийх рүү, эхнийх нь өнгөрвөл сүүлчийнх рүү очно. Унтраах үед төгсгөлд нь дуу гарна.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Гацсан мэдрэгчтэй хайгуулыг засна уу</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP зөвшөөрөлгүй бол SandFly нь мэдрэгчтэй хайлт гацаж магадгүй гэж л хэлж чадна. Үүнийг засахын тулд дараахыг ажиллуулна уу: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

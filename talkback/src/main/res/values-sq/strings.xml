@@ -1353,8 +1353,8 @@
     <string name="battery_optimization_notification_text">Në këtë telefon, kursyesi i baterisë mund të ndalojë SandFly pasi ekrani fiket, kështu që bie në heshtje derisa të rindizet. Prekni për të hapur optimizimin e baterisë, zgjidhni Të gjitha aplikacionet, gjeni SandFly dhe zgjidhni Mos optimizo.</string>
     <string name="title_pref_mute_speech_while_recording">I qetë gjatë regjistrimit</string>
     <string name="summary_pref_mute_speech_while_recording">Ndërsa një aplikacion regjistron pa kufje të lidhura, SandFly flet vetëm në përgjigje të gjesteve, tasteve dhe shkrimit tuaj dhe qëndron i heshtur për gjëra të tilla si njoftimet, në mënyrë që ato të mos regjistrohen.</string>
-    <string name="title_pref_switch_languages">Ndërroni gjuhën automatikisht</string>
-    <string name="title_pref_switch_dialects">Ndërroni automatikisht dialektin</string>
+    <string name="title_pref_switch_languages">Ndërro gjuhën automatikisht</string>
+    <string name="title_pref_switch_dialects">Ndërro automatikisht dialektin</string>
     <string name="category_collapsed">Seksioni i palosur</string>
     <string name="category_expanded">Seksioni i zgjeruar</string>
     <string name="title_pref_speak_nav_bar_buttons">Flisni butonat e shiritit të navigimit</string>
@@ -1376,7 +1376,7 @@
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Shkrimi dhe shkrimi braille</string>
     <string name="title_pref_category_apps">Aplikacionet</string>
-    <string name="title_pref_touch_activation">Prekni dhe aktivizoni</string>
+    <string name="title_pref_touch_activation">Prekja dhe aktivizimi</string>
     <string name="title_pref_navigation">Navigimi</string>
     <string name="title_pref_category_more">Më shumë</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervo gjestet për Vibration Watch</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
     <string name="permission_braille_display_label">kërkoni të jetë një ekran braille për SandFly</string>
     <string name="permission_braille_display_description">Lejon që aplikacioni të kërkojë të jetë një ekran braille për SandFly. Nëse e lejoni në SandFly, ai mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet ju së pari.</string>
-    <string name="title_pref_phonetic_letters_mode">Flisni shkronja në mënyrë fonetike</string>
+    <string name="title_pref_phonetic_letters_mode">Fol shkronjat fonetikisht</string>
     <string name="phonetic_letters_mode_off">Joaktive</string>
     <string name="phonetic_letters_mode_after_letter_delay">Pas letrës, me vonesë, si \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Pas letrës, pa vonesë, si \"h hotel\"</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Mos lexo</string>
     <string name="pref_table_speak_row_column_numbers_title">Flisni numrat e rreshtave dhe kolonave</string>
     <string name="pref_table_speak_row_column_numbers_summary">Njoftoni numrat e rreshtave dhe kolonave për qelizat e tabelës</string>
-    <string name="title_pref_speak_volume_changes">Ndryshimet e volumit të të folurit</string>
+    <string name="title_pref_speak_volume_changes">Lexo ndryshimet e volumit</string>
     <string name="summary_pref_speak_volume_changes">Thoni volumin e ri pasi të keni shtypur tastet e volumit</string>
-    <string name="title_pref_speak_notifications">Flisni njoftimet</string>
+    <string name="title_pref_speak_notifications">Lexo njoftimet me zë</string>
     <string name="summary_pref_speak_notifications">Lexoni me zë të lartë njoftimet e reja kur të mbërrijnë. Thirrjet hyrëse lexohen gjithmonë.</string>
     <string name="title_pref_notification_list">Përdorni listën e njoftimeve të SandFly</string>
     <string name="title_pref_notification_parts">Detajet e njoftimit</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Vetëm në shiritin e navigimit</string>
     <string name="value_lift_to_activate_entire_screen">I gjithë ekrani</string>
     <string name="template_lift_to_activate_changed">Ngrini për të aktivizuar: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Mbështilleni rreth</string>
+    <string name="title_pref_wrap_around">Navigim rrethor</string>
     <string name="summary_pref_wrap_around">Duke rrëshqitur përpara artikullit të fundit shkon tek i pari dhe tejkalimi i të parit shkon tek i fundit. Kur fiket, në vend të kësaj luhet një tingull në fund.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Rregulloni eksplorimin me prekje të mbërthyer</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Pa lejen DUMP, SandFly mund të thotë vetëm se eksplorimi me prekje mund të jetë i bllokuar. Për ta rregulluar, ekzekutoni: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

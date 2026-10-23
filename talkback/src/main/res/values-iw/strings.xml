@@ -1353,8 +1353,8 @@
     <string name="battery_optimization_notification_text">בטלפון זה, חיסכון הסוללה יכול להפסיק SandFly לאחר כיבוי המסך, כך שהוא משתתק עד שהוא מופעל מחדש. הקש כדי לפתוח את אופטימיזציית הסוללה, בחר כל האפליקציות, מצא את SandFly ובחר אל תבצע אופטימיזציה.</string>
     <string name="title_pref_mute_speech_while_recording">שקט בזמן ההקלטה</string>
     <string name="summary_pref_mute_speech_while_recording">בעוד אפליקציה מקליטה ללא אוזניות מחוברות, SandFly מדבר רק בתגובה למחוות, למקשים והקלדה שלך, ונשאר שקט לדברים כמו התראות, כך שהם לא מוקלטים.</string>
-    <string name="title_pref_switch_languages">החלף שפה אוטומטית</string>
-    <string name="title_pref_switch_dialects">החלף ניב אוטומטי</string>
+    <string name="title_pref_switch_languages">החלפת שפה אוטומטית</string>
+    <string name="title_pref_switch_dialects">החלפת ניב אוטומטית</string>
     <string name="category_collapsed">קטע מכווץ</string>
     <string name="category_expanded">קטע מורחב</string>
     <string name="title_pref_speak_nav_bar_buttons">דיבור לחצני סרגל הניווט</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">כשהמסך נכבה</string>
     <string name="title_screen_announcements_screen_on">כשהמסך נדלק</string>
     <string name="title_screen_announcements_unlock">כשהטלפון לא נעול</string>
-    <string name="title_pref_say_screen_off">אמור \"מסך כבוי\"</string>
-    <string name="title_pref_say_device_unlocked">אמור \"התקן לא נעול\"</string>
+    <string name="title_pref_say_screen_off">הקראת \"מסך כבוי\"</string>
+    <string name="title_pref_say_device_unlocked">הקראת \"המכשיר נפתח\"</string>
     <string name="title_pref_announce_time">זמן</string>
     <string name="title_pref_announce_ringer_mode">מצב צלצול</string>
     <string name="summary_pref_announce_ringer_mode">אמור מתי הצלצול מוגדר לרטוט או שקט</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">מאפשר לאפליקציה לבקש לומר טקסט בקולך SandFly. SandFly שואל אותך לפני שהאפליקציה יכולה לדבר.</string>
     <string name="permission_braille_display_label">בקש להיות צג ברייל עבור SandFly</string>
     <string name="permission_braille_display_description">מאפשר לאפליקציה לבקש להיות צג ברייל עבור SandFly. אם תאפשר את זה ב-SandFly, זה יכול לקרוא הכל על המסך ולשלוט במכשיר שלך. SandFly שואל אותך קודם.</string>
-    <string name="title_pref_phonetic_letters_mode">דבר אותיות באופן פונטי</string>
+    <string name="title_pref_phonetic_letters_mode">הקראת אותיות באופן פונטי</string>
     <string name="phonetic_letters_mode_off">מצב מושבת</string>
     <string name="phonetic_letters_mode_after_letter_delay">אחרי המכתב, מתעכב, כמו \"ח, מלון\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">אחרי המכתב, ללא עיכוב, כמו \"h hotel\"</string>
@@ -1427,7 +1427,7 @@
     <string name="pref_table_speak_row_column_numbers_summary">הכרזה על מספרי שורות ועמודות עבור תאי טבלה</string>
     <string name="title_pref_speak_volume_changes">אמור שינויים בעוצמת הקול</string>
     <string name="summary_pref_speak_volume_changes">אמור את עוצמת הקול החדשה לאחר שתלחץ על מקשי עוצמת הקול</string>
-    <string name="title_pref_speak_notifications">אמור התראות</string>
+    <string name="title_pref_speak_notifications">הקראת התראות</string>
     <string name="summary_pref_speak_notifications">קרא התראות חדשות בקול כשהן מגיעות. שיחות נכנסות נקראות תמיד.</string>
     <string name="title_pref_notification_list">השתמש ברשימת ההתראות של SandFly</string>
     <string name="title_pref_notification_parts">פרטי הודעה</string>
@@ -1682,7 +1682,7 @@
     <string name="value_lift_to_activate_navigation_bar">רק בסרגל הניווט</string>
     <string name="value_lift_to_activate_entire_screen">מסך שלם</string>
     <string name="template_lift_to_activate_changed">הרם להפעלה: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">לעטוף מסביב</string>
+    <string name="title_pref_wrap_around">ניווט מעגלי</string>
     <string name="summary_pref_wrap_around">החלקה על פני הפריט האחרון עוברת אל הראשון, ומעבר הראשון עובר אל האחרון. במצב כבוי, במקום מתנגן צליל בסוף.</string>
     <string name="title_pref_fix_stuck_touch_exploration">תקן חקר מגע תקוע</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ללא הרשאת DUMP, SandFly יכול רק לומר שחקר המגע עשוי להיות תקוע. כדי לתקן את זה, הפעל: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

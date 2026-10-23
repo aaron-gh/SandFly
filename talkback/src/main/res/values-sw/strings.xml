@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Eleza muundo wa maandishi</string>
   <string name="summary_text_formatting_menu">Kwa mabadiliko kama vile herufi nzito, italiki, kupigia mstari na mengineyo</string>
   <string name="title_text_formatting_inline">Muundo wa kutamka maandishi</string>
-  <string name="title_switch_text_formatting">Muundo wa kutamka maandishi</string>
+  <string name="title_switch_text_formatting">Tamka muundo wa maandishi</string>
   <string name="summary_text_formatting_verbosity">Kwa mabadiliko kama vile herufi nzito na italiki</string>
   <string name="summary_text_formatting_selector">Bainisha ikiwa hatua za kuweka muundo, kama vile herufi nzito na italiki, zitasomwa kwa sauti</string>
   <string name="title_text_formatting_verbosity_options">Chaguo za muundo wa maandishi</string>
@@ -1296,11 +1296,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Funga</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">Injini ya maandishi-hadi-hotuba</string>
-    <string name="title_pref_system_tts_settings">Mipangilio ya mfumo wa maandishi-hadi-hotuba</string>
-    <string name="title_selector_vertical_navigation">Urambazaji wima</string>
+    <string name="title_pref_tts_engine">Injini ya kusoma maandishi kwa sauti</string>
+    <string name="title_pref_system_tts_settings">Mipangilio ya mfumo ya kusoma maandishi kwa sauti</string>
+    <string name="title_selector_vertical_navigation">Usogezaji wima</string>
     <string name="summary_selector_vertical_navigation">Sogeza hadi kwa kipengee kilicho hapa chini au juu, pita vipengee vingine vya safu mlalo</string>
-    <string name="title_selector_switch_tts_engine">Injini ya hotuba</string>
+    <string name="title_selector_switch_tts_engine">Injini ya sauti</string>
     <string name="summary_selector_switch_tts_engine">Badilisha kati ya injini za hotuba zilizosakinishwa</string>
     <string name="title_selector_voice_profile">Wasifu wa sauti</string>
     <string name="title_pref_voice_profiles">Wasifu wa sauti</string>
@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm">Ungependa kufuta <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Futa</string>
     <string name="summary_pref_tts_engine_default">Chaguomsingi ya mfumo</string>
-    <string name="title_pref_speech_pitch">Kiwango cha hotuba</string>
+    <string name="title_pref_speech_pitch">Kidatu cha sauti</string>
     <string name="title_pref_speech_stream">Sauti ya utamkaji</string>
     <string name="summary_selector_speech_stream">Badilisha kati ya ufikiaji, midia, sauti za simu na kupiga simu</string>
     <string name="speech_stream_accessibility">Sauti ya zana za ufikivu</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Usisome</string>
     <string name="pref_table_speak_row_column_numbers_title">Ongea nambari za safu mlalo na safu wima</string>
     <string name="pref_table_speak_row_column_numbers_summary">Tangaza nambari za safu mlalo na safu wima kwa visanduku vya jedwali</string>
-    <string name="title_pref_speak_volume_changes">Ongea mabadiliko ya sauti</string>
+    <string name="title_pref_speak_volume_changes">Soma mabadiliko ya sauti</string>
     <string name="summary_pref_speak_volume_changes">Sema sauti mpya baada ya kubonyeza vitufe vya sauti</string>
-    <string name="title_pref_speak_notifications">Ongea arifa</string>
+    <string name="title_pref_speak_notifications">Soma arifa kwa sauti</string>
     <string name="summary_pref_speak_notifications">Soma arifa mpya kwa sauti zinapofika. Simu zinazoingia husomwa kila wakati.</string>
     <string name="title_pref_notification_list">Tumia orodha ya arifa za SandFly</string>
     <string name="title_pref_notification_parts">Maelezo ya arifa</string>
@@ -1568,7 +1568,7 @@
     <string name="shortcut_open_app">Fungua <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Tembeza hadi juu</string>
     <string name="shortcut_write_reading_control">Andika barua ya udhibiti wa kusoma</string>
-    <string name="title_pref_reading_control_letters">Barua za alfabeti zilizoandikwa kwa mkono</string>
+    <string name="title_pref_reading_control_letters">Herufi zilizoandikwa kwa mkono</string>
     <string name="reading_control_letter_none">Hamna</string>
     <string name="handwriting_prompt">Andika herufi ya alfabeti</string>
     <string name="handwriting_closed">Mwandiko umefungwa</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Kwenye upau wa kusogeza pekee</string>
     <string name="value_lift_to_activate_entire_screen">Skrini nzima</string>
     <string name="template_lift_to_activate_changed">Inua ili kuwezesha: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Funga pande zote</string>
+    <string name="title_pref_wrap_around">Rudi mwanzo</string>
     <string name="summary_pref_wrap_around">Kutelezesha kidole kupita kipengee cha mwisho huenda kwa cha kwanza, na kupita cha kwanza hadi cha mwisho. Wakati imezimwa, sauti hucheza mwishoni badala yake.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Rekebisha uchunguzi wa mguso uliokwama</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bila ruhusa ya DUMP, SandFly inaweza tu kusema kwamba uchunguzi wa kugusa unaweza kukwama. Ili kuiruhusu kuirekebisha, endesha: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

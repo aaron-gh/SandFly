@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Опиши форматирање текста</string>
   <string name="summary_text_formatting_menu">За промене као што су подебљано, курзив, подвучено и друго</string>
   <string name="title_text_formatting_inline">Форматирање текста за говор</string>
-  <string name="title_switch_text_formatting">Форматирање текста за говор</string>
+  <string name="title_switch_text_formatting">Изговарај форматирање текста</string>
   <string name="summary_text_formatting_verbosity">За промене као што су подебљано и курзив</string>
   <string name="summary_text_formatting_selector">Промените да ли се наглас чита форматирање, на пример подебљано и курзив</string>
   <string name="title_text_formatting_verbosity_options">Опције форматирања текста</string>
@@ -1300,7 +1300,7 @@
     <string name="title_pref_system_tts_settings">Системска подешавања претварања текста у говор</string>
     <string name="title_selector_vertical_navigation">Вертикална навигација</string>
     <string name="summary_selector_vertical_navigation">Пређите на ставку испод или изнад, поред осталих ставки у реду</string>
-    <string name="title_selector_switch_tts_engine">Говорна машина</string>
+    <string name="title_selector_switch_tts_engine">Механизам за говор</string>
     <string name="summary_selector_switch_tts_engine">Пребацивање између инсталираних говорних машина</string>
     <string name="title_selector_voice_profile">Гласовни профил</string>
     <string name="title_pref_voice_profiles">Гласовни профили</string>
@@ -1317,7 +1317,7 @@
     <string name="title_pref_add_voice_profile">Додај гласовни профил</string>
     <string name="voice_profile_new_name">Гласовни профил <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Гласовни профил се већ зове <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Име</string>
+    <string name="title_pref_voice_profile_name">Назив</string>
     <string name="title_pref_voice_profile_language">Језик</string>
     <string name="title_pref_voice_profile_voice">Глас</string>
     <string name="voice_profile_engine_default">Подразумевано</string>
@@ -1353,8 +1353,8 @@
     <string name="battery_optimization_notification_text">На овом телефону, уштеда батерије може да се заустави SandFly након што се екран искључи, тако да утихне док се поново не покрене. Додирните да бисте отворили оптимизацију батерије, изаберите Све апликације, пронађите SandFly и изаберите Не оптимизуј.</string>
     <string name="title_pref_mute_speech_while_recording">Тихо током снимања</string>
     <string name="summary_pref_mute_speech_while_recording">Док апликација снима без прикључених слушалица, SandFly говори само као одговор на ваше покрете, тастере и куцање, и остаје тих за ствари као што су обавештења, тако да се не снимају.</string>
-    <string name="title_pref_switch_languages">Аутоматски мењајте језик</string>
-    <string name="title_pref_switch_dialects">Аутоматски мењајте дијалект</string>
+    <string name="title_pref_switch_languages">Аутоматски мењај језик</string>
+    <string name="title_pref_switch_dialects">Аутоматски мењај дијалект</string>
     <string name="category_collapsed">Скупљени одељак</string>
     <string name="category_expanded">Проширени одељак</string>
     <string name="title_pref_speak_nav_bar_buttons">Изговарајте дугмад на траци за навигацију</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Када се екран искључи</string>
     <string name="title_screen_announcements_screen_on">Када се екран укључи</string>
     <string name="title_screen_announcements_unlock">Када је телефон откључан</string>
-    <string name="title_pref_say_screen_off">Реците „Сцреен офф“</string>
-    <string name="title_pref_say_device_unlocked">Реците „Уређај је откључан“</string>
+    <string name="title_pref_say_screen_off">Изговори „Екран је искључен“</string>
+    <string name="title_pref_say_device_unlocked">Изговори „Уређај је откључан“</string>
     <string name="title_pref_announce_time">Време</string>
     <string name="title_pref_announce_ringer_mode">Режим звона</string>
     <string name="summary_pref_announce_ringer_mode">Реците када је звоно подешено да вибрира или нечујно</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Дозвољава апликацији да тражи да каже текст вашим гласом SandFly. SandFly вас пита пре него што апликација може да говори.</string>
     <string name="permission_braille_display_label">тражи да буде Брајев екран за SandFly</string>
     <string name="permission_braille_display_description">Дозвољава апликацији да тражи да буде приказан на Брајевом азбуку за SandFly. Ако то дозволите у SandFly, може да чита све на екрану и контролише ваш уређај. SandFly вас прво пита.</string>
-    <string name="title_pref_phonetic_letters_mode">Говори слова фонетски</string>
+    <string name="title_pref_phonetic_letters_mode">Изговарај слова фонетски</string>
     <string name="phonetic_letters_mode_off">Искључено</string>
     <string name="phonetic_letters_mode_after_letter_delay">После писма, одложено, као \"х, хотел\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">После писма, без одлагања, као \"х хотел\"</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Не читај</string>
     <string name="pref_table_speak_row_column_numbers_title">Изговорите бројеве редова и колона</string>
     <string name="pref_table_speak_row_column_numbers_summary">Најавите бројеве редова и колона за ћелије табеле</string>
-    <string name="title_pref_speak_volume_changes">Промена јачине говора</string>
+    <string name="title_pref_speak_volume_changes">Изговарај промене јачине звука</string>
     <string name="summary_pref_speak_volume_changes">Изговорите нову јачину звука након што притиснете тастере за јачину звука</string>
-    <string name="title_pref_speak_notifications">Изговарајте обавештења</string>
+    <string name="title_pref_speak_notifications">Изговарај обавештења</string>
     <string name="summary_pref_speak_notifications">Прочитајте нова обавештења наглас када стигну. Долазни позиви се увек читају.</string>
     <string name="title_pref_notification_list">Користите листу обавештења SandFly</string>
     <string name="title_pref_notification_parts">Детаљи обавештења</string>
@@ -1682,7 +1682,7 @@
     <string name="value_lift_to_activate_navigation_bar">Само на траци за навигацију</string>
     <string name="value_lift_to_activate_entire_screen">Цео екран</string>
     <string name="template_lift_to_activate_changed">Подигните за активирање: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Замотајте се</string>
+    <string name="title_pref_wrap_around">Кружно кретање</string>
     <string name="summary_pref_wrap_around">Превлачењем преко последње ставке прелази се на прву, а после прве иде на последњу. Када је искључено, на крају се чује звук.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Поправите заглављено истраживање додиром</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволе DUMP, SandFly може само да каже да је истраживање додиром можда заглављено. Да бисте то поправили, покрените: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> андроид.пермиссион.DUMP</string>

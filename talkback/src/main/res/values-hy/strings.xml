@@ -1298,7 +1298,7 @@
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">Տեքստի հնչեցման համակարգ</string>
     <string name="title_pref_system_tts_settings">Տեքստի հնչեցման համակարգային կարգավորումներ</string>
-    <string name="title_selector_vertical_navigation">Ուղղահայաց նավարկություն</string>
+    <string name="title_selector_vertical_navigation">Ուղղահայաց նավիգացիա</string>
     <string name="summary_selector_vertical_navigation">Տեղափոխեք ներքևում կամ վերևում գտնվող տարրը, անցեք շարքի մյուս կետերը</string>
     <string name="title_selector_switch_tts_engine">Խոսքի համակարգ</string>
     <string name="summary_selector_switch_tts_engine">Անցում տեղադրված խոսքի համակարգերի միջև</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով: SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել:</string>
     <string name="permission_braille_display_label">խնդրեք լինել բրայլյան էկրան SandFly համար</string>
     <string name="permission_braille_display_description">Թույլ է տալիս հավելվածին խնդրել, որ լինի բրայլյան էկրան SandFly համար: Եթե ​​թույլ տաք SandFly, այն կարող է կարդալ էկրանի ամեն ինչ և կառավարել ձեր սարքը: SandFly նախ հարցնում է ձեզ:</string>
-    <string name="title_pref_phonetic_letters_mode">Խոսեք տառերը հնչյունական</string>
+    <string name="title_pref_phonetic_letters_mode">Տառերի հնչյունական արտասանություն</string>
     <string name="phonetic_letters_mode_off">Անջատված</string>
     <string name="phonetic_letters_mode_after_letter_delay">Նամակից հետո՝ ուշացած, ինչպես «հ, հյուրանոց»</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Նամակից հետո առանց ուշացման, ինչպես «h hotel»</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Չկարդալ</string>
     <string name="pref_table_speak_row_column_numbers_title">Խոսեք տողերի և սյունակների համարները</string>
     <string name="pref_table_speak_row_column_numbers_summary">Հայտարարեք տողերի և սյունակների համարները աղյուսակի բջիջների համար</string>
-    <string name="title_pref_speak_volume_changes">Խոսքի ձայնի փոփոխությունները</string>
+    <string name="title_pref_speak_volume_changes">Ձայնի ուժգնության փոփոխությունների արտասանում</string>
     <string name="summary_pref_speak_volume_changes">Ձայնի ստեղները սեղմելուց հետո ասեք նոր ձայնը</string>
-    <string name="title_pref_speak_notifications">Խոսեք ծանուցումների մասին</string>
+    <string name="title_pref_speak_notifications">Ծանուցումների արտասանում</string>
     <string name="summary_pref_speak_notifications">Բարձրաձայն կարդացեք նոր ծանուցումները, երբ դրանք հասնում են: Մուտքային զանգերը միշտ կարդացվում են:</string>
     <string name="title_pref_notification_list">Օգտագործեք SandFly-ի ծանուցումների ցանկը</string>
     <string name="title_pref_notification_parts">Ծանուցման մանրամասները</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Միայն նավիգացիոն տողի վրա</string>
     <string name="value_lift_to_activate_entire_screen">Ամբողջ էկրանը</string>
     <string name="template_lift_to_activate_changed">Բարձրացրեք՝ ակտիվացնելու համար՝ <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Փաթաթել շուրջը</string>
+    <string name="title_pref_wrap_around">Ցիկլիկ անցում</string>
     <string name="summary_pref_wrap_around">Վերջին տարրի կողքով սահեցնելը գնում է առաջինին, իսկ առաջինից անցնելը գնում է վերջինին: Երբ անջատված է, փոխարենը վերջում հնչում է ձայն:</string>
     <string name="title_pref_fix_stuck_touch_exploration">Ուղղել խրված հպման հետախուզումը</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Առանց DUMP թույլտվության, SandFly կարող է միայն ասել, որ հպման հետախուզումը կարող է խրված լինել: Որպեսզի դա շտկվի, գործարկեք՝ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission:DUMP</string>

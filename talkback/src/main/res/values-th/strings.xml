@@ -1301,7 +1301,7 @@
     <string name="title_pref_system_tts_settings">การตั้งค่าข้อความเป็นคำพูดของระบบ</string>
     <string name="title_selector_vertical_navigation">การนำทางแนวตั้ง</string>
     <string name="summary_selector_vertical_navigation">ย้ายไปยังรายการด้านล่างหรือด้านบน ผ่านรายการอื่นๆ ของแถว</string>
-    <string name="title_selector_switch_tts_engine">เครื่องมือพูด</string>
+    <string name="title_selector_switch_tts_engine">โปรแกรมสังเคราะห์เสียง</string>
     <string name="summary_selector_switch_tts_engine">สลับระหว่างเครื่องมือเสียงพูดที่ติดตั้งไว้</string>
     <string name="title_selector_voice_profile">โปรไฟล์เสียง</string>
     <string name="title_pref_voice_profiles">โปรไฟล์เสียง</string>
@@ -1355,7 +1355,7 @@
     <string name="title_pref_mute_speech_while_recording">เงียบขณะบันทึก</string>
     <string name="summary_pref_mute_speech_while_recording">ในขณะที่แอปบันทึกโดยไม่ต้องเชื่อมต่อหูฟัง SandFly พูดเฉพาะตอบรับท่าทาง ปุ่ม และการพิมพ์ของคุณเท่านั้น และเงียบไว้สำหรับสิ่งต่างๆ เช่น การแจ้งเตือน เพื่อไม่ให้มีการบันทึก</string>
     <string name="title_pref_switch_languages">สลับภาษาโดยอัตโนมัติ</string>
-    <string name="title_pref_switch_dialects">สลับภาษาโดยอัตโนมัติ</string>
+    <string name="title_pref_switch_dialects">สลับสำเนียงโดยอัตโนมัติ</string>
     <string name="category_collapsed">ส่วนที่ยุบ</string>
     <string name="category_expanded">ส่วนที่ขยาย</string>
     <string name="title_pref_speak_nav_bar_buttons">พูดปุ่มแถบนำทาง</string>
@@ -1369,7 +1369,7 @@
     <string name="title_screen_announcements_screen_off">เมื่อหน้าจอดับลง</string>
     <string name="title_screen_announcements_screen_on">เมื่อหน้าจอเปิดขึ้น</string>
     <string name="title_screen_announcements_unlock">เมื่อโทรศัพท์ถูกปลดล็อค</string>
-    <string name="title_pref_say_screen_off">พูดว่า \"ปิดหน้าจอ\"</string>
+    <string name="title_pref_say_screen_off">พูดว่า \"หน้าจอปิดอยู่\"</string>
     <string name="title_pref_say_device_unlocked">พูดว่า \"ปลดล็อคอุปกรณ์แล้ว\"</string>
     <string name="title_pref_announce_time">เวลา</string>
     <string name="title_pref_announce_ringer_mode">โหมดเสียงเรียกเข้า</string>
@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_navigation_bar">บนแถบนำทางเท่านั้น</string>
     <string name="value_lift_to_activate_entire_screen">ทั้งหน้าจอ</string>
     <string name="template_lift_to_activate_changed">ยกเพื่อเปิดใช้งาน: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">พันรอบ</string>
+    <string name="title_pref_wrap_around">วนกลับไปต้น</string>
     <string name="summary_pref_wrap_around">การปัดผ่านรายการสุดท้ายจะไปที่รายการแรก และผ่านรายการแรกไปยังรายการสุดท้าย เมื่อปิด จะมีเสียงเล่นในตอนท้ายแทน</string>
     <string name="title_pref_fix_stuck_touch_exploration">แก้ไขการสำรวจการสัมผัสที่ค้างอยู่</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">หากไม่ได้รับอนุญาต DUMP SandFly พูดได้เพียงว่าการสำรวจด้วยการสัมผัสอาจค้างอยู่ หากต้องการให้มันแก้ไข ให้รัน: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

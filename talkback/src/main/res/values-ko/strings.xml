@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">화면이 꺼지면</string>
     <string name="title_screen_announcements_screen_on">화면이 켜질 때</string>
     <string name="title_screen_announcements_unlock">휴대폰이 잠금 해제된 경우</string>
-    <string name="title_pref_say_screen_off">\"화면 꺼짐\"이라고 말하세요</string>
-    <string name="title_pref_say_device_unlocked">\"기기 잠금 해제됨\"이라고 말하세요.</string>
+    <string name="title_pref_say_screen_off">\"화면 꺼짐\" 읽기</string>
+    <string name="title_pref_say_device_unlocked">\"기기 잠금 해제됨\" 읽기</string>
     <string name="title_pref_announce_time">시각</string>
     <string name="title_pref_announce_ringer_mode">벨소리 모드</string>
     <string name="summary_pref_announce_ringer_mode">벨소리가 진동 또는 무음으로 설정되어 있을 때 말하기</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">앱이 SandFly 음성으로 텍스트를 말하도록 요청합니다. SandFly 앱이 말하기 전에 묻습니다.</string>
     <string name="permission_braille_display_label">SandFly의 점자 디스플레이가 되어 달라고 요청하세요</string>
     <string name="permission_braille_display_description">앱이 SandFly에 대한 점자 디스플레이가 되도록 요청할 수 있습니다. SandFly에서 허용하면 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly 먼저 물어보세요.</string>
-    <string name="title_pref_phonetic_letters_mode">글자를 음성학적으로 말해보세요</string>
+    <string name="title_pref_phonetic_letters_mode">글자를 음성 기호로 읽기</string>
     <string name="phonetic_letters_mode_off">사용 안함</string>
     <string name="phonetic_letters_mode_after_letter_delay">편지 뒤에는 \'h, 호텔\'처럼 지연돼</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">편지 뒤에는 \"h 호텔\"처럼 지체 없이</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">네비게이션 바에서만</string>
     <string name="value_lift_to_activate_entire_screen">전체 화면</string>
     <string name="template_lift_to_activate_changed">활성화하려면 들어 올리세요: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">둘러싸기</string>
+    <string name="title_pref_wrap_around">순환 탐색</string>
     <string name="summary_pref_wrap_around">마지막 항목을 스와이프하면 첫 번째 항목으로 이동하고, 첫 번째 항목을 지나면 마지막 항목으로 이동합니다. 끄면 대신 소리가 마지막에 재생됩니다.</string>
     <string name="title_pref_fix_stuck_touch_exploration">멈춘 터치 탐색 문제 해결</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 권한이 없으면 SandFly는 터치 탐색이 중단될 수 있다고만 말할 수 있습니다. 문제를 해결하려면 다음을 실행하세요: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

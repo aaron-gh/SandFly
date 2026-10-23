@@ -1300,7 +1300,7 @@
     <string name="title_pref_system_tts_settings">Системні налаштування синтезу мовлення</string>
     <string name="title_selector_vertical_navigation">Вертикальна навігація</string>
     <string name="summary_selector_vertical_navigation">Перейдіть до елемента нижче або вище, повз інші елементи рядка</string>
-    <string name="title_selector_switch_tts_engine">Мовний двигун</string>
+    <string name="title_selector_switch_tts_engine">Синтезатор мовлення</string>
     <string name="summary_selector_switch_tts_engine">Перемикання між встановленими механізмами мовлення</string>
     <string name="title_selector_voice_profile">Голосовий профіль</string>
     <string name="title_pref_voice_profiles">Голосові профілі</string>
@@ -1317,7 +1317,7 @@
     <string name="title_pref_add_voice_profile">Додати голосовий профіль</string>
     <string name="voice_profile_new_name">Голосовий профіль <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Голосовий профіль уже називається <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Ім\'я</string>
+    <string name="title_pref_voice_profile_name">Назва</string>
     <string name="title_pref_voice_profile_language">Мова</string>
     <string name="title_pref_voice_profile_voice">Голос</string>
     <string name="voice_profile_engine_default">За умовчанням</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Коли екран вимикається</string>
     <string name="title_screen_announcements_screen_on">Коли екран увімкнеться</string>
     <string name="title_screen_announcements_unlock">Коли телефон розблоковано</string>
-    <string name="title_pref_say_screen_off">Скажіть \"Екран вимкнено\"</string>
-    <string name="title_pref_say_device_unlocked">Скажіть \"Пристрій розблоковано\"</string>
+    <string name="title_pref_say_screen_off">Промовляти \"Екран вимкнено\"</string>
+    <string name="title_pref_say_device_unlocked">Промовляти \"Пристрій розблоковано\"</string>
     <string name="title_pref_announce_time">Час</string>
     <string name="title_pref_announce_ringer_mode">Режим дзвінка</string>
     <string name="summary_pref_announce_ringer_mode">Скажіть, коли дзвінок налаштовано на вібрацію або без звуку</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Дозволяє програмі запитувати текст вашим голосом SandFly. SandFly запитує вас, перш ніж програма зможе говорити.</string>
     <string name="permission_braille_display_label">попросіть стати дисплеєм Брайля за SandFly</string>
     <string name="permission_braille_display_description">Дозволяє додатку запитувати як дисплей Брайля для SandFly. Якщо ви дозволите це в SandFly, він зможе читати все на екрані та керувати вашим пристроєм. SandFly запитує вас першим.</string>
-    <string name="title_pref_phonetic_letters_mode">Промовляйте букви фонетично</string>
+    <string name="title_pref_phonetic_letters_mode">Промовляти букви фонетично</string>
     <string name="phonetic_letters_mode_off">Вимкнено</string>
     <string name="phonetic_letters_mode_after_letter_delay">Після листа, затриманого, як \"ч, готель\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Після листа без затримки, як \"ч готель\"</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_column_headers_entry_off">Не читати</string>
     <string name="pref_table_speak_row_column_numbers_title">Озвучення номерів рядків і стовпців</string>
     <string name="pref_table_speak_row_column_numbers_summary">Оголошення номерів рядків і стовпців для клітинок таблиці</string>
-    <string name="title_pref_speak_volume_changes">Зміна гучності мовлення</string>
+    <string name="title_pref_speak_volume_changes">Озвучувати зміни гучності</string>
     <string name="summary_pref_speak_volume_changes">Промовте нову гучність після натискання клавіш гучності</string>
     <string name="title_pref_speak_notifications">Озвучення сповіщень</string>
     <string name="summary_pref_speak_notifications">Читайте нові сповіщення вголос, коли вони надходять. Вхідні дзвінки завжди читаються.</string>
@@ -1686,7 +1686,7 @@
     <string name="value_lift_to_activate_navigation_bar">Тільки на панелі навігації</string>
     <string name="value_lift_to_activate_entire_screen">Весь екран</string>
     <string name="template_lift_to_activate_changed">Підніміть, щоб активувати: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Оберніть навколо</string>
+    <string name="title_pref_wrap_around">Циклічна навігація</string>
     <string name="summary_pref_wrap_around">Проведення повз останнього елемента переходить до першого, а повз першого – до останнього. Якщо вимкнено, наприкінці відтворюється звук.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Виправити зависання сенсорного дослідження</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Без дозволу DUMP SandFly може лише сказати, що дослідження дотиком може зависнути. Щоб виправити це, запустіть: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

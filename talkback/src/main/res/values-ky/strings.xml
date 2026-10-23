@@ -1296,11 +1296,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Жабуу</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">Тексттен сөзгө кыймылдаткыч</string>
+    <string name="title_pref_tts_engine">Текстти үнгө айландыруу механизми</string>
     <string name="title_pref_system_tts_settings">Системанын текстти сүйлөөгө орнотуулары</string>
     <string name="title_selector_vertical_navigation">Вертикалдуу навигация</string>
     <string name="summary_selector_vertical_navigation">Төмөнкү же жогорудагы нерсеге өтүп, катардын башка элементтеринен өтүңүз</string>
-    <string name="title_selector_switch_tts_engine">Кеп кыймылдаткычы</string>
+    <string name="title_selector_switch_tts_engine">Кеп механизми</string>
     <string name="summary_selector_switch_tts_engine">Орнотулган сүйлөө кыймылдаткычтарынын ортосунда которулуу</string>
     <string name="title_selector_voice_profile">Үн профили</string>
     <string name="title_pref_voice_profiles">Үн профилдери</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Экран өчкөндө</string>
     <string name="title_screen_announcements_screen_on">Экран күйгөндө</string>
     <string name="title_screen_announcements_unlock">Телефондун кулпусу ачылганда</string>
-    <string name="title_pref_say_screen_off">\"Экран өчүк\" деп айтыңыз</string>
-    <string name="title_pref_say_device_unlocked">\"Түзмөктүн кулпусу ачылды\" деп айтыңыз</string>
+    <string name="title_pref_say_screen_off">\"Экран өчүк\" деп айтуу</string>
+    <string name="title_pref_say_device_unlocked">\"Түзмөктүн кулпусу ачылды\" деп айтуу</string>
     <string name="title_pref_announce_time">Убакыт</string>
     <string name="title_pref_announce_ringer_mode">Коңгуроо режими</string>
     <string name="summary_pref_announce_ringer_mode">Коңгуроо титирөө же унчукпай коюуга качан коюлганын айтыңыз</string>
@@ -1425,12 +1425,12 @@
     <string name="pref_table_column_headers_entry_off">Окубоо</string>
     <string name="pref_table_speak_row_column_numbers_title">Катар жана тилке номерлерин айтыңыз</string>
     <string name="pref_table_speak_row_column_numbers_summary">Таблица клеткалары үчүн сап жана мамыча номерлерин жарыялоо</string>
-    <string name="title_pref_speak_volume_changes">Сүйлөө үнүн өзгөртүү</string>
+    <string name="title_pref_speak_volume_changes">Үн деңгээлинин өзгөрүүсүн айтуу</string>
     <string name="summary_pref_speak_volume_changes">Үн баскычтарын басканда жаңы үндү айтыңыз</string>
-    <string name="title_pref_speak_notifications">Билдирмелерди сүйлө</string>
+    <string name="title_pref_speak_notifications">Билдирмелерди окуу</string>
     <string name="summary_pref_speak_notifications">Жаңы эскертмелер келгенде, аларды үн чыгарып окуңуз. Кирүүчү чалуулар ар дайым окулат.</string>
     <string name="title_pref_notification_list">SandFly эскертме тизмесин колдонуңуз</string>
-    <string name="title_pref_notification_parts">Кабарлоо чоо-жайы</string>
+    <string name="title_pref_notification_parts">Билдирменин чоо-жайы</string>
     <string name="title_pref_play_installer">Google Play\'ден орнотулган көрүнөт</string>
     <string name="summary_pref_play_installer">Google Play орнотулган SandFly башка колдонмолорго айтыңыз. Кээ бир колдонмолор, мисалы, банктык колдонмолор, башка жерден орнотулган атайын мүмкүнчүлүктөр кызматтарын өчүрүшөт. Shizuku керек жана SandFly кайдан келгени жөнүндө айтылган колдонмолорду гана өзгөртөт.</string>
     <string name="summary_pref_play_installer_pending">Күйүк, бирок Google Play орнотуучу катары жазыла элек. SandFly аны Shizuku жеткиликтүү болгондо орнотот.</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Чабыттоо тилкесинде гана</string>
     <string name="value_lift_to_activate_entire_screen">Бүтүндөй экран</string>
     <string name="template_lift_to_activate_changed">Жандыруу үчүн көтөрүңүз: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Айланайын</string>
+    <string name="title_pref_wrap_around">Циклдик өтүү</string>
     <string name="summary_pref_wrap_around">Акыркы нерсени сүрүп коюу биринчиге, ал эми биринчиден өткөн соң акыркыга өтөт. Өчүк болгондо, анын ордуна акырында үн чыгат.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Капталган тийүү изилдөөсүн оңдоо</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP уруксатысыз SandFly тийүү менен изилдөө тыгылып калышы мүмкүн деп гана айта алат. Аны оңдоо үчүн төмөнкүнү иштетиңиз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

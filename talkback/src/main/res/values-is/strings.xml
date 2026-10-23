@@ -920,7 +920,7 @@
   <string name="welcome_to_talkback_title">Velkomin(n) í SandFly</string>
   <string name="talkback_is_on">Kveikt er á SandFly</string>
   <string name="talkback_turn_off_description">SandFly les efni á skjánum þínum upphátt og breytir því hvernig þú flettir í tækinu þínu. Til að slökkva á því ýtirðu tvisvar á „Slökkva á SandFly“</string>
-  <string name="turn_off_talkback">Slökktu á SandFly</string>
+  <string name="turn_off_talkback">Slökkva á SandFly</string>
   <string name="tap_again_to_turn_off">Ýttu aftur til að slökkva</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly les efni á skjánum þínum upphátt og breytir því hvernig þú flettir í tækinu þínu. Veldu „Slökkva á SandFly“ eða ýttu tvisvar á eiginleikann ef þú vilt slökkva á honum.</string>
   <string name="welcome_to_talkback_text">SandFly býður upp á raddsvörun svo þú getir notað tækið þitt án þess að horfa á skjáinn. SandFly getur gagnast fólki sem á erfitt með að sjá á skjáinn. \n\nEf þú vilt kveikja eða slökkva á SandFly í skyndi með hljóðstyrkstökkunum geturðu stillt flýtileið í SandFly-stillingum &gt; SandFly-flýtileið.\n\nÞegar kveikt er á SandFly er atriðið sem er í fókus á skjánum lesið upphátt.\n\nÞú ferð í næsta atriði með því að strjúka til hægri og í fyrra atriði með því að strjúka til vinstri.\n\nStrjúktu til hægri núna til að finna hnappinn til að fara áfram.</string>
@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Lýsa textasniði</string>
   <string name="summary_text_formatting_menu">Fyrir breytingar á borð við feitletrun, skáletrun, undirstrikun og fleira</string>
   <string name="title_text_formatting_inline">Snið talaðs texta</string>
-  <string name="title_switch_text_formatting">Snið talaðs texta</string>
+  <string name="title_switch_text_formatting">Lesa upp textasnið</string>
   <string name="summary_text_formatting_verbosity">Fyrir breytingar á borð við feitletrun og skáletrun</string>
   <string name="summary_text_formatting_selector">Velja hvort snið, t.d. feitleitur og skáletur, er lesið upphátt</string>
   <string name="title_text_formatting_verbosity_options">Valkostir textasniðs</string>
@@ -1298,7 +1298,7 @@
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">Upplestrarvél</string>
     <string name="title_pref_system_tts_settings">Upplestrarstillingar kerfisins</string>
-    <string name="title_selector_vertical_navigation">Lóðrétt flakk</string>
+    <string name="title_selector_vertical_navigation">Lóðrétt fletting</string>
     <string name="summary_selector_vertical_navigation">Farðu í hlutinn fyrir neðan eða fyrir ofan, framhjá öðrum hlutum línunnar</string>
     <string name="title_selector_switch_tts_engine">Talvél</string>
     <string name="summary_selector_switch_tts_engine">Skipta á milli uppsettra talvéla</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Leyfir appinu að biðja um að segja texta með SandFly röddinni þinni. SandFly spyr þig áður en appið getur talað.</string>
     <string name="permission_braille_display_label">biðja um að vera blindraletursskjár fyrir SandFly</string>
     <string name="permission_braille_display_description">Leyfir appinu að biðja um að vera blindraletursskjár fyrir SandFly. Ef þú leyfir það í SandFly getur það lesið allt á skjánum og stjórnað tækinu þínu. SandFly spyr þig fyrst.</string>
-    <string name="title_pref_phonetic_letters_mode">Talaðu stafina hljóðlega</string>
+    <string name="title_pref_phonetic_letters_mode">Lesa stafi með stafrófsorðum</string>
     <string name="phonetic_letters_mode_off">Slökkt</string>
     <string name="phonetic_letters_mode_after_letter_delay">Eftir bréfið, seinkað, eins og \"h, hótel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Eftir bréfið, engin töf, eins og \"h hótel\"</string>
@@ -1425,9 +1425,9 @@
     <string name="pref_table_column_headers_entry_off">Ekki lesa</string>
     <string name="pref_table_speak_row_column_numbers_title">Talaðu línu- og dálkanúmer</string>
     <string name="pref_table_speak_row_column_numbers_summary">Tilkynntu línu- og dálkanúmer fyrir töflufrumur</string>
-    <string name="title_pref_speak_volume_changes">Talaðu hljóðstyrksbreytingar</string>
+    <string name="title_pref_speak_volume_changes">Lesa upp breytingar á hljóðstyrk</string>
     <string name="summary_pref_speak_volume_changes">Segðu nýja hljóðstyrkinn eftir að þú ýtir á hljóðstyrkstakkana</string>
-    <string name="title_pref_speak_notifications">Segðu tilkynningar</string>
+    <string name="title_pref_speak_notifications">Lesa upp tilkynningar</string>
     <string name="summary_pref_speak_notifications">Lestu nýjar tilkynningar upphátt þegar þær berast. Símtöl sem berast eru alltaf lesin.</string>
     <string name="title_pref_notification_list">Notaðu tilkynningalista SandFly</string>
     <string name="title_pref_notification_parts">Upplýsingar um tilkynningar</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">Aðeins á siglingastikunni</string>
     <string name="value_lift_to_activate_entire_screen">Allur skjárinn</string>
     <string name="template_lift_to_activate_changed">Lyftu til að virkja: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Vefjið um</string>
+    <string name="title_pref_wrap_around">Hringferð</string>
     <string name="summary_pref_wrap_around">Að strjúka framhjá síðasta hlutnum fer í það fyrsta og framhjá því fyrsta fer í það síðasta. Þegar slökkt er á því spilar hljóð í lokin í staðinn.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Lagaðu fasta snertirannsókn</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Án DUMP leyfisins getur SandFly aðeins sagt að snerta könnun gæti verið föst. Til að láta það laga það skaltu keyra: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

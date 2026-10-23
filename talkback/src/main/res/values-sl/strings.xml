@@ -1300,7 +1300,7 @@
     <string name="title_pref_system_tts_settings">Sistemske nastavitve pretvorbe besedila v govor</string>
     <string name="title_selector_vertical_navigation">Vertikalna navigacija</string>
     <string name="summary_selector_vertical_navigation">Premaknite se na element pod ali zgoraj mimo drugih elementov v vrstici</string>
-    <string name="title_selector_switch_tts_engine">Govorni motor</string>
+    <string name="title_selector_switch_tts_engine">Govorni mehanizem</string>
     <string name="summary_selector_switch_tts_engine">Preklapljanje med nameščenimi govornimi mehanizmi</string>
     <string name="title_selector_voice_profile">Glasovni profil</string>
     <string name="title_pref_voice_profiles">Glasovni profili</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Ko se zaslon izklopi</string>
     <string name="title_screen_announcements_screen_on">Ko se zaslon vklopi</string>
     <string name="title_screen_announcements_unlock">Ko je telefon odklenjen</string>
-    <string name="title_pref_say_screen_off">Recite \"Zaslon izklopljen\"</string>
-    <string name="title_pref_say_device_unlocked">Izgovorite »Naprava odklenjena«</string>
+    <string name="title_pref_say_screen_off">Izgovori »Zaslon izklopljen«</string>
+    <string name="title_pref_say_device_unlocked">Izgovori »Naprava odklenjena«</string>
     <string name="title_pref_announce_time">Čas</string>
     <string name="title_pref_announce_ringer_mode">Način zvonjenja</string>
     <string name="summary_pref_announce_ringer_mode">Povejte, ko je zvonjenje nastavljeno na vibriranje ali tiho</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">Omogoča, da aplikacija zahteva izgovor besedila z vašim glasom SandFly. SandFly vas vpraša, preden lahko aplikacija spregovori.</string>
     <string name="permission_braille_display_label">zahtevaj, da postaneš Braillov zaslon za SandFly</string>
     <string name="permission_braille_display_description">Omogoča, da aplikacija zahteva, da je Braillov zaslon za SandFly. Če mu dovolite v SandFly, lahko prebere vse na zaslonu in upravlja vašo napravo. SandFly vas najprej vpraša.</string>
-    <string name="title_pref_phonetic_letters_mode">Izgovarjajte črke fonetično</string>
+    <string name="title_pref_phonetic_letters_mode">Fonetično izgovarjanje črk</string>
     <string name="phonetic_letters_mode_off">Izklopljeno</string>
     <string name="phonetic_letters_mode_after_letter_delay">Po pismu z zamudo, kot \"h, hotel\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">Po pismu, brez zamude, kot \"h hotel\"</string>
@@ -1427,10 +1427,10 @@
     <string name="pref_table_speak_row_column_numbers_summary">Napovejte številke vrstic in stolpcev za celice tabele</string>
     <string name="title_pref_speak_volume_changes">Izgovori spremembe glasnosti</string>
     <string name="summary_pref_speak_volume_changes">Po pritisku tipk za glasnost izgovori novo glasnost.</string>
-    <string name="title_pref_speak_notifications">Speak notifications</string>
+    <string name="title_pref_speak_notifications">Izgovarjaj obvestila</string>
     <string name="summary_pref_speak_notifications">Preberite nova obvestila na glas, ko prispejo. Dohodni klici se vedno preberejo.</string>
     <string name="title_pref_notification_list">Uporabi seznam obvestil SandFly</string>
-    <string name="title_pref_notification_parts">Notification details</string>
+    <string name="title_pref_notification_parts">Podrobnosti obvestil</string>
     <string name="title_pref_play_installer">Videti nameščen iz Google Play</string>
     <string name="summary_pref_play_installer">Povejte drugim aplikacijam, da je Google Play nameščen SandFly. Some apps, such as some banking apps, turn off accessibility services that were installed from anywhere else. Needs Shizuku, and changes only what apps are told about where SandFly came from.</string>
     <string name="summary_pref_play_installer_pending">Vklopljeno, vendar Google Play še ni zabeležen kot namestitveni program. SandFly nastavi, ko je na voljo Shizuku.</string>
@@ -1686,7 +1686,7 @@
     <string name="value_lift_to_activate_navigation_bar">Samo v navigacijski vrstici</string>
     <string name="value_lift_to_activate_entire_screen">Cel zaslon</string>
     <string name="template_lift_to_activate_changed">Dvignite za aktiviranje: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Ovijte okoli</string>
+    <string name="title_pref_wrap_around">Krožno premikanje</string>
     <string name="summary_pref_wrap_around">Če povlečete mimo zadnjega elementa, pridete do prvega, mimo prvega pa do zadnjega. Ko je izklopljen, se na koncu predvaja zvok.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Odpravite zataknjeno raziskovanje z dotikom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Brez dovoljenja DUMP lahko SandFly samo pove, da je raziskovanje z dotikom morda obstalo. Če ga želite popraviti, zaženite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">ടെക്സ്റ്റ് ഫോർമാറ്റ് ചെയ്യൽ വിവരിക്കുക</string>
   <string name="summary_text_formatting_menu">ബോൾഡ്, ഇറ്റാലിക്, അടിവര എന്നിവ പോലുള്ള മാറ്റങ്ങൾക്ക്</string>
   <string name="title_text_formatting_inline">വായിച്ചുകേൾക്കുന്ന ടെക്‌സ്‌റ്റിന്റെ ഫോർമാറ്റിംഗ്</string>
-  <string name="title_switch_text_formatting">വായിച്ചുകേൾക്കുന്ന ടെക്‌സ്‌റ്റിന്റെ ഫോർമാറ്റിംഗ്</string>
+  <string name="title_switch_text_formatting">ടെക്‌സ്‌റ്റ് ഫോർമാറ്റിംഗ് വായിക്കുക</string>
   <string name="summary_text_formatting_verbosity">ബോൾഡ്, ഇറ്റാലിക് പോലെയുള്ള മാറ്റങ്ങൾക്ക്</string>
   <string name="summary_text_formatting_selector">ഫോർമാറ്റിംഗ് (ബോൾഡും ഇറ്റാലിക്കും പോലുള്ളവ) ഉച്ചത്തിൽ വായിക്കണോ എന്നത് മാറ്റുക</string>
   <string name="title_text_formatting_verbosity_options">ടെക്‌സ്‌റ്റ് ഫോർമാറ്റിംഗ് ഓപ്‌ഷനുകൾ</string>
@@ -1427,7 +1427,7 @@
     <string name="pref_table_speak_row_column_numbers_summary">പട്ടിക സെല്ലുകൾക്കായി വരി, കോളം നമ്പറുകൾ പ്രഖ്യാപിക്കുക</string>
     <string name="title_pref_speak_volume_changes">വോളിയം മാറ്റങ്ങൾ സംസാരിക്കുക</string>
     <string name="summary_pref_speak_volume_changes">നിങ്ങൾ വോളിയം കീകൾ അമർത്തിയാൽ പുതിയ വോളിയം പറയുക</string>
-    <string name="title_pref_speak_notifications">അറിയിപ്പുകൾ സംസാരിക്കുക</string>
+    <string name="title_pref_speak_notifications">അറിയിപ്പുകൾ വായിക്കുക</string>
     <string name="summary_pref_speak_notifications">പുതിയ അറിയിപ്പുകൾ വരുമ്പോൾ ഉറക്കെ വായിക്കുക. ഇൻകമിംഗ് കോളുകൾ എപ്പോഴും വായിക്കും.</string>
     <string name="title_pref_notification_list">SandFly-ൻ്റെ അറിയിപ്പ് ലിസ്റ്റ് ഉപയോഗിക്കുക</string>
     <string name="title_pref_notification_parts">അറിയിപ്പ് വിശദാംശങ്ങൾ</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">നാവിഗേഷൻ ബാറിൽ മാത്രം</string>
     <string name="value_lift_to_activate_entire_screen">മുഴുവൻ സ്ക്രീൻ</string>
     <string name="template_lift_to_activate_changed">സജീവമാക്കാൻ ലിഫ്റ്റ്: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ചുറ്റും പൊതിയുക</string>
+    <string name="title_pref_wrap_around">തുടക്കത്തിലേക്ക് മടങ്ങുക</string>
     <string name="summary_pref_wrap_around">അവസാനത്തെ ഇനം സ്വൈപ്പുചെയ്യുന്നത് ആദ്യത്തേതിലേക്കും ആദ്യത്തേത് അവസാനത്തേതിലേക്കും പോകുന്നു. ഓഫായിരിക്കുമ്പോൾ, പകരം ഒരു ശബ്ദം അവസാനം പ്ലേ ചെയ്യുന്നു.</string>
     <string name="title_pref_fix_stuck_touch_exploration">സ്റ്റക്ക് ടച്ച് പര്യവേക്ഷണം പരിഹരിക്കുക</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP അനുമതിയില്ലാതെ, ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം എന്ന് മാത്രമേ SandFly ന് പറയാൻ കഴിയൂ. ഇത് പരിഹരിക്കാൻ അനുവദിക്കുന്നതിന്, റൺ ചെയ്യുക: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

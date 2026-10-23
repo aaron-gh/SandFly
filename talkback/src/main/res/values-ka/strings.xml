@@ -920,7 +920,7 @@
   <string name="welcome_to_talkback_title">მოგესალმებით SandFly-ზე!</string>
   <string name="talkback_is_on">SandFly ჩართულია</string>
   <string name="talkback_turn_off_description">SandFly კითხულობს თქვენს ეკრანზე გამოტანილ კონტენტს ხმამაღლა და ცვლის ნავიგაციის მუშაობის პრინციპს თქვენს მოწყობილობაზე. მის გამოსართავად 2-ჯერ შეეხეთ „SandFly-ის გამორთვას“.</string>
-  <string name="turn_off_talkback">გამორთეთ SandFly</string>
+  <string name="turn_off_talkback">SandFly-ის გამორთვა</string>
   <string name="tap_again_to_turn_off">გამოსართავად შეეხეთ ხელახლა</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly კითხულობს თქვენს ეკრანზე გამოტანილ კონტენტს ხმამაღლა და ცვლის ნავიგაციის მუშაობის პრინციპს თქვენს მოწყობილობაზე. გამოსართავად აირჩიეთ „SandFly-ის გამორთვა“ ან ორჯერ შეეხეთ.</string>
   <string name="welcome_to_talkback_text">SandFly გაწვდით გახმოვანებულ უკუკავშირს, რათა მოწყობილობის გამოყენება ეკრანის ყურების გარეშე შეძლოთ. SandFly, შესაძლოა, გამოადგეთ ადამიანებს, რომლებსაც ეკრანის ყურება უჭირთ. \n\nთუ გსურთ, სწრაფად ჩართოთ ან გამორთოთ SandFly ხმის ღილაკების გამოყენებით, დააყენეთ მალსახმობი SandFly-ის პარამეტრებში &gt; SandFly-ის მალსახმობი.\n\nროცა SandFly ჩართულია, ეკრანზე არჩეული ერთეული გახმოვანდება.\n\nმარჯვნივ გადაფურცვლით შეძლებთ მომდევნო ერთეულზე გადასვლას, მარცხნივ გადაფურცვლით კი წინა ერთეულს დაუბრუნდებით.\n\nგადაფურცლეთ მარჯვნივ ღილაკის „შემდეგ“ სანახავად.</string>
@@ -1296,11 +1296,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">დახურვა</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">ტექსტის მეტყველების ძრავა</string>
-    <string name="title_pref_system_tts_settings">სისტემის ტექსტის მეტყველების პარამეტრები</string>
+    <string name="title_pref_tts_engine">ტექსტის გახმოვანების სისტემა</string>
+    <string name="title_pref_system_tts_settings">სისტემის ტექსტის გახმოვანების პარამეტრები</string>
     <string name="title_selector_vertical_navigation">ვერტიკალური ნავიგაცია</string>
     <string name="summary_selector_vertical_navigation">გადადით ქვემოთ ან ზემოთ ერთეულზე, გადადით რიგის სხვა ელემენტებზე</string>
-    <string name="title_selector_switch_tts_engine">მეტყველების ძრავა</string>
+    <string name="title_selector_switch_tts_engine">მეტყველების სისტემა</string>
     <string name="summary_selector_switch_tts_engine">გადართვა დაყენებულ მეტყველების ძრავებს შორის</string>
     <string name="title_selector_voice_profile">ხმის პროფილი</string>
     <string name="title_pref_voice_profiles">ხმის პროფილები</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">როცა ეკრანი გამოირთვება</string>
     <string name="title_screen_announcements_screen_on">როცა ეკრანი ჩაირთვება</string>
     <string name="title_screen_announcements_unlock">როცა ტელეფონი განბლოკილია</string>
-    <string name="title_pref_say_screen_off">თქვით „ეკრანი გამორთულია“</string>
-    <string name="title_pref_say_device_unlocked">თქვით „მოწყობილობა განბლოკილია“</string>
+    <string name="title_pref_say_screen_off">„ეკრანი გამორთულია“ წარმოთქმა</string>
+    <string name="title_pref_say_device_unlocked">„მოწყობილობა განბლოკილია“ წარმოთქმა</string>
     <string name="title_pref_announce_time">დრო</string>
     <string name="title_pref_announce_ringer_mode">ზარის რეჟიმი</string>
     <string name="summary_pref_announce_ringer_mode">თქვით, როდესაც ზარის ხმა დაყენებულია ვიბრაციაზე ან ჩუმად</string>
@@ -1400,7 +1400,7 @@
     <string name="permission_speak_description">აპს აძლევს უფლებას, ითხოვოს ტექსტის თქმა თქვენი SandFly ხმით. SandFly გკითხავთ, სანამ აპი ლაპარაკს შეძლებს.</string>
     <string name="permission_braille_display_label">მოითხოვეთ იყოს ბრაილის ეკრანი SandFly</string>
     <string name="permission_braille_display_description">აპს აძლევს უფლებას მოითხოვოს ბრაილის ეკრანი SandFly-ისთვის. თუ დაუშვებთ SandFly, მას შეუძლია წაიკითხოს ყველაფერი ეკრანზე და გააკონტროლოს თქვენი მოწყობილობა. SandFly ჯერ გეკითხება.</string>
-    <string name="title_pref_phonetic_letters_mode">ისაუბრეთ ასოებით ფონეტიკურად</string>
+    <string name="title_pref_phonetic_letters_mode">ასოების ფონეტიკურად წარმოთქმა</string>
     <string name="phonetic_letters_mode_off">გამორთული</string>
     <string name="phonetic_letters_mode_after_letter_delay">წერილის შემდეგ, დაგვიანებული, როგორიცაა \"h, სასტუმრო\"</string>
     <string name="phonetic_letters_mode_after_letter_no_delay">წერილის შემდეგ, არ დაგვიანებით, როგორიცაა \"h hotel\"</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_column_headers_entry_off">წაკითხვის გარეშე</string>
     <string name="pref_table_speak_row_column_numbers_title">მწკრივებისა და სვეტების ნომრების წარმოთქმა</string>
     <string name="pref_table_speak_row_column_numbers_summary">გამოაცხადეთ მწკრივების და სვეტების ნომრები ცხრილის უჯრედებისთვის</string>
-    <string name="title_pref_speak_volume_changes">საუბრის ხმა იცვლება</string>
+    <string name="title_pref_speak_volume_changes">ხმის დონის ცვლილებების წარმოთქმა</string>
     <string name="summary_pref_speak_volume_changes">თქვით ახალი ხმა ხმის ღილაკების დაჭერის შემდეგ</string>
     <string name="title_pref_speak_notifications">შეტყობინებების წარმოთქმა</string>
     <string name="summary_pref_speak_notifications">წაიკითხეთ ახალი შეტყობინებები ხმამაღლა, როდესაც ისინი ჩამოდიან. შემომავალი ზარები ყოველთვის იკითხება.</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">მხოლოდ ნავიგაციის ზოლზე</string>
     <string name="value_lift_to_activate_entire_screen">მთელი ეკრანი</string>
     <string name="template_lift_to_activate_changed">ასწიეთ გასააქტიურებლად: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">შემოახვიეთ გარშემო</string>
+    <string name="title_pref_wrap_around">ციკლური გადასვლა</string>
     <string name="summary_pref_wrap_around">ბოლო ერთეულის წინ გადაფურცვლა პირველზე გადადის, ხოლო პირველს ბოლოზე. როდესაც გამორთულია, ამის ნაცვლად, ხმა უკრავს ბოლოს.</string>
     <string name="title_pref_fix_stuck_touch_exploration">შეასწორეთ ჩარჩენილი შეხებით გამოკვლევა</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ნებართვის გარეშე, SandFly შეიძლება მხოლოდ იმის თქმა, რომ შეხებით დათვალიერება შეიძლება შეფერხდეს. გამოსასწორებლად, გაუშვით: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>

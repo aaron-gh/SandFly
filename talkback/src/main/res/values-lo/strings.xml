@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">ອະທິບາຍການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="summary_text_formatting_menu">ສຳລັບການປ່ຽນແປງຕ່າງໆ ເຊັ່ນ: ຕົວໜາ, ຕົວອຽງ, ຂີດກ້ອງ ແລະ ອື່ນໆ</string>
   <string name="title_text_formatting_inline">ການຈັດຮູບແບບຂໍ້ຄວາມເວົ້າ</string>
-  <string name="title_switch_text_formatting">ການຈັດຮູບແບບຂໍ້ຄວາມເວົ້າ</string>
+  <string name="title_switch_text_formatting">ອ່ານການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="summary_text_formatting_verbosity">ເພື່ອປ່ຽນແປງ ເຊັ່ນ: ຕົວໜາ ແລະ ຕົວອຽງ</string>
   <string name="summary_text_formatting_selector">ອ່ານອອກສຽງການປ່ຽນຮູບແບບ, ເຊັ່ນ: ຕົວໜາ ແລະ ຕົວອຽງ</string>
   <string name="title_text_formatting_verbosity_options">ຕົວເລືອກການຈັດຮູບແບບຂໍ້ຄວາມ</string>
@@ -1300,7 +1300,7 @@
     <string name="title_pref_system_tts_settings">ການຕັ້ງຄ່າລະບົບຂໍ້ຄວາມເປັນສຽງເວົ້າ</string>
     <string name="title_selector_vertical_navigation">ການນໍາທາງແນວຕັ້ງ</string>
     <string name="summary_selector_vertical_navigation">ຍ້າຍໄປທີ່ລາຍການທາງລຸ່ມ ຫຼືຂ້າງເທິງ, ຜ່ານລາຍການອື່ນໆຂອງແຖວ</string>
-    <string name="title_selector_switch_tts_engine">ເຄື່ອງຈັກໃນການປາກເວົ້າ</string>
+    <string name="title_selector_switch_tts_engine">ເຄື່ອງຈັກສຽງເວົ້າ</string>
     <string name="summary_selector_switch_tts_engine">ສະຫຼັບລະຫວ່າງເຄື່ອງຈັກສຽງທີ່ຕິດຕັ້ງໄວ້</string>
     <string name="title_selector_voice_profile">ໂປຣໄຟລ໌ສຽງ</string>
     <string name="title_pref_voice_profiles">ໂປຣໄຟລ໌ສຽງ</string>
@@ -1334,7 +1334,7 @@
     <string name="voice_profile_delete_confirm">ລຶບ <xliff:g id="name" example="Reading">%1$s</xliff:g> ບໍ?</string>
     <string name="voice_profile_delete">ລຶບ</string>
     <string name="summary_pref_tts_engine_default">ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ</string>
-    <string name="title_pref_speech_pitch">ສຽງເວົ້າ</string>
+    <string name="title_pref_speech_pitch">ລະດັບສູງຕ່ຳຂອງສຽງເວົ້າ</string>
     <string name="title_pref_speech_stream">ລະດັບສຽງ​ຂອງການເວົ້າ</string>
     <string name="summary_selector_speech_stream">ສະຫຼັບລະຫວ່າງການຊ່ວຍເຂົ້າເຖິງ, ມີເດຍ, ສຽງດັງ ແລະປະລິມານການໂທ</string>
     <string name="speech_stream_accessibility">ລະດັບສຽງການຊ່ວຍເຂົ້າເຖິງ</string>
@@ -1354,7 +1354,7 @@
     <string name="title_pref_mute_speech_while_recording">ງຽບໃນຂະນະທີ່ບັນທຶກ</string>
     <string name="summary_pref_mute_speech_while_recording">ໃນຂະນະທີ່ແອັບບັນທຶກສຽງໂດຍບໍ່ເຊື່ອມຕໍ່ຫູຟັງ, SandFly ພຽງແຕ່ເວົ້າຄຳຕອບຕໍ່ກັບທ່າທາງ, ກະແຈ ແລະ ການພິມຂອງເຈົ້າ, ແລະຢູ່ງຽບໆສຳລັບສິ່ງຕ່າງໆ ເຊັ່ນ: ການແຈ້ງເຕືອນ, ເພື່ອບໍ່ໃຫ້ພວກມັນຖືກບັນທຶກ.</string>
     <string name="title_pref_switch_languages">ປ່ຽນພາສາໂດຍອັດຕະໂນມັດ</string>
-    <string name="title_pref_switch_dialects">ສະຫຼັບພາສາອັດຕະໂນມັດ</string>
+    <string name="title_pref_switch_dialects">ສະຫຼັບສຳນຽງອັດຕະໂນມັດ</string>
     <string name="category_collapsed">ພາກສ່ວນທີ່ຫຍໍ້ລົງ</string>
     <string name="category_expanded">ພາກສ່ວນທີ່ຂະຫຍາຍແລ້ວ</string>
     <string name="title_pref_speak_nav_bar_buttons">ເວົ້າປຸ່ມແຖບນໍາທາງ</string>
@@ -1368,7 +1368,7 @@
     <string name="title_screen_announcements_screen_off">ເມື່ອໜ້າຈໍປິດ</string>
     <string name="title_screen_announcements_screen_on">ເມື່ອໜ້າຈໍເປີດຂຶ້ນ</string>
     <string name="title_screen_announcements_unlock">ເມື່ອໂທລະສັບຖືກປົດລັອກ</string>
-    <string name="title_pref_say_screen_off">ເວົ້າວ່າ \"ປິດໜ້າຈໍ\"</string>
+    <string name="title_pref_say_screen_off">ເວົ້າວ່າ \"ໜ້າຈໍປິດແລ້ວ\"</string>
     <string name="title_pref_say_device_unlocked">ເວົ້າວ່າ \"ອຸປະກອນປົດລັອກແລ້ວ\"</string>
     <string name="title_pref_announce_time">ເວລາ</string>
     <string name="title_pref_announce_ringer_mode">ໂໝດສຽງ</string>
@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_navigation_bar">ພຽງແຕ່ຢູ່ໃນແຖບນໍາທາງ</string>
     <string name="value_lift_to_activate_entire_screen">ໜ້າຈໍທັງໝົດ</string>
     <string name="template_lift_to_activate_changed">ຍົກເພື່ອເປີດໃຊ້: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ຫໍ່ອ້ອມ</string>
+    <string name="title_pref_wrap_around">ວົນກັບໄປຕົ້ນ</string>
     <string name="summary_pref_wrap_around">ການປັດຜ່ານລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດ, ແລະຜ່ານໄປອັນທໍາອິດໄປຫາອັນສຸດທ້າຍ. ເມື່ອປິດ, ສຽງຈະຫຼິ້ນໃນຕອນທ້າຍແທນ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສໍາຜັດທີ່ຕິດຄ້າງ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີການອະນຸຍາດ DUMP, SandFly ພຽງແຕ່ເວົ້າໄດ້ວ່າ ການສຳຜັດສຳຜັດອາດຈະຕິດຢູ່. ເພື່ອໃຫ້ມັນແກ້ໄຂ, ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
